@@ -35,7 +35,7 @@ namespace KS.ConsoleBase.Colors
     /// <summary>
     /// Color tools module
     /// </summary>
-    public static class ColorTools
+    public static class KernelColorTools
     {
 
         // Variables for colors used by previous versions of the kernel.

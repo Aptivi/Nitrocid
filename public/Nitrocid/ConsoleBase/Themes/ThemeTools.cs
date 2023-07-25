@@ -31,7 +31,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Events;
-using static KS.ConsoleBase.Colors.ColorTools;
+using static KS.ConsoleBase.Colors.KernelColorTools;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -268,7 +268,7 @@ namespace KS.ConsoleBase.Themes
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                EventsManager.FireEvent(EventType.ColorSetError, ColorSetErrorReasons.InvalidColors);
+                EventsManager.FireEvent(EventType.ColorSetError, KernelColorSetErrorReasons.InvalidColors);
                 throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("One or more of the colors is invalid.") + " {0}", ex, ex.Message);
             }
         }

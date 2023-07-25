@@ -20,10 +20,10 @@ using System;
 using System.Collections;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Misc.Screensaver;
 using KS.Misc.Threading;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Animations.Glitch
 {
@@ -154,7 +154,7 @@ namespace KS.Misc.Animations.Glitch
                 case GlitchType.RandomLetter:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColor(ColorLetterInstance);
+                            KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
                             ConsoleWrapper.ForegroundColor = ConsoleColor.White;
                         ConsoleWrapper.Write(Letter);
@@ -163,7 +163,7 @@ namespace KS.Misc.Animations.Glitch
                 case GlitchType.RandomSymbol:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColor(ColorLetterInstance);
+                            KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
                             ConsoleWrapper.ForegroundColor = ConsoleColor.White;
                         ConsoleWrapper.Write(Symbol);
@@ -171,27 +171,27 @@ namespace KS.Misc.Animations.Glitch
                     }
                 case GlitchType.RedGreenBlueColor:
                     {
-                        ColorTools.SetConsoleColor(ColorBlockInstance, true, true);
+                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true, true);
                         ConsoleWrapper.Write(" ");
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomLetter:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColor(ColorLetterInstance);
+                            KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
                             ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-                        ColorTools.SetConsoleColor(ColorBlockInstance, true, true);
+                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true, true);
                         ConsoleWrapper.Write(Letter);
                         break;
                     }
                 case GlitchType.RedGreenBlueColorWithRandomSymbol:
                     {
                         if (ColorLetter)
-                            ColorTools.SetConsoleColor(ColorLetterInstance);
+                            KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
                             ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-                        ColorTools.SetConsoleColor(ColorBlockInstance, true, true);
+                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true, true);
                         ConsoleWrapper.Write(Symbol);
                         break;
                     }

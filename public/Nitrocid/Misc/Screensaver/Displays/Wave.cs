@@ -27,7 +27,6 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -214,7 +213,7 @@ namespace KS.Misc.Screensaver.Displays
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBack();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
@@ -259,7 +258,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     ThreadManager.SleepNoBlock(WaveSettings.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     for (int j = 0; j < ConsoleWrapper.WindowHeight; j++)
-                        TextWriterWhereColor.WriteWhere(" ", i, j, Color.Empty, ColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhere(" ", i, j, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
                     TextWriterWhereColor.WriteWhere(" ", i, Pos, Color.Empty, ColorStorage);
                 }
             }

@@ -20,8 +20,8 @@ using ColorSeq;
 using KS.Drivers.RNG;
 using System;
 using System.Collections.Generic;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Animations.BSOD.Simulations
 {
@@ -64,8 +64,8 @@ namespace KS.Misc.Animations.BSOD.Simulations
         {
             // Windows 7's BSOD is the same as Windows XP's and Windows Vista's BSOD.
             var bugParams = BugChecks[BugCheckCode];
-            ColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087), true);
-            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            KernelColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087), true);
+            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // First, write the introduction
             TextWriterColor.WritePlain("A problem has been detected and Windows has been shut down to prevent damage\n" +

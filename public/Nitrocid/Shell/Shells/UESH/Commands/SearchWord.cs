@@ -45,8 +45,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 var Matches = Searching.SearchFileForString(fileName, lookup);
                 foreach (string Match in Matches)
                 {
-                    var matchColor = ColorTools.GetColor(KernelColorType.Success);
-                    var normalColor = ColorTools.GetColor(KernelColorType.NeutralText);
+                    var matchColor = KernelColorTools.GetColor(KernelColorType.Success);
+                    var normalColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
                     string matchLine = Match;
                     string toReplaceWith = $"{matchColor.VTSequenceForeground}{lookup}{normalColor.VTSequenceForeground}";
 

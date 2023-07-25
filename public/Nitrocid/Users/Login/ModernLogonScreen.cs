@@ -127,7 +127,7 @@ namespace KS.Users.Login
                         string dateStr = TimeDateRenderers.RenderDate();
                         int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
                         CenteredTextColor.WriteCentered(consoleInfoY, dateStr);
-                        ColorTools.SetConsoleColor(KernelColorType.NeutralText);
+                        KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
 
                         // Print the date using the alternative calendar, if any
                         if (CalendarTools.EnableAltCalendar)

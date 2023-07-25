@@ -18,7 +18,6 @@
 
 using ColorSeq;
 using KS.ConsoleBase.Colors;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Notifications
 {
@@ -110,27 +109,27 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Custom color (for custom priority notfications)
         /// </summary>
-        public Color CustomColor { get; set; } = ColorTools.GetColor(KernelColorType.LowPriorityBorder);
+        public Color CustomColor { get; set; } = KernelColorTools.GetColor(KernelColorType.LowPriorityBorder);
 
         /// <summary>
         /// Custom title color (for custom priority notfications)
         /// </summary>
-        public Color CustomTitleColor { get; set; } = ColorTools.GetColor(KernelColorType.NotificationTitle);
+        public Color CustomTitleColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationTitle);
 
         /// <summary>
         /// Custom description color (for custom priority notfications)
         /// </summary>
-        public Color CustomDescriptionColor { get; set; } = ColorTools.GetColor(KernelColorType.NotificationDescription);
+        public Color CustomDescriptionColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationDescription);
 
         /// <summary>
         /// Custom progress color (for custom priority notfications)
         /// </summary>
-        public Color CustomProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.NotificationProgress);
+        public Color CustomProgressColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationProgress);
 
         /// <summary>
         /// Custom progress failure color (for custom priority notfications)
         /// </summary>
-        public Color CustomProgressFailureColor { get; set; } = ColorTools.GetColor(KernelColorType.NotificationFailure);
+        public Color CustomProgressFailureColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationFailure);
 
         /// <summary>
         /// Upper left corner character for custom priority notification

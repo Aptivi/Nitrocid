@@ -23,7 +23,6 @@ using KS.Misc.Presentation;
 using KS.Misc.Presentation.Elements;
 using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -75,7 +74,7 @@ namespace KS.Shell.Shells.UESH.Commands
                                 { 
                                     Translate.DoTranslation("This version now refines the kernel to the point that it no longer behaves like the old versions.") + " " +
                                     Translate.DoTranslation("Because the new groundbreaking features got released, we decided to name this kernel...") + " \n\n" +
-                                    new Color(ConsoleColors.Green3_00d700).VTSequenceForeground + "Nitrocid KS 0.1.0!\n\n" + ColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
+                                    new Color(ConsoleColors.Green3_00d700).VTSequenceForeground + "Nitrocid KS 0.1.0!\n\n" + KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground +
                                     "< " + Translate.DoTranslation("Happy 5-year anniversary!") + " >\n\n" +
                                     "-- Aptivi"
                                 }

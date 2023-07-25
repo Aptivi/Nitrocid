@@ -26,10 +26,10 @@ using System.Text;
 using System.Threading;
 using KS.Kernel;
 using ColorSeq;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using con = System.Console;
 using VT.NET.Tools;
 using KS.Misc.Text;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -182,7 +182,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (!IsDumb)
                     con.ForegroundColor = value;
-                ColorTools.currentForegroundColor = new Color(Convert.ToInt32(value));
+                KernelColorTools.currentForegroundColor = new Color(Convert.ToInt32(value));
             }
         }
 
@@ -199,7 +199,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (!IsDumb)
                     con.BackgroundColor = value;
-                ColorTools.currentBackgroundColor = new Color(Convert.ToInt32(value));
+                KernelColorTools.currentBackgroundColor = new Color(Convert.ToInt32(value));
             }
         }
 
@@ -266,7 +266,7 @@ namespace KS.Drivers.Console.Consoles
             if (!IsDumb)
             {
                 if (loadBack)
-                    ColorTools.LoadBack();
+                    KernelColorTools.LoadBack();
                 con.Clear();
             }
         }

@@ -26,7 +26,6 @@ using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 
@@ -104,8 +103,8 @@ namespace KS.Misc.Splash.Splashes
         public void Closing()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ColorTools.SetConsoleColor(KernelColorType.NeutralText);
-            ColorTools.SetConsoleColor(KernelColorType.Background, true);
+            KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
+            KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             ConsoleWrapper.Clear();
         }
 
@@ -153,7 +152,7 @@ namespace KS.Misc.Splash.Splashes
 
             // Transition
             PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
+            PresetStringBuilder.Append(Flags.SetBackground ? KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage
@@ -161,7 +160,7 @@ namespace KS.Misc.Splash.Splashes
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar
-            if (!string.IsNullOrEmpty(Config.SplashConfig.PowerLineProgressProgressColor) & ColorTools.TryParseColor(Config.SplashConfig.PowerLineProgressProgressColor))
+            if (!string.IsNullOrEmpty(Config.SplashConfig.PowerLineProgressProgressColor) & KernelColorTools.TryParseColor(Config.SplashConfig.PowerLineProgressProgressColor))
             {
                 var ProgressColor = new Color(Config.SplashConfig.PowerLineProgressProgressColor);
                 ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, ProgressColor);

@@ -41,7 +41,7 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // Ask a question
                 TextWriterColor.Write(Question, false, KernelColorType.Question);
-                ColorTools.SetConsoleColor(KernelColorType.Input);
+                KernelColorTools.SetConsoleColor(KernelColorType.Input);
 
                 // Wait for an answer
                 Answer = Input.ReadLine();

@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
 
             // Do the job
-            Hex = ColorTools.ConvertFromRGBToHex(R, G, B);
+            Hex = KernelColorTools.ConvertFromRGBToHex(R, G, B);
             TextWriterColor.Write("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.Write(Hex, true, KernelColorType.ListValue);
         }

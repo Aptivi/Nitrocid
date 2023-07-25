@@ -21,7 +21,7 @@ namespace KS.ConsoleBase.Colors
     /// <summary>
     /// Enumeration for the color setting error reasons
     /// </summary>
-    public enum ColorSetErrorReasons
+    public enum KernelColorSetErrorReasons
     {
         /// <summary>
         /// Unknown reason

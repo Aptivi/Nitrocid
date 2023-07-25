@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -229,13 +229,13 @@ namespace KS.Misc.Screensaver.Displays
                 int BlueColorNum = RandomDriver.Random(255);
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                ColorTools.SetConsoleColor(ColorStorage, true, true);
+                KernelColorTools.SetConsoleColor(ColorStorage, true, true);
             }
             else
             {
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB);
                 var ColorStorage = new Color(CurrentColorR, CurrentColorG, CurrentColorB);
-                ColorTools.SetConsoleColor(ColorStorage, true, true);
+                KernelColorTools.SetConsoleColor(ColorStorage, true, true);
             }
 
             // Make the disco effect!

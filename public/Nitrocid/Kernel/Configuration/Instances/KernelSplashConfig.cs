@@ -33,7 +33,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [Progress] The progress color
         /// </summary>
-        public string ProgressProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+        public string ProgressProgressColor { get; set; } = KernelColorTools.GetColor(KernelColorType.Progress).PlainSequence;
         /// <summary>
         /// [Progress] The progress text location
         /// </summary>
@@ -41,7 +41,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [PowerLineProgress] The progress color
         /// </summary>
-        public string PowerLineProgressProgressColor { get; set; } = ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+        public string PowerLineProgressProgressColor { get; set; } = KernelColorTools.GetColor(KernelColorType.Progress).PlainSequence;
         /// <summary>
         /// [PowerLineProgress] The progress text location
         /// </summary>

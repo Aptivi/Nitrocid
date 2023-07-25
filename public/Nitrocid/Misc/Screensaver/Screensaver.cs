@@ -31,7 +31,6 @@ using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Users.Login;
 using KS.Kernel.Events;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.Console;
 using KS.Drivers;
@@ -333,7 +332,7 @@ namespace KS.Misc.Screensaver
         internal static void HandleSaverCancel()
         {
             DebugWriter.WriteDebug(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBack();
             ConsoleBase.ConsoleWrapper.CursorVisible = true;
             DebugWriter.WriteDebug(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();

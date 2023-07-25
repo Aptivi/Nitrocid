@@ -24,7 +24,6 @@ using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Splash.Splashes
@@ -111,8 +110,8 @@ namespace KS.Misc.Splash.Splashes
         public void Closing()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ColorTools.SetConsoleColor(KernelColorType.NeutralText);
-            ColorTools.SetConsoleColor(KernelColorType.Background, true);
+            KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
+            KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             ConsoleWrapper.Clear();
         }
 

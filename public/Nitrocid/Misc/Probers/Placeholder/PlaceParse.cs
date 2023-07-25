@@ -33,7 +33,6 @@ using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
 using KS.Users;
 using KS.Kernel.Events;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
 using System.Collections.Generic;
@@ -80,8 +79,8 @@ namespace KS.Misc.Probers.Placeholder
             { "<dollar>",                                 UserManagement.GetUserDollarSign },
             { "<randomfile>",                             Getting.GetRandomFileName },
             { "<randomfolder>",                           Getting.GetRandomFolderName },
-            { "<f:reset>",                          () => ColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground },
-            { "<b:reset>",                          () => Flags.SetBackground ? ColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m" },
+            { "<f:reset>",                          () => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground },
+            { "<b:reset>",                          () => Flags.SetBackground ? KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m" },
             { "<uptime>",                           () => PowerManager.KernelUptime }
         };
 

@@ -22,7 +22,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
 using KS.Misc.Writers.FancyWriters.Tools;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -56,7 +55,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
-            WriteCenteredFiglet(top, FigletFont, Text, ColorTools.GetColor(ColTypes), ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteCenteredFiglet(top, FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -68,7 +67,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            WriteCenteredFiglet(top, FigletFont, Text, ColorTools.GetColor(colorTypeForeground), ColorTools.GetColor(colorTypeBackground), Vars);
+            WriteCenteredFiglet(top, FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -79,7 +78,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredFiglet(top, FigletFont, Text, new Color(Color), ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteCenteredFiglet(top, FigletFont, Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -102,7 +101,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color Color, params object[] Vars) =>
-            WriteCenteredFiglet(top, FigletFont, Text, Color, ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteCenteredFiglet(top, FigletFont, Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -145,7 +144,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
-            WriteCenteredFiglet(FigletFont, Text, ColorTools.GetColor(ColTypes), ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteCenteredFiglet(FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -156,7 +155,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            WriteCenteredFiglet(FigletFont, Text, ColorTools.GetColor(colorTypeForeground), ColorTools.GetColor(colorTypeBackground), Vars);
+            WriteCenteredFiglet(FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -166,7 +165,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredFiglet(FigletFont, Text, new Color(Color), ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteCenteredFiglet(FigletFont, Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text
@@ -187,7 +186,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color Color, params object[] Vars) =>
-            WriteCenteredFiglet(FigletFont, Text, Color, ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteCenteredFiglet(FigletFont, Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a centered figlet with text

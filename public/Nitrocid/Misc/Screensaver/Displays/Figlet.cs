@@ -20,6 +20,7 @@ using System;
 using System.Linq;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
@@ -27,7 +28,6 @@ using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -257,7 +257,7 @@ namespace KS.Misc.Screensaver.Displays
 
         /// <inheritdoc/>
         public override void ScreensaverPreparation() =>
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBack();
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

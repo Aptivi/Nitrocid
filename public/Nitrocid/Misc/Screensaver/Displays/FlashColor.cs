@@ -19,11 +19,11 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -239,7 +239,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBack(new Color(FlashColorSettings.FlashColorBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(FlashColorSettings.FlashColorBackgroundColor), true);
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
@@ -266,7 +266,7 @@ namespace KS.Misc.Screensaver.Displays
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    ColorTools.SetConsoleColor(ColorStorage, true, true);
+                    KernelColorTools.SetConsoleColor(ColorStorage, true, true);
                     ConsoleWrapper.Write(" ");
                 }
             }
@@ -276,7 +276,7 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    ColorTools.SetConsoleColor(new Color(ColorNum), true, true);
+                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true, true);
                     ConsoleWrapper.Write(" ");
                 }
             }

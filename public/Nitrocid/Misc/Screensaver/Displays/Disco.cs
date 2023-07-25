@@ -18,11 +18,11 @@
 
 using System;
 using ColorSeq;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -294,13 +294,13 @@ namespace KS.Misc.Screensaver.Displays
                         int BlueColorNum = RandomDriver.Random(255);
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                         var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                        ColorTools.SetConsoleColor(ColorStorage, true, true);
+                        KernelColorTools.SetConsoleColor(ColorStorage, true, true);
                     }
                     else
                     {
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB);
                         var ColorStorage = new Color(CurrentColorR, CurrentColorG, CurrentColorB);
-                        ColorTools.SetConsoleColor(ColorStorage, true, true);
+                        KernelColorTools.SetConsoleColor(ColorStorage, true, true);
                     }
                 }
                 else
@@ -309,12 +309,12 @@ namespace KS.Misc.Screensaver.Displays
                     {
                         int color = RandomDriver.Random(255);
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
-                        ColorTools.SetConsoleColor(new Color(color), true, true);
+                        KernelColorTools.SetConsoleColor(new Color(color), true, true);
                     }
                     else
                     {
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor);
-                        ColorTools.SetConsoleColor(new Color(CurrentColor), true, true);
+                        KernelColorTools.SetConsoleColor(new Color(CurrentColor), true, true);
                     }
                 }
             }
@@ -329,7 +329,7 @@ namespace KS.Misc.Screensaver.Displays
                     CurrentColor = (int)ConsoleColors.Black;
                 }
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", CurrentColor);
-                ColorTools.SetConsoleColor(new Color(CurrentColor), true, true);
+                KernelColorTools.SetConsoleColor(new Color(CurrentColor), true, true);
             }
 
             // Make the disco effect!

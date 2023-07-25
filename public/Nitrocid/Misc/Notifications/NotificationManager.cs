@@ -193,18 +193,18 @@ namespace KS.Misc.Notifications
 
                             // Set the border color
                             DebugWriter.WriteDebug(DebugLevel.I, "Priority: {0}", NewNotification.Priority);
-                            var NotifyBorderColor = ColorTools.GetColor(KernelColorType.LowPriorityBorder);
-                            var NotifyTitleColor = ColorTools.GetColor(KernelColorType.NotificationTitle);
-                            var NotifyDescColor = ColorTools.GetColor(KernelColorType.NotificationDescription);
-                            var NotifyProgressColor = ColorTools.GetColor(KernelColorType.NotificationProgress);
-                            var NotifyProgressFailureColor = ColorTools.GetColor(KernelColorType.NotificationFailure);
+                            var NotifyBorderColor = KernelColorTools.GetColor(KernelColorType.LowPriorityBorder);
+                            var NotifyTitleColor = KernelColorTools.GetColor(KernelColorType.NotificationTitle);
+                            var NotifyDescColor = KernelColorTools.GetColor(KernelColorType.NotificationDescription);
+                            var NotifyProgressColor = KernelColorTools.GetColor(KernelColorType.NotificationProgress);
+                            var NotifyProgressFailureColor = KernelColorTools.GetColor(KernelColorType.NotificationFailure);
                             switch (NewNotification.Priority)
                             {
                                 case NotifPriority.Medium:
-                                    NotifyBorderColor = ColorTools.GetColor(KernelColorType.MediumPriorityBorder);
+                                    NotifyBorderColor = KernelColorTools.GetColor(KernelColorType.MediumPriorityBorder);
                                     break;
                                 case NotifPriority.High:
-                                    NotifyBorderColor = ColorTools.GetColor(KernelColorType.HighPriorityBorder);
+                                    NotifyBorderColor = KernelColorTools.GetColor(KernelColorType.HighPriorityBorder);
                                     break;
                                 case NotifPriority.Custom:
                                     NotifyBorderColor = NewNotification.CustomColor;
@@ -298,7 +298,7 @@ namespace KS.Misc.Notifications
                                     TextWriterWhereColor.WriteWhere(Convert.ToString(CharManager.GetEsc()) + "[0K", notifLeftAgnostic, 0, true, KernelColorType.NeutralText);
                                     TextWriterWhereColor.WriteWhere(ProgressTitle + Convert.ToString(CharManager.GetEsc()) + "[0K", notifLeftAgnostic, notifTitleTop, true, NotifyTitleColor, NewNotification.Progress);
                                     TextWriterWhereColor.WriteWhere(Desc + Convert.ToString(CharManager.GetEsc()) + "[0K", notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
-                                    ProgressBarColor.WriteProgress(NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, ColorTools.GetColor(KernelColorType.Background), Flags.DrawBorderNotification, true);
+                                    ProgressBarColor.WriteProgress(NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), Flags.DrawBorderNotification, true);
                                     Thread.Sleep(1);
                                     if (NewNotification.ProgressFailed)
                                         TextWriterWhereColor.WriteWhere(ProgressTitle + Convert.ToString(CharManager.GetEsc()) + "[0K", notifLeftAgnostic, notifTitleTop, true, NotifyProgressFailureColor, NewNotification.Progress);

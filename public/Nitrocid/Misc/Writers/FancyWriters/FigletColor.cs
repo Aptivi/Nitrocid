@@ -24,7 +24,6 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Writers.FancyWriters
@@ -67,7 +66,7 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(ColTypes);
+                KernelColorTools.SetConsoleColor(ColTypes);
 
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);
@@ -92,8 +91,8 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(colorTypeForeground);
-                ColorTools.SetConsoleColor(colorTypeBackground, true);
+                KernelColorTools.SetConsoleColor(colorTypeForeground);
+                KernelColorTools.SetConsoleColor(colorTypeBackground, true);
 
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);
@@ -117,7 +116,7 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(new Color(Color));
+                KernelColorTools.SetConsoleColor(new Color(Color));
 
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);
@@ -142,8 +141,8 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(new Color(ForegroundColor));
-                ColorTools.SetConsoleColor(new Color(BackgroundColor), true);
+                KernelColorTools.SetConsoleColor(new Color(ForegroundColor));
+                KernelColorTools.SetConsoleColor(new Color(BackgroundColor), true);
 
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);
@@ -167,7 +166,7 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(Color);
+                KernelColorTools.SetConsoleColor(Color);
 
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);
@@ -192,8 +191,8 @@ namespace KS.Misc.Writers.FancyWriters
             try
             {
                 // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                ColorTools.SetConsoleColor(ForegroundColor);
-                ColorTools.SetConsoleColor(BackgroundColor, true);
+                KernelColorTools.SetConsoleColor(ForegroundColor);
+                KernelColorTools.SetConsoleColor(BackgroundColor, true);
 
                 // Actually write
                 WriteFigletPlain(Text, FigletFont, Vars);

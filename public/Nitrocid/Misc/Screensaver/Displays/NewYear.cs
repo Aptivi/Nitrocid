@@ -42,7 +42,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.Colors.ColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+            ConsoleBase.Colors.KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }

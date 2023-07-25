@@ -26,7 +26,6 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {
@@ -49,7 +48,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, bool Wrap) =>
-            WriteList(List, ColorTools.GetColor(KernelColorType.ListEntry), ColorTools.GetColor(KernelColorType.ListValue), Wrap);
+            WriteList(List, KernelColorTools.GetColor(KernelColorType.ListEntry), KernelColorTools.GetColor(KernelColorType.ListValue), Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -68,7 +67,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<TKey, TValue>(Dictionary<TKey, TValue> List, KernelColorType ListKeyColor, KernelColorType ListValueColor, bool Wrap) =>
-            WriteList(List, ColorTools.GetColor(ListKeyColor), ColorTools.GetColor(ListValueColor), Wrap);
+            WriteList(List, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -173,7 +172,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<T>(IEnumerable<T> List, bool Wrap) =>
-            WriteList(List, ColorTools.GetColor(KernelColorType.ListEntry), ColorTools.GetColor(KernelColorType.ListValue), Wrap);
+            WriteList(List, KernelColorTools.GetColor(KernelColorType.ListEntry), KernelColorTools.GetColor(KernelColorType.ListValue), Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -192,7 +191,7 @@ namespace KS.Misc.Writers.ConsoleWriters
         /// <param name="ListValueColor">A value color.</param>
         /// <param name="Wrap">Wraps the output as needed.</param>
         public static void WriteList<T>(IEnumerable<T> List, KernelColorType ListKeyColor, KernelColorType ListValueColor, bool Wrap) =>
-            WriteList(List, ColorTools.GetColor(ListKeyColor), ColorTools.GetColor(ListValueColor), Wrap);
+            WriteList(List, KernelColorTools.GetColor(ListKeyColor), KernelColorTools.GetColor(ListValueColor), Wrap);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.

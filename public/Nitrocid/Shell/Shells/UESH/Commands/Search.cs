@@ -49,8 +49,8 @@ namespace KS.Shell.Shells.UESH.Commands
 
                     // Iterate through each match collection to get their values so that we can replace the text with the text that
                     // contains VT sequences to colorize the matches.
-                    var matchColor = ColorTools.GetColor(KernelColorType.Success);
-                    var normalColor = ColorTools.GetColor(KernelColorType.NeutralText);
+                    var matchColor = KernelColorTools.GetColor(KernelColorType.Success);
+                    var normalColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
                     foreach (Match match in matchCollection.Cast<Match>())
                     {
                         string toReplaceWith = $"{matchColor.VTSequenceForeground}{match.Value}{normalColor.VTSequenceForeground}";

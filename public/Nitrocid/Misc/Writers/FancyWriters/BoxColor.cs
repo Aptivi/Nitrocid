@@ -19,7 +19,7 @@
 using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.Threading;
-using static KS.ConsoleBase.Colors.ColorTools;
+using static KS.ConsoleBase.Colors.KernelColorTools;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;

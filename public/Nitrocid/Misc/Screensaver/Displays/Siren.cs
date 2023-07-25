@@ -18,9 +18,9 @@
 
 using System.Collections.Generic;
 using ColorSeq;
+using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 using KS.Misc.Threading;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -95,7 +95,7 @@ namespace KS.Misc.Screensaver.Displays
                 step = 0;
 
             // Set color
-            ColorTools.LoadBack(sirenColors[step], true);
+            KernelColorTools.LoadBack(sirenColors[step], true);
 
             // Delay
             ThreadManager.SleepNoBlock(SirenSettings.SirenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

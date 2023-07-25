@@ -104,7 +104,7 @@ namespace KS.Shell.Shells.UESH.Commands
             Assembly.LoadFrom(RetroExecKSPath).EntryPoint.Invoke("", Array.Empty<object>());
 
             // Clear the console
-            ColorTools.SetConsoleColor(KernelColorType.Background, true);
+            KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             ConsoleBase.ConsoleWrapper.Clear();
         }
 

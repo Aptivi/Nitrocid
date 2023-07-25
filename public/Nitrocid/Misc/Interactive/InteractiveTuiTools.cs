@@ -87,7 +87,7 @@ namespace KS.Misc.Interactive
                 }
 
                 // Clear the console to clean up
-                ColorTools.LoadBack();
+                KernelColorTools.LoadBack();
                 
                 // If there is a crash, notify the user about it
                 if (notifyCrash)
@@ -152,7 +152,7 @@ namespace KS.Misc.Interactive
             // Redraw the entire TUI screen
             if (BaseInteractiveTui.RedrawRequired)
             {
-                ColorTools.LoadBack(BaseInteractiveTui.BackgroundColor, true);
+                KernelColorTools.LoadBack(BaseInteractiveTui.BackgroundColor, true);
 
                 // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
                 // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)

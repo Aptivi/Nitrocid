@@ -18,12 +18,12 @@
 
 using System;
 using ColorSeq;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -228,7 +228,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleBase.ConsoleWrapper.Clear();
 
             // Write date and time
-            ColorTools.SetConsoleColor(ChangeDateAndTimeColor());
+            KernelColorTools.SetConsoleColor(ChangeDateAndTimeColor());
             TextWriterWhereColor.WriteWhere(TimeDateRenderers.RenderDate(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderDate().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d - 1d));
             TextWriterWhereColor.WriteWhere(TimeDateRenderers.RenderTime(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderTime().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d));
 

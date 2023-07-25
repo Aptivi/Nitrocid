@@ -19,12 +19,12 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -274,8 +274,8 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(BouncingTextSettings.BouncingTextForegroundColor));
-            ColorTools.LoadBack(new Color(BouncingTextSettings.BouncingTextBackgroundColor), true);
+            KernelColorTools.SetConsoleColor(new Color(BouncingTextSettings.BouncingTextForegroundColor));
+            KernelColorTools.LoadBack(new Color(BouncingTextSettings.BouncingTextBackgroundColor), true);
             RowText = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
             ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
             ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);

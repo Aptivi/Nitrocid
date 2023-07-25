@@ -73,8 +73,8 @@ namespace KS.Misc.Calendar
                     var WeekendOptions = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
                     {
                         ColoredCell = true,
-                        CellColor = ColorTools.GetColor(KernelColorType.WeekendDay),
-                        CellBackgroundColor = ColorTools.GetColor(KernelColorType.Background)
+                        CellColor = KernelColorTools.GetColor(KernelColorType.WeekendDay),
+                        CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background)
                     };
                     CalendarCellOptions.Add(WeekendOptions);
                 }
@@ -85,8 +85,8 @@ namespace KS.Misc.Calendar
                     var TodayOptions = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
                     {
                         ColoredCell = true,
-                        CellColor = ColorTools.GetColor(KernelColorType.TodayDay),
-                        CellBackgroundColor = ColorTools.GetColor(KernelColorType.Background)
+                        CellColor = KernelColorTools.GetColor(KernelColorType.TodayDay),
+                        CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background)
                     };
                     CalendarCellOptions.Add(TodayOptions);
                 }
@@ -107,8 +107,8 @@ namespace KS.Misc.Calendar
                         var EventCell = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
                         {
                             ColoredCell = true,
-                            CellColor = ColorTools.GetColor(KernelColorType.EventDay),
-                            CellBackgroundColor = ColorTools.GetColor(KernelColorType.Background)
+                            CellColor = KernelColorTools.GetColor(KernelColorType.EventDay),
+                            CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background)
                         };
                         CalendarCellOptions.Add(EventCell);
                         EventMarked = true;

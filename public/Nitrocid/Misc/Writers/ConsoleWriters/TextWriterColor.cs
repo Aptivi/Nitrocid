@@ -23,7 +23,6 @@ using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Drivers;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {
@@ -108,14 +107,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    ColorTools.SetConsoleColor(colorType, Highlight);
+                    KernelColorTools.SetConsoleColor(colorType, Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        ColorTools.SetConsoleColor(colorType);
-                        ColorTools.SetConsoleColor(KernelColorType.Background, true);
+                        KernelColorTools.SetConsoleColor(colorType);
+                        KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
                         WritePlain("", Line);
                     }
                     else
@@ -157,15 +156,15 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    ColorTools.SetConsoleColor(colorTypeForeground, Highlight);
-                    ColorTools.SetConsoleColor(colorTypeBackground, !Highlight);
+                    KernelColorTools.SetConsoleColor(colorTypeForeground, Highlight);
+                    KernelColorTools.SetConsoleColor(colorTypeBackground, !Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        ColorTools.SetConsoleColor(colorTypeForeground);
-                        ColorTools.SetConsoleColor(colorTypeBackground, true);
+                        KernelColorTools.SetConsoleColor(colorTypeForeground);
+                        KernelColorTools.SetConsoleColor(colorTypeBackground, true);
                         WritePlain("", Line);
                     }
                     else
@@ -205,14 +204,14 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    ColorTools.SetConsoleColor(new Color(color), Highlight);
+                    KernelColorTools.SetConsoleColor(new Color(color), Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        ColorTools.SetConsoleColor(new Color(color));
-                        ColorTools.SetConsoleColor(KernelColorType.Background, true);
+                        KernelColorTools.SetConsoleColor(new Color(color));
+                        KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
                         WritePlain("", Line);
                     }
                     else
@@ -254,15 +253,15 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    ColorTools.SetConsoleColor(new Color(ForegroundColor), Highlight);
-                    ColorTools.SetConsoleColor(new Color(BackgroundColor), !Highlight);
+                    KernelColorTools.SetConsoleColor(new Color(ForegroundColor), Highlight);
+                    KernelColorTools.SetConsoleColor(new Color(BackgroundColor), !Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        ColorTools.SetConsoleColor(new Color(ForegroundColor));
-                        ColorTools.SetConsoleColor(new Color(BackgroundColor), true);
+                        KernelColorTools.SetConsoleColor(new Color(ForegroundColor));
+                        KernelColorTools.SetConsoleColor(new Color(BackgroundColor), true);
                         WritePlain("", Line);
                     }
                     else
@@ -302,15 +301,15 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    ColorTools.SetConsoleColor(color, Highlight, Highlight);
-                    ColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, Highlight);
+                    KernelColorTools.SetConsoleColor(color, Highlight, Highlight);
+                    KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        ColorTools.SetConsoleColor(color);
-                        ColorTools.SetConsoleColor(KernelColorType.Background, true);
+                        KernelColorTools.SetConsoleColor(color);
+                        KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
                         WritePlain("", Line);
                     }
                     else
@@ -352,15 +351,15 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    ColorTools.SetConsoleColor(ForegroundColor, Highlight, Highlight);
-                    ColorTools.SetConsoleColor(BackgroundColor, !Highlight, Highlight);
+                    KernelColorTools.SetConsoleColor(ForegroundColor, Highlight, Highlight);
+                    KernelColorTools.SetConsoleColor(BackgroundColor, !Highlight, Highlight);
 
                     // Write the text to console
                     if (Highlight)
                     {
                         WritePlain(Text, false, vars);
-                        ColorTools.SetConsoleColor(ForegroundColor);
-                        ColorTools.SetConsoleColor(BackgroundColor, true);
+                        KernelColorTools.SetConsoleColor(ForegroundColor);
+                        KernelColorTools.SetConsoleColor(BackgroundColor, true);
                         WritePlain("", Line);
                     }
                     else

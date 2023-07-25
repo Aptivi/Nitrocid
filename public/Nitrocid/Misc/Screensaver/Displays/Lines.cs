@@ -19,11 +19,11 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -266,20 +266,20 @@ namespace KS.Misc.Screensaver.Displays
             // Select a color
             if (LinesSettings.LinesTrueColor)
             {
-                ColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor), true);
+                KernelColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor), true);
                 int RedColorNum = RandomDriver.Random(LinesSettings.LinesMinimumRedColorLevel, LinesSettings.LinesMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(LinesSettings.LinesMinimumGreenColorLevel, LinesSettings.LinesMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(LinesSettings.LinesMinimumBlueColorLevel, LinesSettings.LinesMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                ColorTools.SetConsoleColor(ColorStorage);
+                KernelColorTools.SetConsoleColor(ColorStorage);
             }
             else
             {
-                ColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor), true);
+                KernelColorTools.LoadBack(new Color(LinesSettings.LinesBackgroundColor), true);
                 int color = RandomDriver.Random(LinesSettings.LinesMinimumColorLevel, LinesSettings.LinesMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
-                ColorTools.SetConsoleColor(new Color(color));
+                KernelColorTools.SetConsoleColor(new Color(color));
             }
 
             // Draw a line

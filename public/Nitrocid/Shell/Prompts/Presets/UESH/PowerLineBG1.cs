@@ -27,7 +27,6 @@ using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Network.Base;
 using KS.Users;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
@@ -70,14 +69,14 @@ namespace KS.Shell.Prompts.Presets.UESH
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
 
             // Present final string
@@ -97,7 +96,7 @@ namespace KS.Shell.Prompts.Presets.UESH
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

@@ -25,7 +25,6 @@ using KS.ConsoleBase.Colors;
 using KS.Files;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.ConsoleBase.Themes.Studio
 {
@@ -36,7 +35,7 @@ namespace KS.ConsoleBase.Themes.Studio
         /// Selected theme name
         /// </summary>
         internal static string SelectedThemeName = "";
-        internal static readonly Dictionary<KernelColorType, Color> SelectedColors = ColorTools.PopulateColorsCurrent();
+        internal static readonly Dictionary<KernelColorType, Color> SelectedColors = KernelColorTools.PopulateColorsCurrent();
 
         /// <summary>
         /// Saves theme to current directory under "<paramref name="Theme"/>.json."
@@ -102,7 +101,7 @@ namespace KS.ConsoleBase.Themes.Studio
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
             {
                 KernelColorType type = SelectedColors.Keys.ElementAt(typeIndex);
-                SelectedColors[type] = ColorTools.KernelColors[type];
+                SelectedColors[type] = KernelColorTools.KernelColors[type];
             }
         }
 

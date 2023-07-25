@@ -85,7 +85,7 @@ namespace KS.Network.SFTP.Filesystem
                         {
                             FileSize = DirListSFTP.Length;
                             ModDate = DirListSFTP.LastWriteTime;
-                            EntryBuilder.Append(ColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + TextTools.FormatString(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
+                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + TextTools.FormatString(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
                         }
                     }
                     else if (DirListSFTP.IsDirectory)

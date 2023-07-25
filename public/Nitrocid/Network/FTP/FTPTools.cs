@@ -264,7 +264,7 @@ namespace KS.Network.FTP
                     while (!(Answer.ToLower() == "y" | Answer.ToLower() == "n"))
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
-                        ColorTools.SetConsoleColor(ColorTools.GetColor(KernelColorType.Input));
+                        KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
                         Answer = Convert.ToString(Input.DetectKeypress().KeyChar);
                         TextWriterColor.Write();
                         DebugWriter.WriteDebug(DebugLevel.I, $"Answer is {Answer}");

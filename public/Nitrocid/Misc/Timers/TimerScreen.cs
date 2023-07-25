@@ -126,7 +126,7 @@ namespace KS.Misc.Timers
             }
 
             // Print the border
-            TextWriterWhereColor.WriteWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, ColorTools.GetGray());
+            TextWriterWhereColor.WriteWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray());
 
             // Wait for a keypress
             while (KeysKeypress != ConsoleKey.Escape)
@@ -315,12 +315,12 @@ namespace KS.Misc.Timers
                     for (int Position = FigletOldWidth - 1; Position <= FigletTimeLeftPosition - 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false, ColorTools.GetColor(KernelColorType.NeutralText), ColorTools.GetColor(KernelColorType.Background));
+                        TextWriterColor.Write(" ", false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background));
                     }
                     for (int Position = FigletOldWidthEnd; Position <= FigletTimeLeftEndPosition + 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false, ColorTools.GetColor(KernelColorType.NeutralText), ColorTools.GetColor(KernelColorType.Background));
+                        TextWriterColor.Write(" ", false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background));
                     }
                 }
             }

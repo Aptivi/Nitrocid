@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Animations.BSOD.Simulations
 {
@@ -27,8 +27,8 @@ namespace KS.Misc.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087), true);
-            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            KernelColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087), true);
+            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Windows header
             string headerText = " Windows ";

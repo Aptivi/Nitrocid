@@ -50,7 +50,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.Colors.ColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+            ConsoleBase.Colors.KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -234,7 +234,7 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ConsoleBase.Colors.ColorTools.LoadBack(col, true);
+                            ConsoleBase.Colors.KernelColorTools.LoadBack(col, true);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -302,12 +302,12 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Sleep
                             ThreadManager.SleepNoBlock(selectedFirst ? 3000 : 250, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                            ConsoleBase.Colors.ColorTools.LoadBack(black, true);
+                            ConsoleBase.Colors.KernelColorTools.LoadBack(black, true);
                         }
                         break;
                     case 7:
                         // Display time warp text
-                        ConsoleBase.Colors.ColorTools.LoadBack(darkGreen, true);
+                        ConsoleBase.Colors.KernelColorTools.LoadBack(darkGreen, true);
                         string timeWarpText = $"Time machine... Warping to {TimeDateRenderers.RenderDate(new DateTime(2018, 2, 22))}...";
                         int textPosX = (ConsoleWrapper.WindowWidth / 2) - (timeWarpText.Length / 2);
                         int textPosY = ConsoleWrapper.WindowHeight - 8;
@@ -446,7 +446,7 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ConsoleBase.Colors.ColorTools.LoadBack(col, true);
+                            ConsoleBase.Colors.KernelColorTools.LoadBack(col, true);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -471,7 +471,7 @@ namespace KS.Misc.Screensaver.Displays
 
             // Reset
             ConsoleResizeListener.WasResized();
-            ConsoleBase.Colors.ColorTools.LoadBack(black, true);
+            ConsoleBase.Colors.KernelColorTools.LoadBack(black, true);
         }
 
     }

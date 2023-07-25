@@ -23,8 +23,8 @@ using KS.Kernel.Configuration;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.Misc.Reflection;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -297,7 +297,7 @@ namespace KS.Misc.Screensaver.Displays
                     ThreadManager.SleepNoBlock(FireworksSettings.FireworksDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
                     ConsoleWrapper.Clear();
-                    ColorTools.SetConsoleColor(new Color(255, 255, 255), true, true);
+                    KernelColorTools.SetConsoleColor(new Color(255, 255, 255), true, true);
 
                     // Change positions
                     CurrentX += FireworkStepsX;
@@ -324,7 +324,7 @@ namespace KS.Misc.Screensaver.Displays
                     DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Right particle position: {0}", RightParticleX);
 
                     // Draw the explosion
-                    ColorTools.SetConsoleColor(IgniteColor, true, true);
+                    KernelColorTools.SetConsoleColor(IgniteColor, true, true);
                     if (UpperParticleY < ConsoleWrapper.WindowHeight)
                     {
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", IgnitePositionX, UpperParticleY);

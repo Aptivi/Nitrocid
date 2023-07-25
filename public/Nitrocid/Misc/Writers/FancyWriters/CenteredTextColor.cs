@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -59,7 +58,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, KernelColorType ColTypes, params object[] Vars) =>
-            WriteCentered(top, Text, ColorTools.GetColor(ColTypes), ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteCentered(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -70,7 +69,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            WriteCentered(top, Text, ColorTools.GetColor(colorTypeForeground), ColorTools.GetColor(colorTypeBackground), Vars);
+            WriteCentered(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -80,7 +79,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCentered(top, Text, new Color(Color), ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteCentered(top, Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -101,7 +100,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, Color Color, params object[] Vars) =>
-            WriteCentered(top, Text, Color, ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteCentered(top, Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draws a centered text

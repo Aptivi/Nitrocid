@@ -24,7 +24,6 @@ using KS.Misc.Presentation.Elements;
 using KS.Misc.Writers.ConsoleWriters;
 using System.Collections.Generic;
 using System.Linq;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Presentation
 {
@@ -83,7 +82,7 @@ namespace KS.Misc.Presentation
                                     "lobortis feugiat vivamus at. Scelerisque fermentum dui faucibus in ornare quam viverra. " +
                                     "Tincidunt nunc {2}pulvinar sapien {1}et ligula ullamcorper malesuada proin.",
                                     new Color(ConsoleColors.Green).VTSequenceForeground,
-                                    ColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground,
+                                    KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground,
                                     new Color(ConsoleColors.Yellow).VTSequenceForeground,
                                     new Color(ConsoleColors.Red).VTSequenceForeground
                                 }

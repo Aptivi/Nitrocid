@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Animations.BSOD.Simulations
@@ -27,8 +27,8 @@ namespace KS.Misc.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            ColorTools.LoadBack(new Color(ConsoleColors.Black), true);
-            ColorTools.SetConsoleColor(new Color(ConsoleColors.White));
+            KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a null pointer dereference
             TextWriterColor.Write(

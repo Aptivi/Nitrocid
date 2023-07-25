@@ -19,12 +19,12 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -357,7 +357,7 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Make a new instance
                 var RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                ColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true, true);
+                KernelColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true, true);
 
                 // Try to fill the ramp
                 int RampSubgradientStepsMade = 0;
@@ -398,7 +398,7 @@ namespace KS.Misc.Screensaver.Displays
                         RampSubgradientCurrentColorBlue = 0;
                     }
                     RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                    ColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true, true);
+                    KernelColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true, true);
                 }
 
                 // Change the colors

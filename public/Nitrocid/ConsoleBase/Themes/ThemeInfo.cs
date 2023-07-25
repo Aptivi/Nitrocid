@@ -23,7 +23,6 @@ using System.Linq;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
 using Newtonsoft.Json.Linq;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -33,7 +32,7 @@ namespace KS.ConsoleBase.Themes
     public class ThemeInfo
     {
 
-        internal readonly Dictionary<KernelColorType, Color> ThemeColors = ColorTools.PopulateColorsEmpty();
+        internal readonly Dictionary<KernelColorType, Color> ThemeColors = KernelColorTools.PopulateColorsEmpty();
 
         /// <summary>
         /// Theme name

@@ -22,11 +22,11 @@ using System.Linq;
 using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -229,7 +229,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -270,15 +270,15 @@ namespace KS.Misc.Screensaver.Displays
 
                     if (!ConsoleResizeListener.WasResized(false))
                     {
-                        ColorTools.SetConsoleColor(Color.Empty);
-                        ColorTools.SetConsoleColor(colorStorage, true, true);
+                        KernelColorTools.SetConsoleColor(Color.Empty);
+                        KernelColorTools.SetConsoleColor(colorStorage, true, true);
                         TextWriterColor.WritePlain(" ", false);
                     }
                     else
                     {
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                         ColorFilled = false;
-                        ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                        KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
                         CoveredPositions.Clear();
                     }
                 }
@@ -299,13 +299,13 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(Left, Top);
-                    ColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
+                    KernelColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
                     ConsoleWrapper.Write(" ");
                     if (CoveredPositions.Count == (EndLeft + 1) * (EndTop + 1))
                     {
                         DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                         ColorFilled = false;
-                        ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                        KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
                         CoveredPositions.Clear();
                     }
                 }
@@ -313,7 +313,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
-                    ColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                    KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
                     CoveredPositions.Clear();
                 }
             }

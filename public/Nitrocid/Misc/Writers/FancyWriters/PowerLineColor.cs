@@ -23,7 +23,6 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.FancyWriters.Tools;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using System.Collections.Generic;
 using KS.Misc.Writers.ConsoleWriters;
 
@@ -41,7 +40,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Segments">Segments to write</param>
         /// <param name="Line">Write new line after writing the segments</param>
         public static void WritePowerLinePlain(List<PowerLineSegment> Segments, bool Line = false) =>
-            WritePowerLine(Segments, ColorTools.GetColor(KernelColorType.Background), Line);
+            WritePowerLine(Segments, KernelColorTools.GetColor(KernelColorType.Background), Line);
 
         /// <summary>
         /// Writes the PowerLine text
@@ -50,7 +49,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="EndingColor">A type of colors that will be changed at the end of the transition</param>
         /// <param name="Line">Write new line after writing the segments</param>
         public static void WritePowerLine(List<PowerLineSegment> Segments, KernelColorType EndingColor, bool Line = false) =>
-            WritePowerLine(Segments, ColorTools.GetColor(EndingColor), Line);
+            WritePowerLine(Segments, KernelColorTools.GetColor(EndingColor), Line);
 
         /// <summary>
         /// Writes the PowerLine text

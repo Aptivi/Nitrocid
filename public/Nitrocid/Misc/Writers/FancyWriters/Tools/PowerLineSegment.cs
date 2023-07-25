@@ -18,7 +18,6 @@
 
 using ColorSeq;
 using KS.ConsoleBase.Colors;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.FancyWriters.Tools
 {
@@ -30,12 +29,12 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         /// <summary>
         /// Foreground color of the segment
         /// </summary>
-        public Color SegmentForeground { get; } = ColorTools.GetColor(KernelColorType.NeutralText);
+        public Color SegmentForeground { get; } = KernelColorTools.GetColor(KernelColorType.NeutralText);
 
         /// <summary>
         /// Background color or next segment transition color of the segment
         /// </summary>
-        public Color SegmentBackground { get; } = ColorTools.GetColor(KernelColorType.Background);
+        public Color SegmentBackground { get; } = KernelColorTools.GetColor(KernelColorType.Background);
 
         /// <summary>
         /// Segment icon. This should be an iconic character.

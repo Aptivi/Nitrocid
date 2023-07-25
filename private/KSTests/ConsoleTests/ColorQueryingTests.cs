@@ -37,7 +37,7 @@ namespace KSTests.ConsoleTests
         public bool TestTryParseColorFromHex(string TargetHex)
         {
             Debug.WriteLine($"Trying {TargetHex}...");
-            return ColorTools.TryParseColor(TargetHex);
+            return KernelColorTools.TryParseColor(TargetHex);
         }
 
         /// <summary>
@@ -50,7 +50,7 @@ namespace KSTests.ConsoleTests
         public bool TestTryParseColorFromColorNum(int TargetColorNum)
         {
             Debug.WriteLine($"Trying colornum {TargetColorNum}...");
-            return ColorTools.TryParseColor(TargetColorNum);
+            return KernelColorTools.TryParseColor(TargetColorNum);
         }
 
         /// <summary>
@@ -75,7 +75,7 @@ namespace KSTests.ConsoleTests
         public bool TestTryParseColorFromRGB(int R, int G, int B)
         {
             Debug.WriteLine($"Trying rgb {R}, {G}, {B}...");
-            return ColorTools.TryParseColor(R, G, B);
+            return KernelColorTools.TryParseColor(R, G, B);
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace KSTests.ConsoleTests
         public bool TestTryParseColorFromSpecifier(string specifier)
         {
             Debug.WriteLine($"Trying rgb specifier {specifier}...");
-            return ColorTools.TryParseColor(specifier);
+            return KernelColorTools.TryParseColor(specifier);
         }
 
         /// <summary>
@@ -111,7 +111,7 @@ namespace KSTests.ConsoleTests
         public void TestConvertFromHexToRGB()
         {
             Debug.WriteLine("Converting #0F0F0F...");
-            ColorTools.ConvertFromHexToRGB("#0F0F0F").ShouldBe("15;15;15");
+            KernelColorTools.ConvertFromHexToRGB("#0F0F0F").ShouldBe("15;15;15");
         }
 
         /// <summary>
@@ -122,7 +122,7 @@ namespace KSTests.ConsoleTests
         public void TestConvertFromRGBSequenceToHex()
         {
             Debug.WriteLine("Converting 15;15;15...");
-            ColorTools.ConvertFromRGBToHex("15;15;15").ShouldBe("#0F0F0F");
+            KernelColorTools.ConvertFromRGBToHex("15;15;15").ShouldBe("#0F0F0F");
         }
 
         /// <summary>
@@ -133,7 +133,7 @@ namespace KSTests.ConsoleTests
         public void TestConvertFromRGBNumbersToHex()
         {
             Debug.WriteLine("Converting 15, 15, 15...");
-            ColorTools.ConvertFromRGBToHex(15, 15, 15).ShouldBe("#0F0F0F");
+            KernelColorTools.ConvertFromRGBToHex(15, 15, 15).ShouldBe("#0F0F0F");
         }
 
     }

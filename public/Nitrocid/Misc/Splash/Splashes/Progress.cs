@@ -24,7 +24,6 @@ using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 
@@ -152,7 +151,7 @@ namespace KS.Misc.Splash.Splashes
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar
-            if (!string.IsNullOrEmpty(Config.SplashConfig.ProgressProgressColor) & ColorTools.TryParseColor(Config.SplashConfig.ProgressProgressColor))
+            if (!string.IsNullOrEmpty(Config.SplashConfig.ProgressProgressColor) & KernelColorTools.TryParseColor(Config.SplashConfig.ProgressProgressColor))
             {
                 var ProgressColor = new Color(Config.SplashConfig.ProgressProgressColor);
                 ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, ProgressColor);

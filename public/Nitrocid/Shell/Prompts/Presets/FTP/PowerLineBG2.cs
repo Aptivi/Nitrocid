@@ -23,7 +23,6 @@ using KS.Shell.Shells.FTP;
 using KS.Misc.Writers.FancyWriters.Tools;
 using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Shell.Prompts.Presets.FTP
 {
@@ -65,7 +64,7 @@ namespace KS.Shell.Prompts.Presets.FTP
             var PresetStringBuilder = new StringBuilder();
 
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();
@@ -84,7 +83,7 @@ namespace KS.Shell.Prompts.Presets.FTP
 
             // Use RenderSegments to render our segments
             PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
-            PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string
             return PresetStringBuilder.ToString();

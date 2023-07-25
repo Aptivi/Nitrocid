@@ -25,7 +25,6 @@ using KS.Misc.Reflection;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
 using System;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -148,12 +147,12 @@ namespace KS.Misc.Screensaver.Displays
                     else
                     {
                         // Show only the white background
-                        ColorTools.LoadBack(new Color(ConsoleColors.White), true);
+                        KernelColorTools.LoadBack(new Color(ConsoleColors.White), true);
                         ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        ColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+                        KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
                     }
                 }
-                ColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+                KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
             }
             ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

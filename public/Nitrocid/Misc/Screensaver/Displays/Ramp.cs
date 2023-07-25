@@ -19,12 +19,12 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -504,18 +504,18 @@ namespace KS.Misc.Screensaver.Displays
             // Draw the frame
             if (!ConsoleResizeListener.WasResized(false))
             {
-                TextWriterWhereColor.WriteWhere(RampSettings.RampUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.Write(new string(RampSettings.RampUpperFrameChar, RampFrameSpaces), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperFrameColor) : ColorTools.GetGray());
-                TextWriterColor.Write(RampSettings.RampUpperRightCornerChar.ToString(), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperRightCornerColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition - 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition + 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition - 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampRightFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampRightFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition + 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampRightFrameColor) : ColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(RampSettings.RampLowerLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition + 2, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerLeftCornerColor) : ColorTools.GetGray());
-                TextWriterColor.Write(new string(RampSettings.RampLowerFrameChar, RampFrameSpaces), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerFrameColor) : ColorTools.GetGray());
-                TextWriterColor.Write(RampSettings.RampLowerRightCornerChar.ToString(), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerRightCornerColor) : ColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperLeftCornerColor) : KernelColorTools.GetGray());
+                TextWriterColor.Write(new string(RampSettings.RampUpperFrameChar, RampFrameSpaces), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperFrameColor) : KernelColorTools.GetGray());
+                TextWriterColor.Write(RampSettings.RampUpperRightCornerChar.ToString(), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampUpperRightCornerColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition - 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition + 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLeftFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition - 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampRightFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampRightFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition + 1, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampRightFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhere(RampSettings.RampLowerLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition + 2, false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerLeftCornerColor) : KernelColorTools.GetGray());
+                TextWriterColor.Write(new string(RampSettings.RampLowerFrameChar, RampFrameSpaces), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerFrameColor) : KernelColorTools.GetGray());
+                TextWriterColor.Write(RampSettings.RampLowerRightCornerChar.ToString(), false, RampSettings.RampUseBorderColors ? new Color(RampSettings.RampLowerRightCornerColor) : KernelColorTools.GetGray());
             }
 
             // Draw the ramp
@@ -528,7 +528,7 @@ namespace KS.Misc.Screensaver.Displays
                 var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
 
                 // Set the console color and fill the ramp!
-                ColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
+                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
                 while (!(Convert.ToInt32(RampCurrentColorRed) == RedColorNumTo & Convert.ToInt32(RampCurrentColorGreen) == GreenColorNumTo & Convert.ToInt32(RampCurrentColorBlue) == BlueColorNumTo))
                 {
                     if (ConsoleResizeListener.WasResized(false))
@@ -547,7 +547,7 @@ namespace KS.Misc.Screensaver.Displays
                     RampCurrentColorBlue -= RampColorBlueSteps;
                     DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
                     RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
-                    ColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
+                    KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -560,7 +560,7 @@ namespace KS.Misc.Screensaver.Displays
                 var RampCurrentColorInstance = new Color(Convert.ToInt32(RampCurrentColor));
 
                 // Set the console color and fill the ramp!
-                ColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
+                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
                 while (Convert.ToInt32(RampCurrentColor) != ColorNumTo)
                 {
                     if (ConsoleResizeListener.WasResized(false))
@@ -577,7 +577,7 @@ namespace KS.Misc.Screensaver.Displays
                     RampCurrentColor -= RampColorSteps;
                     DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got new current colors (Normal: {0}) subtracting from {1}", RampCurrentColor, RampColorSteps);
                     RampCurrentColorInstance = new Color(Convert.ToInt32(RampCurrentColor));
-                    ColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
+                    KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

@@ -23,7 +23,6 @@ using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Drivers;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.ConsoleWriters
 {
@@ -120,7 +119,7 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    ColorTools.SetConsoleColor(colorType);
+                    KernelColorTools.SetConsoleColor(colorType);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
@@ -176,8 +175,8 @@ namespace KS.Misc.Writers.ConsoleWriters
                 try
                 {
                     // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                    ColorTools.SetConsoleColor(colorTypeForeground);
-                    ColorTools.SetConsoleColor(colorTypeBackground, true);
+                    KernelColorTools.SetConsoleColor(colorTypeForeground);
+                    KernelColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
@@ -229,8 +228,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(new Color(color));
-                    ColorTools.SetConsoleColor(KernelColorType.Background, true);
+                    KernelColorTools.SetConsoleColor(new Color(color));
+                    KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
@@ -285,8 +284,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(new Color(ForegroundColor));
-                    ColorTools.SetConsoleColor(new Color(BackgroundColor));
+                    KernelColorTools.SetConsoleColor(new Color(ForegroundColor));
+                    KernelColorTools.SetConsoleColor(new Color(BackgroundColor));
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
@@ -338,8 +337,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(color);
-                    ColorTools.SetConsoleColor(KernelColorType.Background, true);
+                    KernelColorTools.SetConsoleColor(color);
+                    KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);
@@ -394,8 +393,8 @@ namespace KS.Misc.Writers.ConsoleWriters
             {
                 try
                 {
-                    ColorTools.SetConsoleColor(ForegroundColor);
-                    ColorTools.SetConsoleColor(BackgroundColor, true);
+                    KernelColorTools.SetConsoleColor(ForegroundColor);
+                    KernelColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     WriteWhere(msg, Left, Top, Return, RightMargin, vars);

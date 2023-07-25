@@ -26,7 +26,6 @@ using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -61,8 +60,8 @@ namespace KS.Misc.Screensaver.Displays
     public class BloomDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Color nextColor = ColorTools.GetRandomColor(ColorType.TrueColor);
-        private Color currentColor = ColorTools.GetRandomColor(ColorType.TrueColor);
+        private Color nextColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
+        private Color currentColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
         private readonly int steps = 100;
 
         /// <inheritdoc/>
@@ -94,7 +93,7 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Now, make a color and fill the console with it
                 Color col = new((int)currentR, (int)currentG, (int)currentB);
-                ColorTools.LoadBack(col, true);
+                KernelColorTools.LoadBack(col, true);
 
                 // Sleep
                 ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -102,7 +101,7 @@ namespace KS.Misc.Screensaver.Displays
 
             // Generate new colors
             currentColor = nextColor;
-            nextColor = ColorTools.GetRandomColor(ColorType.TrueColor);
+            nextColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
             ThreadManager.SleepNoBlock(BloomSettings.BloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync

@@ -23,7 +23,6 @@ using KS.ConsoleBase.Colors;
 using KS.Drivers;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -100,7 +99,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, KernelColorType ColTypes, params object[] Vars) =>
-            WriteSeparator(Text, PrintSuffix, ColorTools.GetColor(ColTypes), ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteSeparator(Text, PrintSuffix, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -111,7 +110,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            WriteSeparator(Text, PrintSuffix, ColorTools.GetColor(colorTypeForeground), ColorTools.GetColor(colorTypeBackground), Vars);
+            WriteSeparator(Text, PrintSuffix, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -121,7 +120,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, ConsoleColors Color, params object[] Vars) =>
-            WriteSeparator(Text, PrintSuffix, new Color(Color), ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteSeparator(Text, PrintSuffix, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -142,7 +141,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteSeparator(string Text, bool PrintSuffix, Color Color, params object[] Vars) =>
-            WriteSeparator(Text, PrintSuffix, Color, ColorTools.GetColor(KernelColorType.Background), Vars);
+            WriteSeparator(Text, PrintSuffix, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a separator with text

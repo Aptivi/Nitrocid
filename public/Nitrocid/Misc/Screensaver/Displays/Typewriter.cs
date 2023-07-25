@@ -20,13 +20,13 @@ using System;
 using System.IO;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Misc.Threading;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -160,7 +160,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ColorTools.SetConsoleColor(new Color(TypewriterSettings.TypewriterTextColor));
+            KernelColorTools.SetConsoleColor(new Color(TypewriterSettings.TypewriterTextColor));
             ConsoleWrapper.Clear();
         }
 

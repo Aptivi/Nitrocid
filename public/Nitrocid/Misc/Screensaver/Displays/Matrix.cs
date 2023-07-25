@@ -25,7 +25,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
+using ColorTools = KS.ConsoleBase.Colors.KernelColorTools;
 
 namespace KS.Misc.Screensaver.Displays
 {

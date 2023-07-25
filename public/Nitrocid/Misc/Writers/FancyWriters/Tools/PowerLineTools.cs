@@ -23,7 +23,6 @@ using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.FancyWriters.Tools
 {
@@ -37,7 +36,7 @@ namespace KS.Misc.Writers.FancyWriters.Tools
         /// </summary>
         /// <param name="segments">List of segments to render</param>
         public static string RenderSegments(List<PowerLineSegment> segments) =>
-            RenderSegments(segments, ColorTools.GetColor(KernelColorType.Background));
+            RenderSegments(segments, KernelColorTools.GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Renders the segments

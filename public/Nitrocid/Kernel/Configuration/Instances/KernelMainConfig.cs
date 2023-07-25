@@ -55,7 +55,6 @@ using KS.Drivers.Network;
 using KS.Drivers.Filesystem;
 using KS.Drivers.Encryption;
 using KS.Drivers.Regexp;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using static KS.ConsoleBase.Inputs.Styles.ChoiceStyle;
 using static KS.Misc.Games.SpeedPress;
 using KS.ConsoleBase.Inputs.Styles;
@@ -216,336 +215,336 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public string UserNameShellColor
         {
-            get => ColorTools.GetColor(KernelColorType.UserNameShell).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.UserNameShell, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.UserNameShell).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.UserNameShell, new Color(value));
         }
         /// <summary>
         /// Host Name Shell Color
         /// </summary>
         public string HostNameShellColor
         {
-            get => ColorTools.GetColor(KernelColorType.HostNameShell).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.HostNameShell, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.HostNameShell).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.HostNameShell, new Color(value));
         }
         /// <summary>
         /// Continuable Kernel Error Color
         /// </summary>
         public string ContinuableKernelErrorColor
         {
-            get => ColorTools.GetColor(KernelColorType.ContKernelError).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.ContKernelError, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.ContKernelError).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.ContKernelError, new Color(value));
         }
         /// <summary>
         /// Uncontinuable Kernel Error Color
         /// </summary>
         public string UncontinuableKernelErrorColor
         {
-            get => ColorTools.GetColor(KernelColorType.UncontKernelError).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.UncontKernelError, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.UncontKernelError).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.UncontKernelError, new Color(value));
         }
         /// <summary>
         /// Text Color
         /// </summary>
         public string TextColor
         {
-            get => ColorTools.GetColor(KernelColorType.NeutralText).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NeutralText, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.NeutralText).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.NeutralText, new Color(value));
         }
         /// <summary>
         /// License Color
         /// </summary>
         public string LicenseColor
         {
-            get => ColorTools.GetColor(KernelColorType.License).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.License, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.License).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.License, new Color(value));
         }
         /// <summary>
         /// Background Color
         /// </summary>
         public string BackgroundColor
         {
-            get => ColorTools.GetColor(KernelColorType.Background).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Background, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Background).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Background, new Color(value));
         }
         /// <summary>
         /// Input Color
         /// </summary>
         public string InputColor
         {
-            get => ColorTools.GetColor(KernelColorType.Input).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Input, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Input).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Input, new Color(value));
         }
         /// <summary>
         /// List Entry Color
         /// </summary>
         public string ListEntryColor
         {
-            get => ColorTools.GetColor(KernelColorType.ListEntry).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.ListEntry, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.ListEntry).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.ListEntry, new Color(value));
         }
         /// <summary>
         /// List Value Color
         /// </summary>
         public string ListValueColor
         {
-            get => ColorTools.GetColor(KernelColorType.ListValue).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.ListValue, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.ListValue).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.ListValue, new Color(value));
         }
         /// <summary>
         /// Kernel Stage Color
         /// </summary>
         public string KernelStageColor
         {
-            get => ColorTools.GetColor(KernelColorType.Stage).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Stage, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Stage).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Stage, new Color(value));
         }
         /// <summary>
         /// Error Text Color
         /// </summary>
         public string ErrorTextColor
         {
-            get => ColorTools.GetColor(KernelColorType.Error).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Error, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Error).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Error, new Color(value));
         }
         /// <summary>
         /// Warning Text Color
         /// </summary>
         public string WarningTextColor
         {
-            get => ColorTools.GetColor(KernelColorType.Warning).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Warning, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Warning).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Warning, new Color(value));
         }
         /// <summary>
         /// Option Color
         /// </summary>
         public string OptionColor
         {
-            get => ColorTools.GetColor(KernelColorType.Option).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Option, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Option).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Option, new Color(value));
         }
         /// <summary>
         /// Banner Color
         /// </summary>
         public string BannerColor
         {
-            get => ColorTools.GetColor(KernelColorType.Banner).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Banner, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Banner).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Banner, new Color(value));
         }
         /// <summary>
         /// Notification Title Color
         /// </summary>
         public string NotificationTitleColor
         {
-            get => ColorTools.GetColor(KernelColorType.NotificationTitle).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NotificationTitle, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.NotificationTitle).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.NotificationTitle, new Color(value));
         }
         /// <summary>
         /// Notification Description Color
         /// </summary>
         public string NotificationDescriptionColor
         {
-            get => ColorTools.GetColor(KernelColorType.NotificationDescription).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NotificationDescription, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.NotificationDescription).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.NotificationDescription, new Color(value));
         }
         /// <summary>
         /// Notification Progress Color
         /// </summary>
         public string NotificationProgressColor
         {
-            get => ColorTools.GetColor(KernelColorType.NotificationProgress).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NotificationProgress, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.NotificationProgress).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.NotificationProgress, new Color(value));
         }
         /// <summary>
         /// Notification Failure Color
         /// </summary>
         public string NotificationFailureColor
         {
-            get => ColorTools.GetColor(KernelColorType.NotificationFailure).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.NotificationFailure, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.NotificationFailure).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.NotificationFailure, new Color(value));
         }
         /// <summary>
         /// Question Color
         /// </summary>
         public string QuestionColor
         {
-            get => ColorTools.GetColor(KernelColorType.Question).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Question, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Question).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Question, new Color(value));
         }
         /// <summary>
         /// Success Color
         /// </summary>
         public string SuccessColor
         {
-            get => ColorTools.GetColor(KernelColorType.Success).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Success, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Success).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Success, new Color(value));
         }
         /// <summary>
         /// User Dollar Color
         /// </summary>
         public string UserDollarColor
         {
-            get => ColorTools.GetColor(KernelColorType.UserDollar).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.UserDollar, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.UserDollar).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.UserDollar, new Color(value));
         }
         /// <summary>
         /// Tip Color
         /// </summary>
         public string TipColor
         {
-            get => ColorTools.GetColor(KernelColorType.Tip).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Tip, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Tip).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Tip, new Color(value));
         }
         /// <summary>
         /// Separator Text Color
         /// </summary>
         public string SeparatorTextColor
         {
-            get => ColorTools.GetColor(KernelColorType.SeparatorText).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.SeparatorText, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.SeparatorText).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.SeparatorText, new Color(value));
         }
         /// <summary>
         /// Separator Color
         /// </summary>
         public string SeparatorColor
         {
-            get => ColorTools.GetColor(KernelColorType.Separator).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Separator, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Separator).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Separator, new Color(value));
         }
         /// <summary>
         /// List Title Color
         /// </summary>
         public string ListTitleColor
         {
-            get => ColorTools.GetColor(KernelColorType.ListTitle).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.ListTitle, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.ListTitle).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.ListTitle, new Color(value));
         }
         /// <summary>
         /// Development Warning Color
         /// </summary>
         public string DevelopmentWarningColor
         {
-            get => ColorTools.GetColor(KernelColorType.DevelopmentWarning).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.DevelopmentWarning, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.DevelopmentWarning).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.DevelopmentWarning, new Color(value));
         }
         /// <summary>
         /// Stage Time Color
         /// </summary>
         public string StageTimeColor
         {
-            get => ColorTools.GetColor(KernelColorType.StageTime).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.StageTime, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.StageTime).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.StageTime, new Color(value));
         }
         /// <summary>
         /// Progress Color
         /// </summary>
         public string ProgressColor
         {
-            get => ColorTools.GetColor(KernelColorType.Progress).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.Progress, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.Progress).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.Progress, new Color(value));
         }
         /// <summary>
         /// Back Option Color
         /// </summary>
         public string BackOptionColor
         {
-            get => ColorTools.GetColor(KernelColorType.BackOption).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.BackOption, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.BackOption).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.BackOption, new Color(value));
         }
         /// <summary>
         /// Low Priority Border Color
         /// </summary>
         public string LowPriorityBorderColor
         {
-            get => ColorTools.GetColor(KernelColorType.LowPriorityBorder).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.LowPriorityBorder, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.LowPriorityBorder).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.LowPriorityBorder, new Color(value));
         }
         /// <summary>
         /// Medium Priority Border Color
         /// </summary>
         public string MediumPriorityBorderColor
         {
-            get => ColorTools.GetColor(KernelColorType.MediumPriorityBorder).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.MediumPriorityBorder, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.MediumPriorityBorder).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.MediumPriorityBorder, new Color(value));
         }
         /// <summary>
         /// High Priority Border Color
         /// </summary>
         public string HighPriorityBorderColor
         {
-            get => ColorTools.GetColor(KernelColorType.HighPriorityBorder).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.HighPriorityBorder, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.HighPriorityBorder).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.HighPriorityBorder, new Color(value));
         }
         /// <summary>
         /// Table Separator Color
         /// </summary>
         public string TableSeparatorColor
         {
-            get => ColorTools.GetColor(KernelColorType.TableSeparator).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TableSeparator, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.TableSeparator).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TableSeparator, new Color(value));
         }
         /// <summary>
         /// Table Header Color
         /// </summary>
         public string TableHeaderColor
         {
-            get => ColorTools.GetColor(KernelColorType.TableHeader).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TableHeader, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.TableHeader).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TableHeader, new Color(value));
         }
         /// <summary>
         /// Table Value Color
         /// </summary>
         public string TableValueColor
         {
-            get => ColorTools.GetColor(KernelColorType.TableValue).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TableValue, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.TableValue).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TableValue, new Color(value));
         }
         /// <summary>
         /// Selected Option Color
         /// </summary>
         public string SelectedOptionColor
         {
-            get => ColorTools.GetColor(KernelColorType.SelectedOption).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.SelectedOption, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.SelectedOption).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.SelectedOption, new Color(value));
         }
         /// <summary>
         /// Alternative Option Color
         /// </summary>
         public string AlternativeOptionColor
         {
-            get => ColorTools.GetColor(KernelColorType.AlternativeOption).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.AlternativeOption, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.AlternativeOption).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.AlternativeOption, new Color(value));
         }
         /// <summary>
         /// Weekend Day Color
         /// </summary>
         public string WeekendDayColor
         {
-            get => ColorTools.GetColor(KernelColorType.WeekendDay).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.WeekendDay, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.WeekendDay).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.WeekendDay, new Color(value));
         }
         /// <summary>
         /// Event Day Color
         /// </summary>
         public string EventDayColor
         {
-            get => ColorTools.GetColor(KernelColorType.EventDay).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.EventDay, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.EventDay).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.EventDay, new Color(value));
         }
         /// <summary>
         /// Table Title Color
         /// </summary>
         public string TableTitleColor
         {
-            get => ColorTools.GetColor(KernelColorType.TableTitle).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TableTitle, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.TableTitle).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TableTitle, new Color(value));
         }
         /// <summary>
         /// Today Day Color
         /// </summary>
         public string TodayDayColor
         {
-            get => ColorTools.GetColor(KernelColorType.TodayDay).PlainSequence;
-            set => ColorTools.SetColor(KernelColorType.TodayDay, new Color(value));
+            get => KernelColorTools.GetColor(KernelColorType.TodayDay).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TodayDay, new Color(value));
         }
         /// <summary>
         /// Keep hardware probing messages silent.

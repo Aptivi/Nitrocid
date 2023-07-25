@@ -24,7 +24,6 @@ using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters.Tools;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 
 namespace KS.Misc.Writers.FancyWriters
 {
@@ -58,7 +57,7 @@ namespace KS.Misc.Writers.FancyWriters
         /// <param name="colorTypeValueForeground">A type of colors that will be changed for the value foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, KernelColorType colorTypeSeparatorForeground, KernelColorType colorTypeHeaderForeground, KernelColorType colorTypeValueForeground, KernelColorType colorTypeBackground, bool SeparateRows = true, List<CellOptions> CellOptions = null) =>
-            WriteTable(Headers, Rows, Margin, ColorTools.GetColor(colorTypeSeparatorForeground), ColorTools.GetColor(colorTypeHeaderForeground), ColorTools.GetColor(colorTypeValueForeground), ColorTools.GetColor(colorTypeBackground), SeparateRows, CellOptions);
+            WriteTable(Headers, Rows, Margin, KernelColorTools.GetColor(colorTypeSeparatorForeground), KernelColorTools.GetColor(colorTypeHeaderForeground), KernelColorTools.GetColor(colorTypeValueForeground), KernelColorTools.GetColor(colorTypeBackground), SeparateRows, CellOptions);
 
         /// <summary>
         /// Draw a table with text
@@ -131,8 +130,8 @@ namespace KS.Misc.Writers.FancyWriters
                 for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                 {
                     var ColoredCell = false;
-                    var CellColor = ColorTools.GetColor(KernelColorType.NeutralText);
-                    var CellBackgroundColor = ColorTools.GetColor(KernelColorType.Background);
+                    var CellColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+                    var CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
                     string RowValue = Rows[RowIndex, RowValueIndex];
                     int ColumnPosition = ColumnPositions[RowValueIndex];
                     RowValue ??= "";

@@ -41,7 +41,6 @@ using KS.Scripting;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using System.Reflection;
-using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using KS.ConsoleBase.Inputs;
 using KS.Misc.Contacts;
 using KS.Network.Base.Connections;
@@ -205,7 +204,7 @@ namespace KS.Kernel
                 Config.InitializeConfig();
 
             // Load background
-            ColorTools.LoadBack();
+            KernelColorTools.LoadBack();
 
             // Initialize top right date
             TimeDateTopRight.InitTopRightDate();

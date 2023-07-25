@@ -47,36 +47,36 @@ namespace KS.Shell.Prompts.Presets.UESH
             if (!Flags.Maintenance)
             {
                 // Opening
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append('[');
 
                 // Current username
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", UserManagement.CurrentUser.Username);
 
                 // "At" sign
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append('@');
 
                 // Current hostname
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", NetworkTools.HostName);
 
                 // Current directory
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("]{0}", CurrentDirectory.CurrentDir);
 
                 // User dollar sign
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.UserDollar).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserDollar).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat(" {0} ", UserDollarSign);
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
             else
             {
                 // Maintenance mode
-                PresetStringBuilder.Append(ColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
                 PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
-                PresetStringBuilder.Append(ColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
 
             // Present final string
