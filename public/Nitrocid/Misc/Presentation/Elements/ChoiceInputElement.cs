@@ -69,7 +69,7 @@ namespace KS.Misc.Presentation.Elements
                 }
 
                 // Write the part
-                TextWriterWhereColor.WriteWhere(split + (i == splitText.Length - 1 ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
+                TextWriterWhereColor.WriteWhere(split + (i == splitText.Length - 1 ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             }
 
             // Flatten the enumerables to their string value representations
@@ -84,7 +84,7 @@ namespace KS.Misc.Presentation.Elements
             }
 
             // Render the choices (with checking for bounds, again)
-            TextWriterWhereColor.WriteWhere("\n\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
+            TextWriterWhereColor.WriteWhere("\n\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             string[] finalChoices = choices.ToArray();
             int choiceNum = 1;
             foreach (string choice in finalChoices)
@@ -103,13 +103,13 @@ namespace KS.Misc.Presentation.Elements
                     }
 
                     // Write the part
-                    TextWriterWhereColor.WriteWhere(split + (choiceNum == finalChoices.Length ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
+                    TextWriterWhereColor.WriteWhere(split + (choiceNum == finalChoices.Length ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
                 }
                 choiceNum++;
             }
 
             // Get the input
-            TextWriterWhereColor.WriteWhere("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft);
+            TextWriterWhereColor.WriteWhere("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             while (!finalChoices.Contains(WrittenInput))
             {
                 ConsoleWrapper.CursorLeft = PresentationTools.PresentationUpperInnerBorderLeft;

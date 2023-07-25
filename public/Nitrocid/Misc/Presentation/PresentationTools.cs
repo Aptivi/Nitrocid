@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Misc.Text;
 using KS.Misc.Writers.ConsoleWriters;
@@ -79,7 +80,7 @@ namespace KS.Misc.Presentation
             ConsoleWrapper.CursorVisible = false;
 
             // Make a border
-            BorderColor.WriteBorder(PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop);
+            BorderColor.WriteBorder(PresentationUpperBorderLeft, PresentationUpperBorderTop, PresentationLowerInnerBorderLeft, PresentationLowerInnerBorderTop, KernelColorType.Separator);
 
             // Loop for each page
             var pages = presentation.Pages;
@@ -97,7 +98,7 @@ namespace KS.Misc.Presentation
                 TextWriterWhereColor.WriteWhere(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperBorderLeft, PresentationInformationalTop);
 
                 // Write the name and the page number
-                TextWriterWhereColor.WriteWhere($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1), PresentationUpperBorderLeft, PresentationInformationalTop);
+                TextWriterWhereColor.WriteWhere($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1), PresentationUpperBorderLeft, PresentationInformationalTop, KernelColorType.NeutralText);
 
                 // Clear the presentation screen
                 ClearPresentation();
