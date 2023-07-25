@@ -383,5 +383,9 @@ namespace KS.Kernel.Exceptions
         /// An error occurred in the time and date module. Check to make sure that you've specified the time and the date correctly, and that the time zone exists.
         /// </summary>
         TimeDate,
+        /// <summary>
+        /// An error occurred in the mod manual parser. Please ensure that your manual file is valid and that the mod is started.
+        /// </summary>
+        ModManual,
     }
 }

@@ -386,6 +386,7 @@ namespace KS.Modifications
         public static void InstallMod(string ModPath)
         {
             string TargetModPath = Filesystem.NeutralizePath(Path.GetFileName(ModPath), Paths.GetKernelPath(KernelPathType.Mods));
+            string ModName = Path.GetFileNameWithoutExtension(ModPath);
             IMod Script;
             ModPath = Filesystem.NeutralizePath(ModPath, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath);
@@ -436,7 +437,7 @@ namespace KS.Modifications
                     foreach (string ModManualFile in Directory.EnumerateFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories))
                     {
                         string ManualFileName = Path.GetFileNameWithoutExtension(ModManualFile);
-                        var ManualInstance = new Manual(ModManualFile);
+                        var ManualInstance = new Manual(ModName, ModManualFile);
                         if (!ManualInstance.ValidManpage)
                             throw new KernelException(KernelExceptionType.ModInstall, Translate.DoTranslation("The manual page {0} is invalid."), ManualFileName);
                         Copying.CopyFileOrDir(ModManualFile, TargetModPath + ".manual/" + ModManualFile);
@@ -462,6 +463,7 @@ namespace KS.Modifications
         public static void UninstallMod(string ModPath)
         {
             string TargetModPath = Filesystem.NeutralizePath(ModPath, Paths.GetKernelPath(KernelPathType.Mods), true);
+            string ModName = Path.GetFileNameWithoutExtension(ModPath);
             DebugWriter.WriteDebug(DebugLevel.I, "Uninstalling mod {0}...", TargetModPath);
             try
             {
@@ -475,19 +477,9 @@ namespace KS.Modifications
                 if (Checking.FolderExists(ModPath + ".manual"))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Found manual page directory. {0}.manual exists. Removing manual pages...", ModPath);
-                    foreach (string ModManualFile in Directory.EnumerateFiles(ModPath + ".manual", "*.man", SearchOption.AllDirectories))
-                    {
-                        string ManualFileName = Path.GetFileNameWithoutExtension(ModManualFile);
-                        var ManualInstance = new Manual(ModManualFile);
-                        if (ManualInstance.ValidManpage)
-                        {
-                            PageManager.Pages.Remove(ManualInstance.Title);
-                        }
-                        else
-                        {
-                            throw new KernelException(KernelExceptionType.ModUninstall, Translate.DoTranslation("The manual page {0} is invalid."), ManualFileName);
-                        }
-                    }
+                    var modManuals = PageManager.ListAllPagesByMod(ModName);
+                    foreach (var manual in modManuals)
+                        PageManager.RemoveManualPage(manual);
                     Directory.Delete(ModPath + ".manual", true);
                 }
             }
@@ -502,7 +494,8 @@ namespace KS.Modifications
         /// <summary>
         /// Lists the mods
         /// </summary>
-        public static Dictionary<string, ModInfo> ListMods() => ListMods("");
+        public static Dictionary<string, ModInfo> ListMods() =>
+            ListMods("");
 
         /// <summary>
         /// Lists the mods
@@ -524,16 +517,37 @@ namespace KS.Modifications
         }
 
         /// <summary>
-        /// Lists the mod commands based on the shell
+        /// Lists the mods
         /// </summary>
-        /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, CommandInfo> ListModCommands(ShellType ShellType) => ListModCommands(Shell.Shell.GetShellTypeName(ShellType));
+        /// <param name="SearchTerm">Search term</param>
+        public static Dictionary<string, ModInfo> ListModsStartingWith(string SearchTerm)
+        {
+            var ListedMods = new Dictionary<string, ModInfo>();
+
+            // List the mods using the search term
+            foreach (string ModName in Mods.Keys)
+            {
+                if (ModName.StartsWith(SearchTerm))
+                {
+                    ListedMods.Add(ModName, Mods[ModName]);
+                }
+            }
+            return ListedMods;
+        }
 
         /// <summary>
         /// Lists the mod commands based on the shell
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, CommandInfo> ListModCommands(string ShellType) => Shell.Shell.GetShellInfo(ShellType).ModCommands;
+        public static Dictionary<string, CommandInfo> ListModCommands(ShellType ShellType) =>
+            ListModCommands(Shell.Shell.GetShellTypeName(ShellType));
+
+        /// <summary>
+        /// Lists the mod commands based on the shell
+        /// </summary>
+        /// <param name="ShellType">Selected shell type</param>
+        public static Dictionary<string, CommandInfo> ListModCommands(string ShellType) =>
+            Shell.Shell.GetShellInfo(ShellType).ModCommands;
 
     }
 }

@@ -798,5 +798,15 @@ Time zone {0} not found
 To be continued...
 Photosensitive seizure warning
 This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. If you're sure to show this screensaver, press any key.
+An error occurred in the mod manual parser. Please ensure that your manual file is valid and that the mod is started.
+Tried to initialize the manual file {0} for nonexistent mod {1}.
+Tried to initialize the manual file {0} which doesn't exist for mod {1}.
+Tried to initialize the manual {0} for nonexistent mod {1}.
+Tried to query the manuals for nonexistent mod {0}.
+Unfortunately, this manual page doesn't have any contents. However, this documentation might have been found under the mod vendor's webpage. If you still can't find this documentation, ask the developers of the mod for more information.
+Presented to you by
+Content length
+No contents.
+No revision.
 
 ==========================================================================================================================================

@@ -312,7 +312,7 @@ namespace KS.Modifications
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Found manual page collection in {0}", ModManualPath);
                         foreach (string ModManualFile in Directory.EnumerateFiles(ModManualPath, "*.man", SearchOption.AllDirectories))
-                            PageParser.InitMan(ModManualFile);
+                            PageParser.InitMan(ModName, ModManualFile);
                     }
 
                     // Raise event

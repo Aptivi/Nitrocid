@@ -35,22 +35,24 @@ namespace KS.Modifications.ManPages
         /// <summary>
         /// Initializes a manual page
         /// </summary>
+        /// <param name="modName">Kernel modification name</param>
         /// <param name="ManualFile">A manual file path (neutralized)</param>
-        public static void InitMan(string ManualFile)
+        public static void InitMan(string modName, string ManualFile)
         {
             ManualFile = Filesystem.NeutralizePath(ManualFile);
-            if (Checking.FileExists(ManualFile))
-            {
-                // File found, but we need to verify that we're actually dealing with the manual page
-                if (Path.GetExtension(ManualFile) == ".man")
-                {
-                    // We found the manual, but we need to check its contents.
-                    DebugWriter.WriteDebug(DebugLevel.I, "Found manual page {0}.", ManualFile);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Parsing manpage...");
-                    var ManualInstance = new Manual(ManualFile);
-                    PageManager.AddManualPage(ManualInstance.Title, ManualInstance);
-                }
-            }
+            if (!ModManager.Mods.ContainsKey(modName))
+                throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to initialize the manual file {0} for nonexistent mod {1}."), ManualFile, modName);
+            if (!Checking.FileExists(ManualFile))
+                throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to initialize the manual file {0} which doesn't exist for mod {1}."), ManualFile, modName);
+
+            // File found, but we need to verify that we're actually dealing with the manual page. If not, ignore it.
+            if (Path.GetExtension(ManualFile) != ".man")
+                return;
+
+            // We found the manual, but we need to check its contents.
+            DebugWriter.WriteDebug(DebugLevel.I, "Found manual page {0}. Parsing manpage...", ManualFile);
+            var ManualInstance = new Manual(modName, ManualFile);
+            PageManager.AddManualPage(modName, ManualInstance.Title, ManualInstance);
         }
 
         /// <summary>

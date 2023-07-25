@@ -31,6 +31,7 @@ using KS.ConsoleBase.Themes;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
 using KS.Users.Groups;
+using KS.Modifications;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -193,7 +194,7 @@ namespace KS.Shell.Shells.UESH
             { "modman", new CommandInfo("modman", ShellType, /* Localizable */ "Manage your mods",
                 new CommandArgumentInfo(new[] { "start/stop/info/reload/install/uninstall [modfilename", "list/listparts [modname", "reloadall/stopall/startall" }, Array.Empty<SwitchInfo>(), true, 1), new ModManCommand(), CommandFlags.Strict) },
             { "modmanual", new CommandInfo("modmanual", ShellType, /* Localizable */ "Mod manual",
-                new CommandArgumentInfo(new[] { "ManualTitle" }, new[] { new SwitchInfo("list", /* Localizable */ "Lists all installed mod manuals") }, true, 1), new ModManualCommand()) },
+                new CommandArgumentInfo(new[] { "modname" }, Array.Empty<SwitchInfo>(), true, 1, (startFrom, _, _) => ModManager.ListMods(startFrom).Keys.ToArray()), new ModManualCommand()) },
             { "move", new CommandInfo("move", ShellType, /* Localizable */ "Moves a file to another directory",
                 new CommandArgumentInfo(new[] { "source", "target" }, Array.Empty<SwitchInfo>(), true, 2), new MoveCommand()) },
             { "open", new CommandInfo("open", ShellType, /* Localizable */ "Opens a URL",

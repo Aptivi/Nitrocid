@@ -33,6 +33,10 @@ namespace KS.Modifications.ManPages
         /// </summary>
         public string Name { get; private set; }
         /// <summary>
+        /// Mod name containing this manual page
+        /// </summary>
+        public string ModName { get; private set; }
+        /// <summary>
         /// The manual page title
         /// </summary>
         public string Title { get; private set; }
@@ -56,7 +60,7 @@ namespace KS.Modifications.ManPages
         /// <summary>
         /// Makes a new instance of manual
         /// </summary>
-        internal Manual(string ManualFileName)
+        internal Manual(string modName, string ManualFileName)
         {
             string Title = "";
             string Revision = "";
@@ -65,6 +69,7 @@ namespace KS.Modifications.ManPages
             ValidManpage = PageParser.CheckManual(ManualFileName, ref Title, ref Revision, ref Body, ref Todos);
             if (ValidManpage)
             {
+                ModName = modName;
                 this.Title = Title;
                 this.Revision = Revision;
                 this.Body = Body;

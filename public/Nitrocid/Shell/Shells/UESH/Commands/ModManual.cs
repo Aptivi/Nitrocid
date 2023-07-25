@@ -18,8 +18,14 @@
 
 using System;
 using System.Linq;
+using KS.ConsoleBase.Colors;
+using KS.Kernel.Exceptions;
+using KS.Languages;
+using KS.Misc.Interactive;
 using KS.Misc.Writers.ConsoleWriters;
+using KS.Modifications;
 using KS.Modifications.ManPages;
+using KS.Modifications.ManPages.Interactive;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -30,34 +36,17 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// If the mod has a manual page which you can refer to, you can use them by this command.
     /// <br></br>
-    /// <list type="table">
-    /// <listheader>
-    /// <term>Switches</term>
-    /// <description>Description</description>
-    /// </listheader>
-    /// <item>
-    /// <term>-list</term>
-    /// <description>Lists all installed mod manuals</description>
-    /// </item>
-    /// </list>
-    /// <br></br>
     /// </remarks>
     class ModManualCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            var ListMode = false;
-            if (ListSwitchesOnly.Contains("-list"))
-                ListMode = true;
-            if (!ListMode)
-            {
-                PageViewer.ViewPage(ListArgsOnly[0]);
-            }
-            else
-            {
-                ListWriterColor.WriteList(PageManager.Pages.Keys, true);
-            }
+            string modName = ListArgsOnly[0];
+            if (!ModManager.Mods.ContainsKey(modName))
+                TextWriterColor.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
+            var tuiInstance = new ManualViewer() { modName = modName };
+            InteractiveTuiTools.OpenInteractiveTui(tuiInstance);
         }
 
     }
