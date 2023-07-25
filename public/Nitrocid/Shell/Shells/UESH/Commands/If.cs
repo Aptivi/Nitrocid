@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         var CommandThread = new KernelThread($"Alternative Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
                         ShellStart.ShellStack[^1].AltCommandThreads.Add(CommandThread);
                     }
-                    Shell.GetLine(CommandString);
+                    ShellManager.GetLine(CommandString);
                 }
             }
             catch (Exception ex)

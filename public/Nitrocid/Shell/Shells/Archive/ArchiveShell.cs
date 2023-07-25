@@ -82,7 +82,7 @@ namespace KS.Shell.Shells.Archive
                     }
 
                     // Prompt for the command
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

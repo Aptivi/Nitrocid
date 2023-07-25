@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.Debug
             {
                 try
                 {
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

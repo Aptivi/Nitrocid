@@ -74,7 +74,7 @@ namespace KS.Shell
     /// <summary>
     /// Base shell module
     /// </summary>
-    public static class Shell
+    public static class ShellManager
     {
 
         internal static StreamWriter OutputTextWriter;

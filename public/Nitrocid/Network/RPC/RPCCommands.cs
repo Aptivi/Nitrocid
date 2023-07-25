@@ -33,6 +33,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Events;
 using KS.Kernel.Exceptions;
 using System.Linq;
+using KS.Shell;
 
 namespace KS.Network.RPC
 {
@@ -244,7 +245,7 @@ namespace KS.Network.RPC
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
                 TextWriterColor.Write();
-                Shell.Shell.GetLine(Command);
+                ShellManager.GetLine(Command);
             }
             else
                 DebugWriter.WriteDebug(DebugLevel.W, "Tried to exec from remote access while not logged in. Dropping packet...");

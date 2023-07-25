@@ -62,7 +62,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="CommandBase">Command base for execution</param>
         /// <param name="Flags">Command flags</param>
         public CommandInfo(string Command, ShellType Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None) :
-            this(Command, Shell.GetShellTypeName(Type), HelpDefinition, CommandArgumentInfo, CommandBase, Flags)
+            this(Command, ShellManager.GetShellTypeName(Type), HelpDefinition, CommandArgumentInfo, CommandBase, Flags)
         { }
 
         /// <summary>

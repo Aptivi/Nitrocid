@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.HTTP
                 try
                 {
                     // Prompt for the command
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

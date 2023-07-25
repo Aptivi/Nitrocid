@@ -73,7 +73,7 @@ namespace KS.Shell.Shells.Mail
                         MailHandlers.InitializeHandlers();
 
                     // Prompt for the command
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

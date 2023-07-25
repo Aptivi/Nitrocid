@@ -32,8 +32,8 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellTypeInfo">The shell type information</param>
         public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
         {
-            if (!Shell.AvailableShells.ContainsKey(ShellType))
-                Shell.AvailableShells.Add(ShellType, ShellTypeInfo);
+            if (!ShellManager.AvailableShells.ContainsKey(ShellType))
+                ShellManager.AvailableShells.Add(ShellType, ShellTypeInfo);
         }
 
         /// <summary>
@@ -43,7 +43,7 @@ namespace KS.Shell.ShellBase.Shells
         public static void UnregisterShell(string ShellType)
         {
             if (!Enum.IsDefined(typeof(ShellType), ShellType))
-                Shell.AvailableShells.Remove(ShellType);
+                ShellManager.AvailableShells.Remove(ShellType);
         }
 
         /// <summary>

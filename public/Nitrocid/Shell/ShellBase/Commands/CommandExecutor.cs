@@ -64,7 +64,7 @@ namespace KS.Shell.ShellBase.Commands
             internal Dictionary<string, CommandInfo> ModCommands;
 
             internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType) : 
-                this(RequestedCommand, Shell.GetShellTypeName(ShellType)) 
+                this(RequestedCommand, ShellManager.GetShellTypeName(ShellType)) 
             { }
 
             internal ExecuteCommandParameters(string RequestedCommand, string ShellType)
@@ -251,7 +251,7 @@ namespace KS.Shell.ShellBase.Commands
 
                 // Then, initialize the buffered writer and execute the commands
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("Buffered");
-                Shell.GetLine(Command, "", currentType, false);
+                ShellManager.GetLine(Command, "", currentType, false);
                 buffered = true;
 
                 // Extract the buffer and then end the local driver
@@ -283,7 +283,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="shellType">Shell type</param>
         /// <returns>List of commands that one of their flags contains <see cref="CommandFlags.Wrappable"/></returns>
         public static string[] GetWrappableCommands(ShellType shellType) =>
-            GetWrappableCommands(Shell.GetShellTypeName(shellType));
+            GetWrappableCommands(ShellManager.GetShellTypeName(shellType));
 
         /// <summary>
         /// Gets the wrappable commands
@@ -293,7 +293,7 @@ namespace KS.Shell.ShellBase.Commands
         public static string[] GetWrappableCommands(string shellType)
         {
             // Get wrappable commands
-            var WrappableCmds = Shell.GetShellInfo(shellType).Commands.Values
+            var WrappableCmds = ShellManager.GetShellInfo(shellType).Commands.Values
                 .Where(CommandInfo => CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                 .Select(CommandInfo => CommandInfo.Command)
                 .ToArray();

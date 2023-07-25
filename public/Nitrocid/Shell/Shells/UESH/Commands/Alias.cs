@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (ListArgsOnly.Length > 3)
             {
-                if (ListArgsOnly[0] == "add" & Shell.AvailableShells.ContainsKey(ListArgsOnly[1]))
+                if (ListArgsOnly[0] == "add" & ShellManager.AvailableShells.ContainsKey(ListArgsOnly[1]))
                 {
                     AliasManager.ManageAlias(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2], ListArgsOnly[3]);
                 }
@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else if (ListArgsOnly.Length == 3)
             {
-                if (ListArgsOnly[0] == "rem" & Shell.AvailableShells.ContainsKey(ListArgsOnly[1]))
+                if (ListArgsOnly[0] == "rem" & ShellManager.AvailableShells.ContainsKey(ListArgsOnly[1]))
                 {
                     AliasManager.ManageAlias(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
                 }

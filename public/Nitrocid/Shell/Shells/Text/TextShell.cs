@@ -74,7 +74,7 @@ namespace KS.Shell.Shells.Text
                         TextEditShellCommon.TextEdit_AutoSave.Start();
                     }
                     // Prompt for the command
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

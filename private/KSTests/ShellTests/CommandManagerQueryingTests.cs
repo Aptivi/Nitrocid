@@ -51,7 +51,7 @@ namespace KSTests.ShellTests
         [Description("Querying")]
         public void TestGetCommandListFromAllShells()
         {
-            foreach (string ShellTypeName in Shell.AvailableShells.Keys)
+            foreach (string ShellTypeName in ShellManager.AvailableShells.Keys)
             {
                 var Commands = CommandManager.GetCommands(ShellTypeName);
                 Debug.WriteLine(format: "Commands from {0}: {1} commands", ShellTypeName, Commands.Count);

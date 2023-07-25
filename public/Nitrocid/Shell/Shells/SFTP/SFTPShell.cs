@@ -71,7 +71,7 @@ namespace KS.Shell.Shells.SFTP
             {
                 try
                 {
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

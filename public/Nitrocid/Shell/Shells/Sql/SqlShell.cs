@@ -74,7 +74,7 @@ namespace KS.Shell.Shells.Sql
                     }
 
                     // Prompt for the command
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

@@ -24,7 +24,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Threading;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Network.SFTP;
+using KS.Shell;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
@@ -191,7 +191,7 @@ namespace KS.Network.Base.Connections
         /// <param name="establisher">The function responsible for establishing the network connection</param>
         /// <param name="address">Target address to connect to</param>
         public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, string address = "") =>
-            OpenConnectionForShell(Shell.Shell.GetShellTypeName(shellType), establisher, address);
+            OpenConnectionForShell(ShellManager.GetShellTypeName(shellType), establisher, address);
 
         /// <summary>
         /// Opens a connection for the selected shell
@@ -202,7 +202,7 @@ namespace KS.Network.Base.Connections
         public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, string address = "")
         {
             // Get shell info to check to see if the shell accepts network connections
-            var shellInfo = Shell.Shell.GetShellInfo(shellType);
+            var shellInfo = ShellManager.GetShellInfo(shellType);
             if (!shellInfo.AcceptsNetworkConnection)
                 throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("The shell {0} doesn't accept network connections."), shellType);
 

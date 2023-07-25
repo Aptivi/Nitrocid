@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.Json
                 }
 
                 // Prompt for the command
-                Shell.GetLine();
+                ShellManager.GetLine();
             }
 
             // Close file

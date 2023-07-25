@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.UESH
                 {
                     try
                     {
-                        Shell.GetLine();
+                        ShellManager.GetLine();
                     }
                     catch (ThreadInterruptedException)
                     {

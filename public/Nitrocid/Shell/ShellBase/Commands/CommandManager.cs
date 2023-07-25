@@ -36,7 +36,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="ShellType">The shell type</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
         public static bool IsCommandFound(string Command, ShellType ShellType) =>
-            IsCommandFound(Command, Shell.GetShellTypeName(ShellType));
+            IsCommandFound(Command, ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Checks to see if the command is found in selected shell command type
@@ -47,7 +47,7 @@ namespace KS.Shell.ShellBase.Commands
         public static bool IsCommandFound(string Command, string ShellType)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
-            if (Shell.UnifiedCommandDict.ContainsKey(Command))
+            if (ShellManager.UnifiedCommandDict.ContainsKey(Command))
                 return true;
             return GetCommands(ShellType).ContainsKey(Command);
         }
@@ -60,7 +60,7 @@ namespace KS.Shell.ShellBase.Commands
         public static bool IsCommandFound(string Command)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
-            return Shell.UnifiedCommandDict.ContainsKey(Command)
+            return ShellManager.UnifiedCommandDict.ContainsKey(Command)
                  | GetCommands(ShellType.FTPShell).ContainsKey(Command)
                  | GetCommands(ShellType.JsonShell).ContainsKey(Command)
                  | GetCommands(ShellType.MailShell).ContainsKey(Command)
@@ -79,7 +79,7 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType) =>
-            GetCommands(Shell.GetShellTypeName(ShellType));
+            GetCommands(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the command dictionary according to the shell type
@@ -88,14 +88,14 @@ namespace KS.Shell.ShellBase.Commands
         public static Dictionary<string, CommandInfo> GetCommands(string ShellType)
         {
             // Individual shells
-            Dictionary<string, CommandInfo> FinalCommands = Shell.GetShellInfo(ShellType).Commands;
+            Dictionary<string, CommandInfo> FinalCommands = ShellManager.GetShellInfo(ShellType).Commands;
 
             // Unified commands
-            foreach (string UnifiedCommand in Shell.UnifiedCommandDict.Keys)
+            foreach (string UnifiedCommand in ShellManager.UnifiedCommandDict.Keys)
             {
                 if (FinalCommands.ContainsKey(UnifiedCommand))
                     FinalCommands.Remove(UnifiedCommand);
-                FinalCommands.Add(UnifiedCommand, Shell.UnifiedCommandDict[UnifiedCommand]);
+                FinalCommands.Add(UnifiedCommand, ShellManager.UnifiedCommandDict[UnifiedCommand]);
             }
 
             return FinalCommands;
@@ -108,7 +108,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="ShellType">The shell type</param>
         /// <returns>A <see cref="CommandInfo"/> instance of a specified command</returns>
         public static CommandInfo GetCommand(string Command, ShellType ShellType) =>
-            GetCommand(Command, Shell.GetShellTypeName(ShellType));
+            GetCommand(Command, ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets a command, specified by the shell type
@@ -120,8 +120,8 @@ namespace KS.Shell.ShellBase.Commands
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
             var commandList = GetCommands(ShellType);
-            if (Shell.UnifiedCommandDict.ContainsKey(Command))
-                return Shell.UnifiedCommandDict[Command];
+            if (ShellManager.UnifiedCommandDict.ContainsKey(Command))
+                return ShellManager.UnifiedCommandDict[Command];
             if (!IsCommandFound(Command, ShellType))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Command not found."));
             return commandList[Command];

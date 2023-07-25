@@ -36,7 +36,7 @@ namespace KS.Shell.ShellBase.Commands
                 return;
             }
 
-            lock (GetCancelSyncLock(Shell.CurrentShellType))
+            lock (GetCancelSyncLock(ShellManager.CurrentShellType))
             {
                 if (e.SpecialKey == ConsoleSpecialKey.ControlC)
                 {
@@ -46,17 +46,17 @@ namespace KS.Shell.ShellBase.Commands
                     e.Cancel = true;
                     var StartCommandThread = ShellStart.ShellStack[^1].ShellCommandThread;
                     StartCommandThread.Stop();
-                    Shell.ProcessStartCommandThread.Stop();
+                    ShellManager.ProcessStartCommandThread.Stop();
                     DriverHandler.SetDriver<IConsoleDriver>("Default");
                 }
             }
         }
 
         public static object GetCancelSyncLock(ShellType ShellType) =>
-            GetCancelSyncLock(Shell.GetShellTypeName(ShellType));
+            GetCancelSyncLock(ShellManager.GetShellTypeName(ShellType));
 
         public static object GetCancelSyncLock(string ShellType) =>
-            Shell.GetShellInfo(ShellType).ShellLock;
+            ShellManager.GetShellInfo(ShellType).ShellLock;
 
     }
 }

@@ -40,26 +40,26 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Shows the list of commands under the current shell type
         /// </summary>
-        public static void ShowHelp() => ShowHelp("", Shell.CurrentShellType);
+        public static void ShowHelp() => ShowHelp("", ShellManager.CurrentShellType);
 
         /// <summary>
         /// Shows the list of commands under the specified shell type
         /// </summary>
         /// <param name="CommandType">A specified shell type</param>
-        public static void ShowHelp(ShellType CommandType) => ShowHelp("", Shell.GetShellTypeName(CommandType));
+        public static void ShowHelp(ShellType CommandType) => ShowHelp("", ShellManager.GetShellTypeName(CommandType));
 
         /// <summary>
         /// Shows the help of a command, or command list under the current shell type if nothing is specified
         /// </summary>
         /// <param name="command">A specified command</param>
-        public static void ShowHelp(string command) => ShowHelp(command, Shell.CurrentShellType);
+        public static void ShowHelp(string command) => ShowHelp(command, ShellManager.CurrentShellType);
 
         /// <summary>
         /// Shows the help of a command, or command list under the specified shell type if nothing is specified
         /// </summary>
         /// <param name="command">A specified command</param>
         /// <param name="CommandType">A specified shell type</param>
-        public static void ShowHelp(string command, ShellType CommandType) => ShowHelp(command, Shell.GetShellTypeName(CommandType));
+        public static void ShowHelp(string command, ShellType CommandType) => ShowHelp(command, ShellManager.GetShellTypeName(CommandType));
 
         /// <summary>
         /// Shows the help of a command, or command list under the specified shell type if nothing is specified
@@ -167,7 +167,7 @@ namespace KS.Shell.ShellBase.Commands
                     {
                         if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Admin) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
                         {
-                            TextWriterColor.Write("- {0}: ", false, Shell.UnifiedCommandDict.ContainsKey(cmd) ? KernelColorType.Success : KernelColorType.ListEntry, cmd);
+                            TextWriterColor.Write("- {0}: ", false, ShellManager.UnifiedCommandDict.ContainsKey(cmd) ? KernelColorType.Success : KernelColorType.ListEntry, cmd);
                             TextWriterColor.Write("{0}", true, KernelColorType.ListValue, CommandList[cmd].GetTranslatedHelpEntry());
                         }
                     }

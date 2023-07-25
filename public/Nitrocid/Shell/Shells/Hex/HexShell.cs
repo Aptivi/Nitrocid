@@ -76,7 +76,7 @@ namespace KS.Shell.Shells.Hex
                     }
 
                     // Prompt for the command
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

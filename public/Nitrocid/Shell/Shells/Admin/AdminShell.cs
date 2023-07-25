@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.Admin
                 try
                 {
                     // Prompt for the command
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

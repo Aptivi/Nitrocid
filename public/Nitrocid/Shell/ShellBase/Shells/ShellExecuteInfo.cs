@@ -51,7 +51,7 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellBase">Shell base class</param>
         /// <param name="ShellCommandThread">Shell command thread</param>
         public ShellExecuteInfo(ShellType ShellType, BaseShell ShellBase, KernelThread ShellCommandThread) :
-            this(Shell.GetShellTypeName(ShellType), ShellBase, ShellCommandThread)
+            this(ShellManager.GetShellTypeName(ShellType), ShellBase, ShellCommandThread)
         { }
 
         /// <summary>

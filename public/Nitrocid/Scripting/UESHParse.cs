@@ -27,6 +27,7 @@ using KS.Files.Read;
 using System.Collections.Generic;
 using FluentFTP.Helpers;
 using KS.Misc.Text;
+using KS.Shell;
 
 namespace KS.Scripting
 {
@@ -203,7 +204,7 @@ namespace KS.Scripting
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Line {0} is not a comment.", Line);
                         if (!justLint)
-                            Shell.Shell.GetLine(Line);
+                            ShellManager.GetLine(Line);
                     }
                     else
                         // For debugging purposes

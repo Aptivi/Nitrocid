@@ -70,7 +70,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="CommandText">Command text that the user provided</param>
         /// <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
         internal ProvidedCommandArgumentsInfo(string CommandText, ShellType CommandType) :
-            this(CommandText, Shell.GetShellTypeName(CommandType)) 
+            this(CommandText, ShellManager.GetShellTypeName(CommandType)) 
         { }
 
         /// <summary>

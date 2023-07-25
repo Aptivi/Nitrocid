@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
                             CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
                         ShellStart.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
                     }
-                    Shell.GetLine($"{command} \"{file}\"");
+                    ShellManager.GetLine($"{command} \"{file}\"");
                 }
             }
             else

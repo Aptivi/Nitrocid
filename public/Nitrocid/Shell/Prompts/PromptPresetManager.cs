@@ -40,19 +40,19 @@ namespace KS.Shell.Prompts
         // Current presets
         internal static Dictionary<string, PromptPresetBase> CurrentPresets = new()
         {
-            { "Shell", Shell.GetShellInfo(ShellType.Shell).ShellPresets["Default"] },
-            { "FTPShell", Shell.GetShellInfo(ShellType.FTPShell).ShellPresets["Default"] },
-            { "MailShell", Shell.GetShellInfo(ShellType.MailShell).ShellPresets["Default"] },
-            { "SFTPShell", Shell.GetShellInfo(ShellType.SFTPShell).ShellPresets["Default"] },
-            { "TextShell", Shell.GetShellInfo(ShellType.TextShell).ShellPresets["Default"] },
-            { "RSSShell", Shell.GetShellInfo(ShellType.RSSShell).ShellPresets["Default"] },
-            { "JsonShell", Shell.GetShellInfo(ShellType.JsonShell).ShellPresets["Default"] },
-            { "HTTPShell", Shell.GetShellInfo(ShellType.HTTPShell).ShellPresets["Default"] },
-            { "HexShell", Shell.GetShellInfo(ShellType.HexShell).ShellPresets["Default"] },
-            { "ArchiveShell", Shell.GetShellInfo(ShellType.ArchiveShell).ShellPresets["Default"] },
-            { "AdminShell", Shell.GetShellInfo(ShellType.AdminShell).ShellPresets["Default"] },
-            { "SqlShell", Shell.GetShellInfo(ShellType.SqlShell).ShellPresets["Default"] },
-            { "DebugShell", Shell.GetShellInfo(ShellType.DebugShell).ShellPresets["Default"] }
+            { "Shell", ShellManager.GetShellInfo(ShellType.Shell).ShellPresets["Default"] },
+            { "FTPShell", ShellManager.GetShellInfo(ShellType.FTPShell).ShellPresets["Default"] },
+            { "MailShell", ShellManager.GetShellInfo(ShellType.MailShell).ShellPresets["Default"] },
+            { "SFTPShell", ShellManager.GetShellInfo(ShellType.SFTPShell).ShellPresets["Default"] },
+            { "TextShell", ShellManager.GetShellInfo(ShellType.TextShell).ShellPresets["Default"] },
+            { "RSSShell", ShellManager.GetShellInfo(ShellType.RSSShell).ShellPresets["Default"] },
+            { "JsonShell", ShellManager.GetShellInfo(ShellType.JsonShell).ShellPresets["Default"] },
+            { "HTTPShell", ShellManager.GetShellInfo(ShellType.HTTPShell).ShellPresets["Default"] },
+            { "HexShell", ShellManager.GetShellInfo(ShellType.HexShell).ShellPresets["Default"] },
+            { "ArchiveShell", ShellManager.GetShellInfo(ShellType.ArchiveShell).ShellPresets["Default"] },
+            { "AdminShell", ShellManager.GetShellInfo(ShellType.AdminShell).ShellPresets["Default"] },
+            { "SqlShell", ShellManager.GetShellInfo(ShellType.SqlShell).ShellPresets["Default"] },
+            { "DebugShell", ShellManager.GetShellInfo(ShellType.DebugShell).ShellPresets["Default"] }
         };
 
         /// <summary>
@@ -62,7 +62,7 @@ namespace KS.Shell.Prompts
         /// <param name="ShellType">Type of shell</param>
         /// <param name="ThrowOnNotFound">If the preset is not found, throw an exception. Otherwise, use the default preset.</param>
         public static void SetPreset(string PresetName, ShellType ShellType, bool ThrowOnNotFound = true) =>
-            SetPreset(PresetName, Shell.GetShellTypeName(ShellType), ThrowOnNotFound);
+            SetPreset(PresetName, ShellManager.GetShellTypeName(ShellType), ThrowOnNotFound);
 
         /// <summary>
         /// Sets the shell preset
@@ -102,7 +102,7 @@ namespace KS.Shell.Prompts
         /// <param name="ShellType">Type of shell</param>
         /// <param name="ThrowOnNotFound">If the preset is not found, throw an exception. Otherwise, use the default preset.</param>
         public static void SetPresetDry(string PresetName, ShellType ShellType, bool ThrowOnNotFound = true) =>
-            SetPresetDry(PresetName, Shell.GetShellTypeName(ShellType), ThrowOnNotFound);
+            SetPresetDry(PresetName, ShellManager.GetShellTypeName(ShellType), ThrowOnNotFound);
 
         /// <summary>
         /// Sets the shell preset
@@ -143,7 +143,7 @@ namespace KS.Shell.Prompts
         /// <param name="Presets">Dictionary of presets</param>
         /// <param name="permanent">Saves changes to settings</param>
         internal static void SetPresetInternal(string PresetName, ShellType ShellType, Dictionary<string, PromptPresetBase> Presets, bool permanent = true) =>
-            SetPresetInternal(PresetName, Shell.GetShellTypeName(ShellType), Presets, permanent);
+            SetPresetInternal(PresetName, ShellManager.GetShellTypeName(ShellType), Presets, permanent);
 
         /// <summary>
         /// Sets the preset
@@ -233,49 +233,49 @@ namespace KS.Shell.Prompts
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         public static PromptPresetBase GetCurrentPresetBaseFromShell(ShellType ShellType) =>
-            GetCurrentPresetBaseFromShell(Shell.GetShellTypeName(ShellType));
+            GetCurrentPresetBaseFromShell(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the current preset base from the shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         public static PromptPresetBase GetCurrentPresetBaseFromShell(string ShellType) =>
-            Shell.GetShellInfo(ShellType).CurrentPreset;
+            ShellManager.GetShellInfo(ShellType).CurrentPreset;
 
         /// <summary>
         /// Gets the predefined presets from the shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         public static Dictionary<string, PromptPresetBase> GetPresetsFromShell(ShellType ShellType) =>
-            GetPresetsFromShell(Shell.GetShellTypeName(ShellType));
+            GetPresetsFromShell(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the predefined presets from the shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         public static Dictionary<string, PromptPresetBase> GetPresetsFromShell(string ShellType) =>
-            Shell.GetShellInfo(ShellType).ShellPresets;
+            ShellManager.GetShellInfo(ShellType).ShellPresets;
 
         /// <summary>
         /// Gets the custom presets (defined by mods) from the shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         public static Dictionary<string, PromptPresetBase> GetCustomPresetsFromShell(ShellType ShellType) =>
-            GetCustomPresetsFromShell(Shell.GetShellTypeName(ShellType));
+            GetCustomPresetsFromShell(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the custom presets (defined by mods) from the shell
         /// </summary>
         /// <param name="ShellType">The shell type</param>
         public static Dictionary<string, PromptPresetBase> GetCustomPresetsFromShell(string ShellType) =>
-            Shell.GetShellInfo(ShellType).CustomShellPresets;
+            ShellManager.GetShellInfo(ShellType).CustomShellPresets;
 
         /// <summary>
         /// Writes the shell prompt
         /// </summary>
         /// <param name="ShellType">Shell type</param>
         public static void WriteShellPrompt(ShellType ShellType) =>
-            WriteShellPrompt(Shell.GetShellTypeName(ShellType));
+            WriteShellPrompt(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Writes the shell prompt
@@ -292,7 +292,7 @@ namespace KS.Shell.Prompts
         /// </summary>
         /// <param name="ShellType">Shell type</param>
         public static void WriteShellCompletionPrompt(ShellType ShellType) =>
-            WriteShellCompletionPrompt(Shell.GetShellTypeName(ShellType));
+            WriteShellCompletionPrompt(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Writes the shell completion prompt

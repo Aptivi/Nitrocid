@@ -74,12 +74,12 @@ namespace KS.Shell.ShellBase.Aliases
         public static void SaveAliases()
         {
             // Save all aliases
-            foreach (string Shell in Shell.AvailableShells.Keys)
+            foreach (string Shell in ShellManager.AvailableShells.Keys)
                 SaveAliasesInternal(Shell);
         }
 
         internal static void SaveAliasesInternal(ShellType ShellType) =>
-            SaveAliasesInternal(Shell.GetShellTypeName(ShellType));
+            SaveAliasesInternal(ShellManager.GetShellTypeName(ShellType));
 
         internal static void SaveAliasesInternal(string ShellType)
         {
@@ -110,7 +110,7 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="AliasCmd">A specified alias</param>
         /// <param name="DestCmd">A destination command (target)</param>
         public static void ManageAlias(string mode, ShellType Type, string AliasCmd, string DestCmd = "") =>
-            ManageAlias(mode, Shell.GetShellTypeName(Type), AliasCmd, DestCmd);
+            ManageAlias(mode, ShellManager.GetShellTypeName(Type), AliasCmd, DestCmd);
 
         /// <summary>
         /// Manages the alias
@@ -228,7 +228,7 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="Type">Alias type.</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
         public static bool RemoveAlias(string TargetAlias, ShellType Type) => 
-            RemoveAlias(TargetAlias, Shell.GetShellTypeName(Type));
+            RemoveAlias(TargetAlias, ShellManager.GetShellTypeName(Type));
 
         /// <summary>
         /// Removes alias from kernel
@@ -293,7 +293,7 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="Type">The alias type</param>
         /// <returns>True if it exists; false if it doesn't exist</returns>
         public static bool DoesAliasExist(string TargetAlias, ShellType Type) => 
-            DoesAliasExist(TargetAlias, Shell.GetShellTypeName(Type));
+            DoesAliasExist(TargetAlias, ShellManager.GetShellTypeName(Type));
 
         /// <summary>
         /// Checks to see if the specified alias exists.
@@ -322,14 +322,14 @@ namespace KS.Shell.ShellBase.Aliases
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
         public static Dictionary<string, string> GetAliasesListFromType(ShellType ShellType) => 
-            GetAliasesListFromType(Shell.GetShellTypeName(ShellType));
+            GetAliasesListFromType(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the aliases list from the shell type
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
         public static Dictionary<string, string> GetAliasesListFromType(string ShellType) => 
-            Shell.GetShellInfo(ShellType).Aliases;
+            ShellManager.GetShellInfo(ShellType).Aliases;
 
     }
 }

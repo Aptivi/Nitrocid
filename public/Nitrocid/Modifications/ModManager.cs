@@ -37,6 +37,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Modifications.ManPages;
+using KS.Shell;
 
 namespace KS.Modifications
 {
@@ -188,7 +189,7 @@ namespace KS.Modifications
                     }
 
                     // Clear all mod commands list, since we've stopped all mods.
-                    foreach (string ShellTypeName in Shell.Shell.AvailableShells.Keys)
+                    foreach (string ShellTypeName in ShellManager.AvailableShells.Keys)
                     {
                         ListModCommands(ShellTypeName).Clear();
                         DebugWriter.WriteDebug(DebugLevel.I, "Mod commands for {0} cleared.", ShellTypeName);
@@ -540,14 +541,14 @@ namespace KS.Modifications
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
         public static Dictionary<string, CommandInfo> ListModCommands(ShellType ShellType) =>
-            ListModCommands(Shell.Shell.GetShellTypeName(ShellType));
+            ListModCommands(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Lists the mod commands based on the shell
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
         public static Dictionary<string, CommandInfo> ListModCommands(string ShellType) =>
-            Shell.Shell.GetShellInfo(ShellType).ModCommands;
+            ShellManager.GetShellInfo(ShellType).ModCommands;
 
     }
 }

@@ -38,7 +38,7 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellArgs">Arguments to pass to shell</param>
         public static void StartShell(ShellType ShellType, params object[] ShellArgs) =>
-            StartShell(Shell.GetShellTypeName(ShellType), ShellArgs);
+            StartShell(ShellManager.GetShellTypeName(ShellType), ShellArgs);
 
         /// <summary>
         /// Starts the shell
@@ -60,7 +60,7 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellType">The shell type</param>
         /// <param name="ShellArgs">Arguments to pass to shell</param>
         public static void StartShellForced(ShellType ShellType, params object[] ShellArgs) =>
-            StartShellForced(Shell.GetShellTypeName(ShellType), ShellArgs);
+            StartShellForced(ShellManager.GetShellTypeName(ShellType), ShellArgs);
 
         /// <summary>
         /// Force starts the shell
@@ -136,14 +136,14 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         /// <param name="ShellType">The requested shell type</param>
         public static BaseShell GetShellExecutor(ShellType ShellType) =>
-            GetShellExecutor(Shell.GetShellTypeName(ShellType));
+            GetShellExecutor(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the shell executor based on the shell type
         /// </summary>
         /// <param name="ShellType">The requested shell type</param>
         public static BaseShell GetShellExecutor(string ShellType) =>
-            Shell.GetShellInfo(ShellType).ShellBase;
+            ShellManager.GetShellInfo(ShellType).ShellBase;
 
     }
 }

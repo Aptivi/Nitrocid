@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.RSS
                 try
                 {
                     // Prompt for the command
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {

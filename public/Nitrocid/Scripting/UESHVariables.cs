@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Shell;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
@@ -76,7 +77,7 @@ namespace KS.Scripting
             var CommandArgumentsInfo = new ProvidedCommandArgumentsInfo(cmd, ShellType.Shell);
             string NewCommand = $"{CommandArgumentsInfo.Command} ";
             if (!CommandManager.IsCommandFound(CommandArgumentsInfo.Command) ||
-                !Shell.Shell.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].Flags.HasFlag(CommandFlags.SettingVariable))
+                !ShellManager.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].Flags.HasFlag(CommandFlags.SettingVariable))
             {
                 foreach (string Word in CommandArgumentsInfo.ArgumentsList)
                 {

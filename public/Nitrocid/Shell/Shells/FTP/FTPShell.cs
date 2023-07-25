@@ -92,7 +92,7 @@ namespace KS.Shell.Shells.FTP
             {
                 try
                 {
-                    Shell.GetLine();
+                    ShellManager.GetLine();
                 }
                 catch (ThreadInterruptedException)
                 {
