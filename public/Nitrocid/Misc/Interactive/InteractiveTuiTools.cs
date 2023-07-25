@@ -28,6 +28,7 @@ using KS.Misc.Writers.ConsoleWriters;
 using KS.Misc.Writers.FancyWriters;
 using System;
 using System.Collections;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace KS.Misc.Interactive
@@ -182,7 +183,11 @@ namespace KS.Misc.Interactive
 
                 // Render the key bindings
                 ConsoleWrapper.CursorLeft = 0;
-                foreach (InteractiveTuiBinding binding in interactiveTui.Bindings)
+                var finalBindings = new List<InteractiveTuiBinding>(interactiveTui.Bindings)
+                {
+                    new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null)
+                };
+                foreach (InteractiveTuiBinding binding in finalBindings)
                 {
                     // First, check to see if the rendered binding info is going to exceed the console window width
                     if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
