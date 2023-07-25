@@ -29,6 +29,7 @@ using KS.Shell.ShellBase.Shells;
 using System.Collections.Generic;
 using System;
 using System.Linq;
+using KS.Network.SFTP;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -43,67 +44,8 @@ namespace KS.Shell.Shells.UESH.Commands
     class MailCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            try
-            {
-                if (ListArgsOnly.Length == 0)
-                {
-                    // Select a connection according to user input
-                    int selectedConnection = NetworkConnectionSelector.ConnectionSelector(NetworkConnectionType.Mail);
-                    var availableConnectionInstances = NetworkConnectionTools.GetNetworkConnections(NetworkConnectionType.Mail);
-                    int availableConnections = NetworkConnectionTools.GetNetworkConnections(NetworkConnectionType.Mail).Length;
-
-                    // Now, check to see if the user selected "Create a new connection"
-                    NetworkConnection connection;
-                    if (selectedConnection == availableConnections + 1)
-                    {
-                        // Prompt the user to provide connection information
-                        var connections = MailLogin.PromptUser();
-                        connection = connections;
-                    }
-                    else
-                    {
-                        // User selected connection
-                        connection = availableConnectionInstances[selectedConnection - 1];
-                    }
-
-                    // Use that information to start the shell
-                    ShellStart.StartShell(ShellType.MailShell, connection);
-                }
-                else
-                {
-                    // Check to see if the provided address has an already existing connection
-                    string address = ListArgsOnly[0];
-                    var availableConnectionInstances = NetworkConnectionTools.GetNetworkConnections(NetworkConnectionType.Mail).Where((connection) => connection.ConnectionUri.OriginalString == address).ToArray();
-                    if (availableConnectionInstances.Any())
-                    {
-                        var connectionNames = availableConnectionInstances.Select((connection) => connection.ConnectionUri.ToString()).ToArray();
-                        var connectionsChoiceList = new List<InputChoiceInfo>();
-                        for (int i = 0; i < connectionNames.Length; i++)
-                        {
-                            string connectionUrl = connectionNames[i];
-                            connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
-                        }
-
-                        // Get connection from user selection
-                        int selectedConnectionNumber = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection."), connectionsChoiceList);
-                        NetworkConnection connection = availableConnectionInstances[selectedConnectionNumber - 1];
-                        ShellStart.StartShell(ShellType.MailShell, connection);
-                    }
-                    else
-                    {
-                        var connection = MailLogin.PromptPassword(address);
-                        ShellStart.StartShell(ShellType.MailShell, connection);
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Unknown shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
-            }
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            NetworkConnectionTools.OpenConnectionForShell(ShellType.MailShell, (address) => string.IsNullOrEmpty(address) ? MailLogin.PromptUser() : MailLogin.PromptPassword(address), StringArgs);
 
     }
 }

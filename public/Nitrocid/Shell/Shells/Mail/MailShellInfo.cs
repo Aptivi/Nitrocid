@@ -84,5 +84,7 @@ namespace KS.Shell.Shells.Mail
 
         public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["MailShell"];
 
+        public override bool AcceptsNetworkConnection => true;
+
     }
 }

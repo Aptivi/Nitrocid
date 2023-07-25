@@ -74,5 +74,7 @@ namespace KS.Shell.Shells.SFTP
 
         public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["SFTPShell"];
 
+        public override bool AcceptsNetworkConnection => true;
+
     }
 }

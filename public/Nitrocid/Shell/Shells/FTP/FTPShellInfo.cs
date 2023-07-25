@@ -94,5 +94,7 @@ namespace KS.Shell.Shells.FTP
 
         public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["FTPShell"];
 
+        public override bool AcceptsNetworkConnection => true;
+
     }
 }

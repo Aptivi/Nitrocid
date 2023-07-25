@@ -226,8 +226,8 @@ namespace KS.Network.FTP
             // Connect
             TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0} with profile {1}..."), clientFTP.Host, profiles.IndexOf(profsel));
             DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", clientFTP.Host, profiles.IndexOf(profsel));
-            var ftpConnection = NetworkConnectionTools.EstablishConnection("FTP connection", clientFTP.Host, NetworkConnectionType.FTP, clientFTP);
             clientFTP.Connect(profsel);
+            var ftpConnection = NetworkConnectionTools.EstablishConnection("FTP connection", clientFTP.Host, NetworkConnectionType.FTP, clientFTP);
 
             // Show that it's connected
             TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), true, KernelColorType.Success, clientFTP.Host);

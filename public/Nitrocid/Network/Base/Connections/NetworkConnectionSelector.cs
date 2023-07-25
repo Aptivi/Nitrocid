@@ -29,7 +29,7 @@ namespace KS.Network.Base.Connections
         internal static int ConnectionSelector(NetworkConnectionType connectionType)
         {
             var connections = NetworkConnectionTools.GetNetworkConnections(connectionType);
-            var connectionNames = connections.Select((connection) => connection.ConnectionUri.ToString()).ToArray();
+            var connectionNames = connections.Select((connection) => connection.ConnectionOriginalUrl.ToString()).ToArray();
 
             // We need to prompt the user to select a connection or to establish a new connection so that the new shell can
             // attach to the selected connection

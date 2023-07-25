@@ -16,10 +16,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Threading;
+using KS.Misc.Writers.ConsoleWriters;
+using KS.Network.SFTP;
+using KS.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -103,7 +109,7 @@ namespace KS.Network.Base.Connections
             // Now, make a connection and start the connection thread
             try
             {
-                NetworkConnection connection = new(name, uri, connectionType, connectionThread, null);
+                NetworkConnection connection = new(name, uri, connectionType, connectionThread, null, uri.OriginalString);
                 connection.ConnectionThread.Start();
                 networkConnections.Add(connection);
                 DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with thread name {3}", name, uri.ToString(), connectionType.ToString(), connectionThread.Name);
@@ -149,7 +155,7 @@ namespace KS.Network.Base.Connections
             // Now, make a connection and start the connection thread
             try
             {
-                NetworkConnection connection = new(name, uri, connectionType, null, connectionInstance);
+                NetworkConnection connection = new(name, uri, connectionType, null, connectionInstance, uri.OriginalString);
 
                 // Just return the connection. This instance is an object and could be anything that represents a network connection.
                 networkConnections.Add(connection);
@@ -176,6 +182,104 @@ namespace KS.Network.Base.Connections
                 throw new KernelException(KernelExceptionType.NetworkConnection,
                     Translate.DoTranslation("Connection is not established yet."));
             return networkConnections.IndexOf(connection);
+        }
+
+        /// <summary>
+        /// Opens a connection for the selected shell
+        /// </summary>
+        /// <param name="shellType">Any shell type that has its <see cref="BaseShellInfo.AcceptsNetworkConnection"/> flag set to true.</param>
+        /// <param name="establisher">The function responsible for establishing the network connection</param>
+        /// <param name="address">Target address to connect to</param>
+        public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, string address = "") =>
+            OpenConnectionForShell(Shell.Shell.GetShellTypeName(shellType), establisher, address);
+
+        /// <summary>
+        /// Opens a connection for the selected shell
+        /// </summary>
+        /// <param name="shellType">Any shell type that has its <see cref="BaseShellInfo.AcceptsNetworkConnection"/> flag set to true.</param>
+        /// <param name="establisher">The function responsible for establishing the network connection</param>
+        /// <param name="address">Target address to connect to</param>
+        public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, string address = "")
+        {
+            // Get shell info to check to see if the shell accepts network connections
+            var shellInfo = Shell.Shell.GetShellInfo(shellType);
+            if (!shellInfo.AcceptsNetworkConnection)
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("The shell {0} doesn't accept network connections."), shellType);
+
+            // Determine the network connection type
+            // TODO: Deal with the custom network connection type as soon as we finish Beta 2.
+            NetworkConnectionType connectionType = NetworkConnectionType.FTP;
+            switch (shellType)
+            {
+                case "SFTPShell":
+                    connectionType = NetworkConnectionType.SFTP;
+                    break;
+                case "MailShell":
+                    connectionType = NetworkConnectionType.Mail;
+                    break;
+                case "RSSShell":
+                    connectionType = NetworkConnectionType.RSS;
+                    break;
+                case "HTTPShell":
+                    connectionType = NetworkConnectionType.HTTP;
+                    break;
+            }
+
+            // Now, do the job!
+            try
+            {
+                if (string.IsNullOrEmpty(address))
+                {
+                    // Select a connection according to user input
+                    int selectedConnection = NetworkConnectionSelector.ConnectionSelector(connectionType);
+                    var availableConnectionInstances = GetNetworkConnections(connectionType);
+                    int availableConnections = GetNetworkConnections(connectionType).Length;
+
+                    // Now, check to see if the user selected "Create a new connection"
+                    NetworkConnection connection;
+                    if (selectedConnection == availableConnections + 1)
+                    {
+                        // Prompt the user to provide connection information
+                        address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+                        connection = establisher(address);
+                    }
+                    else
+                    {
+                        // User selected connection
+                        connection = availableConnectionInstances[selectedConnection - 1];
+                    }
+
+                    // Use that information to start the shell
+                    ShellStart.StartShell(shellType, connection);
+                }
+                else
+                {
+                    // Check to see if the provided address has an already existing connection
+                    var availableConnectionInstances = GetNetworkConnections(connectionType).Where((connection) => connection.ConnectionOriginalUrl.Contains(address)).ToArray();
+                    if (availableConnectionInstances.Any())
+                    {
+                        var connectionNames = availableConnectionInstances.Select((connection) => connection.ConnectionUri.ToString()).ToArray();
+                        var connectionsChoiceList = new List<InputChoiceInfo>();
+                        for (int i = 0; i < connectionNames.Length; i++)
+                        {
+                            string connectionUrl = connectionNames[i];
+                            connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
+                        }
+
+                        // Get connection from user selection
+                        int selectedConnectionNumber = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection."), connectionsChoiceList);
+                        ShellStart.StartShell(shellType, availableConnectionInstances[selectedConnectionNumber - 1]);
+                    }
+                    else
+                        ShellStart.StartShell(shellType, establisher(address));
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to establish a connection [type: {0}] to a network [address: {1}] for shell: {2}", shellType, address, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                TextWriterColor.Write(Translate.DoTranslation("Unknown networked shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
+            }
         }
     }
 }

@@ -96,8 +96,8 @@ namespace KS.Network.SFTP
             // Connect
             TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0}..."), client.ConnectionInfo.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connecting to {0} with {1}...", client.ConnectionInfo.Host);
-            var sftpConnection = NetworkConnectionTools.EstablishConnection("SFTP client", client.ConnectionInfo.Host, NetworkConnectionType.SFTP, client);
             client.Connect();
+            var sftpConnection = NetworkConnectionTools.EstablishConnection("SFTP client", client.ConnectionInfo.Host, NetworkConnectionType.SFTP, client);
 
             // Show that it's connected
             TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), client.ConnectionInfo.Host);

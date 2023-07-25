@@ -72,5 +72,7 @@ namespace KS.Shell.Shells.RSS
 
         public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["RSSShell"];
 
+        public override bool AcceptsNetworkConnection => true;
+
     }
 }

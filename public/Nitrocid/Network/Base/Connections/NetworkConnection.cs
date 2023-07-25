@@ -39,6 +39,10 @@ namespace KS.Network.Base.Connections
         /// </summary>
         public Uri ConnectionUri { get; }
         /// <summary>
+        /// Connection original URL, in case the URI method didn't work
+        /// </summary>
+        public string ConnectionOriginalUrl { get; }
+        /// <summary>
         /// Connection type
         /// </summary>
         public NetworkConnectionType ConnectionType { get; }
@@ -60,7 +64,7 @@ namespace KS.Network.Base.Connections
         internal KernelThread ConnectionThread { get; }
         internal object ConnectionInstance { get; }
 
-        internal NetworkConnection(string connectionName, Uri connectionUri, NetworkConnectionType connectionType, KernelThread connectionThread, object connectionInstance)
+        internal NetworkConnection(string connectionName, Uri connectionUri, NetworkConnectionType connectionType, KernelThread connectionThread, object connectionInstance, string connectionOriginalUrl)
         {
             ConnectionName = connectionName;
             ConnectionUri = connectionUri;
@@ -68,6 +72,7 @@ namespace KS.Network.Base.Connections
             ConnectionThread = connectionThread;
             ConnectionInstance = connectionInstance;
             connectionIsInstance = connectionThread is null;
+            ConnectionOriginalUrl = connectionOriginalUrl;
         }
     }
 }

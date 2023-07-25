@@ -82,5 +82,7 @@ namespace KS.Shell.Shells.HTTP
 
         public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["HTTPShell"];
 
+        public override bool AcceptsNetworkConnection => true;
+
     }
 }

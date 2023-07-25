@@ -41,5 +41,9 @@ namespace KS.Shell.ShellBase.Shells
         /// Gets the current preset
         /// </summary>
         PromptPresetBase CurrentPreset { get; }
+        /// <summary>
+        /// Whether the shell accepts network connection
+        /// </summary>
+        bool AcceptsNetworkConnection { get; }
     }
 }
