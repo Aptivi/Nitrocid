@@ -90,7 +90,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 answer = ChoiceStyle.PromptChoice(
                     TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme to {0}?"), selectedTheme), "y/n",
                     new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") },
-                    ChoiceStyle.ChoiceOutputType.Modern
+                    ChoiceOutputType.Modern
                 );
             }
 

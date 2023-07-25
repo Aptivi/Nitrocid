@@ -36,7 +36,7 @@ namespace KS.Scripting.Interaction
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static void PromptChoiceAndSet(string Question, string ScriptVariable, string AnswersStr, ChoiceStyle.ChoiceOutputType OutputType = ChoiceStyle.ChoiceOutputType.OneLine, bool PressEnter = false) => PromptChoiceAndSet(Question, ScriptVariable, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
+        public static void PromptChoiceAndSet(string Question, string ScriptVariable, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => PromptChoiceAndSet(Question, ScriptVariable, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -47,7 +47,7 @@ namespace KS.Scripting.Interaction
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
-        public static void PromptChoiceAndSet(string Question, string ScriptVariable, string AnswersStr, string[] AnswersTitles, ChoiceStyle.ChoiceOutputType OutputType = ChoiceStyle.ChoiceOutputType.OneLine, bool PressEnter = false)
+        public static void PromptChoiceAndSet(string Question, string ScriptVariable, string AnswersStr, string[] AnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false)
         {
             string Answer = ChoiceStyle.PromptChoice(Question, AnswersStr, AnswersTitles, OutputType, PressEnter);
             UESHVariables.SetVariable(ScriptVariable, Answer);

@@ -58,6 +58,7 @@ using KS.Drivers.Regexp;
 using ColorTools = KS.ConsoleBase.Colors.ColorTools;
 using static KS.ConsoleBase.Inputs.Styles.ChoiceStyle;
 using static KS.Misc.Games.SpeedPress;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace KS.Kernel.Configuration.Instances
 {

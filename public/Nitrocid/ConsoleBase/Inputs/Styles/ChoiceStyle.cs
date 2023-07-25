@@ -41,29 +41,6 @@ namespace KS.ConsoleBase.Inputs.Styles
             (ChoiceOutputType)Config.MainConfig.DefaultChoiceOutputType;
 
         /// <summary>
-        /// The enumeration for the choice command output type
-        /// </summary>
-        public enum ChoiceOutputType
-        {
-            /// <summary>
-            /// A question and a set of answers in one line
-            /// </summary>
-            OneLine,
-            /// <summary>
-            /// A question in a line and a set of answers in another line
-            /// </summary>
-            TwoLines,
-            /// <summary>
-            /// The modern way of listing choices
-            /// </summary>
-            Modern,
-            /// <summary>
-            /// The table of choices
-            /// </summary>
-            Table
-        }
-
-        /// <summary>
         /// Prompts user for choice
         /// </summary>
         /// <param name="Question">A question</param>

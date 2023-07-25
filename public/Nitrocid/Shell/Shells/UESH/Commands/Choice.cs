@@ -89,13 +89,13 @@ namespace KS.Shell.Shells.UESH.Commands
             if (ListSwitchesOnly.Length > 0)
             {
                 if (ListSwitchesOnly[0] == "-o")
-                    OutputType = ChoiceStyle.ChoiceOutputType.OneLine;
+                    OutputType = ChoiceOutputType.OneLine;
                 if (ListSwitchesOnly[0] == "-t")
-                    OutputType = ChoiceStyle.ChoiceOutputType.TwoLines;
+                    OutputType = ChoiceOutputType.TwoLines;
                 if (ListSwitchesOnly[0] == "-m")
-                    OutputType = ChoiceStyle.ChoiceOutputType.Modern;
+                    OutputType = ChoiceOutputType.Modern;
                 if (ListSwitchesOnly[0] == "-a")
-                    OutputType = ChoiceStyle.ChoiceOutputType.Table;
+                    OutputType = ChoiceOutputType.Table;
             }
 
             // Prompt for choice
