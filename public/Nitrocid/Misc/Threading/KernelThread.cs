@@ -35,6 +35,7 @@ namespace KS.Misc.Threading
         internal bool isCritical;
         internal Thread BaseThread;
         private bool isReady;
+        private bool isStopping;
         private readonly ThreadStart ThreadDelegate;
         private readonly ThreadStart InitialThreadDelegate;
         private readonly ParameterizedThreadStart ThreadDelegateParameterized;
@@ -67,6 +68,11 @@ namespace KS.Misc.Threading
         /// Is the kernel thread critical (essential for the kernel)? Unkillable by the kernel task manager
         /// </summary>
         public bool IsCritical => isCritical;
+
+        /// <summary>
+        /// Is the kernel thread stopping? Use this flag to make your thread stop all operations when <see cref="Stop()"/> is called.
+        /// </summary>
+        public bool IsStopping => isStopping;
 
         /// <summary>
         /// Parent thread. If this thread is a parent thread, returns null. On child threads, returns a parent thread that spawned this thread.
@@ -193,14 +199,24 @@ namespace KS.Misc.Threading
         /// <param name="regen">Whether to regenerate the kernel thread</param>
         public void Stop(bool regen)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId);
-            BaseThread.Interrupt();
-            StopChildThreads();
-            if (!Wait(60000))
-                DebugWriter.WriteDebug(DebugLevel.W, "Either the parent thread or the child thread timed out for 60000 ms waiting for it to stop");
-            isReady = false;
-            if (regen)
-                Regen();
+            try
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", Name, BaseThread.ManagedThreadId);
+                isStopping = true;
+                BaseThread.Interrupt();
+                StopChildThreads();
+                if (!Wait(60000))
+                    DebugWriter.WriteDebug(DebugLevel.W, "Either the parent thread or the child thread timed out for 60000 ms waiting for it to stop");
+                isReady = false;
+                if (regen)
+                    Regen();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Can't stop the kernel thread: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            isStopping = false;
         }
 
         /// <summary>
