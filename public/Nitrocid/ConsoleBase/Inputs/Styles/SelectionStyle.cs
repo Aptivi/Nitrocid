@@ -144,7 +144,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                                       KernelColorType.SelectedOption : 
                                       AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
                     AnswerOption = $"{ColorTools.GetColor(AnswerColor).VTSequenceForeground}{AnswerOption}";
-                    TextWriterColor.Write(AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))), 0, listStartPosition + renderedAnswers, AnswerColor);
+                    TextWriterColor.Write(AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))), AnswerColor);
                     renderedAnswers++;
                 }
 

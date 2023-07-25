@@ -410,7 +410,7 @@ namespace KS.Drivers.Console.Consoles
                         Thread.Sleep((int)Math.Round(MsEachLetter));
 
                         // Write a character individually
-                        WriteChar(msg, ref i, ref vtSeqIdx);
+                        ConsoleWrapper.Write(BufferChar(msg, ref i, ref vtSeqIdx));
                     }
 
                     // If we're writing a new line, write it
@@ -448,6 +448,7 @@ namespace KS.Drivers.Console.Consoles
                     int OldLeft = ConsoleWrapper.CursorLeft;
                     int OldTop = ConsoleWrapper.CursorTop;
                     var Paragraphs = msg.SplitNewLines();
+                    var buffered = new StringBuilder();
                     ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
                     {
@@ -464,38 +465,27 @@ namespace KS.Drivers.Console.Consoles
                             if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin ||
                                 MessageParagraph[i] == '\n')
                             {
-                                if (ConsoleWrapper.CursorTop == ConsoleWrapper.BufferHeight - 1)
-                                {
-                                    // We've reached the end of buffer. Write the line to scroll.
-                                    ConsoleWrapper.WriteLine();
-                                }
-                                else
-                                {
-                                    ConsoleWrapper.CursorTop += 1;
-                                }
-                                ConsoleWrapper.CursorLeft = Left;
+                                buffered.Append($"{CharManager.GetEsc()}[1B");
+                                buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
                             }
 
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
-                                WriteChar(MessageParagraph, ref i, ref vtSeqIdx);
+                                buffered.Append(BufferChar(MessageParagraph, ref i, ref vtSeqIdx));
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
                         if (!(MessageParagraphIndex == Paragraphs.Length - 1))
                         {
-                            if (ConsoleWrapper.CursorTop == ConsoleWrapper.BufferHeight - 1)
-                            {
-                                // We've reached the end of buffer. Write the line to scroll.
-                                ConsoleWrapper.WriteLine();
-                            }
-                            else
-                            {
-                                ConsoleWrapper.CursorTop += 1;
-                            }
-                            ConsoleWrapper.CursorLeft = Left;
+                            buffered.Append($"{CharManager.GetEsc()}[1B");
+                            buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
                         }
                     }
+
+                    // Write the resulting buffer
+                    ConsoleWrapper.Write(buffered.ToString());
+
+                    // Return if we're told to
                     if (Return)
                         ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
                 }
@@ -530,6 +520,7 @@ namespace KS.Drivers.Console.Consoles
                     int OldLeft = ConsoleWrapper.CursorLeft;
                     int OldTop = ConsoleWrapper.CursorTop;
                     var Paragraphs = msg.SplitNewLines();
+                    var buffered = new StringBuilder();
                     ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
                     {
@@ -540,7 +531,7 @@ namespace KS.Drivers.Console.Consoles
                         var sequences = VtSequenceTools.MatchVTSequences(MessageParagraph);
                         int vtSeqIdx = 0;
 
-                        // We can now check to see if we're writing a letter past the console window width
+                        // Buffer the characters and then write when done
                         for (int i = 0; i < MessageParagraph.Length; i++)
                         {
                             // Sleep for a few milliseconds
@@ -548,40 +539,26 @@ namespace KS.Drivers.Console.Consoles
                             if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin ||
                                 MessageParagraph[i] == '\n')
                             {
-                                if (ConsoleWrapper.CursorTop == ConsoleWrapper.BufferHeight - 1)
-                                {
-                                    // We've reached the end of buffer. Write the line to scroll.
-                                    ConsoleWrapper.WriteLine();
-                                }
-                                else
-                                {
-                                    ConsoleWrapper.CursorTop += 1;
-                                }
-                                ConsoleWrapper.CursorLeft = Left;
+                                buffered.Append($"{CharManager.GetEsc()}[1B");
+                                buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
                             }
 
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
-                                WriteChar(MessageParagraph, ref i, ref vtSeqIdx);
+                                buffered.Append(BufferChar(MessageParagraph, ref i, ref vtSeqIdx));
 
                             // If we're writing a new line, write it
                             if (Line)
-                                ConsoleWrapper.WriteLine();
+                                ConsoleWrapper.WriteLine(buffered.ToString());
+                            else
+                                ConsoleWrapper.Write(buffered.ToString());
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
                         if (!(MessageParagraphIndex == Paragraphs.Length - 1))
                         {
-                            if (ConsoleWrapper.CursorTop == ConsoleWrapper.BufferHeight - 1)
-                            {
-                                // We've reached the end of buffer. Write the line to scroll.
-                                ConsoleWrapper.WriteLine();
-                            }
-                            else
-                            {
-                                ConsoleWrapper.CursorTop += 1;
-                            }
-                            ConsoleWrapper.CursorLeft = Left;
+                            buffered.Append($"{CharManager.GetEsc()}[1B");
+                            buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
                         }
                     }
                     if (Return)
@@ -611,22 +588,30 @@ namespace KS.Drivers.Console.Consoles
                     // Grab each VT sequence from the paragraph and fetch their indexes
                     var sequences = VtSequenceTools.MatchVTSequences(Text);
                     int vtSeqIdx = 0;
-
+                    var buffered = new StringBuilder();
                     for (int i = 0; i < Text.Length; i++)
                     {
                         char TextChar = Text[i];
 
                         // Write a character individually
-                        WriteChar(Text, ref i, ref vtSeqIdx);
                         if (TextChar == '\n')
+                        {
+                            buffered.AppendLine();
                             LinesMade++;
+                        }
+                        else
+                            buffered.Append(BufferChar(Text, ref i, ref vtSeqIdx));
                         if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                         {
+                            ConsoleWrapper.Write(buffered.ToString());
+                            buffered.Clear();
                             if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                             LinesMade = 0;
                         }
                     }
+                    ConsoleWrapper.Write(buffered.ToString());
+                    buffered.Clear();
                     if (Line)
                         ConsoleWrapper.WriteLine();
                 }
@@ -638,13 +623,13 @@ namespace KS.Drivers.Console.Consoles
             }
         }
 
-        internal static void WriteChar(string text, ref int i, ref int vtSeqIdx)
+        internal static string BufferChar(string text, ref int i, ref int vtSeqIdx)
         {
             // Grab each VT sequence from the message
             char ch = text[i];
             var sequencesCollections = VtSequenceTools.MatchVTSequences(text);
 
-            // Before printing the character, check to see if we're surrounded by the VT sequence. This is to work around
+            // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
             // do in Windows.
             //
@@ -673,7 +658,7 @@ namespace KS.Drivers.Console.Consoles
                     i += seq.Length - 1;
                 }
             }
-            ConsoleWrapper.Write(!string.IsNullOrEmpty(seq) ? seq : ch.ToString());
+            return !string.IsNullOrEmpty(seq) ? seq : ch.ToString();
         }
 
     }
