@@ -185,7 +185,6 @@ namespace KS.ConsoleBase.Inputs.Styles
                         HighlightedAnswer -= 1;
                         if (HighlightedAnswer == 0)
                             HighlightedAnswer = AllAnswers.Count;
-
                         break;
                     case ConsoleKey.DownArrow:
                         HighlightedAnswer += 1;
@@ -214,6 +213,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                         savedPos = HighlightedAnswer;
                         return -1;
                     case ConsoleKey.Tab:
+                        if (string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription))
+                            break;
                         var infoRenderer = new StringBuilder();
                         infoRenderer.AppendJoin("\n",
                             new[]
