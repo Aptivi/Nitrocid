@@ -124,9 +124,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Populate the answers
-                ConsoleWrapper.SetCursorPosition(0, listStartPosition);
+                int renderedAnswers = 0;
                 for (int AnswerIndex = startIndex; AnswerIndex <= endIndex && AnswerIndex <= AllAnswers.Count - 1; AnswerIndex++)
                 {
+                    ConsoleWrapper.SetCursorPosition(0, listStartPosition + renderedAnswers);
                     bool AltAnswer = AnswerIndex >= altAnswersFirstIdx;
                     var AnswerInstance = AllAnswers[AnswerIndex];
                     string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
@@ -143,7 +144,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                                       KernelColorType.SelectedOption : 
                                       AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
                     AnswerOption = $"{ColorTools.GetColor(AnswerColor).VTSequenceForeground}{AnswerOption}";
-                    TextWriterColor.Write(AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))), true, AnswerColor);
+                    TextWriterColor.Write(AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))), 0, listStartPosition + renderedAnswers, AnswerColor);
+                    renderedAnswers++;
                 }
 
                 // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
