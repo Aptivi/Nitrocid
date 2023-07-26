@@ -36,6 +36,8 @@ namespace KS.ConsoleBase
     public static class ConsoleChecker
     {
 
+        private static bool acknowledged = false;
+
         /// <summary>
         /// Checks the running console for sanity, like the incompatible consoles, insane console types, etc.
         /// <br></br>
@@ -50,6 +52,8 @@ namespace KS.ConsoleBase
         /// </summary>
         public static void CheckConsole()
         {
+            if (acknowledged)
+                return;
             string TerminalType = KernelPlatform.GetTerminalType();
             string TerminalEmulator = KernelPlatform.GetTerminalEmulator();
 
@@ -103,6 +107,9 @@ namespace KS.ConsoleBase
                 TextWriterColor.WritePlain("Warning: Nitrocid KS makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
                 Input.DetectKeypress();
             }
+
+            // Don't check again.
+            acknowledged = true;
         }
 
         /// <summary>
