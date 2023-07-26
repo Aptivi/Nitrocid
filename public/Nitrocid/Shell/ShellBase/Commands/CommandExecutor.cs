@@ -30,8 +30,8 @@ using System.Linq;
 using KS.Drivers.Console.Consoles;
 using KS.Drivers.Console;
 using KS.Drivers;
-using KS.Misc.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Threading;
 
 namespace KS.Shell.ShellBase.Commands
 {

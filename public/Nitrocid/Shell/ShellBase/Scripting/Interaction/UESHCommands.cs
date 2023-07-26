@@ -19,7 +19,6 @@
 using System;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Kernel.Debugging;
-using KS.Shell.ShellBase.Scripting;
 
 namespace KS.Shell.ShellBase.Scripting.Interaction
 {

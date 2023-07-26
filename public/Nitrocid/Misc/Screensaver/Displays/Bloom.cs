@@ -16,16 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
-using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
-using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Screensaver.Displays
 {

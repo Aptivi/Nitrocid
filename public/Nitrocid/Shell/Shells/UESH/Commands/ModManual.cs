@@ -16,15 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Interactive;
 using KS.Modifications;
-using KS.Modifications.ManPages;
 using KS.Modifications.ManPages.Interactive;
 using KS.Shell.ShellBase.Commands;
 

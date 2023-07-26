@@ -20,7 +20,6 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Threading;
 using KS.Network.Base.Connections;
 using KS.Network.Mail;
 using KS.Network.Mail.Transfer;
@@ -29,6 +28,7 @@ using MailKit.Net.Imap;
 using MailKit.Net.Smtp;
 using System.Threading;
 using System;
+using KS.Kernel.Threading;
 
 namespace KS.Shell.Shells.Mail
 {

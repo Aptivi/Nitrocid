@@ -20,8 +20,6 @@ using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace KS.Shell.ShellBase.Commands

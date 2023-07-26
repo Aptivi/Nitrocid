@@ -18,8 +18,8 @@
 
 using System.Collections.Generic;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Threading;
 using KS.Languages;
-using KS.Misc.Threading;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.ShellBase.Shells

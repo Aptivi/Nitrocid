@@ -24,7 +24,6 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using ColorSeq;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase;
 using System.Linq;
 using KS.Misc.Text;
 using System.Collections.Generic;

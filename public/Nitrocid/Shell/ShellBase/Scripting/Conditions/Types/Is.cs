@@ -20,7 +20,6 @@ using FluentFTP.Helpers;
 using KS.Drivers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Shell.ShellBase.Scripting.Conditions;
 using System;
 using System.Collections.Generic;
 

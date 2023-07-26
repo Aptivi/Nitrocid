@@ -26,7 +26,6 @@ using KS.Files.Read;
 using System.Collections.Generic;
 using FluentFTP.Helpers;
 using KS.Misc.Text;
-using KS.Shell;
 using KS.Shell.ShellBase.Scripting.Conditions;
 
 namespace KS.Shell.ShellBase.Scripting

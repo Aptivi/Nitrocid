@@ -18,7 +18,6 @@
 
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Shell.ShellBase.Scripting.Conditions;
 
 namespace KS.Shell.ShellBase.Scripting.Conditions.Types
 {

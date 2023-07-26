@@ -24,7 +24,6 @@ using KS.Shell.ShellBase.Commands;
 using Microsoft.Diagnostics.Runtime;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Linq;
 
 namespace KS.Shell.Shells.Debug.Commands

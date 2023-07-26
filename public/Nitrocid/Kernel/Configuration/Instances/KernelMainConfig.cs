@@ -53,7 +53,6 @@ using KS.Drivers.Network;
 using KS.Drivers.Filesystem;
 using KS.Drivers.Encryption;
 using KS.Drivers.Regexp;
-using static KS.ConsoleBase.Inputs.Styles.ChoiceStyle;
 using static KS.Misc.Games.SpeedPress;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.MiscWriters;

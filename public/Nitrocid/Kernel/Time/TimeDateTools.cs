@@ -17,10 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
-using KS.Misc.Calendar;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Kernel.Time
 {

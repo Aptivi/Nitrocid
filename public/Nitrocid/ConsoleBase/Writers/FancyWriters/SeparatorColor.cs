@@ -18,7 +18,6 @@
 
 using System;
 using ColorSeq;
-using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers;

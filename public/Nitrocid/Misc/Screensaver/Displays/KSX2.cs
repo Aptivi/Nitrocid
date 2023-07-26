@@ -17,23 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
-using KS.Drivers;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
-using KS.Misc.Animations.BSOD.Simulations;
 using KS.Misc.Animations.Glitch;
-using KS.Misc.Text;
 
 namespace KS.Misc.Screensaver.Displays
 {

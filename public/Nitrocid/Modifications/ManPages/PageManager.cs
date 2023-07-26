@@ -18,7 +18,6 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using System.Xml.Linq;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;

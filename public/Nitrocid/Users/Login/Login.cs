@@ -31,7 +31,6 @@ using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
 using KS.Misc.Probers.Placeholder;
 using KS.Kernel.Configuration;
-using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;

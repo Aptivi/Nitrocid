@@ -23,7 +23,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Scripting.Conditions.Types;
+using KS.Shell.ShellBase.Scripting.Conditions.Types;
 
 namespace KS.Shell.ShellBase.Scripting.Conditions
 {

@@ -18,7 +18,6 @@
 
 using ColorSeq;
 using Figgle;
-using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Misc.Text;

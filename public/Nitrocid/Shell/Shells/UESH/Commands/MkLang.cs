@@ -16,10 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Languages;
 using KS.Languages.Studio;
 using KS.Shell.ShellBase.Commands;
-using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

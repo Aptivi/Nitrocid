@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using ColorSeq;
-using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;

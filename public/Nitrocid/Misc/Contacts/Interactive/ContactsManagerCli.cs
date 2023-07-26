@@ -17,10 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
-using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.Collections.Generic;
 using System.Linq;

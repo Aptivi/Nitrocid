@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using KS.Kernel;
 using KS.Kernel.Debugging;
-using KS.Shell;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
