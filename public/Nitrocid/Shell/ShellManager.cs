@@ -29,13 +29,9 @@ using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Execution;
 using KS.Misc.Text;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Drivers;
 using KS.Modifications;
-using KS.Scripting;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
@@ -68,6 +64,10 @@ using KS.Shell.Shells.Sql;
 using KS.Users;
 using KS.Shell.Shells.Debug;
 using KS.Kernel.Exceptions;
+using KS.Shell.ShellBase.Commands.Execution;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Shell.ShellBase.Scripting;
 
 namespace KS.Shell
 {

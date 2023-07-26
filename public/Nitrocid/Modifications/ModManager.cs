@@ -31,13 +31,13 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Splash;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Modifications.ManPages;
 using KS.Shell;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Modifications
 {

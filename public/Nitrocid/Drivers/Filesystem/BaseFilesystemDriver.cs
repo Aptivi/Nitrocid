@@ -31,7 +31,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using FS = KS.Files.Filesystem;
-using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using KS.Files.Operations;
@@ -45,6 +44,7 @@ using KS.Kernel.Configuration;
 using KS.Misc.Reflection;
 using KS.Misc.Probers.Regexp;
 using KS.Shell;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Drivers.Filesystem
 {

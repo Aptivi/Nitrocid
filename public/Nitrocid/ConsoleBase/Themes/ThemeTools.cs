@@ -29,9 +29,9 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Events;
 using static KS.ConsoleBase.Colors.KernelColorTools;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Themes
 {

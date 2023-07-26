@@ -18,9 +18,9 @@
 
 using ColorSeq;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

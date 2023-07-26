@@ -20,14 +20,14 @@ using System;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Threading;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Probers.Placeholder;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 
 namespace KS.Misc.Screensaver.Displays
 {

@@ -26,16 +26,16 @@ using KS.Languages;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
-using KS.Misc.Writers.MiscWriters;
 using KS.Misc.Probers.Placeholder;
 using KS.Kernel.Configuration;
-using KS.Misc.Writers.FancyWriters;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers.MiscWriters;
 
 namespace KS.Users.Login
 {

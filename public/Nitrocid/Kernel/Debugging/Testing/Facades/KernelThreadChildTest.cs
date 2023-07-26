@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Debugging.Testing.Facades.FacadeData;
+using KS.Kernel.Threading;
 using KS.Languages;
-using KS.Misc.Threading;
 using System.Threading;
 
 namespace KS.Kernel.Debugging.Testing.Facades

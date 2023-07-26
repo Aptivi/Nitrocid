@@ -32,8 +32,6 @@ using KS.Misc.Games;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
 using KS.Misc.Timers;
-using KS.Misc.Writers.FancyWriters.Tools;
-using KS.Misc.Writers.MiscWriters;
 using KS.Network.Base;
 using KS.Network.RPC;
 using KS.Shell.Prompts;
@@ -58,6 +56,8 @@ using KS.Drivers.Regexp;
 using static KS.ConsoleBase.Inputs.Styles.ChoiceStyle;
 using static KS.Misc.Games.SpeedPress;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Writers.MiscWriters;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 
 namespace KS.Kernel.Configuration.Instances
 {

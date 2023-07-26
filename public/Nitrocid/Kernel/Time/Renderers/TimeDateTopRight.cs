@@ -19,10 +19,10 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Kernel.Time.Renderers
 {

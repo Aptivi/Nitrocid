@@ -18,7 +18,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using static Namer.NameGenerator;
 

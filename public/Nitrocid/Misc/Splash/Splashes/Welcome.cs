@@ -20,13 +20,13 @@ using System;
 using System.Threading;
 using ColorSeq;
 using KS.Kernel.Debugging;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase;
 using VT.NET.Tools;
-using KS.Misc.Writers.FancyWriters.Tools;
-using KS.Misc.Writers.FancyWriters;
 using KS.Languages;
 using KS.Kernel;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Splash.Splashes
 {

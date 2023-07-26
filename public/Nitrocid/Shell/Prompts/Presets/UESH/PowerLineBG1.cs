@@ -21,10 +21,10 @@ using System.Collections.Generic;
 using System.Text;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
-using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Network.Base;
 using KS.Users;
 

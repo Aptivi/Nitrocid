@@ -27,13 +27,13 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using Renci.SshNet;
 using Renci.SshNet.Common;
 using KS.Kernel.Events;
 using KS.Kernel.Configuration;
 using KS.Network.Base.Connections;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Network.SSH
 {

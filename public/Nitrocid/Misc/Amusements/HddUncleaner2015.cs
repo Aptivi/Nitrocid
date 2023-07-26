@@ -19,8 +19,8 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Amusements
 {

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using ColorSeq.Accessibility;
 using KS.ConsoleBase.Themes;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Configuration;
@@ -28,7 +29,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Colors
 {

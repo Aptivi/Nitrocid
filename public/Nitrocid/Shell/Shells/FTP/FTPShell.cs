@@ -25,12 +25,12 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base.Connections;
 using KS.Network.FTP.Transfer;
 using KS.Network.FTP;
 using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Shells;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Shell.Shells.FTP
 {

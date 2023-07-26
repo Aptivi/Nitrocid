@@ -26,13 +26,13 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Splash;
-using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration.Instances;
 using Newtonsoft.Json.Schema;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Kernel.Configuration
 {

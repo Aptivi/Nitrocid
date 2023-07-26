@@ -18,11 +18,11 @@
 
 using System;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Misc.Editors.HexEdit;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Hex.Commands

@@ -19,9 +19,9 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

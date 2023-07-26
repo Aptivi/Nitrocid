@@ -18,8 +18,8 @@
 
 using System;
 using System.Runtime.InteropServices;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using VT.NET.Tools;
 
 namespace KS.ConsoleBase

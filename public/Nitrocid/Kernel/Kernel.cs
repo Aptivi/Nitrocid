@@ -33,8 +33,6 @@ using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Reflection;
 using KS.Misc.Splash;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Modifications;
 using KS.Network.RPC;
 using KS.Kernel.Debugging;
@@ -51,6 +49,8 @@ using KS.Kernel.Power;
 using KS.Users.Groups;
 using KS.Kernel.Debugging.Trace;
 using KS.Kernel.Journaling;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Kernel
 {

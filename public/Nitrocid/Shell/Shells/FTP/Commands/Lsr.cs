@@ -20,7 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Network.FTP.Filesystem;
 using KS.Shell.ShellBase.Commands;
 

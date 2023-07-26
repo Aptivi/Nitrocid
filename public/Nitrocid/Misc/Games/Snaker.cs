@@ -25,9 +25,9 @@ using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Displays;
-using KS.Misc.Threading;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Threading;
 
 namespace KS.Misc.Games
 {

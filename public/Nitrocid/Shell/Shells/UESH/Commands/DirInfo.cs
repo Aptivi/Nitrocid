@@ -19,13 +19,13 @@
 using System.IO;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using ColorSeq;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 using System.Text;
 using KS.ConsoleBase;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Misc.Animations.Spin
 {

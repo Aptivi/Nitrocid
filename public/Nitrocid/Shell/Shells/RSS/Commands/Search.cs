@@ -18,11 +18,11 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RSS;
 using Syndian.Instance;
 using KS.Shell.ShellBase.Commands;
 using System.Linq;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Shell.Shells.RSS.Commands
 {

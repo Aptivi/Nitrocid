@@ -16,9 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
-using KS.Misc.Writers.FancyWriters;
 using System;
 
 namespace KS.Kernel.Debugging.Testing.Facades

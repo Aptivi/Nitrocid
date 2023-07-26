@@ -22,9 +22,9 @@ using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Misc.Splash.Splashes
 {

@@ -20,7 +20,7 @@ using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
-using KS.Misc.Threading;
+using KS.Kernel.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {

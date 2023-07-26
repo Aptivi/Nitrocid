@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Linq;
-using KS.Scripting;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Scripting;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

@@ -18,10 +18,10 @@
 
 using System;
 using KS.Kernel;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Drivers;
 using KS.Shell.ShellBase.Shells;
 using KS.Drivers.Console;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Shell.ShellBase.Commands
 {

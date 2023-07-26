@@ -30,9 +30,9 @@ using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Threading;
 using KS.Misc.Reflection;
 using KS.Misc.Splash.Splashes;
-using KS.Misc.Threading;
 
 namespace KS.Misc.Splash
 {

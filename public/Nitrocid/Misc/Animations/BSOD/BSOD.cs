@@ -16,11 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Threading;
 using KS.ConsoleBase;
 using System.Collections.Generic;
 using KS.Misc.Animations.BSOD.Simulations;
 using KS.Drivers.RNG;
+using KS.Kernel.Threading;
 
 namespace KS.Misc.Animations.BSOD
 {

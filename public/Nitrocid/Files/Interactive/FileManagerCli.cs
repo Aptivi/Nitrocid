@@ -23,7 +23,6 @@ using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.FancyWriters;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,6 +33,7 @@ using KS.Misc.Interactive;
 using System.Collections;
 using KS.Misc.Text;
 using KS.Kernel.Time.Renderers;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Files.Interactive
 {

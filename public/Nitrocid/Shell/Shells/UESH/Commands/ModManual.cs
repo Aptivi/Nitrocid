@@ -19,10 +19,10 @@
 using System;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Interactive;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Modifications;
 using KS.Modifications.ManPages;
 using KS.Modifications.ManPages.Interactive;

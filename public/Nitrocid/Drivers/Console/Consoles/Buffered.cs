@@ -18,7 +18,6 @@
 
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.IO;
 using System.Linq;
@@ -26,6 +25,7 @@ using System.Threading;
 using System.Text;
 using KS.Kernel.Exceptions;
 using KS.Misc.Text;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Drivers.Console.Consoles
 {

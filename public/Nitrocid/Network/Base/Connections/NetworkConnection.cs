@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Exceptions;
+using KS.Kernel.Threading;
 using KS.Languages;
-using KS.Misc.Threading;
 using System;
 
 namespace KS.Network.Base.Connections

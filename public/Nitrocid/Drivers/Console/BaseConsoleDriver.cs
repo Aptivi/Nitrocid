@@ -19,7 +19,6 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.IO;
 using System.Text;
@@ -30,6 +29,7 @@ using con = System.Console;
 using VT.NET.Tools;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Drivers.Console.Consoles
 {

@@ -21,19 +21,19 @@ using System.Collections.Generic;
 using System.Linq;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Drivers;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
+using KS.Kernel.Threading;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Animations.BSOD.Simulations;
 using KS.Misc.Animations.Glitch;
 using KS.Misc.Text;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
-using KS.Misc.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Screensaver.Displays
 {

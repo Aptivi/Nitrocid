@@ -27,11 +27,11 @@ using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 using System.Linq;
 using KS.Kernel.Exceptions;
 using KS.Misc.Text;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Network.SpeedDial
 {

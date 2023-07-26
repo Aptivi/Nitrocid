@@ -19,12 +19,12 @@
 using System;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Scripting.Conditions;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Scripting.Conditions;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.UESH.Commands

@@ -23,15 +23,15 @@ using System.Linq;
 using System.Threading;
 using System.Xml.Serialization;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Calendar.Reminders
 {

@@ -25,7 +25,7 @@ using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
-using KS.Misc.Threading;
+using KS.Kernel.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {

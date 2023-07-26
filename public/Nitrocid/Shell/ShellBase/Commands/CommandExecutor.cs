@@ -24,7 +24,6 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
 using System.Linq;
@@ -32,6 +31,7 @@ using KS.Drivers.Console.Consoles;
 using KS.Drivers.Console;
 using KS.Drivers;
 using KS.Misc.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Shell.ShellBase.Commands
 {

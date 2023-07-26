@@ -19,13 +19,13 @@
 using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.RPC;
 using System.Threading;
 using KS.Kernel.Events;
 using KS.Users.Permissions;
 using System.Diagnostics;
 using KS.Kernel.Journaling;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Kernel.Power
 {

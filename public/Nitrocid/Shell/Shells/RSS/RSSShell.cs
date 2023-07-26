@@ -23,11 +23,11 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base.Connections;
 using Syndian.Instance;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.HTTP;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Shell.Shells.RSS
 {

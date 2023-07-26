@@ -21,9 +21,9 @@ using System.Threading;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Splash;
-using KS.Misc.Threading;
 
 namespace KS.Network.RPC
 {

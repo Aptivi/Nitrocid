@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
-using KS.Misc.Writers.FancyWriters;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

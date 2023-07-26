@@ -19,8 +19,8 @@
 using System.Collections.Generic;
 using System.IO;
 using KS.Kernel.Configuration;
+using KS.Kernel.Threading;
 using KS.Misc.Editors.TextEdit;
-using KS.Misc.Threading;
 
 namespace KS.Shell.Shells.Text
 {

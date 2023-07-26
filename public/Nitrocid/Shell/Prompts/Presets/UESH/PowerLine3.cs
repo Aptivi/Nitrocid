@@ -24,9 +24,9 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Network.Base;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Writers.FancyWriters.Tools;
 using System.Collections.Generic;
 using KS.Users;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {

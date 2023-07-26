@@ -22,8 +22,8 @@ using System.Text;
 using ColorSeq;
 using KS.Shell.Shells.Text;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Writers.FancyWriters.Tools;
 using System.Collections.Generic;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 
 namespace KS.Shell.Prompts.Presets.Text
 {

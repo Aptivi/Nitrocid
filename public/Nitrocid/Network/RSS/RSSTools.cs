@@ -26,9 +26,9 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Writers.ConsoleWriters;
 using Syndian.Instance;
 using KS.Shell.Shells.RSS;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Network.RSS
 {

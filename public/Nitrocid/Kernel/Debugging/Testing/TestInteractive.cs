@@ -19,8 +19,8 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -18,9 +18,9 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using Syndian.Instance;
 using KS.Shell.ShellBase.Commands;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Shell.Shells.RSS.Commands
 {

@@ -21,6 +21,8 @@ using System.Collections.Generic;
 using System.IO;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers;
 using KS.Files.Print;
 using KS.Files.Querying;
@@ -29,8 +31,6 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 
 namespace KS.Files.Folders
 {

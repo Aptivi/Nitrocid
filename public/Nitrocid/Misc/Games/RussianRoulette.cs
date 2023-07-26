@@ -18,9 +18,9 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 
 namespace KS.Misc.Games

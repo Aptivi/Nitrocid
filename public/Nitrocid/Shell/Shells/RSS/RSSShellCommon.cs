@@ -19,7 +19,7 @@
 using System;
 using System.Net.Http;
 using KS.Kernel.Configuration;
-using KS.Misc.Threading;
+using KS.Kernel.Threading;
 using KS.Network.Base.Connections;
 using KS.Network.RSS;
 using Syndian.Instance;

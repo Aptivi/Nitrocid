@@ -22,9 +22,9 @@ using KS.ConsoleBase;
 using KS.Kernel.Configuration;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
-using KS.Misc.Threading;
 using KS.Misc.Reflection;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {

@@ -26,8 +26,8 @@ using KS.Drivers.RNG;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Threading;
 using KS.Misc.Text;
-using KS.Misc.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {

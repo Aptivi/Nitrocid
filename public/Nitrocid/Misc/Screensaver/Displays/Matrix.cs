@@ -20,11 +20,11 @@ using System;
 using System.Collections.Generic;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
+using KS.Kernel.Threading;
 using ColorTools = KS.ConsoleBase.Colors.KernelColorTools;
 
 namespace KS.Misc.Screensaver.Displays

@@ -19,8 +19,8 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Splash.Splashes
 {

@@ -23,6 +23,7 @@ using System.Threading;
 using FluentFTP.Helpers;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers;
 using KS.Files;
 using KS.Kernel.Configuration;
@@ -30,7 +31,6 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Probers.Placeholder;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Network.Base.Transfer
 {

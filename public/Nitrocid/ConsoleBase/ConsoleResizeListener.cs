@@ -21,7 +21,7 @@ using KS.Drivers.Console;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
-using KS.Misc.Threading;
+using KS.Kernel.Threading;
 using System;
 using System.Threading;
 

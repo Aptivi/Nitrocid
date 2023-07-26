@@ -20,8 +20,8 @@ using System;
 using System.Threading;
 using KS.Kernel.Debugging;
 using KS.Kernel;
-using KS.Misc.Threading;
 using KS.Kernel.Events;
+using KS.Kernel.Threading;
 
 namespace KS.Misc.Screensaver
 {

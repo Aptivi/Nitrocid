@@ -18,8 +18,8 @@
 
 using System.IO;
 using KS.Kernel.Configuration;
+using KS.Kernel.Threading;
 using KS.Misc.Editors.HexEdit;
-using KS.Misc.Threading;
 
 namespace KS.Shell.Shells.Hex
 {

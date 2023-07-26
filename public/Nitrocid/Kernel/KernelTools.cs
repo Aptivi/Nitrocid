@@ -31,13 +31,8 @@ using KS.Misc.Calendar.Reminders;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
-using KS.Misc.Writers.MiscWriters;
 using KS.Modifications;
 using KS.Network.RPC;
-using KS.Scripting;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using System.Reflection;
@@ -45,6 +40,11 @@ using KS.ConsoleBase.Inputs;
 using KS.Misc.Contacts;
 using KS.Network.Base.Connections;
 using KS.Kernel.Time.Renderers;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers.MiscWriters;
+using KS.Shell.ShellBase.Scripting;
 
 namespace KS.Kernel
 {

@@ -29,11 +29,11 @@ using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Kernel.Events;
 using KS.Kernel.Exceptions;
 using System.Linq;
 using KS.Shell;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Network.RPC
 {

@@ -18,9 +18,9 @@
 
 using FluentFTP;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.FTP.Commands

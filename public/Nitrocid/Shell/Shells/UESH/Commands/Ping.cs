@@ -20,11 +20,11 @@ using System;
 using System.Linq;
 using System.Net.NetworkInformation;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 using KS.Network.Base;
 using KS.Shell.ShellBase.Commands;
 

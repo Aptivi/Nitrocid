@@ -22,13 +22,13 @@ using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Network.Base.Connections
 {

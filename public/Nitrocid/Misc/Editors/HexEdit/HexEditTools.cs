@@ -21,13 +21,13 @@ using System.IO;
 using System.Linq;
 using System.Threading;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Print;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Reflection;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.Shells.Hex;
 
 namespace KS.Misc.Editors.HexEdit

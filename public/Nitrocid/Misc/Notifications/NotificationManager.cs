@@ -26,11 +26,11 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Splash;
 using KS.Misc.Text;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 using KS.Kernel.Events;
 using KS.Kernel.Configuration;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Misc.Notifications
 {

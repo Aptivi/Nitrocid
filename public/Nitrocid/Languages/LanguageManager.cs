@@ -32,9 +32,9 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Languages
 {

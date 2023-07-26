@@ -18,8 +18,8 @@
 
 using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Animations.BSOD.Simulations
 {

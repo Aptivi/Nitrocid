@@ -18,8 +18,8 @@
 
 using ColorSeq;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

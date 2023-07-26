@@ -27,8 +27,6 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver.Customized;
 using KS.Misc.Screensaver.Displays;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Users.Login;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
@@ -38,6 +36,8 @@ using System.Linq;
 using KS.Users;
 using System.Diagnostics;
 using KS.ConsoleBase;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Misc.Screensaver
 {

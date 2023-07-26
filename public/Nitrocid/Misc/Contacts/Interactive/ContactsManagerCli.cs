@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -32,6 +31,7 @@ using KS.Files.Querying;
 using KS.Misc.Interactive;
 using System.Collections;
 using KS.Misc.Text;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Misc.Contacts.Interactive
 {

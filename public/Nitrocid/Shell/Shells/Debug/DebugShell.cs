@@ -19,11 +19,11 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.Debug

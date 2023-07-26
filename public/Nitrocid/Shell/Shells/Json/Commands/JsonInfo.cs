@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json.Linq;
-using KS.Misc.Writers.FancyWriters;
 using System.Linq;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Shell.Shells.Json.Commands
 {

@@ -20,7 +20,7 @@ using System;
 using FluentFTP;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Network.FTP.Transfer
 {

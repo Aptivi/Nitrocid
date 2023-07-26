@@ -27,7 +27,6 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.Base;
 using KS.Network.Mail;
-using KS.Scripting;
 using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
@@ -39,6 +38,7 @@ using System.Collections.Generic;
 using KS.Kernel.Power;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
+using KS.Shell.ShellBase.Scripting;
 
 namespace KS.Misc.Probers.Placeholder
 {

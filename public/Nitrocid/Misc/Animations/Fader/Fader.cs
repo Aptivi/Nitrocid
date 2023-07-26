@@ -19,11 +19,11 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
+using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.Misc.Animations.Fader
 {

@@ -22,7 +22,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.IO;
@@ -31,6 +30,7 @@ using SharpCompress.Archives.Rar;
 using SharpCompress.Common;
 using SharpCompress.Readers;
 using SharpCompress.Archives.Zip;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Shell.Shells.Archive
 {

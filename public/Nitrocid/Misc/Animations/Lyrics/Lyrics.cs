@@ -20,15 +20,15 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Querying;
+using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 using SharpLyrics;
 
 namespace KS.Misc.Animations.Lyrics

@@ -22,8 +22,8 @@ using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
+using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
-using KS.Misc.Threading;
 
 namespace KS.Misc.Animations.Glitch
 {

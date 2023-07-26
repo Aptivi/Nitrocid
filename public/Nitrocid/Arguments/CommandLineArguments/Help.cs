@@ -19,9 +19,9 @@
 using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase.Inputs;
 using System;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Arguments.CommandLineArguments
 {

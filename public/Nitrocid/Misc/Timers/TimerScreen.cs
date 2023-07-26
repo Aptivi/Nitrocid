@@ -26,13 +26,13 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel;
 using KS.Languages;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
-using KS.Misc.Writers.FancyWriters.Tools;
 using KS.Kernel.Configuration;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Timers
 {

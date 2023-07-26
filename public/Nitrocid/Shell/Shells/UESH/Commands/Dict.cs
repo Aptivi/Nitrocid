@@ -21,9 +21,9 @@ using static Dictify.Manager.DictionaryManager;
 using Dictify.Models;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 using KS.Shell.ShellBase.Commands;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

@@ -21,8 +21,8 @@ using ColorSeq;
 using KS.Network.Mail;
 using KS.Shell.Shells.Mail;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Writers.FancyWriters.Tools;
 using System.Collections.Generic;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 
 namespace KS.Shell.Prompts.Presets.Mail
 {

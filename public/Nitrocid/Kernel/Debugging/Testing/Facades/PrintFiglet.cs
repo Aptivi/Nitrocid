@@ -18,8 +18,8 @@
 
 using Figgle;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
-using KS.Misc.Writers.FancyWriters;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

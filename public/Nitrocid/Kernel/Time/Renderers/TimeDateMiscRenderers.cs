@@ -16,9 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Misc.Calendar;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 
 namespace KS.Kernel.Time.Renderers

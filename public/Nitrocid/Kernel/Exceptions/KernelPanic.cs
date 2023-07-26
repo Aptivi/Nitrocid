@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
@@ -28,7 +29,6 @@ using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.Diagnostics;
 using System.IO;

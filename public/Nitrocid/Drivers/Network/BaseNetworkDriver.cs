@@ -22,7 +22,6 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.Network.Base;
 using System;
 using System.IO;
@@ -35,6 +34,7 @@ using KS.Kernel.Exceptions;
 using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Drivers.Network
 {

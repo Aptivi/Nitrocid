@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.ArgumentBase;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using System.Diagnostics;
 
 namespace KS.Arguments.CommandLineArguments

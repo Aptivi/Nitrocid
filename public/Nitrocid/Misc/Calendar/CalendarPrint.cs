@@ -21,10 +21,10 @@ using System.Collections.Generic;
 using KS.Languages;
 using KS.Misc.Calendar.Events;
 using KS.Misc.Calendar.Reminders;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
-using KS.Misc.Writers.FancyWriters.Tools;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Calendar
 {

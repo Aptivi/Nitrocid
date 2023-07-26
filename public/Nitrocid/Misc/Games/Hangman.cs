@@ -23,9 +23,9 @@ using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Languages;
-using KS.Misc.Writers.ConsoleWriters;
 using Wordament;
 
 namespace KS.Misc.Games

@@ -19,11 +19,11 @@
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
+using KS.Kernel.Threading;
 using KS.Misc.Reflection;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 
 namespace KS.Misc.Screensaver.Displays

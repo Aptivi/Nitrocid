@@ -22,11 +22,11 @@ using System.Threading;
 using ColorSeq;
 using KS.Drivers.RNG;
 using KS.Languages;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Configuration;
 using KS.ConsoleBase;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Misc.Games
 {

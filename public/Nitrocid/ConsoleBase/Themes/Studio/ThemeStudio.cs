@@ -22,12 +22,12 @@ using ColorPrint.Core.Wheel;
 using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Folders;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Themes.Studio
 {

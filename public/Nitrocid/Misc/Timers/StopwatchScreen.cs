@@ -24,10 +24,10 @@ using System.Threading;
 using ColorSeq;
 using KS.ConsoleBase;
 using KS.Languages;
-using KS.Misc.Threading;
-using KS.Misc.Writers.ConsoleWriters;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Misc.Timers
 {

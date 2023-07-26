@@ -19,8 +19,8 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
 using System;
 using System.Linq;
 

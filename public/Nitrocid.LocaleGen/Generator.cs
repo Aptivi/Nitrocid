@@ -27,7 +27,7 @@ using System.Collections.Generic;
 using System.IO;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using Nitrocid.LocaleGen.Serializer;
 
 namespace Nitrocid.LocaleGen

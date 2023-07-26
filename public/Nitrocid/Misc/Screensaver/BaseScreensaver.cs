@@ -18,10 +18,10 @@
 
 using System;
 using System.Collections.Generic;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Misc.Threading;
-using KS.Misc.Writers.FancyWriters;
 
 namespace KS.Misc.Screensaver
 {

@@ -21,7 +21,7 @@ using System.Collections;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
-using KS.Misc.Threading;
+using KS.Kernel.Threading;
 
 namespace KS.Misc.Screensaver.Displays
 {

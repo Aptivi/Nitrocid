@@ -24,10 +24,10 @@ using KS.ConsoleBase;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
-using KS.Misc.Writers.ConsoleWriters;
-using KS.Misc.Writers.FancyWriters;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Misc.Splash.Splashes
 {

@@ -19,12 +19,12 @@
 using System;
 using ColorSeq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
+using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
-using KS.Misc.Threading;
-using KS.Misc.Writers.FancyWriters;
-using KS.Misc.Writers.FancyWriters.Tools;
 
 namespace KS.Misc.Animations.ExcaliBeats
 {
