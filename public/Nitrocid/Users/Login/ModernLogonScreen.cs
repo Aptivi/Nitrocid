@@ -111,6 +111,28 @@ namespace KS.Users.Login
             try
             {
                 string cachedTimeStr = "";
+
+                // First, get the headline
+                static string UpdateHeadline()
+                {
+                    try
+                    {
+                        if (!RSSTools.ShowHeadlineOnLogin)
+                            return "";
+                        var Feed = new RSSFeed(RSSTools.RssHeadlineUrl, RSSFeedType.Infer);
+                        if (Feed.FeedArticles.Count > 0)
+                            return Translate.DoTranslation("From") + $" {Feed.FeedTitle}: {Feed.FeedArticles[0].ArticleTitle}";
+                        return Translate.DoTranslation("No feed.");
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        return Translate.DoTranslation("Failed to get the latest news.");
+                    }
+                }
+                string headlineStr = UpdateHeadline();
+
                 while (true)
                 {
                     // Print the time
@@ -138,29 +160,13 @@ namespace KS.Users.Login
                         }
 
                         // Print the headline
-                        string headlineStr = "";
                         if (RSSTools.ShowHeadlineOnLogin)
                         {
-                            try
-                            {
-                                var Feed = new RSSFeed(RSSTools.RssHeadlineUrl, RSSFeedType.Infer);
-                                if (Feed.FeedArticles.Count > 0)
-                                    headlineStr = Translate.DoTranslation("From") + $" {Feed.FeedTitle}: {Feed.FeedArticles[0].ArticleTitle}";
-                            }
-                            catch (Exception ex)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
-                                DebugWriter.WriteDebugStackTrace(ex);
-                                headlineStr = Translate.DoTranslation("Failed to get the latest news.");
-                            }
-                            finally
-                            {
-                                int consoleHeadlineInfoY =
-                                    MotdHeadlineBottom ?
-                                    (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 5 : 4) :
-                                    (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
-                                CenteredTextColor.WriteCentered(consoleHeadlineInfoY, headlineStr);
-                            }
+                            int consoleHeadlineInfoY =
+                                MotdHeadlineBottom ?
+                                (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 5 : 4) :
+                                (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
+                            CenteredTextColor.WriteCentered(consoleHeadlineInfoY, headlineStr);
                         }
 
                         // Print the MOTD
