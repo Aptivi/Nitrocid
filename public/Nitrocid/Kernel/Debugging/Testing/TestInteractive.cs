@@ -170,7 +170,7 @@ namespace KS.Kernel.Debugging.Testing
                         // Exit
                         exiting = true;
                     }
-                    else if (sel == facadeCount + 4)
+                    else if (sel == facadeCount + 4 || sel == -1)
                     {
                         // Shutdown
                         ShutdownFlag = true;

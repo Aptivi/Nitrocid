@@ -235,6 +235,8 @@ namespace KS.Network.Base.Connections
                     int selectedConnection = NetworkConnectionSelector.ConnectionSelector(connectionType);
                     var availableConnectionInstances = GetNetworkConnections(connectionType);
                     int availableConnections = GetNetworkConnections(connectionType).Length;
+                    if (selectedConnection == -1)
+                        return;
 
                     // Now, check to see if the user selected "Create a new connection"
                     NetworkConnection connection;
@@ -257,6 +259,8 @@ namespace KS.Network.Base.Connections
                         int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), connectionsChoiceList, new List<InputChoiceInfo>() {
                             new InputChoiceInfo($"{speedDials.Count + 1}", Translate.DoTranslation("Create a new connection")),
                         });
+                        if (selectedSpeedDial == -1)
+                            return;
 
                         // Now, check to see if we're going to connect
                         if (selectedSpeedDial == speedDials.Count + 1)
@@ -298,6 +302,8 @@ namespace KS.Network.Base.Connections
 
                         // Get connection from user selection
                         int selectedConnectionNumber = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection."), connectionsChoiceList);
+                        if (selectedConnectionNumber == -1)
+                            return;
                         ShellStart.StartShell(shellType, availableConnectionInstances[selectedConnectionNumber - 1]);
                     }
                     else

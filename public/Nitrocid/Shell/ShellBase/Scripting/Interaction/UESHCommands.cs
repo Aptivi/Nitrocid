@@ -73,7 +73,7 @@ namespace KS.Shell.ShellBase.Scripting.Interaction
             int SelectedAnswer = SelectionStyle.PromptSelection(Question, AnswersStr, AnswersTitles);
 
             // Set the value
-            if (SelectedAnswer == -1)
+            if (SelectedAnswer != -1)
                 UESHVariables.SetVariable(ScriptVariable, SelectedAnswer.ToString());
         }
 

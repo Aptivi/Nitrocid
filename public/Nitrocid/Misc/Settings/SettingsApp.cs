@@ -538,6 +538,8 @@ namespace KS.Misc.Settings
                             int Answer = SelectionStyle.PromptSelection("- " + finalSection + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalSection + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(KeyDescription),
                                 string.Join("/", itemNums), items.ToArray(),
                                 string.Join("/", altSectionNums), altSections.ToArray());
+                            if (Answer == -1)
+                                break;
                             AnswerString = Answer.ToString();
 
                             break;
@@ -891,7 +893,7 @@ namespace KS.Misc.Settings
                     sel = SelectionStyle.PromptSelection(Translate.DoTranslation("These settings are found. Please select one."), Results, Back);
 
                     // If pressed back, bail
-                    if (sel == Results.Count + 1 && sel == -1)
+                    if (sel == Results.Count + 1 || sel == -1)
                         break;
 
                     // Go to setting
