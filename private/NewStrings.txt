@@ -41,7 +41,7 @@ Failed to remove user from group lists: invalid user {0}
 You have either found a bug, or the group you tried to edit for a new user has failed.
 One of the group lists doesn't contain username {0}.
 Groups loaded
-Mod {0} requires minimum API version {1}, but you have version {2}. Upgrading Nitrocid KS usually helps. Mod parsing failed.
+Mod {0} requires exactly an API version {1}, but you have version {2}. Upgrading Nitrocid KS and/or the mod usually helps. Mod parsing failed.
 Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy.
 Preview splash
 General kernel settings
