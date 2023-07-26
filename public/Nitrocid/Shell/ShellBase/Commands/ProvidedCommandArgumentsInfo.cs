@@ -178,8 +178,12 @@ namespace KS.Shell.ShellBase.Commands
                 List<string> conflicts = new();
                 foreach (var kvp in EnclosedSwitchKeyValuePairs)
                 {
-                    // Get the switch and its conflicts list
+                    // Check to see if the switch exists
                     string @switch = kvp.Item1;
+                    if (unknownSwitchesList.Contains(@switch))
+                        continue;
+
+                    // Get the switch and its conflicts list
                     string[] switchConflicts = CommandInfo.CommandArgumentInfo.Switches
                         .Where((switchInfo) => $"-{switchInfo.SwitchName}" == @switch)
                         .First().ConflictsWith
