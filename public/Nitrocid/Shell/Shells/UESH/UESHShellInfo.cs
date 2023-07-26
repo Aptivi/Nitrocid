@@ -312,7 +312,7 @@ namespace KS.Shell.Shells.UESH
             { "wordle", new CommandInfo("wordle", ShellType, /* Localizable */ "The Wordle game simulator",
                 new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally") }, false, 0), new WordleCommand()) },
             { "wrap", new CommandInfo("wrap", ShellType, /* Localizable */ "Wraps the console output",
-                new CommandArgumentInfo(new[] { "command" }, Array.Empty<SwitchInfo>(), true, 1), new WrapCommand()) },
+                new CommandArgumentInfo(new[] { "command" }, Array.Empty<SwitchInfo>(), true, 1), new WrapUnifiedCommand()) },
             { "zip", new CommandInfo("zip", ShellType, /* Localizable */ "Creates a ZIP archive",
                 new CommandArgumentInfo(new[] { "zipfile", "path" }, new[] { new SwitchInfo("fast", /* Localizable */ "Fast compression", false, false, new string[] { "nocomp" }), new SwitchInfo("nocomp", /* Localizable */ "No compression", false, false, new string[] { "fast" }), new SwitchInfo("nobasedir", /* Localizable */ "Don't create base directory in archive") }, true, 2), new ZipCommand()) },
 

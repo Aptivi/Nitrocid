@@ -28,7 +28,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
     /// <remarks>
     /// You can wrap a command so it stops outputting until you press a key if the console has printed lines that exceed the console window height. Only the commands that are explicitly set to be wrappable can be used with this command.
     /// </remarks>
-    class WrapCommand : BaseCommand, ICommand
+    class WrapUnifiedCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
