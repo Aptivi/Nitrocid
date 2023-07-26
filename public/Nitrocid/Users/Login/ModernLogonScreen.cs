@@ -79,7 +79,7 @@ namespace KS.Users.Login
                         UserManagement.GetUser(user).FullName :
                         ""
                 ).ToArray();
-                int userNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a user account you want to log in with."), string.Join("/", users), userFullNames);
+                int userNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a user account you want to log in with."), string.Join("/", users), userFullNames, true);
 
                 // Then, get the user from the number and prompt for password if found
                 userName = UserManagement.SelectUser(userNum);

@@ -43,8 +43,9 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
-        public static int PromptSelection(string Question, string AnswersStr) => 
-            PromptSelection(Question, AnswersStr, Array.Empty<string>(), "", Array.Empty<string>());
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, string AnswersStr, bool kiosk = false) => 
+            PromptSelection(Question, AnswersStr, Array.Empty<string>(), "", Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -52,8 +53,9 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles) =>
-            PromptSelection(Question, AnswersStr, AnswersTitles, "", Array.Empty<string>());
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, bool kiosk = false) =>
+            PromptSelection(Question, AnswersStr, AnswersTitles, "", Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -62,8 +64,9 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersStr">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr) =>
-            PromptSelection(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, Array.Empty<string>());
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, bool kiosk = false) =>
+            PromptSelection(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -73,16 +76,18 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswersStr">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
-        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles) =>
-            PromptSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles));
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, string[] AlternateAnswersTitles, bool kiosk = false) =>
+            PromptSelection(Question, InputChoiceTools.GetInputChoices(AnswersStr, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswersStr, AlternateAnswersTitles), kiosk);
 
         /// <summary>
         /// Prompts user for selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
-        public static int PromptSelection(string Question, string[] Answers) => 
-            PromptSelection(Question, Answers, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, string[] Answers, bool kiosk = false) => 
+            PromptSelection(Question, Answers, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -90,8 +95,9 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
-        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles) =>
-            PromptSelection(Question, Answers, AnswersTitles, Array.Empty<string>(), Array.Empty<string>());
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, bool kiosk = false) =>
+            PromptSelection(Question, Answers, AnswersTitles, Array.Empty<string>(), Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -100,8 +106,9 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Answers">Set of answers. They can be written like this: Y/N/C.</param>
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
-        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers) =>
-            PromptSelection(Question, Answers, AnswersTitles, AlternateAnswers, Array.Empty<string>());
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, bool kiosk = false) =>
+            PromptSelection(Question, Answers, AnswersTitles, AlternateAnswers, Array.Empty<string>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -111,16 +118,18 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="AnswersTitles">Working titles for each answer. It must be the same amount as the answers.</param>
         /// <param name="AlternateAnswers">Set of alternate answers. They can be written like this: Y/N/C.</param>
         /// <param name="AlternateAnswersTitles">Working titles for each alternate answer. It must be the same amount as the alternate answers.</param>
-        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles) =>
-            PromptSelection(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles));
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, string[] AlternateAnswersTitles, bool kiosk = false) =>
+            PromptSelection(Question, InputChoiceTools.GetInputChoices(Answers, AnswersTitles), InputChoiceTools.GetInputChoices(AlternateAnswers, AlternateAnswersTitles), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
         /// </summary>
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
-        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers) =>
-            PromptSelection(Question, Answers, new List<InputChoiceInfo>());
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, bool kiosk = false) =>
+            PromptSelection(Question, Answers, new List<InputChoiceInfo>(), kiosk);
 
         /// <summary>
         /// Prompts user for Selection
@@ -128,7 +137,8 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Question">A question</param>
         /// <param name="Answers">Set of answers.</param>
         /// <param name="AltAnswers">Set of alternate answers.</param>
-        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers)
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false)
         {
             // Variables
             int HighlightedAnswer = savedPos;
@@ -216,7 +226,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 TextWriterWhereColor.WriteWhere(descFinal, 0, descArea, KernelColorType.NeutralText);
 
                 // Write keybindings and page and answer number
-                string bindingsRender = $"[{Translate.DoTranslation("ENTER: select")}]==[{Translate.DoTranslation("ESC: exit")}]==[{Translate.DoTranslation("TAB: info")}]";
+                string bindingsRender =
+                    kiosk ?
+                    $"[{Translate.DoTranslation("ENTER: select")}]==[{Translate.DoTranslation("TAB: info")}]" :
+                    $"[{Translate.DoTranslation("ENTER: select")}]==[{Translate.DoTranslation("ESC: exit")}]==[{Translate.DoTranslation("TAB: info")}]";
                 string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
                 int bindingsLeft = 2;
                 int numbersLeft = ConsoleWrapper.WindowWidth - numberRender.Length - bindingsLeft;
@@ -257,6 +270,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                         savedPos = HighlightedAnswer;
                         return HighlightedAnswer;
                     case ConsoleKey.Escape:
+                        if (kiosk)
+                            break;
                         TextWriterColor.Write();
                         savedPos = HighlightedAnswer;
                         return -1;
