@@ -283,7 +283,10 @@ namespace KS.Kernel
 
             // Load main buffer
             if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer)
+            {
                 TextWriterColor.Write("\u001b[?1049l");
+                ConsoleWrapper.Clear();
+            }
         }
 
         /// <summary>
