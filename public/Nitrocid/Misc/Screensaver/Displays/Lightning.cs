@@ -88,21 +88,18 @@ namespace KS.Misc.Screensaver.Displays
             if (striking)
             {
                 // First, determine the lightning bolt position
-                int boltEdgeMinPos = 3 * (ConsoleWrapper.WindowWidth / 8);
-                int boltEdgeMaxPos = 5 * (ConsoleWrapper.WindowWidth / 8);
+                int quarterWidth = ConsoleWrapper.WindowWidth / 4;
                 int boltFirstHalfEndY = (ConsoleWrapper.WindowHeight / 2) - 2;
                 int boltSecondHalfEndY = (ConsoleWrapper.WindowHeight / 2) + 2;
-                int boltTopEdgeX = RandomDriver.Random(boltEdgeMinPos, boltEdgeMaxPos);
-                int boltBottomEdgeX = RandomDriver.Random(boltEdgeMinPos, boltEdgeMaxPos);
-                int boltFirstHalfEndX = boltTopEdgeX - 2;
-                int boltSecondHalfEndX = boltBottomEdgeX + 2;
-                IntegerTools.SwapIfSourceLarger(ref boltFirstHalfEndX, ref boltSecondHalfEndX);
-                bool swapHalf = boltTopEdgeX < boltBottomEdgeX;
+                int boltTopEdgeX = (ConsoleWrapper.WindowWidth / 2) - RandomDriver.Random(-quarterWidth, quarterWidth);
+                int boltBottomEdgeX = boltTopEdgeX;
+                int boltFirstHalfEndX = boltTopEdgeX - 8;
+                int boltSecondHalfEndX = boltBottomEdgeX + 8;
 
                 // Determine the thresholds
-                double boltFromTopToFirstHalfX = -((double)(boltTopEdgeX - boltFirstHalfEndX) / boltTopEdgeX);
-                double boltFromFirstHalfToSecondHalfY = (double)(boltSecondHalfEndY - boltFirstHalfEndY) / boltSecondHalfEndY;
-                double boltFromSecondHalfToBottomX = -((double)(boltBottomEdgeX - boltSecondHalfEndX) / boltBottomEdgeX);
+                double boltFromTopToFirstHalfX = -((double)(boltTopEdgeX - boltFirstHalfEndX) / boltFirstHalfEndY);
+                double boltFromFirstHalfToSecondHalfY = (double)(boltSecondHalfEndY - boltFirstHalfEndY) / (boltSecondHalfEndX - boltFirstHalfEndX);
+                double boltFromSecondHalfToBottomX = (double)(boltBottomEdgeX - boltSecondHalfEndX) / boltSecondHalfEndY;
 
                 for (int step = 1; step <= 5; step++)
                 {
@@ -110,36 +107,57 @@ namespace KS.Misc.Screensaver.Displays
                     bool showStrike = step % 2 == 0;
                     if (showStrike)
                     {
-                        // Show the lightning!
+                        // Draw the flashes first
                         for (int y = 0; y < boltFirstHalfEndY; y++)
                         {
                             int x = (int)Math.Round(boltTopEdgeX + (boltFromTopToFirstHalfX * y), MidpointRounding.ToZero);
-                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.White));
+                            TextWriterWhereColor.WriteWhere(" ", x + 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x - 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
                         }
                         int xCount = 0;
-                        if (swapHalf)
+                        for (int x = boltFirstHalfEndX; x < boltSecondHalfEndX; x++)
                         {
-                            for (int x = boltFirstHalfEndX; x < boltSecondHalfEndX; x++)
-                            {
-                                int y = (int)Math.Round(boltFirstHalfEndY + (boltFromFirstHalfToSecondHalfY * xCount), MidpointRounding.ToZero);
-                                TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.White));
-                                xCount++;
-                            }
-                        }
-                        else
-                        {
-                            for (int x = boltSecondHalfEndX; x > boltFirstHalfEndX; x--)
-                            {
-                                int y = (int)Math.Round(boltFirstHalfEndY + (boltFromFirstHalfToSecondHalfY * xCount), MidpointRounding.ToZero);
-                                TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.White));
-                                xCount++;
-                            }
+                            int y = (int)Math.Round(boltFirstHalfEndY + (boltFromFirstHalfToSecondHalfY * xCount), MidpointRounding.ToZero);
+                            TextWriterWhereColor.WriteWhere(" ", x + 1, y + 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x + 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x + 1, y - 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x, y + 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x, y - 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x - 1, y + 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x - 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x - 1, y - 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            xCount++;
                         }
                         int yCount = 0;
                         for (int y = boltSecondHalfEndY; y < ConsoleWrapper.WindowHeight; y++)
                         {
-                            int x = (int)Math.Round(boltBottomEdgeX + (boltFromSecondHalfToBottomX * yCount), MidpointRounding.ToZero);
-                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.White));
+                            int x = (int)Math.Round(boltSecondHalfEndX + (boltFromSecondHalfToBottomX * yCount), MidpointRounding.ToZero);
+                            TextWriterWhereColor.WriteWhere(" ", x + 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhere(" ", x - 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            yCount++;
+                        }
+
+                        // Draw the lightning!
+                        for (int y = 0; y < boltFirstHalfEndY; y++)
+                        {
+                            int x = (int)Math.Round(boltTopEdgeX + (boltFromTopToFirstHalfX * y), MidpointRounding.ToZero);
+                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.LightYellow3));
+                        }
+                        xCount = 0;
+                        for (int x = boltFirstHalfEndX; x < boltSecondHalfEndX; x++)
+                        {
+                            int y = (int)Math.Round(boltFirstHalfEndY + (boltFromFirstHalfToSecondHalfY * xCount), MidpointRounding.ToZero);
+                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.LightYellow3));
+                            xCount++;
+                        }
+                        yCount = 0;
+                        for (int y = boltSecondHalfEndY; y < ConsoleWrapper.WindowHeight; y++)
+                        {
+                            int x = (int)Math.Round(boltSecondHalfEndX + (boltFromSecondHalfToBottomX * yCount), MidpointRounding.ToZero);
+                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.LightYellow3));
                             yCount++;
                         }
                         ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
