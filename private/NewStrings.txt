@@ -685,7 +685,7 @@ Sets console title on command execution.
 Set console title on command execution
 Required arguments are not provided. See below for usage:
 Required switches are not provided. See below for usage:
-Select a connection. If you have no connections, you'll have to create a new connection.
+Select a connection. If you have no connections, you'll have to create a new connection. Additionally, you can use the speed dial feature to quickly connect to servers.
 Create a new connection
 Enter the server address:
 Exits the shell without disconnecting
@@ -809,5 +809,7 @@ Content length
 No contents.
 No revision.
 Unknown networked shell error:
+Use speed dial
+Select a connection from the speed dial list.
 
 ==========================================================================================================================================

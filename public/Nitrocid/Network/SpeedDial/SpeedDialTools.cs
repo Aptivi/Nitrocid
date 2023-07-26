@@ -41,6 +41,7 @@ namespace KS.Network.SpeedDial
     public static class SpeedDialTools
     {
 
+        // TODO: This needs an overhaul to handle the NetworkConnection instances. Now, we're just prototyping.
         /// <summary>
         /// Gets the token from the speed dial
         /// </summary>

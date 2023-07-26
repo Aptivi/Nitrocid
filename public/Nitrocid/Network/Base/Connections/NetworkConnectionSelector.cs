@@ -40,8 +40,12 @@ namespace KS.Network.Base.Connections
                 connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
             }
 
-            return SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection. If you have no connections, you'll have to create a new connection."),
-                connectionsChoiceList, new List<InputChoiceInfo>() { new InputChoiceInfo($"{connectionNames.Length + 1}", Translate.DoTranslation("Create a new connection")) });
+            return SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection. If you have no connections, you'll have to create a new connection. Additionally, you can use the speed dial feature to quickly connect to servers."),
+                connectionsChoiceList, new List<InputChoiceInfo>() {
+                    new InputChoiceInfo($"{connectionNames.Length + 1}", Translate.DoTranslation("Create a new connection")),
+                    new InputChoiceInfo($"{connectionNames.Length + 2}", Translate.DoTranslation("Use speed dial")),
+                }
+            );
         }
     }
 }

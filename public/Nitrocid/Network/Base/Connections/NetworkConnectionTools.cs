@@ -29,6 +29,7 @@ using System.Collections.Generic;
 using System.Linq;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Network.SpeedDial;
 
 namespace KS.Network.Base.Connections
 {
@@ -242,6 +243,35 @@ namespace KS.Network.Base.Connections
                         // Prompt the user to provide connection information
                         address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
                         connection = establisher(address);
+                    }
+                    else if (selectedConnection == availableConnections + 2)
+                    {
+                        // Prompt the user to select a server to connect to from the speed dial
+                        var speedDials = SpeedDialTools.ListSpeedDialEntries();
+                        var connectionsChoiceList = new List<InputChoiceInfo>();
+                        for (int i = 0; i < speedDials.Keys.Count; i++)
+                        {
+                            string connectionUrl = speedDials.ElementAt(i).Key;
+                            connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
+                        }
+                        int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), connectionsChoiceList, new List<InputChoiceInfo>() {
+                            new InputChoiceInfo($"{speedDials.Count + 1}", Translate.DoTranslation("Create a new connection")),
+                        });
+
+                        // Now, check to see if we're going to connect
+                        if (selectedSpeedDial == speedDials.Count + 1)
+                        {
+                            // User selected to create a new connection
+                            address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+                            connection = establisher(address);
+                        }
+                        else
+                        {
+                            // Get the address from the speed dial and connect to it
+                            var speedDialKvp = speedDials.ElementAt(selectedSpeedDial - 1);
+                            address = speedDialKvp.Key;
+                            connection = establisher(address);
+                        }
                     }
                     else
                     {

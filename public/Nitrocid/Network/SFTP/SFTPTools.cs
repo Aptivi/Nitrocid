@@ -108,6 +108,7 @@ namespace KS.Network.SFTP
         /// <summary>
         /// Opens speed dial prompt
         /// </summary>
+        [Obsolete("NetworkConnection will be able to handle this. It'll be removed in Nitrocid 0.1.0 Beta 3.")]
         public static void SFTPQuickConnect()
         {
             var quickConnectInfo = SpeedDialTools.GetQuickConnectInfo();
