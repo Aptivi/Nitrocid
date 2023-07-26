@@ -811,5 +811,6 @@ No revision.
 Unknown networked shell error:
 Use speed dial
 Select a connection from the speed dial list.
+Reads the content of a remote file to the console
 
 ==========================================================================================================================================

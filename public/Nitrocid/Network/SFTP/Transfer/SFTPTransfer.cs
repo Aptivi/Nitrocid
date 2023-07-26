@@ -21,6 +21,9 @@ using KS.Kernel.Debugging;
 using KS.Shell.Shells.SFTP;
 using KS.Kernel.Events;
 using Renci.SshNet;
+using FluentFTP;
+using KS.Shell.Shells.FTP;
+using System.Text;
 
 namespace KS.Network.SFTP.Transfer
 {
@@ -86,6 +89,37 @@ namespace KS.Network.SFTP.Transfer
                 EventsManager.FireEvent(EventType.SFTPUploadError, File, ex);
             }
             return false;
+        }
+
+        /// <summary>
+        /// Downloads a file to string
+        /// </summary>
+        /// <param name="File">A text file.</param>
+        /// <returns>Contents of the file</returns>
+        public static string SFTPDownloadToString(string File)
+        {
+            try
+            {
+                // Show a message to download
+                EventsManager.FireEvent(EventType.SFTPPreDownload, File);
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloading {0}...", File);
+
+                // Try to download 3 times
+                var DownloadedBytes = Array.Empty<byte>();
+                string DownloadedContent = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ReadAllText(File);
+
+                // Show a message that it's downloaded
+                DebugWriter.WriteDebug(DebugLevel.I, "Downloaded {0}.", File);
+                EventsManager.FireEvent(EventType.SFTPPostDownload, File, DownloadedContent);
+                return DownloadedContent;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message);
+                EventsManager.FireEvent(EventType.SFTPPostDownload, File, false);
+            }
+            return "";
         }
 
     }

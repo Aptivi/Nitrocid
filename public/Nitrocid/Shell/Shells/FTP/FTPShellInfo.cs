@@ -37,6 +37,8 @@ namespace KS.Shell.Shells.FTP
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
+            { "cat", new CommandInfo("cat", ShellType, /* Localizable */ "Reads the content of a remote file to the console",
+                new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new FTP_CatCommand(), CommandFlags.Wrappable) },
             { "cdl", new CommandInfo("cdl", ShellType, /* Localizable */ "Changes local directory to download to or upload from",
                 new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1), new FTP_CdlCommand()) },
             { "cdr", new CommandInfo("cdr", ShellType, /* Localizable */ "Changes remote directory to download from or upload to",
