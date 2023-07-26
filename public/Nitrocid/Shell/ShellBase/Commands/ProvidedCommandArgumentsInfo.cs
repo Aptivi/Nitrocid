@@ -118,13 +118,29 @@ namespace KS.Shell.ShellBase.Commands
             string strArgs = words.Length > 0 ? string.Join(" ", EnclosedArgMatches) : "";
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
 
-            // Check to see if the caller has provided required number of arguments
+            // Check to see if the caller has provided a switch that subtracts the number of required arguments
             var CommandInfo = ModCommands.ContainsKey(Command) ? ModCommands[Command] :
                               ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
                               null;
+            int minimumArgumentsOffset = 0;
+            if (CommandInfo?.CommandArgumentInfo is not null)
+            {
+                foreach (string enclosedSwitch in EnclosedSwitches)
+                {
+                    var switches = CommandInfo.CommandArgumentInfo.Switches.Where((switchInfo) => switchInfo.SwitchName == enclosedSwitch[1..]);
+                    if (switches.Any())
+                        foreach (var switchInfo in switches.Where(switchInfo => minimumArgumentsOffset < switchInfo.OptionalizeLastRequiredArguments))
+                            minimumArgumentsOffset = switchInfo.OptionalizeLastRequiredArguments;
+                }
+            }
+            int finalRequiredArgs = CommandInfo.CommandArgumentInfo.MinimumArguments - minimumArgumentsOffset;
+            if (finalRequiredArgs < 0)
+                finalRequiredArgs = 0;
+
+            // Check to see if the caller has provided required number of arguments
             if (CommandInfo?.CommandArgumentInfo is not null)
                 RequiredArgumentsProvided = 
-                    (EnclosedArgs.Length >= CommandInfo.CommandArgumentInfo.MinimumArguments) ||
+                    (EnclosedArgs.Length >= finalRequiredArgs) ||
                     !CommandInfo.CommandArgumentInfo.ArgumentsRequired;
             else
                 RequiredArgumentsProvided = true;

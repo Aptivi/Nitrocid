@@ -308,7 +308,7 @@ namespace KS.Shell.Shells.UESH
             { "verify", new CommandInfo("verify", ShellType, /* Localizable */ "Verifies sanity of the file",
                 new CommandArgumentInfo(new[] { "MD5/SHA1/SHA256/SHA384/SHA512", "calculatedhash", "hashfile/expectedhash", "file" }, Array.Empty<SwitchInfo>(), true, 4), new VerifyCommand()) },
             { "weather", new CommandInfo("weather", ShellType, /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
-                new CommandArgumentInfo(new[] { "CityID/CityName", "apikey" }, new[] { new SwitchInfo("list", /* Localizable */ "Shows all the available cities") }, true, 1), new WeatherCommand()) },
+                new CommandArgumentInfo(new[] { "CityID/CityName", "apikey" }, new[] { new SwitchInfo("list", /* Localizable */ "Shows all the available cities", false, false, null, 2) }, true, 1), new WeatherCommand()) },
             { "wordle", new CommandInfo("wordle", ShellType, /* Localizable */ "The Wordle game simulator",
                 new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally") }, false, 0), new WordleCommand()) },
             { "wrap", new CommandInfo("wrap", ShellType, /* Localizable */ "Wraps the console output",

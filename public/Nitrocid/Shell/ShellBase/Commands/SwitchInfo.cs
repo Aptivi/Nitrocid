@@ -47,6 +47,10 @@ namespace KS.Shell.ShellBase.Commands
         /// Does the switch conflict with the provided switches?
         /// </summary>
         public string[] ConflictsWith { get; private set; }
+        /// <summary>
+        /// Whether to make the last N required arguments optional. This is useful for some switches, like -list.
+        /// </summary>
+        public int OptionalizeLastRequiredArguments { get; private set; }
 
         /// <summary>
         /// Installs a new instance of switch info class
@@ -56,13 +60,15 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="IsRequired">Is the switch required?</param>
         /// <param name="ArgumentsRequired">Whether the switch requires a value to be set</param>
         /// <param name="conflictsWith">Does the switch conflict with the provided switches?</param>
-        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null)
+        /// <param name="optionalizeLastRequiredArguments">Whether to make the last N required arguments optional. This is useful for some switches, like -list.</param>
+        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0)
         {
             SwitchName = Switch;
             this.HelpDefinition = HelpDefinition;
             this.IsRequired = IsRequired;
             this.ArgumentsRequired = ArgumentsRequired;
             ConflictsWith = conflictsWith ?? Array.Empty<string>();
+            this.OptionalizeLastRequiredArguments = optionalizeLastRequiredArguments;
         }
 
         /// <summary>
