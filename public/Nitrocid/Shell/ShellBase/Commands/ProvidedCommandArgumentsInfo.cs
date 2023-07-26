@@ -133,7 +133,7 @@ namespace KS.Shell.ShellBase.Commands
                             minimumArgumentsOffset = switchInfo.OptionalizeLastRequiredArguments;
                 }
             }
-            int finalRequiredArgs = CommandInfo.CommandArgumentInfo.MinimumArguments - minimumArgumentsOffset;
+            int finalRequiredArgs = CommandInfo?.CommandArgumentInfo is not null ? CommandInfo.CommandArgumentInfo.MinimumArguments - minimumArgumentsOffset : 0;
             if (finalRequiredArgs < 0)
                 finalRequiredArgs = 0;
 
