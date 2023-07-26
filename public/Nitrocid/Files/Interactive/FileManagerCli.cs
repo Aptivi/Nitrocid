@@ -34,6 +34,7 @@ using System.Collections;
 using KS.Misc.Text;
 using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Misc.Contacts;
 
 namespace KS.Files.Interactive
 {
@@ -57,6 +58,7 @@ namespace KS.Files.Interactive
             new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F3,    (info, _) => RemoveFileOrDir((FileSystemInfo)info), true),
             new InteractiveTuiBinding(/* Localizable */ "Up",     ConsoleKey.F4,    (_, _)    => GoUp(), true),
             new InteractiveTuiBinding(/* Localizable */ "Info",   ConsoleKey.F5,    (info, _) => PrintFileSystemInfo((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Go To",  ConsoleKey.F6,    (_, _)    => GoTo(), true),
 
             // Misc bindings
             new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab,   (_, _)    => Switch(), true),
@@ -280,6 +282,23 @@ namespace KS.Files.Interactive
                 return;
 
             Removing.RemoveFileOrDir(currentFileSystemInfo.FullName);
+        }
+
+        private static void GoTo()
+        {
+            // Now, render the search box
+            string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path or a full path to a local folder."), BoxForegroundColor, BoxBackgroundColor);
+            path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
+            if (Checking.FolderExists(path))
+            {
+                if (CurrentPane == 2)
+                    secondPanePath = path;
+                else
+                    firstPanePath = path;
+            }
+            else
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+            RedrawRequired = true;
         }
     }
 }
