@@ -22,7 +22,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Languages;
-using KS.Misc.Beautifiers;
+using KS.Misc.Editors.JsonShell;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (Checking.FileExists(JsonFile))
             {
                 // Minify the JSON and display it on screen
-                MinifiedJson = JsonMinifier.MinifyJson(JsonFile);
+                MinifiedJson = JsonTools.MinifyJson(JsonFile);
                 TextWriterColor.Write(MinifiedJson);
 
                 // Minify it to an output file specified (optional)

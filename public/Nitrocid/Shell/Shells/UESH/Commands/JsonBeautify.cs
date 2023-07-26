@@ -22,7 +22,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Languages;
-using KS.Misc.Beautifiers;
+using KS.Misc.Editors.JsonShell;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (Checking.FileExists(JsonFile))
             {
                 // Beautify the JSON and display it on screen
-                BeautifiedJson = JsonBeautifier.BeautifyJson(JsonFile);
+                BeautifiedJson = JsonTools.BeautifyJson(JsonFile);
                 TextWriterColor.Write(BeautifiedJson);
 
                 // Beautify it to an output file specified (optional)

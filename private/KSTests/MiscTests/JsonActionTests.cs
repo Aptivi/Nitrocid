@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using KS.Misc.Beautifiers;
+using KS.Misc.Editors.JsonShell;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
@@ -37,7 +37,7 @@ namespace KSTests.MiscTests
         [Description("Action")]
         public void TestBeautifyJsonText()
         {
-            string Beautified = JsonBeautifier.BeautifyJsonText(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson));
+            string Beautified = JsonTools.BeautifyJsonText(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson));
             Beautified.ShouldNotBeEmpty();
             Beautified.ShouldBe(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson, Formatting.Indented));
         }
@@ -50,7 +50,7 @@ namespace KSTests.MiscTests
         public void TestBeautifyJsonFile()
         {
             string SourcePath = Path.GetFullPath("TestData/Hacker.json");
-            string Beautified = JsonBeautifier.BeautifyJson(SourcePath);
+            string Beautified = JsonTools.BeautifyJson(SourcePath);
             Beautified.ShouldNotBeEmpty();
             Beautified.ShouldBe(JsonConvert.SerializeObject(JToken.Parse(Beautified), Formatting.Indented));
         }
@@ -62,7 +62,7 @@ namespace KSTests.MiscTests
         [Description("Action")]
         public void TestMinifyJsonText()
         {
-            string Minified = JsonMinifier.MinifyJsonText(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson));
+            string Minified = JsonTools.MinifyJsonText(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson));
             Minified.ShouldNotBeEmpty();
             Minified.ShouldBe(JsonConvert.SerializeObject(ColorSeq.Color255.ColorDataJson, Formatting.None));
         }
@@ -75,7 +75,7 @@ namespace KSTests.MiscTests
         public void TestMinifyJsonFile()
         {
             string SourcePath = Path.GetFullPath("TestData/Hacker.json");
-            string Minified = JsonMinifier.MinifyJson(SourcePath);
+            string Minified = JsonTools.MinifyJson(SourcePath);
             Minified.ShouldNotBeEmpty();
             Minified.ShouldBe(JsonConvert.SerializeObject(JToken.Parse(Minified), Formatting.None));
         }

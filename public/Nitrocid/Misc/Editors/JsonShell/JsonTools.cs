@@ -293,5 +293,75 @@ namespace KS.Misc.Editors.JsonShell
             return JsonConvert.SerializeObject(TargetToken, Formatting.Indented);
         }
 
+        /// <summary>
+        /// Beautifies the JSON text contained in the file.
+        /// </summary>
+        /// <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="Filesystem.NeutralizePath(string, bool)"/>.</param>
+        /// <returns>Beautified JSON</returns>
+        /// <exception cref="FileNotFoundException"></exception>
+        public static string BeautifyJson(string JsonFile)
+        {
+            // Neutralize the file path
+            DebugWriter.WriteDebug(DebugLevel.I, "Neutralizing json file {0}...", JsonFile);
+            JsonFile = Filesystem.NeutralizePath(JsonFile, true);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got json file {0}...", JsonFile);
+
+            // Try to beautify JSON
+            string JsonFileContents = File.ReadAllText(JsonFile);
+            return BeautifyJsonText(JsonFileContents);
+        }
+
+        /// <summary>
+        /// Beautifies the JSON text.
+        /// </summary>
+        /// <param name="JsonText">Contents of a minified JSON.</param>
+        /// <returns>Beautified JSON</returns>
+        public static string BeautifyJsonText(string JsonText)
+        {
+            // Make an instance of JToken with this text
+            var JsonToken = JToken.Parse(JsonText);
+            DebugWriter.WriteDebug(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length);
+
+            // Beautify JSON
+            string BeautifiedJson = JsonConvert.SerializeObject(JsonToken, Formatting.Indented);
+            DebugWriter.WriteDebug(DebugLevel.I, "Beautified the JSON text. Length: {0}", BeautifiedJson.Length);
+            return BeautifiedJson;
+        }
+
+        /// <summary>
+        /// Minifies the JSON text contained in the file.
+        /// </summary>
+        /// <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="Filesystem.NeutralizePath(string, bool)"/>.</param>
+        /// <returns>Minified JSON</returns>
+        /// <exception cref="FileNotFoundException"></exception>
+        public static string MinifyJson(string JsonFile)
+        {
+            // Neutralize the file path
+            DebugWriter.WriteDebug(DebugLevel.I, "Neutralizing json file {0}...", JsonFile);
+            JsonFile = Filesystem.NeutralizePath(JsonFile, true);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got json file {0}...", JsonFile);
+
+            // Try to minify JSON
+            string JsonFileContents = File.ReadAllText(JsonFile);
+            return MinifyJsonText(JsonFileContents);
+        }
+
+        /// <summary>
+        /// Minifies the JSON text.
+        /// </summary>
+        /// <param name="JsonText">Contents of a beautified JSON.</param>
+        /// <returns>Minified JSON</returns>
+        public static string MinifyJsonText(string JsonText)
+        {
+            // Make an instance of JToken with this text
+            var JsonToken = JToken.Parse(JsonText);
+            DebugWriter.WriteDebug(DebugLevel.I, "Created a token with text length of {0}", JsonText.Length);
+
+            // Minify JSON
+            string MinifiedJson = JsonConvert.SerializeObject(JsonToken);
+            DebugWriter.WriteDebug(DebugLevel.I, "Minified the JSON text. Length: {0}", MinifiedJson.Length);
+            return MinifiedJson;
+        }
+
     }
 }
