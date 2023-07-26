@@ -354,7 +354,11 @@ namespace KS.Drivers.Filesystem
                         }
                 }
             }
-            return FilesystemEntries;
+
+            // We would most likely need to put the folders first, then the files.
+            var listFolders = FilesystemEntries.Where((fsi) => Checking.FolderExists(fsi.FullName)).ToList();
+            var listFiles =   FilesystemEntries.Where((fsi) => Checking.FileExists(fsi.FullName)).ToList();
+            return listFolders.Union(listFiles).ToList();
         }
 
         /// <inheritdoc/>
