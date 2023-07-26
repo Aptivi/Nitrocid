@@ -25,7 +25,7 @@ using KS.Languages;
 using KS.Misc.Splash;
 using KS.Kernel.Events;
 
-namespace KS.Hardware
+namespace KS.Kernel.Hardware
 {
     /// <summary>
     /// Hardware probe module

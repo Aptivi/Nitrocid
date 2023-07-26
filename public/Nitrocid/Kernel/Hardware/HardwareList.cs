@@ -31,7 +31,7 @@ using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Splash;
 
-namespace KS.Hardware
+namespace KS.Kernel.Hardware
 {
     /// <summary>
     /// Hardware list module

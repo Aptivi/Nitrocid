@@ -20,7 +20,6 @@ using System;
 using System.Diagnostics;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Hardware;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
@@ -45,6 +44,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Shell.ShellBase.Scripting;
+using KS.Kernel.Hardware;
 
 namespace KS.Kernel
 {

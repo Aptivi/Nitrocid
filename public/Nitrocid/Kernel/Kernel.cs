@@ -24,7 +24,6 @@ using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
 using KS.Files;
 using KS.Files.Querying;
-using KS.Hardware;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Updates;
 using KS.Languages;
@@ -50,6 +49,7 @@ using KS.Kernel.Debugging.Trace;
 using KS.Kernel.Journaling;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Hardware;
 
 namespace KS.Kernel
 {
