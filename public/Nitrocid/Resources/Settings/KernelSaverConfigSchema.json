@@ -1780,6 +1780,36 @@
         },
         "BloomDelay": {
             "type": "integer"
+        },
+        "WordHasherTrueColor": {
+            "type": "boolean"
+        },
+        "WordHasherDelay": {
+            "type": "integer"
+        },
+        "WordHasherMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "WordHasherMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "WordHasherMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "WordHasherMinimumColorLevel": {
+            "type": "integer"
+        },
+        "WordHasherMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "WordHasherMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "WordHasherMaximumBlueColorLevel": {
+            "type": "integer"
+        },
+        "WordHasherMaximumColorLevel": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2375,6 +2405,16 @@
         "MatrixMaxSteps",
         "LightningDelay",
         "LightningStrikeProbability",
-        "BloomDelay"
+        "BloomDelay",
+        "WordHasherTrueColor",
+        "WordHasherDelay",
+        "WordHasherMinimumRedColorLevel",
+        "WordHasherMinimumGreenColorLevel",
+        "WordHasherMinimumBlueColorLevel",
+        "WordHasherMinimumColorLevel",
+        "WordHasherMaximumRedColorLevel",
+        "WordHasherMaximumGreenColorLevel",
+        "WordHasherMaximumBlueColorLevel",
+        "WordHasherMaximumColorLevel"
     ]
 }

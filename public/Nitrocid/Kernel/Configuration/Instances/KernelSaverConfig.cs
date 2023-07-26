@@ -2398,5 +2398,45 @@ namespace KS.Kernel.Configuration.Instances
         /// [Bloom] How many milliseconds to wait before making the next write?
         /// </summary>
         public int BloomDelay { get; set; } = 50;
+        /// <summary>
+        /// [WordHasher] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool WordHasherTrueColor { get; set; } = true;
+        /// <summary>
+        /// [WordHasher] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int WordHasherDelay { get; set; } = 1000;
+        /// <summary>
+        /// [WordHasher] The minimum red color level (true color)
+        /// </summary>
+        public int WordHasherMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WordHasher] The minimum green color level (true color)
+        /// </summary>
+        public int WordHasherMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WordHasher] The minimum blue color level (true color)
+        /// </summary>
+        public int WordHasherMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WordHasher] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int WordHasherMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WordHasher] The maximum red color level (true color)
+        /// </summary>
+        public int WordHasherMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WordHasher] The maximum green color level (true color)
+        /// </summary>
+        public int WordHasherMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WordHasher] The maximum blue color level (true color)
+        /// </summary>
+        public int WordHasherMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WordHasher] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int WordHasherMaximumColorLevel { get; set; } = 255;
     }
 }

@@ -114,7 +114,8 @@ namespace KS.Misc.Screensaver
             { "typo", new TypoDisplay() },
             { "wave", new WaveDisplay() },
             { "windowslogo", new WindowsLogoDisplay() },
-            { "wipe", new WipeDisplay() }
+            { "wipe", new WipeDisplay() },
+            { "wordhasher", new WordHasherDisplay() }
         };
         internal static int scrnTimeout = 300000;
         internal static string defSaverName = "matrix";
