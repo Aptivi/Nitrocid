@@ -22,40 +22,70 @@ using KS.Drivers;
 using KS.Shell.ShellBase.Shells;
 using KS.Drivers.Console;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Debugging;
 
 namespace KS.Shell.ShellBase.Commands
 {
-    static class CancellationHandlers
+    internal static class CancellationHandlers
     {
 
-        public static void CancelCommand(object sender, ConsoleCancelEventArgs e)
+        internal static bool canCancel = false;
+        internal static bool installed;
+
+        internal static void CancelCommand(object sender, ConsoleCancelEventArgs e)
         {
+            // We can't cancel in a situation where there are no shells.
             if (ShellStart.ShellStack.Count <= 0)
             {
                 e.Cancel = true;
                 return;
             }
 
-            lock (GetCancelSyncLock(ShellManager.CurrentShellType))
+            // We can't cancel in situations where cancellation is not possible
+            if (!canCancel)
             {
-                if (e.SpecialKey == ConsoleSpecialKey.ControlC)
+                e.Cancel = true;
+                return;
+            }
+
+            // Now, handle the command cancellation
+            try
+            {
+                var StartCommandThread = ShellStart.ShellStack[^1].ShellCommandThread;
+                var ProcessStartCommandThread = ShellManager.ProcessStartCommandThread;
+                var syncLock = GetCancelSyncLock(ShellManager.CurrentShellType);
+                lock (syncLock)
                 {
                     Flags.CancelRequested = true;
                     TextWriterColor.Write();
                     DriverHandler.SetDriver<IConsoleDriver>("Null");
-                    e.Cancel = true;
-                    var StartCommandThread = ShellStart.ShellStack[^1].ShellCommandThread;
                     StartCommandThread.Stop();
-                    ShellManager.ProcessStartCommandThread.Stop();
+                    ProcessStartCommandThread.Stop();
                     DriverHandler.SetDriver<IConsoleDriver>("Default");
+                    DebugWriter.WriteDebug(DebugLevel.W, "Cancelled command.");
                 }
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Cannot cancel. {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            e.Cancel = true;
+        }
+
+        internal static void InstallHandler()
+        {
+            if (!installed)
+            {
+                Console.CancelKeyPress += CancelCommand;
+                installed = true;
             }
         }
 
-        public static object GetCancelSyncLock(ShellType ShellType) =>
+        internal static object GetCancelSyncLock(ShellType ShellType) =>
             GetCancelSyncLock(ShellManager.GetShellTypeName(ShellType));
 
-        public static object GetCancelSyncLock(string ShellType) =>
+        internal static object GetCancelSyncLock(string ShellType) =>
             ShellManager.GetShellInfo(ShellType).ShellLock;
 
     }

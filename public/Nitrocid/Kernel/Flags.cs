@@ -282,7 +282,6 @@ namespace KS.Kernel
         internal static bool NotifyKernelError;
         internal static bool QuietKernel;
         internal static bool CheckingForConsoleSize = true;
-        internal static bool CancellationHandlerInstalled;
         internal static bool KernelShutdown;
         internal static bool FirstTime;
         internal static bool DoNotDisturb;

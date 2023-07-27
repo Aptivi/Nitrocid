@@ -237,7 +237,9 @@ namespace KS.Shell
 
                 // Wait for command
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
+                TermReaderSettings.TreatCtrlCAsInput = true;
                 string strcommand = Input.ReadLine();
+                TermReaderSettings.TreatCtrlCAsInput = false;
 
                 // Add command to command builder and return the final result. The reason to add the extra space before the second command written is that
                 // because if we need to provide a second command to the shell in a separate line, we usually add the semicolon at the end of the primary
@@ -290,6 +292,7 @@ namespace KS.Shell
                         if (ModManager.ListModCommands(ShellType).ContainsKey(commandName))
                         {
                             // Iterate through mod commands
+                            CancellationHandlers.canCancel = true;
                             DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", commandName, Command);
                             ModExecutor.ExecuteModCommand(Command);
                             UESHVariables.SetVariable("UESHErrorCode", "0");
@@ -297,6 +300,7 @@ namespace KS.Shell
                         else if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(commandName))
                         {
                             // Iterate through alias commands
+                            CancellationHandlers.canCancel = true;
                             DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, Command);
                             AliasExecutor.ExecuteAlias(Command, ShellType);
                             UESHVariables.SetVariable("UESHErrorCode", "0");
@@ -348,6 +352,7 @@ namespace KS.Shell
                                 }
                                 else
                                 {
+                                    CancellationHandlers.canCancel = true;
                                     DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
                                     var Params = new CommandExecutor.ExecuteCommandParameters(Command, ShellType);
                                     CommandExecutor.StartCommandThread(Params);
@@ -367,6 +372,7 @@ namespace KS.Shell
                                     PermissionsTools.Demand(PermissionTypes.ExecuteProcesses);
                                     if (pathValid)
                                     {
+                                        CancellationHandlers.canCancel = true;
                                         var targetCommand = Command.Replace(TargetFileName, "");
                                         targetCommand = targetCommand.TrimStart('\0', ' ');
                                         DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
@@ -392,6 +398,7 @@ namespace KS.Shell
                             {
                                 try
                                 {
+                                    CancellationHandlers.canCancel = true;
                                     PermissionsTools.Demand(PermissionTypes.ExecuteScripts);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", commandName);
                                     UESHParse.Execute(TargetFile, commandArguments.ArgumentsText);
@@ -444,8 +451,9 @@ namespace KS.Shell
                 DriverHandler.EndLocalDriver<IConsoleDriver>();
             }
 
-            // Restore title
+            // Restore title and cancel possibility state
             ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
+            CancellationHandlers.canCancel = false;
         }
 
         /// <summary>
