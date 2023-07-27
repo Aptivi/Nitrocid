@@ -77,8 +77,6 @@ namespace KS.Shell
     public static class ShellManager
     {
 
-        internal static StreamWriter OutputTextWriter;
-        internal static FileStream OutputStream;
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams)) { isCritical = true };
 
         /// <summary>
