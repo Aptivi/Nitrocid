@@ -38,6 +38,8 @@ namespace KS.Shell.Shells.Debug
         {
             { "currentbt", new CommandInfo("currentbt", ShellType, /* Localizable */ "Gets current backtrace",
                 new CommandArgumentInfo(), new Debug_CurrentBtCommand()) },
+            { "keyinfo", new CommandInfo("keyinfo", ShellType, /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
+                new CommandArgumentInfo(), new Debug_KeyInfoCommand()) },
             { "threadsbt", new CommandInfo("threadsbt", ShellType, /* Localizable */ "Gets backtrace for all threads",
                 new CommandArgumentInfo(), new Debug_ThreadsBtCommand()) }
         };

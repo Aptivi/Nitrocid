@@ -155,8 +155,6 @@ namespace KS.Shell.Shells.UESH
                 new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1), new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "jsonminify", new CommandInfo("jsonminify", ShellType, /* Localizable */ "Minifies the JSON file",
                 new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1), new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
-            { "keyinfo", new CommandInfo("keyinfo", ShellType, /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
-                new CommandArgumentInfo(), new KeyInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "langman", new CommandInfo("langman", ShellType, /* Localizable */ "Manage your languages",
                 new CommandArgumentInfo(new[] { "reload/load/unload", "customlanguagename", "list/reloadall" }, Array.Empty<SwitchInfo>(), true, 1, (startFrom, _, _) => Languages.LanguageManager.CustomLanguages.Keys.Where((src) => src.StartsWith(startFrom)).ToArray()), new LangManCommand(), CommandFlags.Strict) },
             { "license", new CommandInfo("license", ShellType, /* Localizable */ "Shows license information for the kernel",

@@ -23,7 +23,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace KS.Shell.Shells.Debug.Commands
 {
     /// <summary>
     /// You can view the information about a pressed key
@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command lets you view the details about a pressed key on your keyboard, including the pressed key and character, the hexadecimal representation of the letter, the pressed modifiers, and the keyboard shortcut.
     /// </remarks>
-    class KeyInfoCommand : BaseCommand, ICommand
+    class Debug_KeyInfoCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
