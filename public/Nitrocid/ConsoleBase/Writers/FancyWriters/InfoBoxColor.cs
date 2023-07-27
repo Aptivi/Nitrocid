@@ -80,6 +80,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         splitFinalLines.Add(lineSentence);
                 }
 
+                // Trim the new lines until we reach a full line
+                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                {
+                    string line = splitFinalLines[i];
+                    if (!string.IsNullOrWhiteSpace(line))
+                        break;
+                    splitFinalLines.RemoveAt(i);
+                }
+
                 // Fill the info box with text inside it
                 int maxWidth = splitFinalLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)
@@ -148,27 +157,54 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Fill the info box with text inside it
-                string finalInfoRendered = TextTools.FormatString(text, vars) + "\n";
+                // Deal with the lines to actually fit text in the infobox
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                int maxWidth = splitLines.Max((str) => str.Length);
+                List<string> splitFinalLines = new();
+                foreach (var line in splitLines)
+                {
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    foreach (var lineSentence in lineSentences)
+                        splitFinalLines.Add(lineSentence);
+                }
+
+                // Trim the new lines until we reach a full line
+                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                {
+                    string line = splitFinalLines[i];
+                    if (!string.IsNullOrWhiteSpace(line))
+                        break;
+                    splitFinalLines.RemoveAt(i);
+                }
+
+                // Now, we need an extra space for input
+                splitFinalLines.Add("");
+
+                // Fill the info box with text inside it
+                int maxWidth = splitFinalLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)
                     maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitLines.Length;
+                int maxHeight = splitFinalLines.Count;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
-                int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2;
-                int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2;
+                int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
+                int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
                 BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
 
                 // Render text inside it
-                for (int i = 0; i < splitLines.Length; i++)
+                bool appendMinusOne = false;
+                for (int i = 0; i < splitFinalLines.Count; i++)
                 {
-                    var line = splitLines[i];
-                    TextWriterWhereColor.WriteWhere(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i);
+                    var line = splitFinalLines[i];
+                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight - (appendMinusOne ? 1 : 0));
                     if (i % maxHeight == 0 && i > 0)
+                    {
+                        // Reached the end of the box. Wait for keypress then clear the box
+                        appendMinusOne = true;
                         Input.DetectKeypress();
+                        BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                    }
                 }
 
                 // Wait until the user presses any key to close the box
@@ -356,6 +392,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         splitFinalLines.Add(lineSentence);
                 }
 
+                // Trim the new lines until we reach a full line
+                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                {
+                    string line = splitFinalLines[i];
+                    if (!string.IsNullOrWhiteSpace(line))
+                        break;
+                    splitFinalLines.RemoveAt(i);
+                }
+
                 // Fill the info box with text inside it
                 int maxWidth = splitFinalLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)
@@ -446,6 +491,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         splitFinalLines.Add(lineSentence);
                 }
 
+                // Trim the new lines until we reach a full line
+                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                {
+                    string line = splitFinalLines[i];
+                    if (!string.IsNullOrWhiteSpace(line))
+                        break;
+                    splitFinalLines.RemoveAt(i);
+                }
+
                 // Fill the info box with text inside it
                 int maxWidth = splitFinalLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)
@@ -534,6 +588,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
                     foreach (var lineSentence in lineSentences)
                         splitFinalLines.Add(lineSentence);
+                }
+
+                // Trim the new lines until we reach a full line
+                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                {
+                    string line = splitFinalLines[i];
+                    if (!string.IsNullOrWhiteSpace(line))
+                        break;
+                    splitFinalLines.RemoveAt(i);
                 }
 
                 // Fill the info box with text inside it
@@ -733,13 +796,34 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Fill the info box with text inside it
-                string finalInfoRendered = TextTools.FormatString(text, vars) + "\n";
+                // Deal with the lines to actually fit text in the infobox
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                int maxWidth = splitLines.Max((str) => str.Length);
+                List<string> splitFinalLines = new();
+                foreach (var line in splitLines)
+                {
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    foreach (var lineSentence in lineSentences)
+                        splitFinalLines.Add(lineSentence);
+                }
+
+                // Trim the new lines until we reach a full line
+                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                {
+                    string line = splitFinalLines[i];
+                    if (!string.IsNullOrWhiteSpace(line))
+                        break;
+                    splitFinalLines.RemoveAt(i);
+                }
+
+                // Now, we need an extra space for input
+                splitFinalLines.Add("");
+
+                // Fill the info box with text inside it
+                int maxWidth = splitFinalLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)
                     maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitLines.Length;
+                int maxHeight = splitFinalLines.Count;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -748,9 +832,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
-                for (int i = 0; i < splitLines.Length; i++)
+                for (int i = 0; i < splitFinalLines.Count; i++)
                 {
-                    var line = splitLines[i];
+                    var line = splitFinalLines[i];
                     TextWriterWhereColor.WriteWhere(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i, InfoBoxColor, BackgroundColor);
                     if (i % maxHeight == 0 && i > 0)
                         Input.DetectKeypress();
@@ -812,13 +896,34 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Fill the info box with text inside it
-                string finalInfoRendered = TextTools.FormatString(text, vars) + "\n";
+                // Deal with the lines to actually fit text in the infobox
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                int maxWidth = splitLines.Max((str) => str.Length);
+                List<string> splitFinalLines = new();
+                foreach (var line in splitLines)
+                {
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    foreach (var lineSentence in lineSentences)
+                        splitFinalLines.Add(lineSentence);
+                }
+
+                // Trim the new lines until we reach a full line
+                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                {
+                    string line = splitFinalLines[i];
+                    if (!string.IsNullOrWhiteSpace(line))
+                        break;
+                    splitFinalLines.RemoveAt(i);
+                }
+
+                // Now, we need an extra space for input
+                splitFinalLines.Add("");
+
+                // Fill the info box with text inside it
+                int maxWidth = splitFinalLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)
                     maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitLines.Length;
+                int maxHeight = splitFinalLines.Count;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -827,9 +932,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
-                for (int i = 0; i < splitLines.Length; i++)
+                for (int i = 0; i < splitFinalLines.Count; i++)
                 {
-                    var line = splitLines[i];
+                    var line = splitFinalLines[i];
                     TextWriterWhereColor.WriteWhere(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i, InfoBoxColor, BackgroundColor);
                     if (i % maxHeight == 0 && i > 0)
                         Input.DetectKeypress();
@@ -891,13 +996,34 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Fill the info box with text inside it
-                string finalInfoRendered = TextTools.FormatString(text, vars) + "\n";
+                // Deal with the lines to actually fit text in the infobox
+                string finalInfoRendered = TextTools.FormatString(text, vars);
                 string[] splitLines = finalInfoRendered.ToString().SplitNewLines();
-                int maxWidth = splitLines.Max((str) => str.Length);
+                List<string> splitFinalLines = new();
+                foreach (var line in splitLines)
+                {
+                    var lineSentences = TextTools.GetWrappedSentences(line, ConsoleWrapper.WindowWidth - 4);
+                    foreach (var lineSentence in lineSentences)
+                        splitFinalLines.Add(lineSentence);
+                }
+
+                // Trim the new lines until we reach a full line
+                for (int i = splitFinalLines.Count - 1; i >= 0; i--)
+                {
+                    string line = splitFinalLines[i];
+                    if (!string.IsNullOrWhiteSpace(line))
+                        break;
+                    splitFinalLines.RemoveAt(i);
+                }
+
+                // Now, we need an extra space for input
+                splitFinalLines.Add("");
+
+                // Fill the info box with text inside it
+                int maxWidth = splitFinalLines.Max((str) => str.Length);
                 if (maxWidth >= ConsoleWrapper.WindowWidth)
                     maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitLines.Length;
+                int maxHeight = splitFinalLines.Count;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -906,9 +1032,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
-                for (int i = 0; i < splitLines.Length; i++)
+                for (int i = 0; i < splitFinalLines.Count; i++)
                 {
-                    var line = splitLines[i];
+                    var line = splitFinalLines[i];
                     TextWriterWhereColor.WriteWhere(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i, InfoBoxColor, BackgroundColor);
                     if (i % maxHeight == 0 && i > 0)
                         Input.DetectKeypress();
