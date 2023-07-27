@@ -816,5 +816,6 @@ No feed.
 Go To
 Enter a path or a full path to a local folder.
 Folder doesn't exist. Make sure that you've written the correct path.
+Raw Info
 
 ==========================================================================================================================================

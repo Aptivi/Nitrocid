@@ -51,7 +51,8 @@ namespace KS.Misc.Contacts.Interactive
             new InteractiveTuiBinding(/* Localizable */ "Info",        ConsoleKey.F5, (_, index) => ShowContactInfo(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Search",      ConsoleKey.F6, (_, _) => SearchBox(), true),
             new InteractiveTuiBinding(/* Localizable */ "Search Next", ConsoleKey.F7, (_, _) => SearchNext(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Search Back", ConsoleKey.F8, (_, _) => SearchPrevious(), true)
+            new InteractiveTuiBinding(/* Localizable */ "Search Back", ConsoleKey.F8, (_, _) => SearchPrevious(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Raw Info",    ConsoleKey.F9, (_, index) => ShowContactRawInfo(index), true),
         };
 
         /// <summary>
@@ -282,6 +283,21 @@ namespace KS.Misc.Contacts.Interactive
             finalInfoRendered.AppendLine(finalRenderedContactTitles);
             finalInfoRendered.AppendLine(finalRenderedContactNotes);
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+
+            // Now, render the info box
+            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+            RedrawRequired = true;
+        }
+
+        private static void ShowContactRawInfo(int index)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            var card = ContactsManager.GetContact(index);
+
+            string finalRenderedContactVcardInfo = card.SaveToString();
+            finalInfoRendered.AppendLine(finalRenderedContactVcardInfo);
+            finalInfoRendered.Append(Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
             InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
