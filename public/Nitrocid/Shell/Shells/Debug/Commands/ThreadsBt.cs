@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.Debug.Commands
             var runtime = runtimeInfo.CreateRuntime();
             foreach (var t in runtime.Threads)
             {
-                var matchingThreads = ThreadManager.KernelThreads.Where((thread) => thread.BaseThread.ManagedThreadId == t.ManagedThreadId).ToArray();
+                var matchingThreads = ThreadManager.KernelThreads.Where((thread) => thread.ThreadId == t.ManagedThreadId).ToArray();
                 string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : Translate.DoTranslation("Not a Nitrocid KS thread");
                 string[] trace = t.EnumerateStackTrace(true).Select(f =>
                 {
