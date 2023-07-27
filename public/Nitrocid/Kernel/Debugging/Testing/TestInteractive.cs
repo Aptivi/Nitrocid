@@ -127,14 +127,12 @@ namespace KS.Kernel.Debugging.Testing
             { 
                 Translate.DoTranslation("Test All"),
                 Translate.DoTranslation("Stats"),
-                Translate.DoTranslation("Exit"),
                 Translate.DoTranslation("Shutdown"),
             };
             var listFacadesAltOptionDesc = new string[] 
             { 
                 Translate.DoTranslation("Tests all facades"),
                 Translate.DoTranslation("Shows the current test statistics"),
-                Translate.DoTranslation("Exits the testing mode and starts the kernel"),
                 Translate.DoTranslation("Exits the testing mode and shuts down the kernel"),
             };
 
@@ -166,12 +164,7 @@ namespace KS.Kernel.Debugging.Testing
                         // Stats
                         PrintTestStats();
                     }
-                    else if (sel == facadeCount + 3)
-                    {
-                        // Exit
-                        exiting = true;
-                    }
-                    else if (sel == facadeCount + 4 || sel == -1)
+                    else if (sel == facadeCount + 3 || sel == -1)
                     {
                         // Shutdown
                         ShutdownFlag = true;
