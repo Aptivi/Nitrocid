@@ -121,7 +121,7 @@ namespace KS.Kernel.Hardware
         /// <param name="HardwareType">Hadrware type defined by Inxi.NET. If "all", prints all information.</param>
         public static void ListHardware(string HardwareType)
         {
-            var HardwareField = FieldManager.GetField(HardwareType, FieldManager.GetField(nameof(HardwareProbe.HardwareInfo.Hardware), typeof(Inxi)).FieldType);
+            var HardwareField = GetField(HardwareType, GetField(nameof(HardwareProbe.HardwareInfo.Hardware), typeof(Inxi)).FieldType);
             DebugWriter.WriteDebug(DebugLevel.I, "Got hardware field {0}.", HardwareField is not null ? HardwareField.Name : "unknown");
             if (HardwareField is not null)
             {
@@ -129,7 +129,7 @@ namespace KS.Kernel.Hardware
             }
             else if (HardwareType.ToLower() == "all")
             {
-                var HardwareFields = FieldManager.GetField(nameof(HardwareProbe.HardwareInfo.Hardware), typeof(Inxi)).FieldType.GetFields();
+                var HardwareFields = GetField(nameof(HardwareProbe.HardwareInfo.Hardware), typeof(Inxi)).FieldType.GetFields();
                 foreach (FieldInfo HardwareFieldType in HardwareFields)
                     ListHardwareProperties(HardwareFieldType);
             }
@@ -200,6 +200,17 @@ namespace KS.Kernel.Hardware
             {
                 TextWriterColor.Write(Translate.DoTranslation("The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled."), true, KernelColorType.Error, Field.Name);
             }
+        }
+
+        private static FieldInfo GetField(string Variable, Type Type)
+        {
+            // Get fields of specified type
+            FieldInfo Field = Type.GetField(Variable);
+
+            // Check if any of them contains the specified variable
+            if (Field is not null)
+                return Field;
+            return null;
         }
 
     }
