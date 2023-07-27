@@ -3,6 +3,8 @@ root = true
 [*]
 end_of_line = crlf
 insert_final_newline = true
+indent_style = space
+indent_size = 4
 
 # IDE0060: Remove unused parameter
 dotnet_diagnostic.IDE0060.severity = warning
@@ -10,8 +12,6 @@ dotnet_diagnostic.CA1822.severity  = none
 
 [*.md]
 charset = utf-8
-indent_style = space
-indent_size = 4
 
 [*.sh]
 end_of_line = lf
