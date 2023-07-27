@@ -181,7 +181,7 @@ namespace KS.Kernel.Configuration
                         bool KeyFound;
 
                         // Check the variable
-                        KeyFound = FieldManager.CheckField(KeyVariable) | PropertyManager.CheckProperty(KeyVariable);
+                        KeyFound = PropertyManager.CheckProperty(KeyVariable);
                         Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
 
                         // Check the enumeration
