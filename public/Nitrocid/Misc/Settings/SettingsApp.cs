@@ -797,7 +797,7 @@ namespace KS.Misc.Settings
 
                                     // Get the delimiter
                                     if (ListJoinString is null)
-                                        FinalDelimiter = Convert.ToString(FieldManager.GetValue(ListJoinStringVariable, null, true));
+                                        FinalDelimiter = Convert.ToString(PropertyManager.GetPropertyValue(ListJoinStringVariable, null, true));
                                     else
                                         FinalDelimiter = ListJoinString;
 

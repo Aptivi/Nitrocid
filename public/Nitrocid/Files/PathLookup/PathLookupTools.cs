@@ -18,7 +18,9 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
 using KS.Drivers;
+using KS.Kernel.Configuration;
 
 namespace KS.Files.PathLookup
 {
@@ -27,6 +29,18 @@ namespace KS.Files.PathLookup
     /// </summary>
     public static class PathLookupTools
     {
+
+        /// <summary>
+        /// Path lookup delimiter, depending on the operating system
+        /// </summary>
+        public static string PathLookupDelimiter =>
+            Convert.ToString(Path.PathSeparator);
+
+        /// <summary>
+        /// Specifies where to lookup for executables in these paths. Same as in PATH implementation.
+        /// </summary>
+        public static string PathsToLookup =>
+            Config.MainConfig.PathsToLookup;
 
         /// <summary>
         /// Gets the lookup path list

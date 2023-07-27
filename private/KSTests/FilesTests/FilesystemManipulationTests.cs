@@ -289,7 +289,7 @@ namespace KSTests.FilesTests
             string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/bin";
             string NeutralizedPath = Filesystem.NeutralizePath(Path);
             Should.NotThrow(() => PathLookupTools.AddToPathLookup(NeutralizedPath));
-            ShellManager.PathsToLookup.ShouldContain(NeutralizedPath);
+            PathLookupTools .PathsToLookup.ShouldContain(NeutralizedPath);
         }
 
         /// <summary>
@@ -302,7 +302,7 @@ namespace KSTests.FilesTests
             string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "bin";
             string NeutralizedPath = Filesystem.NeutralizePath(Path);
             Should.NotThrow(() => PathLookupTools.AddToPathLookup(Path));
-            ShellManager.PathsToLookup.ShouldContain(NeutralizedPath);
+            PathLookupTools .PathsToLookup.ShouldContain(NeutralizedPath);
         }
 
         /// <summary>
@@ -316,7 +316,7 @@ namespace KSTests.FilesTests
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
             string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
             Should.NotThrow(() => PathLookupTools.AddToPathLookup(NeutralizedPath, RootPath));
-            ShellManager.PathsToLookup.ShouldContain(NeutralizedPath);
+            PathLookupTools.PathsToLookup.ShouldContain(NeutralizedPath);
         }
 
         /// <summary>
@@ -330,7 +330,7 @@ namespace KSTests.FilesTests
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
             string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
             Should.NotThrow(() => PathLookupTools.AddToPathLookup(Path, RootPath));
-            ShellManager.PathsToLookup.ShouldContain(NeutralizedPath);
+            PathLookupTools.PathsToLookup.ShouldContain(NeutralizedPath);
         }
 
         /// <summary>

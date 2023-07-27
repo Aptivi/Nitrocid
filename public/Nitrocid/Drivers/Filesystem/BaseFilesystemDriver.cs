@@ -45,6 +45,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Probers.Regexp;
 using KS.Shell;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.PathLookup;
 
 namespace KS.Drivers.Filesystem
 {
@@ -81,7 +82,7 @@ namespace KS.Drivers.Filesystem
             var LookupPaths = GetPathList();
             Path = FS.NeutralizePath(Path);
             LookupPaths.Add(Path);
-            Config.MainConfig.PathsToLookup = string.Join(ShellManager.PathLookupDelimiter, LookupPaths);
+            Config.MainConfig.PathsToLookup = string.Join(PathLookupTools.PathLookupDelimiter, LookupPaths);
         }
 
         /// <inheritdoc/>
@@ -92,7 +93,7 @@ namespace KS.Drivers.Filesystem
             var LookupPaths = GetPathList();
             Path = FS.NeutralizePath(Path, RootPath);
             LookupPaths.Add(Path);
-            Config.MainConfig.PathsToLookup = string.Join(ShellManager.PathLookupDelimiter, LookupPaths);
+            Config.MainConfig.PathsToLookup = string.Join(PathLookupTools.PathLookupDelimiter, LookupPaths);
         }
 
         /// <inheritdoc/>
@@ -701,7 +702,7 @@ namespace KS.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual List<string> GetPathList() =>
-            ShellManager.PathsToLookup.Split(Convert.ToChar(ShellManager.PathLookupDelimiter)).ToList();
+            PathLookupTools.PathsToLookup.Split(Convert.ToChar(PathLookupTools.PathLookupDelimiter)).ToList();
 
         /// <inheritdoc/>
         public string GetRandomFileName() =>
@@ -1185,7 +1186,7 @@ namespace KS.Drivers.Filesystem
             var LookupPaths = GetPathList();
             Path = FS.NeutralizePath(Path);
             LookupPaths.Remove(Path);
-            Config.MainConfig.PathsToLookup = string.Join(ShellManager.PathLookupDelimiter, LookupPaths);
+            Config.MainConfig.PathsToLookup = string.Join(PathLookupTools.PathLookupDelimiter, LookupPaths);
         }
 
         /// <inheritdoc/>
@@ -1196,7 +1197,7 @@ namespace KS.Drivers.Filesystem
             var LookupPaths = GetPathList();
             Path = FS.NeutralizePath(Path, RootPath);
             LookupPaths.Remove(Path);
-            Config.MainConfig.PathsToLookup = string.Join(ShellManager.PathLookupDelimiter, LookupPaths);
+            Config.MainConfig.PathsToLookup = string.Join(PathLookupTools.PathLookupDelimiter, LookupPaths);
         }
 
         /// <inheritdoc/>

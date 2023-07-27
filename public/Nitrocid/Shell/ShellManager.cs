@@ -82,11 +82,6 @@ namespace KS.Shell
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams)) { isCritical = true };
 
         /// <summary>
-        /// Path lookup delimiter, depending on the operating system
-        /// </summary>
-        public readonly static string PathLookupDelimiter = Convert.ToString(Path.PathSeparator);
-
-        /// <summary>
         /// List of unified commands
         /// </summary>
         public readonly static Dictionary<string, CommandInfo> UnifiedCommandDict = new()
@@ -151,12 +146,6 @@ namespace KS.Shell
                 }
             }
         }
-
-        /// <summary>
-        /// Specifies where to lookup for executables in these paths. Same as in PATH implementation.
-        /// </summary>
-        public static string PathsToLookup =>
-            Config.MainConfig.PathsToLookup;
 
         /// <summary>
         /// Inputs for command then parses a specified command.
