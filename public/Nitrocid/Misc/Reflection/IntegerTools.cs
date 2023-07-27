@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+
 namespace KS.Misc.Reflection
 {
     /// <summary>
@@ -54,5 +56,13 @@ namespace KS.Misc.Reflection
                 TargetNumber = Source;
             }
         }
+
+        /// <summary>
+        /// Gets the amount of digits in a specified number
+        /// </summary>
+        /// <param name="Number">Number to query its digit count</param>
+        /// <returns>How many digits are there in a number</returns>
+        public static int GetDigits(this long Number) =>
+            Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
     }
 }

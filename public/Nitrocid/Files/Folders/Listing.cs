@@ -76,9 +76,6 @@ namespace KS.Files.Folders
         public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false) =>
             DriverHandler.CurrentFilesystemDriverLocal.CreateList(folder, Sorted, Recursive);
 
-        internal static int GetDigits(this long Number) =>
-            Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
-
         /// <summary>
         /// List all files and folders in a specified folder
         /// </summary>
