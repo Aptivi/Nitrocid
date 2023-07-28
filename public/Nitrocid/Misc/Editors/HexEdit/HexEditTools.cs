@@ -195,6 +195,8 @@ namespace KS.Misc.Editors.HexEdit
         {
             if (HexEditShellCommon.HexEdit_FileStream is not null)
             {
+                if (ByteNumber < 1)
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 var FileBytesList = HexEditShellCommon.HexEdit_FileBytes.ToList();
                 long ByteIndex = ByteNumber - 1L;
                 DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", ByteIndex, ByteNumber);
@@ -233,6 +235,8 @@ namespace KS.Misc.Editors.HexEdit
         {
             if (HexEditShellCommon.HexEdit_FileStream is not null)
             {
+                if (StartByteNumber < 1)
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 StartByteNumber.SwapIfSourceLarger(ref EndByteNumber);
                 long StartByteNumberIndex = StartByteNumber - 1L;
                 long EndByteNumberIndex = EndByteNumber - 1L;
@@ -281,7 +285,11 @@ namespace KS.Misc.Editors.HexEdit
         public static void HexEdit_DisplayHex(long StartByte, long EndByte)
         {
             if (HexEditShellCommon.HexEdit_FileStream is not null)
+            {
+                if (StartByte < 1)
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 FileContentPrinter.DisplayInHex(StartByte, EndByte, HexEditShellCommon.HexEdit_FileBytes);
+            }
             else
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
         }
@@ -304,6 +312,8 @@ namespace KS.Misc.Editors.HexEdit
             if (HexEditShellCommon.HexEdit_FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.HexEdit_FileBytes.LongLength);
+                if (StartByte < 1)
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 if (StartByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength & EndByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
                     for (long ByteNumber = StartByte; ByteNumber <= EndByte; ByteNumber++)
@@ -378,6 +388,8 @@ namespace KS.Misc.Editors.HexEdit
         {
             if (HexEditShellCommon.HexEdit_FileStream is not null)
             {
+                if (StartByte < 1)
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", FromByte, WithByte);
                 DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.HexEdit_FileBytes.LongLength);
                 if (StartByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength & EndByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength)

@@ -366,6 +366,11 @@ namespace KS.Drivers.Filesystem
         {
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
             StartByte.SwapIfSourceLarger(ref EndByte);
+            if (StartByte < 1)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Byte number must start with 1."));
+                return;
+            }
             if (StartByte <= FileByte.LongLength & EndByte <= FileByte.LongLength)
             {
                 // We need to know how to write the bytes and their contents in this shape:
