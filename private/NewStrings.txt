@@ -823,5 +823,6 @@ Can't move file or directory
 Can't remove file or directory
 Can't open folder
 Modified on
+Can't provide answers with more than one character in single-character mode.
 
 ==========================================================================================================================================

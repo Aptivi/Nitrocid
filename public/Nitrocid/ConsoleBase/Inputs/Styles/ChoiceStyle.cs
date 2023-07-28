@@ -156,13 +156,20 @@ namespace KS.ConsoleBase.Inputs.Styles
             {
                 string answer;
 
+                // First, check to see if the answers consist of single or multiple characters, and exit if the mode is not appropriate with an error message.
+                string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
+                string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
+                if (!PressEnter && (answers.Any((answer) => answer.Length > 1) || altAnswers.Any((answer) => answer.Length > 1)))
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("Can't provide answers with more than one character in single-character mode."));
+                    return "";
+                }
+
                 // Ask a question
                 switch (OutputType)
                 {
                     case ChoiceOutputType.OneLine:
                         {
-                            string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
-                            string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
                             string answersPlace = altAnswers.Length > 0 ? " <{0}/{1}> " : " <{0}> ";
                             TextWriterColor.Write(Question, false, KernelColorType.Question);
                             TextWriterColor.Write(answersPlace, false, KernelColorType.Input, string.Join("/", answers), string.Join("/", altAnswers));
@@ -170,8 +177,6 @@ namespace KS.ConsoleBase.Inputs.Styles
                         }
                     case ChoiceOutputType.TwoLines:
                         {
-                            string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
-                            string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
                             string answersPlace = altAnswers.Length > 0 ? "<{0}/{1}> " : "<{0}> ";
                             TextWriterColor.Write(Question, true, KernelColorType.Question);
                             TextWriterColor.Write(answersPlace, false, KernelColorType.Input, string.Join("/", answers), string.Join("/", altAnswers));
@@ -179,8 +184,6 @@ namespace KS.ConsoleBase.Inputs.Styles
                         }
                     case ChoiceOutputType.Modern:
                         {
-                            string[] answers = Answers.Select((ici) => ici.ChoiceName).ToArray();
-                            string[] altAnswers = AltAnswers.Select((ici) => ici.ChoiceName).ToArray();
                             TextWriterColor.Write(Question + CharManager.NewLine, true, KernelColorType.Question);
                             for (int AnswerIndex = 0; AnswerIndex <= Answers.Count - 1; AnswerIndex++)
                             {
