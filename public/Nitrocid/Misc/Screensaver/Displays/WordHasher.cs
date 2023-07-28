@@ -27,7 +27,6 @@ using KS.Drivers;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
-using KS.Kernel.Time.Renderers;
 using Wordament;
 
 namespace KS.Misc.Screensaver.Displays

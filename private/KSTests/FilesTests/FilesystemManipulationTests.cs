@@ -27,7 +27,6 @@ using KS.Files.Querying;
 using KS.Files.Read;
 using KS.Kernel;
 using KS.Kernel.Configuration;
-using KS.Shell;
 using NUnit.Framework;
 using Shouldly;
 

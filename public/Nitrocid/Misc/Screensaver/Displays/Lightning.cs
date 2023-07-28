@@ -23,7 +23,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
-using KS.Misc.Reflection;
 using System;
 
 namespace KS.Misc.Screensaver.Displays

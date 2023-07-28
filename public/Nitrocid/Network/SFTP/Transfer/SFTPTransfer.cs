@@ -21,9 +21,6 @@ using KS.Kernel.Debugging;
 using KS.Shell.Shells.SFTP;
 using KS.Kernel.Events;
 using Renci.SshNet;
-using FluentFTP;
-using KS.Shell.Shells.FTP;
-using System.Text;
 
 namespace KS.Network.SFTP.Transfer
 {

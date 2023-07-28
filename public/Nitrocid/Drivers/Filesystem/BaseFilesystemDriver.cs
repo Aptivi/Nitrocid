@@ -43,7 +43,6 @@ using KS.Files;
 using KS.Kernel.Configuration;
 using KS.Misc.Reflection;
 using KS.Misc.Probers.Regexp;
-using KS.Shell;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.PathLookup;
 

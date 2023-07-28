@@ -18,7 +18,6 @@
 
 using System;
 using InxiFrontend;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
