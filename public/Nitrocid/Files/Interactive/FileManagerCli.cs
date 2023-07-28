@@ -126,11 +126,40 @@ namespace KS.Files.Interactive
         public override bool SecondPaneInteractable =>
             true;
         /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
-            Listing.CreateList(firstPanePath, true);
+        public override IEnumerable PrimaryDataSource
+        {
+            get
+            {
+                try
+                {
+                    return Listing.CreateList(firstPanePath, true);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the first pane [{0}]: {1}", firstPanePath, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    return new List<FileSystemInfo>();
+                }
+            }
+        }
+
         /// <inheritdoc/>
-        public override IEnumerable SecondaryDataSource =>
-            Listing.CreateList(secondPanePath, true);
+        public override IEnumerable SecondaryDataSource
+        {
+            get
+            {
+                try
+                {
+                    return Listing.CreateList(secondPanePath, true);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the second pane [{0}]: {1}", secondPanePath, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    return new List<FileSystemInfo>();
+                }
+            }
+        }
 
         /// <inheritdoc/>
         public override void RenderStatus(object item)
@@ -145,40 +174,67 @@ namespace KS.Files.Interactive
             }
 
             // Now, populate the info to the status
-            bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
-            Status =
-                // Name and directory indicator
-                $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " +
+            try
+            {
+                bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
+                Status =
+                    // Name and directory indicator
+                    $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " +
 
-                // File size or directory size
-                $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " +
+                    // File size or directory size
+                    $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " +
 
-                // Modified date
-                $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
-            ;
+                    // Modified date
+                    $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
+                ;
+            }
+            catch (Exception ex)
+            {
+                Status = Translate.DoTranslation(ex.Message);
+            }
         }
 
         /// <inheritdoc/>
         public override string GetEntryFromItem(object item)
         {
-            FileSystemInfo file = (FileSystemInfo)item;
-            bool isDirectory = Checking.FolderExists(file.FullName);
-            return $" [{(isDirectory ? "/" : "*")}] {file.Name}";
+            try
+            {
+                FileSystemInfo file = (FileSystemInfo)item;
+                bool isDirectory = Checking.FolderExists(file.FullName);
+                return $" [{(isDirectory ? "/" : "*")}] {file.Name}";
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get entry: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                return "???";
+            }
         }
 
         private static void Open(FileSystemInfo currentFileSystemInfo)
         {
-            if (!Checking.FolderExists(currentFileSystemInfo.FullName))
-                return;
-            if (CurrentPane == 2)
+            try
             {
-                secondPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
-                SecondPaneCurrentSelection = 1;
+                if (!Checking.FolderExists(currentFileSystemInfo.FullName))
+                    return;
+                if (CurrentPane == 2)
+                {
+                    secondPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
+                    SecondPaneCurrentSelection = 1;
+                }
+                else
+                {
+                    firstPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
+                    FirstPaneCurrentSelection = 1;
+                }
             }
-            else
+            catch (Exception ex)
             {
-                firstPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
-                FirstPaneCurrentSelection = 1;
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open folder") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
             }
         }
 
@@ -211,42 +267,52 @@ namespace KS.Files.Interactive
                 return;
 
             // Render the final information string
-            var finalInfoRendered = new StringBuilder();
-            string fullPath = currentFileSystemInfo.FullName;
-            if (Checking.FolderExists(fullPath))
+            try
             {
-                // The file system info instance points to a folder
-                var DirInfo = new DirectoryInfo(fullPath);
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), DirInfo.Name));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(DirInfo.FullName)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Size: {0}"), SizeGetter.GetAllSizesInFolder(DirInfo).FileSizeToString()));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(DirInfo.CreationTime)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Attributes: {0}"), DirInfo.Attributes));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Parent directory: {0}"), Filesystem.NeutralizePath(DirInfo.Parent.FullName)));
-            }
-            else
-            {
-                // The file system info instance points to a file
-                FileInfo fileInfo = new(fullPath);
-                var Style = LineEndingsTools.GetLineEndingFromFile(fullPath);
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), fileInfo.Name));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(fileInfo.FullName)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("File size: {0}"), fileInfo.Length.FileSizeToString()));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(fileInfo.CreationTime)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(fileInfo.LastAccessTime)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(fileInfo.LastWriteTime)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Attributes: {0}"), fileInfo.Attributes));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(fileInfo.DirectoryName)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Binary file:") + " {0}", Parsing.IsBinaryFile(fileInfo.FullName)));
-                finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(Filesystem.NeutralizePath(fileInfo.FullName))));
-            }
-            finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                var finalInfoRendered = new StringBuilder();
+                string fullPath = currentFileSystemInfo.FullName;
+                if (Checking.FolderExists(fullPath))
+                {
+                    // The file system info instance points to a folder
+                    var DirInfo = new DirectoryInfo(fullPath);
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), DirInfo.Name));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(DirInfo.FullName)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Size: {0}"), SizeGetter.GetAllSizesInFolder(DirInfo).FileSizeToString()));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(DirInfo.CreationTime)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Attributes: {0}"), DirInfo.Attributes));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Parent directory: {0}"), Filesystem.NeutralizePath(DirInfo.Parent.FullName)));
+                }
+                else
+                {
+                    // The file system info instance points to a file
+                    FileInfo fileInfo = new(fullPath);
+                    var Style = LineEndingsTools.GetLineEndingFromFile(fullPath);
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), fileInfo.Name));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(fileInfo.FullName)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("File size: {0}"), fileInfo.Length.FileSizeToString()));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(fileInfo.CreationTime)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(fileInfo.LastAccessTime)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(fileInfo.LastWriteTime)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Attributes: {0}"), fileInfo.Attributes));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(fileInfo.DirectoryName)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Binary file:") + " {0}", Parsing.IsBinaryFile(fileInfo.FullName)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(Filesystem.NeutralizePath(fileInfo.FullName))));
+                }
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
-            // Now, render the info box
-            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                // Now, render the info box
+                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't get file system info") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+            }
             RedrawRequired = true;
         }
 
@@ -256,10 +322,21 @@ namespace KS.Files.Interactive
             if (currentFileSystemInfo is null)
                 return;
 
-            string dest = (CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
-            DebugCheck.AssertNull(dest, "destination is null!");
-            DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
-            Copying.CopyFileOrDir(currentFileSystemInfo.FullName, dest);
+            try
+            {
+                string dest = (CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                DebugCheck.AssertNull(dest, "destination is null!");
+                DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
+                Copying.CopyFileOrDir(currentFileSystemInfo.FullName, dest);
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+            }
         }
 
         private static void MoveFileOrDir(FileSystemInfo currentFileSystemInfo)
@@ -268,10 +345,21 @@ namespace KS.Files.Interactive
             if (currentFileSystemInfo is null)
                 return;
 
-            string dest = (CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
-            DebugCheck.AssertNull(dest, "destination is null!");
-            DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
-            Moving.MoveFileOrDir(currentFileSystemInfo.FullName, dest);
+            try
+            {
+                string dest = (CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                DebugCheck.AssertNull(dest, "destination is null!");
+                DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
+                Moving.MoveFileOrDir(currentFileSystemInfo.FullName, dest);
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+            }
         }
 
         private static void RemoveFileOrDir(FileSystemInfo currentFileSystemInfo)
@@ -280,7 +368,18 @@ namespace KS.Files.Interactive
             if (currentFileSystemInfo is null)
                 return;
 
-            Removing.RemoveFileOrDir(currentFileSystemInfo.FullName);
+            try
+            {
+                Removing.RemoveFileOrDir(currentFileSystemInfo.FullName);
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't remove file or directory") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+            }
         }
 
         private static void GoTo()
