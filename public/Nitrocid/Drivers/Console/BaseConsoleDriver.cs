@@ -585,29 +585,39 @@ namespace KS.Drivers.Console.Consoles
                         Text = TextTools.FormatString(Text, vars);
                     Text = Text.Replace(Convert.ToChar(13), default);
 
-                    // Grab each VT sequence from the paragraph and fetch their indexes
-                    var sequences = VtSequenceTools.MatchVTSequences(Text);
-                    int vtSeqIdx = 0;
-                    var buffered = new StringBuilder();
-                    for (int i = 0; i < Text.Length; i++)
-                    {
-                        char TextChar = Text[i];
+                    // First, split the text to wrap
+                    string[] sentences = TextTools.GetWrappedSentences(Text, WindowWidth);
 
-                        // Write a character individually
-                        if (TextChar == '\n')
+                    // Iterate through sentences
+                    var buffered = new StringBuilder();
+                    bool exiting = false;
+                    foreach (string sentence in sentences)
+                    {
+                        if (exiting)
+                            break;
+
+                        // Grab each VT sequence from the paragraph and fetch their indexes
+                        var sequences = VtSequenceTools.MatchVTSequences(sentence);
+                        int vtSeqIdx = 0;
+                        for (int i = 0; i < sentence.Length; i++)
+                        {
+                            char TextChar = sentence[i];
+
+                            // Write a character individually
+                            buffered.Append(BufferChar(sentence, ref i, ref vtSeqIdx));
+                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
+                            {
+                                ConsoleWrapper.Write(buffered.ToString());
+                                buffered.Clear();
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
+                                    exiting = true;
+                                LinesMade = 0;
+                            }
+                        }
+                        if (!exiting)
                         {
                             buffered.AppendLine();
                             LinesMade++;
-                        }
-                        else
-                            buffered.Append(BufferChar(Text, ref i, ref vtSeqIdx));
-                        if (LinesMade == ConsoleWrapper.WindowHeight - 1)
-                        {
-                            ConsoleWrapper.Write(buffered.ToString());
-                            buffered.Clear();
-                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                break;
-                            LinesMade = 0;
                         }
                     }
                     ConsoleWrapper.Write(buffered.ToString());
