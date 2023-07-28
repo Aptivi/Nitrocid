@@ -289,6 +289,7 @@ namespace KS.Files.Interactive
                     // The file system info instance points to a file
                     FileInfo fileInfo = new(fullPath);
                     var Style = LineEndingsTools.GetLineEndingFromFile(fullPath);
+                    bool isBinary = Parsing.IsBinaryFile(fileInfo.FullName);
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), fileInfo.Name));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(fileInfo.FullName)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("File size: {0}"), fileInfo.Length.FileSizeToString()));
@@ -297,8 +298,9 @@ namespace KS.Files.Interactive
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(fileInfo.LastWriteTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Attributes: {0}"), fileInfo.Attributes));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(fileInfo.DirectoryName)));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Binary file:") + " {0}", Parsing.IsBinaryFile(fileInfo.FullName)));
+                    if (!isBinary)
+                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Binary file:") + " {0}", isBinary));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(Filesystem.NeutralizePath(fileInfo.FullName))));
                 }
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
