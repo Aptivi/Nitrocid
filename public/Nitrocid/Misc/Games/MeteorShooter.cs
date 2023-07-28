@@ -27,6 +27,7 @@ using KS.Kernel.Configuration;
 using KS.ConsoleBase;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using System.Diagnostics.Metrics;
 
 namespace KS.Misc.Games
 {
@@ -61,6 +62,9 @@ namespace KS.Misc.Games
         /// </summary>
         public static void InitializeMeteor(bool simulation = false)
         {
+            // Clear screen
+            ConsoleWrapper.Clear();
+
             // Clear all bullets and meteors
             Bullets.Clear();
             Meteors.Clear();
@@ -122,7 +126,7 @@ namespace KS.Misc.Games
                         SpaceshipHeight -= 1;
                     break;
                 case ConsoleKey.DownArrow:
-                    if (SpaceshipHeight < ConsoleWrapper.WindowHeight)
+                    if (SpaceshipHeight < ConsoleWrapper.WindowHeight - 1)
                         SpaceshipHeight += 1;
                     break;
                 case ConsoleKey.Spacebar:
@@ -141,12 +145,17 @@ namespace KS.Misc.Games
             {
                 while (!GameEnded)
                 {
-                    // Clear screen
-                    ConsoleWrapper.Clear();
+                    // Clear only the relevant parts
+                    for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
+                    {
+                        if (y != SpaceshipHeight)
+                            TextWriterWhereColor.WriteWhere(" ", 0, y);
+                    }
 
                     // Move the meteors left
                     for (int Meteor = 0; Meteor <= Meteors.Count - 1; Meteor++)
                     {
+                        TextWriterWhereColor.WriteWhere(" ", Meteors[Meteor].Item1, Meteors[Meteor].Item2);
                         int MeteorX = Meteors[Meteor].Item1 - 1;
                         int MeteorY = Meteors[Meteor].Item2;
                         Meteors[Meteor] = new Tuple<int, int>(MeteorX, MeteorY);
@@ -155,6 +164,7 @@ namespace KS.Misc.Games
                     // Move the bullets right
                     for (int Bullet = 0; Bullet <= Bullets.Count - 1; Bullet++)
                     {
+                        TextWriterWhereColor.WriteWhere(" ", Bullets[Bullet].Item1, Bullets[Bullet].Item2);
                         int BulletX = Bullets[Bullet].Item1 + 1;
                         int BulletY = Bullets[Bullet].Item2;
                         Bullets[Bullet] = new Tuple<int, int>(BulletX, BulletY);
@@ -226,6 +236,8 @@ namespace KS.Misc.Games
                             if (Meteor.Item1 <= Bullet.Item1 & Meteor.Item2 == Bullet.Item2)
                             {
                                 // The meteor crashed! Remove both the bullet and the meteor
+                                TextWriterWhereColor.WriteWhere(" ", Meteor.Item1, Meteor.Item2);
+                                TextWriterWhereColor.WriteWhere(" ", Bullet.Item1, Bullet.Item2);
                                 Bullets.RemoveAt(BulletIndex);
                                 Meteors.RemoveAt(MeteorIndex);
                             }

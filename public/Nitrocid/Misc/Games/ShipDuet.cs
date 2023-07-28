@@ -65,6 +65,9 @@ namespace KS.Misc.Games
         /// </summary>
         public static void InitializeShipDuet(bool simulation = false)
         {
+            // Clear screen
+            ConsoleWrapper.Clear();
+
             // Clear all bullets
             BulletsPlayer1.Clear();
             BulletsPlayer2.Clear();
@@ -136,7 +139,7 @@ namespace KS.Misc.Games
                         SpaceshipHeightPlayer1 -= 1;
                     break;
                 case ConsoleKey.DownArrow:
-                    if (SpaceshipHeightPlayer1 < ConsoleWrapper.WindowHeight)
+                    if (SpaceshipHeightPlayer1 < ConsoleWrapper.WindowHeight - 1)
                         SpaceshipHeightPlayer1 += 1;
                     break;
                 case ConsoleKey.Enter:
@@ -148,7 +151,7 @@ namespace KS.Misc.Games
                         SpaceshipHeightPlayer2 -= 1;
                     break;
                 case ConsoleKey.S:
-                    if (SpaceshipHeightPlayer2 < ConsoleWrapper.WindowHeight)
+                    if (SpaceshipHeightPlayer2 < ConsoleWrapper.WindowHeight - 1)
                         SpaceshipHeightPlayer2 += 1;
                     break;
                 case ConsoleKey.Spacebar:
@@ -167,12 +170,19 @@ namespace KS.Misc.Games
             {
                 while (!GameEnded)
                 {
-                    // Clear screen
-                    ConsoleWrapper.Clear();
+                    // Clear only the relevant parts
+                    for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
+                    {
+                        if (y != SpaceshipHeightPlayer1)
+                            TextWriterWhereColor.WriteWhere(" ", 0, y);
+                        if (y != SpaceshipHeightPlayer2)
+                            TextWriterWhereColor.WriteWhere(" ", ConsoleWrapper.WindowWidth - 1, y);
+                    }
 
                     // Move the Player 1 bullets right
                     for (int Bullet = 0; Bullet <= BulletsPlayer1.Count - 1; Bullet++)
                     {
+                        TextWriterWhereColor.WriteWhere(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2);
                         int BulletX = BulletsPlayer1[Bullet].Item1 + 1;
                         int BulletY = BulletsPlayer1[Bullet].Item2;
                         BulletsPlayer1[Bullet] = new Tuple<int, int>(BulletX, BulletY);
@@ -181,6 +191,7 @@ namespace KS.Misc.Games
                     // Move the Player 2 bullets left
                     for (int Bullet = 0; Bullet <= BulletsPlayer2.Count - 1; Bullet++)
                     {
+                        TextWriterWhereColor.WriteWhere(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2);
                         int BulletX = BulletsPlayer2[Bullet].Item1 - 1;
                         int BulletY = BulletsPlayer2[Bullet].Item2;
                         BulletsPlayer2[Bullet] = new Tuple<int, int>(BulletX, BulletY);
@@ -189,6 +200,7 @@ namespace KS.Misc.Games
                     // Move the stars left
                     for (int Star = 0; Star <= Stars.Count - 1; Star++)
                     {
+                        TextWriterWhereColor.WriteWhere(" ", Stars[Star].Item1, Stars[Star].Item2);
                         int StarX = Stars[Star].Item1 - 1;
                         int StarY = Stars[Star].Item2;
                         Stars[Star] = new Tuple<int, int>(StarX, StarY);
