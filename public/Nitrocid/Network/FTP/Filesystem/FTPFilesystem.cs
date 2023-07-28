@@ -95,7 +95,8 @@ namespace KS.Network.FTP.Filesystem
                                 EntryBuilder.Append(": ");
                                 FileSize = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetFileSize(finalDirListFTP.FullName);
                                 ModDate = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).GetModifiedTime(finalDirListFTP.FullName);
-                                EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + TextTools.FormatString(Translate.DoTranslation("{0} KB | Modified in: {1}"), FileSize / 1024d, ModDate.ToString()));
+                                EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground +
+                                    $"{FileSize.FileSizeToString()} | {Translate.DoTranslation("Modified on")} {ModDate}");
                             }
                         }
                         else if (finalDirListFTP.Type == FtpObjectType.Directory)
