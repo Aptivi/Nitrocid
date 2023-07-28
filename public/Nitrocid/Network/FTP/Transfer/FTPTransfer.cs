@@ -23,6 +23,8 @@ using FluentFTP.Helpers;
 using KS.Kernel.Debugging;
 using KS.Shell.Shells.FTP;
 using KS.Kernel.Events;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 
 namespace KS.Network.FTP.Transfer
 {
@@ -268,8 +270,8 @@ namespace KS.Network.FTP.Transfer
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Download failed for {0}: {1}", File, ex.Message);
                 EventsManager.FireEvent(EventType.FTPPostDownload, File, false);
+                throw new KernelException(KernelExceptionType.FTPFilesystem, Translate.DoTranslation("Download failed for file {0}.") + " {1}", File, ex.Message);
             }
-            return "";
         }
 
     }
