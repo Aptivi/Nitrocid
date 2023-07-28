@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), FileInfo.Attributes);
                     TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(FileInfo.DirectoryName));
                     TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString());
-                    TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", Parsing.IsBinaryFile(FileInfo.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", $"{Parsing.IsBinaryFile(FileInfo.FullName)}");
                     TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(Filesystem.NeutralizePath(FileInfo.FullName)));
                 }
                 else
