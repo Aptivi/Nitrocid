@@ -138,8 +138,7 @@ namespace KS.Shell.ShellBase.Commands
                     {
                         argSatisfied = false;
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                        TextWriterColor.Write(Translate.DoTranslation("Required arguments are not provided. See below for usage:"));
-                        HelpSystem.ShowHelp(Command, ShellType);
+                        TextWriterColor.Write(Translate.DoTranslation("Required arguments are not provided."));
                     }
                     
                     // Check for required switches
@@ -147,8 +146,7 @@ namespace KS.Shell.ShellBase.Commands
                     {
                         argSatisfied = false;
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
-                        TextWriterColor.Write(Translate.DoTranslation("Required switches are not provided. See below for usage:"));
-                        HelpSystem.ShowHelp(Command, ShellType);
+                        TextWriterColor.Write(Translate.DoTranslation("Required switches are not provided."));
                     }
                     
                     // Check for required switch arguments
@@ -156,8 +154,7 @@ namespace KS.Shell.ShellBase.Commands
                     {
                         argSatisfied = false;
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
-                        TextWriterColor.Write(Translate.DoTranslation("One of the switches requires a value that is not provided. See below for usage:"));
-                        HelpSystem.ShowHelp(Command, ShellType);
+                        TextWriterColor.Write(Translate.DoTranslation("One of the switches requires a value that is not provided."));
                     }
                     
                     // Check for unknown switches
@@ -167,8 +164,6 @@ namespace KS.Shell.ShellBase.Commands
                         DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
                         TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below are unknown."));
                         ListWriterColor.WriteList(ArgumentInfo.unknownSwitchesList);
-                        TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
-                        HelpSystem.ShowHelp(Command, ShellType);
                     }
                     
                     // Check for conflicting switches
@@ -178,8 +173,6 @@ namespace KS.Shell.ShellBase.Commands
                         DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
                         TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below conflict with each other."));
                         ListWriterColor.WriteList(ArgumentInfo.conflictingSwitchesList);
-                        TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
-                        HelpSystem.ShowHelp(Command, ShellType);
                     }
                 }
 
@@ -188,6 +181,11 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     var CommandBase = TargetCommands[Command].CommandBase;
                     CommandBase.Execute(StrArgs, Args, Switches);
+                }
+                else
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
+                    HelpSystem.ShowHelp(Command, ShellType);
                 }
             }
             catch (ThreadInterruptedException)

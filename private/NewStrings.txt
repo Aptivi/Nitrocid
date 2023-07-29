@@ -683,8 +683,8 @@ File found in path:
 File not found in path lookup directories.
 Sets console title on command execution.
 Set console title on command execution
-Required arguments are not provided. See below for usage:
-Required switches are not provided. See below for usage:
+Required arguments are not provided.
+Required switches are not provided.
 Select a connection. If you have no connections, you'll have to create a new connection. Additionally, you can use the speed dial feature to quickly connect to servers.
 Create a new connection
 Enter the server address:
@@ -721,7 +721,7 @@ Contact manager box foreground color
 File {0} is still locked even after waiting for {1} seconds.
 Waits until the file is unlocked
 Waiting until the file is unlocked...
-One of the switches requires a value that is not provided. See below for usage:
+One of the switches requires a value that is not provided.
 Switches that are listed below are unknown.
 See below for usage:
 Reload Settings
