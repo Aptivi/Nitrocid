@@ -60,7 +60,7 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 if (value <= 0)
-                    value = 10;
+                    value = 50;
                 Config.SaverConfig.BouncingTextDelay = value;
             }
         }
@@ -265,6 +265,7 @@ namespace KS.Misc.Screensaver.Displays
 
         private string Direction = "BottomRight";
         private int RowText, ColumnFirstLetter, ColumnLastLetter;
+        private int lastLeft, lastTop;
         private Color BouncingColor;
 
         /// <inheritdoc/>
@@ -285,7 +286,10 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverLogic()
         {
             ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear();
+
+            // Clear the old text position
+            int diff = ColumnLastLetter - ColumnFirstLetter;
+            TextWriterWhereColor.WriteWhere(new string(' ', diff), lastLeft, lastTop, true, Color.Empty);
 
             // Define the color
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Row text: {0}", RowText);
@@ -307,6 +311,10 @@ namespace KS.Misc.Screensaver.Displays
                 ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
                 ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
             }
+
+            // Set the old positions to clear
+            lastLeft = ColumnFirstLetter;
+            lastTop = RowText;
 
             // Change the direction of text
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Text is facing {0}.", Direction);

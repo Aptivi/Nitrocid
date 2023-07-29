@@ -685,7 +685,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [BouncingText] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int BouncingTextDelay { get; set; } = 10;
+        public int BouncingTextDelay { get; set; } = 50;
         /// <summary>
         /// [BouncingText] Text for Bouncing Text. Shorter is better.
         /// </summary>
@@ -1453,7 +1453,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [Fireworks] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int FireworksDelay { get; set; } = 10;
+        public int FireworksDelay { get; set; } = 50;
         /// <summary>
         /// [Fireworks] The radius of the explosion
         /// </summary>
@@ -1545,7 +1545,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [FlashText] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int FlashTextDelay { get; set; } = 20;
+        public int FlashTextDelay { get; set; } = 50;
         /// <summary>
         /// [FlashText] Text for FlashText. Shorter is better.
         /// </summary>

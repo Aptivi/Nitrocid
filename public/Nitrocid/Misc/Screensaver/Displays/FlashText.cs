@@ -60,7 +60,7 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 if (value <= 0)
-                    value = 20;
+                    value = 50;
                 Config.SaverConfig.FlashTextDelay = value;
             }
         }

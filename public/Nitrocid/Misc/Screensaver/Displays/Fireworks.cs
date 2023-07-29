@@ -60,7 +60,7 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 if (value <= 0)
-                    value = 10;
+                    value = 50;
                 Config.SaverConfig.FireworksDelay = value;
             }
         }
@@ -261,7 +261,7 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "{0} steps", FireworkStepsX);
             int FireworkRadius = FireworksSettings.FireworksRadius >= 0 & FireworksSettings.FireworksRadius <= 10 ? FireworksSettings.FireworksRadius : 5;
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Radius: {0} blocks", FireworkRadius);
-            var IgniteColor = new Color(255, 255, 255);
+            Color IgniteColor;
 
             // Select a color
             ConsoleWrapper.Clear();
