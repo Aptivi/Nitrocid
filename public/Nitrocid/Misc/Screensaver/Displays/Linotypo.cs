@@ -257,6 +257,9 @@ namespace KS.Misc.Screensaver.Displays
     internal class LinotypoDisplay : BaseScreensaver, IScreensaver
     {
 
+        private int CurrentColumn = 1;
+        private int CurrentColumnRowConsole = ConsoleWrapper.CursorLeft;
+
         public override string ScreensaverName { get; set; } = "Linotypo";
 
         public override void ScreensaverPreparation()
@@ -273,8 +276,6 @@ namespace KS.Misc.Screensaver.Displays
             int CpmSpeedMin = LinotypoSettings.LinotypoWritingSpeedMin * 5;
             int CpmSpeedMax = LinotypoSettings.LinotypoWritingSpeedMax * 5;
             int MaxCharacters = (int)Math.Round((ConsoleWrapper.WindowWidth - 2) / (double)LinotypoSettings.LinotypoTextColumns - 3d);
-            int CurrentColumn = 1;
-            int CurrentColumnRowConsole = ConsoleWrapper.CursorLeft;
             int ColumnRowConsoleThreshold = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)LinotypoSettings.LinotypoTextColumns);
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Minimum speed from {0} WPM: {1} CPM", LinotypoSettings.LinotypoWritingSpeedMin, CpmSpeedMin);
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Maximum speed from {0} WPM: {1} CPM", LinotypoSettings.LinotypoWritingSpeedMax, CpmSpeedMax);
