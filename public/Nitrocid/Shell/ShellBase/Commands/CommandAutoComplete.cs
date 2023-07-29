@@ -77,9 +77,8 @@ namespace KS.Shell.ShellBase.Commands
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Creating list of files and directories starting with command {0} [{1}]...", CommandName, CommandName.Length);
-                finalCompletions = Listing.CreateList(CurrentDirectory.CurrentDir, true)
-                    .Select(x => x.Name)
+                DebugWriter.WriteDebug(DebugLevel.I, "Creating list of commands starting with command {0} [{1}]...", CommandName, CommandName.Length);
+                finalCompletions = ShellCommands.Keys
                     .Where(x => x.StartsWith(CommandName))
                     .Select(x => x[CommandName.Length..])
                     .ToArray();
