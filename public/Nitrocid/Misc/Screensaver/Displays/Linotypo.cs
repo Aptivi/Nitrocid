@@ -490,7 +490,7 @@ namespace KS.Misc.Screensaver.Displays
                                     DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Bruteforcing...");
                                     while (!StruckFound)
                                     {
-                                        StrikeCharsIndex1 = RandomDriver.Random(0, Strikes.Count);
+                                        StrikeCharsIndex1 = RandomDriver.RandomIdx(0, Strikes.Count);
                                         CappedStrike = char.IsUpper(StruckChar) | CapSymbols.Contains(Convert.ToString(StruckChar));
                                         StrikesString = CappedStrike ? CapStrikes[StrikeCharsIndex1] : Strikes[StrikeCharsIndex1];
                                         StruckFound = !string.IsNullOrEmpty(StrikesString) && StrikesString.Contains(Convert.ToString(StruckChar));
@@ -502,7 +502,7 @@ namespace KS.Misc.Screensaver.Displays
                                     DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Found!");
 
                                     // Select a random character that is a typo from the selected strike index
-                                    int RandomStrikeIndex = RandomDriver.Random(0, StrikesString.Length);
+                                    int RandomStrikeIndex = RandomDriver.RandomIdx(0, StrikesString.Length);
                                     char MistypedChar = StrikesString[RandomStrikeIndex];
                                     if (@"`-=\][';/.,".Contains(Convert.ToString(MistypedChar)) & CappedStrike)
                                     {
