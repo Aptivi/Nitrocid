@@ -38,6 +38,7 @@ using System.Diagnostics;
 using KS.ConsoleBase;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Drivers.RNG;
 
 namespace KS.Misc.Screensaver
 {
@@ -213,7 +214,28 @@ namespace KS.Misc.Screensaver
             {
                 EventsManager.FireEvent(EventType.PreShowScreensaver);
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
-                if (Screensavers.ContainsKey(saver.ToLower()))
+                if (saver.ToLower() == "random")
+                {
+                    // Random screensaver selection function
+                    static string SelectRandom()
+                    {
+                        int ScreensaverIndex = RandomDriver.RandomIdx(Screensavers.Count);
+                        string ScreensaverName = Screensavers.Keys.ElementAtOrDefault(ScreensaverIndex);
+                        return ScreensaverName;
+                    }
+
+                    // Get a random screensaver name
+                    int ScreensaverIndex = RandomDriver.RandomIdx(Screensavers.Count);
+                    string ScreensaverName = SelectRandom();
+
+                    // We don't want another "random" screensaver showing up, so keep selecting until it's no longer "random"
+                    while (ScreensaverName == "random")
+                        ScreensaverName = SelectRandom();
+
+                    // Run the screensaver
+                    ShowSavers(ScreensaverName);
+                }
+                else if (Screensavers.ContainsKey(saver.ToLower()))
                 {
                     saver = saver.ToLower();
                     var BaseSaver = Screensavers[saver];
@@ -334,7 +356,7 @@ namespace KS.Misc.Screensaver
         {
             DebugWriter.WriteDebug(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
             KernelColorTools.LoadBack();
-            ConsoleBase.ConsoleWrapper.CursorVisible = true;
+            ConsoleWrapper.CursorVisible = true;
             DebugWriter.WriteDebug(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();
         }
