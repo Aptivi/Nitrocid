@@ -48,6 +48,7 @@
     <AssemblyVersion>0.1.0</AssemblyVersion>
     <PackageVersion>0.1.0.0-beta1</PackageVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <Deterministic>true</Deterministic>
     
     <!-- Increment NitrocidModAPIVersion everytime there is a breaking change or an API addition in the N-KS API. -->
     <NitrocidModAPIVersion>3.0.25.42</NitrocidModAPIVersion>
