@@ -16,8 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using GlitchSettings = KS.Misc.Animations.Glitch.GlitchSettings;
-using DisplayGlitchSettings = KS.Misc.Screensaver.Displays.GlitchSettings;
+using KS.ConsoleBase;
+using KS.Drivers.RNG;
+using KS.Kernel.Threading;
+using KS.Misc.Screensaver;
+using KS.Misc.Screensaver.Displays;
+using BsodSettings = KS.Misc.Screensaver.Displays.BSODSettings;
 
 namespace KS.Misc.Animations.BSOD.Simulations
 {
@@ -25,12 +29,27 @@ namespace KS.Misc.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            var gs = new GlitchSettings()
+            int millisecondsElapsed = 0;
+            while (!(millisecondsElapsed >= BsodSettings.BSODDelay | ConsoleResizeListener.WasResized(false)))
             {
-                GlitchDelay = DisplayGlitchSettings.GlitchDelay,
-                GlitchDensity = DisplayGlitchSettings.GlitchDensity
-            };
-            Glitch.Glitch.Simulate(gs);
+                if (!ConsoleResizeListener.WasResized(false))
+                {
+                    // Select random position to cover
+                    int CoverX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+                    int CoverY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
+
+                    // Glitch!
+                    Glitch.Glitch.GlitchAt(CoverX, CoverY);
+                }
+                else
+                {
+                    // We're resizing.
+                    ConsoleWrapper.CursorVisible = false;
+                    break;
+                }
+                ThreadManager.SleepNoBlock(GlitchSettings.GlitchDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                millisecondsElapsed += GlitchSettings.GlitchDelay;
+            }
         }
     }
 }
