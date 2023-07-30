@@ -27,6 +27,7 @@ using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Kernel.Threading;
+using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using SharpLyrics;
@@ -73,9 +74,19 @@ namespace KS.Misc.Animations.Lyrics
             int infoHeight = ConsoleWrapper.WindowHeight - 3;
             int infoMaxChars = ConsoleWrapper.WindowWidth - 9;
 
-            // If there is no lyric path, or if it doesn't exist, just bail
+            // If there is no lyric path, or if it doesn't exist, tell the user that they have to provide a path to the
+            // lyrics folder.
+            //
+            // Beta 2 Note: Message will mention that they can customize the directory to the .LRC files, but they can't
+            // in this beta, so be honest and say that this feature is due Beta 3.
             if (string.IsNullOrWhiteSpace(path) || !Checking.FileExists(path))
+            {
+                ConsoleWrapper.SetCursorPosition(2, 1);
+                TextWriterColor.Write(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files.") +
+                    // TODO: Remove this message at the start of the Beta 3 cycle.
+                    " However, the custom paths feature isn't available in this beta version of Nitrocid KS 0.1.0.");
                 return;
+            }
 
             // Here, the lyric file is given. Process it...
             var lyric = LyricReader.GetLyrics(path);
