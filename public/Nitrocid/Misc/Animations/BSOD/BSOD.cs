@@ -37,6 +37,7 @@ namespace KS.Misc.Animations.BSOD
             new Windows98(),
             new Linux(),
             new VGA(),
+            new BiosMbr(),
         };
 
         /// <summary>

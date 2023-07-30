@@ -16,19 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-
 namespace KS.Misc.Animations.BSOD.Simulations
 {
-    internal abstract class BaseBSOD
-    {
-        public virtual void Simulate()
-        {
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
-            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
-            TextWriterColor.Write("No operating system found.");
-        }
-    }
+    internal class BiosMbr : BaseBSOD
+    { }
 }
