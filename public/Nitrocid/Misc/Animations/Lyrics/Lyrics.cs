@@ -39,6 +39,8 @@ namespace KS.Misc.Animations.Lyrics
     public static class Lyrics
     {
 
+        // TODO: Make this customizable, as we don't want users to move / copy all their lrc files from their
+        //       music library to $HOME/Music/.
         private static string[] lyricsLrc = Listing.GetFilesystemEntries(Paths.HomePath + "/Music/", "*.lrc");
 
         /// <summary>
