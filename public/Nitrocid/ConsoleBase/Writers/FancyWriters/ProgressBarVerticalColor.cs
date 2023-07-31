@@ -90,6 +90,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Draw the progress bar
+                for (int i = ProgressFilled; i < MaximumHeight; i++)
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere("*", Left + 1, Top + MaximumHeight - i, true);
             }
@@ -232,6 +234,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Draw the progress bar
+                for (int i = ProgressFilled; i < MaximumHeight; i++)
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 KernelColorTools.SetConsoleColor(ProgressColor, true, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
@@ -343,6 +347,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Draw the progress bar
+                for (int i = ProgressFilled; i < MaximumHeight; i++)
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 KernelColorTools.SetConsoleColor(new Color(ProgressColor), true, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
@@ -454,6 +460,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Draw the progress bar
+                for (int i = ProgressFilled; i < MaximumHeight; i++)
+                    TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);
                 KernelColorTools.SetConsoleColor(ProgressColor, true, true);
                 for (int i = 0; i < ProgressFilled; i++)
                     TextWriterWhereColor.WriteWhere(" ", Left + 1, Top + MaximumHeight - i, true);

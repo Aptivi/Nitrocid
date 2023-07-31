@@ -560,6 +560,7 @@ namespace KS.Misc.Settings
                             var PressedKey = default(ConsoleKey);
                             int CurrentValue = Convert.ToInt32(KeyDefaultValue);
                             ConsoleWrapper.CursorVisible = false;
+                            ConsoleWrapper.Clear();
                             while (PressedKey != ConsoleKey.Enter)
                             {
                                 // Draw the progress bar
