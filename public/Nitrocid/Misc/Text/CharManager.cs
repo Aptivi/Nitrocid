@@ -37,19 +37,19 @@ namespace KS.Misc.Text
         /// Gets all the letters and the numbers.
         /// </summary>
         public static char[] GetAllLettersAndNumbers() =>
-            Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(CharNum => Convert.ToChar(CharNum)).Where(c => char.IsLetterOrDigit(c)).ToArray();
+            Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(Convert.ToChar).Where(char.IsLetterOrDigit).ToArray();
 
         /// <summary>
         /// Gets all the letters.
         /// </summary>
         public static char[] GetAllLetters() => 
-            Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(CharNum => Convert.ToChar(CharNum)).Where(c => char.IsLetter(c)).ToArray();
+            Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(Convert.ToChar).Where(char.IsLetter).ToArray();
 
         /// <summary>
         /// Gets all the numbers.
         /// </summary>
         public static char[] GetAllNumbers() => 
-            Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(CharNum => Convert.ToChar(CharNum)).Where(c => char.IsNumber(c)).ToArray();
+            Enumerable.Range(0, Convert.ToInt32(char.MaxValue) + 1).Select(Convert.ToChar).Where(char.IsNumber).ToArray();
 
         /// <summary>
         /// A simplification for <see cref="Convert.ToChar(int)"/> function to return the ESC character

@@ -288,7 +288,7 @@ namespace KS.Misc.Screensaver.Displays
             // Prepare the figlet font for writing
             string FigletWrite = FigletSettings.FigletText.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
             FigletWrite = FigletFontUsed.Render(FigletWrite);
-            var FigletWriteLines = FigletWrite.SplitNewLines().SkipWhile(x => string.IsNullOrEmpty(x)).ToArray();
+            var FigletWriteLines = FigletWrite.SplitNewLines().SkipWhile(string.IsNullOrEmpty).ToArray();
             int FigletHeight = (int)Math.Round(ConsoleMiddleHeight - FigletWriteLines.Length / 2d);
             int FigletWidth = (int)Math.Round(ConsoleMiddleWidth - FigletWriteLines[0].Length / 2d);
 

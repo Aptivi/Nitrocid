@@ -182,7 +182,7 @@ namespace KS.Misc.Archive
                 }
 
                 // Remove empty strings
-                TargetSplit.RemoveAll(x => string.IsNullOrEmpty(x));
+                TargetSplit.RemoveAll(string.IsNullOrEmpty);
                 DebugWriter.WriteDebug(DebugLevel.I, "Target length: {0}", TargetSplit.Count);
 
                 // Remove every last entry that goes back
