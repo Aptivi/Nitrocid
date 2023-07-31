@@ -18,6 +18,7 @@
 
 using System;
 using ColorSeq;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
@@ -218,6 +219,8 @@ namespace KS.Misc.Screensaver.Displays
     public class DateAndTimeDisplay : BaseScreensaver, IScreensaver
     {
 
+        private string lastRenderedDate = "";
+        private string lastRenderedTime = "";
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "DateAndTime";
@@ -225,14 +228,27 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.Clear();
+            // Get the color and positions
+            Color timeColor = ChangeDateAndTimeColor();
+            string renderedDate = TimeDateRenderers.RenderDate();
+            string renderedTime = TimeDateRenderers.RenderTime();
+            int halfConsoleY = (int)(ConsoleWrapper.WindowHeight / 2d);
+            int datePosX = (ConsoleWrapper.WindowWidth / 2) - (renderedDate.Length / 2);
+            int timePosX = (ConsoleWrapper.WindowWidth / 2) - (renderedTime.Length / 2);
+
+            // Clear old date/time
+            int oldDatePosX = (ConsoleWrapper.WindowWidth / 2) - (lastRenderedDate.Length / 2);
+            int oldTimePosX = (ConsoleWrapper.WindowWidth / 2) - (lastRenderedTime.Length / 2);
+            TextWriterWhereColor.WriteWhere(new string(' ', lastRenderedDate.Length), oldDatePosX, halfConsoleY, timeColor);
+            TextWriterWhereColor.WriteWhere(new string(' ', lastRenderedTime.Length), oldTimePosX, halfConsoleY + 1, timeColor);
 
             // Write date and time
-            KernelColorTools.SetConsoleColor(ChangeDateAndTimeColor());
-            TextWriterWhereColor.WriteWhere(TimeDateRenderers.RenderDate(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderDate().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d - 1d));
-            TextWriterWhereColor.WriteWhere(TimeDateRenderers.RenderTime(), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowWidth / 2d - TimeDateRenderers.RenderTime().Length / 2d), (int)Math.Round(ConsoleBase.ConsoleWrapper.WindowHeight / 2d));
+            TextWriterWhereColor.WriteWhere(renderedDate, datePosX, halfConsoleY, timeColor);
+            TextWriterWhereColor.WriteWhere(renderedTime, timePosX, halfConsoleY + 1, timeColor);
 
             // Delay
+            lastRenderedDate = renderedDate;
+            lastRenderedTime = renderedTime;
             ThreadManager.SleepNoBlock(DateAndTimeSettings.DateAndTimeDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
