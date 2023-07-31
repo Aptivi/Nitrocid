@@ -42,6 +42,7 @@ namespace KS.Users.Login
 {
     internal static class ModernLogonScreen
     {
+        private static bool renderedFully = false;
         private static readonly KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater) { isCritical = true };
 
         /// <summary>
@@ -61,10 +62,12 @@ namespace KS.Users.Login
             DateTimeUpdateThread.Start();
 
             // Wait for the keypress
+            SpinWait.SpinUntil(() => renderedFully);
             Input.DetectKeypress();
 
             // Stop the thread
             DateTimeUpdateThread.Stop();
+            renderedFully = false;
 
             // Now, clear the console again and prompt for username
             bool loggedIn = false;
@@ -184,6 +187,7 @@ namespace KS.Users.Login
                     }
 
                     // Wait for 1 second
+                    renderedFully = true;
                     Thread.Sleep(1000);
                 }
             }
