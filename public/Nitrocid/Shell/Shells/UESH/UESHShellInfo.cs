@@ -262,7 +262,7 @@ namespace KS.Shell.Shells.UESH
             { "showtd", new CommandInfo("showtd", ShellType, /* Localizable */ "Shows date and time",
                 new CommandArgumentInfo(), new ShowTdCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "showtdzone", new CommandInfo("showtdzone", ShellType, /* Localizable */ "Shows date and time in zones",
-                new CommandArgumentInfo(new[] { "timezone" }, new[] { new SwitchInfo("all", /* Localizable */ "Shows all the time zones") }, true, 1), new ShowTdZoneCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
+                new CommandArgumentInfo(new[] { "timezone" }, new[] { new SwitchInfo("all", /* Localizable */ "Shows all the time zones", false, false, null, 1) }, true, 1), new ShowTdZoneCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "shutdown", new CommandInfo("shutdown", ShellType, /* Localizable */ "The kernel will be shut down",
                 new CommandArgumentInfo(new[] { "ip", "port" }, Array.Empty<SwitchInfo>(), false, 0), new ShutdownCommand()) },
             { "sleep", new CommandInfo("sleep", ShellType, /* Localizable */ "Sleeps for specified milliseconds",
