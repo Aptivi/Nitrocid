@@ -19,7 +19,7 @@
 using KS.Arguments.ArgumentBase;
 using System.Diagnostics;
 
-namespace KSTests.ArgumentTests
+namespace KSTests.Arguments
 {
     class ArgumentTest : ArgumentExecutor, IArgument
     {
