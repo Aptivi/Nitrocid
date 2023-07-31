@@ -32,7 +32,7 @@ namespace KS.Misc.Screensaver
     {
 
         internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver)ss)) { isCritical = true };
-        internal static bool OutOfRandom;
+        internal static bool OutOfSaver;
 
         /// <summary>
         /// Displays the screensaver from the screensaver base
@@ -43,11 +43,11 @@ namespace KS.Misc.Screensaver
             try
             {
                 // Preparations
-                OutOfRandom = false;
+                OutOfSaver = false;
                 Screensaver.ScreensaverPreparation();
 
                 // Execute the actual screensaver logic
-                while (!OutOfRandom)
+                while (!OutOfSaver)
                     Screensaver.ScreensaverLogic();
             }
             catch (ThreadInterruptedException)
@@ -60,7 +60,7 @@ namespace KS.Misc.Screensaver
             }
             finally
             {
-                OutOfRandom = true;
+                OutOfSaver = true;
                 Screensaver.ScreensaverOutro();
             }
         }
