@@ -22,7 +22,7 @@ using KS.Files;
 using NUnit.Framework;
 using Shouldly;
 
-namespace KSTests.Misc
+namespace KSTests.Drivers
 {
 
     [TestFixture]
