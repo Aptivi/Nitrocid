@@ -29,6 +29,7 @@ using KS.Kernel;
 using KS.Kernel.Configuration;
 using NUnit.Framework;
 using Shouldly;
+using Shouldly.ShouldlyExtensionMethods;
 
 namespace KSTests.Files
 {
@@ -421,6 +422,17 @@ namespace KSTests.Files
             Combined.ShouldNotBeNull();
             Combined.ShouldNotBeEmpty();
             Combined.Length.ShouldBeGreaterThan(1);
+        }
+
+        /// <summary>
+        /// Tests removing attribute
+        /// </summary>
+        [Test]
+        [Description("Manipulation")]
+        public void TestRemoveAttributeExtension()
+        {
+            var CreatedList = AttributeManager.RemoveAttribute(FileAttributes.System, FileAttributes.System);
+            CreatedList.ShouldNotHaveFlag(FileAttributes.System);
         }
 
     }

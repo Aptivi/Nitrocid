@@ -75,6 +75,41 @@ namespace KSTests.Files
         }
 
         /// <summary>
+        /// Tests getting a numbered file name
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetNumberedFileName()
+        {
+            string numbered = Getting.GetNumberedFileName(Paths.HomePath, "testnum.txt");
+            numbered.ShouldContain("testnum-0.txt");
+        }
+
+        /// <summary>
+        /// Tests getting a random file name
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetRandomFileName()
+        {
+            string numbered = Getting.GetRandomFileName();
+            numbered.ShouldNotBeEmpty();
+            Parsing.TryParsePath(numbered).ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests getting a random directory name
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetRandomFolderName()
+        {
+            string numbered = Getting.GetRandomFolderName();
+            numbered.ShouldNotBeEmpty();
+            Parsing.TryParsePath(numbered).ShouldBeTrue();
+        }
+
+        /// <summary>
         /// Tests trying to parse the path name
         /// </summary>
         [TestCase(@"C:\Windows", IncludePlatform = "win", ExpectedResult = true)]
@@ -82,7 +117,8 @@ namespace KSTests.Files
         [TestCase("/usr/bin", IncludePlatform = "linux,unix,macosx", ExpectedResult = true)]
         [TestCase("/usr/bin\0", IncludePlatform = "linux,unix,macosx", ExpectedResult = false)]
         [Description("Querying")]
-        public bool TestTryParsePath(string Path) => Parsing.TryParsePath(Path);
+        public bool TestTryParsePath(string Path) =>
+            Parsing.TryParsePath(Path);
 
         /// <summary>
         /// Tests trying to parse the file name
@@ -90,7 +126,8 @@ namespace KSTests.Files
         [TestCase("Windows", ExpectedResult = true)]
         [TestCase(@"Windows/System32\", ExpectedResult = false)]
         [Description("Querying")]
-        public bool TestTryParseFileName(string Path) => Parsing.TryParseFileName(Path);
+        public bool TestTryParseFileName(string Path) =>
+            Parsing.TryParseFileName(Path);
 
         /// <summary>
         /// Tests trying to get the line ending from text file

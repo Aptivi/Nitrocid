@@ -16,26 +16,29 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Configuration;
+using KS.Kernel.Debugging.Trace;
 using NUnit.Framework;
 using Shouldly;
 
-namespace KSTests.Kernel
+namespace KSTests.Kernel.Debugging
 {
+
     [TestFixture]
-    public class ConfigManagementTests
+    public class DebugStackFrameTests
     {
+
         /// <summary>
-        /// Tests checking the settings variables
+        /// Tests making a new instance of the debug stack frame
         /// </summary>
         [Test]
-        [Description("Management")]
-        public void TestCheckConfigVariables()
+        [Description("Misc")]
+        public void TestDebugStackFrame()
         {
-            var SettingsVariables = ConfigTools.CheckConfigVariables();
-            SettingsVariables.ShouldNotBeNull();
-            SettingsVariables.ShouldNotBeEmpty();
-            SettingsVariables.Values.ShouldNotContain(false);
+            var frame = new DebugStackFrame();
+            frame.ShouldNotBeNull();
+            var frame2 = new DebugStackFrame(2);
+            frame2.ShouldNotBeNull();
         }
+
     }
 }

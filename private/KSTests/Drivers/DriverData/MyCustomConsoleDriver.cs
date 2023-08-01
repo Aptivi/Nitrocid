@@ -18,11 +18,17 @@
 
 using KS.Drivers.Console;
 using KS.Drivers.Console.Consoles;
+using System;
 
 namespace KSTests.Drivers.DriverData
 {
     internal class MyCustomConsoleDriver : BaseConsoleDriver, IConsoleDriver
     {
         public override string DriverName => "MyCustom";
+        public override bool KeyAvailable => true;
+        public override ConsoleKeyInfo ReadKey(bool intercept = false)
+        {
+            return new ConsoleKeyInfo();
+        }
     }
 }
