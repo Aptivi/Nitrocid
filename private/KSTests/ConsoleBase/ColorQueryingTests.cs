@@ -16,10 +16,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using ColorSeq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Themes;
 using NUnit.Framework;
 using Shouldly;
+using System;
+using System.Collections.Generic;
 using System.Diagnostics;
+using System.Linq;
 
 namespace KSTests.ConsoleBase
 {
@@ -27,6 +32,191 @@ namespace KSTests.ConsoleBase
     [TestFixture]
     public class ColorQueryingTests
     {
+
+        /// <summary>
+        /// Tests getting color from the kernel type
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetColor()
+        {
+            var types = Enum.GetNames(typeof(KernelColorType));
+            foreach (string typeName in types)
+            {
+                Color color = Color.Empty;
+                var type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeName);
+                Should.NotThrow(() => color = KernelColorTools.GetColor(type));
+                color.ShouldNotBeNull();
+            }
+        }
+
+        /// <summary>
+        /// Tests setting color from the kernel type
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestSetColor()
+        {
+            var types = Enum.GetNames(typeof(KernelColorType));
+            Color expected = new(255, 255, 255);
+            foreach (string typeName in types)
+            {
+                Color color = Color.Empty;
+                var type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeName);
+                Should.NotThrow(() => color = KernelColorTools.SetColor(type, expected));
+                color.ShouldNotBeNull();
+                color.ShouldNotBe(Color.Empty);
+                color.ShouldBe(expected);
+                Color kcolor = Color.Empty;
+                Should.NotThrow(() => kcolor = KernelColorTools.GetColor(type));
+                kcolor.ShouldNotBeNull();
+                kcolor.ShouldNotBe(Color.Empty);
+                kcolor.ShouldBe(expected);
+            }
+        }
+
+        /// <summary>
+        /// Tests populating colors
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestPopulateColorsCurrent()
+        {
+            var dict = KernelColorTools.PopulateColorsCurrent();
+            dict.ShouldNotBeEmpty();
+            foreach (var type in dict.Keys)
+            {
+                var expected = Color.Empty;
+                var color = dict[type];
+                color.ShouldNotBeNull();
+                Should.NotThrow(() => expected = KernelColorTools.GetColor(type));
+                expected.ShouldNotBeNull();
+                color.ShouldBe(expected);
+            }
+        }
+
+        /// <summary>
+        /// Tests populating colors
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestPopulateColorsDefault()
+        {
+            var dict = KernelColorTools.PopulateColorsDefault();
+            dict.ShouldNotBeEmpty();
+            ThemeInfo themeInfo = new();
+            foreach (var type in dict.Keys)
+            {
+                var expected = Color.Empty;
+                var color = dict[type];
+                color.ShouldNotBeNull();
+                Should.NotThrow(() => expected = themeInfo.GetColor(type));
+                expected.ShouldNotBeNull();
+                color.ShouldBe(expected);
+            }
+        }
+
+        /// <summary>
+        /// Tests populating colors
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestPopulateColorsEmpty()
+        {
+            var dict = KernelColorTools.PopulateColorsEmpty();
+            dict.ShouldNotBeEmpty();
+            foreach (var type in dict.Keys)
+            {
+                var expected = Color.Empty;
+                var color = dict[type];
+                color.ShouldNotBeNull();
+                color.ShouldBe(expected);
+            }
+        }
+
+        /// <summary>
+        /// Tests getting gray color
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetGrayLight()
+        {
+            var expected = KernelColorTools.GetColor(KernelColorType.NeutralText);
+            Should.NotThrow(() => KernelColorTools.SetColor(KernelColorType.Background, new Color(255, 255, 255)));
+            var color = KernelColorTools.GetGray();
+            color.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests getting gray color
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetGrayDark()
+        {
+            var expected = new Color(ConsoleColors.Gray);
+            Should.NotThrow(() => KernelColorTools.SetColor(KernelColorType.Background, new Color(0, 0, 0)));
+            var color = KernelColorTools.GetGray();
+            color.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests getting random color
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetRandomColor()
+        {
+            var types = Enum.GetNames(typeof(ColorType));
+            foreach (string typeName in types)
+            {
+                Color color = Color.Empty;
+                var type = (ColorType)Enum.Parse(typeof(ColorType), typeName);
+                Should.NotThrow(() => color = KernelColorTools.GetRandomColor(type));
+                color.ShouldNotBeNull();
+                color.Type.ShouldBe(type);
+            }
+        }
+
+        /// <summary>
+        /// Tests getting random color
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetRandomColorBlackSelection()
+        {
+            var types = Enum.GetNames(typeof(ColorType)).Skip(1);
+            foreach (string typeName in types)
+            {
+                var type = (ColorType)Enum.Parse(typeof(ColorType), typeName);
+                Color expected = Color.Empty;
+                Color color = null;
+                while (color is null || color != expected)
+                    Should.NotThrow(() => color = KernelColorTools.GetRandomColor(type));
+                color.ShouldNotBeNull();
+                color.ShouldBe(expected);
+            }
+        }
+
+        /// <summary>
+        /// Tests getting random color
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetRandomColorNoBlackSelection()
+        {
+            var types = Enum.GetNames(typeof(ColorType)).Skip(1);
+            var colors = new List<Color>();
+            foreach (string typeName in types)
+            {
+                var type = (ColorType)Enum.Parse(typeof(ColorType), typeName);
+                Color unexpected = Color.Empty;
+                for (int i = 1; i <= 1000000; i++)
+                    Should.NotThrow(() => colors.Add(KernelColorTools.GetRandomColor(type, false)));
+                colors.ShouldNotBeEmpty();
+                colors.ShouldNotContain(unexpected);
+            }
+        }
 
         /// <summary>
         /// Tests trying to parse the color from hex
