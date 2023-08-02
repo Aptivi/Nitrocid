@@ -81,7 +81,7 @@ namespace KSTests.Files
         [Description("Querying")]
         public void TestGetNumberedFileName()
         {
-            string numbered = Getting.GetNumberedFileName(Paths.HomePath, "testnum.txt");
+            string numbered = Getting.GetNumberedFileName(InitTest.PathToTestSlotFolder, "testnum.txt");
             numbered.ShouldContain("testnum-0.txt");
         }
 

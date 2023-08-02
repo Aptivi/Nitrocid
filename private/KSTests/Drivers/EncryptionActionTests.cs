@@ -57,13 +57,13 @@ namespace KSTests.Drivers
         [Description("Action")]
         public string TestGetEncryptedFileUsingStream(string Algorithm)
         {
-            var FileStreamHash = File.Create(Paths.HomePath + "/TestSum.txt");
+            var FileStreamHash = File.Create(InitTest.PathToTestSlotFolder + "/TestSum.txt");
             FileStreamHash.Write(System.Text.Encoding.Default.GetBytes("Test hashing."), 0, 13);
             FileStreamHash.Flush();
             FileStreamHash.Position = 0L;
             string ResultHash = Encryption.GetEncryptedFile(FileStreamHash, Algorithm);
             FileStreamHash.Close();
-            File.Delete(Paths.HomePath + "/TestSum.txt");
+            File.Delete(InitTest.PathToTestSlotFolder + "/TestSum.txt");
             return ResultHash;
         }
 
@@ -79,12 +79,12 @@ namespace KSTests.Drivers
         [Description("Action")]
         public string TestGetEncryptedFileUsingPath(string Algorithm)
         {
-            var FileStreamHash = File.Create(Paths.HomePath + "/TestSum.txt");
+            var FileStreamHash = File.Create(InitTest.PathToTestSlotFolder + "/TestSum.txt");
             FileStreamHash.Write(System.Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23);
             FileStreamHash.Flush();
             FileStreamHash.Close();
-            string FileHash = Encryption.GetEncryptedFile(Paths.HomePath + "/TestSum.txt", Algorithm);
-            File.Delete(Paths.HomePath + "/TestSum.txt");
+            string FileHash = Encryption.GetEncryptedFile(InitTest.PathToTestSlotFolder + "/TestSum.txt", Algorithm);
+            File.Delete(InitTest.PathToTestSlotFolder + "/TestSum.txt");
             return FileHash;
         }
 
@@ -100,13 +100,13 @@ namespace KSTests.Drivers
         [Description("Action")]
         public bool TestVerifyHashFromHash(string Algorithm, string ExpectedHash)
         {
-            var FileStreamHash = File.Create(Paths.HomePath + "/TestSum.txt");
+            var FileStreamHash = File.Create(InitTest.PathToTestSlotFolder + "/TestSum.txt");
             FileStreamHash.Write(System.Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23);
             FileStreamHash.Flush();
             FileStreamHash.Close();
-            string FileHash = Encryption.GetEncryptedFile(Paths.HomePath + "/TestSum.txt", Algorithm);
-            bool Result = HashVerifier.VerifyHashFromHash(Paths.HomePath + "/TestSum.txt", Algorithm, ExpectedHash, FileHash);
-            File.Delete(Paths.HomePath + "/TestSum.txt");
+            string FileHash = Encryption.GetEncryptedFile(InitTest.PathToTestSlotFolder + "/TestSum.txt", Algorithm);
+            bool Result = HashVerifier.VerifyHashFromHash(InitTest.PathToTestSlotFolder + "/TestSum.txt", Algorithm, ExpectedHash, FileHash);
+            File.Delete(InitTest.PathToTestSlotFolder + "/TestSum.txt");
             return Result;
         }
 
@@ -158,12 +158,12 @@ namespace KSTests.Drivers
         [Description("Action")]
         public bool TestVerifyUncalculatedHashFromHash(string Algorithm, string ExpectedHash)
         {
-            var FileStreamHash = File.Create(Paths.HomePath + "/TestSum.txt");
+            var FileStreamHash = File.Create(InitTest.PathToTestSlotFolder + "/TestSum.txt");
             FileStreamHash.Write(System.Text.Encoding.Default.GetBytes("Test hashing with path."), 0, 23);
             FileStreamHash.Flush();
             FileStreamHash.Close();
-            bool Result = HashVerifier.VerifyUncalculatedHashFromHash(Paths.HomePath + "/TestSum.txt", Algorithm, ExpectedHash);
-            File.Delete(Paths.HomePath + "/TestSum.txt");
+            bool Result = HashVerifier.VerifyUncalculatedHashFromHash(InitTest.PathToTestSlotFolder + "/TestSum.txt", Algorithm, ExpectedHash);
+            File.Delete(InitTest.PathToTestSlotFolder + "/TestSum.txt");
             return Result;
         }
 

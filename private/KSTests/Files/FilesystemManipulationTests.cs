@@ -45,8 +45,8 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestCopyDirectoryToDirectory()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
-            Directory.CreateDirectory(Paths.HomePath + "/TestDir");
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
+            Directory.CreateDirectory(InitTest.PathToTestSlotFolder + "/TestDir");
             string SourcePath = "TestDir";
             string TargetPath = "TestDir2";
             Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
@@ -59,7 +59,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestCopyFileToDirectory()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
             string TargetPath = "TestDir/";
             Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
@@ -72,7 +72,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestCopyFileToFile()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
             string TargetPath = "TestDir/Text.txt";
             Should.NotThrow(() => Copying.CopyFileOrDir(SourcePath, TargetPath));
@@ -85,7 +85,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestMakeDirectory()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             Should.NotThrow(() => Making.MakeDirectory("NewDirectory"));
         }
 
@@ -96,7 +96,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestMakeFile()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             Should.NotThrow(() => Making.MakeFile("NewFile.txt"));
         }
 
@@ -107,7 +107,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestMakeJsonFile()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             Should.NotThrow(() => Making.MakeJsonFile("NewFile.json"));
         }
 
@@ -118,8 +118,8 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestMoveDirectoryToDirectory()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
-            Directory.CreateDirectory(Paths.HomePath + "/TestMovedDir");
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
+            Directory.CreateDirectory(InitTest.PathToTestSlotFolder + "/TestMovedDir");
             string SourcePath = "TestMovedDir";
             string TargetPath = "TestMovedDir2";
             Should.NotThrow(() => Moving.MoveFileOrDir(SourcePath, TargetPath));
@@ -132,7 +132,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestMoveFileToDirectory()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestMove.txt");
             string TargetPath = "TestDir";
             Should.NotThrow(() => Moving.MoveFileOrDir(SourcePath, TargetPath));
@@ -145,7 +145,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestMoveFileToFile()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = "TestDir/TestMove.txt";
             string TargetPath = Path.GetFullPath("TestData/TestMove.txt");
             Should.NotThrow(() => Moving.MoveFileOrDir(SourcePath, TargetPath));
@@ -171,7 +171,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestRemoveDirectory()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TargetPath = Filesystem.NeutralizePath("TestDir2");
             Should.NotThrow(() => Removing.RemoveDirectory(TargetPath));
         }
@@ -183,7 +183,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestRemoveFile()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TargetPath = "TestDir/Text.txt";
             Should.NotThrow(() => Removing.RemoveFile(TargetPath));
         }
@@ -195,7 +195,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestSearchFileForString()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TargetPath = Path.GetFullPath("TestData/TestText.txt");
             var Matches = Searching.SearchFileForString(TargetPath, "test");
             Matches.ShouldNotBeNull();
@@ -209,7 +209,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestSearchFileForStringRegexp()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TargetPath = Path.GetFullPath("TestData/TestText.txt");
             var Matches = Searching.SearchFileForStringRegexp(TargetPath, new Regex("test"));
             Matches.ShouldNotBeNull();
@@ -223,7 +223,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestAddAttribute()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
             Should.NotThrow(() => AttributeManager.AddAttributeToFile(SourcePath, FileAttributes.Hidden));
         }
@@ -235,7 +235,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestDeleteAttribute()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string SourcePath = Path.GetFullPath("TestData/TestText.txt");
             Should.NotThrow(() => AttributeManager.RemoveAttributeFromFile(SourcePath, FileAttributes.Hidden));
         }
@@ -404,7 +404,7 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestCreateList()
         {
-            var CreatedList = Listing.CreateList(Paths.HomePath);
+            var CreatedList = Listing.CreateList(InitTest.PathToTestSlotFolder);
             CreatedList.ShouldNotBeEmpty();
         }
 

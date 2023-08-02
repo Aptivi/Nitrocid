@@ -29,6 +29,8 @@ namespace KSTests
     [SetUpFixture]
     public class InitTest
     {
+        internal static string PathToTestSlotFolder = "";
+
         /// <summary>
         /// Initialize everything that is required before starting unit tests
         /// </summary>
@@ -55,6 +57,11 @@ namespace KSTests
             // NUnit sets current directory to a wrong directory, so set it to the test context directory
             string TestAssemblyDir = TestContext.CurrentContext.TestDirectory;
             Environment.CurrentDirectory = TestAssemblyDir;
+            PathToTestSlotFolder = Path.GetFullPath("FilesystemSlot");
+
+            // Make a slot for filesystem-related tests
+            if (!Checking.FolderExists(PathToTestSlotFolder))
+                Making.MakeDirectory(PathToTestSlotFolder, false);
         }
 
         /// <summary>
@@ -63,24 +70,9 @@ namespace KSTests
         [OneTimeTearDown]
         public static void CleanEverything()
         {
-            if (Checking.FileExists(Paths.HomePath + "/Documents/TestText.txt"))
-                File.Delete(Paths.HomePath + "/Documents/TestText.txt");
-            if (Checking.FileExists(Paths.HomePath + "/Documents/Text.txt"))
-                File.Delete(Paths.HomePath + "/Documents/Text.txt");
-            if (Checking.FileExists(Paths.HomePath + "/NewFile.txt"))
-                File.Delete(Paths.HomePath + "/NewFile.txt");
-            if (Checking.FileExists(Paths.HomePath + "/NewFile.json"))
-                File.Delete(Paths.HomePath + "/NewFile.json");
-            if (Checking.FileExists(Paths.HomePath + "/1mb-test.csv"))
-                File.Delete(Paths.HomePath + "/1mb-test.csv");
-            if (Checking.FolderExists(Paths.HomePath + "/TestMovedDir2"))
-                Directory.Delete(Paths.HomePath + "/TestMovedDir2", true);
-            if (Checking.FolderExists(Paths.HomePath + "/NewDirectory"))
-                Directory.Delete(Paths.HomePath + "/NewDirectory", true);
-            if (Checking.FolderExists(Paths.HomePath + "/TestDir"))
-                Directory.Delete(Paths.HomePath + "/TestDir", true);
-            if (Checking.FolderExists(Paths.HomePath + "/TestDir2"))
-                Directory.Delete(Paths.HomePath + "/TestDir2", true);
+            if (Checking.FolderExists(Path.GetFullPath("ResultSlot")))
+                Removing.RemoveDirectory(Path.GetFullPath("ResultSlot"));
+            Directory.Move(PathToTestSlotFolder, Path.GetFullPath("ResultSlot"));
             if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration) + ".old"))
             {
                 if (Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))

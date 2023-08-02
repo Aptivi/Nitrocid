@@ -36,7 +36,7 @@ namespace KSTests.Files
         [Description("Setting")]
         public void TestSetCurrDir()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string Path = Paths.AppDataPath;
             CurrentDirectory.SetCurrDir(Path);
             Path.ShouldBe(CurrentDirectory.CurrentDir);
@@ -49,7 +49,7 @@ namespace KSTests.Files
         [Description("Setting")]
         public void TestTrySetCurrDir()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string Path = Paths.AppDataPath;
             CurrentDirectory.TrySetCurrDir(Path).ShouldBeTrue();
             Path.ShouldBe(CurrentDirectory.CurrentDir);
@@ -62,9 +62,9 @@ namespace KSTests.Files
         [Description("Manipulation")]
         public void TestSaveCurrDir()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             Config.CreateConfig();
-            Config.MainConfig.CurrentDir.ShouldBe(Paths.HomePath);
+            Config.MainConfig.CurrentDir.ShouldBe(InitTest.PathToTestSlotFolder);
         }
 
     }

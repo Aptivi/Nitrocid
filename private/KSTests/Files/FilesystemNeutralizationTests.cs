@@ -35,9 +35,9 @@ namespace KSTests.Files
         [Description("Neutralization")]
         public void TestNeutralizePaths()
         {
-            Config.MainConfig.CurrentDir = Paths.HomePath;
+            Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TestPath = "Documents";
-            string ExpectedPath = Paths.HomePath + "/" + TestPath;
+            string ExpectedPath = InitTest.PathToTestSlotFolder + "/" + TestPath;
             string NeutPath = Filesystem.NeutralizePath(TestPath);
             NeutPath.ShouldBe(ExpectedPath);
         }
