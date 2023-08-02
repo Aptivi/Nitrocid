@@ -19,12 +19,13 @@
 using KS.Kernel.Events;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
-namespace KSTests.Kernel
+namespace KSTests.Kernel.Events
 {
 
     [TestFixture]
-    public class KernelMiscTests
+    public class KernelEventsTests
     {
 
         /// <summary>
@@ -36,6 +37,33 @@ namespace KSTests.Kernel
         {
             EventsManager.FireEvent(EventType.StartKernel);
             EventsManager.ListAllFiredEvents().ShouldContainKey("[" + (EventsManager.ListAllFiredEvents().Count - 1).ToString() + "] StartKernel");
+        }
+
+        /// <summary>
+        /// Tests raising all events and adding them to the fired events list
+        /// </summary>
+        [Test]
+        [Description("Misc")]
+        public void TestRaiseEvents()
+        {
+            var eventTypes = Enum.GetNames(typeof(EventType));
+            foreach (var type in eventTypes)
+            {
+                var eventType = (EventType)Enum.Parse(typeof(EventType), type);
+                EventsManager.FireEvent(eventType);
+                EventsManager.ListAllFiredEvents().ShouldContainKey("[" + (EventsManager.ListAllFiredEvents().Count - 1).ToString() + $"] {type}");
+            }
+        }
+
+        /// <summary>
+        /// Tests clearing the events list
+        /// </summary>
+        [Test]
+        [Description("Misc")]
+        public void TestClearEvents()
+        {
+            EventsManager.ClearAllFiredEvents();
+            EventsManager.ListAllFiredEvents().ShouldBeEmpty();
         }
 
     }

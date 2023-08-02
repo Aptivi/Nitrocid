@@ -35,7 +35,8 @@ namespace KSTests.Kernel.Time
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelDate() => TimeDateRenderers.RenderDate().ShouldNotBeNullOrEmpty();
+        public void TestRenderKernelDate() =>
+            TimeDateRenderers.RenderDate().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel date with specific format type
@@ -76,7 +77,8 @@ namespace KSTests.Kernel.Time
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelDateUtc() => TimeDateRenderersUtc.RenderDateUtc().ShouldNotBeNullOrEmpty();
+        public void TestRenderKernelDateUtc() =>
+            TimeDateRenderersUtc.RenderDateUtc().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel date with specific format type (UTC)
@@ -213,7 +215,8 @@ namespace KSTests.Kernel.Time
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelTime() => TimeDateRenderers.RenderTime().ShouldNotBeNullOrEmpty();
+        public void TestRenderKernelTime() =>
+            TimeDateRenderers.RenderTime().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel time
@@ -254,7 +257,8 @@ namespace KSTests.Kernel.Time
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelTimeUtc() => TimeDateRenderersUtc.RenderTimeUtc().ShouldNotBeNullOrEmpty();
+        public void TestRenderKernelTimeUtc() =>
+            TimeDateRenderersUtc.RenderTimeUtc().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel time with specific format type (UTC)
@@ -391,7 +395,8 @@ namespace KSTests.Kernel.Time
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernel() => TimeDateRenderers.Render().ShouldNotBeNullOrEmpty();
+        public void TestRenderKernel() =>
+            TimeDateRenderers.Render().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel date
@@ -402,6 +407,19 @@ namespace KSTests.Kernel.Time
         {
             TimeDateRenderers.Render(FormatType.Long).ShouldNotBeNullOrEmpty();
             TimeDateRenderers.Render(FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with custom format
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelCustomFormat()
+        {
+            string formatted = "";
+            Should.NotThrow(() => formatted = TimeDateRenderers.Render("yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
         }
 
         /// <summary>
@@ -416,7 +434,7 @@ namespace KSTests.Kernel.Time
         }
 
         /// <summary>
-        /// Tests rendering kernel date with specified culture
+        /// Tests rendering kernel date with specified culture and format
         /// </summary>
         [Test]
         [Description("Action")]
@@ -428,11 +446,26 @@ namespace KSTests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering kernel date with specified culture and custom format
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelCultCustomFormat()
+        {
+            string formatted = "";
+            var TargetCult = new CultureInfo("es-ES");
+            Should.NotThrow(() => formatted = TimeDateRenderers.Render(TargetCult, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
+        }
+
+        /// <summary>
         /// Tests rendering kernel date (UTC)
         /// </summary>
         [Test]
         [Description("Action")]
-        public void TestRenderKernelUtc() => TimeDateRenderersUtc.RenderUtc().ShouldNotBeNullOrEmpty();
+        public void TestRenderKernelUtc() =>
+            TimeDateRenderersUtc.RenderUtc().ShouldNotBeNullOrEmpty();
 
         /// <summary>
         /// Tests rendering kernel date with specific format type (UTC)
@@ -443,6 +476,19 @@ namespace KSTests.Kernel.Time
         {
             TimeDateRenderersUtc.RenderUtc(FormatType.Long).ShouldNotBeNullOrEmpty();
             TimeDateRenderersUtc.RenderUtc(FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with custom format (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelUtcCustomFormat()
+        {
+            string formatted = "";
+            Should.NotThrow(() => formatted = TimeDateRenderersUtc.RenderUtc("yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
         }
 
         /// <summary>
@@ -469,6 +515,20 @@ namespace KSTests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering kernel date with specified culture and custom format (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelUtcCultCustomFormat()
+        {
+            string formatted = "";
+            var TargetCult = new CultureInfo("es-ES");
+            Should.NotThrow(() => formatted = TimeDateRenderersUtc.RenderUtc(TargetCult, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
+        }
+
+        /// <summary>
         /// Tests rendering custom date
         /// </summary>
         [Test]
@@ -489,6 +549,20 @@ namespace KSTests.Kernel.Time
             var TargetDate = new DateTime(2018, 2, 22);
             TimeDateRenderers.Render(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty();
             TimeDateRenderers.Render(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom date with custom format
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomFormat()
+        {
+            string formatted = "";
+            var TargetDate = new DateTime(2018, 2, 22);
+            Should.NotThrow(() => formatted = TimeDateRenderers.Render(TargetDate, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
         }
 
         /// <summary>
@@ -517,6 +591,21 @@ namespace KSTests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering custom date with custom format
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomCultFormat()
+        {
+            string formatted = "";
+            var TargetDate = new DateTime(2018, 2, 22);
+            var TargetCult = new CultureInfo("es-ES");
+            Should.NotThrow(() => formatted = TimeDateRenderers.Render(TargetDate, TargetCult, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
+        }
+
+        /// <summary>
         /// Tests rendering custom date (UTC)
         /// </summary>
         [Test]
@@ -537,6 +626,20 @@ namespace KSTests.Kernel.Time
             var TargetDate = new DateTime(2018, 2, 22);
             TimeDateRenderersUtc.RenderUtc(TargetDate, FormatType.Long).ShouldNotBeNullOrEmpty();
             TimeDateRenderersUtc.RenderUtc(TargetDate, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom date with custom format (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomUtcFormat()
+        {
+            string formatted = "";
+            var TargetDate = new DateTime(2018, 2, 22);
+            Should.NotThrow(() => formatted = TimeDateRenderersUtc.RenderUtc(TargetDate, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
         }
 
         /// <summary>
@@ -563,6 +666,24 @@ namespace KSTests.Kernel.Time
             TimeDateRenderersUtc.RenderUtc(TargetDate, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
             TimeDateRenderersUtc.RenderUtc(TargetDate, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
+
+        // TODO: Public API doesn't implement below RenderUtc overload. Implement in Beta 3.
+#if UNDONE
+        /// <summary>
+        /// Tests rendering custom date with specified culture and custom format (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomUtcCultFormat()
+        {
+            string formatted = "";
+            var TargetDate = new DateTime(2018, 2, 22);
+            var TargetCult = new CultureInfo("es-ES");
+            Should.NotThrow(() => formatted = TimeDateRenderersUtc.RenderUtc(TargetDate, TargetCult, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
+        }
+#endif
 
     }
 }
