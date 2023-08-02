@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
+using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using Shouldly;
+using System.Collections.Generic;
 
 namespace KSTests.Languages
 {
@@ -26,6 +28,19 @@ namespace KSTests.Languages
     [TestFixture]
     public class LocalizationInitializationTests
     {
+
+        private JObject localizationExample = JObject.Parse(
+            """
+            {
+              "Name": "French",
+              "Transliterable": false,
+              "Localizations": {
+                "Hello, world!": "Bonjour le monde !",
+                "This is Nitrocid KS!": "C'est Nitrocid KS !"
+              }
+            }
+            """
+        );
 
         /// <summary>
         /// Tests creating the new instance of the language information
@@ -48,6 +63,21 @@ namespace KSTests.Languages
             InfoInstance.ThreeLetterLanguageName.ShouldBe("arb");
             InfoInstance.Strings.ShouldNotBeEmpty();
             InfoInstance.Cultures.ShouldNotBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests creating the new instance of the language information
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestProbeLocalizations()
+        {
+            Dictionary<string, string> localizations = new();
+            Should.NotThrow(() => localizations = LanguageManager.ProbeLocalizations(localizationExample));
+            localizations.ShouldNotBeNull();
+            localizations.ShouldNotBeEmpty();
+            localizations["Hello, world!"].ShouldBe("Bonjour le monde !");
+            localizations["This is Nitrocid KS!"].ShouldBe("C'est Nitrocid KS !");
         }
 
     }

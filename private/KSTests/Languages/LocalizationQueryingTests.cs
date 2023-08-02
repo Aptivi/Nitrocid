@@ -34,8 +34,9 @@ namespace KSTests.Languages
         [Description("Querying")]
         public void TestGetCulturesFromCurrentLang()
         {
-            CultureManager.GetCulturesFromCurrentLang().ShouldNotBeNull();
-            CultureManager.GetCulturesFromCurrentLang().ShouldNotBeEmpty();
+            var cultures = CultureManager.GetCulturesFromCurrentLang();
+            cultures.ShouldNotBeNull();
+            cultures.ShouldNotBeEmpty();
         }
 
         /// <summary>
@@ -45,8 +46,21 @@ namespace KSTests.Languages
         [Description("Querying")]
         public void TestGetCulturesFromLang()
         {
-            CultureManager.GetCulturesFromLang("spa").ShouldNotBeNull();
-            CultureManager.GetCulturesFromLang("spa").ShouldNotBeEmpty();
+            var cultures = CultureManager.GetCulturesFromLang("spa");
+            cultures.ShouldNotBeNull();
+            cultures.ShouldNotBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests getting cultures from current language
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetCultureNamesFromCurrentLang()
+        {
+            var cultures = CultureManager.GetCultureNamesFromCurrentLang();
+            cultures.ShouldNotBeNull();
+            cultures.ShouldNotBeEmpty();
         }
 
         /// <summary>
@@ -54,11 +68,36 @@ namespace KSTests.Languages
         /// </summary>
         [Test]
         [Description("Querying")]
+        public void TestGetCultureNamesFromLang()
+        {
+            var cultures = CultureManager.GetCultureNamesFromLang("spa");
+            cultures.ShouldNotBeNull();
+            cultures.ShouldNotBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests getting languages
+        /// </summary>
+        [Test]
+        [Description("Querying")]
         public void TestListLanguages()
         {
-            LanguageManager.ListLanguages("arb").ShouldNotBeNull();
-            LanguageManager.ListLanguages("arb").ShouldNotBeEmpty();
-            LanguageManager.ListLanguages("arb").Count.ShouldBe(2);
+            var langs = LanguageManager.ListLanguages("arb");
+            langs.ShouldNotBeNull();
+            langs.ShouldNotBeEmpty();
+            langs.Count.ShouldBe(2);
+        }
+
+        /// <summary>
+        /// Tests getting all languages
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestListAllLanguages()
+        {
+            var langs = LanguageManager.ListAllLanguages();
+            langs.ShouldNotBeNull();
+            langs.ShouldNotBeEmpty();
         }
 
     }

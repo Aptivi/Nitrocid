@@ -41,6 +41,19 @@ namespace KSTests.Languages
         }
 
         /// <summary>
+        /// Tests updating the culture
+        /// </summary>
+        [Test]
+        [Description("Setting")]
+        public void TestUpdateCultureDry()
+        {
+            LanguageManager.currentLanguage = LanguageManager.Languages["spa"];
+            string ExpectedCulture = "Spanish";
+            CultureManager.UpdateCultureDry();
+            CultureManager.CurrentCult.EnglishName.ShouldContain(ExpectedCulture);
+        }
+
+        /// <summary>
         /// Tests updating the culture using custom culture
         /// </summary>
         [Test]
@@ -58,13 +71,57 @@ namespace KSTests.Languages
         /// </summary>
         [Test]
         [Description("Setting")]
-        public void TestSetLang() => LanguageManager.SetLang("spa").ShouldBeTrue();
+        public void TestSetLang()
+        {
+            LanguageManager.SetLang("spa").ShouldBeTrue();
+            LanguageManager.CurrentLanguage.ShouldBe("spa");
+
+            // Check for null
+            var InfoInstance = LanguageManager.CurrentLanguageInfo;
+            InfoInstance.ShouldNotBeNull();
+            InfoInstance.Strings.ShouldNotBeNull();
+            InfoInstance.Cultures.ShouldNotBeNull();
+
+            // Check for property correctness
+            InfoInstance.Transliterable.ShouldBeFalse();
+            InfoInstance.Custom.ShouldBeFalse();
+            InfoInstance.FullLanguageName.ShouldBe("Spanish");
+            InfoInstance.ThreeLetterLanguageName.ShouldBe("spa");
+            InfoInstance.Strings.ShouldNotBeEmpty();
+            InfoInstance.Cultures.ShouldNotBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests language setting
+        /// </summary>
+        [Test]
+        [Description("Setting")]
+        public void TestSetLangDry()
+        {
+            LanguageManager.SetLangDry("arb").ShouldBeTrue();
+            LanguageManager.CurrentLanguage.ShouldBe("arb");
+
+            // Check for null
+            var InfoInstance = LanguageManager.CurrentLanguageInfo;
+            InfoInstance.ShouldNotBeNull();
+            InfoInstance.Strings.ShouldNotBeNull();
+            InfoInstance.Cultures.ShouldNotBeNull();
+
+            // Check for property correctness
+            InfoInstance.Transliterable.ShouldBeTrue();
+            InfoInstance.Custom.ShouldBeFalse();
+            InfoInstance.FullLanguageName.ShouldBe("Arabic");
+            InfoInstance.ThreeLetterLanguageName.ShouldBe("arb");
+            InfoInstance.Strings.ShouldNotBeEmpty();
+            InfoInstance.Cultures.ShouldNotBeEmpty();
+        }
 
         /// <summary>
         /// Restores the language
         /// </summary>
         [TearDown]
-        public void RestoreLanguage() => LanguageManager.SetLang("eng");
+        public void RestoreLanguage() =>
+            LanguageManager.SetLang("eng");
 
     }
 }
