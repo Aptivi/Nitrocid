@@ -16,25 +16,24 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using System.Diagnostics;
+using KS.Shell.Shells.Debug;
+using System;
+using System.Collections.Generic;
 
-namespace KSTests.Shell
+namespace KSTests.Shell.ShellBase.Shells
 {
 
-    class ShellTest : BaseShell, IShell
+    class ShellInfoTest : BaseShellInfo, IShellInfo
     {
 
-        public override string ShellType => "Basic debug shell";
-
-        public override bool Bail { get; set; }
-
-        public override void InitializeShell(params object[] ShellArgs)
+        public override Dictionary<string, CommandInfo> Commands => new()
         {
-            Debug.WriteLine(format: "Just a debug shell, ShellTest, with absolutely no input.");
-            Debug.WriteLine(format: "- ShellArgs: {0}", string.Join(", ", ShellArgs));
-            Bail = true;
-        }
+            { "test", new CommandInfo("test", ShellType, "Test command", new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0), null) },
+        };
+
+        public override BaseShell ShellBase => new ShellTest();
 
     }
 }

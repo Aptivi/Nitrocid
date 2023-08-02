@@ -17,30 +17,21 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using NUnit.Framework;
-using Shouldly;
+using System.Diagnostics;
 
-namespace KSTests.Shell
+namespace KSTests.Shell.ShellBase.Commands
 {
 
-    [TestFixture]
-    public class CommandManagerActionTests
+    class CommandTest : BaseCommand, ICommand
     {
 
-        /// <summary>
-        /// Tests seeing if the command is found in specific shell (test case: Normal shell, help command)
-        /// </summary>
-        [Test]
-        [Description("Action")]
-        public void TestIsCommandFoundInSpecificShell() => CommandManager.IsCommandFound("help", ShellType.Shell).ShouldBeTrue();
-
-        /// <summary>
-        /// Tests seeing if the command is found in all the shells (test case: detach command)
-        /// </summary>
-        [Test]
-        [Description("Action")]
-        public void TestIsCommandFoundInAllTheShells() => CommandManager.IsCommandFound("detach").ShouldBeTrue();
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            Debug.WriteLine("We're on CommandTest with:");
+            Debug.WriteLine(format: "- StringArgs: {0}", StringArgs);
+            Debug.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
+            Debug.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
+        }
 
     }
 }

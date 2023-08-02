@@ -21,7 +21,7 @@ using NUnit.Framework;
 using Shouldly;
 using System;
 
-namespace KSTests.Shell
+namespace KSTests.Shell.ShellBase.Commands
 {
 
     [TestFixture]
@@ -49,28 +49,32 @@ namespace KSTests.Shell
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializedCommandExecution() => Should.NotThrow(new Action(() => CommandInstance.Execute("", Array.Empty<string>(), Array.Empty<string>())));
+        public void TestInitializedCommandExecution() =>
+            Should.NotThrow(new Action(() => CommandInstance.Execute("", Array.Empty<string>(), Array.Empty<string>())));
 
         /// <summary>
         /// Tests initializing the command instance from base
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializedCommandExecutionWithArguments() => Should.NotThrow(new Action(() => CommandInstance.Execute("Hello World", new[] { "Hello", "World" }, Array.Empty<string>())));
+        public void TestInitializedCommandExecutionWithArguments() =>
+            Should.NotThrow(new Action(() => CommandInstance.Execute("Hello World", new[] { "Hello", "World" }, Array.Empty<string>())));
 
         /// <summary>
         /// Tests initializing the command instance from base
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializedCommandExecutionWithSwitches() => Should.NotThrow(new Action(() => CommandInstance.Execute("-s", Array.Empty<string>(), new[] { "-s" })));
+        public void TestInitializedCommandExecutionWithSwitches() =>
+            Should.NotThrow(new Action(() => CommandInstance.Execute("-s", Array.Empty<string>(), new[] { "-s" })));
 
         /// <summary>
         /// Tests initializing the command instance from base
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestInitializedCommandExecutionWithArgumentsAndSwitches() => Should.NotThrow(new Action(() => CommandInstance.Execute("-s Hello!", new[] { "Hello!" }, new[] { "-s" })));
+        public void TestInitializedCommandExecutionWithArgumentsAndSwitches() =>
+            Should.NotThrow(new Action(() => CommandInstance.Execute("-s Hello!", new[] { "Hello!" }, new[] { "-s" })));
 
     }
 }

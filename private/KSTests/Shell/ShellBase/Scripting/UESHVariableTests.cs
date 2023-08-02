@@ -20,12 +20,36 @@ using KS.Shell.ShellBase.Scripting;
 using NUnit.Framework;
 using Shouldly;
 
-namespace KSTests.Shell
+namespace KSTests.Shell.ShellBase.Scripting
 {
 
     [TestFixture]
     public class UESHVariableTests
     {
+
+        /// <summary>
+        /// Tests sanitizing variable name
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestSanitizeVariableNamesWithDollarSign()
+        {
+            string expected = "$my_var";
+            string sanitized = UESHVariables.SanitizeVariableName("$my_var");
+            sanitized.ShouldBe(expected);
+        }
+
+        /// <summary>
+        /// Tests sanitizing variable name
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestSanitizeVariableNamesWithoutDollarSign()
+        {
+            string expected = "$my_var";
+            string sanitized = UESHVariables.SanitizeVariableName("my_var");
+            sanitized.ShouldBe(expected);
+        }
 
         /// <summary>
         /// Tests initializing, setting, and getting $variable
@@ -38,9 +62,25 @@ namespace KSTests.Shell
             UESHVariables.Variables.ShouldNotBeEmpty();
             UESHVariables.SetVariable("$test_var", "test").ShouldBeTrue();
             UESHVariables.GetVariable("$test_var").ShouldBe("test");
+            UESHVariables.SetVariables("$test_var_arr", new[] { "Nitrocid", "KS" }).ShouldBeTrue();
+            UESHVariables.GetVariable("$test_var_arr[0]").ShouldBe("Nitrocid");
+            UESHVariables.GetVariable("$test_var_arr[1]").ShouldBe("KS");
             string ExpectedCommand = "echo test";
             string ActualCommand = UESHVariables.GetVariableCommand("$test_var", "echo $test_var");
             ActualCommand.ShouldBe(ExpectedCommand);
+        }
+
+        /// <summary>
+        /// Tests converting the environment variables to UESH's declaration
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestConvertEnvVariables()
+        {
+            UESHVariables.ConvertSystemEnvironmentVariables();
+            UESHVariables.Variables.ShouldNotBeNull();
+            UESHVariables.Variables.ShouldNotBeEmpty();
+            UESHVariables.Variables.Count.ShouldBeGreaterThan(1);
         }
 
     }
