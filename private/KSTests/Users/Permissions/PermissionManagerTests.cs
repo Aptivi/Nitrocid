@@ -1,0 +1,94 @@
+﻿
+// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+// 
+// This file is part of Nitrocid KS
+// 
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using KS.Drivers.Encryption;
+using KS.Kernel.Exceptions;
+using KS.Users;
+using KS.Users.Permissions;
+using NUnit.Framework;
+using Shouldly;
+using System;
+using System.Linq;
+
+namespace KSTests.Users.Permissions
+{
+    [TestFixture]
+    public class PermissionManagerTests
+    {
+
+        private static readonly UserInfo rootUser = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), true, false, false, new());
+
+        /// <summary>
+        /// Add necessary user for testing
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        [SetUp]
+        public void AddNecessaryUser()
+        {
+            UserManagement.AddUser("Account");
+            UserManagement.UserExists("Account").ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests querying permission grant for root
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestIsPermissionGrantedForRoot() =>
+            PermissionsTools.IsPermissionGranted("root", PermissionTypes.ManageUsers).ShouldBeTrue();
+
+        /// <summary>
+        /// Tests querying permission grant for normal user
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestIsPermissionGrantedForNormalUser() =>
+            PermissionsTools.IsPermissionGranted("Account", PermissionTypes.ManageUsers).ShouldBeFalse();
+
+        /// <summary>
+        /// Tests demand for root
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestDemandForRoot() =>
+            Should.NotThrow(() => PermissionsTools.Demand(PermissionTypes.ManageUsers));
+
+        /// <summary>
+        /// Tests demand for normal user
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestDemandForNormalUser()
+        {
+            UserManagement.CurrentUserInfo = UserManagement.Users.Single((ui) => ui.Username == "Account");
+            Should.Throw(() => PermissionsTools.Demand(PermissionTypes.ManageUsers), typeof(KernelException));
+            UserManagement.CurrentUserInfo = rootUser;
+        }
+
+        /// <summary>
+        /// Remove necessary user for testing
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        [TearDown]
+        public void RemoveNecessaryUser() =>
+            UserManagement.TryRemoveUser("Account").ShouldBeTrue();
+
+    }
+}
