@@ -16,33 +16,40 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.IO;
-using KS.Misc.Editors.TextEdit;
-using KS.Shell.Shells.Text;
+using KSTests.Misc.Interactive.Interactives;
 using NUnit.Framework;
 using Shouldly;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Interactive
 {
 
     [TestFixture]
-    public class TextEditorInitializationTests
+    public class InteractiveTests
     {
 
         /// <summary>
-        /// Tests opening, saving, and closing text file
+        /// Tests building the base interactive TUI
         /// </summary>
         [Test]
-        [Description("Initialization")]
-        public void TestOpenSaveCloseTextFile()
+        [Description("Management")]
+        public static void BuildBaseInteractiveTui()
         {
-            string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            TextEditTools.TextEdit_OpenTextFile(PathToTestText).ShouldBeTrue();
-            TextEditShellCommon.TextEdit_FileLines.Add("Hello!");
-            TextEditTools.TextEdit_SaveTextFile(false).ShouldBeTrue();
-            TextEditShellCommon.TextEdit_FileLines.ShouldContain("Hello!");
-            TextEditTools.TextEdit_CloseTextFile().ShouldBeTrue();
+            var tui = new MyCustomInteractiveTui();
+            tui.ShouldNotBeNull();
+            tui.Bindings.ShouldNotBeNull();
+            tui.Bindings.ShouldNotBeEmpty();
+            tui.Bindings[0].ShouldNotBeNull();
+            tui.Bindings[0].BindingName.ShouldBe("Test");
+            tui.Bindings[0].BindingKeyName.ShouldBe(ConsoleKey.F1);
+            tui.Bindings[0].BindingAction.ShouldNotBeNull();
+            tui.Bindings[0]._localizable.ShouldBeFalse();
         }
 
     }
+
 }

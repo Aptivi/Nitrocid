@@ -21,7 +21,7 @@ using NUnit.Framework;
 using Shouldly;
 using System.Collections.Generic;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Probers
 {
 
     [TestFixture]

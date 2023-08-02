@@ -16,23 +16,40 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Reflection;
 using NUnit.Framework;
 using Shouldly;
+using Saver = KS.Misc.Screensaver.Screensaver;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Screensaver
 {
 
     [TestFixture]
-    public class MethodManagementTests
+    public class ScreensaverSettingTests
     {
 
         /// <summary>
-        /// Tests getting method
+        /// Tests setting default screensaver
         /// </summary>
         [Test]
-        [Description("Management")]
-        public void TestGetMethod() => MethodManager.GetMethod("GetCulturesFromCurrentLang").ShouldNotBeNull();
+        [Description("Setting")]
+        public void TestSetDefaultScreensaver()
+        {
+            Saver.SetDefaultScreensaver("matrix");
+            Saver.DefaultSaverName.ShouldBe("matrix");
+        }
+
+        /// <summary>
+        /// Tests getting screensaver names
+        /// </summary>
+        [Test]
+        [Description("Setting")]
+        public void TestGetScreensaverNames()
+        {
+            var names = Saver.GetScreensaverNames();
+            names.ShouldNotBeNull();
+            names.ShouldNotBeEmpty();
+            names.ShouldContain("matrix");
+        }
 
     }
 }

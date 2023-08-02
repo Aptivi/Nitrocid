@@ -16,27 +16,23 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Screensaver;
+using KS.Misc.Reflection;
 using NUnit.Framework;
 using Shouldly;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Reflection
 {
-
     [TestFixture]
-    public class ScreensaverSettingTests
+    public class AssemblyLookupTests
     {
 
         /// <summary>
-        /// Tests setting default screensaver
+        /// Tests getting method
         /// </summary>
         [Test]
-        [Description("Setting")]
-        public void TestSetDefaultScreensaver()
-        {
-            Screensaver.SetDefaultScreensaver("matrix");
-            Screensaver.DefaultSaverName.ShouldBe("matrix");
-        }
+        [Description("Management")]
+        public static void TestAddPathToAssemblySearchPath() =>
+            Should.NotThrow(() => AssemblyLookup.AddPathToAssemblySearchPath("Dependencies"));
 
     }
 }

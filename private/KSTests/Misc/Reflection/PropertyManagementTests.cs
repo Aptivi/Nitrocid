@@ -21,22 +21,26 @@ using System.Reflection;
 using Figgle;
 using KS.Kernel.Configuration;
 using KS.Misc.Reflection;
+using KS.Misc.Screensaver.Displays;
 using NUnit.Framework;
 using Shouldly;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Reflection
 {
 
     [TestFixture]
     public class PropertyManagementTests
     {
 
+        public static string TryToChangeIt { get; set; } = "No.";
+
         /// <summary>
         /// Tests checking property
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestCheckProperty() => PropertyManager.CheckProperty("PersonLookupDelay").ShouldBeTrue();
+        public void TestCheckProperty() =>
+            PropertyManager.CheckProperty("PersonLookupDelay").ShouldBeTrue();
 
         /// <summary>
         /// Tests getting value
@@ -62,6 +66,29 @@ namespace KSTests.Misc
         }
 
         /// <summary>
+        /// Tests getting value
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestGetPropertyValue()
+        {
+            string Value = Convert.ToString(PropertyManager.GetPropertyValue(nameof(TryToChangeIt), typeof(PropertyManagementTests)));
+            Value.ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests setting value
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestSetPropertyValue()
+        {
+            PropertyManager.SetPropertyValue(nameof(TryToChangeIt), "Yes!", typeof(PropertyManagementTests));
+            string Value = Convert.ToString(PropertyManager.GetPropertyValue(nameof(TryToChangeIt), typeof(PropertyManagementTests)));
+            Value.ShouldBe("Yes!");
+        }
+
+        /// <summary>
         /// Tests getting variable
         /// </summary>
         [Test]
@@ -70,6 +97,32 @@ namespace KSTests.Misc
         {
             var PropertyInfo = PropertyManager.GetProperty("PersonLookupDelay");
             PropertyInfo.Name.ShouldBe("PersonLookupDelay");
+        }
+
+        /// <summary>
+        /// Tests getting property
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestGetProperty()
+        {
+            var Property = PropertyManager.GetProperty("Small", typeof(FiggleFonts));
+            Property.ShouldNotBeNull();
+            Property.Name.ShouldBe("Small");
+            Property.DeclaringType.ShouldBe(typeof(FiggleFonts));
+        }
+
+        /// <summary>
+        /// Tests getting property
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestGetPropertyGeneral()
+        {
+            var Property = PropertyManager.GetPropertyGeneral("PersonLookupDelay");
+            Property.ShouldNotBeNull();
+            Property.Name.ShouldBe("PersonLookupDelay");
+            Property.DeclaringType.ShouldBe(typeof(PersonLookupSettings));
         }
 
         /// <summary>

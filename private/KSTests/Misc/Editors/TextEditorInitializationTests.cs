@@ -17,34 +17,31 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using KS.Misc.Editors.JsonShell;
-using KS.Shell.Shells.Json;
+using KS.Misc.Editors.TextEdit;
+using KS.Shell.Shells.Text;
 using NUnit.Framework;
 using Shouldly;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Editors
 {
 
     [TestFixture]
-    public class JsonShellInitializationTests
+    public class TextEditorInitializationTests
     {
 
         /// <summary>
-        /// Tests opening, saving, and closing a JSON file
+        /// Tests opening, saving, and closing text file
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestOpenSaveCloseJsonFile()
+        public void TestOpenSaveCloseTextFile()
         {
-            string PathToTestJson = Path.GetFullPath("TestData/TestJson.json");
-            JsonTools.JsonShell_OpenJsonFile(PathToTestJson).ShouldBeTrue();
-            JsonTools.JsonShell_AddNewProperty("$", "HowText", "How are you today?");
-            JsonShellCommon.JsonShell_FileToken["HowText"].ShouldNotBeNull();
-            JsonTools.JsonShell_GetProperty("HelloText").ShouldNotBeNull();
-            JsonTools.JsonShell_SerializeToString("HelloText").ShouldNotBeNullOrEmpty();
-            JsonTools.JsonShell_RemoveProperty("HowText");
-            JsonTools.JsonShell_SaveFile(false).ShouldBeTrue();
-            JsonTools.JsonShell_CloseTextFile().ShouldBeTrue();
+            string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
+            TextEditTools.TextEdit_OpenTextFile(PathToTestText).ShouldBeTrue();
+            TextEditShellCommon.TextEdit_FileLines.Add("Hello!");
+            TextEditTools.TextEdit_SaveTextFile(false).ShouldBeTrue();
+            TextEditShellCommon.TextEdit_FileLines.ShouldContain("Hello!");
+            TextEditTools.TextEdit_CloseTextFile().ShouldBeTrue();
         }
 
     }

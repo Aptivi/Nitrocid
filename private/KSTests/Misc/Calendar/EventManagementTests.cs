@@ -16,42 +16,43 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.IO;
-using KS.Files;
-using KS.Misc.Probers.Motd;
+using KS.Misc.Calendar.Events;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Calendar
 {
 
     [TestFixture]
-    [Order(2)]
-    public class MOTDManagementTests
+    public class EventManagementTests
     {
 
         /// <summary>
-        /// Tests reading MOTD from file
+        /// Tests adding the event
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestReadMOTDFromFile()
+        public void TestAddEvent()
         {
-            MotdParse.ReadMotd();
-            string MOTDLine = File.ReadAllText(Paths.GetKernelPath(KernelPathType.MOTD));
-            MOTDLine.ShouldBe(MotdParse.MOTDMessage);
+            EventManager.AddEvent(new DateTime(2022, 2, 22), "Nitrocid KS second-gen release");
+            EventManager.CalendarEvents.ShouldNotBeNull();
+            EventManager.CalendarEvents.ShouldNotBeEmpty();
+            EventManager.CalendarEvents[0].EventDate.Day.ShouldBe(22);
+            EventManager.CalendarEvents[0].EventDate.Month.ShouldBe(2);
+            EventManager.CalendarEvents[0].EventDate.Year.ShouldBe(2022);
         }
 
         /// <summary>
-        /// Tests reading MAL from file
+        /// Tests adding the event
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestReadMALFromFile()
+        public void TestRemoveEvent()
         {
-            MalParse.ReadMal();
-            string MALLine = File.ReadAllText(Paths.GetKernelPath(KernelPathType.MAL));
-            MALLine.ShouldBe(MalParse.MAL);
+            EventManager.RemoveEvent(new DateTime(2022, 2, 22), 1);
+            EventManager.CalendarEvents.ShouldNotBeNull();
+            EventManager.CalendarEvents.ShouldBeEmpty();
         }
 
     }

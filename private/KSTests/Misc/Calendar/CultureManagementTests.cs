@@ -16,31 +16,48 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Misc.Calendar;
 using KS.Misc.Calendar.Events;
 using NUnit.Framework;
 using Shouldly;
 using System;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Calendar
 {
 
     [TestFixture]
-    public class EventManagementTests
+    public class CultureManagementTests
     {
 
         /// <summary>
-        /// Tests adding the event
+        /// Tests getting the culture
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestAddEvent()
+        public void TestGetCultureFromCalendar()
         {
-            EventManager.AddEvent(new DateTime(2022, 2, 22), "Nitrocid KS second-gen release");
-            EventManager.CalendarEvents.ShouldNotBeNull();
-            EventManager.CalendarEvents.ShouldNotBeEmpty();
-            EventManager.CalendarEvents[0].EventDate.Day.ShouldBe(22);
-            EventManager.CalendarEvents[0].EventDate.Month.ShouldBe(2);
-            EventManager.CalendarEvents[0].EventDate.Year.ShouldBe(2022);
+            var cult = CalendarTools.GetCultureFromCalendar(CalendarTypes.Gregorian);
+            cult.ShouldNotBeNull();
+            cult.Name.ShouldBe("en-US");
+        }
+
+        /// <summary>
+        /// Tests getting the culture
+        /// </summary>
+        [Test]
+        [TestCase(CalendarTypes.Gregorian, ExpectedResult = "en-US")]
+        [TestCase(CalendarTypes.Hijri, ExpectedResult = "ar")]
+        [TestCase(CalendarTypes.SaudiHijri, ExpectedResult = "ar-SA")]
+        [TestCase(CalendarTypes.Persian, ExpectedResult = "fa")]
+        [TestCase(CalendarTypes.ThaiBuddhist, ExpectedResult = "th-TH")]
+        [TestCase(CalendarTypes.Chinese, ExpectedResult = "zh-CN")]
+        [TestCase(CalendarTypes.Japanese, ExpectedResult = "ja-JP")]
+        [Description("Management")]
+        public string TestGetCultureFromCalendars(CalendarTypes type)
+        {
+            var cult = CalendarTools.GetCultureFromCalendar(type);
+            cult.ShouldNotBeNull();
+            return cult.Name;
         }
 
         /// <summary>

@@ -23,7 +23,7 @@ using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using Shouldly;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Editors
 {
 
     [TestFixture]

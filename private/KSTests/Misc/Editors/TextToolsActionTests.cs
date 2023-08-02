@@ -19,7 +19,7 @@
 using KS.Misc.Text;
 using NUnit.Framework;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Editors
 {
 
     [TestFixture]

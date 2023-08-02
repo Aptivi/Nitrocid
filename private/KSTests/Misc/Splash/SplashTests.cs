@@ -16,43 +16,40 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Calendar.Reminders;
+using KS.Misc.Splash;
 using NUnit.Framework;
 using Shouldly;
-using System;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Splash
 {
 
     [TestFixture]
-    public class ReminderManagementTests
+    public class SplashTests
     {
 
         /// <summary>
-        /// Tests adding the reminder
+        /// Tests getting splash names
         /// </summary>
         [Test]
-        [Description("Management")]
-        public void TestAddReminder()
+        [Description("Setting")]
+        public void TestGetSplashNames()
         {
-            ReminderManager.AddReminder(new DateTime(2022, 2, 22), "Nitrocid KS second-gen release");
-            ReminderManager.Reminders.ShouldNotBeNull();
-            ReminderManager.Reminders.ShouldNotBeEmpty();
-            ReminderManager.Reminders[0].ReminderDate.Day.ShouldBe(22);
-            ReminderManager.Reminders[0].ReminderDate.Month.ShouldBe(2);
-            ReminderManager.Reminders[0].ReminderDate.Year.ShouldBe(2022);
+            var names = SplashManager.GetNamesOfSplashes();
+            names.ShouldNotBeNull();
+            names.ShouldNotBeEmpty();
+            names.ShouldContain("openrc");
         }
 
         /// <summary>
-        /// Tests adding the reminder
+        /// Tests getting splash from name
         /// </summary>
         [Test]
-        [Description("Management")]
-        public void TestRemoveReminder()
+        [Description("Setting")]
+        public void TestGetSplashFromName()
         {
-            ReminderManager.RemoveReminder(new DateTime(2022, 2, 22), 1);
-            ReminderManager.Reminders.ShouldNotBeNull();
-            ReminderManager.Reminders.ShouldBeEmpty();
+            var names = SplashManager.GetSplashFromName("openrc");
+            names.ShouldNotBeNull();
+            names.SplashName.ShouldBe("openrc");
         }
 
     }

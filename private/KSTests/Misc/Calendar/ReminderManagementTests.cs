@@ -16,45 +16,43 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.IO;
-using KS.Files;
-using KS.Misc.Probers.Motd;
-using KS.Misc.Probers.Placeholder;
+using KS.Misc.Calendar.Reminders;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
-namespace KSTests.Misc
+namespace KSTests.Misc.Calendar
 {
 
     [TestFixture]
-    [Order(1)]
-    public class MOTDSettingTests
+    public class ReminderManagementTests
     {
 
         /// <summary>
-        /// Tests setting MOTD
+        /// Tests adding the reminder
         /// </summary>
         [Test]
-        [Description("Setting")]
-        public void TestSetMOTD()
+        [Description("Management")]
+        public void TestAddReminder()
         {
-            MotdParse.SetMotd(PlaceParse.ProbePlaces("Hello, I am on <system>"));
-            var MOTDFile = new StreamReader(Paths.GetKernelPath(KernelPathType.MOTD));
-            MOTDFile.ReadLine().ShouldBe(PlaceParse.ProbePlaces("Hello, I am on <system>"));
-            MOTDFile.Close();
+            ReminderManager.AddReminder(new DateTime(2022, 2, 22), "Nitrocid KS second-gen release");
+            ReminderManager.Reminders.ShouldNotBeNull();
+            ReminderManager.Reminders.ShouldNotBeEmpty();
+            ReminderManager.Reminders[0].ReminderDate.Day.ShouldBe(22);
+            ReminderManager.Reminders[0].ReminderDate.Month.ShouldBe(2);
+            ReminderManager.Reminders[0].ReminderDate.Year.ShouldBe(2022);
         }
 
         /// <summary>
-        /// Tests setting MAL
+        /// Tests adding the reminder
         /// </summary>
         [Test]
-        [Description("Setting")]
-        public void TestSetMAL()
+        [Description("Management")]
+        public void TestRemoveReminder()
         {
-            MalParse.SetMal(PlaceParse.ProbePlaces("Hello, I am on <system>"));
-            var MALFile = new StreamReader(Paths.GetKernelPath(KernelPathType.MAL));
-            MALFile.ReadLine().ShouldBe(PlaceParse.ProbePlaces("Hello, I am on <system>"));
-            MALFile.Close();
+            ReminderManager.RemoveReminder(new DateTime(2022, 2, 22), 1);
+            ReminderManager.Reminders.ShouldNotBeNull();
+            ReminderManager.Reminders.ShouldBeEmpty();
         }
 
     }
