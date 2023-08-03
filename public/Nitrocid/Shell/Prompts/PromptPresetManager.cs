@@ -78,19 +78,22 @@ namespace KS.Shell.Prompts
             // Check to see if we have the preset
             if (Presets.ContainsKey(PresetName))
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} exists. Setting...", PresetName, ShellType.ToString());
                 SetPresetInternal(PresetName, ShellType, Presets);
             }
             else if (CustomPresets.ContainsKey(PresetName))
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} from the custom presets exists. Setting...", PresetName, ShellType.ToString());
                 SetPresetInternal(PresetName, ShellType, CustomPresets);
             }
             else if (ThrowOnNotFound)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString());
+                DebugWriter.WriteDebug(DebugLevel.E, "Preset {0} for {1} doesn't exist. Throwing...", PresetName, ShellType.ToString());
                 throw new KernelException(KernelExceptionType.NoSuchShellPreset, Translate.DoTranslation("The specified preset {0} is not found."), PresetName);
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.W, "Preset {0} for {1} doesn't exist. Setting to default...", PresetName, ShellType.ToString());
                 SetPresetInternal("Default", ShellType, Presets);
             }
         }
@@ -118,10 +121,12 @@ namespace KS.Shell.Prompts
             // Check to see if we have the preset
             if (Presets.ContainsKey(PresetName))
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} exists. Setting dryly...", PresetName, ShellType.ToString());
                 SetPresetInternal(PresetName, ShellType, Presets, false);
             }
             else if (CustomPresets.ContainsKey(PresetName))
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} from the custom presets exists. Setting dryly...", PresetName, ShellType.ToString());
                 SetPresetInternal(PresetName, ShellType, CustomPresets, false);
             }
             else if (ThrowOnNotFound)
@@ -131,6 +136,7 @@ namespace KS.Shell.Prompts
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.W, "Preset {0} for {1} doesn't exist. Setting dryly to default...", PresetName, ShellType.ToString());
                 SetPresetInternal("Default", ShellType, Presets, false);
             }
         }

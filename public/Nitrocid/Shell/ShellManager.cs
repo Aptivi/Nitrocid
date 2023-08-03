@@ -68,6 +68,7 @@ using KS.Shell.ShellBase.Commands.Execution;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Scripting;
+using System.Reflection;
 
 namespace KS.Shell
 {
@@ -130,17 +131,21 @@ namespace KS.Shell
                 if (ShellStart.ShellStack.Count == 0)
                 {
                     // We don't have any shell. Return Shell.
+                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to call LastShellType on empty shell stack. Assuming UESH...");
                     return "Shell";
                 }
                 else if (ShellStart.ShellStack.Count == 1)
                 {
                     // We only have one shell. Consider current as last.
+                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to call LastShellType on shell stack containing only one shell. Assuming curent...");
                     return CurrentShellType;
                 }
                 else
                 {
                     // We have more than one shell. Return the shell type for a shell before the last one.
-                    return ShellStart.ShellStack[^2].ShellType;
+                    var type = ShellStart.ShellStack[^2].ShellType;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Returning shell type {0} for last shell from the stack...", type);
+                    return type;
                 }
             }
         }
@@ -149,14 +154,16 @@ namespace KS.Shell
         /// Inputs for command then parses a specified command.
         /// </summary>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine() => GetLine("", "", CurrentShellType);
+        public static void GetLine() =>
+            GetLine("", "", CurrentShellType);
 
         /// <summary>
         /// Parses a specified command.
         /// </summary>
         /// <param name="FullCommand">The full command string</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand) => GetLine(FullCommand, "", CurrentShellType);
+        public static void GetLine(string FullCommand) =>
+            GetLine(FullCommand, "", CurrentShellType);
 
         /// <summary>
         /// Parses a specified command.
@@ -164,7 +171,8 @@ namespace KS.Shell
         /// <param name="FullCommand">The full command string</param>
         /// <param name="OutputPath">Optional (non-)neutralized output path</param>
         /// <remarks>All new shells implemented either in KS or by mods should use this routine to allow effective and consistent line parsing.</remarks>
-        public static void GetLine(string FullCommand, string OutputPath = "") => GetLine(FullCommand, OutputPath, CurrentShellType);
+        public static void GetLine(string FullCommand, string OutputPath = "") =>
+            GetLine(FullCommand, OutputPath, CurrentShellType);
 
         /// <summary>
         /// Parses a specified command.
@@ -226,6 +234,7 @@ namespace KS.Shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
                 TermReaderSettings.TreatCtrlCAsInput = true;
                 string strcommand = Input.ReadLine();
+                DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
                 TermReaderSettings.TreatCtrlCAsInput = false;
 
                 // Add command to command builder and return the final result. The reason to add the extra space before the second command written is that
@@ -447,19 +456,22 @@ namespace KS.Shell
         /// Gets the shell type name
         /// </summary>
         /// <param name="shellType">Shell type enumeration</param>
-        public static string GetShellTypeName(ShellType shellType) => shellType.ToString();
+        public static string GetShellTypeName(ShellType shellType) =>
+            shellType.ToString();
 
         /// <summary>
         /// Gets the shell information instance
         /// </summary>
         /// <param name="shellType">Shell type from enum</param>
-        public static BaseShellInfo GetShellInfo(ShellType shellType) => GetShellInfo(GetShellTypeName(shellType));
+        public static BaseShellInfo GetShellInfo(ShellType shellType) =>
+            GetShellInfo(GetShellTypeName(shellType));
 
         /// <summary>
         /// Gets the shell information instance
         /// </summary>
         /// <param name="shellType">Shell type name</param>
-        public static BaseShellInfo GetShellInfo(string shellType) => AvailableShells.ContainsKey(shellType) ? AvailableShells[shellType] : AvailableShells["Shell"];
+        public static BaseShellInfo GetShellInfo(string shellType) =>
+            AvailableShells.ContainsKey(shellType) ? AvailableShells[shellType] : AvailableShells["Shell"];
 
         /// <summary>
         /// Initializes the redirection

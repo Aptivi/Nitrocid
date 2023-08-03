@@ -37,6 +37,7 @@ namespace KS.Shell.ShellBase.Commands
             // We can't cancel in a situation where there are no shells.
             if (ShellStart.ShellStack.Count <= 0)
             {
+                DebugWriter.WriteDebug(DebugLevel.W, "No shells. Can't cancel.");
                 e.Cancel = true;
                 return;
             }
@@ -44,6 +45,7 @@ namespace KS.Shell.ShellBase.Commands
             // We can't cancel in situations where cancellation is not possible
             if (!canCancel)
             {
+                DebugWriter.WriteDebug(DebugLevel.W, "Cancellation impossible. Can't cancel.");
                 e.Cancel = true;
                 return;
             }
@@ -56,13 +58,14 @@ namespace KS.Shell.ShellBase.Commands
                 var syncLock = GetCancelSyncLock(ShellManager.CurrentShellType);
                 lock (syncLock)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Locking to cancel...");
                     Flags.CancelRequested = true;
                     TextWriterColor.Write();
                     DriverHandler.SetDriver<IConsoleDriver>("Null");
                     StartCommandThread.Stop();
                     ProcessStartCommandThread.Stop();
                     DriverHandler.SetDriver<IConsoleDriver>("Default");
-                    DebugWriter.WriteDebug(DebugLevel.W, "Cancelled command.");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Cancelled command.");
                 }
             }
             catch (Exception ex)

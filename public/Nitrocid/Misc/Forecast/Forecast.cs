@@ -23,6 +23,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using ManagedWeatherMap.Core;
+using MWM = ManagedWeatherMap.Core.Forecast;
 using System;
 
 namespace KS.Misc.Forecast
@@ -46,7 +47,8 @@ namespace KS.Misc.Forecast
         /// </summary>
         /// <param name="CityID">City ID</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static ForecastInfo GetWeatherInfo(long CityID) => ManagedWeatherMap.Core.Forecast.GetWeatherInfo(CityID: CityID, ApiKey, PreferredUnit);
+        public static ForecastInfo GetWeatherInfo(long CityID) =>
+            MWM.GetWeatherInfo(CityID: CityID, ApiKey, PreferredUnit);
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
@@ -54,14 +56,16 @@ namespace KS.Misc.Forecast
         /// <param name="CityID">City ID</param>
         /// <param name="APIKey">API key</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static ForecastInfo GetWeatherInfo(long CityID, string APIKey) => ManagedWeatherMap.Core.Forecast.GetWeatherInfo(CityID: CityID, APIKey, PreferredUnit);
+        public static ForecastInfo GetWeatherInfo(long CityID, string APIKey) =>
+            MWM.GetWeatherInfo(CityID: CityID, APIKey, PreferredUnit);
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
         /// </summary>
         /// <param name="CityName">City name</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static ForecastInfo GetWeatherInfo(string CityName) => ManagedWeatherMap.Core.Forecast.GetWeatherInfo(CityName: CityName, ApiKey, PreferredUnit);
+        public static ForecastInfo GetWeatherInfo(string CityName) =>
+            MWM.GetWeatherInfo(CityName: CityName, ApiKey, PreferredUnit);
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap
@@ -69,13 +73,15 @@ namespace KS.Misc.Forecast
         /// <param name="CityName">City name</param>
         /// <param name="APIKey">API key</param>
         /// <returns>A class containing properties of weather information</returns>
-        public static ForecastInfo GetWeatherInfo(string CityName, string APIKey) => ManagedWeatherMap.Core.Forecast.GetWeatherInfo(CityName: CityName, APIKey, PreferredUnit);
+        public static ForecastInfo GetWeatherInfo(string CityName, string APIKey) =>
+            MWM.GetWeatherInfo(CityName: CityName, APIKey, PreferredUnit);
 
         /// <summary>
         /// Prints the weather information to the console
         /// </summary>
         /// <param name="CityID">City ID or name</param>
-        public static void PrintWeatherInfo(string CityID) => PrintWeatherInfo(CityID, ApiKey);
+        public static void PrintWeatherInfo(string CityID) =>
+            PrintWeatherInfo(CityID, ApiKey);
 
         /// <summary>
         /// Prints the weather information to the console

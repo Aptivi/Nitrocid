@@ -20,6 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Text;
 using Newtonsoft.Json;
@@ -63,9 +64,11 @@ namespace KS.Kernel.Journaling
                 // If we don't have the target journal file, create it
                 if (!Checking.FileExists(JournalPath))
                     Making.MakeJsonFile(JournalPath, false, true);
+                DebugWriter.WriteDebug(DebugLevel.I, "Opening journal {0}...", JournalPath);
 
                 // Make a new journal entry and store everything in it
                 Message = TextTools.FormatString(Message, Vars);
+                DebugWriter.WriteDebug(DebugLevel.I, "Journal message {0}, status {1}.", Message, Status.ToString());
                 var JournalEntry =
                     new JObject(
                         new JProperty("date", TimeDateRenderers.RenderDate()),
@@ -80,6 +83,7 @@ namespace KS.Kernel.Journaling
 
                 // Save the journal with the changes in it
                 File.WriteAllText(JournalPath, JsonConvert.SerializeObject(JournalFileObject, Formatting.Indented));
+                DebugWriter.WriteDebug(DebugLevel.I, "Saved successfully!");
             }
         }
 

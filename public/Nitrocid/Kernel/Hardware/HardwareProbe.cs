@@ -48,10 +48,12 @@ namespace KS.Kernel.Hardware
                 if (Flags.FullHardwareProbe)
                 {
                     HardwareInfo = new Inxi();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Probe finished.");
                 }
                 else
                 {
                     HardwareInfo = new Inxi(InxiHardwareType.Processor | InxiHardwareType.PCMemory | InxiHardwareType.Graphics | InxiHardwareType.HardDrive);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Probe finished. InxiHardwareType.Processor | InxiHardwareType.PCMemory | InxiHardwareType.Graphics | InxiHardwareType.HardDrive");
                 }
                 InxiTrace.DebugDataReceived -= WriteInxiDebugData;
                 InxiTrace.HardwareParsed -= WriteWhatProbed;

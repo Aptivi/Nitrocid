@@ -237,7 +237,8 @@ namespace KS.Network.Base.Connections
                     // Select a connection according to user input
                     int selectedConnection = NetworkConnectionSelector.ConnectionSelector(connectionType);
                     var availableConnectionInstances = GetNetworkConnections(connectionType);
-                    int availableConnections = GetNetworkConnections(connectionType).Length;
+                    int availableConnections = availableConnectionInstances.Length;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", selectedConnection, availableConnections);
                     if (selectedConnection == -1)
                         return;
 
@@ -246,6 +247,7 @@ namespace KS.Network.Base.Connections
                     if (selectedConnection == availableConnections + 1)
                     {
                         // Prompt the user to provide connection information
+                        DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
                         address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
                         connection = establisher(address);
                     }
@@ -257,11 +259,13 @@ namespace KS.Network.Base.Connections
                         for (int i = 0; i < speedDials.Keys.Count; i++)
                         {
                             string connectionUrl = speedDials.ElementAt(i).Key;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Speed dial info: {0}.", connectionUrl);
                             connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
                         }
                         int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), connectionsChoiceList, new List<InputChoiceInfo>() {
                             new InputChoiceInfo($"{speedDials.Count + 1}", Translate.DoTranslation("Create a new connection")),
                         });
+                        DebugWriter.WriteDebug(DebugLevel.I, "Selected speed dial {0} out of {1} servers", selectedSpeedDial, speedDials.Count);
                         if (selectedSpeedDial == -1)
                             return;
 
@@ -269,6 +273,7 @@ namespace KS.Network.Base.Connections
                         if (selectedSpeedDial == speedDials.Count + 1)
                         {
                             // User selected to create a new connection
+                            DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
                             address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
                             connection = establisher(address);
                         }
@@ -277,16 +282,19 @@ namespace KS.Network.Base.Connections
                             // Get the address from the speed dial and connect to it
                             var speedDialKvp = speedDials.ElementAt(selectedSpeedDial - 1);
                             address = speedDialKvp.Key;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", address);
                             connection = establisher(address);
                         }
                     }
                     else
                     {
                         // User selected connection
+                        DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", selectedConnection);
                         connection = availableConnectionInstances[selectedConnection - 1];
                     }
 
                     // Use that information to start the shell
+                    DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to connection {0}...", selectedConnection);
                     ShellStart.StartShell(shellType, connection);
                 }
                 else
@@ -305,12 +313,17 @@ namespace KS.Network.Base.Connections
 
                         // Get connection from user selection
                         int selectedConnectionNumber = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection."), connectionsChoiceList);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Selected connection {0} out of {1} connections", selectedConnectionNumber, availableConnectionInstances.Length);
                         if (selectedConnectionNumber == -1)
                             return;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection...");
                         ShellStart.StartShell(shellType, availableConnectionInstances[selectedConnectionNumber - 1]);
                     }
                     else
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection created by the invoker for address {0}...", address);
                         ShellStart.StartShell(shellType, establisher(address));
+                    }
                 }
             }
             catch (Exception ex)

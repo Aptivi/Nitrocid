@@ -84,8 +84,10 @@ namespace KS.Shell.ShellBase.Commands
             bool CommandThreadValid = true;
             if (StartCommandThread.IsAlive)
             {
+                DebugWriter.WriteDebug(DebugLevel.W, "Can't make another main command thread. Using alternatives...");
                 if (ShellInstance.AltCommandThreads.Count > 0)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Using last alt command thread...");
                     StartCommandThread = ShellInstance.AltCommandThreads[^1];
                 }
                 else
@@ -96,6 +98,7 @@ namespace KS.Shell.ShellBase.Commands
             }
             if (CommandThreadValid)
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting command thread...");
                 StartCommandThread.Start(ThreadParams);
                 StartCommandThread.Wait();
                 StartCommandThread.Stop();
@@ -179,11 +182,13 @@ namespace KS.Shell.ShellBase.Commands
                 // Execute the command
                 if (argSatisfied)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);
                     var CommandBase = TargetCommands[Command].CommandBase;
                     CommandBase.Execute(StrArgs, Args, Switches);
                 }
                 else
                 {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Arguments not satisfied.");
                     TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
                     HelpSystem.ShowHelp(Command, ShellType);
                 }
@@ -196,6 +201,7 @@ namespace KS.Shell.ShellBase.Commands
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.CommandError, ShellType, RequestedCommand, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to execute command {0} from type {1}: {2}", RequestedCommand, ShellType.ToString(), ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
             }
@@ -216,6 +222,7 @@ namespace KS.Shell.ShellBase.Commands
             // Check to see if the command is found
             if (!CommandManager.IsCommandFound(CommandToBeWrapped, currentType))
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "Wrappable command {0} not found", Command);
                 TextWriterColor.Write(Translate.DoTranslation("The wrappable command is not found."), true, KernelColorType.Error);
                 return;
             }
@@ -223,6 +230,7 @@ namespace KS.Shell.ShellBase.Commands
             // Check to see if we can start an alternative thread
             if (!StartCommandThread.IsAlive)
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "Can't directly execute command {0} in wrapped mode.", Command);
                 TextWriterColor.Write(Translate.DoTranslation("You must not directly execute this command in a wrapped mode."), true, KernelColorType.Error);
                 return;
             }
@@ -231,6 +239,7 @@ namespace KS.Shell.ShellBase.Commands
             if (!CommandManager.GetCommand(CommandToBeWrapped, currentType).Flags.HasFlag(CommandFlags.Wrappable))
             {
                 var WrappableCmds = GetWrappableCommands(currentType);
+                DebugWriter.WriteDebug(DebugLevel.E, "Unwrappable command {0}! Wrappable commands: [{1}]", Command, string.Join(", ", WrappableCmds));
                 TextWriterColor.Write(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:"), true, KernelColorType.Error);
                 ListWriterColor.WriteList(WrappableCmds);
                 return;
@@ -243,12 +252,14 @@ namespace KS.Shell.ShellBase.Commands
                 var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
                 if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for wrapped command {0}...", Command);
                     var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => ExecuteCommand((ExecuteCommandParameters)cmdThreadParams));
                     ShellStart.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
                 }
 
                 // Then, initialize the buffered writer and execute the commands
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("Buffered");
+                DebugWriter.WriteDebug(DebugLevel.I, "Buffering...");
                 ShellManager.GetLine(Command, "", currentType, false);
                 buffered = true;
 
@@ -259,6 +270,7 @@ namespace KS.Shell.ShellBase.Commands
                 DriverHandler.EndLocalDriver<IConsoleDriver>();
 
                 // Now, print the output
+                DebugWriter.WriteDebug(DebugLevel.I, "Printing...");
                 TextWriterWrappedColor.WriteWrapped(wrapOutput, false, KernelColorType.NeutralText);
                 if (!wrapOutput.EndsWith(CharManager.NewLine))
                     TextWriterColor.Write();

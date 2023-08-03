@@ -19,6 +19,7 @@
 using System.Collections.Generic;
 using System.Globalization;
 using System.Linq;
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
@@ -90,11 +91,15 @@ namespace KS.Languages
                 {
                     if (Cult.EnglishName.ToLower().Contains(FullLanguageName.ToLower()))
                     {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding culture {0} found from {1} to list...", Cult.EnglishName.ToLower(), FullLanguageName.ToLower());
                         Cultures.Add(Cult);
                     }
                 }
                 if (Cultures.Count == 0)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Adding current culture because we can't find any culture with the name of {0}...", FullLanguageName.ToLower());
                     Cultures.Add(CultureInfo.CurrentCulture);
+                }
                 this.Cultures = Cultures;
 
                 // Get instance of language resource
@@ -105,10 +110,12 @@ namespace KS.Languages
                 var langStrings = new Dictionary<string, string>();
                 foreach (JProperty TranslatedProperty in LanguageResource.Properties())
                     langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
                 Strings = langStrings;
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "No such language or invalid language. Perhaps, you should use the second overload that takes the LanguageToken for your custom languages?");
                 throw new KernelException(KernelExceptionType.NoSuchLanguage, Translate.DoTranslation("Invalid language") + " {0}", LangName);
             }
         }
@@ -135,26 +142,33 @@ namespace KS.Languages
             {
                 if (Cult.EnglishName.ToLower().Contains(FullLanguageName.ToLower()))
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding culture {0} found from {1} to list...", Cult.EnglishName.ToLower(), FullLanguageName.ToLower());
                     Cultures.Add(Cult);
                 }
             }
             if (Cultures.Count == 0)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Adding current culture because we can't find any culture with the name of {0}...", FullLanguageName.ToLower());
                 Cultures.Add(CultureInfo.CurrentCulture);
+            }
             this.Cultures = Cultures;
 
             // Install it
             int EnglishLength = JObject.Parse(Properties.Resources.Resources.eng).SelectToken("Localizations").Count();
             Custom = true;
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Count, EnglishLength);
             if (LanguageToken.Count == EnglishLength)
             {
                 // Populate language strings
                 var langStrings = new Dictionary<string, string>();
                 foreach (JProperty TranslatedProperty in LanguageToken.Properties())
                     langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
                 Strings = langStrings;
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} lines according to the English string list, but got {1}.", EnglishLength, LanguageToken.Count);
                 throw new KernelException(KernelExceptionType.LanguageParse, Translate.DoTranslation("Length of the English language doesn't match the length of the language token provided."));
             }
         }

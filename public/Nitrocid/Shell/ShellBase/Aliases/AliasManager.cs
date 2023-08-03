@@ -99,6 +99,7 @@ namespace KS.Shell.ShellBase.Aliases
             }
 
             // Save changes
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving aliases... Type: {0}", ShellType.ToString());
             File.WriteAllText(Paths.GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented));
         }
 
@@ -193,22 +194,22 @@ namespace KS.Shell.ShellBase.Aliases
             {
                 if (SourceAlias == Destination)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Assertion succeeded: {0} = {1}", SourceAlias, Destination);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Assertion succeeded: {0} = {1}", SourceAlias, Destination);
                     throw new KernelException(KernelExceptionType.AliasInvalidOperation, Translate.DoTranslation("Alias can't be the same name as a command."));
                 }
                 else if (!CommandManager.IsCommandFound(Destination))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "{0} not found in all the command lists", Destination);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} not found in all the command lists", Destination);
                     throw new KernelException(KernelExceptionType.AliasNoSuchCommand, Translate.DoTranslation("Command not found to alias to {0}."), Destination);
                 }
                 else if (DoesAliasExist(SourceAlias, Type))
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Alias {0} already found", SourceAlias);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Alias {0} already found", SourceAlias);
                     throw new KernelException(KernelExceptionType.AliasAlreadyExists, Translate.DoTranslation("Alias already found: {0}"), SourceAlias);
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Aliasing {0} to {1}", SourceAlias, Destination);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Aliasing {0} to {1}", SourceAlias, Destination);
                     var TargetAliasList = GetAliasesListFromType(Type);
                     TargetAliasList.Add(SourceAlias, Destination);
                     return true;
@@ -248,6 +249,7 @@ namespace KS.Shell.ShellBase.Aliases
                 DebugWriter.WriteDebug(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased);
                 TargetAliasList.Remove(TargetAlias);
                 AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", Type);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} aliases are to be purged by PurgeAliases()", AliasesToBeRemoved.Count);
                 return true;
             }
             else
@@ -268,12 +270,14 @@ namespace KS.Shell.ShellBase.Aliases
             var AliasNameToken = JArray.Parse(!string.IsNullOrEmpty(AliasJsonContent) ? AliasJsonContent : "[]");
 
             // Purge aliases that are to be removed from config
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} aliases are to be purged...", AliasesToBeRemoved.Count);
             foreach (string TargetAliasItem in AliasesToBeRemoved.Keys)
             {
                 for (int RemovedAliasIndex = AliasNameToken.Count - 1; RemovedAliasIndex >= 0; RemovedAliasIndex -= 1)
                 {
                     var TargetAliasType = AliasesToBeRemoved[TargetAliasItem];
                     string TargetAlias = TargetAliasItem[(TargetAliasItem.IndexOf("-") + 1)..];
+                    DebugWriter.WriteDebug(DebugLevel.I, "Purging alias {0} out of {1} type {2} target {3}", RemovedAliasIndex, AliasesToBeRemoved.Count, TargetAliasType, TargetAlias);
                     if ((string)AliasNameToken[RemovedAliasIndex]["Alias"] == TargetAlias & (string)AliasNameToken[RemovedAliasIndex]["Type"] == TargetAliasType.ToString())
                         AliasNameToken.RemoveAt(RemovedAliasIndex);
                 }
@@ -283,6 +287,7 @@ namespace KS.Shell.ShellBase.Aliases
             AliasesToBeRemoved.Clear();
 
             // Save the changes
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving...");
             File.WriteAllText(Paths.GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented));
         }
 

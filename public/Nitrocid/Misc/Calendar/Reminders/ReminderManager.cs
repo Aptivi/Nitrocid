@@ -29,7 +29,9 @@ using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
+using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Notifications;
 
@@ -67,6 +69,7 @@ namespace KS.Misc.Calendar.Reminders
                             var CurrentDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
                             if (DateTime.Now >= ReminderInstance.ReminderDate)
                             {
+                                DebugWriter.WriteDebug(DebugLevel.I, "Reminder is due! {0} @ {1}", ReminderInstance.ReminderTitle, TimeDateRenderers.Render(ReminderInstance.ReminderDate));
                                 ReminderInstance.NotifyReminder();
                             }
                         }
@@ -85,7 +88,8 @@ namespace KS.Misc.Calendar.Reminders
         /// </summary>
         /// <param name="ReminderDate">Reminder date and time</param>
         /// <param name="ReminderTitle">Reminder title</param>
-        public static void AddReminder(DateTime ReminderDate, string ReminderTitle) => AddReminder(ReminderDate, ReminderTitle, CurrentReminderImportance);
+        public static void AddReminder(DateTime ReminderDate, string ReminderTitle) =>
+            AddReminder(ReminderDate, ReminderTitle, CurrentReminderImportance);
 
         /// <summary>
         /// Adds the reminder to the list (calendar will mark the day with parentheses)
@@ -103,6 +107,7 @@ namespace KS.Misc.Calendar.Reminders
                 ReminderImportance = ReminderImportance,
                 ReminderDate = ReminderDate
             };
+            DebugWriter.WriteDebug(DebugLevel.I, "Adding reminder {0} @ {1} to list...", Reminder.ReminderTitle, TimeDateRenderers.Render(Reminder.ReminderDate));
             AddReminder(Reminder);
         }
 
@@ -110,7 +115,8 @@ namespace KS.Misc.Calendar.Reminders
         /// Adds the reminder to the list (calendar will mark the day with parentheses)
         /// </summary>
         /// <param name="Reminder">Reminder info instance</param>
-        internal static void AddReminder(ReminderInfo Reminder) => Reminders.Add(Reminder);
+        internal static void AddReminder(ReminderInfo Reminder) =>
+            Reminders.Add(Reminder);
 
         /// <summary>
         /// Removes the reminder from the list
@@ -120,9 +126,13 @@ namespace KS.Misc.Calendar.Reminders
         public static void RemoveReminder(DateTime ReminderDate, int ReminderId)
         {
             int ReminderIndex = ReminderId - 1;
+            if (ReminderIndex >= Reminders.Count)
+                // TODO: Add appropriate exception type on Beta 3.
+                throw new KernelException(KernelExceptionType.Unknown, Translate.DoTranslation("There is no reminder."));
             var Reminder = Reminders[ReminderIndex];
             if (Reminder.ReminderDate == ReminderDate)
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing reminder {0} @ {1} to list...", Reminder.ReminderTitle, TimeDateRenderers.Render(Reminder.ReminderDate));
                 Reminders.Remove(Reminder);
             }
         }
@@ -152,6 +162,7 @@ namespace KS.Misc.Calendar.Reminders
             foreach (string ReminderFile in ReminderFiles)
             {
                 var LoadedReminder = LoadReminder(ReminderFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded event is null? {0} | Loaded from file {1}", LoadedReminder is null, ReminderFile);
                 AddReminder(LoadedReminder);
             }
         }
@@ -191,7 +202,8 @@ namespace KS.Misc.Calendar.Reminders
         /// <summary>
         /// Saves all the reminders from the reminder list to their individual files
         /// </summary>
-        public static void SaveReminders() => SaveReminders(Paths.GetKernelPath(KernelPathType.Reminders), Flags.SaveEventsRemindersDestructively);
+        public static void SaveReminders() =>
+            SaveReminders(Paths.GetKernelPath(KernelPathType.Reminders), Flags.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the reminders from the reminder list to their individual files
@@ -232,7 +244,8 @@ namespace KS.Misc.Calendar.Reminders
         /// <summary>
         /// Saves an reminder to a file
         /// </summary>
-        public static void SaveReminder(ReminderInfo ReminderInstance) => SaveReminder(ReminderInstance, Paths.GetKernelPath(KernelPathType.Reminders));
+        public static void SaveReminder(ReminderInfo ReminderInstance) =>
+            SaveReminder(ReminderInstance, Paths.GetKernelPath(KernelPathType.Reminders));
 
         /// <summary>
         /// Saves an reminder to a file

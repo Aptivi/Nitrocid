@@ -62,7 +62,9 @@ namespace KS.Users.Login
             DateTimeUpdateThread.Start();
 
             // Wait for the keypress
+            DebugWriter.WriteDebug(DebugLevel.I, "Rendering...");
             SpinWait.SpinUntil(() => renderedFully);
+            DebugWriter.WriteDebug(DebugLevel.I, "Rendered fully!");
             Input.DetectKeypress();
 
             // Stop the thread
@@ -86,6 +88,7 @@ namespace KS.Users.Login
 
                 // Then, get the user from the number and prompt for password if found
                 userName = UserManagement.SelectUser(userNum);
+                DebugWriter.WriteDebug(DebugLevel.I, "Selected username {0} [{1}].", userName, userNum);
                 if (UserManagement.Users[userNum - 1].Password != Encryption.GetEmptyHash("SHA256"))
                 {
                     // The password is not empty. Prompt for password.

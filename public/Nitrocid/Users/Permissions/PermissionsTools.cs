@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Journaling;
 using KS.Languages;
@@ -79,6 +80,7 @@ namespace KS.Users.Permissions
                 if (permissionType.HasFlag(type))
                 {
                     bool granted = IsPermissionGranted(type);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Demanded permission {0}, and granted is {1}.", type.ToString(), granted);
                     JournalManager.WriteJournal(Translate.DoTranslation("Demanding permission") + $" {type} [{permissionType}]: {granted}");
                     if (!granted)
                         throw new KernelException(KernelExceptionType.PermissionDenied, Translate.DoTranslation("Permission not granted") + ": {0}", permissionType.ToString());
@@ -99,6 +101,7 @@ namespace KS.Users.Permissions
 
             // Check to see if the current user is granted permission management or not
             Demand(PermissionTypes.ManagePermissions);
+            DebugWriter.WriteDebug(DebugLevel.I, "Going ahead...");
 
             // Get all the permission types
             foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))
@@ -109,10 +112,12 @@ namespace KS.Users.Permissions
                     // Exists! Check the user permissions to see if the permission is already granted
                     int userIndex = UserManagement.GetUserIndex(User);
                     var perms = new List<string>(UserManagement.GetUser(User).Permissions);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Index of user: {0}, perms: {1} [{2}].", userIndex, perms.Count, string.Join(", ", perms));
                     if (!perms.Contains(type.ToString()))
                     {
                         // Permission is not already granted. Add it
                         perms.Add(type.ToString());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Granted permission {0} to user {1}", type.ToString(), User);
 
                         // Now, change the permission variable
                         UserManagement.Users[userIndex].Permissions = perms.ToArray();
@@ -121,6 +126,7 @@ namespace KS.Users.Permissions
             }
 
             // Save the changes
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for user {0}", User);
             UserManagement.SaveUsers();
         }
 
@@ -137,6 +143,7 @@ namespace KS.Users.Permissions
 
             // Check to see if the current user is granted permission management or not
             Demand(PermissionTypes.ManagePermissions);
+            DebugWriter.WriteDebug(DebugLevel.I, "Going ahead...");
 
             // Get all the permission types
             foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))
@@ -147,10 +154,12 @@ namespace KS.Users.Permissions
                     // Exists! Check the user permissions to see if the permission is already revoked
                     int userIndex = UserManagement.GetUserIndex(User);
                     var perms = new List<string>(UserManagement.GetUser(User).Permissions);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Index of user: {0}, perms: {1} [{2}].", userIndex, perms.Count, string.Join(", ", perms));
                     if (perms.Contains(type.ToString()))
                     {
                         // Permission is not already revoked. Revoke it
                         perms.Remove(type.ToString());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Revoked permission {0} from user {1}", type.ToString(), User);
 
                         // Now, change the permission variable
                         UserManagement.Users[userIndex].Permissions = perms.ToArray();
@@ -159,6 +168,7 @@ namespace KS.Users.Permissions
             }
 
             // Save the changes
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for user {0}", User);
             UserManagement.SaveUsers();
         }
 
@@ -175,6 +185,7 @@ namespace KS.Users.Permissions
 
             // Check to see if the current group is granted permission management or not
             Demand(PermissionTypes.ManagePermissions);
+            DebugWriter.WriteDebug(DebugLevel.I, "Going ahead...");
 
             // Get all the permission types
             foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))
@@ -184,10 +195,12 @@ namespace KS.Users.Permissions
                 {
                     // Exists! Check the group permissions to see if the permission is already granted
                     var perms = new List<string>(GroupManagement.GetGroup(Group).Permissions);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Permissions for group {0}: {1} [{2}].", Group, perms.Count, string.Join(", ", perms));
                     if (!perms.Contains(type.ToString()))
                     {
                         // Permission is not already granted. Add it
                         perms.Add(type.ToString());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Granted permission {0} to group {1}", type.ToString(), Group);
 
                         // Now, change the permission variable
                         GroupManagement.ChangePermissionInternal(Group, perms.ToArray());
@@ -196,6 +209,7 @@ namespace KS.Users.Permissions
             }
 
             // Save the changes
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for group {0}", Group);
             GroupManagement.SaveGroups();
         }
 
@@ -212,6 +226,7 @@ namespace KS.Users.Permissions
 
             // Check to see if the current group is granted permission management or not
             Demand(PermissionTypes.ManagePermissions);
+            DebugWriter.WriteDebug(DebugLevel.I, "Going ahead...");
 
             // Get all the permission types
             foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))
@@ -221,10 +236,12 @@ namespace KS.Users.Permissions
                 {
                     // Exists! Check the group permissions to see if the permission is already revoked
                     var perms = new List<string>(GroupManagement.GetGroup(Group).Permissions);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Permissions for group {0}: {1} [{2}].", Group, perms.Count, string.Join(", ", perms));
                     if (perms.Contains(type.ToString()))
                     {
                         // Permission is not already revoked. Revoke it
                         perms.Remove(type.ToString());
+                        DebugWriter.WriteDebug(DebugLevel.I, "Revoked permission {0} from group {1}", type.ToString(), Group);
 
                         // Now, change the permission variable
                         GroupManagement.ChangePermissionInternal(Group, perms.ToArray());
@@ -233,6 +250,7 @@ namespace KS.Users.Permissions
             }
 
             // Save the changes
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving settings for group {0}", Group);
             GroupManagement.SaveGroups();
         }
     }

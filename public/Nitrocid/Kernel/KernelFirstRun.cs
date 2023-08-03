@@ -106,8 +106,10 @@ namespace KS.Kernel
                                     InvokeActionInput =
                                         (args) => { 
                                             langCode = (string)args[0];
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Got langCode {0}.", langCode);
                                             LanguageManager.SetLang(langCode);
                                             moveOn = true;
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Let's move on!");
                                         } 
                                 },
                                 new TextElement()
@@ -175,6 +177,7 @@ namespace KS.Kernel
                                                 DebugWriter.WriteDebug(DebugLevel.I, "We shall move on.");
                                                 stepFailureReason = "";
                                                 moveOn = true;
+                                                DebugWriter.WriteDebug(DebugLevel.I, "Let's move on!");
                                             }
                                             catch (Exception ex)
                                             {
@@ -238,6 +241,7 @@ namespace KS.Kernel
                                         (args) => {
                                             supportsTrueColor = (string)args[0] == "y";
                                             moveOn = true;
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Let's move on!");
                                         } 
                                 },
                                 new TextElement()
@@ -304,6 +308,7 @@ namespace KS.Kernel
                                         (args) => {
                                             Config.MainConfig.AutoDownloadUpdate = (string)args[0] == "y";
                                             moveOn = true;
+                                            DebugWriter.WriteDebug(DebugLevel.I, "Let's move on!");
                                         }
                                 },
                                 new TextElement()
@@ -409,6 +414,7 @@ namespace KS.Kernel
             // Show three color bands
             var band = new StringBuilder();
             int times = ConsoleWrapper.WindowWidth - (PresentationTools.PresentationUpperInnerBorderLeft * 2) - 1;
+            DebugWriter.WriteDebug(DebugLevel.I, "Band length: {0} cells", times);
             double threshold = 255 / (double)times;
             for (double i = 0; i < 255; i += threshold)
                 band.Append($"{new Color(Convert.ToInt32(i), 0, 0).VTSequenceBackground} ");

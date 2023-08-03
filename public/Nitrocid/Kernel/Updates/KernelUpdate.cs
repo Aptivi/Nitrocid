@@ -67,10 +67,12 @@ namespace KS.Kernel.Updates
                 string tagName = KernelUpdate.SelectToken("tag_name").ToString();
                 var KernelUpdateVer = new Version(tagName[1..tagName.IndexOf('-')]);
                 string KernelUpdateURL = (string)KernelUpdate.SelectToken("assets")[0]["browser_download_url"];
+                DebugWriter.WriteDebug(DebugLevel.I, "Update information: {0}, {1}.", KernelUpdateVer.ToString(), KernelUpdateURL);
                 var KernelUpdateInfo = new KernelUpdateInfo(KernelUpdateVer, KernelUpdateURL);
                 SortedVersions.Add(KernelUpdateInfo);
             }
             SortedVersions = SortedVersions.OrderByDescending(x => x.UpdateVersion).ToList();
+            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);
 
             // Get the latest version found
             var CurrentVer = new Version(KernelTools.KernelVersion.ToString());
@@ -85,6 +87,7 @@ namespace KS.Kernel.Updates
 
             // If the updated version is lower or equal to the current version, consider the kernel up-to-date.
             Updated = UpdateVersion <= CurrentVer;
+            DebugWriter.WriteDebug(DebugLevel.I, "Is this kernel up-to-date? {0}", Updated);
         }
 
     }

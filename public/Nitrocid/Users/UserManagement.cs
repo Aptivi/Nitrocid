@@ -123,11 +123,13 @@ namespace KS.Users
                 var Regexp = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").HashRegex;
                 if (ComputationNeeded)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Computing hash...");
                     unpassword = Encryption.GetEncryptedString(unpassword, "SHA256");
                     DebugWriter.WriteDebug(DebugLevel.I, "Hash computed.");
                 }
                 else if (!Regexp.IsMatch(unpassword))
                 {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Unencrypted password!");
                     throw new KernelException(KernelExceptionType.UserManagement, "Trying to add unencrypted password to users list.");
                 }
 
@@ -135,10 +137,12 @@ namespace KS.Users
                 var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "", Array.Empty<string>(), false, false, false, new());
                 if (!UserExists(uninitUser))
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", uninitUser);
                     Users.Add(initedUser);
                 }
                 else if (UserExists(uninitUser) & ModifyExisting)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Modifying user {0}...", uninitUser);
                     int userIndex = GetUserIndex(uninitUser);
                     Users[userIndex] = initedUser;
                 }

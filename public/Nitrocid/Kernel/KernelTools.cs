@@ -160,10 +160,12 @@ namespace KS.Kernel
                 TextWriterColor.Write("\u001b[?1049h");
                 ConsoleWrapper.SetCursorPosition(0, 0);
                 ConsoleWrapper.CursorVisible = false;
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
             }
 
             // Initialize console wrappers for TermRead
             Input.InitializeInputWrappers();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
 
             // Show initializing
             TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
@@ -171,39 +173,49 @@ namespace KS.Kernel
             // Initialize notifications
             if (!NotificationManager.NotifThread.IsAlive)
                 NotificationManager.NotifThread.Start();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded notification thread.");
 
             // Initialize events and reminders
             if (!ReminderManager.ReminderThread.IsAlive)
                 ReminderManager.ReminderThread.Start();
             if (!EventManager.EventThread.IsAlive)
                 EventManager.EventThread.Start();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded events & reminders.");
 
             // Initialize console resize listener
             ConsoleResizeListener.StartResizeListener();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded resize listener.");
 
             // Install cancellation handler
             CancellationHandlers.InstallHandler();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded cancellation handler.");
 
             // Initialize aliases
             AliasManager.InitAliases();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
 
             // Initialize custom languages
             LanguageManager.InstallCustomLanguages();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
 
             // Initialize splashes
             TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
             SplashManager.LoadSplashes();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom splashes.");
 
             // Create config file and then read it
             TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
             if (!Flags.SafeMode)
                 Config.InitializeConfig();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");
 
             // Load background
             KernelColorTools.LoadBack();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded background.");
 
             // Initialize top right date
             TimeDateTopRight.InitTopRightDate();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded top right date.");
 
             // Show welcome message.
             WelcomeMessage.WriteMessage();
@@ -219,13 +231,16 @@ namespace KS.Kernel
 
             // Load splash
             SplashManager.OpenSplash();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
 
             // Populate ban list for debug devices
             RemoteDebugTools.PopulateBlockedDevices();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded blocked remote debug devices.");
 
             // Start screensaver timeout
             if (!Screensaver.Timeout.IsAlive)
                 Screensaver.Timeout.Start();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded screensaver timeout.");
 
             // Load all events and reminders
             EventManager.LoadEvents();
@@ -233,6 +248,7 @@ namespace KS.Kernel
 
             // Load system env vars and convert them
             UESHVariables.ConvertSystemEnvironmentVariables();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded everything!");
         }
 
     }

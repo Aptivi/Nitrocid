@@ -112,6 +112,7 @@ namespace KS.Languages
         {
             if (LanguageManager.Languages.ContainsKey(Language))
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Returning cultures for lang {0}", Language);
                 return LanguageManager.CurrentLanguageInfo.Cultures;
             }
             return null;
@@ -130,6 +131,7 @@ namespace KS.Languages
         {
             if (LanguageManager.Languages.ContainsKey(Language))
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Returning culture names for lang {0}", Language);
                 return LanguageManager.CurrentLanguageInfo.Cultures.Select((culture) => culture.Name).ToList();
             }
             return null;

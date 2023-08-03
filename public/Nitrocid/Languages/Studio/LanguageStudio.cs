@@ -47,9 +47,16 @@ namespace KS.Languages.Studio
 
             // Check the translations path and the two necessary files
             if (!Checking.FolderExists(pathToTranslations))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Path to translations, {0}, is going to be created", pathToTranslations);
                 Making.MakeDirectory(pathToTranslations);
+            }
             if (!Checking.FileExists(manifestFile))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Manifest file, {0}, is going to be copied", manifestFile);
                 Copying.CopyFileOrDir(initialManifestFile, manifestFile);
+            }
+
             if (!Checking.FileExists(englishFile))
             {
                 string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("The base English strings file doesn't exist. Do you want to create an empty one? Or do you want to use Nitrocid's English strings?"), "E/N").ToLower();
@@ -57,10 +64,12 @@ namespace KS.Languages.Studio
                 {
                     case "E":
                         // User chose Nitrocid's English strings
+                        DebugWriter.WriteDebug(DebugLevel.I, "English strings, {0}, is going to be copied", englishFile);
                         Copying.CopyFileOrDir(initialEnglishFile, englishFile);
                         break;
                     default:
                         // User chose to create a new one
+                        DebugWriter.WriteDebug(DebugLevel.I, "Empty English strings file...");
                         Making.MakeFile(englishFile, false);
                         break;
                 }
@@ -72,8 +81,10 @@ namespace KS.Languages.Studio
                 .Select((token) => token.Path)
                 .Where(LanguageManager.Languages.ContainsKey)
                 .ToArray();
+            DebugWriter.WriteDebug(DebugLevel.I, "finalLangs = {0}.", finalLangs.Length);
             if (finalLangs.Length == 0)
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "No languages!");
                 TextWriterColor.Write(Translate.DoTranslation("No valid language is specified."), true, KernelColorType.Error);
                 return;
             }
@@ -86,6 +97,7 @@ namespace KS.Languages.Studio
                 // Populate the existing translations
                 string languagePath = $"{pathToTranslations}/{language}.txt";
                 List<string> finalLangLines = new();
+                DebugWriter.WriteDebug(DebugLevel.I, "Language path is {0}", languagePath);
                 if (Checking.FileExists(languagePath))
                     finalLangLines.AddRange(File.ReadAllLines(languagePath));
                 else
@@ -99,6 +111,7 @@ namespace KS.Languages.Studio
                     finalLangLines.RemoveRange(englishLines.Count, finalLangLines.Count - englishLines.Count);
 
                 // Now, add the translated lines
+                DebugWriter.WriteDebug(DebugLevel.I, "Final lines {0}", finalLangLines.Count);
                 translatedLines.Add(language, finalLangLines);
             }
 

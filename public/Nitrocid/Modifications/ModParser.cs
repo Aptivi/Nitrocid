@@ -321,6 +321,7 @@ namespace KS.Modifications
                 catch (Exception ex)
                 {
                     EventsManager.FireEvent(EventType.ModFinalizationFailed, modFile, ex.Message);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Finalization failed for {0}: {1}", modFile, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to finalize mod {0}: {1}"), modFile, ex.Message);
                 }
@@ -328,6 +329,7 @@ namespace KS.Modifications
             else
             {
                 EventsManager.FireEvent(EventType.ModParseError, modFile);
+                DebugWriter.WriteDebug(DebugLevel.E, "Script is not provided to finalize {0}!", modFile);
             }
         }
 

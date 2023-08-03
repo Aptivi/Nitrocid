@@ -25,7 +25,9 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
+using KS.Kernel.Debugging;
 using KS.Languages;
+using VisualCard.Parts;
 using Wordament;
 
 namespace KS.Misc.Games
@@ -56,6 +58,7 @@ namespace KS.Misc.Games
                 int underscoresPosX = (ConsoleWrapper.WindowWidth / 2) - (underscoresRender.Length / 2);
                 int underscoresPosY = ConsoleWrapper.WindowHeight - 2;
                 Color underscoresSeq = new(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for underscore length", underscoresRender.Length);
                 TextWriterWhereColor.WriteWhere(underscoresRender.ToString(), underscoresPosX, underscoresPosY, underscoresSeq);
 
                 // Draw the wrong characters written
@@ -63,6 +66,7 @@ namespace KS.Misc.Games
                 int wrongPosX = (ConsoleWrapper.WindowWidth / 2) - (wrongRender.Length / 2);
                 int wrongPosY = ConsoleWrapper.WindowHeight - 4;
                 Color wrongSeq = new(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for {1} wrong letters", wrongRender.Length, wrongChars.Count);
                 TextWriterWhereColor.WriteWhere(wrongRender.ToString(), wrongPosX, wrongPosY, wrongSeq);
 
                 // Draw the hanger

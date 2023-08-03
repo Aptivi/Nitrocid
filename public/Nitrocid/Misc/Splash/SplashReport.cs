@@ -95,16 +95,19 @@ namespace KS.Misc.Splash
                 {
                     if (Flags.EnableSplash && splash != null)
                     {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", Text);
                         splash.Report(_Progress, Text, Vars);
                     }
                     else if (!Flags.QuietKernel)
                     {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", Text);
                         TextWriterColor.Write($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
                     }
                 }
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted. Reporting {0}...", Text);
                 TextWriterColor.Write(Text, true, KernelColorType.Tip, Vars);
             }
             JournalManager.WriteJournal(Text, Vars);
@@ -156,16 +159,19 @@ namespace KS.Misc.Splash
                 {
                     if (Flags.EnableSplash && splash != null)
                     {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Invoking splash to report {0}...", Text);
                         splash.ReportWarning(_Progress, Text, exception, Vars);
                     }
                     else if (!Flags.QuietKernel)
                     {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Kernel not booted and not quiet. Reporting {0}...", Text);
                         TextWriterColor.Write($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
                     }
                 }
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.W, "Kernel booted. Reporting {0}...", Text);
                 TextWriterColor.Write(Text, true, KernelColorType.Warning, Vars);
             }
             JournalManager.WriteJournal(Text, JournalStatus.Warning, Vars);
@@ -217,16 +223,19 @@ namespace KS.Misc.Splash
                 {
                     if (Flags.EnableSplash && splash != null)
                     {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Invoking splash to report {0}...", Text);
                         splash.ReportError(_Progress, Text, exception, Vars);
                     }
                     else if (!Flags.QuietKernel)
                     {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Kernel not booted and not quiet. Reporting {0}...", Text);
                         TextWriterColor.Write($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
                     }
                 }
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "Kernel booted. Reporting {0}...", Text);
                 TextWriterColor.Write(Text, true, KernelColorType.Error, Vars);
             }
             JournalManager.WriteJournal(Text, JournalStatus.Error, Vars);

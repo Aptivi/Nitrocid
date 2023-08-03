@@ -55,10 +55,14 @@ namespace KS.Misc.Contacts
             if (!Checking.FolderExists(contactsPath))
                 Making.MakeDirectory(contactsPath);
             var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Contacts) + "/*.vcf");
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts.", contactFiles.Length);
 
             // Now, enumerate through each contact file
             foreach (var contact in contactFiles)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Installing contact {0}...", contact);
                 InstallContacts(contact, false);
+            }
             return cards.ToArray();
         }
 
@@ -72,10 +76,14 @@ namespace KS.Misc.Contacts
             if (!Checking.FolderExists(contactsImportPath))
                 Making.MakeDirectory(contactsImportPath);
             var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.ContactsImport) + "/*.vcf");
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts.", contactFiles.Length);
 
             // Now, enumerate through each contact file
             foreach (var contact in contactFiles)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Installing contact {0}...", contact);
                 InstallContacts(contact);
+            }
         }
 
         /// <summary>
@@ -94,6 +102,7 @@ namespace KS.Misc.Contacts
 
                 // Check to see if we're given the Android contacts2.db file
                 bool isAndroidContactDb = Path.GetFileName(pathToContactFile) == "contacts2.db";
+                DebugWriter.WriteDebug(DebugLevel.I, "Contact file came from Android's contact storage? {0}", isAndroidContactDb);
 
                 // Now, ensure that the parser is able to return the base parsers required to parse contacts
                 var parsers =
@@ -135,6 +144,7 @@ namespace KS.Misc.Contacts
                     {
                         Card card = addedCards[i];
                         string path = contactsPath + $"/contact-{Encryption.GetEncryptedString(card.SaveToString(), "SHA256")}.vcf";
+                        DebugWriter.WriteDebug(DebugLevel.I, "Saving contact to {0}...", path);
                         if (!Checking.FileExists(path))
                             card.SaveTo(path);
                     }
@@ -179,10 +189,12 @@ namespace KS.Misc.Contacts
                     throw new KernelException(KernelExceptionType.Contacts, Translate.DoTranslation("Contact index is out of range. Maximum index is {0} while provided index is {1}."), cards.Count - 1, contactIndex);
 
                 // Now, remove the contact
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing contact {0}... Cards: {1}", contactIndex, cards.Count);
                 string contactPath = contactsPath + $"/contact-{Encryption.GetEncryptedString(cards[contactIndex].SaveToString(), "SHA256")}.vcf";
                 cards.RemoveAt(contactIndex);
 
                 // Now, remove the contacts from the contacts path if possible
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing contact {0} from filesystem since we've already removed contact {1} from the list, which caused the cards count to go to {2}... However, removeFromPath, {3}, judges whether to really remove this contact file or not.", contactPath, contactIndex, cards.Count, removeFromPath);
                 if (removeFromPath)
                     if (Checking.FileExists(contactPath))
                         Removing.RemoveFile(contactPath);
@@ -209,9 +221,11 @@ namespace KS.Misc.Contacts
                     return;
 
                 // Now, remove the contacts
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing contacts... Cards: {0}", cards.Count);
                 cards.Clear();
 
                 // Now, remove the contacts from the contacts path if possible
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing contacts from filesystem since we've already removed contacts from the list, which caused the cards count to go to 0... However, removeFromPath, {0}, judges whether to really remove this contact file or not.", removeFromPath);
                 if (removeFromPath)
                 {
                     if (Checking.FolderExists(contactsPath))

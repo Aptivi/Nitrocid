@@ -38,6 +38,7 @@ using KS.Kernel.Exceptions;
 using KS.Modifications.ManPages;
 using KS.Shell;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace KS.Modifications
 {
@@ -124,16 +125,19 @@ namespace KS.Modifications
                     }
                     else
                     {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Mod already started!");
                         SplashReport.ReportProgressError(Translate.DoTranslation("Mod has already been started!"));
                     }
                 }
                 else
                 {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
                     SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} not found."), 0, ModFilename);
                 }
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be loaded in safe mode!");
                 SplashReport.ReportProgressError(Translate.DoTranslation("Parsing mods not allowed on safe mode."));
             }
         }
@@ -200,11 +204,13 @@ namespace KS.Modifications
                 }
                 else
                 {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Mods not found!");
                     TextWriterColor.Write(Translate.DoTranslation("mod: No mods detected."));
                 }
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
                 TextWriterColor.Write(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);
             }
         }
@@ -276,16 +282,19 @@ namespace KS.Modifications
                     }
                     else
                     {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Mod not started yet!");
                         TextWriterColor.Write(Translate.DoTranslation("Mod hasn't started yet!"), true, KernelColorType.Error);
                     }
                 }
                 else
                 {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
                     TextWriterColor.Write(Translate.DoTranslation("Mod {0} not found."), ModFilename);
                 }
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
                 TextWriterColor.Write(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);
             }
         }
@@ -511,6 +520,7 @@ namespace KS.Modifications
             {
                 if (ModName.Contains(SearchTerm))
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added mod name {0} to list from search term {1}", ModName, SearchTerm);
                     ListedMods.Add(ModName, Mods[ModName]);
                 }
             }
@@ -530,6 +540,7 @@ namespace KS.Modifications
             {
                 if (ModName.StartsWith(SearchTerm))
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added mod name {0} to list (starts with {1})", ModName, SearchTerm);
                     ListedMods.Add(ModName, Mods[ModName]);
                 }
             }

@@ -51,21 +51,25 @@ namespace KS.Kernel.Events
             var Events = new Dictionary<string, object[]>();
 
             // Enumerate all the fired events
+            DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "Searching events from search term {0}...", SearchTerm);
             foreach (string FiredEvent in FiredEvents.Keys)
             {
                 if (FiredEvent.Contains(SearchTerm))
                 {
+                    DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "Got event {0} from search term {1}...", FiredEvent, SearchTerm);
                     var EventArguments = FiredEvents[FiredEvent];
                     Events.Add(FiredEvent, EventArguments);
                 }
             }
+            DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "{0} events.", Events.Count);
             return Events;
         }
 
         /// <summary>
         /// Clears all the fired events
         /// </summary>
-        public static void ClearAllFiredEvents() => FiredEvents.Clear();
+        public static void ClearAllFiredEvents() =>
+            FiredEvents.Clear();
 
         /// <summary>
         /// Fires a kernel event

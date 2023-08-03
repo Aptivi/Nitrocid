@@ -107,6 +107,7 @@ namespace KS.Misc.Archive
             {
                 if (ArchiveReader.Entry.Key == ArchiveEntry.Key & !ArchiveReader.Entry.IsDirectory)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Extract started. {0}...", LocalDestination + ArchiveEntry.Key);
                     ArchiveReader.WriteEntryToFile(LocalDestination + ArchiveEntry.Key);
                 }
             }

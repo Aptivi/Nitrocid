@@ -110,6 +110,7 @@ namespace KS.Misc.Text
                 }
             }
 
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} incomplete sentences...", IncompleteSentences.Count);
             return IncompleteSentences.ToArray();
         }
 

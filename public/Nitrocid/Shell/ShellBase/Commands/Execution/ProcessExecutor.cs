@@ -105,7 +105,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
                 CommandProcess.Exited += (sender, args) => HasProcessExited = true;
 
                 // Start the process
-                DebugWriter.WriteDebug(DebugLevel.I, "Starting...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting process {0} with working directory {1} and arguments {2}...", File, WorkingDirectory, Args);
                 CommandProcess.Start();
                 CommandProcess.BeginOutputReadLine();
                 CommandProcess.BeginErrorReadLine();
@@ -140,6 +140,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
             }
@@ -200,7 +201,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
                 CommandProcess.Exited += (sender, args) => HasProcessExited = true;
 
                 // Start the process
-                DebugWriter.WriteDebug(DebugLevel.I, "Starting...");
+                DebugWriter.WriteDebug(DebugLevel.I, "Starting process {0} with working directory {1} and arguments {2}...", File, WorkingDirectory, Args);
                 CommandProcess.Start();
                 CommandProcess.BeginOutputReadLine();
                 if (includeStdErr)
@@ -236,6 +237,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ProcessError, File + Args, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Process error for {0}, {1}, {2}: {3}.", File, WorkingDirectory, Args, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, File);
                 exitCode = -1;

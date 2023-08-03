@@ -19,6 +19,7 @@
 using KS.Files;
 using KS.Files.Querying;
 using KS.Groups;
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
@@ -88,6 +89,7 @@ namespace KS.Users.Groups
             if (userGroups.Contains(groupName))
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already joined the group!"));
             userGroups.Add(groupName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Added user {0} to group {1}.", user, groupName);
             UserManagement.Users[userIndex].Groups = userGroups.ToArray();
         }
 
@@ -110,6 +112,7 @@ namespace KS.Users.Groups
             if (!userGroups.Contains(groupName))
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("User has already left the group!"));
             userGroups.Remove(groupName);
+            DebugWriter.WriteDebug(DebugLevel.I, "Removed user {0} from group {1}.", user, groupName);
             UserManagement.Users[userIndex].Groups = userGroups.ToArray();
         }
 
@@ -135,6 +138,7 @@ namespace KS.Users.Groups
 
             // Get the user group array first, then check to see if we have a group entry for a user
             string[] groupNames = UserManagement.GetUser(user).Groups;
+            DebugWriter.WriteDebug(DebugLevel.I, "User {0} in group {1}? Refer to: [{2}]", user, groupName, string.Join(", ", groupNames));
             return groupNames.Length > 0 && groupNames.Any((group) => group == groupName);
         }
 
@@ -151,6 +155,7 @@ namespace KS.Users.Groups
 
             // Get the user group array first, then compare against all the group elements for the group name
             string[] groupNames = UserManagement.GetUser(user).Groups;
+            DebugWriter.WriteDebug(DebugLevel.I, "User {0}'s groups: [{1}]", user, string.Join(", ", groupNames));
             return AvailableGroups.Where((group) => groupNames.Contains(group.GroupName)).ToArray();
         }
 

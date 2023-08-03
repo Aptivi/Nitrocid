@@ -67,6 +67,7 @@ namespace KS.Kernel.Power
                 case PowerMode.Shutdown:
                     {
                         EventsManager.FireEvent(EventType.PreShutdown);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Kernel is shutting down!");
                         TextWriterColor.Write(Translate.DoTranslation("Shutting down..."));
 
                         // Simulate 0.0.1's behavior on shutting down
@@ -87,6 +88,7 @@ namespace KS.Kernel.Power
                 case PowerMode.RebootSafe:
                     {
                         EventsManager.FireEvent(EventType.PreReboot);
+                        DebugWriter.WriteDebug(DebugLevel.W, "Kernel is restarting!");
                         TextWriterColor.Write(Translate.DoTranslation("Rebooting..."));
 
                         // Simulate 0.0.1's behavior on shutting down
@@ -123,6 +125,7 @@ namespace KS.Kernel.Power
                     }
             }
             Flags.SafeMode = PowerMode == PowerMode.RebootSafe;
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", Flags.SafeMode);
         }
 
         /// <summary>

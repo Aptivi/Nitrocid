@@ -31,7 +31,9 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
+using KS.Kernel.Time.Renderers;
 using KS.Languages;
+using SharpCompress.Archives;
 
 namespace KS.Misc.Calendar.Events
 {
@@ -62,6 +64,7 @@ namespace KS.Misc.Calendar.Events
                             var EventInstance = CalendarEvents[EventIndex];
                             if (DateTime.Today == EventInstance.EventDate.Date)
                             {
+                                DebugWriter.WriteDebug(DebugLevel.I, "Event is due! {0} @ {1}", EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate));
                                 EventInstance.NotifyEvent();
                             }
                         }
@@ -89,6 +92,7 @@ namespace KS.Misc.Calendar.Events
                 EventTitle = EventTitle,
                 EventDate = EventDate
             };
+            DebugWriter.WriteDebug(DebugLevel.I, "Adding event {0} @ {1} to list...", EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate));
             AddEvent(EventInstance);
         }
 
@@ -113,6 +117,7 @@ namespace KS.Misc.Calendar.Events
             var EventInstance = CalendarEvents[EventIndex];
             if (EventInstance.EventDate == EventDate)
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing event {0} @ {1} from list...", EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate));
                 CalendarEvents.Remove(EventInstance);
             }
         }
@@ -142,6 +147,7 @@ namespace KS.Misc.Calendar.Events
             foreach (string EventFile in EventFiles)
             {
                 var LoadedEvent = LoadEvent(EventFile);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded event is null? {0} | Loaded from file {1}", LoadedEvent is null, EventFile);
                 if (LoadedEvent is not null)
                     AddEvent(LoadedEvent);
             }
@@ -182,7 +188,8 @@ namespace KS.Misc.Calendar.Events
         /// <summary>
         /// Saves all the events from the event list to their individual files
         /// </summary>
-        public static void SaveEvents() => SaveEvents(Paths.GetKernelPath(KernelPathType.Events), Flags.SaveEventsRemindersDestructively);
+        public static void SaveEvents() =>
+            SaveEvents(Paths.GetKernelPath(KernelPathType.Events), Flags.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the events from the event list to their individual files
@@ -223,7 +230,8 @@ namespace KS.Misc.Calendar.Events
         /// <summary>
         /// Saves an event to a file
         /// </summary>
-        public static void SaveEvent(EventInfo EventInstance) => SaveEvent(EventInstance, Paths.GetKernelPath(KernelPathType.Events));
+        public static void SaveEvent(EventInfo EventInstance) =>
+            SaveEvent(EventInstance, Paths.GetKernelPath(KernelPathType.Events));
 
         /// <summary>
         /// Saves an event to a file

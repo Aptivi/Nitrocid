@@ -29,6 +29,7 @@ using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Misc.Text;
+using Newtonsoft.Json.Schema;
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -124,6 +125,7 @@ namespace KS.Kernel.Exceptions
                 {
                     // If rebooting is disabled, offer the user to shutdown the kernel
                     DebugWriter.WriteDebug(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
+                    DebugWriter.WriteDebug(DebugLevel.F, "Shutdown panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
                     SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), Exc, ErrorType, Description);
                     if (Flags.ShowStackTraceOnKernelError & Exc is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
@@ -170,7 +172,7 @@ namespace KS.Kernel.Exceptions
             catch (Exception ex)
             {
                 // Trigger triple fault
-                Environment.FailFast("TRIPLE FAULT in trying to handle DOUBLE PANIC. KS can't continue.", ex);
+                Environment.FailFast("TRIPLE FAULT in trying to handle DOUBLE PANIC. Nitrocid can't continue.", ex);
             }
         }
 
@@ -193,6 +195,7 @@ namespace KS.Kernel.Exceptions
 
                 // Let the user know that there is a continuable kernel error
                 EventsManager.FireEvent(EventType.ContKernelError, Description, Exc, Variables);
+                DebugWriter.WriteDebug(DebugLevel.W, "Continuable kernel error occurred: {0}. {1}.", Description, Exc?.Message);
                 SplashReport.ReportProgressWarning(Translate.DoTranslation("Continuable kernel error occurred:") + " {0}", Exc, Description);
                 if (Flags.ShowStackTraceOnKernelError && Exc is not null)
                     SplashReport.ReportProgressWarning(Exc.StackTrace);

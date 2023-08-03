@@ -47,6 +47,7 @@ namespace KS.Shell.ShellBase.Aliases
             string FirstWordCmd = aliascmd.SplitEncloseDoubleQuotes()[0];
             string actualCmd = aliascmd.Replace(FirstWordCmd, AliasesList[FirstWordCmd]);
             DebugWriter.WriteDebug(DebugLevel.I, "Actual command: {0}", actualCmd);
+            DebugWriter.WriteDebug(DebugLevel.I, "Parsed from: {0}", aliascmd);
 
             // Make thread parameters.
             var Params = new CommandExecutor.ExecuteCommandParameters(actualCmd, ShellType);

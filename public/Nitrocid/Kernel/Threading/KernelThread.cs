@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -174,7 +175,9 @@ namespace KS.Kernel.Threading
 
             DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
             BaseThread.Start();
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
             StartChildThreads(null);
+            DebugWriter.WriteDebug(DebugLevel.I, "Complete.");
         }
 
         /// <summary>
@@ -189,7 +192,9 @@ namespace KS.Kernel.Threading
             // Start the parent thread
             DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1} with parameters", BaseThread.Name, ThreadId);
             BaseThread.Start(Parameter);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1} with parameters", BaseThread.Name, ThreadId);
             StartChildThreads(Parameter);
+            DebugWriter.WriteDebug(DebugLevel.I, "Complete.");
         }
 
         /// <summary>
@@ -209,10 +214,12 @@ namespace KS.Kernel.Threading
                 DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", Name, ThreadId);
                 isStopping = true;
                 BaseThread.Interrupt();
+                DebugWriter.WriteDebug(DebugLevel.I, "Stopping child threads for kernel thread {0} with ID {1}", Name, ThreadId);
                 StopChildThreads();
                 if (!Wait(60000))
                     DebugWriter.WriteDebug(DebugLevel.W, "Either the parent thread or the child thread timed out for 60000 ms waiting for it to stop");
                 isReady = false;
+                DebugWriter.WriteDebug(DebugLevel.I, "Finished with regen {0}", regen);
                 if (regen)
                     Regen();
             }
@@ -236,7 +243,9 @@ namespace KS.Kernel.Threading
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
                 BaseThread.Join();
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for child threads for kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
                 WaitForChildThreads();
+                DebugWriter.WriteDebug(DebugLevel.I, "Waited.");
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
             {
@@ -262,6 +271,7 @@ namespace KS.Kernel.Threading
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for child kernel threads for {0} milliseconds", timeoutMs);
                 if (!WaitForChildThreads(timeoutMs))
                     SuccessfullyWaited = false;
+                DebugWriter.WriteDebug(DebugLevel.I, "Waited.");
                 return SuccessfullyWaited;
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException) && ex.GetType().Name != nameof(ThreadStateException))
@@ -278,6 +288,7 @@ namespace KS.Kernel.Threading
         public void Regen()
         {
             // We can't regen the kernel thread unless Stop() is called first.
+            DebugWriter.WriteDebug(DebugLevel.I, "Ready to regenerate? {0}", !IsReady);
             if (IsReady)
                 throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Can't regenerate the kernel thread while the same thread is already running."));
 

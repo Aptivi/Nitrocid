@@ -114,6 +114,7 @@ namespace KS.Users.Login
                     // Parse input
                     if (UserManagement.ValidateUsername(answeruser))
                     {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Validation complete for user {0}", answeruser);
                         if (ShowPasswordPrompt(answeruser))
                             SignIn(answeruser);
                     }
@@ -190,12 +191,14 @@ namespace KS.Users.Login
 
             // Notifies the kernel that the user has signed in
             Flags.LoggedIn = true;
+            DebugWriter.WriteDebug(DebugLevel.I, "Logged in to {0}!", signedInUser);
 
             // Sign in to user.
             UserManagement.CurrentUserInfo = UserManagement.GetUser(signedInUser);
 
             // Set preferred language
             string preferredLanguage = UserManagement.CurrentUser.PreferredLanguage;
+            DebugWriter.WriteDebug(DebugLevel.I, "Preferred language {0}. Trying to set dryly...", preferredLanguage);
             if (!string.IsNullOrWhiteSpace(preferredLanguage))
                 LanguageManager.currentUserLanguage = LanguageManager.Languages[preferredLanguage];
             else
@@ -220,14 +223,17 @@ namespace KS.Users.Login
             Flags.ShowMOTDOnceFlag = true;
             if (Flags.ShowMAL)
                 TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
 
             // Show headline
             RSSTools.ShowHeadlineLogin();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
 
             // Initialize shell
-            DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized...");
+            DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized. Login username {0}...", signedInUser);
             ShellStart.StartShellForced(ShellType.Shell);
             ShellStart.PurgeShells();
+            DebugWriter.WriteDebug(DebugLevel.I, "Out of login flow.");
         }
 
     }

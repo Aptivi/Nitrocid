@@ -35,6 +35,7 @@ using KS.Misc.Text;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using MailKit.Search;
 
 namespace KS.Languages
 {
@@ -90,6 +91,7 @@ namespace KS.Languages
                     if (!BaseLanguages.ContainsKey(LanguageName))
                     {
                         var LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}, {3}", LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage);
                         BaseLanguages.Add(LanguageName, LanguageInfo);
                     }
                 }
@@ -103,6 +105,7 @@ namespace KS.Languages
                     InstalledLanguages.Add(CustomLanguage, CustomLanguages[CustomLanguage]);
 
                 // Return the list
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} installed languages in total", InstalledLanguages.Count);
                 return InstalledLanguages;
             }
         }
@@ -182,6 +185,7 @@ namespace KS.Languages
         /// <param name="Force">Force changes</param>
         /// <param name="AlwaysTransliterated">The language is always transliterated</param>
         /// <param name="AlwaysTranslated">The language is always translated</param>
+        [Obsolete("This was never used on Beta 2! Remove on Beta 3.")]
         public static void PromptForSetLang(string lang, bool Force = false, bool AlwaysTransliterated = false, bool AlwaysTranslated = false)
         {
             if (Languages.ContainsKey(lang))
@@ -256,6 +260,7 @@ namespace KS.Languages
                     TextWriterColor.Write(Translate.DoTranslation("The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?"), true, KernelColorType.Warning);
                     if (Input.DetectKeypress().Key != ConsoleKey.Y)
                     {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Bailing...");
                         return;
                     }
                 }
@@ -365,6 +370,7 @@ namespace KS.Languages
                     {
                         // Install a custom language
                         string LanguageName = Path.GetFileNameWithoutExtension(Language);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Custom language {0} [{1}] is to be installed.", LanguageName, Language);
                         InstallCustomLanguage(LanguageName, false);
                     }
                     EventsManager.FireEvent(EventType.LanguagesInstalled);
@@ -483,6 +489,7 @@ namespace KS.Languages
             {
                 if (LanguageName.Contains(SearchTerm))
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} to list... Search term: {1}", LanguageName, SearchTerm);
                     ListedLanguages.Add(LanguageName, Languages[LanguageName]);
                 }
             }
@@ -495,6 +502,7 @@ namespace KS.Languages
             var langStrings = new Dictionary<string, string>();
             foreach (JProperty TranslatedProperty in LanguageToken.SelectToken("Localizations").Cast<JProperty>())
                 langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} strings probed from localizations token.", langStrings.Count);
             return langStrings;
         }
 

@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using System;
@@ -130,12 +131,14 @@ namespace KS.Kernel.Exceptions
             if (e is not null && e.GetType() == typeof(KernelException))
             {
                 // Display message and some extra info
+                DebugWriter.WriteDebug(DebugLevel.I, "Nested KernelException.");
                 builder.AppendLine(Translate.DoTranslation("Another kernel exception has been returned.") + $" {TextTools.FormatString(message, vars)}\n");
                 builder.Append(e.Message);
             }
             else
             {
                 // Display error type
+                DebugWriter.WriteDebug(DebugLevel.I, "Not a nested KernelException.");
                 builder.AppendLine(Translate.DoTranslation("There is an error in the kernel or one of the kernel components. The below information may help you figure out why.") + "\n");
                 builder.AppendLine(Translate.DoTranslation("The error type is") + $" {exceptionType} [{Convert.ToInt32(exceptionType)}]");
                 builder.AppendLine((Messages.ContainsKey(exceptionType) ? 
@@ -144,13 +147,15 @@ namespace KS.Kernel.Exceptions
                                    + "\n");
 
                 // Display error message
+                DebugWriter.WriteDebug(DebugLevel.I, "Error message \"{0}\"", message);
                 if (!string.IsNullOrWhiteSpace(message))
                     builder.AppendLine(Translate.DoTranslation("The module that caused the fault provided this additional information that may help you further") + $": {TextTools.FormatString(message, vars)}\n");
                 else
                     builder.AppendLine(Translate.DoTranslation("The module that caused the fault didn't provide additional information.") + "\n");
 
                 // Display exception
-                if (e != null)
+                DebugWriter.WriteDebug(DebugLevel.I, "Exception is not null: {0}", e is not null);
+                if (e is not null)
                     builder.AppendLine(Translate.DoTranslation("Additionally, the faulty module provided this exception information") + $": {e.GetType().Name}: {e.Message}\n");
                 else
                     builder.AppendLine(Translate.DoTranslation("Also, the module didn't provide the exception information, so it's usually an indicator that something is wrong.") + "\n");
