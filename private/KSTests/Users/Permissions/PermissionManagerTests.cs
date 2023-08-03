@@ -31,18 +31,17 @@ namespace KSTests.Users.Permissions
     public class PermissionManagerTests
     {
 
-        private static readonly UserInfo rootUser = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), true, false, false, new());
+        private static readonly UserInfo rootUser = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System account", "", Array.Empty<string>(), true, false, false, new());
 
         /// <summary>
         /// Add necessary user for testing
         /// </summary>
-        [Test]
         [Description("Management")]
-        [SetUp]
+        [OneTimeSetUp]
         public void AddNecessaryUser()
         {
-            UserManagement.AddUser("Account");
-            UserManagement.UserExists("Account").ShouldBeTrue();
+            UserManagement.AddUser("account");
+            UserManagement.UserExists("account").ShouldBeTrue();
         }
 
         /// <summary>
@@ -59,7 +58,7 @@ namespace KSTests.Users.Permissions
         [Test]
         [Description("Management")]
         public void TestIsPermissionGrantedForNormalUser() =>
-            PermissionsTools.IsPermissionGranted("Account", PermissionTypes.ManageUsers).ShouldBeFalse();
+            PermissionsTools.IsPermissionGranted("account", PermissionTypes.ManageUsers).ShouldBeFalse();
 
         /// <summary>
         /// Tests demand for root
@@ -76,7 +75,7 @@ namespace KSTests.Users.Permissions
         [Description("Management")]
         public void TestDemandForNormalUser()
         {
-            UserManagement.CurrentUserInfo = UserManagement.Users.Single((ui) => ui.Username == "Account");
+            UserManagement.CurrentUserInfo = UserManagement.Users.Single((ui) => ui.Username == "account");
             Should.Throw(() => PermissionsTools.Demand(PermissionTypes.ManageUsers), typeof(KernelException));
             UserManagement.CurrentUserInfo = rootUser;
         }
@@ -84,11 +83,10 @@ namespace KSTests.Users.Permissions
         /// <summary>
         /// Remove necessary user for testing
         /// </summary>
-        [Test]
         [Description("Management")]
-        [TearDown]
+        [OneTimeTearDown]
         public void RemoveNecessaryUser() =>
-            UserManagement.TryRemoveUser("Account").ShouldBeTrue();
+            UserManagement.TryRemoveUser("account").ShouldBeTrue();
 
     }
 }
