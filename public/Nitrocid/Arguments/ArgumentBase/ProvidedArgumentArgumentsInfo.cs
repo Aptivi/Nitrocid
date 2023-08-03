@@ -17,8 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
+using KS.Drivers;
+using System.Linq;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
+using KS.Shell.ShellBase.Commands;
+using System;
 
 namespace KS.Arguments.ArgumentBase
 {
@@ -27,6 +31,9 @@ namespace KS.Arguments.ArgumentBase
     /// </summary>
     public class ProvidedArgumentArgumentsInfo
     {
+
+        internal string[] unknownSwitchesList;
+        internal string[] conflictingSwitchesList;
 
         /// <summary>
         /// Target kernel argument that the user executed in shell
@@ -39,6 +46,7 @@ namespace KS.Arguments.ArgumentBase
         /// <summary>
         /// List version of the provided arguments and switches
         /// </summary>
+        [Obsolete("To be removed in Beta 3.")]
         public string[] FullArgumentsList { get; private set; }
         /// <summary>
         /// List version of the provided arguments
@@ -61,65 +69,125 @@ namespace KS.Arguments.ArgumentBase
         {
             string Argument;
             bool RequiredArgumentsProvided = true;
+            bool RequiredSwitchesProvided = true;
+            bool RequiredSwitchArgumentsProvided = true;
             var KernelArguments = ArgumentParse.AvailableCMDLineArgs;
 
-            // Get the index of the first space (Used for step 3)
-            int index = ArgumentText.IndexOf(" ");
-            if (index == -1)
-                index = ArgumentText.Length;
-            DebugWriter.WriteDebug(DebugLevel.I, "Index: {0}", index);
+            // Split the switches properly now
+            string switchRegex =
+                /* lang=regex */ @"(-\S+=((""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+))|(?<= )-\S+";
+            var EnclosedSwitches = DriverHandler.CurrentRegexpDriverLocal
+                .Matches(ArgumentText, switchRegex)
+                .Select((match) => match.Value)
+                .ToArray();
+            ArgumentText = DriverHandler.CurrentRegexpDriverLocal.Filter(ArgumentText, switchRegex);
+
+            // Split the switches to their key-value counterparts
+            var EnclosedSwitchKeyValuePairs = SwitchManager.GetSwitchValues(EnclosedSwitches, true);
 
             // Split the requested command string into words
-            var words = ArgumentText.Split(new[] { ' ' });
+            var words = ArgumentText.SplitEncloseDoubleQuotes();
             for (int i = 0; i <= words.Length - 1; i++)
                 DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
             Argument = words[0];
 
+            // Split the arguments with enclosed quotes
+            var EnclosedArgMatches = words.Skip(1);
+            var EnclosedArgs = EnclosedArgMatches.ToArray();
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} arguments parsed: {1}", EnclosedArgs.Length, string.Join(", ", EnclosedArgs));
+
             // Get the string of arguments
-            string strArgs = ArgumentText[index..];
-            DebugWriter.WriteDebug(DebugLevel.I, "Prototype strArgs: {0}", strArgs);
-            if (!(index == ArgumentText.Length))
-                strArgs = strArgs[1..];
+            string strArgs = words.Length > 0 ? string.Join(" ", EnclosedArgMatches) : "";
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
 
-            // Split the arguments with enclosed quotes and set the required boolean variable
-            var EnclosedArgs = strArgs.SplitEncloseDoubleQuotes();
-            if (EnclosedArgs is not null)
+            // Check to see if the caller has provided a switch that subtracts the number of required arguments
+            var ArgumentInfo = KernelArguments.ContainsKey(Argument) ? KernelArguments[Argument] : null;
+            int minimumArgumentsOffset = 0;
+            if (ArgumentInfo?.ArgArgumentInfo is not null)
             {
-                RequiredArgumentsProvided = (bool)(KernelArguments[Argument].ArgArgumentInfo.MinimumArguments is var arg2 && (EnclosedArgs.Length) is { } arg1 ? arg1 >= arg2 : (bool?)null);
-            }
-            else if (KernelArguments[Argument].ArgArgumentInfo.ArgumentsRequired & EnclosedArgs is null)
-            {
-                RequiredArgumentsProvided = false;
-            }
-            if (EnclosedArgs is not null)
-                DebugWriter.WriteDebug(DebugLevel.I, "Arguments parsed: " + string.Join(", ", EnclosedArgs));
-
-            // Separate the arguments from the switches
-            var FinalArgs = new List<string>();
-            var FinalSwitches = new List<string>();
-            if (EnclosedArgs is not null)
-            {
-                foreach (string EnclosedArg in EnclosedArgs)
+                foreach (string enclosedSwitch in EnclosedSwitches)
                 {
-                    if (EnclosedArg.StartsWith("-"))
-                    {
-                        FinalSwitches.Add(EnclosedArg);
-                    }
-                    else
-                    {
-                        FinalArgs.Add(EnclosedArg);
-                    }
+                    var switches = ArgumentInfo.ArgArgumentInfo.Switches.Where((switchInfo) => switchInfo.SwitchName == enclosedSwitch[1..]);
+                    if (switches.Any())
+                        foreach (var switchInfo in switches.Where(switchInfo => minimumArgumentsOffset < switchInfo.OptionalizeLastRequiredArguments))
+                            minimumArgumentsOffset = switchInfo.OptionalizeLastRequiredArguments;
                 }
+            }
+            int finalRequiredArgs = ArgumentInfo?.ArgArgumentInfo is not null ? ArgumentInfo.ArgArgumentInfo.MinimumArguments - minimumArgumentsOffset : 0;
+            if (finalRequiredArgs < 0)
+                finalRequiredArgs = 0;
+
+            // Check to see if the caller has provided required number of arguments
+            if (ArgumentInfo?.ArgArgumentInfo is not null)
+                RequiredArgumentsProvided =
+                    (EnclosedArgs.Length >= finalRequiredArgs) ||
+                    !ArgumentInfo.ArgArgumentInfo.ArgumentsRequired;
+            else
+                RequiredArgumentsProvided = true;
+
+            // Check to see if the caller has provided required number of switches
+            if (ArgumentInfo?.ArgArgumentInfo is not null)
+                RequiredSwitchesProvided =
+                    ArgumentInfo.ArgArgumentInfo.Switches.Length == 0 ||
+                    EnclosedSwitches.Length >= ArgumentInfo.ArgArgumentInfo.Switches.Where((@switch) => @switch.IsRequired).Count() ||
+                    !ArgumentInfo.ArgArgumentInfo.Switches.Any((@switch) => @switch.IsRequired);
+            else
+                RequiredSwitchesProvided = true;
+
+            // Check to see if the caller has provided required number of switches that require arguments
+            if (ArgumentInfo?.ArgArgumentInfo is not null)
+                RequiredSwitchArgumentsProvided =
+                    ArgumentInfo.ArgArgumentInfo.Switches.Length == 0 ||
+                    EnclosedSwitches.Length == 0 ||
+                    EnclosedSwitchKeyValuePairs.Where((kvp) => !string.IsNullOrEmpty(kvp.Item2)).Count() >= ArgumentInfo.ArgArgumentInfo.Switches.Where((@switch) => @switch.ArgumentsRequired).Count() ||
+                    !ArgumentInfo.ArgArgumentInfo.Switches.Any((@switch) => @switch.ArgumentsRequired);
+            else
+                RequiredSwitchArgumentsProvided = true;
+
+            // Check to see if the caller has provided non-existent switches
+            if (ArgumentInfo?.ArgArgumentInfo is not null)
+                unknownSwitchesList = EnclosedSwitchKeyValuePairs
+                    .Select((kvp) => kvp.Item1)
+                    .Where((key) => !ArgumentInfo.ArgArgumentInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
+                    .ToArray();
+
+            // Check to see if the caller has provided conflicting switches
+            if (ArgumentInfo?.ArgArgumentInfo is not null)
+            {
+                List<string> processed = new();
+                List<string> conflicts = new();
+                foreach (var kvp in EnclosedSwitchKeyValuePairs)
+                {
+                    // Check to see if the switch exists
+                    string @switch = kvp.Item1;
+                    if (unknownSwitchesList.Contains(@switch))
+                        continue;
+
+                    // Get the switch and its conflicts list
+                    string[] switchConflicts = ArgumentInfo.ArgArgumentInfo.Switches
+                        .Where((switchInfo) => $"-{switchInfo.SwitchName}" == @switch)
+                        .First().ConflictsWith
+                        .Select((conflicting) => $"-{conflicting}")
+                        .ToArray();
+
+                    // Now, get the last switch and check to see if it's provided with the conflicting switch
+                    string lastSwitch = processed.Count > 0 ? processed[^1] : "";
+                    if (switchConflicts.Contains(lastSwitch))
+                        conflicts.Add($"{@switch} vs. {lastSwitch}");
+                    processed.Add(@switch);
+                }
+                conflictingSwitchesList = conflicts.ToArray();
             }
 
             // Install the parsed values to the new class instance
-            FullArgumentsList = EnclosedArgs;
-            ArgumentsList = FinalArgs.ToArray();
-            SwitchesList = FinalSwitches.ToArray();
+            ArgumentsList = EnclosedArgs;
+            SwitchesList = EnclosedSwitches;
             ArgumentsText = strArgs;
             this.Argument = Argument;
             this.RequiredArgumentsProvided = RequiredArgumentsProvided;
+            // TODO: Implement these below on Beta 3.
+            //this.RequiredSwitchesProvided = RequiredSwitchesProvided;
+            //this.RequiredSwitchArgumentsProvided = RequiredSwitchArgumentsProvided;
         }
 
     }

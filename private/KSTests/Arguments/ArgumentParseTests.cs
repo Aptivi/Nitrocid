@@ -42,7 +42,6 @@ namespace KSTests.Arguments
             argArginfo.Argument.ShouldNotBeNullOrEmpty();
             argArginfo.ArgumentsList.ShouldBeEmpty();
             argArginfo.ArgumentsText.ShouldBeNullOrEmpty();
-            argArginfo.FullArgumentsList.ShouldBeEmpty();
             argArginfo.SwitchesList.ShouldBeEmpty();
 
             // Test for correctness
@@ -65,7 +64,6 @@ namespace KSTests.Arguments
             argArginfo.Argument.ShouldNotBeNullOrEmpty();
             argArginfo.ArgumentsList.ShouldNotBeEmpty();
             argArginfo.ArgumentsText.ShouldNotBeNullOrEmpty();
-            argArginfo.FullArgumentsList.ShouldNotBeEmpty();
             argArginfo.SwitchesList.ShouldBeEmpty();
 
             // Test for correctness
@@ -73,8 +71,6 @@ namespace KSTests.Arguments
             argArginfo.ArgumentsList.ShouldHaveSingleItem();
             argArginfo.ArgumentsList.ShouldContain("eng");
             argArginfo.ArgumentsText.ShouldBe("eng");
-            argArginfo.FullArgumentsList.ShouldHaveSingleItem();
-            argArginfo.FullArgumentsList.ShouldContain("eng");
             argArginfo.RequiredArgumentsProvided.ShouldBeTrue();
         }
 
@@ -92,15 +88,11 @@ namespace KSTests.Arguments
             argArginfo.ShouldNotBeNull();
             argArginfo.Argument.ShouldNotBeNullOrEmpty();
             argArginfo.ArgumentsList.ShouldBeEmpty();
-            argArginfo.ArgumentsText.ShouldNotBeNullOrEmpty();
-            argArginfo.FullArgumentsList.ShouldNotBeEmpty();
+            argArginfo.ArgumentsText.ShouldBeNullOrEmpty();
             argArginfo.SwitchesList.ShouldNotBeEmpty();
 
             // Test for correctness
             argArginfo.Argument.ShouldBe("lang");
-            argArginfo.ArgumentsText.ShouldBe("-switch");
-            argArginfo.FullArgumentsList.ShouldHaveSingleItem();
-            argArginfo.FullArgumentsList.ShouldContain("-switch");
             argArginfo.RequiredArgumentsProvided.ShouldBeFalse();
             argArginfo.SwitchesList.ShouldHaveSingleItem();
             argArginfo.SwitchesList.ShouldContain("-switch");
@@ -121,16 +113,13 @@ namespace KSTests.Arguments
             argArginfo.Argument.ShouldNotBeNullOrEmpty();
             argArginfo.ArgumentsList.ShouldNotBeEmpty();
             argArginfo.ArgumentsText.ShouldNotBeNullOrEmpty();
-            argArginfo.FullArgumentsList.ShouldNotBeEmpty();
             argArginfo.SwitchesList.ShouldNotBeEmpty();
 
             // Test for correctness
             argArginfo.Argument.ShouldBe("lang");
             argArginfo.ArgumentsList.ShouldHaveSingleItem();
             argArginfo.ArgumentsList.ShouldContain("eng");
-            argArginfo.ArgumentsText.ShouldBe("-switch eng");
-            argArginfo.FullArgumentsList.ShouldContain("-switch");
-            argArginfo.FullArgumentsList.ShouldContain("eng");
+            argArginfo.ArgumentsText.ShouldBe("eng");
             argArginfo.RequiredArgumentsProvided.ShouldBeTrue();
             argArginfo.SwitchesList.ShouldHaveSingleItem();
             argArginfo.SwitchesList.ShouldContain("-switch");
