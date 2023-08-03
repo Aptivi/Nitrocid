@@ -23,9 +23,6 @@ namespace KS.Drivers.RNG.Randoms
     internal class DefaultRandom : BaseRandomDriver, IRandomDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "Cryptographic";
-
-        /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.RNG;
 
         /// <inheritdoc/>

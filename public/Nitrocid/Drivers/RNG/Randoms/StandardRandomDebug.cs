@@ -23,7 +23,7 @@ namespace KS.Drivers.RNG.Randoms
     internal class StandardRandomDebug : BaseRandomDriver, IRandomDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "Default";
+        public override string DriverName => "StandardDebug";
 
         /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.RNG;

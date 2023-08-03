@@ -227,10 +227,9 @@ namespace KSTests.Drivers
         [Description("Management")]
         public void TestSetRandomDriver()
         {
-            // TODO: Correct this when releasing Beta 3
             RandomDriverTools.SetRandomDriver("Standard");
-            DriverHandler.CurrentRandomDriver.DriverName.ShouldBe("Default");
-            DriverHandler.CurrentRandomDriverLocal.DriverName.ShouldBe("Default");
+            DriverHandler.CurrentRandomDriver.DriverName.ShouldBe("Standard");
+            DriverHandler.CurrentRandomDriverLocal.DriverName.ShouldBe("Standard");
         }
 
         [Test]
@@ -364,7 +363,7 @@ namespace KSTests.Drivers
         [TestCase<IEncryptionDriver>(DriverTypes.Encryption, "SHA384", "SHA384")]
         [TestCase<IFilesystemDriver>(DriverTypes.Filesystem, "Default", "Default")]
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default")]
-        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Default")]
+        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default")]
         [Description("Management")]
         public void TestSetDriver<T>(DriverTypes type, string name, string expectedName)
@@ -379,7 +378,7 @@ namespace KSTests.Drivers
         [TestCase<IEncryptionDriver>(DriverTypes.Encryption, "SHA384", "SHA384")]
         [TestCase<IFilesystemDriver>(DriverTypes.Filesystem, "Default", "Default")]
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default")]
-        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Default")]
+        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default")]
         [Description("Management")]
         public void TestSetDriverSafe<T>(DriverTypes type, string name, string expectedName)
@@ -394,7 +393,7 @@ namespace KSTests.Drivers
         [TestCase<IEncryptionDriver>(DriverTypes.Encryption, "SHA384", "SHA384", "SHA256")]
         [TestCase<IFilesystemDriver>(DriverTypes.Filesystem, "Default", "Default", "Default")]
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default", "Default")]
-        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Default", "Cryptographic")]
+        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default", "Default")]
         [Description("Management")]
         public void TestBeginLocalDriver<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
@@ -412,7 +411,7 @@ namespace KSTests.Drivers
         [TestCase<IEncryptionDriver>(DriverTypes.Encryption, "SHA384", "SHA384", "SHA256")]
         [TestCase<IFilesystemDriver>(DriverTypes.Filesystem, "Default", "Default", "Default")]
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default", "Default")]
-        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Default", "Cryptographic")]
+        [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default", "Default")]
         [Description("Management")]
         public void TestBeginLocalDriverSafe<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)

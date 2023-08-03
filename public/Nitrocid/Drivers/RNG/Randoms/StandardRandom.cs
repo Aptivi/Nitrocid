@@ -19,5 +19,7 @@
 namespace KS.Drivers.RNG.Randoms
 {
     internal class StandardRandom : BaseRandomDriver, IRandomDriver
-    { }
+    {
+        public override string DriverName => "Standard";
+    }
 }
