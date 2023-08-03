@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Exceptions;
 using KS.Misc.Calendar.Events;
 using NUnit.Framework;
 using Shouldly;
@@ -44,13 +45,25 @@ namespace KSTests.Misc.Calendar
         }
 
         /// <summary>
-        /// Tests adding the event
+        /// Tests removing an event
         /// </summary>
         [Test]
         [Description("Management")]
         public void TestRemoveEvent()
         {
-            EventManager.RemoveEvent(new DateTime(2022, 2, 22), 1);
+            Should.NotThrow(() => EventManager.RemoveEvent(new DateTime(2022, 2, 22), 1));
+            EventManager.CalendarEvents.ShouldNotBeNull();
+            EventManager.CalendarEvents.ShouldBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests trying to remove a non-existent event
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestRemoveNonexistentEvent()
+        {
+            Should.Throw(() => EventManager.RemoveEvent(new DateTime(2022, 2, 22), 5), typeof(KernelException));
             EventManager.CalendarEvents.ShouldNotBeNull();
             EventManager.CalendarEvents.ShouldBeEmpty();
         }

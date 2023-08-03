@@ -29,6 +29,7 @@ using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
 using KS.Languages;
 
@@ -95,7 +96,8 @@ namespace KS.Misc.Calendar.Events
         /// Adds the event to the list (calendar will mark the day with color)
         /// </summary>
         /// <param name="EventInstance">Event info instance</param>
-        internal static void AddEvent(EventInfo EventInstance) => CalendarEvents.Add(EventInstance);
+        internal static void AddEvent(EventInfo EventInstance) =>
+            CalendarEvents.Add(EventInstance);
 
         /// <summary>
         /// Removes the event from the list
@@ -105,6 +107,9 @@ namespace KS.Misc.Calendar.Events
         public static void RemoveEvent(DateTime EventDate, int EventId)
         {
             int EventIndex = EventId - 1;
+            if (EventIndex >= CalendarEvents.Count)
+                // TODO: Add appropriate exception type on Beta 3.
+                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("There is no event."));
             var EventInstance = CalendarEvents[EventIndex];
             if (EventInstance.EventDate == EventDate)
             {

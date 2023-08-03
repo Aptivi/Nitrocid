@@ -60,17 +60,5 @@ namespace KSTests.Misc.Calendar
             return cult.Name;
         }
 
-        /// <summary>
-        /// Tests adding the event
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestRemoveEvent()
-        {
-            EventManager.RemoveEvent(new DateTime(2022, 2, 22), 1);
-            EventManager.CalendarEvents.ShouldNotBeNull();
-            EventManager.CalendarEvents.ShouldBeEmpty();
-        }
-
     }
 }
