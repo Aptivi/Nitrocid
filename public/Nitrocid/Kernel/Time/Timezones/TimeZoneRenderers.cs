@@ -149,7 +149,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="format">Formatting the time</param>
         /// <returns>A string holding the UTC offset for the selected time zone from the local time zone</returns>
         public static string ShowTimeZoneUtcOffsetString(string Zone, string format) =>
-            ShowTimeZoneUtcOffset(Zone).ToString((ShowTimeZoneUtcOffsetLocal() < TimeSpan.Zero ? TimeDateRenderConstants.MinusSignOffset : TimeDateRenderConstants.PlusSignOffset) + format);
+            ShowTimeZoneUtcOffset(Zone).ToString((ShowTimeZoneUtcOffset(Zone) < TimeSpan.Zero ? TimeDateRenderConstants.MinusSignOffset : TimeDateRenderConstants.PlusSignOffset) + format);
 
         /// <summary>
         /// Shows the time zone UTC offset in a string from the local time zone
