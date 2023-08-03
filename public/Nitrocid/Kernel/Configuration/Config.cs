@@ -33,6 +33,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration.Instances;
 using Newtonsoft.Json.Schema;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Drivers;
 
 namespace KS.Kernel.Configuration
 {
@@ -80,6 +81,7 @@ namespace KS.Kernel.Configuration
             Filesystem.ThrowOnInvalidPath(ConfigFolder);
             if (!Checking.FolderExists(ConfigFolder))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent folder to store the three configuration files on."));
+            DebugWriter.WriteDebug(DebugLevel.I, "Config folder {0} exists, so saving...", ConfigFolder);
 
             // Save all three configuration types
             CreateConfig(ConfigType.Kernel, ConfigFolder + "/" + Path.GetFileName(Paths.GetKernelPath(KernelPathType.Configuration)));
@@ -99,6 +101,7 @@ namespace KS.Kernel.Configuration
 
             // Serialize the config object
             string serialized = GetSerializedConfig(type);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got serialized config object of length {0}...", serialized.Length);
 
             // Save Config
             File.WriteAllText(ConfigPath, serialized);
@@ -119,6 +122,7 @@ namespace KS.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigSaveError, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -138,6 +142,7 @@ namespace KS.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigSaveError, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -157,6 +162,7 @@ namespace KS.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigSaveError, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
@@ -200,6 +206,7 @@ namespace KS.Kernel.Configuration
             Filesystem.ThrowOnInvalidPath(ConfigPath);
             if (!Checking.FileExists(ConfigPath))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent path to a configuration file"));
+            DebugWriter.WriteDebug(DebugLevel.I, "Config path {0} exists, so reading...", ConfigPath);
             string jsonContents = File.ReadAllText(ConfigPath);
             JObject configObj = JObject.Parse(jsonContents);
             JSchema schema;
@@ -207,6 +214,7 @@ namespace KS.Kernel.Configuration
             // Validate the configuration file
             try
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Config type {0}.", type.ToString());
                 switch (type)
                 {
                     case ConfigType.Kernel:
@@ -227,6 +235,9 @@ namespace KS.Kernel.Configuration
             }
             catch (Exception e)
             {
+                DebugWriter.WriteDebug(DebugLevel.E, "Fatal error trying to parse and validate config file! {0}", e.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Usually, this error is caused by outdated config. If you did an upgrade to a later kernel version, this is normal.");
+                DebugWriter.WriteDebugStackTrace(e);
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."), e);
             }
 
@@ -236,14 +247,17 @@ namespace KS.Kernel.Configuration
                 case ConfigType.Kernel:
                     RepairConfig(ConfigType.Kernel);
                     mainConfig = (KernelMainConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelMainConfig));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Read config!");
                     break;
                 case ConfigType.Screensaver:
                     RepairConfig(ConfigType.Screensaver);
                     saverConfig = (KernelSaverConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSaverConfig));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Read config!");
                     break;
                 case ConfigType.Splash:
                     RepairConfig(ConfigType.Splash);
                     splashConfig = (KernelSplashConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSplashConfig));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Read config!");
                     break;
             }
         }
@@ -262,10 +276,10 @@ namespace KS.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigReadError, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 if (!SplashReport.KernelBooted)
                     NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal));
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
             }
         }
@@ -284,10 +298,10 @@ namespace KS.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigReadError, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 if (!SplashReport.KernelBooted)
                     NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal));
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
             }
         }
@@ -306,10 +320,10 @@ namespace KS.Kernel.Configuration
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.ConfigReadError, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 if (!SplashReport.KernelBooted)
                     NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal));
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
             }
         }
@@ -322,17 +336,17 @@ namespace KS.Kernel.Configuration
             // Make a config file if not found
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "No config file found. Creating...");
+                DebugWriter.WriteDebug(DebugLevel.W, "No config file found. Creating...");
                 CreateConfig(ConfigType.Kernel, Paths.GetKernelPath(KernelPathType.Configuration));
             }
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.SaverConfiguration)))
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "No saver config file found. Creating...");
+                DebugWriter.WriteDebug(DebugLevel.W, "No saver config file found. Creating...");
                 CreateConfig(ConfigType.Screensaver, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
             }
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.SplashConfiguration)))
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "No splash config file found. Creating...");
+                DebugWriter.WriteDebug(DebugLevel.W, "No splash config file found. Creating...");
                 CreateConfig(ConfigType.Splash, Paths.GetKernelPath(KernelPathType.SplashConfiguration));
             }
 
@@ -344,6 +358,7 @@ namespace KS.Kernel.Configuration
             catch (KernelException cex) when (cex.ExceptionType == KernelExceptionType.Config)
             {
                 TextWriterColor.Write(cex.Message, true, KernelColorType.Error);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", cex.Message);
                 DebugWriter.WriteDebugStackTrace(cex);
                 TextWriterColor.Write(Translate.DoTranslation("Trying to fix configuration..."), true, KernelColorType.Error);
                 RepairConfig();
@@ -396,7 +411,7 @@ namespace KS.Kernel.Configuration
                     break;
             }
 
-            // Config difference function. Credits to https://stackoverflow.com/a/53654867
+            // Config difference function.
             JObject FindConfigDifferences(JToken serializedObj, JToken currentObj)
             {
                 var diff = new JObject();
@@ -415,6 +430,7 @@ namespace KS.Kernel.Configuration
                                     {
                                         ["+"] = currentObj[k].Path
                                     };
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Extra addition {0}", currentObj[k].Path);
                                 }
                                 foreach (var k in removedKeys)
                                 {
@@ -422,6 +438,7 @@ namespace KS.Kernel.Configuration
                                     {
                                         ["-"] = serializedObj[k].Path
                                     };
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Extra subtraction {0}", serializedObj[k].Path);
                                 }
                             }
                             break;
@@ -429,6 +446,7 @@ namespace KS.Kernel.Configuration
                             {
                                 diff["+"] = new JArray(((JArray)currentObj).Except(serializedObj));
                                 diff["-"] = new JArray(((JArray)serializedObj).Except(currentObj));
+                                DebugWriter.WriteDebug(DebugLevel.I, "Additions: {0}, Removals: {1}", diff["+"].Count(), diff["-"].Count());
                             }
                             break;
                         default:
@@ -457,12 +475,14 @@ namespace KS.Kernel.Configuration
                 if (modifiedType == "-")
                 {
                     // Missing key from current config. Most likely, we've added a new config entry.
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding missing key: {0}", modifiedKey);
                     var newValue = serializedObj[modifiedKey];
                     currentObj.Add(modifiedKey, newValue);
                 }
                 else
                 {
                     // Extra key from current config. Most likely, we've removed a new config entry.
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removing extraneous key: {0}", modifiedKey);
                     currentObj.Remove(modifiedKey);
                 }
             }
@@ -470,6 +490,7 @@ namespace KS.Kernel.Configuration
             // Save the config
             if (diffObj.HasValues)
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Saving updated config...");
                 string modified = JsonConvert.SerializeObject(currentObj, Formatting.Indented);
                 switch (type)
                 {

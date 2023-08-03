@@ -19,8 +19,10 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel;
+using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using SharpCompress.Common;
 using System;
 using System.Linq;
 
@@ -47,6 +49,7 @@ namespace KS.Arguments.ArgumentBase
             var ArgumentList = ArgumentParse.AvailableCMDLineArgs
                                .OrderBy((CommandValuePair) => CommandValuePair.Key)
                                .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
+            DebugWriter.WriteDebug(DebugLevel.I, "Arguments: {0} [{1}]", ArgumentList.Count, string.Join(", ", ArgumentList));
 
             // Check to see if argument exists
             if (!string.IsNullOrWhiteSpace(Argument) & ArgumentList.ContainsKey(Argument))
@@ -61,6 +64,7 @@ namespace KS.Arguments.ArgumentBase
                 {
                     Arguments = argumentInfo.Arguments;
                     Switches = argumentInfo.Switches;
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} args, {1} switches", Arguments.Length, Switches.Length);
                 }
 
                 // Print usage information
@@ -75,6 +79,7 @@ namespace KS.Arguments.ArgumentBase
                         bool required = Switch.IsRequired;
                         string switchName = Switch.SwitchName;
                         string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
+                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered switch: {0}", renderedSwitch);
                         TextWriterColor.Write(renderedSwitch, false, KernelColorType.ListEntry);
                     }
 
@@ -85,6 +90,7 @@ namespace KS.Arguments.ArgumentBase
                     {
                         bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
                         string renderedArgument = required ? $" <{argument}>" : $" [{argument}]";
+                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered argument: {0}", renderedArgument);
                         TextWriterColor.Write(renderedArgument, false, KernelColorType.ListEntry);
                     }
                     TextWriterColor.Write();
@@ -93,6 +99,7 @@ namespace KS.Arguments.ArgumentBase
                     TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument}", true, KernelColorType.ListEntry);
 
                 // Write the description now
+                DebugWriter.WriteDebug(DebugLevel.I, "Definition: {0}", HelpDefinition);
                 if (string.IsNullOrEmpty(HelpDefinition))
                     HelpDefinition = Translate.DoTranslation("Command defined by ") + Argument;
                 TextWriterColor.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
@@ -107,18 +114,22 @@ namespace KS.Arguments.ArgumentBase
                 {
                     foreach (string cmd in ArgumentList.Keys)
                     {
+                        string entry = ArgumentList[cmd].GetTranslatedHelpEntry();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Help entry for {0}: {1}", cmd, entry);
                         TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, cmd);
-                        TextWriterColor.Write("{0}", true, KernelColorType.ListValue, ArgumentList[cmd].GetTranslatedHelpEntry());
+                        TextWriterColor.Write("{0}", true, KernelColorType.ListValue, entry);
                     }
                 }
                 else
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Simple help is printing {0} commands...", ArgumentList.Count);
                     foreach (string cmd in ArgumentList.Keys)
                         TextWriterColor.Write("{0}, ", false, KernelColorType.ListEntry, cmd);
                 }
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.W, "We found no help! {0}", Argument);
                 TextWriterColor.Write(Translate.DoTranslation("No help for argument \"{0}\"."), true, KernelColorType.Error, Argument);
             }
         }

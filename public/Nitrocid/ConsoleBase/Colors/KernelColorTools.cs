@@ -28,6 +28,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Screensaver;
 using KS.Misc.Text;
 
 namespace KS.ConsoleBase.Colors
@@ -373,12 +374,11 @@ namespace KS.ConsoleBase.Colors
                 int R = (byte)((ColorDecimal & 0xFF0000) >> 0x10);
                 int G = (byte)((ColorDecimal & 0xFF00) >> 8);
                 int B = (byte)(ColorDecimal & 0xFF);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
                 return $"{R};{G};{B}";
             }
             else
-            {
                 throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid hex color specifier."));
-            }
         }
 
         /// <summary>
@@ -397,7 +397,9 @@ namespace KS.ConsoleBase.Colors
                     int R = Convert.ToInt32(ColorSpecifierArray[0]);
                     int G = Convert.ToInt32(ColorSpecifierArray[1]);
                     int B = Convert.ToInt32(ColorSpecifierArray[2]);
-                    return $"#{R:X2}{G:X2}{B:X2}";
+                    string hex = $"#{R:X2}{G:X2}{B:X2}";
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (#RRGGBB: {0})", hex);
+                    return hex;
                 }
                 else
                 {
@@ -425,7 +427,9 @@ namespace KS.ConsoleBase.Colors
                 throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid green color specifier."));
             if (B < 0 | B > 255)
                 throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid blue color specifier."));
-            return $"#{R:X2}{G:X2}{B:X2}";
+            string hex = $"#{R:X2}{G:X2}{B:X2}";
+            DebugWriter.WriteDebug(DebugLevel.I, "Got color (#RRGGBB: {0})", hex);
+            return hex;
         }
 
         /// <summary>
@@ -460,14 +464,17 @@ namespace KS.ConsoleBase.Colors
             {
                 case ColorType._16Color:
                     int colorNum = RandomDriver.Random(minColor, maxColor);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", colorNum);
                     return new Color(colorNum);
                 case ColorType._255Color:
                     int colorNum2 = RandomDriver.Random(minColor, maxColor);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got color {0}", colorNum2);
                     return new Color(colorNum2);
                 case ColorType.TrueColor:
                     int colorNumR = RandomDriver.Random(minColorR, maxColorR);
                     int colorNumG = RandomDriver.Random(minColorG, maxColorG);
                     int colorNumB = RandomDriver.Random(minColorB, maxColorB);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", colorNumR, colorNumG, colorNumB);
                     return new Color(colorNumR, colorNumG, colorNumB);
                 default:
                     return Color.Empty;

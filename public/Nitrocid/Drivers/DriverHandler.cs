@@ -31,6 +31,7 @@ using KS.Drivers.Regexp;
 using KS.Drivers.Regexp.Bases;
 using KS.Kernel.Exceptions;
 using System.Linq;
+using KS.Kernel.Debugging;
 
 namespace KS.Drivers
 {
@@ -209,14 +210,23 @@ namespace KS.Drivers
 
             // Then, get the actual driver from name
             if (drivers[driverType].ContainsKey(name))
+            {
                 // Found a driver under the kernel driver list
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, found under the built-in driver list.", name, driverType.ToString());
                 return (TResult)drivers[driverType][name];
+            }
             else if (IsRegistered(driverType, name))
+            {
                 // Found a driver under the custom driver list
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, found under the custom driver list.", name, driverType.ToString());
                 return (TResult)customDrivers[driverType][name];
+            }
             else
+            {
                 // Found no driver under both lists
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, not found in any list.", name, driverType.ToString());
                 return (TResult)drivers[driverType]["Default"];
+            }
         }
 
         /// <summary>
@@ -232,16 +242,25 @@ namespace KS.Drivers
 
             // Then, get the actual driver from name
             if (drivers[driverType].ContainsValue(driver))
+            {
                 // Found a driver under the kernel driver list
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, found under the built-in driver list.", driver.GetType().Name, driverType.ToString());
                 return drivers[driverType]
                     .Single((kvp) => kvp.Value == driver).Key;
+            }
             else if (IsRegistered(driverType, driver))
+            {
                 // Found a driver under the custom driver list
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, found under the custom driver list.", driver.GetType().Name, driverType.ToString());
                 return customDrivers[driverType]
                     .Single((kvp) => kvp.Value == driver).Key;
+            }
             else
+            {
                 // Found no driver under both lists
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, not found in any list.", driver.GetType().Name, driverType.ToString());
                 return "Default";
+            }
         }
 
         /// <summary>
@@ -257,8 +276,12 @@ namespace KS.Drivers
             // Then, exclude internal drivers from the list
             var filteredDrivers       = drivers[driverType].Where((kvp) => !kvp.Value.DriverInternal);
             var filteredCustomDrivers = customDrivers[driverType].Where((kvp) => !kvp.Value.DriverInternal);
+            DebugWriter.WriteDebug(DebugLevel.I, "For type {0}, driver counts:", driverType.ToString());
+            DebugWriter.WriteDebug(DebugLevel.I, "Initial drivers: {0}, custom: {1}", drivers[driverType].Count, customDrivers[driverType].Count);
+            DebugWriter.WriteDebug(DebugLevel.I, "Filtered drivers: {0}, custom: {1}", filteredDrivers.Count(), filteredCustomDrivers.Count());
 
             // Then, get the list of drivers
+            DebugWriter.WriteDebug(DebugLevel.I, "Returning unified driver list");
             return filteredDrivers.Union(filteredCustomDrivers).ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
         }
 
@@ -283,7 +306,10 @@ namespace KS.Drivers
         {
             string name = driver.DriverName;
             if (!IsRegistered(type, name) && driver.DriverType == type)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Registered driver {0} [{1}] under type {2}", name, driver.GetType().Name, type.ToString());
                 customDrivers[type].Add(name, driver);
+            }
         }
 
         /// <summary>
@@ -294,7 +320,10 @@ namespace KS.Drivers
         public static void UnregisterDriver(DriverTypes type, string name)
         {
             if (IsRegistered(type, name) && customDrivers[type][name].DriverType == type)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Unregistered driver {0} [{1}] under type {2}", name, customDrivers[type][name].GetType().Name, type.ToString());
                 customDrivers[type].Remove(name);
+            }
         }
 
         /// <summary>
@@ -303,8 +332,12 @@ namespace KS.Drivers
         /// <param name="type">Driver type</param>
         /// <param name="name">Driver name</param>
         /// <returns>True if registered. Otherwise, false.</returns>
-        public static bool IsRegistered(DriverTypes type, string name) =>
-            customDrivers[type].ContainsKey(name) || drivers[type].ContainsKey(name);
+        public static bool IsRegistered(DriverTypes type, string name)
+        {
+            bool registered = customDrivers[type].ContainsKey(name) || drivers[type].ContainsKey(name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0} for {1}? {2}", name, type.ToString(), registered);
+            return registered;
+        }
 
         /// <summary>
         /// Is the driver registered?
@@ -312,8 +345,12 @@ namespace KS.Drivers
         /// <param name="type">Driver type</param>
         /// <param name="driver">Driver to query its name from the key</param>
         /// <returns>True if registered. Otherwise, false.</returns>
-        public static bool IsRegistered(DriverTypes type, IDriver driver) =>
-            customDrivers[type].ContainsValue(driver) || drivers[type].ContainsValue(driver);
+        public static bool IsRegistered(DriverTypes type, IDriver driver)
+        {
+            bool registered = customDrivers[type].ContainsValue(driver) || drivers[type].ContainsValue(driver);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0} for {1}? {2}", driver.GetType().Name, type.ToString(), registered);
+            return registered;
+        }
 
         /// <summary>
         /// Sets the kernel driver
@@ -326,6 +363,7 @@ namespace KS.Drivers
             var driverType = InferDriverTypeFromDriverInterfaceType<T>();
 
             // Then, try to set the driver
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", name, driverType.ToString());
             currentDrivers[driverType] = (IDriver)GetDriver<T>(name);
             SetDriverLocal<T>(name);
         }
@@ -344,11 +382,13 @@ namespace KS.Drivers
             var drivers = GetDrivers<T>();
             if (!drivers.ContainsKey(name))
             {
+                DebugWriter.WriteDebug(DebugLevel.W, "Nonexistent driver {0} for type {1}, so setting to default...", name, driverType.ToString());
                 currentDrivers[driverType] = (IDriver)GetDriver<T>("Default");
                 SetDriverLocal<T>("Default");
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting driver to {0} for type {1}...", name, driverType.ToString());
                 currentDrivers[driverType] = (IDriver)GetDriver<T>(name);
                 SetDriverLocal<T>(name);
             }
@@ -366,6 +406,7 @@ namespace KS.Drivers
             // Try to set the driver
             SetDriverLocal<T>(name);
             begunLocal = true;
+            DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", name);
         }
 
         /// <summary>
@@ -384,6 +425,7 @@ namespace KS.Drivers
             else
                 SetDriverLocal<T>(name);
             begunLocal = true;
+            DebugWriter.WriteDebug(DebugLevel.I, "Local driver {0} has begun.", name);
         }
 
         /// <summary>
@@ -400,6 +442,7 @@ namespace KS.Drivers
             // Try to set the driver
             currentDriversLocal[driverType] = currentDrivers[driverType];
             begunLocal = false;
+            DebugWriter.WriteDebug(DebugLevel.I, "Local driver has ended.");
         }
 
         internal static void SetDriverLocal<T>(string name)
@@ -408,6 +451,7 @@ namespace KS.Drivers
             var driverType = InferDriverTypeFromDriverInterfaceType<T>();
 
             // Then, try to set the driver
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to set driver to {0} for type {1}...", name, driverType.ToString());
             currentDriversLocal[driverType] = (IDriver)GetDriver<T>(name);
         }
 
@@ -426,6 +470,7 @@ namespace KS.Drivers
                 driverType = DriverTypes.Encryption;
             else if (typeof(T) == typeof(IRegexpDriver))
                 driverType = DriverTypes.Regexp;
+            DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), typeof(T).Name);
             return driverType;
         }
     }

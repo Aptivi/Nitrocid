@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging;
 using System;
 using System.Collections.Generic;
 
@@ -46,6 +47,7 @@ namespace KS.ConsoleBase.Inputs
             var finalChoices = new List<InputChoiceInfo>();
 
             // Check to see if the answer titles are the same
+            DebugWriter.WriteDebug(DebugLevel.I, "Answers: {0}, Titles: {1}", Answers.Length, AnswersTitles.Length);
             if (Answers.Length != AnswersTitles.Length)
                 Array.Resize(ref AnswersTitles, Answers.Length);
 
@@ -56,6 +58,7 @@ namespace KS.ConsoleBase.Inputs
             // Now, populate choice information from the arrays
             for (int i = 0; i < finalAnswers.Count; i++)
                 finalChoices.Add(new InputChoiceInfo(finalAnswers[i], AnswersTitles[i]));
+            DebugWriter.WriteDebug(DebugLevel.I, "Final choices: {0}", finalChoices.Count);
             return finalChoices;
         }
     }

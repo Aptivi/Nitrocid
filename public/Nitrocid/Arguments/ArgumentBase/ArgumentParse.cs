@@ -83,6 +83,7 @@ namespace KS.Arguments.ArgumentBase
                         // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
                         if (Arg.ArgArgumentInfo.ArgumentsRequired & RequiredArgumentsProvided | !Arg.ArgArgumentInfo.ArgumentsRequired)
                         {
+                            DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", Argument, strArgs);
                             var ArgumentBase = Arg.ArgumentBase;
                             ArgumentBase.Execute(strArgs, Args, Switches);
                         }

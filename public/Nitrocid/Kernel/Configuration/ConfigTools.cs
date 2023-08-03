@@ -110,6 +110,7 @@ namespace KS.Kernel.Configuration
             if (CurrentValue is LanguageInfo lang)
                 CurrentValue = lang.ThreeLetterLanguageName;
 
+            DebugWriter.WriteDebug(DebugLevel.I, "Got current value! {0} [{1}], found under {2}...", CurrentValue, CurrentValue.GetType().Name, Variable);
             return CurrentValue;
         }
 
@@ -138,6 +139,7 @@ namespace KS.Kernel.Configuration
                             {
                                 string desc = (string)Setting["Description"] ?? "";
                                 InputChoiceInfo ici = new($"{SectionIndex + 1}/{KeyIndex + 1}", KeyName, desc);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", KeyName, SectionIndex + 1, KeyIndex + 1);
                                 Results.Add(ici);
                             }
                         }
@@ -151,6 +153,7 @@ namespace KS.Kernel.Configuration
             }
 
             // Return the results
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} results", Results.Count);
             return Results;
         }
 
@@ -181,6 +184,7 @@ namespace KS.Kernel.Configuration
                         bool KeyFound;
 
                         // Check the variable
+                        DebugWriter.WriteDebug(DebugLevel.I, "Checking {0} for existence...", KeyVariable);
                         KeyFound = PropertyManager.CheckProperty(KeyVariable);
                         Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
 
@@ -204,6 +208,7 @@ namespace KS.Kernel.Configuration
             }
 
             // Return the results
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", Results.Count);
             return Results;
         }
 

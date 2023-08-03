@@ -123,39 +123,46 @@ namespace KS.Shell.ShellBase.Commands
                               ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
                               null;
             int minimumArgumentsOffset = 0;
-            if (CommandInfo?.CommandArgumentInfo is not null)
+            bool withArgInfo = CommandInfo?.CommandArgumentInfo is not null;
+            DebugWriter.WriteDebug(DebugLevel.I, "Argument info is full? {0}", withArgInfo);
+            if (withArgInfo)
             {
                 foreach (string enclosedSwitch in EnclosedSwitches)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Optionalizer is processing switch {0}...", enclosedSwitch);
                     var switches = CommandInfo.CommandArgumentInfo.Switches.Where((switchInfo) => switchInfo.SwitchName == enclosedSwitch[1..]);
                     if (switches.Any())
                         foreach (var switchInfo in switches.Where(switchInfo => minimumArgumentsOffset < switchInfo.OptionalizeLastRequiredArguments))
                             minimumArgumentsOffset = switchInfo.OptionalizeLastRequiredArguments;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Minimum arguments offset is now {0}", minimumArgumentsOffset);
                 }
             }
-            int finalRequiredArgs = CommandInfo?.CommandArgumentInfo is not null ? CommandInfo.CommandArgumentInfo.MinimumArguments - minimumArgumentsOffset : 0;
+            int finalRequiredArgs = withArgInfo ? CommandInfo.CommandArgumentInfo.MinimumArguments - minimumArgumentsOffset : 0;
             if (finalRequiredArgs < 0)
                 finalRequiredArgs = 0;
+            DebugWriter.WriteDebug(DebugLevel.I, "Required arguments count is now {0}", finalRequiredArgs);
 
             // Check to see if the caller has provided required number of arguments
-            if (CommandInfo?.CommandArgumentInfo is not null)
+            if (withArgInfo)
                 RequiredArgumentsProvided = 
                     (EnclosedArgs.Length >= finalRequiredArgs) ||
                     !CommandInfo.CommandArgumentInfo.ArgumentsRequired;
             else
                 RequiredArgumentsProvided = true;
+            DebugWriter.WriteDebug(DebugLevel.I, "RequiredArgumentsProvided is {0}. Refer to the value of argument info.", RequiredArgumentsProvided);
 
             // Check to see if the caller has provided required number of switches
-            if (CommandInfo?.CommandArgumentInfo is not null)
+            if (withArgInfo)
                 RequiredSwitchesProvided =
                     CommandInfo.CommandArgumentInfo.Switches.Length == 0 ||
                     EnclosedSwitches.Length >= CommandInfo.CommandArgumentInfo.Switches.Where((@switch) => @switch.IsRequired).Count() ||
                     !CommandInfo.CommandArgumentInfo.Switches.Any((@switch) => @switch.IsRequired);
             else
                 RequiredSwitchesProvided = true;
+            DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchesProvided is {0}. Refer to the value of argument info.", RequiredSwitchesProvided);
 
             // Check to see if the caller has provided required number of switches that require arguments
-            if (CommandInfo?.CommandArgumentInfo is not null)
+            if (withArgInfo)
                 RequiredSwitchArgumentsProvided =
                     CommandInfo.CommandArgumentInfo.Switches.Length == 0 ||
                     EnclosedSwitches.Length == 0 ||
@@ -163,16 +170,18 @@ namespace KS.Shell.ShellBase.Commands
                     !CommandInfo.CommandArgumentInfo.Switches.Any((@switch) => @switch.ArgumentsRequired);
             else
                 RequiredSwitchArgumentsProvided = true;
+            DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
 
             // Check to see if the caller has provided non-existent switches
-            if (CommandInfo?.CommandArgumentInfo is not null)
+            if (withArgInfo)
                 unknownSwitchesList = EnclosedSwitchKeyValuePairs
                     .Select((kvp) => kvp.Item1)
                     .Where((key) => !CommandInfo.CommandArgumentInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
                     .ToArray();
+            DebugWriter.WriteDebug(DebugLevel.I, "Unknown switches: {0}", unknownSwitchesList.Length);
 
             // Check to see if the caller has provided conflicting switches
-            if (CommandInfo?.CommandArgumentInfo is not null)
+            if (withArgInfo)
             {
                 List<string> processed = new();
                 List<string> conflicts = new();
@@ -182,6 +191,7 @@ namespace KS.Shell.ShellBase.Commands
                     string @switch = kvp.Item1;
                     if (unknownSwitchesList.Contains(@switch))
                         continue;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Processing switch: {0}", @switch);
 
                     // Get the switch and its conflicts list
                     string[] switchConflicts = CommandInfo.CommandArgumentInfo.Switches
@@ -189,17 +199,24 @@ namespace KS.Shell.ShellBase.Commands
                         .First().ConflictsWith
                         .Select((conflicting) => $"-{conflicting}")
                         .ToArray();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Switch conflicts: {0} [{1}]", switchConflicts.Length, string.Join(", ", switchConflicts));
 
                     // Now, get the last switch and check to see if it's provided with the conflicting switch
                     string lastSwitch = processed.Count > 0 ? processed[^1] : "";
                     if (switchConflicts.Contains(lastSwitch))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Conflict! {0} and {1} conflict with each other.", @switch, lastSwitch);
                         conflicts.Add($"{@switch} vs. {lastSwitch}");
+                    }
                     processed.Add(@switch);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Marked conflicts: {0} [{1}]", conflicts.Count, string.Join(", ", conflicts));
+                    DebugWriter.WriteDebug(DebugLevel.I, "Processed: {0} [{1}]", processed.Count, string.Join(", ", processed));
                 }
                 conflictingSwitchesList = conflicts.ToArray();
             }
 
             // Install the parsed values to the new class instance
+            DebugWriter.WriteDebug(DebugLevel.I, "Finalizing...");
             ArgumentsList = EnclosedArgs;
             SwitchesList = EnclosedSwitches;
             ArgumentsText = strArgs;

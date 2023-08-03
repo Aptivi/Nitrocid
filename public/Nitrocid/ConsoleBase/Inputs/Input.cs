@@ -20,9 +20,11 @@ using System;
 using System.Threading;
 using KS.Drivers;
 using KS.Kernel.Configuration;
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
+using Org.BouncyCastle.Utilities.Encoders;
 using TermRead.Reader;
 using TermRead.Tools;
 
@@ -65,6 +67,7 @@ namespace KS.ConsoleBase.Inputs
             string Output = ReadLineUnsafe(InputText, DefaultValue);
 
             // If in lock mode, wait until release
+            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
             SpinWait.SpinUntil(() => !Screensaver.LockMode);
             return Output;
         }
@@ -92,6 +95,7 @@ namespace KS.ConsoleBase.Inputs
             string Output = ReadLineUnsafe(InputText, DefaultValue, true);
 
             // If in lock mode, wait until release
+            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
             SpinWait.SpinUntil(() => !Screensaver.LockMode);
             return Output;
         }
@@ -105,6 +109,7 @@ namespace KS.ConsoleBase.Inputs
         public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false)
         {
             string Output = TermReader.Read(InputText, DefaultValue, false, OneLineWrap);
+            DebugWriter.WriteDebug(DebugLevel.I, "Bailing from screensaver...");
             ScreensaverDisplayer.BailFromScreensaver();
             return Output;
         }
@@ -129,6 +134,7 @@ namespace KS.ConsoleBase.Inputs
             string pass = ReadLineNoInputUnsafe(MaskChar);
 
             // If in lock mode, wait until release
+            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
             SpinWait.SpinUntil(() => !Screensaver.LockMode);
             return pass;
         }
@@ -152,6 +158,7 @@ namespace KS.ConsoleBase.Inputs
         {
             TermReaderSettings.PasswordMaskChar = MaskChar;
             string pass = TermReader.ReadPassword();
+            DebugWriter.WriteDebug(DebugLevel.I, "Bailing from screensaver...");
             ScreensaverDisplayer.BailFromScreensaver();
             return pass;
         }
@@ -166,6 +173,7 @@ namespace KS.ConsoleBase.Inputs
             var Output = ReadKeyTimeoutUnsafe(Intercept, Timeout);
 
             // If in lock mode, wait until release
+            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
             SpinWait.SpinUntil(() => !Screensaver.LockMode);
             return Output;
         }
@@ -180,9 +188,11 @@ namespace KS.ConsoleBase.Inputs
             SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, Timeout);
             if (!ConsoleWrapper.KeyAvailable)
             {
+                DebugWriter.WriteDebug(DebugLevel.W, "Timeout trying to read key.");
                 ScreensaverDisplayer.BailFromScreensaver();
                 throw new KernelException(KernelExceptionType.ConsoleReadTimeout, Translate.DoTranslation("User didn't provide any input in a timely fashion."));
             }
+            DebugWriter.WriteDebug(DebugLevel.I, "Bailing from screensaver...");
             ScreensaverDisplayer.BailFromScreensaver();
             return ConsoleWrapper.ReadKey(Intercept);
         }
@@ -193,7 +203,9 @@ namespace KS.ConsoleBase.Inputs
         public static ConsoleKeyInfo DetectKeypress()
         {
             SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
-            return ConsoleWrapper.ReadKey(true);
+            var key = ConsoleWrapper.ReadKey(true);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got key! {0} [{1:2X}] {2}", key.Key.ToString(), (int)key.KeyChar, key.Modifiers.ToString());
+            return key;
         }
 
         internal static void InitializeInputWrappers()

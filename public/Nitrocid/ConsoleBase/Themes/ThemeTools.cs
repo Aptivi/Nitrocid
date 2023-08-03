@@ -182,8 +182,11 @@ namespace KS.ConsoleBase.Themes
 
                 // Check if the console supports true color
                 if ((Flags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
+                {
                     // Set colors as appropriate
+                    DebugWriter.WriteDebug(DebugLevel.I, "Setting colors as appropriate...");
                     SetColorsTheme(ThemeInfo);
+                }
                 else
                 {
                     // We're trying to apply true color on unsupported console
@@ -223,6 +226,7 @@ namespace KS.ConsoleBase.Themes
                 if (!(ThemeFile == "Default"))
                 {
                     // Set colors as appropriate
+                    DebugWriter.WriteDebug(DebugLevel.I, "Setting colors as appropriate...");
                     SetColorsTheme(ThemeInfo);
                 }
 
@@ -257,7 +261,9 @@ namespace KS.ConsoleBase.Themes
                 for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 2; typeIndex++)
                 {
                     KernelColorType type = KernelColors.Keys.ElementAt(typeIndex);
-                    KernelColors[type] = ThemeInfo.ThemeColors[type];
+                    var themeColor = ThemeInfo.ThemeColors[type];
+                    DebugWriter.WriteDebug(DebugLevel.I, "Kernel color type {0}, setting theme color {1}...", type.ToString(), themeColor.PlainSequence);
+                    KernelColors[type] = themeColor;
                 }
                 LoadBack();
                 Config.CreateConfig();
