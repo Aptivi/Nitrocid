@@ -160,7 +160,10 @@ namespace KS.Network.Base.Connections
 
                 // Just return the connection. This instance is an object and could be anything that represents a network connection.
                 networkConnections.Add(connection);
-                DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with instance type {3}", name, uri.ToString(), connectionType.ToString(), connectionInstance.GetType().Name);
+                if (connectionInstance is not null)
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list with instance type {3}", name, uri.ToString(), connectionType.ToString(), connectionInstance.GetType().Name);
+                else
+                    DebugWriter.WriteDebug(DebugLevel.I, "Added connection {0} for URI {1} to {2} list...", name, uri.ToString(), connectionType.ToString());
                 return connection;
             }
             catch (Exception e)

@@ -49,24 +49,6 @@ namespace KSTests.Network
         }
 
         /// <summary>
-        /// Tests getting network connections (empty state)
-        /// </summary>
-        [Test]
-        [TestCase(NetworkConnectionType.FTP)]
-        [TestCase(NetworkConnectionType.HTTP)]
-        [TestCase(NetworkConnectionType.Mail)]
-        [TestCase(NetworkConnectionType.RSS)]
-        [TestCase(NetworkConnectionType.SFTP)]
-        [TestCase(NetworkConnectionType.SSH)]
-        [Description("Action")]
-        public void TestGetNetworkConnectionsOnEmpty(NetworkConnectionType type)
-        {
-            var connections = NetworkConnectionTools.GetNetworkConnections(type);
-            connections.ShouldNotBeNull();
-            connections.ShouldBeEmpty();
-        }
-
-        /// <summary>
         /// Tests establishing network connection (instances)
         /// </summary>
         [Test]
@@ -109,6 +91,24 @@ namespace KSTests.Network
             connection.ConnectionInstance.ShouldBeNull();
             int index = NetworkConnectionTools.GetConnectionIndex(connection);
             NetworkConnectionTools.GetNetworkConnections(type)[index].ShouldBe(connection);
+        }
+
+        /// <summary>
+        /// Tests getting network connections
+        /// </summary>
+        [Test]
+        [TestCase(NetworkConnectionType.FTP)]
+        [TestCase(NetworkConnectionType.HTTP)]
+        [TestCase(NetworkConnectionType.Mail)]
+        [TestCase(NetworkConnectionType.RSS)]
+        [TestCase(NetworkConnectionType.SFTP)]
+        [TestCase(NetworkConnectionType.SSH)]
+        [Description("Action")]
+        public void TestGetNetworkConnections(NetworkConnectionType type)
+        {
+            var connections = NetworkConnectionTools.GetNetworkConnections(type);
+            connections.ShouldNotBeNull();
+            connections.ShouldNotBeEmpty();
         }
 
         /// <summary>
