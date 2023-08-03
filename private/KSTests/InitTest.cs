@@ -58,6 +58,7 @@ namespace KSTests
             string TestAssemblyDir = TestContext.CurrentContext.TestDirectory;
             Environment.CurrentDirectory = TestAssemblyDir;
             PathToTestSlotFolder = Path.GetFullPath("FilesystemSlot");
+            PathToTestSlotFolder = Filesystem.NeutralizePath(PathToTestSlotFolder);
 
             // Make a slot for filesystem-related tests
             if (!Checking.FolderExists(PathToTestSlotFolder))
