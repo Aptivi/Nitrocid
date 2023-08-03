@@ -69,8 +69,7 @@ namespace KSTests.Network
             connection.ConnectionUri.OriginalString.ShouldBe(url);
             connection.ConnectionIsInstance.ShouldBeTrue();
             connection.ConnectionInstance.ShouldBeNull();
-            int index = NetworkConnectionTools.GetConnectionIndex(connection);
-            NetworkConnectionTools.GetNetworkConnections(type)[index].ShouldBe(connection);
+            NetworkConnectionTools.GetNetworkConnections(type).ShouldContain(connection);
         }
 
         /// <summary>
@@ -89,8 +88,7 @@ namespace KSTests.Network
             connection.ConnectionUri.OriginalString.ShouldBe(url);
             connection.ConnectionIsInstance.ShouldBeFalse();
             connection.ConnectionInstance.ShouldBeNull();
-            int index = NetworkConnectionTools.GetConnectionIndex(connection);
-            NetworkConnectionTools.GetNetworkConnections(type)[index].ShouldBe(connection);
+            NetworkConnectionTools.GetNetworkConnections(type).ShouldContain(connection);
         }
 
         /// <summary>
@@ -109,6 +107,28 @@ namespace KSTests.Network
             var connections = NetworkConnectionTools.GetNetworkConnections(type);
             connections.ShouldNotBeNull();
             connections.ShouldNotBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests getting network connections
+        /// </summary>
+        [Test]
+        [TestCase(NetworkConnectionType.FTP)]
+        [TestCase(NetworkConnectionType.HTTP)]
+        [TestCase(NetworkConnectionType.Mail)]
+        [TestCase(NetworkConnectionType.RSS)]
+        [TestCase(NetworkConnectionType.SFTP)]
+        [TestCase(NetworkConnectionType.SSH)]
+        [Description("Action")]
+        public void TestGetConnectionIndex(NetworkConnectionType type)
+        {
+            var connections = NetworkConnectionTools.GetNetworkConnections(type);
+            connections.ShouldNotBeNull();
+            connections.ShouldNotBeEmpty();
+            var connection = connections[0];
+            int index = NetworkConnectionTools.GetConnectionIndex(connection);
+            index.ShouldBe(0);
+            connections[index].ShouldBe(connection);
         }
 
         /// <summary>
