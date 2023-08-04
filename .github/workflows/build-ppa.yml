@@ -36,5 +36,4 @@ jobs:
         
       - name: Try to build
         run: |
-          cd Kernel-Simulator
           sudo ip netns exec no-net make debian-all-offline
