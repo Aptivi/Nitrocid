@@ -1,0 +1,16 @@
+Source: kernel-simulator
+Section: misc
+Priority: optional
+Maintainer: EoflaOE <eoflaoevicecity@gmail.com>
+Build-Depends: debhelper-compat (= 12), dotnet-sdk-7.0 (>= 7.0.100)
+Standards-Version: 4.4.0
+Homepage: https://aptivi.gitbook.io/kernel-simulator-manual
+Vcs-Browser: https://github.com/Aptivi/NitrocidKS
+Vcs-Git: https://github.com/Aptivi/NitrocidKS.git
+
+Package: kernel-simulator
+Architecture: amd64
+Depends: ${misc:Depends}, dotnet-runtime-6.0 (>= 6.0.100), dotnet-runtime-7.0 (>= 7.0.100)
+Description: Simulates our future-planned kernel, Nitrocid Kernel!
+ Nitrocid KS (Kernel Simulator) simulates our future kernel, Nitrocid Kernel!
+ It simulates the kernel, the shell, and all the common applications.

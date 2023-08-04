@@ -1,0 +1,641 @@
+kernel-simulator (0.1.0-beta1-0ppa1) jammy; urgency=medium
+
+  * Synchronize release with changes in Nitrocid KS 0.1.0 Beta 1
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 22 Feb 2023 20:55:45 +0300
+
+kernel-simulator (0.1.0-beta1) jammy; urgency=medium
+
+  * Synchronize release with changes in Nitrocid KS 0.1.0 Beta 1
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 22 Feb 2023 07:19:45 +0300
+
+kernel-simulator (0.0.24.4) jammy; urgency=medium
+
+  * Fixed false boot failure in GRILO
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 10 Aug 2022 07:27:55 +0300
+
+kernel-simulator (0.0.24.3-0ppa1) jammy; urgency=medium
+
+  * Fixed net48 directory being added in lib
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Tue, 09 Aug 2022 12:20:00 +0300
+
+kernel-simulator (0.0.24.3) jammy; urgency=medium
+
+  * Added boot class for GRILO
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Tue, 09 Aug 2022 11:35:20 +0300
+
+kernel-simulator (0.0.24.2) jammy; urgency=medium
+
+  * RetroKS can now be run in .NET 6.0
+  * RetroKS can now be run for the first time again
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Fri, 05 Aug 2022 19:14:24 +0300
+
+kernel-simulator (0.0.24.1) jammy; urgency=medium
+
+  * You can't go back to 2018 on .NET 6.0!
+  * Meteor is customizable
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Tue, 02 Aug 2022 23:26:55 +0300
+
+kernel-simulator (0.0.24.0) jammy; urgency=medium
+
+  * Added command autocompletion
+  * Added new splashes (systemd, sysvinit, openrc,...)
+  * Added support for UESH conditions that require more than three arguments
+  * Added preview to saver settings
+  * Added new tests
+  * Added new screensavers (Indeterminate, Pulse,...)
+  * Added new languages (SMS Message, Shakespearean)
+  * Added new themes (Ports from VIM community themes)
+  * Added shell presets
+  * Added new UESH conditions
+  * Added RetroKS!
+  * UnitConv is back!
+  * No More POP3
+  * Removed obsolete Mod and Screensaver APIs
+  * Removed report bug prompt
+  * Fixed wrong character for lower left corner in Ramp when the config is being created
+  * General API improvements
+  * General improvements and bug fixes
+  * And more...
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Tue, 02 Aug 2022 08:35:25 +0300
+
+kernel-simulator (0.0.23.2) jammy; urgency=medium
+
+  * Fixed dictionary defining only one meaning for words like `fine`
+  * Fixed file handles being stuck open
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 13 Jul 2022 10:50:13 +0300
+
+kernel-simulator (0.0.23.1) jammy; urgency=medium
+
+  * Fixed crash on startup due to an Inxi.NET bug
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Tue, 12 Jul 2022 08:58:39 +0300
+
+kernel-simulator (0.0.23.0) jammy; urgency=medium
+
+  * Updated libraries
+  * Added "No APM" simulator
+  * Improved name generation process
+  * No more stack overflow when double panic fails
+  * Added new screensavers (Glitch, FallingLine)
+  * Added new language (Gangsta, Playa - pla)
+  * Added new splash (Fader)
+  * Screensaver improvements
+  * General compatibility improvements for .NET 6.0
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 11 Jul 2022 10:40:22 +0300
+
+kernel-simulator (0.0.22.5) jammy; urgency=medium
+
+  * Backported fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sat, 09 Jul 2022 11:19:11 +0300
+
+kernel-simulator (0.0.22.4) jammy; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Fri, 17 Jun 2022 21:42:50 +0300
+
+kernel-simulator (0.0.22.3) jammy; urgency=medium
+
+  * Compatibility improvements regarding .NET 6.0
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 15 Jun 2022 16:36:25 +0300
+
+kernel-simulator (0.0.22.2) jammy; urgency=medium
+
+  * Fixed custom screensavers breaking when
+    `SleepNoBlock(milliseconds, Custom)` is used
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 13 Jun 2022 09:51:05 +0300
+
+kernel-simulator (0.0.22.1) jammy; urgency=medium
+
+  * Improved accuracy of remaining time
+  * Fixed problems related to screensavers
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 12 Jun 2022 14:23:47 +0300
+
+kernel-simulator (0.0.22.0) jammy; urgency=medium
+
+  * Added dependencies support for mods
+  * Added new commands
+  * Added new screensavers
+  * Added new themes
+  * Added support for .NET 6.0
+  * Used ReadLine.Reboot to read inputs.
+    This fixes many issues regarding reading inputs on Linux systems.
+  * Fixed variety of crashes
+  * Removed unnecessary dependency, MadMilkman.Ini, from the main app
+  * You can now run Kernel Simulator from Android directly (UserLAnd)!
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 09 Jun 2022 07:21:34 +0300
+
+kernel-simulator (0.0.21.5) jammy; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 16 May 2022 16:51:52 +0300
+
+kernel-simulator (0.0.21.4) jammy; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Tue, 10 May 2022 07:47:47 +0300
+
+kernel-simulator (0.0.21.3) jammy; urgency=medium
+
+  * Fixed crash on startup in some Linux systems
+  * Fixed crash on startup when a non-screensaver file is encountered
+  * Fixed crash on startup if there is a kernel crash during boot
+  * Fixed `hwinfo` not displaying hardware information
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 08 May 2022 07:56:19 +0300
+
+kernel-simulator (0.0.21.2) jammy; urgency=medium
+
+  * Fixed fatal crash on startup on ARM devices
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 04 May 2022 11:35:08 +0300
+
+kernel-simulator (0.0.21.1) jammy; urgency=medium
+
+  * Improvements to the RSS feed selector
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 02 May 2022 09:31:20 +0300
+
+kernel-simulator (0.0.21.0) jammy; urgency=medium
+
+  * Updated libraries
+  * Added new screensavers
+  * Added custom notifications API
+  * Added hex shell
+  * You can select feed by country!
+  * Line parsing behavior should be consistent in all shells
+  * MathBee is now Solver
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 27 Apr 2022 07:33:57 +0300
+
+kernel-simulator (0.0.20.5) focal; urgency=medium
+
+  * Fixed race condition in kernel threads causing screensavers to stop with an error
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 14 Apr 2022 08:27:10 +0300
+
+kernel-simulator (0.0.20.4) focal; urgency=medium
+
+  * Updated debug symbol update link
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Fri, 08 Apr 2022 08:22:27 +0300
+
+kernel-simulator (0.0.20.3) focal; urgency=medium
+
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 21 Mar 2022 05:56:40 +0200
+
+kernel-simulator (0.0.20.2) focal; urgency=medium
+
+  * General improvements
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 13 Mar 2022 05:49:19 +0200
+
+kernel-simulator (0.0.20.1) focal; urgency=medium
+
+  * Fixed bugs in update facility
+  * Fixed debugger not accepting messages in Linux hosts
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 03 Mar 2022 06:27:21 +0200
+
+kernel-simulator (0.0.20.0) focal; urgency=medium
+
+  * Added high customization
+  * Added new commands
+  * Added new screensavers
+  * Added new languages
+  * Added new themes
+  * Added notification borders
+  * Added manual page viewer for mods
+  * Added UTC support
+  * Added mod blacklist support
+  * Added support for POP3 (experimental)
+  * Added switches for commands
+  * Updated libraries
+  * Updated the icon for Chocolatey installations
+  * Changed mail command name from `lsmail` to `mail` for relevancy
+  * Removed obsolete commands
+  * Removed AptErrorSim and HackUserFromAD screensavers
+  * Many API changes and improvements
+  * General improvements and bug fixes
+  * And many surprises...
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 20 Feb 2022 20:22:48 +0200
+
+kernel-simulator (0.0.19.1) focal; urgency=medium
+
+  * Made a shortcut to KS for Windows systems (Chocolatey)
+  * Added the FlashColor screensaver
+  * Added the Gujarati language
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 26 Aug 2021 14:54:41 +0300
+
+kernel-simulator (0.0.19.0) focal; urgency=medium
+
+  * Added folder download/upload to FTP
+  * Added option to write full color code in ColorWheel
+  * Added JSON minifier
+  * Added optional output support for jsonbeautify/jsonminify
+  * Added the Kazakh and Yoruba languages
+  * Added the Linotypo and Typewriter screensavers
+  * Improvements in Settings
+  * Added reading text files support in supported screensavers (only Linotypo for now)
+  * Added the mod manager
+  * Added missed character support in typo screensavers
+  * Added debugging support to screensaver
+  * Restored Turkish language
+  * Fixed cancellation not working properly in some situations
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 22 Aug 2021 15:30:19 +0300
+
+kernel-simulator (0.0.18.1) focal; urgency=medium
+
+  * Fixed BeatFader taking time to exit
+  * Fixed extra newline in separator if location is two lines lower
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 09 Aug 2021 14:46:15 +0300
+
+kernel-simulator (0.0.18.0) focal; urgency=medium
+
+  * 1. Added SHA384 support
+  * Added support for output files in `sumfile`
+  * Now `No help for command <cmd>` shows up on all shells
+  * Added support for complete string formatting in console writers
+  * Added new commands
+  * Flipped the date and time on upper right corner
+  * Added the GetConfigCategory and SetConfigValueAndWrite APIs
+  * Added beats per minute implementation to disco
+  * Added BeatFader screensaver
+  * Added new placeholders
+  * Custom startup banner support
+  * Added `/clear` to clear the string variable in Settings
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 02 Aug 2021 21:01:40 +0300
+
+kernel-simulator (0.0.17.2-0ppa2) focal; urgency=medium
+
+  * Made a .desktop file
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sat, 31 Jul 2021 18:49:16 +0300
+
+kernel-simulator (0.0.17.2-0ppa1) focal; urgency=medium
+
+  * A .desktop file
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sat, 31 Jul 2021 18:32:21 +0300
+
+kernel-simulator (0.0.17.2) focal; urgency=medium
+
+  * Added support for complete string formatting in console writers
+    - Note that this change is a backport from the upcoming 0.0.18.0
+  * Enhanced a default for Typo
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 25 Jul 2021 17:23:18 +0300
+
+kernel-simulator (0.0.17.1-0ppa1) focal; urgency=medium
+
+  * Fixed menu entry not working
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sat, 24 Jul 2021 14:31:05 +0300
+
+kernel-simulator (0.0.17.1) focal; urgency=medium
+
+  * Better handling for empty folders in List
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 18 Jul 2021 14:18:50 +0300
+
+kernel-simulator (0.0.17.0) focal; urgency=medium
+
+  * Fixed the sudden "Invalid path" when trying to execute a non-existent mod/alias that contains the space in their command.
+  * Added FaderBack
+  * Fade-ins in Fader and FaderBack are now smoother
+  * WebAlerts are now handled in mail shell
+  * Extended information in modinfo
+  * Added custom prompt styles for RSS, Text Edit, and ZIP Shell
+  * Improvements regarding parsing RSS feeds
+  * General improvements and bug fixes
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 05 Jul 2021 14:29:11 +0300
+
+kernel-simulator (0.0.16.4) focal; urgency=medium
+
+  * Added support for spaces in commands for mods and aliases
+  * Better mod conflict detection
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 17 Jun 2021 13:59:59 +0300
+
+kernel-simulator (0.0.16.3) focal; urgency=medium
+
+  * Fixed DLL-based screensavers not loading
+  * Fixed external programs (ffmpeg, ...) not using current working directory
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 14 Jun 2021 17:47:51 +0300
+
+kernel-simulator (0.0.16.2) focal; urgency=medium
+
+  * Fixed NullReferenceException when loading a mod command if one of the loaded mods didn't have any command
+  * Added support for .message MOTD for FTP
+  * Fader and Wipe now exit instantly
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sat, 12 Jun 2021 16:36:35 +0300
+
+kernel-simulator (0.0.16.0) focal; urgency=medium
+
+  * Check out github.com/EoflaOE/Kernel-Simulator/wiki/History-of-KS#ks-00160-6122021
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 06 Jun 2021 13:47:18 +0300
+
+kernel-simulator (0.0.15.8) focal; urgency=medium
+
+  * Fixed NullReferenceException when trying to get symlink target
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 14 Apr 2021 10:11:20 +0300
+
+kernel-simulator (0.0.15.7) focal; urgency=medium
+
+  * Fixed percentage of notification not clearing
+  * Added option to set current directory from settings
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 21 Mar 2021 19:21:52 +0200
+
+kernel-simulator (0.0.15.6) focal; urgency=medium
+
+  * General improvements
+  * Now profile answer takes more than one digit.
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sat, 20 Mar 2021 07:41:29 +0200
+
+kernel-simulator (0.0.15.5) focal; urgency=medium
+
+  * General improvements
+  * Fixed profile listing being offset by 1
+  * Use ftp:// instead of ftps:// by default
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Fri, 12 Mar 2021 17:41:36 +0200
+
+kernel-simulator (0.0.15.4) focal; urgency=medium
+
+  * Removed listdrives and listparts help commands
+  * Now help shows message when invalid command is entered
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Fri, 12 Mar 2021 09:33:46 +0200
+
+kernel-simulator (0.0.15.3) focal; urgency=medium
+
+  * Added category indicator to settings
+  * Improved sysinfo viewing in languages other than English
+  * Disabled cached hardware probing
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 10 Mar 2021 16:19:45 +0200
+
+kernel-simulator (0.0.15.2) focal; urgency=medium
+
+  * Use vt100 terminal (nano is still flaky)
+  * Fixed crash on next reboot when hardware probing fails
+  * Implemented percentage indicator for notification
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 04 Mar 2021 21:34:22 +0200
+
+kernel-simulator (0.0.15.1) focal; urgency=medium
+
+  * Fixed unlocalized strings in 0.0.15.0
+  * Added missing string for SSH FTP help entry
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 24 Feb 2021 06:59:37 +0200
+
+kernel-simulator (0.0.15.0) focal; urgency=medium
+
+  * Added BedOS, 3Y-Diamond, and TealerOS colors
+  * Allowed specifying city name in weather command
+  * Made calc use string evaluator
+  * Fixed NullReferenceException when running maintenance mode
+  * Added Irish and Welsh languages
+  * Now time offsets can display a plus sign
+  * General improvements
+  * Added new text edit commands, including querychar
+  * Fixed new instances of text editor not "opening" files after closing the first session
+  * Added progress implementation to notification system
+  * Fixed console output messup in certain situations
+  * Users are free to turn on/off text edit autosave and set interval
+  * Added text changed indicator
+  * Added conflict detection to mod parser
+  * Now you're free to choose to record remote debug chat logs or not
+  * Fixed crash on startup in Linux
+  * Ping continues even if one device can't be pinged
+  * Screensaver timeouts are now customizable except for AptErrorSim, HackUserFromAD, and Dissolve
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 21 Feb 2021 06:41:50 +0200
+
+kernel-simulator (0.0.14.1) focal; urgency=medium
+
+  * Fixed wrong UESH message if command is not found
+  * DoCalc is obsolete
+  * Now bouncing block settings are customizable
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Fri, 29 Jan 2021 16:22:00 +0200
+
+kernel-simulator (0.0.14.0) focal; urgency=medium
+
+  * Added executable file running
+  * Fixed NullReferenceException when parsing Nothing in all printing commands in TextWriterColor
+  * Updated libraries
+  * Used Inxi.NET for hardware probing
+  * Added mail message preview implementation
+  * Fixed inconsistencies in network section of settings command
+  * Removed listdrives and listparts in favor of sysinfo showing hard drive information
+  * Added color change to Settings, removing setcolors
+  * Added a way to get the target link in SFTP directory listing
+  * Fixed NullReferenceException when trying to change remote SFTP directory
+  * Fixed local SFTP directory not changing
+  * Added custom shell input prompt support
+  * Removed Slot Probe in favor of rewritten hardware probe
+  * Added Bouncing Block Screensaver
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 21 Jan 2021 13:03:38 +0200
+
+kernel-simulator (0.0.13.1) focal; urgency=medium
+
+  * Added current directory placeholder
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 24 Dec 2020 14:05:43 +0200
+
+kernel-simulator (0.0.13.0) focal; urgency=medium
+
+  * Added SHA512 encryption algorithm
+  * Added SFTP
+  * Fixed console formats in FTP and SFTP
+  * Added new string placeholder for host name
+  * Added custom shell prompt style
+  * Fixed password field being accessible to mods
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 21 Dec 2020 13:43:11 +0200
+
+kernel-simulator (0.0.12.3) focal; urgency=medium
+
+  * Fixed artifacts in Swahili
+  * Fixed inconsistencies regarding rexec command
+  * Fixed RPC commands not listening
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Tue, 08 Dec 2020 07:18:48 +0200
+
+kernel-simulator (0.0.12.2) focal; urgency=medium
+
+  * Reverted to SSH.NET version 2016.1.0 as it fixes NuGet installation error under normal circumstances. For more info, consult "The truth of SSH.NET 2020.0.0 Beta 1"
+  * Bug fixes and general improvements
+  * Fixed shell error trying to use multi commands in some cases
+  * Fixed multi command colon not working for mods and aliases
+  * Fixed injected commands failing with a shell error
+  * Fixed newline on input line in cmdinject argument
+  * Added help page for real cmdline args for KS
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Wed, 02 Dec 2020 17:14:51 +0200
+
+kernel-simulator (0.0.12.1) focal; urgency=medium
+
+  * Fixed variables not being parsed in translated versions of Punjabi messages
+  * Fixed some strings not being translated
+  * Fixed SSH connection error even after successful connection
+  * Fixed high CPU usage when connected to an SSH server
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 22 Nov 2020 07:12:28 +0200
+
+kernel-simulator (0.0.12.0) focal; urgency=medium
+
+  * The list is too long, so read the bottom of the page below
+    * github.com/EoflaOE/Kernel-Simulator/wiki/History-of-KS
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Fri, 06 Nov 2020 20:00:00 +0300
+
+kernel-simulator (0.0.11.1) focal; urgency=medium
+
+  * We had to take out Turkish language because we can't support terrorism.
+  * Fixed messup on console output redirection
+  * Added notification when config fails to be read
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 06 Aug 2020 13:53:27 +0300
+
+kernel-simulator (0.0.11.0-2) focal; urgency=medium
+
+  * Fixed build failure
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 26 Jul 2020 11:47:48 +0300
+
+kernel-simulator (0.0.11.0-1) focal; urgency=medium
+
+  * Added command cancellation when CTRL+C is pressed implementation
+  * Added `shutdown` command to test shell
+  * Made `exit` exit the test shell and start the kernel
+  * Implemented Speed Dial for FTP shell for faster connection
+  * Fixed FTPS using wrong encryption type
+  * Added simple send message to mail client (IMAP shell changed to mail shell)
+  * Fixed port parsing in mail shell
+  * Made screensaver timeouts customizable
+  * Added `mkfile` and `edit` commands
+  * Added basic text editor
+  * Removed `speak` command and `soundtest` test command due to instabilities on sound library
+  * Removed demo account creation
+  * Permission management for mods is now easier to use
+  * Fixed `read` command not working with spaced filenames
+  * Fixed invalid `Not enough arguments` message when providing more than enough arguments in some commands
+  * Fixed `chusrname` not changing username permanently
+  * Now in mail shell when you don't provide enough arguments it will automatically open a help page for the specified command
+  * Now remote debugging user messages reflects the current kernel language used
+  * Added temporary blocking/unblocking IP addresses for remote debugger (will be permanent in 0.0.12)
+  * Fixed notifications showing when dismissing them
+  * Added Serbian language
+  * Added console output redirection support for main shell commands
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 26 Jul 2020 11:03:48 +0300
+ 
+kernel-simulator (0.0.10.1-1) focal; urgency=medium
+
+  * Fixed OutOfMemory when hashing large files
+  * Added new CI test that tests string encryption.
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sat, 11 Jul 2020 20:30:48 +0300
+
+kernel-simulator (0.0.10.0.2) focal; urgency=medium
+
+  * Fixed build failure
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 08 Jun 2020 17:21:51 +0300
+
+kernel-simulator (0.0.10.0.1) focal; urgency=medium
+
+  * Fixed build failure
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 08 Jun 2020 17:07:51 +0300
+
+kernel-simulator (0.0.10.0-1) focal; urgency=medium
+
+  * Fixed build failure
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Mon, 08 Jun 2020 16:42:21 +0300
+
+kernel-simulator (0.0.10.0) focal; urgency=medium
+
+  * Updated libraries
+  * Fixed mods not being able to access the Encryption class
+  * Simplified encryption code for mods
+  * Improved list of filesystems
+  * Fixed FTP crash when faced with multiple profiles
+  * Now FTP addresses starting with ftpes:// will also be accepted
+  * Made FTP profile listing more clear
+  * Now the IMAP client will tell you if there's an attachment when reading
+  * Fixed misleading message when reading the first message
+  * Added scripting
+  * Fixed IMAP shell crash when idle
+  * Now error messages have their own color
+  * Restored echo, beep, and choice commands from 0.0.1 for script implementation
+  * Added input command
+  * Now IMAP client shows newest messages first
+  * Fixed unexpected kernel crash when the IMAP shell crashed
+  * Added debugging messages in IMAP shell
+  * Added other folder support to IMAP client
+  * Added code documentation for modders and devs using Visual Studio
+  * Added usage commands support for FTP
+  * Added new events for mods
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 28 May 2020 09:35:48 +0300
+
+kernel-simulator (0.0.9.0-2) bionic; urgency=critical
+
+  * Fixed list command crashing on IMAP shell when no page number is specified
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Sun, 26 Apr 2020 20:35:28 +0300
+
+kernel-simulator (0.0.9.0-1) bionic; urgency=medium
+
+  * Updated libraries
+  * Added IMAP shell
+  * Added Slovak language
+  * Added comment to Language config entry
+  * Fixed kernel crash if remote debugger failed to start
+
+ -- EoflaOE <eoflaoevicecity@gmail.com>  Thu, 23 Apr 2020 19:30:46 +0300

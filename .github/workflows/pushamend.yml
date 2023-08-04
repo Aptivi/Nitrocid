@@ -1,0 +1,39 @@
+name: Push to PPA (amend with original source)
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'true'
+      
+      - name: Import GPG
+        uses: crazy-max/ghaction-import-gpg@v3.1.0
+        with:
+          gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+
+      - name: Install required packages
+        run: |
+          sudo rm /etc/apt/sources.list.d/microsoft-prod.list
+          sudo apt update
+          sudo apt purge dotnet*
+          sudo apt autoremove
+          sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-7.0 devscripts debhelper-compat dput
+        
+      - name: Download original source
+        run: |
+          wget --output-document=../kernel-simulator_0.1.0-beta2.orig.tar.xz https://launchpad.net/~eofla/+archive/ubuntu/kernel-sim/+sourcefiles/kernel-simulator/0.1.0-beta2/kernel-simulator_0.1.0.orig.tar.xz
+          tar xf ../kernel-simulator_0.1.0-beta2.orig.tar.xz .
+          mv .github ..
+
+      - name: Build source package
+        run: debuild -S
+        
+      - name: Push to Launchpad
+        run: dput ppa:eofla/kernel-sim ../kernel-simulator_0.1.0*_source.changes

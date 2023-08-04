@@ -1,0 +1,67 @@
+#!/usr/bin/make -f
+#
+#    Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+# 
+#    Nitrocid KS is free software: you can redistribute it and/or modify
+#    it under the terms of the GNU General Public License as published by
+#    the Free Software Foundation, either version 3 of the License, or
+#    (at your option) any later version.
+#
+#    Nitrocid KS is distributed in the hope that it will be useful,
+#    but WITHOUT ANY WARRANTY; without even the implied warranty of
+#    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#    GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License
+#    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+# 
+
+%:
+	dh $@
+
+build:
+	# Restore every package from solution and build the app
+	mkdir debian/homedir
+	echo `pwd`"/debian/homedir"
+	HOME=`pwd`"/debian/homedir" dotnet restore "Kernel-Simulator/Nitrocid.sln"
+	HOME=`pwd`"/debian/homedir" dotnet msbuild "Kernel-Simulator/Nitrocid.sln"
+	# Remove unnecessary things generated (KS nupkgs)
+	IFS="|"; for f in `find -regex ".*\.+[^.]*\.+[^.]*\.+.*nupkg" | awk '{printf "%s|", $$0}'`; do rm $$f; done; IFS=" "
+
+binary:
+	# Prepare directories
+	mkdir -p debian/kernel-simulator/usr/bin
+	mkdir -p debian/kernel-simulator/usr/lib/ks
+	mkdir -p debian/kernel-simulator/usr/share/applications
+	# Copy required files to their directories
+	cp -r "Kernel-Simulator/public/Nitrocid/KSBuild/net6.0/." "debian/kernel-simulator/usr/lib/ks"
+	cp "Kernel-Simulator/public/Nitrocid/ks.sh" "debian/kernel-simulator/usr/bin/ks"
+	cp "Kernel-Simulator/public/Nitrocid/ks.1" "debian/ks.1"
+	cp "Kernel-Simulator/public/Nitrocid/ks.desktop" "debian/kernel-simulator/usr/share/applications/"
+	cp "Kernel-Simulator/public/Nitrocid/ks-jl.sh" "debian/kernel-simulator/usr/bin/ks-jl"
+	cp "Kernel-Simulator/public/Nitrocid/ks-jl.1" "debian/ks-jl.1"
+	cp "Kernel-Simulator/public/Nitrocid/OfficialAppIcon-KernelSimulator-256.png" "debian/kernel-simulator/usr/lib/ks/ks.png"
+	# Set up permissions
+	chmod 755 "debian/kernel-simulator/usr/bin/ks"
+	chmod 755 "debian/kernel-simulator/usr/bin/ks-jl"
+	chmod -R 644 debian/kernel-simulator/usr/lib/ks/.
+	chmod 755 debian/kernel-simulator/usr/lib
+	chmod 755 debian/kernel-simulator/usr/lib/ks
+	chmod 755 debian/kernel-simulator/usr/share
+	chmod 755 debian/kernel-simulator/usr/share/applications
+	chmod 755 debian/kernel-simulator/usr/share/applications/ks.desktop
+	# Set up owners
+	chown -R root:root debian/kernel-simulator/usr/bin
+	chown -R root:root debian/kernel-simulator/usr/lib
+	# Install everything
+	dh_install
+	dh_installchangelogs
+	dh_installman
+	dh_installmenu
+	# Compress changelogs
+	dh_compress
+	# Generate control file
+	dh_gencontrol
+	# Make package
+	dh_builddeb
+
