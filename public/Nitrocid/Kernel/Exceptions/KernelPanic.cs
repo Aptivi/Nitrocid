@@ -184,10 +184,6 @@ namespace KS.Kernel.Exceptions
         /// <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
         internal static void KernelErrorContinuable(string Description, Exception Exc, params object[] Variables)
         {
-            Flags.KernelErrored = true;
-            LastKernelErrorException = Exc;
-            Flags.NotifyKernelError = true;
-
             try
             {
                 // Format the "Description" string variable

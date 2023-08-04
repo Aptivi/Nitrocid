@@ -173,6 +173,9 @@ namespace KSTests.ConsoleBase
                 Color color = Color.Empty;
                 var type = (ColorType)Enum.Parse(typeof(ColorType), typeName);
                 Should.NotThrow(() => color = KernelColorTools.GetRandomColor(type));
+                type = color.PlainSequence.Contains(";") ? 
+                       ColorType.TrueColor : color.ColorEnum255 != (ConsoleColors)(-1) ?
+                       ColorType._255Color : ColorType._16Color;
                 color.ShouldNotBeNull();
                 color.Type.ShouldBe(type);
             }
