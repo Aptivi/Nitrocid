@@ -22,6 +22,12 @@
 override_dh_strip:
 	echo Not stripping because we can not strip runtimes from NuGet packages...
 
+override_dh_makeshlibs:
+	echo Does not work with .NET
+
+override_dh_shlibdeps:
+	echo Does not work with .NET
+
 override_dh_auto_build:
 	mkdir debian/homedir
 	$(MAKE) debian-all-offline
