@@ -63,19 +63,30 @@ namespace KS.Misc.Interactive
                     {
                         // Draw the boxes
                         DrawInteractiveTui(interactiveTui);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI drawn.");
 
                         // Draw the first pane
                         DrawInteractiveTuiItems(interactiveTui, 1);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI items (first pane) drawn.");
 
                         // Draw the second pane
                         if (interactiveTui.SecondPaneInteractable)
+                        {
                             DrawInteractiveTuiItems(interactiveTui, 2);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI items (second pane) drawn.");
+                        }
                         else
+                        {
                             DrawInformationOnSecondPane(interactiveTui);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Info drawn.");
+                        }
+
                         DrawStatus(interactiveTui);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Status drawn.");
 
                         // Wait for user input
                         RespondToUserInput(interactiveTui);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Responded to user input.");
                     }
                 }
                 catch (Exception ex)
@@ -115,6 +126,7 @@ namespace KS.Misc.Interactive
                 // IEnumerable from System.Collections doesn't implement Count() or Length, hence the array, List<>, Dictionary<>,
                 // and other collections have either Count or Length. This is an ugly hack that we should live with.
                 dataCount++;
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} elements.", dataCount);
             return dataCount;
         }
 
@@ -129,6 +141,7 @@ namespace KS.Misc.Interactive
                 if (steppedItems == index + 1)
                 {
                     // We found the item that we need! Assign it to dataObject so GetEntryFromItem() can formulate a string.
+                    DebugWriter.WriteDebug(DebugLevel.I, "Found required item index {0}.", index);
                     dataObject = item;
                     break;
                 }
@@ -152,6 +165,7 @@ namespace KS.Misc.Interactive
             // Redraw the entire TUI screen
             if (BaseInteractiveTui.RedrawRequired)
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "We're redrawing.");
                 KernelColorTools.LoadBack(BaseInteractiveTui.BackgroundColor, true);
 
                 // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
@@ -178,7 +192,9 @@ namespace KS.Misc.Interactive
                 // First, the horizontal and vertical separators
                 var finalForeColorFirstPane  = BaseInteractiveTui.CurrentPane == 1 ? BaseInteractiveTui.PaneSelectedSeparatorColor : BaseInteractiveTui.PaneSeparatorColor;
                 var finalForeColorSecondPane = BaseInteractiveTui.CurrentPane == 2 ? BaseInteractiveTui.PaneSelectedSeparatorColor : BaseInteractiveTui.PaneSeparatorColor;
+                DebugWriter.WriteDebug(DebugLevel.I, "0, {0}, {1}, {2}, {3}, {4}", SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane.PlainSequence, BaseInteractiveTui.PaneBackgroundColor.PlainSequence);
                 BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane, BaseInteractiveTui.PaneBackgroundColor);
+                DebugWriter.WriteDebug(DebugLevel.I, "{0}, {1}, {2}, {3}, {4}, {5}", SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorSecondPane.PlainSequence, BaseInteractiveTui.PaneBackgroundColor.PlainSequence);
                 BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorSecondPane, BaseInteractiveTui.PaneBackgroundColor);
 
                 // Render the key bindings
@@ -192,6 +208,7 @@ namespace KS.Misc.Interactive
                     // First, check to see if the rendered binding info is going to exceed the console window width
                     if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
                     {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", binding.BindingKeyName.ToString(), binding.BindingName);
                         TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
                         TextWriterWhereColor.WriteWhere($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.OptionForegroundColor, BaseInteractiveTui.BackgroundColor);
                     }
@@ -249,6 +266,7 @@ namespace KS.Misc.Interactive
                         if (steppedItems == startIndex + i + 1)
                         {
                             // We found the item that we need! Assign it to dataObject so GetEntryFromItem() can formulate a string.
+                            DebugWriter.WriteDebug(DebugLevel.I, "Found required item index {0} [{1}, offset {2}, final {3}].", steppedItems, i, startIndex, finalIndex);
                             dataObject = item;
                             break;
                         }
@@ -269,6 +287,7 @@ namespace KS.Misc.Interactive
             // Render the vertical bar
             if (Config.MainConfig.EnableScrollBarInSelection)
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                 int left = paneNum == 2 ? ConsoleWrapper.WindowWidth - 3 : SeparatorHalfConsoleWidthInterior - 1;
                 ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, false);
             }
@@ -309,16 +328,19 @@ namespace KS.Misc.Interactive
                 int dataCount = CountElements(data);
 
                 // Populate selected data
+                DebugWriter.WriteDebug(DebugLevel.I, "{0} elements.", dataCount);
                 if (dataCount > 0)
                 {
                     object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
                     DebugCheck.AssertNull(selectedData,
                         "attempted to render info about null data");
                     finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Rendered info: {0}", finalInfoRendered);
                 }
                 else
                 {
                     finalInfoRendered = Translate.DoTranslation("No info.");
+                    DebugWriter.WriteDebug(DebugLevel.W, "There is no info!");
                 }
             }
             catch (Exception ex)
@@ -338,6 +360,7 @@ namespace KS.Misc.Interactive
                 // Check to see if the info is overpopulated
                 if (infoIndex >= SeparatorMaximumHeightInterior - 1)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Info is overflowing! {0} >= {1}", infoIndex, SeparatorMaximumHeightInterior - 1);
                     string truncated = Translate.DoTranslation("Shift+I = more info");
                     TextWriterWhereColor.WriteWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
                     break;
@@ -345,6 +368,7 @@ namespace KS.Misc.Interactive
 
                 // Now, render the info
                 string finalInfo = finalInfoStrings[infoIndex];
+                DebugWriter.WriteDebug(DebugLevel.I, "Rendering final info {0}...", finalInfo);
                 TextWriterWhereColor.WriteWhere(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
             }
         }
@@ -360,6 +384,7 @@ namespace KS.Misc.Interactive
                        interactiveTui.PrimaryDataSource;
             object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
             interactiveTui.RenderStatus(selectedData);
+            DebugWriter.WriteDebug(DebugLevel.I, "Status rendered. {0}", BaseInteractiveTui.Status);
 
             // Now, write info
             TextWriterWhereColor.WriteWhere(BaseInteractiveTui.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, BaseInteractiveTui.ForegroundColor, BaseInteractiveTui.BackgroundColor);
@@ -394,6 +419,7 @@ namespace KS.Misc.Interactive
                     pressedKey = Input.ReadKeyTimeout(true, TimeSpan.FromMilliseconds(interactiveTui.RefreshInterval));
 
                 // Handle the key
+                DebugWriter.WriteDebug(DebugLevel.I, "Pressed key. Handling...");
                 switch (pressedKey.Key)
                 {
                     case ConsoleKey.UpArrow:
@@ -402,12 +428,14 @@ namespace KS.Misc.Interactive
                             BaseInteractiveTui.SecondPaneCurrentSelection--;
                             if (BaseInteractiveTui.SecondPaneCurrentSelection < 1)
                                 BaseInteractiveTui.SecondPaneCurrentSelection = dataCount;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.SecondPaneCurrentSelection);
                         }
                         else
                         {
                             BaseInteractiveTui.FirstPaneCurrentSelection--;
                             if (BaseInteractiveTui.FirstPaneCurrentSelection < 1)
                                 BaseInteractiveTui.FirstPaneCurrentSelection = dataCount;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.SecondPaneCurrentSelection);
                         }
                         break;
                     case ConsoleKey.DownArrow:
@@ -416,12 +444,14 @@ namespace KS.Misc.Interactive
                             BaseInteractiveTui.SecondPaneCurrentSelection++;
                             if (BaseInteractiveTui.SecondPaneCurrentSelection > dataCount)
                                 BaseInteractiveTui.SecondPaneCurrentSelection = 1;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.SecondPaneCurrentSelection);
                         }
                         else
                         {
                             BaseInteractiveTui.FirstPaneCurrentSelection++;
                             if (BaseInteractiveTui.FirstPaneCurrentSelection > dataCount)
                                 BaseInteractiveTui.FirstPaneCurrentSelection = 1;
+                            DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.SecondPaneCurrentSelection);
                         }
                         break;
                     case ConsoleKey.PageUp:
@@ -429,30 +459,37 @@ namespace KS.Misc.Interactive
                             BaseInteractiveTui.SecondPaneCurrentSelection = 1;
                         else
                             BaseInteractiveTui.FirstPaneCurrentSelection = 1;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Selection: 1");
                         break;
                     case ConsoleKey.PageDown:
                         if (BaseInteractiveTui.CurrentPane == 2)
                             BaseInteractiveTui.SecondPaneCurrentSelection = dataCount;
                         else
                             BaseInteractiveTui.FirstPaneCurrentSelection = dataCount;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", dataCount);
                         break;
                     case ConsoleKey.I:
                         if (pressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(_finalInfoRendered))
                         {
                             // User needs more information in the infobox
+                            DebugWriter.WriteDebug(DebugLevel.I, "Rendering information in the infobox...");
                             InfoBoxColor.WriteInfoBox(_finalInfoRendered, BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
                             BaseInteractiveTui.RedrawRequired = true;
                         }
                         break;
                     case ConsoleKey.Escape:
                         // User needs to exit
+                        DebugWriter.WriteDebug(DebugLevel.I, "Exiting...");
                         interactiveTui.HandleExit();
                         interactiveTui.isExiting = true;
                         break;
                     default:
                         var implementedBindings = interactiveTui.Bindings.Where((binding) => binding.BindingKeyName == pressedKey.Key);
                         foreach (var implementedBinding in implementedBindings)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.I, "Executing implemented binding {0}...", implementedBinding.BindingKeyName.ToString(), implementedBinding.BindingName);
                             implementedBinding.BindingAction.Invoke(selectedData, paneCurrentSelection - 1);
+                        }
                         break;
                 }
             }

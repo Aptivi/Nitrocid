@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
+using KS.Kernel.Debugging;
 using System;
 using System.IO;
 using System.Text;
@@ -41,7 +42,11 @@ namespace KS.ConsoleBase
         public static int CursorLeft
         {
             get => DriverHandler.CurrentConsoleDriverLocal.CursorLeft;
-            set => DriverHandler.CurrentConsoleDriverLocal.CursorLeft = value;
+            set
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting cursor left position from {0} to {1}...", CursorLeft, value);
+                DriverHandler.CurrentConsoleDriverLocal.CursorLeft = value;
+            }
         }
 
         /// <summary>
@@ -50,7 +55,11 @@ namespace KS.ConsoleBase
         public static int CursorTop
         {
             get => DriverHandler.CurrentConsoleDriverLocal.CursorTop;
-            set => DriverHandler.CurrentConsoleDriverLocal.CursorTop = value;
+            set
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting cursor top position from {0} to {1}...", CursorTop, value);
+                DriverHandler.CurrentConsoleDriverLocal.CursorTop = value;
+            }
         }
 
         /// <summary>
@@ -144,8 +153,11 @@ namespace KS.ConsoleBase
         /// </summary>
         /// <param name="left">The left to be set (from 0)</param>
         /// <param name="top">The top to be set (from 0)</param>
-        public static void SetCursorPosition(int left, int top) =>
+        public static void SetCursorPosition(int left, int top)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting cursor position from {0}x{1} to {2}x{3}...", CursorLeft, CursorTop, left, top);
             DriverHandler.CurrentConsoleDriverLocal.SetCursorPosition(left, top);
+        }
 
         /// <summary>
         /// Resets console colors

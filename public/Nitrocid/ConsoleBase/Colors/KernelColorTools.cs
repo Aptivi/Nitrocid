@@ -86,16 +86,23 @@ namespace KS.ConsoleBase.Colors
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public static Color GetColor(KernelColorType type) =>
-            new(KernelColors[type].PlainSequence);
+        public static Color GetColor(KernelColorType type)
+        {
+            string plainColorSeq = KernelColors[type].PlainSequence;
+            DebugWriter.WriteDebug(DebugLevel.I, "Getting color type {0}: {1}", type.ToString(), plainColorSeq);
+            return new(plainColorSeq);
+        }
 
         /// <summary>
         /// Sets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
         /// <param name="color">Color to be set</param>
-        public static Color SetColor(KernelColorType type, Color color) =>
-            KernelColors[type] = color;
+        public static Color SetColor(KernelColorType type, Color color)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting color type {0} to color sequence {1}...", type.ToString(), color.PlainSequence);
+            return KernelColors[type] = color;
+        }
 
         /// <summary>
         /// Populate the empty color dictionary
@@ -178,6 +185,7 @@ namespace KS.ConsoleBase.Colors
                 DebugWriter.WriteDebug(DebugLevel.I, "Filling background with background color {0}", ColorSequence.PlainSequence);
                 SetConsoleColor(ColorSequence, true, Force);
                 ConsoleWrapper.Clear();
+                DebugWriter.WriteDebug(DebugLevel.I, "Set background color!");
             }
             catch (Exception ex)
             {
@@ -192,10 +200,13 @@ namespace KS.ConsoleBase.Colors
         {
             if (GetColor(KernelColorType.Background).IsBright)
             {
-                return GetColor(KernelColorType.NeutralText);
+                var color = GetColor(KernelColorType.NeutralText);
+                DebugWriter.WriteDebug(DebugLevel.I, "Background color is bright! Returning neutral text color {0}...", color.PlainSequence);
+                return color;
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Background color is bright! Returning gray...");
                 return new Color(ConsoleColors.Gray);
             }
         }
@@ -204,7 +215,8 @@ namespace KS.ConsoleBase.Colors
         /// Sets the console color
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
-        public static void SetConsoleColor(KernelColorType colorType) => SetConsoleColor(colorType, false);
+        public static void SetConsoleColor(KernelColorType colorType) => 
+            SetConsoleColor(colorType, false);
 
         /// <summary>
         /// Sets the console color
@@ -238,17 +250,20 @@ namespace KS.ConsoleBase.Colors
             {
                 if (Flags.SetBackground | ForceSet)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Setting console background color to {0}...", ColorSequence.PlainSequence);
                     TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
                     currentBackgroundColor = ColorSequence;
                 }
                 else if (!Flags.SetBackground)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Resetting console background color... Requested color was {0}.", ColorSequence.PlainSequence);
                     TextWriterColor.WritePlain(resetSequence, false);
                     currentBackgroundColor = Color.Empty;
                 }
             }
             else
             {
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting console foreground color to {0}...", ColorSequence.PlainSequence);
                 TextWriterColor.WritePlain(ColorSequence.VTSequenceForeground, false);
                 currentForegroundColor = ColorSequence;
             }
@@ -259,7 +274,8 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TrySetConsoleColor(KernelColorType colorType) => TrySetConsoleColor(colorType, false);
+        public static bool TrySetConsoleColor(KernelColorType colorType) =>
+            TrySetConsoleColor(colorType, false);
 
         /// <summary>
         /// Sets the console color
