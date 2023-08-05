@@ -10,7 +10,7 @@ Vcs-Git: https://github.com/Aptivi/NitrocidKS.git
 
 Package: kernel-simulator
 Architecture: amd64
-Depends: ${misc:Depends}, dotnet-runtime-6.0 (>= 6.0.100), dotnet-runtime-7.0 (>= 7.0.100)
+Depends: ${misc:Depends}, dotnet-runtime-6.0 (>= 6.0.100), dotnet-runtime-7.0 (>= 7.0.100), tzdata (>= 2018d-1)
 Description: Simulates our future-planned kernel, Nitrocid Kernel!
  Nitrocid KS (Kernel Simulator) simulates our future kernel, Nitrocid Kernel!
  It simulates the kernel, the shell, and all the common applications.
