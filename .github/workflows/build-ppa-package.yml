@@ -48,7 +48,7 @@ jobs:
 
       - name: Build package
         run: |
-          debuild -us -uc --no-lintian
+          debuild --no-lintian -us -uc
           cp ../*.deb .
         
       - name: Upload package to artifacts
