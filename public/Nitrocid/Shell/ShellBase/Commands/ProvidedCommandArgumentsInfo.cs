@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using KS.Drivers;
@@ -32,8 +33,8 @@ namespace KS.Shell.ShellBase.Commands
     public class ProvidedCommandArgumentsInfo
     {
 
-        internal string[] unknownSwitchesList;
-        internal string[] conflictingSwitchesList;
+        internal string[] unknownSwitchesList = Array.Empty<string>();
+        internal string[] conflictingSwitchesList = Array.Empty<string>();
 
         /// <summary>
         /// Target command that the user executed in shell
