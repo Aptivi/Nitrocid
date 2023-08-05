@@ -44,7 +44,7 @@ namespace KS.ConsoleBase
             get => DriverHandler.CurrentConsoleDriverLocal.CursorLeft;
             set
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Setting cursor left position from {0} to {1}...", CursorLeft, value);
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting cursor left position to {0}...", value);
                 DriverHandler.CurrentConsoleDriverLocal.CursorLeft = value;
             }
         }
@@ -57,7 +57,7 @@ namespace KS.ConsoleBase
             get => DriverHandler.CurrentConsoleDriverLocal.CursorTop;
             set
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Setting cursor top position from {0} to {1}...", CursorTop, value);
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting cursor top position to {0}...", value);
                 DriverHandler.CurrentConsoleDriverLocal.CursorTop = value;
             }
         }
@@ -155,7 +155,7 @@ namespace KS.ConsoleBase
         /// <param name="top">The top to be set (from 0)</param>
         public static void SetCursorPosition(int left, int top)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Setting cursor position from {0}x{1} to {2}x{3}...", CursorLeft, CursorTop, left, top);
+            DebugWriter.WriteDebug(DebugLevel.I, "Setting cursor position to {0}x{1}...", left, top);
             DriverHandler.CurrentConsoleDriverLocal.SetCursorPosition(left, top);
         }
 
