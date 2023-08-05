@@ -22,6 +22,7 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 using KS.Drivers;
+using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Network.Base.Transfer;
@@ -64,7 +65,7 @@ namespace KS.Network.Base
         /// Checks to see if the network is available
         /// </summary>
         public static bool NetworkAvailable => 
-            NetworkInterface.GetIsNetworkAvailable();
+            Checking.FileExists("/system/build.prop") ? true : NetworkInterface.GetIsNetworkAvailable();
 
         /// <summary>
         /// Checks to see if the Internet connection is available
