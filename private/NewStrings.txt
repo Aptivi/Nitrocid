@@ -828,5 +828,6 @@ Byte number must start with 1.
 Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files.
 There is no event.
 There is no reminder.
+The time zone information package is not installed yet on your Linux system. Install 'tzdata' using your distribution's package manager.
 
 ==========================================================================================================================================

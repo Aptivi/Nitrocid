@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.Querying;
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Time.Timezones;
 using KS.Languages;
@@ -131,8 +133,12 @@ namespace KS.Kernel.Time.Renderers
         /// Shows the local time zone UTC offset
         /// </summary>
         /// <returns>A <see cref="TimeSpan"/> instance holding the UTC offset for the local time zone</returns>
-        public static TimeSpan ShowTimeZoneUtcOffsetLocal() =>
-            TimeZoneInfo.Local.GetUtcOffset(TimeDateTools.KernelDateTime);
+        public static TimeSpan ShowTimeZoneUtcOffsetLocal()
+        {
+            // Return the UTC offset
+            TimeZones.CheckZoneInfoDirectory();
+            return TimeZoneInfo.Local.GetUtcOffset(TimeDateTools.KernelDateTime);
+        }
 
         /// <summary>
         /// Shows the time zone UTC offset in a string from the local time zone

@@ -21,6 +21,9 @@ using System.Collections.Generic;
 using System.Linq;
 using static System.TimeZoneInfo;
 using KS.Kernel.Debugging;
+using KS.Files.Querying;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 
 namespace KS.Kernel.Time.Timezones
 {
@@ -46,8 +49,10 @@ namespace KS.Kernel.Time.Timezones
             // Adds date and time to every single time zone to the list
             foreach (var Zone in Zones)
                 ZoneTimes.Add(Zone.Id, ConvertTime(TimeDateTools.KernelDateTime, FindSystemTimeZoneById(Zone.Id)));
+            DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", ZoneTimes.Count);
 
             // Return the populated array
+            CheckZoneInfoDirectory();
             return ZoneTimes;
         }
 
@@ -61,6 +66,16 @@ namespace KS.Kernel.Time.Timezones
             var ZoneTimes = GetTimeZones();
             bool ZoneFound = ZoneTimes.ContainsKey(zone);
             return ZoneFound;
+        }
+
+        internal static void CheckZoneInfoDirectory()
+        {
+            // Check to see if tzdata is installed (only on Unix)
+            if (KernelPlatform.IsOnUnix() && !Checking.FolderExists("/usr/share/zoneinfo"))
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "System is on Unix but /usr/share/zoneinfo is not installed!");
+                throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("The time zone information package is not installed yet on your Linux system. Install 'tzdata' using your distribution's package manager."));
+            }
         }
     }
 }
