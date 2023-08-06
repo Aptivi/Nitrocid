@@ -123,13 +123,13 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         {
                             foreach (var Value in (IEnumerable)List[ListEntry])
                                 Values.Add(Value);
-                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, ListEntry);
-                            TextWriterColor.Write("{0}", true, ListValueColor, string.Join(", ", Values));
+                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, KernelColorTools.GetColor(KernelColorType.Background), ListEntry);
+                            TextWriterColor.Write("{0}", true, ListValueColor, KernelColorTools.GetColor(KernelColorType.Background), string.Join(", ", Values));
                         }
                         else
                         {
-                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, ListEntry);
-                            TextWriterColor.Write("{0}", true, ListValueColor, List[ListEntry]);
+                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, KernelColorTools.GetColor(KernelColorType.Background), ListEntry);
+                            TextWriterColor.Write("{0}", true, ListValueColor, KernelColorTools.GetColor(KernelColorType.Background), List[ListEntry]);
                         }
                         if (Wrap)
                         {
@@ -248,13 +248,13 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         {
                             foreach (var Value in (IEnumerable)ListEntry)
                                 Values.Add(Value);
-                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, EntryNumber);
-                            TextWriterColor.Write("{0}", true, ListValueColor, string.Join(", ", Values));
+                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, KernelColorTools.GetColor(KernelColorType.Background), EntryNumber);
+                            TextWriterColor.Write("{0}", true, ListValueColor, KernelColorTools.GetColor(KernelColorType.Background), string.Join(", ", Values));
                         }
                         else
                         {
-                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, EntryNumber);
-                            TextWriterColor.Write("{0}", true, ListValueColor, ListEntry);
+                            TextWriterColor.Write("- {0}: ", false, ListKeyColor, KernelColorTools.GetColor(KernelColorType.Background), EntryNumber);
+                            TextWriterColor.Write("{0}", true, ListValueColor, KernelColorTools.GetColor(KernelColorType.Background), ListEntry);
                         }
                         EntryNumber += 1;
                         if (Wrap)
