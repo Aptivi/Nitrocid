@@ -23,7 +23,6 @@ using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using System;
-using System.Diagnostics;
 
 namespace KS.Arguments.ArgumentBase
 {

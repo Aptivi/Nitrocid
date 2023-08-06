@@ -24,12 +24,12 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using KS.Kernel;
-using ColorSeq;
 using con = System.Console;
-using VT.NET.Tools;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Colors;
+using Terminaux.Sequences.Tools;
 
 namespace KS.Drivers.Console.Consoles
 {

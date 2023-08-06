@@ -19,7 +19,6 @@
 using KS.Drivers;
 using KS.Drivers.Console;
 using KS.Kernel.Debugging;
-using KS.Kernel.Debugging.Trace;
 using KS.Kernel.Exceptions;
 using KSTests.Drivers.DriverData;
 using NUnit.Framework;

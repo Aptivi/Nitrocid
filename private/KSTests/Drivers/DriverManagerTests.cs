@@ -26,7 +26,6 @@ using KS.Drivers.RNG;
 using NUnit.Framework;
 using Shouldly;
 using System.Collections.Generic;
-using System;
 using KSTests.Drivers.DriverData;
 
 namespace KSTests.Drivers

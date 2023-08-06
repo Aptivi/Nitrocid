@@ -22,7 +22,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using VT.NET.Tools;
+using Terminaux.Sequences.Tools;
 
 namespace KS.Misc.Text
 {

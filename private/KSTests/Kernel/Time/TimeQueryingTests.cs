@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers.RNG;
-using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Kernel.Time.Timezones;
 using NUnit.Framework;

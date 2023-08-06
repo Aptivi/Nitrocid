@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Shell.ShellBase.Aliases;
-using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
 using Shouldly;

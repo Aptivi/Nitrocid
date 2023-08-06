@@ -18,11 +18,11 @@
 
 using System;
 using System.Threading;
-using ColorSeq;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase;
-using VT.NET.Tools;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Colors;
+using Terminaux.Sequences.Tools;
 
 namespace KS.Misc.Splash.Splashes
 {

@@ -18,7 +18,6 @@
 
 using KS.Shell.ShellBase.Shells;
 using System;
-using System.Diagnostics;
 
 namespace KSTests.Shell.ShellBase.Shells
 {

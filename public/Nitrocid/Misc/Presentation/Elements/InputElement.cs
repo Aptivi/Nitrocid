@@ -23,7 +23,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Text;
 using System;
 using System.Linq;
-using TermRead.Reader;
+using Terminaux.Reader;
 
 namespace KS.Misc.Presentation.Elements
 {
@@ -69,11 +69,15 @@ namespace KS.Misc.Presentation.Elements
                 TextWriterWhereColor.WriteWhere(split + (i == splitText.Length - 1 ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             }
 
+            // Populate relevant settings
+            var settings = new TermReaderSettings()
+            {
+                RightMargin = PresentationTools.PresentationUpperInnerBorderLeft
+            };
+
             // Get the input
             ConsoleWrapper.CursorVisible = true;
-            TermReaderSettings.RightMargin = PresentationTools.PresentationUpperInnerBorderLeft;
-            WrittenInput = Input.ReadLineWrapped();
-            TermReaderSettings.RightMargin = 0;
+            WrittenInput = Input.ReadLineWrapped("", "", settings);
             ConsoleWrapper.CursorVisible = false;
         }
 

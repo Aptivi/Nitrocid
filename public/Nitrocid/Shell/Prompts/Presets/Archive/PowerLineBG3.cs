@@ -19,11 +19,11 @@
 using System;
 using System.IO;
 using System.Text;
-using ColorSeq;
 using KS.Shell.Shells.Archive;
 using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Colors;
 
 namespace KS.Shell.Prompts.Presets.Archive
 {

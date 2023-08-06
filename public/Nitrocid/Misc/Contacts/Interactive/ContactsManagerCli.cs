@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using System;
@@ -30,6 +29,7 @@ using KS.Misc.Interactive;
 using System.Collections;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Colors;
 
 namespace KS.Misc.Contacts.Interactive
 {

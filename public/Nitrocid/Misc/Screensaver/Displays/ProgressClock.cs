@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -28,6 +27,7 @@ using KS.Kernel.Threading;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Probers.Placeholder;
+using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver.Displays
 {

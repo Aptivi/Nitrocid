@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using ColorSeq;
 using KS.Drivers.RNG;
 using KS.Languages;
 using KS.ConsoleBase.Inputs;
@@ -27,7 +26,7 @@ using KS.Kernel.Configuration;
 using KS.ConsoleBase;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using System.Diagnostics.Metrics;
+using Terminaux.Colors;
 
 namespace KS.Misc.Games
 {
@@ -255,7 +254,7 @@ namespace KS.Misc.Games
             catch (Exception ex)
             {
                 // Game is over with an unexpected error.
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, ex.Message);
+                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
                 ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
                 ConsoleWrapper.Clear();
             }

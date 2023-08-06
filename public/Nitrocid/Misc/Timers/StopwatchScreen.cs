@@ -21,13 +21,13 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Text;
 using System.Threading;
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.Languages;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Colors;
 
 namespace KS.Misc.Timers
 {

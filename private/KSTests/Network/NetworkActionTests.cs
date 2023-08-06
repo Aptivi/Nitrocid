@@ -23,7 +23,6 @@ using KSTests.Network.Connections;
 using NUnit.Framework;
 using Shouldly;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace KSTests.Network
 {

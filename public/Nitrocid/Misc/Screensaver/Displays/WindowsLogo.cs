@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
+using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver.Displays
 {

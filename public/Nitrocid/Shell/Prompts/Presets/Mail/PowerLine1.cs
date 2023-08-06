@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Text;
-using ColorSeq;
 using KS.Network.Mail;
 using KS.Shell.Shells.Mail;
 using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Colors;
 
 namespace KS.Shell.Prompts.Presets.Mail
 {

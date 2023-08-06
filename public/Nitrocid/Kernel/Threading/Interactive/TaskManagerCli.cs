@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
 using KS.Languages;
 using System;
 using System.Collections.Generic;
@@ -24,6 +23,7 @@ using System.Diagnostics;
 using KS.Misc.Interactive;
 using System.Collections;
 using KS.Misc.Text;
+using Terminaux.Colors;
 
 namespace KS.Kernel.Threading.Interactive
 {

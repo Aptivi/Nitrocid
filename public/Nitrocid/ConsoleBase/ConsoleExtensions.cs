@@ -20,7 +20,7 @@ using System;
 using System.Runtime.InteropServices;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Text;
-using VT.NET.Tools;
+using Terminaux.Sequences.Tools;
 
 namespace KS.ConsoleBase
 {

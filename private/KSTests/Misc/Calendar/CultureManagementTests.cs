@@ -17,10 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Misc.Calendar;
-using KS.Misc.Calendar.Events;
 using NUnit.Framework;
 using Shouldly;
-using System;
 
 namespace KSTests.Misc.Calendar
 {

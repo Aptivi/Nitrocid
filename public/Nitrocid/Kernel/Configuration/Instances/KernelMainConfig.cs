@@ -16,8 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
-using ColorSeq.Accessibility;
 using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -45,7 +43,6 @@ using ManagedWeatherMap.Core;
 using MimeKit.Text;
 using Newtonsoft.Json;
 using System;
-using TermRead.Reader;
 using KS.Drivers;
 using KS.Drivers.Console;
 using KS.Drivers.RNG;
@@ -57,6 +54,9 @@ using static KS.Misc.Games.SpeedPress;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Colors;
+using Terminaux.Colors.Accessibility;
+using Terminaux.Reader;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -154,24 +154,24 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool ColorBlind
         {
-            get => ColorSeq.ColorTools.EnableColorTransformation;
-            set => ColorSeq.ColorTools.EnableColorTransformation = value;
+            get => ColorTools.EnableColorTransformation;
+            set => ColorTools.EnableColorTransformation = value;
         }
         /// <summary>
         /// The type of color blindness, whether it's protan, deuter, or tritan.
         /// </summary>
         public int BlindnessDeficiency
         {
-            get => (int)ColorSeq.ColorTools.ColorDeficiency;
-            set => ColorSeq.ColorTools.ColorDeficiency = (Deficiency)value;
+            get => (int)ColorTools.ColorDeficiency;
+            set => ColorTools.ColorDeficiency = (Deficiency)value;
         }
         /// <summary>
         /// How severe is the color blindness?
         /// </summary>
         public double BlindnessSeverity
         {
-            get => ColorSeq.ColorTools.ColorDeficiencySeverity;
-            set => ColorSeq.ColorTools.ColorDeficiencySeverity = value;
+            get => ColorTools.ColorDeficiencySeverity;
+            set => ColorTools.ColorDeficiencySeverity = value;
         }
         /// <summary>
         /// Enables beeping upon shutting down the kernel.
@@ -186,8 +186,8 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool ColorBlindSimple
         {
-            get => ColorSeq.ColorTools.EnableSimpleColorTransformation;
-            set => ColorSeq.ColorTools.EnableSimpleColorTransformation = value;
+            get => ColorTools.EnableSimpleColorTransformation;
+            set => ColorTools.EnableSimpleColorTransformation = value;
         }
         /// <summary>
         /// If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
@@ -1407,11 +1407,11 @@ namespace KS.Kernel.Configuration.Instances
         {
             get
             {
-                return TermReaderSettings.HistoryEnabled;
+                return Input.globalSettings.HistoryEnabled;
             }
             set
             {
-                TermReaderSettings.HistoryEnabled = value;
+                Input.globalSettings.HistoryEnabled = value;
             }
         }
         /// <summary>

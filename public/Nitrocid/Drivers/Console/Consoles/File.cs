@@ -25,9 +25,9 @@ using System.Linq;
 using System.Threading;
 using System.Text;
 using KS.Kernel.Exceptions;
-using VT.NET.Tools;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Sequences.Tools;
 
 namespace KS.Drivers.Console.Consoles
 {

@@ -20,11 +20,11 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Themes.Studio
 {

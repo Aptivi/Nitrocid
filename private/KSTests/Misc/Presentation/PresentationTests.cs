@@ -18,15 +18,9 @@
 
 using KS.Misc.Presentation;
 using KS.Misc.Presentation.Elements;
-using KSTests.Misc.Interactive.Interactives;
 using NUnit.Framework;
 using Shouldly;
-using System;
-using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KSTests.Misc.Presentation
 {

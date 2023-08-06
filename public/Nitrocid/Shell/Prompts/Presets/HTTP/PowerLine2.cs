@@ -18,11 +18,11 @@
 
 using System;
 using System.Text;
-using ColorSeq;
 using KS.Shell.Shells.HTTP;
 using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Colors;
 
 namespace KS.Shell.Prompts.Presets.HTTP
 {

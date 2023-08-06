@@ -35,7 +35,6 @@ using KS.Misc.Text;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using MailKit.Search;
 
 namespace KS.Languages
 {

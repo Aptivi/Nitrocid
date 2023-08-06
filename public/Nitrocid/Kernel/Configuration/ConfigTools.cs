@@ -29,7 +29,7 @@ using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using static KS.Kernel.Configuration.Config;
 using KS.ConsoleBase.Colors;
-using ColorSeq;
+using Terminaux.Colors;
 
 namespace KS.Kernel.Configuration
 {

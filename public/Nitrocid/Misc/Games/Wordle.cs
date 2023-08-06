@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Inputs;
 using System.Collections.Generic;
@@ -26,6 +25,7 @@ using System.Threading;
 using Wordament;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Colors;
 
 namespace KS.Misc.Games
 {

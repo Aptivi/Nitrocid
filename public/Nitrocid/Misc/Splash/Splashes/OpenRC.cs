@@ -18,12 +18,12 @@
 
 using System;
 using System.Threading;
-using ColorSeq;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Colors;
 
 namespace KS.Misc.Splash.Splashes
 {

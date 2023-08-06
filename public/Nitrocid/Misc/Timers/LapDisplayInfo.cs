@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using ColorSeq;
+using Terminaux.Colors;
 
 namespace KS.Misc.Timers
 {

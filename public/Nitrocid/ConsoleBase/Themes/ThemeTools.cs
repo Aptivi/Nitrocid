@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Kernel;
@@ -32,6 +31,7 @@ using KS.Misc.Text;
 using KS.Kernel.Events;
 using static KS.ConsoleBase.Colors.KernelColorTools;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Themes
 {

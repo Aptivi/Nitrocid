@@ -16,11 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
 using KS.Languages;
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Terminaux.Colors;
 
 namespace KS.Misc.Interactive
 {

@@ -23,10 +23,10 @@ using KS.Languages;
 using KS.Misc.Text;
 using System;
 using System.Linq;
-using TermRead.Reader;
 using System.Collections.Generic;
 using System.Collections;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Reader;
 
 namespace KS.Misc.Presentation.Elements
 {
@@ -108,6 +108,12 @@ namespace KS.Misc.Presentation.Elements
                 choiceNum++;
             }
 
+            // Populate relevant settings
+            var settings = new TermReaderSettings()
+            {
+                RightMargin = PresentationTools.PresentationUpperInnerBorderLeft
+            };
+
             // Get the input
             TextWriterWhereColor.WriteWhere("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             while (!finalChoices.Contains(WrittenInput))
@@ -115,9 +121,7 @@ namespace KS.Misc.Presentation.Elements
                 ConsoleWrapper.CursorLeft = PresentationTools.PresentationUpperInnerBorderLeft;
                 TextWriterColor.Write(Translate.DoTranslation("Select your choice: "), false, KernelColorType.Input);
                 ConsoleWrapper.CursorVisible = true;
-                TermReaderSettings.RightMargin = PresentationTools.PresentationUpperInnerBorderLeft;
-                WrittenInput = Input.ReadLineWrapped();
-                TermReaderSettings.RightMargin = 0;
+                WrittenInput = Input.ReadLineWrapped("", "", settings);
                 ConsoleWrapper.CursorVisible = false;
             }
         }

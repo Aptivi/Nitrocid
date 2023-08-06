@@ -21,6 +21,7 @@ using KS.Kernel.Debugging;
 using System;
 using System.IO;
 using System.Text;
+using Terminaux.Reader;
 
 namespace KS.ConsoleBase
 {
@@ -211,11 +212,39 @@ namespace KS.ConsoleBase
             DriverHandler.CurrentConsoleDriverLocal.Write(value);
 
         /// <summary>
+        /// Writes a character to console
+        /// </summary>
+        /// <param name="value">A character</param>
+        /// <param name="settings">Reader settings</param>
+        internal static void Write(char value, TermReaderSettings settings)
+        {
+            Write(value);
+            if (CursorLeft >= WindowWidth - settings.RightMargin)
+            {
+                if (CursorTop != BufferHeight)
+                    SetCursorPosition(settings.LeftMargin, CursorTop + 1);
+                else
+                    WriteLine();
+            }
+        }
+
+        /// <summary>
         /// Writes text to console
         /// </summary>
         /// <param name="text">The text to write</param>
         public static void Write(string text) =>
             DriverHandler.CurrentConsoleDriverLocal.Write(text);
+
+        /// <summary>
+        /// Writes a character to console
+        /// </summary>
+        /// <param name="text">The text to write</param>
+        /// <param name="settings">Reader settings</param>
+        internal static void Write(string text, TermReaderSettings settings)
+        {
+            for (int i = 0; i < text.Length; i++)
+                Write(text[i], settings);
+        }
 
         /// <summary>
         /// Writes text to console
@@ -224,6 +253,19 @@ namespace KS.ConsoleBase
         /// <param name="args">The arguments to evaluate</param>
         public static void Write(string text, params object[] args) =>
             DriverHandler.CurrentConsoleDriverLocal.Write(text, args);
+
+        /// <summary>
+        /// Writes a character to console
+        /// </summary>
+        /// <param name="text">The text to write</param>
+        /// <param name="settings">Reader settings</param>
+        /// <param name="args">The arguments to evaluate</param>
+        internal static void Write(string text, TermReaderSettings settings, params object[] args)
+        {
+            string finalText = string.Format(text, args);
+            for (int i = 0; i < finalText.Length; i++)
+                Write(finalText[i], settings);
+        }
 
         /// <summary>
         /// Writes new line to console
@@ -242,8 +284,31 @@ namespace KS.ConsoleBase
         /// Writes text to console with line terminator
         /// </summary>
         /// <param name="text">The text to write</param>
+        /// <param name="settings">Reader settings</param>
+        public static void WriteLine(string text, TermReaderSettings settings)
+        {
+            Write(text, settings);
+            WriteLine();
+        }
+
+        /// <summary>
+        /// Writes text to console with line terminator
+        /// </summary>
+        /// <param name="text">The text to write</param>
         /// <param name="args">The arguments to evaluate</param>
         public static void WriteLine(string text, params object[] args) =>
             DriverHandler.CurrentConsoleDriverLocal.WriteLine(text, args);
+
+        /// <summary>
+        /// Writes text to console with line terminator
+        /// </summary>
+        /// <param name="text">The text to write</param>
+        /// <param name="settings">Reader settings</param>
+        /// <param name="args">The arguments to evaluate</param>
+        public static void WriteLine(string text, TermReaderSettings settings, params object[] args)
+        {
+            Write(text, settings, args);
+            WriteLine();
+        }
     }
 }

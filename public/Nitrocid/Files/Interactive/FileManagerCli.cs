@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
 using FluentFTP.Helpers;
 using KS.Files.Folders;
 using KS.Files.Operations;
@@ -34,6 +33,7 @@ using System.Collections;
 using KS.Misc.Text;
 using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.FancyWriters;
+using Terminaux.Colors;
 
 namespace KS.Files.Interactive
 {

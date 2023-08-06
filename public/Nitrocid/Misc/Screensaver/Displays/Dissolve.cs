@@ -20,13 +20,13 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver.Displays
 {

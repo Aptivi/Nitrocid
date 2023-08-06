@@ -53,7 +53,6 @@ using File = KS.Drivers.Console.Consoles.File;
 using KS.Users.Permissions;
 using KS.Drivers.Console;
 using Manipulation = KS.Files.Operations.Manipulation;
-using TermRead.Reader;
 using KS.Misc.Probers.Regexp;
 using System.Text.RegularExpressions;
 using System.Linq;
@@ -68,7 +67,7 @@ using KS.Shell.ShellBase.Commands.Execution;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Scripting;
-using System.Reflection;
+using Terminaux.Reader;
 
 namespace KS.Shell
 {
@@ -203,8 +202,12 @@ namespace KS.Shell
             string TargetFileName = "";
 
             // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
-            TermReaderSettings.Suggestions = CommandAutoComplete.GetSuggestions;
-            TermReaderSettings.SuggestionsDelimiters = new[] { ' ' };
+            var settings = new TermReaderSettings()
+            {
+                Suggestions = CommandAutoComplete.GetSuggestions,
+                SuggestionsDelimiters = new[] { ' ' },
+                TreatCtrlCAsInput = true,
+            };
 
             // Check to see if the full command string ends with the semicolon
             while (FullCommand.EndsWith(";") || string.IsNullOrEmpty(FullCommand))
@@ -232,10 +235,8 @@ namespace KS.Shell
 
                 // Wait for command
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
-                TermReaderSettings.TreatCtrlCAsInput = true;
-                string strcommand = Input.ReadLine();
+                string strcommand = Input.ReadLine("", "", settings);
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
-                TermReaderSettings.TreatCtrlCAsInput = false;
 
                 // Add command to command builder and return the final result. The reason to add the extra space before the second command written is that
                 // because if we need to provide a second command to the shell in a separate line, we usually add the semicolon at the end of the primary

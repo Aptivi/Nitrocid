@@ -38,7 +38,6 @@ using KS.Kernel.Exceptions;
 using KS.Modifications.ManPages;
 using KS.Shell;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace KS.Modifications
 {

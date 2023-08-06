@@ -29,7 +29,6 @@ using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Misc.Text;
-using Newtonsoft.Json.Schema;
 using System;
 using System.Diagnostics;
 using System.IO;

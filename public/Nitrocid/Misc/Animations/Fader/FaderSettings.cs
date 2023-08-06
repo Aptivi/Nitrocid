@@ -1,5 +1,4 @@
-﻿
-// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+﻿// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
 // 
 // This file is part of Nitrocid KS
 // 
@@ -16,7 +15,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
+using Terminaux.Colors;
 
 namespace KS.Misc.Animations.Fader
 {

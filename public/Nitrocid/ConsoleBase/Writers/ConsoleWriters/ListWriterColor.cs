@@ -20,12 +20,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
-using ColorSeq;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
 {

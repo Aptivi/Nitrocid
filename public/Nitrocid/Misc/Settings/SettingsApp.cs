@@ -22,8 +22,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
-using ColorPrint.Core.Wheel;
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
@@ -44,6 +42,8 @@ using KS.Misc.Text;
 using KS.Shell.Prompts;
 using KS.Users.Permissions;
 using Newtonsoft.Json.Linq;
+using Terminaux.Colors;
+using Terminaux.Colors.Wheel;
 
 namespace KS.Misc.Settings
 {

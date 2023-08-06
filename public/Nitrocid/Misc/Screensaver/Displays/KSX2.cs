@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
@@ -29,6 +28,7 @@ using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Animations.Glitch;
+using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver.Displays
 {

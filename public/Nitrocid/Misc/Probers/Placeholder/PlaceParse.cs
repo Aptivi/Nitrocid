@@ -18,7 +18,6 @@
 
 using System;
 using System.IO;
-using ColorSeq;
 using KS.Files.Folders;
 using KS.Kernel;
 using KS.Kernel.Debugging;
@@ -39,6 +38,7 @@ using KS.Kernel.Power;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Shell.ShellBase.Scripting;
+using Terminaux.Colors;
 
 namespace KS.Misc.Probers.Placeholder
 {

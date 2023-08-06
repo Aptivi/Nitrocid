@@ -18,7 +18,6 @@
 
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Debug;
 using System;
 using System.Collections.Generic;
 

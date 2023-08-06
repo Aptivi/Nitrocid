@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Debugging;
-using VT.NET.Tools;
+using Terminaux.Sequences.Tools;
 
 namespace KS.Drivers.Console.Consoles
 {

@@ -16,13 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Writers.FancyWriters.Tools
 {

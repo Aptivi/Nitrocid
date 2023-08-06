@@ -33,7 +33,6 @@ using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
-using SharpCompress.Archives;
 
 namespace KS.Misc.Calendar.Events
 {

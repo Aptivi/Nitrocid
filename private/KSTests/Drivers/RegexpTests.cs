@@ -18,7 +18,6 @@
 
 using NUnit.Framework;
 using Shouldly;
-using KS.Drivers.RNG;
 using KS.Misc.Probers.Regexp;
 using KS.Drivers;
 using System.Text.RegularExpressions;

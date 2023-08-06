@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -24,6 +23,7 @@ using KS.Kernel.Time.Renderers;
 using KS.Misc.Presentation.Elements;
 using System.Collections.Generic;
 using System.Linq;
+using Terminaux.Colors;
 
 namespace KS.Misc.Presentation
 {

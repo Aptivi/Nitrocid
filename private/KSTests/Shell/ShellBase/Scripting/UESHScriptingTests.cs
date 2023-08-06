@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files;
 using KS.Kernel.Exceptions;
 using KS.Shell.ShellBase.Scripting;
 using NUnit.Framework;

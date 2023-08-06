@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Threading;
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -28,6 +27,7 @@ using KS.Misc.Screensaver.Displays;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Threading;
+using Terminaux.Colors;
 
 namespace KS.Misc.Games
 {

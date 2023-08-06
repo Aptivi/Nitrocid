@@ -22,7 +22,6 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using SharpCompress.Common;
 using System;
 using System.Linq;
 

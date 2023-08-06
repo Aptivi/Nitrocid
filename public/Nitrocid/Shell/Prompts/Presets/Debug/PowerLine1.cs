@@ -17,11 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Text;
-using ColorSeq;
 using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
 using KS.Languages;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Colors;
 
 namespace KS.Shell.Prompts.Presets.Debug
 {

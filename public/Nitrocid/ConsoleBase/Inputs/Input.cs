@@ -24,9 +24,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
-using Org.BouncyCastle.Utilities.Encoders;
-using TermRead.Reader;
-using TermRead.Tools;
+using Terminaux.Reader;
+using Terminaux.Tools;
 
 namespace KS.ConsoleBase.Inputs
 {
@@ -35,6 +34,7 @@ namespace KS.ConsoleBase.Inputs
     /// </summary>
     public static class Input
     {
+        internal static TermReaderSettings globalSettings = new();
         internal static string currentMask = "*";
         private static bool isWrapperInitialized;
 
@@ -48,23 +48,33 @@ namespace KS.ConsoleBase.Inputs
         /// Reads the line from the console
         /// </summary>
         public static string ReadLine() =>
-            ReadLine("", "");
+            ReadLine("", "", globalSettings);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         public static string ReadLine(string InputText) =>
-            ReadLine(InputText, "");
+            ReadLine(InputText, "", globalSettings);
 
         /// <summary>
         /// Reads the line from the console
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        public static string ReadLine(string InputText, string DefaultValue)
+        public static string ReadLine(string InputText, string DefaultValue) =>
+            ReadLine(InputText, DefaultValue, globalSettings);
+
+        /// <summary>
+        /// Reads the line from the console
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
+        /// <param name="DefaultValue">Default value</param>
+        /// <param name="settings">Reader settings</param>
+        /// TODO: Make public on Beta 3
+        internal static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings)
         {
-            string Output = ReadLineUnsafe(InputText, DefaultValue);
+            string Output = ReadLineUnsafe(InputText, DefaultValue, false, settings);
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
@@ -76,23 +86,33 @@ namespace KS.ConsoleBase.Inputs
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         public static string ReadLineWrapped() =>
-            ReadLineWrapped("", "");
+            ReadLineWrapped("", "", globalSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         public static string ReadLineWrapped(string InputText) =>
-            ReadLineWrapped(InputText, "");
+            ReadLineWrapped(InputText, "", globalSettings);
 
         /// <summary>
         /// Reads the line from the console (wrapped to one line)
         /// </summary>
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
-        public static string ReadLineWrapped(string InputText, string DefaultValue)
+        public static string ReadLineWrapped(string InputText, string DefaultValue) =>
+            ReadLineWrapped(InputText, DefaultValue, globalSettings);
+
+        /// <summary>
+        /// Reads the line from the console (wrapped to one line)
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
+        /// <param name="DefaultValue">Default value</param>
+        /// <param name="settings">Reader settings</param>
+        /// TODO: Make public on Beta 3
+        internal static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings)
         {
-            string Output = ReadLineUnsafe(InputText, DefaultValue, true);
+            string Output = ReadLineUnsafe(InputText, DefaultValue, true, settings);
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
@@ -106,9 +126,21 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
-        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false)
+        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false) =>
+            ReadLineUnsafe(InputText, DefaultValue, OneLineWrap, globalSettings);
+
+        /// <summary>
+        /// Reads the line from the console unsafely. This doesn't wait until the screensaver lock mode is released.
+        /// </summary>
+        /// <param name="InputText">Input text to write</param>
+        /// <param name="DefaultValue">Default value</param>
+        /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
+        /// <param name="settings">Reader settings</param>
+        /// TODO: Make public on Beta 3
+        internal static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null)
         {
-            string Output = TermReader.Read(InputText, DefaultValue, false, OneLineWrap);
+            TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
+            string Output = TermReader.Read(InputText, DefaultValue, finalSettings, false, OneLineWrap);
             DebugWriter.WriteDebug(DebugLevel.I, "Bailing from screensaver...");
             ScreensaverDisplayer.BailFromScreensaver();
             return Output;
@@ -128,10 +160,38 @@ namespace KS.ConsoleBase.Inputs
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user.
         /// </summary>
+        internal static string ReadLineNoInput(TermReaderSettings settings)
+        {
+            if (!string.IsNullOrEmpty(CurrentMask))
+                return ReadLineNoInput(CurrentMask[0], settings);
+            else
+                return ReadLineNoInput('\0', settings);
+        }
+
+        /// <summary>
+        /// Reads the next line of characters from the standard input stream without showing input being written by user.
+        /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         public static string ReadLineNoInput(char MaskChar)
         {
             string pass = ReadLineNoInputUnsafe(MaskChar);
+
+            // If in lock mode, wait until release
+            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
+            SpinWait.SpinUntil(() => !Screensaver.LockMode);
+            return pass;
+        }
+
+        /// <summary>
+        /// Reads the next line of characters from the standard input stream without showing input being written by user.
+        /// </summary>
+        /// <param name="MaskChar">Specifies the password mask character</param>
+        /// <param name="settings">Reader settings</param>
+        /// TODO: Make public on Beta 3
+        internal static string ReadLineNoInput(char MaskChar, TermReaderSettings settings)
+        {
+            TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
+            string pass = ReadLineNoInputUnsafe(MaskChar, finalSettings);
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
@@ -147,17 +207,40 @@ namespace KS.ConsoleBase.Inputs
             if (!string.IsNullOrEmpty(CurrentMask))
                 return ReadLineNoInputUnsafe(CurrentMask[0]);
             else
-                return ReadLineNoInputUnsafe(Convert.ToChar("\0"));
+                return ReadLineNoInputUnsafe('\0');
+        }
+
+        /// <summary>
+        /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
+        /// </summary>
+        /// <param name="settings">Reader settings</param>
+        /// TODO: Make public on Beta 3
+        internal static string ReadLineNoInputUnsafe(TermReaderSettings settings)
+        {
+            if (!string.IsNullOrEmpty(CurrentMask))
+                return ReadLineNoInputUnsafe(CurrentMask[0], settings);
+            else
+                return ReadLineNoInputUnsafe('\0', settings);
         }
 
         /// <summary>
         /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
-        public static string ReadLineNoInputUnsafe(char MaskChar)
+        public static string ReadLineNoInputUnsafe(char MaskChar) =>
+            ReadLineNoInputUnsafe(MaskChar, globalSettings);
+
+        /// <summary>
+        /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
+        /// </summary>
+        /// <param name="MaskChar">Specifies the password mask character</param>
+        /// <param name="settings">Reader settings</param>
+        /// TODO: Make public on Beta 3
+        internal static string ReadLineNoInputUnsafe(char MaskChar, TermReaderSettings settings)
         {
-            TermReaderSettings.PasswordMaskChar = MaskChar;
-            string pass = TermReader.ReadPassword();
+            TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
+            finalSettings.PasswordMaskChar = MaskChar;
+            string pass = TermReader.ReadPassword(settings);
             DebugWriter.WriteDebug(DebugLevel.I, "Bailing from screensaver...");
             ScreensaverDisplayer.BailFromScreensaver();
             return pass;
@@ -214,23 +297,23 @@ namespace KS.ConsoleBase.Inputs
                 return;
 
             // Initialize console wrappers for TermRead
-            ConsoleWrapperTools.ActionBeep = ConsoleWrapper.Beep;
-            ConsoleWrapperTools.ActionBufferHeight = () => ConsoleWrapper.BufferHeight;
-            ConsoleWrapperTools.ActionCursorLeft = () => ConsoleWrapper.CursorLeft;
-            ConsoleWrapperTools.ActionCursorTop = () => ConsoleWrapper.CursorTop;
-            ConsoleWrapperTools.ActionCursorVisible = (value) => ConsoleWrapper.CursorVisible = value;
-            ConsoleWrapperTools.ActionIsDumb = () => DriverHandler.CurrentConsoleDriverLocal.IsDumb;
-            ConsoleWrapperTools.ActionKeyAvailable = () => ConsoleWrapper.KeyAvailable;
-            ConsoleWrapperTools.ActionReadKey = ConsoleWrapper.ReadKey;
-            ConsoleWrapperTools.ActionSetCursorPosition = ConsoleWrapper.SetCursorPosition;
-            ConsoleWrapperTools.ActionWindowHeight = () => ConsoleWrapper.WindowHeight;
-            ConsoleWrapperTools.ActionWindowWidth = () => ConsoleWrapper.WindowWidth;
-            ConsoleWrapperTools.ActionWriteChar = ConsoleWrapper.Write;
-            ConsoleWrapperTools.ActionWriteLine = ConsoleWrapper.WriteLine;
-            ConsoleWrapperTools.ActionWriteLineParameterized = ConsoleWrapper.WriteLine;
-            ConsoleWrapperTools.ActionWriteLineString = ConsoleWrapper.WriteLine;
-            ConsoleWrapperTools.ActionWriteParameterized = ConsoleWrapper.Write;
-            ConsoleWrapperTools.ActionWriteString = ConsoleWrapper.Write;
+            ConsoleTools.ActionBeep = ConsoleWrapper.Beep;
+            ConsoleTools.ActionBufferHeight = () => ConsoleWrapper.BufferHeight;
+            ConsoleTools.ActionCursorLeft = () => ConsoleWrapper.CursorLeft;
+            ConsoleTools.ActionCursorTop = () => ConsoleWrapper.CursorTop;
+            ConsoleTools.ActionCursorVisible = (value) => ConsoleWrapper.CursorVisible = value;
+            ConsoleTools.ActionIsDumb = () => DriverHandler.CurrentConsoleDriverLocal.IsDumb;
+            ConsoleTools.ActionKeyAvailable = () => ConsoleWrapper.KeyAvailable;
+            ConsoleTools.ActionReadKey = ConsoleWrapper.ReadKey;
+            ConsoleTools.ActionSetCursorPosition = ConsoleWrapper.SetCursorPosition;
+            ConsoleTools.ActionWindowHeight = () => ConsoleWrapper.WindowHeight;
+            ConsoleTools.ActionWindowWidth = () => ConsoleWrapper.WindowWidth;
+            ConsoleTools.ActionWriteChar = ConsoleWrapper.Write;
+            ConsoleTools.ActionWriteLine = ConsoleWrapper.WriteLine;
+            ConsoleTools.ActionWriteLineParameterized = ConsoleWrapper.WriteLine;
+            ConsoleTools.ActionWriteLineString = ConsoleWrapper.WriteLine;
+            ConsoleTools.ActionWriteParameterized = ConsoleWrapper.Write;
+            ConsoleTools.ActionWriteString = ConsoleWrapper.Write;
             isWrapperInitialized = true;
         }
 

@@ -18,8 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using ColorSeq;
-using ColorSeq.Accessibility;
 using KS.ConsoleBase.Themes;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
@@ -28,8 +26,9 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Screensaver;
 using KS.Misc.Text;
+using Terminaux.Colors;
+using Terminaux.Colors.Accessibility;
 
 namespace KS.ConsoleBase.Colors
 {

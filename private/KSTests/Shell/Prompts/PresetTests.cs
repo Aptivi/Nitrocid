@@ -20,11 +20,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
 using Shouldly;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KSTests.Shell.Prompts
 {

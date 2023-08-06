@@ -18,7 +18,6 @@
 
 using System.IO;
 using KS.Drivers.Encryption;
-using KS.Files;
 using NUnit.Framework;
 using Shouldly;
 

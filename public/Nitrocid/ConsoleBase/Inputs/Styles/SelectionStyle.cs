@@ -26,7 +26,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Text;
-using VT.NET.Tools;
+using Terminaux.Sequences.Tools;
 
 namespace KS.ConsoleBase.Inputs.Styles
 {

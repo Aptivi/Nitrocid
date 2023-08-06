@@ -18,18 +18,18 @@
 
 using System;
 using System.Threading;
-using static KS.ConsoleBase.Colors.KernelColorTools;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using ColorSeq;
 using KS.ConsoleBase.Inputs;
 using System.Linq;
 using KS.Misc.Text;
 using System.Collections.Generic;
-using TermRead.Reader;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Colors;
+using Terminaux.Reader;
+using static KS.ConsoleBase.Colors.KernelColorTools;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -208,9 +208,11 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                TermReaderSettings.RightMargin = borderX;
-                string input = Input.ReadLineWrapped();
-                TermReaderSettings.RightMargin = 0;
+                var settings = new TermReaderSettings()
+                {
+                    RightMargin = borderX,
+                };
+                string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -841,9 +843,11 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                TermReaderSettings.RightMargin = borderX;
-                string input = Input.ReadLineWrapped();
-                TermReaderSettings.RightMargin = 0;
+                var settings = new TermReaderSettings()
+                {
+                    RightMargin = borderX,
+                };
+                string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -941,9 +945,11 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                TermReaderSettings.RightMargin = borderX;
-                string input = Input.ReadLineWrapped();
-                TermReaderSettings.RightMargin = 0;
+                var settings = new TermReaderSettings()
+                {
+                    RightMargin = borderX,
+                };
+                string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -1041,9 +1047,11 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                TermReaderSettings.RightMargin = borderX;
-                string input = Input.ReadLineWrapped();
-                TermReaderSettings.RightMargin = 0;
+                var settings = new TermReaderSettings()
+                {
+                    RightMargin = borderX,
+                };
+                string input = Input.ReadLineWrapped("", "", settings);
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))

@@ -30,7 +30,6 @@ using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Text;
 using KS.Shell.Shells.FTP;
 
 namespace KS.Network.FTP.Filesystem

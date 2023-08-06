@@ -16,15 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Scripting;
 using KS.Shell.ShellBase.Scripting.Conditions;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KSTests.Shell.ShellBase.Scripting.CustomConditions
 {

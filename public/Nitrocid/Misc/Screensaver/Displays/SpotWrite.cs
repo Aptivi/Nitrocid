@@ -18,7 +18,6 @@
 
 using System;
 using System.IO;
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
@@ -26,6 +25,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Text;
+using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver.Displays
 {

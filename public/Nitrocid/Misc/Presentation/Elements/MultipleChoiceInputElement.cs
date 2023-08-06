@@ -26,7 +26,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using TermRead.Reader;
+using Terminaux.Reader;
 
 namespace KS.Misc.Presentation.Elements
 {
@@ -108,6 +108,12 @@ namespace KS.Misc.Presentation.Elements
                 choiceNum++;
             }
 
+            // Populate relevant settings
+            var settings = new TermReaderSettings()
+            {
+                RightMargin = PresentationTools.PresentationUpperInnerBorderLeft
+            };
+
             // Get the input
             TextWriterWhereColor.WriteWhere("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             string[] selected = Array.Empty<string>();
@@ -116,10 +122,8 @@ namespace KS.Misc.Presentation.Elements
                 ConsoleWrapper.CursorLeft = PresentationTools.PresentationUpperInnerBorderLeft;
                 TextWriterColor.Write(Translate.DoTranslation("Select your choice separated by semicolons: "), false, KernelColorType.Input);
                 ConsoleWrapper.CursorVisible = true;
-                TermReaderSettings.RightMargin = PresentationTools.PresentationUpperInnerBorderLeft;
-                WrittenInput = Input.ReadLineWrapped();
+                WrittenInput = Input.ReadLineWrapped("", "", settings);
                 selected = WrittenInput.Split(';', StringSplitOptions.RemoveEmptyEntries);
-                TermReaderSettings.RightMargin = 0;
                 ConsoleWrapper.CursorVisible = false;
             }
 

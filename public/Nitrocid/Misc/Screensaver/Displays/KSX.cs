@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using ColorSeq;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
@@ -34,6 +33,7 @@ using KS.Languages;
 using KS.Misc.Animations.BSOD.Simulations;
 using KS.Misc.Animations.Glitch;
 using KS.Misc.Text;
+using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver.Displays
 {

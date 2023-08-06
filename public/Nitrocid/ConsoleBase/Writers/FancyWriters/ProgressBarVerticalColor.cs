@@ -18,12 +18,12 @@
 
 using System;
 using System.Threading;
-using ColorSeq;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {

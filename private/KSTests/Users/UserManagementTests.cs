@@ -21,7 +21,6 @@ using KS.Drivers.Encryption;
 using KS.Users;
 using NUnit.Framework;
 using Shouldly;
-using System.Collections.Generic;
 
 namespace KSTests.Users
 {

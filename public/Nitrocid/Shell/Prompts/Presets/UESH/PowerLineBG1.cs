@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Text;
-using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Files.Folders;
@@ -27,6 +26,7 @@ using KS.Kernel;
 using KS.Languages;
 using KS.Network.Base;
 using KS.Users;
+using Terminaux.Colors;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {

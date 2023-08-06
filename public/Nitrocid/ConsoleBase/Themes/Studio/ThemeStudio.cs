@@ -18,8 +18,6 @@
 
 using System;
 using System.Linq;
-using ColorPrint.Core.Wheel;
-using ColorSeq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -28,6 +26,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Languages;
 using KS.Misc.Text;
+using Terminaux.Colors;
+using Terminaux.Colors.Wheel;
 
 namespace KS.ConsoleBase.Themes.Studio
 {

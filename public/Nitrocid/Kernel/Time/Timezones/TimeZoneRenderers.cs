@@ -17,8 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Querying;
-using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Time.Timezones;
 using KS.Languages;
