@@ -297,7 +297,7 @@ namespace KS.Misc.Screensaver.Displays
                             {
                                 int idx = selectedKernel - 1;
                                 var ver = versions.ElementAt(i);
-                                TextWriterColor.Write("- {0}: {1}", true, i == idx ? green : darkGreen, ver.Key, ver.Value);
+                                TextWriterColor.Write("- {0}: {1}", true, i == idx ? green : darkGreen, vars: new object[] { ver.Key, ver.Value });
                             }
 
                             // Sleep

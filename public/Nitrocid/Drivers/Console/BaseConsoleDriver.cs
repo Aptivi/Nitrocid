@@ -599,7 +599,7 @@ namespace KS.Drivers.Console.Consoles
                         // Grab each VT sequence from the paragraph and fetch their indexes
                         var sequences = VtSequenceTools.MatchVTSequences(sentence);
                         int vtSeqIdx = 0;
-                        for (int i = 0; i < sentence.Length; i++)
+                        for (int i = 0; i < sentence.Length && !exiting; i++)
                         {
                             char TextChar = sentence[i];
 
