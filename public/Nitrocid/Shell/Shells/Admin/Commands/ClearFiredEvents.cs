@@ -19,12 +19,12 @@
 using KS.Kernel.Events;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace KS.Shell.Shells.Admin.Commands
 {
     /// <summary>
     /// Clears the list of fired events
     /// </summary>
-    class ClearFiredEventsCommand : BaseCommand, ICommand
+    class Admin_ClearFiredEventsCommand : BaseCommand, ICommand
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => EventsManager.ClearAllFiredEvents();

@@ -87,8 +87,6 @@ namespace KS.Shell.Shells.UESH
                 new CommandArgumentInfo(new[] { "Username", "UserPass", "newPass", "confirm" }, Array.Empty<SwitchInfo>(), true, 4, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()), new ChPwdCommand(), CommandFlags.Strict) },
             { "chusrname", new CommandInfo("chusrname", ShellType, /* Localizable */ "Changes user name",
                 new CommandArgumentInfo(new[] { "oldUserName", "newUserName" }, Array.Empty<SwitchInfo>(), true, 2, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()), new ChUsrNameCommand(), CommandFlags.Strict) },
-            { "clearfiredevents", new CommandInfo("clearfiredevents", ShellType, /* Localizable */ "Clears all fired events",
-                new CommandArgumentInfo(), new ClearFiredEventsCommand()) },
             { "cls", new CommandInfo("cls", ShellType, /* Localizable */ "Clears the screen",
                 new CommandArgumentInfo(), new ClsCommand()) },
             { "colorhextorgb", new CommandInfo("colorhextorgb", ShellType, /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers.",

@@ -39,6 +39,8 @@ namespace KS.Shell.Shells.Admin
         {
             { "cdbglog", new CommandInfo("cdbglog", ShellType, /* Localizable */ "Deletes everything in debug log",
                 new CommandArgumentInfo(), new Admin_CdbgLogCommand()) },
+            { "clearfiredevents", new CommandInfo("clearfiredevents", ShellType, /* Localizable */ "Clears all fired events",
+                new CommandArgumentInfo(), new Admin_ClearFiredEventsCommand()) },
             { "journal", new CommandInfo("journal", ShellType, /* Localizable */ "Gets current kernel journal log",
                 new CommandArgumentInfo(), new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported) },
             { "lsevents", new CommandInfo("lsevents", ShellType, /* Localizable */ "Lists all fired events",
