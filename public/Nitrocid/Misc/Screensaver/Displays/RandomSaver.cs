@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers.RNG;
+using System;
 using System.Data;
 using System.Linq;
 
@@ -25,6 +26,7 @@ namespace KS.Misc.Screensaver.Displays
     /// <summary>
     /// Display for RandomSaver
     /// </summary>
+    [Obsolete($"Screensaver manager, {nameof(Screensaver)}, and its function, {nameof(Screensaver.ShowSavers)}, already gives \"random\" a special treatment.")]
     public class RandomSaverDisplay : BaseScreensaver, IScreensaver
     {
 
