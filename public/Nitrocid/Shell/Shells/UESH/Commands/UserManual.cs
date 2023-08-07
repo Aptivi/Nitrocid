@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
             TextWriterColor.Write(Translate.DoTranslation("To access the user manual for general uses of Nitrocid, please visit the below link:"));
             TextWriterColor.Write("    https://aptivi.gitbook.io/kernel-simulator-manual/");
             TextWriterColor.Write(Translate.DoTranslation("To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:"));
-            TextWriterColor.Write("    https://aptivi.github.io/NitrocidKS\n");
+            TextWriterColor.Write("    https://aptivi.github.io/NitrocidKS");
         }
 
     }
