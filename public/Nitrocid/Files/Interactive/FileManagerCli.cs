@@ -394,9 +394,15 @@ namespace KS.Files.Interactive
             if (Checking.FolderExists(path))
             {
                 if (CurrentPane == 2)
+                {
+                    SecondPaneCurrentSelection = 1;
                     secondPanePath = path;
+                }
                 else
+                {
+                    FirstPaneCurrentSelection = 1;
                     firstPanePath = path;
+                }
             }
             else
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
