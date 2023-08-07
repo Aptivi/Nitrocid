@@ -179,9 +179,9 @@ namespace KS.Misc.Screensaver.Displays
                             selector1Selection = RandomDriver.RandomIdx(versions.Length);
                             selector2Selection = RandomDriver.RandomIdx(versions.Length);
                             selector3Selection = RandomDriver.RandomIdx(versions.Length);
-                            string selector1 = $"< {versions[selector1Selection]} >";
-                            string selector2 = $"< {versions[selector2Selection]} >";
-                            string selector3 = $"< {versions[selector3Selection]} >";
+                            string selector1 = $" << {versions[selector1Selection]} >> ";
+                            string selector2 = $" << {versions[selector2Selection]} >> ";
+                            string selector3 = $" << {versions[selector3Selection]} >> ";
 
                             // Now, determine the positions
                             int selector1PositionX =     (oneThirdConsoleWidth / 2) - (selector1.Length / 2);
