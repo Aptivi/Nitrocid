@@ -163,6 +163,8 @@ namespace KS.ConsoleBase.Inputs.Styles
             int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
             int answersPerPage = listEndPosition - 4;
             int pages = AllAnswers.Count / answersPerPage;
+            if (AllAnswers.Count % answersPerPage == 0)
+                pages--;
             int lastPage = 1;
             bool refreshRequired = false;
 
