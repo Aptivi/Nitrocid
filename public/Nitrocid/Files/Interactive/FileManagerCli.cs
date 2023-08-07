@@ -326,9 +326,10 @@ namespace KS.Files.Interactive
 
             try
             {
-                string dest = (CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
+                DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
-                DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
+                DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                 Copying.CopyFileOrDir(currentFileSystemInfo.FullName, dest);
             }
             catch (Exception ex)
@@ -349,9 +350,10 @@ namespace KS.Files.Interactive
 
             try
             {
-                string dest = (CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
+                DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
-                DebugCheck.Assert(string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
+                DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                 Moving.MoveFileOrDir(currentFileSystemInfo.FullName, dest);
             }
             catch (Exception ex)
