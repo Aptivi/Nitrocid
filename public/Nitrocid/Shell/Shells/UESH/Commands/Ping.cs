@@ -45,14 +45,16 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             // If the pinged address is actually a number of times
             int PingTimes = 4;
-            int StepsToSkip = 0;
-            if (TextTools.IsStringNumeric(ListArgsOnly[0]))
+            bool hasTimes = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-times");
+            string projectedTimes = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-times");
+            if (TextTools.IsStringNumeric(projectedTimes))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "ListArgsOnly(0) is numeric. Assuming number of times: {0}", ListArgsOnly[0]);
-                PingTimes = Convert.ToInt32(ListArgsOnly[0]);
-                StepsToSkip = 1;
+                DebugWriter.WriteDebug(DebugLevel.I, "Projected times {0} is numeric.", projectedTimes);
+                PingTimes = Convert.ToInt32(projectedTimes);
             }
-            foreach (string PingedAddress in ListArgsOnly.Skip(StepsToSkip))
+
+            // Now, ping the specified addresses
+            foreach (string PingedAddress in ListArgsOnly)
             {
                 if (!string.IsNullOrEmpty(PingedAddress))
                 {

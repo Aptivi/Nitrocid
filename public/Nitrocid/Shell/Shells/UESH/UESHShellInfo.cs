@@ -200,7 +200,7 @@ namespace KS.Shell.Shells.UESH
             { "permgroup", new CommandInfo("permgroup", ShellType, /* Localizable */ "Manage permissions for groups",
                 new CommandArgumentInfo(new[] { "groupName", "allow/revoke", "perm" }, Array.Empty<SwitchInfo>(), true, 3, (startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray()), new PermGroupCommand(), CommandFlags.Strict) },
             { "ping", new CommandInfo("ping", ShellType, /* Localizable */ "Pings an address",
-                new CommandArgumentInfo(new[] { "times", "Address1", "Address2 ..." }, Array.Empty<SwitchInfo>(), true, 1), new PingCommand()) },
+                new CommandArgumentInfo(new[] { "Address1", "Address2 ..." }, new SwitchInfo[] { new SwitchInfo("times", /* Localizable */ "Specifies number of times to ping", false, true) }, true, 1), new PingCommand()) },
             { "playlyric", new CommandInfo("playlyric", ShellType, /* Localizable */ "Plays a lyric file",
                 new CommandArgumentInfo(new[] { "lyric.lrc" }, Array.Empty<SwitchInfo>(), true, 1), new PlayLyricCommand()) },
             { "previewsplash", new CommandInfo("previewsplash", ShellType, /* Localizable */ "Previews the splash",
