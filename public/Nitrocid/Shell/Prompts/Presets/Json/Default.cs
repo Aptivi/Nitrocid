@@ -50,7 +50,7 @@ namespace KS.Shell.Prompts.Presets.Json
 
             // File name
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat(Path.GetFileName(JsonShellCommon.JsonShell_FileStream.Name));
+            PresetStringBuilder.AppendFormat(JsonShellCommon.JsonShell_FileStream is not null ? Path.GetFileName(JsonShellCommon.JsonShell_FileStream.Name) : "???");
 
             // Was file edited?
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
