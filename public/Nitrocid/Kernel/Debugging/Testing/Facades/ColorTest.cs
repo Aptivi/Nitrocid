@@ -32,7 +32,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             if (int.TryParse(Text, out int color))
             {
                 var colorInstance = new Color(color);
-                TextWriterColor.Write("Color {0}", true, colorInstance, colorInstance.PlainSequence);
+                TextWriterColor.Write("Color {0}", true, colorInstance, vars: new object[] { colorInstance.PlainSequence });
             }
         }
     }
