@@ -18,6 +18,7 @@
 
 using KS.Shell.Prompts;
 using System.Collections.Generic;
+using Terminaux.Colors;
 
 namespace KS.Misc.Settings
 {
