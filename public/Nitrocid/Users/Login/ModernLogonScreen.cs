@@ -37,6 +37,7 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using KS.Misc.Text;
 
 namespace KS.Users.Login
 {
@@ -152,36 +153,33 @@ namespace KS.Users.Login
                         CenteredFigletTextColor.WriteCenteredFiglet(figFont, timeStr, KernelColorType.Stage);
 
                         // Print the date
-                        string dateStr = TimeDateRenderers.RenderDate();
+                        string dateAltStr = CalendarTools.EnableAltCalendar ? TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar)) : "";
+                        string dateStr = $"{TimeDateRenderers.RenderDate()}{(CalendarTools.EnableAltCalendar ? $" - {dateAltStr}" : "")}";
                         int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
                         CenteredTextColor.WriteCentered(consoleInfoY, dateStr);
                         KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
-
-                        // Print the date using the alternative calendar, if any
-                        if (CalendarTools.EnableAltCalendar)
-                        {
-                            string dateAltStr = TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar));
-                            int consoleAltInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 3;
-                            CenteredTextColor.WriteCentered(consoleAltInfoY, dateAltStr);
-                        }
 
                         // Print the headline
                         if (RSSTools.ShowHeadlineOnLogin)
                         {
                             int consoleHeadlineInfoY =
                                 MotdHeadlineBottom ?
-                                (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 5 : 4) :
+                                (ConsoleWrapper.WindowHeight / 2) + figHeight + 3 :
                                 (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
                             CenteredTextColor.WriteCentered(consoleHeadlineInfoY, headlineStr);
                         }
 
                         // Print the MOTD
-                        string motdStr = MotdParse.MOTDMessage;
-                        int consoleMotdInfoY =
-                            MotdHeadlineBottom ? 
-                            (ConsoleWrapper.WindowHeight / 2) + figHeight + (CalendarTools.EnableAltCalendar ? 7 : 6) :
-                            (ConsoleWrapper.WindowHeight / 2) - figHeight - 3;
-                        CenteredTextColor.WriteCentered(consoleMotdInfoY, motdStr);
+                        string[] motdStrs = TextTools.GetWrappedSentences(MotdParse.MOTDMessage, ConsoleWrapper.WindowWidth - 4);
+                        for (int i = 0; i < motdStrs.Length && i < 2; i++)
+                        {
+                            string motdStr = motdStrs[i];
+                            int consoleMotdInfoY =
+                                MotdHeadlineBottom ? 
+                                (ConsoleWrapper.WindowHeight / 2) + figHeight + 4 + i :
+                                (ConsoleWrapper.WindowHeight / 2) - figHeight - (RSSTools.ShowHeadlineOnLogin ? 5 : 3) + i;
+                            CenteredTextColor.WriteCentered(consoleMotdInfoY, motdStr);
+                        }
 
                         // Print the instructions
                         string instStr = Translate.DoTranslation("Press any key to start...");
