@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.HTTP.Commands
         public override async void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             // Print a message
-            TextWriterColor.Write(Translate.DoTranslation("Posting string {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
+            TextWriterColor.Write(Translate.DoTranslation("Posting string to {0}..."), true, KernelColorType.Progress, ListArgsOnly[1]);
 
             try
             {
