@@ -16,7 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.Collections.Generic;
+using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
 using KS.Languages;
@@ -84,14 +86,27 @@ namespace KS.Shell.ShellBase.Shells
                 ShellStack.Add(ShellInfo);
                 ShellExecute.InitializeShell(ShellArgs);
             }
-            catch
+            catch (Exception ex)
             {
-                // There is an unknown shell error trying to be initialized. If we haven't added the shell to the shell stack, do nothing. Else, purge that shell
-                // with KillShell(). Otherwise, we'll get another shell's commands in the wrong shell and other problems will occur until the ghost shell has exited
-                // either automatically or manually, so check to see if we have added the newly created shell to the shell stack and kill that faulted shell.
+                // There is an exception trying to run the shell. Throw the message to the debugger and to the caller.
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed initializing shell!!! Type: {0}, Message: {1}", ShellType, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount);
+                DebugWriter.WriteDebug(DebugLevel.E, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "If you don't see \"Purge\" from {0} after few lines, this indicates that we're in a seriously corrupted state.", nameof(StartShellForced));
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Failed trying to initialize shell"), ex);
+            }
+            finally
+            {
+                // There is either an unknown shell error trying to be initialized or a shell has manually set Bail to true prior to exiting, like the JSON shell
+                // that sets this property when it fails to open the JSON file due to syntax error or something. If we haven't added the shell to the shell stack,
+                // do nothing. Else, purge that shell with KillShell(). Otherwise, we'll get another shell's commands in the wrong shell and other problems will
+                // occur until the ghost shell has exited either automatically or manually, so check to see if we have added the newly created shell to the shell
+                // stack and kill that faulted shell so that we can have the correct shell in the most recent shell, ^1, from the stack.
                 int newShellCount = ShellStack.Count;
+                DebugWriter.WriteDebug(DebugLevel.I, "Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
                 if (newShellCount > shellCount)
-                    KillShell();
+                    KillShellForced();
             }
         }
 

@@ -832,5 +832,6 @@ The time zone information package is not installed yet on your Linux system. Ins
 There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.
 {0} of {1} uploaded.
 Specifies number of times to ping
+Failed trying to initialize shell
 
 ==========================================================================================================================================
