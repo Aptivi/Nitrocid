@@ -830,5 +830,6 @@ There is no event.
 There is no reminder.
 The time zone information package is not installed yet on your Linux system. Install 'tzdata' using your distribution's package manager.
 There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.
+{0} of {1} uploaded.
 
 ==========================================================================================================================================

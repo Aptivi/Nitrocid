@@ -221,6 +221,7 @@ namespace KS.Network.Base.Transfer
                 // Distinguish download from upload
                 bool NotificationProvoke = TransferInfo.TransferType == NetworkTransferType.Download ? DownloadNotificationProvoke : UploadNotificationProvoke;
                 var NotificationInstance = TransferInfo.TransferType == NetworkTransferType.Download ? DownloadNotif : UploadNotif;
+                string indicator = TransferInfo.TransferType == NetworkTransferType.Download ? Translate.DoTranslation("{0} of {1} downloaded.") : Translate.DoTranslation("{0} of {1} uploaded.");
 
                 // Report the progress
                 if (!NetworkTools.TransferFinished)
@@ -241,7 +242,7 @@ namespace KS.Network.Base.Transfer
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("{0} of {1} downloaded.") + " | {2}%", 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
+                                TextWriterWhereColor.WriteWhere(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
                             }
                             ConsoleExtensions.ClearLineToRight();
                         }
