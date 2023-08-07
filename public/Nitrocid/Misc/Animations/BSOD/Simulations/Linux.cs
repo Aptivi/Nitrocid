@@ -31,7 +31,7 @@ namespace KS.Misc.Animations.BSOD.Simulations
             KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a null pointer dereference
-            TextWriterColor.Write(
+            TextWriterColor.WritePlain(
                 $"Unable to handle kernel NULL pointer dereference at virtual address {RandomDriver.Random():X8}\n" +
                  " printing eip:\n" +
                  "*pde = 00000000\n" +
@@ -68,7 +68,7 @@ namespace KS.Misc.Animations.BSOD.Simulations
                  " [<c03d63b0>] unknown_bootoption+0x0/0x1a0\n" +
                  "Code: 96 ac 04 00 00 fe 83 8f 00 00 00 c6 83 90 00 00 00 01 89 1c 24 ff 96 94 04 00 00 8b 43 70 8b 40 08 8b 58 20 c7 40 20 00 00 00 00 <8b> 4b 38 c7 43 4c 00 00 00 00 8b 01 8b 51 04 89 43 0c 89 53 10\n" +
                  "<0>Kernel panic - not syncing: Fatal exception in interrupt"
-            );
+            , false);
         }
     }
 }

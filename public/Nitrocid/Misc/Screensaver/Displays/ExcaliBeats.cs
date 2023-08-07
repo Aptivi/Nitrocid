@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Runtime.Versioning;
+using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
@@ -320,7 +322,8 @@ namespace KS.Misc.Screensaver.Displays
                 ExcaliBeatsMaximumBlueColorLevel = ExcaliBeatsSettings.ExcaliBeatsMaximumBlueColorLevel,
                 ExcaliBeatsMaximumColorLevel = ExcaliBeatsSettings.ExcaliBeatsMaximumColorLevel
             };
-            base.ScreensaverPreparation();
+            KernelColorTools.LoadBack(0);
+            ConsoleWrapper.Clear();
         }
 
         /// <inheritdoc/>

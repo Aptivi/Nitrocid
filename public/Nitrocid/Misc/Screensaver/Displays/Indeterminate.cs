@@ -393,23 +393,22 @@ namespace KS.Misc.Screensaver.Displays
                     break;
 
                 // Clear the ramp
-                ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
                 if (IndeterminateCurrentBlockDirection == IndeterminateDirection.LeftToRight)
                 {
                     for (int BlockPos = RampFrameBlockStartWidth; BlockPos <= IndeterminateCurrentBlockStart; BlockPos++)
                     {
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true);
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition, true);
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition + 1, true);
+                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition + 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
                     }
                 }
                 else
                 {
                     for (int BlockPos = IndeterminateCurrentBlockEnd; BlockPos <= RampFrameBlockEndWidth; BlockPos++)
                     {
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true);
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition, true);
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition + 1, true);
+                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition + 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
                     }
                 }
 
@@ -458,8 +457,7 @@ namespace KS.Misc.Screensaver.Displays
                     }
             }
 
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.Clear();
+            KernelColorTools.LoadBack();
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(IndeterminateSettings.IndeterminateDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

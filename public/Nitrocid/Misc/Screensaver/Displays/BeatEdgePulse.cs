@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
@@ -283,7 +285,8 @@ namespace KS.Misc.Screensaver.Displays
                 BeatEdgePulseMaximumBlueColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumBlueColorLevel,
                 BeatEdgePulseMaximumColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumColorLevel
             };
-            base.ScreensaverPreparation();
+            KernelColorTools.LoadBack(0);
+            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <inheritdoc/>

@@ -285,7 +285,7 @@ namespace KS.Misc.Screensaver.Displays
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, ColorStorage);
+                    TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, ColorStorage, FlashTextSettings.FlashTextBackgroundColor);
                 }
             }
             else
@@ -294,7 +294,7 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, new Color(ColorNum));
+                    TextWriterWhereColor.WriteWhere(FlashTextSettings.FlashTextWrite, Left, Top, true, new Color(ColorNum), FlashTextSettings.FlashTextBackgroundColor);
                 }
             }
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

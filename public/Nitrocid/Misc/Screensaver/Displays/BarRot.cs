@@ -534,8 +534,7 @@ namespace KS.Misc.Screensaver.Displays
                 ThreadManager.SleepNoBlock(BarRotSettings.BarRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Clear the scene
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.Clear();
+            KernelColorTools.LoadBack();
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();

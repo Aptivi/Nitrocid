@@ -584,8 +584,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
             }
             ThreadManager.SleepNoBlock(RampSettings.RampNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.Clear();
+            KernelColorTools.LoadBack();
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

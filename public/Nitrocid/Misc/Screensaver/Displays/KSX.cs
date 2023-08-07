@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
@@ -175,7 +176,7 @@ namespace KS.Misc.Screensaver.Displays
                             for (int currentIdx = 0; currentIdx <= sample.Length - 1 && !printDone; currentIdx++)
                             {
                                 // Write the current character
-                                TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen);
+                                TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen, 0);
 
                                 // Sleep
                                 ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -190,7 +191,7 @@ namespace KS.Misc.Screensaver.Displays
                                         currentIdx = 0;
 
                                     // Write the current character
-                                    TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen);
+                                    TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen, 0);
 
                                     // Reset position
                                     ConsoleWrapper.CursorLeft = 0;
@@ -209,7 +210,7 @@ namespace KS.Misc.Screensaver.Displays
                         int s4figHeight = FigletTools.GetFigletHeight("2018", s4figFont) / 2;
                         int s4consoleX = (ConsoleWrapper.WindowWidth / 2) - s4figWidth;
                         int s4consoleY = (ConsoleWrapper.WindowHeight / 2) - s4figHeight;
-                        FigletWhereColor.WriteFigletWhere("2018", s4consoleX, s4consoleY, true, s4figFont, green);
+                        FigletWhereColor.WriteFigletWhere("2018", s4consoleX, s4consoleY, true, s4figFont, green, 0);
                         ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         break;
                     case 5:
@@ -297,7 +298,7 @@ namespace KS.Misc.Screensaver.Displays
                             {
                                 int idx = selectedKernel - 1;
                                 var ver = versions.ElementAt(i);
-                                TextWriterColor.Write("- {0}: {1}", true, i == idx ? green : darkGreen, vars: new object[] { ver.Key, ver.Value });
+                                TextWriterColor.Write("- {0}: {1}", true, i == idx ? green : darkGreen, 0, ver.Key, ver.Value);
                             }
 
                             // Sleep
@@ -410,7 +411,7 @@ namespace KS.Misc.Screensaver.Displays
                         for (int dumpIter = 0; dumpIter < 22; dumpIter++)
                         {
                             if (dumpIter % 10 == 0)
-                                TextWriterWhereColor.WriteWhere("{0}", width, height, dumpIter);
+                                TextWriterWhereColor.WriteWhere("{0}", width, height, vars: new object[] { dumpIter });
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         TextWriterWhereColor.WriteWhere("Physical memory dump FAILED with status 0xC0000010", 0, height);
@@ -420,7 +421,7 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                             int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-                            TextWriterWhereColor.WriteWhere("X", xwidth, xheight, white);
+                            TextWriterWhereColor.WriteWhere("X", xwidth, xheight, white, 0);
                             ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
@@ -455,15 +456,15 @@ namespace KS.Misc.Screensaver.Displays
                     case 13:
                         string tbc = Translate.DoTranslation("To be continued...").ToUpper();
                         ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, 0);
                         ThreadManager.SleepNoBlock(40, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, 0);
                         ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, 0);
                         ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, 0);
                         ThreadManager.SleepNoBlock(1000, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, 0);
                         ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         break;
                 }

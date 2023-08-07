@@ -289,7 +289,7 @@ namespace KS.Misc.Screensaver.Displays
 
             // Clear the old text position
             int diff = ColumnLastLetter - ColumnFirstLetter;
-            TextWriterWhereColor.WriteWhere(new string(' ', diff), lastLeft, lastTop, true, Color.Empty);
+            TextWriterWhereColor.WriteWhere(new string(' ', diff), lastLeft, lastTop, true, Color.Empty, BouncingTextSettings.BouncingTextBackgroundColor);
 
             // Define the color
             DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Row text: {0}", RowText);
@@ -302,7 +302,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             if (!ConsoleResizeListener.WasResized(false))
             {
-                TextWriterWhereColor.WriteWhere(BouncingTextSettings.BouncingTextWrite, ColumnFirstLetter, RowText, true, BouncingColor);
+                TextWriterWhereColor.WriteWhere(BouncingTextSettings.BouncingTextWrite, ColumnFirstLetter, RowText, true, BouncingColor, BouncingTextSettings.BouncingTextBackgroundColor);
             }
             else
             {

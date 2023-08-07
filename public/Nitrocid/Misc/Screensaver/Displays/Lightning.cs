@@ -79,6 +79,14 @@ namespace KS.Misc.Screensaver.Displays
 
         /// <inheritdoc/>
         public override bool ScreensaverContainsFlashingImages { get; set; } = true;
+        
+        /// <inheritdoc/>
+        public override void ScreensaverPreparation()
+        {
+            KernelColorTools.LoadBack(0);
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
+        }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

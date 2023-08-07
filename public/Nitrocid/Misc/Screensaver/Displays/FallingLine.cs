@@ -243,6 +243,14 @@ namespace KS.Misc.Screensaver.Displays
         public override string ScreensaverName { get; set; } = "FallingLine";
 
         /// <inheritdoc/>
+        public override void ScreensaverPreparation()
+        {
+            KernelColorTools.LoadBack(0);
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
+        }
+
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             // Choose the column for the falling line

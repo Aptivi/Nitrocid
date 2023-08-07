@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
@@ -228,12 +229,17 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            base.ScreensaverPreparation();
+            // Clear the console
+            KernelColorTools.LoadBack(0);
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
 
-            // Reset dot positions
+            // Reset dot positions and color shades
             dotPositions.Clear();
             dotCurrentPosition = (ConsoleWrapper.WindowWidth / 2,
                                   ConsoleWrapper.WindowHeight / 2);
+            dotColorShades.Clear();
+            dotDirection = DirectionMode.CenterMiddleToCenterRight;
 
             // Assign a color to the dot
             int RedColorNum = RandomDriver.Random(MesmerizeSettings.MesmerizeMinimumRedColorLevel, MesmerizeSettings.MesmerizeMaximumRedColorLevel);

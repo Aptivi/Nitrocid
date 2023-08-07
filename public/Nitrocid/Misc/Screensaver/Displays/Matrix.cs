@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
@@ -82,6 +83,14 @@ namespace KS.Misc.Screensaver.Displays
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Matrix";
+
+        /// <inheritdoc/>
+        public override void ScreensaverPreparation()
+        {
+            KernelColorTools.LoadBack(0);
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
+        }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
