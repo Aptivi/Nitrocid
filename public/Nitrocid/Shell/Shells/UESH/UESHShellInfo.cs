@@ -193,8 +193,6 @@ namespace KS.Shell.Shells.UESH
                 new CommandArgumentInfo(new[] { "modname" }, Array.Empty<SwitchInfo>(), true, 1, (startFrom, _, _) => ModManager.ListMods(startFrom).Keys.ToArray()), new ModManualCommand()) },
             { "move", new CommandInfo("move", ShellType, /* Localizable */ "Moves a file to another directory",
                 new CommandArgumentInfo(new[] { "source", "target" }, Array.Empty<SwitchInfo>(), true, 2), new MoveCommand()) },
-            { "open", new CommandInfo("open", ShellType, /* Localizable */ "Opens a URL",
-                new CommandArgumentInfo(new[] { "URL" }, Array.Empty<SwitchInfo>(), true, 1), new OpenCommand()) },
             { "pathfind", new CommandInfo("pathfind", ShellType, /* Localizable */ "Finds a given file name from path lookup directories",
                 new CommandArgumentInfo(new[] { "fileName" }, Array.Empty<SwitchInfo>(), true, 1), new PathFindCommand()) },
             { "perm", new CommandInfo("perm", ShellType, /* Localizable */ "Manage permissions for users",
