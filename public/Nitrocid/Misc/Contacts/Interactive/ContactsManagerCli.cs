@@ -117,6 +117,8 @@ namespace KS.Misc.Contacts.Interactive
         {
             // Get some info from the contact
             Card selectedContact = (Card)item;
+            if (selectedContact is null)
+                return Translate.DoTranslation("There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.");
             bool hasName = selectedContact.ContactNames.Any();
             bool hasAddress = selectedContact.ContactAddresses.Any();
             bool hasMail = selectedContact.ContactMails.Any();
@@ -160,6 +162,8 @@ namespace KS.Misc.Contacts.Interactive
         {
             // Get some info from the contact
             Card selectedContact = (Card)item;
+            if (selectedContact is null)
+                return;
             bool hasName = selectedContact.ContactNames.Any();
 
             // Generate the rendered text
@@ -175,6 +179,8 @@ namespace KS.Misc.Contacts.Interactive
         public override string GetEntryFromItem(object item)
         {
             Card contact = (Card)item;
+            if (contact is null)
+                return "";
             return contact.ContactFullName;
         }
 
