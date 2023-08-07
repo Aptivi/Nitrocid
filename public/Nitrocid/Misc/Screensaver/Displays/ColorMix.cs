@@ -247,32 +247,46 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.CursorVisible = false;
+            int EndLeft = ConsoleWrapper.WindowWidth - 1;
+            int EndTop = ConsoleWrapper.WindowHeight - 1;
+            int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "End left: {0} | End top: {1}", EndLeft, EndTop);
+            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got left: {0} | Got top: {1}", Left, Top);
 
-            // Set colors
-            if (ColorMixSettings.ColorMixTrueColor)
+            // Fill the color if not filled
+            if (!(ConsoleWrapper.CursorLeft >= EndLeft & ConsoleWrapper.CursorTop >= EndTop))
             {
-                int RedColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumRedColorLevel, ColorMixSettings.ColorMixMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumGreenColorLevel, ColorMixSettings.ColorMixMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumBlueColorLevel, ColorMixSettings.ColorMixMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
+                Color colorStorage;
+                if (ColorMixSettings.ColorMixTrueColor)
+                {
+                    int RedColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumRedColorLevel, ColorMixSettings.ColorMixMaximumRedColorLevel);
+                    int GreenColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumGreenColorLevel, ColorMixSettings.ColorMixMaximumGreenColorLevel);
+                    int BlueColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumBlueColorLevel, ColorMixSettings.ColorMixMaximumBlueColorLevel);
+                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                    colorStorage = new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}");
+                }
+                else
+                {
+                    int ColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumColorLevel, ColorMixSettings.ColorMixMaximumColorLevel);
+                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                    colorStorage = new Color(ColorNum);
+                }
+
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(ColorStorage, true, true);
+                    KernelColorTools.SetConsoleColor(Color.Empty);
+                    KernelColorTools.SetConsoleColor(colorStorage, true, true);
                     TextWriterColor.WritePlain(" ", false);
+                }
+                else
+                {
+                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're refilling...");
+                    KernelColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor), true);
                 }
             }
             else
-            {
-                int ColorNum = RandomDriver.Random(ColorMixSettings.ColorMixMinimumColorLevel, ColorMixSettings.ColorMixMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                if (!ConsoleResizeListener.WasResized(false))
-                {
-                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true, true);
-                    TextWriterColor.WritePlain(" ", false);
-                }
-            }
+                ConsoleWrapper.SetCursorPosition(0, 0);
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();
