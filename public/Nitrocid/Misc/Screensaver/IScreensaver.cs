@@ -36,6 +36,7 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Display a screensaver. This is executed inside the loop.
         /// </summary>
+        /// TODO: We need to have a function that listens to resize sync.
         void ScreensaverLogic();
         /// <summary>
         /// The outro logic once the screensaver is done displaying.

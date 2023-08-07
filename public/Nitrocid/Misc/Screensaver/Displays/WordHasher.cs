@@ -23,9 +23,11 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Drivers;
+using KS.Drivers.Encryption;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
+using KS.Languages;
 using Terminaux.Colors;
 using Wordament;
 
@@ -230,16 +232,29 @@ namespace KS.Misc.Screensaver.Displays
         {
             ConsoleWrapper.Clear();
 
-            // Write word and hash
-            string word = WordManager.GetRandomWord();
-            string wordHash = DriverHandler.CurrentEncryptionDriverLocal.GetEncryptedString(word);
+            // Change color
+            var hasherColor = ChangeWordHasherColor();
+
+            // Write loading
+            string word = Translate.DoTranslation("Loading...");
+            string wordHash = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").GetEncryptedString(word);
             var figFont = FigletTools.GetFigletFont("Small");
             int figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
             int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
             int hashY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
-            KernelColorTools.SetConsoleColor(ChangeWordHasherColor());
-            CenteredFigletTextColor.WriteCenteredFiglet(consoleY, figFont, word);
-            TextWriterWhereColor.WriteWhere(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY);
+            CenteredFigletTextColor.WriteCenteredFiglet(consoleY, figFont, word, hasherColor);
+            TextWriterWhereColor.WriteWhere(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, hasherColor);
+
+            // Write word and hash
+            word = WordManager.GetRandomWord();
+            wordHash = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").GetEncryptedString(word);
+            figFont = FigletTools.GetFigletFont("Small");
+            figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
+            consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+            hashY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
+            ConsoleWrapper.Clear();
+            CenteredFigletTextColor.WriteCenteredFiglet(consoleY, figFont, word, hasherColor);
+            TextWriterWhereColor.WriteWhere(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, hasherColor);
 
             // Delay
             ThreadManager.SleepNoBlock(WordHasherSettings.WordHasherDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
