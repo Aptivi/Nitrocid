@@ -308,8 +308,8 @@ namespace KS.Misc.Screensaver.Displays
             {
                 DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowText, ColumnFirstLetter, and ColumnLastLetter to its original position...");
                 RowText = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
-                ColumnFirstLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - BouncingTextSettings.BouncingTextWrite.Length / 2d);
-                ColumnLastLetter = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + BouncingTextSettings.BouncingTextWrite.Length / 2d);
+                ColumnFirstLetter = (int)Math.Round((ConsoleWrapper.WindowWidth / 2d) - (BouncingTextSettings.BouncingTextWrite.Length / 2d));
+                ColumnLastLetter = (int)Math.Round((ConsoleWrapper.WindowWidth / 2d) + (BouncingTextSettings.BouncingTextWrite.Length / 2d));
             }
 
             // Set the old positions to clear
