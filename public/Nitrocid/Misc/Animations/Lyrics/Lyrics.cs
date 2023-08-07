@@ -16,10 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.IO;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Threading;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
@@ -67,12 +69,14 @@ namespace KS.Misc.Animations.Lyrics
         public static void VisualizeLyric(string path)
         {
             ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear();
+            KernelColorTools.LoadBack();
 
             // Render the border in the lower part of the console for lyric line
-            BorderColor.WriteBorder(2, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 6, 1);
+            string fileName = Path.GetFileNameWithoutExtension(path);
             int infoHeight = ConsoleWrapper.WindowHeight - 3;
             int infoMaxChars = ConsoleWrapper.WindowWidth - 9;
+            BorderColor.WriteBorder(2, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 6, 1);
+            TextWriterWhereColor.WriteWhere($" {fileName.Truncate(infoMaxChars)} ", 4, ConsoleWrapper.WindowHeight - 4, KernelColorType.NeutralText);
 
             // If there is no lyric path, or if it doesn't exist, tell the user that they have to provide a path to the
             // lyrics folder.
@@ -97,13 +101,13 @@ namespace KS.Misc.Animations.Lyrics
             for (int i = 3; i > 0; i--)
             {
                 TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-                TextWriterWhereColor.WriteWhere($"{i}...", (ConsoleWrapper.WindowWidth / 2) - ($"{i}...".Length / 2), infoHeight);
+                TextWriterWhereColor.WriteWhere($"{i}...", (ConsoleWrapper.WindowWidth / 2) - ($"{i}...".Length / 2), infoHeight, KernelColorType.NeutralText);
                 ThreadManager.SleepNoBlock(1000, Thread.CurrentThread);
             }
 
             // Go!
             TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-            TextWriterWhereColor.WriteWhere("Go!", (ConsoleWrapper.WindowWidth / 2) - ("Go!".Length / 2), infoHeight);
+            TextWriterWhereColor.WriteWhere("Go!", (ConsoleWrapper.WindowWidth / 2) - ("Go!".Length / 2), infoHeight, KernelColorType.NeutralText);
             var sw = new Stopwatch();
             sw.Start();
             foreach (var ts in lyricLines)
@@ -119,7 +123,7 @@ namespace KS.Misc.Animations.Lyrics
                 {
                     string tsLine = ts.Line.Truncate(infoMaxChars);
                     TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-                    TextWriterWhereColor.WriteWhere(tsLine, (ConsoleWrapper.WindowWidth / 2) - (tsLine.Length / 2), infoHeight);
+                    TextWriterWhereColor.WriteWhere(tsLine, (ConsoleWrapper.WindowWidth / 2) - (tsLine.Length / 2), infoHeight, KernelColorType.NeutralText);
                     shownLines.Add(ts);
                     if (shownLines.Count == lyricLines.Count)
                         return;
