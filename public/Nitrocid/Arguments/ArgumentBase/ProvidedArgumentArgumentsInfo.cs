@@ -143,11 +143,21 @@ namespace KS.Arguments.ArgumentBase
 
             // Check to see if the caller has provided required number of switches that require arguments
             if (withArgInfo)
-                RequiredSwitchArgumentsProvided =
-                    ArgumentInfo.ArgArgumentInfo.Switches.Length == 0 ||
-                    EnclosedSwitches.Length == 0 ||
-                    EnclosedSwitchKeyValuePairs.Where((kvp) => !string.IsNullOrEmpty(kvp.Item2)).Count() >= ArgumentInfo.ArgArgumentInfo.Switches.Where((@switch) => @switch.ArgumentsRequired).Count() ||
-                    !ArgumentInfo.ArgArgumentInfo.Switches.Any((@switch) => @switch.ArgumentsRequired);
+            {
+                if (ArgumentInfo.ArgArgumentInfo.Switches.Length == 0 || EnclosedSwitches.Length == 0 ||
+                    !ArgumentInfo.ArgArgumentInfo.Switches.Any((@switch) => @switch.ArgumentsRequired))
+                    RequiredSwitchArgumentsProvided = true;
+                else
+                {
+                    var allSwitches = ArgumentInfo.ArgArgumentInfo.Switches.Where((@switch) => @switch.ArgumentsRequired).Select((@switch) => @switch.SwitchName).ToArray();
+                    var allProvidedSwitches = EnclosedSwitches.Where((@switch) => allSwitches.Contains($"{@switch[1..]}")).ToArray();
+                    foreach (var providedSwitch in allProvidedSwitches)
+                    {
+                        if (string.IsNullOrWhiteSpace(EnclosedSwitchKeyValuePairs.Single((kvp) => kvp.Item1 == providedSwitch).Item2))
+                            RequiredSwitchArgumentsProvided = false;
+                    }
+                }
+            }
             else
                 RequiredSwitchArgumentsProvided = true;
             DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);

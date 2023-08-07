@@ -406,3 +406,6 @@ FodyWeavers.xsd
 # DocGen
 docs/
 DocGen/api/
+
+# Vim
+*.swp
