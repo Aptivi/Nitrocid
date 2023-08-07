@@ -137,8 +137,8 @@
                 "Variable": "BlindnessDeficiency",
                 "IsEnumeration": true,
                 "EnumerationInternal": false,
-                "Enumeration": "ColorSeq.Accessibility.Deficiency",
-                "EnumerationAssembly": "ColorSeq",
+                "Enumeration": "Terminaux.Colors.Accessibility.Deficiency",
+                "EnumerationAssembly": "Terminaux",
                 "EnumerationZeroBased": true,
                 "Description": "The type of color blindness, whether it's protan, deuter, or tritan."
             },
