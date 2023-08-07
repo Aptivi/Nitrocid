@@ -25,7 +25,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using Terminaux.Reader;
-using Terminaux.Tools;
+using Terminaux.Reader.Tools;
 
 namespace KS.ConsoleBase.Inputs
 {
