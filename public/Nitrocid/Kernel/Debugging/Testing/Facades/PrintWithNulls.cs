@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             TextWriterColor.Write("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, KernelColorType.Success);
-            TextWriterColor.Write(" [{0}, {1}] ", true, KernelColorType.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+            TextWriterColor.Write(" [{0}, {1}] ", true, KernelColorType.NeutralText, vars: new object[] { ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop });
         }
     }
 }

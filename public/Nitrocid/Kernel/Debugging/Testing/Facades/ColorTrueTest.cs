@@ -34,7 +34,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             if (int.TryParse(TextR, out int r) && int.TryParse(TextG, out int g) && int.TryParse(TextB, out int b))
             {
                 var color = new Color(r, g, b);
-                TextWriterColor.Write("Color {0}", true, color, color.PlainSequence);
+                TextWriterColor.Write("Color {0}", true, color, vars: new object[] { color.PlainSequence });
             }
         }
     }

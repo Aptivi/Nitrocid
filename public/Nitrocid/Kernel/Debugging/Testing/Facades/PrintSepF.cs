@@ -26,7 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Print a separator to console with formatting");
         public override void Run()
         {
-            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, "Nitrocid KS");
+            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, Vars: new object[] { "Nitrocid KS" });
         }
     }
 }
