@@ -232,7 +232,7 @@ namespace KS.Misc.Screensaver.Displays
                         // Get things ready
                         var targetDate = new DateTime(2021, 4, 30);
                         string renderedTarget = TimeDateRenderers.RenderDate(targetDate, FormatType.Short);
-                        string renderedTargetLong = TimeDateRenderers.RenderDate(targetDate, FormatType.Long);
+                        string renderedTargetLong = $"     {TimeDateRenderers.RenderDate(targetDate, FormatType.Long)}     ";
                         var s7figFont = FigletTools.GetFigletFont("Small");
                         int s7figWidth = FigletTools.GetFigletWidth(renderedTarget, s7figFont) / 2;
                         int s7figHeight = FigletTools.GetFigletHeight(renderedTarget, s7figFont) / 2;
@@ -298,7 +298,7 @@ namespace KS.Misc.Screensaver.Displays
                             int s5figHeight = FigletTools.GetFigletHeight("X", s5figFont) / 2;
                             int s5consoleX = (ConsoleWrapper.WindowWidth / 2) - s5figWidth;
                             int s5consoleY = (ConsoleWrapper.WindowHeight / 2) - s5figHeight;
-                            FigletWhereColor.WriteFigletWhere("X", s5consoleX, s5consoleY, true, s5figFont, darkRed, black);
+                            FigletWhereColor.WriteFigletWhere("X", s5consoleX, s5consoleY, true, s5figFont, darkRed, color);
                             ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
