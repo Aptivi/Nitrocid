@@ -332,5 +332,9 @@ namespace KS.Misc.Screensaver.Displays
             ThreadManager.SleepNoBlock(FallingLineSettings.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro() =>
+            CoveredPositions.Clear();
+
     }
 }
