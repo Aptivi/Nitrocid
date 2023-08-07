@@ -91,6 +91,7 @@ namespace KS.Users.Groups
             userGroups.Add(groupName);
             DebugWriter.WriteDebug(DebugLevel.I, "Added user {0} to group {1}.", user, groupName);
             UserManagement.Users[userIndex].Groups = userGroups.ToArray();
+            UserManagement.SaveUsers();
         }
 
         /// <summary>
@@ -114,6 +115,7 @@ namespace KS.Users.Groups
             userGroups.Remove(groupName);
             DebugWriter.WriteDebug(DebugLevel.I, "Removed user {0} from group {1}.", user, groupName);
             UserManagement.Users[userIndex].Groups = userGroups.ToArray();
+            UserManagement.SaveUsers();
         }
 
         /// <summary>
