@@ -34,6 +34,7 @@ namespace KS.Kernel.Threading
 
         internal bool isCritical;
         internal Thread BaseThread;
+        internal readonly List<KernelThread> ChildThreads = new();
         private bool isReady;
         private bool isStopping;
         private readonly ThreadStart ThreadDelegate;
@@ -42,7 +43,6 @@ namespace KS.Kernel.Threading
         private readonly ParameterizedThreadStart InitialThreadDelegateParameterized;
         private readonly bool IsParameterized;
         private readonly KernelThread parentThread;
-        private readonly List<KernelThread> ChildThreads = new();
 
         /// <summary>
         /// The name of the thread

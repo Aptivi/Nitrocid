@@ -57,7 +57,7 @@ namespace KSTests.Kernel.Threading
         [Description("Initialization")]
         public void TestInitializeKernelThreadWithChildThread()
         {
-            TargetThreadWithChild = new KernelThread("Unit test thread #3", true, KernelThreadTestHelper.WriteHello);
+            TargetThreadWithChild = new KernelThread("Unit test thread #3", true, KernelThreadTestHelper.WriteHelloWithChild);
             TargetThreadWithChild.AddChild("Unit test child thread #1 for parent thread #3", true, KernelThreadTestHelper.WriteHelloFromChild);
             TargetThreadWithChild.AddChild("Unit test child thread #2 for parent thread #3", true, KernelThreadTestHelper.WriteHelloFromChild);
             TargetThreadWithChild.AddChild("Unit test child thread #3 for parent thread #3", true, KernelThreadTestHelper.WriteHelloFromChild);
@@ -70,7 +70,7 @@ namespace KSTests.Kernel.Threading
         [Description("Initialization")]
         public void TestInitializeKernelParameterizedThreadWithChildThread()
         {
-            TargetParameterizedThreadWithChild = new KernelThread("Unit test thread #4", true, (_) => KernelThreadTestHelper.WriteHelloWithArgument("Hello"));
+            TargetParameterizedThreadWithChild = new KernelThread("Unit test thread #4", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentWithChild("Hello"));
             TargetParameterizedThreadWithChild.AddChild("Unit test child thread #1 for parent thread #4", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromChild("Hello"));
             TargetParameterizedThreadWithChild.AddChild("Unit test child thread #2 for parent thread #4", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromChild("Hello"));
             TargetParameterizedThreadWithChild.AddChild("Unit test child thread #3 for parent thread #4", true, (_) => KernelThreadTestHelper.WriteHelloWithArgumentFromChild("Hello"));
@@ -141,11 +141,15 @@ namespace KSTests.Kernel.Threading
         [Description("Initialization")]
         public void TestStopKernelThreadWithChildThread()
         {
-            // TODO: Currently, there is no way for us to skim through individual child threads because it has been declared as private.
             Thread.Sleep(500);
             Should.CompleteIn(TargetThreadWithChild.Stop, TimeSpan.FromSeconds(5));
             TargetThreadWithChild.IsStopping.ShouldBeFalse();
             TargetThreadWithChild.ShouldNotBeNull();
+            foreach (var childThread in TargetThreadWithChild.ChildThreads)
+            {
+                childThread.IsStopping.ShouldBeFalse();
+                childThread.ShouldNotBeNull();
+            }
         }
 
         /// <summary>
@@ -159,6 +163,11 @@ namespace KSTests.Kernel.Threading
             Should.CompleteIn(TargetParameterizedThreadWithChild.Stop, TimeSpan.FromSeconds(5));
             TargetParameterizedThreadWithChild.IsStopping.ShouldBeFalse();
             TargetParameterizedThreadWithChild.ShouldNotBeNull();
+            foreach (var childThread in TargetParameterizedThreadWithChild.ChildThreads)
+            {
+                childThread.IsStopping.ShouldBeFalse();
+                childThread.ShouldNotBeNull();
+            }
         }
 
         /// <summary>

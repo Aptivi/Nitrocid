@@ -35,8 +35,8 @@ namespace KSTests.Kernel.Threading
             {
                 Console.WriteLine("Hello world!");
                 Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
-                while (true)
-                    Thread.Sleep(1);
+                while (!KernelThreadTests.TargetThread.IsStopping)
+                    Thread.Sleep(1000);
             }
             catch
             {
@@ -54,13 +54,51 @@ namespace KSTests.Kernel.Threading
             {
                 Console.WriteLine("Hello, {0}!", Name);
                 Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
-                while (true)
-                    Thread.Sleep(1);
+                while (!KernelThreadTests.TargetParameterizedThread.IsStopping)
+                    Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
                 KernelThreadTests.TargetParameterizedThread.IsStopping.ShouldBeTrue();
+            }
+        }
+
+        /// <summary>
+        /// [Kernel thread test] Write hello to console
+        /// </summary>
+        public static void WriteHelloWithChild()
+        {
+            try
+            {
+                Console.WriteLine("Hello world!");
+                Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
+                while (!KernelThreadTests.TargetThreadWithChild.IsStopping)
+                    Thread.Sleep(1000);
+            }
+            catch
+            {
+                Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
+                KernelThreadTests.TargetThreadWithChild.IsStopping.ShouldBeTrue();
+            }
+        }
+
+        /// <summary>
+        /// [Kernel thread test] Write hello to console with argument
+        /// </summary>
+        public static void WriteHelloWithArgumentWithChild(string Name)
+        {
+            try
+            {
+                Console.WriteLine("Hello, {0}!", Name);
+                Console.WriteLine("- Writing from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
+                while (!KernelThreadTests.TargetParameterizedThreadWithChild.IsStopping)
+                    Thread.Sleep(1000);
+            }
+            catch
+            {
+                Console.WriteLine("- Goodbye from parent thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
+                KernelThreadTests.TargetParameterizedThreadWithChild.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -73,13 +111,13 @@ namespace KSTests.Kernel.Threading
             {
                 Console.WriteLine("- Hello world!");
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
-                while (true)
-                    Thread.Sleep(1);
+                while (!KernelThreadTests.TargetThreadWithChild.IsStopping)
+                    Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
-                KernelThreadTests.TargetThread.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetThreadWithChild.IsStopping.ShouldBeTrue();
             }
         }
 
@@ -92,13 +130,13 @@ namespace KSTests.Kernel.Threading
             {
                 Console.WriteLine("- Hello, {0}!", Name);
                 Console.WriteLine("  - Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
-                while (true)
-                    Thread.Sleep(1);
+                while (!KernelThreadTests.TargetParameterizedThreadWithChild.IsStopping)
+                    Thread.Sleep(1000);
             }
             catch
             {
                 Console.WriteLine("  - Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
-                KernelThreadTests.TargetParameterizedThread.IsStopping.ShouldBeTrue();
+                KernelThreadTests.TargetParameterizedThreadWithChild.IsStopping.ShouldBeTrue();
             }
         }
 
