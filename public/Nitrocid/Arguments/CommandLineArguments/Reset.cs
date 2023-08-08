@@ -21,6 +21,7 @@ using KS.Files.Querying;
 using KS.Files;
 using System.IO;
 using System;
+using KS.Files.Folders;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -32,16 +33,36 @@ namespace KS.Arguments.CommandLineArguments
             // Delete every single thing found in KernelPaths
             foreach (string PathName in Enum.GetNames(typeof(KernelPathType)))
             {
-                string TargetPath = Paths.GetKernelPath((KernelPathType)Convert.ToInt32(PathName));
-                if (Checking.FileExists(TargetPath))
+                var pathType = (KernelPathType)Enum.Parse(typeof(KernelPathType), PathName);
+                string TargetPath = Paths.GetKernelPath(pathType);
+                switch (pathType)
                 {
-                    File.Delete(TargetPath);
-                }
-                else
-                {
-                    Directory.Delete(TargetPath, true);
+                    case KernelPathType.Debugging:
+                        TargetPath = TargetPath[..TargetPath.LastIndexOf(".log")] + "*.log";
+                        string[] debugs = Listing.GetFilesystemEntries(TargetPath);
+                        foreach (string debug in debugs)
+                            File.Delete(debug);
+                        break;
+                    case KernelPathType.Journalling:
+                        TargetPath = TargetPath[..TargetPath.LastIndexOf(".json")] + "*.json";
+                        string[] journals = Listing.GetFilesystemEntries(TargetPath);
+                        foreach (string journal in journals)
+                            File.Delete(journal);
+                        break;
+                    default:
+                        if (Checking.FileExists(TargetPath))
+                            File.Delete(TargetPath);
+                        else if (Checking.FolderExists(TargetPath))
+                            Directory.Delete(TargetPath, true);
+                        break;
                 }
             }
+
+            // Delete every dump file
+            string dumpPath = $"{Paths.AppDataPath}/dmp_*.txt";
+            string[] dumps = Listing.GetFilesystemEntries(dumpPath);
+            foreach (string dump in dumps)
+                File.Delete(dump);
 
             // Exit now.
             Environment.Exit(0);
