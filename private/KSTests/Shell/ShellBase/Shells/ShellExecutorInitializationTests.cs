@@ -76,14 +76,27 @@ namespace KSTests.Shell.ShellBase.Shells
         public void TestRegisteredShellExecution()
         {
             var instanceInfo = new ShellInfoTest();
+
+            // Register the shell and get its info
             ShellTypeManager.RegisterShell("Basic debug shell", instanceInfo);
             var shellInfo = ShellManager.GetShellInfo("Basic debug shell");
+
+            // Verify correctness
+            ShellManager.AvailableShells.ShouldContainKey("Basic debug shell");
             shellInfo.ShouldNotBeNull();
             shellInfo.ShellType.ShouldBe("Basic debug shell");
+
+            // Start the shell
             Should.NotThrow(new Action(() => ShellStart.StartShellForced("Basic debug shell")));
-            ShellStart.ShellStack[^1].ShellCommandThread.Wait();
-            ShellStart.ShellStack[^1].ShellBase.Bail.ShouldBeTrue();
+
+            // Make sure that the shell stack is empty due to manual Bail.
+            ShellStart.ShellStack.ShouldBeEmpty();
+
+            // Unregister the shell
             ShellTypeManager.UnregisterShell("Basic debug shell");
+
+            // Check to see if we no longer have this shell
+            ShellManager.AvailableShells.ShouldNotContainKey("Basic debug shell");
         }
 
         /// <summary>
@@ -94,14 +107,27 @@ namespace KSTests.Shell.ShellBase.Shells
         public void TestRegisteredShellExecutionWithArguments()
         {
             var instanceInfo = new ShellInfoTest();
+
+            // Register the shell and get its info
             ShellTypeManager.RegisterShell("Basic debug shell", instanceInfo);
             var shellInfo = ShellManager.GetShellInfo("Basic debug shell");
+
+            // Verify correctness
+            ShellManager.AvailableShells.ShouldContainKey("Basic debug shell");
             shellInfo.ShouldNotBeNull();
             shellInfo.ShellType.ShouldBe("Basic debug shell");
+
+            // Start the shell
             Should.NotThrow(new Action(() => ShellStart.StartShellForced("Basic debug shell", "Hello", "World")));
-            ShellStart.ShellStack[^1].ShellCommandThread.Wait();
-            ShellStart.ShellStack[^1].ShellBase.Bail.ShouldBeTrue();
+
+            // Make sure that the shell stack is empty due to manual Bail.
+            ShellStart.ShellStack.ShouldBeEmpty();
+
+            // Unregister the shell
             ShellTypeManager.UnregisterShell("Basic debug shell");
+
+            // Check to see if we no longer have this shell
+            ShellManager.AvailableShells.ShouldNotContainKey("Basic debug shell");
         }
 
         /// <summary>
