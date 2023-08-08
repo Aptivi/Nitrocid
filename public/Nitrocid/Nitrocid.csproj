@@ -46,7 +46,7 @@
     <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
     <Version>0.1.0</Version>
     <AssemblyVersion>0.1.0</AssemblyVersion>
-    <PackageVersion>0.1.0.0-beta1</PackageVersion>
+    <PackageVersion>0.1.0.0-beta2</PackageVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Deterministic>true</Deterministic>
     
@@ -99,7 +99,7 @@
     <PackageReference Include="SSH.NET" Version="2020.0.2" />
     <PackageReference Include="StringMath" Version="4.1.0" />
     <PackageReference Include="Syndian" Version="0.2.1" />
-    <PackageReference Include="Terminaux" Version="1.0.1" />
+    <PackageReference Include="Terminaux" Version="1.0.2" />
     <PackageReference Include="UnitsNet" Version="5.29.0" />
     <PackageReference Include="VisualCard" Version="0.4.0" />
     <PackageReference Include="Wordament" Version="0.2.0" />
