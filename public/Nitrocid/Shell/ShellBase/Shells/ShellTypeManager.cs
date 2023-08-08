@@ -42,7 +42,7 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellType">The shell type</param>
         public static void UnregisterShell(string ShellType)
         {
-            if (!Enum.IsDefined(typeof(ShellType), ShellType))
+            if (!IsShellBuiltin(ShellType))
                 ShellManager.AvailableShells.Remove(ShellType);
         }
 
