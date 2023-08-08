@@ -89,15 +89,13 @@ namespace KS.Shell.Shells.UESH.Commands
 
                 // Extract it
                 TextWriterColor.Write(Translate.DoTranslation("Installing version") + " {0}...", SortedVersions[0].UpdateVersion.ToString());
-                using (var archive = RarArchive.Open(RetroKSPath))
-                {
-                    foreach (var entry in archive.Entries.Where(e => !e.IsDirectory))
-                        entry.WriteToDirectory(Paths.RetroKSDownloadPath, new ExtractionOptions()
-                        {
-                            ExtractFullPath = true,
-                            Overwrite = true
-                        });
-                }
+                using var archive = RarArchive.Open(RetroKSPath);
+                foreach (var entry in archive.Entries.Where(e => !e.IsDirectory))
+                    entry.WriteToDirectory(Paths.RetroKSDownloadPath, new ExtractionOptions()
+                    {
+                        ExtractFullPath = true,
+                        Overwrite = true
+                    });
             }
 
             // Now, run the assembly

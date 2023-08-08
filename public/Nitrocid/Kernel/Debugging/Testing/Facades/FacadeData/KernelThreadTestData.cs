@@ -31,13 +31,13 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             try
             {
                 Console.WriteLine("Hello world!");
-                Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
+                Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
                 while (true)
                     Thread.Sleep(1);
             }
             catch
             {
-                Console.WriteLine("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Thread.CurrentThread.ManagedThreadId);
+                Console.WriteLine("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
             }
         }
     }

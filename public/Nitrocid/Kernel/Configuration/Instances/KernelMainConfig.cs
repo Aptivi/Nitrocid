@@ -56,7 +56,6 @@ using KS.ConsoleBase.Writers.MiscWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
-using Terminaux.Reader;
 
 namespace KS.Kernel.Configuration.Instances
 {
