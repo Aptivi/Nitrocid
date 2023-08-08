@@ -68,6 +68,7 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Scripting;
 using Terminaux.Reader;
+using KS.Misc.Screensaver;
 
 namespace KS.Shell
 {
@@ -217,6 +218,17 @@ namespace KS.Shell
 
                 // Tell the user to provide the command
                 StringBuilder commandBuilder = new(FullCommand);
+
+                // If we are on the shell suppress lock mode, we need to read a key to ensure that ENTER or any key that causes strcommand to return
+                // doesn't cause the shell prompt to be written twice. For example, when getting out of the lock screen by pressing ENTER when lockscreen
+                // is invoked, we need to make sure that we don't write the shell prompt twice.
+                if (Screensaver.ShellSuppressLockMode)
+                {
+                    Screensaver.ShellSuppressLockMode = false;
+                    if (ConsoleWrapper.KeyAvailable)
+                        ConsoleWrapper.ReadKey(true);
+                    continue;
+                }
 
                 // We need to put a synclock in the below steps, because the cancellation handlers seem to be taking their time to try to suppress the
                 // thread abort error messages. If the shell tried to write to the console while these handlers were still working, the command prompt

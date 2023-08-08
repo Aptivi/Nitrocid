@@ -121,6 +121,7 @@ namespace KS.Misc.Screensaver
         internal static int scrnTimeout = 300000;
         internal static string defSaverName = "matrix";
         internal static bool LockMode;
+        internal static bool ShellSuppressLockMode;
         internal static bool inSaver;
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
@@ -280,7 +281,7 @@ namespace KS.Misc.Screensaver
         /// </summary>
         public static void LockScreen()
         {
-            LockMode = true;
+            ShellSuppressLockMode = LockMode = true;
             try
             {
                 // Show the screensaver and wait for input
