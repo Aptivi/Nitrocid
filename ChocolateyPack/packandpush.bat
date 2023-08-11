@@ -3,7 +3,7 @@ REM This batch file is used for fallback purposes. Don't use this file. Only use
 
 REM Make a package, then push
 choco pack
-choco push
+choco push --source https://push.chocolatey.org/
 
 REM Remove nupkg
 delete /q *.nupkg

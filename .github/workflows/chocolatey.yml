@@ -23,5 +23,5 @@ jobs:
       run: |
         $FileName = Get-ChildItem -Path $pwd.Path -Name -Filter "KS*.nupkg"
         foreach($fn in $FileName) {
-            choco push "$pwd\$fn"
+            choco push "$pwd\$fn" --source https://push.chocolatey.org/
         }
