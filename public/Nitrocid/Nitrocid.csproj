@@ -114,7 +114,7 @@
     <None Include="ks-jl.cmd">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="ks-jl.sh">
+    <None Include="ks-jl">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Include="ks.1">
@@ -126,10 +126,10 @@
     <None Include="ks.desktop">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="ks.sh" Condition="'NitrocidLinuxPackageManagerBuild' == 'true'">
+    <None Include="ks" Condition="'NitrocidLinuxPackageManagerBuild' == 'true'">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="ks-n.sh" Condition="'NitrocidLinuxPackageManagerBuild' != 'true'">
+    <None Include="ks-n" Condition="'NitrocidLinuxPackageManagerBuild' != 'true'">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
