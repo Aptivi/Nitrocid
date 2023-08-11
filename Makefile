@@ -17,7 +17,7 @@
 
 OUTPUTS = public/Nitrocid/KSBuild public/Nitrocid/obj private/*/bin private/*/obj debian/kernel-simulator
 OUTPUT = public/Nitrocid/KSBuild/net6.0
-BINARIES = public/Nitrocid/*.sh
+BINARIES = public/Nitrocid/ks-n public/Nitrocid/ks-jl
 LIBRARIES = public/Nitrocid/KSBuild/net6.0/*
 MANUALS = public/Nitrocid/*.1
 DESKTOPS = public/Nitrocid/ks.desktop
@@ -48,6 +48,7 @@ debian-install:
 	find $(OUTPUT) -mindepth 1 -type f -exec sh -c 'install -m 644 -t "debian/kernel-simulator/usr/lib/ks/$$(dirname $$(realpath --relative-to $(OUTPUT) "$$0"))" "$$0"' {} \;
 	install -m 755 -t debian/kernel-simulator/usr/share/applications/ $(DESKTOPS)
 	install -m 755 -t debian/kernel-simulator/usr/lib/ks/ $(BRANDINGS)
+	mv debian/kernel-simulator/usr/bin/ks-n debian/kernel-simulator/usr/bin/ks
 
 clean:
 	rm -rf $(OUTPUTS)

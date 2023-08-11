@@ -33,7 +33,7 @@ else
 fi
 
 # Check to see if we're on the PPA
-if [ isppa == 0 ]; then
+if [ $isppa == 0 ]; then
 	# Check to see if we have unrar and update.rar
 	if [ ! $unrarexistent == 0 ]; then
 		echo unrar is not found.
