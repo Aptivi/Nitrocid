@@ -12,8 +12,10 @@ fi
 echo "- Copying dependencies to deps..."
 echo "  - mkdir deps"
 mkdir deps
-echo "  - cp -R ./nuget/.nuget/packages/* ./deps/"
-cp -R ./nuget/.nuget/packages/* ./deps/
+echo "  - cp nuget/.nuget/packages/*/*/*.nupkg ./deps/"
+cp nuget/.nuget/packages/*/*/*.nupkg ./deps/
+echo "  - rm -r nuget/.nuget/packages"
+rm -r nuget/.nuget/packages
 
 # Copy NuGet.config for offline use
 echo "- Copying NuGet.config..."

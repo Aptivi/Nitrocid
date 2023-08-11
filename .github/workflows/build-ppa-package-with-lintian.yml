@@ -1,0 +1,58 @@
+name: Build Project (Debian Package, Lintian)
+
+on:
+  push:
+    branches:
+      - main
+      - servicing
+  pull_request:
+    branches:
+      - main
+      - servicing
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          submodules: 'true'
+      
+      - name: Import GPG
+        uses: crazy-max/ghaction-import-gpg@v5
+        with:
+          gpg_private_key: ${{ secrets.GPG_PRIVATE_KEY }}
+          passphrase: ${{ secrets.PASSPHRASE }}
+
+      - name: Install required packages
+        run: |
+          sudo rm /etc/apt/sources.list.d/microsoft-prod.list
+          sudo apt update
+          sudo apt purge dotnet*
+          sudo apt autoremove
+          sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-7.0 devscripts debhelper-compat dput
+        
+      - name: Initialize offline package
+        run: |
+          chmod +x tools/initializeoffline.sh
+          make debian-init-offline
+        
+      - name: Make original package
+        run: |
+          mv debian ..
+          mv .github ..
+          tar cfv ../kernel-simulator_0.1.0-beta2.orig.tar .
+          xz ../kernel-simulator_0.1.0-beta2.orig.tar
+          mv ../debian .
+
+      - name: Build package
+        run: |
+          debuild -us -uc
+          cp ../*.deb .
+        
+      - name: Upload package to artifacts
+        uses: actions/upload-artifact@v2
+        with:
+          name: Nitrocid-KS-Debian-Package
+          path: "*.deb"
