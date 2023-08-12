@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.Loader;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
@@ -28,6 +29,7 @@ using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Updates;
 using KS.Languages;
+using KS.Misc.RetroKS;
 using KS.Network.Base.Transfer;
 using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json.Linq;
@@ -100,7 +102,10 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Now, run the assembly
             TextWriterColor.Write(Translate.DoTranslation("Going back to 2018..."));
-            Assembly.LoadFrom(RetroExecKSPath).EntryPoint.Invoke("", Array.Empty<object>());
+            var retroContext = new RetroKSContext();
+            retroContext.resolver = new AssemblyDependencyResolver(RetroExecKSPath);
+            var asm = retroContext.LoadFromAssemblyPath(RetroExecKSPath);
+            asm.EntryPoint.Invoke("", Array.Empty<object>());
 
             // Clear the console
             KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
