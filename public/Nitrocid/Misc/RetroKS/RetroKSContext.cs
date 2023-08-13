@@ -23,7 +23,7 @@ using System.Runtime.Loader;
 
 namespace KS.Misc.RetroKS
 {
-    public class RetroKSContext : AssemblyLoadContext
+    internal class RetroKSContext : AssemblyLoadContext
     {
         internal AssemblyDependencyResolver resolver;
         internal string bootPath = "";

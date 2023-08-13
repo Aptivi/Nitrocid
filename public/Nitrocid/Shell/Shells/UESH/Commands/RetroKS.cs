@@ -101,8 +101,10 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Now, run the assembly
             TextWriterColor.Write(Translate.DoTranslation("Going back to 2018..."));
-            var retroContext = new RetroKSContext();
-            retroContext.resolver = new AssemblyDependencyResolver(RetroExecKSPath);
+            var retroContext = new RetroKSContext
+            {
+                resolver = new AssemblyDependencyResolver(RetroExecKSPath)
+            };
             var asm = retroContext.LoadFromAssemblyPath(RetroExecKSPath);
             asm.EntryPoint.Invoke("", Array.Empty<object>());
 
