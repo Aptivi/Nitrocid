@@ -45,7 +45,6 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command runs a legacy version of Nitrocid KS based on 0.0.4.1 with added optimizations for both Linux and Windows operating systems.
     /// </remarks>
-    [Obsolete("This will be removed in the Beta 3 cycle.")]
     class RetroKSCommand : BaseCommand, ICommand
     {
 
