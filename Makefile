@@ -51,7 +51,7 @@ debian-install:
 	mv debian/kernel-simulator/usr/bin/ks-n debian/kernel-simulator/usr/bin/ks
 	rm debian/kernel-simulator/usr/lib/ks/ks-n debian/kernel-simulator/usr/lib/ks/ks-jl
 	# We only support running debian-install for linux-x64 at the moment.
-	find $(OUTPUT) -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 
 clean:
 	rm -rf $(OUTPUTS)
