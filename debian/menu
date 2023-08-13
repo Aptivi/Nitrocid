@@ -1,3 +1,0 @@
-?package(kernel-simulator):needs=text section="Applications/Emulators" \
-  title="Nitrocid KS" \
-  command="/usr/bin/ks"
