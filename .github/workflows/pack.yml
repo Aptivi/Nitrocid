@@ -28,6 +28,5 @@ jobs:
     - name: Package Publication
       run: |
         $path = "public\Nitrocid\KSBuild"
-        $FileName = Get-ChildItem -Path $path -Recurse -Name -Filter "*symbols*"
-        nuget push "$path\$FileName" -source "nuget.org"
+        nuget push "$path\*.symbols.nupkg" -source "nuget.org"
         
