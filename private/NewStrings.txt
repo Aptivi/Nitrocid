@@ -834,5 +834,7 @@ There is no contact. If you'd like to import contacts, please use the import opt
 Specifies number of times to ping
 Failed trying to initialize shell
 Loading...
+Lyrics Path
+Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory.
 
 ==========================================================================================================================================

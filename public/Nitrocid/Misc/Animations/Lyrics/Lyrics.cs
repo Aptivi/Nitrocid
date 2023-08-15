@@ -34,6 +34,7 @@ using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using SharpLyrics;
+using KS.Kernel.Configuration;
 
 namespace KS.Misc.Animations.Lyrics
 {
@@ -43,9 +44,8 @@ namespace KS.Misc.Animations.Lyrics
     public static class Lyrics
     {
 
-        // TODO: Make this customizable, as we don't want users to move / copy all their lrc files from their
-        //       music library to $HOME/Music/.
-        private static string[] lyricsLrc = Listing.GetFilesystemEntries(Paths.HomePath + "/Music/", "*.lrc");
+        internal static string lyricsPath = Paths.HomePath + "/Music/";
+        internal static string[] lyricsLrc;
 
         /// <summary>
         /// Simulates the lyric animation
@@ -53,6 +53,7 @@ namespace KS.Misc.Animations.Lyrics
         public static void Simulate(LyricsSettings Settings)
         {
             // Select random lyric file from $HOME/Music/*.LRC
+            lyricsLrc ??= Listing.GetFilesystemEntries(Config.MainConfig.LyricsPath, "*.lrc");
             var lyricPath = lyricsLrc.Length > 0 ? lyricsLrc[RandomDriver.RandomIdx(lyricsLrc.Length)] : "";
             DebugWriter.WriteDebug(DebugLevel.I, "Lyric path is {0}", lyricPath);
 
@@ -70,37 +71,34 @@ namespace KS.Misc.Animations.Lyrics
         /// <param name="path">Path to lyric file</param>
         public static void VisualizeLyric(string path)
         {
+            // Neutralize the path
+            path = Filesystem.NeutralizePath(path);
             ConsoleWrapper.CursorVisible = false;
             KernelColorTools.LoadBack();
 
             // Render the border in the lower part of the console for lyric line
-            string fileName = Path.GetFileNameWithoutExtension(path);
             int infoHeight = ConsoleWrapper.WindowHeight - 3;
             int infoMaxChars = ConsoleWrapper.WindowWidth - 9;
             BorderColor.WriteBorder(2, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 6, 1);
-            TextWriterWhereColor.WriteWhere($" {fileName.Truncate(infoMaxChars)} ", 4, ConsoleWrapper.WindowHeight - 4, KernelColorType.NeutralText);
-            DebugWriter.WriteDebug(DebugLevel.I, "Visualizing lyric file {0} [file name: {1}]", path, fileName);
 
             // If there is no lyric path, or if it doesn't exist, tell the user that they have to provide a path to the
             // lyrics folder.
-            //
-            // Beta 2 Note: Message will mention that they can customize the directory to the .LRC files, but they can't
-            // in this beta, so be honest and say that this feature is due Beta 3.
             if (string.IsNullOrWhiteSpace(path) || !Checking.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", path);
                 ConsoleWrapper.SetCursorPosition(2, 1);
-                TextWriterColor.Write(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files.") +
-                    // TODO: Remove this message at the start of the Beta 3 cycle.
-                    " However, the custom paths feature isn't available in this beta version of Nitrocid KS 0.1.0.");
+                TextWriterColor.Write(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files."));
                 return;
             }
-
+            
             // Here, the lyric file is given. Process it...
+            string fileName = Path.GetFileNameWithoutExtension(path);
             var lyric = LyricReader.GetLyrics(path);
             var lyricLines = lyric.Lines;
             var shownLines = new List<LyricLine>();
             DebugWriter.WriteDebug(DebugLevel.I, "{0} lyric lines", lyricLines.Count);
+            TextWriterWhereColor.WriteWhere($" {fileName.Truncate(infoMaxChars)} ", 4, ConsoleWrapper.WindowHeight - 4, KernelColorType.NeutralText);
+            DebugWriter.WriteDebug(DebugLevel.I, "Visualizing lyric file {0} [file name: {1}]", path, fileName);
 
             // Start the elapsed time in 3...
             for (int i = 3; i > 0; i--)

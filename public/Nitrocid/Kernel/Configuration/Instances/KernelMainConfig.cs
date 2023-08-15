@@ -56,6 +56,7 @@ using KS.ConsoleBase.Writers.MiscWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
+using KS.Misc.Animations.Lyrics;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -1728,6 +1729,18 @@ namespace KS.Kernel.Configuration.Instances
         {
             get => ShipDuetShooter.shipDuetSpeed;
             set => ShipDuetShooter.shipDuetSpeed = value < 0 ? 10 : value;
+        }
+        /// <summary>
+        /// Path to the lyrics
+        /// </summary>
+        public string LyricsPath
+        {
+            get => Lyrics.lyricsPath;
+            set
+            {
+                Lyrics.lyricsPath = Checking.FolderExists(value) ? Filesystem.NeutralizePath(value) : Lyrics.lyricsPath;
+                Lyrics.lyricsLrc = Listing.GetFilesystemEntries(Lyrics.lyricsPath, "*.lrc");
+            }
         }
     }
 }

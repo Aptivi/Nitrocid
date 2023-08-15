@@ -877,6 +877,9 @@
         },
         "ShipDuetSpeed": {
             "type": "integer"
+        },
+        "LyricsPath": {
+            "type": "string"
         }
     },
     "required": [
@@ -1171,6 +1174,7 @@
         "TuiBoxBackgroundColor",
         "TuiBoxForegroundColor",
         "ShipDuetUsePowerLine",
-        "ShipDuetSpeed"
+        "ShipDuetSpeed",
+        "LyricsPath"
     ]
 }

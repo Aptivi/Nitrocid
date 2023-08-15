@@ -51,7 +51,7 @@
     <Deterministic>true</Deterministic>
     
     <!-- Increment NitrocidModAPIVersion everytime there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersion>3.0.25.43</NitrocidModAPIVersion>
+    <NitrocidModAPIVersion>3.0.25.44</NitrocidModAPIVersion>
     <FileVersion>$(NitrocidModAPIVersion)</FileVersion>
   </PropertyGroup>
   <!-- KS General Information End -->
