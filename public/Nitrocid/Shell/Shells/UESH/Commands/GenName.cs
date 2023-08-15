@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.UESH.Commands
             string SurnamePrefix = "";
             string SurnameSuffix = "";
             bool nametags = ListSwitchesOnly.Contains("-t");
-            List<string> NamesList;
+            string[] NamesList;
             if (ListArgsOnly.Length >= 1)
                 NamesCount = int.Parse(ListArgsOnly[0]);
             if (ListArgsOnly.Length >= 2)
@@ -69,7 +69,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Check to see if we need to modify the list to have nametags
             if (nametags)
-                for (int i = 0; i < NamesList.Count; i++)
+                for (int i = 0; i < NamesList.Length; i++)
                     NamesList[i] = "@" + NamesList[i].ToLower().Replace(" ", ".");
             ListWriterColor.WriteList(NamesList);
         }
