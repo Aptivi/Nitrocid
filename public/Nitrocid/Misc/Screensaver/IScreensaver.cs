@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
 using System.Collections.Generic;
 
 namespace KS.Misc.Screensaver
@@ -36,8 +37,11 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Display a screensaver. This is executed inside the loop.
         /// </summary>
-        /// TODO: We need to have a function that listens to resize sync.
         void ScreensaverLogic();
+        /// <summary>
+        /// Resize synchronization logic. This is executed by <see cref="ConsoleResizeListener.PollForResize"/>
+        /// </summary>
+        void ScreensaverResizeSync();
         /// <summary>
         /// The outro logic once the screensaver is done displaying.
         /// </summary>

@@ -22,6 +22,7 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Kernel.Threading;
+using KS.Misc.Screensaver;
 using System;
 using System.Threading;
 
@@ -72,6 +73,10 @@ namespace KS.ConsoleBase
                         EventsManager.FireEvent(EventType.ResizeDetected, CurrentWindowWidth, CurrentWindowHeight, termDriver.WindowWidth, termDriver.WindowHeight);
                         CurrentWindowWidth = termDriver.WindowWidth;
                         CurrentWindowHeight = termDriver.WindowHeight;
+
+                        // Also, tell the screensaver application to refresh itself
+                        if (Screensaver.InSaver)
+                            ScreensaverDisplayer.displayingSaver.ScreensaverResizeSync();
                     }
                 }
             }

@@ -77,5 +77,14 @@ namespace KS.Misc.Screensaver
         /// Screensaver outro
         /// </summary>
         public virtual void ScreensaverOutro() { }
+
+        /// <summary>
+        /// Screensaver resize sync
+        /// </summary>
+        public virtual void ScreensaverResizeSync()
+        {
+            KernelColorTools.LoadBack();
+            ConsoleWrapper.CursorVisible = false;
+        }
     }
 }

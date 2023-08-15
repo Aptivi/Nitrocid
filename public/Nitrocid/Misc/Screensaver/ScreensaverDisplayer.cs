@@ -33,6 +33,7 @@ namespace KS.Misc.Screensaver
 
         internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver)ss)) { isCritical = true };
         internal static bool OutOfSaver;
+        internal static BaseScreensaver displayingSaver;
 
         /// <summary>
         /// Displays the screensaver from the screensaver base
@@ -44,6 +45,7 @@ namespace KS.Misc.Screensaver
             {
                 // Preparations
                 OutOfSaver = false;
+                displayingSaver = Screensaver;
                 Screensaver.ScreensaverPreparation();
 
                 // Execute the actual screensaver logic
