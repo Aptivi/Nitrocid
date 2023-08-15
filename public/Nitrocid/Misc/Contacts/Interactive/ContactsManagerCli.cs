@@ -55,59 +55,6 @@ namespace KS.Misc.Contacts.Interactive
             new InteractiveTuiBinding(/* Localizable */ "Raw Info",    ConsoleKey.F9, (_, index) => ShowContactRawInfo(index), true),
         };
 
-        /// <summary>
-        /// Contacts manager background color
-        /// </summary>
-        public static new Color BackgroundColor => ContactManagerCliColors.ContactsManagerBackgroundColor;
-        /// <summary>
-        /// Contacts manager foreground color
-        /// </summary>
-        public static new Color ForegroundColor => ContactManagerCliColors.ContactsManagerForegroundColor;
-        /// <summary>
-        /// Contacts manager pane background color
-        /// </summary>
-        public static new Color PaneBackgroundColor => ContactManagerCliColors.ContactsManagerPaneBackgroundColor;
-        /// <summary>
-        /// Contacts manager pane separator color
-        /// </summary>
-        public static new Color PaneSeparatorColor => ContactManagerCliColors.ContactsManagerPaneSeparatorColor;
-        /// <summary>
-        /// Contacts manager pane selected Contacts color (foreground)
-        /// </summary>
-        public static new Color PaneSelectedItemForeColor => ContactManagerCliColors.ContactsManagerPaneSelectedContactsForeColor;
-        /// <summary>
-        /// Contacts manager pane selected Contacts color (background)
-        /// </summary>
-        public static new Color PaneSelectedItemBackColor => ContactManagerCliColors.ContactsManagerPaneSelectedContactsBackColor;
-        /// <summary>
-        /// Contacts manager pane Contacts color (foreground)
-        /// </summary>
-        public static new Color PaneItemForeColor => ContactManagerCliColors.ContactsManagerPaneContactsForeColor;
-        /// <summary>
-        /// Contacts manager pane Contacts color (background)
-        /// </summary>
-        public static new Color PaneItemBackColor => ContactManagerCliColors.ContactsManagerPaneContactsBackColor;
-        /// <summary>
-        /// Contacts manager option background color
-        /// </summary>
-        public static new Color OptionBackgroundColor => ContactManagerCliColors.ContactsManagerOptionBackgroundColor;
-        /// <summary>
-        /// Contacts manager key binding in option color
-        /// </summary>
-        public static new Color KeyBindingOptionColor => ContactManagerCliColors.ContactsManagerKeyBindingOptionColor;
-        /// <summary>
-        /// Contacts manager option foreground color
-        /// </summary>
-        public static new Color OptionForegroundColor => ContactManagerCliColors.ContactsManagerOptionForegroundColor;
-        /// <summary>
-        /// Contacts manager box background color
-        /// </summary>
-        public static new Color BoxBackgroundColor => ContactManagerCliColors.ContactsManagerBoxBackgroundColor;
-        /// <summary>
-        /// Contacts manager box foreground color
-        /// </summary>
-        public static new Color BoxForegroundColor => ContactManagerCliColors.ContactsManagerBoxForegroundColor;
-
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>
             ContactsManager.GetContacts();

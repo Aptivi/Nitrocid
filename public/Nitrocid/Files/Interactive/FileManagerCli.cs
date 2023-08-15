@@ -64,63 +64,6 @@ namespace KS.Files.Interactive
         };
 
         /// <summary>
-        /// File manager background color
-        /// </summary>
-        public static new Color BackgroundColor => FileManagerCliColors.FileManagerBackgroundColor;
-        /// <summary>
-        /// File manager foreground color
-        /// </summary>
-        public static new Color ForegroundColor => FileManagerCliColors.FileManagerForegroundColor;
-        /// <summary>
-        /// File manager pane background color
-        /// </summary>
-        public static new Color PaneBackgroundColor => FileManagerCliColors.FileManagerPaneBackgroundColor;
-        /// <summary>
-        /// File manager pane separator color
-        /// </summary>
-        public static new Color PaneSeparatorColor => FileManagerCliColors.FileManagerPaneSeparatorColor;
-        /// <summary>
-        /// File manager selected pane separator color
-        /// </summary>
-        public static new Color PaneSelectedSeparatorColor => FileManagerCliColors.FileManagerPaneSelectedSeparatorColor;
-        /// <summary>
-        /// File manager pane selected File color (foreground)
-        /// </summary>
-        public static new Color PaneSelectedItemForeColor => FileManagerCliColors.FileManagerPaneSelectedFileForeColor;
-        /// <summary>
-        /// File manager pane selected File color (background)
-        /// </summary>
-        public static new Color PaneSelectedItemBackColor => FileManagerCliColors.FileManagerPaneSelectedFileBackColor;
-        /// <summary>
-        /// File manager pane File color (foreground)
-        /// </summary>
-        public static new Color PaneItemForeColor => FileManagerCliColors.FileManagerPaneFileForeColor;
-        /// <summary>
-        /// File manager pane File color (background)
-        /// </summary>
-        public static new Color PaneItemBackColor => FileManagerCliColors.FileManagerPaneFileBackColor;
-        /// <summary>
-        /// File manager option background color
-        /// </summary>
-        public static new Color OptionBackgroundColor => FileManagerCliColors.FileManagerOptionBackgroundColor;
-        /// <summary>
-        /// File manager key binding in option color
-        /// </summary>
-        public static new Color KeyBindingOptionColor => FileManagerCliColors.FileManagerKeyBindingOptionColor;
-        /// <summary>
-        /// File manager option foreground color
-        /// </summary>
-        public static new Color OptionForegroundColor => FileManagerCliColors.FileManagerOptionForegroundColor;
-        /// <summary>
-        /// File manager box background color
-        /// </summary>
-        public static new Color BoxBackgroundColor => FileManagerCliColors.FileManagerBoxBackgroundColor;
-        /// <summary>
-        /// File manager box foreground color
-        /// </summary>
-        public static new Color BoxForegroundColor => FileManagerCliColors.FileManagerBoxForegroundColor;
-
-        /// <summary>
         /// Always true in the file manager as we want it to behave like Total Commander
         /// </summary>
         public override bool SecondPaneInteractable =>

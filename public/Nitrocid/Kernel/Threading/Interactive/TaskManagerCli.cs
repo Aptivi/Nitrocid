@@ -46,63 +46,6 @@ namespace KS.Kernel.Threading.Interactive
             new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab,    (_, _) => SwitchMode(), true)
         };
 
-        /// <summary>
-        /// Task manager background color
-        /// </summary>
-        public static new Color BackgroundColor => TaskManagerCliColors.TaskManagerBackgroundColor;
-        /// <summary>
-        /// Task manager foreground color
-        /// </summary>
-        public static new Color ForegroundColor => TaskManagerCliColors.TaskManagerForegroundColor;
-        /// <summary>
-        /// Task manager pane background color
-        /// </summary>
-        public static new Color PaneBackgroundColor => TaskManagerCliColors.TaskManagerPaneBackgroundColor;
-        /// <summary>
-        /// Task manager pane separator color
-        /// </summary>
-        public static new Color PaneSeparatorColor => TaskManagerCliColors.TaskManagerPaneSeparatorColor;
-        /// <summary>
-        /// Task manager pane selected Task color (foreground)
-        /// </summary>
-        public static new Color PaneSelectedItemForeColor => TaskManagerCliColors.TaskManagerPaneSelectedTaskForeColor;
-        /// <summary>
-        /// Task manager pane selected Task color (background)
-        /// </summary>
-        public static new Color PaneSelectedItemBackColor => TaskManagerCliColors.TaskManagerPaneSelectedTaskBackColor;
-        /// <summary>
-        /// Task manager pane Task color (foreground)
-        /// </summary>
-        public static new Color PaneItemForeColor => TaskManagerCliColors.TaskManagerPaneTaskForeColor;
-        /// <summary>
-        /// Task manager pane Task color (background)
-        /// </summary>
-        public static new Color PaneItemBackColor => TaskManagerCliColors.TaskManagerPaneTaskBackColor;
-        /// <summary>
-        /// Task manager option background color
-        /// </summary>
-        public static new Color OptionBackgroundColor => TaskManagerCliColors.TaskManagerOptionBackgroundColor;
-        /// <summary>
-        /// Task manager key binding in option color
-        /// </summary>
-        public static new Color KeyBindingOptionColor => TaskManagerCliColors.TaskManagerKeyBindingOptionColor;
-        /// <summary>
-        /// Task manager option foreground color
-        /// </summary>
-        public static new Color OptionForegroundColor => TaskManagerCliColors.TaskManagerOptionForegroundColor;
-        /// <summary>
-        /// Task manager box background color
-        /// </summary>
-        public static new Color BoxBackgroundColor => TaskManagerCliColors.TaskManagerBoxBackgroundColor;
-        /// <summary>
-        /// Task manager box foreground color
-        /// </summary>
-        public static new Color BoxForegroundColor => TaskManagerCliColors.TaskManagerBoxForegroundColor;
-
-        /// <inheritdoc/>
-        public override IEnumerable PrimaryDataSource =>
-            osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
-
         /// <inheritdoc/>
         public override string GetInfoFromItem(object item)
         {
