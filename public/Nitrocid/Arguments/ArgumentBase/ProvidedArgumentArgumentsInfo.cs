@@ -44,11 +44,6 @@ namespace KS.Arguments.ArgumentBase
         /// </summary>
         public string ArgumentsText { get; private set; }
         /// <summary>
-        /// List version of the provided arguments and switches
-        /// </summary>
-        [Obsolete("To be removed in Beta 3.")]
-        public string[] FullArgumentsList { get; private set; }
-        /// <summary>
         /// List version of the provided arguments
         /// </summary>
         public string[] ArgumentsList { get; private set; }
