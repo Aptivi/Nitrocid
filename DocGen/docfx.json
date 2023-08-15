@@ -3,7 +3,10 @@
         {
             "src": [
                 {
-                    "files": [ "public/Nitrocid/Nitrocid.csproj" ],
+                    "files": [
+                        "public/Nitrocid/Nitrocid.csproj",
+                        "public/Nitrocid.LocaleGen.Core/Nitrocid.LocaleGen.Core.csproj"
+                    ],
                     "src": ".."
                 }
             ],
