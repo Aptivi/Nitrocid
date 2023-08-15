@@ -836,5 +836,6 @@ Failed trying to initialize shell
 Loading...
 Lyrics Path
 Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory.
+The connection index is out of range.
 
 ==========================================================================================================================================

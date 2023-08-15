@@ -189,6 +189,55 @@ namespace KS.Network.Base.Connections
         }
 
         /// <summary>
+        /// Gets the connection index from the specific type
+        /// </summary>
+        /// <param name="connection">Network connection to get its index from</param>
+        /// <param name="connectionType">Connection type</param>
+        /// <returns>Network connection index starting from zero (0)</returns>
+        /// <exception cref="KernelException"></exception>
+        public static int GetConnectionIndexSpecific(NetworkConnection connection, NetworkConnectionType connectionType)
+        {
+            // Check to see if we have this connection
+            var availableConnections = GetNetworkConnections(connectionType);
+            if (!availableConnections.Contains(connection))
+                throw new KernelException(KernelExceptionType.NetworkConnection,
+                    Translate.DoTranslation("Connection is not established yet."));
+            return Array.IndexOf(availableConnections, connection);
+        }
+
+        /// <summary>
+        /// Gets the connection from the index
+        /// </summary>
+        /// <param name="index">Network connection index</param>
+        /// <returns>Network connection from the index</returns>
+        /// <exception cref="KernelException"></exception>
+        public static NetworkConnection GetConnectionFromIndex(int index)
+        {
+            // Check to see if we have this connection
+            if (index >= networkConnections.Count || index < 0)
+                throw new KernelException(KernelExceptionType.NetworkConnection,
+                    Translate.DoTranslation("The connection index is out of range."));
+            return networkConnections[index];
+        }
+
+        /// <summary>
+        /// Gets the connection from the index from the specific type
+        /// </summary>
+        /// <param name="index">Network connection index</param>
+        /// <param name="connectionType">Connection type</param>
+        /// <returns>Network connection from the index</returns>
+        /// <exception cref="KernelException"></exception>
+        public static NetworkConnection GetConnectionFromIndexSpecific(int index, NetworkConnectionType connectionType)
+        {
+            // Check to see if we have this connection
+            var availableConnections = GetNetworkConnections(connectionType);
+            if (index >= availableConnections.Length || index < 0)
+                throw new KernelException(KernelExceptionType.NetworkConnection,
+                    Translate.DoTranslation("The connection index is out of range."));
+            return availableConnections[index];
+        }
+
+        /// <summary>
         /// Opens a connection for the selected shell
         /// </summary>
         /// <param name="shellType">Any shell type that has its <see cref="BaseShellInfo.AcceptsNetworkConnection"/> flag set to true.</param>

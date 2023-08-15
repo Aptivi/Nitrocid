@@ -112,6 +112,28 @@ namespace KSTests.Network
         /// Tests getting network connections
         /// </summary>
         [Test]
+        [TestCase(NetworkConnectionType.FTP, 0)]
+        [TestCase(NetworkConnectionType.HTTP, 1)]
+        [TestCase(NetworkConnectionType.Mail, 2)]
+        [TestCase(NetworkConnectionType.RSS, 3)]
+        [TestCase(NetworkConnectionType.SFTP, 4)]
+        [TestCase(NetworkConnectionType.SSH, 5)]
+        [Description("Action")]
+        public void TestGetConnectionIndex(NetworkConnectionType type, int expectedIdx)
+        {
+            var connections = NetworkConnectionTools.GetNetworkConnections(type);
+            connections.ShouldNotBeNull();
+            connections.ShouldNotBeEmpty();
+            var connection = connections[0];
+            int index = NetworkConnectionTools.GetConnectionIndex(connection);
+            index.ShouldBe(expectedIdx);
+            connections[0].ShouldBe(connection);
+        }
+
+        /// <summary>
+        /// Tests getting network connections from a specific type
+        /// </summary>
+        [Test]
         [TestCase(NetworkConnectionType.FTP)]
         [TestCase(NetworkConnectionType.HTTP)]
         [TestCase(NetworkConnectionType.Mail)]
@@ -119,15 +141,57 @@ namespace KSTests.Network
         [TestCase(NetworkConnectionType.SFTP)]
         [TestCase(NetworkConnectionType.SSH)]
         [Description("Action")]
-        public void TestGetConnectionIndex(NetworkConnectionType type)
+        public void TestGetConnectionIndexSpecific(NetworkConnectionType type)
         {
             var connections = NetworkConnectionTools.GetNetworkConnections(type);
             connections.ShouldNotBeNull();
             connections.ShouldNotBeEmpty();
             var connection = connections[0];
-            int index = NetworkConnectionTools.GetConnectionIndex(connection);
+            int index = NetworkConnectionTools.GetConnectionIndexSpecific(connection, type);
             index.ShouldBe(0);
             connections[index].ShouldBe(connection);
+        }
+
+        /// <summary>
+        /// Tests getting network connections
+        /// </summary>
+        [Test]
+        [TestCase(NetworkConnectionType.FTP, 0)]
+        [TestCase(NetworkConnectionType.HTTP, 1)]
+        [TestCase(NetworkConnectionType.Mail, 2)]
+        [TestCase(NetworkConnectionType.RSS, 3)]
+        [TestCase(NetworkConnectionType.SFTP, 4)]
+        [TestCase(NetworkConnectionType.SSH, 5)]
+        [Description("Action")]
+        public void TestGetConnectionFromIndex(NetworkConnectionType type, int expectedIdx)
+        {
+            var connections = NetworkConnectionTools.GetNetworkConnections(type);
+            connections.ShouldNotBeNull();
+            connections.ShouldNotBeEmpty();
+            var connection = NetworkConnectionTools.GetConnectionFromIndex(expectedIdx);
+            connections.ShouldContain(connection);
+            connections[0].ShouldBe(connection);
+        }
+
+        /// <summary>
+        /// Tests getting network connections from a specific type
+        /// </summary>
+        [Test]
+        [TestCase(NetworkConnectionType.FTP, 0)]
+        [TestCase(NetworkConnectionType.HTTP, 1)]
+        [TestCase(NetworkConnectionType.Mail, 2)]
+        [TestCase(NetworkConnectionType.RSS, 3)]
+        [TestCase(NetworkConnectionType.SFTP, 4)]
+        [TestCase(NetworkConnectionType.SSH, 5)]
+        [Description("Action")]
+        public void TestGetConnectionFromIndexSpecific(NetworkConnectionType type, int expectedIdx)
+        {
+            var connections = NetworkConnectionTools.GetNetworkConnections(type);
+            connections.ShouldNotBeNull();
+            connections.ShouldNotBeEmpty();
+            var connection = NetworkConnectionTools.GetConnectionFromIndexSpecific(0, type);
+            connections.ShouldContain(connection);
+            connections[0].ShouldBe(connection);
         }
 
         /// <summary>
