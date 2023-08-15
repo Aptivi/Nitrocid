@@ -101,7 +101,6 @@ namespace KS.Misc.Screensaver
             { "progressclock", new ProgressClockDisplay() },
             { "pulse", new PulseDisplay() },
             { "ramp", new RampDisplay() },
-            { "random", new RandomSaverDisplay() },
             { "shipduet", new ShipDuetDisplay() },
             { "simplematrix", new SimpleMatrixDisplay() },
             { "siren", new SirenDisplay() },
@@ -213,8 +212,17 @@ namespace KS.Misc.Screensaver
         {
             try
             {
+                // Check to see if the scrensaver exists
                 EventsManager.FireEvent(EventType.PreShowScreensaver);
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
+                if (!IsScreensaverRegistered(saver))
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("The requested screensaver {0} is not found."), true, KernelColorType.Error, saver);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver);
+                    return;
+                }
+
+                // Now, judge how to launch the screensaver
                 if (saver.ToLower() == "random")
                 {
                     // Random screensaver selection function
@@ -247,7 +255,7 @@ namespace KS.Misc.Screensaver
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} started", saver);
                 }
-                else if (CustomSaverTools.CustomSavers.ContainsKey(saver))
+                else
                 {
                     // Only one custom screensaver can be used.
                     var BaseSaver = CustomSaverTools.CustomSavers[saver].ScreensaverBase;
@@ -257,11 +265,6 @@ namespace KS.Misc.Screensaver
                     Flags.ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(new CustomDisplay(BaseSaver));
                     DebugWriter.WriteDebug(DebugLevel.I, "Custom screensaver {0} started", saver);
-                }
-                else
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("The requested screensaver {0} is not found."), true, KernelColorType.Error, saver);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver);
                 }
             }
             catch (InvalidOperationException ex)
@@ -308,18 +311,18 @@ namespace KS.Misc.Screensaver
         /// <param name="saver">Specified screensaver</param>
         public static void SetDefaultScreensaver(string saver)
         {
-            saver = saver.ToLower();
-            if (Screensavers.ContainsKey(saver) | CustomSaverTools.CustomSavers.ContainsKey(saver))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", saver);
-                Config.MainConfig.DefaultSaverName = saver;
-                Config.CreateConfig();
-            }
-            else
+            // Check to see if there is a screensaver with this name
+            if (!IsScreensaverRegistered(saver))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found.", saver);
                 throw new KernelException(KernelExceptionType.NoSuchScreensaver, Translate.DoTranslation("Screensaver {0} not found in database. Check the name and try again."), saver);
             }
+
+            // Now, set the default screensaver.
+            saver = saver.ToLower();
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} is found. Setting it to default...", saver);
+            Config.MainConfig.DefaultSaverName = saver;
+            Config.CreateConfig();
         }
 
         /// <summary>
@@ -334,6 +337,17 @@ namespace KS.Misc.Screensaver
                     return (BaseScreensaver)Assembly.CreateInstance(t.FullName);
             }
             return null;
+        }
+
+        /// <summary>
+        /// Is the screensaver registered?
+        /// </summary>
+        /// <param name="name">The name of the screensaver to query</param>
+        /// <returns>True if found; false otherwise.</returns>
+        public static bool IsScreensaverRegistered(string name)
+        {
+            name = name.ToLower();
+            return Screensavers.ContainsKey(name) || CustomSaverTools.CustomSavers.ContainsKey(name) || name == "random";
         }
 
         /// <summary>
