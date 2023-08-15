@@ -71,8 +71,7 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="settings">Reader settings</param>
-        /// TODO: Make public on Beta 3
-        internal static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings)
+        public static string ReadLine(string InputText, string DefaultValue, TermReaderSettings settings)
         {
             string Output = ReadLineUnsafe(InputText, DefaultValue, false, settings);
 
@@ -109,8 +108,7 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="InputText">Input text to write</param>
         /// <param name="DefaultValue">Default value</param>
         /// <param name="settings">Reader settings</param>
-        /// TODO: Make public on Beta 3
-        internal static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings)
+        public static string ReadLineWrapped(string InputText, string DefaultValue, TermReaderSettings settings)
         {
             string Output = ReadLineUnsafe(InputText, DefaultValue, true, settings);
 
@@ -136,8 +134,7 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="DefaultValue">Default value</param>
         /// <param name="OneLineWrap">Whether to wrap the input to one line</param>
         /// <param name="settings">Reader settings</param>
-        /// TODO: Make public on Beta 3
-        internal static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null)
+        public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null)
         {
             TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
             string Output = TermReader.Read(InputText, DefaultValue, finalSettings, false, OneLineWrap);
@@ -187,8 +184,7 @@ namespace KS.ConsoleBase.Inputs
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         /// <param name="settings">Reader settings</param>
-        /// TODO: Make public on Beta 3
-        internal static string ReadLineNoInput(char MaskChar, TermReaderSettings settings)
+        public static string ReadLineNoInput(char MaskChar, TermReaderSettings settings)
         {
             TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
             string pass = ReadLineNoInputUnsafe(MaskChar, finalSettings);
@@ -214,8 +210,7 @@ namespace KS.ConsoleBase.Inputs
         /// Reads the next line of characters from the standard input stream without showing input being written by user unsafely. This doesn't wait until the screensaver lock mode is released.
         /// </summary>
         /// <param name="settings">Reader settings</param>
-        /// TODO: Make public on Beta 3
-        internal static string ReadLineNoInputUnsafe(TermReaderSettings settings)
+        public static string ReadLineNoInputUnsafe(TermReaderSettings settings)
         {
             if (!string.IsNullOrEmpty(CurrentMask))
                 return ReadLineNoInputUnsafe(CurrentMask[0], settings);
@@ -235,8 +230,7 @@ namespace KS.ConsoleBase.Inputs
         /// </summary>
         /// <param name="MaskChar">Specifies the password mask character</param>
         /// <param name="settings">Reader settings</param>
-        /// TODO: Make public on Beta 3
-        internal static string ReadLineNoInputUnsafe(char MaskChar, TermReaderSettings settings)
+        public static string ReadLineNoInputUnsafe(char MaskChar, TermReaderSettings settings)
         {
             TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
             finalSettings.PasswordMaskChar = MaskChar;
