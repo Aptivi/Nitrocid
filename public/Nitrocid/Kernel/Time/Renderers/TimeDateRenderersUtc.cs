@@ -313,7 +313,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <param name="CustomFormat">A custom format for rendering the time</param>
         /// <returns>A time</returns>
-        public static string Render(DateTime DT, CultureInfo Cult, string CustomFormat) =>
+        public static string RenderUtc(DateTime DT, CultureInfo Cult, string CustomFormat) =>
             DT.ToUniversalTime().ToString(CustomFormat, Cult);
 
     }

@@ -667,8 +667,6 @@ namespace KSTests.Kernel.Time
             TimeDateRenderersUtc.RenderUtc(TargetDate, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
-        // TODO: Public API doesn't implement below RenderUtc overload. Implement in Beta 3.
-#if UNDONE
         /// <summary>
         /// Tests rendering custom date with specified culture and custom format (UTC)
         /// </summary>
@@ -683,7 +681,6 @@ namespace KSTests.Kernel.Time
             formatted.ShouldNotBeNullOrEmpty();
             formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
         }
-#endif
 
     }
 }
