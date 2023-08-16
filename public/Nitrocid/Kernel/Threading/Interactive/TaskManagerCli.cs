@@ -21,9 +21,7 @@ using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using KS.Misc.Interactive;
-using System.Collections;
 using KS.Misc.Text;
-using Terminaux.Colors;
 
 namespace KS.Kernel.Threading.Interactive
 {

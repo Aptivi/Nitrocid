@@ -24,6 +24,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using System;
 using System.Collections.Generic;
 
@@ -73,7 +74,7 @@ namespace KS.Arguments.ArgumentBase
                     if (Arguments.ContainsKey(ArgumentName))
                     {
                         // Variables
-                        var ArgumentInfo = new ProvidedArgumentArgumentsInfo(Argument);
+                        var ArgumentInfo = ArgumentsParser.ParseArgumentArguments(Argument);
                         var Arg = Arguments[ArgumentName];
                         var Args = ArgumentInfo.ArgumentsList;
                         var Switches = ArgumentInfo.SwitchesList;

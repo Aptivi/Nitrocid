@@ -18,7 +18,7 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Tests switches");
         public override void Run()
         {
-            string[] ListSwitchesOnly = new ProvidedCommandArgumentsInfo("help -r", ShellType.Shell).SwitchesList;
+            string[] ListSwitchesOnly = ArgumentsParser.ParseShellCommandArguments("help -r", ShellType.Shell).SwitchesList;
             ListWriterColor.WriteList(ListSwitchesOnly);
         }
     }

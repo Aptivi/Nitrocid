@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Arguments.ArgumentBase;
+using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using NUnit.Framework;
 using Shouldly;
 
@@ -33,17 +33,17 @@ namespace KSTests.Arguments
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgNoArg()
         {
             // Create instance
-            var argArginfo = new ProvidedArgumentArgumentsInfo("lang");
+            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang");
 
             // Test for null
             argArginfo.ShouldNotBeNull();
-            argArginfo.Argument.ShouldNotBeNullOrEmpty();
+            argArginfo.Command.ShouldNotBeNullOrEmpty();
             argArginfo.ArgumentsList.ShouldBeEmpty();
             argArginfo.ArgumentsText.ShouldBeNullOrEmpty();
             argArginfo.SwitchesList.ShouldBeEmpty();
 
             // Test for correctness
-            argArginfo.Argument.ShouldBe("lang");
+            argArginfo.Command.ShouldBe("lang");
             argArginfo.RequiredArgumentsProvided.ShouldBeFalse();
         }
 
@@ -55,17 +55,17 @@ namespace KSTests.Arguments
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgWithArg()
         {
             // Create instance
-            var argArginfo = new ProvidedArgumentArgumentsInfo("lang eng");
+            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang eng");
 
             // Test for null
             argArginfo.ShouldNotBeNull();
-            argArginfo.Argument.ShouldNotBeNullOrEmpty();
+            argArginfo.Command.ShouldNotBeNullOrEmpty();
             argArginfo.ArgumentsList.ShouldNotBeEmpty();
             argArginfo.ArgumentsText.ShouldNotBeNullOrEmpty();
             argArginfo.SwitchesList.ShouldBeEmpty();
 
             // Test for correctness
-            argArginfo.Argument.ShouldBe("lang");
+            argArginfo.Command.ShouldBe("lang");
             argArginfo.ArgumentsList.ShouldHaveSingleItem();
             argArginfo.ArgumentsList.ShouldContain("eng");
             argArginfo.ArgumentsText.ShouldBe("eng");
@@ -80,17 +80,17 @@ namespace KSTests.Arguments
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgWithSwitch()
         {
             // Create instance
-            var argArginfo = new ProvidedArgumentArgumentsInfo("lang -switch");
+            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang -switch");
 
             // Test for null
             argArginfo.ShouldNotBeNull();
-            argArginfo.Argument.ShouldNotBeNullOrEmpty();
+            argArginfo.Command.ShouldNotBeNullOrEmpty();
             argArginfo.ArgumentsList.ShouldBeEmpty();
             argArginfo.ArgumentsText.ShouldBeNullOrEmpty();
             argArginfo.SwitchesList.ShouldNotBeEmpty();
 
             // Test for correctness
-            argArginfo.Argument.ShouldBe("lang");
+            argArginfo.Command.ShouldBe("lang");
             argArginfo.RequiredArgumentsProvided.ShouldBeFalse();
             argArginfo.SwitchesList.ShouldHaveSingleItem();
             argArginfo.SwitchesList.ShouldContain("-switch");
@@ -104,17 +104,17 @@ namespace KSTests.Arguments
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgFull()
         {
             // Create instance
-            var argArginfo = new ProvidedArgumentArgumentsInfo("lang -switch eng");
+            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang -switch eng");
 
             // Test for null
             argArginfo.ShouldNotBeNull();
-            argArginfo.Argument.ShouldNotBeNullOrEmpty();
+            argArginfo.Command.ShouldNotBeNullOrEmpty();
             argArginfo.ArgumentsList.ShouldNotBeEmpty();
             argArginfo.ArgumentsText.ShouldNotBeNullOrEmpty();
             argArginfo.SwitchesList.ShouldNotBeEmpty();
 
             // Test for correctness
-            argArginfo.Argument.ShouldBe("lang");
+            argArginfo.Command.ShouldBe("lang");
             argArginfo.ArgumentsList.ShouldHaveSingleItem();
             argArginfo.ArgumentsList.ShouldContain("eng");
             argArginfo.ArgumentsText.ShouldBe("eng");

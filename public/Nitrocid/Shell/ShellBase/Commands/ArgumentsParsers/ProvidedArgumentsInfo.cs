@@ -1,0 +1,73 @@
+﻿
+// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+// 
+// This file is part of Nitrocid KS
+// 
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
+{
+    /// <summary>
+    /// Provided arguments information class
+    /// </summary>
+    public class ProvidedArgumentsInfo
+    {
+
+        /// <summary>
+        /// Target command or argument that the user executed in shell
+        /// </summary>
+        public string Command { get; private set; }
+        /// <summary>
+        /// Text version of the provided arguments and switches
+        /// </summary>
+        public string ArgumentsText { get; private set; }
+        /// <summary>
+        /// List version of the provided arguments
+        /// </summary>
+        public string[] ArgumentsList { get; private set; }
+        /// <summary>
+        /// List version of the provided switches
+        /// </summary>
+        public string[] SwitchesList { get; private set; }
+        /// <summary>
+        /// Checks to see if the required arguments are provided
+        /// </summary>
+        public bool RequiredArgumentsProvided { get; private set; }
+        /// <summary>
+        /// Checks to see if the required switches are provided
+        /// </summary>
+        public bool RequiredSwitchesProvided { get; private set; }
+        /// <summary>
+        /// Checks to see if the required switch arguments for switches that require values are provided
+        /// </summary>
+        public bool RequiredSwitchArgumentsProvided { get; private set; }
+
+        internal string[] UnknownSwitchesList { get; private set; }
+        internal string[] ConflictingSwitchesList { get; private set; }
+
+        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList)
+        {
+            Command = command;
+            ArgumentsText = argumentsText;
+            ArgumentsList = argumentsList;
+            SwitchesList = switchesList;
+            RequiredArgumentsProvided = requiredArgumentsProvided;
+            RequiredSwitchesProvided = requiredSwitchesProvided;
+            RequiredSwitchArgumentsProvided = requiredSwitchArgumentsProvided;
+            UnknownSwitchesList = unknownSwitchesList;
+            ConflictingSwitchesList = conflictingSwitchesList;
+        }
+
+    }
+}

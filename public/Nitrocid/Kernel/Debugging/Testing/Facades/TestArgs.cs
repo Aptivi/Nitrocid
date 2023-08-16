@@ -18,7 +18,7 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Tests arguments");
         public override void Run()
         {
-            string[] ListArgsOnly = new ProvidedCommandArgumentsInfo("help shutdown", ShellType.Shell).ArgumentsList;
+            string[] ListArgsOnly = ArgumentsParser.ParseShellCommandArguments("help shutdown", ShellType.Shell).ArgumentsList;
             ListWriterColor.WriteList(ListArgsOnly);
         }
     }

@@ -32,6 +32,7 @@ using KS.Drivers.Console;
 using KS.Drivers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Threading;
+using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -115,7 +116,7 @@ namespace KS.Shell.ShellBase.Commands
             try
             {
                 // Variables
-                var ArgumentInfo = new ProvidedCommandArgumentsInfo(RequestedCommand, ShellType);
+                var ArgumentInfo = ArgumentsParser.ParseShellCommandArguments(RequestedCommand, ShellType);
                 string Command = ArgumentInfo.Command;
                 var Args = ArgumentInfo.ArgumentsList;
                 var Switches = ArgumentInfo.SwitchesList;
@@ -161,21 +162,21 @@ namespace KS.Shell.ShellBase.Commands
                     }
                     
                     // Check for unknown switches
-                    if (ArgumentInfo.unknownSwitchesList.Length > 0)
+                    if (ArgumentInfo.UnknownSwitchesList.Length > 0)
                     {
                         argSatisfied = false;
                         DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
                         TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below are unknown."));
-                        ListWriterColor.WriteList(ArgumentInfo.unknownSwitchesList);
+                        ListWriterColor.WriteList(ArgumentInfo.UnknownSwitchesList);
                     }
                     
                     // Check for conflicting switches
-                    if (ArgumentInfo.conflictingSwitchesList.Length > 0)
+                    if (ArgumentInfo.ConflictingSwitchesList.Length > 0)
                     {
                         argSatisfied = false;
                         DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
                         TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below conflict with each other."));
-                        ListWriterColor.WriteList(ArgumentInfo.conflictingSwitchesList);
+                        ListWriterColor.WriteList(ArgumentInfo.ConflictingSwitchesList);
                     }
                 }
 
@@ -216,7 +217,7 @@ namespace KS.Shell.ShellBase.Commands
             var currentShell = ShellStart.ShellStack[^1];
             var currentType = currentShell.ShellType;
             var StartCommandThread = currentShell.ShellCommandThread;
-            var argumentInfo = new ProvidedCommandArgumentsInfo(Command, currentType);
+            var argumentInfo = ArgumentsParser.ParseShellCommandArguments(Command, currentType);
             string CommandToBeWrapped = argumentInfo.Command;
 
             // Check to see if the command is found

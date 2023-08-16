@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase.Scripting
@@ -73,7 +74,7 @@ namespace KS.Shell.ShellBase.Scripting
         /// <returns>A command line in script that has a value of $variable</returns>
         public static string GetVariableCommand(string var, string cmd)
         {
-            var CommandArgumentsInfo = new ProvidedCommandArgumentsInfo(cmd, ShellType.Shell);
+            var CommandArgumentsInfo = ArgumentsParser.ParseShellCommandArguments(cmd, ShellType.Shell);
             string NewCommand = $"{CommandArgumentsInfo.Command} ";
             if (!CommandManager.IsCommandFound(CommandArgumentsInfo.Command) ||
                 !ShellManager.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].Flags.HasFlag(CommandFlags.SettingVariable))

@@ -33,7 +33,6 @@ using System.Collections;
 using KS.Misc.Text;
 using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.FancyWriters;
-using Terminaux.Colors;
 
 namespace KS.Files.Interactive
 {

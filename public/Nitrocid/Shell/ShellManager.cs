@@ -69,6 +69,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Scripting;
 using Terminaux.Reader;
 using KS.Misc.Screensaver;
+using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 
 namespace KS.Shell
 {
@@ -289,7 +290,7 @@ namespace KS.Shell
                     DebugWriter.WriteDebug(DebugLevel.I, "Finished TargetFile: {0}", TargetFile);
 
                     // Get arguments
-                    var commandArguments = new ProvidedCommandArgumentsInfo(Command, ShellType);
+                    var commandArguments = ArgumentsParser.ParseShellCommandArguments(Command, ShellType);
 
                     // Reads command written by user
                     try

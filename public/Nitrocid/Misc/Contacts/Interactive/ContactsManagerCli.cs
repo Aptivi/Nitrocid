@@ -29,7 +29,6 @@ using KS.Misc.Interactive;
 using System.Collections;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.FancyWriters;
-using Terminaux.Colors;
 
 namespace KS.Misc.Contacts.Interactive
 {

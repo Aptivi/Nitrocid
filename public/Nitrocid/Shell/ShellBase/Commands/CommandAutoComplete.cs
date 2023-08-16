@@ -18,6 +18,7 @@
 using KS.Files.Folders;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
+using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.Linq;
@@ -52,7 +53,7 @@ namespace KS.Shell.ShellBase.Commands
                 return ShellCommands.Keys.ToArray();
 
             // Get the provided command and argument information
-            var commandArgumentInfo = new ProvidedCommandArgumentsInfo(text, shellType);
+            var commandArgumentInfo = ArgumentsParser.ParseShellCommandArguments(text, shellType);
 
             // We're providing completion for argument.
             string CommandName = commandArgumentInfo.Command;

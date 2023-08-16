@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
 using Shouldly;
@@ -27,7 +27,7 @@ namespace KSTests.Shell.ShellBase.Commands
     public class ProvidedCommandArgumentInfoTests
     {
         /// <summary>
-        /// Tests initializing <see cref="ProvidedCommandArgumentsInfo"/> instance from a command line argument
+        /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [Test]
         [TestCase(ShellType.Shell)]
@@ -46,7 +46,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgNoArg(ShellType type)
         {
             // Create instance
-            var cmdArginfo = new ProvidedCommandArgumentsInfo("help", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help", type);
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -61,7 +61,7 @@ namespace KSTests.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Tests initializing <see cref="ProvidedCommandArgumentsInfo"/> instance from a command line argument
+        /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [Test]
         [TestCase(ShellType.Shell)]
@@ -80,7 +80,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithArg(ShellType type)
         {
             // Create instance
-            var cmdArginfo = new ProvidedCommandArgumentsInfo("help list", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help list", type);
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -98,7 +98,7 @@ namespace KSTests.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Tests initializing <see cref="ProvidedCommandArgumentsInfo"/> instance from a command line argument
+        /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [Test]
         [TestCase(ShellType.Shell)]
@@ -117,7 +117,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithSwitch(ShellType type)
         {
             // Create instance
-            var cmdArginfo = new ProvidedCommandArgumentsInfo("help -switch", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch", type);
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -134,7 +134,7 @@ namespace KSTests.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Tests initializing <see cref="ProvidedCommandArgumentsInfo"/> instance from a command line argument
+        /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [Test]
         [TestCase(ShellType.Shell)]
@@ -153,7 +153,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgFull(ShellType type)
         {
             // Create instance
-            var cmdArginfo = new ProvidedCommandArgumentsInfo("help -switch list", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch list", type);
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -173,7 +173,7 @@ namespace KSTests.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Tests initializing <see cref="ProvidedCommandArgumentsInfo"/> instance from a command line argument
+        /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [Test]
         [TestCase("Shell")]
@@ -192,7 +192,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgNoArg(string type)
         {
             // Create instance
-            var cmdArginfo = new ProvidedCommandArgumentsInfo("help", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help", type);
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -207,7 +207,7 @@ namespace KSTests.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Tests initializing <see cref="ProvidedCommandArgumentsInfo"/> instance from a command line argument
+        /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [Test]
         [TestCase("Shell")]
@@ -226,7 +226,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithArg(string type)
         {
             // Create instance
-            var cmdArginfo = new ProvidedCommandArgumentsInfo("help list", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help list", type);
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -244,7 +244,7 @@ namespace KSTests.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Tests initializing <see cref="ProvidedCommandArgumentsInfo"/> instance from a command line argument
+        /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [Test]
         [TestCase("Shell")]
@@ -263,7 +263,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithSwitch(string type)
         {
             // Create instance
-            var cmdArginfo = new ProvidedCommandArgumentsInfo("help -switch", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch", type);
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -280,7 +280,7 @@ namespace KSTests.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Tests initializing <see cref="ProvidedCommandArgumentsInfo"/> instance from a command line argument
+        /// Tests initializing <see cref="ProvidedArgumentsInfo"/> instance from a command line argument
         /// </summary>
         [Test]
         [TestCase("Shell")]
@@ -299,7 +299,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgFull(string type)
         {
             // Create instance
-            var cmdArginfo = new ProvidedCommandArgumentsInfo("help -switch list", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch list", type);
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
