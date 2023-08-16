@@ -33,7 +33,8 @@ namespace KS.Shell.ShellBase.Scripting
     {
 
         internal static Dictionary<string, string> ShellVariables = new() {
-            { "$IsRunningFromGrilo", Convert.ToString(KernelPlatform.IsRunningFromGrilo()) }
+            { "$IsRunningFromGrilo", Convert.ToString(KernelPlatform.IsRunningFromGrilo()) },
+            { "$FrameworkRid", KernelPlatform.GetCurrentRid() },
         };
 
         /// <summary>

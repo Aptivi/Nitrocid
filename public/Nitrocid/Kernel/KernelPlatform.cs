@@ -18,6 +18,7 @@
 
 using KS.Kernel.Debugging;
 using System;
+using System.Runtime.InteropServices;
 using UnameNET;
 
 namespace KS.Kernel
@@ -78,6 +79,13 @@ namespace KS.Kernel
         /// </summary>
         public static bool IsRunningFromTmux() =>
             Environment.GetEnvironmentVariable("TMUX") is not null;
+
+        /// <summary>
+        /// Gets the current runtime identifier
+        /// </summary>
+        /// <returns>Returns a runtime identifier (win-x64 for example).</returns>
+        public static string GetCurrentRid() =>
+            RuntimeInformation.RuntimeIdentifier;
 
     }
 }
