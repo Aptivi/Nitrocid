@@ -127,8 +127,7 @@ namespace KS.Misc.Calendar.Reminders
         {
             int ReminderIndex = ReminderId - 1;
             if (ReminderIndex >= Reminders.Count)
-                // TODO: Add appropriate exception type on Beta 3.
-                throw new KernelException(KernelExceptionType.Unknown, Translate.DoTranslation("There is no reminder."));
+                throw new KernelException(KernelExceptionType.Calendar, Translate.DoTranslation("There is no reminder."));
             var Reminder = Reminders[ReminderIndex];
             if (Reminder.ReminderDate == ReminderDate)
             {

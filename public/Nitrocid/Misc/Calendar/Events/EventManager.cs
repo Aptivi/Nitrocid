@@ -111,8 +111,7 @@ namespace KS.Misc.Calendar.Events
         {
             int EventIndex = EventId - 1;
             if (EventIndex >= CalendarEvents.Count)
-                // TODO: Add appropriate exception type on Beta 3.
-                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("There is no event."));
+                throw new KernelException(KernelExceptionType.Calendar, Translate.DoTranslation("There is no event."));
             var EventInstance = CalendarEvents[EventIndex];
             if (EventInstance.EventDate == EventDate)
             {

@@ -387,5 +387,9 @@ namespace KS.Kernel.Exceptions
         /// An error occurred in the mod manual parser. Please ensure that your manual file is valid and that the mod is started.
         /// </summary>
         ModManual,
+        /// <summary>
+        /// An error occurred in the calendar manager.
+        /// </summary>
+        Calendar,
     }
 }
