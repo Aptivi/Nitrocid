@@ -78,5 +78,7 @@ namespace KS.Shell.Shells.SFTP
 
         public override bool AcceptsNetworkConnection => true;
 
+        public override string NetworkConnectionType => Network.Base.Connections.NetworkConnectionType.SFTP.ToString();
+
     }
 }

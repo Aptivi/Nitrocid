@@ -86,5 +86,7 @@ namespace KS.Shell.Shells.Mail
 
         public override bool AcceptsNetworkConnection => true;
 
+        public override string NetworkConnectionType => Network.Base.Connections.NetworkConnectionType.Mail.ToString();
+
     }
 }

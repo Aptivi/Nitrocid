@@ -26,7 +26,10 @@ namespace KS.Network.Base.Connections
 {
     internal static class NetworkConnectionSelector
     {
-        internal static int ConnectionSelector(NetworkConnectionType connectionType)
+        internal static int ConnectionSelector(NetworkConnectionType connectionType) =>
+            ConnectionSelector(connectionType.ToString());
+
+        internal static int ConnectionSelector(string connectionType)
         {
             var connections = NetworkConnectionTools.GetNetworkConnections(connectionType);
             var connectionNames = connections.Select((connection) => connection.ConnectionOriginalUrl.ToString()).ToArray();

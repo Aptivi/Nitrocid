@@ -30,6 +30,7 @@ namespace KSTests.Network.Connections
         internal static KernelThread rssThread = new("RSS thread", true, HandleConnection);
         internal static KernelThread sftpThread = new("SFTP thread", true, HandleConnection);
         internal static KernelThread sshThread = new("SSH thread", true, HandleConnection);
+        internal static KernelThread restThread = new("REST thread", true, HandleConnection);
 
         internal static void HandleConnection()
         {

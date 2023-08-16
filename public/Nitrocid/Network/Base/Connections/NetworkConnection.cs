@@ -45,7 +45,7 @@ namespace KS.Network.Base.Connections
         /// <summary>
         /// Connection type
         /// </summary>
-        public NetworkConnectionType ConnectionType { get; }
+        public string ConnectionType { get; }
 
         /// <summary>
         /// Is this connection using an instance instead of a thread?
@@ -64,7 +64,7 @@ namespace KS.Network.Base.Connections
         internal KernelThread ConnectionThread { get; }
         internal object ConnectionInstance { get; }
 
-        internal NetworkConnection(string connectionName, Uri connectionUri, NetworkConnectionType connectionType, KernelThread connectionThread, object connectionInstance, string connectionOriginalUrl)
+        internal NetworkConnection(string connectionName, Uri connectionUri, string connectionType, KernelThread connectionThread, object connectionInstance, string connectionOriginalUrl)
         {
             ConnectionName = connectionName;
             ConnectionUri = connectionUri;

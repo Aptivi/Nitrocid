@@ -98,5 +98,7 @@ namespace KS.Shell.Shells.FTP
 
         public override bool AcceptsNetworkConnection => true;
 
+        public override string NetworkConnectionType => Network.Base.Connections.NetworkConnectionType.FTP.ToString();
+
     }
 }

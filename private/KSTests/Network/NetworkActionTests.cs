@@ -22,7 +22,10 @@ using KS.Network.Base.Connections;
 using KSTests.Network.Connections;
 using NUnit.Framework;
 using Shouldly;
+using System;
 using System.Collections.Generic;
+using System.Threading;
+using System.Xml.Linq;
 
 namespace KSTests.Network
 {
@@ -62,7 +65,7 @@ namespace KSTests.Network
         {
             var connection = NetworkConnectionTools.EstablishConnection(name, url, type, connectionClient);
             connection.ShouldNotBeNull();
-            connection.ConnectionType.ShouldBe(type);
+            connection.ConnectionType.ShouldBe(type.ToString());
             connection.ConnectionName.ShouldContain(type.ToString());
             connection.ConnectionOriginalUrl.ShouldBe(url);
             connection.ConnectionUri.OriginalString.ShouldBe(url);
@@ -81,7 +84,7 @@ namespace KSTests.Network
         {
             var connection = NetworkConnectionTools.EstablishConnection(name, url, type, connectionClient);
             connection.ShouldNotBeNull();
-            connection.ConnectionType.ShouldBe(type);
+            connection.ConnectionType.ShouldBe(type.ToString());
             connection.ConnectionName.ShouldContain(type.ToString());
             connection.ConnectionOriginalUrl.ShouldBe(url);
             connection.ConnectionUri.OriginalString.ShouldBe(url);
@@ -177,14 +180,14 @@ namespace KSTests.Network
         /// Tests getting network connections from a specific type
         /// </summary>
         [Test]
-        [TestCase(NetworkConnectionType.FTP, 0)]
-        [TestCase(NetworkConnectionType.HTTP, 1)]
-        [TestCase(NetworkConnectionType.Mail, 2)]
-        [TestCase(NetworkConnectionType.RSS, 3)]
-        [TestCase(NetworkConnectionType.SFTP, 4)]
-        [TestCase(NetworkConnectionType.SSH, 5)]
+        [TestCase(NetworkConnectionType.FTP)]
+        [TestCase(NetworkConnectionType.HTTP)]
+        [TestCase(NetworkConnectionType.Mail)]
+        [TestCase(NetworkConnectionType.RSS)]
+        [TestCase(NetworkConnectionType.SFTP)]
+        [TestCase(NetworkConnectionType.SSH)]
         [Description("Action")]
-        public void TestGetConnectionFromIndexSpecific(NetworkConnectionType type, int expectedIdx)
+        public void TestGetConnectionFromIndexSpecific(NetworkConnectionType type)
         {
             var connections = NetworkConnectionTools.GetNetworkConnections(type);
             connections.ShouldNotBeNull();
@@ -205,6 +208,32 @@ namespace KSTests.Network
             string FileNameFromUrl = NetworkTools.GetFilenameFromUrl(Url);
             FileNameFromUrl.ShouldNotBeNullOrEmpty();
             FileNameFromUrl.ShouldBe("file.bin");
+        }
+
+        /// <summary>
+        /// Tests registering, establishing, closing, and unregistering a custom connection type
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestCustomConnectionType()
+        {
+            string typeName = "REST API";
+            NetworkConnectionTools.RegisterCustomConnectionType(typeName);
+            NetworkConnectionTools.ConnectionTypeExists(typeName).ShouldBeTrue();
+            var connection = NetworkConnectionTools.EstablishConnection("MyConnection", "rest.fabrikam.com", typeName, ConnectionThreads.restThread);
+            connection.ShouldNotBeNull();
+            connection.ConnectionType.ShouldBe(typeName);
+            connection.ConnectionName.ShouldContain("MyConnection");
+            connection.ConnectionOriginalUrl.ShouldBe("rest.fabrikam.com");
+            connection.ConnectionUri.OriginalString.ShouldBe("rest.fabrikam.com");
+            connection.ConnectionIsInstance.ShouldBeFalse();
+            connection.ConnectionInstance.ShouldBeNull();
+            NetworkConnectionTools.GetNetworkConnections(typeName).ShouldContain(connection);
+            int index = NetworkConnectionTools.GetConnectionIndex(connection);
+            Thread.Sleep(3000);
+            NetworkConnectionTools.CloseConnection(index);
+            NetworkConnectionTools.UnregisterCustomConnectionType(typeName);
+            NetworkConnectionTools.ConnectionTypeExists(typeName).ShouldBeFalse();
         }
 
     }

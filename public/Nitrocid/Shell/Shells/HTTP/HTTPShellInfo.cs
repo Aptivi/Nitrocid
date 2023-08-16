@@ -84,5 +84,7 @@ namespace KS.Shell.Shells.HTTP
 
         public override bool AcceptsNetworkConnection => true;
 
+        public override string NetworkConnectionType => Network.Base.Connections.NetworkConnectionType.HTTP.ToString();
+
     }
 }

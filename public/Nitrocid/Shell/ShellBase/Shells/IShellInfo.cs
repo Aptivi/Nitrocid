@@ -45,5 +45,9 @@ namespace KS.Shell.ShellBase.Shells
         /// Whether the shell accepts network connection
         /// </summary>
         bool AcceptsNetworkConnection { get; }
+        /// <summary>
+        /// Network connection type defined for the shell (valid only on shells that have <see cref="AcceptsNetworkConnection"/> set to true)
+        /// </summary>
+        string NetworkConnectionType { get; }
     }
 }

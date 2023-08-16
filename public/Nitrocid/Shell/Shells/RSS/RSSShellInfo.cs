@@ -74,5 +74,7 @@ namespace KS.Shell.Shells.RSS
 
         public override bool AcceptsNetworkConnection => true;
 
+        public override string NetworkConnectionType => Network.Base.Connections.NetworkConnectionType.RSS.ToString();
+
     }
 }

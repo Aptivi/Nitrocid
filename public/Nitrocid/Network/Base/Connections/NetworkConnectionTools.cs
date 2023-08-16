@@ -39,6 +39,15 @@ namespace KS.Network.Base.Connections
     public static class NetworkConnectionTools
     {
         private static readonly List<NetworkConnection> networkConnections = new();
+        private static readonly List<string> networkTypes = new()
+        {
+            NetworkConnectionType.FTP.ToString(),
+            NetworkConnectionType.HTTP.ToString(),
+            NetworkConnectionType.Mail.ToString(),
+            NetworkConnectionType.RSS.ToString(),
+            NetworkConnectionType.SFTP.ToString(),
+            NetworkConnectionType.SSH.ToString(),
+        };
 
         /// <summary>
         /// Gets the network connections according to the given type
@@ -46,7 +55,20 @@ namespace KS.Network.Base.Connections
         /// <param name="connectionType">Type of connection</param>
         /// <returns>Array of <see cref="NetworkConnection"/>s that is of the same type specified</returns>
         public static NetworkConnection[] GetNetworkConnections(NetworkConnectionType connectionType) =>
-            networkConnections.Where((connection) => connection.ConnectionType == connectionType).ToArray();
+            GetNetworkConnections(connectionType.ToString());
+
+        /// <summary>
+        /// Gets the network connections according to the given type name
+        /// </summary>
+        /// <param name="connectionType">Type of connection</param>
+        /// <returns>Array of <see cref="NetworkConnection"/>s that is of the same type specified. If the connection type is not found, it throws an exception.</returns>
+        public static NetworkConnection[] GetNetworkConnections(string connectionType)
+        {
+            var connections = networkConnections.Where((connection) => connection.ConnectionType == connectionType);
+            if (!networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+            return connections.ToArray();
+        }
 
         /// <summary>
         /// Closes all the connections
@@ -86,8 +108,35 @@ namespace KS.Network.Base.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, string url, NetworkConnectionType connectionType, KernelThread connectionThread)
+        public static NetworkConnection EstablishConnection(string name, string url, NetworkConnectionType connectionType, KernelThread connectionThread) =>
+            EstablishConnection(name, url, connectionType.ToString(), connectionThread);
+
+        /// <summary>
+        /// Establishes the connection to the given URI
+        /// </summary>
+        /// <param name="name">Connection name</param>
+        /// <param name="uri">Connection URI</param>
+        /// <param name="connectionType">Connection type</param>
+        /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
+        /// <returns>An instance of NetworkConnection</returns>
+        /// <exception cref="KernelException"></exception>
+        public static NetworkConnection EstablishConnection(string name, Uri uri, NetworkConnectionType connectionType, KernelThread connectionThread) =>
+            EstablishConnection(name, uri, connectionType.ToString(), connectionThread);
+
+        /// <summary>
+        /// Establishes the connection to the given URL
+        /// </summary>
+        /// <param name="name">Connection name</param>
+        /// <param name="url">Connection URL</param>
+        /// <param name="connectionType">Connection type</param>
+        /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
+        /// <returns>An instance of NetworkConnection</returns>
+        /// <exception cref="KernelException"></exception>
+        public static NetworkConnection EstablishConnection(string name, string url, string connectionType, KernelThread connectionThread)
         {
+            if (!networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+
             // First, parse the URL
             if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out Uri uri))
                 return EstablishConnection(name, uri, connectionType, connectionThread);
@@ -105,8 +154,11 @@ namespace KS.Network.Base.Connections
         /// <param name="connectionThread">Thread which holds a loop for connection (usually send/receive)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, Uri uri, NetworkConnectionType connectionType, KernelThread connectionThread)
+        public static NetworkConnection EstablishConnection(string name, Uri uri, string connectionType, KernelThread connectionThread)
         {
+            if (!networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+
             // Now, make a connection and start the connection thread
             try
             {
@@ -132,8 +184,35 @@ namespace KS.Network.Base.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, string url, NetworkConnectionType connectionType, object connectionInstance)
+        public static NetworkConnection EstablishConnection(string name, string url, NetworkConnectionType connectionType, object connectionInstance) =>
+            EstablishConnection(name, url, connectionType.ToString(), connectionInstance);
+
+        /// <summary>
+        /// Establishes the connection to the given URI
+        /// </summary>
+        /// <param name="name">Connection name</param>
+        /// <param name="uri">Connection URI</param>
+        /// <param name="connectionType">Connection type</param>
+        /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
+        /// <returns>An instance of NetworkConnection</returns>
+        /// <exception cref="KernelException"></exception>
+        public static NetworkConnection EstablishConnection(string name, Uri uri, NetworkConnectionType connectionType, object connectionInstance) =>
+            EstablishConnection(name, uri, connectionType.ToString(), connectionInstance);
+
+        /// <summary>
+        /// Establishes the connection to the given URL
+        /// </summary>
+        /// <param name="name">Connection name</param>
+        /// <param name="url">Connection URL</param>
+        /// <param name="connectionType">Connection type</param>
+        /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
+        /// <returns>An instance of NetworkConnection</returns>
+        /// <exception cref="KernelException"></exception>
+        public static NetworkConnection EstablishConnection(string name, string url, string connectionType, object connectionInstance)
         {
+            if (!networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+
             // First, parse the URL
             if (Uri.TryCreate(url, UriKind.RelativeOrAbsolute, out Uri uri))
                 return EstablishConnection(name, uri, connectionType, connectionInstance);
@@ -151,8 +230,11 @@ namespace KS.Network.Base.Connections
         /// <param name="connectionInstance">Instance which holds this connection (if threads are unsuitable)</param>
         /// <returns>An instance of NetworkConnection</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection EstablishConnection(string name, Uri uri, NetworkConnectionType connectionType, object connectionInstance)
+        public static NetworkConnection EstablishConnection(string name, Uri uri, string connectionType, object connectionInstance)
         {
+            if (!networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+
             // Now, make a connection and start the connection thread
             try
             {
@@ -195,8 +277,21 @@ namespace KS.Network.Base.Connections
         /// <param name="connectionType">Connection type</param>
         /// <returns>Network connection index starting from zero (0)</returns>
         /// <exception cref="KernelException"></exception>
-        public static int GetConnectionIndexSpecific(NetworkConnection connection, NetworkConnectionType connectionType)
+        public static int GetConnectionIndexSpecific(NetworkConnection connection, NetworkConnectionType connectionType) =>
+            GetConnectionIndexSpecific(connection, connectionType.ToString());
+
+        /// <summary>
+        /// Gets the connection index from the specific type
+        /// </summary>
+        /// <param name="connection">Network connection to get its index from</param>
+        /// <param name="connectionType">Connection type</param>
+        /// <returns>Network connection index starting from zero (0)</returns>
+        /// <exception cref="KernelException"></exception>
+        public static int GetConnectionIndexSpecific(NetworkConnection connection, string connectionType)
         {
+            if (!networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+
             // Check to see if we have this connection
             var availableConnections = GetNetworkConnections(connectionType);
             if (!availableConnections.Contains(connection))
@@ -227,8 +322,21 @@ namespace KS.Network.Base.Connections
         /// <param name="connectionType">Connection type</param>
         /// <returns>Network connection from the index</returns>
         /// <exception cref="KernelException"></exception>
-        public static NetworkConnection GetConnectionFromIndexSpecific(int index, NetworkConnectionType connectionType)
+        public static NetworkConnection GetConnectionFromIndexSpecific(int index, NetworkConnectionType connectionType) =>
+            GetConnectionFromIndexSpecific(index, connectionType.ToString());
+
+        /// <summary>
+        /// Gets the connection from the index from the specific type
+        /// </summary>
+        /// <param name="index">Network connection index</param>
+        /// <param name="connectionType">Connection type</param>
+        /// <returns>Network connection from the index</returns>
+        /// <exception cref="KernelException"></exception>
+        public static NetworkConnection GetConnectionFromIndexSpecific(int index, string connectionType)
         {
+            if (!networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+
             // Check to see if we have this connection
             var availableConnections = GetNetworkConnections(connectionType);
             if (index >= availableConnections.Length || index < 0)
@@ -236,6 +344,42 @@ namespace KS.Network.Base.Connections
                     Translate.DoTranslation("The connection index is out of range."));
             return availableConnections[index];
         }
+
+        /// <summary>
+        /// Registers a custom connection type
+        /// </summary>
+        /// <param name="connectionType">Connection type to be registered</param>
+        /// <exception cref="KernelException"></exception>
+        public static void RegisterCustomConnectionType(string connectionType)
+        {
+            if (networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type already exists"));
+
+            // Now, add the connection type
+            networkTypes.Add(connectionType);
+        }
+
+        /// <summary>
+        /// Unregisters a custom connection type
+        /// </summary>
+        /// <param name="connectionType">Connection type to be unregistered</param>
+        /// <exception cref="KernelException"></exception>
+        public static void UnregisterCustomConnectionType(string connectionType)
+        {
+            if (!networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
+
+            // Now, add the connection type
+            networkTypes.Remove(connectionType);
+        }
+
+        /// <summary>
+        /// Checks to see if the connection type exists
+        /// </summary>
+        /// <param name="connectionType">Connection type to be queried</param>
+        /// <returns>True if found; false otherwise.</returns>
+        public static bool ConnectionTypeExists(string connectionType) =>
+            networkTypes.Contains(connectionType);
 
         /// <summary>
         /// Opens a connection for the selected shell
@@ -260,23 +404,9 @@ namespace KS.Network.Base.Connections
                 throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("The shell {0} doesn't accept network connections."), shellType);
 
             // Determine the network connection type
-            // TODO: Deal with the custom network connection type as soon as we finish Beta 2.
-            NetworkConnectionType connectionType = NetworkConnectionType.FTP;
-            switch (shellType)
-            {
-                case "SFTPShell":
-                    connectionType = NetworkConnectionType.SFTP;
-                    break;
-                case "MailShell":
-                    connectionType = NetworkConnectionType.Mail;
-                    break;
-                case "RSSShell":
-                    connectionType = NetworkConnectionType.RSS;
-                    break;
-                case "HTTPShell":
-                    connectionType = NetworkConnectionType.HTTP;
-                    break;
-            }
+            string connectionType = shellInfo.NetworkConnectionType;
+            if (!networkTypes.Contains(connectionType))
+                throw new KernelException(KernelExceptionType.NetworkConnection, Translate.DoTranslation("Connection type is not found"));
 
             // Now, do the job!
             try

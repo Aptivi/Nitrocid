@@ -865,5 +865,7 @@ Thread backtrace analysis failed. Some information might not be complete.
 Dump generator failed to dump a kernel error caused by
 Version information
 An error occurred in the calendar manager.
+Connection type is not found
+Connection type already exists
 
 ==========================================================================================================================================

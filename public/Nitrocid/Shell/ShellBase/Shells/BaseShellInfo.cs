@@ -49,6 +49,8 @@ namespace KS.Shell.ShellBase.Shells
         public virtual PromptPresetBase CurrentPreset => null;
         /// <inheritdoc/>
         public virtual bool AcceptsNetworkConnection => false;
+        /// <inheritdoc/>
+        public virtual string NetworkConnectionType => "";
         /// <summary>
         /// Shell type. Taken from <see cref="ShellBase"/> for easier access
         /// </summary>
