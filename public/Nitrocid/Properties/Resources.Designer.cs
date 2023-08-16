@@ -63,31 +63,6 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;3Y-Diamond OS&quot;,
-        ///        &quot;Description&quot;: &quot;Color scheme for one of our PowerPoint operating systems, 3Y-Diamond OS&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;60&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;113&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;146&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;146&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;60&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;35&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;113&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;113&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;35&quot;,
-        ///    &quot;StageColor&quot;: &quot;146&quot;,
-        ///    &quot;ErrorC [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string _3Y_Diamond {
-            get {
-                return ResourceManager.GetString("_3Y_Diamond", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Default&quot;,
         ///        &quot;Description&quot;: &quot;The default theme for the kernel&quot;
         ///    },
@@ -159,30 +134,6 @@ namespace Properties.Resources {
         public static string Aptivi {
             get {
                 return ResourceManager.GetString("Aptivi", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Aquatic&quot;,
-        ///        &quot;Description&quot;: &quot;For those who love aqua&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;68;142;227&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;68;142;227&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;48;159;199&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;40;59;201&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;69;115;222&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;82;242;226&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;42;122;191&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;62;135;199&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;61;102;196&quot;,
-        ///    &quot;StageColor&quot;: &quot;82;242 [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Aquatic {
-            get {
-                return ResourceManager.GetString("Aquatic", resourceCulture);
             }
         }
         
@@ -289,32 +240,6 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;BedOS&quot;,
-        ///        &quot;Description&quot;: &quot;Color scheme for one of our PowerPoint operating systems, BedOS&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;74&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;177&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;202&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;202&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;130&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;202&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;177&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;12&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;80&quot;,
-        ///    &quot;StageColor&quot;: &quot;80&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;202&quot;,
-        ///  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string BedOS {
-            get {
-                return ResourceManager.GetString("BedOS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Black on White&quot;,
         ///        &quot;Description&quot;: &quot;Lightest terminal possible&quot;
         ///    },
@@ -361,78 +286,6 @@ namespace Properties.Resources {
         public static string BlackRose {
             get {
                 return ResourceManager.GetString("BlackRose", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Bloody&quot;,
-        ///        &quot;Description&quot;: &quot;Makes your terminal bloody. Don&apos;t use unless you can really handle this.&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;199;187;187&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;199;187;187&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;247;188;188&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;71;11;11&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;235;99;99&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;199;34;34&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;242;12;12&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;235;99;99&quot;,
-        ///    &quot;ListValueCo [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Bloody {
-            get {
-                return ResourceManager.GetString("Bloody", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Blue Power&quot;,
-        ///        &quot;Description&quot;: &quot;Gives you a power of blue&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;35;11;128&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;35;11;128&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;250;52;55&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;17;153;126&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;44;20;122&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;207;82;60&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;5;158;135&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;50;9;122&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;252;109;101&quot;,
-        ///    &quot;StageColor&quot;: &quot;207;82; [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Blue_Power {
-            get {
-                return ResourceManager.GetString("Blue_Power", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Bluesome&quot;,
-        ///        &quot;Description&quot;: &quot;Awesome Blue!&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;137;126;191&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;137;126;191&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;73;45;214&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;137;126;191&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;137;126;191&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;79;77;84&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;158;154;173&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;137;126;191&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;32;0;194&quot;,
-        ///    &quot;StageColor&quot;: &quot;79;77;84&quot;,
-        ///  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Bluesome {
-            get {
-                return ResourceManager.GetString("Bluesome", resourceCulture);
             }
         }
         
@@ -591,30 +444,6 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Dawn Aurora&quot;,
-        ///        &quot;Description&quot;: &quot;Gives you a breeze of dawn&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;15;31;64&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;15;31;64&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;33;39;83&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;54;47;100&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;78;53;117&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;105;57;131&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;133;61;142&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;163;62;151&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;194;62;157&quot;,
-        ///    &quot;StageColor&quot;: &quot;105;57 [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Dawn_Aurora {
-            get {
-                return ResourceManager.GetString("Dawn_Aurora", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Debian&quot;,
         ///        &quot;Description&quot;: &quot;Color schemes for Debian&quot;
         ///    },
@@ -740,54 +569,6 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Fast X (Fast and Furious 10)&quot;,
-        ///        &quot;Description&quot;: &quot;Get on a heated race with this theme&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;StageC [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Fast_X {
-            get {
-                return ResourceManager.GetString("Fast_X", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Fast X (Fast and Furious 10)&quot;,
-        ///        &quot;Description&quot;: &quot;Get on a heated race with this theme&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;#000023&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;StageC [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Fast_X_FG {
-            get {
-                return ResourceManager.GetString("Fast_X_FG", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Fire&quot;,
         ///        &quot;Description&quot;: &quot;Fire shades&quot;
         ///    },
@@ -895,58 +676,6 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Gray on Yellow&quot;,
-        ///        &quot;Description&quot;: &quot;Gray text on yellow background&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;7&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;7&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;7&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;7&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;7&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;7&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;3&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;7&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;7&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;7&quot;,
-        ///    &quot;StageColor&quot;: &quot;7&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;7&quot;,
-        ///    &quot;WarningColor&quot;: &quot;7&quot;,
-        ///    &quot;OptionColor&quot; [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string GrayOnYellow {
-            get {
-                return ResourceManager.GetString("GrayOnYellow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Grays&quot;,
-        ///        &quot;Description&quot;: &quot;Shades of gray&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;33;33;33&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;33;33;33&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;52;52;53&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;73;71;73&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;96;92;94&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;119;113;116&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;144;136;138&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;170;158;159&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;195;182;181&quot;,
-        ///    &quot;StageColor&quot;: &quot;119;113;116&quot;,
-        ///    &quot;Er [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Grays {
-            get {
-                return ResourceManager.GetString("Grays", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Green Mix&quot;,
         ///        &quot;Description&quot;: &quot;Vivid and plastered green, blue, and purple colors&quot;
         ///    },
@@ -1012,33 +741,6 @@ namespace Properties.Resources {
         public static string Gruvbox {
             get {
                 return ResourceManager.GetString("Gruvbox", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Grand Theft Auto: San Andreas&quot;,
-        ///        &quot;Description&quot;: &quot;Color schemes for GTA: SA&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;11&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;11&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;3&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;3&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;11&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;3&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;15&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;11&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;3&quot;,
-        ///    &quot;StageColor&quot;: &quot;11&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;3&quot;,
-        ///    &quot;WarningColor&quot;: &quot;3&quot;,
-        ///  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string GTASA {
-            get {
-                return ResourceManager.GetString("GTASA", resourceCulture);
             }
         }
         
@@ -1485,106 +1187,6 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Metallic&quot;,
-        ///        &quot;Description&quot;: &quot;Metallic terminal and text&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;8&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;7&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;8&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;8&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;8&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;7&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;239&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;7&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;8&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;8&quot;,
-        ///    &quot;StageColor&quot;: &quot;7&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;8&quot;,
-        ///    &quot;WarningColor&quot;: &quot;8&quot;,
-        ///    &quot;OptionColor&quot;: &quot;7&quot;,
-        /// [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Metallic {
-            get {
-                return ResourceManager.GetString("Metallic", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Minecraft - Creeper&quot;,
-        ///        &quot;Description&quot;: &quot;Creepers in the world of Minecraft blow you up! Can you survive?&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;#8fe38f&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#0db50d&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#609e60&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#609e60&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#0f800f&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#0f800f&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;#004500&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#609e60&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#0db50d&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#60 [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Minecraft_Creeper {
-            get {
-                return ResourceManager.GetString("Minecraft-Creeper", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Minecraft - Grass&quot;,
-        ///        &quot;Description&quot;: &quot;Grass from Minecraft&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;#4a6f28&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#5b8b32&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#527a2d&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#527a2d&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#5b8731&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#5b8731&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;#3e5c20&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#527a2d&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#5b8b32&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#527a2d&quot;,
-        ///    &quot;StageColor&quot;: &quot;#5b8b32&quot;,
-        ///    &quot;Err [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Minecraft_Grass {
-            get {
-                return ResourceManager.GetString("Minecraft-Grass", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Minecraft - Obsidian&quot;,
-        ///        &quot;Description&quot;: &quot;Obsidian block from Minecraft&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;#3d2856&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#281f3f&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#110d1d&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#110d1d&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#3d2856&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#3d2856&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;#06030c&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#110d1d&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#281f3f&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#110d1d&quot;,
-        ///    &quot;StageColor&quot;: &quot;#281f3f [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Minecraft_Obsidian {
-            get {
-                return ResourceManager.GetString("Minecraft-Obsidian", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Mint&quot;,
         ///        &quot;Description&quot;: &quot;Make your terminal full of mint&quot;
         ///    },
@@ -1603,79 +1205,6 @@ namespace Properties.Resources {
         public static string Mint {
             get {
                 return ResourceManager.GetString("Mint", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Mint Gum&quot;,
-        ///        &quot;Description&quot;: &quot;Bubblegum and mint mixed together&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;102;17;64&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;102;17;64&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;115;18;63&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;133;12;58&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;49;107;74&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;49;112;85&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;60;120;84&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;62;135;97&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;217;181;74&quot;,
-        ///    &quot;StageColor&quot;: &quot;49 [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Mint_Gum {
-            get {
-                return ResourceManager.GetString("Mint_Gum", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Mintback&quot;,
-        ///        &quot;Description&quot;: &quot;Light version of Mint&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;23;13;28&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;23;13;28&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;32;14;36&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;39;24;43&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;204;29;45&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;212;25;44&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;15&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;217;32;43&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;196;85;37&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;127;163;54&quot;,
-        ///    &quot;StageColor&quot;: &quot;212;25;44&quot;,
-        ///     [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Mintback {
-            get {
-                return ResourceManager.GetString("Mintback", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Mintish&quot;,
-        ///        &quot;Description&quot;: &quot;Another variant of Mint&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;244;242;105&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;244;242;105&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;225;236;104&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;206;230;105&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;188;223;105&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;171;216;106&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;154;209;107&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;138;201;109&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;122;194;110&quot;,
-        ///    &quot;StageColor [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Mintish {
-            get {
-                return ResourceManager.GetString("Mintish", resourceCulture);
             }
         }
         
@@ -1751,58 +1280,6 @@ namespace Properties.Resources {
         public static string Neutralized {
             get {
                 return ResourceManager.GetString("Neutralized", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Need for Speed: Hot Pursuit (2010) - Cop&quot;,
-        ///        &quot;Description&quot;: &quot;Cop colors for NFS: HP&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;9&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;19&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;4&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;88&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;4&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;9&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;4&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;4&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;9&quot;,
-        ///    &quot;StageColor&quot;: &quot;9&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;88&quot;,
-        ///    &quot;WarningColor&quot;: &quot;4 [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string NFSHP_Cop {
-            get {
-                return ResourceManager.GetString("NFSHP-Cop", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Need for Speed: Hot Pursuit (2010) - Racer&quot;,
-        ///        &quot;Description&quot;: &quot;Racer colors for NFS: HP&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;15&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;15&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;94&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;88&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;94&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;172&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;178&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;94&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;15&quot;,
-        ///    &quot;StageColor&quot;: &quot;184&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;88&quot;,
-        ///    &quot;Wa [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string NFSHP_Racer {
-            get {
-                return ResourceManager.GetString("NFSHP-Racer", resourceCulture);
             }
         }
         
@@ -2001,75 +1478,6 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Pastel 1&quot;,
-        ///        &quot;Description&quot;: &quot;Make your terminal more of a pastel terminal&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;204;227;222&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;204;227;222&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;204;147;200&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;191;227;125&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;126;158;217&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;242;240;240&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;171;214;181&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;197;151;240&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;247;236; [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Pastel_1 {
-            get {
-                return ResourceManager.GetString("Pastel_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Pastel 2&quot;,
-        ///        &quot;Description&quot;: &quot;Make your terminal more of a pastel terminal&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;252;204;189&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;252;204;189&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;207;209;208&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;197;153;207&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;231;235;202&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;148;195;227&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;235;122;158&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;191;250;190&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;225;218; [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Pastel_2 {
-            get {
-                return ResourceManager.GetString("Pastel_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Pastel 3&quot;,
-        ///        &quot;Description&quot;: &quot;Make your terminal more of a pastel terminal&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;132;217;139&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;132;217;139&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;218;211;230&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;224;211;184&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;176;247;245&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;242;153;220&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;161;209;121&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;160;174;242&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;227;131; [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Pastel_3 {
-            get {
-                return ResourceManager.GetString("Pastel_3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Phosphoric (background)&quot;,
         ///        &quot;Description&quot;: &quot;Phosphoric terminal that converts everything to orange&quot;
         ///    },
@@ -2123,29 +1531,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Planted Wood&quot;,
-        ///        &quot;Description&quot;: &quot;Simulates the color of wood that has small green plants usually found in jungles&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;214;142;60&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;214;142;60&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;69;140;90&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;56;127;143&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;212;108;63&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;242;117;34&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;51;107;67&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;35;101;120&quot;,
-        ///  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Planted_Wood {
-            get {
-                return ResourceManager.GetString("Planted_Wood", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Portuguese&quot;,
         ///  &quot;Transliterable&quot;: false,
         ///  &quot;Localizations&quot;: {
@@ -2157,55 +1542,6 @@ namespace Properties.Resources {
         public static string ptg {
             get {
                 return ResourceManager.GetString("ptg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Purlow (Purple + Yellow)&quot;,
-        ///        &quot;Description&quot;: &quot;A mix of yellow and purple&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;217;217;65&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;217;217;65&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;117;1;88&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;201;212;51&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;135;22;107&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;227;213;57&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;138;11;95&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;255;255;82&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;135;14;95&quot;,
-        ///    &quot;Sta [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Purlow {
-            get {
-                return ResourceManager.GetString("Purlow", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Quantum&quot;,
-        ///        &quot;Description&quot;: &quot;Are you a quantum fan?&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;#623004&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#f7780c&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#f9a054&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#f9a054&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#c56009&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#c56009&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;#fde4ce&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#f9a054&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;#f7780c&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;#f9a054&quot;,
-        ///    &quot;StageColor&quot;: &quot;#f7780c&quot;,
-        ///    &quot;ErrorColor&quot; [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Quantum {
-            get {
-                return ResourceManager.GetString("Quantum", resourceCulture);
             }
         }
         
@@ -2258,52 +1594,6 @@ namespace Properties.Resources {
         public static string RedConsole {
             get {
                 return ResourceManager.GetString("RedConsole", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Reddish&quot;,
-        ///        &quot;Description&quot;: &quot;Another variant of Red Breeze&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;153;46;38&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;153;46;38&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;176;56;40&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;245;71;51&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;181;66;43&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;169;15;7&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;254;7;24&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;156;44;49&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;171;51;51&quot;,
-        ///    &quot;StageColor&quot;: &quot;169;15;7&quot;, [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string Reddish {
-            get {
-                return ResourceManager.GetString("Reddish", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Retro Windows (1990s)&quot;,
-        ///        &quot;Description&quot;: &quot;Did you remember using your Windows computer in the &apos;90s? Bring back nostalgia with this color theme!&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;#bebebe&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#fe00ff&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#fe0000&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#fe0000&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#06ff04&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#06ff04&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;#047e7e&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;#fe0000&quot;,
-        ///    &quot;ListEntryColor&quot;: [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string RetroWindows {
-            get {
-                return ResourceManager.GetString("RetroWindows", resourceCulture);
             }
         }
         
@@ -2592,32 +1882,6 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;TealerOS&quot;,
-        ///        &quot;Description&quot;: &quot;A color scheme from one of our PowerPoint OS, TealerOS&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;74&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;74&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;23&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;23&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;23&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;74&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;74&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;23&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;74&quot;,
-        ///    &quot;StageColor&quot;: &quot;80&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;23&quot;,
-        ///    &quot;WarningCo [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string TealerOS {
-            get {
-                return ResourceManager.GetString("TealerOS", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Techno&quot;,
         ///        &quot;Description&quot;: &quot;A theme for technology lovers&quot;
         ///    },
@@ -2653,30 +1917,6 @@ namespace Properties.Resources {
         public static string tky {
             get {
                 return ResourceManager.GetString("tky", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Traffic Light&quot;,
-        ///        &quot;Description&quot;: &quot;You&apos;re waiting for a green light, you&apos;re late for work, and the traffic light never turns to green&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;10&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;10&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;226&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;9&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;10&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;10&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;10&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;10&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;10&quot;,
-        ///    &quot;StageColor [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string TrafficLight {
-            get {
-                return ResourceManager.GetString("TrafficLight", resourceCulture);
             }
         }
         
@@ -2728,32 +1968,6 @@ namespace Properties.Resources {
         public static string Ubuntu {
             get {
                 return ResourceManager.GetString("Ubuntu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Ubuntu (Legacy)&quot;,
-        ///        &quot;Description&quot;: &quot;Color schemes from a popular Linux operating system, Ubuntu&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;15&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;15&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;7&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;7&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;53&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;15&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;15&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;15&quot;,
-        ///    &quot;StageColor&quot;: &quot;15&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;7&quot;,
-        ///     [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string UbuntuLegacy {
-            get {
-                return ResourceManager.GetString("UbuntuLegacy", resourceCulture);
             }
         }
         
@@ -3003,60 +2217,6 @@ namespace Properties.Resources {
         public static string Yasai {
             get {
                 return ResourceManager.GetString("Yasai", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Yellow (background)&quot;,
-        ///        &quot;Description&quot;: &quot;A bright yellow console&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;0&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;0&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;0&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;0&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;0&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;0&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;3&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;0&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;0&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;0&quot;,
-        ///    &quot;StageColor&quot;: &quot;0&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;0&quot;,
-        ///    &quot;WarningColor&quot;: &quot;0&quot;,
-        ///    &quot;OptionColor&quot;:  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string YellowBG {
-            get {
-                return ResourceManager.GetString("YellowBG", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Yellow (foreground)&quot;,
-        ///        &quot;Description&quot;: &quot;A bright yellow console&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;11&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;3&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;11&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;11&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;3&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;3&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;11&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;11&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;3&quot;,
-        ///    &quot;StageColor&quot;: &quot;11&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;3&quot;,
-        ///    &quot;WarningColor&quot;: &quot;11&quot;,
-        ///    &quot;OptionC [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string YellowFG {
-            get {
-                return ResourceManager.GetString("YellowFG", resourceCulture);
             }
         }
     }

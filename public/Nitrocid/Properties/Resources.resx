@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="BedOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\BedOS.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="BlackOnWhite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\BlackOnWhite.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
@@ -129,12 +126,6 @@
   </data>
   <data name="Debian" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Debian.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="GrayOnYellow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\GrayOnYellow.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="GTASA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\GTASA.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="Hacker" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Hacker.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
@@ -145,35 +136,14 @@
   <data name="LinuxUncolored" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\LinuxUncolored.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="NFSHP-Cop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\NFSHP-Cop.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="NFSHP-Racer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\NFSHP-Racer.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="RedConsole" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\RedConsole.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="TealerOS" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\TealerOS.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="UbuntuLegacy" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\UbuntuLegacy.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="Ubuntu" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Ubuntu.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="Windows95" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Windows95.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="YellowBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\YellowBG.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="YellowFG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\YellowFG.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="_3Y_Diamond" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\3Y-Diamond.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Default.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
@@ -186,9 +156,6 @@
   </data>
   <data name="SolarizedLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\SolarizedLight.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="TrafficLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\TrafficLight.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="AyuDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\AyuDark.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
@@ -283,9 +250,6 @@
   <data name="SettingsEntries" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings\SettingsEntries.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="Metallic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Metallic.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="Wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Wood.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
@@ -304,21 +268,6 @@
   <data name="SplashSettingsEntries" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Settings\SplashSettingsEntries.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="Aquatic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Aquatic.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Bloody" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Bloody.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Bluesome" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Bluesome.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Blue_Power" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Blue Power.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Dawn_Aurora" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Dawn Aurora.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="Fire" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Fire.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
@@ -327,9 +276,6 @@
   </data>
   <data name="Grape_Kiwi" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Grape Kiwi.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Grays" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Grays.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="Green_Mix" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Green Mix.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
@@ -349,24 +295,6 @@
   <data name="Mint" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Mint.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="Mintback" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Mintback.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Mintish" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Mintish.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Mint_Gum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Mint Gum.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Planted_Wood" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Planted Wood.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Purlow" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Purlow.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Reddish" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Reddish.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="Red_Breeze" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Red Breeze.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
@@ -378,15 +306,6 @@
   </data>
   <data name="Orange_Sea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Orange Sea.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Pastel_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Pastel 1.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Pastel_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Pastel 2.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Pastel_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Pastel 3.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="VisualStudioDark" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\VisualStudioDark.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
@@ -469,29 +388,8 @@
   <data name="Maya" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Maya.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="Fast_X" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Fast-X.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Fast_X_FG" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Fast-X-FG.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="BlackRose" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\BlackRose.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Minecraft-Creeper" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Minecraft-Creeper.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Minecraft-Grass" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Minecraft-Grass.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Minecraft-Obsidian" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Minecraft-Obsidian.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="Quantum" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\Quantum.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="RetroWindows" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Themes\RetroWindows.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="NitricAcid" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\NitricAcid.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
