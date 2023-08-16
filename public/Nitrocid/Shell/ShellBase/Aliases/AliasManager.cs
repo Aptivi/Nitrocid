@@ -129,7 +129,7 @@ namespace KS.Shell.ShellBase.Aliases
                     // User tries to add an alias.
                     try
                     {
-                        AddAlias(AliasCmd, DestCmd, Type);
+                        AddAlias(DestCmd, AliasCmd, Type);
                         TextWriterColor.Write(Translate.DoTranslation("You can now run \"{0}\" as a command: \"{1}\"."), AliasCmd, DestCmd);
                     }
                     catch (Exception ex)
@@ -179,7 +179,7 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="Type">Alias type, whether it be shell or remote debug.</param>
         /// <returns>True if successful, False if unsuccessful.</returns>
         public static bool AddAlias(string SourceAlias, string Destination, ShellType Type) =>
-            AddAlias(SourceAlias, Destination, Type);
+            AddAlias(SourceAlias, Destination, ShellManager.GetShellTypeName(Type));
 
         /// <summary>
         /// Adds alias to kernel
@@ -197,7 +197,7 @@ namespace KS.Shell.ShellBase.Aliases
                     DebugWriter.WriteDebug(DebugLevel.E, "Assertion succeeded: {0} = {1}", SourceAlias, Destination);
                     throw new KernelException(KernelExceptionType.AliasInvalidOperation, Translate.DoTranslation("Alias can't be the same name as a command."));
                 }
-                else if (!CommandManager.IsCommandFound(Destination))
+                else if (!CommandManager.IsCommandFound(SourceAlias, Type))
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} not found in all the command lists", Destination);
                     throw new KernelException(KernelExceptionType.AliasNoSuchCommand, Translate.DoTranslation("Command not found to alias to {0}."), Destination);
@@ -211,7 +211,7 @@ namespace KS.Shell.ShellBase.Aliases
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Aliasing {0} to {1}", SourceAlias, Destination);
                     var TargetAliasList = GetAliasesListFromType(Type);
-                    TargetAliasList.Add(SourceAlias, Destination);
+                    TargetAliasList.Add(Destination, SourceAlias);
                     return true;
                 }
             }
@@ -320,6 +320,35 @@ namespace KS.Shell.ShellBase.Aliases
                     return true;
             }
             return false;
+        }
+
+        /// <summary>
+        /// Checks to see if the specified alias exists.
+        /// </summary>
+        /// <param name="TargetAlias">The existing alias</param>
+        /// <param name="Type">The alias type</param>
+        /// <returns>True if it exists; false if it doesn't exist</returns>
+        public static bool DoesAliasExistLocal(string TargetAlias, ShellType Type) =>
+            DoesAliasExistLocal(TargetAlias, ShellManager.GetShellTypeName(Type));
+
+        /// <summary>
+        /// Checks to see if the specified alias exists.
+        /// </summary>
+        /// <param name="TargetAlias">The existing alias</param>
+        /// <param name="Type">The alias type</param>
+        /// <returns>True if it exists; false if it doesn't exist</returns>
+        public static bool DoesAliasExistLocal(string TargetAlias, string Type)
+        {
+            if (Enum.IsDefined(typeof(ShellType), Type))
+            {
+                var TargetAliasList = GetAliasesListFromType(Type);
+                return TargetAliasList.ContainsKey(TargetAlias);
+            }
+            else
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", Type);
+                throw new KernelException(KernelExceptionType.AliasNoSuchType, Translate.DoTranslation("Invalid type {0}."), Type);
+            }
         }
 
         /// <summary>

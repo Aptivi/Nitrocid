@@ -19,6 +19,7 @@
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
+using Org.BouncyCastle.Asn1.X509;
 using Shouldly;
 
 namespace KSTests.Shell.ShellBase.Aliases
@@ -32,6 +33,59 @@ namespace KSTests.Shell.ShellBase.Aliases
         /// Tests adding alias
         /// </summary>
         [Test]
+        [Order(1)]
+        [TestCase(ShellType.Shell, "shutdown", "poweroff")]
+        [TestCase(ShellType.AdminShell, "journal", "j")]
+        [TestCase(ShellType.ArchiveShell, "cdir", "currentdir")]
+        [TestCase(ShellType.DebugShell, "threadsbt", "tbt")]
+        [TestCase(ShellType.FTPShell, "get", "download")]
+        [TestCase(ShellType.HexShell, "clear", "wipe")]
+        [TestCase(ShellType.HTTPShell, "delete", "wipe")]
+        [TestCase(ShellType.JsonShell, "clear", "wipe")]
+        [TestCase(ShellType.MailShell, "rm", "wipe")]
+        [TestCase(ShellType.RSSShell, "search", "find")]
+        [TestCase(ShellType.SFTPShell, "put", "upload")]
+        [TestCase(ShellType.TextShell, "clear", "wipe")]
+        [Description("Action")]
+        public void TestAddAlias(ShellType type, string source, string target)
+        {
+            AliasManager.AddAlias(source, target, type).ShouldBeTrue();
+            AliasManager.DoesAliasExistLocal(target, type).ShouldBeTrue();
+            AliasManager.SaveAliases();
+            AliasManager.DoesAliasExist(target, type).ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests adding alias
+        /// </summary>
+        [Test]
+        [Order(2)]
+        [TestCase("Shell", "cls", "clear")]
+        [TestCase("AdminShell", "lsevents", "lse")]
+        [TestCase("ArchiveShell", "chdir", "cd")]
+        [TestCase("DebugShell", "currentbt", "cbt")]
+        [TestCase("FTPShell", "cat", "read")]
+        [TestCase("HexShell", "print", "pr")]
+        [TestCase("HTTPShell", "post", "pf")]
+        [TestCase("JsonShell", "print", "pr")]
+        [TestCase("MailShell", "list", "ls")]
+        [TestCase("RSSShell", "list", "ls")]
+        [TestCase("SFTPShell", "cat", "read")]
+        [TestCase("TextShell", "save", "s")]
+        [Description("Action")]
+        public void TestAddAlias(string type, string source, string target)
+        {
+            AliasManager.AddAlias(source, target, type).ShouldBeTrue();
+            AliasManager.DoesAliasExistLocal(target, type).ShouldBeTrue();
+            AliasManager.SaveAliases();
+            AliasManager.DoesAliasExist(target, type).ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests adding alias
+        /// </summary>
+        [Test]
+        [Order(1)]
         [TestCase(ShellType.Shell)]
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.ArchiveShell)]
@@ -44,16 +98,12 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase(ShellType.RSSShell)]
         [TestCase(ShellType.SFTPShell)]
         [TestCase(ShellType.TextShell)]
-        [Ignore("The program '[15212] testhost.exe' has exited with code 3221225477 (0xc0000005) 'Access violation'. " +
-            "According to Event Viewer, P9: System.StackOverflowException")]
         [Description("Action")]
-        public void TestAddAlias(ShellType type)
+        public void TestAddAliasForUnifiedCommand(ShellType type)
         {
             AliasManager.AddAlias("exit", "quit", type).ShouldBeTrue();
-            var aliasList = AliasManager.GetAliasesListFromType(type);
-            aliasList.ShouldNotBeNull();
-            aliasList.ShouldNotBeEmpty();
-            aliasList.ShouldContainKeyAndValue("exit", "quit");
+            AliasManager.DoesAliasExistLocal("quit", type).ShouldBeTrue();
+            AliasManager.SaveAliases();
             AliasManager.DoesAliasExist("quit", type).ShouldBeTrue();
         }
 
@@ -61,6 +111,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         /// Tests adding alias
         /// </summary>
         [Test]
+        [Order(2)]
         [TestCase("Shell")]
         [TestCase("AdminShell")]
         [TestCase("ArchiveShell")]
@@ -73,23 +124,76 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase("RSSShell")]
         [TestCase("SFTPShell")]
         [TestCase("TextShell")]
-        [Ignore("The program '[15212] testhost.exe' has exited with code 3221225477 (0xc0000005) 'Access violation'. " +
-            "According to Event Viewer, P9: System.StackOverflowException")]
         [Description("Action")]
-        public void TestAddAlias(string type)
+        public void TestAddAliasForUnifiedCommand(string type)
         {
-            AliasManager.AddAlias("exit", "quit", type).ShouldBeTrue();
-            var aliasList = AliasManager.GetAliasesListFromType(type);
-            aliasList.ShouldNotBeNull();
-            aliasList.ShouldNotBeEmpty();
-            aliasList.ShouldContainKeyAndValue("exit", "quit");
-            AliasManager.DoesAliasExist("quit", type).ShouldBeTrue();
+            AliasManager.AddAlias("presets", "p", type).ShouldBeTrue();
+            AliasManager.DoesAliasExistLocal("p", type).ShouldBeTrue();
+            AliasManager.SaveAliases();
+            AliasManager.DoesAliasExist("p", type).ShouldBeTrue();
         }
 
         /// <summary>
         /// Tests removing alias
         /// </summary>
         [Test]
+        [Order(3)]
+        [TestCase(ShellType.Shell, "poweroff")]
+        [TestCase(ShellType.AdminShell, "j")]
+        [TestCase(ShellType.ArchiveShell, "currentdir")]
+        [TestCase(ShellType.DebugShell, "tbt")]
+        [TestCase(ShellType.FTPShell, "download")]
+        [TestCase(ShellType.HexShell, "wipe")]
+        [TestCase(ShellType.HTTPShell, "wipe")]
+        [TestCase(ShellType.JsonShell, "wipe")]
+        [TestCase(ShellType.MailShell, "wipe")]
+        [TestCase(ShellType.RSSShell, "find")]
+        [TestCase(ShellType.SFTPShell, "upload")]
+        [TestCase(ShellType.TextShell, "wipe")]
+        [Description("Action")]
+        public void TestRemoveAlias(ShellType type, string target)
+        {
+            AliasManager.InitAliases();
+            AliasManager.RemoveAlias(target, type).ShouldBeTrue();
+            AliasManager.DoesAliasExistLocal(target, type).ShouldBeFalse();
+            AliasManager.PurgeAliases();
+            AliasManager.SaveAliases();
+            AliasManager.DoesAliasExist(target, type).ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests removing alias
+        /// </summary>
+        [Test]
+        [Order(4)]
+        [TestCase("Shell", "clear")]
+        [TestCase("AdminShell", "lse")]
+        [TestCase("ArchiveShell", "cd")]
+        [TestCase("DebugShell", "cbt")]
+        [TestCase("FTPShell", "read")]
+        [TestCase("HexShell", "pr")]
+        [TestCase("HTTPShell", "pf")]
+        [TestCase("JsonShell", "pr")]
+        [TestCase("MailShell", "ls")]
+        [TestCase("RSSShell", "ls")]
+        [TestCase("SFTPShell", "read")]
+        [TestCase("TextShell", "s")]
+        [Description("Action")]
+        public void TestRemoveAlias(string type, string target)
+        {
+            AliasManager.InitAliases();
+            AliasManager.RemoveAlias(target, type).ShouldBeTrue();
+            AliasManager.DoesAliasExistLocal(target, type).ShouldBeFalse();
+            AliasManager.PurgeAliases();
+            AliasManager.SaveAliases();
+            AliasManager.DoesAliasExist(target, type).ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests removing alias
+        /// </summary>
+        [Test]
+        [Order(3)]
         [TestCase(ShellType.Shell)]
         [TestCase(ShellType.AdminShell)]
         [TestCase(ShellType.ArchiveShell)]
@@ -102,16 +206,14 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase(ShellType.RSSShell)]
         [TestCase(ShellType.SFTPShell)]
         [TestCase(ShellType.TextShell)]
-        [Ignore("The program '[15212] testhost.exe' has exited with code 3221225477 (0xc0000005) 'Access violation'. " +
-            "According to Event Viewer, P9: System.StackOverflowException")]
         [Description("Action")]
-        public void TestRemoveAlias(ShellType type)
+        public void TestRemoveAliasForUnifiedCommand(ShellType type)
         {
+            AliasManager.InitAliases();
             AliasManager.RemoveAlias("quit", type).ShouldBeTrue();
-            var aliasList = AliasManager.GetAliasesListFromType(type);
-            aliasList.ShouldNotBeNull();
-            aliasList.ShouldNotBeEmpty();
-            aliasList.ShouldNotContainKey("exit");
+            AliasManager.DoesAliasExistLocal("quit", type).ShouldBeFalse();
+            AliasManager.PurgeAliases();
+            AliasManager.SaveAliases();
             AliasManager.DoesAliasExist("quit", type).ShouldBeFalse();
         }
 
@@ -119,6 +221,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         /// Tests removing alias
         /// </summary>
         [Test]
+        [Order(4)]
         [TestCase("Shell")]
         [TestCase("AdminShell")]
         [TestCase("ArchiveShell")]
@@ -131,17 +234,15 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase("RSSShell")]
         [TestCase("SFTPShell")]
         [TestCase("TextShell")]
-        [Ignore("The program '[15212] testhost.exe' has exited with code 3221225477 (0xc0000005) 'Access violation'. " +
-            "According to Event Viewer, P9: System.StackOverflowException")]
         [Description("Action")]
-        public void TestRemoveAlias(string type)
+        public void TestRemoveAliasForUnifiedCommand(string type)
         {
-            AliasManager.RemoveAlias("quit", type).ShouldBeTrue();
-            var aliasList = AliasManager.GetAliasesListFromType(type);
-            aliasList.ShouldNotBeNull();
-            aliasList.ShouldNotBeEmpty();
-            aliasList.ShouldNotContainKey("exit");
-            AliasManager.DoesAliasExist("quit", type).ShouldBeFalse();
+            AliasManager.InitAliases();
+            AliasManager.RemoveAlias("p", type).ShouldBeTrue();
+            AliasManager.DoesAliasExistLocal("p", type).ShouldBeFalse();
+            AliasManager.PurgeAliases();
+            AliasManager.SaveAliases();
+            AliasManager.DoesAliasExist("p", type).ShouldBeFalse();
         }
 
     }

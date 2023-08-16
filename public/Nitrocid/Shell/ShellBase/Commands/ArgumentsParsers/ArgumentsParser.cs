@@ -21,6 +21,7 @@ using KS.Drivers;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Modifications;
+using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
@@ -65,8 +66,10 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
             Command = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
+            var aliases = AliasManager.GetAliasesListFromType(CommandType);
             var CommandInfo = ModCommands.ContainsKey(Command) ? ModCommands[Command] :
                               ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
+                              aliases.Any((kvp) => kvp.Key.Equals(Command)) ? ShellCommands[aliases.Single((kvp) => kvp.Key.Equals(Command)).Value] :
                               null;
             return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
         }
