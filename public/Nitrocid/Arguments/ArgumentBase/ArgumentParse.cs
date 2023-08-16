@@ -18,7 +18,6 @@
 
 using KS.Arguments.CommandLineArguments;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
