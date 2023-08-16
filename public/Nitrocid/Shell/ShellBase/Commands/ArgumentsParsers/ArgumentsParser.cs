@@ -103,8 +103,6 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
 
             // Check the command and argument info
             bool isCommand = CommandInfo is not null;
-            bool isArgOrCommand = isCommand || ArgumentInfo is not null;
-            DebugCheck.Assert(isArgOrCommand, "info is neither a command nor an argument");
 
             // Split the switches properly now
             string switchRegex =
