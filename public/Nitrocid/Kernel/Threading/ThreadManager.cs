@@ -16,6 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Languages;
+using Microsoft.Diagnostics.Runtime;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
@@ -101,6 +104,34 @@ namespace KS.Kernel.Threading
             Thread.Sleep(Time);
             SleepStopwatch.Stop();
             return SleepStopwatch.ElapsedTicks;
+        }
+
+        /// <summary>
+        /// Gets all thread backtraces
+        /// </summary>
+        /// <returns>A dictionary containing thread names and addresses as keys and stack traces as values</returns>
+        public static Dictionary<string, string[]> GetThreadBacktraces()
+        {
+            var result = new Dictionary<string, string[]>();
+            var pid = Environment.ProcessId;
+            using var dataTarget = DataTarget.CreateSnapshotAndAttach(pid);
+            ClrInfo runtimeInfo = dataTarget.ClrVersions[0];
+            var runtime = runtimeInfo.CreateRuntime();
+            foreach (var t in runtime.Threads)
+            {
+                var matchingThreads = KernelThreads.Where((thread) => thread.ThreadId == t.ManagedThreadId).ToArray();
+                string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : Translate.DoTranslation("Not a Nitrocid KS thread");
+                string[] trace = t.EnumerateStackTrace(true).Select(f =>
+                {
+                    if (f.Method != null)
+                        return $"[0x{f.Method.NativeCode:X16}] @ {f.Method.Type.Name}.{f.Method.Name}({f.Method.Signature})";
+                    return "[0x????????????????] @ ???.???(???)";
+                }
+                ).ToArray();
+                if (trace.Length > 0)
+                    result.Add($"{threadName} [{t.ManagedThreadId}] @ 0x{t.Address:X16}", trace);
+            }
+            return result;
         }
 
     }

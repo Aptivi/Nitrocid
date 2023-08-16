@@ -39,27 +39,8 @@ namespace KS.Shell.Shells.Debug.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            var result = new Dictionary<string, string[]>();
-            var pid = Environment.ProcessId;
-            using var dataTarget = DataTarget.CreateSnapshotAndAttach(pid);
-            ClrInfo runtimeInfo = dataTarget.ClrVersions[0];
-            var runtime = runtimeInfo.CreateRuntime();
-            foreach (var t in runtime.Threads)
-            {
-                var matchingThreads = ThreadManager.KernelThreads.Where((thread) => thread.ThreadId == t.ManagedThreadId).ToArray();
-                string threadName = matchingThreads.Length > 0 ? matchingThreads[0].Name : Translate.DoTranslation("Not a Nitrocid KS thread");
-                string[] trace = t.EnumerateStackTrace(true).Select(f =>
-                {
-                    if (f.Method != null)
-                        return $"[0x{f.Method.NativeCode:X16}] @ {f.Method.Type.Name}.{f.Method.Name}({f.Method.Signature})";
-                    return "[0x????????????????] @ ???.???(???)";
-                }
-                ).ToArray();
-                if (trace.Length > 0)
-                    result.Add($"{threadName} [{t.ManagedThreadId}] @ 0x{t.Address:X16}", trace);
-            }
-
-            // Now, print the list
+            // Print the list
+            Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
             foreach (var trace in result)
             {
                 string threadAddress = trace.Key;

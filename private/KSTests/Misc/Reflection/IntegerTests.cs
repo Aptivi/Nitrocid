@@ -110,5 +110,31 @@ namespace KSTests.Misc.Reflection
             digits.ShouldBe(expectedDigits);
         }
 
+        /// <summary>
+        /// Tests getting digits
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public static void TestGetDigitsInt()
+        {
+            int number = 45000;
+            int expectedDigits = 5;
+            int digits = number.GetDigits();
+            digits.ShouldBe(expectedDigits);
+        }
+
+        /// <summary>
+        /// Tests getting digits
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public static void TestGetDigitsIntNegativeNumber()
+        {
+            int number = -45000;
+            int expectedDigits = 5;
+            int digits = number.GetDigits();
+            digits.ShouldBe(expectedDigits);
+        }
+
     }
 }

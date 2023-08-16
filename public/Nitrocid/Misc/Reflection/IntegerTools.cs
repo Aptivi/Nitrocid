@@ -64,5 +64,13 @@ namespace KS.Misc.Reflection
         /// <returns>How many digits are there in a number</returns>
         public static int GetDigits(this long Number) =>
             Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
+
+        /// <summary>
+        /// Gets the amount of digits in a specified number
+        /// </summary>
+        /// <param name="Number">Number to query its digit count</param>
+        /// <returns>How many digits are there in a number</returns>
+        public static int GetDigits(this int Number) =>
+            Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
     }
 }

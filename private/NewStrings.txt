@@ -837,5 +837,32 @@ Loading...
 Lyrics Path
 Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory.
 The connection index is out of range.
+Kernel error information
+The kernel error happened at
+Error type
+Contains an exception?
+What happened
+Kernel error description
+In-depth analysis of the error
+Exception type
+Error code
+Error source
+Unknown error source method
+Error description
+Stack trace
+Analysis of inner error, number
+The last inner error is the root cause, which is number
+Frame analysis
+There are no frames to analyze.
+Frame analysis failed. Some information might not be complete.
+All kernel threads
+Thread analysis failed. Some information might not be complete.
+All operating system threads
+Operating system thread analysis failed. Some information might not be complete.
+All thread backtraces
+Stack trace for thread
+Thread backtrace analysis failed. Some information might not be complete.
+Dump generator failed to dump a kernel error caused by
+Version information
 
 ==========================================================================================================================================

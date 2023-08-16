@@ -24,14 +24,19 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Kernel.Journaling;
 using KS.Kernel.Power;
+using KS.Kernel.Threading;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
+using KS.Misc.Reflection;
 using KS.Misc.Splash;
 using KS.Misc.Text;
 using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.Linq;
+using System.Text;
 using System.Threading;
 
 namespace KS.Kernel.Exceptions
@@ -216,100 +221,182 @@ namespace KS.Kernel.Exceptions
         {
             try
             {
-                // Open a file stream for dump
-                var Dump = new StreamWriter($"{Paths.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}.txt");
-                DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as dmp_{0}.txt", $"{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}");
+                // Local function for writing header in an appropriate style
+                static void WriteHeader(StringBuilder dumpBuilder, string text)
+                {
+                    dumpBuilder.AppendLine(text);
+                    dumpBuilder.AppendLine(new string('=', text.Length));
+                    dumpBuilder.AppendLine();
+                }
 
-                // Write info (Header)
-                Dump.AutoFlush = true;
-                Dump.WriteLine(Translate.DoTranslation("----------------------------- Kernel panic dump -----------------------------") + CharManager.NewLine + CharManager.NewLine +
-                               Translate.DoTranslation(">> Panic information <<") + CharManager.NewLine + 
-                               Translate.DoTranslation("> Description: {0}") + CharManager.NewLine + 
-                               Translate.DoTranslation("> Error type: {1}") + CharManager.NewLine + 
-                               Translate.DoTranslation("> Date and Time: {2}") + CharManager.NewLine, 
-                               Description, ErrorType.ToString(), TimeDateRenderers.Render());
+                // Local function to write...
+                static void WriteInDepthAnalysis(StringBuilder dumpBuilder, Exception Exc)
+                {
+                    // Write an in-depth analysis of the error
+                    WriteHeader(dumpBuilder, Translate.DoTranslation("In-depth analysis of the error"));
+                    dumpBuilder.AppendLine(
+                        Translate.DoTranslation("Exception type") + $" {Exc.GetType().FullName}" + CharManager.NewLine +
+                        Translate.DoTranslation("Error code") + $": {Exc.HResult} [0x{Exc.HResult:X8}]" + CharManager.NewLine +
+                        Translate.DoTranslation("Error source") + $": {Exc.Source} [{(Exc.TargetSite is not null ? Exc.TargetSite.Name : Translate.DoTranslation("Unknown error source method"))}]" + CharManager.NewLine
+                    );
 
-                // Write Info (Exception)
+                    // Write a description
+                    WriteHeader(dumpBuilder, Translate.DoTranslation("Error description"));
+                    dumpBuilder.AppendLine(Exc.Message + CharManager.NewLine);
+
+                    // Write stack trace
+                    WriteHeader(dumpBuilder, Translate.DoTranslation("Stack trace"));
+                    dumpBuilder.AppendLine(Exc.StackTrace + CharManager.NewLine);
+                }
+
+                // Make a string builder for the dump file
+                var dumpBuilder = new StringBuilder();
+
+                // Write the summary of the kernel panic
+                WriteHeader(dumpBuilder, Translate.DoTranslation("Kernel error information"));
+                dumpBuilder.AppendLine(
+                    Translate.DoTranslation("The kernel error happened at") + $" {TimeDateRenderers.Render()}" + CharManager.NewLine +
+                    Translate.DoTranslation("Error type") + $": {ErrorType}" + CharManager.NewLine +
+                    Translate.DoTranslation("Contains an exception?") + $" {Exc is not null}" + CharManager.NewLine
+                );
+
+                // Write an error description
+                WriteHeader(dumpBuilder, Translate.DoTranslation("Kernel error description"));
+                dumpBuilder.AppendLine(Description + CharManager.NewLine);
+
+                // Write exception information
                 if (Exc is not null)
                 {
-                    int Count = 1;
-                    Dump.WriteLine(Translate.DoTranslation(">> Exception information <<") + CharManager.NewLine + 
-                                   Translate.DoTranslation("> Exception: {0}") + CharManager.NewLine +
-                                   Translate.DoTranslation("> Description: {1}") + CharManager.NewLine +
-                                   Translate.DoTranslation("> HRESULT: {2}") + CharManager.NewLine + 
-                                   Translate.DoTranslation("> Source: {3}") + CharManager.NewLine + CharManager.NewLine + 
-                                   Translate.DoTranslation("> Stack trace <") + CharManager.NewLine + CharManager.NewLine + 
-                                   Exc.StackTrace + CharManager.NewLine + CharManager.NewLine, 
-                                   Exc.GetType().FullName, Exc.Message, Exc.HResult, Exc.Source);
-                    Dump.WriteLine(Translate.DoTranslation(">> Inner exception {0} information <<"), Count);
+                    // Do the job.
+                    WriteInDepthAnalysis(dumpBuilder, Exc);
 
-                    // Write info (Inner exceptions)
+                    // Write inner exception information
+                    int Count = 1;
                     var InnerExc = Exc.InnerException;
                     while (InnerExc is not null)
                     {
-                        Dump.WriteLine(Translate.DoTranslation("> Exception: {0}") + CharManager.NewLine + 
-                                       Translate.DoTranslation("> Description: {1}") + CharManager.NewLine +
-                                       Translate.DoTranslation("> HRESULT: {2}") + CharManager.NewLine + 
-                                       Translate.DoTranslation("> Source: {3}") + CharManager.NewLine + CharManager.NewLine + 
-                                       Translate.DoTranslation("> Stack trace <") + CharManager.NewLine + CharManager.NewLine + 
-                                       InnerExc.StackTrace + CharManager.NewLine, 
-                                       InnerExc.GetType().FullName, InnerExc.Message, InnerExc.HResult, InnerExc.Source);
+                        WriteHeader(dumpBuilder, Translate.DoTranslation("Analysis of inner error, number") + $" {Count}");
+                        WriteInDepthAnalysis(dumpBuilder, InnerExc);
                         InnerExc = InnerExc.InnerException;
-                        if (InnerExc is not null)
-                        {
-                            Dump.WriteLine(Translate.DoTranslation(">> Inner exception {0} information <<"), Count);
-                        }
-                        else
-                        {
-                            Dump.WriteLine(Translate.DoTranslation(">> Exception {0} is the root cause <<"), Count - 1);
-                        }
                         Count += 1;
                     }
-                    Dump.WriteLine();
-                }
-                else
-                {
-                    Dump.WriteLine(Translate.DoTranslation(">> No exception; might be a kernel error. <<") + CharManager.NewLine);
+                    dumpBuilder.AppendLine(Translate.DoTranslation("The last inner error is the root cause, which is number") + $" {Count}" + CharManager.NewLine);
                 }
 
-                // Write info (Frames)
-                Dump.WriteLine(Translate.DoTranslation(">> Frames, files, lines, and columns <<"));
+                // Write frame info for further analysis
+                WriteHeader(dumpBuilder, Translate.DoTranslation("Frame analysis"));
                 try
                 {
                     var ExcTrace = new StackTrace(Exc, true);
-                    int FrameNo = 1;
+                    int FrameNum = 1;
 
-                    // If there are frames to print the file information, write them down to the dump file.
-                    if (ExcTrace.FrameCount != 0)
+                    // If there are frames to print the file information, write them down.
+                    if (ExcTrace.FrameCount > 0)
                     {
-                        foreach (StackFrame Frame in ExcTrace.GetFrames())
+                        // Get the max lengths for rendering
+                        var frames = ExcTrace.GetFrames();
+                        int maxFileLength = frames.Where((sf) => !string.IsNullOrEmpty(sf.GetFileName())).Max((sf) => sf.GetFileName().Length);
+                        int maxFileLineNumber = frames.Max((sf) => sf.GetFileLineNumber().GetDigits());
+                        int maxFileColumnNumber = frames.Max((sf) => sf.GetFileColumnNumber().GetDigits());
+                        foreach (StackFrame Frame in frames)
                         {
-                            if (!(string.IsNullOrEmpty(Frame.GetFileName()) & Frame.GetFileLineNumber() == 0 & Frame.GetFileColumnNumber() == 0))
+                            // Get information about each stack frame
+                            string fileName = Frame.GetFileName();
+                            int fileLineNumber = Frame.GetFileLineNumber();
+                            int fileColumnNumber = Frame.GetFileColumnNumber();
+
+                            // If we have information, go ahead.
+                            if (!string.IsNullOrEmpty(fileName) && fileLineNumber != 0 && fileColumnNumber != 0)
                             {
-                                Dump.WriteLine(Translate.DoTranslation("> Frame {0}: File: {1} | Line: {2} | Column: {3}"), FrameNo, Frame.GetFileName(), Frame.GetFileLineNumber(), Frame.GetFileColumnNumber());
+                                // Render information
+                                string renderedFileName = $"{fileName}{new string(' ', maxFileLength - fileName.Length)}";
+                                string renderedLineNumber = $"{fileLineNumber}{new string(' ', maxFileLineNumber - fileLineNumber.GetDigits())}";
+                                string renderedColumnNumber = $"{fileColumnNumber}{new string(' ', maxFileColumnNumber - fileColumnNumber.GetDigits())}";
+                                dumpBuilder.AppendLine($"[{FrameNum}] {renderedFileName} | {renderedLineNumber}:{renderedColumnNumber}");
                             }
-                            FrameNo += 1;
+                            FrameNum += 1;
                         }
                     }
                     else
+                        dumpBuilder.AppendLine(Translate.DoTranslation("There are no frames to analyze."));
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze frames: ", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    dumpBuilder.AppendLine(Translate.DoTranslation("Frame analysis failed. Some information might not be complete.") + $" {ex.Message}");
+                }
+                dumpBuilder.AppendLine();
+
+                // All kernel threads
+                WriteHeader(dumpBuilder, Translate.DoTranslation("All kernel threads"));
+                try
+                {
+                    var threads = ThreadManager.KernelThreads;
+                    foreach (var thread in threads)
+                        dumpBuilder.AppendLine($"[{thread.ThreadId}] {thread.Name}{CharManager.NewLine}  - A: {thread.IsAlive}, B: {thread.IsBackground}, C: {thread.IsCritical}, R: {thread.IsReady}, S: {thread.IsStopping}");
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze threads: ", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    dumpBuilder.AppendLine(Translate.DoTranslation("Thread analysis failed. Some information might not be complete.") + $" {ex.Message}");
+                }
+                dumpBuilder.AppendLine();
+
+                // All operating system threads
+                WriteHeader(dumpBuilder, Translate.DoTranslation("All operating system threads"));
+                try
+                {
+                    var threads = ThreadManager.OperatingSystemThreads;
+                    foreach (ProcessThread thread in threads)
+                        dumpBuilder.AppendLine($"[{thread.Id}] 0x{thread.StartAddress:X16}");
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze OS threads: ", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    dumpBuilder.AppendLine(Translate.DoTranslation("Operating system thread analysis failed. Some information might not be complete.") + $" {ex.Message}");
+                }
+                dumpBuilder.AppendLine();
+
+                // All thread backtraces
+                WriteHeader(dumpBuilder, Translate.DoTranslation("All thread backtraces"));
+                try
+                {
+                    Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
+                    foreach (var trace in result)
                     {
-                        Dump.WriteLine(Translate.DoTranslation("> There are no information about frames."));
+                        string threadAddress = trace.Key;
+                        string[] threadTrace = trace.Value;
+                        WriteHeader(dumpBuilder, Translate.DoTranslation("Stack trace for thread") + $" {threadAddress}");
+                        foreach (var traceVal in threadTrace)
+                            dumpBuilder.AppendLine(traceVal);
+                        dumpBuilder.AppendLine();
                     }
                 }
                 catch (Exception ex)
                 {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Can't analyze thread backtraces: ", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    Dump.WriteLine(Translate.DoTranslation("> There is an error when trying to get frame information. {0}: {1}"), ex.GetType().FullName, ex.Message.Replace(CharManager.NewLine, " | "));
+                    dumpBuilder.AppendLine(Translate.DoTranslation("Thread backtrace analysis failed. Some information might not be complete.") + $" {ex.Message}");
+                    dumpBuilder.AppendLine();
                 }
 
-                // Close stream
-                DebugWriter.WriteDebug(DebugLevel.I, "Closing file stream for dump...");
-                Dump.Flush();
-                Dump.Close();
+                // Versions
+                WriteHeader(dumpBuilder, Translate.DoTranslation("Version information"));
+                dumpBuilder.AppendLine(KernelTools.ConsoleTitle);
+                dumpBuilder.AppendLine(Environment.OSVersion.ToString());
+                dumpBuilder.AppendLine(Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
+
+                // Save the dump file
+                string filePath = $"{Paths.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}.txt";
+                File.WriteAllText(filePath, dumpBuilder.ToString());
+                DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as {0}", filePath);
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Dump information gatherer crashed when trying to get information about {0}: {1}"), true, KernelColorType.Error, Exc.GetType().FullName, ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("Dump generator failed to dump a kernel error caused by") + " {0}: {1}", true, KernelColorType.Error, Exc.GetType().FullName, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
