@@ -1072,52 +1072,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;H4X0R Level 1&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;1nv4l1d c0l0r 73mpl473 {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwpr0b3: y0ur h4rdw4r3 w1ll b3 pr0b3d. pl3453 w417...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;cpu: 0n3 0r m0r3 0f 7h3 cpu c0r35 f41l3d 70 b3 pr0b3d. 5h0w1n6 1nf0rm4710n 4nyw4y...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showin [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string hxr_1 {
-            get {
-                return ResourceManager.GetString("hxr_1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;H4X0R Level 2&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;!|\\\\|\\\\/4|_!|) (0|_0|2 73/\\\\/\\\\|D|_473 {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;|-|\\\\/\\\\/|D|20|33: `/0(_)|2 |-|4|2|)\\\\/\\\\/4|23 \\\\/\\\\/!|_|_ |33 |D|20|33|). |D|_3453 \\\\/\\\\/4!7...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;(|D(_): 0|\\\\|3 0|2 /\\\\/\\\\0|23 0|= 7|-|3 (|D(_) (0|235 |=4!|_3|) 7 [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string hxr_2 {
-            get {
-                return ResourceManager.GetString("hxr_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;H4X0R Level 3&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;!|\\\\|\\\\/41!|) (010|2 +3|\\\\/||&gt;14+3 {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;|-|\\\\|/|&gt;|2083: `/0|_||2 |-|4|2|)\\\\|/4|23 \\\\|/!11 83 |&gt;|2083|). |&gt;13453 \\\\|/4!+...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;(|&gt;|_|: 0|\\\\|3 0|2 |\\\\/|0|23 0|# +|-|3 (|&gt;|_| (0|235 |#4!13|) +0 83 |&gt;|2083|). 5|-|0\\\\|/!|\\\ [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string hxr_3 {
-            get {
-                return ResourceManager.GetString("hxr_3", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Hindi&quot;,
         ///  &quot;Transliterable&quot;: true,
         ///  &quot;Localizations&quot;: {
@@ -2169,38 +2123,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Pirate Speak&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;invalid color template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;&apos;wprobe: yer &apos;ardware be probed. Please wait...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot; cpu: one or more o&apos; the cpu cores failed to be probed. Showin&apos; information anyway...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing info [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string pir {
-            get {
-                return ResourceManager.GetString("pir", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Gangsta, Playa&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Invalid color template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Its just anotha homocide. Yo&apos; hardware will be probed. Drop it like its hot. Pleaze wait...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: One or more of tha CPU cores failed ta be probed hittin that booty. Show&apos;n information anyway...&quot;,
-        ///  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string pla {
-            get {
-                return ResourceManager.GetString("pla", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Planted Wood&quot;,
         ///        &quot;Description&quot;: &quot;Simulates the color of wood that has small green plants usually found in jungles&quot;
@@ -2512,22 +2434,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;SMS Message&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot; invld clr tmplt {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprb: yr hrdwr wll b prbd. Pls wt...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot; cpu: on r mr f th cpu crs fld t b prbd. Shwng nfrmtn nywy...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot; ram: on r mr f th r [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string sms {
-            get {
-                return ResourceManager.GetString("sms", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Solarized (dark)&quot;,
         ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
@@ -2655,22 +2561,6 @@ namespace Properties.Resources {
         public static string SplashSettingsEntries {
             get {
                 return ResourceManager.GetString("SplashSettingsEntries", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Shakespearean&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot; invalid col&apos;r template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: thy hardware shall beest prob&apos;d.  Prithee wait. &quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot; cpu: one &apos;r moo of the cpu cores did fail to beest prob&apos;d.  Showing information concluded, be it. &quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ssp {
-            get {
-                return ResourceManager.GetString("ssp", resourceCulture);
             }
         }
         

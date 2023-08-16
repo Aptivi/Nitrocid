@@ -295,18 +295,6 @@
   <data name="cnt_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\cnt-T.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
-  <data name="hxr_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\hxr-1.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="hxr_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\hxr-2.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="hxr_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\hxr-3.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="pir" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\pir.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="ukr" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\ukr.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -406,9 +394,6 @@
   <data name="VisualStudioLight" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\VisualStudioLight.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="pla" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\pla.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
   <data name="PhosphoricBG" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\PhosphoricBG.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
@@ -417,12 +402,6 @@
   </data>
   <data name="LanguageMetadata" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\..\Nitrocid.LocaleGen\Translations\Metadata.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="sms" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\sms.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
-  </data>
-  <data name="ssp" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Languages\ssp.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="Darcula" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Darcula.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
