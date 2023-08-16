@@ -202,10 +202,6 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool EnableAltCalendar { get; set; }
         /// <summary>
-        /// Automatically load the custom screensavers on boot.
-        /// </summary>
-        public bool StartCustomScreensavers { get; set; } = true;
-        /// <summary>
         /// Set the language codepage upon switching languages (Windows only)
         /// </summary>
         public bool SetCodepage { get; set; }

@@ -125,7 +125,6 @@ namespace KS.Misc.Settings
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Saving settings..."), true, KernelColorType.Progress);
                         Config.CreateConfig();
-                        CustomSaverTools.SaveCustomSaverSettings();
                     }
                     catch (Exception ex)
                     {

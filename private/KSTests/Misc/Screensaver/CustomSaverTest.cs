@@ -16,17 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Languages;
-using KS.Misc.Screensaver.Customized;
+using KS.Misc.Screensaver;
 
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace KSTests.Misc.Screensaver
 {
-    internal class LoadSavers : TestFacade
+    internal class CustomSaverTest : BaseScreensaver, IScreensaver
     {
-        public override string TestName => Translate.DoTranslation("Starts all custom screensavers");
-        public override void Run()
-        {
-            CustomSaverParser.ParseCustomSavers();
-        }
+        public override string ScreensaverName { get; set; } = "CustomSaverTest";
     }
 }

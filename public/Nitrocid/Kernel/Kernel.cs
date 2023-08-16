@@ -173,8 +173,6 @@ namespace KS.Kernel
                     {
                         if (Flags.StartKernelMods)
                             ModManager.StartMods();
-                        if (Flags.StartCustomScreensavers)
-                            CustomSaverParser.ParseCustomSavers();
                     }
                     else
                     {

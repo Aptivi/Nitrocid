@@ -867,5 +867,7 @@ Version information
 An error occurred in the calendar manager.
 Connection type is not found
 Connection type already exists
+Custom screensaver already exists.
+Custom screensaver not found.
 
 ==========================================================================================================================================

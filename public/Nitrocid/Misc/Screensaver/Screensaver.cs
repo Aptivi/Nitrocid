@@ -258,7 +258,7 @@ namespace KS.Misc.Screensaver
                 else
                 {
                     // Only one custom screensaver can be used.
-                    var BaseSaver = CustomSaverTools.CustomSavers[saver].ScreensaverBase;
+                    var BaseSaver = CustomSaverTools.CustomSavers[saver];
                     if (BaseSaver.ScreensaverContainsFlashingImages)
                         BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;

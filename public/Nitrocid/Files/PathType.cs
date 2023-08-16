@@ -60,10 +60,6 @@ namespace KS.Files
         /// </summary>
         MAL,
         /// <summary>
-        /// Custom screensaver settings file.
-        /// </summary>
-        CustomSaverSettings,
-        /// <summary>
         /// Events folder
         /// </summary>
         Events,
@@ -83,10 +79,6 @@ namespace KS.Files
         /// Journal file
         /// </summary>
         Journalling,
-        /// <summary>
-        /// Custom screensaver directory
-        /// </summary>
-        Screensavers,
         /// <summary>
         /// Contacts directory
         /// </summary>

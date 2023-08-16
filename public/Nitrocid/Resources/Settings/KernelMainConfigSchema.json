@@ -83,9 +83,6 @@
         "EnableAltCalendar": {
             "type": "boolean"
         },
-        "StartCustomScreensavers": {
-            "type": "boolean"
-        },
         "SetCodepage": {
             "type": "boolean"
         },
@@ -796,7 +793,6 @@
         "ConsoleSupportsTrueColor",
         "AltCalendar",
         "EnableAltCalendar",
-        "StartCustomScreensavers",
         "SetCodepage",
         "UserNameShellColor",
         "HostNameShellColor",

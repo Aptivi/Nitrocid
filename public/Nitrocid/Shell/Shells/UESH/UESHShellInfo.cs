@@ -211,8 +211,6 @@ namespace KS.Shell.Shells.UESH
                 new CommandArgumentInfo(new[] { "ip", "port" }, Array.Empty<SwitchInfo>(), false, 0), new RebootCommand()) },
             { "reloadconfig", new CommandInfo("reloadconfig", ShellType, /* Localizable */ "Reloads configuration file that is edited.",
                 new CommandArgumentInfo(), new ReloadConfigCommand(), CommandFlags.Strict) },
-            { "reloadsaver", new CommandInfo("reloadsaver", ShellType, /* Localizable */ "Reloads screensaver file in KSMods",
-                new CommandArgumentInfo(new[] { "customsaver" }, Array.Empty<SwitchInfo>(), true, 1), new ReloadSaverCommand(), CommandFlags.Strict) },
             { "retroks", new CommandInfo("retroks", ShellType, /* Localizable */ "Retro Nitrocid KS based on 0.0.4.1",
                 new CommandArgumentInfo(), new RetroKSCommand()) },
             { "rexec", new CommandInfo("rexec", ShellType, /* Localizable */ "Remotely executes a command to remote PC",

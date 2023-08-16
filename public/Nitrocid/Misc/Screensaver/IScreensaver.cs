@@ -54,10 +54,5 @@ namespace KS.Misc.Screensaver
         /// Whether the screensaver contains flashing images
         /// </summary>
         bool ScreensaverContainsFlashingImages { get; set; }
-        /// <summary>
-        /// Settings for custom screensaver
-        /// </summary>
-        /// <returns>A set of keys and values holding settings for the screensaver</returns>
-        Dictionary<string, object> ScreensaverSettings { get; set; }
     }
 }

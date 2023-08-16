@@ -152,12 +152,6 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/MAL.txt");
 
         /// <summary>
-        /// CustomSaverSettings path
-        /// </summary>
-        public static string CustomSaverSettingsPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/CustomSaverSettings.json");
-
-        /// <summary>
         /// Events path
         /// </summary>
         public static string EventsPath =>
@@ -186,12 +180,6 @@ namespace KS.Files
         /// </summary>
         public static string JournallingPath =>
             Filesystem.NeutralizePath(AppDataPath + "/KSJournal.json");
-
-        /// <summary>
-        /// Screensavers path
-        /// </summary>
-        public static string ScreensaversPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KSScreensavers/");
 
         /// <summary>
         /// Contacts path
@@ -235,7 +223,6 @@ namespace KS.Files
                 KernelPathType.Aliases =>               AliasesPath,
                 KernelPathType.Configuration =>         ConfigurationPath,
                 KernelPathType.CustomLanguages =>       CustomLanguagesPath,
-                KernelPathType.CustomSaverSettings =>   CustomSaverSettingsPath,
                 KernelPathType.CustomSplashes =>        CustomSplashesPath,
                 KernelPathType.DebugDevNames =>         DebugDevNamesPath,
                 KernelPathType.Debugging =>             DebuggingPath,
@@ -247,7 +234,6 @@ namespace KS.Files
                 KernelPathType.Reminders =>             RemindersPath,
                 KernelPathType.Users =>                 UsersPath,
                 KernelPathType.Journalling =>           JournallingPath,
-                KernelPathType.Screensavers =>          ScreensaversPath,
                 KernelPathType.Contacts =>              ContactsPath,
                 KernelPathType.ContactsImport =>        ContactsImportPath,
                 KernelPathType.SaverConfiguration =>    SaverConfigurationPath,

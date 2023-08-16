@@ -262,11 +262,6 @@ namespace KS.Kernel
         public static bool ConsoleSupportsTrueColor =>
             Config.MainConfig.ConsoleSupportsTrueColor;
         /// <summary>
-        /// Whether to start the screensavers on boot
-        /// </summary>
-        public static bool StartCustomScreensavers =>
-            Config.MainConfig.StartCustomScreensavers;
-        /// <summary>
         /// Whether the input history is enabled
         /// </summary>
         public static bool InputHistoryEnabled =>

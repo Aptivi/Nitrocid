@@ -37,11 +37,6 @@ namespace KS.Misc.Screensaver
         /// Screensaver name
         /// </summary>
         public virtual string ScreensaverName { get; set; } = "BaseScreensaver";
-
-        /// <summary>
-        /// Screensaver settings
-        /// </summary>
-        public virtual Dictionary<string, object> ScreensaverSettings { get; set; }
         /// <summary>
         /// Whether the screensaver contains flashing images
         /// </summary>

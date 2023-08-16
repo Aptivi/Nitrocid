@@ -189,12 +189,6 @@
                 "Description": "If you want the logon screen or the date and time viewer to also show the alternative calendar, enable it."
             },
             {
-                "Name": "Load custom screensavers on boot",
-                "Type": "SBoolean",
-                "Variable": "StartCustomScreensavers",
-                "Description": "Automatically load the custom screensavers on boot."
-            },
-            {
                 "Name": "Set codepage",
                 "Type": "SBoolean",
                 "Variable": "SetCodepage",
