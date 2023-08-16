@@ -46,7 +46,7 @@
     <Version>0.1.0</Version>
     <Configurations>Debug;Release;Release-Linux-Packaging</Configurations>
     <LangVersion>latest</LangVersion>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
   <!-- LocaleGen General Information End -->

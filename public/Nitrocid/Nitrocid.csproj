@@ -25,7 +25,7 @@
 
   <!-- KS General Information -->
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -143,11 +143,6 @@
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Update="Properties\Resources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <!-- KS Manifest End -->
 
@@ -159,6 +154,13 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <!-- KS Package Files End -->
   

@@ -24,7 +24,7 @@ using System.IO;
 using System.Text;
 using System.Threading;
 using KS.Kernel;
-using con = System.Console;
+using SystemConsole = System.Console;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -67,7 +67,7 @@ namespace KS.Drivers.Console.Consoles
                     if (!_dumbSet)
                     {
                         _dumbSet = true;
-                        int _ = con.CursorLeft;
+                        int _ = SystemConsole.CursorLeft;
 
                         // If it doesn't get here without throwing exceptions, assume console is dumb. Now, check to see if terminal type is dumb
                         if (TerminalType != "dumb" && TerminalType != "unknown")
@@ -80,7 +80,7 @@ namespace KS.Drivers.Console.Consoles
         }
 
         /// <inheritdoc/>
-        public virtual TextWriter Out => con.Out;
+        public virtual TextWriter Out => SystemConsole.Out;
 
         /// <inheritdoc/>
         public virtual int CursorLeft
@@ -89,12 +89,12 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return 0;
-                return con.CursorLeft;
+                return SystemConsole.CursorLeft;
             }
             set
             {
                 if (!IsDumb)
-                    con.CursorLeft = value;
+                    SystemConsole.CursorLeft = value;
             }
         }
 
@@ -105,12 +105,12 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return 0;
-                return con.CursorTop;
+                return SystemConsole.CursorTop;
             }
             set
             {
                 if (!IsDumb)
-                    con.CursorTop = value;
+                    SystemConsole.CursorTop = value;
             }
         }
 
@@ -121,7 +121,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return int.MaxValue;
-                return con.WindowWidth;
+                return SystemConsole.WindowWidth;
             }
         }
 
@@ -132,7 +132,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return int.MaxValue;
-                return con.WindowTop;
+                return SystemConsole.WindowTop;
             }
         }
 
@@ -143,7 +143,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return int.MaxValue;
-                return con.WindowHeight;
+                return SystemConsole.WindowHeight;
             }
         }
 
@@ -154,7 +154,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return int.MaxValue;
-                return con.BufferWidth;
+                return SystemConsole.BufferWidth;
             }
         }
 
@@ -165,7 +165,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return int.MaxValue;
-                return con.BufferHeight;
+                return SystemConsole.BufferHeight;
             }
         }
 
@@ -176,12 +176,12 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return ConsoleColor.White;
-                return con.ForegroundColor;
+                return SystemConsole.ForegroundColor;
             }
             set
             {
                 if (!IsDumb)
-                    con.ForegroundColor = value;
+                    SystemConsole.ForegroundColor = value;
                 KernelColorTools.currentForegroundColor = new Color(Convert.ToInt32(value));
             }
         }
@@ -193,12 +193,12 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return ConsoleColor.Black;
-                return con.BackgroundColor;
+                return SystemConsole.BackgroundColor;
             }
             set
             {
                 if (!IsDumb)
-                    con.BackgroundColor = value;
+                    SystemConsole.BackgroundColor = value;
                 KernelColorTools.currentBackgroundColor = new Color(Convert.ToInt32(value));
             }
         }
@@ -209,7 +209,7 @@ namespace KS.Drivers.Console.Consoles
             set
             {
                 if (!IsDumb)
-                    con.CursorVisible = value;
+                    SystemConsole.CursorVisible = value;
             }
         }
 
@@ -220,12 +220,12 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return Encoding.Default;
-                return con.OutputEncoding;
+                return SystemConsole.OutputEncoding;
             }
             set
             {
                 if (!IsDumb)
-                    con.OutputEncoding = value;
+                    SystemConsole.OutputEncoding = value;
             }
         }
 
@@ -236,12 +236,12 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return Encoding.Default;
-                return con.InputEncoding;
+                return SystemConsole.InputEncoding;
             }
             set
             {
                 if (!IsDumb)
-                    con.InputEncoding = value;
+                    SystemConsole.InputEncoding = value;
             }
         }
 
@@ -252,13 +252,13 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (IsDumb)
                     return false;
-                return con.KeyAvailable;
+                return SystemConsole.KeyAvailable;
             }
         }
 
         /// <inheritdoc/>
         public virtual void Beep() =>
-            con.Beep();
+            SystemConsole.Beep();
 
         /// <inheritdoc/>
         public virtual void Clear(bool loadBack = false)
@@ -267,38 +267,38 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (loadBack)
                     KernelColorTools.LoadBack();
-                con.Clear();
+                SystemConsole.Clear();
             }
         }
 
         /// <inheritdoc/>
         public virtual Stream OpenStandardError() =>
-            con.OpenStandardError();
+            SystemConsole.OpenStandardError();
 
         /// <inheritdoc/>
         public virtual Stream OpenStandardInput() =>
-            con.OpenStandardInput();
+            SystemConsole.OpenStandardInput();
 
         /// <inheritdoc/>
         public virtual Stream OpenStandardOutput() =>
-            con.OpenStandardOutput();
+            SystemConsole.OpenStandardOutput();
 
         /// <inheritdoc/>
         public virtual ConsoleKeyInfo ReadKey(bool intercept = false) =>
-            con.ReadKey(intercept);
+            SystemConsole.ReadKey(intercept);
 
         /// <inheritdoc/>
         public virtual void ResetColor()
         {
             if (!IsDumb)
-                con.ResetColor();
+                SystemConsole.ResetColor();
         }
 
         /// <inheritdoc/>
         public virtual void SetCursorPosition(int left, int top)
         {
             if (!IsDumb)
-                con.SetCursorPosition(left, top);
+                SystemConsole.SetCursorPosition(left, top);
         }
 
         /// <inheritdoc/>
@@ -307,32 +307,32 @@ namespace KS.Drivers.Console.Consoles
             // We need to reset dumb state because the new output may not support usual console features other then reading/writing.
             _dumbSet = false;
             _dumb = true;
-            con.SetOut(newOut);
+            SystemConsole.SetOut(newOut);
         }
 
         /// <inheritdoc/>
         public virtual void Write(char value) =>
-            con.Write(value);
+            SystemConsole.Write(value);
 
         /// <inheritdoc/>
         public virtual void Write(string text) =>
-            con.Write(text);
+            SystemConsole.Write(text);
 
         /// <inheritdoc/>
         public virtual void Write(string text, params object[] args) =>
-            con.Write(text, args);
+            SystemConsole.Write(text, args);
 
         /// <inheritdoc/>
         public virtual void WriteLine() =>
-            con.WriteLine();
+            SystemConsole.WriteLine();
 
         /// <inheritdoc/>
         public virtual void WriteLine(string text) =>
-            con.WriteLine(text);
+            SystemConsole.WriteLine(text);
 
         /// <inheritdoc/>
         public virtual void WriteLine(string text, params object[] args) =>
-            con.WriteLine(text, args);
+            SystemConsole.WriteLine(text, args);
 
         /// <inheritdoc/>
         public virtual void WritePlain(string Text, bool Line, params object[] vars)

@@ -64,6 +64,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;3Y-Diamond OS&quot;,
+        ///        &quot;Description&quot;: &quot;Color scheme for one of our PowerPoint operating systems, 3Y-Diamond OS&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;60&quot;,
         ///    &quot;LicenseColor&quot;: &quot;113&quot;,
@@ -76,11 +77,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;113&quot;,
         ///    &quot;ListValueColor&quot;: &quot;35&quot;,
         ///    &quot;StageColor&quot;: &quot;146&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;146&quot;,
-        ///    &quot;WarningColor&quot;: &quot;146&quot;,
-        ///    &quot;OptionColor&quot;: &quot;113&quot;,
-        ///    &quot;BannerColor&quot;: &quot;146&quot;,
-        ///  [rest of string was truncated]&quot;;.
+        ///    &quot;ErrorC [rest of string was truncated]&quot;;.
         /// </summary>
         public static string _3Y_Diamond {
             get {
@@ -119,6 +116,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Amaya&quot;,
+        ///        &quot;Description&quot;: &quot;Purple harmony&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#b491c5&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#808080&quot;,
@@ -131,9 +129,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;#b491c5&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#33218a&quot;,
         ///    &quot;StageColor&quot;: &quot;#b491c5&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#68228b&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#68228b&quot;,
-        ///    &quot; [rest of string was truncated]&quot;;.
+        ///    &quot;ErrorColor&quot;: &quot;#68228b [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Amaya {
             get {
@@ -170,6 +166,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Aquatic&quot;,
+        ///        &quot;Description&quot;: &quot;For those who love aqua&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;68;142;227&quot;,
         ///    &quot;LicenseColor&quot;: &quot;68;142;227&quot;,
@@ -181,9 +178,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;42;122;191&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;62;135;199&quot;,
         ///    &quot;ListValueColor&quot;: &quot;61;102;196&quot;,
-        ///    &quot;StageColor&quot;: &quot;82;242;226&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;40;59;201&quot;,
-        ///    &quot;Warni [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;82;242 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Aquatic {
             get {
@@ -226,6 +221,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ayu (dark)&quot;,
+        ///        &quot;Description&quot;: &quot;Dark version of a popular VIM theme, Ayu&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;184;204;82&quot;,
         ///    &quot;LicenseColor&quot;: &quot;92;103;115&quot;,
@@ -236,9 +232,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;15;20;25&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;230;225;207&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;54;163;217&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;230;182;115&quot;,
-        ///    &quot;StageColor&quot;: &quot;255;180;84&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;255;51;51&quot; [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;230;182;11 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AyuDark {
             get {
@@ -250,6 +244,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ayu (light)&quot;,
+        ///        &quot;Description&quot;: &quot;Light version of a popular VIM theme, Ayu&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;134;179;0&quot;,
         ///    &quot;LicenseColor&quot;: &quot;171;176;182&quot;,
@@ -260,9 +255,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;250;250;250&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;92;103;115&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;54;163;217&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;230;182;115&quot;,
-        ///    &quot;StageColor&quot;: &quot;242;151;24&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;255;51; [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;230;18 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AyuLight {
             get {
@@ -274,6 +267,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ayu (mirage)&quot;,
+        ///        &quot;Description&quot;: &quot;Mirage version of a popular VIM theme, Ayu&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;187;230;126&quot;,
         ///    &quot;LicenseColor&quot;: &quot;92;103;115&quot;,
@@ -284,9 +278,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;33;39;51&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;217;215;206&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;92;207;230&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;255;196;76&quot;,
-        ///    &quot;StageColor&quot;: &quot;255;213;127&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;255;51;5 [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;255;19 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string AyuMirage {
             get {
@@ -298,6 +290,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;BedOS&quot;,
+        ///        &quot;Description&quot;: &quot;Color scheme for one of our PowerPoint operating systems, BedOS&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;74&quot;,
         ///    &quot;LicenseColor&quot;: &quot;177&quot;,
@@ -311,10 +304,7 @@ namespace Properties.Resources {
         ///    &quot;ListValueColor&quot;: &quot;80&quot;,
         ///    &quot;StageColor&quot;: &quot;80&quot;,
         ///    &quot;ErrorColor&quot;: &quot;202&quot;,
-        ///    &quot;WarningColor&quot;: &quot;202&quot;,
-        ///    &quot;OptionColor&quot;: &quot;12&quot;,
-        ///    &quot;BannerColor&quot;: &quot;80&quot;,
-        ///    &quot;Notifi [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BedOS {
             get {
@@ -326,6 +316,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Black on White&quot;,
+        ///        &quot;Description&quot;: &quot;Lightest terminal possible&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;0&quot;,
         ///    &quot;LicenseColor&quot;: &quot;0&quot;,
@@ -340,9 +331,7 @@ namespace Properties.Resources {
         ///    &quot;StageColor&quot;: &quot;0&quot;,
         ///    &quot;ErrorColor&quot;: &quot;0&quot;,
         ///    &quot;WarningColor&quot;: &quot;0&quot;,
-        ///    &quot;OptionColor&quot;: &quot;0&quot;,
-        ///    &quot;BannerColor&quot;: &quot;0&quot;,
-        ///    &quot;NotificationTitleC [rest of string was truncated]&quot;;.
+        ///    &quot;OptionColor&quot;: &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BlackOnWhite {
             get {
@@ -354,6 +343,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Black Rose&quot;,
+        ///        &quot;Description&quot;: &quot;This is the black rose&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#FF89B7&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#9D003D&quot;,
@@ -366,9 +356,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;#FF89B7&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#9D003D&quot;,
         ///    &quot;StageColor&quot;: &quot;#FF89B7&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#6B0029&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#9D003D&quot;,
-        /// [rest of string was truncated]&quot;;.
+        ///    &quot;ErrorCol [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BlackRose {
             get {
@@ -380,6 +368,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Bloody&quot;,
+        ///        &quot;Description&quot;: &quot;Makes your terminal bloody. Don&apos;t use unless you can really handle this.&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;199;187;187&quot;,
         ///    &quot;LicenseColor&quot;: &quot;199;187;187&quot;,
@@ -390,10 +379,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;242;12;12&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;235;99;99&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;199;34;34&quot;,
-        ///    &quot;StageColor&quot;: &quot;199;34;34&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;71;11;11&quot;,
-        ///    &quot;WarningColo [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueCo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Bloody {
             get {
@@ -405,6 +391,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Blue Power&quot;,
+        ///        &quot;Description&quot;: &quot;Gives you a power of blue&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;35;11;128&quot;,
         ///    &quot;LicenseColor&quot;: &quot;35;11;128&quot;,
@@ -416,9 +403,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;5;158;135&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;50;9;122&quot;,
         ///    &quot;ListValueColor&quot;: &quot;252;109;101&quot;,
-        ///    &quot;StageColor&quot;: &quot;207;82;60&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;17;153;126&quot;,
-        ///    &quot;WarningC [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;207;82; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Blue_Power {
             get {
@@ -430,6 +415,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Bluesome&quot;,
+        ///        &quot;Description&quot;: &quot;Awesome Blue!&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;137;126;191&quot;,
         ///    &quot;LicenseColor&quot;: &quot;137;126;191&quot;,
@@ -442,8 +428,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;137;126;191&quot;,
         ///    &quot;ListValueColor&quot;: &quot;32;0;194&quot;,
         ///    &quot;StageColor&quot;: &quot;79;77;84&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;137;126;121&quot;,
-        ///    &quot;Wa [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Bluesome {
             get {
@@ -455,6 +440,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Breeze&quot;,
+        ///        &quot;Description&quot;: &quot;Color scheme for Breeze, a KDE Plasma 5 theme&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;244;79;79&quot;,
         ///    &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
@@ -465,10 +451,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;35;38;41&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;61;174;233&quot;,
-        ///    &quot;StageColor&quot;: &quot;253;188;75&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;77;31;36&quot;,
-        ///    &quot; [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;61;174;233&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Breeze {
             get {
@@ -480,6 +463,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Breeze (dark)&quot;,
+        ///        &quot;Description&quot;: &quot;Color scheme for Breeze, a KDE Plasma 5 theme&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;244;79;79&quot;,
         ///    &quot;LicenseColor&quot;: &quot;122;124;125&quot;,
@@ -490,10 +474,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;207;207;194&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;41;128;185&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;61;174;233&quot;,
-        ///    &quot;StageColor&quot;: &quot;253;188;75&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;77;31;36&quot;,
-        ///    &quot; [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;61;174;233&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string BreezeDark {
             get {
@@ -587,6 +568,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Darcula&quot;,
+        ///        &quot;Description&quot;: &quot;Popular color scheme for IDEs, like IntelliJ&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#629755&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#A9B7C6&quot;,
@@ -598,10 +580,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#A9B7C6&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#3A3A3A&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#8C8C8C&quot;,
-        ///    &quot;StageColor&quot;: &quot;#629755&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#CC666E&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#A9B7C6&quot;,
-        ///    [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;#6297 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Darcula {
             get {
@@ -613,6 +592,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Dawn Aurora&quot;,
+        ///        &quot;Description&quot;: &quot;Gives you a breeze of dawn&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;15;31;64&quot;,
         ///    &quot;LicenseColor&quot;: &quot;15;31;64&quot;,
@@ -624,9 +604,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;133;61;142&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;163;62;151&quot;,
         ///    &quot;ListValueColor&quot;: &quot;194;62;157&quot;,
-        ///    &quot;StageColor&quot;: &quot;105;57;131&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;54;47;100&quot;,
-        ///    &quot;WarningC [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;105;57 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Dawn_Aurora {
             get {
@@ -638,6 +616,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Debian&quot;,
+        ///        &quot;Description&quot;: &quot;Color schemes for Debian&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;15&quot;,
         ///    &quot;LicenseColor&quot;: &quot;15&quot;,
@@ -652,9 +631,7 @@ namespace Properties.Resources {
         ///    &quot;StageColor&quot;: &quot;15&quot;,
         ///    &quot;ErrorColor&quot;: &quot;7&quot;,
         ///    &quot;WarningColor&quot;: &quot;15&quot;,
-        ///    &quot;OptionColor&quot;: &quot;15&quot;,
-        ///    &quot;BannerColor&quot;: &quot;15&quot;,
-        ///    &quot;NotificationTi [rest of string was truncated]&quot;;.
+        ///    &quot;OptionColor&quot;: &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Debian {
             get {
@@ -708,6 +685,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Electronic Dance Music (EDM)&quot;,
+        ///        &quot;Description&quot;: &quot;Use if you are a fan of EDM&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#5C1D6B&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#FDD602&quot;,
@@ -719,9 +697,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#FDD602&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#5C1D6B&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#B41EB2&quot;,
-        ///    &quot;StageColor&quot;: &quot;#5C1D6B&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#FF3179&quot;,
-        ///    &quot;WarningCo [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;# [rest of string was truncated]&quot;;.
         /// </summary>
         public static string EDM {
             get {
@@ -765,6 +741,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Fast X (Fast and Furious 10)&quot;,
+        ///        &quot;Description&quot;: &quot;Get on a heated race with this theme&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#FFFFFF&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#FFFFFF&quot;,
@@ -776,9 +753,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#FFFFFF&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#FFFFFF&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;StageColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#FFFFFF&quot;,
-        ///    &quot;WarningCo [rest of string was truncated]&quot;;.
+        ///    &quot;StageC [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Fast_X {
             get {
@@ -790,6 +765,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Fast X (Fast and Furious 10)&quot;,
+        ///        &quot;Description&quot;: &quot;Get on a heated race with this theme&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#009AFE&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#009AFE&quot;,
@@ -801,9 +777,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#009AFE&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#009AFE&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;StageColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#009AFE&quot;,
-        ///    &quot;WarningCo [rest of string was truncated]&quot;;.
+        ///    &quot;StageC [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Fast_X_FG {
             get {
@@ -815,6 +789,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Fire&quot;,
+        ///        &quot;Description&quot;: &quot;Fire shades&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#FAA307&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#FFBA08&quot;,
@@ -828,8 +803,7 @@ namespace Properties.Resources {
         ///    &quot;ListValueColor&quot;: &quot;#F48C06&quot;,
         ///    &quot;StageColor&quot;: &quot;#FAA307&quot;,
         ///    &quot;ErrorColor&quot;: &quot;#9D0208&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#FFBA08&quot;,
-        ///    &quot;O [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Fire {
             get {
@@ -873,6 +847,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Grape&quot;,
+        ///        &quot;Description&quot;: &quot;Color scheme for grapes&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;85;7;173&quot;,
         ///    &quot;LicenseColor&quot;: &quot;85;7;173&quot;,
@@ -885,8 +860,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;184;156;217&quot;,
         ///    &quot;ListValueColor&quot;: &quot;85;7;173&quot;,
         ///    &quot;StageColor&quot;: &quot;44;21;69&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;178;133;230&quot;,
-        ///    &quot;WarningColor&quot;: [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Grape {
             get {
@@ -898,6 +872,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Grape Kiwi&quot;,
+        ///        &quot;Description&quot;: &quot;Grape and Kiwi mixed together&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;147;77;191&quot;,
         ///    &quot;LicenseColor&quot;: &quot;147;77;191&quot;,
@@ -909,9 +884,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;93;232;109&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;124;58;166&quot;,
         ///    &quot;ListValueColor&quot;: &quot;250;92;153&quot;,
-        ///    &quot;StageColor&quot;: &quot;237;83;142&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;99;255;118&quot;,
-        ///    &quot;W [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Grape_Kiwi {
             get {
@@ -923,6 +896,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Gray on Yellow&quot;,
+        ///        &quot;Description&quot;: &quot;Gray text on yellow background&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;7&quot;,
         ///    &quot;LicenseColor&quot;: &quot;7&quot;,
@@ -937,9 +911,7 @@ namespace Properties.Resources {
         ///    &quot;StageColor&quot;: &quot;7&quot;,
         ///    &quot;ErrorColor&quot;: &quot;7&quot;,
         ///    &quot;WarningColor&quot;: &quot;7&quot;,
-        ///    &quot;OptionColor&quot;: &quot;7&quot;,
-        ///    &quot;BannerColor&quot;: &quot;7&quot;,
-        ///    &quot;NotificationTitleCo [rest of string was truncated]&quot;;.
+        ///    &quot;OptionColor&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GrayOnYellow {
             get {
@@ -951,6 +923,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Grays&quot;,
+        ///        &quot;Description&quot;: &quot;Shades of gray&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;33;33;33&quot;,
         ///    &quot;LicenseColor&quot;: &quot;33;33;33&quot;,
@@ -963,8 +936,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;170;158;159&quot;,
         ///    &quot;ListValueColor&quot;: &quot;195;182;181&quot;,
         ///    &quot;StageColor&quot;: &quot;119;113;116&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;73;71;73&quot;,
-        ///    &quot;WarningColor [rest of string was truncated]&quot;;.
+        ///    &quot;Er [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Grays {
             get {
@@ -976,6 +948,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Green Mix&quot;,
+        ///        &quot;Description&quot;: &quot;Vivid and plastered green, blue, and purple colors&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;179;95;68&quot;,
         ///    &quot;LicenseColor&quot;: &quot;179;95;68&quot;,
@@ -986,10 +959,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;76;217;149&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;90;210;250&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;252;61;153&quot;,
-        ///    &quot;StageColor&quot;: &quot;201;91;54&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;82;196;235&quot;,
-        ///    &quot;Warni [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;252;61;153&quot;, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Green_Mix {
             get {
@@ -1001,6 +971,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Grink (Green + Pink)&quot;,
+        ///        &quot;Description&quot;: &quot;Green and pink mixed together&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;235;75;155&quot;,
         ///    &quot;LicenseColor&quot;: &quot;235;75;155&quot;,
@@ -1012,8 +983,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;51;199;46&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;44;163;104&quot;,
         ///    &quot;ListValueColor&quot;: &quot;172;67;176&quot;,
-        ///    &quot;StageColor&quot;: &quot;214;64;139&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;44;222;133&quot; [rest of string was truncated]&quot;;.
+        ///    &quot;St [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Grink {
             get {
@@ -1025,6 +995,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Gruvbox&quot;,
+        ///        &quot;Description&quot;: &quot;One of the known terminal color schemes&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#3c3836&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#d65d0e&quot;,
@@ -1036,10 +1007,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#3c3836&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#928374&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#3c3836&quot;,
-        ///    &quot;StageColor&quot;: &quot;#928374&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#cc241d&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#9d0006&quot;,
-        ///    [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;#928374&quot;,        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Gruvbox {
             get {
@@ -1051,6 +1019,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Grand Theft Auto: San Andreas&quot;,
+        ///        &quot;Description&quot;: &quot;Color schemes for GTA: SA&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;11&quot;,
         ///    &quot;LicenseColor&quot;: &quot;11&quot;,
@@ -1065,8 +1034,6 @@ namespace Properties.Resources {
         ///    &quot;StageColor&quot;: &quot;11&quot;,
         ///    &quot;ErrorColor&quot;: &quot;3&quot;,
         ///    &quot;WarningColor&quot;: &quot;3&quot;,
-        ///    &quot;OptionColor&quot;: &quot;11&quot;,
-        ///    &quot;BannerColor&quot;: &quot;11&quot;,
         ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string GTASA {
@@ -1079,6 +1046,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Hacker&quot;,
+        ///        &quot;Description&quot;: &quot;Green text on gray&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;10&quot;,
         ///    &quot;LicenseColor&quot;: &quot;10&quot;,
@@ -1094,8 +1062,7 @@ namespace Properties.Resources {
         ///    &quot;ErrorColor&quot;: &quot;2&quot;,
         ///    &quot;WarningColor&quot;: &quot;10&quot;,
         ///    &quot;OptionColor&quot;: &quot;2&quot;,
-        ///    &quot;BannerColor&quot;: &quot;2&quot;,
-        ///    &quot;NotificationTitleC [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Hacker {
             get {
@@ -1218,9 +1185,6 @@ namespace Properties.Resources {
         ///    &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
         ///    &quot;type&quot;: &quot;object&quot;,
         ///    &quot;properties&quot;: {
-        ///        &quot;Maintenance&quot;: {
-        ///            &quot;type&quot;: &quot;boolean&quot;
-        ///        },
         ///        &quot;CheckUpdateStart&quot;: {
         ///            &quot;type&quot;: &quot;boolean&quot;
         ///        },
@@ -1234,7 +1198,10 @@ namespace Properties.Resources {
         ///            &quot;type&quot;: &quot;string&quot;
         ///        },
         ///        &quot;CurrentCultStr&quot;: {
-        ///            &quot;type&quot; [rest of string was truncated]&quot;;.
+        ///            &quot;type&quot;: &quot;string&quot;
+        ///        },
+        ///        &quot;ShowAppInfoOnBoot&quot;: {
+        ///            &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string KernelMainConfigSchema {
             get {
@@ -1365,6 +1332,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Lemon&quot;,
+        ///        &quot;Description&quot;: &quot;Make your terminal full of lemon acid&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;185;204;45&quot;,
         ///    &quot;LicenseColor&quot;: &quot;185;204;45&quot;,
@@ -1376,9 +1344,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;173;173;35&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;232;250;97&quot;,
         ///    &quot;ListValueColor&quot;: &quot;200;224;45&quot;,
-        ///    &quot;StageColor&quot;: &quot;199;197;78&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;184;186;41&quot;,
-        ///    &quot;Warni [rest of string was truncated]&quot;;.
+        ///    &quot;StageCo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Lemon {
             get {
@@ -1390,6 +1356,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Light Planks&quot;,
+        ///        &quot;Description&quot;: &quot;Light wood planks&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;184;129;62&quot;,
         ///    &quot;LicenseColor&quot;: &quot;184;129;62&quot;,
@@ -1401,9 +1368,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;202;204;59&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;219;189;88&quot;,
         ///    &quot;ListValueColor&quot;: &quot;224;165;56&quot;,
-        ///    &quot;StageColor&quot;: &quot;255;154;59&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;217;154;87&quot;,
-        ///    [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;255;15 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Light_Planks {
             get {
@@ -1415,6 +1380,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Linux (colored defaults)&quot;,
+        ///        &quot;Description&quot;: &quot;Standard Linux terminal colors&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;7&quot;,
         ///    &quot;LicenseColor&quot;: &quot;7&quot;,
@@ -1429,9 +1395,7 @@ namespace Properties.Resources {
         ///    &quot;StageColor&quot;: &quot;15&quot;,
         ///    &quot;ErrorColor&quot;: &quot;7&quot;,
         ///    &quot;WarningColor&quot;: &quot;7&quot;,
-        ///    &quot;OptionColor&quot;: &quot;15&quot;,
-        ///    &quot;BannerColor&quot;: &quot;15&quot;,
-        ///    &quot;Not [rest of string was truncated]&quot;;.
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LinuxColoredDef {
             get {
@@ -1443,6 +1407,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Linux (uncolored)&quot;,
+        ///        &quot;Description&quot;: &quot;Gray terminal&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;7&quot;,
         ///    &quot;LicenseColor&quot;: &quot;7&quot;,
@@ -1458,8 +1423,7 @@ namespace Properties.Resources {
         ///    &quot;ErrorColor&quot;: &quot;7&quot;,
         ///    &quot;WarningColor&quot;: &quot;7&quot;,
         ///    &quot;OptionColor&quot;: &quot;7&quot;,
-        ///    &quot;BannerColor&quot;: &quot;7&quot;,
-        ///    &quot;NotificationTitl [rest of string was truncated]&quot;;.
+        ///    &quot;B [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LinuxUncolored {
             get {
@@ -1471,6 +1435,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Materialistic&quot;,
+        ///        &quot;Description&quot;: &quot;Some Material Design text on your terminal&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;105;158;62&quot;,
         ///    &quot;LicenseColor&quot;: &quot;105;158;62&quot;,
@@ -1482,9 +1447,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;39;62;156&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;107;38;163&quot;,
         ///    &quot;ListValueColor&quot;: &quot;214;188;84&quot;,
-        ///    &quot;StageColor&quot;: &quot;113;176;62&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;117;46;176&quot;,
-        ///     [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Materialistic {
             get {
@@ -1496,6 +1459,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Maya&quot;,
+        ///        &quot;Description&quot;: &quot;Shades of orange and brown&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#d1e1da&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#c3d6c2&quot;,
@@ -1508,9 +1472,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;#d1e1da&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#e59f00&quot;,
         ///    &quot;StageColor&quot;: &quot;#d1e1da&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#4e3925&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#912e2e&quot;,
-        ///    &quot;O [rest of string was truncated]&quot;;.
+        ///    &quot;ErrorColor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Maya {
             get {
@@ -1522,6 +1484,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Melange&quot;,
+        ///        &quot;Description&quot;: &quot;Melange theme inspired by the VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#CC7F2B&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#C29830&quot;,
@@ -1533,10 +1496,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#6B5C4D&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#A38D78&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#6B5C4D&quot;,
-        ///    &quot;StageColor&quot;: &quot;#A38D78&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#E0BFBB&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#D7898C&quot;,
-        ///    [rest of string was truncated]&quot;;.
+        ///    &quot;StageCo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Melange {
             get {
@@ -1548,6 +1508,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Melange (dark)&quot;,
+        ///        &quot;Description&quot;: &quot;Melange theme inspired by the VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#E49B5D&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#EBC06D&quot;,
@@ -1559,9 +1520,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#ECE1D7&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#A38D78&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#ECE1D7&quot;,
-        ///    &quot;StageColor&quot;: &quot;#A38D78&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#7D2A2F&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#65C60&quot; [rest of string was truncated]&quot;;.
+        ///    &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string MelangeDark {
             get {
@@ -1573,6 +1532,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Metallic&quot;,
+        ///        &quot;Description&quot;: &quot;Metallic terminal and text&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;8&quot;,
         ///    &quot;LicenseColor&quot;: &quot;7&quot;,
@@ -1588,8 +1548,7 @@ namespace Properties.Resources {
         ///    &quot;ErrorColor&quot;: &quot;8&quot;,
         ///    &quot;WarningColor&quot;: &quot;8&quot;,
         ///    &quot;OptionColor&quot;: &quot;7&quot;,
-        ///    &quot;BannerColor&quot;: &quot;7&quot;,
-        ///    &quot;NotificationTitleColor&quot; [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Metallic {
             get {
@@ -1673,6 +1632,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Mint&quot;,
+        ///        &quot;Description&quot;: &quot;Make your terminal full of mint&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;50;161;61&quot;,
         ///    &quot;LicenseColor&quot;: &quot;50;161;61&quot;,
@@ -1684,9 +1644,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;44;201;50&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;109;207;76&quot;,
         ///    &quot;ListValueColor&quot;: &quot;127;212;78&quot;,
-        ///    &quot;StageColor&quot;: &quot;48;194;43&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;100;176;42&quot;,
-        ///    &quot;WarningColor&quot; [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;48;194 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Mint {
             get {
@@ -1698,6 +1656,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Mint Gum&quot;,
+        ///        &quot;Description&quot;: &quot;Bubblegum and mint mixed together&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;102;17;64&quot;,
         ///    &quot;LicenseColor&quot;: &quot;102;17;64&quot;,
@@ -1709,9 +1668,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;60;120;84&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;62;135;97&quot;,
         ///    &quot;ListValueColor&quot;: &quot;217;181;74&quot;,
-        ///    &quot;StageColor&quot;: &quot;49;112;85&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;133;12;58&quot;,
-        ///    &quot;WarningColor [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;49 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Mint_Gum {
             get {
@@ -1723,6 +1680,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Mintback&quot;,
+        ///        &quot;Description&quot;: &quot;Light version of Mint&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;23;13;28&quot;,
         ///    &quot;LicenseColor&quot;: &quot;23;13;28&quot;,
@@ -1735,8 +1693,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;196;85;37&quot;,
         ///    &quot;ListValueColor&quot;: &quot;127;163;54&quot;,
         ///    &quot;StageColor&quot;: &quot;212;25;44&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;39;24;43&quot;,
-        ///    &quot;WarningColor&quot;: &quot; [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Mintback {
             get {
@@ -1748,6 +1705,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Mintish&quot;,
+        ///        &quot;Description&quot;: &quot;Another variant of Mint&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;244;242;105&quot;,
         ///    &quot;LicenseColor&quot;: &quot;244;242;105&quot;,
@@ -1759,8 +1717,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;154;209;107&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;138;201;109&quot;,
         ///    &quot;ListValueColor&quot;: &quot;122;194;110&quot;,
-        ///    &quot;StageColor&quot;: &quot;171;216;106&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;206;230;105&quot; [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Mintish {
             get {
@@ -1772,6 +1729,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Monokai&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#90908a&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#f8f8f2&quot;,
@@ -1783,10 +1741,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#f8f8f2&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#90908a&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#ae81ff&quot;,
-        ///    &quot;StageColor&quot;: &quot;#90908a&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#f8f8f0&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#f8f8f0&quot;,
-        ///    [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;# [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Monokai {
             get {
@@ -1798,6 +1753,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Neon Breeze&quot;,
+        ///        &quot;Description&quot;: &quot;Do you like neon blue and pink?&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;13&quot;,
         ///    &quot;LicenseColor&quot;: &quot;14&quot;,
@@ -1812,9 +1768,7 @@ namespace Properties.Resources {
         ///    &quot;StageColor&quot;: &quot;13&quot;,
         ///    &quot;ErrorColor&quot;: &quot;13&quot;,
         ///    &quot;WarningColor&quot;: &quot;13&quot;,
-        ///    &quot;OptionColor&quot;: &quot;14&quot;,
-        ///    &quot;BannerColor&quot;: &quot;13&quot;,
-        ///    &quot;Notifi [rest of string was truncated]&quot;;.
+        ///    &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NeonBreeze {
             get {
@@ -1826,6 +1780,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Neutralized&quot;,
+        ///        &quot;Description&quot;: &quot;This theme should be neutral to you.&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;45;60;61&quot;,
         ///    &quot;LicenseColor&quot;: &quot;45;60;61&quot;,
@@ -1837,9 +1792,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;149;151;140&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;178;187;195&quot;,
         ///    &quot;ListValueColor&quot;: &quot;211;205;189&quot;,
-        ///    &quot;StageColor&quot;: &quot;228;224;212&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;178;180;175&quot;,
-        ///    &quot; [rest of string was truncated]&quot;;.
+        ///    &quot;Stage [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Neutralized {
             get {
@@ -1851,6 +1804,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Need for Speed: Hot Pursuit (2010) - Cop&quot;,
+        ///        &quot;Description&quot;: &quot;Cop colors for NFS: HP&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;9&quot;,
         ///    &quot;LicenseColor&quot;: &quot;19&quot;,
@@ -1864,9 +1818,7 @@ namespace Properties.Resources {
         ///    &quot;ListValueColor&quot;: &quot;9&quot;,
         ///    &quot;StageColor&quot;: &quot;9&quot;,
         ///    &quot;ErrorColor&quot;: &quot;88&quot;,
-        ///    &quot;WarningColor&quot;: &quot;4&quot;,
-        ///    &quot;OptionColor&quot;: &quot;4&quot;,
-        ///    &quot;BannerColor&quot;: &quot; [rest of string was truncated]&quot;;.
+        ///    &quot;WarningColor&quot;: &quot;4 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NFSHP_Cop {
             get {
@@ -1878,6 +1830,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Need for Speed: Hot Pursuit (2010) - Racer&quot;,
+        ///        &quot;Description&quot;: &quot;Racer colors for NFS: HP&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;15&quot;,
         ///    &quot;LicenseColor&quot;: &quot;15&quot;,
@@ -1891,9 +1844,7 @@ namespace Properties.Resources {
         ///    &quot;ListValueColor&quot;: &quot;15&quot;,
         ///    &quot;StageColor&quot;: &quot;184&quot;,
         ///    &quot;ErrorColor&quot;: &quot;88&quot;,
-        ///    &quot;WarningColor&quot;: &quot;94&quot;,
-        ///    &quot;OptionColor&quot;: &quot;94&quot;,
-        ///    &quot; [rest of string was truncated]&quot;;.
+        ///    &quot;Wa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NFSHP_Racer {
             get {
@@ -1929,6 +1880,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;No Frils (acme)&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#585858&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#AF8700&quot;,
@@ -1940,9 +1892,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#000000&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#585858&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#000000&quot;,
-        ///    &quot;StageColor&quot;: &quot;#FF00FF&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#800000&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#ff555 [rest of string was truncated]&quot;;.
+        ///    &quot;StageCo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NoFrilsAcme {
             get {
@@ -1954,6 +1904,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;No Frils (dark)&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#6C6C6C&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#6C6C6C&quot;,
@@ -1965,9 +1916,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#eeeeee&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#6C6C6C&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#eeeeee&quot;,
-        ///    &quot;StageColor&quot;: &quot;#FF00FF&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#800000&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#5F000 [rest of string was truncated]&quot;;.
+        ///    &quot;StageCo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NoFrilsDark {
             get {
@@ -1979,6 +1928,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;No Frils (light)&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#A8A8A8&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#A8A8A8&quot;,
@@ -1990,9 +1940,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#000000&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#A8A8A8&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#000000&quot;,
-        ///    &quot;StageColor&quot;: &quot;#FF00FF&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#800000&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#FF55 [rest of string was truncated]&quot;;.
+        ///    &quot;StageC [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NoFrilsLight {
             get {
@@ -2004,6 +1952,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;No Frils (sepia)&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#AF8700&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#AF8700&quot;,
@@ -2015,9 +1964,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#000000&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#AF8700&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#000000&quot;,
-        ///    &quot;StageColor&quot;: &quot;#FF00FF&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#800000&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#FF55 [rest of string was truncated]&quot;;.
+        ///    &quot;StageC [rest of string was truncated]&quot;;.
         /// </summary>
         public static string NoFrilsSepia {
             get {
@@ -2029,6 +1976,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Orange Sea&quot;,
+        ///        &quot;Description&quot;: &quot;The sea of orange&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;54;152;217&quot;,
         ///    &quot;LicenseColor&quot;: &quot;54;152;217&quot;,
@@ -2040,9 +1988,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;163;95;49&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;42;118;168&quot;,
         ///    &quot;ListValueColor&quot;: &quot;189;121;75&quot;,
-        ///    &quot;StageColor&quot;: &quot;56;157;224&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;64;136;184&quot;,
-        ///    &quot;W [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;56;157;22 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Orange_Sea {
             get {
@@ -2054,6 +2000,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Papercolor&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#005f87&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#000000&quot;,
@@ -2065,10 +2012,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#000000&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#800080&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#000000&quot;,
-        ///    &quot;StageColor&quot;: &quot;#800080&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#af0000&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#00ff00&quot;,
-        /// [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Papercolor {
             get {
@@ -2080,6 +2024,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Papercolor (dark)&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#005f87&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#c0c0c0&quot;,
@@ -2091,9 +2036,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#c0c0c0&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#800080&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#c0c0c0&quot;,
-        ///    &quot;StageColor&quot;: &quot;#800080&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#af0000&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#00f [rest of string was truncated]&quot;;.
+        ///    &quot;Stage [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PapercolorDark {
             get {
@@ -2105,6 +2048,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Pastel 1&quot;,
+        ///        &quot;Description&quot;: &quot;Make your terminal more of a pastel terminal&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;204;227;222&quot;,
         ///    &quot;LicenseColor&quot;: &quot;204;227;222&quot;,
@@ -2115,9 +2059,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;171;214;181&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;197;151;240&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;247;236;188&quot;,
-        ///    &quot;StageColor&quot;: &quot;242;240;240&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;191;227;125 [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;247;236; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Pastel_1 {
             get {
@@ -2129,6 +2071,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Pastel 2&quot;,
+        ///        &quot;Description&quot;: &quot;Make your terminal more of a pastel terminal&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;252;204;189&quot;,
         ///    &quot;LicenseColor&quot;: &quot;252;204;189&quot;,
@@ -2139,9 +2082,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;235;122;158&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;191;250;190&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;225;218;245&quot;,
-        ///    &quot;StageColor&quot;: &quot;148;195;227&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;197;153;207 [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;225;218; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Pastel_2 {
             get {
@@ -2153,6 +2094,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Pastel 3&quot;,
+        ///        &quot;Description&quot;: &quot;Make your terminal more of a pastel terminal&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;132;217;139&quot;,
         ///    &quot;LicenseColor&quot;: &quot;132;217;139&quot;,
@@ -2163,9 +2105,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;161;209;121&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;160;174;242&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;227;131;116&quot;,
-        ///    &quot;StageColor&quot;: &quot;242;153;220&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;224;211;184 [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;227;131; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Pastel_3 {
             get {
@@ -2177,6 +2117,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Phosphoric (background)&quot;,
+        ///        &quot;Description&quot;: &quot;Phosphoric terminal that converts everything to orange&quot;
         ///    },
         ///	&quot;InputColor&quot;: &quot;0&quot;,
         ///	&quot;LicenseColor&quot;: &quot;0&quot;,
@@ -2192,9 +2133,7 @@ namespace Properties.Resources {
         ///	&quot;ErrorColor&quot;: &quot;0&quot;,
         ///	&quot;WarningColor&quot;: &quot;0&quot;,
         ///	&quot;OptionColor&quot;: &quot;0&quot;,
-        ///	&quot;BannerColor&quot;: &quot;0&quot;,
-        ///	&quot;NotificationTitleColor&quot;: &quot;0&quot;,
-        ///	&quot;NotificationDescriptionCo [rest of string was truncated]&quot;;.
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PhosphoricBG {
             get {
@@ -2206,6 +2145,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Phosphoric (foreground)&quot;,
+        ///        &quot;Description&quot;: &quot;Phosphoric terminal that converts everything to orange&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;3&quot;,
         ///    &quot;LicenseColor&quot;: &quot;3&quot;,
@@ -2219,10 +2159,7 @@ namespace Properties.Resources {
         ///    &quot;ListValueColor&quot;: &quot;3&quot;,
         ///    &quot;StageColor&quot;: &quot;3&quot;,
         ///    &quot;ErrorColor&quot;: &quot;3&quot;,
-        ///    &quot;WarningColor&quot;: &quot;3&quot;,
-        ///    &quot;OptionColor&quot;: &quot;3&quot;,
-        ///    &quot;BannerColor&quot;: &quot;3&quot;,
-        ///    &quot;Notificati [rest of string was truncated]&quot;;.
+        ///    &quot;Warni [rest of string was truncated]&quot;;.
         /// </summary>
         public static string PhosphoricFG {
             get {
@@ -2266,6 +2203,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Planted Wood&quot;,
+        ///        &quot;Description&quot;: &quot;Simulates the color of wood that has small green plants usually found in jungles&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;214;142;60&quot;,
         ///    &quot;LicenseColor&quot;: &quot;214;142;60&quot;,
@@ -2276,10 +2214,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;51;107;67&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;35;101;120&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;194;93;31&quot;,
-        ///    &quot;StageColor&quot;: &quot;242;117;34&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;56;127;143&quot;,
-        ///    &quot;W [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Planted_Wood {
             get {
@@ -2307,6 +2242,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Purlow (Purple + Yellow)&quot;,
+        ///        &quot;Description&quot;: &quot;A mix of yellow and purple&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;217;217;65&quot;,
         ///    &quot;LicenseColor&quot;: &quot;217;217;65&quot;,
@@ -2318,8 +2254,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;138;11;95&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;255;255;82&quot;,
         ///    &quot;ListValueColor&quot;: &quot;135;14;95&quot;,
-        ///    &quot;StageColor&quot;: &quot;227;213;57&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;201;212;5 [rest of string was truncated]&quot;;.
+        ///    &quot;Sta [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Purlow {
             get {
@@ -2356,6 +2291,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Red Breeze&quot;,
+        ///        &quot;Description&quot;: &quot;Gives you a breeze of red.&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;197;201;54&quot;,
         ///    &quot;LicenseColor&quot;: &quot;197;201;54&quot;,
@@ -2367,9 +2303,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;212;78;66&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;212;64;51&quot;,
         ///    &quot;ListValueColor&quot;: &quot;230;97;85&quot;,
-        ///    &quot;StageColor&quot;: &quot;247;93;79&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;153;46;37&quot;,
-        ///    &quot;WarningC [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;247;9 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Red_Breeze {
             get {
@@ -2381,6 +2315,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Red Console&quot;,
+        ///        &quot;Description&quot;: &quot;A bloody red console&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;9&quot;,
         ///    &quot;LicenseColor&quot;: &quot;9&quot;,
@@ -2396,8 +2331,7 @@ namespace Properties.Resources {
         ///    &quot;ErrorColor&quot;: &quot;1&quot;,
         ///    &quot;WarningColor&quot;: &quot;9&quot;,
         ///    &quot;OptionColor&quot;: &quot;9&quot;,
-        ///    &quot;BannerColor&quot;: &quot;9&quot;,
-        ///    &quot;NotificationTitleColor [rest of string was truncated]&quot;;.
+        ///    &quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string RedConsole {
             get {
@@ -2409,6 +2343,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Reddish&quot;,
+        ///        &quot;Description&quot;: &quot;Another variant of Red Breeze&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;153;46;38&quot;,
         ///    &quot;LicenseColor&quot;: &quot;153;46;38&quot;,
@@ -2420,9 +2355,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;254;7;24&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;156;44;49&quot;,
         ///    &quot;ListValueColor&quot;: &quot;171;51;51&quot;,
-        ///    &quot;StageColor&quot;: &quot;169;15;7&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;245;71;51&quot;,
-        ///    &quot;WarningColor&quot;: &quot;1 [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;169;15;7&quot;, [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Reddish {
             get {
@@ -2456,6 +2389,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Rigel&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#f08e48&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#1c8db2&quot;,
@@ -2467,10 +2401,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#e6e6dc&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#77929e&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#e6e6dc&quot;,
-        ///    &quot;StageColor&quot;: &quot;#77929e&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#c43060&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#c43060&quot;,
-        ///    &quot; [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;#77 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Rigel {
             get {
@@ -2514,6 +2445,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Sakura&quot;,
+        ///        &quot;Description&quot;: &quot;Sakura trees will give you some Chinese breeze&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#EACBD2&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#DFAEB4&quot;,
@@ -2525,10 +2457,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#DFAEB4&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#EACBD2&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#DFAEB4&quot;,
-        ///    &quot;StageColor&quot;: &quot;#EACBD2&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#DD9AC2&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#DFAEB4&quot;,
-        ///     [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;#EAC [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Sakura {
             get {
@@ -2567,13 +2496,13 @@ namespace Properties.Resources {
         ///        &quot;DisplayAs&quot;: &quot;General kernel settings&quot;,
         ///        &quot;Keys&quot;: [
         ///            {
-        ///                &quot;Name&quot;: &quot;Maintenance Mode&quot;,
+        ///                &quot;Name&quot;: &quot;Check for Updates on Startup&quot;,
         ///                &quot;Type&quot;: &quot;SBoolean&quot;,
-        ///                &quot;Variable&quot;: &quot;Maintenance&quot;,
-        ///                &quot;Description&quot;: &quot;Triggers maintenance mode. This disables multiple accounts.&quot;
+        ///                &quot;Variable&quot;: &quot;CheckUpdateStart&quot;,
+        ///                &quot;Description&quot;: &quot;Each startup, it will check for updates.&quot;
         ///            },
         ///            {
-        ///                &quot;Name&quot;: &quot;C [rest of string was truncated]&quot;;.
+        ///                &quot;Name&quot;: &quot;Cus [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SettingsEntries {
             get {
@@ -2601,6 +2530,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Solarized (dark)&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;38;139;210&quot;,
         ///    &quot;LicenseColor&quot;: &quot;211;54;130&quot;,
@@ -2611,10 +2541,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0;43;54&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;38;139;210&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;38;139;210&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;42;161;152&quot;,
-        ///    &quot;StageColor&quot;: &quot;133;153;0&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;211;1;2&quot;,
-        ///  [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;42 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SolarizedDark {
             get {
@@ -2626,6 +2553,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Solarized (light)&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;38;139;210&quot;,
         ///    &quot;LicenseColor&quot;: &quot;211;54;130&quot;,
@@ -2636,9 +2564,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;253;246;227&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;38;139;210&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;38;139;210&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;42;161;152&quot;,
-        ///    &quot;StageColor&quot;: &quot;133;153;0&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;211;1;2 [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SolarizedLight {
             get {
@@ -2666,6 +2592,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Space Camp&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#DEDEDE&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#EEEEEE&quot;,
@@ -2677,10 +2604,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#EEEEEE&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#6B6B6B&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#EEEEEE&quot;,
-        ///    &quot;StageColor&quot;: &quot;#6B6B6B&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#821A1A&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#821A1A&quot;,
-        /// [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SpaceCamp {
             get {
@@ -2692,6 +2616,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Space Duck&quot;,
+        ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#818596&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#b3a1e6&quot;,
@@ -2703,10 +2628,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#ecf0c1&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#30365F&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#ecf0c1&quot;,
-        ///    &quot;StageColor&quot;: &quot;#30365F&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#e33400&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#e39400&quot;,
-        /// [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SpaceDuck {
             get {
@@ -2756,6 +2678,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Tealed&quot;,
+        ///        &quot;Description&quot;: &quot;All teal colors&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;62;98;115&quot;,
         ///    &quot;LicenseColor&quot;: &quot;62;98;115&quot;,
@@ -2768,8 +2691,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;252;91;116&quot;,
         ///    &quot;ListValueColor&quot;: &quot;145;196;55&quot;,
         ///    &quot;StageColor&quot;: &quot;209;48;73&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;60;106;117&quot;,
-        ///    &quot;WarningC [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Tealed {
             get {
@@ -2781,6 +2703,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;TealerOS&quot;,
+        ///        &quot;Description&quot;: &quot;A color scheme from one of our PowerPoint OS, TealerOS&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;74&quot;,
         ///    &quot;LicenseColor&quot;: &quot;74&quot;,
@@ -2794,10 +2717,7 @@ namespace Properties.Resources {
         ///    &quot;ListValueColor&quot;: &quot;74&quot;,
         ///    &quot;StageColor&quot;: &quot;80&quot;,
         ///    &quot;ErrorColor&quot;: &quot;23&quot;,
-        ///    &quot;WarningColor&quot;: &quot;23&quot;,
-        ///    &quot;OptionColor&quot;: &quot;23&quot;,
-        ///    &quot;BannerColor&quot;: &quot;80&quot;,
-        ///    &quot;Notificatio [rest of string was truncated]&quot;;.
+        ///    &quot;WarningCo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TealerOS {
             get {
@@ -2809,6 +2729,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Techno&quot;,
+        ///        &quot;Description&quot;: &quot;A theme for technology lovers&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#7cd4d4&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#648e9c&quot;,
@@ -2821,9 +2742,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;#7cd4d4&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#82c5c8&quot;,
         ///    &quot;StageColor&quot;: &quot;#7cd4d4&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#9bf4eb&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#206363&quot;,
-        ///     [rest of string was truncated]&quot;;.
+        ///    &quot;Error [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Techno {
             get {
@@ -2851,6 +2770,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Traffic Light&quot;,
+        ///        &quot;Description&quot;: &quot;You&apos;re waiting for a green light, you&apos;re late for work, and the traffic light never turns to green&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;10&quot;,
         ///    &quot;LicenseColor&quot;: &quot;10&quot;,
@@ -2862,12 +2782,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;10&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;10&quot;,
         ///    &quot;ListValueColor&quot;: &quot;10&quot;,
-        ///    &quot;StageColor&quot;: &quot;226&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;9&quot;,
-        ///    &quot;WarningColor&quot;: &quot;226&quot;,
-        ///    &quot;OptionColor&quot;: &quot;10&quot;,
-        ///    &quot;BannerColor&quot;: &quot;226&quot;,
-        ///    &quot;Noti [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor [rest of string was truncated]&quot;;.
         /// </summary>
         public static string TrafficLight {
             get {
@@ -2905,6 +2820,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ubuntu&quot;,
+        ///        &quot;Description&quot;: &quot;Color schemes from a popular Linux operating system, Ubuntu&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;15&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#77216F&quot;,
@@ -2917,9 +2833,7 @@ namespace Properties.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;#E95420&quot;,
         ///    &quot;ListValueColor&quot;: &quot;15&quot;,
         ///    &quot;StageColor&quot;: &quot;#77216F&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;#E95420&quot;,
-        ///    &quot;WarningColor&quot;: &quot;#77216F&quot;,
-        ///    &quot;OptionColor&quot;: &quot;15&quot;,        /// [rest of string was truncated]&quot;;.
+        ///  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Ubuntu {
             get {
@@ -2931,6 +2845,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Ubuntu (Legacy)&quot;,
+        ///        &quot;Description&quot;: &quot;Color schemes from a popular Linux operating system, Ubuntu&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;15&quot;,
         ///    &quot;LicenseColor&quot;: &quot;15&quot;,
@@ -2944,10 +2859,7 @@ namespace Properties.Resources {
         ///    &quot;ListValueColor&quot;: &quot;15&quot;,
         ///    &quot;StageColor&quot;: &quot;15&quot;,
         ///    &quot;ErrorColor&quot;: &quot;7&quot;,
-        ///    &quot;WarningColor&quot;: &quot;15&quot;,
-        ///    &quot;OptionColor&quot;: &quot;15&quot;,
-        ///    &quot;BannerColor&quot;: &quot;15&quot;,
-        ///    &quot;Notifi [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string UbuntuLegacy {
             get {
@@ -2991,7 +2903,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;VI - Vice City&quot;,
-        ///        &quot;Description&quot;: &quot;Gives you the perfect Vice City vibe&quot;
+        ///        &quot;Description&quot;: &quot;Gives you a perfect Vice City vibe&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;#00a8ff&quot;,
         ///    &quot;LicenseColor&quot;: &quot;#0266c8&quot;,
@@ -3003,7 +2915,7 @@ namespace Properties.Resources {
         ///    &quot;NeutralTextColor&quot;: &quot;#0266c8&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#00a8ff&quot;,
         ///    &quot;ListValueColor&quot;: &quot;#b28bc0&quot;,
-        ///    &quot;StageColor&quot;: &quot;#00a8f [rest of string was truncated]&quot;;.
+        ///    &quot;StageColor&quot;: &quot;#00a8ff&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ViceCity {
             get {
@@ -3015,6 +2927,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Visual Studio (dark)&quot;,
+        ///        &quot;Description&quot;: &quot;Color scheme for Visual Studio, one of the most powerful IDEs&quot;
         ///    },
         ///	&quot;InputColor&quot;: &quot;15&quot;,
         ///	&quot;LicenseColor&quot;: &quot;15&quot;,
@@ -3029,10 +2942,7 @@ namespace Properties.Resources {
         ///	&quot;StageColor&quot;: &quot;15&quot;,
         ///	&quot;ErrorColor&quot;: &quot;15&quot;,
         ///	&quot;WarningColor&quot;: &quot;15&quot;,
-        ///	&quot;OptionColor&quot;: &quot;15&quot;,
-        ///	&quot;BannerColor&quot;: &quot;15&quot;,
-        ///	&quot;NotificationTitleColor&quot;: &quot;15&quot;,
-        ///	&quot;Notific [rest of string was truncated]&quot;;.
+        ///	 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string VisualStudioDark {
             get {
@@ -3044,6 +2954,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Visual Studio (light)&quot;,
+        ///        &quot;Description&quot;: &quot;Color scheme for Visual Studio, one of the most powerful IDEs&quot;
         ///    },
         ///	&quot;InputColor&quot;: &quot;15&quot;,
         ///	&quot;LicenseColor&quot;: &quot;15&quot;,
@@ -3058,10 +2969,7 @@ namespace Properties.Resources {
         ///	&quot;StageColor&quot;: &quot;15&quot;,
         ///	&quot;ErrorColor&quot;: &quot;15&quot;,
         ///	&quot;WarningColor&quot;: &quot;15&quot;,
-        ///	&quot;OptionColor&quot;: &quot;15&quot;,
-        ///	&quot;BannerColor&quot;: &quot;15&quot;,
-        ///	&quot;NotificationTitleColor&quot;: &quot;15&quot;,
-        ///	&quot;Notifi [rest of string was truncated]&quot;;.
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string VisualStudioLight {
             get {
@@ -3089,6 +2997,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Windows 11&quot;,
+        ///        &quot;Description&quot;: &quot;Color scheme for Windows 11, a recent version of Windows&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;0;120;212&quot;,
         ///    &quot;LicenseColor&quot;: &quot;0;120;212&quot;,
@@ -3099,10 +3008,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;0;120;212&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;0;120;212&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;0;120;212&quot;,
-        ///    &quot;StageColor&quot;: &quot;0;120;212&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;0;120;212&quot;,
-        ///    &quot;WarningColo [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: &quot;0;120;212&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Windows11 {
             get {
@@ -3114,6 +3020,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Windows 11 (light)&quot;,
+        ///        &quot;Description&quot;: &quot;Color scheme for Windows 11, a recent version of Windows&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;0;120;212&quot;,
         ///    &quot;LicenseColor&quot;: &quot;0;120;212&quot;,
@@ -3124,9 +3031,7 @@ namespace Properties.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;200;200;200&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;0;120;212&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;0;120;212&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;0;120;212&quot;,
-        ///    &quot;StageColor&quot;: &quot;0;120;212&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;0;120;212&quot;, [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueC [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Windows11Light {
             get {
@@ -3138,6 +3043,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Windows 95&quot;,
+        ///        &quot;Description&quot;: &quot;Bring back nostalgia with this theme!&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;15&quot;,
         ///    &quot;LicenseColor&quot;: &quot;15&quot;,
@@ -3152,9 +3058,7 @@ namespace Properties.Resources {
         ///    &quot;StageColor&quot;: &quot;15&quot;,
         ///    &quot;ErrorColor&quot;: &quot;15&quot;,
         ///    &quot;WarningColor&quot;: &quot;15&quot;,
-        ///    &quot;OptionColor&quot;: &quot;15&quot;,
-        ///    &quot;BannerColor&quot;: &quot;15&quot;,
-        ///    &quot;Notificat [rest of string was truncated]&quot;;.
+        ///   [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Windows95 {
             get {
@@ -3166,6 +3070,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Wood&quot;,
+        ///        &quot;Description&quot;: &quot;Your terminal consists of wood planks&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;166&quot;,
         ///    &quot;LicenseColor&quot;: &quot;130&quot;,
@@ -3179,10 +3084,7 @@ namespace Properties.Resources {
         ///    &quot;ListValueColor&quot;: &quot;130&quot;,
         ///    &quot;StageColor&quot;: &quot;166&quot;,
         ///    &quot;ErrorColor&quot;: &quot;166&quot;,
-        ///    &quot;WarningColor&quot;: &quot;166&quot;,
-        ///    &quot;OptionColor&quot;: &quot;166&quot;,
-        ///    &quot;BannerColor&quot;: &quot;166&quot;,
-        ///    &quot;N [rest of string was truncated]&quot;;.
+        ///    &quot;WarningColor&quot;: &quot;166 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Wood {
             get {
@@ -3218,6 +3120,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Yellow (background)&quot;,
+        ///        &quot;Description&quot;: &quot;A bright yellow console&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;0&quot;,
         ///    &quot;LicenseColor&quot;: &quot;0&quot;,
@@ -3232,9 +3135,7 @@ namespace Properties.Resources {
         ///    &quot;StageColor&quot;: &quot;0&quot;,
         ///    &quot;ErrorColor&quot;: &quot;0&quot;,
         ///    &quot;WarningColor&quot;: &quot;0&quot;,
-        ///    &quot;OptionColor&quot;: &quot;0&quot;,
-        ///    &quot;BannerColor&quot;: &quot;0&quot;,
-        ///    &quot;NotificationTi [rest of string was truncated]&quot;;.
+        ///    &quot;OptionColor&quot;:  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string YellowBG {
             get {
@@ -3246,6 +3147,7 @@ namespace Properties.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Yellow (foreground)&quot;,
+        ///        &quot;Description&quot;: &quot;A bright yellow console&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;11&quot;,
         ///    &quot;LicenseColor&quot;: &quot;3&quot;,
@@ -3260,9 +3162,7 @@ namespace Properties.Resources {
         ///    &quot;StageColor&quot;: &quot;11&quot;,
         ///    &quot;ErrorColor&quot;: &quot;3&quot;,
         ///    &quot;WarningColor&quot;: &quot;11&quot;,
-        ///    &quot;OptionColor&quot;: &quot;11&quot;,
-        ///    &quot;BannerColor&quot;: &quot;11&quot;,
-        ///    &quot;Notif [rest of string was truncated]&quot;;.
+        ///    &quot;OptionC [rest of string was truncated]&quot;;.
         /// </summary>
         public static string YellowFG {
             get {
