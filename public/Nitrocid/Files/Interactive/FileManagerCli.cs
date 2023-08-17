@@ -33,6 +33,7 @@ using System.Collections;
 using KS.Misc.Text;
 using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Kernel.Configuration;
 
 namespace KS.Files.Interactive
 {
@@ -119,16 +120,19 @@ namespace KS.Files.Interactive
             try
             {
                 bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
-                Status =
-                    // Name and directory indicator
-                    $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " +
+                if (Config.MainConfig.IfmShowFileSize)
+                    Status =
+                        // Name and directory indicator
+                        $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " +
 
-                    // File size or directory size
-                    $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " +
+                        // File size or directory size
+                        $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " +
 
-                    // Modified date
-                    $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
-                ;
+                        // Modified date
+                        $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
+                    ;
+                else
+                    Status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name}";
             }
             catch (Exception ex)
             {

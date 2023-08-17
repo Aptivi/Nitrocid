@@ -1651,6 +1651,12 @@
                 "Type": "SString",
                 "Variable": "LyricsPath",
                 "Description": "Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory."
+            },
+            {
+                "Name": "Show file size in the file manager",
+                "Type": "SBoolean",
+                "Variable": "IfmShowFileSize",
+                "Description": "Whether to show the file size in the status."
             }
         ]
     }

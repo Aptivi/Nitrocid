@@ -872,5 +872,7 @@ Custom screensaver not found.
 Shows just the date
 Shows just the time
 Uses UTC instead of local
+Whether to show the file size in the status.
+Show file size in the file manager
 
 ==========================================================================================================================================

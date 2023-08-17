@@ -1586,5 +1586,9 @@ namespace KS.Kernel.Configuration.Instances
                 Lyrics.lyricsLrc = Listing.GetFilesystemEntries(Lyrics.lyricsPath, "*.lrc");
             }
         }
+        /// <summary>
+        /// Whether to show the file size in the status
+        /// </summary>
+        public bool IfmShowFileSize { get; set; }
     }
 }
