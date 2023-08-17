@@ -51,16 +51,20 @@ namespace KS.Files.Interactive
         public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
         {
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Open",   ConsoleKey.Enter, (info, _) => Open((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Copy",   ConsoleKey.F1,    (info, _) => CopyFileOrDir((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Move",   ConsoleKey.F2,    (info, _) => MoveFileOrDir((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete", ConsoleKey.F3,    (info, _) => RemoveFileOrDir((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Up",     ConsoleKey.F4,    (_, _)    => GoUp(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Info",   ConsoleKey.F5,    (info, _) => PrintFileSystemInfo((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Go To",  ConsoleKey.F6,    (_, _)    => GoTo(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Open",         ConsoleKey.Enter, (info, _) => Open((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Copy",         ConsoleKey.F1,    (info, _) => CopyFileOrDir((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Move",         ConsoleKey.F2,    (info, _) => MoveFileOrDir((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete",       ConsoleKey.F3,    (info, _) => RemoveFileOrDir((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Up",           ConsoleKey.F4,    (_, _)    => GoUp(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Info",         ConsoleKey.F5,    (info, _) => PrintFileSystemInfo((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Go To",        ConsoleKey.F6,    (_, _)    => GoTo(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Copy To",      ConsoleKey.F7,    (info, _) => CopyTo((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Move To",      ConsoleKey.F8,    (info, _) => MoveTo((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Rename",       ConsoleKey.F9,    (info, _) => Rename((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "New Folder",   ConsoleKey.F10,   (_, _)    => MakeDir(), true),
 
             // Misc bindings
-            new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab,   (_, _)    => Switch(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Switch",       ConsoleKey.Tab,   (_, _)    => Switch(), true),
         };
 
         /// <summary>
@@ -68,6 +72,7 @@ namespace KS.Files.Interactive
         /// </summary>
         public override bool SecondPaneInteractable =>
             true;
+
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource
         {
@@ -352,6 +357,114 @@ namespace KS.Files.Interactive
             }
             else
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+            RedrawRequired = true;
+        }
+
+        private static void CopyTo(FileSystemInfo currentFileSystemInfo)
+        {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemInfo is null)
+                return;
+
+            try
+            {
+                string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), BoxForegroundColor, BoxBackgroundColor);
+                path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
+                DebugCheck.AssertNull(path, "destination is null!");
+                DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
+                if (Checking.FolderExists(path))
+                {
+                    if (Parsing.TryParsePath(path))
+                        Copying.CopyFileOrDir(currentFileSystemInfo.FullName, path);
+                    else
+                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                }
+                else
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+            }
+        }
+
+        private static void MoveTo(FileSystemInfo currentFileSystemInfo)
+        {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemInfo is null)
+                return;
+
+            try
+            {
+                string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), BoxForegroundColor, BoxBackgroundColor);
+                path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
+                DebugCheck.AssertNull(path, "destination is null!");
+                DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
+                if (Checking.FolderExists(path))
+                {
+                    if (Parsing.TryParsePath(path))
+                        Moving.MoveFileOrDir(currentFileSystemInfo.FullName, path);
+                    else
+                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                }
+                else
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+            }
+        }
+
+        private static void Rename(FileSystemInfo currentFileSystemInfo)
+        {
+            // Don't do anything if we haven't been provided anything.
+            if (currentFileSystemInfo is null)
+                return;
+
+            try
+            {
+                string filename = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new file name."), BoxForegroundColor, BoxBackgroundColor);
+                DebugWriter.WriteDebug(DebugLevel.I, $"New filename is {filename}");
+                if (!Checking.FileExists(filename))
+                {
+                    if (Parsing.TryParseFileName(filename))
+                        Moving.MoveFileOrDir(currentFileSystemInfo.FullName, Path.GetDirectoryName(currentFileSystemInfo.FullName) + $"/{filename}");
+                    else
+                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
+                }
+                else
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File already exists. The name shouldn't be occupied by another file."), BoxForegroundColor, BoxBackgroundColor);
+            }
+            catch (Exception ex)
+            {
+                var finalInfoRendered = new StringBuilder();
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
+                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+            }
+        }
+
+        private static void MakeDir()
+        {
+            // Now, render the search box
+            string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new directory name."), BoxForegroundColor, BoxBackgroundColor);
+            path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
+            if (!Checking.FolderExists(path))
+                Making.TryMakeDirectory(path);
+            else
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
     }

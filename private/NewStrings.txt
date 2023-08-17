@@ -874,5 +874,18 @@ Shows just the time
 Uses UTC instead of local
 Whether to show the file size in the status.
 Show file size in the file manager
+Copy To
+Move To
+Rename
+Enter a path or a full path to a destination folder to copy the selected file to.
+File doesn't exist. Make sure that you've written the correct path.
+Enter a path or a full path to a destination folder to move the selected file to.
+Enter a new file name.
+New Folder
+Make sure that you've written the correct path.
+Make sure that you've written the correct file name.
+File already exists. The name shouldn't be occupied by another file.
+Enter a new directory name.
+Folder already exists. The name shouldn't be occupied by another folder.
 
 ==========================================================================================================================================
