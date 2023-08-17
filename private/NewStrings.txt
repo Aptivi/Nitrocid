@@ -869,5 +869,8 @@ Connection type is not found
 Connection type already exists
 Custom screensaver already exists.
 Custom screensaver not found.
+Shows just the date
+Shows just the time
+Uses UTC instead of local
 
 ==========================================================================================================================================
