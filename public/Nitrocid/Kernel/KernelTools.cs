@@ -168,7 +168,8 @@ namespace KS.Kernel
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
 
             // Show initializing
-            TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
 
             // Initialize notifications
             if (!NotificationManager.NotifThread.IsAlive)
@@ -199,12 +200,14 @@ namespace KS.Kernel
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
 
             // Initialize splashes
-            TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
             SplashManager.LoadSplashes();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom splashes.");
 
             // Create config file and then read it
-            TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
             if (!Flags.SafeMode)
                 Config.InitializeConfig();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");

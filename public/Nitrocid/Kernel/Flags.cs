@@ -288,6 +288,7 @@ namespace KS.Kernel
         internal static bool DebugMode;
         internal static bool SafeMode;
         internal static bool Maintenance;
+        internal static bool TalkativePreboot;
 
     }
 }
