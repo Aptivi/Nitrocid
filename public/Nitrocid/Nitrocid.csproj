@@ -8,7 +8,7 @@
     <PackageTags>kernel;simulator;csharp</PackageTags>
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/Aptivi/NitrocidKS</PackageProjectUrl>
-    <PackageIcon>OfficialAppIcon-KernelSimulator-256.png</PackageIcon>
+    <PackageIcon>OfficialAppIcon-KernelSimulator-512.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/kernel-simulator-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</PackageReleaseNotes>
     <!-- MSBuild Tags -->
@@ -43,7 +43,7 @@
     <Product>Nitrocid</Product>
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
     <OutputPath>KSBuild\</OutputPath>
-    <ApplicationIcon>OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
+    <ApplicationIcon>OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <Version>0.1.0</Version>
     <AssemblyVersion>0.1.0</AssemblyVersion>
     <PackageVersion>0.1.0.0-beta2</PackageVersion>
@@ -148,8 +148,8 @@
 
   <!-- KS Package Files -->
   <ItemGroup>
-    <None Include="OfficialAppIcon-KernelSimulator-256.ico" Pack="true" PackagePath="\" />
-    <None Include="OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
+    <None Include="OfficialAppIcon-KernelSimulator.ico" Pack="true" PackagePath="\" />
+    <None Include="OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
   <ItemGroup>

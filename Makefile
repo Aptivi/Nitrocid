@@ -20,7 +20,7 @@ OUTPUT = public/Nitrocid/KSBuild/net6.0
 BINARIES = public/Nitrocid/ks-n public/Nitrocid/ks-jl
 MANUALS = public/Nitrocid/*.1
 DESKTOPS = public/Nitrocid/ks.desktop
-BRANDINGS = public/Nitrocid/OfficialAppIcon-KernelSimulator-256.png
+BRANDINGS = public/Nitrocid/OfficialAppIcon-KernelSimulator-512.png
 
 .PHONY: all debian-install
 

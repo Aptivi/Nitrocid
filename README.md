@@ -5,7 +5,7 @@
 <br>
     
 <img
-  src = 'https://cdn.jsdelivr.net/gh/Aptivi/NitrocidKS@latest/public/Nitrocid/OfficialAppIcon-KernelSimulator-256.png'
+  src = 'https://cdn.jsdelivr.net/gh/Aptivi/NitrocidKS@latest/public/Nitrocid/OfficialAppIcon-KernelSimulator-512.png'
   width = 256
   align = center
 />

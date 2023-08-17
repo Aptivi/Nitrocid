@@ -9,7 +9,7 @@
     <PackageVersion>0.1.0-beta2</PackageVersion>
     <!-- URL settings -->
     <PackageProjectUrl>https://github.com/Aptivi/NitrocidKS</PackageProjectUrl>
-    <PackageIcon>OfficialAppIcon-KernelSimulator-256.png</PackageIcon>
+    <PackageIcon>OfficialAppIcon-KernelSimulator-512.png</PackageIcon>
     <PackageLicenseExpression>GPL-3.0-or-later</PackageLicenseExpression>
     <PackageReleaseNotes>Detailed explanation: https://aptivi.gitbook.io/kernel-simulator-manual/versions-and-compatibility/version-release-notes/v0.1.x.x-series</PackageReleaseNotes>
     <!-- MSBuild Tags -->
@@ -76,7 +76,7 @@
 
     <!-- KS Package Files -->
     <ItemGroup>
-        <None Include="..\Nitrocid\OfficialAppIcon-KernelSimulator-256.png" Pack="true" PackagePath="\" />
+        <None Include="..\Nitrocid\OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
         <None Include="..\..\README.md" Pack="true" PackagePath="\" />
     </ItemGroup>
     <!-- KS Package Files End -->

@@ -23,7 +23,7 @@
     <OptionCompare>Binary</OptionCompare>
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
-    <ApplicationIcon>../Nitrocid/OfficialAppIcon-KernelSimulator-256.ico</ApplicationIcon>
+    <ApplicationIcon>../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <Version>0.1.0</Version>
     <Configurations>Debug;Release;Release-Linux-Packaging</Configurations>
     <LangVersion>latest</LangVersion>

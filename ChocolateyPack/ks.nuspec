@@ -9,7 +9,7 @@
     <title>Nitrocid KS</title>
     <authors>Aptivi</authors>
     <projectUrl>http://github.com/Aptivi/NitrocidKS</projectUrl>
-    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/NitrocidKS@latest/public/Nitrocid/OfficialAppIcon-KernelSimulator-256.ico</iconUrl>
+    <iconUrl>https://cdn.jsdelivr.net/gh/Aptivi/NitrocidKS@latest/public/Nitrocid/OfficialAppIcon-KernelSimulator.ico</iconUrl>
     <copyright>Copyright © 2018-2023 Aptivi, All rights reserved.</copyright>
     <licenseUrl>https://github.com/Aptivi/NitrocidKS/blob/main/LICENSE</licenseUrl>
     <requireLicenseAcceptance>true</requireLicenseAcceptance>
