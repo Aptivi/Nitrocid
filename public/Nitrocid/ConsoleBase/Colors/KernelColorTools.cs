@@ -134,7 +134,6 @@ namespace KS.ConsoleBase.Colors
                     {
                         KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
                         Color color = Color.Empty;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color.PlainSequence);
                         colors.Add(type, color);
                     }
                     break;
