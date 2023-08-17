@@ -471,6 +471,11 @@ namespace KSTests.Drivers
             DriverHandler.currentDrivers[type].DriverName.ShouldBe(expectedNameAfterLocal);
             DriverHandler.currentDriversLocal[type].DriverName.ShouldBe(expectedNameAfterLocal);
         }
-
+        
+        [TearDown]
+        public void RevertUnitTestDebug()
+        {
+            DriverHandler.SetDriver<IDebugLoggerDriver>("UnitTest");
+        }
     }
 }
