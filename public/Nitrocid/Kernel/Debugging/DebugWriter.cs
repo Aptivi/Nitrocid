@@ -20,6 +20,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
+using KS.Drivers;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
@@ -129,9 +130,9 @@ namespace KS.Kernel.Debugging
                         // file that only has \n at the end of each line, we would inadvertently place the \r\n in each debug
                         // line, causing the file to have mixed line endings.
                         if (vars.Length > 0)
-                            DebugStreamWriter.Write(message.ToString(), vars);
+                            DriverHandler.CurrentDebugLoggerDriverLocal.Write(message.ToString(), vars);
                         else
-                            DebugStreamWriter.Write(message);
+                            DriverHandler.CurrentDebugLoggerDriverLocal.Write(message.ToString());
                         message.Replace("\n", "\r\n");
                         for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                         {

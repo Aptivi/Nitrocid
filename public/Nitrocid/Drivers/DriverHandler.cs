@@ -32,6 +32,8 @@ using KS.Drivers.Regexp.Bases;
 using KS.Kernel.Exceptions;
 using System.Linq;
 using KS.Kernel.Debugging;
+using KS.Drivers.DebugLogger.Bases;
+using KS.Drivers.DebugLogger;
 
 namespace KS.Drivers
 {
@@ -100,6 +102,14 @@ namespace KS.Drivers
                 { 
                     { "Default", new DefaultRegexp() }
                 }
+            },
+            { 
+                DriverTypes.DebugLogger, new()
+                { 
+                    { "Default", new DefaultDebugLogger() },
+                    { "Console", new ConsoleDebugLogger() },
+                    { "UnitTest", new UnitTestDebugLogger() },
+                }
             }
         };
 
@@ -111,6 +121,7 @@ namespace KS.Drivers
             { DriverTypes.Filesystem,   new() },
             { DriverTypes.Encryption,   new() },
             { DriverTypes.Regexp,       new() },
+            { DriverTypes.DebugLogger,  new() },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
@@ -121,6 +132,7 @@ namespace KS.Drivers
             { DriverTypes.Filesystem,   drivers[DriverTypes.Filesystem]["Default"] },
             { DriverTypes.Encryption,   drivers[DriverTypes.Encryption]["Default"] },
             { DriverTypes.Regexp,       drivers[DriverTypes.Regexp]["Default"] },
+            { DriverTypes.DebugLogger,  drivers[DriverTypes.DebugLogger]["Default"] },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
@@ -162,6 +174,12 @@ namespace KS.Drivers
             begunLocal ? (IRegexpDriver)currentDriversLocal[DriverTypes.Regexp] : CurrentRegexpDriver;
 
         /// <summary>
+        /// Gets the current debug logger driver (use this when possible)
+        /// </summary>
+        public static IDebugLoggerDriver CurrentDebugLoggerDriverLocal =>
+            begunLocal ? (IDebugLoggerDriver)currentDriversLocal[DriverTypes.DebugLogger] : CurrentDebugLoggerDriver;
+
+        /// <summary>
         /// Gets the system-wide current random driver
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
@@ -196,6 +214,12 @@ namespace KS.Drivers
         /// </summary>
         public static IRegexpDriver CurrentRegexpDriver =>
             (IRegexpDriver)currentDrivers[DriverTypes.Regexp];
+
+        /// <summary>
+        /// Gets the system-wide current debug logger driver
+        /// </summary>
+        public static IDebugLoggerDriver CurrentDebugLoggerDriver =>
+            (IDebugLoggerDriver)currentDrivers[DriverTypes.DebugLogger];
 
         /// <summary>
         /// Gets the driver
@@ -470,6 +494,8 @@ namespace KS.Drivers
                 driverType = DriverTypes.Encryption;
             else if (typeof(T) == typeof(IRegexpDriver))
                 driverType = DriverTypes.Regexp;
+            else if (typeof(T) == typeof(IDebugLoggerDriver))
+                driverType = DriverTypes.DebugLogger;
             DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), typeof(T).Name);
             return driverType;
         }

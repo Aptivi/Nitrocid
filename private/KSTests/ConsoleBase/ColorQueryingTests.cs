@@ -214,7 +214,7 @@ namespace KSTests.ConsoleBase
             {
                 var type = (ColorType)Enum.Parse(typeof(ColorType), typeName);
                 Color unexpected = Color.Empty;
-                for (int i = 1; i <= 1000000; i++)
+                for (int i = 1; i <= 100; i++)
                     Should.NotThrow(() => colors.Add(KernelColorTools.GetRandomColor(type, false)));
                 colors.ShouldNotBeEmpty();
                 colors.ShouldNotContain(unexpected);

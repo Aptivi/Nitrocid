@@ -16,40 +16,30 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Drivers
+using KS.Kernel.Debugging;
+
+namespace KS.Drivers.DebugLogger
 {
     /// <summary>
-    /// Driver types
+    /// Base DebugLogger driver
     /// </summary>
-    public enum DriverTypes
+    public abstract class BaseDebugLoggerDriver : IDebugLoggerDriver
     {
-        /// <summary>
-        /// Random number generator drivers
-        /// </summary>
-        RNG,
-        /// <summary>
-        /// Console drivers
-        /// </summary>
-        Console,
-        /// <summary>
-        /// Network drivers
-        /// </summary>
-        Network,
-        /// <summary>
-        /// Filesystem drivers
-        /// </summary>
-        Filesystem,
-        /// <summary>
-        /// Encryption drivers
-        /// </summary>
-        Encryption,
-        /// <summary>
-        /// Regular expression drivers
-        /// </summary>
-        Regexp,
-        /// <summary>
-        /// Debug logging drivers
-        /// </summary>
-        DebugLogger
+        /// <inheritdoc/>
+        public virtual string DriverName => "Default";
+
+        /// <inheritdoc/>
+        public virtual DriverTypes DriverType => DriverTypes.DebugLogger;
+
+        /// <inheritdoc/>
+        public virtual bool DriverInternal => false;
+
+        /// <inheritdoc/>
+        public virtual void Write(string text) =>
+            DebugWriter.DebugStreamWriter.Write(text);
+
+        /// <inheritdoc/>
+        public virtual void Write(string text, params object[] vars) =>
+            DebugWriter.DebugStreamWriter.Write(text, vars);
     }
 }

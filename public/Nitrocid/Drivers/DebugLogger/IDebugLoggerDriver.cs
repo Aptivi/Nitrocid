@@ -16,40 +16,24 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Drivers
+namespace KS.Drivers.DebugLogger
 {
     /// <summary>
-    /// Driver types
+    /// Debug logger driver interface for drivers
     /// </summary>
-    public enum DriverTypes
+    public interface IDebugLoggerDriver : IDriver
     {
         /// <summary>
-        /// Random number generator drivers
+        /// Outputs the text into the debugger file, and sets the time stamp.
         /// </summary>
-        RNG,
+        /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
+        void Write(string text);
+
         /// <summary>
-        /// Console drivers
+        /// Outputs the text into the debugger file, and sets the time stamp.
         /// </summary>
-        Console,
-        /// <summary>
-        /// Network drivers
-        /// </summary>
-        Network,
-        /// <summary>
-        /// Filesystem drivers
-        /// </summary>
-        Filesystem,
-        /// <summary>
-        /// Encryption drivers
-        /// </summary>
-        Encryption,
-        /// <summary>
-        /// Regular expression drivers
-        /// </summary>
-        Regexp,
-        /// <summary>
-        /// Debug logging drivers
-        /// </summary>
-        DebugLogger
+        /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        void Write(string text, params object[] vars);
     }
 }
