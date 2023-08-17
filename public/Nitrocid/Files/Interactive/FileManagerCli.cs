@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using FluentFTP.Helpers;
+using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
@@ -166,17 +167,31 @@ namespace KS.Files.Interactive
         {
             try
             {
-                if (!Checking.FolderExists(currentFileSystemInfo.FullName))
+                if (!Checking.FolderExists(currentFileSystemInfo.FullName) &&
+                    !Checking.FileExists(currentFileSystemInfo.FullName))
                     return;
-                if (CurrentPane == 2)
+
+                // Now that the selected file or folder exists, check the type.
+                if (Checking.FolderExists(currentFileSystemInfo.FullName))
                 {
-                    secondPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
-                    SecondPaneCurrentSelection = 1;
+                    // We're dealing with a folder. Open it in the selected pane.
+                    if (CurrentPane == 2)
+                    {
+                        secondPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
+                        SecondPaneCurrentSelection = 1;
+                    }
+                    else
+                    {
+                        firstPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
+                        FirstPaneCurrentSelection = 1;
+                    }
                 }
                 else
                 {
-                    firstPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
-                    FirstPaneCurrentSelection = 1;
+                    // We're dealing with a file. Clear the screen and open the appropriate editor.
+                    KernelColorTools.LoadBack();
+                    Opening.OpenEditor(currentFileSystemInfo.FullName);
+                    RedrawRequired = true;
                 }
             }
             catch (Exception ex)
