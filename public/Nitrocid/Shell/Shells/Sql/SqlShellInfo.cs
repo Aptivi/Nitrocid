@@ -36,7 +36,10 @@ namespace KS.Shell.Shells.Sql
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "cmd", new CommandInfo("cmd", ShellType, /* Localizable */ "Executes an SQL query", new CommandArgumentInfo(), new Sql_CmdCommand()) }
+            { "cmd", new CommandInfo("cmd", ShellType, /* Localizable */ "Executes an SQL query",
+                new CommandArgumentInfo(), new Sql_CmdCommand()) },
+            { "dbinfo", new CommandInfo("dbinfo", ShellType, /* Localizable */ "Database info",
+                new CommandArgumentInfo(), new Sql_DbInfoCommand()) }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

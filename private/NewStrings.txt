@@ -887,5 +887,11 @@ Make sure that you've written the correct file name.
 File already exists. The name shouldn't be occupied by another file.
 Enter a new directory name.
 Folder already exists. The name shouldn't be occupied by another folder.
+Database info
+Database path:
+Server version:
+Connection state:
+Connection string:
+Database name:
 
 ==========================================================================================================================================
