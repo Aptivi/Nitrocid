@@ -45,6 +45,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase(ShellType.MailShell, "rm", "wipe")]
         [TestCase(ShellType.RSSShell, "search", "find")]
         [TestCase(ShellType.SFTPShell, "put", "upload")]
+        [TestCase(ShellType.SqlShell, "cmd", "c")]
         [TestCase(ShellType.TextShell, "clear", "wipe")]
         [Description("Action")]
         public void TestAddAlias(ShellType type, string source, string target)
@@ -71,6 +72,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase("MailShell", "list", "ls")]
         [TestCase("RSSShell", "list", "ls")]
         [TestCase("SFTPShell", "cat", "read")]
+        [TestCase("SqlShell", "dbinfo", "info")]
         [TestCase("TextShell", "save", "s")]
         [Description("Action")]
         public void TestAddAlias(string type, string source, string target)
@@ -97,6 +99,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase(ShellType.MailShell)]
         [TestCase(ShellType.RSSShell)]
         [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestAddAliasForUnifiedCommand(ShellType type)
@@ -123,6 +126,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase("MailShell")]
         [TestCase("RSSShell")]
         [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestAddAliasForUnifiedCommand(string type)
@@ -149,6 +153,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase(ShellType.MailShell, "wipe")]
         [TestCase(ShellType.RSSShell, "find")]
         [TestCase(ShellType.SFTPShell, "upload")]
+        [TestCase(ShellType.SqlShell, "c")]
         [TestCase(ShellType.TextShell, "wipe")]
         [Description("Action")]
         public void TestRemoveAlias(ShellType type, string target)
@@ -177,6 +182,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase("MailShell", "ls")]
         [TestCase("RSSShell", "ls")]
         [TestCase("SFTPShell", "read")]
+        [TestCase("SqlShell", "info")]
         [TestCase("TextShell", "s")]
         [Description("Action")]
         public void TestRemoveAlias(string type, string target)
@@ -205,6 +211,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase(ShellType.MailShell)]
         [TestCase(ShellType.RSSShell)]
         [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public void TestRemoveAliasForUnifiedCommand(ShellType type)
@@ -233,6 +240,7 @@ namespace KSTests.Shell.ShellBase.Aliases
         [TestCase("MailShell")]
         [TestCase("RSSShell")]
         [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public void TestRemoveAliasForUnifiedCommand(string type)
