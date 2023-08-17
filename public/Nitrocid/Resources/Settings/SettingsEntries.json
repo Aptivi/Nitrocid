@@ -194,12 +194,6 @@
                 "Variable": "SetCodepage",
                 "Description": "Set the language codepage upon switching languages.",
                 "UnsupportedPlatforms": [ "Unix", "macOS" ]
-            },
-            {
-                "Name": "Enable alternative calendar",
-                "Type": "SBoolean",
-                "Variable": "EnableAltCalendar",
-                "Description": "If you want the logon screen or the date and time viewer to also show the alternative calendar, enable it."
             }
         ]
     },
