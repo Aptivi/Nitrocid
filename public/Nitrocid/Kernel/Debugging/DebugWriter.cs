@@ -120,8 +120,8 @@ namespace KS.Kernel.Debugging
                                 message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {splitText}\n");
                         }
 
-                        // Debug to file and all connected debug devices (raw mode). The reason for the /r/n is that because
-                        // Nitrocid on the Linux host tends to use /n only for new lines, and Windows considers /r/n as the
+                        // Debug to file and all connected debug devices (raw mode). The reason for the \r\n is that because
+                        // Nitrocid on the Linux host tends to use \n only for new lines, and Windows considers \r\n as the
                         // new line. This causes the staircase effect on text written to the remote debugger, which messes up
                         // the output on Windows.
                         //
