@@ -27,6 +27,7 @@ using NUnit.Framework;
 using Shouldly;
 using System.Collections.Generic;
 using KSTests.Drivers.DriverData;
+using KS.Drivers.DebugLogger;
 
 namespace KSTests.Drivers
 {
@@ -52,6 +53,8 @@ namespace KSTests.Drivers
                     new TestCaseData(DriverHandler.CurrentRandomDriverLocal,            "Default"),
                     new TestCaseData(DriverHandler.CurrentRegexpDriver,                 "Default"),
                     new TestCaseData(DriverHandler.CurrentRegexpDriverLocal,            "Default"),
+                    new TestCaseData(DriverHandler.CurrentDebugLoggerDriver,            "Default"),
+                    new TestCaseData(DriverHandler.CurrentDebugLoggerDriverLocal,       "Default"),
                 };
             }
         }
@@ -118,6 +121,17 @@ namespace KSTests.Drivers
                 return new[] {
                     //               ---------- Provided ----------
                     new TestCaseData(DriverTypes.Regexp, new MyCustomRegexpDriver()),
+                };
+            }
+        }
+
+        private static IEnumerable<TestCaseData> RegisteredDebugLoggerDriver
+        {
+            get
+            {
+                return new[] {
+                    //               ---------- Provided ----------
+                    new TestCaseData(DriverTypes.DebugLogger, new MyCustomDebugLoggerDriver()),
                 };
             }
         }
@@ -273,12 +287,38 @@ namespace KSTests.Drivers
         }
 
         [Test]
+        [Description("Management")]
+        public void TestSetDebugLoggerDriver()
+        {
+            DebugLoggerDriverTools.SetDebugLoggerDriver("Default");
+            DriverHandler.CurrentDebugLoggerDriver.DriverName.ShouldBe("Default");
+            DriverHandler.CurrentDebugLoggerDriverLocal.DriverName.ShouldBe("Default");
+        }
+
+        [Test]
+        [Description("Management")]
+        public void TestGetDebugLoggerDrivers()
+        {
+            var drivers = DebugLoggerDriverTools.GetDebugLoggerDrivers();
+            drivers.ShouldNotBeEmpty();
+        }
+
+        [Test]
+        [Description("Management")]
+        public void TestGetDebugLoggerDriverNames()
+        {
+            var drivers = DebugLoggerDriverTools.GetDebugLoggerDriverNames();
+            drivers.ShouldNotBeEmpty();
+        }
+
+        [Test]
         [TestCase<IConsoleDriver>("Null", DriverTypes.Console)]
         [TestCase<IEncryptionDriver>("SHA384", DriverTypes.Encryption)]
         [TestCase<IFilesystemDriver>("Default", DriverTypes.Filesystem)]
         [TestCase<INetworkDriver>("Default", DriverTypes.Network)]
         [TestCase<IRandomDriver>("Standard", DriverTypes.RNG)]
         [TestCase<IRegexpDriver>("Default", DriverTypes.Regexp)]
+        [TestCase<IDebugLoggerDriver>("Default", DriverTypes.DebugLogger)]
         [Description("Management")]
         public void TestGetDriver<T>(string driverName, DriverTypes expectedType)
         {
@@ -294,6 +334,7 @@ namespace KSTests.Drivers
         [TestCaseSource<INetworkDriver>(nameof(ExpectedDriverNames))]
         [TestCaseSource<IRandomDriver>(nameof(ExpectedDriverNames))]
         [TestCaseSource<IRegexpDriver>(nameof(ExpectedDriverNames))]
+        [TestCaseSource<IDebugLoggerDriver>(nameof(ExpectedDriverNames))]
         [Description("Management")]
         public void TestGetDriverName<T>(IDriver driver, string expectedName)
         {
@@ -308,6 +349,7 @@ namespace KSTests.Drivers
         [TestCase<INetworkDriver>]
         [TestCase<IRandomDriver>]
         [TestCase<IRegexpDriver>]
+        [TestCase<IDebugLoggerDriver>]
         [Description("Management")]
         public void TestGetDrivers<T>()
         {
@@ -322,6 +364,7 @@ namespace KSTests.Drivers
         [TestCase<INetworkDriver>]
         [TestCase<IRandomDriver>]
         [TestCase<IRegexpDriver>]
+        [TestCase<IDebugLoggerDriver>]
         [Description("Management")]
         public void TestGetDriverNames<T>()
         {
@@ -336,6 +379,7 @@ namespace KSTests.Drivers
         [TestCaseSource<INetworkDriver>(nameof(RegisteredNetworkDriver))]
         [TestCaseSource<IRandomDriver>(nameof(RegisteredRNGDriver))]
         [TestCaseSource<IRegexpDriver>(nameof(RegisteredRegexpDriver))]
+        [TestCaseSource<IDebugLoggerDriver>(nameof(RegisteredDebugLoggerDriver))]
         [Description("Management")]
         public void TestRegisterDriver<T>(DriverTypes type, IDriver driver)
         {
@@ -350,6 +394,7 @@ namespace KSTests.Drivers
         [TestCase<INetworkDriver>(DriverTypes.Network, "MyCustom")]
         [TestCase<IRandomDriver>(DriverTypes.RNG, "MyCustom")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "MyCustom")]
+        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "MyCustom")]
         [Description("Management")]
         public void TestUnregisterDriver(DriverTypes type, string name)
         {
@@ -364,6 +409,7 @@ namespace KSTests.Drivers
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default")]
         [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default")]
+        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "Default", "Default")]
         [Description("Management")]
         public void TestSetDriver<T>(DriverTypes type, string name, string expectedName)
         {
@@ -379,6 +425,7 @@ namespace KSTests.Drivers
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default")]
         [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default")]
+        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "Default", "Default")]
         [Description("Management")]
         public void TestSetDriverSafe<T>(DriverTypes type, string name, string expectedName)
         {
@@ -394,6 +441,7 @@ namespace KSTests.Drivers
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default", "Default")]
         [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default", "Default")]
+        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "Default", "Default", "UnitTest")]
         [Description("Management")]
         public void TestBeginLocalDriver<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
         {
@@ -412,6 +460,7 @@ namespace KSTests.Drivers
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default", "Default")]
         [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default", "Default")]
+        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "Default", "Default", "UnitTest")]
         [Description("Management")]
         public void TestBeginLocalDriverSafe<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
         {
