@@ -104,7 +104,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Automatically start the kernel modifications on boot.
         /// </summary>
-        public bool StartKernelMods { get; set; } = true;
+        public bool StartKernelMods { get; set; }
         /// <summary>
         /// Shows the current time, time zone, and date before logging in.
         /// </summary>
