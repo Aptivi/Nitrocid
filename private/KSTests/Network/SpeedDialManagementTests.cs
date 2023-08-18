@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Diagnostics;
+using KS.Network.Base.Connections;
 using KS.Network.SpeedDial;
 using NUnit.Framework;
 using Shouldly;
@@ -29,20 +30,12 @@ namespace KSTests.Network
     {
 
         /// <summary>
-        /// Tests adding FTP speed dial entry
+        /// Tests adding speed dial entry
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestAddEntryToFTPSpeedDial() =>
-            SpeedDialTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, SpeedDialType.FTP, false, "anonymous", FluentFTP.FtpEncryptionMode.None).ShouldBeTrue();
-
-        /// <summary>
-        /// Tests adding SFTP speed dial entry
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestAddEntryToSFTPSpeedDial() =>
-            SpeedDialTools.TryAddEntryToSpeedDial("test.rebex.net", 22, SpeedDialType.SFTP, false, "demo", FluentFTP.FtpEncryptionMode.None).ShouldBeTrue();
+        public void TestAddEntryToSpeedDial() =>
+            SpeedDialTools.TryAddEntryToSpeedDial("ftp.riken.jp", 21, NetworkConnectionType.FTP, false, "anonymous").ShouldBeTrue();
 
         /// <summary>
         /// Tests listing speed dial entries
