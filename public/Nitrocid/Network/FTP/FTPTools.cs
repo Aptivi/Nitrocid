@@ -284,20 +284,5 @@ namespace KS.Network.FTP
             }
         }
 
-        /// <summary>
-        /// Opens speed dial prompt
-        /// </summary>
-        [Obsolete("NetworkConnection will be able to handle this. It'll be removed in Nitrocid 0.1.0 Beta 3.")]
-        public static void QuickConnect()
-        {
-            var quickConnectInfo = SpeedDialTools.GetQuickConnectInfo();
-            string Address = (string)quickConnectInfo["Address"];
-            string Port = (string)quickConnectInfo["Port"];
-            string Username = (string)quickConnectInfo["Options"][0];
-            FtpEncryptionMode Encryption = (FtpEncryptionMode)Convert.ToInt32(Enum.Parse(typeof(FtpEncryptionMode), (string)quickConnectInfo["Options"][1]));
-            DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}, Port: {1}, Username: {2}, Encryption: {3}", Address, Port, Username, Encryption);
-            PromptForPassword(null, Username, Address, Convert.ToInt32(Port), Encryption);
-        }
-
     }
 }

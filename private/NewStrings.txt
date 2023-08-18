@@ -898,5 +898,6 @@ Turns on verbose messages for pre-boot environment
 - Stage 5: Log in
 Welcome to Nitrocid Kernel
 How many milliseconds to wait before fading the square out?
+Can't add a speed dial with non-existent type.
 
 ==========================================================================================================================================

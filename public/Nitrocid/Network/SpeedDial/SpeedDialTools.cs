@@ -32,6 +32,7 @@ using KS.Kernel.Exceptions;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Network.Base.Connections;
 
 namespace KS.Network.SpeedDial
 {
@@ -41,7 +42,6 @@ namespace KS.Network.SpeedDial
     public static class SpeedDialTools
     {
 
-        // TODO: This needs an overhaul to handle the NetworkConnection instances. Now, we're just prototyping.
         /// <summary>
         /// Gets the token from the speed dial
         /// </summary>
@@ -63,12 +63,32 @@ namespace KS.Network.SpeedDial
         /// <param name="SpeedDialType">Speed dial type</param>
         /// <param name="ThrowException">Optionally throw exception</param>
         /// <param name="arguments">List of arguments to pass to the entry</param>
-        public static void AddEntryToSpeedDial(string Address, int Port, SpeedDialType SpeedDialType, bool ThrowException = true, params object[] arguments)
+        public static void AddEntryToSpeedDial(string Address, int Port, NetworkConnectionType SpeedDialType, bool ThrowException = true, params object[] arguments) =>
+            AddEntryToSpeedDial(Address, Port, SpeedDialType.ToString(), ThrowException, arguments);
+
+        /// <summary>
+        /// Adds an entry to speed dial
+        /// </summary>
+        /// <param name="Address">A speed dial address</param>
+        /// <param name="Port">A speed dial port</param>
+        /// <param name="SpeedDialType">Speed dial type</param>
+        /// <param name="ThrowException">Optionally throw exception</param>
+        /// <param name="arguments">List of arguments to pass to the entry</param>
+        public static void AddEntryToSpeedDial(string Address, int Port, string SpeedDialType, bool ThrowException = true, params object[] arguments)
         {
             // Parse the token
             var SpeedDialToken = GetTokenFromSpeedDial();
             if (SpeedDialToken[Address] is null)
             {
+                // Check the type
+                if (!NetworkConnectionTools.ConnectionTypeExists(SpeedDialType))
+                {
+                    if (ThrowException)
+                        throw new KernelException(KernelExceptionType.Network, Translate.DoTranslation("Can't add a speed dial with non-existent type."));
+                    else
+                        return;
+                }
+
                 // The entry doesn't exist. Go ahead and create it.
                 var NewSpeedDial = new JObject(
                     new JProperty("Address", Address),
@@ -97,7 +117,19 @@ namespace KS.Network.SpeedDial
         /// <param name="ThrowException">Optionally throw exception</param>
         /// <param name="arguments">List of arguments to pass to the entry</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryAddEntryToSpeedDial(string Address, int Port, SpeedDialType SpeedDialType, bool ThrowException = true, params object[] arguments)
+        public static bool TryAddEntryToSpeedDial(string Address, int Port, NetworkConnectionType SpeedDialType, bool ThrowException = true, params object[] arguments) =>
+            TryAddEntryToSpeedDial(Address, Port, SpeedDialType.ToString(), ThrowException, arguments);
+
+        /// <summary>
+        /// Adds an entry to speed dial
+        /// </summary>
+        /// <param name="Address">A speed dial address</param>
+        /// <param name="Port">A speed dial port</param>
+        /// <param name="SpeedDialType">Speed dial type</param>
+        /// <param name="ThrowException">Optionally throw exception</param>
+        /// <param name="arguments">List of arguments to pass to the entry</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        public static bool TryAddEntryToSpeedDial(string Address, int Port, string SpeedDialType, bool ThrowException = true, params object[] arguments)
         {
             try
             {
@@ -120,6 +152,27 @@ namespace KS.Network.SpeedDial
             var SpeedDialToken = GetTokenFromSpeedDial();
             var SpeedDialEntries = new Dictionary<string, JToken>();
             foreach (var SpeedDialAddress in SpeedDialToken.Properties())
+                SpeedDialEntries.Add(SpeedDialAddress.Name, SpeedDialAddress.Value);
+            return SpeedDialEntries;
+        }
+
+        /// <summary>
+        /// Lists all speed dial entries by type
+        /// </summary>
+        /// <returns>A list</returns>
+        public static Dictionary<string, JToken> ListSpeedDialEntriesByType(NetworkConnectionType SpeedDialType) =>
+            ListSpeedDialEntriesByType(SpeedDialType.ToString());
+
+        /// <summary>
+        /// Lists all speed dial entries by type
+        /// </summary>
+        /// <returns>A list</returns>
+        public static Dictionary<string, JToken> ListSpeedDialEntriesByType(string SpeedDialType)
+        {
+            // Parse the token
+            var SpeedDialToken = GetTokenFromSpeedDial().AsJEnumerable().Cast<JProperty>().Where((token) => token.Value["Type"].ToString() == SpeedDialType);
+            var SpeedDialEntries = new Dictionary<string, JToken>();
+            foreach (var SpeedDialAddress in SpeedDialToken)
                 SpeedDialEntries.Add(SpeedDialAddress.Name, SpeedDialAddress.Value);
             return SpeedDialEntries;
         }

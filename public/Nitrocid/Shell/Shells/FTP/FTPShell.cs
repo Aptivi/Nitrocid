@@ -74,7 +74,7 @@ namespace KS.Shell.Shells.FTP
             FTPShellCommon.FtpUser = clientFTP.Credentials.UserName;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(FTPShellCommon.FtpSite, clientFTP.Port, SpeedDialType.FTP, false, clientFTP.Credentials.UserName, clientFTP.Config.EncryptionMode);
+            SpeedDialTools.TryAddEntryToSpeedDial(FTPShellCommon.FtpSite, clientFTP.Port, NetworkConnectionType.FTP, false, clientFTP.Credentials.UserName, clientFTP.Config.EncryptionMode);
 
             // Initialize logging
             clientFTP.Logger = new FTPLogger();

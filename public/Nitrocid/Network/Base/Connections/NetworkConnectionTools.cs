@@ -433,7 +433,7 @@ namespace KS.Network.Base.Connections
                     else if (selectedConnection == availableConnections + 2)
                     {
                         // Prompt the user to select a server to connect to from the speed dial
-                        var speedDials = SpeedDialTools.ListSpeedDialEntries();
+                        var speedDials = SpeedDialTools.ListSpeedDialEntriesByType(connectionType);
                         var connectionsChoiceList = new List<InputChoiceInfo>();
                         for (int i = 0; i < speedDials.Keys.Count; i++)
                         {

@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.SFTP
             SFTPShellCommon.SFTPUser = client.ConnectionInfo.Username;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, client.ConnectionInfo.Port, SpeedDialType.SFTP, false, SFTPShellCommon.SFTPUser);
+            SpeedDialTools.TryAddEntryToSpeedDial(SFTPShellCommon.SFTPSite, client.ConnectionInfo.Port, NetworkConnectionType.SFTP, false, SFTPShellCommon.SFTPUser);
 
             // Populate SFTP current directory
             SFTPShellCommon.SFTPCurrDirect = Paths.HomePath;

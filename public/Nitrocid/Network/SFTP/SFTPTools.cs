@@ -105,20 +105,5 @@ namespace KS.Network.SFTP
             return sftpConnection;
         }
 
-        /// <summary>
-        /// Opens speed dial prompt
-        /// </summary>
-        [Obsolete("NetworkConnection will be able to handle this. It'll be removed in Nitrocid 0.1.0 Beta 3.")]
-        public static void SFTPQuickConnect()
-        {
-            var quickConnectInfo = SpeedDialTools.GetQuickConnectInfo();
-            string Address = (string)quickConnectInfo["Address"];
-            string Port = (string)quickConnectInfo["Port"];
-            string Username = (string)quickConnectInfo["Options"][0];
-            DebugWriter.WriteDebug(DebugLevel.I, "Address: {0}, Port: {1}, Username: {2}", Address, Port, Username);
-            var client = new SftpClient(SSH.SSH.PromptConnectionInfo(Address, Convert.ToInt32(Port), Username));
-            ConnectSFTP(client);
-        }
-
     }
 }
