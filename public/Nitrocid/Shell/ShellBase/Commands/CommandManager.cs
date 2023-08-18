@@ -60,18 +60,15 @@ namespace KS.Shell.ShellBase.Commands
         public static bool IsCommandFound(string Command)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
-            return ShellManager.UnifiedCommandDict.ContainsKey(Command)
-                 | GetCommands(ShellType.FTPShell).ContainsKey(Command)
-                 | GetCommands(ShellType.JsonShell).ContainsKey(Command)
-                 | GetCommands(ShellType.MailShell).ContainsKey(Command)
-                 | GetCommands(ShellType.RSSShell).ContainsKey(Command)
-                 | GetCommands(ShellType.SFTPShell).ContainsKey(Command)
-                 | GetCommands(ShellType.Shell).ContainsKey(Command)
-                 | GetCommands(ShellType.TextShell).ContainsKey(Command)
-                 | GetCommands(ShellType.HTTPShell).ContainsKey(Command)
-                 | GetCommands(ShellType.HexShell).ContainsKey(Command)
-                 | GetCommands(ShellType.ArchiveShell).ContainsKey(Command)
-                 | GetCommands(ShellType.SqlShell).ContainsKey(Command);
+            bool found = ShellManager.UnifiedCommandDict.ContainsKey(Command);
+            if (!found)
+                foreach (var ShellType in ShellManager.AvailableShells.Keys)
+                {
+                    found = GetCommands(ShellType).ContainsKey(Command);
+                    if (found)
+                        break;
+                }
+            return found;
         }
 
         /// <summary>
