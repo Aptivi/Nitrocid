@@ -37,24 +37,73 @@ namespace KS.Shell.Shells.RSS
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "articleinfo", new CommandInfo("articleinfo", ShellType, /* Localizable */ "Gets the article info",
-                new CommandArgumentInfo(new[] { "feednum" }, Array.Empty<SwitchInfo>(), true, 1), new RSS_ArticleInfoCommand()) },
-            { "bookmark", new CommandInfo("bookmark", ShellType, /* Localizable */ "Bookmarks the feed",
-                new CommandArgumentInfo(), new RSS_BookmarkCommand()) },
-            { "detach", new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
-                new CommandArgumentInfo(), new RSS_DetachCommand()) },
-            { "feedinfo", new CommandInfo("feedinfo", ShellType, /* Localizable */ "Gets the feed info",
-                new CommandArgumentInfo(), new RSS_FeedInfoCommand()) },
-            { "list", new CommandInfo("list", ShellType, /* Localizable */ "Lists all feeds",
-                new CommandArgumentInfo(), new RSS_ListCommand()) },
-            { "listbookmark", new CommandInfo("listbookmark", ShellType, /* Localizable */ "Lists all bookmarked feeds",
-                new CommandArgumentInfo(), new RSS_ListBookmarkCommand()) },
-            { "read", new CommandInfo("read", ShellType, /* Localizable */ "Reads a feed in a web browser",
-                new CommandArgumentInfo(new[] { "feednum" }, Array.Empty<SwitchInfo>(), true, 1), new RSS_ReadCommand()) },
-            { "search", new CommandInfo("search", ShellType, /* Localizable */ "Searches the feed for a phrase in title and/or description",
-                new CommandArgumentInfo(new[] { "phrase" }, new[] { new SwitchInfo("t", /* Localizable */ "Search for title"), new SwitchInfo("d", /* Localizable */ "Search for description"), new SwitchInfo("a", /* Localizable */ "Search for title and description"), new SwitchInfo("cs", /* Localizable */ "Case sensitive search") }, true, 1), new RSS_SearchCommand()) },
-            { "unbookmark", new CommandInfo("unbookmark", ShellType, /* Localizable */ "Removes the feed bookmark",
-                new CommandArgumentInfo(), new RSS_UnbookmarkCommand()) }
+            { "articleinfo",
+                new CommandInfo("articleinfo", ShellType, /* Localizable */ "Gets the article info",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "feednum" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new RSS_ArticleInfoCommand())
+            },
+
+            { "bookmark",
+                new CommandInfo("bookmark", ShellType, /* Localizable */ "Bookmarks the feed",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new RSS_BookmarkCommand())
+            },
+
+            { "detach",
+                new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new RSS_DetachCommand())
+            },
+
+            { "feedinfo",
+                new CommandInfo("feedinfo", ShellType, /* Localizable */ "Gets the feed info",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new RSS_FeedInfoCommand())
+            },
+
+            { "list",
+                new CommandInfo("list", ShellType, /* Localizable */ "Lists all feeds",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new RSS_ListCommand())
+            },
+
+            { "listbookmark",
+                new CommandInfo("listbookmark", ShellType, /* Localizable */ "Lists all bookmarked feeds",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new RSS_ListBookmarkCommand())
+            },
+
+            { "read",
+                new CommandInfo("read", ShellType, /* Localizable */ "Reads a feed in a web browser",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "feednum" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new RSS_ReadCommand())
+            },
+
+            { "search",
+                new CommandInfo("search", ShellType, /* Localizable */ "Searches the feed for a phrase in title and/or description",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "phrase" }, new[] {
+                            new SwitchInfo("t", /* Localizable */ "Search for title"),
+                            new SwitchInfo("d", /* Localizable */ "Search for description"),
+                            new SwitchInfo("a", /* Localizable */ "Search for title and description"),
+                            new SwitchInfo("cs", /* Localizable */ "Case sensitive search")
+                        }, true, 1)
+                    }, new RSS_SearchCommand())
+            },
+
+            { "unbookmark",
+                new CommandInfo("unbookmark", ShellType, /* Localizable */ "Removes the feed bookmark",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new RSS_UnbookmarkCommand())
+            },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

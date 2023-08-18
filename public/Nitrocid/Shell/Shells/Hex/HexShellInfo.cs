@@ -37,26 +37,75 @@ namespace KS.Shell.Shells.Hex
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "addbyte", new CommandInfo("addbyte", ShellType, /* Localizable */ "Adds a new byte at the end of the file",
-                new CommandArgumentInfo(new[] { "byte" }, Array.Empty<SwitchInfo>(), true, 1), new HexEdit_AddByteCommand()) },
-            { "addbytes", new CommandInfo("addbytes", ShellType, /* Localizable */ "Adds the new bytes at the end of the file",
-                new CommandArgumentInfo(), new HexEdit_AddBytesCommand()) },
-            { "clear", new CommandInfo("clear", ShellType, /* Localizable */ "Clears the binary file",
-                new CommandArgumentInfo(), new HexEdit_ClearCommand()) },
-            { "delbyte", new CommandInfo("delbyte", ShellType, /* Localizable */ "Deletes a byte using the byte number",
-                new CommandArgumentInfo(new[] { "bytenumber" }, Array.Empty<SwitchInfo>(), true, 1), new HexEdit_DelByteCommand()) },
-            { "delbytes", new CommandInfo("delbytes", ShellType, /* Localizable */ "Deletes the range of bytes",
-                new CommandArgumentInfo(new[] { "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), true, 1), new HexEdit_DelBytesCommand()) },
-            { "exitnosave", new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the hex editor",
-                new CommandArgumentInfo(), new HexEdit_ExitNoSaveCommand()) },
-            { "print", new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with byte numbers to the console",
-                new CommandArgumentInfo(new[] { "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), false, 0), new HexEdit_PrintCommand()) },
-            { "querybyte", new CommandInfo("querybyte", ShellType, /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
-                new CommandArgumentInfo(new[] { "byte", "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), true, 1), new HexEdit_QueryByteCommand()) },
-            { "replace", new CommandInfo("replace", ShellType, /* Localizable */ "Replaces a byte with another one",
-                new CommandArgumentInfo(new[] { "byte", "replacedbyte" }, Array.Empty<SwitchInfo>(), true, 2), new HexEdit_ReplaceCommand()) },
-            { "save", new CommandInfo("save", ShellType, /* Localizable */ "Saves the file",
-                new CommandArgumentInfo(), new HexEdit_SaveCommand()) }
+            { "addbyte",
+                new CommandInfo("addbyte", ShellType, /* Localizable */ "Adds a new byte at the end of the file",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "byte" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new HexEdit_AddByteCommand())
+            },
+            
+            { "addbytes",
+                new CommandInfo("addbytes", ShellType, /* Localizable */ "Adds the new bytes at the end of the file",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new HexEdit_AddBytesCommand())
+            },
+            
+            { "clear",
+                new CommandInfo("clear", ShellType, /* Localizable */ "Clears the binary file",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new HexEdit_ClearCommand())
+            },
+            
+            { "delbyte",
+                new CommandInfo("delbyte", ShellType, /* Localizable */ "Deletes a byte using the byte number",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "bytenumber" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new HexEdit_DelByteCommand())
+            },
+            
+            { "delbytes",
+                new CommandInfo("delbytes", ShellType, /* Localizable */ "Deletes the range of bytes",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new HexEdit_DelBytesCommand())
+            },
+            
+            { "exitnosave",
+                new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the hex editor",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new HexEdit_ExitNoSaveCommand())
+            },
+            
+            { "print",
+                new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with byte numbers to the console",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), false, 0)
+                    }, new HexEdit_PrintCommand())
+            },
+            
+            { "querybyte",
+                new CommandInfo("querybyte", ShellType, /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "byte", "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new HexEdit_QueryByteCommand())
+            },
+            
+            { "replace",
+                new CommandInfo("replace", ShellType, /* Localizable */ "Replaces a byte with another one",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "byte", "replacedbyte" }, Array.Empty<SwitchInfo>(), true, 2)
+                    }, new HexEdit_ReplaceCommand())
+            },
+            
+            { "save",
+                new CommandInfo("save", ShellType, /* Localizable */ "Saves the file",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new HexEdit_SaveCommand())
+            },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

@@ -42,7 +42,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Command argument info
         /// </summary>
-        public CommandArgumentInfo CommandArgumentInfo { get; private set; }
+        public CommandArgumentInfo[] CommandArgumentInfo { get; private set; }
         /// <summary>
         /// Command base for execution
         /// </summary>
@@ -61,7 +61,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="CommandArgumentInfo">Command argument info</param>
         /// <param name="CommandBase">Command base for execution</param>
         /// <param name="Flags">Command flags</param>
-        public CommandInfo(string Command, ShellType Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None) :
+        public CommandInfo(string Command, ShellType Type, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None) :
             this(Command, ShellManager.GetShellTypeName(Type), HelpDefinition, CommandArgumentInfo, CommandBase, Flags)
         { }
 
@@ -74,7 +74,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="CommandArgumentInfo">Command argument info</param>
         /// <param name="CommandBase">Command base for execution</param>
         /// <param name="Flags">Command flags</param>
-        public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
+        public CommandInfo(string Command, string Type, string HelpDefinition, CommandArgumentInfo[] CommandArgumentInfo, BaseCommand CommandBase, CommandFlags Flags = CommandFlags.None)
         {
             this.Command = Command;
             this.Type = Type;

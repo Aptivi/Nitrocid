@@ -130,109 +130,116 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
 
             // Check to see if we're optionalizing some required arguments starting from the last required argument
             int minimumArgumentsOffset = 0;
-            var argInfo = isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo;
-            bool withArgInfo = argInfo is not null;
-            DebugWriter.WriteDebug(DebugLevel.I, "Argument info is full? {0}", withArgInfo);
-            if (withArgInfo)
-            {
-                foreach (string enclosedSwitch in EnclosedSwitches)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Optionalizer is processing switch {0}...", enclosedSwitch);
-                    var switches = argInfo.Switches.Where((switchInfo) => switchInfo.SwitchName == enclosedSwitch[1..]);
-                    if (switches.Any())
-                        foreach (var switchInfo in switches.Where(switchInfo => minimumArgumentsOffset < switchInfo.OptionalizeLastRequiredArguments))
-                            minimumArgumentsOffset = switchInfo.OptionalizeLastRequiredArguments;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Minimum arguments offset is now {0}", minimumArgumentsOffset);
-                }
-            }
-            int finalRequiredArgs = withArgInfo ? argInfo.MinimumArguments - minimumArgumentsOffset : 0;
-            if (finalRequiredArgs < 0)
-                finalRequiredArgs = 0;
-            DebugWriter.WriteDebug(DebugLevel.I, "Required arguments count is now {0}", finalRequiredArgs);
-
-            // Check to see if the caller has provided required number of arguments
-            if (withArgInfo)
-                RequiredArgumentsProvided =
-                    EnclosedArgs.Length >= finalRequiredArgs ||
-                    !argInfo.ArgumentsRequired;
-            else
-                RequiredArgumentsProvided = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "RequiredArgumentsProvided is {0}. Refer to the value of argument info.", RequiredArgumentsProvided);
-
-            // Check to see if the caller has provided required number of switches
-            if (withArgInfo)
-                RequiredSwitchesProvided =
-                    argInfo.Switches.Length == 0 ||
-                    EnclosedSwitches.Length >= argInfo.Switches.Where((@switch) => @switch.IsRequired).Count() ||
-                    !argInfo.Switches.Any((@switch) => @switch.IsRequired);
-            else
-                RequiredSwitchesProvided = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchesProvided is {0}. Refer to the value of argument info.", RequiredSwitchesProvided);
-
-            // Check to see if the caller has provided required number of switches that require arguments
-            if (withArgInfo)
-            {
-                if (argInfo.Switches.Length == 0 || EnclosedSwitches.Length == 0 ||
-                    !argInfo.Switches.Any((@switch) => @switch.ArgumentsRequired))
-                    RequiredSwitchArgumentsProvided = true;
-                else
-                {
-                    var allSwitches = argInfo.Switches.Where((@switch) => @switch.ArgumentsRequired).Select((@switch) => @switch.SwitchName).ToArray();
-                    var allProvidedSwitches = EnclosedSwitches.Where((@switch) => allSwitches.Contains($"{@switch[1..]}")).ToArray();
-                    foreach (var providedSwitch in allProvidedSwitches)
-                    {
-                        if (string.IsNullOrWhiteSpace(EnclosedSwitchKeyValuePairs.Single((kvp) => kvp.Item1 == providedSwitch).Item2))
-                            RequiredSwitchArgumentsProvided = false;
-                    }
-                }
-            }
-            else
-                RequiredSwitchArgumentsProvided = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
-
-            // Check to see if the caller has provided non-existent switches
             string[] unknownSwitchesList = Array.Empty<string>();
-            if (withArgInfo)
-                unknownSwitchesList = EnclosedSwitchKeyValuePairs
-                    .Select((kvp) => kvp.Item1)
-                    .Where((key) => !argInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
-                    .ToArray();
-            DebugWriter.WriteDebug(DebugLevel.I, "Unknown switches: {0}", unknownSwitchesList.Length);
-
-            // Check to see if the caller has provided conflicting switches
             string[] conflictingSwitchesList = Array.Empty<string>();
-            if (withArgInfo)
+            var argInfos = isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo;
+            foreach (var argInfo in argInfos)
             {
-                List<string> processed = new();
-                List<string> conflicts = new();
-                foreach (var kvp in EnclosedSwitchKeyValuePairs)
+                bool withArgInfo = argInfo is not null;
+                DebugWriter.WriteDebug(DebugLevel.I, "Argument info is full? {0}", withArgInfo);
+                if (withArgInfo)
                 {
-                    // Check to see if the switch exists
-                    string @switch = kvp.Item1;
-                    if (unknownSwitchesList.Contains(@switch))
-                        continue;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Processing switch: {0}", @switch);
-
-                    // Get the switch and its conflicts list
-                    string[] switchConflicts = argInfo.Switches
-                        .Where((switchInfo) => $"-{switchInfo.SwitchName}" == @switch)
-                        .First().ConflictsWith
-                        .Select((conflicting) => $"-{conflicting}")
-                        .ToArray();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Switch conflicts: {0} [{1}]", switchConflicts.Length, string.Join(", ", switchConflicts));
-
-                    // Now, get the last switch and check to see if it's provided with the conflicting switch
-                    string lastSwitch = processed.Count > 0 ? processed[^1] : "";
-                    if (switchConflicts.Contains(lastSwitch))
+                    foreach (string enclosedSwitch in EnclosedSwitches)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Conflict! {0} and {1} conflict with each other.", @switch, lastSwitch);
-                        conflicts.Add($"{@switch} vs. {lastSwitch}");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Optionalizer is processing switch {0}...", enclosedSwitch);
+                        var switches = argInfo.Switches.Where((switchInfo) => switchInfo.SwitchName == enclosedSwitch[1..]);
+                        if (switches.Any())
+                            foreach (var switchInfo in switches.Where(switchInfo => minimumArgumentsOffset < switchInfo.OptionalizeLastRequiredArguments))
+                                minimumArgumentsOffset = switchInfo.OptionalizeLastRequiredArguments;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Minimum arguments offset is now {0}", minimumArgumentsOffset);
                     }
-                    processed.Add(@switch);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Marked conflicts: {0} [{1}]", conflicts.Count, string.Join(", ", conflicts));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Processed: {0} [{1}]", processed.Count, string.Join(", ", processed));
                 }
-                conflictingSwitchesList = conflicts.ToArray();
+                int finalRequiredArgs = withArgInfo ? argInfo.MinimumArguments - minimumArgumentsOffset : 0;
+                if (finalRequiredArgs < 0)
+                    finalRequiredArgs = 0;
+                DebugWriter.WriteDebug(DebugLevel.I, "Required arguments count is now {0}", finalRequiredArgs);
+
+                // Check to see if the caller has provided required number of arguments
+                if (withArgInfo)
+                    RequiredArgumentsProvided =
+                        EnclosedArgs.Length >= finalRequiredArgs ||
+                        !argInfo.ArgumentsRequired;
+                else
+                    RequiredArgumentsProvided = true;
+                DebugWriter.WriteDebug(DebugLevel.I, "RequiredArgumentsProvided is {0}. Refer to the value of argument info.", RequiredArgumentsProvided);
+
+                // Check to see if the caller has provided required number of switches
+                if (withArgInfo)
+                    RequiredSwitchesProvided =
+                        argInfo.Switches.Length == 0 ||
+                        EnclosedSwitches.Length >= argInfo.Switches.Where((@switch) => @switch.IsRequired).Count() ||
+                        !argInfo.Switches.Any((@switch) => @switch.IsRequired);
+                else
+                    RequiredSwitchesProvided = true;
+                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchesProvided is {0}. Refer to the value of argument info.", RequiredSwitchesProvided);
+
+                // Check to see if the caller has provided required number of switches that require arguments
+                if (withArgInfo)
+                {
+                    if (argInfo.Switches.Length == 0 || EnclosedSwitches.Length == 0 ||
+                        !argInfo.Switches.Any((@switch) => @switch.ArgumentsRequired))
+                        RequiredSwitchArgumentsProvided = true;
+                    else
+                    {
+                        var allSwitches = argInfo.Switches.Where((@switch) => @switch.ArgumentsRequired).Select((@switch) => @switch.SwitchName).ToArray();
+                        var allProvidedSwitches = EnclosedSwitches.Where((@switch) => allSwitches.Contains($"{@switch[1..]}")).ToArray();
+                        foreach (var providedSwitch in allProvidedSwitches)
+                        {
+                            if (string.IsNullOrWhiteSpace(EnclosedSwitchKeyValuePairs.Single((kvp) => kvp.Item1 == providedSwitch).Item2))
+                                RequiredSwitchArgumentsProvided = false;
+                        }
+                    }
+                }
+                else
+                    RequiredSwitchArgumentsProvided = true;
+                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
+
+                // Check to see if the caller has provided non-existent switches
+                if (withArgInfo)
+                    unknownSwitchesList = EnclosedSwitchKeyValuePairs
+                        .Select((kvp) => kvp.Item1)
+                        .Where((key) => !argInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
+                        .ToArray();
+                DebugWriter.WriteDebug(DebugLevel.I, "Unknown switches: {0}", unknownSwitchesList.Length);
+
+                // Check to see if the caller has provided conflicting switches
+                if (withArgInfo)
+                {
+                    List<string> processed = new();
+                    List<string> conflicts = new();
+                    foreach (var kvp in EnclosedSwitchKeyValuePairs)
+                    {
+                        // Check to see if the switch exists
+                        string @switch = kvp.Item1;
+                        if (unknownSwitchesList.Contains(@switch))
+                            continue;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Processing switch: {0}", @switch);
+
+                        // Get the switch and its conflicts list
+                        string[] switchConflicts = argInfo.Switches
+                            .Where((switchInfo) => $"-{switchInfo.SwitchName}" == @switch)
+                            .First().ConflictsWith
+                            .Select((conflicting) => $"-{conflicting}")
+                            .ToArray();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Switch conflicts: {0} [{1}]", switchConflicts.Length, string.Join(", ", switchConflicts));
+
+                        // Now, get the last switch and check to see if it's provided with the conflicting switch
+                        string lastSwitch = processed.Count > 0 ? processed[^1] : "";
+                        if (switchConflicts.Contains(lastSwitch))
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.I, "Conflict! {0} and {1} conflict with each other.", @switch, lastSwitch);
+                            conflicts.Add($"{@switch} vs. {lastSwitch}");
+                        }
+                        processed.Add(@switch);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Marked conflicts: {0} [{1}]", conflicts.Count, string.Join(", ", conflicts));
+                        DebugWriter.WriteDebug(DebugLevel.I, "Processed: {0} [{1}]", processed.Count, string.Join(", ", processed));
+                    }
+                    conflictingSwitchesList = conflicts.ToArray();
+                }
+
+                // If all is well, bail.
+                if (RequiredArgumentsProvided && RequiredSwitchesProvided && RequiredSwitchArgumentsProvided && unknownSwitchesList.Length == 0 && conflictingSwitchesList.Length == 0)
+                    break;
             }
 
             // Install the parsed values to the new class instance

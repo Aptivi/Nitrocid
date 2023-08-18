@@ -86,14 +86,33 @@ namespace KS.Shell
         /// </summary>
         public readonly static Dictionary<string, CommandInfo> UnifiedCommandDict = new()
         {
-            { "presets", new CommandInfo("presets", ShellType.Shell, /* Localizable */ "Opens the shell preset library",
-                new CommandArgumentInfo(), new PresetsUnifiedCommand()) },
-            { "exit", new CommandInfo("exit", ShellType.Shell, /* Localizable */ "Exits the shell if running on subshell",
-                new CommandArgumentInfo(), new ExitUnifiedCommand()) },
-            { "help", new CommandInfo("help", ShellType.Shell, /* Localizable */ "Help page",
-                new CommandArgumentInfo(new[] { "[command]" }, Array.Empty<SwitchInfo>(), false, 0, (_, _, _) => HelpUnifiedCommand.ListCmds()), new HelpUnifiedCommand(), CommandFlags.Wrappable) },
-            { "wrap", new CommandInfo("wrap", ShellType.Shell, /* Localizable */ "Wraps the console output",
-                new CommandArgumentInfo(new[] { "command" }, Array.Empty<SwitchInfo>(), true, 1), new WrapUnifiedCommand()) }
+            { "presets",
+                new CommandInfo("presets", ShellType.Shell, /* Localizable */ "Opens the shell preset library",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new PresetsUnifiedCommand()) 
+            },
+
+            { "exit",
+                new CommandInfo("exit", ShellType.Shell, /* Localizable */ "Exits the shell if running on subshell",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new ExitUnifiedCommand())
+            },
+
+            { "help",
+                new CommandInfo("help", ShellType.Shell, /* Localizable */ "Help page",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "[command]" }, Array.Empty<SwitchInfo>(), false, 0,(_, _, _) => HelpUnifiedCommand.ListCmds())
+                    }, new HelpUnifiedCommand(), CommandFlags.Wrappable)
+            },
+
+            { "wrap",
+                new CommandInfo("wrap", ShellType.Shell, /* Localizable */ "Wraps the console output",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "command" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new WrapUnifiedCommand())
+            }
         };
 
         /// <summary>

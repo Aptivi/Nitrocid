@@ -136,7 +136,7 @@ namespace KS.Shell.Shells.UESH.Commands
                                             foreach (string ModCommand in ModManager.Mods[script].ModParts[ModPart].PartScript.Commands.Keys)
                                             {
                                                 var commandInstance = ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand];
-                                                var commandArgInfo = commandInstance.CommandArgumentInfo;
+                                                var commandArgInfos = commandInstance.CommandArgumentInfo;
                                                 SeparatorWriterColor.WriteSeparator("--- {0}", false, ModCommand);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Command name:") + " ", false, KernelColorType.ListEntry);
                                                 TextWriterColor.Write(ModCommand, true, KernelColorType.ListValue);
@@ -154,28 +154,31 @@ namespace KS.Shell.Shells.UESH.Commands
                                                 TextWriterColor.Write(commandInstance.Flags.HasFlag(CommandFlags.Obsolete).ToString(), true, KernelColorType.ListValue);
                                                 TextWriterColor.Write("- " + Translate.DoTranslation("Redirection supported?") + " ", false, KernelColorType.ListEntry);
                                                 TextWriterColor.Write(commandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ToString(), true, KernelColorType.ListValue);
-                                                if (commandArgInfo is not null)
+                                                foreach (var commandArgInfo in commandArgInfos)
                                                 {
-                                                    TextWriterColor.Write("- " + Translate.DoTranslation("Command usage:") + $" {ModCommand} ", false, KernelColorType.ListEntry);
-                                                    foreach (var Usage in commandArgInfo.Switches)
+                                                    if (commandArgInfo is not null)
                                                     {
-                                                        bool required = Usage.IsRequired;
-                                                        string switchName = Usage.SwitchName;
-                                                        string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
-                                                        TextWriterColor.Write($"{renderedSwitch} ", true, KernelColorType.ListValue);
+                                                        TextWriterColor.Write("- " + Translate.DoTranslation("Command usage:") + $" {ModCommand} ", false, KernelColorType.ListEntry);
+                                                        foreach (var Usage in commandArgInfo.Switches)
+                                                        {
+                                                            bool required = Usage.IsRequired;
+                                                            string switchName = Usage.SwitchName;
+                                                            string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
+                                                            TextWriterColor.Write($"{renderedSwitch} ", true, KernelColorType.ListValue);
+                                                        }
+                                                        int queriedArgs = 1;
+                                                        foreach (string Usage in commandArgInfo.Arguments)
+                                                        {
+                                                            int howManyRequired = commandArgInfo.MinimumArguments;
+                                                            bool required = commandArgInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
+                                                            string renderedArgument = required ? $" <{Usage}>" : $" [{Usage}]";
+                                                            TextWriterColor.Write($"{renderedArgument} ", true, KernelColorType.ListValue);
+                                                        }
+                                                        TextWriterColor.Write("- " + Translate.DoTranslation("Arguments required?") + " ", false, KernelColorType.ListEntry);
+                                                        TextWriterColor.Write(commandArgInfo.ArgumentsRequired.ToString(), true, KernelColorType.ListValue);
+                                                        TextWriterColor.Write("- " + Translate.DoTranslation("Minimum count of required arguments:") + " ", false, KernelColorType.ListEntry);
+                                                        TextWriterColor.Write(commandArgInfo.MinimumArguments.ToString(), true, KernelColorType.ListValue);
                                                     }
-                                                    int queriedArgs = 1;
-                                                    foreach (string Usage in commandArgInfo.Arguments)
-                                                    {
-                                                        int howManyRequired = commandArgInfo.MinimumArguments;
-                                                        bool required = commandArgInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
-                                                        string renderedArgument = required ? $" <{Usage}>" : $" [{Usage}]";
-                                                        TextWriterColor.Write($"{renderedArgument} ", true, KernelColorType.ListValue);
-                                                    }
-                                                    TextWriterColor.Write("- " + Translate.DoTranslation("Arguments required?") + " ", false, KernelColorType.ListEntry);
-                                                    TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.ArgumentsRequired.ToString(), true, KernelColorType.ListValue);
-                                                    TextWriterColor.Write("- " + Translate.DoTranslation("Minimum count of required arguments:") + " ", false, KernelColorType.ListEntry);
-                                                    TextWriterColor.Write(ModManager.Mods[script].ModParts[ModPart].PartScript.Commands[ModCommand].CommandArgumentInfo.MinimumArguments.ToString(), true, KernelColorType.ListValue);
                                                 }
                                             }
                                         }

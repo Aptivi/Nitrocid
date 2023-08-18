@@ -54,48 +54,51 @@ namespace KS.Arguments.ArgumentBase
             if (!string.IsNullOrWhiteSpace(Argument) & ArgumentList.ContainsKey(Argument))
             {
                 string HelpDefinition = ArgumentList[Argument].GetTranslatedHelpEntry();
-                var Arguments = Array.Empty<string>();
-                var Switches = Array.Empty<SwitchInfo>();
-                var argumentInfo = ArgumentList[Argument].ArgArgumentInfo;
-
-                // Populate help usages
-                if (argumentInfo is not null)
+                var argumentInfos = ArgumentList[Argument].ArgArgumentInfo;
+                foreach (var argumentInfo in argumentInfos)
                 {
-                    Arguments = argumentInfo.Arguments;
-                    Switches = argumentInfo.Switches;
-                    DebugWriter.WriteDebug(DebugLevel.I, "{0} args, {1} switches", Arguments.Length, Switches.Length);
-                }
+                    var Arguments = Array.Empty<string>();
+                    var Switches = Array.Empty<SwitchInfo>();
 
-                // Print usage information
-                if (Arguments.Length != 0 || Switches.Length != 0)
-                {
-                    // Print the usage information holder
-                    TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument}", false, KernelColorType.ListEntry);
-
-                    // Enumerate through the available switches first
-                    foreach (var Switch in Switches)
+                    // Populate help usages
+                    if (argumentInfo is not null)
                     {
-                        bool required = Switch.IsRequired;
-                        string switchName = Switch.SwitchName;
-                        string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
-                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered switch: {0}", renderedSwitch);
-                        TextWriterColor.Write(renderedSwitch, false, KernelColorType.ListEntry);
+                        Arguments = argumentInfo.Arguments;
+                        Switches = argumentInfo.Switches;
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0} args, {1} switches", Arguments.Length, Switches.Length);
                     }
 
-                    // Enumerate through the available arguments
-                    int howManyRequired = argumentInfo.MinimumArguments;
-                    int queriedArgs = 1;
-                    foreach (string argument in Arguments)
+                    // Print usage information
+                    if (Arguments.Length != 0 || Switches.Length != 0)
                     {
-                        bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
-                        string renderedArgument = required ? $" <{argument}>" : $" [{argument}]";
-                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered argument: {0}", renderedArgument);
-                        TextWriterColor.Write(renderedArgument, false, KernelColorType.ListEntry);
+                        // Print the usage information holder
+                        TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument}", false, KernelColorType.ListEntry);
+
+                        // Enumerate through the available switches first
+                        foreach (var Switch in Switches)
+                        {
+                            bool required = Switch.IsRequired;
+                            string switchName = Switch.SwitchName;
+                            string renderedSwitch = required ? $" <-{switchName}[=value]>" : $" [-{switchName}[=value]]";
+                            DebugWriter.WriteDebug(DebugLevel.I, "Rendered switch: {0}", renderedSwitch);
+                            TextWriterColor.Write(renderedSwitch, false, KernelColorType.ListEntry);
+                        }
+
+                        // Enumerate through the available arguments
+                        int howManyRequired = argumentInfo.MinimumArguments;
+                        int queriedArgs = 1;
+                        foreach (string argument in Arguments)
+                        {
+                            bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
+                            string renderedArgument = required ? $" <{argument}>" : $" [{argument}]";
+                            DebugWriter.WriteDebug(DebugLevel.I, "Rendered argument: {0}", renderedArgument);
+                            TextWriterColor.Write(renderedArgument, false, KernelColorType.ListEntry);
+                        }
+                        TextWriterColor.Write();
                     }
-                    TextWriterColor.Write();
+                    else
+                        TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument}", true, KernelColorType.ListEntry);
                 }
-                else
-                    TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {Argument}", true, KernelColorType.ListEntry);
 
                 // Write the description now
                 DebugWriter.WriteDebug(DebugLevel.I, "Definition: {0}", HelpDefinition);

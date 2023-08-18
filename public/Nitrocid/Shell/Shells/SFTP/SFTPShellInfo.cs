@@ -37,28 +37,87 @@ namespace KS.Shell.Shells.SFTP
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "cat", new CommandInfo("cat", ShellType, /* Localizable */ "Reads the content of a remote file to the console",
-                new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new SFTP_CatCommand(), CommandFlags.Wrappable) },
-            { "cdl", new CommandInfo("cdl", ShellType, /* Localizable */ "Changes local directory to download to or upload from",
-                new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1), new SFTP_CdlCommand()) },
-            { "cdr", new CommandInfo("cdr", ShellType, /* Localizable */ "Changes remote directory to download from or upload to",
-                new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1), new SFTP_CdrCommand()) },
-            { "del", new CommandInfo("del", ShellType, /* Localizable */ "Deletes remote file from server",
-                new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new SFTP_DelCommand()) },
-            { "detach", new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
-                new CommandArgumentInfo(), new SFTP_DetachCommand()) },
-            { "get", new CommandInfo("get", ShellType, /* Localizable */ "Downloads remote file to local directory using binary or text",
-                new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new SFTP_GetCommand()) },
-            { "lsl", new CommandInfo("lsl", ShellType, /* Localizable */ "Lists local directory",
-                new CommandArgumentInfo(new[] { "dir" }, new[] { new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders"), new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the \"unauthorized\" messages") }, false, 0), new SFTP_LslCommand()) },
-            { "lsr", new CommandInfo("lsr", ShellType, /* Localizable */ "Lists remote directory",
-                new CommandArgumentInfo(new[] { "dir" }, new[] { new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders") }, false, 0), new SFTP_LsrCommand()) },
-            { "put", new CommandInfo("put", ShellType, /* Localizable */ "Uploads local file to remote directory using binary or text",
-                new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1), new SFTP_PutCommand()) },
-            { "pwdl", new CommandInfo("pwdl", ShellType, /* Localizable */ "Gets current local directory",
-                new CommandArgumentInfo(), new SFTP_PwdlCommand()) },
-            { "pwdr", new CommandInfo("pwdr", ShellType, /* Localizable */ "Gets current remote directory",
-                new CommandArgumentInfo(), new SFTP_PwdrCommand()) },
+            { "cat",
+                new CommandInfo("cat", ShellType, /* Localizable */ "Reads the content of a remote file to the console",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new SFTP_CatCommand(), CommandFlags.Wrappable)
+            },
+            
+            { "cdl",
+                new CommandInfo("cdl", ShellType, /* Localizable */ "Changes local directory to download to or upload from",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new SFTP_CdlCommand())
+            },
+            
+            { "cdr",
+                new CommandInfo("cdr", ShellType, /* Localizable */ "Changes remote directory to download from or upload to",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new SFTP_CdrCommand())
+            },
+            
+            { "del",
+                new CommandInfo("del", ShellType, /* Localizable */ "Deletes remote file from server",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new SFTP_DelCommand())
+            },
+            
+            { "detach",
+                new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new SFTP_DetachCommand())
+            },
+            
+            { "get",
+                new CommandInfo("get", ShellType, /* Localizable */ "Downloads remote file to local directory using binary or text",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new SFTP_GetCommand())
+            },
+            
+            { "lsl",
+                new CommandInfo("lsl", ShellType, /* Localizable */ "Lists local directory",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "dir" }, new[] {
+                            new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders"),
+                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the \"unauthorized\" messages")
+                        }, false, 0)
+                    }, new SFTP_LslCommand())
+            },
+            
+            { "lsr",
+                new CommandInfo("lsr", ShellType, /* Localizable */ "Lists remote directory",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "dir" }, new[] {
+                            new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders")
+                        }, false, 0)
+                    }, new SFTP_LsrCommand())
+            },
+            
+            { "put",
+                new CommandInfo("put", ShellType, /* Localizable */ "Uploads local file to remote directory using binary or text",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new SFTP_PutCommand())
+            },
+            
+            { "pwdl",
+                new CommandInfo("pwdl", ShellType, /* Localizable */ "Gets current local directory",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new SFTP_PwdlCommand())
+            },
+
+            { "pwdr",
+                new CommandInfo("pwdr", ShellType, /* Localizable */ "Gets current remote directory",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new SFTP_PwdrCommand())
+            },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

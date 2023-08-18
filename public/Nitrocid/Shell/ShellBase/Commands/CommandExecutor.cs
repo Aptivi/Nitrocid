@@ -133,50 +133,56 @@ namespace KS.Shell.ShellBase.Commands
                 }
 
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                var ArgInfo = TargetCommands[Command].CommandArgumentInfo;
+                var ArgInfos = TargetCommands[Command].CommandArgumentInfo;
                 bool argSatisfied = true;
-                if (ArgInfo is not null)
+                for (int i = 0; i < ArgInfos.Length; i++)
                 {
-                    // Check for required arguments
-                    if (!RequiredArgumentsProvided && ArgInfo.ArgumentsRequired)
+                    argSatisfied = true;
+                    CommandArgumentInfo ArgInfo = ArgInfos[i];
+                    bool isLast = i == ArgInfos.Length - 1;
+                    if (ArgInfo is not null)
                     {
-                        argSatisfied = false;
-                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                        TextWriterColor.Write(Translate.DoTranslation("Required arguments are not provided."));
-                    }
+                        // Check for required arguments
+                        if (!RequiredArgumentsProvided && ArgInfo.ArgumentsRequired && isLast)
+                        {
+                            argSatisfied = false;
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
+                            TextWriterColor.Write(Translate.DoTranslation("Required arguments are not provided."));
+                        }
                     
-                    // Check for required switches
-                    if (!RequiredSwitchesProvided && ArgInfo.Switches.Any((@switch) => @switch.IsRequired))
-                    {
-                        argSatisfied = false;
-                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
-                        TextWriterColor.Write(Translate.DoTranslation("Required switches are not provided."));
-                    }
+                        // Check for required switches
+                        if (!RequiredSwitchesProvided && ArgInfo.Switches.Any((@switch) => @switch.IsRequired) && isLast)
+                        {
+                            argSatisfied = false;
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
+                            TextWriterColor.Write(Translate.DoTranslation("Required switches are not provided."));
+                        }
                     
-                    // Check for required switch arguments
-                    if (!RequiredSwitchArgumentsProvided && ArgInfo.Switches.Any((@switch) => @switch.ArgumentsRequired))
-                    {
-                        argSatisfied = false;
-                        DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
-                        TextWriterColor.Write(Translate.DoTranslation("One of the switches requires a value that is not provided."));
-                    }
+                        // Check for required switch arguments
+                        if (!RequiredSwitchArgumentsProvided && ArgInfo.Switches.Any((@switch) => @switch.ArgumentsRequired) && isLast)
+                        {
+                            argSatisfied = false;
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
+                            TextWriterColor.Write(Translate.DoTranslation("One of the switches requires a value that is not provided."));
+                        }
                     
-                    // Check for unknown switches
-                    if (ArgumentInfo.UnknownSwitchesList.Length > 0)
-                    {
-                        argSatisfied = false;
-                        DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
-                        TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below are unknown."));
-                        ListWriterColor.WriteList(ArgumentInfo.UnknownSwitchesList);
-                    }
+                        // Check for unknown switches
+                        if (ArgumentInfo.UnknownSwitchesList.Length > 0 && isLast)
+                        {
+                            argSatisfied = false;
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
+                            TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below are unknown."));
+                            ListWriterColor.WriteList(ArgumentInfo.UnknownSwitchesList);
+                        }
                     
-                    // Check for conflicting switches
-                    if (ArgumentInfo.ConflictingSwitchesList.Length > 0)
-                    {
-                        argSatisfied = false;
-                        DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
-                        TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below conflict with each other."));
-                        ListWriterColor.WriteList(ArgumentInfo.ConflictingSwitchesList);
+                        // Check for conflicting switches
+                        if (ArgumentInfo.ConflictingSwitchesList.Length > 0 && isLast)
+                        {
+                            argSatisfied = false;
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
+                            TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below conflict with each other."));
+                            ListWriterColor.WriteList(ArgumentInfo.ConflictingSwitchesList);
+                        }
                     }
                 }
 

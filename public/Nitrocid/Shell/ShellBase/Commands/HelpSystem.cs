@@ -88,66 +88,71 @@ namespace KS.Shell.ShellBase.Commands
                 var FinalCommandList = IsMod ? ModCommandList : CommandList;
                 string FinalCommand = IsMod ? command : IsAlias ? AliasedCommandList[command] : command;
                 string HelpDefinition = IsMod ? FinalCommandList[FinalCommand].HelpDefinition : FinalCommandList[FinalCommand].GetTranslatedHelpEntry();
-                var Arguments = Array.Empty<string>();
-                var Switches = Array.Empty<SwitchInfo>();
-                var argumentInfo = FinalCommandList[FinalCommand].CommandArgumentInfo;
 
-                // Populate help usages
-                if (argumentInfo is not null)
+                // Iterate through command argument information instances
+                var argumentInfos = FinalCommandList[FinalCommand].CommandArgumentInfo ?? Array.Empty<CommandArgumentInfo>();
+                foreach (var argumentInfo in argumentInfos)
                 {
-                    Arguments = argumentInfo.Arguments;
-                    Switches = argumentInfo.Switches;
-                }
+                    var Arguments = Array.Empty<string>();
+                    var Switches = Array.Empty<SwitchInfo>();
 
-                // Print usage information
-                if (Arguments.Length != 0 || Switches.Length != 0)
-                {
-                    // Print the usage information holder
-                    TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {FinalCommand}", false, KernelColorType.ListEntry);
-
-                    // Enumerate through the available switches first
-                    foreach (var Switch in Switches)
+                    // Populate help usages
+                    if (argumentInfo is not null)
                     {
-                        bool required = Switch.IsRequired;
-                        bool argRequired = Switch.ArgumentsRequired;
-                        string switchName = Switch.SwitchName;
-                        string renderedSwitchValue = argRequired ? $"=value" : $"[=value]";
-                        string renderedSwitch = required ? $" <-{switchName}{renderedSwitchValue}>" : $" [-{switchName}{renderedSwitchValue}]";
-                        TextWriterColor.Write(renderedSwitch, false, KernelColorType.ListEntry);
+                        Arguments = argumentInfo.Arguments;
+                        Switches = argumentInfo.Switches;
                     }
 
-                    // Enumerate through the available arguments
-                    int howManyRequired = argumentInfo.MinimumArguments;
-                    int queriedArgs = 1;
-                    foreach (string Argument in Arguments)
+                    // Print usage information
+                    if (Arguments.Length != 0 || Switches.Length != 0)
                     {
-                        bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
-                        string renderedArgument = required ? $" <{Argument}>" : $" [{Argument}]";
-                        TextWriterColor.Write(renderedArgument, false, KernelColorType.ListEntry);
-                        queriedArgs++;
+                        // Print the usage information holder
+                        TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {FinalCommand}", false, KernelColorType.ListEntry);
+
+                        // Enumerate through the available switches first
+                        foreach (var Switch in Switches)
+                        {
+                            bool required = Switch.IsRequired;
+                            bool argRequired = Switch.ArgumentsRequired;
+                            string switchName = Switch.SwitchName;
+                            string renderedSwitchValue = argRequired ? $"=value" : $"[=value]";
+                            string renderedSwitch = required ? $" <-{switchName}{renderedSwitchValue}>" : $" [-{switchName}{renderedSwitchValue}]";
+                            TextWriterColor.Write(renderedSwitch, false, KernelColorType.ListEntry);
+                        }
+
+                        // Enumerate through the available arguments
+                        int howManyRequired = argumentInfo.MinimumArguments;
+                        int queriedArgs = 1;
+                        foreach (string Argument in Arguments)
+                        {
+                            bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
+                            string renderedArgument = required ? $" <{Argument}>" : $" [{Argument}]";
+                            TextWriterColor.Write(renderedArgument, false, KernelColorType.ListEntry);
+                            queriedArgs++;
+                        }
+                        TextWriterColor.Write();
                     }
-                    TextWriterColor.Write();
+                    else
+                        TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {FinalCommand}", true, KernelColorType.ListEntry);
+
+                    // If we have switches, print their descriptions
+                    if (Switches.Length != 0)
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
+                        foreach (var Switch in Switches)
+                        {
+                            string switchName = Switch.SwitchName;
+                            string switchDesc = IsMod ? Switch.HelpDefinition : Switch.GetTranslatedHelpEntry();
+                            TextWriterColor.Write($"  -{switchName}: ", false, KernelColorType.ListEntry);
+                            TextWriterColor.Write(switchDesc, true, KernelColorType.ListValue);
+                        }
+                    }
                 }
-                else
-                    TextWriterColor.Write(Translate.DoTranslation("Usage:") + $" {FinalCommand}", true, KernelColorType.ListEntry);
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
                     HelpDefinition = Translate.DoTranslation("Command defined by ") + command;
                 TextWriterColor.Write(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
-
-                // If we have switches, print their descriptions
-                if (Switches.Length != 0)
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("This command has the below switches that change how it works:"));
-                    foreach (var Switch in Switches)
-                    {
-                        string switchName = Switch.SwitchName;
-                        string switchDesc = IsMod ? Switch.HelpDefinition : Switch.GetTranslatedHelpEntry();
-                        TextWriterColor.Write($"  -{switchName}: ", false, KernelColorType.ListEntry);
-                        TextWriterColor.Write(switchDesc, true, KernelColorType.ListValue);
-                    }
-                }
 
                 // Extra help action for some commands
                 FinalCommandList[FinalCommand].CommandBase?.HelpHelper();

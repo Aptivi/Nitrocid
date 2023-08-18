@@ -40,19 +40,32 @@ namespace KS.Arguments.ArgumentBase
         /// </summary>
         public readonly static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs = new()
         {
-            { "quiet", new ArgumentInfo("quiet", /* Localizable */ "Starts the kernel quietly", new CommandArgumentInfo(), new QuietArgument()) },
-            { "maintenance", new ArgumentInfo("maintenance", /* Localizable */ "Like safe mode, but also disables multi-user and some customization", new CommandArgumentInfo(), new MaintenanceArgument()) },
-            { "safe", new ArgumentInfo("safe", /* Localizable */ "Starts the kernel in safe mode, disabling all mods", new CommandArgumentInfo(), new SafeArgument()) },
-            { "testInteractive", new ArgumentInfo("testInteractive", /* Localizable */ "Opens a test shell", new CommandArgumentInfo(), new TestInteractiveArgument()) },
-            { "debug", new ArgumentInfo("debug", /* Localizable */ "Enables debug mode", new CommandArgumentInfo(), new DebugArgument()) },
-            { "terminaldebug", new ArgumentInfo("terminaldebug", /* Localizable */ "Enables terminal debug mode", new CommandArgumentInfo(), new TerminalDebugArgument()) },
-            { "reset", new ArgumentInfo("reset", /* Localizable */ "Resets the kernel to the factory settings", new CommandArgumentInfo(), new ResetArgument()) },
-            { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", /* Localizable */ "Bypasses the console size detection", new CommandArgumentInfo(), new BypassSizeDetectionArgument()) },
-            { "noaltbuffer", new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer", new CommandArgumentInfo(), new NoAltBufferArgument()) },
-            { "lang", new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language", new CommandArgumentInfo(new string[]{ "<lang>" }, Array.Empty<SwitchInfo>(), true, 1), new LangArgument()) },
-            { "attach", new ArgumentInfo("attach", /* Localizable */ "Attaches the Visual Studio debugger to this instance of Nitrocid", new CommandArgumentInfo(), new AttachArgument()) },
-            { "verbosepreboot", new ArgumentInfo("verbosepreboot", /* Localizable */ "Turns on verbose messages for pre-boot environment", new CommandArgumentInfo(), new VerbosePrebootArgument()) },
-            { "help", new ArgumentInfo("help", /* Localizable */ "Help page", new CommandArgumentInfo(), new HelpArgument()) }
+            { "quiet", new ArgumentInfo("quiet", /* Localizable */ "Starts the kernel quietly",
+                new[] { new CommandArgumentInfo() }, new QuietArgument()) },
+            { "maintenance", new ArgumentInfo("maintenance", /* Localizable */ "Like safe mode, but also disables multi-user and some customization",
+                new[] { new CommandArgumentInfo() }, new MaintenanceArgument()) },
+            { "safe", new ArgumentInfo("safe", /* Localizable */ "Starts the kernel in safe mode, disabling all mods",
+                new[] { new CommandArgumentInfo() }, new SafeArgument()) },
+            { "testInteractive", new ArgumentInfo("testInteractive", /* Localizable */ "Opens a test shell",
+                new[] { new CommandArgumentInfo() }, new TestInteractiveArgument()) },
+            { "debug", new ArgumentInfo("debug", /* Localizable */ "Enables debug mode",
+                new[] { new CommandArgumentInfo() }, new DebugArgument()) },
+            { "terminaldebug", new ArgumentInfo("terminaldebug", /* Localizable */ "Enables terminal debug mode",
+                new[] { new CommandArgumentInfo() }, new TerminalDebugArgument()) },
+            { "reset", new ArgumentInfo("reset", /* Localizable */ "Resets the kernel to the factory settings",
+                new[] { new CommandArgumentInfo() }, new ResetArgument()) },
+            { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", /* Localizable */ "Bypasses the console size detection",
+                new[] { new CommandArgumentInfo() }, new BypassSizeDetectionArgument()) },
+            { "noaltbuffer", new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer",
+                new[] { new CommandArgumentInfo() }, new NoAltBufferArgument()) },
+            { "lang", new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language",
+                new[] { new CommandArgumentInfo(new string[] { "<lang>" }, Array.Empty<SwitchInfo>(), true, 1) }, new LangArgument()) },
+            { "attach", new ArgumentInfo("attach", /* Localizable */ "Attaches the Visual Studio debugger to this instance of Nitrocid",
+                new[] { new CommandArgumentInfo() }, new AttachArgument()) },
+            { "verbosepreboot", new ArgumentInfo("verbosepreboot", /* Localizable */ "Turns on verbose messages for pre-boot environment",
+                new[] { new CommandArgumentInfo() }, new VerbosePrebootArgument()) },
+            { "help", new ArgumentInfo("help", /* Localizable */ "Help page",
+                new[] { new CommandArgumentInfo() }, new HelpArgument()) }
         };
 
         /// <summary>
@@ -82,16 +95,21 @@ namespace KS.Arguments.ArgumentBase
                         bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
 
                         // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                        if (Arg.ArgArgumentInfo.ArgumentsRequired & RequiredArgumentsProvided | !Arg.ArgArgumentInfo.ArgumentsRequired)
+                        for (int idx = 0; idx < Arg.ArgArgumentInfo.Length; idx++)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", Argument, strArgs);
-                            var ArgumentBase = Arg.ArgumentBase;
-                            ArgumentBase.Execute(strArgs, Args, Switches);
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument);
-                            TextWriterColor.Write(Translate.DoTranslation("There was not enough arguments."));
+                            var argInfo = Arg.ArgArgumentInfo[idx];
+                            bool isLast = idx == Arg.ArgArgumentInfo.Length - 1;
+                            if (argInfo.ArgumentsRequired & RequiredArgumentsProvided | !argInfo.ArgumentsRequired)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", Argument, strArgs);
+                                var ArgumentBase = Arg.ArgumentBase;
+                                ArgumentBase.Execute(strArgs, Args, Switches);
+                            }
+                            else if (isLast)
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument);
+                                TextWriterColor.Write(Translate.DoTranslation("There was not enough arguments."));
+                            }
                         }
                     }
                 }

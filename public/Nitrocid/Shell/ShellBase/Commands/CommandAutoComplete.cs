@@ -92,26 +92,30 @@ namespace KS.Shell.ShellBase.Commands
                 return finalCompletions;
 
             // We have the command. Check its entry for argument info
-            var CommandArgumentInfo = ShellCommands[CommandName].CommandArgumentInfo;
-            DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has argument info? {1}", CommandName, CommandArgumentInfo is not null);
-            if (CommandArgumentInfo is null)
-                // No arguments. Return file list
-                return finalCompletions;
+            var CommandArgumentInfos = ShellCommands[CommandName].CommandArgumentInfo;
+            foreach (var CommandArgumentInfo in CommandArgumentInfos)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has argument info? {1}", CommandName, CommandArgumentInfo is not null);
+                if (CommandArgumentInfo is null)
+                    // No arguments. Return file list
+                    return finalCompletions;
 
-            // There are arguments! Now, check to see if it has the accessible auto completer
-            var AutoCompleter = CommandArgumentInfo.AutoCompleter;
-            DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has auto complete info? {1}", CommandName, AutoCompleter is not null);
-            if (AutoCompleter is null)
-                // No delegate. Return file list
-                return finalCompletions;
+                // There are arguments! Now, check to see if it has the accessible auto completer
+                var AutoCompleter = CommandArgumentInfo.AutoCompleter;
+                DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has auto complete info? {1}", CommandName, AutoCompleter is not null);
+                if (AutoCompleter is null)
+                    // No delegate. Return file list
+                    return finalCompletions;
 
-            // We have the delegate! Invoke it.
-            DebugWriter.WriteDebug(DebugLevel.I, "If we reach here, it means we have a delegate! Executing delegate with {0} [{1}]...", LastArgument, LastArgument.Length);
-            finalCompletions = AutoCompleter.Invoke(LastArgument, index, delims)
-                .Where(x => x.StartsWith(LastArgument))
-                .Select(x => x[LastArgument.Length..])
-                .ToArray();
-            DebugWriter.WriteDebug(DebugLevel.I, "Invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
+                // We have the delegate! Invoke it.
+                DebugWriter.WriteDebug(DebugLevel.I, "If we reach here, it means we have a delegate! Executing delegate with {0} [{1}]...", LastArgument, LastArgument.Length);
+                finalCompletions = AutoCompleter.Invoke(LastArgument, index, delims)
+                    .Where(x => x.StartsWith(LastArgument))
+                    .Select(x => x[LastArgument.Length..])
+                    .ToArray();
+                DebugWriter.WriteDebug(DebugLevel.I, "Invoked, and got {0} autocompletion suggestions. [{1}]", finalCompletions.Length, string.Join(", ", finalCompletions));
+                return finalCompletions;
+            }
             return finalCompletions;
         }
 

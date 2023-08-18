@@ -36,12 +36,26 @@ namespace KS.Shell.Shells.Debug
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "currentbt", new CommandInfo("currentbt", ShellType, /* Localizable */ "Gets current backtrace",
-                new CommandArgumentInfo(), new Debug_CurrentBtCommand()) },
-            { "keyinfo", new CommandInfo("keyinfo", ShellType, /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
-                new CommandArgumentInfo(), new Debug_KeyInfoCommand()) },
-            { "threadsbt", new CommandInfo("threadsbt", ShellType, /* Localizable */ "Gets backtrace for all threads",
-                new CommandArgumentInfo(), new Debug_ThreadsBtCommand()) }
+            { "currentbt",
+                new CommandInfo("currentbt", ShellType, /* Localizable */ "Gets current backtrace",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Debug_CurrentBtCommand())
+            },
+
+            { "keyinfo",
+                new CommandInfo("keyinfo", ShellType, /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Debug_KeyInfoCommand())
+            },
+
+            { "threadsbt",
+                new CommandInfo("threadsbt", ShellType, /* Localizable */ "Gets backtrace for all threads",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Debug_ThreadsBtCommand())
+            },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

@@ -39,7 +39,7 @@ namespace KS.Arguments.ArgumentBase
         /// <summary>
         /// Argument info
         /// </summary>
-        public CommandArgumentInfo ArgArgumentInfo { get; private set; }
+        public CommandArgumentInfo[] ArgArgumentInfo { get; private set; }
         /// <summary>
         /// Kernel argument base for execution
         /// </summary>
@@ -62,7 +62,7 @@ namespace KS.Arguments.ArgumentBase
         /// <param name="ArgumentBase">Kernel argument base for execution</param>
         /// <param name="Obsolete">Is the command obsolete?</param>
         /// <param name="AdditionalHelpAction">An extra help action intended to show extra information</param>
-        public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
+        public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo[] ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
         {
             this.Argument = Argument;
             this.HelpDefinition = HelpDefinition;

@@ -37,40 +37,124 @@ namespace KS.Shell.Shells.Text
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "addline", new CommandInfo("addline", ShellType, /* Localizable */ "Adds a new line with text at the end of the file",
-                new CommandArgumentInfo(new[] { "text" }, Array.Empty<SwitchInfo>(), true, 1), new TextEdit_AddLineCommand()) },
-            { "addlines", new CommandInfo("addlines", ShellType, /* Localizable */ "Adds the new lines at the end of the file",
-                new CommandArgumentInfo(), new TextEdit_AddLinesCommand()) },
-            { "clear", new CommandInfo("clear", ShellType, /* Localizable */ "Clears the text file",
-                new CommandArgumentInfo(), new TextEdit_ClearCommand()) },
-            { "delcharnum", new CommandInfo("delcharnum", ShellType, /* Localizable */ "Deletes a character from character number in specified line",
-                new CommandArgumentInfo(new[] { "charnumber", "linenumber>" }, Array.Empty<SwitchInfo>(), true, 2), new TextEdit_DelCharNumCommand()) },
-            { "delline", new CommandInfo("delline", ShellType, /* Localizable */ "Removes the specified line number",
-                new CommandArgumentInfo(new[] { "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 1), new TextEdit_DelLineCommand()) },
-            { "delword", new CommandInfo("delword", ShellType, /* Localizable */ "Deletes a word or phrase from line number",
-                new CommandArgumentInfo(new[] { "word/phrase", "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2), new TextEdit_DelWordCommand()) },
-            { "editline", new CommandInfo("editline", ShellType, /* Localizable */ "Edits the specified line",
-                new CommandArgumentInfo(new[] { "linenumber>" }, Array.Empty<SwitchInfo>(), true, 1), new TextEdit_EditLineCommand()) },
-            { "exitnosave", new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the text editor",
-                new CommandArgumentInfo(), new TextEdit_ExitNoSaveCommand()) },
-            { "print", new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with line numbers to the console",
-                new CommandArgumentInfo(new[] { "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), false, 0), new TextEdit_PrintCommand()) },
-            { "querychar", new CommandInfo("querychar", ShellType, /* Localizable */ "Queries a character in a specified line or all lines",
-                new CommandArgumentInfo(new[] { "char", "linenumber/all", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2), new TextEdit_QueryCharCommand()) },
-            { "queryword", new CommandInfo("queryword", ShellType, /* Localizable */ "Queries a word in a specified line or all lines",
-                new CommandArgumentInfo(new[] { "word/phrase", "linenumber/all", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2), new TextEdit_QueryWordCommand()) },
-            { "querywordregex", new CommandInfo("querywordregex", ShellType, /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
-                new CommandArgumentInfo(new[] { "regex", "linenumber/all", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2), new TextEdit_QueryWordRegexCommand()) },
-            { "replace", new CommandInfo("replace", ShellType, /* Localizable */ "Replaces a word or phrase with another one",
-                new CommandArgumentInfo(new[] { "word/phrase", "word/phrase" }, Array.Empty<SwitchInfo>(), true, 2), new TextEdit_ReplaceCommand()) },
-            { "replaceinline", new CommandInfo("replaceinline", ShellType, /* Localizable */ "Replaces a word or phrase with another one in a line",
-                new CommandArgumentInfo(new[] { "word/phrase", "word/phrase", "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 3), new TextEdit_ReplaceInlineCommand()) },
-            { "replaceregex", new CommandInfo("replaceregex", ShellType, /* Localizable */ "Replaces a word or phrase with another one using regular expressions",
-                new CommandArgumentInfo(new[] { "regex", "word/phrase" }, Array.Empty<SwitchInfo>(), true, 2), new TextEdit_ReplaceRegexCommand()) },
-            { "replaceinlineregex", new CommandInfo("replaceinlineregex", ShellType, /* Localizable */ "Replaces a word or phrase with another one in a line using regular expressions",
-                new CommandArgumentInfo(new[] { "regex", "word/phrase", "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 3), new TextEdit_ReplaceInlineRegexCommand()) },
-            { "save", new CommandInfo("save", ShellType, /* Localizable */ "Saves the file",
-                new CommandArgumentInfo(), new TextEdit_SaveCommand()) }
+            { "addline",
+                new CommandInfo("addline", ShellType, /* Localizable */ "Adds a new line with text at the end of the file",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "text" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new TextEdit_AddLineCommand())
+            },
+            
+            { "addlines",
+                new CommandInfo("addlines", ShellType, /* Localizable */ "Adds the new lines at the end of the file",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TextEdit_AddLinesCommand())
+            },
+            
+            { "clear",
+                new CommandInfo("clear", ShellType, /* Localizable */ "Clears the text file",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TextEdit_ClearCommand())
+            },
+            
+            { "delcharnum",
+                new CommandInfo("delcharnum", ShellType, /* Localizable */ "Deletes a character from character number in specified line",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "charnumber", "linenumber>" }, Array.Empty<SwitchInfo>(), true, 2)
+                    }, new TextEdit_DelCharNumCommand())
+            },
+            
+            { "delline",
+                new CommandInfo("delline", ShellType, /* Localizable */ "Removes the specified line number",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new TextEdit_DelLineCommand())
+            },
+            
+            { "delword",
+                new CommandInfo("delword", ShellType, /* Localizable */ "Deletes a word or phrase from line number",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "word/phrase", "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2)
+                    }, new TextEdit_DelWordCommand())
+            },
+            
+            { "editline",
+                new CommandInfo("editline", ShellType, /* Localizable */ "Edits the specified line",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "linenumber>" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new TextEdit_EditLineCommand())
+            },
+            
+            { "exitnosave",
+                new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the text editor",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TextEdit_ExitNoSaveCommand())
+            },
+            
+            { "print",
+                new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with line numbers to the console",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), false, 0)
+                    }, new TextEdit_PrintCommand())
+            },
+            
+            { "querychar",
+                new CommandInfo("querychar", ShellType, /* Localizable */ "Queries a character in a specified line or all lines",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "char", "linenumber/all", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2)
+                    }, new TextEdit_QueryCharCommand())
+            },
+            
+            { "queryword",
+                new CommandInfo("queryword", ShellType, /* Localizable */ "Queries a word in a specified line or all lines",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "word/phrase", "linenumber/all", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2)
+                    }, new TextEdit_QueryWordCommand())
+            },
+            
+            { "querywordregex",
+                new CommandInfo("querywordregex", ShellType, /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "regex", "linenumber/all", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2)
+                    }, new TextEdit_QueryWordRegexCommand())
+            },
+            
+            { "replace",
+                new CommandInfo("replace", ShellType, /* Localizable */ "Replaces a word or phrase with another one",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "word/phrase", "word/phrase" }, Array.Empty<SwitchInfo>(), true, 2)
+                    }, new TextEdit_ReplaceCommand())
+            },
+            
+            { "replaceinline",
+                new CommandInfo("replaceinline", ShellType, /* Localizable */ "Replaces a word or phrase with another one in a line",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "word/phrase", "word/phrase", "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 3)
+                    }, new TextEdit_ReplaceInlineCommand())
+            },
+            
+            { "replaceregex",
+                new CommandInfo("replaceregex", ShellType, /* Localizable */ "Replaces a word or phrase with another one using regular expressions",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "regex", "word/phrase" }, Array.Empty<SwitchInfo>(), true, 2)
+                    }, new TextEdit_ReplaceRegexCommand())
+            },
+            
+            { "replaceinlineregex",
+                new CommandInfo("replaceinlineregex", ShellType, /* Localizable */ "Replaces a word or phrase with another one in a line using regular expressions",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "regex", "word/phrase", "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 3)
+                    }, new TextEdit_ReplaceInlineRegexCommand())
+            },
+            
+            { "save",
+                new CommandInfo("save", ShellType, /* Localizable */ "Saves the file",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TextEdit_SaveCommand())
+            }
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
