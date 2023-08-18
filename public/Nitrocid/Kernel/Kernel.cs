@@ -42,7 +42,6 @@ using KS.Misc.Text;
 using KS.Files.Operations;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Screensaver.Customized;
 using KS.Kernel.Power;
 using KS.Users.Groups;
 using KS.Kernel.Debugging.Trace;
@@ -50,6 +49,7 @@ using KS.Kernel.Journaling;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Hardware;
+using KS.Kernel.Starting;
 
 namespace KS.Kernel
 {
@@ -116,10 +116,11 @@ namespace KS.Kernel
                         Flags.CheckingForConsoleSize = true;
                     }
 
-                    // Initialize everything
+                    // Initialize important components
                     KernelTools.StageTimer.Start();
                     PowerManager.Uptime.Start();
-                    KernelTools.InitEverything();
+                    KernelInitializers.InitializeEssential();
+                    KernelInitializers.InitializeWelcomeMessages();
                     CheckErrored();
 
                     // Stage 1: Initialize the system
@@ -179,19 +180,25 @@ namespace KS.Kernel
                         SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0);
                     }
                     CheckErrored();
+
+                    // Phase 4: Load everything
+                    SplashReport.ReportNewStage(4, Translate.DoTranslation("- Stage 4: Loading optional kernel components"));
+                    if (!Flags.SafeMode)
+                        KernelInitializers.InitializeOptional();
+                    else
+                        SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0);
+                    CheckErrored();
                     EventsManager.FireEvent(EventType.StartKernel);
 
-                    // Phase 4: Log-in
-                    SplashReport.ReportNewStage(4, Translate.DoTranslation("- Stage 4: Log in"));
+                    // Phase 5: Log-in
+                    SplashReport.ReportNewStage(5, Translate.DoTranslation("- Stage 5: Log in"));
                     UserManagement.InitializeUsers();
                     GroupManagement.InitializeGroups();
                     SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
-                    MotdParse.ReadMotd();
-                    MalParse.ReadMal();
                     CheckErrored();
 
                     // Reset console state and stop stage timer
-                    SplashReport.ReportNewStage(5, "");
+                    SplashReport.ReportNewStage(6, "");
 
                     // Show the closing screen
                     SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
@@ -266,11 +273,16 @@ namespace KS.Kernel
                     DebugWriter.WriteDebugStackTrace(ex);
                     KernelPanic.KernelError(KernelErrorLevel.U, true, 5L, Translate.DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message);
                 }
-            }
+                finally
+                {
+                    // Reset everything to their initial state
+                    KernelInitializers.ResetEverything();
 
-            // Clear the console and reset the colors
-            ConsoleWrapper.ResetColor();
-            ConsoleWrapper.Clear();
+                    // Clear the console and reset the colors
+                    ConsoleWrapper.ResetColor();
+                    ConsoleWrapper.Clear();
+                }
+            }
 
             // If "No APM" is enabled, simply print the text
             if (Flags.SimulateNoAPM)

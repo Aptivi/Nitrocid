@@ -257,23 +257,25 @@ namespace KS.Misc.Splash
                     KernelTools.StageTimer.Restart();
                 }
             }
-            else if (StageNumber >= 5)
+            else if (StageNumber >= 6)
             {
                 if (Flags.ShowStageFinishTimes)
-                {
                     ReportProgress(Translate.DoTranslation("Stage finished in") + $" {KernelTools.StageTimer.Elapsed}", 10);
-                    KernelTools.StageTimer.Reset();
-                    TextWriterColor.Write();
-                }
             }
             else if (Flags.ShowStageFinishTimes)
             {
                 ReportProgress(Translate.DoTranslation("Stage finished in") + $" {KernelTools.StageTimer.Elapsed}", 10);
-                KernelTools.StageTimer.Restart();
+                if (StageNumber >= 6)
+                {
+                    KernelTools.StageTimer.Reset();
+                    TextWriterColor.Write();
+                }
+                else
+                    KernelTools.StageTimer.Restart();
             }
 
             // Actually report the stage
-            if (StageNumber >= 1 & StageNumber <= 4)
+            if (StageNumber >= 1 & StageNumber <= 5)
             {
                 if (!Flags.EnableSplash & !Flags.QuietKernel)
                 {

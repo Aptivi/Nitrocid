@@ -894,5 +894,7 @@ Connection state:
 Connection string:
 Database name:
 Turns on verbose messages for pre-boot environment
+- Stage 4: Loading optional kernel components
+- Stage 5: Log in
 
 ==========================================================================================================================================

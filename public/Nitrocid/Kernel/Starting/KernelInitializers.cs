@@ -1,0 +1,220 @@
+﻿
+// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+// 
+// This file is part of Nitrocid KS
+// 
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Writers.MiscWriters;
+using KS.Kernel.Configuration;
+using KS.Kernel.Debugging;
+using KS.Kernel.Debugging.RemoteDebug;
+using KS.Kernel.Hardware;
+using KS.Kernel.Time.Renderers;
+using KS.Languages;
+using KS.Misc.Calendar.Events;
+using KS.Misc.Calendar.Reminders;
+using KS.Misc.Contacts;
+using KS.Misc.Notifications;
+using KS.Misc.Probers.Motd;
+using KS.Misc.Screensaver;
+using KS.Misc.Splash;
+using KS.Modifications;
+using KS.Network.Base.Connections;
+using KS.Network.RPC;
+using KS.Shell.ShellBase.Aliases;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Scripting;
+using System;
+
+namespace KS.Kernel.Starting
+{
+    internal static class KernelInitializers
+    {
+        internal static void InitializeEssential()
+        {
+            // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
+            if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer)
+            {
+                TextWriterColor.Write("\u001b[?1049h");
+                ConsoleWrapper.SetCursorPosition(0, 0);
+                ConsoleWrapper.CursorVisible = false;
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
+            }
+
+            // Initialize console wrappers for TermRead
+            Input.InitializeInputWrappers();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
+
+            // Show initializing
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
+
+            // Initialize console resize listener
+            ConsoleResizeListener.StartResizeListener();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded resize listener.");
+
+            // Initialize custom languages
+            LanguageManager.InstallCustomLanguages();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
+
+            // Initialize splashes
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
+            SplashManager.LoadSplashes();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom splashes.");
+
+            // Create config file and then read it
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
+            if (!Flags.SafeMode)
+                Config.InitializeConfig();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");
+
+            // Load background
+            KernelColorTools.LoadBack();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded background.");
+
+            // Load splash
+            SplashManager.OpenSplash();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
+
+            // Populate ban list for debug devices
+            RemoteDebugTools.PopulateBlockedDevices();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded blocked remote debug devices.");
+        }
+
+        internal static void InitializeWelcomeMessages()
+        {
+            // Show welcome message.
+            WelcomeMessage.WriteMessage();
+
+            // Some information
+            if (Flags.ShowAppInfoOnBoot & !Flags.EnableSplash)
+            {
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Kernel environment information"), true, KernelColorType.Stage);
+                TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), Environment.OSVersion.ToString());
+                TextWriterColor.Write("  KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
+                TextWriterColor.Write("  KSAPI: " + $"v{KernelTools.KernelApiVersion}");
+            }
+        }
+
+        internal static void InitializeOptional()
+        {
+            // Initialize notifications
+            if (!NotificationManager.NotifThread.IsAlive)
+                NotificationManager.NotifThread.Start();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded notification thread.");
+
+            // Install cancellation handler
+            CancellationHandlers.InstallHandler();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded cancellation handler.");
+
+            // Initialize aliases
+            AliasManager.InitAliases();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
+
+            // Initialize top right date
+            TimeDateTopRight.InitTopRightDate();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded top right date.");
+
+            // Start screensaver timeout
+            if (!Screensaver.Timeout.IsAlive)
+                Screensaver.Timeout.Start();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded screensaver timeout.");
+
+            // Initialize events and reminders
+            if (!ReminderManager.ReminderThread.IsAlive)
+                ReminderManager.ReminderThread.Start();
+            if (!EventManager.EventThread.IsAlive)
+                EventManager.EventThread.Start();
+            EventManager.LoadEvents();
+            ReminderManager.LoadReminders();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded events & reminders.");
+
+            // Load system env vars and convert them
+            UESHVariables.ConvertSystemEnvironmentVariables();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
+
+            // Load MOTD and MAL
+            MotdParse.ReadMotd();
+            MalParse.ReadMal();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded MOTD and MAL.");
+        }
+
+        internal static void ResetEverything()
+        {
+            // Reset every variable below
+            ReminderManager.Reminders.Clear();
+            EventManager.CalendarEvents.Clear();
+            Flags.SafeMode = false;
+            Flags.QuietKernel = false;
+            Flags.Maintenance = false;
+            SplashReport._Progress = 0;
+            SplashReport._ProgressText = "";
+            SplashReport._KernelBooted = false;
+            DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
+
+            // Reset hardware info
+            HardwareProbe.HardwareInfo = null;
+            DebugWriter.WriteDebug(DebugLevel.I, "Hardware info reset.");
+
+            // Disconnect all hosts from remote debugger
+            RemoteDebugger.StopRDebugThread();
+            DebugWriter.WriteDebug(DebugLevel.I, "Remote debugger stopped");
+
+            // Stop all mods
+            ModManager.StopMods();
+            DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
+
+            // Stop RPC
+            RemoteProcedure.StopRPC();
+            DebugWriter.WriteDebug(DebugLevel.I, "RPC stopped");
+
+            // Disconnect all connections
+            NetworkConnectionTools.CloseAllConnections();
+            DebugWriter.WriteDebug(DebugLevel.I, "Closed all connections");
+
+            // Unload all splashes
+            SplashManager.UnloadSplashes();
+            DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");
+
+            // Disable safe mode
+            Flags.SafeMode = false;
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode disabled");
+
+            // Unload all contacts
+            ContactsManager.RemoveContacts(false);
+            DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
+
+            // Stop the time/date change thread
+            TimeDateTopRight.TimeTopRightChange.Stop();
+            DebugWriter.WriteDebug(DebugLevel.I, "Time/date corner stopped");
+
+            // Disable Debugger
+            if (Flags.DebugMode)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Shutting down debugger");
+                Flags.DebugMode = false;
+                DebugWriter.DebugStreamWriter.Close();
+                DebugWriter.DebugStreamWriter.Dispose();
+            }
+        }
+    }
+}

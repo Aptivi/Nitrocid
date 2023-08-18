@@ -26,6 +26,7 @@ using KS.Users.Permissions;
 using System.Diagnostics;
 using KS.Kernel.Journaling;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Threading;
 
 namespace KS.Kernel.Power
 {
@@ -36,6 +37,7 @@ namespace KS.Kernel.Power
     {
 
         internal static Stopwatch Uptime = new();
+        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg)) { isCritical = true };
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
@@ -76,9 +78,7 @@ namespace KS.Kernel.Power
                         if (Flags.DelayOnShutdown)
                             Thread.Sleep(3000);
 
-                        // Now, reset everything
-                        KernelTools.ResetEverything();
-                        EventsManager.FireEvent(EventType.PostShutdown);
+                        // Set appropriate flags
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
                         Flags.KernelShutdown = true;
@@ -97,12 +97,11 @@ namespace KS.Kernel.Power
                         if (Flags.DelayOnShutdown)
                             Thread.Sleep(3000);
 
-                        // Now, reset everything
-                        KernelTools.ResetEverything();
-                        EventsManager.FireEvent(EventType.PostReboot);
-                        ConsoleWrapper.Clear();
+                        // Set appropriate flags
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
+                        Flags.SafeMode = PowerMode == PowerMode.RebootSafe;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", Flags.SafeMode);
                         break;
                     }
                 case PowerMode.RemoteShutdown:
@@ -124,8 +123,6 @@ namespace KS.Kernel.Power
                         break;
                     }
             }
-            Flags.SafeMode = PowerMode == PowerMode.RebootSafe;
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", Flags.SafeMode);
         }
 
         /// <summary>

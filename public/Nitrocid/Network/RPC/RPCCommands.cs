@@ -215,19 +215,19 @@ namespace KS.Network.RPC
         private static void HandleShutdown()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Shutdown confirmed from remote access.");
-            KernelTools.RPCPowerListener.Start(PowerMode.Shutdown);
+            PowerManager.RPCPowerListener.Start(PowerMode.Shutdown);
         }
 
         private static void HandleReboot()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Reboot confirmed from remote access.");
-            KernelTools.RPCPowerListener.Start(PowerMode.Reboot);
+            PowerManager.RPCPowerListener.Start(PowerMode.Reboot);
         }
 
         private static void HandleRebootSafe()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Reboot to safe mode confirmed from remote access.");
-            KernelTools.RPCPowerListener.Start(PowerMode.RebootSafe);
+            PowerManager.RPCPowerListener.Start(PowerMode.RebootSafe);
         }
 
         private static void HandleSaveScr()
