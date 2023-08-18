@@ -34,6 +34,9 @@ namespace KS.Files.Operations
         /// Opens the editor deterministically
         /// </summary>
         /// <param name="path">A path to any file that exists</param>
+        /// <param name="forceText">Forces text shell</param>
+        /// <param name="forceJson">Forces JSON shell</param>
+        /// <param name="forceHex">Forces hex shell</param>
         public static void OpenEditor(string path, bool forceText = false, bool forceJson = false, bool forceHex = false)
         {
             bool fileExists = Checking.FileExists(path);
