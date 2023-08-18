@@ -22,6 +22,8 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
+using KS.Files;
+using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
@@ -151,6 +153,12 @@ namespace KS.Kernel.Starting
             // Load system env vars and convert them
             UESHVariables.ConvertSystemEnvironmentVariables();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
+
+            // If the two files are not found, create two MOTD files with current config.
+            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
+                MotdParse.SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
+            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
+                MalParse.SetMal(Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!");
 
             // Load MOTD and MAL
             MotdParse.ReadMotd();

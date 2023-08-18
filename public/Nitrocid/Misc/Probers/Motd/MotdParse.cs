@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.IO;
 using KS.Files;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
@@ -30,6 +31,7 @@ namespace KS.Misc.Probers.Motd
     /// </summary>
     public static class MotdParse
     {
+        private static string motdMessage;
 
         /// <summary>
         /// MOTD file path
@@ -39,7 +41,11 @@ namespace KS.Misc.Probers.Motd
         /// <summary>
         /// Current MOTD message
         /// </summary>
-        public static string MOTDMessage { get; set; }
+        public static string MOTDMessage 
+        {
+            get => motdMessage ?? Translate.DoTranslation("Welcome to Nitrocid Kernel!");
+            set => motdMessage = value ?? Translate.DoTranslation("Welcome to Nitrocid Kernel!");
+        }
 
         /// <summary>
         /// Sets the Message of the Day
@@ -49,14 +55,14 @@ namespace KS.Misc.Probers.Motd
         {
             try
             {
-                System.IO.StreamWriter MOTDStreamW;
+                StreamWriter MOTDStreamW;
 
-                // Get the MOTD and MAL file path
+                // Get the MOTD file path
                 Config.MainConfig.MotdFilePath = Filesystem.NeutralizePath(MotdFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
 
-                // Set the message according to message type
-                MOTDStreamW = new System.IO.StreamWriter(MotdFilePath) { AutoFlush = true };
+                // Set the message
+                MOTDStreamW = new StreamWriter(MotdFilePath) { AutoFlush = true };
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MOTD path");
                 MOTDStreamW.WriteLine(Message);
                 MOTDMessage = Message;
@@ -79,18 +85,20 @@ namespace KS.Misc.Probers.Motd
         {
             try
             {
-                System.IO.StreamReader MOTDStreamR;
+                StreamReader MOTDStreamR;
                 var MOTDBuilder = new System.Text.StringBuilder();
 
-                // Get the MOTD and MAL file path
+                // Get the MAL file path
                 Config.MainConfig.MotdFilePath = Filesystem.NeutralizePath(MotdFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
 
-                // Read the message according to message type
-                MOTDStreamR = new System.IO.StreamReader(MotdFilePath);
+                // Read the message
+                MOTDStreamR = new StreamReader(MotdFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MOTD path");
                 MOTDBuilder.Append(MOTDStreamR.ReadToEnd());
                 MOTDMessage = MOTDBuilder.ToString();
+
+                // Close the message stream
                 MOTDStreamR.Close();
                 DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
             }

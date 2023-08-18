@@ -142,18 +142,6 @@ namespace KS.Kernel
                     RemoteProcedure.WrapperStartRPC();
                     CheckErrored();
 
-                    // If the two files are not found, create two MOTD files with current config.
-                    if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
-                    {
-                        MotdParse.SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
-                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MOTD."), 3);
-                    }
-                    if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
-                    {
-                        MalParse.SetMal(Translate.DoTranslation("Logged in successfully as <user>"));
-                        SplashReport.ReportProgress(Translate.DoTranslation("Generated default MAL."), 3);
-                    }
-
                     // Check for kernel updates
                     if (Flags.CheckUpdateStart)
                         UpdateManager.CheckKernelUpdates();

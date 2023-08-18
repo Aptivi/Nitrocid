@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.IO;
 using KS.Files;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
@@ -30,6 +31,7 @@ namespace KS.Misc.Probers.Motd
     /// </summary>
     public static class MalParse
     {
+        private static string malMessage;
 
         /// <summary>
         /// MAL file path
@@ -39,7 +41,11 @@ namespace KS.Misc.Probers.Motd
         /// <summary>
         /// Current MAL message
         /// </summary>
-        public static string MAL { get; set; }
+        public static string MAL
+        {
+            get => malMessage ?? Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!";
+            set => malMessage = value ?? Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!";
+        }
 
         /// <summary>
         /// Sets the MAL
@@ -49,14 +55,14 @@ namespace KS.Misc.Probers.Motd
         {
             try
             {
-                System.IO.StreamWriter MALStreamW;
+                StreamWriter MALStreamW;
 
-                // Get the MOTD and MAL file path
+                // Get the MOTD file path
                 Config.MainConfig.MalFilePath = Filesystem.NeutralizePath(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
-                // Set the message according to message type
-                MALStreamW = new System.IO.StreamWriter(MalFilePath) { AutoFlush = true };
+                // Set the message
+                MALStreamW = new StreamWriter(MalFilePath) { AutoFlush = true };
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MAL path");
                 MALStreamW.Write(Message);
                 MAL = Message;
@@ -79,18 +85,20 @@ namespace KS.Misc.Probers.Motd
         {
             try
             {
-                System.IO.StreamReader MALStreamR;
+                StreamReader MALStreamR;
                 var MALBuilder = new System.Text.StringBuilder();
 
-                // Get the MOTD and MAL file path
+                // Get the MAL file path
                 Config.MainConfig.MalFilePath = Filesystem.NeutralizePath(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
-                // Read the message according to message type
-                MALStreamR = new System.IO.StreamReader(MalFilePath);
+                // Read the message
+                MALStreamR = new StreamReader(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MAL path");
                 MALBuilder.Append(MALStreamR.ReadToEnd());
                 MAL = MALBuilder.ToString();
+
+                // Close the message stream
                 MALStreamR.Close();
                 DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
             }
