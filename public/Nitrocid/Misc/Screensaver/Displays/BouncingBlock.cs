@@ -268,7 +268,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleWrapper.CursorVisible = false;
             KernelColorTools.SetConsoleColor(new Color(BouncingBlockSettings.BouncingBlockForegroundColor));
             KernelColorTools.LoadBack(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor), true);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock);
 
             // Initialize the color
             blockColor ??= GetRandomBlockColor();
@@ -280,7 +280,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             else
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "We're resize-syncing! Setting RowBlock and ColumnBlock to its original position...");
                 RowBlock = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d);
                 ColumnBlock = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
                 ConsoleResizeListener.WasResized();
@@ -290,52 +290,52 @@ namespace KS.Misc.Screensaver.Displays
 
             if (RowBlock == ConsoleWrapper.WindowHeight - 2)
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the bottom.");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the bottom.");
                 Direction = Direction.Replace("Bottom", "Top");
                 blockColor = GetRandomBlockColor();
             }
             else if (RowBlock == 1)
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the top.");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the top.");
                 Direction = Direction.Replace("Top", "Bottom");
                 blockColor = GetRandomBlockColor();
             }
 
             if (ColumnBlock == ConsoleWrapper.WindowWidth - 1)
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the right.");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the right.");
                 Direction = Direction.Replace("Right", "Left");
                 blockColor = GetRandomBlockColor();
             }
             else if (ColumnBlock == 1)
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "We're on the left.");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the left.");
                 Direction = Direction.Replace("Left", "Right");
                 blockColor = GetRandomBlockColor();
             }
 
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Block is facing {0}.", Direction);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Block is facing {0}.", Direction);
             if (Direction == "BottomRight")
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Increasing row and column block position");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Increasing row and column block position");
                 RowBlock += 1;
                 ColumnBlock += 1;
             }
             else if (Direction == "BottomLeft")
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Increasing row and decreasing column block position");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Increasing row and decreasing column block position");
                 RowBlock += 1;
                 ColumnBlock -= 1;
             }
             else if (Direction == "TopRight")
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Decreasing row and increasing column block position");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Decreasing row and increasing column block position");
                 RowBlock -= 1;
                 ColumnBlock += 1;
             }
             else if (Direction == "TopLeft")
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Decreasing row and column block position");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Decreasing row and column block position");
                 RowBlock -= 1;
                 ColumnBlock -= 1;
             }
@@ -352,13 +352,13 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Random(BouncingBlockSettings.BouncingBlockMinimumRedColorLevel, BouncingBlockSettings.BouncingBlockMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(BouncingBlockSettings.BouncingBlockMinimumGreenColorLevel, BouncingBlockSettings.BouncingBlockMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(BouncingBlockSettings.BouncingBlockMinimumBlueColorLevel, BouncingBlockSettings.BouncingBlockMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 return new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(BouncingBlockSettings.BouncingBlockMinimumColorLevel, BouncingBlockSettings.BouncingBlockMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 return new Color(ColorNum);
             }
         }

@@ -54,11 +54,11 @@ namespace KS.Misc.Screensaver
             }
             catch (ThreadInterruptedException)
             {
-                Misc.Screensaver.Screensaver.HandleSaverCancel();
+                ScreensaverManager.HandleSaverCancel();
             }
             catch (Exception ex)
             {
-                Misc.Screensaver.Screensaver.HandleSaverError(ex);
+                ScreensaverManager.HandleSaverError(ex);
             }
             finally
             {
@@ -69,15 +69,15 @@ namespace KS.Misc.Screensaver
 
         internal static void BailFromScreensaver()
         {
-            if (Screensaver.InSaver)
+            if (ScreensaverManager.InSaver)
             {
                 ScreensaverDisplayerThread.Stop(false);
-                Screensaver.SaverAutoReset.WaitOne();
+                ScreensaverManager.SaverAutoReset.WaitOne();
 
                 // Raise event
                 DebugWriter.WriteDebug(DebugLevel.I, "Screensaver really stopped.");
                 EventsManager.FireEvent(EventType.PostShowScreensaver);
-                Screensaver.inSaver = false;
+                ScreensaverManager.inSaver = false;
                 Flags.ScrnTimeReached = false;
                 ScreensaverDisplayerThread.Regen();
             }

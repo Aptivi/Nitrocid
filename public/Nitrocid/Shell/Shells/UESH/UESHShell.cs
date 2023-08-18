@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH
                     Flags.LoggedIn = false;
                     Bail = true;
                 }
-                else if (!Screensaver.InSaver)
+                else if (!ScreensaverManager.InSaver)
                 {
                     try
                     {

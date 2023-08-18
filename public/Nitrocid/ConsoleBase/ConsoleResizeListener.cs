@@ -75,7 +75,7 @@ namespace KS.ConsoleBase
                         CurrentWindowHeight = termDriver.WindowHeight;
 
                         // Also, tell the screensaver application to refresh itself
-                        if (Screensaver.InSaver)
+                        if (ScreensaverManager.InSaver)
                             ScreensaverDisplayer.displayingSaver.ScreensaverResizeSync();
                     }
                 }

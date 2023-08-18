@@ -77,7 +77,7 @@ namespace KS.ConsoleBase.Inputs
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !Screensaver.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
             return Output;
         }
 
@@ -114,7 +114,7 @@ namespace KS.ConsoleBase.Inputs
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !Screensaver.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
             return Output;
         }
 
@@ -175,7 +175,7 @@ namespace KS.ConsoleBase.Inputs
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !Screensaver.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
             return pass;
         }
 
@@ -191,7 +191,7 @@ namespace KS.ConsoleBase.Inputs
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !Screensaver.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
             return pass;
         }
 
@@ -251,7 +251,7 @@ namespace KS.ConsoleBase.Inputs
 
             // If in lock mode, wait until release
             DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
-            SpinWait.SpinUntil(() => !Screensaver.LockMode);
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
             return Output;
         }
 

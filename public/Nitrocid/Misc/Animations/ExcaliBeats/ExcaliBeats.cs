@@ -45,8 +45,8 @@ namespace KS.Misc.Animations.ExcaliBeats
             int BeatInterval = Settings.ExcaliBeatsTranceMode ? (int)Math.Round(60000d / (Settings.ExcaliBeatsDelay * 2)) : (int)Math.Round(60000d / Settings.ExcaliBeatsDelay);
             int maxSteps = Settings.ExcaliBeatsMaxSteps;
             int BeatIntervalStep = (int)Math.Round(BeatInterval / (double)maxSteps);
-            DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.ExcaliBeatsDelay, BeatInterval);
-            DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", Settings.ExcaliBeatsDelay, BeatIntervalStep);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Beat interval from {0} BPM: {1}", Settings.ExcaliBeatsDelay, BeatInterval);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Beat steps: {0} ms", Settings.ExcaliBeatsDelay, BeatIntervalStep);
             ThreadManager.SleepNoBlock(BeatIntervalStep, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // If we're cycling colors, set them. Else, use the user-provided color
@@ -54,7 +54,7 @@ namespace KS.Misc.Animations.ExcaliBeats
             if (Settings.ExcaliBeatsCycleColors)
             {
                 // We're cycling. Select the color mode, starting from true color
-                DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Cycling colors...");
                 if (Settings.ExcaliBeatsTrueColor)
                 {
                     RedColorNum = RandomDriver.Random(Settings.ExcaliBeatsMinimumRedColorLevel, Settings.ExcaliBeatsMaximumRedColorLevel);
@@ -68,12 +68,12 @@ namespace KS.Misc.Animations.ExcaliBeats
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;
                 }
-                DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
                 // We're not cycling. Parse the color and then select the color mode, starting from true color
-                DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Parsing colors... {0}", Settings.ExcaliBeatsBeatColor);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Parsing colors... {0}", Settings.ExcaliBeatsBeatColor);
                 var UserColor = new Color(Settings.ExcaliBeatsBeatColor);
                 if (UserColor.Type == ColorType.TrueColor)
                 {
@@ -88,14 +88,14 @@ namespace KS.Misc.Animations.ExcaliBeats
                     GreenColorNum = ConsoleColor.G;
                     BlueColorNum = ConsoleColor.B;
                 }
-                DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             }
 
             // Set thresholds
             double ThresholdRed = RedColorNum / (double)maxSteps;
             double ThresholdGreen = GreenColorNum / (double)maxSteps;
             double ThresholdBlue = BlueColorNum / (double)maxSteps;
-            DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";
@@ -110,13 +110,13 @@ namespace KS.Misc.Animations.ExcaliBeats
             {
                 if (ConsoleResizeListener.WasResized(false))
                     break;
-                DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, maxSteps, BeatIntervalStep);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Step {0}/{1} each {2} ms", CurrentStep, maxSteps, BeatIntervalStep);
                 ThreadManager.SleepNoBlock(BeatIntervalStep, System.Threading.Thread.CurrentThread);
                 int CurrentColorRedOut = (int)Math.Round(RedColorNum - ThresholdRed * CurrentStep);
                 int CurrentColorGreenOut = (int)Math.Round(GreenColorNum - ThresholdGreen * CurrentStep);
                 int CurrentColorBlueOut = (int)Math.Round(BlueColorNum - ThresholdBlue * CurrentStep);
                 var CurrentColorOut = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
-                DebugWriter.WriteDebugConditional(Screensaver.Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                     FigletWhereColor.WriteFigletWhere(exStr, consoleX, consoleY, false, figFont, CurrentColorOut);
             }

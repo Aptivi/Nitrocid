@@ -31,6 +31,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Misc.Screensaver;
 
 namespace KS.Misc.Notifications
 {
@@ -157,7 +158,7 @@ namespace KS.Misc.Notifications
                 {
                     SpinWait.SpinUntil(() => NotifRecents.Except(OldNotificationsList).ToList().Count > 0);
                     NewNotificationsList = NotifRecents.Except(OldNotificationsList).ToList();
-                    if (NewNotificationsList.Count > 0 & !Screensaver.Screensaver.InSaver)
+                    if (NewNotificationsList.Count > 0 & !ScreensaverManager.InSaver)
                     {
                         // Update the old notifications list
                         DebugWriter.WriteDebug(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count);

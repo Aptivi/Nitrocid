@@ -306,7 +306,7 @@ namespace KS.Misc.Screensaver.Displays
             int RedColorNumTo = RandomDriver.Random(GradientRotSettings.GradientRotMinimumRedColorLevelEnd, GradientRotSettings.GradientRotMaximumRedColorLevelEnd);
             int GreenColorNumTo = RandomDriver.Random(GradientRotSettings.GradientRotMinimumGreenColorLevelEnd, GradientRotSettings.GradientRotMaximumGreenColorLevelEnd);
             int BlueColorNumTo = RandomDriver.Random(GradientRotSettings.GradientRotMinimumBlueColorLevelEnd, GradientRotSettings.GradientRotMaximumBlueColorLevelEnd);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
 
             // Set thresholds for color ramp
             int RampFrameSpaces = ConsoleWrapper.WindowWidth;
@@ -316,8 +316,8 @@ namespace KS.Misc.Screensaver.Displays
             double RampColorRedSteps = RampColorRedThreshold / (double)RampFrameSpaces;
             double RampColorGreenSteps = RampColorGreenThreshold / (double)RampFrameSpaces;
             double RampColorBlueSteps = RampColorBlueThreshold / (double)RampFrameSpaces;
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
 
             // Set the current colors
             double RampCurrentColorRed = RedColorNumFrom;
@@ -337,13 +337,13 @@ namespace KS.Misc.Screensaver.Displays
                 int RampSubgradientRedColorNumTo = (int)Math.Round(RampCurrentColorRed);
                 int RampSubgradientGreenColorNumTo = (int)Math.Round(RampCurrentColorGreen);
                 int RampSubgradientBlueColorNumTo = (int)Math.Round(RampCurrentColorBlue);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got subgradient color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RampSubgradientRedColorNumFrom, RampSubgradientGreenColorNumFrom, RampSubgradientBlueColorNumFrom, RampSubgradientRedColorNumTo, RampSubgradientGreenColorNumTo, RampSubgradientBlueColorNumTo);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got subgradient color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RampSubgradientRedColorNumFrom, RampSubgradientGreenColorNumFrom, RampSubgradientBlueColorNumFrom, RampSubgradientRedColorNumTo, RampSubgradientGreenColorNumTo, RampSubgradientBlueColorNumTo);
 
                 // Set the sub-gradient current colors
                 double RampSubgradientCurrentColorRed = RampSubgradientRedColorNumFrom;
                 double RampSubgradientCurrentColorGreen = RampSubgradientGreenColorNumFrom;
                 double RampSubgradientCurrentColorBlue = RampSubgradientBlueColorNumFrom;
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got subgradient current colors (R;G;B: {0};{1};{2})", RampSubgradientCurrentColorRed, RampSubgradientCurrentColorGreen, RampSubgradientCurrentColorBlue);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got subgradient current colors (R;G;B: {0};{1};{2})", RampSubgradientCurrentColorRed, RampSubgradientCurrentColorGreen, RampSubgradientCurrentColorBlue);
 
                 // Set the sub-gradient thresholds
                 int RampSubgradientColorRedThreshold = RampSubgradientRedColorNumFrom - RampSubgradientRedColorNumTo;
@@ -352,8 +352,8 @@ namespace KS.Misc.Screensaver.Displays
                 double RampSubgradientColorRedSteps = RampSubgradientColorRedThreshold / (double)RampFrameSpaces;
                 double RampSubgradientColorGreenSteps = RampSubgradientColorGreenThreshold / (double)RampFrameSpaces;
                 double RampSubgradientColorBlueSteps = RampSubgradientColorBlueThreshold / (double)RampFrameSpaces;
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Set subgradient thresholds (RGB: {0};{1};{2})", RampSubgradientColorRedThreshold, RampSubgradientColorGreenThreshold, RampSubgradientColorBlueThreshold);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces for subgradient (RGB: {1};{2};{3})", RampFrameSpaces, RampSubgradientColorRedSteps, RampSubgradientColorGreenSteps, RampSubgradientColorBlueSteps);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Set subgradient thresholds (RGB: {0};{1};{2})", RampSubgradientColorRedThreshold, RampSubgradientColorGreenThreshold, RampSubgradientColorBlueThreshold);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces for subgradient (RGB: {1};{2};{3})", RampFrameSpaces, RampSubgradientColorRedSteps, RampSubgradientColorGreenSteps, RampSubgradientColorBlueSteps);
 
                 // Make a new instance
                 var RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
@@ -379,22 +379,22 @@ namespace KS.Misc.Screensaver.Displays
                     RampSubgradientCurrentColorRed -= RampSubgradientColorRedSteps;
                     RampSubgradientCurrentColorGreen -= RampSubgradientColorGreenSteps;
                     RampSubgradientCurrentColorBlue -= RampSubgradientColorBlueSteps;
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got new subgradient current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampSubgradientCurrentColorRed, RampSubgradientCurrentColorGreen, RampSubgradientCurrentColorBlue, RampSubgradientColorRedSteps, RampSubgradientColorGreenSteps, RampSubgradientColorBlueSteps);
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new subgradient current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampSubgradientCurrentColorRed, RampSubgradientCurrentColorGreen, RampSubgradientCurrentColorBlue, RampSubgradientColorRedSteps, RampSubgradientColorGreenSteps, RampSubgradientColorBlueSteps);
 
                     // Check the values to make sure we don't go below zero
                     if (RampSubgradientCurrentColorRed < 0)
                     {
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "RampSubgradientCurrentColorRed is less than 0! Setting...");
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "RampSubgradientCurrentColorRed is less than 0! Setting...");
                         RampSubgradientCurrentColorRed = 0;
                     }
                     if (RampSubgradientCurrentColorGreen < 0)
                     {
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "RampSubgradientCurrentColorGreen is less than 0! Setting...");
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "RampSubgradientCurrentColorGreen is less than 0! Setting...");
                         RampSubgradientCurrentColorGreen = 0;
                     }
                     if (RampSubgradientCurrentColorBlue < 0)
                     {
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "RampSubgradientCurrentColorBlue is less than 0! Setting...");
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "RampSubgradientCurrentColorBlue is less than 0! Setting...");
                         RampSubgradientCurrentColorBlue = 0;
                     }
                     RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
@@ -409,24 +409,24 @@ namespace KS.Misc.Screensaver.Displays
                 // Check the values to make sure we don't go below zero
                 if (RampCurrentColorRed < 0)
                 {
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "RampCurrentColorRed is less than 0! Setting...");
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "RampCurrentColorRed is less than 0! Setting...");
                     RampCurrentColorRed = 0;
                 }
                 if (RampCurrentColorGreen < 0)
                 {
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "RampCurrentColorGreen is less than 0! Setting...");
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "RampCurrentColorGreen is less than 0! Setting...");
                     RampCurrentColorGreen = 0;
                 }
                 if (RampCurrentColorBlue < 0)
                 {
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "RampCurrentColorBlue is less than 0! Setting...");
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "RampCurrentColorBlue is less than 0! Setting...");
                     RampCurrentColorBlue = 0;
                 }
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
 
                 // Delay writing
                 RampCurrentPositionLeft = 0;
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current left position: {0}", RampCurrentPositionLeft);
                 ThreadManager.SleepNoBlock(GradientRotSettings.GradientRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 

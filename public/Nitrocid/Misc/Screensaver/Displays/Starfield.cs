@@ -111,7 +111,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             else
             {
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Clearing...");
                 Stars.Clear();
             }
 

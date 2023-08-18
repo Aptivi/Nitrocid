@@ -137,8 +137,8 @@ namespace KS.Kernel.Starting
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded top right date.");
 
             // Start screensaver timeout
-            if (!Screensaver.Timeout.IsAlive)
-                Screensaver.Timeout.Start();
+            if (!ScreensaverManager.Timeout.IsAlive)
+                ScreensaverManager.Timeout.Start();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded screensaver timeout.");
 
             // Initialize events and reminders

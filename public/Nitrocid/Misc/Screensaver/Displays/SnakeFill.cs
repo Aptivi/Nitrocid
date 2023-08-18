@@ -204,21 +204,21 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumRedColorLevel, SnakeFillSettings.SnakeFillMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumGreenColorLevel, SnakeFillSettings.SnakeFillMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumBlueColorLevel, SnakeFillSettings.SnakeFillMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                     KernelColorTools.SetConsoleColor(new Color($"{RedColorNum};{GreenColorNum};{BlueColorNum}"), true, true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(SnakeFillSettings.SnakeFillMinimumColorLevel, SnakeFillSettings.SnakeFillMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                     KernelColorTools.SetConsoleColor(new Color(ColorNum), true, true);
             }
 
             // Set max height
             int MaxWindowHeight = ConsoleWrapper.WindowHeight - 1;
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Max height {0}", MaxWindowHeight);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Max height {0}", MaxWindowHeight);
 
             // Fill the screen!
             bool reverseHeightAxis = false;

@@ -16,10 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Misc.Screensaver;
 using KS.Misc.Screensaver.Customized;
 using NUnit.Framework;
 using Shouldly;
-using Saver = KS.Misc.Screensaver.Screensaver;
 
 namespace KSTests.Misc.Screensaver
 {
@@ -35,9 +35,9 @@ namespace KSTests.Misc.Screensaver
         [Description("Setting")]
         public void TestRegisterCustomSaver()
         {
-            Saver.IsScreensaverRegistered("CustomSaver").ShouldBeFalse();
+            ScreensaverManager.IsScreensaverRegistered("CustomSaver").ShouldBeFalse();
             CustomSaverTools.RegisterCustomScreensaver("CustomSaver", new CustomSaverTest());
-            Saver.IsScreensaverRegistered("CustomSaver").ShouldBeTrue();
+            ScreensaverManager.IsScreensaverRegistered("CustomSaver").ShouldBeTrue();
         }
 
         /// <summary>
@@ -47,9 +47,9 @@ namespace KSTests.Misc.Screensaver
         [Description("Setting")]
         public void TestUnregisterCustomSaver()
         {
-            Saver.IsScreensaverRegistered("CustomSaver").ShouldBeTrue();
+            ScreensaverManager.IsScreensaverRegistered("CustomSaver").ShouldBeTrue();
             CustomSaverTools.UnregisterCustomScreensaver("CustomSaver");
-            Saver.IsScreensaverRegistered("CustomSaver").ShouldBeFalse();
+            ScreensaverManager.IsScreensaverRegistered("CustomSaver").ShouldBeFalse();
         }
 
     }

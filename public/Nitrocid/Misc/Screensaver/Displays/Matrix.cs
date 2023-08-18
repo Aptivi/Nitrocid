@@ -130,13 +130,13 @@ namespace KS.Misc.Screensaver.Displays
                 double ThresholdRed = foreground.R / (double)MatrixSettings.MatrixMaxSteps;
                 double ThresholdGreen = foreground.G / (double)MatrixSettings.MatrixMaxSteps;
                 double ThresholdBlue = foreground.B / (double)MatrixSettings.MatrixMaxSteps;
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0})", ThresholdRed, ThresholdGreen, ThresholdBlue);
 
                 // Set color fade steps
                 int CurrentColorRedOut = (int)Math.Round(foreground.R - ThresholdRed * StepNum);
                 int CurrentColorGreenOut = (int)Math.Round(foreground.G - ThresholdGreen * StepNum);
                 int CurrentColorBlueOut = (int)Math.Round(foreground.B - ThresholdBlue * StepNum);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
 
                 // Get the positions and write the block with new color
                 var CurrentFadeColor = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);

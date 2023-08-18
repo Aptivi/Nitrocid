@@ -37,7 +37,7 @@ namespace KS.Kernel.Power
     {
 
         internal static Stopwatch Uptime = new();
-        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManager.PowerManage((PowerMode)arg)) { isCritical = true };
+        internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManage((PowerMode)arg)) { isCritical = true };
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power

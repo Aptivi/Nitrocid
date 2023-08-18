@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// Sets your default screensaver as your own screensaver or built-in savers
     /// </summary>
     /// <remarks>
-    /// You can set your default screensaver as your own screensaver by the modfile or built-in savers such as matrix, disco, colorMix, and so on, whose names found in <see cref="Screensaver.Screensavers"/> can be used as the argument for this command.
+    /// You can set your default screensaver as your own screensaver by the modfile or built-in savers such as matrix, disco, colorMix, and so on, whose names found in <see cref="ScreensaverManager.Screensavers"/> can be used as the argument for this command.
     /// <br></br>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
@@ -43,14 +43,14 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             string modPath = Paths.GetKernelPath(KernelPathType.Mods);
             StringArgs = StringArgs.ToLower();
-            if (Screensaver.Screensavers.ContainsKey(StringArgs) | CustomSaverTools.CustomSavers.ContainsKey(StringArgs))
+            if (ScreensaverManager.Screensavers.ContainsKey(StringArgs) | CustomSaverTools.CustomSavers.ContainsKey(StringArgs))
             {
-                Screensaver.SetDefaultScreensaver(StringArgs);
+                ScreensaverManager.SetDefaultScreensaver(StringArgs);
                 TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), StringArgs);
             }
             else if (Checking.FileExists($"{modPath}{StringArgs}") & !Flags.SafeMode)
             {
-                Screensaver.SetDefaultScreensaver(StringArgs);
+                ScreensaverManager.SetDefaultScreensaver(StringArgs);
                 TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), StringArgs);
             }
             else
@@ -65,7 +65,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 TextWriterColor.Write(Translate.DoTranslation("where customsaver will be") + " {0}", string.Join(", ", CustomSaverTools.CustomSavers.Keys));
             }
-            TextWriterColor.Write(Translate.DoTranslation("where builtinsaver will be") + " {0}", string.Join(", ", Screensaver.Screensavers.Keys));
+            TextWriterColor.Write(Translate.DoTranslation("where builtinsaver will be") + " {0}", string.Join(", ", ScreensaverManager.Screensavers.Keys));
         }
 
     }

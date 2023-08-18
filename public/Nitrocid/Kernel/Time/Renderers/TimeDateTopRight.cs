@@ -45,7 +45,7 @@ namespace KS.Kernel.Time.Renderers
                 int oldWid = default, oldTop = default;
                 while (Flags.CornerTimeDate)
                 {
-                    if (!Screensaver.InSaver)
+                    if (!ScreensaverManager.InSaver)
                     {
                         string TimeString = $"{TimeDateRenderers.RenderDate()} - {TimeDateRenderers.RenderTime()}";
                         oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;

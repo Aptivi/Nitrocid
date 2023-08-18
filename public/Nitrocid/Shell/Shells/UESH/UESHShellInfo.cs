@@ -234,7 +234,7 @@ namespace KS.Shell.Shells.UESH
             { "savecurrdir", new CommandInfo("savecurrdir", ShellType, /* Localizable */ "Saves the current directory to kernel configuration file",
                 new CommandArgumentInfo(), new SaveCurrDirCommand(), CommandFlags.Strict) },
             { "savescreen", new CommandInfo("savescreen", ShellType, /* Localizable */ "Saves your screen from burn outs",
-                new CommandArgumentInfo(new[] { "saver" }, Array.Empty<SwitchInfo>(), false, 0, (startFrom, _, _) => Screensaver.Screensavers.Keys.Where((src) => src.StartsWith(startFrom)).ToArray()), new SaveScreenCommand()) },
+                new CommandArgumentInfo(new[] { "saver" }, Array.Empty<SwitchInfo>(), false, 0, (startFrom, _, _) => ScreensaverManager.Screensavers.Keys.Where((src) => src.StartsWith(startFrom)).ToArray()), new SaveScreenCommand()) },
             { "search", new CommandInfo("search", ShellType, /* Localizable */ "Searches for specified string in the provided file using regular expressions",
                 new CommandArgumentInfo(new[] { "Regexp", "File" }, Array.Empty<SwitchInfo>(), true, 2), new SearchCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable) },
             { "searchword", new CommandInfo("searchword", ShellType, /* Localizable */ "Searches for specified string in the provided file",

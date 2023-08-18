@@ -245,7 +245,7 @@ namespace KS.Misc.Screensaver.Displays
             int RedColorNum = RandomDriver.Random(MesmerizeSettings.MesmerizeMinimumRedColorLevel, MesmerizeSettings.MesmerizeMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(MesmerizeSettings.MesmerizeMinimumGreenColorLevel, MesmerizeSettings.MesmerizeMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(MesmerizeSettings.MesmerizeMinimumBlueColorLevel, MesmerizeSettings.MesmerizeMaximumBlueColorLevel);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             dotColor = new Color(RedColorNum, GreenColorNum, BlueColorNum);
 
             // Assign shades of color
@@ -255,7 +255,7 @@ namespace KS.Misc.Screensaver.Displays
                 int finalR = (int)(dotColor.R * ((maxPositions - i - 1) / (double)(maxPositions - 1)));
                 int finalG = (int)(dotColor.G * ((maxPositions - i - 1) / (double)(maxPositions - 1)));
                 int finalB = (int)(dotColor.B * ((maxPositions - i - 1) / (double)(maxPositions - 1)));
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", finalR, finalG, finalB);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", finalR, finalG, finalB);
                 Color colorShade = new(finalR, finalG, finalB);
                 dotColorShades.Add(colorShade);
             }
@@ -355,7 +355,7 @@ namespace KS.Misc.Screensaver.Displays
             else
             {
                 // Someone have resized the terminal window during screensaver display.
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Re-initializing...");
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.W, "Resize-syncing. Re-initializing...");
                 ScreensaverPreparation();
             }
 

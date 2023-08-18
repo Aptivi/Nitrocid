@@ -246,7 +246,7 @@ namespace KS.Misc.Screensaver.Displays
             int RedColorNum = RandomDriver.Random(WaveSettings.WaveMinimumRedColorLevel, WaveSettings.WaveMaximumRedColorLevel);
             int GreenColorNum = RandomDriver.Random(WaveSettings.WaveMinimumGreenColorLevel, WaveSettings.WaveMaximumGreenColorLevel);
             int BlueColorNum = RandomDriver.Random(WaveSettings.WaveMinimumBlueColorLevel, WaveSettings.WaveMaximumBlueColorLevel);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
             var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             for (int i = 0; i < Count; i++)
             {

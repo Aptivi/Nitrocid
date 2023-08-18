@@ -45,7 +45,7 @@ namespace KS.Misc.Screensaver
     /// <summary>
     /// Screensaver management module
     /// </summary>
-    public static class Screensaver
+    public static class ScreensaverManager
     {
 
         // Private variables

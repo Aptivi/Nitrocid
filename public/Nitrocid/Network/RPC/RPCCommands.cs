@@ -233,8 +233,8 @@ namespace KS.Network.RPC
         private static void HandleSaveScr()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Save screen confirmed from remote access.");
-            Screensaver.ShowSavers();
-            while (Screensaver.inSaver)
+            ScreensaverManager.ShowSavers();
+            while (ScreensaverManager.inSaver)
                 Thread.Sleep(1);
         }
 

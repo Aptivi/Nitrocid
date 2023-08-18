@@ -158,7 +158,7 @@ namespace KS.Users.Login
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                         if (!Flags.Maintenance)
-                            if (!Screensaver.LockMode)
+                            if (!ScreensaverManager.LockMode)
                                 return false;
                     }
                 }
@@ -181,11 +181,11 @@ namespace KS.Users.Login
         internal static void SignIn(string signedInUser)
         {
             // Release lock
-            if (Screensaver.LockMode)
+            if (ScreensaverManager.LockMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Releasing lock and getting back to shell...");
-                Screensaver.LockMode = false;
-                EventsManager.FireEvent(EventType.PostUnlock, Screensaver.DefaultSaverName);
+                ScreensaverManager.LockMode = false;
+                EventsManager.FireEvent(EventType.PostUnlock, ScreensaverManager.DefaultSaverName);
                 return;
             }
 

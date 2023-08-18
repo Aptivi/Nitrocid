@@ -37,7 +37,7 @@ namespace KS.Misc.Screensaver.Customized
         /// <param name="screensaver">Base screensaver containing custom screensaver</param>
         public static void RegisterCustomScreensaver(string name, BaseScreensaver screensaver)
         {
-            if (Screensaver.IsScreensaverRegistered(name))
+            if (ScreensaverManager.IsScreensaverRegistered(name))
                 throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Custom screensaver already exists."));
 
             // Add a custom screensaver to the list of available screensavers.
@@ -50,7 +50,7 @@ namespace KS.Misc.Screensaver.Customized
         /// <param name="name">Screensaver name to unregister</param>
         public static void UnregisterCustomScreensaver(string name)
         {
-            if (!Screensaver.IsScreensaverRegistered(name))
+            if (!ScreensaverManager.IsScreensaverRegistered(name))
                 throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Custom screensaver not found."));
 
             // Remove a custom screensaver from the list of available screensavers.

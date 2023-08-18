@@ -52,35 +52,35 @@ namespace KS.Misc.Screensaver.Displays
                 // Get the required positions for the four boxes
                 int UpperLeftBoxEndX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - 1d);
                 int UpperLeftBoxStartX = (int)Math.Round(UpperLeftBoxEndX / 2d);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Upper left box X position {0} -> {1}", UpperLeftBoxStartX, UpperLeftBoxEndX);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Upper left box X position {0} -> {1}", UpperLeftBoxStartX, UpperLeftBoxEndX);
 
                 int UpperLeftBoxStartY = 2;
                 int UpperLeftBoxEndY = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d - 1d);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Upper left box Y position {0} -> {1}", UpperLeftBoxStartY, UpperLeftBoxEndY);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Upper left box Y position {0} -> {1}", UpperLeftBoxStartY, UpperLeftBoxEndY);
 
                 int LowerLeftBoxEndX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - 1d);
                 int LowerLeftBoxStartX = (int)Math.Round(LowerLeftBoxEndX / 2d);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX);
 
                 int LowerLeftBoxStartY = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d + 1d);
                 int LowerLeftBoxEndY = ConsoleWrapper.WindowHeight - 2;
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Lower left box X position {0} -> {1}", LowerLeftBoxStartX, LowerLeftBoxEndX);
 
                 int UpperRightBoxStartX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + 2d);
                 int UpperRightBoxEndX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + UpperRightBoxStartX / 2d);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX);
 
                 int UpperRightBoxStartY = 2;
                 int UpperRightBoxEndY = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d - 1d);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Upper right box X position {0} -> {1}", UpperRightBoxStartX, UpperRightBoxEndX);
 
                 int LowerRightBoxStartX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + 2d);
                 int LowerRightBoxEndX = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d + LowerRightBoxStartX / 2d);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX);
 
                 int LowerRightBoxStartY = (int)Math.Round(ConsoleWrapper.WindowHeight / 2d + 1d);
                 int LowerRightBoxEndY = ConsoleWrapper.WindowHeight - 2;
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Lower right box X position {0} -> {1}", LowerRightBoxStartX, LowerRightBoxEndX);
 
                 // Draw the Windows 11 logo
                 if (!Drawn)
@@ -103,7 +103,7 @@ namespace KS.Misc.Screensaver.Displays
 
                     // Set drawn
                     Drawn = true;
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Drawn!");
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Drawn!");
                 }
             }
             if (Drawn)

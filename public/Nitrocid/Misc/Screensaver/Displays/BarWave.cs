@@ -258,7 +258,7 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Random(BarWaveSettings.BarWaveMinimumRedColorLevel, BarWaveSettings.BarWaveMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(BarWaveSettings.BarWaveMinimumGreenColorLevel, BarWaveSettings.BarWaveMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(BarWaveSettings.BarWaveMinimumBlueColorLevel, BarWaveSettings.BarWaveMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                     ProgressBarVerticalColor.WriteVerticalProgress(Pos, ThisBarLeft, 1, 4, ColorStorage);

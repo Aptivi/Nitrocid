@@ -36,10 +36,10 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             if (!(ListArgsOnly.Length == 0))
-                Screensaver.ShowSavers(ListArgsOnly[0]);
+                ScreensaverManager.ShowSavers(ListArgsOnly[0]);
             else
-                Screensaver.ShowSavers();
-            if (Screensaver.inSaver)
+                ScreensaverManager.ShowSavers();
+            if (ScreensaverManager.inSaver)
             {
                 Input.DetectKeypress();
                 ScreensaverDisplayer.BailFromScreensaver();
@@ -49,7 +49,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("Available screensavers:"));
-            ListWriterColor.WriteList(Screensaver.Screensavers.Keys);
+            ListWriterColor.WriteList(ScreensaverManager.Screensavers.Keys);
         }
 
     }

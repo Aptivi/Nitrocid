@@ -16,9 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Misc.Screensaver;
 using NUnit.Framework;
 using Shouldly;
-using Saver = KS.Misc.Screensaver.Screensaver;
 
 namespace KSTests.Misc.Screensaver
 {
@@ -34,8 +34,8 @@ namespace KSTests.Misc.Screensaver
         [Description("Setting")]
         public void TestSetDefaultScreensaver()
         {
-            Saver.SetDefaultScreensaver("matrix");
-            Saver.DefaultSaverName.ShouldBe("matrix");
+            ScreensaverManager.SetDefaultScreensaver("matrix");
+            ScreensaverManager.DefaultSaverName.ShouldBe("matrix");
         }
 
         /// <summary>
@@ -45,7 +45,7 @@ namespace KSTests.Misc.Screensaver
         [Description("Setting")]
         public void TestGetScreensaverNames()
         {
-            var names = Saver.GetScreensaverNames();
+            var names = ScreensaverManager.GetScreensaverNames();
             names.ShouldNotBeNull();
             names.ShouldNotBeEmpty();
             names.ShouldContain("matrix");

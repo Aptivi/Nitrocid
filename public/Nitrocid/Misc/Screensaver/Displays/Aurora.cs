@@ -83,7 +83,7 @@ namespace KS.Misc.Screensaver.Displays
             int RedColorNumTo = Math.Abs(RedCurrentLevels[redPosIdx]);
             int GreenColorNumTo = Math.Abs(GreenCurrentLevels[greenPosIdx]);
             int BlueColorNumTo = Math.Abs(BlueCurrentLevels[bluePosIdx]);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "R: {0} [{1}], G: {2} [{3}], B: {4} [{5}]", RedColorNumTo, redPosIdx, GreenColorNumTo, greenPosIdx, BlueColorNumTo, bluePosIdx);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "R: {0} [{1}], G: {2} [{3}], B: {4} [{5}]", RedColorNumTo, redPosIdx, GreenColorNumTo, greenPosIdx, BlueColorNumTo, bluePosIdx);
 
             // Advance the indexes
             redPosIdx++;
@@ -95,7 +95,7 @@ namespace KS.Misc.Screensaver.Displays
             bluePosIdx++;
             if (bluePosIdx >= BlueCurrentLevels.Length)
                 bluePosIdx = 0;
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Indexes advanced to {0}, {1}, {2}", redPosIdx, greenPosIdx, bluePosIdx);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Indexes advanced to {0}, {1}, {2}", redPosIdx, greenPosIdx, bluePosIdx);
 
             // Prepare the color bands
             (int, int, int)[] ColorBands = GetColorBands(RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
@@ -106,7 +106,7 @@ namespace KS.Misc.Screensaver.Displays
                 int red = colorBand.Item1;
                 int green = colorBand.Item2;
                 int blue = colorBand.Item3;
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}, {2}", red, green, blue);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}, {2}", red, green, blue);
                 Color storage = new(red, green, blue);
                 if (!ConsoleResizeListener.WasResized(false))
                     TextWriterColor.Write(Convert.ToString(CharManager.GetEsc()) + "[0K", true, Color.Empty, storage);

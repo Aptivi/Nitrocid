@@ -27,6 +27,7 @@ using KS.ConsoleBase;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
+using KS.Misc.Screensaver;
 
 namespace KS.Misc.Games
 {
@@ -106,7 +107,7 @@ namespace KS.Misc.Games
 
                     // Select command based on key value
                     HandleKeypress(Keypress);
-                    ThreadManager.SleepNoBlock(100, Screensaver.ScreensaverDisplayer.ScreensaverDisplayerThread);
+                    ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
                 }
             }
 

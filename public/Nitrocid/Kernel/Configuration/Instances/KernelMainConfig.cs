@@ -1065,16 +1065,16 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public string DefaultSaverName
         {
-            get => Screensaver.defSaverName;
-            set => Screensaver.defSaverName = Screensaver.Screensavers.ContainsKey(value) ? value : "plain";
+            get => ScreensaverManager.defSaverName;
+            set => ScreensaverManager.defSaverName = ScreensaverManager.Screensavers.ContainsKey(value) ? value : "plain";
         }
         /// <summary>
         /// Write when to launch screensaver after specified milliseconds. It must be numeric
         /// </summary>
         public int ScreenTimeout
         {
-            get => Screensaver.scrnTimeout;
-            set => Screensaver.scrnTimeout = value < 0 ? 300000 : value;
+            get => ScreensaverManager.scrnTimeout;
+            set => ScreensaverManager.scrnTimeout = value < 0 ? 300000 : value;
         }
         /// <summary>
         /// Enables debugging for screensavers. Please note that it may quickly fill the debug log and slightly slow the screensaver down, depending on the screensaver used. Only works if kernel debugging is enabled for diagnostic purposes.

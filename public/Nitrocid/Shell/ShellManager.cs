@@ -223,9 +223,9 @@ namespace KS.Shell
                 // If we are on the shell suppress lock mode, we need to read a key to ensure that ENTER or any key that causes strcommand to return
                 // doesn't cause the shell prompt to be written twice. For example, when getting out of the lock screen by pressing ENTER when lockscreen
                 // is invoked, we need to make sure that we don't write the shell prompt twice.
-                if (Screensaver.ShellSuppressLockMode)
+                if (ScreensaverManager.ShellSuppressLockMode)
                 {
-                    Screensaver.ShellSuppressLockMode = false;
+                    ScreensaverManager.ShellSuppressLockMode = false;
                     if (ConsoleWrapper.KeyAvailable)
                         ConsoleWrapper.ReadKey(true);
                     continue;

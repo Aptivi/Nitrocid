@@ -310,8 +310,8 @@ namespace KS.Misc.Settings
                     {
                         // Preview screensaver
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested screensaver preview.");
-                        Screensaver.Screensaver.ShowSavers(Section);
-                        if (Screensaver.Screensaver.inSaver)
+                        ScreensaverManager.ShowSavers(Section);
+                        if (ScreensaverManager.inSaver)
                         {
                             Input.DetectKeypress();
                             ScreensaverDisplayer.BailFromScreensaver();

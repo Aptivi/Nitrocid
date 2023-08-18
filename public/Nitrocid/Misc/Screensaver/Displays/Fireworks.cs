@@ -250,17 +250,17 @@ namespace KS.Misc.Screensaver.Displays
             int IgnitePositionX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int IgnitePositionY = RandomDriver.Random(HalfHeight, (int)Math.Round(HalfHeight * 1.5d));
             LaunchPositionX.SwapIfSourceLarger(ref IgnitePositionX);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Launch position {0}, {1}", LaunchPositionX, LaunchPositionY);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Ignite position {0}, {1}", IgnitePositionX, IgnitePositionY);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Launch position {0}, {1}", LaunchPositionX, LaunchPositionY);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Ignite position {0}, {1}", IgnitePositionX, IgnitePositionY);
 
             // Thresholds
             int FireworkThresholdX = IgnitePositionX - LaunchPositionX;
             int FireworkThresholdY = Math.Abs(IgnitePositionY - LaunchPositionY);
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Position thresholds (X: {0}, Y: {1})", FireworkThresholdX, FireworkThresholdY);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Position thresholds (X: {0}, Y: {1})", FireworkThresholdX, FireworkThresholdY);
             double FireworkStepsX = FireworkThresholdX / (double)FireworkThresholdY;
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "{0} steps", FireworkStepsX);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "{0} steps", FireworkStepsX);
             int FireworkRadius = FireworksSettings.FireworksRadius >= 0 & FireworksSettings.FireworksRadius <= 10 ? FireworksSettings.FireworksRadius : 5;
-            DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Radius: {0} blocks", FireworkRadius);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Radius: {0} blocks", FireworkRadius);
             Color IgniteColor;
 
             // Select a color
@@ -270,13 +270,13 @@ namespace KS.Misc.Screensaver.Displays
                 int RedColorNum = RandomDriver.Random(FireworksSettings.FireworksMinimumRedColorLevel, FireworksSettings.FireworksMaximumRedColorLevel);
                 int GreenColorNum = RandomDriver.Random(FireworksSettings.FireworksMinimumGreenColorLevel, FireworksSettings.FireworksMaximumGreenColorLevel);
                 int BlueColorNum = RandomDriver.Random(FireworksSettings.FireworksMinimumBlueColorLevel, FireworksSettings.FireworksMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 IgniteColor = new Color(RedColorNum, GreenColorNum, BlueColorNum);
             }
             else
             {
                 int color = RandomDriver.Random(FireworksSettings.FireworksMinimumColorLevel, FireworksSettings.FireworksMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", color);
                 IgniteColor = new Color(color);
             }
 
@@ -289,7 +289,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     if (ConsoleResizeListener.WasResized(false))
                         break;
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Current position: {0}, {1}", CurrentX, CurrentY);
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Current position: {0}, {1}", CurrentX, CurrentY);
                     ConsoleWrapper.SetCursorPosition((int)Math.Round(CurrentX), CurrentY);
                     ConsoleWrapper.Write(" ");
 
@@ -318,34 +318,34 @@ namespace KS.Misc.Screensaver.Displays
                     int LowerParticleY = IgnitePositionY - 1 - Radius;
                     int LeftParticleX = IgnitePositionX - 1 - Radius * 2;
                     int RightParticleX = IgnitePositionX + 1 + Radius * 2;
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Upper particle position: {0}", UpperParticleY);
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Lower particle position: {0}", LowerParticleY);
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Left particle position: {0}", LeftParticleX);
-                    DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Right particle position: {0}", RightParticleX);
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Upper particle position: {0}", UpperParticleY);
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Lower particle position: {0}", LowerParticleY);
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Left particle position: {0}", LeftParticleX);
+                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Right particle position: {0}", RightParticleX);
 
                     // Draw the explosion
                     KernelColorTools.SetConsoleColor(IgniteColor, true, true);
                     if (UpperParticleY < ConsoleWrapper.WindowHeight)
                     {
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", IgnitePositionX, UpperParticleY);
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", IgnitePositionX, UpperParticleY);
                         ConsoleWrapper.SetCursorPosition(IgnitePositionX, UpperParticleY);
                         ConsoleWrapper.Write(" ");
                     }
                     if (LowerParticleY < ConsoleWrapper.WindowHeight)
                     {
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Making lower particle at {0}, {1}", IgnitePositionX, LowerParticleY);
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Making lower particle at {0}, {1}", IgnitePositionX, LowerParticleY);
                         ConsoleWrapper.SetCursorPosition(IgnitePositionX, LowerParticleY);
                         ConsoleWrapper.Write(" ");
                     }
                     if (LeftParticleX < ConsoleWrapper.WindowWidth)
                     {
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Making left particle at {0}, {1}", LeftParticleX, IgnitePositionY);
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Making left particle at {0}, {1}", LeftParticleX, IgnitePositionY);
                         ConsoleWrapper.SetCursorPosition(LeftParticleX, IgnitePositionY);
                         ConsoleWrapper.Write(" ");
                     }
                     if (RightParticleX < ConsoleWrapper.WindowWidth)
                     {
-                        DebugWriter.WriteDebugConditional(Screensaver.ScreensaverDebug, DebugLevel.I, "Making right particle at {0}, {1}", RightParticleX, IgnitePositionY);
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Making right particle at {0}, {1}", RightParticleX, IgnitePositionY);
                         ConsoleWrapper.SetCursorPosition(RightParticleX, IgnitePositionY);
                         ConsoleWrapper.Write(" ");
                     }

@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using KS.Misc.Animations.BSOD.Simulations;
 using KS.Drivers.RNG;
 using KS.Kernel.Threading;
+using KS.Misc.Screensaver;
 
 namespace KS.Misc.Animations.BSOD
 {
@@ -51,7 +52,7 @@ namespace KS.Misc.Animations.BSOD
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();
-            ThreadManager.SleepNoBlock(Settings.BSODDelay, Screensaver.ScreensaverDisplayer.ScreensaverDisplayerThread);
+            ThreadManager.SleepNoBlock(Settings.BSODDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }
