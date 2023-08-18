@@ -31,7 +31,6 @@ using KS.Languages;
 using KS.Misc.Probers.Placeholder;
 using KS.Misc.Text;
 using KS.Network.Base.Connections;
-using KS.Network.SpeedDial;
 using KS.Shell.Shells.FTP;
 
 namespace KS.Network.FTP

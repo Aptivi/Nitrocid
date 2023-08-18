@@ -16,10 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Text;
 using KS.ConsoleBase;
 using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;

@@ -22,7 +22,6 @@ using KS.Files.Querying;
 using NUnit.Framework;
 using Shouldly;
 using System;
-using System.Diagnostics;
 using System.IO;
 
 namespace KSTests.Files

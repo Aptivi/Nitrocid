@@ -24,7 +24,6 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers.Placeholder;
 using KS.Network.Base.Connections;
-using KS.Network.SpeedDial;
 using KS.Network.SSH;
 using KS.Shell.Shells.SFTP;
 using Renci.SshNet;

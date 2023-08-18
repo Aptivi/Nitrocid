@@ -19,7 +19,6 @@
 using KS.Misc.Interactive;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 
 namespace KSTests.Misc.Interactive.Interactives
 {
