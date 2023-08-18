@@ -24,31 +24,17 @@ using KS.Kernel.Debugging;
 
 namespace KS.Misc.Splash.Splashes
 {
-    class SplashSysvinit : ISplash
+    class SplashSysvinit : BaseSplash, ISplash
     {
 
         // Standalone splash information
-        public string SplashName => "sysvinit";
-
-        private SplashInfo Info => SplashManager.Splashes[SplashName];
-
-        // Property implementations
-        public bool SplashClosing { get; set; }
-
-        public bool SplashDisplaysProgress => Info.DisplaysProgress;
+        public override string SplashName => "sysvinit";
 
         // Private variables
         private bool Beginning = true;
 
         // Actual logic
-        public void Opening()
-        {
-            Beginning = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Display()
+        public override void Display()
         {
             try
             {
@@ -62,13 +48,7 @@ namespace KS.Misc.Splash.Splashes
             }
         }
 
-        public void Closing()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Report(int Progress, string ProgressReport, params object[] Vars)
+        public override void Report(int Progress, string ProgressReport, params object[] Vars)
         {
             if (!Beginning)
                 TextWriterColor.Write(".");
@@ -76,10 +56,10 @@ namespace KS.Misc.Splash.Splashes
             Beginning = false;
         }
 
-        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
             Report(Progress, WarningReport, Vars);
 
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
             Report(Progress, ErrorReport, Vars);
 
     }

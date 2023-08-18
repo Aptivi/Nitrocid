@@ -24,18 +24,11 @@ using KS.Kernel.Debugging;
 
 namespace KS.Misc.Splash.Splashes
 {
-    class SplashSystemd : ISplash
+    class SplashSystemd : BaseSplash, ISplash
     {
 
         // Standalone splash information
-        public string SplashName => "systemd";
-
-        private SplashInfo Info => SplashManager.Splashes[SplashName];
-
-        // Property implementations
-        public bool SplashClosing { get; set; }
-
-        public bool SplashDisplaysProgress => Info.DisplaysProgress;
+        public override string SplashName => "systemd";
 
         // Private variables
         private int IndicatorLeft;
@@ -43,14 +36,7 @@ namespace KS.Misc.Splash.Splashes
         private bool Beginning = true;
 
         // Actual logic
-        public void Opening()
-        {
-            Beginning = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Display()
+        public override void Display()
         {
             try
             {
@@ -66,13 +52,7 @@ namespace KS.Misc.Splash.Splashes
             }
         }
 
-        public void Closing()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Report(int Progress, string ProgressReport, params object[] Vars)
+        public override void Report(int Progress, string ProgressReport, params object[] Vars)
         {
             if (!Beginning)
                 TextWriterWhereColor.WriteWhere("  OK  ", IndicatorLeft, IndicatorTop, true, KernelColorType.Success);
@@ -85,7 +65,7 @@ namespace KS.Misc.Splash.Splashes
             Beginning = false;
         }
 
-        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
+        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
         {
             if (!Beginning)
                 TextWriterWhereColor.WriteWhere(" WARN ", IndicatorLeft, IndicatorTop, true, KernelColorType.Warning);
@@ -98,7 +78,7 @@ namespace KS.Misc.Splash.Splashes
             Beginning = false;
         }
 
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
         {
             if (!Beginning)
                 TextWriterWhereColor.WriteWhere("FAILED", IndicatorLeft, IndicatorTop, true, KernelColorType.Error);

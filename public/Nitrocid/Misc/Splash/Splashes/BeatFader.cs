@@ -16,54 +16,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Threading;
-using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
+using KS.Misc.Animations.BeatFader;
 
 namespace KS.Misc.Splash.Splashes
 {
-    class SplashBeatFader : ISplash
+    class SplashBeatFader : BaseSplash, ISplash
     {
 
         // Standalone splash information
-        public string SplashName => "BeatFader";
-
-        private SplashInfo Info => SplashManager.Splashes[SplashName];
-
-        // Property implementations
-        public bool SplashClosing { get; set; }
-
-        public bool SplashDisplaysProgress => Info.DisplaysProgress;
+        public override string SplashName => "BeatFader";
 
         // BeatFader-specific variables
-        internal Animations.BeatFader.BeatFaderSettings BeatFaderSettingsInstance;
+        internal BeatFaderSettings BeatFaderSettingsInstance;
 
-        public SplashBeatFader() => BeatFaderSettingsInstance = new Animations.BeatFader.BeatFaderSettings()
-        {
-            BeatFaderTrueColor = true,
-            BeatFaderCycleColors = true,
-            BeatFaderBeatColor = "17",
-            BeatFaderDelay = 50,
-            BeatFaderMaxSteps = 30,
-            BeatFaderMinimumRedColorLevel = 0,
-            BeatFaderMinimumGreenColorLevel = 0,
-            BeatFaderMinimumBlueColorLevel = 0,
-            BeatFaderMinimumColorLevel = 0,
-            BeatFaderMaximumRedColorLevel = 255,
-            BeatFaderMaximumGreenColorLevel = 255,
-            BeatFaderMaximumBlueColorLevel = 255,
-            BeatFaderMaximumColorLevel = 255,
-        };
+        public SplashBeatFader() => BeatFaderSettingsInstance = new BeatFaderSettings();
 
         // Actual logic
-        public void Opening()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Display()
+        public override void Display()
         {
             try
             {
@@ -71,26 +42,13 @@ namespace KS.Misc.Splash.Splashes
 
                 // Loop until we got a closing notification
                 while (!SplashClosing)
-                    Animations.BeatFader.BeatFader.Simulate(BeatFaderSettingsInstance);
+                    BeatFader.Simulate(BeatFaderSettingsInstance);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
         }
-
-        public void Closing()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Report(int Progress, string ProgressReport, params object[] Vars) { }
-
-        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) { }
-
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) { }
 
     }
 }

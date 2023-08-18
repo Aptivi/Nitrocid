@@ -27,18 +27,11 @@ using Terminaux.Colors;
 
 namespace KS.Misc.Splash.Splashes
 {
-    class SplashOpenRC : ISplash
+    class SplashOpenRC : BaseSplash, ISplash
     {
 
         // Standalone splash information
-        public string SplashName => "openrc";
-
-        private SplashInfo Info => SplashManager.Splashes[SplashName];
-
-        // Property implementations
-        public bool SplashClosing { get; set; }
-
-        public bool SplashDisplaysProgress => Info.DisplaysProgress;
+        public override string SplashName => "openrc";
 
         // Private variables
         private int IndicatorLeft;
@@ -49,7 +42,7 @@ namespace KS.Misc.Splash.Splashes
         private readonly Color OpenRCPlaceholderColor = new(85, 85, 255);
 
         // Actual logic
-        public void Opening()
+        public override void Opening()
         {
             Beginning = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
@@ -57,7 +50,7 @@ namespace KS.Misc.Splash.Splashes
             TextWriterColor.Write(CharManager.NewLine + $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC {OpenRCVersionColor.VTSequenceForeground}0.13.11 {KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground}is starting up {OpenRCPlaceholderColor.VTSequenceForeground}Nitrocid KS {KernelTools.KernelVersion}" + CharManager.NewLine);
         }
 
-        public void Display()
+        public override void Display()
         {
             try
             {
@@ -73,13 +66,13 @@ namespace KS.Misc.Splash.Splashes
             }
         }
 
-        public void Closing()
+        public override void Closing()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
             ConsoleBase.ConsoleWrapper.Clear();
         }
 
-        public void Report(int Progress, string ProgressReport, params object[] Vars)
+        public override void Report(int Progress, string ProgressReport, params object[] Vars)
         {
             if (!Beginning)
             {
@@ -96,7 +89,7 @@ namespace KS.Misc.Splash.Splashes
             Beginning = false;
         }
 
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
+        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
         {
             if (!Beginning)
             {
@@ -113,7 +106,7 @@ namespace KS.Misc.Splash.Splashes
             Beginning = false;
         }
 
-        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
+        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
         {
             if (!Beginning)
             {

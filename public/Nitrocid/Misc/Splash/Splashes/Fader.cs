@@ -16,78 +16,37 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Threading;
 using KS.Kernel.Debugging;
-using KS.ConsoleBase.Colors;
-using Terminaux.Colors;
+using KS.Misc.Animations.Fader;
 
 namespace KS.Misc.Splash.Splashes
 {
-    class SplashFader : ISplash
+    class SplashFader : BaseSplash, ISplash
     {
 
         // Standalone splash information
-        public string SplashName => "Fader";
-
-        private SplashInfo Info => SplashManager.Splashes[SplashName];
-
-        // Property implementations
-        public bool SplashClosing { get; set; }
-
-        public bool SplashDisplaysProgress => Info.DisplaysProgress;
+        public override string SplashName => "Fader";
 
         // Fader-specific variables
-        internal Animations.Fader.FaderSettings FaderSettingsInstance;
+        internal FaderSettings FaderSettingsInstance;
 
-        public SplashFader() => FaderSettingsInstance = new Animations.Fader.FaderSettings()
-        {
-            FaderDelay = 50,
-            FaderWrite = "Nitrocid KS",
-            FaderBackgroundColor = new Color(ConsoleColors.Black).PlainSequence,
-            FaderFadeOutDelay = 3000,
-            FaderMaxSteps = 30,
-            FaderMinimumRedColorLevel = 0,
-            FaderMinimumGreenColorLevel = 0,
-            FaderMinimumBlueColorLevel = 0,
-            FaderMaximumRedColorLevel = 255,
-            FaderMaximumGreenColorLevel = 255,
-            FaderMaximumBlueColorLevel = 255,
-        };
+        public SplashFader() => FaderSettingsInstance = new FaderSettings();
 
         // Actual logic
-        public void Opening()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Display()
+        public override void Display()
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 while (!SplashClosing)
-                    Animations.Fader.Fader.Simulate(FaderSettingsInstance);
+                    Fader.Simulate(FaderSettingsInstance);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
         }
-
-        public void Closing()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Report(int Progress, string ProgressReport, params object[] Vars) { }
-
-        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) { }
-
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) { }
 
     }
 }

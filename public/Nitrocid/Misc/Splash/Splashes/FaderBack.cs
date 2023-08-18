@@ -16,74 +16,36 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Threading;
-using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
+using KS.Misc.Animations.FaderBack;
 
 namespace KS.Misc.Splash.Splashes
 {
-    class SplashFaderBack : ISplash
+    class SplashFaderBack : BaseSplash, ISplash
     {
 
         // Standalone splash information
-        public string SplashName => "FaderBack";
+        public override string SplashName => "FaderBack";
 
-        private SplashInfo Info => SplashManager.Splashes[SplashName];
+        internal FaderBackSettings FaderBackSettingsInstance;
 
-        // Property implementations
-        public bool SplashClosing { get; set; }
-
-        public bool SplashDisplaysProgress => Info.DisplaysProgress;
-
-        internal Animations.FaderBack.FaderBackSettings FaderBackSettingsInstance;
-
-        public SplashFaderBack() => FaderBackSettingsInstance = new Animations.FaderBack.FaderBackSettings()
-        {
-            FaderBackDelay = 10,
-            FaderBackFadeOutDelay = 3000,
-            FaderBackMaxSteps = 30,
-            FaderBackMinimumRedColorLevel = 0,
-            FaderBackMinimumGreenColorLevel = 0,
-            FaderBackMinimumBlueColorLevel = 0,
-            FaderBackMaximumRedColorLevel = 255,
-            FaderBackMaximumGreenColorLevel = 255,
-            FaderBackMaximumBlueColorLevel = 255,
-        };
+        public SplashFaderBack() => FaderBackSettingsInstance = new FaderBackSettings();
 
         // Actual logic
-        public void Opening()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Display()
+        public override void Display()
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 while (!SplashClosing)
-                    Animations.FaderBack.FaderBack.Simulate(FaderBackSettingsInstance);
+                    FaderBack.Simulate(FaderBackSettingsInstance);
             }
             catch (ThreadInterruptedException)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
         }
-
-        public void Closing()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Report(int Progress, string ProgressReport, params object[] Vars) { }
-
-        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) { }
-
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) { }
 
     }
 }

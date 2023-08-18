@@ -31,39 +31,22 @@ using Terminaux.Colors;
 
 namespace KS.Misc.Splash.Splashes
 {
-    class SplashPowerLineProgress : ISplash
+    class SplashPowerLineProgress : BaseSplash, ISplash
     {
 
         // Standalone splash information
-        public string SplashName => "PowerLineProgress";
-
-        private SplashInfo Info => SplashManager.Splashes[SplashName];
-
-        // Property implementations
-        public bool SplashClosing { get; set; }
-
-        public bool SplashDisplaysProgress => Info.DisplaysProgress;
+        public override string SplashName => "PowerLineProgress";
 
         public int ProgressWritePositionY
         {
             get
             {
-                switch (Config.SplashConfig.PowerLineProgressProgressTextLocation)
+                return Config.SplashConfig.PowerLineProgressProgressTextLocation switch
                 {
-                    case (int)TextLocation.Top:
-                        {
-                            return 1;
-                        }
-                    case (int)TextLocation.Bottom:
-                        {
-                            return ConsoleWrapper.WindowHeight - 6;
-                        }
-
-                    default:
-                        {
-                            return 1;
-                        }
-                }
+                    (int)TextLocation.Top    => 1,
+                    (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 6,
+                    _                        => 1,
+                };
             }
         }
 
@@ -75,13 +58,7 @@ namespace KS.Misc.Splash.Splashes
         private readonly char TransitionChar = Convert.ToChar(0xE0B0);
 
         // Actual logic
-        public void Opening()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ConsoleWrapper.Clear();
-        }
-
-        public void Display()
+        public override void Display()
         {
             try
             {
@@ -100,21 +77,13 @@ namespace KS.Misc.Splash.Splashes
             }
         }
 
-        public void Closing()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
-            KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
-            ConsoleWrapper.Clear();
-        }
-
-        public void Report(int Progress, string ProgressReport, params object[] Vars) => 
+        public override void Report(int Progress, string ProgressReport, params object[] Vars) => 
             UpdateProgressReport(Progress, false, false, ProgressReport, Vars);
 
-        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
             UpdateProgressReport(Progress, false, true, WarningReport, Vars);
 
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
             UpdateProgressReport(Progress, true, false, ErrorReport, Vars);
 
         /// <summary>

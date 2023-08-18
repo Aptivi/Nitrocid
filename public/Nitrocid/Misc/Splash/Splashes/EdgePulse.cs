@@ -16,51 +16,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Threading;
-using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Misc.Animations.EdgePulse;
 
 namespace KS.Misc.Splash.Splashes
 {
-    class SplashEdgePulse : ISplash
+    class SplashEdgePulse : BaseSplash, ISplash
     {
 
         // Standalone splash information
-        public string SplashName => "EdgePulse";
-
-        private SplashInfo Info => SplashManager.Splashes[SplashName];
-
-        // Property implementations
-        public bool SplashClosing { get; set; }
-
-        public bool SplashDisplaysProgress => Info.DisplaysProgress;
+        public override string SplashName => "EdgePulse";
 
         // EdgePulse-specific variables
         internal EdgePulseSettings EdgePulseSettings;
 
-        public SplashEdgePulse() => EdgePulseSettings = new EdgePulseSettings()
-        {
-            EdgePulseDelay = 50,
-            EdgePulseMaxSteps = 30,
-            EdgePulseMinimumRedColorLevel = 0,
-            EdgePulseMinimumGreenColorLevel = 0,
-            EdgePulseMinimumBlueColorLevel = 0,
-            EdgePulseMaximumRedColorLevel = 255,
-            EdgePulseMaximumGreenColorLevel = 255,
-            EdgePulseMaximumBlueColorLevel = 255
-        };
+        public SplashEdgePulse() => EdgePulseSettings = new EdgePulseSettings();
 
         // Actual logic
-        public void Opening()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Display()
+        public override void Display()
         {
             try
             {
@@ -75,19 +49,6 @@ namespace KS.Misc.Splash.Splashes
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash done.");
             }
         }
-
-        public void Closing()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
-            KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
-            ConsoleBase.ConsoleWrapper.Clear();
-        }
-
-        public void Report(int Progress, string ProgressReport, params object[] Vars) { }
-
-        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) { }
-
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) { }
 
     }
 }

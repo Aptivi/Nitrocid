@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Threading;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase;
@@ -30,31 +29,18 @@ using Terminaux.Sequences.Tools;
 
 namespace KS.Misc.Splash.Splashes
 {
-    class SplashWelcome : ISplash
+    class SplashWelcome : BaseSplash, ISplash
     {
 
         // Standalone splash information
-        public string SplashName => "Welcome";
-
-        private SplashInfo Info => SplashManager.Splashes[SplashName];
-
-        // Property implementations
-        public bool SplashClosing { get; set; }
-
-        public bool SplashDisplaysProgress => Info.DisplaysProgress;
+        public override string SplashName => "Welcome";
 
         // Private variables
         readonly Color firstColor = new(ConsoleColors.White);
         readonly Color secondColor = new(ConsoleColors.Cyan);
 
         // Actual logic
-        public void Opening()
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
-            ConsoleWrapper.Clear();
-        }
-
-        public void Display()
+        public override void Display()
         {
             try
             {
@@ -83,7 +69,7 @@ namespace KS.Misc.Splash.Splashes
             }
         }
 
-        public void Closing()
+        public override void Closing()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
@@ -116,12 +102,6 @@ namespace KS.Misc.Splash.Splashes
             // Clear the console
             ConsoleWrapper.Clear();
         }
-
-        public void Report(int Progress, string ProgressReport, params object[] Vars) { }
-
-        public void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) { }
-
-        public void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) { }
 
     }
 }
