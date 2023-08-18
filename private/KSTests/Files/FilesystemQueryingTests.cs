@@ -67,9 +67,9 @@ namespace KSTests.Files
         {
             foreach (KernelPathType PathType in Enum.GetValues(typeof(KernelPathType)))
             {
-                Debug.WriteLine($"Path type: {PathType}");
+                Console.WriteLine($"Path type: {PathType}");
                 string TargetKernelPath = Paths.GetKernelPath(PathType);
-                Debug.WriteLine($"Got path: {TargetKernelPath}");
+                Console.WriteLine($"Got path: {TargetKernelPath}");
                 TargetKernelPath.ShouldNotBeNullOrEmpty();
             }
         }

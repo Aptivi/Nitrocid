@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Diagnostics;
+using System;
 using KS.Network.Base.Connections;
 using KS.Network.SpeedDial;
 using NUnit.Framework;
@@ -45,7 +45,7 @@ namespace KSTests.Network
         public void TestListSpeedDialEntries()
         {
             SpeedDialTools.ListSpeedDialEntries().ShouldNotBeEmpty();
-            Debug.WriteLine(string.Join(" | ", SpeedDialTools.ListSpeedDialEntries().Keys));
+            Console.WriteLine(string.Join(" | ", SpeedDialTools.ListSpeedDialEntries().Keys));
         }
 
     }

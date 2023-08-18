@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Diagnostics;
+using System;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
@@ -37,8 +37,8 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestGetCommandListFromSpecificShell()
         {
             var Commands = CommandManager.GetCommands(ShellType.Shell);
-            Debug.WriteLine(format: "Commands from Shell: {0} commands", Commands.Count);
-            Debug.WriteLine(format: string.Join(", ", Commands));
+            Console.WriteLine(format: "Commands from Shell: {0} commands", Commands.Count);
+            Console.WriteLine(format: string.Join(", ", Commands));
             Commands.ShouldNotBeNull();
             Commands.ShouldNotBeEmpty();
         }
@@ -63,8 +63,8 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestGetCommandListFromAllShells(ShellType type)
         {
             var Commands = CommandManager.GetCommands(type);
-            Debug.WriteLine(format: "Commands from {0}: {1} commands", type.ToString(), Commands.Count);
-            Debug.WriteLine(format: string.Join(", ", Commands));
+            Console.WriteLine(format: "Commands from {0}: {1} commands", type.ToString(), Commands.Count);
+            Console.WriteLine(format: string.Join(", ", Commands));
             Commands.ShouldNotBeNull();
             Commands.ShouldNotBeEmpty();
         }
@@ -89,8 +89,8 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestGetCommandListFromAllShells(string type)
         {
             var Commands = CommandManager.GetCommands(type);
-            Debug.WriteLine(format: "Commands from {0}: {1} commands", type, Commands.Count);
-            Debug.WriteLine(format: string.Join(", ", Commands));
+            Console.WriteLine(format: "Commands from {0}: {1} commands", type, Commands.Count);
+            Console.WriteLine(format: string.Join(", ", Commands));
             Commands.ShouldNotBeNull();
             Commands.ShouldNotBeEmpty();
         }

@@ -20,7 +20,7 @@ using KS.Misc.Presentation;
 using KS.Misc.Presentation.Elements;
 using NUnit.Framework;
 using Shouldly;
-using System.Diagnostics;
+using System;
 
 namespace KSTests.Misc.Presentation
 {
@@ -44,7 +44,7 @@ namespace KSTests.Misc.Presentation
                     new TextElement()
                     {
                         Arguments = new object[] { "Hello, world!" },
-                        InvokeAction = () => Debug.WriteLine("Invoke action")
+                        InvokeAction = () => Console.WriteLine("Invoke action")
                     }
                 }),
                 new PresentationPage("Page two", new()
@@ -52,7 +52,7 @@ namespace KSTests.Misc.Presentation
                     new InputElement()
                     {
                         Arguments = new object[] { "Hello, world!" },
-                        InvokeActionInput = (obj) => Debug.WriteLine(obj.ToString())
+                        InvokeActionInput = (obj) => Console.WriteLine(obj.ToString())
                     }
                 }),
             });

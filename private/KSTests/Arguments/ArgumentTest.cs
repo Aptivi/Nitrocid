@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.ArgumentBase;
-using System.Diagnostics;
+using System;
 
 namespace KSTests.Arguments
 {
@@ -25,10 +25,10 @@ namespace KSTests.Arguments
     {
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            Debug.WriteLine("We're on ArgumentTest with:");
-            Debug.WriteLine(format: "- StringArgs: {0}", StringArgs);
-            Debug.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
-            Debug.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
+            Console.WriteLine("We're on ArgumentTest with:");
+            Console.WriteLine(format: "- StringArgs: {0}", StringArgs);
+            Console.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
+            Console.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
         }
     }
 }

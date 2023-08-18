@@ -27,7 +27,7 @@ namespace KSTests.Misc.Interactive.Interactives
     {
         public override List<InteractiveTuiBinding> Bindings => new()
         {
-            new InteractiveTuiBinding("Test", ConsoleKey.F1, (_, idx) => Debug.WriteLine(idx))
+            new InteractiveTuiBinding("Test", ConsoleKey.F1, (_, idx) => Console.WriteLine(idx))
         };
     }
 }
