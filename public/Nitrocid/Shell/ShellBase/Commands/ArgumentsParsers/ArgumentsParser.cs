@@ -61,6 +61,7 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
 
             // Split the requested command string into words
             var words = CommandText.SplitEncloseDoubleQuotes();
+            string arguments = string.Join(' ', words.Skip(1));
             for (int i = 0; i <= words.Length - 1; i++)
                 DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
             Command = words[0];
@@ -71,7 +72,10 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
                               ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
                               aliases.Any((kvp) => kvp.Key.Equals(Command)) ? ShellCommands[aliases.Single((kvp) => kvp.Key.Equals(Command)).Value] :
                               null;
-            return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
+            if (CommandInfo != null)
+                return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
+            else
+                return new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>());
         }
 
         /// <summary>
@@ -86,13 +90,17 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
 
             // Split the requested argument string into words
             var words = ArgumentText.SplitEncloseDoubleQuotes();
+            string arguments = string.Join(' ', words.Skip(1));
             for (int i = 0; i <= words.Length - 1; i++)
                 DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
             Argument = words[0];
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
             var ArgumentInfo = KernelArguments.ContainsKey(Argument) ? KernelArguments[Argument] : null;
-            return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
+            if (ArgumentInfo != null)
+                return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
+            else
+                return new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>());
         }
 
         private static ProvidedArgumentsInfo ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo, ArgumentInfo ArgumentInfo)

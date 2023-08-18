@@ -298,6 +298,7 @@ namespace KS.Shell
                     // Get the command name
                     var words = Command.SplitEncloseDoubleQuotes();
                     string commandName = words[0].ReleaseDoubleQuotes();
+                    string arguments = string.Join(' ', words.Skip(1));
                     TargetFile = DriverHandler.CurrentRegexpDriverLocal.Unescape(commandName);
                     bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
                     bool pathValid = Parsing.TryParsePath(TargetFile);
@@ -307,9 +308,6 @@ namespace KS.Shell
                         TargetFileName = Path.GetFileName(TargetFile);
                     DebugWriter.WriteDebug(DebugLevel.I, "Finished finalCommand: {0}", commandName);
                     DebugWriter.WriteDebug(DebugLevel.I, "Finished TargetFile: {0}", TargetFile);
-
-                    // Get arguments
-                    var commandArguments = ArgumentsParser.ParseShellCommandArguments(Command, ShellType);
 
                     // Reads command written by user
                     try
@@ -430,7 +428,7 @@ namespace KS.Shell
                                     CancellationHandlers.canCancel = true;
                                     PermissionsTools.Demand(PermissionTypes.ExecuteScripts);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", commandName);
-                                    UESHParse.Execute(TargetFile, commandArguments.ArgumentsText);
+                                    UESHParse.Execute(TargetFile, arguments);
                                     UESHVariables.SetVariable("UESHErrorCode", "0");
                                 }
                                 catch (Exception ex)
