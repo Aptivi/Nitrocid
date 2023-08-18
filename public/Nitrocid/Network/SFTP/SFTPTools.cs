@@ -25,6 +25,7 @@ using KS.Languages;
 using KS.Misc.Probers.Placeholder;
 using KS.Network.Base.Connections;
 using KS.Network.SpeedDial;
+using KS.Network.SSH;
 using KS.Shell.Shells.SFTP;
 using Renci.SshNet;
 
@@ -74,7 +75,7 @@ namespace KS.Network.SFTP
                 }
 
                 // Check to see if we're aborting or not
-                var client = new SftpClient(SSH.SSH.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser));
+                var client = new SftpClient(SSHTools.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser));
 
                 // Connect to SFTP
                 return ConnectSFTP(client);

@@ -40,11 +40,11 @@ namespace KS.Shell.Shells.UESH.Commands
             if (AddressDelimiter.Length > 1)
             {
                 int Port = Convert.ToInt32(AddressDelimiter[1]);
-                SSH.InitializeSSH(Address, Port, ListArgsOnly[1], SSH.ConnectionType.Shell);
+                SSHTools.InitializeSSH(Address, Port, ListArgsOnly[1], SSHTools.ConnectionType.Shell);
             }
             else
             {
-                SSH.InitializeSSH(Address, 22, ListArgsOnly[1], SSH.ConnectionType.Shell);
+                SSHTools.InitializeSSH(Address, 22, ListArgsOnly[1], SSHTools.ConnectionType.Shell);
             }
         }
 
