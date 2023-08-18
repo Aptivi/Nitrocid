@@ -37,7 +37,6 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Screensaver;
-using KS.Misc.Screensaver.Customized;
 using KS.Misc.Text;
 using KS.Shell.Prompts;
 using KS.Users.Permissions;

@@ -17,15 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Editors.SqlEdit;
-using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
-using Microsoft.Data.Sqlite;
-using System;
-using System.Collections.Generic;
 
 namespace KS.Shell.Shells.Sql.Commands
 {

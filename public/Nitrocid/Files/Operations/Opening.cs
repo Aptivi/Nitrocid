@@ -18,7 +18,6 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;

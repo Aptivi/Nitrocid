@@ -20,7 +20,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Time.Renderers;
 using KS.Shell.ShellBase.Commands;
 using System.Linq;
-using System.Text;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

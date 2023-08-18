@@ -28,7 +28,6 @@ using KS.Kernel.Exceptions;
 using KS.Kernel.Updates;
 using KS.Languages;
 using KS.Misc.Notifications;
-using KS.Misc.Probers.Motd;
 using KS.Misc.Reflection;
 using KS.Misc.Splash;
 using KS.Modifications;

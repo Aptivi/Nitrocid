@@ -19,7 +19,6 @@
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
-using Org.BouncyCastle.Asn1.X509;
 using Shouldly;
 
 namespace KSTests.Shell.ShellBase.Aliases

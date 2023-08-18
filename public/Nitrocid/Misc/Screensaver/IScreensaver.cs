@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
-using System.Collections.Generic;
 
 namespace KS.Misc.Screensaver
 {
