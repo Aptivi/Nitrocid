@@ -897,5 +897,6 @@ Turns on verbose messages for pre-boot environment
 - Stage 4: Loading optional kernel components
 - Stage 5: Log in
 Welcome to Nitrocid Kernel
+How many milliseconds to wait before fading the square out?
 
 ==========================================================================================================================================

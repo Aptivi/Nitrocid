@@ -108,6 +108,7 @@ namespace KS.Misc.Screensaver
             { "snaker", new SnakerDisplay() },
             { "spin", new SpinDisplay() },
             { "spotwrite", new SpotWriteDisplay() },
+            { "squarecorner", new SquareCornerDisplay() },
             { "stackbox", new StackBoxDisplay() },
             { "starfield", new StarfieldDisplay() },
             { "typewriter", new TypewriterDisplay() },

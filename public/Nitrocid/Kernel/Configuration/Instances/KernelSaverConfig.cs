@@ -2438,5 +2438,41 @@ namespace KS.Kernel.Configuration.Instances
         /// [WordHasher] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int WordHasherMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [SquareCorner] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int SquareCornerDelay { get; set; } = 10;
+        /// <summary>
+        /// [SquareCorner] How many milliseconds to wait before fading the square out?
+        /// </summary>
+        public int SquareCornerFadeOutDelay { get; set; } = 3000;
+        /// <summary>
+        /// [SquareCorner] How many fade steps to do?
+        /// </summary>
+        public int SquareCornerMaxSteps { get; set; } = 25;
+        /// <summary>
+        /// [SquareCorner] The minimum red color level (true color)
+        /// </summary>
+        public int SquareCornerMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [SquareCorner] The minimum green color level (true color)
+        /// </summary>
+        public int SquareCornerMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [SquareCorner] The minimum blue color level (true color)
+        /// </summary>
+        public int SquareCornerMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [SquareCorner] The maximum red color level (true color)
+        /// </summary>
+        public int SquareCornerMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [SquareCorner] The maximum green color level (true color)
+        /// </summary>
+        public int SquareCornerMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [SquareCorner] The maximum blue color level (true color)
+        /// </summary>
+        public int SquareCornerMaximumBlueColorLevel { get; set; } = 255;
     }
 }

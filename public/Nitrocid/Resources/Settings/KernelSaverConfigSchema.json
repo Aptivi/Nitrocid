@@ -1810,6 +1810,33 @@
         },
         "WordHasherMaximumColorLevel": {
             "type": "integer"
+        },
+        "SquareCornerDelay": {
+            "type": "integer"
+        },
+        "SquareCornerFadeOutDelay": {
+            "type": "integer"
+        },
+        "SquareCornerMaxSteps": {
+            "type": "integer"
+        },
+        "SquareCornerMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "SquareCornerMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "SquareCornerMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "SquareCornerMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "SquareCornerMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "SquareCornerMaximumBlueColorLevel": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2415,6 +2442,15 @@
         "WordHasherMaximumRedColorLevel",
         "WordHasherMaximumGreenColorLevel",
         "WordHasherMaximumBlueColorLevel",
-        "WordHasherMaximumColorLevel"
+        "WordHasherMaximumColorLevel",
+        "SquareCornerDelay",
+        "SquareCornerFadeOutDelay",
+        "SquareCornerMaxSteps",
+        "SquareCornerMinimumRedColorLevel",
+        "SquareCornerMinimumGreenColorLevel",
+        "SquareCornerMinimumBlueColorLevel",
+        "SquareCornerMaximumRedColorLevel",
+        "SquareCornerMaximumGreenColorLevel",
+        "SquareCornerMaximumBlueColorLevel"
     ]
 }
