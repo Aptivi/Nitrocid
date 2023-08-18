@@ -62,8 +62,7 @@ namespace KS.Shell.ShellBase.Aliases
                 AliasType = (string)AliasObject["Type"];
                 DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType);
                 var TargetAliasList = GetAliasesListFromType(AliasType);
-                if (TargetAliasList.ContainsKey(AliasCmd))
-                    TargetAliasList.Remove(AliasCmd);
+                TargetAliasList.Remove(AliasCmd);
                 TargetAliasList.Add(AliasCmd, ActualCmd);
             }
         }

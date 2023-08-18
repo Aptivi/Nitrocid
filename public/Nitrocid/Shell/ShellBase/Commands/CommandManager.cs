@@ -93,8 +93,7 @@ namespace KS.Shell.ShellBase.Commands
             // Unified commands
             foreach (string UnifiedCommand in ShellManager.UnifiedCommandDict.Keys)
             {
-                if (FinalCommands.ContainsKey(UnifiedCommand))
-                    FinalCommands.Remove(UnifiedCommand);
+                FinalCommands.Remove(UnifiedCommand);
                 FinalCommands.Add(UnifiedCommand, ShellManager.UnifiedCommandDict[UnifiedCommand]);
             }
 
