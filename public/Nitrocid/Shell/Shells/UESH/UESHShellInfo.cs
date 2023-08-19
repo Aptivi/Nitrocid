@@ -653,7 +653,10 @@ namespace KS.Shell.Shells.UESH
             { "previewsplash",
                 new CommandInfo("previewsplash", ShellType, /* Localizable */ "Previews the splash",
                     new[] {
-                        new CommandArgumentInfo(new[] { "splashName" }, Array.Empty<SwitchInfo>(), false, 0,(startFrom, _, _) => SplashManager.Splashes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "splashName" }, new[]
+                        {
+                            new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash")
+                        }, false, 0,(startFrom, _, _) => SplashManager.Splashes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new PreviewSplashCommand())
             },
             

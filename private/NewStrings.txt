@@ -899,5 +899,7 @@ Turns on verbose messages for pre-boot environment
 Welcome to Nitrocid Kernel
 How many milliseconds to wait before fading the square out?
 Can't add a speed dial with non-existent type.
+We've reached {0}%!
+Specifies whether to test out the important messages feature on splash
 
 ==========================================================================================================================================

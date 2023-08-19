@@ -49,6 +49,7 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Hardware;
 using KS.Kernel.Starting;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Kernel
 {
@@ -190,6 +191,7 @@ namespace KS.Kernel
                     // Show the closing screen
                     SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
                     SplashManager.CloseSplash();
+                    SplashReport._KernelBooted = true;
                     if (!Flags.EnableSplash)
                         TextWriterColor.Write();
 

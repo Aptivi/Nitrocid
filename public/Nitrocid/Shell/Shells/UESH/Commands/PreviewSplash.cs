@@ -34,10 +34,11 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            bool splashOut = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-splashout");
             if (!(ListArgsOnly.Length == 0))
-                SplashManager.PreviewSplash(ListArgsOnly[0]);
+                SplashManager.PreviewSplash(ListArgsOnly[0], splashOut);
             else
-                SplashManager.PreviewSplash();
+                SplashManager.PreviewSplash(splashOut);
         }
 
         public override void HelpHelper()

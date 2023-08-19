@@ -23,6 +23,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
@@ -31,6 +32,7 @@ using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
+using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Splash.Splashes;
 
@@ -274,7 +276,14 @@ namespace KS.Misc.Splash
         /// Closes the splash screen
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
-        public static void CloseSplash(ISplash splash)
+        public static void CloseSplash(ISplash splash) => CloseSplash(splash, true);
+
+        /// <summary>
+        /// Closes the splash screen
+        /// </summary>
+        /// <param name="splash">Splash interface to use</param>
+        /// <param name="showClosing">Shows the closing animation, or clears the screen</param>
+        internal static void CloseSplash(ISplash splash, bool showClosing)
         {
             if (Flags.EnableSplash)
             {
@@ -286,7 +295,10 @@ namespace KS.Misc.Splash
                 // manifest, which is not good.
                 SplashThread.Wait();
                 SplashThread.Stop();
-                splash.Closing();
+                if (showClosing)
+                    splash.Closing();
+                else
+                    InstalledSplashes["Blank"].EntryPoint.Closing();
                 ConsoleBase.ConsoleWrapper.CursorVisible = true;
 
                 // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
@@ -294,25 +306,49 @@ namespace KS.Misc.Splash
                 splash.SplashClosing = false;
                 SplashReport._InSplash = false;
             }
-            SplashReport._KernelBooted = true;
         }
 
         /// <summary>
         /// Previews the splash by name
         /// </summary>
-        public static void PreviewSplash() => PreviewSplash(CurrentSplash);
+        public static void PreviewSplash() =>
+            PreviewSplash(CurrentSplash, false);
+
+        /// <summary>
+        /// Previews the splash by name
+        /// </summary>
+        /// <param name="splashOut">Whether to test out the important messages on splash.</param>
+        public static void PreviewSplash(bool splashOut) =>
+            PreviewSplash(CurrentSplash, splashOut);
 
         /// <summary>
         /// Previews the splash by name
         /// </summary>
         /// <param name="splashName">Splash name</param>
-        public static void PreviewSplash(string splashName) => PreviewSplash(GetSplashFromName(splashName).EntryPoint);
+        public static void PreviewSplash(string splashName) =>
+            PreviewSplash(GetSplashFromName(splashName).EntryPoint, false);
+
+        /// <summary>
+        /// Previews the splash by name
+        /// </summary>
+        /// <param name="splashName">Splash name</param>
+        /// <param name="splashOut">Whether to test out the important messages on splash.</param>
+        public static void PreviewSplash(string splashName, bool splashOut) =>
+            PreviewSplash(GetSplashFromName(splashName).EntryPoint, splashOut);
 
         /// <summary>
         /// Previews the splash by name
         /// </summary>
         /// <param name="splash">Splash name</param>
-        public static void PreviewSplash(ISplash splash)
+        public static void PreviewSplash(ISplash splash) =>
+            PreviewSplash(splash, false);
+
+        /// <summary>
+        /// Previews the splash by name
+        /// </summary>
+        /// <param name="splash">Splash name</param>
+        /// <param name="splashOut">Whether to test out the important messages on splash.</param>
+        public static void PreviewSplash(ISplash splash, bool splashOut)
         {
             // Open the splash and reset the report progress to 0%
             OpenSplash(splash);
@@ -323,10 +359,34 @@ namespace KS.Misc.Splash
                 int prog = i * 20;
                 SplashReport.ReportProgress($"{prog}%", 20, true, splash);
                 Thread.Sleep(1000);
+                if (splashOut)
+                {
+                    BeginSplashOut();
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("We've reached {0}%!"), vars: prog);
+                    EndSplashOut();
+                }
             }
 
             // Close
             CloseSplash(splash);
+        }
+
+        /// <summary>
+        /// Clears the screen for important messages to show up during kernel booting
+        /// </summary>
+        public static void BeginSplashOut()
+        {
+            if (Flags.EnableSplash && SplashReport._InSplash)
+                CloseSplash(CurrentSplash, false);
+        }
+
+        /// <summary>
+        /// Declares that it's done showing important messages during kernel booting
+        /// </summary>
+        public static void EndSplashOut()
+        {
+            if (Flags.EnableSplash && !SplashReport._InSplash)
+                OpenSplash();
         }
 
     }
