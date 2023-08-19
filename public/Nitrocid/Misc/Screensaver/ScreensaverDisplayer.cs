@@ -28,7 +28,7 @@ namespace KS.Misc.Screensaver
     /// <summary>
     /// Screensaver display module
     /// </summary>
-    public static class ScreensaverDisplayer
+    internal static class ScreensaverDisplayer
     {
 
         internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver)ss)) { isCritical = true };
@@ -39,7 +39,7 @@ namespace KS.Misc.Screensaver
         /// Displays the screensaver from the screensaver base
         /// </summary>
         /// <param name="Screensaver">Screensaver base containing information about the screensaver</param>
-        public static void DisplayScreensaver(BaseScreensaver Screensaver)
+        internal static void DisplayScreensaver(BaseScreensaver Screensaver)
         {
             try
             {
