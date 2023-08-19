@@ -15,12 +15,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files;
 using KS.Files.Folders;
+using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using KS.Shell.ShellBase.Shells;
 using System;
+using System.IO;
 using System.Linq;
 
 namespace KS.Shell.ShellBase.Commands
@@ -69,8 +72,10 @@ namespace KS.Shell.ShellBase.Commands
             if (!string.IsNullOrEmpty(finalCommandArgs))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Creating list of files and directories starting with argument {0} [{1}]...", LastArgument, LastArgument.Length);
-                finalCompletions = Listing.CreateList(CurrentDirectory.CurrentDir, true)
-                    .Select(x => x.Name)
+                string lookupPath = Path.IsPathRooted(LastArgument) ? Path.GetDirectoryName(LastArgument) : Filesystem.NeutralizePath(LastArgument, CurrentDirectory.CurrentDir);
+                lookupPath = Checking.FolderExists(lookupPath) ? lookupPath : Path.GetDirectoryName(CurrentDirectory.CurrentDir + "/" + LastArgument);
+                finalCompletions = Listing.CreateList(lookupPath, true)
+                    .Select(x => Path.IsPathRooted(LastArgument) ? Filesystem.NeutralizePath(x.FullName) : Filesystem.NeutralizePath(x.FullName).Replace(CurrentDirectory.CurrentDir + "/", ""))
                     .Where(x => x.StartsWith(LastArgument))
                     .Select(x => x[LastArgument.Length..])
                     .ToArray();
