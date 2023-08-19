@@ -35,19 +35,21 @@ namespace KS.Shell.Shells.UESH.Commands
     class CalcCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             try
             {
                 double Res = ((MathExpr)StringArgs).Result;
                 DebugWriter.WriteDebug(DebugLevel.I, "Res = {0}", Res);
                 TextWriterColor.Write(StringArgs + " = " + Res.ToString());
+                return 0;
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", StringArgs, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error in calculation.") + " {0}", true, KernelColorType.Error, ex.Message);
+                return ex.GetHashCode();
             }
         }
 

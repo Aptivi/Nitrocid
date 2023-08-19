@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Probers.Motd;
 using KS.Shell.ShellBase.Commands;
@@ -41,18 +42,20 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChMotdCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly.Length > 0)
             {
                 if (string.IsNullOrEmpty(StringArgs))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Blank message of the day."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.MOTD;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."));
                     MotdParse.SetMotd(StringArgs);
+                    return 0;
                 }
             }
             else
@@ -60,6 +63,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 ShellStart.StartShell(ShellType.TextShell, Paths.GetKernelPath(KernelPathType.MOTD));
                 TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."));
                 MotdParse.ReadMotd();
+                return 0;
             }
         }
 

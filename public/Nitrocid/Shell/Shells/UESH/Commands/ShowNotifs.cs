@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ShowNotifsCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             int Count = 1;
             if (!(NotificationManager.NotifRecents.Count == 0))
@@ -54,6 +54,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 TextWriterColor.Write(Translate.DoTranslation("No recent notifications"));
             }
+            return 0;
         }
 
     }

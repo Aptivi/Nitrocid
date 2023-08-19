@@ -40,13 +40,15 @@ namespace KS.Shell.Shells.UESH.Commands
     class UpdateCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
 #if SPECIFIERREL
             UpdateManager.CheckKernelUpdates();
 #else
             TextWriterColor.Write(Translate.DoTranslation("Checking for updates is disabled because you're running a development version."), true, KernelColorType.Error);
 #endif
-
+            return 0;
+        }
 
     }
 }

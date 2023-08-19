@@ -31,10 +31,11 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_ListBookmarkCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Bookmarks = RSSBookmarkManager.GetBookmarks();
             ListWriterColor.WriteList(Bookmarks);
+            return 0;
         }
 
     }

@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class RebootCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (!(ListArgsOnly.Length == 0))
             {
@@ -62,6 +62,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 PowerManager.PowerManage(PowerMode.Reboot);
             }
+            return 0;
         }
 
     }

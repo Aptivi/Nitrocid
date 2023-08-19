@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Editors.HexEdit;
 using KS.Misc.Reflection;
@@ -37,7 +38,7 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_PrintCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             long ByteNumber;
             if (ListArgsOnly.Length > 0)
@@ -51,11 +52,13 @@ namespace KS.Shell.Shells.Hex.Commands
                     {
                         ByteNumber = Convert.ToInt64(ListArgsOnly[0]);
                         HexEditTools.HexEdit_DisplayHex(ByteNumber);
+                        return 0;
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }
                 else
@@ -69,17 +72,20 @@ namespace KS.Shell.Shells.Hex.Commands
                         long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.HexEdit_DisplayHex(ByteNumberStart, ByteNumberEnd);
+                        return 0;
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }
             }
             else
             {
                 HexEditTools.HexEdit_DisplayHex();
+                return 0;
             }
         }
 

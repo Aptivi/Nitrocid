@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SettingsCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var SettingsType = ConfigType.Kernel;
             if (ListSwitchesOnly.Length > 0)
@@ -71,6 +71,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     SettingsType = ConfigType.Splash;
             }
             SettingsApp.OpenMainPage(SettingsType);
+            return 0;
         }
 
     }

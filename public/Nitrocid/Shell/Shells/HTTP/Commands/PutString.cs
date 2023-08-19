@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_PutStringCommand : BaseCommand, ICommand
     {
 
-        public override async void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Print a message
             TextWriterColor.Write(Translate.DoTranslation("Uploading string to {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
@@ -38,10 +38,11 @@ namespace KS.Shell.Shells.HTTP.Commands
                 var ResponseTask = HTTPTools.HttpPutString(ListArgsOnly[0], ListArgsOnly[1]);
                 ResponseTask.Wait();
                 var Response = ResponseTask.Result;
-                string ResponseContent = await Response.Content.ReadAsStringAsync();
+                string ResponseContent = Response.Content.ReadAsStringAsync().Result;
                 TextWriterColor.Write("[{0}] {1}", (int)Response.StatusCode, Response.StatusCode.ToString());
                 TextWriterColor.Write(ResponseContent);
                 TextWriterColor.Write(Response.ReasonPhrase);
+                return 0;
             }
             catch (AggregateException aex)
             {
@@ -54,10 +55,12 @@ namespace KS.Shell.Shells.HTTP.Commands
                         TextWriterColor.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
                     }
                 }
+                return aex.GetHashCode();
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
+                return ex.GetHashCode();
             }
         }
 

@@ -19,6 +19,7 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Shell.ShellBase.Commands;
@@ -36,16 +37,19 @@ namespace KS.Shell.Shells.UESH.Commands
     class DismissNotifCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             int NotifIndex = (int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d);
             if (NotificationManager.NotifDismiss(NotifIndex))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Notification dismissed successfully."));
+                return 0;
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to dismiss notification."), true, KernelColorType.Error);
+                // TODO: Assign notification manager exception
+                return 10000 + (int)KernelExceptionType.Unknown;
             }
         }
 

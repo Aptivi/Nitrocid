@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
@@ -38,13 +39,14 @@ namespace KS.Shell.Shells.UESH.Commands
     class AddUserCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
             if (ListArgsOnly.Length == 1)
             {
                 TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), ListArgsOnly[0]);
                 UserManagement.AddUser(ListArgsOnly[0]);
+                return 0;
             }
             else if (ListArgsOnly.Length > 2)
             {
@@ -52,12 +54,15 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), ListArgsOnly[0]);
                     UserManagement.AddUser(ListArgsOnly[0], ListArgsOnly[1]);
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Passwords don't match."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.UserManagement;
                 }
             }
+            return 0;
         }
 
     }

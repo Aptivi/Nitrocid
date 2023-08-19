@@ -23,6 +23,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Modifications;
 using KS.Shell.ShellBase.Commands;
@@ -41,7 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ModManCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (!Flags.SafeMode)
             {
@@ -68,13 +69,13 @@ namespace KS.Shell.Shells.UESH.Commands
                                 if (!(Parsing.TryParsePath(TargetModPath) && Checking.FileExists(TargetModPath)))
                                 {
                                     TextWriterColor.Write(Translate.DoTranslation("Mod not found or file has invalid characters."), true, KernelColorType.Error);
-                                    return;
+                                    return 10000 + (int)KernelExceptionType.NoSuchMod;
                                 }
                             }
                             else
                             {
                                 TextWriterColor.Write(Translate.DoTranslation("Mod file is not specified."), true, KernelColorType.Error);
-                                return;
+                                return 10000 + (int)KernelExceptionType.NoSuchMod;
                             }
 
                             break;
@@ -261,7 +262,8 @@ namespace KS.Shell.Shells.UESH.Commands
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
                             HelpSystem.ShowHelp("modman");
-                            break;
+                            // TODO: ModManagement from KET is better.
+                            return 10000 + (int)KernelExceptionType.InvalidMod;
                         }
                 }
             }
@@ -269,6 +271,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 TextWriterColor.Write(Translate.DoTranslation("Mod management is disabled in safe mode."), true, KernelColorType.Error);
             }
+            return 0;
         }
 
     }

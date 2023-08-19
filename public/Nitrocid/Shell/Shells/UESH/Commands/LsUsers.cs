@@ -26,10 +26,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class LsUsersCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
             ListWriterColor.WriteList(UserManagement.ListAllUsers());
+            return 0;
         }
     }
 }

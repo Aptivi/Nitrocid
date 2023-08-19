@@ -383,7 +383,7 @@ namespace KS.Shell
                                     DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
                                     var Params = new CommandExecutor.ExecuteCommandParameters(Command, ShellType);
                                     CommandExecutor.StartCommandThread(Params);
-                                    UESHVariables.SetVariable("UESHErrorCode", "0");
+                                    UESHVariables.SetVariable("UESHErrorCode", $"{ShellStart.ShellStack[^1].LastErrorCode}");
                                 }
                             }
                         }
@@ -416,9 +416,9 @@ namespace KS.Shell
                                     TextWriterColor.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, KernelColorType.Error, commandName, ex.Message);
                                     DebugWriter.WriteDebugStackTrace(ex);
                                     if (ex is KernelException kex)
-                                        UESHVariables.SetVariable("UESHErrorCode", $"{Convert.ToInt32(kex.ExceptionType)}");
+                                        UESHVariables.SetVariable("UESHErrorCode", $"{10000 + (int)kex.ExceptionType}");
                                     else
-                                        UESHVariables.SetVariable("UESHErrorCode", $"{ex.HResult}");
+                                        UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
                                 }
                             }
                             else if (Checking.FileExists(TargetFile) & TargetFile.EndsWith(".uesh"))
@@ -436,9 +436,9 @@ namespace KS.Shell
                                     TextWriterColor.Write(Translate.DoTranslation("Error trying to execute script: {0}"), true, KernelColorType.Error, ex.Message);
                                     DebugWriter.WriteDebugStackTrace(ex);
                                     if (ex is KernelException kex)
-                                        UESHVariables.SetVariable("UESHErrorCode", $"{Convert.ToInt32(kex.ExceptionType)}");
+                                        UESHVariables.SetVariable("UESHErrorCode", $"{10000 + (int)kex.ExceptionType}");
                                     else
-                                        UESHVariables.SetVariable("UESHErrorCode", $"{ex.HResult}");
+                                        UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
                                 }
                             }
                             else
@@ -460,9 +460,9 @@ namespace KS.Shell
                         DebugWriter.WriteDebugStackTrace(ex);
                         TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                         if (ex is KernelException kex)
-                            UESHVariables.SetVariable("UESHErrorCode", $"{Convert.ToInt32(kex.ExceptionType)}");
+                            UESHVariables.SetVariable("UESHErrorCode", $"{10000 + (int)kex.ExceptionType}");
                         else
-                            UESHVariables.SetVariable("UESHErrorCode", $"{ex.HResult}");
+                            UESHVariables.SetVariable("UESHErrorCode", $"{ex.GetHashCode()}");
                     }
                 }
 

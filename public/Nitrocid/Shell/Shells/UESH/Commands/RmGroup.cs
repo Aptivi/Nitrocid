@@ -35,12 +35,13 @@ namespace KS.Shell.Shells.UESH.Commands
     class RmGroupCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageGroups);
             GroupManagement.RemoveGroup(ListArgsOnly[0]);
             if (!GroupManagement.DoesGroupExist(ListArgsOnly[0]))
                 TextWriterColor.Write(Translate.DoTranslation("Group {0} removed."), ListArgsOnly[0]);
+            return 0;
         }
 
     }

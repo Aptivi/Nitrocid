@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.Mail.Directory;
@@ -36,7 +37,7 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_ListCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly.Length > 0)
             {
@@ -44,15 +45,18 @@ namespace KS.Shell.Shells.Mail.Commands
                 if (TextTools.IsStringNumeric(ListArgsOnly[0]))
                 {
                     MailManager.MailListMessages(Convert.ToInt32(ListArgsOnly[0]));
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Page is not a numeric value."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.Mail;
                 }
             }
             else
             {
                 MailManager.MailListMessages(1);
+                return 0;
             }
         }
 

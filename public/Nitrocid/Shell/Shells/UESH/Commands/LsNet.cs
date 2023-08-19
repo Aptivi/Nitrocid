@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class LsNetCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             foreach (IPAddress Device in NetworkTools.GetOnlineDevicesInNetwork())
             {
@@ -60,6 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 TextWriterColor.Write($"- {address}: ", false, KernelColorType.ListEntry);
                 TextWriterColor.Write(host, true, KernelColorType.ListValue);
             }
+            return 0;
         }
 
     }

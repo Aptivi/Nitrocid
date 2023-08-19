@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.FTP.Transfer;
@@ -38,7 +39,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_PutFolderCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string LocalFolder = ListArgsOnly[0];
             string RemoteFolder = ListArgsOnly.Length > 1 ? ListArgsOnly[1] : "";
@@ -48,11 +49,13 @@ namespace KS.Shell.Shells.FTP.Commands
             {
                 TextWriterColor.Write();
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded folder {0}"), true, KernelColorType.Success, ListArgsOnly[0]);
+                return 0;
             }
             else
             {
                 TextWriterColor.Write();
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, ListArgsOnly[0]);
+                return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }
 

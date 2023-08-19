@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_AddBytesCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var FinalBytes = new List<byte>();
             string FinalByte = "";
@@ -48,8 +48,7 @@ namespace KS.Shell.Shells.Hex.Commands
                 FinalByte = Input.ReadLine();
                 if (!(FinalByte == "EOF"))
                 {
-                    byte ByteContent;
-                    if (byte.TryParse(FinalByte, System.Globalization.NumberStyles.HexNumber, null, out ByteContent))
+                    if (byte.TryParse(FinalByte, System.Globalization.NumberStyles.HexNumber, null, out byte ByteContent))
                     {
                         FinalBytes.Add(ByteContent);
                     }
@@ -62,6 +61,7 @@ namespace KS.Shell.Shells.Hex.Commands
 
             // Add the new bytes
             HexEditTools.HexEdit_AddNewBytes(FinalBytes.ToArray());
+            return 0;
         }
 
     }

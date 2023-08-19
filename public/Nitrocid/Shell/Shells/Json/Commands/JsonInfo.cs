@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_JsonInfoCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Base info
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Base JSON token information"), true);
@@ -69,6 +69,7 @@ namespace KS.Shell.Shells.Json.Commands
                     }
                 }
             }
+            return 0;
         }
 
     }

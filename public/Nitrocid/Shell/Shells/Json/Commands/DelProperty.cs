@@ -33,10 +33,11 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_DelPropertyCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             JsonTools.JsonShell_RemoveProperty(ListArgsOnly[0]);
             TextWriterColor.Write(Translate.DoTranslation("Removed property."), true, KernelColorType.Success);
+            return 0;
         }
 
     }

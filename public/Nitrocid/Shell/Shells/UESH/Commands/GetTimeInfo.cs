@@ -19,6 +19,7 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Time.Converters;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
@@ -36,10 +37,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class GetTimeInfoCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            DateTime DateTimeInfo;
-            if (DateTime.TryParse(ListArgsOnly[0], out DateTimeInfo))
+            if (DateTime.TryParse(ListArgsOnly[0], out DateTime DateTimeInfo))
             {
                 TextWriterColor.Write("-- " + Translate.DoTranslation("Information for") + " {0} --" + CharManager.NewLine, TimeDateRenderers.Render(DateTimeInfo));
                 TextWriterColor.Write(Translate.DoTranslation("Milliseconds:") + " {0}", DateTimeInfo.Millisecond);
@@ -57,10 +57,12 @@ namespace KS.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Local Time:") + " {0}", TimeDateRenderers.Render(DateTimeInfo.ToLocalTime()));
                 TextWriterColor.Write(Translate.DoTranslation("Universal Time:") + " {0}", TimeDateRenderers.Render(DateTimeInfo.ToUniversalTime()));
                 TextWriterColor.Write(Translate.DoTranslation("Unix Time:") + " {0}", TimeDateConverters.DateToUnix(DateTimeInfo));
+                return 0;
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Failed to parse date information for") + " {0}. " + Translate.DoTranslation("Ensure that the format is correct."), true, KernelColorType.Error, ListArgsOnly[0]);
+                return 10000 + (int)KernelExceptionType.TimeDate;
             }
         }
 

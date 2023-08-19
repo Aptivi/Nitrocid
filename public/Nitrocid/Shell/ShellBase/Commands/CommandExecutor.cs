@@ -33,6 +33,7 @@ using KS.Drivers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Threading;
 using KS.Shell.ShellBase.Commands.ArgumentsParsers;
+using KS.Shell.ShellBase.Scripting;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -113,6 +114,9 @@ namespace KS.Shell.ShellBase.Commands
         {
             string RequestedCommand = ThreadParams.RequestedCommand;
             string ShellType = ThreadParams.ShellType;
+
+            // TODO: Make ThreadParams also hold this below field:
+            var ShellInstance = ShellStart.ShellStack[^1];
             try
             {
                 // Variables
@@ -124,6 +128,7 @@ namespace KS.Shell.ShellBase.Commands
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
                 bool RequiredSwitchesProvided = ArgumentInfo.RequiredSwitchesProvided;
                 bool RequiredSwitchArgumentsProvided = ArgumentInfo.RequiredSwitchArgumentsProvided;
+                bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
 
                 // Check to see if a requested command is obsolete
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
@@ -191,19 +196,29 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);
                     var CommandBase = TargetCommands[Command].CommandBase;
-                    CommandBase.Execute(StrArgs, Args, Switches);
+                    string value = "";
+                    ShellInstance.LastErrorCode = CommandBase.Execute(StrArgs, Args, Switches, ref value);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);
+                    if (containsSetSwitch)
+                    {
+                        // TODO: Currently, no command sets this...
+                        string variable = SwitchManager.GetSwitchValue(Switches, "-set");
+                        DebugWriter.WriteDebug(DebugLevel.I, "Variable to set {0} is {1}", value, variable);
+                        UESHVariables.SetVariable(variable, value);
+                    }
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Arguments not satisfied.");
                     TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
                     HelpSystem.ShowHelp(Command, ShellType);
+                    ShellInstance.LastErrorCode = -6;
                 }
             }
             catch (ThreadInterruptedException)
             {
                 Flags.CancelRequested = false;
-                return;
+                ShellInstance.LastErrorCode = -5;
             }
             catch (Exception ex)
             {
@@ -211,11 +226,12 @@ namespace KS.Shell.ShellBase.Commands
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to execute command {0} from type {1}: {2}", RequestedCommand, ShellType.ToString(), ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
+                ShellInstance.LastErrorCode = ex.GetHashCode();
             }
         }
 
         /// <summary>
-        /// Executes a command in a wrapped mode (must be run from a separate command execution entry point, <see cref="BaseCommand.Execute(string, string[], string[])"/>.)
+        /// Executes a command in a wrapped mode (must be run from a separate command execution entry point, <see cref="BaseCommand.Execute(string, string[], string[], ref string)"/>.)
         /// </summary>
         /// <param name="Command">Requested command with its arguments and switches</param>
         public static void ExecuteCommandWrapped(string Command)

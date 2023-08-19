@@ -20,6 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -38,7 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class RdebugCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (Flags.DebugMode)
             {
@@ -50,10 +51,12 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     RemoteDebugger.StartRDebugThread();
                 }
+                return 0;
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Debugging not enabled."), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.Debug;
             }
         }
 

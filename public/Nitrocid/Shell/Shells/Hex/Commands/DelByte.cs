@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Editors.HexEdit;
 using KS.Misc.Text;
@@ -36,7 +37,7 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_DelByteCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (TextTools.IsStringNumeric(ListArgsOnly[0]))
             {
@@ -44,16 +45,19 @@ namespace KS.Shell.Shells.Hex.Commands
                 {
                     HexEditTools.HexEdit_DeleteByte(Convert.ToInt64(ListArgsOnly[0]));
                     TextWriterColor.Write(Translate.DoTranslation("Byte deleted."), true, KernelColorType.Success);
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.HexEditor;
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                return 10000 + (int)KernelExceptionType.HexEditor;
             }
         }
 

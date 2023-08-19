@@ -35,11 +35,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class RmUserFromGroupCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageGroups);
             GroupManagement.RemoveUserFromGroup(ListArgsOnly[0], ListArgsOnly[1]);
             TextWriterColor.Write(Translate.DoTranslation("Removed {0} from group {1}."), ListArgsOnly[0], ListArgsOnly[1]);
+            return 0;
         }
 
     }

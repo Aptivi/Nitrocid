@@ -31,7 +31,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class EchoCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(PlaceParse.ProbePlaces(StringArgs));
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            TextWriterColor.Write(PlaceParse.ProbePlaces(StringArgs));
+            return 0;
+        }
     }
 }

@@ -30,7 +30,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class InputCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => UESHCommands.PromptInputAndSet(StringArgs.Replace(ListArgsOnly[0] + " ", ""), ListArgsOnly[0]);
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            UESHCommands.PromptInputAndSet(StringArgs.Replace(ListArgsOnly[0] + " ", ""), ListArgsOnly[0]);
+            return 0;
+        }
     }
 }

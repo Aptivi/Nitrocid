@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_LsrCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || SFTPShellCommon.SFTPShowDetailsInList;
             var Entries = new List<string>();
@@ -67,6 +67,7 @@ namespace KS.Shell.Shells.SFTP.Commands
             Entries.Sort();
             foreach (string Entry in Entries)
                 TextWriterColor.Write(Entry, true, KernelColorType.ListEntry);
+            return 0;
         }
 
     }

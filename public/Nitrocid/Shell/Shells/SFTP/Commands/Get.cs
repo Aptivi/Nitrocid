@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.SFTP.Transfer;
 using KS.Shell.ShellBase.Commands;
@@ -33,18 +34,20 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_GetCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write(Translate.DoTranslation("Downloading file {0}..."), false, KernelColorType.Progress, ListArgsOnly[0]);
             if (SFTPTransfer.SFTPGetFile(ListArgsOnly[0]))
             {
                 TextWriterColor.Write();
                 TextWriterColor.Write(Translate.DoTranslation("Downloaded file {0}."), true, KernelColorType.Success, ListArgsOnly[0]);
+                return 0;
             }
             else
             {
                 TextWriterColor.Write();
                 TextWriterColor.Write(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, ListArgsOnly[0]);
+                return 10000 + (int)KernelExceptionType.SFTPFilesystem;
             }
         }
 

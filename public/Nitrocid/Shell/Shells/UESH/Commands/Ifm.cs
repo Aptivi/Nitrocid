@@ -31,8 +31,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class IfmCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             InteractiveTuiTools.OpenInteractiveTui(new FileManagerCli());
-
+            return 0;
+        }
     }
 }

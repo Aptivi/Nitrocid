@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class DictCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Words = GetWordInfo(ListArgsOnly[0]);
 
@@ -103,6 +103,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Sources used to define") + $" {ListArgsOnly[0]}", true);
                 ListWriterColor.WriteList(Word.SourceUrls);
             }
+            return 0;
         }
 
     }

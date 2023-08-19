@@ -25,8 +25,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class TaskManCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             InteractiveTuiTools.OpenInteractiveTui(new TaskManagerCli());
-
+            return 0;
+        }
     }
 }

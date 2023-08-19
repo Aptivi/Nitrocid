@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SpeedPressCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
             int CustomTimeout = SpeedPress.SpeedPressTimeout;
@@ -79,6 +79,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 CustomTimeout = Convert.ToInt32(ListArgsOnly[0]);
             }
             SpeedPress.InitializeSpeedPress(Difficulty, CustomTimeout);
+            return 0;
         }
 
     }

@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.FTP.Filesystem;
@@ -36,13 +37,19 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_MvCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write(Translate.DoTranslation("Moving {0} to {1}..."), true, KernelColorType.Progress, ListArgsOnly[0], ListArgsOnly[1]);
             if (FTPFilesystem.FTPMoveItem(ListArgsOnly[0], ListArgsOnly[1]))
+            {
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Moved successfully"), true, KernelColorType.Success);
+                return 0;
+            }
             else
+            {
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
+                return 10000 + (int)KernelExceptionType.FTPFilesystem;
+            }
         }
 
     }

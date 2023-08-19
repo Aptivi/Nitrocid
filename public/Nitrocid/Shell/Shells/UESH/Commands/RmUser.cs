@@ -37,12 +37,13 @@ namespace KS.Shell.Shells.UESH.Commands
     class RmUserCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
             UserManagement.RemoveUser(ListArgsOnly[0]);
             if (!UserManagement.UserExists(ListArgsOnly[0]))
                 TextWriterColor.Write(Translate.DoTranslation("User {0} removed."), ListArgsOnly[0]);
+            return 0;
         }
 
     }

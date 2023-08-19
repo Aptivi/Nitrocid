@@ -33,10 +33,11 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_ReplaceCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextEditTools.TextEdit_Replace(ListArgsOnly[0], ListArgsOnly[1]);
             TextWriterColor.Write(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
+            return 0;
         }
 
     }

@@ -34,8 +34,9 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="StringArgs">String of arguments</param>
         /// <param name="ListArgsOnly">List of all arguments</param>
         /// <param name="ListSwitchesOnly">List of all switches</param>
-        /// <exception cref="InvalidOperationException"></exception>
-        public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
+        /// <returns>Error code for the command</returns>
+        public virtual int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
             throw new KernelException(KernelExceptionType.NotImplementedYet);

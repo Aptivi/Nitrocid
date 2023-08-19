@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_SearchCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool findTitle       = ListSwitchesOnly.Contains("-t");
             bool findDescription = ListSwitchesOnly.Contains("-d");
@@ -75,6 +75,7 @@ namespace KS.Shell.Shells.RSS.Commands
                 TextWriterColor.Write(Article.ArticleLink, true, KernelColorType.ListValue);
                 TextWriterColor.Write("    {0}", Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
             }
+            return 0;
         }
 
     }

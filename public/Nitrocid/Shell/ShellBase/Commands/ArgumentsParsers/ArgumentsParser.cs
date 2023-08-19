@@ -207,6 +207,7 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
                     unknownSwitchesList = EnclosedSwitchKeyValuePairs
                         .Select((kvp) => kvp.Item1)
                         .Where((key) => !argInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
+                        .Where((key) => key != "-set")
                         .ToArray();
                 DebugWriter.WriteDebug(DebugLevel.I, "Unknown switches: {0}", unknownSwitchesList.Length);
 
@@ -224,6 +225,7 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
                         DebugWriter.WriteDebug(DebugLevel.I, "Processing switch: {0}", @switch);
 
                         // Get the switch and its conflicts list
+                        // TODO: Fix this.
                         string[] switchConflicts = argInfo.Switches
                             .Where((switchInfo) => $"-{switchInfo.SwitchName}" == @switch)
                             .First().ConflictsWith

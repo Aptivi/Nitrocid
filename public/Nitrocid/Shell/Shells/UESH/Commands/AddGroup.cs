@@ -35,11 +35,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class AddGroupCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageGroups);
             TextWriterColor.Write(Translate.DoTranslation("Creating group {0}..."), ListArgsOnly[0]);
             GroupManagement.AddGroup(ListArgsOnly[0]);
+            return 0;
         }
 
     }

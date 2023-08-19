@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class GenNameCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             int NamesCount = 10;
             string NamePrefix = "";
@@ -71,6 +71,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 for (int i = 0; i < NamesList.Length; i++)
                     NamesList[i] = "@" + NamesList[i].ToLower().Replace(" ", ".");
             ListWriterColor.WriteList(NamesList);
+            return 0;
         }
 
     }

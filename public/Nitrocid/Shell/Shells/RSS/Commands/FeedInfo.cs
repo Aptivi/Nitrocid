@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_FeedInfoCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write("- " + Translate.DoTranslation("Title:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.Write(RSSShellCommon.RSSFeedInstance.FeedTitle, true, KernelColorType.ListValue);
@@ -44,6 +44,7 @@ namespace KS.Shell.Shells.RSS.Commands
             TextWriterColor.Write(RSSShellCommon.RSSFeedInstance.FeedType.ToString(), true, KernelColorType.ListValue);
             TextWriterColor.Write("- " + Translate.DoTranslation("Number of articles:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.Write(RSSShellCommon.RSSFeedInstance.FeedArticles.Count.ToString(), true, KernelColorType.ListValue);
+            return 0;
         }
 
     }

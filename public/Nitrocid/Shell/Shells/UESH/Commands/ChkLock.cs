@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -33,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChkLockCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string path = ListArgsOnly[0];
             bool locked = Filesystem.IsFileLocked(path);
@@ -52,10 +53,14 @@ namespace KS.Shell.Shells.UESH.Commands
                     else
                         Filesystem.WaitForLockReleaseIndefinite(path);
                     TextWriterColor.Write(Translate.DoTranslation("File is not in use."), true, KernelColorType.Success);
+                    return 0;
                 }
+                else
+                    return 10000 + (int)KernelExceptionType.Filesystem;
             }
             else
                 TextWriterColor.Write(Translate.DoTranslation("File is not in use."), true, KernelColorType.Success);
+            return 0;
         }
     }
 }

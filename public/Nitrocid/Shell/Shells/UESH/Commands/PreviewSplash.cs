@@ -32,13 +32,14 @@ namespace KS.Shell.Shells.UESH.Commands
     class PreviewSplashCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool splashOut = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-splashout");
             if (!(ListArgsOnly.Length == 0))
                 SplashManager.PreviewSplash(ListArgsOnly[0], splashOut);
             else
                 SplashManager.PreviewSplash(splashOut);
+            return 0;
         }
 
         public override void HelpHelper()

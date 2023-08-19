@@ -30,7 +30,10 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_MkdirCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => MailDirectory.CreateMailDirectory(ListArgsOnly[0]);
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            MailDirectory.CreateMailDirectory(ListArgsOnly[0]);
+            return 0;
+        }
     }
 }

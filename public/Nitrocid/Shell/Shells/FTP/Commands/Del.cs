@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_DelCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Print a message
             TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
@@ -48,15 +48,17 @@ namespace KS.Shell.Shells.FTP.Commands
             // Make a confirmation message so user will not accidentally delete a file or folder
             string answer = ChoiceStyle.PromptChoice(TextTools.FormatString(Translate.DoTranslation("Are you sure you want to delete {0}?"), ListArgsOnly[0]), "y/n");
             if (answer != "y")
-                return;
+                return 1;
 
             try
             {
                 FTPFilesystem.FTPDeleteRemote(ListArgsOnly[0]);
+                return 0;
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
+                return ex.GetHashCode();
             }
         }
 

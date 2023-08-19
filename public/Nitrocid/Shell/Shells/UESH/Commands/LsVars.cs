@@ -32,13 +32,14 @@ namespace KS.Shell.Shells.UESH.Commands
     class LsVarsCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             foreach (string VarName in UESHVariables.Variables.Keys)
             {
                 TextWriterColor.Write($"- {VarName}: ", false, KernelColorType.ListEntry);
                 TextWriterColor.Write(UESHVariables.Variables[VarName], true, KernelColorType.ListValue);
             }
+            return 0;
         }
 
     }

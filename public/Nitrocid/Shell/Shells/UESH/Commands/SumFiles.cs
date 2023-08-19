@@ -28,6 +28,7 @@ using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Files;
 using KS.Files.Querying;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -42,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SumFilesCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string folder = Filesystem.NeutralizePath(ListArgsOnly[1]);
             string @out = "";
@@ -78,7 +79,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
-                        break;
+                        return 10000 + (int)KernelExceptionType.Encryption;
                     }
                     TextWriterColor.Write();
                 }
@@ -88,10 +89,12 @@ namespace KS.Shell.Shells.UESH.Commands
                     FStream.Write(FileBuilder.ToString());
                     FStream.Flush();
                 }
+                return 0;
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, folder);
+                return 10000 + (int)KernelExceptionType.Encryption;
             }
         }
 

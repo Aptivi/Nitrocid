@@ -31,7 +31,10 @@ namespace KS.Shell.Shells.Admin.Commands
     class LsEventsCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ListWriterColor.WriteList(EventsManager.ListAllFiredEvents());
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            ListWriterColor.WriteList(EventsManager.ListAllFiredEvents());
+            return 0;
+        }
     }
 }

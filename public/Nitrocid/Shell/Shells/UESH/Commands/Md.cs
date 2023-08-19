@@ -33,10 +33,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class MdCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             Making.MakeDirectory(ListArgsOnly[0]);
+            return 0;
         }
     }
 }

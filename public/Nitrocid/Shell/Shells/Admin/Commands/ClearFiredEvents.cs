@@ -27,7 +27,10 @@ namespace KS.Shell.Shells.Admin.Commands
     class Admin_ClearFiredEventsCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => EventsManager.ClearAllFiredEvents();
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            EventsManager.ClearAllFiredEvents();
+            return 0;
+        }
     }
 }

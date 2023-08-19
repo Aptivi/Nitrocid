@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
@@ -26,7 +27,7 @@ namespace KS.Shell.Shells.Admin.Commands
     class UserFlagCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string userName = ListArgsOnly[0];
             string type = ListArgsOnly[1];
@@ -45,8 +46,9 @@ namespace KS.Shell.Shells.Admin.Commands
                     break;
                 default:
                     TextWriterColor.Write(Translate.DoTranslation("The specified main flag type is invalid") + ": {0}", type);
-                    return;
+                    return 10000 + (int)KernelExceptionType.UserManagement;
             }
+            return 0;
         }
     }
 }

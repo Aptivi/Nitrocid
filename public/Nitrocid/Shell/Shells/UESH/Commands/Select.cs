@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SelectCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Titles = new List<string>();
 
@@ -47,6 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Prompt for selection
             UESHCommands.PromptSelectionAndSet(ListArgsOnly[2], ListArgsOnly[0], ListArgsOnly[1], Titles.ToArray());
+            return 0;
         }
 
         public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("where <$variable> is any variable that will be used to store response") + CharManager.NewLine + Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"));

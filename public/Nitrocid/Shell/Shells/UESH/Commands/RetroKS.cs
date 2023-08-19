@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class RetroKSCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string ExecutableName = "RetroKS.dll";
             TextWriterColor.Write(Translate.DoTranslation("Checking for updates..."));
@@ -111,6 +111,7 @@ namespace KS.Shell.Shells.UESH.Commands
             // Clear the console
             KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             ConsoleBase.ConsoleWrapper.Clear();
+            return 0;
         }
 
     }

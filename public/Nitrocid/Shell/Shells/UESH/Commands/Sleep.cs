@@ -25,8 +25,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class SleepCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             ThreadManager.SleepNoBlock(long.Parse(ListArgsOnly[0]), Thread.CurrentThread);
-
+            return 0;
+        }
     }
 }

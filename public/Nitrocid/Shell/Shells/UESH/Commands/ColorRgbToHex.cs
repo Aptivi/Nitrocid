@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -32,32 +33,32 @@ namespace KS.Shell.Shells.UESH.Commands
     class ColorRgbToHexCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            int R, G, B;
             string Hex;
 
             // Check to see if we have the numeric arguments
-            if (!int.TryParse(ListArgsOnly[0], out R))
+            if (!int.TryParse(ListArgsOnly[0], out int R))
             {
                 TextWriterColor.Write(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
-                return;
+                return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!int.TryParse(ListArgsOnly[1], out G))
+            if (!int.TryParse(ListArgsOnly[1], out int G))
             {
                 TextWriterColor.Write(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
-                return;
+                return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!int.TryParse(ListArgsOnly[2], out B))
+            if (!int.TryParse(ListArgsOnly[2], out int B))
             {
                 TextWriterColor.Write(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
-                return;
+                return 10000 + (int)KernelExceptionType.Color;
             }
 
             // Do the job
             Hex = KernelColorTools.ConvertFromRGBToHex(R, G, B);
             TextWriterColor.Write("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.Write(Hex, true, KernelColorType.ListValue);
+            return 0;
         }
 
     }

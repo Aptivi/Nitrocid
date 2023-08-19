@@ -21,6 +21,7 @@ using KS.Languages;
 using KS.Misc.Archive;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 
 namespace KS.Shell.Shells.Archive.Commands
 {
@@ -33,12 +34,14 @@ namespace KS.Shell.Shells.Archive.Commands
     class ArchiveShell_ChDirCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (!ArchiveTools.ChangeWorkingArchiveLocalDirectory(ListArgsOnly[0]))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Directory {0} doesn't exist"), true, KernelColorType.Error, ListArgsOnly[0]);
+                return 10000 + (int)KernelExceptionType.Archive;
             }
+            return 0;
         }
 
     }

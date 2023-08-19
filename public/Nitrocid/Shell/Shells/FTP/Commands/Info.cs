@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_InfoCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("FTP server information"), true);
             TextWriterColor.Write(Translate.DoTranslation("Server address:") + " ", false, KernelColorType.ListEntry);
@@ -55,6 +55,7 @@ namespace KS.Shell.Shells.FTP.Commands
             TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType.ToString(), true, KernelColorType.ListValue);
             TextWriterColor.Write(Translate.DoTranslation("Server upload data type:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.Write(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.UploadDataType.ToString(), true, KernelColorType.ListValue);
+            return 0;
         }
 
     }

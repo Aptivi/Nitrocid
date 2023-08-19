@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.SFTP.Transfer;
@@ -38,7 +39,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_PutCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write(Translate.DoTranslation("Uploading file {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
 
@@ -47,11 +48,13 @@ namespace KS.Shell.Shells.SFTP.Commands
             {
                 TextWriterColor.Write();
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded file {0}"), true, KernelColorType.Success, ListArgsOnly[0]);
+                return 0;
             }
             else
             {
                 TextWriterColor.Write();
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, ListArgsOnly[0]);
+                return 10000 + (int)KernelExceptionType.SFTPFilesystem;
             }
         }
 

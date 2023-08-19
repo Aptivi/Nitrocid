@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class WeatherCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var ListMode = false;
             if (ListSwitchesOnly.Contains("-list"))
@@ -76,6 +76,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 Forecast.PrintWeatherInfo(ListArgsOnly[0], APIKey);
             }
+            return 0;
         }
 
         public override void HelpHelper()

@@ -21,6 +21,7 @@ using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Calendar;
 using KS.Misc.Calendar.Events;
@@ -38,7 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class CalendarCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string Action = ListArgsOnly[0];
 
@@ -66,6 +67,7 @@ namespace KS.Shell.Shells.UESH.Commands
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
                                 TextWriterColor.Write(Translate.DoTranslation("Failed to add or remove an event.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                return ex.GetHashCode();
                             }
                         }
                         else
@@ -73,7 +75,7 @@ namespace KS.Shell.Shells.UESH.Commands
                             CalendarPrint.PrintCalendar();
                         }
 
-                        break;
+                        return 0;
                     }
                 case "event":
                     {
@@ -102,14 +104,16 @@ namespace KS.Shell.Shells.UESH.Commands
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
                                                 TextWriterColor.Write(Translate.DoTranslation("Failed to add an event.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
                                             TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to add an event."), true, KernelColorType.Error);
+                                            return 10000 + (int)KernelExceptionType.Calendar;
                                         }
 
-                                        break;
+                                        return 0;
                                     }
                                 case "remove":
                                     {
@@ -128,42 +132,42 @@ namespace KS.Shell.Shells.UESH.Commands
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
                                                 TextWriterColor.Write(Translate.DoTranslation("Failed to remove an event.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
                                             TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to remove an event."), true, KernelColorType.Error);
+                                            return 10000 + (int)KernelExceptionType.Calendar;
                                         }
 
-                                        break;
+                                        return 0;
                                     }
                                 case "list":
                                     {
                                         // User chose to list. No parse needed as we're only listing.
                                         EventManager.ListEvents();
-                                        break;
+                                        return 0;
                                     }
                                 case "saveall":
                                     {
                                         // User chose to save all.
                                         EventManager.SaveEvents();
-                                        break;
+                                        return 0;
                                     }
-
                                 default:
                                     {
                                         // Invalid action.
                                         TextWriterColor.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
-                                        break;
+                                        return 10000 + (int)KernelExceptionType.Calendar;
                                     }
                             }
                         }
                         else
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided for event manipulation."), true, KernelColorType.Error);
+                            return 10000 + (int)KernelExceptionType.Calendar;
                         }
-
-                        break;
                     }
                 case "reminder":
                     {
@@ -192,14 +196,16 @@ namespace KS.Shell.Shells.UESH.Commands
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
                                                 TextWriterColor.Write(Translate.DoTranslation("Failed to add a reminder.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
                                             TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to add a reminder."), true, KernelColorType.Error);
+                                            return 10000 + (int)KernelExceptionType.Calendar;
                                         }
 
-                                        break;
+                                        return 0;
                                     }
                                 case "remove":
                                     {
@@ -218,49 +224,48 @@ namespace KS.Shell.Shells.UESH.Commands
                                             {
                                                 DebugWriter.WriteDebugStackTrace(ex);
                                                 TextWriterColor.Write(Translate.DoTranslation("Failed to remove a reminder.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                                return ex.GetHashCode();
                                             }
                                         }
                                         else
                                         {
                                             TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided to remove a reminder."), true, KernelColorType.Error);
+                                            return 10000 + (int)KernelExceptionType.Calendar;
                                         }
 
-                                        break;
+                                        return 0;
                                     }
                                 case "list":
                                     {
                                         // User chose to list. No parse needed as we're only listing.
                                         ReminderManager.ListReminders();
-                                        break;
+                                        return 0;
                                     }
                                 case "saveall":
                                     {
                                         // User chose to save all.
                                         ReminderManager.SaveReminders();
-                                        break;
+                                        return 0;
                                     }
-
                                 default:
                                     {
                                         // Invalid action.
                                         TextWriterColor.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
-                                        break;
+                                        return 10000 + (int)KernelExceptionType.Calendar;
                                     }
                             }
                         }
                         else
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Not enough arguments provided for reminder manipulation."), true, KernelColorType.Error);
+                            return 10000 + (int)KernelExceptionType.Calendar;
                         }
-
-                        break;
                     }
-
                 default:
                     {
                         // Invalid action.
                         TextWriterColor.Write(Translate.DoTranslation("Invalid action."), true, KernelColorType.Error);
-                        break;
+                        return 10000 + (int)KernelExceptionType.Calendar;
                     }
             }
         }

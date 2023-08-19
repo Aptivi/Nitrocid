@@ -20,6 +20,7 @@ using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
@@ -42,29 +43,34 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChPwdCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             try
             {
                 PermissionsTools.Demand(PermissionTypes.ManageUsers);
-                if (ListArgsOnly[3].Contains(" "))
+                if (ListArgsOnly[3].Contains(' '))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.UserManagement;
                 }
                 else if (ListArgsOnly[3] == ListArgsOnly[2])
                 {
                     UserManagement.ChangePassword(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
+                    return 0;
                 }
                 else if (ListArgsOnly[3] != ListArgsOnly[2])
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Passwords doesn't match."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.UserManagement;
                 }
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Failed to change password of username: {0}"), true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
+                return ex.GetHashCode();
             }
+            return 0;
         }
 
     }

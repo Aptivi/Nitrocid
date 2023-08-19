@@ -31,8 +31,11 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
     class WrapUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             CommandExecutor.ExecuteCommandWrapped(StringArgs);
+            return 0;
+        }
 
         public override void HelpHelper()
         {

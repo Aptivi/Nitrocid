@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Interactive;
 using KS.Modifications;
@@ -36,13 +37,18 @@ namespace KS.Shell.Shells.UESH.Commands
     class ModManualCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string modName = ListArgsOnly[0];
             if (!ModManager.Mods.ContainsKey(modName))
+            {
                 TextWriterColor.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
+                return 10000 + (int)KernelExceptionType.NoSuchMod;
+            }
+
             var tuiInstance = new ManualViewer() { modName = modName };
             InteractiveTuiTools.OpenInteractiveTui(tuiInstance);
+            return 0;
         }
 
     }

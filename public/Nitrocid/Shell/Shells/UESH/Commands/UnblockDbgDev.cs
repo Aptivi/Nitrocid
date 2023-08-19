@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -34,22 +35,25 @@ namespace KS.Shell.Shells.UESH.Commands
     class UnblockDbgDevCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (RemoteDebugger.RDebugBlocked.Contains(ListArgsOnly[0]))
             {
                 if (RemoteDebugTools.TryRemoveFromBlockList(ListArgsOnly[0]))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("{0} can now join remote debug again."), ListArgsOnly[0]);
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Failed to unblock {0}."), ListArgsOnly[0]);
+                    return 10000 + (int)KernelExceptionType.Debug;
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("{0} is not blocked yet."), ListArgsOnly[0]);
+                return 10000 + (int)KernelExceptionType.Debug;
             }
         }
 

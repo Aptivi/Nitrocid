@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class UnZipCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly.Length == 1)
             {
@@ -66,6 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 ZipFile.ExtractToDirectory(ZipArchiveName, Destination);
             }
+            return 0;
         }
 
     }

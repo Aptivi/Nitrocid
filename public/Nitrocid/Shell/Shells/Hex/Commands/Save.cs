@@ -30,7 +30,10 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_SaveCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => HexEditTools.HexEdit_SaveBinaryFile();
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            HexEditTools.HexEdit_SaveBinaryFile();
+            return 0;
+        }
     }
 }

@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ColorHexToRgbKSCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string Hex = ListArgsOnly[0];
             string RGB;
@@ -41,6 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
             RGB = KernelColorTools.ConvertFromHexToRGB(Hex);
             TextWriterColor.Write("- " + Translate.DoTranslation("RGB color sequence:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.Write(RGB, true, KernelColorType.ListValue);
+            return 0;
         }
 
     }

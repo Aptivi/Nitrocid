@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
@@ -26,7 +27,7 @@ namespace KS.Shell.Shells.Admin.Commands
     class UserLangCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string userName = ListArgsOnly[0];
             string lang = ListArgsOnly[1];
@@ -55,7 +56,11 @@ namespace KS.Shell.Shells.Admin.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Preferred user language set to {0}. You may want to log in again."), lang);
             }
             else
+            {
                 TextWriterColor.Write(Translate.DoTranslation("Invalid language") + " {0}", lang);
+                return 10000 + (int)KernelExceptionType.NoSuchLanguage;
+            }
+            return 0;
         }
     }
 }

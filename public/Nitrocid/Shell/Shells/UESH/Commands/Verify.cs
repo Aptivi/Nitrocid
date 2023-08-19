@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class VerifyCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             try
             {
@@ -69,35 +69,42 @@ namespace KS.Shell.Shells.UESH.Commands
                     if (HashVerifier.VerifyHashFromHashesFile(ListArgsOnly[3], ListArgsOnly[0], ListArgsOnly[2], ListArgsOnly[1]))
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
+                        return 0;
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
+                        return 4;
                     }
                 }
                 else if (HashVerifier.VerifyHashFromHash(ListArgsOnly[3], ListArgsOnly[0], ListArgsOnly[2], ListArgsOnly[1]))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
+                    return 4;
                 }
             }
             catch (KernelException ihae) when (ihae.ExceptionType == KernelExceptionType.InvalidHashAlgorithm)
             {
                 DebugWriter.WriteDebugStackTrace(ihae);
                 TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                return 10000 + (int)ihae.ExceptionType;
             }
             catch (KernelException ihe) when (ihe.ExceptionType == KernelExceptionType.InvalidHash)
             {
                 DebugWriter.WriteDebugStackTrace(ihe);
                 TextWriterColor.Write(Translate.DoTranslation("Hashes are malformed."), true, KernelColorType.Error);
+                return 10000 + (int)ihe.ExceptionType;
             }
             catch (FileNotFoundException fnfe)
             {
                 DebugWriter.WriteDebugStackTrace(fnfe);
                 TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, ListArgsOnly[3]);
+                return 10000 + (int)KernelExceptionType.Encryption;
             }
         }
 

@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_PrintCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly.Length > 0)
             {
@@ -41,6 +41,7 @@ namespace KS.Shell.Shells.Json.Commands
             {
                 TextWriterColor.Write(JsonTools.JsonShell_SerializeToString("$"));
             }
+            return 0;
         }
 
     }

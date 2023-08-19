@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -36,22 +37,25 @@ namespace KS.Shell.Shells.UESH.Commands
     class BlockDbgDevCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (!RemoteDebugger.RDebugBlocked.Contains(ListArgsOnly[0]))
             {
                 if (RemoteDebugTools.TryAddToBlockList(ListArgsOnly[0]))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("{0} can't join remote debug now."), ListArgsOnly[0]);
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Failed to block {0}."), ListArgsOnly[0]);
+                    return 10000 + (int)KernelExceptionType.RemoteDebugDeviceOperation;
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("{0} is already blocked."), ListArgsOnly[0]);
+                return 10000 + (int)KernelExceptionType.RemoteDebugDeviceOperation;
             }
         }
 

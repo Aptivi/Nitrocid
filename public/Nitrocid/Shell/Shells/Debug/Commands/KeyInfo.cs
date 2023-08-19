@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Debug.Commands
     class Debug_KeyInfoCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write(Translate.DoTranslation("Enter a key or a combination of keys to display its information."));
             var KeyPress = Input.DetectKeypress();
@@ -61,6 +61,7 @@ namespace KS.Shell.Shells.Debug.Commands
             // Keyboard shortcut
             TextWriterColor.Write("- " + Translate.DoTranslation("Keyboard shortcut") + ": ", false, KernelColorType.ListEntry);
             TextWriterColor.Write($"{string.Join(" + ", KeyPress.Modifiers.ToString().Split(new string[] { ", " }, StringSplitOptions.None))} + {KeyPress.Key}", true, KernelColorType.ListValue);
+            return 0;
         }
 
     }

@@ -27,10 +27,11 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_RmHeaderCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string key = ListArgsOnly[0];
             HTTPTools.HttpRemoveHeader(key);
+            return 0;
         }
 
     }

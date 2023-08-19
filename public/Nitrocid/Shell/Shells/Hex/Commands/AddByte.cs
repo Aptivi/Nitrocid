@@ -31,10 +31,11 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_AddByteCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             byte ByteContent = Convert.ToByte(StringArgs, 16);
             HexEditTools.HexEdit_AddNewByte(ByteContent);
+            return 0;
         }
 
     }

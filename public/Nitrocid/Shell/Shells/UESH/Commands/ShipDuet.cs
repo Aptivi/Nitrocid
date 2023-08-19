@@ -66,8 +66,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class ShipDuetCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             ShipDuetShooter.InitializeShipDuet();
-
+            return 0;
+        }
     }
 }

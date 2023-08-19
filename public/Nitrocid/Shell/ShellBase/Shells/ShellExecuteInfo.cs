@@ -27,6 +27,8 @@ namespace KS.Shell.ShellBase.Shells
     public class ShellExecuteInfo
     {
 
+        internal int LastErrorCode = 0;
+
         /// <summary>
         /// Shell type
         /// </summary>

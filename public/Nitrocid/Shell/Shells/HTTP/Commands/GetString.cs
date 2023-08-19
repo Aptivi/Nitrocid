@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_GetStringCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Print a message
             TextWriterColor.Write(Translate.DoTranslation("Getting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
@@ -45,6 +45,7 @@ namespace KS.Shell.Shells.HTTP.Commands
                 ResponseTask.Wait();
                 string Response = ResponseTask.Result;
                 TextWriterColor.Write(Response);
+                return 0;
             }
             catch (AggregateException aex)
             {
@@ -57,10 +58,12 @@ namespace KS.Shell.Shells.HTTP.Commands
                         TextWriterColor.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
                     }
                 }
+                return aex.GetHashCode();
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
+                return ex.GetHashCode();
             }
         }
 

@@ -34,8 +34,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class SftpCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             NetworkConnectionTools.OpenConnectionForShell(ShellType.SFTPShell, SFTPTools.SFTPTryToConnect, StringArgs);
-
+            return 0;
+        }
     }
 }

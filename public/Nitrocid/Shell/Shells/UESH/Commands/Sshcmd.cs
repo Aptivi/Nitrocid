@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SshcmdCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var AddressDelimiter = ListArgsOnly[0].Split(':');
             string Address = AddressDelimiter[0];
@@ -46,6 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 SSHTools.InitializeSSH(Address, 22, ListArgsOnly[1], SSHTools.ConnectionType.Command, ListArgsOnly[2]);
             }
+            return 0;
         }
 
     }

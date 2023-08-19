@@ -30,8 +30,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class MkLangCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             LanguageStudio.StartLanguageStudio(ListArgsOnly[0]);
-
+            return 0;
+        }
     }
 }

@@ -31,10 +31,11 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_DetachCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             ((HTTPShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
             ShellStart.KillShell();
+            return 0;
         }
 
     }

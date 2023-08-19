@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Editors.TextEdit;
 using KS.Misc.Reflection;
@@ -36,7 +37,7 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_QueryCharCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly.Length == 2)
             {
@@ -50,10 +51,12 @@ namespace KS.Shell.Shells.Text.Commands
                             TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, CharIndex);
                             TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], QueriedChars[CharIndex]);
                         }
+                        return 0;
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
                 else if (ListArgsOnly[1].ToLower() == "all")
@@ -67,6 +70,7 @@ namespace KS.Shell.Shells.Text.Commands
                             TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], TextEditShellCommon.TextEdit_FileLines[LineIndex]);
                         }
                     }
+                    return 0;
                 }
             }
             else if (ListArgsOnly.Length > 2)
@@ -87,13 +91,16 @@ namespace KS.Shell.Shells.Text.Commands
                                 TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], QueriedChars[CharIndex]);
                             }
                         }
+                        return 0;
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                        return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
             }
+            return 0;
         }
 
     }

@@ -52,10 +52,11 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_LslCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || Listing.ShowFileDetailsList;
             bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || Flags.SuppressUnauthorizedMessages;
+            // TODO: Deal with this
             if (((0 is var arg2 && (ListArgsOnly?.Length) is { } arg1 ? arg1 == arg2 : (bool?)null) | ListArgsOnly is null) == true)
             {
                 Listing.List(SFTPShellCommon.SFTPCurrDirect, ShowFileDetails, SuppressUnauthorizedMessage);
@@ -68,6 +69,7 @@ namespace KS.Shell.Shells.SFTP.Commands
                     Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage);
                 }
             }
+            return 0;
         }
 
     }

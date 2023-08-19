@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Archive.Commands
     class ArchiveShell_PackCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string Where = "";
             if (ListArgsOnly.Length > 1)
@@ -39,6 +39,7 @@ namespace KS.Shell.Shells.Archive.Commands
                 Where = Filesystem.NeutralizePath(ListArgsOnly[1], ArchiveShellCommon.ArchiveShell_CurrentDirectory);
             }
             ArchiveTools.PackFile(ListArgsOnly[0], Where);
+            return 0;
         }
 
     }

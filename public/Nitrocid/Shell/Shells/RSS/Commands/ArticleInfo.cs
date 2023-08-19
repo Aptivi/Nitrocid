@@ -20,6 +20,7 @@ using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
@@ -37,13 +38,14 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_ArticleInfoCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d);
             if (ArticleIndex > RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1);
+                return 10000 + (int)KernelExceptionType.RSSShell;
             }
             else
             {
@@ -61,6 +63,7 @@ namespace KS.Shell.Shells.RSS.Commands
                     }
                 }
                 TextWriterColor.Write(CharManager.NewLine + Article.ArticleDescription);
+                return 0;
             }
         }
 

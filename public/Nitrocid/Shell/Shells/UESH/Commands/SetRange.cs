@@ -31,7 +31,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class SetRangeCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => UESHVariables.SetVariables(ListArgsOnly[0], ListArgsOnly.Skip(1).ToArray());
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            UESHVariables.SetVariables(ListArgsOnly[0], ListArgsOnly.Skip(1).ToArray());
+            return 0;
+        }
     }
 }

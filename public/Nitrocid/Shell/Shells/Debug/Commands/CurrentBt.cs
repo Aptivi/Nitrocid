@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.Debug.Commands
     class Debug_CurrentBtCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var trace = new StackTrace(true);
             for (int framenum = 0; framenum < trace.FrameCount; framenum++)
@@ -40,6 +40,7 @@ namespace KS.Shell.Shells.Debug.Commands
                 var frame = new DebugStackFrame(framenum);
                 TextWriterColor.Write($"[{framenum + 1}] - at {frame.RoutineName}() [{frame.RoutineFileName} line {frame.RoutineLineNumber} column {frame.RoutineColumnNumber}]");
             }
+            return 0;
         }
     }
 }

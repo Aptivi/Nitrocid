@@ -19,6 +19,7 @@
 using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -33,7 +34,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_TypeCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly[0].ToLower() == "a")
             {
@@ -42,6 +43,7 @@ namespace KS.Shell.Shells.FTP.Commands
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.UploadDataType = FtpDataType.ASCII;
                 TextWriterColor.Write(Translate.DoTranslation("Data type set to ASCII!"), true, KernelColorType.Success);
                 TextWriterColor.Write(Translate.DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), true, KernelColorType.Warning);
+                return 0;
             }
             else if (ListArgsOnly[0].ToLower() == "b")
             {
@@ -49,10 +51,12 @@ namespace KS.Shell.Shells.FTP.Commands
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.ListingDataType = FtpDataType.Binary;
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.UploadDataType = FtpDataType.Binary;
                 TextWriterColor.Write(Translate.DoTranslation("Data type set to Binary!"), true, KernelColorType.Success);
+                return 0;
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Invalid data type."), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }
 

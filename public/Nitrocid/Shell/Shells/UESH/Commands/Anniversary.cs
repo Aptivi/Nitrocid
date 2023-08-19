@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class AnniversaryCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var annivPres = new Presentation(
                 Translate.DoTranslation("Commemorating the 5-year anniversary of the kernel"),
@@ -85,6 +85,7 @@ namespace KS.Shell.Shells.UESH.Commands
             );
 
             PresentationTools.Present(annivPres, true, false);
+            return 0;
         }
 
     }

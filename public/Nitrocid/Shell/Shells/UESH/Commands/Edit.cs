@@ -33,13 +33,14 @@ namespace KS.Shell.Shells.UESH.Commands
     class EditCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string path = Filesystem.NeutralizePath(ListArgsOnly[0]);
             bool forceText = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-text");
             bool forceJson = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-json");
             bool forceHex = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-hex");
             Opening.OpenEditor(path, forceText, forceJson, forceHex);
+            return 0;
         }
 
     }

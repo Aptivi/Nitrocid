@@ -19,6 +19,8 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
@@ -38,7 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class CombineCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             string OutputPath = Filesystem.NeutralizePath(ListArgsOnly[0]);
@@ -59,7 +61,10 @@ namespace KS.Shell.Shells.UESH.Commands
             AreAllInputsBinary = InputStates.Count == InputStates.Where((binary) => binary).Count();
             AreAllInputsText = InputStates.Count == InputStates.Where((binary) => !binary).Count();
             if (!AreAllInputsBinary && !AreAllInputsText)
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't combine a mix of text and binary files."));
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Can't combine a mix of text and binary files."), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.Filesystem;
+            }
 
             // Make a combined content array
             if (AreAllInputsText)
@@ -74,6 +79,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 Making.MakeFile(OutputPath, false);
                 File.WriteAllBytes(OutputPath, CombinedContents);
             }
+            return 0;
         }
 
     }

@@ -31,8 +31,10 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_CatCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             TextWriterColor.Write(SFTPTransfer.SFTPDownloadToString(ListArgsOnly[0]));
-
+            return 0;
+        }
     }
 }

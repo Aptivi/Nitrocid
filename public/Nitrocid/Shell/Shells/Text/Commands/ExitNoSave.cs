@@ -30,7 +30,10 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_ExitNoSaveCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ShellStart.KillShell();
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            ShellStart.KillShell();
+            return 0;
+        }
     }
 }

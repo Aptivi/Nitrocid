@@ -34,8 +34,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class MailCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             NetworkConnectionTools.OpenConnectionForShell(ShellType.MailShell, (address) => string.IsNullOrEmpty(address) ? MailLogin.PromptUser() : MailLogin.PromptPassword(address), StringArgs);
-
+            return 0;
+        }
     }
 }

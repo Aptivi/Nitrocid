@@ -29,7 +29,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
     class HelpUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (string.IsNullOrWhiteSpace(StringArgs))
             {
@@ -39,6 +39,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
             {
                 HelpSystem.ShowHelp(ListArgsOnly[0]);
             }
+            return 0;
         }
 
         public static string[] ListCmds() => 

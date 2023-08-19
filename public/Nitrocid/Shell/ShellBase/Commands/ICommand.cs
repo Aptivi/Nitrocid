@@ -30,7 +30,9 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="StringArgs">Arguments in a string</param>
         /// <param name="ListArgsOnly">List of provided arguments</param>
         /// <param name="ListSwitchesOnly">List of provided switches</param>
-        void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly);
+        /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
+        /// <returns>Error code for the command</returns>
+        int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue);
 
         /// <summary>
         /// Shows additional information for the command when "help command" is invoked

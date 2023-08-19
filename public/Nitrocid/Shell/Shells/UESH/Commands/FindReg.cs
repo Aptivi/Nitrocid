@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class FindRegCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string RegexToMatch = ListArgsOnly[0];
             string DirectoryToSearch = CurrentDirectory.CurrentDir;
@@ -65,6 +65,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
                 ListWriterColor.WriteList(AllFileEntries, true);
+            return 0;
         }
 
     }

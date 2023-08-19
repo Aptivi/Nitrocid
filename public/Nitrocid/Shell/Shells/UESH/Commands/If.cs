@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class IfCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             try
             {
@@ -53,12 +53,14 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     ShellManager.GetLine(CommandString);
                 }
+                return 0;
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to satisfy condition. See above for more information: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Failed to satisfy condition. More info here:") + " {0}", true, KernelColorType.Error, ex.Message);
+                return ex.GetHashCode();
             }
         }
 

@@ -31,10 +31,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class MkFileCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             Making.MakeFile(ListArgsOnly[0]);
+            return 0;
         }
     }
 }

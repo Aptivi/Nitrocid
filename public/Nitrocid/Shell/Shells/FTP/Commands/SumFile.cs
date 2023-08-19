@@ -20,6 +20,7 @@ using System;
 using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.FTP.Filesystem;
 using KS.Shell.ShellBase.Commands;
@@ -35,7 +36,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_SumFileCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string RemoteFile = ListArgsOnly[0];
             string Hash = ListArgsOnly[1];
@@ -45,10 +46,12 @@ namespace KS.Shell.Shells.FTP.Commands
             {
                 var HashResult = FTPHashing.FTPGetHash(RemoteFile, (FtpHashAlgorithm)Convert.ToInt32(Enum.Parse(typeof(FtpHashAlgorithm), Hash)));
                 TextWriterColor.Write(HashResult.Value);
+                return 0;
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }
 

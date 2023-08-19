@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SearchCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             try
             {
@@ -61,12 +61,14 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     Console.WriteLine(matchLine);
                 }
+                return 0;
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", ListArgsOnly[0], ListArgsOnly[1]);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1], ex.Message);
+                return ex.GetHashCode();
             }
         }
 

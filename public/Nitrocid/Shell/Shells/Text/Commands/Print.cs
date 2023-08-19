@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Text;
@@ -36,7 +37,7 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_PrintCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             int LineNumber = 1;
             if (ListArgsOnly.Length > 0)
@@ -56,16 +57,19 @@ namespace KS.Shell.Shells.Text.Commands
                             DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
                             TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
                             TextWriterColor.Write(Line, true, KernelColorType.ListValue);
+                            return 0;
                         }
                         else
                         {
                             TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                            return 10000 + (int)KernelExceptionType.TextEditor;
                         }
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[0]);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
                 else
@@ -88,16 +92,19 @@ namespace KS.Shell.Shells.Text.Commands
                                 TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
                                 TextWriterColor.Write(Line, true, KernelColorType.ListValue);
                             }
+                            return 0;
                         }
                         else
                         {
                             TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                            return 10000 + (int)KernelExceptionType.TextEditor;
                         }
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[0]);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
             }
@@ -110,6 +117,7 @@ namespace KS.Shell.Shells.Text.Commands
                     TextWriterColor.Write(Line, true, KernelColorType.ListValue);
                     LineNumber += 1;
                 }
+                return 0;
             }
         }
 

@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SaveScreenCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (!(ListArgsOnly.Length == 0))
                 ScreensaverManager.ShowSavers(ListArgsOnly[0]);
@@ -44,6 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 Input.DetectKeypress();
                 ScreensaverDisplayer.BailFromScreensaver();
             }
+            return 0;
         }
 
         public override void HelpHelper()

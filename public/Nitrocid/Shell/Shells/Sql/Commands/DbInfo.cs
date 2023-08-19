@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.Sql.Commands
     class Sql_DbInfoCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var connection = SqlShellCommon.sqliteConnection;
             TextWriterColor.Write(Translate.DoTranslation("Database path:") + " ", false, KernelColorType.ListEntry);
@@ -45,6 +45,7 @@ namespace KS.Shell.Shells.Sql.Commands
             TextWriterColor.Write(connection.ConnectionString, true, KernelColorType.ListValue);
             TextWriterColor.Write(Translate.DoTranslation("Database name:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.Write(connection.Database, true, KernelColorType.ListValue);
+            return 0;
         }
     }
 }

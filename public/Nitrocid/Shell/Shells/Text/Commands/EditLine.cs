@@ -21,6 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
@@ -36,7 +37,7 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_EditLineCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (TextTools.IsStringNumeric(ListArgsOnly[0]))
             {
@@ -45,17 +46,21 @@ namespace KS.Shell.Shells.Text.Commands
                     string OriginalLine = TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d)];
                     TextWriterColor.Write(">> ", false, KernelColorType.Input);
                     string EditedLine = Input.ReadLine("", OriginalLine);
+                    // TODO: Math.Round in index?
                     TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d)] = EditedLine;
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.TextEditor;
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                return 10000 + (int)KernelExceptionType.TextEditor;
             }
         }
 

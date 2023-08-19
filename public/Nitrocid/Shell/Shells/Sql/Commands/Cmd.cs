@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Editors.SqlEdit;
 using KS.Misc.Text;
@@ -38,7 +39,7 @@ namespace KS.Shell.Shells.Sql.Commands
     class Sql_CmdCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             // First, check to see if we have parameters
             List<SqliteParameter> parameters = new();
@@ -58,9 +59,13 @@ namespace KS.Shell.Shells.Sql.Commands
                 TextWriterColor.Write(Translate.DoTranslation("SQL command succeeded. Here are the replies:"), true, KernelColorType.Success);
                 foreach (string reply in replies)
                     TextWriterColor.Write(reply, true, KernelColorType.Success);
+                return 0;
             }
             else
+            {
                 TextWriterColor.Write(Translate.DoTranslation("SQL command failed."), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.SqlEditor;
+            }
         }
     }
 }

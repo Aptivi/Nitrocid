@@ -30,7 +30,10 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_CdCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => MailDirectory.MailChangeDirectory(ListArgsOnly[0]);
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            MailDirectory.MailChangeDirectory(ListArgsOnly[0]);
+            return 0;
+        }
     }
 }

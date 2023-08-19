@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class UnitConvCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var parser = UnitsNetSetup.Default.UnitParser;
             string UnitType = ListArgsOnly[0];
@@ -50,6 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
             var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
             TextWriterColor.Write("- {0} => {1}: ", false, KernelColorType.ListEntry, SourceUnit, TargetUnit);
             TextWriterColor.Write(ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat), true, KernelColorType.ListValue);
+            return 0;
         }
 
         public override void HelpHelper()

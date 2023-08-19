@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class BulkRenameCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             string targetDir = ListArgsOnly[0];
@@ -60,6 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 // Increment the number
                 fileNo += 1;
             }
+            return 0;
         }
 
     }

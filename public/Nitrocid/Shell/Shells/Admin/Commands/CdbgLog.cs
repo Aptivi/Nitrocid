@@ -23,6 +23,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -37,7 +38,7 @@ namespace KS.Shell.Shells.Admin.Commands
     class Admin_CdbgLogCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (Flags.DebugMode)
             {
@@ -46,16 +47,19 @@ namespace KS.Shell.Shells.Admin.Commands
                     DebugWriter.DebugStreamWriter.Close();
                     DebugWriter.DebugStreamWriter = new StreamWriter(Paths.GetKernelPath(KernelPathType.Debugging)) { AutoFlush = true };
                     TextWriterColor.Write(Translate.DoTranslation("Debug log removed. All connected debugging devices may still view messages."));
+                    return 0;
                 }
                 catch (Exception ex)
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Debug log removal failed: {0}"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
+                    return ex.GetHashCode();
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("You must turn on debug mode before you can clear debug log."));
+                return 10000 + (int)KernelExceptionType.Debug;
             }
         }
 

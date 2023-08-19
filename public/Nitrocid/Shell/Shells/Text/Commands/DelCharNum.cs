@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Editors.TextEdit;
 using KS.Misc.Text;
@@ -36,7 +37,7 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_DelCharNumCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (TextTools.IsStringNumeric(ListArgsOnly[1]) & TextTools.IsStringNumeric(ListArgsOnly[0]))
             {
@@ -44,16 +45,19 @@ namespace KS.Shell.Shells.Text.Commands
                 {
                     TextEditTools.TextEdit_DeleteChar(Convert.ToInt32(ListArgsOnly[0]), Convert.ToInt32(ListArgsOnly[1]));
                     TextWriterColor.Write(Translate.DoTranslation("Character deleted."), true, KernelColorType.Success);
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.TextEditor;
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("One or both of the numbers are not numeric."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgsOnly[0], ListArgsOnly[1]);
+                return 10000 + (int)KernelExceptionType.TextEditor;
             }
         }
 

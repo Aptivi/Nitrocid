@@ -30,7 +30,10 @@ namespace KS.Shell.Shells.Archive.Commands
     class ArchiveShell_CDirCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextWriterColor.Write(ArchiveShellCommon.ArchiveShell_CurrentDirectory);
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            TextWriterColor.Write(ArchiveShellCommon.ArchiveShell_CurrentDirectory);
+            return 0;
+        }
     }
 }

@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ThemeSelCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string answer = "";
             string selectedTheme = "";
@@ -65,7 +65,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
                     // even if that PromptSelection returned the abovementioned value, so bail if index is -2
                     if (colorIndex == -2)
-                        return;
+                        return 3;
 
                     // Get the theme name from index
                     selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
@@ -102,6 +102,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Save it to configuration
             Config.CreateConfig();
+            return 0;
         }
 
         public override void HelpHelper() =>

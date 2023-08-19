@@ -21,6 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.Base;
 using KS.Network.Base.Transfer;
@@ -37,11 +38,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class Get_Command : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             int RetryCount = 1;
             string URL = ListArgsOnly[0];
             string outputPath = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-outputpath");
+            int failCode = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);
             while (!(RetryCount > NetworkTools.DownloadRetries))
             {
@@ -65,17 +67,19 @@ namespace KS.Shell.Shells.UESH.Commands
                                 if (NetworkTransfer.DownloadFile(ListArgsOnly[0], outputPath))
                                     TextWriterColor.Write(Translate.DoTranslation("Download has completed."));
                             }
+                            return 0;
                         }
                         else
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Specify the address"), true, KernelColorType.Error);
+                            return 10000 + (int)KernelExceptionType.HTTPNetwork;
                         }
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Please use \"ftp\" if you are going to download files from the FTP server."), true, KernelColorType.Error);
+                        return 10000 + (int)KernelExceptionType.HTTPNetwork;
                     }
-                    return;
                 }
                 catch (Exception ex)
                 {
@@ -84,8 +88,10 @@ namespace KS.Shell.Shells.UESH.Commands
                     RetryCount += 1;
                     DebugWriter.WriteDebug(DebugLevel.I, "Try count: {0}", RetryCount);
                     DebugWriter.WriteDebugStackTrace(ex);
+                    failCode = ex.GetHashCode();
                 }
             }
+            return failCode;
         }
 
     }

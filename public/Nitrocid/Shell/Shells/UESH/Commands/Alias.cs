@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
@@ -39,17 +40,19 @@ namespace KS.Shell.Shells.UESH.Commands
     class AliasCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly.Length > 3)
             {
                 if (ListArgsOnly[0] == "add" & ShellManager.AvailableShells.ContainsKey(ListArgsOnly[1]))
                 {
                     AliasManager.ManageAlias(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2], ListArgsOnly[3]);
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, ListArgsOnly[1]);
+                    return 10000 + (int)KernelExceptionType.AliasNoSuchType;
                 }
             }
             else if (ListArgsOnly.Length == 3)
@@ -57,12 +60,15 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (ListArgsOnly[0] == "rem" & ShellManager.AvailableShells.ContainsKey(ListArgsOnly[1]))
                 {
                     AliasManager.ManageAlias(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
+                    return 0;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, ListArgsOnly[1]);
+                    return 10000 + (int)KernelExceptionType.AliasNoSuchType;
                 }
             }
+            return 0;
         }
 
     }

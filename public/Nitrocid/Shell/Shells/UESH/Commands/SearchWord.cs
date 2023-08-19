@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SearchWordCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string lookup = ListArgsOnly[0];
             string fileName = ListArgsOnly[1];
@@ -55,12 +55,14 @@ namespace KS.Shell.Shells.UESH.Commands
                         matchLine = matchLine.Replace(lookup, toReplaceWith);
                     TextWriterColor.Write(matchLine);
                 }
+                return 0;
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", lookup, fileName);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1], ex.Message);
+                return ex.GetHashCode();
             }
         }
 

@@ -19,6 +19,7 @@
 using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.FTP.Commands
@@ -32,7 +33,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_ExecuteCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write("<<< C: {0}", StringArgs);
             var ExecutedReply = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Execute(StringArgs);
@@ -40,12 +41,14 @@ namespace KS.Shell.Shells.FTP.Commands
             {
                 TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
                 TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                return 0;
             }
             else
             {
                 TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
                 TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
                 TextWriterColor.Write(">>> [{0}] E: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
+                return 10000 + (int)KernelExceptionType.FTPShell;
             }
         }
 

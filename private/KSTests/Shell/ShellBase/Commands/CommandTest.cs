@@ -25,12 +25,13 @@ namespace KSTests.Shell.ShellBase.Commands
     class CommandTest : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             Console.WriteLine("We're on CommandTest with:");
             Console.WriteLine(format: "- StringArgs: {0}", StringArgs);
             Console.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
             Console.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
+            return 0;
         }
 
     }

@@ -29,7 +29,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class ClsCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => ConsoleBase.ConsoleWrapper.Clear();
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            ConsoleBase.ConsoleWrapper.Clear();
+            return 0;
+        }
     }
 }

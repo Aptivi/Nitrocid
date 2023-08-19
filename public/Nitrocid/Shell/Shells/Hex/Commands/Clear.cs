@@ -27,7 +27,10 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_ClearCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => HexEditShellCommon.HexEdit_FileBytes = Array.Empty<byte>();
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            HexEditShellCommon.HexEdit_FileBytes = Array.Empty<byte>();
+            return 0;
+        }
     }
 }

@@ -40,11 +40,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class PingCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             // If the pinged address is actually a number of times
             int PingTimes = 4;
-            bool hasTimes = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-times");
             string projectedTimes = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-times");
             if (TextTools.IsStringNumeric(projectedTimes))
             {
@@ -84,6 +83,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Address may not be empty."), true, KernelColorType.Error);
                 }
             }
+            return 0;
         }
 
     }

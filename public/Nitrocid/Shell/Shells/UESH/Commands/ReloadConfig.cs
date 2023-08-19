@@ -34,10 +34,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class ReloadConfigCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             ConfigTools.ReloadConfig();
             TextWriterColor.Write(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."));
+            return 0;
         }
 
         public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("Colors don't require a restart, but most of the settings require a restart."));

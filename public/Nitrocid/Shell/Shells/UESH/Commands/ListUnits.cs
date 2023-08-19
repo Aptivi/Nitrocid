@@ -21,6 +21,7 @@ using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using UnitsNet;
@@ -36,11 +37,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class ListUnitsCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             var Quantities = Quantity.Infos.Where(x => x.Name == ListArgsOnly[0]);
-            if (Quantities.Count() != 0)
+            if (Quantities.Any())
             {
                 TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
                 foreach (QuantityInfo QuantityInfo in Quantities)
@@ -52,10 +53,12 @@ namespace KS.Shell.Shells.UESH.Commands
                         TextWriterColor.Write(UnitValues.ToString(), true, KernelColorType.ListValue);
                     }
                 }
+                return 0;
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("No such unit type:") + " {0}", true, KernelColorType.Error, ListArgsOnly[0]);
+                return 3;
             }
         }
 

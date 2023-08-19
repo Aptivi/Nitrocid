@@ -37,28 +37,18 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChDirCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             try
             {
                 CurrentDirectory.SetCurrDir(ListArgsOnly[0]);
-            }
-            catch (System.Security.SecurityException sex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Security error: {0} ({1})", sex.Message, sex.PermissionType);
-                TextWriterColor.Write(Translate.DoTranslation("You are unauthorized to set current directory to {0}: {1}"), true, KernelColorType.Error, ListArgsOnly[0], sex.Message);
-                DebugWriter.WriteDebugStackTrace(sex);
-            }
-            catch (PathTooLongException ptlex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Directory length: {0}", Filesystem.NeutralizePath(ListArgsOnly[0]).Length);
-                TextWriterColor.Write(Translate.DoTranslation("The path you've specified is too long."), true, KernelColorType.Error);
-                DebugWriter.WriteDebugStackTrace(ptlex);
+                return 0;
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Changing directory has failed: {0}"), true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
+                return ex.GetHashCode();
             }
         }
 

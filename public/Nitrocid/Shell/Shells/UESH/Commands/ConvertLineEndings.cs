@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ConvertLineEndingsCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string TargetTextFile = ListArgsOnly[0];
             var TargetLineEnding = LineEndingsTools.NewlineStyle;
@@ -66,6 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Convert the line endings
             LineEndingsConverter.ConvertLineEndings(TargetTextFile, TargetLineEnding);
+            return 0;
         }
 
     }

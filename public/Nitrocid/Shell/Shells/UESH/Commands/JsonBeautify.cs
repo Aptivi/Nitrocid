@@ -21,6 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Querying;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Editors.JsonShell;
 using KS.Shell.ShellBase.Commands;
@@ -36,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class JsonBeautifyCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string JsonFile = Filesystem.NeutralizePath(ListArgsOnly[0]);
             string JsonOutputFile;
@@ -54,10 +55,12 @@ namespace KS.Shell.Shells.UESH.Commands
                     JsonOutputFile = Filesystem.NeutralizePath(ListArgsOnly[1]);
                     File.WriteAllText(JsonOutputFile, BeautifiedJson);
                 }
+                return 0;
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("File {0} not found."), true, KernelColorType.Error, JsonFile);
+                return 10000 + (int)KernelExceptionType.JsonEditor;
             }
         }
 

@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Editors.HexEdit;
 using KS.Misc.Reflection;
@@ -37,7 +38,7 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_DelBytesCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly.Length == 1)
             {
@@ -47,16 +48,19 @@ namespace KS.Shell.Shells.Hex.Commands
                     {
                         HexEditTools.HexEdit_DeleteBytes(Convert.ToInt64(ListArgsOnly[0]));
                         TextWriterColor.Write(Translate.DoTranslation("Deleted bytes."), true, KernelColorType.Success);
+                        return 0;
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Specified Byte number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[0]);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                    return 10000 + (int)KernelExceptionType.HexEditor;
                 }
             }
             else if (ListArgsOnly.Length > 1)
@@ -69,18 +73,22 @@ namespace KS.Shell.Shells.Hex.Commands
                         long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.HexEdit_DeleteBytes(ByteNumberStart, ByteNumberEnd);
+                        return 0;
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The specified byte number may not be larger than the file size."), true, KernelColorType.Error);
+                        return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                     DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[1]);
+                    return 10000 + (int)KernelExceptionType.HexEditor;
                 }
             }
+            return 0;
         }
 
     }

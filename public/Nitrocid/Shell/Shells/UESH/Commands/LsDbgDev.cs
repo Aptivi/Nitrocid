@@ -34,13 +34,14 @@ namespace KS.Shell.Shells.UESH.Commands
     class LsDbgDevCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             foreach (RemoteDebugDevice DebugDevice in RemoteDebugger.DebugDevices)
             {
                 TextWriterColor.Write($"- {DebugDevice.ClientIP}: ", false, KernelColorType.ListEntry);
                 TextWriterColor.Write(DebugDevice.ClientName, true, KernelColorType.ListValue);
             }
+            return 0;
         }
 
     }

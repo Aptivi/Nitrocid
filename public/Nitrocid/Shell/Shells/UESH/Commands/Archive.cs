@@ -21,6 +21,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -36,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ArchiveCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             ListArgsOnly[0] = Filesystem.NeutralizePath(ListArgsOnly[0]);
             DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgsOnly[0], Checking.FileExists(ListArgsOnly[0]));
@@ -47,7 +48,9 @@ namespace KS.Shell.Shells.UESH.Commands
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("File doesn't exist."), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.Filesystem;
             }
+            return 0;
         }
 
     }

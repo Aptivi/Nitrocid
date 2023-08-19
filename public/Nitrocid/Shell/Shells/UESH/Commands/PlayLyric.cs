@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class PlayLyricCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string pathToLyrics = ListArgsOnly[0];
 
@@ -40,6 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
             Lyrics.VisualizeLyric(pathToLyrics);
             Thread.Sleep(10000);
             ConsoleWrapper.CursorVisible = true;
+            return 0;
         }
 
     }

@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ListCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || Listing.ShowFileDetailsList;
             bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || Flags.SuppressUnauthorizedMessages;
@@ -71,6 +71,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
                 }
             }
+            return 0;
         }
 
     }

@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_SaveCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var TargetFormatting = Formatting.Indented;
             if (ListSwitchesOnly.Length > 0)
@@ -58,6 +58,7 @@ namespace KS.Shell.Shells.Json.Commands
                     TargetFormatting = Formatting.None;
             }
             JsonTools.JsonShell_SaveFile(false, TargetFormatting);
+            return 0;
         }
 
     }

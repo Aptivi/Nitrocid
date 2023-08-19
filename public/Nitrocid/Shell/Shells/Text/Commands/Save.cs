@@ -30,7 +30,10 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_SaveCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => TextEditTools.TextEdit_SaveTextFile(false);
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            TextEditTools.TextEdit_SaveTextFile(false);
+            return 0;
+        }
     }
 }

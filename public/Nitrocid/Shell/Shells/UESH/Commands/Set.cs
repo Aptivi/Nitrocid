@@ -30,7 +30,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class SetCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => UESHVariables.SetVariable(ListArgsOnly[0], ListArgsOnly[1]);
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            UESHVariables.SetVariable(ListArgsOnly[0], ListArgsOnly[1]);
+            return 0;
+        }
     }
 }

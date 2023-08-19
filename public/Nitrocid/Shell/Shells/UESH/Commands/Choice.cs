@@ -69,7 +69,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChoiceCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Titles = new List<string>();
             var PressEnter = false;
@@ -100,6 +100,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Prompt for choice
             UESHCommands.PromptChoiceAndSet(ListArgsOnly[2], ListArgsOnly[0], ListArgsOnly[1], Titles.ToArray(), OutputType, PressEnter);
+            return 0;
         }
 
         public override void HelpHelper() =>

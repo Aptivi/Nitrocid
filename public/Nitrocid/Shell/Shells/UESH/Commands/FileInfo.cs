@@ -25,6 +25,7 @@ using KS.Files;
 using KS.Files.LineEndings;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -41,7 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class FileInfoCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             foreach (string FileName in ListArgsOnly)
             {
@@ -69,6 +70,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Can't get information about nonexistent file."), true, KernelColorType.Error);
                 }
             }
+            return 0;
         }
 
     }

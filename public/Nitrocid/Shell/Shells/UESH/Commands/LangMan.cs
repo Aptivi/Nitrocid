@@ -22,6 +22,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Querying;
 using KS.Kernel;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -38,7 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class LangManCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (!Flags.SafeMode)
             {
@@ -61,13 +62,13 @@ namespace KS.Shell.Shells.UESH.Commands
                                 if (!(Parsing.TryParsePath(TargetLanguagePath) && Checking.FileExists(TargetLanguagePath)) & !LanguageManager.Languages.ContainsKey(TargetLanguage))
                                 {
                                     TextWriterColor.Write(Translate.DoTranslation("Language not found or file has invalid characters."), true, KernelColorType.Error);
-                                    return;
+                                    return 10000 + (int)KernelExceptionType.NoSuchLanguage;
                                 }
                             }
                             else
                             {
                                 TextWriterColor.Write(Translate.DoTranslation("Language is not specified."), true, KernelColorType.Error);
-                                return;
+                                return 10000 + (int)KernelExceptionType.NoSuchLanguage;
                             }
 
                             break;
@@ -125,19 +126,21 @@ namespace KS.Shell.Shells.UESH.Commands
                             LanguageManager.InstallCustomLanguages();
                             break;
                         }
-
                     default:
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
                             HelpSystem.ShowHelp("langman");
-                            break;
+                            // TODO: LanguageManagement from KET is better.
+                            return 10000 + (int)KernelExceptionType.LanguageParse;
                         }
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Language management is disabled in safe mode."), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.LanguageParse;
             }
+            return 0;
         }
 
     }

@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_LsHeaderCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var headers = HTTPTools.HttpListHeaders();
             foreach (var header in headers)
@@ -37,6 +37,7 @@ namespace KS.Shell.Shells.HTTP.Commands
                 TextWriterColor.Write("  - {0}: ", false, KernelColorType.ListEntry, header.Item1);
                 TextWriterColor.Write("{0}", true, KernelColorType.ListValue, header.Item2);
             }
+            return 0;
         }
 
     }

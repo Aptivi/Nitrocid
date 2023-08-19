@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.Archive.Commands
     class ArchiveShell_ListCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             List<IArchiveEntry> Entries;
             if (ListArgsOnly.Length > 0)
@@ -61,6 +61,7 @@ namespace KS.Shell.Shells.Archive.Commands
                     TextWriterColor.Write();
                 }
             }
+            return 0;
         }
 
     }

@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.Archive.Commands
     class ArchiveShell_GetCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string Where = "";
             var Absolute = false;
@@ -59,6 +59,7 @@ namespace KS.Shell.Shells.Archive.Commands
                 }
             }
             ArchiveTools.ExtractFileEntry(ListArgsOnly[0], Where, Absolute);
+            return 0;
         }
 
     }

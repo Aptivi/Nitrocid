@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Probers.Motd;
 using KS.Shell.ShellBase.Commands;
@@ -41,18 +42,20 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChMalCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly.Length > 0)
             {
                 if (string.IsNullOrEmpty(StringArgs))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Blank MAL After Login."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.MOTD;
                 }
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Changing MAL..."));
                     MalParse.SetMal(StringArgs);
+                    return 0;
                 }
             }
             else
@@ -60,6 +63,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 ShellStart.StartShell(ShellType.TextShell, Paths.GetKernelPath(KernelPathType.MAL));
                 TextWriterColor.Write(Translate.DoTranslation("Changing MAL..."));
                 MalParse.ReadMal();
+                return 0;
             }
         }
 

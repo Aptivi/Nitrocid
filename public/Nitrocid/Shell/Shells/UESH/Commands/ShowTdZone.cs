@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ShowTdZoneCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var ShowAll = false;
             if (ListSwitchesOnly.Contains("-all"))
@@ -60,6 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 TimeZoneRenderers.ShowAllTimeZones();
             else if (!TimeZoneRenderers.ShowTimeZones(ListArgsOnly[0]))
                 TextWriterColor.Write(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
+            return 0;
         }
 
     }

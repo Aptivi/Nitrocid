@@ -34,8 +34,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class FtpCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             NetworkConnectionTools.OpenConnectionForShell(ShellType.FTPShell, FTPTools.TryToConnect, StringArgs);
-
+            return 0;
+        }
     }
 }

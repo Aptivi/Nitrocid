@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.PathLookup;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
@@ -33,13 +34,19 @@ namespace KS.Shell.Shells.UESH.Commands
     class PathFindCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string filePath = "";
             if (PathLookupTools.FileExistsInPath(ListArgsOnly[0], ref filePath))
+            {
                 TextWriterColor.Write(Translate.DoTranslation("File found in path:") + " {0}", true, KernelColorType.Success, filePath);
+                return 0;
+            }
             else
+            {
                 TextWriterColor.Write(Translate.DoTranslation("File not found in path lookup directories."), true, KernelColorType.Warning);
+                return 10000 + (int)KernelExceptionType.Filesystem;
+            }
         }
     }
 }

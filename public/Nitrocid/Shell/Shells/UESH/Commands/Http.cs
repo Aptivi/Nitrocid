@@ -31,7 +31,8 @@ namespace KS.Shell.Shells.UESH.Commands
     class HttpCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             NetworkConnectionTools.OpenConnectionForShell(ShellType.HTTPShell, (address) =>
             {
                 if (string.IsNullOrEmpty(address))
@@ -39,5 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, new HttpClient());
             }
             , StringArgs);
+            return 0;
+        }
     }
 }

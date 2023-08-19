@@ -24,8 +24,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class HangmanCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => 
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             Hangman.InitializeHangman();
-
+            return 0;
+        }
     }
 }

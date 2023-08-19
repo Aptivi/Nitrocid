@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -35,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class PermGroupCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageGroups);
             string target = ListArgsOnly[0];
@@ -43,8 +45,11 @@ namespace KS.Shell.Shells.UESH.Commands
             string perm = ListArgsOnly[2];
 
             if (!Enum.TryParse(typeof(PermissionTypes), perm, out object permission))
+            {
                 // Permission not found
-                throw new KernelException(KernelExceptionType.PermissionManagement, Translate.DoTranslation("No such permission"));
+                TextWriterColor.Write(Translate.DoTranslation("No such permission"), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.PermissionManagement;
+            }
 
             if (mode == "allow")
                 // Granting permission.
@@ -53,8 +58,12 @@ namespace KS.Shell.Shells.UESH.Commands
                 // Revoking permission.
                 PermissionsTools.RevokePermissionGroup(target, (PermissionTypes)permission);
             else
+            {
                 // No mode
-                throw new KernelException(KernelExceptionType.PermissionManagement, Translate.DoTranslation("No such permission mode"));
+                TextWriterColor.Write(Translate.DoTranslation("No such permission mode"), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.PermissionManagement;
+            }
+            return 0;
         }
 
     }

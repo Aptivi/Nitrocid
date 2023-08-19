@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Debug.Commands
     class Debug_ThreadsBtCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Print the list
             Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
@@ -46,6 +46,7 @@ namespace KS.Shell.Shells.Debug.Commands
                 ListWriterColor.WriteList(threadTrace);
                 TextWriterColor.Write();
             }
+            return 0;
         }
     }
 }

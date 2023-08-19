@@ -32,10 +32,11 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_AddArrayCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string parent = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-parentProperty");
             JsonTools.JsonShell_AddNewArray(parent, ListArgsOnly[0], JArray.Parse("[ \"" + string.Join("\", \"", ListArgsOnly.Skip(1).ToArray()) + "\" ]"));
+            return 0;
         }
     }
 }

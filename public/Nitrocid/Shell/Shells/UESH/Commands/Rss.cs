@@ -34,7 +34,8 @@ namespace KS.Shell.Shells.UESH.Commands
     class RssCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
             NetworkConnectionTools.OpenConnectionForShell(ShellType.RSSShell, (address) =>
             {
                 if (string.IsNullOrEmpty(address))
@@ -42,6 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
             }
             , StringArgs);
-
+            return 0;
+        }
     }
 }

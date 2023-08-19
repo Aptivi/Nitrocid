@@ -27,6 +27,7 @@ using KS.Shell.ShellBase.Commands;
 using MimeKit;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 
 namespace KS.Shell.Shells.Mail.Commands
 {
@@ -60,7 +61,7 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_SendEncCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string Receiver, Subject;
             var Body = new BodyBuilder();
@@ -71,7 +72,7 @@ namespace KS.Shell.Shells.Mail.Commands
             DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", Receiver);
 
             // Check for mail format
-            if (Receiver.Contains("@") & Receiver[Receiver.IndexOf("@")..].Contains("."))
+            if (Receiver.Contains('@') & Receiver[Receiver.IndexOf('@')..].Contains('.'))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Mail format satisfied. Contains \"@\" and contains \".\" in the second part after the \"@\" symbol.");
 
@@ -117,16 +118,19 @@ namespace KS.Shell.Shells.Mail.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Message sent.");
                     TextWriterColor.Write(Translate.DoTranslation("Message sent."), true, KernelColorType.Success);
+                    return 0;
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "See debug output to find what's wrong.");
                     TextWriterColor.Write(Translate.DoTranslation("Error sending message."), true, KernelColorType.Error);
+                    return 10000 + (int)KernelExceptionType.Mail;
                 }
             }
             else {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mail format unsatisfied." + Receiver);
                 TextWriterColor.Write(Translate.DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.Mail;
             }
         }
 

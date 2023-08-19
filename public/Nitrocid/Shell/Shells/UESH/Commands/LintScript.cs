@@ -30,22 +30,25 @@ namespace KS.Shell.Shells.UESH.Commands
     class LintScriptCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             try
             {
                 string pathToScript = Filesystem.NeutralizePath(ListArgsOnly[0]);
                 UESHParse.Execute(pathToScript, "", true);
                 TextWriterColor.Write(Translate.DoTranslation("Script lint succeeded."), true, KernelColorType.Success);
+                return 0;
             }
             catch (KernelException kex) when (kex.ExceptionType == KernelExceptionType.UESHScript)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Script lint failed. Most likely there is a syntax error. Check your script for errors and retry running the linter."), true, KernelColorType.Error);
                 TextWriterColor.Write(kex.Message, true, KernelColorType.Error);
+                return 10000 + (int)kex.ExceptionType;
             }
             catch (Exception ex)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Script linter failed unexpectedly trying to parse your script.") + $" {ex.Message}", true, KernelColorType.Error);
+                return ex.GetHashCode();
             }
         }
 

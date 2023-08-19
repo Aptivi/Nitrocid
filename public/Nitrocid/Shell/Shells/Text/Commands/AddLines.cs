@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_AddLinesCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var FinalLines = new List<string>();
             string FinalLine = "";
@@ -54,6 +54,7 @@ namespace KS.Shell.Shells.Text.Commands
 
             // Add the new lines
             TextEditTools.TextEdit_AddNewLines(FinalLines.ToArray());
+            return 0;
         }
 
     }

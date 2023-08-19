@@ -29,7 +29,10 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
     class PresetsUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => PromptPresetManager.PromptForPresets();
-
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            PromptPresetManager.PromptForPresets();
+            return 0;
+        }
     }
 }
