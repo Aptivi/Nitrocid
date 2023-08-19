@@ -395,7 +395,8 @@ namespace KS.Shell.Shells.UESH
             
             { "gettimeinfo",
                 new CommandInfo("gettimeinfo", ShellType, /* Localizable */ "Gets the date and time information",
-                    new[] { new CommandArgumentInfo(new[] { "date" }, Array.Empty<SwitchInfo>(), true, 1)
+                    new[] { 
+                        new CommandArgumentInfo(new[] { "date" }, Array.Empty<SwitchInfo>(), true, 1)
                     }, new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
