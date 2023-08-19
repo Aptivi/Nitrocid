@@ -155,6 +155,9 @@ namespace KS.Kernel
                         HardwareList.ListHardware();
                     CheckErrored();
 
+                    // Notify user of errors if appropriate
+                    KernelPanic.NotifyBootFailure();
+
                     // Phase 3: Parse Mods and Screensavers
                     SplashReport.ReportNewStage(3, Translate.DoTranslation("- Stage 3: Mods and screensavers detection"));
                     DebugWriter.WriteDebug(DebugLevel.I, "Safe mode flag is set to {0}", Flags.SafeMode);
@@ -200,13 +203,6 @@ namespace KS.Kernel
                     {
                         Flags.FirstTime = false;
                         KernelFirstRun.PresentFirstRun();
-                    }
-
-                    // Notify user of errors if appropriate
-                    if (Flags.NotifyKernelError)
-                    {
-                        Flags.NotifyKernelError = false;
-                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Previous boot failed"), KernelPanic.LastKernelErrorException.Message, NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal));
                     }
 
                     // Initialize login prompt
@@ -260,6 +256,7 @@ namespace KS.Kernel
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
+                    SplashManager.BeginSplashOut();
                     KernelPanic.KernelError(KernelErrorLevel.U, true, 5L, Translate.DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message);
                 }
                 finally

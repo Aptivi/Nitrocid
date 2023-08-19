@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
@@ -398,6 +399,24 @@ namespace KS.Kernel.Exceptions
             {
                 TextWriterColor.Write(Translate.DoTranslation("Dump generator failed to dump a kernel error caused by") + " {0}: {1}", true, KernelColorType.Error, Exc.GetType().FullName, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
+            }
+        }
+
+        internal static void NotifyBootFailure()
+        {
+            if (Flags.NotifyKernelError)
+            {
+                string translated = Translate.DoTranslation("Previous boot failed");
+                var failureBuilder = new StringBuilder();
+                Flags.NotifyKernelError = false;
+                SplashManager.BeginSplashOut();
+                failureBuilder.AppendLine(translated);
+                failureBuilder.AppendLine(new string('=', translated.Length) + "\n");
+                failureBuilder.AppendLine(Translate.DoTranslation("We apologize for your inconvenience, but it looks like that the kernel was having trouble booting. The below error message might help:") + "\n");
+                failureBuilder.AppendLine(LastKernelErrorException.Message + "\n");
+                failureBuilder.AppendLine(Translate.DoTranslation("For further investigation, enable debugging mode on the kernel and try to reproduce the issue. Also, try to investigate the latest dump file created."));
+                InfoBoxColor.WriteInfoBox(failureBuilder.ToString(), KernelColorType.Error);
+                SplashManager.EndSplashOut();
             }
         }
     }
