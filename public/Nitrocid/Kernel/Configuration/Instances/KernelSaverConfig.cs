@@ -2474,5 +2474,17 @@ namespace KS.Kernel.Configuration.Instances
         /// [SquareCorner] The maximum blue color level (true color)
         /// </summary>
         public int SquareCornerMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [NumberScatter] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int NumberScatterDelay { get; set; } = 1;
+        /// <summary>
+        /// [NumberScatter] Screensaver background color
+        /// </summary>
+        public string NumberScatterBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        /// <summary>
+        /// [NumberScatter] Screensaver foreground color
+        /// </summary>
+        public string NumberScatterForegroundColor { get; set; } = new Color(ConsoleColors.Green).PlainSequence;
     }
 }

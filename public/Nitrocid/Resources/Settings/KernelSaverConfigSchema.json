@@ -1837,6 +1837,15 @@
         },
         "SquareCornerMaximumBlueColorLevel": {
             "type": "integer"
+        },
+        "NumberScatterDelay": {
+            "type": "integer"
+        },
+        "NumberScatterBackgroundColor": {
+            "type": "string"
+        },
+        "NumberScatterForegroundColor": {
+            "type": "string"
         }
     },
     "required": [
@@ -2451,6 +2460,9 @@
         "SquareCornerMinimumBlueColorLevel",
         "SquareCornerMaximumRedColorLevel",
         "SquareCornerMaximumGreenColorLevel",
-        "SquareCornerMaximumBlueColorLevel"
+        "SquareCornerMaximumBlueColorLevel",
+        "NumberScatterDelay",
+        "NumberScatterBackgroundColor",
+        "NumberScatterForegroundColor"
     ]
 }

@@ -96,6 +96,7 @@ namespace KS.Misc.Screensaver
             { "meteor", new MeteorDisplay() },
             { "newyear", new NewYearDisplay() },
             { "noise", new NoiseDisplay() },
+            { "numberscatter", new NumberScatterDisplay() },
             { "personlookup", new PersonLookupDisplay() },
             { "plain", new PlainDisplay() },
             { "progressclock", new ProgressClockDisplay() },

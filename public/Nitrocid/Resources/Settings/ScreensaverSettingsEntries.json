@@ -4705,5 +4705,27 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    "NumberScatter": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.NumberScatter",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "NumberScatterDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "NumberScatterBackgroundColor"
+            },
+            {
+                "Name": "Foreground color",
+                "Type": "SColor",
+                "Variable": "NumberScatterForegroundColor"
+            }
+        ]
     }
 }
