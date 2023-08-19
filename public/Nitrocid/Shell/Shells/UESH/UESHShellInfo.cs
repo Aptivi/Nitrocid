@@ -402,7 +402,10 @@ namespace KS.Shell.Shells.UESH
             { "get",
                 new CommandInfo("get", ShellType, /* Localizable */ "Downloads a file to current working directory",
                     new[] {
-                        new CommandArgumentInfo(new[] { "URL" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "URL" }, new[]
+                        {
+                            new SwitchInfo("outputpath", /* Localizable */ "Specifies the output path", false, true)
+                        }, true, 1)
                     }, new Get_Command())
             },
             

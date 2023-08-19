@@ -19,6 +19,7 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Network.Base;
@@ -40,6 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             int RetryCount = 1;
             string URL = ListArgsOnly[0];
+            string outputPath = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-outputpath");
             DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);
             while (!(RetryCount > NetworkTools.DownloadRetries))
             {
@@ -47,12 +49,21 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     if (!(URL.StartsWith("ftp://") | URL.StartsWith("ftps://") | URL.StartsWith("ftpes://")))
                     {
-                        if (!URL.StartsWith(" "))
+                        if (!string.IsNullOrEmpty(URL))
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Downloading from {0}..."), URL);
-                            if (NetworkTransfer.DownloadFile(ListArgsOnly[0]))
+                            if (string.IsNullOrEmpty(outputPath))
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("Download has completed."));
+                                // Use the current output path
+                                if (NetworkTransfer.DownloadFile(ListArgsOnly[0]))
+                                    TextWriterColor.Write(Translate.DoTranslation("Download has completed."));
+                            }
+                            else
+                            {
+                                // Use the custom path
+                                outputPath = Filesystem.NeutralizePath(outputPath);
+                                if (NetworkTransfer.DownloadFile(ListArgsOnly[0], outputPath))
+                                    TextWriterColor.Write(Translate.DoTranslation("Download has completed."));
                             }
                         }
                         else
