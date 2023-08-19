@@ -28,7 +28,7 @@ namespace KS.Shell.ShellBase.Commands
     {
 
         /// <summary>
-        /// The switch name
+        /// The switch name (without the dash)
         /// </summary>
         public string SwitchName { get; private set; }
         /// <summary>
@@ -55,7 +55,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Installs a new instance of switch info class
         /// </summary>
-        /// <param name="Switch">Switch</param>
+        /// <param name="Switch">Switch (without the dash)</param>
         /// <param name="HelpDefinition">Switch help definition</param>
         /// <param name="IsRequired">Is the switch required?</param>
         /// <param name="ArgumentsRequired">Whether the switch requires a value to be set</param>

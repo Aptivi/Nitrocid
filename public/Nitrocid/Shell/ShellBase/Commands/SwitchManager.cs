@@ -28,7 +28,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Gets the switch values
         /// </summary>
-        /// <returns>The list of switches with values supplied</returns>
+        /// <returns>The list of switches, which start with a dash, with values supplied</returns>
         public static List<(string, string)> GetSwitchValues(string[] switches, bool includeNonValueSwitches = false)
         {
             List<(string, string)> switchValues = new();
@@ -68,8 +68,8 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Gets the switch value
         /// </summary>
-        /// <param name="switches">List of switches</param>
-        /// <param name="switchKey">Switch key</param>
+        /// <param name="switches">List of switches that start with the dash</param>
+        /// <param name="switchKey">Switch key. Must begin with the dash before the switch name.</param>
         public static string GetSwitchValue(string[] switches, string switchKey)
         {
             var switchValues = GetSwitchValues(switches);
@@ -81,8 +81,8 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Checks to see if the switch list contains a switch
         /// </summary>
-        /// <param name="switches">List of switches</param>
-        /// <param name="switchKey">Switch key</param>
+        /// <param name="switches">List of switches that start with the dash</param>
+        /// <param name="switchKey">Switch key. Must begin with the dash before the switch name.</param>
         public static bool ContainsSwitch(string[] switches, string switchKey)
         {
             var switchValues = GetSwitchValues(switches, true);
