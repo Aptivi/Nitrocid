@@ -212,6 +212,12 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/UserGroups.json");
 
         /// <summary>
+        /// To-do list path
+        /// </summary>
+        public static string ToDoListPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/ToDoList.json");
+
+        /// <summary>
         /// Gets the neutralized kernel path
         /// </summary>
         /// <param name="PathType">Kernel path type</param>
@@ -238,6 +244,7 @@ namespace KS.Files
                 KernelPathType.ContactsImport =>        ContactsImportPath,
                 KernelPathType.SaverConfiguration =>    SaverConfigurationPath,
                 KernelPathType.SplashConfiguration =>   SplashConfigurationPath,
+                KernelPathType.ToDoList =>              ToDoListPath,
                 KernelPathType.UserGroups =>            UserGroupsPath,
                 _ => throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type.")),
             };

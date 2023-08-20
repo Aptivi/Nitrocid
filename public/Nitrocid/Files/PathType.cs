@@ -99,5 +99,9 @@ namespace KS.Files
         /// User groups configuration file.
         /// </summary>
         UserGroups,
+        /// <summary>
+        /// To-do list configuration file.
+        /// </summary>
+        ToDoList,
     }
 }

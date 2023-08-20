@@ -37,6 +37,7 @@ using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
+using KS.Misc.ToDoList;
 using KS.Modifications;
 using KS.Network.Base.Connections;
 using KS.Network.RPC;
@@ -153,6 +154,10 @@ namespace KS.Kernel.Starting
             // Load system env vars and convert them
             UESHVariables.ConvertSystemEnvironmentVariables();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
+
+            // Initialize to-do tasks
+            ToDoManager.LoadTasks();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
 
             // If the two files are not found, create two MOTD files with current config.
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))

@@ -955,8 +955,22 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("timer", ShellType, /* Localizable */ "A simple timer",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new TimerCommand()) },
-            
+                    }, new TimerCommand())
+            },
+
+            { "todo",
+                new CommandInfo("todo", ShellType, /* Localizable */ "To-do task manager",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "add", "taskname" }, Array.Empty<SwitchInfo>(), true, 2),
+                        new CommandArgumentInfo(new[] { "remove", "taskname" }, Array.Empty<SwitchInfo>(), true, 2),
+                        new CommandArgumentInfo(new[] { "done", "taskname" }, Array.Empty<SwitchInfo>(), true, 2),
+                        new CommandArgumentInfo(new[] { "undone", "taskname" }, Array.Empty<SwitchInfo>(), true, 2),
+                        new CommandArgumentInfo(new[] { "list" }, Array.Empty<SwitchInfo>(), true, 1),
+                        new CommandArgumentInfo(new[] { "save" }, Array.Empty<SwitchInfo>(), true, 1),
+                        new CommandArgumentInfo(new[] { "load" }, Array.Empty<SwitchInfo>(), true, 1),
+                    }, new TodoCommand())
+            },
+
             { "unblockdbgdev",
                 new CommandInfo("unblockdbgdev", ShellType, /* Localizable */ "Unblock a debug device by IP address",
                     new[] {
