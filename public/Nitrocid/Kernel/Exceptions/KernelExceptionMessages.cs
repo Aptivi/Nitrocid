@@ -122,6 +122,9 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.TimeDate,                         Translate.DoTranslation("An error occurred in the time and date module. Check to make sure that you've specified the time and the date correctly, and that the time zone exists.") },
                 { KernelExceptionType.ModManual,                        Translate.DoTranslation("An error occurred in the mod manual parser. Please ensure that your manual file is valid and that the mod is started.") },
                 { KernelExceptionType.Calendar,                         Translate.DoTranslation("An error occurred in the calendar manager.") },
+                { KernelExceptionType.NotificationManagement,           Translate.DoTranslation("There was an error in the notification management.") },
+                { KernelExceptionType.LanguageManagement,               Translate.DoTranslation("There was an error in the language management.") },
+                { KernelExceptionType.ModManagement,                    Translate.DoTranslation("There was an error in the mod management.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

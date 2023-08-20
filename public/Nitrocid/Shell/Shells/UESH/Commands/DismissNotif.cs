@@ -48,8 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Error trying to dismiss notification."), true, KernelColorType.Error);
-                // TODO: Assign notification manager exception
-                return 10000 + (int)KernelExceptionType.Unknown;
+                return 10000 + (int)KernelExceptionType.NotificationManagement;
             }
         }
 

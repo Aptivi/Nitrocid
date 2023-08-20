@@ -130,15 +130,14 @@ namespace KS.Shell.Shells.UESH.Commands
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
                             HelpSystem.ShowHelp("langman");
-                            // TODO: LanguageManagement from KET is better.
-                            return 10000 + (int)KernelExceptionType.LanguageParse;
+                            return 10000 + (int)KernelExceptionType.LanguageManagement;
                         }
                 }
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Language management is disabled in safe mode."), true, KernelColorType.Error);
-                return 10000 + (int)KernelExceptionType.LanguageParse;
+                return 10000 + (int)KernelExceptionType.LanguageManagement;
             }
             return 0;
         }

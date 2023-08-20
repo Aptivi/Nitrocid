@@ -391,5 +391,17 @@ namespace KS.Kernel.Exceptions
         /// An error occurred in the calendar manager.
         /// </summary>
         Calendar,
+        /// <summary>
+        /// There was an error in the notification management.
+        /// </summary>
+        NotificationManagement,
+        /// <summary>
+        /// There was an error in the language management.
+        /// </summary>
+        LanguageManagement,
+        /// <summary>
+        /// There was an error in the mod management.
+        /// </summary>
+        ModManagement
     }
 }
