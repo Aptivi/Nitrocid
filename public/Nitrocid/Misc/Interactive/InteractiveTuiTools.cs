@@ -246,11 +246,11 @@ namespace KS.Misc.Interactive
             int dataCount = CountElements(data);
 
             // Render the pane right away
-            int answersPerPage = SeparatorMaximumHeightInterior - 1;
+            int answersPerPage = SeparatorMaximumHeightInterior;
             int paneCurrentSelection = paneNum == 2 ? BaseInteractiveTui.SecondPaneCurrentSelection : BaseInteractiveTui.FirstPaneCurrentSelection;
             int currentPage = (paneCurrentSelection - 1) / answersPerPage;
             int startIndex = answersPerPage * currentPage;
-            for (int i = 0; i <= answersPerPage; i++)
+            for (int i = 0; i <= answersPerPage - 1; i++)
             {
                 // Populate the first pane
                 string finalEntry = "";
