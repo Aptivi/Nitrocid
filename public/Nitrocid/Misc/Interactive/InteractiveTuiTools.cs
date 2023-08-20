@@ -281,7 +281,7 @@ namespace KS.Misc.Interactive
                 var finalBackColor = finalIndex == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemBackColor : BaseInteractiveTui.PaneItemBackColor;
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length), left, top, finalForeColor, finalBackColor);
+                TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
             }
 
             // Render the vertical bar
