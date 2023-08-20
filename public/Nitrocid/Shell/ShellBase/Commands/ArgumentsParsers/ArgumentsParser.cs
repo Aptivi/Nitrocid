@@ -225,24 +225,28 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
                         DebugWriter.WriteDebug(DebugLevel.I, "Processing switch: {0}", @switch);
 
                         // Get the switch and its conflicts list
-                        // TODO: Fix this.
-                        string[] switchConflicts = argInfo.Switches
-                            .Where((switchInfo) => $"-{switchInfo.SwitchName}" == @switch)
-                            .First().ConflictsWith
-                            .Select((conflicting) => $"-{conflicting}")
-                            .ToArray();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Switch conflicts: {0} [{1}]", switchConflicts.Length, string.Join(", ", switchConflicts));
-
-                        // Now, get the last switch and check to see if it's provided with the conflicting switch
-                        string lastSwitch = processed.Count > 0 ? processed[^1] : "";
-                        if (switchConflicts.Contains(lastSwitch))
+                        var switchEnumerator = argInfo.Switches
+                            .Where((switchInfo) => $"-{switchInfo.SwitchName}" == @switch);
+                        if (switchEnumerator.Any())
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Conflict! {0} and {1} conflict with each other.", @switch, lastSwitch);
-                            conflicts.Add($"{@switch} vs. {lastSwitch}");
+                            // We have a switch! Now, process it.
+                            string[] switchConflicts = switchEnumerator
+                                .First().ConflictsWith
+                                .Select((conflicting) => $"-{conflicting}")
+                                .ToArray();
+                            DebugWriter.WriteDebug(DebugLevel.I, "Switch conflicts: {0} [{1}]", switchConflicts.Length, string.Join(", ", switchConflicts));
+
+                            // Now, get the last switch and check to see if it's provided with the conflicting switch
+                            string lastSwitch = processed.Count > 0 ? processed[^1] : "";
+                            if (switchConflicts.Contains(lastSwitch))
+                            {
+                                DebugWriter.WriteDebug(DebugLevel.I, "Conflict! {0} and {1} conflict with each other.", @switch, lastSwitch);
+                                conflicts.Add($"{@switch} vs. {lastSwitch}");
+                            }
+                            processed.Add(@switch);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Marked conflicts: {0} [{1}]", conflicts.Count, string.Join(", ", conflicts));
+                            DebugWriter.WriteDebug(DebugLevel.I, "Processed: {0} [{1}]", processed.Count, string.Join(", ", processed));
                         }
-                        processed.Add(@switch);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Marked conflicts: {0} [{1}]", conflicts.Count, string.Join(", ", conflicts));
-                        DebugWriter.WriteDebug(DebugLevel.I, "Processed: {0} [{1}]", processed.Count, string.Join(", ", processed));
                     }
                     conflictingSwitchesList = conflicts.ToArray();
                 }
