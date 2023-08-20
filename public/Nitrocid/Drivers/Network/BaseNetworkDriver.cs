@@ -87,7 +87,7 @@ namespace KS.Drivers.Network
 
             // Send the GET request to the server for the file
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
-            var Response = NetworkTransfer.WClient.GetAsync(FileUri, NetworkTransfer.CancellationToken.Token).Result;
+            var Response = NetworkTransfer.WClient.GetAsync(FileUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
             // Get the file stream
@@ -159,7 +159,7 @@ namespace KS.Drivers.Network
 
             // Send the GET request to the server for the file
             DebugWriter.WriteDebug(DebugLevel.I, "Directory location: {0}", CurrentDirectory.CurrentDir);
-            var Response = NetworkTransfer.WClient.GetAsync(StringUri, NetworkTransfer.CancellationToken.Token).Result;
+            var Response = NetworkTransfer.WClient.GetAsync(StringUri, HttpCompletionOption.ResponseHeadersRead, NetworkTransfer.CancellationToken.Token).Result;
             Response.EnsureSuccessStatusCode();
 
             // Get the memory stream
