@@ -207,7 +207,6 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
                     unknownSwitchesList = EnclosedSwitchKeyValuePairs
                         .Select((kvp) => kvp.Item1)
                         .Where((key) => !argInfo.Switches.Any((switchInfo) => switchInfo.SwitchName == key[1..]))
-                        .Where((key) => key != "-set")
                         .ToArray();
                 DebugWriter.WriteDebug(DebugLevel.I, "Unknown switches: {0}", unknownSwitchesList.Length);
 

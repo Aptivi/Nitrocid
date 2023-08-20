@@ -16,7 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Languages;
 using System;
+using System.Linq;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -41,7 +43,9 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Command switches
         /// </summary>
-        public SwitchInfo[] Switches { get; private set; }
+        public SwitchInfo[] Switches { get; private set; } = new[] {
+            new SwitchInfo("set", /* Localizable */ "Sets the value of the output to the selected UESH variable", false, true)
+        };
         /// <summary>
         /// Auto completion function delegate
         /// </summary>
@@ -64,7 +68,7 @@ namespace KS.Shell.ShellBase.Commands
         public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
         {
             this.Arguments = Arguments;
-            this.Switches = Switches;
+            this.Switches = this.Switches.Union(Switches).ToArray();
             this.ArgumentsRequired = ArgumentsRequired;
             this.MinimumArguments = MinimumArguments;
             this.AutoCompleter = AutoCompleter;
