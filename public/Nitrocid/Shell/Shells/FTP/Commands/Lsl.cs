@@ -56,8 +56,7 @@ namespace KS.Shell.Shells.FTP.Commands
         {
             bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || Listing.ShowFileDetailsList;
             bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || Flags.SuppressUnauthorizedMessages;
-            // TODO: This condition is a mess. Please refactor.
-            if (((0 is var arg2 && (ListArgsOnly?.Length) is { } arg1 ? arg1 == arg2 : (bool?)null) | ListArgsOnly is null) == true)
+            if (ListArgsOnly?.Length == 0)
             {
                 Listing.List(FTPShellCommon.FtpCurrentDirectory, ShowFileDetails, SuppressUnauthorizedMessage);
             }
