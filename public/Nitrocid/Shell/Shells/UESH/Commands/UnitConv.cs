@@ -22,6 +22,8 @@ using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
+using KS.Misc.Interactive;
+using KS.Misc.Interactive.Interactives;
 using KS.Shell.ShellBase.Commands;
 using UnitsNet;
 
@@ -40,16 +42,24 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            var parser = UnitsNetSetup.Default.UnitParser;
-            string UnitType = ListArgsOnly[0];
-            int QuantityNum = Convert.ToInt32(ListArgsOnly[1]);
-            string SourceUnit = ListArgsOnly[2];
-            string TargetUnit = ListArgsOnly[3];
-            var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
-            var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
-            var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
-            TextWriterColor.Write("- {0} => {1}: ", false, KernelColorType.ListEntry, SourceUnit, TargetUnit);
-            TextWriterColor.Write(ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat), true, KernelColorType.ListValue);
+            bool tuiMode = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-tui");
+            if (tuiMode)
+            {
+                InteractiveTuiTools.OpenInteractiveTui(new UnitConverterCli());
+            }
+            else
+            {
+                var parser = UnitsNetSetup.Default.UnitParser;
+                string UnitType = ListArgsOnly[0];
+                int QuantityNum = Convert.ToInt32(ListArgsOnly[1]);
+                string SourceUnit = ListArgsOnly[2];
+                string TargetUnit = ListArgsOnly[3];
+                var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
+                var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
+                var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
+                TextWriterColor.Write("- {0} => {1}: ", false, KernelColorType.ListEntry, SourceUnit, TargetUnit);
+                TextWriterColor.Write(ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat), true, KernelColorType.ListValue);
+            }
             return 0;
         }
 

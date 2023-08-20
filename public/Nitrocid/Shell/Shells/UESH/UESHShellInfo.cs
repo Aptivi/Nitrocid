@@ -981,7 +981,10 @@ namespace KS.Shell.Shells.UESH
             { "unitconv",
                 new CommandInfo("unitconv", ShellType, /* Localizable */ "Unit converter",
                     new[] {
-                        new CommandArgumentInfo(new[] { "unittype", "quantity", "sourceunit", "targetunit" }, Array.Empty<SwitchInfo>(), true, 4)
+                        new CommandArgumentInfo(new[] { "unittype", "quantity", "sourceunit", "targetunit" }, new[]
+                        {
+                            new SwitchInfo("tui", /* Localizable */ "Use the TUI version of the unit converter", false, false, Array.Empty<string>(), 4, false)
+                        }, true, 4)
                     }, new UnitConvCommand())
             },
             
