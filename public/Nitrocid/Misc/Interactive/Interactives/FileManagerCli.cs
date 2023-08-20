@@ -35,8 +35,9 @@ using KS.Misc.Text;
 using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
+using KS.Files;
 
-namespace KS.Files.Interactive
+namespace KS.Misc.Interactive.Interactives
 {
     /// <summary>
     /// File manager class relating to the interactive file manager planned back in 2018

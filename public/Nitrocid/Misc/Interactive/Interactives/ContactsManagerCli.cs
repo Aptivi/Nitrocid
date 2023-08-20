@@ -29,8 +29,9 @@ using KS.Misc.Interactive;
 using System.Collections;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Misc.Contacts;
 
-namespace KS.Misc.Contacts.Interactive
+namespace KS.Misc.Interactive.Interactives
 {
     /// <summary>
     /// Contacts manager class
@@ -74,22 +75,22 @@ namespace KS.Misc.Contacts.Interactive
 
             // Generate the rendered text
             string finalRenderedContactName = hasName ?
-                (Translate.DoTranslation("Contact name") + $": {selectedContact.ContactFullName}") :
+                Translate.DoTranslation("Contact name") + $": {selectedContact.ContactFullName}" :
                 Translate.DoTranslation("No contact name");
             string finalRenderedContactAddress = hasAddress ?
-                (Translate.DoTranslation("Contact address") + $": {selectedContact.ContactAddresses[0].StreetAddress}, {selectedContact.ContactAddresses[0].PostalCode}, {selectedContact.ContactAddresses[0].PostOfficeBox}, {selectedContact.ContactAddresses[0].ExtendedAddress}, {selectedContact.ContactAddresses[0].Locality}, {selectedContact.ContactAddresses[0].Region}, {selectedContact.ContactAddresses[0].Country}") :
+                Translate.DoTranslation("Contact address") + $": {selectedContact.ContactAddresses[0].StreetAddress}, {selectedContact.ContactAddresses[0].PostalCode}, {selectedContact.ContactAddresses[0].PostOfficeBox}, {selectedContact.ContactAddresses[0].ExtendedAddress}, {selectedContact.ContactAddresses[0].Locality}, {selectedContact.ContactAddresses[0].Region}, {selectedContact.ContactAddresses[0].Country}" :
                 Translate.DoTranslation("No contact address");
             string finalRenderedContactMail = hasMail ?
-                (Translate.DoTranslation("Contact mail") + $": {selectedContact.ContactMails[0].ContactEmailAddress}") :
+                Translate.DoTranslation("Contact mail") + $": {selectedContact.ContactMails[0].ContactEmailAddress}" :
                 Translate.DoTranslation("No contact mail");
             string finalRenderedContactOrganization = hasOrganization ?
-                (Translate.DoTranslation("Contact organization") + $": {selectedContact.ContactOrganizations[0].Name}, {selectedContact.ContactOrganizations[0].Unit}, {selectedContact.ContactOrganizations[0].Role}") :
+                Translate.DoTranslation("Contact organization") + $": {selectedContact.ContactOrganizations[0].Name}, {selectedContact.ContactOrganizations[0].Unit}, {selectedContact.ContactOrganizations[0].Role}" :
                 Translate.DoTranslation("No contact organization");
             string finalRenderedContactTelephone = hasTelephone ?
-                (Translate.DoTranslation("Contact telephone") + $": {selectedContact.ContactTelephones[0].ContactPhoneNumber}") :
+                Translate.DoTranslation("Contact telephone") + $": {selectedContact.ContactTelephones[0].ContactPhoneNumber}" :
                 Translate.DoTranslation("No contact telephone");
             string finalRenderedContactURL = hasURL ?
-                (Translate.DoTranslation("Contact URL") + $": {selectedContact.ContactURL}") :
+                Translate.DoTranslation("Contact URL") + $": {selectedContact.ContactURL}" :
                 Translate.DoTranslation("No contact URL");
 
             // Render them to the second pane
@@ -114,7 +115,7 @@ namespace KS.Misc.Contacts.Interactive
 
             // Generate the rendered text
             string finalRenderedContactName = hasName ?
-                (Translate.DoTranslation("Contact name") + $": {selectedContact.ContactFullName}") :
+                Translate.DoTranslation("Contact name") + $": {selectedContact.ContactFullName}" :
                 Translate.DoTranslation("No contact name");
 
             // Render them to the status
@@ -185,42 +186,42 @@ namespace KS.Misc.Contacts.Interactive
 
             string finalRenderedContactName =
                 hasName ?
-                (Translate.DoTranslation("Contact name") + $": {card.ContactFullName}") :
+                Translate.DoTranslation("Contact name") + $": {card.ContactFullName}" :
                 Translate.DoTranslation("No contact name");
             string finalRenderedContactAddress =
                 hasAddress ?
-                (Translate.DoTranslation("Contact address") + $": {card.ContactAddresses[0].StreetAddress}, {card.ContactAddresses[0].PostalCode}, {card.ContactAddresses[0].PostOfficeBox}, {card.ContactAddresses[0].ExtendedAddress}, {card.ContactAddresses[0].Locality}, {card.ContactAddresses[0].Region}, {card.ContactAddresses[0].Country}") :
+                Translate.DoTranslation("Contact address") + $": {card.ContactAddresses[0].StreetAddress}, {card.ContactAddresses[0].PostalCode}, {card.ContactAddresses[0].PostOfficeBox}, {card.ContactAddresses[0].ExtendedAddress}, {card.ContactAddresses[0].Locality}, {card.ContactAddresses[0].Region}, {card.ContactAddresses[0].Country}" :
                 Translate.DoTranslation("No contact address");
             string finalRenderedContactMail =
                 hasMail ?
-                (Translate.DoTranslation("Contact mail") + $": {card.ContactMails[0].ContactEmailAddress}") :
+                Translate.DoTranslation("Contact mail") + $": {card.ContactMails[0].ContactEmailAddress}" :
                 Translate.DoTranslation("No contact mail");
             string finalRenderedContactOrganization = hasOrganization ?
-                (Translate.DoTranslation("Contact organization") + $": {card.ContactOrganizations[0].Name}, {card.ContactOrganizations[0].Unit}, {card.ContactOrganizations[0].Role}") :
+                Translate.DoTranslation("Contact organization") + $": {card.ContactOrganizations[0].Name}, {card.ContactOrganizations[0].Unit}, {card.ContactOrganizations[0].Role}" :
                 Translate.DoTranslation("No contact organization");
             string finalRenderedContactTelephone = hasTelephone ?
-                (Translate.DoTranslation("Contact telephone") + $": {card.ContactTelephones[0].ContactPhoneNumber}") :
+                Translate.DoTranslation("Contact telephone") + $": {card.ContactTelephones[0].ContactPhoneNumber}" :
                 Translate.DoTranslation("No contact telephone");
             string finalRenderedContactURL = hasURL ?
-                (Translate.DoTranslation("Contact URL") + $": {card.ContactURL}") :
+                Translate.DoTranslation("Contact URL") + $": {card.ContactURL}" :
                 Translate.DoTranslation("No contact URL");
             string finalRenderedContactGeo = hasGeo ?
-                (Translate.DoTranslation("Contact geo") + $": {card.ContactURL}") :
+                Translate.DoTranslation("Contact geo") + $": {card.ContactURL}" :
                 Translate.DoTranslation("No contact geo");
             string finalRenderedContactImpps = hasImpps ?
-                (Translate.DoTranslation("Contact IMPP") + $": {card.ContactURL}") :
+                Translate.DoTranslation("Contact IMPP") + $": {card.ContactURL}" :
                 Translate.DoTranslation("No contact IMPP");
             string finalRenderedContactNicknames = hasNicknames ?
-                (Translate.DoTranslation("Contact nicknames") + $": {card.ContactURL}") :
+                Translate.DoTranslation("Contact nicknames") + $": {card.ContactURL}" :
                 Translate.DoTranslation("No contact nicknames");
             string finalRenderedContactRoles = hasRoles ?
-                (Translate.DoTranslation("Contact roles") + $": {card.ContactURL}") :
+                Translate.DoTranslation("Contact roles") + $": {card.ContactURL}" :
                 Translate.DoTranslation("No contact Roles");
             string finalRenderedContactTitles = hasTitles ?
-                (Translate.DoTranslation("Contact titles") + $": {card.ContactURL}") :
+                Translate.DoTranslation("Contact titles") + $": {card.ContactURL}" :
                 Translate.DoTranslation("No contact titles");
             string finalRenderedContactNotes = hasNotes ?
-                (Translate.DoTranslation("Contact notes") + $": {card.ContactURL}") :
+                Translate.DoTranslation("Contact notes") + $": {card.ContactURL}" :
                 Translate.DoTranslation("No contact notes");
             finalInfoRendered.AppendLine(finalRenderedContactName);
             finalInfoRendered.AppendLine(finalRenderedContactAddress);

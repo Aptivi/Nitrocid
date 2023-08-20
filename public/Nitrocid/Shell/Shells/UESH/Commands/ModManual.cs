@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 return 10000 + (int)KernelExceptionType.NoSuchMod;
             }
 
-            var tuiInstance = new ManualViewer() { modName = modName };
+            var tuiInstance = new ManualViewerCli() { modName = modName };
             InteractiveTuiTools.OpenInteractiveTui(tuiInstance);
             return 0;
         }

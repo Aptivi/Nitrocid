@@ -30,7 +30,7 @@ namespace KS.Modifications.ManPages.Interactive
     /// <summary>
     /// Manual viewer class
     /// </summary>
-    public class ManualViewer : BaseInteractiveTui, IInteractiveTui
+    public class ManualViewerCli : BaseInteractiveTui, IInteractiveTui
     {
         internal string modName = "";
 
