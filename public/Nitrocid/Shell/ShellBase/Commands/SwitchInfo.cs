@@ -44,6 +44,10 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         public bool ArgumentsRequired { get; private set; }
         /// <summary>
+        /// Does the switch accept values?
+        /// </summary>
+        public bool AcceptsValues { get; private set; } = true;
+        /// <summary>
         /// Does the switch conflict with the provided switches?
         /// </summary>
         public string[] ConflictsWith { get; private set; }
@@ -61,14 +65,16 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="ArgumentsRequired">Whether the switch requires a value to be set</param>
         /// <param name="conflictsWith">Does the switch conflict with the provided switches?</param>
         /// <param name="optionalizeLastRequiredArguments">Whether to make the last N required arguments optional. This is useful for some switches, like -list.</param>
-        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0)
+        /// <param name="AcceptsValues">Does the switch accept values?</param>
+        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0, bool AcceptsValues = true)
         {
             SwitchName = Switch;
             this.HelpDefinition = HelpDefinition;
             this.IsRequired = IsRequired;
-            this.ArgumentsRequired = ArgumentsRequired;
+            this.ArgumentsRequired = AcceptsValues && ArgumentsRequired;
             ConflictsWith = conflictsWith ?? Array.Empty<string>();
-            this.OptionalizeLastRequiredArguments = optionalizeLastRequiredArguments;
+            OptionalizeLastRequiredArguments = optionalizeLastRequiredArguments;
+            this.AcceptsValues = AcceptsValues;
         }
 
         /// <summary>

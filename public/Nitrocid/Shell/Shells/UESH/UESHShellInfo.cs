@@ -134,9 +134,9 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("cat", ShellType, /* Localizable */ "Prints content of file to console",
                     new[] {
                         new CommandArgumentInfo(new[] { "file" }, new[] {
-                            new SwitchInfo("lines", /* Localizable */ "Prints the line numbers alongside the contents", false, false, new string[] { "nolines" }),
-                            new SwitchInfo("nolines", /* Localizable */ "Prints only the contents", false, false, new string[] { "lines" }),
-                            new SwitchInfo("plain", /* Localizable */ "Force treating binary files as plain text")
+                            new SwitchInfo("lines", /* Localizable */ "Prints the line numbers alongside the contents", false, false, new string[] { "nolines" }, 0, false),
+                            new SwitchInfo("nolines", /* Localizable */ "Prints only the contents", false, false, new string[] { "lines" }, 0, false),
+                            new SwitchInfo("plain", /* Localizable */ "Force treating binary files as plain text", false, false, Array.Empty<string>(), 0, false)
                         }, true, 1)
                     }, new CatCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -166,7 +166,7 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("chklock", ShellType, /* Localizable */ "Checks the file lock",
                     new[] {
                         new CommandArgumentInfo(new[] { "file" }, new[] {
-                            new SwitchInfo("waitforunlock", /* Localizable */ "Waits until the file is unlocked", false, true)
+                            new SwitchInfo("waitforunlock", /* Localizable */ "Waits until the file is unlocked", false, true, Array.Empty<string>(), 0, false)
                         }, true, 1)
                     }, new ChkLockCommand())
             },
@@ -189,12 +189,12 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("choice", ShellType, /* Localizable */ "Makes user choices",
                     new[] {
                         new CommandArgumentInfo(new[] { "$variable", "answers", "input", "answertitle1", "answertitle2 ..." }, new[] {
-                            new SwitchInfo("o", /* Localizable */ "One line choice style", false, false, new string[] { "t", "m", "a" }),
-                            new SwitchInfo("t", /* Localizable */ "Two lines choice style", false, false, new string[] { "o", "m", "a" }),
-                            new SwitchInfo("m", /* Localizable */ "Modern choice style", false, false, new string[] { "t", "o", "a" }),
-                            new SwitchInfo("a", /* Localizable */ "Table choice style", false, false, new string[] { "t", "o", "m" }),
-                            new SwitchInfo("single", /* Localizable */ "The output can be only one character", false, false, new string[] { "multiple" }),
-                            new SwitchInfo("multiple", /* Localizable */ "The output can be more than a character", false, false, new string[] { "single" })
+                            new SwitchInfo("o", /* Localizable */ "One line choice style", false, false, new string[] { "t", "m", "a" }, 0, false),
+                            new SwitchInfo("t", /* Localizable */ "Two lines choice style", false, false, new string[] { "o", "m", "a" }, 0, false),
+                            new SwitchInfo("m", /* Localizable */ "Modern choice style", false, false, new string[] { "t", "o", "a" }, 0, false),
+                            new SwitchInfo("a", /* Localizable */ "Table choice style", false, false, new string[] { "t", "o", "m" }, 0, false),
+                            new SwitchInfo("single", /* Localizable */ "The output can be only one character", false, false, new string[] { "multiple" }, 0, false),
+                            new SwitchInfo("multiple", /* Localizable */ "The output can be more than a character", false, false, new string[] { "single" }, 0, false)
                         }, true, 3)
                     }, new ChoiceCommand(), CommandFlags.SettingVariable)
             },
@@ -266,9 +266,9 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("convertlineendings", ShellType, /* Localizable */ "Converts the line endings to format for the current platform or to specified custom format",
                     new[] {
                         new CommandArgumentInfo(new[] { "textfile" }, new[] {
-                            new SwitchInfo("w", /* Localizable */ "Converts the line endings to the Windows format", false, false, new string[] { "u", "m" }),
-                            new SwitchInfo("u", /* Localizable */ "Converts the line endings to the Unix format", false, false, new string[] { "w", "m" }),
-                            new SwitchInfo("m", /* Localizable */ "Converts the line endings to the Mac OS 9 format", false, false, new string[] { "u", "w" })
+                            new SwitchInfo("w", /* Localizable */ "Converts the line endings to the Windows format", false, false, new string[] { "u", "m" }, 0, false),
+                            new SwitchInfo("u", /* Localizable */ "Converts the line endings to the Unix format", false, false, new string[] { "w", "m" }, 0, false),
+                            new SwitchInfo("m", /* Localizable */ "Converts the line endings to the Mac OS 9 format", false, false, new string[] { "u", "w" }, 0, false)
                         }, true, 1)
                     }, new ConvertLineEndingsCommand())
             },
@@ -284,10 +284,10 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("date", ShellType, /* Localizable */ "Shows date and time",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
-                            new SwitchInfo("date", /* Localizable */ "Shows just the date", false, false, new string[] { "time", "full" }),
-                            new SwitchInfo("time", /* Localizable */ "Shows just the time", false, false, new string[] { "date", "full" }),
-                            new SwitchInfo("full", /* Localizable */ "Shows date and time", false, false, new string[] { "date", "time" }),
-                            new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local")
+                            new SwitchInfo("date", /* Localizable */ "Shows just the date", false, false, new string[] { "time", "full" }, 0, false),
+                            new SwitchInfo("time", /* Localizable */ "Shows just the time", false, false, new string[] { "date", "full" }, 0, false),
+                            new SwitchInfo("full", /* Localizable */ "Shows date and time", false, false, new string[] { "date", "time" }, 0, false),
+                            new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new DateCommand(), CommandFlags.RedirectionSupported)
             },
@@ -345,9 +345,9 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file",
                     new[] {
                         new CommandArgumentInfo(new[] { "file" }, new[] {
-                            new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json" }),
-                            new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json" }),
-                            new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex" })
+                            new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json" }, 0, false),
+                            new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json" }, 0, false),
+                            new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex" }, 0, false)
                         }, true, 1)
                     }, new EditCommand())
             },
@@ -363,8 +363,9 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("find", ShellType, /* Localizable */ "Finds a file in the specified directory or in the current directory",
                     new[] {
                         new CommandArgumentInfo(new[] { "file", "directory" }, new[] {
-                            new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively"),
-                            new SwitchInfo("exec", /* Localizable */ "Executes a command on a file", false, true) }, true, 1)
+                            new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively", false, false, Array.Empty<string>(), 0, false),
+                            new SwitchInfo("exec", /* Localizable */ "Executes a command on a file", false, true)
+                        }, true, 1)
                     }, new FindCommand())
             },
             
@@ -372,8 +373,9 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("findreg", ShellType, /* Localizable */ "Finds a file in the specified directory or in the current directory using regular expressions",
                     new[] {
                         new CommandArgumentInfo(new[] { "fileRegex", "directory" }, new[] {
-                            new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively"),
-                            new SwitchInfo("exec", /* Localizable */ "Executes a command on a file", false, true) }, true, 1)
+                            new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively", false, false, Array.Empty<string>(), 0, false),
+                            new SwitchInfo("exec", /* Localizable */ "Executes a command on a file", false, true)
+                        }, true, 1)
                     }, new FindRegCommand())
             },
             
@@ -388,7 +390,7 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("genname", ShellType, /* Localizable */ "Name and surname generator",
                     new[] {
                         new CommandArgumentInfo(new[] { "namescount", "nameprefix", "namesuffix", "surnameprefix", "surnamesuffix" }, new[] {
-                            new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)")
+                            new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -498,9 +500,9 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("list", ShellType, /* Localizable */ "List file/folder contents in current folder",
                     new[] {
                         new CommandArgumentInfo(new[] { "directory" }, new[] {
-                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list"),
-                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages"),
-                            new SwitchInfo("recursive", /* Localizable */ "Lists a folder recursively")
+                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", false, false, Array.Empty<string>(), 0, false),
+                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages", false, false, Array.Empty<string>(), 0, false),
+                            new SwitchInfo("recursive", /* Localizable */ "Lists a folder recursively", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new ListCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -659,7 +661,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[] { "splashName" }, new[]
                         {
-                            new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash")
+                            new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash", false, false, Array.Empty<string>(), 0, false)
                         }, false, 0,(startFrom, _, _) => SplashManager.Splashes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new PreviewSplashCommand())
             },
@@ -792,8 +794,8 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("settings", ShellType, /* Localizable */ "Changes kernel configuration",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
-                            new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", false, false, new string[] { "splash" }),
-                            new SwitchInfo("splash", /* Localizable */ "Opens the splash settings", false, false, new string[] { "saver" })
+                            new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", false, false, new string[] { "splash" }, 0, false),
+                            new SwitchInfo("splash", /* Localizable */ "Opens the splash settings", false, false, new string[] { "saver" }, 0, false)
                         })
                     }, new SettingsCommand(), CommandFlags.Strict)
             },
@@ -881,10 +883,10 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("speedpress", ShellType, /* Localizable */ "See if you can press a key on time",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
-                            new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", false, false, new string[] { "m", "h", "v", "c" }),
-                            new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", false, false, new string[] { "e", "h", "v", "c" }),
-                            new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", false, false, new string[] { "m", "e", "v", "c" }),
-                            new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", false, false, new string[] { "m", "h", "e", "c" }),
+                            new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", false, false, new string[] { "m", "h", "v", "c" }, 0, false),
+                            new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", false, false, new string[] { "e", "h", "v", "c" }, 0, false),
+                            new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", false, false, new string[] { "m", "e", "v", "c" }, 0, false),
+                            new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", false, false, new string[] { "m", "h", "e", "c" }, 0, false),
                             new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", false, true, new string[] { "m", "h", "v", "e" }) })
                     }, new SpeedPressCommand())
             },
@@ -921,7 +923,7 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("sumfile", ShellType, /* Localizable */ "Calculates file sums.",
                     new[] {
                         new CommandArgumentInfo(new[] { "MD5/SHA1/SHA256/SHA384/SHA512/all", "file", "outputFile" }, new[] {
-                            new SwitchInfo("relative", /* Localizable */ "Uses relative path instead of absolute")
+                            new SwitchInfo("relative", /* Localizable */ "Uses relative path instead of absolute", false, false, Array.Empty<string>(), 0, false)
                         }, true, 2)
                     }, new SumFileCommand())
             },
@@ -930,7 +932,7 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("sumfiles", ShellType, /* Localizable */ "Calculates sums of files in specified directory.",
                     new[] {
                         new CommandArgumentInfo(new[] { "MD5/SHA1/SHA256/SHA384/SHA512/all", "dir", "outputFile" }, new[] {
-                            new SwitchInfo("relative", /* Localizable */ "Uses relative path instead of absolute")
+                            new SwitchInfo("relative", /* Localizable */ "Uses relative path instead of absolute", false, false, Array.Empty<string>(), 0, false)
                         }, true, 2)
                     }, new SumFilesCommand())
             },
@@ -973,7 +975,7 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("unzip", ShellType, /* Localizable */ "Extracts a ZIP archive",
                     new[] {
                         new CommandArgumentInfo(new[] { "zipfile", "path" }, new[] {
-                            new SwitchInfo("createdir", /* Localizable */ "Creates a directory that contains the contents of the ZIP file")
+                            new SwitchInfo("createdir", /* Localizable */ "Creates a directory that contains the contents of the ZIP file", false, false, Array.Empty<string>(), 0, false)
                         }, true, 1)
                     }, new UnZipCommand())
             },
@@ -1010,7 +1012,7 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("weather", ShellType, /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
                     new[] {
                         new CommandArgumentInfo(new[] { "CityID/CityName", "apikey" }, new[] {
-                            new SwitchInfo("list", /* Localizable */ "Shows all the available cities", false, false, null, 2)
+                            new SwitchInfo("list", /* Localizable */ "Shows all the available cities", false, false, null, 2, false)
                         }, true, 1)
                     }, new WeatherCommand())
             },
@@ -1019,7 +1021,7 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("wordle", ShellType, /* Localizable */ "The Wordle game simulator",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
-                            new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally")
+                            new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new WordleCommand())
             },
@@ -1028,9 +1030,9 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("zip", ShellType, /* Localizable */ "Creates a ZIP archive",
                     new[] {
                         new CommandArgumentInfo(new[] { "zipfile", "path" }, new[] {
-                            new SwitchInfo("fast", /* Localizable */ "Fast compression", false, false, new string[] { "nocomp" }),
-                            new SwitchInfo("nocomp", /* Localizable */ "No compression", false, false, new string[] { "fast" }),
-                            new SwitchInfo("nobasedir", /* Localizable */ "Don't create base directory in archive")
+                            new SwitchInfo("fast", /* Localizable */ "Fast compression", false, false, new string[] { "nocomp" }, 0, false),
+                            new SwitchInfo("nocomp", /* Localizable */ "No compression", false, false, new string[] { "fast" }, 0, false),
+                            new SwitchInfo("nobasedir", /* Localizable */ "Don't create base directory in archive", false, false, Array.Empty<string>(), 0, false)
                         }, true, 2)
                     }, new ZipCommand())
             },

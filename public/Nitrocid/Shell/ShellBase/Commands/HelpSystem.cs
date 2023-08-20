@@ -114,8 +114,9 @@ namespace KS.Shell.ShellBase.Commands
                         {
                             bool required = Switch.IsRequired;
                             bool argRequired = Switch.ArgumentsRequired;
+                            bool acceptsValue = Switch.AcceptsValues;
                             string switchName = Switch.SwitchName;
-                            string renderedSwitchValue = argRequired ? $"=value" : $"[=value]";
+                            string renderedSwitchValue = argRequired ? $"=value" : acceptsValue ? $"[=value]" : "";
                             string renderedSwitch = required ? $" <-{switchName}{renderedSwitchValue}>" : $" [-{switchName}{renderedSwitchValue}]";
                             TextWriterColor.Write(renderedSwitch, false, KernelColorType.ListEntry);
                         }

@@ -188,6 +188,15 @@ namespace KS.Shell.ShellBase.Commands
                             TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below conflict with each other."));
                             ListWriterColor.WriteList(ArgumentInfo.ConflictingSwitchesList);
                         }
+                    
+                        // Check for switches that don't accept values
+                        if (ArgumentInfo.NoValueSwitchesList.Length > 0 && isLast)
+                        {
+                            argSatisfied = false;
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", Command);
+                            TextWriterColor.Write(Translate.DoTranslation("The below switches don't accept values."));
+                            ListWriterColor.WriteList(ArgumentInfo.NoValueSwitchesList);
+                        }
                     }
                 }
 

@@ -55,8 +55,9 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
 
         internal string[] UnknownSwitchesList { get; private set; }
         internal string[] ConflictingSwitchesList { get; private set; }
+        internal string[] NoValueSwitchesList { get; private set; }
 
-        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList)
+        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList, string[] noValueSwitchesList)
         {
             Command = command;
             ArgumentsText = argumentsText;
@@ -67,6 +68,7 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
             RequiredSwitchArgumentsProvided = requiredSwitchArgumentsProvided;
             UnknownSwitchesList = unknownSwitchesList;
             ConflictingSwitchesList = conflictingSwitchesList;
+            NoValueSwitchesList = noValueSwitchesList;
         }
 
     }

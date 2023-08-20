@@ -75,7 +75,7 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
             if (CommandInfo != null)
                 return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
             else
-                return new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>());
+                return new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
         }
 
         /// <summary>
@@ -100,7 +100,7 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
             else
-                return new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>());
+                return new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
         }
 
         private static ProvidedArgumentsInfo ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo, ArgumentInfo ArgumentInfo)
@@ -140,6 +140,7 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
             int minimumArgumentsOffset = 0;
             string[] unknownSwitchesList = Array.Empty<string>();
             string[] conflictingSwitchesList = Array.Empty<string>();
+            string[] noValueSwitchesList = Array.Empty<string>();
             var argInfos = isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo;
             foreach (var argInfo in argInfos)
             {
@@ -202,6 +203,25 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
                     RequiredSwitchArgumentsProvided = true;
                 DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
 
+                // Check to see if the caller has provided switches that don't accept values with the values
+                if (withArgInfo)
+                {
+                    var allSwitches = argInfo.Switches.Where((@switch) => !@switch.AcceptsValues).Select((@switch) => @switch.SwitchName).ToArray();
+                    var allProvidedSwitches = EnclosedSwitches
+                        .Where((@switch) => @switch.Contains('='))
+                        .Where((@switch) => allSwitches.Contains($"{@switch[1..@switch.IndexOf('=')]}"))
+                        .Select((@switch) => $"{@switch[..@switch.IndexOf('=')]}")
+                        .ToArray();
+                    List<string> rejected = new();
+                    foreach (var providedSwitch in allProvidedSwitches)
+                    {
+                        if (!string.IsNullOrWhiteSpace(EnclosedSwitchKeyValuePairs.Single((kvp) => kvp.Item1 == providedSwitch).Item2))
+                            rejected.Add(providedSwitch);
+                    }
+                    noValueSwitchesList = rejected.ToArray();
+                }
+                DebugWriter.WriteDebug(DebugLevel.I, "RequiredSwitchArgumentsProvided is {0}. Refer to the value of argument info.", RequiredSwitchArgumentsProvided);
+
                 // Check to see if the caller has provided non-existent switches
                 if (withArgInfo)
                     unknownSwitchesList = EnclosedSwitchKeyValuePairs
@@ -257,7 +277,7 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
 
             // Install the parsed values to the new class instance
             DebugWriter.WriteDebug(DebugLevel.I, "Finalizing...");
-            return new ProvidedArgumentsInfo(words[0], strArgs, EnclosedArgs, EnclosedSwitches, RequiredArgumentsProvided, RequiredSwitchesProvided, RequiredSwitchArgumentsProvided, unknownSwitchesList, conflictingSwitchesList);
+            return new ProvidedArgumentsInfo(words[0], strArgs, EnclosedArgs, EnclosedSwitches, RequiredArgumentsProvided, RequiredSwitchesProvided, RequiredSwitchArgumentsProvided, unknownSwitchesList, conflictingSwitchesList, noValueSwitchesList);
         }
     }
 }

@@ -111,8 +111,8 @@ namespace KS.Shell.Shells.FTP
                 new CommandInfo("lsl", ShellType, /* Localizable */ "Lists local directory",
                     new[] {
                         new CommandArgumentInfo(new[] { "dir" }, new[] {
-                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list"),
-                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages")
+                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", false, false, Array.Empty<string>(), 0, false),
+                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new FTP_LslCommand())
             },
@@ -121,7 +121,7 @@ namespace KS.Shell.Shells.FTP
                 new CommandInfo("lsr", ShellType, /* Localizable */ "Lists remote directory",
                     new[] {
                         new CommandArgumentInfo(new[] { "dir" }, new[] {
-                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list")
+                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new FTP_LsrCommand())
             },

@@ -905,5 +905,6 @@ We apologize for your inconvenience, but it looks like that the kernel was havin
 For further investigation, enable debugging mode on the kernel and try to reproduce the issue. Also, try to investigate the latest dump file created.
 Specifies the output path
 Sets the value of the output to the selected UESH variable
+The below switches don't accept values.
 
 ==========================================================================================================================================

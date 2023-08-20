@@ -98,8 +98,8 @@ namespace KS.Shell.Shells.Json
                 new CommandInfo("jsoninfo", ShellType, /* Localizable */ "Shows information about the JSON file",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
-                            new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties"),
-                            new SwitchInfo("showvals", /* Localizable */ "Show all values")
+                            new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", false, false, Array.Empty<string>(), 0, false),
+                            new SwitchInfo("showvals", /* Localizable */ "Show all values", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new JsonShell_JsonInfoCommand())
             },
@@ -133,8 +133,8 @@ namespace KS.Shell.Shells.Json
                 new CommandInfo("save", ShellType, /* Localizable */ "Saves the JSON file",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
-                            new SwitchInfo("b", /* Localizable */ "Beautified JSON", false, false, new string[] { "m" }),
-                            new SwitchInfo("m", /* Localizable */ "Minified JSON", false, false, new string[] { "b" })
+                            new SwitchInfo("b", /* Localizable */ "Beautified JSON", false, false, new string[] { "m" }, 0, false),
+                            new SwitchInfo("m", /* Localizable */ "Minified JSON", false, false, new string[] { "b" }, 0, false)
                         })
                     }, new JsonShell_SaveCommand())
             }

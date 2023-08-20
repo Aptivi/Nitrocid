@@ -90,10 +90,10 @@ namespace KS.Shell.Shells.RSS
                 new CommandInfo("search", ShellType, /* Localizable */ "Searches the feed for a phrase in title and/or description",
                     new[] {
                         new CommandArgumentInfo(new[] { "phrase" }, new[] {
-                            new SwitchInfo("t", /* Localizable */ "Search for title"),
-                            new SwitchInfo("d", /* Localizable */ "Search for description"),
-                            new SwitchInfo("a", /* Localizable */ "Search for title and description"),
-                            new SwitchInfo("cs", /* Localizable */ "Case sensitive search")
+                            new SwitchInfo("t", /* Localizable */ "Search for title", false, false, Array.Empty<string>(), 0, false),
+                            new SwitchInfo("d", /* Localizable */ "Search for description", false, false, Array.Empty<string>(), 0, false),
+                            new SwitchInfo("a", /* Localizable */ "Search for title and description", false, false, Array.Empty<string>(), 0, false),
+                            new SwitchInfo("cs", /* Localizable */ "Case sensitive search", false, false, Array.Empty<string>(), 0, false)
                         }, true, 1)
                     }, new RSS_SearchCommand())
             },
