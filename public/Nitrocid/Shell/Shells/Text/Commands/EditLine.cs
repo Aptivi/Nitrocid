@@ -41,13 +41,13 @@ namespace KS.Shell.Shells.Text.Commands
         {
             if (TextTools.IsStringNumeric(ListArgsOnly[0]))
             {
-                if (Convert.ToInt32(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                int lineNum = Convert.ToInt32(ListArgsOnly[0]);
+                if (lineNum <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
-                    string OriginalLine = TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d)];
+                    string OriginalLine = TextEditShellCommon.TextEdit_FileLines[lineNum - 1];
                     TextWriterColor.Write(">> ", false, KernelColorType.Input);
                     string EditedLine = Input.ReadLine("", OriginalLine);
-                    // TODO: Math.Round in index?
-                    TextEditShellCommon.TextEdit_FileLines[(int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d)] = EditedLine;
+                    TextEditShellCommon.TextEdit_FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }
                 else
