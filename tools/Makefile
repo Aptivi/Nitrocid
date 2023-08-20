@@ -22,10 +22,13 @@ DOTNET_AVPHYS_PAGES = $(shell getconf _AVPHYS_PAGES)
 DOTNET_HEAP_LIMIT = $(shell printf '%X\n' $$(($(DOTNET_AVPHYS_PAGES) * $(DOTNET_PAGE_SIZE))))
 
 invoke-build:
+	chmod +x ./build.sh
 	./build.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./build.sh)
 
 invoke-build-offline:
+	chmod +x ./build.sh
 	HOME=`pwd`"/debian/homedir" ./build.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) HOME=`pwd`"/debian/homedir" ./build.sh)
 
 debian-invoke-init-offline:
+	chmod +x ./tools/initializeoffline.sh
 	cd .. && ./tools/initializeoffline.sh || (echo Retrying with heap limit 0x$(DOTNET_HEAP_LIMIT)... && DOTNET_GCHeapHardLimit=$(DOTNET_HEAP_LIMIT) ./tools/initializeoffline.sh)

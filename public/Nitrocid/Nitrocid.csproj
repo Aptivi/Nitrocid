@@ -108,31 +108,11 @@
 
   <!-- KS Launchers and Manpages -->
   <ItemGroup>
-    <None Include="ks-jl.1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ks-jl.cmd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ks-jl">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ks.1">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ks.cmd">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ks.desktop">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ks" Condition="'NitrocidLinuxPackageManagerBuild' == 'true'">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="ks-n" Condition="'NitrocidLinuxPackageManagerBuild' != 'true'">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    <Assets Include="..\..\assets\*.*" />
   </ItemGroup>
+  <Target Name="UpdateLaunchersManpages" BeforeTargets="Compile">
+    <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutDir)" />
+  </Target>
   <!-- KS Launchers and Manpages End -->
 
   <!-- KS Manifest -->

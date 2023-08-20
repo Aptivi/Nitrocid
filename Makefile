@@ -17,9 +17,9 @@
 
 OUTPUTS = public/Nitrocid/KSBuild public/Nitrocid/obj private/*/bin private/*/obj debian/kernel-simulator
 OUTPUT = public/Nitrocid/KSBuild/net6.0
-BINARIES = public/Nitrocid/ks-n public/Nitrocid/ks-jl
-MANUALS = public/Nitrocid/*.1
-DESKTOPS = public/Nitrocid/ks.desktop
+BINARIES = assets/ks-n assets/ks-jl
+MANUALS = assets/*.1
+DESKTOPS = assets/ks.desktop
 BRANDINGS = public/Nitrocid/OfficialAppIcon-KernelSimulator-512.png
 
 .PHONY: all debian-install
