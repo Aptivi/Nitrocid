@@ -63,7 +63,7 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
-            CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
@@ -109,7 +109,7 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
-            CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
@@ -167,7 +167,7 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
             
             // Check for switch info correctness
-            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[1];
             @switch.SwitchName.ShouldBe("s");
             @switch.HelpDefinition.ShouldBe("Simple help");
             @switch.IsRequired.ShouldBeFalse();
@@ -222,7 +222,7 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness
-            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[1];
             @switch.SwitchName.ShouldBe("s");
             @switch.HelpDefinition.ShouldBe("Simple help");
             @switch.IsRequired.ShouldBeFalse();
@@ -265,7 +265,7 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
-            CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
@@ -311,7 +311,7 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
-            CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
@@ -369,7 +369,7 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
             
             // Check for switch info correctness
-            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[1];
             @switch.SwitchName.ShouldBe("s");
             @switch.HelpDefinition.ShouldBe("Simple help");
             @switch.IsRequired.ShouldBeFalse();
@@ -424,7 +424,7 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness
-            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[1];
             @switch.SwitchName.ShouldBe("s");
             @switch.HelpDefinition.ShouldBe("Simple help");
             @switch.IsRequired.ShouldBeFalse();
@@ -473,12 +473,12 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
-            CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldBeEmpty();
-            CommandInstance.CommandArgumentInfo[1].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
@@ -530,12 +530,12 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
-            CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeEmpty();
-            CommandInstance.CommandArgumentInfo[1].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeTrue();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(1);
             CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
@@ -604,8 +604,8 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
             
             // Check for switch info correctness
-            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
-            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[1];
+            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[1];
             @switch.SwitchName.ShouldBe("s");
             @switch.HelpDefinition.ShouldBe("Simple help");
             @switch.IsRequired.ShouldBeFalse();
@@ -677,8 +677,8 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness
-            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
-            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[1];
+            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[1];
             @switch.SwitchName.ShouldBe("s");
             @switch.HelpDefinition.ShouldBe("Simple help");
             @switch.IsRequired.ShouldBeFalse();
@@ -733,12 +733,12 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
-            CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldBeEmpty();
-            CommandInstance.CommandArgumentInfo[1].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
@@ -790,12 +790,12 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Command.ShouldBe("help");
             CommandInstance.HelpDefinition.ShouldBe("Help page");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
-            CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
             CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeEmpty();
-            CommandInstance.CommandArgumentInfo[1].Switches.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeTrue();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(1);
             CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
@@ -864,8 +864,8 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness
-            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
-            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[1];
+            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[1];
             @switch.SwitchName.ShouldBe("s");
             @switch.HelpDefinition.ShouldBe("Simple help");
             @switch.IsRequired.ShouldBeFalse();
@@ -937,8 +937,8 @@ namespace KSTests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness
-            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
-            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[1];
+            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[1];
             @switch.SwitchName.ShouldBe("s");
             @switch.HelpDefinition.ShouldBe("Simple help");
             @switch.IsRequired.ShouldBeFalse();
