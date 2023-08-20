@@ -102,6 +102,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
 
                 // Render text inside it
+                ConsoleWrapper.CursorVisible = false;
                 bool appendMinusOne = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
@@ -118,6 +119,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Wait until the user presses any key to close the box
                 Input.DetectKeypress();
+                ConsoleWrapper.CursorVisible = true;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -194,6 +196,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Render text inside it
                 bool appendMinusOne = false;
+                ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -213,6 +216,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RightMargin = borderX,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
+                ConsoleWrapper.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -417,6 +421,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Render text inside it
                 bool appendMinusOne = false;
+                ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -432,6 +437,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Wait until the user presses any key to close the box
                 Input.DetectKeypress();
+                ConsoleWrapper.CursorVisible = true;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -516,6 +522,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Render text inside it
                 bool appendMinusOne = false;
+                ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -531,6 +538,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Wait until the user presses any key to close the box
                 Input.DetectKeypress();
+                ConsoleWrapper.CursorVisible = true;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -615,6 +623,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Render text inside it
                 bool appendMinusOne = false;
+                ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -629,6 +638,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
+                ConsoleWrapper.CursorVisible = false;
                 Input.DetectKeypress();
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -834,6 +844,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
+                ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -848,6 +859,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RightMargin = borderX,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
+                ConsoleWrapper.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -936,6 +948,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
+                ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -950,6 +963,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RightMargin = borderX,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
+                ConsoleWrapper.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
@@ -1038,6 +1052,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
 
                 // Render text inside it
+                ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
@@ -1052,6 +1067,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RightMargin = borderX,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
+                ConsoleWrapper.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
