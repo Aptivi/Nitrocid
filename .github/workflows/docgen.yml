@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         name: Fetching the KS source
-      - uses: "nunit/docfx-action@v2.8.0"
+      - uses: "AptiviCEO/docfx-action@master"
         name: Generating documentation
         with:
           args: DocGen/docfx.json
