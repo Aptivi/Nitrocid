@@ -113,7 +113,7 @@ namespace KS.Shell.Shells.FTP
                         new CommandArgumentInfo(new[] { "dir" }, new[] {
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list"),
                             new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages")
-                        }, false, 0)
+                        })
                     }, new FTP_LslCommand())
             },
             
@@ -122,7 +122,7 @@ namespace KS.Shell.Shells.FTP
                     new[] {
                         new CommandArgumentInfo(new[] { "dir" }, new[] {
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list")
-                        }, false, 0)
+                        })
                     }, new FTP_LsrCommand())
             },
             

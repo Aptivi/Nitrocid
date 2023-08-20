@@ -96,7 +96,7 @@ namespace KS.Shell.Shells.Text
             { "print",
                 new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with line numbers to the console",
                     new[] {
-                        new CommandArgumentInfo(new[] { "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_PrintCommand())
             },
             

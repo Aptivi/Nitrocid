@@ -50,7 +50,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimple(ShellType type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0) }, null);
+            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>()) }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -96,7 +96,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArg(ShellType type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>(), false, 0) }, null);
+            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>()) }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -142,7 +142,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitch(ShellType type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }, false, 0) }, null);
+            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }) }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -197,7 +197,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArg(ShellType type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }, false, 0) }, null);
+            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }) }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -252,7 +252,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimple(string type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0) }, null);
+            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>()) }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -298,7 +298,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArg(string type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>(), false, 0) }, null);
+            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>()) }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -344,7 +344,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitch(string type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }, false, 0) }, null);
+            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }) }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -399,7 +399,7 @@ namespace KSTests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArg(string type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }, false, 0) }, null);
+            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }) }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -456,8 +456,8 @@ namespace KSTests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page", 
                 new[] {
-                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0),
-                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0)
+                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>()),
+                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>())
                 }, null);
 
             // Check for null
@@ -513,7 +513,7 @@ namespace KSTests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>(), false, 0),
+                    new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>()),
                     new CommandArgumentInfo(new[] { "testme", "path" }, Array.Empty<SwitchInfo>(), true, 1),
                 }, null);
 
@@ -570,8 +570,8 @@ namespace KSTests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }, false, 0),
-                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("c", "Complicated help") }, false, 0),
+                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }),
+                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("c", "Complicated help") }),
                 }, null);
 
             // Check for null
@@ -643,7 +643,7 @@ namespace KSTests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }, false, 0),
+                    new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }),
                     new CommandArgumentInfo(new[] { "testme", "path" }, new[] { new SwitchInfo("c", "Complicated help") }, true, 1),
                 }, null);
 
@@ -716,8 +716,8 @@ namespace KSTests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0),
-                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0)
+                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>()),
+                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>())
                 }, null);
 
             // Check for null
@@ -773,7 +773,7 @@ namespace KSTests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>(), false, 0),
+                    new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>()),
                     new CommandArgumentInfo(new[] { "testme", "path" }, Array.Empty<SwitchInfo>(), true, 1),
                 }, null);
 
@@ -830,8 +830,8 @@ namespace KSTests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }, false, 0),
-                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("c", "Complicated help") }, false, 0),
+                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }),
+                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("c", "Complicated help") }),
                 }, null);
 
             // Check for null
@@ -903,7 +903,7 @@ namespace KSTests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }, false, 0),
+                    new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }),
                     new CommandArgumentInfo(new[] { "testme", "path" }, new[] { new SwitchInfo("c", "Complicated help") }, true, 1),
                 }, null);
 

@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.Mail
             { "list",
                 new CommandInfo("list", ShellType, /* Localizable */ "Downloads messages and lists them",
                     new[] {
-                        new CommandArgumentInfo(new[] { "pagenum" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "pagenum" }, Array.Empty<SwitchInfo>())
                     }, new Mail_ListCommand())
             },
             

@@ -70,7 +70,7 @@ namespace KS.Shell.Shells.Archive
             { "list",
                 new CommandInfo("list", ShellType, /* Localizable */ "Lists all files inside the archive",
                     new[] {
-                        new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>())
                     }, new ArchiveShell_ListCommand())
             },
 

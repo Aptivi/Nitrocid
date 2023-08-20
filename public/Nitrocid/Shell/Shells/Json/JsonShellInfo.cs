@@ -100,14 +100,14 @@ namespace KS.Shell.Shells.Json
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
                             new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties"),
                             new SwitchInfo("showvals", /* Localizable */ "Show all values")
-                        }, false, 0)
+                        })
                     }, new JsonShell_JsonInfoCommand())
             },
             
             { "print",
                 new CommandInfo("print", ShellType, /* Localizable */ "Prints the JSON file",
                     new[] {
-                        new CommandArgumentInfo(new[] { "property" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "property" }, Array.Empty<SwitchInfo>())
                     }, new JsonShell_PrintCommand())
             },
             
@@ -135,7 +135,7 @@ namespace KS.Shell.Shells.Json
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
                             new SwitchInfo("b", /* Localizable */ "Beautified JSON", false, false, new string[] { "m" }),
                             new SwitchInfo("m", /* Localizable */ "Minified JSON", false, false, new string[] { "b" })
-                        }, false, 0)
+                        })
                     }, new JsonShell_SaveCommand())
             }
         };

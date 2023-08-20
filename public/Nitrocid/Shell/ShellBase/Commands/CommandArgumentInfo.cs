@@ -62,6 +62,14 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="Arguments">Command arguments</param>
         /// <param name="Switches">Command switches</param>
+        public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches)
+            : this(Arguments, Switches, false, 0) { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="Arguments">Command arguments</param>
+        /// <param name="Switches">Command switches</param>
         /// <param name="ArgumentsRequired">Arguments required</param>
         /// <param name="MinimumArguments">Minimum arguments</param>
         /// <param name="AutoCompleter">Auto completion function</param>

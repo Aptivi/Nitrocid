@@ -29,7 +29,11 @@ namespace KSTests.Shell.ShellBase.Shells
 
         public override Dictionary<string, CommandInfo> Commands => new()
         {
-            { "test", new CommandInfo("test", ShellType, "Test command", new[] { new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0) }, null) },
+            { "test",
+                new CommandInfo("test", ShellType, "Test command", new[] {
+                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>())
+                }, null)
+            },
         };
 
         public override BaseShell ShellBase => new ShellTest();

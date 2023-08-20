@@ -82,7 +82,7 @@ namespace KS.Shell.Shells.Hex
             { "print",
                 new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with byte numbers to the console",
                     new[] {
-                        new CommandArgumentInfo(new[] { "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "startbyte", "endbyte" }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_PrintCommand())
             },
             

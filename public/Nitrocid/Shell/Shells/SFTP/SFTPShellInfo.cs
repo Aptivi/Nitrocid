@@ -85,7 +85,7 @@ namespace KS.Shell.Shells.SFTP
                         new CommandArgumentInfo(new[] { "dir" }, new[] {
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders"),
                             new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the \"unauthorized\" messages")
-                        }, false, 0)
+                        })
                     }, new SFTP_LslCommand())
             },
             
@@ -94,7 +94,7 @@ namespace KS.Shell.Shells.SFTP
                     new[] {
                         new CommandArgumentInfo(new[] { "dir" }, new[] {
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders")
-                        }, false, 0)
+                        })
                     }, new SFTP_LsrCommand())
             },
             

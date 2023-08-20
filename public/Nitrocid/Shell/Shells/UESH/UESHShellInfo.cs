@@ -174,14 +174,14 @@ namespace KS.Shell.Shells.UESH
             { "chmal",
                 new CommandInfo("chmal", ShellType, /* Localizable */ "Changes MAL, the MOTD After Login",
                     new[] {
-                        new CommandArgumentInfo(new[] { "Message" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "Message" }, Array.Empty<SwitchInfo>())
                     }, new ChMalCommand(), CommandFlags.Strict)
             },
             
             { "chmotd",
                 new CommandInfo("chmotd", ShellType, /* Localizable */ "Changes MOTD, the Message Of The Day",
                     new[] {
-                        new CommandArgumentInfo(new[] { "Message" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "Message" }, Array.Empty<SwitchInfo>())
                     }, new ChMotdCommand(), CommandFlags.Strict)
             },
             
@@ -288,7 +288,7 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("time", /* Localizable */ "Shows just the time", false, false, new string[] { "date", "full" }),
                             new SwitchInfo("full", /* Localizable */ "Shows date and time", false, false, new string[] { "date", "time" }),
                             new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local")
-                        }, false, 0)
+                        })
                     }, new DateCommand(), CommandFlags.RedirectionSupported)
             },
             
@@ -337,7 +337,7 @@ namespace KS.Shell.Shells.UESH
             { "echo",
                 new CommandInfo("echo", ShellType, /* Localizable */ "Writes text into the console",
                     new[] {
-                        new CommandArgumentInfo(new[] { "text" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "text" }, Array.Empty<SwitchInfo>())
                     }, new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -380,7 +380,7 @@ namespace KS.Shell.Shells.UESH
             { "ftp",
                 new CommandInfo("ftp", ShellType, /* Localizable */ "Use an FTP shell to interact with servers",
                     new[] {
-                        new CommandArgumentInfo(new[] { "server" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "server" }, Array.Empty<SwitchInfo>())
                     }, new FtpCommand())
             },
             
@@ -389,7 +389,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[] { "namescount", "nameprefix", "namesuffix", "surnameprefix", "surnamesuffix" }, new[] {
                             new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)")
-                        }, false, 0)
+                        })
                     }, new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -501,7 +501,7 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list"),
                             new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages"),
                             new SwitchInfo("recursive", /* Localizable */ "Lists a folder recursively")
-                        }, false, 0)
+                        })
                     }, new ListCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -557,7 +557,7 @@ namespace KS.Shell.Shells.UESH
             { "mail",
                 new CommandInfo("mail", ShellType, /* Localizable */ "Opens the mail client",
                     new[] {
-                        new CommandArgumentInfo(new[] { "emailAddress" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "emailAddress" }, Array.Empty<SwitchInfo>())
                     }, new MailCommand()) },
             
             { "md",
@@ -674,7 +674,7 @@ namespace KS.Shell.Shells.UESH
             { "reboot",
                 new CommandInfo("reboot", ShellType, /* Localizable */ "Restarts your computer (WARNING: No syncing, because it is not a final kernel)",
                     new[] {
-                        new CommandArgumentInfo(new[] { "ip", "port" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "ip", "port" }, Array.Empty<SwitchInfo>())
                     }, new RebootCommand())
             },
             
@@ -742,7 +742,7 @@ namespace KS.Shell.Shells.UESH
             { "rss",
                 new CommandInfo("rss", ShellType, /* Localizable */ "Opens an RSS shell to read the feeds",
                     new[] {
-                        new CommandArgumentInfo(new[] { "feedlink" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "feedlink" }, Array.Empty<SwitchInfo>())
                     }, new RssCommand())
             },
             
@@ -794,7 +794,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
                             new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", false, false, new string[] { "splash" }),
                             new SwitchInfo("splash", /* Localizable */ "Opens the splash settings", false, false, new string[] { "saver" })
-                        }, false, 0)
+                        })
                     }, new SettingsCommand(), CommandFlags.Strict)
             },
             
@@ -815,7 +815,7 @@ namespace KS.Shell.Shells.UESH
             { "sftp",
                 new CommandInfo("sftp", ShellType, /* Localizable */ "Lets you use an SSH FTP server",
                     new[] {
-                        new CommandArgumentInfo(new[] { "server" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "server" }, Array.Empty<SwitchInfo>())
                     }, new SftpCommand())
             },
             
@@ -852,7 +852,7 @@ namespace KS.Shell.Shells.UESH
             { "shutdown",
                 new CommandInfo("shutdown", ShellType, /* Localizable */ "The kernel will be shut down",
                     new[] {
-                        new CommandArgumentInfo(new[] { "ip", "port" }, Array.Empty<SwitchInfo>(), false, 0)
+                        new CommandArgumentInfo(new[] { "ip", "port" }, Array.Empty<SwitchInfo>())
                     }, new ShutdownCommand())
             },
             
@@ -885,7 +885,7 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", false, false, new string[] { "e", "h", "v", "c" }),
                             new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", false, false, new string[] { "m", "e", "v", "c" }),
                             new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", false, false, new string[] { "m", "h", "e", "c" }),
-                            new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", false, true, new string[] { "m", "h", "v", "e" }) }, false, 0)
+                            new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", false, true, new string[] { "m", "h", "v", "e" }) })
                     }, new SpeedPressCommand())
             },
             
@@ -1020,7 +1020,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(Array.Empty<string>(), new[] {
                             new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally")
-                        }, false, 0)
+                        })
                     }, new WordleCommand())
             },
 

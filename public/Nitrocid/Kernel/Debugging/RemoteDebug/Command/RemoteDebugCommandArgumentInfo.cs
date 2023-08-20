@@ -42,9 +42,17 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         /// <summary>
         /// Installs a new instance of the command argument info class
         /// </summary>
-        public RemoteDebugCommandArgumentInfo() : this(Array.Empty<string>(), false, 0)
-        {
-        }
+        public RemoteDebugCommandArgumentInfo() :
+            this(Array.Empty<string>(), false, 0)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="HelpUsages">Help usages</param>
+        public RemoteDebugCommandArgumentInfo(string[] HelpUsages) :
+            this(HelpUsages, false, 0)
+        { }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
