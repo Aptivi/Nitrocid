@@ -20,6 +20,7 @@ using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Commands;
 using KS.Kernel.Events;
 using KS.Misc.Text;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Modifications
 {
@@ -69,8 +70,9 @@ namespace KS.Modifications
                         // Found commands dictionary! Now, check it for the command
                         if (Script.Commands.ContainsKey(parts[0]))
                         {
+                            var ShellInstance = ShellStart.ShellStack[^1];
                             var cmdInfo = Script.Commands[parts[0]];
-                            var Params = new CommandExecutor.ExecuteCommandParameters(cmd, cmdInfo.Type)
+                            var Params = new CommandExecutor.ExecuteCommandParameters(cmd, cmdInfo.Type, ShellInstance)
                             {
                                 CustomCommand = true,
                                 ModCommands = Script.Commands

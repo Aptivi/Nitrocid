@@ -50,10 +50,11 @@ namespace KS.Shell.ShellBase.Aliases
             DebugWriter.WriteDebug(DebugLevel.I, "Parsed from: {0}", aliascmd);
 
             // Make thread parameters.
-            var Params = new CommandExecutor.ExecuteCommandParameters(actualCmd, ShellType);
+            var ShellInstance = ShellStart.ShellStack[^1];
+            var Params = new CommandExecutor.ExecuteCommandParameters(actualCmd, ShellType, ShellInstance);
 
             // Start the command thread
-            var StartCommandThread = ShellStart.ShellStack[^1].ShellCommandThread;
+            var StartCommandThread = ShellInstance.ShellCommandThread;
             StartCommandThread.Start(Params);
             StartCommandThread.Wait();
             StartCommandThread.Stop();

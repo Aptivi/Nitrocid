@@ -64,15 +64,20 @@ namespace KS.Shell.ShellBase.Commands
             /// Mod commands
             /// </summary>
             internal Dictionary<string, CommandInfo> ModCommands;
+            /// <summary>
+            /// Shell instance
+            /// </summary>
+            internal ShellExecuteInfo ShellInstance;
 
-            internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType) : 
-                this(RequestedCommand, ShellManager.GetShellTypeName(ShellType)) 
+            internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType, ShellExecuteInfo ShellInstance) : 
+                this(RequestedCommand, ShellManager.GetShellTypeName(ShellType), ShellInstance) 
             { }
 
-            internal ExecuteCommandParameters(string RequestedCommand, string ShellType)
+            internal ExecuteCommandParameters(string RequestedCommand, string ShellType, ShellExecuteInfo ShellInstance)
             {
                 this.RequestedCommand = RequestedCommand;
                 this.ShellType = ShellType;
+                this.ShellInstance = ShellInstance;
             }
         }
 
@@ -81,7 +86,7 @@ namespace KS.Shell.ShellBase.Commands
             // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
             // is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the
             // shell can do their job.
-            var ShellInstance = ShellStart.ShellStack[^1];
+            var ShellInstance = ThreadParams.ShellInstance;
             var StartCommandThread = ShellInstance.ShellCommandThread;
             bool CommandThreadValid = true;
             if (StartCommandThread.IsAlive)
@@ -114,9 +119,7 @@ namespace KS.Shell.ShellBase.Commands
         {
             string RequestedCommand = ThreadParams.RequestedCommand;
             string ShellType = ThreadParams.ShellType;
-
-            // TODO: Make ThreadParams also hold this below field:
-            var ShellInstance = ShellStart.ShellStack[^1];
+            var ShellInstance = ThreadParams.ShellInstance;
             try
             {
                 // Variables
