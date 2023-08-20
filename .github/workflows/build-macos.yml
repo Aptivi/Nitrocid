@@ -1,4 +1,4 @@
-name: Build Project (Linux)
+name: Build Project (macOS)
 
 on:
   push:
@@ -13,7 +13,7 @@ on:
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
     - uses: actions/checkout@v2

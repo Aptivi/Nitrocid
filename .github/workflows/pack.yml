@@ -7,26 +7,18 @@ on:
 jobs:
   build:
 
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.ref }}
-    - name: NuGet Installation
-      uses: nuget/setup-nuget@v1
-      with: 
-        nuget-version: "latest"
-    - name: MSBuild Installation
-      uses: microsoft/setup-msbuild@v1.3
-    - name: Dependency Restoration
-      run: msbuild "Nitrocid.sln" -t:restore -p:Configuration=Release
+    - name: Setup .NET 6.0
+      uses: actions/setup-dotnet@v3
+      with:
+        dotnet-version: '6.0.x'
     - name: Solution Compilation
-      run: msbuild "Nitrocid.sln" -p:Configuration=Release
-    - name: NuGet Preparation
-      run: nuget setApiKey ${{ secrets.NUGET_APIKEY }}
+      run: dotnet build --configuration Release
     - name: Package Publication
-      run: |
-        $path = "public\Nitrocid\KSBuild"
-        nuget push "$path\*.symbols.nupkg" -source "nuget.org"
+      run: dotnet nuget push "public/Nitrocid/KSBuild/*.symbols.nupkg" --api-key ${{ secrets.NUGET_APIKEY }} --source "nuget.org"
         
