@@ -55,7 +55,8 @@ namespace KS.Misc.Games
                 {
                     case ConsoleKey.Escape:
                         // User decided to escape
-                        return;
+                        done = true;
+                        break;
                     default:
                         // Add a character
                         currentTries[currentGuessTry - 1, currentGuessChar - 1] = pressedChar.KeyChar;
