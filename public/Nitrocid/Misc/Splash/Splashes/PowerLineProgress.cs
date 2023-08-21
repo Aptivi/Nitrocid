@@ -103,7 +103,7 @@ namespace KS.Misc.Splash.Splashes
             // Percentage
             PresetStringBuilder.Append(FirstColorSegmentForeground.VTSequenceForeground);
             PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceBackground);
-            PresetStringBuilder.AppendFormat(" {0}% ", Progress.ToString().PadLeft(3));
+            PresetStringBuilder.AppendFormat(" {0:000}% ", Progress);
 
             // Transition
             PresetStringBuilder.Append(FirstColorSegmentBackground.VTSequenceForeground);
