@@ -499,11 +499,13 @@ namespace KS.Drivers.Filesystem
             var Entries = Array.Empty<string>();
             try
             {
+                Path = FS.NeutralizePath(Path);
                 FS.ThrowOnInvalidPath(Path);
 
                 // Check to see if we're calling from the root path
                 string Pattern = IsFile ? "" : "*";
-                if (System.IO.Path.IsPathRooted(Path))
+                string pathRoot = FS.NeutralizePath(System.IO.Path.GetPathRoot(Path));
+                if (pathRoot == Path)
                 {
                     Entries = GetFilesystemEntries(Path, Pattern, Recursive);
                     return Entries;
