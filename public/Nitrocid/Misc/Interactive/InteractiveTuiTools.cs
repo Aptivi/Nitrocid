@@ -171,18 +171,18 @@ namespace KS.Misc.Interactive
                 // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
                 // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)
                 //
-                //       | vvvvvvvvvvvvvvvvvvvvvv (SeparatorHalfConsoleWidth)
                 //       |  vvvvvvvvvvvvvvvvvvvv  (SeparatorHalfConsoleWidthInterior)
+                //       | v                    v (SeparatorHalfConsoleWidth)
                 // H: 0  |
-                // H: 1  | a--------------------|c---------------------| < ----> (SeparatorMinimumHeight)
-                // H: 2  | |b                   ||d                    | << ----> (SeparatorMinimumHeightInterior)
-                // H: 3  | |                    ||                     | <<
-                // H: 4  | |                    ||                     | <<
-                // H: 5  | |                    ||                     | <<
-                // H: 6  | |                    ||                     | <<
-                // H: 7  | |                    ||                     | <<
-                // H: 8  | |                    ||                     | << ----> (SeparatorMaximumHeightInterior)
-                // H: 9  | |--------------------||---------------------| < ----> (SeparatorMaximumHeight)
+                // H: 1  | a--------------------+c---------------------+ < ----> (SeparatorMinimumHeight)
+                // H: 2  | |b                   ||d                    |  < ----> (SeparatorMinimumHeightInterior)
+                // H: 3  | |                    ||                     |  <
+                // H: 4  | |                    ||                     |  <
+                // H: 5  | |                    ||                     |  <
+                // H: 6  | |                    ||                     |  <
+                // H: 7  | |                    ||                     |  <
+                // H: 8  | |                    ||                     |  < ----> (SeparatorMaximumHeightInterior)
+                // H: 9  | +--------------------++---------------------+ < ----> (SeparatorMaximumHeight)
                 // H: 10 |
                 //       | where a is the dimension for the first pane upper left corner           (0, SeparatorMinimumHeight                                     (usually 1))
                 //       |   and b is the dimension for the first pane interior upper left corner  (1, SeparatorMinimumHeightInterior                             (usually 2))
@@ -201,16 +201,26 @@ namespace KS.Misc.Interactive
                 ConsoleWrapper.CursorLeft = 0;
                 var finalBindings = new List<InteractiveTuiBinding>(interactiveTui.Bindings)
                 {
-                    new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null)
+                    new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null),
+                    new InteractiveTuiBinding(/* Localizable */ "Keybindings", ConsoleKey.K, null),
                 };
                 foreach (InteractiveTuiBinding binding in finalBindings)
                 {
                     // First, check to see if the rendered binding info is going to exceed the console window width
-                    if (!($" {binding.BindingKeyName} {binding.BindingName}  ".Length + ConsoleWrapper.CursorLeft >= ConsoleWrapper.WindowWidth))
+                    string renderedBinding = $" {binding.BindingKeyName} {binding.BindingName}  ";
+                    bool canDraw = renderedBinding.Length + ConsoleWrapper.CursorLeft < ConsoleWrapper.WindowWidth - 3;
+                    if (canDraw)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", binding.BindingKeyName.ToString(), binding.BindingName);
                         TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
                         TextWriterWhereColor.WriteWhere($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.OptionForegroundColor, BaseInteractiveTui.BackgroundColor);
+                    }
+                    else
+                    {
+                        // We can't render anymore, so just break and write a binding to show more
+                        DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
+                        TextWriterWhereColor.WriteWhere($" K ", ConsoleWrapper.WindowWidth - 3, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
+                        break;
                     }
                 }
 
@@ -476,6 +486,22 @@ namespace KS.Misc.Interactive
                             InfoBoxColor.WriteInfoBox(_finalInfoRendered, BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
                             BaseInteractiveTui.RedrawRequired = true;
                         }
+                        break;
+                    case ConsoleKey.K:
+                        // User needs an infobox that shows all available keys
+                        string section = Translate.DoTranslation("Available keys");
+                        var bindings = interactiveTui.Bindings;
+                        int maxBindingLength = bindings
+                            .Max((itb) => $"[{itb.BindingKeyName}]".Length);
+                        string[] bindingRepresentations = bindings
+                            .Select((itb) => $"{$"[{itb.BindingKeyName}]" + new string(' ', maxBindingLength - $"[{itb.BindingKeyName}]".Length) + $" | {(itb._localizable ? Translate.DoTranslation(itb.BindingName) : itb.BindingName)}"}")
+                            .ToArray();
+                        InfoBoxColor.WriteInfoBox(
+                            $"{section}{CharManager.NewLine}" +
+                            $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
+                            $"{string.Join('\n', bindingRepresentations)}"
+                        , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+                        BaseInteractiveTui.RedrawRequired = true;
                         break;
                     case ConsoleKey.Escape:
                         // User needs to exit
