@@ -292,6 +292,7 @@ namespace KS.Misc.Interactive
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
                 TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
+                KernelColorTools.SetConsoleColor(BaseInteractiveTui.PaneItemBackColor, true);
             }
 
             // Render the vertical bar
