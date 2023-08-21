@@ -37,6 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             Making.MakeDirectory(ListArgsOnly[0]);
+            variableValue = ListArgsOnly[0];
             return 0;
         }
     }

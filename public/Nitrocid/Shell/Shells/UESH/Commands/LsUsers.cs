@@ -29,7 +29,9 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
-            ListWriterColor.WriteList(UserManagement.ListAllUsers());
+            var users = UserManagement.ListAllUsers();
+            ListWriterColor.WriteList(users);
+            variableValue = string.Join('\n', users);
             return 0;
         }
     }

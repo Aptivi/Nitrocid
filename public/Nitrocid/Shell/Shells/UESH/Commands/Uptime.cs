@@ -31,6 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write(PowerManager.KernelUptime);
+            variableValue = PowerManager.KernelUptime;
             return 0;
         }
     }

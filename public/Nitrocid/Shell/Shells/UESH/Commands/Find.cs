@@ -65,6 +65,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
                 ListWriterColor.WriteList(FileEntries, true);
+            variableValue = string.Join('\n', FileEntries);
             return 0;
         }
 

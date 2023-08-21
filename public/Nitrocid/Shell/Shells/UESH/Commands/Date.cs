@@ -51,16 +51,32 @@ namespace KS.Shell.Shells.UESH.Commands
             if (showDate)
             {
                 if (useUtc)
-                    TextWriterColor.Write(TimeDateRenderersUtc.RenderDateUtc());
+                {
+                    string rendered = TimeDateRenderersUtc.RenderDateUtc();
+                    TextWriterColor.Write(rendered);
+                    variableValue = rendered;
+                }
                 else
-                    TextWriterColor.Write(TimeDateRenderers.RenderDate());
+                {
+                    string rendered = TimeDateRenderers.RenderDate();
+                    TextWriterColor.Write(rendered);
+                    variableValue = rendered;
+                }
             }
             if (showTime)
             {
                 if (useUtc)
-                    TextWriterColor.Write(TimeDateRenderersUtc.RenderTimeUtc());
+                {
+                    string rendered = TimeDateRenderersUtc.RenderTimeUtc();
+                    TextWriterColor.Write(rendered);
+                    variableValue = rendered;
+                }
                 else
-                    TextWriterColor.Write(TimeDateRenderers.RenderTime());
+                {
+                    string rendered = TimeDateRenderers.RenderTime();
+                    TextWriterColor.Write(rendered);
+                    variableValue = rendered;
+                }
             }
             return 0;
         }

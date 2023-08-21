@@ -33,7 +33,9 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            TextWriterColor.Write(PlaceParse.ProbePlaces(StringArgs));
+            string result = PlaceParse.ProbePlaces(StringArgs);
+            TextWriterColor.Write(result);
+            variableValue = result;
             return 0;
         }
     }

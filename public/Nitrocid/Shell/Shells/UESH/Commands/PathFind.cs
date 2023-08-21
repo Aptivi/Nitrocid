@@ -40,11 +40,13 @@ namespace KS.Shell.Shells.UESH.Commands
             if (PathLookupTools.FileExistsInPath(ListArgsOnly[0], ref filePath))
             {
                 TextWriterColor.Write(Translate.DoTranslation("File found in path:") + " {0}", true, KernelColorType.Success, filePath);
+                variableValue = filePath;
                 return 0;
             }
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("File not found in path lookup directories."), true, KernelColorType.Warning);
+                variableValue = "";
                 return 10000 + (int)KernelExceptionType.Filesystem;
             }
         }

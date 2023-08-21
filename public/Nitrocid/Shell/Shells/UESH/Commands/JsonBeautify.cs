@@ -55,6 +55,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     JsonOutputFile = Filesystem.NeutralizePath(ListArgsOnly[1]);
                     File.WriteAllText(JsonOutputFile, BeautifiedJson);
                 }
+                variableValue = BeautifiedJson;
                 return 0;
             }
             else

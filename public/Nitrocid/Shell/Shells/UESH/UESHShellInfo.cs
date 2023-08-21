@@ -457,7 +457,7 @@ namespace KS.Shell.Shells.UESH
             { "input",
                 new CommandInfo("input", ShellType, /* Localizable */ "Allows user to enter input",
                     new[] {
-                        new CommandArgumentInfo(new[] { "$variable", "question" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[] { "question" }, Array.Empty<SwitchInfo>(), true, 1)
                     }, new InputCommand(), CommandFlags.SettingVariable)
             },
             

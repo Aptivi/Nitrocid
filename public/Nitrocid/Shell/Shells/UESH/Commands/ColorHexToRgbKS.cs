@@ -41,6 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
             RGB = KernelColorTools.ConvertFromHexToRGB(Hex);
             TextWriterColor.Write("- " + Translate.DoTranslation("RGB color sequence:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.Write(RGB, true, KernelColorType.ListValue);
+            variableValue = RGB;
             return 0;
         }
 

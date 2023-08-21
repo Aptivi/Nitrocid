@@ -45,6 +45,7 @@ namespace KS.Shell.Shells.UESH.Commands
             TextWriterColor.Write($"{color.G}", true, KernelColorType.ListValue);
             TextWriterColor.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.Write($"{color.B}", true, KernelColorType.ListValue);
+            variableValue = color.PlainSequence;
             return 0;
         }
 

@@ -71,6 +71,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 for (int i = 0; i < NamesList.Length; i++)
                     NamesList[i] = "@" + NamesList[i].ToLower().Replace(" ", ".");
             ListWriterColor.WriteList(NamesList);
+            variableValue = string.Join('\n', NamesList);
             return 0;
         }
 

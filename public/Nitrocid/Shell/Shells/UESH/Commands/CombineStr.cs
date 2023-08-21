@@ -39,7 +39,9 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Make a combined content array
             var CombinedContents = Combination.CombineTextFiles(InputPath, CombineInputPaths);
-            TextWriterColor.Write(string.Join("\n", CombinedContents));
+            string combinedContentsStr = string.Join("\n", CombinedContents);
+            TextWriterColor.Write(combinedContentsStr);
+            variableValue = combinedContentsStr;
             return 0;
         }
 

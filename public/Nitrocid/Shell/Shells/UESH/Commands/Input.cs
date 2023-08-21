@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Inputs.Styles;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Scripting.Interaction;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -32,7 +32,8 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            UESHCommands.PromptInputAndSet(StringArgs.Replace(ListArgsOnly[0] + " ", ""), ListArgsOnly[0]);
+            string Answer = InputStyle.PromptInput(ListArgsOnly[0]);
+            variableValue = Answer;
             return 0;
         }
     }

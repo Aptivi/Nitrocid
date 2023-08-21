@@ -42,6 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 double Res = ((MathExpr)StringArgs).Result;
                 DebugWriter.WriteDebug(DebugLevel.I, "Res = {0}", Res);
                 TextWriterColor.Write(StringArgs + " = " + Res.ToString());
+                variableValue = Res.ToString();
                 return 0;
             }
             catch (Exception ex)

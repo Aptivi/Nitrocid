@@ -213,7 +213,6 @@ namespace KS.Shell.ShellBase.Commands
                     DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);
                     if (containsSetSwitch)
                     {
-                        // TODO: Currently, no command sets this...
                         string variable = SwitchManager.GetSwitchValue(Switches, "-set");
                         DebugWriter.WriteDebug(DebugLevel.I, "Variable to set {0} is {1}", value, variable);
                         UESHVariables.SetVariable(variable, value);

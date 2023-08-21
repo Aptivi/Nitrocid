@@ -35,6 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             Making.MakeFile(ListArgsOnly[0]);
+            variableValue = ListArgsOnly[0];
             return 0;
         }
     }
