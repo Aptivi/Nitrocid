@@ -109,7 +109,7 @@
             },
             {
                 "Name": "Banner figlet font",
-                "Type": "SString",
+                "Type": "SFiglet",
                 "Variable": "BannerFigletFont",
                 "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
             },
@@ -1392,7 +1392,7 @@
             },
             {
                 "Name": "Figlet font for timer",
-                "Type": "SString",
+                "Type": "SFiglet",
                 "Variable": "TimerFigletFont",
                 "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
             },

@@ -2745,7 +2745,7 @@
             },
             {
                 "Name": "Figlet font",
-                "Type": "SString",
+                "Type": "SFiglet",
                 "Variable": "FigletFont",
                 "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
             },

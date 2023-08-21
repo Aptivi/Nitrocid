@@ -43,6 +43,7 @@ using KS.Users.Permissions;
 using Newtonsoft.Json.Linq;
 using Terminaux.Colors;
 using Terminaux.Colors.Wheel;
+using Terminaux.Figlet;
 
 namespace KS.Misc.Settings
 {
@@ -601,6 +602,10 @@ namespace KS.Misc.Settings
                             PromptPresetManager.PromptForPresets(ShellType);
 
                             break;
+                        case SettingsKeyType.SFiglet:
+                            AnswerString = FigletSelector.PromptForFiglet();
+
+                            break;
                     }
 
                     // Check for input
@@ -838,6 +843,12 @@ namespace KS.Misc.Settings
                                 {
                                     // Already set by SetPresetInternal
                                     KeyFinished = true;
+                                    break;
+                                }
+                            case SettingsKeyType.SFiglet:
+                                {
+                                    KeyFinished = true;
+                                    SetPropertyValue(KeyVar, AnswerString, SettingsType);
                                     break;
                                 }
                             default:

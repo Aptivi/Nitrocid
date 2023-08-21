@@ -71,5 +71,9 @@ namespace KS.Misc.Settings
         /// The value is a shell preset defined using <see cref="IPromptPreset"/> in <see cref="PromptPresetManager.CurrentPresets"/>
         /// </summary>
         SPreset,
+        /// <summary>
+        /// The value is a shell preset defined using <see cref="IPromptPreset"/> in <see cref="PromptPresetManager.CurrentPresets"/>
+        /// </summary>
+        SFiglet,
     }
 }
