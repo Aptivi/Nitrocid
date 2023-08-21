@@ -922,5 +922,7 @@ You haven't entered a number to convert.
 The entered number is invalid.
 units to convert
 Gets a random quote
+Mod can't be loaded because there's an incompatibility between this version of the kernel and this mod:
+Here's a list of errors that may help you investigate this incompatibility:
 
 ==========================================================================================================================================

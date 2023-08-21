@@ -90,6 +90,20 @@ namespace KS.Modifications
                     }
                     SplashReport.ReportProgressError(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."));
                 }
+                catch (TargetInvocationException ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    SplashReport.ReportProgressError(Translate.DoTranslation("Mod can't be loaded because there's an incompatibility between this version of the kernel and this mod:") + $" {ex.Message}");
+                    SplashReport.ReportProgressError(Translate.DoTranslation("Here's a list of errors that may help you investigate this incompatibility:"));
+                    Exception inner = ex.InnerException;
+                    while (inner != null)
+                    {
+                        SplashReport.ReportProgressError(inner.Message);
+                        inner = inner.InnerException;
+                    }
+                    SplashReport.ReportProgressError(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."));
+                }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", modFile, ex.Message);
