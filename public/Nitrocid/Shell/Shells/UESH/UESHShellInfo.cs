@@ -673,6 +673,13 @@ namespace KS.Shell.Shells.UESH
                     }, new PutCommand())
             },
             
+            { "quote",
+                new CommandInfo("quote", ShellType, /* Localizable */ "Gets a random quote",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new QuoteCommand())
+            },
+            
             { "reboot",
                 new CommandInfo("reboot", ShellType, /* Localizable */ "Restarts your computer (WARNING: No syncing, because it is not a final kernel)",
                     new[] {

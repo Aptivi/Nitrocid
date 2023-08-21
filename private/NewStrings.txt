@@ -921,5 +921,6 @@ Can't convert unit.
 You haven't entered a number to convert.
 The entered number is invalid.
 units to convert
+Gets a random quote
 
 ==========================================================================================================================================

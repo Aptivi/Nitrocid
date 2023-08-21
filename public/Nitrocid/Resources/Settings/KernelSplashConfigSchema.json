@@ -16,6 +16,9 @@
         },
         "PowerLineProgressProgressTextLocation": {
             "type": "integer"
+        },
+        "QuoteProgressTextLocation": {
+            "type": "integer"
         }
     },
     "required": [
@@ -23,6 +26,7 @@
         "ProgressProgressColor",
         "ProgressProgressTextLocation",
         "PowerLineProgressProgressColor",
-        "PowerLineProgressProgressTextLocation"
+        "PowerLineProgressProgressTextLocation",
+        "QuoteProgressTextLocation"
     ]
 }

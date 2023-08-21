@@ -46,5 +46,9 @@ namespace KS.Kernel.Configuration.Instances
         /// [PowerLineProgress] The progress text location
         /// </summary>
         public int PowerLineProgressProgressTextLocation { get; set; } = (int)TextLocation.Top;
+        /// <summary>
+        /// [Quote] The progress text location
+        /// </summary>
+        public int QuoteProgressTextLocation { get; set; } = (int)TextLocation.Top;
     }
 }

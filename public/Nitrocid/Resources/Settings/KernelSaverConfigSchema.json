@@ -1846,6 +1846,36 @@
         },
         "NumberScatterForegroundColor": {
             "type": "string"
+        },
+        "QuoteTrueColor": {
+            "type": "boolean"
+        },
+        "QuoteDelay": {
+            "type": "integer"
+        },
+        "QuoteMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "QuoteMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "QuoteMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "QuoteMinimumColorLevel": {
+            "type": "integer"
+        },
+        "QuoteMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "QuoteMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "QuoteMaximumBlueColorLevel": {
+            "type": "integer"
+        },
+        "QuoteMaximumColorLevel": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2463,6 +2493,16 @@
         "SquareCornerMaximumBlueColorLevel",
         "NumberScatterDelay",
         "NumberScatterBackgroundColor",
-        "NumberScatterForegroundColor"
+        "NumberScatterForegroundColor",
+        "QuoteTrueColor",
+        "QuoteDelay",
+        "QuoteMinimumRedColorLevel",
+        "QuoteMinimumGreenColorLevel",
+        "QuoteMinimumBlueColorLevel",
+        "QuoteMinimumColorLevel",
+        "QuoteMaximumRedColorLevel",
+        "QuoteMaximumGreenColorLevel",
+        "QuoteMaximumBlueColorLevel",
+        "QuoteMaximumColorLevel"
     ]
 }

@@ -101,6 +101,7 @@ namespace KS.Misc.Screensaver
             { "plain", new PlainDisplay() },
             { "progressclock", new ProgressClockDisplay() },
             { "pulse", new PulseDisplay() },
+            { "quote", new QuoteDisplay() },
             { "ramp", new RampDisplay() },
             { "shipduet", new ShipDuetDisplay() },
             { "simplematrix", new SimpleMatrixDisplay() },
