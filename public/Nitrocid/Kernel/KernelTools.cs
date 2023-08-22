@@ -61,9 +61,9 @@ namespace KS.Kernel
 
         // Final console window title
 #if SPECIFIERREL
-        internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelVersion} (API v{KernelApiVersion})";
+        internal readonly static string ConsoleTitle = $"Nitrocid v{KernelVersion} (API v{KernelApiVersion})";
 #else
-        internal readonly static string ConsoleTitle = $"Nitrocid Kernel v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
+        internal readonly static string ConsoleTitle = $"Nitrocid v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
 #endif
 
     }
