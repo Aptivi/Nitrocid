@@ -22,6 +22,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using KS.Misc.Interactive;
 using KS.Misc.Text;
+using System.Collections;
 
 namespace KS.Kernel.Threading.Interactive
 {
@@ -43,6 +44,10 @@ namespace KS.Kernel.Threading.Interactive
             new InteractiveTuiBinding(/* Localizable */ "Kill",   ConsoleKey.F1,     (_, index) => KillThread(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab,    (_, _) => SwitchMode(), true)
         };
+
+        /// <inheritdoc/>
+        public override IEnumerable PrimaryDataSource =>
+            osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
 
         /// <inheritdoc/>
         public override string GetInfoFromItem(object item)
