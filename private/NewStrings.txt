@@ -926,5 +926,6 @@ Mod can't be loaded because there's an incompatibility between this version of t
 Here's a list of errors that may help you investigate this incompatibility:
 Available keys
 Keybindings
+The interactive TUI {0} doesn't contain any data source. This program can't continue.
 
 ==========================================================================================================================================

@@ -54,6 +54,18 @@ namespace KS.Misc.Interactive
                 if (interactiveTui is null)
                     throw new KernelException(KernelExceptionType.InteractiveTui, Translate.DoTranslation("Please provide a base Interactive TUI class and try again."));
 
+                // First, check to see if the interactive TUI has no data source
+                if ((interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null) ||
+                    (CountElements(interactiveTui.PrimaryDataSource) == 0 && CountElements(interactiveTui.SecondaryDataSource) == 0))
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("The interactive TUI {0} doesn't contain any data source. This program can't continue."), true, KernelColorType.Error, interactiveTui.GetType().Name);
+                    TextWriterColor.Write();
+                    TextWriterColor.Write(Translate.DoTranslation("Press any key to exit this program..."));
+                    Input.DetectKeypress();
+                    return;
+                }
+
+                // Now, run the application
                 bool notifyCrash = false;
                 string crashReason = "";
                 try
