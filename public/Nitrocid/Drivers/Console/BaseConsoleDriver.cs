@@ -48,6 +48,12 @@ namespace KS.Drivers.Console.Consoles
         /// <inheritdoc/>
         public virtual bool DriverInternal => false;
 
+        /// <summary>
+        /// Checks to see if the console has moved. Only set this to true if the console has really moved, for example, each call to
+        /// setting cursor position, key reading, writing text, etc.
+        /// </summary>
+        protected bool _moved = false;
+
         private static bool _dumbSet = false;
         private static bool _dumb = true;
 
@@ -79,6 +85,19 @@ namespace KS.Drivers.Console.Consoles
             }
         }
 
+        /// <summary>
+        /// Has the console moved? Should be set by Write*, Set*, and all console functions that have to do with moving the console.
+        /// </summary>
+        public virtual bool MovementDetected
+        {
+            get
+            {
+                bool moved = _moved;
+                _moved = false;
+                return moved;
+            }
+        }
+
         /// <inheritdoc/>
         public virtual TextWriter Out => SystemConsole.Out;
 
@@ -95,6 +114,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (!IsDumb)
                     SystemConsole.CursorLeft = value;
+                _moved = true;
             }
         }
 
@@ -111,6 +131,7 @@ namespace KS.Drivers.Console.Consoles
             {
                 if (!IsDumb)
                     SystemConsole.CursorTop = value;
+                _moved = true;
             }
         }
 
@@ -284,8 +305,12 @@ namespace KS.Drivers.Console.Consoles
             SystemConsole.OpenStandardOutput();
 
         /// <inheritdoc/>
-        public virtual ConsoleKeyInfo ReadKey(bool intercept = false) =>
-            SystemConsole.ReadKey(intercept);
+        public virtual ConsoleKeyInfo ReadKey(bool intercept = false)
+        {
+            var keyInfo = SystemConsole.ReadKey(intercept);
+            _moved = true;
+            return keyInfo;
+        }
 
         /// <inheritdoc/>
         public virtual void ResetColor()
@@ -299,6 +324,7 @@ namespace KS.Drivers.Console.Consoles
         {
             if (!IsDumb)
                 SystemConsole.SetCursorPosition(left, top);
+            _moved = true;
         }
 
         /// <inheritdoc/>
@@ -311,28 +337,46 @@ namespace KS.Drivers.Console.Consoles
         }
 
         /// <inheritdoc/>
-        public virtual void Write(char value) =>
+        public virtual void Write(char value)
+        {
             SystemConsole.Write(value);
+            _moved = true;
+        }
 
         /// <inheritdoc/>
-        public virtual void Write(string text) =>
+        public virtual void Write(string text)
+        {
             SystemConsole.Write(text);
+            _moved = true;
+        }
 
         /// <inheritdoc/>
-        public virtual void Write(string text, params object[] args) =>
+        public virtual void Write(string text, params object[] args)
+        {
             SystemConsole.Write(text, args);
+            _moved = true;
+        }
 
         /// <inheritdoc/>
-        public virtual void WriteLine() =>
+        public virtual void WriteLine()
+        {
             SystemConsole.WriteLine();
+            _moved = true;
+        }
 
         /// <inheritdoc/>
-        public virtual void WriteLine(string text) =>
+        public virtual void WriteLine(string text)
+        {
             SystemConsole.WriteLine(text);
+            _moved = true;
+        }
 
         /// <inheritdoc/>
-        public virtual void WriteLine(string text, params object[] args) =>
+        public virtual void WriteLine(string text, params object[] args)
+        {
             SystemConsole.WriteLine(text, args);
+            _moved = true;
+        }
 
         /// <inheritdoc/>
         public virtual void WritePlain(string Text, bool Line, params object[] vars)

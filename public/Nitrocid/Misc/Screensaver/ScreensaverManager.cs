@@ -179,14 +179,24 @@ namespace KS.Misc.Screensaver
                     SpinWait.SpinUntil(() => !Flags.ScrnTimeReached || Flags.KernelShutdown);
                     if (!Flags.ScrnTimeReached)
                     {
+                        // Start the stopwatch for monitoring
                         var stopwatch = new Stopwatch();
                         stopwatch.Start();
-                        SpinWait.SpinUntil(() => (termDriver.KeyAvailable | OldCursorLeft != termDriver.CursorLeft | Flags.KernelShutdown) && stopwatch.ElapsedMilliseconds >= ScreenTimeout, ScreenTimeout);
-                        bool locking = !(termDriver.KeyAvailable | OldCursorLeft != termDriver.CursorLeft | Flags.KernelShutdown) && stopwatch.ElapsedMilliseconds >= ScreenTimeout;
+
+                        // Detect movement
+                        bool hasMoved = false;
+                        SpinWait.SpinUntil(() =>
+                        {
+                            hasMoved = termDriver.MovementDetected;
+                            return hasMoved || Flags.KernelShutdown;
+                        }, ScreenTimeout);
+
+                        // Check to see if we're locking
+                        bool locking = !hasMoved && stopwatch.ElapsedMilliseconds >= ScreenTimeout;
                         stopwatch.Reset();
-                        if (Flags.KernelShutdown)
+                        if (Flags.ScrnTimeReached || Flags.KernelShutdown || Flags.RebootRequested)
                             break;
-                        else if (!Flags.RebootRequested && locking)
+                        else if (locking)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Screen time has reached.");
                             LockScreen();

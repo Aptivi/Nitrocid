@@ -33,6 +33,11 @@ namespace KS.Drivers.Console
         bool IsDumb { get; }
 
         /// <summary>
+        /// Has the console moved? Should be set by Write*, Set*, and all console functions that have to do with moving the console.
+        /// </summary>
+        bool MovementDetected { get; }
+
+        /// <summary>
         /// Outputs the new line into the terminal prompt without colors
         /// </summary>
         void WritePlain();

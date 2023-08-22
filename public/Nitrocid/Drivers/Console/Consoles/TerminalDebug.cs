@@ -33,6 +33,7 @@ namespace KS.Drivers.Console.Consoles
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}] [Message = {5}]",
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight, value);
+            _moved = true;
             base.Write(value);
         }
 
@@ -43,6 +44,7 @@ namespace KS.Drivers.Console.Consoles
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight, 
                                    VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length, 
                                    text.Length, text, VtSequenceTools.FilterVTSequences(text));
+            _moved = true;
             base.Write(text);
         }
 
@@ -53,6 +55,7 @@ namespace KS.Drivers.Console.Consoles
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
                                    VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
                                    text.Length, text, VtSequenceTools.FilterVTSequences(text), args.Length);
+            _moved = true;
             base.Write(text, args);
         }
 
@@ -61,6 +64,7 @@ namespace KS.Drivers.Console.Consoles
         {
             DebugWriter.WriteDebug(DebugLevel.I, "[X = {0}, Y = {1}, x-winmax = {2}, y-winmax = {3}, y-buffmax = {4}]",
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight);
+            _moved = true;
             base.WriteLine();
         }
 
@@ -71,6 +75,7 @@ namespace KS.Drivers.Console.Consoles
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
                                    VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
                                    text.Length, text, VtSequenceTools.FilterVTSequences(text));
+            _moved = true;
             base.WriteLine(text);
         }
 
@@ -81,6 +86,7 @@ namespace KS.Drivers.Console.Consoles
                                    CursorLeft, CursorTop, WindowWidth, WindowHeight, BufferHeight,
                                    VtSequenceTools.MatchVTSequences(text).Length > 0, VtSequenceTools.MatchVTSequences(text).Length,
                                    text.Length, text, VtSequenceTools.FilterVTSequences(text), args.Length);
+            _moved = true;
             base.WriteLine(text, args);
         }
     }
