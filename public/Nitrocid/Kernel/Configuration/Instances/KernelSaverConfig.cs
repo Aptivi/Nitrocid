@@ -2526,5 +2526,33 @@ namespace KS.Kernel.Configuration.Instances
         /// [Quote] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int QuoteMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [BoxGrid] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int BoxGridDelay { get; set; } = 5000;
+        /// <summary>
+        /// [BoxGrid] The minimum red color level (true color)
+        /// </summary>
+        public int BoxGridMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [BoxGrid] The minimum green color level (true color)
+        /// </summary>
+        public int BoxGridMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [BoxGrid] The minimum blue color level (true color)
+        /// </summary>
+        public int BoxGridMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [BoxGrid] The maximum red color level (true color)
+        /// </summary>
+        public int BoxGridMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [BoxGrid] The maximum green color level (true color)
+        /// </summary>
+        public int BoxGridMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [BoxGrid] The maximum blue color level (true color)
+        /// </summary>
+        public int BoxGridMaximumBlueColorLevel { get; set; } = 255;
     }
 }

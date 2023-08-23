@@ -1876,6 +1876,27 @@
         },
         "QuoteMaximumColorLevel": {
             "type": "integer"
+        },
+        "BoxGridDelay": {
+            "type": "integer"
+        },
+        "BoxGridMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "BoxGridMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "BoxGridMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "BoxGridMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "BoxGridMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "BoxGridMaximumBlueColorLevel": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2503,6 +2524,13 @@
         "QuoteMaximumRedColorLevel",
         "QuoteMaximumGreenColorLevel",
         "QuoteMaximumBlueColorLevel",
-        "QuoteMaximumColorLevel"
+        "QuoteMaximumColorLevel",
+        "BoxGridDelay",
+        "BoxGridMinimumRedColorLevel",
+        "BoxGridMinimumGreenColorLevel",
+        "BoxGridMinimumBlueColorLevel",
+        "BoxGridMaximumRedColorLevel",
+        "BoxGridMaximumGreenColorLevel",
+        "BoxGridMaximumBlueColorLevel"
     ]
 }

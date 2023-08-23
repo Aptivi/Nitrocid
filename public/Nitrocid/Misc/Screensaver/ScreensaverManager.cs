@@ -60,6 +60,7 @@ namespace KS.Misc.Screensaver
             { "bloom", new BloomDisplay() },
             { "bouncingblock", new BouncingBlockDisplay() },
             { "bouncingtext", new BouncingTextDisplay() },
+            { "boxgrid", new BoxGridDisplay() },
             { "bsod", new BSODDisplay() },
             { "colormix", new ColorMixDisplay() },
             { "dateandtime", new DateAndTimeDisplay() },
