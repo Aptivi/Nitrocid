@@ -934,5 +934,10 @@ Full name
 Version
 Culture name
 Content type
+[ENTER] Start the race | [ESC] Exit | [UP/DOWN] Move selection
+Your horse won the race!
+Your horse lost the race!
+Do you back the wrong horse?
+Horse
 
 ==========================================================================================================================================

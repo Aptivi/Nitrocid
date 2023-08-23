@@ -87,6 +87,13 @@ namespace KS.Shell.Shells.UESH
                     }, new ArchiveCommand())
             },
             
+            { "backrace",
+                new CommandInfo("backrace", ShellType, /* Localizable */ "Do you back the wrong horse?",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new BackRaceCommand())
+            },
+            
             { "beep",
                 new CommandInfo("beep", ShellType, /* Localizable */ "Beeps from the console",
                     new[] {
