@@ -18,7 +18,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Private", "Private", "{6191
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSCleanUnusedLocales", "private\KSCleanUnusedLocales\KSCleanUnusedLocales.csproj", "{22744969-682D-4974-895E-53079DA9EA3C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.LocaleGen.Core", "public\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj", "{09ACA8A4-5AC2-413B-A2EC-4FC5B168E5D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.LocaleGen.Core", "public\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj", "{09ACA8A4-5AC2-413B-A2EC-4FC5B168E5D0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
