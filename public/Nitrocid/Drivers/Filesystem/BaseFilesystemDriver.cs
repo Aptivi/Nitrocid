@@ -465,6 +465,10 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
+        public virtual bool Exists(string Path, bool Neutralize = false) =>
+            FileExists(Path) || FolderExists(Path);
+
+        /// <inheritdoc/>
         public virtual long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) =>
             GetAllSizesInFolder(DirectoryInfo, Flags.FullParseMode);
 

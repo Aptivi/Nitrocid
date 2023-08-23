@@ -324,6 +324,14 @@ namespace KS.Drivers.Filesystem
         bool FolderExists(string Folder, bool Neutralize = false);
 
         /// <summary>
+        /// Checks to see if the file or the folder exists. Windows 10/11 bug aware.
+        /// </summary>
+        /// <param name="Path">Target path</param>
+        /// <param name="Neutralize">Whether to neutralize the path</param>
+        /// <returns>True if exists; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
+        bool Exists(string Path, bool Neutralize = false);
+
+        /// <summary>
         /// Gets the file name with the file number suffix applied
         /// </summary>
         /// <param name="path">Path to the directory that the generated numbered file name will situate</param>
