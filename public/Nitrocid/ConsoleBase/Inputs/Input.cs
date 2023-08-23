@@ -137,9 +137,7 @@ namespace KS.ConsoleBase.Inputs
         public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null)
         {
             TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
-            string Output = TermReader.Read(InputText, DefaultValue, finalSettings, false, OneLineWrap);
-            DebugWriter.WriteDebug(DebugLevel.I, "Bailing from screensaver...");
-            ScreensaverDisplayer.BailFromScreensaver();
+            string Output = TermReader.Read(InputText, DefaultValue, finalSettings, false, OneLineWrap, true);
             return Output;
         }
 
@@ -234,9 +232,7 @@ namespace KS.ConsoleBase.Inputs
         {
             TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
             finalSettings.PasswordMaskChar = MaskChar;
-            string pass = TermReader.ReadPassword(settings);
-            DebugWriter.WriteDebug(DebugLevel.I, "Bailing from screensaver...");
-            ScreensaverDisplayer.BailFromScreensaver();
+            string pass = TermReader.Read("", "", settings, true, false, true);
             return pass;
         }
 
@@ -266,11 +262,8 @@ namespace KS.ConsoleBase.Inputs
             if (!ConsoleWrapper.KeyAvailable)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Timeout trying to read key.");
-                ScreensaverDisplayer.BailFromScreensaver();
                 throw new KernelException(KernelExceptionType.ConsoleReadTimeout, Translate.DoTranslation("User didn't provide any input in a timely fashion."));
             }
-            DebugWriter.WriteDebug(DebugLevel.I, "Bailing from screensaver...");
-            ScreensaverDisplayer.BailFromScreensaver();
             return ConsoleWrapper.ReadKey(Intercept);
         }
 

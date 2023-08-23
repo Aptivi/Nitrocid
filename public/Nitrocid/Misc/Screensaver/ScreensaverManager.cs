@@ -39,6 +39,7 @@ using KS.ConsoleBase;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
+using Terminaux.Reader;
 
 namespace KS.Misc.Screensaver
 {
@@ -200,6 +201,7 @@ namespace KS.Misc.Screensaver
                         else if (locking)
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Screen time has reached.");
+                            TermReaderTools.Interrupt();
                             LockScreen();
                         }
                     }
