@@ -36,6 +36,9 @@ using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
 using KS.Files;
+using KS.Misc.Reflection;
+using SharpCompress.Common;
+using System.Reflection;
 
 namespace KS.Misc.Interactive.Interactives
 {
@@ -268,7 +271,21 @@ namespace KS.Misc.Interactive.Interactives
                     if (!isBinary)
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Binary file:") + " {0}", isBinary));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(Filesystem.NeutralizePath(fileInfo.FullName))));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}\n", MimeTypes.GetMimeType(Filesystem.NeutralizePath(fileInfo.FullName))));
+
+                    // .NET managed info
+                    if (ReflectionCommon.IsDotnetAssemblyFile(fullPath, out AssemblyName asmName))
+                    {
+                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), asmName.Name));
+                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name") + ": {0}", asmName.FullName));
+                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Version") + ": {0}", asmName.Version.ToString()));
+                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Culture name") + ": {0}", asmName.CultureName));
+                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Content type") + ": {0}", asmName.ContentType.ToString()));
+                    }
+                    else
+                    {
+                        finalInfoRendered.AppendLine(Translate.DoTranslation("File is not a valid .NET assembly."));
+                    }
                 }
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 

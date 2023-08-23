@@ -81,7 +81,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("File is not a valid .NET assembly."), FileInfo.Name);
+                        TextWriterColor.Write(Translate.DoTranslation("File is not a valid .NET assembly."));
                     }
                 }
                 else
