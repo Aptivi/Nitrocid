@@ -402,6 +402,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// There was an error in the mod management.
         /// </summary>
-        ModManagement
+        ModManagement,
+        /// <summary>
+        /// There was an error in the reflection system.
+        /// </summary>
+        Reflection
     }
 }

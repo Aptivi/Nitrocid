@@ -927,5 +927,12 @@ Here's a list of errors that may help you investigate this incompatibility:
 Available keys
 Keybindings
 The interactive TUI {0} doesn't contain any data source. This program can't continue.
+There was an error in the reflection system.
+.NET assembly info
+File is not a valid .NET assembly.
+Full name
+Version
+Culture name
+Content type
 
 ==========================================================================================================================================

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
+using System.Reflection;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -28,6 +29,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
+using KS.Misc.Reflection;
 using KS.Shell.ShellBase.Commands;
 using MimeKit;
 
@@ -53,6 +55,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     var FileInfo = new FileInfo(FilePath);
                     var Style = LineEndingsTools.GetLineEndingFromFile(FilePath);
+
+                    // General info
                     TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), FileInfo.Name);
                     TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(FileInfo.FullName));
                     TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), FileInfo.Length.FileSizeToString());
@@ -63,7 +67,22 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(FileInfo.DirectoryName));
                     TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString());
                     TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", $"{Parsing.IsBinaryFile(FileInfo.FullName)}");
-                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(Filesystem.NeutralizePath(FileInfo.FullName)));
+                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}\n", MimeTypes.GetMimeType(Filesystem.NeutralizePath(FileInfo.FullName)));
+
+                    // .NET managed info
+                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation(".NET assembly info"), true);
+                    if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName asmName))
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), asmName.Name);
+                        TextWriterColor.Write(Translate.DoTranslation("Full name") + ": {0}", asmName.FullName);
+                        TextWriterColor.Write(Translate.DoTranslation("Version") + ": {0}", asmName.Version.ToString());
+                        TextWriterColor.Write(Translate.DoTranslation("Culture name") + ": {0}", asmName.CultureName);
+                        TextWriterColor.Write(Translate.DoTranslation("Content type") + ": {0}", asmName.ContentType.ToString());
+                    }
+                    else
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("File is not a valid .NET assembly."), FileInfo.Name);
+                    }
                 }
                 else
                 {

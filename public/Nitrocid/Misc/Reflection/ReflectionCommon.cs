@@ -16,7 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files.Querying;
 using KS.Kernel.Configuration.Instances;
+using KS.Kernel.Exceptions;
 using System;
 using System.Reflection;
 
@@ -31,5 +33,28 @@ namespace KS.Misc.Reflection
             typeof(KernelSplashConfig)
         };
         internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes();
+
+        /// <summary>
+        /// If the specified file is a .NET assembly
+        /// </summary>
+        /// <param name="path">Absolute path to the assembly file</param>
+        /// <param name="asmName">Assembly name</param>
+        /// <returns>True if it's a real assembly; false otherwise</returns>
+        public static bool IsDotnetAssemblyFile(string path, out AssemblyName asmName)
+        {
+            if (!Checking.FileExists(path))
+                throw new KernelException(KernelExceptionType.Reflection);
+
+            try
+            {
+                asmName = AssemblyName.GetAssemblyName(path);
+                return true;
+            }
+            catch (BadImageFormatException)
+            {
+                asmName = null;
+                return false;
+            }
+        }
     }
 }
