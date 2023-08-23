@@ -79,15 +79,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length - 1;
 
             // Write the closing minus sign.
-            int OldTop = ConsoleWrapper.CursorTop;
             TextWriterColor.Write(new string('-', RepeatTimes), true, KernelColorType.Separator);
-
-            // We're still suffering from this bug...
-            if (canPosition)
-            {
-                if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleWrapper.WindowHeight - 3)
-                    ConsoleWrapper.CursorTop -= 1;
-            }
+            if (ConsoleWrapper.CursorTop != ConsoleWrapper.BufferHeight - 1)
+                ConsoleWrapper.CursorTop--;
         }
 
         /// <summary>
@@ -174,15 +168,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length + 1;
 
             // Write the closing minus sign.
-            int OldTop = ConsoleWrapper.CursorTop;
             TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
-
-            // We're still suffering from this bug...
-            if (canPosition)
-            {
-                if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1) | OldTop == ConsoleWrapper.WindowHeight - 3)
-                    ConsoleWrapper.CursorTop -= 1;
-            }
+            if (ConsoleWrapper.CursorTop < ConsoleWrapper.BufferHeight - 1)
+                ConsoleWrapper.CursorTop--;
         }
 
     }
