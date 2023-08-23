@@ -54,12 +54,12 @@ namespace KS.Kernel.Threading
             kernelThreads.Where(x => x.IsAlive).ToList();
 
         /// <summary>
-        /// Stops all active threads
+        /// Stops all threads
         /// </summary>
         internal static void StopAllThreads()
         {
-            foreach (KernelThread ActiveThread in ActiveThreads)
-                ActiveThread.Stop();
+            foreach (KernelThread KernelThread in KernelThreads)
+                KernelThread.Stop();
         }
 
         /// <summary>
