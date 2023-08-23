@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
+using KS.Kernel;
 using KS.Kernel.Debugging;
 using System;
 using System.IO;
@@ -30,6 +31,8 @@ namespace KS.ConsoleBase
     /// </summary>
     public static class ConsoleWrapper
     {
+
+        private static bool cursorVisible = true;
 
         /// <summary>
         /// The standard output stream that the console uses
@@ -114,9 +117,16 @@ namespace KS.ConsoleBase
         /// <summary>
         /// The cursor visibility mode
         /// </summary>
-        public static bool CursorVisible 
-        { 
-            set => DriverHandler.CurrentConsoleDriverLocal.CursorVisible = value; 
+        public static bool CursorVisible
+        {
+            get => cursorVisible;
+            set
+            {
+                // We can't call Get accessor of the primary CursorVisible since this is Windows only, so we have this decoy variable
+                // to make it work on Linux, Android, and macOS.
+                cursorVisible = value;
+                DriverHandler.CurrentConsoleDriverLocal.CursorVisible = value;
+            }
         }
 
         /// <summary>

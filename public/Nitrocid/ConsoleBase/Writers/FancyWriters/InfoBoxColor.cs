@@ -67,6 +67,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
+            bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -119,12 +120,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Wait until the user presses any key to close the box
                 Input.DetectKeypress();
-                ConsoleWrapper.CursorVisible = true;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            finally
+            {
+                ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
         }
 
@@ -157,6 +161,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                                     char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                                     char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
+            bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -216,13 +221,16 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RightMargin = borderX,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
-                ConsoleWrapper.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            finally
+            {
+                ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
             return "";
         }
@@ -385,6 +393,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
         {
+            bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -437,12 +446,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Wait until the user presses any key to close the box
                 Input.DetectKeypress();
-                ConsoleWrapper.CursorVisible = true;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            finally
+            {
+                ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
         }
 
@@ -486,6 +498,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
+            bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -538,12 +551,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                 // Wait until the user presses any key to close the box
                 Input.DetectKeypress();
-                ConsoleWrapper.CursorVisible = true;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            finally
+            {
+                ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
         }
 
@@ -587,6 +603,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
         {
+            bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -638,13 +655,16 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Wait until the user presses any key to close the box
-                ConsoleWrapper.CursorVisible = false;
                 Input.DetectKeypress();
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            finally
+            {
+                ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
         }
 
@@ -806,6 +826,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
         {
+            bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -859,13 +880,16 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RightMargin = borderX,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
-                ConsoleWrapper.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            finally
+            {
+                ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
             return "";
         }
@@ -910,6 +934,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
         {
+            bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -963,13 +988,16 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RightMargin = borderX,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
-                ConsoleWrapper.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            finally
+            {
+                ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
             return "";
         }
@@ -1014,6 +1042,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
         {
+            bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
                 // Deal with the lines to actually fit text in the infobox
@@ -1067,13 +1096,16 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RightMargin = borderX,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
-                ConsoleWrapper.CursorVisible = true;
                 return input;
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            finally
+            {
+                ConsoleWrapper.CursorVisible = initialCursorVisible;
             }
             return "";
         }
