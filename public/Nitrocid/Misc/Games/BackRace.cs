@@ -177,6 +177,7 @@ namespace KS.Misc.Games
                     }
                 }
             }
+            ConsoleWrapper.Clear();
         }
     }
 
