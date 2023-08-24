@@ -23,11 +23,14 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Files;
+using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Kernel.Debugging.Trace;
 using KS.Kernel.Hardware;
+using KS.Kernel.Journaling;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Calendar.Events;
@@ -35,6 +38,7 @@ using KS.Misc.Calendar.Reminders;
 using KS.Misc.Contacts;
 using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
+using KS.Misc.Reflection;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
 using KS.Misc.ToDoList;
@@ -45,11 +49,37 @@ using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Scripting;
 using System;
+using System.IO;
 
 namespace KS.Kernel.Starting
 {
     internal static class KernelInitializers
     {
+        internal static void InitializeCritical()
+        {
+            // Check for terminal
+            ConsoleChecker.CheckConsole();
+
+            // Initialize crucial things
+            if (!KernelPlatform.IsOnUnix())
+                ConsoleExtensions.InitializeSequences();
+            AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
+
+            // A title
+            ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
+
+            // Check to see if we have an appdata folder for KS
+            if (!Checking.FolderExists(Paths.AppDataPath))
+                Making.MakeDirectory(Paths.AppDataPath, false);
+
+            // Set the first time run variable
+            if (!Checking.FileExists(Paths.ConfigurationPath))
+                Flags.FirstTime = true;
+
+            // Initialize debug path
+            DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+        }
+
         internal static void InitializeEssential()
         {
             // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
@@ -68,6 +98,12 @@ namespace KS.Kernel.Starting
             // Show initializing
             if (Flags.TalkativePreboot)
                 TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
+
+            // Initialize journal path
+            JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));
+
+            // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
+            DebugSymbolsTools.CheckDebugSymbols();
 
             // Initialize console resize listener
             ConsoleResizeListener.StartResizeListener();

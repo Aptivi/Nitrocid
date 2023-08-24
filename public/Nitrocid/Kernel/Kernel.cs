@@ -19,16 +19,11 @@
 using System;
 using System.Linq;
 using System.Threading;
-using System.IO;
 using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
-using KS.Files;
-using KS.Files.Querying;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Updates;
 using KS.Languages;
-using KS.Misc.Notifications;
-using KS.Misc.Reflection;
 using KS.Misc.Splash;
 using KS.Modifications;
 using KS.Network.RPC;
@@ -38,18 +33,14 @@ using KS.Users.Login;
 using KS.Users;
 using KS.Kernel.Events;
 using KS.Misc.Text;
-using KS.Files.Operations;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Power;
 using KS.Users.Groups;
-using KS.Kernel.Debugging.Trace;
-using KS.Kernel.Journaling;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Hardware;
 using KS.Kernel.Starting;
-using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Kernel
 {
@@ -72,36 +63,10 @@ namespace KS.Kernel
             {
                 try
                 {
-                    // Check for terminal
-                    ConsoleChecker.CheckConsole();
-
-                    // Initialize crucial things
-                    if (!KernelPlatform.IsOnUnix())
-                        ConsoleExtensions.InitializeSequences();
-                    AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
-
-                    // A title
-                    ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
-
-                    // Check to see if we have an appdata folder for KS
-                    if (!Checking.FolderExists(Paths.AppDataPath))
-                        Making.MakeDirectory(Paths.AppDataPath, false);
-
-                    // Set the first time run variable
-                    if (!Checking.FileExists(Paths.ConfigurationPath))
-                        Flags.FirstTime = true;
-
-                    // Initialize debug path
-                    DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+                    KernelInitializers.InitializeCritical();
 
                     // Check for kernel command-line arguments
                     ArgumentParse.ParseArguments(Args.ToList());
-
-                    // Initialize journal path
-                    JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));
-
-                    // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-                    DebugSymbolsTools.CheckDebugSymbols();
 
                     // Check for console size
                     if (Flags.CheckingForConsoleSize)
