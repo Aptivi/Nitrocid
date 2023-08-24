@@ -939,5 +939,6 @@ Your horse won the race!
 Your horse lost the race!
 Do you back the wrong horse?
 Horse
+Dismisses all sent notifications
 
 ==========================================================================================================================================

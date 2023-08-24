@@ -32,6 +32,7 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Screensaver;
+using Terminaux.Colors;
 
 namespace KS.Misc.Notifications
 {
@@ -50,6 +51,8 @@ namespace KS.Misc.Notifications
         internal static char notifyLeftFrameChar = '║';
         internal static char notifyRightFrameChar = '║';
         internal static KernelThread NotifThread = new("Notification Thread", false, NotifListen) { isCritical = true };
+        private static bool sent = false;
+        private static bool dismissing = false;
         private static readonly List<Notification> notifRecents = new();
 
         /// <summary>
@@ -118,13 +121,20 @@ namespace KS.Misc.Notifications
                 List<Notification> NewNotificationsList;
                 while (!Flags.KernelShutdown)
                 {
-                    SpinWait.SpinUntil(() => NotifRecents.Except(OldNotificationsList).ToList().Count > 0);
+                    SpinWait.SpinUntil(() => NotifRecents.Except(OldNotificationsList).ToList().Count > 0 || dismissing);
+                    if (dismissing)
+                    {
+                        dismissing = false;
+                        OldNotificationsList = new List<Notification>(NotifRecents);
+                        continue;
+                    }
                     NewNotificationsList = NotifRecents.Except(OldNotificationsList).ToList();
                     if (NewNotificationsList.Count > 0 & !ScreensaverManager.InSaver)
                     {
                         // Update the old notifications list
                         DebugWriter.WriteDebug(DebugLevel.W, "Notifications received! Recents count was {0}, Old count was {1}", NotifRecents.Count, OldNotificationsList.Count);
                         OldNotificationsList = new List<Notification>(NotifRecents);
+                        sent = false;
                         EventsManager.FireEvent(EventType.NotificationsReceived, NewNotificationsList);
 
                         // Iterate through new notifications. If we're on the booting stage, ensure that the notifications are only queued until the
@@ -179,13 +189,13 @@ namespace KS.Misc.Notifications
                             }
 
                             // Use the custom border color if available
-                            if (NewNotification.NotificationBorderColor is not null)
+                            if (NewNotification.NotificationBorderColor != Color.Empty)
                                 NotifyBorderColor = NewNotification.NotificationBorderColor;
 
                             // Write notification to console
                             int notifLeftAgnostic = ConsoleWrapper.WindowWidth - 40;
                             int notifTopAgnostic = 0;
-                            int notifLeft = useSimplified ? ConsoleWrapper.WindowWidth - 2 : notifLeftAgnostic;
+                            int notifLeft = useSimplified ? ConsoleWrapper.WindowWidth - 3 : notifLeftAgnostic;
                             int notifTop = useSimplified ? 1 : notifTopAgnostic;
                             int notifTitleTop = notifTopAgnostic + 1;
                             int notifDescTop = notifTopAgnostic + 2;
@@ -274,7 +284,7 @@ namespace KS.Misc.Notifications
                             int TopProgClear = 3;
                             int TopOpenBorderClear = 0;
                             int TopCloseBorderClear = 4;
-                            Thread.Sleep(5000);
+                            SpinWait.SpinUntil(() => sent, 5000);
                             NotifClearArea(ConsoleWrapper.WindowWidth - (Flags.DrawBorderNotification ? 41 : 40), TopTitleClear, TopDescClear, TopProgClear, TopOpenBorderClear, TopCloseBorderClear);
                         }
                     }
@@ -332,6 +342,7 @@ namespace KS.Misc.Notifications
             if (!NotifRecents.Contains(notif))
             {
                 NotifRecents.Add(notif);
+                sent = true;
                 EventsManager.FireEvent(EventType.NotificationSent, notif);
             }
         }
@@ -348,7 +359,7 @@ namespace KS.Misc.Notifications
         }
 
         /// <summary>
-        /// Dismisses notification
+        /// Dismisses a notification
         /// </summary>
         /// <param name="ind">Index of notification</param>
         public static bool NotifDismiss(int ind)
@@ -358,6 +369,7 @@ namespace KS.Misc.Notifications
                 NotifRecents.RemoveAt(ind);
                 DebugWriter.WriteDebug(DebugLevel.I, "Removed index {0} from notification list", ind);
                 EventsManager.FireEvent(EventType.NotificationDismissed);
+                dismissing = true;
                 return true;
             }
             catch (Exception ex)
@@ -366,6 +378,21 @@ namespace KS.Misc.Notifications
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             return false;
+        }
+
+        /// <summary>
+        /// Dismisses all notifications
+        /// </summary>
+        public static bool NotifDismissAll()
+        {
+            bool successful = true;
+            for (int i = NotifRecents.Count - 1; i >= 0; i--)
+            {
+                if (!NotifDismiss(i))
+                    successful = false;
+
+            }
+            return successful;
         }
 
     }

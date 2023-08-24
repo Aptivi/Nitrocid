@@ -94,6 +94,7 @@ namespace KS.Kernel.Debugging.Testing
             { "SendNotificationSimple",         new SendNotificationSimple() },
             { "SendNotificationProg",           new SendNotificationProg() },
             { "SendNotificationProgF",          new SendNotificationProgF() },
+            { "DismissNotifications",           new DismissNotifications() },
             { "ShowDateDiffCalendar",           new ShowDateDiffCalendar() },
             { "TestTranslate",                  new TestTranslate() },
             { "TestRNG",                        new TestRNG() },

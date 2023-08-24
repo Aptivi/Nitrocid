@@ -101,5 +101,39 @@ namespace KSTests.Misc.Notifications
             NotificationManager.NotifDismiss(NotificationManager.NotifRecents.Count - 1).ShouldBeTrue();
         }
 
+        /// <summary>
+        /// Tests notification dismiss all
+        /// </summary>
+        [Test]
+        public void TestNotifyDismissAll()
+        {
+            NotificationManager.NotifDismissAll().ShouldBeTrue();
+            NotificationManager.NotifRecents.ShouldBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests notification equality
+        /// </summary>
+        [Test]
+        public void TestNotifyEquality()
+        {
+            var Notif = new Notification("A title", "This is a notification", NotificationPriority.Low, NotificationType.Normal);
+            var Notif2 = new Notification("A title", "This is a notification", NotificationPriority.Low, NotificationType.Normal);
+            Notif.ShouldBe(Notif2);
+            Notif2.ShouldBe(Notif);
+        }
+
+        /// <summary>
+        /// Tests notification inequality
+        /// </summary>
+        [Test]
+        public void TestNotifyInequality()
+        {
+            var Notif = new Notification("A title", "This is a notification", NotificationPriority.Low, NotificationType.Normal);
+            var Notif2 = new Notification("A title", "This is a notification", NotificationPriority.High, NotificationType.Normal);
+            Notif.ShouldNotBe(Notif2);
+            Notif2.ShouldNotBe(Notif);
+        }
+
     }
 }

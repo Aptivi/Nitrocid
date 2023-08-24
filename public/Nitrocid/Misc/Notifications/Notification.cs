@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
+using System;
 using Terminaux.Colors;
 
 namespace KS.Misc.Notifications
@@ -24,12 +25,12 @@ namespace KS.Misc.Notifications
     /// <summary>
     /// Notification holder with title, description, and priority
     /// </summary>
-    public class Notification
+    public class Notification : IEquatable<Notification>
     {
 
         private int _Progress;
         private int _CustomBeepTimes = 1;
-        private Color _NotificationBorderColor;
+        private Color _NotificationBorderColor = Color.Empty;
 
         /// <summary>
         /// Notification title
@@ -177,7 +178,7 @@ namespace KS.Misc.Notifications
         public bool ProgressCompleted => _Progress >= 100 | ProgressFailed;
 
         /// <summary>
-        /// The notification border color. Must be null for custom priority notifications.
+        /// The notification border color. Must be empty for custom priority notifications.
         /// </summary>
         public Color NotificationBorderColor
         {
@@ -209,5 +210,76 @@ namespace KS.Misc.Notifications
             this.Type = Type;
         }
 
+        /// <summary>
+        /// Checks to see if the notification matches another one
+        /// </summary>
+        /// <param name="obj">Notification object</param>
+        /// <returns>True if there is a match; false otherwise.</returns>
+        public override bool Equals(object obj) =>
+            Equals(obj as Notification);
+
+        /// <summary>
+        /// Checks to see if the notification matches another one
+        /// </summary>
+        /// <param name="other">Notification to compare</param>
+        /// <returns>True if there is a match; false otherwise.</returns>
+        public bool Equals(Notification other)
+        {
+            return 
+                other is not null &&
+                Title == other.Title &&
+                Desc == other.Desc &&
+                Priority == other.Priority &&
+                Type == other.Type &&
+                CustomBeepTimes == other.CustomBeepTimes &&
+                CustomColor == other.CustomColor &&
+                CustomTitleColor == other.CustomTitleColor &&
+                CustomDescriptionColor == other.CustomDescriptionColor &&
+                CustomProgressColor == other.CustomProgressColor &&
+                CustomProgressFailureColor == other.CustomProgressFailureColor &&
+                CustomUpperLeftCornerChar == other.CustomUpperLeftCornerChar &&
+                CustomUpperRightCornerChar == other.CustomUpperRightCornerChar &&
+                CustomLowerLeftCornerChar == other.CustomLowerLeftCornerChar &&
+                CustomLowerRightCornerChar == other.CustomLowerRightCornerChar &&
+                CustomUpperFrameChar == other.CustomUpperFrameChar &&
+                CustomLowerFrameChar == other.CustomLowerFrameChar &&
+                CustomLeftFrameChar == other.CustomLeftFrameChar &&
+                CustomRightFrameChar == other.CustomRightFrameChar &&
+                NotificationBorderColor == other.NotificationBorderColor;
+        }
+
+        /// <inheritdoc/>
+        public override int GetHashCode()
+        {
+            HashCode hash = new();
+            hash.Add(Title);
+            hash.Add(Desc);
+            hash.Add(Priority);
+            hash.Add(Type);
+            hash.Add(CustomBeepTimes);
+            hash.Add(CustomColor);
+            hash.Add(CustomTitleColor);
+            hash.Add(CustomDescriptionColor);
+            hash.Add(CustomProgressColor);
+            hash.Add(CustomProgressFailureColor);
+            hash.Add(CustomUpperLeftCornerChar);
+            hash.Add(CustomUpperRightCornerChar);
+            hash.Add(CustomLowerLeftCornerChar);
+            hash.Add(CustomLowerRightCornerChar);
+            hash.Add(CustomUpperFrameChar);
+            hash.Add(CustomLowerFrameChar);
+            hash.Add(CustomLeftFrameChar);
+            hash.Add(CustomRightFrameChar);
+            hash.Add(NotificationBorderColor);
+            return hash.ToHashCode();
+        }
+
+        /// <inheritdoc/>
+        public static bool operator ==(Notification left, Notification right) =>
+            left.Equals(right);
+
+        /// <inheritdoc/>
+        public static bool operator !=(Notification left, Notification right) =>
+            !(left == right);
     }
 }
