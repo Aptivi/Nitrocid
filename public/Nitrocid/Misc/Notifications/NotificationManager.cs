@@ -108,44 +108,6 @@ namespace KS.Misc.Notifications
             Config.MainConfig.NotifyDisplayAsAsterisk;
 
         /// <summary>
-        /// Notification priority
-        /// </summary>
-        public enum NotifPriority
-        {
-            /// <summary>
-            /// Low priority. One beep.
-            /// </summary>
-            Low = 1,
-            /// <summary>
-            /// Medium priority. Two beeps.
-            /// </summary>
-            Medium = 2,
-            /// <summary>
-            /// High priority. Three beeps.
-            /// </summary>
-            High = 3,
-            /// <summary>
-            /// Custom priority. Custom colors, beeps, etc.
-            /// </summary>
-            Custom = 4
-        }
-
-        /// <summary>
-        /// Notification type
-        /// </summary>
-        public enum NotifType
-        {
-            /// <summary>
-            /// Normal notification.
-            /// </summary>
-            Normal = 1,
-            /// <summary>
-            /// A notification with the progress bar. Use if you're going to notify the user while your mod is doing something.
-            /// </summary>
-            Progress = 2
-        }
-
-        /// <summary>
         /// Listens for notifications and notifies the user if one has been found
         /// </summary>
         private static void NotifListen()
@@ -179,7 +141,7 @@ namespace KS.Misc.Notifications
                                 continue;
 
                             // Select how to display the notification
-                            bool useSimplified = NotifyDisplayAsAsterisk && NewNotification.Type == NotifType.Normal;
+                            bool useSimplified = NotifyDisplayAsAsterisk && NewNotification.Type == NotificationType.Normal;
 
                             // Populate title and description
                             string Title, Desc;
@@ -201,13 +163,13 @@ namespace KS.Misc.Notifications
                             var NotifyProgressFailureColor = KernelColorTools.GetColor(KernelColorType.NotificationFailure);
                             switch (NewNotification.Priority)
                             {
-                                case NotifPriority.Medium:
+                                case NotificationPriority.Medium:
                                     NotifyBorderColor = KernelColorTools.GetColor(KernelColorType.MediumPriorityBorder);
                                     break;
-                                case NotifPriority.High:
+                                case NotificationPriority.High:
                                     NotifyBorderColor = KernelColorTools.GetColor(KernelColorType.HighPriorityBorder);
                                     break;
-                                case NotifPriority.Custom:
+                                case NotificationPriority.Custom:
                                     NotifyBorderColor = NewNotification.CustomColor;
                                     NotifyTitleColor = NewNotification.CustomTitleColor;
                                     NotifyDescColor = NewNotification.CustomDescriptionColor;
@@ -258,7 +220,7 @@ namespace KS.Misc.Notifications
                                 char CurrentNotifyRightFrameChar = NotifyRightFrameChar;
 
                                 // Get custom corner characters
-                                if (NewNotification.Priority == NotifPriority.Custom)
+                                if (NewNotification.Priority == NotificationPriority.Custom)
                                 {
                                     CurrentNotifyUpperLeftCornerChar = NewNotification.CustomUpperLeftCornerChar;
                                     CurrentNotifyUpperRightCornerChar = NewNotification.CustomUpperRightCornerChar;
@@ -283,13 +245,13 @@ namespace KS.Misc.Notifications
 
                             // Beep according to priority
                             int BeepTimes = (int)NewNotification.Priority;
-                            if (NewNotification.Priority == NotifPriority.Custom)
+                            if (NewNotification.Priority == NotificationPriority.Custom)
                                 BeepTimes = NewNotification.CustomBeepTimes;
                             for (int i = 1; i <= BeepTimes; i++)
                                 ConsoleWrapper.Beep();
 
                             // Show progress
-                            if (NewNotification.Type == NotifType.Progress)
+                            if (NewNotification.Type == NotificationType.Progress)
                             {
                                 while (!(NewNotification.Progress >= 100 | NewNotification.ProgressFailed))
                                 {

@@ -45,7 +45,7 @@ namespace KS.Misc.Calendar.Events
         {
             if (!EventNotified)
             {
-                var EventNotification = new Notification(EventTitle, Translate.DoTranslation("Now it's an event day!"), NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal);
+                var EventNotification = new Notification(EventTitle, Translate.DoTranslation("Now it's an event day!"), NotificationPriority.Medium, NotificationType.Normal);
                 NotificationManager.NotifySend(EventNotification);
                 EventNotified = true;
             }

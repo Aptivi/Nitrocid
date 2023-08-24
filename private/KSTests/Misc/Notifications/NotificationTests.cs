@@ -35,7 +35,7 @@ namespace KSTests.Misc.Notifications
         [Test]
         public void TestNotifyCreate()
         {
-            var Notif = new Notification("This is the title.", "This is the description.", NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal);
+            var Notif = new Notification("This is the title.", "This is the description.", NotificationPriority.Medium, NotificationType.Normal);
             Notif.ShouldNotBeNull();
         }
 
@@ -45,7 +45,7 @@ namespace KSTests.Misc.Notifications
         [Test]
         public void TestNotifyCreateCustom()
         {
-            var Notif = new Notification("This is the title.", "This is the description.", NotificationManager.NotifPriority.Custom, NotificationManager.NotifType.Normal)
+            var Notif = new Notification("This is the title.", "This is the description.", NotificationPriority.Custom, NotificationType.Normal)
             {
                 CustomBeepTimes = 5,
                 CustomColor = new Color(4),
@@ -71,7 +71,7 @@ namespace KSTests.Misc.Notifications
         [Test]
         public void TestNotifySend()
         {
-            var Notif = new Notification("Notification title", "This is a high priority notification", NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal);
+            var Notif = new Notification("Notification title", "This is a high priority notification", NotificationPriority.High, NotificationType.Normal);
             NotificationManager.NotifySend(Notif);
             NotificationManager.NotifRecents.ShouldNotBeEmpty();
         }
@@ -82,9 +82,9 @@ namespace KSTests.Misc.Notifications
         [Test]
         public void TestNotifySendRange()
         {
-            var Notif1 = new Notification("High notification title", "This is a high priority notification", NotificationManager.NotifPriority.High, NotificationManager.NotifType.Normal);
-            var Notif2 = new Notification("Medium notification title", "This is a medium priority notification", NotificationManager.NotifPriority.Medium, NotificationManager.NotifType.Normal);
-            var Notif3 = new Notification("Low notification title", "This is a low priority notification", NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal);
+            var Notif1 = new Notification("High notification title", "This is a high priority notification", NotificationPriority.High, NotificationType.Normal);
+            var Notif2 = new Notification("Medium notification title", "This is a medium priority notification", NotificationPriority.Medium, NotificationType.Normal);
+            var Notif3 = new Notification("Low notification title", "This is a low priority notification", NotificationPriority.Low, NotificationType.Normal);
             var Notifs = new List<Notification>() { Notif1, Notif2, Notif3 };
             NotificationManager.NotifySendRange(Notifs);
             NotificationManager.NotifRecents.ShouldNotBeEmpty();
@@ -96,7 +96,7 @@ namespace KSTests.Misc.Notifications
         [Test]
         public void TestNotifyDismiss()
         {
-            var Notif = new Notification("Redundant title", "This is a redundant notification", NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal);
+            var Notif = new Notification("Redundant title", "This is a redundant notification", NotificationPriority.Low, NotificationType.Normal);
             NotificationManager.NotifySend(Notif);
             NotificationManager.NotifDismiss(NotificationManager.NotifRecents.Count - 1).ShouldBeTrue();
         }

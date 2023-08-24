@@ -40,7 +40,7 @@ namespace KS.Misc.Calendar.Reminders
         /// <summary>
         /// Reminder importance
         /// </summary>
-        public Notifications.NotificationManager.NotifPriority ReminderImportance { get; set; }
+        public NotificationPriority ReminderImportance { get; set; }
 
         /// <summary>
         /// Notifies the user about the reminder
@@ -49,7 +49,7 @@ namespace KS.Misc.Calendar.Reminders
         {
             if (!ReminderNotified)
             {
-                var ReminderNotification = new Notification(ReminderTitle, Translate.DoTranslation("Don't miss this!"), ReminderImportance, NotificationManager.NotifType.Normal);
+                var ReminderNotification = new Notification(ReminderTitle, Translate.DoTranslation("Don't miss this!"), ReminderImportance, NotificationType.Normal);
                 NotificationManager.NotifySend(ReminderNotification);
                 ReminderNotified = true;
             }

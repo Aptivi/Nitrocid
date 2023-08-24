@@ -79,7 +79,7 @@ namespace KS.Drivers.Network
             // Initialize the progress bar indicator and the file completed event handler
             if (NetworkTransfer.DownloadNotificationProvoke)
             {
-                NetworkTransfer.DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), FileUri.AbsoluteUri, NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Progress);
+                NetworkTransfer.DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
             }
             if (ShowProgress)
@@ -151,7 +151,7 @@ namespace KS.Drivers.Network
             // Initialize the progress bar indicator and the file completed event handler
             if (NetworkTransfer.DownloadNotificationProvoke)
             {
-                NetworkTransfer.DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), StringUri.AbsoluteUri, NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Progress);
+                NetworkTransfer.DownloadNotif = new Notification(Translate.DoTranslation("Downloading..."), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
             }
             if (ShowProgress)
@@ -242,7 +242,7 @@ namespace KS.Drivers.Network
             // Initialize the progress bar indicator and the file completed event handler
             if (NetworkTransfer.UploadNotificationProvoke)
             {
-                NetworkTransfer.UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), FileUri.AbsoluteUri, NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Progress);
+                NetworkTransfer.UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), FileUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.DownloadNotif);
             }
             if (ShowProgress)
@@ -299,7 +299,7 @@ namespace KS.Drivers.Network
             // Initialize the progress bar indicator and the file completed event handler
             if (NetworkTransfer.UploadNotificationProvoke)
             {
-                NetworkTransfer.UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), StringUri.AbsoluteUri, NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Progress);
+                NetworkTransfer.UploadNotif = new Notification(Translate.DoTranslation("Uploading..."), StringUri.AbsoluteUri, NotificationPriority.Low, NotificationType.Progress);
                 NotificationManager.NotifySend(NetworkTransfer.UploadNotif);
             }
             if (ShowProgress)

@@ -261,7 +261,7 @@ namespace KS.Network.RPC
         {
             string IPAddr = value.Replace("PingConfirm, ", "").Replace(CharManager.NewLine, "");
             DebugWriter.WriteDebug(DebugLevel.I, "{0} pinged this device!", IPAddr);
-            NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Ping!"), TextTools.FormatString(Translate.DoTranslation("{0} pinged you."), IPAddr), NotificationManager.NotifPriority.Low, NotificationManager.NotifType.Normal));
+            NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Ping!"), TextTools.FormatString(Translate.DoTranslation("{0} pinged you."), IPAddr), NotificationPriority.Low, NotificationType.Normal));
         }
     }
 }

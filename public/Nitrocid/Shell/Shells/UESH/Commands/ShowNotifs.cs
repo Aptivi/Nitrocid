@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     TextWriterColor.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, KernelColorType.ListEntry);
                     TextWriterColor.Write(Notif.Desc, false, KernelColorType.ListValue);
-                    if (Notif.Type == NotificationManager.NotifType.Progress)
+                    if (Notif.Type == NotificationType.Progress)
                     {
                         TextWriterColor.Write($" ({Notif.Progress}%)", false, Notif.ProgressFailed ? KernelColorType.Error : KernelColorType.Success);
                     }

@@ -30,11 +30,11 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Sends a notification as asterisk to test the receiver");
         public override void Run()
         {
-            foreach (var value in Enum.GetValues(typeof(NotificationManager.NotifPriority)))
+            foreach (var value in Enum.GetValues(typeof(NotificationPriority)))
             {
                 SplashReport._KernelBooted = true;
                 Config.MainConfig.NotifyDisplayAsAsterisk = true;
-                var Notif = new Notification(Translate.DoTranslation("Test notification"), Translate.DoTranslation("Description is here"), (NotificationManager.NotifPriority)value, NotificationManager.NotifType.Normal);
+                var Notif = new Notification(Translate.DoTranslation("Test notification"), Translate.DoTranslation("Description is here"), (NotificationPriority)value, NotificationType.Normal);
                 NotificationManager.NotifySend(Notif);
                 Thread.Sleep(500);
                 Config.MainConfig.NotifyDisplayAsAsterisk = false;
