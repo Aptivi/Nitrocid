@@ -22,11 +22,14 @@ using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Runtime.Loader;
+using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Kernel;
+using KS.Kernel.Power;
 using KS.Kernel.Updates;
 using KS.Languages;
 using KS.Misc.RetroKS;
@@ -88,18 +91,11 @@ namespace KS.Shell.Shells.UESH.Commands
                     });
             }
 
-            // Now, run the assembly
+            // Now, reboot the kernel to Retro mode
             TextWriterColor.Write(Translate.DoTranslation("Going back to 2018..."));
-            var retroContext = new RetroKSContext
-            {
-                resolver = new AssemblyDependencyResolver(RetroExecKSPath)
-            };
-            var asm = retroContext.LoadFromAssemblyPath(RetroExecKSPath);
-            asm.EntryPoint.Invoke("", Array.Empty<object>());
-
-            // Clear the console
-            KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
-            ConsoleBase.ConsoleWrapper.Clear();
+            Flags.IsEnteringRetroMode = true;
+            Thread.Sleep(1000);
+            PowerManager.PowerManage(PowerMode.Reboot);
             return 0;
         }
 

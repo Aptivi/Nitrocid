@@ -39,6 +39,7 @@ using KS.Misc.Contacts;
 using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Reflection;
+using KS.Misc.RetroKS;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
 using KS.Misc.ToDoList;
@@ -50,6 +51,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Scripting;
 using System;
 using System.IO;
+using System.Runtime.Loader;
 
 namespace KS.Kernel.Starting
 {
@@ -57,27 +59,47 @@ namespace KS.Kernel.Starting
     {
         internal static void InitializeCritical()
         {
-            // Check for terminal
-            ConsoleChecker.CheckConsole();
+            // Check to see if RetroKS was invoked
+            if (Flags.IsEnteringRetroMode)
+            {
+                // Go back to 2018!!!
+                string ExecutableName = "RetroKS.dll";
+                string RetroExecKSPath = Filesystem.NeutralizePath(ExecutableName, Paths.RetroKSDownloadPath);
+                var retroContext = new RetroKSContext
+                {
+                    resolver = new AssemblyDependencyResolver(RetroExecKSPath)
+                };
+                var asm = retroContext.LoadFromAssemblyPath(RetroExecKSPath);
+                asm.EntryPoint.Invoke("", Array.Empty<object>());
 
-            // Initialize crucial things
-            if (!KernelPlatform.IsOnUnix())
-                ConsoleExtensions.InitializeSequences();
-            AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
+                // Clear the console
+                KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
+                ConsoleWrapper.Clear();
+            }
+            else
+            {
+                // Check for terminal
+                ConsoleChecker.CheckConsole();
 
-            // A title
-            ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
+                // Initialize crucial things
+                if (!KernelPlatform.IsOnUnix())
+                    ConsoleExtensions.InitializeSequences();
+                AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
-            // Check to see if we have an appdata folder for KS
-            if (!Checking.FolderExists(Paths.AppDataPath))
-                Making.MakeDirectory(Paths.AppDataPath, false);
+                // A title
+                ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
 
-            // Set the first time run variable
-            if (!Checking.FileExists(Paths.ConfigurationPath))
-                Flags.FirstTime = true;
+                // Check to see if we have an appdata folder for KS
+                if (!Checking.FolderExists(Paths.AppDataPath))
+                    Making.MakeDirectory(Paths.AppDataPath, false);
 
-            // Initialize debug path
-            DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+                // Set the first time run variable
+                if (!Checking.FileExists(Paths.ConfigurationPath))
+                    Flags.FirstTime = true;
+
+                // Initialize debug path
+                DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+            }
         }
 
         internal static void InitializeEssential()

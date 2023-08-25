@@ -289,6 +289,7 @@ namespace KS.Kernel
         internal static bool SafeMode;
         internal static bool Maintenance;
         internal static bool TalkativePreboot;
+        internal static bool IsEnteringRetroMode;
 
     }
 }

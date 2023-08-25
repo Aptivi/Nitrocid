@@ -64,6 +64,13 @@ namespace KS.Kernel
                 try
                 {
                     KernelInitializers.InitializeCritical();
+                    if (Flags.IsEnteringRetroMode)
+                    {
+                        Flags.IsEnteringRetroMode = false;
+
+                        // Reboot the kernel from RetroKS
+                        continue;
+                    }
 
                     // Check for kernel command-line arguments
                     ArgumentParse.ParseArguments(Args.ToList());
