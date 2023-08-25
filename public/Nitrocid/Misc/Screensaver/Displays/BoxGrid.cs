@@ -192,6 +192,8 @@ namespace KS.Misc.Screensaver.Displays
             {
                 for (int j = 0; j < boxRows; j++)
                 {
+                    if (ConsoleResizeListener.WasResized(false))
+                        break;
                     var color = KernelColorTools.GetRandomColor(ColorType.TrueColor);
                     BorderColor.WriteBorder(i * (boxWidthExterior + 1), j * boxHeightExterior, boxWidth, boxHeight, color);
                 }
