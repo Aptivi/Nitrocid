@@ -147,7 +147,14 @@ namespace KS.Shell.Shells.UESH
                         }, true, 1)
                     }, new CatCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
+            { "cdir",
+                new CommandInfo("cdir", ShellType, /* Localizable */ "Gets the current directory",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new CDirCommand())
+            },
+
             { "chattr",
                 new CommandInfo("chattr", ShellType, /* Localizable */ "Changes attribute of a file",
                     new[] {

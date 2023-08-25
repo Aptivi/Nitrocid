@@ -959,5 +959,6 @@ Gets the current version
 Shows the kernel mod API version
 Shows the kernel version
 Gets the current user name
+Gets the current directory
 
 ==========================================================================================================================================
