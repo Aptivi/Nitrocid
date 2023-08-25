@@ -1002,6 +1002,16 @@ namespace KS.Shell.Shells.UESH
                     }, new UnitConvCommand())
             },
             
+            { "unset",
+                new CommandInfo("unset", ShellType, /* Localizable */ "Removes a variable from the UESH variable list",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "$variable" }, new[]
+                        {
+                            new SwitchInfo("justwipe", /* Localizable */ "Just wipes the variable value without removing it", false, false, Array.Empty<string>(), 0, false)
+                        }, true, 1)
+                    }, new UnsetCommand())
+            },
+            
             { "unzip",
                 new CommandInfo("unzip", ShellType, /* Localizable */ "Extracts a ZIP archive",
                     new[] {

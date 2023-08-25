@@ -940,5 +940,7 @@ Your horse lost the race!
 Do you back the wrong horse?
 Horse
 Dismisses all sent notifications
+Removes a variable from the UESH variable list
+Just wipes the variable value without removing it
 
 ==========================================================================================================================================
