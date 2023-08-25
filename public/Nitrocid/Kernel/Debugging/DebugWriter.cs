@@ -25,6 +25,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
 using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
 using KS.Misc.Text;
 
 namespace KS.Kernel.Debugging
@@ -44,6 +45,8 @@ namespace KS.Kernel.Debugging
         /// </summary>
         public static bool DebugCensorPrivateInfo => Config.MainConfig.DebugCensorPrivateInfo;
         internal static string DebugPath = "";
+        internal static string lastRoutineName = "";
+        internal static string lastRoutineSource = "";
         internal static StreamWriter DebugStreamWriter;
         internal static object WriteLock = new();
 
@@ -111,12 +114,27 @@ namespace KS.Kernel.Debugging
                         string[] texts = text.Split("\n");
                         foreach (string splitText in texts)
                         {
+                            string routineName = STrace.RoutineName;
+                            string fileName = STrace.RoutineFileName;
+                            int lineNum = STrace.RoutineLineNumber;
                             // Check to see if source file name is not empty.
                             if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
+                            {
                                 // Show stack information
-                                message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] ({STrace.RoutineName} - {STrace.RoutineFileName}:{STrace.RoutineLineNumber}): {splitText}\n");
+                                if (routineName != lastRoutineName && fileName != lastRoutineSource)
+                                {
+                                    message.Append($"\n\n");
+                                    message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} ");
+                                    message.Append($"({STrace.RoutineName} - {STrace.RoutineFileName})\n");
+                                    message.Append(new string('=', message.Length - 3));
+                                    message.Append($"\n\n");
+                                }
+                                message.Append($"[line: {STrace.RoutineLineNumber:0000}] [{Level}] : {splitText}\n");
+                                lastRoutineName = routineName;
+                                lastRoutineSource = fileName;
+                            }
                             else
-                                // Rare case, unless debug symbol is not found on archives.
+                                // Rare case, unless debug symbol is not found.
                                 message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {splitText}\n");
                         }
 
@@ -248,6 +266,7 @@ namespace KS.Kernel.Debugging
                         StkTrcs.AddRange(NewStackTraces[i].SplitNewLines());
                     for (int i = 0; i <= StkTrcs.Count - 1; i++)
                         WriteDebug(DebugLevel.T, StkTrcs[i]);
+                    WriteDebug(DebugLevel.T, $"Event of incident: {TimeDateRenderers.Render()}");
                     DebugStackTraces.AddRange(NewStackTraces);
                 }
             }
