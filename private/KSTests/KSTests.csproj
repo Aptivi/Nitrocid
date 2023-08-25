@@ -22,7 +22,7 @@
     <OptionInfer>On</OptionInfer>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
     <Version>0.1.0</Version>
-    <Configurations>Debug;Release;Release-Linux-Packaging</Configurations>
+    <Configurations>Debug;Release</Configurations>
     <GenerateDocumentationFile>False</GenerateDocumentationFile>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
@@ -33,12 +33,6 @@
     <DefineTrace>true</DefineTrace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <DefineDebug>false</DefineDebug>
-    <DefineTrace>true</DefineTrace>
-    <Optimize>true</Optimize>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release-Linux-Packaging|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <DefineTrace>true</DefineTrace>

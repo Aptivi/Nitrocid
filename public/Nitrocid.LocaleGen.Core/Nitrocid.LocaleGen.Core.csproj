@@ -20,7 +20,7 @@
     <!-- Repository set up -->
     <RepositoryUrl>https://github.com/Aptivi/NitrocidKS.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
-    <Configurations>Debug;Release;Release-Linux-Packaging</Configurations>
+    <Configurations>Debug;Release</Configurations>
   </PropertyGroup>
   <!-- LocaleGen NuGet Information End -->
     
@@ -44,7 +44,7 @@
     <OptionStrict>Off</OptionStrict>
     <OptionInfer>On</OptionInfer>
     <Version>0.1.0</Version>
-    <Configurations>Debug;Release;Release-Linux-Packaging</Configurations>
+    <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
@@ -57,11 +57,6 @@
     <DefineDebug>true</DefineDebug>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <DefineDebug>false</DefineDebug>
-    <Optimize>true</Optimize>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Linux-Packaging|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <Optimize>true</Optimize>

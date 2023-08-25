@@ -25,7 +25,7 @@
     <OptionInfer>On</OptionInfer>
     <ApplicationIcon>../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <Version>0.1.0</Version>
-    <Configurations>Debug;Release;Release-Linux-Packaging</Configurations>
+    <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
@@ -37,11 +37,6 @@
     <DefineDebug>true</DefineDebug>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-    <DefineDebug>false</DefineDebug>
-    <Optimize>true</Optimize>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release-Linux-Packaging|AnyCPU'">
     <DebugType>pdbonly</DebugType>
     <DefineDebug>false</DefineDebug>
     <Optimize>true</Optimize>
