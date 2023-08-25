@@ -954,5 +954,10 @@ Network system tests
 UESH shell tests
 User tests
 Goes back to the section selection
+Gets the current host name
+Gets the current version
+Shows the kernel mod API version
+Shows the kernel version
+Gets the current user name
 
 ==========================================================================================================================================

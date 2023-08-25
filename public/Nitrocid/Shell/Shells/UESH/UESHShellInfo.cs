@@ -425,6 +425,13 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo()
                     }, new HangmanCommand())
             },
+
+            { "host",
+                new CommandInfo("host", ShellType, /* Localizable */ "Gets the current host name",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new HostCommand())
+            },
             
             { "http",
                 new CommandInfo("http", ShellType, /* Localizable */ "Starts the HTTP shell",
@@ -1048,6 +1055,17 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[] { "MD5/SHA1/SHA256/SHA384/SHA512", "calculatedhash", "hashfile/expectedhash", "file" }, Array.Empty<SwitchInfo>(), true, 4)
                     }, new VerifyCommand())
             },
+
+            { "version",
+                new CommandInfo("version", ShellType, /* Localizable */ "Gets the current version",
+                    new[] {
+                        new CommandArgumentInfo(Array.Empty<string>(), new[]
+                        {
+                            new SwitchInfo("m", /* Localizable */ "Shows the kernel mod API version", false, false, null, 0, false),
+                            new SwitchInfo("k", /* Localizable */ "Shows the kernel version", false, false, null, 0, false)
+                        })
+                    }, new VersionCommand())
+            },
             
             { "weather",
                 new CommandInfo("weather", ShellType, /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
@@ -1056,6 +1074,13 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("list", /* Localizable */ "Shows all the available cities", false, false, null, 2, false)
                         }, true, 1)
                     }, new WeatherCommand())
+            },
+
+            { "whoami",
+                new CommandInfo("whoami", ShellType, /* Localizable */ "Gets the current user name",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new WhoamiCommand())
             },
             
             { "wordle",
