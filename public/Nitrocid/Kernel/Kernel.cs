@@ -248,6 +248,9 @@ namespace KS.Kernel
                 TextWriterColor.Write("\u001b[?1049l");
                 ConsoleWrapper.Clear();
             }
+
+            // Reset cursor state
+            ConsoleWrapper.CursorVisible = true;
         }
 
         /// <summary>
