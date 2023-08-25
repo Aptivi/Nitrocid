@@ -250,12 +250,15 @@ namespace KS.Kernel.Debugging
                     // These two NewLines are padding for accurate stack tracing.
                     var Inner = Ex.InnerException;
                     int InnerNumber = 1;
-                    var NewStackTraces = new List<string>() { $"{CharManager.NewLine}{Ex.ToString()[..Ex.ToString().IndexOf(":")]}: {Ex.Message}{CharManager.NewLine}{Ex.StackTrace}{CharManager.NewLine}" };
+                    var NewStackTraces = new List<string>()
+                    {
+                        $"{CharManager.NewLine}{GetExceptionTraceString(Ex)}"
+                    };
 
                     // Get all the inner exceptions
                     while (Inner is not null)
                     {
-                        NewStackTraces.Add($"[{InnerNumber}] {Inner.ToString()[..Inner.ToString().IndexOf(":")]}: {Inner.Message}{CharManager.NewLine}{Inner.StackTrace}{CharManager.NewLine}");
+                        NewStackTraces.Add($"[{InnerNumber}] {GetExceptionTraceString(Inner)}");
                         InnerNumber += 1;
                         Inner = Inner.InnerException;
                     }
@@ -271,6 +274,9 @@ namespace KS.Kernel.Debugging
                 }
             }
         }
+
+        internal static string GetExceptionTraceString(Exception ex) =>
+            $"{ex.GetType().FullName}: {ex.Message}{CharManager.NewLine}{ex.StackTrace}{CharManager.NewLine}";
 
     }
 }
