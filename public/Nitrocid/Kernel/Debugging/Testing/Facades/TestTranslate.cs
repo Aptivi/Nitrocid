@@ -24,6 +24,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestTranslate : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests translating a string that exists in resources to specific language");
+        public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
             TextWriterColor.Write(Translate.DoTranslation("Welcome to Kernel!", "spa"));

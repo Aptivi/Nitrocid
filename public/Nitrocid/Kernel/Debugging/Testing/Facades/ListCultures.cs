@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class ListCultures : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Lists supported cultures");
+        public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a search term:") + " ");

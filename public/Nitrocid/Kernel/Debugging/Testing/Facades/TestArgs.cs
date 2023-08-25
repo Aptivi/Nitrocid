@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestArgs : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests arguments");
+        public override TestSection TestSection => TestSection.Shell;
         public override void Run()
         {
             string[] ListArgsOnly = ArgumentsParser.ParseShellCommandArguments("help shutdown", ShellType.Shell).ArgumentsList;

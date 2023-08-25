@@ -23,6 +23,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class PrintD : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Print a string to debugger");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Hello world!");

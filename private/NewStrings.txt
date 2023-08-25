@@ -942,5 +942,17 @@ Horse
 Dismisses all sent notifications
 Removes a variable from the UESH variable list
 Just wipes the variable value without removing it
+Choose a test section to run
+Base console tests
+Driver tests
+Filesystem tests
+Main kernel component tests
+Language and localization tests
+Miscellaneous tests
+Kernel modification tests
+Network system tests
+UESH shell tests
+User tests
+Goes back to the section selection
 
 ==========================================================================================================================================

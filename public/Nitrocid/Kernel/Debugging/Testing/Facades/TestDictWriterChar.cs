@@ -25,6 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestDictWriterChar : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the dictionary writer with the char and char array");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalCharDict = new Dictionary<string, char>() { { "One", '1' }, { "Two", '2' }, { "Three", '3' } };

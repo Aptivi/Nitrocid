@@ -24,6 +24,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class Panic : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the kernel error facility");
+        public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
             KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Test panicking the kernel"), null);

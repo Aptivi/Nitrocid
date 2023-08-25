@@ -24,6 +24,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestPresentationRequired : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the presentation system (required)");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run() =>
             PresentationTools.Present(PresentationDebugInt.Debug, false, true);
     }

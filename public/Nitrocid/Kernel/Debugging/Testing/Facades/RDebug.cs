@@ -24,6 +24,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class RDebug : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Enables the remote debugger");
+        public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
             if (!RemoteDebugger.RDebugThread.IsAlive)

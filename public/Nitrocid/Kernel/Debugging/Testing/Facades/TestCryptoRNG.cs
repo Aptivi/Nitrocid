@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestCryptoRNG : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the cryptographically secure random number generator");
+        public override TestSection TestSection => TestSection.Drivers;
         public override void Run()
         {
             DriverHandler.SetDriver<IRandomDriver>("Cryptographic");

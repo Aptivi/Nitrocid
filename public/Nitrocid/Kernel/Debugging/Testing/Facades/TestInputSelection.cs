@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestInputSelection : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the input selection style");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             // Taken from https://en.wikipedia.org/wiki/Ubuntu_version_history

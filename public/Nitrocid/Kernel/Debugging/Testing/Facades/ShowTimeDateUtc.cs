@@ -25,6 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class ShowTimeDateUtc : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Shows UTC kernel date and time");
+        public override TestSection TestSection => TestSection.Kernel;
         public override void Run() => TextWriterColor.Write(TimeDateRenderersUtc.RenderUtc());
     }
 }

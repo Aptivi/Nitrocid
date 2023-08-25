@@ -23,6 +23,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class PrintDF : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Print a string to debugger with formatting");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Hi, {0}!", "Nitrocid KS");

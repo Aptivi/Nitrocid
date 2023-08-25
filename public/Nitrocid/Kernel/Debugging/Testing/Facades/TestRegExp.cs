@@ -27,6 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestRegExp : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the regular expression facility");
+        public override TestSection TestSection => TestSection.Drivers;
         public override void Run()
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a string to check:") + " ");

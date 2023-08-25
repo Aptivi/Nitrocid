@@ -25,6 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class InternetCheck : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Checks for the connection to the Internet");
+        public override TestSection TestSection => TestSection.Network;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => true;
         public override void Run()

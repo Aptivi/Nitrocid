@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestSwitches : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests switches");
+        public override TestSection TestSection => TestSection.Shell;
         public override void Run()
         {
             string[] ListSwitchesOnly = ArgumentsParser.ParseShellCommandArguments("help -r", ShellType.Shell).SwitchesList;

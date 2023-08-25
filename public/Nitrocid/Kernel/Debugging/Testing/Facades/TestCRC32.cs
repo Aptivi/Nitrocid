@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestCRC32 : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Encrypts a string using CRC32");
+        public override TestSection TestSection => TestSection.Drivers;
         public override void Run()
         {
             var spent = new Stopwatch();

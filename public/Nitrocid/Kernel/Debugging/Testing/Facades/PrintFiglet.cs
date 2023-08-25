@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class PrintFiglet : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Print a figlet string to console");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             FigletColor.WriteFiglet("Hello world!", FiggleFonts.Small, KernelColorType.Success);

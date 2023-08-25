@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing
         public virtual bool TestInteractive { get; } = true;
         public virtual object TestExpectedValue { get; }
         public virtual object TestActualValue { get; set; }
+        public virtual TestSection TestSection { get; } = TestSection.Misc;
 
         public virtual void Run() { }
     }

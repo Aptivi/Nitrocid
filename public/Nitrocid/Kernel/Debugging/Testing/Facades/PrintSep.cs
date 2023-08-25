@@ -24,6 +24,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class PrintSep : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Print a separator to console");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             SeparatorWriterColor.WriteSeparator("Hello world!", true);

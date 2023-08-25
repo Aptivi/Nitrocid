@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class ColorTest : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the VT sequence for 255 colors");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");

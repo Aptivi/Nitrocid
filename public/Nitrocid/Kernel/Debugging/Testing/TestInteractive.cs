@@ -29,8 +29,6 @@ namespace KS.Kernel.Debugging.Testing
 {
     internal static class TestInteractive
     {
-        internal static bool ShutdownFlag;
-        private static bool exiting;
         internal static Dictionary<string, TestFacade> facades = new()
         {
             { "Print",                          new Print() },
@@ -113,38 +111,102 @@ namespace KS.Kernel.Debugging.Testing
             { "CliInfoPaneTestRefreshing",      new CliInfoPaneTestRefreshing() },
             { "CliDoublePaneTest",              new CliDoublePaneTest() },
         };
+        internal static Dictionary<TestSection, string> sections = new()
+        {
+            { TestSection.ConsoleBase,          /* Localizable */ "Base console tests" },
+            { TestSection.Drivers,              /* Localizable */ "Driver tests" },
+            { TestSection.Files,                /* Localizable */ "Filesystem tests" },
+            { TestSection.Kernel,               /* Localizable */ "Main kernel component tests" },
+            { TestSection.Languages,            /* Localizable */ "Language and localization tests" },
+            { TestSection.Misc,                 /* Localizable */ "Miscellaneous tests" },
+            { TestSection.Modification,         /* Localizable */ "Kernel modification tests" },
+            { TestSection.Network,              /* Localizable */ "Network system tests" },
+            { TestSection.Shell,                /* Localizable */ "UESH shell tests" },
+            { TestSection.Users,                /* Localizable */ "User tests" },
+        };
+        internal static bool ShutdownFlag;
+        private static bool exiting;
 
         internal static void Open()
         {
             exiting = false;
 
-            // List facades and alt options
-            int facadeCount = facades.Count;
-            var listFacadesCodeNames = facades.Keys.Select((fac) => fac).ToArray();
+            // List sections and alt options
+            int sectionCount = sections.Count;
+            var listFacadesCodeNames = sections.Keys.Select((sec) => sec).ToArray();
+            var listFacadesDescs = sections.Values.Select(Translate.DoTranslation).ToArray();
             var listFacadesAltOptionName = new string[] 
             { 
-                Translate.DoTranslation("Test All"),
                 Translate.DoTranslation("Stats"),
                 Translate.DoTranslation("Shutdown"),
             };
             var listFacadesAltOptionDesc = new string[] 
             { 
-                Translate.DoTranslation("Tests all facades"),
                 Translate.DoTranslation("Shows the current test statistics"),
                 Translate.DoTranslation("Exits the testing mode and shuts down the kernel"),
             };
 
-            // Prompt for facade
+            // Prompt for section
             while (!exiting)
             {
+                // Now, prompt for the selection of the section
+                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test section to run"), string.Join("/", listFacadesCodeNames), listFacadesDescs, string.Join("/", listFacadesAltOptionName), listFacadesAltOptionDesc, true);
+                if (sel <= sectionCount)
+                {
+                    OpenSection(listFacadesCodeNames[sel - 1]);
+                }
+                else
+                {
+                    // Selected alternative option
+                    if (sel == sectionCount + 1) 
+                    {
+                        // Stats
+                        PrintTestStats();
+                    }
+                    else if (sel == sectionCount + 2 || sel == -1)
+                    {
+                        // Shutdown
+                        ShutdownFlag = true;
+                        exiting = true;
+                    }
+                }
+            }
+        }
+
+        internal static void OpenSection(TestSection section)
+        {
+            bool sectionExiting = false;
+
+            // List facades and alt options
+            var facadesList = facades
+                .Where((kvp) => kvp.Value.TestSection == section)
+                .ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
+            int facadeCount = facadesList.Count;
+            var listFacadesCodeNames = facadesList.Keys.Select((fac) => fac).ToArray();
+            var listFacadesAltOptionName = new string[]
+            {
+                Translate.DoTranslation("Test All"),
+                Translate.DoTranslation("Stats"),
+                Translate.DoTranslation("Go Back..."),
+            };
+            var listFacadesAltOptionDesc = new string[]
+            {
+                Translate.DoTranslation("Tests all facades"),
+                Translate.DoTranslation("Shows the current test statistics"),
+                Translate.DoTranslation("Goes back to the section selection"),
+            };
+
+            // Prompt for facade
+            while (!sectionExiting)
+            {
                 // We need to update the names in case the status updated
-                var listFacadesNames = facades.Values.Select((fac) => $"[{(fac.TestStatus == TestStatus.Success ? "+" : fac.TestStatus == TestStatus.Failed ? "X" : "-")}] " + fac.TestName).ToArray();
+                var listFacadesNames = facadesList.Values.Select((fac) => $"[{(fac.TestStatus == TestStatus.Success ? "+" : fac.TestStatus == TestStatus.Failed ? "X" : "-")}] " + fac.TestName).ToArray();
 
                 // Now, prompt for the selection of the facade
                 int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test facade to run"), string.Join("/", listFacadesCodeNames), listFacadesNames, string.Join("/", listFacadesAltOptionName), listFacadesAltOptionDesc, true);
                 if (sel <= facadeCount)
                 {
-                    RunFacade(facades[listFacadesCodeNames[sel - 1]]);
+                    RunFacade(facadesList[listFacadesCodeNames[sel - 1]]);
                 }
                 else
                 {
@@ -152,21 +214,20 @@ namespace KS.Kernel.Debugging.Testing
                     if (sel == facadeCount + 1)
                     {
                         // Test All
-                        foreach (var facade in facades.Values)
+                        foreach (var facade in facadesList.Values)
                             RunFacade(facade);
                         ConsoleWrapper.Clear();
                         PrintTestStats();
                     }
-                    else if (sel == facadeCount + 2) 
+                    else if (sel == facadeCount + 2)
                     {
                         // Stats
-                        PrintTestStats();
+                        PrintTestStatsSection(section);
                     }
                     else if (sel == facadeCount + 3 || sel == -1)
                     {
-                        // Shutdown
-                        ShutdownFlag = true;
-                        exiting = true;
+                        // Go back
+                        sectionExiting = true;
                     }
                 }
             }
@@ -229,6 +290,14 @@ namespace KS.Kernel.Debugging.Testing
                 // Facade failed unexpectedly
                 facade.status = TestStatus.Failed;
             }
+        }
+
+        internal static void PrintTestStatsSection(TestSection section)
+        {
+            TextWriterColor.Write(Translate.DoTranslation("Successful tests:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Success && fac.TestSection == section).Count());
+            TextWriterColor.Write(Translate.DoTranslation("Failed tests:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Failed && fac.TestSection == section).Count());
+            TextWriterColor.Write(Translate.DoTranslation("Tests to be run:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Neutral && fac.TestSection == section).Count());
+            Input.DetectKeypress();
         }
 
         internal static void PrintTestStats()

@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class PrintWithNulls : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Print a string to console with null characters");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             TextWriterColor.Write("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, KernelColorType.Success);

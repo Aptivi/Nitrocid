@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class CheckString : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Checks to see if the translatable string exists in the KS resources");
+        public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a translatable string to check:") + " ");

@@ -25,6 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestListWriterStr : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the list writer with the string and string array");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalStringList = new List<string>() { "String 1", "String 2", "String 3" };

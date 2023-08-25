@@ -25,6 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class BenchmarkSleepOne : TestFacade
     {
         public override string TestName => Translate.DoTranslation("How many milliseconds did it really take to sleep for just one millisecond?");
+        public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
             TextWriterColor.Write("{0} ms", true, ThreadManager.GetActualMilliseconds(1));

@@ -24,6 +24,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class StopMods : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Starts all mods");
+        public override TestSection TestSection => TestSection.Modification;
         public override void Run()
         {
             ModManager.StopMods();

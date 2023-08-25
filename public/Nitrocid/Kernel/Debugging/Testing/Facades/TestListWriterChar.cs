@@ -25,6 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestListWriterChar : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the list writer with the char and char array");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalCharList = new List<char>() { '1', '2', '3' };

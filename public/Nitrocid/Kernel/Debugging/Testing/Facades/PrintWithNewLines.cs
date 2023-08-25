@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class PrintWithNewLines : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Print a string to console with new lines in string");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             TextWriterColor.Write("Hello world!\nHow's your day going?\nShould be directly after this:", false, KernelColorType.Success);

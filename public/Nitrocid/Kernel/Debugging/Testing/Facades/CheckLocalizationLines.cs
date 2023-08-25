@@ -27,6 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class CheckLocalizationLines : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Checks all the localization text line numbers to see if they're all equal");
+        public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
             var EnglishJson = JToken.Parse(Properties.Resources.Resources.eng);

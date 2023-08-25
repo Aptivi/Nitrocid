@@ -24,6 +24,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class BlacklistMod : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Adds a mod to the blacklist");
+        public override TestSection TestSection => TestSection.Modification;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => true;
         public override void Run()

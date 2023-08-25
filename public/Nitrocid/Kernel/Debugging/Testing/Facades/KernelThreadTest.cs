@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class KernelThreadTest : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the kernel thread");
+        public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
             KernelThread thread = new("Test thread", true, KernelThreadTestData.WriteHello);

@@ -28,6 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class CheckSettingsEntries : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Checks all the KS settings to see if the variables are written correctly");
+        public override TestSection TestSection => TestSection.Kernel;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => false;
         public override void Run()

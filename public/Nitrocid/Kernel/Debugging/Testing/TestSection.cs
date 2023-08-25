@@ -16,16 +16,19 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Time.Renderers;
-using KS.Languages;
-
-namespace KS.Kernel.Debugging.Testing.Facades
+namespace KS.Kernel.Debugging.Testing
 {
-    internal class ShowTime : TestFacade
+    internal enum TestSection
     {
-        public override string TestName => Translate.DoTranslation("Shows local kernel time");
-        public override TestSection TestSection => TestSection.Kernel;
-        public override void Run() => TextWriterColor.Write(TimeDateRenderers.RenderTime());
+        ConsoleBase,
+        Drivers,
+        Files,
+        Kernel,
+        Languages,
+        Misc,
+        Modification,
+        Network,
+        Shell,
+        Users
     }
 }

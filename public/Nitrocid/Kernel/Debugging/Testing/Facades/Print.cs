@@ -25,6 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class Print : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Print a string to console");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             TextWriterColor.Write("Hello world!", true, KernelColorType.Success);

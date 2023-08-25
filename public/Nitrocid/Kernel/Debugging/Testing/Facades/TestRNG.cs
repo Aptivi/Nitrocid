@@ -25,6 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestRNG : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the random number generator");
+        public override TestSection TestSection => TestSection.Drivers;
         public override void Run()
         {
             int randomNum = RandomDriver.Random();

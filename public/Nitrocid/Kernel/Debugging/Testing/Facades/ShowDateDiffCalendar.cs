@@ -27,6 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class ShowDateDiffCalendar : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests printing date using different calendars");
+        public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
             TextWriterColor.Write(Translate.DoTranslation("Make sure your terminal supports Right-to-Left rendering!") + "\n");

@@ -25,6 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestDictWriterInt : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the dictionary writer with the integer and integer array");
+        public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
             var NormalIntegerDict = new Dictionary<string, int>() { { "One", 1 }, { "Two", 2 }, { "Three", 3 } };

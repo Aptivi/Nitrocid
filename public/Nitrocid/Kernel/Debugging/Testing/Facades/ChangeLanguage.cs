@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class ChangeLanguage : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests changing the language to your preferred language");
+        public override TestSection TestSection => TestSection.Languages;
         public override void Run()
         {
             var langCodes = InputChoiceTools.GetInputChoices(string.Join("/", LanguageManager.Languages.Keys), LanguageManager.Languages.Values.Select((lang) => lang.FullLanguageName).ToArray());
