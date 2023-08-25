@@ -61,15 +61,18 @@ namespace KS.Kernel.Updates
             // After we do this, Nitrocid KS should recognize newer servicing versions based on the current series (i.e. KS 0.0.21.3 didn't notify
             // the user that 0.0.21.4 was available due to 0.0.8.12 and versions that came after coming as first according to the API until 0.0.21.5
             // arrived)
-            var SortedVersions = new List<KernelUpdateInfo>();
+            List<(Version UpdateVersion, Uri UpdateURL)> SortedVersions = new();
             foreach (JToken KernelUpdate in UpdateToken)
             {
                 string tagName = KernelUpdate.SelectToken("tag_name").ToString();
-                var KernelUpdateVer = new Version(tagName[1..tagName.IndexOf('-')]);
+                bool containsDash = tagName.IndexOf('-') != -1;
+                tagName = containsDash ? tagName[1..tagName.IndexOf('-')] : tagName;
+
+                // TODO: Use SemanVer for more accuracy
+                var KernelUpdateVer = new Version(tagName);
                 string KernelUpdateURL = (string)KernelUpdate.SelectToken("assets")[0]["browser_download_url"];
                 DebugWriter.WriteDebug(DebugLevel.I, "Update information: {0}, {1}.", KernelUpdateVer.ToString(), KernelUpdateURL);
-                var KernelUpdateInfo = new KernelUpdateInfo(KernelUpdateVer, KernelUpdateURL);
-                SortedVersions.Add(KernelUpdateInfo);
+                SortedVersions.Add((KernelUpdateVer, new Uri(KernelUpdateURL)));
             }
             SortedVersions = SortedVersions.OrderByDescending(x => x.UpdateVersion).ToList();
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);

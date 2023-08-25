@@ -960,5 +960,7 @@ Shows the kernel mod API version
 Shows the kernel version
 Gets the current user name
 Gets the current directory
+Tests the kernel update functionality
+Is the kernel up to date?
 
 ==========================================================================================================================================

@@ -59,18 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
             // Populate the following variables with information
             string RetroKSStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/RetroKS/releases");
             var RetroKSToken = JToken.Parse(RetroKSStr);
-            var SortedVersions = new List<KernelUpdateInfo>();
-            foreach (JToken RetroKS in RetroKSToken)
-            {
-                var RetroKSVer = new Version(RetroKS.SelectToken("tag_name").ToString());
-                string RetroKSURL;
-                var RetroKSAssets = RetroKS.SelectToken("assets");
-                RetroKSURL = (string)RetroKSAssets[0]["browser_download_url"];
-                var RetroKSInfo = new KernelUpdateInfo(RetroKSVer, RetroKSURL);
-                SortedVersions.Add(RetroKSInfo);
-            }
-            SortedVersions = SortedVersions.OrderByDescending(x => x.UpdateVersion).ToList();
-            NetworkTransfer.WClient.DefaultRequestHeaders.Remove("User-Agent");
+            var update = new KernelUpdate(RetroKSToken);
 
             // Populate paths
             string RetroKSPath = Filesystem.NeutralizePath("retroks.rar", Paths.RetroKSDownloadPath);
@@ -80,16 +69,16 @@ namespace KS.Shell.Shells.UESH.Commands
             Making.MakeDirectory(Paths.RetroKSDownloadPath, false);
 
             // Check to see if we already have RetroKS installed and up-to-date
-            if ((Checking.FileExists(RetroExecKSPath) && Assembly.Load(System.IO.File.ReadAllBytes(RetroExecKSPath)).GetName().Version < SortedVersions[0].UpdateVersion) | !Checking.FileExists(RetroExecKSPath))
+            if ((Checking.FileExists(RetroExecKSPath) && Assembly.Load(System.IO.File.ReadAllBytes(RetroExecKSPath)).GetName().Version < update.UpdateVersion) | !Checking.FileExists(RetroExecKSPath))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Downloading version") + " {0}...", SortedVersions[0].UpdateVersion.ToString());
+                TextWriterColor.Write(Translate.DoTranslation("Downloading version") + " {0}...", update.UpdateVersion.ToString());
 
                 // Download RetroKS
-                var RetroKSURI = SortedVersions[0].UpdateURL;
+                var RetroKSURI = update.UpdateURL;
                 NetworkTransfer.DownloadFile(RetroKSURI.ToString(), RetroKSPath);
 
                 // Extract it
-                TextWriterColor.Write(Translate.DoTranslation("Installing version") + " {0}...", SortedVersions[0].UpdateVersion.ToString());
+                TextWriterColor.Write(Translate.DoTranslation("Installing version") + " {0}...", update.UpdateVersion.ToString());
                 using var archive = RarArchive.Open(RetroKSPath);
                 foreach (var entry in archive.Entries.Where(e => !e.IsDirectory))
                     entry.WriteToDirectory(Paths.RetroKSDownloadPath, new ExtractionOptions()
