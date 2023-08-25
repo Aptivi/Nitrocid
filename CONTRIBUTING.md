@@ -6,31 +6,7 @@ In the pull requests, we might ask you to make a few changes until we can accept
 
 ## Following templates
 
-Your pull requests should follow the template currently outlined here:
-
-```
-## Description
-<!-- Describe about your pull request. Note that you need to be as more descriptive as you can so we can understand this request. -->
-
-
-## Change type
-<!-- Specify what kind of changes you made. -->
-- [ ] Bug fixes
-- [ ] Performance improvements
-- [ ] Feature changes
-- [ ] Behavioral changes
-- [ ] Other (specify)
-
-## Tested?
-<!-- Have you tested your changes? -->
-- [ ] Yes, I have
-- [ ] No, I haven't
-- [ ] Not sure
-
-## Specify other changes
-<!-- Specify the changes that wouldn't fit into the selection. -->
-
-```
+Your pull requests should follow the template.
 
 You should be descriptive about what your change is trying to do and what's your opinion about how it affects the whole project. Moreover, it's vital to test your changes before trying to start a pull request to ensure that there are no problems in your initial version. **Always** draft your pull requests.
 
