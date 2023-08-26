@@ -962,5 +962,11 @@ Gets the current user name
 Gets the current directory
 Tests the kernel update functionality
 Is the kernel up to date?
+Gets the current platform
+Shows the platform name
+Shows the platform version
+Shows the platform bits
+Shows the .NET platform version
+Shows the .NET platform runtime identifier
 
 ==========================================================================================================================================

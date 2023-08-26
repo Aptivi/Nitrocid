@@ -669,7 +669,21 @@ namespace KS.Shell.Shells.UESH
                         }, true, 1)
                     }, new PingCommand())
             },
-            
+
+            { "platform",
+                new CommandInfo("platform", ShellType, /* Localizable */ "Gets the current platform",
+                    new[] {
+                        new CommandArgumentInfo(Array.Empty<string>(), new[]
+                        {
+                            new SwitchInfo("n", /* Localizable */ "Shows the platform name", false, false, new string[]{ "v", "b", "c", "r" }, 0, false),
+                            new SwitchInfo("v", /* Localizable */ "Shows the platform version", false, false, new string[]{ "n", "b", "c", "r" }, 0, false),
+                            new SwitchInfo("b", /* Localizable */ "Shows the platform bits", false, false, new string[]{ "n", "v", "c", "r" }, 0, false),
+                            new SwitchInfo("c", /* Localizable */ "Shows the .NET platform version", false, false, new string[]{ "n", "v", "b", "r" }, 0, false),
+                            new SwitchInfo("r", /* Localizable */ "Shows the .NET platform runtime identifier", false, false, new string[]{ "n", "v", "b", "c" }, 0, false)
+                        })
+                    }, new PlatformCommand())
+            },
+
             { "playlyric",
                 new CommandInfo("playlyric", ShellType, /* Localizable */ "Plays a lyric file",
                     new[] {
@@ -1068,8 +1082,8 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(Array.Empty<string>(), new[]
                         {
-                            new SwitchInfo("m", /* Localizable */ "Shows the kernel mod API version", false, false, null, 0, false),
-                            new SwitchInfo("k", /* Localizable */ "Shows the kernel version", false, false, null, 0, false)
+                            new SwitchInfo("m", /* Localizable */ "Shows the kernel mod API version", false, false, new string[]{ "k" }, 0, false),
+                            new SwitchInfo("k", /* Localizable */ "Shows the kernel version", false, false, new string[]{ "m" }, 0, false)
                         })
                     }, new VersionCommand())
             },
