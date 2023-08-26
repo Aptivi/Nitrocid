@@ -21,7 +21,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
-using KS.Kernel.Time.Renderers;
 using KS.Misc.Amusements.Quotes;
 using KS.Misc.Text;
 using System.Linq;

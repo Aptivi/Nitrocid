@@ -26,7 +26,6 @@ using KS.Files;
 using KS.Files.LineEndings;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Reflection;

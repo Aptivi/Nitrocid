@@ -34,9 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            string currentVersion = "";
-            long currentVersionDecimal = 0;
-            Version ver = default;
+            Version ver;
 
             // Get the version according to the switches provided
             if (ListSwitchesOnly.Length > 0 && SwitchManager.ContainsSwitch(ListSwitchesOnly, "-m"))
@@ -45,8 +43,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 ver = KernelTools.KernelVersion;
 
             // Now, provide the current version as a string and as a decimal
-            currentVersion = ver.ToString();
-            bool result = long.TryParse($"{ver.Major:000}{ver.Minor:000}{ver.Build:000}{ver.Revision:000}", out currentVersionDecimal);
+            string currentVersion = ver.ToString();
+            bool result = long.TryParse($"{ver.Major:000}{ver.Minor:000}{ver.Build:000}{ver.Revision:000}", out long currentVersionDecimal);
             TextWriterColor.Write(currentVersion);
             if (!result)
                 return 5;

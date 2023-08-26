@@ -29,7 +29,6 @@ using System.IO;
 using MimeKit;
 using KS.Files.LineEndings;
 using System.Text;
-using KS.Misc.Interactive;
 using System.Collections;
 using KS.Misc.Text;
 using KS.Kernel.Time.Renderers;
@@ -37,7 +36,6 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
 using KS.Files;
 using KS.Misc.Reflection;
-using SharpCompress.Common;
 using System.Reflection;
 
 namespace KS.Misc.Interactive.Interactives

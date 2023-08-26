@@ -19,7 +19,6 @@
 using KS.Arguments.ArgumentBase;
 using KS.Kernel;
 using KS.Kernel.Debugging.Testing;
-using System;
 
 namespace KS.Arguments.CommandLineArguments
 {

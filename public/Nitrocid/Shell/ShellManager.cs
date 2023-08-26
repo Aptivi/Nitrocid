@@ -69,7 +69,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Scripting;
 using Terminaux.Reader;
 using KS.Misc.Screensaver;
-using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 
 namespace KS.Shell
 {

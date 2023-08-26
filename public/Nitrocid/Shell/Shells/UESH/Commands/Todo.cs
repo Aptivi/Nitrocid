@@ -21,11 +21,7 @@ using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Calendar;
-using KS.Misc.Calendar.Events;
-using KS.Misc.Calendar.Reminders;
 using KS.Misc.ToDoList;
 using KS.Shell.ShellBase.Commands;
 

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using System;
 using System.IO;

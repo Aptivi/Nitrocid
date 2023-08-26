@@ -25,7 +25,6 @@ using VisualCard.Parts;
 using System.Text;
 using KS.Misc.Probers.Regexp;
 using KS.Files.Querying;
-using KS.Misc.Interactive;
 using System.Collections;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.FancyWriters;

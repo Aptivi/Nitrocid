@@ -16,17 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Debugging;
 using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using VisualCard.Parts;
-using System.Text;
-using KS.Misc.Probers.Regexp;
-using KS.Files.Querying;
 using System.Collections;
-using KS.Misc.Text;
 using KS.ConsoleBase.Writers.FancyWriters;
 using UnitsNet;
 using FluentFTP.Helpers;

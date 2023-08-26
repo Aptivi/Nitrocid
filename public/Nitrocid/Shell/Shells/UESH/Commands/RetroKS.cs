@@ -16,14 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
-using System.Runtime.Loader;
 using System.Threading;
-using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
@@ -32,7 +28,6 @@ using KS.Kernel;
 using KS.Kernel.Power;
 using KS.Kernel.Updates;
 using KS.Languages;
-using KS.Misc.RetroKS;
 using KS.Network.Base.Transfer;
 using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json.Linq;
