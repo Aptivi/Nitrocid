@@ -68,7 +68,8 @@ namespace KS.Shell.Shells.UESH.Commands
             Making.MakeDirectory(Paths.RetroKSDownloadPath, false);
 
             // Check to see if we already have RetroKS installed and up-to-date
-            if ((Checking.FileExists(RetroExecKSPath) && SemVer.ParseWithRev(Assembly.Load(System.IO.File.ReadAllBytes(RetroExecKSPath)).GetName().Version.ToString()) < update.UpdateVersion) | !Checking.FileExists(RetroExecKSPath))
+            var currentVersion = AssemblyName.GetAssemblyName(RetroExecKSPath).Version.ToString();
+            if ((Checking.FileExists(RetroExecKSPath) && SemVer.ParseWithRev(currentVersion) < update.UpdateVersion) || !Checking.FileExists(RetroExecKSPath))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Downloading version") + " {0}...", update.UpdateVersion.ToString());
 

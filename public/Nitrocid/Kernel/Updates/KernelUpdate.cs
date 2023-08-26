@@ -66,7 +66,8 @@ namespace KS.Kernel.Updates
             foreach (JToken KernelUpdate in UpdateToken)
             {
                 // We usually prefix versions with vx.x.x.x-xxx on Nitrocid KS releases.
-                string tagName = KernelUpdate.SelectToken("tag_name").ToString()[1..];
+                string tagName = KernelUpdate.SelectToken("tag_name").ToString();
+                tagName = tagName.StartsWith("v") ? KernelUpdate.SelectToken("tag_name").ToString()[1..] : tagName;
                 SemVer KernelUpdateVer = default;
                 if (tagName.Split('.').Length > 3)
                     KernelUpdateVer = SemVer.ParseWithRev(tagName);
