@@ -22,6 +22,7 @@ using KS.Files;
 using System.IO;
 using System;
 using KS.Files.Folders;
+using KS.Kernel;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -65,7 +66,7 @@ namespace KS.Arguments.CommandLineArguments
                 File.Delete(dump);
 
             // Exit now.
-            Environment.Exit(0);
+            Flags.KernelShutdown = true;
         }
     }
 }

@@ -125,7 +125,6 @@ namespace KS.Kernel.Debugging.Testing
             { TestSection.Shell,                /* Localizable */ "UESH shell tests" },
             { TestSection.Users,                /* Localizable */ "User tests" },
         };
-        internal static bool ShutdownFlag;
         private static bool exiting;
 
         internal static void Open()
@@ -167,7 +166,6 @@ namespace KS.Kernel.Debugging.Testing
                     else if (sel == sectionCount + 2 || sel == -1)
                     {
                         // Shutdown
-                        ShutdownFlag = true;
                         exiting = true;
                     }
                 }

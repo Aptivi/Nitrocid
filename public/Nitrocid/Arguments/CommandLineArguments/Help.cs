@@ -22,6 +22,7 @@ using KS.Languages;
 using KS.ConsoleBase.Inputs;
 using System;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -38,7 +39,7 @@ namespace KS.Arguments.CommandLineArguments
             // Either start the kernel or exit it
             TextWriterColor.Write(Translate.DoTranslation("* Press any key to start the kernel or ESC to exit."), true, KernelColorType.Tip);
             if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                Environment.Exit(0);
+                Flags.KernelShutdown = true;
         }
 
     }

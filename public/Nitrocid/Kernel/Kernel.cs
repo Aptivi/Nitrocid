@@ -75,6 +75,10 @@ namespace KS.Kernel
                     // Check for kernel command-line arguments
                     ArgumentParse.ParseArguments(Args.ToList());
 
+                    // Some command-line arguments may request kernel shutdown
+                    if (Flags.KernelShutdown)
+                        break;
+
                     // Check for console size
                     if (Flags.CheckingForConsoleSize)
                     {

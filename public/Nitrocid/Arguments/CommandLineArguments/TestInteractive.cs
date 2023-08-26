@@ -31,15 +31,7 @@ namespace KS.Arguments.CommandLineArguments
             KernelTools.StageTimer.Stop();
             TestInteractive.Open();
             KernelTools.StageTimer.Start();
-            if (TestInteractive.ShutdownFlag)
-            {
-                // Clear the console and reset the colors
-                // TODO: We need a way to more appropriately handle this.
-                ConsoleBase.ConsoleWrapper.ResetColor();
-                ConsoleBase.ConsoleWrapper.Clear();
-                ConsoleBase.ConsoleWrapper.CursorVisible = true;
-                Environment.Exit(0);
-            }
+            Flags.KernelShutdown = true;
         }
 
     }
