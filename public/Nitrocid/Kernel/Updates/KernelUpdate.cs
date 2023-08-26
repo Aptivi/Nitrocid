@@ -22,6 +22,7 @@ using System.Data;
 using System.Linq;
 using KS.Kernel.Debugging;
 using Newtonsoft.Json.Linq;
+using SemanVer.Instance;
 
 namespace KS.Kernel.Updates
 {
@@ -34,7 +35,7 @@ namespace KS.Kernel.Updates
         /// <summary>
         /// Updated kernel version
         /// </summary>
-        public Version UpdateVersion { get; private set; }
+        public SemVer UpdateVersion { get; private set; }
         /// <summary>
         /// Update file URL
         /// </summary>
@@ -61,24 +62,26 @@ namespace KS.Kernel.Updates
             // After we do this, Nitrocid KS should recognize newer servicing versions based on the current series (i.e. KS 0.0.21.3 didn't notify
             // the user that 0.0.21.4 was available due to 0.0.8.12 and versions that came after coming as first according to the API until 0.0.21.5
             // arrived)
-            List<(Version UpdateVersion, Uri UpdateURL)> SortedVersions = new();
+            List<(SemVer UpdateVersion, Uri UpdateURL)> SortedVersions = new();
             foreach (JToken KernelUpdate in UpdateToken)
             {
-                string tagName = KernelUpdate.SelectToken("tag_name").ToString();
-                bool containsDash = tagName.IndexOf('-') != -1;
-                tagName = containsDash ? tagName[1..tagName.IndexOf('-')] : tagName;
-
-                // TODO: Use SemanVer for more accuracy
-                var KernelUpdateVer = new Version(tagName);
+                // We usually prefix versions with vx.x.x.x-xxx on Nitrocid KS releases.
+                string tagName = KernelUpdate.SelectToken("tag_name").ToString()[1..];
+                SemVer KernelUpdateVer = default;
+                if (tagName.Split('.').Length > 3)
+                    KernelUpdateVer = SemVer.ParseWithRev(tagName);
+                else
+                    KernelUpdateVer = SemVer.Parse(tagName);
                 string KernelUpdateURL = (string)KernelUpdate.SelectToken("assets")[0]["browser_download_url"];
                 DebugWriter.WriteDebug(DebugLevel.I, "Update information: {0}, {1}.", KernelUpdateVer.ToString(), KernelUpdateURL);
                 SortedVersions.Add((KernelUpdateVer, new Uri(KernelUpdateURL)));
             }
-            SortedVersions = SortedVersions.OrderByDescending(x => x.UpdateVersion).ToList();
+            SortedVersions = SortedVersions.OrderByDescending((x) => 
+                new Version(x.UpdateVersion.MajorVersion, x.UpdateVersion.MinorVersion, x.UpdateVersion.PatchVersion, x.UpdateVersion.RevisionVersion)).ToList();
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);
 
             // Get the latest version found
-            var CurrentVer = new Version(KernelTools.KernelVersion.ToString());
+            var CurrentVer = SemVer.ParseWithRev(KernelTools.KernelVersion.ToString());
             var UpdateVer = SortedVersions[0].UpdateVersion;
             var UpdateURI = SortedVersions[0].UpdateURL;
             DebugWriter.WriteDebug(DebugLevel.I, "Update version: {0}", UpdateVer.ToString());

@@ -31,6 +31,7 @@ using KS.Languages;
 using KS.Network.Base.Transfer;
 using KS.Shell.ShellBase.Commands;
 using Newtonsoft.Json.Linq;
+using SemanVer.Instance;
 using SharpCompress.Archives;
 using SharpCompress.Archives.Rar;
 using SharpCompress.Common;
@@ -67,7 +68,7 @@ namespace KS.Shell.Shells.UESH.Commands
             Making.MakeDirectory(Paths.RetroKSDownloadPath, false);
 
             // Check to see if we already have RetroKS installed and up-to-date
-            if ((Checking.FileExists(RetroExecKSPath) && Assembly.Load(System.IO.File.ReadAllBytes(RetroExecKSPath)).GetName().Version < update.UpdateVersion) | !Checking.FileExists(RetroExecKSPath))
+            if ((Checking.FileExists(RetroExecKSPath) && SemVer.ParseWithRev(Assembly.Load(System.IO.File.ReadAllBytes(RetroExecKSPath)).GetName().Version.ToString()) < update.UpdateVersion) | !Checking.FileExists(RetroExecKSPath))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Downloading version") + " {0}...", update.UpdateVersion.ToString());
 
