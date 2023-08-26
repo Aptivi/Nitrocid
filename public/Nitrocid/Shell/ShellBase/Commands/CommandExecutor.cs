@@ -132,6 +132,7 @@ namespace KS.Shell.ShellBase.Commands
                 bool RequiredSwitchesProvided = ArgumentInfo.RequiredSwitchesProvided;
                 bool RequiredSwitchArgumentsProvided = ArgumentInfo.RequiredSwitchArgumentsProvided;
                 bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
+                string variable = "";
 
                 // Check to see if a requested command is obsolete
                 if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
@@ -150,6 +151,28 @@ namespace KS.Shell.ShellBase.Commands
                     bool isLast = i == ArgInfos.Length - 1;
                     if (ArgInfo is not null)
                     {
+                        // Trim the -set switch
+                        if (containsSetSwitch)
+                        {
+                            // First, work on the string
+                            string setValue = $"-set={SwitchManager.GetSwitchValue(Switches, "-set")}";
+
+                            // Work on the list
+                            if (Switches.Contains(setValue))
+                            {
+                                for (int j = 0; j < Switches.Length; j++)
+                                {
+                                    string @switch = Switches[j];
+                                    if (@switch == setValue && ArgInfo.AcceptsSet)
+                                    {
+                                        variable = SwitchManager.GetSwitchValue(Switches, "-set");
+                                        Switches = Switches.Except(new[] { setValue }).ToArray();
+                                        break;
+                                    }
+                                }
+                            }
+                        }
+
                         // Check for required arguments
                         if (!RequiredArgumentsProvided && ArgInfo.ArgumentsRequired && isLast)
                         {
@@ -213,7 +236,6 @@ namespace KS.Shell.ShellBase.Commands
                     DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);
                     if (containsSetSwitch)
                     {
-                        string variable = SwitchManager.GetSwitchValue(Switches, "-set");
                         DebugWriter.WriteDebug(DebugLevel.I, "Variable to set {0} is {1}", value, variable);
                         UESHVariables.SetVariable(variable, value);
                     }

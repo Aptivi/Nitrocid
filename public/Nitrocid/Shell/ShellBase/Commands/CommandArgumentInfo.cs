@@ -50,6 +50,10 @@ namespace KS.Shell.ShellBase.Commands
         /// Auto completion function delegate
         /// </summary>
         public Func<string, int, char[], string[]> AutoCompleter { get; private set; }
+        /// <summary>
+        /// Whether to accept the -set switch to set the UESH variable value
+        /// </summary>
+        public bool AcceptsSet { get; private set; }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
@@ -84,6 +88,7 @@ namespace KS.Shell.ShellBase.Commands
             this.ArgumentsRequired = ArgumentsRequired;
             this.MinimumArguments = MinimumArguments;
             this.AutoCompleter = AutoCompleter;
+            this.AcceptsSet = AcceptsSet;
         }
 
     }
