@@ -72,11 +72,15 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="Switches">Command switches</param>
         /// <param name="ArgumentsRequired">Arguments required</param>
         /// <param name="MinimumArguments">Minimum arguments</param>
+        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         /// <param name="AutoCompleter">Auto completion function</param>
-        public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, Func<string, int, char[], string[]> AutoCompleter = null)
+        public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, bool AcceptsSet = false, Func<string, int, char[], string[]> AutoCompleter = null)
         {
             this.Arguments = Arguments;
-            this.Switches = this.Switches.Union(Switches).ToArray();
+            if (AcceptsSet)
+                this.Switches = this.Switches.Union(Switches).ToArray();
+            else
+                this.Switches = Switches;
             this.ArgumentsRequired = ArgumentsRequired;
             this.MinimumArguments = MinimumArguments;
             this.AutoCompleter = AutoCompleter;

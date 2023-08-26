@@ -76,7 +76,7 @@ namespace KS.Shell.Shells.UESH
             { "alias",
                 new CommandInfo("alias", ShellType, /* Localizable */ "Adds aliases to commands",
                     new[] {
-                        new CommandArgumentInfo(new[] { "rem/add", $"{string.Join("/", Enum.GetNames(typeof(ShellType)))}", "alias", "cmd" }, Array.Empty<SwitchInfo>(), true, 3,(startFrom, _, _) => HelpUnifiedCommand.ListCmds(startFrom))
+                        new CommandArgumentInfo(new[] { "rem/add", $"{string.Join("/", Enum.GetNames(typeof(ShellType)))}", "alias", "cmd" }, Array.Empty<SwitchInfo>(), true, 3, false, (startFrom, _, _) => HelpUnifiedCommand.ListCmds(startFrom))
                     }, new AliasCommand(), CommandFlags.Strict)
             },
             
@@ -118,7 +118,7 @@ namespace KS.Shell.Shells.UESH
             { "calc",
                 new CommandInfo("calc", ShellType, /* Localizable */ "Calculator to calculate expressions.",
                     new[] {
-                        new CommandArgumentInfo(new[] { "expression" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "expression" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new CalcCommand())
             },
             
@@ -151,7 +151,7 @@ namespace KS.Shell.Shells.UESH
             { "cdir",
                 new CommandInfo("cdir", ShellType, /* Localizable */ "Gets the current directory",
                     new[] {
-                        new CommandArgumentInfo()
+                        new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0, true)
                     }, new CDirCommand())
             },
 
@@ -216,14 +216,14 @@ namespace KS.Shell.Shells.UESH
             { "chpwd",
                 new CommandInfo("chpwd", ShellType, /* Localizable */ "Changes password for current user",
                     new[] {
-                        new CommandArgumentInfo(new[] { "Username", "UserPass", "newPass", "confirm" }, Array.Empty<SwitchInfo>(), true, 4,(startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "Username", "UserPass", "newPass", "confirm" }, Array.Empty<SwitchInfo>(), true, 4, false, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new ChPwdCommand(), CommandFlags.Strict)
             },
             
             { "chusrname",
                 new CommandInfo("chusrname", ShellType, /* Localizable */ "Changes user name",
                     new[] {
-                        new CommandArgumentInfo(new[] { "oldUserName", "newUserName" }, Array.Empty<SwitchInfo>(), true, 2,(startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "oldUserName", "newUserName" }, Array.Empty<SwitchInfo>(), true, 2, false, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new ChUsrNameCommand(), CommandFlags.Strict)
             },
             
@@ -237,28 +237,28 @@ namespace KS.Shell.Shells.UESH
             { "colorhextorgb",
                 new CommandInfo("colorhextorgb", ShellType, /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers.",
                     new[] {
-                        new CommandArgumentInfo(new[] { "#RRGGBB" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "#RRGGBB" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new ColorHexToRgbCommand())
             },
             
             { "colorhextorgbks",
                 new CommandInfo("colorhextorgbks", ShellType, /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers in KS format.",
                     new[] {
-                        new CommandArgumentInfo(new[] { "#RRGGBB" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "#RRGGBB" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new ColorHexToRgbKSCommand())
             },
             
             { "colorrgbtohex",
                 new CommandInfo("colorrgbtohex", ShellType, /* Localizable */ "Converts the color RGB numbers to hex.",
                     new[] {
-                        new CommandArgumentInfo(new[] { "R", "G", "B" }, Array.Empty<SwitchInfo>(), true, 3)
+                        new CommandArgumentInfo(new[] { "R", "G", "B" }, Array.Empty<SwitchInfo>(), true, 3, true)
                     }, new ColorRgbToHexCommand())
             },
             
             { "combinestr",
                 new CommandInfo("combinestr", ShellType, /* Localizable */ "Combines the two text files or more into the console.",
                     new[] {
-                        new CommandArgumentInfo(new[] { "input1", "input2", "input3 ..." }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[] { "input1", "input2", "input3 ..." }, Array.Empty<SwitchInfo>(), true, 2, true)
                     }, new CombineStrCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -302,7 +302,7 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("time", /* Localizable */ "Shows just the time", false, false, new string[] { "date", "full" }, 0, false),
                             new SwitchInfo("full", /* Localizable */ "Shows date and time", false, false, new string[] { "date", "time" }, 0, false),
                             new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local", false, false, Array.Empty<string>(), 0, false)
-                        })
+                        }, false, 0, true)
                     }, new DateCommand(), CommandFlags.RedirectionSupported)
             },
             
@@ -351,7 +351,7 @@ namespace KS.Shell.Shells.UESH
             { "echo",
                 new CommandInfo("echo", ShellType, /* Localizable */ "Writes text into the console",
                     new[] {
-                        new CommandArgumentInfo(new[] { "text" }, Array.Empty<SwitchInfo>())
+                        new CommandArgumentInfo(new[] { "text" }, Array.Empty<SwitchInfo>(), false, 0, true)
                     }, new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -379,7 +379,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[] { "file", "directory" }, new[] {
                             new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively", false, false, Array.Empty<string>(), 0, false),
                             new SwitchInfo("exec", /* Localizable */ "Executes a command on a file", false, true)
-                        }, true, 1)
+                        }, true, 1, true)
                     }, new FindCommand())
             },
             
@@ -389,7 +389,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[] { "fileRegex", "directory" }, new[] {
                             new SwitchInfo("recursive", /* Localizable */ "Searches for a file recursively", false, false, Array.Empty<string>(), 0, false),
                             new SwitchInfo("exec", /* Localizable */ "Executes a command on a file", false, true)
-                        }, true, 1)
+                        }, true, 1, true)
                     }, new FindRegCommand())
             },
             
@@ -405,7 +405,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[] { "namescount", "nameprefix", "namesuffix", "surnameprefix", "surnamesuffix" }, new[] {
                             new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", false, false, Array.Empty<string>(), 0, false)
-                        })
+                        }, false, 0, true)
                     }, new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -436,7 +436,7 @@ namespace KS.Shell.Shells.UESH
             { "host",
                 new CommandInfo("host", ShellType, /* Localizable */ "Gets the current host name",
                     new[] {
-                        new CommandArgumentInfo()
+                        new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0, true)
                     }, new HostCommand())
             },
             
@@ -450,7 +450,7 @@ namespace KS.Shell.Shells.UESH
             { "hwinfo",
                 new CommandInfo("hwinfo", ShellType, /* Localizable */ "Prints hardware information",
                     new[] {
-                        new CommandArgumentInfo(new[] { "HardwareType" }, Array.Empty<SwitchInfo>(), true, 1,(_, _, _) => new[] { "HDD", "LogicalParts", "CPU", "GPU", "Sound", "Network", "System", "Machine", "BIOS", "RAM", "all" })
+                        new CommandArgumentInfo(new[] { "HardwareType" }, Array.Empty<SwitchInfo>(), true, 1, false, (_, _, _) => new[] { "HDD", "LogicalParts", "CPU", "GPU", "Sound", "Network", "System", "Machine", "BIOS", "RAM", "all" })
                     }, new HwInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -478,28 +478,28 @@ namespace KS.Shell.Shells.UESH
             { "input",
                 new CommandInfo("input", ShellType, /* Localizable */ "Allows user to enter input",
                     new[] {
-                        new CommandArgumentInfo(new[] { "question" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "question" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new InputCommand(), CommandFlags.SettingVariable)
             },
             
             { "jsonbeautify",
                 new CommandInfo("jsonbeautify", ShellType, /* Localizable */ "Beautifies the JSON file",
                     new[] {
-                        new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "jsonminify",
                 new CommandInfo("jsonminify", ShellType, /* Localizable */ "Minifies the JSON file",
                     new[] {
-                        new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "langman",
                 new CommandInfo("langman", ShellType, /* Localizable */ "Manage your languages",
                     new[] {
-                        new CommandArgumentInfo(new[] { "reload/load/unload", "customlanguagename", "list/reloadall" }, Array.Empty<SwitchInfo>(), true, 1,(startFrom, _, _) => Languages.LanguageManager.CustomLanguages.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "reload/load/unload", "customlanguagename", "list/reloadall" }, Array.Empty<SwitchInfo>(), true, 1, false, (startFrom, _, _) => Languages.LanguageManager.CustomLanguages.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new LangManCommand(), CommandFlags.Strict)
             },
             
@@ -513,7 +513,7 @@ namespace KS.Shell.Shells.UESH
             { "lintscript",
                 new CommandInfo("lintscript", ShellType, /* Localizable */ "Checks a UESH script for syntax errors",
                     new[] {
-                        new CommandArgumentInfo(new[] { "script" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "script" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new LintScriptCommand())
             },
             
@@ -531,7 +531,7 @@ namespace KS.Shell.Shells.UESH
             { "listunits",
                 new CommandInfo("listunits", ShellType, /* Localizable */ "Lists all available units",
                     new[] {
-                        new CommandArgumentInfo(new[] { "type" }, Array.Empty<SwitchInfo>(), true, 1,(startFrom, _, _) => Quantity.Infos.Select((src) => src.Name).Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "type" }, Array.Empty<SwitchInfo>(), true, 1, false, (startFrom, _, _) => Quantity.Infos.Select((src) => src.Name).Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -566,7 +566,7 @@ namespace KS.Shell.Shells.UESH
             { "lsusers",
                 new CommandInfo("lsusers", ShellType, /* Localizable */ "Lists the users",
                     new[] {
-                        new CommandArgumentInfo()
+                        new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0, true)
                     }, new LsUsersCommand())
             },
             
@@ -586,7 +586,7 @@ namespace KS.Shell.Shells.UESH
             { "md",
                 new CommandInfo("md", ShellType, /* Localizable */ "Creates a directory",
                     new[] {
-                        new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new MdCommand()) },
             
             { "meteor",
@@ -599,7 +599,7 @@ namespace KS.Shell.Shells.UESH
             { "mkfile",
                 new CommandInfo("mkfile", ShellType, /* Localizable */ "Makes a new file",
                     new[] {
-                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new MkFileCommand())
             },
             
@@ -629,7 +629,7 @@ namespace KS.Shell.Shells.UESH
             { "modmanual",
                 new CommandInfo("modmanual", ShellType, /* Localizable */ "Mod manual",
                     new[] {
-                        new CommandArgumentInfo(new[] { "modname" }, Array.Empty<SwitchInfo>(), true, 1,(startFrom, _, _) => ModManager.ListMods(startFrom).Keys.ToArray())
+                        new CommandArgumentInfo(new[] { "modname" }, Array.Empty<SwitchInfo>(), true, 1,false, (startFrom, _, _) => ModManager.ListMods(startFrom).Keys.ToArray())
                     }, new ModManualCommand())
             },
             
@@ -643,21 +643,21 @@ namespace KS.Shell.Shells.UESH
             { "pathfind",
                 new CommandInfo("pathfind", ShellType, /* Localizable */ "Finds a given file name from path lookup directories",
                     new[] {
-                        new CommandArgumentInfo(new[] { "fileName" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "fileName" }, Array.Empty<SwitchInfo>(), true, 1, true)
                     }, new PathFindCommand())
             },
             
             { "perm",
                 new CommandInfo("perm", ShellType, /* Localizable */ "Manage permissions for users",
                     new[] {
-                        new CommandArgumentInfo(new[] { "userName", "allow/revoke", "perm" }, Array.Empty<SwitchInfo>(), true, 3,(startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "userName", "allow/revoke", "perm" }, Array.Empty<SwitchInfo>(), true, 3, false, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new PermCommand(), CommandFlags.Strict)
             },
             
             { "permgroup",
                 new CommandInfo("permgroup", ShellType, /* Localizable */ "Manage permissions for groups",
                     new[] {
-                        new CommandArgumentInfo(new[] { "groupName", "allow/revoke", "perm" }, Array.Empty<SwitchInfo>(), true, 3,(startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "groupName", "allow/revoke", "perm" }, Array.Empty<SwitchInfo>(), true, 3, false, (startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new PermGroupCommand(), CommandFlags.Strict)
             },
             
@@ -680,7 +680,7 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("b", /* Localizable */ "Shows the platform bits", false, false, new string[]{ "n", "v", "c", "r" }, 0, false),
                             new SwitchInfo("c", /* Localizable */ "Shows the .NET platform version", false, false, new string[]{ "n", "v", "b", "r" }, 0, false),
                             new SwitchInfo("r", /* Localizable */ "Shows the .NET platform runtime identifier", false, false, new string[]{ "n", "v", "b", "c" }, 0, false)
-                        })
+                        }, false, 0, true)
                     }, new PlatformCommand())
             },
 
@@ -697,7 +697,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[] { "splashName" }, new[]
                         {
                             new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash", false, false, Array.Empty<string>(), 0, false)
-                        }, false, 0,(startFrom, _, _) => SplashManager.Splashes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
+                        }, false, 0, false, (startFrom, _, _) => SplashManager.Splashes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new PreviewSplashCommand())
             },
             
@@ -760,20 +760,20 @@ namespace KS.Shell.Shells.UESH
             { "rmuser",
                 new CommandInfo("rmuser", ShellType, /* Localizable */ "Removes a user from the list",
                     new[] {
-                        new CommandArgumentInfo(new[] { "Username" }, Array.Empty<SwitchInfo>(), true, 1,(startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "Username" }, Array.Empty<SwitchInfo>(), true, 1, false, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new RmUserCommand(), CommandFlags.Strict)
             },
             
             { "rmgroup",
                 new CommandInfo("rmgroup", ShellType, /* Localizable */ "Removes a group from the list",
                     new[] {
-                        new CommandArgumentInfo(new[] { "GroupName" }, Array.Empty<SwitchInfo>(), true, 1,(startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "GroupName" }, Array.Empty<SwitchInfo>(), true, 1, false, (startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new RmGroupCommand(), CommandFlags.Strict)
             },
             
             { "rmuserfromgroup",
                 new CommandInfo("rmuserfromgroup", ShellType, /* Localizable */ "Removes a user from the group",
-                    new[] { new CommandArgumentInfo(new[] { "UserName", "GroupName" }, Array.Empty<SwitchInfo>(), true, 1, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
+                    new[] { new CommandArgumentInfo(new[] { "UserName", "GroupName" }, Array.Empty<SwitchInfo>(), true, 1, false, (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new RmUserFromGroupCommand(), CommandFlags.Strict)
             },
             
@@ -800,7 +800,7 @@ namespace KS.Shell.Shells.UESH
             { "savescreen",
                 new CommandInfo("savescreen", ShellType, /* Localizable */ "Saves your screen from burn outs",
                     new[] {
-                        new CommandArgumentInfo(new[] { "saver" }, Array.Empty<SwitchInfo>(), false, 0, (startFrom, _, _) => ScreensaverManager.Screensavers.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "saver" }, Array.Empty<SwitchInfo>(), false, 0, false, (startFrom, _, _) => ScreensaverManager.Screensavers.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new SaveScreenCommand())
             },
             
@@ -989,7 +989,7 @@ namespace KS.Shell.Shells.UESH
             { "themesel",
                 new CommandInfo("themesel", ShellType, /* Localizable */ "Selects a theme and sets it",
                     new[] {
-                        new CommandArgumentInfo(new[] { "Theme" }, Array.Empty<SwitchInfo>(), false, 0, (startFrom, _, _) => ThemeTools.Themes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "Theme" }, Array.Empty<SwitchInfo>(), false, 0, false, (startFrom, _, _) => ThemeTools.Themes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new ThemeSelCommand())
             },
             
@@ -1059,7 +1059,7 @@ namespace KS.Shell.Shells.UESH
             { "uptime",
                 new CommandInfo("uptime", ShellType, /* Localizable */ "Shows the kernel uptime",
                     new[] {
-                        new CommandArgumentInfo()
+                        new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0, true)
                     }, new UptimeCommand())
             },
             
@@ -1084,7 +1084,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new SwitchInfo("m", /* Localizable */ "Shows the kernel mod API version", false, false, new string[]{ "k" }, 0, false),
                             new SwitchInfo("k", /* Localizable */ "Shows the kernel version", false, false, new string[]{ "m" }, 0, false)
-                        })
+                        }, false, 0, true)
                     }, new VersionCommand())
             },
             
@@ -1100,7 +1100,7 @@ namespace KS.Shell.Shells.UESH
             { "whoami",
                 new CommandInfo("whoami", ShellType, /* Localizable */ "Gets the current user name",
                     new[] {
-                        new CommandArgumentInfo()
+                        new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0, true)
                     }, new WhoamiCommand())
             },
             

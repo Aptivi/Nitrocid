@@ -103,7 +103,7 @@ namespace KS.Shell
             { "help",
                 new CommandInfo("help", ShellType.Shell, /* Localizable */ "Help page",
                     new[] {
-                        new CommandArgumentInfo(new[] { "[command]" }, Array.Empty<SwitchInfo>(), false, 0,(_, _, _) => HelpUnifiedCommand.ListCmds())
+                        new CommandArgumentInfo(new[] { "[command]" }, Array.Empty<SwitchInfo>(), false, 0, false, (_, _, _) => HelpUnifiedCommand.ListCmds())
                     }, new HelpUnifiedCommand(), CommandFlags.Wrappable)
             },
 
