@@ -83,8 +83,8 @@ namespace Nitrocid.Analyzers.Misc.Text
             if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Misc.Text") == false)
             {
                 var name = SyntaxFactory.QualifiedName(
-                    SyntaxFactory.IdentifierName("KS"),
-                    SyntaxFactory.IdentifierName("Misc.Text"));
+                    SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName("KS"), SyntaxFactory.IdentifierName("Misc")),
+                    SyntaxFactory.IdentifierName("Text"));
                 compilation = compilation
                     .AddUsings(SyntaxFactory.UsingDirective(name).NormalizeWhitespace());
             }

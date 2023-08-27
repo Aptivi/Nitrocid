@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using Microsoft.CodeAnalysis;
 using Microsoft.CodeAnalysis.CodeRefactorings;
 using Microsoft.CodeAnalysis.Testing;
 using System.Threading;
@@ -48,6 +49,8 @@ namespace Nitrocid.Analyzers.Test
             };
 
             test.ExpectedDiagnostics.AddRange(expected);
+            test.ReferenceAssemblies = ReferenceAssemblies.Net.Net60;
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../Nitrocid/KSBuild/net6.0/Nitrocid.dll"));
             await test.RunAsync(CancellationToken.None);
         }
     }

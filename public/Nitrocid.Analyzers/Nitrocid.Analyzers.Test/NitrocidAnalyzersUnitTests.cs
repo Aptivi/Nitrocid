@@ -38,72 +38,76 @@ namespace Nitrocid.Analyzers.Test
         [TestMethod]
         public async Task TestMethod2()
         {
-            var test = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
+            var test = """
 
-    namespace ConsoleApplication1
-    {
-        class MyMod
-        {   
-            public static void Main()
-            {
-                Console.WriteLine([|string.Format|](""Hello, {0}!"", ""Nitrocid""));
-            }
-        }
-    }";
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                using System.Diagnostics;
 
-            var diag = VerifyCS.Diagnostic("NKS0001");
-            await VerifyCS.VerifyAnalyzerAsync(test, diag);
+                namespace ConsoleApplication1
+                {
+                    class MyMod
+                    {   
+                        public static void Main()
+                        {
+                            Console.WriteLine([|string.Format|]("Hello, {0}!", "Nitrocid"));
+                        }
+                    }
+                }
+                """;
+
+            await VerifyCS.VerifyAnalyzerAsync(test);
         }
 
         [TestMethod]
         public async Task TestMethod3()
         {
-            var test = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
+            var test = """
 
-    namespace ConsoleApplication1
-    {
-        class MyMod
-        {   
-            public static void Main()
-            {
-                Console.WriteLine([|string.Format|](""Hello, {0}!"", ""Nitrocid""));
-            }
-        }
-    }";
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                using System.Diagnostics;
 
-            var fixtest = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
-    using KS.Misc.Text;
-    namespace ConsoleApplication1
-    {
-        class MyMod
-        {   
-            public static void Main()
-            {
-                Console.WriteLine(TextTools.FormatString(""Hello, {0}!"", ""Nitrocid""));
-            }
-        }
-    }";
+                namespace ConsoleApplication1
+                {
+                    class MyMod
+                    {   
+                        public static void Main()
+                        {
+                            Console.WriteLine([|string.Format|]("Hello, {0}!", "Nitrocid"));
+                        }
+                    }
+                }
+                """;
 
-            var diag = VerifyCS.Diagnostic("NKS0001");
-            await VerifyCS.VerifyCodeFixAsync(test, diag, fixtest);
+            var fixtest = """
+
+                using System;
+                using System.Collections.Generic;
+                using System.Linq;
+                using System.Text;
+                using System.Threading.Tasks;
+                using System.Diagnostics;
+                using KS.Misc.Text;
+                namespace ConsoleApplication1
+                {
+                    class MyMod
+                    {   
+                        public static void Main()
+                        {
+                            Console.WriteLine(TextTools.FormatString("Hello, {0}!", "Nitrocid"));
+                        }
+                    }
+                }
+                """;
+
+            await VerifyCS.VerifyCodeFixAsync(test, fixtest);
         }
     }
 }
