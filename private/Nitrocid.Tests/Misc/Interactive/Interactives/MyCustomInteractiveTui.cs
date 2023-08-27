@@ -16,6 +16,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Misc.Interactive;
+using System;
+using System.Collections.Generic;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Misc.Interactive.Interactives
+{
+    internal class MyCustomInteractiveTui : BaseInteractiveTui, IInteractiveTui
+    {
+        public override List<InteractiveTuiBinding> Bindings => new()
+        {
+            new InteractiveTuiBinding("Test", ConsoleKey.F1, (_, idx) => Console.WriteLine(idx))
+        };
+    }
+}

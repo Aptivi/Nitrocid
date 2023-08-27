@@ -16,6 +16,28 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Languages;
+using NUnit.Framework;
+using Shouldly;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Languages
+{
+
+    [TestFixture]
+    public class LocalizationActionTests
+    {
+
+        /// <summary>
+        /// Tests string translation
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestTranslate()
+        {
+            string ExpectedTranslation = "Apagando ...";
+            string ActualTranslation = Translate.DoTranslation("Shutting down...", "spa");
+            ActualTranslation.ShouldBe(ExpectedTranslation);
+        }
+
+    }
+}

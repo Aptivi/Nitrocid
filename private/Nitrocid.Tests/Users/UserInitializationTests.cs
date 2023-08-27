@@ -16,6 +16,20 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Users;
+using NUnit.Framework;
+using Shouldly;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Users
+{
+    [TestFixture]
+    public class UserInitializationTests
+    {
+        /// <summary>
+        /// Tests user initialization
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeUsers() => Should.NotThrow(UserManagement.InitializeUsers);
+    }
+}

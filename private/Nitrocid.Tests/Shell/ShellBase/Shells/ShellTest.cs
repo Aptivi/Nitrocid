@@ -16,6 +16,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Shell.ShellBase.Shells;
+using System;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Shell.ShellBase.Shells
+{
+
+    class ShellTest : BaseShell, IShell
+    {
+
+        public override string ShellType => "Basic debug shell";
+
+        public override bool Bail { get; set; }
+
+        public override void InitializeShell(params object[] ShellArgs)
+        {
+            Console.WriteLine(format: "Just a debug shell, ShellTest, with absolutely no input.");
+            Console.WriteLine(format: "- ShellArgs: {0}", string.Join(", ", ShellArgs));
+            Bail = true;
+        }
+
+    }
+}

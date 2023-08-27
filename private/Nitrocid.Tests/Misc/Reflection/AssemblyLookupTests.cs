@@ -16,6 +16,23 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Misc.Reflection;
+using NUnit.Framework;
+using Shouldly;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Misc.Reflection
+{
+    [TestFixture]
+    public class AssemblyLookupTests
+    {
+
+        /// <summary>
+        /// Tests getting method
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public static void TestAddPathToAssemblySearchPath() =>
+            Should.NotThrow(() => AssemblyLookup.AddPathToAssemblySearchPath("Dependencies"));
+
+    }
+}

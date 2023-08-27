@@ -16,6 +16,19 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Arguments.ArgumentBase;
+using System;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Arguments
+{
+    class ArgumentTest : ArgumentExecutor, IArgument
+    {
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            Console.WriteLine("We're on ArgumentTest with:");
+            Console.WriteLine(format: "- StringArgs: {0}", StringArgs);
+            Console.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
+            Console.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
+        }
+    }
+}

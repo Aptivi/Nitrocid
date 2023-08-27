@@ -16,6 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Drivers.RNG;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Drivers.DriverData
+{
+    internal class MyCustomRNGDriver : BaseRandomDriver, IRandomDriver
+    {
+        public override string DriverName => "MyCustom";
+    }
+}

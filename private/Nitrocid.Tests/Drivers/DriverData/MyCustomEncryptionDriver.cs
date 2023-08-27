@@ -16,6 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Drivers.Encryption;
+using KS.Drivers.Encryption.Encryptors;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Drivers.DriverData
+{
+    internal class MyCustomEncryptionDriver : BaseEncryptionDriver, IEncryptionDriver
+    {
+        public override string DriverName => "MyCustom";
+    }
+}

@@ -1,0 +1,11 @@
+{
+  "profiles": {
+    "Nitrocid.LocaleClean": {
+      "commandName": "Project"
+    },
+    "Nitrocid.LocaleClean - Dry": {
+      "commandName": "Project",
+      "commandLineArgs": "-dry"
+    }
+  }
+}

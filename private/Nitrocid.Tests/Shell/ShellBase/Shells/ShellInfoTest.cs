@@ -16,6 +16,27 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using System;
+using System.Collections.Generic;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Shell.ShellBase.Shells
+{
+
+    class ShellInfoTest : BaseShellInfo, IShellInfo
+    {
+
+        public override Dictionary<string, CommandInfo> Commands => new()
+        {
+            { "test",
+                new CommandInfo("test", ShellType, "Test command", new[] {
+                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>())
+                }, null)
+            },
+        };
+
+        public override BaseShell ShellBase => new ShellTest();
+
+    }
+}

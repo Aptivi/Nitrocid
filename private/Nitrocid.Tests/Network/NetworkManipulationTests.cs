@@ -16,6 +16,30 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Kernel.Configuration;
+using KS.Network.Base;
+using NUnit.Framework;
+using Shouldly;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Network
+{
+
+    // Warning: Don't implement the unit tests related to downloading or uploading files. This causes AppVeyor to choke.
+    [TestFixture]
+    public class NetworkManipulationTests
+    {
+
+        /// <summary>
+        /// Tests hostname change
+        /// </summary>
+        [Test]
+        [Description("Manipulation")]
+        public void TestChangeHostname()
+        {
+            NetworkTools.TryChangeHostname("NewHost").ShouldBeTrue();
+            NetworkTools.HostName.ShouldBe("NewHost");
+            Config.MainConfig.HostName.ShouldBe("NewHost");
+        }
+
+    }
+}

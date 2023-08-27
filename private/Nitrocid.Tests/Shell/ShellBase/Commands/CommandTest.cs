@@ -16,6 +16,23 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Shell.ShellBase.Commands;
+using System;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Shell.ShellBase.Commands
+{
+
+    class CommandTest : BaseCommand, ICommand
+    {
+
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            Console.WriteLine("We're on CommandTest with:");
+            Console.WriteLine(format: "- StringArgs: {0}", StringArgs);
+            Console.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
+            Console.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
+            return 0;
+        }
+
+    }
+}

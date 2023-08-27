@@ -16,6 +16,29 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Kernel.Debugging.Trace;
+using NUnit.Framework;
+using Shouldly;
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Tests.Kernel.Debugging
+{
+
+    [TestFixture]
+    public class DebugStackFrameTests
+    {
+
+        /// <summary>
+        /// Tests making a new instance of the debug stack frame
+        /// </summary>
+        [Test]
+        [Description("Misc")]
+        public void TestDebugStackFrame()
+        {
+            var frame = new DebugStackFrame();
+            frame.ShouldNotBeNull();
+            var frame2 = new DebugStackFrame(2);
+            frame2.ShouldNotBeNull();
+        }
+
+    }
+}
