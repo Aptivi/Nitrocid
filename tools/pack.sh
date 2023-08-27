@@ -30,6 +30,7 @@ fi
 # Pack binary
 echo Packing binary...
 "$rarpath" a -ep1 -r -m5 /tmp/$ksversion-bin.rar "../public/Nitrocid/KSBuild/net6.0/"
+"$rarpath" a -ep1 -r -m5 /tmp/$ksversion-analyzers.rar "../public/Nitrocid/KSBuild/netstandard2.0/"
 if [ ! $? == 0 ]; then
 	echo Packing using rar failed.
 	exit 1
@@ -37,6 +38,7 @@ fi
 
 # Inform success
 mv ~/tmp/$ksversion-bin.rar .
+mv ~/tmp/$ksversion-analyzers.rar .
 cp "../public/Nitrocid/KSBuild/net6.0/Nitrocid.pdb" ./$ksversion.pdb
 echo Build and pack successful.
 exit 0

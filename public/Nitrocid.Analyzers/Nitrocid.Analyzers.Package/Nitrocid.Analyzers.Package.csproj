@@ -21,7 +21,7 @@
     <!-- MSBuild Tags -->
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <IncludeSymbols>True</IncludeSymbols>
-    <PackageOutputPath>../Nitrocid/KSBuild</PackageOutputPath>
+    <PackageOutputPath>../../Nitrocid/KSBuild</PackageOutputPath>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <!-- Repository set up -->
     <RepositoryUrl>https://github.com/Aptivi/NitrocidKS.git</RepositoryUrl>
