@@ -57,25 +57,6 @@ namespace Nitrocid.Analyzers.Test
         }
     }";
 
-            var fixtest = @"
-    using System;
-    using System.Collections.Generic;
-    using System.Linq;
-    using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
-    using KS.Misc.Text;
-    namespace ConsoleApplication1
-    {
-        class MyMod
-        {   
-            public static void Main()
-            {
-                Console.WriteLine(TextTools.FormatString(""Hello, {0}!"", ""Nitrocid""));
-            }
-        }
-    }";
-
             var diag = VerifyCS.Diagnostic("NKS0001");
             await VerifyCS.VerifyAnalyzerAsync(test, diag);
         }
