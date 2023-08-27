@@ -968,5 +968,6 @@ Shows the platform version
 Shows the platform bits
 Shows the .NET platform version
 Shows the .NET platform runtime identifier
+You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.
 
 ==========================================================================================================================================
