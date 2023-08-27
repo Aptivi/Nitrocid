@@ -20,6 +20,16 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KSCleanUnusedLocales", "pri
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.LocaleGen.Core", "public\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj", "{09ACA8A4-5AC2-413B-A2EC-4FC5B168E5D0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Analyzers", "public\Nitrocid.Analyzers\Nitrocid.Analyzers\Nitrocid.Analyzers.csproj", "{511E3B93-C6BF-4DFF-88D1-165FD3BCF428}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Analyzers.CodeFixes", "public\Nitrocid.Analyzers\Nitrocid.Analyzers.CodeFixes\Nitrocid.Analyzers.CodeFixes.csproj", "{92EFB380-0B78-4B92-A227-F0B6BF982F19}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Analyzers.Package", "public\Nitrocid.Analyzers\Nitrocid.Analyzers.Package\Nitrocid.Analyzers.Package.csproj", "{A9D16C17-745F-467E-854F-A5C40A28D7A9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Analyzers.Test", "public\Nitrocid.Analyzers\Nitrocid.Analyzers.Test\Nitrocid.Analyzers.Test.csproj", "{E7FE453F-AD54-4286-B129-4788C7729F5F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Analyzers.Vsix", "public\Nitrocid.Analyzers\Nitrocid.Analyzers.Vsix\Nitrocid.Analyzers.Vsix.csproj", "{AD2CC906-EC76-4736-A216-6453114A0C0C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -46,6 +56,26 @@ Global
 		{09ACA8A4-5AC2-413B-A2EC-4FC5B168E5D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09ACA8A4-5AC2-413B-A2EC-4FC5B168E5D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09ACA8A4-5AC2-413B-A2EC-4FC5B168E5D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{511E3B93-C6BF-4DFF-88D1-165FD3BCF428}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{511E3B93-C6BF-4DFF-88D1-165FD3BCF428}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{511E3B93-C6BF-4DFF-88D1-165FD3BCF428}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{511E3B93-C6BF-4DFF-88D1-165FD3BCF428}.Release|Any CPU.Build.0 = Release|Any CPU
+		{92EFB380-0B78-4B92-A227-F0B6BF982F19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{92EFB380-0B78-4B92-A227-F0B6BF982F19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{92EFB380-0B78-4B92-A227-F0B6BF982F19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{92EFB380-0B78-4B92-A227-F0B6BF982F19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A9D16C17-745F-467E-854F-A5C40A28D7A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A9D16C17-745F-467E-854F-A5C40A28D7A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A9D16C17-745F-467E-854F-A5C40A28D7A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A9D16C17-745F-467E-854F-A5C40A28D7A9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7FE453F-AD54-4286-B129-4788C7729F5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7FE453F-AD54-4286-B129-4788C7729F5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7FE453F-AD54-4286-B129-4788C7729F5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7FE453F-AD54-4286-B129-4788C7729F5F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -56,6 +86,11 @@ Global
 		{8EDAE674-CC21-0D06-0641-064C500DE0CC} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
 		{22744969-682D-4974-895E-53079DA9EA3C} = {61916ED1-66D6-4938-9F1A-D0DF38D16E20}
 		{09ACA8A4-5AC2-413B-A2EC-4FC5B168E5D0} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
+		{511E3B93-C6BF-4DFF-88D1-165FD3BCF428} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
+		{92EFB380-0B78-4B92-A227-F0B6BF982F19} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
+		{A9D16C17-745F-467E-854F-A5C40A28D7A9} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
+		{E7FE453F-AD54-4286-B129-4788C7729F5F} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
+		{AD2CC906-EC76-4736-A216-6453114A0C0C} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

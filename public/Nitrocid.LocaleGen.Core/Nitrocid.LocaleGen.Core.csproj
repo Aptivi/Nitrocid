@@ -69,10 +69,10 @@
   </ItemGroup>
   <!-- LocaleGen Dependencies Information End -->
 
-    <!-- KS Package Files -->
-    <ItemGroup>
-        <None Include="..\Nitrocid\OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
-        <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-    </ItemGroup>
-    <!-- KS Package Files End -->
+  <!-- KS Package Files -->
+  <ItemGroup>
+    <None Include="..\Nitrocid\OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
+    <None Include="..\..\README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+  <!-- KS Package Files End -->
 </Project>
