@@ -1,0 +1,10 @@
+﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Target Name="Build">
+        <Message
+            Importance="high"
+            Text=
+            "Nitrocid KS: $(MSBuildProjectName) doesn't support building in the Core variant of MSBuild.
+             To initiate build, you must build this project from the full installation of Visual Studio."
+        />
+    </Target>
+</Project>
