@@ -44,7 +44,10 @@ namespace KS.Shell.Shells.Debug
         public override void InitializeShell(params object[] ShellArgs)
         {
             if (!Flags.DebugMode)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("You must enable debug mode before you can use the debug shell."), true, KernelColorType.Warning);
                 Bail = true;
+            }
 
             // Actual shell logic
             while (!Bail)

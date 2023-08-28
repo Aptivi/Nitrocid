@@ -976,5 +976,6 @@ Kernel modifications
 Optional components
 User initialization
 Stage
+You must enable debug mode before you can use the debug shell.
 
 ==========================================================================================================================================
