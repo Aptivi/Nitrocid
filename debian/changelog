@@ -19,7 +19,7 @@ kernel-simulator (0.1.0-beta2-0ppa1) jammy; urgency=medium
   * Sped up configuration reader and writer
   * Every theme have their own description
 
- -- EoflaOE <eoflaoevicecity@gmail.com>  Tue, 08 Aug 2023 11:08:10 +0300
+ -- Aptivi CEO <ceo@aptivi.anonaddy.com>  Tue, 08 Aug 2023 11:08:10 +0300
 
 kernel-simulator (0.1.0-beta1-0ppa1) jammy; urgency=medium
 
