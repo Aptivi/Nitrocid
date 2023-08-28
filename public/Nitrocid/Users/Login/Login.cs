@@ -122,8 +122,6 @@ namespace KS.Users.Login
                         TextWriterColor.Write(Translate.DoTranslation("Wrong username or username not found."), true, KernelColorType.Error);
                 }
             }
-
-            Flags.RebootRequested = false;
         }
 
         /// <summary>
@@ -158,8 +156,12 @@ namespace KS.Users.Login
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                         if (!Flags.Maintenance)
+                        {
                             if (!ScreensaverManager.LockMode)
                                 return false;
+                        }
+                        else
+                            return false;
                     }
                 }
                 else
@@ -170,7 +172,6 @@ namespace KS.Users.Login
                 }
             }
 
-            Flags.RebootRequested = false;
             return false;
         }
 
@@ -239,6 +240,33 @@ namespace KS.Users.Login
             ShellStart.StartShellForced(ShellType.Shell);
             ShellStart.PurgeShells();
             DebugWriter.WriteDebug(DebugLevel.I, "Out of login flow.");
+        }
+
+        internal static void PromptMaintenanceLogin()
+        {
+            TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
+            string user = "root";
+            if (UserManagement.UserExists(user))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");
+                for (int tries = 0; tries < 3 && !Flags.RebootRequested; tries++)
+                {
+                    if (ShowPasswordPrompt(user))
+                        SignIn(user);
+                    else
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("Incorrect admin password. You have {0} tries."), 3 - (tries + 1), true, KernelColorType.Error);
+                        if (tries == 2)
+                            TextWriterColor.Write(Translate.DoTranslation("Out of chances. Rebooting..."), true, KernelColorType.Error);
+                    }
+                }
+            }
+            else
+            {
+                // Some malicious mod removed the root account, or rare situation happened and it was gone.
+                DebugWriter.WriteDebug(DebugLevel.F, "Root account not found for maintenance.");
+                throw new KernelException(KernelExceptionType.NoSuchUser, Translate.DoTranslation("Some malicious mod removed the root account, or rare situation happened and it was gone."));
+            }
         }
 
     }

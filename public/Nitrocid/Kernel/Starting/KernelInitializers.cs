@@ -293,6 +293,10 @@ namespace KS.Kernel.Starting
                 DebugWriter.DebugStreamWriter.Close();
                 DebugWriter.DebugStreamWriter.Dispose();
             }
+
+            // Reset power state
+            Flags.RebootRequested = false;
+            Flags.LogoutRequested = false;
         }
     }
 }

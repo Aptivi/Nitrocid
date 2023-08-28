@@ -115,35 +115,9 @@ namespace KS.Kernel
 
                     // Initialize login prompt
                     if (!Flags.Maintenance)
-                    {
                         Login.LoginPrompt();
-                    }
                     else
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("Enter the admin password for maintenance."));
-                        string user = "root";
-                        if (UserManagement.UserExists(user))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");
-                            for (int tries = 0; tries < 3; tries++)
-                            {
-                                if (Login.ShowPasswordPrompt(user))
-                                    Login.SignIn(user);
-                                else
-                                {
-                                    TextWriterColor.Write(Translate.DoTranslation("Incorrect admin password. You have {0} tries."), 3 - (tries + 1), true, KernelColorType.Error);
-                                    if (tries == 2)
-                                        TextWriterColor.Write(Translate.DoTranslation("Out of chances. Rebooting..."), true, KernelColorType.Error);
-                                }
-                            }
-                        }
-                        else
-                        {
-                            // Some malicious mod removed the root account, or rare situation happened and it was gone.
-                            DebugWriter.WriteDebug(DebugLevel.F, "Root account not found for maintenance.");
-                            throw new KernelException(KernelExceptionType.NoSuchUser, Translate.DoTranslation("Some malicious mod removed the root account, or rare situation happened and it was gone."));
-                        }
-                    }
+                        Login.PromptMaintenanceLogin();
 
                     // Clear all active threads as we're rebooting
                     ThreadManager.StopAllThreads();
@@ -157,8 +131,6 @@ namespace KS.Kernel
                 catch (KernelErrorException kee)
                 {
                     DebugWriter.WriteDebugStackTrace(kee);
-                    Flags.RebootRequested = false;
-                    Flags.LogoutRequested = false;
                     Flags.SafeMode = false;
                 }
                 catch (Exception ex)
