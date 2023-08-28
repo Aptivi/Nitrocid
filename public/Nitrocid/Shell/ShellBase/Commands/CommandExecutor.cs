@@ -328,8 +328,6 @@ namespace KS.Shell.ShellBase.Commands
                 // Now, print the output
                 DebugWriter.WriteDebug(DebugLevel.I, "Printing...");
                 TextWriterWrappedColor.WriteWrapped(wrapOutput, false, KernelColorType.NeutralText);
-                if (!wrapOutput.EndsWith(CharManager.NewLine))
-                    TextWriterColor.Write();
             }
             catch (Exception ex)
             {
