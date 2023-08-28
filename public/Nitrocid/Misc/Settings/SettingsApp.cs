@@ -41,6 +41,7 @@ using KS.Misc.Text;
 using KS.Shell.Prompts;
 using KS.Users.Permissions;
 using Newtonsoft.Json.Linq;
+using Properties.Resources;
 using Terminaux.Colors;
 using Terminaux.Colors.Wheel;
 using Terminaux.Figlet;
@@ -933,19 +934,19 @@ namespace KS.Misc.Settings
             {
                 case ConfigType.Kernel:
                     {
-                        return JToken.Parse(Properties.Resources.Resources.SettingsEntries);
+                        return JToken.Parse(KernelResources.SettingsEntries);
                     }
                 case ConfigType.Screensaver:
                     {
-                        return JToken.Parse(Properties.Resources.Resources.ScreensaverSettingsEntries);
+                        return JToken.Parse(KernelResources.ScreensaverSettingsEntries);
                     }
                 case ConfigType.Splash:
                     {
-                        return JToken.Parse(Properties.Resources.Resources.SplashSettingsEntries);
+                        return JToken.Parse(KernelResources.SplashSettingsEntries);
                     }
                 default:
                     {
-                        return JToken.Parse(Properties.Resources.Resources.SettingsEntries);
+                        return JToken.Parse(KernelResources.SettingsEntries);
                     }
             }
         }

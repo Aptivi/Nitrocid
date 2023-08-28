@@ -35,6 +35,7 @@ using KS.Misc.Text;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Properties.Resources;
 
 namespace KS.Languages
 {
@@ -47,7 +48,7 @@ namespace KS.Languages
         internal static Dictionary<string, LanguageInfo> BaseLanguages = new();
         internal static Dictionary<string, LanguageInfo> CustomLanguages = new();
         private static bool NotifyCodepageError;
-        private readonly static JToken LanguageMetadata = JToken.Parse(Properties.Resources.Resources.LanguageMetadata);
+        private readonly static JToken LanguageMetadata = JToken.Parse(KernelResources.LanguageMetadata);
 
         /// <summary>
         /// Current language

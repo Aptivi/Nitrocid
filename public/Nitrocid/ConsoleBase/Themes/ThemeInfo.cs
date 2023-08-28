@@ -22,6 +22,7 @@ using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using Newtonsoft.Json.Linq;
+using Properties.Resources;
 using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Themes
@@ -64,7 +65,7 @@ namespace KS.ConsoleBase.Themes
         /// Generates a new theme info from KS resources
         /// </summary>
         /// <param name="ThemeResourceName">Theme name (must match resource name)</param>
-        public ThemeInfo(string ThemeResourceName) : this(JToken.Parse(Properties.Resources.Resources.ResourceManager.GetString(ThemeResourceName))) {}
+        public ThemeInfo(string ThemeResourceName) : this(JToken.Parse(KernelResources.ResourceManager.GetString(ThemeResourceName))) {}
 
         /// <summary>
         /// Generates a new theme info from file stream

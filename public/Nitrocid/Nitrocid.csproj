@@ -112,11 +112,11 @@
 
   <!-- KS Manifest -->
   <ItemGroup>
-    <EmbeddedResource Update="Properties\Resources.resx">
+    <EmbeddedResource Update="Properties\KernelResources.resx">
       <SubType>Designer</SubType>
       <CustomToolNamespace>Properties.Resources</CustomToolNamespace>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <LastGenOutput>KernelResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <!-- KS Manifest End -->
@@ -131,10 +131,10 @@
     <ProjectReference Include="..\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Properties\Resources.Designer.cs">
+    <Compile Update="Properties\KernelResources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
+      <DependentUpon>KernelResources.resx</DependentUpon>
     </Compile>
   </ItemGroup>
   <!-- KS Package Files End -->

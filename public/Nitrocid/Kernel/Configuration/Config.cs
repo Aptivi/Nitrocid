@@ -33,6 +33,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration.Instances;
 using Newtonsoft.Json.Schema;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Properties.Resources;
 
 namespace KS.Kernel.Configuration
 {
@@ -217,17 +218,17 @@ namespace KS.Kernel.Configuration
                 switch (type)
                 {
                     case ConfigType.Kernel:
-                        schema = JSchema.Parse(Properties.Resources.Resources.KernelMainConfigSchema);
+                        schema = JSchema.Parse(KernelResources.KernelMainConfigSchema);
                         configObj.Validate(schema);
                         break;
                     case ConfigType.Screensaver:
                         // Validate the configuration file
-                        schema = JSchema.Parse(Properties.Resources.Resources.KernelSaverConfigSchema);
+                        schema = JSchema.Parse(KernelResources.KernelSaverConfigSchema);
                         configObj.Validate(schema);
                         break;
                     case ConfigType.Splash:
                         // Validate the configuration file
-                        schema = JSchema.Parse(Properties.Resources.Resources.KernelSplashConfigSchema);
+                        schema = JSchema.Parse(KernelResources.KernelSplashConfigSchema);
                         configObj.Validate(schema);
                         break;
                 }
