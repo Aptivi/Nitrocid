@@ -977,5 +977,12 @@ Optional components
 User initialization
 Stage
 You must enable debug mode before you can use the debug shell.
+Hash...
+Verify...
+Enter a hash driver:
+Hash driver not found.
+Enter your expected hash
+Two hashes match!
+Two hashes don't match.
 
 ==========================================================================================================================================

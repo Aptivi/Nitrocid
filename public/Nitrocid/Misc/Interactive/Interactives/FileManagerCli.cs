@@ -18,6 +18,8 @@
 
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
+using KS.Drivers;
+using KS.Drivers.Encryption;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Querying;
@@ -26,6 +28,7 @@ using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using MimeKit;
 using KS.Files.LineEndings;
 using System.Text;
@@ -65,6 +68,8 @@ namespace KS.Misc.Interactive.Interactives
             new InteractiveTuiBinding(/* Localizable */ "Move To",      ConsoleKey.F8,    (info, _) => MoveTo((FileSystemInfo)info), true),
             new InteractiveTuiBinding(/* Localizable */ "Rename",       ConsoleKey.F9,    (info, _) => Rename((FileSystemInfo)info), true),
             new InteractiveTuiBinding(/* Localizable */ "New Folder",   ConsoleKey.F10,   (_, _)    => MakeDir(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Hash...",      ConsoleKey.F11,   (info, _) => Hash((FileSystemInfo)info)),
+            new InteractiveTuiBinding(/* Localizable */ "Verify...",    ConsoleKey.F12,   (info, _) => Verify((FileSystemInfo)info)),
 
             // Misc bindings
             new InteractiveTuiBinding(/* Localizable */ "Switch",       ConsoleKey.Tab,   (_, _)    => Switch(), true),
@@ -496,6 +501,52 @@ namespace KS.Misc.Interactive.Interactives
                 Making.TryMakeDirectory(path);
             else
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), BoxForegroundColor, BoxBackgroundColor);
+            RedrawRequired = true;
+        }
+
+        private static void Hash(FileSystemInfo currentFileSystemInfo)
+        {
+            // Render the hash box
+            string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
+            string hashDriver = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
+            string hash = "";
+            if (string.IsNullOrEmpty(hashDriver))
+                hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, DriverHandler.CurrentEncryptionDriver.DriverName);
+            else if (hashDrivers.Contains(hashDriver))
+                hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, hashDriver);
+            else
+            {
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+                return;
+            }
+            InfoBoxColor.WriteInfoBox(hash, BoxForegroundColor, BoxBackgroundColor);
+            RedrawRequired = true;
+        }
+
+        private static void Verify(FileSystemInfo currentFileSystemInfo)
+        {
+            // Render the hash box
+            string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
+            string hashDriver = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
+            string hash = "";
+            if (string.IsNullOrEmpty(hashDriver))
+                hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, DriverHandler.CurrentEncryptionDriver.DriverName);
+            else if (hashDrivers.Contains(hashDriver))
+                hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, hashDriver);
+            else
+            {
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+                return;
+            }
+
+            // Now, let the user write the expected hash
+            string expectedHash = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter your expected hash"), BoxForegroundColor, BoxBackgroundColor);
+            if (expectedHash == hash)
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Two hashes match!"), BoxForegroundColor, BoxBackgroundColor);
+            else
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Two hashes don't match."), BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
     }
