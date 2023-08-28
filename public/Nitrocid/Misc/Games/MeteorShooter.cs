@@ -39,6 +39,7 @@ namespace KS.Misc.Games
 
         internal readonly static KernelThread MeteorDrawThread = new("Meteor Shooter Draw Thread", true, DrawGame);
         internal static bool GameEnded = false;
+        internal static bool GameExiting = false;
         internal static int meteorSpeed = 10;
         private static int SpaceshipHeight = 0;
         private readonly static int MaxBullets = 10;
@@ -115,6 +116,7 @@ namespace KS.Misc.Games
             MeteorDrawThread.Wait();
             MeteorDrawThread.Stop();
             GameEnded = false;
+            GameExiting = false;
         }
 
         private static void HandleKeypress(ConsoleKey Keypress)
@@ -135,6 +137,7 @@ namespace KS.Misc.Games
                     break;
                 case ConsoleKey.Escape:
                     GameEnded = true;
+                    GameExiting = true;
                     break;
             }
         }
@@ -250,6 +253,7 @@ namespace KS.Misc.Games
             }
             catch (ThreadInterruptedException)
             {
+                GameExiting = true;
             }
             // Game is over. Move to the Finally block.
             catch (Exception ex)
@@ -257,13 +261,17 @@ namespace KS.Misc.Games
                 // Game is over with an unexpected error.
                 TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
                 ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
+                GameExiting = true;
                 ConsoleWrapper.Clear();
             }
             finally
             {
-                // Write game over
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
-                ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
+                // Write game over if not exiting
+                if (!GameExiting)
+                {
+                   TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                   ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
+                }
                 ConsoleWrapper.Clear();
             }
         }

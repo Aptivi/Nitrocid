@@ -39,6 +39,7 @@ namespace KS.Misc.Games
 
         internal readonly static KernelThread ShipDuetDrawThread = new("ShipDuet Shooter Draw Thread", true, DrawGame);
         internal static bool GameEnded = false;
+        internal static bool GameExiting = false;
         internal static int shipDuetSpeed = 10;
         private static bool player1Won = false;
         private static bool player2Won = false;
@@ -129,6 +130,7 @@ namespace KS.Misc.Games
             ShipDuetDrawThread.Wait();
             ShipDuetDrawThread.Stop();
             GameEnded = false;
+            GameExiting = false;
         }
 
         private static void HandleKeypress(ConsoleKey Keypress)
@@ -161,6 +163,7 @@ namespace KS.Misc.Games
                     break;
                 case ConsoleKey.Escape:
                     GameEnded = true;
+                    GameExiting = true;
                     break;
             }
         }
@@ -296,6 +299,7 @@ namespace KS.Misc.Games
             }
             catch (ThreadInterruptedException)
             {
+                GameExiting = true;
             }
             // Game is over. Move to the Finally block.
             catch (Exception ex)
@@ -303,16 +307,20 @@ namespace KS.Misc.Games
                 // Game is over with an unexpected error.
                 TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
                 ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
+                GameExiting = true;
                 ConsoleWrapper.Clear();
             }
             finally
             {
                 // Write who is the winner
-                if (player1Won && player2Won || !player1Won && !player2Won)
-                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("It's a draw."), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
-                else if (player1Won || player2Won)
-                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Player {0} wins!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: player1Won ? 1 : 2);
-                ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
+                if (!GameExiting)
+                {
+                    if (player1Won && player2Won || !player1Won && !player2Won)
+                        TextWriterWhereColor.WriteWhere(Translate.DoTranslation("It's a draw."), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                    else if (player1Won || player2Won)
+                        TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Player {0} wins!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: player1Won ? 1 : 2);
+                    ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
+                }
                 ConsoleWrapper.Clear();
             }
         }
