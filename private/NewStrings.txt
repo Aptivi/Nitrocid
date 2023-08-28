@@ -969,5 +969,12 @@ Shows the platform bits
 Shows the .NET platform version
 Shows the .NET platform runtime identifier
 You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.
+System initialization
+Kernel updates
+Hardware detection
+Kernel modifications
+Optional components
+User initialization
+Stage
 
 ==========================================================================================================================================

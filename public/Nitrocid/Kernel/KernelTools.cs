@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using System;
 using System.Diagnostics;
 using System.Reflection;
@@ -65,6 +67,18 @@ namespace KS.Kernel
 #else
         internal readonly static string ConsoleTitle = $"Nitrocid v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
 #endif
+
+        /// <summary>
+        /// Check to see if KernelError has been called
+        /// </summary>
+        internal static void CheckErrored()
+        {
+            if (Flags.KernelErrored)
+            {
+                Flags.KernelErrored = false;
+                throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), KernelPanic.LastKernelErrorException, KernelPanic.LastKernelErrorException.Message);
+            }
+        }
 
     }
 }

@@ -22,6 +22,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Journaling;
+using KS.Kernel.Starting;
 using KS.Languages;
 using System;
 
@@ -239,51 +240,6 @@ namespace KS.Misc.Splash
                 TextWriterColor.Write(Text, true, KernelColorType.Error, Vars);
             }
             JournalManager.WriteJournal(Text, JournalStatus.Error, Vars);
-        }
-
-        /// <summary>
-        /// Reports the new kernel stage
-        /// </summary>
-        /// <param name="StageNumber">The stage number</param>
-        /// <param name="StageText">The stage text</param>
-        internal static void ReportNewStage(int StageNumber, string StageText)
-        {
-            // Show the stage finish times
-            if (StageNumber <= 1)
-            {
-                if (Flags.ShowStageFinishTimes)
-                {
-                    ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {KernelTools.StageTimer.Elapsed}", 0);
-                    KernelTools.StageTimer.Restart();
-                }
-            }
-            else if (StageNumber >= 6)
-            {
-                if (Flags.ShowStageFinishTimes)
-                    ReportProgress(Translate.DoTranslation("Stage finished in") + $" {KernelTools.StageTimer.Elapsed}", 10);
-            }
-            else if (Flags.ShowStageFinishTimes)
-            {
-                ReportProgress(Translate.DoTranslation("Stage finished in") + $" {KernelTools.StageTimer.Elapsed}", 10);
-                if (StageNumber >= 6)
-                {
-                    KernelTools.StageTimer.Reset();
-                    TextWriterColor.Write();
-                }
-                else
-                    KernelTools.StageTimer.Restart();
-            }
-
-            // Actually report the stage
-            if (StageNumber >= 1 & StageNumber <= 5)
-            {
-                if (!Flags.EnableSplash & !Flags.QuietKernel)
-                {
-                    TextWriterColor.Write();
-                    SeparatorWriterColor.WriteSeparator(StageText, false, KernelColorType.Stage);
-                }
-                DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");
-            }
         }
 
     }
