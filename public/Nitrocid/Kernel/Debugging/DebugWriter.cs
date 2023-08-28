@@ -45,8 +45,7 @@ namespace KS.Kernel.Debugging
         /// </summary>
         public static bool DebugCensorPrivateInfo => Config.MainConfig.DebugCensorPrivateInfo;
         internal static string DebugPath = "";
-        internal static string lastRoutineName = "";
-        internal static string lastRoutineSource = "";
+        internal static string lastRoutinePath = "";
         internal static StreamWriter DebugStreamWriter;
         internal static object WriteLock = new();
 
@@ -115,23 +114,24 @@ namespace KS.Kernel.Debugging
                         foreach (string splitText in texts)
                         {
                             string routineName = STrace.RoutineName;
+                            string routinePath = STrace.RoutinePath;
                             string fileName = STrace.RoutineFileName;
                             int lineNum = STrace.RoutineLineNumber;
+                            
                             // Check to see if source file name is not empty.
                             if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
                             {
                                 // Show stack information
-                                if (routineName != lastRoutineName && fileName != lastRoutineSource)
+                                if (routinePath != lastRoutinePath)
                                 {
                                     message.Append($"\n\n");
                                     message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} ");
-                                    message.Append($"({STrace.RoutineName} - {STrace.RoutineFileName})\n");
+                                    message.Append($"({routineName} - {fileName})\n");
                                     message.Append(new string('=', message.Length - 3));
                                     message.Append($"\n\n");
                                 }
-                                message.Append($"[line: {STrace.RoutineLineNumber:0000}] [{Level}] : {splitText}\n");
-                                lastRoutineName = routineName;
-                                lastRoutineSource = fileName;
+                                message.Append($"[line: {lineNum:0000}] [{Level}] : {splitText}\n");
+                                lastRoutinePath = routinePath;
                             }
                             else
                                 // Rare case, unless debug symbol is not found.

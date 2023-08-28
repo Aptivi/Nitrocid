@@ -26,6 +26,7 @@ namespace KS.Kernel.Debugging.Trace
     internal class DebugStackFrame
     {
         public string RoutineName { get; }
+        public string RoutinePath { get; }
         public int RoutineLineNumber { get; }
         public int RoutineColumnNumber { get; }
         public string RoutineFileName { get; }
@@ -45,13 +46,16 @@ namespace KS.Kernel.Debugging.Trace
             string Source = Path.GetFileName(FrameFilePath);
             int LineNum = trace.GetFrame(frameNumber).GetFileLineNumber();
             int ColNum = trace.GetFrame(frameNumber).GetFileColumnNumber();
-            string Func = trace.GetFrame(frameNumber).GetMethod().Name;
+            var Method = trace.GetFrame(frameNumber).GetMethod();
+            string Func = Method.Name;
+            string FullFunc = Method.ReflectedType.FullName;
 
             // Install values
             RoutineFileName = Source;
             RoutineLineNumber = LineNum;
             RoutineColumnNumber = ColNum;
             RoutineName = Func;
+            RoutinePath = $"{FullFunc}.{Func}";
         }
     }
 }
