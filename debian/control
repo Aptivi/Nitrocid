@@ -1,7 +1,7 @@
 Source: kernel-simulator
 Section: misc
 Priority: optional
-Maintainer: EoflaOE <eoflaoevicecity@gmail.com>
+Maintainer: Aptivi CEO <ceo@aptivi.anonaddy.com>
 Build-Depends: debhelper-compat (= 12), dotnet-sdk-7.0 (>= 7.0.100)
 Standards-Version: 4.4.0
 Homepage: https://aptivi.gitbook.io/kernel-simulator-manual
