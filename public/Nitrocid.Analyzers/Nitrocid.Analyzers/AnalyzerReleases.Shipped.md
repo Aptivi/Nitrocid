@@ -1,4 +1,4 @@
-## Nitrocid KS 0.1.0 Beta 3
+## Release 0.1.0
 
 ### New Rules
 
