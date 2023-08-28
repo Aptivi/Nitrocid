@@ -138,23 +138,31 @@ namespace KS.ConsoleBase
         }
 
         #region Windows-specific
-        [DllImport("kernel32.dll", SetLastError = true)]
+        private const string winKernel = "kernel32.dll";
+
+        [DllImport(winKernel, SetLastError = true)]
         private static extern bool SetConsoleMode(IntPtr hConsoleHandle, int mode);
 
-        [DllImport("kernel32.dll", SetLastError = true)]
+        [DllImport(winKernel, SetLastError = true)]
         private static extern bool GetConsoleMode(IntPtr handle, out int mode);
 
-        [DllImport("kernel32.dll", SetLastError = true)]
+        [DllImport(winKernel, SetLastError = true)]
         private static extern IntPtr GetStdHandle(int handle);
 
-        internal static void InitializeSequences()
+        internal static bool InitializeSequences()
         {
             IntPtr stdHandle = GetStdHandle(-11);
-            GetConsoleMode(stdHandle, out var mode);
+            int mode = CheckForConHostSequenceSupport();
             if (mode != 7)
-            {
-                SetConsoleMode(stdHandle, mode | 4);
-            }
+                return SetConsoleMode(stdHandle, mode | 4);
+            return true;
+        }
+
+        internal static int CheckForConHostSequenceSupport()
+        {
+            IntPtr stdHandle = GetStdHandle(-11);
+            GetConsoleMode(stdHandle, out int mode);
+            return mode;
         }
         #endregion
 

@@ -83,7 +83,14 @@ namespace KS.Kernel.Starting
 
                 // Initialize crucial things
                 if (!KernelPlatform.IsOnUnix())
-                    ConsoleExtensions.InitializeSequences();
+                {
+                    if (!ConsoleExtensions.InitializeSequences())
+                    {
+                        TextWriterColor.Write("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.");
+                        Input.DetectKeypress();
+                    }
+                }
+
                 AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
                 // A title

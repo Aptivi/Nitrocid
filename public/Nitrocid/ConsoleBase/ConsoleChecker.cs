@@ -104,7 +104,10 @@ namespace KS.ConsoleBase
             if (!IsConsole256Colors())
             {
                 ConsoleWrapper.ForegroundColor = ConsoleColor.Yellow;
-                TextWriterColor.WritePlain("Warning: Nitrocid KS makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
+                if (KernelPlatform.IsOnWindows())
+                    TextWriterColor.WritePlain("Warning: Nitrocid KS makes use of the 256 colors. Don't worry; Nitrocid will automatically set your terminal to handle these sequences, assuming that you're running a supported terminal. Press any key to continue.", true);
+                else
+                    TextWriterColor.WritePlain("Warning: Nitrocid KS makes use of the 256 colors. Make sure that your terminal is set to run on 256 color mode. Your terminal is {0}. Press any key to continue.", true, TerminalType);
                 Input.DetectKeypress();
             }
 
@@ -118,7 +121,7 @@ namespace KS.ConsoleBase
         public static bool IsConsole256Colors()
         {
             string TerminalType = KernelPlatform.GetTerminalType();
-            return TerminalType.Contains("-256col") || KernelPlatform.IsOnWindows();
+            return TerminalType.Contains("-256col") || ConsoleExtensions.CheckForConHostSequenceSupport() == 7;
         }
 
         /// <summary>
