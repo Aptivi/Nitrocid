@@ -19,6 +19,7 @@
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Modifications;
 using KS.Shell.ShellBase.Shells;
 using System.Collections.Generic;
 
@@ -47,8 +48,6 @@ namespace KS.Shell.ShellBase.Commands
         public static bool IsCommandFound(string Command, string ShellType)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
-            if (ShellManager.UnifiedCommandDict.ContainsKey(Command))
-                return true;
             return GetCommands(ShellType).ContainsKey(Command);
         }
 
@@ -60,14 +59,13 @@ namespace KS.Shell.ShellBase.Commands
         public static bool IsCommandFound(string Command)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
-            bool found = ShellManager.UnifiedCommandDict.ContainsKey(Command);
-            if (!found)
-                foreach (var ShellType in ShellManager.AvailableShells.Keys)
-                {
-                    found = GetCommands(ShellType).ContainsKey(Command);
-                    if (found)
-                        break;
-                }
+            bool found = false;
+            foreach (var ShellType in ShellManager.AvailableShells.Keys)
+            {
+                found = GetCommands(ShellType).ContainsKey(Command);
+                if (found)
+                    break;
+            }
             return found;
         }
 
@@ -85,13 +83,30 @@ namespace KS.Shell.ShellBase.Commands
         public static Dictionary<string, CommandInfo> GetCommands(string ShellType)
         {
             // Individual shells
-            Dictionary<string, CommandInfo> FinalCommands = ShellManager.GetShellInfo(ShellType).Commands;
+            var shellInfo = ShellManager.GetShellInfo(ShellType);
+            var modCommands = ModManager.ListModCommands(ShellType);
+            Dictionary<string, CommandInfo> FinalCommands = shellInfo.Commands;
 
             // Unified commands
             foreach (string UnifiedCommand in ShellManager.UnifiedCommandDict.Keys)
             {
-                FinalCommands.Remove(UnifiedCommand);
-                FinalCommands.Add(UnifiedCommand, ShellManager.UnifiedCommandDict[UnifiedCommand]);
+                if (!FinalCommands.ContainsKey(UnifiedCommand))
+                    FinalCommands.Add(UnifiedCommand, ShellManager.UnifiedCommandDict[UnifiedCommand]);
+            }
+
+            // Mod commands
+            foreach (string ModCommand in modCommands.Keys)
+            {
+                if (!FinalCommands.ContainsKey(ModCommand))
+                    FinalCommands.Add(ModCommand, modCommands[ModCommand]);
+            }
+
+            // Aliased commands
+            foreach (string Alias in shellInfo.Aliases.Keys)
+            {
+                string resolved = shellInfo.Aliases[Alias];
+                if (!FinalCommands.ContainsKey(Alias))
+                    FinalCommands.Add(Alias, FinalCommands[resolved]);
             }
 
             return FinalCommands;
@@ -116,8 +131,6 @@ namespace KS.Shell.ShellBase.Commands
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
             var commandList = GetCommands(ShellType);
-            if (ShellManager.UnifiedCommandDict.ContainsKey(Command))
-                return ShellManager.UnifiedCommandDict[Command];
             if (!IsCommandFound(Command, ShellType))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Command not found."));
             return commandList[Command];

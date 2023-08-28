@@ -315,26 +315,10 @@ namespace KS.Shell
                         if (Config.MainConfig.SetTitleOnCommandExecution)
                             ConsoleExtensions.SetTitle($"{KernelTools.ConsoleTitle} - {Command}");
 
-                        if (ModManager.ListModCommands(ShellType).ContainsKey(commandName))
+                        if (Commands.ContainsKey(commandName))
                         {
-                            // Iterate through mod commands
-                            CancellationHandlers.canCancel = true;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Mod commands probing started with {0} from {1}", commandName, Command);
-                            ModExecutor.ExecuteModCommand(Command);
-                            UESHVariables.SetVariable("UESHErrorCode", "0");
-                        }
-                        else if (AliasManager.GetAliasesListFromType(ShellType).ContainsKey(commandName))
-                        {
-                            // Iterate through alias commands
-                            CancellationHandlers.canCancel = true;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Aliases probing started with {0} from {1}", Command, Command);
-                            AliasExecutor.ExecuteAlias(Command, ShellType);
-                            UESHVariables.SetVariable("UESHErrorCode", "0");
-                        }
-                        else if (Commands.ContainsKey(commandName))
-                        {
-                            // Execute the built-in command
-                            DebugWriter.WriteDebug(DebugLevel.I, "Executing built-in command");
+                            // Execute the command
+                            DebugWriter.WriteDebug(DebugLevel.I, "Executing command");
 
                             // Check to see if the command supports redirection
                             if (Commands[commandName].Flags.HasFlag(CommandFlags.RedirectionSupported))

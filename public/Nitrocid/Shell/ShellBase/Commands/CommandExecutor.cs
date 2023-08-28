@@ -358,13 +358,28 @@ namespace KS.Shell.ShellBase.Commands
         /// <returns>List of commands that one of their flags contains <see cref="CommandFlags.Wrappable"/></returns>
         public static string[] GetWrappableCommands(string shellType)
         {
+            // Get shell info
+            var shellInfo = ShellManager.GetShellInfo(shellType);
+
             // Get wrappable commands
-            var WrappableCmds = ShellManager.GetShellInfo(shellType).Commands.Values
+            var WrappableCmds = shellInfo.Commands.Values
                 .Where(CommandInfo => CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                 .Select(CommandInfo => CommandInfo.Command)
                 .ToArray();
+            var WrappableUnified = ShellManager.UnifiedCommandDict.Values
+                .Where(CommandInfo => CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
+                .Select(CommandInfo => CommandInfo.Command)
+                .ToArray();
+            var WrappableAliases = shellInfo.aliases
+                .Where((kvp) => WrappableCmds.Contains(kvp.Value) || WrappableUnified.Contains(kvp.Value))
+                .Select((kvp) => kvp.Key)
+                .ToArray();
+            var finalWrappables = WrappableCmds
+                .Union(WrappableAliases)
+                .Union(WrappableUnified)
+                .ToArray();
 
-            return WrappableCmds;
+            return finalWrappables;
         }
 
     }
