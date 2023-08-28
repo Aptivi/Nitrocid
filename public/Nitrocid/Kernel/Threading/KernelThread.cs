@@ -311,12 +311,12 @@ namespace KS.Kernel.Threading
         {
             if (Executor is null)
                 throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Child thread start action can't be null."));
-            if (IsAlive)
-                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Can't add a child thread when the parent thread, in this case this thread, is already running."));
 
             KernelThread target = new(ThreadName, Background, Executor, true, this);
             ChildThreads.Add(target);
             DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1}", ThreadName, target.ThreadId);
+            if (IsAlive && !IsStopping)
+                target.Start();
         }
 
         /// <summary>
@@ -330,12 +330,12 @@ namespace KS.Kernel.Threading
         {
             if (Executor is null)
                 throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Child thread start action can't be null."));
-            if (IsAlive)
-                throw new KernelException(KernelExceptionType.ThreadOperation, Translate.DoTranslation("Can't add a child thread when the parent thread, in this case this thread, is already running."));
 
             KernelThread target = new(ThreadName, Background, Executor, true, this);
             ChildThreads.Add(target);
             DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1}", ThreadName, target.BaseThread.ManagedThreadId);
+            if (IsAlive && !IsStopping)
+                target.Start();
         }
 
         private void StartInternalNormal(ThreadStart action)
