@@ -989,7 +989,7 @@ namespace KS.Shell.Shells.UESH
             { "themesel",
                 new CommandInfo("themesel", ShellType, /* Localizable */ "Selects a theme and sets it",
                     new[] {
-                        new CommandArgumentInfo(new[] { "Theme" }, Array.Empty<SwitchInfo>(), false, 0, false, (startFrom, _, _) => ThemeTools.Themes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
+                        new CommandArgumentInfo(new[] { "Theme" }, Array.Empty<SwitchInfo>(), false, 0, false, (startFrom, _, _) => ThemeTools.GetInstalledThemes().Keys.Where((src) => src.StartsWith(startFrom)).ToArray())
                     }, new ThemeSelCommand())
             },
             

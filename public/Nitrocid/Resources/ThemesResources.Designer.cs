@@ -63,33 +63,6 @@ namespace KS.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Default&quot;,
-        ///        &quot;Description&quot;: &quot;The default theme for the kernel&quot;
-        ///    },
-        ///    &quot;InputColor&quot;: &quot;15&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;15&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;11&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;9&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;2&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;10&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;7&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;3&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;8&quot;,
-        ///    &quot;StageColor&quot;: &quot;10&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;9&quot;,
-        ///    &quot;WarningColor&quot;: &quot;11&quot;,
-        ///    &quot;OptionColor [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string _Default {
-            get {
-                return ResourceManager.GetString("_Default", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Amaya&quot;,
         ///        &quot;Description&quot;: &quot;Purple harmony&quot;
         ///    },
@@ -378,6 +351,33 @@ namespace KS.Resources {
         public static string Debian {
             get {
                 return ResourceManager.GetString("Debian", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Default&quot;,
+        ///        &quot;Description&quot;: &quot;The default theme for the kernel&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;15&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;15&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;11&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;9&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;2&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;10&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;7&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;3&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;8&quot;,
+        ///    &quot;StageColor&quot;: &quot;10&quot;,
+        ///    &quot;ErrorColor&quot;: &quot;9&quot;,
+        ///    &quot;WarningColor&quot;: &quot;11&quot;,
+        ///    &quot;OptionColor [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Default {
+            get {
+                return ResourceManager.GetString("Default", resourceCulture);
             }
         }
         

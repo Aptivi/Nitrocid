@@ -33,6 +33,8 @@ using static KS.ConsoleBase.Colors.KernelColorTools;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Kernel.Time;
+using KS.Misc.Reflection;
+using KS.Resources;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -42,83 +44,36 @@ namespace KS.ConsoleBase.Themes
     public static class ThemeTools
     {
 
+        private readonly static Dictionary<string, ThemeInfo> themes = new();
+
         /// <summary>
-        /// All the available built-in themes
+        /// Gets the installed themes
         /// </summary>
-        public readonly static Dictionary<string, ThemeInfo> Themes = new()
+        /// <returns>List of installed themes and their <see cref="ThemeInfo"/> instances</returns>
+        public static Dictionary<string, ThemeInfo> GetInstalledThemes()
         {
-            { "Default", new ThemeInfo() },
-            { "Amaya", new ThemeInfo("Amaya") },
-            { "Aptivi", new ThemeInfo("Aptivi") },
-            { "AyuDark", new ThemeInfo("AyuDark") },
-            { "AyuLight", new ThemeInfo("AyuLight") },
-            { "AyuMirage", new ThemeInfo("AyuMirage") },
-            { "BackToSchool", new ThemeInfo("BackToSchool") },
-            { "BlackOnWhite", new ThemeInfo("BlackOnWhite") },
-            { "BlackRose", new ThemeInfo("BlackRose") },
-            { "BreezeDark", new ThemeInfo("BreezeDark") },
-            { "Breeze", new ThemeInfo("Breeze") },
-            { "Darcula", new ThemeInfo("Darcula") },
-            { "Debian", new ThemeInfo("Debian") },
-            { "DefaultVivid", new ThemeInfo("DefaultVivid") },
-            { "EDM", new ThemeInfo("EDM") },
-            { "Fire", new ThemeInfo("Fire") },
-            { "Grape", new ThemeInfo("Grape") },
-            { "Grape Kiwi", new ThemeInfo("Grape_Kiwi") },
-            { "Green Mix", new ThemeInfo("Green_Mix") },
-            { "Grink", new ThemeInfo("Grink") },
-            { "Gruvbox", new ThemeInfo("Gruvbox") },
-            { "Hacker", new ThemeInfo("Hacker") },
-            { "Lemon", new ThemeInfo("Lemon") },
-            { "Light Planks", new ThemeInfo("Light_Planks") },
-            { "LinuxColoredDef", new ThemeInfo("LinuxColoredDef") },
-            { "LinuxUncolored", new ThemeInfo("LinuxUncolored") },
-            { "Materialistic", new ThemeInfo("Materialistic") },
-            { "Maya", new ThemeInfo("Maya") },
-            { "Melange", new ThemeInfo("Melange") },
-            { "MelangeDark", new ThemeInfo("MelangeDark") },
-            { "Mint", new ThemeInfo("Mint") },
-            { "Monokai", new ThemeInfo("Monokai") },
-            { "NeonBreeze", new ThemeInfo("NeonBreeze") },
-            { "Neutralized", new ThemeInfo("Neutralized") },
-            { "NitricAcid", new ThemeInfo("NitricAcid") },
-            { "NoFrilsAcme", new ThemeInfo("NoFrilsAcme") },
-            { "NoFrilsDark", new ThemeInfo("NoFrilsDark") },
-            { "NoFrilsLight", new ThemeInfo("NoFrilsLight") },
-            { "NoFrilsSepia", new ThemeInfo("NoFrilsSepia") },
-            { "Orange Sea", new ThemeInfo("Orange_Sea") },
-            { "Papercolor", new ThemeInfo("Papercolor") },
-            { "PapercolorDark", new ThemeInfo("PapercolorDark") },
-            { "PhosphoricBG", new ThemeInfo("PhosphoricBG") },
-            { "PhosphoricFG", new ThemeInfo("PhosphoricFG") },
-            { "Red Breeze", new ThemeInfo("Red_Breeze") },
-            { "RedConsole", new ThemeInfo("RedConsole") },
-            { "Rigel", new ThemeInfo("Rigel") },
-            { "Sakura", new ThemeInfo("Sakura") },
-            { "SolarizedDark", new ThemeInfo("SolarizedDark") },
-            { "SolarizedLight", new ThemeInfo("SolarizedLight") },
-            { "SpaceCamp", new ThemeInfo("SpaceCamp") },
-            { "SpaceDuck", new ThemeInfo("SpaceDuck") },
-            { "Tealed", new ThemeInfo("Tealed") },
-            { "Techno", new ThemeInfo("Techno") },
-            { "Trance", new ThemeInfo("Trance") },
-            { "Ubuntu", new ThemeInfo("Ubuntu") },
-            { "ViceCity", new ThemeInfo("ViceCity") },
-            { "VisualStudioDark", new ThemeInfo("VisualStudioDark") },
-            { "VisualStudioLight", new ThemeInfo("VisualStudioLight") },
-            { "Windows11", new ThemeInfo("Windows11") },
-            { "Windows11Light", new ThemeInfo("Windows11Light") },
-            { "Windows95", new ThemeInfo("Windows95") },
-            { "Wood", new ThemeInfo("Wood") },
-            { "Yasai", new ThemeInfo("Yasai") },
-        };
+            // Return cached version
+            if (themes.Count > 0)
+                return themes;
+
+            // Now, get all theme names and populate them using ThemeInfo
+            string[] nonThemes = new[]
+            {
+                nameof(ThemesResources.Culture),
+                nameof(ThemesResources.ResourceManager)
+            };
+            string[] themeResNames = PropertyManager.GetPropertiesNoEvaluation(typeof(ThemesResources)).Keys.Except(nonThemes).ToArray();
+            foreach (string key in themeResNames)
+                themes.Add(key, new ThemeInfo(key));
+            return themes;
+        }
 
         /// <summary>
         /// Gets the theme information
         /// </summary>
         /// <param name="theme">Theme name</param>
         public static ThemeInfo GetThemeInfo(string theme) =>
-            Themes[theme];
+            GetInstalledThemes()[theme];
 
         /// <summary>
         /// Gets the colors from the theme
@@ -141,7 +96,7 @@ namespace KS.ConsoleBase.Themes
         public static void ApplyThemeFromResources(string theme)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Theme: {0}", theme);
-            if (Themes.ContainsKey(theme))
+            if (GetInstalledThemes().ContainsKey(theme))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Theme found.");
 

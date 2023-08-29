@@ -99,7 +99,7 @@ namespace KS.ConsoleBase.Themes
         /// Generates a new theme info from KS resources
         /// </summary>
         public ThemeInfo() :
-            this("_Default")
+            this(nameof(ThemesResources.Default))
         { }
 
         /// <summary>

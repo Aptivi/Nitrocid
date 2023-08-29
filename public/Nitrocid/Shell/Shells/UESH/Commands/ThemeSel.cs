@@ -55,9 +55,9 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     // Let the user select a theme
                     List<InputChoiceInfo> themeChoices = new();
-                    foreach (string theme in ThemeTools.Themes.Keys)
+                    foreach (string theme in ThemeTools.GetInstalledThemes().Keys)
                     {
-                        var themeInstance = ThemeTools.Themes[theme];
+                        var themeInstance = ThemeTools.GetThemeInfo(theme);
                         string name = themeInstance.Name;
                         string desc = themeInstance.Description;
                         var ici = new InputChoiceInfo(theme,
@@ -72,7 +72,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         return 3;
 
                     // Get the theme name from index
-                    selectedTheme = ThemeTools.Themes.Keys.ElementAt(colorIndex);
+                    selectedTheme = ThemeTools.GetInstalledThemes().Keys.ElementAt(colorIndex);
                 }
 
                 // Load the theme to the instance
@@ -110,7 +110,7 @@ namespace KS.Shell.Shells.UESH.Commands
         }
 
         public override void HelpHelper() =>
-            TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.Themes.Keys));
+            TextWriterColor.Write("<Theme>: ThemeName.json, " + string.Join(", ", ThemeTools.GetInstalledThemes().Keys));
 
     }
 }

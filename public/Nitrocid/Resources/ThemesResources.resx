@@ -145,7 +145,7 @@
   <data name="Windows95" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Windows95.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
-  <data name="_Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="Default" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Themes\Default.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>
   <data name="NeonBreeze" type="System.Resources.ResXFileRef, System.Windows.Forms">
