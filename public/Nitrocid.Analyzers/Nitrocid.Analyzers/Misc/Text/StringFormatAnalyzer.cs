@@ -21,6 +21,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Nitrocid.Analyzers.Resources;
+using System;
 using System.Collections.Immutable;
 
 namespace Nitrocid.Analyzers.Misc.Text
@@ -42,7 +43,7 @@ namespace Nitrocid.Analyzers.Misc.Text
 
         // A rule
         private static readonly DiagnosticDescriptor Rule =
-            new DiagnosticDescriptor(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
+            new(DiagnosticId, Title, MessageFormat, Category, DiagnosticSeverity.Warning, isEnabledByDefault: true, description: Description);
 
         // Supported diagnostics
         public override ImmutableArray<DiagnosticDescriptor> SupportedDiagnostics =>
@@ -63,7 +64,17 @@ namespace Nitrocid.Analyzers.Misc.Text
             {
                 var name = (IdentifierNameSyntax)exp.Name;
                 var location = context.Node.GetLocation();
-                if (expression.Keyword.Text == "string" && name.Identifier.Text == "Format")
+                if (expression.Keyword.Text == "string" && name.Identifier.Text == nameof(string.Format))
+                {
+                    var diagnostic = Diagnostic.Create(Rule, location);
+                    context.ReportDiagnostic(diagnostic);
+                }
+            }
+            else if (exp.Expression is IdentifierNameSyntax identifier)
+            {
+                var name = (IdentifierNameSyntax)exp.Name;
+                var location = context.Node.GetLocation();
+                if (identifier.Identifier.Text == nameof(String) && name.Identifier.Text == nameof(string.Format))
                 {
                     var diagnostic = Diagnostic.Create(Rule, location);
                     context.ReportDiagnostic(diagnostic);

@@ -22,13 +22,13 @@ using VerifyCS = Nitrocid.Analyzers.Test.CSharpCodeFixVerifier<
     Nitrocid.Analyzers.Misc.Text.StringFormatAnalyzer,
     Nitrocid.Analyzers.Misc.Text.StringFormatCodeFixProvider>;
 
-namespace Nitrocid.Analyzers.Test
+namespace Nitrocid.Analyzers.Test.Misc.Text
 {
     [TestClass]
-    public class NitrocidAnalyzersUnitTest
+    public class StringFormatAnalyzerAltUnitTests
     {
         [TestMethod]
-        public async Task TestMethod1()
+        public async Task TestEnsureNoAnalyzer()
         {
             var test = @"";
 
@@ -36,10 +36,9 @@ namespace Nitrocid.Analyzers.Test
         }
 
         [TestMethod]
-        public async Task TestMethod2()
+        public async Task TestAnalyzeThisDiagnostic()
         {
             var test = """
-
                 using System;
                 using System.Collections.Generic;
                 using System.Linq;
@@ -53,7 +52,7 @@ namespace Nitrocid.Analyzers.Test
                     {   
                         public static void Main()
                         {
-                            Console.WriteLine([|string.Format|]("Hello, {0}!", "Nitrocid"));
+                            Console.WriteLine([|String.Format|]("Hello, {0}!", "Nitrocid"));
                         }
                     }
                 }
@@ -63,10 +62,9 @@ namespace Nitrocid.Analyzers.Test
         }
 
         [TestMethod]
-        public async Task TestMethod3()
+        public async Task TestFixThisDiagnostic()
         {
             var test = """
-
                 using System;
                 using System.Collections.Generic;
                 using System.Linq;
@@ -80,14 +78,13 @@ namespace Nitrocid.Analyzers.Test
                     {   
                         public static void Main()
                         {
-                            Console.WriteLine([|string.Format|]("Hello, {0}!", "Nitrocid"));
+                            Console.WriteLine([|String.Format|]("Hello, {0}!", "Nitrocid"));
                         }
                     }
                 }
                 """;
 
             var fixtest = """
-
                 using System;
                 using System.Collections.Generic;
                 using System.Linq;

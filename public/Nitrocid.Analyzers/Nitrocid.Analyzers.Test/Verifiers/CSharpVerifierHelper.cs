@@ -21,7 +21,7 @@ using Microsoft.CodeAnalysis.CSharp;
 using System;
 using System.Collections.Immutable;
 
-namespace Nitrocid.Analyzers.Test
+namespace Nitrocid.Analyzers.Test.Verifiers
 {
     internal static class CSharpVerifierHelper
     {

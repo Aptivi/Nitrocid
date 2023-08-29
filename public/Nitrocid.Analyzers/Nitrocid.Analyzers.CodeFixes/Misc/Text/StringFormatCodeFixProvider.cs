@@ -82,7 +82,7 @@ namespace Nitrocid.Analyzers.Misc.Text
                 compilation = compilation
                     .AddUsings(SyntaxFactory.UsingDirective(name).NormalizeWhitespace());
             }
-
+            
             var finalDoc = document.WithSyntaxRoot(compilation);
             return finalDoc.Project.Solution;
         }
