@@ -228,7 +228,10 @@ namespace KS.Shell.ShellBase.Commands
                     DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);
                     var CommandBase = TargetCommands[Command].CommandBase;
                     string value = "";
-                    ShellInstance.LastErrorCode = CommandBase.Execute(StrArgs, Args, Switches, ref value);
+                    if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
+                        ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(StrArgs, Args, Switches, ref value);
+                    else
+                        ShellInstance.LastErrorCode = CommandBase.Execute(StrArgs, Args, Switches, ref value);
                     DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);
                     if (containsSetSwitch)
                     {

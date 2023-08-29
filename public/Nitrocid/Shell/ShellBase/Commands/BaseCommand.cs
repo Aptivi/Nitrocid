@@ -42,9 +42,24 @@ namespace KS.Shell.ShellBase.Commands
         }
 
         /// <summary>
+        /// Executes a command on dumb consoles
+        /// </summary>
+        /// <param name="StringArgs">String of arguments</param>
+        /// <param name="ListArgsOnly">List of all arguments</param>
+        /// <param name="ListSwitchesOnly">List of all switches</param>
+        /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
+        /// <returns>Error code for the command</returns>
+        public virtual int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+        }
+
+        /// <summary>
         /// The help helper
         /// </summary>
-        public virtual void HelpHelper() => DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
+        public virtual void HelpHelper() =>
+            DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
 
     }
 }
