@@ -506,10 +506,18 @@ namespace KS.Misc.Interactive.Interactives
 
         private static void Hash(FileSystemInfo currentFileSystemInfo)
         {
+            // First, check to see if it's a file
+            if (!Checking.FileExists(currentFileSystemInfo.FullName))
+            {
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+                return;
+            }
+
             // Render the hash box
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
             string hashDriver = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
-            string hash = "";
+            string hash;
             if (string.IsNullOrEmpty(hashDriver))
                 hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, DriverHandler.CurrentEncryptionDriver.DriverName);
             else if (hashDrivers.Contains(hashDriver))
@@ -526,10 +534,18 @@ namespace KS.Misc.Interactive.Interactives
 
         private static void Verify(FileSystemInfo currentFileSystemInfo)
         {
+            // First, check to see if it's a file
+            if (!Checking.FileExists(currentFileSystemInfo.FullName))
+            {
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+                return;
+            }
+
             // Render the hash box
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
             string hashDriver = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
-            string hash = "";
+            string hash;
             if (string.IsNullOrEmpty(hashDriver))
                 hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, DriverHandler.CurrentEncryptionDriver.DriverName);
             else if (hashDrivers.Contains(hashDriver))

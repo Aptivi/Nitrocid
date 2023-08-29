@@ -984,5 +984,6 @@ Hash driver not found.
 Enter your expected hash
 Two hashes match!
 Two hashes don't match.
+Selected entry is not a file.
 
 ==========================================================================================================================================
