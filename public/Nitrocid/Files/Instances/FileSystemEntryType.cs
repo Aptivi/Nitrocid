@@ -16,30 +16,24 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.IO;
-using KS.Drivers;
-using KS.Files.Folders;
-using KS.Files.Instances;
-
-namespace KS.Files.Print
+namespace KS.Files.Instances
 {
     /// <summary>
-    /// Directory information printing module
+    /// Enumeration for file system entry type
     /// </summary>
-    public static class DirectoryInfoPrinter
+    public enum FileSystemEntryType
     {
-
         /// <summary>
-        /// Prints the directory information to the console
+        /// Non-existent file or directory
         /// </summary>
-        public static void PrintDirectoryInfo(FileSystemEntry DirectoryInfo) => 
-            DriverHandler.CurrentFilesystemDriverLocal.PrintDirectoryInfo(DirectoryInfo, Listing.ShowFileDetailsList);
-
+        Nonexistent,
         /// <summary>
-        /// Prints the directory information to the console
+        /// A single file
         /// </summary>
-        public static void PrintDirectoryInfo(FileSystemEntry DirectoryInfo, bool ShowDirectoryDetails) =>
-            DriverHandler.CurrentFilesystemDriverLocal.PrintDirectoryInfo(DirectoryInfo, ShowDirectoryDetails);
-
+        File,
+        /// <summary>
+        /// A single directory
+        /// </summary>
+        Directory
     }
 }

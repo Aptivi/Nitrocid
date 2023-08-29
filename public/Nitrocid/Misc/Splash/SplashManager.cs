@@ -26,6 +26,7 @@ using System.Threading;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Folders;
+using KS.Files.Instances;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel;
@@ -108,13 +109,13 @@ namespace KS.Misc.Splash
             if (!Checking.FolderExists(SplashPath))
                 Making.MakeDirectory(SplashPath);
             var SplashFiles = Listing.CreateList(SplashPath);
-            foreach (FileSystemInfo SplashFileInfo in SplashFiles)
+            foreach (FileSystemEntry SplashFileInfo in SplashFiles)
             {
-                string FilePath = SplashFileInfo.FullName;
-                string FileName = SplashFileInfo.Name;
+                string FilePath = SplashFileInfo.FilePath;
+                string FileName = SplashFileInfo.BaseEntry.Name;
 
                 // Try to parse the splash file
-                if (SplashFileInfo.Extension == ".dll")
+                if (SplashFileInfo.BaseEntry.Extension == ".dll")
                 {
                     // We got a .dll file that may or may not contain splash file. Parse that to verify.
                     try
@@ -159,7 +160,7 @@ namespace KS.Misc.Splash
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping incompatible splash file {0} because file extension is not .dll ({1})...", FilePath, SplashFileInfo.Extension);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping incompatible splash file {0} because file extension is not .dll ({1})...", FilePath, SplashFileInfo.BaseEntry.Extension);
                 }
             }
         }
@@ -170,9 +171,9 @@ namespace KS.Misc.Splash
         public static void UnloadSplashes()
         {
             var SplashFiles = Listing.CreateList(Paths.GetKernelPath(KernelPathType.CustomSplashes));
-            foreach (FileSystemInfo SplashFileInfo in SplashFiles)
+            foreach (FileSystemEntry SplashFileInfo in SplashFiles)
             {
-                string FilePath = SplashFileInfo.FullName;
+                string FilePath = SplashFileInfo.FilePath;
 
                 // Try to parse the splash file
                 try

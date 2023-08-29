@@ -40,6 +40,7 @@ using KS.Kernel.Configuration;
 using KS.Files;
 using KS.Misc.Reflection;
 using System.Reflection;
+using KS.Files.Instances;
 
 namespace KS.Misc.Interactive.Interactives
 {
@@ -57,19 +58,19 @@ namespace KS.Misc.Interactive.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
         {
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Open",         ConsoleKey.Enter, (info, _) => Open((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Copy",         ConsoleKey.F1,    (info, _) => CopyFileOrDir((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Move",         ConsoleKey.F2,    (info, _) => MoveFileOrDir((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete",       ConsoleKey.F3,    (info, _) => RemoveFileOrDir((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Open",         ConsoleKey.Enter, (info, _) => Open((FileSystemEntry)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Copy",         ConsoleKey.F1,    (info, _) => CopyFileOrDir((FileSystemEntry)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Move",         ConsoleKey.F2,    (info, _) => MoveFileOrDir((FileSystemEntry)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete",       ConsoleKey.F3,    (info, _) => RemoveFileOrDir((FileSystemEntry)info), true),
             new InteractiveTuiBinding(/* Localizable */ "Up",           ConsoleKey.F4,    (_, _)    => GoUp(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Info",         ConsoleKey.F5,    (info, _) => PrintFileSystemInfo((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Info",         ConsoleKey.F5,    (info, _) => PrintFileSystemEntry((FileSystemEntry)info), true),
             new InteractiveTuiBinding(/* Localizable */ "Go To",        ConsoleKey.F6,    (_, _)    => GoTo(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Copy To",      ConsoleKey.F7,    (info, _) => CopyTo((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Move To",      ConsoleKey.F8,    (info, _) => MoveTo((FileSystemInfo)info), true),
-            new InteractiveTuiBinding(/* Localizable */ "Rename",       ConsoleKey.F9,    (info, _) => Rename((FileSystemInfo)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Copy To",      ConsoleKey.F7,    (info, _) => CopyTo((FileSystemEntry)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Move To",      ConsoleKey.F8,    (info, _) => MoveTo((FileSystemEntry)info), true),
+            new InteractiveTuiBinding(/* Localizable */ "Rename",       ConsoleKey.F9,    (info, _) => Rename((FileSystemEntry)info), true),
             new InteractiveTuiBinding(/* Localizable */ "New Folder",   ConsoleKey.F10,   (_, _)    => MakeDir(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Hash...",      ConsoleKey.F11,   (info, _) => Hash((FileSystemInfo)info)),
-            new InteractiveTuiBinding(/* Localizable */ "Verify...",    ConsoleKey.F12,   (info, _) => Verify((FileSystemInfo)info)),
+            new InteractiveTuiBinding(/* Localizable */ "Hash...",      ConsoleKey.F11,   (info, _) => Hash((FileSystemEntry)info)),
+            new InteractiveTuiBinding(/* Localizable */ "Verify...",    ConsoleKey.F12,   (info, _) => Verify((FileSystemEntry)info)),
 
             // Misc bindings
             new InteractiveTuiBinding(/* Localizable */ "Switch",       ConsoleKey.Tab,   (_, _)    => Switch(), true),
@@ -94,7 +95,7 @@ namespace KS.Misc.Interactive.Interactives
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the first pane [{0}]: {1}", firstPanePath, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    return new List<FileSystemInfo>();
+                    return new List<FileSystemEntry>();
                 }
             }
         }
@@ -112,7 +113,7 @@ namespace KS.Misc.Interactive.Interactives
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get current directory list for the second pane [{0}]: {1}", secondPanePath, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    return new List<FileSystemInfo>();
+                    return new List<FileSystemEntry>();
                 }
             }
         }
@@ -120,7 +121,7 @@ namespace KS.Misc.Interactive.Interactives
         /// <inheritdoc/>
         public override void RenderStatus(object item)
         {
-            FileSystemInfo FileInfoCurrentPane = (FileSystemInfo)item;
+            FileSystemEntry FileInfoCurrentPane = (FileSystemEntry)item;
 
             // Check to see if we're given the file system info
             if (FileInfoCurrentPane == null)
@@ -132,20 +133,20 @@ namespace KS.Misc.Interactive.Interactives
             // Now, populate the info to the status
             try
             {
-                bool infoIsDirectory = Checking.FolderExists(FileInfoCurrentPane.FullName);
+                bool infoIsDirectory = FileInfoCurrentPane.Type == FileSystemEntryType.Directory;
                 if (Config.MainConfig.IfmShowFileSize)
                     Status =
                         // Name and directory indicator
-                        $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name} | " +
+                        $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name} | " +
 
                         // File size or directory size
-                        $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane).FileSizeToString())} | " +
+                        $"{(!infoIsDirectory ? ((FileInfo)FileInfoCurrentPane.BaseEntry).Length.FileSizeToString() : SizeGetter.GetAllSizesInFolder((DirectoryInfo)FileInfoCurrentPane.BaseEntry).FileSizeToString())} | " +
 
                         // Modified date
-                        $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane).LastWriteTime) : "")}"
+                        $"{(!infoIsDirectory ? TimeDateRenderers.Render(((FileInfo)FileInfoCurrentPane.BaseEntry).LastWriteTime) : "")}"
                     ;
                 else
-                    Status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.Name}";
+                    Status = $"[{(infoIsDirectory ? "/" : "*")}] {FileInfoCurrentPane.BaseEntry.Name}";
             }
             catch (Exception ex)
             {
@@ -158,9 +159,9 @@ namespace KS.Misc.Interactive.Interactives
         {
             try
             {
-                FileSystemInfo file = (FileSystemInfo)item;
-                bool isDirectory = Checking.FolderExists(file.FullName);
-                return $" [{(isDirectory ? "/" : "*")}] {file.Name}";
+                FileSystemEntry file = (FileSystemEntry)item;
+                bool isDirectory = file.Type == FileSystemEntryType.Directory;
+                return $" [{(isDirectory ? "/" : "*")}] {file.BaseEntry.Name}";
             }
             catch (Exception ex)
             {
@@ -170,34 +171,33 @@ namespace KS.Misc.Interactive.Interactives
             }
         }
 
-        private static void Open(FileSystemInfo currentFileSystemInfo)
+        private static void Open(FileSystemEntry currentFileSystemEntry)
         {
             try
             {
-                if (!Checking.FolderExists(currentFileSystemInfo.FullName) &&
-                    !Checking.FileExists(currentFileSystemInfo.FullName))
+                if (!currentFileSystemEntry.Exists)
                     return;
 
                 // Now that the selected file or folder exists, check the type.
-                if (Checking.FolderExists(currentFileSystemInfo.FullName))
+                if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
                 {
                     // We're dealing with a folder. Open it in the selected pane.
                     if (CurrentPane == 2)
                     {
-                        secondPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
+                        secondPanePath = Filesystem.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         SecondPaneCurrentSelection = 1;
                     }
                     else
                     {
-                        firstPanePath = Filesystem.NeutralizePath(currentFileSystemInfo.FullName + "/");
+                        firstPanePath = Filesystem.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         FirstPaneCurrentSelection = 1;
                     }
                 }
-                else
+                else if (currentFileSystemEntry.Type == FileSystemEntryType.File)
                 {
                     // We're dealing with a file. Clear the screen and open the appropriate editor.
                     KernelColorTools.LoadBack();
-                    Opening.OpenEditor(currentFileSystemInfo.FullName);
+                    Opening.OpenEditor(currentFileSystemEntry.FilePath);
                     RedrawRequired = true;
                 }
             }
@@ -233,17 +233,17 @@ namespace KS.Misc.Interactive.Interactives
             RedrawRequired = true;
         }
 
-        private static void PrintFileSystemInfo(FileSystemInfo currentFileSystemInfo)
+        private static void PrintFileSystemEntry(FileSystemEntry currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemInfo is null)
+            if (currentFileSystemEntry is null)
                 return;
 
             // Render the final information string
             try
             {
                 var finalInfoRendered = new StringBuilder();
-                string fullPath = currentFileSystemInfo.FullName;
+                string fullPath = currentFileSystemEntry.FilePath;
                 if (Checking.FolderExists(fullPath))
                 {
                     // The file system info instance points to a folder
@@ -305,10 +305,10 @@ namespace KS.Misc.Interactive.Interactives
             RedrawRequired = true;
         }
 
-        private static void CopyFileOrDir(FileSystemInfo currentFileSystemInfo)
+        private static void CopyFileOrDir(FileSystemEntry currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemInfo is null)
+            if (currentFileSystemEntry is null)
                 return;
 
             try
@@ -317,7 +317,7 @@ namespace KS.Misc.Interactive.Interactives
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
-                Copying.CopyFileOrDir(currentFileSystemInfo.FullName, dest);
+                Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, dest);
             }
             catch (Exception ex)
             {
@@ -329,10 +329,10 @@ namespace KS.Misc.Interactive.Interactives
             }
         }
 
-        private static void MoveFileOrDir(FileSystemInfo currentFileSystemInfo)
+        private static void MoveFileOrDir(FileSystemEntry currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemInfo is null)
+            if (currentFileSystemEntry is null)
                 return;
 
             try
@@ -341,7 +341,7 @@ namespace KS.Misc.Interactive.Interactives
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
-                Moving.MoveFileOrDir(currentFileSystemInfo.FullName, dest);
+                Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, dest);
             }
             catch (Exception ex)
             {
@@ -353,15 +353,15 @@ namespace KS.Misc.Interactive.Interactives
             }
         }
 
-        private static void RemoveFileOrDir(FileSystemInfo currentFileSystemInfo)
+        private static void RemoveFileOrDir(FileSystemEntry currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemInfo is null)
+            if (currentFileSystemEntry is null)
                 return;
 
             try
             {
-                Removing.RemoveFileOrDir(currentFileSystemInfo.FullName);
+                Removing.RemoveFileOrDir(currentFileSystemEntry.FilePath);
             }
             catch (Exception ex)
             {
@@ -396,10 +396,10 @@ namespace KS.Misc.Interactive.Interactives
             RedrawRequired = true;
         }
 
-        private static void CopyTo(FileSystemInfo currentFileSystemInfo)
+        private static void CopyTo(FileSystemEntry currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemInfo is null)
+            if (currentFileSystemEntry is null)
                 return;
 
             try
@@ -412,7 +412,7 @@ namespace KS.Misc.Interactive.Interactives
                 if (Checking.FolderExists(path))
                 {
                     if (Parsing.TryParsePath(path))
-                        Copying.CopyFileOrDir(currentFileSystemInfo.FullName, path);
+                        Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
                     else
                         InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
                 }
@@ -429,10 +429,10 @@ namespace KS.Misc.Interactive.Interactives
             }
         }
 
-        private static void MoveTo(FileSystemInfo currentFileSystemInfo)
+        private static void MoveTo(FileSystemEntry currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemInfo is null)
+            if (currentFileSystemEntry is null)
                 return;
 
             try
@@ -445,7 +445,7 @@ namespace KS.Misc.Interactive.Interactives
                 if (Checking.FolderExists(path))
                 {
                     if (Parsing.TryParsePath(path))
-                        Moving.MoveFileOrDir(currentFileSystemInfo.FullName, path);
+                        Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
                     else
                         InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
                 }
@@ -462,10 +462,10 @@ namespace KS.Misc.Interactive.Interactives
             }
         }
 
-        private static void Rename(FileSystemInfo currentFileSystemInfo)
+        private static void Rename(FileSystemEntry currentFileSystemEntry)
         {
             // Don't do anything if we haven't been provided anything.
-            if (currentFileSystemInfo is null)
+            if (currentFileSystemEntry is null)
                 return;
 
             try
@@ -475,7 +475,7 @@ namespace KS.Misc.Interactive.Interactives
                 if (!Checking.FileExists(filename))
                 {
                     if (Parsing.TryParseFileName(filename))
-                        Moving.MoveFileOrDir(currentFileSystemInfo.FullName, Path.GetDirectoryName(currentFileSystemInfo.FullName) + $"/{filename}");
+                        Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
                     else
                         InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
                 }
@@ -504,10 +504,10 @@ namespace KS.Misc.Interactive.Interactives
             RedrawRequired = true;
         }
 
-        private static void Hash(FileSystemInfo currentFileSystemInfo)
+        private static void Hash(FileSystemEntry currentFileSystemEntry)
         {
             // First, check to see if it's a file
-            if (!Checking.FileExists(currentFileSystemInfo.FullName))
+            if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
@@ -519,9 +519,9 @@ namespace KS.Misc.Interactive.Interactives
             string hashDriver = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
             string hash;
             if (string.IsNullOrEmpty(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, DriverHandler.CurrentEncryptionDriver.DriverName);
+                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
             else if (hashDrivers.Contains(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, hashDriver);
+                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
             else
             {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
@@ -532,10 +532,10 @@ namespace KS.Misc.Interactive.Interactives
             RedrawRequired = true;
         }
 
-        private static void Verify(FileSystemInfo currentFileSystemInfo)
+        private static void Verify(FileSystemEntry currentFileSystemEntry)
         {
             // First, check to see if it's a file
-            if (!Checking.FileExists(currentFileSystemInfo.FullName))
+            if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
@@ -547,9 +547,9 @@ namespace KS.Misc.Interactive.Interactives
             string hashDriver = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
             string hash;
             if (string.IsNullOrEmpty(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, DriverHandler.CurrentEncryptionDriver.DriverName);
+                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
             else if (hashDrivers.Contains(hashDriver))
-                hash = Encryption.GetEncryptedFile(currentFileSystemInfo.FullName, hashDriver);
+                hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
             else
             {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);

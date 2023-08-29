@@ -985,5 +985,6 @@ Enter your expected hash
 Two hashes match!
 Two hashes don't match.
 Selected entry is not a file.
+Can't get base entry out of non-existent file or directory.
 
 ==========================================================================================================================================

@@ -45,6 +45,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Probers.Regexp;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.PathLookup;
+using KS.Files.Instances;
 
 namespace KS.Drivers.Filesystem
 {
@@ -288,11 +289,11 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false)
+        public virtual List<FileSystemEntry> CreateList(string folder, bool Sorted = false, bool Recursive = false)
         {
             FS.ThrowOnInvalidPath(folder);
             DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
-            var FilesystemEntries = new List<FileSystemInfo>();
+            var FilesystemEntries = new List<FileSystemEntry>();
 
             // List files and folders
             folder = FS.NeutralizePath(folder);
@@ -314,16 +315,9 @@ namespace KS.Drivers.Filesystem
                     DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry);
                     try
                     {
-                        if (Checking.FileExists(Entry))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Entry is a file. Adding {0} to list...", Entry);
-                            FilesystemEntries.Add(new FileInfo(Entry));
-                        }
-                        else if (Checking.FolderExists(Entry))
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Entry is a folder. Adding {0} to list...", Entry);
-                            FilesystemEntries.Add(new DirectoryInfo(Entry));
-                        }
+                        var createdEntry = new FileSystemEntry(Entry);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Entry is a {0}. Adding {1} to list...", createdEntry.Type.ToString(), Entry);
+                        FilesystemEntries.Add(createdEntry);
                     }
                     catch (Exception ex)
                     {
@@ -337,7 +331,8 @@ namespace KS.Drivers.Filesystem
             if (Sorted & !(FilesystemEntries.Count == 0))
             {
                 // We define the max string length for the largest size. This is to overcome the limitation of sorting when it comes to numbers.
-                int MaxLength = FilesystemEntries.Max(x => x as FileInfo is not null ? (x as FileInfo).Length.GetDigits() : 1);
+                int MaxLength = FilesystemEntries
+                    .Max((fse) => fse.BaseEntry as FileInfo is not null ? (fse.BaseEntry as FileInfo).Length.GetDigits() : 1);
 
                 // Select whether or not to sort descending.
                 switch (Listing.SortDirection)
@@ -356,8 +351,8 @@ namespace KS.Drivers.Filesystem
             }
 
             // We would most likely need to put the folders first, then the files.
-            var listFolders = FilesystemEntries.Where((fsi) => Checking.FolderExists(fsi.FullName)).ToList();
-            var listFiles =   FilesystemEntries.Where((fsi) => Checking.FileExists(fsi.FullName)).ToList();
+            var listFolders = FilesystemEntries.Where((fsi) => fsi.Type == FileSystemEntryType.Directory).ToList();
+            var listFiles =   FilesystemEntries.Where((fsi) => fsi.Type == FileSystemEntryType.File).ToList();
             return listFolders.Union(listFiles).ToList();
         }
 
@@ -989,70 +984,72 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual void PrintDirectoryInfo(FileSystemInfo DirectoryInfo) =>
+        public virtual void PrintDirectoryInfo(FileSystemEntry DirectoryInfo) =>
             PrintDirectoryInfo(DirectoryInfo, Listing.ShowFileDetailsList);
 
         /// <inheritdoc/>
-        public virtual void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails)
+        public virtual void PrintDirectoryInfo(FileSystemEntry DirectoryInfo, bool ShowDirectoryDetails)
         {
-            if (Checking.FolderExists(DirectoryInfo.FullName))
+            if (DirectoryInfo.Type == FileSystemEntryType.Directory)
             {
                 // Get all file sizes in a folder
-                long TotalSize = SizeGetter.GetAllSizesInFolder((DirectoryInfo)DirectoryInfo);
+                var finalDirInfo = DirectoryInfo.BaseEntry as DirectoryInfo;
+                long TotalSize = SizeGetter.GetAllSizesInFolder(finalDirInfo);
 
                 // Print information
-                if (DirectoryInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !DirectoryInfo.Attributes.HasFlag(FileAttributes.Hidden))
+                if (finalDirInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    TextWriterColor.Write("- " + DirectoryInfo.Name + "/", false, KernelColorType.ListEntry);
+                    TextWriterColor.Write("- " + finalDirInfo.Name + "/", false, KernelColorType.ListEntry);
                     if (ShowDirectoryDetails)
                     {
                         TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
-                        TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, TotalSize.FileSizeToString(), DirectoryInfo.CreationTime.ToShortDateString(), DirectoryInfo.CreationTime.ToShortTimeString(), DirectoryInfo.LastWriteTime.ToShortDateString(), DirectoryInfo.LastWriteTime.ToShortTimeString());
+                        TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, TotalSize.FileSizeToString(), finalDirInfo.CreationTime.ToShortDateString(), finalDirInfo.CreationTime.ToShortTimeString(), finalDirInfo.LastWriteTime.ToShortDateString(), finalDirInfo.LastWriteTime.ToShortTimeString());
                     }
                     TextWriterColor.Write();
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, DirectoryInfo.FullName);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FolderExists = {0}", Checking.FolderExists(DirectoryInfo.FullName));
+                TextWriterColor.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, DirectoryInfo.FilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "Folder doesn't exist. {0}", DirectoryInfo.FilePath);
             }
         }
 
         /// <inheritdoc/>
-        public virtual void PrintFileInfo(FileSystemInfo FileInfo) =>
+        public virtual void PrintFileInfo(FileSystemEntry FileInfo) =>
             PrintFileInfo(FileInfo, Listing.ShowFileDetailsList);
 
         /// <inheritdoc/>
-        public virtual void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails)
+        public virtual void PrintFileInfo(FileSystemEntry FileInfo, bool ShowFileDetails)
         {
-            if (Checking.FileExists(FileInfo.FullName))
+            if (FileInfo.Type == FileSystemEntryType.File)
             {
-                if (FileInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !FileInfo.Attributes.HasFlag(FileAttributes.Hidden))
+                var finalDirInfo = FileInfo.BaseEntry as FileInfo;
+                if (finalDirInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    if (FileInfo.Name.EndsWith(".uesh"))
+                    if (finalDirInfo.Name.EndsWith(".uesh"))
                     {
-                        TextWriterColor.Write("- " + FileInfo.Name, false, KernelColorType.Stage);
+                        TextWriterColor.Write("- " + finalDirInfo.Name, false, KernelColorType.Stage);
                         if (ShowFileDetails)
                             TextWriterColor.Write(": ", false, KernelColorType.Stage);
                     }
                     else
                     {
-                        TextWriterColor.Write("- " + FileInfo.Name, false, KernelColorType.ListEntry);
+                        TextWriterColor.Write("- " + finalDirInfo.Name, false, KernelColorType.ListEntry);
                         if (ShowFileDetails)
                             TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
                     }
                     if (ShowFileDetails)
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, ((FileInfo)FileInfo).Length.FileSizeToString(), FileInfo.CreationTime.ToShortDateString(), FileInfo.CreationTime.ToShortTimeString(), FileInfo.LastWriteTime.ToShortDateString(), FileInfo.LastWriteTime.ToShortTimeString());
+                        TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.FileSizeToString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
                     }
                     TextWriterColor.Write();
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("File {0} not found"), true, KernelColorType.Error, FileInfo.FullName);
-                DebugWriter.WriteDebug(DebugLevel.I, "IO.FileExists = {0}", Checking.FileExists(FileInfo.FullName));
+                TextWriterColor.Write(Translate.DoTranslation("File {0} not found"), true, KernelColorType.Error, FileInfo.FilePath);
+                DebugWriter.WriteDebug(DebugLevel.I, "File doesn't exist. {0}", FileInfo.FilePath);
             }
         }
 
@@ -1297,19 +1294,19 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength) =>
+        public virtual string SortSelector(FileSystemEntry FileSystemEntry, int MaxLength) =>
             Listing.SortMode switch
             {
-                FilesystemSortOptions.FullName          => FileSystemEntry.FullName,
-                FilesystemSortOptions.Length            => (FileSystemEntry as FileInfo is not null ? (FileSystemEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0'),
-                FilesystemSortOptions.CreationTime      => Convert.ToString(FileSystemEntry.CreationTime),
-                FilesystemSortOptions.LastAccessTime    => Convert.ToString(FileSystemEntry.LastAccessTime),
-                FilesystemSortOptions.LastWriteTime     => Convert.ToString(FileSystemEntry.LastWriteTime),
-                FilesystemSortOptions.Extension         => FileSystemEntry.Extension,
-                FilesystemSortOptions.CreationTimeUtc   => Convert.ToString(FileSystemEntry.CreationTimeUtc),
-                FilesystemSortOptions.LastAccessTimeUtc => Convert.ToString(FileSystemEntry.LastAccessTimeUtc),
-                FilesystemSortOptions.LastWriteTimeUtc  => Convert.ToString(FileSystemEntry.LastWriteTimeUtc),
-                _                                       => FileSystemEntry.FullName,
+                FilesystemSortOptions.FullName          => FileSystemEntry.FilePath,
+                FilesystemSortOptions.Length            => (FileSystemEntry.BaseEntry as FileInfo is not null ? (FileSystemEntry.BaseEntry as FileInfo).Length : 0L).ToString().PadLeft(MaxLength, '0'),
+                FilesystemSortOptions.CreationTime      => Convert.ToString(FileSystemEntry.BaseEntry.CreationTime),
+                FilesystemSortOptions.LastAccessTime    => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTime),
+                FilesystemSortOptions.LastWriteTime     => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTime),
+                FilesystemSortOptions.Extension         => FileSystemEntry.BaseEntry.Extension,
+                FilesystemSortOptions.CreationTimeUtc   => Convert.ToString(FileSystemEntry.BaseEntry.CreationTimeUtc),
+                FilesystemSortOptions.LastAccessTimeUtc => Convert.ToString(FileSystemEntry.BaseEntry.LastAccessTimeUtc),
+                FilesystemSortOptions.LastWriteTimeUtc  => Convert.ToString(FileSystemEntry.BaseEntry.LastWriteTimeUtc),
+                _                                       => FileSystemEntry.FilePath,
             };
 
         /// <inheritdoc/>

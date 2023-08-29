@@ -24,6 +24,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers;
+using KS.Files.Instances;
 using KS.Files.Print;
 using KS.Files.Querying;
 using KS.Kernel;
@@ -73,7 +74,7 @@ namespace KS.Files.Folders
         /// <param name="Sorted">Whether the list is sorted or not</param>
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
-        public static List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false) =>
+        public static List<FileSystemEntry> CreateList(string folder, bool Sorted = false, bool Recursive = false) =>
             DriverHandler.CurrentFilesystemDriverLocal.CreateList(folder, Sorted, Recursive);
 
         /// <summary>
@@ -114,7 +115,7 @@ namespace KS.Files.Folders
             folder = Filesystem.NeutralizePath(folder);
             if (Checking.FolderExists(folder) | folder.ContainsAnyOf(new[] { "?", "*" }))
             {
-                List<FileSystemInfo> enumeration;
+                List<FileSystemEntry> enumeration;
                 SeparatorWriterColor.WriteSeparator(folder, true);
 
                 // Try to create a list
@@ -126,25 +127,26 @@ namespace KS.Files.Folders
 
                     // Enumerate each entry
                     long TotalSize = 0L;
-                    foreach (FileSystemInfo Entry in enumeration)
+                    foreach (FileSystemEntry Entry in enumeration)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry.FullName);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Enumerating {0}...", Entry.FilePath);
                         try
                         {
-                            if (Checking.FileExists(Entry.FullName))
+                            switch (Entry.Type)
                             {
-                                TotalSize += ((FileInfo)Entry).Length;
-                                FileInfoPrinter.PrintFileInfo(Entry);
-                            }
-                            else if (Checking.FolderExists(Entry.FullName))
-                            {
-                                DirectoryInfoPrinter.PrintDirectoryInfo(Entry);
+                                case FileSystemEntryType.File:
+                                    TotalSize += ((FileInfo)Entry.BaseEntry).Length;
+                                    FileInfoPrinter.PrintFileInfo(Entry);
+                                    break;
+                                case FileSystemEntryType.Directory:
+                                    DirectoryInfoPrinter.PrintDirectoryInfo(Entry);
+                                    break;
                             }
                         }
                         catch (UnauthorizedAccessException ex)
                         {
                             if (!SuppressUnauthorizedMessage)
-                                TextWriterColor.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, Entry.Name);
+                                TextWriterColor.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, Entry.OriginalFilePath);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
@@ -163,7 +165,7 @@ namespace KS.Files.Folders
             {
                 try
                 {
-                    FileInfoPrinter.PrintFileInfo(new FileInfo(folder), ShowFileDetails);
+                    FileInfoPrinter.PrintFileInfo(new FileSystemEntry(folder), ShowFileDetails);
                 }
                 catch (UnauthorizedAccessException ex)
                 {

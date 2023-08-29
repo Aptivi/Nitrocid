@@ -75,7 +75,7 @@ namespace KS.Shell.ShellBase.Commands
                 string lookupPath = Path.IsPathRooted(LastArgument) ? Path.GetDirectoryName(LastArgument) : Filesystem.NeutralizePath(LastArgument, CurrentDirectory.CurrentDir);
                 lookupPath = Checking.FolderExists(lookupPath) ? lookupPath : Path.GetDirectoryName(CurrentDirectory.CurrentDir + "/" + LastArgument);
                 finalCompletions = Listing.CreateList(lookupPath, true)
-                    .Select(x => Path.IsPathRooted(LastArgument) ? Filesystem.NeutralizePath(x.FullName) : Filesystem.NeutralizePath(x.FullName).Replace(CurrentDirectory.CurrentDir + "/", ""))
+                    .Select(x => Path.IsPathRooted(LastArgument) ? Filesystem.NeutralizePath(x.FilePath) : Filesystem.NeutralizePath(x.FilePath).Replace(CurrentDirectory.CurrentDir + "/", ""))
                     .Where(x => x.StartsWith(LastArgument))
                     .Select(x => x[LastArgument.Length..])
                     .ToArray();

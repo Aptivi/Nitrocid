@@ -19,6 +19,7 @@
 using System.IO;
 using KS.Drivers;
 using KS.Files.Folders;
+using KS.Files.Instances;
 
 namespace KS.Files.Print
 {
@@ -31,13 +32,13 @@ namespace KS.Files.Print
         /// <summary>
         /// Prints the file information to the console
         /// </summary>
-        public static void PrintFileInfo(FileSystemInfo FileInfo) => 
+        public static void PrintFileInfo(FileSystemEntry FileInfo) => 
             DriverHandler.CurrentFilesystemDriverLocal.PrintFileInfo(FileInfo, Listing.ShowFileDetailsList);
 
         /// <summary>
         /// Prints the file information to the console
         /// </summary>
-        public static void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails) =>
+        public static void PrintFileInfo(FileSystemEntry FileInfo, bool ShowFileDetails) =>
             DriverHandler.CurrentFilesystemDriverLocal.PrintFileInfo(FileInfo, ShowFileDetails);
 
     }

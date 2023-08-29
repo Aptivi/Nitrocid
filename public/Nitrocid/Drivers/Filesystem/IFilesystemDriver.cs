@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 
+using KS.Files.Instances;
 using KS.Files.LineEndings;
 using KS.Kernel;
 using System.Collections.Generic;
@@ -52,14 +53,14 @@ namespace KS.Drivers.Filesystem
         /// <param name="Sorted">Whether the list is sorted or not</param>
         /// <param name="Recursive">Whether the list is recursive or not</param>
         /// <returns>List of filesystem entries if any. Empty list if folder is not found or is empty.</returns>
-        List<FileSystemInfo> CreateList(string folder, bool Sorted = false, bool Recursive = false);
+        List<FileSystemEntry> CreateList(string folder, bool Sorted = false, bool Recursive = false);
 
         /// <summary>
         /// Helper for sorting filesystem entries
         /// </summary>
         /// <param name="FileSystemEntry">File system entry</param>
         /// <param name="MaxLength">For size, how many zeroes to pad the size string to the left?</param>
-        string SortSelector(FileSystemInfo FileSystemEntry, int MaxLength);
+        string SortSelector(FileSystemEntry FileSystemEntry, int MaxLength);
 
         /// <summary>
         /// Gets the filesystem entries of the parent with the specified pattern (wildcards, ...)
@@ -268,22 +269,22 @@ namespace KS.Drivers.Filesystem
         /// <summary>
         /// Prints the directory information to the console
         /// </summary>
-        void PrintDirectoryInfo(FileSystemInfo DirectoryInfo);
+        void PrintDirectoryInfo(FileSystemEntry DirectoryInfo);
 
         /// <summary>
         /// Prints the directory information to the console
         /// </summary>
-        void PrintDirectoryInfo(FileSystemInfo DirectoryInfo, bool ShowDirectoryDetails);
+        void PrintDirectoryInfo(FileSystemEntry DirectoryInfo, bool ShowDirectoryDetails);
 
         /// <summary>
         /// Prints the file information to the console
         /// </summary>
-        void PrintFileInfo(FileSystemInfo FileInfo);
+        void PrintFileInfo(FileSystemEntry FileInfo);
 
         /// <summary>
         /// Prints the file information to the console
         /// </summary>
-        void PrintFileInfo(FileSystemInfo FileInfo, bool ShowFileDetails);
+        void PrintFileInfo(FileSystemEntry FileInfo, bool ShowFileDetails);
 
         /// <summary>
         /// Prints the contents of a file to the console
