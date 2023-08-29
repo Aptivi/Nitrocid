@@ -30,7 +30,7 @@ using KS.Kernel.Events;
 using static KS.Kernel.Configuration.Config;
 using KS.ConsoleBase.Colors;
 using Terminaux.Colors;
-using Properties.Resources;
+using KS.Resources;
 
 namespace KS.Kernel.Configuration
 {
@@ -163,9 +163,9 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static Dictionary<string, bool> CheckConfigVariables()
         {
-            var SettingsToken = JToken.Parse(KernelResources.SettingsEntries);
-            var SaverSettingsToken = JToken.Parse(KernelResources.ScreensaverSettingsEntries);
-            var SplashSettingsToken = JToken.Parse(KernelResources.SplashSettingsEntries);
+            var SettingsToken = JToken.Parse(SettingsResources.SettingsEntries);
+            var SaverSettingsToken = JToken.Parse(SettingsResources.ScreensaverSettingsEntries);
+            var SplashSettingsToken = JToken.Parse(SettingsResources.SplashSettingsEntries);
             var Tokens = new[] { SettingsToken, SaverSettingsToken, SplashSettingsToken };
             var Results = new Dictionary<string, bool>();
 

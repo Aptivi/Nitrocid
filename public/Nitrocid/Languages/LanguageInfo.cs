@@ -23,7 +23,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Properties.Resources;
+using KS.Resources;
 
 namespace KS.Languages
 {
@@ -76,7 +76,7 @@ namespace KS.Languages
         public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001)
         {
             // Check to see if the language being installed is found in resources
-            if (!string.IsNullOrEmpty(KernelResources.ResourceManager.GetString(LangName.Replace("-", "_"))))
+            if (!string.IsNullOrEmpty(LanguageResources.ResourceManager.GetString(LangName.Replace("-", "_"))))
             {
                 // Install values to the object instance
                 ThreeLetterLanguageName = LangName;
@@ -104,7 +104,7 @@ namespace KS.Languages
                 this.Cultures = Cultures;
 
                 // Get instance of language resource
-                JObject LanguageResource = (JObject)JObject.Parse(KernelResources.ResourceManager.GetString(LangName.Replace("-", "_"))).SelectToken("Localizations");
+                JObject LanguageResource = (JObject)JObject.Parse(LanguageResources.ResourceManager.GetString(LangName.Replace("-", "_"))).SelectToken("Localizations");
                 Custom = false;
 
                 // Populate language strings
@@ -155,7 +155,7 @@ namespace KS.Languages
             this.Cultures = Cultures;
 
             // Install it
-            int EnglishLength = JObject.Parse(KernelResources.eng).SelectToken("Localizations").Count();
+            int EnglishLength = JObject.Parse(LanguageResources.eng).SelectToken("Localizations").Count();
             Custom = true;
             DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Count, EnglishLength);
             if (LanguageToken.Count == EnglishLength)

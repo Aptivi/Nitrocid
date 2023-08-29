@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Properties.Resources {
+namespace KS.Resources {
     using System;
     
     
@@ -22,14 +22,14 @@ namespace Properties.Resources {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    public class KernelResources {
+    public class ThemesResources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
         
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal KernelResources() {
+        internal ThemesResources() {
         }
         
         /// <summary>
@@ -39,7 +39,7 @@ namespace Properties.Resources {
         public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KS.Properties.KernelResources", typeof(KernelResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("KS.Resources.ThemesResources", typeof(ThemesResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -134,37 +134,6 @@ namespace Properties.Resources {
         public static string Aptivi {
             get {
                 return ResourceManager.GetString("Aptivi", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Arabic&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;qalib &apos;alwan ghayr salih {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: sayatim altahqiq fi al&apos;ajhizat alkhasat bika. arjuk aintazara...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;wahdat almuealajat almarkaziat: fashal tahqiq wahid &apos;aw &apos;akthar min marakiz wahdat almuealajat almarkaziati. earad almaelumat ealaa &apos;ayi hal [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string arb {
-            get {
-                return ResourceManager.GetString("arb", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Arabic&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;قالب ألوان غير صالح {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: سيتم التحقيق في الأجهزة الخاصة بك. ارجوك انتظر...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;وحدة المعالجة المركزية: فشل تحقيق واحد أو أكثر من مراكز وحدة المعالجة المركزية. عرض المعلومات على أي حال ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string arb_T {
-            get {
-                return ResourceManager.GetString("arb_T", resourceCulture);
             }
         }
         
@@ -363,88 +332,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Chinese&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nǐ de yìngjiàn jiāng bèi tàncè. Qǐng nàixīn děngdài...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Wúfǎ tàncè yīgè huò duō gè CPU héxīn. Wúlùn rúhé xiǎnshì xìnxī......&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing informa [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string chi {
-            get {
-                return ResourceManager.GetString("chi", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Chinese&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;无效的颜色模板{0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：将检测您的硬件。请耐心等待...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一个或多个CPU内核无法探测。仍在显示信息...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM：无法探测一个或多个RAM芯片。仍在显示信息...&quot;,
-        ///    &quot;HDD: One or more of the hard drives failed t [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string chi_T {
-            get {
-                return ResourceManager.GetString("chi_T", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Chinese (Traditional)&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nín de yìngjiàn jiāng bèi tàncè. Qǐng shāo děng...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Yīgè huò duō gè CPU nèihé tàncè shībài. Wúlùn rúhé xiǎnshì xìnxī...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showin [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string cnt {
-            get {
-                return ResourceManager.GetString("cnt", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Chinese (Traditional)&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;無效的顏色模板 {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：您的硬件將被探測。請稍等...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一個或多個 CPU 內核探測失敗。無論如何顯示信息...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM：一個或多個 RAM 芯片探測失敗。無論如何顯示信息...&quot;,
-        ///    &quot;HDD: One or more of th [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string cnt_T {
-            get {
-                return ResourceManager.GetString("cnt_T", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Czech&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Neplatná šablona barev {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Váš hardware bude testován. Prosím, čekejte...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Jedno nebo více jader CPU selhalo. Zobrazení informací tak jako tak ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string cze {
-            get {
-                return ResourceManager.GetString("cze", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Darcula&quot;,
         ///        &quot;Description&quot;: &quot;Popular color scheme for IDEs, like IntelliJ&quot;
@@ -522,22 +409,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Dutch&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Ongeldige kleurensjabloon {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Uw hardware wordt ondervraagd. Even geduld aub...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: een of meer van de CPU-kernen konden niet worden getest. Informatie toch laten zien ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string dtc {
-            get {
-                return ResourceManager.GetString("dtc", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Electronic Dance Music (EDM)&quot;,
         ///        &quot;Description&quot;: &quot;Use if you are a fan of EDM&quot;
@@ -557,38 +428,6 @@ namespace Properties.Resources {
         public static string EDM {
             get {
                 return ResourceManager.GetString("EDM", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;English&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Invalid color template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will be probed. Please wait...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing info [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string eng {
-            get {
-                return ResourceManager.GetString("eng", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;English (UK)&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Invalid colour template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will be probed. Please wait...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showin [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string enk {
-            get {
-                return ResourceManager.GetString("enk", resourceCulture);
             }
         }
         
@@ -615,38 +454,6 @@ namespace Properties.Resources {
         public static string Fire {
             get {
                 return ResourceManager.GetString("Fire", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;French&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Modèle de couleur non valide {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Votre matériel sera sondé. S&apos;il vous plaît, attendez...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Un ou plusieurs des cœurs de la CPU n&apos;ont pas été sondés. Montrer des informations quand même ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string fre {
-            get {
-                return ResourceManager.GetString("fre", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;German&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Ungültige Farbvorlage {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ihre Hardware wird geprüft. Bitte warten ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Ein oder mehrere CPU-Kerne konnten nicht geprüft werden. Zeige trotzdem Informationen ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Show [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ger {
-            get {
-                return ResourceManager.GetString("ger", resourceCulture);
             }
         }
         
@@ -795,218 +602,6 @@ namespace Properties.Resources {
         public static string Hacker {
             get {
                 return ResourceManager.GetString("Hacker", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Hindi&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;amaany rang tempalet {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobai: aapake haardaveyar kee jaanch kee jaegee. krpaya prateeksha karen ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;seepeeyoo: ek ya adhik chpu kor kee jaanch kee viphal rahee. vaise bhee jaanakaaree dikha raha hai ...&quot;,
-        ///    &quot;RAM: One or more of the RAM  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ind {
-            get {
-                return ResourceManager.GetString("ind", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Hindi&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;अमान्य रंग टेम्पलेट {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: आपके हार्डवेयर की जांच की जाएगी। कृपया प्रतीक्षा करें...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;सीपीयू: सीपीयू कोर का एक या एक से अधिक परीक्षण किया जाना विफल रहा। वैसे भी जानकारी दिखा रहा है ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ind_T {
-            get {
-                return ResourceManager.GetString("ind_T", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Italian&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Modello di colore non valido {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: il tuo hardware verrà verificato. Attendere prego...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: uno o più core della CPU non sono stati rilevati. Mostrare informazioni comunque ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be p [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ita {
-            get {
-                return ResourceManager.GetString("ita", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Japanese&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;無効なカラーテンプレート{0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：ハードウェアがプローブされます。お待ちください...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：1つ以上のCPUコアのプローブに失敗しました。とにかく情報を表示しています...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM：1つ以上のRAMチップのプローブに失敗しました。とにかく情報を表示しています...&quot;,        /// [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string jpn {
-            get {
-                return ResourceManager.GetString("jpn", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
-        ///    &quot;type&quot;: &quot;object&quot;,
-        ///    &quot;properties&quot;: {
-        ///        &quot;CheckUpdateStart&quot;: {
-        ///            &quot;type&quot;: &quot;boolean&quot;
-        ///        },
-        ///        &quot;CustomBanner&quot;: {
-        ///            &quot;type&quot;: &quot;string&quot;
-        ///        },
-        ///        &quot;LangChangeCulture&quot;: {
-        ///            &quot;type&quot;: &quot;boolean&quot;
-        ///        },
-        ///        &quot;CurrentLanguage&quot;: {
-        ///            &quot;type&quot;: &quot;string&quot;
-        ///        },
-        ///        &quot;CurrentCultStr&quot;: {
-        ///            &quot;type&quot;: &quot;string&quot;
-        ///        },
-        ///        &quot;ShowAppInfoOnBoot&quot;: {
-        ///            &quot; [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string KernelMainConfigSchema {
-            get {
-                return ResourceManager.GetString("KernelMainConfigSchema", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
-        ///    &quot;type&quot;: &quot;object&quot;,
-        ///    &quot;properties&quot;: {
-        ///        &quot;ColorMixTrueColor&quot;: {
-        ///            &quot;type&quot;: &quot;boolean&quot;
-        ///        },
-        ///        &quot;ColorMixDelay&quot;: {
-        ///            &quot;type&quot;: &quot;integer&quot;
-        ///        },
-        ///        &quot;ColorMixBackgroundColor&quot;: {
-        ///            &quot;type&quot;: &quot;string&quot;
-        ///        },
-        ///        &quot;ColorMixMinimumRedColorLevel&quot;: {
-        ///            &quot;type&quot;: &quot;integer&quot;
-        ///        },
-        ///        &quot;ColorMixMinimumGreenColorLevel&quot;: {
-        ///            &quot;type&quot;: &quot;integer&quot;
-        ///        },
-        ///       [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string KernelSaverConfigSchema {
-            get {
-                return ResourceManager.GetString("KernelSaverConfigSchema", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;$schema&quot;: &quot;http://json-schema.org/draft-04/schema#&quot;,
-        ///    &quot;type&quot;: &quot;object&quot;,
-        ///    &quot;properties&quot;: {
-        ///        &quot;SimpleProgressTextLocation&quot;: {
-        ///            &quot;type&quot;: &quot;integer&quot;
-        ///        },
-        ///        &quot;ProgressProgressColor&quot;: {
-        ///            &quot;type&quot;: &quot;string&quot;
-        ///        },
-        ///        &quot;ProgressProgressTextLocation&quot;: {
-        ///            &quot;type&quot;: &quot;integer&quot;
-        ///        },
-        ///        &quot;PowerLineProgressProgressColor&quot;: {
-        ///            &quot;type&quot;: &quot;string&quot;
-        ///        },
-        ///        &quot;PowerLineProgressProgressTextLocation&quot;: {
-        ///            &quot;type&quot;: [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string KernelSplashConfigSchema {
-            get {
-                return ResourceManager.GetString("KernelSplashConfigSchema", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Korean&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;jalmosdoen saegsang tempeullis {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe : hadeuweeoga geomsadoebnida. gidalyeojuseyo ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU : hana isang-ui CPU ko-eoleul geomsahaji moshaessseubnida. eojjaessdeun jeongbo pyosi jung ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string kor {
-            get {
-                return ResourceManager.GetString("kor", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Korean&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;잘못된 색상 템플릿 {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe : 하드웨어가 검사됩니다. 기다려주세요 ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU : 하나 이상의 CPU 코어를 검사하지 못했습니다. 어쨌든 정보 표시 중 ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM : 하나 이상의 RAM 칩을 검사하지 못했습니다. 어쨌든 정보 표시 중 ...&quot;, [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string kor_T {
-            get {
-                return ResourceManager.GetString("kor_T", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;arb&quot;: {
-        ///        &quot;name&quot;: &quot;Arabic&quot;,
-        ///        &quot;transliterable&quot;: true
-        ///    },
-        ///    &quot;arb-T&quot;: {
-        ///        &quot;name&quot;: &quot;Arabic&quot;,
-        ///        &quot;transliterable&quot;: true,
-        ///        &quot;codepage&quot;: 1256
-        ///    },
-        ///    &quot;chi&quot;: {
-        ///        &quot;name&quot;: &quot;Chinese&quot;,
-        ///        &quot;transliterable&quot;: true
-        ///    },
-        ///    &quot;chi-T&quot;: {
-        ///        &quot;name&quot;: &quot;Chinese&quot;,
-        ///        &quot;transliterable&quot;: true,
-        ///        &quot;codepage&quot;: 936
-        ///    },
-        ///    &quot;cnt&quot;: {
-        ///        &quot;name&quot;: &quot;Chinese (Traditional)&quot;,
-        ///        &quot;transliterable&quot;: true
-        ///    },
-        ///    &quot;cnt-T&quot;: {
-        ///        &quot;name&quot; [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string LanguageMetadata {
-            get {
-                return ResourceManager.GetString("LanguageMetadata", resourceCulture);
             }
         }
         
@@ -1557,22 +1152,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Portuguese&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Modelo de cor inválido {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Seu hardware será testado. Por favor aguarde ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ptg {
-            get {
-                return ResourceManager.GetString("ptg", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Red Breeze&quot;,
         ///        &quot;Description&quot;: &quot;Gives you a breeze of red.&quot;
@@ -1649,38 +1228,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Russian&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Nevernyy tsvetovoy shablon {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Vashe oborudovaniye budet provereno. Pozhaluysta, podozhdite...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: odno ili neskol&apos;ko yader TSP ne byli provereny. Pokaz informatsii v lyubom sluchaye ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips fai [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string rus {
-            get {
-                return ResourceManager.GetString("rus", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Russian&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Неверный цветовой шаблон {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ваше оборудование будет проверено. Пожалуйста, подождите...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: одно или несколько ядер ЦП не были проверены. Показ информации в любом случае ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be pr [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string rus_T {
-            get {
-                return ResourceManager.GetString("rus_T", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Sakura&quot;,
         ///        &quot;Description&quot;: &quot;Sakura trees will give you some Chinese breeze&quot;
@@ -1700,51 +1247,6 @@ namespace Properties.Resources {
         public static string Sakura {
             get {
                 return ResourceManager.GetString("Sakura", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;ColorMix&quot;: {
-        ///        &quot;Desc&quot;: &quot;Settings for this screensaver are available here.&quot;,
-        ///        &quot;Path&quot;: &quot;Screensaver.ColorMix&quot;,
-        ///        &quot;Keys&quot;: [
-        ///            {
-        ///                &quot;Name&quot;: &quot;Activate true colors&quot;,
-        ///                &quot;Type&quot;: &quot;SBoolean&quot;,
-        ///                &quot;Variable&quot;: &quot;ColorMixTrueColor&quot;,
-        ///                &quot;Description&quot;: &quot;Activates the true color support.&quot;
-        ///            },
-        ///            {
-        ///                &quot;Name&quot;: &quot;Delay in Milliseconds&quot;,
-        ///                &quot;Type&quot;: &quot;SInt&quot;,
-        ///                &quot;Variable&quot;: [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ScreensaverSettingsEntries {
-            get {
-                return ResourceManager.GetString("ScreensaverSettingsEntries", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;General&quot;: {
-        ///        &quot;Desc&quot;: &quot;This section lists all general kernel settings, mainly for maintaining the kernel.&quot;,
-        ///        &quot;Path&quot;: &quot;General&quot;,
-        ///        &quot;DisplayAs&quot;: &quot;General kernel settings&quot;,
-        ///        &quot;Keys&quot;: [
-        ///            {
-        ///                &quot;Name&quot;: &quot;Check for Updates on Startup&quot;,
-        ///                &quot;Type&quot;: &quot;SBoolean&quot;,
-        ///                &quot;Variable&quot;: &quot;CheckUpdateStart&quot;,
-        ///                &quot;Description&quot;: &quot;Each startup, it will check for updates.&quot;
-        ///            },
-        ///            {
-        ///                &quot;Name&quot;: &quot;Cus [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string SettingsEntries {
-            get {
-                return ResourceManager.GetString("SettingsEntries", resourceCulture);
             }
         }
         
@@ -1796,22 +1298,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Spanish&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Plantilla de color no válida {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Su hardware será probado. Por favor espere ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: uno o más de los núcleos de la CPU no pudieron ser probados. Mostrando información de todos modos ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips fai [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string spa {
-            get {
-                return ResourceManager.GetString("spa", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Space Camp&quot;,
         ///        &quot;Description&quot;: &quot;A theme inspired by a VIM theme of the same name&quot;
@@ -1855,28 +1341,6 @@ namespace Properties.Resources {
         public static string SpaceDuck {
             get {
                 return ResourceManager.GetString("SpaceDuck", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Simple&quot;: {
-        ///        &quot;Desc&quot;: &quot;Settings for this splash screen are available here.&quot;,
-        ///        &quot;Path&quot;: &quot;Splash.Simple&quot;,
-        ///        &quot;Keys&quot;: [
-        ///            {
-        ///                &quot;Name&quot;: &quot;Progress text location&quot;,
-        ///                &quot;Type&quot;: &quot;SSelection&quot;,
-        ///                &quot;Variable&quot;: &quot;SimpleProgressTextLocation&quot;,
-        ///                &quot;IsEnumeration&quot;: true,
-        ///                &quot;EnumerationInternal&quot;: true,
-        ///                &quot;Enumeration&quot;: &quot;Misc.Text.TextLocation&quot;,
-        ///                &quot;EnumerationZeroBased&quot;: true,
-        ///             [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string SplashSettingsEntries {
-            get {
-                return ResourceManager.GetString("SplashSettingsEntries", resourceCulture);
             }
         }
         
@@ -1932,22 +1396,6 @@ namespace Properties.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Turkish&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Geçersiz renk şablonu {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Donanımınız incelenecek. Lütfen bekle...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Bir veya daha fazla CPU çekirdeği araştırılamadı. Yine de bilgi gösteriliyor...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing informati [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string tky {
-            get {
-                return ResourceManager.GetString("tky", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Trance&quot;,
         ///        &quot;Description&quot;: &quot;Trance music fan? This is the theme for you!&quot;
@@ -1994,38 +1442,6 @@ namespace Properties.Resources {
         public static string Ubuntu {
             get {
                 return ResourceManager.GetString("Ubuntu", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Ukrainian&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Nediysnyy shablon kolʹoru {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: vashe obladnannya bude perevireno. Budʹ laska, zachekayte...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;TSP: ne vdalosya pereviryty odne abo kilʹka yader TSP. Pokaz informatsiyi vse odno...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ukr {
-            get {
-                return ResourceManager.GetString("ukr", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Ukrainian&quot;,
-        ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Недійсний шаблон кольору {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: ваше обладнання буде перевірено. Будь ласка, зачекайте...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;ЦП: не вдалося перевірити одне або кілька ядер ЦП. Показ інформації все одно...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. S [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string ukr_T {
-            get {
-                return ResourceManager.GetString("ukr_T", resourceCulture);
             }
         }
         
@@ -2104,22 +1520,6 @@ namespace Properties.Resources {
         public static string VisualStudioLight {
             get {
                 return ResourceManager.GetString("VisualStudioLight", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;Vietnamese&quot;,
-        ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Mẫu màu không hợp lệ {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Một hoặc nhiều lõi CPU không được phát hiện. Dù sao cũng hiển thị thông tin ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed.  [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string vtn {
-            get {
-                return ResourceManager.GetString("vtn", resourceCulture);
             }
         }
         

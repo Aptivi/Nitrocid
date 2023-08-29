@@ -112,12 +112,41 @@
 
   <!-- KS Manifest -->
   <ItemGroup>
-    <EmbeddedResource Update="Properties\KernelResources.resx">
+    <EmbeddedResource Update="Resources\ThemesResources.resx">
       <SubType>Designer</SubType>
-      <CustomToolNamespace>Properties.Resources</CustomToolNamespace>
+      <CustomToolNamespace>KS.Resources</CustomToolNamespace>
+      <LastGenOutput>ThemesResources.Designer.cs</LastGenOutput>
       <Generator>PublicResXFileCodeGenerator</Generator>
-      <LastGenOutput>KernelResources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Update="Resources\SettingsResources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>KS.Resources</CustomToolNamespace>
+      <LastGenOutput>SettingsResources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Resources\LanguageResources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>KS.Resources</CustomToolNamespace>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+      <LastGenOutput>LanguageResources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Resources\ThemesResources.Designer.cs">
+      <DependentUpon>ThemesResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\SettingsResources.Designer.cs">
+      <DependentUpon>SettingsResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Update="Resources\LanguageResources.Designer.cs">
+      <DependentUpon>LanguageResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
   </ItemGroup>
   <!-- KS Manifest End -->
 
@@ -129,13 +158,6 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Update="Properties\KernelResources.Designer.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>KernelResources.resx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <!-- KS Package Files End -->
   
