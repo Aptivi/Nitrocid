@@ -177,10 +177,10 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "chklock",
-                new CommandInfo("chklock", ShellType, /* Localizable */ "Checks the file lock",
+                new CommandInfo("chklock", ShellType, /* Localizable */ "Checks the file or the folder lock",
                     new[] {
                         new CommandArgumentInfo(new[] { "file" }, new[] {
-                            new SwitchInfo("waitforunlock", /* Localizable */ "Waits until the file is unlocked", false, true, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("waitforunlock", /* Localizable */ "Waits until the file or the folder is unlocked", false, true, Array.Empty<string>(), 0, false)
                         }, true, 1)
                     }, new ChkLockCommand())
             },

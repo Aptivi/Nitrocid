@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Files.Instances;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -37,29 +38,29 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string path = ListArgsOnly[0];
-            bool locked = Filesystem.IsFileLocked(path);
+            bool locked = Filesystem.IsLocked(path);
             bool waitForUnlock = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-waitforunlock");
             string waitForUnlockMsStr = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-waitforunlock");
             bool waitForUnlockTimed = !string.IsNullOrEmpty(waitForUnlockMsStr);
             int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;
             if (locked)
             {
-                TextWriterColor.Write(Translate.DoTranslation("File is already in use."), true, KernelColorType.Warning);
+                TextWriterColor.Write(Translate.DoTranslation("File or folder is already in use."), true, KernelColorType.Warning);
                 if (waitForUnlock)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Waiting until the file is unlocked..."), true, KernelColorType.Progress);
+                    TextWriterColor.Write(Translate.DoTranslation("Waiting until the file or the folder is unlocked..."), true, KernelColorType.Progress);
                     if (waitForUnlockTimed)
                         Filesystem.WaitForLockRelease(path, waitForUnlockMs);
                     else
                         Filesystem.WaitForLockReleaseIndefinite(path);
-                    TextWriterColor.Write(Translate.DoTranslation("File is not in use."), true, KernelColorType.Success);
+                    TextWriterColor.Write(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
                     return 0;
                 }
                 else
                     return 10000 + (int)KernelExceptionType.Filesystem;
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("File is not in use."), true, KernelColorType.Success);
+                TextWriterColor.Write(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
             return 0;
         }
     }

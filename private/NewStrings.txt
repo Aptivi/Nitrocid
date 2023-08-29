@@ -701,8 +701,8 @@ Removes a key on the header to all the upcoming requests
 Lists the request headers
 Gets current user agent
 Sets a user agent
-File is already in use.
-File is not in use.
+File or folder is already in use.
+File or folder is not in use.
 You've installed Nitrocid KS using your package manager. Please use it to upgrade your kernel instead.
 Contact manager background color
 Contact manager foreground color
@@ -718,9 +718,8 @@ Contact manager option foreground color
 Contact manager option binding name color
 Contact manager box background color
 Contact manager box foreground color
-File {0} is still locked even after waiting for {1} seconds.
-Waits until the file is unlocked
-Waiting until the file is unlocked...
+File or folder {0} is still locked even after waiting for {1} seconds.
+Waiting until the file or the folder is unlocked...
 One of the switches requires a value that is not provided.
 Switches that are listed below are unknown.
 See below for usage:
@@ -990,5 +989,8 @@ There was an error when trying to perform an operation for theme management.
 The theme {0} celebrates an event, but you're either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}.
 Available
 Expired
+Checks the file or the folder lock
+Waits until the file or the folder is unlocked
+File or folder {0} not found.
 
 ==========================================================================================================================================

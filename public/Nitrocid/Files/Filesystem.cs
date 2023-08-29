@@ -30,6 +30,7 @@ using KS.Drivers;
 using KS.Misc.Text;
 using IOPath = System.IO.Path;
 using System.Threading;
+using KS.Files.Instances;
 
 namespace KS.Files
 {
@@ -149,6 +150,47 @@ namespace KS.Files
         }
 
         /// <summary>
+        /// Checks to see if the folder is locked
+        /// </summary>
+        /// <param name="Path">Path to check the folder</param>
+        /// <returns>True if locked; false otherwise.</returns>
+        public static bool IsFolderLocked(string Path)
+        {
+            Path = NeutralizePath(Path);
+
+            // We can't perform this operation on nonexistent folder
+            if (!Checking.FolderExists(Path))
+                throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("Directory {0} not found."), Path));
+
+            // Check every file inside the folder and its subdirectories for lock
+            var files = Listing.GetFilesystemEntries(Path, false, true);
+            foreach (string file in files)
+            {
+                if (IsLocked(file))
+                    return true;
+            }
+            return false;
+        }
+
+        /// <summary>
+        /// Checks to see if the file or the folder is locked
+        /// </summary>
+        /// <param name="Path">Path to check the file or the folder</param>
+        /// <returns>True if locked; false otherwise.</returns>
+        public static bool IsLocked(string Path)
+        {
+            Path = NeutralizePath(Path);
+
+            // We can't perform this operation on nonexistent file
+            if (!Checking.Exists(Path))
+                throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File or folder {0} not found."), Path));
+
+            // Wait until the lock is released
+            var info = new FileSystemEntry(Path);
+            return info.Type == FileSystemEntryType.Directory ? IsFolderLocked(Path) : IsFileLocked(Path);
+        }
+
+        /// <summary>
         /// Waits until the file is unlocked (lock released)
         /// </summary>
         /// <param name="Path">Path to check the file</param>
@@ -157,26 +199,27 @@ namespace KS.Files
         {
             Path = NeutralizePath(Path);
 
-            // We can't perform this operation on nonexistent file
-            if (!Checking.FileExists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File {0} not found."), Path));
+            // We can't perform this operation on nonexistent path
+            if (!Checking.Exists(Path))
+                throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File or folder {0} not found."), Path));
 
             // We also can't wait for lock too little or too much
             if (lockMs < 100 || lockMs > 60000)
                 lockMs = 1000;
 
             // Wait until the lock is released
+            var info = new FileSystemEntry(Path);
             int estimatedLockMs = 0;
-            while (IsFileLocked(Path))
+            while (IsLocked(Path))
             {
                 Thread.Sleep(lockMs);
 
                 // If the file is still locked, add the estimated lock time to check for timeout
-                if (IsFileLocked(Path))
+                if (IsLocked(Path))
                 {
                     estimatedLockMs += lockMs;
                     if (estimatedLockMs > maxTimeoutMs)
-                        throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File {0} is still locked even after waiting for {1} seconds."), Path, maxTimeoutMs / 1000));
+                        throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File or folder {0} is still locked even after waiting for {1} seconds."), Path, maxTimeoutMs / 1000));
                 }
             }
         }
@@ -190,11 +233,12 @@ namespace KS.Files
             Path = NeutralizePath(Path);
 
             // We can't perform this operation on nonexistent file
-            if (!Checking.FileExists(Path))
-                throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File {0} not found."), Path));
+            if (!Checking.Exists(Path))
+                throw new KernelException(KernelExceptionType.Filesystem, TextTools.FormatString(Translate.DoTranslation("File or folder {0} not found."), Path));
 
             // Wait until the lock is released
-            SpinWait.SpinUntil(() => !IsFileLocked(Path));
+            var info = new FileSystemEntry(Path);
+            SpinWait.SpinUntil(() => !IsLocked(Path));
         }
 
     }
