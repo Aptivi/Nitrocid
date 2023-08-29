@@ -45,22 +45,23 @@ namespace KS.Languages
     public static class LanguageManager
     {
 
+        internal readonly static JToken LanguageMetadata = JToken.Parse(LanguageResources.LanguageMetadata);
         internal static Dictionary<string, LanguageInfo> BaseLanguages = new();
         internal static Dictionary<string, LanguageInfo> CustomLanguages = new();
+        internal static LanguageInfo currentLanguage = Languages[CurrentLanguage];
+        internal static LanguageInfo currentUserLanguage = Languages[CurrentLanguage];
         private static bool NotifyCodepageError;
-        private readonly static JToken LanguageMetadata = JToken.Parse(LanguageResources.LanguageMetadata);
 
         /// <summary>
         /// Current language
         /// </summary>
         public static string CurrentLanguage =>
             Config.MainConfig.CurrentLanguage;
-        internal static LanguageInfo currentLanguage = Languages[CurrentLanguage];
-        internal static LanguageInfo currentUserLanguage = Languages[CurrentLanguage];
         /// <summary>
         /// Current language
         /// </summary>
-        public static LanguageInfo CurrentLanguageInfo => Flags.LoggedIn ? currentUserLanguage : currentLanguage;
+        public static LanguageInfo CurrentLanguageInfo =>
+            Flags.LoggedIn ? currentUserLanguage : currentLanguage;
         /// <summary>
         /// Set the language codepage upon switching languages (Windows only)
         /// </summary>
