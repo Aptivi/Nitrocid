@@ -108,7 +108,7 @@
       <Version>4.2.1</Version>
     </PackageReference>
     <PackageReference Include="Microsoft.NET.Test.Sdk">
-      <Version>17.7.1</Version>
+      <Version>17.7.2</Version>
     </PackageReference>
   </ItemGroup>
   <ItemGroup>
