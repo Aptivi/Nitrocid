@@ -143,7 +143,7 @@ namespace KS.Shell.Shells.FTP
             { "putfolder",
                 new CommandInfo("putfolder", ShellType, /* Localizable */ "Uploads local folder to remote directory using binary or text",
                     new[] {
-                        new CommandArgumentInfo(new[] { "<folder", "outputfolder" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "folder", "outputfolder" }, Array.Empty<SwitchInfo>(), true, 1)
                     }, new FTP_PutFolderCommand())
             },
             

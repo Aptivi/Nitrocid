@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.Json
             { "addarray",
                 new CommandInfo("addarray", ShellType, /* Localizable */ "Adds a new property containing the array",
                     new[] {
-                        new CommandArgumentInfo(new[] { "propertyName", "propertyValue1", "propertyValue2", "propertyValue3]..." }, new[] {
+                        new CommandArgumentInfo(new[] { "propertyName", "propertyValue1", "propertyValue2", "propertyValue3..." }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
                         }, true, 2)
                     }, new JsonShell_AddArrayCommand())

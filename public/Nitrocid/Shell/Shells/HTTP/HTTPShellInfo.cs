@@ -96,14 +96,14 @@ namespace KS.Shell.Shells.HTTP
             { "put",
                 new CommandInfo("put", ShellType, /* Localizable */ "Puts the file to the HTTP server using the specified request",
                     new[] {
-                        new CommandArgumentInfo(new[] { "request", "pathtofile>" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[] { "request", "pathtofile" }, Array.Empty<SwitchInfo>(), true, 2)
                     }, new HTTP_PutCommand())
             },
 
             { "putstring",
                 new CommandInfo("putstring", ShellType, /* Localizable */ "Puts the string to the HTTP server using the specified request",
                     new[] {
-                        new CommandArgumentInfo(new[] { "request", "string>" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[] { "request", "string" }, Array.Empty<SwitchInfo>(), true, 2)
                     }, new HTTP_PutStringCommand())
             },
 

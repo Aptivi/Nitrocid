@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.Text
             { "delcharnum",
                 new CommandInfo("delcharnum", ShellType, /* Localizable */ "Deletes a character from character number in specified line",
                     new[] {
-                        new CommandArgumentInfo(new[] { "charnumber", "linenumber>" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[] { "charnumber", "linenumber" }, Array.Empty<SwitchInfo>(), true, 2)
                     }, new TextEdit_DelCharNumCommand())
             },
             
@@ -82,7 +82,7 @@ namespace KS.Shell.Shells.Text
             { "editline",
                 new CommandInfo("editline", ShellType, /* Localizable */ "Edits the specified line",
                     new[] {
-                        new CommandArgumentInfo(new[] { "linenumber>" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[] { "linenumber" }, Array.Empty<SwitchInfo>(), true, 1)
                     }, new TextEdit_EditLineCommand())
             },
             
