@@ -72,13 +72,12 @@ namespace KS.Misc.Presentation.Elements
             // Initialize the reader settings
             var settings = new TermReaderSettings()
             {
-                LeftMargin = PresentationTools.PresentationUpperInnerBorderLeft,
                 RightMargin = PresentationTools.PresentationUpperInnerBorderLeft
             };
 
             // Get the input
             ConsoleWrapper.CursorVisible = true;
-            WrittenInput = Input.ReadLineNoInput();
+            WrittenInput = Input.ReadLineNoInput(settings);
             ConsoleWrapper.CursorVisible = false;
         }
 
