@@ -73,6 +73,10 @@ namespace KS.Misc.Interactive
                     // Loop until the user requests to exit
                     while (!interactiveTui.isExiting)
                     {
+                        // Check the selection
+                        interactiveTui.LastOnOverflow();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Went to the last element on overflow.");
+
                         // Draw the boxes
                         DrawInteractiveTui(interactiveTui);
                         DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI drawn.");

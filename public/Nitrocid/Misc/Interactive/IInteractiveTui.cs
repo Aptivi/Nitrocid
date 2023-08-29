@@ -147,5 +147,9 @@ namespace KS.Misc.Interactive
         /// </summary>
         /// <param name="item">Target item</param>
         public void RenderStatus(object item);
+        /// <summary>
+        /// Goes up to the last element upon overflow (caused by remove operation, ...). This applies to the first and the second pane.
+        /// </summary>
+        public void LastOnOverflow();
     }
 }

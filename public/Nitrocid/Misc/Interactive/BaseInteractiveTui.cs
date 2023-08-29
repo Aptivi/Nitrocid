@@ -96,5 +96,16 @@ namespace KS.Misc.Interactive
 
         /// <inheritdoc/>
         public virtual void RenderStatus(object item) { }
+
+        /// <inheritdoc/>
+        public virtual void LastOnOverflow()
+        {
+            int primaryCount = InteractiveTuiTools.CountElements(PrimaryDataSource);
+            int secondaryCount = InteractiveTuiTools.CountElements(SecondaryDataSource);
+            if (FirstPaneCurrentSelection > primaryCount)
+                FirstPaneCurrentSelection = primaryCount;
+            if (SecondPaneCurrentSelection > secondaryCount)
+                SecondPaneCurrentSelection = secondaryCount;
+        }
     }
 }
