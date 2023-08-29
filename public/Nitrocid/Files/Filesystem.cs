@@ -208,7 +208,6 @@ namespace KS.Files
                 lockMs = 1000;
 
             // Wait until the lock is released
-            var info = new FileSystemEntry(Path);
             int estimatedLockMs = 0;
             while (IsLocked(Path))
             {
