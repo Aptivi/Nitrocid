@@ -50,6 +50,10 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             true;
 
         /// <inheritdoc/>
+        public override bool AcceptsEmptyData =>
+            true;
+
+        /// <inheritdoc/>
         public override void RenderStatus(object item)
         {
             string selected = (string)item;

@@ -60,6 +60,10 @@ namespace KS.Misc.Interactive
         /// How many milliseconds to wait before refreshing? Only applies to single-pane interactive TUI instances. 0 to disable.
         /// </summary>
         public int RefreshInterval { get; }
+        /// <summary>
+        /// Whether empty data is accepted
+        /// </summary>
+        public bool AcceptsEmptyData { get; }
 
         /// <summary>
         /// An array, a dictionary, a list, or an enumerable that holds data (pane one)

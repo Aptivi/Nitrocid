@@ -48,6 +48,8 @@ namespace KS.Misc.Interactive
         public virtual bool SecondPaneInteractable => false;
         /// <inheritdoc/>
         public virtual int RefreshInterval => 0;
+        /// <inheritdoc/>
+        public virtual bool AcceptsEmptyData => false;
 
         /// <inheritdoc/>
         public virtual IEnumerable PrimaryDataSource => Array.Empty<string>();

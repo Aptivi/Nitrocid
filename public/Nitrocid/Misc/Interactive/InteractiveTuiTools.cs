@@ -56,7 +56,7 @@ namespace KS.Misc.Interactive
 
                 // First, check to see if the interactive TUI has no data source
                 if ((interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null) ||
-                    (CountElements(interactiveTui.PrimaryDataSource) == 0 && CountElements(interactiveTui.SecondaryDataSource) == 0))
+                    (CountElements(interactiveTui.PrimaryDataSource) == 0 && CountElements(interactiveTui.SecondaryDataSource) == 0 && !interactiveTui.AcceptsEmptyData))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The interactive TUI {0} doesn't contain any data source. This program can't continue."), true, KernelColorType.Error, interactiveTui.GetType().Name);
                     TextWriterColor.Write();

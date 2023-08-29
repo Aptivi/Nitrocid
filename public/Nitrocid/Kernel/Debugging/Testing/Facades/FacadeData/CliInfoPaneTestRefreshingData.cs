@@ -46,6 +46,10 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             strings;
 
         /// <inheritdoc/>
+        public override bool AcceptsEmptyData =>
+            true;
+
+        /// <inheritdoc/>
         public override string GetInfoFromItem(object item)
         {
             // Some variables
