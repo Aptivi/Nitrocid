@@ -126,6 +126,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.LanguageManagement,               Translate.DoTranslation("There was an error in the language management.") },
                 { KernelExceptionType.ModManagement,                    Translate.DoTranslation("There was an error in the mod management.") },
                 { KernelExceptionType.Reflection,                       Translate.DoTranslation("There was an error in the reflection system.") },
+                { KernelExceptionType.ThemeManagement,                  Translate.DoTranslation("There was an error when trying to perform an operation for theme management.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

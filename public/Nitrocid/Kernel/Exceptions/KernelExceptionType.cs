@@ -406,6 +406,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// There was an error in the reflection system.
         /// </summary>
-        Reflection
+        Reflection,
+        /// <summary>
+        /// There was an error when trying to perform an operation for theme management.
+        /// </summary>
+        ThemeManagement
     }
 }

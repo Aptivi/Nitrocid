@@ -32,6 +32,7 @@ using KS.Kernel.Events;
 using static KS.ConsoleBase.Colors.KernelColorTools;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
+using KS.Kernel.Time;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -52,6 +53,7 @@ namespace KS.ConsoleBase.Themes
             { "AyuDark", new ThemeInfo("AyuDark") },
             { "AyuLight", new ThemeInfo("AyuLight") },
             { "AyuMirage", new ThemeInfo("AyuMirage") },
+            { "BackToSchool", new ThemeInfo("BackToSchool") },
             { "BlackOnWhite", new ThemeInfo("BlackOnWhite") },
             { "BlackRose", new ThemeInfo("BlackRose") },
             { "BreezeDark", new ThemeInfo("BreezeDark") },
@@ -149,6 +151,14 @@ namespace KS.ConsoleBase.Themes
                 // Check if the console supports true color
                 if ((Flags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
                 {
+                    // Check to see if the event is finished
+                    if (ThemeInfo.IsExpired)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Setting event theme in a day that the event finished...");
+                        EventsManager.FireEvent(EventType.ThemeSetError, theme, ThemeSetErrorReasons.EventFinished);
+                        throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("The theme {0} celebrates an event, but you're either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}."), theme, ThemeInfo.StartMonth, ThemeInfo.StartDay, ThemeInfo.EndMonth, ThemeInfo.EndDay);
+                    }
+
                     // Set colors as appropriate
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting colors as appropriate...");
                     SetColorsTheme(ThemeInfo);

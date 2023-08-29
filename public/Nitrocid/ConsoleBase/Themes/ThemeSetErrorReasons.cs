@@ -34,6 +34,10 @@ namespace KS.ConsoleBase.Themes
         /// <summary>
         /// Console is unsupported or terminal doesn't support true color
         /// </summary>
-        ConsoleUnsupported
+        ConsoleUnsupported,
+        /// <summary>
+        /// Trying to set a theme that is an event on a day that is before or after the event.
+        /// </summary>
+        EventFinished
     }
 }

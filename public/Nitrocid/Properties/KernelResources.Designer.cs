@@ -240,6 +240,32 @@ namespace Properties.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Back to School&quot;,
+        ///        &quot;Description&quot;: &quot;This is the first day of the new school year&quot;,
+        ///        &quot;IsEvent&quot;: true,
+        ///        &quot;StartMonth&quot;: 8,
+        ///        &quot;StartDay&quot;: 27,
+        ///        &quot;EndMonth&quot;: 9,
+        ///        &quot;EndDay&quot;: 10
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;15&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;15&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;15&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;15&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;15&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;15&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;0;50;0&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;15&quot; [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string BackToSchool {
+            get {
+                return ResourceManager.GetString("BackToSchool", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Black on White&quot;,
         ///        &quot;Description&quot;: &quot;Lightest terminal possible&quot;
         ///    },

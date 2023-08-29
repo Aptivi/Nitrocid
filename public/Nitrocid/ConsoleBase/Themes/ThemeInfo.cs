@@ -21,6 +21,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Time;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Properties.Resources;
 using Terminaux.Colors;
@@ -34,44 +36,87 @@ namespace KS.ConsoleBase.Themes
     {
 
         internal readonly Dictionary<KernelColorType, Color> ThemeColors = KernelColorTools.PopulateColorsEmpty();
+        internal readonly DateTime start = DateTime.Today;
+        internal readonly DateTime end = DateTime.Today;
 
         /// <summary>
         /// Theme name
         /// </summary>
         public string Name { get; }
-
         /// <summary>
         /// Theme description
         /// </summary>
         public string Description { get; }
-
         /// <summary>
         /// Is true color required?
         /// </summary>
         public bool TrueColorRequired { get; }
+        /// <summary>
+        /// Whether this theme celebrates a specific event
+        /// </summary>
+        public bool IsEvent { get; }
+        /// <summary>
+        /// The month in which the event starts
+        /// </summary>
+        public int StartMonth { get; }
+        /// <summary>
+        /// The day in which the event starts
+        /// </summary>
+        public int StartDay { get; }
+        /// <summary>
+        /// The start <see cref="DateTime"/> instance representing the start of the event
+        /// </summary>
+        public DateTime Start =>
+            start;
+        /// <summary>
+        /// The month in which the event ends
+        /// </summary>
+        public int EndMonth { get; }
+        /// <summary>
+        /// The day in which the event ends
+        /// </summary>
+        public int EndDay { get; }
+        /// <summary>
+        /// The end <see cref="DateTime"/> instance representing the end of the event
+        /// </summary>
+        public DateTime End =>
+            end;
+        /// <summary>
+        /// Whether you can set this theme or not. Always false in non-event themes. False if the theme is an event and the current
+        /// time and date is between <see cref="StartMonth"/>/<see cref="StartDay"/> and <see cref="EndMonth"/>/<see cref="EndDay"/>
+        /// </summary>
+        public bool IsExpired =>
+            IsEvent && (TimeDateTools.KernelDateTime < Start || TimeDateTools.KernelDateTime > End);
 
         /// <summary>
         /// Gets a color from the color type
         /// </summary>
         /// <param name="type">Color type</param>
-        public Color GetColor(KernelColorType type) => ThemeColors[type];
+        public Color GetColor(KernelColorType type) =>
+            ThemeColors[type];
 
         /// <summary>
         /// Generates a new theme info from KS resources
         /// </summary>
-        public ThemeInfo() : this("_Default") {}
+        public ThemeInfo() :
+            this("_Default")
+        { }
 
         /// <summary>
         /// Generates a new theme info from KS resources
         /// </summary>
         /// <param name="ThemeResourceName">Theme name (must match resource name)</param>
-        public ThemeInfo(string ThemeResourceName) : this(JToken.Parse(KernelResources.ResourceManager.GetString(ThemeResourceName))) {}
+        public ThemeInfo(string ThemeResourceName) :
+            this(JToken.Parse(KernelResources.ResourceManager.GetString(ThemeResourceName)))
+        { }
 
         /// <summary>
         /// Generates a new theme info from file stream
         /// </summary>
         /// <param name="ThemeFileStream">Theme file stream reader</param>
-        public ThemeInfo(StreamReader ThemeFileStream) : this(JToken.Parse(ThemeFileStream.ReadToEnd())) {}
+        public ThemeInfo(StreamReader ThemeFileStream) :
+            this(JToken.Parse(ThemeFileStream.ReadToEnd()))
+        { }
 
         /// <summary>
         /// Generates a new theme info from theme resource JSON
@@ -88,6 +133,50 @@ namespace KS.ConsoleBase.Themes
             Name = ThemeResourceJson["Metadata"]["Name"].ToString();
             Description = ThemeResourceJson["Metadata"]["Description"]?.ToString();
             TrueColorRequired = ThemeTools.IsTrueColorRequired(ThemeColors);
+
+            // Parse event-related info
+            IsEvent = (bool)(ThemeResourceJson["Metadata"]["IsEvent"] ?? false);
+            StartMonth = (int)(ThemeResourceJson["Metadata"]["StartMonth"] ?? 1);
+            StartDay = (int)(ThemeResourceJson["Metadata"]["StartDay"] ?? 1);
+            EndMonth = (int)(ThemeResourceJson["Metadata"]["EndMonth"] ?? 1);
+            EndDay = (int)(ThemeResourceJson["Metadata"]["EndDay"] ?? 1);
+
+            // Month sanity checks
+            StartMonth = 
+                StartMonth < 1 ? 1 :
+                StartMonth > 12 ? 12 :
+                StartMonth;
+            EndMonth =
+                EndMonth < 1 ? 1 :
+                EndMonth > 12 ? 12 :
+                EndMonth;
+
+            // Day sanity checks
+            int maxDayNumStart = DateTime.DaysInMonth(TimeDateTools.KernelDateTime.Year, StartMonth);
+            int maxDayNumEnd = DateTime.DaysInMonth(TimeDateTools.KernelDateTime.Year, EndMonth);
+            StartDay =
+                StartDay < 1 ? 1 :
+                StartDay > maxDayNumStart ? maxDayNumStart :
+                StartDay;
+            EndDay =
+                EndDay < 1 ? 1 :
+                EndDay > maxDayNumEnd ? maxDayNumEnd :
+                EndDay;
+
+            // Check to see if the end is earlier than the start
+            start = new(TimeDateTools.KernelDateTime.Year, StartMonth, StartDay);
+            end = new(TimeDateTools.KernelDateTime.Year, EndMonth, EndDay);
+            if (end > start)
+            {
+                // End is earlier than start! Swap the two values so that:
+                //    start = end;
+                //    end = start;
+                (end, start) = (start, end);
+
+                // Deal with the start and the end
+                (EndMonth, StartMonth) = (StartMonth, EndMonth);
+                (EndDay, StartDay) = (StartDay, EndDay);
+            }
         }
 
     }

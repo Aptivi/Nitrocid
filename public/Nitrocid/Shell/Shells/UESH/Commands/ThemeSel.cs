@@ -57,7 +57,11 @@ namespace KS.Shell.Shells.UESH.Commands
                     List<InputChoiceInfo> themeChoices = new();
                     foreach (string theme in ThemeTools.Themes.Keys)
                     {
-                        var ici = new InputChoiceInfo(theme, ThemeTools.Themes[theme].Name, ThemeTools.Themes[theme].Description);
+                        var themeInstance = ThemeTools.Themes[theme];
+                        string name = themeInstance.Name;
+                        string desc = themeInstance.Description;
+                        var ici = new InputChoiceInfo(theme,
+                            $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? Translate.DoTranslation("Expired") : Translate.DoTranslation("Available"))}]" : "")}", desc);
                         themeChoices.Add(ici);
                     }
                     int colorIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a theme"), themeChoices) - 1;
