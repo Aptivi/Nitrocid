@@ -166,7 +166,7 @@ namespace KS.ConsoleBase.Themes
             // Check to see if the end is earlier than the start
             start = new(TimeDateTools.KernelDateTime.Year, StartMonth, StartDay);
             end = new(TimeDateTools.KernelDateTime.Year, EndMonth, EndDay);
-            if (end > start)
+            if (start > end)
             {
                 // End is earlier than start! Swap the two values so that:
                 //    start = end;
@@ -174,8 +174,10 @@ namespace KS.ConsoleBase.Themes
                 (end, start) = (start, end);
 
                 // Deal with the start and the end
-                (EndMonth, StartMonth) = (StartMonth, EndMonth);
-                (EndDay, StartDay) = (StartDay, EndDay);
+                if (StartMonth > EndMonth)
+                    (EndMonth, StartMonth) = (StartMonth, EndMonth);
+                else if (StartDay > EndDay)
+                    (EndDay, StartDay) = (StartDay, EndDay);
             }
         }
 
