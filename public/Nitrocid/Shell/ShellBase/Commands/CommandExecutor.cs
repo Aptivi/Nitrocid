@@ -61,10 +61,6 @@ namespace KS.Shell.ShellBase.Commands
             /// </summary>
             internal bool CustomCommand;
             /// <summary>
-            /// Mod commands
-            /// </summary>
-            internal Dictionary<string, CommandInfo> ModCommands;
-            /// <summary>
             /// Shell instance
             /// </summary>
             internal ShellExecuteInfo ShellInstance;
@@ -113,7 +109,7 @@ namespace KS.Shell.ShellBase.Commands
         }
 
         internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams) =>
-            ExecuteCommand(ThreadParams, ThreadParams.ModCommands is not null ? ThreadParams.ModCommands : CommandManager.GetCommands(ThreadParams.ShellType));
+            ExecuteCommand(ThreadParams, CommandManager.GetCommands(ThreadParams.ShellType));
 
         private static void ExecuteCommand(ExecuteCommandParameters ThreadParams, Dictionary<string, CommandInfo> TargetCommands)
         {
