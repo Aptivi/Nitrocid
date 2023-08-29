@@ -18,12 +18,9 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Journaling;
-using KS.Kernel.Starting;
-using KS.Languages;
 using System;
 
 namespace KS.Misc.Splash

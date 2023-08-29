@@ -26,7 +26,6 @@ using KS.Languages;
 using KS.Misc.Splash;
 using KS.Kernel.Debugging;
 using KS.Users.Login;
-using KS.Users;
 using KS.Misc.Text;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
