@@ -24,7 +24,7 @@ using System.Collections.Generic;
 
 namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
 {
-    internal class CliDoublePaneTestData : BaseInteractiveTui, IInteractiveTui
+    internal class CliDoublePaneSlowTestData : BaseInteractiveTui, IInteractiveTui
     {
         internal static List<string> strings = new();
         internal static List<string> strings2 = new();
@@ -46,12 +46,17 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
         public override IEnumerable SecondaryDataSource =>
             strings2;
 
+        /// <inheritdoc/>
         public override bool SecondPaneInteractable =>
             true;
 
         /// <inheritdoc/>
         public override bool AcceptsEmptyData =>
             true;
+
+        /// <inheritdoc/>
+        public override bool FastRefresh =>
+            false;
 
         /// <inheritdoc/>
         public override void RenderStatus(object item)
@@ -78,7 +83,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
                 strings2.Add($"[{index}] --2-- [{index}]");
             else
                 strings.Add($"[{index}] --1-- [{index}]");
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void Remove(int index)
@@ -97,7 +101,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
                 if (FirstPaneCurrentSelection > strings.Count)
                     FirstPaneCurrentSelection = strings.Count;
             }
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void RemoveLast()
@@ -114,7 +117,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
                 if (FirstPaneCurrentSelection > strings.Count)
                     FirstPaneCurrentSelection = strings.Count;
             }
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void Switch()

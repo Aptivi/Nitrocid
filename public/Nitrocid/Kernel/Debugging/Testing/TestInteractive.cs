@@ -110,6 +110,9 @@ namespace KS.Kernel.Debugging.Testing
             { "CliInfoPaneTest",                new CliInfoPaneTest() },
             { "CliInfoPaneTestRefreshing",      new CliInfoPaneTestRefreshing() },
             { "CliDoublePaneTest",              new CliDoublePaneTest() },
+            { "CliInfoPaneSlowTest",            new CliInfoPaneSlowTest() },
+            { "CliInfoPaneSlowTestRefreshing",  new CliInfoPaneSlowTestRefreshing() },
+            { "CliDoublePaneSlowTest",          new CliDoublePaneSlowTest() },
             { "FetchKernelUpdates",             new FetchKernelUpdates() },
         };
         internal static Dictionary<TestSection, string> sections = new()
