@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using System;
 using System.Threading;
 
@@ -30,14 +31,14 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
         {
             try
             {
-                Console.WriteLine("Hello world!");
-                Console.WriteLine("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
+                TextWriterColor.Write("Hello world!");
+                TextWriterColor.Write("- Writing from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
                 while (true)
                     Thread.Sleep(1);
             }
             catch
             {
-                Console.WriteLine("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
+                TextWriterColor.Write("- Goodbye from thread: {0} [{1}]", Thread.CurrentThread.Name, Environment.CurrentManagedThreadId);
             }
         }
     }
