@@ -64,6 +64,10 @@ namespace KS.Misc.Interactive
         /// Whether empty data is accepted
         /// </summary>
         public bool AcceptsEmptyData { get; }
+        /// <summary>
+        /// Whether delta-based refresh method is used or not
+        /// </summary>
+        public bool FastRefresh { get; }
 
         /// <summary>
         /// An array, a dictionary, a list, or an enumerable that holds data (pane one)

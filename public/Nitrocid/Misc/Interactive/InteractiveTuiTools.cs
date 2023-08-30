@@ -39,7 +39,10 @@ namespace KS.Misc.Interactive
     public static class InteractiveTuiTools
     {
 
+        private static int _lastFirstPanePos = 0;
+        private static int _lastSecondPanePos = 0;
         private static string _finalInfoRendered = "";
+        private static bool _refreshSelection = true;
         private static readonly object _interactiveTuiLock = new();
 
         /// <summary>
@@ -68,6 +71,7 @@ namespace KS.Misc.Interactive
                 // Now, run the application
                 bool notifyCrash = false;
                 string crashReason = "";
+                _refreshSelection = true;
                 try
                 {
                     // Loop until the user requests to exit
@@ -82,13 +86,19 @@ namespace KS.Misc.Interactive
                         DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI drawn.");
 
                         // Draw the first pane
-                        DrawInteractiveTuiItems(interactiveTui, 1);
+                        if (_refreshSelection || !interactiveTui.FastRefresh)
+                            DrawInteractiveTuiItems(interactiveTui, 1);
+                        else
+                            DrawInteractiveTuiItemsDelta(interactiveTui, 1, _lastFirstPanePos, BaseInteractiveTui.FirstPaneCurrentSelection);
                         DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI items (first pane) drawn.");
 
                         // Draw the second pane
                         if (interactiveTui.SecondPaneInteractable)
                         {
-                            DrawInteractiveTuiItems(interactiveTui, 2);
+                            if (_refreshSelection || !interactiveTui.FastRefresh)
+                                DrawInteractiveTuiItems(interactiveTui, 2);
+                            else
+                                DrawInteractiveTuiItemsDelta(interactiveTui, 2, _lastSecondPanePos, BaseInteractiveTui.SecondPaneCurrentSelection);
                             DebugWriter.WriteDebug(DebugLevel.I, "Interactive TUI items (second pane) drawn.");
                         }
                         else
@@ -96,6 +106,7 @@ namespace KS.Misc.Interactive
                             DrawInformationOnSecondPane(interactiveTui);
                             DebugWriter.WriteDebug(DebugLevel.I, "Info drawn.");
                         }
+                        _refreshSelection = false;
 
                         DrawStatus(interactiveTui);
                         DebugWriter.WriteDebug(DebugLevel.I, "Status drawn.");
@@ -134,6 +145,45 @@ namespace KS.Misc.Interactive
                 BaseInteractiveTui.Status = "";
             }
         }
+
+        /// <summary>
+        /// Initiates the selection movement
+        /// </summary>
+        /// <param name="interactiveTui">Interactive TUI to deal with</param>
+        /// <param name="pos">Position to move the pane selection to</param>
+        public static void SelectionMovement(BaseInteractiveTui interactiveTui, int pos)
+        {
+            // Check the position
+            var data = BaseInteractiveTui.CurrentPane == 2 ?
+                       interactiveTui.SecondaryDataSource :
+                       interactiveTui.PrimaryDataSource;
+            int elements = CountElements(data);
+            if (pos < 1)
+                pos = 1;
+            if (pos > elements)
+                pos = elements;
+
+            // Now, process the movement
+            int itemsPerPage = ConsoleWrapper.WindowHeight - 4;
+            _lastFirstPanePos = BaseInteractiveTui.FirstPaneCurrentSelection;
+            _lastSecondPanePos = BaseInteractiveTui.SecondPaneCurrentSelection;
+            if (BaseInteractiveTui.CurrentPane == 2)
+                BaseInteractiveTui.SecondPaneCurrentSelection = pos;
+            else
+                BaseInteractiveTui.FirstPaneCurrentSelection = pos;
+
+            // Check if we need delta or full re-population
+            if (pos % itemsPerPage == 0)
+                _refreshSelection = true;
+            if ((pos - 1) % itemsPerPage == 0)
+                _refreshSelection = true;
+        }
+
+        /// <summary>
+        /// Forces the refresh
+        /// </summary>
+        public static void ForceRefreshSelection() =>
+            _refreshSelection = true;
 
         internal static int CountElements(IEnumerable enumerable)
         {
@@ -181,6 +231,7 @@ namespace KS.Misc.Interactive
             // Redraw the entire TUI screen
             if (BaseInteractiveTui.RedrawRequired)
             {
+                _refreshSelection = true;
                 DebugWriter.WriteDebug(DebugLevel.I, "We're redrawing.");
                 KernelColorTools.LoadBack(BaseInteractiveTui.BackgroundColor, true);
 
@@ -320,6 +371,83 @@ namespace KS.Misc.Interactive
             }
         }
 
+        private static void DrawInteractiveTuiItemsDelta(BaseInteractiveTui interactiveTui, int paneNum, int lastSelection, int currentSelection)
+        {
+            // Check to make sure that we don't get nulls on interactiveTui
+            DebugCheck.AssertNull(interactiveTui,
+                "attempted to render TUI items on null");
+
+            // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
+            DebugCheck.Assert((!interactiveTui.SecondPaneInteractable && paneNum == 1) || interactiveTui.SecondPaneInteractable,
+                "tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
+
+            // Get some positions
+            int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
+            int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
+            int SeparatorMinimumHeightInterior = 2;
+            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+
+            // Check the pane number
+            if (paneNum < 1)
+                paneNum = 1;
+            if (paneNum > 2)
+                paneNum = 2;
+
+            // Get how many data are there in the chosen data source
+            var data = paneNum == 2 ? interactiveTui.SecondaryDataSource : interactiveTui.PrimaryDataSource;
+            int dataCount = CountElements(data);
+
+            // Render the pane right away
+            int answersPerPage = SeparatorMaximumHeightInterior;
+            int paneCurrentSelection = paneNum == 2 ? BaseInteractiveTui.SecondPaneCurrentSelection : BaseInteractiveTui.FirstPaneCurrentSelection;
+            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
+            int startIndex = answersPerPage * currentPage;
+            int[] indexes = new[] { lastSelection, currentSelection };
+            for (int i = 0; i < indexes.Length; i++)
+            {
+                // Populate the first pane with changes
+                int index = indexes[i] - 1 < 0 ? 0 : indexes[i] - 1;
+                string finalEntry = "";
+                if (index <= dataCount - 1)
+                {
+                    // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
+                    object dataObject = null;
+                    int steppedItems = 0;
+                    foreach (var item in data)
+                    {
+                        steppedItems++;
+                        if (steppedItems == index + 1)
+                        {
+                            // We found the item that we need! Assign it to dataObject so GetEntryFromItem() can formulate a string.
+                            DebugWriter.WriteDebug(DebugLevel.I, "Found required item index {0} [{1}, offset {2}].", steppedItems, index, startIndex);
+                            dataObject = item;
+                            break;
+                        }
+                    }
+
+                    // Here, we're now doing our job
+                    finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                }
+
+                // Render an entry
+                var finalForeColor = index == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemForeColor : BaseInteractiveTui.PaneItemForeColor;
+                var finalBackColor = index == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemBackColor : BaseInteractiveTui.PaneItemBackColor;
+                int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
+                int top = SeparatorMinimumHeightInterior + index - startIndex;
+                TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
+                KernelColorTools.SetConsoleColor(BaseInteractiveTui.PaneItemBackColor, true);
+            }
+
+            // Render the vertical bar
+            if (Config.MainConfig.EnableScrollBarInSelection)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
+                int left = paneNum == 2 ? ConsoleWrapper.WindowWidth - 3 : SeparatorHalfConsoleWidthInterior - 1;
+                ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, false);
+            }
+            _refreshSelection = false;
+        }
+
         private static void DrawInformationOnSecondPane(BaseInteractiveTui interactiveTui)
         {
             // Check to make sure that we don't get nulls on interactiveTui
@@ -452,47 +580,33 @@ namespace KS.Misc.Interactive
                     case ConsoleKey.UpArrow:
                         if (BaseInteractiveTui.CurrentPane == 2)
                         {
-                            BaseInteractiveTui.SecondPaneCurrentSelection--;
-                            if (BaseInteractiveTui.SecondPaneCurrentSelection < 1)
-                                BaseInteractiveTui.SecondPaneCurrentSelection = dataCount;
+                            SelectionMovement(interactiveTui, BaseInteractiveTui.SecondPaneCurrentSelection - 1);
                             DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.SecondPaneCurrentSelection);
                         }
                         else
                         {
-                            BaseInteractiveTui.FirstPaneCurrentSelection--;
-                            if (BaseInteractiveTui.FirstPaneCurrentSelection < 1)
-                                BaseInteractiveTui.FirstPaneCurrentSelection = dataCount;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.SecondPaneCurrentSelection);
+                            SelectionMovement(interactiveTui, BaseInteractiveTui.FirstPaneCurrentSelection - 1);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.FirstPaneCurrentSelection);
                         }
                         break;
                     case ConsoleKey.DownArrow:
                         if (BaseInteractiveTui.CurrentPane == 2)
                         {
-                            BaseInteractiveTui.SecondPaneCurrentSelection++;
-                            if (BaseInteractiveTui.SecondPaneCurrentSelection > dataCount)
-                                BaseInteractiveTui.SecondPaneCurrentSelection = 1;
+                            SelectionMovement(interactiveTui, BaseInteractiveTui.SecondPaneCurrentSelection + 1);
                             DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.SecondPaneCurrentSelection);
                         }
                         else
                         {
-                            BaseInteractiveTui.FirstPaneCurrentSelection++;
-                            if (BaseInteractiveTui.FirstPaneCurrentSelection > dataCount)
-                                BaseInteractiveTui.FirstPaneCurrentSelection = 1;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.SecondPaneCurrentSelection);
+                            SelectionMovement(interactiveTui, BaseInteractiveTui.FirstPaneCurrentSelection + 1);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.FirstPaneCurrentSelection);
                         }
                         break;
                     case ConsoleKey.PageUp:
-                        if (BaseInteractiveTui.CurrentPane == 2)
-                            BaseInteractiveTui.SecondPaneCurrentSelection = 1;
-                        else
-                            BaseInteractiveTui.FirstPaneCurrentSelection = 1;
+                        SelectionMovement(interactiveTui, 1);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: 1");
                         break;
                     case ConsoleKey.PageDown:
-                        if (BaseInteractiveTui.CurrentPane == 2)
-                            BaseInteractiveTui.SecondPaneCurrentSelection = dataCount;
-                        else
-                            BaseInteractiveTui.FirstPaneCurrentSelection = dataCount;
+                        SelectionMovement(interactiveTui, dataCount);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", dataCount);
                         break;
                     case ConsoleKey.I:

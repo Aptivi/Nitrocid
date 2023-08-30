@@ -49,6 +49,10 @@ namespace KS.Misc.Interactive.Interactives
             true;
 
         /// <inheritdoc/>
+        public override bool FastRefresh =>
+            false;
+
+        /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>
             Quantity.Infos.Select((qi) => qi.Name);
 

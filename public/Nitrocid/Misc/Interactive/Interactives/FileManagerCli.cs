@@ -182,6 +182,7 @@ namespace KS.Misc.Interactive.Interactives
                 if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
                 {
                     // We're dealing with a folder. Open it in the selected pane.
+                    InteractiveTuiTools.ForceRefreshSelection();
                     if (CurrentPane == 2)
                     {
                         secondPanePath = Filesystem.NeutralizePath(currentFileSystemEntry.FilePath + "/");
@@ -213,6 +214,7 @@ namespace KS.Misc.Interactive.Interactives
 
         private static void GoUp()
         {
+            InteractiveTuiTools.ForceRefreshSelection();
             if (CurrentPane == 2)
             {
                 secondPanePath = Filesystem.NeutralizePath(secondPanePath + "/..");
@@ -313,6 +315,7 @@ namespace KS.Misc.Interactive.Interactives
 
             try
             {
+                InteractiveTuiTools.ForceRefreshSelection();
                 string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
@@ -337,6 +340,7 @@ namespace KS.Misc.Interactive.Interactives
 
             try
             {
+                InteractiveTuiTools.ForceRefreshSelection();
                 string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
@@ -361,6 +365,7 @@ namespace KS.Misc.Interactive.Interactives
 
             try
             {
+                InteractiveTuiTools.ForceRefreshSelection();
                 Removing.RemoveFileOrDir(currentFileSystemEntry.FilePath);
             }
             catch (Exception ex)
@@ -380,6 +385,7 @@ namespace KS.Misc.Interactive.Interactives
             path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
             if (Checking.FolderExists(path))
             {
+                InteractiveTuiTools.ForceRefreshSelection();
                 if (CurrentPane == 2)
                 {
                     SecondPaneCurrentSelection = 1;
@@ -392,8 +398,10 @@ namespace KS.Misc.Interactive.Interactives
                 }
             }
             else
+            {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
+                RedrawRequired = true;
+            }
         }
 
         private static void CopyTo(FileSystemEntry currentFileSystemEntry)
@@ -404,6 +412,7 @@ namespace KS.Misc.Interactive.Interactives
 
             try
             {
+                InteractiveTuiTools.ForceRefreshSelection();
                 string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), BoxForegroundColor, BoxBackgroundColor);
                 path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
@@ -414,10 +423,16 @@ namespace KS.Misc.Interactive.Interactives
                     if (Parsing.TryParsePath(path))
                         Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
                     else
+                    {
                         InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                        RedrawRequired = true;
+                    }
                 }
                 else
+                {
                     InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                    RedrawRequired = true;
+                }
             }
             catch (Exception ex)
             {
@@ -437,6 +452,7 @@ namespace KS.Misc.Interactive.Interactives
 
             try
             {
+                InteractiveTuiTools.ForceRefreshSelection();
                 string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), BoxForegroundColor, BoxBackgroundColor);
                 path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
@@ -447,10 +463,16 @@ namespace KS.Misc.Interactive.Interactives
                     if (Parsing.TryParsePath(path))
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
                     else
+                    {
                         InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                        RedrawRequired = true;
+                    }
                 }
                 else
+                {
                     InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                    RedrawRequired = true;
+                }
             }
             catch (Exception ex)
             {
@@ -477,10 +499,16 @@ namespace KS.Misc.Interactive.Interactives
                     if (Parsing.TryParseFileName(filename))
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
                     else
+                    {
                         InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
+                        RedrawRequired = true;
+                    }
                 }
                 else
+                {
                     InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File already exists. The name shouldn't be occupied by another file."), BoxForegroundColor, BoxBackgroundColor);
+                    RedrawRequired = true;
+                }
             }
             catch (Exception ex)
             {

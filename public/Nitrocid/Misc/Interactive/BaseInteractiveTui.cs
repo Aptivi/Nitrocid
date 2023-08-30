@@ -51,6 +51,8 @@ namespace KS.Misc.Interactive
         public virtual int RefreshInterval => 0;
         /// <inheritdoc/>
         public virtual bool AcceptsEmptyData => false;
+        /// <inheritdoc/>
+        public virtual bool FastRefresh => true;
 
         /// <inheritdoc/>
         public virtual IEnumerable PrimaryDataSource => Array.Empty<string>();
