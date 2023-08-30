@@ -91,53 +91,5 @@ namespace KS.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
-        {
-            foreach (string FileName in ListArgsOnly)
-            {
-                string FilePath = Filesystem.NeutralizePath(FileName);
-                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, Checking.FileExists(FilePath));
-                TextWriterColor.Write(FileName, true);
-                if (Checking.FileExists(FilePath))
-                {
-                    var FileInfo = new FileInfo(FilePath);
-                    var Style = LineEndingsTools.GetLineEndingFromFile(FilePath);
-
-                    // General info
-                    TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), FileInfo.Name);
-                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(FileInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), FileInfo.Length.FileSizeToString());
-                    TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(FileInfo.CreationTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(FileInfo.LastAccessTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(FileInfo.LastWriteTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), FileInfo.Attributes);
-                    TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(FileInfo.DirectoryName));
-                    TextWriterColor.Write(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString());
-                    TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", $"{Parsing.IsBinaryFile(FileInfo.FullName)}");
-                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}\n", MimeTypes.GetMimeType(Filesystem.NeutralizePath(FileInfo.FullName)));
-
-                    // .NET managed info
-                    TextWriterColor.Write(Translate.DoTranslation(".NET assembly info"), true);
-                    if (ReflectionCommon.IsDotnetAssemblyFile(FilePath, out AssemblyName asmName))
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), asmName.Name);
-                        TextWriterColor.Write(Translate.DoTranslation("Full name") + ": {0}", asmName.FullName);
-                        TextWriterColor.Write(Translate.DoTranslation("Version") + ": {0}", asmName.Version.ToString());
-                        TextWriterColor.Write(Translate.DoTranslation("Culture name") + ": {0}", asmName.CultureName);
-                        TextWriterColor.Write(Translate.DoTranslation("Content type") + ": {0}", asmName.ContentType.ToString());
-                    }
-                    else
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("File is not a valid .NET assembly."));
-                    }
-                }
-                else
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("Can't get information about nonexistent file."), true, KernelColorType.Error);
-                }
-            }
-            return 0;
-        }
-
     }
 }

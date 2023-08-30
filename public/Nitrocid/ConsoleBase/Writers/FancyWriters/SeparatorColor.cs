@@ -80,7 +80,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
             // Write the closing minus sign.
             TextWriterColor.Write(new string('-', RepeatTimes), true, KernelColorType.Separator);
-            if (ConsoleWrapper.CursorTop != ConsoleWrapper.BufferHeight - 1)
+            if (ConsoleWrapper.CursorTop != ConsoleWrapper.BufferHeight - 1 && canPosition)
                 ConsoleWrapper.CursorTop--;
         }
 
@@ -169,7 +169,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
             // Write the closing minus sign.
             TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
-            if (ConsoleWrapper.CursorTop < ConsoleWrapper.BufferHeight - 1)
+            if (ConsoleWrapper.CursorTop < ConsoleWrapper.BufferHeight - 1 && canPosition)
                 ConsoleWrapper.CursorTop--;
         }
 

@@ -79,59 +79,5 @@ namespace KS.Shell.Shells.SFTP.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
-        {
-            bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || Flags.SuppressUnauthorizedMessages;
-            List<FileSystemEntry> entries;
-            if (ListArgsOnly?.Length == 0)
-            {
-                entries = Listing.CreateList(SFTPShellCommon.SFTPCurrDirect);
-                foreach (var file in entries)
-                {
-                    try
-                    {
-                        var info = file.BaseEntry;
-                        if (info is FileInfo)
-                            FileInfoPrinter.PrintFileInfo(file, ShowFileDetails);
-                        else if (info is DirectoryInfo)
-                            DirectoryInfoPrinter.PrintDirectoryInfo(file, ShowFileDetails);
-                    }
-                    catch (UnauthorizedAccessException uaex)
-                    {
-                        if (!SuppressUnauthorizedMessage)
-                            TextWriterColor.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, file);
-                        DebugWriter.WriteDebugStackTrace(uaex);
-                    }
-                }
-            }
-            else
-            {
-                foreach (string Directory in ListArgsOnly)
-                {
-                    string direct = Filesystem.NeutralizePath(Directory);
-                    entries = Listing.CreateList(direct);
-                    foreach (var file in entries)
-                    {
-                        try
-                        {
-                            var info = file.BaseEntry;
-                            if (info is FileInfo)
-                                FileInfoPrinter.PrintFileInfo(file, ShowFileDetails);
-                            else if (info is DirectoryInfo)
-                                DirectoryInfoPrinter.PrintDirectoryInfo(file, ShowFileDetails);
-                        }
-                        catch (UnauthorizedAccessException uaex)
-                        {
-                            if (!SuppressUnauthorizedMessage)
-                                TextWriterColor.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, file);
-                            DebugWriter.WriteDebugStackTrace(uaex);
-                        }
-                    }
-                }
-            }
-            return 0;
-        }
-
     }
 }

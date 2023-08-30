@@ -66,32 +66,5 @@ namespace KS.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
-        {
-            foreach (string Dir in ListArgsOnly)
-            {
-                string DirectoryPath = Filesystem.NeutralizePath(Dir);
-                DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, Checking.FolderExists(DirectoryPath));
-                TextWriterColor.Write(Dir);
-                if (Checking.FolderExists(DirectoryPath))
-                {
-                    var DirInfo = new DirectoryInfo(DirectoryPath);
-                    TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), DirInfo.Name);
-                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(DirInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("Size: {0}"), SizeGetter.GetAllSizesInFolder(DirInfo).FileSizeToString());
-                    TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(DirInfo.CreationTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime));
-                    TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), DirInfo.Attributes);
-                    TextWriterColor.Write(Translate.DoTranslation("Parent directory: {0}"), Filesystem.NeutralizePath(DirInfo.Parent.FullName));
-                }
-                else
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("Can't get information about nonexistent directory."), true, KernelColorType.Error);
-                }
-            }
-            return 0;
-        }
-
     }
 }

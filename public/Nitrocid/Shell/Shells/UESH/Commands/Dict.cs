@@ -114,16 +114,16 @@ namespace KS.Shell.Shells.UESH.Commands
             foreach (DictionaryWord Word in Words)
             {
                 // First, print the license out
-                TextWriterColor.Write(Translate.DoTranslation("License information"), true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true);
                 TextWriterColor.Write("dictionaryapi.dev " + Translate.DoTranslation("API is licensed under") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}");
 
                 // Now, we can write the word information
-                TextWriterColor.Write(Translate.DoTranslation("Word information for") + $" {ListArgsOnly[0]}", true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word information for") + $" {ListArgsOnly[0]}", true);
                 TextWriterColor.Write(Translate.DoTranslation("Word:"), false, KernelColorType.ListEntry);
                 TextWriterColor.Write($" {Word.Word}", true, KernelColorType.ListValue);
 
                 // Meanings...
-                TextWriterColor.Write(Translate.DoTranslation("Word meanings for") + $" {ListArgsOnly[0]}", true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word meanings for") + $" {ListArgsOnly[0]}", true);
                 foreach (DictionaryWord.Meaning MeaningBase in Word.Meanings)
                 {
                     // Base part of speech
@@ -174,7 +174,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
 
                 // Sources...
-                TextWriterColor.Write(Translate.DoTranslation("Sources used to define") + $" {ListArgsOnly[0]}", true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Sources used to define") + $" {ListArgsOnly[0]}", true);
                 foreach (string source in Word.SourceUrls)
                     TextWriterColor.Write(source);
             }
