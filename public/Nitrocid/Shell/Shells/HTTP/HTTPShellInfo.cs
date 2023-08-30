@@ -76,49 +76,49 @@ namespace KS.Shell.Shells.HTTP
                 new CommandInfo("get", ShellType, /* Localizable */ "Gets the response from the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1)
-                    }, new HTTP_GetCommand())
+                    }, new HTTP_GetCommand(), CommandFlags.Wrappable)
             },
 
             { "getstring",
                 new CommandInfo("getstring", ShellType, /* Localizable */ "Gets the string from the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1)
-                    }, new HTTP_GetStringCommand())
+                    }, new HTTP_GetStringCommand(), CommandFlags.Wrappable)
             },
 
             { "lsheader",
                 new CommandInfo("lsheader", ShellType, /* Localizable */ "Lists the request headers",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new HTTP_LsHeaderCommand())
+                    }, new HTTP_LsHeaderCommand(), CommandFlags.Wrappable)
             },
 
             { "put",
                 new CommandInfo("put", ShellType, /* Localizable */ "Puts the file to the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[] { "request", "pathtofile" }, Array.Empty<SwitchInfo>(), true, 2)
-                    }, new HTTP_PutCommand())
+                    }, new HTTP_PutCommand(), CommandFlags.Wrappable)
             },
 
             { "putstring",
                 new CommandInfo("putstring", ShellType, /* Localizable */ "Puts the string to the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[] { "request", "string" }, Array.Empty<SwitchInfo>(), true, 2)
-                    }, new HTTP_PutStringCommand())
+                    }, new HTTP_PutStringCommand(), CommandFlags.Wrappable)
             },
 
             { "post",
                 new CommandInfo("post", ShellType, /* Localizable */ "Posts the file to the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[] { "request", "pathtofile" }, Array.Empty<SwitchInfo>(), true, 2)
-                    }, new HTTP_PostCommand())
+                    }, new HTTP_PostCommand(), CommandFlags.Wrappable)
             },
 
             { "poststring",
                 new CommandInfo("poststring", ShellType, /* Localizable */ "Posts the string to the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[] { "request", "string" }, Array.Empty<SwitchInfo>(), true, 2)
-                    }, new HTTP_PostStringCommand())
+                    }, new HTTP_PostStringCommand(), CommandFlags.Wrappable)
             },
 
             { "rmheader",

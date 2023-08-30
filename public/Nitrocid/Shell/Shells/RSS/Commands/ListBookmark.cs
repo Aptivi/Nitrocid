@@ -34,7 +34,8 @@ namespace KS.Shell.Shells.RSS.Commands
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Bookmarks = RSSBookmarkManager.GetBookmarks();
-            ListWriterColor.WriteList(Bookmarks);
+            foreach (var bookmark in Bookmarks)
+                TextWriterColor.Write(bookmark);
             return 0;
         }
 

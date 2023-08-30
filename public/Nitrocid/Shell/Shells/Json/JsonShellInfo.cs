@@ -101,14 +101,14 @@ namespace KS.Shell.Shells.Json
                             new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", false, false, Array.Empty<string>(), 0, false),
                             new SwitchInfo("showvals", /* Localizable */ "Show all values", false, false, Array.Empty<string>(), 0, false)
                         })
-                    }, new JsonShell_JsonInfoCommand())
+                    }, new JsonShell_JsonInfoCommand(), CommandFlags.Wrappable)
             },
             
             { "print",
                 new CommandInfo("print", ShellType, /* Localizable */ "Prints the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[] { "property" }, Array.Empty<SwitchInfo>())
-                    }, new JsonShell_PrintCommand())
+                    }, new JsonShell_PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "rmobject",

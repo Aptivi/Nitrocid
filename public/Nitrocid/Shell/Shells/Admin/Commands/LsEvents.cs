@@ -36,5 +36,14 @@ namespace KS.Shell.Shells.Admin.Commands
             ListWriterColor.WriteList(EventsManager.ListAllFiredEvents());
             return 0;
         }
+
+        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            var events = EventsManager.ListAllFiredEvents();
+            foreach (string @event in events.Keys)
+                TextWriterColor.Write(@event);
+            return 0;
+        }
+
     }
 }

@@ -309,6 +309,14 @@ namespace KS.Drivers.Filesystem
         void DisplayInHex(long StartByte, long EndByte, byte[] FileByte);
 
         /// <summary>
+        /// Renders the file in hex in dumb mode
+        /// </summary>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte);
+
+        /// <summary>
         /// Checks to see if the file exists. Windows 10/11 bug aware.
         /// </summary>
         /// <param name="File">Target file</param>

@@ -71,7 +71,7 @@ namespace KS.Shell.Shells.Archive
                 new CommandInfo("list", ShellType, /* Localizable */ "Lists all files inside the archive",
                     new[] {
                         new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>())
-                    }, new ArchiveShell_ListCommand())
+                    }, new ArchiveShell_ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "pack",

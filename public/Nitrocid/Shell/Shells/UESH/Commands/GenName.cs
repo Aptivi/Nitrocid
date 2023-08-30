@@ -70,7 +70,8 @@ namespace KS.Shell.Shells.UESH.Commands
             if (nametags)
                 for (int i = 0; i < NamesList.Length; i++)
                     NamesList[i] = "@" + NamesList[i].ToLower().Replace(" ", ".");
-            ListWriterColor.WriteList(NamesList);
+            foreach (string name in NamesList)
+                TextWriterColor.Write(name);
             variableValue = string.Join('\n', NamesList);
             return 0;
         }

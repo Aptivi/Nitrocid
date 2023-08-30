@@ -106,5 +106,80 @@ namespace KS.Shell.Shells.UESH.Commands
             return 0;
         }
 
+        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            var Words = GetWordInfo(ListArgsOnly[0]);
+
+            // Iterate for each word
+            foreach (DictionaryWord Word in Words)
+            {
+                // First, print the license out
+                TextWriterColor.Write(Translate.DoTranslation("License information"), true);
+                TextWriterColor.Write("dictionaryapi.dev " + Translate.DoTranslation("API is licensed under") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}");
+
+                // Now, we can write the word information
+                TextWriterColor.Write(Translate.DoTranslation("Word information for") + $" {ListArgsOnly[0]}", true);
+                TextWriterColor.Write(Translate.DoTranslation("Word:"), false, KernelColorType.ListEntry);
+                TextWriterColor.Write($" {Word.Word}", true, KernelColorType.ListValue);
+
+                // Meanings...
+                TextWriterColor.Write(Translate.DoTranslation("Word meanings for") + $" {ListArgsOnly[0]}", true);
+                foreach (DictionaryWord.Meaning MeaningBase in Word.Meanings)
+                {
+                    // Base part of speech
+                    TextWriterColor.Write(Translate.DoTranslation("Part of Speech:"), false, KernelColorType.ListEntry);
+                    TextWriterColor.Write($" {MeaningBase.PartOfSpeech}", true, KernelColorType.ListValue);
+
+                    // Get the definitions
+                    foreach (DictionaryWord.DefinitionType DefinitionBase in MeaningBase.Definitions)
+                    {
+                        // Write definition and, if applicable, example
+                        TextWriterColor.Write("  - " + Translate.DoTranslation("Definition:"), false, KernelColorType.ListEntry);
+                        TextWriterColor.Write($" {DefinitionBase.Definition}", true, KernelColorType.ListValue);
+                        TextWriterColor.Write("  - " + Translate.DoTranslation("Example in Sentence:"), false, KernelColorType.ListEntry);
+                        TextWriterColor.Write($" {DefinitionBase.Example}", true, KernelColorType.ListValue);
+
+                        // Now, write the specific synonyms (usually blank)
+                        if (DefinitionBase.Synonyms.Any())
+                        {
+                            TextWriterColor.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
+                            foreach (string synonym in DefinitionBase.Synonyms)
+                                TextWriterColor.Write($"    {synonym}");
+                        }
+
+                        // ...and the specific antonyms (usually blank)
+                        if (DefinitionBase.Antonyms.Any())
+                        {
+                            TextWriterColor.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
+                            foreach (string antonym in DefinitionBase.Antonyms)
+                                TextWriterColor.Write($"    {antonym}");
+                        }
+                    }
+
+                    // Now, write the base synonyms (usually blank)
+                    if (MeaningBase.Synonyms.Any())
+                    {
+                        TextWriterColor.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
+                        foreach (string synonym in MeaningBase.Synonyms)
+                            TextWriterColor.Write($"    {synonym}");
+                    }
+
+                    // ...and the base antonyms (usually blank)
+                    if (MeaningBase.Antonyms.Any())
+                    {
+                        TextWriterColor.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
+                        foreach (string antonym in MeaningBase.Antonyms)
+                            TextWriterColor.Write($"    {antonym}");
+                    }
+                }
+
+                // Sources...
+                TextWriterColor.Write(Translate.DoTranslation("Sources used to define") + $" {ListArgsOnly[0]}", true);
+                foreach (string source in Word.SourceUrls)
+                    TextWriterColor.Write(source);
+            }
+            return 0;
+        }
+
     }
 }

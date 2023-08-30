@@ -359,6 +359,15 @@ namespace KS.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void DisplayInHex(long StartByte, long EndByte, byte[] FileByte)
         {
+            // First, check for dumb console
+            if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
+            {
+                // Go to dumb mode
+                DisplayInHexDumbMode(StartByte, EndByte, FileByte);
+                return;
+            }
+
+            // Go ahead...
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
@@ -412,6 +421,67 @@ namespace KS.Drivers.Filesystem
                     }
                 }
                 TextWriterColor.Write();
+            }
+            else if (StartByte > FileByte.LongLength)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+            }
+            else if (EndByte > FileByte.LongLength)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+            }
+        }
+
+        /// <inheritdoc/>
+        public virtual void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
+            StartByte.SwapIfSourceLarger(ref EndByte);
+            if (StartByte < 1)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Byte number must start with 1."));
+                return;
+            }
+            if (StartByte <= FileByte.LongLength & EndByte <= FileByte.LongLength)
+            {
+                // We need to know how to write the bytes and their contents in this shape:
+                // -> 0x00000010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+                //    0x00000020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+                //    0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+                // ... and so on.
+                var builder = new StringBuilder();
+                for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
+                {
+                    builder.Append($"0x{CurrentByteNumber - 1L:X8} ");
+
+                    // Iterate these number of bytes for the ASCII codes
+                    for (long byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
+                    {
+                        byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
+                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
+                        builder.Append($"{CurrentByte:X2} ");
+                    }
+
+                    // Iterate these number of bytes for the actual rendered characters
+                    for (long byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
+                    {
+                        byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
+                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
+                        char ProjectedByteChar = Convert.ToChar(CurrentByte);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", ProjectedByteChar);
+                        char RenderedByteChar = '.';
+                        if (!char.IsWhiteSpace(ProjectedByteChar) & !char.IsControl(ProjectedByteChar) & !char.IsHighSurrogate(ProjectedByteChar) & !char.IsLowSurrogate(ProjectedByteChar))
+                        {
+                            // The renderer will actually render the character, not as a dot.
+                            DebugWriter.WriteDebug(DebugLevel.I, "Char is not a whitespace.");
+                            RenderedByteChar = ProjectedByteChar;
+                        }
+                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
+                        builder.Append($"{RenderedByteChar}");
+                    }
+                    builder.AppendLine();
+                }
+                TextWriterColor.Write(builder.ToString());
             }
             else if (StartByte > FileByte.LongLength)
             {

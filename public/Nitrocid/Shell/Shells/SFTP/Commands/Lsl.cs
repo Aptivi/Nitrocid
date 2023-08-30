@@ -17,10 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Folders;
+using KS.Files.Instances;
+using KS.Files.Print;
 using KS.Kernel;
+using KS.Kernel.Debugging;
+using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.SFTP.Commands
@@ -66,6 +74,60 @@ namespace KS.Shell.Shells.SFTP.Commands
                 {
                     string direct = Filesystem.NeutralizePath(Directory);
                     Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage);
+                }
+            }
+            return 0;
+        }
+
+        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || Listing.ShowFileDetailsList;
+            bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || Flags.SuppressUnauthorizedMessages;
+            List<FileSystemEntry> entries;
+            if (ListArgsOnly?.Length == 0)
+            {
+                entries = Listing.CreateList(SFTPShellCommon.SFTPCurrDirect);
+                foreach (var file in entries)
+                {
+                    try
+                    {
+                        var info = file.BaseEntry;
+                        if (info is FileInfo)
+                            FileInfoPrinter.PrintFileInfo(file, ShowFileDetails);
+                        else if (info is DirectoryInfo)
+                            DirectoryInfoPrinter.PrintDirectoryInfo(file, ShowFileDetails);
+                    }
+                    catch (UnauthorizedAccessException uaex)
+                    {
+                        if (!SuppressUnauthorizedMessage)
+                            TextWriterColor.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, file);
+                        DebugWriter.WriteDebugStackTrace(uaex);
+                    }
+                }
+            }
+            else
+            {
+                foreach (string Directory in ListArgsOnly)
+                {
+                    string direct = Filesystem.NeutralizePath(Directory);
+                    entries = Listing.CreateList(direct);
+                    foreach (var file in entries)
+                    {
+                        try
+                        {
+                            var info = file.BaseEntry;
+                            if (info is FileInfo)
+                                FileInfoPrinter.PrintFileInfo(file, ShowFileDetails);
+                            else if (info is DirectoryInfo)
+                                DirectoryInfoPrinter.PrintDirectoryInfo(file, ShowFileDetails);
+                        }
+                        catch (UnauthorizedAccessException uaex)
+                        {
+                            if (!SuppressUnauthorizedMessage)
+                                TextWriterColor.Write("- " + Translate.DoTranslation("You are not authorized to get info for {0}."), true, KernelColorType.Error, file);
+                            DebugWriter.WriteDebugStackTrace(uaex);
+                        }
+                    }
                 }
             }
             return 0;

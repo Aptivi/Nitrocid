@@ -62,7 +62,7 @@ namespace KS.Shell.Shells.Admin
                 new CommandInfo("lsevents", ShellType, /* Localizable */ "Lists all fired events",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new LsEventsCommand())
+                    }, new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "userflag",

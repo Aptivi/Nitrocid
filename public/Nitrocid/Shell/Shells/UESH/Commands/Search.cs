@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         if (!matchLine.Contains(toReplaceWith))
                             matchLine = matchLine.Replace(match.Value, toReplaceWith);
                     }
-                    Console.WriteLine(matchLine);
+                    TextWriterColor.Write(matchLine);
                 }
                 return 0;
             }

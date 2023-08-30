@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.Debug
                 new CommandInfo("currentbt", ShellType, /* Localizable */ "Gets current backtrace",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Debug_CurrentBtCommand())
+                    }, new Debug_CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "keyinfo",
@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.Debug
                 new CommandInfo("threadsbt", ShellType, /* Localizable */ "Gets backtrace for all threads",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Debug_ThreadsBtCommand())
+                    }, new Debug_ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
         };
 

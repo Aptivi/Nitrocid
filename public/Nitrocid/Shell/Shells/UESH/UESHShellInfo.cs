@@ -451,7 +451,7 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("hwinfo", ShellType, /* Localizable */ "Prints hardware information",
                     new[] {
                         new CommandArgumentInfo(new[] { "HardwareType" }, Array.Empty<SwitchInfo>(), true, 1, false, (_, _, _) => new[] { "HDD", "LogicalParts", "CPU", "GPU", "Sound", "Network", "System", "Machine", "BIOS", "RAM", "all" })
-                    }, new HwInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    }, new HwInfoCommand())
             },
             
             { "if",
@@ -486,14 +486,14 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("jsonbeautify", ShellType, /* Localizable */ "Beautifies the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1, true)
-                    }, new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    }, new JsonBeautifyCommand(), CommandFlags.SettingVariable | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "jsonminify",
                 new CommandInfo("jsonminify", ShellType, /* Localizable */ "Minifies the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1, true)
-                    }, new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    }, new JsonMinifyCommand(), CommandFlags.SettingVariable | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "langman",

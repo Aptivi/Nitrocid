@@ -83,14 +83,14 @@ namespace KS.Shell.Shells.Hex
                 new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with byte numbers to the console",
                     new[] {
                         new CommandArgumentInfo(new[] { "startbyte", "endbyte" }, Array.Empty<SwitchInfo>())
-                    }, new HexEdit_PrintCommand())
+                    }, new HexEdit_PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "querybyte",
                 new CommandInfo("querybyte", ShellType, /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
                     new[] {
                         new CommandArgumentInfo(new[] { "byte", "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), true, 1)
-                    }, new HexEdit_QueryByteCommand())
+                    }, new HexEdit_QueryByteCommand(), CommandFlags.Wrappable)
             },
             
             { "replace",

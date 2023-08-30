@@ -97,28 +97,28 @@ namespace KS.Shell.Shells.Text
                 new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with line numbers to the console",
                     new[] {
                         new CommandArgumentInfo(new[] { "linenumber", "linenumber2" }, Array.Empty<SwitchInfo>())
-                    }, new TextEdit_PrintCommand())
+                    }, new TextEdit_PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "querychar",
                 new CommandInfo("querychar", ShellType, /* Localizable */ "Queries a character in a specified line or all lines",
                     new[] {
                         new CommandArgumentInfo(new[] { "char", "linenumber/all", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2)
-                    }, new TextEdit_QueryCharCommand())
+                    }, new TextEdit_QueryCharCommand(), CommandFlags.Wrappable)
             },
             
             { "queryword",
                 new CommandInfo("queryword", ShellType, /* Localizable */ "Queries a word in a specified line or all lines",
                     new[] {
                         new CommandArgumentInfo(new[] { "word/phrase", "linenumber/all", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2)
-                    }, new TextEdit_QueryWordCommand())
+                    }, new TextEdit_QueryWordCommand(), CommandFlags.Wrappable)
             },
             
             { "querywordregex",
                 new CommandInfo("querywordregex", ShellType, /* Localizable */ "Queries a word in a specified line or all lines using regular expressions",
                     new[] {
                         new CommandArgumentInfo(new[] { "regex", "linenumber/all", "linenumber2" }, Array.Empty<SwitchInfo>(), true, 2)
-                    }, new TextEdit_QueryWordRegexCommand())
+                    }, new TextEdit_QueryWordRegexCommand(), CommandFlags.Wrappable)
             },
             
             { "replace",

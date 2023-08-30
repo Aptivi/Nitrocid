@@ -69,14 +69,14 @@ namespace KS.Shell.Shells.RSS
                 new CommandInfo("list", ShellType, /* Localizable */ "Lists all feeds",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new RSS_ListCommand())
+                    }, new RSS_ListCommand(), CommandFlags.Wrappable)
             },
 
             { "listbookmark",
                 new CommandInfo("listbookmark", ShellType, /* Localizable */ "Lists all bookmarked feeds",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new RSS_ListBookmarkCommand())
+                    }, new RSS_ListBookmarkCommand(), CommandFlags.Wrappable)
             },
 
             { "read",
@@ -95,7 +95,7 @@ namespace KS.Shell.Shells.RSS
                             new SwitchInfo("a", /* Localizable */ "Search for title and description", false, false, Array.Empty<string>(), 0, false),
                             new SwitchInfo("cs", /* Localizable */ "Case sensitive search", false, false, Array.Empty<string>(), 0, false)
                         }, true, 1)
-                    }, new RSS_SearchCommand())
+                    }, new RSS_SearchCommand(), CommandFlags.Wrappable)
             },
 
             { "unbookmark",

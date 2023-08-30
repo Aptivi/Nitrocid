@@ -48,5 +48,22 @@ namespace KS.Shell.Shells.Debug.Commands
             }
             return 0;
         }
+
+        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            // Print the list in a dumb-friendly way
+            Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
+            foreach (var trace in result)
+            {
+                string threadAddress = trace.Key;
+                string[] threadTrace = trace.Value;
+                TextWriterColor.Write(Translate.DoTranslation("Thread stack trace information for {0}") + "\n", true, KernelColorType.ListTitle, threadAddress);
+                foreach (string threadTraceStr in threadTrace)
+                    TextWriterColor.Write(threadTraceStr);
+                TextWriterColor.Write();
+            }
+            return 0;
+        }
+
     }
 }
