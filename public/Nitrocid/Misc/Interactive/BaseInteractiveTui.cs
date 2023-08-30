@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Languages;
 using System;
 using System.Collections;
@@ -57,33 +58,47 @@ namespace KS.Misc.Interactive
         public virtual IEnumerable SecondaryDataSource => Array.Empty<string>();
 
         /// <inheritdoc/>
-        public static Color BackgroundColor => InteractiveTuiColors.TuiBackgroundColor;
+        public static Color BackgroundColor =>
+            new(Config.MainConfig.TuiBackgroundColor);
         /// <inheritdoc/>
-        public static Color ForegroundColor => InteractiveTuiColors.TuiForegroundColor;
+        public static Color ForegroundColor =>
+            new(Config.MainConfig.TuiForegroundColor);
         /// <inheritdoc/>
-        public static Color PaneBackgroundColor => InteractiveTuiColors.TuiPaneBackgroundColor;
+        public static Color PaneBackgroundColor =>
+            new(Config.MainConfig.TuiPaneBackgroundColor);
         /// <inheritdoc/>
-        public static Color PaneSeparatorColor => InteractiveTuiColors.TuiPaneSeparatorColor;
+        public static Color PaneSeparatorColor =>
+            new(Config.MainConfig.TuiPaneSeparatorColor);
         /// <inheritdoc/>
-        public static Color PaneSelectedSeparatorColor => InteractiveTuiColors.TuiPaneSelectedSeparatorColor;
+        public static Color PaneSelectedSeparatorColor =>
+            new(Config.MainConfig.TuiPaneSelectedSeparatorColor);
         /// <inheritdoc/>
-        public static Color PaneSelectedItemForeColor => InteractiveTuiColors.TuiPaneSelectedItemForeColor;
+        public static Color PaneSelectedItemForeColor =>
+            new(Config.MainConfig.TuiPaneSelectedItemForeColor);
         /// <inheritdoc/>
-        public static Color PaneSelectedItemBackColor => InteractiveTuiColors.TuiPaneSelectedItemBackColor;
+        public static Color PaneSelectedItemBackColor =>
+            new(Config.MainConfig.TuiPaneSelectedItemBackColor);
         /// <inheritdoc/>
-        public static Color PaneItemForeColor => InteractiveTuiColors.TuiPaneItemForeColor;
+        public static Color PaneItemForeColor =>
+            new(Config.MainConfig.TuiPaneItemForeColor);
         /// <inheritdoc/>
-        public static Color PaneItemBackColor => InteractiveTuiColors.TuiPaneItemBackColor;
+        public static Color PaneItemBackColor =>
+            new(Config.MainConfig.TuiPaneItemBackColor);
         /// <inheritdoc/>
-        public static Color OptionBackgroundColor => InteractiveTuiColors.TuiOptionBackgroundColor;
+        public static Color OptionBackgroundColor =>
+            new(Config.MainConfig.TuiOptionBackgroundColor);
         /// <inheritdoc/>
-        public static Color KeyBindingOptionColor => InteractiveTuiColors.TuiKeyBindingOptionColor;
+        public static Color KeyBindingOptionColor =>
+            new(Config.MainConfig.TuiKeyBindingOptionColor);
         /// <inheritdoc/>
-        public static Color OptionForegroundColor => InteractiveTuiColors.TuiOptionForegroundColor;
+        public static Color OptionForegroundColor =>
+            new(Config.MainConfig.TuiOptionForegroundColor);
         /// <inheritdoc/>
-        public static Color BoxBackgroundColor => InteractiveTuiColors.TuiBoxBackgroundColor;
+        public static Color BoxBackgroundColor =>
+            new(Config.MainConfig.TuiBoxBackgroundColor);
         /// <inheritdoc/>
-        public static Color BoxForegroundColor => InteractiveTuiColors.TuiBoxForegroundColor;
+        public static Color BoxForegroundColor =>
+            new(Config.MainConfig.TuiBoxForegroundColor);
 
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(object item) =>

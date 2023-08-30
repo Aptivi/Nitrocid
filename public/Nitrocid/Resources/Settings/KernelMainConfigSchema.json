@@ -212,6 +212,48 @@
         "TodayDayColor": {
             "type": "string"
         },
+        "TuiBackgroundColor": {
+            "type": "string"
+        },
+        "TuiForegroundColor": {
+            "type": "string"
+        },
+        "TuiPaneBackgroundColor": {
+            "type": "string"
+        },
+        "TuiPaneSeparatorColor": {
+            "type": "string"
+        },
+        "TuiPaneSelectedSeparatorColor": {
+            "type": "string"
+        },
+        "TuiPaneSelectedItemForeColor": {
+            "type": "string"
+        },
+        "TuiPaneSelectedItemBackColor": {
+            "type": "string"
+        },
+        "TuiPaneItemForeColor": {
+            "type": "string"
+        },
+        "TuiPaneItemBackColor": {
+            "type": "string"
+        },
+        "TuiOptionBackgroundColor": {
+            "type": "string"
+        },
+        "TuiOptionForegroundColor": {
+            "type": "string"
+        },
+        "TuiKeyBindingOptionColor": {
+            "type": "string"
+        },
+        "TuiBoxBackgroundColor": {
+            "type": "string"
+        },
+        "TuiBoxForegroundColor": {
+            "type": "string"
+        },
         "QuietHardwareProbe": {
             "type": "boolean"
         },
@@ -713,48 +755,6 @@
         "NotifyDisplayAsAsterisk": {
             "type": "boolean"
         },
-        "TuiBackgroundColor": {
-            "type": "string"
-        },
-        "TuiForegroundColor": {
-            "type": "string"
-        },
-        "TuiPaneBackgroundColor": {
-            "type": "string"
-        },
-        "TuiPaneSeparatorColor": {
-            "type": "string"
-        },
-        "TuiPaneSelectedSeparatorColor": {
-            "type": "string"
-        },
-        "TuiPaneSelectedItemForeColor": {
-            "type": "string"
-        },
-        "TuiPaneSelectedItemBackColor": {
-            "type": "string"
-        },
-        "TuiPaneItemForeColor": {
-            "type": "string"
-        },
-        "TuiPaneItemBackColor": {
-            "type": "string"
-        },
-        "TuiOptionBackgroundColor": {
-            "type": "string"
-        },
-        "TuiOptionForegroundColor": {
-            "type": "string"
-        },
-        "TuiKeyBindingOptionColor": {
-            "type": "string"
-        },
-        "TuiBoxBackgroundColor": {
-            "type": "string"
-        },
-        "TuiBoxForegroundColor": {
-            "type": "string"
-        },
         "ShipDuetUsePowerLine": {
             "type": "boolean"
         },
@@ -839,6 +839,20 @@
         "EventDayColor",
         "TableTitleColor",
         "TodayDayColor",
+        "TuiBackgroundColor",
+        "TuiForegroundColor",
+        "TuiPaneBackgroundColor",
+        "TuiPaneSeparatorColor",
+        "TuiPaneSelectedSeparatorColor",
+        "TuiPaneSelectedItemForeColor",
+        "TuiPaneSelectedItemBackColor",
+        "TuiPaneItemForeColor",
+        "TuiPaneItemBackColor",
+        "TuiOptionBackgroundColor",
+        "TuiOptionForegroundColor",
+        "TuiKeyBindingOptionColor",
+        "TuiBoxBackgroundColor",
+        "TuiBoxForegroundColor",
         "QuietHardwareProbe",
         "FullHardwareProbe",
         "VerboseHardwareProbe",
@@ -1006,20 +1020,6 @@
         "BorderRightFrameChar",
         "DebugCensorPrivateInfo",
         "NotifyDisplayAsAsterisk",
-        "TuiBackgroundColor",
-        "TuiForegroundColor",
-        "TuiPaneBackgroundColor",
-        "TuiPaneSeparatorColor",
-        "TuiPaneSelectedSeparatorColor",
-        "TuiPaneSelectedItemForeColor",
-        "TuiPaneSelectedItemBackColor",
-        "TuiPaneItemForeColor",
-        "TuiPaneItemBackColor",
-        "TuiOptionBackgroundColor",
-        "TuiOptionForegroundColor",
-        "TuiKeyBindingOptionColor",
-        "TuiBoxBackgroundColor",
-        "TuiBoxForegroundColor",
         "ShipDuetUsePowerLine",
         "ShipDuetSpeed",
         "LyricsPath",

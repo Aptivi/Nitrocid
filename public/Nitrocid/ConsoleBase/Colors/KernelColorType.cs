@@ -191,5 +191,61 @@ namespace KS.ConsoleBase.Colors
         /// Today
         /// </summary>
         TodayDay,
+        /// <summary>
+        /// Interactive TUI background color
+        /// </summary>
+        TuiBackground,
+        /// <summary>
+        /// Interactive TUI foreground color
+        /// </summary>
+        TuiForeground,
+        /// <summary>
+        /// Interactive TUI pane background color
+        /// </summary>
+        TuiPaneBackground,
+        /// <summary>
+        /// Interactive TUI pane separator color
+        /// </summary>
+        TuiPaneSeparator,
+        /// <summary>
+        /// Interactive TUI pane selected separator color
+        /// </summary>
+        TuiPaneSelectedSeparator,
+        /// <summary>
+        /// Interactive TUI pane selected item color (foreground)
+        /// </summary>
+        TuiPaneSelectedItemFore,
+        /// <summary>
+        /// Interactive TUI pane selected item color (background)
+        /// </summary>
+        TuiPaneSelectedItemBack,
+        /// <summary>
+        /// Interactive TUI pane item color (foreground)
+        /// </summary>
+        TuiPaneItemFore,
+        /// <summary>
+        /// Interactive TUI pane item color (background)
+        /// </summary>
+        TuiPaneItemBack,
+        /// <summary>
+        /// Interactive TUI option background color
+        /// </summary>
+        TuiOptionBackground,
+        /// <summary>
+        /// Interactive TUI key binding in option color
+        /// </summary>
+        TuiKeyBindingOption,
+        /// <summary>
+        /// Interactive TUI option foreground color
+        /// </summary>
+        TuiOptionForeground,
+        /// <summary>
+        /// Interactive TUI box background color
+        /// </summary>
+        TuiBoxBackground,
+        /// <summary>
+        /// Interactive TUI box foreground color
+        /// </summary>
+        TuiBoxForeground,
     }
 }

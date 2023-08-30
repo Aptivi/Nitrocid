@@ -411,6 +411,76 @@
                 "Name": "Today Day Color",
                 "Type": "SColor",
                 "Variable": "TodayDayColor"
+            },
+            {
+                "Name": "Interactive TUI background color",
+                "Type": "SColor",
+                "Variable": "TuiBackgroundColor"
+            },
+            {
+                "Name": "Interactive TUI foreground color",
+                "Type": "SColor",
+                "Variable": "TuiForegroundColor"
+            },
+            {
+                "Name": "Interactive TUI pane background color",
+                "Type": "SColor",
+                "Variable": "TuiPaneBackgroundColor"
+            },
+            {
+                "Name": "Interactive TUI pane separator color",
+                "Type": "SColor",
+                "Variable": "TuiPaneSeparatorColor"
+            },
+            {
+                "Name": "Interactive TUI selected pane separator color",
+                "Type": "SColor",
+                "Variable": "TuiPaneSelectedSeparatorColor"
+            },
+            {
+                "Name": "Interactive TUI selected pane item foreground color",
+                "Type": "SColor",
+                "Variable": "TuiPaneSelectedItemForeColor"
+            },
+            {
+                "Name": "Interactive TUI selected pane item background color",
+                "Type": "SColor",
+                "Variable": "TuiPaneSelectedItemBackColor"
+            },
+            {
+                "Name": "Interactive TUI pane item foreground color",
+                "Type": "SColor",
+                "Variable": "TuiPaneItemForeColor"
+            },
+            {
+                "Name": "Interactive TUI pane item background color",
+                "Type": "SColor",
+                "Variable": "TuiPaneItemBackColor"
+            },
+            {
+                "Name": "Interactive TUI option background color",
+                "Type": "SColor",
+                "Variable": "TuiOptionBackgroundColor"
+            },
+            {
+                "Name": "Interactive TUI option foreground color",
+                "Type": "SColor",
+                "Variable": "TuiOptionForegroundColor"
+            },
+            {
+                "Name": "Interactive TUI option binding name color",
+                "Type": "SColor",
+                "Variable": "TuiKeyBindingOptionColor"
+            },
+            {
+                "Name": "Interactive TUI box background color",
+                "Type": "SColor",
+                "Variable": "TuiBoxBackgroundColor"
+            },
+            {
+                "Name": "Interactive TUI box foreground color",
+                "Type": "SColor",
+                "Variable": "TuiBoxForegroundColor"
             }
         ]
     },
@@ -1563,76 +1633,6 @@
                 "Type": "SBoolean",
                 "Variable": "NotifyDisplayAsAsterisk",
                 "Description": "Shows all new notifications as asterisks. This option is ignored in notifications with progress bar."
-            },
-            {
-                "Name": "Interactive TUI background color",
-                "Type": "SColor",
-                "Variable": "TuiBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI foreground color",
-                "Type": "SColor",
-                "Variable": "TuiForegroundColor"
-            },
-            {
-                "Name": "Interactive TUI pane background color",
-                "Type": "SColor",
-                "Variable": "TuiPaneBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI pane separator color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSeparatorColor"
-            },
-            {
-                "Name": "Interactive TUI selected pane separator color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSelectedSeparatorColor"
-            },
-            {
-                "Name": "Interactive TUI selected pane item foreground color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSelectedItemForeColor"
-            },
-            {
-                "Name": "Interactive TUI selected pane item background color",
-                "Type": "SColor",
-                "Variable": "TuiPaneSelectedItemBackColor"
-            },
-            {
-                "Name": "Interactive TUI pane item foreground color",
-                "Type": "SColor",
-                "Variable": "TuiPaneItemForeColor"
-            },
-            {
-                "Name": "Interactive TUI pane item background color",
-                "Type": "SColor",
-                "Variable": "TuiPaneItemBackColor"
-            },
-            {
-                "Name": "Interactive TUI option background color",
-                "Type": "SColor",
-                "Variable": "TuiOptionBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI option foreground color",
-                "Type": "SColor",
-                "Variable": "TuiOptionForegroundColor"
-            },
-            {
-                "Name": "Interactive TUI option binding name color",
-                "Type": "SColor",
-                "Variable": "TuiKeyBindingOptionColor"
-            },
-            {
-                "Name": "Interactive TUI box background color",
-                "Type": "SColor",
-                "Variable": "TuiBoxBackgroundColor"
-            },
-            {
-                "Name": "Interactive TUI box foreground color",
-                "Type": "SColor",
-                "Variable": "TuiBoxForegroundColor"
             },
             {
                 "Name": "Use PowerLine for rendering spaceship in ShipDuet",

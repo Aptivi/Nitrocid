@@ -44,5 +44,19 @@
     "WeekendDayColor": "42;65;156",
     "EventDayColor": "42;65;156",
     "TableTitleColor": "42;65;156",
-    "TodayDayColor": "42;65;156"
+    "TodayDayColor": "42;65;156",
+    "TuiBackgroundColor": "0",
+    "TuiForegroundColor": "39;62;156",
+    "TuiPaneBackgroundColor": "0",
+    "TuiPaneSeparatorColor": "39;62;156",
+    "TuiPaneSelectedSeparatorColor": "42;65;156",
+    "TuiPaneSelectedItemForeColor": "42;65;156",
+    "TuiPaneSelectedItemBackColor": "117;46;176",
+    "TuiPaneItemForeColor": "39;62;156",
+    "TuiPaneItemBackColor": "0",
+    "TuiOptionBackgroundColor": "0",
+    "TuiKeyBindingOptionColor": "39;62;156",
+    "TuiOptionForegroundColor": "39;62;156",
+    "TuiBoxBackgroundColor": "0",
+    "TuiBoxForegroundColor": "39;62;156"
 }

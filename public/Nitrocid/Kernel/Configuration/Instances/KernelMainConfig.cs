@@ -542,6 +542,118 @@ namespace KS.Kernel.Configuration.Instances
             set => KernelColorTools.SetColor(KernelColorType.TodayDay, new Color(value));
         }
         /// <summary>
+        /// Interactive TUI background color
+        /// </summary>
+        public string TuiBackgroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiBackground).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiBackground, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI foreground color
+        /// </summary>
+        public string TuiForegroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiForeground).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiForeground, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI pane background color
+        /// </summary>
+        public string TuiPaneBackgroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneBackground).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiPaneBackground, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI pane separator color
+        /// </summary>
+        public string TuiPaneSeparatorColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSeparator).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiPaneSeparator, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI selected pane separator color
+        /// </summary>
+        public string TuiPaneSelectedSeparatorColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedSeparator).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedSeparator, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI selected pane item foreground color
+        /// </summary>
+        public string TuiPaneSelectedItemForeColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemFore).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemFore, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI selected pane item background color
+        /// </summary>
+        public string TuiPaneSelectedItemBackColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneSelectedItemBack).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiPaneSelectedItemBack, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI pane item foreground color
+        /// </summary>
+        public string TuiPaneItemForeColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneItemFore).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiPaneItemFore, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI pane item background color
+        /// </summary>
+        public string TuiPaneItemBackColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiPaneItemBack).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiPaneItemBack, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI option background color
+        /// </summary>
+        public string TuiOptionBackgroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiOptionBackground).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiOptionBackground, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI option foreground color
+        /// </summary>
+        public string TuiOptionForegroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiOptionForeground).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiOptionForeground, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI option binding name color
+        /// </summary>
+        public string TuiKeyBindingOptionColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiKeyBindingOption).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiKeyBindingOption, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI box background color
+        /// </summary>
+        public string TuiBoxBackgroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiBoxBackground).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiBoxBackground, new Color(value));
+        }
+        /// <summary>
+        /// Interactive TUI box foreground color
+        /// </summary>
+        public string TuiBoxForegroundColor
+        {
+            get => KernelColorTools.GetColor(KernelColorType.TuiBoxForeground).PlainSequence;
+            set => KernelColorTools.SetColor(KernelColorType.TuiBoxForeground, new Color(value));
+        }
+        /// <summary>
         /// Keep hardware probing messages silent.
         /// </summary>
         public bool QuietHardwareProbe { get; set; }
@@ -1506,62 +1618,6 @@ namespace KS.Kernel.Configuration.Instances
         /// Shows all new notifications as asterisks. This option is ignored in notifications with progress bar.
         /// </summary>
         public bool NotifyDisplayAsAsterisk { get; set; }
-        /// <summary>
-        /// Interactive TUI background color
-        /// </summary>
-        public string TuiBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkBlue)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI foreground color
-        /// </summary>
-        public string TuiForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Yellow)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI pane background color
-        /// </summary>
-        public string TuiPaneBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Blue3)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI pane separator color
-        /// </summary>
-        public string TuiPaneSeparatorColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkGreen_005f00)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI selected pane separator color
-        /// </summary>
-        public string TuiPaneSelectedSeparatorColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Green3_00d700)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI selected pane item foreground color
-        /// </summary>
-        public string TuiPaneSelectedItemForeColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Yellow)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI selected pane item background color
-        /// </summary>
-        public string TuiPaneSelectedItemBackColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkBlue)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI pane item foreground color
-        /// </summary>
-        public string TuiPaneItemForeColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkYellow)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI pane item background color
-        /// </summary>
-        public string TuiPaneItemBackColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Blue3)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI option background color
-        /// </summary>
-        public string TuiOptionBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.DarkCyan)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI option foreground color
-        /// </summary>
-        public string TuiOptionForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Black)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI option binding name color
-        /// </summary>
-        public string TuiKeyBindingOptionColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Cyan)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI box background color
-        /// </summary>
-        public string TuiBoxBackgroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.Red)).PlainSequence;
-        /// <summary>
-        /// Interactive TUI box foreground color
-        /// </summary>
-        public string TuiBoxForegroundColor { get; set; } = new Color(Convert.ToInt32(ConsoleColors.White)).PlainSequence;
         /// <summary>
         /// Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.
         /// </summary>

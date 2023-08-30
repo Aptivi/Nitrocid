@@ -44,5 +44,19 @@
     "WeekendDayColor": "#9AACCE",
     "EventDayColor": "#9AACCE",
     "TableTitleColor": "#9AACCE",
-    "TodayDayColor": "#9AACCE"
+    "TodayDayColor": "#9AACCE",
+    "TuiBackgroundColor": "#2A2520",
+    "TuiForegroundColor": "#ECE1D7",
+    "TuiPaneBackgroundColor": "#2A2520",
+    "TuiPaneSeparatorColor": "#243146",
+    "TuiPaneSelectedSeparatorColor": "#9AACCE",
+    "TuiPaneSelectedItemForeColor": "#9AACCE",
+    "TuiPaneSelectedItemBackColor": "#7D2A2F",
+    "TuiPaneItemForeColor": "#ECE1D7",
+    "TuiPaneItemBackColor": "#2A2520",
+    "TuiOptionBackgroundColor": "#2A2520",
+    "TuiKeyBindingOptionColor": "#ECE1D7",
+    "TuiOptionForegroundColor": "#ECE1D7",
+    "TuiBoxBackgroundColor": "#2A2520",
+    "TuiBoxForegroundColor": "#ECE1D7"
 }
