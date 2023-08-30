@@ -61,6 +61,15 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use ConsoleWrapper.
+        /// </summary>
+        internal static string ConsoleWrapperUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("ConsoleWrapperUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TextTools.FormatString().
         /// </summary>
         internal static string StringFormatCodeFixTitle {

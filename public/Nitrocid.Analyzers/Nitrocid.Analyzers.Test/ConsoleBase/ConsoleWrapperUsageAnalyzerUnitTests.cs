@@ -19,13 +19,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Nitrocid.Analyzers.Test.CSharpCodeFixVerifier<
-    Nitrocid.Analyzers.Misc.Text.StringFormatAnalyzer,
-    Nitrocid.Analyzers.Misc.Text.StringFormatCodeFixProvider>;
+    Nitrocid.Analyzers.ConsoleBase.ConsoleWrapperUsageAnalyzer,
+    Nitrocid.Analyzers.ConsoleBase.ConsoleWrapperUsageCodeFixProvider>;
 
-namespace Nitrocid.Analyzers.Test.Misc.Text
+namespace Nitrocid.Analyzers.Test.ConsoleBase
 {
     [TestClass]
-    public class StringFormatAnalyzerUnitTests
+    public class ConsoleWrapperUsageAnalyzerUnitTests
     {
         [TestMethod]
         public async Task TestEnsureNoAnalyzer()
@@ -45,7 +45,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.ConsoleBase;
+                using KS.Misc.Text;
 
                 namespace ConsoleApplication1
                 {
@@ -53,7 +53,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                     {   
                         public static void Main()
                         {
-                            ConsoleWrapper.WriteLine([|string.Format|]("Hello, {0}!", "Nitrocid"));
+                            [|Console.WriteLine|](TextTools.FormatString("Hello, {0}!", "Nitrocid"));
                         }
                     }
                 }
@@ -72,7 +72,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.ConsoleBase;
+                using KS.Misc.Text;
 
                 namespace ConsoleApplication1
                 {
@@ -80,7 +80,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                     {   
                         public static void Main()
                         {
-                            ConsoleWrapper.WriteLine([|string.Format|]("Hello, {0}!", "Nitrocid"));
+                            [|Console.WriteLine|](TextTools.FormatString("Hello, {0}!", "Nitrocid"));
                         }
                     }
                 }
@@ -93,8 +93,8 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.ConsoleBase;
                 using KS.Misc.Text;
+                using KS.ConsoleBase;
                 namespace ConsoleApplication1
                 {
                     class MyMod

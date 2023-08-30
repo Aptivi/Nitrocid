@@ -117,7 +117,22 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+
+  <!--
+      String format code fix
+  -->
   <data name="StringFormatCodeFixTitle" xml:space="preserve">
     <value>Use TextTools.FormatString()</value>
   </data>
+
+  <!--
+      ConsoleWrapper usage code fix
+  -->
+  <data name="ConsoleWrapperUsageCodeFixTitle" xml:space="preserve">
+    <value>Use ConsoleWrapper</value>
+  </data>
+
+  <!--
+      Other analyzers TBD
+  -->
 </root>

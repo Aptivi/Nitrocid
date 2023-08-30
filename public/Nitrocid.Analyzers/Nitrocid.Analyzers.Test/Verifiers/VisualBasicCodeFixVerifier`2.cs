@@ -52,6 +52,8 @@ namespace Nitrocid.Analyzers.Test
             };
 
             test.ExpectedDiagnostics.AddRange(expected);
+            test.ReferenceAssemblies = ReferenceAssemblies.Net.Net60;
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../Nitrocid/KSBuild/net6.0/Nitrocid.dll"));
             await test.RunAsync(CancellationToken.None);
         }
 

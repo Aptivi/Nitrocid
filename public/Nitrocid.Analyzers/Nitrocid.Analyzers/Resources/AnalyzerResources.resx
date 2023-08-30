@@ -132,6 +132,19 @@
   </data>
 
   <!--
+      ConsoleWrapper usage analyzer
+  -->
+  <data name="ConsoleWrapperUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use ConsoleWrapper instead of Console</value>
+  </data>
+  <data name="ConsoleWrapperUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console instead of ConsoleWrapper</value>
+  </data>
+  <data name="ConsoleWrapperUsageAnalyzerDescription" xml:space="preserve">
+    <value>ConsoleWrapper makes sure that your console is not a dumb console. This class is a wrapper for the Console class so that it works cross-platform, while Console contains some platform-dependent APIs.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

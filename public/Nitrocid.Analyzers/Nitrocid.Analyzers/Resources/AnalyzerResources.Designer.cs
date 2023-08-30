@@ -61,6 +61,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ConsoleWrapper makes sure that your console is not a dumb console. This class is a wrapper for the Console class so that it works cross-platform, while Console contains some platform-dependent APIs..
+        /// </summary>
+        internal static string ConsoleWrapperUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ConsoleWrapperUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Console instead of ConsoleWrapper.
+        /// </summary>
+        internal static string ConsoleWrapperUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ConsoleWrapperUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use ConsoleWrapper instead of Console.
+        /// </summary>
+        internal static string ConsoleWrapperUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ConsoleWrapperUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TextTools.FormatString() uses the error handler to handle unknown formatting errors and returns the unformatted string if such errors happen, but string.Format() immediately throws..
         /// </summary>
         internal static string StringFormatAnalyzerDescription {
