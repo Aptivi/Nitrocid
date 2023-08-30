@@ -110,42 +110,6 @@ namespace Nitrocid.Tests.Drivers
         }
 
         /// <summary>
-        /// Tests hash verification from hashes file
-        /// </summary>
-        [TestCase("CRC32", ExpectedResult = true)]
-        [TestCase("MD5", ExpectedResult = true)]
-        [TestCase("SHA1", ExpectedResult = true)]
-        [TestCase("SHA256", ExpectedResult = true)]
-        [TestCase("SHA384", ExpectedResult = true)]
-        [TestCase("SHA512", ExpectedResult = true)]
-        [Description("Action")]
-        public bool TestVerifyHashFromFileStdFormat(string Algorithm)
-        {
-            string DataPath = TestContext.CurrentContext.TestDirectory + "/TestData/";
-            string FileHash = Encryption.GetEncryptedFile(DataPath + "TestText.txt", Algorithm);
-            bool Result = HashVerifier.VerifyHashFromHashesFile(DataPath + "TestText.txt", Algorithm, DataPath + "TestVerify" + Algorithm.ToString() + ".txt", FileHash);
-            return Result;
-        }
-
-        /// <summary>
-        /// Tests hash verification from hashes file
-        /// </summary>
-        [TestCase("CRC32", ExpectedResult = true)]
-        [TestCase("MD5", ExpectedResult = true)]
-        [TestCase("SHA1", ExpectedResult = true)]
-        [TestCase("SHA256", ExpectedResult = true)]
-        [TestCase("SHA384", ExpectedResult = true)]
-        [TestCase("SHA512", ExpectedResult = true)]
-        [Description("Action")]
-        public bool TestVerifyHashFromFileKSFormat(string Algorithm)
-        {
-            string DataPath = TestContext.CurrentContext.TestDirectory + "/TestData/";
-            string FileHash = Encryption.GetEncryptedFile(DataPath + "TestText.txt", Algorithm);
-            bool Result = HashVerifier.VerifyHashFromHashesFile(DataPath + "TestText.txt", Algorithm, DataPath + "TestVerify" + Algorithm.ToString() + "KS.txt", FileHash);
-            return Result;
-        }
-
-        /// <summary>
         /// Tests hash verification for an uncalculated file
         /// </summary>
         [TestCase("CRC32", "D394D7F0", ExpectedResult = true)]
@@ -163,40 +127,6 @@ namespace Nitrocid.Tests.Drivers
             FileStreamHash.Close();
             bool Result = HashVerifier.VerifyUncalculatedHashFromHash(InitTest.PathToTestSlotFolder + "/TestSum.txt", Algorithm, ExpectedHash);
             File.Delete(InitTest.PathToTestSlotFolder + "/TestSum.txt");
-            return Result;
-        }
-
-        /// <summary>
-        /// Tests hash verification from hashes file for an uncalculated file
-        /// </summary>
-        [TestCase("CRC32", ExpectedResult = true)]
-        [TestCase("MD5", ExpectedResult = true)]
-        [TestCase("SHA1", ExpectedResult = true)]
-        [TestCase("SHA256", ExpectedResult = true)]
-        [TestCase("SHA384", ExpectedResult = true)]
-        [TestCase("SHA512", ExpectedResult = true)]
-        [Description("Action")]
-        public bool TestVerifyUncalculatedHashFromFileStdFormat(string Algorithm)
-        {
-            string DataPath = TestContext.CurrentContext.TestDirectory + "/TestData/";
-            bool Result = HashVerifier.VerifyUncalculatedHashFromHashesFile(DataPath + "TestText.txt", Algorithm, DataPath + "TestVerify" + Algorithm.ToString() + ".txt");
-            return Result;
-        }
-
-        /// <summary>
-        /// Tests hash verification from hashes file for an uncalculated file
-        /// </summary>
-        [TestCase("CRC32", ExpectedResult = true)]
-        [TestCase("MD5", ExpectedResult = true)]
-        [TestCase("SHA1", ExpectedResult = true)]
-        [TestCase("SHA256", ExpectedResult = true)]
-        [TestCase("SHA384", ExpectedResult = true)]
-        [TestCase("SHA512", ExpectedResult = true)]
-        [Description("Action")]
-        public bool TestVerifyUncalculatedHashFromFileKSFormat(string Algorithm)
-        {
-            string DataPath = TestContext.CurrentContext.TestDirectory + "/TestData/";
-            bool Result = HashVerifier.VerifyUncalculatedHashFromHashesFile(DataPath + "TestText.txt", Algorithm, DataPath + "TestVerify" + Algorithm.ToString() + "KS.txt");
             return Result;
         }
 

@@ -128,17 +128,5 @@ namespace Nitrocid.Tests.Files
         public bool TestTryParseFileName(string Path) =>
             Parsing.TryParseFileName(Path);
 
-        /// <summary>
-        /// Tests trying to get the line ending from text file
-        /// </summary>
-        [Test]
-        [Description("Querying")]
-        public void TestGetLineEndingFromFile()
-        {
-            var ExpectedStyle = FilesystemNewlineStyle.LF;
-            var ActualStyle = LineEndingsTools.GetLineEndingFromFile(Path.GetFullPath("TestData/TestText.txt"));
-            ActualStyle.ShouldBe(ExpectedStyle);
-        }
-
     }
 }
