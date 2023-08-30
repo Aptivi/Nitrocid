@@ -60,11 +60,11 @@ namespace KS.Misc.Screensaver.Displays
         {
             int step;
             int maxSteps = 13;
-            Color darkGreen = new(ConsoleColors.DarkGreen);
-            Color green = new(ConsoleColors.Green);
-            Color black = new(ConsoleColors.Black);
-            Color red = new(ConsoleColors.Red);
-            Color white = new(ConsoleColors.White);
+            Color darkGreen = new(0, 128, 0);
+            Color green = new(0, 255, 0);
+            Color black = new(0, 0, 0);
+            Color red = new(255, 0, 0);
+            Color white = new(255, 255, 255);
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)

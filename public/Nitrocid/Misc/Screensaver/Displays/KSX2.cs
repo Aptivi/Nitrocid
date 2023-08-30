@@ -58,13 +58,13 @@ namespace KS.Misc.Screensaver.Displays
         {
             int step;
             int maxSteps = 13;
-            Color darkGreen = new(ConsoleColors.DarkGreen);
-            Color darkRed = new(ConsoleColors.DarkRed);
-            Color red = new(ConsoleColors.Red);
-            Color yellow = new(ConsoleColors.Yellow);
-            Color green = new(ConsoleColors.Green);
-            Color black = new(ConsoleColors.Black);
-            Color white = new(ConsoleColors.White);
+            Color darkGreen = new(0, 128, 0);
+            Color darkRed = new(128, 0, 0);
+            Color red = new(255, 0, 0);
+            Color yellow = new(255, 255, 0);
+            Color green = new(0, 255, 0);
+            Color black = new(0, 0, 0);
+            Color white = new(255, 255, 255);
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)
@@ -383,15 +383,15 @@ namespace KS.Misc.Screensaver.Displays
                     case 13:
                         string tbc = Translate.DoTranslation("To be continued...").ToUpper();
                         ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(40, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, black);
                         ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, black);
                         ThreadManager.SleepNoBlock(1000, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         break;
                 }
