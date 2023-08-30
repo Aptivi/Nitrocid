@@ -43,8 +43,8 @@ namespace KS.Misc.Interactive.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
         {
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F1, (_, index) => ContactsManager.RemoveContact(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete All",  ConsoleKey.F2, (_, _) => ContactsManager.RemoveContacts(), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F1, (_, index) => RemoveContact(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete All",  ConsoleKey.F2, (_, _) => RemoveContacts(), true),
             new InteractiveTuiBinding(/* Localizable */ "Import",      ConsoleKey.F3, (_, _) => ImportContacts(), true),
             new InteractiveTuiBinding(/* Localizable */ "Import From", ConsoleKey.F4, (_, _) => ImportContactsFrom(), true),
             new InteractiveTuiBinding(/* Localizable */ "Info",        ConsoleKey.F5, (_, index) => ShowContactInfo(index), true),
@@ -57,6 +57,10 @@ namespace KS.Misc.Interactive.Interactives
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>
             ContactsManager.GetContacts();
+
+        /// <inheritdoc/>
+        public override bool AcceptsEmptyData =>
+            true;
 
         /// <inheritdoc/>
         public override string GetInfoFromItem(object item)
@@ -128,6 +132,18 @@ namespace KS.Misc.Interactive.Interactives
             if (contact is null)
                 return "";
             return contact.ContactFullName;
+        }
+
+        private static void RemoveContact(int index)
+        {
+            InteractiveTuiTools.ForceRefreshSelection();
+            ContactsManager.RemoveContact(index);
+        }
+
+        private static void RemoveContacts()
+        {
+            InteractiveTuiTools.ForceRefreshSelection();
+            ContactsManager.RemoveContacts();
         }
 
         private static void ImportContacts()
