@@ -79,6 +79,7 @@ namespace KS.Misc.Interactive
                     {
                         // Check the selection
                         interactiveTui.LastOnOverflow();
+                        CheckSelectionForUnderflow(interactiveTui);
                         DebugWriter.WriteDebug(DebugLevel.I, "Went to the last element on overflow.");
 
                         // Draw the boxes
@@ -654,6 +655,14 @@ namespace KS.Misc.Interactive
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Refreshing...");
             }
+        }
+
+        private static void CheckSelectionForUnderflow(BaseInteractiveTui interactiveTui)
+        {
+            if (BaseInteractiveTui.FirstPaneCurrentSelection <= 0 && CountElements(interactiveTui.PrimaryDataSource) > 0)
+                BaseInteractiveTui.FirstPaneCurrentSelection = 1;
+            if (BaseInteractiveTui.SecondPaneCurrentSelection <= 0 && CountElements(interactiveTui.SecondaryDataSource) > 0)
+                BaseInteractiveTui.SecondPaneCurrentSelection = 1;
         }
     }
 }
