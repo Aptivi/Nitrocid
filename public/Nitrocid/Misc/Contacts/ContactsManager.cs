@@ -76,13 +76,37 @@ namespace KS.Misc.Contacts
             if (!Checking.FolderExists(contactsImportPath))
                 Making.MakeDirectory(contactsImportPath);
             var contactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.ContactsImport) + "/*.vcf");
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts.", contactFiles.Length);
+            var androidContactFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.ContactsImport) + "/*.db");
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} contacts and {1} Android databases.", contactFiles.Length, androidContactFiles.Length);
 
             // Now, enumerate through each contact file
             foreach (var contact in contactFiles)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Installing contact {0}...", contact);
-                InstallContacts(contact);
+                try
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Installing contact {0}...", contact);
+                    InstallContacts(contact);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Contact installation {0} failed. {1}", contact, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
+
+            // Now, enumerate through each Android contact database
+            foreach (var contact in androidContactFiles)
+            {
+                try
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Installing contact from Android contacts database {0}...", contact);
+                    InstallContacts(contact);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Contact installation from Android contacts database {0} failed. {1}", contact, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
             }
         }
 
