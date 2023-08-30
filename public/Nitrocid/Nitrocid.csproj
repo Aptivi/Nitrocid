@@ -94,7 +94,7 @@
     <PackageReference Include="SSH.NET" Version="2020.0.2" />
     <PackageReference Include="StringMath" Version="4.1.0" />
     <PackageReference Include="Syndian" Version="0.3.0" />
-    <PackageReference Include="Terminaux" Version="1.1.2" />
+    <PackageReference Include="Terminaux" Version="1.2.0" />
     <PackageReference Include="UnitsNet" Version="5.31.0" />
     <PackageReference Include="VisualCard" Version="0.6.0" />
     <PackageReference Include="Wordament" Version="0.3.0" />
