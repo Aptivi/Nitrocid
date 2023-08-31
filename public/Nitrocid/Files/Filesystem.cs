@@ -113,10 +113,12 @@ namespace KS.Files
         /// </remarks>
         public static void ThrowOnInvalidPath(string Path)
         {
-            if (KernelPlatform.IsOnWindows() & (Path.Contains("$i30") | Path.Contains(@"\\.\globalroot\device\condrv\kernelconnect")))
+            if (string.IsNullOrEmpty(Path))
+                return;
+            if (KernelPlatform.IsOnWindows() && (Path.Contains("$i30") || Path.Contains(@"\\.\globalroot\device\condrv\kernelconnect")))
             {
                 DebugWriter.WriteDebug(DebugLevel.F, "Trying to access invalid path. Path was {0}", Path);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Trying to access invalid path."), nameof(Path));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Trying to access invalid path."));
             }
         }
 

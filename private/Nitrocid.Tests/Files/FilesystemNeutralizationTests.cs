@@ -18,6 +18,7 @@
 
 using KS.Files;
 using KS.Kernel.Configuration;
+using KS.Kernel.Exceptions;
 using NUnit.Framework;
 using Shouldly;
 
@@ -55,6 +56,29 @@ namespace Nitrocid.Tests.Files
             string NeutPath = Filesystem.NeutralizePath(TestPath, TargetPath);
             NeutPath.ShouldBe(TargetPath + "/" + TestPath);
         }
+
+        /// <summary>
+        /// Tests throwing on invalid path
+        /// </summary>
+        [Test]
+        [TestCase(null)]
+        [TestCase("")]
+        [TestCase("/usr/lib")]
+        [TestCase("C:/Program Files")]
+        [TestCase("Music")]
+        [Description("Neutralization")]
+        public void TestThrowOnInvalidPathValid(string path) =>
+            Should.NotThrow(() => Filesystem.ThrowOnInvalidPath(path));
+
+        /// <summary>
+        /// Tests throwing on invalid path
+        /// </summary>
+        [Test]
+        [TestCase("\\\\.\\globalroot\\device\\condrv\\kernelconnect")]
+        [TestCase("C:\\$i30")]
+        [Description("Neutralization")]
+        public void TestThrowOnInvalidPathInvalid(string path) =>
+            Should.Throw(() => Filesystem.ThrowOnInvalidPath(path), typeof(KernelException));
 
     }
 }
