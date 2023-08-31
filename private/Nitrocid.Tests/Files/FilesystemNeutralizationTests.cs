@@ -76,7 +76,7 @@ namespace Nitrocid.Tests.Files
         [Test]
         [TestCase("\\\\.\\globalroot\\device\\condrv\\kernelconnect")]
         [TestCase("C:\\$i30")]
-        [Platform("Windows")]
+        [Platform("Win")]
         [Description("Neutralization")]
         public void TestThrowOnInvalidPathInvalid(string path) =>
             Should.Throw(() => Filesystem.ThrowOnInvalidPath(path), typeof(KernelException));
