@@ -105,14 +105,16 @@ namespace KS.Misc.Presentation
 
                 // Render all elements
                 var pageElements = page.Elements;
+                bool checkOutOfBounds = false;
                 foreach (var element in pageElements)
                 {
                     // Check for possible out-of-bounds
-                    if (element.IsPossibleOutOfBounds())
+                    if (element.IsPossibleOutOfBounds() && checkOutOfBounds)
                     {
                         Input.DetectKeypress();
                         ClearPresentation();
                     }
+                    checkOutOfBounds = true;
 
                     // Render it to the view
                     element.Render();
