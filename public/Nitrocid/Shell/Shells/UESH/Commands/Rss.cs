@@ -36,14 +36,16 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell(ShellType.RSSShell, (address) =>
-            {
-                if (string.IsNullOrEmpty(address))
-                    address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
-                return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
-            }
-            , StringArgs);
+            NetworkConnectionTools.OpenConnectionForShell(ShellType.RSSShell, EstablishRssConnection, (_, connection) => EstablishRssConnection(connection["Address"].ToString()), StringArgs);
             return 0;
         }
+
+        private NetworkConnection EstablishRssConnection(string address)
+        {
+            if (string.IsNullOrEmpty(address))
+                address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+            return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
+        }
+
     }
 }

@@ -20,6 +20,7 @@ using KS.Network.Base.Connections;
 using KS.Network.FTP;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using Newtonsoft.Json.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -36,8 +37,12 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell(ShellType.FTPShell, FTPTools.TryToConnect, StringArgs);
+            NetworkConnectionTools.OpenConnectionForShell(ShellType.FTPShell, FTPTools.TryToConnect, EstablishFtpConnection, StringArgs);
             return 0;
         }
+
+        private NetworkConnection EstablishFtpConnection(string address, JToken connection) =>
+            FTPTools.PromptForPassword(null, connection["Options"][0].ToString(), address, (int)connection["Port"]);
+
     }
 }

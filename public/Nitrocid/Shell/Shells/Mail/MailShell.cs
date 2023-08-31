@@ -29,6 +29,7 @@ using MailKit.Net.Smtp;
 using System.Threading;
 using System;
 using KS.Kernel.Threading;
+using KS.Network.SpeedDial;
 
 namespace KS.Shell.Shells.Mail
 {
@@ -62,6 +63,9 @@ namespace KS.Shell.Shells.Mail
             var SMTP_NoOp = new KernelThread("SMTP Keep Connection", false, MailPingers.SMTPKeepConnection);
             SMTP_NoOp.Start();
             DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about SMTPKeepConnection()");
+
+            // Write connection information to Speed Dial file if it doesn't exist there
+            SpeedDialTools.TryAddEntryToSpeedDial(connection.ConnectionUri.AbsoluteUri, connection.ConnectionUri.Port, NetworkConnectionType.Mail, false, MailLogin.Mail_Authentication.UserName);
 
             while (!Bail)
             {

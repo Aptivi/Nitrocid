@@ -74,7 +74,7 @@ namespace KS.Network.SFTP
                 }
 
                 // Check to see if we're aborting or not
-                var client = new SftpClient(SSHTools.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser));
+                var client = GetConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SFTPShellCommon.SFTPUser);
 
                 // Connect to SFTP
                 return ConnectSFTP(client);
@@ -88,10 +88,13 @@ namespace KS.Network.SFTP
             }
         }
 
+        internal static SftpClient GetConnectionInfo(string SftpHost, int SftpPort, string SftpUser) =>
+            new(SSHTools.PromptConnectionInfo(SftpHost, Convert.ToInt32(SftpPort), SftpUser));
+
         /// <summary>
         /// Tries to connect to the SFTP server.
         /// </summary>
-        private static NetworkConnection ConnectSFTP(SftpClient client)
+        internal static NetworkConnection ConnectSFTP(SftpClient client)
         {
             // Connect
             TextWriterColor.Write(Translate.DoTranslation("Trying to connect to {0}..."), client.ConnectionInfo.Host);

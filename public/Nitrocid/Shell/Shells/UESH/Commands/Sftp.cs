@@ -20,6 +20,7 @@ using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Network.SFTP;
+using Newtonsoft.Json.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -36,8 +37,15 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell(ShellType.SFTPShell, SFTPTools.SFTPTryToConnect, StringArgs);
+            NetworkConnectionTools.OpenConnectionForShell(ShellType.SFTPShell, SFTPTools.SFTPTryToConnect, EstablishSftpConnection, StringArgs);
             return 0;
         }
+
+        private NetworkConnection EstablishSftpConnection(string address, JToken connection)
+        {
+            var info = SFTPTools.GetConnectionInfo(address, (int)connection["Port"], connection["Options"][0].ToString());
+            return SFTPTools.ConnectSFTP(info);
+        }
+
     }
 }

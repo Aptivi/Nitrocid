@@ -28,6 +28,7 @@ using Syndian.Instance;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.HTTP;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Network.SpeedDial;
 
 namespace KS.Shell.Shells.RSS
 {
@@ -60,6 +61,9 @@ namespace KS.Shell.Shells.RSS
                 RSSShellCommon.RSSRefresher.Start();
                 DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about RefreshFeeds()");
             }
+
+            // Write connection information to Speed Dial file if it doesn't exist there
+            SpeedDialTools.TryAddEntryToSpeedDial(rssFeed.FeedUrl, rssConnection.ConnectionUri.Port, NetworkConnectionType.RSS, false);
 
             while (!Bail)
             {

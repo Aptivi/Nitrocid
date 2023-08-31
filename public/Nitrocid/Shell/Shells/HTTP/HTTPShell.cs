@@ -24,6 +24,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.Base.Connections;
+using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.HTTP
@@ -49,6 +50,9 @@ namespace KS.Shell.Shells.HTTP
             NetworkConnection httpConnection = (NetworkConnection)ShellArgs[0];
             HTTPShellCommon.clientConnection = httpConnection;
             HTTPShellCommon.HTTPSite = httpConnection.ConnectionUri.OriginalString;
+
+            // Write connection information to Speed Dial file if it doesn't exist there
+            SpeedDialTools.TryAddEntryToSpeedDial(HTTPShellCommon.HTTPSite, httpConnection.ConnectionUri.Port, NetworkConnectionType.HTTP, false);
 
             while (!Bail)
             {

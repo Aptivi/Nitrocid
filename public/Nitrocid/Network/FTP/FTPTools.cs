@@ -96,7 +96,7 @@ namespace KS.Network.FTP
             {
                 // Create an FTP stream to connect to
                 int indexOfPort = address.LastIndexOf(":");
-                string FtpHost       = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "");
+                string FtpHost = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "");
                 FtpHost = indexOfPort < 0 ? FtpHost : FtpHost.Replace(FtpHost[FtpHost.LastIndexOf(":")..], "");
                 string FtpPortString = address.Replace("ftpes://", "").Replace("ftps://", "").Replace("ftp://", "").Replace(FtpHost + ":", "");
                 DebugWriter.WriteDebug(DebugLevel.W, "Host: {0}, Port: {1}", FtpHost, FtpPortString);

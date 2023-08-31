@@ -30,6 +30,7 @@ using System.Linq;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Network.SpeedDial;
+using Newtonsoft.Json.Linq;
 
 namespace KS.Network.Base.Connections
 {
@@ -386,17 +387,19 @@ namespace KS.Network.Base.Connections
         /// </summary>
         /// <param name="shellType">Any shell type that has its <see cref="BaseShellInfo.AcceptsNetworkConnection"/> flag set to true.</param>
         /// <param name="establisher">The function responsible for establishing the network connection</param>
+        /// <param name="speedEstablisher">The function responsible for establishing the network connection with speed dial options</param>
         /// <param name="address">Target address to connect to</param>
-        public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, string address = "") =>
-            OpenConnectionForShell(ShellManager.GetShellTypeName(shellType), establisher, address);
+        public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "") =>
+            OpenConnectionForShell(ShellManager.GetShellTypeName(shellType), establisher, speedEstablisher, address);
 
         /// <summary>
         /// Opens a connection for the selected shell
         /// </summary>
         /// <param name="shellType">Any shell type that has its <see cref="BaseShellInfo.AcceptsNetworkConnection"/> flag set to true.</param>
         /// <param name="establisher">The function responsible for establishing the network connection</param>
+        /// <param name="speedEstablisher">The function responsible for establishing the network connection with speed dial options</param>
         /// <param name="address">Target address to connect to</param>
-        public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, string address = "")
+        public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "")
         {
             // Get shell info to check to see if the shell accepts network connections
             var shellInfo = ShellManager.GetShellInfo(shellType);
@@ -462,7 +465,7 @@ namespace KS.Network.Base.Connections
                             var speedDialKvp = speedDials.ElementAt(selectedSpeedDial - 1);
                             address = speedDialKvp.Key;
                             DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", address);
-                            connection = establisher(address);
+                            connection = speedEstablisher(address, speedDialKvp.Value);
                         }
                     }
                     else

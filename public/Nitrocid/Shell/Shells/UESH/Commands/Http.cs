@@ -33,14 +33,16 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell(ShellType.HTTPShell, (address) =>
-            {
-                if (string.IsNullOrEmpty(address))
-                    address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
-                return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, new HttpClient());
-            }
-            , StringArgs);
+            NetworkConnectionTools.OpenConnectionForShell(ShellType.HTTPShell, EstablishHttpConnection, (_, connection) => EstablishHttpConnection(connection["Address"].ToString()), StringArgs);
             return 0;
         }
+
+        private NetworkConnection EstablishHttpConnection(string address)
+        {
+            if (string.IsNullOrEmpty(address))
+                address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+            return NetworkConnectionTools.EstablishConnection("HTTP connection", address, NetworkConnectionType.HTTP, new HttpClient());
+        }
+
     }
 }
