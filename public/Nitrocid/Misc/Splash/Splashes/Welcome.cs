@@ -26,6 +26,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Sequences.Tools;
+using KS.ConsoleBase.Colors;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -37,7 +38,7 @@ namespace KS.Misc.Splash.Splashes
 
         // Private variables
         readonly Color firstColor = new(ConsoleColors.White);
-        readonly Color secondColor = new(ConsoleColors.Cyan);
+        readonly Color secondColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
 
         // Actual logic
         public override void Display()
@@ -74,7 +75,7 @@ namespace KS.Misc.Splash.Splashes
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
             // Write a glorious Welcome screen
-            Color col = new(ConsoleColors.Green);
+            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             string text = Translate.DoTranslation("Welcome!").ToUpper();
             var figFont = FigletTools.GetFigletFont("Banner3");
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
