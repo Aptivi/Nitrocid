@@ -41,6 +41,7 @@ namespace KS.Misc.Animations.BSOD
             new BiosMbr(),
             new HaikuBootloader(),
             new Linux2(),
+            new SamsungS7Bootloader(),
         };
 
         /// <summary>
