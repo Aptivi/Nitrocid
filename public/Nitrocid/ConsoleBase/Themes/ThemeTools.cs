@@ -188,7 +188,7 @@ namespace KS.ConsoleBase.Themes
             // Set the colors
             try
             {
-                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 2; typeIndex++)
+                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
                 {
                     KernelColorType type = KernelColors.Keys.ElementAt(typeIndex);
                     var themeColor = ThemeInfo.ThemeColors[type];

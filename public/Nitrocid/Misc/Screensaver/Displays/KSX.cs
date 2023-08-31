@@ -50,7 +50,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.Colors.KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+            ConsoleBase.Colors.KernelColorTools.LoadBack(new Color(0, 0, 0), true);
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -175,7 +175,7 @@ namespace KS.Misc.Screensaver.Displays
                             for (int currentIdx = 0; currentIdx <= sample.Length - 1 && !printDone; currentIdx++)
                             {
                                 // Write the current character
-                                TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen, 0);
+                                TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen, black);
 
                                 // Sleep
                                 ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -190,7 +190,7 @@ namespace KS.Misc.Screensaver.Displays
                                         currentIdx = 0;
 
                                     // Write the current character
-                                    TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen, 0);
+                                    TextWriterColor.Write(sample[currentIdx].ToString(), false, darkGreen, black);
 
                                     // Reset position
                                     ConsoleWrapper.CursorLeft = 0;
@@ -209,7 +209,7 @@ namespace KS.Misc.Screensaver.Displays
                         int s4figHeight = FigletTools.GetFigletHeight("2018", s4figFont) / 2;
                         int s4consoleX = (ConsoleWrapper.WindowWidth / 2) - s4figWidth;
                         int s4consoleY = (ConsoleWrapper.WindowHeight / 2) - s4figHeight;
-                        FigletWhereColor.WriteFigletWhere("2018", s4consoleX, s4consoleY, true, s4figFont, green, 0);
+                        FigletWhereColor.WriteFigletWhere("2018", s4consoleX, s4consoleY, true, s4figFont, green, black);
                         ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         break;
                     case 5:
@@ -297,7 +297,7 @@ namespace KS.Misc.Screensaver.Displays
                             {
                                 int idx = selectedKernel - 1;
                                 var ver = versions.ElementAt(i);
-                                TextWriterColor.Write("- {0}: {1}", true, i == idx ? green : darkGreen, 0, ver.Key, ver.Value);
+                                TextWriterColor.Write("- {0}: {1}", true, i == idx ? green : darkGreen, black, ver.Key, ver.Value);
                             }
 
                             // Sleep
@@ -420,7 +420,7 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                             int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-                            TextWriterWhereColor.WriteWhere("X", xwidth, xheight, white, 0);
+                            TextWriterWhereColor.WriteWhere("X", xwidth, xheight, white, black);
                             ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
@@ -455,15 +455,15 @@ namespace KS.Misc.Screensaver.Displays
                     case 13:
                         string tbc = Translate.DoTranslation("To be continued...").ToUpper();
                         ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(40, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, black);
                         ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, black, black);
                         ThreadManager.SleepNoBlock(1000, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, 0);
+                        TextWriterWhereColor.WriteWhere(tbc, (ConsoleWrapper.WindowWidth / 2) - (tbc.Length / 2), ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         break;
                 }
