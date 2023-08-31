@@ -39,6 +39,8 @@ namespace KS.Misc.Animations.BSOD
             new Linux(),
             new VGA(),
             new BiosMbr(),
+            new HaikuBootloader(),
+            new Linux2(),
         };
 
         /// <summary>
