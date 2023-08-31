@@ -28,7 +28,7 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         /// <summary>
-        /// [BSOD] How many beats per minute to wait before making the next write?
+        /// [BSOD] How many milliseconds to wait before making the next write?
         /// </summary>
         public static int BSODDelay
         {
