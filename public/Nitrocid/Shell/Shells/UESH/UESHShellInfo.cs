@@ -351,7 +351,10 @@ namespace KS.Shell.Shells.UESH
             { "echo",
                 new CommandInfo("echo", ShellType, /* Localizable */ "Writes text into the console",
                     new[] {
-                        new CommandArgumentInfo(new[] { "text" }, Array.Empty<SwitchInfo>(), false, 0, true)
+                        new CommandArgumentInfo(new[] { "text" }, new[]
+                        {
+                            new SwitchInfo("noparse", /* Localizable */ "Prints the text as it is with no placeholder parsing", false, false, Array.Empty<string>(), 0, false)
+                        }, false, 0, true)
                     }, new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             

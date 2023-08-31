@@ -992,5 +992,6 @@ Expired
 Checks the file or the folder lock
 Waits until the file or the folder is unlocked
 File or folder {0} not found.
+Prints the text as it is with no placeholder parsing
 
 ==========================================================================================================================================

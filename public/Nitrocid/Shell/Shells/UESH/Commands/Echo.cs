@@ -33,7 +33,10 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            string result = PlaceParse.ProbePlaces(StringArgs);
+            bool parsePlaces = !SwitchManager.ContainsSwitch(ListSwitchesOnly, "-noparse");
+            if (ListSwitchesOnly.Length == 0)
+                parsePlaces = true;
+            string result = parsePlaces ? PlaceParse.ProbePlaces(StringArgs) : StringArgs;
             TextWriterColor.Write(result);
             variableValue = result;
             return 0;
