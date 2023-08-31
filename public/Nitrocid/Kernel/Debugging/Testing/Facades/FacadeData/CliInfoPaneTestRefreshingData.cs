@@ -31,9 +31,9 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
 
         public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
         {
-            new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]"), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2, (_, index) => strings.RemoveAt(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _)     => strings.RemoveAt(strings.Count - 1), true),
+            new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1, (_, index) => Add(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2, (_, index) => Remove(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _)     => RemoveLast(), true),
             new InteractiveTuiBinding(/* Localizable */ "Redraw",      ConsoleKey.F4, (_, _)     => RedrawRequired = true, true),
         };
 
@@ -71,6 +71,24 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
         {
             string selected = (string)item;
             return selected;
+        }
+
+        private static void Add(int index)
+        {
+            strings.Add($"[{index}] --+-- [{index}]");
+            InteractiveTuiTools.ForceRefreshSelection();
+        }
+
+        private static void Remove(int index)
+        {
+            strings.RemoveAt(index);
+            InteractiveTuiTools.ForceRefreshSelection();
+        }
+
+        private static void RemoveLast()
+        {
+            strings.RemoveAt(strings.Count - 1);
+            InteractiveTuiTools.ForceRefreshSelection();
         }
     }
 }
