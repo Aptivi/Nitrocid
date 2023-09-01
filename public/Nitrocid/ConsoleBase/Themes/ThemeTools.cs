@@ -34,6 +34,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Misc.Reflection;
 using KS.Resources;
+using System.Text;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -252,15 +253,20 @@ namespace KS.ConsoleBase.Themes
             if (IsTrueColorRequired(colors) && !Flags.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
+            // Write the prompt
+            StringBuilder themeColorPromptText = new();
             ConsoleWrapper.Clear();
-            TextWriterColor.Write(Translate.DoTranslation("Here's how your theme will look like:") + CharManager.NewLine);
+            themeColorPromptText.AppendLine(Translate.DoTranslation("Here's how your theme will look like:") + CharManager.NewLine);
 
             // Print every possibility of color types
             for (int key = 0; key < colors.Count; key++)
             {
-                TextWriterColor.Write($"*) {colors.Keys.ElementAt(key)}: ", false, KernelColorType.Option);
-                TextWriterColor.Write("Lorem ipsum dolor sit amet, consectetur adipiscing elit.", true, colors.Values.ElementAt(key));
+                var type = colors.Keys.ElementAt(key);
+                var color = colors.Values.ElementAt(key);
+                themeColorPromptText.Append($"{GetColor(KernelColorType.Option).VTSequenceForeground}*) {type}: ");
+                themeColorPromptText.AppendLine($"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
             }
+            TextWriterWrappedColor.WriteWrapped(themeColorPromptText.ToString(), false, KernelColorType.Option);
         }
 
         /// <summary>
