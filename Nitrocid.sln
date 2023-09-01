@@ -30,6 +30,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Analyzers.Test", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Analyzers.Vsix", "public\Nitrocid.Analyzers\Nitrocid.Analyzers.Vsix\Nitrocid.Analyzers.Vsix.csproj", "{AD2CC906-EC76-4736-A216-6453114A0C0C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.LocaleCheck", "private\Nitrocid.LocaleCheck\Nitrocid.LocaleCheck.csproj", "{CB35C763-7560-4B64-B756-9DE23FC5BBBE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.StandaloneAnalyzer", "public\Nitrocid.Analyzers\Nitrocid.StandaloneAnalyzer\Nitrocid.StandaloneAnalyzer.csproj", "{DF07F4E1-47B2-452D-A200-F15F558C4977}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -76,6 +80,14 @@ Global
 		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD2CC906-EC76-4736-A216-6453114A0C0C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CB35C763-7560-4B64-B756-9DE23FC5BBBE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CB35C763-7560-4B64-B756-9DE23FC5BBBE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CB35C763-7560-4B64-B756-9DE23FC5BBBE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CB35C763-7560-4B64-B756-9DE23FC5BBBE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DF07F4E1-47B2-452D-A200-F15F558C4977}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DF07F4E1-47B2-452D-A200-F15F558C4977}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DF07F4E1-47B2-452D-A200-F15F558C4977}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DF07F4E1-47B2-452D-A200-F15F558C4977}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -91,6 +103,8 @@ Global
 		{A9D16C17-745F-467E-854F-A5C40A28D7A9} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
 		{E7FE453F-AD54-4286-B129-4788C7729F5F} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
 		{AD2CC906-EC76-4736-A216-6453114A0C0C} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
+		{CB35C763-7560-4B64-B756-9DE23FC5BBBE} = {61916ED1-66D6-4938-9F1A-D0DF38D16E20}
+		{DF07F4E1-47B2-452D-A200-F15F558C4977} = {A32F9CED-BCDB-48A7-A42D-E98E33BD6E65}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}
