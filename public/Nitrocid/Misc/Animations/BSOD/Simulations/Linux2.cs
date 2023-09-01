@@ -18,7 +18,6 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.RNG;
 using Terminaux.Colors;
 
 namespace KS.Misc.Animations.BSOD.Simulations

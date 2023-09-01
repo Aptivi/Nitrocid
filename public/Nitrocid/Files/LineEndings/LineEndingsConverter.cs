@@ -19,7 +19,6 @@
 using KS.Drivers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using UnitsNet;
 
 namespace KS.Files.LineEndings
 {

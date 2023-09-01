@@ -17,18 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Folders;
-using KS.Files.Instances;
-using KS.Files.Print;
 using KS.Kernel;
-using KS.Kernel.Debugging;
-using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.FTP.Commands

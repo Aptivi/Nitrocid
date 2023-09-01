@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files;
-using KS.Files.LineEndings;
 using KS.Files.Querying;
 using NUnit.Framework;
 using Shouldly;
