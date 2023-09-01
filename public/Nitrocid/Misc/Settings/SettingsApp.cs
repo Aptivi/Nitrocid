@@ -109,6 +109,7 @@ namespace KS.Misc.Settings
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
                     // The selected answer is a section
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Loading section..."), false);
                     JProperty SelectedSection = (JProperty)SettingsToken.ToList()[Answer - 1];
                     DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
                     OpenSection(SelectedSection.Name, SettingsToken, SettingsType);
