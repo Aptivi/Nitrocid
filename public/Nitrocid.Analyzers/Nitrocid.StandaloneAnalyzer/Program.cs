@@ -29,6 +29,9 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terminaux.Colors;
+using Terminaux.Reader;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.StandaloneAnalyzer
 {
@@ -36,58 +39,63 @@ namespace Nitrocid.StandaloneAnalyzer
     {
         static async Task Main(string[] args)
         {
-            // Attempt to set the version of MSBuild.
-            var visualStudioInstances = MSBuildLocator.QueryVisualStudioInstances().ToArray();
-            var instance = visualStudioInstances.Length == 1
-                // If there is only one instance of MSBuild on this machine, set that as the one to use.
-                ? visualStudioInstances[0]
-                // Handle selecting the version of MSBuild you want to use.
-                : SelectVisualStudioInstance(visualStudioInstances);
-
-            Console.WriteLine($"Using MSBuild at '{instance.MSBuildPath}' to load projects.");
-
-            // NOTE: Be sure to register an instance with the MSBuildLocator 
-            //       before calling MSBuildWorkspace.Create()
-            //       otherwise, MSBuildWorkspace won't MEF compose.
-            MSBuildLocator.RegisterInstance(instance);
-
-            using (var workspace = MSBuildWorkspace.Create())
+            // Check to see if we've been provided the path to Nitrocid.sln
+            if (args.Length == 0 || (args.Length > 0 && !args[0].EndsWith("Nitrocid.sln")))
             {
-                // Print message for WorkspaceFailed event to help diagnosing project load failures.
-                workspace.WorkspaceFailed += (o, e) => Console.WriteLine(e.Diagnostic.Message);
+                TextWriterColor.Write("Provide a path to Nitrocid.sln.", true, ConsoleColors.Red);
+                return;
+            }
 
+            try
+            {
+                // Attempt to set the version of MSBuild.
+                var visualStudioInstances = MSBuildLocator.QueryVisualStudioInstances().ToArray();
+                var instance = visualStudioInstances.Length == 1 ? visualStudioInstances[0] : SelectVisualStudioInstance(visualStudioInstances);
+                TextWriterColor.Write($"Build system is {instance.MSBuildPath}, {instance.Name}, version {instance.Version}");
+                MSBuildLocator.RegisterInstance(instance);
+
+                // Create a workspace using the instance
+                using var workspace = MSBuildWorkspace.Create();
+                workspace.WorkspaceFailed += (o, e) =>
+                    TextWriterColor.Write($"Failed to load the workspace: [{e.Diagnostic.Kind}] {e.Diagnostic.Message}", true, ConsoleColors.Red);
+
+                // Load the solution
                 var solutionPath = args[0];
-                Console.WriteLine($"Loading solution '{solutionPath}'");
+                TextWriterColor.Write($"Loading solution {solutionPath}...");
 
                 // Attach progress reporter so we print projects as they are loaded.
                 var solution = await workspace.OpenSolutionAsync(solutionPath, new ConsoleProgressReporter());
-                Console.WriteLine($"Finished loading solution '{solutionPath}'");
+                TextWriterColor.Write($"Finished loading solution {solutionPath}!", true, ConsoleColors.Green);
 
                 // TODO: Do analysis on the projects in the loaded solution
+            }
+            catch (Exception ex)
+            {
+                TextWriterColor.Write($"Analyzer failed: {ex.Message}", true, ConsoleColors.Red);
             }
         }
 
         private static VisualStudioInstance SelectVisualStudioInstance(VisualStudioInstance[] visualStudioInstances)
         {
-            Console.WriteLine("Multiple installs of MSBuild detected please select one:");
+            TextWriterColor.Write("Select a Visual Studio instance:");
             for (int i = 0; i < visualStudioInstances.Length; i++)
             {
-                Console.WriteLine($"Instance {i + 1}");
-                Console.WriteLine($"    Name: {visualStudioInstances[i].Name}");
-                Console.WriteLine($"    Version: {visualStudioInstances[i].Version}");
-                Console.WriteLine($"    MSBuild Path: {visualStudioInstances[i].MSBuildPath}");
+                TextWriterColor.Write($"Instance {i + 1}");
+                TextWriterColor.Write($"    Name: {visualStudioInstances[i].Name}");
+                TextWriterColor.Write($"    Version: {visualStudioInstances[i].Version}");
+                TextWriterColor.Write($"    MSBuild Path: {visualStudioInstances[i].MSBuildPath}");
             }
 
             while (true)
             {
-                var userResponse = Console.ReadLine();
+                var userResponse = TermReader.Read(">> ");
                 if (int.TryParse(userResponse, out int instanceNumber) &&
                     instanceNumber > 0 &&
                     instanceNumber <= visualStudioInstances.Length)
                 {
                     return visualStudioInstances[instanceNumber - 1];
                 }
-                Console.WriteLine("Input not accepted, try again.");
+                TextWriterColor.Write("Input not accepted, try again.", true, ConsoleColors.Red);
             }
         }
 
@@ -97,11 +105,9 @@ namespace Nitrocid.StandaloneAnalyzer
             {
                 var projectDisplay = Path.GetFileName(loadProgress.FilePath);
                 if (loadProgress.TargetFramework != null)
-                {
                     projectDisplay += $" ({loadProgress.TargetFramework})";
-                }
 
-                Console.WriteLine($"{loadProgress.Operation,-15} {loadProgress.ElapsedTime,-15:m\\:ss\\.fffffff} {projectDisplay}");
+                TextWriterColor.Write($"{loadProgress.Operation,-15} {loadProgress.ElapsedTime,-15:m\\:ss\\.fffffff} {projectDisplay}");
             }
         }
     }

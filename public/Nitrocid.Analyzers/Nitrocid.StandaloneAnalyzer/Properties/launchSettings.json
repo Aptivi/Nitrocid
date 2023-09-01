@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "Nitrocid.StandaloneAnalyzer": {
+      "commandName": "Project",
+      "commandLineArgs": "../../../../Nitrocid.sln"
+    }
+  }
+}
