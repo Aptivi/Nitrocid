@@ -20,5 +20,8 @@
     <DefineTrace>true</DefineTrace>
     <Optimize>true</Optimize>
   </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Terminaux" Version="1.2.0" />
+  </ItemGroup>
 
 </Project>

@@ -20,6 +20,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Terminaux.Colors;
+using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.LocaleClean
 {
@@ -34,13 +36,13 @@ namespace Nitrocid.LocaleClean
             string engFile = "../../../../../public/Nitrocid.LocaleGen/Translations/eng.txt";
             if (File.Exists(engFile))
             {
-                Console.WriteLine("Probing English file...");
+                TextWriterColor.Write("Probing English file...");
 
                 // Get all the lines from the file
                 string[] engStrings = File.ReadAllLines(engFile);
 
                 // Iterate through all the source code files for the main project
-                Console.WriteLine("Checking for unused strings...");
+                TextWriterColor.Write("Checking for unused strings...");
                 var sources = CodeLister.PopulateSources();
                 var dataSources = CodeLister.PopulateData();
                 List<int> redundantIndexes = new();
@@ -87,7 +89,7 @@ namespace Nitrocid.LocaleClean
                     if (!found)
                     {
                         redundantIndexes.Add(lineNumber - 1);
-                        Console.WriteLine("Unused string found at eng.txt line {0}: {1}", lineNumber, engString);
+                        TextWriterColor.Write("Unused string found at eng.txt line {0}: {1}", true, ConsoleColors.Yellow, vars: new object[] { lineNumber, engString });
 
                         // Check to see if this detection is a false positive
                         bool falsePositive = false;
@@ -127,7 +129,7 @@ namespace Nitrocid.LocaleClean
 
                         // Print possible false positive
                         if (falsePositive)
-                            Console.WriteLine("  - Possible false positive in source {0} at eng.txt line {1}. Double-check the source.", falsePositiveSource, lineNumber);
+                            TextWriterColor.Write("  - Possible false positive in source {0} at eng.txt line {1}. Double-check the source.", true, ConsoleColors.Red, vars: new object[] { falsePositiveSource, lineNumber });
                     }
                     lineNumber++;
                 }
@@ -137,14 +139,14 @@ namespace Nitrocid.LocaleClean
                 {
                     if (foundFalsePositives)
                     {
-                        Console.Write("Are you sure that you want to clear out unused strings and some of the used strings? [Y/N] ");
+                        TextWriterColor.Write("Are you sure that you want to clear out unused strings and some of the used strings? [Y/N] ", false);
                         if (Console.ReadKey(true).Key != ConsoleKey.Y)
                         {
-                            Console.WriteLine("\nCan't continue. Please double-check the false positive detection above.");
+                            TextWriterColor.Write("\nCan't continue. Please double-check the false positive detection above.", true, ConsoleColors.Red);
                             return 2;
                         }
                     }
-                    Console.WriteLine("Cleaning up...");
+                    TextWriterColor.Write("Cleaning up...");
                     var langs = LocalizationLister.PopulateLanguages();
                     foreach (string localizationFile in langs.Keys)
                     {
@@ -161,14 +163,14 @@ namespace Nitrocid.LocaleClean
                 }
 
                 // Done!
-                Console.WriteLine("Done! Please use Nitrocid.LocaleGen to finalize the change.");
+                TextWriterColor.Write("Done! Please use Nitrocid.LocaleGen to finalize the change.", true, ConsoleColors.Green);
                 if (foundFalsePositives)
-                    Console.WriteLine("WARNING: Cleared some of the used strings!");
+                    TextWriterColor.Write("WARNING: Cleared some of the used strings!", true, ConsoleColors.Yellow);
                 return 0;
             }
             else
             {
-                Console.WriteLine("This internal program needs to be run within the Nitrocid KS repository.");
+                TextWriterColor.Write("This internal program needs to be run within the Nitrocid KS repository.", true, ConsoleColors.Red);
                 return 1;
             }
         }
