@@ -132,13 +132,19 @@ namespace KS.Kernel.Starting
             JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));
 
             // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Downloading debug symbols..."));
             DebugSymbolsTools.CheckDebugSymbols();
 
             // Initialize console resize listener
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Loading resize listener..."));
             ConsoleResizeListener.StartResizeListener();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded resize listener.");
 
             // Initialize custom languages
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Loading custom languages..."));
             LanguageManager.InstallCustomLanguages();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
 
