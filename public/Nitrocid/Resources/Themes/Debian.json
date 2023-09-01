@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Debian",
-        "Description": "Color schemes for Debian"
+        "Description": "Color schemes for Debian",
+        "Localizable": true
     },
     "InputColor": "15",
     "LicenseColor": "15",

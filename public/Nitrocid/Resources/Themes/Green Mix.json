@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Green Mix",
-        "Description": "Vivid and plastered green, blue, and purple colors"
+        "Description": "Vivid and plastered green, blue, and purple colors",
+        "Localizable": true
     },
     "InputColor": "179;95;68",
     "LicenseColor": "179;95;68",

@@ -996,5 +996,53 @@ Prints the text as it is with no placeholder parsing
 Only text files are supported.
 Can't convert line endings on a binary file since it results in file corruption.
 Forces the line ending conversion
+Purple harmony
+Our branding harmony
+Dark version of a popular VIM theme, Ayu
+Light version of a popular VIM theme, Ayu
+Mirage version of a popular VIM theme, Ayu
+This is the first day of the new school year
+Lightest terminal possible
+This is the black rose
+Color scheme for Breeze, a KDE Plasma 5 theme
+Popular color scheme for IDEs, like IntelliJ
+Color schemes for Debian
+The default theme for the kernel
+The vivid default theme for the kernel
+Use if you are a fan of EDM
+Fire shades
+Grape and Kiwi mixed together
+Color scheme for grapes
+Vivid and plastered green, blue, and purple colors
+Green and pink mixed together
+One of the known terminal color schemes
+Green text on gray
+Make your terminal full of lemon acid
+Light wood planks
+Standard Linux terminal colors
+Gray terminal
+Some Material Design text on your terminal
+Shades of orange and brown
+Melange theme inspired by the VIM theme of the same name
+Make your terminal full of mint
+A theme inspired by a VIM theme of the same name
+Do you like neon blue and pink?
+This theme should be neutral to you.
+Colorless, fuming, and highly corrosive liquid
+The sea of orange
+Phosphoric terminal that turns everything to orange
+Gives you a breeze of red.
+A bloody red console
+Sakura trees will give you some Chinese breeze
+All teal colors
+A theme for technology lovers
+Trance music fan? This is the theme for you!
+Color schemes from a popular Linux operating system, Ubuntu
+Gives you a perfect Vice City vibe
+Color scheme for Visual Studio, one of the most powerful IDEs
+Color scheme for Windows 11, a recent version of Windows
+Bring back nostalgia with this theme!
+Your terminal consists of wood planks
+Inspired from the Chinese pattern of different fruits, Yasai
 
 ==========================================================================================================================================

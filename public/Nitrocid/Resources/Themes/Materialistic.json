@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Materialistic",
-        "Description": "Some Material Design text on your terminal"
+        "Description": "Some Material Design text on your terminal",
+        "Localizable": true
     },
     "InputColor": "105;158;62",
     "LicenseColor": "105;158;62",

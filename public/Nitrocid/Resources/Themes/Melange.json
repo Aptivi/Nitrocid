@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Melange",
-        "Description": "Melange theme inspired by the VIM theme of the same name"
+        "Description": "Melange theme inspired by the VIM theme of the same name",
+        "Localizable": true
     },
     "InputColor": "#CC7F2B",
     "LicenseColor": "#C29830",

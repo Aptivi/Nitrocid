@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Sakura",
-        "Description": "Sakura trees will give you some Chinese breeze"
+        "Description": "Sakura trees will give you some Chinese breeze",
+        "Localizable": true
     },
     "InputColor": "#EACBD2",
     "LicenseColor": "#DFAEB4",

@@ -75,6 +75,7 @@ namespace Nitrocid.LocaleClean
                         if (dataSource.Contains($"                \"Description\": \"{engString.Replace("\"", "\\\"")}\"") ||
                             dataSource.Contains($"                \"Name\": \"{engString.Replace("\"", "\\\"")}\"") ||
                             dataSource.Contains($"        \"DisplayAs\": \"{engString.Replace("\"", "\\\"")}\"") ||
+                            dataSource.Contains($"        \"Description\": \"{engString.Replace("\"", "\\\"")}\"") ||
                             dataSource.Contains($"        \"Desc\": \"{engString.Replace("\"", "\\\"")}\""))
                         {
                             found = true;

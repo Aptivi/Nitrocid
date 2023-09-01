@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Windows 95",
-        "Description": "Bring back nostalgia with this theme!"
+        "Description": "Bring back nostalgia with this theme!",
+        "Localizable": true
     },
     "InputColor": "15",
     "LicenseColor": "15",

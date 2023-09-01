@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Neon Breeze",
-        "Description": "Do you like neon blue and pink?"
+        "Description": "Do you like neon blue and pink?",
+        "Localizable": true
     },
     "InputColor": "13",
     "LicenseColor": "14",

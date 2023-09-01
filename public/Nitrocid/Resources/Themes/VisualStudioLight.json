@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Visual Studio (light)",
-        "Description": "Color scheme for Visual Studio, one of the most powerful IDEs"
+        "Description": "Color scheme for Visual Studio, one of the most powerful IDEs",
+        "Localizable": true
     },
     "InputColor": "15",
     "LicenseColor": "15",

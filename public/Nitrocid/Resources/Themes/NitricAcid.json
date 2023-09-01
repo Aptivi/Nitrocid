@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Nitric Acid - HNO3",
-        "Description": "Colorless, fuming, and highly corrosive liquid"
+        "Description": "Colorless, fuming, and highly corrosive liquid",
+        "Localizable": true
     },
     "InputColor": "#AC9B03",
     "LicenseColor": "#AC9B03",

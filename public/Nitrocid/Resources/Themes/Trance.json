@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Trance",
-        "Description": "Trance music fan? This is the theme for you!"
+        "Description": "Trance music fan? This is the theme for you!",
+        "Localizable": true
     },
     "InputColor": "14",
     "LicenseColor": "14",

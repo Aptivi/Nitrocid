@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Space Duck",
-        "Description": "A theme inspired by a VIM theme of the same name"
+        "Description": "A theme inspired by a VIM theme of the same name",
+        "Localizable": true
     },
     "InputColor": "#818596",
     "LicenseColor": "#b3a1e6",

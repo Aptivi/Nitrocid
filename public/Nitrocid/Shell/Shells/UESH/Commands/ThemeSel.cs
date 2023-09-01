@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     {
                         var themeInstance = ThemeTools.GetThemeInfo(theme);
                         string name = themeInstance.Name;
-                        string desc = themeInstance.Description;
+                        string desc = themeInstance.Localizable ? Translate.DoTranslation(themeInstance.Description) : themeInstance.Description;
                         var ici = new InputChoiceInfo(theme,
                             $"{name}{(themeInstance.IsEvent ? $" - [{themeInstance.StartMonth}/{themeInstance.StartDay} -> {themeInstance.EndMonth}/{themeInstance.EndDay} / {(themeInstance.IsExpired ? Translate.DoTranslation("Expired") : Translate.DoTranslation("Available"))}]" : "")}", desc);
                         themeChoices.Add(ici);

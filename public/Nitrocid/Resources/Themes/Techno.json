@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Techno",
-        "Description": "A theme for technology lovers"
+        "Description": "A theme for technology lovers",
+        "Localizable": true
     },
     "InputColor": "#7cd4d4",
     "LicenseColor": "#648e9c",

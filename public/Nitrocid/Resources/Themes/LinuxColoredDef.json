@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Linux (colored defaults)",
-        "Description": "Standard Linux terminal colors"
+        "Description": "Standard Linux terminal colors",
+        "Localizable": true
     },
     "InputColor": "7",
     "LicenseColor": "7",

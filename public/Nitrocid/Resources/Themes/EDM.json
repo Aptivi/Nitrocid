@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Electronic Dance Music (EDM)",
-        "Description": "Use if you are a fan of EDM"
+        "Description": "Use if you are a fan of EDM",
+        "Localizable": true
     },
     "InputColor": "#5C1D6B",
     "LicenseColor": "#FDD602",

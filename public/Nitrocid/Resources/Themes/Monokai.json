@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Monokai",
-        "Description": "A theme inspired by a VIM theme of the same name"
+        "Description": "A theme inspired by a VIM theme of the same name",
+        "Localizable": true
     },
     "InputColor": "#90908a",
     "LicenseColor": "#f8f8f2",

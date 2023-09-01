@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Red Console",
-        "Description": "A bloody red console"
+        "Description": "A bloody red console",
+        "Localizable": true
     },
     "InputColor": "9",
     "LicenseColor": "9",

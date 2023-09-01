@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "DefaultVivid",
-        "Description": "The vivid default theme for the kernel"
+        "Description": "The vivid default theme for the kernel",
+        "Localizable": true
     },
     "InputColor": "15",
     "LicenseColor": "15",

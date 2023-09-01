@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Black Rose",
-        "Description": "This is the black rose"
+        "Description": "This is the black rose",
+        "Localizable": true
     },
     "InputColor": "#FF89B7",
     "LicenseColor": "#9D003D",

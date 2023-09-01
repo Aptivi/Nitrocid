@@ -34,6 +34,7 @@ namespace KS.ConsoleBase.Themes
     public class ThemeInfo
     {
 
+        internal bool localizable = false;
         internal readonly Dictionary<KernelColorType, Color> ThemeColors = KernelColorTools.PopulateColorsEmpty();
         internal readonly DateTime start = DateTime.Today;
         internal readonly DateTime end = DateTime.Today;
@@ -86,6 +87,11 @@ namespace KS.ConsoleBase.Themes
         /// </summary>
         public bool IsExpired =>
             IsEvent && (TimeDateTools.KernelDateTime < Start || TimeDateTools.KernelDateTime > End);
+        /// <summary>
+        /// Whether the theme description is localizable (Only set this to true on internal Nitrocid KS themes)
+        /// </summary>
+        public bool Localizable =>
+            localizable;
 
         /// <summary>
         /// Gets a color from the color type
@@ -132,6 +138,7 @@ namespace KS.ConsoleBase.Themes
             Name = ThemeResourceJson["Metadata"]["Name"].ToString();
             Description = ThemeResourceJson["Metadata"]["Description"]?.ToString();
             TrueColorRequired = ThemeTools.IsTrueColorRequired(ThemeColors);
+            localizable = (bool)(ThemeResourceJson["Metadata"]["Localizable"] ?? false);
 
             // Parse event-related info
             IsEvent = (bool)(ThemeResourceJson["Metadata"]["IsEvent"] ?? false);

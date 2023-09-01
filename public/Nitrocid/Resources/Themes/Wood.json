@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Wood",
-        "Description": "Your terminal consists of wood planks"
+        "Description": "Your terminal consists of wood planks",
+        "Localizable": true
     },
     "InputColor": "166",
     "LicenseColor": "130",

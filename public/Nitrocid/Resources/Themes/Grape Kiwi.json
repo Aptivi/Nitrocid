@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Grape Kiwi",
-        "Description": "Grape and Kiwi mixed together"
+        "Description": "Grape and Kiwi mixed together",
+        "Localizable": true
     },
     "InputColor": "147;77;191",
     "LicenseColor": "147;77;191",

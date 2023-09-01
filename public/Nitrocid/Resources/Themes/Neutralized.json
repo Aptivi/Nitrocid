@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Neutralized",
-        "Description": "This theme should be neutral to you."
+        "Description": "This theme should be neutral to you.",
+        "Localizable": true
     },
     "InputColor": "45;60;61",
     "LicenseColor": "45;60;61",

@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Linux (uncolored)",
-        "Description": "Gray terminal"
+        "Description": "Gray terminal",
+        "Localizable": true
     },
     "InputColor": "7",
     "LicenseColor": "7",

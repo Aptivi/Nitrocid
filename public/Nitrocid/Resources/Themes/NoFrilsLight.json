@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "No Frils (light)",
-        "Description": "A theme inspired by a VIM theme of the same name"
+        "Description": "A theme inspired by a VIM theme of the same name",
+        "Localizable": true
     },
     "InputColor": "#A8A8A8",
     "LicenseColor": "#A8A8A8",

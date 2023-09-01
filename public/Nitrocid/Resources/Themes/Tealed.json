@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Tealed",
-        "Description": "All teal colors"
+        "Description": "All teal colors",
+        "Localizable": true
     },
     "InputColor": "62;98;115",
     "LicenseColor": "62;98;115",

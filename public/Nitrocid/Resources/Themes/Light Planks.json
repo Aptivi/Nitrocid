@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Light Planks",
-        "Description": "Light wood planks"
+        "Description": "Light wood planks",
+        "Localizable": true
     },
     "InputColor": "184;129;62",
     "LicenseColor": "184;129;62",

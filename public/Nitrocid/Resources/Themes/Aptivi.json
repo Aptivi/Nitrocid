@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Aptivi",
-        "Description": "Our branding harmony"
+        "Description": "Our branding harmony",
+        "Localizable": true
     },
     "InputColor": "#C390D9",
     "LicenseColor": "#C390D9",

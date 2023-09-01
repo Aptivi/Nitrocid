@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Ayu (mirage)",
-        "Description": "Mirage version of a popular VIM theme, Ayu"
+        "Description": "Mirage version of a popular VIM theme, Ayu",
+        "Localizable": true
     },
     "InputColor": "187;230;126",
     "LicenseColor": "92;103;115",

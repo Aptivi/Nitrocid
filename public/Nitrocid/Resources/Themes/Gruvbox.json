@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Gruvbox",
-        "Description": "One of the known terminal color schemes"
+        "Description": "One of the known terminal color schemes",
+        "Localizable": true
     },
     "InputColor": "#3c3836",
     "LicenseColor": "#d65d0e",

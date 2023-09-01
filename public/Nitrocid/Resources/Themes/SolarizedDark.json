@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Solarized (dark)",
-        "Description": "A theme inspired by a VIM theme of the same name"
+        "Description": "A theme inspired by a VIM theme of the same name",
+        "Localizable": true
     },
     "InputColor": "38;139;210",
     "LicenseColor": "211;54;130",

@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Grape",
-        "Description": "Color scheme for grapes"
+        "Description": "Color scheme for grapes",
+        "Localizable": true
     },
     "InputColor": "85;7;173",
     "LicenseColor": "85;7;173",

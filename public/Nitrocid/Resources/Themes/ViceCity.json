@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "VI - Vice City",
-        "Description": "Gives you a perfect Vice City vibe"
+        "Description": "Gives you a perfect Vice City vibe",
+        "Localizable": true
     },
     "InputColor": "#00a8ff",
     "LicenseColor": "#0266c8",

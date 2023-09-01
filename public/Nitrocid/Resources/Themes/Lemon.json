@@ -1,7 +1,8 @@
 {
     "Metadata": {
         "Name": "Lemon",
-        "Description": "Make your terminal full of lemon acid"
+        "Description": "Make your terminal full of lemon acid",
+        "Localizable": true
     },
     "InputColor": "185;204;45",
     "LicenseColor": "185;204;45",
