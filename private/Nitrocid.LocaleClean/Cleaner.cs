@@ -25,7 +25,7 @@ namespace Nitrocid.LocaleClean
 {
     internal class Cleaner
     {
-        static void Main(string[] Args)
+        static int Main(string[] Args)
         {
             // If on dry mode, set as appropriate
             bool dry = Args.Contains("-dry");
@@ -41,20 +41,22 @@ namespace Nitrocid.LocaleClean
 
                 // Iterate through all the source code files for the main project
                 Console.WriteLine("Checking for unused strings...");
-                List<string> sources = CodeLister.PopulateSources();
-                List<string> dataSources = CodeLister.PopulateData();
+                var sources = CodeLister.PopulateSources();
+                var dataSources = CodeLister.PopulateData();
                 List<int> redundantIndexes = new();
                 int lineNumber = 1;
+                bool foundFalsePositives = false;
                 foreach (string engString in engStrings)
                 {
                     bool found = false;
 
                     // Check the source content
-                    foreach (string source in sources)
+                    foreach ((string, string) sourceTuple in sources)
                     {
                         // Check to see if the string exists in the source
+                        string source = sourceTuple.Item2;
                         if (source.Contains($"DoTranslation(\"{engString.Replace("\"", "\\\"")}\"") ||
-                            source.Contains($"/* Localizable */ \"{engString.Replace("\"", "\\\"")}\", "))
+                            source.Contains($"/* Localizable */ \"{engString.Replace("\"", "\\\"")}\""))
                         {
                             found = true;
                             break;
@@ -62,13 +64,14 @@ namespace Nitrocid.LocaleClean
                     }
 
                     // Now, check the data sources if not found yet
-                    foreach (string dataSource in dataSources)
+                    foreach ((string, string) dataSourceTuple in dataSources)
                     {
                         // If found, bail
                         if (found)
                             break;
 
                         // Now, check to see if the string exists in the data
+                        string dataSource = dataSourceTuple.Item2;
                         if (dataSource.Contains($"                \"Description\": \"{engString.Replace("\"", "\\\"")}\"") ||
                             dataSource.Contains($"                \"Name\": \"{engString.Replace("\"", "\\\"")}\"") ||
                             dataSource.Contains($"        \"DisplayAs\": \"{engString.Replace("\"", "\\\"")}\"") ||
@@ -84,6 +87,46 @@ namespace Nitrocid.LocaleClean
                     {
                         redundantIndexes.Add(lineNumber - 1);
                         Console.WriteLine("Unused string found at eng.txt line {0}: {1}", lineNumber, engString);
+
+                        // Check to see if this detection is a false positive
+                        bool falsePositive = false;
+                        string falsePositiveSource = "";
+
+                        // Check the source content
+                        foreach ((string, string) sourceTuple in sources)
+                        {
+                            // Check to see if the string exists in the source
+                            string source = sourceTuple.Item2;
+                            if (source.Contains($"\"{engString.Replace("\"", "\\\"")}\""))
+                            {
+                                falsePositive = true;
+                                falsePositiveSource = sourceTuple.Item1;
+                                foundFalsePositives = true;
+                                break;
+                            }
+                        }
+
+                        // Now, check the data sources if not found yet
+                        foreach ((string, string) dataSourceTuple in dataSources)
+                        {
+                            // If found, bail
+                            if (falsePositive)
+                                break;
+
+                            // Now, check to see if the string exists in the data
+                            string dataSource = dataSourceTuple.Item2;
+                            if (dataSource.Contains($"\"{engString.Replace("\"", "\\\"")}\""))
+                            {
+                                falsePositive = true;
+                                falsePositiveSource = dataSourceTuple.Item1;
+                                foundFalsePositives = true;
+                                break;
+                            }
+                        }
+
+                        // Print possible false positive
+                        if (falsePositive)
+                            Console.WriteLine("  - Possible false positive in source {0} at eng.txt line {1}. Double-check the source.", falsePositiveSource, lineNumber);
                     }
                     lineNumber++;
                 }
@@ -91,6 +134,15 @@ namespace Nitrocid.LocaleClean
                 // Now, list all localization files
                 if (redundantIndexes.Count > 0 && !dry)
                 {
+                    if (foundFalsePositives)
+                    {
+                        Console.Write("Are you sure that you want to clear out unused strings and some of the used strings? [Y/N] ");
+                        if (Console.ReadKey(true).Key != ConsoleKey.Y)
+                        {
+                            Console.WriteLine("\nCan't continue. Please double-check the false positive detection above.");
+                            return 2;
+                        }
+                    }
                     Console.WriteLine("Cleaning up...");
                     var langs = LocalizationLister.PopulateLanguages();
                     foreach (string localizationFile in langs.Keys)
@@ -109,9 +161,15 @@ namespace Nitrocid.LocaleClean
 
                 // Done!
                 Console.WriteLine("Done! Please use Nitrocid.LocaleGen to finalize the change.");
+                if (foundFalsePositives)
+                    Console.WriteLine("WARNING: Cleared some of the used strings!");
+                return 0;
             }
             else
+            {
                 Console.WriteLine("This internal program needs to be run within the Nitrocid KS repository.");
+                return 1;
+            }
         }
     }
 }

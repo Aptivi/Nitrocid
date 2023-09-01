@@ -50,24 +50,24 @@ namespace Nitrocid.LocaleClean
             return Array.Empty<string>();
         }
 
-        internal static List<string> PopulateSources()
+        internal static List<(string, string)> PopulateSources()
         {
-            List<string> sources = new();
+            List<(string, string)> sources = new();
 
             // List all code files to add the sources
             foreach (string source in ListCodeFilesForKS())
-                sources.Add(File.ReadAllText(source));
+                sources.Add((source, File.ReadAllText(source)));
 
             return sources;
         }
 
-        internal static List<string> PopulateData()
+        internal static List<(string, string)> PopulateData()
         {
-            List<string> sources = new();
+            List<(string, string)> sources = new();
 
             // List all code files to add the sources
             foreach (string source in ListDataFilesForKS())
-                sources.Add(File.ReadAllText(source));
+                sources.Add((source, File.ReadAllText(source)));
 
             return sources;
         }
