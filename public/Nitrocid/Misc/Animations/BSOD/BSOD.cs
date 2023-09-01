@@ -42,6 +42,9 @@ namespace KS.Misc.Animations.BSOD
             new HaikuBootloader(),
             new Linux2(),
             new SamsungS7Bootloader(),
+            new OS2Warp(),
+            new OS2WarpPreBoot(),
+            new YabootLinux(),
         };
 
         /// <summary>
