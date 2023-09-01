@@ -25,6 +25,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using System;
+using System.Linq;
 
 namespace KS.Shell.Shells.Text.Commands
 {
@@ -45,12 +46,19 @@ namespace KS.Shell.Shells.Text.Commands
                 {
                     if (Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), Convert.ToInt32(ListArgsOnly[1]));
-                        foreach (int CharIndex in QueriedChars.Keys)
+                        int LineIndex = Convert.ToInt32(ListArgsOnly[1]);
+                        var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), LineIndex);
+                        TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineIndex);
+
+                        // Process the output
+                        string text = TextEditShellCommon.TextEdit_FileLines[LineIndex - 1];
+                        var queried = QueriedChars.Keys;
+                        for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
-                            TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, CharIndex);
-                            TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], QueriedChars[CharIndex]);
+                            char Character = text[charIndex];
+                            TextWriterColor.Write($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                         }
+                        TextWriterColor.Write();
                         return 0;
                     }
                     else
@@ -64,11 +72,17 @@ namespace KS.Shell.Shells.Text.Commands
                     var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]));
                     foreach (int LineIndex in QueriedChars.Keys)
                     {
-                        foreach (int CharIndex in QueriedChars[LineIndex].Keys)
+                        TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineIndex + 1);
+
+                        // Process the output
+                        string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
+                        var queried = QueriedChars[LineIndex].Keys;
+                        for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
-                            TextWriterColor.Write("- {0}:{1}: ", false, KernelColorType.ListEntry, LineIndex, CharIndex);
-                            TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], TextEditShellCommon.TextEdit_FileLines[LineIndex]);
+                            char Character = text[charIndex];
+                            TextWriterColor.Write($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                         }
+                        TextWriterColor.Write();
                     }
                     return 0;
                 }
@@ -85,11 +99,18 @@ namespace KS.Shell.Shells.Text.Commands
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
                             var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), LineNumber);
-                            foreach (int CharIndex in QueriedChars.Keys)
+                            int LineIndex = LineNumber - 1;
+                            TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
+
+                            // Process the output
+                            string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
+                            var queried = QueriedChars.Keys;
+                            for (int charIndex = 0; charIndex < text.Length; charIndex++)
                             {
-                                TextWriterColor.Write("- {0}:{1}: ", false, KernelColorType.ListEntry, LineNumber, CharIndex);
-                                TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], QueriedChars[CharIndex]);
+                                char Character = text[charIndex];
+                                TextWriterColor.Write($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                             }
+                            TextWriterColor.Write();
                         }
                         return 0;
                     }

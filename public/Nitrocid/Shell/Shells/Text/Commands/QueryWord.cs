@@ -25,6 +25,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using System;
+using System.Linq;
 
 namespace KS.Shell.Shells.Text.Commands
 {
@@ -45,12 +46,20 @@ namespace KS.Shell.Shells.Text.Commands
                 {
                     if (Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        var QueriedChars = TextEditTools.TextEdit_QueryWord(ListArgsOnly[0], Convert.ToInt32(ListArgsOnly[1]));
-                        foreach (int WordIndex in QueriedChars.Keys)
+                        int LineIndex = Convert.ToInt32(ListArgsOnly[1]);
+                        var QueriedChars = TextEditTools.TextEdit_QueryWord(ListArgsOnly[0], LineIndex);
+                        TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineIndex);
+
+                        // Process the output
+                        string text = TextEditShellCommon.TextEdit_FileLines[LineIndex - 1];
+                        var queried = QueriedChars.Keys;
+                        var Words = text.Split(' ');
+                        for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
-                            TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, WordIndex);
-                            TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], TextEditShellCommon.TextEdit_FileLines[Convert.ToInt32(ListArgsOnly[1])]);
+                            string word = Words[wordIndex];
+                            TextWriterColor.Write($"{(queried.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{word} ", false, KernelColorType.ListValue);
                         }
+                        TextWriterColor.Write();
                         return 0;
                     }
                     else
@@ -64,11 +73,19 @@ namespace KS.Shell.Shells.Text.Commands
                     var QueriedWords = TextEditTools.TextEdit_QueryWord(ListArgsOnly[0]);
                     foreach (int LineIndex in QueriedWords.Keys)
                     {
-                        foreach (int WordIndex in QueriedWords[LineIndex].Keys)
+                        var QueriedChars = TextEditTools.TextEdit_QueryWord(ListArgsOnly[0], LineIndex + 1);
+                        TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineIndex + 1);
+
+                        // Process the output
+                        string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
+                        var queried = QueriedChars.Keys;
+                        var Words = text.Split(' ');
+                        for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
-                            TextWriterColor.Write("- {0}:{1}: ", false, KernelColorType.ListEntry, LineIndex, WordIndex);
-                            TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], TextEditShellCommon.TextEdit_FileLines[LineIndex]);
+                            string word = Words[wordIndex];
+                            TextWriterColor.Write($"{(queried.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{word} ", false, KernelColorType.ListValue);
                         }
+                        TextWriterColor.Write();
                     }
                     return 0;
                 }
@@ -85,11 +102,19 @@ namespace KS.Shell.Shells.Text.Commands
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
                             var QueriedChars = TextEditTools.TextEdit_QueryWord(ListArgsOnly[0], LineNumber);
-                            foreach (int WordIndex in QueriedChars.Keys)
+                            int LineIndex = LineNumber - 1;
+                            TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineIndex);
+
+                            // Process the output
+                            string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
+                            var queried = QueriedChars.Keys;
+                            var Words = text.Split(' ');
+                            for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                             {
-                                TextWriterColor.Write("- {0}:{1}: ", false, KernelColorType.ListEntry, LineNumber, WordIndex);
-                                TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, ListArgsOnly[0], TextEditShellCommon.TextEdit_FileLines[Convert.ToInt32(ListArgsOnly[1])]);
+                                string word = Words[wordIndex];
+                                TextWriterColor.Write($"{(queried.Contains(wordIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{word} ", false, KernelColorType.ListValue);
                             }
+                            TextWriterColor.Write();
                         }
                         return 0;
                     }

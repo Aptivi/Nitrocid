@@ -294,6 +294,7 @@ namespace KS.Misc.Editors.HexEdit
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
         }
 
+        // TODO: We need to show these the better way
         /// <summary>
         /// Queries the byte and displays the results
         /// </summary>

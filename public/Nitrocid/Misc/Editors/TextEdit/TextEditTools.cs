@@ -39,6 +39,7 @@ namespace KS.Misc.Editors.TextEdit
     public static class TextEditTools
     {
 
+        // TODO: Improve the API here...
         /// <summary>
         /// Opens the text file
         /// </summary>
