@@ -1,9 +1,46 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
+  <!-- LocaleGen General Information -->
   <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DF07F4E1-47B2-452D-A200-F15F558C4977}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <TargetFramework>net472</TargetFramework>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <RootNamespace>Nitrocid.StandaloneAnalyzer</RootNamespace>
+    <AssemblyName>Nitrocid.StandaloneAnalyzer</AssemblyName>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <OutputPath>..\Nitrocid\KSBuild\</OutputPath>
+    <Description>Nitrocid KS Standalone Analyzer</Description>
+    <AssemblyTitle>Nitrocid KS Standalone Analyzer</AssemblyTitle>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
+    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <ApplicationIcon>../../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
+    <Version>0.1.0</Version>
+    <Configurations>Debug;Release</Configurations>
+    <LangVersion>latest</LangVersion>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
+  <!-- LocaleGen General Information End -->
+
+  <!-- LocaleGen Platform Information -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DefineDebug>true</DefineDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <!-- LocaleGen Platform Information End -->
 
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Locator" Version="1.2.2" />
