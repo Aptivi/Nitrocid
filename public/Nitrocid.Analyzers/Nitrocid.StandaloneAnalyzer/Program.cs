@@ -17,17 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Microsoft.Build.Locator;
-using Microsoft.CodeAnalysis;
-using Microsoft.CodeAnalysis.CSharp;
-using Microsoft.CodeAnalysis.CSharp.Symbols;
-using Microsoft.CodeAnalysis.CSharp.Syntax;
 using Microsoft.CodeAnalysis.MSBuild;
-using Microsoft.CodeAnalysis.Text;
+using Nitrocid.StandaloneAnalyzer.Analyzers;
 using System;
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using Terminaux.Colors;
 using Terminaux.Reader;
@@ -37,12 +31,20 @@ namespace Nitrocid.StandaloneAnalyzer
 {
     internal class Program
     {
+        // For contributors: If you're going to add a new analyzer, you need to copy the implementation from Analyzers to here,
+        // and make a dedicated diagnostic class for the standalone analyzer to recognize your new analyzer.
+        private static readonly IAnalyzer[] analyzers = new IAnalyzer[]
+        {
+            new NKS0001(),
+            new NKS0002(),
+        };
+
         static async Task Main(string[] args)
         {
-            // Check to see if we've been provided the path to Nitrocid.sln
-            if (args.Length == 0 || (args.Length > 0 && !args[0].EndsWith("Nitrocid.sln")))
+            // Check to see if we've been provided the path to a mod
+            if (args.Length == 0)
             {
-                TextWriterColor.Write("Provide a path to Nitrocid.sln.", true, ConsoleColors.Red);
+                TextWriterColor.Write("Provide a path to your mod project.", true, ConsoleColors.Red);
                 return;
             }
 
@@ -67,7 +69,17 @@ namespace Nitrocid.StandaloneAnalyzer
                 var solution = await workspace.OpenSolutionAsync(solutionPath, new ConsoleProgressReporter());
                 TextWriterColor.Write($"Finished loading solution {solutionPath}!", true, ConsoleColors.Green);
 
-                // TODO: Do analysis on the projects in the loaded solution
+                // Add the Nitrocid analyzer to all the projects
+                var projects = solution.Projects;
+                foreach (var project in projects)
+                {
+                    var documents = project.Documents;
+                    foreach (var document in documents)
+                    {
+                        foreach (var analyzer in analyzers)
+                            analyzer.Analyze(document);
+                    }
+                }
             }
             catch (Exception ex)
             {
