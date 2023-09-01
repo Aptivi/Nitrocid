@@ -27,10 +27,19 @@ namespace KS.Kernel.Power
 {
     internal static class PowerSignalHandlers
     {
+        internal static List<PosixSignalRegistration> signalHandlers = new();
+        internal static bool initialized = false;
+
         internal static void RegisterHandlers()
         {
-            PosixSignalRegistration.Create(PosixSignal.SIGQUIT, SigQuit);
-            PosixSignalRegistration.Create(PosixSignal.SIGTERM, SigQuit);
+            signalHandlers.Add(PosixSignalRegistration.Create(PosixSignal.SIGQUIT, SigQuit));
+            signalHandlers.Add(PosixSignalRegistration.Create(PosixSignal.SIGTERM, SigQuit));
+        }
+
+        internal static void DisposeHandlers()
+        {
+            foreach (var signalHandler in signalHandlers)
+                signalHandler.Dispose();
         }
 
         private static void SigQuit(PosixSignalContext psc)

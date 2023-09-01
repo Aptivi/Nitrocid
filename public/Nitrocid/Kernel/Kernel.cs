@@ -163,8 +163,9 @@ namespace KS.Kernel
                 ConsoleWrapper.Clear();
             }
 
-            // Reset cursor state
+            // Reset cursor state and dispose handlers
             ConsoleWrapper.CursorVisible = true;
+            PowerSignalHandlers.DisposeHandlers();
         }
 
     }

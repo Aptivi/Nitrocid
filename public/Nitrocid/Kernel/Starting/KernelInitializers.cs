@@ -31,6 +31,7 @@ using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
 using KS.Kernel.Hardware;
 using KS.Kernel.Journaling;
+using KS.Kernel.Power;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Calendar.Events;
@@ -106,6 +107,13 @@ namespace KS.Kernel.Starting
 
                 // Initialize debug path
                 DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+
+                // Power signal handlers
+                if (PowerSignalHandlers.initialized)
+                {
+                    PowerSignalHandlers.initialized = true;
+                    PowerSignalHandlers.RegisterHandlers();
+                }
             }
         }
 

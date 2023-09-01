@@ -12,6 +12,6 @@ namespace KS.Kernel.Power
         SIGINT = -3,
         SIGSEGV = 11,
         SIGUSR1 = 10,
-        SIGUSR2 = 11,
+        SIGUSR2 = 12,
     }
 }
