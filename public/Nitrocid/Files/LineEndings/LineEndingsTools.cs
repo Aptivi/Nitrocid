@@ -19,6 +19,8 @@
 using System;
 using KS.Misc.Text;
 using KS.Drivers;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 
 namespace KS.Files.LineEndings
 {
@@ -78,7 +80,19 @@ namespace KS.Files.LineEndings
         /// </summary>
         /// <param name="TextFile">Target text file</param>
         public static FilesystemNewlineStyle GetLineEndingFromFile(string TextFile) =>
-            DriverHandler.CurrentFilesystemDriverLocal.GetLineEndingFromFile(TextFile);
+            GetLineEndingFromFile(TextFile, false);
+
+        /// <summary>
+        /// Gets the line ending style from file
+        /// </summary>
+        /// <param name="TextFile">Target text file</param>
+        /// <param name="force">Forces line ending conversion</param>
+        public static FilesystemNewlineStyle GetLineEndingFromFile(string TextFile, bool force)
+        {
+            if (DriverHandler.CurrentFilesystemDriverLocal.IsBinaryFile(TextFile) && !force)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Only text files are supported."));
+            return DriverHandler.CurrentFilesystemDriverLocal.GetLineEndingFromFile(TextFile);
+        }
 
     }
 }

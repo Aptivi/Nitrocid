@@ -16,7 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.LineEndings;
+using KS.Files.Querying;
+using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -54,18 +58,26 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             string TargetTextFile = ListArgsOnly[0];
             var TargetLineEnding = LineEndingsTools.NewlineStyle;
+            bool force = false;
             if (!(ListSwitchesOnly.Length == 0))
             {
-                if (ListSwitchesOnly[0] == "-w")
+                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-w"))
                     TargetLineEnding = FilesystemNewlineStyle.CRLF;
-                if (ListSwitchesOnly[0] == "-u")
+                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-u"))
                     TargetLineEnding = FilesystemNewlineStyle.LF;
-                if (ListSwitchesOnly[0] == "-m")
+                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-m"))
                     TargetLineEnding = FilesystemNewlineStyle.CR;
+                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-force"))
+                    force = true;
             }
 
             // Convert the line endings
-            LineEndingsConverter.ConvertLineEndings(TargetTextFile, TargetLineEnding);
+            if (Parsing.IsBinaryFile(TargetTextFile) && !force)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Can't convert line endings on a binary file since it results in file corruption."), true, KernelColorType.Error);
+                return 6;
+            }
+            LineEndingsConverter.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);
             return 0;
         }
 

@@ -282,7 +282,8 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[] { "textfile" }, new[] {
                             new SwitchInfo("w", /* Localizable */ "Converts the line endings to the Windows format", false, false, new string[] { "u", "m" }, 0, false),
                             new SwitchInfo("u", /* Localizable */ "Converts the line endings to the Unix format", false, false, new string[] { "w", "m" }, 0, false),
-                            new SwitchInfo("m", /* Localizable */ "Converts the line endings to the Mac OS 9 format", false, false, new string[] { "u", "w" }, 0, false)
+                            new SwitchInfo("m", /* Localizable */ "Converts the line endings to the Mac OS 9 format", false, false, new string[] { "u", "w" }, 0, false),
+                            new SwitchInfo("force", /* Localizable */ "Forces the line ending conversion", false, false, Array.Empty<string>(), 0, false),
                         }, true, 1)
                     }, new ConvertLineEndingsCommand())
             },

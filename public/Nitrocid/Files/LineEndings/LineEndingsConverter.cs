@@ -17,6 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
+using KS.Kernel.Exceptions;
+using KS.Languages;
+using UnitsNet;
 
 namespace KS.Files.LineEndings
 {
@@ -31,7 +34,7 @@ namespace KS.Files.LineEndings
         /// </summary>
         /// <param name="TextFile">Text file name with extension or file path</param>
         public static void ConvertLineEndings(string TextFile) =>
-            DriverHandler.CurrentFilesystemDriverLocal.ConvertLineEndings(TextFile);
+            ConvertLineEndings(TextFile, false);
 
         /// <summary>
         /// Converts the line endings to the specified newline style
@@ -39,7 +42,32 @@ namespace KS.Files.LineEndings
         /// <param name="TextFile">Text file name with extension or file path</param>
         /// <param name="LineEndingStyle">Line ending style</param>
         public static void ConvertLineEndings(string TextFile, FilesystemNewlineStyle LineEndingStyle) =>
+            ConvertLineEndings(TextFile, LineEndingStyle, false);
+
+        /// <summary>
+        /// Converts the line endings to the newline style for the current platform
+        /// </summary>
+        /// <param name="TextFile">Text file name with extension or file path</param>
+        /// <param name="force">Forces line ending conversion</param>
+        public static void ConvertLineEndings(string TextFile, bool force)
+        {
+            if (DriverHandler.CurrentFilesystemDriverLocal.IsBinaryFile(TextFile) && !force)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Only text files are supported."));
+            DriverHandler.CurrentFilesystemDriverLocal.ConvertLineEndings(TextFile);
+        }
+
+        /// <summary>
+        /// Converts the line endings to the specified newline style
+        /// </summary>
+        /// <param name="TextFile">Text file name with extension or file path</param>
+        /// <param name="LineEndingStyle">Line ending style</param>
+        /// <param name="force">Forces line ending conversion</param>
+        public static void ConvertLineEndings(string TextFile, FilesystemNewlineStyle LineEndingStyle, bool force)
+        {
+            if (DriverHandler.CurrentFilesystemDriverLocal.IsBinaryFile(TextFile) && !force)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Only text files are supported."));
             DriverHandler.CurrentFilesystemDriverLocal.ConvertLineEndings(TextFile, LineEndingStyle);
+        }
 
     }
 }
