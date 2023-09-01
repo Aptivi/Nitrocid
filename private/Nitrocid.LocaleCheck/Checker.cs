@@ -113,7 +113,10 @@ namespace Nitrocid.LocaleCheck
 
                 // Print unlocalized strings
                 foreach (string unlocalizedString in unlocalizedStrings)
+                {
                     TextWriterColor.Write($"Unlocalized string: {unlocalizedString}", true, ConsoleColors.Yellow);
+                    File.AppendAllText("unlocalized.txt", $"{unlocalizedString}\n");
+                }
                 return 0;
             }
             else
