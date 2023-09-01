@@ -36,15 +36,13 @@ namespace KS.Misc.Splash.Splashes
         // Standalone splash information
         public override string SplashName => "Welcome";
 
-        // Private variables
-        readonly Color firstColor = new(ConsoleColors.White);
-        readonly Color secondColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
-
         // Actual logic
         public override void Display()
         {
             try
             {
+                Color firstColor = KernelColorTools.GetColor(KernelColorType.Background).IsBright ? new(ConsoleColors.Black) : new(ConsoleColors.White);
+                Color secondColor = KernelColorTools.GetColor(KernelColorType.Success);
                 int dotStep = 0;
                 DebugWriter.WriteDebug(DebugLevel.I, "Splash displaying.");
                 while (!SplashClosing)
