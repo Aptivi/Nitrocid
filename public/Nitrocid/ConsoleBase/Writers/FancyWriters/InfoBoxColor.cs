@@ -48,7 +48,20 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                              BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                              BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                              BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
-                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar, vars);
+                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar, true, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBoxPlain(string text, bool waitForInput, params object[] vars) =>
+            WriteInfoBoxPlain(text,
+                             BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                             BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                             BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                             BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar, waitForInput, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -62,10 +75,11 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="LeftFrameChar">Left frame character for info box</param>
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBoxPlain(string text,
                                             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
+                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, bool waitForInput, params object[] vars)
         {
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
@@ -113,13 +127,17 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
                         appendMinusOne = true;
-                        Input.DetectKeypress();
+                        if (waitForInput)
+                            Input.DetectKeypress();
+                        else
+                            Thread.Sleep(5000);
                         BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                     }
                 }
 
                 // Wait until the user presses any key to close the box
-                Input.DetectKeypress();
+                if (waitForInput)
+                    Input.DetectKeypress();
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -246,6 +264,20 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        true, KernelColorType.Separator, KernelColorType.Background, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput, params object[] vars) =>
+            WriteInfoBox(text, waitForInput,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
                         KernelColorType.Separator, KernelColorType.Background, vars);
 
         /// <summary>
@@ -255,7 +287,22 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, KernelColorType InfoBoxColor, params object[] vars) =>
-            WriteInfoBox(text,
+            WriteInfoBox(text, true,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        InfoBoxColor, KernelColorType.Background, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput, KernelColorType InfoBoxColor, params object[] vars) =>
+            WriteInfoBox(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
@@ -270,7 +317,23 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars) =>
-            WriteInfoBox(text,
+            WriteInfoBox(text, true,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        InfoBoxColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput, KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars) =>
+            WriteInfoBox(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
@@ -284,7 +347,22 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, ConsoleColors InfoBoxColor, params object[] vars) =>
-            WriteInfoBox(text,
+            WriteInfoBox(text, true,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput, ConsoleColors InfoBoxColor, params object[] vars) =>
+            WriteInfoBox(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
@@ -299,7 +377,23 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
-            WriteInfoBox(text,
+            WriteInfoBox(text, true,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        new Color(InfoBoxColor), new Color(BackgroundColor), vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput, ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteInfoBox(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
@@ -313,7 +407,22 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, Color InfoBoxColor, params object[] vars) =>
-            WriteInfoBox(text,
+            WriteInfoBox(text, true,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        InfoBoxColor, GetColor(KernelColorType.Background), vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput, Color InfoBoxColor, params object[] vars) =>
+            WriteInfoBox(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
@@ -328,7 +437,23 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
-            WriteInfoBox(text,
+            WriteInfoBox(text, true,
+                        BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
+                        BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
+                        BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
+                        BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
+                        InfoBoxColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="Color"/></param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput, Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBox(text, waitForInput,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
@@ -351,7 +476,36 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         public static void WriteInfoBox(string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
-            WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, KernelColorType.Separator, KernelColorType.Background, vars);
+            WriteInfoBox(text, true,
+                UpperLeftCornerChar, LowerLeftCornerChar,
+                UpperRightCornerChar, LowerRightCornerChar,
+                UpperFrameChar, LowerFrameChar,
+                LeftFrameChar, RightFrameChar,
+                KernelColorType.Separator, KernelColorType.Background, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
+        /// <param name="UpperFrameChar">Upper frame character for info box</param>
+        /// <param name="LowerFrameChar">Lower frame character for info box</param>
+        /// <param name="LeftFrameChar">Left frame character for info box</param>
+        /// <param name="RightFrameChar">Right frame character for info box</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
+            WriteInfoBox(text, waitForInput,
+                UpperLeftCornerChar, LowerLeftCornerChar,
+                UpperRightCornerChar, LowerRightCornerChar,
+                UpperFrameChar, LowerFrameChar,
+                LeftFrameChar, RightFrameChar,
+                KernelColorType.Separator, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -371,7 +525,38 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxColor, params object[] vars) =>
-            WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, KernelColorType.Background, vars);
+            WriteInfoBox(text, true,
+                UpperLeftCornerChar, LowerLeftCornerChar,
+                UpperRightCornerChar, LowerRightCornerChar,
+                UpperFrameChar, LowerFrameChar,
+                LeftFrameChar, RightFrameChar,
+                InfoBoxColor, KernelColorType.Background, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
+        /// <param name="UpperFrameChar">Upper frame character for info box</param>
+        /// <param name="LowerFrameChar">Lower frame character for info box</param>
+        /// <param name="LeftFrameChar">Left frame character for info box</param>
+        /// <param name="RightFrameChar">Right frame character for info box</param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+                                       KernelColorType InfoBoxColor, params object[] vars) =>
+            WriteInfoBox(text, waitForInput,
+                UpperLeftCornerChar, LowerLeftCornerChar,
+                UpperRightCornerChar, LowerRightCornerChar,
+                UpperFrameChar, LowerFrameChar,
+                LeftFrameChar, RightFrameChar,
+                InfoBoxColor, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -389,6 +574,33 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+                                       KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars) =>
+            WriteInfoBox(text, true,
+                UpperLeftCornerChar, LowerLeftCornerChar,
+                UpperRightCornerChar, LowerRightCornerChar,
+                UpperFrameChar, LowerFrameChar,
+                LeftFrameChar, RightFrameChar,
+                InfoBoxColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
+        /// <param name="UpperFrameChar">Upper frame character for info box</param>
+        /// <param name="LowerFrameChar">Lower frame character for info box</param>
+        /// <param name="LeftFrameChar">Left frame character for info box</param>
+        /// <param name="RightFrameChar">Right frame character for info box</param>
+        /// <param name="InfoBoxColor">InfoBox color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="BackgroundColor">InfoBox background color from Nitrocid KS's <see cref="KernelColorType"/></param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxColor, KernelColorType BackgroundColor, params object[] vars)
@@ -439,13 +651,17 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
                         appendMinusOne = true;
-                        Input.DetectKeypress();
+                        if (waitForInput)
+                            Input.DetectKeypress();
+                        else
+                            Thread.Sleep(5000);
                         BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
                     }
                 }
 
                 // Wait until the user presses any key to close the box
-                Input.DetectKeypress();
+                if (waitForInput)
+                    Input.DetectKeypress();
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -476,7 +692,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, params object[] vars) =>
-            WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, GetColor(KernelColorType.Background), vars);
+            WriteInfoBox(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -494,6 +710,90 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+                                       Color InfoBoxColor, Color BackgroundColor, params object[] vars) =>
+            WriteInfoBox(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
+        /// <param name="UpperFrameChar">Upper frame character for info box</param>
+        /// <param name="LowerFrameChar">Lower frame character for info box</param>
+        /// <param name="LeftFrameChar">Left frame character for info box</param>
+        /// <param name="RightFrameChar">Right frame character for info box</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+                                       ConsoleColors InfoBoxColor, params object[] vars) =>
+            WriteInfoBox(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
+        /// <param name="UpperFrameChar">Upper frame character for info box</param>
+        /// <param name="LowerFrameChar">Lower frame character for info box</param>
+        /// <param name="LeftFrameChar">Left frame character for info box</param>
+        /// <param name="RightFrameChar">Right frame character for info box</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="BackgroundColor">InfoBox background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+                                       ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteInfoBox(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor, vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
+        /// <param name="UpperFrameChar">Upper frame character for info box</param>
+        /// <param name="LowerFrameChar">Lower frame character for info box</param>
+        /// <param name="LeftFrameChar">Left frame character for info box</param>
+        /// <param name="RightFrameChar">Right frame character for info box</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput,
+                                       char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                       char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
+                                       Color InfoBoxColor, params object[] vars) =>
+            WriteInfoBox(text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, GetColor(KernelColorType.Background), vars);
+
+        /// <summary>
+        /// Writes the info box plainly
+        /// </summary>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for info box</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for info box</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for info box</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for info box</param>
+        /// <param name="UpperFrameChar">Upper frame character for info box</param>
+        /// <param name="LowerFrameChar">Lower frame character for info box</param>
+        /// <param name="LeftFrameChar">Left frame character for info box</param>
+        /// <param name="RightFrameChar">Right frame character for info box</param>
+        /// <param name="InfoBoxColor">InfoBox color</param>
+        /// <param name="BackgroundColor">InfoBox background color</param>
+        /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteInfoBox(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, Color BackgroundColor, params object[] vars)
@@ -544,13 +844,17 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
                         appendMinusOne = true;
-                        Input.DetectKeypress();
+                        if (waitForInput)
+                            Input.DetectKeypress();
+                        else
+                            Thread.Sleep(5000);
                         BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
                     }
                 }
 
                 // Wait until the user presses any key to close the box
-                Input.DetectKeypress();
+                if (waitForInput)
+                    Input.DetectKeypress();
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -576,12 +880,13 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBox(string text,
+        public static void WriteInfoBox(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, params object[] vars) =>
-            WriteInfoBox(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
+            WriteInfoBox(text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -597,8 +902,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxColor">InfoBox color</param>
         /// <param name="BackgroundColor">InfoBox background color</param>
         /// <param name="text">Text to be written.</param>
+        /// <param name="waitForInput">Waits for input or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteInfoBox(string text,
+        public static void WriteInfoBox(string text, bool waitForInput,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, ConsoleColors BackgroundColor, params object[] vars)
@@ -649,13 +955,17 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
                         appendMinusOne = true;
-                        Input.DetectKeypress();
+                        if (waitForInput)
+                            Input.DetectKeypress();
+                        else
+                            Thread.Sleep(5000);
                         BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
                     }
                 }
 
                 // Wait until the user presses any key to close the box
-                Input.DetectKeypress();
+                if (waitForInput)
+                    Input.DetectKeypress();
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
