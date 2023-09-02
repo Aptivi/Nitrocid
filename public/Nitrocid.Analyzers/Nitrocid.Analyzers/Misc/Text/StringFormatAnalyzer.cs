@@ -72,12 +72,14 @@ namespace Nitrocid.Analyzers.Misc.Text
             }
             else if (exp.Expression is IdentifierNameSyntax identifier)
             {
-                var name = (IdentifierNameSyntax)exp.Name;
-                var location = context.Node.GetLocation();
-                if (identifier.Identifier.Text == nameof(String) && name.Identifier.Text == nameof(string.Format))
+                if (exp.Name is IdentifierNameSyntax name)
                 {
-                    var diagnostic = Diagnostic.Create(Rule, location);
-                    context.ReportDiagnostic(diagnostic);
+                    var location = context.Node.GetLocation();
+                    if (identifier.Identifier.Text == nameof(String) && name.Identifier.Text == nameof(string.Format))
+                    {
+                        var diagnostic = Diagnostic.Create(Rule, location);
+                        context.ReportDiagnostic(diagnostic);
+                    }
                 }
             }
         }

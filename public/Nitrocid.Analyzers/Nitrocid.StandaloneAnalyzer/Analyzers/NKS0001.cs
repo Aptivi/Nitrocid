@@ -47,12 +47,14 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                 }
                 else if (exp.Expression is IdentifierNameSyntax identifier)
                 {
-                    var name = (IdentifierNameSyntax)exp.Name;
-                    var location = syntaxNode.GetLocation();
-                    if (identifier.Identifier.Text == nameof(String) && name.Identifier.Text == nameof(string.Format))
+                    if (exp.Name is IdentifierNameSyntax name)
                     {
-                        var lineSpan = location.GetLineSpan();
-                        TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses string.Format() instead of TextTools.FormatString()", true, ConsoleColors.Yellow);
+                        var location = syntaxNode.GetLocation();
+                        if (identifier.Identifier.Text == nameof(String) && name.Identifier.Text == nameof(string.Format))
+                        {
+                            var lineSpan = location.GetLineSpan();
+                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses string.Format() instead of TextTools.FormatString()", true, ConsoleColors.Yellow);
+                        }
                     }
                 }
             }
