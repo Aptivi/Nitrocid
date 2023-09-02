@@ -1897,6 +1897,72 @@
         },
         "BoxGridMaximumBlueColorLevel": {
             "type": "integer"
+        },
+        "ColorBleedTrueColor": {
+            "type": "boolean"
+        },
+        "ColorBleedDelay": {
+            "type": "integer"
+        },
+        "ColorBleedMaxSteps": {
+            "type": "integer"
+        },
+        "ColorBleedMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "ColorBleedMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "ColorBleedMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "ColorBleedMinimumColorLevel": {
+            "type": "integer"
+        },
+        "ColorBleedMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "ColorBleedMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "ColorBleedMaximumBlueColorLevel": {
+            "type": "integer"
+        },
+        "ColorBleedMaximumColorLevel": {
+            "type": "integer"
+        },
+        "MatrixBleedTrueColor": {
+            "type": "boolean"
+        },
+        "MatrixBleedDelay": {
+            "type": "integer"
+        },
+        "MatrixBleedMaxSteps": {
+            "type": "integer"
+        },
+        "MatrixBleedMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "MatrixBleedMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "MatrixBleedMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "MatrixBleedMinimumColorLevel": {
+            "type": "integer"
+        },
+        "MatrixBleedMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "MatrixBleedMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "MatrixBleedMaximumBlueColorLevel": {
+            "type": "integer"
+        },
+        "MatrixBleedMaximumColorLevel": {
+            "type": "integer"
         }
     },
     "required": [
@@ -2531,6 +2597,28 @@
         "BoxGridMinimumBlueColorLevel",
         "BoxGridMaximumRedColorLevel",
         "BoxGridMaximumGreenColorLevel",
-        "BoxGridMaximumBlueColorLevel"
+        "BoxGridMaximumBlueColorLevel",
+        "ColorBleedTrueColor",
+        "ColorBleedDelay",
+        "ColorBleedMaxSteps",
+        "ColorBleedMinimumRedColorLevel",
+        "ColorBleedMinimumGreenColorLevel",
+        "ColorBleedMinimumBlueColorLevel",
+        "ColorBleedMinimumColorLevel",
+        "ColorBleedMaximumRedColorLevel",
+        "ColorBleedMaximumGreenColorLevel",
+        "ColorBleedMaximumBlueColorLevel",
+        "ColorBleedMaximumColorLevel",
+        "MatrixBleedTrueColor",
+        "MatrixBleedDelay",
+        "MatrixBleedMaxSteps",
+        "MatrixBleedMinimumRedColorLevel",
+        "MatrixBleedMinimumGreenColorLevel",
+        "MatrixBleedMinimumBlueColorLevel",
+        "MatrixBleedMinimumColorLevel",
+        "MatrixBleedMaximumRedColorLevel",
+        "MatrixBleedMaximumGreenColorLevel",
+        "MatrixBleedMaximumBlueColorLevel",
+        "MatrixBleedMaximumColorLevel"
     ]
 }

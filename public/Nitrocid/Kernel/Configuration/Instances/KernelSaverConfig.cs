@@ -2554,5 +2554,93 @@ namespace KS.Kernel.Configuration.Instances
         /// [BoxGrid] The maximum blue color level (true color)
         /// </summary>
         public int BoxGridMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [ColorBleed] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool ColorBleedTrueColor { get; set; } = true;
+        /// <summary>
+        /// [ColorBleed] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int ColorBleedDelay { get; set; } = 10;
+        /// <summary>
+        /// [ColorBleed] How many fade steps to do?
+        /// </summary>
+        public int ColorBleedMaxSteps { get; set; } = 25;
+        /// <summary>
+        /// [ColorBleed] The minimum red color level (true color)
+        /// </summary>
+        public int ColorBleedMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [ColorBleed] The minimum green color level (true color)
+        /// </summary>
+        public int ColorBleedMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [ColorBleed] The minimum blue color level (true color)
+        /// </summary>
+        public int ColorBleedMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [ColorBleed] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int ColorBleedMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [ColorBleed] The maximum red color level (true color)
+        /// </summary>
+        public int ColorBleedMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [ColorBleed] The maximum green color level (true color)
+        /// </summary>
+        public int ColorBleedMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [ColorBleed] The maximum blue color level (true color)
+        /// </summary>
+        public int ColorBleedMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [ColorBleed] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int ColorBleedMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [MatrixBleed] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool MatrixBleedTrueColor { get; set; } = true;
+        /// <summary>
+        /// [MatrixBleed] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int MatrixBleedDelay { get; set; } = 10;
+        /// <summary>
+        /// [MatrixBleed] How many fade steps to do?
+        /// </summary>
+        public int MatrixBleedMaxSteps { get; set; } = 25;
+        /// <summary>
+        /// [MatrixBleed] The minimum red color level (true color)
+        /// </summary>
+        public int MatrixBleedMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [MatrixBleed] The minimum green color level (true color)
+        /// </summary>
+        public int MatrixBleedMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [MatrixBleed] The minimum blue color level (true color)
+        /// </summary>
+        public int MatrixBleedMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [MatrixBleed] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int MatrixBleedMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [MatrixBleed] The maximum red color level (true color)
+        /// </summary>
+        public int MatrixBleedMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [MatrixBleed] The maximum green color level (true color)
+        /// </summary>
+        public int MatrixBleedMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [MatrixBleed] The maximum blue color level (true color)
+        /// </summary>
+        public int MatrixBleedMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [MatrixBleed] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int MatrixBleedMaximumColorLevel { get; set; } = 255;
     }
 }
