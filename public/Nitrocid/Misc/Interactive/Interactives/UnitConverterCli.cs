@@ -54,7 +54,7 @@ namespace KS.Misc.Interactive.Interactives
 
         /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>
-            Quantity.Infos.Select((qi) => qi.Name);
+            GetUnitTypeNames();
 
         /// <inheritdoc/>
         public override IEnumerable SecondaryDataSource =>
@@ -116,9 +116,15 @@ namespace KS.Misc.Interactive.Interactives
             RedrawRequired = true;
         }
 
+        private static IEnumerable GetUnitTypeNames() =>
+            Quantity.Infos.Where((qi) => qi.UnitInfos.Length > 1).Select((qi) => qi.Name);
+
+        private static IEnumerable GetUnitTypes() =>
+            Quantity.Infos.Where((qi) => qi.UnitInfos.Length > 1);
+
         private static IEnumerable GetUnits()
         {
-            var unitInfo = Quantity.Infos;
+            var unitInfo = GetUnitTypes().Cast<QuantityInfo>().ToArray();
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             for (int i = 0; i < unitInfo.Length; i++)
             {
