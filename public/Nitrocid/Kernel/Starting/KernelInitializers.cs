@@ -94,9 +94,6 @@ namespace KS.Kernel.Starting
 
                 AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
-                // A title
-                ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
-
                 // Check to see if we have an appdata folder for KS
                 if (!Checking.FolderExists(Paths.AppDataPath))
                     Making.MakeDirectory(Paths.AppDataPath, false);
@@ -127,6 +124,9 @@ namespace KS.Kernel.Starting
                 ConsoleWrapper.CursorVisible = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
             }
+
+            // A title
+            ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
 
             // Initialize console wrappers for TermRead
             Input.InitializeInputWrappers();
