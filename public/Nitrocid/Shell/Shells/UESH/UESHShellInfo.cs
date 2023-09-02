@@ -964,7 +964,14 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo()
                     }, new StopwatchCommand())
             },
-            
+
+            { "sudo",
+                new CommandInfo("sudo", ShellType, /* Localizable */ "Runs the command as the root user",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "command" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new SudoCommand())
+            },
+
             { "sumfile",
                 new CommandInfo("sumfile", ShellType, /* Localizable */ "Calculates file sums.",
                     new[] {
