@@ -357,15 +357,23 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual void DisplayInHex(long StartByte, long EndByte, byte[] FileByte)
+        public virtual void DisplayInHex(long StartByte, long EndByte, byte[] FileByte) =>
+            DisplayInHex(0, false, StartByte, EndByte, FileByte);
+
+        /// <inheritdoc/>
+        public virtual void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
         {
             // First, check for dumb console
             if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
             {
                 // Go to dumb mode
-                DisplayInHexDumbMode(StartByte, EndByte, FileByte);
+                DisplayInHexDumbMode(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
                 return;
             }
+
+            // Get the un-highlighted and highlighted colors
+            var unhighlightedColor = KernelColorTools.GetColor(KernelColorType.ListValue);
+            var highlightedColor = HighlightResults ? KernelColorTools.GetColor(KernelColorType.Success) : unhighlightedColor;
 
             // Go ahead...
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
@@ -404,8 +412,8 @@ namespace KS.Drivers.Filesystem
                         RenderedByteChar = ProjectedByteChar;
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
-                    TextWriterWhereColor.WriteWhere($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, KernelColorType.ListValue);
-                    TextWriterWhereColor.WriteWhere($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, KernelColorType.ListValue);
+                    TextWriterWhereColor.WriteWhere($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, (ByteContent == CurrentByte ? highlightedColor : unhighlightedColor));
+                    TextWriterWhereColor.WriteWhere($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, (ByteContent == CurrentByte ? highlightedColor : unhighlightedColor));
 
                     // Increase the byte number
                     ByteNumberEachSixteen += 1;
@@ -433,8 +441,18 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
-        public virtual void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte)
+        public virtual void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte) =>
+            DisplayInHexDumbMode(0, false, StartByte, EndByte, FileByte);
+
+        /// <inheritdoc/>
+        public virtual void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
         {
+            // Get the un-highlighted and highlighted colors
+            var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
+            var unhighlightedColor = KernelColorTools.GetColor(KernelColorType.ListValue);
+            var highlightedColor = HighlightResults ? KernelColorTools.GetColor(KernelColorType.Success) : unhighlightedColor;
+
+            // Now, do the job!
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
@@ -455,15 +473,22 @@ namespace KS.Drivers.Filesystem
                     builder.Append($"0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
-                    for (long byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
+                    long byteNum = 0;
+                    for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
                         DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
-                        builder.Append($"{CurrentByte:X2} ");
+                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground}{CurrentByte:X2} ");
                     }
 
+                    // Pad the remaining ASCII byte display
+                    int remaining = (int)(16 - byteNum);
+                    int padTimes = remaining * 3;
+                    string padded = new(' ', padTimes);
+                    builder.Append(padded);
+
                     // Iterate these number of bytes for the actual rendered characters
-                    for (long byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
+                    for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
                         DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
@@ -477,11 +502,11 @@ namespace KS.Drivers.Filesystem
                             RenderedByteChar = ProjectedByteChar;
                         }
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
-                        builder.Append($"{RenderedByteChar}");
+                        builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground}{RenderedByteChar}");
                     }
-                    builder.AppendLine();
+                    builder.AppendLine($"{entryColor.VTSequenceForeground}");
                 }
-                TextWriterColor.Write(builder.ToString());
+                TextWriterColor.Write(builder.ToString(), false, KernelColorType.ListEntry);
             }
             else if (StartByte > FileByte.LongLength)
             {

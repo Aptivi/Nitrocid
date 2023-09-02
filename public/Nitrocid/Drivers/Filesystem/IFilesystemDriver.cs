@@ -309,12 +309,32 @@ namespace KS.Drivers.Filesystem
         void DisplayInHex(long StartByte, long EndByte, byte[] FileByte);
 
         /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="ByteContent">Content to highlight</param>
+        /// <param name="HighlightResults">Whether to highlight the results. For querying.</param>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte);
+
+        /// <summary>
         /// Renders the file in hex in dumb mode
         /// </summary>
         /// <param name="StartByte">Start byte position</param>
         /// <param name="EndByte">End byte position</param>
         /// <param name="FileByte">File content in bytes</param>
         void DisplayInHexDumbMode(long StartByte, long EndByte, byte[] FileByte);
+
+        /// <summary>
+        /// Renders the file in hex in dumb mode
+        /// </summary>
+        /// <param name="ByteContent">Content to highlight</param>
+        /// <param name="HighlightResults">Whether to highlight the results. For querying.</param>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte);
 
         /// <summary>
         /// Checks to see if the file exists. Windows 10/11 bug aware.

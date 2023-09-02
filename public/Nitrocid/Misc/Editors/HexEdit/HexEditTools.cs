@@ -22,6 +22,7 @@ using System.Linq;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Drivers;
 using KS.Files;
 using KS.Files.Print;
 using KS.Kernel.Debugging;
@@ -317,36 +318,7 @@ namespace KS.Misc.Editors.HexEdit
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 if (StartByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength & EndByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    for (long ByteNumber = StartByte; ByteNumber <= EndByte; ByteNumber++)
-                    {
-                        if (HexEditShellCommon.HexEdit_FileBytes[(int)(ByteNumber - 1L)] == ByteContent)
-                        {
-                            long ByteRenderStart = ByteNumber - 2L;
-                            long ByteRenderEnd = ByteNumber + 2L;
-                            TextWriterColor.Write($"- 0x{ByteNumber:X8}: ", false, KernelColorType.ListEntry);
-                            for (long ByteRenderNumber = ByteRenderStart; ByteRenderNumber <= ByteRenderEnd; ByteRenderNumber++)
-                            {
-                                if (ByteRenderStart < 0L)
-                                    ByteRenderStart = 1L;
-                                if (ByteRenderEnd > HexEditShellCommon.HexEdit_FileBytes.LongLength)
-                                    ByteRenderEnd = HexEditShellCommon.HexEdit_FileBytes.LongLength;
-                                bool UseHighlight = HexEditShellCommon.HexEdit_FileBytes[(int)(ByteRenderNumber - 1L)] == ByteContent;
-                                byte CurrentByte = HexEditShellCommon.HexEdit_FileBytes[(int)(ByteRenderNumber - 1L)];
-                                DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
-                                char ProjectedByteChar = Convert.ToChar(CurrentByte);
-                                DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", ProjectedByteChar);
-                                char RenderedByteChar = '.';
-                                if (!char.IsWhiteSpace(ProjectedByteChar))
-                                {
-                                    // The renderer will actually render the character, not as a dot.
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Char is not a whitespace.");
-                                    RenderedByteChar = ProjectedByteChar;
-                                }
-                                TextWriterColor.Write($"0x{ByteRenderNumber:X2}({RenderedByteChar}) ", false, UseHighlight ? KernelColorType.Success : KernelColorType.ListValue);
-                            }
-                            TextWriterColor.Write();
-                        }
-                    }
+                    DriverHandler.CurrentFilesystemDriverLocal.DisplayInHex(ByteContent, true, StartByte, EndByte, HexEditShellCommon.HexEdit_FileBytes);
                 }
                 else if (StartByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
