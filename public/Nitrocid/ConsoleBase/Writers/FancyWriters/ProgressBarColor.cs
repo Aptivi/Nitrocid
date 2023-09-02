@@ -291,7 +291,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
-                KernelColorTools.SetConsoleColor(ProgressColor, true, true);
+                KernelColorTools.SetConsoleColor(ProgressColor, true);
                 TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
@@ -454,7 +454,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
-                KernelColorTools.SetConsoleColor(new Color(ProgressColor), true, true);
+                KernelColorTools.SetConsoleColor(new Color(ProgressColor), true);
                 TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
@@ -617,7 +617,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
-                KernelColorTools.SetConsoleColor(ProgressColor, true, true);
+                KernelColorTools.SetConsoleColor(ProgressColor, true);
                 TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             }

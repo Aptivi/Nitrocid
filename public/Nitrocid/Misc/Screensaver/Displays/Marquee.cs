@@ -246,7 +246,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(MarqueeSettings.MarqueeBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(MarqueeSettings.MarqueeBackgroundColor));
             ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             MarqueeSettings.MarqueeWrite = MarqueeSettings.MarqueeWrite.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
         }

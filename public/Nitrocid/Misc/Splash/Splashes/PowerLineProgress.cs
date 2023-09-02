@@ -121,7 +121,7 @@ namespace KS.Misc.Splash.Splashes
 
             // Transition
             PresetStringBuilder.Append(LastTransitionForeground.VTSequenceForeground);
-            PresetStringBuilder.Append(Flags.SetBackground ? KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage

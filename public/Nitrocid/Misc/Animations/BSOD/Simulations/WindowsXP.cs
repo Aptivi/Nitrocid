@@ -64,7 +64,7 @@ namespace KS.Misc.Animations.BSOD.Simulations
         {
             // Windows 7's BSOD is the same as Windows XP's and Windows Vista's BSOD.
             var bugParams = BugChecks[BugCheckCode];
-            KernelColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087), true);
+            KernelColorTools.LoadBack(new Color(ConsoleColors.DarkBlue_000087));
             KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // First, write the introduction

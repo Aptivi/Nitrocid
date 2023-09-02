@@ -26,7 +26,7 @@ namespace KS.Misc.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
             KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Simulate a Haiku bootloader failure

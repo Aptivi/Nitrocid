@@ -171,7 +171,7 @@ namespace KS.Misc.Animations.Glitch
                     }
                 case GlitchType.RedGreenBlueColor:
                     {
-                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true, true);
+                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true);
                         ConsoleWrapper.Write(" ");
                         break;
                     }
@@ -181,7 +181,7 @@ namespace KS.Misc.Animations.Glitch
                             KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
                             ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true, true);
+                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Letter);
                         break;
                     }
@@ -191,7 +191,7 @@ namespace KS.Misc.Animations.Glitch
                             KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
                             ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true, true);
+                        KernelColorTools.SetConsoleColor(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Symbol);
                         break;
                     }

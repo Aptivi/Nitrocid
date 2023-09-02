@@ -269,14 +269,14 @@ namespace KS.Misc.Screensaver.Displays
                 int BlueColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumBlueColorLevel, FallingLineSettings.FallingLineMaximumBlueColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                KernelColorTools.SetConsoleColor(ColorStorage, true, true);
+                KernelColorTools.SetConsoleColor(ColorStorage, true);
             }
             else
             {
                 int ColorNum = RandomDriver.Random(FallingLineSettings.FallingLineMinimumColorLevel, FallingLineSettings.FallingLineMaximumColorLevel);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
-                KernelColorTools.SetConsoleColor(ColorStorage, true, true);
+                KernelColorTools.SetConsoleColor(ColorStorage, true);
             }
 
             // Make the line fall down

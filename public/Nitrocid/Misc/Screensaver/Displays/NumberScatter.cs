@@ -93,7 +93,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             KernelColorTools.SetConsoleColor(new Color(NumberScatterSettings.NumberScatterForegroundColor));
-            KernelColorTools.LoadBack(new Color(NumberScatterSettings.NumberScatterBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(NumberScatterSettings.NumberScatterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 

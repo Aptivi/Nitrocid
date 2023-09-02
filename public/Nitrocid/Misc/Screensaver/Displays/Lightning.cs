@@ -172,12 +172,12 @@ namespace KS.Misc.Screensaver.Displays
                     else
                     {
                         // Show only the white background
-                        KernelColorTools.LoadBack(new Color(ConsoleColors.White), true);
+                        KernelColorTools.LoadBack(new Color(ConsoleColors.White));
                         ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+                        KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
                     }
                 }
-                KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+                KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
             }
             ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }

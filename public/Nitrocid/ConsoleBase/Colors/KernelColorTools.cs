@@ -175,13 +175,12 @@ namespace KS.ConsoleBase.Colors
         /// Loads the background
         /// </summary>
         /// <param name="ColorSequence">Color sequence used to load background</param>
-        /// <param name="Force">Force set background even if background setting is disabled</param>
-        public static void LoadBack(Color ColorSequence, bool Force = false)
+        public static void LoadBack(Color ColorSequence)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Filling background with background color {0}", ColorSequence.PlainSequence);
-                SetConsoleColor(ColorSequence, true, Force);
+                SetConsoleColor(ColorSequence, true);
                 ConsoleWrapper.Clear();
                 DebugWriter.WriteDebug(DebugLevel.I, "Set background color!");
             }
@@ -221,10 +220,9 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="Background">Is the color a background color?</param>
-        /// <param name="ForceSet">Force set color</param>
-        public static void SetConsoleColor(KernelColorType colorType, bool Background, bool ForceSet = false)
+        public static void SetConsoleColor(KernelColorType colorType, bool Background)
         {
-            SetConsoleColor(GetColor(colorType), Background, ForceSet);
+            SetConsoleColor(GetColor(colorType), Background);
             if (!Background)
                 SetConsoleColor(GetColor(KernelColorType.Background), true);
         }
@@ -234,8 +232,7 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         /// <param name="ColorSequence">The color instance</param>
         /// <param name="Background">Whether to set background or not</param>
-        /// <param name="ForceSet">Force set background even if background setting is disabled</param>
-        public static void SetConsoleColor(Color ColorSequence, bool Background = false, bool ForceSet = false)
+        public static void SetConsoleColor(Color ColorSequence, bool Background = false)
         {
             if (ColorSequence is null)
                 throw new KernelException(KernelExceptionType.Color, nameof(ColorSequence));
@@ -246,18 +243,9 @@ namespace KS.ConsoleBase.Colors
             // Set background
             if (Background)
             {
-                if (Flags.SetBackground | ForceSet)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Setting console background color to {0}...", ColorSequence.PlainSequence);
-                    TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
-                    currentBackgroundColor = ColorSequence;
-                }
-                else if (!Flags.SetBackground)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Resetting console background color... Requested color was {0}.", ColorSequence.PlainSequence);
-                    TextWriterColor.WritePlain(resetSequence, false);
-                    currentBackgroundColor = Color.Empty;
-                }
+                DebugWriter.WriteDebug(DebugLevel.I, "Setting console background color to {0}...", ColorSequence.PlainSequence);
+                TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
+                currentBackgroundColor = ColorSequence;
             }
             else
             {

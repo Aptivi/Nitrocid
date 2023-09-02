@@ -88,7 +88,7 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Now, make a color and fill the console with it
                 Color col = new((int)currentR, (int)currentG, (int)currentB);
-                KernelColorTools.LoadBack(col, true);
+                KernelColorTools.LoadBack(col);
 
                 // Sleep
                 ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);

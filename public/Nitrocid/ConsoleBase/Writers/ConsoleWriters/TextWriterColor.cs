@@ -301,8 +301,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    KernelColorTools.SetConsoleColor(color, Highlight, Highlight);
-                    KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight, Highlight);
+                    KernelColorTools.SetConsoleColor(color, Highlight);
+                    KernelColorTools.SetConsoleColor(KernelColorType.Background, !Highlight);
 
                     // Write the text to console
                     if (Highlight)
@@ -351,8 +351,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 try
                 {
                     // Try to write to console
-                    KernelColorTools.SetConsoleColor(ForegroundColor, Highlight, Highlight);
-                    KernelColorTools.SetConsoleColor(BackgroundColor, !Highlight, Highlight);
+                    KernelColorTools.SetConsoleColor(ForegroundColor, Highlight);
+                    KernelColorTools.SetConsoleColor(BackgroundColor, !Highlight);
 
                     // Write the text to console
                     if (Highlight)

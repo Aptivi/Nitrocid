@@ -528,7 +528,7 @@ namespace KS.Misc.Screensaver.Displays
                 var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
 
                 // Set the console color and fill the ramp!
-                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
+                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
                 while (!(Convert.ToInt32(RampCurrentColorRed) == RedColorNumTo & Convert.ToInt32(RampCurrentColorGreen) == GreenColorNumTo & Convert.ToInt32(RampCurrentColorBlue) == BlueColorNumTo))
                 {
                     if (ConsoleResizeListener.WasResized(false))
@@ -547,7 +547,7 @@ namespace KS.Misc.Screensaver.Displays
                     RampCurrentColorBlue -= RampColorBlueSteps;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
                     RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
-                    KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
+                    KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -560,7 +560,7 @@ namespace KS.Misc.Screensaver.Displays
                 var RampCurrentColorInstance = new Color(Convert.ToInt32(RampCurrentColor));
 
                 // Set the console color and fill the ramp!
-                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
+                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
                 while (Convert.ToInt32(RampCurrentColor) != ColorNumTo)
                 {
                     if (ConsoleResizeListener.WasResized(false))
@@ -577,7 +577,7 @@ namespace KS.Misc.Screensaver.Displays
                     RampCurrentColor -= RampColorSteps;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (Normal: {0}) subtracting from {1}", RampCurrentColor, RampColorSteps);
                     RampCurrentColorInstance = new Color(Convert.ToInt32(RampCurrentColor));
-                    KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
+                    KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(RampSettings.RampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

@@ -233,7 +233,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             base.ScreensaverPreparation();
-            KernelColorTools.LoadBack(new Color(FaderSettings.FaderBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(FaderSettings.FaderBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleBase.ConsoleWrapper.WindowWidth, ConsoleBase.ConsoleWrapper.WindowHeight);
             FaderSettingsInstance = new Animations.Fader.FaderSettings()
             {

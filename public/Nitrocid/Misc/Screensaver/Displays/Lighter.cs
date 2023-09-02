@@ -221,7 +221,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(LighterSettings.LighterBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(LighterSettings.LighterBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 
@@ -252,7 +252,7 @@ namespace KS.Misc.Screensaver.Displays
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(ColorStorage, true, true);
+                    KernelColorTools.SetConsoleColor(ColorStorage, true);
                     ConsoleWrapper.Write(" ");
                 }
                 else
@@ -267,7 +267,7 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true, true);
+                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true);
                     ConsoleWrapper.Write(" ");
                 }
                 else
@@ -287,7 +287,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(WipeLeft, WipeTop);
-                    KernelColorTools.SetConsoleColor(new Color(LighterSettings.LighterBackgroundColor), true, true);
+                    KernelColorTools.SetConsoleColor(new Color(LighterSettings.LighterBackgroundColor), true);
                     ConsoleWrapper.Write(" ");
                     CoveredPositions.RemoveAt(0);
                 }

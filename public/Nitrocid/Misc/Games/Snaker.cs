@@ -69,7 +69,7 @@ namespace KS.Misc.Games
                 int FloorLeftEdge = 2;
                 int FloorRightEdge = ConsoleWrapper.WindowWidth - 4;
                 DebugWriter.WriteDebug(DebugLevel.I, "Left edge: {0}, Right edge: {1}", FloorLeftEdge, FloorRightEdge);
-                KernelColorTools.SetConsoleColor(FloorColor, true, true);
+                KernelColorTools.SetConsoleColor(FloorColor, true);
 
                 // First, draw the floor top edge
                 for (int x = FloorTopLeftEdge; x <= FloorTopRightEdge; x++)
@@ -152,7 +152,7 @@ namespace KS.Misc.Games
                     ConsoleWrapper.Write(" ");
 
                     // Set the snake color
-                    KernelColorTools.SetConsoleColor(SnakeColor, true, true);
+                    KernelColorTools.SetConsoleColor(SnakeColor, true);
 
                     // Draw an apple
                     if (!AppleDrawn)

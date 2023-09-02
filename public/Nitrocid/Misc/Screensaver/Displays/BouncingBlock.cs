@@ -267,7 +267,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             ConsoleWrapper.CursorVisible = false;
             KernelColorTools.SetConsoleColor(new Color(BouncingBlockSettings.BouncingBlockForegroundColor));
-            KernelColorTools.LoadBack(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(BouncingBlockSettings.BouncingBlockBackgroundColor));
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Row block: {0} | Column block: {1}", RowBlock, ColumnBlock);
 
             // Initialize the color

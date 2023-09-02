@@ -241,7 +241,7 @@ namespace KS.Misc.Screensaver.Displays
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(ColorStorage, true, true);
+                    KernelColorTools.SetConsoleColor(ColorStorage, true);
                     ConsoleWrapper.Write(" ");
                 }
             }
@@ -251,7 +251,7 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
                 {
-                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true, true);
+                    KernelColorTools.SetConsoleColor(new Color(ColorNum), true);
                     ConsoleWrapper.Write(" ");
                 }
             }

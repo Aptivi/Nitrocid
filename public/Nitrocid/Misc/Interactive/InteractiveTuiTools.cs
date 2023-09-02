@@ -234,7 +234,7 @@ namespace KS.Misc.Interactive
             {
                 _refreshSelection = true;
                 DebugWriter.WriteDebug(DebugLevel.I, "We're redrawing.");
-                KernelColorTools.LoadBack(BaseInteractiveTui.BackgroundColor, true);
+                KernelColorTools.LoadBack(BaseInteractiveTui.BackgroundColor);
 
                 // Make a separator that separates the two panes to make it look like Total Commander or Midnight Commander. We need information in the upper and the
                 // lower part of the console, so we need to render the entire program to look like this: (just a concept mockup)

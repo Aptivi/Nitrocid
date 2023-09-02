@@ -237,11 +237,6 @@ namespace KS.Kernel
         public static bool SimulateNoAPM =>
             Config.MainConfig.SimulateNoAPM;
         /// <summary>
-        /// Sets the console background color using the VT sequence if true.
-        /// </summary>
-        public static bool SetBackground =>
-            Config.MainConfig.SetBackground;
-        /// <summary>
         /// Enables the scroll bar in selection screens
         /// </summary>
         public static bool EnableScrollBarInSelection =>

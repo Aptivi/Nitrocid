@@ -493,7 +493,7 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Make a new instance
                 var RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                KernelColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true, true);
+                KernelColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true);
 
                 // Try to fill the ramp
                 int RampSubgradientStepsMade = 0;
@@ -516,7 +516,7 @@ namespace KS.Misc.Screensaver.Displays
                     RampSubgradientCurrentColorBlue -= RampSubgradientColorBlueSteps;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new subgradient current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampSubgradientCurrentColorRed, RampSubgradientCurrentColorGreen, RampSubgradientCurrentColorBlue, RampSubgradientColorRedSteps, RampSubgradientColorGreenSteps, RampSubgradientColorBlueSteps);
                     RampSubgradientCurrentColorInstance = new Color($"{Convert.ToInt32(RampSubgradientCurrentColorRed)};{Convert.ToInt32(RampSubgradientCurrentColorGreen)};{Convert.ToInt32(RampSubgradientCurrentColorBlue)}");
-                    KernelColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true, true);
+                    KernelColorTools.SetConsoleColor(RampSubgradientCurrentColorInstance, true);
                 }
 
                 // Change the colors

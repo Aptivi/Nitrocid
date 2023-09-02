@@ -95,7 +95,7 @@ namespace KS.Misc.Screensaver.Displays
                 step = 0;
 
             // Set color
-            KernelColorTools.LoadBack(sirenColors[step], true);
+            KernelColorTools.LoadBack(sirenColors[step]);
 
             // Delay
             ThreadManager.SleepNoBlock(SirenSettings.SirenDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

@@ -241,7 +241,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            KernelColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
         }
 
         /// <inheritdoc/>
@@ -276,13 +276,13 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     KernelColorTools.SetConsoleColor(Color.Empty);
-                    KernelColorTools.SetConsoleColor(colorStorage, true, true);
+                    KernelColorTools.SetConsoleColor(colorStorage, true);
                     TextWriterColor.WritePlain(" ", false);
                 }
                 else
                 {
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
-                    KernelColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor), true);
+                    KernelColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
                 }
             }
             else

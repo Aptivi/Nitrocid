@@ -85,7 +85,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters.Tools
                 if (segmentIdx == segments.Count - 1)
                 {
                     SegmentStringBuilder.Append(segment.SegmentBackground.VTSequenceForeground);
-                    SegmentStringBuilder.Append(Flags.SetBackground ? EndingColor.VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m");
+                    SegmentStringBuilder.Append(EndingColor.VTSequenceBackground);
                     SegmentStringBuilder.AppendFormat("{0} ", transitionChar);
                 }
             }

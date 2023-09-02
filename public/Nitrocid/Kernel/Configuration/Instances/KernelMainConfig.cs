@@ -146,10 +146,6 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool SimulateNoAPM { get; set; }
         /// <summary>
-        /// If you want to set the background color to your favorite terminal emulator color, set it to false. Otherwise, Nitrocid KS will set its own background colors.
-        /// </summary>
-        public bool SetBackground { get; set; } = true;
-        /// <summary>
         /// If you are color blind or if you want to simulate color blindness, then you can enable it.
         /// </summary>
         public bool ColorBlind

@@ -229,7 +229,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -271,14 +271,14 @@ namespace KS.Misc.Screensaver.Displays
                     if (!ConsoleResizeListener.WasResized(false))
                     {
                         KernelColorTools.SetConsoleColor(Color.Empty);
-                        KernelColorTools.SetConsoleColor(colorStorage, true, true);
+                        KernelColorTools.SetConsoleColor(colorStorage, true);
                         TextWriterColor.WritePlain(" ", false);
                     }
                     else
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                         ColorFilled = false;
-                        KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                        KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
                         CoveredPositions.Clear();
                     }
                 }
@@ -299,13 +299,13 @@ namespace KS.Misc.Screensaver.Displays
                 if (!ConsoleResizeListener.WasResized(false))
                 {
                     ConsoleWrapper.SetCursorPosition(Left, Top);
-                    KernelColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true, true);
+                    KernelColorTools.SetConsoleColor(new Color(DissolveSettings.DissolveBackgroundColor), true);
                     ConsoleWrapper.Write(" ");
                     if (CoveredPositions.Count == (EndLeft + 1) * (EndTop + 1))
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                         ColorFilled = false;
-                        KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                        KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
                         CoveredPositions.Clear();
                     }
                 }
@@ -313,7 +313,7 @@ namespace KS.Misc.Screensaver.Displays
                 {
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're refilling...");
                     ColorFilled = false;
-                    KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor), true);
+                    KernelColorTools.LoadBack(new Color(DissolveSettings.DissolveBackgroundColor));
                     CoveredPositions.Clear();
                 }
             }

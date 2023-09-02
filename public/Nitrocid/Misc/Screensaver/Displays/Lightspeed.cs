@@ -229,13 +229,13 @@ namespace KS.Misc.Screensaver.Displays
                 int BlueColorNum = RandomDriver.Random(255);
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 var ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-                KernelColorTools.SetConsoleColor(ColorStorage, true, true);
+                KernelColorTools.SetConsoleColor(ColorStorage, true);
             }
             else
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", CurrentColorR, CurrentColorG, CurrentColorB);
                 var ColorStorage = new Color(CurrentColorR, CurrentColorG, CurrentColorB);
-                KernelColorTools.SetConsoleColor(ColorStorage, true, true);
+                KernelColorTools.SetConsoleColor(ColorStorage, true);
             }
 
             // Make the disco effect!

@@ -26,7 +26,7 @@ namespace KS.Misc.Animations.BSOD.Simulations
     {
         public virtual void Simulate()
         {
-            KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
             KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
             TextWriterColor.WritePlain("No operating system found.", true);
         }

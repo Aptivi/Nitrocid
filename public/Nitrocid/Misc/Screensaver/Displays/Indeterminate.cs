@@ -413,7 +413,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
 
                 // Fill the ramp
-                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true, true);
+                KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
                 for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                 {
                     TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true);

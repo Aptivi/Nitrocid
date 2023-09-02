@@ -93,7 +93,7 @@ namespace KS.Misc.Screensaver.Displays
         {
             // Variable preparations
             KernelColorTools.SetConsoleColor(new Color(GlitterMatrixSettings.GlitterMatrixForegroundColor));
-            KernelColorTools.LoadBack(new Color(GlitterMatrixSettings.GlitterMatrixBackgroundColor), true);
+            KernelColorTools.LoadBack(new Color(GlitterMatrixSettings.GlitterMatrixBackgroundColor));
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 

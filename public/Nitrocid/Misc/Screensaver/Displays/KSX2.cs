@@ -18,6 +18,7 @@
 
 using System;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
@@ -48,7 +49,7 @@ namespace KS.Misc.Screensaver.Displays
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleBase.Colors.KernelColorTools.LoadBack(new Color(ConsoleColors.Black), true);
+            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
             ConsoleWrapper.CursorVisible = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
@@ -97,7 +98,7 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentRColor, currentGColor, currentBColor);
-                            ConsoleBase.Colors.KernelColorTools.LoadBack(col, true);
+                            KernelColorTools.LoadBack(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -131,7 +132,7 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ConsoleBase.Colors.KernelColorTools.LoadBack(col, true);
+                            KernelColorTools.LoadBack(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -148,7 +149,7 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentR, currentG, currentB);
-                            ConsoleBase.Colors.KernelColorTools.LoadBack(col, true);
+                            KernelColorTools.LoadBack(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -205,7 +206,7 @@ namespace KS.Misc.Screensaver.Displays
                             bool showYear = flashes % 2 == 0;
                             if (showYear)
                             {
-                                ConsoleBase.Colors.KernelColorTools.LoadBack(black, true);
+                                KernelColorTools.LoadBack(black);
                                 var s5figFont = FigletTools.GetFigletFont("Banner");
                                 int s5figWidth = FigletTools.GetFigletWidth("2021", s5figFont) / 2;
                                 int s5figHeight = FigletTools.GetFigletHeight("2021", s5figFont) / 2;
@@ -214,7 +215,7 @@ namespace KS.Misc.Screensaver.Displays
                                 FigletWhereColor.WriteFigletWhere("2021", s5consoleX, s5consoleY, true, s5figFont, darkRed, black);
                             }
                             else
-                                ConsoleBase.Colors.KernelColorTools.LoadBack(darkRed, true);
+                                KernelColorTools.LoadBack(darkRed);
                             ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         ThreadManager.SleepNoBlock(3000, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -292,7 +293,7 @@ namespace KS.Misc.Screensaver.Displays
                                 currentRotB = (int)Math.Round(currentRotB + toGreenThresholdB);
                                 color = new Color(currentRotR, currentRotG, currentRotB);
                             }
-                            ConsoleBase.Colors.KernelColorTools.LoadBack(color, true);
+                            KernelColorTools.LoadBack(color);
                             var s5figFont = FigletTools.GetFigletFont("Banner");
                             int s5figWidth = FigletTools.GetFigletWidth("X", s5figFont) / 2;
                             int s5figHeight = FigletTools.GetFigletHeight("X", s5figFont) / 2;
@@ -309,9 +310,9 @@ namespace KS.Misc.Screensaver.Displays
                         {
                             bool showRed = flashes % 2 == 0;
                             if (showRed)
-                                ConsoleBase.Colors.KernelColorTools.LoadBack(red, true);
+                                KernelColorTools.LoadBack(red);
                             else
-                                ConsoleBase.Colors.KernelColorTools.LoadBack(green, true);
+                                KernelColorTools.LoadBack(green);
                             ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
@@ -373,7 +374,7 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentRColor, currentGColor, currentBColor);
-                            ConsoleBase.Colors.KernelColorTools.LoadBack(col, true);
+                            KernelColorTools.LoadBack(col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -399,7 +400,7 @@ namespace KS.Misc.Screensaver.Displays
 
             // Reset
             ConsoleResizeListener.WasResized();
-            ConsoleBase.Colors.KernelColorTools.LoadBack(black, true);
+            KernelColorTools.LoadBack(black);
         }
 
     }

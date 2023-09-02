@@ -40,7 +40,7 @@ namespace KS.Misc.Animations.BSOD.Simulations
             var black = new Color(ConsoleColors.Black);
 
             // Load the background
-            KernelColorTools.LoadBack(black, true);
+            KernelColorTools.LoadBack(black);
 
             // Select a variant
             int excVariantInt = RandomDriver.Random(Enum.GetNames<Variant>().Length);

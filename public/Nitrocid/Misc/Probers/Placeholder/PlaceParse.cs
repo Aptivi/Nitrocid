@@ -80,7 +80,7 @@ namespace KS.Misc.Probers.Placeholder
             { "<randomfile>",                             Getting.GetRandomFileName },
             { "<randomfolder>",                           Getting.GetRandomFolderName },
             { "<f:reset>",                          () => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground },
-            { "<b:reset>",                          () => Flags.SetBackground ? KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m" },
+            { "<b:reset>",                          () => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground },
             { "<uptime>",                           () => PowerManager.KernelUptime }
         };
 
@@ -133,7 +133,7 @@ namespace KS.Misc.Probers.Placeholder
                         int EndBackgroundIndex = text[text.IndexOf("<b:")..].IndexOf(">");
                         string SequenceSubstring = text.Substring(text.IndexOf("<b:"), length: EndBackgroundIndex + 1);
                         string PlainSequence = SequenceSubstring[3..^1];
-                        string VTSequence = Flags.SetBackground ? new Color(PlainSequence).VTSequenceBackground : Convert.ToString(CharManager.GetEsc()) + $"[49m";
+                        string VTSequence = new Color(PlainSequence).VTSequenceBackground;
                         text = text.Replace(SequenceSubstring, VTSequence);
                     }
                 }
