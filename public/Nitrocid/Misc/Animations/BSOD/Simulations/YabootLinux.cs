@@ -35,7 +35,7 @@ namespace KS.Misc.Animations.BSOD.Simulations
             TextWriterColor.WritePlain("Enter \"help\" to get some basic usage information", true);
             TextWriterColor.WritePlain("boot: ", false);
             Thread.Sleep(3000);
-            TextWriterSlowColor.WriteSlowly("Linux", true, 140, ConsoleColors.White);
+            TextWriterSlowColor.WriteSlowlyPlain("Linux", true, 140);
             TextWriterColor.WritePlain("Please wait, loading kernel...", true);
             Thread.Sleep(60);
             TextWriterColor.WritePlain("/pci@f2000000/mac-io@17/ata-4@1f000/disk@0:4,/boot/kernel/genkernel-ppc-3.12.21-gentoo-r1: Unknown or corrupt filesystem", true);
