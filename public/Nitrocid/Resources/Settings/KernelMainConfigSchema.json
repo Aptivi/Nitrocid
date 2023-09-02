@@ -53,9 +53,6 @@
         "SimulateNoAPM": {
             "type": "boolean"
         },
-        "SetBackground": {
-            "type": "boolean"
-        },
         "ColorBlind": {
             "type": "boolean"
         },
@@ -786,7 +783,6 @@
         "SplashName",
         "BannerFigletFont",
         "SimulateNoAPM",
-        "SetBackground",
         "ColorBlind",
         "BlindnessDeficiency",
         "BlindnessSeverity",
