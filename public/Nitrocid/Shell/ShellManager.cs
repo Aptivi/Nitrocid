@@ -90,6 +90,13 @@ namespace KS.Shell
                     }, new PresetsUnifiedCommand()) 
             },
 
+            { "exec",
+                new CommandInfo("exec", ShellType.Shell, /* Localizable */ "Executes an external process",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "process", "args" }, Array.Empty<SwitchInfo>(), true, 1)
+                    }, new ExecUnifiedCommand())
+            },
+
             { "exit",
                 new CommandInfo("exit", ShellType.Shell, /* Localizable */ "Exits the shell if running on subshell",
                     new[] {
