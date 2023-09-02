@@ -82,6 +82,22 @@ namespace KS.Misc.Screensaver.Displays
             }
         }
         /// <summary>
+        /// [MatrixBleed] Chance to drop a new falling color
+        /// </summary>
+        public static int MatrixBleedDropChance
+        {
+            get
+            {
+                return Config.SaverConfig.MatrixBleedDropChance;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 40;
+                Config.SaverConfig.MatrixBleedDropChance = value;
+            }
+        }
+        /// <summary>
         /// [MatrixBleed] The minimum red color level (true color)
         /// </summary>
         public static int MatrixBleedMinimumRedColorLevel
@@ -256,7 +272,7 @@ namespace KS.Misc.Screensaver.Displays
             int FallEnd = ConsoleWrapper.WindowHeight - 1;
 
             // Invoke the "chance"-based random number generator to decide whether a line is about to fall.
-            bool newFall = RandomDriver.RandomChance(40);
+            bool newFall = RandomDriver.RandomChance(MatrixBleedSettings.MatrixBleedDropChance);
             if (newFall)
                 bleedStates.Add(new MatrixBleedState());
 
@@ -265,7 +281,6 @@ namespace KS.Misc.Screensaver.Displays
             {
                 // Choose the column for the falling line
                 var bleedState = bleedStates[bleedIdx];
-                bleedState.ColumnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
 
                 // Make the line fall down
                 switch (bleedState.fallState)
@@ -290,7 +305,10 @@ namespace KS.Misc.Screensaver.Displays
             {
                 var bleedState = bleedStates[bleedIdx];
                 if (bleedState.fallState == MatrixBleedFallState.Done)
+                {
                     bleedStates.RemoveAt(bleedIdx);
+                    BleedState.reservedColumns.Remove(bleedState.ColumnLine);
+                }
             }
 
             // Reset resize sync
@@ -310,10 +328,10 @@ namespace KS.Misc.Screensaver.Displays
         internal int ColumnLine;
         internal int fallStep;
         internal int fadeStep;
-        private readonly Color ColorStorage;
         private readonly List<(int, int, string)> CoveredPositions = new();
         private readonly Color foreground = new(ConsoleColors.Green);
         private readonly Color background = new(ConsoleColors.Black);
+        private static readonly List<int> reservedColumns = new();
 
         internal void Fall()
         {
@@ -370,21 +388,11 @@ namespace KS.Misc.Screensaver.Displays
 
         internal MatrixBleedState()
         {
-            ColumnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
-            if (MatrixBleedSettings.MatrixBleedTrueColor)
-            {
-                int RedColorNum = RandomDriver.Random(MatrixBleedSettings.MatrixBleedMinimumRedColorLevel, MatrixBleedSettings.MatrixBleedMaximumRedColorLevel);
-                int GreenColorNum = RandomDriver.Random(MatrixBleedSettings.MatrixBleedMinimumGreenColorLevel, MatrixBleedSettings.MatrixBleedMaximumGreenColorLevel);
-                int BlueColorNum = RandomDriver.Random(MatrixBleedSettings.MatrixBleedMinimumBlueColorLevel, MatrixBleedSettings.MatrixBleedMaximumBlueColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
-                ColorStorage = new Color(RedColorNum, GreenColorNum, BlueColorNum);
-            }
-            else
-            {
-                int ColorNum = RandomDriver.Random(MatrixBleedSettings.MatrixBleedMinimumColorLevel, MatrixBleedSettings.MatrixBleedMaximumColorLevel);
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
-                ColorStorage = new Color(ColorNum);
-            }
+            int columnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            while (reservedColumns.Contains(columnLine))
+                columnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            reservedColumns.Add(columnLine);
+            ColumnLine = columnLine;
         }
     }
 

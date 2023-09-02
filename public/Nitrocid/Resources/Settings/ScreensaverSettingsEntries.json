@@ -4893,6 +4893,14 @@
                 "Description": "How many fade steps to do?"
             },
             {
+                "Name": "Drop chance",
+                "Type": "SIntSlider",
+                "Variable": "ColorBleedDropChance",
+                "Description": "Chance to drop a new falling color",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            },
+            {
                 "Name": "Minimum red color level",
                 "Type": "SIntSlider",
                 "Variable": "ColorBleedMinimumRedColorLevel",
@@ -4979,6 +4987,14 @@
                 "Type": "SInt",
                 "Variable": "MatrixBleedMaxSteps",
                 "Description": "How many fade steps to do?"
+            },
+            {
+                "Name": "Drop chance",
+                "Type": "SIntSlider",
+                "Variable": "MatrixBleedDropChance",
+                "Description": "Chance to drop a new falling matrix",
+                "MinimumValue": 0,
+                "MaximumValue": 100
             },
             {
                 "Name": "Minimum red color level",

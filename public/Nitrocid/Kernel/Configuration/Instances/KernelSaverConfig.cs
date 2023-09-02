@@ -2567,6 +2567,10 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public int ColorBleedMaxSteps { get; set; } = 25;
         /// <summary>
+        /// [ColorBleed] Chance to drop a new falling color
+        /// </summary>
+        public int ColorBleedDropChance { get; set; } = 40;
+        /// <summary>
         /// [ColorBleed] The minimum red color level (true color)
         /// </summary>
         public int ColorBleedMinimumRedColorLevel { get; set; } = 0;
@@ -2610,6 +2614,10 @@ namespace KS.Kernel.Configuration.Instances
         /// [MatrixBleed] How many fade steps to do?
         /// </summary>
         public int MatrixBleedMaxSteps { get; set; } = 25;
+        /// <summary>
+        /// [MatrixBleed] Chance to drop a new falling matrix
+        /// </summary>
+        public int MatrixBleedDropChance { get; set; } = 40;
         /// <summary>
         /// [MatrixBleed] The minimum red color level (true color)
         /// </summary>

@@ -1907,6 +1907,9 @@
         "ColorBleedMaxSteps": {
             "type": "integer"
         },
+        "ColorBleedDropChance": {
+            "type": "integer"
+        },
         "ColorBleedMinimumRedColorLevel": {
             "type": "integer"
         },
@@ -1938,6 +1941,9 @@
             "type": "integer"
         },
         "MatrixBleedMaxSteps": {
+            "type": "integer"
+        },
+        "MatrixBleedDropChance": {
             "type": "integer"
         },
         "MatrixBleedMinimumRedColorLevel": {
@@ -2601,6 +2607,7 @@
         "ColorBleedTrueColor",
         "ColorBleedDelay",
         "ColorBleedMaxSteps",
+        "ColorBleedDropChance",
         "ColorBleedMinimumRedColorLevel",
         "ColorBleedMinimumGreenColorLevel",
         "ColorBleedMinimumBlueColorLevel",
@@ -2612,6 +2619,7 @@
         "MatrixBleedTrueColor",
         "MatrixBleedDelay",
         "MatrixBleedMaxSteps",
+        "MatrixBleedDropChance",
         "MatrixBleedMinimumRedColorLevel",
         "MatrixBleedMinimumGreenColorLevel",
         "MatrixBleedMinimumBlueColorLevel",

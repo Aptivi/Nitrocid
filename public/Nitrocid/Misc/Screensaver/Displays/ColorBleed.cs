@@ -82,6 +82,22 @@ namespace KS.Misc.Screensaver.Displays
             }
         }
         /// <summary>
+        /// [ColorBleed] Chance to drop a new falling color
+        /// </summary>
+        public static int ColorBleedDropChance
+        {
+            get
+            {
+                return Config.SaverConfig.ColorBleedDropChance;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 40;
+                Config.SaverConfig.ColorBleedDropChance = value;
+            }
+        }
+        /// <summary>
         /// [ColorBleed] The minimum red color level (true color)
         /// </summary>
         public static int ColorBleedMinimumRedColorLevel
@@ -256,7 +272,7 @@ namespace KS.Misc.Screensaver.Displays
             int FallEnd = ConsoleWrapper.WindowHeight - 1;
 
             // Invoke the "chance"-based random number generator to decide whether a line is about to fall.
-            bool newFall = RandomDriver.RandomChance(40);
+            bool newFall = RandomDriver.RandomChance(ColorBleedSettings.ColorBleedDropChance);
             if (newFall)
                 bleedStates.Add(new BleedState());
 
@@ -265,7 +281,6 @@ namespace KS.Misc.Screensaver.Displays
             {
                 // Choose the column for the falling line
                 var bleedState = bleedStates[bleedIdx];
-                bleedState.ColumnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
 
                 // Make the line fall down
                 switch (bleedState.fallState)
@@ -290,7 +305,10 @@ namespace KS.Misc.Screensaver.Displays
             {
                 var bleedState = bleedStates[bleedIdx];
                 if (bleedState.fallState == BleedFallState.Done)
+                {
                     bleedStates.RemoveAt(bleedIdx);
+                    BleedState.reservedColumns.Remove(bleedState.ColumnLine);
+                }
             }
 
             // Reset resize sync
@@ -310,6 +328,7 @@ namespace KS.Misc.Screensaver.Displays
         internal int ColumnLine;
         internal int fallStep;
         internal int fadeStep;
+        internal static readonly List<int> reservedColumns = new();
         private readonly Color ColorStorage;
         private readonly List<Tuple<int, int>> CoveredPositions = new();
 
@@ -366,7 +385,11 @@ namespace KS.Misc.Screensaver.Displays
 
         internal BleedState()
         {
-            ColumnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            int columnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            while (reservedColumns.Contains(columnLine))
+                columnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
+            reservedColumns.Add(columnLine);
+            ColumnLine = columnLine;
             if (ColorBleedSettings.ColorBleedTrueColor)
             {
                 int RedColorNum = RandomDriver.Random(ColorBleedSettings.ColorBleedMinimumRedColorLevel, ColorBleedSettings.ColorBleedMaximumRedColorLevel);
