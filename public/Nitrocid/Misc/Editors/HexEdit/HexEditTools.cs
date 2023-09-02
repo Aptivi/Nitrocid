@@ -273,12 +273,14 @@ namespace KS.Misc.Editors.HexEdit
         /// <summary>
         /// Renders the file in hex
         /// </summary>
-        public static void HexEdit_DisplayHex() => HexEdit_DisplayHex(1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void HexEdit_DisplayHex() =>
+            HexEdit_DisplayHex(1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Renders the file in hex
         /// </summary>
-        public static void HexEdit_DisplayHex(long Start) => HexEdit_DisplayHex(Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void HexEdit_DisplayHex(long Start) =>
+            HexEdit_DisplayHex(Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Renders the file in hex
@@ -295,16 +297,17 @@ namespace KS.Misc.Editors.HexEdit
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
         }
 
-        // TODO: We need to show these the better way
         /// <summary>
         /// Queries the byte and displays the results
         /// </summary>
-        public static void HexEdit_QueryByteAndDisplay(byte ByteContent) => HexEdit_QueryByteAndDisplay(ByteContent, 1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void HexEdit_QueryByteAndDisplay(byte ByteContent) =>
+            HexEdit_QueryByteAndDisplay(ByteContent, 1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Queries the byte and displays the results
         /// </summary>
-        public static void HexEdit_QueryByteAndDisplay(byte ByteContent, long Start) => HexEdit_QueryByteAndDisplay(ByteContent, Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void HexEdit_QueryByteAndDisplay(byte ByteContent, long Start) =>
+            HexEdit_QueryByteAndDisplay(ByteContent, Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
 
         /// <summary>
         /// Queries the byte and displays the results
