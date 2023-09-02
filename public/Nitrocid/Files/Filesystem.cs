@@ -118,7 +118,7 @@ namespace KS.Files
             if (KernelPlatform.IsOnWindows() && (Path.Contains("$i30") || Path.Contains(@"\\.\globalroot\device\condrv\kernelconnect")))
             {
                 DebugWriter.WriteDebug(DebugLevel.F, "Trying to access invalid path. Path was {0}", Path);
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Trying to access invalid path."));
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Trying to access invalid path. This check was done to prevent older Windows 10 systems that didn't update to the April 2021 patch or higher from accessing these paths known to cause either the NTFS filesystem corruption or the Blue Screen of Death (BSOD) issue. This implies that the caller is attempting to cause a Denial of Service (DoS) and should be fixed, or that the user input is malicious."));
             }
         }
 
