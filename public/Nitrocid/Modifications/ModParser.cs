@@ -222,20 +222,6 @@ namespace KS.Modifications
                         return;
                     }
 
-                    // See if the commands in a mod are valid
-                    if (script.Commands is not null)
-                    {
-                        foreach (string Command in script.Commands.Keys)
-                        {
-                            if (string.IsNullOrWhiteSpace(Command))
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.W, "No command for {0}", modFile);
-                                SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} has invalid command. Mod parsing failed. Review the source code."), modFile);
-                                return;
-                            }
-                        }
-                    }
-
                     // See if the mod has name
                     string ModName = script.Name;
                     if (string.IsNullOrWhiteSpace(ModName))
@@ -279,45 +265,6 @@ namespace KS.Modifications
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version);
                         SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started") + " ({2})", 0, script.Name, script.Version, script.ModPart);
-                    }
-
-                    // Process the commands that are defined in a mod
-                    if (script.Commands is not null)
-                    {
-                        for (int i = 0; i <= script.Commands.Keys.Count - 1; i++)
-                        {
-                            // See if the command conflicts with pre-existing shell commands
-                            string Command = script.Commands.Keys.ElementAtOrDefault(i);
-                            string ActualCommand = Command;
-                            string CommandType = script.Commands.Values.ElementAtOrDefault(i).Type;
-                            DebugWriter.WriteDebug(DebugLevel.I, "Command type: {0}", CommandType);
-                            if (CommandManager.IsCommandFound(Command, CommandType) | ModManager.ListModCommands(CommandType).ContainsKey(Command))
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.W, "Command {0} conflicts with available shell commands or mod commands. Appending \"-{1}-{2}\" to end of command...", Command, script.Name, script.ModPart);
-                                Command += $"-{script.Name}-{script.ModPart}";
-                            }
-
-                            // See if mod can be added to command list
-                            if (!string.IsNullOrEmpty(Command))
-                            {
-                                if (string.IsNullOrEmpty(script.Commands[ActualCommand].HelpDefinition))
-                                {
-                                    SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), 0, Command);
-                                    DebugWriter.WriteDebug(DebugLevel.W, "{0}.Def = Nothing, {0}.Def = \"Command defined by {1} ({2})\"", Command, script.Name, script.ModPart);
-                                    script.Commands[ActualCommand].HelpDefinition = Translate.DoTranslation("Command defined by ") + script.Name + " (" + script.ModPart + ")";
-                                }
-
-                                // Now, add the command to the mod list
-                                var CommandScript = script.Commands[ActualCommand];
-                                DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", Command, CommandType.ToString());
-                                if (!ModManager.ListModCommands(CommandType).ContainsKey(Command))
-                                    ModManager.ListModCommands(CommandType).Add(Command, CommandScript);
-
-                                // Rename the command in the script
-                                script.Commands.Remove(ActualCommand);
-                                script.Commands.Add(ActualCommand, CommandScript);
-                            }
-                        }
                     }
 
                     // Check for accompanying manual pages for mods

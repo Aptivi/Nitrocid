@@ -32,7 +32,7 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellTypeInfo">The shell type information</param>
         public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
         {
-            if (!ShellManager.AvailableShells.ContainsKey(ShellType))
+            if (!ShellTypeExists(ShellType))
                 ShellManager.AvailableShells.Add(ShellType, ShellTypeInfo);
         }
 
@@ -53,5 +53,13 @@ namespace KS.Shell.ShellBase.Shells
         /// <returns>If available in ShellType, then it's a built-in shell, thus returning true. Otherwise, false for custom shells.</returns>
         public static bool IsShellBuiltin(string ShellType) =>
             Enum.IsDefined(typeof(ShellType), ShellType);
+
+        /// <summary>
+        /// Does the shell exist?
+        /// </summary>
+        /// <param name="ShellType">Shell type to check</param>
+        /// <returns>True if it exists; false otherwise.</returns>
+        public static bool ShellTypeExists(string ShellType) =>
+            ShellManager.AvailableShells.ContainsKey(ShellType);
     }
 }

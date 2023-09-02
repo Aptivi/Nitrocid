@@ -16,8 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Exceptions;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using Nitrocid.Tests.Shell.ShellBase.Commands.TestCommands;
 using NUnit.Framework;
 using Shouldly;
 
@@ -43,6 +45,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.MailShell, ExpectedResult = false)]
         [TestCase(ShellType.RSSShell, ExpectedResult = false)]
         [TestCase(ShellType.SFTPShell, ExpectedResult = true)]
+        [TestCase(ShellType.SqlShell, ExpectedResult = false)]
         [TestCase(ShellType.TextShell, ExpectedResult = false)]
         [Description("Action")]
         public bool TestIsCommandFoundInSpecificShell(ShellType type) =>
@@ -63,6 +66,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("MailShell", ExpectedResult = false)]
         [TestCase("RSSShell", ExpectedResult = false)]
         [TestCase("SFTPShell", ExpectedResult = true)]
+        [TestCase("SqlShell", ExpectedResult = false)]
         [TestCase("TextShell", ExpectedResult = false)]
         [Description("Action")]
         public bool TestIsCommandFoundInSpecificShell(string type) =>
@@ -75,6 +79,660 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Action")]
         public void TestIsCommandFoundInAllTheShells() =>
             CommandManager.IsCommandFound("detach").ShouldBeTrue();
+
+        /// <summary>
+        /// Tests registering the command
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestRegisterCommand(ShellType type)
+        {
+            Should.NotThrow(() => CommandManager.RegisterCustomCommand(type,
+                new CommandInfo("mycmd", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand())
+            ));
+            CommandManager.IsCommandFound("mycmd", type).ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests registering the command
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestRegisterCommand(string type)
+        {
+            Should.NotThrow(() => CommandManager.RegisterCustomCommand(type,
+                new CommandInfo("mycmd2", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand())
+            ));
+            CommandManager.IsCommandFound("mycmd2", type).ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests registering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestRegisterEmptyCommandName(ShellType type)
+        {
+            Should.Throw(() => CommandManager.RegisterCustomCommand(type,
+                new CommandInfo("", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand())
+            ), typeof(KernelException));
+        }
+
+        /// <summary>
+        /// Tests registering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestRegisterEmptyCommandName(string type)
+        {
+            Should.Throw(() => CommandManager.RegisterCustomCommand(type,
+                new CommandInfo("", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand())
+            ), typeof(KernelException));
+        }
+
+        /// <summary>
+        /// Tests registering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestRegisterCommandConflicting(ShellType type)
+        {
+            Should.Throw(() => CommandManager.RegisterCustomCommand(type,
+                new CommandInfo("exit", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand())
+            ), typeof(KernelException));
+        }
+
+        /// <summary>
+        /// Tests registering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestRegisterCommandConflicting(string type)
+        {
+            Should.Throw(() => CommandManager.RegisterCustomCommand(type,
+                new CommandInfo("exit", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand())
+            ), typeof(KernelException));
+        }
+
+        /// <summary>
+        /// Tests registering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestRegisterNullCommand(ShellType type) =>
+            Should.Throw(() => CommandManager.RegisterCustomCommand(type, null), typeof(KernelException));
+
+        /// <summary>
+        /// Tests registering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestRegisterNullCommand(string type) =>
+            Should.Throw(() => CommandManager.RegisterCustomCommand(type, null), typeof(KernelException));
+
+        /// <summary>
+        /// Tests unregistering the command
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestUnregisterCommand(ShellType type)
+        {
+            Should.NotThrow(() => CommandManager.UnregisterCustomCommand(type, "mycmd"));
+            CommandManager.IsCommandFound("mycmd", type).ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests unregistering the command
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestUnregisterCommand(string type)
+        {
+            Should.NotThrow(() => CommandManager.UnregisterCustomCommand(type, "mycmd2"));
+            CommandManager.IsCommandFound("mycmd2", type).ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests unregistering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestUnregisterNonexistentCommand(ShellType type) =>
+            Should.Throw(() => CommandManager.UnregisterCustomCommand(type, "mycmd3"), typeof(KernelException));
+
+        /// <summary>
+        /// Tests unregistering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestUnregisterNonexistentCommand(string type) =>
+            Should.Throw(() => CommandManager.UnregisterCustomCommand(type, "mycmd4"), typeof(KernelException));
+
+        /// <summary>
+        /// Tests unregistering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestUnregisterNullCommand(ShellType type) =>
+            Should.Throw(() => CommandManager.UnregisterCustomCommand(type, null), typeof(KernelException));
+
+        /// <summary>
+        /// Tests unregistering the command (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestUnregisterNullCommand(string type) =>
+            Should.Throw(() => CommandManager.UnregisterCustomCommand(type, null), typeof(KernelException));
+
+        /// <summary>
+        /// Tests registering the commands
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestRegisterCommands(ShellType type)
+        {
+            var commandInfos = new CommandInfo[]
+            {
+                new CommandInfo("cmdgroup", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+
+                new CommandInfo("cmdgroup1", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+
+                new CommandInfo("cmdgroup2", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+            };
+            Should.NotThrow(() => CommandManager.RegisterCustomCommands(type, commandInfos));
+            CommandManager.IsCommandFound("cmdgroup", type).ShouldBeTrue();
+            CommandManager.IsCommandFound("cmdgroup1", type).ShouldBeTrue();
+            CommandManager.IsCommandFound("cmdgroup2", type).ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests registering the commands
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestRegisterCommands(string type)
+        {
+            var commandInfos = new CommandInfo[]
+            {
+                new CommandInfo("cmdgroup3", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+                
+                new CommandInfo("cmdgroup4", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+                
+                new CommandInfo("cmdgroup5", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+            };
+            Should.NotThrow(() => CommandManager.RegisterCustomCommands(type, commandInfos));
+            CommandManager.IsCommandFound("cmdgroup3", type).ShouldBeTrue();
+            CommandManager.IsCommandFound("cmdgroup4", type).ShouldBeTrue();
+            CommandManager.IsCommandFound("cmdgroup5", type).ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests registering the commands (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestRegisterCommandsWithErrors(ShellType type)
+        {
+            var commandInfos = new CommandInfo[]
+            {
+                new CommandInfo("command", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+
+                new CommandInfo("exit", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+
+                new CommandInfo("", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+            };
+            Should.Throw(() => CommandManager.RegisterCustomCommands(type, commandInfos), typeof(KernelException));
+            CommandManager.IsCommandFound("command", type).ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests registering the commands (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestRegisterCommandsWithErrors(string type)
+        {
+            var commandInfos = new CommandInfo[]
+            {
+                new CommandInfo("command2", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+
+                new CommandInfo("exit", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+
+                new CommandInfo("", type, "My command help definition...",
+                    new[]
+                    {
+                        new CommandArgumentInfo()
+                    }, new CustomCommand()),
+            };
+            Should.Throw(() => CommandManager.RegisterCustomCommands(type, commandInfos), typeof(KernelException));
+            CommandManager.IsCommandFound("command2", type).ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests unregistering the commands
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestUnregisterCommands(ShellType type)
+        {
+            var commandInfos = new string[]
+            {
+                "cmdgroup",
+                "cmdgroup1",
+                "cmdgroup2"
+            };
+            Should.NotThrow(() => CommandManager.UnregisterCustomCommands(type, commandInfos));
+            CommandManager.IsCommandFound("cmdgroup", type).ShouldBeFalse();
+            CommandManager.IsCommandFound("cmdgroup1", type).ShouldBeFalse();
+            CommandManager.IsCommandFound("cmdgroup2", type).ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests unregistering the commands
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestUnregisterCommands(string type)
+        {
+            var commandInfos = new string[]
+            {
+                "cmdgroup3",
+                "cmdgroup4",
+                "cmdgroup5"
+            };
+            Should.NotThrow(() => CommandManager.UnregisterCustomCommands(type, commandInfos));
+            CommandManager.IsCommandFound("cmdgroup3", type).ShouldBeFalse();
+            CommandManager.IsCommandFound("cmdgroup4", type).ShouldBeFalse();
+            CommandManager.IsCommandFound("cmdgroup5", type).ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests unregistering the commands (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.ArchiveShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Action")]
+        public void TestUnregisterCommandsWithErrors(ShellType type)
+        {
+            var commandInfos = new string[]
+            {
+                "command",
+                "exit",
+                ""
+            };
+            Should.Throw(() => CommandManager.UnregisterCustomCommands(type, commandInfos), typeof(KernelException));
+            CommandManager.IsCommandFound("command", type).ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests unregistering the commands (Counterexample)
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("ArchiveShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Action")]
+        public void TestUnregisterCommandsWithErrors(string type)
+        {
+            var commandInfos = new string[]
+            {
+                "command2",
+                "exit",
+                ""
+            };
+            Should.Throw(() => CommandManager.UnregisterCustomCommands(type, commandInfos), typeof(KernelException));
+            CommandManager.IsCommandFound("command2", type).ShouldBeFalse();
+        }
 
     }
 }

@@ -29,10 +29,6 @@ namespace KS.Modifications
     public interface IMod
     {
         /// <summary>
-        /// List of commands for mod
-        /// </summary>
-        Dictionary<string, CommandInfo> Commands { get; set; }
-        /// <summary>
         /// Mod name
         /// </summary>
         string Name { get; set; }

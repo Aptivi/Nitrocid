@@ -252,16 +252,6 @@ namespace KS.Modifications
                                     var ScriptPartInfo = ScriptParts.Values.ElementAtOrDefault(PartIndex);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
 
-                                    // Remove all the commands associated with the part
-                                    if (ScriptPartInfo.PartScript.Commands is not null)
-                                    {
-                                        foreach (CommandInfo CommandInfo in ScriptPartInfo.PartScript.Commands.Values)
-                                        {
-                                            DebugWriter.WriteDebug(DebugLevel.I, "Removing command {0} from {1}...", CommandInfo.Command, CommandInfo.Type);
-                                            ListModCommands(CommandInfo.Type).Remove(CommandInfo.Command);
-                                        }
-                                    }
-
                                     // Stop the associated part
                                     ScriptPartInfo.PartScript.StopMod();
                                     if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
