@@ -135,7 +135,7 @@ namespace KS.Users
                 else if (!Regexp.IsMatch(unpassword))
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Unencrypted password!");
-                    throw new KernelException(KernelExceptionType.UserManagement, "Trying to add unencrypted password to users list.");
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to add unencrypted password to users list."));
                 }
 
                 // Add user locally
