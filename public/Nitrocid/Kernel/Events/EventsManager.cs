@@ -20,7 +20,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Journaling;
 using KS.Languages;
-using KS.Modifications;
 using System;
 using System.Collections.Generic;
 
@@ -36,6 +35,7 @@ namespace KS.Kernel.Events
         /// Recently fired events
         /// </summary>
         internal static Dictionary<string, object[]> FiredEvents { get; set; } = new Dictionary<string, object[]>();
+        internal static Dictionary<EventType, List<Action<object[]>>> eventHandlers = new();
 
         /// <summary>
         /// Lists all the fired events with arguments
@@ -88,23 +88,53 @@ namespace KS.Kernel.Events
             JournalManager.WriteJournal(Translate.DoTranslation("Kernel event fired:") + $" {Event} [{FiredEvents.Count}]");
 
             // Now, respond to the event
-            foreach (ModInfo ModPart in ModManager.Mods.Values)
+            if (!eventHandlers.ContainsKey(Event))
+                eventHandlers.Add(Event, new());
+            foreach (var handler in eventHandlers[Event])
             {
-                foreach (ModPartInfo PartInfo in ModPart.ModParts.Values)
+                try
                 {
-                    try
-                    {
-                        var script = PartInfo.PartScript;
-                        DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "{0} in mod {1} v{2} responded to event {3}...", script.ModPart, script.Name, script.Version, Event);
-                        script.InitEvents(Event, Params);
-                    }
-                    catch (Exception ex)
-                    {
-                        DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                        DebugWriter.WriteDebugStackTraceConditional(Flags.EventDebug, ex);
-                    }
+                    DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "A mod responded to event {0}...", Event);
+                    handler.Invoke(Params);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTraceConditional(Flags.EventDebug, ex);
                 }
             }
+        }
+
+        /// <summary>
+        /// Registers the event handler
+        /// </summary>
+        /// <param name="eventType">An event type to handle</param>
+        /// <param name="eventAction">An event action to add to the handler list</param>
+        public static void RegisterEventHandler(EventType eventType, Action<object[]> eventAction)
+        {
+            if (eventAction == null)
+                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Provide a valid event action"));
+            if (!Enum.IsDefined(typeof(EventType), eventType))
+                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), eventType);
+            if (!eventHandlers.ContainsKey(eventType))
+                eventHandlers.Add(eventType, new());
+            eventHandlers[eventType].Add(eventAction);
+        }
+
+        /// <summary>
+        /// Unregisters the event handler
+        /// </summary>
+        /// <param name="eventType">An event type to handle</param>
+        /// <param name="eventAction">An event action to remove from the handler list</param>
+        public static void UnregisterEventHandler(EventType eventType, Action<object[]> eventAction)
+        {
+            if (eventAction == null)
+                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Provide a valid event action"));
+            if (!Enum.IsDefined(typeof(EventType), eventType))
+                throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), eventType);
+            if (!eventHandlers.ContainsKey(eventType))
+                eventHandlers.Add(eventType, new());
+            eventHandlers[eventType].Remove(eventAction);
         }
 
     }

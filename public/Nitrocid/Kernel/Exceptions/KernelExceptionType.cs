@@ -410,6 +410,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// There was an error when trying to perform an operation for theme management.
         /// </summary>
-        ThemeManagement
+        ThemeManagement,
+        /// <summary>
+        /// There was an error when trying to perform an operation for the kernel event management.
+        /// </summary>
+        EventManagement
     }
 }

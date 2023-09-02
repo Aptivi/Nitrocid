@@ -56,16 +56,5 @@ namespace KS.Modifications
         /// Code executed when stopping mod
         /// </summary>
         void StopMod();
-        /// <summary>
-        /// Code executed when initializing events
-        /// </summary>
-        /// <param name="Event">Event</param>
-        void InitEvents(EventType Event);
-        /// <summary>
-        /// Code executed when initializing events
-        /// </summary>
-        /// <param name="Event">Event</param>
-        /// <param name="Args">Arguments</param>
-        void InitEvents(EventType Event, params object[] Args);
     }
 }

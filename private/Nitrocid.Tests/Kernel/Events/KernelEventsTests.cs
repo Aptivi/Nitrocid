@@ -20,6 +20,7 @@ using KS.Kernel.Events;
 using NUnit.Framework;
 using Shouldly;
 using System;
+using System.Linq;
 
 namespace Nitrocid.Tests.Kernel.Events
 {
@@ -64,6 +65,40 @@ namespace Nitrocid.Tests.Kernel.Events
         {
             EventsManager.ClearAllFiredEvents();
             EventsManager.ListAllFiredEvents().ShouldBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests registering the event handler, testing it, and unregistering the handler
+        /// </summary>
+        [Test]
+        [Description("Misc")]
+        public void TestEventHandler()
+        {
+            bool acknowledged = false;
+            var acknowledge = new Action<object[]>((_) => acknowledged = true);
+            EventsManager.RegisterEventHandler(EventType.ShellInitialized, acknowledge);
+            EventsManager.FireEvent(EventType.ShellInitialized);
+            EventsManager.UnregisterEventHandler(EventType.ShellInitialized, acknowledge);
+            acknowledged.ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests registering the event handler, testing it, and unregistering the handler
+        /// </summary>
+        [Test]
+        [Description("Misc")]
+        public void TestEventHandlerParameterized()
+        {
+            bool acknowledged = false;
+            var acknowledge = new Action<object[]>((parameters) =>
+            {
+                if (parameters.Contains("Hello"))
+                    acknowledged = true;
+            });
+            EventsManager.RegisterEventHandler(EventType.ShellInitialized, acknowledge);
+            EventsManager.FireEvent(EventType.ShellInitialized, "Hello");
+            EventsManager.UnregisterEventHandler(EventType.ShellInitialized, acknowledge);
+            acknowledged.ShouldBeTrue();
         }
 
     }
