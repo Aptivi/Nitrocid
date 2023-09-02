@@ -45,12 +45,13 @@ namespace KS.Shell.Shells.UESH.Commands
             bool failed = false;
             try
             {
-                // TODO: We need to find a way to lock a user so that it doesn't get removed by rmuser or any mod command
                 if (Login.ShowPasswordPrompt(currentUsername))
                 {
                     sudoDone = true;
                     DebugWriter.WriteDebug(DebugLevel.I, "Switching to root user...");
                     UserManagement.CurrentUserInfo = UserManagement.GetUser("root");
+                    UserManagement.LockUser(currentUsername);
+                    UserManagement.LockUser("root");
                     var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
                     if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                     {
@@ -75,6 +76,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Sudo is done. Switching to user {0}...", currentUsername);
                     UserManagement.CurrentUserInfo = UserManagement.GetUser(currentUsername);
+                    UserManagement.UnlockUser(currentUsername);
+                    UserManagement.UnlockUser("root");
                 }
             }
             return failed ? 10000 + (int)KernelExceptionType.ShellOperation : 0;

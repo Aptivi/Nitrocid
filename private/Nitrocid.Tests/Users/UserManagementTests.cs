@@ -18,6 +18,7 @@
 
 using KS.Drivers;
 using KS.Drivers.Encryption;
+using KS.Kernel.Exceptions;
 using KS.Users;
 using NUnit.Framework;
 using Shouldly;
@@ -63,6 +64,20 @@ namespace Nitrocid.Tests.Users
             list.ShouldContain("root");
             list.ShouldContain("Account1");
             list.ShouldContain("Account3");
+        }
+
+        /// <summary>
+        /// Tests locking a user
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestLockUser()
+        {
+            UserManagement.LockUser("Account3");
+            UserManagement.IsLocked("Account3").ShouldBeTrue();
+            Should.Throw(() => UserManagement.RemoveUser("Account3"), typeof(KernelException));
+            UserManagement.UnlockUser("Account3");
+            UserManagement.IsLocked("Account3").ShouldBeFalse();
         }
 
         /// <summary>

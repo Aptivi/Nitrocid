@@ -62,6 +62,7 @@ namespace KS.Users
 
         internal static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), true, false, false, new());
         internal static List<UserInfo> Users = new() { CurrentUserInfo };
+        private static readonly List<UserInfo> LockedUsers = new();
 
         /// <summary>
         /// A user property
@@ -119,6 +120,10 @@ namespace KS.Users
         {
             try
             {
+                // Check the lock
+                if (IsLocked(uninitUser))
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
+
                 // Compute hash of a password
                 var Regexp = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").HashRegex;
                 if (ComputationNeeded)
@@ -229,6 +234,9 @@ namespace KS.Users
         /// <remarks>This sub is an accomplice of in-shell command arguments.</remarks>
         public static void RemoveUser(string user)
         {
+            // Check the lock
+            if (IsLocked(user))
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
             if (!ValidateUsername(user))
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Can't remove username. Make sure that the username exists."));
             
@@ -296,6 +304,9 @@ namespace KS.Users
         {
             if (UserExists(OldName))
             {
+                // Check the lock
+                if (IsLocked(OldName))
+                    throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
                 if (!UserExists(Username))
                 {
                     try
@@ -363,6 +374,10 @@ namespace KS.Users
 
             if (!UserExists(Target))
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
+
+            // Check the lock
+            if (IsLocked(Target))
+                throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("Trying to modify existing account while it's locked"));
 
             CurrentPass = Encryption.GetEncryptedString(CurrentPass, "SHA256");
             if (CurrentPass == GetUser(Target).Password)
@@ -590,12 +605,39 @@ namespace KS.Users
             }
         }
 
+        /// <summary>
+        /// Locks a user
+        /// </summary>
+        /// <param name="User">A username to lock</param>
+        public static void LockUser(string User)
+        {
+            if (!IsLocked(User))
+                LockedUsers.Add(GetUser(User));
+        }
+
+        /// <summary>
+        /// Unlocks a user
+        /// </summary>
+        /// <param name="User">A username to unlock</param>
+        public static void UnlockUser(string User)
+        {
+            if (IsLocked(User))
+                LockedUsers.Remove(GetUser(User));
+        }
+
+        /// <summary>
+        /// Checks to see if the user is locked
+        /// </summary>
+        /// <param name="User">A username to check</param>
+        /// <returns>True if locked; False otherwise</returns>
+        public static bool IsLocked(string User) =>
+            LockedUsers.Any((ui) => ui.Username == User);
+
         internal static void SaveUsers()
         {
             // Make a JSON file to save all user information files
             string userInfosSerialized = JsonConvert.SerializeObject(Users.ToArray(), Formatting.Indented);
             File.WriteAllText(Paths.UsersPath, userInfosSerialized);
         }
-
     }
 }
