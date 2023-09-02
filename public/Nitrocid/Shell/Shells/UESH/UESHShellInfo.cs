@@ -397,6 +397,13 @@ namespace KS.Shell.Shells.UESH
                     }, new FindRegCommand())
             },
             
+            { "fork",
+                new CommandInfo("fork", ShellType, /* Localizable */ "Forks the UESH shell to create another instance",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new ForkCommand())
+            },
+            
             { "ftp",
                 new CommandInfo("ftp", ShellType, /* Localizable */ "Use an FTP shell to interact with servers",
                     new[] {
