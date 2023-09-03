@@ -16,12 +16,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Debugging;
+using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using Terminaux.Reader;
 
 namespace KS.Kernel.Power
 {
@@ -32,8 +37,27 @@ namespace KS.Kernel.Power
 
         internal static void RegisterHandlers()
         {
-            signalHandlers.Add(PosixSignalRegistration.Create(PosixSignal.SIGQUIT, SigQuit));
-            signalHandlers.Add(PosixSignalRegistration.Create(PosixSignal.SIGTERM, SigQuit));
+            // Works on Windows and Linux
+            signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGINT, SigQuit));
+            signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGTERM, SigQuit));
+            if (KernelPlatform.IsOnWindows())
+                return;
+
+            // Works on Linux only
+            signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR1, SigReboot));
+            signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR2, SigReboot));
+
+            // Handle window change
+            if (KernelPlatform.IsOnUnix())
+                signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGWINCH, SigWindowChange));
+            else
+            {
+                // Initialize console resize listener
+                if (Flags.TalkativePreboot)
+                    TextWriterColor.Write(Translate.DoTranslation("Loading resize listener..."));
+                ConsoleResizeListener.StartResizeListener();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded resize listener.");
+            }
         }
 
         internal static void DisposeHandlers()
@@ -45,6 +69,19 @@ namespace KS.Kernel.Power
         private static void SigQuit(PosixSignalContext psc)
         {
             PowerManager.PowerManage(PowerMode.Shutdown);
+            psc.Cancel = true;
+        }
+
+        private static void SigReboot(PosixSignalContext psc)
+        {
+            PowerManager.PowerManage(PowerMode.Reboot);
+            psc.Cancel = true;
+        }
+
+        private static void SigWindowChange(PosixSignalContext psc)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "SIGWINCH recieved!");
+            ConsoleResizeListener.ResizeDetected = true;
             psc.Cancel = true;
         }
     }

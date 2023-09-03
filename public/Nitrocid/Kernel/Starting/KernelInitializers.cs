@@ -145,12 +145,6 @@ namespace KS.Kernel.Starting
                 TextWriterColor.Write(Translate.DoTranslation("Downloading debug symbols..."));
             DebugSymbolsTools.CheckDebugSymbols();
 
-            // Initialize console resize listener
-            if (Flags.TalkativePreboot)
-                TextWriterColor.Write(Translate.DoTranslation("Loading resize listener..."));
-            ConsoleResizeListener.StartResizeListener();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded resize listener.");
-
             // Initialize custom languages
             if (Flags.TalkativePreboot)
                 TextWriterColor.Write(Translate.DoTranslation("Loading custom languages..."));

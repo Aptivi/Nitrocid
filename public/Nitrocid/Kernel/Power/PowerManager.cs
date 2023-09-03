@@ -27,6 +27,7 @@ using System.Diagnostics;
 using KS.Kernel.Journaling;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Threading;
+using Terminaux.Reader;
 
 namespace KS.Kernel.Power
 {
@@ -82,6 +83,7 @@ namespace KS.Kernel.Power
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
                         Flags.KernelShutdown = true;
+                        TermReaderTools.Interrupt();
                         break;
                     }
                 case PowerMode.Reboot:
@@ -101,6 +103,7 @@ namespace KS.Kernel.Power
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
                         Flags.SafeMode = PowerMode == PowerMode.RebootSafe;
+                        TermReaderTools.Interrupt();
                         DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", Flags.SafeMode);
                         break;
                     }

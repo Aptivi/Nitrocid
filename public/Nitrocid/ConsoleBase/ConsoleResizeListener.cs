@@ -33,10 +33,10 @@ namespace KS.ConsoleBase
     /// </summary>
     public static class ConsoleResizeListener
     {
+        internal static bool ResizeDetected;
         private static int CurrentWindowWidth;
         private static int CurrentWindowHeight;
         private static readonly KernelThread ResizeListenerThread = new("Console Resize Listener Thread", true, PollForResize) { isCritical = true };
-        private static bool ResizeDetected;
 
         /// <summary>
         /// This property checks to see if the console has been resized since the last time it has been called or the listener has started.
