@@ -73,7 +73,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 StringBuilder border = new();
                 border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
                 border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
-                TextWriterColor.Write(border.ToString(), false);
+                TextWriterWhereColor.WriteWhere(border.ToString(), Left, Top);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -266,7 +266,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 StringBuilder border = new();
                 border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
                 border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
-                TextWriterColor.Write(border.ToString(), false, BorderColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhere(border.ToString(), Left, Top, false, BorderColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -325,7 +325,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 StringBuilder border = new();
                 border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
                 border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
-                TextWriterColor.Write(border.ToString(), false, BorderColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhere(border.ToString(), Left, Top, false, BorderColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -384,7 +384,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 StringBuilder border = new();
                 border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
                 border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
-                TextWriterColor.Write(border.ToString(), false, BorderColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhere(border.ToString(), Left, Top, false, BorderColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {

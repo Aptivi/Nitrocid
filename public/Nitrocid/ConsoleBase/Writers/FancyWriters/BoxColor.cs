@@ -46,7 +46,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterColor.Write(RenderBox(Left, Top, InteriorWidth, InteriorHeight), false);
+                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -78,7 +78,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterColor.Write(RenderBox(Left, Top, InteriorWidth, InteriorHeight), false, CurrentForegroundColor, GetColor(BoxColor));
+                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, GetColor(BoxColor));
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -100,7 +100,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterColor.Write(RenderBox(Left, Top, InteriorWidth, InteriorHeight), false, CurrentForegroundColor, new Color(BoxColor));
+                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, new Color(BoxColor));
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -122,7 +122,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterColor.Write(RenderBox(Left, Top, InteriorWidth, InteriorHeight), false, CurrentForegroundColor, BoxColor);
+                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, BoxColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {

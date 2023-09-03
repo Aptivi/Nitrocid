@@ -30,6 +30,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using Terminaux.Sequences.Tools;
+using System.Text.RegularExpressions;
 
 namespace KS.Drivers.Console.Consoles
 {
@@ -454,7 +455,7 @@ namespace KS.Drivers.Console.Consoles
                         Thread.Sleep((int)Math.Round(MsEachLetter));
 
                         // Write a character individually
-                        ConsoleWrapper.Write(BufferChar(msg, ref i, ref vtSeqIdx));
+                        ConsoleWrapper.Write(BufferChar(msg, sequences, ref i, ref vtSeqIdx));
                     }
 
                     // If we're writing a new line, write it
@@ -491,7 +492,10 @@ namespace KS.Drivers.Console.Consoles
                     // Write text in another place. By the way, we check the text for newlines and console width excess
                     int OldLeft = ConsoleWrapper.CursorLeft;
                     int OldTop = ConsoleWrapper.CursorTop;
+                    int width = ConsoleWrapper.WindowWidth - RightMargin;
                     var Paragraphs = msg.SplitNewLines();
+                    if (RightMargin > 0)
+                        Paragraphs = TextTools.GetWrappedSentences(msg, width);
                     var buffered = new StringBuilder();
                     ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
@@ -504,18 +508,23 @@ namespace KS.Drivers.Console.Consoles
                         int vtSeqIdx = 0;
 
                         // Now, parse every character
+                        int pos = OldLeft;
                         for (int i = 0; i < MessageParagraph.Length; i++)
                         {
-                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin ||
-                                MessageParagraph[i] == '\n')
+                            if (MessageParagraph[i] == '\n' || RightMargin > 0 && pos > width)
                             {
                                 buffered.Append($"{CharManager.GetEsc()}[1B");
                                 buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
+                                pos = OldLeft;
                             }
 
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
-                                buffered.Append(BufferChar(MessageParagraph, ref i, ref vtSeqIdx));
+                            {
+                                string bufferedChar = BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx);
+                                buffered.Append(bufferedChar);
+                                pos += bufferedChar.Length;
+                            }
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
@@ -523,6 +532,7 @@ namespace KS.Drivers.Console.Consoles
                         {
                             buffered.Append($"{CharManager.GetEsc()}[1B");
                             buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
+                            pos = OldLeft;
                         }
                     }
 
@@ -563,7 +573,10 @@ namespace KS.Drivers.Console.Consoles
                     // Write text in another place slowly
                     int OldLeft = ConsoleWrapper.CursorLeft;
                     int OldTop = ConsoleWrapper.CursorTop;
+                    int width = ConsoleWrapper.WindowWidth - RightMargin;
                     var Paragraphs = msg.SplitNewLines();
+                    if (RightMargin > 0)
+                        Paragraphs = TextTools.GetWrappedSentences(msg, width);
                     var buffered = new StringBuilder();
                     ConsoleWrapper.SetCursorPosition(Left, Top);
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
@@ -576,20 +589,25 @@ namespace KS.Drivers.Console.Consoles
                         int vtSeqIdx = 0;
 
                         // Buffer the characters and then write when done
+                        int pos = OldLeft;
                         for (int i = 0; i < MessageParagraph.Length; i++)
                         {
                             // Sleep for a few milliseconds
                             Thread.Sleep((int)Math.Round(MsEachLetter));
-                            if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - RightMargin ||
-                                MessageParagraph[i] == '\n')
+                            if (MessageParagraph[i] == '\n' || RightMargin > 0 && pos > width)
                             {
                                 buffered.Append($"{CharManager.GetEsc()}[1B");
                                 buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
+                                pos = OldLeft;
                             }
 
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
-                                buffered.Append(BufferChar(MessageParagraph, ref i, ref vtSeqIdx));
+                            {
+                                string bufferedChar = BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx);
+                                buffered.Append(bufferedChar);
+                                pos += bufferedChar.Length;
+                            }
 
                             // If we're writing a new line, write it
                             if (Line)
@@ -603,6 +621,7 @@ namespace KS.Drivers.Console.Consoles
                         {
                             buffered.Append($"{CharManager.GetEsc()}[1B");
                             buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
+                            pos = OldLeft;
                         }
                     }
                     if (Return)
@@ -648,7 +667,7 @@ namespace KS.Drivers.Console.Consoles
                             char TextChar = sentence[i];
 
                             // Write a character individually
-                            buffered.Append(BufferChar(sentence, ref i, ref vtSeqIdx));
+                            buffered.Append(BufferChar(sentence, sequences, ref i, ref vtSeqIdx));
                             if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
                                 ConsoleWrapper.Write(buffered.ToString());
@@ -677,12 +696,8 @@ namespace KS.Drivers.Console.Consoles
             }
         }
 
-        internal static string BufferChar(string text, ref int i, ref int vtSeqIdx)
+        internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx)
         {
-            // Grab each VT sequence from the message
-            char ch = text[i];
-            var sequencesCollections = VtSequenceTools.MatchVTSequences(text);
-
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
             // do in Windows.
@@ -696,6 +711,7 @@ namespace KS.Drivers.Console.Consoles
             //
             // To overcome this limitation, we need to print the whole sequence to the console found by the virtual terminal
             // control sequence matcher to match how it works on Windows.
+            char ch = text[i];
             string seq = "";
             foreach (var sequences in sequencesCollections)
             {

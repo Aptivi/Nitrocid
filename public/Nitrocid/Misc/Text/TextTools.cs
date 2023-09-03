@@ -68,6 +68,7 @@ namespace KS.Misc.Text
                 for (int i = 0; i < text.Length; i++)
                 {
                     // Check the character to see if we're at the VT sequence
+                    bool explicitNewLine = text[^1] == '\n';
                     char ParagraphChar = text[i];
                     bool isNewLine = text[i] == '\n';
                     string seq = "";
@@ -101,6 +102,8 @@ namespace KS.Misc.Text
                         // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
                         DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
                         IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                        if (explicitNewLine)
+                            IncompleteSentences.Add("");
 
                         // Clean everything up
                         IncompleteSentenceBuilder.Clear();
