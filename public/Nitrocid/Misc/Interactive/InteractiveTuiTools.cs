@@ -367,7 +367,7 @@ namespace KS.Misc.Interactive
             if (Config.MainConfig.EnableScrollBarInSelection)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
-                int left = paneNum == 2 ? ConsoleWrapper.WindowWidth - 3 : SeparatorHalfConsoleWidthInterior - 1;
+                int left = paneNum == 2 ? ConsoleWrapper.WindowWidth - 4 : SeparatorHalfConsoleWidthInterior - 1;
                 ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, false);
             }
         }
@@ -443,7 +443,7 @@ namespace KS.Misc.Interactive
             if (Config.MainConfig.EnableScrollBarInSelection)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
-                int left = paneNum == 2 ? ConsoleWrapper.WindowWidth - 3 : SeparatorHalfConsoleWidthInterior - 1;
+                int left = paneNum == 2 ? ConsoleWrapper.WindowWidth - 4 : SeparatorHalfConsoleWidthInterior - 1;
                 ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, false);
             }
             _refreshSelection = false;
