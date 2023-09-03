@@ -79,7 +79,7 @@ namespace KS.Misc.Screensaver.Displays
         private int ColumnLine;
         private readonly List<(int, int, string)> CoveredPositions = new();
         private readonly Color foreground = new(ConsoleColors.Green);
-        private readonly Color background = new(ConsoleColors.Black);
+        private readonly Color background = new("0;0;0");
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Matrix";
@@ -87,7 +87,7 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            KernelColorTools.LoadBack(0);
+            KernelColorTools.LoadBack("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }
