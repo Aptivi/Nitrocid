@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.Collections.Generic;
-using KS.Kernel.Events;
-using KS.Shell.ShellBase.Commands;
 
 namespace KS.Modifications
 {

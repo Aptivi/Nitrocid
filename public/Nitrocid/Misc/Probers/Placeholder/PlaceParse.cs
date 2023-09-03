@@ -19,7 +19,6 @@
 using System;
 using System.IO;
 using KS.Files.Folders;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;

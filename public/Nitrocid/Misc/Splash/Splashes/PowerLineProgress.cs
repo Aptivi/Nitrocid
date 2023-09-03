@@ -20,7 +20,6 @@ using System;
 using System.Text;
 using System.Threading;
 using KS.ConsoleBase;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;

@@ -18,7 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -32,7 +31,6 @@ using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Splash;
 using KS.Modifications.ManPages;
-using KS.Shell.ShellBase.Commands;
 using KS.Kernel.Events;
 using Newtonsoft.Json.Linq;
 

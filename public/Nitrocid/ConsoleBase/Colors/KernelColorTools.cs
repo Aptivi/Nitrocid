@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using KS.ConsoleBase.Themes;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
