@@ -103,5 +103,9 @@ namespace KS.Files
         /// To-do list configuration file.
         /// </summary>
         ToDoList,
+        /// <summary>
+        /// Addons folder
+        /// </summary>
+        Addons
     }
 }

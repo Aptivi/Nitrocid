@@ -16,7 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
-
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
-[assembly: InternalsVisibleTo("Nitrocid.ThemePacks")]
+namespace KS.Kernel.Extensions
+{
+    internal interface IAddon
+    {
+        internal string AddonName { get; }
+        internal void StartAddon();
+        internal void StopAddon();
+    }
+}

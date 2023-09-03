@@ -40,6 +40,12 @@ namespace KS.Files
             Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
 
         /// <summary>
+        /// Path to KS addons folder
+        /// </summary>
+        public static string AddonsPath =>
+            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Addons";
+
+        /// <summary>
         /// Platform-dependent home path
         /// </summary>
         public static string HomePath
@@ -246,6 +252,7 @@ namespace KS.Files
                 KernelPathType.SplashConfiguration =>   SplashConfigurationPath,
                 KernelPathType.ToDoList =>              ToDoListPath,
                 KernelPathType.UserGroups =>            UserGroupsPath,
+                KernelPathType.Addons =>                AddonsPath,
                 _ => throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type.")),
             };
         }

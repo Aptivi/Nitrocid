@@ -35,6 +35,7 @@ using Terminaux.Colors;
 using KS.Misc.Reflection;
 using KS.Resources;
 using System.Text;
+using Newtonsoft.Json.Linq;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -44,7 +45,8 @@ namespace KS.ConsoleBase.Themes
     public static class ThemeTools
     {
 
-        private readonly static Dictionary<string, ThemeInfo> themes = new();
+        internal static bool cacheInvalidated = true;
+        internal readonly static Dictionary<string, ThemeInfo> themes = new();
 
         /// <summary>
         /// Gets the installed themes
@@ -53,18 +55,12 @@ namespace KS.ConsoleBase.Themes
         public static Dictionary<string, ThemeInfo> GetInstalledThemes()
         {
             // Return cached version
-            if (themes.Count > 0)
+            if (themes.Count > 0 && !cacheInvalidated)
                 return themes;
 
             // Now, get all theme names and populate them using ThemeInfo
-            string[] nonThemes = new[]
-            {
-                nameof(ThemesResources.Culture),
-                nameof(ThemesResources.ResourceManager)
-            };
-            string[] themeResNames = PropertyManager.GetPropertiesNoEvaluation(typeof(ThemesResources)).Keys.Except(nonThemes).ToArray();
-            foreach (string key in themeResNames)
-                themes.Add(key, new ThemeInfo(key));
+            themes.TryAdd("Default", new ThemeInfo(JToken.Parse(ThemesResources.Default)));
+            cacheInvalidated = false;
             return themes;
         }
 

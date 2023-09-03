@@ -29,6 +29,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
+using KS.Kernel.Extensions;
 using KS.Kernel.Hardware;
 using KS.Kernel.Journaling;
 using KS.Kernel.Power;
@@ -161,6 +162,12 @@ namespace KS.Kernel.Starting
                 TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
             SplashManager.LoadSplashes();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom splashes.");
+
+            // Initialize addons
+            if (Flags.TalkativePreboot)
+                TextWriterColor.Write(Translate.DoTranslation("Loading kernel addons..."));
+            AddonTools.ProcessAddons();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
 
             // Create config file and then read it
             if (Flags.TalkativePreboot)

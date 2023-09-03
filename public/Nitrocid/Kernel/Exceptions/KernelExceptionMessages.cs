@@ -128,6 +128,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.Reflection,                       Translate.DoTranslation("There was an error in the reflection system.") },
                 { KernelExceptionType.ThemeManagement,                  Translate.DoTranslation("There was an error when trying to perform an operation for theme management.") },
                 { KernelExceptionType.EventManagement,                  Translate.DoTranslation("There was an error when trying to perform an operation for the kernel event management.") },
+                { KernelExceptionType.AddonManagement,                  Translate.DoTranslation("There was an error when trying to perform an operation for the kernel addon management.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

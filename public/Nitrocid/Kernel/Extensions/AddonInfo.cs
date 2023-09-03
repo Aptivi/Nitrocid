@@ -16,7 +16,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+namespace KS.Kernel.Extensions
+{
+    internal class AddonInfo
+    {
+        internal string AddonName { get => Addon is not null ? Addon.AddonName : ""; }
+        internal IAddon Addon { get; }
 
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
-[assembly: InternalsVisibleTo("Nitrocid.ThemePacks")]
+        internal AddonInfo(IAddon addon)
+        {
+            Addon = addon;
+        }
+    }
+}

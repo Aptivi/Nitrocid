@@ -104,13 +104,14 @@ namespace KS.ConsoleBase.Themes
         /// Generates a new theme info from KS resources
         /// </summary>
         public ThemeInfo() :
-            this(nameof(ThemesResources.Default))
+            this(JToken.Parse(ThemesResources.Default))
         { }
 
         /// <summary>
         /// Generates a new theme info from KS resources
         /// </summary>
         /// <param name="ThemeResourceName">Theme name (must match resource name)</param>
+        [Obsolete("Theme addons can't use this. It's only useful for getting the default theme.")]
         public ThemeInfo(string ThemeResourceName) :
             this(JToken.Parse(ThemesResources.ResourceManager.GetString(ThemeResourceName)))
         { }
@@ -127,7 +128,7 @@ namespace KS.ConsoleBase.Themes
         /// Generates a new theme info from theme resource JSON
         /// </summary>
         /// <param name="ThemeResourceJson">Theme resource JSON</param>
-        protected ThemeInfo(JToken ThemeResourceJson)
+        internal ThemeInfo(JToken ThemeResourceJson)
         {
             // Place information to the class
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
