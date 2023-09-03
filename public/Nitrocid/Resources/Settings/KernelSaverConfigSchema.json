@@ -1969,6 +1969,39 @@
         },
         "MatrixBleedMaximumColorLevel": {
             "type": "integer"
+        },
+        "TextTrueColor": {
+            "type": "boolean"
+        },
+        "TextDelay": {
+            "type": "integer"
+        },
+        "TextMinimumRedColorLevel": {
+            "type": "integer"
+        },
+        "TextMinimumGreenColorLevel": {
+            "type": "integer"
+        },
+        "TextMinimumBlueColorLevel": {
+            "type": "integer"
+        },
+        "TextMinimumColorLevel": {
+            "type": "integer"
+        },
+        "TextMaximumRedColorLevel": {
+            "type": "integer"
+        },
+        "TextMaximumGreenColorLevel": {
+            "type": "integer"
+        },
+        "TextMaximumBlueColorLevel": {
+            "type": "integer"
+        },
+        "TextMaximumColorLevel": {
+            "type": "integer"
+        },
+        "TextWrite": {
+            "type": "string"
         }
     },
     "required": [
@@ -2627,6 +2660,17 @@
         "MatrixBleedMaximumRedColorLevel",
         "MatrixBleedMaximumGreenColorLevel",
         "MatrixBleedMaximumBlueColorLevel",
-        "MatrixBleedMaximumColorLevel"
+        "MatrixBleedMaximumColorLevel",
+        "TextTrueColor",
+        "TextDelay",
+        "TextWrite",
+        "TextMinimumRedColorLevel",
+        "TextMinimumGreenColorLevel",
+        "TextMinimumBlueColorLevel",
+        "TextMinimumColorLevel",
+        "TextMaximumRedColorLevel",
+        "TextMaximumGreenColorLevel",
+        "TextMaximumBlueColorLevel",
+        "TextMaximumColorLevel"
     ]
 }

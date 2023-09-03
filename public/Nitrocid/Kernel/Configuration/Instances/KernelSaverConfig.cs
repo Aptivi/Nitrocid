@@ -2650,5 +2650,93 @@ namespace KS.Kernel.Configuration.Instances
         /// [MatrixBleed] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int MatrixBleedMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Text] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool TextTrueColor { get; set; } = true;
+        /// <summary>
+        /// [Text] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int TextDelay { get; set; } = 1000;
+        /// <summary>
+        /// [Text] Text for Bouncing Text. Shorter is better.
+        /// </summary>
+        public string TextWrite { get; set; } = "Nitrocid KS";
+        /// <summary>
+        /// [Text] The minimum red color level (true color)
+        /// </summary>
+        public int TextMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Text] The minimum green color level (true color)
+        /// </summary>
+        public int TextMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Text] The minimum blue color level (true color)
+        /// </summary>
+        public int TextMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Text] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int TextMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Text] The maximum red color level (true color)
+        /// </summary>
+        public int TextMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Text] The maximum green color level (true color)
+        /// </summary>
+        public int TextMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Text] The maximum blue color level (true color)
+        /// </summary>
+        public int TextMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Text] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int TextMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TextBox] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool TextBoxTrueColor { get; set; } = true;
+        /// <summary>
+        /// [TextBox] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int TextBoxDelay { get; set; } = 1000;
+        /// <summary>
+        /// [TextBox] TextBox for Bouncing TextBox. Shorter is better.
+        /// </summary>
+        public string TextBoxWrite { get; set; } = "Nitrocid KS";
+        /// <summary>
+        /// [TextBox] The minimum red color level (true color)
+        /// </summary>
+        public int TextBoxMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TextBox] The minimum green color level (true color)
+        /// </summary>
+        public int TextBoxMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TextBox] The minimum blue color level (true color)
+        /// </summary>
+        public int TextBoxMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TextBox] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int TextBoxMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TextBox] The maximum red color level (true color)
+        /// </summary>
+        public int TextBoxMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TextBox] The maximum green color level (true color)
+        /// </summary>
+        public int TextBoxMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TextBox] The maximum blue color level (true color)
+        /// </summary>
+        public int TextBoxMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TextBox] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int TextBoxMaximumColorLevel { get; set; } = 255;
     }
 }

@@ -117,6 +117,8 @@ namespace KS.Misc.Screensaver
             { "squarecorner", new SquareCornerDisplay() },
             { "stackbox", new StackBoxDisplay() },
             { "starfield", new StarfieldDisplay() },
+            { "text", new TextDisplay() },
+            { "textbox", new TextBoxDisplay() },
             { "typewriter", new TypewriterDisplay() },
             { "typo", new TypoDisplay() },
             { "wave", new WaveDisplay() },
