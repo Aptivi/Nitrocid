@@ -24,6 +24,8 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
+using System.Text;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -67,11 +69,11 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // First, draw the border
-                BoxFrameColor.WriteBoxFramePlain(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-
-                // Then, fill the border with spaces inside it
-                BoxColor.WriteBoxPlain(Left + 1, Top, InteriorWidth, InteriorHeight);
+                // StringBuilder to put out the final rendering text
+                StringBuilder border = new();
+                border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
+                border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
+                TextWriterColor.Write(border.ToString(), false);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -260,11 +262,11 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // First, draw the border
-                BoxFrameColor.WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, BackgroundColor);
-
-                // Then, fill the border with spaces inside it
-                BoxColor.WriteBox(Left + 1, Top, InteriorWidth, InteriorHeight, BackgroundColor);
+                // StringBuilder to put out the final rendering text
+                StringBuilder border = new();
+                border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
+                border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
+                TextWriterColor.Write(border.ToString(), false, BorderColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -319,11 +321,11 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // First, draw the border
-                BoxFrameColor.WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, BackgroundColor);
-
-                // Then, fill the border with spaces inside it
-                BoxColor.WriteBox(Left + 1, Top, InteriorWidth, InteriorHeight, BackgroundColor);
+                // StringBuilder to put out the final rendering text
+                StringBuilder border = new();
+                border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
+                border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
+                TextWriterColor.Write(border.ToString(), false, BorderColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -378,11 +380,11 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // First, draw the border
-                BoxFrameColor.WriteBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, BackgroundColor);
-
-                // Then, fill the border with spaces inside it
-                BoxColor.WriteBox(Left + 1, Top, InteriorWidth, InteriorHeight, BackgroundColor);
+                // StringBuilder to put out the final rendering text
+                StringBuilder border = new();
+                border.Append(BoxFrameColor.RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar));
+                border.Append(BoxColor.RenderBox(Left + 1, Top, InteriorWidth, InteriorHeight));
+                TextWriterColor.Write(border.ToString(), false, BorderColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {

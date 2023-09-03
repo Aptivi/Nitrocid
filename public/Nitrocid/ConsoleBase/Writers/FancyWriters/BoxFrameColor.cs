@@ -25,6 +25,8 @@ using KS.Languages;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
+using Terminaux.Sequences.Builder;
+using System.Text;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -68,22 +70,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Upper frame
-                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar.ToString(), Left, Top, false);
-                TextWriterColor.Write(new string(UpperFrameChar, InteriorWidth), false);
-                TextWriterColor.Write(UpperRightCornerChar.ToString(), false);
-
-                // Left and right edges
-                for (int i = 1; i <= InteriorHeight; i++)
-                {
-                    TextWriterWhereColor.WriteWhere(LeftFrameChar.ToString(), Left, Top + i, true);
-                    TextWriterWhereColor.WriteWhere(RightFrameChar.ToString(), Left + InteriorWidth + 1, Top + i, true);
-                }
-
-                // Lower frame
-                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar.ToString(), Left, Top + InteriorHeight + 1, false);
-                TextWriterColor.Write(new string(LowerFrameChar, InteriorWidth), false);
-                TextWriterColor.Write(LowerRightCornerChar.ToString(), false);
+                // Render the box frame
+                string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                TextWriterColor.Write(frame, false);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -272,22 +261,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Upper frame
-                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar.ToString(), Left, Top, false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(new string(UpperFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(UpperRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
-
-                // Left and right edges
-                for (int i = 1; i <= InteriorHeight; i++)
-                {
-                    TextWriterWhereColor.WriteWhere(LeftFrameChar.ToString(), Left, Top + i, true, BoxFrameColor, BackgroundColor);
-                    TextWriterWhereColor.WriteWhere(RightFrameChar.ToString(), Left + InteriorWidth + 1, Top + i, true, BoxFrameColor, BackgroundColor);
-                }
-
-                // Lower frame
-                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar.ToString(), Left, Top + InteriorHeight + 1, false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(new string(LowerFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(LowerRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
+                // Render the box frame
+                string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                TextWriterColor.Write(frame, false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -342,22 +318,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Upper frame
-                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar.ToString(), Left, Top, false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(new string(UpperFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(UpperRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
-
-                // Left and right edges
-                for (int i = 1; i <= InteriorHeight; i++)
-                {
-                    TextWriterWhereColor.WriteWhere(LeftFrameChar.ToString(), Left, Top + i, true, BoxFrameColor, BackgroundColor);
-                    TextWriterWhereColor.WriteWhere(RightFrameChar.ToString(), Left + InteriorWidth + 1, Top + i, true, BoxFrameColor, BackgroundColor);
-                }
-
-                // Lower frame
-                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar.ToString(), Left, Top + InteriorHeight + 1, false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(new string(LowerFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(LowerRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
+                // Render the box frame
+                string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                TextWriterColor.Write(frame, false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
@@ -412,28 +375,51 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Upper frame
-                TextWriterWhereColor.WriteWhere(UpperLeftCornerChar.ToString(), Left, Top, false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(new string(UpperFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(UpperRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
-
-                // Left and right edges
-                for (int i = 1; i <= InteriorHeight; i++)
-                {
-                    TextWriterWhereColor.WriteWhere(LeftFrameChar.ToString(), Left, Top + i, true, BoxFrameColor, BackgroundColor);
-                    TextWriterWhereColor.WriteWhere(RightFrameChar.ToString(), Left + InteriorWidth + 1, Top + i, true, BoxFrameColor, BackgroundColor);
-                }
-
-                // Lower frame
-                TextWriterWhereColor.WriteWhere(LowerLeftCornerChar.ToString(), Left, Top + InteriorHeight + 1, false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(new string(LowerFrameChar, InteriorWidth), false, BoxFrameColor, BackgroundColor);
-                TextWriterColor.Write(LowerRightCornerChar.ToString(), false, BoxFrameColor, BackgroundColor);
+                // Render the box frame
+                string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                TextWriterColor.Write(frame, false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
+        }
+
+        internal static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                              char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                              char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar)
+        {
+            try
+            {
+                // StringBuilder is here to formulate the whole string consisting of box frame
+                StringBuilder frameBuilder = new();
+
+                // Upper frame
+                frameBuilder.Append(
+                    $"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + 1)}" +
+                    $"{UpperLeftCornerChar}{new string(UpperFrameChar, InteriorWidth)}{UpperRightCornerChar}");
+
+                // Left and right edges
+                for (int i = 1; i <= InteriorHeight; i++)
+                    frameBuilder.Append(
+                        $"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + i + 1)}" +
+                        $"{LeftFrameChar}" +
+                        $"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + InteriorWidth + 2, Top + i + 1)}" +
+                        $"{RightFrameChar}");
+
+                // Lower frame
+                frameBuilder.Append(
+                    $"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + InteriorHeight + 2)}" +
+                    $"{LowerLeftCornerChar}{new string(LowerFrameChar, InteriorWidth)}{LowerRightCornerChar}");
+                return frameBuilder.ToString();
+            }
+            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
         }
     }
 }
