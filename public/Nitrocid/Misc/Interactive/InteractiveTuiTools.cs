@@ -178,6 +178,10 @@ namespace KS.Misc.Interactive
                 _refreshSelection = true;
             if ((pos - 1) % itemsPerPage == 0)
                 _refreshSelection = true;
+            if (pos == 1)
+                _refreshSelection = true;
+            if (pos == elements)
+                _refreshSelection = true;
         }
 
         /// <summary>
@@ -435,7 +439,8 @@ namespace KS.Misc.Interactive
                 var finalBackColor = index == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemBackColor : BaseInteractiveTui.PaneItemBackColor;
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + index - startIndex;
-                TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
+                if (top > 0)
+                    TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
                 KernelColorTools.SetConsoleColor(BaseInteractiveTui.PaneItemBackColor, true);
             }
 
