@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Themes;
+using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
 using KS.Misc.Reflection;
+using Microsoft.Diagnostics.Runtime.Utilities;
 using Newtonsoft.Json.Linq;
 using Nitrocid.ThemePacks.Resources;
 using System.Linq;
@@ -36,7 +38,8 @@ namespace Nitrocid.ThemePacks
             foreach (string key in themeResNames)
             {
                 var themeToken = JToken.Parse(ThemesResources.ResourceManager.GetString(key));
-                ThemeTools.themes.Add(key, new ThemeInfo(themeToken));
+                bool result = ThemeTools.themes.TryAdd(key, new ThemeInfo(themeToken));
+                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}: {1}", key, result);
             }
         }
 
@@ -45,7 +48,10 @@ namespace Nitrocid.ThemePacks
             // Remove them all!
             string[] themeResNames = GetThemeResourceNames();
             foreach (string key in themeResNames)
-                ThemeTools.themes.Remove(key);
+            {
+                bool result = ThemeTools.themes.Remove(key);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", key, result);
+            }
         }
 
         private string[] GetThemeResourceNames()

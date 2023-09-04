@@ -47,6 +47,7 @@ namespace KS.Kernel.Debugging
         internal static string DebugPath = "";
         internal static string lastRoutinePath = "";
         internal static StreamWriter DebugStreamWriter;
+        internal static bool isDisposed;
         internal static object WriteLock = new();
 
         /// <summary>
@@ -90,8 +91,11 @@ namespace KS.Kernel.Debugging
                 {
                     // Open debugging stream
                     string debugFilePath = DebugPath;
-                    if (DebugStreamWriter is null | DebugStreamWriter?.BaseStream is null)
+                    if (DebugStreamWriter is null || DebugStreamWriter?.BaseStream is null || isDisposed)
+                    {
                         DebugStreamWriter = new StreamWriter(debugFilePath, true) { AutoFlush = true };
+                        isDisposed = false;
+                    }
 
                     // Try to debug...
                     try

@@ -294,6 +294,7 @@ namespace KS.Kernel.Starting
                 Flags.DebugMode = false;
                 DebugWriter.DebugStreamWriter.Close();
                 DebugWriter.DebugStreamWriter.Dispose();
+                DebugWriter.isDisposed = true;
             }
 
             // Reset the buffer size
