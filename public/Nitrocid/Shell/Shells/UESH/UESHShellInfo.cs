@@ -801,11 +801,11 @@ namespace KS.Shell.Shells.UESH
                     }, new RssCommand())
             },
             
-            { "savecurrdir",
-                new CommandInfo("savecurrdir", ShellType, /* Localizable */ "Saves the current directory to kernel configuration file",
+            { "saveconfig",
+                new CommandInfo("saveconfig", ShellType, /* Localizable */ "Saves the current kernel configuration to its file",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new SaveCurrDirCommand(), CommandFlags.Strict)
+                    }, new SaveConfigCommand(), CommandFlags.Strict)
             },
             
             { "savescreen",

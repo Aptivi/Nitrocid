@@ -22,14 +22,14 @@ using KS.Shell.ShellBase.Commands;
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Saves your current directory
+    /// Saves your current configuration
     /// </summary>
     /// <remarks>
-    /// This command can save your current directory in the main shell to the kernel configuration file. This is helpful if you don't want to manually configure your current working directory to your desired place everytime you log in.
+    /// This command can save your current configuration to the kernel configuration file. This is helpful if you don't want to manually go to the settings app each time you need to save the configuration.
     /// <br></br>
     /// The user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class SaveCurrDirCommand : BaseCommand, ICommand
+    class SaveConfigCommand : BaseCommand, ICommand
     {
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
