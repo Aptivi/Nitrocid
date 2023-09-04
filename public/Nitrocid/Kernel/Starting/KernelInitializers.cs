@@ -93,6 +93,7 @@ namespace KS.Kernel.Starting
                     }
                 }
 
+                // Load the assembly resolver
                 AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
 
                 // Check to see if we have an appdata folder for KS
@@ -128,6 +129,10 @@ namespace KS.Kernel.Starting
 
             // A title
             ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
+
+            // Set the buffer size
+            if (Flags.SetBufferSize)
+                ConsoleExtensions.SetBufferSize();
 
             // Initialize console wrappers for TermRead
             Input.InitializeInputWrappers();
@@ -308,6 +313,9 @@ namespace KS.Kernel.Starting
                 DebugWriter.DebugStreamWriter.Close();
                 DebugWriter.DebugStreamWriter.Dispose();
             }
+
+            // Reset the buffer size
+            ConsoleExtensions.RestoreBufferSize();
 
             // Reset power state
             Flags.RebootRequested = false;

@@ -65,6 +65,8 @@ namespace KS.Arguments.ArgumentBase
                 new[] { new CommandArgumentInfo() }, new AttachArgument()) },
             { "verbosepreboot", new ArgumentInfo("verbosepreboot", /* Localizable */ "Turns on verbose messages for pre-boot environment",
                 new[] { new CommandArgumentInfo() }, new VerbosePrebootArgument()) },
+            { "nosetbuffersize", new ArgumentInfo("nosetbuffersize", /* Localizable */ "Tells the kernel not to set the console buffer size [Only available on Windows]",
+                new[] { new CommandArgumentInfo() }, new NoSetBufferSizeArgument()) },
             { "help", new ArgumentInfo("help", /* Localizable */ "Help page",
                 new[] { new CommandArgumentInfo() }, new HelpArgument()) }
         };

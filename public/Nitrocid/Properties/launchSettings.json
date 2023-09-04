@@ -38,6 +38,10 @@
     "Nitrocid KS - Enable pre-boot messages": {
       "commandName": "Project",
       "commandLineArgs": "verbosepreboot"
+    },
+    "Nitrocid KS - Set buffer size override": {
+      "commandName": "Project",
+      "commandLineArgs": "debug"
     }
   }
 }

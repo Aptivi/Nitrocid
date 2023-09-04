@@ -19,6 +19,7 @@
 using System;
 using System.Runtime.InteropServices;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel;
 using KS.Misc.Text;
 using Terminaux.Sequences.Tools;
 
@@ -29,6 +30,9 @@ namespace KS.ConsoleBase
     /// </summary>
     public static class ConsoleExtensions
     {
+
+        private static int OldBufferHeight = ConsoleWrapper.BufferHeight;
+        private static int OldBufferWidth = ConsoleWrapper.BufferWidth;
 
         /// <summary>
         /// Clears the console buffer, but keeps the current cursor position
@@ -138,6 +142,7 @@ namespace KS.ConsoleBase
         }
 
         #region Windows-specific
+        #pragma warning disable CA1416
         private const string winKernel = "kernel32.dll";
 
         [DllImport(winKernel, SetLastError = true)]
@@ -164,6 +169,25 @@ namespace KS.ConsoleBase
             GetConsoleMode(stdHandle, out int mode);
             return mode;
         }
+
+        internal static void SetBufferSize()
+        {
+            if (KernelPlatform.IsOnWindows())
+            {
+                Console.BufferWidth = ConsoleWrapper.WindowWidth;
+                Console.BufferHeight = ConsoleWrapper.WindowHeight;
+            }
+        }
+
+        internal static void RestoreBufferSize()
+        {
+            if (KernelPlatform.IsOnWindows())
+            {
+                Console.BufferWidth = OldBufferWidth;
+                Console.BufferHeight = OldBufferHeight;
+            }
+        }
+        #pragma warning restore CA1416
         #endregion
 
     }

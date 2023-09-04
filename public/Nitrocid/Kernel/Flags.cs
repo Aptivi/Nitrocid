@@ -285,6 +285,7 @@ namespace KS.Kernel
         internal static bool Maintenance;
         internal static bool TalkativePreboot;
         internal static bool IsEnteringRetroMode;
+        internal static bool SetBufferSize = true;
 
     }
 }
