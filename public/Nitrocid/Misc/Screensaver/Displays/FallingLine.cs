@@ -245,7 +245,7 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            KernelColorTools.LoadBack(0);
+            KernelColorTools.LoadBack("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }

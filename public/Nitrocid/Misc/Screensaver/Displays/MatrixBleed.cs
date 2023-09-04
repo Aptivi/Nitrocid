@@ -260,7 +260,7 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
-            KernelColorTools.LoadBack(0);
+            KernelColorTools.LoadBack("0;0;0");
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
         }
@@ -330,7 +330,7 @@ namespace KS.Misc.Screensaver.Displays
         internal int fadeStep;
         private readonly List<(int, int, string)> CoveredPositions = new();
         private readonly Color foreground = new(ConsoleColors.Green);
-        private readonly Color background = new(ConsoleColors.Black);
+        private readonly Color background = new("0;0;0");
         private static readonly List<int> reservedColumns = new();
 
         internal void Fall()
