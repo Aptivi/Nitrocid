@@ -28,6 +28,7 @@ using System;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Debugging;
 using KS.Kernel.Starting;
+using Terminaux.Sequences.Builder;
 
 namespace KS.Kernel
 {
@@ -71,8 +72,7 @@ namespace KS.Kernel
                     KernelInitializers.ResetEverything();
 
                     // Clear the console
-                    KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
-                    ConsoleWrapper.Clear();
+                    KernelColorTools.LoadBack();
 
                     // Always switch back to the main environment
                     if (EnvironmentTools.resetEnvironment)
@@ -92,10 +92,10 @@ namespace KS.Kernel
 
             // Load main buffer
             if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer && Flags.HasSetAltBuffer)
-            {
                 TextWriterColor.Write("\u001b[?1049l");
-                ConsoleWrapper.Clear();
-            }
+
+            // Reset colors and clear the console
+            ConsoleExtensions.ResetAll();
 
             // Reset cursor state and dispose handlers
             ConsoleWrapper.CursorVisible = true;

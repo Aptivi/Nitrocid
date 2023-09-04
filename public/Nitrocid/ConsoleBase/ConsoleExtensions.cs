@@ -21,6 +21,7 @@ using System.Runtime.InteropServices;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel;
 using KS.Misc.Text;
+using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Tools;
 
 namespace KS.ConsoleBase
@@ -139,6 +140,15 @@ namespace KS.ConsoleBase
             char EscapeChar = Convert.ToChar(27);
             string Sequence = $"{EscapeChar}]0;{Text}{BellChar}";
             TextWriterColor.WritePlain(Sequence, false);
+        }
+
+        /// <summary>
+        /// Resets the entire console
+        /// </summary>
+        public static void ResetAll()
+        {
+            ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.EscFullReset));
+            ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSoftTerminalReset));
         }
 
         #region Windows-specific
