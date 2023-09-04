@@ -68,6 +68,7 @@ namespace KS.Misc.Splash
             { "Welcome", new SplashInfo("Welcome", new SplashWelcome()) },
             { "SquareCorner", new SplashInfo("SquareCorner", new SplashSquareCorner()) },
             { "Quote", new SplashInfo("Quote", new SplashQuote()) },
+            { "TextBox", new SplashInfo("TextBox", new SplashTextBox()) },
         };
 
         /// <summary>
