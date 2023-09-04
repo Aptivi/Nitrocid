@@ -42,6 +42,7 @@ namespace Nitrocid.LocaleGen
             var arguments = new List<string>();
             var switches = new List<string>();
             bool custom = true;
+            bool addon = true;
             bool normal = true;
             bool dry = false;
             var copyToResources = false;
@@ -66,6 +67,7 @@ namespace Nitrocid.LocaleGen
                 // Change the values of custom and normal to match the switches provided
                 custom = switches.Contains("--CustomOnly") || switches.Contains("--All");
                 normal = switches.Contains("--NormalOnly") || switches.Contains("--All");
+                addon = switches.Contains("--AddonOnly")   || switches.Contains("--All");
                 copyToResources = switches.Contains("--CopyToResources");
                 dry = switches.Contains("--Dry");
 
@@ -95,15 +97,18 @@ namespace Nitrocid.LocaleGen
             {
                 // Get the translation folders
                 string translations = Path.GetFullPath("Translations");
+                string translationsAddon = Path.GetFullPath("AddonTranslations");
                 string customs = Path.GetFullPath("CustomLanguages");
 
                 // Warn if dry
                 if (dry)
-                    TextWriterColor.Write("Running in dry mode. No changes will be made. Take out the --Dry switch if you really want to apply changes.", true, KernelColorType.Warning);
+                    TextWriterColor.Write("Running in dry mode. No changes will be made. Take out the --Dry switch if you really want to apply changes. Look at the debug window.", true, KernelColorType.Warning);
 
                 // Now, do the job!
                 if (normal)
                     LanguageGenerator.GenerateLocaleFiles(translations, toSearch, copyToResources, dry);
+                if (addon)
+                    LanguageGenerator.GenerateLocaleFiles(translationsAddon, toSearch, copyToResources, dry);
                 if (custom)
                     LanguageGenerator.GenerateLocaleFiles(customs, toSearch, copyToResources, dry);
             }

@@ -22,6 +22,10 @@
     "Nitrocid.LocaleGen - Dry & Normal Only": {
       "commandName": "Project",
       "commandLineArgs": "--Dry --NormalOnly"
+    },
+    "Nitrocid.LocaleGen - Dry & Addon Only": {
+      "commandName": "Project",
+      "commandLineArgs": "--Dry --AddonOnly"
     }
   }
 }

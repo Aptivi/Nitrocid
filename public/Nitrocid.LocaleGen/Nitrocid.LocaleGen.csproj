@@ -70,89 +70,99 @@
     <None Include="CustomLanguages\eng.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="AddonTranslations\eng.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <!-- LocaleGen Language Metadata and Base End -->
 
   <!-- LocaleGen Translations -->
   <ItemGroup>
-    <None Include="Translations\arb-T.txt">
+    <None Include="AddonTranslations\Metadata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\arb.txt">
+    <None Update="AddonTranslations\arb-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\chi-T.txt">
+    <None Update="AddonTranslations\arb.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\chi.txt">
+    <None Update="AddonTranslations\chi-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\cnt-T.txt">
+    <None Update="AddonTranslations\chi.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\cnt.txt">
+    <None Update="AddonTranslations\cnt-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\cze.txt">
+    <None Update="AddonTranslations\cnt.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\dtc.txt">
+    <None Update="AddonTranslations\cze.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\enk.txt">
+    <None Update="AddonTranslations\dtc.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\fre.txt">
+    <None Update="AddonTranslations\enk.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\ger.txt">
+    <None Update="AddonTranslations\fre.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\ind-T.txt">
+    <None Update="AddonTranslations\ger.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\ind.txt">
+    <None Update="AddonTranslations\ind-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\ita.txt">
+    <None Update="AddonTranslations\ind.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\jpn.txt">
+    <None Update="AddonTranslations\ita.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\kor-T.txt">
+    <None Update="AddonTranslations\jpn.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\kor.txt">
+    <None Update="AddonTranslations\kor-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\ptg.txt">
+    <None Update="AddonTranslations\kor.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\rus-T.txt">
+    <None Update="AddonTranslations\Metadata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\rus.txt">
+    <None Update="AddonTranslations\ptg.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\spa.txt">
+    <None Update="AddonTranslations\rus-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\tky.txt">
+    <None Update="AddonTranslations\rus.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\ukr-T.txt">
+    <None Update="AddonTranslations\spa.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\ukr.txt">
+    <None Update="AddonTranslations\tky.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Include="Translations\vtn.txt">
+    <None Update="AddonTranslations\ukr-T.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\ukr.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\vtn.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
 
   <Target Name="UpdateEng" BeforeTargets="Compile">
+    <Copy SourceFiles="Translations\eng.txt" DestinationFolder="AddonTranslations" />
     <Copy SourceFiles="Translations\eng.txt" DestinationFolder="CustomLanguages" />
   </Target>
   <!-- LocaleGen Translations End -->

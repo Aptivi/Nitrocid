@@ -20,6 +20,7 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
@@ -78,8 +79,9 @@ namespace Nitrocid.LocaleGen.Serializer
                 }
 
                 // Fetch the metadata and put their values, but check the metadata first
-                var languageMetadata = metadata.SelectToken(fileName) ??
-                    throw new Exception( /* Localizable */ "Language metadata is empty.");
+                var languageMetadata = metadata.SelectToken(fileName);
+                if (languageMetadata is null)
+                    continue;
                 var languageName = languageMetadata.SelectToken("name");
                 var languageTransliterable = languageMetadata.SelectToken("transliterable");
                 localizedJson.Add("Name", languageName);
@@ -114,6 +116,8 @@ namespace Nitrocid.LocaleGen.Serializer
             // Save changes
             if (!dry)
                 File.WriteAllText($"{outputFolder}/" + fileName + ".json", serializedLocale);
+            else
+                Debug.WriteLine($"Would be saved to: {outputFolder}/" + fileName + ".json");
         }
 
         internal static TargetLanguage[] GetTargetLanguages(string pathToTranslations, string toSearch = "")

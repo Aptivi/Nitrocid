@@ -1,0 +1,108 @@
+{
+    "arb": {
+        "name": "Arabic",
+        "transliterable": true
+    },
+    "arb-T": {
+        "name": "Arabic",
+        "transliterable": true,
+        "codepage": 1256
+    },
+    "chi": {
+        "name": "Chinese",
+        "transliterable": true
+    },
+    "chi-T": {
+        "name": "Chinese",
+        "transliterable": true,
+        "codepage": 936
+    },
+    "cnt": {
+        "name": "Chinese (Traditional)",
+        "transliterable": true
+    },
+    "cnt-T": {
+        "name": "Chinese (Traditional)",
+        "transliterable": true
+    },
+    "cze": {
+        "name": "Czech",
+        "transliterable": false
+    },
+    "dtc": {
+        "name": "Dutch",
+        "transliterable": false
+    },
+    "enk": {
+        "name": "English (UK)",
+        "transliterable": false
+    },
+    "fre": {
+        "name": "French",
+        "transliterable": false
+    },
+    "ger": {
+        "name": "German",
+        "transliterable": false
+    },
+    "ind": {
+        "name": "Hindi",
+        "transliterable": true
+    },
+    "ind-T": {
+        "name": "Hindi",
+        "transliterable": true
+    },
+    "ita": {
+        "name": "Italian",
+        "transliterable": false
+    },
+    "jpn": {
+        "name": "Japanese",
+        "transliterable": false,
+        "codepage": 932
+    },
+    "kor": {
+        "name": "Korean",
+        "transliterable": true
+    },
+    "kor-T": {
+        "name": "Korean",
+        "transliterable": true,
+        "codepage": 949
+    },
+    "ptg": {
+        "name": "Portuguese",
+        "transliterable": false
+    },
+    "rus": {
+        "name": "Russian",
+        "transliterable": true
+    },
+    "rus-T": {
+        "name": "Russian",
+        "transliterable": true,
+        "codepage": 866
+    },
+    "spa": {
+        "name": "Spanish",
+        "transliterable": false
+    },
+    "tky": {
+        "name": "Turkish",
+        "transliterable": false
+    },
+    "ukr": {
+        "name": "Ukrainian",
+        "transliterable": true
+    },
+    "ukr-T": {
+        "name": "Ukrainian",
+        "transliterable": true
+    },
+    "vtn": {
+        "name": "Vietnamese",
+        "transliterable": false,
+        "codepage": 1258
+    }
+}
