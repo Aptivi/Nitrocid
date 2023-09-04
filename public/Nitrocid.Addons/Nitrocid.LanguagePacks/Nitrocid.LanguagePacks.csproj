@@ -39,7 +39,7 @@
     <Optimize>true</Optimize>
   </PropertyGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" />
+    <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
   </ItemGroup>
   <!-- ThemePacks addon Platform Information End -->
 

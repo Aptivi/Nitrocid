@@ -35,7 +35,6 @@ namespace KS.Kernel.Extensions
 {
     internal static class AddonTools
     {
-        // TODO: Currently, MSBuild copies addons with Nitrocid main executable file to the addons directory. Nasty.
         private static readonly List<AddonInfo> addons = new();
 
         internal static void ProcessAddons()
