@@ -1,0 +1,69 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- LanguagePacks addon General Information -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath Condition=" '$(TargetFramework)' != '' ">..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\LanguagePacks</OutputPath>
+    <Description>Nitrocid KS Language Packs</Description>
+    <AssemblyTitle>Nitrocid KS Language Packs</AssemblyTitle>
+    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <Version>0.1.0</Version>
+    <Configurations>Debug;Release</Configurations>
+    <LangVersion>latest</LangVersion>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+  </PropertyGroup>
+  <!-- LanguagePacks addon General Information End -->
+
+  <!-- LanguagePacks addon Platform Information -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DefineDebug>true</DefineDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" />
+  </ItemGroup>
+  <!-- ThemePacks addon Platform Information End -->
+
+  <!-- ThemePacks addon metadata -->
+  <ItemGroup>
+    <Compile Update="Resources\LanguageResources.Designer.cs">
+      <DependentUpon>LanguageResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\LanguageResources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>Nitrocid.LanguagePacks.Resources</CustomToolNamespace>
+      <LastGenOutput>LanguageResources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="AddonMetadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!-- LanguagePacks addon metadata End -->
+
+</Project>

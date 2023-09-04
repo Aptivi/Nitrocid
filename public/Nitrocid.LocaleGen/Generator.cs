@@ -29,6 +29,7 @@ namespace Nitrocid.LocaleGen
     internal static class Generator
     {
 
+        // TODO: Make LocaleGen recognize the language translations for the LanguagePacks addon, too.
         /// <summary>
         /// Entry point
         /// </summary>

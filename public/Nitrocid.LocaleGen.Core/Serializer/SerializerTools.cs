@@ -101,14 +101,17 @@ namespace Nitrocid.LocaleGen.Serializer
 
             // Determine several paths
             pathToTranslations = string.IsNullOrEmpty(pathToTranslations) ? Path.GetFullPath("Translations") : pathToTranslations;
-            string outputFolder = copyToResources ? Path.GetFullPath("../../Resources/Languages") : $"{pathToTranslations}/Output";
+            string fileName = target.LanguageName;
+            string outputFolder =
+                !copyToResources ? $"{pathToTranslations}/Output" :
+                fileName != "eng" ? Path.GetFullPath("../../../Nitrocid.Addons/Nitrocid.LanguagePacks/Resources/Languages") :
+                Path.GetFullPath("../../Resources/Languages");
 
             // Check to see if the output folder exists
             if (!Directory.Exists(outputFolder))
                 Directory.CreateDirectory(outputFolder);
 
             // Save changes
-            string fileName = target.LanguageName;
             if (!dry)
                 File.WriteAllText($"{outputFolder}/" + fileName + ".json", serializedLocale);
         }

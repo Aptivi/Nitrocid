@@ -82,20 +82,7 @@ namespace KS.Languages
 
                 // For each language, get information for localization and cache them
                 foreach (JToken Language in LanguageMetadata)
-                {
-                    string LanguageName = Language.Path;
-                    string LanguageFullName = (string)Language.First.SelectToken("name");
-                    bool LanguageTransliterable = (bool)Language.First.SelectToken("transliterable");
-                    int LanguageCodepage = (int)(Language.First.SelectToken("codepage") ?? 65001);
-
-                    // If the language is not found in the base languages cache dictionary, add it
-                    if (!BaseLanguages.ContainsKey(LanguageName))
-                    {
-                        var LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}, {3}", LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage);
-                        BaseLanguages.Add(LanguageName, LanguageInfo);
-                    }
-                }
+                    AddBaseLanguage(Language);
 
                 // Add the base languages to the final dictionary
                 foreach (string BaseLanguage in BaseLanguages.Keys)
@@ -505,6 +492,26 @@ namespace KS.Languages
                 langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
             DebugWriter.WriteDebug(DebugLevel.I, "{0} strings probed from localizations token.", langStrings.Count);
             return langStrings;
+        }
+
+        internal static void AddBaseLanguage(JToken Language, bool useLocalizationObject = false, JObject localizations = null)
+        {
+            string LanguageName = Language.Path;
+            string LanguageFullName = (string)Language.First.SelectToken("name");
+            bool LanguageTransliterable = (bool)Language.First.SelectToken("transliterable");
+            int LanguageCodepage = (int)(Language.First.SelectToken("codepage") ?? 65001);
+
+            // If the language is not found in the base languages cache dictionary, add it
+            if (!BaseLanguages.ContainsKey(LanguageName))
+            {
+                LanguageInfo LanguageInfo;
+                if (useLocalizationObject)
+                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, (JObject)localizations["Localizations"]);
+                else
+                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage);
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}", LanguageName, LanguageFullName, LanguageTransliterable);
+                BaseLanguages.Add(LanguageName, LanguageInfo);
+            }
         }
 
     }

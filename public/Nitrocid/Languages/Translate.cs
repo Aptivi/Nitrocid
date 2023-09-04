@@ -80,13 +80,14 @@ namespace KS.Languages
         /// <returns>Translated string</returns>
         public static string DoTranslation(string text, LanguageInfo lang)
         {
-            string langname = lang.ThreeLetterLanguageName;
-
             // Some sanity checks
             if (string.IsNullOrWhiteSpace(text))
                 return "";
             if (lang is null)
                 return text;
+
+            // Check to see if we're interacting with the English text
+            string langname = lang.ThreeLetterLanguageName;
             if (langname == "eng")
                 return text;
 
