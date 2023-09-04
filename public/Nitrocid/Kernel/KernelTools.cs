@@ -32,6 +32,10 @@ namespace KS.Kernel
 
         internal static Stopwatch StageTimer = new();
         internal static string bannerFigletFont = "Banner";
+        private static readonly Version kernelVersion =
+            Assembly.GetExecutingAssembly().GetName().Version;
+        private static readonly Version kernelApiVersion =
+            new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
 
         // #ifdef'd variables...
         // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, or NONE | None satisfied: Unsupported Release)
@@ -57,12 +61,6 @@ namespace KS.Kernel
 #else
         internal readonly static string ConsoleTitle = $"Nitrocid v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
 #endif
-
-        // Private variables
-        private static readonly Version kernelVersion =
-            Assembly.GetExecutingAssembly().GetName().Version;
-        private static readonly Version kernelApiVersion =
-            new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
 
         /// <summary>
         /// Kernel version
