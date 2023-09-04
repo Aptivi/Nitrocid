@@ -329,7 +329,7 @@ namespace KS.Misc.Screensaver.Displays
         internal int fallStep;
         internal int fadeStep;
         private readonly List<(int, int, string)> CoveredPositions = new();
-        private readonly Color foreground = new(ConsoleColors.Green);
+        private readonly Color foreground = new("0;255;0");
         private readonly Color background = new("0;0;0");
         private static readonly List<int> reservedColumns = new();
 

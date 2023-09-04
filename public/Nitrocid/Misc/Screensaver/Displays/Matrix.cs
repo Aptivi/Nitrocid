@@ -78,7 +78,7 @@ namespace KS.Misc.Screensaver.Displays
 
         private int ColumnLine;
         private readonly List<(int, int, string)> CoveredPositions = new();
-        private readonly Color foreground = new(ConsoleColors.Green);
+        private readonly Color foreground = new("0;255;0");
         private readonly Color background = new("0;0;0");
 
         /// <inheritdoc/>
@@ -164,6 +164,10 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(MatrixSettings.MatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
+
+        /// <inheritdoc/>
+        public override void ScreensaverOutro() =>
+            CoveredPositions.Clear();
 
     }
 }
