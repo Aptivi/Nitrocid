@@ -27,6 +27,7 @@ using KS.Kernel;
 using KS.Drivers;
 using KS.Drivers.DebugLogger;
 using KS.Kernel.Debugging;
+using KS.Kernel.Extensions;
 
 namespace Nitrocid.Tests
 {
@@ -72,6 +73,9 @@ namespace Nitrocid.Tests
             DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
             Flags.DebugMode = true;
             DriverHandler.SetDriver<IDebugLoggerDriver>("UnitTest");
+
+            // Load necessary addons for testing
+            AddonTools.ProcessAddons();
         }
 
         /// <summary>

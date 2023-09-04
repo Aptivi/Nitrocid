@@ -47,29 +47,6 @@ namespace Nitrocid.Tests.Languages
         /// </summary>
         [Test]
         [Description("Initialization")]
-        public void TestCreateNewLanguageInfoInstance()
-        {
-            var InfoInstance = new LanguageInfo("arb", "Arabic", true);
-
-            // Check for null
-            InfoInstance.ShouldNotBeNull();
-            InfoInstance.Strings.ShouldNotBeNull();
-            InfoInstance.Cultures.ShouldNotBeNull();
-
-            // Check for property correctness
-            InfoInstance.Transliterable.ShouldBeTrue();
-            InfoInstance.Custom.ShouldBeFalse();
-            InfoInstance.FullLanguageName.ShouldBe("Arabic");
-            InfoInstance.ThreeLetterLanguageName.ShouldBe("arb");
-            InfoInstance.Strings.ShouldNotBeEmpty();
-            InfoInstance.Cultures.ShouldNotBeEmpty();
-        }
-
-        /// <summary>
-        /// Tests creating the new instance of the language information
-        /// </summary>
-        [Test]
-        [Description("Initialization")]
         public void TestProbeLocalizations()
         {
             Dictionary<string, string> localizations = new();

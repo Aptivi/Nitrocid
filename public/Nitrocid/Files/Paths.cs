@@ -37,13 +37,13 @@ namespace KS.Files
         /// Path to KS executable folder
         /// </summary>
         public static string ExecPath =>
-            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
+            Path.GetDirectoryName(typeof(Paths).Assembly.Location);
 
         /// <summary>
         /// Path to KS addons folder
         /// </summary>
         public static string AddonsPath =>
-            Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location) + "/Addons";
+            ExecPath + "/Addons";
 
         /// <summary>
         /// Platform-dependent home path

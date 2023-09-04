@@ -32,6 +32,59 @@ namespace Nitrocid.Tests.ConsoleBase
     {
 
         /// <summary>
+        /// Tests initializing an instance of ThemeInfo from KS resources
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeThemeInfoFromResources()
+        {
+            // Create instance
+            var ThemeInfoInstance = new ThemeInfo();
+
+            // Check for null
+            ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
+            {
+                KernelColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
+                ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+            }
+        }
+
+        /// <summary>
+        /// Tests initializing an instance of ThemeInfo from all KS resources
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestGetThemeInfoFromAllResources()
+        {
+            var installedThemes = ThemeTools.GetInstalledThemes();
+            foreach (string ResourceName in ThemeTools.GetInstalledThemes().Keys)
+            {
+                // Special naming cases
+                string ThemeName = ResourceName.Replace(" ", "_");
+                switch (ResourceName)
+                {
+                    case "3Y-Diamond":
+                        {
+                            ThemeName = "_3Y_Diamond";
+                            break;
+                        }
+                }
+
+                // Create instance
+                var ThemeInfoInstance = installedThemes[ThemeName];
+
+                // Check for null
+                ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+                for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
+                {
+                    KernelColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
+                    ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+                }
+            }
+        }
+
+        /// <summary>
         /// Tests initializing an instance of ThemeInfo from file
         /// </summary>
         [Test]

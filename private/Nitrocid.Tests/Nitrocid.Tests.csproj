@@ -121,4 +121,10 @@
   <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
     <Copy SourceFiles="..\..\public\Nitrocid.Addons\Nitrocid.ThemePacks\Resources\Themes\Hacker.json" DestinationFolder="TestData"></Copy>
   </Target>
+  <ItemGroup>
+    <AddonsFolders Include="..\..\public\Nitrocid\KSBuild\$(TargetFramework)\Addons\**\*.*" />
+  </ItemGroup>
+  <Target Name="CopyAddon" AfterTargets="Compile">
+    <Copy SourceFiles="@(AddonsFolders)" DestinationFiles="@(AddonsFolders->'KSTest\$(TargetFramework)\Addons\%(RecursiveDir)%(Filename)%(Extension)')" />
+  </Target>
 </Project>
