@@ -61,58 +61,38 @@ namespace KS.Kernel.Starting
     {
         internal static void InitializeCritical()
         {
-            // Check to see if RetroKS was invoked
-            if (Flags.IsEnteringRetroMode)
-            {
-                // Go back to 2018!!!
-                string ExecutableName = "RetroKS.dll";
-                string RetroExecKSPath = Filesystem.NeutralizePath(ExecutableName, Paths.RetroKSDownloadPath);
-                var retroContext = new RetroKSContext
-                {
-                    resolver = new AssemblyDependencyResolver(RetroExecKSPath)
-                };
-                var asm = retroContext.LoadFromAssemblyPath(RetroExecKSPath);
-                asm.EntryPoint.Invoke("", Array.Empty<object>());
+            // Check for terminal
+            ConsoleChecker.CheckConsole();
 
-                // Clear the console
-                KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
-                ConsoleWrapper.Clear();
+            // Initialize crucial things
+            if (!KernelPlatform.IsOnUnix())
+            {
+                if (!ConsoleExtensions.InitializeSequences())
+                {
+                    TextWriterColor.Write("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.");
+                    Input.DetectKeypress();
+                }
             }
-            else
+
+            // Load the assembly resolver
+            AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
+
+            // Check to see if we have an appdata folder for KS
+            if (!Checking.FolderExists(Paths.AppDataPath))
+                Making.MakeDirectory(Paths.AppDataPath, false);
+
+            // Set the first time run variable
+            if (!Checking.FileExists(Paths.ConfigurationPath))
+                Flags.FirstTime = true;
+
+            // Initialize debug path
+            DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+
+            // Power signal handlers
+            if (!PowerSignalHandlers.initialized)
             {
-                // Check for terminal
-                ConsoleChecker.CheckConsole();
-
-                // Initialize crucial things
-                if (!KernelPlatform.IsOnUnix())
-                {
-                    if (!ConsoleExtensions.InitializeSequences())
-                    {
-                        TextWriterColor.Write("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.");
-                        Input.DetectKeypress();
-                    }
-                }
-
-                // Load the assembly resolver
-                AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
-
-                // Check to see if we have an appdata folder for KS
-                if (!Checking.FolderExists(Paths.AppDataPath))
-                    Making.MakeDirectory(Paths.AppDataPath, false);
-
-                // Set the first time run variable
-                if (!Checking.FileExists(Paths.ConfigurationPath))
-                    Flags.FirstTime = true;
-
-                // Initialize debug path
-                DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
-
-                // Power signal handlers
-                if (!PowerSignalHandlers.initialized)
-                {
-                    PowerSignalHandlers.initialized = true;
-                    PowerSignalHandlers.RegisterHandlers();
-                }
+                PowerSignalHandlers.initialized = true;
+                PowerSignalHandlers.RegisterHandlers();
             }
         }
 
@@ -124,6 +104,7 @@ namespace KS.Kernel.Starting
                 TextWriterColor.Write("\u001b[?1049h");
                 ConsoleWrapper.SetCursorPosition(0, 0);
                 ConsoleWrapper.CursorVisible = false;
+                Flags.HasSetAltBuffer = true;
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
             }
 
@@ -197,7 +178,7 @@ namespace KS.Kernel.Starting
             if (Flags.ShowAppInfoOnBoot & !Flags.EnableSplash)
             {
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Kernel environment information"), true, KernelColorType.Stage);
-                TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), Environment.OSVersion.ToString());
+                TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
                 TextWriterColor.Write("  KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
                 TextWriterColor.Write("  KSAPI: " + $"v{KernelTools.KernelApiVersion}");
             }
@@ -264,6 +245,7 @@ namespace KS.Kernel.Starting
             Flags.SafeMode = false;
             Flags.QuietKernel = false;
             Flags.Maintenance = false;
+            Flags.HasSetAltBuffer = false;
             SplashReport._Progress = 0;
             SplashReport._ProgressText = "";
             SplashReport._KernelBooted = false;

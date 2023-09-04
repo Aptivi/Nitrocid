@@ -278,13 +278,13 @@ namespace KS.Kernel
         internal static bool ScrnTimeReached;
         internal static bool LoggedIn;
         internal static bool UseAltBuffer = true;
+        internal static bool HasSetAltBuffer;
         internal static bool LogoutRequested;
         internal static bool RebootRequested;
         internal static bool DebugMode;
         internal static bool SafeMode;
         internal static bool Maintenance;
         internal static bool TalkativePreboot;
-        internal static bool IsEnteringRetroMode;
         internal static bool SetBufferSize = true;
 
     }

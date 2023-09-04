@@ -16,25 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Data;
-using System.Linq;
-using System.Reflection;
 using System.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
-using KS.Files.Operations;
-using KS.Files.Querying;
-using KS.Kernel;
 using KS.Kernel.Power;
-using KS.Kernel.Updates;
-using KS.Languages;
-using KS.Network.Base.Transfer;
+using KS.Kernel.Starting.Environment;
+using KS.Kernel.Starting.Environment.Instances;
 using KS.Shell.ShellBase.Commands;
-using Newtonsoft.Json.Linq;
-using SemanVer.Instance;
-using SharpCompress.Archives;
-using SharpCompress.Archives.Rar;
-using SharpCompress.Common;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -49,49 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            string ExecutableName = "RetroKS.dll";
-            TextWriterColor.Write(Translate.DoTranslation("Checking for updates..."));
-
-            // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
-            NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
-
-            // Populate the following variables with information
-            string RetroKSStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/RetroKS/releases");
-            var RetroKSToken = JToken.Parse(RetroKSStr);
-            var update = new KernelUpdate(RetroKSToken);
-
-            // Populate paths
-            string RetroKSPath = Filesystem.NeutralizePath("retroks.rar", Paths.RetroKSDownloadPath);
-            string RetroExecKSPath = Filesystem.NeutralizePath(ExecutableName, Paths.RetroKSDownloadPath);
-
-            // Make the directory for RetroKS
-            Making.MakeDirectory(Paths.RetroKSDownloadPath, false);
-
-            // Check to see if we already have RetroKS installed and up-to-date
-            var currentVersion = AssemblyName.GetAssemblyName(RetroExecKSPath).Version.ToString();
-            if ((Checking.FileExists(RetroExecKSPath) && SemVer.ParseWithRev(currentVersion) < update.UpdateVersion) || !Checking.FileExists(RetroExecKSPath))
-            {
-                TextWriterColor.Write(Translate.DoTranslation("Downloading version") + " {0}...", update.UpdateVersion.ToString());
-
-                // Download RetroKS
-                var RetroKSURI = update.UpdateURL;
-                NetworkTransfer.DownloadFile(RetroKSURI.ToString(), RetroKSPath);
-
-                // Extract it
-                TextWriterColor.Write(Translate.DoTranslation("Installing version") + " {0}...", update.UpdateVersion.ToString());
-                using var archive = RarArchive.Open(RetroKSPath);
-                foreach (var entry in archive.Entries.Where(e => !e.IsDirectory))
-                    entry.WriteToDirectory(Paths.RetroKSDownloadPath, new ExtractionOptions()
-                    {
-                        ExtractFullPath = true,
-                        Overwrite = true
-                    });
-            }
-
-            // Now, reboot the kernel to Retro mode
-            TextWriterColor.Write(Translate.DoTranslation("Going back to 2018..."));
-            Flags.IsEnteringRetroMode = true;
-            Thread.Sleep(1000);
+            EnvironmentTools.SetEnvironment(new RetroKS());
             PowerManager.PowerManage(PowerMode.Reboot);
             return 0;
         }

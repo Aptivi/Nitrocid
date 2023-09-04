@@ -16,22 +16,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
-using System.Linq;
 using System.Threading;
-using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
-using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Splash;
-using KS.Kernel.Debugging;
-using KS.Users.Login;
-using KS.Misc.Text;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Colors;
 using KS.Kernel.Power;
-using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Starting.Environment;
+using KS.ConsoleBase.Colors;
+using System;
+using KS.Kernel.Exceptions;
+using KS.Kernel.Debugging;
 using KS.Kernel.Starting;
 
 namespace KS.Kernel
@@ -41,7 +36,6 @@ namespace KS.Kernel
     /// </summary>
     internal static class Kernel
     {
-
         /// <summary>
         /// Entry point
         /// </summary>
@@ -55,72 +49,7 @@ namespace KS.Kernel
             {
                 try
                 {
-                    KernelInitializers.InitializeCritical();
-                    if (Flags.IsEnteringRetroMode)
-                    {
-                        Flags.IsEnteringRetroMode = false;
-
-                        // Reboot the kernel from RetroKS
-                        continue;
-                    }
-
-                    // Check for kernel command-line arguments
-                    ArgumentParse.ParseArguments(Args.ToList());
-
-                    // Some command-line arguments may request kernel shutdown
-                    if (Flags.KernelShutdown)
-                        break;
-
-                    // Check for console size
-                    if (Flags.CheckingForConsoleSize)
-                    {
-                        ConsoleChecker.CheckConsoleSize();
-                    }
-                    else
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine + 
-                                              Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning);
-                        Input.DetectKeypress();
-                        Flags.CheckingForConsoleSize = true;
-                    }
-
-                    // Initialize important components
-                    KernelTools.StageTimer.Start();
-                    PowerManager.Uptime.Start();
-                    KernelInitializers.InitializeEssential();
-                    KernelInitializers.InitializeWelcomeMessages();
-                    KernelTools.CheckErrored();
-
-                    // Notify user of errors if appropriate
-                    KernelPanic.NotifyBootFailure();
-
-                    // Iterate through available stages
-                    for (int i = 1; i <= KernelStageTools.Stages.Count + 1; i++)
-                        KernelStageTools.RunKernelStage(i);
-
-                    // Show the closing screen
-                    SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
-                    SplashManager.CloseSplash();
-                    SplashReport._KernelBooted = true;
-                    if (!Flags.EnableSplash)
-                        TextWriterColor.Write();
-
-                    // If this is the first time, run the first run presentation
-                    if (Flags.FirstTime)
-                    {
-                        Flags.FirstTime = false;
-                        KernelFirstRun.PresentFirstRun();
-                    }
-
-                    // Initialize login prompt
-                    if (!Flags.Maintenance)
-                        Login.LoginPrompt();
-                    else
-                        Login.PromptMaintenanceLogin();
-
-                    // Clear all active threads as we're rebooting
-                    ThreadManager.StopAllThreads();
-                    PowerManager.Uptime.Reset();
+                    EnvironmentTools.ExecuteEnvironment(Args);
                 }
                 catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
                 {
@@ -134,18 +63,23 @@ namespace KS.Kernel
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    SplashManager.BeginSplashOut();
-                    KernelPanic.KernelError(KernelErrorLevel.U, true, 5L, Translate.DoTranslation("Kernel Error while booting: {0}"), ex, ex.Message);
+                    KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel environment error:") + $" {ex.Message}", ex);
                 }
                 finally
                 {
                     // Reset everything to their initial state
                     KernelInitializers.ResetEverything();
 
-                    // Clear the console and reset the colors
-                    ConsoleWrapper.ResetColor();
+                    // Clear the console
+                    KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
                     ConsoleWrapper.Clear();
+
+                    // Always switch back to the main environment
+                    if (EnvironmentTools.resetEnvironment)
+                    {
+                        EnvironmentTools.resetEnvironment = false;
+                        EnvironmentTools.ResetEnvironment();
+                    }
                 }
             }
 
@@ -157,7 +91,7 @@ namespace KS.Kernel
             }
 
             // Load main buffer
-            if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer)
+            if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer && Flags.HasSetAltBuffer)
             {
                 TextWriterColor.Write("\u001b[?1049l");
                 ConsoleWrapper.Clear();
@@ -167,6 +101,5 @@ namespace KS.Kernel
             ConsoleWrapper.CursorVisible = true;
             PowerSignalHandlers.DisposeHandlers();
         }
-
     }
 }
