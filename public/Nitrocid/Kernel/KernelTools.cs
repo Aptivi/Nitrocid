@@ -30,16 +30,6 @@ namespace KS.Kernel
     public static class KernelTools
     {
 
-        /// <summary>
-        /// Kernel version
-        /// </summary>
-        public readonly static Version KernelVersion = Assembly.GetExecutingAssembly().GetName().Version;
-        /// <summary>
-        /// Kernel API version
-        /// </summary>
-        // Refer to NitrocidModAPIVersion in the project file.
-        public readonly static Version KernelApiVersion = new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
-
         internal static Stopwatch StageTimer = new();
         internal static string bannerFigletFont = "Banner";
 
@@ -67,6 +57,24 @@ namespace KS.Kernel
 #else
         internal readonly static string ConsoleTitle = $"Nitrocid v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
 #endif
+
+        // Private variables
+        private static readonly Version kernelVersion =
+            Assembly.GetExecutingAssembly().GetName().Version;
+        private static readonly Version kernelApiVersion =
+            new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
+
+        /// <summary>
+        /// Kernel version
+        /// </summary>
+        public static Version KernelVersion =>
+            kernelVersion;
+        /// <summary>
+        /// Kernel API version
+        /// </summary>
+        // Refer to NitrocidModAPIVersion in the project file.
+        public static Version KernelApiVersion =>
+            kernelApiVersion;
 
         /// <summary>
         /// Check to see if KernelError has been called
