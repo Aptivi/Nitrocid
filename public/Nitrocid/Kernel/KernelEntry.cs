@@ -96,10 +96,6 @@ namespace KS.Kernel
                 Login.LoginPrompt();
             else
                 Login.PromptMaintenanceLogin();
-
-            // Clear all active threads as we're rebooting
-            ThreadManager.StopAllThreads();
-            PowerManager.Uptime.Reset();
         }
     }
 }

@@ -33,6 +33,7 @@ using KS.Kernel.Extensions;
 using KS.Kernel.Hardware;
 using KS.Kernel.Journaling;
 using KS.Kernel.Power;
+using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Calendar.Events;
@@ -299,6 +300,10 @@ namespace KS.Kernel.Starting
 
             // Reset the buffer size
             ConsoleExtensions.RestoreBufferSize();
+
+            // Clear all active threads as we're rebooting
+            ThreadManager.StopAllThreads();
+            PowerManager.Uptime.Reset();
 
             // Reset power state
             Flags.RebootRequested = false;
