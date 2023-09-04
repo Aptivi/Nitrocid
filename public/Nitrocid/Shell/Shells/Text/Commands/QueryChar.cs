@@ -52,11 +52,10 @@ namespace KS.Shell.Shells.Text.Commands
 
                         // Process the output
                         string text = TextEditShellCommon.TextEdit_FileLines[LineIndex - 1];
-                        var queried = QueriedChars.Keys;
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
-                            TextWriterColor.Write($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
+                            TextWriterColor.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                         }
                         TextWriterColor.Write();
                         return 0;
@@ -70,13 +69,14 @@ namespace KS.Shell.Shells.Text.Commands
                 else if (ListArgsOnly[1].ToLower() == "all")
                 {
                     var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]));
-                    foreach (int LineIndex in QueriedChars.Keys)
+                    foreach (var QueriedChar in QueriedChars)
                     {
+                        int LineIndex = QueriedChar.Item1;
                         TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineIndex + 1);
 
                         // Process the output
                         string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
-                        var queried = QueriedChars[LineIndex].Keys;
+                        var queried = QueriedChar.Item2;
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
@@ -104,11 +104,10 @@ namespace KS.Shell.Shells.Text.Commands
 
                             // Process the output
                             string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
-                            var queried = QueriedChars.Keys;
                             for (int charIndex = 0; charIndex < text.Length; charIndex++)
                             {
                                 char Character = text[charIndex];
-                                TextWriterColor.Write($"{(queried.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
+                                TextWriterColor.Write($"{(QueriedChars.Contains(charIndex) ? KernelColorTools.GetColor(KernelColorType.Success).VTSequenceForeground : "")}{Character}", false, KernelColorType.ListValue);
                             }
                             TextWriterColor.Write();
                         }

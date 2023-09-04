@@ -39,7 +39,6 @@ namespace KS.Misc.Editors.TextEdit
     public static class TextEditTools
     {
 
-        // TODO: Improve the API here...
         /// <summary>
         /// Opens the text file
         /// </summary>
@@ -398,25 +397,22 @@ namespace KS.Misc.Editors.TextEdit
         /// Queries a character in all lines.
         /// </summary>
         /// <param name="Char">The character to query</param>
-        public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryChar(char Char)
+        public static List<(int, int[])> TextEdit_QueryChar(char Char)
         {
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
-                var Lines = new Dictionary<int, Dictionary<int, string>>();
-                var Results = new Dictionary<int, string>();
+                var Lines = new List<(int, int[])>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}", Char);
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
                 {
+                    List<int> charIndexes = new();
                     for (int CharIndex = 0; CharIndex <= TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex++)
                     {
                         if (TextEditShellCommon.TextEdit_FileLines[LineIndex][CharIndex] == Char)
-                        {
-                            Results.Add(CharIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
-                        }
+                            charIndexes.Add(CharIndex);
                     }
-                    Lines.Add(LineIndex, new Dictionary<int, string>(Results));
-                    Results.Clear();
+                    Lines.Add((LineIndex, charIndexes.ToArray()));
                 }
                 return Lines;
             }
@@ -431,12 +427,12 @@ namespace KS.Misc.Editors.TextEdit
         /// </summary>
         /// <param name="Char">The character to query</param>
         /// <param name="LineNumber">The line number</param>
-        public static Dictionary<int, string> TextEdit_QueryChar(char Char, int LineNumber)
+        public static List<int> TextEdit_QueryChar(char Char, int LineNumber)
         {
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
-                var Results = new Dictionary<int, string>();
+                var Results = new List<int>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}, Line: {1}", Char, LineNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
@@ -445,9 +441,7 @@ namespace KS.Misc.Editors.TextEdit
                     for (int CharIndex = 0; CharIndex <= TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex++)
                     {
                         if (TextEditShellCommon.TextEdit_FileLines[LineIndex][CharIndex] == Char)
-                        {
-                            Results.Add(CharIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
-                        }
+                            Results.Add(CharIndex);
                     }
                 }
                 else
@@ -466,26 +460,23 @@ namespace KS.Misc.Editors.TextEdit
         /// Queries a word in all lines.
         /// </summary>
         /// <param name="Word">The word to query</param>
-        public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryWord(string Word)
+        public static List<(int, int[])> TextEdit_QueryWord(string Word)
         {
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
-                var Lines = new Dictionary<int, Dictionary<int, string>>();
-                var Results = new Dictionary<int, string>();
+                var Lines = new List<(int, int[])>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
                 {
                     var Words = TextEditShellCommon.TextEdit_FileLines[LineIndex].Split(' ');
+                    List<int> wordIndexes = new();
                     for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
                     {
                         if (Words[WordIndex].ToLower().Contains(Word.ToLower()))
-                        {
-                            Results.Add(WordIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
-                        }
+                            wordIndexes.Add(WordIndex);
                     }
-                    Lines.Add(LineIndex, new Dictionary<int, string>(Results));
-                    Results.Clear();
+                    Lines.Add((LineIndex, wordIndexes.ToArray()));
                 }
                 return Lines;
             }
@@ -500,12 +491,12 @@ namespace KS.Misc.Editors.TextEdit
         /// </summary>
         /// <param name="Word">The word to query</param>
         /// <param name="LineNumber">The line number</param>
-        public static Dictionary<int, string> TextEdit_QueryWord(string Word, int LineNumber)
+        public static List<int> TextEdit_QueryWord(string Word, int LineNumber)
         {
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
-                var Results = new Dictionary<int, string>();
+                var Results = new List<int>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
@@ -515,9 +506,7 @@ namespace KS.Misc.Editors.TextEdit
                     for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
                     {
                         if (Words[WordIndex].ToLower().Contains(Word.ToLower()))
-                        {
-                            Results.Add(WordIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
-                        }
+                            Results.Add(WordIndex);
                     }
                 }
                 else
@@ -536,21 +525,20 @@ namespace KS.Misc.Editors.TextEdit
         /// Queries a word in all lines using regular expressions
         /// </summary>
         /// <param name="Word">The regular expression to query</param>
-        public static Dictionary<int, Dictionary<int, string>> TextEdit_QueryWordRegex(string Word)
+        public static List<(int, int[])> TextEdit_QueryWordRegex(string Word)
         {
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
-                var Lines = new Dictionary<int, Dictionary<int, string>>();
-                var Results = new Dictionary<int, string>();
+                var Lines = new List<(int, int[])>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                 for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);
+                    List<int> wordIndexes = new();
                     for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
-                        Results.Add(MatchIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
-                    Lines.Add(LineIndex, new Dictionary<int, string>(Results));
-                    Results.Clear();
+                        wordIndexes.Add(MatchIndex);
+                    Lines.Add((LineIndex, wordIndexes.ToArray()));
                 }
                 return Lines;
             }
@@ -565,12 +553,12 @@ namespace KS.Misc.Editors.TextEdit
         /// </summary>
         /// <param name="Word">The regular expression to query</param>
         /// <param name="LineNumber">The line number</param>
-        public static Dictionary<int, string> TextEdit_QueryWordRegex(string Word, int LineNumber)
+        public static List<int> TextEdit_QueryWordRegex(string Word, int LineNumber)
         {
             if (TextEditShellCommon.TextEdit_FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
-                var Results = new Dictionary<int, string>();
+                var Results = new List<int>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
                 DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
@@ -578,7 +566,7 @@ namespace KS.Misc.Editors.TextEdit
                 {
                     var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);
                     for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
-                        Results.Add(MatchIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
+                        Results.Add(MatchIndex);
                 }
                 else
                 {
