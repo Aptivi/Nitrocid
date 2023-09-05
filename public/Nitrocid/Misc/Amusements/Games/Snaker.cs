@@ -29,7 +29,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Threading;
 using Terminaux.Colors;
 
-namespace KS.Misc.Games
+namespace KS.Misc.Amusements.Games
 {
     static class Snaker
     {

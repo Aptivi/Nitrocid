@@ -29,7 +29,7 @@ using KS.Languages;
 using Terminaux.Colors;
 using Wordament;
 
-namespace KS.Misc.Games
+namespace KS.Misc.Amusements.Games
 {
     static class Hangman
     {
@@ -54,7 +54,7 @@ namespace KS.Misc.Games
                 var underscoresRender = new StringBuilder();
                 for (int i = 0; i < RandomWord.Length; i++)
                     underscoresRender.Append(gotChars.Contains(RandomWord[i]) ? $"{RandomWord[i]} " : "_ ");
-                int underscoresPosX = (ConsoleWrapper.WindowWidth / 2) - (underscoresRender.Length / 2);
+                int underscoresPosX = ConsoleWrapper.WindowWidth / 2 - underscoresRender.Length / 2;
                 int underscoresPosY = ConsoleWrapper.WindowHeight - 2;
                 Color underscoresSeq = new(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for underscore length", underscoresRender.Length);
@@ -62,7 +62,7 @@ namespace KS.Misc.Games
 
                 // Draw the wrong characters written
                 string wrongRender = string.Join(" ", wrongChars);
-                int wrongPosX = (ConsoleWrapper.WindowWidth / 2) - (wrongRender.Length / 2);
+                int wrongPosX = ConsoleWrapper.WindowWidth / 2 - wrongRender.Length / 2;
                 int wrongPosY = ConsoleWrapper.WindowHeight - 4;
                 Color wrongSeq = new(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for {1} wrong letters", wrongRender.Length, wrongChars.Count);
@@ -147,7 +147,7 @@ namespace KS.Misc.Games
                 {
                     // Lost the game
                     string hungStr = Translate.DoTranslation("You're hung!");
-                    int hungPosX = (ConsoleWrapper.WindowWidth / 2) - (hungStr.Length / 2);
+                    int hungPosX = ConsoleWrapper.WindowWidth / 2 - hungStr.Length / 2;
                     int hungPosY = ConsoleWrapper.WindowHeight - 6;
                     TextWriterWhereColor.WriteWhere(hungStr, hungPosX, hungPosY, hangerSeq);
                     Thread.Sleep(5000);
@@ -157,7 +157,7 @@ namespace KS.Misc.Games
                     // Won the game
                     hung = true;
                     string wonStr = Translate.DoTranslation("You win!");
-                    int wonPosX = (ConsoleWrapper.WindowWidth / 2) - (wonStr.Length / 2);
+                    int wonPosX = ConsoleWrapper.WindowWidth / 2 - wonStr.Length / 2;
                     int wonPosY = ConsoleWrapper.WindowHeight - 6;
                     TextWriterWhereColor.WriteWhere(wonStr, wonPosX, wonPosY, hangerSeq);
                     Thread.Sleep(5000);

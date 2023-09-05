@@ -26,7 +26,6 @@ using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Calendar;
-using KS.Misc.Games;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
 using KS.Misc.Timers;
@@ -50,13 +49,14 @@ using KS.Drivers.Network;
 using KS.Drivers.Filesystem;
 using KS.Drivers.Encryption;
 using KS.Drivers.Regexp;
-using static KS.Misc.Games.SpeedPress;
+using static KS.Misc.Amusements.Games.SpeedPress;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
 using KS.Misc.Animations.Lyrics;
+using KS.Misc.Amusements.Games;
 
 namespace KS.Kernel.Configuration.Instances
 {

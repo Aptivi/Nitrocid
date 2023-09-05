@@ -18,7 +18,7 @@
 
 using System;
 using System.Linq;
-using KS.Misc.Games;
+using KS.Misc.Amusements.Games;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 

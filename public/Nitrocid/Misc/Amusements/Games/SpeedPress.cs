@@ -25,7 +25,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 
-namespace KS.Misc.Games
+namespace KS.Misc.Amusements.Games
 {
     /// <summary>
     /// Speed press game module

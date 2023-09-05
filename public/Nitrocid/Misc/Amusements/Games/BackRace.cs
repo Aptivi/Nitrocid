@@ -29,7 +29,7 @@ using System.Linq;
 using System.Threading;
 using Terminaux.Colors;
 
-namespace KS.Misc.Games
+namespace KS.Misc.Amusements.Games
 {
     static class BackRace
     {
@@ -81,8 +81,8 @@ namespace KS.Misc.Games
                 for (int i = 0; i < 5; i++)
                 {
                     // Indicate the selected horse by coloring it white
-                    int height = (consoleSixthsHeight * i) + 2;
-                    var finalColor = (i + 1) == selected ? ConsoleColors.White : horseColors[i];
+                    int height = consoleSixthsHeight * i + 2;
+                    var finalColor = i + 1 == selected ? ConsoleColors.White : horseColors[i];
                     var horse = horses[i];
                     BorderColor.WriteBorder(boxLeft, height, boxWidth, 1, finalColor);
                     TextWriterWhereColor.WriteWhere($"{horse.HorseProgress:000}%", 2, height + 1, finalColor);
@@ -91,7 +91,7 @@ namespace KS.Misc.Games
 
                 // Check to see if we're on the rest mode or on the race mode
                 string bindings = Translate.DoTranslation("[ENTER] Start the race | [ESC] Exit | [UP/DOWN] Move selection");
-                int bindingsPositionX = (ConsoleWrapper.WindowWidth / 2) - (bindings.Length / 2);
+                int bindingsPositionX = ConsoleWrapper.WindowWidth / 2 - bindings.Length / 2;
                 int bindingsPositionY = ConsoleWrapper.WindowHeight - 2;
                 if (racing)
                 {
@@ -106,7 +106,7 @@ namespace KS.Misc.Games
                     for (int i = 0; i < horsesSorted.Length; i++)
                         positions.Add(Translate.DoTranslation("Horse") + $" {horsesSorted[i].HorseNumber}: #{i + 1}");
                     string renderedPositions = string.Join(" | ", positions);
-                    int positionsPositionX = (ConsoleWrapper.WindowWidth / 2) - (renderedPositions.Length / 2);
+                    int positionsPositionX = ConsoleWrapper.WindowWidth / 2 - renderedPositions.Length / 2;
                     TextWriterWhereColor.WriteWhere(renderedPositions, positionsPositionX, bindingsPositionY, KernelColorType.NeutralText);
 
                     // Update each horse with their own movement

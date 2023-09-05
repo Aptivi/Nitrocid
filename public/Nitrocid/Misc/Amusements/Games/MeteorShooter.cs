@@ -29,7 +29,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Misc.Screensaver;
 
-namespace KS.Misc.Games
+namespace KS.Misc.Amusements.Games
 {
     /// <summary>
     /// Meteor shooter game module
@@ -269,8 +269,8 @@ namespace KS.Misc.Games
                 // Write game over if not exiting
                 if (!GameExiting)
                 {
-                   TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
-                   ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
+                    TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                    ThreadManager.SleepNoBlock(3000L, MeteorDrawThread);
                 }
                 ConsoleWrapper.Clear();
             }

@@ -27,7 +27,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 
-namespace KS.Misc.Games
+namespace KS.Misc.Amusements.Games
 {
     /// <summary>
     /// Solver game module

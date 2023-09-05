@@ -27,7 +27,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using Terminaux.Colors;
 
-namespace KS.Misc.Games
+namespace KS.Misc.Amusements.Games
 {
     internal class Wordle
     {
@@ -127,8 +127,8 @@ namespace KS.Misc.Games
                     int marginX = 2;
                     int marginY = 1;
                     int boxExteriorLength = 3;
-                    int currentX = marginX + ((boxExteriorLength + 2) * (l - 1));
-                    int currentY = marginY + (boxExteriorLength * (g - 1));
+                    int currentX = marginX + (boxExteriorLength + 2) * (l - 1);
+                    int currentY = marginY + boxExteriorLength * (g - 1);
                     BorderColor.WriteBorder(currentX, currentY, 3, 1, finalColor);
 
                     // Render a character inside it

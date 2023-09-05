@@ -23,7 +23,7 @@ using KS.Drivers.RNG;
 using KS.Languages;
 using System;
 
-namespace KS.Misc.Games
+namespace KS.Misc.Amusements.Games
 {
     internal static class RussianRoulette
     {

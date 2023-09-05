@@ -18,7 +18,7 @@
 
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
-using KS.Misc.Games;
+using KS.Misc.Amusements.Games;
 
 namespace KS.Misc.Screensaver.Displays
 {

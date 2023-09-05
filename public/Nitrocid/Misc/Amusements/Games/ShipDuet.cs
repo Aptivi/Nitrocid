@@ -29,7 +29,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Misc.Screensaver;
 
-namespace KS.Misc.Games
+namespace KS.Misc.Amusements.Games
 {
     /// <summary>
     /// ShipDuet shooter game module
@@ -106,7 +106,7 @@ namespace KS.Misc.Games
             {
                 // Simulation mode
                 ConsoleKey Keypress = 0;
-                ConsoleKey[] possibleKeys = new[] 
+                ConsoleKey[] possibleKeys = new[]
                 { 
                     // Player 1
                     ConsoleKey.UpArrow, ConsoleKey.DownArrow, ConsoleKey.Enter,
