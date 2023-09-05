@@ -667,7 +667,6 @@ namespace KS.Drivers.Console.Consoles
                             char TextChar = sentence[i];
 
                             // Write a character individually
-                            buffered.Append(BufferChar(sentence, sequences, ref i, ref vtSeqIdx));
                             if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
                                 ConsoleWrapper.Write(buffered.ToString());
@@ -676,6 +675,7 @@ namespace KS.Drivers.Console.Consoles
                                     exiting = true;
                                 LinesMade = 0;
                             }
+                            buffered.Append(BufferChar(sentence, sequences, ref i, ref vtSeqIdx));
                         }
                         if (!exiting)
                         {
