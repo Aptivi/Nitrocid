@@ -226,6 +226,10 @@ namespace KS.Kernel.Starting
             ToDoManager.LoadTasks();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
 
+            // Finalize addons
+            AddonTools.FinalizeAddons();
+            DebugWriter.WriteDebug(DebugLevel.I, "Finalized addons.");
+
             // If the two files are not found, create two MOTD files with current config.
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
                 MotdParse.SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
@@ -263,6 +267,10 @@ namespace KS.Kernel.Starting
             // Stop all mods
             ModManager.StopMods();
             DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
+
+            // Stop all addons
+            AddonTools.UnloadAddons();
+            DebugWriter.WriteDebug(DebugLevel.I, "Addons stopped");
 
             // Stop RPC
             RemoteProcedure.StopRPC();

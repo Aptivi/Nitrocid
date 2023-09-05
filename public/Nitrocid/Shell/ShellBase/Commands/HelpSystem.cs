@@ -78,14 +78,18 @@ namespace KS.Shell.ShellBase.Commands
             // Add every command from each mod
             var ModCommandList = ModManager.ListModCommands(CommandType);
 
+            // Add every command from each addon
+            var AddonCommandList = ShellManager.GetShellInfo(CommandType).addonCommands;
+
             // Check to see if command exists
-            if (!string.IsNullOrWhiteSpace(command) & (CommandList.ContainsKey(command) | AliasedCommandList.ContainsKey(command) | ModCommandList.ContainsKey(command)))
+            if (!string.IsNullOrWhiteSpace(command) & (CommandList.ContainsKey(command) | AliasedCommandList.ContainsKey(command) | ModCommandList.ContainsKey(command) | AddonCommandList.ContainsKey(command)))
             {
                 // Found!
                 bool IsMod = ModCommandList.ContainsKey(command);
                 bool IsAlias = AliasedCommandList.ContainsKey(command);
-                var FinalCommandList = IsMod ? ModCommandList : CommandList;
-                string FinalCommand = IsMod ? command : IsAlias ? AliasedCommandList[command] : command;
+                bool IsAddon = AddonCommandList.ContainsKey(command);
+                var FinalCommandList = IsMod ? ModCommandList : IsAddon ? AddonCommandList : CommandList;
+                string FinalCommand = (IsMod || IsAddon) ? command : IsAlias ? AliasedCommandList[command] : command;
                 string HelpDefinition = IsMod ? FinalCommandList[FinalCommand].HelpDefinition : FinalCommandList[FinalCommand].GetTranslatedHelpEntry();
 
                 // Iterate through command argument information instances
@@ -175,6 +179,16 @@ namespace KS.Shell.ShellBase.Commands
                             TextWriterColor.Write("- {0}: ", false, ShellManager.UnifiedCommandDict.ContainsKey(cmd) ? KernelColorType.Success : KernelColorType.ListEntry, cmd);
                             TextWriterColor.Write("{0}", true, KernelColorType.ListValue, CommandList[cmd].GetTranslatedHelpEntry());
                         }
+                    }
+
+                    // The addon commands
+                    TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Kernel addon commands:") + (Flags.ShowCommandsCount & Flags.ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Count);
+                    if (AddonCommandList.Count == 0)
+                        TextWriterColor.Write("- " + Translate.DoTranslation("No kernel addon commands."), true, KernelColorType.Warning);
+                    foreach (string cmd in AddonCommandList.Keys)
+                    {
+                        TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, cmd);
+                        TextWriterColor.Write("{0}", true, KernelColorType.ListValue, AddonCommandList[cmd].GetTranslatedHelpEntry());
                     }
 
                     // The mod commands

@@ -29,6 +29,7 @@ namespace KS.Shell.ShellBase.Shells
     {
         internal Dictionary<string, string> aliases = new();
         internal Dictionary<string, CommandInfo> modCommands = new();
+        internal Dictionary<string, CommandInfo> addonCommands = new();
         internal Dictionary<string, PromptPresetBase> customShellPresets = new();
 
         /// <inheritdoc/>

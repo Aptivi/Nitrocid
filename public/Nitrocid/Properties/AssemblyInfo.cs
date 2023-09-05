@@ -21,3 +21,4 @@ using System.Runtime.CompilerServices;
 [assembly: InternalsVisibleTo("Nitrocid.Tests")]
 [assembly: InternalsVisibleTo("Nitrocid.LanguagePacks")]
 [assembly: InternalsVisibleTo("Nitrocid.ThemePacks")]
+[assembly: InternalsVisibleTo("Nitrocid.Extras.Notes")]

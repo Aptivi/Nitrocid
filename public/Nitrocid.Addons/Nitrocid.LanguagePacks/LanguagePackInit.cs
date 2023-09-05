@@ -55,6 +55,9 @@ namespace Nitrocid.LanguagePacks
             }
         }
 
+        void IAddon.FinalizeAddon()
+        { }
+
         private string[] GetLanguageResourceNames()
         {
             // Get all the languages provided by this pack

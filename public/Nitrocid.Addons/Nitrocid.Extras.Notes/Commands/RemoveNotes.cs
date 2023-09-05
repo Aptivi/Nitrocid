@@ -16,13 +16,19 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Kernel.Extensions
+using KS.Shell.ShellBase.Commands;
+using Nitrocid.Extras.Notes.Management;
+
+namespace Nitrocid.Extras.Notes.Commands
 {
-    internal interface IAddon
+    internal class RemoveNotes : BaseCommand, ICommand
     {
-        internal string AddonName { get; }
-        internal void StartAddon();
-        internal void FinalizeAddon();
-        internal void StopAddon();
+
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            NoteManagement.RemoveNotes();
+            return 0;
+        }
+
     }
 }

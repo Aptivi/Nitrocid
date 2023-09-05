@@ -87,6 +87,7 @@ namespace KS.Shell.ShellBase.Commands
         {
             // Individual shells
             var shellInfo = ShellManager.GetShellInfo(ShellType);
+            var addonCommands = ShellManager.GetShellInfo(ShellType).addonCommands;
             var modCommands = ModManager.ListModCommands(ShellType);
             Dictionary<string, CommandInfo> FinalCommands = shellInfo.Commands;
 
@@ -95,6 +96,13 @@ namespace KS.Shell.ShellBase.Commands
             {
                 if (!FinalCommands.ContainsKey(UnifiedCommand))
                     FinalCommands.Add(UnifiedCommand, ShellManager.UnifiedCommandDict[UnifiedCommand]);
+            }
+
+            // Addon commands
+            foreach (string AddonCommand in addonCommands.Keys)
+            {
+                if (!FinalCommands.ContainsKey(AddonCommand))
+                    FinalCommands.Add(AddonCommand, addonCommands[AddonCommand]);
             }
 
             // Mod commands
@@ -280,6 +288,149 @@ namespace KS.Shell.ShellBase.Commands
             }
             if (failedCommands.Count > 0)
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Some of the custom commands can't be unloaded.") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
+        }
+
+        /// <summary>
+        /// Registers a command to the addon command list
+        /// </summary>
+        /// <param name="ShellType">Type of Nitrocid's built-in shell</param>
+        /// <param name="commandBase">Custom command base to register</param>
+        internal static void RegisterAddonCommand(ShellType ShellType, CommandInfo commandBase) =>
+            RegisterAddonCommand(ShellManager.GetShellTypeName(ShellType), commandBase);
+
+        /// <summary>
+        /// Registers a command to the addon command list
+        /// </summary>
+        /// <param name="ShellType">Type of a shell, including your custom type and other addon's custom type to extend it</param>
+        /// <param name="commandBase">Custom command base to register</param>
+        internal static void RegisterAddonCommand(string ShellType, CommandInfo commandBase)
+        {
+            // First, check the values
+            if (!ShellTypeManager.ShellTypeExists(ShellType))
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
+            if (commandBase is null)
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command base."));
+            string command = commandBase.Command;
+            DebugWriter.WriteDebug(DebugLevel.I, "Trying to register {0}, ShellType: {1}", command, ShellType);
+
+            // Check the command name
+            if (string.IsNullOrEmpty(command))
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));
+
+            // Check to see if the command conflicts with pre-existing shell commands
+            if (IsCommandFound(command, ShellType))
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Command {0} conflicts with available shell commands or addon commands.", command);
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The command specified is already added! It's possible that you may have conflicting addons."));
+            }
+
+            // Check to see if the help definition is full
+            if (string.IsNullOrEmpty(commandBase.HelpDefinition))
+            {
+                SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), 0, command);
+                DebugWriter.WriteDebug(DebugLevel.W, "No definition, {0}.Def = \"Command not defined\"", command);
+                commandBase.HelpDefinition = Translate.DoTranslation("Command not defined");
+            }
+
+            // Now, add the command to the addon list
+            DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", command, ShellType);
+            if (!ShellManager.AvailableShells[ShellType].addonCommands.ContainsKey(command))
+                ShellManager.AvailableShells[ShellType].addonCommands.Add(command, commandBase);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", command, ShellType);
+        }
+
+        /// <summary>
+        /// Registers a group of addon commands
+        /// </summary>
+        /// <param name="ShellType">Type of Nitrocid's built-in shell</param>
+        /// <param name="commandBases">Addon command bases to register</param>
+        internal static void RegisterAddonCommands(ShellType ShellType, CommandInfo[] commandBases) =>
+            RegisterAddonCommands(ShellManager.GetShellTypeName(ShellType), commandBases);
+
+        /// <summary>
+        /// Registers a group of addon commands
+        /// </summary>
+        /// <param name="ShellType">Type of a shell, including your custom type and other addon's custom type to extend it</param>
+        /// <param name="commandBases">Addon command bases to register</param>
+        internal static void RegisterAddonCommands(string ShellType, CommandInfo[] commandBases)
+        {
+            List<string> failedCommands = new();
+            foreach (var commandBase in commandBases)
+            {
+                try
+                {
+                    RegisterAddonCommand(ShellType, commandBase);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Can't register addon command: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    failedCommands.Add($"  - {(commandBase is not null ? commandBase.Command : "???")}: {ex.Message}");
+                }
+            }
+            if (failedCommands.Count > 0)
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Some of the addon commands can't be loaded.") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
+        }
+
+        /// <summary>
+        /// Unregisters a addon command
+        /// </summary>
+        /// <param name="ShellType">Type of Nitrocid's built-in shell</param>
+        /// <param name="commandName">Addon command name to unregister</param>
+        internal static void UnregisterAddonCommand(ShellType ShellType, string commandName) =>
+            UnregisterAddonCommand(ShellManager.GetShellTypeName(ShellType), commandName);
+
+        /// <summary>
+        /// Unregisters a addon command
+        /// </summary>
+        /// <param name="ShellType">Type of a shell, including your custom type and other addon's custom type to extend it</param>
+        /// <param name="commandName">Addon command name to unregister</param>
+        internal static void UnregisterAddonCommand(string ShellType, string commandName)
+        {
+            // First, check the values
+            if (!ShellTypeManager.ShellTypeExists(ShellType))
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
+            if (string.IsNullOrEmpty(commandName))
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));
+
+            // Check to see if we have this command
+            if (!ShellManager.AvailableShells[ShellType].addonCommands.ContainsKey(commandName))
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The addon command specified is not found."));
+            else
+                ShellManager.AvailableShells[ShellType].addonCommands.Remove(commandName);
+        }
+
+        /// <summary>
+        /// Unregisters a group of addon commands
+        /// </summary>
+        /// <param name="ShellType">Type of Nitrocid's built-in shell</param>
+        /// <param name="commandNames">Addon command names to unregister</param>
+        internal static void UnregisterAddonCommands(ShellType ShellType, string[] commandNames) =>
+            UnregisterAddonCommands(ShellManager.GetShellTypeName(ShellType), commandNames);
+
+        /// <summary>
+        /// Unregisters a group of addon commands
+        /// </summary>
+        /// <param name="ShellType">Type of a shell, including your custom type and other addon's custom type to extend it</param>
+        /// <param name="commandNames">Addon command names to unregister</param>
+        internal static void UnregisterAddonCommands(string ShellType, string[] commandNames)
+        {
+            List<string> failedCommands = new();
+            foreach (string commandBase in commandNames)
+            {
+                try
+                {
+                    UnregisterAddonCommand(ShellType, commandBase);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Can't unregister addon command: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    failedCommands.Add($"  - {(!string.IsNullOrEmpty(commandBase) ? commandBase : "???")}: {ex.Message}");
+                }
+            }
+            if (failedCommands.Count > 0)
+                throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Some of the addon commands can't be unloaded.") + CharManager.NewLine + string.Join(CharManager.NewLine, failedCommands));
         }
     }
 }

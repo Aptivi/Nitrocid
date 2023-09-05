@@ -418,6 +418,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// There was an error when trying to perform an operation for the kernel addon management.
         /// </summary>
-        AddonManagement
+        AddonManagement,
+        /// <summary>
+        /// There was an error when trying to perform an operation for the note management.
+        /// </summary>
+        NoteManagement
     }
 }

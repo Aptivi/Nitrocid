@@ -114,6 +114,22 @@ namespace KS.Kernel.Extensions
             }
         }
 
+        internal static void FinalizeAddons()
+        {
+            foreach (var addonInfo in addons)
+                addonInfo.Addon.FinalizeAddon();
+        }
+
+        internal static void UnloadAddons()
+        {
+            for (int addonIdx = addons.Count - 1; addonIdx >= 0; addonIdx--)
+            {
+                var addonInstance = addons[addonIdx].Addon;
+                addonInstance.StopAddon();
+                addons.RemoveAt(addonIdx);
+            }
+        }
+
         /// <summary>
         /// Gets the addon instance from compiled assembly
         /// </summary>

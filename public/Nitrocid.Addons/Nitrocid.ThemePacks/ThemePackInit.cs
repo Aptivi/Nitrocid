@@ -20,7 +20,6 @@ using KS.ConsoleBase.Themes;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
 using KS.Misc.Reflection;
-using Microsoft.Diagnostics.Runtime.Utilities;
 using Newtonsoft.Json.Linq;
 using Nitrocid.ThemePacks.Resources;
 using System.Linq;
@@ -53,6 +52,9 @@ namespace Nitrocid.ThemePacks
                 DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", key, result);
             }
         }
+
+        void IAddon.FinalizeAddon()
+        { }
 
         private string[] GetThemeResourceNames()
         {
