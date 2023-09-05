@@ -363,9 +363,10 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file",
                     new[] {
                         new CommandArgumentInfo(new[] { "file" }, new[] {
-                            new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json" }, 0, false),
-                            new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json" }, 0, false),
-                            new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex" }, 0, false)
+                            new SwitchInfo("text", /* Localizable */ "Forces text mode", false, false, new string[] { "hex", "json", "sql" }, 0, false),
+                            new SwitchInfo("hex", /* Localizable */ "Forces hex mode", false, false, new string[] { "text", "json", "sql" }, 0, false),
+                            new SwitchInfo("json", /* Localizable */ "Forces JSON mode", false, false, new string[] { "text", "hex", "sql" }, 0, false),
+                            new SwitchInfo("sql", /* Localizable */ "Forces SQL mode", false, false, new string[] { "text", "hex", "json" }, 0, false),
                         }, true, 1)
                     }, new EditCommand())
             },
@@ -942,13 +943,6 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", false, false, new string[] { "m", "h", "e", "c" }, 0, false),
                             new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", false, true, new string[] { "m", "h", "v", "e" }) })
                     }, new SpeedPressCommand())
-            },
-            
-            { "sql",
-                new CommandInfo("sql", ShellType, /* Localizable */ "Opens the SQL editor to a specified file",
-                    new[] {
-                        new CommandArgumentInfo(new[] { "dbfile" }, Array.Empty<SwitchInfo>(), true, 1)
-                    }, new SqlCommand())
             },
             
             { "sshell",

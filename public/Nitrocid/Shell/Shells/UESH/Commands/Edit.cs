@@ -39,7 +39,8 @@ namespace KS.Shell.Shells.UESH.Commands
             bool forceText = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-text");
             bool forceJson = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-json");
             bool forceHex = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-hex");
-            Opening.OpenEditor(path, forceText, forceJson, forceHex);
+            bool forceSql = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-sql");
+            Opening.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
             return 0;
         }
 

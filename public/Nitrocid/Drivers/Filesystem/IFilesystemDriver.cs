@@ -400,6 +400,12 @@ namespace KS.Drivers.Filesystem
         bool IsJson(string Path);
 
         /// <summary>
+        /// Is the file an SQL file?
+        /// </summary>
+        /// <param name="Path">Path to file</param>
+        bool IsSql(string Path);
+
+        /// <summary>
         /// Searches a file for string
         /// </summary>
         /// <param name="FilePath">File path</param>

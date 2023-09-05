@@ -18,6 +18,8 @@
 
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Text;
 using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Shell.Shells.Sql;
@@ -44,7 +46,7 @@ namespace KS.Misc.Editors.SqlEdit
                 SqlShellCommon.sqliteConnection = new SqliteConnection($"Data Source={File}");
                 SqlShellCommon.sqliteConnection.Open();
                 SqlShellCommon.sqliteDatabasePath = File;
-                return true;
+                return SqlEdit_CheckSqlFile(File);
             }
             catch (Exception ex)
             {
@@ -52,6 +54,20 @@ namespace KS.Misc.Editors.SqlEdit
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
+        }
+
+        /// <summary>
+        /// Checks the SQL file
+        /// </summary>
+        /// <param name="File">File to check</param>
+        /// <returns>True if the signature is found; False if not found.</returns>
+        public static bool SqlEdit_CheckSqlFile(string File)
+        {
+            byte[] sqlFileBytes = new byte[17];
+            using (FileStream sqlStream = new(File, FileMode.Open, FileAccess.Read, FileShare.ReadWrite))
+                sqlStream.Read(sqlFileBytes, 0, 16);
+            string result = Encoding.ASCII.GetString(sqlFileBytes);
+            return result.Contains("SQLite format");
         }
 
         /// <summary>

@@ -46,6 +46,7 @@ using KS.Misc.Probers.Regexp;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.PathLookup;
 using KS.Files.Instances;
+using KS.Misc.Editors.SqlEdit;
 
 namespace KS.Drivers.Filesystem
 {
@@ -861,6 +862,25 @@ namespace KS.Drivers.Filesystem
                     var ParsedObject = JArray.Parse(File.ReadAllText(Path));
                     return true;
                 }
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+        /// <inheritdoc/>
+        public virtual bool IsSql(string Path)
+        {
+            try
+            {
+                // Neutralize path
+                FS.ThrowOnInvalidPath(Path);
+                Path = FS.NeutralizePath(Path);
+
+                // Try to open an SQL connection
+                bool result = SqlEditTools.SqlEdit_CheckSqlFile(Path);
+                return result;
             }
             catch
             {

@@ -62,5 +62,12 @@ namespace KS.Files.Querying
         public static bool IsJson(string Path) =>
             DriverHandler.CurrentFilesystemDriverLocal.IsJson(Path);
 
+        /// <summary>
+        /// Is the file an SQL file?
+        /// </summary>
+        /// <param name="Path">Path to file</param>
+        public static bool IsSql(string Path) =>
+            DriverHandler.CurrentFilesystemDriverLocal.IsSql(Path);
+
     }
 }

@@ -37,7 +37,8 @@ namespace KS.Files.Operations
         /// <param name="forceText">Forces text shell</param>
         /// <param name="forceJson">Forces JSON shell</param>
         /// <param name="forceHex">Forces hex shell</param>
-        public static void OpenEditor(string path, bool forceText = false, bool forceJson = false, bool forceHex = false)
+        /// <param name="forceSql">Forces SQL shell</param>
+        public static void OpenEditor(string path, bool forceText = false, bool forceJson = false, bool forceHex = false, bool forceSql = false)
         {
             bool fileExists = Checking.FileExists(path);
             
@@ -46,6 +47,7 @@ namespace KS.Files.Operations
             DebugWriter.WriteDebug(DebugLevel.I, "Force text: {0}", forceText);
             DebugWriter.WriteDebug(DebugLevel.I, "Force JSON: {0}", forceJson);
             DebugWriter.WriteDebug(DebugLevel.I, "Force Hex: {0}", forceHex);
+            DebugWriter.WriteDebug(DebugLevel.I, "Force SQL: {0}", forceSql);
             if (!fileExists)
             {
                 TextWriterColor.Write(Translate.DoTranslation("File doesn't exist."), true, KernelColorType.Error);
@@ -57,15 +59,19 @@ namespace KS.Files.Operations
                 ShellStart.StartShell(ShellType.TextShell, path);
             else if (forceJson)
                 ShellStart.StartShell(ShellType.JsonShell, path);
+            else if (forceSql)
+                ShellStart.StartShell(ShellType.SqlShell, path);
             else if (forceHex)
                 ShellStart.StartShell(ShellType.HexShell, path);
             
             // Exit if forced types
-            if (forceText || forceJson || forceHex)
+            if (forceText || forceJson || forceHex || forceSql)
                 return;
-            
+
             // Determine the type
-            if (Parsing.IsBinaryFile(path))
+            if (Parsing.IsSql(path))
+                ShellStart.StartShell(ShellType.SqlShell, path);
+            else if (Parsing.IsBinaryFile(path))
                 ShellStart.StartShell(ShellType.HexShell, path);
             else if (Parsing.IsJson(path))
                 ShellStart.StartShell(ShellType.JsonShell, path);
