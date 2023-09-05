@@ -1409,7 +1409,7 @@
                 "Variable": "SpeedPressCurrentDifficulty",
                 "IsEnumeration": true,
                 "EnumerationInternal": true,
-                "Enumeration": "Misc.Games.SpeedPress+SpeedPressDifficulty",
+                "Enumeration": "Misc.Amusements.Games.SpeedPress+SpeedPressDifficulty",
                 "EnumerationZeroBased": true,
                 "Description": "Select your preferred difficulty."
             },
