@@ -19,6 +19,7 @@
 using KS.Kernel.Configuration;
 using NUnit.Framework;
 using Shouldly;
+using System.Linq;
 
 namespace Nitrocid.Tests.Kernel.Configuration
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.Tests.Kernel.Configuration
             var SettingsVariables = ConfigTools.CheckConfigVariables();
             SettingsVariables.ShouldNotBeNull();
             SettingsVariables.ShouldNotBeEmpty();
-            SettingsVariables.Values.ShouldNotContain(false);
+            SettingsVariables.Where((kvp) => !kvp.Value).ShouldBeEmpty();
         }
     }
 }
