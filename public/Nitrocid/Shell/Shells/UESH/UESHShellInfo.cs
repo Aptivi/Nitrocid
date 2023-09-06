@@ -567,6 +567,13 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo()
                     }, new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
+           
+            { "lsdisks",
+                new CommandInfo("lsdisks", ShellType, /* Localizable */ "Lists all the disks",
+                    new[] {
+                        new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0, true)
+                    }, new LsDisksCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
             
             { "lsnet",
                 new CommandInfo("lsnet", ShellType, /* Localizable */ "Lists online network devices",
