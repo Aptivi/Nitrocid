@@ -125,14 +125,13 @@ namespace KS.Misc.Settings
                     DebugWriter.WriteDebug(DebugLevel.I, "Saving settings...");
                     try
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Saving settings..."), true, KernelColorType.Progress);
+                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."), false);
                         Config.CreateConfig();
                     }
                     catch (Exception ex)
                     {
-                        TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
+                        InfoBoxColor.WriteInfoBox(ex.Message, true, KernelColorType.Error);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        Input.DetectKeypress();
                     }
                 }
                 else if (Answer == MaxSections + 3)
@@ -140,23 +139,23 @@ namespace KS.Misc.Settings
                     // The selected answer is "Save Settings As"
                     TextWriterColor.Write(Translate.DoTranslation("Where do you want to save the current kernel settings?"), true, KernelColorType.Question);
                     string Location = Filesystem.NeutralizePath(Input.ReadLine());
+                    ConsoleWrapper.CursorVisible = false;
                     if (!Checking.FileExists(Location))
                     {
                         try
                         {
+                            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."), false);
                             Config.CreateConfig(Location);
                         }
                         catch (Exception ex)
                         {
-                            TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
+                            InfoBoxColor.WriteInfoBox(ex.Message, true, KernelColorType.Error);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            Input.DetectKeypress();
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Can't save kernel settings on top of existing file."), true, KernelColorType.Error);
-                        Input.DetectKeypress();
+                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Can't save kernel settings on top of existing file."), true, KernelColorType.Error);
                     }
                 }
                 else if (Answer == MaxSections + 4)
@@ -168,29 +167,29 @@ namespace KS.Misc.Settings
                     {
                         try
                         {
+                            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Loading settings..."), false);
                             Config.ReadConfig(SettingsType, Location);
+                            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Saving settings..."), false);
                             Config.CreateConfig();
                         }
                         catch (Exception ex)
                         {
-                            TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
+                            InfoBoxColor.WriteInfoBox(ex.Message, true, KernelColorType.Error);
                             DebugWriter.WriteDebugStackTrace(ex);
-                            Input.DetectKeypress();
                         }
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
-                        Input.DetectKeypress();
+                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
                     }
                 }
                 else if (Answer == MaxSections + 5)
                 {
                     // The selected answer is "Reload Settings"
                     DebugWriter.WriteDebug(DebugLevel.W, "Reloading...");
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Reloading settings..."), false);
                     ConfigTools.ReloadConfig();
-                    TextWriterColor.Write(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."));
-                    Input.DetectKeypress();
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."));
                 }
                 else if (Answer == MaxSections + 6 || Answer == -1)
                 {
@@ -203,9 +202,7 @@ namespace KS.Misc.Settings
                 {
                     // Invalid selection
                     DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                    TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
-                    TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
-                    Input.DetectKeypress();
+                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error, Answer);
                 }
             }
         }
@@ -893,6 +890,8 @@ namespace KS.Misc.Settings
             string SearchFor = Input.ReadLine();
 
             // Search for the setting
+            ConsoleWrapper.CursorVisible = false;
+            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Searching for settings..."), false);
             Results = ConfigTools.FindSetting(SearchFor, SettingsToken, SettingsType);
 
             // Write the settings
@@ -920,8 +919,7 @@ namespace KS.Misc.Settings
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, KernelColorType.Error);
-                Input.DetectKeypress();
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, KernelColorType.Error);
             }
         }
 
