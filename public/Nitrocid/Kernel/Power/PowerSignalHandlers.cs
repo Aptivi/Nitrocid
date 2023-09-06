@@ -35,24 +35,19 @@ namespace KS.Kernel.Power
             // Works on Windows and Linux
             signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGINT, SigQuit));
             signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGTERM, SigQuit));
-            if (KernelPlatform.IsOnWindows())
-                return;
 
             // Works on Linux only
-            signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR1, SigReboot));
-            signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR2, SigReboot));
+            if (KernelPlatform.IsOnUnix())
+            {
+                signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR1, SigReboot));
+                signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR2, SigReboot));
+            }
 
             // Handle window change
             if (KernelPlatform.IsOnUnix())
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGWINCH, SigWindowChange));
             else
-            {
-                // Initialize console resize listener
-                if (Flags.TalkativePreboot)
-                    TextWriterColor.Write(Translate.DoTranslation("Loading resize listener..."));
                 ConsoleResizeListener.StartResizeListener();
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded resize listener.");
-            }
         }
 
         internal static void DisposeHandlers()

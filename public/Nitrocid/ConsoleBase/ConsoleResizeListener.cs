@@ -60,7 +60,7 @@ namespace KS.ConsoleBase
                 var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
                 while (!Flags.KernelShutdown)
                 {
-                    SpinWait.SpinUntil(() => Flags.KernelShutdown, 100);
+                    SpinWait.SpinUntil(() => Flags.KernelShutdown, 10);
 
                     // We need to call the WindowHeight and WindowWidth properties on the Terminal console driver, because
                     // this polling works for all the terminals. Other drivers that don't use the terminal may not even
