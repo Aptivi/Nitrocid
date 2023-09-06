@@ -20,6 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Languages;
@@ -35,6 +36,10 @@ namespace KS.ConsoleBase.Writers.MiscWriters
     {
 
         internal static string customBanner = "";
+        internal static string[] tips = new[]
+        {
+            /* Localizable */ "...that you can get extra tips from the kernel addon shipped with the full build of Nitrocid?"
+        };
 
         /// <summary>
         /// The customized message banner to write. If none is specified, or if it only consists of whitespace, it uses the default message.
@@ -121,6 +126,11 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             TextWriterColor.Write("* " + Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page."), true, KernelColorType.DevelopmentWarning);
             TextWriterColor.Write();
 #endif
+        }
+        
+        internal static void ShowTip()
+        {
+            // TODO: Implement tips
         }
 
     }
