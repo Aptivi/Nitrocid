@@ -463,7 +463,7 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("hwinfo", ShellType, /* Localizable */ "Prints hardware information",
                     new[] {
                         new CommandArgumentInfo(new[] { "HardwareType" }, Array.Empty<SwitchInfo>(), true, 1, false, (_, _, _) => new[] { "HDD", "LogicalParts", "CPU", "GPU", "Sound", "Network", "System", "Machine", "BIOS", "RAM", "all" })
-                    }, new HwInfoCommand())
+                    }, new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
             
             { "if",
