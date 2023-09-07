@@ -22,6 +22,7 @@ using System;
 using System.Linq;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
+using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
@@ -78,6 +79,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         {
                             var lineSpan = location.GetLineSpan();
                             TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console instead of ConsoleWrapper", true, ConsoleColors.Yellow);
+                            if (!string.IsNullOrEmpty(document.FilePath))
+                                LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
                         }
                     }
                 }
