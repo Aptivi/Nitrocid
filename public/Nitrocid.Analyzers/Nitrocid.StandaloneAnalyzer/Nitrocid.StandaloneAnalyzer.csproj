@@ -18,10 +18,6 @@
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
-    <OptionExplicit>On</OptionExplicit>
-    <OptionCompare>Binary</OptionCompare>
-    <OptionStrict>Off</OptionStrict>
-    <OptionInfer>On</OptionInfer>
     <ApplicationIcon>../../Nitrocid/OfficialAppIcon-KernelSimulator.ico</ApplicationIcon>
     <Version>0.1.0</Version>
     <Configurations>Debug;Release</Configurations>

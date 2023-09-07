@@ -39,10 +39,6 @@
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
     <Company>Aptivi</Company>
     <Product>Nitrocid</Product>
-    <OptionExplicit>On</OptionExplicit>
-    <OptionCompare>Binary</OptionCompare>
-    <OptionStrict>Off</OptionStrict>
-    <OptionInfer>On</OptionInfer>
     <Version>0.1.0</Version>
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
