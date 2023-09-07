@@ -73,23 +73,25 @@ namespace KS.Shell.ShellBase.Commands
                 .Where((CommandValuePair) => !CommandValuePair.Value.Flags.HasFlag(CommandFlags.Hidden))
                 .OrderBy((CommandValuePair) => CommandValuePair.Key)
                 .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
+
+            // Add every command from each mod, addon, and alias
+            var ModCommandList = ModManager.ListModCommands(CommandType);
+            var AddonCommandList = ShellManager.GetShellInfo(CommandType).addonCommands;
             var AliasedCommandList = AliasManager.GetAliasesListFromType(CommandType);
 
-            // Add every command from each mod
-            var ModCommandList = ModManager.ListModCommands(CommandType);
-
-            // Add every command from each addon
-            var AddonCommandList = ShellManager.GetShellInfo(CommandType).addonCommands;
-
             // Check to see if command exists
-            if (!string.IsNullOrWhiteSpace(command) & (CommandList.ContainsKey(command) | AliasedCommandList.ContainsKey(command) | ModCommandList.ContainsKey(command) | AddonCommandList.ContainsKey(command)))
+            if (!string.IsNullOrWhiteSpace(command) &&
+                (CommandList.ContainsKey(command) ||
+                AliasedCommandList.Any((info) => info.Alias == command) ||
+                ModCommandList.ContainsKey(command) ||
+                AddonCommandList.ContainsKey(command)))
             {
                 // Found!
                 bool IsMod = ModCommandList.ContainsKey(command);
-                bool IsAlias = AliasedCommandList.ContainsKey(command);
+                bool IsAlias = AliasedCommandList.Any((info) => info.Alias == command);
                 bool IsAddon = AddonCommandList.ContainsKey(command);
-                var FinalCommandList = IsMod ? ModCommandList : IsAddon ? AddonCommandList : CommandList;
-                string FinalCommand = (IsMod || IsAddon) ? command : IsAlias ? AliasedCommandList[command] : command;
+                var FinalCommandList = IsMod ? ModCommandList : IsAddon ? AddonCommandList : IsAlias ? AliasedCommandList.ToDictionary((info) => info.Command, (info) => info.TargetCommand) : CommandList;
+                string FinalCommand = (IsMod || IsAddon) ? command : IsAlias ? AliasManager.GetAlias(command, CommandType).Command : command;
                 string HelpDefinition = IsMod ? FinalCommandList[FinalCommand].HelpDefinition : FinalCommandList[FinalCommand].GetTranslatedHelpEntry();
 
                 // Iterate through command argument information instances
@@ -205,10 +207,10 @@ namespace KS.Shell.ShellBase.Commands
                     TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Alias commands:") + (Flags.ShowCommandsCount & Flags.ShowShellAliasesCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AliasedCommandList.Count);
                     if (AliasedCommandList.Count == 0)
                         TextWriterColor.Write("- " + Translate.DoTranslation("No alias commands."), true, KernelColorType.Warning);
-                    foreach (string cmd in AliasedCommandList.Keys)
+                    foreach (var cmd in AliasedCommandList)
                     {
-                        TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, cmd);
-                        TextWriterColor.Write("{0}", true, KernelColorType.ListValue, CommandList[AliasedCommandList[cmd]].GetTranslatedHelpEntry());
+                        TextWriterColor.Write("- {0} -> {1}: ", false, KernelColorType.ListEntry, cmd.Alias, cmd.Command);
+                        TextWriterColor.Write("{0}", true, KernelColorType.ListValue, cmd.TargetCommand.GetTranslatedHelpEntry());
                     }
 
                     // A tip for you all
@@ -217,17 +219,10 @@ namespace KS.Shell.ShellBase.Commands
                 }
                 else
                 {
-                    // The built-in commands
-                    foreach (string cmd in CommandList.Keys)
+                    var commands = CommandManager.GetCommands(CommandType);
+                    foreach (string cmd in commands.Keys)
                         if ((!CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | CommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Admin) & (Flags.Maintenance & !CommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !Flags.Maintenance))
                             TextWriterColor.Write("{0}, ", false, KernelColorType.ListEntry, cmd);
-
-                    // The mod commands
-                    foreach (string cmd in ModCommandList.Keys)
-                        TextWriterColor.Write("{0}, ", false, KernelColorType.ListEntry, cmd);
-
-                    // The alias commands
-                    TextWriterColor.Write(string.Join(", ", AliasedCommandList.Keys), true, KernelColorType.ListEntry);
                 }
             }
             else

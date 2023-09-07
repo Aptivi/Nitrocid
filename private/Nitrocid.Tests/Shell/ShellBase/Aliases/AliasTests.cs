@@ -50,7 +50,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         public void TestAddAlias(ShellType type, string source, string target)
         {
             AliasManager.AddAlias(source, target, type).ShouldBeTrue();
-            AliasManager.DoesAliasExistLocal(target, type).ShouldBeTrue();
             AliasManager.SaveAliases();
             AliasManager.DoesAliasExist(target, type).ShouldBeTrue();
         }
@@ -77,7 +76,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         public void TestAddAlias(string type, string source, string target)
         {
             AliasManager.AddAlias(source, target, type).ShouldBeTrue();
-            AliasManager.DoesAliasExistLocal(target, type).ShouldBeTrue();
             AliasManager.SaveAliases();
             AliasManager.DoesAliasExist(target, type).ShouldBeTrue();
         }
@@ -104,7 +102,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         public void TestAddAliasForUnifiedCommand(ShellType type)
         {
             AliasManager.AddAlias("exit", "quit", type).ShouldBeTrue();
-            AliasManager.DoesAliasExistLocal("quit", type).ShouldBeTrue();
             AliasManager.SaveAliases();
             AliasManager.DoesAliasExist("quit", type).ShouldBeTrue();
         }
@@ -131,7 +128,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         public void TestAddAliasForUnifiedCommand(string type)
         {
             AliasManager.AddAlias("presets", "p", type).ShouldBeTrue();
-            AliasManager.DoesAliasExistLocal("p", type).ShouldBeTrue();
             AliasManager.SaveAliases();
             AliasManager.DoesAliasExist("p", type).ShouldBeTrue();
         }
@@ -159,8 +155,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         {
             AliasManager.InitAliases();
             AliasManager.RemoveAlias(target, type).ShouldBeTrue();
-            AliasManager.DoesAliasExistLocal(target, type).ShouldBeFalse();
-            AliasManager.PurgeAliases();
             AliasManager.SaveAliases();
             AliasManager.DoesAliasExist(target, type).ShouldBeFalse();
         }
@@ -188,8 +182,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         {
             AliasManager.InitAliases();
             AliasManager.RemoveAlias(target, type).ShouldBeTrue();
-            AliasManager.DoesAliasExistLocal(target, type).ShouldBeFalse();
-            AliasManager.PurgeAliases();
             AliasManager.SaveAliases();
             AliasManager.DoesAliasExist(target, type).ShouldBeFalse();
         }
@@ -217,8 +209,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         {
             AliasManager.InitAliases();
             AliasManager.RemoveAlias("quit", type).ShouldBeTrue();
-            AliasManager.DoesAliasExistLocal("quit", type).ShouldBeFalse();
-            AliasManager.PurgeAliases();
             AliasManager.SaveAliases();
             AliasManager.DoesAliasExist("quit", type).ShouldBeFalse();
         }
@@ -246,8 +236,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Aliases
         {
             AliasManager.InitAliases();
             AliasManager.RemoveAlias("p", type).ShouldBeTrue();
-            AliasManager.DoesAliasExistLocal("p", type).ShouldBeFalse();
-            AliasManager.PurgeAliases();
             AliasManager.SaveAliases();
             AliasManager.DoesAliasExist("p", type).ShouldBeFalse();
         }

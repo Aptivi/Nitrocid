@@ -14,10 +14,6 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         object ShellLock { get; }
         /// <summary>
-        /// Shell command aliases
-        /// </summary>
-        Dictionary<string, string> Aliases { get; }
-        /// <summary>
         /// Built-in shell commands
         /// </summary>
         Dictionary<string, CommandInfo> Commands { get; }

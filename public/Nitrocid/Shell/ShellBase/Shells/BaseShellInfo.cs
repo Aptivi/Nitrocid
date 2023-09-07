@@ -27,15 +27,12 @@ namespace KS.Shell.ShellBase.Shells
     /// </summary>
     public abstract class BaseShellInfo : IShellInfo
     {
-        internal Dictionary<string, string> aliases = new();
         internal Dictionary<string, CommandInfo> modCommands = new();
         internal Dictionary<string, CommandInfo> addonCommands = new();
         internal Dictionary<string, PromptPresetBase> customShellPresets = new();
 
         /// <inheritdoc/>
         public virtual object ShellLock => new();
-        /// <inheritdoc/>
-        public virtual Dictionary<string, string> Aliases => aliases;
         /// <inheritdoc/>
         public virtual Dictionary<string, CommandInfo> Commands => new();
         /// <inheritdoc/>

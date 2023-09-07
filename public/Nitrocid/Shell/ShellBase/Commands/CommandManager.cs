@@ -22,6 +22,7 @@ using KS.Languages;
 using KS.Misc.Splash;
 using KS.Misc.Text;
 using KS.Modifications;
+using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
@@ -38,34 +39,37 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type</param>
+        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static bool IsCommandFound(string Command, ShellType ShellType) =>
-            IsCommandFound(Command, ShellManager.GetShellTypeName(ShellType));
+        public static bool IsCommandFound(string Command, ShellType ShellType, bool includeAliases = true) =>
+            IsCommandFound(Command, ShellManager.GetShellTypeName(ShellType), includeAliases);
 
         /// <summary>
         /// Checks to see if the command is found in selected shell command type
         /// </summary>
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type name</param>
+        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static bool IsCommandFound(string Command, string ShellType)
+        public static bool IsCommandFound(string Command, string ShellType, bool includeAliases = true)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
-            return GetCommands(ShellType).ContainsKey(Command);
+            return GetCommands(ShellType, includeAliases).ContainsKey(Command);
         }
 
         /// <summary>
         /// Checks to see if the command is found in all the shells
         /// </summary>
         /// <param name="Command">A command</param>
+        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>True if found; False if not found.</returns>
-        public static bool IsCommandFound(string Command)
+        public static bool IsCommandFound(string Command, bool includeAliases = true)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}", Command);
             bool found = false;
             foreach (var ShellType in ShellManager.AvailableShells.Keys)
             {
-                found = GetCommands(ShellType).ContainsKey(Command);
+                found = GetCommands(ShellType, includeAliases).ContainsKey(Command);
                 if (found)
                     break;
             }
@@ -76,19 +80,22 @@ namespace KS.Shell.ShellBase.Commands
         /// Gets the command dictionary according to the shell type
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType) =>
-            GetCommands(ShellManager.GetShellTypeName(ShellType));
+        /// <param name="includeAliases">Whether to include aliases or not</param>
+        public static Dictionary<string, CommandInfo> GetCommands(ShellType ShellType, bool includeAliases = true) =>
+            GetCommands(ShellManager.GetShellTypeName(ShellType), includeAliases);
 
         /// <summary>
         /// Gets the command dictionary according to the shell type
         /// </summary>
         /// <param name="ShellType">The shell type</param>
-        public static Dictionary<string, CommandInfo> GetCommands(string ShellType)
+        /// <param name="includeAliases">Whether to include aliases or not</param>
+        public static Dictionary<string, CommandInfo> GetCommands(string ShellType, bool includeAliases = true)
         {
             // Individual shells
             var shellInfo = ShellManager.GetShellInfo(ShellType);
             var addonCommands = ShellManager.GetShellInfo(ShellType).addonCommands;
             var modCommands = ModManager.ListModCommands(ShellType);
+            var aliasCommands = AliasManager.GetAliasesListFromType(ShellType);
             Dictionary<string, CommandInfo> FinalCommands = shellInfo.Commands;
 
             // Unified commands
@@ -113,11 +120,14 @@ namespace KS.Shell.ShellBase.Commands
             }
 
             // Aliased commands
-            foreach (string Alias in shellInfo.Aliases.Keys)
+            foreach (var aliasInfo in aliasCommands)
             {
-                string resolved = shellInfo.Aliases[Alias];
-                if (!FinalCommands.ContainsKey(Alias))
-                    FinalCommands.Add(Alias, FinalCommands[resolved]);
+                if (!includeAliases)
+                    break;
+                string alias = aliasInfo.Alias;
+                var resolved = aliasInfo.TargetCommand;
+                if (!FinalCommands.ContainsKey(alias))
+                    FinalCommands.Add(alias, resolved);
             }
 
             return FinalCommands;
@@ -128,21 +138,23 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type</param>
+        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>A <see cref="CommandInfo"/> instance of a specified command</returns>
-        public static CommandInfo GetCommand(string Command, ShellType ShellType) =>
-            GetCommand(Command, ShellManager.GetShellTypeName(ShellType));
+        public static CommandInfo GetCommand(string Command, ShellType ShellType, bool includeAliases = true) =>
+            GetCommand(Command, ShellManager.GetShellTypeName(ShellType), includeAliases);
 
         /// <summary>
         /// Gets a command, specified by the shell type
         /// </summary>
         /// <param name="Command">A command</param>
         /// <param name="ShellType">The shell type name</param>
+        /// <param name="includeAliases">Whether to include aliases or not</param>
         /// <returns>True if found; False if not found or shell type is invalid.</returns>
-        public static CommandInfo GetCommand(string Command, string ShellType)
+        public static CommandInfo GetCommand(string Command, string ShellType, bool includeAliases = true)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, ShellType: {1}", Command, ShellType);
-            var commandList = GetCommands(ShellType);
-            if (!IsCommandFound(Command, ShellType))
+            var commandList = GetCommands(ShellType, includeAliases);
+            if (!IsCommandFound(Command, ShellType, includeAliases))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Command not found."));
             return commandList[Command];
         }

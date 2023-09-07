@@ -70,7 +70,7 @@ namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
             var aliases = AliasManager.GetAliasesListFromType(CommandType);
             var CommandInfo = ModCommands.ContainsKey(Command) ? ModCommands[Command] :
                               ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
-                              aliases.Any((kvp) => kvp.Key.Equals(Command)) ? ShellCommands[aliases.Single((kvp) => kvp.Key.Equals(Command)).Value] :
+                              aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :
                               null;
             if (CommandInfo != null)
                 return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);

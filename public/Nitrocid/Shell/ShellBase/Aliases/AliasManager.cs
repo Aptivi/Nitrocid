@@ -31,7 +31,6 @@ using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 namespace KS.Shell.ShellBase.Aliases
 {
@@ -41,7 +40,7 @@ namespace KS.Shell.ShellBase.Aliases
     public static class AliasManager
     {
 
-        internal static Dictionary<string, string> AliasesToBeRemoved = new();
+        internal static List<AliasInfo> aliases = new();
 
         /// <summary>
         /// Initializes aliases
@@ -51,20 +50,8 @@ namespace KS.Shell.ShellBase.Aliases
             // Get all aliases from file
             Making.MakeFile(Paths.GetKernelPath(KernelPathType.Aliases), false);
             string AliasJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Aliases));
-            var AliasNameToken = JToken.Parse(!string.IsNullOrEmpty(AliasJsonContent) ? AliasJsonContent : "{}");
-            string AliasCmd, ActualCmd;
-            string AliasType;
-
-            foreach (JObject AliasObject in AliasNameToken.Cast<JObject>())
-            {
-                AliasCmd = (string)AliasObject["Alias"];
-                ActualCmd = (string)AliasObject["Command"];
-                AliasType = (string)AliasObject["Type"];
-                DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from Aliases.json to {2} list...", AliasCmd, ActualCmd, AliasType);
-                var TargetAliasList = GetAliasesListFromType(AliasType);
-                TargetAliasList.Remove(AliasCmd);
-                TargetAliasList.Add(AliasCmd, ActualCmd);
-            }
+            var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent);
+            aliases = aliasesArray.ToList();
         }
 
         /// <summary>
@@ -73,33 +60,8 @@ namespace KS.Shell.ShellBase.Aliases
         public static void SaveAliases()
         {
             // Save all aliases
-            foreach (string Shell in ShellManager.AvailableShells.Keys)
-                SaveAliasesInternal(Shell);
-        }
-
-        internal static void SaveAliasesInternal(ShellType ShellType) =>
-            SaveAliasesInternal(ShellManager.GetShellTypeName(ShellType));
-
-        internal static void SaveAliasesInternal(string ShellType)
-        {
-            // Get all aliases from file
-            Making.MakeFile(Paths.GetKernelPath(KernelPathType.Aliases), false);
-            string AliasJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Aliases));
-            var AliasNameToken = JArray.Parse(!string.IsNullOrEmpty(AliasJsonContent) ? AliasJsonContent : "[]");
-
-            // Save the alias
-            var ShellAliases = GetAliasesListFromType(ShellType);
-            for (int i = 0; i <= ShellAliases.Count - 1; i++)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Adding \"{0}\" and \"{1}\" from list to Aliases.json with type {2}...", ShellAliases.Keys.ElementAtOrDefault(i), ShellAliases.Values.ElementAtOrDefault(i), ShellType.ToString());
-                var AliasObject = new JObject() { { "Alias", ShellAliases.Keys.ElementAtOrDefault(i) }, { "Command", ShellAliases.Values.ElementAtOrDefault(i) }, { "Type", ShellType.ToString() } };
-                if (!DoesAliasExist(ShellAliases.Keys.ElementAtOrDefault(i), ShellType))
-                    AliasNameToken.Add(AliasObject);
-            }
-
-            // Save changes
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving aliases... Type: {0}", ShellType.ToString());
-            File.WriteAllText(Paths.GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented));
+            DebugWriter.WriteDebug(DebugLevel.I, "Saving aliases...");
+            File.WriteAllText(Paths.GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(aliases.ToArray(), Formatting.Indented));
         }
 
         /// <summary>
@@ -144,7 +106,6 @@ namespace KS.Shell.ShellBase.Aliases
                     try
                     {
                         RemoveAlias(AliasCmd, Type);
-                        PurgeAliases();
                         TextWriterColor.Write(Translate.DoTranslation("Removed alias {0} successfully."), AliasCmd);
                     }
                     catch (Exception ex)
@@ -209,8 +170,13 @@ namespace KS.Shell.ShellBase.Aliases
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Aliasing {0} to {1}", SourceAlias, Destination);
-                    var TargetAliasList = GetAliasesListFromType(Type);
-                    TargetAliasList.Add(Destination, SourceAlias);
+                    var aliasInstance = new AliasInfo()
+                    {
+                        alias = Destination,
+                        command = SourceAlias,
+                        type = Type,
+                    };
+                    aliases.Add(aliasInstance);
                     return true;
                 }
             }
@@ -238,56 +204,18 @@ namespace KS.Shell.ShellBase.Aliases
         /// <returns>True if successful, False if unsuccessful.</returns>
         public static bool RemoveAlias(string TargetAlias, string Type)
         {
-            // Variables
-            var TargetAliasList = GetAliasesListFromType(Type);
-
             // Do the action!
-            if (TargetAliasList.ContainsKey(TargetAlias))
+            if (DoesAliasExist(TargetAlias, Type))
             {
-                string Aliased = TargetAliasList[TargetAlias];
-                DebugWriter.WriteDebug(DebugLevel.I, "aliases({0}) is found. That makes it {1}", TargetAlias, Aliased);
-                TargetAliasList.Remove(TargetAlias);
-                AliasesToBeRemoved.Add($"{AliasesToBeRemoved.Count + 1}-{TargetAlias}", Type);
-                DebugWriter.WriteDebug(DebugLevel.I, "{0} aliases are to be purged by PurgeAliases()", AliasesToBeRemoved.Count);
-                return true;
+                var AliasInfo = GetAlias(TargetAlias, Type);
+                DebugWriter.WriteDebug(DebugLevel.I, "Target alias {0} is found under type {1}, so removing...", TargetAlias, Type);
+                return aliases.Remove(AliasInfo);
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "{0} is not found in the {1} aliases", TargetAlias, Type.ToString());
                 throw new KernelException(KernelExceptionType.AliasNoSuchAlias, Translate.DoTranslation("Alias {0} is not found to be removed."), TargetAlias);
             }
-        }
-
-        /// <summary>
-        /// Purge aliases that are removed from config
-        /// </summary>
-        public static void PurgeAliases()
-        {
-            // Get all aliases from file
-            Making.MakeFile(Paths.GetKernelPath(KernelPathType.Aliases), false);
-            string AliasJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Aliases));
-            var AliasNameToken = JArray.Parse(!string.IsNullOrEmpty(AliasJsonContent) ? AliasJsonContent : "[]");
-
-            // Purge aliases that are to be removed from config
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} aliases are to be purged...", AliasesToBeRemoved.Count);
-            foreach (string TargetAliasItem in AliasesToBeRemoved.Keys)
-            {
-                for (int RemovedAliasIndex = AliasNameToken.Count - 1; RemovedAliasIndex >= 0; RemovedAliasIndex -= 1)
-                {
-                    var TargetAliasType = AliasesToBeRemoved[TargetAliasItem];
-                    string TargetAlias = TargetAliasItem[(TargetAliasItem.IndexOf("-") + 1)..];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Purging alias {0} out of {1} type {2} target {3}", RemovedAliasIndex, AliasesToBeRemoved.Count, TargetAliasType, TargetAlias);
-                    if ((string)AliasNameToken[RemovedAliasIndex]["Alias"] == TargetAlias & (string)AliasNameToken[RemovedAliasIndex]["Type"] == TargetAliasType.ToString())
-                        AliasNameToken.RemoveAt(RemovedAliasIndex);
-                }
-            }
-
-            // Clear the "to be removed" list of aliases
-            AliasesToBeRemoved.Clear();
-
-            // Save the changes
-            DebugWriter.WriteDebug(DebugLevel.I, "Saving...");
-            File.WriteAllText(Paths.GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(AliasNameToken, Formatting.Indented));
         }
 
         /// <summary>
@@ -305,64 +233,43 @@ namespace KS.Shell.ShellBase.Aliases
         /// <param name="TargetAlias">The existing alias</param>
         /// <param name="Type">The alias type</param>
         /// <returns>True if it exists; false if it doesn't exist</returns>
-        public static bool DoesAliasExist(string TargetAlias, string Type)
-        {
-            // Get all aliases from file
-            Making.MakeFile(Paths.GetKernelPath(KernelPathType.Aliases), false);
-            string AliasJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Aliases));
-            var AliasNameToken = JArray.Parse(!string.IsNullOrEmpty(AliasJsonContent) ? AliasJsonContent : "[]");
-
-            // Check to see if the specified alias exists
-            foreach (JObject AliasName in AliasNameToken.Cast<JObject>())
-            {
-                if ((string)AliasName["Alias"] == TargetAlias & (string)AliasName["Type"] == Type.ToString())
-                    return true;
-            }
-            return false;
-        }
-
-        /// <summary>
-        /// Checks to see if the specified alias exists.
-        /// </summary>
-        /// <param name="TargetAlias">The existing alias</param>
-        /// <param name="Type">The alias type</param>
-        /// <returns>True if it exists; false if it doesn't exist</returns>
-        public static bool DoesAliasExistLocal(string TargetAlias, ShellType Type) =>
-            DoesAliasExistLocal(TargetAlias, ShellManager.GetShellTypeName(Type));
-
-        /// <summary>
-        /// Checks to see if the specified alias exists.
-        /// </summary>
-        /// <param name="TargetAlias">The existing alias</param>
-        /// <param name="Type">The alias type</param>
-        /// <returns>True if it exists; false if it doesn't exist</returns>
-        public static bool DoesAliasExistLocal(string TargetAlias, string Type)
-        {
-            if (Enum.IsDefined(typeof(ShellType), Type))
-            {
-                var TargetAliasList = GetAliasesListFromType(Type);
-                return TargetAliasList.ContainsKey(TargetAlias);
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Type {0} not found.", Type);
-                throw new KernelException(KernelExceptionType.AliasNoSuchType, Translate.DoTranslation("Invalid type {0}."), Type);
-            }
-        }
+        public static bool DoesAliasExist(string TargetAlias, string Type) =>
+            aliases.Any((info) => info.Alias == TargetAlias && info.Type == Type);
 
         /// <summary>
         /// Gets the aliases list from the shell type
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, string> GetAliasesListFromType(ShellType ShellType) => 
+        public static List<AliasInfo> GetAliasesListFromType(ShellType ShellType) => 
             GetAliasesListFromType(ShellManager.GetShellTypeName(ShellType));
 
         /// <summary>
         /// Gets the aliases list from the shell type
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
-        public static Dictionary<string, string> GetAliasesListFromType(string ShellType) => 
-            ShellManager.GetShellInfo(ShellType).Aliases;
+        public static List<AliasInfo> GetAliasesListFromType(string ShellType) =>
+            aliases.Where((info) => info.Type == ShellType).ToList();
 
+        /// <summary>
+        /// Gets the alias.
+        /// </summary>
+        /// <param name="TargetAlias">The existing alias</param>
+        /// <param name="Type">The alias type</param>
+        /// <returns>Alias info if it exists. Throws if it doesn't exist.</returns>
+        public static AliasInfo GetAlias(string TargetAlias, ShellType Type) =>
+            GetAlias(TargetAlias, ShellManager.GetShellTypeName(Type));
+
+        /// <summary>
+        /// Gets the alias.
+        /// </summary>
+        /// <param name="TargetAlias">The existing alias</param>
+        /// <param name="Type">The alias type</param>
+        /// <returns>Alias info if it exists. Throws if it doesn't exist.</returns>
+        public static AliasInfo GetAlias(string TargetAlias, string Type)
+        {
+            if (!DoesAliasExist(TargetAlias, Type))
+                throw new KernelException(KernelExceptionType.AliasNoSuchAlias, Translate.DoTranslation("Alias {0} is not found to be queried."), TargetAlias);
+            return aliases.Single((info) => info.Alias == TargetAlias && info.Type == Type);
+        }
     }
 }

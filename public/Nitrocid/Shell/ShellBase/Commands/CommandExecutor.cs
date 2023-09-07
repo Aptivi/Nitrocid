@@ -34,6 +34,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Threading;
 using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using KS.Shell.ShellBase.Scripting;
+using KS.Shell.ShellBase.Aliases;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -367,9 +368,9 @@ namespace KS.Shell.ShellBase.Commands
                 .Where(CommandInfo => CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                 .Select(CommandInfo => CommandInfo.Command)
                 .ToArray();
-            var WrappableAliases = shellInfo.aliases
-                .Where((kvp) => WrappableCmds.Contains(kvp.Value) || WrappableUnified.Contains(kvp.Value))
-                .Select((kvp) => kvp.Key)
+            var WrappableAliases = AliasManager.GetAliasesListFromType(shellType)
+                .Where((info) => WrappableCmds.Contains(info.Command) || WrappableUnified.Contains(info.Command))
+                .Select((info) => info.Alias)
                 .ToArray();
             var finalWrappables = WrappableCmds
                 .Union(WrappableAliases)
