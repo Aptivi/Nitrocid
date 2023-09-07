@@ -16,13 +16,23 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.ConsoleBase.Writers.MiscWriters;
+using KS.Kernel.Extensions;
+using System;
 
-// Unit tests
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Extras.Tips
+{
+    internal class TipsInit : IAddon
+    {
+        string IAddon.AddonName => "Kernel tips";
 
-// Kernel addons
-[assembly: InternalsVisibleTo("Nitrocid.LanguagePacks")]
-[assembly: InternalsVisibleTo("Nitrocid.ThemePacks")]
-[assembly: InternalsVisibleTo("Nitrocid.Extras.Notes")]
-[assembly: InternalsVisibleTo("Nitrocid.Extras.Tips")]
+        void IAddon.FinalizeAddon() =>
+            WelcomeMessage.tips = TipsList.tips;
+
+        void IAddon.StartAddon()
+        { }
+
+        void IAddon.StopAddon() =>
+            WelcomeMessage.tips = Array.Empty<string>();
+    }
+}

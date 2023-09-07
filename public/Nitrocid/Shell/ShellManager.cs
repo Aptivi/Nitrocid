@@ -111,6 +111,13 @@ namespace KS.Shell
                     }, new HelpUnifiedCommand(), CommandFlags.Wrappable)
             },
 
+            { "tip",
+                new CommandInfo("tip", ShellType.Shell, /* Localizable */ "Shows a random kernel tip",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TipUnifiedCommand())
+            },
+
             { "wrap",
                 new CommandInfo("wrap", ShellType.Shell, /* Localizable */ "Wraps the console output",
                     new[] {

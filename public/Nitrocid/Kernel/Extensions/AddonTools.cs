@@ -103,7 +103,7 @@ namespace KS.Kernel.Extensions
 
                 // Add the addon
                 AddonInfo info = new(addonInstance);
-                if (!addons.Select((addon) => addon.AddonName).Any())
+                if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
                     addons.Add(info);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
             }

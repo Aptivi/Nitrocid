@@ -261,6 +261,11 @@ namespace KS.Kernel
         /// </summary>
         public static bool InputHistoryEnabled =>
             Config.MainConfig.InputHistoryEnabled;
+        /// <summary>
+        /// Show tips on log-in
+        /// </summary>
+        public static bool ShowTip =>
+            Config.MainConfig.ShowTip;
 
         // Private flags
         internal static bool NotifyConfigError;

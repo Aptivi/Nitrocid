@@ -26,6 +26,7 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Probers.Placeholder;
 using KS.Misc.Text;
+using System;
 
 namespace KS.ConsoleBase.Writers.MiscWriters
 {
@@ -36,10 +37,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
     {
 
         internal static string customBanner = "";
-        internal static string[] tips = new[]
-        {
-            /* Localizable */ "...that you can get extra tips from the kernel addon shipped with the full build of Nitrocid?"
-        };
+        internal static string[] tips = Array.Empty<string>();
 
         /// <summary>
         /// The customized message banner to write. If none is specified, or if it only consists of whitespace, it uses the default message.
@@ -130,7 +128,15 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         
         internal static void ShowTip()
         {
-            // TODO: Implement tips
+            // Get a random tip and print it
+            string tip = Translate.DoTranslation("that you can get extra tips from the kernel addon shipped with the full build of Nitrocid?");
+            if (tips.Length > 0)
+            {
+                int tipIdx = RandomDriver.RandomIdx(tips.Length);
+                tip = Translate.DoTranslation(tips[tipIdx]);
+            }
+            TextWriterColor.Write(
+                "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + tip, true, KernelColorType.Tip);
         }
 
     }

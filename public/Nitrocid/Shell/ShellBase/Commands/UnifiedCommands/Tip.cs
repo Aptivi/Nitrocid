@@ -16,13 +16,24 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.ConsoleBase.Writers.MiscWriters;
 
-// Unit tests
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace KS.Shell.ShellBase.Commands.UnifiedCommands
+{
+    /// <summary>
+    /// Gets a random tip
+    /// </summary>
+    /// <remarks>
+    /// You can learn more about what the kernel can do using this command to get a random tip.
+    /// </remarks>
+    class TipUnifiedCommand : BaseCommand, ICommand
+    {
 
-// Kernel addons
-[assembly: InternalsVisibleTo("Nitrocid.LanguagePacks")]
-[assembly: InternalsVisibleTo("Nitrocid.ThemePacks")]
-[assembly: InternalsVisibleTo("Nitrocid.Extras.Notes")]
-[assembly: InternalsVisibleTo("Nitrocid.Extras.Tips")]
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            WelcomeMessage.ShowTip();
+            return 0;
+        }
+
+    }
+}

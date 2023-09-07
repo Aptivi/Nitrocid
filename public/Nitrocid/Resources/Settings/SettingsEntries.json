@@ -589,6 +589,12 @@
                 "Type": "SBoolean",
                 "Variable": "MotdHeadlineBottom",
                 "Description": "Whether to show the MOTD and the headline at the bottom or at the top of the clock"
+            },
+            {
+                "Name": "Show kernel tips",
+                "Type": "SBoolean",
+                "Variable": "ShowTip",
+                "Description": "If enabled, the shell shows you the tips on every login."
             }
         ]
     },

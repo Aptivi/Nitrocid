@@ -225,6 +225,10 @@ namespace KS.Users.Login
             TextWriterColor.Write("* You're running a .NET 7.0 version of Nitrocid KS. This is going to be used as a testing ground to ensure that we can have smooth upgrade experience to .NET 8.0. Meanwhile, you can evaluate this version until .NET 8.0 gets released on November.");
 #endif
 
+            // Show the tip
+            if (Flags.ShowTip)
+                WelcomeMessage.ShowTip();
+
             // Show MOTD
             Flags.ShowMOTDOnceFlag = true;
             if (Flags.ShowMAL)

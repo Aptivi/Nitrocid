@@ -16,13 +16,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
-
-// Unit tests
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
-
-// Kernel addons
-[assembly: InternalsVisibleTo("Nitrocid.LanguagePacks")]
-[assembly: InternalsVisibleTo("Nitrocid.ThemePacks")]
-[assembly: InternalsVisibleTo("Nitrocid.Extras.Notes")]
-[assembly: InternalsVisibleTo("Nitrocid.Extras.Tips")]
+namespace Nitrocid.Extras.Tips
+{
+    internal static class TipsList
+    {
+        internal static string[] tips = new[]
+        {
+            /* Localizable */ "that you can execute process commands in two ways: entering the executable file name directly, and using the 'exec' command?",
+            /* Localizable */ "that you can lock your screen using the 'lockscreen' command?",
+            /* Localizable */ "that you can build your own kernel modifications using C# and Visual Basic?",
+        };
+    }
+}

@@ -714,6 +714,10 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool MotdHeadlineBottom { get; set; }
         /// <summary>
+        /// Show the tip after logging in.
+        /// </summary>
+        public bool ShowTip { get; set; } = true;
+        /// <summary>
         /// Simplified help command for all the shells
         /// </summary>
         public bool SimHelp { get; set; }

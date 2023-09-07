@@ -299,6 +299,9 @@
         "MotdHeadlineBottom": {
             "type": "boolean"
         },
+        "ShowTip": {
+            "type": "boolean"
+        },
         "SimHelp": {
             "type": "boolean"
         },
@@ -865,6 +868,7 @@
         "IncludeDisabled",
         "ModernLogon",
         "MotdHeadlineBottom",
+        "ShowTip",
         "SimHelp",
         "CurrentDir",
         "PathsToLookup",

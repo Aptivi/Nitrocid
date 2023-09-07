@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
-  <!-- Extras.Notes addon General Information -->
+  <!-- Extras.Tips addon General Information -->
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
@@ -10,7 +10,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath Condition=" '$(TargetFramework)' != '' ">..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Notes</OutputPath>
+    <OutputPath Condition=" '$(TargetFramework)' != '' ">..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Tips</OutputPath>
     <Description>Nitrocid KS Extras - Notes</Description>
     <AssemblyTitle>Nitrocid KS Extras - Notes</AssemblyTitle>
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
@@ -26,9 +26,9 @@
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
   </PropertyGroup>
-  <!-- Extras.Notes addon General Information End -->
+  <!-- Extras.Tips addon General Information End -->
 
-  <!-- Extras.Notes addon Platform Information -->
+  <!-- Extras.Tips addon Platform Information -->
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugType>portable</DebugType>
     <DefineDebug>true</DefineDebug>
@@ -46,6 +46,6 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  <!-- Extras.Notes addon Platform Information End -->
+  <!-- Extras.Tips addon Platform Information End -->
 
 </Project>
