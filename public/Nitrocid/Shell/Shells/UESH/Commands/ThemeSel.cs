@@ -92,7 +92,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
                 // Pause until a key is pressed
                 answer = ChoiceStyle.PromptChoice(
-                    TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme to {0}?"), selectedTheme), "y/n",
+                    TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme to {0}?") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? Translate.DoTranslation(Theme.Description) : Theme.Description), "y/n",
                     new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") },
                     ChoiceOutputType.Modern
                 );
