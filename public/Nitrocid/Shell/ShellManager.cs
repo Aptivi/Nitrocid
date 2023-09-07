@@ -303,6 +303,24 @@ namespace KS.Shell
                 // Fire an event of PreExecuteCommand
                 EventsManager.FireEvent(EventType.PreExecuteCommand, ShellType, Command);
 
+                // Initialize local UESH variables (if found)
+                string localVarStoreMatchRegex = /* lang=regex */ @"^\((.+)\)\s+";
+                var localVarStoreMatch = DriverHandler.CurrentRegexpDriverLocal.Match(Command, localVarStoreMatchRegex);
+                string varStoreString = localVarStoreMatch.Groups[1].Value;
+                DebugWriter.WriteDebug(DebugLevel.I, "varStoreString is: {0}", varStoreString);
+                string varStoreStringFull = localVarStoreMatch.Value;
+                var varStoreVars = UESHVariables.GetVariablesFrom(varStoreString);
+
+                // First, check to see if we already have that variable. If we do, get its old value.
+                List<(string, string)> oldVarValues = new();
+                foreach (string varStoreKey in varStoreVars.varStoreKeys)
+                {
+                    if (UESHVariables.Variables.ContainsKey(varStoreKey))
+                        oldVarValues.Add((varStoreKey, UESHVariables.GetVariable(varStoreKey)));
+                }
+                UESHVariables.InitializeVariablesFrom(varStoreString);
+                Command = Command[varStoreStringFull.Length..];
+
                 // Check to see if the command is a comment
                 if ((string.IsNullOrEmpty(Command) | (Command?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
                 {
@@ -462,7 +480,17 @@ namespace KS.Shell
                     }
                 }
 
-                // Fire an event of PostExecuteCommand
+                // Fire an event of PostExecuteCommand and reset all local variables
+                var varStoreKeys = varStoreVars.varStoreKeys;
+                foreach (string varStoreKey in varStoreKeys)
+                    UESHVariables.RemoveVariable(varStoreKey);
+                foreach (var varStoreKeyOld in oldVarValues)
+                {
+                    string key = varStoreKeyOld.Item1;
+                    string value = varStoreKeyOld.Item2;
+                    UESHVariables.InitializeVariable(key);
+                    UESHVariables.SetVariable(key, value);
+                }
                 EventsManager.FireEvent(EventType.PostExecuteCommand, ShellType, Command);
             }
 

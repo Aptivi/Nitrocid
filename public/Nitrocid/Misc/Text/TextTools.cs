@@ -138,7 +138,9 @@ namespace KS.Misc.Text
         public static string ReleaseDoubleQuotes(this string target)
         {
             string ReleasedString = target;
-            if (target.StartsWith("\"") & target.EndsWith("\""))
+            if (target.StartsWith("\"") && target.EndsWith("\"") ||
+                target.StartsWith("'") && target.EndsWith("'") ||
+                target.StartsWith("`") && target.EndsWith("`"))
             {
                 ReleasedString = ReleasedString.Remove(0, 1);
                 ReleasedString = ReleasedString.Remove(ReleasedString.Length - 1);

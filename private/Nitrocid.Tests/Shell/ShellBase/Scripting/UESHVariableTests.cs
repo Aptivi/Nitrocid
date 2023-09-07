@@ -19,6 +19,8 @@
 using KS.Shell.ShellBase.Scripting;
 using NUnit.Framework;
 using Shouldly;
+using System;
+using System.Linq.Expressions;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Scripting
 {
@@ -81,6 +83,46 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
             UESHVariables.Variables.ShouldNotBeNull();
             UESHVariables.Variables.ShouldNotBeEmpty();
             UESHVariables.Variables.Count.ShouldBeGreaterThan(1);
+        }
+
+        /// <summary>
+        /// Tests initializing the variables from...
+        /// </summary>
+        [Test]
+        [TestCase("", "", "")]
+        [TestCase("$test=bar", "$test", "bar")]
+        [TestCase("$test2=bars $test3=\"Nitrocid KS\"", "$test2|$test3", "bars|Nitrocid KS")]
+        [Description("Action")]
+        public void TestInitializeVariablesFrom(string expression, string expectedKeys, string expectedValues)
+        {
+            UESHVariables.InitializeVariablesFrom(expression);
+            string[] expectedKeysArray = string.IsNullOrEmpty(expectedKeys) ? Array.Empty<string>() : expectedKeys.Split('|');
+            string[] expectedValuesArray = string.IsNullOrEmpty(expectedValues) ? Array.Empty<string>() : expectedValues.Split('|');
+            for (int i = 0; i < expectedKeysArray.Length; i++)
+            {
+                string key = expectedKeysArray[i];
+                string value = expectedValuesArray[i];
+                UESHVariables.Variables.ShouldContainKeyAndValue(key, value);
+            }
+        }
+
+        /// <summary>
+        /// Tests getting the variables from...
+        /// </summary>
+        [Test]
+        [TestCase("", "", "")]
+        [TestCase("$test=bar", "$test", "bar")]
+        [TestCase("$test2=bars $test3=\"Nitrocid KS\"", "$test2|$test3", "bars|\"Nitrocid KS\"")]
+        [Description("Action")]
+        public void TestGetVariablesFrom(string expression, string expectedKeys, string expectedValues)
+        {
+            var (varStoreKeys, varStoreValues) = UESHVariables.GetVariablesFrom(expression);
+            string[] expectedKeysArray = string.IsNullOrEmpty(expectedKeys) ? Array.Empty<string>() : expectedKeys.Split('|');
+            string[] expectedValuesArray = string.IsNullOrEmpty(expectedValues) ? Array.Empty<string>() : expectedValues.Split('|');
+            string[] actualKeysArray = varStoreKeys;
+            string[] actualValuesArray = varStoreValues;
+            actualKeysArray.ShouldBe(expectedKeysArray);
+            actualValuesArray.ShouldBe(expectedValuesArray);
         }
 
     }

@@ -18,8 +18,11 @@
 
 using System;
 using System.Collections.Generic;
+using System.Linq;
+using KS.Drivers;
 using KS.Kernel;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using KS.Shell.ShellBase.Shells;
@@ -199,6 +202,52 @@ namespace KS.Shell.ShellBase.Scripting
             var EnvVars = Environment.GetEnvironmentVariables();
             foreach (string EnvVar in EnvVars.Keys)
                 SetVariable(EnvVar, Convert.ToString(EnvVars[EnvVar]));
+        }
+
+        /// <summary>
+        /// Initializes the UESH variables from the expression
+        /// </summary>
+        /// <param name="expression">UESH variable expressions in the form of $var=value</param>
+        public static void InitializeVariablesFrom(string expression)
+        {
+            // Get the variable keys and values
+            expression = string.IsNullOrEmpty(expression) ? "" : expression;
+            var varTuple = GetVariablesFrom(expression);
+            var varStoreKeys = varTuple.varStoreKeys;
+            var varStoreValues = varTuple.varStoreValues;
+
+            // Now, initialize the variables one by one
+            for (int i = 0; i < varStoreKeys.Length; i++)
+            {
+                // Get the key and the value
+                string varStoreKey = varStoreKeys[i];
+                string varStoreValue = varStoreValues[i].ReleaseDoubleQuotes();
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to {1}...", varStoreValue, varStoreKey);
+
+                // Initialize each variable and set them
+                InitializeVariable(varStoreKey);
+                bool result = SetVariable(varStoreKey, varStoreValue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added {0} to {1}: {2}", varStoreValue, varStoreKey, result);
+            }
+        }
+
+        /// <summary>
+        /// Gets the UESH variables from the expression
+        /// </summary>
+        /// <param name="expression">UESH variable expressions in the form of $var=value</param>
+        public static (string[] varStoreKeys, string[] varStoreValues) GetVariablesFrom(string expression)
+        {
+            // Get the variable keys and values
+            expression = string.IsNullOrEmpty(expression) ? "" : expression;
+            string localVarStoreValuesMatch = /* lang=regex */
+                @"((?'key'\$\S+)=(?'value'(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s\)]|\\.)+))+";
+            var varStoreMatches = DriverHandler.CurrentRegexpDriverLocal.Matches(expression, localVarStoreValuesMatch);
+            var varStoreKeys = varStoreMatches
+                .Select((match) => match.Groups["key"].Value).ToArray();
+            var varStoreValues = varStoreMatches
+                .Select((match) => match.Groups["value"].Value).ToArray();
+            DebugWriter.WriteDebug(DebugLevel.I, "Keys: {0} [{1}], Values: {2} [{3}]", varStoreKeys.Length, string.Join(", ", varStoreKeys), varStoreValues.Length, string.Join(", ", varStoreValues));
+            return (varStoreKeys, varStoreValues);
         }
 
     }
