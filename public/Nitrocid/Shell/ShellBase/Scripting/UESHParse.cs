@@ -27,6 +27,7 @@ using System.Collections.Generic;
 using FluentFTP.Helpers;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Scripting.Conditions;
+using KS.ConsoleBase.Writers.MiscWriters;
 
 namespace KS.Shell.ShellBase.Scripting
 {
@@ -44,6 +45,7 @@ namespace KS.Shell.ShellBase.Scripting
         /// <param name="justLint">If true, just lints the script and throws exception if there are parsing errors</param>
         public static void Execute(string ScriptPath, string ScriptArguments, bool justLint = false)
         {
+            int LineNo = 1;
             try
             {
                 // Raise event
@@ -51,7 +53,6 @@ namespace KS.Shell.ShellBase.Scripting
 
                 // Open the script file for reading
                 var FileLines = FileRead.ReadAllLinesNoBlock(ScriptPath);
-                int LineNo = 1;
                 DebugWriter.WriteDebug(DebugLevel.I, "Stream opened. Parsing script");
 
                 // Look for $variables and initialize them
@@ -75,6 +76,7 @@ namespace KS.Shell.ShellBase.Scripting
                 bool newCommandStackRequired = false;
                 bool retryLoopCondition = false;
                 List<(int, int)> whilePlaces = new();
+                LineNo = 1;
                 for (int l = 0; l < FileLines.Length; l++)
                 {
                     // Get line
@@ -92,10 +94,10 @@ namespace KS.Shell.ShellBase.Scripting
 
                         // If it still starts with the new stack indicator, throw an error
                         if (Line.StartsWith('|'))
-                            throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, LineNo);
+                            throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("You can't declare the new block before you place expressions that support the creation, like conditions or loops. The stack number is {0}.") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, LineHandleWriter.RenderLineWithHandle(ScriptPath, LineNo, commandStackNum));
                     }
                     else if (!Line.StartsWith(stackIndicator) && newCommandStackRequired)
-                        throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.") + " {1}:{2}", commandStackNum, ScriptPath, LineNo);
+                        throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("When starting a new block, make sure that you've indented the stack correctly. The stack number is {0}.") + " {1}:{2}\n{3}", commandStackNum, ScriptPath, LineNo, LineHandleWriter.RenderLineWithHandle(ScriptPath, LineNo, commandStackNum));
                     else
                     {
                         if (retryLoopCondition && !justLint)
@@ -214,12 +216,19 @@ namespace KS.Shell.ShellBase.Scripting
                 }
                 EventsManager.FireEvent(EventType.UESHPostExecute, ScriptPath, ScriptArguments);
             }
+            catch (KernelException ex)
+            {
+                EventsManager.FireEvent(EventType.UESHError, ScriptPath, ScriptArguments, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("The script is malformed. Check the script and resolve any errors.") + "\n{0}", ex, LineHandleWriter.RenderLineWithHandle(ScriptPath, LineNo, 0));
+            }
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.UESHError, ScriptPath, ScriptArguments, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute script {0} with arguments {1}: {2}", ScriptPath, ScriptArguments, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("The script is malformed. Check the script and resolve any errors: {0}"), ex, ex.Message);
+                throw new KernelException(KernelExceptionType.UESHScript, Translate.DoTranslation("The script is malformed. Check the script and resolve any errors: {0}") + "\n{1}", ex, ex.Message, LineHandleWriter.RenderLineWithHandle(ScriptPath, LineNo, 0));
             }
         }
 
