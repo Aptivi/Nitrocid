@@ -25,6 +25,7 @@ using KS.Kernel.Time.Renderers;
 using KS.Misc.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Renci.SshNet.Messages;
 using System;
 using System.IO;
 
@@ -69,17 +70,18 @@ namespace KS.Kernel.Journaling
                 // Make a new journal entry and store everything in it
                 Message = TextTools.FormatString(Message, Vars);
                 DebugWriter.WriteDebug(DebugLevel.I, "Journal message {0}, status {1}.", Message, Status.ToString());
-                var JournalEntry =
-                    new JObject(
-                        new JProperty("date", TimeDateRenderers.RenderDate()),
-                        new JProperty("time", TimeDateRenderers.RenderTime()),
-                        new JProperty("status", Status.ToString()),
-                        new JProperty("message", Message)
-                    );
+                var JournalEntry = new JournalEntry()
+                {
+                    date = TimeDateRenderers.RenderDate(),
+                    time = TimeDateRenderers.RenderTime(),
+                    status = Status.ToString(),
+                    message = Message,
+                };
 
                 // Open the journal and add the new journal entry to it
                 var JournalFileObject = JArray.Parse(File.ReadAllText(JournalPath));
-                JournalFileObject.Add(JournalEntry);
+                var journalObject = JObject.FromObject(JournalEntry);
+                JournalFileObject.Add(journalObject);
 
                 // Save the journal with the changes in it
                 File.WriteAllText(JournalPath, JsonConvert.SerializeObject(JournalFileObject, Formatting.Indented));
@@ -88,24 +90,35 @@ namespace KS.Kernel.Journaling
         }
 
         /// <summary>
+        /// Gets the journal entries
+        /// </summary>
+        /// <returns>An array of journal entries</returns>
+        public static JournalEntry[] GetJournalEntries()
+        {
+            // If the journal path is null, bail
+            if (string.IsNullOrEmpty(JournalPath))
+                return Array.Empty<JournalEntry>();
+
+            // Now, parse the journal
+            var journals = JsonConvert.DeserializeObject<JournalEntry[]>(File.ReadAllText(JournalPath));
+            return journals;
+        }
+
+        /// <summary>
         /// Prints the current journal log
         /// </summary>
         public static void PrintJournalLog()
         {
-            // If the journal path is null, bail
-            if (string.IsNullOrEmpty(JournalPath))
-                return;
-
-            // Now, parse the journal
-            var JournalFileObject = JArray.Parse(File.ReadAllText(JournalPath));
-            for (int i = 0; i < JournalFileObject.Count; i++)
+            // Parse the journal
+            var journals = GetJournalEntries();
+            for (int i = 0; i < journals.Length; i++)
             {
                 // Populate variables
-                JToken journal = JournalFileObject[i];
-                string Date = (string)journal["date"];
-                string Time = (string)journal["time"];
-                JournalStatus Status = (JournalStatus)Enum.Parse(typeof(JournalStatus), (string)journal["status"]);
-                string Message = (string)journal["message"];
+                var journal = journals[i];
+                string Date = journal.Date;
+                string Time = journal.Time;
+                JournalStatus Status = (JournalStatus)Enum.Parse(typeof(JournalStatus), journal.Status);
+                string Message = journal.Message;
 
                 // Now, print the entries
                 TextWriterColor.Write($"[{Date} {Time}] [{i + 1}] [{Status}]: ", false, KernelColorType.ListEntry);
