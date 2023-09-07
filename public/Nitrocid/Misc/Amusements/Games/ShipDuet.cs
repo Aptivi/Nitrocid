@@ -45,11 +45,11 @@ namespace KS.Misc.Amusements.Games
         private static bool player2Won = false;
         private static int SpaceshipHeightPlayer1 = 0;
         private readonly static int MaxBulletsPlayer1 = 10;
-        private readonly static List<Tuple<int, int>> BulletsPlayer1 = new();
+        private readonly static List<(int, int)> BulletsPlayer1 = new();
         private static int SpaceshipHeightPlayer2 = 0;
         private readonly static int MaxBulletsPlayer2 = 10;
-        private readonly static List<Tuple<int, int>> BulletsPlayer2 = new();
-        private readonly static List<Tuple<int, int>> Stars = new();
+        private readonly static List<(int, int)> BulletsPlayer2 = new();
+        private readonly static List<(int, int)> Stars = new();
 
         /// <summary>
         /// Use PowerLine characters for the spaceship?
@@ -147,7 +147,7 @@ namespace KS.Misc.Amusements.Games
                     break;
                 case ConsoleKey.Enter:
                     if (BulletsPlayer1.Count < MaxBulletsPlayer1)
-                        BulletsPlayer1.Add(new Tuple<int, int>(1, SpaceshipHeightPlayer1));
+                        BulletsPlayer1.Add((1, SpaceshipHeightPlayer1));
                     break;
                 case ConsoleKey.W:
                     if (SpaceshipHeightPlayer2 > 0)
@@ -159,7 +159,7 @@ namespace KS.Misc.Amusements.Games
                     break;
                 case ConsoleKey.Spacebar:
                     if (BulletsPlayer2.Count < MaxBulletsPlayer2)
-                        BulletsPlayer2.Add(new Tuple<int, int>(ConsoleWrapper.WindowWidth - 2, SpaceshipHeightPlayer2));
+                        BulletsPlayer2.Add((ConsoleWrapper.WindowWidth - 2, SpaceshipHeightPlayer2));
                     break;
                 case ConsoleKey.Escape:
                     GameEnded = true;
@@ -189,7 +189,7 @@ namespace KS.Misc.Amusements.Games
                         TextWriterWhereColor.WriteWhere(" ", BulletsPlayer1[Bullet].Item1, BulletsPlayer1[Bullet].Item2);
                         int BulletX = BulletsPlayer1[Bullet].Item1 + 1;
                         int BulletY = BulletsPlayer1[Bullet].Item2;
-                        BulletsPlayer1[Bullet] = new Tuple<int, int>(BulletX, BulletY);
+                        BulletsPlayer1[Bullet] = (BulletX, BulletY);
                     }
 
                     // Move the Player 2 bullets left
@@ -198,7 +198,7 @@ namespace KS.Misc.Amusements.Games
                         TextWriterWhereColor.WriteWhere(" ", BulletsPlayer2[Bullet].Item1, BulletsPlayer2[Bullet].Item2);
                         int BulletX = BulletsPlayer2[Bullet].Item1 - 1;
                         int BulletY = BulletsPlayer2[Bullet].Item2;
-                        BulletsPlayer2[Bullet] = new Tuple<int, int>(BulletX, BulletY);
+                        BulletsPlayer2[Bullet] = (BulletX, BulletY);
                     }
 
                     // Move the stars left
@@ -207,7 +207,7 @@ namespace KS.Misc.Amusements.Games
                         TextWriterWhereColor.WriteWhere(" ", Stars[Star].Item1, Stars[Star].Item2);
                         int StarX = Stars[Star].Item1 - 1;
                         int StarY = Stars[Star].Item2;
-                        Stars[Star] = new Tuple<int, int>(StarX, StarY);
+                        Stars[Star] = (StarX, StarY);
                     }
 
                     // If any bullet is out of X range, delete it
@@ -247,7 +247,7 @@ namespace KS.Misc.Amusements.Games
                     {
                         int StarX = ConsoleWrapper.WindowWidth - 1;
                         int StarY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-                        Stars.Add(new Tuple<int, int>(StarX, StarY));
+                        Stars.Add((StarX, StarY));
                     }
 
                     // Draw the stars, the bullet, and the spaceship if any of them are updated
@@ -332,7 +332,7 @@ namespace KS.Misc.Amusements.Games
             char SpaceshipSymbolP1 = ShipDuetUsePowerLine ? PowerLineSpaceshipP1 : '>';
             char SpaceshipSymbolP2 = ShipDuetUsePowerLine ? PowerLineSpaceshipP2 : '<';
             TextWriterWhereColor.WriteWhere(Convert.ToString(SpaceshipSymbolP1), 0, SpaceshipHeightPlayer1, false, ConsoleColors.Green);
-            TextWriterWhereColor.WriteWhere(Convert.ToString(SpaceshipSymbolP2), Console.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen);
+            TextWriterWhereColor.WriteWhere(Convert.ToString(SpaceshipSymbolP2), ConsoleWrapper.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen);
         }
 
         private static void DrawBullet(int BulletX, int BulletY)

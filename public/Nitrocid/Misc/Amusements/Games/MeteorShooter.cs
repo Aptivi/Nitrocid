@@ -43,9 +43,9 @@ namespace KS.Misc.Amusements.Games
         internal static int meteorSpeed = 10;
         private static int SpaceshipHeight = 0;
         private readonly static int MaxBullets = 10;
-        private readonly static List<Tuple<int, int>> Bullets = new();
+        private readonly static List<(int, int)> Bullets = new();
         private readonly static int MaxMeteors = 10;
-        private readonly static List<Tuple<int, int>> Meteors = new();
+        private readonly static List<(int, int)> Meteors = new();
 
         /// <summary>
         /// Use PowerLine characters for the spaceship?
@@ -133,7 +133,7 @@ namespace KS.Misc.Amusements.Games
                     break;
                 case ConsoleKey.Spacebar:
                     if (Bullets.Count < MaxBullets)
-                        Bullets.Add(new Tuple<int, int>(1, SpaceshipHeight));
+                        Bullets.Add((1, SpaceshipHeight));
                     break;
                 case ConsoleKey.Escape:
                     GameEnded = true;
@@ -161,7 +161,7 @@ namespace KS.Misc.Amusements.Games
                         TextWriterWhereColor.WriteWhere(" ", Meteors[Meteor].Item1, Meteors[Meteor].Item2);
                         int MeteorX = Meteors[Meteor].Item1 - 1;
                         int MeteorY = Meteors[Meteor].Item2;
-                        Meteors[Meteor] = new Tuple<int, int>(MeteorX, MeteorY);
+                        Meteors[Meteor] = (MeteorX, MeteorY);
                     }
 
                     // Move the bullets right
@@ -170,7 +170,7 @@ namespace KS.Misc.Amusements.Games
                         TextWriterWhereColor.WriteWhere(" ", Bullets[Bullet].Item1, Bullets[Bullet].Item2);
                         int BulletX = Bullets[Bullet].Item1 + 1;
                         int BulletY = Bullets[Bullet].Item2;
-                        Bullets[Bullet] = new Tuple<int, int>(BulletX, BulletY);
+                        Bullets[Bullet] = (BulletX, BulletY);
                     }
 
                     // If any bullet is out of X range, delete it
@@ -202,7 +202,7 @@ namespace KS.Misc.Amusements.Games
                     {
                         int MeteorX = ConsoleWrapper.WindowWidth - 1;
                         int MeteorY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight - 1);
-                        Meteors.Add(new Tuple<int, int>(MeteorX, MeteorY));
+                        Meteors.Add((MeteorX, MeteorY));
                     }
 
                     // Draw the meteor, the bullet, and the spaceship if any of them are updated
