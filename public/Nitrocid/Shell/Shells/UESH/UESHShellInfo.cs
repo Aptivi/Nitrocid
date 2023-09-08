@@ -334,7 +334,14 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[] { "ip" }, Array.Empty<SwitchInfo>(), true, 1)
                     }, new DisconnDbgDevCommand(), CommandFlags.Strict)
             },
-            
+
+            { "diskinfo",
+                new CommandInfo("diskinfo", ShellType, /* Localizable */ "Provides information about a disk",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "diskNum" }, Array.Empty<SwitchInfo>(), true, 1, true)
+                    }, new DiskInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+
             { "dismissnotif",
                 new CommandInfo("dismissnotif", ShellType, /* Localizable */ "Dismisses a notification",
                     new[] {
@@ -665,7 +672,14 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[] { "source", "target" }, Array.Empty<SwitchInfo>(), true, 2)
                     }, new MoveCommand())
             },
-            
+
+            { "partinfo",
+                new CommandInfo("partinfo", ShellType, /* Localizable */ "Provides information about a partition from the specified disk",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "diskNum", "partNum" }, Array.Empty<SwitchInfo>(), true, 2, true)
+                    }, new PartInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+
             { "pathfind",
                 new CommandInfo("pathfind", ShellType, /* Localizable */ "Finds a given file name from path lookup directories",
                     new[] {

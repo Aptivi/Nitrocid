@@ -21,44 +21,59 @@ using KS.Kernel.Exceptions;
 using KS.Kernel.Hardware;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using System.Drawing;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Shows hard disk partitions (for scripts)
+    /// Shows hard disk partition info (for scripts)
     /// </summary>
     /// <remarks>
-    /// This shows you a list of hard disk partitions.
+    /// This shows you a hard disk partition info.
     /// </remarks>
-    class LsDiskPartsCommand : BaseCommand, ICommand
+    class PartInfoCommand : BaseCommand, ICommand
     {
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             var driveKeyValues = HardwareProbe.HardwareInfo.Hardware.HDD;
-            var hardDrives = HardwareProbe.HardwareInfo.Hardware.HDD.Keys.ToArray();
+            var hardDrives = driveKeyValues.Keys.ToArray();
             bool isDriveNum = int.TryParse(ListArgsOnly[0], out int driveNum);
             if (isDriveNum && driveNum <= hardDrives.Length)
             {
                 // Get the drive index and get the partition info
                 int driveIdx = driveNum - 1;
-                var parts = driveKeyValues[hardDrives[driveIdx]].Partitions;
-                int partNum = 1;
-                foreach (var part in parts.Values)
+                var partKeyValues = driveKeyValues[hardDrives[driveIdx]].Partitions;
+                var parts = partKeyValues.Keys.ToArray();
+                bool isPartNum = int.TryParse(ListArgsOnly[1], out int partNum);
+                if (isPartNum && partNum <= parts.Length)
                 {
+                    // Get the part index and get the partition info
+                    int partIdx = partNum - 1;
+                    var part = partKeyValues[parts[partIdx]];
+
                     // Write partition information
                     string id = part.ID;
                     string name = part.Name;
+                    string size = part.Size;
+                    string used = part.Used;
+                    string fileSystem = part.FileSystem;
                     TextWriterColor.Write($"[{partNum}] {name}, {id}");
-                    partNum++;
+                    TextWriterColor.Write($"  - {used} / {size}, {fileSystem}");
+                    variableValue = $"[{partNum}] {name}, {id} | {used} / {size}, {fileSystem}";
+                    return 0;
                 }
-                variableValue = $"[{string.Join(", ", parts.Keys)}]";
-                return 0;
+                else
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
+                    return 10000 + (int)KernelExceptionType.Hardware;
+                }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
+                TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
                 return 10000 + (int)KernelExceptionType.Hardware;
             }
         }

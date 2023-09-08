@@ -21,17 +21,19 @@ using KS.Kernel.Exceptions;
 using KS.Kernel.Hardware;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using System.Drawing;
 using System.Linq;
+using System.Xml.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Shows hard disk partitions (for scripts)
+    /// Shows hard disk info (for scripts)
     /// </summary>
     /// <remarks>
-    /// This shows you a list of hard disk partitions.
+    /// This shows you a hard disk info.
     /// </remarks>
-    class LsDiskPartsCommand : BaseCommand, ICommand
+    class DiskInfoCommand : BaseCommand, ICommand
     {
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
@@ -43,22 +45,15 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 // Get the drive index and get the partition info
                 int driveIdx = driveNum - 1;
-                var parts = driveKeyValues[hardDrives[driveIdx]].Partitions;
-                int partNum = 1;
-                foreach (var part in parts.Values)
-                {
-                    // Write partition information
-                    string id = part.ID;
-                    string name = part.Name;
-                    TextWriterColor.Write($"[{partNum}] {name}, {id}");
-                    partNum++;
-                }
-                variableValue = $"[{string.Join(", ", parts.Keys)}]";
+                var drive = driveKeyValues[hardDrives[driveIdx]];
+                TextWriterColor.Write($"[{drive.ID}] {drive.Vendor} {drive.Model}");
+                TextWriterColor.Write($"  - {drive.Size}, {drive.Speed}, {drive.Serial}");
+                variableValue = $"[{drive.ID}] {drive.Vendor} {drive.Model} | {drive.Size}, {drive.Speed}, {drive.Serial}";
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
+                TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
                 return 10000 + (int)KernelExceptionType.Hardware;
             }
         }

@@ -130,6 +130,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.EventManagement,                  Translate.DoTranslation("There was an error when trying to perform an operation for the kernel event management.") },
                 { KernelExceptionType.AddonManagement,                  Translate.DoTranslation("There was an error when trying to perform an operation for the kernel addon management.") },
                 { KernelExceptionType.NoteManagement,                   Translate.DoTranslation("There was an error when trying to perform an operation for the note management.") },
+                { KernelExceptionType.Hardware,                         Translate.DoTranslation("Hardware component management failed.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

@@ -422,6 +422,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// There was an error when trying to perform an operation for the note management.
         /// </summary>
-        NoteManagement
+        NoteManagement,
+        /// <summary>
+        /// Hardware component manager failed.
+        /// </summary>
+        Hardware
     }
 }
