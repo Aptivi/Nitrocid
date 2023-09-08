@@ -72,7 +72,7 @@ namespace KS.Misc.Settings
         /// </summary>
         SPreset,
         /// <summary>
-        /// The value is a shell preset defined using <see cref="IPromptPreset"/> in <see cref="PromptPresetManager.CurrentPresets"/>
+        /// The value is a Figlet font name that allows Settings to use the Figlet font selector.
         /// </summary>
         SFiglet,
     }
