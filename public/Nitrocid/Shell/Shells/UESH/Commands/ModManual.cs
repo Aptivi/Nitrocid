@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Interactive;
 using KS.Modifications;
-using KS.Modifications.ManPages.Interactive;
+using KS.Misc.Interactives;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

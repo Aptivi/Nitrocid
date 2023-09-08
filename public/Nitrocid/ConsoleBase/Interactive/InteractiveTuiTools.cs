@@ -31,7 +31,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Misc.Interactive
+namespace KS.ConsoleBase.Interactive
 {
     /// <summary>
     /// Tools for the interactive TUI implementation
@@ -58,8 +58,8 @@ namespace KS.Misc.Interactive
                     throw new KernelException(KernelExceptionType.InteractiveTui, Translate.DoTranslation("Please provide a base Interactive TUI class and try again."));
 
                 // First, check to see if the interactive TUI has no data source
-                if ((interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null) ||
-                    (CountElements(interactiveTui.PrimaryDataSource) == 0 && CountElements(interactiveTui.SecondaryDataSource) == 0 && !interactiveTui.AcceptsEmptyData))
+                if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
+                    CountElements(interactiveTui.PrimaryDataSource) == 0 && CountElements(interactiveTui.SecondaryDataSource) == 0 && !interactiveTui.AcceptsEmptyData)
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The interactive TUI {0} doesn't contain any data source. This program can't continue."), true, KernelColorType.Error, interactiveTui.GetType().Name);
                     TextWriterColor.Write();
@@ -127,7 +127,7 @@ namespace KS.Misc.Interactive
 
                 // Clear the console to clean up
                 KernelColorTools.LoadBack();
-                
+
                 // If there is a crash, notify the user about it
                 if (notifyCrash)
                 {
@@ -229,7 +229,7 @@ namespace KS.Misc.Interactive
             // Prepare the console
             ConsoleWrapper.CursorVisible = false;
             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
+            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int SeparatorMinimumHeight = 1;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
@@ -262,7 +262,7 @@ namespace KS.Misc.Interactive
                 //       |   and d is the dimension for the second pane interior upper left corner (SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior (usually 2))
 
                 // First, the horizontal and vertical separators
-                var finalForeColorFirstPane  = BaseInteractiveTui.CurrentPane == 1 ? BaseInteractiveTui.PaneSelectedSeparatorColor : BaseInteractiveTui.PaneSeparatorColor;
+                var finalForeColorFirstPane = BaseInteractiveTui.CurrentPane == 1 ? BaseInteractiveTui.PaneSelectedSeparatorColor : BaseInteractiveTui.PaneSeparatorColor;
                 var finalForeColorSecondPane = BaseInteractiveTui.CurrentPane == 2 ? BaseInteractiveTui.PaneSelectedSeparatorColor : BaseInteractiveTui.PaneSeparatorColor;
                 DebugWriter.WriteDebug(DebugLevel.I, "0, {0}, {1}, {2}, {3}, {4}", SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane.PlainSequence, BaseInteractiveTui.PaneBackgroundColor.PlainSequence);
                 BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane, BaseInteractiveTui.PaneBackgroundColor);
@@ -308,12 +308,12 @@ namespace KS.Misc.Interactive
                 "attempted to render TUI items on null");
 
             // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
-            DebugCheck.Assert((!interactiveTui.SecondPaneInteractable && paneNum == 1) || interactiveTui.SecondPaneInteractable,
+            DebugCheck.Assert(!interactiveTui.SecondPaneInteractable && paneNum == 1 || interactiveTui.SecondPaneInteractable,
                 "tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
 
             // Get some positions
             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
+            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int SeparatorMinimumHeightInterior = 2;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
@@ -383,12 +383,12 @@ namespace KS.Misc.Interactive
                 "attempted to render TUI items on null");
 
             // Check to make sure that we're not rendering the second pane on the first-pane-only interactive TUI
-            DebugCheck.Assert((!interactiveTui.SecondPaneInteractable && paneNum == 1) || interactiveTui.SecondPaneInteractable,
+            DebugCheck.Assert(!interactiveTui.SecondPaneInteractable && paneNum == 1 || interactiveTui.SecondPaneInteractable,
                 "tried to render interactive TUI items for the secondary pane on an interactive TUI that only allows interaction from one pane.");
 
             // Get some positions
             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
+            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int SeparatorMinimumHeightInterior = 2;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
@@ -466,7 +466,7 @@ namespace KS.Misc.Interactive
 
             // Populate some positions
             int SeparatorHalfConsoleWidth = ConsoleWrapper.WindowWidth / 2;
-            int SeparatorHalfConsoleWidthInterior = (ConsoleWrapper.WindowWidth / 2) - 2;
+            int SeparatorHalfConsoleWidthInterior = ConsoleWrapper.WindowWidth / 2 - 2;
             int SeparatorMinimumHeight = 1;
             int SeparatorMinimumHeightInterior = 2;
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;

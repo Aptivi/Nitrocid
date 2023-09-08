@@ -29,8 +29,9 @@ using System.Collections;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Contacts;
+using KS.ConsoleBase.Interactive;
 
-namespace KS.Misc.Interactive.Interactives
+namespace KS.Misc.Interactives
 {
     /// <summary>
     /// Contacts manager class

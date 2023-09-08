@@ -24,8 +24,9 @@ using System.Collections;
 using KS.ConsoleBase.Writers.FancyWriters;
 using UnitsNet;
 using FluentFTP.Helpers;
+using KS.ConsoleBase.Interactive;
 
-namespace KS.Misc.Interactive.Interactives
+namespace KS.Misc.Interactives
 {
     /// <summary>
     /// Unit converter TUI class

@@ -18,7 +18,7 @@
 
 using System;
 
-namespace KS.Misc.Interactive
+namespace KS.ConsoleBase.Interactive
 {
     /// <summary>
     /// Interactive TUI binding information class

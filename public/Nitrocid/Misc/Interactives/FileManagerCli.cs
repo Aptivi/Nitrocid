@@ -41,8 +41,9 @@ using KS.Files;
 using KS.Misc.Reflection;
 using System.Reflection;
 using KS.Files.Instances;
+using KS.ConsoleBase.Interactive;
 
-namespace KS.Misc.Interactive.Interactives
+namespace KS.Misc.Interactives
 {
     /// <summary>
     /// File manager class relating to the interactive file manager planned back in 2018

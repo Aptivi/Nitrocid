@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Threading.Interactive;
-using KS.Misc.Interactive;
+using KS.ConsoleBase.Interactive;
+using KS.Misc.Interactives;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

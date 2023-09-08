@@ -16,16 +16,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
-using KS.Misc.Interactive;
 using KS.Misc.Text;
+using KS.Modifications.ManPages;
 using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 
-namespace KS.Modifications.ManPages.Interactive
+namespace KS.Misc.Interactives
 {
     /// <summary>
     /// Manual viewer class

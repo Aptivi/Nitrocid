@@ -20,11 +20,12 @@ using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using KS.Misc.Interactive;
 using KS.Misc.Text;
 using System.Collections;
+using KS.ConsoleBase.Interactive;
+using KS.Kernel.Threading;
 
-namespace KS.Kernel.Threading.Interactive
+namespace KS.Misc.Interactives
 {
     /// <summary>
     /// Task manager class

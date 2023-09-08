@@ -16,9 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Interactive;
 using KS.Kernel.Debugging.Testing.Facades.FacadeData;
 using KS.Languages;
-using KS.Misc.Interactive;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

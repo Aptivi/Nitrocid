@@ -20,10 +20,10 @@ using System;
 using System.Data;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Interactive;
-using KS.Misc.Interactive.Interactives;
+using KS.Misc.Interactives;
 using KS.Shell.ShellBase.Commands;
 using UnitsNet;
 

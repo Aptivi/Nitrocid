@@ -23,7 +23,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Terminaux.Colors;
 
-namespace KS.Misc.Interactive
+namespace KS.ConsoleBase.Interactive
 {
     /// <summary>
     /// A base class for your interactive user interface for terminal apps
