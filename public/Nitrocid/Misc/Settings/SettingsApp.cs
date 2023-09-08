@@ -565,7 +565,7 @@ namespace KS.Misc.Settings
                                 ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)IntSliderMaximumValue), 4, ConsoleWrapper.WindowHeight - 4);
 
                                 // Show the current value
-                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + Convert.ToString(CharManager.GetEsc()) + "[0K", 5, ConsoleWrapper.WindowHeight - 5, false, KernelColorType.NeutralText, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
+                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 5, ConsoleWrapper.WindowHeight - 5, false, KernelColorType.NeutralText, CurrentValue, IntSliderMinimumValue, IntSliderMaximumValue);
 
                                 // Parse the user input
                                 PressedKey = Input.DetectKeypress().Key;

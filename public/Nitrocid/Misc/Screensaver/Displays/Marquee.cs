@@ -318,7 +318,7 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Written result: {0}", MarqueeWritten);
                 if (!MarqueeSettings.MarqueeUseConsoleAPI)
-                    MarqueeWritten += Convert.ToString(CharManager.GetEsc()) + "[0K";
+                    MarqueeWritten += $"{ConsoleExtensions.GetClearLineToRightSequence()}";
 
                 // Set the appropriate cursor position and write the results
                 ConsoleWrapper.SetCursorPosition(CurrentLeft, TopPrinted);

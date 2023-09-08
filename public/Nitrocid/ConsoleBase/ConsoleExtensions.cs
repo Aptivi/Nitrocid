@@ -49,7 +49,14 @@ namespace KS.ConsoleBase
         /// <summary>
         /// Clears the line to the right
         /// </summary>
-        public static void ClearLineToRight() => ConsoleWrapper.Write(Convert.ToString(CharManager.GetEsc()) + "[0K");
+        public static string GetClearLineToRightSequence() =>
+            VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiEraseInLine, 0);
+
+        /// <summary>
+        /// Clears the line to the right
+        /// </summary>
+        public static void ClearLineToRight() =>
+            ConsoleWrapper.Write(GetClearLineToRightSequence());
 
         /// <summary>
         /// Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.

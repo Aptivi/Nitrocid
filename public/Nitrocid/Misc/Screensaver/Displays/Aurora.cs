@@ -109,7 +109,7 @@ namespace KS.Misc.Screensaver.Displays
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}, {2}", red, green, blue);
                 Color storage = new(red, green, blue);
                 if (!ConsoleResizeListener.WasResized(false))
-                    TextWriterColor.Write(Convert.ToString(CharManager.GetEsc()) + "[0K", true, Color.Empty, storage);
+                    TextWriterColor.Write($"{ConsoleExtensions.GetClearLineToRightSequence()}", true, Color.Empty, storage);
             }
             ConsoleWrapper.SetCursorPosition(0, 0);
             ThreadManager.SleepNoBlock(AuroraSettings.AuroraDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

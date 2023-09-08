@@ -194,7 +194,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                     if (AnswerIndex >= AllAnswers.Count)
                     {
                         // Write an empty entry that clears the line
-                        TextWriterColor.Write($"{CharManager.GetEsc()}[0K");
+                        ConsoleExtensions.ClearLineToRight();
                     }
                     else
                     {
@@ -210,7 +210,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                         {
                             string renderedChoice = $" {AnswerInstance.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
-                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}" + $"{CharManager.GetEsc()}[0K";
+                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}" + $"{ConsoleExtensions.GetClearLineToRightSequence()}";
                         }
                         var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ? 
                                           KernelColorType.SelectedOption : 

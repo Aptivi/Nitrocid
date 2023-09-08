@@ -333,7 +333,7 @@ namespace KS.Misc.Screensaver.Displays
                             long travelledTickFromCurrent = currentTick - travelledTicks;
                             DateTime travelled = new(travelledTickFromCurrent);
                             string timeWarpCurrentDate = $"Travelled: {TimeDateRenderers.RenderDate(travelled)}";
-                            TextWriterWhereColor.WriteWhere(timeWarpCurrentDate + $"{Convert.ToString(CharManager.GetEsc()) + "[0K"}", progPosX, textTravelledPosY, black, darkGreen);
+                            TextWriterWhereColor.WriteWhere(timeWarpCurrentDate + $"{$"{ConsoleExtensions.GetClearLineToRightSequence()}"}", progPosX, textTravelledPosY, black, darkGreen);
 
                             // Now, do the glitch
                             bool isGlitch = RandomDriver.RandomChance(currentProg);
