@@ -568,6 +568,13 @@ namespace KS.Shell.Shells.UESH
                     }, new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
            
+            { "lsdiskparts",
+                new CommandInfo("lsdiskparts", ShellType, /* Localizable */ "Lists all the disk partitions",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "diskNumber" }, Array.Empty<SwitchInfo>(), true, 1, true)
+                    }, new LsDiskPartsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+           
             { "lsdisks",
                 new CommandInfo("lsdisks", ShellType, /* Localizable */ "Lists all the disks",
                     new[] {
