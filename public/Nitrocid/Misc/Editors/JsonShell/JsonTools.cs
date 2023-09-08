@@ -178,6 +178,32 @@ namespace KS.Misc.Editors.JsonShell
         }
 
         /// <summary>
+        /// Gets a property in the JSON file. It returns null if not found.
+        /// </summary>
+        /// <param name="ParentProperty">Where is the target property found?</param>
+        /// <param name="Property">The property. You can use JSONPath.</param>
+        public static JToken JsonShell_GetPropertySafe(string ParentProperty, string Property)
+        {
+            if (JsonShellCommon.JsonShell_FileStream is not null)
+            {
+                var TargetToken = JsonShell_GetProperty(ParentProperty);
+                TargetToken = TargetToken.SelectToken(Property);
+                if (TargetToken is not null)
+                {
+                    return TargetToken;
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The JSON editor hasn't opened a file stream yet."));
+            }
+        }
+
+        /// <summary>
         /// Adds a new object to the current JSON file
         /// </summary>
         /// <param name="ParentProperty">Where is the target array found?</param>

@@ -93,7 +93,16 @@ namespace KS.Shell.Shells.Json
                         new CommandArgumentInfo()
                     }, new JsonShell_ExitNoSaveCommand())
             },
-            
+
+            { "findproperty",
+                new CommandInfo("findproperty", ShellType, /* Localizable */ "Finds a property",
+                    new[] {
+                        new CommandArgumentInfo(new[] { "propertyName" }, new[] {
+                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
+                        }, true, 1)
+                    }, new JsonShell_FindPropertyCommand())
+            },
+
             { "jsoninfo",
                 new CommandInfo("jsoninfo", ShellType, /* Localizable */ "Shows information about the JSON file",
                     new[] {

@@ -16,14 +16,22 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.Runtime.CompilerServices;
+using KS.Kernel.Extensions;
 
-// Unit tests
-[assembly: InternalsVisibleTo("Nitrocid.Tests")]
+namespace Nitrocid.Extras.GitShell
+{
+    internal class GitShellInit : IAddon
+    {
+        // TODO: Implement the Git shell with all the Nitrocid presets, since this is only scaffolding code.
+        string IAddon.AddonName => "Git Shell";
 
-// Kernel addons
-[assembly: InternalsVisibleTo("Nitrocid.LanguagePacks")]
-[assembly: InternalsVisibleTo("Nitrocid.ThemePacks")]
-[assembly: InternalsVisibleTo("Nitrocid.Extras.Notes")]
-[assembly: InternalsVisibleTo("Nitrocid.Extras.Tips")]
-[assembly: InternalsVisibleTo("Nitrocid.Extras.GitShell")]
+        void IAddon.FinalizeAddon()
+        { }
+
+        void IAddon.StartAddon()
+        { }
+
+        void IAddon.StopAddon()
+        { }
+    }
+}
