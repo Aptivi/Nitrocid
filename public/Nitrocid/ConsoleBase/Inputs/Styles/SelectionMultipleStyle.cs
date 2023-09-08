@@ -175,8 +175,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int startIndex = answersPerPage * currentPage;
                 int endIndex = (answersPerPage * (currentPage + 1)) - 1;
 
-                // If the current page is different, refresh the entire screen.
-                if (currentPage != lastPage || refreshRequired)
+                // If the refresh is required, refresh the entire screen.
+                if (refreshRequired)
                 {
                     ConsoleWrapper.Clear(true);
                     TextWriterColor.Write(Question, true, KernelColorType.Question);
@@ -184,32 +184,45 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // Populate the answers
                 int renderedAnswers = 0;
-                for (int AnswerIndex = startIndex; AnswerIndex <= endIndex && AnswerIndex <= AllAnswers.Count - 1; AnswerIndex++)
+                for (int AnswerIndex = startIndex; AnswerIndex <= endIndex; AnswerIndex++)
                 {
                     ConsoleWrapper.SetCursorPosition(0, listStartPosition + renderedAnswers);
                     bool AltAnswer = AnswerIndex >= altAnswersFirstIdx;
-                    var AnswerInstance = AllAnswers[AnswerIndex];
-                    string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
-                    string answerIndicator = $"[{(SelectedAnswers.Contains(AnswerIndex + 1) ? "*" : " ")}]";
 
-                    // Get the option
-                    string AnswerOption = $" {AnswerInstance}) {answerIndicator} {AnswerTitle}";
-                    int AnswerTitleLeft = AllAnswers.Max(x => $" {x.ChoiceName}) ".Length);
-                    if (AnswerTitleLeft < ConsoleWrapper.WindowWidth)
+                    // Check to see if we're out of bounds
+                    if (AnswerIndex >= AllAnswers.Count)
                     {
-                        int blankRepeats = AnswerTitleLeft - $" {AnswerInstance.ChoiceName}) ".Length;
-                        AnswerOption = $" {AnswerInstance.ChoiceName}) " + new string(' ', blankRepeats) + $"{answerIndicator} {AnswerTitle}";
+                        // Write an empty entry that clears the line
+                        TextWriterColor.Write($"{CharManager.GetEsc()}[0K");
                     }
-                    var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ? 
-                                      KernelColorType.SelectedOption : 
-                                      AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
-                    AnswerOption = $"{KernelColorTools.GetColor(AnswerColor).VTSequenceForeground}{AnswerOption}";
-                    TextWriterColor.Write(AnswerOption.Truncate(ConsoleWrapper.WindowWidth - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))));
+                    else
+                    {
+                        // Populate the answer
+                        var AnswerInstance = AllAnswers[AnswerIndex];
+                        string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
+                        string answerIndicator = $"[{(SelectedAnswers.Contains(AnswerIndex + 1) ? "*" : " ")}]";
+
+                        // Get the option
+                        string AnswerOption = $" {AnswerInstance}) {answerIndicator} {AnswerTitle}";
+                        int AnswerTitleLeft = AllAnswers.Max(x => $" {x.ChoiceName}) ".Length);
+                        int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
+                        if (AnswerTitleLeft < answerTitleMaxLeft)
+                        {
+                            string renderedChoice = $" {AnswerInstance.ChoiceName}) ";
+                            int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
+                            AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{answerIndicator} {AnswerTitle}" + $"{CharManager.GetEsc()}[0K";
+                        }
+                        var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ?
+                                          KernelColorType.SelectedOption :
+                                          AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
+                        AnswerOption = $"{KernelColorTools.GetColor(AnswerColor).VTSequenceForeground}{AnswerOption}";
+                        TextWriterColor.Write(AnswerOption.Truncate(answerTitleMaxLeft - 3 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))));
+                    }
                     renderedAnswers++;
                 }
 
                 // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
-                // we're not switching pages yet. Switching pages requires clearing the console as per the current implementation.
+                // we're not switching pages yet.
                 if (Flags.EnableScrollBarInSelection)
                     ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 4, false);
 
