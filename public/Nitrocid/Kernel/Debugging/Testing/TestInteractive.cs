@@ -98,6 +98,7 @@ namespace KS.Kernel.Debugging.Testing
             { "TestRNG",                        new TestRNG() },
             { "TestCryptoRNG",                  new TestCryptoRNG() },
             { "TestInputSelection",             new TestInputSelection() },
+            { "TestInputMultiSelection",        new TestInputMultiSelection() },
             { "TestPresentation",               new TestPresentation() },
             { "TestPresentationKiosk",          new TestPresentationKiosk() },
             { "TestPresentationRequired",       new TestPresentationRequired() },
