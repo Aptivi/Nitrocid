@@ -202,15 +202,15 @@ namespace KS.Shell.Shells.UESH
             { "choice",
                 new CommandInfo("choice", ShellType, /* Localizable */ "Makes user choices",
                     new[] {
-                        new CommandArgumentInfo(new[] { "$variable", "answers", "input", "answertitle1", "answertitle2 ..." }, new[] {
+                        new CommandArgumentInfo(new[] { "answers", "input", "answertitle1", "answertitle2 ..." }, new[] {
                             new SwitchInfo("o", /* Localizable */ "One line choice style", false, false, new string[] { "t", "m", "a" }, 0, false),
                             new SwitchInfo("t", /* Localizable */ "Two lines choice style", false, false, new string[] { "o", "m", "a" }, 0, false),
                             new SwitchInfo("m", /* Localizable */ "Modern choice style", false, false, new string[] { "t", "o", "a" }, 0, false),
                             new SwitchInfo("a", /* Localizable */ "Table choice style", false, false, new string[] { "t", "o", "m" }, 0, false),
                             new SwitchInfo("single", /* Localizable */ "The output can be only one character", false, false, new string[] { "multiple" }, 0, false),
                             new SwitchInfo("multiple", /* Localizable */ "The output can be more than a character", false, false, new string[] { "single" }, 0, false)
-                        }, true, 3)
-                    }, new ChoiceCommand(), CommandFlags.SettingVariable)
+                        }, true, 2, true)
+                    }, new ChoiceCommand())
             },
             
             { "chpwd",
@@ -491,21 +491,21 @@ namespace KS.Shell.Shells.UESH
                 new CommandInfo("input", ShellType, /* Localizable */ "Allows user to enter input",
                     new[] {
                         new CommandArgumentInfo(new[] { "question" }, Array.Empty<SwitchInfo>(), true, 1, true)
-                    }, new InputCommand(), CommandFlags.SettingVariable)
+                    }, new InputCommand())
             },
             
             { "jsonbeautify",
                 new CommandInfo("jsonbeautify", ShellType, /* Localizable */ "Beautifies the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1, true)
-                    }, new JsonBeautifyCommand(), CommandFlags.SettingVariable | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    }, new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "jsonminify",
                 new CommandInfo("jsonminify", ShellType, /* Localizable */ "Minifies the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[] { "jsonfile", "output" }, Array.Empty<SwitchInfo>(), true, 1, true)
-                    }, new JsonMinifyCommand(), CommandFlags.SettingVariable | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    }, new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "langman",
@@ -847,8 +847,8 @@ namespace KS.Shell.Shells.UESH
             { "select",
                 new CommandInfo("select", ShellType, /* Localizable */ "Provides a selection choice",
                     new[] {
-                        new CommandArgumentInfo(new[] { "$variable", "answers", "input", "answertitle1", "answertitle2 ..." }, Array.Empty<SwitchInfo>(), true, 3)
-                    }, new SelectCommand(), CommandFlags.SettingVariable)
+                        new CommandArgumentInfo(new[] { "answers", "input", "answertitle1", "answertitle2 ..." }, Array.Empty<SwitchInfo>(), true, 2, true)
+                    }, new SelectCommand())
             },
             
             { "setsaver",
@@ -871,15 +871,15 @@ namespace KS.Shell.Shells.UESH
             { "set",
                 new CommandInfo("set", ShellType, /* Localizable */ "Sets a variable to a value in a script",
                     new[] {
-                        new CommandArgumentInfo(new[] { "$variable", "value" }, Array.Empty<SwitchInfo>(), true, 2)
-                    }, new SetCommand(), CommandFlags.SettingVariable)
+                        new CommandArgumentInfo(new[] { "value" }, Array.Empty<SwitchInfo>(), true, 1, true)
+                    }, new SetCommand())
             },
             
             { "setrange",
                 new CommandInfo("setrange", ShellType, /* Localizable */ "Creates a variable array with the provided values",
                     new[] {
-                        new CommandArgumentInfo(new[] { "$variablename", "value1", "value2", "value3 ..." }, Array.Empty<SwitchInfo>(), true, 2)
-                    }, new SetRangeCommand(), CommandFlags.SettingVariable)
+                        new CommandArgumentInfo(new[] { "value1", "value2", "value3 ..." }, Array.Empty<SwitchInfo>(), true, 1, true)
+                    }, new SetRangeCommand())
             },
             
             { "sftp",

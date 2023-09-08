@@ -18,6 +18,7 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Misc.Text;
@@ -40,17 +41,17 @@ namespace KS.Shell.Shells.UESH.Commands
             var Titles = new List<string>();
 
             // Add the provided working titles
-            if (ListArgsOnly.Length > 3)
-            {
-                Titles.AddRange(ListArgsOnly.Skip(3));
-            }
+            if (ListArgsOnly.Length > 2)
+                Titles.AddRange(ListArgsOnly.Skip(2));
 
             // Prompt for selection
-            UESHCommands.PromptSelectionAndSet(ListArgsOnly[2], ListArgsOnly[0], ListArgsOnly[1], Titles.ToArray());
+            int SelectedAnswer = SelectionStyle.PromptSelection(ListArgsOnly[1], ListArgsOnly[0], Titles.ToArray());
+            variableValue = $"{SelectedAnswer}";
             return 0;
         }
 
-        public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("where <$variable> is any variable that will be used to store response") + CharManager.NewLine + Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"));
+        public override void HelpHelper() =>
+            TextWriterColor.Write(Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"));
 
     }
 }

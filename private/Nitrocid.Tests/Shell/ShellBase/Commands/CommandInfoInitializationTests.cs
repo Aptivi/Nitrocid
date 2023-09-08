@@ -71,7 +71,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
         }
 
@@ -117,7 +116,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
         }
 
@@ -163,7 +161,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
             
             // Check for switch info correctness
@@ -218,7 +215,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness
@@ -273,7 +269,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
         }
 
@@ -319,7 +314,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
         }
 
@@ -365,7 +359,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
             
             // Check for switch info correctness
@@ -420,7 +413,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness
@@ -486,7 +478,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
         }
 
@@ -543,7 +534,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
         }
 
@@ -600,7 +590,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
             
             // Check for switch info correctness
@@ -673,7 +662,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness
@@ -746,7 +734,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
         }
 
@@ -803,7 +790,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
         }
 
@@ -860,7 +846,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness
@@ -933,7 +918,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
-            CommandInstance.Flags.HasFlag(CommandFlags.SettingVariable).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
 
             // Check for switch info correctness

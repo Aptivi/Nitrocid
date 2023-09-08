@@ -18,7 +18,6 @@
 
 using System.Linq;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Scripting;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -33,8 +32,9 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            UESHVariables.SetVariables(ListArgsOnly[0], ListArgsOnly.Skip(1).ToArray());
+            variableValue = $"[{string.Join(", ", ListArgsOnly.ToArray())}]";
             return 0;
         }
+
     }
 }

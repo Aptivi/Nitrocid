@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Scripting;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -32,7 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            UESHVariables.SetVariable(ListArgsOnly[0], ListArgsOnly[1]);
+            variableValue = ListArgsOnly[0];
             return 0;
         }
     }

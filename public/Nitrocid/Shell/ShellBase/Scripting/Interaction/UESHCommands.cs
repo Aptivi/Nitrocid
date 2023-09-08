@@ -25,6 +25,7 @@ namespace KS.Shell.ShellBase.Scripting.Interaction
     /// <summary>
     /// UESH scripting command functions
     /// </summary>
+    [Obsolete("Already made obsolete by the -set switch. Consider using that.")]
     public static class UESHCommands
     {
 

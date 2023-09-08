@@ -80,10 +80,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 PressEnter = false;
 
             // Add the provided working titles
-            if (ListArgsOnly.Length > 3)
-            {
-                Titles.AddRange(ListArgsOnly.Skip(3));
-            }
+            if (ListArgsOnly.Length > 2)
+                Titles.AddRange(ListArgsOnly.Skip(2));
 
             // Check for output type switches
             if (ListSwitchesOnly.Length > 0)
@@ -99,13 +97,13 @@ namespace KS.Shell.Shells.UESH.Commands
             }
 
             // Prompt for choice
-            UESHCommands.PromptChoiceAndSet(ListArgsOnly[2], ListArgsOnly[0], ListArgsOnly[1], Titles.ToArray(), OutputType, PressEnter);
+            string Answer = ChoiceStyle.PromptChoice(ListArgsOnly[1], ListArgsOnly[0], Titles.ToArray(), OutputType, PressEnter);
+            variableValue = Answer;
             return 0;
         }
 
         public override void HelpHelper() =>
-            TextWriterColor.Write(Translate.DoTranslation("where <$variable> is any variable that will be used to store response") + CharManager.NewLine +
-                                  Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"));
+            TextWriterColor.Write(Translate.DoTranslation("where <answers> are one-lettered answers of the question separated in slashes"));
 
     }
 }

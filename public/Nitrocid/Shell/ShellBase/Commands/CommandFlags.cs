@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
+
 namespace KS.Shell.ShellBase.Commands
 {
     /// <summary>
@@ -42,6 +44,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// The command is setting a variable.
         /// </summary>
+        [Obsolete("-set=varname already exists. Use the AcceptsSet parameter from the CommandArgumentInfo constructor instead of this flag.")]
         SettingVariable = 8,
         /// <summary>
         /// Redirection is supported, meaning that all the output to the commands can be redirected to a file.

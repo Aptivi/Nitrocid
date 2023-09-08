@@ -81,7 +81,7 @@ namespace KS.Shell.ShellBase.Scripting
             var CommandArgumentsInfo = ArgumentsParser.ParseShellCommandArguments(cmd, ShellType.Shell);
             string NewCommand = $"{CommandArgumentsInfo.Command} ";
             if (!CommandManager.IsCommandFound(CommandArgumentsInfo.Command) ||
-                !ShellManager.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].Flags.HasFlag(CommandFlags.SettingVariable))
+                !ShellManager.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].CommandArgumentInfo.Any((cai) => cai.AcceptsSet))
             {
                 foreach (string Word in CommandArgumentsInfo.ArgumentsList)
                 {
