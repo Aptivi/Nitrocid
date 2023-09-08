@@ -23,6 +23,8 @@
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- LocaleGen General Information End -->
 

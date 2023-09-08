@@ -44,6 +44,8 @@
     <LangVersion>latest</LangVersion>
     <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <!-- LocaleGen General Information End -->
 

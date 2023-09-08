@@ -6,6 +6,8 @@
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>Nitrocid.Analyzers.Vsix</RootNamespace>
     <AssemblyName>Nitrocid.Analyzers.Vsix</AssemblyName>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup>

@@ -6,6 +6,8 @@
     <OutputPath>..\..\Nitrocid\KSBuild\</OutputPath>
     <LangVersion>latest</LangVersion>
     <RootNamespace>Nitrocid.Analyzers</RootNamespace>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>
