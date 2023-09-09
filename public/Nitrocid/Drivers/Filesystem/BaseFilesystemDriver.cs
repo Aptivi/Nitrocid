@@ -525,7 +525,9 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(File);
             if (Neutralize)
                 File = FS.NeutralizePath(File);
-            return System.IO.File.Exists(File);
+            bool exists = System.IO.File.Exists(File);
+            DebugWriter.WriteDebug(DebugLevel.I, $"Checked {File} for existence: {exists}");
+            return exists;
         }
 
         /// <inheritdoc/>
@@ -552,7 +554,9 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(Folder);
             if (Neutralize)
                 Folder = FS.NeutralizePath(Folder);
-            return Directory.Exists(Folder);
+            bool exists = Directory.Exists(Folder);
+            DebugWriter.WriteDebug(DebugLevel.I, $"Checked {Folder} for existence: {exists}");
+            return exists;
         }
 
         /// <inheritdoc/>
