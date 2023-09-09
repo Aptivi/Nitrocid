@@ -16,23 +16,19 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Writers.MiscWriters;
-using KS.Kernel.Extensions;
-using System;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
-namespace Nitrocid.Extras.Tips
+namespace Nitrocid.Extras.GitShell
 {
-    internal class TipsInit : IAddon
+    internal class GitCommandExec : BaseCommand, ICommand
     {
-        string IAddon.AddonName => "Extras - Kernel Tips";
 
-        void IAddon.FinalizeAddon() =>
-            WelcomeMessage.tips = TipsList.tips;
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        {
+            ShellStart.StartShell("GitShell", ListArgsOnly[0]);
+            return 0;
+        }
 
-        void IAddon.StartAddon()
-        { }
-
-        void IAddon.StopAddon() =>
-            WelcomeMessage.tips = Array.Empty<string>();
     }
 }

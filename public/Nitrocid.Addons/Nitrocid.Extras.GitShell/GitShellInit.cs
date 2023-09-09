@@ -16,22 +16,50 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files;
+using KS.Kernel;
 using KS.Kernel.Extensions;
+using KS.Shell.Prompts;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using LibGit2Sharp;
+using Nitrocid.Extras.GitShell.Git;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.InteropServices;
 
 namespace Nitrocid.Extras.GitShell
 {
     internal class GitShellInit : IAddon
     {
-        // TODO: Implement the Git shell with all the Nitrocid presets, since this is only scaffolding code.
-        string IAddon.AddonName => "Git Shell";
+        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        {
+            { "gitsh",
+                new CommandInfo("gitsh", ShellType.Shell, /* Localizable */ "Git shell",
+                    new[]
+                    {
+                        new CommandArgumentInfo(new[] { "repoPath" }, Array.Empty<SwitchInfo>(), true, 1),
+                    }, new GitCommandExec())
+            },
+        };
+
+        string IAddon.AddonName => "Extras - Git Shell";
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            ShellTypeManager.RegisterShell("GitShell", new GitShellInfo());
+            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+        }
 
         void IAddon.StartAddon()
         { }
 
         void IAddon.StopAddon()
-        { }
+        {
+            ShellTypeManager.UnregisterShell("GitShell");
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+        }
     }
 }
