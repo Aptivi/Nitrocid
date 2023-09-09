@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -26,6 +27,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using Terminaux.Colors;
+using Terminaux.Sequences.Builder;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -140,6 +142,7 @@ namespace KS.Misc.Screensaver.Displays
 
                 // Get the positions and write the block with new color
                 var CurrentFadeColor = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+                var bleedBuilder = new StringBuilder();
                 foreach ((int, int, string) PositionTuple in CoveredPositions)
                 {
                     // Check to see if user decided to resize
@@ -150,8 +153,9 @@ namespace KS.Misc.Screensaver.Displays
                     int PositionLeft = PositionTuple.Item1;
                     int PositionTop = PositionTuple.Item2;
                     string renderedNumber = PositionTuple.Item3;
-                    TextWriterWhereColor.WriteWhere(renderedNumber, PositionLeft, PositionTop, false, CurrentFadeColor, background);
+                    bleedBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, PositionLeft + 1, PositionTop + 1)}{renderedNumber}");
                 }
+                TextWriterWhereColor.WriteWhere(bleedBuilder.ToString(), ColumnLine, 0, false, CurrentFadeColor, background);
 
                 // Delay
                 ThreadManager.SleepNoBlock(MatrixSettings.MatrixDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

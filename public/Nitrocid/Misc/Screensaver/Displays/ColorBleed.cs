@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -26,6 +27,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using Terminaux.Colors;
+using Terminaux.Sequences.Builder;
 
 namespace KS.Misc.Screensaver.Displays
 {
@@ -307,7 +309,7 @@ namespace KS.Misc.Screensaver.Displays
                 if (bleedState.fallState == BleedFallState.Done)
                 {
                     bleedStates.RemoveAt(bleedIdx);
-                    BleedState.reservedColumns.Remove(bleedState.ColumnLine);
+                    bleedState.Unreserve(bleedState.ColumnLine);
                 }
             }
 
@@ -342,9 +344,6 @@ namespace KS.Misc.Screensaver.Displays
             TextWriterWhereColor.WriteWhere(" ", ColumnLine, fallStep, false, Color.Empty, ColorStorage);
             var PositionTuple = new Tuple<int, int>(ColumnLine, fallStep);
             CoveredPositions.Add(PositionTuple);
-
-            // Delay
-            ThreadManager.SleepNoBlock(ColorBleedSettings.ColorBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         internal void Fade()
@@ -367,6 +366,7 @@ namespace KS.Misc.Screensaver.Displays
 
             // Get the positions and write the block with new color
             var CurrentFadeColor = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
+            var bleedBuilder = new StringBuilder();
             foreach (Tuple<int, int> PositionTuple in CoveredPositions)
             {
                 // Check to see if user decided to resize
@@ -376,12 +376,13 @@ namespace KS.Misc.Screensaver.Displays
                 // Actually fade the line out
                 int PositionLeft = PositionTuple.Item1;
                 int PositionTop = PositionTuple.Item2;
-                TextWriterWhereColor.WriteWhere(" ", PositionLeft, PositionTop, false, Color.Empty, CurrentFadeColor);
+                bleedBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, PositionLeft + 1, PositionTop + 1)} ");
             }
-
-            // Delay
-            ThreadManager.SleepNoBlock(ColorBleedSettings.ColorBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            TextWriterWhereColor.WriteWhere(bleedBuilder.ToString(), ColumnLine, 0, false, Color.Empty, CurrentFadeColor);
         }
+
+        internal void Unreserve(int column) =>
+            reservedColumns.Remove(column);
 
         internal BleedState()
         {
