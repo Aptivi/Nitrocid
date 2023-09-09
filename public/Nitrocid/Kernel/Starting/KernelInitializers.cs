@@ -117,7 +117,7 @@ namespace KS.Kernel.Starting
                 ConsoleExtensions.SetBufferSize();
 
             // Initialize console wrappers for TermRead
-            Input.InitializeInputWrappers();
+            Input.InitializeTerminauxWrappers();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
 
             // Show initializing
