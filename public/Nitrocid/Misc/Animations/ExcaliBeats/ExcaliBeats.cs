@@ -19,6 +19,7 @@
 using System;
 using Figletize;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Drivers.RNG;
@@ -97,6 +98,11 @@ namespace KS.Misc.Animations.ExcaliBeats
             double ThresholdGreen = GreenColorNum / (double)maxSteps;
             double ThresholdBlue = BlueColorNum / (double)maxSteps;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color threshold (R;G;B: {0};{1};{2})", ThresholdRed, ThresholdGreen, ThresholdBlue);
+
+            // Flash!
+            KernelColorTools.LoadBack("255;255;255");
+            ThreadManager.SleepNoBlock(20, System.Threading.Thread.CurrentThread);
+            KernelColorTools.LoadBack(0);
 
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";
