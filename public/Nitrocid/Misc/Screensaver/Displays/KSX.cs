@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -100,7 +101,7 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
-                            var figFont = FigletTools.GetFigletFont("Banner");
+                            var figFont = FigletTools.GetFigletFont("banner");
                             int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
                             int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
                             int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
@@ -122,7 +123,7 @@ namespace KS.Misc.Screensaver.Displays
                             var finalCol = currentPulse % 2 == 0 ? green : darkGreen;
 
                             // Pulse the X character, alternating between darkGreen and Green colors
-                            var figFont = FigletTools.GetFigletFont("Banner");
+                            var figFont = FigletTools.GetFigletFont("banner");
                             int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
                             int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
                             int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
@@ -154,7 +155,7 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
-                            var figFont = FigletTools.GetFigletFont("Banner");
+                            var figFont = FigletTools.GetFigletFont("banner");
                             int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
                             int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
                             int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
@@ -205,7 +206,7 @@ namespace KS.Misc.Screensaver.Displays
                         break;
                     case 4:
                         // Print the big 2018
-                        var s4figFont = FigletTools.GetFigletFont("Banner");
+                        var s4figFont = FigletTools.GetFigletFont("banner");
                         int s4figWidth = FigletTools.GetFigletWidth("2018", s4figFont) / 2;
                         int s4figHeight = FigletTools.GetFigletHeight("2018", s4figFont) / 2;
                         int s4consoleX = (ConsoleWrapper.WindowWidth / 2) - s4figWidth;
@@ -357,7 +358,7 @@ namespace KS.Misc.Screensaver.Displays
                         break;
                     case 8:
                         // Print the big SYSTEM ERROR
-                        var s8figFont = FigletTools.GetFigletFont("Banner");
+                        var s8figFont = FigletTools.GetFigletFont("banner");
                         int s8figWidth = FigletTools.GetFigletWidth("SYSTEM ERROR", s8figFont) / 2;
                         int s8figHeight = FigletTools.GetFigletHeight("SYSTEM ERROR", s8figFont) / 2;
                         int s8consoleX = (ConsoleWrapper.WindowWidth / 2) - s8figWidth;

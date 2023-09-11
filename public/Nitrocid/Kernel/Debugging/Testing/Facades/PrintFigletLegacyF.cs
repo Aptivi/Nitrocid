@@ -17,20 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Figgle;
-using Figletize;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
-    internal class PrintFiglet : TestFacade
+    internal class PrintFigletLegacyF : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Print a figlet string to console");
+        public override string TestName => Translate.DoTranslation("Print a figlet string to console with formatting (Legacy)");
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            FigletColor.WriteFiglet("Hello world!", FigletizeFonts.TryGetByName("small"), KernelColorType.Success);
+            FigletColorLegacy.WriteFiglet("Hi, {0}!", FiggleFonts.Small, KernelColorType.Success, "Nitrocid KS");
         }
     }
 }

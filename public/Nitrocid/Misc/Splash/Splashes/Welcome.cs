@@ -27,6 +27,7 @@ using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Sequences.Tools;
 using KS.ConsoleBase.Colors;
+using Figletize;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -75,7 +76,7 @@ namespace KS.Misc.Splash.Splashes
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             string text = Translate.DoTranslation("Welcome!").ToUpper();
-            var figFont = FigletTools.GetFigletFont("Banner3");
+            var figFont = FigletTools.GetFigletFont("banner3");
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleX, consoleY;

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -63,7 +64,7 @@ namespace KS.Misc.Screensaver.Displays
             {
                 // We're at the new year!
                 string currentYearStr = currentYear.ToString();
-                var figFont = FigletTools.GetFigletFont("Banner3");
+                var figFont = FigletTools.GetFigletFont("banner3");
                 int figWidth = FigletTools.GetFigletWidth(currentYearStr, figFont) / 2;
                 int figHeight = FigletTools.GetFigletHeight(currentYearStr, figFont) / 2;
                 int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
@@ -80,7 +81,7 @@ namespace KS.Misc.Screensaver.Displays
             {
                 // Print the countdown, but print the next year first using Figlet
                 string nextYearStr = (currentYear + 1).ToString();
-                var figFont = FigletTools.GetFigletFont("Banner3");
+                var figFont = FigletTools.GetFigletFont("banner3");
                 int figWidth = FigletTools.GetFigletWidth(nextYearStr, figFont) / 2;
                 int figHeight = FigletTools.GetFigletHeight(nextYearStr, figFont) / 2;
                 int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;

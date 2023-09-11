@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -94,7 +95,7 @@ namespace KS.Misc.Screensaver.Displays
             }
             set
             {
-                Config.SaverConfig.FigletFont = value;
+                Config.SaverConfig.FigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
             }
         }
         /// <summary>

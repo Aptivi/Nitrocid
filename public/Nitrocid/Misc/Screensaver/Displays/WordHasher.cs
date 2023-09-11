@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
@@ -237,7 +238,7 @@ namespace KS.Misc.Screensaver.Displays
             // Write loading
             string word = Translate.DoTranslation("Loading...");
             string wordHash = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").GetEncryptedString(word);
-            var figFont = FigletTools.GetFigletFont("Small");
+            var figFont = FigletTools.GetFigletFont("small");
             int figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
             int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
             int hashY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
@@ -247,7 +248,7 @@ namespace KS.Misc.Screensaver.Displays
             // Write word and hash
             word = WordManager.GetRandomWord();
             wordHash = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").GetEncryptedString(word);
-            figFont = FigletTools.GetFigletFont("Small");
+            figFont = FigletTools.GetFigletFont("small");
             figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
             consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
             hashY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;

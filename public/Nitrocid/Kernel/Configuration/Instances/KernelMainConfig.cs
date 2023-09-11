@@ -57,6 +57,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
 using KS.Misc.Animations.Lyrics;
 using KS.Misc.Amusements.Games;
+using Figletize;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -139,7 +140,7 @@ namespace KS.Kernel.Configuration.Instances
         public string BannerFigletFont
         {
             get => KernelTools.bannerFigletFont;
-            set => KernelTools.bannerFigletFont = FigletTools.FigletFonts.ContainsKey(value) ? value : "Banner";
+            set => KernelTools.bannerFigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "banner";
         }
         /// <summary>
         /// Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.
@@ -1418,7 +1419,7 @@ namespace KS.Kernel.Configuration.Instances
         public string TimerFigletFont
         {
             get => TimerScreen.timerFigletFont;
-            set => TimerScreen.timerFigletFont = FigletTools.FigletFonts.ContainsKey(value) ? value : "Small";
+            set => TimerScreen.timerFigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
         }
         /// <summary>
         /// Shows the commands count in the command list, controlled by the three count show switches for different kinds of commands.

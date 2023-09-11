@@ -17,19 +17,18 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Figgle;
-using Figletize;
-using Figletize.Utilities;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Misc.Text;
 using Terminaux.Colors;
+using Terminaux.Figlet;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
     /// <summary>
     /// Centered Figlet writer
     /// </summary>
-    public static class CenteredFigletTextColor
+    public static class CenteredFigletTextColorLegacy
     {
 
         /// <summary>
@@ -39,12 +38,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, params object[] Vars)
+        public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, params object[] Vars)
         {
             Text = TextTools.FormatString(Text, Vars);
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+            int figWidth = FiggleTools.GetFigletWidth(Text, FigletFont) / 2;
             int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-            FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, KernelColorType.NeutralText, Vars);
+            FigletWhereColorLegacy.WriteFigletWhere(Text, consoleX, top, true, FigletFont, KernelColorType.NeutralText, Vars);
         }
 
         /// <summary>
@@ -55,7 +54,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
+        public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
             WriteCenteredFiglet(top, FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
@@ -67,7 +66,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
+        public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
             WriteCenteredFiglet(top, FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
@@ -78,7 +77,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
+        public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
             WriteCenteredFiglet(top, FigletFont, Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
@@ -90,7 +89,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
+        public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
             WriteCenteredFiglet(top, FigletFont, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
@@ -101,7 +100,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, Color Color, params object[] Vars) =>
+        public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color Color, params object[] Vars) =>
             WriteCenteredFiglet(top, FigletFont, Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
@@ -113,12 +112,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteCenteredFiglet(int top, FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             Text = TextTools.FormatString(Text, Vars);
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+            int figWidth = FiggleTools.GetFigletWidth(Text, FigletFont) / 2;
             int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-            FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+            FigletWhereColorLegacy.WriteFigletWhere(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
         }
 
         /// <summary>
@@ -127,14 +126,14 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="FigletFont">Figlet font to use in the text.</param>
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, params object[] Vars)
+        public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, params object[] Vars)
         {
             Text = TextTools.FormatString(Text, Vars);
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
+            int figWidth = FiggleTools.GetFigletWidth(Text, FigletFont) / 2;
+            int figHeight = FiggleTools.GetFigletHeight(Text, FigletFont) / 2;
             int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, KernelColorType.NeutralText, Vars);
+            FigletWhereColorLegacy.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, KernelColorType.NeutralText, Vars);
         }
 
         /// <summary>
@@ -144,7 +143,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
+        public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType ColTypes, params object[] Vars) =>
             WriteCenteredFiglet(FigletFont, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
@@ -155,7 +154,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
+        public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
             WriteCenteredFiglet(FigletFont, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
@@ -165,7 +164,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
+        public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, ConsoleColors Color, params object[] Vars) =>
             WriteCenteredFiglet(FigletFont, Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
@@ -176,7 +175,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
+        public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
             WriteCenteredFiglet(FigletFont, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
@@ -186,7 +185,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered figlet.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, Color Color, params object[] Vars) =>
+        public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color Color, params object[] Vars) =>
             WriteCenteredFiglet(FigletFont, Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
@@ -197,14 +196,14 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteCenteredFiglet(FiggleFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             Text = TextTools.FormatString(Text, Vars);
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
+            int figWidth = FiggleTools.GetFigletWidth(Text, FigletFont) / 2;
+            int figHeight = FiggleTools.GetFigletHeight(Text, FigletFont) / 2;
             int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+            FigletWhereColorLegacy.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
         }
 
     }

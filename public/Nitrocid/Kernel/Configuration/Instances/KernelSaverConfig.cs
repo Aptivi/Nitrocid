@@ -1505,7 +1505,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [Figlet] Figlet font supported by the figlet library used.
         /// </summary>
-        public string FigletFont { get; set; } = "Small";
+        public string FigletFont { get; set; } = "small";
         /// <summary>
         /// [Figlet] The minimum red color level (true color)
         /// </summary>

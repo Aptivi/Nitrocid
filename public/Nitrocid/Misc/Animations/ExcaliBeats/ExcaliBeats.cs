@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
@@ -99,7 +100,7 @@ namespace KS.Misc.Animations.ExcaliBeats
 
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";
-            var figFont = FigletTools.GetFigletFont("Banner3");
+            var figFont = FigletTools.GetFigletFont("banner3");
             int figWidth = FigletTools.GetFigletWidth(exStr, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(exStr, figFont) / 2;
             int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;

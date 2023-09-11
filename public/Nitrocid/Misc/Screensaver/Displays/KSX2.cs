@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -207,7 +208,7 @@ namespace KS.Misc.Screensaver.Displays
                             if (showYear)
                             {
                                 KernelColorTools.LoadBack(black);
-                                var s5figFont = FigletTools.GetFigletFont("Banner");
+                                var s5figFont = FigletTools.GetFigletFont("banner");
                                 int s5figWidth = FigletTools.GetFigletWidth("2021", s5figFont) / 2;
                                 int s5figHeight = FigletTools.GetFigletHeight("2021", s5figFont) / 2;
                                 int s5consoleX = (ConsoleWrapper.WindowWidth / 2) - s5figWidth;
@@ -234,7 +235,7 @@ namespace KS.Misc.Screensaver.Displays
                         var targetDate = new DateTime(2021, 4, 30);
                         string renderedTarget = TimeDateRenderers.RenderDate(targetDate, FormatType.Short);
                         string renderedTargetLong = $"     {TimeDateRenderers.RenderDate(targetDate, FormatType.Long)}     ";
-                        var s7figFont = FigletTools.GetFigletFont("Small");
+                        var s7figFont = FigletTools.GetFigletFont("small");
                         int s7figWidth = FigletTools.GetFigletWidth(renderedTarget, s7figFont) / 2;
                         int s7figHeight = FigletTools.GetFigletHeight(renderedTarget, s7figFont) / 2;
                         int s7consoleX = (ConsoleWrapper.WindowWidth / 2) - s7figWidth;
@@ -294,7 +295,7 @@ namespace KS.Misc.Screensaver.Displays
                                 color = new Color(currentRotR, currentRotG, currentRotB);
                             }
                             KernelColorTools.LoadBack(color);
-                            var s5figFont = FigletTools.GetFigletFont("Banner");
+                            var s5figFont = FigletTools.GetFigletFont("banner");
                             int s5figWidth = FigletTools.GetFigletWidth("X", s5figFont) / 2;
                             int s5figHeight = FigletTools.GetFigletHeight("X", s5figFont) / 2;
                             int s5consoleX = (ConsoleWrapper.WindowWidth / 2) - s5figWidth;
@@ -341,7 +342,7 @@ namespace KS.Misc.Screensaver.Displays
 
                             // Now, make a color and fill the console with it
                             Color col = new(currentFigletR, currentFigletG, currentFigletB);
-                            var figFont = FigletTools.GetFigletFont("Banner");
+                            var figFont = FigletTools.GetFigletFont("banner");
                             int figWidth = FigletTools.GetFigletWidth("0.0.16.0 M5", figFont) / 2;
                             int figHeight = FigletTools.GetFigletHeight("0.0.16.0 M5", figFont) / 2;
                             int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;

@@ -38,6 +38,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Misc.Text;
+using Figletize;
 
 namespace KS.Users.Login
 {
@@ -148,7 +149,7 @@ namespace KS.Users.Login
                     {
                         ConsoleWrapper.Clear();
                         cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                        var figFont = FigletTools.GetFigletFont("Banner3");
+                        var figFont = FigletTools.GetFigletFont("banner3");
                         int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
                         CenteredFigletTextColor.WriteCenteredFiglet(figFont, timeStr, KernelColorType.Stage);
 

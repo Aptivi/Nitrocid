@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Figgle;
+using Figletize;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
@@ -29,7 +30,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            FigletColor.WriteFiglet("Hi, {0}!", FiggleFonts.Small, KernelColorType.Success, "Nitrocid KS");
+            FigletColor.WriteFiglet("Hi, {0}!", FigletizeFonts.TryGetByName("small"), KernelColorType.Success, "Nitrocid KS");
         }
     }
 }
