@@ -75,7 +75,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (Parsing.IsBinaryFile(TargetTextFile) && !force)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Can't convert line endings on a binary file since it results in file corruption."), true, KernelColorType.Error);
-                return 6;
+                return 7;
             }
             LineEndingsConverter.ConvertLineEndings(TargetTextFile, TargetLineEnding, force);
             return 0;

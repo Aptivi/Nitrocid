@@ -16,27 +16,31 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using Nitrocid.Extras.Notes.Management;
-using System;
+using LibGit2Sharp;
+using System.Linq;
 
-namespace Nitrocid.Extras.Notes.Commands
+namespace Nitrocid.Extras.GitShell.Git.Commands
 {
-    internal class RemoveNote : BaseCommand, ICommand
+    /// <summary>
+    /// Lists all branches
+    /// </summary>
+    /// <remarks>
+    /// This command lets you list all branches in your Git repository.
+    /// </remarks>
+    class Git_LsBranchesCommand : BaseCommand, ICommand
     {
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            if (ListArgsOnly[0].IsNumeric())
-                NoteManagement.RemoveNote(Convert.ToInt32(ListArgsOnly[0]) - 1);
-            else
+            var branches = GitShellCommon.Repository.Branches;
+            foreach (var branch in branches)
             {
-                TextWriterColor.Write(Translate.DoTranslation("The note ID must be a note number"), true, KernelColorType.Error);
-                return 8;
+                TextWriterColor.Write($"- [{(branch.IsRemote ? "R" : " ")}-{(branch.IsTracking ? "T" : " ")}-{(branch.IsCurrentRepositoryHead ? "H" : " ")}] {branch.CanonicalName} [{branch.FriendlyName}]", true, KernelColorType.ListEntry);
+                TextWriterColor.Write($"  {branch.Tip.Sha[..7]}: {branch.Tip.MessageShort}", true, KernelColorType.ListValue);
             }
             return 0;
         }

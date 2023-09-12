@@ -37,6 +37,23 @@ namespace Nitrocid.Extras.GitShell.Git
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
+            { "checkout",
+                new CommandInfo("checkout", ShellType, /* Localizable */ "Checks out a branch",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "branch")
+                        }, Array.Empty<SwitchInfo>())
+                    }, new Git_CheckoutCommand())
+            },
+            
+            { "lsbranches",
+                new CommandInfo("lsbranches", ShellType, /* Localizable */ "Lists all branches",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Git_LsBranchesCommand())
+            },
+
             { "status",
                 new CommandInfo("status", ShellType, /* Localizable */ "Repository status",
                     new[] {
