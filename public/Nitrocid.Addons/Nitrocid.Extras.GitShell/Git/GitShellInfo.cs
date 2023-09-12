@@ -53,6 +53,20 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo()
                     }, new Git_LsBranchesCommand())
             },
+            
+            { "lsremotes",
+                new CommandInfo("lsremotes", ShellType, /* Localizable */ "Lists all remotes",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Git_LsRemotesCommand())
+            },
+            
+            { "stageall",
+                new CommandInfo("stageall", ShellType, /* Localizable */ "Stages all changes",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Git_StageAllCommand())
+            },
 
             { "status",
                 new CommandInfo("status", ShellType, /* Localizable */ "Repository status",
