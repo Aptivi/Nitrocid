@@ -68,14 +68,23 @@ namespace KS.Shell.Shells.Admin
             { "userflag",
                 new CommandInfo("userflag", ShellType, /* Localizable */ "Manipulates with the user main flags",
                     new[] {
-                        new CommandArgumentInfo(new string[] { "user", "admin/anonymous/disabled", "false/true" }, Array.Empty<SwitchInfo>(), true, 3)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "user"),
+                            new CommandArgumentPart(true, "admin/anonymous/disabled"),
+                            new CommandArgumentPart(true, "false/true")
+                        }, Array.Empty<SwitchInfo>())
                     }, new UserFlagCommand())
             },
 
             { "userlang",
                 new CommandInfo("userlang", ShellType, /* Localizable */ "Changes the preferred user language",
                     new[] {
-                        new CommandArgumentInfo(new string[] { "user", "lang/clear" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "user"),
+                            new CommandArgumentPart(true, "lang/clear")
+                        }, Array.Empty<SwitchInfo>())
                     }, new UserLangCommand())
             },
         };

@@ -16,19 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files;
-using KS.Kernel;
 using KS.Kernel.Extensions;
-using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using LibGit2Sharp;
 using Nitrocid.Extras.GitShell.Git;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Runtime.InteropServices;
 
 namespace Nitrocid.Extras.GitShell
 {
@@ -40,7 +34,10 @@ namespace Nitrocid.Extras.GitShell
                 new CommandInfo("gitsh", ShellType.Shell, /* Localizable */ "Git shell",
                     new[]
                     {
-                        new CommandArgumentInfo(new[] { "repoPath" }, Array.Empty<SwitchInfo>(), true, 1),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "repoPath")
+                        }, Array.Empty<SwitchInfo>()),
                     }, new GitCommandExec())
             },
         };

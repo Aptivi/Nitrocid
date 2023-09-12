@@ -40,28 +40,40 @@ namespace KS.Shell.Shells.SFTP
             { "cat",
                 new CommandInfo("cat", ShellType, /* Localizable */ "Reads the content of a remote file to the console",
                     new[] {
-                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "file")
+                        }, Array.Empty<SwitchInfo>())
                     }, new SFTP_CatCommand(), CommandFlags.Wrappable)
             },
             
             { "cdl",
                 new CommandInfo("cdl", ShellType, /* Localizable */ "Changes local directory to download to or upload from",
                     new[] {
-                        new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "directory")
+                        }, Array.Empty<SwitchInfo>())
                     }, new SFTP_CdlCommand())
             },
             
             { "cdr",
                 new CommandInfo("cdr", ShellType, /* Localizable */ "Changes remote directory to download from or upload to",
                     new[] {
-                        new CommandArgumentInfo(new[] { "directory" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "directory")
+                        }, Array.Empty<SwitchInfo>())
                     }, new SFTP_CdrCommand())
             },
             
             { "del",
                 new CommandInfo("del", ShellType, /* Localizable */ "Deletes remote file from server",
                     new[] {
-                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "file")
+                        }, Array.Empty<SwitchInfo>())
                     }, new SFTP_DelCommand())
             },
             
@@ -75,14 +87,20 @@ namespace KS.Shell.Shells.SFTP
             { "get",
                 new CommandInfo("get", ShellType, /* Localizable */ "Downloads remote file to local directory using binary or text",
                     new[] {
-                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "file")
+                        }, Array.Empty<SwitchInfo>())
                     }, new SFTP_GetCommand())
             },
             
             { "lsl",
                 new CommandInfo("lsl", ShellType, /* Localizable */ "Lists local directory",
                     new[] {
-                        new CommandArgumentInfo(new[] { "dir" }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "dir")
+                        }, new[] {
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", false, false, Array.Empty<string>(), 0, false),
                             new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the \"unauthorized\" messages", false, false, Array.Empty<string>(), 0, false)
                         })
@@ -92,7 +110,10 @@ namespace KS.Shell.Shells.SFTP
             { "lsr",
                 new CommandInfo("lsr", ShellType, /* Localizable */ "Lists remote directory",
                     new[] {
-                        new CommandArgumentInfo(new[] { "dir" }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "dir")
+                        }, new[] {
                             new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new SFTP_LsrCommand(), CommandFlags.Wrappable)
@@ -101,7 +122,10 @@ namespace KS.Shell.Shells.SFTP
             { "put",
                 new CommandInfo("put", ShellType, /* Localizable */ "Uploads local file to remote directory using binary or text",
                     new[] {
-                        new CommandArgumentInfo(new[] { "file" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "file")
+                        }, Array.Empty<SwitchInfo>())
                     }, new SFTP_PutCommand())
             },
             

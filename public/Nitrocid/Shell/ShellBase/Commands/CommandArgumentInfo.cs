@@ -30,25 +30,23 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Does the command require arguments?
         /// </summary>
-        public bool ArgumentsRequired { get; private set; }
+        public bool ArgumentsRequired =>
+            Arguments.Any((part) => part.ArgumentRequired);
         /// <summary>
         /// User must specify at least this number of arguments
         /// </summary>
-        public int MinimumArguments { get; private set; }
+        public int MinimumArguments =>
+            Arguments.Where((part) => part.ArgumentRequired).Count();
         /// <summary>
         /// Command arguments
         /// </summary>
-        public string[] Arguments { get; private set; }
+        public CommandArgumentPart[] Arguments { get; private set; }
         /// <summary>
         /// Command switches
         /// </summary>
         public SwitchInfo[] Switches { get; private set; } = new[] {
             new SwitchInfo("set", /* Localizable */ "Sets the value of the output to the selected UESH variable", false, true)
         };
-        /// <summary>
-        /// Auto completion function delegate
-        /// </summary>
-        public Func<string, int, char[], string[]> AutoCompleter { get; private set; }
         /// <summary>
         /// Whether to accept the -set switch to set the UESH variable value
         /// </summary>
@@ -58,35 +56,31 @@ namespace KS.Shell.ShellBase.Commands
         /// Installs a new instance of the command argument info class
         /// </summary>
         public CommandArgumentInfo()
-            : this(Array.Empty<string>(), Array.Empty<SwitchInfo>(), false, 0) { }
+            : this(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), false)
+        { }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
         /// </summary>
         /// <param name="Arguments">Command arguments</param>
         /// <param name="Switches">Command switches</param>
-        public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches)
-            : this(Arguments, Switches, false, 0) { }
+        public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches)
+            : this(Arguments, Switches, false)
+        { }
 
         /// <summary>
         /// Installs a new instance of the command argument info class
         /// </summary>
         /// <param name="Arguments">Command arguments</param>
         /// <param name="Switches">Command switches</param>
-        /// <param name="ArgumentsRequired">Arguments required</param>
-        /// <param name="MinimumArguments">Minimum arguments</param>
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
-        /// <param name="AutoCompleter">Auto completion function</param>
-        public CommandArgumentInfo(string[] Arguments, SwitchInfo[] Switches, bool ArgumentsRequired, int MinimumArguments, bool AcceptsSet = false, Func<string, int, char[], string[]> AutoCompleter = null)
+        public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet = false)
         {
             this.Arguments = Arguments;
             if (AcceptsSet)
                 this.Switches = this.Switches.Union(Switches).ToArray();
             else
                 this.Switches = Switches;
-            this.ArgumentsRequired = ArgumentsRequired;
-            this.MinimumArguments = MinimumArguments;
-            this.AutoCompleter = AutoCompleter;
             this.AcceptsSet = AcceptsSet;
         }
 

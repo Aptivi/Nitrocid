@@ -31,7 +31,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         {
             { "test",
                 new CommandInfo("test", ShellType, "Test command", new[] {
-                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>())
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>())
                 }, null)
             },
         };

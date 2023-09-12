@@ -40,7 +40,10 @@ namespace KS.Shell.Shells.Hex
             { "addbyte",
                 new CommandInfo("addbyte", ShellType, /* Localizable */ "Adds a new byte at the end of the file",
                     new[] {
-                        new CommandArgumentInfo(new[] { "byte" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "byte")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_AddByteCommand())
             },
             
@@ -61,14 +64,21 @@ namespace KS.Shell.Shells.Hex
             { "delbyte",
                 new CommandInfo("delbyte", ShellType, /* Localizable */ "Deletes a byte using the byte number",
                     new[] {
-                        new CommandArgumentInfo(new[] { "bytenumber" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "bytenumber")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_DelByteCommand())
             },
             
             { "delbytes",
                 new CommandInfo("delbytes", ShellType, /* Localizable */ "Deletes the range of bytes",
                     new[] {
-                        new CommandArgumentInfo(new[] { "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "startbyte"),
+                            new CommandArgumentPart(false, "endbyte")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_DelBytesCommand())
             },
             
@@ -82,21 +92,34 @@ namespace KS.Shell.Shells.Hex
             { "print",
                 new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with byte numbers to the console",
                     new[] {
-                        new CommandArgumentInfo(new[] { "startbyte", "endbyte" }, Array.Empty<SwitchInfo>())
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "startbyte"),
+                            new CommandArgumentPart(false, "endbyte")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "querybyte",
                 new CommandInfo("querybyte", ShellType, /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
                     new[] {
-                        new CommandArgumentInfo(new[] { "byte", "startbyte", "endbyte" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "byte"),
+                            new CommandArgumentPart(false, "startbyte"),
+                            new CommandArgumentPart(false, "endbyte")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_QueryByteCommand(), CommandFlags.Wrappable)
             },
             
             { "replace",
                 new CommandInfo("replace", ShellType, /* Localizable */ "Replaces a byte with another one",
                     new[] {
-                        new CommandArgumentInfo(new[] { "byte", "replacedbyte" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "byte"),
+                            new CommandArgumentPart(true, "replacebyte")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_ReplaceCommand())
             },
             

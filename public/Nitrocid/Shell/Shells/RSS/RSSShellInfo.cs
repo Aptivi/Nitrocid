@@ -40,7 +40,10 @@ namespace KS.Shell.Shells.RSS
             { "articleinfo",
                 new CommandInfo("articleinfo", ShellType, /* Localizable */ "Gets the article info",
                     new[] {
-                        new CommandArgumentInfo(new[] { "feednum" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "feednum")
+                        }, Array.Empty<SwitchInfo>())
                     }, new RSS_ArticleInfoCommand())
             },
 
@@ -82,19 +85,25 @@ namespace KS.Shell.Shells.RSS
             { "read",
                 new CommandInfo("read", ShellType, /* Localizable */ "Reads a feed in a web browser",
                     new[] {
-                        new CommandArgumentInfo(new[] { "feednum" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "feednum")
+                        }, Array.Empty<SwitchInfo>())
                     }, new RSS_ReadCommand())
             },
 
             { "search",
                 new CommandInfo("search", ShellType, /* Localizable */ "Searches the feed for a phrase in title and/or description",
                     new[] {
-                        new CommandArgumentInfo(new[] { "phrase" }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "phrase")
+                        }, new[] {
                             new SwitchInfo("t", /* Localizable */ "Search for title", false, false, Array.Empty<string>(), 0, false),
                             new SwitchInfo("d", /* Localizable */ "Search for description", false, false, Array.Empty<string>(), 0, false),
                             new SwitchInfo("a", /* Localizable */ "Search for title and description", false, false, Array.Empty<string>(), 0, false),
                             new SwitchInfo("cs", /* Localizable */ "Case sensitive search", false, false, Array.Empty<string>(), 0, false)
-                        }, true, 1)
+                        })
                     }, new RSS_SearchCommand(), CommandFlags.Wrappable)
             },
 

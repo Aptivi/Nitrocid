@@ -40,7 +40,11 @@ namespace KS.Shell.Shells.HTTP
             { "addheader",
                 new CommandInfo("addheader", ShellType, /* Localizable */ "Adds a header with the key and the value to all the upcoming requests",
                     new[] {
-                        new CommandArgumentInfo(new[] { "key", "value" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "key"),
+                            new CommandArgumentPart(true, "value")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_AddHeaderCommand())
             },
 
@@ -54,7 +58,10 @@ namespace KS.Shell.Shells.HTTP
             { "delete",
                 new CommandInfo("delete", ShellType, /* Localizable */ "Deletes content from HTTP server",
                     new[] {
-                        new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "request")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_DeleteCommand())
             },
 
@@ -68,21 +75,31 @@ namespace KS.Shell.Shells.HTTP
             { "editheader",
                 new CommandInfo("editheader", ShellType, /* Localizable */ "Edits a key on the header to all the upcoming requests",
                     new[] {
-                        new CommandArgumentInfo(new[] { "key", "value" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "key"),
+                            new CommandArgumentPart(true, "value")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_EditHeaderCommand())
             },
 
             { "get",
                 new CommandInfo("get", ShellType, /* Localizable */ "Gets the response from the HTTP server using the specified request",
                     new[] {
-                        new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "request")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_GetCommand(), CommandFlags.Wrappable)
             },
 
             { "getstring",
                 new CommandInfo("getstring", ShellType, /* Localizable */ "Gets the string from the HTTP server using the specified request",
                     new[] {
-                        new CommandArgumentInfo(new[] { "request" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "request")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_GetStringCommand(), CommandFlags.Wrappable)
             },
 
@@ -96,42 +113,64 @@ namespace KS.Shell.Shells.HTTP
             { "put",
                 new CommandInfo("put", ShellType, /* Localizable */ "Puts the file to the HTTP server using the specified request",
                     new[] {
-                        new CommandArgumentInfo(new[] { "request", "pathtofile" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "request"),
+                            new CommandArgumentPart(true, "pathtofile")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_PutCommand(), CommandFlags.Wrappable)
             },
 
             { "putstring",
                 new CommandInfo("putstring", ShellType, /* Localizable */ "Puts the string to the HTTP server using the specified request",
                     new[] {
-                        new CommandArgumentInfo(new[] { "request", "string" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "request"),
+                            new CommandArgumentPart(true, "string")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_PutStringCommand(), CommandFlags.Wrappable)
             },
 
             { "post",
                 new CommandInfo("post", ShellType, /* Localizable */ "Posts the file to the HTTP server using the specified request",
                     new[] {
-                        new CommandArgumentInfo(new[] { "request", "pathtofile" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "request"),
+                            new CommandArgumentPart(true, "pathtofile")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_PostCommand(), CommandFlags.Wrappable)
             },
 
             { "poststring",
                 new CommandInfo("poststring", ShellType, /* Localizable */ "Posts the string to the HTTP server using the specified request",
                     new[] {
-                        new CommandArgumentInfo(new[] { "request", "string" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "request"),
+                            new CommandArgumentPart(true, "string")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_PostStringCommand(), CommandFlags.Wrappable)
             },
 
             { "rmheader",
                 new CommandInfo("rmheader", ShellType, /* Localizable */ "Removes a key on the header to all the upcoming requests",
                     new[] {
-                        new CommandArgumentInfo(new[] { "key" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "key")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_RmHeaderCommand())
             },
 
             { "setagent",
                 new CommandInfo("setagent", ShellType, /* Localizable */ "Sets a user agent",
                     new[] {
-                        new CommandArgumentInfo(new[] { "userAgent" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "userAgent")
+                        }, Array.Empty<SwitchInfo>())
                     }, new HTTP_SetAgentCommand())
             },
         };

@@ -40,7 +40,10 @@ namespace KS.Shell.Shells.Mail
             { "cd",
                 new CommandInfo("cd", ShellType, /* Localizable */ "Changes current mail directory",
                     new[] {
-                        new CommandArgumentInfo(new[] { "folder" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "folder")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_CdCommand())
             },
             
@@ -61,70 +64,103 @@ namespace KS.Shell.Shells.Mail
             { "list",
                 new CommandInfo("list", ShellType, /* Localizable */ "Downloads messages and lists them",
                     new[] {
-                        new CommandArgumentInfo(new[] { "pagenum" }, Array.Empty<SwitchInfo>())
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "pageNum")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_ListCommand())
             },
             
             { "mkdir",
                 new CommandInfo("mkdir", ShellType, /* Localizable */ "Makes a directory in the current working directory",
                     new[] {
-                        new CommandArgumentInfo(new[] { "foldername" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "foldername")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_MkdirCommand())
             },
             
             { "mv",
                 new CommandInfo("mv", ShellType, /* Localizable */ "Moves a message",
                     new[] {
-                        new CommandArgumentInfo(new[] { "mailid", "targetfolder" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "mailId"),
+                            new CommandArgumentPart(true, "targetFolder")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_MvCommand())
             },
             
             { "mvall",
                 new CommandInfo("mvall", ShellType, /* Localizable */ "Moves all messages from recipient",
                     new[] {
-                        new CommandArgumentInfo(new[] { "sendername", "targetfolder" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "senderName"),
+                            new CommandArgumentPart(true, "targetFolder")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_MvAllCommand())
             },
             
             { "read",
                 new CommandInfo("read", ShellType, /* Localizable */ "Opens a message",
                     new[] {
-                        new CommandArgumentInfo(new[] { "mailid" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "mailid")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_ReadCommand())
             },
             
             { "readenc",
                 new CommandInfo("readenc", ShellType, /* Localizable */ "Opens an encrypted message",
                     new[] {
-                        new CommandArgumentInfo(new[] { "mailid" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "mailid")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_ReadEncCommand())
             },
             
             { "ren",
                 new CommandInfo("ren", ShellType, /* Localizable */ "Renames a folder",
                     new[] {
-                        new CommandArgumentInfo(new[] { "oldfoldername", "newfoldername" }, Array.Empty<SwitchInfo>(), true, 2)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "oldFolderName"),
+                            new CommandArgumentPart(true, "newFolderName")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_RenCommand())
             },
             
             { "rm",
                 new CommandInfo("rm", ShellType, /* Localizable */ "Removes a message",
                     new[] {
-                        new CommandArgumentInfo(new[] { "mailid" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "mailid")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_RmCommand())
             },
             
             { "rmall",
                 new CommandInfo("rmall", ShellType, /* Localizable */ "Removes all messages from recipient",
                     new[] {
-                        new CommandArgumentInfo(new[] { "sendername" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "sendername")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_RmAllCommand())
             },
             
             { "rmdir",
                 new CommandInfo("rmdir", ShellType, /* Localizable */ "Removes a directory from the current working directory",
                     new[] {
-                        new CommandArgumentInfo(new[] { "foldername" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "foldername")
+                        }, Array.Empty<SwitchInfo>())
                     }, new Mail_RmdirCommand())
             },
             

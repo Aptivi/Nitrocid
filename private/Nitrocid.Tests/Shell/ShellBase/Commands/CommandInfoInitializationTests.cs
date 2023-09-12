@@ -50,7 +50,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimple(ShellType type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>()) }, null);
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>())
+                    }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -66,7 +71,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -95,7 +99,15 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArg(ShellType type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>()) }, null);
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, Array.Empty<SwitchInfo>())
+                    }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -111,7 +123,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -140,7 +151,15 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitch(ShellType type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }) }, null);
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                        {
+                            new SwitchInfo("s", "Simple help")
+                        })
+                    }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -156,7 +175,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -194,7 +212,18 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArg(ShellType type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }) }, null);
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, new[]
+                        {
+                            new SwitchInfo("s", "Simple help")
+                        })
+                    }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -210,7 +239,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -248,7 +276,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimple(string type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>()) }, null);
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>())
+                    }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -264,7 +297,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type);
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -293,7 +325,15 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArg(string type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>()) }, null);
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, Array.Empty<SwitchInfo>())
+                    }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -309,7 +349,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type);
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -338,7 +377,15 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitch(string type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }) }, null);
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                        {
+                            new SwitchInfo("s", "Simple help")
+                        })
+                    }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -354,7 +401,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type);
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -392,7 +438,18 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchAndArg(string type)
         {
             // Create instance
-            var CommandInstance = new CommandInfo("help", type, "Help page", new[] { new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }) }, null);
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, new[]
+                        {
+                            new SwitchInfo("s", "Simple help")
+                        })
+                    }, null);
 
             // Check for null
             CommandInstance.ShouldNotBeNull();
@@ -408,7 +465,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type);
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -448,8 +504,8 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page", 
                 new[] {
-                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>()),
-                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>())
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>()),
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>())
                 }, null);
 
             // Check for null
@@ -468,12 +524,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[1].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -504,8 +558,15 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>()),
-                    new CommandArgumentInfo(new[] { "testme", "path" }, Array.Empty<SwitchInfo>(), true, 1),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, Array.Empty<SwitchInfo>()),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "testme"),
+                            new CommandArgumentPart(false, "path"),
+                        }, Array.Empty<SwitchInfo>()),
                 }, null);
 
             // Check for null
@@ -524,12 +585,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeTrue();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(1);
-            CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -560,8 +619,14 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }),
-                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("c", "Complicated help") }),
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                    {
+                        new SwitchInfo("s", "Simple help")
+                    }),
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                    {
+                        new SwitchInfo("c", "Complicated help")
+                    }),
                 }, null);
 
             // Check for null
@@ -580,12 +645,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -632,8 +695,21 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }),
-                    new CommandArgumentInfo(new[] { "testme", "path" }, new[] { new SwitchInfo("c", "Complicated help") }, true, 1),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, new[]
+                        {
+                            new SwitchInfo("s", "Simple help")
+                        }),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "testme"),
+                            new CommandArgumentPart(false, "path"),
+                        }, new[]
+                        {
+                            new SwitchInfo("c", "Complicated help")
+                        }),
                 }, null);
 
             // Check for null
@@ -652,12 +728,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeTrue();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(1);
-            CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -704,8 +778,8 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>()),
-                    new CommandArgumentInfo(Array.Empty<string>(), Array.Empty<SwitchInfo>())
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>()),
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>())
                 }, null);
 
             // Check for null
@@ -724,12 +798,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[1].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -760,8 +832,15 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(new[] { "testarg" }, Array.Empty<SwitchInfo>()),
-                    new CommandArgumentInfo(new[] { "testme", "path" }, Array.Empty<SwitchInfo>(), true, 1),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, Array.Empty<SwitchInfo>()),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "testme"),
+                            new CommandArgumentPart(false, "path"),
+                        }, Array.Empty<SwitchInfo>()),
                 }, null);
 
             // Check for null
@@ -780,12 +859,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeTrue();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(1);
-            CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -816,8 +893,14 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("s", "Simple help") }),
-                    new CommandArgumentInfo(Array.Empty<string>(), new[] { new SwitchInfo("c", "Complicated help") }),
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                    {
+                        new SwitchInfo("s", "Simple help")
+                    }),
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                    {
+                        new SwitchInfo("c", "Complicated help")
+                    }),
                 }, null);
 
             // Check for null
@@ -836,12 +919,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
@@ -888,8 +969,21 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             // Create instance
             var CommandInstance = new CommandInfo("help", type, "Help page",
                 new[] {
-                    new CommandArgumentInfo(new[] { "testarg" }, new[] { new SwitchInfo("s", "Simple help") }),
-                    new CommandArgumentInfo(new[] { "testme", "path" }, new[] { new SwitchInfo("c", "Complicated help") }, true, 1),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, new[]
+                        {
+                            new SwitchInfo("s", "Simple help")
+                        }),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "testme"),
+                            new CommandArgumentPart(false, "path"),
+                        }, new[]
+                        {
+                            new SwitchInfo("c", "Complicated help")
+                        }),
                 }, null);
 
             // Check for null
@@ -908,12 +1002,10 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
             CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
-            CommandInstance.CommandArgumentInfo[0].AutoCompleter.ShouldBeNull();
             CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeTrue();
             CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(1);
-            CommandInstance.CommandArgumentInfo[1].AutoCompleter.ShouldBeNull();
             CommandInstance.Type.ShouldBe(type.ToString());
             CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
             CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();

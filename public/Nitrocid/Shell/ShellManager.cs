@@ -93,7 +93,11 @@ namespace KS.Shell
             { "exec",
                 new CommandInfo("exec", ShellType.Shell, /* Localizable */ "Executes an external process",
                     new[] {
-                        new CommandArgumentInfo(new[] { "process", "args" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "process"),
+                            new CommandArgumentPart(false, "args")
+                        }, Array.Empty<SwitchInfo>())
                     }, new ExecUnifiedCommand())
             },
 
@@ -107,7 +111,10 @@ namespace KS.Shell
             { "help",
                 new CommandInfo("help", ShellType.Shell, /* Localizable */ "Help page",
                     new[] {
-                        new CommandArgumentInfo(new[] { "command" }, Array.Empty<SwitchInfo>(), false, 0, false, (_, _, _) => HelpUnifiedCommand.ListCmds())
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "command", (_, _, _) => HelpUnifiedCommand.ListCmds())
+                        }, Array.Empty<SwitchInfo>(), false)
                     }, new HelpUnifiedCommand(), CommandFlags.Wrappable)
             },
 
@@ -121,7 +128,10 @@ namespace KS.Shell
             { "wrap",
                 new CommandInfo("wrap", ShellType.Shell, /* Localizable */ "Wraps the console output",
                     new[] {
-                        new CommandArgumentInfo(new[] { "command" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "command", (_, _, _) => CommandExecutor.GetWrappableCommands(CurrentShellType))
+                        }, Array.Empty<SwitchInfo>())
                     }, new WrapUnifiedCommand())
             }
         };

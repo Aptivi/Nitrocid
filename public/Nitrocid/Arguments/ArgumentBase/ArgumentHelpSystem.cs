@@ -57,7 +57,7 @@ namespace KS.Arguments.ArgumentBase
                 var argumentInfos = ArgumentList[Argument].ArgArgumentInfo;
                 foreach (var argumentInfo in argumentInfos)
                 {
-                    var Arguments = Array.Empty<string>();
+                    var Arguments = Array.Empty<CommandArgumentPart>();
                     var Switches = Array.Empty<SwitchInfo>();
 
                     // Populate help usages
@@ -87,10 +87,10 @@ namespace KS.Arguments.ArgumentBase
                         // Enumerate through the available arguments
                         int howManyRequired = argumentInfo.MinimumArguments;
                         int queriedArgs = 1;
-                        foreach (string argument in Arguments)
+                        foreach (var argument in Arguments)
                         {
                             bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
-                            string renderedArgument = required ? $" <{argument}>" : $" [{argument}]";
+                            string renderedArgument = required ? $" <{argument.ArgumentExpression}>" : $" [{argument.ArgumentExpression}]";
                             DebugWriter.WriteDebug(DebugLevel.I, "Rendered argument: {0}", renderedArgument);
                             TextWriterColor.Write(renderedArgument, false, KernelColorType.ListEntry);
                         }

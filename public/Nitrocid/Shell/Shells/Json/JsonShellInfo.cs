@@ -40,36 +40,54 @@ namespace KS.Shell.Shells.Json
             { "addarray",
                 new CommandInfo("addarray", ShellType, /* Localizable */ "Adds a new property containing the array",
                     new[] {
-                        new CommandArgumentInfo(new[] { "propertyName", "propertyValue1", "propertyValue2", "propertyValue3..." }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "propName"),
+                            new CommandArgumentPart(true, "propName1"),
+                            new CommandArgumentPart(false, "propName2"),
+                            new CommandArgumentPart(false, "propName3...")
+                        }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
-                        }, true, 2)
+                        })
                     }, new JsonShell_AddArrayCommand())
             },
 
             { "addproperty",
                 new CommandInfo("addproperty", ShellType, /* Localizable */ "Adds a new property at the end of the JSON file",
                     new[] {
-                        new CommandArgumentInfo(new[] { "propertyName", "propertyValue" }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "propName"),
+                            new CommandArgumentPart(true, "propValue")
+                        }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
-                        }, true, 2)
+                        })
                     }, new JsonShell_AddPropertyCommand())
             },
             
             { "addobject",
                 new CommandInfo("addobject", ShellType, /* Localizable */ "Adds a new object inside the array",
                     new[] {
-                        new CommandArgumentInfo(new[] { "arrayName", "valueInArray" }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "arrayName"),
+                            new CommandArgumentPart(true, "valueInArray")
+                        }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
-                        }, true, 2)
+                        })
                     }, new JsonShell_AddObjectCommand())
             },
             
             { "addobjectindexed",
                 new CommandInfo("addobjectindexed", ShellType, /* Localizable */ "Adds a new object inside an object specified by index",
                     new[] {
-                        new CommandArgumentInfo(new[] { "index", "valueInArray" }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "index"),
+                            new CommandArgumentPart(true, "valueInArray")
+                        }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
-                        }, true, 2)
+                        })
                     }, new JsonShell_AddObjectIndexedCommand())
             },
             
@@ -83,7 +101,10 @@ namespace KS.Shell.Shells.Json
             { "delproperty",
                 new CommandInfo("delproperty", ShellType, /* Localizable */ "Removes a property from the JSON file",
                     new[] {
-                        new CommandArgumentInfo(new[] { "propertyName" }, Array.Empty<SwitchInfo>(), true, 1)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "propertyName")
+                        }, Array.Empty<SwitchInfo>())
                     }, new JsonShell_DelPropertyCommand())
             },
             
@@ -97,16 +118,19 @@ namespace KS.Shell.Shells.Json
             { "findproperty",
                 new CommandInfo("findproperty", ShellType, /* Localizable */ "Finds a property",
                     new[] {
-                        new CommandArgumentInfo(new[] { "propertyName" }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "propertyName")
+                        }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
-                        }, true, 1)
+                        })
                     }, new JsonShell_FindPropertyCommand())
             },
 
             { "jsoninfo",
                 new CommandInfo("jsoninfo", ShellType, /* Localizable */ "Shows information about the JSON file",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<string>(), new[] {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
                             new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", false, false, Array.Empty<string>(), 0, false),
                             new SwitchInfo("showvals", /* Localizable */ "Show all values", false, false, Array.Empty<string>(), 0, false)
                         })
@@ -116,32 +140,41 @@ namespace KS.Shell.Shells.Json
             { "print",
                 new CommandInfo("print", ShellType, /* Localizable */ "Prints the JSON file",
                     new[] {
-                        new CommandArgumentInfo(new[] { "property" }, Array.Empty<SwitchInfo>())
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "propertyName")
+                        }, Array.Empty<SwitchInfo>())
                     }, new JsonShell_PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "rmobject",
                 new CommandInfo("rmobject", ShellType, /* Localizable */ "Removes an object",
                     new[] {
-                        new CommandArgumentInfo(new[] { "objectName" }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "objectName")
+                        }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
-                        }, true, 1)
+                        })
                     }, new JsonShell_RmObjectCommand())
             },
             
             { "rmobjectindexed",
                 new CommandInfo("rmobjectindexed", ShellType, /* Localizable */ "Removes an object specified by index",
                     new[] {
-                        new CommandArgumentInfo(new[] { "index" }, new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "index")
+                        }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
-                        }, true, 1)
+                        })
                     }, new JsonShell_RmObjectIndexedCommand())
             },
             
             { "save",
                 new CommandInfo("save", ShellType, /* Localizable */ "Saves the JSON file",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<string>(), new[] {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
                             new SwitchInfo("b", /* Localizable */ "Beautified JSON", false, false, new string[] { "m" }, 0, false),
                             new SwitchInfo("m", /* Localizable */ "Minified JSON", false, false, new string[] { "b" }, 0, false)
                         })

@@ -62,7 +62,8 @@ namespace KS.Shell.ShellBase.Commands
             string CommandName = commandArgumentInfo.Command;
             string finalCommandArgs = commandArgumentInfo.ArgumentsText;
             string[] finalCommandArgsEnclosed = finalCommandArgs.SplitEncloseDoubleQuotes();
-            string LastArgument = finalCommandArgsEnclosed.Length > 0 ? finalCommandArgsEnclosed[^1] : "";
+            int LastArgumentIndex = finalCommandArgsEnclosed.Length - 1;
+            string LastArgument = finalCommandArgsEnclosed.Length > 0 ? finalCommandArgsEnclosed[LastArgumentIndex] : "";
             DebugWriter.WriteDebug(DebugLevel.I, "Command name: {0}", CommandName);
             DebugWriter.WriteDebug(DebugLevel.I, "Command arguments [{0}]: {1}", finalCommandArgsEnclosed.Length, finalCommandArgs);
             DebugWriter.WriteDebug(DebugLevel.I, "last argument: {0}", LastArgument);
@@ -105,8 +106,11 @@ namespace KS.Shell.ShellBase.Commands
                     // No arguments. Return file list
                     return finalCompletions;
 
-                // There are arguments! Now, check to see if it has the accessible auto completer
-                var AutoCompleter = CommandArgumentInfo.AutoCompleter;
+                // There are arguments! Now, check to see if it has the accessible auto completer from the last argument
+                var AutoCompleter =
+                    CommandArgumentInfo.Arguments.Length < LastArgumentIndex ?
+                    CommandArgumentInfo.Arguments[LastArgumentIndex].AutoCompleter :
+                    null;
                 DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has auto complete info? {1}", CommandName, AutoCompleter is not null);
                 if (AutoCompleter is null)
                     // No delegate. Return file list

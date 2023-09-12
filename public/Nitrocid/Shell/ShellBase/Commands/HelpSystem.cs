@@ -98,7 +98,7 @@ namespace KS.Shell.ShellBase.Commands
                 var argumentInfos = FinalCommandList[FinalCommand].CommandArgumentInfo ?? Array.Empty<CommandArgumentInfo>();
                 foreach (var argumentInfo in argumentInfos)
                 {
-                    var Arguments = Array.Empty<string>();
+                    var Arguments = Array.Empty<CommandArgumentPart>();
                     var Switches = Array.Empty<SwitchInfo>();
 
                     // Populate help usages
@@ -129,10 +129,10 @@ namespace KS.Shell.ShellBase.Commands
                         // Enumerate through the available arguments
                         int howManyRequired = argumentInfo.MinimumArguments;
                         int queriedArgs = 1;
-                        foreach (string Argument in Arguments)
+                        foreach (var Argument in Arguments)
                         {
                             bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
-                            string renderedArgument = required ? $" <{Argument}>" : $" [{Argument}]";
+                            string renderedArgument = required ? $" <{Argument.ArgumentExpression}>" : $" [{Argument.ArgumentExpression}]";
                             TextWriterColor.Write(renderedArgument, false, KernelColorType.ListEntry);
                             queriedArgs++;
                         }

@@ -35,7 +35,10 @@ namespace Nitrocid.Extras.Notes
                 new CommandInfo("addnote", ShellType.Shell, /* Localizable */ "Adds a note",
                     new[]
                     {
-                        new CommandArgumentInfo(new[] { "noteContents..." }, Array.Empty<SwitchInfo>(), true, 1),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "noteContents...")
+                        }, Array.Empty<SwitchInfo>()),
                     }, new AddNote())
             },
 
@@ -43,7 +46,10 @@ namespace Nitrocid.Extras.Notes
                 new CommandInfo("removenote", ShellType.Shell, /* Localizable */ "Removes a note",
                     new[]
                     {
-                        new CommandArgumentInfo(new[] { "noteNumber" }, Array.Empty<SwitchInfo>(), true, 1),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "noteNumber")
+                        }, Array.Empty<SwitchInfo>()),
                     }, new RemoveNote())
             },
 
