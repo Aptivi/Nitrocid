@@ -37,7 +37,7 @@ namespace KS.Kernel.Extensions
     {
         private static readonly List<AddonInfo> addons = new();
 
-        internal static void ProcessAddons()
+        internal static void ProcessAddons(AddonType type)
         {
             var addonFolder = Paths.AddonsPath;
             if (!Checking.FolderExists(addonFolder))
@@ -45,11 +45,11 @@ namespace KS.Kernel.Extensions
             var addonFolders = Listing.GetFilesystemEntries(addonFolder);
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} files under the addon folder {1}.", addonFolders.Length, addonFolder);
             foreach (var addon in addonFolders)
-                ProcessAddon(addon);
+                ProcessAddon(addon, type);
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded all addons!");
         }
 
-        internal static void ProcessAddon(string addon)
+        internal static void ProcessAddon(string addon, AddonType type)
         {
             try
             {
@@ -95,17 +95,23 @@ namespace KS.Kernel.Extensions
                     return;
                 }
 
-                // Now, process the assembly and call the start function
+                // Now, process the assembly
                 var asm = Assembly.LoadFrom(addonPath);
                 var addonInstance = GetAddonInstance(asm) ??
                     throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("This addon is not a valid addon.") + $" {addonPath}");
-                addonInstance.StartAddon();
 
-                // Add the addon
-                AddonInfo info = new(addonInstance);
-                if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
-                    addons.Add(info);
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
+                // Check to see if the types match
+                if (addonInstance.AddonType == type)
+                {
+                    // Call the start function
+                    addonInstance.StartAddon();
+
+                    // Add the addon
+                    AddonInfo info = new(addonInstance);
+                    if (!addons.Where((addon) => addonInstance.AddonName == addon.AddonName).Any())
+                        addons.Add(info);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded addon!");
+                }
             }
             catch (Exception ex)
             {

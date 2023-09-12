@@ -16,26 +16,20 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Arguments.ArgumentBase;
-using KS.Files;
-using KS.Files.Querying;
-using KS.Kernel.Extensions;
-using KS.Languages;
-
-namespace KS.Arguments.CommandLineArguments
+namespace KS.Kernel.Extensions
 {
-    class LangArgument : ArgumentExecutor, IArgument
+    /// <summary>
+    /// Addon type
+    /// </summary>
+    public enum AddonType
     {
-
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
-        {
-            string langPacksAddonPath = Paths.AddonsPath + "/LanguagePacks";
-            if (Checking.FolderExists(langPacksAddonPath))
-            {
-                AddonTools.ProcessAddon(langPacksAddonPath, AddonType.Important);
-                LanguageManager.SetLangDry(ListArgsOnly[0]);
-            }
-        }
-
+        /// <summary>
+        /// Important addons that must be loaded before all the optional ones.
+        /// </summary>
+        Important,
+        /// <summary>
+        /// Optional addons that may be loaded.
+        /// </summary>
+        Optional
     }
 }

@@ -21,6 +21,7 @@ namespace KS.Kernel.Extensions
     internal interface IAddon
     {
         internal string AddonName { get; }
+        internal AddonType AddonType { get; }
         internal void StartAddon();
         internal void FinalizeAddon();
         internal void StopAddon();

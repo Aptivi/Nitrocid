@@ -30,6 +30,8 @@ namespace Nitrocid.LanguagePacks
     {
         string IAddon.AddonName => "Extra Languages Pack";
 
+        AddonType IAddon.AddonType => AddonType.Important;
+
         void IAddon.StartAddon()
         {
             // Add them all!

@@ -44,6 +44,8 @@ namespace Nitrocid.Extras.GitShell
 
         string IAddon.AddonName => "Extras - Git Shell";
 
+        AddonType IAddon.AddonType => AddonType.Optional;
+
         void IAddon.FinalizeAddon()
         {
             ShellTypeManager.RegisterShell("GitShell", new GitShellInfo());

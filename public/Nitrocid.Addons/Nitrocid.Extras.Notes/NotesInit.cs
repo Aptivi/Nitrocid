@@ -88,6 +88,8 @@ namespace Nitrocid.Extras.Notes
 
         string IAddon.AddonName => "Extras - Notes";
 
+        AddonType IAddon.AddonType => AddonType.Optional;
+
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
 

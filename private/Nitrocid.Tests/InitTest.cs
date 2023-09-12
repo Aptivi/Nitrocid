@@ -75,7 +75,8 @@ namespace Nitrocid.Tests
             DriverHandler.SetDriver<IDebugLoggerDriver>("UnitTest");
 
             // Load necessary addons for testing
-            AddonTools.ProcessAddons();
+            AddonTools.ProcessAddons(AddonType.Important);
+            AddonTools.ProcessAddons(AddonType.Optional);
         }
 
         /// <summary>

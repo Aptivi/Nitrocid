@@ -122,7 +122,10 @@ namespace KS.Kernel.Starting
 
             // Show initializing
             if (Flags.TalkativePreboot)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Welcome!"));
                 TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
+            }
 
             // Initialize journal path
             JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));
@@ -147,7 +150,7 @@ namespace KS.Kernel.Starting
             // Initialize addons
             if (Flags.TalkativePreboot)
                 TextWriterColor.Write(Translate.DoTranslation("Loading kernel addons..."));
-            AddonTools.ProcessAddons();
+            AddonTools.ProcessAddons(AddonType.Important);
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
 
             // Create config file and then read it
@@ -227,6 +230,7 @@ namespace KS.Kernel.Starting
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
 
             // Finalize addons
+            AddonTools.ProcessAddons(AddonType.Optional);
             AddonTools.FinalizeAddons();
             DebugWriter.WriteDebug(DebugLevel.I, "Finalized addons.");
 

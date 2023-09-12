@@ -26,6 +26,8 @@ namespace Nitrocid.Extras.Tips
     {
         string IAddon.AddonName => "Extras - Kernel Tips";
 
+        AddonType IAddon.AddonType => AddonType.Optional;
+
         void IAddon.FinalizeAddon() =>
             WelcomeMessage.tips = TipsList.tips;
 

@@ -30,6 +30,8 @@ namespace Nitrocid.ThemePacks
     {
         string IAddon.AddonName => "Extra Themes Pack";
 
+        AddonType IAddon.AddonType => AddonType.Optional;
+
         void IAddon.StartAddon()
         {
             // Add them all!
