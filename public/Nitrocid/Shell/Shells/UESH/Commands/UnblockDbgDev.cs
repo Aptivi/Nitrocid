@@ -37,22 +37,24 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            if (RemoteDebugger.RDebugBlocked.Contains(ListArgsOnly[0]))
+            string address = ListArgsOnly[0];
+            var device = RemoteDebugTools.GetDeviceFromIp(address);
+            if (device.Blocked)
             {
-                if (RemoteDebugTools.TryRemoveFromBlockList(ListArgsOnly[0]))
+                if (RemoteDebugTools.TryRemoveFromBlockList(address))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("{0} can now join remote debug again."), ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("{0} can now join remote debug again."), address);
                     return 0;
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to unblock {0}."), ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("Failed to unblock {0}."), address);
                     return 10000 + (int)KernelExceptionType.Debug;
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("{0} is not blocked yet."), ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is not blocked yet."), address);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
         }

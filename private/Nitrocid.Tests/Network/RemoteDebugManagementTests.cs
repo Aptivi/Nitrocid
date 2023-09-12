@@ -29,31 +29,11 @@ namespace Nitrocid.Tests.Network
     {
 
         /// <summary>
-        /// Tests adding device to json
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestAddDeviceToJson() => RemoteDebugTools.TryAddDeviceToJson("123.123.123.123").ShouldBeTrue();
-
-        /// <summary>
-        /// Tests setting device property
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestDeviceSetProperty() => RemoteDebugTools.TrySetDeviceProperty("123.123.123.123", RemoteDebugTools.DeviceProperty.Name, "TestUser").ShouldBeTrue();
-
-        /// <summary>
-        /// Tests getting device property
-        /// </summary>
-        [Test]
-        [Description("Management")]
-        public void TestGetDeviceProperty() => Convert.ToString(RemoteDebugTools.GetDeviceProperty("123.123.123.123", RemoteDebugTools.DeviceProperty.Name)).ShouldBe("TestUser");
-
-        /// <summary>
         /// Removes a test device created by <see cref="TestAddDeviceToJson()"/>
         /// </summary>
         [OneTimeTearDown]
-        public static void TestRemoveTestDevice() => RemoteDebugTools.TryRemoveDeviceFromJson("123.123.123.123").ShouldBeTrue();
+        public static void TestRemoveTestDevice() =>
+            RemoteDebugTools.TryRemoveDevice("123.123.123.123").ShouldBeTrue();
 
     }
 }

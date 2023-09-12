@@ -39,22 +39,24 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            if (!RemoteDebugger.RDebugBlocked.Contains(ListArgsOnly[0]))
+            string address = ListArgsOnly[0];
+            var device = RemoteDebugTools.GetDeviceFromIp(address);
+            if (!device.Blocked)
             {
-                if (RemoteDebugTools.TryAddToBlockList(ListArgsOnly[0]))
+                if (RemoteDebugTools.TryAddToBlockList(address))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("{0} can't join remote debug now."), ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("{0} can't join remote debug now."), address);
                     return 0;
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to block {0}."), ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("Failed to block {0}."), address);
                     return 10000 + (int)KernelExceptionType.RemoteDebugDeviceOperation;
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("{0} is already blocked."), ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is already blocked."), address);
                 return 10000 + (int)KernelExceptionType.RemoteDebugDeviceOperation;
             }
         }

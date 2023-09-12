@@ -23,7 +23,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class TraceCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, string Address)
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address)
         {
             if (DebugWriter.DebugStackTraces.Count != 0)
             {

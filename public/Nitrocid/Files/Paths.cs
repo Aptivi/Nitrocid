@@ -140,10 +140,10 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/SpeedDial.json");
 
         /// <summary>
-        /// DebugDevNames path
+        /// Debug devices path
         /// </summary>
-        public static string DebugDevNamesPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/DebugDeviceNames.json");
+        public static string DebugDevicesPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/DebugDevices.json");
 
         /// <summary>
         /// MOTD path
@@ -236,7 +236,7 @@ namespace KS.Files
                 KernelPathType.Configuration =>         ConfigurationPath,
                 KernelPathType.CustomLanguages =>       CustomLanguagesPath,
                 KernelPathType.CustomSplashes =>        CustomSplashesPath,
-                KernelPathType.DebugDevNames =>         DebugDevNamesPath,
+                KernelPathType.DebugDevices =>          DebugDevicesPath,
                 KernelPathType.Debugging =>             DebuggingPath,
                 KernelPathType.Events =>                EventsPath,
                 KernelPathType.SpeedDial =>             SpeedDialPath,

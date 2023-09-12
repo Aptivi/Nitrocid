@@ -32,6 +32,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Time.Renderers;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using SemanVer.Instance;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -43,13 +44,12 @@ namespace KS.Kernel.Debugging.RemoteDebug
 
         internal static bool RDebugFailed;
         internal static Exception RDebugFailedReason;
-        internal static List<string> RDebugBlocked = new();
         internal static List<RemoteDebugDevice> DebugDevices = new();
         internal static Socket RDebugClient;
         internal static TcpListener DebugTCP;
         internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
         internal static int debugPort = 3014;
-        private readonly static string RDebugVersion = "0.7.2";
+        private readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.8.0.0");
         private static readonly AutoResetEvent RDebugBailer = new(false);
 
         /// <summary>
@@ -149,22 +149,20 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         // Add the device to JSON
                         RDebugEndpoint = RDebugClient.RemoteEndPoint.ToString();
                         RDebugIP = RDebugEndpoint.Remove(RDebugClient.RemoteEndPoint.ToString().IndexOf(":"));
-                        RemoteDebugTools.AddDeviceToJson(RDebugIP, false);
+                        var device = RemoteDebugTools.AddDevice(RDebugIP, false);
 
                         // Get the remaining properties
-                        RDebugName = Convert.ToString(RemoteDebugTools.GetDeviceProperty(RDebugIP, RemoteDebugTools.DeviceProperty.Name));
                         var RDebugThread = new KernelThread($"Remote Debug Listener Thread for {RDebugIP}", false, Listen);
-                        RDebugInstance = new RemoteDebugDevice(RDebugClient, RDebugStream, RDebugIP, RDebugName, RDebugThread);
+                        RDebugInstance = new RemoteDebugDevice(RDebugClient, RDebugStream, RDebugThread, device);
                         RDebugSWriter = RDebugInstance.ClientStreamWriter;
 
                         // Check the name
+                        RDebugName = device.Name;
                         if (string.IsNullOrEmpty(RDebugName))
-                        {
                             DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} has no name. Prompting for name...", RDebugIP);
-                        }
 
                         // Check to see if the device is blocked
-                        if (RDebugBlocked.Contains(RDebugIP))
+                        if (device.Blocked)
                         {
                             // Blocked! Disconnect it.
                             DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) tried to join remote debug, but blocked.", RDebugName, RDebugIP);
@@ -174,7 +172,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         {
                             // Not blocked yet. Add the connection.
                             DebugDevices.Add(RDebugInstance);
-                            RDebugSWriter.Write(Translate.DoTranslation(">> Remote Debug and Chat: version") + " {0}\r\n", RDebugVersion);
+                            RDebugSWriter.Write(Translate.DoTranslation(">> Remote Debug and Chat: version") + $" {RDebugVersion}\r\n");
                             RDebugSWriter.Write(Translate.DoTranslation(">> Your address is {0}.") + "\r\n", RDebugIP);
                             if (string.IsNullOrEmpty(RDebugName))
                                 RDebugSWriter.Write(Translate.DoTranslation(">> Welcome! This is your first time entering remote debug and chat. Use \"/register <name>\" to register.") + "\r\n", RDebugName);
@@ -261,6 +259,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     if (!(Convert.ToInt32(Message[0]) == 0))
                     {
                         // Check to see if the unnamed stranger is trying to send a message
+                        var deviceInfo = RemoteDebugTools.GetDeviceFromIp(SocketIP);
                         if (!string.IsNullOrEmpty(SocketName))
                         {
                             // Check the message format
@@ -274,14 +273,14 @@ namespace KS.Kernel.Debugging.RemoteDebug
                                 DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
 
                             // Add the message to the chat history
-                            RemoteDebugTools.SetDeviceProperty(SocketIP, RemoteDebugTools.DeviceProperty.ChatHistory, "[" + TimeDateRenderers.Render() + "] " + Message);
+                            deviceInfo.chatHistory.Add($"[{TimeDateRenderers.Render()}] {Message}");
                         }
 
                         // Now, check to see if the message is a command
                         if (Message.StartsWith("/"))
                         {
                             string finalCommand = Message[1..];
-                            RemoteDebugCommandExecutor.ExecuteCommand(finalCommand, device.ClientIP);
+                            RemoteDebugCommandExecutor.ExecuteCommand(finalCommand, deviceInfo);
                         }
                     }
                 }
@@ -289,7 +288,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 {
                     string SocketIP = device?.ClientIP;
                     if (!string.IsNullOrWhiteSpace(SocketIP))
-                        RemoteDebugTools.DisconnectDbgDev(SocketIP);
+                        RemoteDebugTools.DisconnectDevice(SocketIP);
                 }
             }
         }

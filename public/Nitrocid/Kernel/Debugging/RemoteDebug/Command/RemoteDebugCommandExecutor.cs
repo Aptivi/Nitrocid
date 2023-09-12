@@ -41,7 +41,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             { "username", new RemoteDebugCommandInfo("username", /* Localizable */ "Shows current username in the session", new RemoteDebugCommandArgumentInfo(), new UsernameCommand()) }
         };
 
-        internal static void ExecuteCommand(string RequestedCommand, string DeviceAddress)
+        internal static void ExecuteCommand(string RequestedCommand, RemoteDebugDeviceInfo DeviceAddress)
         {
             try
             {

@@ -20,7 +20,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class ExitCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, string Address) => 
-            RemoteDebugTools.DisconnectDbgDev(Address);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address) => 
+            RemoteDebugTools.DisconnectDevice(Address.Address);
     }
 }

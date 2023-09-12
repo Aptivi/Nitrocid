@@ -31,7 +31,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         /// <param name="ListArgsOnly">List of provided arguments</param>
         /// <param name="ListSwitchesOnly">List of provided switches</param>
         /// <param name="Address">Device address that executed the command</param>
-        void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, string Address);
+        void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address);
 
         /// <summary>
         /// Shows additional information for the command when "help command" is invoked

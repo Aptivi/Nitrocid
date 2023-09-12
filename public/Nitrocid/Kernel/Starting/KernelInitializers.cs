@@ -165,9 +165,9 @@ namespace KS.Kernel.Starting
             SplashManager.OpenSplash();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
 
-            // Populate ban list for debug devices
-            RemoteDebugTools.PopulateBlockedDevices();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded blocked remote debug devices.");
+            // Populate debug devices
+            RemoteDebugTools.LoadAllDevices();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded remote debug devices.");
         }
 
         internal static void InitializeWelcomeMessages()

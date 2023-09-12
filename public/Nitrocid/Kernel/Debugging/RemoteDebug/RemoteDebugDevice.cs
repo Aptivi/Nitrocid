@@ -41,26 +41,31 @@ namespace KS.Kernel.Debugging.RemoteDebug
         /// </summary>
         public StreamWriter ClientStreamWriter { get; private set; }
         /// <summary>
+        /// The client stream writer
+        /// </summary>
+        public RemoteDebugDeviceInfo DeviceInfo { get; private set; }
+        /// <summary>
         /// The client IP address
         /// </summary>
-        public string ClientIP { get; private set; }
+        public string ClientIP =>
+            DeviceInfo.Address;
         /// <summary>
         /// The client name
         /// </summary>
-        public string ClientName { get; set; }
+        public string ClientName =>
+            DeviceInfo.Name;
         internal KernelThread ClientThread { get; private set; }
 
         /// <summary>
         /// Makes a new instance of a remote debug device
         /// </summary>
-        internal RemoteDebugDevice(Socket ClientSocket, NetworkStream ClientStream, string ClientIP, string ClientName, KernelThread ClientThread)
+        internal RemoteDebugDevice(Socket ClientSocket, NetworkStream ClientStream, KernelThread ClientThread, RemoteDebugDeviceInfo deviceInfo)
         {
             this.ClientSocket = ClientSocket;
             this.ClientStream = ClientStream;
             ClientStreamWriter = new StreamWriter(ClientStream) { AutoFlush = true };
-            this.ClientIP = ClientIP;
-            this.ClientName = ClientName;
             this.ClientThread = ClientThread;
+            DeviceInfo = deviceInfo;
         }
 
     }

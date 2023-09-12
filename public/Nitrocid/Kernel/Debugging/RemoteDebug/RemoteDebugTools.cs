@@ -22,12 +22,11 @@ using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using KS.Files;
-using KS.Files.Operations;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
+using System.Collections.Generic;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -37,86 +36,79 @@ namespace KS.Kernel.Debugging.RemoteDebug
     public static class RemoteDebugTools
     {
 
-        /// <summary>
-        /// Device property enumeration
-        /// </summary>
-        public enum DeviceProperty
-        {
-            /// <summary>
-            /// Device name
-            /// </summary>
-            Name,
-            /// <summary>
-            /// Is the device blocked?
-            /// </summary>
-            Blocked,
-            /// <summary>
-            /// Device chat history
-            /// </summary>
-            ChatHistory
-        }
+        private static List<RemoteDebugDeviceInfo> remoteDebugDevices = new();
 
         /// <summary>
         /// Disconnects a specified debug device
         /// </summary>
-        /// <param name="IPAddr">An IP address of the connected debug device</param>
-        public static void DisconnectDbgDev(string IPAddr)
+        /// <param name="address">An IP address of the connected debug device</param>
+        public static void DisconnectDevice(string address)
         {
-            var devices = RemoteDebugger.DebugDevices.Where((rdd) => rdd.ClientIP == IPAddr).ToList();
+            var devices = RemoteDebugger.DebugDevices.Where((rdd) => rdd.ClientIP == address).ToList();
             for (int i = 0; i <= devices.Count - 1; i++)
             {
-                string clientIp = RemoteDebugger.DebugDevices[i].ClientIP;
-                string clientName = RemoteDebugger.DebugDevices[i].ClientName;
-                RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
-                RemoteDebugger.DebugDevices.RemoveAt(i);
-                EventsManager.FireEvent(EventType.RemoteDebugConnectionDisconnected, IPAddr);
-                DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
+                try
+                {
+                    string clientIp = RemoteDebugger.DebugDevices[i].ClientIP;
+                    string clientName = RemoteDebugger.DebugDevices[i].ClientName;
+                    RemoteDebugger.DebugDevices[i].ClientSocket.Disconnect(true);
+                    RemoteDebugger.DebugDevices.RemoveAt(i);
+                    EventsManager.FireEvent(EventType.RemoteDebugConnectionDisconnected, address);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected.", clientName, clientIp);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Debug device {0} failed to disconnect: {1}.", address, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
             }
             if (!devices.Any())
-                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("Debug device {0} not found."), IPAddr);
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("Debug device {0} not found."), address);
         }
 
         /// <summary>
         /// Adds device to block list
         /// </summary>
-        /// <param name="IP">An IP address for device</param>
-        public static void AddToBlockList(string IP)
+        /// <param name="address">An IP address for device</param>
+        /// <param name="throwIfNotFound">Throws if the device is not found to be blocked</param>
+        public static void AddToBlockList(string address, bool throwIfNotFound = false)
         {
-            var BlockedDevices = ListDevices();
+            var BlockedDevices = ListDeviceAddresses();
             DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length);
-            if (BlockedDevices.Contains(IP) && !(bool)GetDeviceProperty(IP, DeviceProperty.Blocked))
+            if (BlockedDevices.Contains(address))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Device {0} will be blocked...", IP);
-                DisconnectDbgDev(IP);
-                SetDeviceProperty(IP, DeviceProperty.Blocked, true);
-                RemoteDebugger.RDebugBlocked.Add(IP);
-            }
-            else if (BlockedDevices.Contains(IP) && (bool)GetDeviceProperty(IP, DeviceProperty.Blocked))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Trying to add an already-blocked device {0}. Adding to list...", IP);
-                if (!RemoteDebugger.RDebugBlocked.Contains(IP))
+                var device = GetDeviceFromIp(address);
+                if (!device.Blocked)
                 {
-                    DisconnectDbgDev(IP);
-                    RemoteDebugger.RDebugBlocked.Add(IP);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Device {0} will be blocked...", address);
+                    DisconnectDevice(address);
+                    device.blocked = true;
+                    SaveAllDevices();
                 }
                 else
                 {
-                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to add an already-blocked device {0}.", IP);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Trying to add an already-blocked device {0}.", address);
                     throw new KernelException(KernelExceptionType.RemoteDebugDeviceAlreadyExists, Translate.DoTranslation("Device already exists in the block list."));
                 }
+            }
+            else if (throwIfNotFound)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to add a non-existent device {0}.", address);
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("Device not found to block."));
             }
         }
 
         /// <summary>
         /// Adds device to block list
         /// </summary>
-        /// <param name="IP">An IP address for device</param>
+        /// <param name="address">An IP address for device</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool TryAddToBlockList(string IP)
+        public static bool TryAddToBlockList(string address)
         {
             try
             {
-                AddToBlockList(IP);
+                AddToBlockList(address);
+                SaveAllDevices();
                 return true;
             }
             catch (Exception ex)
@@ -130,35 +122,36 @@ namespace KS.Kernel.Debugging.RemoteDebug
         /// <summary>
         /// Removes device from block list
         /// </summary>
-        /// <param name="IP">A blocked IP address for device</param>
-        public static void RemoveFromBlockList(string IP)
+        /// <param name="address">A blocked IP address for device</param>
+        public static void RemoveFromBlockList(string address)
         {
-            var BlockedDevices = ListDevices();
+            var BlockedDevices = ListDeviceAddresses();
             DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", BlockedDevices.Length);
-            if (BlockedDevices.Contains(IP))
+            if (BlockedDevices.Contains(address))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Device {0} found.", IP);
-                RemoteDebugger.RDebugBlocked.Remove(IP);
-                SetDeviceProperty(IP, DeviceProperty.Blocked, false);
+                var device = GetDeviceFromIp(address);
+                DebugWriter.WriteDebug(DebugLevel.I, "Device {0} found.", address);
+                device.blocked = false;
+                SaveAllDevices();
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove an already-unblocked device {0}. Removing from list...", IP);
-                if (!RemoteDebugger.RDebugBlocked.Remove(IP))
-                    throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Device doesn't exist in the block list."));
+                DebugWriter.WriteDebug(DebugLevel.W, "Trying to remove an already-unblocked device {0}.", address);
+                throw new KernelException(KernelExceptionType.RemoteDebugDeviceOperation, Translate.DoTranslation("Device doesn't exist in the block list."));
             }
         }
 
         /// <summary>
         /// Removes device from block list
         /// </summary>
-        /// <param name="IP">A blocked IP address for device</param>
+        /// <param name="address">A blocked IP address for device</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool TryRemoveFromBlockList(string IP)
+        public static bool TryRemoveFromBlockList(string address)
         {
             try
             {
-                RemoveFromBlockList(IP);
+                RemoveFromBlockList(address);
+                SaveAllDevices();
                 return true;
             }
             catch (Exception ex)
@@ -177,12 +170,13 @@ namespace KS.Kernel.Debugging.RemoteDebug
         {
             try
             {
-                var BlockEntries = ListDevices();
-                DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", BlockEntries.Length);
-                foreach (string BlockEntry in BlockEntries)
+                var addresses = ListDeviceAddresses();
+                DebugWriter.WriteDebug(DebugLevel.I, "Devices count: {0}", addresses.Length);
+                foreach (string address in addresses)
                 {
-                    if (Convert.ToBoolean(GetDeviceProperty(BlockEntry, DeviceProperty.Blocked)))
-                        AddToBlockList(BlockEntry);
+                    var device = GetDeviceFromIp(address);
+                    if (device.Blocked)
+                        AddToBlockList(address);
                 }
                 return true;
             }
@@ -195,152 +189,44 @@ namespace KS.Kernel.Debugging.RemoteDebug
         }
 
         /// <summary>
-        /// Gets device property from device IP address
+        /// Adds new device IP address to the list and saves it
         /// </summary>
-        /// <param name="DeviceIP">Device IP address from remote endpoint address</param>
-        /// <param name="DeviceProperty">Device property</param>
-        /// <returns>Device property if successful; nothing if unsuccessful.</returns>
-        public static object GetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty)
+        /// <param name="address">Device IP address from remote endpoint address</param>
+        /// <param name="throwException">Optionally throw exception</param>
+        /// <returns>An instance of <see cref="RemoteDebugDeviceInfo"/></returns>
+        internal static RemoteDebugDeviceInfo AddDevice(string address, bool throwException = true)
         {
-            string DeviceJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames));
-            var DeviceNameToken = JObject.Parse(!string.IsNullOrEmpty(DeviceJsonContent) ? DeviceJsonContent : "{}");
-            JObject DeviceProperties = DeviceNameToken[DeviceIP] as JObject;
-            if (DeviceProperties is not null)
+            var addresses = ListDeviceAddresses();
+            if (!addresses.Contains(address))
             {
-                switch (DeviceProperty)
+                var deviceInfo = new RemoteDebugDeviceInfo()
                 {
-                    case DeviceProperty.Name:
-                        {
-                            return DeviceProperties.Property("Name").Value.ToString();
-                        }
-                    case DeviceProperty.Blocked:
-                        {
-                            return DeviceProperties.Property("Blocked").Value;
-                        }
-                    case DeviceProperty.ChatHistory:
-                        {
-                            return DeviceProperties.Property("ChatHistory").Value.ToArray();
-                        }
-                }
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("No such device."));
-            }
-            return null;
-        }
+                    address = address,
+                    blocked = false,
+                };
+                remoteDebugDevices.Add(deviceInfo);
+                SaveAllDevices();
 
-        /// <summary>
-        /// Sets device property from device IP address
-        /// </summary>
-        /// <param name="DeviceIP">Device IP address from remote endpoint address</param>
-        /// <param name="DeviceProperty">Device property</param>
-        /// <param name="Value">Value</param>
-        public static void SetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty, object Value)
-        {
-            string DeviceJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames));
-            var DeviceNameToken = JObject.Parse(!string.IsNullOrEmpty(DeviceJsonContent) ? DeviceJsonContent : "{}");
-            JObject DeviceProperties = DeviceNameToken[DeviceIP] as JObject;
-            if (DeviceProperties is not null)
-            {
-                switch (DeviceProperty)
-                {
-                    case DeviceProperty.Name:
-                        {
-                            DeviceProperties["Name"] = JToken.FromObject(Value);
-                            break;
-                        }
-                    case DeviceProperty.Blocked:
-                        {
-                            DeviceProperties["Blocked"] = JToken.FromObject(Value);
-                            break;
-                        }
-                    case DeviceProperty.ChatHistory:
-                        {
-                            JArray ChatHistory = DeviceProperties["ChatHistory"] as JArray;
-                            ChatHistory.Add(Value);
-                            break;
-                        }
-                }
-                File.WriteAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented));
+                // To be able to be modified in the list
+                return remoteDebugDevices[^1];
             }
-            else
-            {
-                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("No such device."));
-            }
-        }
-
-        /// <summary>
-        /// Sets device property from device IP address
-        /// </summary>
-        /// <param name="DeviceIP">Device IP address from remote endpoint address</param>
-        /// <param name="DeviceProperty">Device property</param>
-        /// <param name="Value">Value</param>
-        /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool TrySetDeviceProperty(string DeviceIP, DeviceProperty DeviceProperty, object Value)
-        {
-            try
-            {
-                SetDeviceProperty(DeviceIP, DeviceProperty, Value);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Adds new device IP address to JSON
-        /// </summary>
-        /// <param name="DeviceIP">Device IP address from remote endpoint address</param>
-        /// <param name="ThrowException">Optionally throw exception</param>
-        public static void AddDeviceToJson(string DeviceIP, bool ThrowException = true)
-        {
-            Making.MakeFile(Paths.GetKernelPath(KernelPathType.DebugDevNames), false);
-            string DeviceJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames));
-            var DeviceNameToken = JObject.Parse(!string.IsNullOrEmpty(DeviceJsonContent) ? DeviceJsonContent : "{}");
-            if (DeviceNameToken[DeviceIP] is null)
-            {
-                var NewDevice = new JObject(new JProperty("Name", ""), new JProperty("Blocked", false), new JProperty("ChatHistory", new JArray()));
-                DeviceNameToken.Add(DeviceIP, NewDevice);
-                File.WriteAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented));
-            }
-            else if (ThrowException)
+            else if (throwException)
                 throw new KernelException(KernelExceptionType.RemoteDebugDeviceAlreadyExists, Translate.DoTranslation("Device already exists."));
+            return GetDeviceFromIp(address);
         }
 
         /// <summary>
-        /// Adds new device IP address to JSON
+        /// Removes a device IP address from the list
         /// </summary>
-        /// <param name="DeviceIP">Device IP address from remote endpoint address</param>
-        /// <param name="ThrowException">Optionally throw exception</param>
-        /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool TryAddDeviceToJson(string DeviceIP, bool ThrowException = true)
+        /// <param name="address">Device IP address from remote endpoint address</param>
+        public static void RemoveDevice(string address)
         {
-            try
+            var addresses = ListDeviceAddresses();
+            if (addresses.Contains(address))
             {
-                AddDeviceToJson(DeviceIP, ThrowException);
-                return true;
-            }
-            catch (Exception)
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Removes a device IP address from JSON
-        /// </summary>
-        /// <param name="DeviceIP">Device IP address from remote endpoint address</param>
-        public static void RemoveDeviceFromJson(string DeviceIP)
-        {
-            string DeviceJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames));
-            var DeviceNameToken = JObject.Parse(!string.IsNullOrEmpty(DeviceJsonContent) ? DeviceJsonContent : "{}");
-            if (DeviceNameToken[DeviceIP] is not null)
-            {
-                DeviceNameToken.Remove(DeviceIP);
-                File.WriteAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames), JsonConvert.SerializeObject(DeviceNameToken, Formatting.Indented));
+                var device = GetDeviceFromIp(address);
+                remoteDebugDevices.Remove(device);
+                SaveAllDevices();
             }
             else
             {
@@ -349,15 +235,15 @@ namespace KS.Kernel.Debugging.RemoteDebug
         }
 
         /// <summary>
-        /// Removes a device IP address from JSON
+        /// Removes a device IP address from the list
         /// </summary>
-        /// <param name="DeviceIP">Device IP address from remote endpoint address</param>
+        /// <param name="address">Device IP address from remote endpoint address</param>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool TryRemoveDeviceFromJson(string DeviceIP)
+        public static bool TryRemoveDevice(string address)
         {
             try
             {
-                RemoveDeviceFromJson(DeviceIP);
+                RemoveDevice(address);
                 return true;
             }
             catch (Exception)
@@ -365,17 +251,40 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 return false;
             }
         }
+
+        /// <summary>
+        /// Lists all device addresses and puts them into an array
+        /// </summary>
+        public static string[] ListDeviceAddresses() =>
+            remoteDebugDevices.Select((info) => info.Address).ToArray();
+
+        /// <summary>
+        /// Lists all device names and puts them into an array
+        /// </summary>
+        public static string[] ListDeviceNames() =>
+            remoteDebugDevices.Select((info) => info.Name).ToArray();
 
         /// <summary>
         /// Lists all devices and puts them into an array
         /// </summary>
-        public static string[] ListDevices()
-        {
-            Making.MakeFile(Paths.GetKernelPath(KernelPathType.DebugDevNames), false);
-            string DeviceJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.DebugDevNames));
-            var DeviceNameToken = JObject.Parse(!string.IsNullOrEmpty(DeviceJsonContent) ? DeviceJsonContent : "{}");
-            return DeviceNameToken.Properties().Select(p => p.Name).ToArray();
-        }
+        public static RemoteDebugDeviceInfo[] ListDevices() =>
+            remoteDebugDevices.ToArray();
+
+        /// <summary>
+        /// Gets a device by IP address
+        /// </summary>
+        /// <param name="address">Device that holds the IP address</param>
+        /// <returns>An instance of <see cref="RemoteDebugDeviceInfo"/> if found; throws otherwise.</returns>
+        public static RemoteDebugDeviceInfo GetDeviceFromIp(string address) =>
+            remoteDebugDevices.Single((rddi) => rddi.Address == address);
+
+        /// <summary>
+        /// Gets a device by name
+        /// </summary>
+        /// <param name="name">Device that holds the name</param>
+        /// <returns>An instance of <see cref="RemoteDebugDeviceInfo"/> if found; throws otherwise.</returns>
+        public static RemoteDebugDeviceInfo GetDeviceFromName(string name) =>
+            remoteDebugDevices.Single((rddi) => rddi.Name == name);
 
         /// <summary>
         /// Disconnects debug device depending on exception
@@ -387,22 +296,28 @@ namespace KS.Kernel.Debugging.RemoteDebug
             SocketException SE = (SocketException)exception.InnerException;
             if (SE is not null)
             {
-                if ((SE.SocketErrorCode == SocketError.TimedOut) |
-                    (SE.SocketErrorCode == SocketError.WouldBlock) |
-                    (SE.SocketErrorCode == SocketError.ConnectionAborted) |
+                if ((SE.SocketErrorCode == SocketError.TimedOut) ||
+                    (SE.SocketErrorCode == SocketError.WouldBlock) ||
+                    (SE.SocketErrorCode == SocketError.ConnectionAborted) ||
                     (SE.SocketErrorCode == SocketError.Shutdown))
                     // A device was disconnected
-                    DisconnectDbgDev(RemoteDebugger.DebugDevices[deviceIndex].ClientIP);
+                    DisconnectDevice(RemoteDebugger.DebugDevices[deviceIndex].ClientIP);
                 else
                     // Other error with the device occurred
                     DebugWriter.WriteDebugStackTrace(exception);
             }
             else
             {
-                DisconnectDbgDev(RemoteDebugger.DebugDevices[deviceIndex].ClientIP);
+                DisconnectDevice(RemoteDebugger.DebugDevices[deviceIndex].ClientIP);
                 DebugWriter.WriteDebugStackTrace(exception);
             }
         }
+
+        internal static void SaveAllDevices() =>
+            File.WriteAllText(Paths.GetKernelPath(KernelPathType.DebugDevices), JsonConvert.SerializeObject(remoteDebugDevices, Formatting.Indented));
+
+        internal static void LoadAllDevices() =>
+            remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(File.ReadAllText(Paths.GetKernelPath(KernelPathType.DebugDevices)));
 
     }
 }

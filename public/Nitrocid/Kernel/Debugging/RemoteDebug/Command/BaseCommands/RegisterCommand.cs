@@ -23,11 +23,11 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class RegisterCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, string Address)
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address)
         {
             string Name = ListArgsOnly[0];
-            RemoteDebugTools.SetDeviceProperty(Address, RemoteDebugTools.DeviceProperty.Name, Name);
-            RemoteDebugger.DebugDevices.Where(d => d.ClientIP == Address).ToArray()[0].ClientName = Name;
+            Address.name = Name;
+            RemoteDebugTools.SaveAllDevices();
             DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Successfully registered! Hi, {0}!"), Name);
         }
     }

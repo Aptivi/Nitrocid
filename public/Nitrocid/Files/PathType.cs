@@ -50,7 +50,7 @@ namespace KS.Files
         /// <summary>
         /// Debug devices configuration file.
         /// </summary>
-        DebugDevNames,
+        DebugDevices,
         /// <summary>
         /// MOTD text file.
         /// </summary>
