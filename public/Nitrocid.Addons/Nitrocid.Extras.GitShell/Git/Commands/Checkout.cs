@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             var status = GitShellCommon.Repository.RetrieveStatus();
 
             // Check to see if the repo has been modified
-            if (!status.IsDirty)
+            if (status.IsDirty)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
                 return 9;
@@ -58,9 +58,10 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
 
             // Now, checkout the branch.
-            string canonCheckout = branchCanonNames.Single((branchName) => branchName.Contains(requestedBranch));
-            var branch = branches.Single((branch) => branch.CanonicalName == requestedBranch);
+            string canonCheckout = branchCanonNames.First((branchName) => branchName.Contains(requestedBranch));
+            var branch = branches.First((branch) => branch.CanonicalName == canonCheckout);
             GitCommand.Checkout(GitShellCommon.Repository, branch);
+            GitShellCommon.branchName = GitShellCommon.Repository.Head.CanonicalName;
             return 0;
         }
 

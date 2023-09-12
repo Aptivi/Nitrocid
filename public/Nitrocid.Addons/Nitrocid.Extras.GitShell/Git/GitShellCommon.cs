@@ -77,19 +77,7 @@ namespace Nitrocid.Extras.GitShell.Git
             // Initialize the repository
             var repository = new Repository(repoGitPath);
             repo = repository;
-
-            // Get known default branch names and select the first entry
-            string[] branchNames = repo.Branches
-                .Select((branch) => branch.CanonicalName)
-                .Where((branch) =>
-                    branch.Contains("main") ||
-                    branch.Contains("master") ||
-                    branch.Contains("dev") ||
-                    branch.Contains("development") ||
-                    branch.Contains("trunk"))
-                .ToArray();
-            branchName = branchNames[0];
-            GitCommand.Checkout(repo, BranchName);
+            branchName = repo.Head.CanonicalName;
             return true;
         }
 
