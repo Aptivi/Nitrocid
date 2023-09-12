@@ -1057,8 +1057,8 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "ip"),
-                            new CommandArgumentPart(true, "port"),
+                            new CommandArgumentPart(false, "ip"),
+                            new CommandArgumentPart(false, "port"),
                         }, Array.Empty<SwitchInfo>())
                     }, new RebootCommand())
             },
