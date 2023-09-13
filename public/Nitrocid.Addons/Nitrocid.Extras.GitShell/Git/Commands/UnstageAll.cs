@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command lets you stage all unstaged files in your Git repository.
     /// </remarks>
-    class Git_StageAllCommand : BaseCommand, ICommand
+    class Git_UnstageAllCommand : BaseCommand, ICommand
     {
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
@@ -43,22 +43,22 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriterColor.Write(Translate.DoTranslation("No modifications are done to stage."), true, KernelColorType.Success);
+                TextWriterColor.Write(Translate.DoTranslation("No modifications are done to unstage."), true, KernelColorType.Success);
                 return 0;
             }
 
             // Stage all unstaged changes...
-            var modified = status.Modified;
+            var modified = status.Staged;
             foreach (var item in modified)
             {
                 try
                 {
-                    GitCommand.Stage(GitShellCommon.Repository, item.FilePath);
-                    TextWriterColor.Write(Translate.DoTranslation("Staged file {0} successfully!"), true, KernelColorType.Success, item.FilePath);
+                    GitCommand.Unstage(GitShellCommon.Repository, item.FilePath);
+                    TextWriterColor.Write(Translate.DoTranslation("Unstaged file {0} successfully!"), true, KernelColorType.Success, item.FilePath);
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to stage file {0}.") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
+                    TextWriterColor.Write(Translate.DoTranslation("Failed to unstage file {0}.") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
                 }
             }
             return 0;

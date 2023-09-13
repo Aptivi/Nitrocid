@@ -28,12 +28,12 @@ using System;
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
     /// <summary>
-    /// Stages all unstaged files
+    /// Stages an unstaged file
     /// </summary>
     /// <remarks>
-    /// This command lets you stage all unstaged files in your Git repository.
+    /// This command lets you stage an unstaged file in your Git repository.
     /// </remarks>
-    class Git_StageAllCommand : BaseCommand, ICommand
+    class Git_StageCommand : BaseCommand, ICommand
     {
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
@@ -48,18 +48,15 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
 
             // Stage all unstaged changes...
-            var modified = status.Modified;
-            foreach (var item in modified)
+            var modified = status.Modified.Single((se) => se.FilePath == ListArgsOnly[0]);
+            try
             {
-                try
-                {
-                    GitCommand.Stage(GitShellCommon.Repository, item.FilePath);
-                    TextWriterColor.Write(Translate.DoTranslation("Staged file {0} successfully!"), true, KernelColorType.Success, item.FilePath);
-                }
-                catch (Exception ex)
-                {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to stage file {0}.") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
-                }
+                GitCommand.Stage(GitShellCommon.Repository, modified.FilePath);
+                TextWriterColor.Write(Translate.DoTranslation("Staged file {0} successfully!"), true, KernelColorType.Success, modified.FilePath);
+            }
+            catch (Exception ex)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Failed to stage file {0}.") + "{1}", true, KernelColorType.Error, modified.FilePath, ex.Message);
             }
             return 0;
         }

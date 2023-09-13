@@ -61,6 +61,16 @@ namespace Nitrocid.Extras.GitShell.Git
                     }, new Git_LsRemotesCommand())
             },
             
+            { "stage",
+                new CommandInfo("stage", ShellType, /* Localizable */ "Stages a change",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "unstagedFile")
+                        }, Array.Empty<SwitchInfo>())
+                    }, new Git_StageCommand())
+            },
+            
             { "stageall",
                 new CommandInfo("stageall", ShellType, /* Localizable */ "Stages all changes",
                     new[] {
@@ -73,6 +83,23 @@ namespace Nitrocid.Extras.GitShell.Git
                     new[] {
                         new CommandArgumentInfo()
                     }, new Git_StatusCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
+            { "unstage",
+                new CommandInfo("unstage", ShellType, /* Localizable */ "Unstages a change",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "stagedFile")
+                        }, Array.Empty<SwitchInfo>())
+                    }, new Git_UnstageCommand())
+            },
+
+            { "unstageall",
+                new CommandInfo("unstageall", ShellType, /* Localizable */ "Unstages all changes",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Git_UnstageAllCommand())
             },
         };
 
