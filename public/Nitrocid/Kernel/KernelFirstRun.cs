@@ -219,8 +219,8 @@ namespace KS.Kernel
                                     Arguments = new object[]
                                     {
                                         KernelPlatform.IsOnWindows() ?
-                                            Translate.DoTranslation("You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.") + "\n\n" :
-                                            Translate.DoTranslation("Your terminal is {0} on {1}.") + "\n\n",
+                                            Translate.DoTranslation("You must be running either ConEmu or a Windows 10 command prompt with VT processing enabled.") + "\n" :
+                                            Translate.DoTranslation("Your terminal is {0} on {1}.") + "\n",
                                         KernelPlatform.GetTerminalType(),
                                         KernelPlatform.GetTerminalEmulator()
                                     }

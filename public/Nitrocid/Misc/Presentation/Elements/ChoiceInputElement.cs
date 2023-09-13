@@ -84,7 +84,7 @@ namespace KS.Misc.Presentation.Elements
             }
 
             // Render the choices (with checking for bounds, again)
-            TextWriterWhereColor.WriteWhere("\n\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhere("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             string[] finalChoices = choices.ToArray();
             int choiceNum = 1;
             foreach (string choice in finalChoices)
@@ -146,7 +146,7 @@ namespace KS.Misc.Presentation.Elements
             }
 
             string[] finalChoices = choices.ToArray();
-            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n\n";
+            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n";
 
             // Add the choices to the text
             for (int choice = 0; choice < finalChoices.Length; choice++)
