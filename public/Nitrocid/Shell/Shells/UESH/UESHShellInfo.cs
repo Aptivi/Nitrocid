@@ -797,7 +797,14 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo()
                     }, new LogoutCommand(), CommandFlags.NoMaintenance)
             },
-           
+
+            { "lsconnections",
+                new CommandInfo("lsconnections", ShellType, /* Localizable */ "Lists all available connections",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new LsConnectionsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+
             { "lsdbgdev",
                 new CommandInfo("lsdbgdev", ShellType, /* Localizable */ "Lists debugging devices connected",
                     new[] {

@@ -40,7 +40,7 @@ namespace KS.Network.Base.Connections
     public static class NetworkConnectionTools
     {
         private static readonly List<NetworkConnection> networkConnections = new();
-        private static readonly List<string> networkTypes = new()
+        internal static readonly List<string> networkTypes = new()
         {
             NetworkConnectionType.FTP.ToString(),
             NetworkConnectionType.HTTP.ToString(),
