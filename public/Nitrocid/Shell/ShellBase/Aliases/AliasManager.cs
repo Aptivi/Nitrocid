@@ -50,7 +50,8 @@ namespace KS.Shell.ShellBase.Aliases
             // Get all aliases from file
             Making.MakeFile(Paths.GetKernelPath(KernelPathType.Aliases), false);
             string AliasJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Aliases));
-            var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent);
+            var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent) ??
+                Array.Empty<AliasInfo>();
             aliases = aliasesArray.ToList();
         }
 
