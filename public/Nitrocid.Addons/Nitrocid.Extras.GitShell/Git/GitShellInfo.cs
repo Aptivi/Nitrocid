@@ -116,8 +116,7 @@ namespace Nitrocid.Extras.GitShell.Git
 
         public override BaseShell ShellBase => new GitShell();
 
-        // TODO: This doesn't play nice with custom presets, so we need to do something about it.
-        public override PromptPresetBase CurrentPreset => ShellPresets["Default"];
+        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets[ShellType];
 
     }
 }

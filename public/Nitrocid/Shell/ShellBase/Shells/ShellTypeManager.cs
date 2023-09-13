@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Shell.Prompts;
 using System;
 
 namespace KS.Shell.ShellBase.Shells
@@ -33,7 +34,27 @@ namespace KS.Shell.ShellBase.Shells
         public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
         {
             if (!ShellTypeExists(ShellType))
+            {
+                // First, add the shell
                 ShellManager.AvailableShells.Add(ShellType, ShellTypeInfo);
+
+                // Then, add the default preset
+                var presets = ShellTypeInfo.ShellPresets;
+                var basePreset = new PromptPresetBase();
+                if (presets is not null)
+                {
+                    // Add a default preset
+                    if (presets.ContainsKey("Default"))
+                        PromptPresetManager.CurrentPresets.Add(ShellType, presets["Default"]);
+                    else
+                        PromptPresetManager.CurrentPresets.Add(ShellType, basePreset);
+                }
+                else
+                {
+                    // Make a base shell preset and set it as default.
+                    PromptPresetManager.CurrentPresets.Add(ShellType, basePreset);
+                }
+            }
         }
 
         /// <summary>
@@ -43,7 +64,13 @@ namespace KS.Shell.ShellBase.Shells
         public static void UnregisterShell(string ShellType)
         {
             if (!IsShellBuiltin(ShellType))
+            {
+                // First, remove the shell
                 ShellManager.AvailableShells.Remove(ShellType);
+
+                // Then, remove the preset
+                PromptPresetManager.CurrentPresets.Remove(ShellType);
+            }
         }
 
         /// <summary>

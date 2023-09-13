@@ -24,7 +24,7 @@ namespace KS.Shell.Prompts
     /// <summary>
     /// Base prompt preset
     /// </summary>
-    public abstract class PromptPresetBase : IPromptPreset
+    public class PromptPresetBase : IPromptPreset
     {
 
         /// <inheritdoc/>
