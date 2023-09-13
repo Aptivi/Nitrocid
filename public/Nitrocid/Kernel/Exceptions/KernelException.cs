@@ -81,7 +81,7 @@ namespace KS.Kernel.Exceptions
         /// <param name="e">Inner exception</param>
         /// <param name="message">Message to be printed</param>
         public KernelException(KernelExceptionType exceptionType, string message, Exception e, params object[] vars) : 
-            base(KernelExceptionMessages.GetFinalExceptionMessage(exceptionType, TextTools.FormatString(message, vars), null), e)
+            base(KernelExceptionMessages.GetFinalExceptionMessage(exceptionType, TextTools.FormatString(message, vars), e), e)
         { ExceptionType = exceptionType; }
 
         /// <summary>
