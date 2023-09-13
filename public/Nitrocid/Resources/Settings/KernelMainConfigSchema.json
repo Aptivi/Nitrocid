@@ -683,6 +683,12 @@
         "ShowShellAliasesCount": {
             "type": "boolean"
         },
+        "ShowUnifiedCommandsCount": {
+            "type": "boolean"
+        },
+        "ShowAddonCommandsCount": {
+            "type": "boolean"
+        },
         "CurrentMask": {
             "type": "string"
         },
@@ -996,6 +1002,8 @@
         "ShowShellCommandsCount",
         "ShowModCommandsCount",
         "ShowShellAliasesCount",
+        "ShowUnifiedCommandsCount",
+        "ShowAddonCommandsCount",
         "CurrentMask",
         "ProgressUpperLeftCornerChar",
         "ProgressUpperRightCornerChar",

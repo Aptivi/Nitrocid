@@ -1491,6 +1491,18 @@
                 "Description": "Show the aliases count on help"
             },
             {
+                "Name": "Show the unified commands count on help",
+                "Type": "SBoolean",
+                "Variable": "ShowUnifiedCommandsCount",
+                "Description": "Show the aliases count on help"
+            },
+            {
+                "Name": "Show the addon commands count on help",
+                "Type": "SBoolean",
+                "Variable": "ShowAddonCommandsCount",
+                "Description": "Show the aliases count on help"
+            },
+            {
                 "Name": "Password mask character",
                 "Type": "SChar",
                 "Variable": "CurrentMask",

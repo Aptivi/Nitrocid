@@ -1438,6 +1438,14 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool ShowShellAliasesCount { get; set; } = true;
         /// <summary>
+        /// Show the unified commands count on help
+        /// </summary>
+        public bool ShowUnifiedCommandsCount { get; set; } = true;
+        /// <summary>
+        /// Show the addon commands count on help
+        /// </summary>
+        public bool ShowAddonCommandsCount { get; set; } = true;
+        /// <summary>
         /// A character that masks the password. Leave blank for more security
         /// </summary>
         public string CurrentMask

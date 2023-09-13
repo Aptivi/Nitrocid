@@ -231,6 +231,16 @@ namespace KS.Kernel
         public static bool ShowShellAliasesCount =>
             Config.MainConfig.ShowShellAliasesCount;
         /// <summary>
+        /// Shows how many unified commands available in help for shells
+        /// </summary>
+        public static bool ShowUnifiedCommandsCount =>
+            Config.MainConfig.ShowUnifiedCommandsCount;
+        /// <summary>
+        /// Shows how many addon commands available in help for shells
+        /// </summary>
+        public static bool ShowAddonCommandsCount =>
+            Config.MainConfig.ShowAddonCommandsCount;
+        /// <summary>
         /// Whether to simulate a situation where there is no APM available. If enabled, it shows the "It's now safe to
         /// turn off your computer" text.
         /// </summary>
