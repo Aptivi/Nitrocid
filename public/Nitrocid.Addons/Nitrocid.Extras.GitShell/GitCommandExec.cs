@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
@@ -26,7 +27,8 @@ namespace Nitrocid.Extras.GitShell
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            ShellStart.StartShell("GitShell", ListArgsOnly[0]);
+            string path = Filesystem.NeutralizePath(ListArgsOnly[0]);
+            ShellStart.StartShell("GitShell", path);
             return 0;
         }
 
