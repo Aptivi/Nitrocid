@@ -51,14 +51,14 @@ namespace Nitrocid.Extras.GitShell.Git
                 new CommandInfo("lsbranches", ShellType, /* Localizable */ "Lists all branches",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_LsBranchesCommand())
+                    }, new Git_LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lsremotes",
                 new CommandInfo("lsremotes", ShellType, /* Localizable */ "Lists all remotes",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_LsRemotesCommand())
+                    }, new Git_LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "stage",
