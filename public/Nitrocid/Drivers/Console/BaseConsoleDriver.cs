@@ -388,7 +388,7 @@ namespace KS.Drivers.Console.Consoles
                 {
                     // Get the filtered positions first.
                     int FilteredLeft = default, FilteredTop = default;
-                    var pos = ConsoleExtensions.GetFilteredPositions(Line ? Text + "\n" : Text, vars);
+                    var pos = ConsoleExtensions.GetFilteredPositions(Text, Line, vars);
                     FilteredLeft = pos.Item1;
                     FilteredTop = pos.Item2;
 

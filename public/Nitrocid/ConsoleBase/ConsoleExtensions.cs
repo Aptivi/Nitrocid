@@ -93,7 +93,7 @@ namespace KS.ConsoleBase
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
-        public static (int, int) GetFilteredPositions(string Text, params object[] Vars)
+        public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars)
         {
             // Filter all text from the VT escape sequences
             Text = FilterVTSequences(Text);
@@ -131,6 +131,27 @@ namespace KS.ConsoleBase
                         }
                     }
                 }
+            }
+
+            // If new line is to be appended at the end of text, just simulate going down.
+            if (line)
+            {
+                // Do the same as if we've inserted a new line in the middle of the text, but make
+                // sure that the left seek position is not zero for text that fill the whole line.
+                //
+                // There are legitimate writers, like SeparatorColor, that attempt to fill the whole
+                // line with the separator character. For this very reason, consoles tend to wrap the
+                // whole line to the new row with the left position set to zero. For writers that use
+                // the Line argument, if the left seek position is above zero after the write, the
+                // top will increase by one and the buffer check is done.
+                //
+                // However, filling the line, as seen by the above logic, requires us to set the left
+                // seek position to zero, causing the top seek position to go down one row.
+                if (LeftSeekPosition > 0)
+                    TopSeekPosition += 1;
+                if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
+                    TopSeekPosition -= 1;
+                LeftSeekPosition = 0;
             }
 
             // Return the filtered positions
