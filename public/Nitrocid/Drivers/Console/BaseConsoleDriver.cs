@@ -455,7 +455,7 @@ namespace KS.Drivers.Console.Consoles
                         Thread.Sleep((int)Math.Round(MsEachLetter));
 
                         // Write a character individually
-                        ConsoleWrapper.Write(BufferChar(msg, sequences, ref i, ref vtSeqIdx));
+                        ConsoleWrapper.Write(BufferChar(msg, sequences, ref i, ref vtSeqIdx, out _));
                     }
 
                     // If we're writing a new line, write it
@@ -521,9 +521,10 @@ namespace KS.Drivers.Console.Consoles
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
                             {
-                                string bufferedChar = BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx);
+                                string bufferedChar = BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx, out bool isVtSequence);
                                 buffered.Append(bufferedChar);
-                                pos += bufferedChar.Length;
+                                if (!isVtSequence)
+                                    pos += bufferedChar.Length;
                             }
                         }
 
@@ -604,9 +605,10 @@ namespace KS.Drivers.Console.Consoles
                             // Write a character individually
                             if (MessageParagraph[i] != '\n')
                             {
-                                string bufferedChar = BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx);
+                                string bufferedChar = BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx, out bool isVtSequence);
                                 buffered.Append(bufferedChar);
-                                pos += bufferedChar.Length;
+                                if (!isVtSequence)
+                                    pos += bufferedChar.Length;
                             }
 
                             // If we're writing a new line, write it
@@ -675,7 +677,7 @@ namespace KS.Drivers.Console.Consoles
                                     exiting = true;
                                 LinesMade = 0;
                             }
-                            buffered.Append(BufferChar(sentence, sequences, ref i, ref vtSeqIdx));
+                            buffered.Append(BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
                         }
                         if (!exiting)
                         {
@@ -696,7 +698,7 @@ namespace KS.Drivers.Console.Consoles
             }
         }
 
-        internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx)
+        internal static string BufferChar(string text, MatchCollection[] sequencesCollections, ref int i, ref int vtSeqIdx, out bool isVtSequence)
         {
             // Before buffering the character, check to see if we're surrounded by the VT sequence. This is to work around
             // the problem in .NET 6.0 Linux that prevents it from actually parsing the VT sequences like it's supposed to
@@ -713,12 +715,14 @@ namespace KS.Drivers.Console.Consoles
             // control sequence matcher to match how it works on Windows.
             char ch = text[i];
             string seq = "";
+            bool vtSeq = false;
             foreach (var sequences in sequencesCollections)
             {
                 if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
                 {
                     // We're at an index which is the same as the captured VT sequence. Get the sequence
                     seq = sequences[vtSeqIdx].Value;
+                    vtSeq = true;
 
                     // Raise the index in case we have the next sequence, but only if we're sure that we have another
                     if (vtSeqIdx + 1 < sequences.Count)
@@ -728,6 +732,7 @@ namespace KS.Drivers.Console.Consoles
                     i += seq.Length - 1;
                 }
             }
+            isVtSequence = vtSeq;
             return !string.IsNullOrEmpty(seq) ? seq : ch.ToString();
         }
 
