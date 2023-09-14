@@ -31,10 +31,11 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
     internal class NKS0001 : IAnalyzer
     {
-        public void Analyze(Document document)
+        public bool Analyze(Document document)
         {
             var tree = document.GetSyntaxTreeAsync().Result;
             var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
+            bool found = false;
             foreach (var syntaxNode in syntaxNodeNodes)
             {
                 if (syntaxNode is not MemberAccessExpressionSyntax exp)
@@ -49,6 +50,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses string.Format() instead of TextTools.FormatString()", true, ConsoleColors.Yellow);
                         if (!string.IsNullOrEmpty(document.FilePath))
                             LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
+                        found = true;
                     }
                 }
                 else if (exp.Expression is IdentifierNameSyntax identifier)
@@ -62,10 +64,12 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                             TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses string.Format() instead of TextTools.FormatString()", true, ConsoleColors.Yellow);
                             if (!string.IsNullOrEmpty(document.FilePath))
                                 LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
+                            found = true;
                         }
                     }
                 }
             }
+            return found;
         }
 
         public async Task SuggestAsync(Document document, CancellationToken cancellationToken = default)
@@ -88,8 +92,9 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                 // Actually replace
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
                 var finalNode = node.ReplaceNode(syntaxNode, replacedSyntax);
-                TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):");
-                TextWriterColor.Write(finalNode.ToFullString());
+                TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
+                TextWriterColor.Write($"  - {exp}", true, ConsoleColors.Red);
+                TextWriterColor.Write($"  + {replacedSyntax.ToFullString()}", true, ConsoleColors.Green);
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
@@ -99,8 +104,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName("KS"), SyntaxFactory.IdentifierName("Misc")),
                         SyntaxFactory.IdentifierName("Text"));
                     var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
-                    TextWriterColor.Write("Additionally, the suggested fix will add the following statement:");
-                    TextWriterColor.Write(directive.ToFullString());
+                    TextWriterColor.Write("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
+                    TextWriterColor.Write($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
                 }
             }
         }

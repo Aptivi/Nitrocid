@@ -31,10 +31,11 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
     internal class NKS0002 : IAnalyzer
     {
-        public void Analyze(Document document)
+        public bool Analyze(Document document)
         {
             var tree = document.GetSyntaxTreeAsync().Result;
             var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
+            bool found = false;
             foreach (var syntaxNode in syntaxNodeNodes)
             {
                 if (syntaxNode is not MemberAccessExpressionSyntax exp)
@@ -84,10 +85,12 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                             TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console instead of ConsoleWrapper", true, ConsoleColors.Yellow);
                             if (!string.IsNullOrEmpty(document.FilePath))
                                 LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
+                            found = true;
                         }
                     }
                 }
             }
+            return found;
         }
 
         public async Task SuggestAsync(Document document, CancellationToken cancellationToken = default)
@@ -102,6 +105,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                 {
                     // Get the method
                     var idName = ((IdentifierNameSyntax)exp.Name).Identifier.Text;
+                    if (identifier.Identifier.Text != nameof(Console))
+                        continue;
 
                     // We need to have a syntax that calls ConsoleWrapper.idName
                     var classSyntax = SyntaxFactory.IdentifierName("ConsoleWrapper");
@@ -114,8 +119,9 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     // Actually replace
                     var node = await document.GetSyntaxRootAsync(cancellationToken);
                     var finalNode = node.ReplaceNode(exp, replacedSyntax);
-                    TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):");
-                    TextWriterColor.Write(finalNode.ToFullString());
+                    TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
+                    TextWriterColor.Write($"  - {exp}", true, ConsoleColors.Red);
+                    TextWriterColor.Write($"  + {replacedSyntax.ToFullString()}", true, ConsoleColors.Green);
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
@@ -125,8 +131,8 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                             SyntaxFactory.IdentifierName("KS"),
                             SyntaxFactory.IdentifierName("ConsoleBase"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
-                        TextWriterColor.Write("Additionally, the suggested fix will add the following statement:");
-                        TextWriterColor.Write(directive.ToFullString());
+                        TextWriterColor.Write("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
+                        TextWriterColor.Write($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
                     }
                 }
             }

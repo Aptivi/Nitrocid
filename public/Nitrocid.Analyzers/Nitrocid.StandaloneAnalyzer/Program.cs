@@ -81,8 +81,8 @@ namespace Nitrocid.StandaloneAnalyzer
                         {
                             try
                             {
-                                analyzer.Analyze(document);
-                                analyzer.SuggestAsync(document);
+                                if (analyzer.Analyze(document))
+                                    await analyzer.SuggestAsync(document);
                             }
                             catch (Exception ex)
                             {

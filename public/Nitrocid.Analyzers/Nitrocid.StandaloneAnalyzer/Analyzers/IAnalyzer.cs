@@ -24,7 +24,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
     internal interface IAnalyzer
     {
-        void Analyze(Document document);
+        bool Analyze(Document document);
         Task SuggestAsync(Document document, CancellationToken cancellationToken = default);
     }
 }
