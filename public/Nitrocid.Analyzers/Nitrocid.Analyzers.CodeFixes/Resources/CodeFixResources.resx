@@ -133,6 +133,13 @@
   </data>
 
   <!--
+      ConsoleTitle usage code fix
+  -->
+  <data name="ConsoleTitleUsageCodeFixTitle" xml:space="preserve">
+    <value>Use SetTitle() from ConsoleExtensions</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

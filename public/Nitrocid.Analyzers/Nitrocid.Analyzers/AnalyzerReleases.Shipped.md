@@ -4,6 +4,7 @@
 
 Rule ID | Category | Severity | Notes
 --------|----------|----------|-------
-NKS0001 | Text | Warning  | StringFormatAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0001)
-NKS0002 | ConsoleBase | Warning  | ConsoleWrapperUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0002)
+NKS0001 | Text | Warning | StringFormatAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/text-nks0001)
+NKS0002 | ConsoleBase | Warning | ConsoleWrapperUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0002)
+NKS0003 | ConsoleBase | Warning | ConsoleTitleUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0003)
 

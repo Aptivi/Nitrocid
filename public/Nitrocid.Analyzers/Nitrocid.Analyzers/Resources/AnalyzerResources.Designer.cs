@@ -61,6 +61,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SetTitle() uses the VT sequence to set the title, while Console.Title works in certain conditions..
+        /// </summary>
+        internal static string ConsoleTitleUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ConsoleTitleUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Console.Title instead of SetTitle().
+        /// </summary>
+        internal static string ConsoleTitleUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ConsoleTitleUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use SetTitle() instead of Console.Title.
+        /// </summary>
+        internal static string ConsoleTitleUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ConsoleTitleUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to ConsoleWrapper makes sure that your console is not a dumb console. This class is a wrapper for the Console class so that it works cross-platform, while Console contains some platform-dependent APIs..
         /// </summary>
         internal static string ConsoleWrapperUsageAnalyzerDescription {

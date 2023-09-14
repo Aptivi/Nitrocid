@@ -145,6 +145,19 @@
   </data>
 
   <!--
+      ConsoleTitle usage analyzer
+  -->
+  <data name="ConsoleTitleUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use SetTitle() instead of Console.Title</value>
+  </data>
+  <data name="ConsoleTitleUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.Title instead of SetTitle()</value>
+  </data>
+  <data name="ConsoleTitleUsageAnalyzerDescription" xml:space="preserve">
+    <value>SetTitle() uses the VT sequence to set the title, while Console.Title works in certain conditions.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

@@ -61,6 +61,15 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use SetTitle() from ConsoleExtensions.
+        /// </summary>
+        internal static string ConsoleTitleUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("ConsoleTitleUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use ConsoleWrapper.
         /// </summary>
         internal static string ConsoleWrapperUsageCodeFixTitle {
