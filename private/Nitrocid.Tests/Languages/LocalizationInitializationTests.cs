@@ -29,7 +29,7 @@ namespace Nitrocid.Tests.Languages
     public class LocalizationInitializationTests
     {
 
-        private JObject localizationExample = JObject.Parse(
+        private readonly JObject localizationExample = JObject.Parse(
             """
             {
               "Name": "French",

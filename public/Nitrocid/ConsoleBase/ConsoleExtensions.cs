@@ -32,8 +32,8 @@ namespace KS.ConsoleBase
     public static class ConsoleExtensions
     {
 
-        private static int OldBufferHeight = ConsoleWrapper.BufferHeight;
-        private static int OldBufferWidth = ConsoleWrapper.BufferWidth;
+        private static readonly int OldBufferHeight = ConsoleWrapper.BufferHeight;
+        private static readonly int OldBufferWidth = ConsoleWrapper.BufferWidth;
 
         /// <summary>
         /// Clears the console buffer, but keeps the current cursor position

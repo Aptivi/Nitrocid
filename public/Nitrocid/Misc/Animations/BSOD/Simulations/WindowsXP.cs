@@ -42,7 +42,7 @@ namespace KS.Misc.Animations.BSOD.Simulations
             public string Message = "";
         }
 
-        private static Dictionary<BugCheckCodes, BugCheckParams> BugChecks = new()
+        private static readonly Dictionary<BugCheckCodes, BugCheckParams> BugChecks = new()
         {
             { BugCheckCodes.IRQL_NOT_LESS_OR_EQUAL,         new BugCheckParams() { WindowsBugCheckCode = 0xA,  DisplayMessage = false } },
             { BugCheckCodes.DRIVER_IRQL_NOT_LESS_OR_EQUAL,  new BugCheckParams() { WindowsBugCheckCode = 0xD1, DisplayMessage = false } },

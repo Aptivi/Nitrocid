@@ -22,7 +22,7 @@ namespace KS.Kernel.Starting
 {
     internal class KernelStage
     {
-        private Action _stageAction = () => { };
+        private readonly Action _stageAction = () => { };
 
         internal string StageName { get; private set; }
         internal bool StageRunsInSafeMode { get; private set; }

@@ -25,9 +25,9 @@ namespace KS.ConsoleBase.Interactive
     /// </summary>
     public class InteractiveTuiBinding
     {
-        private string _bindingName;
-        private ConsoleKey _bindingKeyName;
-        private Action<object, int> _bindingAction;
+        private readonly string _bindingName;
+        private readonly ConsoleKey _bindingKeyName;
+        private readonly Action<object, int> _bindingAction;
         internal bool _localizable;
 
         /// <summary>
