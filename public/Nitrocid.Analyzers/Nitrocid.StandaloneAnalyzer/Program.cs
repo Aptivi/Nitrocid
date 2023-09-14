@@ -78,13 +78,23 @@ namespace Nitrocid.StandaloneAnalyzer
                     foreach (var document in documents)
                     {
                         foreach (var analyzer in analyzers)
-                            analyzer.Analyze(document);
+                        {
+                            try
+                            {
+                                analyzer.Analyze(document);
+                                analyzer.SuggestAsync(document);
+                            }
+                            catch (Exception ex)
+                            {
+                                TextWriterColor.Write($"Analyzer failed: {ex.Message}", true, ConsoleColors.Red);
+                            }
+                        }
                     }
                 }
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write($"Analyzer failed: {ex.Message}", true, ConsoleColors.Red);
+                TextWriterColor.Write($"General analysis failure: {ex.Message}", true, ConsoleColors.Red);
             }
         }
 

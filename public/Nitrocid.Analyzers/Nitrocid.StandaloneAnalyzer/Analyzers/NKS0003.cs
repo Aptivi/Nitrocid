@@ -21,6 +21,8 @@ using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.MiscWriters;
@@ -52,6 +54,46 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                             if (!string.IsNullOrEmpty(document.FilePath))
                                 LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
                         }
+                    }
+                }
+            }
+        }
+
+        public async Task SuggestAsync(Document document, CancellationToken cancellationToken = default)
+        {
+            var tree = document.GetSyntaxTreeAsync().Result;
+            var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
+            foreach (var syntaxNode in syntaxNodeNodes)
+            {
+                if (syntaxNode is not MemberAccessExpressionSyntax exp)
+                    continue;
+                if (exp.Expression is IdentifierNameSyntax identifier)
+                {
+                    // Build the replacement syntax
+                    var classSyntax = SyntaxFactory.IdentifierName("ConsoleExtensions");
+                    var methodSyntax = SyntaxFactory.IdentifierName("SetTitle");
+                    var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
+                    var parentSyntax = (AssignmentExpressionSyntax)exp.Parent;
+                    var valueSyntax = SyntaxFactory.Argument(parentSyntax.Right);
+                    var valuesSyntax = SyntaxFactory.ArgumentList().AddArguments(valueSyntax);
+                    var resultSyntax = SyntaxFactory.InvocationExpression(maeSyntax, valuesSyntax);
+
+                    // Actually replace
+                    var node = await document.GetSyntaxRootAsync(cancellationToken);
+                    var finalNode = node.ReplaceNode(parentSyntax, resultSyntax);
+                    TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):");
+                    TextWriterColor.Write(finalNode.ToFullString());
+
+                    // Check the imports
+                    var compilation = finalNode as CompilationUnitSyntax;
+                    if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.ConsoleBase") == false)
+                    {
+                        var name = SyntaxFactory.QualifiedName(
+                            SyntaxFactory.IdentifierName("KS"),
+                            SyntaxFactory.IdentifierName("ConsoleBase"));
+                        var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
+                        TextWriterColor.Write("Additionally, the suggested fix will add the following statement:");
+                        TextWriterColor.Write(directive.ToFullString());
                     }
                 }
             }

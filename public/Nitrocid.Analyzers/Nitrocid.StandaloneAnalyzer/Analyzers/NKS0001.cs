@@ -17,9 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Microsoft.CodeAnalysis;
+using Microsoft.CodeAnalysis.CSharp;
 using Microsoft.CodeAnalysis.CSharp.Syntax;
 using System;
 using System.Linq;
+using System.Threading;
+using System.Threading.Tasks;
 using Terminaux.Colors;
 using Terminaux.Writer.ConsoleWriters;
 using Terminaux.Writer.MiscWriters;
@@ -61,6 +64,43 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                                 LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
                         }
                     }
+                }
+            }
+        }
+
+        public async Task SuggestAsync(Document document, CancellationToken cancellationToken = default)
+        {
+            var tree = document.GetSyntaxTreeAsync().Result;
+            var syntaxNodeNodes = tree.GetRoot().DescendantNodesAndSelf().OfType<SyntaxNode>().ToList();
+            foreach (var syntaxNode in syntaxNodeNodes)
+            {
+                if (syntaxNode is not MemberAccessExpressionSyntax exp)
+                    continue;
+
+                // We need to have a syntax that calls TextTools.FormatString
+                var classSyntax = SyntaxFactory.IdentifierName("TextTools");
+                var methodSyntax = SyntaxFactory.IdentifierName("FormatString");
+                var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
+                var replacedSyntax = resultSyntax
+                    .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
+                    .WithTrailingTrivia(resultSyntax.GetTrailingTrivia());
+
+                // Actually replace
+                var node = await document.GetSyntaxRootAsync(cancellationToken);
+                var finalNode = node.ReplaceNode(syntaxNode, replacedSyntax);
+                TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):");
+                TextWriterColor.Write(finalNode.ToFullString());
+
+                // Check the imports
+                var compilation = finalNode as CompilationUnitSyntax;
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.Misc.Text") == false)
+                {
+                    var name = SyntaxFactory.QualifiedName(
+                        SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName("KS"), SyntaxFactory.IdentifierName("Misc")),
+                        SyntaxFactory.IdentifierName("Text"));
+                    var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
+                    TextWriterColor.Write("Additionally, the suggested fix will add the following statement:");
+                    TextWriterColor.Write(directive.ToFullString());
                 }
             }
         }

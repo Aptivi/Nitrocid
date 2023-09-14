@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Microsoft.CodeAnalysis;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
     internal interface IAnalyzer
     {
         void Analyze(Document document);
+        Task SuggestAsync(Document document, CancellationToken cancellationToken = default);
     }
 }
