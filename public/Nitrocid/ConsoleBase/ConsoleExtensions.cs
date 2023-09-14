@@ -92,6 +92,7 @@ namespace KS.ConsoleBase
         /// Get the filtered cursor positions (by filtered means filtered from the VT escape sequences that matches the regex in the routine)
         /// </summary>
         /// <param name="Text">The text that contains the VT sequences</param>
+        /// <param name="line">Whether to simulate the new line at the end of text or not</param>
         /// <param name="Vars">Variables to be formatted in the text</param>
         public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars)
         {
