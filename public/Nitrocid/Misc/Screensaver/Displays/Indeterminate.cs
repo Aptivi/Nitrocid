@@ -395,7 +395,8 @@ namespace KS.Misc.Screensaver.Displays
                 // Clear the ramp
                 if (IndeterminateCurrentBlockDirection == IndeterminateDirection.LeftToRight)
                 {
-                    for (int BlockPos = RampFrameBlockStartWidth; BlockPos <= IndeterminateCurrentBlockStart; BlockPos++)
+                    int start = IndeterminateCurrentBlockStart == RampFrameStartWidth + 1 ? IndeterminateCurrentBlockStart : IndeterminateCurrentBlockStart - 1;
+                    for (int BlockPos = start; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                     {
                         TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
                         TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
@@ -404,7 +405,8 @@ namespace KS.Misc.Screensaver.Displays
                 }
                 else
                 {
-                    for (int BlockPos = IndeterminateCurrentBlockEnd; BlockPos <= RampFrameBlockEndWidth; BlockPos++)
+                    int end = IndeterminateCurrentBlockEnd == RampFrameEndWidth ? IndeterminateCurrentBlockEnd : IndeterminateCurrentBlockEnd + 1;
+                    for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= end; BlockPos++)
                     {
                         TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
                         TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
@@ -425,17 +427,13 @@ namespace KS.Misc.Screensaver.Displays
                 switch (IndeterminateCurrentBlockDirection)
                 {
                     case IndeterminateDirection.LeftToRight:
-                        {
-                            IndeterminateCurrentBlockStart += 1;
-                            IndeterminateCurrentBlockEnd += 1;
-                            break;
-                        }
+                        IndeterminateCurrentBlockStart += 1;
+                        IndeterminateCurrentBlockEnd += 1;
+                        break;
                     case IndeterminateDirection.RightToLeft:
-                        {
-                            IndeterminateCurrentBlockStart -= 1;
-                            IndeterminateCurrentBlockEnd -= 1;
-                            break;
-                        }
+                        IndeterminateCurrentBlockStart -= 1;
+                        IndeterminateCurrentBlockEnd -= 1;
+                        break;
                 }
 
                 // Delay writing
@@ -446,17 +444,14 @@ namespace KS.Misc.Screensaver.Displays
             switch (IndeterminateCurrentBlockDirection)
             {
                 case IndeterminateDirection.LeftToRight:
-                    {
-                        IndeterminateCurrentBlockDirection = IndeterminateDirection.RightToLeft;
-                        break;
-                    }
+                    IndeterminateCurrentBlockDirection = IndeterminateDirection.RightToLeft;
+                    break;
                 case IndeterminateDirection.RightToLeft:
-                    {
-                        IndeterminateCurrentBlockDirection = IndeterminateDirection.LeftToRight;
-                        break;
-                    }
+                    IndeterminateCurrentBlockDirection = IndeterminateDirection.LeftToRight;
+                    break;
             }
 
+            // Reset the background
             KernelColorTools.LoadBack();
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(IndeterminateSettings.IndeterminateDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

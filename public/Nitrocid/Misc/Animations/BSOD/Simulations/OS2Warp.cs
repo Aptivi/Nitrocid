@@ -40,12 +40,12 @@ namespace KS.Misc.Animations.BSOD.Simulations
             TextWriterColor.WritePlain($"DS=0a00  DSACC=00f3  DSLIM={RandomDriver.Random():x8}  CR0={RandomDriver.Random():x8}", true);
             TextWriterColor.WritePlain($"ES=0a00  ESACC=00f3  ESLIM={RandomDriver.Random():x8}  CR2={RandomDriver.Random():x8}", true);
             TextWriterColor.WritePlain($"FS=0000  FSACC=****  FSLIM=********", true);
-            TextWriterColor.WritePlain($"GS=0000  GSACC=****  GSLIM=********\n", true);
+            TextWriterColor.WritePlain($"GS=0000  GSACC=****  GSLIM=********\n\n", true);
             TextWriterColor.WritePlain("The system detected an internal processing error at", true);
             TextWriterColor.WritePlain($"location ##0168:{RandomDriver.Random():x8} - 000e:cb1c", true);
-            TextWriterColor.WritePlain("60000, 9084\n", true);
+            TextWriterColor.WritePlain("60000, 9084\n\n", true);
             TextWriterColor.WritePlain($"{RandomDriver.Random():x8}", true);
-            TextWriterColor.WritePlain("Internal revision 14.086_W4\n", true);
+            TextWriterColor.WritePlain("Internal revision 14.086_W4\n\n", true);
             TextWriterColor.WritePlain("The system is stopped.  Record all of the above information and", true);
             TextWriterColor.WritePlain("contact your service representative.", true);
         }

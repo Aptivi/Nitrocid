@@ -285,7 +285,7 @@ namespace KS.Misc.Screensaver.Displays
                 BeatEdgePulseMaximumBlueColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumBlueColorLevel,
                 BeatEdgePulseMaximumColorLevel = BeatEdgePulseSettings.BeatEdgePulseMaximumColorLevel
             };
-            KernelColorTools.LoadBack(0);
+            KernelColorTools.LoadBack("0;0;0");
             ConsoleWrapper.CursorVisible = false;
         }
 

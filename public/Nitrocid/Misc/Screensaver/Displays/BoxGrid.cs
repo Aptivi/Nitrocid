@@ -180,9 +180,9 @@ namespace KS.Misc.Screensaver.Displays
             int boxHeight = boxHeightExterior - 2;
             int boxColumns = 0;
             int boxRows = 0;
-            for (int i = 0; i < Console.WindowWidth; i += boxWidthExterior + 1)
+            for (int i = 0; i < Console.WindowWidth - boxWidthExterior; i += boxWidthExterior + 1)
                 boxColumns++;
-            for (int i = 0; i < Console.WindowHeight; i += boxHeightExterior)
+            for (int i = 0; i < Console.WindowHeight - boxHeightExterior + 1; i += boxHeightExterior)
                 boxRows++;
 
             // Draw the boxes

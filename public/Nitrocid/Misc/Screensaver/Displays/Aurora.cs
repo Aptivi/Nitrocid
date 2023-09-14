@@ -18,6 +18,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Text;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
@@ -101,6 +102,7 @@ namespace KS.Misc.Screensaver.Displays
             (int, int, int)[] ColorBands = GetColorBands(RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
 
             // Actually draw the aurora to the background
+            StringBuilder builder = new();
             foreach ((int, int, int) colorBand in ColorBands)
             {
                 int red = colorBand.Item1;
@@ -108,9 +110,10 @@ namespace KS.Misc.Screensaver.Displays
                 int blue = colorBand.Item3;
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Aurora drawing... {0}, {1}, {2}", red, green, blue);
                 Color storage = new(red, green, blue);
-                if (!ConsoleResizeListener.WasResized(false))
-                    TextWriterColor.Write($"{ConsoleExtensions.GetClearLineToRightSequence()}", true, Color.Empty, storage);
+                builder.Append($"{storage.VTSequenceBackground}{new string(' ', ConsoleWrapper.WindowWidth)}");
             }
+            if (!ConsoleResizeListener.WasResized(false))
+                TextWriterColor.Write(builder.ToString());
             ConsoleWrapper.SetCursorPosition(0, 0);
             ThreadManager.SleepNoBlock(AuroraSettings.AuroraDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 

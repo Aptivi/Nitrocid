@@ -258,7 +258,7 @@ namespace KS.Misc.Screensaver.Displays
     {
 
         private int CurrentColumn = 1;
-        private int CurrentColumnRowConsole = ConsoleWrapper.CursorLeft;
+        private int CurrentColumnRowConsole = 0;
 
         public override string ScreensaverName { get; set; } = "Linotypo";
 
@@ -268,6 +268,8 @@ namespace KS.Misc.Screensaver.Displays
             KernelColorTools.SetConsoleColor(new Color(LinotypoSettings.LinotypoTextColor));
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
+            CurrentColumn = 1;
+            CurrentColumnRowConsole = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
         }
 

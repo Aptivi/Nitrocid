@@ -749,7 +749,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [Fader] Screensaver background color
         /// </summary>
-        public string FaderBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        public string FaderBackgroundColor { get; set; } = new Color(0, 0, 0).PlainSequence;
         /// <summary>
         /// [Fader] The minimum red color level (true color)
         /// </summary>
@@ -1545,7 +1545,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [FlashText] How many milliseconds to wait before making the next write?
         /// </summary>
-        public int FlashTextDelay { get; set; } = 50;
+        public int FlashTextDelay { get; set; } = 100;
         /// <summary>
         /// [FlashText] Text for FlashText. Shorter is better.
         /// </summary>

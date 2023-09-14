@@ -58,14 +58,14 @@ namespace KS.Misc.Animations.BSOD.Simulations
                     TextWriterColor.Write("LOT_ID = NAD8W", true, green, black);
                     TextWriterColor.Write($"CHIP_ID = {RandomDriver.Random():X12}", true, green, black);
                     TextWriterColor.Write("CHIP_ID2 = 00000000", true, green, black);
-                    TextWriterColor.Write("MNGS:19'C APOLLO:21'C G3D:21'C ISP:22'C\n", true, green, black);
-                    TextWriterColor.Write($"Exception: do_handler_serror: SERROR(esr: 0x{RandomDriver.Random():X8})\n", true, red, black);
+                    TextWriterColor.Write("MNGS:19'C APOLLO:21'C G3D:21'C ISP:22'C\n\n", true, green, black);
+                    TextWriterColor.Write($"Exception: do_handler_serror: SERROR(esr: 0x{RandomDriver.Random():X8})\n\n", true, red, black);
                     TextWriterColor.Write($"pc : 0x{RandomDriver.Random():X8}      ir : 0x{RandomDriver.Random():X8}      sp : 0x{RandomDriver.Random():X8}", true, red, black);
                     break;
                 case Variant.Short:
                     TextWriterColor.Write("Bootloader exception", true, red, black);
-                    TextWriterColor.Write("[ RST_STAT = 0x10000 ]\n", true, red, black);
-                    TextWriterColor.Write($"Exception: do_handler_sync: DABT_EL1(esr: 0x{RandomDriver.Random():X8})\n", true, red, black);
+                    TextWriterColor.Write("[ RST_STAT = 0x10000 ]\n\n", true, red, black);
+                    TextWriterColor.Write($"Exception: do_handler_sync: DABT_EL1(esr: 0x{RandomDriver.Random():X8})\n\n", true, red, black);
                     TextWriterColor.Write($"pc : 0x{RandomDriver.Random():X8}      ir : 0x{RandomDriver.Random():X8}      sp : 0x{RandomDriver.Random():X8}", true, red, black);
                     break;
             }

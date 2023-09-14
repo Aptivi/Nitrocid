@@ -31,19 +31,19 @@ namespace KS.Misc.Animations.BSOD.Simulations
             KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // Display technical information
-            TextWriterColor.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n", true);
+            TextWriterColor.WritePlain($"\n*** STOP: 0x0000007B (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n\n", true);
 
             // If this is the first time...
             TextWriterColor.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
                                        "restart your computer. If this screen appears again, follow\n" +
-                                       "these steps:\n", true);
+                                       "these steps:\n\n", true);
 
             // Display some steps
             TextWriterColor.WritePlain("Check for viruses on your computer. Remove any newly installed.\n" +
                                        "hard drives or hard drive controllers. Check your hard drive\n" +
                                        "to make sure it is properly configured and terminated.\n" +
                                        "Run CHKDSK /F to check for hard drive corruption, and then\n" +
-                                       "restart your computer.\n", true);
+                                       "restart your computer.\n\n", true);
 
             // Getting Started manual reference
             TextWriterColor.WritePlain("Refer to your Getting Started manual for more information on\n" +

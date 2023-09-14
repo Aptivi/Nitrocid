@@ -288,7 +288,7 @@ namespace KS.Misc.Screensaver.Displays
             ConsoleWrapper.CursorVisible = false;
 
             // Clear the old text position
-            int diff = ColumnLastLetter - ColumnFirstLetter;
+            int diff = ColumnLastLetter - ColumnFirstLetter + 1;
             TextWriterWhereColor.WriteWhere(new string(' ', diff), lastLeft, lastTop, true, Color.Empty, BouncingTextSettings.BouncingTextBackgroundColor);
 
             // Define the color

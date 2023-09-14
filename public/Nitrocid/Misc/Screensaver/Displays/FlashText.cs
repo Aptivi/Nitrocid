@@ -60,7 +60,7 @@ namespace KS.Misc.Screensaver.Displays
             set
             {
                 if (value <= 0)
-                    value = 50;
+                    value = 100;
                 Config.SaverConfig.FlashTextDelay = value;
             }
         }
@@ -260,8 +260,8 @@ namespace KS.Misc.Screensaver.Displays
             DebugWriter.WriteDebug(DebugLevel.I, "Console geometry: {0}x{1}", ConsoleWrapper.WindowWidth, ConsoleWrapper.WindowHeight);
 
             // Select position
-            Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
-            Top = RandomDriver.Random(ConsoleWrapper.WindowHeight);
+            Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth - FlashTextSettings.FlashTextWrite.Length);
+            Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
         }
 
