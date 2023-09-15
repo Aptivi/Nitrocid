@@ -50,6 +50,13 @@ namespace KS.Shell.Shells.Debug
                     }, new Debug_KeyInfoCommand())
             },
 
+            { "lsshells",
+                new CommandInfo("lsshells", ShellType, /* Localizable */ "Lists all available shells",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Debug_LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
             { "threadsbt",
                 new CommandInfo("threadsbt", ShellType, /* Localizable */ "Gets backtrace for all threads",
                     new[] {
