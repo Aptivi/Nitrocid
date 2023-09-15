@@ -31,21 +31,21 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
                 {
                     try
                     {
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, DebugWriter.DebugStackTraces[Convert.ToInt32(ListArgsOnly[0])]);
+                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, DebugWriter.DebugStackTraces[Convert.ToInt32(ListArgsOnly[0])], true);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", ListArgsOnly[0], DebugWriter.DebugStackTraces.Count, ex.Message);
+                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, ListArgsOnly[0], DebugWriter.DebugStackTraces.Count, ex.Message);
                     }
                 }
                 else
                 {
-                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, DebugWriter.DebugStackTraces[0]);
+                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, DebugWriter.DebugStackTraces[0], true);
                 }
             }
             else
             {
-                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("No stack trace"));
+                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("No stack trace"), true);
             }
         }
     }

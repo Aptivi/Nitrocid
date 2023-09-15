@@ -37,6 +37,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             { "help", new RemoteDebugCommandInfo("help", /* Localizable */ "Help page", new RemoteDebugCommandArgumentInfo(new string[] { "[command]" }), new HelpCommand()) },
             { "register", new RemoteDebugCommandInfo("register", /* Localizable */ "Registers your name to your remote debug device", new RemoteDebugCommandArgumentInfo(new string[] { "<name>" }, true, 1), new RegisterCommand()) },
             { "exit", new RemoteDebugCommandInfo("exit", /* Localizable */ "Disconnects from the remote debugger", new RemoteDebugCommandArgumentInfo(), new ExitCommand()) },
+            { "mutelogs", new RemoteDebugCommandInfo("mutelogs", /* Localizable */ "Mutes or unmutes the kernel logs", new RemoteDebugCommandArgumentInfo(), new MuteLogsCommand()) },
             { "trace", new RemoteDebugCommandInfo("trace", /* Localizable */ "Shows last stack trace on exception", new RemoteDebugCommandArgumentInfo(new string[] { "<tracenumber>" }, true, 1), new TraceCommand()) },
             { "username", new RemoteDebugCommandInfo("username", /* Localizable */ "Shows current username in the session", new RemoteDebugCommandArgumentInfo(), new UsernameCommand()) }
         };
@@ -65,7 +66,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.W, Translate.DoTranslation("There was not enough arguments. See below for usage:"));
+                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.W, Translate.DoTranslation("There was not enough arguments. See below for usage:"), true);
                         RemoteDebugHelpSystem.ShowHelp(Command);
                     }
                 }
@@ -84,7 +85,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             {
                 EventsManager.FireEvent(EventType.RemoteDebugCommandError, RequestedCommand, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebugDevicesOnly(DebugLevel.E, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), ex.GetType().FullName, ex.Message, RequestedCommand);
+                DebugWriter.WriteDebugDevicesOnly(DebugLevel.E, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ex.GetType().FullName, ex.Message, RequestedCommand);
             }
         }
 

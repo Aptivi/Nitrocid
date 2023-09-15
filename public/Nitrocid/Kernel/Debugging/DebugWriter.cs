@@ -89,6 +89,24 @@ namespace KS.Kernel.Debugging
             {
                 if (Flags.DebugMode)
                 {
+                    WriteDebugLogOnly(Level, text, vars);
+                    WriteDebugDevicesOnly(Level, text, false, vars);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Outputs the text into the debugger file, and sets the time stamp.
+        /// </summary>
+        /// <param name="Level">Debug level</param>
+        /// <param name="text">A sentence that will be written to the the debugger file. Supports {0}, {1}, ...</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteDebugLogOnly(DebugLevel Level, string text, params object[] vars)
+        {
+            lock (WriteLock)
+            {
+                if (Flags.DebugMode)
+                {
                     // Open debugging stream
                     string debugFilePath = DebugPath;
                     if (DebugStreamWriter is null || DebugStreamWriter?.BaseStream is null || isDisposed)
@@ -103,11 +121,13 @@ namespace KS.Kernel.Debugging
                         var STrace = new DebugStackFrame();
                         StringBuilder message = new();
 
-                        // We could be calling this function by WriteDebugConditional or WriteDebugPrivacy, so descend a frame
-                        if (STrace.RoutineName == nameof(WriteDebugConditional))
-                            STrace = new DebugStackFrame(3);
-                        if (STrace.RoutineName == nameof(WriteDebugPrivacy))
-                            STrace = new DebugStackFrame(2);
+                        // Descend a frame until we're out of this class
+                        int unwound = 0;
+                        while (STrace.RoutinePath.Contains(nameof(DebugWriter)))
+                        {
+                            STrace = new DebugStackFrame(unwound);
+                            unwound++;
+                        }
 
                         // Remove the \r line endings from the text, since the debug file needs to have its line endings in the
                         // UNIX format anyways.
@@ -155,23 +175,6 @@ namespace KS.Kernel.Debugging
                             DriverHandler.CurrentDebugLoggerDriverLocal.Write(message.ToString(), vars);
                         else
                             DriverHandler.CurrentDebugLoggerDriverLocal.Write(message.ToString());
-                        message.Replace("\n", "\r\n");
-                        for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
-                        {
-                            try
-                            {
-                                if (vars.Length > 0)
-                                    RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write(message.ToString(), vars);
-                                else
-                                    RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write(message);
-                            }
-                            catch (Exception ex)
-                            {
-                                RemoteDebugTools.DisconnectDependingOnException(ex, i);
-                                if (i > 0)
-                                    i--;
-                            }
-                        }
                     }
                     catch (Exception ex)
                     {
@@ -203,8 +206,9 @@ namespace KS.Kernel.Debugging
         /// </summary>
         /// <param name="Level">Debug level</param>
         /// <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
+        /// <param name="force">Force message to appear, regardless of mute settings</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteDebugDevicesOnly(DebugLevel Level, string text, params object[] vars)
+        public static void WriteDebugDevicesOnly(DebugLevel Level, string text, bool force, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -214,7 +218,9 @@ namespace KS.Kernel.Debugging
                     {
                         try
                         {
-                            RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
+                            var device = RemoteDebugger.DebugDevices[i];
+                            if (force || (!force && !device.DeviceInfo.MuteLogs))
+                                RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
                         }
                         catch (Exception ex)
                         {

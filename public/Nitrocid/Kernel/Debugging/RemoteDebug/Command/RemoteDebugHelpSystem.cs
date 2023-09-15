@@ -62,12 +62,12 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
 
                 // Print usage information
                 foreach (string HelpUsage in HelpUsages)
-                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Usage:") + $" {FinalCommand} {HelpUsage}");
+                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Usage:") + $" {FinalCommand} {HelpUsage}", true);
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
                     HelpDefinition = Translate.DoTranslation("Command defined by ") + command;
-                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
+                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Description:") + $" {HelpDefinition}", true);
 
                 // Extra help action for some commands
                 FinalCommandList[FinalCommand].CommandBase?.HelpHelper();
@@ -78,24 +78,24 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                 if (!Flags.SimHelp)
                 {
                     // The built-in commands
-                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (Flags.ShowCommandsCount & Flags.ShowShellCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, CommandList.Count);
+                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (Flags.ShowCommandsCount & Flags.ShowShellCommandsCount ? " [{0}]" : ""), true, CommandList.Count);
 
                     // Check the command list count and print not implemented. This is an extremely rare situation.
                     if (CommandList.Count == 0)
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, "- " + Translate.DoTranslation("Shell commands not implemented!!!"), true, KernelColorType.Warning);
+                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, "- " + Translate.DoTranslation("Shell commands not implemented!!!"), true);
                     foreach (string cmd in CommandList.Keys)
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, "- {0}: {1}", cmd, CommandList[cmd].GetTranslatedHelpEntry());
+                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, "- {0}: {1}", true, cmd, CommandList[cmd].GetTranslatedHelpEntry());
                 }
                 else
                 {
                     // The built-in commands
                     foreach (string cmd in CommandList.Keys)
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, "{0}, ", false, KernelColorType.ListEntry, cmd);
+                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, "{0}, ", true, cmd);
                 }
             }
             else
             {
-                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("No help for command \"{0}\"."), true, KernelColorType.Error, command);
+                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("No help for command \"{0}\"."), true, command);
             }
         }
 

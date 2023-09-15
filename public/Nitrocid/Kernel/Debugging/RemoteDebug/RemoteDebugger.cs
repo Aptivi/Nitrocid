@@ -270,7 +270,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                             if (Flags.RecordChatToDebugLog)
                                 DebugWriter.WriteDebug(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
                             else
-                                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
+                                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), true, SocketName, Message);
 
                             // Add the message to the chat history
                             deviceInfo.chatHistory.Add($"[{TimeDateRenderers.Render()}] {Message}");

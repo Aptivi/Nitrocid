@@ -16,19 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Languages;
-using System.Linq;
+using KS.Users;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
-    internal class RegisterCommand : RemoteDebugBaseCommand
+    internal class MuteLogsCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address)
-        {
-            string Name = ListArgsOnly[0];
-            Address.name = Name;
-            RemoteDebugTools.SaveAllDevices();
-            DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Successfully registered! Hi, {0}!"), true, Name);
-        }
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address) =>
+            Address.muteLogs = !Address.muteLogs;
     }
 }

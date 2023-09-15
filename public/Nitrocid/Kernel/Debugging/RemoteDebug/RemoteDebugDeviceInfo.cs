@@ -36,6 +36,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
         internal string name = "";
         [JsonProperty(nameof(Blocked))]
         internal bool blocked;
+        [JsonProperty(nameof(MuteLogs))]
+        internal bool muteLogs;
         [JsonProperty(nameof(ChatHistory))]
         internal List<string> chatHistory = new();
 
@@ -57,6 +59,12 @@ namespace KS.Kernel.Debugging.RemoteDebug
         [JsonIgnore]
         public bool Blocked =>
             blocked;
+        /// <summary>
+        /// Will the device receive kernel debug logs?
+        /// </summary>
+        [JsonIgnore]
+        public bool MuteLogs =>
+            muteLogs;
         /// <summary>
         /// Chat history of the device
         /// </summary>
