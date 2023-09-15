@@ -36,7 +36,8 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell(ShellType.RSSShell, EstablishRssConnection, (_, connection) => EstablishRssConnection(connection["Address"].ToString()), StringArgs);
+            NetworkConnectionTools.OpenConnectionForShell(ShellType.RSSShell, EstablishRssConnection, (_, connection) =>
+            EstablishRssConnection(connection.Address), StringArgs);
             return 0;
         }
 

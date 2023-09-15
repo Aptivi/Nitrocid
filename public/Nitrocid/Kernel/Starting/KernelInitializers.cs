@@ -49,6 +49,7 @@ using KS.Misc.ToDoList;
 using KS.Modifications;
 using KS.Network.Base.Connections;
 using KS.Network.RPC;
+using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Scripting;
@@ -202,6 +203,10 @@ namespace KS.Kernel.Starting
             // Initialize aliases
             AliasManager.InitAliases();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
+
+            // Initialize speed dial
+            SpeedDialTools.LoadAll();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded speed dial entries.");
 
             // Initialize top right date
             TimeDateTopRight.InitTopRightDate();

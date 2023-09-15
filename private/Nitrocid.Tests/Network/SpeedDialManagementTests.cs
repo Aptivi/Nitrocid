@@ -42,11 +42,8 @@ namespace Nitrocid.Tests.Network
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestListSpeedDialEntries()
-        {
+        public void TestListSpeedDialEntries() =>
             SpeedDialTools.ListSpeedDialEntries().ShouldNotBeEmpty();
-            Console.WriteLine(string.Join(" | ", SpeedDialTools.ListSpeedDialEntries().Keys));
-        }
 
     }
 }

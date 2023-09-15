@@ -389,7 +389,7 @@ namespace KS.Network.Base.Connections
         /// <param name="establisher">The function responsible for establishing the network connection</param>
         /// <param name="speedEstablisher">The function responsible for establishing the network connection with speed dial options</param>
         /// <param name="address">Target address to connect to</param>
-        public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "") =>
+        public static void OpenConnectionForShell(ShellType shellType, Func<string, NetworkConnection> establisher, Func<string, SpeedDialEntry, NetworkConnection> speedEstablisher, string address = "") =>
             OpenConnectionForShell(ShellManager.GetShellTypeName(shellType), establisher, speedEstablisher, address);
 
         /// <summary>
@@ -399,7 +399,7 @@ namespace KS.Network.Base.Connections
         /// <param name="establisher">The function responsible for establishing the network connection</param>
         /// <param name="speedEstablisher">The function responsible for establishing the network connection with speed dial options</param>
         /// <param name="address">Target address to connect to</param>
-        public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, Func<string, JToken, NetworkConnection> speedEstablisher, string address = "")
+        public static void OpenConnectionForShell(string shellType, Func<string, NetworkConnection> establisher, Func<string, SpeedDialEntry, NetworkConnection> speedEstablisher, string address = "")
         {
             // Get shell info to check to see if the shell accepts network connections
             var shellInfo = ShellManager.GetShellInfo(shellType);
@@ -438,21 +438,21 @@ namespace KS.Network.Base.Connections
                         // Prompt the user to select a server to connect to from the speed dial
                         var speedDials = SpeedDialTools.ListSpeedDialEntriesByType(connectionType);
                         var connectionsChoiceList = new List<InputChoiceInfo>();
-                        for (int i = 0; i < speedDials.Keys.Count; i++)
+                        for (int i = 0; i < speedDials.Length; i++)
                         {
-                            string connectionUrl = speedDials.ElementAt(i).Key;
+                            string connectionUrl = speedDials[i].Address;
                             DebugWriter.WriteDebug(DebugLevel.I, "Speed dial info: {0}.", connectionUrl);
                             connectionsChoiceList.Add(new InputChoiceInfo($"{i + 1}", connectionUrl));
                         }
                         int selectedSpeedDial = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a connection from the speed dial list."), connectionsChoiceList, new List<InputChoiceInfo>() {
-                            new InputChoiceInfo($"{speedDials.Count + 1}", Translate.DoTranslation("Create a new connection")),
+                            new InputChoiceInfo($"{speedDials.Length + 1}", Translate.DoTranslation("Create a new connection")),
                         });
-                        DebugWriter.WriteDebug(DebugLevel.I, "Selected speed dial {0} out of {1} servers", selectedSpeedDial, speedDials.Count);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Selected speed dial {0} out of {1} servers", selectedSpeedDial, speedDials.Length);
                         if (selectedSpeedDial == -1)
                             return;
 
                         // Now, check to see if we're going to connect
-                        if (selectedSpeedDial == speedDials.Count + 1)
+                        if (selectedSpeedDial == speedDials.Length + 1)
                         {
                             // User selected to create a new connection
                             DebugWriter.WriteDebug(DebugLevel.I, "Letting user provide connection info...");
@@ -463,9 +463,9 @@ namespace KS.Network.Base.Connections
                         {
                             // Get the address from the speed dial and connect to it
                             var speedDialKvp = speedDials.ElementAt(selectedSpeedDial - 1);
-                            address = speedDialKvp.Key;
+                            address = speedDialKvp.Address;
                             DebugWriter.WriteDebug(DebugLevel.I, "Establishing connection to {0}...", address);
-                            connection = speedEstablisher(address, speedDialKvp.Value);
+                            connection = speedEstablisher(address, speedDialKvp);
                         }
                     }
                     else

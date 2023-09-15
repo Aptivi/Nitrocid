@@ -21,6 +21,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Network.SFTP;
 using Newtonsoft.Json.Linq;
+using KS.Network.SpeedDial;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -41,9 +42,9 @@ namespace KS.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        private NetworkConnection EstablishSftpConnection(string address, JToken connection)
+        private NetworkConnection EstablishSftpConnection(string address, SpeedDialEntry connection)
         {
-            var info = SFTPTools.GetConnectionInfo(address, (int)connection["Port"], connection["Options"][0].ToString());
+            var info = SFTPTools.GetConnectionInfo(address, connection.Port, connection.Options[0].ToString());
             return SFTPTools.ConnectSFTP(info);
         }
 

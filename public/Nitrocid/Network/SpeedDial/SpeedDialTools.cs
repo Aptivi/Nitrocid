@@ -33,6 +33,7 @@ using KS.Misc.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Network.Base.Connections;
+using KS.Files.Querying;
 
 namespace KS.Network.SpeedDial
 {
@@ -42,17 +43,67 @@ namespace KS.Network.SpeedDial
     public static class SpeedDialTools
     {
 
-        /// <summary>
-        /// Gets the token from the speed dial
-        /// </summary>
-        public static JObject GetTokenFromSpeedDial()
-        {
-            // Make the speed dial file if not found, then read the contents
-            Making.MakeFile(Paths.GetKernelPath(KernelPathType.SpeedDial), false);
-            string SpeedDialJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.SpeedDial));
+        private static List<SpeedDialEntry> speedDialEntries = new();
 
-            // Now, parse the contents
-            return JObject.Parse(!string.IsNullOrEmpty(SpeedDialJsonContent) ? SpeedDialJsonContent : "{}");
+        /// <summary>
+        /// Gets a speed dial entry
+        /// </summary>
+        /// <param name="Address">Address to look for</param>
+        /// <param name="Port">Port to look for</param>
+        /// <param name="SpeedDialType">Speed dial type to look for</param>
+        /// <param name="arguments">Arguments to look for</param>
+        /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
+        public static SpeedDialEntry GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType, object[] arguments) =>
+            GetSpeedDialEntry(Address, Port, SpeedDialType.ToString(), arguments);
+
+        /// <summary>
+        /// Gets a speed dial entry
+        /// </summary>
+        /// <param name="Address">Address to look for</param>
+        /// <param name="Port">Port to look for</param>
+        /// <param name="SpeedDialType">Speed dial type to look for</param>
+        /// <param name="arguments">Arguments to look for</param>
+        /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
+        public static SpeedDialEntry GetSpeedDialEntry(string Address, int Port, string SpeedDialType, object[] arguments)
+        {
+            if (speedDialEntries.Count == 0)
+                return null;
+            var entry = speedDialEntries.FirstOrDefault((sde) =>
+                sde.Address == Address &&
+                sde.Port == Port &&
+                sde.Type == SpeedDialType &&
+                sde.Options.SequenceEqual(arguments)
+            );
+            return entry;
+        }
+
+        /// <summary>
+        /// Gets a speed dial entry
+        /// </summary>
+        /// <param name="Address">Address to look for</param>
+        /// <param name="Port">Port to look for</param>
+        /// <param name="SpeedDialType">Speed dial type to look for</param>
+        /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
+        public static SpeedDialEntry GetSpeedDialEntry(string Address, int Port, NetworkConnectionType SpeedDialType) =>
+            GetSpeedDialEntry(Address, Port, SpeedDialType.ToString());
+
+        /// <summary>
+        /// Gets a speed dial entry
+        /// </summary>
+        /// <param name="Address">Address to look for</param>
+        /// <param name="Port">Port to look for</param>
+        /// <param name="SpeedDialType">Speed dial type to look for</param>
+        /// <returns>A <see cref="SpeedDialEntry"/> instance if found</returns>
+        public static SpeedDialEntry GetSpeedDialEntry(string Address, int Port, string SpeedDialType)
+        {
+            if (speedDialEntries.Count == 0)
+                return null;
+            var entry = speedDialEntries.FirstOrDefault((sde) =>
+                sde.Address == Address &&
+                sde.Port == Port &&
+                sde.Type == SpeedDialType
+            );
+            return entry;
         }
 
         /// <summary>
@@ -76,9 +127,9 @@ namespace KS.Network.SpeedDial
         /// <param name="arguments">List of arguments to pass to the entry</param>
         public static void AddEntryToSpeedDial(string Address, int Port, string SpeedDialType, bool ThrowException = true, params object[] arguments)
         {
-            // Parse the token
-            var SpeedDialToken = GetTokenFromSpeedDial();
-            if (SpeedDialToken[Address] is null)
+            // Parse the entry
+            var entryCheck = GetSpeedDialEntry(Address, Port, SpeedDialType, arguments);
+            if (entryCheck is null)
             {
                 // Check the type
                 if (!NetworkConnectionTools.ConnectionTypeExists(SpeedDialType))
@@ -90,16 +141,11 @@ namespace KS.Network.SpeedDial
                 }
 
                 // The entry doesn't exist. Go ahead and create it.
-                var NewSpeedDial = new JObject(
-                    new JProperty("Address", Address),
-                    new JProperty("Port", Port),
-                    new JProperty("Type", SpeedDialType),
-                    new JProperty("Options", new JArray(arguments))
-                );
+                var dialEntry = new SpeedDialEntry(Address, Port, SpeedDialType, arguments.ToArray());
 
                 // Add the entry and write it to the file
-                SpeedDialToken.Add(Address, NewSpeedDial);
-                File.WriteAllText(Paths.GetKernelPath(KernelPathType.SpeedDial), JsonConvert.SerializeObject(SpeedDialToken, Formatting.Indented));
+                speedDialEntries.Add(dialEntry);
+                SaveAll();
             }
             else if (ThrowException)
             {
@@ -146,102 +192,38 @@ namespace KS.Network.SpeedDial
         /// Lists all speed dial entries
         /// </summary>
         /// <returns>A list</returns>
-        public static Dictionary<string, JToken> ListSpeedDialEntries()
-        {
-            // Parse the token
-            var SpeedDialToken = GetTokenFromSpeedDial();
-            var SpeedDialEntries = new Dictionary<string, JToken>();
-            foreach (var SpeedDialAddress in SpeedDialToken.Properties())
-                SpeedDialEntries.Add(SpeedDialAddress.Name, SpeedDialAddress.Value);
-            return SpeedDialEntries;
-        }
+        public static SpeedDialEntry[] ListSpeedDialEntries() =>
+            speedDialEntries.ToArray();
 
         /// <summary>
         /// Lists all speed dial entries by type
         /// </summary>
         /// <returns>A list</returns>
-        public static Dictionary<string, JToken> ListSpeedDialEntriesByType(NetworkConnectionType SpeedDialType) =>
+        public static SpeedDialEntry[] ListSpeedDialEntriesByType(NetworkConnectionType SpeedDialType) =>
             ListSpeedDialEntriesByType(SpeedDialType.ToString());
 
         /// <summary>
         /// Lists all speed dial entries by type
         /// </summary>
         /// <returns>A list</returns>
-        public static Dictionary<string, JToken> ListSpeedDialEntriesByType(string SpeedDialType)
-        {
-            // Parse the token
-            var SpeedDialToken = GetTokenFromSpeedDial().AsJEnumerable().Cast<JProperty>().Where((token) => token.Value["Type"].ToString() == SpeedDialType);
-            var SpeedDialEntries = new Dictionary<string, JToken>();
-            foreach (var SpeedDialAddress in SpeedDialToken)
-                SpeedDialEntries.Add(SpeedDialAddress.Name, SpeedDialAddress.Value);
-            return SpeedDialEntries;
-        }
+        public static SpeedDialEntry[] ListSpeedDialEntriesByType(string SpeedDialType) =>
+            speedDialEntries.Where((sde) => sde.Type == SpeedDialType).ToArray();
 
         /// <summary>
-        /// Opens speed dial prompt
+        /// Saves all the speed dial entries
         /// </summary>
-        public static JToken GetQuickConnectInfo()
-        {
-            // Get the speed dial entries
-            var SpeedDialEntries = ListSpeedDialEntries();
-            DebugWriter.WriteDebug(DebugLevel.I, "Speed dial length: {0}", SpeedDialEntries.Count);
+        public static void SaveAll() =>
+            File.WriteAllText(Paths.GetKernelPath(KernelPathType.SpeedDial), JsonConvert.SerializeObject(speedDialEntries, Formatting.Indented));
 
-            // Get the headers ready for prompt
-            string Answer;
-            var SpeedDialHeaders = new[] { 
-                "#",
-                Translate.DoTranslation("Host Name"),
-                Translate.DoTranslation("Host Port"),
-                Translate.DoTranslation("Parameters")
-            };
-            var SpeedDialData = new string[SpeedDialEntries.Count, 4];
-            if (!(SpeedDialEntries.Count == 0))
-            {
-                TextWriterColor.Write(Translate.DoTranslation("Select an address to connect to:"));
-                for (int i = 0; i <= SpeedDialEntries.Count - 1; i++)
-                {
-                    string SpeedDialAddress = SpeedDialEntries.Keys.ElementAtOrDefault(i);
-                    var SpeedDialOptions = SpeedDialEntries[SpeedDialAddress]["Options"];
-                    DebugWriter.WriteDebug(DebugLevel.I, "Speed dial address: {0}", SpeedDialAddress);
-                    SpeedDialData[i, 0] = (i + 1).ToString();
-                    SpeedDialData[i, 1] = SpeedDialAddress;
-                    SpeedDialData[i, 2] = (string)SpeedDialEntries[SpeedDialAddress]["Port"];
-                    SpeedDialData[i, 3] = SpeedDialOptions is not null ? string.Join(", ", SpeedDialEntries[SpeedDialAddress]["Options"]) : "";
-                }
-                TableColor.WriteTable(SpeedDialHeaders, SpeedDialData, 2);
-                TextWriterColor.Write();
-                while (true)
-                {
-                    TextWriterColor.Write(">> ", false, KernelColorType.Input);
-                    Answer = Input.ReadLine();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Response: {0}", Answer);
-                    if (TextTools.IsStringNumeric(Answer))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Response is numeric. IsStringNumeric(Answer) returned true. Checking to see if in-bounds...");
-                        int AnswerInt = Convert.ToInt32(Answer);
-                        if (AnswerInt <= SpeedDialEntries.Count)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Response is in-bounds. Connecting...");
-                            return SpeedDialEntries.Values.ElementAtOrDefault(AnswerInt - 1);
-                        }
-                        else
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Response is out-of-bounds. Retrying...");
-                            TextWriterColor.Write(Translate.DoTranslation("The selection is out of range. Select between 1-{0}. Try again."), true, KernelColorType.Error, SpeedDialEntries.Count);
-                        }
-                    }
-                    else {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Response isn't numeric. IsStringNumeric(Answer) returned false.");
-                        TextWriterColor.Write(Translate.DoTranslation("The selection is not a number. Try again."), true, KernelColorType.Error);
-                    }
-                }
-            }
-            else
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Speed dial is empty. Lines count is 0.");
-                TextWriterColor.Write(Translate.DoTranslation("Speed dial is empty. Connect to a server to add an address to it."), true, KernelColorType.Error);
-            }
-            return null;
+        /// <summary>
+        /// Loads all the speed dial entries
+        /// </summary>
+        public static void LoadAll()
+        {
+            string path = Paths.GetKernelPath(KernelPathType.SpeedDial);
+            if (!Checking.FileExists(path))
+                return;
+            speedDialEntries = JsonConvert.DeserializeObject<List<SpeedDialEntry>>(File.ReadAllText(path));
         }
     }
 }

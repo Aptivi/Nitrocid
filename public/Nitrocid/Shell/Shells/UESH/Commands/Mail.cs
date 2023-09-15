@@ -18,6 +18,7 @@
 
 using KS.Network.Base.Connections;
 using KS.Network.Mail;
+using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Newtonsoft.Json.Linq;
@@ -37,15 +38,16 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell(ShellType.MailShell, EstablishMailConnection, (_, connection) => EstablishMailConnectionSpeedDial(connection), StringArgs);
+            NetworkConnectionTools.OpenConnectionForShell(ShellType.MailShell, EstablishMailConnection, (_, connection) =>
+            EstablishMailConnectionSpeedDial(connection), StringArgs);
             return 0;
         }
 
         private NetworkConnection EstablishMailConnection(string username) =>
             string.IsNullOrEmpty(username) ? MailLogin.PromptUser() : MailLogin.PromptPassword(username);
 
-        private NetworkConnection EstablishMailConnectionSpeedDial(JToken connection) =>
-            MailLogin.PromptPassword(connection["Options"][0].ToString());
+        private NetworkConnection EstablishMailConnectionSpeedDial(SpeedDialEntry connection) =>
+            MailLogin.PromptPassword(connection.Options[0].ToString());
 
     }
 }

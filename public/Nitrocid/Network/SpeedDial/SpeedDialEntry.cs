@@ -32,7 +32,7 @@ namespace KS.Network.SpeedDial
         [JsonProperty(nameof(Type))]
         private readonly string type;
         [JsonProperty(nameof(Options))]
-        private readonly string[] options;
+        private readonly object[] options;
 
         /// <summary>
         /// IP address to connect to
@@ -56,11 +56,11 @@ namespace KS.Network.SpeedDial
         /// Speed dial options
         /// </summary>
         [JsonIgnore]
-        public string[] Options =>
+        public object[] Options =>
             options;
 
         [JsonConstructor]
-        internal SpeedDialEntry(string address, int port, string type, string[] options)
+        internal SpeedDialEntry(string address, int port, string type, object[] options)
         {
             this.address = address;
             this.port = port;
