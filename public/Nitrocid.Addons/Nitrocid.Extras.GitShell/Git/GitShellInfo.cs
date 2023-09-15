@@ -46,6 +46,16 @@ namespace Nitrocid.Extras.GitShell.Git
                         }, Array.Empty<SwitchInfo>())
                     }, new Git_CheckoutCommand())
             },
+
+            { "fetch",
+                new CommandInfo("fetch", ShellType, /* Localizable */ "Fetches all updates from a remote",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "remote")
+                        }, Array.Empty<SwitchInfo>())
+                    }, new Git_FetchCommand())
+            },
             
             { "lsbranches",
                 new CommandInfo("lsbranches", ShellType, /* Localizable */ "Lists all branches",
@@ -60,7 +70,25 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo()
                     }, new Git_LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
-            
+
+            { "pull",
+                new CommandInfo("pull", ShellType, /* Localizable */ "Pulls all updates from the server",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Git_PullCommand())
+            },
+
+            { "setid",
+                new CommandInfo("setid", ShellType, /* Localizable */ "Sets your identity up",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "email"),
+                            new CommandArgumentPart(true, "username"),
+                        }, Array.Empty<SwitchInfo>())
+                    }, new Git_SetIdCommand())
+            },
+
             { "stage",
                 new CommandInfo("stage", ShellType, /* Localizable */ "Stages a change",
                     new[] {

@@ -33,6 +33,9 @@ namespace Nitrocid.Extras.GitShell.Git
         internal static string branchName = "";
         internal static string repoPath = "";
         internal static Repository repo = null;
+        internal static string name = "";
+        internal static string email = "";
+        internal static bool isIdentified = false;
 
         /// <summary>
         /// Branch name for Git
