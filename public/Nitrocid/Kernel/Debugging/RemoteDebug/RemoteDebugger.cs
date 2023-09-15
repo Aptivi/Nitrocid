@@ -49,7 +49,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         internal static TcpListener DebugTCP;
         internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
         internal static int debugPort = 3014;
-        private readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.8.0.0");
+        private readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.8.1.0");
         private static readonly AutoResetEvent RDebugBailer = new(false);
 
         /// <summary>
@@ -268,9 +268,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
 
                             // Decide if we're recording the chat to the debug log
                             if (Flags.RecordChatToDebugLog)
-                                DebugWriter.WriteDebug(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
-                            else
-                                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), true, SocketName, Message);
+                                DebugWriter.WriteDebugLogOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
+                            DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), true, SocketName, Message);
 
                             // Add the message to the chat history
                             deviceInfo.chatHistory.Add($"[{TimeDateRenderers.Render()}] {Message}");
