@@ -18,7 +18,6 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Calendar;
 using System;
 
 namespace KS.Kernel.Time.Renderers
@@ -75,8 +74,6 @@ namespace KS.Kernel.Time.Renderers
         {
             TextWriterColor.Write(Translate.DoTranslation("Current time is {0}"), TimeDateRenderers.RenderTime());
             TextWriterColor.Write(Translate.DoTranslation("Today is {0}"), TimeDateRenderers.RenderDate());
-            if (CalendarTools.EnableAltCalendar)
-                TextWriterColor.Write(Translate.DoTranslation("Current time in {0} is {1}"), CalendarTools.AltCalendar.ToString(), TimeDateRenderers.Render(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar)));
             TextWriterColor.Write(Translate.DoTranslation("Time and date in UTC: {0}"), TimeDateRenderersUtc.RenderUtc());
             TextWriterColor.Write(Translate.DoTranslation("Time Zone:") + " {0} ({1})", TimeZoneInfo.Local.StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal());
         }

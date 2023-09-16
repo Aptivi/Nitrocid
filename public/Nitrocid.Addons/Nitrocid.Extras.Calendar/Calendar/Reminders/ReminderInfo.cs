@@ -16,40 +16,44 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Misc.Calendar
+using System;
+using KS.Languages;
+using KS.Misc.Notifications;
+
+namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 {
     /// <summary>
-    /// Calendar types
+    /// Reminder information class
     /// </summary>
-    public enum CalendarTypes
+    public class ReminderInfo
     {
+
+        private bool ReminderNotified;
         /// <summary>
-        /// The Gregorian calendar (en-US culture)
+        /// Reminder date
         /// </summary>
-        Gregorian,
+        public DateTime ReminderDate { get; set; }
         /// <summary>
-        /// The Hijri calendar (ar culture)
+        /// Reminder title
         /// </summary>
-        Hijri,
+        public string ReminderTitle { get; set; }
         /// <summary>
-        /// The Persian calendar (fa culture)
+        /// Reminder importance
         /// </summary>
-        Persian,
+        public NotificationPriority ReminderImportance { get; set; }
+
         /// <summary>
-        /// The Saudi-Hijri calendar (ar-SA culture)
+        /// Notifies the user about the reminder
         /// </summary>
-        SaudiHijri,
-        /// <summary>
-        /// The Thai-Buddhist calendar (th-TH culture)
-        /// </summary>
-        ThaiBuddhist,
-        /// <summary>
-        /// The Chinese calendar (zh-CN culture)
-        /// </summary>
-        Chinese,
-        /// <summary>
-        /// The Japanese calendar (ja-JP culture)
-        /// </summary>
-        Japanese
+        protected internal void NotifyReminder()
+        {
+            if (!ReminderNotified)
+            {
+                var ReminderNotification = new Notification(ReminderTitle, Translate.DoTranslation("Don't miss this!"), ReminderImportance, NotificationType.Normal);
+                NotificationManager.NotifySend(ReminderNotification);
+                ReminderNotified = true;
+            }
+        }
+
     }
 }

@@ -155,64 +155,6 @@ namespace KS.Shell.Shells.UESH
                     }, new CalcCommand())
             },
             
-            { "calendar",
-                new CommandInfo("calendar", ShellType, /* Localizable */ "Calendar, event, and reminder manager",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "show"),
-                            new CommandArgumentPart(false, "year"),
-                            new CommandArgumentPart(false, "month")
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "event"),
-                            new CommandArgumentPart(true, "add"),
-                            new CommandArgumentPart(true, "date"),
-                            new CommandArgumentPart(true, "title")
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "event"),
-                            new CommandArgumentPart(true, "remove"),
-                            new CommandArgumentPart(true, "eventId")
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "event"),
-                            new CommandArgumentPart(true, "list")
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "event"),
-                            new CommandArgumentPart(true, "saveall")
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "reminder"),
-                            new CommandArgumentPart(true, "add"),
-                            new CommandArgumentPart(true, "dateandtime"),
-                            new CommandArgumentPart(true, "title")
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "reminder"),
-                            new CommandArgumentPart(true, "remove"),
-                            new CommandArgumentPart(true, "reminderid")
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "reminder"),
-                            new CommandArgumentPart(true, "list")
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "reminder"),
-                            new CommandArgumentPart(true, "saveall")
-                        }, Array.Empty<SwitchInfo>()),
-                    }, new CalendarCommand())
-            },
-            
             { "cat",
                 new CommandInfo("cat", ShellType, /* Localizable */ "Prints content of file to console",
                     new[] {

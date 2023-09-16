@@ -23,12 +23,11 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Calendar;
-using KS.Misc.Calendar.Events;
-using KS.Misc.Calendar.Reminders;
 using KS.Shell.ShellBase.Commands;
+using Nitrocid.Extras.Calendar.Calendar.Events;
+using Nitrocid.Extras.Calendar.Calendar.Reminders;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.Calendar.Calendar.Commands
 {
     /// <summary>
     /// Manages your calendar

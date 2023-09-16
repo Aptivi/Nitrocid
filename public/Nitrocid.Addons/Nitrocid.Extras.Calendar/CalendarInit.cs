@@ -16,23 +16,106 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using Nitrocid.Extras.Calendar.Calendar.Commands;
+using Nitrocid.Extras.Calendar.Calendar.Events;
+using Nitrocid.Extras.Calendar.Calendar.Reminders;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Nitrocid.Extras.Calendar
 {
     internal class CalendarInit : IAddon
     {
+        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        {
+            { "calendar",
+                new CommandInfo("calendar", ShellType.Shell, /* Localizable */ "Calendar, event, and reminder manager",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "show"),
+                            new CommandArgumentPart(false, "year"),
+                            new CommandArgumentPart(false, "month")
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "event"),
+                            new CommandArgumentPart(true, "add"),
+                            new CommandArgumentPart(true, "date"),
+                            new CommandArgumentPart(true, "title")
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "event"),
+                            new CommandArgumentPart(true, "remove"),
+                            new CommandArgumentPart(true, "eventId")
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "event"),
+                            new CommandArgumentPart(true, "list")
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "event"),
+                            new CommandArgumentPart(true, "saveall")
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "reminder"),
+                            new CommandArgumentPart(true, "add"),
+                            new CommandArgumentPart(true, "dateandtime"),
+                            new CommandArgumentPart(true, "title")
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "reminder"),
+                            new CommandArgumentPart(true, "remove"),
+                            new CommandArgumentPart(true, "reminderid")
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "reminder"),
+                            new CommandArgumentPart(true, "list")
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "reminder"),
+                            new CommandArgumentPart(true, "saveall")
+                        }, Array.Empty<SwitchInfo>()),
+                    }, new CalendarCommand())
+            },
+        };
+
         string IAddon.AddonName => "Extras - Calendar";
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            // Initialize events and reminders
+            if (!ReminderManager.ReminderThread.IsAlive)
+                ReminderManager.ReminderThread.Start();
+            if (!EventManager.EventThread.IsAlive)
+                EventManager.EventThread.Start();
+            EventManager.LoadEvents();
+            ReminderManager.LoadReminders();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded events & reminders.");
+        }
 
-        void IAddon.StartAddon()
-        { }
+        void IAddon.StartAddon() =>
+            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
 
         void IAddon.StopAddon()
-        { }
+        {
+            ReminderManager.Reminders.Clear();
+            EventManager.CalendarEvents.Clear();
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+        }
     }
 }

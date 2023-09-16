@@ -36,8 +36,6 @@ using KS.Kernel.Power;
 using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
-using KS.Misc.Calendar.Events;
-using KS.Misc.Calendar.Reminders;
 using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Reflection;
@@ -214,15 +212,6 @@ namespace KS.Kernel.Starting
                 ScreensaverManager.Timeout.Start();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded screensaver timeout.");
 
-            // Initialize events and reminders
-            if (!ReminderManager.ReminderThread.IsAlive)
-                ReminderManager.ReminderThread.Start();
-            if (!EventManager.EventThread.IsAlive)
-                EventManager.EventThread.Start();
-            EventManager.LoadEvents();
-            ReminderManager.LoadReminders();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded events & reminders.");
-
             // Load system env vars and convert them
             UESHVariables.ConvertSystemEnvironmentVariables();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
@@ -251,8 +240,6 @@ namespace KS.Kernel.Starting
         internal static void ResetEverything()
         {
             // Reset every variable below
-            ReminderManager.Reminders.Clear();
-            EventManager.CalendarEvents.Clear();
             Flags.SafeMode = false;
             Flags.QuietKernel = false;
             Flags.Maintenance = false;

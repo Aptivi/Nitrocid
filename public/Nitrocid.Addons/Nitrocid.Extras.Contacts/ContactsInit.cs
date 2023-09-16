@@ -44,16 +44,17 @@ namespace Nitrocid.Extras.Contacts
         AddonType IAddon.AddonType => AddonType.Optional;
 
         void IAddon.FinalizeAddon()
-        {
-            // Unload all contacts
-            ContactsManager.RemoveContacts(false);
-            DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
-        }
+        { }
 
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
+            // Unload all contacts
+            ContactsManager.RemoveContacts(false);
+            DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+        }
     }
 }

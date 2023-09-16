@@ -74,12 +74,6 @@
         "ConsoleSupportsTrueColor": {
             "type": "boolean"
         },
-        "AltCalendar": {
-            "type": "integer"
-        },
-        "EnableAltCalendar": {
-            "type": "boolean"
-        },
         "SetCodepage": {
             "type": "boolean"
         },
@@ -799,8 +793,6 @@
         "DelayOnShutdown",
         "ColorBlindSimple",
         "ConsoleSupportsTrueColor",
-        "AltCalendar",
-        "EnableAltCalendar",
         "SetCodepage",
         "UserNameShellColor",
         "HostNameShellColor",

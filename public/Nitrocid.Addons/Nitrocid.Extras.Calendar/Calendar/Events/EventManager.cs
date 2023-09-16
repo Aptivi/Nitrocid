@@ -34,7 +34,7 @@ using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 
-namespace KS.Misc.Calendar.Events
+namespace Nitrocid.Extras.Calendar.Calendar.Events
 {
     /// <summary>
     /// Event management module

@@ -20,7 +20,7 @@ using System;
 using KS.Languages;
 using KS.Misc.Notifications;
 
-namespace KS.Misc.Calendar.Events
+namespace Nitrocid.Extras.Calendar.Calendar.Events
 {
     /// <summary>
     /// Event information class

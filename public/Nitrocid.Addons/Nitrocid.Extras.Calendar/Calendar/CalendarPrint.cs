@@ -19,14 +19,15 @@
 using System;
 using System.Collections.Generic;
 using KS.Languages;
-using KS.Misc.Calendar.Events;
-using KS.Misc.Calendar.Reminders;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using Nitrocid.Extras.Calendar.Calendar.Reminders;
+using Nitrocid.Extras.Calendar.Calendar.Events;
+using KS.ConsoleBase;
 
-namespace KS.Misc.Calendar
+namespace Nitrocid.Extras.Calendar.Calendar
 {
     /// <summary>
     /// Calendar printing module
@@ -53,7 +54,7 @@ namespace KS.Misc.Calendar
             var CalendarCellOptions = new List<CellOptions>();
 
             // Populate the calendar data
-            TextWriterWhereColor.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleBase.ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleBase.ConsoleWrapper.CursorTop, true, KernelColorType.TableTitle);
+            TextWriterWhereColor.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleWrapper.CursorTop, true, KernelColorType.TableTitle);
             TextWriterColor.Write();
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {

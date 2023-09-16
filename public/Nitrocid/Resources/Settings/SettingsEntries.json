@@ -167,22 +167,6 @@
                 "Description": "If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value."
             },
             {
-                "Name": "Alternative calendar",
-                "Type": "SSelection",
-                "Variable": "AltCalendar",
-                "IsEnumeration": true,
-                "EnumerationInternal": true,
-                "Enumeration": "Misc.Calendar.CalendarTypes",
-                "EnumerationZeroBased": true,
-                "Description": "The type of alternative calendar."
-            },
-            {
-                "Name": "Enable alternative calendar",
-                "Type": "SBoolean",
-                "Variable": "EnableAltCalendar",
-                "Description": "If you want the logon screen or the date and time viewer to also show the alternative calendar, enable it."
-            },
-            {
                 "Name": "Set codepage",
                 "Type": "SBoolean",
                 "Variable": "SetCodepage",

@@ -16,27 +16,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Configuration;
 using System.Globalization;
 
-namespace KS.Misc.Calendar
+namespace Nitrocid.Extras.Calendar.Calendar
 {
     /// <summary>
     /// Calendar tools
     /// </summary>
     public static class CalendarTools
     {
-        /// <summary>
-        /// Enables the alternative calendar
-        /// </summary>
-        public static bool EnableAltCalendar =>
-            Config.MainConfig.EnableAltCalendar;
-        /// <summary>
-        /// Alternative calendar
-        /// </summary>
-        public static CalendarTypes AltCalendar =>
-            (CalendarTypes)Config.MainConfig.AltCalendar;
-
+        // TODO: Do something about this...
         /// <summary>
         /// Gets the culture from the culture type
         /// </summary>

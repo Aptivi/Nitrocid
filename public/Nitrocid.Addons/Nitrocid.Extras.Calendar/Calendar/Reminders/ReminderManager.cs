@@ -35,7 +35,7 @@ using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Notifications;
 
-namespace KS.Misc.Calendar.Reminders
+namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 {
     /// <summary>
     /// Reminder management module

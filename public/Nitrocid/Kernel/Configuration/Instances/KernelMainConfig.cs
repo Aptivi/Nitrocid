@@ -25,7 +25,6 @@ using KS.Files.Querying;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Calendar;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
 using KS.Misc.Timers;
@@ -190,14 +189,6 @@ namespace KS.Kernel.Configuration.Instances
         /// If you are sure that the console supports true color, or if you want to change your terminal to a terminal that supports true color, change this value.
         /// </summary>
         public bool ConsoleSupportsTrueColor { get; set; } = true;
-        /// <summary>
-        /// The type of alternative calendar.
-        /// </summary>
-        public int AltCalendar { get; set; } = (int)CalendarTypes.Hijri;
-        /// <summary>
-        /// If you want the logon screen or the date and time viewer to also show the alternative calendar, enable it.
-        /// </summary>
-        public bool EnableAltCalendar { get; set; }
         /// <summary>
         /// Set the language codepage upon switching languages (Windows only)
         /// </summary>

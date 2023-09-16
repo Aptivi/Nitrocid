@@ -23,7 +23,6 @@ using KS.Languages;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Drivers.Encryption;
 using System.Linq;
-using KS.Misc.Calendar;
 using System.Threading;
 using KS.Kernel.Debugging;
 using KS.Misc.Probers.Motd;
@@ -153,8 +152,7 @@ namespace KS.Users.Login
                         CenteredFigletTextColor.WriteCenteredFiglet(figFont, timeStr, KernelColorType.Stage);
 
                         // Print the date
-                        string dateAltStr = CalendarTools.EnableAltCalendar ? TimeDateRenderers.RenderDate(CalendarTools.GetCultureFromCalendar(CalendarTools.AltCalendar)) : "";
-                        string dateStr = $"{TimeDateRenderers.RenderDate()}{(CalendarTools.EnableAltCalendar ? $" - {dateAltStr}" : "")}";
+                        string dateStr = $"{TimeDateRenderers.RenderDate()}";
                         int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
                         CenteredTextColor.WriteCentered(consoleInfoY, dateStr);
                         KernelColorTools.SetConsoleColor(KernelColorType.NeutralText);
