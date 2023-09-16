@@ -84,6 +84,7 @@
     <PackageReference Include="MailKit" Version="4.2.0" />
     <PackageReference Include="ManagedWeatherMap" Version="1.2.1" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" />
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.0.442202" />
     <PackageReference Include="Namer" Version="1.1.1" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" />
@@ -95,7 +96,6 @@
     <PackageReference Include="Syndian" Version="0.3.1" />
     <PackageReference Include="Terminaux" Version="1.6.0" />
     <PackageReference Include="UnitsNet" Version="5.33.0" />
-    <PackageReference Include="VisualCard" Version="0.6.0" />
     <PackageReference Include="Wordament" Version="0.3.1" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
