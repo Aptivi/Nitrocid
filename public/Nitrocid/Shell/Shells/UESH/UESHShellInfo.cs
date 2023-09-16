@@ -1533,19 +1533,6 @@ namespace KS.Shell.Shells.UESH
                         }, true)
                     }, new VersionCommand())
             },
-            
-            { "weather",
-                new CommandInfo("weather", ShellType, /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "CityID/CityName"),
-                            new CommandArgumentPart(false, "apikey"),
-                        }, new[] {
-                            new SwitchInfo("list", /* Localizable */ "Shows all the available cities", false, false, null, 2, false)
-                        })
-                    }, new WeatherCommand())
-            },
 
             { "whoami",
                 new CommandInfo("whoami", ShellType, /* Localizable */ "Gets the current user name",

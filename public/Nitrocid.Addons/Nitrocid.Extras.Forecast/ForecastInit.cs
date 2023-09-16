@@ -17,11 +17,32 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Extensions;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using Nitrocid.Extras.Forecast.Forecast.Commands;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Nitrocid.Extras.Forecast
 {
     internal class ForecastInit : IAddon
     {
+        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        {
+            { "weather",
+                new CommandInfo("weather", ShellType.Shell, /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "CityID/CityName"),
+                            new CommandArgumentPart(false, "apikey"),
+                        }, new[] {
+                            new SwitchInfo("list", /* Localizable */ "Shows all the available cities", false, false, null, 2, false)
+                        })
+                    }, new WeatherCommand())
+            },
+        };
+
         string IAddon.AddonName => "Extras - Forecast";
 
         AddonType IAddon.AddonType => AddonType.Optional;
@@ -29,10 +50,10 @@ namespace Nitrocid.Extras.Forecast
         void IAddon.FinalizeAddon()
         { }
 
-        void IAddon.StartAddon()
-        { }
+        void IAddon.StartAddon() =>
+            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
 
-        void IAddon.StopAddon()
-        { }
+        void IAddon.StopAddon() =>
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
     }
 }

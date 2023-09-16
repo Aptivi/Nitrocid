@@ -22,10 +22,9 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Forecast;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.Forecast.Forecast.Commands
 {
     /// <summary>
     /// Shows weather information for a specified city
