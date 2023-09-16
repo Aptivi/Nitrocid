@@ -28,23 +28,25 @@ namespace KS.Shell.ShellBase.Shells
     {
 
         internal int LastErrorCode = 0;
+        internal readonly List<KernelThread> AltCommandThreads = new();
+        private readonly string shellType;
+        private readonly BaseShell shellBase;
+        private readonly KernelThread shellCommandThread;
 
         /// <summary>
         /// Shell type
         /// </summary>
-        public readonly string ShellType;
+        public string ShellType => shellType;
+
         /// <summary>
         /// Shell base class
         /// </summary>
-        public readonly BaseShell ShellBase;
+        public BaseShell ShellBase => shellBase;
+
         /// <summary>
         /// Shell command thread
         /// </summary>
-        public readonly KernelThread ShellCommandThread;
-        /// <summary>
-        /// Alternative shell command threads
-        /// </summary>
-        protected internal readonly List<KernelThread> AltCommandThreads = new();
+        public KernelThread ShellCommandThread => shellCommandThread;
 
         /// <summary>
         /// Installs the values to a new instance of ShellInfo
@@ -64,9 +66,9 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellCommandThread">Shell command thread</param>
         public ShellExecuteInfo(string ShellType, BaseShell ShellBase, KernelThread ShellCommandThread)
         {
-            this.ShellType = ShellType;
-            this.ShellBase = ShellBase;
-            this.ShellCommandThread = ShellCommandThread;
+            shellType = ShellType;
+            shellBase = ShellBase;
+            shellCommandThread = ShellCommandThread;
         }
 
     }

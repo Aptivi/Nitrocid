@@ -223,6 +223,12 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/ToDoList.json");
 
         /// <summary>
+        /// Shell histories path
+        /// </summary>
+        public static string ShellHistoriesPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/ShellHistories.json");
+
+        /// <summary>
         /// Gets the neutralized kernel path
         /// </summary>
         /// <param name="PathType">Kernel path type</param>
@@ -252,6 +258,7 @@ namespace KS.Files
                 KernelPathType.ToDoList =>              ToDoListPath,
                 KernelPathType.UserGroups =>            UserGroupsPath,
                 KernelPathType.Addons =>                AddonsPath,
+                KernelPathType.ShellHistories =>        ShellHistoriesPath,
                 _ => throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type.")),
             };
         }

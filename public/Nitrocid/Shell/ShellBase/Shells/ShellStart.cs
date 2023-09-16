@@ -23,6 +23,7 @@ using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using Terminaux.Reader;
 
 namespace KS.Shell.ShellBase.Shells
 {
@@ -84,6 +85,8 @@ namespace KS.Shell.ShellBase.Shells
 
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
                 ShellStack.Add(ShellInfo);
+                if (!ShellManager.histories.ContainsKey(ShellType))
+                    ShellManager.histories.Add(ShellType, new());
                 ShellExecute.InitializeShell(ShellArgs);
             }
             catch (Exception ex)
@@ -107,6 +110,7 @@ namespace KS.Shell.ShellBase.Shells
                 DebugWriter.WriteDebug(DebugLevel.I, "Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
                 if (newShellCount > shellCount)
                     KillShellForced();
+                TermReaderTools.SetHistory(ShellManager.histories[ShellManager.LastShellType]);
             }
         }
 

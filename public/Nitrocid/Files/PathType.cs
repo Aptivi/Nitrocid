@@ -106,6 +106,10 @@ namespace KS.Files
         /// <summary>
         /// Addons folder
         /// </summary>
-        Addons
+        Addons,
+        /// <summary>
+        /// Shell histories file
+        /// </summary>
+        ShellHistories
     }
 }

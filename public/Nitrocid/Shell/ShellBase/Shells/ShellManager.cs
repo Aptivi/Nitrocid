@@ -47,6 +47,7 @@ using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.Admin;
 using KS.Kernel.Events;
 using File = KS.Drivers.Console.Consoles.File;
+using FileIO = System.IO.File;
 using KS.Users.Permissions;
 using KS.Drivers.Console;
 using Manipulation = KS.Files.Operations.Manipulation;
@@ -67,6 +68,7 @@ using KS.Shell.ShellBase.Scripting;
 using Terminaux.Reader;
 using KS.Misc.Screensaver;
 using System.Collections.ObjectModel;
+using Newtonsoft.Json;
 
 namespace KS.Shell.ShellBase.Shells
 {
@@ -77,16 +79,26 @@ namespace KS.Shell.ShellBase.Shells
     {
 
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams)) { isCritical = true };
-        
+        internal static Dictionary<string, List<string>> histories = new()
+        {
+            { "General", new() },
+            { ShellType.AdminShell.ToString(), new() },
+            { ShellType.ArchiveShell.ToString(), new() },
+            { ShellType.DebugShell.ToString(), new() },
+            { ShellType.FTPShell.ToString(), new() },
+            { ShellType.HexShell.ToString(), new() },
+            { ShellType.HTTPShell.ToString(), new() },
+            { ShellType.JsonShell.ToString(), new() },
+            { ShellType.MailShell.ToString(), new() },
+            { ShellType.RSSShell.ToString(), new() },
+            { ShellType.SFTPShell.ToString(), new() },
+            { ShellType.Shell.ToString(), new() },
+            { ShellType.SqlShell.ToString(), new() },
+            { ShellType.TextShell.ToString(), new() },
+        };
+
         internal readonly static Dictionary<string, CommandInfo> unifiedCommandDict = new()
         {
-            { "presets",
-                new CommandInfo("presets", ShellType.Shell, /* Localizable */ "Opens the shell preset library",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new PresetsUnifiedCommand())
-            },
-
             { "exec",
                 new CommandInfo("exec", ShellType.Shell, /* Localizable */ "Executes an external process",
                     new[] {
@@ -113,6 +125,27 @@ namespace KS.Shell.ShellBase.Shells
                             new CommandArgumentPart(false, "command", (_, _, _) => HelpUnifiedCommand.ListCmds())
                         }, Array.Empty<SwitchInfo>(), false)
                     }, new HelpUnifiedCommand(), CommandFlags.Wrappable)
+            },
+
+            { "loadhistories",
+                new CommandInfo("loadhistories", ShellType.Shell, /* Localizable */ "Loads shell histories",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new LoadHistoriesUnifiedCommand())
+            },
+
+            { "presets",
+                new CommandInfo("presets", ShellType.Shell, /* Localizable */ "Opens the shell preset library",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new PresetsUnifiedCommand())
+            },
+
+            { "savehistories",
+                new CommandInfo("savehistories", ShellType.Shell, /* Localizable */ "Saves shell histories",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new SaveHistoriesUnifiedCommand())
             },
 
             { "tip",
@@ -256,6 +289,7 @@ namespace KS.Shell.ShellBase.Shells
                 SuggestionsDelimiters = new[] { ' ' },
                 TreatCtrlCAsInput = true,
             };
+            TermReaderTools.SetHistory(histories[ShellType]);
 
             // Check to see if the full command string ends with the semicolon
             while (FullCommand.EndsWith(";") || string.IsNullOrEmpty(FullCommand))
@@ -310,6 +344,7 @@ namespace KS.Shell.ShellBase.Shells
             }
 
             // Check for a type of command
+            TermReaderTools.SetHistory(histories["General"]);
             var SplitCommands = FullCommand.Split(new[] { " ; " }, StringSplitOptions.RemoveEmptyEntries);
             var Commands = CommandManager.GetCommands(ShellType);
             for (int i = 0; i < SplitCommands.Length; i++)
@@ -543,6 +578,17 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="shellType">Shell type name</param>
         public static BaseShellInfo GetShellInfo(string shellType) =>
             AvailableShells.ContainsKey(shellType) ? AvailableShells[shellType] : AvailableShells["Shell"];
+
+        internal static void SaveHistories() =>
+            FileIO.WriteAllText(Paths.ShellHistoriesPath, JsonConvert.SerializeObject(histories, Formatting.Indented));
+
+        internal static void LoadHistories()
+        {
+            string path = Paths.ShellHistoriesPath;
+            if (!Checking.FileExists(path))
+                return;
+            histories = JsonConvert.DeserializeObject<Dictionary<string, List<string>>>(FileIO.ReadAllText(path));
+        }
 
         /// <summary>
         /// Initializes the redirection

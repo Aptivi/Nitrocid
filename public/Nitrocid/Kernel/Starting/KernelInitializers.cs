@@ -51,6 +51,7 @@ using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Scripting;
+using KS.Shell.ShellBase.Shells;
 using System;
 using System.IO;
 
@@ -242,6 +243,10 @@ namespace KS.Kernel.Starting
             MotdParse.ReadMotd();
             MalParse.ReadMal();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded MOTD and MAL.");
+
+            // Load shell command histories
+            ShellManager.LoadHistories();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded shell command histories.");
         }
 
         internal static void ResetEverything()
@@ -257,6 +262,10 @@ namespace KS.Kernel.Starting
             SplashReport._ProgressText = "";
             SplashReport._KernelBooted = false;
             DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
+
+            // Save shell command histories
+            ShellManager.SaveHistories();
+            DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
 
             // Reset hardware info
             HardwareProbe.HardwareInfo = null;
