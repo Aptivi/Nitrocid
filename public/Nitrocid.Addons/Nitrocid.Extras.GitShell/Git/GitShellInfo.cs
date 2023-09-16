@@ -47,6 +47,16 @@ namespace Nitrocid.Extras.GitShell.Git
                     }, new Git_CheckoutCommand())
             },
 
+            { "commit",
+                new CommandInfo("commit", ShellType, /* Localizable */ "Makes a commit",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "summary")
+                        }, Array.Empty<SwitchInfo>())
+                    }, new Git_CommitCommand())
+            },
+
             { "fetch",
                 new CommandInfo("fetch", ShellType, /* Localizable */ "Fetches all updates from a remote",
                     new[] {
@@ -64,6 +74,13 @@ namespace Nitrocid.Extras.GitShell.Git
                     }, new Git_LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
+            { "lscommits",
+                new CommandInfo("lscommits", ShellType, /* Localizable */ "Lists all commits",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Git_LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+            
             { "lsremotes",
                 new CommandInfo("lsremotes", ShellType, /* Localizable */ "Lists all remotes",
                     new[] {
@@ -76,6 +93,13 @@ namespace Nitrocid.Extras.GitShell.Git
                     new[] {
                         new CommandArgumentInfo()
                     }, new Git_PullCommand())
+            },
+
+            { "push",
+                new CommandInfo("push", ShellType, /* Localizable */ "Pushes all updates to the server",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Git_PushCommand())
             },
 
             { "setid",
