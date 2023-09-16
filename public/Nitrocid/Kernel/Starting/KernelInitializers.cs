@@ -45,7 +45,6 @@ using KS.Misc.Reflection;
 using KS.Misc.RetroKS;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
-using KS.Misc.ToDoList;
 using KS.Modifications;
 using KS.Network.Base.Connections;
 using KS.Network.RPC;
@@ -229,10 +228,6 @@ namespace KS.Kernel.Starting
             // Load system env vars and convert them
             UESHVariables.ConvertSystemEnvironmentVariables();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
-
-            // Initialize to-do tasks
-            ToDoManager.LoadTasks();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
 
             // Finalize addons
             AddonTools.ProcessAddons(AddonType.Optional);

@@ -1437,44 +1437,6 @@ namespace KS.Shell.Shells.UESH
                     }, new TimerCommand())
             },
 
-            { "todo",
-                new CommandInfo("todo", ShellType, /* Localizable */ "To-do task manager",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "add"),
-                            new CommandArgumentPart(true, "taskname"),
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "remove"),
-                            new CommandArgumentPart(true, "taskname"),
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "done"),
-                            new CommandArgumentPart(true, "taskname"),
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "undone"),
-                            new CommandArgumentPart(true, "taskname"),
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "list"),
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "save"),
-                        }, Array.Empty<SwitchInfo>()),
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "load"),
-                        }, Array.Empty<SwitchInfo>()),
-                    }, new TodoCommand())
-            },
-
             { "unblockdbgdev",
                 new CommandInfo("unblockdbgdev", ShellType, /* Localizable */ "Unblock a debug device by IP address",
                     new[] {

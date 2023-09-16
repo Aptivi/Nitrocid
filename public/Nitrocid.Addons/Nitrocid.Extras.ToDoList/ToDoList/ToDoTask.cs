@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Misc.ToDoList
+namespace Nitrocid.Extras.ToDoList.ToDoList
 {
     /// <summary>
     /// Holds the to-do task

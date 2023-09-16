@@ -24,7 +24,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace KS.Misc.ToDoList
+namespace Nitrocid.Extras.ToDoList.ToDoList
 {
     /// <summary>
     /// Manages your to-do list

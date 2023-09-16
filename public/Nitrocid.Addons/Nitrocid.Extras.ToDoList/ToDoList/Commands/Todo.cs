@@ -22,10 +22,9 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.ToDoList;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
 {
     /// <summary>
     /// Manages your to-do list

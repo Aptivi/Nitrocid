@@ -16,23 +16,76 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using Nitrocid.Extras.ToDoList.ToDoList;
+using Nitrocid.Extras.ToDoList.ToDoList.Commands;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Nitrocid.Extras.ToDoList
 {
     internal class ToDoListInit : IAddon
     {
+        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        {
+            { "todo",
+                new CommandInfo("todo", ShellType.Shell, /* Localizable */ "To-do task manager",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "add"),
+                            new CommandArgumentPart(true, "taskname"),
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "remove"),
+                            new CommandArgumentPart(true, "taskname"),
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "done"),
+                            new CommandArgumentPart(true, "taskname"),
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "undone"),
+                            new CommandArgumentPart(true, "taskname"),
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "list"),
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "save"),
+                        }, Array.Empty<SwitchInfo>()),
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "load"),
+                        }, Array.Empty<SwitchInfo>()),
+                    }, new TodoCommand())
+            },
+        };
+
         string IAddon.AddonName => "Extras - To-do List";
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            // Initialize to-do tasks
+            ToDoManager.LoadTasks();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded tasks.");
+        }
 
-        void IAddon.StartAddon()
-        { }
+        void IAddon.StartAddon() =>
+            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
 
-        void IAddon.StopAddon()
-        { }
+        void IAddon.StopAddon() =>
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
     }
 }
