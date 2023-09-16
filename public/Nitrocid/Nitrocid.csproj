@@ -94,7 +94,7 @@
     <PackageReference Include="StringMath" Version="4.1.0" />
     <PackageReference Include="Syndian" Version="0.3.1" />
     <PackageReference Include="Terminaux" Version="1.5.1" />
-    <PackageReference Include="UnitsNet" Version="5.32.0" />
+    <PackageReference Include="UnitsNet" Version="5.33.0" />
     <PackageReference Include="VisualCard" Version="0.6.0" />
     <PackageReference Include="Wordament" Version="0.3.1" />
   </ItemGroup>
