@@ -20,8 +20,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using GitCommand = LibGit2Sharp.Commands;
-using System.Linq;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {

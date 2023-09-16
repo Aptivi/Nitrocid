@@ -18,8 +18,8 @@
 
 using System;
 using System.Reflection;
-using Figgle;
 using KS.Kernel.Configuration;
+using KS.Kernel.Configuration.Instances;
 using KS.Misc.Reflection;
 using KS.Misc.Screensaver.Displays;
 using NUnit.Framework;
@@ -106,10 +106,10 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetProperty()
         {
-            var Property = PropertyManager.GetProperty("Small", typeof(FiggleFonts));
+            var Property = PropertyManager.GetProperty(nameof(KernelMainConfig.CheckUpdateStart), typeof(KernelMainConfig));
             Property.ShouldNotBeNull();
-            Property.Name.ShouldBe("Small");
-            Property.DeclaringType.ShouldBe(typeof(FiggleFonts));
+            Property.Name.ShouldBe(nameof(KernelMainConfig.CheckUpdateStart));
+            Property.DeclaringType.ShouldBe(typeof(KernelMainConfig));
         }
 
         /// <summary>
@@ -132,7 +132,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetProperties()
         {
-            var Properties = PropertyManager.GetProperties(typeof(FiggleFonts));
+            var Properties = PropertyManager.GetProperties(typeof(PersonLookupSettings));
             Properties.ShouldNotBeNull();
             Properties.ShouldNotBeEmpty();
         }
@@ -144,7 +144,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetPropertiesNoEvaluation()
         {
-            var Properties = PropertyManager.GetPropertiesNoEvaluation(typeof(FiggleFonts));
+            var Properties = PropertyManager.GetPropertiesNoEvaluation(typeof(KernelMainConfig));
             Properties.ShouldNotBeNull();
             Properties.ShouldNotBeEmpty();
         }

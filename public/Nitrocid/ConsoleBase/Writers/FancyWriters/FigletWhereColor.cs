@@ -18,12 +18,10 @@
 
 using System;
 using System.Threading;
-using Figgle;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Figletize.Utilities;
 using Figletize;

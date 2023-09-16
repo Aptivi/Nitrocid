@@ -21,7 +21,6 @@ using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Drivers.RNG;

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
-using System.Linq;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {

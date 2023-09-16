@@ -16,21 +16,17 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Linq;
-using System.Threading;
 using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Splash;
-using KS.Kernel.Debugging;
 using KS.Users.Login;
 using KS.Misc.Text;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Power;
-using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Starting;
 

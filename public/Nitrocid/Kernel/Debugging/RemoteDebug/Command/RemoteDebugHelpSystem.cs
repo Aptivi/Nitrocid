@@ -18,7 +18,6 @@
 
 using System;
 using System.Linq;
-using KS.ConsoleBase.Colors;
 using KS.Languages;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command

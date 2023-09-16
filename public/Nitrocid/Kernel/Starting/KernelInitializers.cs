@@ -42,7 +42,6 @@ using KS.Misc.Contacts;
 using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Reflection;
-using KS.Misc.RetroKS;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
 using KS.Modifications;
@@ -54,7 +53,6 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Scripting;
 using System;
 using System.IO;
-using System.Runtime.Loader;
 
 namespace KS.Kernel.Starting
 {

@@ -22,9 +22,7 @@ using System.Linq;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Scripting.Interaction;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

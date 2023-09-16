@@ -21,9 +21,7 @@ using KS.Kernel.Exceptions;
 using KS.Kernel.Hardware;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using System.Drawing;
 using System.Linq;
-using System.Xml.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

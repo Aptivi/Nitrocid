@@ -18,7 +18,6 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Hardware;
-using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using System.Linq;
 

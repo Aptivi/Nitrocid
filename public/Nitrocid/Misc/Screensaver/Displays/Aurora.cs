@@ -24,7 +24,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
-using KS.Misc.Text;
 using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver.Displays

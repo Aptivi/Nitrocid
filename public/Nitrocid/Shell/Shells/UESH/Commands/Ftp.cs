@@ -22,7 +22,6 @@ using KS.Network.FTP;
 using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using Newtonsoft.Json.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

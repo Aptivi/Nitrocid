@@ -28,7 +28,6 @@ using System;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Debugging;
 using KS.Kernel.Starting;
-using Terminaux.Sequences.Builder;
 
 namespace KS.Kernel
 {

@@ -23,7 +23,6 @@ using KS.Languages;
 using KS.Kernel;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Sequences.Tools;
 using KS.ConsoleBase.Colors;

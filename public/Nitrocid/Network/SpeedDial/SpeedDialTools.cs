@@ -16,22 +16,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Operations;
 using KS.Files;
 using KS.Languages;
-using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
-using KS.Kernel.Debugging;
 using System.Linq;
 using KS.Kernel.Exceptions;
-using KS.Misc.Text;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Network.Base.Connections;
 using KS.Files.Querying;
 

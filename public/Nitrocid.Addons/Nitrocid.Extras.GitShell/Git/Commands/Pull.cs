@@ -21,7 +21,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using GitCommand = LibGit2Sharp.Commands;
-using System.Linq;
 using LibGit2Sharp;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;

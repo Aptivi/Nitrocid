@@ -22,7 +22,6 @@ using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using LibGit2Sharp;
 using GitCommand = LibGit2Sharp.Commands;
-using System.Linq;
 using System;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands

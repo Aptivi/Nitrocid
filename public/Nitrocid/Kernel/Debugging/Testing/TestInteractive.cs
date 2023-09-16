@@ -41,8 +41,6 @@ namespace KS.Kernel.Debugging.Testing
             { "PrintSepColorF",                 new PrintSepColorF() },
             { "PrintFiglet",                    new PrintFiglet() },
             { "PrintFigletF",                   new PrintFigletF() },
-            { "PrintFigletLegacy",              new PrintFigletLegacy() },
-            { "PrintFigletLegacyF",             new PrintFigletLegacyF() },
             { "PrintPlaces",                    new PrintPlaces() },
             { "PrintWithNewLines",              new PrintWithNewLines() },
             { "PrintWithNulls",                 new PrintWithNulls() },

@@ -17,10 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files.Querying;
-using GitCommand = LibGit2Sharp.Commands;
 using LibGit2Sharp;
 using System.IO;
-using System.Linq;
 
 namespace Nitrocid.Extras.GitShell.Git
 {

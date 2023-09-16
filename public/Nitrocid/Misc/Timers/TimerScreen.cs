@@ -31,7 +31,6 @@ using KS.Kernel.Time.Renderers;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Figletize;
 
 namespace KS.Misc.Timers

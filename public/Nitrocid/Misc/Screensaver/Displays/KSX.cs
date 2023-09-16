@@ -24,7 +24,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Drivers;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -34,7 +33,6 @@ using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Animations.BSOD.Simulations;
 using KS.Misc.Animations.Glitch;
-using KS.Misc.Text;
 using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver.Displays

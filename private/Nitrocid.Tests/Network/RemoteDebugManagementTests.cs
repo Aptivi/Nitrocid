@@ -19,7 +19,6 @@
 using KS.Kernel.Debugging.RemoteDebug;
 using NUnit.Framework;
 using Shouldly;
-using System;
 
 namespace Nitrocid.Tests.Network
 {

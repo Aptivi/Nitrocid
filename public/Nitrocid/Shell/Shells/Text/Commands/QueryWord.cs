@@ -25,7 +25,6 @@ using KS.Misc.Reflection;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using System;
-using System.Linq;
 
 namespace KS.Shell.Shells.Text.Commands
 {

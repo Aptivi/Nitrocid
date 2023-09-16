@@ -18,12 +18,10 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Kernel.Hardware;
 using KS.Languages;
 using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
 using System;
-using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

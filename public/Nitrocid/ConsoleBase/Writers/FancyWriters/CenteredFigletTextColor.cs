@@ -16,11 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Figgle;
 using Figletize;
 using Figletize.Utilities;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using KS.Misc.Text;
 using Terminaux.Colors;
 
