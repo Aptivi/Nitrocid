@@ -28,6 +28,7 @@ using FluentFTP.Helpers;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Scripting.Conditions;
 using KS.ConsoleBase.Writers.MiscWriters;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase.Scripting
 {

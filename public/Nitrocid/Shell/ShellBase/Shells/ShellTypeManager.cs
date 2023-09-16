@@ -36,7 +36,7 @@ namespace KS.Shell.ShellBase.Shells
             if (!ShellTypeExists(ShellType))
             {
                 // First, add the shell
-                ShellManager.AvailableShells.Add(ShellType, ShellTypeInfo);
+                ShellManager.availableShells.Add(ShellType, ShellTypeInfo);
 
                 // Then, add the default preset
                 var presets = ShellTypeInfo.ShellPresets;
@@ -66,7 +66,7 @@ namespace KS.Shell.ShellBase.Shells
             if (!IsShellBuiltin(ShellType))
             {
                 // First, remove the shell
-                ShellManager.AvailableShells.Remove(ShellType);
+                ShellManager.availableShells.Remove(ShellType);
 
                 // Then, remove the preset
                 PromptPresetManager.CurrentPresets.Remove(ShellType);

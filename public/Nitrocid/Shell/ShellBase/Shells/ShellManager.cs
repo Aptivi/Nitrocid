@@ -33,7 +33,6 @@ using KS.Misc.Text;
 using KS.Drivers;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using KS.Shell.Shells.UESH;
 using KS.Shell.Shells.FTP;
@@ -67,8 +66,9 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Scripting;
 using Terminaux.Reader;
 using KS.Misc.Screensaver;
+using System.Collections.ObjectModel;
 
-namespace KS.Shell
+namespace KS.Shell.ShellBase.Shells
 {
     /// <summary>
     /// Base shell module
@@ -77,17 +77,14 @@ namespace KS.Shell
     {
 
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams)) { isCritical = true };
-
-        /// <summary>
-        /// List of unified commands
-        /// </summary>
-        public readonly static Dictionary<string, CommandInfo> UnifiedCommandDict = new()
+        
+        internal readonly static Dictionary<string, CommandInfo> unifiedCommandDict = new()
         {
             { "presets",
                 new CommandInfo("presets", ShellType.Shell, /* Localizable */ "Opens the shell preset library",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new PresetsUnifiedCommand()) 
+                    }, new PresetsUnifiedCommand())
             },
 
             { "exec",
@@ -136,10 +133,7 @@ namespace KS.Shell
             }
         };
 
-        /// <summary>
-        /// List of available shells
-        /// </summary>
-        internal readonly static Dictionary<string, BaseShellInfo> AvailableShells = new()
+        internal readonly static Dictionary<string, BaseShellInfo> availableShells = new()
         {
             { "Shell", new UESHShellInfo() },
             { "FTPShell", new FTPShellInfo() },
@@ -155,6 +149,18 @@ namespace KS.Shell
             { "SqlShell", new SqlShellInfo() },
             { "DebugShell", new DebugShellInfo() }
         };
+
+        /// <summary>
+        /// List of unified commands
+        /// </summary>
+        public static ReadOnlyDictionary<string, CommandInfo> UnifiedCommands =>
+            new(unifiedCommandDict);
+
+        /// <summary>
+        /// List of available shells
+        /// </summary>
+        public static ReadOnlyDictionary<string, BaseShellInfo> AvailableShells =>
+            new(availableShells);
 
         /// <summary>
         /// Current shell type
@@ -382,7 +388,7 @@ namespace KS.Shell
                                 {
                                     if (Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
                                     {
-                                        if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) && 
+                                        if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                                             !UserManagement.CurrentUser.Admin)
                                         {
                                             DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);

@@ -76,7 +76,7 @@ namespace KS.Shell.ShellBase.Commands
             // Add every command from each mod, addon, and alias
             var ModCommandList = ModManager.ListModCommands(CommandType);
             var AddonCommandList = ShellManager.GetShellInfo(CommandType).addonCommands;
-            var unifiedCommandList = ShellManager.UnifiedCommandDict;
+            var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetAliasesListFromType(CommandType);
 
             // Check to see if command exists

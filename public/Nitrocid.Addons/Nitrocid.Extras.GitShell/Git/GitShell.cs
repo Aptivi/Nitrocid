@@ -24,7 +24,6 @@ using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Shell;
 using KS.Shell.ShellBase.Shells;
 
 namespace Nitrocid.Extras.GitShell.Git

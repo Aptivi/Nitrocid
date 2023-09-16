@@ -99,10 +99,10 @@ namespace KS.Shell.ShellBase.Commands
             Dictionary<string, CommandInfo> FinalCommands = shellInfo.Commands;
 
             // Unified commands
-            foreach (string UnifiedCommand in ShellManager.UnifiedCommandDict.Keys)
+            foreach (string UnifiedCommand in ShellManager.UnifiedCommands.Keys)
             {
                 if (!FinalCommands.ContainsKey(UnifiedCommand))
-                    FinalCommands.Add(UnifiedCommand, ShellManager.UnifiedCommandDict[UnifiedCommand]);
+                    FinalCommands.Add(UnifiedCommand, ShellManager.UnifiedCommands[UnifiedCommand]);
             }
 
             // Addon commands
@@ -347,7 +347,7 @@ namespace KS.Shell.ShellBase.Commands
             // Now, add the command to the addon list
             DebugWriter.WriteDebug(DebugLevel.I, "Adding command {0} for {1}...", command, ShellType);
             if (!ShellManager.AvailableShells[ShellType].addonCommands.ContainsKey(command))
-                ShellManager.AvailableShells[ShellType].addonCommands.Add(command, commandBase);
+                ShellManager.availableShells[ShellType].addonCommands.Add(command, commandBase);
             DebugWriter.WriteDebug(DebugLevel.I, "Registered {0}, ShellType: {1}", command, ShellType);
         }
 
@@ -409,7 +409,7 @@ namespace KS.Shell.ShellBase.Commands
             if (!ShellManager.AvailableShells[ShellType].addonCommands.ContainsKey(commandName))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("The addon command specified is not found."));
             else
-                ShellManager.AvailableShells[ShellType].addonCommands.Remove(commandName);
+                ShellManager.availableShells[ShellType].addonCommands.Remove(commandName);
         }
 
         /// <summary>

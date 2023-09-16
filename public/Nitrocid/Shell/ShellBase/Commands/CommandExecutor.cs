@@ -364,7 +364,7 @@ namespace KS.Shell.ShellBase.Commands
                 .Where(CommandInfo => CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                 .Select(CommandInfo => CommandInfo.Command)
                 .ToArray();
-            var WrappableUnified = ShellManager.UnifiedCommandDict.Values
+            var WrappableUnified = ShellManager.UnifiedCommands.Values
                 .Where(CommandInfo => CommandInfo.Flags.HasFlag(CommandFlags.Wrappable))
                 .Select(CommandInfo => CommandInfo.Command)
                 .ToArray();

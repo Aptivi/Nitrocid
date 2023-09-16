@@ -22,6 +22,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

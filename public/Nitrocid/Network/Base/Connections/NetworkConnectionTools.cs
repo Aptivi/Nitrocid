@@ -22,7 +22,6 @@ using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Shell;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.Collections.Generic;
