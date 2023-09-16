@@ -16,23 +16,44 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using Nitrocid.Extras.Contacts.Contacts;
+using Nitrocid.Extras.Contacts.Contacts.Commands;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Nitrocid.Extras.Contacts
 {
     internal class ContactsInit : IAddon
     {
+        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        {
+            { "contacts",
+                new CommandInfo("contacts", ShellType.Shell, /* Localizable */ "Manages your contacts",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new ContactsCommand())
+            },
+        };
+
         string IAddon.AddonName => "Extras - Contacts";
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            // Unload all contacts
+            ContactsManager.RemoveContacts(false);
+            DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
+        }
 
-        void IAddon.StartAddon()
-        { }
+        void IAddon.StartAddon() =>
+            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
 
-        void IAddon.StopAddon()
-        { }
+        void IAddon.StopAddon() =>
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
     }
 }

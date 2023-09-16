@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Interactive;
-using KS.Misc.Interactives;
 using KS.Shell.ShellBase.Commands;
+using Nitrocid.Extras.Contacts.Contacts.Interactives;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.Contacts.Contacts.Commands
 {
     class ContactsCommand : BaseCommand, ICommand
     {

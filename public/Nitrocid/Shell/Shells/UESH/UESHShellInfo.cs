@@ -405,13 +405,6 @@ namespace KS.Shell.Shells.UESH
                     }, new CombineCommand())
             },
             
-            { "contacts",
-                new CommandInfo("contacts", ShellType, /* Localizable */ "Manages your contacts",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new ContactsCommand())
-            },
-            
             { "convertlineendings",
                 new CommandInfo("convertlineendings", ShellType, /* Localizable */ "Converts the line endings to format for the current platform or to specified custom format",
                     new[] {

@@ -33,7 +33,7 @@ using KS.Drivers.Encryption;
 using System.IO;
 using VisualCard.Converters;
 
-namespace KS.Misc.Contacts
+namespace Nitrocid.Extras.Contacts.Contacts
 {
     /// <summary>
     /// Contacts management class

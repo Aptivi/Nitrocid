@@ -38,7 +38,6 @@ using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Calendar.Events;
 using KS.Misc.Calendar.Reminders;
-using KS.Misc.Contacts;
 using KS.Misc.Notifications;
 using KS.Misc.Probers.Motd;
 using KS.Misc.Reflection;
@@ -298,10 +297,6 @@ namespace KS.Kernel.Starting
             // Disable safe mode
             Flags.SafeMode = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Safe mode disabled");
-
-            // Unload all contacts
-            ContactsManager.RemoveContacts(false);
-            DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all contacts");
 
             // Stop the time/date change thread
             TimeDateTopRight.TimeTopRightChange.Stop();

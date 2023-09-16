@@ -28,10 +28,9 @@ using KS.Files.Querying;
 using System.Collections;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Misc.Contacts;
 using KS.ConsoleBase.Interactive;
 
-namespace KS.Misc.Interactives
+namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {
     /// <summary>
     /// Contacts manager class
