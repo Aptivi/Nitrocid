@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using KS.Misc.Editors.JsonShell;
+using KS.Files.Editors.JsonShell;
 using KS.Shell.Shells.Json;
 using NUnit.Framework;
 using Shouldly;

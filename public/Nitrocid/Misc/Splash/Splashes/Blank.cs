@@ -1,5 +1,4 @@
-﻿
-// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+﻿// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
 // 
 // This file is part of Nitrocid KS
 // 

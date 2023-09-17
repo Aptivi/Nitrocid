@@ -21,7 +21,7 @@ using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 
-namespace KS.Misc.Splash.Splashes
+namespace KS.Misc.Splash
 {
     /// <summary>
     /// Base splash screen class

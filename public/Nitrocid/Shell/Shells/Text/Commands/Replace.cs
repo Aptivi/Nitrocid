@@ -18,8 +18,8 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.Editors.TextEdit;
 using KS.Languages;
-using KS.Misc.Editors.TextEdit;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Text.Commands

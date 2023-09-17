@@ -18,7 +18,7 @@
 
 using Newtonsoft.Json;
 
-namespace KS.Groups
+namespace KS.Users.Groups
 {
     /// <summary>
     /// Group information class

@@ -20,8 +20,8 @@ using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.Editors.HexEdit;
 using KS.Languages;
-using KS.Misc.Editors.HexEdit;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Hex.Commands

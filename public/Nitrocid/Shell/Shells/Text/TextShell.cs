@@ -20,10 +20,10 @@ using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.Editors.TextEdit;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Editors.TextEdit;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
 

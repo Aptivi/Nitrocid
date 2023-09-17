@@ -31,7 +31,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.Shells.Text;
 
-namespace KS.Misc.Editors.TextEdit
+namespace KS.Files.Editors.TextEdit
 {
     /// <summary>
     /// Text editor tools module

@@ -20,10 +20,10 @@ using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Files.Editors.JsonShell;
 using KS.Files.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Editors.JsonShell;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

@@ -23,7 +23,7 @@ using System.Text.RegularExpressions;
 using Encryptor = System.Security.Cryptography.SHA256;
 using FS = KS.Files.Filesystem;
 
-namespace KS.Drivers.Encryption.Encryptors
+namespace KS.Drivers.Encryption
 {
     /// <summary>
     /// SHA256 encryptor
@@ -75,11 +75,11 @@ namespace KS.Drivers.Encryption.Encryptors
         }
 
         /// <inheritdoc/>
-        public virtual bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) => 
+        public virtual bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) =>
             HashVerifier.VerifyHashFromHash(FileName, DriverName, ExpectedHash, ActualHash);
 
         /// <inheritdoc/>
-        public virtual bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) => 
+        public virtual bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) =>
             HashVerifier.VerifyHashFromHashesFile(FileName, DriverName, HashesFile, ActualHash);
 
         /// <inheritdoc/>
@@ -87,7 +87,7 @@ namespace KS.Drivers.Encryption.Encryptors
             HashVerifier.VerifyUncalculatedHashFromHash(FileName, DriverName, ExpectedHash);
 
         /// <inheritdoc/>
-        public virtual bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) => 
+        public virtual bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) =>
             HashVerifier.VerifyUncalculatedHashFromHashesFile(FileName, DriverName, HashesFile);
     }
 }

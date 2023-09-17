@@ -18,10 +18,10 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.Editors.TextEdit;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Editors.TextEdit;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using System;

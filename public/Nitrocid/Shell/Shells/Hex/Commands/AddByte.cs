@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using KS.Misc.Editors.HexEdit;
+using KS.Files.Editors.HexEdit;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Hex.Commands

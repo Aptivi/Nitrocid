@@ -32,7 +32,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences.Tools;
 using System.Text.RegularExpressions;
 
-namespace KS.Drivers.Console.Consoles
+namespace KS.Drivers.Console
 {
     /// <summary>
     /// Base console driver

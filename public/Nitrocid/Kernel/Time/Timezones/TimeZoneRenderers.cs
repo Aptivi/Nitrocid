@@ -18,11 +18,11 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
-using KS.Kernel.Time.Timezones;
+using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using System;
 
-namespace KS.Kernel.Time.Renderers
+namespace KS.Kernel.Time.Timezones
 {
     /// <summary>
     /// Tools to allow you to render time zones

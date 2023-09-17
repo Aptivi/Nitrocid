@@ -30,7 +30,7 @@ using KS.Shell.Shells.Json;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
-namespace KS.Misc.Editors.JsonShell
+namespace KS.Files.Editors.JsonShell
 {
     /// <summary>
     /// JSON shell tools

@@ -19,9 +19,9 @@
 using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.Editors.JsonShell;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Editors.JsonShell;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.Json

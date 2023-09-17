@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using KS.Misc.Editors.TextEdit;
+using KS.Files.Editors.TextEdit;
 using KS.Shell.Shells.Text;
 using NUnit.Framework;
 using Shouldly;

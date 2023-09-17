@@ -19,7 +19,7 @@
 using System.IO;
 using System.Text;
 using KS.ConsoleBase.Colors;
-using KS.Misc.Editors.HexEdit;
+using KS.Files.Editors.HexEdit;
 using KS.Shell.Shells.Hex;
 
 namespace KS.Shell.Prompts.Presets.Hex

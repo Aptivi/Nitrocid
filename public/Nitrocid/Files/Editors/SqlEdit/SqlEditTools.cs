@@ -25,7 +25,7 @@ using KS.Kernel.Debugging;
 using KS.Shell.Shells.Sql;
 using Microsoft.Data.Sqlite;
 
-namespace KS.Misc.Editors.SqlEdit
+namespace KS.Files.Editors.SqlEdit
 {
     /// <summary>
     /// Sql editor tools module

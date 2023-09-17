@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Misc.Editors.JsonShell;
+using KS.Files.Editors.JsonShell;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Json.Commands

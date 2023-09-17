@@ -18,7 +18,6 @@
 
 using KS.Files;
 using KS.Files.Querying;
-using KS.Groups;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;

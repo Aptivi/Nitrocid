@@ -31,7 +31,7 @@ using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Shell.Shells.Hex;
 
-namespace KS.Misc.Editors.HexEdit
+namespace KS.Files.Editors.HexEdit
 {
     /// <summary>
     /// Hex editor tools module

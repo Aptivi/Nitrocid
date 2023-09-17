@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
+using KS.Files.Editors.HexEdit;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
-using KS.Misc.Editors.HexEdit;
 
 namespace KS.Shell.Shells.Hex
 {

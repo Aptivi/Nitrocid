@@ -22,7 +22,7 @@ using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using LibGit2Sharp;
 using KS.Kernel.Time;
-using KS.Kernel.Time.Renderers;
+using KS.Kernel.Time.Timezones;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {

@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
+using KS.Files.Editors.JsonShell;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
-using KS.Misc.Editors.JsonShell;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 

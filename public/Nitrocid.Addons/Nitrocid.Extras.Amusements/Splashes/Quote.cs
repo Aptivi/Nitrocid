@@ -23,7 +23,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Misc.Splash;
-using KS.Misc.Splash.Splashes;
 using KS.Misc.Text;
 using Nitrocid.Extras.Amusements.Amusements.Quotes;
 using Terminaux.Colors;

@@ -18,8 +18,8 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.Editors.JsonShell;
 using KS.Languages;
-using KS.Misc.Editors.JsonShell;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Json.Commands

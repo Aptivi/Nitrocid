@@ -46,7 +46,7 @@ using KS.Misc.Probers.Regexp;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.PathLookup;
 using KS.Files.Instances;
-using KS.Misc.Editors.SqlEdit;
+using KS.Files.Editors.SqlEdit;
 
 namespace KS.Drivers.Filesystem
 {

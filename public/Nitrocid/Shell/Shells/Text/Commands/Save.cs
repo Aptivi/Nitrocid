@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Editors.TextEdit;
+using KS.Files.Editors.TextEdit;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Text.Commands
