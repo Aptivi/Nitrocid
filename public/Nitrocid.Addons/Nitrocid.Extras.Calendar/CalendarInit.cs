@@ -33,6 +33,21 @@ namespace Nitrocid.Extras.Calendar
     {
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
+            { "altdate",
+                new CommandInfo("altdate", ShellType.Shell, /* Localizable */ "Shows date and time",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "culture")
+                        }, new[] {
+                            new SwitchInfo("date", /* Localizable */ "Shows just the date", false, false, new string[] { "time", "full" }, 0, false),
+                            new SwitchInfo("time", /* Localizable */ "Shows just the time", false, false, new string[] { "date", "full" }, 0, false),
+                            new SwitchInfo("full", /* Localizable */ "Shows date and time", false, false, new string[] { "date", "time" }, 0, false),
+                            new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local", false, false, Array.Empty<string>(), 0, false)
+                        }, true)
+                    }, new AltDateCommand(), CommandFlags.RedirectionSupported)
+            },
+
             { "calendar",
                 new CommandInfo("calendar", ShellType.Shell, /* Localizable */ "Calendar, event, and reminder manager",
                     new[] {

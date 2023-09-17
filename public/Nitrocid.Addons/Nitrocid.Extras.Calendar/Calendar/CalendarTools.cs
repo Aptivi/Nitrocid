@@ -25,7 +25,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
     /// </summary>
     public static class CalendarTools
     {
-        // TODO: Do something about this...
         /// <summary>
         /// Gets the culture from the culture type
         /// </summary>
