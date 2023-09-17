@@ -19,7 +19,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Nitrocid.LocaleGen.Serializer
+namespace Nitrocid.LocaleGen.Core.Serializer
 {
     internal static class LanguageGenerator
     {

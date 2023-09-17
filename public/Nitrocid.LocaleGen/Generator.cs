@@ -22,7 +22,7 @@ using System.IO;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using Nitrocid.LocaleGen.Serializer;
+using Nitrocid.LocaleGen.Core.Serializer;
 
 namespace Nitrocid.LocaleGen
 {

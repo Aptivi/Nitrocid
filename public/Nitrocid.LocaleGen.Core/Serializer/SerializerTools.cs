@@ -24,7 +24,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
-namespace Nitrocid.LocaleGen.Serializer
+namespace Nitrocid.LocaleGen.Core.Serializer
 {
     internal static class SerializerTools
     {
@@ -36,7 +36,7 @@ namespace Nitrocid.LocaleGen.Serializer
 
             // Determine several paths
             pathToTranslations = string.IsNullOrEmpty(pathToTranslations) ? Path.GetFullPath("Translations") : pathToTranslations;
-            string englishFile  = $"{pathToTranslations}/eng.txt";
+            string englishFile = $"{pathToTranslations}/eng.txt";
             string metadataFile = $"{pathToTranslations}/Metadata.json";
             string outputFolder = $"{pathToTranslations}/Output";
 
@@ -141,7 +141,7 @@ namespace Nitrocid.LocaleGen.Serializer
                 // Check the file and add if the localization file is a text file
                 if (fileExtension == ".txt")
                 {
-                    if (!singular || (singular && fileName.Equals(toSearch)))
+                    if (!singular || singular && fileName.Equals(toSearch))
                     {
                         var LanguageInstance = new TargetLanguage(file, fileName, custom);
                         toParse.Add(LanguageInstance);

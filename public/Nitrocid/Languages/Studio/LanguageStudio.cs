@@ -27,7 +27,7 @@ using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using Newtonsoft.Json.Linq;
-using Nitrocid.LocaleGen.Serializer;
+using Nitrocid.LocaleGen.Core.Serializer;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
