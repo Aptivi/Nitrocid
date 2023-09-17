@@ -24,7 +24,6 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 using FluentFTP.Helpers;
-using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;

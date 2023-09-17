@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using KS.Files;
 using KS.Kernel.Debugging;
 using KS.Shell.Shells.Sql;
 using Microsoft.Data.Sqlite;

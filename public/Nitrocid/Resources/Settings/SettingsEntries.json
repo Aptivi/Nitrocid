@@ -1263,14 +1263,11 @@
             },
             {
                 "Name": "Preferred Unit for Temperature",
-                "Type": "SSelection",
+                "Type": "SIntSlider",
                 "Variable": "PreferredUnit",
-                "IsEnumeration": true,
-                "EnumerationInternal": false,
-                "Enumeration": "ManagedWeatherMap.Core.UnitMeasurement",
-                "EnumerationAssembly": "ManagedWeatherMap",
-                "EnumerationZeroBased": false,
-                "Description": "Select your preferred unit for temperature (this only applies to the \"weather\" command)"
+                "Description": "Select your preferred unit for temperature (this only applies to the \"weather\" command). 1 is Kelvin, 2 is Metric, and 3 is Imperial.",
+                "MinimumValue": 1,
+                "MaximumValue": 3
             },
             {
                 "Name": "Enable text editor autosave",
@@ -1388,13 +1385,11 @@
             },
             {
                 "Name": "Default difficulty for SpeedPress",
-                "Type": "SSelection",
+                "Type": "SIntSlider",
                 "Variable": "SpeedPressCurrentDifficulty",
-                "IsEnumeration": true,
-                "EnumerationInternal": true,
-                "Enumeration": "Misc.Amusements.Games.SpeedPress+SpeedPressDifficulty",
-                "EnumerationZeroBased": true,
-                "Description": "Select your preferred difficulty."
+                "Description": "Select your preferred difficulty, where 0 is easy, 1 is medium, 2 is hard, 3 is very hard, and 4 is custom.",
+                "MinimumValue": 0,
+                "MaximumValue": 4
             },
             {
                 "Name": "Keypress timeout for SpeedPress",

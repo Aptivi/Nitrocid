@@ -37,7 +37,6 @@ using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.Text;
 using KS.Shell.ShellBase.Shells;
-using ManagedWeatherMap.Core;
 using MimeKit.Text;
 using Newtonsoft.Json;
 using System;
@@ -1241,7 +1240,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Select your preferred unit for temperature (this only applies to the "weather" command)
         /// </summary>
-        public int PreferredUnit { get; set; } = (int)UnitMeasurement.Metric;
+        public int PreferredUnit { get; set; } = 2;
         /// <summary>
         /// Turns on or off the text editor autosave feature
         /// </summary>
