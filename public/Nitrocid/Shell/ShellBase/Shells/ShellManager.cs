@@ -43,7 +43,6 @@ using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.Json;
 using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Hex;
-using KS.Shell.Shells.Archive;
 using KS.Shell.Shells.Admin;
 using KS.Kernel.Events;
 using File = KS.Drivers.Console.Consoles.File;
@@ -83,7 +82,6 @@ namespace KS.Shell.ShellBase.Shells
         {
             { "General", new() },
             { ShellType.AdminShell.ToString(), new() },
-            { ShellType.ArchiveShell.ToString(), new() },
             { ShellType.DebugShell.ToString(), new() },
             { ShellType.FTPShell.ToString(), new() },
             { ShellType.HexShell.ToString(), new() },
@@ -177,7 +175,6 @@ namespace KS.Shell.ShellBase.Shells
             { "JsonShell", new JsonShellInfo() },
             { "HTTPShell", new HTTPShellInfo() },
             { "HexShell", new HexShellInfo() },
-            { "ArchiveShell", new ArchiveShellInfo() },
             { "AdminShell", new AdminShellInfo() },
             { "SqlShell", new SqlShellInfo() },
             { "DebugShell", new DebugShellInfo() }

@@ -813,14 +813,6 @@ namespace KS.Kernel.Configuration.Instances
             set => PromptPresetManager.SetPresetDry(value, ShellType.HTTPShell, false);
         }
         /// <summary>
-        /// Archive Shell Prompt Preset
-        /// </summary>
-        public string ArchiveShellPromptPreset
-        {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.ArchiveShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.ArchiveShell, false);
-        }
-        /// <summary>
         /// Admin Shell Prompt Preset
         /// </summary>
         public string AdminShellPromptPreset

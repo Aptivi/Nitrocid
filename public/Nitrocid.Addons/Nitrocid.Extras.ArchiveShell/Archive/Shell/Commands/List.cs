@@ -20,12 +20,11 @@ using System.Collections.Generic;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
-using KS.Misc.Archive;
 using KS.Shell.ShellBase.Commands;
 using SharpCompress.Archives;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Shell.Shells.Archive.Commands
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {
     /// <summary>
     /// Lists ZIP file entries

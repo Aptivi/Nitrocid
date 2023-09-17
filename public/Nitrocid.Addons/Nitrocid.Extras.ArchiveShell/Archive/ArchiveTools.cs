@@ -26,13 +26,13 @@ using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Shell.Shells.Archive;
+using Nitrocid.Extras.ArchiveShell.Archive.Shell;
 using SharpCompress.Archives;
 using SharpCompress.Common;
 using SharpCompress.Readers;
 using SharpCompress.Writers;
 
-namespace KS.Misc.Archive
+namespace Nitrocid.Extras.ArchiveShell.Archive
 {
     /// <summary>
     /// Archive shell tools

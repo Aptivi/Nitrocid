@@ -19,9 +19,9 @@
 using System.IO;
 using System.Text;
 using KS.ConsoleBase.Colors;
-using KS.Shell.Shells.Archive;
+using KS.Shell.Prompts;
 
-namespace KS.Shell.Prompts.Presets.Archive
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 {
     /// <summary>
     /// Default preset

@@ -19,10 +19,9 @@
 using System;
 using System.Linq;
 using KS.Files;
-using KS.Misc.Archive;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Archive.Commands
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {
     /// <summary>
     /// Extract a file from a ZIP archive

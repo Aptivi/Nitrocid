@@ -60,10 +60,6 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         HexShell,
         /// <summary>
-        /// Archive shell
-        /// </summary>
-        ArchiveShell,
-        /// <summary>
         /// Kernel administration shell
         /// </summary>
         AdminShell,

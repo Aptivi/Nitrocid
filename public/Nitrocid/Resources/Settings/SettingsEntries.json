@@ -674,13 +674,6 @@
                 "Description": ""
             },
             {
-                "Name": "Archive Shell Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "ArchiveShellPromptPreset",
-                "ShellType": "ArchiveShell",
-                "Description": ""
-            },
-            {
                 "Name": "Admin Shell Prompt Preset",
                 "Type": "SPreset",
                 "Variable": "AdminShellPromptPreset",

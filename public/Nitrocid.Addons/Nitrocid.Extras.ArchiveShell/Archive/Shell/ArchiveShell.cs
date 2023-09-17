@@ -32,7 +32,7 @@ using SharpCompress.Readers;
 using SharpCompress.Archives.Zip;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Shell.Shells.Archive
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {
     /// <summary>
     /// Archive shell class

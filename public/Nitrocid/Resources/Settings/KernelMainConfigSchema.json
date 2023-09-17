@@ -332,9 +332,6 @@
         "HTTPShellPromptPreset": {
             "type": "string"
         },
-        "ArchiveShellPromptPreset": {
-            "type": "string"
-        },
         "AdminShellPromptPreset": {
             "type": "string"
         },
@@ -879,7 +876,6 @@
         "JSONShellPromptPreset",
         "HexEditPromptPreset",
         "HTTPShellPromptPreset",
-        "ArchiveShellPromptPreset",
         "AdminShellPromptPreset",
         "SqlShellPromptPreset",
         "DebugShellPromptPreset",

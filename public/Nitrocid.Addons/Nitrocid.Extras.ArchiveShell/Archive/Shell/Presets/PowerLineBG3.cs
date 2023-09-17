@@ -16,24 +16,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using System.IO;
 using System.Text;
-using KS.Shell.Shells.Archive;
 using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
+using KS.Shell.Prompts;
 
-namespace KS.Shell.Prompts.Presets.Archive
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 {
     /// <summary>
-    /// PowerLine 3 preset
+    /// PowerLine BG 3 preset
     /// </summary>
-    public class ArchivePowerLine3Preset : PromptPresetBase, IPromptPreset
+    public class ArchivePowerLineBG3Preset : PromptPresetBase, IPromptPreset
     {
 
         /// <inheritdoc/>
-        public override string PresetName { get; } = "PowerLine3";
+        public override string PresetName { get; } = "PowerLineBG3";
 
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "ArchiveShell";
@@ -48,11 +49,14 @@ namespace KS.Shell.Prompts.Presets.Archive
 
         internal override string PresetPromptBuilder()
         {
+            // PowerLine glyphs
+            char TransitionPartChar = Convert.ToChar(0xE0B1);
+
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), Path.GetFileName(ArchiveShellCommon.ArchiveShell_FileStream.Name)),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 85), ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory)
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Path.GetFileName(ArchiveShellCommon.ArchiveShell_FileStream.Name), default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory, default, TransitionPartChar)
             };
 
             // Builder
@@ -71,7 +75,7 @@ namespace KS.Shell.Prompts.Presets.Archive
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "+"),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), "+"),
             };
 
             // Builder

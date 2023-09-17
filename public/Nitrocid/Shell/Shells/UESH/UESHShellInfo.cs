@@ -99,16 +99,6 @@ namespace KS.Shell.Shells.UESH
                     }, new AliasCommand(), CommandFlags.Strict)
             },
             
-            { "archive",
-                new CommandInfo("archive", ShellType, /* Localizable */ "Opens the archive file to the archive shell",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "archivefile"),
-                        }, Array.Empty<SwitchInfo>())
-                    }, new ArchiveCommand())
-            },
-            
             { "backrace",
                 new CommandInfo("backrace", ShellType, /* Localizable */ "Do you back the wrong horse?",
                     new[] {

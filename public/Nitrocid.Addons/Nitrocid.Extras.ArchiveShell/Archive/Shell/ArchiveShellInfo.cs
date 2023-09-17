@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
-using KS.Shell.Prompts.Presets.Archive;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.Archive.Commands;
 using System;
+using Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands;
+using Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets;
 
-namespace KS.Shell.Shells.Archive
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {
     /// <summary>
     /// Common archive shell class

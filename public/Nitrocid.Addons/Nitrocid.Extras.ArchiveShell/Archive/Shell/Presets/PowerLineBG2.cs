@@ -19,13 +19,13 @@
 using System;
 using System.IO;
 using System.Text;
-using KS.Shell.Shells.Archive;
 using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
+using KS.Shell.Prompts;
 
-namespace KS.Shell.Prompts.Presets.Archive
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 {
     /// <summary>
     /// PowerLine BG 2 preset

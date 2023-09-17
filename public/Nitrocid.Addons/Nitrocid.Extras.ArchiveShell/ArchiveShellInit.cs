@@ -17,22 +17,47 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Extensions;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
+using Nitrocid.Extras.ArchiveShell.Archive.Commands;
+using Nitrocid.Extras.ArchiveShell.Archive.Shell;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Nitrocid.Extras.ArchiveShell
 {
     internal class ArchiveShellInit : IAddon
     {
+        private readonly Dictionary<string, CommandInfo> addonCommands = new()
+        {
+            { "archive",
+                new CommandInfo("archive", ShellType.Shell, /* Localizable */ "Opens the archive file to the archive shell",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "archivefile"),
+                        }, Array.Empty<SwitchInfo>())
+                    }, new ArchiveCommand())
+            },
+        };
+
         string IAddon.AddonName => "Extras - Archive Shell";
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
         void IAddon.FinalizeAddon()
-        { }
+        {
+            ShellTypeManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
+        }
 
-        void IAddon.StartAddon()
-        { }
+        void IAddon.StartAddon() =>
+            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
 
         void IAddon.StopAddon()
-        { }
+        {
+            ShellTypeManager.UnregisterShell("ArchiveShell");
+            CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+        }
     }
 }

@@ -16,31 +16,28 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Colors;
-using KS.Languages;
-using KS.Misc.Archive;
+using KS.Files;
 using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Exceptions;
 
-namespace KS.Shell.Shells.Archive.Commands
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {
     /// <summary>
-    /// Changes current local directory
+    /// Compresses a file to a ZIP archive
     /// </summary>
     /// <remarks>
-    /// If you want to interact with the ZIP file in another local directory, you can use this command to change the current local directory. This change isn't applied to the main shell.
+    /// If you want to compress a single file from the ZIP archive, you can use this command.
     /// </remarks>
-    class ArchiveShell_ChDirCommand : BaseCommand, ICommand
+    class ArchiveShell_PackCommand : BaseCommand, ICommand
     {
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            if (!ArchiveTools.ChangeWorkingArchiveLocalDirectory(ListArgsOnly[0]))
+            string Where = "";
+            if (ListArgsOnly.Length > 1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Directory {0} doesn't exist"), true, KernelColorType.Error, ListArgsOnly[0]);
-                return 10000 + (int)KernelExceptionType.Archive;
+                Where = Filesystem.NeutralizePath(ListArgsOnly[1], ArchiveShellCommon.ArchiveShell_CurrentDirectory);
             }
+            ArchiveTools.PackFile(ListArgsOnly[0], Where);
             return 0;
         }
 

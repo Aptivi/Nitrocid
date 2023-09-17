@@ -18,22 +18,22 @@
 
 using System.IO;
 using System.Text;
-using KS.Shell.Shells.Archive;
 using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
+using KS.Shell.Prompts;
 
-namespace KS.Shell.Prompts.Presets.Archive
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 {
     /// <summary>
-    /// PowerLine 2 preset
+    /// PowerLine 1 preset
     /// </summary>
-    public class ArchivePowerLine2Preset : PromptPresetBase, IPromptPreset
+    public class ArchivePowerLine1Preset : PromptPresetBase, IPromptPreset
     {
-
         /// <inheritdoc/>
-        public override string PresetName { get; } = "PowerLine2";
+
+        public override string PresetName { get; } = "PowerLine1";
 
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "ArchiveShell";
@@ -51,8 +51,8 @@ namespace KS.Shell.Prompts.Presets.Archive
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), Path.GetFileName(ArchiveShellCommon.ArchiveShell_FileStream.Name)),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 85, 255), ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory)
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), Path.GetFileName(ArchiveShellCommon.ArchiveShell_FileStream.Name)),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory)
             };
 
             // Builder
@@ -71,7 +71,7 @@ namespace KS.Shell.Prompts.Presets.Archive
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), "+"),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "+"),
             };
 
             // Builder

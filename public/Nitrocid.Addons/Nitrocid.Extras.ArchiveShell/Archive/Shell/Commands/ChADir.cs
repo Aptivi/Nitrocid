@@ -20,10 +20,9 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Archive;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.Archive.Commands
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {
     /// <summary>
     /// Changes current archive directory

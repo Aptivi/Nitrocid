@@ -49,7 +49,6 @@ namespace KS.Shell.Prompts
             { "JsonShell", ShellManager.GetShellInfo(ShellType.JsonShell).ShellPresets["Default"] },
             { "HTTPShell", ShellManager.GetShellInfo(ShellType.HTTPShell).ShellPresets["Default"] },
             { "HexShell", ShellManager.GetShellInfo(ShellType.HexShell).ShellPresets["Default"] },
-            { "ArchiveShell", ShellManager.GetShellInfo(ShellType.ArchiveShell).ShellPresets["Default"] },
             { "AdminShell", ShellManager.GetShellInfo(ShellType.AdminShell).ShellPresets["Default"] },
             { "SqlShell", ShellManager.GetShellInfo(ShellType.SqlShell).ShellPresets["Default"] },
             { "DebugShell", ShellManager.GetShellInfo(ShellType.DebugShell).ShellPresets["Default"] }
@@ -208,11 +207,6 @@ namespace KS.Shell.Prompts
                     case "FTPShell":
                         {
                             Config.MainConfig.FTPPromptPreset = PresetName;
-                            break;
-                        }
-                    case "ArchiveShell":
-                        {
-                            Config.MainConfig.ArchiveShellPromptPreset = PresetName;
                             break;
                         }
                     case "AdminShell":

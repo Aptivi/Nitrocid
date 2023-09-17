@@ -19,7 +19,7 @@
 using SharpCompress.Archives;
 using System.IO;
 
-namespace KS.Shell.Shells.Archive
+namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {
     internal class ArchiveShellCommon
     {
