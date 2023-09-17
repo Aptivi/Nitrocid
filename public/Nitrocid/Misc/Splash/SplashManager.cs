@@ -46,7 +46,7 @@ namespace KS.Misc.Splash
     {
 
         internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display()) { isCritical = true };
-        private readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
+        internal readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
             { "Simple", new SplashInfo("Simple", new SplashSimple()) },
             { "Progress", new SplashInfo("Progress", new SplashProgress()) },
@@ -67,7 +67,6 @@ namespace KS.Misc.Splash
             { "Dots", new SplashInfo("Dots", new SplashDots()) },
             { "Welcome", new SplashInfo("Welcome", new SplashWelcome()) },
             { "SquareCorner", new SplashInfo("SquareCorner", new SplashSquareCorner()) },
-            { "Quote", new SplashInfo("Quote", new SplashQuote()) },
             { "TextBox", new SplashInfo("TextBox", new SplashTextBox()) },
         };
 

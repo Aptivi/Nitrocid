@@ -99,13 +99,6 @@ namespace KS.Shell.Shells.UESH
                     }, new AliasCommand(), CommandFlags.Strict)
             },
             
-            { "backrace",
-                new CommandInfo("backrace", ShellType, /* Localizable */ "Do you back the wrong horse?",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new BackRaceCommand())
-            },
-            
             { "beep",
                 new CommandInfo("beep", ShellType, /* Localizable */ "Beeps from the console",
                     new[] {
@@ -560,13 +553,6 @@ namespace KS.Shell.Shells.UESH
                         })
                     }, new Get_Command())
             },
-            
-            { "hangman",
-                new CommandInfo("hangman", ShellType, /* Localizable */ "Starts the Hangman game",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new HangmanCommand())
-            },
 
             { "host",
                 new CommandInfo("host", ShellType, /* Localizable */ "Gets the current host name",
@@ -782,7 +768,8 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(false, "emailAddress"),
                         }, Array.Empty<SwitchInfo>())
-                    }, new MailCommand()) },
+                    }, new MailCommand())
+            },
             
             { "md",
                 new CommandInfo("md", ShellType, /* Localizable */ "Creates a directory",
@@ -791,13 +778,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "directory"),
                         }, Array.Empty<SwitchInfo>(), true)
-                    }, new MdCommand()) },
-            
-            { "meteor",
-                new CommandInfo("meteor", ShellType, /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new MeteorCommand())
+                    }, new MdCommand())
             },
             
             { "mkfile",
@@ -977,13 +958,6 @@ namespace KS.Shell.Shells.UESH
                     }, new PutCommand())
             },
             
-            { "quote",
-                new CommandInfo("quote", ShellType, /* Localizable */ "Gets a random quote",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new QuoteCommand())
-            },
-            
             { "reboot",
                 new CommandInfo("reboot", ShellType, /* Localizable */ "Restarts your computer (WARNING: No syncing, because it is not a final kernel)",
                     new[] {
@@ -1067,13 +1041,6 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "GroupName", (startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray()),
                         }, Array.Empty<SwitchInfo>())
                     }, new RmUserFromGroupCommand(), CommandFlags.Strict)
-            },
-            
-            { "roulette",
-                new CommandInfo("roulette", ShellType, /* Localizable */ "Russian Roulette",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new RouletteCommand())
             },
             
             { "rss",
@@ -1190,13 +1157,6 @@ namespace KS.Shell.Shells.UESH
                     }, new SftpCommand())
             },
             
-            { "shipduet",
-                new CommandInfo("shipduet", ShellType, /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new ShipDuetCommand())
-            },
-            
             { "shownotifs",
                 new CommandInfo("shownotifs", ShellType, /* Localizable */ "Shows all received notifications",
                     new[] {
@@ -1242,32 +1202,6 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "ms"),
                         }, Array.Empty<SwitchInfo>())
                     }, new SleepCommand())
-            },
-            
-            { "snaker",
-                new CommandInfo("snaker", ShellType, /* Localizable */ "The snake game!",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new SnakerCommand())
-            },
-            
-            { "solver",
-                new CommandInfo("solver", ShellType, /* Localizable */ "See if you can solve mathematical equations on time",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new SolverCommand())
-            },
-            
-            { "speedpress",
-                new CommandInfo("speedpress", ShellType, /* Localizable */ "See if you can press a key on time",
-                    new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
-                            new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", false, false, new string[] { "m", "h", "v", "c" }, 0, false),
-                            new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", false, false, new string[] { "e", "h", "v", "c" }, 0, false),
-                            new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", false, false, new string[] { "m", "e", "v", "c" }, 0, false),
-                            new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", false, false, new string[] { "m", "h", "e", "c" }, 0, false),
-                            new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", false, true, new string[] { "m", "h", "v", "e" }) })
-                    }, new SpeedPressCommand())
             },
             
             { "sshell",
@@ -1465,15 +1399,6 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), true)
                     }, new WhoamiCommand())
             },
-            
-            { "wordle",
-                new CommandInfo("wordle", ShellType, /* Localizable */ "The Wordle game simulator",
-                    new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
-                            new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", false, false, Array.Empty<string>(), 0, false)
-                        })
-                    }, new WordleCommand())
-            },
 
             { "zip",
                 new CommandInfo("zip", ShellType, /* Localizable */ "Creates a ZIP archive",
@@ -1488,21 +1413,6 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("nobasedir", /* Localizable */ "Don't create base directory in archive", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new ZipCommand())
-            },
-
-            // Hidden
-            { "2015",
-                new CommandInfo("2015", ShellType, /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new HddUncleanerCommand(), CommandFlags.Hidden)
-            },
-            
-            { "2018",
-                new CommandInfo("2018", ShellType, /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new AnniversaryCommand(), CommandFlags.Hidden)
             },
         };
 

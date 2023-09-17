@@ -48,14 +48,12 @@ using KS.Drivers.Network;
 using KS.Drivers.Filesystem;
 using KS.Drivers.Encryption;
 using KS.Drivers.Regexp;
-using static KS.Misc.Amusements.Games.SpeedPress;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
 using KS.Misc.Animations.Lyrics;
-using KS.Misc.Amusements.Games;
 using Figletize;
 
 namespace KS.Kernel.Configuration.Instances
@@ -1283,19 +1281,11 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// What is the minimum number to choose?
         /// </summary>
-        public int SolverMinimumNumber
-        {
-            get => Solver.minimumNumber;
-            set => Solver.minimumNumber = value < 0 ? 0 : value;
-        }
+        public int SolverMinimumNumber { get; set; } = 0;
         /// <summary>
         /// What is the maximum number to choose?
         /// </summary>
-        public int SolverMaximumNumber
-        {
-            get => Solver.maximumNumber;
-            set => Solver.maximumNumber = value < 0 ? 1000 : value;
-        }
+        public int SolverMaximumNumber { get; set; } = 1000;
         /// <summary>
         /// Whether to show what's written in the input prompt.
         /// </summary>
@@ -1367,15 +1357,11 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Select your preferred difficulty
         /// </summary>
-        public int SpeedPressCurrentDifficulty { get; set; } = (int)SpeedPressDifficulty.Medium;
+        public int SpeedPressCurrentDifficulty { get; set; } = 1;
         /// <summary>
         /// How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)
         /// </summary>
-        public int SpeedPressTimeout
-        {
-            get => speedPressTimeout;
-            set => speedPressTimeout = value < 0 ? 3000 : value;
-        }
+        public int SpeedPressTimeout { get; set; } = 3000;
         /// <summary>
         /// Each login, it will show the latest RSS headline from the selected headline URL
         /// </summary>
@@ -1521,11 +1507,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Specifies the game speed in milliseconds.
         /// </summary>
-        public int MeteorSpeed
-        {
-            get => MeteorShooter.meteorSpeed;
-            set => MeteorShooter.meteorSpeed = value < 0 ? 10 : value;
-        }
+        public int MeteorSpeed { get; set; } = 10;
         /// <summary>
         /// Enables the scroll bar in selection screens
         /// </summary>
@@ -1617,11 +1599,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Specifies the game speed in milliseconds.
         /// </summary>
-        public int ShipDuetSpeed
-        {
-            get => ShipDuetShooter.shipDuetSpeed;
-            set => ShipDuetShooter.shipDuetSpeed = value < 0 ? 10 : value;
-        }
+        public int ShipDuetSpeed { get; set; } = 10;
         /// <summary>
         /// Path to the lyrics
         /// </summary>
