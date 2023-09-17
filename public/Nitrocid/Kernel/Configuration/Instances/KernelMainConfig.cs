@@ -192,7 +192,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Set the language codepage upon switching languages (Windows only)
         /// </summary>
-        public bool SetCodepage { get; set; }
+        public bool SetCodepage { get; set; } = true;
         /// <summary>
         /// User Name Shell Color
         /// </summary>
