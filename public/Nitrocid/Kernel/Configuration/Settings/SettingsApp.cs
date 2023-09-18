@@ -31,12 +31,11 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Querying;
-using KS.Kernel;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Screensaver;
+using KS.Misc.Splash;
 using KS.Misc.Text;
 using KS.Resources;
 using KS.Shell.Prompts;
@@ -46,7 +45,7 @@ using Terminaux.Colors;
 using Terminaux.Colors.Wheel;
 using Terminaux.Figlet;
 
-namespace KS.Misc.Settings
+namespace KS.Kernel.Configuration.Settings
 {
     /// <summary>
     /// Settings application module
@@ -104,7 +103,7 @@ namespace KS.Misc.Settings
 
                 // Prompt for selection and check the answer
                 string finalTitle = Translate.DoTranslation("Welcome to Settings!");
-                int Answer = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select section:"), 
+                int Answer = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select section:"),
                     sections, altSections);
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
@@ -321,7 +320,7 @@ namespace KS.Misc.Settings
                     {
                         // Preview splash
                         DebugWriter.WriteDebug(DebugLevel.I, "User requested splash preview.");
-                        Splash.SplashManager.PreviewSplash(Section);
+                        SplashManager.PreviewSplash(Section);
                     }
                     else if (finalAnswer == MaxOptions + 1 | Answer == -1)
                     {
@@ -980,10 +979,10 @@ namespace KS.Misc.Settings
                 // We're dealing with the property
                 return SettingsType switch
                 {
-                    ConfigType.Kernel       => PropertyManager.GetPropertyValueInstance(Config.MainConfig, KeyVar),
-                    ConfigType.Screensaver  => PropertyManager.GetPropertyValueInstance(Config.SaverConfig, KeyVar),
-                    ConfigType.Splash       => PropertyManager.GetPropertyValueInstance(Config.SplashConfig, KeyVar),
-                    _                       => null,
+                    ConfigType.Kernel => PropertyManager.GetPropertyValueInstance(Config.MainConfig, KeyVar),
+                    ConfigType.Screensaver => PropertyManager.GetPropertyValueInstance(Config.SaverConfig, KeyVar),
+                    ConfigType.Splash => PropertyManager.GetPropertyValueInstance(Config.SplashConfig, KeyVar),
+                    _ => null,
                 };
             }
             return null;

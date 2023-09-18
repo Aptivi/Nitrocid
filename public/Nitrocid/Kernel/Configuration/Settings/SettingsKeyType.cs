@@ -20,7 +20,7 @@ using KS.Shell.Prompts;
 using System.Collections.Generic;
 using Terminaux.Colors;
 
-namespace KS.Misc.Settings
+namespace KS.Kernel.Configuration.Settings
 {
     /// <summary>
     /// Key type for settings entry
