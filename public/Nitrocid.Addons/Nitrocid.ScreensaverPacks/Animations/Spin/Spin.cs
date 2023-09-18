@@ -1,0 +1,80 @@
+﻿
+// Nitrocid KS  Copyright (C) 2018-2023  Aptivi
+// 
+// This file is part of Nitrocid KS
+// 
+// Nitrocid KS is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+// 
+// Nitrocid KS is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+// 
+// You should have received a copy of the GNU General Public License
+// along with this program.  If not, see <https://www.gnu.org/licenses/>.
+
+using System.Text;
+using KS.ConsoleBase;
+using KS.Kernel.Threading;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Colors;
+
+namespace Nitrocid.ScreensaverPacks.Animations.Spin
+{
+    /// <summary>
+    /// Spin animation module
+    /// </summary>
+    public static class Spin
+    {
+
+        private static int CurrentWindowWidth;
+        private static int CurrentWindowHeight;
+        private static int currentSpinStep = 0;
+        private static readonly char[] spinSteps = new[] { '/', '|', '\\', '-' };
+
+        /// <summary>
+        /// Simulates the pulsing animation
+        /// </summary>
+        public static void Simulate(SpinSettings Settings)
+        {
+            CurrentWindowWidth = ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleWrapper.WindowHeight;
+            ConsoleWrapper.CursorVisible = false;
+
+            // Get spin character from current index
+            char spinStep = spinSteps[currentSpinStep];
+
+            StringBuilder spinBuffer = new();
+
+            // Make a spin buffer
+            for (int x = 0; x < CurrentWindowWidth; x++)
+            {
+                for (int y = 0; y < CurrentWindowHeight; y++)
+                {
+                    spinBuffer.Append(spinStep.ToString());
+                }
+            }
+
+            // Spin!
+            if (!ConsoleResizeListener.WasResized(false))
+            {
+                TextWriterWhereColor.WriteWhere(spinBuffer.ToString(), 0, 0, true, new Color(ConsoleColors.White), new Color(ConsoleColors.Black));
+                ThreadManager.SleepNoBlock(Settings.SpinDelay, System.Threading.Thread.CurrentThread);
+            }
+
+            // Step the current spin step forward
+            currentSpinStep++;
+            if (currentSpinStep >= spinSteps.Length)
+                currentSpinStep = 0;
+
+            // Reset resize sync
+            ConsoleResizeListener.WasResized();
+            CurrentWindowWidth = ConsoleWrapper.WindowWidth;
+            CurrentWindowHeight = ConsoleWrapper.WindowHeight;
+        }
+
+    }
+}

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using Terminaux.Colors;
-using static KS.Misc.Screensaver.Displays.LinotypoSettings;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -989,7 +988,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// [Linotypo] Line fill pattern type
         /// </summary>
-        public int LinotypoEtaoinType { get; set; } = (int)FillType.EtaoinPattern;
+        public int LinotypoEtaoinType { get; set; } = 0;
         /// <summary>
         /// [Linotypo] Possibility that the writer missed a character in percent
         /// </summary>

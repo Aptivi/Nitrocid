@@ -48,26 +48,8 @@ namespace KS.Misc.Splash
         internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display()) { isCritical = true };
         internal readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
-            { "Simple", new SplashInfo("Simple", new SplashSimple()) },
-            { "Progress", new SplashInfo("Progress", new SplashProgress()) },
-            { "Blank", new SplashInfo("Blank", new SplashBlank(), false) },
-            { "Fader", new SplashInfo("Fader", new SplashFader()) },
-            { "FaderBack", new SplashInfo("FaderBack", new SplashFaderBack()) },
-            { "BeatFader", new SplashInfo("BeatFader", new SplashBeatFader()) },
-            { "systemd", new SplashInfo("systemd", new SplashSystemd()) },
-            { "sysvinit", new SplashInfo("sysvinit", new SplashSysvinit()) },
-            { "openrc", new SplashInfo("openrc", new SplashOpenRC()) },
-            { "Pulse", new SplashInfo("Pulse", new SplashPulse()) },
-            { "BeatPulse", new SplashInfo("BeatPulse", new SplashBeatPulse()) },
-            { "EdgePulse", new SplashInfo("EdgePulse", new SplashEdgePulse()) },
-            { "BeatEdgePulse", new SplashInfo("BeatEdgePulse", new SplashBeatEdgePulse()) },
-            { "PowerLine", new SplashInfo("PowerLine", new SplashPowerLine()) },
-            { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) },
-            { "Spin", new SplashInfo("Spin", new SplashSpin()) },
-            { "Dots", new SplashInfo("Dots", new SplashDots()) },
             { "Welcome", new SplashInfo("Welcome", new SplashWelcome()) },
-            { "SquareCorner", new SplashInfo("SquareCorner", new SplashSquareCorner()) },
-            { "TextBox", new SplashInfo("TextBox", new SplashTextBox()) },
+            { "Blank", new SplashInfo("Blank", new SplashBlank(), false) },
         };
 
         /// <summary>
