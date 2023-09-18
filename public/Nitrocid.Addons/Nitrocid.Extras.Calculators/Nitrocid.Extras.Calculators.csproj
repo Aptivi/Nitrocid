@@ -1,0 +1,54 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Extras.Calculators addon General Information -->
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DefineTrace>true</DefineTrace>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath Condition=" '$(TargetFramework)' != '' ">..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Calculators</OutputPath>
+    <Description>Nitrocid KS Extras - Calculators</Description>
+    <AssemblyTitle>Nitrocid KS Extras - Calculators</AssemblyTitle>
+    <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
+    <Company>Aptivi</Company>
+    <Product>Nitrocid</Product>
+    <Version>0.1.0</Version>
+    <Configurations>Debug;Release</Configurations>
+    <LangVersion>latest</LangVersion>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <!-- Extras.Calculators addon General Information End -->
+
+  <!-- Extras.Calculators addon Platform Information -->
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugType>portable</DebugType>
+    <DefineDebug>true</DefineDebug>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <Optimize>true</Optimize>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Nitrocid\Nitrocid.csproj" Private="false" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="AddonMetadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!-- Extras.Calculators addon Platform Information End -->
+
+  <ItemGroup>
+    <PackageReference Include="StringMath" Version="4.1.0" />
+  </ItemGroup>
+
+</Project>

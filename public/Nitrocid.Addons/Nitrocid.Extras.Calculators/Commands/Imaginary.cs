@@ -16,12 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using System;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.Calculators.Commands
 {
     /// <summary>
     /// This command will show information about the imaginary number formula specified by a specified real and imaginary number.
@@ -38,12 +39,12 @@ namespace KS.Shell.Shells.UESH.Commands
             // Check both the real and the imaginary numbers for verification
             if (!double.TryParse(ListArgsOnly[0], out double Real))
             {
-                TextWriterColor.Write(Translate.DoTranslation("The real number is not valid."), true, ConsoleBase.Colors.KernelColorType.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The real number is not valid."), true, KernelColorType.Error);
                 return 2;
             }
             if (!double.TryParse(ListArgsOnly[1], out double Imaginary))
             {
-                TextWriterColor.Write(Translate.DoTranslation("The imaginary number is not valid."), true, ConsoleBase.Colors.KernelColorType.Error);
+                TextWriterColor.Write(Translate.DoTranslation("The imaginary number is not valid."), true, KernelColorType.Error);
                 return 2;
             }
 
@@ -51,7 +52,7 @@ namespace KS.Shell.Shells.UESH.Commands
             TextWriterColor.Write(Translate.DoTranslation("Formula:") + " Z = {0} + {1}i", Real, Imaginary);
 
             // Process the radius
-            double Radius = Math.Sqrt((Math.Pow(Real, 2)) + Math.Pow(Imaginary, 2));
+            double Radius = Math.Sqrt(Math.Pow(Real, 2) + Math.Pow(Imaginary, 2));
             TextWriterColor.Write(Translate.DoTranslation("Radius:") + " {0}", Radius);
 
             // Determine the cosine (Real to Radius) and the sine (Imaginary to Radius)
@@ -67,8 +68,8 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Now, write the result in both the exponentional format (Z = r * (e)^{angle}i)
             //                           and the triangular format    (Z = r (cos {angle} + i sin {angle})
-            TextWriterColor.Write(Translate.DoTranslation("Exponential:") + " Z = {0} * (e)^{1}i", true, ConsoleBase.Colors.KernelColorType.Success, Radius, AngleSin);
-            TextWriterColor.Write(Translate.DoTranslation("Triangular:") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, ConsoleBase.Colors.KernelColorType.Success, Radius, AngleCos, AngleSin);
+            TextWriterColor.Write(Translate.DoTranslation("Exponential:") + " Z = {0} * (e)^{1}i", true, KernelColorType.Success, Radius, AngleSin);
+            TextWriterColor.Write(Translate.DoTranslation("Triangular:") + " Z = {0} * (cos ({1}) + i sin ({2}))", true, KernelColorType.Success, Radius, AngleCos, AngleSin);
             return 0;
         }
     }

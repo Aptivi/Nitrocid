@@ -127,16 +127,6 @@ namespace KS.Shell.Shells.UESH
                     }, new BulkRenameCommand())
             },
             
-            { "calc",
-                new CommandInfo("calc", ShellType, /* Localizable */ "Calculator to calculate expressions.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "expression"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new CalcCommand())
-            },
-            
             { "cat",
                 new CommandInfo("cat", ShellType, /* Localizable */ "Prints content of file to console",
                     new[] {
@@ -567,17 +557,6 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo()
                     }, new IfmCommand())
-            },
-            
-            { "imaginary",
-                new CommandInfo("imaginary", ShellType, /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "real"),
-                            new CommandArgumentPart(true, "imaginary"),
-                        }, Array.Empty<SwitchInfo>())
-                    }, new ImaginaryCommand())
             },
             
             { "input",

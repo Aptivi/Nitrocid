@@ -24,7 +24,7 @@ using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using StringMath;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.Calculators.Commands
 {
     /// <summary>
     /// Calculates expressions.

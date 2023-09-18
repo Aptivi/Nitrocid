@@ -57,15 +57,17 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Forecast", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.ToDoList", "public\Nitrocid.Addons\Nitrocid.Extras.ToDoList\Nitrocid.Extras.ToDoList.csproj", "{DAF14C98-59F8-4C62-95B5-7ECE6B6D0AC7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Timers", "public\Nitrocid.Addons\Nitrocid.Extras.Timers\Nitrocid.Extras.Timers.csproj", "{A2221A27-DD49-4A3F-8C86-05C9BCD91B49}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Timers", "public\Nitrocid.Addons\Nitrocid.Extras.Timers\Nitrocid.Extras.Timers.csproj", "{A2221A27-DD49-4A3F-8C86-05C9BCD91B49}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Dictionary", "public\Nitrocid.Addons\Nitrocid.Extras.Dictionary\Nitrocid.Extras.Dictionary.csproj", "{B39C7E6E-1CD4-4C97-B6AE-0AA7592A37B6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Dictionary", "public\Nitrocid.Addons\Nitrocid.Extras.Dictionary\Nitrocid.Extras.Dictionary.csproj", "{B39C7E6E-1CD4-4C97-B6AE-0AA7592A37B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.NameGen", "public\Nitrocid.Addons\Nitrocid.Extras.NameGen\Nitrocid.Extras.NameGen.csproj", "{496A58B1-70D3-418A-A1B6-703EA8FC0790}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.NameGen", "public\Nitrocid.Addons\Nitrocid.Extras.NameGen\Nitrocid.Extras.NameGen.csproj", "{496A58B1-70D3-418A-A1B6-703EA8FC0790}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.UnitConv", "public\Nitrocid.Addons\Nitrocid.Extras.UnitConv\Nitrocid.Extras.UnitConv.csproj", "{FD43CAC8-4770-4C63-ABBF-C382D378C02E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.UnitConv", "public\Nitrocid.Addons\Nitrocid.Extras.UnitConv\Nitrocid.Extras.UnitConv.csproj", "{FD43CAC8-4770-4C63-ABBF-C382D378C02E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.BassBoom", "public\Nitrocid.Addons\Nitrocid.Extras.BassBoom\Nitrocid.Extras.BassBoom.csproj", "{47239E70-B4A0-4127-A6E9-0749EED2B3BB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.BassBoom", "public\Nitrocid.Addons\Nitrocid.Extras.BassBoom\Nitrocid.Extras.BassBoom.csproj", "{47239E70-B4A0-4127-A6E9-0749EED2B3BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Calculators", "public\Nitrocid.Addons\Nitrocid.Extras.Calculators\Nitrocid.Extras.Calculators.csproj", "{1489748E-EB06-493F-946C-17707300BCBC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -189,6 +191,10 @@ Global
 		{47239E70-B4A0-4127-A6E9-0749EED2B3BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{47239E70-B4A0-4127-A6E9-0749EED2B3BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{47239E70-B4A0-4127-A6E9-0749EED2B3BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1489748E-EB06-493F-946C-17707300BCBC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1489748E-EB06-493F-946C-17707300BCBC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1489748E-EB06-493F-946C-17707300BCBC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1489748E-EB06-493F-946C-17707300BCBC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -224,6 +230,7 @@ Global
 		{496A58B1-70D3-418A-A1B6-703EA8FC0790} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{FD43CAC8-4770-4C63-ABBF-C382D378C02E} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{47239E70-B4A0-4127-A6E9-0749EED2B3BB} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{1489748E-EB06-493F-946C-17707300BCBC} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

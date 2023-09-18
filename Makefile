@@ -57,6 +57,7 @@ debian-install:
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.Dictionary/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.NameGen/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.BassBoom/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
+	find debian/kernel-simulator/usr/lib/ks/Addons/Extras.Calculators/runtimes/ -mindepth 1 -maxdepth 1 -not -name "linux-x64" -type d -exec rm -rf {} \;
 
 clean:
 	rm -rf $(OUTPUTS)
