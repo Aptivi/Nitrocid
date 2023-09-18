@@ -78,7 +78,7 @@ namespace KS.Files
         /// <summary>
         /// Journal file
         /// </summary>
-        Journalling,
+        Journaling,
         /// <summary>
         /// Contacts directory
         /// </summary>

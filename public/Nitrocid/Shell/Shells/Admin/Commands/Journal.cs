@@ -25,7 +25,7 @@ namespace KS.Shell.Shells.Admin.Commands
     /// Gets the current kernel journal log
     /// </summary>
     /// <remarks>
-    /// This command gets the current kernel journal log from the <see cref="Files.KernelPathType.Journalling"/> path.
+    /// This command gets the current kernel journal log from the <see cref="Files.KernelPathType.Journaling"/> path.
     /// </remarks>
     class JournalCommand : BaseCommand, ICommand
     {

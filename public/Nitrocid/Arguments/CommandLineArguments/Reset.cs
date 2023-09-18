@@ -44,7 +44,7 @@ namespace KS.Arguments.CommandLineArguments
                         foreach (string debug in debugs)
                             File.Delete(debug);
                         break;
-                    case KernelPathType.Journalling:
+                    case KernelPathType.Journaling:
                         TargetPath = TargetPath[..TargetPath.LastIndexOf(".json")] + "*.json";
                         string[] journals = Listing.GetFilesystemEntries(TargetPath);
                         foreach (string journal in journals)

@@ -18,7 +18,7 @@
 namespace KS.Kernel.Journaling
 {
     /// <summary>
-    /// Journalling status to write to the kernel journal
+    /// Journaling status to write to the kernel journal
     /// </summary>
     public enum JournalStatus
     {

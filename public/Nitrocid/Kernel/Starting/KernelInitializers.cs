@@ -124,7 +124,7 @@ namespace KS.Kernel.Starting
             }
 
             // Initialize journal path
-            JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journalling)), Paths.GetKernelPath(KernelPathType.Journalling));
+            JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journaling)), Paths.GetKernelPath(KernelPathType.Journaling));
 
             // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
             if (Flags.TalkativePreboot)

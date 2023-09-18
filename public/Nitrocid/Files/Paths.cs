@@ -181,9 +181,9 @@ namespace KS.Files
             Filesystem.NeutralizePath(AppDataPath + "/KSSplashes/");
 
         /// <summary>
-        /// Journalling path
+        /// Journaling path
         /// </summary>
-        public static string JournallingPath =>
+        public static string JournalingPath =>
             Filesystem.NeutralizePath(AppDataPath + "/KSJournal.json");
 
         /// <summary>
@@ -250,7 +250,7 @@ namespace KS.Files
                 KernelPathType.MOTD =>                  MOTDPath,
                 KernelPathType.Reminders =>             RemindersPath,
                 KernelPathType.Users =>                 UsersPath,
-                KernelPathType.Journalling =>           JournallingPath,
+                KernelPathType.Journaling =>            JournalingPath,
                 KernelPathType.Contacts =>              ContactsPath,
                 KernelPathType.ContactsImport =>        ContactsImportPath,
                 KernelPathType.SaverConfiguration =>    SaverConfigurationPath,
