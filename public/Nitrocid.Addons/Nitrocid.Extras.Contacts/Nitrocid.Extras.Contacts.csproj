@@ -48,6 +48,7 @@
   <!-- Extras.Contacts addon Platform Information End -->
 
   <ItemGroup>
+    <PackageReference Include="Terminaux" Version="1.6.0" />
     <PackageReference Include="VisualCard" Version="0.6.0" />
   </ItemGroup>
 

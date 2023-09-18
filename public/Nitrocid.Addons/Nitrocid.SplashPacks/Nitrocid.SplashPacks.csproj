@@ -46,4 +46,8 @@
   </ItemGroup>
   <!-- ThemePacks addon Platform Information End -->
 
+  <ItemGroup>
+    <PackageReference Include="Terminaux" Version="1.6.0" />
+  </ItemGroup>
+
 </Project>

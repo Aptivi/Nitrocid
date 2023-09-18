@@ -45,5 +45,11 @@
     </None>
   </ItemGroup>
   <!-- Extras.ArchiveShell addon Platform Information End -->
+
+  <ItemGroup>
+    <PackageReference Include="FluentFTP" Version="47.1.0" />
+    <PackageReference Include="SharpCompress" Version="0.33.0" />
+    <PackageReference Include="Terminaux" Version="1.6.0" />
+  </ItemGroup>
   
 </Project>

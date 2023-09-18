@@ -49,6 +49,7 @@
 
   <ItemGroup>
     <PackageReference Include="ManagedWeatherMap" Version="1.2.1" />
+    <PackageReference Include="Terminaux" Version="1.6.0" />
   </ItemGroup>
 
 </Project>

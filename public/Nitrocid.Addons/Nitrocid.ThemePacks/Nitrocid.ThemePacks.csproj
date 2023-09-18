@@ -63,4 +63,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <!-- ThemePacks addon metadata End -->
+
+  <ItemGroup>
+    <PackageReference Include="Terminaux" Version="1.6.0" />
+  </ItemGroup>
+  
 </Project>

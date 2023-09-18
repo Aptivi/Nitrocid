@@ -49,6 +49,7 @@
 
   <ItemGroup>
     <PackageReference Include="Namer" Version="1.1.1" />
+    <PackageReference Include="Terminaux" Version="1.6.0" />
   </ItemGroup>
 
 </Project>

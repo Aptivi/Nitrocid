@@ -161,4 +161,9 @@
     <Copy SourceFiles="Translations\eng.txt" DestinationFolder="CustomLanguages" />
   </Target>
   <!-- LocaleGen Translations End -->
+
+  <ItemGroup>
+    <PackageReference Include="Terminaux" Version="1.6.0" />
+  </ItemGroup>
+  
 </Project>
