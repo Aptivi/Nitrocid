@@ -1226,13 +1226,6 @@ namespace KS.Shell.Shells.UESH
                         }, Array.Empty<SwitchInfo>())
                     }, new SshcmdCommand())
             },
-            
-            { "stopwatch",
-                new CommandInfo("stopwatch", ShellType, /* Localizable */ "A simple stopwatch",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new StopwatchCommand())
-            },
 
             { "sudo",
                 new CommandInfo("sudo", ShellType, /* Localizable */ "Runs the command as the root user",
@@ -1287,13 +1280,6 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(false, "theme", (startFrom, _, _) => ThemeTools.GetInstalledThemes().Keys.Where((src) => src.StartsWith(startFrom)).ToArray()),
                         }, Array.Empty<SwitchInfo>())
                     }, new ThemeSelCommand())
-            },
-            
-            { "timer",
-                new CommandInfo("timer", ShellType, /* Localizable */ "A simple timer",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new TimerCommand())
             },
 
             { "unblockdbgdev",

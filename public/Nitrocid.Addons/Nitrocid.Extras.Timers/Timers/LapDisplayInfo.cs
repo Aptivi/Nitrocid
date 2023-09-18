@@ -19,7 +19,7 @@
 using System;
 using Terminaux.Colors;
 
-namespace KS.Misc.Timers
+namespace Nitrocid.Extras.Timers.Timers
 {
     class LapDisplayInfo
     {

@@ -45,17 +45,19 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Tips", "pub
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.GitShell", "public\Nitrocid.Addons\Nitrocid.Extras.GitShell\Nitrocid.Extras.GitShell.csproj", "{5015FDA2-DF20-48A0-9A39-CAB01E68B216}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Amusements", "public\Nitrocid.Addons\Nitrocid.Extras.Amusements\Nitrocid.Extras.Amusements.csproj", "{1FF6B472-0BA8-4777-B29C-E59DEE906449}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Amusements", "public\Nitrocid.Addons\Nitrocid.Extras.Amusements\Nitrocid.Extras.Amusements.csproj", "{1FF6B472-0BA8-4777-B29C-E59DEE906449}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.ArchiveShell", "public\Nitrocid.Addons\Nitrocid.Extras.ArchiveShell\Nitrocid.Extras.ArchiveShell.csproj", "{AF42D099-F2C1-4028-B61B-531C73996DEC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.ArchiveShell", "public\Nitrocid.Addons\Nitrocid.Extras.ArchiveShell\Nitrocid.Extras.ArchiveShell.csproj", "{AF42D099-F2C1-4028-B61B-531C73996DEC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Calendar", "public\Nitrocid.Addons\Nitrocid.Extras.Calendar\Nitrocid.Extras.Calendar.csproj", "{7D35B696-2213-4B97-86E8-BBE0EDC30986}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Calendar", "public\Nitrocid.Addons\Nitrocid.Extras.Calendar\Nitrocid.Extras.Calendar.csproj", "{7D35B696-2213-4B97-86E8-BBE0EDC30986}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Contacts", "public\Nitrocid.Addons\Nitrocid.Extras.Contacts\Nitrocid.Extras.Contacts.csproj", "{5A7F971C-01BF-4A21-81A3-B35E730C6291}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Contacts", "public\Nitrocid.Addons\Nitrocid.Extras.Contacts\Nitrocid.Extras.Contacts.csproj", "{5A7F971C-01BF-4A21-81A3-B35E730C6291}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Forecast", "public\Nitrocid.Addons\Nitrocid.Extras.Forecast\Nitrocid.Extras.Forecast.csproj", "{6EF92B76-A66D-4964-A03A-85E78657CA35}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.Forecast", "public\Nitrocid.Addons\Nitrocid.Extras.Forecast\Nitrocid.Extras.Forecast.csproj", "{6EF92B76-A66D-4964-A03A-85E78657CA35}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.ToDoList", "public\Nitrocid.Addons\Nitrocid.Extras.ToDoList\Nitrocid.Extras.ToDoList.csproj", "{DAF14C98-59F8-4C62-95B5-7ECE6B6D0AC7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.ToDoList", "public\Nitrocid.Addons\Nitrocid.Extras.ToDoList\Nitrocid.Extras.ToDoList.csproj", "{DAF14C98-59F8-4C62-95B5-7ECE6B6D0AC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Timers", "public\Nitrocid.Addons\Nitrocid.Extras.Timers\Nitrocid.Extras.Timers.csproj", "{A2221A27-DD49-4A3F-8C86-05C9BCD91B49}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -159,6 +161,10 @@ Global
 		{DAF14C98-59F8-4C62-95B5-7ECE6B6D0AC7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAF14C98-59F8-4C62-95B5-7ECE6B6D0AC7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAF14C98-59F8-4C62-95B5-7ECE6B6D0AC7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A2221A27-DD49-4A3F-8C86-05C9BCD91B49}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A2221A27-DD49-4A3F-8C86-05C9BCD91B49}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A2221A27-DD49-4A3F-8C86-05C9BCD91B49}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A2221A27-DD49-4A3F-8C86-05C9BCD91B49}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -189,6 +195,7 @@ Global
 		{5A7F971C-01BF-4A21-81A3-B35E730C6291} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{6EF92B76-A66D-4964-A03A-85E78657CA35} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{DAF14C98-59F8-4C62-95B5-7ECE6B6D0AC7} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{A2221A27-DD49-4A3F-8C86-05C9BCD91B49} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

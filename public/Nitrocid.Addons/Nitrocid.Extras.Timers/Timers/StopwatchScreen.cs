@@ -29,7 +29,7 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 
-namespace KS.Misc.Timers
+namespace Nitrocid.Extras.Timers.Timers
 {
     /// <summary>
     /// Stopwatch CLI module
@@ -73,7 +73,7 @@ namespace KS.Misc.Timers
 
             // Print the time interval and the current lap
             TextWriterWhereColor.WriteWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor);
-            TextWriterWhereColor.WriteWhere(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult));
+            TextWriterWhereColor.WriteWhere(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, vars: new object[] { Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult) });
 
             // Print the border
             MakeBorder();
@@ -146,7 +146,7 @@ namespace KS.Misc.Timers
 
                             // Reset the indicators
                             LapColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
-                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, false, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult));
+                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, false, LapColor, vars: new object[] { Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult) });
                             ConsoleExtensions.ClearLineToRight();
                             ConsoleWrapper.SetCursorPosition(0, TimeTopPosition);
                             ConsoleExtensions.ClearLineToRight();
@@ -198,7 +198,7 @@ namespace KS.Misc.Timers
                 {
                     // Update the elapsed display
                     TextWriterWhereColor.WriteWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor);
-                    TextWriterWhereColor.WriteWhere(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult));
+                    TextWriterWhereColor.WriteWhere(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, vars: new object[] { Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult) });
 
                     // Update the laps list if new lap is acknowledged
                     if (NewLapAcknowledged)

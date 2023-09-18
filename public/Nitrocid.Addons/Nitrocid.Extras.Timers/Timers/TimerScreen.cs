@@ -33,7 +33,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using Figletize;
 
-namespace KS.Misc.Timers
+namespace Nitrocid.Extras.Timers.Timers
 {
     /// <summary>
     /// Timer CLI module
@@ -76,8 +76,11 @@ namespace KS.Misc.Timers
         /// <summary>
         /// Timer figlet font
         /// </summary>
-        public static string TimerFigletFont =>
-            Config.MainConfig.TimerFigletFont;
+        public static string TimerFigletFont
+        {
+            get => Config.MainConfig.TimerFigletFont;
+            set => Config.MainConfig.TimerFigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
+        }
 
         /// <summary>
         /// Opens the timer screen

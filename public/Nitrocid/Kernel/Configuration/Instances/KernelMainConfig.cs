@@ -27,7 +27,6 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Screensaver;
-using KS.Misc.Timers;
 using KS.Network.Base;
 using KS.Network.RPC;
 using KS.Shell.Prompts;
@@ -1384,11 +1383,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information
         /// </summary>
-        public string TimerFigletFont
-        {
-            get => TimerScreen.timerFigletFont;
-            set => TimerScreen.timerFigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
-        }
+        public string TimerFigletFont { get; set; } = "small";
         /// <summary>
         /// Shows the commands count in the command list, controlled by the three count show switches for different kinds of commands.
         /// </summary>
