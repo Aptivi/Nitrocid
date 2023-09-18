@@ -18,5 +18,9 @@
     {
         "OverrideTitle": "Nitrocid 0.1.0 - maintenance mode",
         "Arguments": [ "noaltbuffer", "maintenance" ]
+    },
+    {
+        "OverrideTitle": "Nitrocid 0.1.0 - verbose",
+        "Arguments": [ "noaltbuffer", "verbosepreboot" ]
     }
 ]
