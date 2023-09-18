@@ -18,10 +18,10 @@
 
 using System.Threading;
 using KS.ConsoleBase;
-using KS.Misc.Animations.Lyrics;
 using KS.Shell.ShellBase.Commands;
+using Nitrocid.Extras.BassBoom.Animations.Lyrics;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.BassBoom.Commands
 {
     /// <summary>
     /// Plays a lyric file

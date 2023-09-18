@@ -51,7 +51,6 @@ using KS.ConsoleBase.Writers.MiscWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
-using KS.Misc.Animations.Lyrics;
 using Figletize;
 
 namespace KS.Kernel.Configuration.Instances
@@ -1597,15 +1596,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Path to the lyrics
         /// </summary>
-        public string LyricsPath
-        {
-            get => Lyrics.lyricsPath;
-            set
-            {
-                Lyrics.lyricsPath = Checking.FolderExists(value) ? Filesystem.NeutralizePath(value) : Lyrics.lyricsPath;
-                Lyrics.lyricsLrc = Listing.GetFilesystemEntries(Lyrics.lyricsPath, "*.lrc");
-            }
-        }
+        public string LyricsPath { get; set; } = Paths.HomePath + "/Music/";
         /// <summary>
         /// Whether to show the file size in the status
         /// </summary>

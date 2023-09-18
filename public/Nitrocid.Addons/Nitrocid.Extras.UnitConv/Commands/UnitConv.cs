@@ -23,11 +23,11 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Interactives;
 using KS.Shell.ShellBase.Commands;
+using Nitrocid.Extras.UnitConv.Interactives;
 using UnitsNet;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.UnitConv.Commands
 {
     /// <summary>
     /// Unit conversion command

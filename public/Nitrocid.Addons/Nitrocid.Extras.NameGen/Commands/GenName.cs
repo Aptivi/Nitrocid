@@ -21,7 +21,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using static Namer.NameGenerator;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.NameGen.Commands
 {
     /// <summary>
     /// Name generator

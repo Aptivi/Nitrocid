@@ -25,7 +25,7 @@ using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.Dictionary.Commands
 {
     /// <summary>
     /// The English Dictionary

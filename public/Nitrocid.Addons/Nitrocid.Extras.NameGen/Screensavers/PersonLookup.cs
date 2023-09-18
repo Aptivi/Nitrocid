@@ -17,14 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
+using KS.Misc.Screensaver;
 using static Namer.NameGenerator;
 
-namespace KS.Misc.Screensaver.Displays
+namespace Nitrocid.Extras.NameGen.Screensavers
 {
     /// <summary>
     /// Settings for PersonLookup
@@ -154,10 +156,10 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleBase.ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleBase.ConsoleWrapper.ForegroundColor = ConsoleColor.Green;
-            ConsoleBase.ConsoleWrapper.Clear();
-            ConsoleBase.ConsoleWrapper.CursorVisible = false;
+            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            ConsoleWrapper.ForegroundColor = ConsoleColor.Green;
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
 
             // Generate names
             int NumberOfPeople = RandomDriver.Random(PersonLookupSettings.PersonLookupMinimumNames, PersonLookupSettings.PersonLookupMaximumNames);
@@ -175,7 +177,7 @@ namespace KS.Misc.Screensaver.Displays
                 string LastName = GeneratedName[(GeneratedName.IndexOf(" ") + 1)..];
 
                 // Print all information
-                ConsoleBase.ConsoleWrapper.Clear();
+                ConsoleWrapper.Clear();
                 TextWriterWhereColor.WriteWhere("  - Name:                {0}", 0, 1, false, vars: new object[] { GeneratedName });
                 TextWriterWhereColor.WriteWhere("  - First Name:          {0}", 0, 2, false, vars: new object[] { FirstName });
                 TextWriterWhereColor.WriteWhere("  - Last Name / Surname: {0}", 0, 3, false, vars: new object[] { LastName });

@@ -375,16 +375,6 @@ namespace KS.Shell.Shells.UESH
                     }, new DebugShellCommand(), CommandFlags.Strict)
             },
             
-            { "dict",
-                new CommandInfo("dict", ShellType, /* Localizable */ "The English Dictionary",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "word"),
-                        }, Array.Empty<SwitchInfo>())
-                    }, new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
-            
             { "dirinfo",
                 new CommandInfo("dirinfo", ShellType, /* Localizable */ "Provides information about a directory",
                     new[] {
@@ -513,22 +503,6 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(false, "server"),
                         }, Array.Empty<SwitchInfo>())
                     }, new FtpCommand())
-            },
-            
-            { "genname",
-                new CommandInfo("genname", ShellType, /* Localizable */ "Name and surname generator",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "namescount"),
-                            new CommandArgumentPart(false, "nameprefix"),
-                            new CommandArgumentPart(false, "namesuffix"),
-                            new CommandArgumentPart(false, "surnameprefix"),
-                            new CommandArgumentPart(false, "surnamesuffix"),
-                        }, new[] {
-                            new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", false, false, Array.Empty<string>(), 0, false)
-                        }, true)
-                    }, new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "gettimeinfo",
@@ -923,16 +897,6 @@ namespace KS.Shell.Shells.UESH
                         }, true)
                     }, new PlatformCommand())
             },
-
-            { "playlyric",
-                new CommandInfo("playlyric", ShellType, /* Localizable */ "Plays a lyric file",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "lyric.lrc"),
-                        }, Array.Empty<SwitchInfo>())
-                    }, new PlayLyricCommand())
-            },
             
             { "previewsplash",
                 new CommandInfo("previewsplash", ShellType, /* Localizable */ "Previews the splash",
@@ -1290,22 +1254,6 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "ipaddress"),
                         }, Array.Empty<SwitchInfo>())
                     }, new UnblockDbgDevCommand(), CommandFlags.Strict)
-            },
-            
-            { "unitconv",
-                new CommandInfo("unitconv", ShellType, /* Localizable */ "Unit converter",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "unittype"),
-                            new CommandArgumentPart(true, "quantity"),
-                            new CommandArgumentPart(true, "sourceunit"),
-                            new CommandArgumentPart(true, "targetunit"),
-                        }, new[]
-                        {
-                            new SwitchInfo("tui", /* Localizable */ "Use the TUI version of the unit converter", false, false, Array.Empty<string>(), 4, false)
-                        })
-                    }, new UnitConvCommand())
             },
             
             { "unset",

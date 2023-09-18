@@ -21,7 +21,6 @@ using System.Reflection;
 using KS.Kernel.Configuration;
 using KS.Kernel.Configuration.Instances;
 using KS.Misc.Reflection;
-using KS.Misc.Screensaver.Displays;
 using NUnit.Framework;
 using Shouldly;
 
@@ -119,10 +118,10 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetPropertyGeneral()
         {
-            var Property = PropertyManager.GetPropertyGeneral("PersonLookupDelay");
+            var Property = PropertyManager.GetPropertyGeneral("CheckUpdateStart");
             Property.ShouldNotBeNull();
-            Property.Name.ShouldBe("PersonLookupDelay");
-            Property.DeclaringType.ShouldBe(typeof(PersonLookupSettings));
+            Property.Name.ShouldBe("CheckUpdateStart");
+            Property.DeclaringType.ShouldBe(typeof(KernelMainConfig));
         }
 
         /// <summary>
@@ -132,7 +131,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetProperties()
         {
-            var Properties = PropertyManager.GetProperties(typeof(PersonLookupSettings));
+            var Properties = PropertyManager.GetProperties(typeof(KernelMainConfig));
             Properties.ShouldNotBeNull();
             Properties.ShouldNotBeEmpty();
         }

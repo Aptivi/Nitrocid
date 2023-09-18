@@ -26,7 +26,7 @@ using UnitsNet;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Interactive;
 
-namespace KS.Misc.Interactives
+namespace Nitrocid.Extras.UnitConv.Interactives
 {
     /// <summary>
     /// Unit converter TUI class

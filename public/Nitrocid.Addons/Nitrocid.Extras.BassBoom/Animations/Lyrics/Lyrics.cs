@@ -36,7 +36,7 @@ using KS.Misc.Text;
 using SharpLyrics;
 using KS.Kernel.Configuration;
 
-namespace KS.Misc.Animations.Lyrics
+namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
     /// <summary>
     /// Lyrics animation module
@@ -48,12 +48,25 @@ namespace KS.Misc.Animations.Lyrics
         internal static string[] lyricsLrc;
 
         /// <summary>
+        /// Path to the lyrics
+        /// </summary>
+        public static string LyricsPath
+        {
+            get => Config.MainConfig.LyricsPath;
+            set
+            {
+                Config.MainConfig.LyricsPath = Checking.FolderExists(value) ? Filesystem.NeutralizePath(value) : Config.MainConfig.LyricsPath;
+                lyricsLrc = Listing.GetFilesystemEntries(Config.MainConfig.LyricsPath, "*.lrc");
+            }
+        }
+
+        /// <summary>
         /// Simulates the lyric animation
         /// </summary>
         public static void Simulate(LyricsSettings Settings)
         {
             // Select random lyric file from $HOME/Music/*.LRC
-            lyricsLrc ??= Listing.GetFilesystemEntries(Config.MainConfig.LyricsPath, "*.lrc");
+            lyricsLrc ??= Listing.GetFilesystemEntries(LyricsPath, "*.lrc");
             var lyricPath = lyricsLrc.Length > 0 ? lyricsLrc[RandomDriver.RandomIdx(lyricsLrc.Length)] : "";
             DebugWriter.WriteDebug(DebugLevel.I, "Lyric path is {0}", lyricPath);
 
@@ -90,7 +103,7 @@ namespace KS.Misc.Animations.Lyrics
                 TextWriterColor.Write(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files."));
                 return;
             }
-            
+
             // Here, the lyric file is given. Process it...
             string fileName = Path.GetFileNameWithoutExtension(path);
             var lyric = LyricReader.GetLyrics(path);
@@ -104,14 +117,14 @@ namespace KS.Misc.Animations.Lyrics
             for (int i = 3; i > 0; i--)
             {
                 TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-                TextWriterWhereColor.WriteWhere($"{i}...", (ConsoleWrapper.WindowWidth / 2) - ($"{i}...".Length / 2), infoHeight, KernelColorType.NeutralText);
+                TextWriterWhereColor.WriteWhere($"{i}...", ConsoleWrapper.WindowWidth / 2 - $"{i}...".Length / 2, infoHeight, KernelColorType.NeutralText);
                 ThreadManager.SleepNoBlock(1000, Thread.CurrentThread);
             }
 
             // Go!
             DebugWriter.WriteDebug(DebugLevel.I, "Let's do this!");
             TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-            TextWriterWhereColor.WriteWhere("Go!", (ConsoleWrapper.WindowWidth / 2) - ("Go!".Length / 2), infoHeight, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhere("Go!", ConsoleWrapper.WindowWidth / 2 - "Go!".Length / 2, infoHeight, KernelColorType.NeutralText);
             var sw = new Stopwatch();
             sw.Start();
             foreach (var ts in lyricLines)
@@ -130,7 +143,7 @@ namespace KS.Misc.Animations.Lyrics
                     if (ts.LineSpan != lyricLines[^1].LineSpan)
                         DebugWriter.WriteDebug(DebugLevel.I, "Next lyric occurs at {0}. {1}", lyricLines[lyricLines.IndexOf(ts) + 1].LineSpan, lyricLines[lyricLines.IndexOf(ts) + 1].Line);
                     TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-                    TextWriterWhereColor.WriteWhere(tsLine.Truncate(infoMaxChars), (ConsoleWrapper.WindowWidth / 2) - (tsLine.Length / 2), infoHeight, KernelColorType.NeutralText);
+                    TextWriterWhereColor.WriteWhere(tsLine.Truncate(infoMaxChars), ConsoleWrapper.WindowWidth / 2 - tsLine.Length / 2, infoHeight, KernelColorType.NeutralText);
                     shownLines.Add(ts);
                     DebugWriter.WriteDebug(DebugLevel.I, "shownLines = {0} / {1}", shownLines.Count, lyricLines.Count);
                     if (shownLines.Count == lyricLines.Count)
