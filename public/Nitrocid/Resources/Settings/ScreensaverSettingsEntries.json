@@ -1806,14 +1806,11 @@
             },
             {
                 "Name": "Line Fill Type",
-                "Type": "SSelection",
+                "Type": "SIntSlider",
                 "Variable": "LinotypoEtaoinType",
-                "IsEnumeration": true,
-                "MaxKeyOptions": 3,
-                "EnumerationInternal": true,
-                "Enumeration": "Misc.Screensaver.Displays.LinotypoSettings+FillType",
-                "EnumerationZeroBased": true,
-                "Description": "Line fill pattern type"
+                "Description": "Line fill pattern type. 0 prints the known pattern of etaoin characters, 1 prints the complete pattern of etaoin characters, and 2 prints the random set of characters to rapidly fill in the line.",
+                "MinimumValue": 0,
+                "MaximumValue": 2
             },
             {
                 "Name": "Probability of miss in percent",

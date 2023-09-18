@@ -18,6 +18,7 @@
 
 using System;
 using System.Reflection;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Configuration.Instances;
 using KS.Misc.Reflection;
@@ -121,7 +122,7 @@ namespace Nitrocid.Tests.Misc.Reflection
             var Property = PropertyManager.GetPropertyGeneral("CheckUpdateStart");
             Property.ShouldNotBeNull();
             Property.Name.ShouldBe("CheckUpdateStart");
-            Property.DeclaringType.ShouldBe(typeof(KernelMainConfig));
+            Property.DeclaringType.ShouldBe(typeof(Flags));
         }
 
         /// <summary>
@@ -131,7 +132,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetProperties()
         {
-            var Properties = PropertyManager.GetProperties(typeof(KernelMainConfig));
+            var Properties = PropertyManager.GetProperties(typeof(Flags));
             Properties.ShouldNotBeNull();
             Properties.ShouldNotBeEmpty();
         }
