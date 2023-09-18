@@ -70,40 +70,40 @@ namespace KS.Shell.Shells.UESH.Commands
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             if (Checking.FileExists(NeutralizedFilePath))
             {
-                if (ListArgsOnly[1].EndsWith("Normal") | ListArgsOnly[1].EndsWith("ReadOnly") | ListArgsOnly[1].EndsWith("Hidden") | ListArgsOnly[1].EndsWith("Archive"))
+                if (ListArgsOnly[2] == "Normal" | ListArgsOnly[2] == "ReadOnly" | ListArgsOnly[2] == "Hidden" | ListArgsOnly[2] == "Archive")
                 {
-                    if (ListArgsOnly[1].StartsWith("+"))
+                    if (ListArgsOnly[1] == "add")
                     {
-                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[1].Remove(0, 1)));
+                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[2]));
                         if (AttributeManager.TryAddAttributeToFile(NeutralizedFilePath, Attrib))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been added successfully."), ListArgsOnly[1]);
+                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been added successfully.") + " {0}", ListArgsOnly[2]);
                             return 0;
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Failed to add attribute."), ListArgsOnly[1]);
+                            TextWriterColor.Write(Translate.DoTranslation("Failed to add attribute.") + " {0}", ListArgsOnly[2]);
                             return 10000 + (int)KernelExceptionType.Filesystem;
                         }
                     }
-                    else if (ListArgsOnly[1].StartsWith("-"))
+                    else if (ListArgsOnly[1] == "rem")
                     {
-                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[1].Remove(0, 1)));
+                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[2]));
                         if (AttributeManager.TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been removed successfully."), ListArgsOnly[1]);
+                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been removed successfully.") + " {0}", ListArgsOnly[2]);
                             return 0;
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Failed to remove attribute."), ListArgsOnly[1]);
+                            TextWriterColor.Write(Translate.DoTranslation("Failed to remove attribute.") + " {0}", ListArgsOnly[2]);
                             return 10000 + (int)KernelExceptionType.Filesystem;
                         }
                     }
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, KernelColorType.Error, ListArgsOnly[1]);
+                    TextWriterColor.Write(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, KernelColorType.Error, ListArgsOnly[2]);
                     return 10000 + (int)KernelExceptionType.Filesystem;
                 }
             }

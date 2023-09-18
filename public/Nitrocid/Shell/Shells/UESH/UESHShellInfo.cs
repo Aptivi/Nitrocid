@@ -92,8 +92,8 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "rem/add"),
                             new CommandArgumentPart(true, $"{string.Join("/", Enum.GetNames(typeof(ShellType)))}"),
-                            new CommandArgumentPart(true, $"alias"),
-                            new CommandArgumentPart(false, $"cmd", (startFrom, _, _) => HelpUnifiedCommand.ListCmds(startFrom)),
+                            new CommandArgumentPart(true, "alias"),
+                            new CommandArgumentPart(false, "cmd"),
                         }, Array.Empty<SwitchInfo>())
                     }, new AliasCommand(), CommandFlags.Strict)
             },
@@ -154,7 +154,8 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
-                            new CommandArgumentPart(true, "+/-attributes"),
+                            new CommandArgumentPart(true, "add/rem"),
+                            new CommandArgumentPart(true, "attributes"),
                         }, Array.Empty<SwitchInfo>())
                     }, new ChAttrCommand())
             },
@@ -236,7 +237,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "Username", (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "Username"),
                             new CommandArgumentPart(true, "UserPass"),
                             new CommandArgumentPart(true, "newPass"),
                             new CommandArgumentPart(true, "confirm"),
@@ -249,7 +250,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "oldUserName", (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "oldUserName", (startFrom, _, _) => UserManagement.ListAllUsers().ToArray()),
                             new CommandArgumentPart(true, "newUserName"),
                         }, Array.Empty<SwitchInfo>())
                     }, new ChUsrNameCommand(), CommandFlags.Strict)
@@ -597,7 +598,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "reload/load/unload"),
-                            new CommandArgumentPart(true, "customlanguagename", (startFrom, _, _) => LanguageManager.CustomLanguages.Keys.Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "customlanguagename", (startFrom, _, _) => LanguageManager.CustomLanguages.Keys.ToArray()),
                         }, Array.Empty<SwitchInfo>()),
                         new CommandArgumentInfo(new[]
                         {
@@ -764,7 +765,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "list/listparts"),
-                            new CommandArgumentPart(true, "modname", (startFrom, _, _) => ModManager.ListMods(startFrom).Keys.ToArray()),
+                            new CommandArgumentPart(true, "modname"),
                         }, Array.Empty<SwitchInfo>()),
                         new CommandArgumentInfo(new[]
                         {
@@ -778,7 +779,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "modname", (startFrom, _, _) => ModManager.ListMods(startFrom).Keys.ToArray()),
+                            new CommandArgumentPart(true, "modname"),
                         }, Array.Empty<SwitchInfo>())
                     }, new ModManualCommand())
             },
@@ -820,7 +821,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "userName", (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "userName"),
                             new CommandArgumentPart(true, "allow/revoke"),
                             new CommandArgumentPart(true, "perm"),
                         }, Array.Empty<SwitchInfo>())
@@ -832,7 +833,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "groupName", (startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "groupName"),
                             new CommandArgumentPart(true, "allow/revoke"),
                             new CommandArgumentPart(true, "perm"),
                         }, Array.Empty<SwitchInfo>())
@@ -871,7 +872,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "splashName", (startFrom, _, _) => SplashManager.Splashes.Keys.Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "splashName"),
                         }, new[]
                         {
                             new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash", false, false, Array.Empty<string>(), 0, false)
@@ -932,7 +933,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "directory/file"),
+                            new CommandArgumentPart(true, "target"),
                         }, Array.Empty<SwitchInfo>())
                     }, new RmCommand())
             },
@@ -949,7 +950,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "Username", (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "Username"),
                         }, Array.Empty<SwitchInfo>())
                     }, new RmUserCommand(), CommandFlags.Strict)
             },
@@ -959,7 +960,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "GroupName", (startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "GroupName"),
                         }, Array.Empty<SwitchInfo>())
                     }, new RmGroupCommand(), CommandFlags.Strict)
             },
@@ -969,8 +970,8 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "UserName", (startFrom, _, _) => UserManagement.ListAllUsers().Where((src) => src.StartsWith(startFrom)).ToArray()),
-                            new CommandArgumentPart(true, "GroupName", (startFrom, _, _) => GroupManagement.AvailableGroups.Select((src) => src.GroupName).Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "UserName"),
+                            new CommandArgumentPart(true, "GroupName"),
                         }, Array.Empty<SwitchInfo>())
                     }, new RmUserFromGroupCommand(), CommandFlags.Strict)
             },
@@ -997,7 +998,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "saver", (startFrom, _, _) => ScreensaverManager.Screensavers.Keys.Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(false, "saver"),
                         }, Array.Empty<SwitchInfo>())
                     }, new SaveScreenCommand())
             },
@@ -1042,7 +1043,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "customsaver/builtinsaver"),
+                            new CommandArgumentPart(true, "saver"),
                         }, Array.Empty<SwitchInfo>())
                     }, new SetSaverCommand(), CommandFlags.Strict)
             },
@@ -1209,7 +1210,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "theme", (startFrom, _, _) => ThemeTools.GetInstalledThemes().Keys.Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(false, "theme"),
                         }, Array.Empty<SwitchInfo>())
                     }, new ThemeSelCommand())
             },

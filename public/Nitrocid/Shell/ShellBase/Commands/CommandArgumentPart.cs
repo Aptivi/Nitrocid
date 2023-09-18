@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Linq;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -49,6 +50,32 @@ namespace KS.Shell.ShellBase.Commands
         {
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;
+
+            // Check to see if the expression points to a known auto completion function
+            if (!string.IsNullOrEmpty(argumentExpression))
+            {
+                bool done = false;
+
+                // First, check to see if the auto completion is not null
+                if (autoCompleter is not null)
+                    done = true;
+
+                // Then, the known auto complete lists
+                var completion = CommandAutoCompletionList.GetCompletionFunction(argumentExpression);
+                if (!done && completion is not null)
+                {
+                    autoCompleter = completion;
+                    done = true;
+                }
+
+                // Then, the split by the slash (/) characters
+                if (!done && argumentExpression.Contains('/'))
+                {
+                    string[] expressions = argumentExpression.Split('/');
+                    autoCompleter = (last, _, _) => expressions.ToArray();
+                    done = true;
+                }
+            }
             AutoCompleter = autoCompleter;
         }
 
