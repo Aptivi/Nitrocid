@@ -25,7 +25,7 @@ using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using UnitsNet;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.UnitConv.Commands
 {
     /// <summary>
     /// Lists all units

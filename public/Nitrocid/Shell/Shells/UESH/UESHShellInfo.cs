@@ -26,7 +26,6 @@ using KS.Shell.Prompts.Presets.UESH;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using System.Linq;
 using KS.Users;
-using UnitsNet;
 using KS.ConsoleBase.Themes;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
@@ -657,16 +656,6 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("recursive", /* Localizable */ "Lists a folder recursively", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new ListCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
-            
-            { "listunits",
-                new CommandInfo("listunits", ShellType, /* Localizable */ "Lists all available units",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "type", (startFrom, _, _) => Quantity.Infos.Select((src) => src.Name).Where((src) => src.StartsWith(startFrom)).ToArray()),
-                        }, Array.Empty<SwitchInfo>())
-                    }, new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lockscreen",

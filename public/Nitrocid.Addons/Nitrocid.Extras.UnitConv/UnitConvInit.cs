@@ -23,6 +23,7 @@ using Nitrocid.Extras.UnitConv.Commands;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using UnitsNet;
 
 namespace Nitrocid.Extras.UnitConv
 {
@@ -30,6 +31,16 @@ namespace Nitrocid.Extras.UnitConv
     {
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
+            { "listunits",
+                new CommandInfo("listunits", ShellType.Shell, /* Localizable */ "Lists all available units",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "type", (startFrom, _, _) => Quantity.Infos.Select((src) => src.Name).Where((src) => src.StartsWith(startFrom)).ToArray()),
+                        }, Array.Empty<SwitchInfo>())
+                    }, new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+
             { "unitconv",
                 new CommandInfo("unitconv", ShellType.Shell, /* Localizable */ "Unit converter",
                     new[] {
