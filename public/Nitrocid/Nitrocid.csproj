@@ -93,6 +93,12 @@
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 
+  <!-- KS Non-private Dependencies Information -->
+  <ItemGroup>
+    <PackageReference Include="System.Formats.Asn1" Version="7.0.0" />
+  </ItemGroup>
+  <!-- KS Non-private Dependencies Information End -->
+
   <!-- KS Launchers and Manpages -->
   <ItemGroup>
     <Assets Include="..\..\assets\*.*" />
