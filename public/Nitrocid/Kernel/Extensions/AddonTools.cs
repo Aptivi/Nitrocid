@@ -37,6 +37,9 @@ namespace KS.Kernel.Extensions
     {
         private static readonly List<AddonInfo> addons = new();
 
+        internal static List<AddonInfo> ListAddons() =>
+            new(addons);
+
         internal static void ProcessAddons(AddonType type)
         {
             var addonFolder = Paths.AddonsPath;

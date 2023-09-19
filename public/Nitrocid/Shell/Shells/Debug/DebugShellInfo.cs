@@ -50,6 +50,13 @@ namespace KS.Shell.Shells.Debug
                     }, new Debug_KeyInfoCommand())
             },
 
+            { "lsaddons",
+                new CommandInfo("lsaddons", ShellType, /* Localizable */ "Lists all available addons",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new Debug_LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
             { "lsshells",
                 new CommandInfo("lsshells", ShellType, /* Localizable */ "Lists all available shells",
                     new[] {
