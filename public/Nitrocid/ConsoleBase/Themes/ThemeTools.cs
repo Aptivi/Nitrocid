@@ -251,15 +251,15 @@ namespace KS.ConsoleBase.Themes
             // Write the prompt
             StringBuilder themeColorPromptText = new();
             ConsoleWrapper.Clear();
-            themeColorPromptText.AppendLine(Translate.DoTranslation("Here's how your theme will look like:") + CharManager.NewLine);
+            themeColorPromptText.AppendLine(Translate.DoTranslation("Here's how your theme will look like:"));
 
             // Print every possibility of color types
             for (int key = 0; key < colors.Count; key++)
             {
                 var type = colors.Keys.ElementAt(key);
                 var color = colors.Values.ElementAt(key);
-                themeColorPromptText.Append($"{GetColor(KernelColorType.Option).VTSequenceForeground}*) {type}: ");
-                themeColorPromptText.AppendLine($"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
+                themeColorPromptText.Append($"\n{GetColor(KernelColorType.Option).VTSequenceForeground}*) {type}: ");
+                themeColorPromptText.Append($"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
             }
             TextWriterWrappedColor.WriteWrapped(themeColorPromptText.ToString(), false, KernelColorType.Option);
         }
