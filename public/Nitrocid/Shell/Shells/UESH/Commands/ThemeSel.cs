@@ -87,7 +87,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     Theme = ThemeTools.GetThemeInfo(selectedTheme);
 
                 // Now, preview the theme
-                ThemeTools.PreviewTheme(Theme);
+                ThemePreviewTools.PreviewThemeSimple(Theme);
                 TextWriterColor.Write();
 
                 // Pause until a key is pressed

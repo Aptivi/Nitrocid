@@ -1205,6 +1205,16 @@ namespace KS.Shell.Shells.UESH
                     }, new TaskManCommand())
             },
             
+            { "themeprev",
+                new CommandInfo("themeprev", ShellType, /* Localizable */ "Previews a theme",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "theme"),
+                        }, Array.Empty<SwitchInfo>())
+                    }, new ThemePrevCommand())
+            },
+            
             { "themesel",
                 new CommandInfo("themesel", ShellType, /* Localizable */ "Selects a theme and sets it",
                     new[] {

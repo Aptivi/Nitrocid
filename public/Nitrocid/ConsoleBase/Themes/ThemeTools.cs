@@ -225,46 +225,6 @@ namespace KS.ConsoleBase.Themes
         }
 
         /// <summary>
-        /// Prepares the preview of the theme
-        /// </summary>
-        /// <param name="theme">Theme name</param>
-        public static void PreviewTheme(string theme) =>
-            PreviewTheme(GetThemeInfo(theme));
-
-        /// <summary>
-        /// Prepares the preview of the theme
-        /// </summary>
-        /// <param name="theme">Theme instance</param>
-        public static void PreviewTheme(ThemeInfo theme) =>
-            PreviewTheme(GetColorsFromTheme(theme));
-
-        /// <summary>
-        /// Prepares the preview of the theme
-        /// </summary>
-        /// <param name="colors">Dictionary of colors</param>
-        public static void PreviewTheme(Dictionary<KernelColorType, Color> colors)
-        {
-            // Check to see if we're trying to preview theme on non-true color console
-            if (IsTrueColorRequired(colors) && !Flags.ConsoleSupportsTrueColor)
-                throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
-
-            // Write the prompt
-            StringBuilder themeColorPromptText = new();
-            ConsoleWrapper.Clear();
-            themeColorPromptText.AppendLine(Translate.DoTranslation("Here's how your theme will look like:"));
-
-            // Print every possibility of color types
-            for (int key = 0; key < colors.Count; key++)
-            {
-                var type = colors.Keys.ElementAt(key);
-                var color = colors.Values.ElementAt(key);
-                themeColorPromptText.Append($"\n{GetColor(KernelColorType.Option).VTSequenceForeground}*) {type}: ");
-                themeColorPromptText.Append($"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
-            }
-            TextWriterWrappedColor.WriteWrapped(themeColorPromptText.ToString(), false, KernelColorType.Option);
-        }
-
-        /// <summary>
         /// Is the 255 color support required?
         /// </summary>
         /// <param name="theme">Theme name</param>
