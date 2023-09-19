@@ -206,59 +206,38 @@ namespace KS.Kernel.Configuration
             Filesystem.ThrowOnInvalidPath(ConfigPath);
             if (!Checking.FileExists(ConfigPath))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent path to a configuration file"));
-            DebugWriter.WriteDebug(DebugLevel.I, "Config path {0} exists, so reading...", ConfigPath);
-            string jsonContents = File.ReadAllText(ConfigPath);
-            JObject configObj = JObject.Parse(jsonContents);
-            JSchema schema;
 
-            // Validate the configuration file
+            // Fix up and read!
+            DebugWriter.WriteDebug(DebugLevel.I, "Config path {0} exists, so fixing and reading...", ConfigPath);
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Config type {0}.", type.ToString());
+                // First, fix the configuration file up
+                RepairConfig(type);
+                string jsonContents = File.ReadAllText(ConfigPath);
+                JObject configObj = JObject.Parse(jsonContents);
+
+                // Now, deserialize the config state.
                 switch (type)
                 {
                     case ConfigType.Kernel:
-                        schema = JSchema.Parse(SettingsResources.KernelMainConfigSchema);
-                        configObj.Validate(schema);
+                        mainConfig = JsonConvert.DeserializeObject<KernelMainConfig>(jsonContents);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Read kernel config!");
                         break;
                     case ConfigType.Screensaver:
-                        // Validate the configuration file
-                        schema = JSchema.Parse(SettingsResources.KernelSaverConfigSchema);
-                        configObj.Validate(schema);
+                        saverConfig = JsonConvert.DeserializeObject<KernelSaverConfig>(jsonContents);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Read screensaver config!");
                         break;
                     case ConfigType.Splash:
-                        // Validate the configuration file
-                        schema = JSchema.Parse(SettingsResources.KernelSplashConfigSchema);
-                        configObj.Validate(schema);
+                        splashConfig = JsonConvert.DeserializeObject<KernelSplashConfig>(jsonContents);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Read splash config!");
                         break;
                 }
             }
             catch (Exception e)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Fatal error trying to parse and validate config file! {0}", e.Message);
-                DebugWriter.WriteDebug(DebugLevel.E, "Usually, this error is caused by outdated config. If you did an upgrade to a later kernel version, this is normal.");
                 DebugWriter.WriteDebugStackTrace(e);
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Configuration file is invalid."), e);
-            }
-
-            // Now, deserialize the config state.
-            switch (type)
-            {
-                case ConfigType.Kernel:
-                    RepairConfig(ConfigType.Kernel);
-                    mainConfig = (KernelMainConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelMainConfig));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Read config!");
-                    break;
-                case ConfigType.Screensaver:
-                    RepairConfig(ConfigType.Screensaver);
-                    saverConfig = (KernelSaverConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSaverConfig));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Read config!");
-                    break;
-                case ConfigType.Splash:
-                    RepairConfig(ConfigType.Splash);
-                    splashConfig = (KernelSplashConfig)JsonConvert.DeserializeObject(jsonContents, typeof(KernelSplashConfig));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Read config!");
-                    break;
             }
         }
 
@@ -360,6 +339,8 @@ namespace KS.Kernel.Configuration
                 TextWriterColor.Write(cex.Message, true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", cex.Message);
                 DebugWriter.WriteDebugStackTrace(cex);
+
+                // Fix anyways, for compatibility...
                 TextWriterColor.Write(Translate.DoTranslation("Trying to fix configuration..."), true, KernelColorType.Error);
                 RepairConfig();
             }
