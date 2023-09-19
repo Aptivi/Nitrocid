@@ -28,6 +28,7 @@ using KS.Kernel.Journaling;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Threading;
 using Terminaux.Reader;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Kernel.Power
 {
@@ -44,14 +45,16 @@ namespace KS.Kernel.Power
         /// Manage computer's (actually, simulated computer) power
         /// </summary>
         /// <param name="PowerMode">Selects the power mode</param>
-        public static void PowerManage(PowerMode PowerMode) => PowerManage(PowerMode, "0.0.0.0", RemoteProcedure.RPCPort);
+        public static void PowerManage(PowerMode PowerMode) =>
+            PowerManage(PowerMode, "0.0.0.0", RemoteProcedure.RPCPort);
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
         /// </summary>
         /// <param name="PowerMode">Selects the power mode</param>
         /// <param name="IP">IP address to remotely manage power</param>
-        public static void PowerManage(PowerMode PowerMode, string IP) => PowerManage(PowerMode, IP, RemoteProcedure.RPCPort);
+        public static void PowerManage(PowerMode PowerMode, string IP) =>
+            PowerManage(PowerMode, IP, RemoteProcedure.RPCPort);
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
@@ -83,6 +86,10 @@ namespace KS.Kernel.Power
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
                         Flags.KernelShutdown = true;
+
+                        // Kill all shells and interrupt any input
+                        for (int i = ShellStart.ShellStack.Count - 1; i >= 0; i--)
+                            ShellStart.KillShellForced();
                         TermReaderTools.Interrupt();
                         break;
                     }
@@ -103,6 +110,10 @@ namespace KS.Kernel.Power
                         Flags.RebootRequested = true;
                         Flags.LogoutRequested = true;
                         Flags.SafeMode = PowerMode == PowerMode.RebootSafe;
+
+                        // Kill all shells and interrupt any input
+                        for (int i = ShellStart.ShellStack.Count - 1; i >= 0; i--)
+                            ShellStart.KillShellForced();
                         TermReaderTools.Interrupt();
                         DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", Flags.SafeMode);
                         break;
