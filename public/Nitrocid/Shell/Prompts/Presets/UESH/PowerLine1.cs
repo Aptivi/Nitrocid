@@ -27,6 +27,7 @@ using System.Collections.Generic;
 using KS.Users;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
+using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
@@ -57,7 +58,7 @@ namespace KS.Shell.Prompts.Presets.UESH
             {
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), UserManagement.CurrentUser.Username),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), NetworkTools.HostName, PadlockChar),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), CurrentDirectory.CurrentDir),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), $"{CurrentDirectory.CurrentDir} [{ShellStart.ShellStack.Count}]"),
             };
 
             // Builder

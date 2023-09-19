@@ -22,6 +22,7 @@ using KS.Files.Folders;
 using KS.Kernel;
 using KS.Languages;
 using KS.Network.Base;
+using KS.Shell.ShellBase.Shells;
 using KS.Users;
 
 namespace KS.Shell.Prompts.Presets.UESH
@@ -62,9 +63,9 @@ namespace KS.Shell.Prompts.Presets.UESH
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat("{0}", NetworkTools.HostName);
 
-                // Current directory
+                // Current directory and shell stack
                 PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("]{0}", CurrentDirectory.CurrentDir);
+                PresetStringBuilder.AppendFormat("]{0}: [{1}]", CurrentDirectory.CurrentDir, ShellStart.ShellStack.Count);
 
                 // User dollar sign
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserDollar).VTSequenceForeground);
