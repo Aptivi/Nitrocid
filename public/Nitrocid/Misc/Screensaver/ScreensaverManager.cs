@@ -129,7 +129,7 @@ namespace KS.Misc.Screensaver
                         // Check to see if we're locking
                         bool locking = !hasMoved && stopwatch.ElapsedMilliseconds >= ScreenTimeout;
                         stopwatch.Reset();
-                        if (Flags.ScrnTimeReached || Flags.KernelShutdown || Flags.RebootRequested)
+                        if (Flags.KernelShutdown || Flags.RebootRequested)
                             break;
                         else if (locking)
                         {

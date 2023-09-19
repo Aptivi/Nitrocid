@@ -58,7 +58,8 @@ namespace KS.Kernel.Exceptions
         internal static void KernelError(KernelErrorLevel ErrorType, bool Reboot, long RebootTime, string Description, Exception Exc, params object[] Variables)
         {
             Flags.KernelErrored = true;
-            LastKernelErrorException = Exc;
+            LastKernelErrorException = Exc ??
+                new KernelException(KernelExceptionType.Unknown);
             Flags.NotifyKernelError = true;
 
             try
@@ -156,7 +157,8 @@ namespace KS.Kernel.Exceptions
         private static void KernelErrorDouble(string Description, Exception Exc, params object[] Variables)
         {
             Flags.KernelErrored = true;
-            LastKernelErrorException = Exc;
+            LastKernelErrorException = Exc ??
+                new KernelException(KernelExceptionType.Unknown);
             Flags.NotifyKernelError = true;
 
             try

@@ -45,7 +45,7 @@ namespace KS.Misc.Splash
     public static class SplashManager
     {
 
-        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display()) { isCritical = true };
+        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display());
         internal readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
             { "Welcome", new SplashInfo("Welcome", new SplashWelcome()) },

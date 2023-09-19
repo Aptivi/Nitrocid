@@ -34,6 +34,7 @@ using KS.Kernel.Hardware;
 using KS.Kernel.Journaling;
 using KS.Kernel.Power;
 using KS.Kernel.Threading;
+using KS.Kernel.Threading.Watchdog;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Notifications;
@@ -91,6 +92,9 @@ namespace KS.Kernel.Starting
                 PowerSignalHandlers.initialized = true;
                 PowerSignalHandlers.RegisterHandlers();
             }
+
+            // Initialize watchdog
+            ThreadWatchdog.StartWatchdog();
         }
 
         internal static void InitializeEssential()

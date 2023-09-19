@@ -77,7 +77,7 @@ namespace KS.Shell.ShellBase.Shells
     public static class ShellManager
     {
 
-        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams)) { isCritical = true };
+        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
         internal static Dictionary<string, List<string>> histories = new()
         {
             { "General", new() },
@@ -338,6 +338,11 @@ namespace KS.Shell.ShellBase.Shells
                 if (!string.IsNullOrEmpty(strcommand))
                     commandBuilder.Append(strcommand);
                 FullCommand = commandBuilder.ToString();
+
+                // There are cases when the kernel panics or reboots in the middle of the command input. If reboot is requested,
+                // ensure that we're really gone.
+                if (Flags.RebootRequested)
+                    return;
             }
 
             // Check for a type of command

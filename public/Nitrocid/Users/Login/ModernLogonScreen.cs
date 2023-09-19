@@ -43,7 +43,7 @@ namespace KS.Users.Login
     internal static class ModernLogonScreen
     {
         private static bool renderedFully = false;
-        private static readonly KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater) { isCritical = true };
+        private static readonly KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater);
 
         /// <summary>
         /// Whether to show the MOTD and the headline at the bottom or at the top of the clock

@@ -82,7 +82,8 @@ namespace KS.Kernel
             if (Flags.KernelErrored)
             {
                 Flags.KernelErrored = false;
-                throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), KernelPanic.LastKernelErrorException, KernelPanic.LastKernelErrorException.Message);
+                var exception = KernelPanic.LastKernelErrorException;
+                throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), exception, exception.Message);
             }
         }
 
