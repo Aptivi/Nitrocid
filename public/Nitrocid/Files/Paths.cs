@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.IO;
 using KS.Kernel;
 using KS.Kernel.Exceptions;
@@ -30,19 +31,37 @@ namespace KS.Files
     public static class Paths
     {
 
-        // Basic paths
+        private static readonly Dictionary<KernelPathType, (string, bool)> knownPaths = new()
+        {
+            { KernelPathType.Aliases,             (AliasesPath, true) },
+            { KernelPathType.Configuration,       (ConfigurationPath, true) },
+            { KernelPathType.CustomLanguages,     (CustomLanguagesPath, true) },
+            { KernelPathType.CustomSplashes,      (CustomSplashesPath, true) },
+            { KernelPathType.DebugDevices,        (DebugDevicesPath, true) },
+            { KernelPathType.Debugging,           (DebuggingPath, true) },
+            { KernelPathType.Events,              (EventsPath, true) },
+            { KernelPathType.SpeedDial,           (SpeedDialPath, true) },
+            { KernelPathType.MAL,                 (MALPath, true) },
+            { KernelPathType.Mods,                (ModsPath, true) },
+            { KernelPathType.MOTD,                (MOTDPath, true) },
+            { KernelPathType.Reminders,           (RemindersPath, true) },
+            { KernelPathType.Users,               (UsersPath, true) },
+            { KernelPathType.Journaling,          (JournalingPath, true) },
+            { KernelPathType.Contacts,            (ContactsPath, true) },
+            { KernelPathType.ContactsImport,      (ContactsImportPath, true) },
+            { KernelPathType.SaverConfiguration,  (SaverConfigurationPath, true) },
+            { KernelPathType.SplashConfiguration, (SplashConfigurationPath, true) },
+            { KernelPathType.ToDoList,            (ToDoListPath, true) },
+            { KernelPathType.UserGroups,          (UserGroupsPath, true) },
+            { KernelPathType.Addons,              (AddonsPath, false) },
+            { KernelPathType.ShellHistories,      (ShellHistoriesPath, true) },
+        };
 
         /// <summary>
         /// Path to KS executable folder
         /// </summary>
         public static string ExecPath =>
             Path.GetDirectoryName(typeof(Paths).Assembly.Location);
-
-        /// <summary>
-        /// Path to KS addons folder
-        /// </summary>
-        public static string AddonsPath =>
-            ExecPath + "/Addons";
 
         /// <summary>
         /// Platform-dependent home path
@@ -100,7 +119,11 @@ namespace KS.Files
             }
         }
 
-        // Nitrocid KS paths
+        /// <summary>
+        /// Path to KS addons folder
+        /// </summary>
+        public static string AddonsPath =>
+            Filesystem.NeutralizePath(ExecPath + "/Addons");
 
         /// <summary>
         /// Mods path
@@ -235,32 +258,21 @@ namespace KS.Files
         /// <returns>A kernel path</returns>
         public static string GetKernelPath(KernelPathType PathType)
         {
-            return PathType switch
-            {
-                KernelPathType.Aliases =>               AliasesPath,
-                KernelPathType.Configuration =>         ConfigurationPath,
-                KernelPathType.CustomLanguages =>       CustomLanguagesPath,
-                KernelPathType.CustomSplashes =>        CustomSplashesPath,
-                KernelPathType.DebugDevices =>          DebugDevicesPath,
-                KernelPathType.Debugging =>             DebuggingPath,
-                KernelPathType.Events =>                EventsPath,
-                KernelPathType.SpeedDial =>             SpeedDialPath,
-                KernelPathType.MAL =>                   MALPath,
-                KernelPathType.Mods =>                  ModsPath,
-                KernelPathType.MOTD =>                  MOTDPath,
-                KernelPathType.Reminders =>             RemindersPath,
-                KernelPathType.Users =>                 UsersPath,
-                KernelPathType.Journaling =>            JournalingPath,
-                KernelPathType.Contacts =>              ContactsPath,
-                KernelPathType.ContactsImport =>        ContactsImportPath,
-                KernelPathType.SaverConfiguration =>    SaverConfigurationPath,
-                KernelPathType.SplashConfiguration =>   SplashConfigurationPath,
-                KernelPathType.ToDoList =>              ToDoListPath,
-                KernelPathType.UserGroups =>            UserGroupsPath,
-                KernelPathType.Addons =>                AddonsPath,
-                KernelPathType.ShellHistories =>        ShellHistoriesPath,
-                _ => throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type.")),
-            };
+            if (knownPaths.ContainsKey(PathType))
+                return knownPaths[PathType].Item1;
+            throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
+        }
+
+        /// <summary>
+        /// Checks to see if the provided path is resettable
+        /// </summary>
+        /// <param name="PathType">Kernel path type</param>
+        /// <returns>True if we're able to wipe. Otherwise, false.</returns>
+        public static bool IsResettable(KernelPathType PathType)
+        {
+            if (knownPaths.ContainsKey(PathType))
+                return knownPaths[PathType].Item2;
+            throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
         }
 
     }

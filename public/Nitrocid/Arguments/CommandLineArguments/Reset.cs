@@ -23,6 +23,10 @@ using System.IO;
 using System;
 using KS.Files.Folders;
 using KS.Kernel;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Languages;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -36,6 +40,8 @@ namespace KS.Arguments.CommandLineArguments
             {
                 var pathType = (KernelPathType)Enum.Parse(typeof(KernelPathType), PathName);
                 string TargetPath = Paths.GetKernelPath(pathType);
+                if (!Paths.IsResettable(pathType))
+                    continue;
                 switch (pathType)
                 {
                     case KernelPathType.Debugging:
@@ -64,6 +70,20 @@ namespace KS.Arguments.CommandLineArguments
             string[] dumps = Listing.GetFilesystemEntries(dumpPath);
             foreach (string dump in dumps)
                 File.Delete(dump);
+
+            // Inform user that the wipe was not complete if there are files.
+            string[] files = Listing.GetFilesystemEntries(Paths.AppDataPath);
+            if (files.Length > 0)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("The following files are not wiped:"), true, KernelColorType.Warning);
+                ListWriterColor.WriteList(files);
+                string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Are you sure to wipe these files?"), "y/n");
+                if (answer == "y")
+                {
+                    foreach (string file in files)
+                        File.Delete(file);
+                }
+            }
 
             // Exit now.
             Flags.KernelShutdown = true;
