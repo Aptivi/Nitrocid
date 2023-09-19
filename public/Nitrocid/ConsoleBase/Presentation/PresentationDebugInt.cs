@@ -16,16 +16,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Presentation.Elements;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Time.Renderers;
-using KS.Misc.Presentation.Elements;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Colors;
 
-namespace KS.Misc.Presentation
+namespace KS.ConsoleBase.Presentation
 {
     internal static class PresentationDebugInt
     {
@@ -235,7 +234,7 @@ namespace KS.Misc.Presentation
                                 InvokeActionInput =
                                     (objs) =>
                                     TextWriterWhereColor.WriteWhere($"You chose \"{objs[0]}\", a " +
-                                        $"{(((string)objs[0] is "Sarah" or "Bella" or "Debbie" or "Ella" or "Elizabeth" or "Jasmine" or "Sofia" or "Thalia")
+                                        $"{((string)objs[0] is "Sarah" or "Bella" or "Debbie" or "Ella" or "Elizabeth" or "Jasmine" or "Sofia" or "Thalia"
                                     ? "girl" : "boy")}.",
                                     PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop)
                             }
@@ -303,7 +302,7 @@ namespace KS.Misc.Presentation
                                     {
                                         string[] names = objs[0].ToString().Split(';');
                                         TextWriterWhereColor.WriteWhere($"You chose {names.Length} persons, " +
-                                            $"{names.Count((name) => 
+                                            $"{names.Count((name) =>
                                                name is "Sarah" or "Bella" or "Debbie" or "Ella" or "Elizabeth" or "Jasmine" or "Sofia" or "Thalia")}" +
                                             $" of which are girls.", PresentationTools.PresentationUpperInnerBorderLeft, ConsoleWrapper.CursorTop);
                                     }

@@ -17,35 +17,34 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
-using KS.Misc.Presentation.Elements;
 using System.Collections.Generic;
 
-namespace KS.Misc.Presentation
+namespace KS.ConsoleBase.Presentation
 {
     /// <summary>
-    /// Presentation page
+    /// The presentation containing all the pages
     /// </summary>
-    public class PresentationPage
+    public class Presentation
     {
         /// <summary>
-        /// Presentation page name
+        /// Presentation name
         /// </summary>
-        public string Name { get; } = Translate.DoTranslation("Untitled presentation page");
+        public string Name { get; } = Translate.DoTranslation("Untitled presentation");
 
         /// <summary>
-        /// Presentation page elements
+        /// Presentation pages
         /// </summary>
-        public List<IElement> Elements { get; }
+        public List<PresentationPage> Pages { get; }
 
         /// <summary>
-        /// Makes a new presentation page
+        /// Makes a new presentation
         /// </summary>
-        /// <param name="name">Page name</param>
-        /// <param name="elements">List of elements</param>
-        public PresentationPage(string name, List<IElement> elements)
+        /// <param name="name">Presentation name</param>
+        /// <param name="pages">Presentation pages</param>
+        public Presentation(string name, List<PresentationPage> pages)
         {
             Name = name;
-            Elements = elements;
+            Pages = pages;
         }
     }
 }

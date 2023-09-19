@@ -18,7 +18,7 @@
 
 using System;
 
-namespace KS.Misc.Presentation.Elements
+namespace KS.ConsoleBase.Presentation.Elements
 {
     /// <summary>
     /// A presentation element

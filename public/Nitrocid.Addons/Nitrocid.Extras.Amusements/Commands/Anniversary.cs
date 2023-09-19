@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Presentation;
+using KS.ConsoleBase.Presentation.Elements;
 using KS.Languages;
-using KS.Misc.Presentation;
-using KS.Misc.Presentation.Elements;
 using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 using Terminaux.Colors;

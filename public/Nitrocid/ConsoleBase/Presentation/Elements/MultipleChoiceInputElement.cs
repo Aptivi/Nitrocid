@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -28,7 +27,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Reader;
 
-namespace KS.Misc.Presentation.Elements
+namespace KS.ConsoleBase.Presentation.Elements
 {
     /// <summary>
     /// Multiple choice input element

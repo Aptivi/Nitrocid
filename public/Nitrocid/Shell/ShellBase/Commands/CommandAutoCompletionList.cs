@@ -17,9 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Themes;
-using KS.Files;
-using KS.Files.Folders;
-using KS.Files.Querying;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
 using KS.Modifications;
@@ -30,7 +27,6 @@ using KS.Users.Groups;
 using KS.Users.Permissions;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace KS.Shell.ShellBase.Commands

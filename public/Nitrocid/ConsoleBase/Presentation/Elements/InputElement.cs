@@ -16,29 +16,29 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Text;
 using System;
 using System.Linq;
+using Terminaux.Reader;
 
-namespace KS.Misc.Presentation.Elements
+namespace KS.ConsoleBase.Presentation.Elements
 {
     /// <summary>
-    /// Text element
+    /// Input element
     /// </summary>
-    public class TextElement : IElement
+    public class InputElement : IElement
     {
         /// <inheritdoc/>
-        public bool IsInput => false;
+        public bool IsInput => true;
 
         /// <inheritdoc/>
         public string WrittenInput { get; set; }
 
         /// <summary>
-        /// The first argument denotes the text to be written, and the rest for the parameters to be formatted
+        /// The first argument denotes the prompt to be written, and the rest for the parameters to be formatted
         /// </summary>
         public object[] Arguments { get; set; }
 
@@ -53,8 +53,9 @@ namespace KS.Misc.Presentation.Elements
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
-            foreach (string split in splitText)
+            for (int i = 0; i < splitText.Length; i++)
             {
+                string split = splitText[i];
                 int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 2;
                 if (maxHeight < 0)
                 {
@@ -64,8 +65,19 @@ namespace KS.Misc.Presentation.Elements
                 }
 
                 // Write the part
-                TextWriterWhereColor.WriteWhere(split + "\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
+                TextWriterWhereColor.WriteWhere(split + (i == splitText.Length - 1 ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             }
+
+            // Populate relevant settings
+            var settings = new TermReaderSettings()
+            {
+                RightMargin = PresentationTools.PresentationUpperInnerBorderLeft
+            };
+
+            // Get the input
+            ConsoleWrapper.CursorVisible = true;
+            WrittenInput = Input.ReadLineWrapped("", "", settings);
+            ConsoleWrapper.CursorVisible = false;
         }
 
         /// <summary>
@@ -84,9 +96,9 @@ namespace KS.Misc.Presentation.Elements
         }
 
         /// <inheritdoc/>
-        public Action<object[]> InvokeActionInput { get; }
+        public Action<object[]> InvokeActionInput { get; set; }
 
         /// <inheritdoc/>
-        public Action InvokeAction { get; set; }
+        public Action InvokeAction { get; }
     }
 }

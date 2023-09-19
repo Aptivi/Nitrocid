@@ -31,9 +31,7 @@ using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration.Instances;
-using Newtonsoft.Json.Schema;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Resources;
 
 namespace KS.Kernel.Configuration
 {

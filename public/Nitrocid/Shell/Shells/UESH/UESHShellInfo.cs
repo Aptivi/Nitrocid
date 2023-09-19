@@ -23,14 +23,8 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Prompts;
 using KS.Shell.Prompts.Presets.UESH;
-using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using System.Linq;
 using KS.Users;
-using KS.ConsoleBase.Themes;
-using KS.Misc.Screensaver;
-using KS.Misc.Splash;
-using KS.Users.Groups;
-using KS.Modifications;
 using KS.Languages;
 
 namespace KS.Shell.Shells.UESH

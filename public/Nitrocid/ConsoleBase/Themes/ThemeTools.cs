@@ -27,13 +27,10 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Text;
 using KS.Kernel.Events;
 using static KS.ConsoleBase.Colors.KernelColorTools;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Resources;
-using System.Text;
 using Newtonsoft.Json.Linq;
 
 namespace KS.ConsoleBase.Themes

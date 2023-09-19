@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -24,7 +23,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Text;
 using System;
 
-namespace KS.Misc.Presentation
+namespace KS.ConsoleBase.Presentation
 {
     /// <summary>
     /// Presentation tools
@@ -54,7 +53,7 @@ namespace KS.Misc.Presentation
         /// <summary>
         /// The lower right corner of the inner border (the top position)
         /// </summary>
-        public static int PresentationLowerInnerBorderTop { get => ConsoleWrapper.WindowHeight - (PresentationUpperBorderTop * 2) - 4; }
+        public static int PresentationLowerInnerBorderTop { get => ConsoleWrapper.WindowHeight - PresentationUpperBorderTop * 2 - 4; }
         /// <summary>
         /// The informational top position
         /// </summary>
@@ -123,7 +122,7 @@ namespace KS.Misc.Presentation
                     if (element.IsInput)
                         if (element.InvokeActionInput is not null)
                             element.InvokeActionInput(new object[] { element.WrittenInput });
-                    else
+                        else
                         if (element.InvokeAction is not null)
                             element.InvokeAction();
                 }

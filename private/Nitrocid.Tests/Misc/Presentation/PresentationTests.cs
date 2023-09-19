@@ -16,8 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Misc.Presentation;
-using KS.Misc.Presentation.Elements;
+using KS.ConsoleBase.Presentation;
+using KS.ConsoleBase.Presentation.Elements;
 using NUnit.Framework;
 using Shouldly;
 using System;
@@ -37,7 +37,7 @@ namespace Nitrocid.Tests.Misc.Presentation
         public static void BuildPresentation()
         {
             // Presentation...
-            var presentation = new KS.Misc.Presentation.Presentation("MyPresentation", new()
+            var presentation = new KS.ConsoleBase.Presentation.Presentation("MyPresentation", new()
             {
                 new PresentationPage("Page one", new()
                 {

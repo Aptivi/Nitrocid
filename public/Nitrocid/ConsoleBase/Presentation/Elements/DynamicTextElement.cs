@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -24,7 +23,7 @@ using KS.Misc.Text;
 using System;
 using System.Linq;
 
-namespace KS.Misc.Presentation.Elements
+namespace KS.ConsoleBase.Presentation.Elements
 {
     /// <summary>
     /// Dynamic text element
@@ -49,7 +48,7 @@ namespace KS.Misc.Presentation.Elements
         {
             // Get the text and the arguments
             object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
-            string text = TextTools.FormatString((Arguments.Length > 0 ? ((Func<string>)Arguments[0])() : ""), finalArgs);
+            string text = TextTools.FormatString(Arguments.Length > 0 ? ((Func<string>)Arguments[0])() : "", finalArgs);
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
@@ -67,7 +66,7 @@ namespace KS.Misc.Presentation.Elements
                 TextWriterWhereColor.WriteWhere(split + "\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             }
         }
-        
+
         /// <summary>
         /// Checks to see if the text is possibly overflowing the slideshow display
         /// </summary>
@@ -75,7 +74,7 @@ namespace KS.Misc.Presentation.Elements
         {
             // Get the text and the arguments
             object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
-            string text = TextTools.FormatString((Arguments.Length > 0 ? ((Func<string>)Arguments[0])() : ""), finalArgs);
+            string text = TextTools.FormatString(Arguments.Length > 0 ? ((Func<string>)Arguments[0])() : "", finalArgs);
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
