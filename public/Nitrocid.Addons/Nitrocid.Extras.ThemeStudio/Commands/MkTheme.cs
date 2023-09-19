@@ -16,23 +16,25 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Languages.Studio;
 using KS.Shell.ShellBase.Commands;
+using Nitrocid.Extras.ThemeStudio.Studio;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.ThemeStudio.Commands
 {
     /// <summary>
-    /// Makes a new language
+    /// Makes a new theme
     /// </summary>
     /// <remarks>
-    /// This opens up the language studio to let you provide translations to strings. This will allow you to create your own languages for Nitrocid KS.
+    /// This opens up a theme studio to manage the newly-created theme colors that you can adjust. This will allow you to create your own themes for Nitrocid KS.
+    /// <br></br>
+    /// If you want your theme to be included in the default Nitrocid KS themes, let us know.
     /// </remarks>
-    class MkLangCommand : BaseCommand, ICommand
+    class MkThemeCommand : BaseCommand, ICommand
     {
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            LanguageStudio.StartLanguageStudio(ListArgsOnly[0]);
+            ThemeStudioApp.StartThemeStudio(ListArgsOnly[0]);
             return 0;
         }
     }

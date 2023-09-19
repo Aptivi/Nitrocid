@@ -25,6 +25,7 @@ using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Languages;
 using KS.Misc.Text;
 using Newtonsoft.Json.Linq;
 using Nitrocid.LocaleGen.Core.Serializer;
@@ -32,9 +33,9 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 
-namespace KS.Languages.Studio
+namespace Nitrocid.Extras.LanguageStudio.Studio
 {
-    static class LanguageStudio
+    static class LanguageStudioApp
     {
         public static void StartLanguageStudio(string pathToTranslations)
         {
@@ -140,7 +141,7 @@ namespace KS.Languages.Studio
                     new InputChoiceInfo($"{englishLines.Count + 1}", Translate.DoTranslation("Go Back...")),
                 };
                 int selectedStringNum = SelectionStyle.PromptSelection("- " + finalTitle + " " + new string('-', ConsoleWrapper.WindowWidth - ("- " + finalTitle + " ").Length) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select a string to translate:"), choices, altChoices);
-                
+
                 // Check the answer
                 if (selectedStringNum == englishLines.Count + 1)
                 {

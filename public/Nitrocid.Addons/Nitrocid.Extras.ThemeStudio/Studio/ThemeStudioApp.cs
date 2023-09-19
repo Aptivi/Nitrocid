@@ -18,9 +18,11 @@
 
 using System.Collections.Generic;
 using System.Linq;
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Themes;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Folders;
 using KS.Kernel.Debugging;
@@ -30,9 +32,9 @@ using KS.Misc.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Wheel;
 
-namespace KS.ConsoleBase.Themes.Studio
+namespace Nitrocid.Extras.ThemeStudio.Studio
 {
-    static class ThemeStudio
+    static class ThemeStudioApp
     {
 
         /// <summary>

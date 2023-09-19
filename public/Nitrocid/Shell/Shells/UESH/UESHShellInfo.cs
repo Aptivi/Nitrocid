@@ -734,26 +734,6 @@ namespace KS.Shell.Shells.UESH
                     }, new MkFileCommand())
             },
             
-            { "mklang",
-                new CommandInfo("mklang", ShellType, /* Localizable */ "Makes a new language",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "pathToTranslations"),
-                        }, Array.Empty<SwitchInfo>())
-                    }, new MkLangCommand())
-            },
-            
-            { "mktheme",
-                new CommandInfo("mktheme", ShellType, /* Localizable */ "Makes a new theme",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "themeName"),
-                        }, Array.Empty<SwitchInfo>())
-                    }, new MkThemeCommand())
-            },
-            
             { "modman",
                 new CommandInfo("modman", ShellType, /* Localizable */ "Manage your mods",
                     new[] {

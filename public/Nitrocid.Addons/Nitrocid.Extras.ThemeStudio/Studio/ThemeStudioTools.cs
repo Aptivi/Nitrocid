@@ -21,12 +21,13 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Themes;
 using KS.Files;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Terminaux.Colors;
 
-namespace KS.ConsoleBase.Themes.Studio
+namespace Nitrocid.Extras.ThemeStudio.Studio
 {
     static class ThemeStudioTools
     {
