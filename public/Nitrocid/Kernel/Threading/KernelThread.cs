@@ -171,6 +171,8 @@ namespace KS.Kernel.Threading
         {
             if (!IsReady)
                 throw new KernelException(KernelExceptionType.ThreadNotReadyYet);
+            if (BaseThread.ThreadState.HasFlag(ThreadState.Stopped) || IsAlive)
+                return;
 
             DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
             BaseThread.Start();
@@ -187,6 +189,8 @@ namespace KS.Kernel.Threading
         {
             if (!IsReady)
                 throw new KernelException(KernelExceptionType.ThreadNotReadyYet);
+            if (BaseThread.ThreadState.HasFlag(ThreadState.Stopped) || IsAlive)
+                return;
 
             // Start the parent thread
             DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1} with parameters", BaseThread.Name, ThreadId);
