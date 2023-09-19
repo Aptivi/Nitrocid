@@ -92,9 +92,6 @@ namespace KS.Kernel.Starting
                 PowerSignalHandlers.initialized = true;
                 PowerSignalHandlers.RegisterHandlers();
             }
-
-            // Initialize watchdog
-            ThreadWatchdog.StartWatchdog();
         }
 
         internal static void InitializeEssential()
@@ -119,6 +116,9 @@ namespace KS.Kernel.Starting
             // Initialize console wrappers for TermRead
             Input.InitializeTerminauxWrappers();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
+
+            // Initialize watchdog
+            ThreadWatchdog.StartWatchdog();
 
             // Show initializing
             if (Flags.TalkativePreboot)
