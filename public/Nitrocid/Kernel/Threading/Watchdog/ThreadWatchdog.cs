@@ -28,7 +28,7 @@ namespace KS.Kernel.Threading.Watchdog
 {
     internal static class ThreadWatchdog
     {
-        private static readonly KernelThread watchdogThread = new("Kernel thread watchdog thread", true, Watch);
+        private static readonly KernelThread watchdogThread = new("Kernel thread watchdog thread", true, Watch) { isCritical = true };
 
         internal static void StartWatchdog()
         {
