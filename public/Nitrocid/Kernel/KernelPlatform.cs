@@ -87,5 +87,12 @@ namespace KS.Kernel
         public static string GetCurrentRid() =>
             RuntimeInformation.RuntimeIdentifier;
 
+        /// <summary>
+        /// Gets the current runtime identifier
+        /// </summary>
+        /// <returns>Returns a runtime identifier (win-x64 for example).</returns>
+        public static string GetCurrentGenericRid() =>
+            $"{(IsOnWindows() ? "win" : IsOnMacOS() ? "osx" : IsOnUnix() ? "linux" : "freebsd")}-{RuntimeInformation.OSArchitecture.ToString().ToLower()}";
+
     }
 }
