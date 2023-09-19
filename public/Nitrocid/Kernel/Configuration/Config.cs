@@ -392,100 +392,133 @@ namespace KS.Kernel.Configuration
                     break;
             }
 
-            // Config difference function.
-            JObject FindConfigDifferences(JToken serializedObj, JToken currentObj)
+            // Compare the two config JSON files
+            try
             {
-                var diff = new JObject();
-                if (!JToken.DeepEquals(currentObj, serializedObj))
+                var serializedObj = JObject.Parse(serialized);
+                var currentObj = JObject.Parse(current);
+                var diffObj = FindConfigDifferences(serializedObj, currentObj);
+
+                // Skim through the difference object
+                foreach (var diff in diffObj)
                 {
-                    switch (currentObj.Type)
+                    // Get the key and the diff type
+                    string modifiedKey = diff.Key;
+                    string modifiedType = string.Join("", diff.Value.Select((diffToken) => ((JProperty)diffToken).Name));
+
+                    // Now, work on how to add or remove the key to the current object
+                    DebugCheck.Assert(modifiedType == "-" || modifiedType == "+", $"modified type is garbage. {modifiedType}");
+                    if (modifiedType == "-")
                     {
-                        case JTokenType.Object:
-                            {
-                                var addedKeys = ((JObject)currentObj).Properties().Select(c => c.Name).Except(((JObject)serializedObj).Properties().Select(c => c.Name));
-                                var removedKeys = ((JObject)serializedObj).Properties().Select(c => c.Name).Except(((JObject)currentObj).Properties().Select(c => c.Name));
-                                var unchangedKeys = ((JObject)currentObj).Properties().Where(c => JToken.DeepEquals(c.Value, serializedObj[c.Name])).Select(c => c.Name);
-                                foreach (var k in addedKeys)
-                                {
-                                    diff[k] = new JObject
-                                    {
-                                        ["+"] = currentObj[k].Path
-                                    };
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Extra addition {0}", currentObj[k].Path);
-                                }
-                                foreach (var k in removedKeys)
-                                {
-                                    diff[k] = new JObject
-                                    {
-                                        ["-"] = serializedObj[k].Path
-                                    };
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Extra subtraction {0}", serializedObj[k].Path);
-                                }
-                            }
+                        // Missing key from current config. Most likely, we've added a new config entry.
+                        DebugWriter.WriteDebug(DebugLevel.I, "Adding missing key: {0}", modifiedKey);
+                        var newValue = serializedObj[modifiedKey];
+                        currentObj.Add(modifiedKey, newValue);
+                    }
+                    else
+                    {
+                        // Extra key from current config. Most likely, we've removed a new config entry.
+                        DebugWriter.WriteDebug(DebugLevel.I, "Removing extraneous key: {0}", modifiedKey);
+                        currentObj.Remove(modifiedKey);
+                    }
+                }
+
+                // Save the config
+                if (diffObj.HasValues)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Saving updated config...");
+                    string modified = JsonConvert.SerializeObject(currentObj, Formatting.Indented);
+                    switch (type)
+                    {
+                        case ConfigType.Kernel:
+                            File.WriteAllText(Paths.GetKernelPath(KernelPathType.Configuration), modified);
                             break;
-                        case JTokenType.Array:
-                            {
-                                diff["+"] = new JArray(((JArray)currentObj).Except(serializedObj));
-                                diff["-"] = new JArray(((JArray)serializedObj).Except(currentObj));
-                                DebugWriter.WriteDebug(DebugLevel.I, "Additions: {0}, Removals: {1}", diff["+"].Count(), diff["-"].Count());
-                            }
+                        case ConfigType.Screensaver:
+                            File.WriteAllText(Paths.GetKernelPath(KernelPathType.SaverConfiguration), modified);
                             break;
-                        default:
-                            diff["+"] = currentObj;
-                            diff["-"] = serializedObj;
+                        case ConfigType.Splash:
+                            File.WriteAllText(Paths.GetKernelPath(KernelPathType.SplashConfiguration), modified);
                             break;
                     }
                 }
-                return diff;
             }
-
-            // Use the above function to compare the two config JSON files
-            var serializedObj = JObject.Parse(serialized);
-            var currentObj = JObject.Parse(current);
-            var diffObj = FindConfigDifferences(serializedObj, currentObj);
-
-            // Skim through the difference object
-            foreach (var diff in diffObj)
+            catch (Exception ex)
             {
-                // Get the key and the diff type
-                string modifiedKey = diff.Key;
-                string modifiedType = string.Join("", diff.Value.Select((diffToken) => ((JProperty)diffToken).Name));
-
-                // Now, work on how to add or remove the key to the current object
-                DebugCheck.Assert(modifiedType == "-" || modifiedType == "+", $"modified type is garbage. {modifiedType}");
-                if (modifiedType == "-")
-                {
-                    // Missing key from current config. Most likely, we've added a new config entry.
-                    DebugWriter.WriteDebug(DebugLevel.I, "Adding missing key: {0}", modifiedKey);
-                    var newValue = serializedObj[modifiedKey];
-                    currentObj.Add(modifiedKey, newValue);
-                }
-                else
-                {
-                    // Extra key from current config. Most likely, we've removed a new config entry.
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removing extraneous key: {0}", modifiedKey);
-                    currentObj.Remove(modifiedKey);
-                }
+                // OK. We're seriously screwed. Let's just write the factory default settings.
+                DebugWriter.WriteDebug(DebugLevel.F, "Failed to fix configuration! {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                RepairConfigLastResort(type);
             }
+        }
 
-            // Save the config
-            if (diffObj.HasValues)
+        private static void RepairConfigLastResort(ConfigType type)
+        {
+            try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Saving updated config...");
-                string modified = JsonConvert.SerializeObject(currentObj, Formatting.Indented);
-                switch (type)
+                // Get the factory settings
+                string serialized = GetSerializedConfig(type);
+
+                // Re-create config
+                string path =
+                    type == ConfigType.Kernel ? Paths.GetKernelPath(KernelPathType.Configuration) :
+                    type == ConfigType.Screensaver ? Paths.GetKernelPath(KernelPathType.SaverConfiguration) :
+                    type == ConfigType.Splash ? Paths.GetKernelPath(KernelPathType.SplashConfiguration) :
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Invalid config type."));
+                CreateConfig(type, path);
+                DebugWriter.WriteDebug(DebugLevel.F, "Last Resort: Bailed!");
+            }
+            catch (Exception ex)
+            {
+                // In this case, give up.
+                DebugWriter.WriteDebug(DebugLevel.F, "Last Resort: Failed to fix configuration! {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+        }
+
+        private static JObject FindConfigDifferences(JToken serializedObj, JToken currentObj)
+        {
+            var diff = new JObject();
+            if (!JToken.DeepEquals(currentObj, serializedObj))
+            {
+                switch (currentObj.Type)
                 {
-                    case ConfigType.Kernel:
-                        File.WriteAllText(Paths.GetKernelPath(KernelPathType.Configuration), modified);
+                    case JTokenType.Object:
+                        {
+                            var addedKeys = ((JObject)currentObj).Properties().Select(c => c.Name).Except(((JObject)serializedObj).Properties().Select(c => c.Name));
+                            var removedKeys = ((JObject)serializedObj).Properties().Select(c => c.Name).Except(((JObject)currentObj).Properties().Select(c => c.Name));
+                            var unchangedKeys = ((JObject)currentObj).Properties().Where(c => JToken.DeepEquals(c.Value, serializedObj[c.Name])).Select(c => c.Name);
+                            foreach (var k in addedKeys)
+                            {
+                                diff[k] = new JObject
+                                {
+                                    ["+"] = currentObj[k].Path
+                                };
+                                DebugWriter.WriteDebug(DebugLevel.I, "Extra addition {0}", currentObj[k].Path);
+                            }
+                            foreach (var k in removedKeys)
+                            {
+                                diff[k] = new JObject
+                                {
+                                    ["-"] = serializedObj[k].Path
+                                };
+                                DebugWriter.WriteDebug(DebugLevel.I, "Extra subtraction {0}", serializedObj[k].Path);
+                            }
+                        }
                         break;
-                    case ConfigType.Screensaver:
-                        File.WriteAllText(Paths.GetKernelPath(KernelPathType.SaverConfiguration), modified);
+                    case JTokenType.Array:
+                        {
+                            diff["+"] = new JArray(((JArray)currentObj).Except(serializedObj));
+                            diff["-"] = new JArray(((JArray)serializedObj).Except(currentObj));
+                            DebugWriter.WriteDebug(DebugLevel.I, "Additions: {0}, Removals: {1}", diff["+"].Count(), diff["-"].Count());
+                        }
                         break;
-                    case ConfigType.Splash:
-                        File.WriteAllText(Paths.GetKernelPath(KernelPathType.SplashConfiguration), modified);
+                    default:
+                        diff["+"] = currentObj;
+                        diff["-"] = serializedObj;
                         break;
                 }
             }
+            return diff;
         }
 
     }
