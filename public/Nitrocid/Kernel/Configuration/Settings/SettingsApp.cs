@@ -550,6 +550,7 @@ namespace KS.Kernel.Configuration.Settings
                                 keyColorValue = new Color(keyColorString);
 
                             // Get the color value from the color wheel
+                            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
                             ColorValue = ColorWheel.InputForColor(keyColorValue).PlainSequence;
 
                             break;
