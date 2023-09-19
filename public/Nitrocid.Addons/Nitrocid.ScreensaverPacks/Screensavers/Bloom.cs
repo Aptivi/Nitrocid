@@ -47,6 +47,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 Config.SaverConfig.BloomDelay = value;
             }
         }
+        /// <summary>
+        /// [Bloom] Whether to use dark colors or not
+        /// </summary>
+        public static bool BloomDarkColors
+        {
+            get
+            {
+                return Config.SaverConfig.BloomDarkColors;
+            }
+            set
+            {
+                Config.SaverConfig.BloomDarkColors = value;
+            }
+        }
 
     }
 
@@ -56,12 +70,23 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class BloomDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Color nextColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
-        private Color currentColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
+        private Color nextColor;
+        private Color currentColor;
         private readonly int steps = 100;
+
+        private static int MaxLevel =>
+            BloomSettings.BloomDarkColors ? 32 : 255;
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Bloom";
+
+        /// <inheritdoc/>
+        public override void ScreensaverPreparation()
+        {
+            nextColor = KernelColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
+            currentColor = KernelColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
+            base.ScreensaverPreparation();
+        }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
@@ -97,7 +122,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Generate new colors
             currentColor = nextColor;
-            nextColor = KernelColorTools.GetRandomColor(ColorType.TrueColor);
+            nextColor = KernelColorTools.GetRandomColor(ColorType.TrueColor, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel, 0, MaxLevel);
             ThreadManager.SleepNoBlock(BloomSettings.BloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync

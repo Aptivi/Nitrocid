@@ -2398,6 +2398,10 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public int BloomDelay { get; set; } = 50;
         /// <summary>
+        /// [Bloom] Whether to use dark colors or not
+        /// </summary>
+        public bool BloomDarkColors { get; set; }
+        /// <summary>
         /// [WordHasher] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
         public bool WordHasherTrueColor { get; set; } = true;

@@ -1781,6 +1781,9 @@
         "BloomDelay": {
             "type": "integer"
         },
+        "BloomDarkColors": {
+            "type": "boolean"
+        },
         "WordHasherTrueColor": {
             "type": "boolean"
         },
@@ -2598,6 +2601,7 @@
         "LightningDelay",
         "LightningStrikeProbability",
         "BloomDelay",
+        "BloomDarkColors",
         "WordHasherTrueColor",
         "WordHasherDelay",
         "WordHasherMinimumRedColorLevel",

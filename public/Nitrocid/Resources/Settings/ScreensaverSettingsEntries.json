@@ -4546,6 +4546,12 @@
                 "Type": "SInt",
                 "Variable": "BloomDelay",
                 "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Dark colors",
+                "Type": "SBoolean",
+                "Variable": "BloomDarkColors",
+                "Description": "Whether to use the dark colors or light colors."
             }
         ]
     },
