@@ -22,6 +22,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Text;
 using System;
 using System.Linq;
+using System.Text;
 
 namespace KS.ConsoleBase.Presentation.Elements
 {
@@ -52,19 +53,27 @@ namespace KS.ConsoleBase.Presentation.Elements
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperBorderLeft + 2);
+            int top = ConsoleWrapper.CursorTop;
+            int seekTop = ConsoleWrapper.CursorTop;
+            var buffer = new StringBuilder();
             foreach (string split in splitText)
             {
-                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
+                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - top + 3;
                 if (maxHeight < 0)
                 {
                     // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
+                    TextWriterWhereColor.WriteWhere(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
                     Input.DetectKeypress();
                     PresentationTools.ClearPresentation();
+                    seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
+                    buffer.Clear();
                 }
 
                 // Write the part
-                TextWriterWhereColor.WriteWhere(split + "\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
+                buffer.Append(split + "\n");
+                top++;
             }
+            TextWriterWhereColor.WriteWhere(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
         }
 
         /// <summary>
