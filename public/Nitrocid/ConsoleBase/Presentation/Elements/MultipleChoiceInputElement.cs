@@ -59,7 +59,7 @@ namespace KS.ConsoleBase.Presentation.Elements
             for (int i = 0; i < splitText.Length; i++)
             {
                 string split = splitText[i];
-                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 2;
+                int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
                 if (maxHeight < 0)
                 {
                     // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
@@ -93,7 +93,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                 for (int i = 0; i < splitTextChoice.Length; i++)
                 {
                     string split = splitTextChoice[i];
-                    int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 1;
+                    int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
                     if (maxHeight < 0)
                     {
                         // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
@@ -163,7 +163,7 @@ namespace KS.ConsoleBase.Presentation.Elements
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
-            int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 2;
+            int maxHeight = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
             return splitText.Length > maxHeight;
         }
 

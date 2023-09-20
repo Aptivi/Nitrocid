@@ -20,6 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Languages;
 using KS.Misc.Text;
 using System;
 
@@ -33,31 +34,43 @@ namespace KS.ConsoleBase.Presentation
         /// <summary>
         /// The upper left corner of the exterior border (the left position)
         /// </summary>
-        public static int PresentationUpperBorderLeft { get => 2; }
+        public static int PresentationUpperBorderLeft =>
+            2;
         /// <summary>
         /// The upper left corner of the exterior border (the top position)
         /// </summary>
-        public static int PresentationUpperBorderTop { get => 1; }
+        public static int PresentationUpperBorderTop =>
+            3;
         /// <summary>
         /// The upper left corner of the inner border (the left position)
         /// </summary>
-        public static int PresentationUpperInnerBorderLeft { get => PresentationUpperBorderLeft + 1; }
+        public static int PresentationUpperInnerBorderLeft =>
+            PresentationUpperBorderLeft + 1;
         /// <summary>
         /// The upper left corner of the inner border (the top position)
         /// </summary>
-        public static int PresentationUpperInnerBorderTop { get => PresentationUpperBorderTop + 1; }
+        public static int PresentationUpperInnerBorderTop =>
+            PresentationUpperBorderTop + 1;
         /// <summary>
         /// The lower right corner of the inner border (the left position)
         /// </summary>
-        public static int PresentationLowerInnerBorderLeft { get => ConsoleWrapper.WindowWidth - PresentationUpperInnerBorderLeft * 2; }
+        public static int PresentationLowerInnerBorderLeft =>
+            ConsoleWrapper.WindowWidth - PresentationUpperInnerBorderLeft * 2;
         /// <summary>
         /// The lower right corner of the inner border (the top position)
         /// </summary>
-        public static int PresentationLowerInnerBorderTop { get => ConsoleWrapper.WindowHeight - PresentationUpperBorderTop * 2 - 4; }
+        public static int PresentationLowerInnerBorderTop =>
+            ConsoleWrapper.WindowHeight - PresentationUpperBorderTop * 2 - 2;
+        /// <summary>
+        /// The title top position
+        /// </summary>
+        public static int PresentationTitleTop =>
+            1;
         /// <summary>
         /// The informational top position
         /// </summary>
-        public static int PresentationInformationalTop { get => ConsoleWrapper.WindowHeight - 2; }
+        public static int PresentationInformationalTop =>
+            ConsoleWrapper.WindowHeight - 2;
 
         /// <summary>
         /// Present the presentation
@@ -93,11 +106,12 @@ namespace KS.ConsoleBase.Presentation
                 // Get the page
                 var page = pages[i];
 
-                // Clear the informational screen
-                TextWriterWhereColor.WriteWhere(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperBorderLeft, PresentationInformationalTop);
-
                 // Write the name and the page number
-                TextWriterWhereColor.WriteWhere($"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1), PresentationUpperBorderLeft, PresentationInformationalTop, KernelColorType.NeutralText);
+                TextWriterWhereColor.WriteWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, PresentationTitleTop);
+                CenteredTextColor.WriteCentered(PresentationTitleTop, $"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1) + ConsoleExtensions.GetClearLineToRightSequence(), KernelColorType.NeutralText);
+
+                // Write the bindings
+                CenteredTextColor.WriteCentered(PresentationInformationalTop, $"[ENTER] {Translate.DoTranslation("Advance")}{(!kiosk && !required ? $" - [ESC] {Translate.DoTranslation("Exit")}" : "")}".Truncate(PresentationLowerInnerBorderLeft + 1), KernelColorType.NeutralText);
 
                 // Clear the presentation screen
                 ClearPresentation();
@@ -181,7 +195,7 @@ namespace KS.ConsoleBase.Presentation
         public static void ClearPresentation()
         {
             // Clear the presentation screen
-            for (int y = PresentationUpperInnerBorderTop; y <= PresentationLowerInnerBorderTop + 1; y++)
+            for (int y = PresentationUpperInnerBorderTop; y <= PresentationLowerInnerBorderTop + 3; y++)
                 TextWriterWhereColor.WriteWhere(new string(' ', PresentationLowerInnerBorderLeft), PresentationUpperInnerBorderLeft, y);
 
             // Seek to the first position inside the border
