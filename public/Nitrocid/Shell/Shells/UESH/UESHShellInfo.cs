@@ -26,6 +26,8 @@ using KS.Shell.Prompts.Presets.UESH;
 using System.Linq;
 using KS.Users;
 using KS.Languages;
+using KS.Shell.ShellBase.Arguments;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH
 {

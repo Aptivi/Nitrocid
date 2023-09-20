@@ -20,6 +20,7 @@ using KS.ConsoleBase.Themes;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
 using KS.Modifications;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Scripting;
 using KS.Shell.ShellBase.Shells;
 using KS.Users;
@@ -29,7 +30,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Commands
+namespace KS.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// The list of known command auto completion patterns

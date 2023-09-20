@@ -24,6 +24,7 @@ using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.UnitConv.Interactives;
 using UnitsNet;
 

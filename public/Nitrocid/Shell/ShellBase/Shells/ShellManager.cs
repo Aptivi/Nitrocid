@@ -60,7 +60,6 @@ using KS.Shell.Shells.Sql;
 using KS.Users;
 using KS.Shell.Shells.Debug;
 using KS.Kernel.Exceptions;
-using KS.Shell.ShellBase.Commands.Execution;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Scripting;
@@ -68,6 +67,8 @@ using Terminaux.Reader;
 using KS.Misc.Screensaver;
 using System.Collections.ObjectModel;
 using Newtonsoft.Json;
+using KS.Shell.ShellBase.Arguments;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.ShellBase.Shells
 {

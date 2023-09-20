@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase.Commands

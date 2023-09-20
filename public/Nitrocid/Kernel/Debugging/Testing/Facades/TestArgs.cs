@@ -18,7 +18,7 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Shell.ShellBase.Commands.ArgumentsParsers;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Kernel.Debugging.Testing.Facades

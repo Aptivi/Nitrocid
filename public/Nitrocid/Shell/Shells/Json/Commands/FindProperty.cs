@@ -20,6 +20,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Editors.JsonShell;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.Json.Commands
 {

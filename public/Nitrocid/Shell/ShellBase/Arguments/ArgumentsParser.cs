@@ -22,12 +22,14 @@ using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Modifications;
 using KS.Shell.ShellBase.Aliases;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Commands.ArgumentsParsers
+namespace KS.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// Argument parser tools

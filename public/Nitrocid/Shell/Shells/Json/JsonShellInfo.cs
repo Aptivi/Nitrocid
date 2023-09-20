@@ -23,6 +23,8 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Json.Commands;
 using System;
+using KS.Shell.ShellBase.Arguments;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.Json
 {

@@ -29,7 +29,7 @@ using System.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 
-namespace KS.Shell.ShellBase.Commands.Execution
+namespace KS.Shell.ShellBase.Commands
 {
     /// <summary>
     /// Process executor module

@@ -25,7 +25,9 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Modifications;
 using KS.Shell.ShellBase.Aliases;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 using KS.Users;
 
 namespace KS.Shell.ShellBase.Commands

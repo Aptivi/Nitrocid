@@ -18,7 +18,7 @@
 
 using System.Collections.Generic;
 
-namespace KS.Shell.ShellBase.Commands
+namespace KS.Shell.ShellBase.Switches
 {
     /// <summary>
     /// Switch management module

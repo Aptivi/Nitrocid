@@ -26,6 +26,7 @@ using KS.Languages;
 using KS.Network.Base;
 using KS.Network.Base.Transfer;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

@@ -20,6 +20,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

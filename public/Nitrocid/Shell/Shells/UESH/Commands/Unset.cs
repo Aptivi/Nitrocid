@@ -18,6 +18,7 @@
 
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Scripting;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

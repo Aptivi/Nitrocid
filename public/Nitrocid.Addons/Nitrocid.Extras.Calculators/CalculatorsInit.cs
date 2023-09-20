@@ -17,8 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Extensions;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Calculators.Commands;
 using System;
 using System.Collections.Generic;

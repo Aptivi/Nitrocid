@@ -23,8 +23,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Commands.ArgumentsParsers;
+using KS.Shell.ShellBase.Arguments;
+using KS.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 

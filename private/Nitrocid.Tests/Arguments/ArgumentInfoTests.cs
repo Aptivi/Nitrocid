@@ -18,7 +18,7 @@
 
 using System;
 using KS.Arguments.ArgumentBase;
-using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Arguments;
 using NUnit.Framework;
 using Shouldly;
 

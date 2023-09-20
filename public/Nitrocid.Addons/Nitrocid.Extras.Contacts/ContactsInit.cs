@@ -18,6 +18,7 @@
 
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.Contacts.Contacts;

@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Shell.ShellBase.Commands.ArgumentsParsers;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
 using Shouldly;

@@ -19,7 +19,7 @@
 using System;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Commands
+namespace KS.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// Command argument part class

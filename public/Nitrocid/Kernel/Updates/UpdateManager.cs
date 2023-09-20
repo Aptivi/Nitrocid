@@ -20,7 +20,6 @@ using System;
 using KS.Kernel.Debugging;
 using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
-using KS.Kernel.Configuration;
 
 #if SPECIFIERREL
 using KS.Files;

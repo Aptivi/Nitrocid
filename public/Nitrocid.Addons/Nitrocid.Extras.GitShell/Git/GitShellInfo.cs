@@ -19,8 +19,10 @@
 using System;
 using System.Collections.Generic;
 using KS.Shell.Prompts;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.GitShell.Git.Commands;
 using Nitrocid.Extras.GitShell.Git.Presets;
 

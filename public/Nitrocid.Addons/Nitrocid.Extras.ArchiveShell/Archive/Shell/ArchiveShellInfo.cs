@@ -23,6 +23,8 @@ using KS.Shell.ShellBase.Shells;
 using System;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets;
+using KS.Shell.ShellBase.Switches;
+using KS.Shell.ShellBase.Arguments;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {

@@ -23,6 +23,7 @@ using KS.Kernel.Threading;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands

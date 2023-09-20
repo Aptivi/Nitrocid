@@ -18,7 +18,7 @@
 
 using System;
 using KS.Languages;
-using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Arguments;
 
 namespace KS.Arguments.ArgumentBase
 {

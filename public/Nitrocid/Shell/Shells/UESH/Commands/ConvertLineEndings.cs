@@ -22,6 +22,7 @@ using KS.Files.LineEndings;
 using KS.Files.Querying;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

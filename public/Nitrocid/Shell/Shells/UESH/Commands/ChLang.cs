@@ -18,12 +18,10 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Probers.Motd;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

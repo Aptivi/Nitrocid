@@ -18,6 +18,7 @@
 
 using KS.Files.Editors.JsonShell;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 using Newtonsoft.Json.Linq;
 using System.Linq;
 

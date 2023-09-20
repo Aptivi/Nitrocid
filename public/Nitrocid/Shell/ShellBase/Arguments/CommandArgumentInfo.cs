@@ -18,8 +18,9 @@
 
 using System;
 using System.Linq;
+using KS.Shell.ShellBase.Switches;
 
-namespace KS.Shell.ShellBase.Commands
+namespace KS.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// Command argument info class

@@ -22,6 +22,7 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Sql.Commands;
+using KS.Shell.ShellBase.Arguments;
 
 namespace KS.Shell.Shells.Sql
 {

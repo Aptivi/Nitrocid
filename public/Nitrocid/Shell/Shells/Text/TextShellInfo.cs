@@ -23,6 +23,8 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Text.Commands;
 using System;
+using KS.Shell.ShellBase.Switches;
+using KS.Shell.ShellBase.Arguments;
 
 namespace KS.Shell.Shells.Text
 {

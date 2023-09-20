@@ -18,8 +18,10 @@
 
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.NameGen.Commands;
 using Nitrocid.Extras.NameGen.Screensavers;
 using System;

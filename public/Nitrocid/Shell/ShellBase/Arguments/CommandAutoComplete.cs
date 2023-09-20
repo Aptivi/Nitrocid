@@ -20,13 +20,13 @@ using KS.Files.Folders;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
-using KS.Shell.ShellBase.Commands.ArgumentsParsers;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using System;
 using System.IO;
 using System.Linq;
 
-namespace KS.Shell.ShellBase.Commands
+namespace KS.Shell.ShellBase.Arguments
 {
     /// <summary>
     /// Command auto completion class

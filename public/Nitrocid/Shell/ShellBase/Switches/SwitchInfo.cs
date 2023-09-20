@@ -19,7 +19,7 @@
 using KS.Languages;
 using System;
 
-namespace KS.Shell.ShellBase.Commands
+namespace KS.Shell.ShellBase.Switches
 {
     /// <summary>
     /// Information for command switches

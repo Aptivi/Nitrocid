@@ -19,8 +19,10 @@
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Amusements.Commands;
 using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Extras.Amusements.Splashes;
