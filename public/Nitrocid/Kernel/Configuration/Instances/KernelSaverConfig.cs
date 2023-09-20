@@ -2781,5 +2781,13 @@ namespace KS.Kernel.Configuration.Instances
         /// [WordHasherWrite] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int WordHasherWriteMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [SirenTheme] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int SirenThemeDelay { get; set; } = 500;
+        /// <summary>
+        /// [SirenTheme] The siren style
+        /// </summary>
+        public string SirenThemeStyle { get; set; } = "Default";
     }
 }

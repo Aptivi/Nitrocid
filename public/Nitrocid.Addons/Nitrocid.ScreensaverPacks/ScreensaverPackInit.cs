@@ -80,6 +80,7 @@ namespace Nitrocid.ScreensaverPacks
             { "ramp", new RampDisplay() },
             { "simplematrix", new SimpleMatrixDisplay() },
             { "siren", new SirenDisplay() },
+            { "sirentheme", new SirenThemeDisplay() },
             { "snakefill", new SnakeFillDisplay() },
             { "spin", new SpinDisplay() },
             { "spotwrite", new SpotWriteDisplay() },

@@ -5322,5 +5322,23 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    "SirenTheme": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.SirenTheme",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "SirenThemeDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Siren style from kernel theme",
+                "Type": "SString",
+                "Variable": "SirenThemeStyle",
+                "Description": "The siren style."
+            }
+        ]
     }
 }
