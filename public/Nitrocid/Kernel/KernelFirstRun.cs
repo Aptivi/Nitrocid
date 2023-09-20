@@ -100,7 +100,9 @@ namespace KS.Kernel
                                 {
                                     Arguments = new object[]
                                     {
-                                        Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here. Write the language code listed below:"),
+                                        Translate.DoTranslation("Select your language. By default, the kernel uses the English language, but you can select any other language here.") + " " + 
+                                        Translate.DoTranslation("Based on your language settings on your system, the appropriate language is") + $" {LanguageManager.InferLanguageFromSystem()}. " + 
+                                        Translate.DoTranslation("Write the language code listed below:"),
                                         LanguageManager.Languages.Keys,
                                     },
                                     InvokeActionInput =

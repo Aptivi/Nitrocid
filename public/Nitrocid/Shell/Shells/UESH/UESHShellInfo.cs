@@ -181,9 +181,22 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "file"),
                         }, new[] {
-                            new SwitchInfo("waitforunlock", /* Localizable */ "Waits until the file or the folder is unlocked", false, true, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("waitforunlock", /* Localizable */ "Waits until the file or the folder is unlocked", false, false, Array.Empty<string>(), 0, false)
                         })
                     }, new ChkLockCommand())
+            },
+            
+            { "chlang",
+                new CommandInfo("chlang", ShellType, /* Localizable */ "Changes language",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "language"),
+                        }, new[]
+                        {
+                            new SwitchInfo("usesyslang", /* Localizable */ "Uses the system language settings to try to infer the language from", false, false, Array.Empty<string>(), 1, false)
+                        })
+                    }, new ChLangCommand(), CommandFlags.Strict)
             },
             
             { "chmal",

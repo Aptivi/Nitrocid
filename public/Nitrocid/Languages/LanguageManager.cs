@@ -36,6 +36,7 @@ using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Resources;
+using System.Globalization;
 
 namespace KS.Languages
 {
@@ -484,6 +485,37 @@ namespace KS.Languages
             return ListedLanguages;
         }
 
+        /// <summary>
+        /// Infers the language from the system's current culture settings
+        /// </summary>
+        /// <returns>Language name if the system culture can be used to infer the language. Otherwise, English (eng).</returns>
+        public static string InferLanguageFromSystem()
+        {
+            string currentCult = CultureInfo.CurrentUICulture.Name;
+            DebugWriter.WriteDebug(DebugLevel.I, "Inferring language from current UI culture {0}, {1}...", currentCult);
+
+            // Get all the languages and compare
+            var langs = ListAllLanguages();
+            string finalLang = "eng";
+            foreach (var language in langs.Keys)
+            {
+                // Get the available cultures
+                var cults = CultureManager.GetCulturesFromLang(language);
+                foreach (var cult in cults)
+                {
+                    if (cult.Name == currentCult)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Found language {0} from culture {1}...", language, currentCult);
+                        finalLang = language;
+                        return finalLang;
+                    }
+                }
+            }
+
+            // Return the result
+            return finalLang;
+        }
+
         internal static Dictionary<string, string> ProbeLocalizations(JObject LanguageToken)
         {
             DebugCheck.Assert(LanguageToken.ContainsKey("Localizations"), "language has no localizations!!!");
@@ -513,6 +545,5 @@ namespace KS.Languages
                 BaseLanguages.Add(LanguageName, LanguageInfo);
             }
         }
-
     }
 }
