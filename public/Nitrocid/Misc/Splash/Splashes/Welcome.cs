@@ -94,8 +94,8 @@ namespace KS.Misc.Splash.Splashes
                 FigletWhereColor.WriteFigletWhere(text, consoleX, consoleY, true, figFont, col);
                 consoleY += figHeight * 2;
             }
-            consoleX = (ConsoleWrapper.WindowWidth / 2) - (KernelTools.ConsoleTitle.Length / 2);
-            TextWriterWhereColor.WriteWhere(KernelTools.ConsoleTitle, consoleX, consoleY + 2, true, col);
+            consoleX = (ConsoleWrapper.WindowWidth / 2) - (KernelReleaseInfo.ConsoleTitle.Length / 2);
+            TextWriterWhereColor.WriteWhere(KernelReleaseInfo.ConsoleTitle, consoleX, consoleY + 2, true, col);
             Thread.Sleep(3000);
 
             // Clear the console

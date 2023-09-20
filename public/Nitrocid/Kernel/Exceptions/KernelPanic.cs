@@ -388,7 +388,7 @@ namespace KS.Kernel.Exceptions
 
                 // Versions
                 WriteHeader(dumpBuilder, Translate.DoTranslation("Version information"));
-                dumpBuilder.AppendLine(KernelTools.ConsoleTitle);
+                dumpBuilder.AppendLine(KernelReleaseInfo.ConsoleTitle);
                 dumpBuilder.AppendLine(Environment.OSVersion.ToString());
                 dumpBuilder.AppendLine(Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
 

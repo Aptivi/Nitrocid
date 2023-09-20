@@ -396,7 +396,7 @@ namespace KS.Shell.ShellBase.Shells
                     {
                         // Set title
                         if (Config.MainConfig.SetTitleOnCommandExecution)
-                            ConsoleExtensions.SetTitle($"{KernelTools.ConsoleTitle} - {Command}");
+                            ConsoleExtensions.SetTitle($"{KernelReleaseInfo.ConsoleTitle} - {Command}");
 
                         if (Commands.ContainsKey(commandName))
                         {
@@ -556,7 +556,7 @@ namespace KS.Shell.ShellBase.Shells
             }
 
             // Restore title and cancel possibility state
-            ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
+            ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
             CancellationHandlers.canCancel = false;
         }
 

@@ -37,31 +37,6 @@ namespace KS.Kernel
         private static readonly Version kernelApiVersion =
             new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
 
-        // #ifdef'd variables...
-        // Release specifiers (SPECIFIER: REL, RC, or DEV | MILESTONESPECIFIER: ALPHA, BETA, or NONE | None satisfied: Unsupported Release)
-#if SPECIFIERREL
-        internal readonly static string ReleaseSpecifier = $"Final";
-#elif SPECIFIERRC
-        internal readonly static string ReleaseSpecifier = $"Release Candidate";
-#elif SPECIFIERDEV
-#if MILESTONESPECIFIERALPHA
-        internal readonly static string ReleaseSpecifier = $"Alpha 1";
-#elif MILESTONESPECIFIERBETA
-        internal readonly static string ReleaseSpecifier = $"Beta 2";
-#else
-        internal readonly static string ReleaseSpecifier = $"Developer Preview";
-#endif
-#else
-        internal readonly static string ReleaseSpecifier = $"- UNSUPPORTED -";
-#endif
-
-        // Final console window title
-#if SPECIFIERREL
-        internal readonly static string ConsoleTitle = $"Nitrocid v{KernelVersion} (API v{KernelApiVersion})";
-#else
-        internal readonly static string ConsoleTitle = $"Nitrocid v{KernelVersion} {ReleaseSpecifier} (API v{KernelApiVersion})";
-#endif
-
         /// <summary>
         /// Kernel version
         /// </summary>

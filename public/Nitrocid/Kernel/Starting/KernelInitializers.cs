@@ -107,7 +107,7 @@ namespace KS.Kernel.Starting
             }
 
             // A title
-            ConsoleExtensions.SetTitle(KernelTools.ConsoleTitle);
+            ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
 
             // Set the buffer size
             if (Flags.SetBufferSize)
