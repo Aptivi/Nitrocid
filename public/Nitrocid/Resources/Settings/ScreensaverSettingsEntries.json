@@ -3993,7 +3993,7 @@
             },
             {
                 "Name": "Siren style",
-                "Type": "SInt",
+                "Type": "SString",
                 "Variable": "SirenStyle",
                 "Description": "The siren style."
             }

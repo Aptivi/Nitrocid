@@ -73,8 +73,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         internal readonly static Dictionary<string, Color[]> sirens = new()
         {
-            { "Cop", new Color[] { new(255, 0, 0), new(0, 0, 255) } },
-            { "Ambulance", new Color[] { new(255, 0, 0), new(128, 0, 0) } }
+            { "Cop",        new Color[] { new(255, 0, 0), new(0, 0, 255) } },
+            { "Ambulance",  new Color[] { new(255, 0, 0), new(128, 0, 0) } },
+            { "Neon",       new Color[] { new(255, 0, 255), new(0, 255, 255) } }
         };
         private int step = 0;
 
