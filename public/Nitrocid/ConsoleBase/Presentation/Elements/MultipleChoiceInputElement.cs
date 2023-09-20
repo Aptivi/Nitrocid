@@ -68,7 +68,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                 }
 
                 // Write the part
-                TextWriterWhereColor.WriteWhere(split + (i == splitText.Length - 1 ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
+                TextWriterWhereColor.WriteWhere(split + "\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             }
 
             // Flatten the enumerables to their string value representations
@@ -102,7 +102,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                     }
 
                     // Write the part
-                    TextWriterWhereColor.WriteWhere(split + (choiceNum == finalChoices.Length ? "" : "\n"), PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
+                    TextWriterWhereColor.WriteWhere(split + "\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
                 }
                 choiceNum++;
             }
@@ -154,12 +154,12 @@ namespace KS.ConsoleBase.Presentation.Elements
             }
 
             string[] finalChoices = choices.ToArray();
-            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n";
+            string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs) + "\n\n";
 
             // Add the choices to the text
             for (int choice = 0; choice < finalChoices.Length; choice++)
                 text += $"\n{choice + 1}) {finalChoices[choice]}";
-            text += "\n";
+            text += "\n\n";
 
             // Check the bounds
             string[] splitText = TextTools.GetWrappedSentences(text, PresentationTools.PresentationLowerInnerBorderLeft - PresentationTools.PresentationUpperInnerBorderLeft);
