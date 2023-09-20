@@ -20,6 +20,7 @@ using System;
 using KS.Kernel.Debugging;
 using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
+using KS.Kernel.Configuration;
 
 #if SPECIFIERREL
 using KS.Files;
@@ -84,7 +85,7 @@ namespace KS.Kernel.Updates
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Found new version: "), 10);
                     SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
-                    if (Flags.AutoDownloadUpdate)
+                    if (KernelFlags.AutoDownloadUpdate)
                     {
                         NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(Paths.ExecPath, "update.rar"));
                         SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10);
