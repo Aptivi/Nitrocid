@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Hardware;
 using KS.Kernel.Updates;
@@ -32,7 +33,7 @@ namespace KS.Kernel.Starting
     {
         internal static void Stage01SystemInitialization()
         {
-            if (RemoteDebugger.RDebugAutoStart & Flags.DebugMode)
+            if (RemoteDebugger.RDebugAutoStart & KernelFlags.DebugMode)
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3);
                 RemoteDebugger.StartRDebugThread();
@@ -47,22 +48,22 @@ namespace KS.Kernel.Starting
 
         internal static void Stage02KernelUpdates()
         {
-            if (Flags.CheckUpdateStart)
+            if (KernelFlags.CheckUpdateStart)
                 UpdateManager.CheckKernelUpdates();
         }
 
         internal static void Stage03HardwareProbe()
         {
-            if (!Flags.QuietHardwareProbe)
+            if (!KernelFlags.QuietHardwareProbe)
                 SplashReport.ReportProgress(Translate.DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15);
             HardwareProbe.StartProbing();
-            if (!Flags.EnableSplash & !Flags.QuietKernel)
+            if (!KernelFlags.EnableSplash & !KernelFlags.QuietKernel)
                 HardwareList.ListHardware();
         }
 
         internal static void Stage04KernelModifications()
         {
-            if (Flags.StartKernelMods)
+            if (KernelFlags.StartKernelMods)
                 ModManager.StartMods();
         }
 

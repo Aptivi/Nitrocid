@@ -29,7 +29,6 @@ using KS.Files.Folders;
 using KS.Files.Instances;
 using KS.Files.Operations;
 using KS.Files.Querying;
-using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
@@ -239,7 +238,7 @@ namespace KS.Misc.Splash
         /// <param name="splash">Splash interface to use</param>
         public static void OpenSplash(ISplash splash)
         {
-            if (Flags.EnableSplash)
+            if (KernelFlags.EnableSplash)
             {
                 SplashReport._Progress = 0;
                 ConsoleBase.ConsoleWrapper.CursorVisible = false;
@@ -274,7 +273,7 @@ namespace KS.Misc.Splash
         /// <param name="showClosing">Shows the closing animation, or clears the screen</param>
         internal static void CloseSplash(ISplash splash, bool showClosing)
         {
-            if (Flags.EnableSplash)
+            if (KernelFlags.EnableSplash)
             {
                 splash.SplashClosing = true;
 
@@ -365,7 +364,7 @@ namespace KS.Misc.Splash
         /// </summary>
         public static void BeginSplashOut()
         {
-            if (Flags.EnableSplash && SplashReport._InSplash)
+            if (KernelFlags.EnableSplash && SplashReport._InSplash)
                 CloseSplash(CurrentSplash, false);
         }
 
@@ -374,7 +373,7 @@ namespace KS.Misc.Splash
         /// </summary>
         public static void EndSplashOut()
         {
-            if (Flags.EnableSplash && !SplashReport._InSplash)
+            if (KernelFlags.EnableSplash && !SplashReport._InSplash)
                 OpenSplash();
         }
 

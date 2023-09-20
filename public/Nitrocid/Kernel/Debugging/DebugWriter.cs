@@ -87,7 +87,7 @@ namespace KS.Kernel.Debugging
         {
             lock (WriteLock)
             {
-                if (Flags.DebugMode)
+                if (KernelFlags.DebugMode)
                 {
                     WriteDebugLogOnly(Level, text, vars);
                     WriteDebugDevicesOnly(Level, text, false, vars);
@@ -105,7 +105,7 @@ namespace KS.Kernel.Debugging
         {
             lock (WriteLock)
             {
-                if (Flags.DebugMode)
+                if (KernelFlags.DebugMode)
                 {
                     // Open debugging stream
                     string debugFilePath = DebugPath;
@@ -212,7 +212,7 @@ namespace KS.Kernel.Debugging
         {
             lock (WriteLock)
             {
-                if (Flags.DebugMode)
+                if (KernelFlags.DebugMode)
                 {
                     for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                     {
@@ -255,7 +255,7 @@ namespace KS.Kernel.Debugging
         {
             lock (WriteLock)
             {
-                if (Flags.DebugMode)
+                if (KernelFlags.DebugMode)
                 {
                     // These two NewLines are padding for accurate stack tracing.
                     var Inner = Ex.InnerException;

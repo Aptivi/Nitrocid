@@ -29,6 +29,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Power;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Starting;
+using KS.Kernel.Configuration;
 
 namespace KS.Kernel
 {
@@ -43,11 +44,11 @@ namespace KS.Kernel
             ArgumentParse.ParseArguments(args.ToList());
 
             // Some command-line arguments may request kernel shutdown
-            if (Flags.KernelShutdown)
+            if (KernelFlags.KernelShutdown)
                 return;
 
             // Check for console size
-            if (Flags.CheckingForConsoleSize)
+            if (KernelFlags.CheckingForConsoleSize)
             {
                 ConsoleChecker.CheckConsoleSize();
             }
@@ -56,7 +57,7 @@ namespace KS.Kernel
                 TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine +
                                       Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning);
                 Input.DetectKeypress();
-                Flags.CheckingForConsoleSize = true;
+                KernelFlags.CheckingForConsoleSize = true;
             }
 
             // Initialize important components
@@ -77,18 +78,18 @@ namespace KS.Kernel
             SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
             SplashManager.CloseSplash();
             SplashReport._KernelBooted = true;
-            if (!Flags.EnableSplash)
+            if (!KernelFlags.EnableSplash)
                 TextWriterColor.Write();
 
             // If this is the first time, run the first run presentation
-            if (Flags.FirstTime)
+            if (KernelFlags.FirstTime)
             {
-                Flags.FirstTime = false;
+                KernelFlags.FirstTime = false;
                 KernelFirstRun.PresentFirstRun();
             }
 
             // Initialize login prompt
-            if (!Flags.Maintenance)
+            if (!KernelFlags.Maintenance)
                 Login.LoginPrompt();
             else
                 Login.PromptMaintenanceLogin();

@@ -25,7 +25,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Probers.Placeholder;
@@ -162,7 +162,7 @@ namespace KS.Network.FTP
         {
             // Prepare profiles
             TextWriterColor.Write(Translate.DoTranslation("Preparing profiles... It could take several minutes..."));
-            var profiles = clientFTP.AutoDetect(Flags.FTPFirstProfileOnly);
+            var profiles = clientFTP.AutoDetect(KernelFlags.FTPFirstProfileOnly);
             var profsel = new FtpProfile();
             DebugWriter.WriteDebug(DebugLevel.I, "Profile count: {0}", profiles.Count);
             if (profiles.Count > 1)

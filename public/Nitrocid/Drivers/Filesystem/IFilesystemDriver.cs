@@ -19,7 +19,7 @@
 
 using KS.Files.Instances;
 using KS.Files.LineEndings;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
@@ -433,7 +433,7 @@ namespace KS.Drivers.Filesystem
         List<(string, MatchCollection)> SearchFileForStringRegexpMatches(string FilePath, Regex StringLookup);
 
         /// <summary>
-        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="Flags.FullParseMode"/>
+        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="KernelFlags.FullParseMode"/>
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>

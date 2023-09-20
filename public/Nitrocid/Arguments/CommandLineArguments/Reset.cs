@@ -22,11 +22,11 @@ using KS.Files;
 using System.IO;
 using System;
 using KS.Files.Folders;
-using KS.Kernel;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.Kernel.Configuration;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -86,7 +86,7 @@ namespace KS.Arguments.CommandLineArguments
             }
 
             // Exit now.
-            Flags.KernelShutdown = true;
+            KernelFlags.KernelShutdown = true;
         }
     }
 }

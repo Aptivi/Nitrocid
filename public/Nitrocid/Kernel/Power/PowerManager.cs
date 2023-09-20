@@ -29,6 +29,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Threading;
 using Terminaux.Reader;
 using KS.Shell.ShellBase.Shells;
+using KS.Kernel.Configuration;
 
 namespace KS.Kernel.Power
 {
@@ -77,15 +78,15 @@ namespace KS.Kernel.Power
                         TextWriterColor.Write(Translate.DoTranslation("Shutting down..."));
 
                         // Simulate 0.0.1's behavior on shutting down
-                        if (Flags.BeepOnShutdown)
+                        if (KernelFlags.BeepOnShutdown)
                             ConsoleWrapper.Beep();
-                        if (Flags.DelayOnShutdown)
+                        if (KernelFlags.DelayOnShutdown)
                             Thread.Sleep(3000);
 
                         // Set appropriate flags
-                        Flags.RebootRequested = true;
-                        Flags.LogoutRequested = true;
-                        Flags.KernelShutdown = true;
+                        KernelFlags.RebootRequested = true;
+                        KernelFlags.LogoutRequested = true;
+                        KernelFlags.KernelShutdown = true;
 
                         // Kill all shells and interrupt any input
                         for (int i = ShellStart.ShellStack.Count - 1; i >= 0; i--)
@@ -101,21 +102,21 @@ namespace KS.Kernel.Power
                         TextWriterColor.Write(Translate.DoTranslation("Rebooting..."));
 
                         // Simulate 0.0.1's behavior on shutting down
-                        if (Flags.BeepOnShutdown)
+                        if (KernelFlags.BeepOnShutdown)
                             ConsoleWrapper.Beep();
-                        if (Flags.DelayOnShutdown)
+                        if (KernelFlags.DelayOnShutdown)
                             Thread.Sleep(3000);
 
                         // Set appropriate flags
-                        Flags.RebootRequested = true;
-                        Flags.LogoutRequested = true;
-                        Flags.SafeMode = PowerMode == PowerMode.RebootSafe;
+                        KernelFlags.RebootRequested = true;
+                        KernelFlags.LogoutRequested = true;
+                        KernelFlags.SafeMode = PowerMode == PowerMode.RebootSafe;
 
                         // Kill all shells and interrupt any input
                         for (int i = ShellStart.ShellStack.Count - 1; i >= 0; i--)
                             ShellStart.KillShellForced();
                         TermReaderTools.Interrupt();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", Flags.SafeMode);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", KernelFlags.SafeMode);
                         break;
                     }
                 case PowerMode.RemoteShutdown:

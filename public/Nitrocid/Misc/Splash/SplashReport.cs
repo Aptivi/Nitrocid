@@ -18,7 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Journaling;
 using System;
@@ -91,12 +91,12 @@ namespace KS.Misc.Splash
                     _Progress = 100;
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
                 {
-                    if (Flags.EnableSplash && splash != null)
+                    if (KernelFlags.EnableSplash && splash != null)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Invoking splash to report {0}...", Text);
                         splash.Report(_Progress, Text, Vars);
                     }
-                    else if (!Flags.QuietKernel)
+                    else if (!KernelFlags.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", Text);
                         TextWriterColor.Write($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
@@ -155,12 +155,12 @@ namespace KS.Misc.Splash
                 _ProgressText = Text;
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
                 {
-                    if (Flags.EnableSplash && splash != null)
+                    if (KernelFlags.EnableSplash && splash != null)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Invoking splash to report {0}...", Text);
                         splash.ReportWarning(_Progress, Text, exception, Vars);
                     }
-                    else if (!Flags.QuietKernel)
+                    else if (!KernelFlags.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel not booted and not quiet. Reporting {0}...", Text);
                         TextWriterColor.Write($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
@@ -219,12 +219,12 @@ namespace KS.Misc.Splash
                 _ProgressText = Text;
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
                 {
-                    if (Flags.EnableSplash && splash != null)
+                    if (KernelFlags.EnableSplash && splash != null)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Invoking splash to report {0}...", Text);
                         splash.ReportError(_Progress, Text, exception, Vars);
                     }
-                    else if (!Flags.QuietKernel)
+                    else if (!KernelFlags.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Kernel not booted and not quiet. Reporting {0}...", Text);
                         TextWriterColor.Write($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);

@@ -23,7 +23,7 @@ using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Text;
 using Terminaux.Sequences.Tools;
@@ -223,7 +223,7 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
                 // we're not switching pages yet.
-                if (Flags.EnableScrollBarInSelection)
+                if (KernelFlags.EnableScrollBarInSelection)
                     ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 4, false);
 
                 // Write description area

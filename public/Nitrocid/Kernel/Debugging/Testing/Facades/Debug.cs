@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Configuration;
 using KS.Languages;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -27,21 +28,21 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Previous value") + ": {0}", Flags.DebugMode);
-            if (Flags.DebugMode == false)
+            TextWriterColor.Write(Translate.DoTranslation("Previous value") + ": {0}", KernelFlags.DebugMode);
+            if (KernelFlags.DebugMode == false)
             {
-                Flags.DebugMode = true;
+                KernelFlags.DebugMode = true;
             }
             else
             {
                 // This is to abort the remote debugger.
-                Flags.RebootRequested = true;
+                KernelFlags.RebootRequested = true;
 
                 // Now, do the job!
-                Flags.DebugMode = false;
-                Flags.RebootRequested = false;
+                KernelFlags.DebugMode = false;
+                KernelFlags.RebootRequested = false;
             }
-            TextWriterColor.Write(Translate.DoTranslation("Current value") + ": {0}", Flags.DebugMode);
+            TextWriterColor.Write(Translate.DoTranslation("Current value") + ": {0}", KernelFlags.DebugMode);
         }
     }
 }

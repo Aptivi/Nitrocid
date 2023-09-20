@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -30,6 +29,7 @@ using System.Threading;
 using System;
 using KS.Kernel.Threading;
 using KS.Network.SpeedDial;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Mail
 {
@@ -81,7 +81,7 @@ namespace KS.Shell.Shells.Mail
                 }
                 catch (ThreadInterruptedException)
                 {
-                    Flags.CancelRequested = false;
+                    KernelFlags.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

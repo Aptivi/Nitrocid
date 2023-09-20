@@ -20,7 +20,7 @@ using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Screensaver;
@@ -46,11 +46,11 @@ namespace KS.Shell.Shells.UESH
         {
             while (!Bail)
             {
-                if (Flags.LogoutRequested)
+                if (KernelFlags.LogoutRequested)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Flags.LogoutRequested);
-                    Flags.LogoutRequested = false;
-                    Flags.LoggedIn = false;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", KernelFlags.LogoutRequested);
+                    KernelFlags.LogoutRequested = false;
+                    KernelFlags.LoggedIn = false;
                     Bail = true;
                 }
                 else if (!ScreensaverManager.InSaver)
@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.UESH
                     }
                     catch (ThreadInterruptedException)
                     {
-                        Flags.CancelRequested = false;
+                        KernelFlags.CancelRequested = false;
                         Bail = true;
                     }
                     catch (Exception ex)

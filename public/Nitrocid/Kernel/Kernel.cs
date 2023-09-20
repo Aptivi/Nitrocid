@@ -28,6 +28,7 @@ using System;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Debugging;
 using KS.Kernel.Starting;
+using KS.Kernel.Configuration;
 
 namespace KS.Kernel
 {
@@ -45,7 +46,7 @@ namespace KS.Kernel
             Thread.CurrentThread.Name = "Main Nitrocid Kernel Thread";
 
             // This is a kernel entry point
-            while (!Flags.KernelShutdown)
+            while (!KernelFlags.KernelShutdown)
             {
                 try
                 {
@@ -54,12 +55,12 @@ namespace KS.Kernel
                 catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
                 {
                     ConsoleWrapper.WriteLine(icde.Message);
-                    Flags.KernelShutdown = true;
+                    KernelFlags.KernelShutdown = true;
                 }
                 catch (KernelErrorException kee)
                 {
                     DebugWriter.WriteDebugStackTrace(kee);
-                    Flags.SafeMode = false;
+                    KernelFlags.SafeMode = false;
                 }
                 catch (Exception ex)
                 {
@@ -83,14 +84,14 @@ namespace KS.Kernel
             }
 
             // If "No APM" is enabled, simply print the text
-            if (Flags.SimulateNoAPM)
+            if (KernelFlags.SimulateNoAPM)
             {
                 ConsoleWrapper.WriteLine(Translate.DoTranslation("It's now safe to turn off your computer."));
                 Input.DetectKeypress();
             }
 
             // Load main buffer
-            if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer && Flags.HasSetAltBuffer)
+            if (!KernelPlatform.IsOnWindows() && KernelFlags.UseAltBuffer && KernelFlags.HasSetAltBuffer)
                 TextWriterColor.Write("\u001b[?1049l");
 
             // Reset colors and clear the console

@@ -24,7 +24,6 @@ using Timer = System.Timers.Timer;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.Kernel;
 using KS.Languages;
 using KS.Kernel.Configuration;
 using KS.Kernel.Time.Renderers;
@@ -118,7 +117,7 @@ namespace Nitrocid.Extras.Timers.Timers
             TextWriterWhereColor.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
 
             // Print the time interval
-            if (Flags.EnableFigletTimer)
+            if (KernelFlags.EnableFigletTimer)
             {
                 FigletWhereColor.WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
             }
@@ -170,7 +169,7 @@ namespace Nitrocid.Extras.Timers.Timers
                                     string RemainingString = TimeDateMiscRenderers.RenderRemainingTimeFromNow((int)Math.Round(TimerInterval));
                                     UpdateRemainingPositions(RemainingString, ref TimeLeftPosition, ref TimeTopPosition);
                                     ClearRemainingTimeDisplay(RemainingString, FigletTimeOldWidth, FigletTimeOldWidthEnd);
-                                    if (Flags.EnableFigletTimer)
+                                    if (KernelFlags.EnableFigletTimer)
                                     {
                                         FigletWhereColor.WriteFigletWhere(RemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
                                     }
@@ -222,7 +221,7 @@ namespace Nitrocid.Extras.Timers.Timers
             // Actually display it
             if (TimerUpdate.IsAlive)
                 TimerUpdate.Stop();
-            if (Flags.EnableFigletTimer)
+            if (KernelFlags.EnableFigletTimer)
             {
                 FigletWhereColor.WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.Success);
             }
@@ -255,7 +254,7 @@ namespace Nitrocid.Extras.Timers.Timers
                     ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd);
 
                     // Actually display the remaining time
-                    if (Flags.EnableFigletTimer)
+                    if (KernelFlags.EnableFigletTimer)
                     {
                         FigletWhereColor.WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
                     }
@@ -288,7 +287,7 @@ namespace Nitrocid.Extras.Timers.Timers
             // Now, get the normal time left and top position and update the values according to timer type
             TimeLeftPosition = (int)Math.Round(HalfWidth - RemainingTimeText.Length / 2d);
             TimeTopPosition = HalfHeight - 3;
-            if (Flags.EnableFigletTimer)
+            if (KernelFlags.EnableFigletTimer)
             {
                 TimeLeftPosition = FigletTimeLeftPosition;
                 TimeTopPosition = FigletTimeTopPosition;
@@ -309,7 +308,7 @@ namespace Nitrocid.Extras.Timers.Timers
             int FigletTimeBottomPosition = (int)Math.Round(HalfHeight + FigletTools.GetFigletHeight(RemainingTimeText, FigletFont) / 2d);
 
             // If figlet is enabled, clear the display
-            if (Flags.EnableFigletTimer)
+            if (KernelFlags.EnableFigletTimer)
             {
                 for (int FigletTimePosition = FigletTimeTopPosition; FigletTimePosition <= FigletTimeBottomPosition; FigletTimePosition++)
                 {

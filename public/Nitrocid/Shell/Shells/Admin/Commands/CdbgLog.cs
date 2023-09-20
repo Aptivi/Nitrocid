@@ -21,7 +21,7 @@ using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.Admin.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            if (Flags.DebugMode)
+            if (KernelFlags.DebugMode)
             {
                 try
                 {

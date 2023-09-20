@@ -81,7 +81,7 @@ namespace KS.Kernel.Starting
 
             // Set the first time run variable
             if (!Checking.FileExists(Paths.ConfigurationPath))
-                Flags.FirstTime = true;
+                KernelFlags.FirstTime = true;
 
             // Initialize debug path
             DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
@@ -97,12 +97,12 @@ namespace KS.Kernel.Starting
         internal static void InitializeEssential()
         {
             // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
-            if (!KernelPlatform.IsOnWindows() && Flags.UseAltBuffer)
+            if (!KernelPlatform.IsOnWindows() && KernelFlags.UseAltBuffer)
             {
                 TextWriterColor.Write("\u001b[?1049h");
                 ConsoleWrapper.SetCursorPosition(0, 0);
                 ConsoleWrapper.CursorVisible = false;
-                Flags.HasSetAltBuffer = true;
+                KernelFlags.HasSetAltBuffer = true;
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
             }
 
@@ -110,7 +110,7 @@ namespace KS.Kernel.Starting
             ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
 
             // Set the buffer size
-            if (Flags.SetBufferSize)
+            if (KernelFlags.SetBufferSize)
                 ConsoleExtensions.SetBufferSize();
 
             // Initialize console wrappers for TermRead
@@ -121,7 +121,7 @@ namespace KS.Kernel.Starting
             ThreadWatchdog.StartWatchdog();
 
             // Show initializing
-            if (Flags.TalkativePreboot)
+            if (KernelFlags.TalkativePreboot)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Welcome!"));
                 TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
@@ -131,32 +131,32 @@ namespace KS.Kernel.Starting
             JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journaling)), Paths.GetKernelPath(KernelPathType.Journaling));
 
             // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-            if (Flags.TalkativePreboot)
+            if (KernelFlags.TalkativePreboot)
                 TextWriterColor.Write(Translate.DoTranslation("Downloading debug symbols..."));
             DebugSymbolsTools.CheckDebugSymbols();
 
             // Initialize custom languages
-            if (Flags.TalkativePreboot)
+            if (KernelFlags.TalkativePreboot)
                 TextWriterColor.Write(Translate.DoTranslation("Loading custom languages..."));
             LanguageManager.InstallCustomLanguages();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
 
             // Initialize splashes
-            if (Flags.TalkativePreboot)
+            if (KernelFlags.TalkativePreboot)
                 TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
             SplashManager.LoadSplashes();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom splashes.");
 
             // Initialize addons
-            if (Flags.TalkativePreboot)
+            if (KernelFlags.TalkativePreboot)
                 TextWriterColor.Write(Translate.DoTranslation("Loading kernel addons..."));
             AddonTools.ProcessAddons(AddonType.Important);
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
 
             // Create config file and then read it
-            if (Flags.TalkativePreboot)
+            if (KernelFlags.TalkativePreboot)
                 TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
-            if (!Flags.SafeMode)
+            if (!KernelFlags.SafeMode)
                 Config.InitializeConfig();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");
 
@@ -179,7 +179,7 @@ namespace KS.Kernel.Starting
             WelcomeMessage.WriteMessage();
 
             // Some information
-            if (Flags.ShowAppInfoOnBoot & !Flags.EnableSplash)
+            if (KernelFlags.ShowAppInfoOnBoot & !KernelFlags.EnableSplash)
             {
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Kernel environment information"), true, KernelColorType.Stage);
                 TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
@@ -244,10 +244,10 @@ namespace KS.Kernel.Starting
         internal static void ResetEverything()
         {
             // Reset every variable below
-            Flags.SafeMode = false;
-            Flags.QuietKernel = false;
-            Flags.Maintenance = false;
-            Flags.HasSetAltBuffer = false;
+            KernelFlags.SafeMode = false;
+            KernelFlags.QuietKernel = false;
+            KernelFlags.Maintenance = false;
+            KernelFlags.HasSetAltBuffer = false;
             SplashReport._Progress = 0;
             SplashReport._ProgressText = "";
             SplashReport._KernelBooted = false;
@@ -286,7 +286,7 @@ namespace KS.Kernel.Starting
             DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");
 
             // Disable safe mode
-            Flags.SafeMode = false;
+            KernelFlags.SafeMode = false;
             DebugWriter.WriteDebug(DebugLevel.I, "Safe mode disabled");
 
             // Stop the time/date change thread
@@ -294,10 +294,10 @@ namespace KS.Kernel.Starting
             DebugWriter.WriteDebug(DebugLevel.I, "Time/date corner stopped");
 
             // Disable Debugger
-            if (Flags.DebugMode)
+            if (KernelFlags.DebugMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Shutting down debugger");
-                Flags.DebugMode = false;
+                KernelFlags.DebugMode = false;
                 DebugWriter.DebugStreamWriter.Close();
                 DebugWriter.DebugStreamWriter.Dispose();
                 DebugWriter.isDisposed = true;
@@ -311,8 +311,8 @@ namespace KS.Kernel.Starting
             PowerManager.Uptime.Reset();
 
             // Reset power state
-            Flags.RebootRequested = false;
-            Flags.LogoutRequested = false;
+            KernelFlags.RebootRequested = false;
+            KernelFlags.LogoutRequested = false;
         }
     }
 }

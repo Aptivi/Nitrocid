@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -40,7 +41,7 @@ namespace KS.Kernel.Threading.Watchdog
         {
             try
             {
-                while (!Flags.RebootRequested)
+                while (!KernelFlags.RebootRequested)
                 {
                     // Get the list of threads and supervise them
                     var threads = ThreadManager.KernelThreads.Where((thread) => thread.IsCritical).ToArray();

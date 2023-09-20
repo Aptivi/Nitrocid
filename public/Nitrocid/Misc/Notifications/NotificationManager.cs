@@ -22,7 +22,6 @@ using System.Linq;
 using System.Threading;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Splash;
 using KS.Misc.Text;
@@ -119,7 +118,7 @@ namespace KS.Misc.Notifications
             {
                 var OldNotificationsList = new List<Notification>(NotifRecents);
                 List<Notification> NewNotificationsList;
-                while (!Flags.KernelShutdown)
+                while (!KernelFlags.KernelShutdown)
                 {
                     SpinWait.SpinUntil(() => NotifRecents.Except(OldNotificationsList).ToList().Count > 0 || dismissing);
                     if (dismissing)
@@ -217,7 +216,7 @@ namespace KS.Misc.Notifications
                             }
 
                             // Optionally, draw a border
-                            if (Flags.DrawBorderNotification && !useSimplified)
+                            if (KernelFlags.DrawBorderNotification && !useSimplified)
                             {
                                 // Prepare the variables
                                 char CurrentNotifyUpperLeftCornerChar = NotifyUpperLeftCornerChar;
@@ -271,7 +270,7 @@ namespace KS.Misc.Notifications
                                     TextWriterWhereColor.WriteWhere($"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, 0, true, KernelColorType.NeutralText);
                                     TextWriterWhereColor.WriteWhere(ProgressTitle + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, notifTitleTop, true, NotifyTitleColor);
                                     TextWriterWhereColor.WriteWhere(Desc + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
-                                    ProgressBarColor.WriteProgress(NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), Flags.DrawBorderNotification, true);
+                                    ProgressBarColor.WriteProgress(NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), KernelFlags.DrawBorderNotification, true);
                                     Thread.Sleep(1);
                                     if (NewNotification.ProgressFailed)
                                         TextWriterWhereColor.WriteWhere(ProgressTitle + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, notifTitleTop, true, NotifyProgressFailureColor);
@@ -280,7 +279,7 @@ namespace KS.Misc.Notifications
 
                             // Clear the area
                             SpinWait.SpinUntil(() => sent, 5000);
-                            NotifClearArea(ConsoleWrapper.WindowWidth - (Flags.DrawBorderNotification ? 41 : 40));
+                            NotifClearArea(ConsoleWrapper.WindowWidth - (KernelFlags.DrawBorderNotification ? 41 : 40));
                         }
                     }
                 }

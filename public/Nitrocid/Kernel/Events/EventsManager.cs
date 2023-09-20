@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Journaling;
@@ -51,17 +52,17 @@ namespace KS.Kernel.Events
             var Events = new Dictionary<string, object[]>();
 
             // Enumerate all the fired events
-            DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "Searching events from search term {0}...", SearchTerm);
+            DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, "Searching events from search term {0}...", SearchTerm);
             foreach (string FiredEvent in FiredEvents.Keys)
             {
                 if (FiredEvent.Contains(SearchTerm))
                 {
-                    DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "Got event {0} from search term {1}...", FiredEvent, SearchTerm);
+                    DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, "Got event {0} from search term {1}...", FiredEvent, SearchTerm);
                     var EventArguments = FiredEvents[FiredEvent];
                     Events.Add(FiredEvent, EventArguments);
                 }
             }
-            DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "{0} events.", Events.Count);
+            DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, "{0} events.", Events.Count);
             return Events;
         }
 
@@ -83,7 +84,7 @@ namespace KS.Kernel.Events
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), Event);
 
             // Add fired event to the list
-            DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, $"Raising event {Event}...");
+            DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, $"Raising event {Event}...");
             FiredEvents.Add($"[{FiredEvents.Count}] {Event}", Params);
             JournalManager.WriteJournal(Translate.DoTranslation("Kernel event fired:") + $" {Event} [{FiredEvents.Count}]");
 
@@ -94,13 +95,13 @@ namespace KS.Kernel.Events
             {
                 try
                 {
-                    DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.I, "A mod responded to event {0}...", Event);
+                    DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, "A mod responded to event {0}...", Event);
                     handler.Invoke(Params);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebugConditional(Flags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                    DebugWriter.WriteDebugStackTraceConditional(Flags.EventDebug, ex);
+                    DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTraceConditional(KernelFlags.EventDebug, ex);
                 }
             }
         }

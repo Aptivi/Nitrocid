@@ -20,7 +20,7 @@ using System;
 using System.Linq;
 using KS.Files;
 using KS.Files.Folders;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || Flags.SuppressUnauthorizedMessages;
+            bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || KernelFlags.SuppressUnauthorizedMessages;
             bool Recursive = ListSwitchesOnly.Contains("-recursive");
             if (ListArgsOnly.Length == 0)
             {

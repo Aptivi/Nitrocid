@@ -19,7 +19,7 @@
 using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Network.Base;
 using KS.Shell.ShellBase.Shells;
@@ -45,7 +45,7 @@ namespace KS.Shell.Prompts.Presets.UESH
             string UserDollarSign = UserManagement.GetUserDollarSign(UserManagement.CurrentUser.Username);
 
             // Build the preset
-            if (!Flags.Maintenance)
+            if (!KernelFlags.Maintenance)
             {
                 // Opening
                 PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);

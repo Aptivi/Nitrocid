@@ -23,6 +23,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Kernel.Events;
 using KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands;
+using KS.Kernel.Configuration;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command
 {
@@ -78,7 +79,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             }
             catch (ThreadInterruptedException)
             {
-                Flags.CancelRequested = false;
+                KernelFlags.CancelRequested = false;
                 return;
             }
             catch (Exception ex)

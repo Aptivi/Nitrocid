@@ -27,7 +27,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
@@ -56,11 +56,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// </summary>
         private static void ReminderListen()
         {
-            while (!Flags.KernelShutdown)
+            while (!KernelFlags.KernelShutdown)
             {
                 try
                 {
-                    SpinWait.SpinUntil(() => Flags.KernelShutdown, 100);
+                    SpinWait.SpinUntil(() => KernelFlags.KernelShutdown, 100);
                     lock (ReminderManagerLock)
                     {
                         for (int ReminderIndex = 0; ReminderIndex <= Reminders.Count - 1; ReminderIndex++)
@@ -202,7 +202,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// Saves all the reminders from the reminder list to their individual files
         /// </summary>
         public static void SaveReminders() =>
-            SaveReminders(Paths.GetKernelPath(KernelPathType.Reminders), Flags.SaveEventsRemindersDestructively);
+            SaveReminders(Paths.GetKernelPath(KernelPathType.Reminders), KernelFlags.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the reminders from the reminder list to their individual files

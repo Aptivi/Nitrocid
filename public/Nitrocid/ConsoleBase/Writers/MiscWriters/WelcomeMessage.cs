@@ -71,7 +71,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// </summary>
         public static void WriteMessage()
         {
-            if (!Flags.EnableSplash)
+            if (!KernelFlags.EnableSplash)
             {
                 ConsoleWrapper.CursorVisible = false;
 
@@ -79,7 +79,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                 string MessageWrite = GetCustomBanner();
 
                 // Finally, write the message
-                if (Flags.StartScroll)
+                if (KernelFlags.StartScroll)
                 {
                     TextWriterSlowColor.WriteSlowly(MessageWrite, true, 10d, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
                 }

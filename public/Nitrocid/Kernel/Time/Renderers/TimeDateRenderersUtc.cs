@@ -18,6 +18,7 @@
 
 using System;
 using System.Globalization;
+using KS.Kernel.Configuration;
 using KS.Languages;
 
 namespace KS.Kernel.Time.Renderers
@@ -33,7 +34,7 @@ namespace KS.Kernel.Time.Renderers
         /// </summary>
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc() =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -53,7 +54,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture.</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(CultureInfo Cult) =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.LongTimePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -74,7 +75,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="DT">Specified time</param>
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc(DateTime DT) =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
             : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -96,7 +97,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(DateTime DT, CultureInfo Cult) =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? DT.ToUniversalTime().ToString(Cult.DateTimeFormat.LongTimePattern, Cult)
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -117,7 +118,7 @@ namespace KS.Kernel.Time.Renderers
         /// </summary>
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc() =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
 
@@ -137,7 +138,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture.</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(CultureInfo Cult) =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.LongDatePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
 
@@ -158,7 +159,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="DT">Specified date</param>
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc(DateTime DT) =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
             : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
 
@@ -180,7 +181,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(DateTime DT, CultureInfo Cult) =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? DT.ToUniversalTime().ToString(Cult.DateTimeFormat.LongDatePattern, Cult)
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
 
@@ -201,7 +202,7 @@ namespace KS.Kernel.Time.Renderers
         /// </summary>
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc() =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -221,7 +222,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture.</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(CultureInfo Cult) =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -259,7 +260,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="DT">Specified time and date</param>
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc(DateTime DT) =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
             : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -281,7 +282,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(DateTime DT, CultureInfo Cult) =>
-            Flags.LongTimeDate
+            KernelFlags.LongTimeDate
             ? DT.ToUniversalTime().ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 

@@ -62,7 +62,7 @@ namespace KS.Languages
         /// Current language
         /// </summary>
         public static LanguageInfo CurrentLanguageInfo =>
-            Flags.LoggedIn ? currentUserLanguage : currentLanguage;
+            KernelFlags.LoggedIn ? currentUserLanguage : currentLanguage;
         /// <summary>
         /// Set the language codepage upon switching languages (Windows only)
         /// </summary>
@@ -133,7 +133,7 @@ namespace KS.Languages
                     currentLanguage = Languages[lang];
 
                     // Update Culture if applicable
-                    if (Flags.LangChangeCulture)
+                    if (KernelFlags.LangChangeCulture)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Updating culture.");
                         CultureManager.UpdateCultureDry();
@@ -279,7 +279,7 @@ namespace KS.Languages
         /// <param name="ThrowOnAlreadyInstalled">If the custom language is already installed, throw an exception</param>
         public static void InstallCustomLanguage(string LanguageName, bool ThrowOnAlreadyInstalled = true)
         {
-            if (!Flags.SafeMode)
+            if (!KernelFlags.SafeMode)
             {
                 try
                 {
@@ -350,7 +350,7 @@ namespace KS.Languages
         /// </summary>
         public static void InstallCustomLanguages()
         {
-            if (!Flags.SafeMode)
+            if (!KernelFlags.SafeMode)
             {
                 try
                 {
@@ -380,7 +380,7 @@ namespace KS.Languages
         /// <param name="LanguageName">The custom three-letter language name found in KSLanguages directory</param>
         public static void UninstallCustomLanguage(string LanguageName)
         {
-            if (!Flags.SafeMode)
+            if (!KernelFlags.SafeMode)
             {
                 try
                 {
@@ -426,7 +426,7 @@ namespace KS.Languages
         /// </summary>
         public static void UninstallCustomLanguages()
         {
-            if (!Flags.SafeMode)
+            if (!KernelFlags.SafeMode)
             {
                 try
                 {

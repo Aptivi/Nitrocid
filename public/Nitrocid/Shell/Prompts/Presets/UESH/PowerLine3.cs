@@ -19,7 +19,6 @@
 using System;
 using System.Text;
 using KS.Files.Folders;
-using KS.Kernel;
 using KS.Languages;
 using KS.Network.Base;
 using KS.ConsoleBase.Colors;
@@ -28,6 +27,7 @@ using KS.Users;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using KS.Shell.ShellBase.Shells;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Prompts.Presets.UESH
 {
@@ -65,7 +65,7 @@ namespace KS.Shell.Prompts.Presets.UESH
             var PresetStringBuilder = new StringBuilder();
 
             // Build the preset
-            if (!Flags.Maintenance)
+            if (!KernelFlags.Maintenance)
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));

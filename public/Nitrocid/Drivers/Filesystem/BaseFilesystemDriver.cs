@@ -565,7 +565,7 @@ namespace KS.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) =>
-            GetAllSizesInFolder(DirectoryInfo, Flags.FullParseMode);
+            GetAllSizesInFolder(DirectoryInfo, KernelFlags.FullParseMode);
 
         /// <inheritdoc/>
         public virtual long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode)
@@ -583,7 +583,7 @@ namespace KS.Drivers.Filesystem
             long TotalSize = 0L; // In bytes
             foreach (FileInfo DFile in Files)
             {
-                if (DFile.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !DFile.Attributes.HasFlag(FileAttributes.Hidden))
+                if (DFile.Attributes == FileAttributes.Hidden & KernelFlags.HiddenFiles | !DFile.Attributes.HasFlag(FileAttributes.Hidden))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "File {0}, Size {1} bytes", DFile.Name, DFile.Length);
                     TotalSize += DFile.Length;
@@ -668,7 +668,7 @@ namespace KS.Drivers.Filesystem
                     EnumerationOptions options = new()
                     {
                         RecurseSubdirectories = Recursive,
-                        AttributesToSkip = Flags.HiddenFiles ? FileAttributes.System : FileAttributes.Hidden | FileAttributes.System
+                        AttributesToSkip = KernelFlags.HiddenFiles ? FileAttributes.System : FileAttributes.Hidden | FileAttributes.System
                     };
                     Entries = Directory.EnumerateFileSystemEntries(Parent, Pattern, options).ToArray();
                     DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
@@ -1069,7 +1069,7 @@ namespace KS.Drivers.Filesystem
 
         /// <inheritdoc/>
         public virtual void PrintContents(string filename) =>
-            PrintContents(filename, Flags.PrintLineNumbers);
+            PrintContents(filename, KernelFlags.PrintLineNumbers);
 
         /// <inheritdoc/>
         public virtual void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
@@ -1116,7 +1116,7 @@ namespace KS.Drivers.Filesystem
                 long TotalSize = SizeGetter.GetAllSizesInFolder(finalDirInfo);
 
                 // Print information
-                if (finalDirInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
+                if (finalDirInfo.Attributes == FileAttributes.Hidden & KernelFlags.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
                     TextWriterColor.Write("- " + finalDirInfo.Name + "/", false, KernelColorType.ListEntry);
                     if (ShowDirectoryDetails)
@@ -1144,7 +1144,7 @@ namespace KS.Drivers.Filesystem
             if (FileInfo.Type == FileSystemEntryType.File)
             {
                 var finalDirInfo = FileInfo.BaseEntry as FileInfo;
-                if (finalDirInfo.Attributes == FileAttributes.Hidden & Flags.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
+                if (finalDirInfo.Attributes == FileAttributes.Hidden & KernelFlags.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
                     if (finalDirInfo.Name.EndsWith(".uesh"))
                     {

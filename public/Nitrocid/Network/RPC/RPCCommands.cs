@@ -22,7 +22,6 @@ using System.Net;
 using System.Net.Sockets;
 using System.Text;
 using System.Threading;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Power;
 using KS.Languages;
@@ -34,6 +33,7 @@ using KS.Kernel.Exceptions;
 using System.Linq;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Shells;
+using KS.Kernel.Configuration;
 
 namespace KS.Network.RPC
 {
@@ -241,7 +241,7 @@ namespace KS.Network.RPC
         private static void HandleExec(string value)
         {
             string Command = value.Replace("ExecConfirm, ", "").Replace(CharManager.NewLine, "");
-            if (Flags.LoggedIn)
+            if (KernelFlags.LoggedIn)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Exec confirmed from remote access.");
                 TextWriterColor.Write();

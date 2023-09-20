@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Threading;
-using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -108,11 +107,11 @@ namespace KS.Misc.Screensaver
             try
             {
                 var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
-                while (!Flags.KernelShutdown)
+                while (!KernelFlags.KernelShutdown)
                 {
                     int OldCursorLeft = termDriver.CursorLeft;
-                    SpinWait.SpinUntil(() => !Flags.ScrnTimeReached || Flags.KernelShutdown);
-                    if (!Flags.ScrnTimeReached)
+                    SpinWait.SpinUntil(() => !KernelFlags.ScrnTimeReached || KernelFlags.KernelShutdown);
+                    if (!KernelFlags.ScrnTimeReached)
                     {
                         // Start the stopwatch for monitoring
                         var stopwatch = new Stopwatch();
@@ -123,13 +122,13 @@ namespace KS.Misc.Screensaver
                         SpinWait.SpinUntil(() =>
                         {
                             hasMoved = termDriver.MovementDetected;
-                            return hasMoved || Flags.KernelShutdown;
+                            return hasMoved || KernelFlags.KernelShutdown;
                         }, ScreenTimeout);
 
                         // Check to see if we're locking
                         bool locking = !hasMoved && stopwatch.ElapsedMilliseconds >= ScreenTimeout;
                         stopwatch.Reset();
-                        if (Flags.KernelShutdown || Flags.RebootRequested)
+                        if (KernelFlags.KernelShutdown || KernelFlags.RebootRequested)
                             break;
                         else if (locking)
                         {
@@ -200,7 +199,7 @@ namespace KS.Misc.Screensaver
                     if (BaseSaver.ScreensaverContainsFlashingImages)
                         BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;
-                    Flags.ScrnTimeReached = true;
+                    KernelFlags.ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(BaseSaver);
                     DebugWriter.WriteDebug(DebugLevel.I, "{0} started", saver);
                 }
@@ -211,7 +210,7 @@ namespace KS.Misc.Screensaver
                     if (BaseSaver.ScreensaverContainsFlashingImages)
                         BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;
-                    Flags.ScrnTimeReached = true;
+                    KernelFlags.ScrnTimeReached = true;
                     ScreensaverDisplayer.ScreensaverDisplayerThread.Start(new CustomDisplay(BaseSaver));
                     DebugWriter.WriteDebug(DebugLevel.I, "Custom screensaver {0} started", saver);
                 }

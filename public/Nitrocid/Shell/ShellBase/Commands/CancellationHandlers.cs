@@ -17,12 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using KS.Kernel;
 using KS.Drivers;
 using KS.Shell.ShellBase.Shells;
 using KS.Drivers.Console;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -59,7 +59,7 @@ namespace KS.Shell.ShellBase.Commands
                 lock (syncLock)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Locking to cancel...");
-                    Flags.CancelRequested = true;
+                    KernelFlags.CancelRequested = true;
                     TextWriterColor.Write();
                     DriverHandler.SetDriver<IConsoleDriver>("Null");
                     StartCommandThread.Stop();

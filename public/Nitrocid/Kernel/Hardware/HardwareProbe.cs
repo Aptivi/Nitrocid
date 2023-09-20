@@ -23,6 +23,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Kernel.Events;
+using KS.Kernel.Configuration;
 
 namespace KS.Kernel.Hardware
 {
@@ -45,7 +46,7 @@ namespace KS.Kernel.Hardware
             {
                 InxiTrace.DebugDataReceived += WriteInxiDebugData;
                 InxiTrace.HardwareParsed += WriteWhatProbed;
-                if (Flags.FullHardwareProbe)
+                if (KernelFlags.FullHardwareProbe)
                 {
                     HardwareInfo = new Inxi();
                     DebugWriter.WriteDebug(DebugLevel.I, "Probe finished.");
@@ -75,7 +76,7 @@ namespace KS.Kernel.Hardware
         private static void WriteWhatProbed(InxiHardwareType Hardware)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Hardware {0} ({1}) successfully probed.", Hardware, Hardware.ToString());
-            if (!Flags.QuietHardwareProbe & Flags.VerboseHardwareProbe | Flags.EnableSplash)
+            if (!KernelFlags.QuietHardwareProbe & KernelFlags.VerboseHardwareProbe | KernelFlags.EnableSplash)
                 SplashReport.ReportProgress(Translate.DoTranslation("Successfully probed {0}."), 5, Hardware.ToString());
         }
 

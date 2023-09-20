@@ -18,7 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -112,7 +112,7 @@ namespace KS.Arguments.ArgumentBase
             else if (string.IsNullOrWhiteSpace(Argument))
             {
                 // List the available arguments
-                if (!Flags.SimHelp)
+                if (!KernelFlags.SimHelp)
                 {
                     foreach (string cmd in ArgumentList.Keys)
                     {

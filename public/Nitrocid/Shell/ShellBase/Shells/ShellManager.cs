@@ -341,7 +341,7 @@ namespace KS.Shell.ShellBase.Shells
 
                 // There are cases when the kernel panics or reboots in the middle of the command input. If reboot is requested,
                 // ensure that we're really gone.
-                if (Flags.RebootRequested)
+                if (KernelFlags.RebootRequested)
                     return;
             }
 
@@ -437,7 +437,7 @@ namespace KS.Shell.ShellBase.Shells
                                 }
 
                                 // Check the command before starting
-                                if (Flags.Maintenance == true & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
+                                if (KernelFlags.Maintenance == true & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", commandName);
                                     TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);

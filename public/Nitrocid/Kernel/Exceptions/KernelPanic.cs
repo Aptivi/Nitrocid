@@ -21,6 +21,7 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Kernel.Journaling;
@@ -57,15 +58,15 @@ namespace KS.Kernel.Exceptions
         /// <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
         internal static void KernelError(KernelErrorLevel ErrorType, bool Reboot, long RebootTime, string Description, Exception Exc, params object[] Variables)
         {
-            Flags.KernelErrored = true;
+            KernelFlags.KernelErrored = true;
             LastKernelErrorException = Exc ??
                 new KernelException(KernelExceptionType.Unknown);
-            Flags.NotifyKernelError = true;
+            KernelFlags.NotifyKernelError = true;
 
             try
             {
                 // Unquiet
-                Flags.QuietKernel = false;
+                KernelFlags.QuietKernel = false;
                 JournalManager.WriteJournal(Description, JournalStatus.Fatal, Variables);
 
                 // Check error types and its capabilities
@@ -122,7 +123,7 @@ namespace KS.Kernel.Exceptions
                     // Offer the user to wait for the set time interval before the kernel reboots.
                     DebugWriter.WriteDebug(DebugLevel.F, "Kernel panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
                     SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Rebooting in {2} seconds..."), Exc, ErrorType, Description, RebootTime);
-                    if (Flags.ShowStackTraceOnKernelError & Exc is not null)
+                    if (KernelFlags.ShowStackTraceOnKernelError & Exc is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
                     Thread.Sleep((int)(RebootTime * 1000L));
                     PowerManager.PowerManage(PowerMode.Reboot);
@@ -133,7 +134,7 @@ namespace KS.Kernel.Exceptions
                     DebugWriter.WriteDebug(DebugLevel.W, "Reboot is False, ErrorType is not double or continuable.");
                     DebugWriter.WriteDebug(DebugLevel.F, "Shutdown panic initiated with reboot time: {0} seconds, Error Type: {1}", RebootTime, ErrorType);
                     SplashReport.ReportProgressError(Translate.DoTranslation("[{0}] panic: {1} -- Press any key to shutdown."), Exc, ErrorType, Description);
-                    if (Flags.ShowStackTraceOnKernelError & Exc is not null)
+                    if (KernelFlags.ShowStackTraceOnKernelError & Exc is not null)
                         SplashReport.ReportProgressError(Exc.StackTrace);
                     Input.DetectKeypress();
                     PowerManager.PowerManage(PowerMode.Shutdown);
@@ -156,15 +157,15 @@ namespace KS.Kernel.Exceptions
         /// <param name="Variables">Optional. Specifies variables to get on text that will be printed.</param>
         private static void KernelErrorDouble(string Description, Exception Exc, params object[] Variables)
         {
-            Flags.KernelErrored = true;
+            KernelFlags.KernelErrored = true;
             LastKernelErrorException = Exc ??
                 new KernelException(KernelExceptionType.Unknown);
-            Flags.NotifyKernelError = true;
+            KernelFlags.NotifyKernelError = true;
 
             try
             {
                 // Unquiet
-                Flags.QuietKernel = false;
+                KernelFlags.QuietKernel = false;
 
                 // Format the "Description" string variable
                 Description = TextTools.FormatString(Description, Variables);
@@ -200,7 +201,7 @@ namespace KS.Kernel.Exceptions
                 EventsManager.FireEvent(EventType.ContKernelError, Description, Exc, Variables);
                 DebugWriter.WriteDebug(DebugLevel.W, "Continuable kernel error occurred: {0}. {1}.", Description, Exc?.Message);
                 SplashReport.ReportProgressWarning(Translate.DoTranslation("Continuable kernel error occurred:") + " {0}", Exc, Description);
-                if (Flags.ShowStackTraceOnKernelError && Exc is not null)
+                if (KernelFlags.ShowStackTraceOnKernelError && Exc is not null)
                     SplashReport.ReportProgressWarning(Exc.StackTrace);
                 SplashReport.ReportProgressWarning(Translate.DoTranslation("This error may cause instabilities to the kernel or to the applications. Press any key to continue using the kernel..."));
                 Input.DetectKeypress();
@@ -406,11 +407,11 @@ namespace KS.Kernel.Exceptions
 
         internal static void NotifyBootFailure()
         {
-            if (Flags.NotifyKernelError)
+            if (KernelFlags.NotifyKernelError)
             {
                 string translated = Translate.DoTranslation("Previous boot failed");
                 var failureBuilder = new StringBuilder();
-                Flags.NotifyKernelError = false;
+                KernelFlags.NotifyKernelError = false;
                 SplashManager.BeginSplashOut();
                 failureBuilder.AppendLine(translated);
                 failureBuilder.AppendLine(new string('=', translated.Length) + "\n");

@@ -18,7 +18,6 @@
 
 using KS.Files.Folders;
 using FS = KS.Files.Filesystem;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;
@@ -35,6 +34,7 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Configuration;
 
 namespace KS.Drivers.Network
 {
@@ -57,7 +57,7 @@ namespace KS.Drivers.Network
 
         /// <inheritdoc/>
         public virtual bool DownloadFile(string URL) =>
-            DownloadFile(URL, Flags.ShowProgress);
+            DownloadFile(URL, KernelFlags.ShowProgress);
 
         /// <inheritdoc/>
         public virtual bool DownloadFile(string URL, bool ShowProgress)
@@ -68,7 +68,7 @@ namespace KS.Drivers.Network
 
         /// <inheritdoc/>
         public virtual bool DownloadFile(string URL, string FileName) =>
-            DownloadFile(URL, Flags.ShowProgress, FileName);
+            DownloadFile(URL, KernelFlags.ShowProgress, FileName);
 
         /// <inheritdoc/>
         public virtual bool DownloadFile(string URL, bool ShowProgress, string FileName)
@@ -111,7 +111,7 @@ namespace KS.Drivers.Network
             }, NetworkTransfer.CancellationToken.Token);
             while (!NetworkTools.TransferFinished)
             {
-                if (Flags.CancelRequested)
+                if (KernelFlags.CancelRequested)
                 {
                     NetworkTools.TransferFinished = true;
                     NetworkTransfer.CancellationToken.Cancel();
@@ -140,7 +140,7 @@ namespace KS.Drivers.Network
 
         /// <inheritdoc/>
         public virtual string DownloadString(string URL) =>
-            DownloadString(URL, Flags.ShowProgress);
+            DownloadString(URL, KernelFlags.ShowProgress);
 
         /// <inheritdoc/>
         public virtual string DownloadString(string URL, bool ShowProgress)
@@ -181,7 +181,7 @@ namespace KS.Drivers.Network
             }, NetworkTransfer.CancellationToken.Token);
             while (!NetworkTools.TransferFinished)
             {
-                if (Flags.CancelRequested)
+                if (KernelFlags.CancelRequested)
                 {
                     NetworkTools.TransferFinished = true;
                     NetworkTransfer.CancellationToken.Cancel();
@@ -231,7 +231,7 @@ namespace KS.Drivers.Network
 
         /// <inheritdoc/>
         public virtual bool UploadFile(string FileName, string URL) =>
-            UploadFile(FileName, URL, Flags.ShowProgress);
+            UploadFile(FileName, URL, KernelFlags.ShowProgress);
 
         /// <inheritdoc/>
         public virtual bool UploadFile(string FileName, string URL, bool ShowProgress)
@@ -288,7 +288,7 @@ namespace KS.Drivers.Network
 
         /// <inheritdoc/>
         public virtual bool UploadString(string URL, string Data) => 
-            UploadString(URL, Data, Flags.ShowProgress);
+            UploadString(URL, Data, KernelFlags.ShowProgress);
 
         /// <inheritdoc/>
         public virtual bool UploadString(string URL, string Data, bool ShowProgress)

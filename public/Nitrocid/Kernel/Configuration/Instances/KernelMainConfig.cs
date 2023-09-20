@@ -1510,8 +1510,8 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool DoNotDisturb
         {
-            get => Flags.DoNotDisturb;
-            set => Flags.DoNotDisturb = value;
+            get => KernelFlags.DoNotDisturb;
+            set => KernelFlags.DoNotDisturb = value;
         }
         /// <summary>
         /// A character that resembles the upper left corner. Be sure to only input one character.

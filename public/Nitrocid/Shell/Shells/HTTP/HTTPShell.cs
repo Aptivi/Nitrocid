@@ -19,7 +19,7 @@
 using System;
 using System.Net.Http;
 using System.Threading;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -63,7 +63,7 @@ namespace KS.Shell.Shells.HTTP
                 }
                 catch (ThreadInterruptedException)
                 {
-                    Flags.CancelRequested = false;
+                    KernelFlags.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

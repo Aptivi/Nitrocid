@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using System;
@@ -54,9 +55,9 @@ namespace KS.Kernel
         /// </summary>
         internal static void CheckErrored()
         {
-            if (Flags.KernelErrored)
+            if (KernelFlags.KernelErrored)
             {
-                Flags.KernelErrored = false;
+                KernelFlags.KernelErrored = false;
                 var exception = KernelPanic.LastKernelErrorException;
                 throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), exception, exception.Message);
             }

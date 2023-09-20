@@ -20,7 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Querying;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), StringArgs);
                 return 0;
             }
-            else if (Checking.FileExists($"{modPath}{StringArgs}") & !Flags.SafeMode)
+            else if (Checking.FileExists($"{modPath}{StringArgs}") & !KernelFlags.SafeMode)
             {
                 ScreensaverManager.SetDefaultScreensaver(StringArgs);
                 TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), StringArgs);

@@ -19,7 +19,7 @@
 using System;
 using System.Threading;
 using KS.Files;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -75,7 +75,7 @@ namespace KS.Shell.Shells.SFTP
                 }
                 catch (ThreadInterruptedException)
                 {
-                    Flags.CancelRequested = false;
+                    KernelFlags.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

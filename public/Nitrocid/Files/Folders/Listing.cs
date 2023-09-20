@@ -27,7 +27,6 @@ using KS.Drivers;
 using KS.Files.Instances;
 using KS.Files.Print;
 using KS.Files.Querying;
-using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -81,14 +80,14 @@ namespace KS.Files.Folders
         /// List all files and folders in a specified folder
         /// </summary>
         /// <param name="folder">Full path to folder</param>
-        public static void List(string folder) => List(folder, ShowFileDetailsList, Flags.SuppressUnauthorizedMessages, SortList);
+        public static void List(string folder) => List(folder, ShowFileDetailsList, KernelFlags.SuppressUnauthorizedMessages, SortList);
 
         /// <summary>
         /// List all files and folders in a specified folder
         /// </summary>
         /// <param name="folder">Full path to folder</param>
         /// <param name="Sort">Whether to sort the filesystem entries</param>
-        public static void List(string folder, bool Sort) => List(folder, ShowFileDetailsList, Flags.SuppressUnauthorizedMessages, Sort);
+        public static void List(string folder, bool Sort) => List(folder, ShowFileDetailsList, KernelFlags.SuppressUnauthorizedMessages, Sort);
 
         /// <summary>
         /// List all files and folders in a specified folder

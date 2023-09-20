@@ -20,7 +20,6 @@ using System;
 using System.Collections.Generic;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
@@ -35,6 +34,7 @@ using KS.Kernel.Threading;
 using KS.Shell.ShellBase.Commands.ArgumentsParsers;
 using KS.Shell.ShellBase.Scripting;
 using KS.Shell.ShellBase.Aliases;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -250,7 +250,7 @@ namespace KS.Shell.ShellBase.Commands
             }
             catch (ThreadInterruptedException)
             {
-                Flags.CancelRequested = false;
+                KernelFlags.CancelRequested = false;
                 ShellInstance.LastErrorCode = -5;
             }
             catch (Exception ex)

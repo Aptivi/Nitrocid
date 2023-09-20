@@ -19,7 +19,6 @@
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel.Debugging;
-using KS.Kernel;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
@@ -31,6 +30,7 @@ using SharpCompress.Common;
 using SharpCompress.Readers;
 using SharpCompress.Archives.Zip;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Configuration;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 }
                 catch (ThreadInterruptedException)
                 {
-                    Flags.CancelRequested = false;
+                    KernelFlags.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

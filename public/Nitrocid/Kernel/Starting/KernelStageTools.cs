@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Splash;
@@ -49,7 +50,7 @@ namespace KS.Kernel.Starting
 
                 // Report the stage to the splash manager
                 ReportNewStage(stageNum, $"- {Translate.DoTranslation("Stage")} {stageNum}: {Translate.DoTranslation(stage.StageName)}");
-                if ((Flags.SafeMode && stage.StageRunsInSafeMode) || !Flags.SafeMode)
+                if ((KernelFlags.SafeMode && stage.StageRunsInSafeMode) || !KernelFlags.SafeMode)
                     stage.StageAction();
                 else
                     SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0);
@@ -69,13 +70,13 @@ namespace KS.Kernel.Starting
             // Show the stage finish times
             if (StageNumber <= 1)
             {
-                if (Flags.ShowStageFinishTimes)
+                if (KernelFlags.ShowStageFinishTimes)
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {KernelTools.StageTimer.Elapsed}", 0);
                     KernelTools.StageTimer.Restart();
                 }
             }
-            else if (Flags.ShowStageFinishTimes)
+            else if (KernelFlags.ShowStageFinishTimes)
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {KernelTools.StageTimer.Elapsed}", 10);
                 if (StageNumber > Stages.Count)
@@ -90,7 +91,7 @@ namespace KS.Kernel.Starting
             // Actually report the stage
             if (StageNumber >= 1 & StageNumber <= Stages.Count)
             {
-                if (!Flags.EnableSplash & !Flags.QuietKernel)
+                if (!KernelFlags.EnableSplash & !KernelFlags.QuietKernel)
                 {
                     TextWriterColor.Write();
                     SeparatorWriterColor.WriteSeparator(StageText, false, KernelColorType.Stage);

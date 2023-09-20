@@ -22,7 +22,6 @@ using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.Files;
-using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -96,7 +95,7 @@ namespace KS.ConsoleBase.Themes
                 var ThemeInfo = GetThemeInfo(theme);
 
                 // Check if the console supports true color
-                if ((Flags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
+                if ((KernelFlags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
                 {
                     // Check to see if the event is finished
                     if (ThemeInfo.IsExpired)
@@ -175,7 +174,7 @@ namespace KS.ConsoleBase.Themes
                 throw new KernelException(KernelExceptionType.Color, nameof(ThemeInfo));
 
             // Check to see if we're trying to preview theme on non-true color console
-            if (IsTrueColorRequired(ThemeInfo) && !Flags.ConsoleSupportsTrueColor)
+            if (IsTrueColorRequired(ThemeInfo) && !KernelFlags.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
             // Set the colors

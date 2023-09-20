@@ -26,7 +26,6 @@ using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
-using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Screensaver.Customized;
@@ -62,8 +61,8 @@ namespace KS.Modifications
         public static void StartMods()
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
-            if (!Flags.SafeMode)
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelFlags.SafeMode);
+            if (!KernelFlags.SafeMode)
             {
                 // We're not in safe mode. We're good now.
                 if (!Checking.FolderExists(ModPath))
@@ -101,10 +100,10 @@ namespace KS.Modifications
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelFlags.SafeMode);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
 
-            if (!Flags.SafeMode)
+            if (!KernelFlags.SafeMode)
             {
                 if (Checking.FileExists(PathToMod))
                 {
@@ -148,8 +147,8 @@ namespace KS.Modifications
         public static void StopMods()
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
-            if (!Flags.SafeMode)
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelFlags.SafeMode);
+            if (!KernelFlags.SafeMode)
             {
                 // We're not in safe mode. We're good now.
                 if (!Checking.FolderExists(ModPath))
@@ -227,10 +226,10 @@ namespace KS.Modifications
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelFlags.SafeMode);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
 
-            if (Flags.SafeMode)
+            if (KernelFlags.SafeMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
                 TextWriterColor.Write(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);

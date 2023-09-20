@@ -20,7 +20,7 @@ using System;
 using System.Linq;
 using KS.Files;
 using KS.Files.Folders;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.SFTP.Commands
@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.SFTP.Commands
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || Flags.SuppressUnauthorizedMessages;
+            bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || KernelFlags.SuppressUnauthorizedMessages;
             if (ListArgsOnly?.Length == 0)
             {
                 Listing.List(SFTPShellCommon.SFTPCurrDirect, ShowFileDetails, SuppressUnauthorizedMessage);

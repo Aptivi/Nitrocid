@@ -21,13 +21,13 @@ using System.Diagnostics;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Kernel.Events;
 using System.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.ShellBase.Commands.Execution
 {
@@ -111,7 +111,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
                 CommandProcess.BeginErrorReadLine();
 
                 // Wait for process exit
-                while (!HasProcessExited | !Flags.CancelRequested)
+                while (!HasProcessExited | !KernelFlags.CancelRequested)
                 {
                     if (HasProcessExited)
                     {
@@ -120,7 +120,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
                         DebugWriter.WriteDebug(DebugLevel.I, "Flushed as much as possible.");
                         break;
                     }
-                    else if (Flags.CancelRequested)
+                    else if (KernelFlags.CancelRequested)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Process killed! Output may not be complete!");
                         CommandProcess.Kill();
@@ -134,7 +134,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
             }
             catch (ThreadInterruptedException)
             {
-                Flags.CancelRequested = false;
+                KernelFlags.CancelRequested = false;
                 return default;
             }
             catch (Exception ex)
@@ -208,7 +208,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
                     CommandProcess.BeginErrorReadLine();
 
                 // Wait for process exit
-                while (!HasProcessExited | !Flags.CancelRequested)
+                while (!HasProcessExited | !KernelFlags.CancelRequested)
                 {
                     if (HasProcessExited)
                     {
@@ -217,7 +217,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
                         DebugWriter.WriteDebug(DebugLevel.I, "Flushed as much as possible.");
                         break;
                     }
-                    else if (Flags.CancelRequested)
+                    else if (KernelFlags.CancelRequested)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Process killed! Output may not be complete!");
                         CommandProcess.Kill();
@@ -231,7 +231,7 @@ namespace KS.Shell.ShellBase.Commands.Execution
             }
             catch (ThreadInterruptedException)
             {
-                Flags.CancelRequested = false;
+                KernelFlags.CancelRequested = false;
                 exitCode = -1;
             }
             catch (Exception ex)

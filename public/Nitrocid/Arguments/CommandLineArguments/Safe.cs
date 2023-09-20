@@ -17,14 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.ArgumentBase;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 
 namespace KS.Arguments.CommandLineArguments
 {
     class SafeArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => Flags.SafeMode = true;
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => KernelFlags.SafeMode = true;
 
     }
 }

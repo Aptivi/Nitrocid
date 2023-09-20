@@ -25,7 +25,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
-using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -242,7 +241,7 @@ namespace KS.Network.Mail
             try
             {
                 // Register the context and initialize the loggers if debug mode is on
-                if (Flags.DebugMode & Mail_Debug)
+                if (KernelFlags.DebugMode & Mail_Debug)
                 {
                     IMAP_Client = new ImapClient(new ProtocolLogger(Paths.HomePath + "/ImapDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
                     SMTP_Client = new SmtpClient(new ProtocolLogger(Paths.HomePath + "/SmtpDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });

@@ -19,7 +19,6 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Drivers.Encryption;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -60,7 +59,7 @@ namespace KS.Users.Login
         /// </summary>
         public static void LoginPrompt()
         {
-            while (!(Flags.RebootRequested | Flags.KernelShutdown))
+            while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
             {
                 // Fire event PreLogin
                 EventsManager.FireEvent(EventType.PreLogin);
@@ -74,23 +73,23 @@ namespace KS.Users.Login
                 }
 
                 // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
-                if (Flags.ClearOnLogin == true)
+                if (KernelFlags.ClearOnLogin == true)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
                     ConsoleBase.ConsoleWrapper.Clear();
                 }
 
                 // Show MOTD once
-                DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", Flags.ShowMOTDOnceFlag, Flags.ShowMOTD);
-                if (Flags.ShowMOTDOnceFlag == true & Flags.ShowMOTD == true)
+                DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", KernelFlags.ShowMOTDOnceFlag, KernelFlags.ShowMOTD);
+                if (KernelFlags.ShowMOTDOnceFlag == true & KernelFlags.ShowMOTD == true)
                 {
                     TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
-                    Flags.ShowMOTDOnceFlag = false;
+                    KernelFlags.ShowMOTDOnceFlag = false;
                 }
 
                 // How do we prompt user to login?
                 var UsersList = UserManagement.ListAllUsers();
-                if (Flags.ModernLogon)
+                if (KernelFlags.ModernLogon)
                 {
                     // Invoke the modern logon handler
                     ModernLogonScreen.ShowLogon();
@@ -98,7 +97,7 @@ namespace KS.Users.Login
                 else
                 {
                     // Generate user list
-                    if (Flags.ShowAvailableUsers)
+                    if (KernelFlags.ShowAvailableUsers)
                     {
                         TextWriterColor.Write(Translate.DoTranslation("You can log in to these accounts:"));
                         ListWriterColor.WriteList(UsersList);
@@ -131,7 +130,7 @@ namespace KS.Users.Login
         public static bool ShowPasswordPrompt(string usernamerequested)
         {
             // Prompts user to enter a user's password
-            while (!(Flags.RebootRequested | Flags.KernelShutdown))
+            while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
             {
                 // Get the password from dictionary
                 int userIndex = UserManagement.GetUserIndex(usernamerequested);
@@ -155,7 +154,7 @@ namespace KS.Users.Login
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
-                        if (!Flags.Maintenance)
+                        if (!KernelFlags.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
                                 return false;
@@ -191,7 +190,7 @@ namespace KS.Users.Login
             }
 
             // Notifies the kernel that the user has signed in
-            Flags.LoggedIn = true;
+            KernelFlags.LoggedIn = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Logged in to {0}!", signedInUser);
 
             // Sign in to user.
@@ -210,7 +209,7 @@ namespace KS.Users.Login
 
             // Show current time
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
-            if (Flags.ShowCurrentTimeBeforeLogin)
+            if (KernelFlags.ShowCurrentTimeBeforeLogin)
                 TimeDateMiscRenderers.ShowCurrentTimes();
             TextWriterColor.Write();
 
@@ -226,12 +225,12 @@ namespace KS.Users.Login
 #endif
 
             // Show the tip
-            if (Flags.ShowTip)
+            if (KernelFlags.ShowTip)
                 WelcomeMessage.ShowTip();
 
             // Show MOTD
-            Flags.ShowMOTDOnceFlag = true;
-            if (Flags.ShowMAL)
+            KernelFlags.ShowMOTDOnceFlag = true;
+            if (KernelFlags.ShowMAL)
                 TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
 
@@ -253,7 +252,7 @@ namespace KS.Users.Login
             if (UserManagement.UserExists(user))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");
-                for (int tries = 0; tries < 3 && !Flags.RebootRequested; tries++)
+                for (int tries = 0; tries < 3 && !KernelFlags.RebootRequested; tries++)
                 {
                     if (ShowPasswordPrompt(user))
                         SignIn(user);

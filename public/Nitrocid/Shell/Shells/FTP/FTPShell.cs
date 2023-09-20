@@ -21,7 +21,6 @@ using System.Threading;
 using FluentFTP;
 using KS.ConsoleBase.Colors;
 using KS.Files;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -31,6 +30,7 @@ using KS.Network.FTP;
 using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Shells;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.FTP
 {
@@ -78,8 +78,8 @@ namespace KS.Shell.Shells.FTP
 
             // Initialize logging
             clientFTP.Logger = new FTPLogger();
-            clientFTP.Config.LogUserName = Flags.FTPLoggerUsername;
-            clientFTP.Config.LogHost = Flags.FTPLoggerIP;
+            clientFTP.Config.LogUserName = KernelFlags.FTPLoggerUsername;
+            clientFTP.Config.LogHost = KernelFlags.FTPLoggerIP;
 
             // Don't remove this, make a config entry for it, or set it to True! It will introduce security problems.
             clientFTP.Config.LogPassword = false;
@@ -96,7 +96,7 @@ namespace KS.Shell.Shells.FTP
                 }
                 catch (ThreadInterruptedException)
                 {
-                    Flags.CancelRequested = false;
+                    KernelFlags.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

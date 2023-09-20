@@ -20,7 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using System;
@@ -57,7 +57,7 @@ namespace KS.ConsoleBase.Themes
         internal static void PreviewThemeSimple(Dictionary<KernelColorType, Color> colors)
         {
             // Check to see if we're trying to preview theme on non-true color console
-            if (ThemeTools.IsTrueColorRequired(colors) && !Flags.ConsoleSupportsTrueColor)
+            if (ThemeTools.IsTrueColorRequired(colors) && !KernelFlags.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
             // Write the prompt
@@ -98,7 +98,7 @@ namespace KS.ConsoleBase.Themes
         internal static void PreviewTheme(Dictionary<KernelColorType, Color> colors, ThemeInfo theme)
         {
             // Check to see if we're trying to preview theme on non-true color console
-            if (ThemeTools.IsTrueColorRequired(colors) && !Flags.ConsoleSupportsTrueColor)
+            if (ThemeTools.IsTrueColorRequired(colors) && !KernelFlags.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
             // Clear the screen

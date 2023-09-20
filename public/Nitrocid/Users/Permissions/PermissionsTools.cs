@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Journaling;
@@ -70,7 +70,7 @@ namespace KS.Users.Permissions
         public static void Demand(PermissionTypes permissionType)
         {
             // Don't demand when kernel is errored
-            if (Flags.KernelErrored)
+            if (KernelFlags.KernelErrored)
                 return;
 
             // Get all the permission types

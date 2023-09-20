@@ -73,7 +73,7 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static void CreateConfig(string ConfigFolder)
         {
-            if (Flags.SafeMode)
+            if (KernelFlags.SafeMode)
                 return;
 
             Filesystem.ThrowOnInvalidPath(ConfigFolder);
@@ -92,7 +92,7 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static void CreateConfig(ConfigType type, string ConfigPath)
         {
-            if (Flags.SafeMode)
+            if (KernelFlags.SafeMode)
                 return;
 
             Filesystem.ThrowOnInvalidPath(ConfigPath);

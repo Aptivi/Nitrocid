@@ -27,7 +27,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
@@ -51,11 +51,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// </summary>
         private static void EventListen()
         {
-            while (!Flags.KernelShutdown)
+            while (!KernelFlags.KernelShutdown)
             {
                 try
                 {
-                    SpinWait.SpinUntil(() => Flags.KernelShutdown, 100);
+                    SpinWait.SpinUntil(() => KernelFlags.KernelShutdown, 100);
                     lock (EventManagerLock)
                     {
                         for (int EventIndex = 0; EventIndex <= CalendarEvents.Count - 1; EventIndex++)
@@ -187,7 +187,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// Saves all the events from the event list to their individual files
         /// </summary>
         public static void SaveEvents() =>
-            SaveEvents(Paths.GetKernelPath(KernelPathType.Events), Flags.SaveEventsRemindersDestructively);
+            SaveEvents(Paths.GetKernelPath(KernelPathType.Events), KernelFlags.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the events from the event list to their individual files

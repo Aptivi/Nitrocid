@@ -18,7 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (ShellStart.ShellStack.Count == 1)
             {
-                Flags.LogoutRequested = true;
+                KernelFlags.LogoutRequested = true;
                 return 0;
             }
             else

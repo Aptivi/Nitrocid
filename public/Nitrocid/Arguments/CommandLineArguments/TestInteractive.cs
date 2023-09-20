@@ -18,6 +18,7 @@
 
 using KS.Arguments.ArgumentBase;
 using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.Testing;
 
 namespace KS.Arguments.CommandLineArguments
@@ -30,7 +31,7 @@ namespace KS.Arguments.CommandLineArguments
             KernelTools.StageTimer.Stop();
             TestInteractive.Open();
             KernelTools.StageTimer.Start();
-            Flags.KernelShutdown = true;
+            KernelFlags.KernelShutdown = true;
         }
 
     }

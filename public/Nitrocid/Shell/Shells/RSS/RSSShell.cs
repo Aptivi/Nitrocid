@@ -19,7 +19,6 @@
 using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
@@ -29,6 +28,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.HTTP;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Network.SpeedDial;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.RSS
 {
@@ -74,7 +74,7 @@ namespace KS.Shell.Shells.RSS
                 }
                 catch (ThreadInterruptedException)
                 {
-                    Flags.CancelRequested = false;
+                    KernelFlags.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

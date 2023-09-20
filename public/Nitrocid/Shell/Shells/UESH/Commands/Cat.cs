@@ -21,7 +21,7 @@ using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Print;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Shell.ShellBase.Commands;
 
@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             try
             {
-                bool PrintLines = Flags.PrintLineNumbers;
+                bool PrintLines = KernelFlags.PrintLineNumbers;
                 bool ForcePlain = false;
                 if (ListSwitchesOnly.Contains("-lines"))
                     PrintLines = true;

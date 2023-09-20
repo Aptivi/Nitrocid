@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
-using KS.Kernel;
+using KS.Kernel.Configuration;
 
 namespace KS.Files.Print
 {
@@ -32,7 +32,7 @@ namespace KS.Files.Print
         /// </summary>
         /// <param name="filename">Full path to file</param>
         public static void PrintContents(string filename) => 
-            DriverHandler.CurrentFilesystemDriverLocal.PrintContents(filename, Flags.PrintLineNumbers);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintContents(filename, KernelFlags.PrintLineNumbers);
 
         /// <summary>
         /// Prints the contents of a file to the console

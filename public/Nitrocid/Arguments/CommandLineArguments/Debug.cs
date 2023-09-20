@@ -18,6 +18,7 @@
 
 using KS.Arguments.ArgumentBase;
 using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using System;
 
@@ -28,7 +29,7 @@ namespace KS.Arguments.CommandLineArguments
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            Flags.DebugMode = true;
+            KernelFlags.DebugMode = true;
 
             // Write headers for debug
             DebugWriter.WriteDebug(DebugLevel.I,

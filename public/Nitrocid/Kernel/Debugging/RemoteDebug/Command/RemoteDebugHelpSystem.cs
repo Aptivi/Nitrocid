@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using KS.Kernel.Configuration;
 using KS.Languages;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command
@@ -74,10 +75,10 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             else if (string.IsNullOrWhiteSpace(command))
             {
                 // List the available commands
-                if (!Flags.SimHelp)
+                if (!KernelFlags.SimHelp)
                 {
                     // The built-in commands
-                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (Flags.ShowCommandsCount & Flags.ShowShellCommandsCount ? " [{0}]" : ""), true, CommandList.Count);
+                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (KernelFlags.ShowCommandsCount & KernelFlags.ShowShellCommandsCount ? " [{0}]" : ""), true, CommandList.Count);
 
                     // Check the command list count and print not implemented. This is an extremely rare situation.
                     if (CommandList.Count == 0)
