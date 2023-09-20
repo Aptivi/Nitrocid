@@ -51,6 +51,22 @@ namespace KS.Misc.Reflection
         }
 
         /// <summary>
+        /// Removes the path pointing to the dependencies from the assembly search path
+        /// </summary>
+        /// <param name="Path">Path to the dependencies</param>
+        public static void RemovePathFromAssemblySearchPath(string Path)
+        {
+            Path = Filesystem.NeutralizePath(Path);
+
+            // Remove the path from the search path
+            if (AssemblyLookupPaths.Contains(Path))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Removing path {0} from lookup paths...", Path);
+                AssemblyLookupPaths.Remove(Path);
+            }
+        }
+
+        /// <summary>
         /// Loads assembly from the search paths
         /// </summary>
         /// <returns>If successful, returns the assembly instance. Otherwise, null.</returns>

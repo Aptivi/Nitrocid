@@ -37,6 +37,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Modifications.ManPages;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Misc.Reflection;
+using System.Diagnostics;
 
 namespace KS.Modifications
 {
@@ -188,6 +190,10 @@ namespace KS.Modifications
                         // Remove the mod from the list
                         TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
                         Mods.Remove(Mods.Keys.ElementAtOrDefault(ScriptIndex));
+
+                        // Remove the mod dependency from the lookup
+                        string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(TargetMod.ModFilePath) + "-" + FileVersionInfo.GetVersionInfo(TargetMod.ModFilePath).FileVersion + "/";
+                        AssemblyLookup.RemovePathFromAssemblySearchPath(ModDepPath);
                     }
 
                     // Clear all mod commands list, since we've stopped all mods.
@@ -265,6 +271,10 @@ namespace KS.Modifications
                                 // Remove the mod from the list
                                 TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
                                 Mods.Remove(Mods.Keys.ElementAtOrDefault(ScriptIndex));
+
+                                // Remove the mod dependency from the lookup
+                                string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(ModFilename) + "-" + FileVersionInfo.GetVersionInfo(ModPath + ModFilename).FileVersion + "/";
+                                AssemblyLookup.RemovePathFromAssemblySearchPath(ModDepPath);
                             }
                         }
                     }

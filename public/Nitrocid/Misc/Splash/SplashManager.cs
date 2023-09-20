@@ -152,7 +152,8 @@ namespace KS.Misc.Splash
         /// </summary>
         public static void UnloadSplashes()
         {
-            var SplashFiles = Listing.CreateList(Paths.GetKernelPath(KernelPathType.CustomSplashes));
+            string SplashPath = Paths.GetKernelPath(KernelPathType.CustomSplashes);
+            var SplashFiles = Listing.CreateList(SplashPath);
             foreach (FileSystemEntry SplashFileInfo in SplashFiles)
             {
                 string FilePath = SplashFileInfo.FilePath;
@@ -172,6 +173,10 @@ namespace KS.Misc.Splash
                         DebugWriter.WriteDebug(DebugLevel.I, "- Name: {0}", Name);
                         DebugWriter.WriteDebug(DebugLevel.I, "Uninstalling splash...");
                         InstalledSplashes.Remove(Name);
+
+                        // Remove splash dependencies folder (if any) from the private appdomain lookup folder
+                        string SplashDepPath = SplashPath + "Deps/" + Path.GetFileNameWithoutExtension(FilePath) + "-" + FileVersionInfo.GetVersionInfo(FilePath).FileVersion + "/";
+                        AssemblyLookup.RemovePathFromAssemblySearchPath(SplashDepPath);
                     }
                     else
                     {

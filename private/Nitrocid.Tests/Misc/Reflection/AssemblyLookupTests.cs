@@ -27,12 +27,20 @@ namespace Nitrocid.Tests.Misc.Reflection
     {
 
         /// <summary>
-        /// Tests getting method
+        /// Tests adding path to assembly search path
         /// </summary>
         [Test]
         [Description("Management")]
         public static void TestAddPathToAssemblySearchPath() =>
             Should.NotThrow(() => AssemblyLookup.AddPathToAssemblySearchPath("Dependencies"));
+
+        /// <summary>
+        /// Tests removing path from assembly search path
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public static void TestRemovePathFromAssemblySearchPath() =>
+            Should.NotThrow(() => AssemblyLookup.RemovePathFromAssemblySearchPath("Dependencies"));
 
     }
 }
