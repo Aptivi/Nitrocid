@@ -31,30 +31,30 @@ namespace KS.Files
     public static class Paths
     {
 
-        private static readonly Dictionary<KernelPathType, (string, bool)> knownPaths = new()
+        private static readonly Dictionary<KernelPathType, (Func<string>, bool)> knownPaths = new()
         {
-            { KernelPathType.Aliases,             (AliasesPath, true) },
-            { KernelPathType.Configuration,       (ConfigurationPath, true) },
-            { KernelPathType.CustomLanguages,     (CustomLanguagesPath, true) },
-            { KernelPathType.CustomSplashes,      (CustomSplashesPath, true) },
-            { KernelPathType.DebugDevices,        (DebugDevicesPath, true) },
-            { KernelPathType.Debugging,           (DebuggingPath, true) },
-            { KernelPathType.Events,              (EventsPath, true) },
-            { KernelPathType.SpeedDial,           (SpeedDialPath, true) },
-            { KernelPathType.MAL,                 (MALPath, true) },
-            { KernelPathType.Mods,                (ModsPath, true) },
-            { KernelPathType.MOTD,                (MOTDPath, true) },
-            { KernelPathType.Reminders,           (RemindersPath, true) },
-            { KernelPathType.Users,               (UsersPath, true) },
-            { KernelPathType.Journaling,          (JournalingPath, true) },
-            { KernelPathType.Contacts,            (ContactsPath, true) },
-            { KernelPathType.ContactsImport,      (ContactsImportPath, true) },
-            { KernelPathType.SaverConfiguration,  (SaverConfigurationPath, true) },
-            { KernelPathType.SplashConfiguration, (SplashConfigurationPath, true) },
-            { KernelPathType.ToDoList,            (ToDoListPath, true) },
-            { KernelPathType.UserGroups,          (UserGroupsPath, true) },
-            { KernelPathType.Addons,              (AddonsPath, false) },
-            { KernelPathType.ShellHistories,      (ShellHistoriesPath, true) },
+            { KernelPathType.Aliases,             (() => AliasesPath, true) },
+            { KernelPathType.Configuration,       (() => ConfigurationPath, true) },
+            { KernelPathType.CustomLanguages,     (() => CustomLanguagesPath, true) },
+            { KernelPathType.CustomSplashes,      (() => CustomSplashesPath, true) },
+            { KernelPathType.DebugDevices,        (() => DebugDevicesPath, true) },
+            { KernelPathType.Debugging,           (() => DebuggingPath, true) },
+            { KernelPathType.Events,              (() => EventsPath, true) },
+            { KernelPathType.SpeedDial,           (() => SpeedDialPath, true) },
+            { KernelPathType.MAL,                 (() => MALPath, true) },
+            { KernelPathType.Mods,                (() => ModsPath, true) },
+            { KernelPathType.MOTD,                (() => MOTDPath, true) },
+            { KernelPathType.Reminders,           (() => RemindersPath, true) },
+            { KernelPathType.Users,               (() => UsersPath, true) },
+            { KernelPathType.Journaling,          (() => JournalingPath, true) },
+            { KernelPathType.Contacts,            (() => ContactsPath, true) },
+            { KernelPathType.ContactsImport,      (() => ContactsImportPath, true) },
+            { KernelPathType.SaverConfiguration,  (() => SaverConfigurationPath, true) },
+            { KernelPathType.SplashConfiguration, (() => SplashConfigurationPath, true) },
+            { KernelPathType.ToDoList,            (() => ToDoListPath, true) },
+            { KernelPathType.UserGroups,          (() => UserGroupsPath, true) },
+            { KernelPathType.Addons,              (() => AddonsPath, false) },
+            { KernelPathType.ShellHistories,      (() => ShellHistoriesPath, true) },
         };
 
         /// <summary>
@@ -259,7 +259,7 @@ namespace KS.Files
         public static string GetKernelPath(KernelPathType PathType)
         {
             if (knownPaths.ContainsKey(PathType))
-                return knownPaths[PathType].Item1;
+                return knownPaths[PathType].Item1();
             throw new KernelException(KernelExceptionType.InvalidKernelPath, Translate.DoTranslation("Invalid kernel path type."));
         }
 
