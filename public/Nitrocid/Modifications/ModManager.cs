@@ -230,70 +230,61 @@ namespace KS.Modifications
             DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", Flags.SafeMode);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
 
-            if (!Flags.SafeMode)
-            {
-                if (Checking.FileExists(PathToMod))
-                {
-                    if (HasModStarted(PathToMod))
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mod {0}..."), ModFilename);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
-
-                        // Iterate through all the mods
-                        for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
-                        {
-                            var TargetMod = Mods.Values.ElementAtOrDefault(ScriptIndex);
-                            var ScriptParts = TargetMod.ModParts;
-
-                            // Try to stop the mod and all associated parts
-                            DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName);
-                            if (TargetMod.ModFileName == ModFilename)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Found mod to be stopped. Stopping...");
-
-                                // Iterate through all the parts
-                                for (int PartIndex = ScriptParts.Count - 1; PartIndex >= 0; PartIndex -= 1)
-                                {
-                                    var ScriptPartInfo = ScriptParts.Values.ElementAtOrDefault(PartIndex);
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
-
-                                    // Stop the associated part
-                                    ScriptPartInfo.PartScript.StopMod();
-                                    if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
-                                    {
-                                        TextWriterColor.Write(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
-                                    }
-
-                                    // Remove the part from the list
-                                    ScriptParts.Remove(ScriptParts.Keys.ElementAtOrDefault(PartIndex));
-                                }
-
-                                // Remove the mod from the list
-                                TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
-                                Mods.Remove(Mods.Keys.ElementAtOrDefault(ScriptIndex));
-
-                                // Remove the mod dependency from the lookup
-                                string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(ModFilename) + "-" + FileVersionInfo.GetVersionInfo(ModPath + ModFilename).FileVersion + "/";
-                                AssemblyLookup.RemovePathFromAssemblySearchPath(ModDepPath);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.E, "Mod not started yet!");
-                        TextWriterColor.Write(Translate.DoTranslation("Mod hasn't started yet!"), true, KernelColorType.Error);
-                    }
-                }
-                else
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
-                    TextWriterColor.Write(Translate.DoTranslation("Mod {0} not found."), ModFilename);
-                }
-            }
-            else
+            if (Flags.SafeMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
                 TextWriterColor.Write(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);
+                return;
+            }
+            if (!Checking.FileExists(PathToMod))
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
+                TextWriterColor.Write(Translate.DoTranslation("Mod {0} not found."), true, KernelColorType.Error, ModFilename);
+                return;
+            }
+            if (!HasModStarted(PathToMod))
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Mod not started yet!");
+                TextWriterColor.Write(Translate.DoTranslation("Mod hasn't started yet!"), true, KernelColorType.Error);
+                return;
+            }
+
+            // Iterate through all the mods
+            TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mod {0}..."), ModFilename);
+            DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
+            for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
+            {
+                var TargetMod = Mods.Values.ElementAtOrDefault(ScriptIndex);
+                var ScriptParts = TargetMod.ModParts;
+
+                // Try to stop the mod and all associated parts
+                DebugWriter.WriteDebug(DebugLevel.I, "Checking mod {0}...", TargetMod.ModName);
+                if (TargetMod.ModFileName != ModFilename)
+                    continue;
+
+                // Iterate through all the parts
+                DebugWriter.WriteDebug(DebugLevel.I, "Found mod to be stopped. Stopping...");
+                for (int PartIndex = ScriptParts.Count - 1; PartIndex >= 0; PartIndex -= 1)
+                {
+                    var ScriptPartInfo = ScriptParts.Values.ElementAtOrDefault(PartIndex);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Stopping part {0} v{1}", ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+
+                    // Stop the associated part
+                    ScriptPartInfo.PartScript.StopMod();
+                    if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
+                        TextWriterColor.Write(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+
+                    // Remove the part from the list
+                    ScriptParts.Remove(ScriptParts.Keys.ElementAtOrDefault(PartIndex));
+                }
+
+                // Remove the mod from the list
+                TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
+                Mods.Remove(Mods.Keys.ElementAtOrDefault(ScriptIndex));
+
+                // Remove the mod dependency from the lookup
+                string ModDepPath = ModPath + "Deps/" + Path.GetFileNameWithoutExtension(ModFilename) + "-" + FileVersionInfo.GetVersionInfo(ModPath + ModFilename).FileVersion + "/";
+                AssemblyLookup.RemovePathFromAssemblySearchPath(ModDepPath);
             }
         }
 

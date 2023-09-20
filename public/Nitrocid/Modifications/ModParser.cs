@@ -34,6 +34,7 @@ using KS.Modifications.ManPages;
 using KS.Kernel.Events;
 using Newtonsoft.Json.Linq;
 using SemanVer.Instance;
+using KS.Modifications.Dependencies;
 
 namespace KS.Modifications
 {
@@ -42,6 +43,8 @@ namespace KS.Modifications
     /// </summary>
     public static class ModParser
     {
+
+        internal static List<string> queued = new();
 
         /// <summary>
         /// Gets the mod instance from compiled assembly
@@ -132,6 +135,7 @@ namespace KS.Modifications
             if (script is not null)
             {
                 string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
+                string modFilePath = Filesystem.NeutralizePath(modFile, ModPath);
                 EventsManager.FireEvent(EventType.ModParsed, modFile);
                 try
                 {
@@ -209,10 +213,6 @@ namespace KS.Modifications
                         }
                     }
 
-                    // Start the mod
-                    script.StartMod();
-                    DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version);
-
                     // See if the mod has part name
                     if (string.IsNullOrWhiteSpace(script.ModPart))
                     {
@@ -272,10 +272,20 @@ namespace KS.Modifications
                         }
                     }
 
-                    // Now, add the part
-                    PartInstance = new ModPartInfo(ModName, script.ModPart, modFile, Filesystem.NeutralizePath(modFile, ModPath), script);
+                    // Prepare the mod and part instances
+                    PartInstance = new ModPartInfo(ModName, script.ModPart, modFile, modFilePath, script);
                     Parts.Add(script.ModPart, PartInstance);
-                    ModInstance = new ModInfo(ModName, modFile, Filesystem.NeutralizePath(modFile, ModPath), Parts, script.Version, localizations);
+                    queued.Add(modFilePath);
+                    ModInstance = new ModInfo(ModName, modFile, modFilePath, Parts, script.Version, localizations);
+
+                    // Satisfy the dependencies
+                    ModDependencySatisfier.SatisfyDependencies(ModInstance);
+
+                    // Start the mod
+                    script.StartMod();
+                    DebugWriter.WriteDebug(DebugLevel.I, "script.StartMod() initialized. Mod name: {0} | Mod part: {1} | Version: {2}", script.Name, script.ModPart, script.Version);
+
+                    // Now, add the part
                     if (!modFound)
                         ModManager.Mods.Add(ModName, ModInstance);
 
@@ -297,6 +307,10 @@ namespace KS.Modifications
                     DebugWriter.WriteDebug(DebugLevel.E, "Finalization failed for {0}: {1}", modFile, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                     SplashReport.ReportProgressError(Translate.DoTranslation("Failed to finalize mod {0}: {1}"), modFile, ex.Message);
+                }
+                finally
+                {
+                    queued.Remove(modFilePath);
                 }
             }
             else
