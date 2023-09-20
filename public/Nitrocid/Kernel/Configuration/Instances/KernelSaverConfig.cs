@@ -2741,5 +2741,45 @@ namespace KS.Kernel.Configuration.Instances
         /// [TextBox] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int TextBoxMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WordHasherWrite] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool WordHasherWriteTrueColor { get; set; } = true;
+        /// <summary>
+        /// [WordHasherWrite] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int WordHasherWriteDelay { get; set; } = 1000;
+        /// <summary>
+        /// [WordHasherWrite] The minimum red color level (true color)
+        /// </summary>
+        public int WordHasherWriteMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WordHasherWrite] The minimum green color level (true color)
+        /// </summary>
+        public int WordHasherWriteMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WordHasherWrite] The minimum blue color level (true color)
+        /// </summary>
+        public int WordHasherWriteMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WordHasherWrite] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int WordHasherWriteMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WordHasherWrite] The maximum red color level (true color)
+        /// </summary>
+        public int WordHasherWriteMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WordHasherWrite] The maximum green color level (true color)
+        /// </summary>
+        public int WordHasherWriteMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WordHasherWrite] The maximum blue color level (true color)
+        /// </summary>
+        public int WordHasherWriteMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WordHasherWrite] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int WordHasherWriteMaximumColorLevel { get; set; } = 255;
     }
 }

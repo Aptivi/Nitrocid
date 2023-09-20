@@ -228,12 +228,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override string ScreensaverName { get; set; } = "WordHasher";
 
         /// <inheritdoc/>
-        public override void ScreensaverLogic()
+        public override void ScreensaverPreparation()
         {
-            ConsoleWrapper.Clear();
-
-            // Change color
-            var hasherColor = ChangeWordHasherColor();
+            base.ScreensaverPreparation();
 
             // Write loading
             string word = Translate.DoTranslation("Loading...");
@@ -242,16 +239,23 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-            CenteredFigletTextColor.WriteCenteredFiglet(consoleY, figFont, word, hasherColor);
-            TextWriterWhereColor.WriteWhere(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, hasherColor);
+            CenteredFigletTextColor.WriteCenteredFiglet(consoleY, figFont, word, ConsoleColors.Green);
+            TextWriterWhereColor.WriteWhere(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, ConsoleColors.Green);
+        }
+
+        /// <inheritdoc/>
+        public override void ScreensaverLogic()
+        {
+            // Change color
+            var hasherColor = ChangeWordHasherColor();
 
             // Write word and hash
-            word = WordManager.GetRandomWord();
-            wordHash = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").GetEncryptedString(word);
-            figFont = FigletTools.GetFigletFont("small");
-            figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
-            consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
+            string word = WordManager.GetRandomWord();
+            string wordHash = DriverHandler.GetDriver<IEncryptionDriver>("SHA256").GetEncryptedString(word);
+            var figFont = FigletTools.GetFigletFont("small");
+            int figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
+            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
             ConsoleWrapper.Clear();
             CenteredFigletTextColor.WriteCenteredFiglet(consoleY, figFont, word, hasherColor);
             TextWriterWhereColor.WriteWhere(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, hasherColor);
@@ -263,7 +267,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <summary>
         /// Changes the color of word and its hash
         /// </summary>
-        public Color ChangeWordHasherColor()
+        private Color ChangeWordHasherColor()
         {
             Color ColorInstance;
             if (WordHasherSettings.WordHasherTrueColor)
