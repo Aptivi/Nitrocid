@@ -33,6 +33,7 @@ using KS.Misc.Splash;
 using KS.Modifications.ManPages;
 using KS.Kernel.Events;
 using Newtonsoft.Json.Linq;
+using SemanVer.Instance;
 
 namespace KS.Modifications
 {
@@ -246,24 +247,37 @@ namespace KS.Modifications
                         script.ModPart = $"{script.ModPart} [{Parts.Count}]";
                     }
 
+                    // See if the mod has version
+                    if (string.IsNullOrWhiteSpace(script.Version))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", modFile, script.Name);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the version. Setting as") + " 1.0.0...", 0, script.Name);
+                        script.Version = "1.0.0";
+                    }
+                    else
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version);
+                        try
+                        {
+                            // Parse the semantic version of the mod
+                            var versionInfo = SemVer.Parse(script.Version);
+                            SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started") + " ({2})", 0, script.Name, script.Version, script.ModPart);
+                        }
+                        catch (Exception ex)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.E, "Failed to parse mod version {0}: {1}", script.Version, ex.Message);
+                            DebugWriter.WriteDebugStackTrace(ex);
+                            SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} contains invalid version. Mod parsing failed. Version was") + ": {1}\n{2}", modFile, script.Version, ex.Message);
+                            return;
+                        }
+                    }
+
                     // Now, add the part
                     PartInstance = new ModPartInfo(ModName, script.ModPart, modFile, Filesystem.NeutralizePath(modFile, ModPath), script);
                     Parts.Add(script.ModPart, PartInstance);
                     ModInstance = new ModInfo(ModName, modFile, Filesystem.NeutralizePath(modFile, ModPath), Parts, script.Version, localizations);
                     if (!modFound)
                         ModManager.Mods.Add(ModName, ModInstance);
-
-                    // See if the mod has version
-                    if (string.IsNullOrWhiteSpace(script.Version) & !string.IsNullOrWhiteSpace(script.Name))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", modFile, script.Name);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the version."), 0, script.Name);
-                    }
-                    else if (!string.IsNullOrWhiteSpace(script.Name) & !string.IsNullOrWhiteSpace(script.Version))
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = {2} | {0}.Name = {1}", modFile, script.Name, script.Version);
-                        SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started") + " ({2})", 0, script.Name, script.Version, script.ModPart);
-                    }
 
                     // Check for accompanying manual pages for mods
                     string ModManualPath = Filesystem.NeutralizePath(modFile + ".manual", ModPath);
