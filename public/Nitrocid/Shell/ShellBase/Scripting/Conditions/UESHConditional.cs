@@ -57,6 +57,8 @@ namespace KS.Shell.ShellBase.Scripting.Conditions
             { "finsane", new FileHashMismatchCondition() },
             { "is", new IsCondition() },
             { "isnot", new IsNotCondition() },
+            { "isplat", new IsPlatCondition() },
+            { "isnotplat", new IsNotPlatCondition() },
             { "none", new NoneCondition() }
         };
 
