@@ -23,6 +23,8 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Debug.Commands;
 using KS.Shell.ShellBase.Arguments;
+using KS.Shell.ShellBase.Switches;
+using System;
 
 namespace KS.Shell.Shells.Debug
 {
@@ -42,6 +44,16 @@ namespace KS.Shell.Shells.Debug
                     new[] {
                         new CommandArgumentInfo()
                     }, new Debug_CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
+            { "debuglog",
+                new CommandInfo("debuglog", ShellType, /* Localizable */ "Easily fetches the debug log information using the session number",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "sessionNum")
+                        }, Array.Empty<SwitchInfo>())
+                    }, new Debug_DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "keyinfo",
