@@ -328,6 +328,8 @@ namespace KS.Shell.ShellBase.Shells
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
                 string strcommand = Input.ReadLine("", "", settings);
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
+                if (strcommand == ";")
+                    strcommand = "";
 
                 // Add command to command builder and return the final result. The reason to add the extra space before the second command written is that
                 // because if we need to provide a second command to the shell in a separate line, we usually add the semicolon at the end of the primary
