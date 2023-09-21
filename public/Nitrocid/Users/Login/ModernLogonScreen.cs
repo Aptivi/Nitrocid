@@ -42,8 +42,8 @@ namespace KS.Users.Login
 {
     internal static class ModernLogonScreen
     {
-        private static bool renderedFully = false;
-        private static readonly KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater);
+        internal static bool renderedFully = false;
+        internal readonly static KernelThread DateTimeUpdateThread = new("Date and Time Update Thread for Modern Logon", true, DateTimeWidgetUpdater);
 
         /// <summary>
         /// Whether to show the MOTD and the headline at the bottom or at the top of the clock
@@ -51,68 +51,7 @@ namespace KS.Users.Login
         public static bool MotdHeadlineBottom =>
             Config.MainConfig.MotdHeadlineBottom;
 
-        internal static void ShowLogon()
-        {
-            // Clear the console
-            ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear();
-            TextWriterColor.Write(Translate.DoTranslation("Loading modern logon... This shouldn't take long."), true, KernelColorType.Progress);
-
-            // Start the date and time update thread to show time and date in the modern way
-            DateTimeUpdateThread.Start();
-
-            // Wait for the keypress
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendering...");
-            SpinWait.SpinUntil(() => renderedFully);
-            DebugWriter.WriteDebug(DebugLevel.I, "Rendered fully!");
-            Input.DetectKeypress();
-
-            // Stop the thread
-            DateTimeUpdateThread.Stop();
-            renderedFully = false;
-
-            // Now, clear the console again and prompt for username
-            bool loggedIn = false;
-            string userName = "";
-            while (!loggedIn)
-            {
-                // First, get the user number from the selection input
-                var users = UserManagement.ListAllUsers().ToArray();
-                var userFullNames = users.Select(
-                    (user) => 
-                        UserManagement.GetUser(user).FullName is not null ? 
-                        UserManagement.GetUser(user).FullName :
-                        ""
-                ).ToArray();
-                int userNum = SelectionStyle.PromptSelection(Translate.DoTranslation("Select a user account you want to log in with."), string.Join("/", users), userFullNames, true);
-
-                // Then, get the user from the number and prompt for password if found
-                userName = UserManagement.SelectUser(userNum);
-                DebugWriter.WriteDebug(DebugLevel.I, "Selected username {0} [{1}].", userName, userNum);
-                if (UserManagement.Users[userNum - 1].Password != Encryption.GetEmptyHash("SHA256"))
-                {
-                    // The password is not empty. Prompt for password.
-                    TextWriterColor.Write(Translate.DoTranslation("Enter the password for user") + " {0}: ", false, vars: new object[] { userName });
-                    string pass = Input.ReadLineNoInput();
-
-                    // Validate the password
-                    if (UserManagement.ValidatePassword(userName, pass))
-                        // Password written correctly. Log in.
-                        loggedIn = true;
-                    else
-                        // Wrong password.
-                        TextWriterColor.Write(Translate.DoTranslation("Wrong password for user."), KernelColorType.Error);
-                }
-                else
-                    loggedIn = true;
-            }
-
-            // Finally, launch the shell
-            ConsoleWrapper.Clear();
-            Login.SignIn(userName);
-        }
-
-        private static void DateTimeWidgetUpdater()
+        internal static void DateTimeWidgetUpdater()
         {
             try
             {

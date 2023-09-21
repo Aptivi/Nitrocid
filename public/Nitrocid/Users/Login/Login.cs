@@ -34,6 +34,8 @@ using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
+using KS.Users.Login.Handlers;
+using System;
 
 namespace KS.Users.Login
 {
@@ -88,37 +90,52 @@ namespace KS.Users.Login
                 }
 
                 // How do we prompt user to login?
-                var UsersList = UserManagement.ListAllUsers();
+                string handlerName = "classic";
                 if (KernelFlags.ModernLogon)
                 {
                     // Invoke the modern logon handler
-                    ModernLogonScreen.ShowLogon();
+                    handlerName = "modern";
                 }
-                else
+
+                // Get the handler!
+                var handler = LoginHandlerTools.GetHandler(handlerName);
+
+                try
                 {
-                    // Generate user list
-                    if (KernelFlags.ShowAvailableUsers)
-                    {
-                        TextWriterColor.Write(Translate.DoTranslation("You can log in to these accounts:"));
-                        ListWriterColor.WriteList(UsersList);
-                    }
+                    // Sanity check...
+                    if (handler is null)
+                        throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("The login handler is not found!") + $" {handlerName}");
 
-                    // Prompt user to login
-                    if (!string.IsNullOrWhiteSpace(UsernamePrompt))
-                        TextWriterColor.Write(PlaceParse.ProbePlaces(UsernamePrompt), false, KernelColorType.Input);
-                    else
-                        TextWriterColor.Write(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
-                    string answeruser = Input.ReadLine();
+                    // Now, show the Login screen
+                    handler.LoginScreen();
 
-                    // Parse input
-                    if (UserManagement.ValidateUsername(answeruser))
+                    // Prompt for username
+                    string user = handler.UserSelector();
+
+                    // OK. Here's where things get tricky. Some handlers may misleadingly give us a completely invalid username, so verify it
+                    // the second time for these handlers to behave.
+                    if (!UserManagement.ValidateUsername(user))
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Validation complete for user {0}", answeruser);
-                        if (ShowPasswordPrompt(answeruser))
-                            SignIn(answeruser);
-                    }
-                    else
                         TextWriterColor.Write(Translate.DoTranslation("Wrong username or username not found."), true, KernelColorType.Error);
+                        continue;
+                    }
+
+                    // Prompt for password, assuming that the username is valid.
+                    bool valid = handler.PasswordHandler(user);
+                    if (valid)
+                    {
+                        // TODO: Handle invalid statuses given by some trickster.
+                        SignIn(user);
+                    }
+                    else
+                        TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Handler is killed! {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, "Kernel panicking...");
+                    KernelPanic.KernelError(KernelErrorLevel.F, true, 10, Translate.DoTranslation("Login handler has crashed!") + $" {ex.Message}", ex);
                 }
             }
         }

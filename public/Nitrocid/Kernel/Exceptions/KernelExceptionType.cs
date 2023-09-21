@@ -426,6 +426,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// Hardware component manager failed.
         /// </summary>
-        Hardware
+        Hardware,
+        /// <summary>
+        /// Login handler failed. Please ensure that it's registered properly and that it does its job as expected.
+        /// </summary>
+        LoginHandler
     }
 }

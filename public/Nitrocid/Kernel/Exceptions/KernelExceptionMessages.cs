@@ -131,6 +131,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.AddonManagement,                  Translate.DoTranslation("There was an error when trying to perform an operation for the kernel addon management.") },
                 { KernelExceptionType.NoteManagement,                   Translate.DoTranslation("There was an error when trying to perform an operation for the note management.") },
                 { KernelExceptionType.Hardware,                         Translate.DoTranslation("Hardware component management failed.") },
+                { KernelExceptionType.LoginHandler,                     Translate.DoTranslation("Login handler failed. Please ensure that it's registered properly and that it does its job as expected.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)
