@@ -68,6 +68,7 @@ namespace KS.Files
         /// <exception cref="FileNotFoundException"></exception>
         public static string NeutralizePath(string Path, string Source, bool Strict = false)
         {
+            // Warning: There should be no debug statements until the strict check point.
             Path ??= "";
             Source ??= "";
             ThrowOnInvalidPath(Path);
@@ -78,7 +79,7 @@ namespace KS.Files
             Source = DriverHandler.CurrentRegexpDriverLocal.Unescape(Source.Replace(@"\", "/"));
 
             // Append current directory to path
-            if (KernelPlatform.IsOnWindows() & !Path.Contains(":/") | KernelPlatform.IsOnUnix() & !Path.StartsWith("/"))
+            if (!Checking.Rooted(Path))
                 if (!Source.EndsWith("/"))
                     Path = $"{Source}/{Path}";
                 else

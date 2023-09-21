@@ -27,6 +27,7 @@ using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.IO;
+using IOPath = System.IO.Path;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -562,6 +563,10 @@ namespace KS.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual bool Exists(string Path, bool Neutralize = false) =>
             FileExists(Path) || FolderExists(Path);
+
+        /// <inheritdoc/>
+        public virtual bool Rooted(string Path) =>
+            IOPath.IsPathRooted(Path);
 
         /// <inheritdoc/>
         public virtual long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) =>

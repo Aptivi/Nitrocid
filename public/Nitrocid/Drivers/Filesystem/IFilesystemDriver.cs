@@ -361,6 +361,13 @@ namespace KS.Drivers.Filesystem
         bool Exists(string Path, bool Neutralize = false);
 
         /// <summary>
+        /// Checks to see if the file or the folder contains the root path or not. Windows 10/11 bug aware.
+        /// </summary>
+        /// <param name="Path">Target path</param>
+        /// <returns>True if rooted; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
+        bool Rooted(string Path);
+
+        /// <summary>
         /// Gets the file name with the file number suffix applied
         /// </summary>
         /// <param name="path">Path to the directory that the generated numbered file name will situate</param>

@@ -53,5 +53,13 @@ namespace KS.Files.Querying
         public static bool Exists(string Path, bool Neutralize = false) =>
             DriverHandler.CurrentFilesystemDriverLocal.Exists(Path, Neutralize);
 
+        /// <summary>
+        /// Checks to see if the file or the folder contains the root path or not. Windows 10/11 bug aware.
+        /// </summary>
+        /// <param name="Path">Target path</param>
+        /// <returns>True if rooted; False if not. Throws on trying to trigger the Windows 10/11 BSOD/corruption bug</returns>
+        public static bool Rooted(string Path) =>
+            DriverHandler.CurrentFilesystemDriverLocal.Rooted(Path);
+
     }
 }
