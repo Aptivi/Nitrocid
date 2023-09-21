@@ -237,8 +237,27 @@ namespace KS.Shell.ShellBase.Commands
                     DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);
                     if (containsSetSwitch)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Variable to set {0} is {1}", value, variable);
-                        UESHVariables.SetVariable(variable, value);
+                        // Check to see if the value contains newlines
+                        if (value.Contains('\n'))
+                        {
+                            // Assume that we're setting an array.
+                            DebugWriter.WriteDebug(DebugLevel.I, "Array variable to set is {0}", variable);
+                            string[] values = value.Replace((char)13, default).Split('\n');
+                            UESHVariables.SetVariables(variable, values);
+                        }
+                        else if (value.StartsWith('[') && value.EndsWith(']'))
+                        {
+                            // Assume that we're setting an array
+                            DebugWriter.WriteDebug(DebugLevel.I, "Array variable to set is {0}", variable);
+                            value = value[1..(value.Length - 1)];
+                            string[] values = value.Split(", ");
+                            UESHVariables.SetVariables(variable, values);
+                        }
+                        else
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.I, "Variable to set {0} is {1}", value, variable);
+                            UESHVariables.SetVariable(variable, value);
+                        }
                     }
                 }
                 else
