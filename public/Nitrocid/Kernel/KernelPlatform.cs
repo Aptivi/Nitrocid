@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using System;
 using System.Runtime.InteropServices;
@@ -32,18 +33,21 @@ namespace KS.Kernel
         /// <summary>
         /// Is this system a Windows system?
         /// </summary>
+        /// <returns>True if running on Windows (Windows 10, Windows 11, etc.). Otherwise, false.</returns>
         public static bool IsOnWindows() =>
             Environment.OSVersion.Platform == PlatformID.Win32NT;
 
         /// <summary>
         /// Is this system a Unix system? True for macOS, too!
         /// </summary>
+        /// <returns>True if running on Unix (Linux, *nix, etc.). Otherwise, false.</returns>
         public static bool IsOnUnix() =>
             Environment.OSVersion.Platform == PlatformID.Unix;
 
         /// <summary>
         /// Is this system a macOS system?
         /// </summary>
+        /// <returns>True if running on macOS (MacBook, iMac, etc.). Otherwise, false.</returns>
         public static bool IsOnMacOS()
         {
             if (IsOnUnix())
@@ -52,6 +56,18 @@ namespace KS.Kernel
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to find \"Darwin\" in {0}...", System);
                 return System.Contains("Darwin");
             }
+            else
+                return false;
+        }
+
+        /// <summary>
+        /// Is this system an Android system?
+        /// </summary>
+        /// <returns>True if running on Android phones using Termux. Otherwise, false.</returns>
+        public static bool IsOnAndroid()
+        {
+            if (IsOnUnix() && !IsOnMacOS())
+                return Checking.FileExists("/system/build.prop");
             else
                 return false;
         }

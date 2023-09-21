@@ -23,6 +23,7 @@ using System.Net.NetworkInformation;
 using System.Text;
 using KS.Drivers;
 using KS.Files.Querying;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Network.Base.Transfer;
@@ -62,10 +63,10 @@ namespace KS.Network.Base
             Config.MainConfig.PingTimeout;
 
         /// <summary>
-        /// Checks to see if the network is available
+        /// Checks to see if the network is available. Always true on Android systems.
         /// </summary>
         public static bool NetworkAvailable => 
-            Checking.FileExists("/system/build.prop") ? true : NetworkInterface.GetIsNetworkAvailable();
+            KernelPlatform.IsOnAndroid() || NetworkInterface.GetIsNetworkAvailable();
 
         /// <summary>
         /// Checks to see if the Internet connection is available
