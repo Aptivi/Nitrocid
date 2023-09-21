@@ -510,7 +510,10 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "date")
-                        }, Array.Empty<SwitchInfo>())
+                        }, new[]
+                        {
+                            new SwitchInfo("now", /* Localizable */ "Gets the current date and time information", false, false, null, 1, false)
+                        })
                     }, new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             

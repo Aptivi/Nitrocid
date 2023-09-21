@@ -20,11 +20,13 @@ using System;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Time;
 using KS.Kernel.Time.Converters;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -39,7 +41,9 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
-            if (DateTime.TryParse(ListArgsOnly[0], out DateTime DateTimeInfo))
+            bool getNow = ListSwitchesOnly.Length > 0 && SwitchManager.ContainsSwitch(ListSwitchesOnly, "-now");
+            DateTime DateTimeInfo = TimeDateTools.KernelDateTime;
+            if (getNow || DateTime.TryParse(ListArgsOnly[0], out DateTimeInfo))
             {
                 TextWriterColor.Write("-- " + Translate.DoTranslation("Information for") + " {0} --" + CharManager.NewLine, TimeDateRenderers.Render(DateTimeInfo));
                 TextWriterColor.Write(Translate.DoTranslation("Milliseconds:") + " {0}", DateTimeInfo.Millisecond);
