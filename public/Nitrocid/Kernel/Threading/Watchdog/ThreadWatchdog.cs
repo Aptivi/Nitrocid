@@ -59,7 +59,7 @@ namespace KS.Kernel.Threading.Watchdog
 
                     // Check to see if we have dead threads
                     if (deadThreads.Count > 0)
-                        KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor detected {0} dead threads.") + " [{1}]", null, deadThreads.Count, deadThreads.Select((thread) => thread.Name));
+                        KernelPanic.KernelError(KernelErrorLevel.U, true, 5, Translate.DoTranslation("Kernel thread supervisor detected {0} dead threads.") + " [{1}]", null, deadThreads.Count, string.Join(", ", deadThreads.Select((thread) => thread.Name)));
 
                     // Sleep to avoid CPU usage.
                     Thread.Sleep(100);
