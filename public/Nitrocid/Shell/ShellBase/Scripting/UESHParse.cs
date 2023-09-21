@@ -76,10 +76,18 @@ namespace KS.Shell.ShellBase.Scripting
                 int commandStackNum = 0;
                 bool newCommandStackRequired = false;
                 bool retryLoopCondition = false;
+                bool advance = true;
                 List<(int, int)> whilePlaces = new();
                 LineNo = 1;
                 for (int l = 0; l < FileLines.Length; l++)
                 {
+                    // Decrement if not advancing
+                    if (!advance)
+                    {
+                        advance = true;
+                        l--;
+                    }
+
                     // Get line
                     string Line = FileLines[l];
                     DebugWriter.WriteDebug(DebugLevel.I, "Line {0}: \"{1}\"", LineNo, Line);
@@ -197,6 +205,10 @@ namespace KS.Shell.ShellBase.Scripting
                                 }
                                 Line = Line[commandStackNum..];
                                 retryLoopCondition = false;
+
+                                // Continue, because the script might have the if condition directly after the stack
+                                advance = false;
+                                continue;
                             }
                         }
                     }
