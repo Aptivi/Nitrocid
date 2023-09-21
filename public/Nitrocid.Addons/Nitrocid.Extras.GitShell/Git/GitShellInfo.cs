@@ -104,6 +104,18 @@ namespace Nitrocid.Extras.GitShell.Git
                     }, new Git_PushCommand())
             },
 
+            { "reset",
+                new CommandInfo("reset", ShellType, /* Localizable */ "Resets the local repository",
+                    new[] {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                        {
+                            new SwitchInfo("soft", /* Localizable */ "Does a soft reset", false, false, new[] { "mixed", "hard" }, 0, false),
+                            new SwitchInfo("mixed", /* Localizable */ "Does a mixed reset", false, false, new[] { "soft", "hard" }, 0, false),
+                            new SwitchInfo("hard", /* Localizable */ "Does a hard reset", false, false, new[] { "mixed", "soft" }, 0, false),
+                        })
+                    }, new Git_ResetCommand())
+            },
+
             { "setid",
                 new CommandInfo("setid", ShellType, /* Localizable */ "Sets your identity up",
                     new[] {
