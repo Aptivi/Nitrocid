@@ -41,7 +41,7 @@ namespace KS.ConsoleBase.Colors
         internal static Dictionary<KernelColorType, Color> KernelColors = PopulateColorsDefault();
 
         // Cache variables for background and foreground colors
-        internal static Color currentForegroundColor = new Color(ConsoleColors.White);
+        internal static Color currentForegroundColor = new(ConsoleColors.White);
         internal static Color currentBackgroundColor = Color.Empty;
 
         /// <summary>
@@ -235,9 +235,6 @@ namespace KS.ConsoleBase.Colors
         {
             if (ColorSequence is null)
                 throw new KernelException(KernelExceptionType.Color, nameof(ColorSequence));
-
-            // Define reset background sequence
-            string resetSequence = CharManager.GetEsc() + $"[49m";
 
             // Set background
             if (Background)
