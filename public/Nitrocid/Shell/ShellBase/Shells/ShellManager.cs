@@ -381,7 +381,15 @@ namespace KS.Shell.ShellBase.Shells
                     // Get the command name
                     var words = Command.SplitEncloseDoubleQuotes();
                     string commandName = words[0].ReleaseDoubleQuotes();
+
+                    // Verify that we aren't tricked into processing an empty command
+                    if (string.IsNullOrEmpty(commandName))
+                        break;
+
+                    // Now, split the arguments
                     string arguments = string.Join(' ', words.Skip(1));
+
+                    // Get the target file and path
                     TargetFile = DriverHandler.CurrentRegexpDriverLocal.Unescape(commandName);
                     bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
                     bool pathValid = Parsing.TryParsePath(TargetFile);
