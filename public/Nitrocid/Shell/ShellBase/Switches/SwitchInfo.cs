@@ -34,7 +34,7 @@ namespace KS.Shell.ShellBase.Switches
         /// <summary>
         /// The untranslated help definition of this switch. Translated by <see cref="GetTranslatedHelpEntry()"/>
         /// </summary>
-        public string HelpDefinition { get; set; }
+        public string HelpDefinition { get; private set; }
         /// <summary>
         /// Is the switch required?
         /// </summary>
