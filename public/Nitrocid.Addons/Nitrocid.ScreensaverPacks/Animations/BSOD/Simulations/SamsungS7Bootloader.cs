@@ -43,7 +43,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             KernelColorTools.LoadBack(black);
 
             // Select a variant
-            int excVariantInt = RandomDriver.Random(Enum.GetNames<Variant>().Length);
+            int excVariantInt = RandomDriver.RandomIdx(Enum.GetNames<Variant>().Length);
             var excVariant = Enum.Parse<Variant>($"{excVariantInt}");
 
             // Simulate a "Bootloader Exception" error message
