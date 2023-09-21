@@ -36,25 +36,59 @@ namespace KS.Shell.ShellBase.Switches
         /// </summary>
         public string HelpDefinition { get; private set; }
         /// <summary>
+        /// Switch options
+        /// </summary>
+        public SwitchOptions Options { get; private set; }
+        /// <summary>
         /// Is the switch required?
         /// </summary>
-        public bool IsRequired { get; private set; }
+        public bool IsRequired =>
+            Options.IsRequired;
         /// <summary>
         /// Does the switch require arguments?
         /// </summary>
-        public bool ArgumentsRequired { get; private set; }
+        public bool ArgumentsRequired =>
+            Options.ArgumentsRequired;
         /// <summary>
         /// Does the switch accept values?
         /// </summary>
-        public bool AcceptsValues { get; private set; } = true;
+        public bool AcceptsValues =>
+            Options.AcceptsValues;
         /// <summary>
         /// Does the switch conflict with the provided switches?
         /// </summary>
-        public string[] ConflictsWith { get; private set; }
+        public string[] ConflictsWith =>
+            Options.ConflictsWith;
         /// <summary>
         /// Whether to make the last N required arguments optional. This is useful for some switches, like -list.
         /// </summary>
-        public int OptionalizeLastRequiredArguments { get; private set; }
+        public int OptionalizeLastRequiredArguments =>
+            Options.OptionalizeLastRequiredArguments;
+
+        /// <summary>
+        /// Installs a new instance of switch info class
+        /// </summary>
+        /// <param name="Switch">Switch (without the dash)</param>
+        /// <param name="HelpDefinition">Switch help definition</param>
+        public SwitchInfo(string Switch, string HelpDefinition)
+        {
+            SwitchName = Switch;
+            this.HelpDefinition = HelpDefinition;
+            Options = new SwitchOptions();
+        }
+
+        /// <summary>
+        /// Installs a new instance of switch info class
+        /// </summary>
+        /// <param name="Switch">Switch (without the dash)</param>
+        /// <param name="HelpDefinition">Switch help definition</param>
+        /// <param name="options">Switch options</param>
+        public SwitchInfo(string Switch, string HelpDefinition, SwitchOptions options)
+        {
+            SwitchName = Switch;
+            this.HelpDefinition = HelpDefinition;
+            Options = options ?? new SwitchOptions();
+        }
 
         /// <summary>
         /// Installs a new instance of switch info class
@@ -70,11 +104,14 @@ namespace KS.Shell.ShellBase.Switches
         {
             SwitchName = Switch;
             this.HelpDefinition = HelpDefinition;
-            this.IsRequired = IsRequired;
-            this.ArgumentsRequired = AcceptsValues && ArgumentsRequired;
-            ConflictsWith = conflictsWith ?? Array.Empty<string>();
-            OptionalizeLastRequiredArguments = optionalizeLastRequiredArguments;
-            this.AcceptsValues = AcceptsValues;
+            Options = new SwitchOptions()
+            {
+                AcceptsValues = AcceptsValues,
+                ArgumentsRequired = ArgumentsRequired,
+                ConflictsWith = conflictsWith,
+                IsRequired = IsRequired,
+                OptionalizeLastRequiredArguments = optionalizeLastRequiredArguments,
+            };
         }
 
         /// <summary>

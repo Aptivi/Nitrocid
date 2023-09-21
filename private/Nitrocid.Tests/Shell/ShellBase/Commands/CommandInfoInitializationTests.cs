@@ -188,6 +188,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             @switch.ArgumentsRequired.ShouldBeFalse();
             @switch.ConflictsWith.ShouldBeEmpty();
             @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeTrue();
         }
 
         /// <summary>
@@ -251,6 +252,138 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             @switch.ArgumentsRequired.ShouldBeFalse();
             @switch.ConflictsWith.ShouldBeEmpty();
             @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptions(ShellType type)
+        {
+            // Create instance
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                        {
+                            new SwitchInfo("s", "Simple help", new SwitchOptions
+                            {
+                                AcceptsValues = false,
+                            })
+                        })
+                    }, null);
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeNull();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
+            CommandInstance.Type.ShouldBe(type.ToString());
+            CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
+            
+            // Check for switch info correctness
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            @switch.SwitchName.ShouldBe("s");
+            @switch.HelpDefinition.ShouldBe("Simple help");
+            @switch.IsRequired.ShouldBeFalse();
+            @switch.ArgumentsRequired.ShouldBeFalse();
+            @switch.ConflictsWith.ShouldBeEmpty();
+            @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArg(ShellType type)
+        {
+            // Create instance
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, new[]
+                        {
+                            new SwitchInfo("s", "Simple help", new SwitchOptions
+                            {
+                                AcceptsValues = false,
+                            })
+                        })
+                    }, null);
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeNull();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
+            CommandInstance.Type.ShouldBe(type.ToString());
+            CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
+
+            // Check for switch info correctness
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            @switch.SwitchName.ShouldBe("s");
+            @switch.HelpDefinition.ShouldBe("Simple help");
+            @switch.IsRequired.ShouldBeFalse();
+            @switch.ArgumentsRequired.ShouldBeFalse();
+            @switch.ConflictsWith.ShouldBeEmpty();
+            @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeFalse();
         }
 
         /// <summary>
@@ -410,6 +543,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             @switch.ArgumentsRequired.ShouldBeFalse();
             @switch.ConflictsWith.ShouldBeEmpty();
             @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeTrue();
         }
 
         /// <summary>
@@ -473,6 +607,138 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             @switch.ArgumentsRequired.ShouldBeFalse();
             @switch.ConflictsWith.ShouldBeEmpty();
             @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptions(string type)
+        {
+            // Create instance
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                        {
+                            new SwitchInfo("s", "Simple help", new SwitchOptions
+                            {
+                                AcceptsValues = false,
+                            })
+                        })
+                    }, null);
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeNull();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
+            CommandInstance.Type.ShouldBe(type);
+            CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
+            
+            // Check for switch info correctness
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            @switch.SwitchName.ShouldBe("s");
+            @switch.HelpDefinition.ShouldBe("Simple help");
+            @switch.IsRequired.ShouldBeFalse();
+            @switch.ArgumentsRequired.ShouldBeFalse();
+            @switch.ConflictsWith.ShouldBeEmpty();
+            @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArg(string type)
+        {
+            // Create instance
+            var CommandInstance =
+                new CommandInfo("help", type, "Help page",
+                    new[]
+                    {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, new[]
+                        {
+                            new SwitchInfo("s", "Simple help", new SwitchOptions
+                            {
+                                AcceptsValues = false,
+                            })
+                        })
+                    }, null);
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeNull();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
+            CommandInstance.Type.ShouldBe(type);
+            CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
+
+            // Check for switch info correctness
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            @switch.SwitchName.ShouldBe("s");
+            @switch.HelpDefinition.ShouldBe("Simple help");
+            @switch.IsRequired.ShouldBeFalse();
+            @switch.ArgumentsRequired.ShouldBeFalse();
+            @switch.ConflictsWith.ShouldBeEmpty();
+            @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeFalse();
         }
 
         /// <summary>
@@ -655,12 +921,14 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             @switch.ArgumentsRequired.ShouldBeFalse();
             @switch.ConflictsWith.ShouldBeEmpty();
             @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeTrue();
             @switch2.SwitchName.ShouldBe("c");
             @switch2.HelpDefinition.ShouldBe("Complicated help");
             @switch2.IsRequired.ShouldBeFalse();
             @switch2.ArgumentsRequired.ShouldBeFalse();
             @switch2.ConflictsWith.ShouldBeEmpty();
             @switch2.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch2.AcceptsValues.ShouldBeTrue();
         }
 
         /// <summary>
@@ -737,12 +1005,189 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             @switch.ArgumentsRequired.ShouldBeFalse();
             @switch.ConflictsWith.ShouldBeEmpty();
             @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeTrue();
             @switch2.SwitchName.ShouldBe("c");
             @switch2.HelpDefinition.ShouldBe("Complicated help");
             @switch2.IsRequired.ShouldBeFalse();
             @switch2.ArgumentsRequired.ShouldBeFalse();
             @switch2.ConflictsWith.ShouldBeEmpty();
             @switch2.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch2.AcceptsValues.ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsMultiCommandArgumentInfo(ShellType type)
+        {
+            // Create instance
+            var CommandInstance = new CommandInfo("help", type, "Help page",
+                new[] {
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                    {
+                        new SwitchInfo("s", "Simple help", new SwitchOptions
+                        {
+                            AcceptsValues = false,
+                        })
+                    }),
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                    {
+                        new SwitchInfo("c", "Complicated help", new SwitchOptions
+                        {
+                            AcceptsValues = false,
+                            IsRequired = true,
+                        })
+                    }),
+                }, null);
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeNull();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
+            CommandInstance.CommandArgumentInfo[1].Arguments.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(0);
+            CommandInstance.Type.ShouldBe(type.ToString());
+            CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
+            
+            // Check for switch info correctness
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];
+            @switch.SwitchName.ShouldBe("s");
+            @switch.HelpDefinition.ShouldBe("Simple help");
+            @switch.IsRequired.ShouldBeFalse();
+            @switch.ArgumentsRequired.ShouldBeFalse();
+            @switch.ConflictsWith.ShouldBeEmpty();
+            @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeFalse();
+            @switch2.SwitchName.ShouldBe("c");
+            @switch2.HelpDefinition.ShouldBe("Complicated help");
+            @switch2.IsRequired.ShouldBeTrue();
+            @switch2.ArgumentsRequired.ShouldBeFalse();
+            @switch2.ConflictsWith.ShouldBeEmpty();
+            @switch2.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch2.AcceptsValues.ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArgMultiCommandArgumentInfo(ShellType type)
+        {
+            // Create instance
+            var CommandInstance = new CommandInfo("help", type, "Help page",
+                new[] {
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, new[]
+                        {
+                            new SwitchInfo("s", "Simple help", new SwitchOptions
+                            {
+                                AcceptsValues = false,
+                            })
+                        }),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "testme"),
+                            new CommandArgumentPart(false, "path"),
+                        }, new[]
+                        {
+                            new SwitchInfo("c", "Complicated help", new SwitchOptions
+                            {
+                                AcceptsValues = false,
+                                IsRequired = true,
+                            })
+                        }),
+                }, null);
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeNull();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
+            CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeTrue();
+            CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(1);
+            CommandInstance.Type.ShouldBe(type.ToString());
+            CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
+
+            // Check for switch info correctness
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];
+            @switch.SwitchName.ShouldBe("s");
+            @switch.HelpDefinition.ShouldBe("Simple help");
+            @switch.IsRequired.ShouldBeFalse();
+            @switch.ArgumentsRequired.ShouldBeFalse();
+            @switch.ConflictsWith.ShouldBeEmpty();
+            @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeFalse();
+            @switch2.SwitchName.ShouldBe("c");
+            @switch2.HelpDefinition.ShouldBe("Complicated help");
+            @switch2.IsRequired.ShouldBeTrue();
+            @switch2.ArgumentsRequired.ShouldBeFalse();
+            @switch2.ConflictsWith.ShouldBeEmpty();
+            @switch2.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch2.AcceptsValues.ShouldBeFalse();
         }
 
         /// <summary>
@@ -925,12 +1370,14 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             @switch.ArgumentsRequired.ShouldBeFalse();
             @switch.ConflictsWith.ShouldBeEmpty();
             @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeTrue();
             @switch2.SwitchName.ShouldBe("c");
             @switch2.HelpDefinition.ShouldBe("Complicated help");
             @switch2.IsRequired.ShouldBeFalse();
             @switch2.ArgumentsRequired.ShouldBeFalse();
             @switch2.ConflictsWith.ShouldBeEmpty();
             @switch2.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch2.AcceptsValues.ShouldBeTrue();
         }
 
         /// <summary>
@@ -1007,12 +1454,189 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             @switch.ArgumentsRequired.ShouldBeFalse();
             @switch.ConflictsWith.ShouldBeEmpty();
             @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeTrue();
             @switch2.SwitchName.ShouldBe("c");
             @switch2.HelpDefinition.ShouldBe("Complicated help");
             @switch2.IsRequired.ShouldBeFalse();
             @switch2.ArgumentsRequired.ShouldBeFalse();
             @switch2.ConflictsWith.ShouldBeEmpty();
             @switch2.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch2.AcceptsValues.ShouldBeTrue();
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsMultiCommandArgumentInfo(string type)
+        {
+            // Create instance
+            var CommandInstance = new CommandInfo("help", type, "Help page",
+                new[] {
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                    {
+                        new SwitchInfo("s", "Simple help", new SwitchOptions
+                        {
+                            AcceptsValues = false,
+                        })
+                    }),
+                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                    {
+                        new SwitchInfo("c", "Complicated help", new SwitchOptions
+                        {
+                            AcceptsValues = false,
+                            IsRequired = true,
+                        })
+                    }),
+                }, null);
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeNull();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
+            CommandInstance.CommandArgumentInfo[1].Arguments.ShouldBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(0);
+            CommandInstance.Type.ShouldBe(type.ToString());
+            CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
+
+            // Check for switch info correctness
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];
+            @switch.SwitchName.ShouldBe("s");
+            @switch.HelpDefinition.ShouldBe("Simple help");
+            @switch.IsRequired.ShouldBeFalse();
+            @switch.ArgumentsRequired.ShouldBeFalse();
+            @switch.ConflictsWith.ShouldBeEmpty();
+            @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeFalse();
+            @switch2.SwitchName.ShouldBe("c");
+            @switch2.HelpDefinition.ShouldBe("Complicated help");
+            @switch2.IsRequired.ShouldBeTrue();
+            @switch2.ArgumentsRequired.ShouldBeFalse();
+            @switch2.ConflictsWith.ShouldBeEmpty();
+            @switch2.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch2.AcceptsValues.ShouldBeFalse();
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase("Shell")]
+        [TestCase("AdminShell")]
+        [TestCase("DebugShell")]
+        [TestCase("FTPShell")]
+        [TestCase("HexShell")]
+        [TestCase("HTTPShell")]
+        [TestCase("JsonShell")]
+        [TestCase("MailShell")]
+        [TestCase("RSSShell")]
+        [TestCase("SFTPShell")]
+        [TestCase("SqlShell")]
+        [TestCase("TextShell")]
+        [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgWithSwitchWithOptionsAndArgMultiCommandArgumentInfo(string type)
+        {
+            // Create instance
+            var CommandInstance = new CommandInfo("help", type, "Help page",
+                new[] {
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "testarg")
+                        }, new[]
+                        {
+                            new SwitchInfo("s", "Simple help", new SwitchOptions
+                            {
+                                AcceptsValues = false,
+                            })
+                        }),
+                    new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "testme"),
+                            new CommandArgumentPart(false, "path"),
+                        }, new[]
+                        {
+                            new SwitchInfo("c", "Complicated help", new SwitchOptions
+                            {
+                                AcceptsValues = false,
+                                IsRequired = true,
+                            })
+                        }),
+                }, null);
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeNull();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeNull();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
+            CommandInstance.CommandArgumentInfo[0].MinimumArguments.ShouldBe(0);
+            CommandInstance.CommandArgumentInfo[1].Arguments.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].Switches.ShouldNotBeEmpty();
+            CommandInstance.CommandArgumentInfo[1].ArgumentsRequired.ShouldBeTrue();
+            CommandInstance.CommandArgumentInfo[1].MinimumArguments.ShouldBe(1);
+            CommandInstance.Type.ShouldBe(type.ToString());
+            CommandInstance.Flags.HasFlag(CommandFlags.Strict).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.Obsolete).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.NoMaintenance).ShouldBeFalse();
+            CommandInstance.Flags.HasFlag(CommandFlags.RedirectionSupported).ShouldBeFalse();
+
+            // Check for switch info correctness
+            var @switch = CommandInstance.CommandArgumentInfo[0].Switches[0];
+            var @switch2 = CommandInstance.CommandArgumentInfo[1].Switches[0];
+            @switch.SwitchName.ShouldBe("s");
+            @switch.HelpDefinition.ShouldBe("Simple help");
+            @switch.IsRequired.ShouldBeFalse();
+            @switch.ArgumentsRequired.ShouldBeFalse();
+            @switch.ConflictsWith.ShouldBeEmpty();
+            @switch.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch.AcceptsValues.ShouldBeFalse();
+            @switch2.SwitchName.ShouldBe("c");
+            @switch2.HelpDefinition.ShouldBe("Complicated help");
+            @switch2.IsRequired.ShouldBeTrue();
+            @switch2.ArgumentsRequired.ShouldBeFalse();
+            @switch2.ConflictsWith.ShouldBeEmpty();
+            @switch2.OptionalizeLastRequiredArguments.ShouldBe(0);
+            @switch2.AcceptsValues.ShouldBeFalse();
         }
 
     }
