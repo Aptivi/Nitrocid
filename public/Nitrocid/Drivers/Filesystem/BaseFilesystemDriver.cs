@@ -475,7 +475,7 @@ namespace KS.Drivers.Filesystem
                     builder.Append($"0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
-                    long byteNum = 0;
+                    long byteNum;
                     for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
                     {
                         byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];

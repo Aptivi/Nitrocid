@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
-using System;
 
 namespace KS.Shell.ShellBase.Switches
 {

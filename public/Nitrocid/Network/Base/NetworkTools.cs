@@ -22,7 +22,6 @@ using System.Net;
 using System.Net.NetworkInformation;
 using System.Text;
 using KS.Drivers;
-using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
