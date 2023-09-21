@@ -87,6 +87,7 @@ namespace Nitrocid.ScreensaverPacks
             { "squarecorner", new SquareCornerDisplay() },
             { "stackbox", new StackBoxDisplay() },
             { "starfield", new StarfieldDisplay() },
+            { "starfieldwarp", new StarfieldWarpDisplay() },
             { "text", new TextDisplay() },
             { "textbox", new TextBoxDisplay() },
             { "typewriter", new TypewriterDisplay() },

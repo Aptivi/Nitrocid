@@ -5340,5 +5340,17 @@
                 "Description": "The siren style."
             }
         ]
+    },
+    "StarfieldWarp": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.StarfieldWarp",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "StarfieldWarpDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
     }
 }

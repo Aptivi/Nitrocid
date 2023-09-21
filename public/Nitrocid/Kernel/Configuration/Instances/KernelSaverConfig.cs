@@ -2789,5 +2789,9 @@ namespace KS.Kernel.Configuration.Instances
         /// [SirenTheme] The siren style
         /// </summary>
         public string SirenThemeStyle { get; set; } = "Default";
+        /// <summary>
+        /// [StarfieldWarp] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int StarfieldWarpDelay { get; set; } = 10;
     }
 }
