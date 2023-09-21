@@ -31,7 +31,7 @@ namespace KS.Misc.Screensaver
     internal static class ScreensaverDisplayer
     {
 
-        internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver)ss)) { isCritical = true };
+        internal readonly static KernelThread ScreensaverDisplayerThread = new("Screensaver display thread", false, (ss) => DisplayScreensaver((BaseScreensaver)ss));
         internal static bool OutOfSaver;
         internal static BaseScreensaver displayingSaver;
 
