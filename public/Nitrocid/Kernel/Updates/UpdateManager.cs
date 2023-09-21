@@ -23,6 +23,7 @@ using Newtonsoft.Json.Linq;
 
 #if SPECIFIERREL
 using KS.Files;
+using KS.Kernel.Configuration;
 using KS.Misc.Splash;
 using KS.Languages;
 using System.IO;
