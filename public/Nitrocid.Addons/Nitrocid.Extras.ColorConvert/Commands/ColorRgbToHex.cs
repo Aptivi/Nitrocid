@@ -22,7 +22,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
     /// Converts the color RGB numbers to hex.

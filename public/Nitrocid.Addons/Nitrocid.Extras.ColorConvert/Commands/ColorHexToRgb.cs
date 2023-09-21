@@ -20,28 +20,32 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using Terminaux.Colors;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the hexadecimal representation of the color to RGB numbers in KS format.
+    /// Converts the hexadecimal representation of the color to RGB numbers.
     /// </summary>
     /// <remarks>
-    /// If you want to get the semicolon-delimited sequence of the RGB color numbers from the hexadecimal representation of the color, you can use this command. You can use this to form a complete VT sequence of changing color.
+    /// If you want to get the RGB color numbers from the hexadecimal representation of the color, you can use this command.
     /// </remarks>
-    class ColorHexToRgbKSCommand : BaseCommand, ICommand
+    class ColorHexToRgbCommand : BaseCommand, ICommand
     {
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
         {
             string Hex = ListArgsOnly[0];
-            string RGB;
 
             // Do the job
-            RGB = KernelColorTools.ConvertFromHexToRGB(Hex);
-            TextWriterColor.Write("- " + Translate.DoTranslation("RGB color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(RGB, true, KernelColorType.ListValue);
-            variableValue = RGB;
+            Color color = new(Hex);
+            TextWriterColor.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write($"{color.R}", true, KernelColorType.ListValue);
+            TextWriterColor.Write("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write($"{color.G}", true, KernelColorType.ListValue);
+            TextWriterColor.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.Write($"{color.B}", true, KernelColorType.ListValue);
+            variableValue = color.PlainSequence;
             return 0;
         }
 

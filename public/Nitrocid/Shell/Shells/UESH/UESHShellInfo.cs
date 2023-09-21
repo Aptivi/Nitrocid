@@ -272,38 +272,6 @@ namespace KS.Shell.Shells.UESH
                     }, new ClsCommand())
             },
             
-            { "colorhextorgb",
-                new CommandInfo("colorhextorgb", ShellType, /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToRgbCommand())
-            },
-            
-            { "colorhextorgbks",
-                new CommandInfo("colorhextorgbks", ShellType, /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers in KS format.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "#RRGGBB"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorHexToRgbKSCommand())
-            },
-            
-            { "colorrgbtohex",
-                new CommandInfo("colorrgbtohex", ShellType, /* Localizable */ "Converts the color RGB numbers to hex.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "R"),
-                            new CommandArgumentPart(true, "G"),
-                            new CommandArgumentPart(true, "B"),
-                        }, Array.Empty<SwitchInfo>(), true)
-                    }, new ColorRgbToHexCommand())
-            },
-            
             { "combinestr",
                 new CommandInfo("combinestr", ShellType, /* Localizable */ "Combines the two text files or more into the console.",
                     new[] {
