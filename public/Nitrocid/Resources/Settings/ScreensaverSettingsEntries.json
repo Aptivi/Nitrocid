@@ -5352,5 +5352,17 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
+    },
+    "Speckles": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.Speckles",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "SpecklesDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
     }
 }

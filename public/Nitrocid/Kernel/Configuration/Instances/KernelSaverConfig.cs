@@ -2793,5 +2793,9 @@ namespace KS.Kernel.Configuration.Instances
         /// [StarfieldWarp] How many milliseconds to wait before making the next write?
         /// </summary>
         public int StarfieldWarpDelay { get; set; } = 10;
+        /// <summary>
+        /// [Speckles] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int SpecklesDelay { get; set; } = 10;
     }
 }

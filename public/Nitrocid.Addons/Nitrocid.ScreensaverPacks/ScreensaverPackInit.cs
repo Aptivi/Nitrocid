@@ -82,6 +82,7 @@ namespace Nitrocid.ScreensaverPacks
             { "siren", new SirenDisplay() },
             { "sirentheme", new SirenThemeDisplay() },
             { "snakefill", new SnakeFillDisplay() },
+            { "speckles", new SpecklesDisplay() },
             { "spin", new SpinDisplay() },
             { "spotwrite", new SpotWriteDisplay() },
             { "squarecorner", new SquareCornerDisplay() },
