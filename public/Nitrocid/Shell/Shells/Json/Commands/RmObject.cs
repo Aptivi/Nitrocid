@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_RmObjectCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             string parent = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-parentProperty");
             JsonTools.JsonShell_RemoveObject(parent, ListArgsOnly[0]);

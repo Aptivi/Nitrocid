@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class CopyCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             Copying.CopyFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);

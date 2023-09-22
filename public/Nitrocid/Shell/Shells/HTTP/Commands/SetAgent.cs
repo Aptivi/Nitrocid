@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_SetAgentCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             string uaToSet = ListArgsOnly[0];
             HTTPTools.HttpSetUserAgent(uaToSet);

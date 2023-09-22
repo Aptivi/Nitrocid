@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_LsRemotesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var remotes = GitShellCommon.Repository.Network.Remotes;
             foreach (var remote in remotes)

@@ -24,7 +24,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands.TestCommands
     internal class CustomCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write($"Passed arguments: [{string.Join(", ", ListArgsOnly)}]");
             return 0;

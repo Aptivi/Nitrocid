@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_QueryByteCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly.Length == 1)
             {

@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class DiskInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var driveKeyValues = HardwareProbe.HardwareInfo.Hardware.HDD;
             var hardDrives = HardwareProbe.HardwareInfo.Hardware.HDD.Keys.ToArray();

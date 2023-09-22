@@ -25,7 +25,7 @@ namespace Nitrocid.Extras.Amusements.Commands
     class WordleCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             Wordle.InitializeWordle(ListSwitchesOnly.Length > 0 && ListSwitchesOnly.Contains("-orig"));
             return 0;

@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Calculators.Commands
     class ImaginaryCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Check both the real and the imaginary numbers for verification
             if (!double.TryParse(ListArgsOnly[0], out double Real))

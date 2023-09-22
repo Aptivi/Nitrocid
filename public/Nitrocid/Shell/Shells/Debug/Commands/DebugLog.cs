@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.Debug.Commands
     class Debug_DebugLogCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Try to parse the session number.
             string sessionNumStr = ListArgsOnly[0];

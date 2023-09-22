@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     class WeatherCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var ListMode = false;
             if (ListSwitchesOnly.Contains("-list"))

@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_DetachCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             ((SFTPShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
             ShellStart.KillShell();

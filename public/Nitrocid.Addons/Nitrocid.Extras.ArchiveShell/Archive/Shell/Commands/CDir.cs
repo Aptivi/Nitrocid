@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     class ArchiveShell_CDirCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write(ArchiveShellCommon.ArchiveShell_CurrentDirectory);
             return 0;

@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
     class DictCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Words = GetWordInfo(ListArgsOnly[0]);
 
@@ -106,7 +106,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Words = GetWordInfo(ListArgsOnly[0]);
 

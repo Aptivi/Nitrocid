@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.Amusements.Commands
     class SpeedPressCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
             int CustomTimeout = SpeedPress.SpeedPressTimeout;

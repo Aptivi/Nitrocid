@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.Debug.Commands
     class Debug_CurrentBtCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var trace = new StackTrace(true);
             for (int framenum = 0; framenum < trace.FrameCount; framenum++)

@@ -64,7 +64,7 @@ namespace KS.Shell.Shells.UESH.Commands
     {
 
         // Warning: Don't use ListSwitchesOnly to replace ListArgsOnly(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             string NeutralizedFilePath = Filesystem.NeutralizePath(ListArgsOnly[0]);
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);

@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_CpCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write(Translate.DoTranslation("Copying {0} to {1}..."), ListArgsOnly[0], ListArgsOnly[1]);
             if (FTPFilesystem.FTPCopyItem(ListArgsOnly[0], ListArgsOnly[1]))

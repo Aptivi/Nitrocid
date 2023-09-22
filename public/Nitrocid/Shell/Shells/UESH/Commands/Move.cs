@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class MoveCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             Moving.MoveFileOrDir(ListArgsOnly[0], ListArgsOnly[1]);

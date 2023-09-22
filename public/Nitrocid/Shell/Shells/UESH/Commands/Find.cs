@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class FindCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             string FileToSearch = ListArgsOnly[0];
             string DirectoryToSearch = CurrentDirectory.CurrentDir;

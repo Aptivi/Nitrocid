@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_PrintCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             int LineNumber = 1;
             if (ListArgsOnly.Length > 0)

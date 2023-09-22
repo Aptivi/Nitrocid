@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ThemePrevCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             string selectedTheme = ListArgsOnly.Length > 0 ? ListArgsOnly[0] : "";
             string ThemePath;

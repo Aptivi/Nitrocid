@@ -32,10 +32,12 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="StringArgs">String of arguments</param>
         /// <param name="ListArgsOnly">List of all arguments</param>
+        /// <param name="StringArgsOrig">Arguments in a string (original)</param>
+        /// <param name="ListArgsOnlyOrig">List of provided arguments (original)</param>
         /// <param name="ListSwitchesOnly">List of all switches</param>
         /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
         /// <returns>Error code for the command</returns>
-        public virtual int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public virtual int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
             throw new KernelException(KernelExceptionType.NotImplementedYet);
@@ -46,11 +48,13 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         /// <param name="StringArgs">String of arguments</param>
         /// <param name="ListArgsOnly">List of all arguments</param>
+        /// <param name="StringArgsOrig">Arguments in a string (original)</param>
+        /// <param name="ListArgsOnlyOrig">List of provided arguments (original)</param>
         /// <param name="ListSwitchesOnly">List of all switches</param>
         /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
         /// <returns>Error code for the command</returns>
-        public virtual int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue) =>
-            Execute(StringArgs, ListArgsOnly, ListSwitchesOnly, ref variableValue);
+        public virtual int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue) =>
+            Execute(StringArgs, ListArgsOnly, StringArgsOrig, ListArgsOnlyOrig, ListSwitchesOnly, ref variableValue);
 
         /// <summary>
         /// The help helper

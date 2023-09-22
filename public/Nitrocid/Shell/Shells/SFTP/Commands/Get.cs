@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_GetCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             TextWriterColor.Write(Translate.DoTranslation("Downloading file {0}..."), false, KernelColorType.Progress, ListArgsOnly[0]);
             if (SFTPTransfer.SFTPGetFile(ListArgsOnly[0]))

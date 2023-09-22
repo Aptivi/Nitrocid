@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_PutCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             string LocalFile = ListArgsOnly[0];
             string RemoteFile = ListArgsOnly.Length > 1 ? ListArgsOnly[1] : "";

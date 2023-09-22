@@ -63,7 +63,9 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Split the requested command string into words
             var words = CommandText.SplitEncloseDoubleQuotes();
+            var wordsOrig = CommandText.SplitEncloseDoubleQuotesNoRelease();
             string arguments = string.Join(' ', words.Skip(1));
+            string argumentsOrig = string.Join(' ', wordsOrig.Skip(1));
             for (int i = 0; i <= words.Length - 1; i++)
                 DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
             Command = words[0];
@@ -77,7 +79,7 @@ namespace KS.Shell.ShellBase.Arguments
             if (CommandInfo != null)
                 return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
             else
-                return new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
+                return new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
         }
 
         /// <summary>
@@ -92,7 +94,9 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Split the requested argument string into words
             var words = ArgumentText.SplitEncloseDoubleQuotes();
+            var wordsOrig = ArgumentText.SplitEncloseDoubleQuotesNoRelease();
             string arguments = string.Join(' ', words.Skip(1));
+            string argumentsOrig = string.Join(' ', wordsOrig.Skip(1));
             for (int i = 0; i <= words.Length - 1; i++)
                 DebugWriter.WriteDebug(DebugLevel.I, "Word {0}: {1}", i + 1, words[i]);
             Argument = words[0];
@@ -102,7 +106,7 @@ namespace KS.Shell.ShellBase.Arguments
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
             else
-                return new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
+                return new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>());
         }
 
         private static ProvidedArgumentsInfo ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo, ArgumentInfo ArgumentInfo)
@@ -125,15 +129,20 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Split the requested command string into words
             var words = CommandText.SplitEncloseDoubleQuotes();
+            var wordsOrig = CommandText.SplitEncloseDoubleQuotesNoRelease();
 
             // Split the arguments with enclosed quotes
             var EnclosedArgMatches = words.Skip(1);
+            var EnclosedArgMatchesOrig = wordsOrig.Skip(1);
             var EnclosedArgs = EnclosedArgMatches.ToArray();
+            var EnclosedArgsOrig = EnclosedArgMatches.ToArray();
             DebugWriter.WriteDebug(DebugLevel.I, "{0} arguments parsed: {1}", EnclosedArgs.Length, string.Join(", ", EnclosedArgs));
 
             // Get the string of arguments
             string strArgs = words.Length > 0 ? string.Join(" ", EnclosedArgMatches) : "";
+            string strArgsOrig = words.Length > 0 ? string.Join(" ", EnclosedArgMatchesOrig) : "";
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
+            DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgsOrig: {0}", strArgsOrig);
 
             // Split the switches to their key-value counterparts
             var EnclosedSwitchKeyValuePairs = SwitchManager.GetSwitchValues(EnclosedSwitches, true);
@@ -279,7 +288,7 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Install the parsed values to the new class instance
             DebugWriter.WriteDebug(DebugLevel.I, "Finalizing...");
-            return new ProvidedArgumentsInfo(words[0], strArgs, EnclosedArgs, EnclosedSwitches, RequiredArgumentsProvided, RequiredSwitchesProvided, RequiredSwitchArgumentsProvided, unknownSwitchesList, conflictingSwitchesList, noValueSwitchesList);
+            return new ProvidedArgumentsInfo(words[0], strArgs, EnclosedArgs, strArgsOrig, EnclosedArgsOrig, EnclosedSwitches, RequiredArgumentsProvided, RequiredSwitchesProvided, RequiredSwitchArgumentsProvided, unknownSwitchesList, conflictingSwitchesList, noValueSwitchesList);
         }
     }
 }

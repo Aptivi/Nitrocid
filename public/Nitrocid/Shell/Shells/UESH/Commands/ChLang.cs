@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChLangCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool inferSysLang = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-usesyslang");
             string language = inferSysLang ? "eng" : ListArgsOnly[0];

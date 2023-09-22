@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_ListBookmarkCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var Bookmarks = RSSBookmarkManager.GetBookmarks();
             foreach (var bookmark in Bookmarks)

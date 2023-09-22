@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_LsrCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || FTPShellCommon.FtpShowDetailsInList;
             var Entries = new List<string>();

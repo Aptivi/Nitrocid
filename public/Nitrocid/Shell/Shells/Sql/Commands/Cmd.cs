@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.Sql.Commands
     class Sql_CmdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             // First, check to see if we have parameters
             List<SqliteParameter> parameters = new();

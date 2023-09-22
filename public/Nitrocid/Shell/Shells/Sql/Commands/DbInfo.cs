@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.Sql.Commands
     class Sql_DbInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var connection = SqlShellCommon.sqliteConnection;
             TextWriterColor.Write(Translate.DoTranslation("Database path:") + " ", false, KernelColorType.ListEntry);

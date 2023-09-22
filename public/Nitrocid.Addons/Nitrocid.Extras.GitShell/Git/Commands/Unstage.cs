@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_UnstageCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 

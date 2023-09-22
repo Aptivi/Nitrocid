@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class HttpCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             NetworkConnectionTools.OpenConnectionForShell(ShellType.HTTPShell, EstablishHttpConnection, (_, connection) =>
             EstablishHttpConnection(connection.Address), StringArgs);

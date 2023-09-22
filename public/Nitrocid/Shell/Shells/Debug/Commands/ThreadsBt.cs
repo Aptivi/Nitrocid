@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Debug.Commands
     class Debug_ThreadsBtCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Print the list
             Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
@@ -49,7 +49,7 @@ namespace KS.Shell.Shells.Debug.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Print the list in a dumb-friendly way
             Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();

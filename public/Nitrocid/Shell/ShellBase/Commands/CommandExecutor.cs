@@ -124,8 +124,10 @@ namespace KS.Shell.ShellBase.Commands
                 var ArgumentInfo = ArgumentsParser.ParseShellCommandArguments(RequestedCommand, ShellType);
                 string Command = ArgumentInfo.Command;
                 var Args = ArgumentInfo.ArgumentsList;
+                var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
                 var Switches = ArgumentInfo.SwitchesList;
                 string StrArgs = ArgumentInfo.ArgumentsText;
+                string StrArgsOrig = ArgumentInfo.ArgumentsTextOrig;
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
                 bool RequiredSwitchesProvided = ArgumentInfo.RequiredSwitchesProvided;
                 bool RequiredSwitchArgumentsProvided = ArgumentInfo.RequiredSwitchArgumentsProvided;
@@ -231,9 +233,9 @@ namespace KS.Shell.ShellBase.Commands
                     var CommandBase = TargetCommands[Command].CommandBase;
                     string value = "";
                     if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
-                        ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(StrArgs, Args, Switches, ref value);
+                        ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, ref value);
                     else
-                        ShellInstance.LastErrorCode = CommandBase.Execute(StrArgs, Args, Switches, ref value);
+                        ShellInstance.LastErrorCode = CommandBase.Execute(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, ref value);
                     DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);
                     if (containsSetSwitch)
                     {
@@ -284,7 +286,7 @@ namespace KS.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Executes a command in a wrapped mode (must be run from a separate command execution entry point, <see cref="BaseCommand.Execute(string, string[], string[], ref string)"/>.)
+        /// Executes a command in a wrapped mode (must be run from a separate command execution entry point, <see cref="BaseCommand.Execute(string, string[], string, string[], string[], ref string)"/>.)
         /// </summary>
         /// <param name="Command">Requested command with its arguments and switches</param>
         public static void ExecuteCommandWrapped(string Command)

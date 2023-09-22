@@ -36,6 +36,14 @@ namespace KS.Shell.ShellBase.Arguments
         /// </summary>
         public string[] ArgumentsList { get; private set; }
         /// <summary>
+        /// Text version of the provided arguments and switches (original)
+        /// </summary>
+        public string ArgumentsTextOrig { get; private set; }
+        /// <summary>
+        /// List version of the provided arguments (original)
+        /// </summary>
+        public string[] ArgumentsListOrig { get; private set; }
+        /// <summary>
         /// List version of the provided switches
         /// </summary>
         public string[] SwitchesList { get; private set; }
@@ -56,11 +64,13 @@ namespace KS.Shell.ShellBase.Arguments
         internal string[] ConflictingSwitchesList { get; private set; }
         internal string[] NoValueSwitchesList { get; private set; }
 
-        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList, string[] noValueSwitchesList)
+        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string argumentsTextOrig, string[] argumentsListOrig, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList, string[] noValueSwitchesList)
         {
             Command = command;
             ArgumentsText = argumentsText;
             ArgumentsList = argumentsList;
+            ArgumentsTextOrig = argumentsTextOrig;
+            ArgumentsListOrig = argumentsListOrig;
             SwitchesList = switchesList;
             RequiredArgumentsProvided = requiredArgumentsProvided;
             RequiredSwitchesProvided = requiredSwitchesProvided;

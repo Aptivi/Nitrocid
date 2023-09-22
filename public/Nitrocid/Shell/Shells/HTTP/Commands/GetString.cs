@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_GetStringCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Print a message
             TextWriterColor.Write(Translate.DoTranslation("Getting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);

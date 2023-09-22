@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_ResetCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Assume that we want to do a soft reset
             var resetMode = ResetMode.Soft;

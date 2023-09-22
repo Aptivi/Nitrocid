@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
     class ListUnitsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
             var Quantities = Quantity.Infos.Where(x => x.Name == ListArgsOnly[0]);

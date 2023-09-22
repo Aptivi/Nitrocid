@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class EchoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool parsePlaces = !SwitchManager.ContainsSwitch(ListSwitchesOnly, "-noparse");
             if (ListSwitchesOnly.Length == 0)

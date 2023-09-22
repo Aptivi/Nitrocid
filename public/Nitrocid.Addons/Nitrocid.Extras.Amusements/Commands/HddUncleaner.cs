@@ -24,7 +24,7 @@ namespace Nitrocid.Extras.Amusements.Commands
     class HddUncleanerCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             HddUncleaner2015.EntryPoint();
             return 0;

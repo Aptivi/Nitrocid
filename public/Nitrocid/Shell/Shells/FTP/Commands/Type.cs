@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_TypeCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (ListArgsOnly[0].ToLower() == "a")
             {

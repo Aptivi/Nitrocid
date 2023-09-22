@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_SetIdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             GitShellCommon.email = ListArgsOnly[0];
             GitShellCommon.name = ListArgsOnly[1];

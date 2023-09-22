@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_LsBranchesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             var branches = GitShellCommon.Repository.Branches;
             foreach (var branch in branches)

@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList.Commands
     class TodoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             string Action = ListArgsOnly[0];
 

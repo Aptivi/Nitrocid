@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_MvAllCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             if (MailManager.MailMoveAllBySender(ListArgsOnly[0], ListArgsOnly[1]))
             {

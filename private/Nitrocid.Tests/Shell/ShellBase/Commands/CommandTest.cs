@@ -25,7 +25,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
     class CommandTest : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             Console.WriteLine("We're on CommandTest with:");
             Console.WriteLine(format: "- StringArgs: {0}", StringArgs);

@@ -131,6 +131,18 @@ namespace KS.Misc.Text
         }
 
         /// <summary>
+        /// Splits the string enclosed in double quotes delimited by spaces using regular expression formula without releasing double quotes
+        /// </summary>
+        /// <param name="target">Target string</param>
+        public static string[] SplitEncloseDoubleQuotesNoRelease(this string target)
+        {
+            return DriverHandler.CurrentRegexpDriverLocal
+                .Matches(target, /* lang=regex */ @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+")
+                .Select((m) => m.Value)
+                .ToArray();
+        }
+
+        /// <summary>
         /// Releases a string from double quotations
         /// </summary>
         /// <param name="target">Target string</param>

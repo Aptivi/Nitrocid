@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
     class AltDateCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             // Determine how to show date and time
             bool showDate = true;

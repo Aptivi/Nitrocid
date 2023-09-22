@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_DetachCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             ((RSSShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
             ShellStart.KillShell();
