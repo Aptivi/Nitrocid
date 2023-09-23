@@ -38,6 +38,7 @@ using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Shell.ShellBase.Scripting;
 using Terminaux.Colors;
+using KS.Kernel;
 
 namespace KS.Misc.Probers.Placeholder
 {
@@ -78,6 +79,10 @@ namespace KS.Misc.Probers.Placeholder
             { "<dollar>",                                 UserManagement.GetUserDollarSign },
             { "<randomfile>",                             Getting.GetRandomFileName },
             { "<randomfolder>",                           Getting.GetRandomFolderName },
+            { "<rid>",                                    KernelPlatform.GetCurrentRid },
+            { "<ridgeneric>",                             KernelPlatform.GetCurrentGenericRid },
+            { "<termemu>",                                KernelPlatform.GetTerminalEmulator },
+            { "<termtype>",                               KernelPlatform.GetTerminalType },
             { "<f:reset>",                          () => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground },
             { "<b:reset>",                          () => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground },
             { "<uptime>",                           () => PowerManager.KernelUptime }
