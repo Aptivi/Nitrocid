@@ -75,8 +75,6 @@ namespace KS.Shell.Shells.Debug.Commands
 
             // Get the contents of the file and write it to the console
             string contents = File.ReadAllText(finalDebug);
-
-            // TODO: It looks like that we're finally showing ConsoleExtensions.GetFilteredPositions's slowness. This is screwed up!
             TextWriterColor.Write(contents);
             return 0;
         }
