@@ -2797,5 +2797,17 @@ namespace KS.Kernel.Configuration.Instances
         /// [Speckles] How many milliseconds to wait before making the next write?
         /// </summary>
         public int SpecklesDelay { get; set; } = 10;
+        /// <summary>
+        /// [LetterScatter] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int LetterScatterDelay { get; set; } = 1;
+        /// <summary>
+        /// [LetterScatter] Screensaver background color
+        /// </summary>
+        public string LetterScatterBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        /// <summary>
+        /// [LetterScatter] Screensaver foreground color
+        /// </summary>
+        public string LetterScatterForegroundColor { get; set; } = new Color(ConsoleColors.Green).PlainSequence;
     }
 }

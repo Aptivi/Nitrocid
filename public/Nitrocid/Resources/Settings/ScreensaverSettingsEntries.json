@@ -5364,5 +5364,27 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
+    },
+    "LetterScatter": {
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.LetterScatter",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "LetterScatterDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "LetterScatterBackgroundColor"
+            },
+            {
+                "Name": "Foreground color",
+                "Type": "SColor",
+                "Variable": "LetterScatterForegroundColor"
+            }
+        ]
     }
 }
