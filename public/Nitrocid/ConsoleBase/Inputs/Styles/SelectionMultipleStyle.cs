@@ -160,7 +160,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             // Make pages based on console window height
             int listStartPosition = ConsoleWrapper.CursorTop;
             int listEndPosition = ConsoleWrapper.WindowHeight - ConsoleWrapper.CursorTop;
-            int answersPerPage = listEndPosition - 4;
+            int answersPerPage = listEndPosition - 5;
             int pages = AllAnswers.Count / answersPerPage;
             if (AllAnswers.Count % answersPerPage == 0)
                 pages--;
@@ -183,7 +183,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 }
 
                 // Populate the answers
-                int renderedAnswers = 0;
+                int renderedAnswers = 1;
                 for (int AnswerIndex = startIndex; AnswerIndex <= endIndex; AnswerIndex++)
                 {
                     ConsoleWrapper.SetCursorPosition(0, listStartPosition + renderedAnswers);
@@ -203,12 +203,12 @@ namespace KS.ConsoleBase.Inputs.Styles
                         string answerIndicator = $"[{(SelectedAnswers.Contains(AnswerIndex + 1) ? "*" : " ")}]";
 
                         // Get the option
-                        string AnswerOption = $" {AnswerInstance}) {answerIndicator} {AnswerTitle}";
-                        int AnswerTitleLeft = AllAnswers.Max(x => $" {x.ChoiceName}) ".Length);
+                        string AnswerOption = $"  {AnswerInstance}) {answerIndicator} {AnswerTitle}";
+                        int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
                         int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
                         if (AnswerTitleLeft < answerTitleMaxLeft)
                         {
-                            string renderedChoice = $" {AnswerInstance.ChoiceName}) ";
+                            string renderedChoice = $"  {AnswerInstance.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{answerIndicator} {AnswerTitle}" + $"{ConsoleExtensions.GetClearLineToRightSequence()}";
                         }
@@ -224,7 +224,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
                 // we're not switching pages yet.
                 if (KernelFlags.EnableScrollBarInSelection)
-                    ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition - 1, listStartPosition, 4, false);
+                    ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition, listStartPosition + 1, 4, false);
 
                 // Write description area
                 int descSepArea = ConsoleWrapper.WindowHeight - 3;
