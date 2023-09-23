@@ -67,7 +67,7 @@ namespace KS.Users.Login.Handlers.Logins
             return UserManagement.SelectUser(userNum);
         }
 
-        public override bool PasswordHandler(string user)
+        public override bool PasswordHandler(string user, ref string pass)
         {
             // Check if password is empty
             ConsoleWrapper.Clear();
@@ -77,10 +77,11 @@ namespace KS.Users.Login.Handlers.Logins
 
             // The password is not empty. Prompt for password.
             TextWriterColor.Write(Translate.DoTranslation("Enter the password for user") + " {0}: ", false, vars: new object[] { user });
-            string pass = Input.ReadLineNoInput();
+            string password = Input.ReadLineNoInput();
 
             // Validate the password
-            if (UserManagement.ValidatePassword(user, pass))
+            pass = password;
+            if (UserManagement.ValidatePassword(user, password))
                 // Password written correctly. Log in.
                 return true;
             else

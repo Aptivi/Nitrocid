@@ -38,6 +38,6 @@ namespace KS.Users.Login.Handlers
         /// Password handler
         /// </summary>
         /// <returns>True if the password if valid. Otherwise, false. Please be honest here, because we don't want failed logins to appear as successful.</returns>
-        bool PasswordHandler(string user);
+        bool PasswordHandler(string user, ref string pass);
     }
 }

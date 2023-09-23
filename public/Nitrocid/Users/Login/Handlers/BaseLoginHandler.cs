@@ -51,7 +51,7 @@ namespace KS.Users.Login.Handlers
         }
 
         /// <inheritdoc/>
-        public virtual bool PasswordHandler(string user)
+        public virtual bool PasswordHandler(string user, ref string pass)
         {
             // Prompts user to enter a user's password
             while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
@@ -72,7 +72,7 @@ namespace KS.Users.Login.Handlers
 
                     // Get input
                     string answerpass = Input.ReadLineNoInputUnsafe();
-
+                    pass = answerpass;
                     if (UserManagement.ValidatePassword(user, answerpass))
                         return true;
                     else

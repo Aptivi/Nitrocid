@@ -121,12 +121,11 @@ namespace KS.Users.Login
                     }
 
                     // Prompt for password, assuming that the username is valid.
-                    bool valid = handler.PasswordHandler(user);
+                    string pass = "";
+                    bool valid = handler.PasswordHandler(user, ref pass);
+                    valid = UserManagement.ValidatePassword(user, pass);
                     if (valid)
-                    {
-                        // TODO: Handle invalid statuses given by some trickster.
                         SignIn(user);
-                    }
                     else
                         TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                 }
