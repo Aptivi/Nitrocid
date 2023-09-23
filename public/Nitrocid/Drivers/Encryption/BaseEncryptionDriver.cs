@@ -70,7 +70,7 @@ namespace KS.Drivers.Encryption
         public virtual string GetEncryptedString(string str)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
-            var hashbyte = Encryptor.Create().ComputeHash(Encoding.UTF8.GetBytes(str));
+            var hashbyte = Encryptor.HashData(Encoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }
 
