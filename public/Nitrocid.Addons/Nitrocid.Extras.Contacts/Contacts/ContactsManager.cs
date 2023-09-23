@@ -28,10 +28,10 @@ using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
 using System.Linq;
-using KS.Misc.Probers.Regexp;
 using KS.Drivers.Encryption;
 using System.IO;
 using VisualCard.Converters;
+using KS.Misc.Text.Probers.Regexp;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {

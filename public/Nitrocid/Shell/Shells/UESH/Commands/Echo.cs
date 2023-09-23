@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Misc.Probers.Placeholder;
+using KS.Misc.Text.Probers.Placeholder;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
 

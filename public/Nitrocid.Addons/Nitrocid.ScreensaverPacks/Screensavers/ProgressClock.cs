@@ -26,8 +26,8 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
-using KS.Misc.Probers.Placeholder;
 using KS.Misc.Screensaver;
+using KS.Misc.Text.Probers.Placeholder;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

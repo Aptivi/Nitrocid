@@ -18,7 +18,7 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
-using KS.Misc.Probers.Placeholder;
+using KS.Misc.Text.Probers.Placeholder;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {

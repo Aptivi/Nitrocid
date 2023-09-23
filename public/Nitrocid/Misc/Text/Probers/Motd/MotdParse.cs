@@ -24,7 +24,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 
-namespace KS.Misc.Probers.Motd
+namespace KS.Misc.Text.Probers.Motd
 {
     /// <summary>
     /// Message of the Day (MOTD) parsing module
@@ -41,7 +41,7 @@ namespace KS.Misc.Probers.Motd
         /// <summary>
         /// Current MOTD message
         /// </summary>
-        public static string MOTDMessage 
+        public static string MOTDMessage
         {
             get => motdMessage ?? Translate.DoTranslation("Welcome to Nitrocid Kernel!");
             set => motdMessage = value ?? Translate.DoTranslation("Welcome to Nitrocid Kernel!");

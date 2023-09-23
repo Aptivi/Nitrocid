@@ -28,7 +28,7 @@ using KS.Files;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Probers.Placeholder;
+using KS.Misc.Text.Probers.Placeholder;
 using KS.Network.Base.Connections;
 using KS.Network.Mail.PGP;
 using MailKit;

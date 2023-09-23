@@ -18,10 +18,10 @@
 
 using NUnit.Framework;
 using Shouldly;
-using KS.Misc.Probers.Regexp;
 using KS.Drivers;
 using System.Text.RegularExpressions;
 using KS.Kernel.Exceptions;
+using KS.Misc.Text.Probers.Regexp;
 
 namespace Nitrocid.Tests.Drivers
 {

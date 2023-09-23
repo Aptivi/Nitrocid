@@ -32,8 +32,8 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.Users.Login;
-using KS.Misc.Probers.Regexp;
 using KS.Kernel.Configuration;
+using KS.Misc.Text.Probers.Regexp;
 
 namespace KS.Users
 {

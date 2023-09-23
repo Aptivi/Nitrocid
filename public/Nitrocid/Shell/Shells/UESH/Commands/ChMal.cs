@@ -21,7 +21,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Probers.Motd;
+using KS.Misc.Text.Probers.Motd;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 

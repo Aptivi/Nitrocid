@@ -25,7 +25,6 @@ using KS.Drivers.Encryption;
 using System.Linq;
 using System.Threading;
 using KS.Kernel.Debugging;
-using KS.Misc.Probers.Motd;
 using Syndian.Instance;
 using System;
 using KS.Network.RSS;
@@ -37,6 +36,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Text;
 using Figletize;
+using KS.Misc.Text.Probers.Motd;
 
 namespace KS.Users.Login
 {

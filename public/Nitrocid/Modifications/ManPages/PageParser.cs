@@ -25,7 +25,7 @@ using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Probers.Placeholder;
+using KS.Misc.Text.Probers.Placeholder;
 
 namespace KS.Modifications.ManPages
 {

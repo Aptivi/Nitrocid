@@ -50,7 +50,6 @@ using FileIO = System.IO.File;
 using KS.Users.Permissions;
 using KS.Drivers.Console;
 using Manipulation = KS.Files.Operations.Manipulation;
-using KS.Misc.Probers.Regexp;
 using System.Text.RegularExpressions;
 using System.Linq;
 using KS.Drivers.Console.Consoles;
@@ -69,6 +68,7 @@ using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
+using KS.Misc.Text.Probers.Regexp;
 
 namespace KS.Shell.ShellBase.Shells
 {

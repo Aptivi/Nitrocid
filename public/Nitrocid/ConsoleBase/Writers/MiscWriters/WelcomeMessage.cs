@@ -24,8 +24,8 @@ using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Languages;
-using KS.Misc.Probers.Placeholder;
 using KS.Misc.Text;
+using KS.Misc.Text.Probers.Placeholder;
 using System;
 
 namespace KS.ConsoleBase.Writers.MiscWriters

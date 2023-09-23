@@ -18,7 +18,7 @@
 
 using System.IO;
 using KS.Files;
-using KS.Misc.Probers.Motd;
+using KS.Misc.Text.Probers.Motd;
 using NUnit.Framework;
 using Shouldly;
 

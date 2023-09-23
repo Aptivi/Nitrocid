@@ -18,7 +18,7 @@
 
 using KS.Drivers;
 
-namespace KS.Misc.Probers.Regexp
+namespace KS.Misc.Text.Probers.Regexp
 {
     /// <summary>
     /// All tools for the regular expressions

@@ -40,7 +40,7 @@ using KS.Shell.ShellBase.Scripting;
 using Terminaux.Colors;
 using KS.Kernel;
 
-namespace KS.Misc.Probers.Placeholder
+namespace KS.Misc.Text.Probers.Placeholder
 {
     /// <summary>
     /// Placeholder parsing module

@@ -22,13 +22,11 @@ using KS.Drivers.Encryption;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Probers.Motd;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
-using KS.Misc.Probers.Placeholder;
 using KS.Kernel.Configuration;
 using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -36,6 +34,8 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Users.Login.Handlers;
 using System;
+using KS.Misc.Text.Probers.Motd;
+using KS.Misc.Text.Probers.Placeholder;
 
 namespace KS.Users.Login
 {

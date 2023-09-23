@@ -28,8 +28,8 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Probers.Placeholder;
 using KS.Misc.Text;
+using KS.Misc.Text.Probers.Placeholder;
 using KS.Network.Base.Connections;
 using KS.Shell.Shells.FTP;
 

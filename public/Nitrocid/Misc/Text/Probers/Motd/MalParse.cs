@@ -24,7 +24,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 
-namespace KS.Misc.Probers.Motd
+namespace KS.Misc.Text.Probers.Motd
 {
     /// <summary>
     /// Message of the Day After Login (MAL) parsing module

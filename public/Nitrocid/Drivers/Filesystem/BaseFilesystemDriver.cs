@@ -43,11 +43,11 @@ using KS.Kernel.Events;
 using KS.Files;
 using KS.Kernel.Configuration;
 using KS.Misc.Reflection;
-using KS.Misc.Probers.Regexp;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.PathLookup;
 using KS.Files.Instances;
 using KS.Files.Editors.SqlEdit;
+using KS.Misc.Text.Probers.Regexp;
 
 namespace KS.Drivers.Filesystem
 {
