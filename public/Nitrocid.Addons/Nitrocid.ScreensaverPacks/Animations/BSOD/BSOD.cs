@@ -45,6 +45,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD
             new OS2Warp(),
             new OS2WarpPreBoot(),
             new YabootLinux(),
+            new GrubError(),
         };
 
         /// <summary>
