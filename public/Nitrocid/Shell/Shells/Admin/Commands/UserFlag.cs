@@ -33,21 +33,51 @@ namespace KS.Shell.Shells.Admin.Commands
             string type = ListArgsOnly[1];
             bool enabled = bool.Parse(ListArgsOnly[2]);
             int userIndex = UserManagement.GetUserIndex(userName);
+            var flags = UserManagement.Users[userIndex].Flags;
             switch (type)
             {
                 case "admin":
-                    UserManagement.Users[userIndex].Admin = enabled;
+                    if (enabled)
+                    {
+                        if (!flags.HasFlag(UserFlags.Administrator))
+                            flags |= UserFlags.Administrator;
+                    }
+                    else
+                    {
+                        if (flags.HasFlag(UserFlags.Administrator))
+                            flags &= ~UserFlags.Administrator;
+                    }
                     break;
                 case "disabled":
-                    UserManagement.Users[userIndex].Disabled = enabled;
+                    if (enabled)
+                    {
+                        if (!flags.HasFlag(UserFlags.Disabled))
+                            flags |= UserFlags.Disabled;
+                    }
+                    else
+                    {
+                        if (flags.HasFlag(UserFlags.Disabled))
+                            flags &= ~UserFlags.Disabled;
+                    }
                     break;
                 case "anonymous":
-                    UserManagement.Users[userIndex].Anonymous = enabled;
+                    if (enabled)
+                    {
+                        if (!flags.HasFlag(UserFlags.Anonymous))
+                            flags |= UserFlags.Anonymous;
+                    }
+                    else
+                    {
+                        if (flags.HasFlag(UserFlags.Anonymous))
+                            flags &= ~UserFlags.Anonymous;
+                    }
                     break;
                 default:
                     TextWriterColor.Write(Translate.DoTranslation("The specified main flag type is invalid") + ": {0}", type);
                     return 10000 + (int)KernelExceptionType.UserManagement;
             }
+            UserManagement.Users[userIndex].Flags = flags;
+            UserManagement.SaveUsers();
             return 0;
         }
     }

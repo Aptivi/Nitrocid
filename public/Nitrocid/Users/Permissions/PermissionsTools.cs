@@ -54,7 +54,7 @@ namespace KS.Users.Permissions
                 throw new KernelException(KernelExceptionType.NoSuchUser);
 
             // If admin, always granted
-            if (UserManagement.GetUser(User).Admin)
+            if (UserManagement.GetUser(User).Flags.HasFlag(UserFlags.Administrator))
                 return true;
 
             // Now, query the user for permissions

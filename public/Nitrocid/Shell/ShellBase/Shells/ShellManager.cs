@@ -437,7 +437,7 @@ namespace KS.Shell.ShellBase.Shells
                                     if (Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
                                     {
                                         if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
-                                            !UserManagement.CurrentUser.Admin)
+                                            !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
                                         {
                                             DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
                                             TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);

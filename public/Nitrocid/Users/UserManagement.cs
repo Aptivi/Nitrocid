@@ -43,7 +43,6 @@ namespace KS.Users
     public static class UserManagement
     {
 
-        // Variables
         /// <summary>
         /// Include anonymous users in list
         /// </summary>
@@ -60,7 +59,7 @@ namespace KS.Users
         public static UserInfo CurrentUser =>
             CurrentUserInfo;
 
-        internal static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), true, false, false, new());
+        internal static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), UserFlags.Administrator, new());
         internal static List<UserInfo> Users = new() { CurrentUserInfo };
         private static readonly List<UserInfo> LockedUsers = new();
 
@@ -96,7 +95,7 @@ namespace KS.Users
                 }
 
                 // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "", Array.Empty<string>(), false, false, false, new());
+                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "", Array.Empty<string>(), UserFlags.None, new());
                 if (!UserExists(uninitUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", uninitUser);
@@ -270,7 +269,7 @@ namespace KS.Users
                     {
                         // Store user info
                         var oldInfo = GetUser(OldName);
-                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage, oldInfo.Groups, oldInfo.Admin, oldInfo.Anonymous, oldInfo.Disabled, oldInfo.CustomSettings);
+                        var newInfo = new UserInfo(Username, oldInfo.Password, oldInfo.Permissions, oldInfo.FullName, oldInfo.PreferredLanguage, oldInfo.Groups, oldInfo.Flags, oldInfo.CustomSettings);
 
                         // Rename username in dictionary
                         Users.Remove(oldInfo);
@@ -326,8 +325,8 @@ namespace KS.Users
         /// <param name="NewPass">New user password</param>
         public static void ChangePassword(string Target, string CurrentPass, string NewPass)
         {
-            bool currentUserAdmin = GetUser(CurrentUser.Username).Admin;
-            bool targetUserAdmin = GetUser(Target).Admin;
+            bool currentUserAdmin = GetUser(CurrentUser.Username).Flags.HasFlag(UserFlags.Administrator);
+            bool targetUserAdmin = GetUser(Target).Flags.HasFlag(UserFlags.Administrator);
 
             if (!UserExists(Target))
                 throw new KernelException(KernelExceptionType.UserManagement, Translate.DoTranslation("User not found"));
@@ -397,9 +396,9 @@ namespace KS.Users
         {
             var UsersList = new List<string>(Users.Select((userInfo) => userInfo.Username));
             if (!IncludeAnonymous)
-                UsersList.RemoveAll(x => GetUser(x).Anonymous);
+                UsersList.RemoveAll(x => GetUser(x).Flags.HasFlag(UserFlags.Anonymous));
             if (!IncludeDisabled)
-                UsersList.RemoveAll(x => GetUser(x).Disabled);
+                UsersList.RemoveAll(x => GetUser(x).Flags.HasFlag(UserFlags.Disabled));
 
             return UsersList;
         }
@@ -474,7 +473,7 @@ namespace KS.Users
         public static string GetUserDollarSign(string User)
         {
             if (UserExists(User))
-                if (GetUser(User).Admin)
+                if (GetUser(User).Flags.HasFlag(UserFlags.Administrator))
                     return "#";
                 else
                     return "$";
@@ -514,7 +513,7 @@ namespace KS.Users
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Username correct. Finding if the user is disabled...");
-                if (!UserExists(User) || !GetUser(User).Disabled)
+                if (!UserExists(User) || !GetUser(User).Flags.HasFlag(UserFlags.Disabled))
                 {
                     // User is not disabled
                     DebugWriter.WriteDebug(DebugLevel.I, "User validation complete");

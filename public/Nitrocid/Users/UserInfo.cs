@@ -44,11 +44,7 @@ namespace KS.Users
         [JsonProperty]
         internal string Password { get; set; }
         [JsonProperty]
-        internal bool Admin { get; set; }
-        [JsonProperty]
-        internal bool Anonymous { get; set; }
-        [JsonProperty]
-        internal bool Disabled { get; set; }
+        internal UserFlags Flags { get; set; }
         [JsonProperty]
         internal string[] Permissions { get; set; }
         [JsonProperty]
@@ -58,7 +54,7 @@ namespace KS.Users
         /// Makes a new class instance of current user info
         /// </summary>
         [JsonConstructor]
-        internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage, string[] groups, bool admin, bool anonymous, bool disabled, Dictionary<string, object[]> customSettings)
+        internal UserInfo(string username, string password, string[] permissions, string fullName, string preferredLanguage, string[] groups, UserFlags flags, Dictionary<string, object[]> customSettings)
         {
             Username = username;
             Password = password;
@@ -66,9 +62,7 @@ namespace KS.Users
             FullName = fullName;
             PreferredLanguage = preferredLanguage;
             Groups = groups;
-            Admin = admin;
-            Anonymous = anonymous;
-            Disabled = disabled;
+            Flags = flags;
             CustomSettings = customSettings;
         }
 

@@ -123,9 +123,9 @@ namespace Nitrocid.Tests.Users
             user.Groups.ShouldNotBeNull();
             user.Groups.ShouldBeEmpty();
             user.PreferredLanguage.ShouldBeNullOrEmpty();
-            user.Admin.ShouldBeTrue();
-            user.Anonymous.ShouldBeFalse();
-            user.Disabled.ShouldBeFalse();
+            user.Flags.HasFlag(UserFlags.Administrator).ShouldBeTrue();
+            user.Flags.HasFlag(UserFlags.Anonymous).ShouldBeFalse();
+            user.Flags.HasFlag(UserFlags.Disabled).ShouldBeFalse();
             user.CustomSettings.ShouldNotBeNull();
             user.CustomSettings.ShouldBeEmpty();
             UserManagement.GetUserDollarSign("root").ShouldBe("#");
@@ -156,9 +156,9 @@ namespace Nitrocid.Tests.Users
             user.Groups.ShouldNotBeNull();
             user.Groups.ShouldBeEmpty();
             user.PreferredLanguage.ShouldBeNullOrEmpty();
-            user.Admin.ShouldBeTrue();
-            user.Anonymous.ShouldBeFalse();
-            user.Disabled.ShouldBeFalse();
+            user.Flags.HasFlag(UserFlags.Administrator).ShouldBeTrue();
+            user.Flags.HasFlag(UserFlags.Anonymous).ShouldBeFalse();
+            user.Flags.HasFlag(UserFlags.Disabled).ShouldBeFalse();
             user.CustomSettings.ShouldNotBeNull();
             user.CustomSettings.ShouldBeEmpty();
             UserManagement.GetUserDollarSign("root").ShouldBe("#");
