@@ -460,7 +460,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default", "Default")]
         [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default", "Default")]
-        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "UnitTest", "UnitTest", "Default")]
+        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "UnitTest", "Default", "Default")]
         [Description("Management")]
         public void TestBeginLocalDriverSafe<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
         {
