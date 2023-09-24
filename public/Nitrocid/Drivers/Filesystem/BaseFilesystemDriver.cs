@@ -575,6 +575,7 @@ namespace KS.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual long GetAllSizesInFolder(DirectoryInfo DirectoryInfo, bool FullParseMode)
         {
+            // Determine parse mode
             List<FileInfo> Files;
             if (FullParseMode)
             {
@@ -585,7 +586,9 @@ namespace KS.Drivers.Filesystem
                 Files = DirectoryInfo.EnumerateFiles("*", SearchOption.TopDirectoryOnly).ToList();
             }
             DebugWriter.WriteDebug(DebugLevel.I, "{0} files to be parsed", Files.Count);
-            long TotalSize = 0L; // In bytes
+
+            // Get all sizes in bytes
+            long TotalSize = 0L;
             foreach (FileInfo DFile in Files)
             {
                 if (DFile.Attributes == FileAttributes.Hidden & KernelFlags.HiddenFiles | !DFile.Attributes.HasFlag(FileAttributes.Hidden))

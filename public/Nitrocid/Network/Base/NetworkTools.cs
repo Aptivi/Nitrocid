@@ -80,8 +80,9 @@ namespace KS.Network.Base
         /// <returns>A ping reply status</returns>
         public static PingReply PingAddress(string Address)
         {
+            // 60 seconds = 1 minute. timeout of Pinger.Send() takes milliseconds.
             var PingBuffer = Encoding.ASCII.GetBytes("Nitrocid KS");
-            int Timeout = PingTimeout; // 60 seconds = 1 minute. timeout of Pinger.Send() takes milliseconds.
+            int Timeout = PingTimeout;
             return PingAddress(Address, Timeout, PingBuffer);
         }
 

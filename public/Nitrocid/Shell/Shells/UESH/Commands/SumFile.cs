@@ -56,8 +56,9 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 if (DriverHandler.IsRegistered(DriverTypes.Encryption, ListArgsOnly[0]))
                 {
+                    // Time when you're on a breakpoint is counted
                     var spent = new Stopwatch();
-                    spent.Start(); // Time when you're on a breakpoint is counted
+                    spent.Start();
                     string encrypted = Encryption.GetEncryptedFile(file, ListArgsOnly[0]);
                     TextWriterColor.Write(encrypted);
                     TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);

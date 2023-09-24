@@ -47,7 +47,9 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
             EventsManager.FireEvent(EventType.ThemeStudioStarted);
             DebugWriter.WriteDebug(DebugLevel.I, "Starting theme studio with theme name {0}", ThemeName);
             ThemeStudioTools.SelectedThemeName = ThemeName;
-            int MaximumOptions = ThemeStudioTools.SelectedColors.Count + 9; // Colors + options
+
+            // Maximum options is number of kernel colors plus more options
+            int MaximumOptions = ThemeStudioTools.SelectedColors.Count + 9;
             var StudioExiting = false;
 
             while (!StudioExiting)

@@ -29,8 +29,9 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Drivers;
         public override void Run()
         {
+            // Time when you're on a breakpoint is counted
             var spent = new Stopwatch();
-            spent.Start(); // Time when you're on a breakpoint is counted
+            spent.Start();
             TextWriterColor.Write(Encryption.GetEncryptedString("Nitrocid KS", "SHA384"));
             TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
             spent.Stop();
