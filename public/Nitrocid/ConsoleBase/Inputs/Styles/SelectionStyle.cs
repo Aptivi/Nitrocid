@@ -236,12 +236,18 @@ namespace KS.ConsoleBase.Inputs.Styles
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth), 0, descArea + 1);
                 TextWriterWhereColor.WriteWhere(descFinal, 0, descArea, KernelColorType.NeutralText);
 
-                // Write keybindings and page and answer number
-                string bindingsRender =
-                    kiosk ?
-                    $"[{Translate.DoTranslation("ENTER: select")}]==[{Translate.DoTranslation("TAB: info")}]" :
-                    $"[{Translate.DoTranslation("ENTER: select")}]==[{Translate.DoTranslation("ESC: exit")}]==[{Translate.DoTranslation("TAB: info")}]";
+                // Render keybindings and page and answer number
+                bool isExtendable = !string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription);
+                string bindingsRender = $"[{Translate.DoTranslation("ENTER: select")}]";
                 string numberRender = $"[{currentPage + 1}/{pages + 1}]==[{HighlightedAnswer}/{AllAnswers.Count}]";
+
+                // Add info binding if extendable
+                if (isExtendable)
+                    bindingsRender += $"{(isExtendable ? $"==[{Translate.DoTranslation("TAB: info")}]" : "")}";
+                if (!kiosk)
+                    bindingsRender += $"{(!kiosk ? $"==[{Translate.DoTranslation("ESC: exit")}]" : "")}";
+
+                // Now, render the bindings and the page numbers
                 int bindingsLeft = 2;
                 int numbersLeft = ConsoleWrapper.WindowWidth - numberRender.Length - bindingsLeft;
                 TextWriterWhereColor.WriteWhere(bindingsRender, bindingsLeft, descSepArea, KernelColorType.Separator);
