@@ -18,7 +18,7 @@
 
 using System.Security.Cryptography;
 
-namespace KS.Drivers.RNG.Randoms
+namespace KS.Drivers.RNG.Bases
 {
     internal class DefaultRandom : BaseRandomDriver, IRandomDriver
     {
@@ -65,6 +65,6 @@ namespace KS.Drivers.RNG.Randoms
         public override bool RandomChance(int probPercent) => RandomChance((probPercent >= 0 && probPercent <= 100 ? probPercent : Random(100)) / 100d);
 
         /// <inheritdoc/>
-        public override bool RandomRussianRoulette() => (RandomShort() % 6) == 0;
+        public override bool RandomRussianRoulette() => RandomShort() % 6 == 0;
     }
 }

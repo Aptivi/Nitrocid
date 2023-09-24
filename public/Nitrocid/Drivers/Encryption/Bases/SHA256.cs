@@ -15,8 +15,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Drivers.Console.Consoles
+namespace KS.Drivers.Encryption.Bases
 {
-    internal class Terminal : BaseConsoleDriver, IConsoleDriver
-    { }
+    /// <summary>
+    /// SHA256 encryptor
+    /// </summary>
+    public class SHA256 : BaseEncryptionDriver, IEncryptionDriver { }
 }

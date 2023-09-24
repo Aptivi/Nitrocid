@@ -29,18 +29,18 @@ using KS.Misc.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Sequences.Tools;
 
-namespace KS.Drivers.Console.Consoles
+namespace KS.Drivers.Console.Bases
 {
-    internal class File : BaseConsoleDriver, IConsoleDriver
+    internal class FileSequence : BaseConsoleDriver, IConsoleDriver
     {
 
-        public override string DriverName => "File";
+        public override string DriverName => "FileSequence";
 
         public override DriverTypes DriverType => DriverTypes.Console;
 
         public override bool DriverInternal => true;
 
-        internal string PathToWrite { get; set; }
+        internal string[] PathsToWrite { get; set; }
         internal bool FilterVT { get; set; }
 
         public override bool IsDumb => true;
@@ -143,44 +143,51 @@ namespace KS.Drivers.Console.Consoles
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
-                if (!Checking.FileExists(PathToWrite))
-                    return;
-
-                // If filtering, filter all VT sequences
-                if (FilterVT)
-                    Text = VtSequenceTools.FilterVTSequences(Text);
-
-                // Open the stream
-                StreamWriter fileWriter = new(PathToWrite, true) { AutoFlush = true };
-                try
+                foreach (string PathToWrite in PathsToWrite)
                 {
-                    if (Line)
+                    // If the file doesn't exist, don't do anything
+                    if (!Checking.FileExists(PathToWrite))
+                        return;
+
+                    // If filtering, filter all VT sequences
+                    if (FilterVT)
+                        Text = VtSequenceTools.FilterVTSequences(Text);
+
+                    // Open the stream
+                    StreamWriter fileWriter = new(PathToWrite, true) { AutoFlush = true };
+                    try
                     {
-                        if (!(vars.Length == 0))
+                        if (Line)
                         {
-                            fileWriter.WriteLine(Text, vars);
+                            if (!(vars.Length == 0))
+                            {
+                                fileWriter.WriteLine(Text, vars);
+                            }
+                            else
+                            {
+                                fileWriter.WriteLine(Text);
+                            }
+                        }
+                        else if (!(vars.Length == 0))
+                        {
+                            fileWriter.Write(Text, vars);
                         }
                         else
                         {
-                            fileWriter.WriteLine(Text);
+                            fileWriter.Write(Text);
                         }
                     }
-                    else if (!(vars.Length == 0))
+                    catch (ThreadInterruptedException)
                     {
-                        fileWriter.Write(Text, vars);
+                        break;
                     }
-                    else
+                    catch (Exception ex)
                     {
-                        fileWriter.Write(Text);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                     }
+                    fileWriter.Close();
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-                }
-                fileWriter.Close();
             }
         }
 
@@ -192,22 +199,29 @@ namespace KS.Drivers.Console.Consoles
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
-                if (!Checking.FileExists(PathToWrite))
-                    return;
+                foreach (string PathToWrite in PathsToWrite)
+                {
+                    // If the file doesn't exist, don't do anything
+                    if (!Checking.FileExists(PathToWrite))
+                        return;
 
-                // Open the stream
-                StreamWriter fileWriter = new(PathToWrite, true);
-                try
-                {
-                    fileWriter.WriteLine();
+                    // Open the stream
+                    StreamWriter fileWriter = new(PathToWrite, true);
+                    try
+                    {
+                        fileWriter.WriteLine();
+                    }
+                    catch (ThreadInterruptedException)
+                    {
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    }
+                    fileWriter.Close();
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-                }
-                fileWriter.Close();
             }
         }
 
@@ -219,40 +233,47 @@ namespace KS.Drivers.Console.Consoles
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
-                if (!Checking.FileExists(PathToWrite))
-                    return;
-
-                // If filtering, filter all VT sequences
-                if (FilterVT)
-                    msg = VtSequenceTools.FilterVTSequences(msg);
-
-                // Open the stream
-                StreamWriter fileWriter = new(PathToWrite, true);
-                try
+                foreach (string PathToWrite in PathsToWrite)
                 {
-                    // Format string as needed
-                    if (!(vars.Length == 0))
-                        msg = TextTools.FormatString(msg, vars);
+                    // If the file doesn't exist, don't do anything
+                    if (!Checking.FileExists(PathToWrite))
+                        return;
 
-                    // Write text slowly
-                    var chars = msg.ToCharArray().ToList();
-                    foreach (char ch in chars)
+                    // If filtering, filter all VT sequences
+                    if (FilterVT)
+                        msg = VtSequenceTools.FilterVTSequences(msg);
+
+                    // Open the stream
+                    StreamWriter fileWriter = new(PathToWrite, true);
+                    try
                     {
-                        Thread.Sleep((int)Math.Round(MsEachLetter));
-                        fileWriter.Write(ch);
+                        // Format string as needed
+                        if (!(vars.Length == 0))
+                            msg = TextTools.FormatString(msg, vars);
+
+                        // Write text slowly
+                        var chars = msg.ToCharArray().ToList();
+                        foreach (char ch in chars)
+                        {
+                            Thread.Sleep((int)Math.Round(MsEachLetter));
+                            fileWriter.Write(ch);
+                        }
+                        if (Line)
+                        {
+                            fileWriter.WriteLine();
+                        }
                     }
-                    if (Line)
+                    catch (ThreadInterruptedException)
                     {
-                        fileWriter.WriteLine();
+                        break;
                     }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    }
+                    fileWriter.Close();
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
-                }
-                fileWriter.Close();
             }
         }
 
@@ -260,7 +281,7 @@ namespace KS.Drivers.Console.Consoles
         /// Just writes text to file without line terminator, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteWherePlain(string msg, int Left, int Top, params object[] vars) => 
+        public override void WriteWherePlain(string msg, int Left, int Top, params object[] vars) =>
             WriteWherePlain(msg, Left, Top, false, vars);
 
         /// <summary>
@@ -278,19 +299,26 @@ namespace KS.Drivers.Console.Consoles
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
-                if (!Checking.FileExists(PathToWrite))
-                    return;
+                foreach (string PathToWrite in PathsToWrite)
+                {
+                    // If the file doesn't exist, don't do anything
+                    if (!Checking.FileExists(PathToWrite))
+                        return;
 
-                try
-                {
-                    // We can't do positioning on files, so change writing mode to WritePlain
-                    WritePlain(msg, false, vars);
-                }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    try
+                    {
+                        // We can't do positioning on files, so change writing mode to WritePlain
+                        WritePlain(msg, false, vars);
+                    }
+                    catch (ThreadInterruptedException)
+                    {
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    }
                 }
             }
         }
@@ -317,19 +345,26 @@ namespace KS.Drivers.Console.Consoles
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
-                if (!Checking.FileExists(PathToWrite))
-                    return;
+                foreach (string PathToWrite in PathsToWrite)
+                {
+                    // If the file doesn't exist, don't do anything
+                    if (!Checking.FileExists(PathToWrite))
+                        return;
 
-                try
-                {
-                    // We can't do positioning on files, so change writing mode to WritePlain
-                    WriteSlowlyPlain(msg, false, MsEachLetter, vars);
-                }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    try
+                    {
+                        // We can't do positioning on files, so change writing mode to WritePlain
+                        WriteSlowlyPlain(msg, false, MsEachLetter, vars);
+                    }
+                    catch (ThreadInterruptedException)
+                    {
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    }
                 }
             }
         }
@@ -342,19 +377,26 @@ namespace KS.Drivers.Console.Consoles
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
-                if (!Checking.FileExists(PathToWrite))
-                    return;
+                foreach (string PathToWrite in PathsToWrite)
+                {
+                    // If the file doesn't exist, don't do anything
+                    if (!Checking.FileExists(PathToWrite))
+                        return;
 
-                try
-                {
-                    // We can't do positioning on files, so change writing mode to WritePlain
-                    WritePlain(Text, Line, vars);
-                }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
-                {
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    try
+                    {
+                        // We can't do positioning on files, so change writing mode to WritePlain
+                        WritePlain(Text, Line, vars);
+                    }
+                    catch (ThreadInterruptedException)
+                    {
+                        break;
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                    }
                 }
             }
         }

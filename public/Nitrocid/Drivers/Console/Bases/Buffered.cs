@@ -27,7 +27,7 @@ using KS.Kernel.Exceptions;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 
-namespace KS.Drivers.Console.Consoles
+namespace KS.Drivers.Console.Bases
 {
     internal class Buffered : BaseConsoleDriver, IConsoleDriver
     {
@@ -215,7 +215,7 @@ namespace KS.Drivers.Console.Consoles
         /// Just writes text to the buffered string builder without line terminator, since we can't do positioning.
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteWherePlain(string msg, int Left, int Top, params object[] vars) => 
+        public override void WriteWherePlain(string msg, int Left, int Top, params object[] vars) =>
             WriteWherePlain(msg, Left, Top, false, vars);
 
         /// <summary>

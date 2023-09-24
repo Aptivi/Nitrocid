@@ -20,7 +20,7 @@ using System;
 using System.IO;
 using System.Text;
 
-namespace KS.Drivers.Console.Consoles
+namespace KS.Drivers.Console.Bases
 {
     internal class Null : BaseConsoleDriver, IConsoleDriver
     {
@@ -57,34 +57,34 @@ namespace KS.Drivers.Console.Consoles
 
         public override Encoding InputEncoding { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
-        public override bool KeyAvailable => 
+        public override bool KeyAvailable =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public override void Beep() => 
+        public override void Beep() =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public override void Clear(bool loadBack = false) => 
+        public override void Clear(bool loadBack = false) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public override Stream OpenStandardError() => 
+        public override Stream OpenStandardError() =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public override Stream OpenStandardInput() => 
+        public override Stream OpenStandardInput() =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public override Stream OpenStandardOutput() => 
+        public override Stream OpenStandardOutput() =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public override ConsoleKeyInfo ReadKey(bool intercept = false) => 
+        public override ConsoleKeyInfo ReadKey(bool intercept = false) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public override void ResetColor() => 
+        public override void ResetColor() =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public override void SetCursorPosition(int left, int top) => 
+        public override void SetCursorPosition(int left, int top) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
-        public override void SetOut(TextWriter newOut) => 
+        public override void SetOut(TextWriter newOut) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         /// <summary>

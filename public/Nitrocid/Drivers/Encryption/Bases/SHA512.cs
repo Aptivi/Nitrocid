@@ -16,22 +16,22 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using Force.Crc32;
-using FS = KS.Files.Filesystem;
 using KS.Kernel.Debugging;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using Encryptor = System.Security.Cryptography.SHA512;
+using FS = KS.Files.Filesystem;
 
-namespace KS.Drivers.Encryption.Encryptors
+namespace KS.Drivers.Encryption.Bases
 {
     /// <summary>
-    /// CRC32 encryptor
+    /// SHA512 encryptor
     /// </summary>
-    public class CRC32 : BaseEncryptionDriver, IEncryptionDriver
+    public class SHA512 : BaseEncryptionDriver, IEncryptionDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "CRC32";
+        public override string DriverName => "SHA512";
 
         /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.Encryption;
@@ -40,16 +40,16 @@ namespace KS.Drivers.Encryption.Encryptors
         public override string EmptyHash => GetEncryptedString("");
 
         /// <inheritdoc/>
-        public override int HashLength => 8;
+        public override int HashLength => 128;
 
         /// <inheritdoc/>
-        public override Regex HashRegex => new("^([a-fA-F0-9]{8})$");
+        public override Regex HashRegex => new("^([a-fA-F0-9]{128})$");
 
         /// <inheritdoc/>
         public override string GetEncryptedFile(Stream stream)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Stream length: {0}", stream.Length);
-            var hashbyte = new Crc32Algorithm().ComputeHash(stream);
+            var hashbyte = Encryptor.Create().ComputeHash(stream);
             return Encryption.GetArrayEnc(hashbyte);
         }
 
@@ -67,7 +67,7 @@ namespace KS.Drivers.Encryption.Encryptors
         public override string GetEncryptedString(string str)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
-            var hashbyte = new Crc32Algorithm().ComputeHash(Encoding.UTF8.GetBytes(str));
+            var hashbyte = Encryptor.HashData(Encoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }
 

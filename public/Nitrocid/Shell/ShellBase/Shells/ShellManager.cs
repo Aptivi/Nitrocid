@@ -45,14 +45,13 @@ using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Admin;
 using KS.Kernel.Events;
-using File = KS.Drivers.Console.Consoles.File;
+using File = KS.Drivers.Console.Bases.File;
 using FileIO = System.IO.File;
 using KS.Users.Permissions;
 using KS.Drivers.Console;
 using Manipulation = KS.Files.Operations.Manipulation;
 using System.Text.RegularExpressions;
 using System.Linq;
-using KS.Drivers.Console.Consoles;
 using FluentFTP.Helpers;
 using KS.Kernel.Configuration;
 using KS.Shell.Shells.Sql;
@@ -69,6 +68,7 @@ using Newtonsoft.Json;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Misc.Text.Probers.Regexp;
+using KS.Drivers.Console.Bases;
 
 namespace KS.Shell.ShellBase.Shells
 {

@@ -26,7 +26,6 @@ using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
 using System.Linq;
-using KS.Drivers.Console.Consoles;
 using KS.Drivers.Console;
 using KS.Drivers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -36,6 +35,7 @@ using KS.Shell.ShellBase.Aliases;
 using KS.Kernel.Configuration;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
+using KS.Drivers.Console.Bases;
 
 namespace KS.Shell.ShellBase.Commands
 {

@@ -20,18 +20,18 @@ using KS.Kernel.Debugging;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
-using Encryptor = System.Security.Cryptography.SHA512;
+using Encryptor = System.Security.Cryptography.MD5;
 using FS = KS.Files.Filesystem;
 
-namespace KS.Drivers.Encryption.Encryptors
+namespace KS.Drivers.Encryption.Bases
 {
     /// <summary>
-    /// SHA512 encryptor
+    /// MD5 encryptor
     /// </summary>
-    public class SHA512 : BaseEncryptionDriver, IEncryptionDriver
+    public class MD5 : BaseEncryptionDriver, IEncryptionDriver
     {
         /// <inheritdoc/>
-        public override string DriverName => "SHA512";
+        public override string DriverName => "MD5";
 
         /// <inheritdoc/>
         public override DriverTypes DriverType => DriverTypes.Encryption;
@@ -40,10 +40,10 @@ namespace KS.Drivers.Encryption.Encryptors
         public override string EmptyHash => GetEncryptedString("");
 
         /// <inheritdoc/>
-        public override int HashLength => 128;
+        public override int HashLength => 32;
 
         /// <inheritdoc/>
-        public override Regex HashRegex => new("^([a-fA-F0-9]{128})$");
+        public override Regex HashRegex => new("^([a-fA-F0-9]{32})$");
 
         /// <inheritdoc/>
         public override string GetEncryptedFile(Stream stream)
@@ -72,19 +72,19 @@ namespace KS.Drivers.Encryption.Encryptors
         }
 
         /// <inheritdoc/>
-        public override bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) => 
+        public override bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) =>
             HashVerifier.VerifyHashFromHash(FileName, DriverName, ExpectedHash, ActualHash);
 
         /// <inheritdoc/>
-        public override bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) => 
+        public override bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) =>
             HashVerifier.VerifyHashFromHashesFile(FileName, DriverName, HashesFile, ActualHash);
 
         /// <inheritdoc/>
-        public override bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) => 
+        public override bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) =>
             HashVerifier.VerifyUncalculatedHashFromHash(FileName, DriverName, ExpectedHash);
 
         /// <inheritdoc/>
-        public override bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) => 
+        public override bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) =>
             HashVerifier.VerifyUncalculatedHashFromHashesFile(FileName, DriverName, HashesFile);
     }
 }

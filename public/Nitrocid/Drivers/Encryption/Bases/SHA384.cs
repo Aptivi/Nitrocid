@@ -23,7 +23,7 @@ using System.Text.RegularExpressions;
 using Encryptor = System.Security.Cryptography.SHA384;
 using FS = KS.Files.Filesystem;
 
-namespace KS.Drivers.Encryption.Encryptors
+namespace KS.Drivers.Encryption.Bases
 {
     /// <summary>
     /// SHA384 encryptor
@@ -72,19 +72,19 @@ namespace KS.Drivers.Encryption.Encryptors
         }
 
         /// <inheritdoc/>
-        public override bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) => 
+        public override bool VerifyHashFromHash(string FileName, string ExpectedHash, string ActualHash) =>
             HashVerifier.VerifyHashFromHash(FileName, DriverName, ExpectedHash, ActualHash);
 
         /// <inheritdoc/>
-        public override bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) => 
+        public override bool VerifyHashFromHashesFile(string FileName, string HashesFile, string ActualHash) =>
             HashVerifier.VerifyHashFromHashesFile(FileName, DriverName, HashesFile, ActualHash);
 
         /// <inheritdoc/>
-        public override bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) => 
+        public override bool VerifyUncalculatedHashFromHash(string FileName, string ExpectedHash) =>
             HashVerifier.VerifyUncalculatedHashFromHash(FileName, DriverName, ExpectedHash);
 
         /// <inheritdoc/>
-        public override bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) => 
+        public override bool VerifyUncalculatedHashFromHashesFile(string FileName, string HashesFile) =>
             HashVerifier.VerifyUncalculatedHashFromHashesFile(FileName, DriverName, HashesFile);
     }
 }

@@ -15,10 +15,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-namespace KS.Drivers.Encryption.Encryptors
+namespace KS.Drivers.RNG.Bases
 {
-    /// <summary>
-    /// SHA256 encryptor
-    /// </summary>
-    public class SHA256 : BaseEncryptionDriver, IEncryptionDriver { }
+    internal class StandardRandom : BaseRandomDriver, IRandomDriver
+    {
+        public override string DriverName => "Standard";
+    }
 }
