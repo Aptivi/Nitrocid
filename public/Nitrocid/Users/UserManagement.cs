@@ -64,49 +64,6 @@ namespace KS.Users
         internal static List<UserInfo> Users = new() { CurrentUserInfo };
         private static readonly List<UserInfo> LockedUsers = new();
 
-        /// <summary>
-        /// A user property
-        /// </summary>
-        public enum UserProperty
-        {
-            /// <summary>
-            /// Username
-            /// </summary>
-            Username,
-            /// <summary>
-            /// Password
-            /// </summary>
-            Password,
-            /// <summary>
-            /// The user is an administrative account
-            /// </summary>
-            Admin,
-            /// <summary>
-            /// The user is anonymous
-            /// </summary>
-            Anonymous,
-            /// <summary>
-            /// The user is disabled
-            /// </summary>
-            Disabled,
-            /// <summary>
-            /// List of permissions
-            /// </summary>
-            Permissions,
-            /// <summary>
-            /// Full name
-            /// </summary>
-            FullName,
-            /// <summary>
-            /// Preferred language
-            /// </summary>
-            PreferredLanguage,
-            /// <summary>
-            /// User groups
-            /// </summary>
-            Groups,
-        }
-
         // ---------- User Management ----------
         /// <summary>
         /// Initializes the uninitialized user (usually a new user)
