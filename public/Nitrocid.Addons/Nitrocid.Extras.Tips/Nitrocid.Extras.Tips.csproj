@@ -47,7 +47,7 @@
   <!-- Extras.Tips addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="1.6.2" />
+    <PackageReference Include="Terminaux" Version="1.6.3" />
   </ItemGroup>
 
 </Project>

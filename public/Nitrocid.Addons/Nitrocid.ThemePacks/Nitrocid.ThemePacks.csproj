@@ -65,7 +65,7 @@
   <!-- ThemePacks addon metadata End -->
 
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="1.6.2" />
+    <PackageReference Include="Terminaux" Version="1.6.3" />
   </ItemGroup>
   
 </Project>
