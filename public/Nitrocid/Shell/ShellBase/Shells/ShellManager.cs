@@ -121,8 +121,34 @@ namespace KS.Shell.ShellBase.Shells
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "command", (_, _, _) => HelpUnifiedCommand.ListCmds())
-                        }, Array.Empty<SwitchInfo>(), false)
+                            new CommandArgumentPart(false, "command", (_, _, _) => CommandManager.GetCommands(CurrentShellType).Keys.ToArray())
+                        }, new[]
+                        {
+                            new SwitchInfo("general", /* Localizable */ "Shows general commands (default)", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("mod", /* Localizable */ "Shows mod commands", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("alias", /* Localizable */ "Shows aliased commands", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("unified", /* Localizable */ "Shows unified commands", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("addon", /* Localizable */ "Shows kernel addon commands", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("all", /* Localizable */ "Shows all commands", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                        }, false)
                     }, new HelpUnifiedCommand(), CommandFlags.Wrappable)
             },
 

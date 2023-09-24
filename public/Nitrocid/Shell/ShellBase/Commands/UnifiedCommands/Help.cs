@@ -18,6 +18,7 @@
 
 using System.Linq;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 {
@@ -32,22 +33,25 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
+            // Determine which type to show
+            bool showGeneral = ListSwitchesOnly.Length == 0 ||
+                SwitchManager.ContainsSwitch(ListSwitchesOnly, "-general") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all");
+            bool showMod = ListSwitchesOnly.Length > 0 &&
+                (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-mod") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all"));
+            bool showAlias = ListSwitchesOnly.Length > 0 &&
+                (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-alias") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all"));
+            bool showUnified = ListSwitchesOnly.Length > 0 &&
+                (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-unified") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all"));
+            bool showAddon = ListSwitchesOnly.Length > 0 &&
+                (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-addon") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all"));
+            
+            // Now, show the help
             if (string.IsNullOrWhiteSpace(StringArgs))
-            {
-                HelpSystem.ShowHelp("");
-            }
+                HelpSystem.ShowHelp(showGeneral, showMod, showAlias, showUnified, showAddon);
             else
-            {
                 HelpSystem.ShowHelp(ListArgsOnly[0]);
-            }
             return 0;
         }
-
-        public static string[] ListCmds() => 
-            CommandManager.GetCommands(ShellManager.CurrentShellType).Keys.ToArray();
-
-        public static string[] ListCmds(string startFrom) => 
-            CommandManager.GetCommands(ShellManager.CurrentShellType).Keys.Where(x => x.StartsWith(startFrom)).ToArray();
 
     }
 }
