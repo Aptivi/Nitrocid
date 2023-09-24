@@ -37,6 +37,11 @@ jobs:
       with:
         name: ks-build
         path: "public/Nitrocid/KSBuild/*.nupkg"
+    - uses: actions/upload-artifact@v3
+      if: success() || failure()
+      with:
+        name: unit-test-log
+        path: "private/Nitrocid.Tests/KSTest/net6.0/UnitTestDebug.log"
 
   notify:
 

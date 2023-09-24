@@ -69,9 +69,9 @@ namespace Nitrocid.Tests
                 Making.MakeDirectory(PathToTestSlotFolder, false);
 
             // Enable debugging
-            DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+            string debugPath = TestAssemblyDir + "/UnitTestDebug.log";
+            DebugWriter.DebugPath = debugPath;
             KernelFlags.DebugMode = true;
-            DriverHandler.SetDriver<IDebugLoggerDriver>("UnitTest");
 
             // Load necessary addons for testing
             AddonTools.ProcessAddons(AddonType.Important);

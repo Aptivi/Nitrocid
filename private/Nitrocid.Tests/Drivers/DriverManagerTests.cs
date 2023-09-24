@@ -441,7 +441,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default", "Default")]
         [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default", "Default")]
-        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "Default", "Default", "UnitTest")]
+        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "UnitTest", "UnitTest", "Default")]
         [Description("Management")]
         public void TestBeginLocalDriver<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
         {
@@ -460,7 +460,7 @@ namespace Nitrocid.Tests.Drivers
         [TestCase<INetworkDriver>(DriverTypes.Network, "Default", "Default", "Default")]
         [TestCase<IRandomDriver>(DriverTypes.RNG, "Standard", "Standard", "Default")]
         [TestCase<IRegexpDriver>(DriverTypes.Regexp, "Default", "Default", "Default")]
-        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "Default", "Default", "UnitTest")]
+        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger, "UnitTest", "UnitTest", "Default")]
         [Description("Management")]
         public void TestBeginLocalDriverSafe<T>(DriverTypes type, string name, string expectedName, string expectedNameAfterLocal)
         {
@@ -475,7 +475,7 @@ namespace Nitrocid.Tests.Drivers
         [TearDown]
         public void RevertUnitTestDebug()
         {
-            DriverHandler.SetDriver<IDebugLoggerDriver>("UnitTest");
+            DriverHandler.SetDriver<IDebugLoggerDriver>("Default");
         }
     }
 }
