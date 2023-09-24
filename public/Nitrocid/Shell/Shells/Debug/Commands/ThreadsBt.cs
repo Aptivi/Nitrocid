@@ -18,9 +18,12 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using System;
 using System.Collections.Generic;
 
 namespace KS.Shell.Shells.Debug.Commands
@@ -36,6 +39,13 @@ namespace KS.Shell.Shells.Debug.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
+            // Check to see if we're running on Windows 8.1 or later
+            if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
+            {
+                TextWriterColor.Write(Translate.DoTranslation("We believe that you're running Windows 8 or lower. This operation is not supported."), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.Debug;
+            }
+
             // Print the list
             Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
             foreach (var trace in result)
@@ -51,6 +61,13 @@ namespace KS.Shell.Shells.Debug.Commands
 
         public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
+            // Check to see if we're running on Windows 8.1 or later
+            if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
+            {
+                TextWriterColor.Write(Translate.DoTranslation("We believe that you're running Windows 8 or lower. This operation is not supported."), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.Debug;
+            }
+
             // Print the list in a dumb-friendly way
             Dictionary<string, string[]> result = ThreadManager.GetThreadBacktraces();
             foreach (var trace in result)
