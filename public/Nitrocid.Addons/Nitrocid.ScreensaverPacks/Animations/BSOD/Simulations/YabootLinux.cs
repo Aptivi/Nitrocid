@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using System.Threading;
@@ -34,12 +35,15 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             TextWriterColor.WritePlain("Welcome to yaboot version 1.3.17", true);
             TextWriterColor.WritePlain("Enter \"help\" to get some basic usage information", true);
             TextWriterColor.WritePlain("boot: ", false);
+            ConsoleWrapper.CursorVisible = true;
             Thread.Sleep(3000);
             TextWriterSlowColor.WriteSlowlyPlain("Linux", true, 140);
+            ConsoleWrapper.CursorVisible = false;
             TextWriterColor.WritePlain("Please wait, loading kernel...", true);
             Thread.Sleep(60);
             TextWriterColor.WritePlain("/pci@f2000000/mac-io@17/ata-4@1f000/disk@0:4,/boot/kernel/genkernel-ppc-3.12.21-gentoo-r1: Unknown or corrupt filesystem", true);
             TextWriterColor.WritePlain("boot:", true);
+            ConsoleWrapper.CursorVisible = true;
         }
     }
 }
