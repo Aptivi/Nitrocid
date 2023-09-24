@@ -232,14 +232,6 @@ namespace KS.Users.Login
             // Show license information
             WelcomeMessage.WriteLicense();
 
-            // Show development disclaimer
-            WelcomeMessage.ShowDevelopmentDisclaimer();
-
-            // TODO: Remove this when .NET 8.0 releases on November and Nitrocid KS gets re-targeted to that version on December.
-#if NET7_0
-            TextWriterColor.Write("* You're running a .NET 7.0 version of Nitrocid KS. This is going to be used as a testing ground to ensure that we can have smooth upgrade experience to .NET 8.0. Meanwhile, you can evaluate this version until .NET 8.0 gets released on November.");
-#endif
-
             // Show the tip
             if (KernelFlags.ShowTip)
                 WelcomeMessage.ShowTip();

@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Hardware;
@@ -33,6 +34,11 @@ namespace KS.Kernel.Starting
     {
         internal static void Stage01SystemInitialization()
         {
+            // If running on development version, interrupt boot and show developer disclaimer.
+            WelcomeMessage.ShowDevelopmentDisclaimer();
+            WelcomeMessage.ShowDotnet7Disclaimer();
+
+            // Now, initialize remote debugger if the kernel is running in debug mode
             if (RemoteDebugger.RDebugAutoStart & KernelFlags.DebugMode)
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3);
@@ -42,6 +48,8 @@ namespace KS.Kernel.Starting
                 else
                     SplashReport.ReportProgressError(Translate.DoTranslation("Remote debug failed to start: {0}"), RemoteDebugger.RDebugFailedReason.Message);
             }
+
+            // Try to start the remote procedure call server
             SplashReport.ReportProgress(Translate.DoTranslation("Starting RPC..."), 3);
             RemoteProcedure.WrapperStartRPC();
         }
