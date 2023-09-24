@@ -19,14 +19,14 @@
 using KS.Drivers.RNG;
 using KS.Drivers.Console;
 using System.Collections.Generic;
-using KS.Drivers.Console.Consoles;
-using KS.Drivers.RNG.Randoms;
+using KS.Drivers.Console.Bases;
+using KS.Drivers.RNG.Bases;
 using KS.Drivers.Network;
 using KS.Drivers.Network.Bases;
 using KS.Drivers.Filesystem;
 using KS.Drivers.Filesystem.Bases;
 using KS.Drivers.Encryption;
-using KS.Drivers.Encryption.Encryptors;
+using KS.Drivers.Encryption.Bases;
 using KS.Drivers.Regexp;
 using KS.Drivers.Regexp.Bases;
 using KS.Kernel.Exceptions;
