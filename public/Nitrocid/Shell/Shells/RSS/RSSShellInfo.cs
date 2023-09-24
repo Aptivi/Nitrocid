@@ -101,10 +101,22 @@ namespace KS.Shell.Shells.RSS
                         {
                             new CommandArgumentPart(true, "phrase")
                         }, new[] {
-                            new SwitchInfo("t", /* Localizable */ "Search for title", false, false, Array.Empty<string>(), 0, false),
-                            new SwitchInfo("d", /* Localizable */ "Search for description", false, false, Array.Empty<string>(), 0, false),
-                            new SwitchInfo("a", /* Localizable */ "Search for title and description", false, false, Array.Empty<string>(), 0, false),
-                            new SwitchInfo("cs", /* Localizable */ "Case sensitive search", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("t", /* Localizable */ "Search for title", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("d", /* Localizable */ "Search for description", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("a", /* Localizable */ "Search for title and description", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("cs", /* Localizable */ "Case sensitive search", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         })
                     }, new RSS_SearchCommand(), CommandFlags.Wrappable)
             },

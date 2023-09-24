@@ -144,8 +144,14 @@ namespace KS.Shell.Shells.FTP
                         {
                             new CommandArgumentPart(false, "dir")
                         }, new[] {
-                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", false, false, Array.Empty<string>(), 0, false),
-                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the annoying \"permission denied\" messages", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         })
                     }, new FTP_LslCommand(), CommandFlags.Wrappable)
             },
@@ -157,7 +163,10 @@ namespace KS.Shell.Shells.FTP
                         {
                             new CommandArgumentPart(false, "dir")
                         }, new[] {
-                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("showdetails", /* Localizable */ "Shows the file details in the list", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         })
                     }, new FTP_LsrCommand(), CommandFlags.Wrappable)
             },

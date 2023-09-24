@@ -109,9 +109,21 @@ namespace Nitrocid.Extras.GitShell.Git
                     new[] {
                         new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
                         {
-                            new SwitchInfo("soft", /* Localizable */ "Does a soft reset", false, false, new[] { "mixed", "hard" }, 0, false),
-                            new SwitchInfo("mixed", /* Localizable */ "Does a mixed reset", false, false, new[] { "soft", "hard" }, 0, false),
-                            new SwitchInfo("hard", /* Localizable */ "Does a hard reset", false, false, new[] { "mixed", "soft" }, 0, false),
+                            new SwitchInfo("soft", /* Localizable */ "Does a soft reset", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "hard", "mixed" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("mixed", /* Localizable */ "Does a mixed reset", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "soft", "hard" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("hard", /* Localizable */ "Does a hard reset", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "soft", "mixed" },
+                                AcceptsValues = false
+                            }),
                         })
                     }, new Git_ResetCommand())
             },

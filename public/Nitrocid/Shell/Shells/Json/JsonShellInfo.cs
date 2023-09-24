@@ -49,7 +49,10 @@ namespace KS.Shell.Shells.Json
                             new CommandArgumentPart(false, "propName2"),
                             new CommandArgumentPart(false, "propName3...")
                         }, new[] {
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
+                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            })
                         })
                     }, new JsonShell_AddArrayCommand())
             },
@@ -62,7 +65,10 @@ namespace KS.Shell.Shells.Json
                             new CommandArgumentPart(true, "propName"),
                             new CommandArgumentPart(true, "propValue")
                         }, new[] {
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
+                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            })
                         })
                     }, new JsonShell_AddPropertyCommand())
             },
@@ -75,7 +81,10 @@ namespace KS.Shell.Shells.Json
                             new CommandArgumentPart(true, "arrayName"),
                             new CommandArgumentPart(true, "valueInArray")
                         }, new[] {
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
+                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            })
                         })
                     }, new JsonShell_AddObjectCommand())
             },
@@ -88,7 +97,10 @@ namespace KS.Shell.Shells.Json
                             new CommandArgumentPart(true, "index"),
                             new CommandArgumentPart(true, "valueInArray")
                         }, new[] {
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
+                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            })
                         })
                     }, new JsonShell_AddObjectIndexedCommand())
             },
@@ -124,7 +136,10 @@ namespace KS.Shell.Shells.Json
                         {
                             new CommandArgumentPart(true, "propertyName")
                         }, new[] {
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
+                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            })
                         })
                     }, new JsonShell_FindPropertyCommand())
             },
@@ -133,8 +148,14 @@ namespace KS.Shell.Shells.Json
                 new CommandInfo("jsoninfo", ShellType, /* Localizable */ "Shows information about the JSON file",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
-                            new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", false, false, Array.Empty<string>(), 0, false),
-                            new SwitchInfo("showvals", /* Localizable */ "Show all values", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("showvals", /* Localizable */ "Show all values", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         })
                     }, new JsonShell_JsonInfoCommand(), CommandFlags.Wrappable)
             },
@@ -156,7 +177,10 @@ namespace KS.Shell.Shells.Json
                         {
                             new CommandArgumentPart(true, "objectName")
                         }, new[] {
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
+                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            })
                         })
                     }, new JsonShell_RmObjectCommand())
             },
@@ -168,7 +192,10 @@ namespace KS.Shell.Shells.Json
                         {
                             new CommandArgumentPart(true, "index")
                         }, new[] {
-                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", false, true)
+                            new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            })
                         })
                     }, new JsonShell_RmObjectIndexedCommand())
             },
@@ -177,8 +204,16 @@ namespace KS.Shell.Shells.Json
                 new CommandInfo("save", ShellType, /* Localizable */ "Saves the JSON file",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
-                            new SwitchInfo("b", /* Localizable */ "Beautified JSON", false, false, new string[] { "m" }, 0, false),
-                            new SwitchInfo("m", /* Localizable */ "Minified JSON", false, false, new string[] { "b" }, 0, false)
+                            new SwitchInfo("b", /* Localizable */ "Beautified JSON", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "m" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("m", /* Localizable */ "Minified JSON", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "b" },
+                                AcceptsValues = false
+                            })
                         })
                     }, new JsonShell_SaveCommand())
             }

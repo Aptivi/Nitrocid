@@ -103,8 +103,14 @@ namespace KS.Shell.Shells.SFTP
                         {
                             new CommandArgumentPart(false, "dir")
                         }, new[] {
-                            new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", false, false, Array.Empty<string>(), 0, false),
-                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the \"unauthorized\" messages", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("suppressmessages", /* Localizable */ "Suppresses the \"unauthorized\" messages", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         })
                     }, new SFTP_LslCommand(), CommandFlags.Wrappable)
             },
@@ -116,7 +122,10 @@ namespace KS.Shell.Shells.SFTP
                         {
                             new CommandArgumentPart(false, "dir")
                         }, new[] {
-                            new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("showdetails", /* Localizable */ "Shows the details of the files and folders", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         })
                     }, new SFTP_LsrCommand(), CommandFlags.Wrappable)
             },
