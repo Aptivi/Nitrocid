@@ -55,6 +55,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD
         {
             int selectedBsodIdx = RandomDriver.RandomIdx(BSODList.Count);
             var selectedBsod = BSODList[selectedBsodIdx];
+            ConsoleWrapper.CursorVisible = false;
             selectedBsod.Simulate();
 
             // Reset resize sync
