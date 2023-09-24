@@ -40,7 +40,7 @@ namespace KS.Files
     public static class Filesystem
     {
 
-        private const int maxTimeoutMs = 300000;
+        private const int maxLockTimeoutMs = 300000;
 
         /// <summary>
         /// Shows the filesystem progress
@@ -220,8 +220,8 @@ namespace KS.Files
                 if (IsLocked(Path))
                 {
                     estimatedLockMs += lockMs;
-                    if (estimatedLockMs > maxTimeoutMs)
-                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File or folder {0} is still locked even after waiting for {1} seconds."), Path, maxTimeoutMs / 1000);
+                    if (estimatedLockMs > maxLockTimeoutMs)
+                        throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File or folder {0} is still locked even after waiting for {1} seconds."), Path, maxLockTimeoutMs / 1000);
                 }
             }
         }
