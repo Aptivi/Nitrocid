@@ -471,7 +471,22 @@ namespace Nitrocid.Tests.Drivers
             DriverHandler.currentDrivers[type].DriverName.ShouldBe(expectedNameAfterLocal);
             DriverHandler.currentDriversLocal[type].DriverName.ShouldBe(expectedNameAfterLocal);
         }
-        
+
+        [Test]
+        [TestCase<IConsoleDriver>(DriverTypes.Console)]
+        [TestCase<IEncryptionDriver>(DriverTypes.Encryption)]
+        [TestCase<IFilesystemDriver>(DriverTypes.Filesystem)]
+        [TestCase<INetworkDriver>(DriverTypes.Network)]
+        [TestCase<IRandomDriver>(DriverTypes.RNG)]
+        [TestCase<IRegexpDriver>(DriverTypes.Regexp)]
+        [TestCase<IDebugLoggerDriver>(DriverTypes.DebugLogger)]
+        [Description("Management")]
+        public void TestInferDriverTypeFromDriverInterfaceType<T>(DriverTypes type)
+        {
+            var actualType = DriverHandler.InferDriverTypeFromDriverInterfaceType<T>();
+            actualType.ShouldBe(type);
+        }
+
         [TearDown]
         public void RevertUnitTestDebug()
         {

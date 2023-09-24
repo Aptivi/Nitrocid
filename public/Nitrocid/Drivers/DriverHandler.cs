@@ -34,6 +34,7 @@ using System.Linq;
 using KS.Kernel.Debugging;
 using KS.Drivers.DebugLogger.Bases;
 using KS.Drivers.DebugLogger;
+using System;
 
 namespace KS.Drivers
 {
@@ -133,6 +134,17 @@ namespace KS.Drivers
             { DriverTypes.Encryption,   drivers[DriverTypes.Encryption]["Default"] },
             { DriverTypes.Regexp,       drivers[DriverTypes.Regexp]["Default"] },
             { DriverTypes.DebugLogger,  drivers[DriverTypes.DebugLogger]["Default"] },
+        };
+
+        internal static Dictionary<Type, DriverTypes> knownTypes = new()
+        {
+            { typeof(IConsoleDriver),     DriverTypes.Console },
+            { typeof(IRandomDriver),      DriverTypes.RNG },
+            { typeof(INetworkDriver),     DriverTypes.Network },
+            { typeof(IFilesystemDriver),  DriverTypes.Filesystem },
+            { typeof(IEncryptionDriver),  DriverTypes.Encryption },
+            { typeof(IRegexpDriver),      DriverTypes.Regexp },
+            { typeof(IDebugLoggerDriver), DriverTypes.DebugLogger },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
@@ -479,24 +491,15 @@ namespace KS.Drivers
             currentDriversLocal[driverType] = (IDriver)GetDriver<T>(name);
         }
 
-        private static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()
+        internal static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()
         {
             var driverType = default(DriverTypes);
-            if (typeof(T) == typeof(IEncryptionDriver))
-                driverType = DriverTypes.Encryption;
-            else if (typeof(T) == typeof(IConsoleDriver))
-                driverType = DriverTypes.Console;
-            else if (typeof(T) == typeof(INetworkDriver))
-                driverType = DriverTypes.Network;
-            else if (typeof(T) == typeof(IFilesystemDriver))
-                driverType = DriverTypes.Filesystem;
-            else if (typeof(T) == typeof(IEncryptionDriver))
-                driverType = DriverTypes.Encryption;
-            else if (typeof(T) == typeof(IRegexpDriver))
-                driverType = DriverTypes.Regexp;
-            else if (typeof(T) == typeof(IDebugLoggerDriver))
-                driverType = DriverTypes.DebugLogger;
-            DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), typeof(T).Name);
+            var type = typeof(T);
+            if (knownTypes.ContainsKey(type))
+            {
+                driverType = knownTypes[type];
+                DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), type.Name);
+            }
             return driverType;
         }
     }
