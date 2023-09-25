@@ -37,6 +37,35 @@ namespace KS.Misc.Splash.Splashes
         public override string SplashName => "Welcome";
 
         // Actual logic
+        public override void Opening()
+        {
+            base.Opening();
+
+            // Write a glorious Welcome screen
+            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
+            string text = Translate.DoTranslation("Loading").ToUpper();
+            var figFont = FigletTools.GetFigletFont("banner3");
+            int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
+            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int consoleX, consoleY;
+            if (figWidth >= ConsoleWrapper.WindowWidth || figHeight >= ConsoleWrapper.WindowHeight)
+            {
+                // The figlet won't fit, so use small text
+                consoleX = (ConsoleWrapper.WindowWidth / 2) - (text.Length / 2);
+                consoleY = ConsoleWrapper.WindowHeight / 2;
+                TextWriterWhereColor.WriteWhere(text, consoleX, consoleY, true, col);
+            }
+            else
+            {
+                // Write the figlet.
+                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
+                consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+                FigletWhereColor.WriteFigletWhere(text, consoleX, consoleY, true, figFont, col);
+                consoleY += figHeight * 2;
+            }
+            CenteredTextColor.WriteCentered(consoleY + 2, Translate.DoTranslation("Starting") + $" {KernelReleaseInfo.ConsoleTitle}...", col);
+        }
+
         public override void Display()
         {
             try
@@ -70,6 +99,7 @@ namespace KS.Misc.Splash.Splashes
 
         public override void Closing()
         {
+            ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
             // Write a glorious Welcome screen
