@@ -106,6 +106,8 @@ namespace KS.ConsoleBase
             Text = TextTools.FormatString(Text, Vars);
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
             Text = Text.Replace(Convert.ToString(Convert.ToChar(0)), "");
+            if (string.IsNullOrEmpty(Text))
+                return (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
             var texts = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
             int LeftSeekPosition = ConsoleWrapper.CursorLeft;
             int TopSeekPosition = ConsoleWrapper.CursorTop;
