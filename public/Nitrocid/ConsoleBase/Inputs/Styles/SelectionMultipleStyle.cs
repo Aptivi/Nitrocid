@@ -178,6 +178,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // If the refresh is required, refresh the entire screen.
                 if (refreshRequired)
                 {
+                    refreshRequired = false;
                     ConsoleWrapper.Clear(true);
                     TextWriterColor.Write(Question, true, KernelColorType.Question);
                 }
