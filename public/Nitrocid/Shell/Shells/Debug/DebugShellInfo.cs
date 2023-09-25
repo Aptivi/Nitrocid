@@ -56,6 +56,16 @@ namespace KS.Shell.Shells.Debug
                     }, new Debug_DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
+            { "excinfo",
+                new CommandInfo("excinfo", ShellType, /* Localizable */ "Gets message from kernel exception type. Useful for debugging",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "excNum")
+                        }, Array.Empty<SwitchInfo>())
+                    }, new Debug_ExcInfoCommand())
+            },
+
             { "keyinfo",
                 new CommandInfo("keyinfo", ShellType, /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
                     new[] {
