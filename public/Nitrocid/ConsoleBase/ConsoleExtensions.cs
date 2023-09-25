@@ -128,7 +128,8 @@ namespace KS.ConsoleBase
                         LeftSeekPosition = 0;
 
                         // Get down by one line
-                        TopSeekPosition += 1;
+                        if (i < Text.Length || !line)
+                            TopSeekPosition += 1;
                         if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
                         {
                             // We're at the end of buffer! Decrement by one and bail.
@@ -154,8 +155,7 @@ namespace KS.ConsoleBase
                 //
                 // However, filling the line, as seen by the above logic, requires us to set the left
                 // seek position to zero, causing the top seek position to go down one row.
-                if (LeftSeekPosition > 0)
-                    TopSeekPosition += 1;
+                TopSeekPosition += 1;
                 if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
                     TopSeekPosition -= 1;
                 LeftSeekPosition = 0;
