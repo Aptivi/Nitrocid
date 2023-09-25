@@ -20,6 +20,7 @@ using System;
 using System.Linq;
 using KS.Files;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
 {
@@ -50,12 +51,10 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
             var Absolute = false;
             if (ListArgsOnly.Length > 1)
             {
-                if (!(ListSwitchesOnly[0] == "-absolute"))
-                    Where = Filesystem.NeutralizePath(ListArgsOnly[1]);
-                if (ListSwitchesOnly.Contains("-absolute"))
-                {
+                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-absolute"))
                     Absolute = true;
-                }
+                else
+                    Where = Filesystem.NeutralizePath(ListArgsOnly[1]);
             }
             ArchiveTools.ExtractFileEntry(ListArgsOnly[0], Where, Absolute);
             return 0;

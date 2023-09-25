@@ -92,14 +92,15 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
             // Define local destination while getting an entry from target
             string LocalDestination = Where + "/";
             var ArchiveEntry = ArchiveShellCommon.ArchiveShell_Archive.Entries.Where(x => x.Key == AbsoluteTarget).ToArray()[0];
+            string localDirDestination = Path.GetDirectoryName(ArchiveEntry.Key);
             if (FullTargetPath)
-            {
                 LocalDestination += ArchiveEntry.Key;
-            }
             DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", LocalDestination);
 
             // Try to extract file
             Directory.CreateDirectory(LocalDestination);
+            if (!Checking.FolderExists(LocalDestination + "/" + localDirDestination))
+                Directory.CreateDirectory(LocalDestination + "/" + localDirDestination);
             Making.MakeFile(LocalDestination + ArchiveEntry.Key);
             ArchiveShellCommon.ArchiveShell_FileStream.Seek(0L, SeekOrigin.Begin);
             var ArchiveReader = ReaderFactory.Open(ArchiveShellCommon.ArchiveShell_FileStream);
