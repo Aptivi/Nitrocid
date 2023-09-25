@@ -96,6 +96,9 @@ namespace KS.ConsoleBase
         /// <param name="Vars">Variables to be formatted in the text</param>
         public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars)
         {
+            if (string.IsNullOrEmpty(Text))
+                return (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+
             // Filter all text from the VT escape sequences
             Text = FilterVTSequences(Text);
 
@@ -103,6 +106,7 @@ namespace KS.ConsoleBase
             Text = TextTools.FormatString(Text, Vars);
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
             Text = Text.Replace(Convert.ToString(Convert.ToChar(0)), "");
+            var texts = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
             int LeftSeekPosition = ConsoleWrapper.CursorLeft;
             int TopSeekPosition = ConsoleWrapper.CursorTop;
             for (int i = 1; i <= Text.Length; i++)
@@ -129,6 +133,7 @@ namespace KS.ConsoleBase
                         {
                             // We're at the end of buffer! Decrement by one and bail.
                             TopSeekPosition -= 1;
+                            LeftSeekPosition = texts[^1].Length;
                             break;
                         }
                     }
