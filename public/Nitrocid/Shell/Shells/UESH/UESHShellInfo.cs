@@ -572,23 +572,6 @@ namespace KS.Shell.Shells.UESH
                     }, new FtpCommand())
             },
             
-            { "gettimeinfo",
-                new CommandInfo("gettimeinfo", ShellType, /* Localizable */ "Gets the date and time information",
-                    new[] { 
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "date")
-                        }, new[]
-                        {
-                            new SwitchInfo("now", /* Localizable */ "Gets the current date and time information", new SwitchOptions()
-                            {
-                                OptionalizeLastRequiredArguments = 1,
-                                AcceptsValues = false
-                            })
-                        })
-                    }, new GetTimeInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
-            },
-            
             { "get",
                 new CommandInfo("get", ShellType, /* Localizable */ "Downloads a file to current working directory",
                     new[] {

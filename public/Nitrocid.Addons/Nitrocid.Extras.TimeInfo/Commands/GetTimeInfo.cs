@@ -28,7 +28,7 @@ using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.TimeInfo.Commands
 {
     /// <summary>
     /// Shows time information
