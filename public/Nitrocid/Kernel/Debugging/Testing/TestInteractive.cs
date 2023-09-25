@@ -17,11 +17,14 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging.Testing.Facades;
 using KS.Languages;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -253,8 +256,11 @@ namespace KS.Kernel.Debugging.Testing
                     if (facade.TestInteractive)
                     {
                         // Prompt the user to check to see if the test ran as expected
-                        ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.WindowHeight - 1);
-                        string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Did the test run as expected?"), "y/n/r");
+                        string answer = InfoBoxColor.WriteInfoBoxInput(
+                            Translate.DoTranslation("Did the test run as expected?") + "\n\n" +
+                            "  * y: " + Translate.DoTranslation("Yes, the test ran as expected") + "\n" +
+                            "  * n: " + Translate.DoTranslation("No, the test didn't run as expected") + "\n" +
+                            "  * r: " + Translate.DoTranslation("Retry the test"));
 
                         // Set status or retry
                         switch (answer)
@@ -276,8 +282,7 @@ namespace KS.Kernel.Debugging.Testing
                         // Compare the actual value with the expected value
                         if (!facade.TestActualValue.Equals(facade.TestExpectedValue))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), true, ConsoleBase.Colors.KernelColorType.Error, facade.TestExpectedValue.ToString(), facade.TestActualValue.ToString());
-                            Input.DetectKeypress();
+                            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), KernelColorType.Error, facade.TestExpectedValue.ToString(), facade.TestActualValue.ToString());
                             facade.status = TestStatus.Failed;
                             tested = true;
                         }
@@ -289,27 +294,36 @@ namespace KS.Kernel.Debugging.Testing
                     }
                 }
             }
-            catch
+            catch (Exception ex)
             {
                 // Facade failed unexpectedly
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("The test failed unexpectedly.") + $" {ex.Message}", KernelColorType.Error);
                 facade.status = TestStatus.Failed;
             }
         }
 
         internal static void PrintTestStatsSection(TestSection section)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Successful tests:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Success && fac.TestSection == section).Count());
-            TextWriterColor.Write(Translate.DoTranslation("Failed tests:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Failed && fac.TestSection == section).Count());
-            TextWriterColor.Write(Translate.DoTranslation("Tests to be run:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Neutral && fac.TestSection == section).Count());
-            Input.DetectKeypress();
+            int successCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Success && fac.TestSection == section).Count();
+            int failureCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Failed && fac.TestSection == section).Count();
+            int neutralCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Neutral && fac.TestSection == section).Count();
+            InfoBoxColor.WriteInfoBox(
+                "  * " + Translate.DoTranslation("Successful tests:") + " {0}\n" +
+                "  * " + Translate.DoTranslation("Failed tests:") + " {1}\n" +
+                "  * " + Translate.DoTranslation("Tests to be run:") + " {2}",
+                vars: new object[] { successCount, failureCount, neutralCount });
         }
 
         internal static void PrintTestStats()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Successful tests:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Success).Count());
-            TextWriterColor.Write(Translate.DoTranslation("Failed tests:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Failed).Count());
-            TextWriterColor.Write(Translate.DoTranslation("Tests to be run:") + " {0}", facades.Values.Where((fac) => fac.TestStatus == TestStatus.Neutral).Count());
-            Input.DetectKeypress();
+            int successCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Success).Count();
+            int failureCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Failed).Count();
+            int neutralCount = facades.Values.Where((fac) => fac.TestStatus == TestStatus.Neutral).Count();
+            InfoBoxColor.WriteInfoBox(
+                "  * " + Translate.DoTranslation("Successful tests:") + " {0}\n" +
+                "  * " + Translate.DoTranslation("Failed tests:") + " {1}\n" +
+                "  * " + Translate.DoTranslation("Tests to be run:") + " {2}",
+                vars: new object[] { successCount, failureCount, neutralCount });
         }
     }
 }
