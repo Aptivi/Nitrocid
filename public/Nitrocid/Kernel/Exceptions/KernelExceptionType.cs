@@ -292,7 +292,7 @@ namespace KS.Kernel.Exceptions
         /// </summary>
         ThreadNotReadyYet,
         /// <summary>
-        /// A thread operation is invalid in the current state. Refer to the additional message the kernel manager gave you for additional information.
+        /// A thread operation is invalid in the current state. Refer to the additional message the kernel thread manager gave you for additional information.
         /// </summary>
         ThreadOperation,
         /// <summary>
