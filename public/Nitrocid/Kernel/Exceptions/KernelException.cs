@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Languages;
 using KS.Misc.Text;
 using System;
 
@@ -28,12 +29,31 @@ namespace KS.Kernel.Exceptions
     {
 
         /// <summary>
+        /// Gets the exception type
+        /// </summary>
+        public KernelExceptionType ExceptionType { get; }
+
+        /// <summary>
+        /// Gets the original exception message before wrapping
+        /// </summary>
+        public string OriginalExceptionMessage { get; }
+
+        /// <summary>
+        /// Gets the kernel exception message
+        /// </summary>
+        public string KernelExceptionMessage =>
+            KernelExceptionMessages.GetMessageFromType(ExceptionType);
+
+        /// <summary>
         /// Initializes the instance of the kernel exception
         /// </summary>
         /// <param name="exceptionType">Exception type</param>
         public KernelException(KernelExceptionType exceptionType) : 
             base(KernelExceptionMessages.GetFinalExceptionMessage(exceptionType, "", null))
-        { ExceptionType = exceptionType; }
+        {
+            ExceptionType = exceptionType;
+            OriginalExceptionMessage = "";
+        }
 
         /// <summary>
         /// Initializes the instance of the kernel exception
@@ -42,7 +62,10 @@ namespace KS.Kernel.Exceptions
         /// <param name="e">Inner exception</param>
         public KernelException(KernelExceptionType exceptionType, Exception e) : 
             base(KernelExceptionMessages.GetFinalExceptionMessage(exceptionType, "", e), e)
-        { ExceptionType = exceptionType; }
+        {
+            ExceptionType = exceptionType;
+            OriginalExceptionMessage = "";
+        }
 
         /// <summary>
         /// Initializes the instance of the kernel exception
@@ -51,7 +74,10 @@ namespace KS.Kernel.Exceptions
         /// <param name="message">Message to be printed</param>
         public KernelException(KernelExceptionType exceptionType, string message) : 
             base(KernelExceptionMessages.GetFinalExceptionMessage(exceptionType, message, null))
-        { ExceptionType = exceptionType; }
+        {
+            ExceptionType = exceptionType;
+            OriginalExceptionMessage = message;
+        }
 
         /// <summary>
         /// Initializes the instance of the kernel exception
@@ -61,7 +87,10 @@ namespace KS.Kernel.Exceptions
         /// <param name="message">Message to be printed</param>
         public KernelException(KernelExceptionType exceptionType, string message, params object[] vars) : 
             base(KernelExceptionMessages.GetFinalExceptionMessage(exceptionType, TextTools.FormatString(message, vars), null))
-        { ExceptionType = exceptionType; }
+        {
+            ExceptionType = exceptionType;
+            OriginalExceptionMessage = TextTools.FormatString(message, vars);
+        }
 
         /// <summary>
         /// Initializes the instance of the kernel exception
@@ -71,7 +100,10 @@ namespace KS.Kernel.Exceptions
         /// <param name="message">Message to be printed</param>
         public KernelException(KernelExceptionType exceptionType, string message, Exception e) : 
             base(KernelExceptionMessages.GetFinalExceptionMessage(exceptionType, message, e), e)
-        { ExceptionType = exceptionType; }
+        {
+            ExceptionType = exceptionType;
+            OriginalExceptionMessage = message;
+        }
 
         /// <summary>
         /// Initializes the instance of the kernel exception
@@ -82,12 +114,10 @@ namespace KS.Kernel.Exceptions
         /// <param name="message">Message to be printed</param>
         public KernelException(KernelExceptionType exceptionType, string message, Exception e, params object[] vars) : 
             base(KernelExceptionMessages.GetFinalExceptionMessage(exceptionType, TextTools.FormatString(message, vars), e), e)
-        { ExceptionType = exceptionType; }
-
-        /// <summary>
-        /// Gets the exception type
-        /// </summary>
-        public KernelExceptionType ExceptionType { get; }
+        {
+            ExceptionType = exceptionType;
+            OriginalExceptionMessage = TextTools.FormatString(message, vars);
+        }
 
     }
 }

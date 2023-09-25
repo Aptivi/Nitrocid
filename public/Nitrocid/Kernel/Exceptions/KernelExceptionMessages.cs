@@ -152,10 +152,7 @@ namespace KS.Kernel.Exceptions
                 DebugWriter.WriteDebug(DebugLevel.I, "Not a nested KernelException.");
                 builder.AppendLine(Translate.DoTranslation("There is an error in the kernel or one of the kernel components. The below information may help you figure out why.") + "\n");
                 builder.AppendLine(Translate.DoTranslation("The error type is") + $" {exceptionType} [{Convert.ToInt32(exceptionType)}]");
-                builder.AppendLine((Messages.ContainsKey(exceptionType) ? 
-                                    Messages[exceptionType] : 
-                                    Translate.DoTranslation("Unfortunately, an invalid message type was given, so we don't exactly know what is the problem. Try turning on the debugger and reproducing the problem."))
-                                   + "\n");
+                builder.AppendLine(GetMessageFromType(exceptionType) + "\n");
 
                 // Display error message
                 DebugWriter.WriteDebug(DebugLevel.I, "Error message \"{0}\"", message);
@@ -176,5 +173,10 @@ namespace KS.Kernel.Exceptions
 
             return builder.ToString();
         }
+
+        internal static string GetMessageFromType(KernelExceptionType exceptionType) =>
+            Messages.ContainsKey(exceptionType) ?
+            Messages[exceptionType] :
+            Translate.DoTranslation("Unfortunately, an invalid message type was given, so we don't exactly know what is the problem. Try turning on the debugger and reproducing the problem.");
     }
 }
