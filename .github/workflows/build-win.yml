@@ -24,7 +24,7 @@ jobs:
       with:
         dotnet-version: '6.0.x'
     - name: Solution Compilation
-      run: dotnet build --configuration Debug
+      run: dotnet build -maxCpuCount:1 --configuration Debug
     - name: Testing
       run: dotnet test --configuration Debug
     - uses: actions/upload-artifact@v3

@@ -31,7 +31,7 @@ goto :finished
 
 :build
 echo Building Nitrocid KS...
-"%ProgramFiles%\dotnet\dotnet.exe" msbuild "..\Nitrocid.sln" -p:Configuration=%releaseconfig%
+"%ProgramFiles%\dotnet\dotnet.exe" msbuild "..\Nitrocid.sln" -p:Configuration=%releaseconfig% -maxCpuCount:1
 if %errorlevel% == 0 goto :success
 echo There was an error trying to build (%errorlevel%).
 goto :finished

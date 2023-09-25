@@ -41,7 +41,7 @@ fi
 
 # Build KS
 echo Building KS...
-"$dotnetpath" msbuild "../Nitrocid.sln" -p:Configuration=$ksreleaseconf
+"$dotnetpath" msbuild "../Nitrocid.sln" -p:Configuration=$ksreleaseconf -maxCpuCount:1
 if [ ! $? == 0 ]; then
 	echo Build failed.
 	exit 1
