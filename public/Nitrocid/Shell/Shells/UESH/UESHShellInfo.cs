@@ -162,7 +162,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(true, "add/rem"),
-                            new CommandArgumentPart(true, "attributes"),
+                            new CommandArgumentPart(true, "Normal/ReadOnly/Hidden/Archive"),
                         }, Array.Empty<SwitchInfo>())
                     }, new ChAttrCommand())
             },

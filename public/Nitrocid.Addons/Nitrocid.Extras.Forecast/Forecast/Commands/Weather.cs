@@ -80,7 +80,8 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
 
         public override void HelpHelper()
         {
-            TextWriterColor.Write(Translate.DoTranslation("You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.") + " " + Translate.DoTranslation("Or, pass \"listcities\" to this command."));
+            TextWriterColor.Write(Translate.DoTranslation("You can either consult the below link for the list of cities with their IDs, or, pass \"-list\" to this command."));
+            TextWriterColor.Write("http://bulk.openweathermap.org/sample/city.list.json.gz");
         }
 
     }

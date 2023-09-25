@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.UnitConv
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "type", (startFrom, _, _) => Quantity.Infos.Select((src) => src.Name).Where((src) => src.StartsWith(startFrom)).ToArray()),
+                            new CommandArgumentPart(true, "type", (startFrom, _, _) => Quantity.Infos.Select((src) => src.Name).ToArray()),
                         }, Array.Empty<SwitchInfo>())
                     }, new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.UnitConv
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "unittype"),
+                            new CommandArgumentPart(true, "unittype", (startFrom, _, _) => Quantity.Infos.Select((src) => src.Name).ToArray()),
                             new CommandArgumentPart(true, "quantity"),
                             new CommandArgumentPart(true, "sourceunit"),
                             new CommandArgumentPart(true, "targetunit"),

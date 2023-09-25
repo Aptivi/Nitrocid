@@ -41,7 +41,8 @@ namespace KS.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper() => TextWriterColor.Write(Translate.DoTranslation("Colors don't require a restart, but most of the settings require a restart."));
+        public override void HelpHelper() =>
+            TextWriterColor.Write(Translate.DoTranslation("Colors don't require a restart, but most of the settings require a restart."));
 
     }
 }
