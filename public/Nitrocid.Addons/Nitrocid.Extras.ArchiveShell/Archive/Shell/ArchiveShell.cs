@@ -31,6 +31,9 @@ using SharpCompress.Readers;
 using SharpCompress.Archives.Zip;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
+using SharpCompress.Archives.GZip;
+using SharpCompress.Archives.SevenZip;
+using SharpCompress.Archives.Tar;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {
@@ -78,6 +81,19 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                             break;
                         case ArchiveType.Zip:
                             ArchiveShellCommon.ArchiveShell_Archive ??= ZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                            break;
+                        case ArchiveType.GZip:
+                            ArchiveShellCommon.ArchiveShell_Archive ??= GZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                            break;
+                        case ArchiveType.SevenZip:
+                            ArchiveShellCommon.ArchiveShell_Archive ??= SevenZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                            break;
+                        case ArchiveType.Tar:
+                            ArchiveShellCommon.ArchiveShell_Archive ??= TarArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                            break;
+                        default:
+                            TextWriterColor.Write(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
+                            Bail = true;
                             break;
                     }
 
