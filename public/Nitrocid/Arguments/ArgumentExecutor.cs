@@ -20,7 +20,7 @@ using System;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 
-namespace KS.Arguments.ArgumentBase
+namespace KS.Arguments
 {
     /// <summary>
     /// Argument executor base class

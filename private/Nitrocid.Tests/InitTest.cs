@@ -23,8 +23,6 @@ using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using NUnit.Framework;
 using KS.Files.Operations;
-using KS.Drivers;
-using KS.Drivers.DebugLogger;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
 

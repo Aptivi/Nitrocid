@@ -28,7 +28,7 @@ using KS.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 
-namespace KS.Arguments.ArgumentBase
+namespace KS.Arguments
 {
     /// <summary>
     /// Argument parser class

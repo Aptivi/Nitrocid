@@ -25,11 +25,6 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text.Probers.Placeholder;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KS.Users.Login.Handlers
 {

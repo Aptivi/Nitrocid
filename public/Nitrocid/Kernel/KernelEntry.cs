@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Linq;
-using KS.Arguments.ArgumentBase;
 using KS.ConsoleBase;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -30,6 +29,7 @@ using KS.Kernel.Power;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Starting;
 using KS.Kernel.Configuration;
+using KS.Arguments;
 
 namespace KS.Kernel
 {

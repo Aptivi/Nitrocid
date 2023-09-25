@@ -25,7 +25,6 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
 

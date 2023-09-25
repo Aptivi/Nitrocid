@@ -20,7 +20,7 @@ using System;
 using KS.Languages;
 using KS.Shell.ShellBase.Arguments;
 
-namespace KS.Arguments.ArgumentBase
+namespace KS.Arguments
 {
     /// <summary>
     /// Argument information class

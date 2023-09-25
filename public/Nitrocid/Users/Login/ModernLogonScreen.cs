@@ -18,11 +18,7 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Inputs;
 using KS.Languages;
-using KS.ConsoleBase.Inputs.Styles;
-using KS.Drivers.Encryption;
-using System.Linq;
 using System.Threading;
 using KS.Kernel.Debugging;
 using Syndian.Instance;
@@ -32,7 +28,6 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Kernel.Threading;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Text;
 using Figletize;

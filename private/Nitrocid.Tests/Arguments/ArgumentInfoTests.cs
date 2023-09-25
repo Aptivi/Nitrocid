@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using KS.Arguments.ArgumentBase;
+using KS.Arguments;
 using KS.Shell.ShellBase.Arguments;
 using NUnit.Framework;
 using Shouldly;

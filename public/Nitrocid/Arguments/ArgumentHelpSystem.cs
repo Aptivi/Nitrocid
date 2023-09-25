@@ -26,7 +26,7 @@ using KS.Shell.ShellBase.Switches;
 using System;
 using System.Linq;
 
-namespace KS.Arguments.ArgumentBase
+namespace KS.Arguments
 {
     /// <summary>
     /// Argument help system module
