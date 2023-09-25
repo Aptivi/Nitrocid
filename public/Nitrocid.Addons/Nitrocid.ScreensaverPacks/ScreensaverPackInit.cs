@@ -73,6 +73,7 @@ namespace Nitrocid.ScreensaverPacks
             { "matrixbleed", new MatrixBleedDisplay() },
             { "memdump", new MemdumpDisplay() },
             { "mesmerize", new MesmerizeDisplay() },
+            { "multilines", new MultiLinesDisplay() },
             { "newyear", new NewYearDisplay() },
             { "noise", new NoiseDisplay() },
             { "numberscatter", new NumberScatterDisplay() },

@@ -284,15 +284,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Draw a line
-            string Line = "";
-            int Top = new Random().Next(ConsoleWrapper.WindowHeight);
+            string lineString = !string.IsNullOrWhiteSpace(MultiLinesSettings.MultiLinesLineChar) ? MultiLinesSettings.MultiLinesLineChar : "-";
+            string Line = new(lineString[0], ConsoleWrapper.WindowWidth);
+            int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got top position ({0})", Top);
-            for (int i = 1; i <= ConsoleWrapper.WindowWidth; i++)
-            {
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Forming line using {0} or the default \"-\"...", LinesSettings.LinesLineChar);
-                Line += !string.IsNullOrWhiteSpace(LinesSettings.LinesLineChar) ? LinesSettings.LinesLineChar : "-";
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Line: {0}", Line);
-            }
             if (!ConsoleResizeListener.WasResized(false))
             {
                 ConsoleWrapper.SetCursorPosition(0, Top);

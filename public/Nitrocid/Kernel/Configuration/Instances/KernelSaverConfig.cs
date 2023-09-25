@@ -2809,5 +2809,53 @@ namespace KS.Kernel.Configuration.Instances
         /// [LetterScatter] Screensaver foreground color
         /// </summary>
         public string LetterScatterForegroundColor { get; set; } = new Color(ConsoleColors.Green).PlainSequence;
+        /// <summary>
+        /// [MultiLines] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool MultiLinesTrueColor { get; set; } = true;
+        /// <summary>
+        /// [MultiLines] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int MultiLinesDelay { get; set; } = 500;
+        /// <summary>
+        /// [MultiLines] Line character
+        /// </summary>
+        public string MultiLinesLineChar { get; set; } = "-";
+        /// <summary>
+        /// [MultiLines] Screensaver background color
+        /// </summary>
+        public string MultiLinesBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        /// <summary>
+        /// [MultiLines] The minimum red color level (true color)
+        /// </summary>
+        public int MultiLinesMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [MultiLines] The minimum green color level (true color)
+        /// </summary>
+        public int MultiLinesMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [MultiLines] The minimum blue color level (true color)
+        /// </summary>
+        public int MultiLinesMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [MultiLines] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int MultiLinesMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [MultiLines] The maximum red color level (true color)
+        /// </summary>
+        public int MultiLinesMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [MultiLines] The maximum green color level (true color)
+        /// </summary>
+        public int MultiLinesMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [MultiLines] The maximum blue color level (true color)
+        /// </summary>
+        public int MultiLinesMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [MultiLines] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int MultiLinesMaximumColorLevel { get; set; } = 255;
     }
 }
