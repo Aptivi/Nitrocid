@@ -88,9 +88,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class LetterScatterDisplay : BaseScreensaver, IScreensaver
     {
 
-        private Dictionary<(int, int), char> characters = new();
-        private char minChar = 'a';
-        private char maxChar = 'z';
+        private readonly Dictionary<(int, int), char> characters = new();
+        private readonly char minChar = 'a';
+        private readonly char maxChar = 'z';
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "LetterScatter";

@@ -253,7 +253,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class LaserBeamsDisplay : BaseScreensaver, IScreensaver
     {
 
-        private static List<(int, int)> laserEnds = new();
+        private static readonly List<(int, int)> laserEnds = new();
 
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "LaserBeams";
@@ -296,7 +296,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             for (int i = 0; i < 11; i++)
             {
                 // Select a color
-                var colorStorage = Color.Empty;
+                Color colorStorage;
                 if (LaserBeamsSettings.LaserBeamsTrueColor)
                 {
                     int RedColorNum = RandomDriver.Random(LaserBeamsSettings.LaserBeamsMinimumRedColorLevel, LaserBeamsSettings.LaserBeamsMaximumRedColorLevel);
