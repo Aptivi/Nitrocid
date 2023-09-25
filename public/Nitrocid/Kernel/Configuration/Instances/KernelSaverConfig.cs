@@ -2857,5 +2857,53 @@ namespace KS.Kernel.Configuration.Instances
         /// [MultiLines] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int MultiLinesMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [LaserBeams] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool LaserBeamsTrueColor { get; set; } = true;
+        /// <summary>
+        /// [LaserBeams] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int LaserBeamsDelay { get; set; } = 500;
+        /// <summary>
+        /// [LaserBeams] Line character
+        /// </summary>
+        public string LaserBeamsLineChar { get; set; } = "-";
+        /// <summary>
+        /// [LaserBeams] Screensaver background color
+        /// </summary>
+        public string LaserBeamsBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        /// <summary>
+        /// [LaserBeams] The minimum red color level (true color)
+        /// </summary>
+        public int LaserBeamsMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [LaserBeams] The minimum green color level (true color)
+        /// </summary>
+        public int LaserBeamsMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [LaserBeams] The minimum blue color level (true color)
+        /// </summary>
+        public int LaserBeamsMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [LaserBeams] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int LaserBeamsMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [LaserBeams] The maximum red color level (true color)
+        /// </summary>
+        public int LaserBeamsMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [LaserBeams] The maximum green color level (true color)
+        /// </summary>
+        public int LaserBeamsMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [LaserBeams] The maximum blue color level (true color)
+        /// </summary>
+        public int LaserBeamsMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [LaserBeams] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int LaserBeamsMaximumColorLevel { get; set; } = 255;
     }
 }
