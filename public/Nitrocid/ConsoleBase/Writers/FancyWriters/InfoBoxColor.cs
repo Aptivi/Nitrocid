@@ -255,12 +255,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
         public static void WriteInfoBox(string text, params object[] vars) =>
-            WriteInfoBox(text,
+            WriteInfoBox(text, true,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        true, KernelColorType.Separator, KernelColorType.Background, vars);
+                        KernelColorType.Separator, KernelColorType.Background, vars);
 
         /// <summary>
         /// Writes the info box plainly
