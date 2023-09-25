@@ -47,7 +47,7 @@
   <!-- Extras.Timers addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="1.6.3" />
+    <PackageReference Include="Terminaux" Version="1.6.4" />
   </ItemGroup>
 
 </Project>
