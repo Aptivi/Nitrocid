@@ -136,7 +136,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             // Show .NET 7.0 version disclaimer
             // TODO: Remove this when .NET 8.0 releases on November and Nitrocid KS gets re-targeted to that version on December.
             SplashManager.BeginSplashOut();
-            InfoBoxColor.WriteInfoBox("* You're running a .NET 7.0 version of Nitrocid KS. This is going to be used as a testing ground to ensure that we can have smooth upgrade experience to .NET 8.0. Meanwhile, you can evaluate this version until .NET 8.0 gets released on November." + "\n\n" + Translate.DoTranslation("Press any key to continue."), KernelColorType.DevelopmentWarning);
+            InfoBoxColor.WriteInfoBox("You're running a .NET 7.0 version of Nitrocid KS. This is going to be used as a testing ground to ensure that we can have smooth upgrade experience to .NET 8.0. Meanwhile, you can evaluate this version until .NET 8.0 gets released on November." + "\n\n" + Translate.DoTranslation("Press any key to continue."), KernelColorType.DevelopmentWarning);
             SplashManager.EndSplashOut();
 #endif
         }
