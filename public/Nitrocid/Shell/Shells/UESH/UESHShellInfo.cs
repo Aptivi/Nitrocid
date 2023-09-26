@@ -28,6 +28,7 @@ using KS.Users;
 using KS.Languages;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
+using KS.Drivers.Encryption;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -1272,7 +1273,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm/all"),
+                            new CommandArgumentPart(true, "algorithm/all", (_, _, _) => EncryptionDriverTools.GetEncryptionDriverNames()),
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "outputFile"),
                         }, new[] {
@@ -1289,7 +1290,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm/all"),
+                            new CommandArgumentPart(true, "algorithm/all", (_, _, _) => EncryptionDriverTools.GetEncryptionDriverNames()),
                             new CommandArgumentPart(true, "dir"),
                             new CommandArgumentPart(false, "outputFile"),
                         }, new[] {
@@ -1396,7 +1397,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm"),
+                            new CommandArgumentPart(true, "algorithm", (_, _, _) => EncryptionDriverTools.GetEncryptionDriverNames()),
                             new CommandArgumentPart(true, "calculatedhash"),
                             new CommandArgumentPart(true, "hashfile/expectedhash"),
                             new CommandArgumentPart(true, "file"),
