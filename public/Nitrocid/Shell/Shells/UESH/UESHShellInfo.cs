@@ -302,7 +302,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "oldUserName", (startFrom, _, _) => UserManagement.ListAllUsers().ToArray()),
+                            new CommandArgumentPart(true, "oldUserName", () => UserManagement.ListAllUsers().ToArray()),
                             new CommandArgumentPart(true, "newUserName"),
                         }, Array.Empty<SwitchInfo>())
                     }, new ChUsrNameCommand(), CommandFlags.Strict)
@@ -608,7 +608,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "HardwareType", (_, _, _) => new[] { "HDD", "LogicalParts", "CPU", "GPU", "Sound", "Network", "System", "Machine", "BIOS", "RAM", "all" })
+                            new CommandArgumentPart(true, "HardwareType", () => new[] { "HDD", "LogicalParts", "CPU", "GPU", "Sound", "Network", "System", "Machine", "BIOS", "RAM", "all" })
                         }, Array.Empty<SwitchInfo>())
                     }, new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
@@ -669,7 +669,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "reload/load/unload"),
-                            new CommandArgumentPart(true, "customlanguagename", (startFrom, _, _) => LanguageManager.CustomLanguages.Keys.ToArray()),
+                            new CommandArgumentPart(true, "customlanguagename", () => LanguageManager.CustomLanguages.Keys.ToArray()),
                         }, Array.Empty<SwitchInfo>()),
                         new CommandArgumentInfo(new[]
                         {
@@ -1273,7 +1273,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm/all", (_, _, _) => EncryptionDriverTools.GetEncryptionDriverNames()),
+                            new CommandArgumentPart(true, "algorithm/all", () => EncryptionDriverTools.GetEncryptionDriverNames()),
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "outputFile"),
                         }, new[] {
@@ -1290,7 +1290,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm/all", (_, _, _) => EncryptionDriverTools.GetEncryptionDriverNames()),
+                            new CommandArgumentPart(true, "algorithm/all", () => EncryptionDriverTools.GetEncryptionDriverNames()),
                             new CommandArgumentPart(true, "dir"),
                             new CommandArgumentPart(false, "outputFile"),
                         }, new[] {
@@ -1397,7 +1397,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm", (_, _, _) => EncryptionDriverTools.GetEncryptionDriverNames()),
+                            new CommandArgumentPart(true, "algorithm", () => EncryptionDriverTools.GetEncryptionDriverNames()),
                             new CommandArgumentPart(true, "calculatedhash"),
                             new CommandArgumentPart(true, "hashfile/expectedhash"),
                             new CommandArgumentPart(true, "file"),

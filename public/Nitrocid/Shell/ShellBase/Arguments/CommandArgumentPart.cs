@@ -38,7 +38,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// <summary>
         /// Auto completion function delegate
         /// </summary>
-        public Func<string, int, char[], string[]> AutoCompleter { get; private set; }
+        public Func<string[]> AutoCompleter { get; private set; }
 
         /// <summary>
         /// Installs a new instance of the command argument part class
@@ -46,7 +46,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="argumentExpression">Command argument expression</param>
         /// <param name="argumentRequired">Is this argument part required?</param>
         /// <param name="autoCompleter">Auto completion function</param>
-        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string, int, char[], string[]> autoCompleter = null)
+        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null)
         {
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;
@@ -72,7 +72,7 @@ namespace KS.Shell.ShellBase.Arguments
                 if (!done && argumentExpression.Contains('/'))
                 {
                     string[] expressions = argumentExpression.Split('/');
-                    autoCompleter = (last, _, _) => expressions.ToArray();
+                    autoCompleter = expressions.ToArray;
                     done = true;
                 }
             }

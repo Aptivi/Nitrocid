@@ -121,7 +121,7 @@ namespace KS.Shell.ShellBase.Shells
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "command", (_, _, _) => CommandManager.GetCommands(CurrentShellType).Keys.ToArray())
+                            new CommandArgumentPart(false, "command", () => CommandManager.GetCommands(CurrentShellType).Keys.ToArray())
                         }, new[]
                         {
                             new SwitchInfo("general", /* Localizable */ "Shows general commands (default)", new SwitchOptions()
@@ -185,7 +185,7 @@ namespace KS.Shell.ShellBase.Shells
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "command", (_, _, _) => CommandExecutor.GetWrappableCommands(CurrentShellType))
+                            new CommandArgumentPart(true, "command", () => CommandExecutor.GetWrappableCommands(CurrentShellType))
                         }, Array.Empty<SwitchInfo>())
                     }, new WrapUnifiedCommand())
             }
@@ -309,7 +309,7 @@ namespace KS.Shell.ShellBase.Shells
             // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
             var settings = new TermReaderSettings()
             {
-                Suggestions = CommandAutoComplete.GetSuggestions,
+                Suggestions = (text, index, _) => CommandAutoComplete.GetSuggestions(text, index),
                 SuggestionsDelimiters = new[] { ' ' },
                 TreatCtrlCAsInput = true,
             };

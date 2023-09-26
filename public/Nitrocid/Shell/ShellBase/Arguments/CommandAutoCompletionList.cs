@@ -37,20 +37,20 @@ namespace KS.Shell.ShellBase.Arguments
     /// </summary>
     public static class CommandAutoCompletionList
     {
-        private static readonly Dictionary<string, Func<string, int, char[], string[]>> completions = new()
+        private static readonly Dictionary<string, Func<string[]>> completions = new()
         {
-            { "user",       (_, _, _)       => UserManagement.ListAllUsers().ToArray() },
-            { "username",   (_, _, _)       => UserManagement.ListAllUsers().ToArray() },
-            { "group",      (_, _, _)       => GroupManagement.AvailableGroups.Select((group) => group.GroupName).ToArray() },
-            { "groupname",  (_, _, _)       => GroupManagement.AvailableGroups.Select((group) => group.GroupName).ToArray() },
-            { "modname",    (_, _, _)       => ModManager.ListMods().Keys.ToArray() },
-            { "splashname", (_, _, _)       => SplashManager.Splashes.Keys.ToArray() },
-            { "saver",      (_, _, _)       => ScreensaverManager.Screensavers.Keys.ToArray() },
-            { "theme",      (_, _, _)       => ThemeTools.GetInstalledThemes().Keys.ToArray() },
-            { "$variable",  (_, _, _)       => UESHVariables.Variables.Keys.ToArray() },
-            { "perm",       (_, _, _)       => Enum.GetNames<PermissionTypes>() },
-            { "cmd",        (_, _, _)       => PopulateCommands() },
-            { "command",    (_, _, _)       => PopulateCommands() },
+            { "user",       () => UserManagement.ListAllUsers().ToArray() },
+            { "username",   () => UserManagement.ListAllUsers().ToArray() },
+            { "group",      () => GroupManagement.AvailableGroups.Select((group) => group.GroupName).ToArray() },
+            { "groupname",  () => GroupManagement.AvailableGroups.Select((group) => group.GroupName).ToArray() },
+            { "modname",    () => ModManager.ListMods().Keys.ToArray() },
+            { "splashname", () => SplashManager.Splashes.Keys.ToArray() },
+            { "saver",      () => ScreensaverManager.Screensavers.Keys.ToArray() },
+            { "theme",      () => ThemeTools.GetInstalledThemes().Keys.ToArray() },
+            { "$variable",  () => UESHVariables.Variables.Keys.ToArray() },
+            { "perm",             Enum.GetNames<PermissionTypes> },
+            { "cmd",              PopulateCommands },
+            { "command",          PopulateCommands },
         };
 
         /// <summary>
@@ -58,7 +58,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="expression">An expression to query</param>
         /// <returns>A function that points to the completion, or null if not found.</returns>
-        public static Func<string, int, char[], string[]> GetCompletionFunction(string expression)
+        public static Func<string[]> GetCompletionFunction(string expression)
         {
             expression = expression.ToLower();
             if (!completions.ContainsKey(expression))

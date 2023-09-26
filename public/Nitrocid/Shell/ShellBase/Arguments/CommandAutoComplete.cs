@@ -34,8 +34,7 @@ namespace KS.Shell.ShellBase.Arguments
     internal static class CommandAutoComplete
     {
 
-        /// <inheritdoc/>
-        public static string[] GetSuggestions(string text, int index, char[] delims)
+        internal static string[] GetSuggestions(string text, int index)
         {
             // First, cut the text to index
             text = text[..index];
@@ -118,7 +117,7 @@ namespace KS.Shell.ShellBase.Arguments
 
                 // We have the delegate! Invoke it.
                 DebugWriter.WriteDebug(DebugLevel.I, "If we reach here, it means we have a delegate! Executing delegate with {0} [{1}]...", LastArgument, LastArgument.Length);
-                finalCompletions = AutoCompleter.Invoke(LastArgument, index, delims)
+                finalCompletions = AutoCompleter.Invoke()
                     .Where(x => x.StartsWith(LastArgument))
                     .Select(x => x[LastArgument.Length..])
                     .ToArray();
