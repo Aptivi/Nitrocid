@@ -31,6 +31,7 @@ using static KS.Kernel.Configuration.Config;
 using KS.ConsoleBase.Colors;
 using Terminaux.Colors;
 using KS.Resources;
+using KS.Kernel.Exceptions;
 
 namespace KS.Kernel.Configuration
 {
@@ -211,6 +212,34 @@ namespace KS.Kernel.Configuration
             // Return the results
             DebugWriter.WriteDebug(DebugLevel.I, "{0} results...", Results.Count);
             return Results;
+        }
+
+        /// <summary>
+        /// Registers a custom setting
+        /// </summary>
+        public static void RegisterCustomSetting()
+        {
+            // TODO: This is not implemented. Even the signature is unfinished.
+            throw new KernelException(KernelExceptionType.NotImplementedYet, "Custom settings registration for your mods is coming soon.");
+        }
+
+        /// <summary>
+        /// Unregisters a custom setting
+        /// </summary>
+        public static void UnregisterCustomSetting()
+        {
+            // TODO: This is not implemented. Even the signature is unfinished.
+            throw new KernelException(KernelExceptionType.NotImplementedYet, "Custom settings unregistration for your mods is coming soon.");
+        }
+
+        /// <summary>
+        /// Checks to see whether the custom setting is registered
+        /// </summary>
+        /// <returns>True if found. False otherwise.</returns>
+        public static bool IsCustomSettingRegistered()
+        {
+            // TODO: This is not implemented. Even the signature is unfinished.
+            throw new KernelException(KernelExceptionType.NotImplementedYet, "Custom settings manipulation for your mods is coming soon.");
         }
 
     }
