@@ -48,7 +48,6 @@
 
   <ItemGroup>
     <PackageReference Include="FluentFTP" Version="48.0.0" />
-    <PackageReference Include="Terminaux" Version="1.6.5" />
   </ItemGroup>
 
 </Project>

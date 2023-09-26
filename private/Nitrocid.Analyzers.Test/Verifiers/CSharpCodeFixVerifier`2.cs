@@ -22,6 +22,7 @@ using Microsoft.CodeAnalysis.CSharp.Testing;
 using Microsoft.CodeAnalysis.Diagnostics;
 using Microsoft.CodeAnalysis.Testing;
 using Microsoft.CodeAnalysis.Testing.Verifiers;
+using System.Collections.Immutable;
 using System.Threading;
 using System.Threading.Tasks;
 
@@ -54,6 +55,10 @@ namespace Nitrocid.Analyzers.Test
             test.ExpectedDiagnostics.AddRange(expected);
             test.ReferenceAssemblies = ReferenceAssemblies.Net.Net60;
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net6.0/Nitrocid.dll"));
+            
+            // Each update to Terminaux means that you must also increment this version.
+            var pkg = new PackageIdentity("Terminaux", "1.6.5");
+            test.ReferenceAssemblies = test.ReferenceAssemblies.AddPackages(ImmutableArray.Create(pkg));
             await test.RunAsync(CancellationToken.None);
         }
 
@@ -77,6 +82,10 @@ namespace Nitrocid.Analyzers.Test
             test.ExpectedDiagnostics.AddRange(expected);
             test.ReferenceAssemblies = ReferenceAssemblies.Net.Net60;
             test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net6.0/Nitrocid.dll"));
+
+            // Each update to Terminaux means that you must also increment this version.
+            var pkg = new PackageIdentity("Terminaux", "1.6.5");
+            test.ReferenceAssemblies = test.ReferenceAssemblies.AddPackages(ImmutableArray.Create(pkg));
             await test.RunAsync(CancellationToken.None);
         }
     }

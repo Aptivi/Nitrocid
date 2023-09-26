@@ -49,7 +49,6 @@
 
   <ItemGroup>
     <PackageReference Include="FluentFTP" Version="48.0.0" />
-    <PackageReference Include="Terminaux" Version="1.6.5" />
     <PackageReference Include="UnitsNet" Version="5.34.0" />
   </ItemGroup>
 

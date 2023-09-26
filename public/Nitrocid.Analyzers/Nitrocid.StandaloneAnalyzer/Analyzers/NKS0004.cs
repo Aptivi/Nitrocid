@@ -97,7 +97,9 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.ConsoleBase.Colors") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName("KS.ConsoleBase"),
+                            SyntaxFactory.QualifiedName(
+                                SyntaxFactory.IdentifierName("KS"),
+                                SyntaxFactory.IdentifierName("ConsoleBase")),
                             SyntaxFactory.IdentifierName("Colors"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
                         TextWriterColor.Write("Additionally, the suggested fix will add the following using statements:", true, ConsoleColors.Yellow);

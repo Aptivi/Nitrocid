@@ -95,6 +95,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Diagnostics;
                 using KS.ConsoleBase;
                 using KS.Misc.Text;
+
                 namespace ConsoleApplication1
                 {
                     class MyMod

@@ -19,13 +19,13 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Threading.Tasks;
 using VerifyCS = Nitrocid.Analyzers.Test.CSharpCodeFixVerifier<
-    Nitrocid.Analyzers.Misc.Text.StringFormatAnalyzer,
-    Nitrocid.Analyzers.Misc.Text.StringFormatCodeFixProvider>;
+    Nitrocid.Analyzers.ConsoleBase.ConsoleReadLineUsageAnalyzer,
+    Nitrocid.Analyzers.ConsoleBase.ConsoleReadLineUsageCodeFixProvider>;
 
-namespace Nitrocid.Analyzers.Test.Misc.Text
+namespace Nitrocid.Analyzers.Test.ConsoleBase
 {
     [TestClass]
-    public class StringFormatAnalyzerAltUnitTests
+    public class ConsoleReadLineUsageAnalyzerUnitTests
     {
         [TestMethod]
         public async Task TestEnsureNoAnalyzer()
@@ -45,7 +45,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.ConsoleBase;
+                using KS.Misc.Text;
 
                 namespace ConsoleApplication1
                 {
@@ -53,7 +53,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                     {   
                         public static void Main()
                         {
-                            ConsoleWrapper.WriteLine([|String.Format|]("Hello, {0}!", "Nitrocid"));
+                            [|Console.ReadLine|]();
                         }
                     }
                 }
@@ -72,7 +72,6 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.ConsoleBase;
 
                 namespace ConsoleApplication1
                 {
@@ -80,7 +79,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                     {   
                         public static void Main()
                         {
-                            ConsoleWrapper.WriteLine([|String.Format|]("Hello, {0}!", "Nitrocid"));
+                            [|Console.ReadLine|]();
                         }
                     }
                 }
@@ -93,8 +92,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                 using System.Text;
                 using System.Threading.Tasks;
                 using System.Diagnostics;
-                using KS.ConsoleBase;
-                using KS.Misc.Text;
+                using KS.ConsoleBase.Inputs;
 
                 namespace ConsoleApplication1
                 {
@@ -102,7 +100,7 @@ namespace Nitrocid.Analyzers.Test.Misc.Text
                     {   
                         public static void Main()
                         {
-                            ConsoleWrapper.WriteLine(TextTools.FormatString("Hello, {0}!", "Nitrocid"));
+                            Input.ReadLine();
                         }
                     }
                 }

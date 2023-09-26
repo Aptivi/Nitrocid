@@ -80,7 +80,9 @@ namespace Nitrocid.Analyzers.ConsoleBase
                 if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.ConsoleBase.Colors") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("KS.ConsoleBase"),
+                        SyntaxFactory.QualifiedName(
+                            SyntaxFactory.IdentifierName("KS"),
+                            SyntaxFactory.IdentifierName("ConsoleBase")),
                         SyntaxFactory.IdentifierName("Colors"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));

@@ -46,8 +46,4 @@
   </ItemGroup>
   <!-- Extras.ToDoList addon Platform Information End -->
 
-  <ItemGroup>
-    <PackageReference Include="Terminaux" Version="1.6.5" />
-  </ItemGroup>
-
 </Project>
