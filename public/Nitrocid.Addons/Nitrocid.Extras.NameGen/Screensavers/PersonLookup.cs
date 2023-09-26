@@ -19,11 +19,13 @@
 using System;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Screensaver;
+using Terminaux.Colors;
 using static Namer.NameGenerator;
 
 namespace Nitrocid.Extras.NameGen.Screensavers
@@ -151,13 +153,18 @@ namespace Nitrocid.Extras.NameGen.Screensavers
         public override string ScreensaverName { get; set; } = "PersonLookup";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation() => PopulateNames();
+        public override void ScreensaverPreparation()
+        {
+            base.ScreensaverPreparation();
+
+            // Populate the names
+            InfoBoxColor.WriteInfoBox("Welcome to the database! Fetching identities...", false, ConsoleColors.Green);
+            PopulateNames();
+        }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.Green;
             ConsoleWrapper.Clear();
             ConsoleWrapper.CursorVisible = false;
 
@@ -168,21 +175,48 @@ namespace Nitrocid.Extras.NameGen.Screensavers
             // Loop through names
             foreach (string GeneratedName in NamesToLookup)
             {
+                // Get random age (initial) and its month and day components
                 int Age = RandomDriver.Random(PersonLookupSettings.PersonLookupMinimumAgeYears, PersonLookupSettings.PersonLookupMaximumAgeYears);
                 int AgeMonth = RandomDriver.Random(-12, 12);
                 int AgeDay = RandomDriver.Random(-31, 31);
-                var Birthdate = DateTime.Now.AddYears(-Age).AddMonths(AgeMonth).AddDays(AgeDay);
-                int FinalAge = new DateTime((DateTime.Now - Birthdate).Ticks).Year;
+
+                // Get random birth time
+                int birthHour = RandomDriver.Random(0, 23);
+                int birthMinute = RandomDriver.Random(0, 59);
+                int birthSecond = RandomDriver.Random(0, 59);
+
+                // Form the final birthdate and the age
+                var Birthdate = DateTime.Now
+                    .AddYears(-Age)
+                    .AddMonths(AgeMonth)
+                    .AddDays(AgeDay)
+                    .AddHours(birthHour)
+                    .AddMinutes(birthMinute)
+                    .AddSeconds(birthSecond);
+                int FinalAge = new DateTime((DateTime.Now - Birthdate).Ticks).Year - 1;
+
+                // Get the first and the last name
                 string FirstName = GeneratedName[..GeneratedName.IndexOf(" ")];
                 string LastName = GeneratedName[(GeneratedName.IndexOf(" ") + 1)..];
 
                 // Print all information
                 ConsoleWrapper.Clear();
-                TextWriterWhereColor.WriteWhere("  - Name:                {0}", 0, 1, false, vars: new object[] { GeneratedName });
-                TextWriterWhereColor.WriteWhere("  - First Name:          {0}", 0, 2, false, vars: new object[] { FirstName });
-                TextWriterWhereColor.WriteWhere("  - Last Name / Surname: {0}", 0, 3, false, vars: new object[] { LastName });
-                TextWriterWhereColor.WriteWhere("  - Age:                 {0} years old", 0, 4, false, 0, vars: new object[] { FinalAge });
-                TextWriterWhereColor.WriteWhere("  - Birth date:          {0}", 0, 5, false, vars: new object[] { TimeDateRenderers.Render(Birthdate) });
+                InfoBoxColor.WriteInfoBox(
+                    "- Name:                  {0}\n" +
+                   $"{new string('=', $"- Name:                  {GeneratedName}".Length)}\n" +
+                    "\n" +
+                    "  - First Name:          {1}\n" +
+                    "  - Last Name / Surname: {2}\n" +
+                    "  - Age:                 {3} years old\n" +
+                    "  - Birth date:          {4}\n",
+                    
+                    // We don't want to wait for input as we're on the screensaver environment.
+                    false,
+                    ConsoleColors.Green,
+
+                    // Necessary variables to print
+                    new object[] { GeneratedName, FirstName, LastName, FinalAge, TimeDateRenderers.Render(Birthdate) }
+                );
 
                 // Lookup delay
                 ThreadManager.SleepNoBlock(PersonLookupSettings.PersonLookupDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
