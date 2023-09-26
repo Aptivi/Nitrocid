@@ -24,7 +24,6 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
-using KS.Misc.Screensaver.Customized;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -44,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             string modPath = Paths.GetKernelPath(KernelPathType.Mods);
             StringArgs = StringArgs.ToLower();
-            if (ScreensaverManager.Screensavers.ContainsKey(StringArgs) | CustomSaverTools.CustomSavers.ContainsKey(StringArgs))
+            if (ScreensaverManager.Screensavers.ContainsKey(StringArgs) | ScreensaverManager.CustomSavers.ContainsKey(StringArgs))
             {
                 ScreensaverManager.SetDefaultScreensaver(StringArgs);
                 TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), StringArgs);
@@ -65,9 +64,9 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override void HelpHelper()
         {
-            if (CustomSaverTools.CustomSavers.Count > 0)
+            if (ScreensaverManager.CustomSavers.Count > 0)
             {
-                TextWriterColor.Write(Translate.DoTranslation("where customsaver will be") + " {0}", string.Join(", ", CustomSaverTools.CustomSavers.Keys));
+                TextWriterColor.Write(Translate.DoTranslation("where customsaver will be") + " {0}", string.Join(", ", ScreensaverManager.CustomSavers.Keys));
             }
             TextWriterColor.Write(Translate.DoTranslation("where builtinsaver will be") + " {0}", string.Join(", ", ScreensaverManager.Screensavers.Keys));
         }

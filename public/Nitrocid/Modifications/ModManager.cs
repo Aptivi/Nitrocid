@@ -28,7 +28,6 @@ using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Languages;
-using KS.Misc.Screensaver.Customized;
 using KS.Misc.Splash;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -38,6 +37,7 @@ using KS.Modifications.ManPages;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Reflection;
 using System.Diagnostics;
+using KS.Misc.Screensaver;
 
 namespace KS.Modifications
 {
@@ -203,7 +203,7 @@ namespace KS.Modifications
                     }
 
                     // Clear the custom screensavers
-                    CustomSaverTools.CustomSavers.Clear();
+                    ScreensaverManager.CustomSavers.Clear();
                 }
                 else
                 {

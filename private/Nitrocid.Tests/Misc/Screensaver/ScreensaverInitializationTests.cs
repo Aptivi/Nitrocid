@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Misc.Screensaver;
-using KS.Misc.Screensaver.Customized;
 using NUnit.Framework;
 using Shouldly;
 
@@ -36,7 +35,7 @@ namespace Nitrocid.Tests.Misc.Screensaver
         public void TestRegisterCustomSaver()
         {
             ScreensaverManager.IsScreensaverRegistered("CustomSaver").ShouldBeFalse();
-            CustomSaverTools.RegisterCustomScreensaver("CustomSaver", new CustomSaverTest());
+            ScreensaverManager.RegisterCustomScreensaver("CustomSaver", new CustomSaverTest());
             ScreensaverManager.IsScreensaverRegistered("CustomSaver").ShouldBeTrue();
         }
 
@@ -48,7 +47,7 @@ namespace Nitrocid.Tests.Misc.Screensaver
         public void TestUnregisterCustomSaver()
         {
             ScreensaverManager.IsScreensaverRegistered("CustomSaver").ShouldBeTrue();
-            CustomSaverTools.UnregisterCustomScreensaver("CustomSaver");
+            ScreensaverManager.UnregisterCustomScreensaver("CustomSaver");
             ScreensaverManager.IsScreensaverRegistered("CustomSaver").ShouldBeFalse();
         }
 

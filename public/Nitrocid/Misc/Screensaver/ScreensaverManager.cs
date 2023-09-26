@@ -24,7 +24,6 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Screensaver.Customized;
 using KS.Misc.Screensaver.Displays;
 using KS.Users.Login;
 using KS.Kernel.Events;
@@ -54,6 +53,7 @@ namespace KS.Misc.Screensaver
             { "matrix", new MatrixDisplay() },
             { "plain", new PlainDisplay() }
         };
+        internal static Dictionary<string, BaseScreensaver> CustomSavers = new();
         internal static int scrnTimeout = 300000;
         internal static string defSaverName = "matrix";
         internal static bool LockMode;
@@ -206,7 +206,7 @@ namespace KS.Misc.Screensaver
                 else
                 {
                     // Only one custom screensaver can be used.
-                    var BaseSaver = CustomSaverTools.CustomSavers[saver];
+                    var BaseSaver = CustomSavers[saver];
                     if (BaseSaver.ScreensaverContainsFlashingImages)
                         BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;
@@ -295,7 +295,34 @@ namespace KS.Misc.Screensaver
         public static bool IsScreensaverRegistered(string name)
         {
             name = name.ToLower();
-            return Screensavers.ContainsKey(name) || CustomSaverTools.CustomSavers.ContainsKey(name) || name == "random";
+            return Screensavers.ContainsKey(name) || CustomSavers.ContainsKey(name) || name == "random";
+        }
+
+        /// <summary>
+        /// Registers a custom screensaver
+        /// </summary>
+        /// <param name="name">Screensaver name to register</param>
+        /// <param name="screensaver">Base screensaver containing custom screensaver</param>
+        public static void RegisterCustomScreensaver(string name, BaseScreensaver screensaver)
+        {
+            if (IsScreensaverRegistered(name))
+                throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Custom screensaver already exists."));
+
+            // Add a custom screensaver to the list of available screensavers.
+            CustomSavers.Add(name.ToLower(), screensaver);
+        }
+
+        /// <summary>
+        /// Unregisters a custom screensaver
+        /// </summary>
+        /// <param name="name">Screensaver name to unregister</param>
+        public static void UnregisterCustomScreensaver(string name)
+        {
+            if (!IsScreensaverRegistered(name))
+                throw new KernelException(KernelExceptionType.ScreensaverManagement, Translate.DoTranslation("Custom screensaver not found."));
+
+            // Remove a custom screensaver from the list of available screensavers.
+            CustomSavers.Remove(name.ToLower());
         }
 
         /// <summary>
