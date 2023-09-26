@@ -79,6 +79,16 @@ namespace KS.Shell.Shells.Admin
                     }, new UserFlagCommand())
             },
 
+            { "userinfo",
+                new CommandInfo("userinfo", ShellType, /* Localizable */ "Gets the user information",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "user")
+                        }, Array.Empty<SwitchInfo>())
+                    }, new UserInfoCommand())
+            },
+
             { "userlang",
                 new CommandInfo("userlang", ShellType, /* Localizable */ "Changes the preferred user language",
                     new[] {
