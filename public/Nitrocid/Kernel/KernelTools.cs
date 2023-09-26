@@ -32,7 +32,7 @@ namespace KS.Kernel
     {
 
         internal static Stopwatch StageTimer = new();
-        internal static string bannerFigletFont = "Banner";
+        internal static string bannerFigletFont = "banner";
         private static readonly Version kernelVersion =
             Assembly.GetExecutingAssembly().GetName().Version;
         private static readonly Version kernelApiVersion =
