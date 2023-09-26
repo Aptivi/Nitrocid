@@ -46,7 +46,10 @@ namespace Nitrocid.Extras.Amusements
             { "hangman",
                 new CommandInfo("hangman", ShellType.Shell, /* Localizable */ "Starts the Hangman game",
                     new[] {
-                        new CommandArgumentInfo()
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
+                            new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", false, false, new string[] { "practice" }, 0, false),
+                            new SwitchInfo("practice", /* Localizable */ "Test your Hangman skills by throwing a random letter.", false, false, new string[] { "hardcore" }, 0, false),
+                        })
                     }, new HangmanCommand())
             },
 

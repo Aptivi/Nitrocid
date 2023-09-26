@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Amusements.Amusements.Games;
 
 namespace Nitrocid.Extras.Amusements.Commands
@@ -26,7 +27,11 @@ namespace Nitrocid.Extras.Amusements.Commands
 
         public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
-            Hangman.InitializeHangman();
+            var difficulty =
+                SwitchManager.ContainsSwitch(ListSwitchesOnly, "-hardcore") ? HangmanDifficulty.Hardcore :
+                SwitchManager.ContainsSwitch(ListSwitchesOnly, "-practice") ? HangmanDifficulty.Practice :
+                HangmanDifficulty.None;
+            Hangman.InitializeHangman(difficulty);
             return 0;
         }
     }

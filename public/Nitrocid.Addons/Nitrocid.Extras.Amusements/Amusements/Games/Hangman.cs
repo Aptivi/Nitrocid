@@ -37,8 +37,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         /// <summary>
         /// Initializes the game
         /// </summary>
-        public static void InitializeHangman()
+        public static void InitializeHangman(HangmanDifficulty difficulty)
         {
+            // Get a random word and populate some variables
             string RandomWord = WordManager.GetRandomWord();
             bool hung = false;
             int currentAttempt = 0;
@@ -183,7 +184,11 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         // Wrong character!
                         if (!wrongChars.Contains(inputChar))
                         {
-                            currentAttempt++;
+                            // Increase the number of attempts based on the difficulty
+                            if (difficulty == HangmanDifficulty.Hardcore)
+                                currentAttempt = 6;
+                            else if (difficulty == HangmanDifficulty.None)
+                                currentAttempt++;
                             wrongChars.Add(inputChar);
                         }
                     }
@@ -195,5 +200,12 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             ConsoleWrapper.Clear();
         }
 
+    }
+
+    enum HangmanDifficulty
+    {
+        None = 0,
+        Hardcore,
+        Practice
     }
 }
