@@ -116,7 +116,6 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             return;
 #else
             // Show development disclaimer
-            SplashManager.BeginSplashOut();
             InfoBoxColor.WriteInfoBox(
 #if SPECIFIERDEV
                 Translate.DoTranslation("You're running the development version of the kernel. While you can experience upcoming features which may exist in the final release, you may run into bugs, instabilities, or even data loss. We recommend using the stable version, if possible.")
@@ -126,7 +125,6 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                 Translate.DoTranslation("We recommend against running this version of the kernel, because it is unsupported. If you have downloaded this kernel from unknown sources, this message may appear. Please download from our official downloads page.")
 #endif
             + "\n\n" + Translate.DoTranslation("Press any key to continue."), KernelColorType.DevelopmentWarning);
-            SplashManager.EndSplashOut();
 #endif
         }
 
@@ -135,9 +133,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
 #if NET7_0
             // Show .NET 7.0 version disclaimer
             // TODO: Remove this when .NET 8.0 releases on November and Nitrocid KS gets re-targeted to that version on December.
-            SplashManager.BeginSplashOut();
             InfoBoxColor.WriteInfoBox("You're running a .NET 7.0 version of Nitrocid KS. This is going to be used as a testing ground to ensure that we can have smooth upgrade experience to .NET 8.0. Meanwhile, you can evaluate this version until .NET 8.0 gets released on November." + "\n\n" + Translate.DoTranslation("Press any key to continue."), KernelColorType.DevelopmentWarning);
-            SplashManager.EndSplashOut();
 #endif
         }
         
