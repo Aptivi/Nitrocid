@@ -29,7 +29,7 @@ using Terminaux.Writer.MiscWriters;
 
 namespace Nitrocid.StandaloneAnalyzer.Analyzers
 {
-    internal class NKS0005 : IAnalyzer
+    internal class NKS0006 : IAnalyzer
     {
         public bool Analyze(Document document)
         {
@@ -45,13 +45,13 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     var location = syntaxNode.GetLocation();
                     if (identifier.Identifier.Text == nameof(Console))
                     {
-                        // Let's see if the caller tries to access Console.BackgroundColor.
+                        // Let's see if the caller tries to access Console.ReadLine.
                         var name = (IdentifierNameSyntax)exp.Name;
                         var idName = name.Identifier.Text;
-                        if (idName == nameof(Console.BackgroundColor))
+                        if (idName == nameof(Console.ReadLine))
                         {
                             var lineSpan = location.GetLineSpan();
-                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.BackgroundColor instead of SetConsoleColor(Color, true)", true, ConsoleColors.Yellow);
+                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.ReadLine instead of ReadLine()", true, ConsoleColors.Yellow);
                             if (!string.IsNullOrEmpty(document.FilePath))
                                 LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
                             found = true;
@@ -72,42 +72,35 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                     continue;
                 if (exp.Expression is IdentifierNameSyntax identifier)
                 {
-                    // Build the replacement syntax
-                    var classSyntax = SyntaxFactory.IdentifierName("KernelColorTools");
-                    var methodSyntax = SyntaxFactory.IdentifierName("SetConsoleColor");
+                    // Get the method
+                    var idName = ((IdentifierNameSyntax)exp.Name).Identifier.Text;
                     if (identifier.Identifier.Text != nameof(Console))
                         continue;
-                    var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
-                    var parentSyntax = (AssignmentExpressionSyntax)exp.Parent;
-                    var valueSyntax = SyntaxFactory.Argument(parentSyntax.Right.ReplaceNode(((MemberAccessExpressionSyntax)parentSyntax.Right).Expression, SyntaxFactory.IdentifierName("ConsoleColors")));
-                    var trueSyntax = SyntaxFactory.Argument(SyntaxFactory.ParseExpression("true"));
-                    var valuesSyntax = SyntaxFactory.ArgumentList().AddArguments(valueSyntax, trueSyntax);
-                    var resultSyntax = SyntaxFactory.InvocationExpression(maeSyntax, valuesSyntax);
+
+                    // We need to have a syntax that calls Input.ReadLine
+                    var classSyntax = SyntaxFactory.IdentifierName("Input");
+                    var methodSyntax = SyntaxFactory.IdentifierName("ReadLine");
+                    var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
+                    var replacedSyntax = resultSyntax
+                        .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
+                        .WithTrailingTrivia(resultSyntax.GetTrailingTrivia());
 
                     // Actually replace
                     var node = await document.GetSyntaxRootAsync(cancellationToken);
-                    var finalNode = node.ReplaceNode(parentSyntax, resultSyntax);
+                    var finalNode = node.ReplaceNode(exp, replacedSyntax);
                     TextWriterColor.Write("Here's what the replacement would look like (with no Roslyn trivia):", true, ConsoleColors.Yellow);
                     TextWriterColor.Write($"  - {exp}", true, ConsoleColors.Red);
-                    TextWriterColor.Write($"  + {resultSyntax.ToFullString()}", true, ConsoleColors.Green);
+                    TextWriterColor.Write($"  + {replacedSyntax.ToFullString()}", true, ConsoleColors.Green);
 
                     // Check the imports
                     var compilation = finalNode as CompilationUnitSyntax;
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.ConsoleBase.Colors") == false)
+                    if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.ConsoleBase.Inputs") == false)
                     {
                         var name = SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName("KS.ConsoleBase"),
-                            SyntaxFactory.IdentifierName("Colors"));
+                        SyntaxFactory.IdentifierName("KS.ConsoleBase"),
+                        SyntaxFactory.IdentifierName("Inputs"));
                         var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
-                        TextWriterColor.Write("Additionally, the suggested fix will add the following using statements:", true, ConsoleColors.Yellow);
-                        TextWriterColor.Write($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
-                    }
-                    if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Colors") == false)
-                    {
-                        var name = SyntaxFactory.QualifiedName(
-                            SyntaxFactory.IdentifierName("Terminaux"),
-                            SyntaxFactory.IdentifierName("Colors"));
-                        var directive = SyntaxFactory.UsingDirective(name).NormalizeWhitespace();
+                        TextWriterColor.Write("Additionally, the suggested fix will add the following using statement:", true, ConsoleColors.Yellow);
                         TextWriterColor.Write($"  + {directive.ToFullString()}", true, ConsoleColors.Green);
                     }
                 }

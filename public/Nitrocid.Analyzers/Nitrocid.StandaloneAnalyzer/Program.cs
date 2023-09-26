@@ -40,6 +40,7 @@ namespace Nitrocid.StandaloneAnalyzer
             new NKS0003(),
             new NKS0004(),
             new NKS0005(),
+            new NKS0006(),
         };
 
         static async Task Main(string[] args)

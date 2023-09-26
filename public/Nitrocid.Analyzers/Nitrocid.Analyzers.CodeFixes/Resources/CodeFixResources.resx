@@ -154,6 +154,13 @@
   </data>
 
   <!--
+      ConsoleReadLine usage code fix
+  -->
+  <data name="ConsoleReadLineUsageCodeFixTitle" xml:space="preserve">
+    <value>Use ReadLine() from Input</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

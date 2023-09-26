@@ -184,6 +184,19 @@
   </data>
 
   <!--
+      ConsoleReadLine usage analyzer
+  -->
+  <data name="ConsoleReadLineUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use ReadLine() instead of Console.ReadLine</value>
+  </data>
+  <data name="ConsoleReadLineUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.ReadLine instead of ReadLine()</value>
+  </data>
+  <data name="ConsoleReadLineUsageAnalyzerDescription" xml:space="preserve">
+    <value>ReadLine() provided by the input helper from Nitrocid allows you to seamlessly read a user input with settings provided by Terminaux.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

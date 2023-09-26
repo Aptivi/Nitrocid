@@ -115,6 +115,33 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to ReadLine() provided by the input helper from Nitrocid allows you to seamlessly read a user input with settings provided by Terminaux..
+        /// </summary>
+        internal static string ConsoleReadLineUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ConsoleReadLineUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Console.ReadLine instead of ReadLine().
+        /// </summary>
+        internal static string ConsoleReadLineUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ConsoleReadLineUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use ReadLine() instead of Console.ReadLine.
+        /// </summary>
+        internal static string ConsoleReadLineUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ConsoleReadLineUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SetTitle() uses the VT sequence to set the title, while Console.Title works in certain conditions..
         /// </summary>
         internal static string ConsoleTitleUsageAnalyzerDescription {

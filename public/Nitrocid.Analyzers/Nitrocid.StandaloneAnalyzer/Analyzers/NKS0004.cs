@@ -51,7 +51,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         if (idName == nameof(Console.ForegroundColor))
                         {
                             var lineSpan = location.GetLineSpan();
-                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console instead of ConsoleWrapper", true, ConsoleColors.Yellow);
+                            TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses Console.ForegroundColor instead of SetConsoleColor(Color)", true, ConsoleColors.Yellow);
                             if (!string.IsNullOrEmpty(document.FilePath))
                                 LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
                             found = true;

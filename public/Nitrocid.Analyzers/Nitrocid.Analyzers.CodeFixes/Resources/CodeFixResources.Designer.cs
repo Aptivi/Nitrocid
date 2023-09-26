@@ -79,6 +79,15 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use ReadLine() from Input.
+        /// </summary>
+        internal static string ConsoleReadLineUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("ConsoleReadLineUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use SetTitle() from ConsoleExtensions.
         /// </summary>
         internal static string ConsoleTitleUsageCodeFixTitle {
