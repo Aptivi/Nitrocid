@@ -241,8 +241,17 @@ namespace KS.Kernel.Debugging
                 {
                     try
                     {
-                        if (force || (!force && !device.DeviceInfo.MuteLogs))
-                            device.ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
+                        // Remove the \r line endings from the text, since the debug file needs to have its line endings in the
+                        // UNIX format anyways.
+                        text = text.Replace(char.ToString((char)13), "");
+
+                        // Handle the new lines
+                        string[] texts = text.Split("\n");
+                        foreach (string textStr in texts)
+                        {
+                            if (force || (!force && !device.DeviceInfo.MuteLogs))
+                                device.ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {textStr}\r\n", vars);
+                        }
                     }
                     catch (Exception ex)
                     {
