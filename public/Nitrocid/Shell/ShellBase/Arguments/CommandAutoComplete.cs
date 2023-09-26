@@ -108,7 +108,7 @@ namespace KS.Shell.ShellBase.Arguments
 
                 // There are arguments! Now, check to see if it has the accessible auto completer from the last argument
                 var AutoCompleter =
-                    LastArgumentIndex < CommandArgumentInfo.Arguments.Length ?
+                    LastArgumentIndex < CommandArgumentInfo.Arguments.Length && LastArgumentIndex >= 0 ?
                     CommandArgumentInfo.Arguments[LastArgumentIndex].AutoCompleter :
                     null;
                 DebugWriter.WriteDebug(DebugLevel.I, "Command {0} has auto complete info? {1}", CommandName, AutoCompleter is not null);
