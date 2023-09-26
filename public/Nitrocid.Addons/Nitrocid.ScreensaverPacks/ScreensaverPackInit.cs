@@ -63,6 +63,7 @@ namespace Nitrocid.ScreensaverPacks
             { "indeterminate", new IndeterminateDisplay() },
             { "ksx", new KSXDisplay() },
             { "ksx2", new KSX2Display() },
+            { "ksx3", new KSX3Display() },
             { "laserbeams", new LaserBeamsDisplay() },
             { "letterscatter", new LetterScatterDisplay() },
             { "lighter", new LighterDisplay() },
