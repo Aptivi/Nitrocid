@@ -33,7 +33,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         /// <param name="StringArgs">String of arguments</param>
         /// <param name="ListArgsOnly">List of all arguments</param>
         /// <param name="ListSwitchesOnly">List of all switches</param>
-        /// <param name="Address">Device address that executed the command</param>
+        /// <param name="device">Device that executed the command</param>
         /// <exception cref="InvalidOperationException"></exception>
         public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device)
         {
