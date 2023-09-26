@@ -22,6 +22,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Text;
+using System.Threading;
 using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver
@@ -49,8 +50,9 @@ namespace KS.Misc.Screensaver
             KernelColorTools.LoadBack();
             InfoBoxColor.WriteInfoBox(
                 Translate.DoTranslation("Photosensitive seizure warning") + CharManager.NewLine + CharManager.NewLine +
-                Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive. If you're sure to show this screensaver, press any key."),
-                ConsoleColors.White, ConsoleColors.Red);
+                Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive."),
+                false, ConsoleColors.White, ConsoleColors.Red);
+            Thread.Sleep(10000);
         }
 
         /// <summary>
