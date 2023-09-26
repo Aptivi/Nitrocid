@@ -223,14 +223,16 @@ namespace KS.Users.Login
             // Fire event PostLogin
             EventsManager.FireEvent(EventType.PostLogin, UserManagement.CurrentUser.Username);
 
+            // TODO: Login flow ends here, so refactor this so that we don't make SignIn() a giant method.
+
+            // Show license information
+            WelcomeMessage.WriteLicense();
+
             // Show current time
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
             if (KernelFlags.ShowCurrentTimeBeforeLogin)
                 TimeDateMiscRenderers.ShowCurrentTimes();
             TextWriterColor.Write();
-
-            // Show license information
-            WelcomeMessage.WriteLicense();
 
             // Show the tip
             if (KernelFlags.ShowTip)

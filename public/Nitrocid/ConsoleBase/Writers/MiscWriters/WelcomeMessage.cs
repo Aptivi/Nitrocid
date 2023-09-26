@@ -106,7 +106,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                                   CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." +
                                   CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" +
                                   CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, KernelColorType.License);
-            TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/", true, KernelColorType.License);
+            TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/\n", true, KernelColorType.License);
         }
 
         internal static void ShowDevelopmentDisclaimer()
