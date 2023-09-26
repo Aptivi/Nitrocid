@@ -2905,5 +2905,49 @@ namespace KS.Kernel.Configuration.Instances
         /// [LaserBeams] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int LaserBeamsMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TextWander] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool TextWanderTrueColor { get; set; } = true;
+        /// <summary>
+        /// [TextWander] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int TextWanderDelay { get; set; } = 1000;
+        /// <summary>
+        /// [TextWander] Text to write. Shorter is better.
+        /// </summary>
+        public string TextWanderWrite { get; set; } = "Nitrocid KS";
+        /// <summary>
+        /// [TextWander] The minimum red color level (true color)
+        /// </summary>
+        public int TextWanderMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TextWander] The minimum green color level (true color)
+        /// </summary>
+        public int TextWanderMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TextWander] The minimum blue color level (true color)
+        /// </summary>
+        public int TextWanderMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TextWander] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int TextWanderMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [TextWander] The maximum red color level (true color)
+        /// </summary>
+        public int TextWanderMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TextWander] The maximum green color level (true color)
+        /// </summary>
+        public int TextWanderMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TextWander] The maximum blue color level (true color)
+        /// </summary>
+        public int TextWanderMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [TextWander] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int TextWanderMaximumColorLevel { get; set; } = 255;
     }
 }

@@ -95,6 +95,7 @@ namespace Nitrocid.ScreensaverPacks
             { "starfieldwarp", new StarfieldWarpDisplay() },
             { "text", new TextDisplay() },
             { "textbox", new TextBoxDisplay() },
+            { "textwander", new TextWanderDisplay() },
             { "typewriter", new TypewriterDisplay() },
             { "typo", new TypoDisplay() },
             { "wave", new WaveDisplay() },
