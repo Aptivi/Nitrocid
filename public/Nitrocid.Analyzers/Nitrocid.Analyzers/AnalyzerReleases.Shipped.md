@@ -10,4 +10,6 @@ NKS0003 | ConsoleBase | Warning | ConsoleTitleUsageAnalyzer, [Documentation](htt
 NKS0004 | ConsoleBase | Info | ConsoleForeColorUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0004)
 NKS0005 | ConsoleBase | Info | ConsoleBackColorUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0005)
 NKS0006 | ConsoleBase | Info | ConsoleReadLineUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0006)
+NKS0007 | ConsoleBase | Info | ConsoleWriteUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0007)
+NKS0008 | ConsoleBase | Info | ConsoleWriteLineUsageAnalyzer, [Documentation](https://aptivi.gitbook.io/nitrocid-ks-manual/advanced-and-power-users/kernel-modifications/analyzer-diagnostics/consolebase-nks0008)
 

@@ -197,6 +197,32 @@
   </data>
 
   <!--
+      ConsoleWrite usage analyzer
+  -->
+  <data name="ConsoleWriteUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TWC.Write() instead of Console.Write</value>
+  </data>
+  <data name="ConsoleWriteUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.Write instead of TWC.Write()</value>
+  </data>
+  <data name="ConsoleWriteUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextWriterColor.Write() contains workarounds for VT sequences needed for Linux hosts to properly report the correct position post-write. Its overloads also allow you to specify the color and the line writing.</value>
+  </data>
+
+  <!--
+      ConsoleWriteLine usage analyzer
+  -->
+  <data name="ConsoleWriteLineUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use TWC.Write() instead of Console.WriteLine</value>
+  </data>
+  <data name="ConsoleWriteLineUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.WriteLine instead of TWC.Write()</value>
+  </data>
+  <data name="ConsoleWriteLineUsageAnalyzerDescription" xml:space="preserve">
+    <value>TextWriterColor.Write() contains workarounds for VT sequences needed for Linux hosts to properly report the correct position post-write. Its overloads also allow you to specify the color and the line writing.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

@@ -106,6 +106,24 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use TWC.Write().
+        /// </summary>
+        internal static string ConsoleWriteLineUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("ConsoleWriteLineUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TWC.Write().
+        /// </summary>
+        internal static string ConsoleWriteUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("ConsoleWriteUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use TextTools.FormatString().
         /// </summary>
         internal static string StringFormatCodeFixTitle {

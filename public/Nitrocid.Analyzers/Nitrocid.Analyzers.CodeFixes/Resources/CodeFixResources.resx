@@ -161,6 +161,20 @@
   </data>
 
   <!--
+      ConsoleWrite usage code fix
+  -->
+  <data name="ConsoleWriteUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TWC.Write()</value>
+  </data>
+
+  <!--
+      ConsoleWriteLine usage code fix
+  -->
+  <data name="ConsoleWriteLineUsageCodeFixTitle" xml:space="preserve">
+    <value>Use TWC.Write()</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

@@ -196,6 +196,60 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to TextWriterColor.Write() contains workarounds for VT sequences needed for Linux hosts to properly report the correct position post-write. Its overloads also allow you to specify the color and the line writing..
+        /// </summary>
+        internal static string ConsoleWriteLineUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ConsoleWriteLineUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Console.WriteLine instead of TWC.Write().
+        /// </summary>
+        internal static string ConsoleWriteLineUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ConsoleWriteLineUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TWC.Write() instead of Console.WriteLine.
+        /// </summary>
+        internal static string ConsoleWriteLineUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ConsoleWriteLineUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to TextWriterColor.Write() contains workarounds for VT sequences needed for Linux hosts to properly report the correct position post-write. Its overloads also allow you to specify the color and the line writing..
+        /// </summary>
+        internal static string ConsoleWriteUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ConsoleWriteUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Console.Write instead of TWC.Write().
+        /// </summary>
+        internal static string ConsoleWriteUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ConsoleWriteUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use TWC.Write() instead of Console.Write.
+        /// </summary>
+        internal static string ConsoleWriteUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ConsoleWriteUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to TextTools.FormatString() uses the error handler to handle unknown formatting errors and returns the unformatted string if such errors happen, but string.Format() immediately throws..
         /// </summary>
         internal static string StringFormatAnalyzerDescription {
