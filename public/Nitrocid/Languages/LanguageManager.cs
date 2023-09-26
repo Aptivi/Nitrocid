@@ -46,7 +46,6 @@ namespace KS.Languages
         internal static Dictionary<string, LanguageInfo> CustomLanguages = new();
         internal static LanguageInfo currentLanguage = Languages[CurrentLanguage];
         internal static LanguageInfo currentUserLanguage = Languages[CurrentLanguage];
-        private static bool NotifyCodepageError;
 
         /// <summary>
         /// Current language
@@ -116,7 +115,6 @@ namespace KS.Languages
                 }
                 catch (Exception ex)
                 {
-                    NotifyCodepageError = true;
                     DebugWriter.WriteDebug(DebugLevel.W, "Codepage can't be set. {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
