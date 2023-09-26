@@ -61,6 +61,24 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Use SetConsoleColor(Color, true) from KernelColorTools.
+        /// </summary>
+        internal static string ConsoleBackColorUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("ConsoleBackColorUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use SetConsoleColor(Color) from KernelColorTools.
+        /// </summary>
+        internal static string ConsoleForeColorUsageCodeFixTitle {
+            get {
+                return ResourceManager.GetString("ConsoleForeColorUsageCodeFixTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Use SetTitle() from ConsoleExtensions.
         /// </summary>
         internal static string ConsoleTitleUsageCodeFixTitle {

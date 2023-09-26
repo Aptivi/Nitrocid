@@ -158,6 +158,32 @@
   </data>
 
   <!--
+      ConsoleForeColor usage analyzer
+  -->
+  <data name="ConsoleForeColorUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use SetConsoleColor(Color) instead of Console.ForegroundColor</value>
+  </data>
+  <data name="ConsoleForeColorUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.ForegroundColor instead of SetConsoleColor(Color)</value>
+  </data>
+  <data name="ConsoleForeColorUsageAnalyzerDescription" xml:space="preserve">
+    <value>SetConsoleColor(Color) not only brings better color support provided by the appropriate VT sequences, but it can also use true color. Console.ForegroundColor only handles 16 colors.</value>
+  </data>
+
+  <!--
+      ConsoleBackColor usage analyzer
+  -->
+  <data name="ConsoleBackColorUsageAnalyzerTitle" xml:space="preserve">
+    <value>Use SetConsoleColor(Color, true) instead of Console.BackgroundColor</value>
+  </data>
+  <data name="ConsoleBackColorUsageAnalyzerMessageFormat" xml:space="preserve">
+    <value>Caller uses Console.BackgroundColor instead of SetConsoleColor(Color, true)</value>
+  </data>
+  <data name="ConsoleBackColorUsageAnalyzerDescription" xml:space="preserve">
+    <value>SetConsoleColor(Color, true) not only brings better color support provided by the appropriate VT sequences, but it can also use true color. Console.BackgroundColor only handles 16 colors.</value>
+  </data>
+
+  <!--
       Other analyzers TBD
   -->
 </root>

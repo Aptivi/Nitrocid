@@ -61,6 +61,60 @@ namespace Nitrocid.Analyzers.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to SetConsoleColor(Color, true) not only brings better color support provided by the appropriate VT sequences, but it can also use true color. Console.BackgroundColor only handles 16 colors..
+        /// </summary>
+        internal static string ConsoleBackColorUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ConsoleBackColorUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Console.BackgroundColor instead of SetConsoleColor(Color, true).
+        /// </summary>
+        internal static string ConsoleBackColorUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ConsoleBackColorUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use SetConsoleColor(Color, true) instead of Console.BackgroundColor.
+        /// </summary>
+        internal static string ConsoleBackColorUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ConsoleBackColorUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to SetConsoleColor(Color) not only brings better color support provided by the appropriate VT sequences, but it can also use true color. Console.ForegroundColor only handles 16 colors..
+        /// </summary>
+        internal static string ConsoleForeColorUsageAnalyzerDescription {
+            get {
+                return ResourceManager.GetString("ConsoleForeColorUsageAnalyzerDescription", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Caller uses Console.ForegroundColor instead of SetConsoleColor(Color).
+        /// </summary>
+        internal static string ConsoleForeColorUsageAnalyzerMessageFormat {
+            get {
+                return ResourceManager.GetString("ConsoleForeColorUsageAnalyzerMessageFormat", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use SetConsoleColor(Color) instead of Console.ForegroundColor.
+        /// </summary>
+        internal static string ConsoleForeColorUsageAnalyzerTitle {
+            get {
+                return ResourceManager.GetString("ConsoleForeColorUsageAnalyzerTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to SetTitle() uses the VT sequence to set the title, while Console.Title works in certain conditions..
         /// </summary>
         internal static string ConsoleTitleUsageAnalyzerDescription {

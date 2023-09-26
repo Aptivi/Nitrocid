@@ -83,7 +83,7 @@ namespace Nitrocid.Analyzers.ConsoleBase
                         SyntaxFactory.IdentifierName("KS"),
                         SyntaxFactory.IdentifierName("ConsoleBase"));
                     compilation = compilation
-                        .AddUsings(SyntaxFactory.UsingDirective(name).NormalizeWhitespace());
+                        .AddUsings(SyntaxFactory.UsingDirective(name));
                 }
 
                 var finalDoc = document.WithSyntaxRoot(compilation);

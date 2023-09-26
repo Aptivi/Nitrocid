@@ -30,11 +30,11 @@ using Nitrocid.Analyzers.Resources;
 
 namespace Nitrocid.Analyzers.ConsoleBase
 {
-    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ConsoleWrapperUsageCodeFixProvider)), Shared]
-    public class ConsoleWrapperUsageCodeFixProvider : CodeFixProvider
+    [ExportCodeFixProvider(LanguageNames.CSharp, Name = nameof(ConsoleForeColorUsageCodeFixProvider)), Shared]
+    public class ConsoleForeColorUsageCodeFixProvider : CodeFixProvider
     {
         public sealed override ImmutableArray<string> FixableDiagnosticIds =>
-            ImmutableArray.Create(ConsoleWrapperUsageAnalyzer.DiagnosticId);
+            ImmutableArray.Create(ConsoleForeColorUsageAnalyzer.DiagnosticId);
 
         public sealed override FixAllProvider GetFixAllProvider() =>
             WellKnownFixAllProviders.BatchFixer;
@@ -52,9 +52,9 @@ namespace Nitrocid.Analyzers.ConsoleBase
             // Register a code action that will invoke the fix.
             context.RegisterCodeFix(
                 CodeAction.Create(
-                    title: CodeFixResources.ConsoleWrapperUsageCodeFixTitle,
+                    title: CodeFixResources.ConsoleForeColorUsageCodeFixTitle,
                     createChangedSolution: c => UseTextToolsFormatStringAsync(context.Document, declaration, c),
-                    equivalenceKey: nameof(CodeFixResources.ConsoleWrapperUsageCodeFixTitle)),
+                    equivalenceKey: nameof(CodeFixResources.ConsoleForeColorUsageCodeFixTitle)),
                 diagnostic);
         }
 
@@ -62,28 +62,34 @@ namespace Nitrocid.Analyzers.ConsoleBase
         {
             if (typeDecl.Expression is IdentifierNameSyntax identifier)
             {
-                // Get the method
-                var idName = ((IdentifierNameSyntax)typeDecl.Name).Identifier.Text;
-
-                // We need to have a syntax that calls ConsoleWrapper.idName
-                var classSyntax = SyntaxFactory.IdentifierName("ConsoleWrapper");
-                var methodSyntax = SyntaxFactory.IdentifierName(idName);
-                var resultSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
-                var replacedSyntax = resultSyntax
-                    .WithLeadingTrivia(resultSyntax.GetLeadingTrivia())
-                    .WithTrailingTrivia(resultSyntax.GetTrailingTrivia());
+                // Build the replacement syntax
+                var classSyntax = SyntaxFactory.IdentifierName("KernelColorTools");
+                var methodSyntax = SyntaxFactory.IdentifierName("SetConsoleColor");
+                var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
+                var parentSyntax = (AssignmentExpressionSyntax)typeDecl.Parent;
+                var valueSyntax = SyntaxFactory.Argument(parentSyntax.Right.ReplaceNode(((MemberAccessExpressionSyntax)parentSyntax.Right).Expression, SyntaxFactory.IdentifierName("ConsoleColors")));
+                var valuesSyntax = SyntaxFactory.ArgumentList().AddArguments(valueSyntax);
+                var resultSyntax = SyntaxFactory.InvocationExpression(maeSyntax, valuesSyntax);
 
                 // Actually replace
                 var node = await document.GetSyntaxRootAsync(cancellationToken);
-                var finalNode = node.ReplaceNode(typeDecl, replacedSyntax);
+                var finalNode = node.ReplaceNode(parentSyntax, resultSyntax);
 
                 // Check the imports
                 var compilation = finalNode as CompilationUnitSyntax;
-                if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.ConsoleBase") == false)
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "KS.ConsoleBase.Colors") == false)
                 {
                     var name = SyntaxFactory.QualifiedName(
-                        SyntaxFactory.IdentifierName("KS"),
-                        SyntaxFactory.IdentifierName("ConsoleBase"));
+                        SyntaxFactory.IdentifierName("KS.ConsoleBase"),
+                        SyntaxFactory.IdentifierName("Colors"));
+                    compilation = compilation
+                        .AddUsings(SyntaxFactory.UsingDirective(name));
+                }
+                if (compilation?.Usings.Any(u => u.Name.ToString() == "Terminaux.Colors") == false)
+                {
+                    var name = SyntaxFactory.QualifiedName(
+                        SyntaxFactory.IdentifierName("Terminaux"),
+                        SyntaxFactory.IdentifierName("Colors"));
                     compilation = compilation
                         .AddUsings(SyntaxFactory.UsingDirective(name));
                 }

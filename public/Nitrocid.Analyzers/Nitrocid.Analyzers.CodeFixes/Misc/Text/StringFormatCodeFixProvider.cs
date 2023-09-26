@@ -80,7 +80,7 @@ namespace Nitrocid.Analyzers.Misc.Text
                     SyntaxFactory.QualifiedName(SyntaxFactory.IdentifierName("KS"), SyntaxFactory.IdentifierName("Misc")),
                     SyntaxFactory.IdentifierName("Text"));
                 compilation = compilation
-                    .AddUsings(SyntaxFactory.UsingDirective(name).NormalizeWhitespace());
+                    .AddUsings(SyntaxFactory.UsingDirective(name));
             }
             
             var finalDoc = document.WithSyntaxRoot(compilation);
