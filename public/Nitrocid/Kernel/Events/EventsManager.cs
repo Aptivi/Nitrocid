@@ -89,7 +89,7 @@ namespace KS.Kernel.Events
             JournalManager.WriteJournal(Translate.DoTranslation("Kernel event fired:") + $" {Event} [{FiredEvents.Count}]");
 
             // Now, respond to the event
-            if (!eventHandlers.ContainsKey(Event))
+            if (!IsEventHandled(Event))
                 eventHandlers.Add(Event, new());
             foreach (var handler in eventHandlers[Event])
             {
@@ -115,9 +115,9 @@ namespace KS.Kernel.Events
         {
             if (eventAction == null)
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Provide a valid event action"));
-            if (!Enum.IsDefined(typeof(EventType), eventType))
+            if (!IsEventFound(eventType))
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), eventType);
-            if (!eventHandlers.ContainsKey(eventType))
+            if (!IsEventHandled(eventType))
                 eventHandlers.Add(eventType, new());
             eventHandlers[eventType].Add(eventAction);
         }
@@ -131,11 +131,31 @@ namespace KS.Kernel.Events
         {
             if (eventAction == null)
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Provide a valid event action"));
-            if (!Enum.IsDefined(typeof(EventType), eventType))
+            if (!IsEventFound(eventType))
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), eventType);
-            if (!eventHandlers.ContainsKey(eventType))
+            if (!IsEventHandled(eventType))
                 eventHandlers.Add(eventType, new());
             eventHandlers[eventType].Remove(eventAction);
+        }
+
+        /// <summary>
+        /// Checks to see if the event is found
+        /// </summary>
+        /// <param name="eventType">An event type to query</param>
+        /// <returns>True if defined. Otherwise, false.</returns>
+        public static bool IsEventFound(EventType eventType) =>
+            Enum.IsDefined(typeof(EventType), eventType);
+
+        /// <summary>
+        /// Checks to see if the event is handled
+        /// </summary>
+        /// <param name="eventType">An event type to query</param>
+        /// <returns>True if handled. Otherwise, false.</returns>
+        public static bool IsEventHandled(EventType eventType)
+        {
+            if (!IsEventFound(eventType))
+                return false;
+            return eventHandlers.ContainsKey(eventType);
         }
 
     }
