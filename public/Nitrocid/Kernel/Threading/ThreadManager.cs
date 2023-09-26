@@ -124,8 +124,8 @@ namespace KS.Kernel.Threading
                 string[] trace = t.EnumerateStackTrace(true).Select(f =>
                 {
                     if (f.Method != null)
-                        return $"[0x{f.Method.NativeCode:X16}] @ {f.Method.Type.Name}.{f.Method.Name}({f.Method.Signature})";
-                    return "[0x????????????????] @ ???.???(???)";
+                        return $"[0x{f.Method.NativeCode:X16}] @ {f.Method.Signature}";
+                    return "[0x????????????????] @ ???";
                 }
                 ).ToArray();
                 if (trace.Length > 0)
