@@ -67,6 +67,13 @@ namespace KS.Shell.Shells.Admin
                     }, new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
+            { "lsusers",
+                new CommandInfo("lsusers", ShellType, /* Localizable */ "Lists the users",
+                    new[] {
+                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), true)
+                    }, new LsUsersCommand())
+            },
+
             { "userflag",
                 new CommandInfo("userflag", ShellType, /* Localizable */ "Manipulates with the user main flags",
                     new[] {

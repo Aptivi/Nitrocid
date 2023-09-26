@@ -770,13 +770,6 @@ namespace KS.Shell.Shells.UESH
                     }, new LsNetCommand(), CommandFlags.Strict)
             },
             
-            { "lsusers",
-                new CommandInfo("lsusers", ShellType, /* Localizable */ "Lists the users",
-                    new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), true)
-                    }, new LsUsersCommand())
-            },
-            
             { "lsvars",
                 new CommandInfo("lsvars", ShellType, /* Localizable */ "Lists available UESH variables",
                     new[] {
