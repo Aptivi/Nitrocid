@@ -35,7 +35,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         /// <param name="ListSwitchesOnly">List of all switches</param>
         /// <param name="Address">Device address that executed the command</param>
         /// <exception cref="InvalidOperationException"></exception>
-        public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address)
+        public virtual void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device)
         {
             DebugWriter.WriteDebug(DebugLevel.F, "We shouldn't be here!!!");
             throw new KernelException(KernelExceptionType.NotImplementedYet);

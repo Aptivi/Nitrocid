@@ -43,7 +43,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             { "username", new RemoteDebugCommandInfo("username", /* Localizable */ "Shows current username in the session", new RemoteDebugCommandArgumentInfo(), new UsernameCommand()) }
         };
 
-        internal static void ExecuteCommand(string RequestedCommand, RemoteDebugDeviceInfo DeviceAddress)
+        internal static void ExecuteCommand(string RequestedCommand, RemoteDebugDevice Device)
         {
             try
             {
@@ -62,19 +62,19 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                     if (ArgInfo.ArgumentsRequired & RequiredArgumentsProvided | !ArgInfo.ArgumentsRequired)
                     {
                         var CommandBase = RemoteDebugCommands[Command].CommandBase;
-                        CommandBase.Execute(StrArgs, Args, Switches, DeviceAddress);
+                        CommandBase.Execute(StrArgs, Args, Switches, Device);
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.W, Translate.DoTranslation("There was not enough arguments. See below for usage:"), true);
-                        RemoteDebugHelpSystem.ShowHelp(Command);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, Translate.DoTranslation("There were not enough arguments. See below for usage:"), true, Device);
+                        RemoteDebugHelpSystem.ShowHelp(Command, Device);
                     }
                 }
                 else
                 {
                     var CommandBase = RemoteDebugCommands[Command].CommandBase;
-                    CommandBase.Execute(StrArgs, Args, Switches, DeviceAddress);
+                    CommandBase.Execute(StrArgs, Args, Switches, Device);
                 }
             }
             catch (ThreadInterruptedException)
@@ -86,7 +86,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             {
                 EventsManager.FireEvent(EventType.RemoteDebugCommandError, RequestedCommand, ex);
                 DebugWriter.WriteDebugStackTrace(ex);
-                DebugWriter.WriteDebugDevicesOnly(DebugLevel.E, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, ex.GetType().FullName, ex.Message, RequestedCommand);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.E, Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, Device, ex.GetType().FullName, ex.Message, RequestedCommand);
             }
         }
 

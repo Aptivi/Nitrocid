@@ -49,7 +49,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         internal static TcpListener DebugTCP;
         internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
         internal static int debugPort = 3014;
-        private readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.8.1.0");
+        private readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.8.2.0");
         private static readonly AutoResetEvent RDebugBailer = new(false);
 
         /// <summary>
@@ -279,7 +279,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         if (Message.StartsWith("/"))
                         {
                             string finalCommand = Message[1..];
-                            RemoteDebugCommandExecutor.ExecuteCommand(finalCommand, deviceInfo);
+                            RemoteDebugCommandExecutor.ExecuteCommand(finalCommand, device);
                         }
                     }
                 }

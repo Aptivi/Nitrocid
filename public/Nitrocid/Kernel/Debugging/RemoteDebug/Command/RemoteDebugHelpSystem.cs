@@ -32,13 +32,16 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
         /// <summary>
         /// Shows the list of commands under the current shell type
         /// </summary>
-        public static void ShowHelp() => ShowHelp("");
+        /// <param name="device">Device to contact</param>
+        public static void ShowHelp(RemoteDebugDevice device) =>
+            ShowHelp("", device);
 
         /// <summary>
         /// Shows the help of a command, or command list under the current shell type if nothing is specified
         /// </summary>
         /// <param name="command">A specified command</param>
-        public static void ShowHelp(string command)
+        /// <param name="device">Device to contact</param>
+        public static void ShowHelp(string command, RemoteDebugDevice device)
         {
             // Determine command type
             var CommandList = RemoteDebugCommandExecutor.RemoteDebugCommands
@@ -62,12 +65,12 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
 
                 // Print usage information
                 foreach (string HelpUsage in HelpUsages)
-                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Usage:") + $" {FinalCommand} {HelpUsage}", true);
+                    DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Usage:") + $" {FinalCommand} {HelpUsage}", true, device);
 
                 // Write the description now
                 if (string.IsNullOrEmpty(HelpDefinition))
                     HelpDefinition = Translate.DoTranslation("Command defined by ") + command;
-                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Description:") + $" {HelpDefinition}", true);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, device);
 
                 // Extra help action for some commands
                 FinalCommandList[FinalCommand].CommandBase?.HelpHelper();
@@ -78,24 +81,24 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                 if (!KernelFlags.SimHelp)
                 {
                     // The built-in commands
-                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (KernelFlags.ShowCommandsCount & KernelFlags.ShowShellCommandsCount ? " [{0}]" : ""), true, CommandList.Count);
+                    DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("General commands:") + (KernelFlags.ShowCommandsCount & KernelFlags.ShowShellCommandsCount ? " [{0}]" : ""), true, device, CommandList.Count);
 
                     // Check the command list count and print not implemented. This is an extremely rare situation.
                     if (CommandList.Count == 0)
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, "- " + Translate.DoTranslation("Shell commands not implemented!!!"), true);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- " + Translate.DoTranslation("Shell commands not implemented!!!"), true, device);
                     foreach (string cmd in CommandList.Keys)
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, "- {0}: {1}", true, cmd, CommandList[cmd].GetTranslatedHelpEntry());
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "- {0}: {1}", true, device, cmd, CommandList[cmd].GetTranslatedHelpEntry());
                 }
                 else
                 {
                     // The built-in commands
                     foreach (string cmd in CommandList.Keys)
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, "{0}, ", true, cmd);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, "{0}, ", true, device, cmd);
                 }
             }
             else
             {
-                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("No help for command \"{0}\"."), true, command);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("No help for command \"{0}\"."), true, device, command);
             }
         }
 

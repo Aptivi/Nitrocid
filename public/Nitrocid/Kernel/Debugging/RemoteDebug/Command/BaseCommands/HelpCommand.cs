@@ -20,7 +20,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class HelpCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address) =>
-            RemoteDebugHelpSystem.ShowHelp(StringArgs);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device) =>
+            RemoteDebugHelpSystem.ShowHelp(StringArgs, device);
     }
 }

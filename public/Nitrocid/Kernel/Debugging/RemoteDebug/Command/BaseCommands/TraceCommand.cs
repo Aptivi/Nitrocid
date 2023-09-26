@@ -23,7 +23,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class TraceCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address)
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device)
         {
             if (DebugWriter.DebugStackTraces.Count != 0)
             {
@@ -31,21 +31,21 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
                 {
                     try
                     {
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, DebugWriter.DebugStackTraces[Convert.ToInt32(ListArgsOnly[0])], true);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, DebugWriter.DebugStackTraces[Convert.ToInt32(ListArgsOnly[0])], true, device);
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, ListArgsOnly[0], DebugWriter.DebugStackTraces.Count, ex.Message);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, device, ListArgsOnly[0], DebugWriter.DebugStackTraces.Count, ex.Message);
                     }
                 }
                 else
                 {
-                    DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, DebugWriter.DebugStackTraces[0], true);
+                    DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, DebugWriter.DebugStackTraces[0], true, device);
                 }
             }
             else
             {
-                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, Translate.DoTranslation("No stack trace"), true);
+                DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("No stack trace"), true, device);
             }
         }
     }

@@ -294,6 +294,17 @@ namespace KS.Kernel.Debugging.RemoteDebug
         /// <param name="deviceIndex">Device index</param>
         internal static void DisconnectDependingOnException(Exception exception, int deviceIndex)
         {
+            var device = RemoteDebugger.DebugDevices[deviceIndex];
+            DisconnectDependingOnException(exception, device);
+        }
+
+        /// <summary>
+        /// Disconnects debug device depending on exception
+        /// </summary>
+        /// <param name="exception">Exception</param>
+        /// <param name="device">Device to contact</param>
+        internal static void DisconnectDependingOnException(Exception exception, RemoteDebugDevice device)
+        {
             SocketException SE = (SocketException)exception.InnerException;
             if (SE is not null)
             {
@@ -302,14 +313,14 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     (SE.SocketErrorCode == SocketError.ConnectionAborted) ||
                     (SE.SocketErrorCode == SocketError.Shutdown))
                     // A device was disconnected
-                    DisconnectDevice(RemoteDebugger.DebugDevices[deviceIndex].ClientIP);
+                    DisconnectDevice(device.ClientIP);
                 else
                     // Other error with the device occurred
                     DebugWriter.WriteDebugStackTrace(exception);
             }
             else
             {
-                DisconnectDevice(RemoteDebugger.DebugDevices[deviceIndex].ClientIP);
+                DisconnectDevice(device.ClientIP);
                 DebugWriter.WriteDebugStackTrace(exception);
             }
         }

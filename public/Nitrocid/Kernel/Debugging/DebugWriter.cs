@@ -216,21 +216,42 @@ namespace KS.Kernel.Debugging
                 {
                     for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                     {
-                        try
-                        {
-                            var device = RemoteDebugger.DebugDevices[i];
-                            if (force || (!force && !device.DeviceInfo.MuteLogs))
-                                RemoteDebugger.DebugDevices[i].ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
-                        }
-                        catch (Exception ex)
-                        {
-                            RemoteDebugTools.DisconnectDependingOnException(ex, i);
-                            if (i > 0)
-                                i--;
-                        }
+                        var device = RemoteDebugger.DebugDevices[i];
+                        if (!WriteDebugDeviceOnly(Level, text, force, device, vars) && i > 0)
+                            i--;
                     }
                 }
             }
+        }
+
+        /// <summary>
+        /// Outputs the text into a debugger device, and sets the time stamp. Note that it doesn't print where did the debugger debug in source files.
+        /// </summary>
+        /// <param name="Level">Debug level</param>
+        /// <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
+        /// <param name="force">Force message to appear, regardless of mute settings</param>
+        /// <param name="device">Device to contact</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        /// <returns>True if successfully sent. False otherwise. Also true if the kernel runs on non-debug mode.</returns>
+        public static bool WriteDebugDeviceOnly(DebugLevel Level, string text, bool force, RemoteDebugDevice device, params object[] vars)
+        {
+            lock (WriteLock)
+            {
+                if (KernelFlags.DebugMode)
+                {
+                    try
+                    {
+                        if (force || (!force && !device.DeviceInfo.MuteLogs))
+                            device.ClientStreamWriter.Write($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {text}\r\n", vars);
+                    }
+                    catch (Exception ex)
+                    {
+                        RemoteDebugTools.DisconnectDependingOnException(ex, device);
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
 
         /// <summary>

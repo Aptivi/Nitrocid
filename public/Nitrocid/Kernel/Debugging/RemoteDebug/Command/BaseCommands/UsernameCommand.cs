@@ -22,7 +22,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class UsernameCommand : RemoteDebugBaseCommand
     {
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDeviceInfo Address) =>
-            DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, UserManagement.CurrentUser.Username, true);
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device) =>
+            DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, UserManagement.CurrentUser.Username, true, device);
     }
 }
