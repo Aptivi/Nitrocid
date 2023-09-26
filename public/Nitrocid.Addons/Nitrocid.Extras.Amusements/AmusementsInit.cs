@@ -47,8 +47,16 @@ namespace Nitrocid.Extras.Amusements
                 new CommandInfo("hangman", ShellType.Shell, /* Localizable */ "Starts the Hangman game",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
-                            new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", false, false, new string[] { "practice" }, 0, false),
-                            new SwitchInfo("practice", /* Localizable */ "Test your Hangman skills by throwing a random letter.", false, false, new string[] { "hardcore" }, 0, false),
+                            new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "practice" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("practice", /* Localizable */ "Test your Hangman skills by throwing a random letter.", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "hardcore" },
+                                AcceptsValues = false
+                            }),
                         })
                     }, new HangmanCommand())
             },
@@ -99,11 +107,32 @@ namespace Nitrocid.Extras.Amusements
                 new CommandInfo("speedpress", ShellType.Shell, /* Localizable */ "See if you can press a key on time",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
-                            new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", false, false, new string[] { "m", "h", "v", "c" }, 0, false),
-                            new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", false, false, new string[] { "e", "h", "v", "c" }, 0, false),
-                            new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", false, false, new string[] { "m", "e", "v", "c" }, 0, false),
-                            new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", false, false, new string[] { "m", "h", "e", "c" }, 0, false),
-                            new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", false, true, new string[] { "m", "h", "v", "e" }) })
+                            new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "m", "h", "v", "c" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("m", /* Localizable */ "Starts the game in medium difficulty", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "v", "h", "e", "c" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("h", /* Localizable */ "Starts the game in hard difficulty", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "m", "v", "e", "c" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("v", /* Localizable */ "Starts the game in very hard difficulty", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "m", "h", "e", "c" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("c", /* Localizable */ "Starts the game in custom difficulty. Please note that the custom timeout in milliseconds should be written as argument.", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "m", "h", "v", "e" },
+                                ArgumentsRequired = true
+                            })
+                        })
                     }, new SpeedPressCommand())
             },
 
@@ -111,7 +140,10 @@ namespace Nitrocid.Extras.Amusements
                 new CommandInfo("wordle", ShellType.Shell, /* Localizable */ "The Wordle game simulator",
                     new[] {
                         new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
-                            new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         })
                     }, new WordleCommand())
             },

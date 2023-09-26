@@ -54,7 +54,11 @@ namespace Nitrocid.Extras.UnitConv
                             new CommandArgumentPart(true, "targetunit"),
                         }, new[]
                         {
-                            new SwitchInfo("tui", /* Localizable */ "Use the TUI version of the unit converter", false, false, Array.Empty<string>(), 4, false)
+                            new SwitchInfo("tui", /* Localizable */ "Use the TUI version of the unit converter", new SwitchOptions()
+                            {
+                                OptionalizeLastRequiredArguments = 4,
+                                AcceptsValues = false
+                            })
                         })
                     }, new UnitConvCommand())
             },

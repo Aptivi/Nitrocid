@@ -45,7 +45,10 @@ namespace Nitrocid.Extras.NameGen
                             new CommandArgumentPart(false, "surnameprefix"),
                             new CommandArgumentPart(false, "surnamesuffix"),
                         }, new[] {
-                            new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         }, true)
                     }, new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },

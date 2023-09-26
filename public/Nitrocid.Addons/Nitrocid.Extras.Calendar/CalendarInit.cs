@@ -42,10 +42,25 @@ namespace Nitrocid.Extras.Calendar
                         {
                             new CommandArgumentPart(true, "culture")
                         }, new[] {
-                            new SwitchInfo("date", /* Localizable */ "Shows just the date", false, false, new string[] { "time", "full" }, 0, false),
-                            new SwitchInfo("time", /* Localizable */ "Shows just the time", false, false, new string[] { "date", "full" }, 0, false),
-                            new SwitchInfo("full", /* Localizable */ "Shows date and time", false, false, new string[] { "date", "time" }, 0, false),
-                            new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "full", "time" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("time", /* Localizable */ "Shows just the time", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "date", "full" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("full", /* Localizable */ "Shows date and time", new SwitchOptions()
+                            {
+                                ConflictsWith = new string[] { "date", "time" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("utc", /* Localizable */ "Uses UTC instead of local", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
                         }, true)
                     }, new AltDateCommand(), CommandFlags.RedirectionSupported)
             },
