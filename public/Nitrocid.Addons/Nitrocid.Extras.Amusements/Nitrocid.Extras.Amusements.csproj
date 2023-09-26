@@ -48,7 +48,7 @@
   <!-- Extras.Amusements addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="1.6.4" />
+    <PackageReference Include="Terminaux" Version="1.6.5" />
     <PackageReference Include="Wordament" Version="0.3.1" />
   </ItemGroup>
   

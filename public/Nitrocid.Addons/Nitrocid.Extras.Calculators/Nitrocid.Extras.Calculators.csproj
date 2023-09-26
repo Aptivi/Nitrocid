@@ -48,7 +48,7 @@
   <!-- Extras.Calculators addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="1.6.4" />
+    <PackageReference Include="Terminaux" Version="1.6.5" />
     <PackageReference Include="StringMath" Version="4.1.0" />
   </ItemGroup>
 
