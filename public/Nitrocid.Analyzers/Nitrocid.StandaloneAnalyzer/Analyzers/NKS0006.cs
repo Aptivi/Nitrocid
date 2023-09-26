@@ -70,11 +70,12 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
             {
                 if (syntaxNode is not MemberAccessExpressionSyntax exp)
                     continue;
-                if (exp.Expression is IdentifierNameSyntax identifier)
+                if (exp.Expression is IdentifierNameSyntax identifier && exp.Name is IdentifierNameSyntax idName)
                 {
                     // Get the method
-                    var idName = ((IdentifierNameSyntax)exp.Name).Identifier.Text;
                     if (identifier.Identifier.Text != nameof(Console))
+                        continue;
+                    if (idName.Identifier.Text != nameof(Console.ReadLine))
                         continue;
 
                     // We need to have a syntax that calls Input.ReadLine

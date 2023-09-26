@@ -70,12 +70,14 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
             {
                 if (syntaxNode is not MemberAccessExpressionSyntax exp)
                     continue;
-                if (exp.Expression is IdentifierNameSyntax identifier)
+                if (exp.Expression is IdentifierNameSyntax identifier && exp.Name is IdentifierNameSyntax idName)
                 {
                     // Build the replacement syntax
                     var classSyntax = SyntaxFactory.IdentifierName("ConsoleExtensions");
                     var methodSyntax = SyntaxFactory.IdentifierName("SetTitle");
                     if (identifier.Identifier.Text != nameof(Console))
+                        continue;
+                    if (idName.Identifier.Text != nameof(Console.Title))
                         continue;
                     var maeSyntax = SyntaxFactory.MemberAccessExpression(SyntaxKind.SimpleMemberAccessExpression, classSyntax, methodSyntax);
                     var parentSyntax = (AssignmentExpressionSyntax)exp.Parent;
