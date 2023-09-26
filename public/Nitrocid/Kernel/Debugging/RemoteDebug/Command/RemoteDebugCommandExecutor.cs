@@ -55,6 +55,13 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                 string StrArgs = ArgumentInfo.ArgumentsText;
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
 
+                // Check to see if the command exists
+                if (!RemoteDebugCommands.ContainsKey(Command))
+                {
+                    DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, Translate.DoTranslation("Command not found."), true, Device);
+                    return;
+                }
+
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
                 if (RemoteDebugCommands[Command].CommandArgumentInfo is not null)
                 {
