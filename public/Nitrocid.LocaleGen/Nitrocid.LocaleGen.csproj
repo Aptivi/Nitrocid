@@ -163,7 +163,7 @@
   <!-- LocaleGen Translations End -->
 
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="1.6.5" />
+    <PackageReference Include="Terminaux" Version="1.6.6" />
   </ItemGroup>
   
 </Project>
