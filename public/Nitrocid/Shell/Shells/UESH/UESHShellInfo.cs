@@ -215,7 +215,11 @@ namespace KS.Shell.Shells.UESH
                             {
                                 OptionalizeLastRequiredArguments = 1,
                                 AcceptsValues = false
-                            })
+                            }),
+                            new SwitchInfo("user", /* Localizable */ "Changes the user language instead of the system language", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
                         })
                     }, new ChLangCommand(), CommandFlags.Strict)
             },

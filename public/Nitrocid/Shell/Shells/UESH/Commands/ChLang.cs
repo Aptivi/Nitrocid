@@ -22,6 +22,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
+using KS.Users;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -39,6 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
         {
             bool inferSysLang = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-usesyslang");
+            bool useUser = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-user");
             string language = inferSysLang ? "eng" : ListArgsOnly[0];
             if (!LanguageManager.ListAllLanguages().ContainsKey(language))
             {
@@ -49,7 +51,14 @@ namespace KS.Shell.Shells.UESH.Commands
             // Change the language
             if (inferSysLang)
                 language = LanguageManager.InferLanguageFromSystem();
-            LanguageManager.SetLang(language);
+            if (useUser)
+            {
+                UserManagement.CurrentUser.PreferredLanguage = language;
+                UserManagement.SaveUsers();
+            }
+            else
+                LanguageManager.SetLang(language);
+            TextWriterColor.Write(Translate.DoTranslation("You may need to log out and log back in for changes to take effect."));
             return 0;
         }
 
