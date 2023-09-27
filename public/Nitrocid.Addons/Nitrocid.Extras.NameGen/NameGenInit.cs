@@ -24,7 +24,6 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.NameGen.Commands;
 using Nitrocid.Extras.NameGen.Screensavers;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -24,7 +24,6 @@ using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Languages;
-using KS.Misc.Splash;
 using KS.Misc.Text;
 using KS.Misc.Text.Probers.Placeholder;
 using System;

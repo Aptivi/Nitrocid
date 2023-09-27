@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
-using KS.Shell.Prompts.Presets.Json;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -25,6 +24,7 @@ using KS.Shell.Shells.Json.Commands;
 using System;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
+using KS.Shell.Shells.Json.Presets;
 
 namespace KS.Shell.Shells.Json
 {
