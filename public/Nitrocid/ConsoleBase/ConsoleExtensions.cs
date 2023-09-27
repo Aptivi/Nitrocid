@@ -96,8 +96,13 @@ namespace KS.ConsoleBase
         /// <param name="Vars">Variables to be formatted in the text</param>
         public static (int, int) GetFilteredPositions(string Text, bool line, params object[] Vars)
         {
+            int LeftSeekPosition = ConsoleWrapper.CursorLeft;
+            int TopSeekPosition = ConsoleWrapper.CursorTop;
+
+            // If the string is null before or after processing the text, don't seek.
+            bool noSeek = false;
             if (string.IsNullOrEmpty(Text))
-                return (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
+                noSeek = true;
 
             // Filter all text from the VT escape sequences
             Text = FilterVTSequences(Text);
@@ -107,37 +112,40 @@ namespace KS.ConsoleBase
             Text = Text.Replace(Convert.ToString(Convert.ToChar(13)), "");
             Text = Text.Replace(Convert.ToString(Convert.ToChar(0)), "");
             if (string.IsNullOrEmpty(Text))
-                return (ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);
-            var texts = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
-            int LeftSeekPosition = ConsoleWrapper.CursorLeft;
-            int TopSeekPosition = ConsoleWrapper.CursorTop;
-            for (int i = 1; i <= Text.Length; i++)
-            {
-                // If we spotted a new line character, get down by one line.
-                if (Text[i - 1] == Convert.ToChar(10))
-                {
-                    if (TopSeekPosition < ConsoleWrapper.BufferHeight - 1)
-                        TopSeekPosition += 1;
-                    LeftSeekPosition = 0;
-                }
-                else
-                {
-                    // Simulate seeking through text
-                    LeftSeekPosition += 1;
-                    if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
-                    {
-                        // We've reached end of line
-                        LeftSeekPosition = 0;
+                noSeek = true;
 
-                        // Get down by one line
-                        if (i < Text.Length || !line)
+            // Really seek if we need to
+            if (!noSeek)
+            {
+                var texts = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
+                for (int i = 1; i <= Text.Length; i++)
+                {
+                    // If we spotted a new line character, get down by one line.
+                    if (Text[i - 1] == Convert.ToChar(10))
+                    {
+                        if (TopSeekPosition < ConsoleWrapper.BufferHeight - 1)
                             TopSeekPosition += 1;
-                        if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
+                        LeftSeekPosition = 0;
+                    }
+                    else
+                    {
+                        // Simulate seeking through text
+                        LeftSeekPosition += 1;
+                        if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
                         {
-                            // We're at the end of buffer! Decrement by one and bail.
-                            TopSeekPosition -= 1;
-                            LeftSeekPosition = texts[^1].Length;
-                            break;
+                            // We've reached end of line
+                            LeftSeekPosition = 0;
+
+                            // Get down by one line
+                            if (i < Text.Length || !line)
+                                TopSeekPosition += 1;
+                            if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
+                            {
+                                // We're at the end of buffer! Decrement by one and bail.
+                                TopSeekPosition -= 1;
+                                LeftSeekPosition = texts[^1].Length;
+                                break;
+                            }
                         }
                     }
                 }
