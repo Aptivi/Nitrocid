@@ -49,7 +49,7 @@ namespace KS.Shell.Prompts.Presets.UESH
             {
                 // Opening
                 PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.Append('[');
+                PresetStringBuilder.AppendFormat("[{0}] [", ShellStart.ShellStack.Count);
 
                 // Current username
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
@@ -65,7 +65,7 @@ namespace KS.Shell.Prompts.Presets.UESH
 
                 // Current directory and shell stack
                 PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("]{0}: [{1}]", CurrentDirectory.CurrentDir, ShellStart.ShellStack.Count);
+                PresetStringBuilder.AppendFormat("]{0}:", CurrentDirectory.CurrentDir);
 
                 // User dollar sign
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserDollar).VTSequenceForeground);
