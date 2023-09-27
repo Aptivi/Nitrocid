@@ -265,6 +265,10 @@ namespace KS.Kernel.Starting
             RemoteDebugger.StopRDebugThread();
             DebugWriter.WriteDebug(DebugLevel.I, "Remote debugger stopped");
 
+            // Reset languages
+            LanguageManager.SetLangDry(LanguageManager.CurrentLanguage);
+            LanguageManager.currentUserLanguage = LanguageManager.Languages[LanguageManager.CurrentLanguage];
+
             // Stop all mods
             ModManager.StopMods();
             DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
