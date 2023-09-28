@@ -59,7 +59,8 @@ namespace KS.Users
         public static UserInfo CurrentUser =>
             CurrentUserInfo;
 
-        internal static UserInfo CurrentUserInfo = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), UserFlags.Administrator, new());
+        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), UserFlags.Administrator, new());
+        internal static UserInfo CurrentUserInfo = fallbackRootAccount;
         internal static List<UserInfo> Users = new() { CurrentUserInfo };
         private static readonly List<UserInfo> LockedUsers = new();
 

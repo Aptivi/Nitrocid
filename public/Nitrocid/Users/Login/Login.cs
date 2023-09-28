@@ -24,18 +24,14 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
-using KS.Network.RSS;
-using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Events;
 using KS.Kernel.Configuration;
-using KS.Kernel.Time.Renderers;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
-using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Users.Login.Handlers;
 using System;
 using KS.Misc.Text.Probers.Motd;
 using KS.Misc.Text.Probers.Placeholder;
+using KS.ConsoleBase;
 
 namespace KS.Users.Login
 {
@@ -61,56 +57,64 @@ namespace KS.Users.Login
         /// </summary>
         public static void LoginPrompt()
         {
-            while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
+            // Fire event PreLogin
+            EventsManager.FireEvent(EventType.PreLogin);
+
+            // Check to see if there are any users
+            if (UserManagement.Users.Count == 0)
             {
-                // Fire event PreLogin
-                EventsManager.FireEvent(EventType.PreLogin);
+                // Extremely rare state reached
+                DebugWriter.WriteDebug(DebugLevel.F, "Shell reached rare state, because userword count is 0.");
+                throw new KernelException(KernelExceptionType.NullUsers, Translate.DoTranslation("There are no more users remaining in the list."));
+            }
 
-                // Check to see if there are any users
-                if (UserManagement.Users.Count == 0)
+            // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
+            if (KernelFlags.ClearOnLogin == true)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
+                ConsoleWrapper.Clear();
+            }
+
+            // Show MOTD once
+            DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", KernelFlags.ShowMOTDOnceFlag, KernelFlags.ShowMOTD);
+            if (KernelFlags.ShowMOTDOnceFlag == true & KernelFlags.ShowMOTD == true)
+            {
+                TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
+                KernelFlags.ShowMOTDOnceFlag = false;
+            }
+
+            // How do we prompt user to login?
+            string handlerName = "classic";
+            if (KernelFlags.ModernLogon)
+            {
+                // Invoke the modern logon handler
+                handlerName = "modern";
+            }
+
+            // Get the handler!
+            var handler = LoginHandlerTools.GetHandler(handlerName);
+
+            try
+            {
+                // Sanity check...
+                if (handler is null)
+                    throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("The login handler is not found!") + $" {handlerName}");
+
+                // Login loop until either power action (in case login handler tries to shut the kernel down) or sign in action
+                string user = "";
+                while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
                 {
-                    // Extremely rare state reached
-                    DebugWriter.WriteDebug(DebugLevel.F, "Shell reached rare state, because userword count is 0.");
-                    throw new KernelException(KernelExceptionType.NullUsers, Translate.DoTranslation("There are no more users remaining in the list."));
-                }
-
-                // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
-                if (KernelFlags.ClearOnLogin == true)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
-                    ConsoleBase.ConsoleWrapper.Clear();
-                }
-
-                // Show MOTD once
-                DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", KernelFlags.ShowMOTDOnceFlag, KernelFlags.ShowMOTD);
-                if (KernelFlags.ShowMOTDOnceFlag == true & KernelFlags.ShowMOTD == true)
-                {
-                    TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
-                    KernelFlags.ShowMOTDOnceFlag = false;
-                }
-
-                // How do we prompt user to login?
-                string handlerName = "classic";
-                if (KernelFlags.ModernLogon)
-                {
-                    // Invoke the modern logon handler
-                    handlerName = "modern";
-                }
-
-                // Get the handler!
-                var handler = LoginHandlerTools.GetHandler(handlerName);
-
-                try
-                {
-                    // Sanity check...
-                    if (handler is null)
-                        throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("The login handler is not found!") + $" {handlerName}");
+                    // First, set root account
+                    UserManagement.CurrentUserInfo =
+                        UserManagement.UserExists("root") ?
+                        UserManagement.GetUser("root") :
+                        UserManagement.fallbackRootAccount;
 
                     // Now, show the Login screen
                     handler.LoginScreen();
 
                     // Prompt for username
-                    string user = handler.UserSelector();
+                    user = handler.UserSelector();
 
                     // OK. Here's where things get tricky. Some handlers may misleadingly give us a completely invalid username, so verify it
                     // the second time for these handlers to behave.
@@ -124,18 +128,22 @@ namespace KS.Users.Login
                     string pass = "";
                     bool valid = handler.PasswordHandler(user, ref pass);
                     valid = UserManagement.ValidatePassword(user, pass);
-                    if (valid)
-                        SignIn(user);
-                    else
+                    if (!valid)
                         TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                    else
+                        break;
                 }
-                catch (Exception ex)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.E, "Handler is killed! {0}", ex.Message);
-                    DebugWriter.WriteDebugStackTrace(ex);
-                    DebugWriter.WriteDebug(DebugLevel.E, "Kernel panicking...");
-                    KernelPanic.KernelError(KernelErrorLevel.F, true, 10, Translate.DoTranslation("Login handler has crashed!") + $" {ex.Message}", ex);
-                }
+
+                // Check for the state before the final login flow
+                if (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
+                    SignIn(user);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Handler is killed! {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Kernel panicking...");
+                KernelPanic.KernelError(KernelErrorLevel.F, true, 10, Translate.DoTranslation("Login handler has crashed!") + $" {ex.Message}", ex);
             }
         }
 
@@ -222,36 +230,6 @@ namespace KS.Users.Login
 
             // Fire event PostLogin
             EventsManager.FireEvent(EventType.PostLogin, UserManagement.CurrentUser.Username);
-
-            // TODO: Login flow ends here, so refactor this so that we don't make SignIn() a giant method.
-
-            // Show license information
-            WelcomeMessage.WriteLicense();
-
-            // Show current time
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
-            if (KernelFlags.ShowCurrentTimeBeforeLogin)
-                TimeDateMiscRenderers.ShowCurrentTimes();
-            TextWriterColor.Write();
-
-            // Show the tip
-            if (KernelFlags.ShowTip)
-                WelcomeMessage.ShowTip();
-
-            // Show MOTD
-            KernelFlags.ShowMOTDOnceFlag = true;
-            if (KernelFlags.ShowMAL)
-                TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
-
-            // Show headline
-            RSSTools.ShowHeadlineLogin();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
-
-            // Initialize shell
-            DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized. Login username {0}...", signedInUser);
-            ShellStart.StartShellForced(ShellType.Shell);
-            ShellStart.PurgeShells();
             DebugWriter.WriteDebug(DebugLevel.I, "Out of login flow.");
         }
 

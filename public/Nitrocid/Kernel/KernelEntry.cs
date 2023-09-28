@@ -30,6 +30,14 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Starting;
 using KS.Kernel.Configuration;
 using KS.Arguments;
+using KS.ConsoleBase.Writers.MiscWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Kernel.Time.Renderers;
+using KS.Kernel.Debugging;
+using KS.Misc.Text.Probers.Placeholder;
+using KS.Network.RSS;
+using KS.Shell.ShellBase.Shells;
+using KS.Misc.Text.Probers.Motd;
 
 namespace KS.Kernel
 {
@@ -88,11 +96,55 @@ namespace KS.Kernel
                 KernelFirstRun.PresentFirstRun();
             }
 
-            // Initialize login prompt
-            if (!KernelFlags.Maintenance)
-                Login.LoginPrompt();
-            else
-                Login.PromptMaintenanceLogin();
+            // Start the main loop
+            DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");
+            MainLoop();
+            ShellStart.PurgeShells();
+            DebugWriter.WriteDebug(DebugLevel.I, "Main Loop end.");
+        }
+
+        private static void MainLoop()
+        {
+            while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
+            {
+                // Initialize login prompt
+                if (!KernelFlags.Maintenance)
+                    Login.LoginPrompt();
+                else
+                    Login.PromptMaintenanceLogin();
+                KernelTools.CheckErrored();
+
+                // Check to see if login handler requested power action
+                if (KernelFlags.RebootRequested | KernelFlags.KernelShutdown)
+                    return;
+
+                // Show license information
+                WelcomeMessage.WriteLicense();
+
+                // Show current time
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
+                if (KernelFlags.ShowCurrentTimeBeforeLogin)
+                    TimeDateMiscRenderers.ShowCurrentTimes();
+                TextWriterColor.Write();
+
+                // Show the tip
+                if (KernelFlags.ShowTip)
+                    WelcomeMessage.ShowTip();
+
+                // Show MOTD
+                KernelFlags.ShowMOTDOnceFlag = true;
+                if (KernelFlags.ShowMAL)
+                    TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
+
+                // Show headline
+                RSSTools.ShowHeadlineLogin();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded headline.");
+
+                // Initialize shell
+                DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
+                ShellStart.StartShellForced(ShellType.Shell);
+            }
         }
     }
 }
