@@ -27,6 +27,7 @@ using Terminaux.Colors;
 using Terminaux.Sequences.Tools;
 using KS.ConsoleBase.Colors;
 using Figletize;
+using System;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -35,6 +36,8 @@ namespace KS.Misc.Splash.Splashes
 
         // Standalone splash information
         public override string SplashName => "Welcome";
+
+        public override bool SplashDisplaysProgress => true;
 
         // Actual logic
         public override void Opening()
@@ -146,6 +149,24 @@ namespace KS.Misc.Splash.Splashes
             // Clear the console
             ConsoleWrapper.Clear();
         }
+
+        public override void Report(int Progress, string ProgressReport, params object[] Vars)
+        {
+            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
+            string text = Translate.DoTranslation("Welcome!").ToUpper();
+            var figFont = FigletTools.GetFigletFont("banner3");
+            int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
+            int consoleX = (ConsoleWrapper.WindowWidth / 2) - (ProgressReport.Length / 2);
+            int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+            TextWriterWhereColor.WriteWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, col, Vars);
+            TextWriterWhereColor.WriteWhere(ProgressReport, consoleX, consoleY - 2, true, col, Vars);
+        }
+
+        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+            Report(Progress, WarningReport, Vars);
+
+        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+            Report(Progress, ErrorReport, Vars);
 
     }
 }
