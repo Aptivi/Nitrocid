@@ -73,7 +73,7 @@ namespace KS.Modifications
                 // Check to see if we have mods
                 if (count != 0)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("mod: Loading mods..."), 0);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Loading mods..."), 0);
                     DebugWriter.WriteDebug(DebugLevel.I, "Mods are being loaded. Total mods = {0}", count);
                     foreach (string modFilePath in Directory.EnumerateFiles(ModPath))
                     {
@@ -83,7 +83,7 @@ namespace KS.Modifications
                 }
                 else
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("mod: No mods detected."), 0);
+                    SplashReport.ReportProgress(Translate.DoTranslation("No mods detected."), 0);
                 }
             }
             else
@@ -159,7 +159,7 @@ namespace KS.Modifications
                 // Check to see if we have mods
                 if (count != 0)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mods..."));
+                    TextWriterColor.Write(Translate.DoTranslation("Stopping mods..."));
                     DebugWriter.WriteDebug(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count);
 
                     // Enumerate and delete the script as soon as the stopping is complete
@@ -208,7 +208,7 @@ namespace KS.Modifications
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Mods not found!");
-                    TextWriterColor.Write(Translate.DoTranslation("mod: No mods detected."));
+                    TextWriterColor.Write(Translate.DoTranslation("No mods detected."));
                 }
             }
             else
@@ -249,7 +249,7 @@ namespace KS.Modifications
             }
 
             // Iterate through all the mods
-            TextWriterColor.Write(Translate.DoTranslation("mod: Stopping mod {0}..."), ModFilename);
+            TextWriterColor.Write(Translate.DoTranslation("Stopping mod {0}..."), ModFilename);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
             for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
             {
