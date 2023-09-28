@@ -53,7 +53,7 @@ namespace KS.Network.FTP.Transfer
             {
                 FTPTransfer.ConsoleOriginalPosition_LEFT = ConsoleWrapper.CursorLeft;
                 FTPTransfer.ConsoleOriginalPosition_TOP = ConsoleWrapper.CursorTop;
-                if (FTPTransfer.progressFlag == true & Percentage.Progress != 100d)
+                if (FTPTransfer.progressFlag & Percentage.Progress != 100d)
                 {
                     TextWriterColor.Write(" {0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, KernelColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());
                     ConsoleExtensions.ClearLineToRight();
@@ -76,7 +76,7 @@ namespace KS.Network.FTP.Transfer
             {
                 FTPTransfer.ConsoleOriginalPosition_LEFT = ConsoleWrapper.CursorLeft;
                 FTPTransfer.ConsoleOriginalPosition_TOP = ConsoleWrapper.CursorTop;
-                if (FTPTransfer.progressFlag == true & Percentage.Progress != 100d)
+                if (FTPTransfer.progressFlag & Percentage.Progress != 100d)
                 {
                     TextWriterColor.Write("- [{0}/{1}] {2}: ", false, KernelColorType.ListEntry, Percentage.FileIndex + 1, Percentage.FileCount, Percentage.RemotePath);
                     TextWriterColor.Write("{0}% (ETA: {1}d {2}:{3}:{4} @ {5})", false, KernelColorType.Progress, Percentage.Progress.ToString("N2"), Percentage.ETA.Days, Percentage.ETA.Hours, Percentage.ETA.Minutes, Percentage.ETA.Seconds, Percentage.TransferSpeedToString());

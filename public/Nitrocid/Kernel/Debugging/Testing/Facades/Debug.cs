@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             TextWriterColor.Write(Translate.DoTranslation("Previous value") + ": {0}", KernelFlags.DebugMode);
-            if (KernelFlags.DebugMode == false)
+            if (!KernelFlags.DebugMode)
             {
                 KernelFlags.DebugMode = true;
             }

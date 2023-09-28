@@ -69,7 +69,7 @@ namespace KS.Users.Login
             }
 
             // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
-            if (KernelFlags.ClearOnLogin == true)
+            if (KernelFlags.ClearOnLogin)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
                 ConsoleWrapper.Clear();
@@ -77,7 +77,7 @@ namespace KS.Users.Login
 
             // Show MOTD once
             DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", KernelFlags.ShowMOTDOnceFlag, KernelFlags.ShowMOTD);
-            if (KernelFlags.ShowMOTDOnceFlag == true & KernelFlags.ShowMOTD == true)
+            if (KernelFlags.ShowMOTDOnceFlag & KernelFlags.ShowMOTD)
             {
                 TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
                 KernelFlags.ShowMOTDOnceFlag = false;

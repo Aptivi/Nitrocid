@@ -404,7 +404,7 @@ namespace KS.Shell.ShellBase.Shells
                 Command = Command[varStoreStringFull.Length..];
 
                 // Check to see if the command is a comment
-                if ((string.IsNullOrEmpty(Command) | (Command?.StartsWithAnyOf(new[] { " ", "#" }))) == false)
+                if (!(string.IsNullOrEmpty(Command) || Command.StartsWithAnyOf(new[] { " ", "#" })))
                 {
                     // Get the command name
                     var words = Command.SplitEncloseDoubleQuotes();
@@ -454,7 +454,7 @@ namespace KS.Shell.ShellBase.Shells
                                 InitializeOutputPathWriter(OutputPath);
                             }
 
-                            if (!(string.IsNullOrEmpty(commandName) | commandName.StartsWithAnyOf(new[] { " ", "#" }) == true))
+                            if (!(string.IsNullOrEmpty(commandName) | commandName.StartsWithAnyOf(new[] { " ", "#" })))
                             {
 
                                 // Check to see if a user is able to execute a command
@@ -474,7 +474,7 @@ namespace KS.Shell.ShellBase.Shells
                                 }
 
                                 // Check the command before starting
-                                if (KernelFlags.Maintenance == true & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
+                                if (KernelFlags.Maintenance & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", commandName);
                                     TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);
