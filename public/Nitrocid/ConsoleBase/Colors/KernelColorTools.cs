@@ -385,7 +385,7 @@ namespace KS.ConsoleBase.Colors
         /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
         public static string ConvertFromRGBToHex(string RGBSequence)
         {
-            if (RGBSequence.Contains(Convert.ToString(';')))
+            if (RGBSequence.Contains(';'))
             {
                 // Split the VT sequence into three parts
                 var ColorSpecifierArray = RGBSequence.Split(';');

@@ -150,7 +150,7 @@ namespace KS.Network.Base
         {
             string FileName = Url.Split('/').Last();
             DebugWriter.WriteDebug(DebugLevel.I, "Prototype Filename: {0}", FileName);
-            if (FileName.Contains(Convert.ToString('?')))
+            if (FileName.Contains('?'))
             {
                 FileName = FileName.Remove(FileName.IndexOf('?'));
             }

@@ -239,9 +239,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         while (!StruckFound)
                         {
                             StrikeCharsIndex = RandomDriver.RandomIdx(0, Strikes.Count);
-                            CappedStrike = char.IsUpper(StruckCharAssigned) | CapSymbols.Contains(Convert.ToString(StruckCharAssigned));
+                            CappedStrike = char.IsUpper(StruckCharAssigned) | CapSymbols.Contains(StruckCharAssigned);
                             StrikesString = CappedStrike ? CapStrikes[StrikeCharsIndex] : Strikes[StrikeCharsIndex];
-                            StruckFound = !string.IsNullOrEmpty(StrikesString) && StrikesString.Contains(Convert.ToString(StruckCharAssigned));
+                            StruckFound = !string.IsNullOrEmpty(StrikesString) && StrikesString.Contains(StruckCharAssigned);
                             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Strike chars index: {0}", StrikeCharsIndex);
                             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Capped strike: {0}", CappedStrike);
                             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Strikes pattern: {0}", StrikesString);
@@ -252,7 +252,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         // Select a random character that is a typo from the selected strike index
                         int RandomStrikeIndex = RandomDriver.RandomIdx(0, StrikesString.Length);
                         char MistypedChar = StrikesString[RandomStrikeIndex];
-                        if (@"`-=\][';/.,".Contains(Convert.ToString(MistypedChar)) & CappedStrike)
+                        if (@"`-=\][';/.,".Contains(MistypedChar) & CappedStrike)
                         {
                             // The mistyped character is a symbol and the strike is capped. Select a symbol from CapStrikes.
                             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Mistyped character is a symbol and the strike is capped.");
