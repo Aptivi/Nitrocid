@@ -35,11 +35,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChDirCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             try
             {
-                CurrentDirectory.SetCurrDir(ListArgsOnly[0]);
+                CurrentDirectory.SetCurrDir(parameters.ArgumentsList[0]);
                 return 0;
             }
             catch (Exception ex)

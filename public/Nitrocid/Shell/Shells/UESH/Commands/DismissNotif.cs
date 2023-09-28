@@ -37,9 +37,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class DismissNotifCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            int NotifIndex = (int)Math.Round(Convert.ToDouble(ListArgsOnly[0]) - 1d);
+            int NotifIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
             if (NotificationManager.NotifDismiss(NotifIndex))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Notification dismissed successfully."));

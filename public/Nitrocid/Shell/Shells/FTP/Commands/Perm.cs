@@ -37,16 +37,16 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_PermCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (FTPFilesystem.FTPChangePermissions(ListArgsOnly[0], Convert.ToInt32(ListArgsOnly[1])))
+            if (FTPFilesystem.FTPChangePermissions(parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1])))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Permissions set successfully for file") + " {0}", true, KernelColorType.Success, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Permissions set successfully for file") + " {0}", true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Failed to set permissions of {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
+                TextWriterColor.Write(Translate.DoTranslation("Failed to set permissions of {0} to {1}."), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }

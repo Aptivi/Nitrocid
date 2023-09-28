@@ -25,12 +25,12 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
     class CommandTest : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             Console.WriteLine("We're on CommandTest with:");
-            Console.WriteLine(format: "- StringArgs: {0}", StringArgs);
-            Console.WriteLine(format: "- ListArgsOnly: {0}", string.Join(", ", ListArgsOnly));
-            Console.WriteLine(format: "- ListSwitchesOnly: {0}", string.Join(", ", ListSwitchesOnly));
+            Console.WriteLine(format: "- parameters.ArgumentsText: {0}", parameters.ArgumentsText);
+            Console.WriteLine(format: "- parameters.ArgumentsList: {0}", string.Join(", ", parameters.ArgumentsList));
+            Console.WriteLine(format: "- parameters.SwitchesList: {0}", string.Join(", ", parameters.SwitchesList));
             return 0;
         }
 

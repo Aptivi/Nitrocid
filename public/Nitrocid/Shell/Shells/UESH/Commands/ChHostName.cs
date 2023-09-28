@@ -42,22 +42,22 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChHostNameCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (string.IsNullOrEmpty(ListArgsOnly[0]))
+            if (string.IsNullOrEmpty(parameters.ArgumentsList[0]))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Blank host name."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Network;
             }
-            else if (ListArgsOnly[0].IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
+            else if (parameters.ArgumentsList[0].IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
                 TextWriterColor.Write(Translate.DoTranslation("Special characters are not allowed."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Network;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), NetworkTools.HostName, ListArgsOnly[0]);
-                NetworkTools.ChangeHostname(ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Changing from: {0} to {1}..."), NetworkTools.HostName, parameters.ArgumentsList[0]);
+                NetworkTools.ChangeHostname(parameters.ArgumentsList[0]);
                 return 0;
             }
         }

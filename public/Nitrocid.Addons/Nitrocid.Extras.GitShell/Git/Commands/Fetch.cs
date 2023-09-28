@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_FetchCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 
@@ -50,9 +50,9 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             var remotes = GitShellCommon.Repository.Network.Remotes;
             var remoteNames = remotes.Select((remote) => remote.Name).ToArray();
             string selectedRemote = "origin";
-            if (ListArgsOnly.Length > 0)
+            if (parameters.ArgumentsList.Length > 0)
             {
-                string requestedRemote = ListArgsOnly[0];
+                string requestedRemote = parameters.ArgumentsList[0];
                 if (!remoteNames.Contains(requestedRemote))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Remote doesn't exist.") + $" {requestedRemote}", true, KernelColorType.Error);

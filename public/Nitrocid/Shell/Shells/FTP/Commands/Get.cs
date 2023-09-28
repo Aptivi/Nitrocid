@@ -34,10 +34,10 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_GetCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string RemoteFile = ListArgsOnly[0];
-            string LocalFile = ListArgsOnly.Length > 1 ? ListArgsOnly[1] : "";
+            string RemoteFile = parameters.ArgumentsList[0];
+            string LocalFile = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
             TextWriterColor.Write(Translate.DoTranslation("Downloading file {0}..."), false, KernelColorType.Progress, RemoteFile);
             bool Result = !string.IsNullOrWhiteSpace(LocalFile) ? FTPTransfer.FTPGetFile(RemoteFile, LocalFile) : FTPTransfer.FTPGetFile(RemoteFile);
             if (Result)

@@ -36,10 +36,10 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_SumFileCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string RemoteFile = ListArgsOnly[0];
-            string Hash = ListArgsOnly[1];
+            string RemoteFile = parameters.ArgumentsList[0];
+            string Hash = parameters.ArgumentsList[1];
 
             // Check to see if hash is found
             if (Enum.IsDefined(typeof(FtpHashAlgorithm), Hash))

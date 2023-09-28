@@ -38,15 +38,15 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_DelBytesCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly.Length == 1)
+            if (parameters.ArgumentsList.Length == 1)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[0]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                 {
-                    if (Convert.ToInt64(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {
-                        HexEditTools.HexEdit_DeleteBytes(Convert.ToInt64(ListArgsOnly[0]));
+                        HexEditTools.HexEdit_DeleteBytes(Convert.ToInt64(parameters.ArgumentsList[0]));
                         TextWriterColor.Write(Translate.DoTranslation("Deleted bytes."), true, KernelColorType.Success);
                         return 0;
                     }
@@ -58,19 +58,19 @@ namespace KS.Shell.Shells.Hex.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Specified Byte number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[0]);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("Specified Byte number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                     return 10000 + (int)KernelExceptionType.HexEditor;
                 }
             }
-            else if (ListArgsOnly.Length > 1)
+            else if (parameters.ArgumentsList.Length > 1)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[0]) & TextTools.IsStringNumeric(ListArgsOnly[1]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt64(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(ListArgsOnly[1]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {
-                        long ByteNumberStart = Convert.ToInt64(ListArgsOnly[0]);
-                        long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[1]);
+                        long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[0]);
+                        long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.HexEdit_DeleteBytes(ByteNumberStart, ByteNumberEnd);
                         return 0;
@@ -84,7 +84,7 @@ namespace KS.Shell.Shells.Hex.Commands
                 else
                 {
                     TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[1]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[1]);
                     return 10000 + (int)KernelExceptionType.HexEditor;
                 }
             }

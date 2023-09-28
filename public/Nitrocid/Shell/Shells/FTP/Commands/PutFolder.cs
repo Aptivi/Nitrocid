@@ -39,22 +39,22 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_PutFolderCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string LocalFolder = ListArgsOnly[0];
-            string RemoteFolder = ListArgsOnly.Length > 1 ? ListArgsOnly[1] : "";
-            TextWriterColor.Write(Translate.DoTranslation("Uploading folder {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
+            string LocalFolder = parameters.ArgumentsList[0];
+            string RemoteFolder = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
+            TextWriterColor.Write(Translate.DoTranslation("Uploading folder {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
             bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPUploadFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPUploadFolder(RemoteFolder);
             if (Result)
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded folder {0}"), true, KernelColorType.Success, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded folder {0}"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }

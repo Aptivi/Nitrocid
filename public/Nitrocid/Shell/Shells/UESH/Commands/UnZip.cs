@@ -47,20 +47,20 @@ namespace KS.Shell.Shells.UESH.Commands
     class UnZipCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly.Length == 1)
+            if (parameters.ArgumentsList.Length == 1)
             {
-                string ZipArchiveName = Filesystem.NeutralizePath(ListArgsOnly[0]);
+                string ZipArchiveName = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
                 ZipFile.ExtractToDirectory(ZipArchiveName, CurrentDirectory.CurrentDir);
             }
-            else if (ListArgsOnly.Length > 1)
+            else if (parameters.ArgumentsList.Length > 1)
             {
-                string ZipArchiveName = Filesystem.NeutralizePath(ListArgsOnly[0]);
-                string Destination = !(ListSwitchesOnly[0] == "-createdir") ? Filesystem.NeutralizePath(ListArgsOnly[1]) : "";
-                if (ListSwitchesOnly.Contains("-createdir"))
+                string ZipArchiveName = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+                string Destination = !(parameters.SwitchesList[0] == "-createdir") ? Filesystem.NeutralizePath(parameters.ArgumentsList[1]) : "";
+                if (parameters.SwitchesList.Contains("-createdir"))
                 {
-                    Destination = $"{(!(ListSwitchesOnly[0] == "-createdir") ? Filesystem.NeutralizePath(ListArgsOnly[1]) : "")}/{(!(ListSwitchesOnly[0] == "-createdir") ? Path.GetFileNameWithoutExtension(ZipArchiveName) : Filesystem.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}";
+                    Destination = $"{(!(parameters.SwitchesList[0] == "-createdir") ? Filesystem.NeutralizePath(parameters.ArgumentsList[1]) : "")}/{(!(parameters.SwitchesList[0] == "-createdir") ? Path.GetFileNameWithoutExtension(ZipArchiveName) : Filesystem.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}";
                     if (Convert.ToString(Destination[0]) == "/")
                         Destination = Destination[1..];
                 }

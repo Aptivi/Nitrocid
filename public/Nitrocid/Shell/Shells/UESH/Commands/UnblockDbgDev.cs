@@ -35,9 +35,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class UnblockDbgDevCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string address = ListArgsOnly[0];
+            string address = parameters.ArgumentsList[0];
             var device = RemoteDebugTools.GetDeviceFromIp(address);
             if (device.Blocked)
             {

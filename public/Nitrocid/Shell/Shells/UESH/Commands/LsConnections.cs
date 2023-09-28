@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class LsConnectionsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var shellTypes = Enum.GetNames<NetworkConnectionType>();
             foreach (var shellType in shellTypes)
@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
             var shellTypes = Enum.GetNames<NetworkConnectionType>();
             foreach (var shellType in shellTypes)

@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Amusements.Commands
     class SolverCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             Solver.InitializeSolver();
             return 0;

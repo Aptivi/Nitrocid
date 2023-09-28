@@ -34,15 +34,15 @@ namespace Nitrocid.Extras.Calculators.Commands
     class ImaginaryCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check both the real and the imaginary numbers for verification
-            if (!double.TryParse(ListArgsOnly[0], out double Real))
+            if (!double.TryParse(parameters.ArgumentsList[0], out double Real))
             {
                 TextWriterColor.Write(Translate.DoTranslation("The real number is not valid."), true, KernelColorType.Error);
                 return 2;
             }
-            if (!double.TryParse(ListArgsOnly[1], out double Imaginary))
+            if (!double.TryParse(parameters.ArgumentsList[1], out double Imaginary))
             {
                 TextWriterColor.Write(Translate.DoTranslation("The imaginary number is not valid."), true, KernelColorType.Error);
                 return 2;

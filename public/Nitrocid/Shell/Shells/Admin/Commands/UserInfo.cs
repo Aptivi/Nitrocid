@@ -34,10 +34,10 @@ namespace KS.Shell.Shells.Admin.Commands
     class UserInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Get the requested username
-            string userName = ListArgsOnly.Length > 0 ? ListArgsOnly[0] : UserManagement.CurrentUser.Username;
+            string userName = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : UserManagement.CurrentUser.Username;
 
             // Now, try to get the username and print its information
             var user = UserManagement.GetUser(userName);

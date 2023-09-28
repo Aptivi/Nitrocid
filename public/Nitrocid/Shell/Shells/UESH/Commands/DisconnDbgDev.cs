@@ -34,10 +34,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class DisconnDbgDevCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            RemoteDebugTools.DisconnectDevice(ListArgsOnly[0]);
-            TextWriterColor.Write(Translate.DoTranslation("Device {0} disconnected."), ListArgsOnly[0]);
+            RemoteDebugTools.DisconnectDevice(parameters.ArgumentsList[0]);
+            TextWriterColor.Write(Translate.DoTranslation("Device {0} disconnected."), parameters.ArgumentsList[0]);
             return 0;
         }
 

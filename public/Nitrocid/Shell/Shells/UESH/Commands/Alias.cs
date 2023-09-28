@@ -41,31 +41,31 @@ namespace KS.Shell.Shells.UESH.Commands
     class AliasCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly.Length > 3)
+            if (parameters.ArgumentsList.Length > 3)
             {
-                if (ListArgsOnly[0] == "add" & ShellManager.AvailableShells.ContainsKey(ListArgsOnly[1]))
+                if (parameters.ArgumentsList[0] == "add" & ShellManager.AvailableShells.ContainsKey(parameters.ArgumentsList[1]))
                 {
-                    AliasManager.ManageAlias(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2], ListArgsOnly[3]);
+                    AliasManager.ManageAlias(parameters.ArgumentsList[0], parameters.ArgumentsList[1], parameters.ArgumentsList[2], parameters.ArgumentsList[3]);
                     return 0;
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, ListArgsOnly[1]);
+                    TextWriterColor.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
                     return 10000 + (int)KernelExceptionType.AliasNoSuchType;
                 }
             }
-            else if (ListArgsOnly.Length == 3)
+            else if (parameters.ArgumentsList.Length == 3)
             {
-                if (ListArgsOnly[0] == "rem" & ShellManager.AvailableShells.ContainsKey(ListArgsOnly[1]))
+                if (parameters.ArgumentsList[0] == "rem" & ShellManager.AvailableShells.ContainsKey(parameters.ArgumentsList[1]))
                 {
-                    AliasManager.ManageAlias(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
+                    AliasManager.ManageAlias(parameters.ArgumentsList[0], parameters.ArgumentsList[1], parameters.ArgumentsList[2]);
                     return 0;
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, ListArgsOnly[1]);
+                    TextWriterColor.Write(Translate.DoTranslation("Invalid type {0}."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
                     return 10000 + (int)KernelExceptionType.AliasNoSuchType;
                 }
             }

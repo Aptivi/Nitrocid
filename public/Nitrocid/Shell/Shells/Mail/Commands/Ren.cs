@@ -30,9 +30,9 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_RenCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            MailDirectory.RenameMailDirectory(ListArgsOnly[0], ListArgsOnly[1]);
+            MailDirectory.RenameMailDirectory(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             return 0;
         }
     }

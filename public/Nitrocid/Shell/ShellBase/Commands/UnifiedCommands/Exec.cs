@@ -29,10 +29,10 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
     class ExecUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string command = ListArgsOnly[0];
-            string arguments = string.Join(' ', ListArgsOnly.Skip(1).ToArray());
+            string command = parameters.ArgumentsList[0];
+            string arguments = string.Join(' ', parameters.ArgumentsList.Skip(1).ToArray());
             return ProcessExecutor.ExecuteProcess(command, arguments);
         }
 

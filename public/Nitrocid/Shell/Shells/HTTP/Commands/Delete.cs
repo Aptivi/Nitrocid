@@ -36,19 +36,19 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_DeleteCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
+            TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
 
             // Make a confirmation message so user will not accidentally delete a file or folder
-            string answer = ChoiceStyle.PromptChoice(TextTools.FormatString(Translate.DoTranslation("Are you sure you want to delete {0}?"), ListArgsOnly[0]), "y/n");
+            string answer = ChoiceStyle.PromptChoice(TextTools.FormatString(Translate.DoTranslation("Are you sure you want to delete {0}?"), parameters.ArgumentsList[0]), "y/n");
             if (answer != "y")
                 return 1;
 
             try
             {
-                var DeleteTask = HTTPTools.HttpDelete(ListArgsOnly[0]);
+                var DeleteTask = HTTPTools.HttpDelete(parameters.ArgumentsList[0]);
                 DeleteTask.Wait();
                 return 0;
             }

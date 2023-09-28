@@ -31,11 +31,11 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_PrintCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly.Length > 0)
+            if (parameters.ArgumentsList.Length > 0)
             {
-                TextWriterColor.Write(JsonTools.JsonShell_SerializeToString(StringArgs));
+                TextWriterColor.Write(JsonTools.JsonShell_SerializeToString(parameters.ArgumentsText));
             }
             else
             {

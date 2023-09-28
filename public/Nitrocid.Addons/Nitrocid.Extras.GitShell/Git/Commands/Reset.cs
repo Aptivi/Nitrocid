@@ -31,16 +31,16 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_ResetCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Assume that we want to do a soft reset
             var resetMode = ResetMode.Soft;
-            if (ListSwitchesOnly.Length > 0)
+            if (parameters.SwitchesList.Length > 0)
             {
                 // Determine the reset mode by switch
-                bool useSoft = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-soft");
-                bool useMixed = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-mixed");
-                bool useHard = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-hard");
+                bool useSoft = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-soft");
+                bool useMixed = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-mixed");
+                bool useHard = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hard");
                 if (useSoft)
                     resetMode = ResetMode.Soft;
                 else if (useMixed)

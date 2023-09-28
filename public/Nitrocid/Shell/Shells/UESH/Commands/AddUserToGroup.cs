@@ -35,11 +35,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class AddUserToGroupCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageGroups);
-            TextWriterColor.Write(Translate.DoTranslation("Adding user {0} to group {1}..."), ListArgsOnly[0], ListArgsOnly[1]);
-            GroupManagement.AddUserToGroup(ListArgsOnly[0], ListArgsOnly[1]);
+            TextWriterColor.Write(Translate.DoTranslation("Adding user {0} to group {1}..."), parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            GroupManagement.AddUserToGroup(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             return 0;
         }
 

@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_StatusCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
             TextWriterColor.Write(Translate.DoTranslation("Status for branch {0}..."), GitShellCommon.BranchName);

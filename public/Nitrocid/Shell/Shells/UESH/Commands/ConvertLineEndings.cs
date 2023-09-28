@@ -55,20 +55,20 @@ namespace KS.Shell.Shells.UESH.Commands
     class ConvertLineEndingsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string TargetTextFile = ListArgsOnly[0];
+            string TargetTextFile = parameters.ArgumentsList[0];
             var TargetLineEnding = LineEndingsTools.NewlineStyle;
             bool force = false;
-            if (!(ListSwitchesOnly.Length == 0))
+            if (!(parameters.SwitchesList.Length == 0))
             {
-                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-w"))
+                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-w"))
                     TargetLineEnding = FilesystemNewlineStyle.CRLF;
-                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-u"))
+                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-u"))
                     TargetLineEnding = FilesystemNewlineStyle.LF;
-                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-m"))
+                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-m"))
                     TargetLineEnding = FilesystemNewlineStyle.CR;
-                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-force"))
+                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-force"))
                     force = true;
             }
 

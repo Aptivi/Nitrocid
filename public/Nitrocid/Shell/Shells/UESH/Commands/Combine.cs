@@ -40,12 +40,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class CombineCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            string OutputPath = Filesystem.NeutralizePath(ListArgsOnly[0]);
-            string InputPath = ListArgsOnly[1];
-            var CombineInputPaths = ListArgsOnly.Skip(2).ToArray();
+            string OutputPath = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            string InputPath = parameters.ArgumentsList[1];
+            var CombineInputPaths = parameters.ArgumentsList.Skip(2).ToArray();
 
             // Check all inputs
             bool AreAllInputsBinary = false;

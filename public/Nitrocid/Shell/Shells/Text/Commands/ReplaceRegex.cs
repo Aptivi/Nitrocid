@@ -33,9 +33,9 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_ReplaceRegexCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextEditTools.TextEdit_ReplaceRegex(ListArgsOnly[0], ListArgsOnly[1]);
+            TextEditTools.TextEdit_ReplaceRegex(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             TextWriterColor.Write(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
             return 0;
         }

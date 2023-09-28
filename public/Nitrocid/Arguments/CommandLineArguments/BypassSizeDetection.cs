@@ -23,7 +23,8 @@ namespace KS.Arguments.CommandLineArguments
     class BypassSizeDetectionArgument : ArgumentExecutor, IArgument
     {
 
-        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) => KernelFlags.CheckingForConsoleSize = false;
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
+            KernelFlags.CheckingForConsoleSize = false;
 
     }
 }

@@ -34,13 +34,13 @@ namespace KS.Shell.Shells.UESH.Commands
     class EditCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string path = Filesystem.NeutralizePath(ListArgsOnly[0]);
-            bool forceText = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-text");
-            bool forceJson = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-json");
-            bool forceHex = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-hex");
-            bool forceSql = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-sql");
+            string path = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            bool forceText = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-text");
+            bool forceJson = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-json");
+            bool forceHex = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hex");
+            bool forceSql = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-sql");
             Opening.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
             return 0;
         }

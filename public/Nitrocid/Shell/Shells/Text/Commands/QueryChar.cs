@@ -38,16 +38,16 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_QueryCharCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly.Length == 2)
+            if (parameters.ArgumentsList.Length == 2)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[1]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        int LineIndex = Convert.ToInt32(ListArgsOnly[1]);
-                        var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), LineIndex);
+                        int LineIndex = Convert.ToInt32(parameters.ArgumentsList[1]);
+                        var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineIndex);
                         TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineIndex);
 
                         // Process the output
@@ -66,9 +66,9 @@ namespace KS.Shell.Shells.Text.Commands
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
-                else if (ListArgsOnly[1].ToLower() == "all")
+                else if (parameters.ArgumentsList[1].ToLower() == "all")
                 {
-                    var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]));
+                    var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(parameters.ArgumentsList[0]));
                     foreach (var QueriedChar in QueriedChars)
                     {
                         int LineIndex = QueriedChar.Item1;
@@ -87,18 +87,18 @@ namespace KS.Shell.Shells.Text.Commands
                     return 0;
                 }
             }
-            else if (ListArgsOnly.Length > 2)
+            else if (parameters.ArgumentsList.Length > 2)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[1]) & TextTools.IsStringNumeric(ListArgsOnly[2]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        int LineNumberStart = Convert.ToInt32(ListArgsOnly[1]);
-                        int LineNumberEnd = Convert.ToInt32(ListArgsOnly[2]);
+                        int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[1]);
+                        int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[2]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(ListArgsOnly[0]), LineNumber);
+                            var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineNumber);
                             int LineIndex = LineNumber - 1;
                             TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
 

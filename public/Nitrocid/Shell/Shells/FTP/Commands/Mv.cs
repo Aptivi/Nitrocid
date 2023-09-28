@@ -37,17 +37,17 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_MvCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Moving {0} to {1}..."), true, KernelColorType.Progress, ListArgsOnly[0], ListArgsOnly[1]);
-            if (FTPFilesystem.FTPMoveItem(ListArgsOnly[0], ListArgsOnly[1]))
+            TextWriterColor.Write(Translate.DoTranslation("Moving {0} to {1}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            if (FTPFilesystem.FTPMoveItem(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
                 TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Moved successfully"), true, KernelColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1]);
+                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to move {0} to {1}."), true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }

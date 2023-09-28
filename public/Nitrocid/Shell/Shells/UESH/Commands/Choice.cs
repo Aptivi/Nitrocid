@@ -67,35 +67,35 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChoiceCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var Titles = new List<string>();
             var PressEnter = false;
             var OutputType = ChoiceStyle.DefaultChoiceOutputType;
-            if (ListSwitchesOnly.Contains("-multiple"))
+            if (parameters.SwitchesList.Contains("-multiple"))
                 PressEnter = true;
-            if (ListSwitchesOnly.Contains("-single"))
+            if (parameters.SwitchesList.Contains("-single"))
                 PressEnter = false;
 
             // Add the provided working titles
-            if (ListArgsOnly.Length > 2)
-                Titles.AddRange(ListArgsOnly.Skip(2));
+            if (parameters.ArgumentsList.Length > 2)
+                Titles.AddRange(parameters.ArgumentsList.Skip(2));
 
             // Check for output type switches
-            if (ListSwitchesOnly.Length > 0)
+            if (parameters.SwitchesList.Length > 0)
             {
-                if (ListSwitchesOnly[0] == "-o")
+                if (parameters.SwitchesList[0] == "-o")
                     OutputType = ChoiceOutputType.OneLine;
-                if (ListSwitchesOnly[0] == "-t")
+                if (parameters.SwitchesList[0] == "-t")
                     OutputType = ChoiceOutputType.TwoLines;
-                if (ListSwitchesOnly[0] == "-m")
+                if (parameters.SwitchesList[0] == "-m")
                     OutputType = ChoiceOutputType.Modern;
-                if (ListSwitchesOnly[0] == "-a")
+                if (parameters.SwitchesList[0] == "-a")
                     OutputType = ChoiceOutputType.Table;
             }
 
             // Prompt for choice
-            string Answer = ChoiceStyle.PromptChoice(ListArgsOnly[1], ListArgsOnly[0], Titles.ToArray(), OutputType, PressEnter);
+            string Answer = ChoiceStyle.PromptChoice(parameters.ArgumentsList[1], parameters.ArgumentsList[0], Titles.ToArray(), OutputType, PressEnter);
             variableValue = Answer;
             return 0;
         }

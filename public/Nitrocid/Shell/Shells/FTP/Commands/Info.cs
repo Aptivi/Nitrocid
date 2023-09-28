@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_InfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("FTP server information"), true);
             TextWriterColor.Write(Translate.DoTranslation("Server address:") + " ", false, KernelColorType.ListEntry);

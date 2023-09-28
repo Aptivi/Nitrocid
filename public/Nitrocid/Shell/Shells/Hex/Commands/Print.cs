@@ -38,38 +38,38 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_PrintCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             long ByteNumber;
-            if (ListArgsOnly.Length > 0)
+            if (parameters.ArgumentsList.Length > 0)
             {
-                if (ListArgsOnly.Length == 1)
+                if (parameters.ArgumentsList.Length == 1)
                 {
                     // We've only provided one range
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte number provided: {0}", ListArgsOnly[0]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]));
-                    if (TextTools.IsStringNumeric(ListArgsOnly[0]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte number provided: {0}", parameters.ArgumentsList[0]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(parameters.ArgumentsList[0]));
+                    if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                     {
-                        ByteNumber = Convert.ToInt64(ListArgsOnly[0]);
+                        ByteNumber = Convert.ToInt64(parameters.ArgumentsList[0]);
                         HexEditTools.HexEdit_DisplayHex(ByteNumber);
                         return 0;
                     }
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                         return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }
                 else
                 {
                     // We've provided two Byte numbers in the range
-                    DebugWriter.WriteDebug(DebugLevel.I, "Byte numbers provided: {0}, {1}", ListArgsOnly[0], ListArgsOnly[1]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]), TextTools.IsStringNumeric(ListArgsOnly[1]));
-                    if (TextTools.IsStringNumeric(ListArgsOnly[0]) & TextTools.IsStringNumeric(ListArgsOnly[1]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Byte numbers provided: {0}, {1}", parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(parameters.ArgumentsList[0]), TextTools.IsStringNumeric(parameters.ArgumentsList[1]));
+                    if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                     {
-                        long ByteNumberStart = Convert.ToInt64(ListArgsOnly[0]);
-                        long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[1]);
+                        long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[0]);
+                        long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.HexEdit_DisplayHex(ByteNumberStart, ByteNumberEnd);
                         return 0;
@@ -77,7 +77,7 @@ namespace KS.Shell.Shells.Hex.Commands
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                         return 10000 + (int)KernelExceptionType.HexEditor;
                     }
                 }

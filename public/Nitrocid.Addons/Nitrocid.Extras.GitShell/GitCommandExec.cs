@@ -25,9 +25,9 @@ namespace Nitrocid.Extras.GitShell
     internal class GitCommandExec : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string path = Filesystem.NeutralizePath(ListArgsOnly[0]);
+            string path = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
             ShellStart.StartShell("GitShell", path);
             return 0;
         }

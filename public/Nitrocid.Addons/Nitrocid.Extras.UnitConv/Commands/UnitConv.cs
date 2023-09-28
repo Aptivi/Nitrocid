@@ -41,9 +41,9 @@ namespace Nitrocid.Extras.UnitConv.Commands
     class UnitConvCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool tuiMode = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-tui");
+            bool tuiMode = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui");
             if (tuiMode)
             {
                 InteractiveTuiTools.OpenInteractiveTui(new UnitConverterCli());
@@ -51,10 +51,10 @@ namespace Nitrocid.Extras.UnitConv.Commands
             else
             {
                 var parser = UnitsNetSetup.Default.UnitParser;
-                string UnitType = ListArgsOnly[0];
-                int QuantityNum = Convert.ToInt32(ListArgsOnly[1]);
-                string SourceUnit = ListArgsOnly[2];
-                string TargetUnit = ListArgsOnly[3];
+                string UnitType = parameters.ArgumentsList[0];
+                int QuantityNum = Convert.ToInt32(parameters.ArgumentsList[1]);
+                string SourceUnit = parameters.ArgumentsList[2];
+                string TargetUnit = parameters.ArgumentsList[3];
                 var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
                 var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
                 var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);

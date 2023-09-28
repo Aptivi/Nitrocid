@@ -43,22 +43,22 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChPwdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             try
             {
                 PermissionsTools.Demand(PermissionTypes.ManageUsers);
-                if (ListArgsOnly[3].Contains(' '))
+                if (parameters.ArgumentsList[3].Contains(' '))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.UserManagement;
                 }
-                else if (ListArgsOnly[3] == ListArgsOnly[2])
+                else if (parameters.ArgumentsList[3] == parameters.ArgumentsList[2])
                 {
-                    UserManagement.ChangePassword(ListArgsOnly[0], ListArgsOnly[1], ListArgsOnly[2]);
+                    UserManagement.ChangePassword(parameters.ArgumentsList[0], parameters.ArgumentsList[1], parameters.ArgumentsList[2]);
                     return 0;
                 }
-                else if (ListArgsOnly[3] != ListArgsOnly[2])
+                else if (parameters.ArgumentsList[3] != parameters.ArgumentsList[2])
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Passwords doesn't match."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.UserManagement;

@@ -39,22 +39,22 @@ namespace KS.Shell.Shells.Sql.Commands
     class Sql_CmdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // First, check to see if we have parameters
-            List<SqliteParameter> parameters = new();
-            foreach (string StringArg in ListArgsOnly)
+            List<SqliteParameter> sqlParameters = new();
+            foreach (string StringArg in parameters.ArgumentsList)
             {
                 if (StringArg.StartsWith("@"))
                 {
                     string paramValue = Input.ReadLine(TextTools.FormatString(Translate.DoTranslation("Enter parameter value for {0}:"), StringArg) + " ");
-                    parameters.Add(new SqliteParameter(StringArg, paramValue));
+                    sqlParameters.Add(new SqliteParameter(StringArg, paramValue));
                 }
             }
 
             // Now, get a group of replies and print them
             string[] replies = Array.Empty<string>();
-            if (SqlEditTools.SqlEdit_SqlCommand(StringArgs, ref replies, parameters.ToArray()))
+            if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, sqlParameters.ToArray()))
             {
                 TextWriterColor.Write(Translate.DoTranslation("SQL command succeeded. Here are the replies:"), true, KernelColorType.Success);
                 foreach (string reply in replies)

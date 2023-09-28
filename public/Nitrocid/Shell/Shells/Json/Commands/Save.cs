@@ -47,14 +47,14 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_SaveCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var TargetFormatting = Formatting.Indented;
-            if (ListSwitchesOnly.Length > 0)
+            if (parameters.SwitchesList.Length > 0)
             {
-                if (ListSwitchesOnly[0] == "-b")
+                if (parameters.SwitchesList[0] == "-b")
                     TargetFormatting = Formatting.Indented;
-                if (ListSwitchesOnly[0] == "-m")
+                if (parameters.SwitchesList[0] == "-m")
                     TargetFormatting = Formatting.None;
             }
             JsonTools.JsonShell_SaveFile(false, TargetFormatting);

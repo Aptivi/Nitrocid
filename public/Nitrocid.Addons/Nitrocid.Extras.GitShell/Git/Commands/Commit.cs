@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_CommitCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             if (!GitShellCommon.isIdentified)
             {
@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 return 15;
             }
             var author = new Signature(GitShellCommon.name, GitShellCommon.email, new(TimeDateTools.KernelDateTime, TimeZoneRenderers.ShowTimeZoneUtcOffsetLocal()));
-            var newCommit = GitShellCommon.Repository.Commit(ListArgsOnly[0], author, author);
+            var newCommit = GitShellCommon.Repository.Commit(parameters.ArgumentsList[0], author, author);
             TextWriterColor.Write(Translate.DoTranslation("Updated repository with new commit") + $":");
             TextWriterColor.Write($"  {newCommit.Sha[..7]}: {newCommit.MessageShort}", true, KernelColorType.ListValue);
             return 0;

@@ -37,11 +37,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class SearchCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             try
             {
-                var Matches = Searching.SearchFileForStringRegexpMatches(ListArgsOnly[1], new Regex(ListArgsOnly[0], RegexOptions.IgnoreCase));
+                var Matches = Searching.SearchFileForStringRegexpMatches(parameters.ArgumentsList[1], new Regex(parameters.ArgumentsList[0], RegexOptions.IgnoreCase));
                 foreach ((string, MatchCollection) matchTuple in Matches)
                 {
                     string matchLine = matchTuple.Item1;
@@ -65,9 +65,9 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", ListArgsOnly[0], ListArgsOnly[1]);
+                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to search {0} for {1}", parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, KernelColorType.Error, ListArgsOnly[0], ListArgsOnly[1], ex.Message);
+                TextWriterColor.Write(Translate.DoTranslation("Searching {0} for {1} failed.") + " {2}", true, KernelColorType.Error, parameters.ArgumentsList[0], parameters.ArgumentsList[1], ex.Message);
                 return ex.GetHashCode();
             }
         }

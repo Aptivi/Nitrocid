@@ -49,10 +49,10 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
     class WeatherCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var ListMode = false;
-            if (ListSwitchesOnly.Contains("-list"))
+            if (parameters.SwitchesList.Contains("-list"))
                 ListMode = true;
             if (ListMode)
             {
@@ -62,9 +62,9 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
             else
             {
                 string APIKey = Forecast.ApiKey;
-                if (ListArgsOnly.Length > 1)
+                if (parameters.ArgumentsList.Length > 1)
                 {
-                    APIKey = ListArgsOnly[1];
+                    APIKey = parameters.ArgumentsList[1];
                 }
                 else if (string.IsNullOrEmpty(APIKey))
                 {
@@ -73,7 +73,7 @@ namespace Nitrocid.Extras.Forecast.Forecast.Commands
                     APIKey = Input.ReadLineNoInput();
                     Forecast.ApiKey = APIKey;
                 }
-                Forecast.PrintWeatherInfo(ListArgsOnly[0], APIKey);
+                Forecast.PrintWeatherInfo(parameters.ArgumentsList[0], APIKey);
             }
             return 0;
         }

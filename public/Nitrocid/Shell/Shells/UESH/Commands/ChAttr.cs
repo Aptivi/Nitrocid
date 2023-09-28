@@ -63,47 +63,47 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChAttrCommand : BaseCommand, ICommand
     {
 
-        // Warning: Don't use ListSwitchesOnly to replace ListArgsOnly(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        // Warning: Don't use parameters.SwitchesList to replace parameters.ArgumentsList(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string NeutralizedFilePath = Filesystem.NeutralizePath(ListArgsOnly[0]);
+            string NeutralizedFilePath = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             if (Checking.FileExists(NeutralizedFilePath))
             {
-                if (ListArgsOnly[2] == "Normal" | ListArgsOnly[2] == "ReadOnly" | ListArgsOnly[2] == "Hidden" | ListArgsOnly[2] == "Archive")
+                if (parameters.ArgumentsList[2] == "Normal" | parameters.ArgumentsList[2] == "ReadOnly" | parameters.ArgumentsList[2] == "Hidden" | parameters.ArgumentsList[2] == "Archive")
                 {
-                    if (ListArgsOnly[1] == "add")
+                    if (parameters.ArgumentsList[1] == "add")
                     {
-                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[2]));
+                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), parameters.ArgumentsList[2]));
                         if (AttributeManager.TryAddAttributeToFile(NeutralizedFilePath, Attrib))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been added successfully.") + " {0}", ListArgsOnly[2]);
+                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been added successfully.") + " {0}", parameters.ArgumentsList[2]);
                             return 0;
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Failed to add attribute.") + " {0}", ListArgsOnly[2]);
+                            TextWriterColor.Write(Translate.DoTranslation("Failed to add attribute.") + " {0}", parameters.ArgumentsList[2]);
                             return 10000 + (int)KernelExceptionType.Filesystem;
                         }
                     }
-                    else if (ListArgsOnly[1] == "rem")
+                    else if (parameters.ArgumentsList[1] == "rem")
                     {
-                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), ListArgsOnly[2]));
+                        FileAttributes Attrib = (FileAttributes)Convert.ToInt32(Enum.Parse(typeof(FileAttributes), parameters.ArgumentsList[2]));
                         if (AttributeManager.TryRemoveAttributeFromFile(NeutralizedFilePath, Attrib))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been removed successfully.") + " {0}", ListArgsOnly[2]);
+                            TextWriterColor.Write(Translate.DoTranslation("Attribute has been removed successfully.") + " {0}", parameters.ArgumentsList[2]);
                             return 0;
                         }
                         else
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Failed to remove attribute.") + " {0}", ListArgsOnly[2]);
+                            TextWriterColor.Write(Translate.DoTranslation("Failed to remove attribute.") + " {0}", parameters.ArgumentsList[2]);
                             return 10000 + (int)KernelExceptionType.Filesystem;
                         }
                     }
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, KernelColorType.Error, ListArgsOnly[2]);
+                    TextWriterColor.Write(Translate.DoTranslation("Attribute \"{0}\" is invalid."), true, KernelColorType.Error, parameters.ArgumentsList[2]);
                     return 10000 + (int)KernelExceptionType.Filesystem;
                 }
             }

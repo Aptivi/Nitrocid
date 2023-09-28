@@ -27,26 +27,18 @@ namespace KS.Shell.ShellBase.Commands
         /// <summary>
         /// Executes the command with the given argument
         /// </summary>
-        /// <param name="StringArgs">Arguments in a string</param>
-        /// <param name="ListArgsOnly">List of provided arguments</param>
-        /// <param name="StringArgsOrig">Arguments in a string (original)</param>
-        /// <param name="ListArgsOnlyOrig">List of provided arguments (original)</param>
-        /// <param name="ListSwitchesOnly">List of provided switches</param>
+        /// <param name="parameters">Command parameters including passed arguments and switches information</param>
         /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
         /// <returns>Error code for the command</returns>
-        int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue);
+        int Execute(CommandParameters parameters, ref string variableValue);
 
         /// <summary>
         /// Executes the command with the given argument on dumb consoles
         /// </summary>
-        /// <param name="StringArgs">Arguments in a string</param>
-        /// <param name="ListArgsOnly">List of provided arguments</param>
-        /// <param name="StringArgsOrig">Arguments in a string (original)</param>
-        /// <param name="ListArgsOnlyOrig">List of provided arguments (original)</param>
-        /// <param name="ListSwitchesOnly">List of provided switches</param>
+        /// <param name="parameters">Command parameters including passed arguments and switches information</param>
         /// <param name="variableValue">Variable value to provide to target variable while -set is passed</param>
         /// <returns>Error code for the command</returns>
-        int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue);
+        int ExecuteDumb(CommandParameters parameters, ref string variableValue);
 
         /// <summary>
         /// Shows additional information for the command when "help command" is invoked

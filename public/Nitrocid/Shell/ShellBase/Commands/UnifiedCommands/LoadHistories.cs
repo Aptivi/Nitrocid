@@ -29,7 +29,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
     class LoadHistoriesUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             ShellManager.LoadHistories();
             return 0;

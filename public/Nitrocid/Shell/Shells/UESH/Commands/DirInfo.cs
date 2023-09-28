@@ -39,9 +39,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class DirInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            foreach (string Dir in ListArgsOnly)
+            foreach (string Dir in parameters.ArgumentsList)
             {
                 string DirectoryPath = Filesystem.NeutralizePath(Dir);
                 DebugWriter.WriteDebug(DebugLevel.I, "Neutralized directory path: {0} ({1})", DirectoryPath, Checking.FolderExists(DirectoryPath));

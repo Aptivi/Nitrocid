@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ReloadConfigCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             ConfigTools.ReloadConfig();
             TextWriterColor.Write(Translate.DoTranslation("Configuration reloaded. You might need to reboot the kernel for some changes to take effect."));

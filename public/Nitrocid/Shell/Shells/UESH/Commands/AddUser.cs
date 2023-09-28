@@ -39,21 +39,21 @@ namespace KS.Shell.Shells.UESH.Commands
     class AddUserCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
-            if (ListArgsOnly.Length == 1)
+            if (parameters.ArgumentsList.Length == 1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), ListArgsOnly[0]);
-                UserManagement.AddUser(ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), parameters.ArgumentsList[0]);
+                UserManagement.AddUser(parameters.ArgumentsList[0]);
                 return 0;
             }
-            else if (ListArgsOnly.Length > 2)
+            else if (parameters.ArgumentsList.Length > 2)
             {
-                if (ListArgsOnly[1] == ListArgsOnly[2])
+                if (parameters.ArgumentsList[1] == parameters.ArgumentsList[2])
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), ListArgsOnly[0]);
-                    UserManagement.AddUser(ListArgsOnly[0], ListArgsOnly[1]);
+                    TextWriterColor.Write(Translate.DoTranslation("usrmgr: Creating username {0}..."), parameters.ArgumentsList[0]);
+                    UserManagement.AddUser(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                     return 0;
                 }
                 else

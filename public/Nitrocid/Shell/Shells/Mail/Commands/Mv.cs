@@ -37,12 +37,12 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_MvCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Message number is numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]));
-            if (TextTools.IsStringNumeric(ListArgsOnly[0]))
+            DebugWriter.WriteDebug(DebugLevel.I, "Message number is numeric? {0}", TextTools.IsStringNumeric(parameters.ArgumentsList[0]));
+            if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
-                MailManager.MailMoveMessage(Convert.ToInt32(ListArgsOnly[0]), ListArgsOnly[1]);
+                MailManager.MailMoveMessage(Convert.ToInt32(parameters.ArgumentsList[0]), parameters.ArgumentsList[1]);
                 return 0;
             }
             else

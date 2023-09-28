@@ -29,10 +29,10 @@ namespace Nitrocid.Extras.Notes.Commands
     internal class RemoveNote : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly[0].IsNumeric())
-                NoteManagement.RemoveNote(Convert.ToInt32(ListArgsOnly[0]) - 1);
+            if (parameters.ArgumentsList[0].IsNumeric())
+                NoteManagement.RemoveNote(Convert.ToInt32(parameters.ArgumentsList[0]) - 1);
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("The note ID must be a note number"), true, KernelColorType.Error);

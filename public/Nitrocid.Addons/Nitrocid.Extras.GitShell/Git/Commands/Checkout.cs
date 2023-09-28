@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_CheckoutCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 
@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             var branches = GitShellCommon.Repository.Branches;
             var branchFriendlyNames = branches.Select((branch) => branch.FriendlyName).ToArray();
             var branchCanonNames = branches.Select((branch) => branch.CanonicalName).ToArray();
-            string requestedBranch = ListArgsOnly[0];
+            string requestedBranch = parameters.ArgumentsList[0];
             if (!branchFriendlyNames.Contains(requestedBranch) && !branchCanonNames.Contains(requestedBranch))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Branch doesn't exist.") + $" {requestedBranch}", true, KernelColorType.Error);

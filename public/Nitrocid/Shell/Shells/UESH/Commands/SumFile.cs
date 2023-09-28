@@ -42,33 +42,33 @@ namespace KS.Shell.Shells.UESH.Commands
     class SumFileCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string file = Filesystem.NeutralizePath(ListArgsOnly[1]);
+            string file = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
             string @out = "";
-            bool UseRelative = ListSwitchesOnly.Contains("-relative");
+            bool UseRelative = parameters.SwitchesList.Contains("-relative");
             var FileBuilder = new StringBuilder();
-            if (!(ListArgsOnly.Length < 3))
+            if (!(parameters.ArgumentsList.Length < 3))
             {
-                @out = Filesystem.NeutralizePath(ListArgsOnly[2]);
+                @out = Filesystem.NeutralizePath(parameters.ArgumentsList[2]);
             }
             if (Checking.FileExists(file))
             {
-                if (DriverHandler.IsRegistered(DriverTypes.Encryption, ListArgsOnly[0]))
+                if (DriverHandler.IsRegistered(DriverTypes.Encryption, parameters.ArgumentsList[0]))
                 {
                     // Time when you're on a breakpoint is counted
                     var spent = new Stopwatch();
                     spent.Start();
-                    string encrypted = Encryption.GetEncryptedFile(file, ListArgsOnly[0]);
+                    string encrypted = Encryption.GetEncryptedFile(file, parameters.ArgumentsList[0]);
                     TextWriterColor.Write(encrypted);
                     TextWriterColor.Write(Translate.DoTranslation("Time spent: {0} milliseconds"), spent.ElapsedMilliseconds);
                     if (UseRelative)
                     {
-                        FileBuilder.AppendLine($"- {ListArgsOnly[1]}: {encrypted} ({ListArgsOnly[0]})");
+                        FileBuilder.AppendLine($"- {parameters.ArgumentsList[1]}: {encrypted} ({parameters.ArgumentsList[0]})");
                     }
                     else
                     {
-                        FileBuilder.AppendLine($"- {file}: {encrypted} ({ListArgsOnly[0]})");
+                        FileBuilder.AppendLine($"- {file}: {encrypted} ({parameters.ArgumentsList[0]})");
                     }
                     spent.Stop();
                 }

@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class LsVarsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             foreach (string VarName in UESHVariables.Variables.Keys)
             {

@@ -52,7 +52,8 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecution()
         {
             string dummy = "";
-            Should.NotThrow(new Action(() => CommandInstance.Execute("", Array.Empty<string>(), "", Array.Empty<string>(), Array.Empty<string>(), ref dummy)));
+            var parameters = new CommandParameters("", Array.Empty<string>(), "", Array.Empty<string>(), Array.Empty<string>());
+            Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 
         /// <summary>
@@ -63,7 +64,8 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecutionWithArguments()
         {
             string dummy = "";
-            Should.NotThrow(new Action(() => CommandInstance.Execute("Hello World", new[] { "Hello", "World" }, "Hello World", new[] { "Hello", "World" }, Array.Empty<string>(), ref dummy)));
+            var parameters = new CommandParameters("Hello World", new[] { "Hello", "World" }, "Hello World", new[] { "Hello", "World" }, Array.Empty<string>());
+            Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 
         /// <summary>
@@ -74,7 +76,8 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecutionWithSwitches()
         {
             string dummy = "";
-            Should.NotThrow(new Action(() => CommandInstance.Execute("-s", Array.Empty<string>(), "-s", Array.Empty<string>(), new[] { "-s" }, ref dummy)));
+            var parameters = new CommandParameters("-s", Array.Empty<string>(), "-s", Array.Empty<string>(), new[] { "-s" });
+            Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 
         /// <summary>
@@ -85,7 +88,8 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecutionWithArgumentsAndSwitches()
         {
             string dummy = "";
-            Should.NotThrow(new Action(() => CommandInstance.Execute("-s Hello!", new[] { "Hello!" }, "-s Hello!", new[] { "Hello!" }, new[] { "-s" }, ref dummy)));
+            var parameters = new CommandParameters("-s Hello!", new[] { "Hello!" }, "-s Hello!", new[] { "Hello!" }, new[] { "-s" });
+            Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 
     }

@@ -32,12 +32,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class EchoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool parsePlaces = !SwitchManager.ContainsSwitch(ListSwitchesOnly, "-noparse");
-            if (ListSwitchesOnly.Length == 0)
+            bool parsePlaces = !SwitchManager.ContainsSwitch(parameters.SwitchesList, "-noparse");
+            if (parameters.SwitchesList.Length == 0)
                 parsePlaces = true;
-            string result = parsePlaces ? PlaceParse.ProbePlaces(StringArgs) : StringArgs;
+            string result = parsePlaces ? PlaceParse.ProbePlaces(parameters.ArgumentsText) : parameters.ArgumentsText;
             TextWriterColor.Write(result);
             variableValue = result;
             return 0;

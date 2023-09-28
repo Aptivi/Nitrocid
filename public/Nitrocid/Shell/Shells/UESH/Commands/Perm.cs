@@ -39,12 +39,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class PermCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
-            string target = ListArgsOnly[0];
-            string mode = ListArgsOnly[1];
-            string perm = ListArgsOnly[2];
+            string target = parameters.ArgumentsList[0];
+            string mode = parameters.ArgumentsList[1];
+            string perm = parameters.ArgumentsList[2];
 
             if (!Enum.TryParse(typeof(PermissionTypes), perm, out object permission))
             {

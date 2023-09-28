@@ -53,21 +53,21 @@ namespace KS.Shell.Shells.UESH.Commands
     class ZipCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string ZipArchiveName = Filesystem.NeutralizePath(ListArgsOnly[0]);
-            string Destination = Filesystem.NeutralizePath(ListArgsOnly[1]);
+            string ZipArchiveName = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            string Destination = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
             var ZipCompression = CompressionLevel.Optimal;
             bool ZipBaseDir = true;
-            if (ListSwitchesOnly.Contains("-fast"))
+            if (parameters.SwitchesList.Contains("-fast"))
             {
                 ZipCompression = CompressionLevel.Fastest;
             }
-            else if (ListSwitchesOnly.Contains("-nocomp"))
+            else if (parameters.SwitchesList.Contains("-nocomp"))
             {
                 ZipCompression = CompressionLevel.NoCompression;
             }
-            if (ListSwitchesOnly.Contains("-nobasedir"))
+            if (parameters.SwitchesList.Contains("-nobasedir"))
             {
                 ZipBaseDir = false;
             }

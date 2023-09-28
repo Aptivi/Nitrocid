@@ -30,9 +30,9 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_CdlCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            SFTPFilesystem.SFTPChangeLocalDir(ListArgsOnly[0]);
+            SFTPFilesystem.SFTPChangeLocalDir(parameters.ArgumentsList[0]);
             return 0;
         }
     }

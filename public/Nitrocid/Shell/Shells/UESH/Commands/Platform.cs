@@ -34,13 +34,13 @@ namespace KS.Shell.Shells.UESH.Commands
     class PlatformCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowName = (ListSwitchesOnly.Length > 0 && SwitchManager.ContainsSwitch(ListSwitchesOnly, "-n")) || ListSwitchesOnly.Length == 0;
-            bool ShowVersion = ListSwitchesOnly.Length > 0 && SwitchManager.ContainsSwitch(ListSwitchesOnly, "-v");
-            bool ShowBits = ListSwitchesOnly.Length > 0 && SwitchManager.ContainsSwitch(ListSwitchesOnly, "-b");
-            bool ShowCoreClr = ListSwitchesOnly.Length > 0 && SwitchManager.ContainsSwitch(ListSwitchesOnly, "-c");
-            bool ShowRid = ListSwitchesOnly.Length > 0 && SwitchManager.ContainsSwitch(ListSwitchesOnly, "-r");
+            bool ShowName = (parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-n")) || parameters.SwitchesList.Length == 0;
+            bool ShowVersion = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-v");
+            bool ShowBits = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-b");
+            bool ShowCoreClr = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-c");
+            bool ShowRid = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-r");
 
             // Get the platform info according to the provided switches
             if (ShowName)

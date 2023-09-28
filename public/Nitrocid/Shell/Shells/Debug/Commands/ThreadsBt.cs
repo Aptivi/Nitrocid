@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.Debug.Commands
     class Debug_ThreadsBtCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we're running on Windows 8.1 or later
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))
@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.Debug.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we're running on Windows 8.1 or later
             if (KernelPlatform.IsOnWindows() && !OperatingSystem.IsWindowsVersionAtLeast(6, 3))

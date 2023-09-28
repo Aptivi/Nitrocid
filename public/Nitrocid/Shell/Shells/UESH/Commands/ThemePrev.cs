@@ -39,13 +39,13 @@ namespace KS.Shell.Shells.UESH.Commands
     class ThemePrevCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string selectedTheme = ListArgsOnly.Length > 0 ? ListArgsOnly[0] : "";
+            string selectedTheme = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : "";
             string ThemePath;
 
             // Let the user select a theme
-            if (ListArgsOnly.Length == 0)
+            if (parameters.ArgumentsList.Length == 0)
             {
                 // Let the user select a theme
                 List<InputChoiceInfo> themeChoices = new();

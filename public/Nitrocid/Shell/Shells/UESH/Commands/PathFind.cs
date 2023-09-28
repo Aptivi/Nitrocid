@@ -34,10 +34,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class PathFindCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string filePath = "";
-            if (PathLookupTools.FileExistsInPath(ListArgsOnly[0], ref filePath))
+            if (PathLookupTools.FileExistsInPath(parameters.ArgumentsList[0], ref filePath))
             {
                 TextWriterColor.Write(Translate.DoTranslation("File found in path:") + " {0}", true, KernelColorType.Success, filePath);
                 variableValue = filePath;

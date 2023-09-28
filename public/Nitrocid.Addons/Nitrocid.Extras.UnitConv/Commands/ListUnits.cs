@@ -36,10 +36,10 @@ namespace Nitrocid.Extras.UnitConv.Commands
     class ListUnitsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var abbreviations = UnitsNetSetup.Default.UnitAbbreviations;
-            var Quantities = Quantity.Infos.Where(x => x.Name == ListArgsOnly[0]);
+            var Quantities = Quantity.Infos.Where(x => x.Name == parameters.ArgumentsList[0]);
             if (Quantities.Any())
             {
                 TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
@@ -56,7 +56,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("No such unit type:") + " {0}", true, KernelColorType.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("No such unit type:") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 3;
             }
         }

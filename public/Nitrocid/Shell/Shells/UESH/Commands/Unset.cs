@@ -31,12 +31,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class UnsetCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool destructive = !SwitchManager.ContainsSwitch(ListSwitchesOnly, "-justwipe");
-            UESHVariables.SetVariable(ListArgsOnly[0], "");
+            bool destructive = !SwitchManager.ContainsSwitch(parameters.SwitchesList, "-justwipe");
+            UESHVariables.SetVariable(parameters.ArgumentsList[0], "");
             if (destructive)
-                UESHVariables.RemoveVariable(ListArgsOnly[0]);
+                UESHVariables.RemoveVariable(parameters.ArgumentsList[0]);
             return 0;
         }
     }

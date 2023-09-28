@@ -37,13 +37,13 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_DelCharNumCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (TextTools.IsStringNumeric(ListArgsOnly[1]) & TextTools.IsStringNumeric(ListArgsOnly[0]))
+            if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
-                if (Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
-                    TextEditTools.TextEdit_DeleteChar(Convert.ToInt32(ListArgsOnly[0]), Convert.ToInt32(ListArgsOnly[1]));
+                    TextEditTools.TextEdit_DeleteChar(Convert.ToInt32(parameters.ArgumentsList[0]), Convert.ToInt32(parameters.ArgumentsList[1]));
                     TextWriterColor.Write(Translate.DoTranslation("Character deleted."), true, KernelColorType.Success);
                     return 0;
                 }
@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.Text.Commands
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("One or both of the numbers are not numeric."), true, KernelColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", ListArgsOnly[0], ListArgsOnly[1]);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} and {1} are not numeric values.", parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 return 10000 + (int)KernelExceptionType.TextEditor;
             }
         }

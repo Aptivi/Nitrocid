@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_CurrAgentCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string currentUa = HTTPTools.HttpGetCurrentUserAgent();
             TextWriterColor.Write(currentUa);

@@ -37,13 +37,13 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_DelByteCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (TextTools.IsStringNumeric(ListArgsOnly[0]))
+            if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
-                if (Convert.ToInt32(ListArgsOnly[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                if (Convert.ToInt32(parameters.ArgumentsList[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    HexEditTools.HexEdit_DeleteByte(Convert.ToInt64(ListArgsOnly[0]));
+                    HexEditTools.HexEdit_DeleteByte(Convert.ToInt64(parameters.ArgumentsList[0]));
                     TextWriterColor.Write(Translate.DoTranslation("Byte deleted."), true, KernelColorType.Success);
                     return 0;
                 }
@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.Hex.Commands
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.HexEditor;
             }
         }

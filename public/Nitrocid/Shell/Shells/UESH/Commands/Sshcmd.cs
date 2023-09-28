@@ -33,18 +33,18 @@ namespace KS.Shell.Shells.UESH.Commands
     class SshcmdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var AddressDelimiter = ListArgsOnly[0].Split(':');
+            var AddressDelimiter = parameters.ArgumentsList[0].Split(':');
             string Address = AddressDelimiter[0];
             if (AddressDelimiter.Length > 1)
             {
                 int Port = Convert.ToInt32(AddressDelimiter[1]);
-                SSHTools.InitializeSSH(Address, Port, ListArgsOnly[1], SSHTools.ConnectionType.Command, ListArgsOnly[2]);
+                SSHTools.InitializeSSH(Address, Port, parameters.ArgumentsList[1], SSHTools.ConnectionType.Command, parameters.ArgumentsList[2]);
             }
             else
             {
-                SSHTools.InitializeSSH(Address, 22, ListArgsOnly[1], SSHTools.ConnectionType.Command, ListArgsOnly[2]);
+                SSHTools.InitializeSSH(Address, 22, parameters.ArgumentsList[1], SSHTools.ConnectionType.Command, parameters.ArgumentsList[2]);
             }
             return 0;
         }

@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_StageCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var status = GitShellCommon.Repository.RetrieveStatus();
 
@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             }
 
             // Stage all unstaged changes...
-            var modified = status.Modified.Single((se) => se.FilePath == ListArgsOnly[0]);
+            var modified = status.Modified.Single((se) => se.FilePath == parameters.ArgumentsList[0]);
             try
             {
                 GitCommand.Stage(GitShellCommon.Repository, modified.FilePath);

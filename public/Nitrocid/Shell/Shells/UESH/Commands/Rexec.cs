@@ -33,15 +33,15 @@ namespace KS.Shell.Shells.UESH.Commands
     class RexecCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly.Length == 2)
+            if (parameters.ArgumentsList.Length == 2)
             {
-                RPCCommands.SendCommand("<Request:Exec>(" + ListArgsOnly[1] + ")", ListArgsOnly[0]);
+                RPCCommands.SendCommand("<Request:Exec>(" + parameters.ArgumentsList[1] + ")", parameters.ArgumentsList[0]);
             }
             else
             {
-                RPCCommands.SendCommand("<Request:Exec>(" + ListArgsOnly[2] + ")", ListArgsOnly[0], Convert.ToInt32(ListArgsOnly[1]));
+                RPCCommands.SendCommand("<Request:Exec>(" + parameters.ArgumentsList[2] + ")", parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
             }
             return 0;
         }

@@ -33,10 +33,10 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_FindPropertyCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string parent = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-parentProperty");
-            var token = JsonTools.JsonShell_GetPropertySafe(parent, ListArgsOnly[0]);
+            string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
+            var token = JsonTools.JsonShell_GetPropertySafe(parent, parameters.ArgumentsList[0]);
             if (token != null)
                 TextWriterColor.Write(Translate.DoTranslation("Property is found in") + $" {token.Path}");
             else

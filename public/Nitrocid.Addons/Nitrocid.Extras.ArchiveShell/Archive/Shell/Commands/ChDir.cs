@@ -33,11 +33,11 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     class ArchiveShell_ChDirCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (!ArchiveTools.ChangeWorkingArchiveLocalDirectory(ListArgsOnly[0]))
+            if (!ArchiveTools.ChangeWorkingArchiveLocalDirectory(parameters.ArgumentsList[0]))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Directory {0} doesn't exist"), true, KernelColorType.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Directory {0} doesn't exist"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.Archive;
             }
             return 0;

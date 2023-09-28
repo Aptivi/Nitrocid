@@ -35,12 +35,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class BulkRenameCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            string targetDir = ListArgsOnly[0];
-            string pattern = ListArgsOnly[1];
-            string newName = ListArgsOnly[2];
+            string targetDir = parameters.ArgumentsList[0];
+            string pattern = parameters.ArgumentsList[1];
+            string newName = parameters.ArgumentsList[2];
 
             // Get the list of files from the pattern
             var files = Listing.GetFilesystemEntries(targetDir, pattern);

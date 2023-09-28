@@ -27,10 +27,10 @@ namespace KS.Shell.Shells.Admin.Commands
     class UserLangCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string userName = ListArgsOnly[0];
-            string lang = ListArgsOnly[1];
+            string userName = parameters.ArgumentsList[0];
+            string lang = parameters.ArgumentsList[1];
             int userIndex = UserManagement.GetUserIndex(userName);
             if (lang == "clear")
             {

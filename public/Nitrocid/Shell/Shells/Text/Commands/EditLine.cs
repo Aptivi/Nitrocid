@@ -37,11 +37,11 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_EditLineCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (TextTools.IsStringNumeric(ListArgsOnly[0]))
+            if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
-                int lineNum = Convert.ToInt32(ListArgsOnly[0]);
+                int lineNum = Convert.ToInt32(parameters.ArgumentsList[0]);
                 if (lineNum <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     string OriginalLine = TextEditShellCommon.TextEdit_FileLines[lineNum - 1];
@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.Text.Commands
             else
             {
                 TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error);
-                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.TextEditor;
             }
         }

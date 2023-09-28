@@ -37,21 +37,21 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_PrintCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             int LineNumber = 1;
-            if (ListArgsOnly.Length > 0)
+            if (parameters.ArgumentsList.Length > 0)
             {
-                if (ListArgsOnly.Length == 1)
+                if (parameters.ArgumentsList.Length == 1)
                 {
                     // We've only provided one line number
-                    DebugWriter.WriteDebug(DebugLevel.I, "Line number provided: {0}", ListArgsOnly[0]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]));
-                    if (TextTools.IsStringNumeric(ListArgsOnly[0]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line number provided: {0}", parameters.ArgumentsList[0]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(parameters.ArgumentsList[0]));
+                    if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                     {
-                        LineNumber = Convert.ToInt32(ListArgsOnly[0]);
+                        LineNumber = Convert.ToInt32(parameters.ArgumentsList[0]);
                         DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                        if (Convert.ToInt32(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                        if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                         {
                             string Line = TextEditShellCommon.TextEdit_FileLines[LineNumber - 1];
                             DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
@@ -67,20 +67,20 @@ namespace KS.Shell.Shells.Text.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[0]);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }
                 else
                 {
                     // We've provided two line numbers in the range
-                    DebugWriter.WriteDebug(DebugLevel.I, "Line numbers provided: {0}, {1}", ListArgsOnly[0], ListArgsOnly[1]);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(ListArgsOnly[0]), TextTools.IsStringNumeric(ListArgsOnly[1]));
-                    if (TextTools.IsStringNumeric(ListArgsOnly[0]) & TextTools.IsStringNumeric(ListArgsOnly[1]))
+                    DebugWriter.WriteDebug(DebugLevel.I, "Line numbers provided: {0}, {1}", parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Is it numeric? {0}", TextTools.IsStringNumeric(parameters.ArgumentsList[0]), TextTools.IsStringNumeric(parameters.ArgumentsList[1]));
+                    if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                     {
-                        int LineNumberStart = Convert.ToInt32(ListArgsOnly[0]);
-                        int LineNumberEnd = Convert.ToInt32(ListArgsOnly[1]);
+                        int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[0]);
+                        int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[1]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
                         if (LineNumberStart <= TextEditShellCommon.TextEdit_FileLines.Count & LineNumberEnd <= TextEditShellCommon.TextEdit_FileLines.Count)
@@ -102,8 +102,8 @@ namespace KS.Shell.Shells.Text.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[0]);
-                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                        TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                        DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                         return 10000 + (int)KernelExceptionType.TextEditor;
                     }
                 }

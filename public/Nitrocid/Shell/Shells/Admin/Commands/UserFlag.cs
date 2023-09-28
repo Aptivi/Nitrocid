@@ -27,11 +27,11 @@ namespace KS.Shell.Shells.Admin.Commands
     class UserFlagCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string userName = ListArgsOnly[0];
-            string type = ListArgsOnly[1];
-            bool enabled = bool.Parse(ListArgsOnly[2]);
+            string userName = parameters.ArgumentsList[0];
+            string type = parameters.ArgumentsList[1];
+            bool enabled = bool.Parse(parameters.ArgumentsList[2]);
             int userIndex = UserManagement.GetUserIndex(userName);
             var flags = UserManagement.Users[userIndex].Flags;
             switch (type)

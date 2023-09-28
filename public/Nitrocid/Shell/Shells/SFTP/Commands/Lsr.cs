@@ -51,13 +51,13 @@ namespace KS.Shell.Shells.SFTP.Commands
     class SFTP_LsrCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || SFTPShellCommon.SFTPShowDetailsInList;
+            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || SFTPShellCommon.SFTPShowDetailsInList;
             var Entries = new List<string>();
-            if (!(ListArgsOnly.Length == 0))
+            if (!(parameters.ArgumentsList.Length == 0))
             {
-                foreach (string TargetDirectory in ListArgsOnly)
+                foreach (string TargetDirectory in parameters.ArgumentsList)
                     Entries = SFTPFilesystem.SFTPListRemote(TargetDirectory, ShowFileDetails);
             }
             else

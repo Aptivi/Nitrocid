@@ -35,12 +35,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChkLockCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string path = ListArgsOnly[0];
+            string path = parameters.ArgumentsList[0];
             bool locked = Filesystem.IsLocked(path);
-            bool waitForUnlock = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-waitforunlock");
-            string waitForUnlockMsStr = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-waitforunlock");
+            bool waitForUnlock = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-waitforunlock");
+            string waitForUnlockMsStr = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-waitforunlock");
             bool waitForUnlockTimed = !string.IsNullOrEmpty(waitForUnlockMsStr);
             int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;
             if (locked)

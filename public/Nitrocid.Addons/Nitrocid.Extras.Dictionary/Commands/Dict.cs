@@ -36,9 +36,9 @@ namespace Nitrocid.Extras.Dictionary.Commands
     class DictCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var Words = GetWordInfo(ListArgsOnly[0]);
+            var Words = GetWordInfo(parameters.ArgumentsList[0]);
 
             // Iterate for each word
             foreach (DictionaryWord Word in Words)
@@ -48,12 +48,12 @@ namespace Nitrocid.Extras.Dictionary.Commands
                 TextWriterColor.Write("dictionaryapi.dev " + Translate.DoTranslation("API is licensed under") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}");
 
                 // Now, we can write the word information
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word information for") + $" {ListArgsOnly[0]}", true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word information for") + $" {parameters.ArgumentsList[0]}", true);
                 TextWriterColor.Write(Translate.DoTranslation("Word:"), false, KernelColorType.ListEntry);
                 TextWriterColor.Write($" {Word.Word}", true, KernelColorType.ListValue);
 
                 // Meanings...
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word meanings for") + $" {ListArgsOnly[0]}", true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word meanings for") + $" {parameters.ArgumentsList[0]}", true);
                 foreach (DictionaryWord.Meaning MeaningBase in Word.Meanings)
                 {
                     // Base part of speech
@@ -100,15 +100,15 @@ namespace Nitrocid.Extras.Dictionary.Commands
                 }
 
                 // Sources...
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Sources used to define") + $" {ListArgsOnly[0]}", true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Sources used to define") + $" {parameters.ArgumentsList[0]}", true);
                 ListWriterColor.WriteList(Word.SourceUrls);
             }
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
-            var Words = GetWordInfo(ListArgsOnly[0]);
+            var Words = GetWordInfo(parameters.ArgumentsList[0]);
 
             // Iterate for each word
             foreach (DictionaryWord Word in Words)
@@ -118,12 +118,12 @@ namespace Nitrocid.Extras.Dictionary.Commands
                 TextWriterColor.Write("dictionaryapi.dev " + Translate.DoTranslation("API is licensed under") + $" {Word.LicenseInfo.Name}: {Word.LicenseInfo.Url}");
 
                 // Now, we can write the word information
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word information for") + $" {ListArgsOnly[0]}", true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word information for") + $" {parameters.ArgumentsList[0]}", true);
                 TextWriterColor.Write(Translate.DoTranslation("Word:"), false, KernelColorType.ListEntry);
                 TextWriterColor.Write($" {Word.Word}", true, KernelColorType.ListValue);
 
                 // Meanings...
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word meanings for") + $" {ListArgsOnly[0]}", true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word meanings for") + $" {parameters.ArgumentsList[0]}", true);
                 foreach (DictionaryWord.Meaning MeaningBase in Word.Meanings)
                 {
                     // Base part of speech
@@ -174,7 +174,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                 }
 
                 // Sources...
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Sources used to define") + $" {ListArgsOnly[0]}", true);
+                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Sources used to define") + $" {parameters.ArgumentsList[0]}", true);
                 foreach (string source in Word.SourceUrls)
                     TextWriterColor.Write(source);
             }

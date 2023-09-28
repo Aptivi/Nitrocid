@@ -37,9 +37,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class ModManualCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string modName = ListArgsOnly[0];
+            string modName = parameters.ArgumentsList[0];
             if (!ModManager.Mods.ContainsKey(modName))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);

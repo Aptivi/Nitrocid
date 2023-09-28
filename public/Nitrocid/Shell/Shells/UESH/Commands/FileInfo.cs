@@ -43,9 +43,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class FileInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            foreach (string FileName in ListArgsOnly)
+            foreach (string FileName in parameters.ArgumentsList)
             {
                 string FilePath = Filesystem.NeutralizePath(FileName);
                 DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, Checking.FileExists(FilePath));

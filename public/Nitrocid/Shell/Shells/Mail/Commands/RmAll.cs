@@ -34,16 +34,16 @@ namespace KS.Shell.Shells.Mail.Commands
     class Mail_RmAllCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (MailManager.MailRemoveAllBySender(ListArgsOnly[0]))
+            if (MailManager.MailRemoveAllBySender(parameters.ArgumentsList[0]))
             {
-                TextWriterColor.Write(Translate.DoTranslation("All mail made by {0} are removed successfully."), true, KernelColorType.Success, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("All mail made by {0} are removed successfully."), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Failed to remove all mail made by {0}."), true, KernelColorType.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Failed to remove all mail made by {0}."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.Mail;
             }
         }

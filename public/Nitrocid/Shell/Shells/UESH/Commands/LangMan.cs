@@ -39,11 +39,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class LangManCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             if (!KernelFlags.SafeMode)
             {
-                string CommandMode = ListArgsOnly[0].ToLower();
+                string CommandMode = parameters.ArgumentsList[0].ToLower();
                 string TargetLanguage = "";
                 string TargetLanguagePath = "";
                 string LanguageListTerm = "";
@@ -55,9 +55,9 @@ namespace KS.Shell.Shells.UESH.Commands
                     case "load":
                     case "unload":
                         {
-                            if (ListArgsOnly.Length > 1)
+                            if (parameters.ArgumentsList.Length > 1)
                             {
-                                TargetLanguage = ListArgsOnly[1];
+                                TargetLanguage = parameters.ArgumentsList[1];
                                 TargetLanguagePath = Filesystem.NeutralizePath(TargetLanguage + ".json", Paths.GetKernelPath(KernelPathType.CustomLanguages));
                                 if (!(Parsing.TryParsePath(TargetLanguagePath) && Checking.FileExists(TargetLanguagePath)) & !LanguageManager.Languages.ContainsKey(TargetLanguage))
                                 {
@@ -75,9 +75,9 @@ namespace KS.Shell.Shells.UESH.Commands
                         }
                     case "list":
                         {
-                            if (ListArgsOnly.Length > 1)
+                            if (parameters.ArgumentsList.Length > 1)
                             {
-                                LanguageListTerm = ListArgsOnly[1];
+                                LanguageListTerm = parameters.ArgumentsList[1];
                             }
 
                             break;

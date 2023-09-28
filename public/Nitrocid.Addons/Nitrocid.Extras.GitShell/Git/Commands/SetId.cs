@@ -32,10 +32,10 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_SetIdCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            GitShellCommon.email = ListArgsOnly[0];
-            GitShellCommon.name = ListArgsOnly[1];
+            GitShellCommon.email = parameters.ArgumentsList[0];
+            GitShellCommon.name = parameters.ArgumentsList[1];
             GitShellCommon.isIdentified = true;
             TextWriterColor.Write(Translate.DoTranslation("You've successfully identified yourself as") + $": {GitShellCommon.name} <{GitShellCommon.email}>", true, KernelColorType.Success);
             return 0;

@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class ThemeSelCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string answer = "";
             string selectedTheme = "";
@@ -50,8 +50,8 @@ namespace KS.Shell.Shells.UESH.Commands
             while (answer != "y")
             {
                 // Selected theme null for now
-                selectedTheme = ListArgsOnly.Length > 0 ? ListArgsOnly[0] : "";
-                if (ListArgsOnly.Length == 0)
+                selectedTheme = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : "";
+                if (parameters.ArgumentsList.Length == 0)
                 {
                     // Let the user select a theme
                     List<InputChoiceInfo> themeChoices = new();

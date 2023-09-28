@@ -25,11 +25,11 @@ namespace Nitrocid.Extras.Amusements.Commands
     class HangmanCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var difficulty =
-                SwitchManager.ContainsSwitch(ListSwitchesOnly, "-hardcore") ? HangmanDifficulty.Hardcore :
-                SwitchManager.ContainsSwitch(ListSwitchesOnly, "-practice") ? HangmanDifficulty.Practice :
+                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hardcore") ? HangmanDifficulty.Hardcore :
+                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-practice") ? HangmanDifficulty.Practice :
                 HangmanDifficulty.None;
             Hangman.InitializeHangman(difficulty);
             return 0;

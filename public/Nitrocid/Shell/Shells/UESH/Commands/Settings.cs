@@ -60,14 +60,14 @@ namespace KS.Shell.Shells.UESH.Commands
     class SettingsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var SettingsType = ConfigType.Kernel;
-            if (ListSwitchesOnly.Length > 0)
+            if (parameters.SwitchesList.Length > 0)
             {
-                if (ListSwitchesOnly[0] == "-saver")
+                if (parameters.SwitchesList[0] == "-saver")
                     SettingsType = ConfigType.Screensaver;
-                if (ListSwitchesOnly[0] == "-splash")
+                if (parameters.SwitchesList[0] == "-splash")
                     SettingsType = ConfigType.Splash;
             }
             SettingsApp.OpenMainPage(SettingsType);

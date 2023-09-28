@@ -38,13 +38,13 @@ namespace KS.Shell.Shells.UESH.Commands
     class IfCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             try
             {
-                if (UESHConditional.ConditionSatisfied(ListArgsOnly[0]))
+                if (UESHConditional.ConditionSatisfied(parameters.ArgumentsList[0]))
                 {
-                    string CommandString = string.Join(" ", ListArgsOnly.Skip(1).ToArray());
+                    string CommandString = string.Join(" ", parameters.ArgumentsList.Skip(1).ToArray());
                     var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
                     if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                     {

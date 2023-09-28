@@ -33,10 +33,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class SaveScreenCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (!(ListArgsOnly.Length == 0))
-                ScreensaverManager.ShowSavers(ListArgsOnly[0]);
+            if (!(parameters.ArgumentsList.Length == 0))
+                ScreensaverManager.ShowSavers(parameters.ArgumentsList[0]);
             else
                 ScreensaverManager.ShowSavers();
             if (ScreensaverManager.inSaver)

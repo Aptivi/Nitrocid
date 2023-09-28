@@ -28,14 +28,14 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_PostStringCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriterColor.Write(Translate.DoTranslation("Posting string to {0}..."), true, KernelColorType.Progress, ListArgsOnly[1]);
+            TextWriterColor.Write(Translate.DoTranslation("Posting string to {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[1]);
 
             try
             {
-                var ResponseTask = HTTPTools.HttpPostString(ListArgsOnly[0], ListArgsOnly[1]);
+                var ResponseTask = HTTPTools.HttpPostString(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
                 ResponseTask.Wait();
                 var Response = ResponseTask.Result;
                 string ResponseContent = Response.Content.ReadAsStringAsync().Result;

@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_LsHeaderCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var headers = HTTPTools.HttpListHeaders();
             foreach (var header in headers)

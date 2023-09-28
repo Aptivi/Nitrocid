@@ -30,11 +30,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class LintScriptCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             try
             {
-                string pathToScript = Filesystem.NeutralizePath(ListArgsOnly[0]);
+                string pathToScript = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
                 UESHParse.Execute(pathToScript, "", true);
                 TextWriterColor.Write(Translate.DoTranslation("Script lint succeeded."), true, KernelColorType.Success);
                 variableValue = "1";

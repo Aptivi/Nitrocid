@@ -31,17 +31,17 @@ namespace KS.Shell.Shells.UESH.Commands
     class ShutdownCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (!(ListArgsOnly.Length == 0))
+            if (!(parameters.ArgumentsList.Length == 0))
             {
-                if (ListArgsOnly.Length == 1)
+                if (parameters.ArgumentsList.Length == 1)
                 {
-                    PowerManager.PowerManage(PowerMode.RemoteShutdown, ListArgsOnly[0]);
+                    PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0]);
                 }
                 else
                 {
-                    PowerManager.PowerManage(PowerMode.RemoteShutdown, ListArgsOnly[0], Convert.ToInt32(ListArgsOnly[1]));
+                    PowerManager.PowerManage(PowerMode.RemoteShutdown, parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
                 }
             }
             else

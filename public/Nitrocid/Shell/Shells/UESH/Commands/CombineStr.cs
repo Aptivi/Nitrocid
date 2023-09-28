@@ -32,10 +32,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class CombineStrCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string InputPath = ListArgsOnly[0];
-            var CombineInputPaths = ListArgsOnly.Skip(1).ToArray();
+            string InputPath = parameters.ArgumentsList[0];
+            var CombineInputPaths = parameters.ArgumentsList.Skip(1).ToArray();
 
             // Make a combined content array
             var CombinedContents = Combination.CombineTextFiles(InputPath, CombineInputPaths);

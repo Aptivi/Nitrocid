@@ -30,9 +30,9 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_AddLineCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextEditTools.TextEdit_AddNewLine(StringArgs);
+            TextEditTools.TextEdit_AddNewLine(parameters.ArgumentsText);
             return 0;
         }
     }

@@ -41,11 +41,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class PingCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // If the pinged address is actually a number of times
             int PingTimes = 4;
-            string projectedTimes = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-times");
+            string projectedTimes = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-times");
             if (TextTools.IsStringNumeric(projectedTimes))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Projected times {0} is numeric.", projectedTimes);
@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
 
             // Now, ping the specified addresses
-            foreach (string PingedAddress in ListArgsOnly)
+            foreach (string PingedAddress in parameters.ArgumentsList)
             {
                 if (!string.IsNullOrEmpty(PingedAddress))
                 {

@@ -39,25 +39,25 @@ namespace KS.Shell.Shells.UESH.Commands
     class SetSaverCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string modPath = Paths.GetKernelPath(KernelPathType.Mods);
-            StringArgs = StringArgs.ToLower();
-            if (ScreensaverManager.Screensavers.ContainsKey(StringArgs) | ScreensaverManager.CustomSavers.ContainsKey(StringArgs))
+            string finalSaverName = parameters.ArgumentsText.ToLower();
+            if (ScreensaverManager.Screensavers.ContainsKey(finalSaverName) | ScreensaverManager.CustomSavers.ContainsKey(finalSaverName))
             {
-                ScreensaverManager.SetDefaultScreensaver(StringArgs);
-                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), StringArgs);
+                ScreensaverManager.SetDefaultScreensaver(finalSaverName);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), finalSaverName);
                 return 0;
             }
-            else if (Checking.FileExists($"{modPath}{StringArgs}") & !KernelFlags.SafeMode)
+            else if (Checking.FileExists($"{modPath}{finalSaverName}") & !KernelFlags.SafeMode)
             {
-                ScreensaverManager.SetDefaultScreensaver(StringArgs);
-                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), StringArgs);
+                ScreensaverManager.SetDefaultScreensaver(finalSaverName);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is set to default screensaver."), finalSaverName);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, StringArgs);
+                TextWriterColor.Write(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, finalSaverName);
                 return 10000 + (int)KernelExceptionType.NoSuchScreensaver;
             }
         }

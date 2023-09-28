@@ -37,14 +37,14 @@ namespace KS.Shell.Shells.UESH.Commands
     class FindCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string FileToSearch = ListArgsOnly[0];
+            string FileToSearch = parameters.ArgumentsList[0];
             string DirectoryToSearch = CurrentDirectory.CurrentDir;
-            bool isRecursive = ListSwitchesOnly.Contains("-recursive");
-            string command = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-exec").ReleaseDoubleQuotes();
-            if (ListArgsOnly.Length > 1)
-                DirectoryToSearch = Filesystem.NeutralizePath(ListArgsOnly[1]);
+            bool isRecursive = parameters.SwitchesList.Contains("-recursive");
+            string command = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-exec").ReleaseDoubleQuotes();
+            if (parameters.ArgumentsList.Length > 1)
+                DirectoryToSearch = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
 
             // Print the results if found
             var FileEntries = Listing.GetFilesystemEntries(DirectoryToSearch, FileToSearch, isRecursive);

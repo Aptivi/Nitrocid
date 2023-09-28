@@ -54,18 +54,18 @@ namespace KS.Shell.Shells.UESH.Commands
     class ListCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = ListSwitchesOnly.Contains("-suppressmessages") || KernelFlags.SuppressUnauthorizedMessages;
-            bool Recursive = ListSwitchesOnly.Contains("-recursive");
-            if (ListArgsOnly.Length == 0)
+            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Listing.ShowFileDetailsList;
+            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || KernelFlags.SuppressUnauthorizedMessages;
+            bool Recursive = parameters.SwitchesList.Contains("-recursive");
+            if (parameters.ArgumentsList.Length == 0)
             {
                 Listing.List(CurrentDirectory.CurrentDir, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
             }
             else
             {
-                foreach (string Directory in ListArgsOnly)
+                foreach (string Directory in parameters.ArgumentsList)
                 {
                     string direct = Filesystem.NeutralizePath(Directory);
                     Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);

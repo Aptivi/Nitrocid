@@ -25,13 +25,13 @@ namespace Nitrocid.Extras.Notes.Commands
     internal class ListNotes : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             ListWriterColor.WriteList(NoteManagement.notes);
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
             for (int i = 0; i < NoteManagement.notes.Count; i++)
             {

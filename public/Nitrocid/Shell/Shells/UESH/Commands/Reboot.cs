@@ -34,23 +34,23 @@ namespace KS.Shell.Shells.UESH.Commands
     class RebootCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (!(ListArgsOnly.Length == 0))
+            if (!(parameters.ArgumentsList.Length == 0))
             {
-                if (ListArgsOnly[0] == "safe")
+                if (parameters.ArgumentsList[0] == "safe")
                 {
                     PowerManager.PowerManage(PowerMode.RebootSafe);
                 }
-                else if (!string.IsNullOrEmpty(ListArgsOnly[0]))
+                else if (!string.IsNullOrEmpty(parameters.ArgumentsList[0]))
                 {
-                    if (ListArgsOnly.Length > 1)
+                    if (parameters.ArgumentsList.Length > 1)
                     {
-                        PowerManager.PowerManage(PowerMode.RemoteRestart, ListArgsOnly[0], Convert.ToInt32(ListArgsOnly[1]));
+                        PowerManager.PowerManage(PowerMode.RemoteRestart, parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
                     }
                     else
                     {
-                        PowerManager.PowerManage(PowerMode.RemoteRestart, ListArgsOnly[0]);
+                        PowerManager.PowerManage(PowerMode.RemoteRestart, parameters.ArgumentsList[0]);
                     }
                 }
                 else

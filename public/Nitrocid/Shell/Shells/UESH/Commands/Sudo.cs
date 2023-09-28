@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class SudoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool sudoDone = false;
             string currentUsername = UserManagement.CurrentUser.Username;
@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         var CommandThread = new KernelThread($"Sudo Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
                         ShellStart.ShellStack[^1].AltCommandThreads.Add(CommandThread);
                     }
-                    ShellManager.GetLine(StringArgs);
+                    ShellManager.GetLine(parameters.ArgumentsText);
                 }
                 else
                     return 10000 + (int)KernelExceptionType.ShellOperation;
@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
             catch (Exception ex)
             {
                 failed = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "Executing command {0} as superuser failed: {1}", StringArgs, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Executing command {0} as superuser failed: {1}", parameters.ArgumentsText, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Failed to execute the command as superuser.") + $" {ex.Message}");
             }

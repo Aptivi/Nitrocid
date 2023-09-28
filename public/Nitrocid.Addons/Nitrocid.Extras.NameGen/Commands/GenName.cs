@@ -42,25 +42,25 @@ namespace Nitrocid.Extras.NameGen.Commands
     class GenNameCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             int NamesCount = 10;
             string NamePrefix = "";
             string NameSuffix = "";
             string SurnamePrefix = "";
             string SurnameSuffix = "";
-            bool nametags = ListSwitchesOnly.Contains("-t");
+            bool nametags = parameters.SwitchesList.Contains("-t");
             string[] NamesList;
-            if (ListArgsOnly.Length >= 1)
-                NamesCount = int.Parse(ListArgsOnly[0]);
-            if (ListArgsOnly.Length >= 2)
-                NamePrefix = ListArgsOnly[1];
-            if (ListArgsOnly.Length >= 3)
-                NameSuffix = ListArgsOnly[2];
-            if (ListArgsOnly.Length >= 4)
-                SurnamePrefix = ListArgsOnly[3];
-            if (ListArgsOnly.Length >= 5)
-                SurnameSuffix = ListArgsOnly[4];
+            if (parameters.ArgumentsList.Length >= 1)
+                NamesCount = int.Parse(parameters.ArgumentsList[0]);
+            if (parameters.ArgumentsList.Length >= 2)
+                NamePrefix = parameters.ArgumentsList[1];
+            if (parameters.ArgumentsList.Length >= 3)
+                NameSuffix = parameters.ArgumentsList[2];
+            if (parameters.ArgumentsList.Length >= 4)
+                SurnamePrefix = parameters.ArgumentsList[3];
+            if (parameters.ArgumentsList.Length >= 5)
+                SurnameSuffix = parameters.ArgumentsList[4];
 
             // Generate n names
             PopulateNames();

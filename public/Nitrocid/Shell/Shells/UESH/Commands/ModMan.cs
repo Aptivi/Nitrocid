@@ -42,12 +42,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class ModManCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             if (!KernelFlags.SafeMode)
             {
                 PermissionsTools.Demand(PermissionTypes.ManageMods);
-                string CommandMode = ListArgsOnly[0].ToLower();
+                string CommandMode = parameters.ArgumentsList[0].ToLower();
                 string TargetMod = "";
                 string TargetModPath = "";
                 string ModListTerm = "";
@@ -62,9 +62,9 @@ namespace KS.Shell.Shells.UESH.Commands
                     case "install":
                     case "uninstall":
                         {
-                            if (ListArgsOnly.Length > 1)
+                            if (parameters.ArgumentsList.Length > 1)
                             {
-                                TargetMod = ListArgsOnly[1];
+                                TargetMod = parameters.ArgumentsList[1];
                                 TargetModPath = Filesystem.NeutralizePath(TargetMod, Paths.GetKernelPath(KernelPathType.Mods));
                                 if (!(Parsing.TryParsePath(TargetModPath) && Checking.FileExists(TargetModPath)))
                                 {
@@ -83,9 +83,9 @@ namespace KS.Shell.Shells.UESH.Commands
                     case "list":
                     case "listparts":
                         {
-                            if (ListArgsOnly.Length > 1)
+                            if (parameters.ArgumentsList.Length > 1)
                             {
-                                ModListTerm = ListArgsOnly[1];
+                                ModListTerm = parameters.ArgumentsList[1];
                             }
 
                             break;

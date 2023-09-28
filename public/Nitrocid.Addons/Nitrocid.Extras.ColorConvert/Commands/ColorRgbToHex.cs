@@ -33,22 +33,22 @@ namespace Nitrocid.Extras.ColorConvert.Commands
     class ColorRgbToHexCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string Hex;
 
             // Check to see if we have the numeric arguments
-            if (!int.TryParse(ListArgsOnly[0], out int R))
+            if (!int.TryParse(parameters.ArgumentsList[0], out int R))
             {
                 TextWriterColor.Write(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!int.TryParse(ListArgsOnly[1], out int G))
+            if (!int.TryParse(parameters.ArgumentsList[1], out int G))
             {
                 TextWriterColor.Write(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!int.TryParse(ListArgsOnly[2], out int B))
+            if (!int.TryParse(parameters.ArgumentsList[2], out int B))
             {
                 TextWriterColor.Write(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;

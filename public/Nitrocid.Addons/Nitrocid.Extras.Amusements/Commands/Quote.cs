@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.Amusements.Commands
     class QuoteCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(RandomQuotes.RenderQuote());
             return 0;

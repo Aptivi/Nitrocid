@@ -51,13 +51,13 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_LsrCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool ShowFileDetails = ListSwitchesOnly.Contains("-showdetails") || FTPShellCommon.FtpShowDetailsInList;
+            bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || FTPShellCommon.FtpShowDetailsInList;
             var Entries = new List<string>();
-            if (!(ListArgsOnly.Length == 0))
+            if (!(parameters.ArgumentsList.Length == 0))
             {
-                foreach (string TargetDirectory in ListArgsOnly)
+                foreach (string TargetDirectory in parameters.ArgumentsList)
                     Entries = FTPFilesystem.FTPListRemote(TargetDirectory, ShowFileDetails);
             }
             else

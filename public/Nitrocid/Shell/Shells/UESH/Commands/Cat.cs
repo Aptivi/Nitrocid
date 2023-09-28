@@ -52,20 +52,20 @@ namespace KS.Shell.Shells.UESH.Commands
     class CatCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             try
             {
                 bool PrintLines = KernelFlags.PrintLineNumbers;
                 bool ForcePlain = false;
-                if (ListSwitchesOnly.Contains("-lines"))
+                if (parameters.SwitchesList.Contains("-lines"))
                     PrintLines = true;
-                if (ListSwitchesOnly.Contains("-nolines"))
+                if (parameters.SwitchesList.Contains("-nolines"))
                     // -lines and -nolines cancel together.
                     PrintLines = false; 
-                if (ListSwitchesOnly.Contains("-plain"))
+                if (parameters.SwitchesList.Contains("-plain"))
                     ForcePlain = true;
-                FileContentPrinter.PrintContents(ListArgsOnly[0], PrintLines, ForcePlain);
+                FileContentPrinter.PrintContents(parameters.ArgumentsList[0], PrintLines, ForcePlain);
                 return 0;
             }
             catch (Exception ex)

@@ -61,22 +61,22 @@ namespace Nitrocid.Extras.Amusements.Commands
     class SpeedPressCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
             int CustomTimeout = SpeedPress.SpeedPressTimeout;
-            if (ListSwitchesOnly.Contains("-e"))
+            if (parameters.SwitchesList.Contains("-e"))
                 Difficulty = SpeedPress.SpeedPressDifficulty.Easy;
-            if (ListSwitchesOnly.Contains("-m"))
+            if (parameters.SwitchesList.Contains("-m"))
                 Difficulty = SpeedPress.SpeedPressDifficulty.Medium;
-            if (ListSwitchesOnly.Contains("-h"))
+            if (parameters.SwitchesList.Contains("-h"))
                 Difficulty = SpeedPress.SpeedPressDifficulty.Hard;
-            if (ListSwitchesOnly.Contains("-v"))
+            if (parameters.SwitchesList.Contains("-v"))
                 Difficulty = SpeedPress.SpeedPressDifficulty.VeryHard;
-            if (ListSwitchesOnly.Contains("-c") & ListArgsOnly.Length > 0 && TextTools.IsStringNumeric(ListArgsOnly[0]))
+            if (parameters.SwitchesList.Contains("-c") & parameters.ArgumentsList.Length > 0 && TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
                 Difficulty = SpeedPress.SpeedPressDifficulty.Custom;
-                CustomTimeout = Convert.ToInt32(ListArgsOnly[0]);
+                CustomTimeout = Convert.ToInt32(parameters.ArgumentsList[0]);
             }
             SpeedPress.InitializeSpeedPress(Difficulty, CustomTimeout);
             return 0;

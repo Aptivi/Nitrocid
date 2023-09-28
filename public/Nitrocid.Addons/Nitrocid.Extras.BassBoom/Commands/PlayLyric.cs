@@ -32,9 +32,9 @@ namespace Nitrocid.Extras.BassBoom.Commands
     class PlayLyricCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string pathToLyrics = ListArgsOnly[0];
+            string pathToLyrics = parameters.ArgumentsList[0];
 
             // Visualize it!
             Lyrics.VisualizeLyric(pathToLyrics);

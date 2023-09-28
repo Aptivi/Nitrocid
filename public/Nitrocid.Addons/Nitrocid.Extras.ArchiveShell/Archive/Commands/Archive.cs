@@ -37,13 +37,13 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Commands
     class ArchiveCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ListArgsOnly[0] = Filesystem.NeutralizePath(ListArgsOnly[0]);
-            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", ListArgsOnly[0], Checking.FileExists(ListArgsOnly[0]));
-            if (Checking.FileExists(ListArgsOnly[0]))
+            parameters.ArgumentsList[0] = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {0}", parameters.ArgumentsList[0], Checking.FileExists(parameters.ArgumentsList[0]));
+            if (Checking.FileExists(parameters.ArgumentsList[0]))
             {
-                ShellStart.StartShell("ArchiveShell", ListArgsOnly[0]);
+                ShellStart.StartShell("ArchiveShell", parameters.ArgumentsList[0]);
             }
             else
             {

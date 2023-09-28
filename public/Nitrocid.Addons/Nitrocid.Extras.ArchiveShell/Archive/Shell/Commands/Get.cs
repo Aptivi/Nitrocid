@@ -43,18 +43,18 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     class ArchiveShell_GetCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string Where = "";
             var Absolute = false;
-            if (ListArgsOnly.Length > 1)
+            if (parameters.ArgumentsList.Length > 1)
             {
-                if (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-absolute"))
+                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-absolute"))
                     Absolute = true;
                 else
-                    Where = Filesystem.NeutralizePath(ListArgsOnly[1]);
+                    Where = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
             }
-            ArchiveTools.ExtractFileEntry(ListArgsOnly[0], Where, Absolute);
+            ArchiveTools.ExtractFileEntry(parameters.ArgumentsList[0], Where, Absolute);
             return 0;
         }
 

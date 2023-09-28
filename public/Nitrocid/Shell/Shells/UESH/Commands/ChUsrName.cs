@@ -40,12 +40,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChUsrNameCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
-            UserManagement.ChangeUsername(ListArgsOnly[0], ListArgsOnly[1]);
-            TextWriterColor.Write(Translate.DoTranslation("Username has been changed to {0}!"), ListArgsOnly[1]);
-            if (ListArgsOnly[0] == UserManagement.CurrentUser.Username)
+            UserManagement.ChangeUsername(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            TextWriterColor.Write(Translate.DoTranslation("Username has been changed to {0}!"), parameters.ArgumentsList[1]);
+            if (parameters.ArgumentsList[0] == UserManagement.CurrentUser.Username)
                 KernelFlags.LogoutRequested = true;
             return 0;
         }

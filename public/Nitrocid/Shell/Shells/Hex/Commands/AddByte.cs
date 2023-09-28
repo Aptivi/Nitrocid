@@ -31,9 +31,9 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_AddByteCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            byte ByteContent = Convert.ToByte(StringArgs, 16);
+            byte ByteContent = Convert.ToByte(parameters.ArgumentsText, 16);
             HexEditTools.HexEdit_AddNewByte(ByteContent);
             return 0;
         }

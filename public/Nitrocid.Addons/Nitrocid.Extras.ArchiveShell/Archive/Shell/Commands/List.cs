@@ -35,13 +35,13 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     class ArchiveShell_ListCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             List<IArchiveEntry> Entries;
-            if (ListArgsOnly.Length > 0)
+            if (parameters.ArgumentsList.Length > 0)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with {0} as target directory", ListArgsOnly[0]);
-                Entries = ArchiveTools.ListArchiveEntries(ListArgsOnly[0]);
+                DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with {0} as target directory", parameters.ArgumentsList[0]);
+                Entries = ArchiveTools.ListArchiveEntries(parameters.ArgumentsList[0]);
             }
             else
             {

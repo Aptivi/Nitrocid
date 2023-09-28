@@ -32,10 +32,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class RmCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            foreach (string Path in ListArgsOnly)
+            foreach (string Path in parameters.ArgumentsList)
             {
                 string NeutPath = Filesystem.NeutralizePath(Path);
                 Removing.RemoveFileOrDir(NeutPath);

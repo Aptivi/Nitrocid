@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class LsDisksCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var hardDrives = HardwareProbe.HardwareInfo.Hardware.HDD.Keys.ToArray();
             ListWriterColor.WriteList(hardDrives);
@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override int ExecuteDumb(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
             var hardDrives = HardwareProbe.HardwareInfo.Hardware.HDD.Keys.ToArray();
             for (int i = 0; i < hardDrives.Length; i++)

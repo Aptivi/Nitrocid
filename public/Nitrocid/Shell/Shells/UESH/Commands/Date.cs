@@ -32,17 +32,17 @@ namespace KS.Shell.Shells.UESH.Commands
     class DateCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Determine how to show date and time
             bool showDate = true;
             bool showTime = true;
             bool useUtc = false;
-            if (ListSwitchesOnly.Length > 0)
+            if (parameters.SwitchesList.Length > 0)
             {
-                showDate = ListSwitchesOnly.Contains("-date") || ListSwitchesOnly.Contains("-full");
-                showTime = ListSwitchesOnly.Contains("-time") || ListSwitchesOnly.Contains("-full");
-                useUtc = ListSwitchesOnly.Contains("-utc");
+                showDate = parameters.SwitchesList.Contains("-date") || parameters.SwitchesList.Contains("-full");
+                showTime = parameters.SwitchesList.Contains("-time") || parameters.SwitchesList.Contains("-full");
+                useUtc = parameters.SwitchesList.Contains("-utc");
                 if (!showDate && !showTime)
                     showDate = showTime = true;
             }

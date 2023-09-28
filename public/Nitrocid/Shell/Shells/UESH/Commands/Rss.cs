@@ -34,10 +34,10 @@ namespace KS.Shell.Shells.UESH.Commands
     class RssCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             NetworkConnectionTools.OpenConnectionForShell(ShellType.RSSShell, EstablishRssConnection, (_, connection) =>
-            EstablishRssConnection(connection.Address), StringArgs);
+            EstablishRssConnection(connection.Address), parameters.ArgumentsText);
             return 0;
         }
 

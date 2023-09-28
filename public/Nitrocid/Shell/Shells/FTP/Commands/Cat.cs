@@ -31,9 +31,9 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_CatCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(FTPTransfer.FTPDownloadToString(ListArgsOnly[0]));
+            TextWriterColor.Write(FTPTransfer.FTPDownloadToString(parameters.ArgumentsList[0]));
             return 0;
         }
     }

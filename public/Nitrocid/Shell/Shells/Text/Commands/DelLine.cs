@@ -38,15 +38,15 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_DelLineCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly.Length == 1)
+            if (parameters.ArgumentsList.Length == 1)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[0]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                 {
-                    if (Convert.ToInt32(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        TextEditTools.TextEdit_RemoveLine(Convert.ToInt32(ListArgsOnly[0]));
+                        TextEditTools.TextEdit_RemoveLine(Convert.ToInt32(parameters.ArgumentsList[0]));
                         TextWriterColor.Write(Translate.DoTranslation("Removed line."), true, KernelColorType.Success);
                         return 0;
                     }
@@ -58,19 +58,19 @@ namespace KS.Shell.Shells.Text.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[0]);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[0]);
+                    TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                     return 10000 + (int)KernelExceptionType.TextEditor;
                 }
             }
-            else if (ListArgsOnly.Length > 1)
+            else if (parameters.ArgumentsList.Length > 1)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[0]) & TextTools.IsStringNumeric(ListArgsOnly[1]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt32(ListArgsOnly[0]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(ListArgsOnly[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        int LineNumberStart = Convert.ToInt32(ListArgsOnly[0]);
-                        int LineNumberEnd = Convert.ToInt32(ListArgsOnly[1]);
+                        int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[0]);
+                        int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[1]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
@@ -87,8 +87,8 @@ namespace KS.Shell.Shells.Text.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[1]);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[1]);
+                    TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[1]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[1]);
                     return 10000 + (int)KernelExceptionType.TextEditor;
                 }
             }

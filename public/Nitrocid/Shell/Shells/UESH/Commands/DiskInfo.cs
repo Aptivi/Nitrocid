@@ -34,11 +34,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class DiskInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var driveKeyValues = HardwareProbe.HardwareInfo.Hardware.HDD;
             var hardDrives = HardwareProbe.HardwareInfo.Hardware.HDD.Keys.ToArray();
-            bool isDriveNum = int.TryParse(ListArgsOnly[0], out int driveNum);
+            bool isDriveNum = int.TryParse(parameters.ArgumentsList[0], out int driveNum);
             if (isDriveNum && driveNum <= hardDrives.Length)
             {
                 // Get the drive index and get the partition info

@@ -37,9 +37,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class JsonBeautifyCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string JsonFile = Filesystem.NeutralizePath(ListArgsOnly[0]);
+            string JsonFile = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
             string JsonOutputFile;
             string BeautifiedJson;
 
@@ -50,9 +50,9 @@ namespace KS.Shell.Shells.UESH.Commands
                 TextWriterColor.Write(BeautifiedJson);
 
                 // Beautify it to an output file specified (optional)
-                if (ListArgsOnly.Length > 1)
+                if (parameters.ArgumentsList.Length > 1)
                 {
-                    JsonOutputFile = Filesystem.NeutralizePath(ListArgsOnly[1]);
+                    JsonOutputFile = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
                     File.WriteAllText(JsonOutputFile, BeautifiedJson);
                 }
                 variableValue = BeautifiedJson;

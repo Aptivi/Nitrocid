@@ -31,10 +31,10 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_RmObjectIndexedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string parent = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-parentProperty");
-            JsonTools.JsonShell_RemoveObjectIndexed(parent, int.Parse(ListArgsOnly[0]));
+            string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
+            JsonTools.JsonShell_RemoveObjectIndexed(parent, int.Parse(parameters.ArgumentsList[0]));
             return 0;
         }
     }

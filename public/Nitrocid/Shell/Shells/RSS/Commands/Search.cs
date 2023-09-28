@@ -58,17 +58,17 @@ namespace KS.Shell.Shells.RSS.Commands
     class RSS_SearchCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool findTitle       = ListSwitchesOnly.Contains("-t");
-            bool findDescription = ListSwitchesOnly.Contains("-d");
-            bool findAll         = ListSwitchesOnly.Contains("-a");
-            bool caseSensitive   = ListSwitchesOnly.Contains("-cs");
+            bool findTitle       = parameters.SwitchesList.Contains("-t");
+            bool findDescription = parameters.SwitchesList.Contains("-d");
+            bool findAll         = parameters.SwitchesList.Contains("-a");
+            bool caseSensitive   = parameters.SwitchesList.Contains("-cs");
 
             if (findAll)
                 findTitle = findDescription = true;
 
-            var foundArticles = RSSTools.SearchArticles(ListArgsOnly[0], findTitle, findDescription, caseSensitive);
+            var foundArticles = RSSTools.SearchArticles(parameters.ArgumentsList[0], findTitle, findDescription, caseSensitive);
             foreach (RSSArticle Article in foundArticles)
             {
                 TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);

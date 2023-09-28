@@ -33,10 +33,10 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_ExecuteCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write("<<< C: {0}", StringArgs);
-            var ExecutedReply = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Execute(StringArgs);
+            TextWriterColor.Write("<<< C: {0}", parameters.ArgumentsText);
+            var ExecutedReply = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Execute(parameters.ArgumentsText);
             if (ExecutedReply.Success)
             {
                 TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);

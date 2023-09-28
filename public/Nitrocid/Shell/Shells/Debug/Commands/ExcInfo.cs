@@ -34,10 +34,10 @@ namespace KS.Shell.Shells.Debug.Commands
     class Debug_ExcInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we really have the type
-            string exceptionStr = ListArgsOnly[0];
+            string exceptionStr = parameters.ArgumentsList[0];
             if (!Enum.TryParse(exceptionStr, out KernelExceptionType type))
             {
                 // There is no such exception number being requested

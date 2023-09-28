@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.Admin.Commands
     class LsUsersCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageUsers);
             var users = UserManagement.ListAllUsers();

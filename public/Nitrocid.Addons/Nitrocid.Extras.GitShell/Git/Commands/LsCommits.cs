@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     class Git_LsCommitsCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var commits = GitShellCommon.Repository.Commits;
             TextWriterColor.Write(Translate.DoTranslation("Commits for branch") + $" {GitShellCommon.BranchName}:");

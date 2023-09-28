@@ -30,9 +30,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class InputCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string Answer = InputStyle.PromptInput(ListArgsOnly[0]);
+            string Answer = InputStyle.PromptInput(parameters.ArgumentsList[0]);
             variableValue = Answer;
             return 0;
         }

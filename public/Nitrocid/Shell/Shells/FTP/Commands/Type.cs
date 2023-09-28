@@ -34,9 +34,9 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_TypeCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly[0].ToLower() == "a")
+            if (parameters.ArgumentsList[0].ToLower() == "a")
             {
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType = FtpDataType.ASCII;
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.ListingDataType = FtpDataType.ASCII;
@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.FTP.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), true, KernelColorType.Warning);
                 return 0;
             }
-            else if (ListArgsOnly[0].ToLower() == "b")
+            else if (parameters.ArgumentsList[0].ToLower() == "b")
             {
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType = FtpDataType.Binary;
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.ListingDataType = FtpDataType.Binary;

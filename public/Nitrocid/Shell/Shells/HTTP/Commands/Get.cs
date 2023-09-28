@@ -34,14 +34,14 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_GetCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriterColor.Write(Translate.DoTranslation("Getting {0}..."), true, KernelColorType.Progress, ListArgsOnly[0]);
+            TextWriterColor.Write(Translate.DoTranslation("Getting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
 
             try
             {
-                var ResponseTask = HTTPTools.HttpGet(ListArgsOnly[0]);
+                var ResponseTask = HTTPTools.HttpGet(parameters.ArgumentsList[0]);
                 ResponseTask.Wait();
                 var Response = ResponseTask.Result;
                 string ResponseContent = Response.Content.ReadAsStringAsync().Result;

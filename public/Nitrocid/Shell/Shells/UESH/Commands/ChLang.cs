@@ -37,11 +37,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class ChLangCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool inferSysLang = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-usesyslang");
-            bool useUser = SwitchManager.ContainsSwitch(ListSwitchesOnly, "-user");
-            string language = inferSysLang ? "eng" : ListArgsOnly[0];
+            bool inferSysLang = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-usesyslang");
+            bool useUser = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-user");
+            string language = inferSysLang ? "eng" : parameters.ArgumentsList[0];
             if (!LanguageManager.ListAllLanguages().ContainsKey(language))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);

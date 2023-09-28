@@ -34,16 +34,16 @@ namespace KS.Shell.Shells.UESH.Commands
     class SelectCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var Titles = new List<string>();
 
             // Add the provided working titles
-            if (ListArgsOnly.Length > 2)
-                Titles.AddRange(ListArgsOnly.Skip(2));
+            if (parameters.ArgumentsList.Length > 2)
+                Titles.AddRange(parameters.ArgumentsList.Skip(2));
 
             // Prompt for selection
-            int SelectedAnswer = SelectionStyle.PromptSelection(ListArgsOnly[1], ListArgsOnly[0], Titles.ToArray());
+            int SelectedAnswer = SelectionStyle.PromptSelection(parameters.ArgumentsList[1], parameters.ArgumentsList[0], Titles.ToArray());
             variableValue = $"{SelectedAnswer}";
             return 0;
         }

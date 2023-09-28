@@ -30,9 +30,9 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_CdrCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            FTPFilesystem.FTPChangeRemoteDir(ListArgsOnly[0]);
+            FTPFilesystem.FTPChangeRemoteDir(parameters.ArgumentsList[0]);
             return 0;
         }
     }

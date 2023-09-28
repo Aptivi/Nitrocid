@@ -39,11 +39,11 @@ namespace KS.Shell.Shells.UESH.Commands
     class Get_Command : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             int RetryCount = 1;
-            string URL = ListArgsOnly[0];
-            string outputPath = SwitchManager.GetSwitchValue(ListSwitchesOnly, "-outputpath");
+            string URL = parameters.ArgumentsList[0];
+            string outputPath = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-outputpath");
             int failCode = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);
             while (!(RetryCount > NetworkTools.DownloadRetries))
@@ -58,14 +58,14 @@ namespace KS.Shell.Shells.UESH.Commands
                             if (string.IsNullOrEmpty(outputPath))
                             {
                                 // Use the current output path
-                                if (NetworkTransfer.DownloadFile(ListArgsOnly[0]))
+                                if (NetworkTransfer.DownloadFile(parameters.ArgumentsList[0]))
                                     TextWriterColor.Write(Translate.DoTranslation("Download has completed."));
                             }
                             else
                             {
                                 // Use the custom path
                                 outputPath = Filesystem.NeutralizePath(outputPath);
-                                if (NetworkTransfer.DownloadFile(ListArgsOnly[0], outputPath))
+                                if (NetworkTransfer.DownloadFile(parameters.ArgumentsList[0], outputPath))
                                     TextWriterColor.Write(Translate.DoTranslation("Download has completed."));
                             }
                             return 0;

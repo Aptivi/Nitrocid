@@ -195,13 +195,19 @@ namespace KS.Shell.ShellBase.Commands
                 // Execute the command
                 if (argSatisfied)
                 {
+                    // Prepare the command parameter instance
+                    var parameters = new CommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches);
+
+                    // Now, get the base command and execute it
                     DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);
                     var CommandBase = TargetCommands[Command].CommandBase;
                     string value = "";
                     if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
-                        ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, ref value);
+                        ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
                     else
-                        ShellInstance.LastErrorCode = CommandBase.Execute(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, ref value);
+                        ShellInstance.LastErrorCode = CommandBase.Execute(parameters, ref value);
+
+                    // Set the error code and set the UESH variable as appropriate
                     DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);
                     if (containsSetSwitch)
                     {
@@ -252,7 +258,7 @@ namespace KS.Shell.ShellBase.Commands
         }
 
         /// <summary>
-        /// Executes a command in a wrapped mode (must be run from a separate command execution entry point, <see cref="BaseCommand.Execute(string, string[], string, string[], string[], ref string)"/>.)
+        /// Executes a command in a wrapped mode (must be run from a separate command execution entry point, <see cref="BaseCommand.Execute(CommandParameters, ref string)"/>.)
         /// </summary>
         /// <param name="Command">Requested command with its arguments and switches</param>
         public static void ExecuteCommandWrapped(string Command)

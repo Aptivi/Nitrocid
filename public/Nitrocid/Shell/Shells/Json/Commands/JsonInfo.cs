@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Json.Commands
     class JsonShell_JsonInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Base info
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Base JSON token information"), true);
@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.Json.Commands
             TextWriterColor.Write();
 
             // Individual properties
-            if (!ListSwitchesOnly.Contains("-simplified"))
+            if (!parameters.SwitchesList.Contains("-simplified"))
             {
                 foreach (var token in JsonShellCommon.JsonShell_FileToken)
                 {
@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.Json.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Token has values") + ": {0}", true, false, token.HasValues);
                     TextWriterColor.Write(Translate.DoTranslation("Children token count") + ": {0}", token.Count());
                     TextWriterColor.Write(Translate.DoTranslation("Token path") + ": {0}", token.Path);
-                    if (ListSwitchesOnly.Contains("-showvals"))
+                    if (parameters.SwitchesList.Contains("-showvals"))
                         TextWriterColor.Write(Translate.DoTranslation("Token value") + ": {0}", token);
                     TextWriterColor.Write();
 
@@ -63,7 +63,7 @@ namespace KS.Shell.Shells.Json.Commands
                         TextWriterColor.Write(Translate.DoTranslation("Property count") + ": {0}", ((JProperty)token).Count);
                         TextWriterColor.Write(Translate.DoTranslation("Property name") + ": {0}", ((JProperty)token).Name);
                         TextWriterColor.Write(Translate.DoTranslation("Property path") + ": {0}", ((JProperty)token).Path);
-                        if (ListSwitchesOnly.Contains("-showvals"))
+                        if (parameters.SwitchesList.Contains("-showvals"))
                             TextWriterColor.Write(Translate.DoTranslation("Property value") + ": {0}", ((JProperty)token).Value);
                         TextWriterColor.Write();
                     }

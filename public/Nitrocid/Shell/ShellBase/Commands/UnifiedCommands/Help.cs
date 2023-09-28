@@ -29,25 +29,25 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
     class HelpUnifiedCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Determine which type to show
-            bool showGeneral = ListSwitchesOnly.Length == 0 ||
-                SwitchManager.ContainsSwitch(ListSwitchesOnly, "-general") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all");
-            bool showMod = ListSwitchesOnly.Length > 0 &&
-                (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-mod") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all"));
-            bool showAlias = ListSwitchesOnly.Length > 0 &&
-                (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-alias") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all"));
-            bool showUnified = ListSwitchesOnly.Length > 0 &&
-                (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-unified") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all"));
-            bool showAddon = ListSwitchesOnly.Length > 0 &&
-                (SwitchManager.ContainsSwitch(ListSwitchesOnly, "-addon") || SwitchManager.ContainsSwitch(ListSwitchesOnly, "-all"));
+            bool showGeneral = parameters.SwitchesList.Length == 0 ||
+                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-general") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
+            bool showMod = parameters.SwitchesList.Length > 0 &&
+                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-mod") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
+            bool showAlias = parameters.SwitchesList.Length > 0 &&
+                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-alias") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
+            bool showUnified = parameters.SwitchesList.Length > 0 &&
+                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-unified") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
+            bool showAddon = parameters.SwitchesList.Length > 0 &&
+                (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-addon") || SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all"));
             
             // Now, show the help
-            if (string.IsNullOrWhiteSpace(StringArgs))
+            if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
                 HelpSystem.ShowHelp(showGeneral, showMod, showAlias, showUnified, showAddon);
             else
-                HelpSystem.ShowHelp(ListArgsOnly[0]);
+                HelpSystem.ShowHelp(parameters.ArgumentsList[0]);
             return 0;
         }
 

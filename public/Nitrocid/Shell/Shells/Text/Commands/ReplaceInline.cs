@@ -38,15 +38,15 @@ namespace KS.Shell.Shells.Text.Commands
     class TextEdit_ReplaceInlineCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly.Length == 3)
+            if (parameters.ArgumentsList.Length == 3)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[2]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt32(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        TextEditTools.TextEdit_Replace(ListArgsOnly[0], ListArgsOnly[1], Convert.ToInt32(ListArgsOnly[2]));
+                        TextEditTools.TextEdit_Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], Convert.ToInt32(parameters.ArgumentsList[2]));
                         TextWriterColor.Write(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
                         return 0;
                     }
@@ -58,23 +58,23 @@ namespace KS.Shell.Shells.Text.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, ListArgsOnly[2]);
-                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", ListArgsOnly[2]);
+                    TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error, parameters.ArgumentsList[2]);
+                    DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[2]);
                     return 10000 + (int)KernelExceptionType.TextEditor;
                 }
             }
-            else if (ListArgsOnly.Length > 3)
+            else if (parameters.ArgumentsList.Length > 3)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[2]) & TextTools.IsStringNumeric(ListArgsOnly[3]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]) & TextTools.IsStringNumeric(parameters.ArgumentsList[3]))
                 {
-                    if (Convert.ToInt32(ListArgsOnly[2]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(ListArgsOnly[3]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[3]) <= TextEditShellCommon.TextEdit_FileLines.Count)
                     {
-                        int LineNumberStart = Convert.ToInt32(ListArgsOnly[2]);
-                        int LineNumberEnd = Convert.ToInt32(ListArgsOnly[3]);
+                        int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[2]);
+                        int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[3]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            TextEditTools.TextEdit_Replace(ListArgsOnly[0], ListArgsOnly[1], LineNumber);
+                            TextEditTools.TextEdit_Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], LineNumber);
                             TextWriterColor.Write(Translate.DoTranslation("String replaced in line {0}."), true, KernelColorType.Success, LineNumber);
                         }
                         return 0;

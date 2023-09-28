@@ -24,9 +24,9 @@ namespace Nitrocid.Extras.Notes.Commands
     internal class AddNote : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            NoteManagement.NewNote(StringArgs);
+            NoteManagement.NewNote(parameters.ArgumentsText);
             return 0;
         }
 

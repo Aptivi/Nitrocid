@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
     class LsDbgDevCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             foreach (RemoteDebugDevice DebugDevice in RemoteDebugger.DebugDevices)
             {

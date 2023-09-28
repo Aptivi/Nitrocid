@@ -35,19 +35,19 @@ namespace Nitrocid.Extras.Calculators.Commands
     class CalcCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             try
             {
-                double Res = ((MathExpr)StringArgs).Result;
+                double Res = ((MathExpr)parameters.ArgumentsText).Result;
                 DebugWriter.WriteDebug(DebugLevel.I, "Res = {0}", Res);
-                TextWriterColor.Write(StringArgs + " = " + Res.ToString());
+                TextWriterColor.Write(parameters.ArgumentsText + " = " + Res.ToString());
                 variableValue = Res.ToString();
                 return 0;
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", StringArgs, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", parameters.ArgumentsText, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 TextWriterColor.Write(Translate.DoTranslation("Error in calculation.") + " {0}", true, KernelColorType.Error, ex.Message);
                 return ex.GetHashCode();

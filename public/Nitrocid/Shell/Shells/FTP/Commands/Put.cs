@@ -38,11 +38,11 @@ namespace KS.Shell.Shells.FTP.Commands
     class FTP_PutCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string LocalFile = ListArgsOnly[0];
-            string RemoteFile = ListArgsOnly.Length > 1 ? ListArgsOnly[1] : "";
-            TextWriterColor.Write(Translate.DoTranslation("Uploading file {0}..."), false, KernelColorType.Progress, ListArgsOnly[0]);
+            string LocalFile = parameters.ArgumentsList[0];
+            string RemoteFile = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
+            TextWriterColor.Write(Translate.DoTranslation("Uploading file {0}..."), false, KernelColorType.Progress, parameters.ArgumentsList[0]);
             bool Result = !string.IsNullOrWhiteSpace(LocalFile) ? FTPTransfer.FTPUploadFile(RemoteFile, LocalFile) : FTPTransfer.FTPUploadFile(RemoteFile);
             if (Result)
             {

@@ -27,10 +27,10 @@ namespace KS.Shell.Shells.HTTP.Commands
     class HTTP_EditHeaderCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string key = ListArgsOnly[0];
-            string value = ListArgsOnly[1];
+            string key = parameters.ArgumentsList[0];
+            string value = parameters.ArgumentsList[1];
             HTTPTools.HttpEditHeader(key, value);
             return 0;
         }

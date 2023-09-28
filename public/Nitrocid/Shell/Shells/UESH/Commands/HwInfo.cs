@@ -32,9 +32,9 @@ namespace KS.Shell.Shells.UESH.Commands
     class HwInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            HardwareList.ListHardware(ListArgsOnly[0]);
+            HardwareList.ListHardware(parameters.ArgumentsList[0]);
             return 0;
         }
 

@@ -59,14 +59,14 @@ namespace KS.Shell.Shells.UESH.Commands
     class VerifyCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             try
             {
-                string HashFile = Filesystem.NeutralizePath(ListArgsOnly[2]);
+                string HashFile = Filesystem.NeutralizePath(parameters.ArgumentsList[2]);
                 if (Checking.FileExists(HashFile))
                 {
-                    if (HashVerifier.VerifyHashFromHashesFile(ListArgsOnly[3], ListArgsOnly[0], ListArgsOnly[2], ListArgsOnly[1]))
+                    if (HashVerifier.VerifyHashFromHashesFile(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
                         return 0;
@@ -77,7 +77,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         return 4;
                     }
                 }
-                else if (HashVerifier.VerifyHashFromHash(ListArgsOnly[3], ListArgsOnly[0], ListArgsOnly[2], ListArgsOnly[1]))
+                else if (HashVerifier.VerifyHashFromHash(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Hashes match."));
                     return 0;
@@ -103,7 +103,7 @@ namespace KS.Shell.Shells.UESH.Commands
             catch (FileNotFoundException fnfe)
             {
                 DebugWriter.WriteDebugStackTrace(fnfe);
-                TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, ListArgsOnly[3]);
+                TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, parameters.ArgumentsList[3]);
                 return 10000 + (int)KernelExceptionType.Encryption;
             }
         }

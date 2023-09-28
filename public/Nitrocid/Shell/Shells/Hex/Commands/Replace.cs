@@ -37,25 +37,25 @@ namespace KS.Shell.Shells.Hex.Commands
     class HexEdit_ReplaceCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ListArgsOnly.Length == 2)
+            if (parameters.ArgumentsList.Length == 2)
             {
-                byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
-                byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
+                byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
+                byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
                 HexEditTools.HexEdit_Replace(ByteFrom, ByteWith);
                 TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                 return 0;
             }
-            else if (ListArgsOnly.Length == 3)
+            else if (parameters.ArgumentsList.Length == 3)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[2]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt64(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {
-                        byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
-                        byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
-                        HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, Convert.ToInt64(ListArgsOnly[2]));
+                        byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
+                        byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
+                        HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, Convert.ToInt64(parameters.ArgumentsList[2]));
                         TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                         return 0;
                     }
@@ -66,16 +66,16 @@ namespace KS.Shell.Shells.Hex.Commands
                     }
                 }
             }
-            else if (ListArgsOnly.Length > 3)
+            else if (parameters.ArgumentsList.Length > 3)
             {
-                if (TextTools.IsStringNumeric(ListArgsOnly[2]) & TextTools.IsStringNumeric(ListArgsOnly[3]))
+                if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]) & TextTools.IsStringNumeric(parameters.ArgumentsList[3]))
                 {
-                    if (Convert.ToInt64(ListArgsOnly[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(ListArgsOnly[3]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[3]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
                     {
-                        byte ByteFrom = Convert.ToByte(ListArgsOnly[0], 16);
-                        byte ByteWith = Convert.ToByte(ListArgsOnly[1], 16);
-                        long ByteNumberStart = Convert.ToInt64(ListArgsOnly[2]);
-                        long ByteNumberEnd = Convert.ToInt64(ListArgsOnly[3]);
+                        byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
+                        byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
+                        long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[2]);
+                        long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[3]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
                         HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
                         TextWriterColor.Write(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);

@@ -38,13 +38,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
     class CalendarCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string Action = ListArgsOnly[0];
+            string Action = parameters.ArgumentsList[0];
 
             // Enumerate based on action
             int ActionMinimumArguments = 1;
-            var ActionArguments = ListArgsOnly.Skip(1).ToArray();
+            var ActionArguments = parameters.ArgumentsList.Skip(1).ToArray();
             switch (Action)
             {
                 case "show":

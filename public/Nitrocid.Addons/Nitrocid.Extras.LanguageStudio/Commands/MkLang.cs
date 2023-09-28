@@ -30,9 +30,9 @@ namespace Nitrocid.Extras.LanguageStudio.Commands
     class MkLangCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            LanguageStudioApp.StartLanguageStudio(ListArgsOnly[0]);
+            LanguageStudioApp.StartLanguageStudio(parameters.ArgumentsList[0]);
             return 0;
         }
 

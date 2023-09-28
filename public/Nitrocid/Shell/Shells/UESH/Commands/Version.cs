@@ -33,12 +33,12 @@ namespace KS.Shell.Shells.UESH.Commands
     class VersionCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             Version ver;
 
             // Get the version according to the switches provided
-            if (ListSwitchesOnly.Length > 0 && SwitchManager.ContainsSwitch(ListSwitchesOnly, "-m"))
+            if (parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-m"))
                 ver = KernelTools.KernelApiVersion;
             else
                 ver = KernelTools.KernelVersion;

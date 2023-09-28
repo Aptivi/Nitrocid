@@ -39,11 +39,11 @@ namespace Nitrocid.Extras.TimeInfo.Commands
     class GetTimeInfoCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool getNow = ListSwitchesOnly.Length > 0 && SwitchManager.ContainsSwitch(ListSwitchesOnly, "-now");
+            bool getNow = parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-now");
             DateTime DateTimeInfo = TimeDateTools.KernelDateTime;
-            if (getNow || DateTime.TryParse(ListArgsOnly[0], out DateTimeInfo))
+            if (getNow || DateTime.TryParse(parameters.ArgumentsList[0], out DateTimeInfo))
             {
                 TextWriterColor.Write("-- " + Translate.DoTranslation("Information for") + " {0} --" + CharManager.NewLine, TimeDateRenderers.Render(DateTimeInfo));
                 TextWriterColor.Write(Translate.DoTranslation("Milliseconds:") + " {0}", DateTimeInfo.Millisecond);
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.TimeInfo.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Failed to parse date information for") + " {0}. " + Translate.DoTranslation("Ensure that the format is correct."), true, KernelColorType.Error, ListArgsOnly[0]);
+                TextWriterColor.Write(Translate.DoTranslation("Failed to parse date information for") + " {0}. " + Translate.DoTranslation("Ensure that the format is correct."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.TimeDate;
             }
         }

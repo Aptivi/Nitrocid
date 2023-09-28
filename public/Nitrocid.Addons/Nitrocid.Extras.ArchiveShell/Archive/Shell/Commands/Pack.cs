@@ -30,14 +30,14 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     class ArchiveShell_PackCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string Where = "";
-            if (ListArgsOnly.Length > 1)
+            if (parameters.ArgumentsList.Length > 1)
             {
-                Where = Filesystem.NeutralizePath(ListArgsOnly[1], ArchiveShellCommon.ArchiveShell_CurrentDirectory);
+                Where = Filesystem.NeutralizePath(parameters.ArgumentsList[1], ArchiveShellCommon.ArchiveShell_CurrentDirectory);
             }
-            ArchiveTools.PackFile(ListArgsOnly[0], Where);
+            ArchiveTools.PackFile(parameters.ArgumentsList[0], Where);
             return 0;
         }
 

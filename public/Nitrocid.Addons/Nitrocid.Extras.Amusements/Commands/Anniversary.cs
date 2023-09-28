@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.Amusements.Commands
     class AnniversaryCommand : BaseCommand, ICommand
     {
 
-        public override int Execute(string StringArgs, string[] ListArgsOnly, string StringArgsOrig, string[] ListArgsOnlyOrig, string[] ListSwitchesOnly, ref string variableValue)
+        public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             var annivPres = new Presentation(
                 Translate.DoTranslation("Commemorating the 5-year anniversary of the kernel"),
