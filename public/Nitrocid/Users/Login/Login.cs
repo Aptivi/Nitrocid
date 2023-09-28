@@ -69,6 +69,7 @@ namespace KS.Users.Login
             }
 
             // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
+            // TODO: When implementing "custom" login handlers, move these two if conditions to the classic login handler.
             if (KernelFlags.ClearOnLogin)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
@@ -77,8 +78,9 @@ namespace KS.Users.Login
 
             // Show MOTD once
             DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", KernelFlags.ShowMOTDOnceFlag, KernelFlags.ShowMOTD);
-            if (KernelFlags.ShowMOTDOnceFlag & KernelFlags.ShowMOTD)
+            if (KernelFlags.ShowMOTDOnceFlag && KernelFlags.ShowMOTD && !KernelFlags.ModernLogon)
             {
+                // This is not going to happen when the modern logon is enabled.
                 TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
                 KernelFlags.ShowMOTDOnceFlag = false;
             }
