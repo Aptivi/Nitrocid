@@ -74,7 +74,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                 TextWriterWhereColor.WriteWhere(frame, Left, Top, false);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -265,7 +265,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                 TextWriterWhereColor.WriteWhere(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -322,7 +322,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                 TextWriterWhereColor.WriteWhere(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -379,7 +379,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
                 TextWriterWhereColor.WriteWhere(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -414,7 +414,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     $"{LowerLeftCornerChar}{new string(LowerFrameChar, InteriorWidth)}{LowerRightCornerChar}");
                 return frameBuilder.ToString();
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);

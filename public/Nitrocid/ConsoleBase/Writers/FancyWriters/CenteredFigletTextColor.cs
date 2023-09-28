@@ -20,7 +20,11 @@ using Figletize;
 using Figletize.Utilities;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Debugging;
+using KS.Languages;
 using KS.Misc.Text;
+using System;
+using System.Threading;
 using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
@@ -40,35 +44,43 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, params object[] Vars)
         {
-            Text = TextTools.FormatString(Text, Vars);
-            var figFontFallback = FigletTools.GetFigletFont("small");
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont);
-            int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
-            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback);
-            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-            int consoleMaxY = top + figHeight;
-            if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
+            try
             {
-                // The figlet won't fit, so use small text
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
-                consoleMaxY = top + figHeightFallback;
+                Text = TextTools.FormatString(Text, Vars);
+                var figFontFallback = FigletTools.GetFigletFont("small");
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+                int figHeight = FigletTools.GetFigletHeight(Text, FigletFont);
+                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
+                int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback);
+                int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
+                int consoleMaxY = top + figHeight;
                 if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                 {
-                    // The fallback figlet also won't fit, so use smaller text
-                    consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
-                    TextWriterWhereColor.WriteWhere(Text, consoleX, top, true, KernelColorType.NeutralText, Vars);
+                    // The figlet won't fit, so use small text
+                    consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
+                    consoleMaxY = top + figHeightFallback;
+                    if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
+                    {
+                        // The fallback figlet also won't fit, so use smaller text
+                        consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
+                        TextWriterWhereColor.WriteWhere(Text, consoleX, top, true, KernelColorType.NeutralText, Vars);
+                    }
+                    else
+                    {
+                        // Write the figlet.
+                        FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, figFontFallback, KernelColorType.NeutralText, Vars);
+                    }
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, figFontFallback, KernelColorType.NeutralText, Vars);
+                    FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, KernelColorType.NeutralText, Vars);
                 }
             }
-            else
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
-                // Write the figlet.
-                FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, KernelColorType.NeutralText, Vars);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -140,35 +152,43 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(int top, FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = TextTools.FormatString(Text, Vars);
-            var figFontFallback = FigletTools.GetFigletFont("small");
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont);
-            int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
-            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback);
-            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-            int consoleMaxY = top + figHeight;
-            if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
+            try
             {
-                // The figlet won't fit, so use small text
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
-                consoleMaxY = top + figHeightFallback;
+                Text = TextTools.FormatString(Text, Vars);
+                var figFontFallback = FigletTools.GetFigletFont("small");
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+                int figHeight = FigletTools.GetFigletHeight(Text, FigletFont);
+                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
+                int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback);
+                int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
+                int consoleMaxY = top + figHeight;
                 if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
                 {
-                    // The fallback figlet also won't fit, so use smaller text
-                    consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
-                    TextWriterWhereColor.WriteWhere(Text, consoleX, top, true, ForegroundColor, BackgroundColor, Vars);
+                    // The figlet won't fit, so use small text
+                    consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
+                    consoleMaxY = top + figHeightFallback;
+                    if (consoleX < 0 || consoleMaxY > ConsoleWrapper.WindowHeight)
+                    {
+                        // The fallback figlet also won't fit, so use smaller text
+                        consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
+                        TextWriterWhereColor.WriteWhere(Text, consoleX, top, true, ForegroundColor, BackgroundColor, Vars);
+                    }
+                    else
+                    {
+                        // Write the figlet.
+                        FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, figFontFallback, ForegroundColor, BackgroundColor, Vars);
+                    }
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, figFontFallback, ForegroundColor, BackgroundColor, Vars);
+                    FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
                 }
             }
-            else
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
-                // Write the figlet.
-                FigletWhereColor.WriteFigletWhere(Text, consoleX, top, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -180,36 +200,44 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, params object[] Vars)
         {
-            Text = TextTools.FormatString(Text, Vars);
-            var figFontFallback = FigletTools.GetFigletFont("small");
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
-            int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
-            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
-            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            if (consoleX < 0 || consoleY < 0)
+            try
             {
-                // The figlet won't fit, so use small text
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
-                consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeightFallback;
+                Text = TextTools.FormatString(Text, Vars);
+                var figFontFallback = FigletTools.GetFigletFont("small");
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+                int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
+                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
+                int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
+                int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 if (consoleX < 0 || consoleY < 0)
                 {
-                    // The fallback figlet also won't fit, so use smaller text
-                    consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
-                    consoleY = ConsoleWrapper.WindowHeight / 2;
-                    TextWriterWhereColor.WriteWhere(Text, consoleX, consoleY, true, KernelColorType.NeutralText, Vars);
+                    // The figlet won't fit, so use small text
+                    consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
+                    consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeightFallback;
+                    if (consoleX < 0 || consoleY < 0)
+                    {
+                        // The fallback figlet also won't fit, so use smaller text
+                        consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
+                        consoleY = ConsoleWrapper.WindowHeight / 2;
+                        TextWriterWhereColor.WriteWhere(Text, consoleX, consoleY, true, KernelColorType.NeutralText, Vars);
+                    }
+                    else
+                    {
+                        // Write the figlet.
+                        FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, figFontFallback, KernelColorType.NeutralText, Vars);
+                    }
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, figFontFallback, KernelColorType.NeutralText, Vars);
+                    FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, KernelColorType.NeutralText, Vars);
                 }
             }
-            else
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
-                // Write the figlet.
-                FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, KernelColorType.NeutralText, Vars);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -275,36 +303,44 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCenteredFiglet(FigletizeFont FigletFont, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = TextTools.FormatString(Text, Vars);
-            var figFontFallback = FigletTools.GetFigletFont("small");
-            int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
-            int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
-            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
-            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-            if (consoleX < 0 || consoleY < 0)
+            try
             {
-                // The figlet won't fit, so use small text
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
-                consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeightFallback;
+                Text = TextTools.FormatString(Text, Vars);
+                var figFontFallback = FigletTools.GetFigletFont("small");
+                int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
+                int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
+                int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
+                int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
+                int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
+                int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
                 if (consoleX < 0 || consoleY < 0)
                 {
-                    // The fallback figlet also won't fit, so use smaller text
-                    consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
-                    consoleY = ConsoleWrapper.WindowHeight / 2;
-                    TextWriterWhereColor.WriteWhere(Text, consoleX, consoleY, true, ForegroundColor, BackgroundColor, Vars);
+                    // The figlet won't fit, so use small text
+                    consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
+                    consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeightFallback;
+                    if (consoleX < 0 || consoleY < 0)
+                    {
+                        // The fallback figlet also won't fit, so use smaller text
+                        consoleX = (ConsoleWrapper.WindowWidth / 2) - (Text.Length / 2);
+                        consoleY = ConsoleWrapper.WindowHeight / 2;
+                        TextWriterWhereColor.WriteWhere(Text, consoleX, consoleY, true, ForegroundColor, BackgroundColor, Vars);
+                    }
+                    else
+                    {
+                        // Write the figlet.
+                        FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, figFontFallback, ForegroundColor, BackgroundColor, Vars);
+                    }
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, figFontFallback, ForegroundColor, BackgroundColor, Vars);
+                    FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
                 }
             }
-            else
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
-                // Write the figlet.
-                FigletWhereColor.WriteFigletWhere(Text, consoleX, consoleY, true, FigletFont, ForegroundColor, BackgroundColor, Vars);
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 

@@ -18,7 +18,11 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Debugging;
+using KS.Languages;
 using KS.Misc.Text;
+using System;
+using System.Threading;
 using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
@@ -37,15 +41,23 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, params object[] Vars)
         {
-            Text = TextTools.FormatString(Text, Vars);
-            string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-            ConsoleWrapper.CursorTop = top;
-            for (int i = 0; i < sentences.Length; i++)
+            try
             {
-                string sentence = sentences[i];
-                int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
-                consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, Vars);
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                ConsoleWrapper.CursorTop = top;
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, Vars);
+                }
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 
@@ -111,15 +123,23 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Vars">Variables to format the message before it's written.</param>
         public static void WriteCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
-            Text = TextTools.FormatString(Text, Vars);
-            string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-            ConsoleWrapper.CursorTop = top;
-            for (int i = 0; i < sentences.Length; i++)
+            try
             {
-                string sentence = sentences[i];
-                int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
-                consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, ForegroundColor, BackgroundColor, Vars);
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                ConsoleWrapper.CursorTop = top;
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, ForegroundColor, BackgroundColor, Vars);
+                }
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 

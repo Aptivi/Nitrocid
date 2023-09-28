@@ -96,7 +96,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
                 TextWriterWhereColor.WriteWhere(new string('*', times), Left + 1, Top + 1, true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -295,7 +295,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -458,7 +458,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -621,7 +621,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
                 KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);

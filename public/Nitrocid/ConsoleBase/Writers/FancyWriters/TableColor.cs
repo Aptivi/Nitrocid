@@ -18,9 +18,12 @@
 
 using System;
 using System.Collections.Generic;
+using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
+using KS.Kernel.Debugging;
+using KS.Languages;
 using KS.Misc.Text;
 using Terminaux.Colors;
 
@@ -87,86 +90,94 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         public static void WriteTable(string[] Headers, string[,] Rows, int Margin, Color SeparatorForegroundColor, Color HeaderForegroundColor, Color ValueForegroundColor, Color BackgroundColor, bool SeparateRows = true, List<CellOptions> CellOptions = null)
         {
-            int ColumnCapacity = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)Headers.Length);
-            var ColumnPositions = new List<int>();
-            int RepeatTimes;
-
-            // Populate the positions
-            TextWriterColor.Write();
-            for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
+            try
             {
-                if (!(ColumnPosition >= ConsoleWrapper.WindowWidth))
+                int ColumnCapacity = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)Headers.Length);
+                var ColumnPositions = new List<int>();
+                int RepeatTimes;
+
+                // Populate the positions
+                TextWriterColor.Write();
+                for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
                 {
-                    ColumnPositions.Add(ColumnPosition);
-                    if (ColumnPositions.Count == 1)
-                        ColumnPosition = 0;
-                }
-                else
-                {
-                    break;
-                }
-            }
-
-            // Write the headers
-            for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
-            {
-                string Header = Headers[HeaderIndex];
-                int ColumnPosition = ColumnPositions[HeaderIndex];
-                Header ??= "";
-                TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleWrapper.CursorTop, false, HeaderForegroundColor, BackgroundColor);
-            }
-            TextWriterColor.Write();
-
-            // Write the closing minus sign.
-            RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
-            if (Margin > 0)
-                TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
-            TextWriterColor.Write(new string('═', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
-
-            // Write the rows
-            for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
-            {
-                for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
-                {
-                    var ColoredCell = false;
-                    var CellColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
-                    var CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
-                    string RowValue = Rows[RowIndex, RowValueIndex];
-                    int ColumnPosition = ColumnPositions[RowValueIndex];
-                    RowValue ??= "";
-
-                    // Get the cell options and set them as necessary
-                    if (CellOptions is not null)
+                    if (!(ColumnPosition >= ConsoleWrapper.WindowWidth))
                     {
-                        foreach (CellOptions CellOption in CellOptions)
-                        {
-                            if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
-                            {
-                                ColoredCell = CellOption.ColoredCell;
-                                CellColor = CellOption.CellColor;
-                                CellBackgroundColor = CellOption.CellBackgroundColor;
-                            }
-                        }
+                        ColumnPositions.Add(ColumnPosition);
+                        if (ColumnPositions.Count == 1)
+                            ColumnPosition = 0;
                     }
-
-                    // Now, write the cell value
-                    string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
-                    if (ColoredCell)
-                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop, false, CellColor, CellBackgroundColor);
                     else
-                        TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop, false, ValueForegroundColor, BackgroundColor);
+                    {
+                        break;
+                    }
+                }
+
+                // Write the headers
+                for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
+                {
+                    string Header = Headers[HeaderIndex];
+                    int ColumnPosition = ColumnPositions[HeaderIndex];
+                    Header ??= "";
+                    TextWriterWhereColor.WriteWhere(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleWrapper.CursorTop, false, HeaderForegroundColor, BackgroundColor);
                 }
                 TextWriterColor.Write();
 
-                // Separate the rows optionally
-                if (SeparateRows)
+                // Write the closing minus sign.
+                RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
+                if (Margin > 0)
+                    TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
+                TextWriterColor.Write(new string('═', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+
+                // Write the rows
+                for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
                 {
-                    // Write the closing minus sign.
-                    RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
-                    if (Margin > 0)
-                        TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
-                    TextWriterColor.Write(new string('=', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+                    for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
+                    {
+                        var ColoredCell = false;
+                        var CellColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
+                        var CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
+                        string RowValue = Rows[RowIndex, RowValueIndex];
+                        int ColumnPosition = ColumnPositions[RowValueIndex];
+                        RowValue ??= "";
+
+                        // Get the cell options and set them as necessary
+                        if (CellOptions is not null)
+                        {
+                            foreach (CellOptions CellOption in CellOptions)
+                            {
+                                if (CellOption.ColumnIndex == RowValueIndex & CellOption.RowIndex == RowIndex)
+                                {
+                                    ColoredCell = CellOption.ColoredCell;
+                                    CellColor = CellOption.CellColor;
+                                    CellBackgroundColor = CellOption.CellBackgroundColor;
+                                }
+                            }
+                        }
+
+                        // Now, write the cell value
+                        string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
+                        if (ColoredCell)
+                            TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop, false, CellColor, CellBackgroundColor);
+                        else
+                            TextWriterWhereColor.WriteWhere(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop, false, ValueForegroundColor, BackgroundColor);
+                    }
+                    TextWriterColor.Write();
+
+                    // Separate the rows optionally
+                    if (SeparateRows)
+                    {
+                        // Write the closing minus sign.
+                        RepeatTimes = ConsoleWrapper.WindowWidth - ConsoleWrapper.CursorLeft - Margin * 2;
+                        if (Margin > 0)
+                            TextWriterColor.Write(new string(' ', Margin), false, SeparatorForegroundColor, BackgroundColor);
+                        TextWriterColor.Write(new string('=', RepeatTimes), true, SeparatorForegroundColor, BackgroundColor);
+                    }
                 }
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
         }
 

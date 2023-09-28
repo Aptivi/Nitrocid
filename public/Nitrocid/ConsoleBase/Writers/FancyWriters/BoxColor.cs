@@ -48,7 +48,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Fill the box with spaces inside it
                 TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -80,7 +80,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Fill the box with spaces inside it
                 TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, GetColor(BoxColor));
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -102,7 +102,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Fill the box with spaces inside it
                 TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, new Color(BoxColor));
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -124,7 +124,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Fill the box with spaces inside it
                 TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, BoxColor);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);

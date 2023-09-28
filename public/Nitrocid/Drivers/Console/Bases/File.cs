@@ -175,7 +175,7 @@ namespace KS.Drivers.Console.Bases
                         fileWriter.Write(Text);
                     }
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -202,7 +202,7 @@ namespace KS.Drivers.Console.Bases
                 {
                     fileWriter.WriteLine();
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -247,7 +247,7 @@ namespace KS.Drivers.Console.Bases
                         fileWriter.WriteLine();
                     }
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -287,7 +287,7 @@ namespace KS.Drivers.Console.Bases
                     // We can't do positioning on files, so change writing mode to WritePlain
                     WritePlain(msg, false, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -326,7 +326,7 @@ namespace KS.Drivers.Console.Bases
                     // We can't do positioning on files, so change writing mode to WritePlain
                     WriteSlowlyPlain(msg, false, MsEachLetter, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -351,7 +351,7 @@ namespace KS.Drivers.Console.Bases
                     // We can't do positioning on files, so change writing mode to WritePlain
                     WritePlain(Text, Line, vars);
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);

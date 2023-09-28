@@ -149,7 +149,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         }
                     }
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -275,7 +275,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         }
                     }
                 }
-                catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);

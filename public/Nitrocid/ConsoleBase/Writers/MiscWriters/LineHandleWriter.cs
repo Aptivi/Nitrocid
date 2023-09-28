@@ -121,25 +121,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType)
-        {
-            // Get the line index from number
-            if (LineNumber <= 0)
-                LineNumber = 1;
-            if (LineNumber > Array.Length)
-                LineNumber = Array.Length;
-            int LineIndex = LineNumber - 1;
-
-            // Get the line
-            string LineContent = Array[LineIndex];
-            TextWriterColor.Write(" | " + LineContent, true, ColorType);
-
-            // Place the column handle
-            int RepeatBlanks = ColumnNumber - 1;
-            if (RepeatBlanks < 0)
-                RepeatBlanks = 0;
-            TextWriterColor.Write(" | " + new string(' ', RepeatBlanks) + "^", true, ColorType);
-        }
+        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType) =>
+            TextWriterColor.Write(RenderLineWithHandle(Array, LineNumber, ColumnNumber, ColorType), true, ColorType);
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied

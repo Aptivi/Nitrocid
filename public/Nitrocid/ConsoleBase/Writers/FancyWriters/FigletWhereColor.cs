@@ -50,7 +50,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
                 TextWriterWhereColor.WriteWhere(Text, Left, Top, Return, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -77,7 +77,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -106,7 +106,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -133,7 +133,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -162,7 +162,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -189,7 +189,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
@@ -218,7 +218,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Actually write
                 WriteFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars);
             }
-            catch (Exception ex) when (!(ex.GetType().Name == nameof(ThreadInterruptedException)))
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
