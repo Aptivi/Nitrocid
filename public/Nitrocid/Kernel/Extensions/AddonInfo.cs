@@ -16,8 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Diagnostics;
+
 namespace KS.Kernel.Extensions
 {
+    [DebuggerDisplay("Addon name = {AddonName}")]
     internal class AddonInfo
     {
         internal string AddonName { get => Addon is not null ? Addon.AddonName : ""; }

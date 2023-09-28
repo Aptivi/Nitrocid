@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Collections.Generic;
+using System.Diagnostics;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 
@@ -25,6 +26,7 @@ namespace KS.Modifications
     /// <summary>
     /// Mod information
     /// </summary>
+    [DebuggerDisplay("Mod name = {ModName}")]
     public class ModInfo
     {
 
