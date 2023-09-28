@@ -106,7 +106,6 @@ namespace KS.Misc.Splash.Splashes
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
             // Write a glorious Welcome screen
-            // TODO: Manifest the below figlet writing logic to the centered figlet writer
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             string text = Translate.DoTranslation("Welcome!").ToUpper();
             var figFont = FigletTools.GetFigletFont("banner3");
