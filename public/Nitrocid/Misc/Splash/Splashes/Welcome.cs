@@ -103,24 +103,39 @@ namespace KS.Misc.Splash.Splashes
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
             // Write a glorious Welcome screen
+            // TODO: Manifest the below figlet writing logic to the centered figlet writer
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             string text = Translate.DoTranslation("Welcome!").ToUpper();
             var figFont = FigletTools.GetFigletFont("banner3");
+            var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int consoleX, consoleY;
-            if (figWidth >= ConsoleWrapper.WindowWidth || figHeight >= ConsoleWrapper.WindowHeight)
+            int figWidthFallback = FigletTools.GetFigletWidth(text, figFontFallback) / 2;
+            int figHeightFallback = FigletTools.GetFigletHeight(text, figFontFallback) / 2;
+            int consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
+            int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
+            if (consoleX < 0 || consoleY < 0)
             {
                 // The figlet won't fit, so use small text
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - (text.Length / 2);
-                consoleY = ConsoleWrapper.WindowHeight / 2;
-                TextWriterWhereColor.WriteWhere(text, consoleX, consoleY, true, col);
+                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidthFallback;
+                consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeightFallback;
+                if (consoleX < 0 || consoleY < 0)
+                {
+                    // The fallback figlet also won't fit, so use smaller text
+                    consoleX = (ConsoleWrapper.WindowWidth / 2) - (text.Length / 2);
+                    consoleY = ConsoleWrapper.WindowHeight / 2;
+                    TextWriterWhereColor.WriteWhere(text, consoleX, consoleY, true, col);
+                }
+                else
+                {
+                    // Write the figlet.
+                    FigletWhereColor.WriteFigletWhere(text, consoleX, consoleY, true, figFontFallback, col);
+                    consoleY += figHeightFallback * 2;
+                }
             }
             else
             {
                 // Write the figlet.
-                consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
-                consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
                 FigletWhereColor.WriteFigletWhere(text, consoleX, consoleY, true, figFont, col);
                 consoleY += figHeight * 2;
             }
