@@ -231,13 +231,17 @@ namespace KS.ConsoleBase.Writers.MiscWriters
 
             // Get the line
             string LineContent = Array[LineIndex];
-            builder.AppendLine($"{KernelColorTools.GetColor(ColorType).VTSequenceForeground} | {LineContent}");
 
-            // Place the column handle
+            // Now, check the column number
+            if (ColumnNumber < 0 || ColumnNumber > LineContent.Length)
+                ColumnNumber = LineContent.Length;
+
+            // Place the line and the column handle
             int RepeatBlanks = ColumnNumber - 1;
             if (RepeatBlanks < 0)
                 RepeatBlanks = 0;
-            builder.AppendLine($"{KernelColorTools.GetColor(ColorType).VTSequenceForeground} | {new string(' ', RepeatBlanks)}^");
+            builder.AppendLine($"{KernelColorTools.GetColor(ColorType).VTSequenceForeground}  | {LineContent}");
+            builder.AppendLine($"{KernelColorTools.GetColor(ColorType).VTSequenceForeground}  | {new string(' ', RepeatBlanks)}^");
             return builder.ToString();
         }
 
