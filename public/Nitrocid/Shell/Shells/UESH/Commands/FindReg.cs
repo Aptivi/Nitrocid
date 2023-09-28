@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                     {
                         var WrappedCommand = new KernelThread($"Find Shell Command Thread for file {file}", false, (cmdThreadParams) =>
-                            CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
+                            CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
                         ShellStart.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
                     }
                     ShellManager.GetLine($"{command} \"{file}\"");

@@ -80,7 +80,7 @@ namespace KS.Shell.ShellBase.Shells
                 var ShellExecute = GetShellExecutor(ShellType);
 
                 // Make a new instance of shell information
-                var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
+                var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
                 var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
 
                 // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!

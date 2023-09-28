@@ -45,41 +45,7 @@ namespace KS.Shell.ShellBase.Commands
     public static class CommandExecutor
     {
 
-        /// <summary>
-        /// Parameters to pass to <see cref="ExecuteCommand(ExecuteCommandParameters)"/>
-        /// </summary>
-        internal class ExecuteCommandParameters
-        {
-            /// <summary>
-            /// The requested command with arguments
-            /// </summary>
-            internal string RequestedCommand;
-            /// <summary>
-            /// The shell type
-            /// </summary>
-            internal string ShellType;
-            /// <summary>
-            /// Is the command the custom command?
-            /// </summary>
-            internal bool CustomCommand;
-            /// <summary>
-            /// Shell instance
-            /// </summary>
-            internal ShellExecuteInfo ShellInstance;
-
-            internal ExecuteCommandParameters(string RequestedCommand, ShellType ShellType, ShellExecuteInfo ShellInstance) : 
-                this(RequestedCommand, ShellManager.GetShellTypeName(ShellType), ShellInstance) 
-            { }
-
-            internal ExecuteCommandParameters(string RequestedCommand, string ShellType, ShellExecuteInfo ShellInstance)
-            {
-                this.RequestedCommand = RequestedCommand;
-                this.ShellType = ShellType;
-                this.ShellInstance = ShellInstance;
-            }
-        }
-
-        internal static void StartCommandThread(ExecuteCommandParameters ThreadParams)
+        internal static void StartCommandThread(CommandExecutorParameters ThreadParams)
         {
             // Since we're probably trying to run a command using the alternative command threads, if the main shell command thread
             // is running, use that to execute the command. This ensures that commands like "wrap" that also execute commands from the
@@ -110,10 +76,10 @@ namespace KS.Shell.ShellBase.Commands
             }
         }
 
-        internal static void ExecuteCommand(ExecuteCommandParameters ThreadParams) =>
+        internal static void ExecuteCommand(CommandExecutorParameters ThreadParams) =>
             ExecuteCommand(ThreadParams, CommandManager.GetCommands(ThreadParams.ShellType));
 
-        private static void ExecuteCommand(ExecuteCommandParameters ThreadParams, Dictionary<string, CommandInfo> TargetCommands)
+        private static void ExecuteCommand(CommandExecutorParameters ThreadParams, Dictionary<string, CommandInfo> TargetCommands)
         {
             string RequestedCommand = ThreadParams.RequestedCommand;
             string ShellType = ThreadParams.ShellType;
@@ -331,7 +297,7 @@ namespace KS.Shell.ShellBase.Commands
                 if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for wrapped command {0}...", Command);
-                    var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => ExecuteCommand((ExecuteCommandParameters)cmdThreadParams));
+                    var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
                     ShellStart.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
                 }
 

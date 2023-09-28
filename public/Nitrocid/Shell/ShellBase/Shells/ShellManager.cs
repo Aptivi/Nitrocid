@@ -485,7 +485,7 @@ namespace KS.Shell.ShellBase.Shells
                                     var ShellInstance = ShellStart.ShellStack[^1];
                                     CancellationHandlers.canCancel = true;
                                     DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
-                                    var Params = new CommandExecutor.ExecuteCommandParameters(Command, ShellType, ShellInstance);
+                                    var Params = new CommandExecutorParameters(Command, ShellType, ShellInstance);
                                     CommandExecutor.StartCommandThread(Params);
                                     UESHVariables.SetVariable("UESHErrorCode", $"{ShellInstance.LastErrorCode}");
                                 }

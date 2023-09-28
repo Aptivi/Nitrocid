@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
                     if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                     {
-                        var CommandThread = new KernelThread($"Alternative Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutor.ExecuteCommandParameters)cmdThreadParams));
+                        var CommandThread = new KernelThread($"Alternative Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
                         ShellStart.ShellStack[^1].AltCommandThreads.Add(CommandThread);
                     }
                     ShellManager.GetLine(CommandString);
