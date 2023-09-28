@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
         };
 
-        string IAddon.AddonName => "Extras - Dictionary";
+        string IAddon.AddonName => "Extras - Color Converter";
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
