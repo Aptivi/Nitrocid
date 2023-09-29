@@ -20,6 +20,7 @@
     <RepositoryUrl>https://github.com/Aptivi/NitrocidKS.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Configurations>Debug;Release</Configurations>
+    <Platforms>AnyCPU;x64</Platforms>
   </PropertyGroup>
   <!-- KS NuGet Information End -->
 
@@ -65,10 +66,23 @@
     <DebugType>portable</DebugType>
     <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERBETA</DefineConstants>
   </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DefineDebug>true</DefineDebug>
+    <Optimize>false</Optimize>
+    <DebugType>portable</DebugType>
+    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERBETA;AIASSISTANT</DefineConstants>
+    <EnableMLUnsupportedPlatformTargetCheck>false</EnableMLUnsupportedPlatformTargetCheck>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <DefineConstants>SPECIFIERREL</DefineConstants>
+    <DefineConstants>SPECIFIERREL;AIASSISTANT</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>SPECIFIERREL;AIASSISTANT</DefineConstants>
+    <EnableMLUnsupportedPlatformTargetCheck>false</EnableMLUnsupportedPlatformTargetCheck>
   </PropertyGroup>
   <!-- KS Platform Information End -->
 
@@ -84,6 +98,7 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.0.442202" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.ML" Version="2.0.1" PrivateAssets="all" Condition="'$(Platform)' == 'x64'" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SharpCompress" Version="0.34.0" PrivateAssets="all" />
     <PackageReference Include="SSH.NET" Version="2020.0.2" PrivateAssets="all" />

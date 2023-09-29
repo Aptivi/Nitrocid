@@ -1,0 +1,11 @@
+﻿Question;Answer
+I want to log in to my username. How do I do it?;When the initial screen that shows you the date and the time shows up, press any key to select a user. Then, if there is a password, you'll be asked to enter the password. Once the correct password is entered, you'll be taken to the shell.
+I want to shut down the kernel. Is there any command that does this?;Yes, the command that you'll want to use to shut the kernel down is "shutdown."
+I want to restart the kernel. Is there any command that does this?;Yes, the command that you'll want to use to reboot the kernel is "reboot."
+I got a kernel error after installing a mod. How can I fix it?;The mod that you've recently installed might either contain errors or might be corrupt. Make sure that you've got the latest version of this mod. If you're still experiencing problems, try to start the kernel with debugging mode on and review the debug logs. Contact the mod developer about this issue.
+How do I make my own mod?;Consult the program manual for more information about making your own mod.
+How do I make my own screensaver?;Consult the program manual for more information about making your own screensaver.
+How do I make my own splash?;Consult the program manual for more information about making your own splash.
+I'm not getting all the features on my Nitrocid! How can I get them?;Nitrocid offers two versions: Lite without addons, and Full with addons. The Lite version can be upgraded to the full version by downloading the addons pack from the releases page and unpacking it to the executable path of the kernel.
+I've installed the addon packs to my executable path of Nitrocid, but I'm still not getting all of the features. How can I get them?;Make sure that you've unpacked the addons folder to the correct location, which is the path that the main executable, Nitrocid, is found.
+How can I modify my kernel settings?;There is a command that allows you to do this. It's called "settings."
