@@ -103,6 +103,19 @@ namespace KS.Network.Base
         /// </summary>
         /// <param name="Address">Target address</param>
         /// <param name="Timeout">Timeout in milliseconds</param>
+        /// <param name="text">The text to buffer</param>
+        /// <returns>A ping reply status</returns>
+        public static PingReply PingAddress(string Address, int Timeout, string text)
+        {
+            var PingBuffer = Encoding.ASCII.GetBytes(text);
+            return PingAddress(Address, Timeout, PingBuffer);
+        }
+
+        /// <summary>
+        /// Pings an address
+        /// </summary>
+        /// <param name="Address">Target address</param>
+        /// <param name="Timeout">Timeout in milliseconds</param>
         /// <param name="Buffer">The buffer consisting of array of bytes</param>
         /// <returns>A ping reply status</returns>
         public static PingReply PingAddress(string Address, int Timeout, byte[] Buffer)
