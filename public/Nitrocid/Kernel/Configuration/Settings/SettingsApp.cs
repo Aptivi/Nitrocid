@@ -953,7 +953,7 @@ namespace KS.Kernel.Configuration.Settings
                         PropertyManager.SetPropertyValueInstance(Config.SplashConfig, KeyVar, Value);
                         break;
                     default:
-                        DebugCheck.Assert(false, $"dealing with settings type other than kernel, screensaver, and splash. {SettingsType}");
+                        DebugCheck.AssertFail($"dealing with settings type other than kernel, screensaver, and splash. {SettingsType}");
                         break;
                 }
             }

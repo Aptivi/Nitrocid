@@ -98,7 +98,7 @@ namespace KS.Kernel.Configuration
                         CurrentValue = PropertyManager.GetPropertyValueInstance(SplashConfig, Variable);
                         break;
                     default:
-                        DebugCheck.Assert(false, $"dealing with settings type other than kernel, screensaver, and splash. {SettingsType}");
+                        DebugCheck.AssertFail($"dealing with settings type other than kernel, screensaver, and splash. {SettingsType}");
                         break;
                 }
             }
