@@ -18,6 +18,7 @@
 using KS.Kernel.Debugging.Trace;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Text;
 
 namespace KS.Kernel.Debugging
 {
@@ -53,6 +54,21 @@ namespace KS.Kernel.Debugging
         }
 
         /// <summary>
+        /// Asserts and checks to see if the condition is satisfied
+        /// </summary>
+        /// <param name="condition">Condition</param>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        /// <param name="vars">Variables to format the message with</param>
+        public static void Assert(bool condition, string message, params object[] vars)
+        {
+            if (!condition)
+            {
+                message = TextTools.FormatString(message, vars);
+                Assert(condition, message);
+            }
+        }
+
+        /// <summary>
         /// Asserts and checks to see if the value is null
         /// </summary>
         /// <param name="value">Condition</param>
@@ -75,6 +91,21 @@ namespace KS.Kernel.Debugging
                 DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
                 throw exc;
+            }
+        }
+
+        /// <summary>
+        /// Asserts and checks to see if the value is null
+        /// </summary>
+        /// <param name="value">Condition</param>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        /// <param name="vars">Variables to format the message with</param>
+        public static void AssertNull<T>(T value, string message, params object[] vars)
+        {
+            if (value is null)
+            {
+                message = TextTools.FormatString(message, vars);
+                AssertNull(value, message);
             }
         }
 
@@ -105,6 +136,21 @@ namespace KS.Kernel.Debugging
         }
 
         /// <summary>
+        /// Asserts and checks to see if the value is not null
+        /// </summary>
+        /// <param name="value">Condition</param>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        /// <param name="vars">Variables to format the message with</param>
+        public static void AssertNotNull<T>(T value, string message, params object[] vars)
+        {
+            if (value is not null)
+            {
+                message = TextTools.FormatString(message, vars);
+                AssertNotNull(value, message);
+            }
+        }
+
+        /// <summary>
         /// Triggers assertion failure
         /// </summary>
         /// <param name="message">A message to clarify why the assert failed</param>
@@ -117,6 +163,17 @@ namespace KS.Kernel.Debugging
             DebugWriter.WriteDebug(DebugLevel.E, "!!! ASSERTION FAILURE !!! Message: {0}", message);
             KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Assertion failure.") + $" {message}", exc);
             throw exc;
+        }
+
+        /// <summary>
+        /// Triggers assertion failure
+        /// </summary>
+        /// <param name="message">A message to clarify why the assert failed</param>
+        /// <param name="vars">Variables to format the message with</param>
+        public static void AssertFail(string message, params object[] vars)
+        {
+            message = TextTools.FormatString(message, vars);
+            AssertFail(message);
         }
     }
 }
