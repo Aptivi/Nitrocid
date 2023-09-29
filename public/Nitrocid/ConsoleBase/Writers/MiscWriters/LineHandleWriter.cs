@@ -21,6 +21,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Read;
 using System.Text;
+using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Writers.MiscWriters
 {
@@ -37,7 +38,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="Filename">Path to text file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber) => PrintLineWithHandleConditional(Condition, Filename, LineNumber, ColumnNumber, KernelColorType.NeutralText);
+        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber) =>
+            PrintLineWithHandleConditional(Condition, Filename, LineNumber, ColumnNumber, KernelColorType.NeutralText);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -46,7 +48,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="Array">A string array containing the contents of the file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber) => PrintLineWithHandleConditional(Condition, Array, LineNumber, ColumnNumber, KernelColorType.NeutralText);
+        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber) =>
+            PrintLineWithHandleConditional(Condition, Array, LineNumber, ColumnNumber, KernelColorType.NeutralText);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -56,11 +59,33 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber, KernelColorType ColorType)
+        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber, KernelColorType ColorType) =>
+            PrintLineWithHandleConditional(Condition, Filename, LineNumber, ColumnNumber, KernelColorTools.GetColor(ColorType));
+
+        /// <summary>
+        /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="ColorType">The type of color</param>
+        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType) =>
+            PrintLineWithHandleConditional(Condition, Array, LineNumber, ColumnNumber, KernelColorTools.GetColor(ColorType));
+
+        /// <summary>
+        /// Prints the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static void PrintLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber, Color color)
         {
             if (Condition)
             {
-                PrintLineWithHandle(Filename, LineNumber, ColumnNumber, ColorType);
+                PrintLineWithHandle(Filename, LineNumber, ColumnNumber, color);
             }
         }
 
@@ -71,12 +96,12 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="Array">A string array containing the contents of the file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType)
+        /// <param name="color">The color</param>
+        public static void PrintLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, Color color)
         {
             if (Condition)
             {
-                PrintLineWithHandle(Array, LineNumber, ColumnNumber, ColorType);
+                PrintLineWithHandle(Array, LineNumber, ColumnNumber, color);
             }
         }
 
@@ -86,7 +111,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="Filename">Path to text file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber) => PrintLineWithHandle(Filename, LineNumber, ColumnNumber, KernelColorType.NeutralText);
+        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber) =>
+            PrintLineWithHandle(Filename, LineNumber, ColumnNumber, KernelColorType.NeutralText);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -94,7 +120,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="Array">A string array containing the contents of the file</param>
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
-        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber) => PrintLineWithHandle(Array, LineNumber, ColumnNumber, KernelColorType.NeutralText);
+        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber) =>
+            PrintLineWithHandle(Array, LineNumber, ColumnNumber, KernelColorType.NeutralText);
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -103,16 +130,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber, KernelColorType ColorType)
-        {
-            // Read the contents
-            Filesystem.ThrowOnInvalidPath(Filename);
-            Filename = Filesystem.NeutralizePath(Filename);
-            var FileContents = FileRead.ReadContents(Filename);
-
-            // Do the job
-            PrintLineWithHandle(FileContents, LineNumber, ColumnNumber, ColorType);
-        }
+        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber, KernelColorType ColorType) =>
+            PrintLineWithHandle(Filename, LineNumber, ColumnNumber, KernelColorTools.GetColor(ColorType));
 
         /// <summary>
         /// Prints the line of a text file with the specified line number and the column number
@@ -122,7 +141,35 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
         public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType) =>
-            TextWriterColor.Write(RenderLineWithHandle(Array, LineNumber, ColumnNumber, ColorType), true, ColorType);
+            PrintLineWithHandle(Array, LineNumber, ColumnNumber, KernelColorTools.GetColor(ColorType));
+
+        /// <summary>
+        /// Prints the line of a text file with the specified line number and the column number
+        /// </summary>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber, Color color)
+        {
+            // Read the contents
+            Filesystem.ThrowOnInvalidPath(Filename);
+            Filename = Filesystem.NeutralizePath(Filename);
+            var FileContents = FileRead.ReadContents(Filename);
+
+            // Do the job
+            PrintLineWithHandle(FileContents, LineNumber, ColumnNumber, color);
+        }
+
+        /// <summary>
+        /// Prints the line of a text file with the specified line number and the column number
+        /// </summary>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, Color color) =>
+            TextWriterColor.Write(RenderLineWithHandle(Array, LineNumber, ColumnNumber, color), true, color);
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
@@ -167,10 +214,36 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static string RenderLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType)
+        public static string RenderLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType) =>
+            RenderLineWithHandleConditional(Condition, Array, LineNumber, ColumnNumber, KernelColorTools.GetColor(ColorType));
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static string RenderLineWithHandleConditional(bool Condition, string Filename, int LineNumber, int ColumnNumber, Color color)
         {
             if (Condition)
-                return RenderLineWithHandle(Array, LineNumber, ColumnNumber, ColorType);
+                return RenderLineWithHandle(Filename, LineNumber, ColumnNumber, color);
+            return "";
+        }
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied
+        /// </summary>
+        /// <param name="Condition">The condition to satisfy</param>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static string RenderLineWithHandleConditional(bool Condition, string[] Array, int LineNumber, int ColumnNumber, Color color)
+        {
+            if (Condition)
+                return RenderLineWithHandle(Array, LineNumber, ColumnNumber, color);
             return "";
         }
 
@@ -199,16 +272,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static string RenderLineWithHandle(string Filename, int LineNumber, int ColumnNumber, KernelColorType ColorType)
-        {
-            // Read the contents
-            Filesystem.ThrowOnInvalidPath(Filename);
-            Filename = Filesystem.NeutralizePath(Filename);
-            var FileContents = FileRead.ReadContents(Filename);
-
-            // Do the job
-            return RenderLineWithHandle(FileContents, LineNumber, ColumnNumber, ColorType);
-        }
+        public static string RenderLineWithHandle(string Filename, int LineNumber, int ColumnNumber, KernelColorType ColorType) =>
+            RenderLineWithHandle(Filename, LineNumber, ColumnNumber, KernelColorTools.GetColor(ColorType));
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number
@@ -217,7 +282,35 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="LineNumber">Line number (not index)</param>
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="ColorType">The type of color</param>
-        public static string RenderLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType)
+        public static string RenderLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, KernelColorType ColorType) =>
+            RenderLineWithHandle(Array, LineNumber, ColumnNumber, KernelColorTools.GetColor(ColorType));
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number
+        /// </summary>
+        /// <param name="Filename">Path to text file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static string RenderLineWithHandle(string Filename, int LineNumber, int ColumnNumber, Color color)
+        {
+            // Read the contents
+            Filesystem.ThrowOnInvalidPath(Filename);
+            Filename = Filesystem.NeutralizePath(Filename);
+            var FileContents = FileRead.ReadContents(Filename);
+
+            // Do the job
+            return RenderLineWithHandle(FileContents, LineNumber, ColumnNumber, color);
+        }
+
+        /// <summary>
+        /// Renders the line of a text file with the specified line number and the column number
+        /// </summary>
+        /// <param name="Array">A string array containing the contents of the file</param>
+        /// <param name="LineNumber">Line number (not index)</param>
+        /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
+        /// <param name="color">The color</param>
+        public static string RenderLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, Color color)
         {
             // Get the builder
             StringBuilder builder = new();
@@ -240,8 +333,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             int RepeatBlanks = ColumnNumber - 1;
             if (RepeatBlanks < 0)
                 RepeatBlanks = 0;
-            builder.AppendLine($"{KernelColorTools.GetColor(ColorType).VTSequenceForeground}  | {LineContent}");
-            builder.AppendLine($"{KernelColorTools.GetColor(ColorType).VTSequenceForeground}  | {new string(' ', RepeatBlanks)}^");
+            builder.AppendLine($"{color.VTSequenceForeground}  | {LineContent}");
+            builder.AppendLine($"{color.VTSequenceForeground}  | {new string(' ', RepeatBlanks)}^");
             return builder.ToString();
         }
 
