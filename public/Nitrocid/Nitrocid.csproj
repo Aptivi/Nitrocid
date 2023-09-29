@@ -76,7 +76,7 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
-    <DefineConstants>SPECIFIERREL;AIASSISTANT</DefineConstants>
+    <DefineConstants>SPECIFIERREL</DefineConstants>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <Optimize>true</Optimize>
