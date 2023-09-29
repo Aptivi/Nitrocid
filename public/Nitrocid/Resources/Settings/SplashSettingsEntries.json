@@ -1,5 +1,6 @@
-{
-    "Simple": {
+[
+    {
+        "Name": "Simple",
         "Desc": "Settings for this splash screen are available here.",
         "Path": "Splash.Simple",
         "Keys": [
@@ -15,7 +16,8 @@
             }
         ]
     },
-    "Progress": {
+    {
+        "Name": "Progress",
         "Desc": "Settings for this splash screen are available here.",
         "Path": "Splash.Progress",
         "Keys": [
@@ -36,7 +38,8 @@
             }
         ]
     },
-    "PowerLineProgress": {
+    {
+        "Name": "PowerLineProgress",
         "Desc": "Settings for this splash screen are available here.",
         "Path": "Splash.PowerLineProgress",
         "Keys": [
@@ -57,7 +60,8 @@
             }
         ]
     },
-    "Quote": {
+    {
+        "Name": "Quote",
         "Desc": "Settings for this splash screen are available here.",
         "Path": "Splash.Quote",
         "Keys": [
@@ -73,4 +77,4 @@
             }
         ]
     }
-}
+]

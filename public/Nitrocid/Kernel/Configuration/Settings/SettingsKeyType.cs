@@ -25,7 +25,7 @@ namespace KS.Kernel.Configuration.Settings
     /// <summary>
     /// Key type for settings entry
     /// </summary>
-    enum SettingsKeyType
+    public enum SettingsKeyType
     {
         /// <summary>
         /// Unknown type

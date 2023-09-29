@@ -32,6 +32,7 @@ using KS.ConsoleBase.Colors;
 using Terminaux.Colors;
 using KS.Resources;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Configuration.Settings;
 
 namespace KS.Kernel.Configuration
 {
@@ -73,13 +74,13 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Gets the value from a settings entry
         /// </summary>
-        /// <param name="SettingsType">Settings type</param>
         /// <param name="Setting">An entry to get the value from</param>
+        /// <param name="SettingsType">Settings type</param>
         /// <returns>The value</returns>
-        public static object GetValueFromEntry(JToken Setting, ConfigType SettingsType)
+        public static object GetValueFromEntry(SettingsKey Setting, ConfigType SettingsType)
         {
             object CurrentValue = "Unknown";
-            string Variable = (string)Setting["Variable"];
+            string Variable = Setting.Variable;
 
             // Print the option by determining how to get the current value
             if (PropertyManager.CheckProperty(Variable))
@@ -119,31 +120,28 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Finds a setting with the matching pattern
         /// </summary>
-        public static List<InputChoiceInfo> FindSetting(string Pattern, JToken SettingsToken, ConfigType SettingsType)
+        public static List<InputChoiceInfo> FindSetting(string Pattern, SettingsEntry[] SettingsEntries, ConfigType SettingsType)
         {
             var Results = new List<InputChoiceInfo>();
 
             // Search the settings for the given pattern
             try
             {
-                for (int SectionIndex = 0; SectionIndex <= SettingsToken.Count() - 1; SectionIndex++)
+                for (int SectionIndex = 0; SectionIndex <= SettingsEntries.Length - 1; SectionIndex++)
                 {
-                    var SectionToken = SettingsToken.ToList()[SectionIndex];
-                    for (int SettingIndex = 0; SettingIndex <= SectionToken.Count() - 1; SettingIndex++)
+                    var SectionToken = SettingsEntries[SectionIndex];
+                    var keys = SectionToken.Keys;
+                    for (int SettingIndex = 0; SettingIndex <= keys.Length - 1; SettingIndex++)
                     {
-                        var SettingToken = SectionToken.ToList()[SettingIndex]["Keys"];
-                        for (int KeyIndex = 0; KeyIndex <= SettingToken.Count() - 1; KeyIndex++)
+                        var Setting = keys[SettingIndex];
+                        object CurrentValue = GetValueFromEntry(Setting, SettingsType);
+                        string KeyName = Translate.DoTranslation(Setting.Name) + $" [{CurrentValue}]";
+                        if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                         {
-                            var Setting = SettingToken.ToList()[KeyIndex];
-                            object CurrentValue = GetValueFromEntry(Setting, SettingsType);
-                            string KeyName = Translate.DoTranslation((string)Setting["Name"]) + $" [{CurrentValue}]";
-                            if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
-                            {
-                                string desc = (string)Setting["Description"] ?? "";
-                                InputChoiceInfo ici = new($"{SectionIndex + 1}/{KeyIndex + 1}", KeyName, desc);
-                                DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", KeyName, SectionIndex + 1, KeyIndex + 1);
-                                Results.Add(ici);
-                            }
+                            string desc = Setting.Description;
+                            InputChoiceInfo ici = new($"{SectionIndex + 1}/{SettingIndex + 1}", KeyName, desc);
+                            DebugWriter.WriteDebug(DebugLevel.I, "Found setting {0} under section {1}, key {2}", KeyName, SectionIndex + 1, SettingIndex + 1);
+                            Results.Add(ici);
                         }
                     }
                 }

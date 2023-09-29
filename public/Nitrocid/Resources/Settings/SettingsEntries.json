@@ -1,5 +1,6 @@
-{
-    "General": {
+[
+    {
+        "Name": "General",
         "Desc": "This section lists all general kernel settings, mainly for maintaining the kernel.",
         "Path": "General",
         "DisplayAs": "General kernel settings",
@@ -175,7 +176,8 @@
             }
         ]
     },
-    "Colors": {
+    {
+        "Name": "Colors",
         "Desc": "This section lets you choose what type of color do you want to change.",
         "Path": "Colors",
         "DisplayAs": "Color settings",
@@ -462,7 +464,8 @@
             }
         ]
     },
-    "Hardware": {
+    {
+        "Name": "Hardware",
         "Desc": "This section changes hardware probe behavior.",
         "Path": "Hardware",
         "DisplayAs": "Hardware settings",
@@ -487,7 +490,8 @@
             }
         ]
     },
-    "Login": {
+    {
+        "Name": "Login",
         "Desc": "This section represents the login settings. Log out of your account for the changes to take effect.",
         "Path": "Login",
         "DisplayAs": "Login settings",
@@ -582,7 +586,8 @@
             }
         ]
     },
-    "Shell": {
+    {
+        "Name": "Shell",
         "Desc": "This section lists the shell settings.",
         "Path": "Shell",
         "DisplayAs": "General shell settings",
@@ -712,7 +717,8 @@
             }
         ]
     },
-    "Filesystem": {
+    {
+        "Name": "Filesystem",
         "Desc": "This section lists the filesystem settings.",
         "Path": "Filesystem",
         "DisplayAs": "Filesystem settings",
@@ -787,7 +793,8 @@
             }
         ]
     },
-    "Network": {
+    {
+        "Name": "Network",
         "Desc": "This section lists the network settings, like the FTP shell, the network-related command settings, and the remote debug settings.",
         "Path": "Network",
         "DisplayAs": "General networking settings",
@@ -1136,7 +1143,8 @@
             }
         ]
     },
-    "Screensaver": {
+    {
+        "Name": "Screensaver",
         "Desc": "This section lists the general screensaver settings. For individual screensaver settings, exit Settings and open Screensaver Settings.",
         "Path": "Screensaver",
         "DisplayAs": "Basic screensaver settings",
@@ -1171,7 +1179,8 @@
             }
         ]
     },
-    "Drivers": {
+    {
+        "Name": "Drivers",
         "Desc": "This section lists the driver settings.",
         "Path": "Drivers",
         "DisplayAs": "Kernel driver settings",
@@ -1238,7 +1247,8 @@
             }
         ]
     },
-    "Misc": {
+    {
+        "Name": "Misc",
         "Desc": "Settings that don't fit in their appropriate sections land here.",
         "Path": "Misc",
         "DisplayAs": "Miscellaneous settings",
@@ -1644,4 +1654,4 @@
             }
         ]
     }
-}
+]

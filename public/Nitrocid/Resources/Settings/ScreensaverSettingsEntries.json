@@ -1,5 +1,6 @@
-{
-    "ColorMix": {
+[
+    {
+        "Name": "ColorMix",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.ColorMix",
         "Keys": [
@@ -86,7 +87,8 @@
             }
         ]
     },
-    "Disco": {
+    {
+        "Name": "Disco",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Disco",
         "Keys": [
@@ -186,7 +188,8 @@
             }
         ]
     },
-    "GlitterColor": {
+    {
+        "Name": "GlitterColor",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.GlitterColor",
         "Keys": [
@@ -268,7 +271,8 @@
             }
         ]
     },
-    "Lines": {
+    {
+        "Name": "Lines",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Lines",
         "Keys": [
@@ -361,7 +365,8 @@
             }
         ]
     },
-    "Dissolve": {
+    {
+        "Name": "Dissolve",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Dissolve",
         "Keys": [
@@ -442,7 +447,8 @@
             }
         ]
     },
-    "BouncingBlock": {
+    {
+        "Name": "BouncingBlock",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BouncingBlock",
         "Keys": [
@@ -534,7 +540,8 @@
             }
         ]
     },
-    "ProgressClock": {
+    {
+        "Name": "ProgressClock",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.ProgressClock",
         "Keys": [
@@ -1002,7 +1009,8 @@
             }
         ]
     },
-    "Lighter": {
+    {
+        "Name": "Lighter",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Lighter",
         "Keys": [
@@ -1095,7 +1103,8 @@
             }
         ]
     },
-    "Wipe": {
+    {
+        "Name": "Wipe",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Wipe",
         "Keys": [
@@ -1188,7 +1197,8 @@
             }
         ]
     },
-    "SimpleMatrix": {
+    {
+        "Name": "SimpleMatrix",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.SimpleMatrix",
         "Keys": [
@@ -1200,7 +1210,8 @@
             }
         ]
     },
-    "GlitterMatrix": {
+    {
+        "Name": "GlitterMatrix",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.GlitterMatrix",
         "Keys": [
@@ -1222,7 +1233,8 @@
             }
         ]
     },
-    "BouncingText": {
+    {
+        "Name": "BouncingText",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BouncingText",
         "Keys": [
@@ -1320,7 +1332,8 @@
             }
         ]
     },
-    "Fader": {
+    {
+        "Name": "Fader",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Fader",
         "Keys": [
@@ -1403,7 +1416,8 @@
             }
         ]
     },
-    "FaderBack": {
+    {
+        "Name": "FaderBack",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.FaderBack",
         "Keys": [
@@ -1475,7 +1489,8 @@
             }
         ]
     },
-    "BeatFader": {
+    {
+        "Name": "BeatFader",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BeatFader",
         "Keys": [
@@ -1574,7 +1589,8 @@
             }
         ]
     },
-    "Typo": {
+    {
+        "Name": "Typo",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Typo",
         "Keys": [
@@ -1631,7 +1647,8 @@
             }
         ]
     },
-    "Marquee": {
+    {
+        "Name": "Marquee",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Marquee",
         "Keys": [
@@ -1737,7 +1754,8 @@
 
         ]
     },
-    "Linotypo": {
+    {
+        "Name": "Linotypo",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Linotypo",
         "Keys": [
@@ -1827,7 +1845,8 @@
             }
         ]
     },
-    "Typewriter": {
+    {
+        "Name": "Typewriter",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Typewriter",
         "Keys": [
@@ -1875,7 +1894,8 @@
             }
         ]
     },
-    "FlashColor": {
+    {
+        "Name": "FlashColor",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.FlashColor",
         "Keys": [
@@ -1962,7 +1982,8 @@
             }
         ]
     },
-    "SpotWrite": {
+    {
+        "Name": "SpotWrite",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.SpotWrite",
         "Keys": [
@@ -1992,7 +2013,8 @@
             }
         ]
     },
-    "Ramp": {
+    {
+        "Name": "Ramp",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Ramp",
         "Keys": [
@@ -2238,7 +2260,8 @@
             }
         ]
     },
-    "StackBox": {
+    {
+        "Name": "StackBox",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.StackBox",
         "Keys": [
@@ -2326,7 +2349,8 @@
             }
         ]
     },
-    "Snaker": {
+    {
+        "Name": "Snaker",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Snaker",
         "Keys": [
@@ -2414,7 +2438,8 @@
             }
         ]
     },
-    "BarRot": {
+    {
+        "Name": "BarRot",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BarRot",
         "Keys": [
@@ -2628,7 +2653,8 @@
             }
         ]
     },
-    "Fireworks": {
+    {
+        "Name": "Fireworks",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Fireworks",
         "Keys": [
@@ -2718,7 +2744,8 @@
             }
         ]
     },
-    "Figlet": {
+    {
+        "Name": "Figlet",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Figlet",
         "Keys": [
@@ -2812,7 +2839,8 @@
             }
         ]
     },
-    "FlashText": {
+    {
+        "Name": "FlashText",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.FlashText",
         "Keys": [
@@ -2905,7 +2933,8 @@
             }
         ]
     },
-    "Noise": {
+    {
+        "Name": "Noise",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Noise",
         "Keys": [
@@ -2925,7 +2954,8 @@
             }
         ]
     },
-    "PersonLookup": {
+    {
+        "Name": "PersonLookup",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.PersonLookup",
         "Keys": [
@@ -2975,7 +3005,8 @@
             }
         ]
     },
-    "DateAndTime": {
+    {
+        "Name": "DateAndTime",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.DateAndTime",
         "Keys": [
@@ -3057,7 +3088,8 @@
             }
         ]
     },
-    "Glitch": {
+    {
+        "Name": "Glitch",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Glitch",
         "Keys": [
@@ -3077,7 +3109,8 @@
             }
         ]
     },
-    "FallingLine": {
+    {
+        "Name": "FallingLine",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.FallingLine",
         "Keys": [
@@ -3165,7 +3198,8 @@
             }
         ]
     },
-    "Indeterminate": {
+    {
+        "Name": "Indeterminate",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Indeterminate",
         "Keys": [
@@ -3341,7 +3375,8 @@
             }
         ]
     },
-    "Pulse": {
+    {
+        "Name": "Pulse",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Pulse",
         "Keys": [
@@ -3407,7 +3442,8 @@
             }
         ]
     },
-    "BeatPulse": {
+    {
+        "Name": "BeatPulse",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BeatPulse",
         "Keys": [
@@ -3506,7 +3542,8 @@
             }
         ]
     },
-    "EdgePulse": {
+    {
+        "Name": "EdgePulse",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.EdgePulse",
         "Keys": [
@@ -3572,7 +3609,8 @@
             }
         ]
     },
-    "BeatEdgePulse": {
+    {
+        "Name": "BeatEdgePulse",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BeatEdgePulse",
         "Keys": [
@@ -3671,7 +3709,8 @@
             }
         ]
     },
-    "GradientRot": {
+    {
+        "Name": "GradientRot",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.GradientRot",
         "Keys": [
@@ -3785,7 +3824,8 @@
             }
         ]
     },
-    "Gradient": {
+    {
+        "Name": "Gradient",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Gradient",
         "Keys": [
@@ -3893,7 +3933,8 @@
             }
         ]
     },
-    "Lightspeed": {
+    {
+        "Name": "Lightspeed",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Lightspeed",
         "Keys": [
@@ -3969,7 +4010,8 @@
             }
         ]
     },
-    "Starfield": {
+    {
+        "Name": "Starfield",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Starfield",
         "Keys": [
@@ -3981,7 +4023,8 @@
             }
         ]
     },
-    "Siren": {
+    {
+        "Name": "Siren",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Siren",
         "Keys": [
@@ -3999,7 +4042,8 @@
             }
         ]
     },
-    "Spin": {
+    {
+        "Name": "Spin",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Spin",
         "Keys": [
@@ -4011,7 +4055,8 @@
             }
         ]
     },
-    "SnakeFill": {
+    {
+        "Name": "SnakeFill",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.SnakeFill",
         "Keys": [
@@ -4093,7 +4138,8 @@
             }
         ]
     },
-    "Equalizer": {
+    {
+        "Name": "Equalizer",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Equalizer",
         "Keys": [
@@ -4105,7 +4151,8 @@
             }
         ]
     },
-    "BSOD": {
+    {
+        "Name": "BSOD",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BSOD",
         "Keys": [
@@ -4117,7 +4164,8 @@
             }
         ]
     },
-    "Memdump": {
+    {
+        "Name": "Memdump",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Memdump",
         "Keys": [
@@ -4129,7 +4177,8 @@
             }
         ]
     },
-    "Lyrics": {
+    {
+        "Name": "Lyrics",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Lyrics",
         "Keys": [
@@ -4141,7 +4190,8 @@
             }
         ]
     },
-    "ExcaliBeats": {
+    {
+        "Name": "ExcaliBeats",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.ExcaliBeats",
         "Keys": [
@@ -4253,7 +4303,8 @@
             }
         ]
     },
-    "BarWave": {
+    {
+        "Name": "BarWave",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BarWave",
         "Keys": [
@@ -4335,7 +4386,8 @@
             }
         ]
     },
-    "Wave": {
+    {
+        "Name": "Wave",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Wave",
         "Keys": [
@@ -4411,7 +4463,8 @@
             }
         ]
     },
-    "Mesmerize": {
+    {
+        "Name": "Mesmerize",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Mesmerize",
         "Keys": [
@@ -4487,7 +4540,8 @@
             }
         ]
     },
-    "Aurora": {
+    {
+        "Name": "Aurora",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Aurora",
         "Keys": [
@@ -4499,7 +4553,8 @@
             }
         ]
     },
-    "Matrix": {
+    {
+        "Name": "Matrix",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Matrix",
         "Keys": [
@@ -4517,7 +4572,8 @@
             }
         ]
     },
-    "Lightning": {
+    {
+        "Name": "Lightning",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Lightning",
         "Keys": [
@@ -4537,7 +4593,8 @@
             }
         ]
     },
-    "Bloom": {
+    {
+        "Name": "Bloom",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Bloom",
         "Keys": [
@@ -4555,7 +4612,8 @@
             }
         ]
     },
-    "WordHasher": {
+    {
+        "Name": "WordHasher",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.WordHasher",
         "Keys": [
@@ -4637,7 +4695,8 @@
             }
         ]
     },
-    "SquareCorner": {
+    {
+        "Name": "SquareCorner",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.SquareCorner",
         "Keys": [
@@ -4709,7 +4768,8 @@
             }
         ]
     },
-    "NumberScatter": {
+    {
+        "Name": "NumberScatter",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.NumberScatter",
         "Keys": [
@@ -4731,7 +4791,8 @@
             }
         ]
     },
-    "Quote": {
+    {
+        "Name": "Quote",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Quote",
         "Keys": [
@@ -4813,7 +4874,8 @@
             }
         ]
     },
-    "BoxGrid": {
+    {
+        "Name": "BoxGrid",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.BoxGrid",
         "Keys": [
@@ -4873,7 +4935,8 @@
             }
         ]
     },
-    "ColorBleed": {
+    {
+        "Name": "ColorBleed",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.ColorBleed",
         "Keys": [
@@ -4969,7 +5032,8 @@
             }
         ]
     },
-    "MatrixBleed": {
+    {
+        "Name": "MatrixBleed",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.MatrixBleed",
         "Keys": [
@@ -5065,7 +5129,8 @@
             }
         ]
     },
-    "Text": {
+    {
+        "Name": "Text",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Text",
         "Keys": [
@@ -5153,7 +5218,8 @@
             }
         ]
     },
-    "TextBox": {
+    {
+        "Name": "TextBox",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.TextBox",
         "Keys": [
@@ -5241,7 +5307,8 @@
             }
         ]
     },
-    "WordHasherWrite": {
+    {
+        "Name": "WordHasherWrite",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.WordHasherWrite",
         "Keys": [
@@ -5323,7 +5390,8 @@
             }
         ]
     },
-    "SirenTheme": {
+    {
+        "Name": "SirenTheme",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.SirenTheme",
         "Keys": [
@@ -5341,7 +5409,8 @@
             }
         ]
     },
-    "StarfieldWarp": {
+    {
+        "Name": "StarfieldWarp",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.StarfieldWarp",
         "Keys": [
@@ -5353,7 +5422,8 @@
             }
         ]
     },
-    "Speckles": {
+    {
+        "Name": "Speckles",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.Speckles",
         "Keys": [
@@ -5365,7 +5435,8 @@
             }
         ]
     },
-    "LetterScatter": {
+    {
+        "Name": "LetterScatter",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.LetterScatter",
         "Keys": [
@@ -5387,7 +5458,8 @@
             }
         ]
     },
-    "MultiLines": {
+    {
+        "Name": "MultiLines",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.MultiLines",
         "Keys": [
@@ -5480,7 +5552,8 @@
             }
         ]
     },
-    "LaserBeams": {
+    {
+        "Name": "LaserBeams",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.LaserBeams",
         "Keys": [
@@ -5573,7 +5646,8 @@
             }
         ]
     },
-    "TextWander": {
+    {
+        "Name": "TextWander",
         "Desc": "Settings for this screensaver are available here.",
         "Path": "Screensaver.TextWander",
         "Keys": [
@@ -5661,4 +5735,4 @@
             }
         ]
     }
-}
+]

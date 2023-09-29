@@ -40,7 +40,7 @@ using KS.Misc.Text;
 using KS.Resources;
 using KS.Shell.Prompts;
 using KS.Users.Permissions;
-using Newtonsoft.Json.Linq;
+using Newtonsoft.Json;
 using Terminaux.Colors;
 using Terminaux.Colors.Wheel;
 using Terminaux.Figlet;
@@ -53,7 +53,7 @@ namespace KS.Kernel.Configuration.Settings
     public static class SettingsApp
     {
 
-        // TODO: It has now become a convoluted mess. Please refactor.
+        // TODO: Even if we've introduced the SettingsKey and SettingsEntry classes, the whole settings entry implementation is still a convoluted mess. Please refactor.
         /// <summary>
         /// Main page
         /// </summary>
@@ -61,8 +61,8 @@ namespace KS.Kernel.Configuration.Settings
         {
             PermissionsTools.Demand(PermissionTypes.ManipulateSettings);
             bool PromptFinished = false;
-            var SettingsToken = OpenSettingsResource(SettingsType);
-            int MaxSections = SettingsToken.Count();
+            var SettingsEntries = OpenSettingsResource(SettingsType);
+            int MaxSections = SettingsEntries.Length;
 
             while (!PromptFinished)
             {
@@ -70,13 +70,13 @@ namespace KS.Kernel.Configuration.Settings
                 var sections = new List<InputChoiceInfo>();
                 for (int SectionIndex = 0; SectionIndex <= MaxSections - 1; SectionIndex++)
                 {
-                    JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
+                    SettingsEntry Section = SettingsEntries[SectionIndex];
                     if (SettingsType != ConfigType.Kernel)
                     {
                         var ici = new InputChoiceInfo(
                             $"{SectionIndex + 1}",
                             Translate.DoTranslation(Section.Name),
-                            Translate.DoTranslation(Section.First["Desc"].ToString())
+                            Translate.DoTranslation(Section.Desc)
                         );
                         sections.Add(ici);
                     }
@@ -84,8 +84,8 @@ namespace KS.Kernel.Configuration.Settings
                     {
                         var ici = new InputChoiceInfo(
                             $"{SectionIndex + 1}",
-                            Translate.DoTranslation(Section.First["DisplayAs"].ToString()),
-                            Translate.DoTranslation(Section.First["Desc"].ToString())
+                            Translate.DoTranslation(Section.DisplayAs),
+                            Translate.DoTranslation(Section.Desc)
                         );
                         sections.Add(ici);
                     }
@@ -110,14 +110,14 @@ namespace KS.Kernel.Configuration.Settings
                 {
                     // The selected answer is a section
                     InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Loading section..."), false);
-                    JProperty SelectedSection = (JProperty)SettingsToken.ToList()[Answer - 1];
+                    SettingsEntry SelectedSection = SettingsEntries[Answer - 1];
                     DebugWriter.WriteDebug(DebugLevel.I, "Opening section {0}...", SelectedSection.Name);
-                    OpenSection(SelectedSection.Name, SettingsToken, SettingsType);
+                    OpenSection(SelectedSection.Name, SelectedSection, SettingsType);
                 }
                 else if (Answer == MaxSections + 1)
                 {
                     // The selected answer is "Find a Setting"
-                    VariableFinder(SettingsToken, SettingsType);
+                    VariableFinder(SettingsEntries, SettingsType);
                 }
                 else if (Answer == MaxSections + 2)
                 {
@@ -211,21 +211,20 @@ namespace KS.Kernel.Configuration.Settings
         /// Open section
         /// </summary>
         /// <param name="Section">Section name</param>
-        /// <param name="SettingsToken">Settings token</param>
+        /// <param name="SettingsSection">Settings section entry</param>
         /// <param name="SettingsType">Settings type</param>
-        public static void OpenSection(string Section, JToken SettingsToken, ConfigType SettingsType)
+        public static void OpenSection(string Section, SettingsEntry SettingsSection, ConfigType SettingsType)
         {
             PermissionsTools.Demand(PermissionTypes.ManipulateSettings);
             try
             {
                 // General variables
                 bool SectionFinished = false;
-                var SectionTokenGeneral = SettingsToken[Section];
-                var SectionToken = SectionTokenGeneral["Keys"];
-                var SectionDescription = SectionTokenGeneral["Desc"];
-                var SectionDisplayName = SectionTokenGeneral["DisplayAs"] ?? Section;
-                bool SectionTranslateName = SectionTokenGeneral["DisplayAs"] != null;
-                int MaxOptions = SectionToken.Count();
+                var SectionToken = SettingsSection.Keys;
+                var SectionDescription = SettingsSection.Desc;
+                var SectionDisplayName = SettingsSection.DisplayAs ?? Section;
+                bool SectionTranslateName = SettingsSection.DisplayAs != null;
+                int MaxOptions = SectionToken.Length;
 
                 while (!SectionFinished)
                 {
@@ -243,7 +242,7 @@ namespace KS.Kernel.Configuration.Settings
                         var Setting = SectionToken[SectionIndex];
 
                         // Check to see if the host platform is supported
-                        string[] keyUnsupportedPlatforms = ((JArray)Setting["UnsupportedPlatforms"])?.Values<string>().ToArray() ?? Array.Empty<string>();
+                        string[] keyUnsupportedPlatforms = Setting.UnsupportedPlatforms.ToArray() ?? Array.Empty<string>();
                         bool platformUnsupported = false;
                         foreach (string platform in keyUnsupportedPlatforms)
                         {
@@ -265,7 +264,7 @@ namespace KS.Kernel.Configuration.Settings
                         }
                         if (platformUnsupported)
                         {
-                            displayUnsupportedConfigs.Add(Translate.DoTranslation(Setting["Name"].ToString()));
+                            displayUnsupportedConfigs.Add(Translate.DoTranslation(Setting.Name));
                             Notes = Translate.DoTranslation("One or more of the following settings found in this section are unsupported in your platform:") + $" {string.Join(", ", displayUnsupportedConfigs)}";
                             continue;
                         }
@@ -274,8 +273,8 @@ namespace KS.Kernel.Configuration.Settings
                         object CurrentValue = ConfigTools.GetValueFromEntry(Setting, SettingsType);
                         var ici = new InputChoiceInfo(
                             $"{SectionIndex + 1}",
-                            $"{Translate.DoTranslation(Setting["Name"].ToString())} [{CurrentValue}]",
-                            Translate.DoTranslation(Setting["Description"]?.ToString() ?? "")
+                            $"{Translate.DoTranslation(Setting.Name)} [{CurrentValue}]",
+                            Translate.DoTranslation(Setting.Description)
                         );
                         sections.Add(ici);
                     }
@@ -304,7 +303,7 @@ namespace KS.Kernel.Configuration.Settings
                     if (finalAnswer >= 1 & finalAnswer <= MaxOptions)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening key {0} from section {1}...", finalAnswer, Section);
-                        OpenKey(Section, finalAnswer, SettingsToken, SettingsType);
+                        OpenKey(finalAnswer, SettingsSection, SettingsType);
                     }
                     else if (finalAnswer == MaxOptions + 2 & SettingsType == ConfigType.Screensaver)
                     {
@@ -354,61 +353,59 @@ namespace KS.Kernel.Configuration.Settings
         /// Open a key.
         /// </summary>
         /// <param name="SettingsType">Settings type</param>
-        /// <param name="Section">Section</param>
         /// <param name="KeyNumber">Key number</param>
-        /// <param name="SettingsToken">Settings token</param>
-        public static void OpenKey(string Section, int KeyNumber, JToken SettingsToken, ConfigType SettingsType)
+        /// <param name="SettingsSection">Settings token</param>
+        public static void OpenKey(int KeyNumber, SettingsEntry SettingsSection, ConfigType SettingsType)
         {
             PermissionsTools.Demand(PermissionTypes.ManipulateSettings);
             try
             {
                 // Section and key
-                var SectionTokenGeneral = SettingsToken[Section];
-                var SectionToken = SectionTokenGeneral["Keys"];
-                var KeyToken = SectionToken.ToList()[KeyNumber - 1];
+                var SectionToken = SettingsSection.Keys;
+                var KeyToken = SectionToken[KeyNumber - 1];
                 int MaxKeyOptions = 0;
 
                 // Key properties
-                string KeyName = (string)KeyToken["Name"];
-                string KeyDescription = (string)KeyToken["Description"];
-                SettingsKeyType KeyType = (SettingsKeyType)Convert.ToInt32(Enum.Parse(typeof(SettingsKeyType), (string)KeyToken["Type"]));
-                string KeyVar = (string)KeyToken["Variable"];
-                int KeyEnumerableIndex = (int)(KeyToken["EnumerableIndex"] ?? 0);
+                string KeyName = KeyToken.Name;
+                string KeyDescription = KeyToken.Description;
+                SettingsKeyType KeyType = KeyToken.Type;
+                string KeyVar = KeyToken.Variable;
+                int KeyEnumerableIndex = KeyToken.EnumerableIndex;
                 object KeyValue = "";
                 object KeyDefaultValue = "";
                 bool KeyFinished = false;
                 string finalSection = Translate.DoTranslation(KeyName);
 
                 // Integer slider properties
-                int IntSliderMinimumValue = (int)(KeyToken["MinimumValue"] ?? 0);
-                int IntSliderMaximumValue = (int)(KeyToken["MaximumValue"] ?? 100);
+                int IntSliderMinimumValue = KeyToken.MinimumValue;
+                int IntSliderMaximumValue = KeyToken.MaximumValue;
 
                 // Selection properties
-                bool SelectionEnum = (bool)(KeyToken["IsEnumeration"] ?? false);
-                string SelectionEnumAssembly = (string)KeyToken["EnumerationAssembly"];
-                bool SelectionEnumInternal = (bool)(KeyToken["EnumerationInternal"] ?? false);
-                bool SelectionEnumZeroBased = (bool)(KeyToken["EnumerationZeroBased"] ?? false);
-                bool SelectionFunctionDict = (bool)(KeyToken["IsSelectionFunctionDict"] ?? false);
+                bool SelectionEnum = KeyToken.IsEnumeration;
+                string SelectionEnumAssembly = KeyToken.EnumerationAssembly;
+                bool SelectionEnumInternal = KeyToken.EnumerationInternal;
+                bool SelectionEnumZeroBased = KeyToken.EnumerationZeroBased;
+                bool SelectionFunctionDict = KeyToken.IsSelectionFunctionDict;
                 Type SelectionEnumType = default;
 
                 // Color properties
                 object ColorValue = "";
 
                 // List properties
-                string ListJoinString = (string)KeyToken["Delimiter"];
-                string ListJoinStringVariable = (string)KeyToken["DelimiterVariable"];
-                string ListFunctionName = (string)KeyToken["SelectionFunctionName"];
-                string ListFunctionType = (string)KeyToken["SelectionFunctionType"];
-                bool ListIsPathCurrentPath = (bool)(KeyToken["IsPathCurrentPath"] ?? false);
-                KernelPathType ListValuePathType = (KernelPathType)Convert.ToInt32(KeyToken["ValuePathType"] is not null ? Enum.Parse(typeof(KernelPathType), (string)KeyToken["ValuePathType"]) : KernelPathType.Mods);
+                string ListJoinString = KeyToken.Delimiter;
+                string ListJoinStringVariable = KeyToken.DelimiterVariable;
+                string ListFunctionName = KeyToken.SelectionFunctionName;
+                string ListFunctionType = KeyToken.SelectionFunctionType;
+                bool ListIsPathCurrentPath = KeyToken.IsPathCurrentPath;
+                KernelPathType ListValuePathType = KeyToken.ValuePathType;
                 var TargetList = default(IEnumerable<object>);
                 var SelectFrom = default(IEnumerable<object>);
                 var Selections = default(object);
-                bool NeutralizePaths = (bool)(KeyToken["IsValuePath"] ?? false);
+                bool NeutralizePaths = KeyToken.IsValuePath;
                 string NeutralizeRootPath = ListIsPathCurrentPath ? CurrentDirectory.CurrentDir : Paths.GetKernelPath(ListValuePathType);
 
                 // Preset properties
-                string ShellType = (string)KeyToken["ShellType"];
+                string ShellType = KeyToken.ShellType;
 
                 // Inputs
                 string AnswerString = "";
@@ -488,16 +485,17 @@ namespace KS.Kernel.Configuration.Settings
                             // Determine which list we're going to select
                             if (SelectionEnum)
                             {
+                                var enumeration = KeyToken.Enumeration;
                                 if (SelectionEnumInternal)
                                 {
                                     // Apparently, we need to have a full assembly name for getting types.
-                                    SelectionEnumType = Type.GetType("KS." + KeyToken["Enumeration"].ToString() + ", " + Assembly.GetExecutingAssembly().FullName);
+                                    SelectionEnumType = Type.GetType("KS." + enumeration + ", " + Assembly.GetExecutingAssembly().FullName);
                                     SelectFrom = SelectionEnumType.GetEnumNames();
                                     Selections = SelectionEnumType.GetEnumValues();
                                 }
                                 else
                                 {
-                                    SelectionEnumType = Type.GetType(KeyToken["Enumeration"].ToString() + ", " + SelectionEnumAssembly);
+                                    SelectionEnumType = Type.GetType(enumeration + ", " + SelectionEnumAssembly);
                                     SelectFrom = SelectionEnumType.GetEnumNames();
                                     Selections = SelectionEnumType.GetEnumValues();
                                 }
@@ -505,9 +503,9 @@ namespace KS.Kernel.Configuration.Settings
                             else
                             {
                                 if (SelectionFunctionDict)
-                                    SelectFrom = (IEnumerable<object>)((IDictionary)MethodManager.GetMethod((string)KeyToken["SelectionFunctionName"]).Invoke(KeyToken["SelectionFunctionType"], null)).Keys;
+                                    SelectFrom = (IEnumerable<object>)((IDictionary)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null)).Keys;
                                 else
-                                    SelectFrom = (IEnumerable<object>)MethodManager.GetMethod((string)KeyToken["SelectionFunctionName"]).Invoke(KeyToken["SelectionFunctionType"], null);
+                                    SelectFrom = (IEnumerable<object>)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null);
                             }
                             MaxKeyOptions = SelectFrom.Count();
 
@@ -879,7 +877,7 @@ namespace KS.Kernel.Configuration.Settings
         /// <summary>
         /// A sub for variable finding prompt
         /// </summary>
-        public static void VariableFinder(JToken SettingsToken, ConfigType SettingsType)
+        public static void VariableFinder(SettingsEntry[] SettingsEntries, ConfigType SettingsType)
         {
             List<InputChoiceInfo> Results;
             List<InputChoiceInfo> Back = new() { new InputChoiceInfo("<---", Translate.DoTranslation("Go Back...")) };
@@ -893,7 +891,7 @@ namespace KS.Kernel.Configuration.Settings
             // Search for the setting
             ConsoleWrapper.CursorVisible = false;
             InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Searching for settings..."), false);
-            Results = ConfigTools.FindSetting(SearchFor, SettingsToken, SettingsType);
+            Results = ConfigTools.FindSetting(SearchFor, SettingsEntries, SettingsType);
 
             // Write the settings
             if (Results.Count > 0)
@@ -912,10 +910,9 @@ namespace KS.Kernel.Configuration.Settings
                     var ChosenSetting = Results[sel - 1];
                     int SectionIndex = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[0]) - 1;
                     int KeyNumber = Convert.ToInt32(ChosenSetting.ChoiceName.Split('/')[1]);
-                    JProperty Section = (JProperty)SettingsToken.ToList()[SectionIndex];
-                    string SectionName = Section.Name;
-                    OpenKey(SectionName, KeyNumber, SettingsToken, SettingsType);
-                    Results = ConfigTools.FindSetting(SearchFor, SettingsToken, SettingsType);
+                    var Section = SettingsEntries[SectionIndex];
+                    OpenKey(KeyNumber, Section, SettingsType);
+                    Results = ConfigTools.FindSetting(SearchFor, SettingsEntries, SettingsType);
                 }
             }
             else
@@ -928,27 +925,15 @@ namespace KS.Kernel.Configuration.Settings
         /// Open the settings resource
         /// </summary>
         /// <param name="SettingsType">The settings type</param>
-        private static JToken OpenSettingsResource(ConfigType SettingsType)
+        private static SettingsEntry[] OpenSettingsResource(ConfigType SettingsType)
         {
-            switch (SettingsType)
+            return SettingsType switch
             {
-                case ConfigType.Kernel:
-                    {
-                        return JToken.Parse(SettingsResources.SettingsEntries);
-                    }
-                case ConfigType.Screensaver:
-                    {
-                        return JToken.Parse(SettingsResources.ScreensaverSettingsEntries);
-                    }
-                case ConfigType.Splash:
-                    {
-                        return JToken.Parse(SettingsResources.SplashSettingsEntries);
-                    }
-                default:
-                    {
-                        return JToken.Parse(SettingsResources.SettingsEntries);
-                    }
-            }
+                ConfigType.Kernel =>        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SettingsEntries),
+                ConfigType.Screensaver =>   JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.ScreensaverSettingsEntries),
+                ConfigType.Splash =>        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SplashSettingsEntries),
+                _ =>                        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SettingsEntries),
+            };
         }
 
         private static void SetPropertyValue(string KeyVar, object Value, ConfigType SettingsType)
