@@ -217,7 +217,7 @@ namespace KS.Misc.Splash
             }
             else
             {
-                return Splashes["Simple"];
+                return Splashes["Welcome"];
             }
         }
 
