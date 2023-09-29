@@ -47,6 +47,7 @@ namespace KS.Misc.Splash
         internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display());
         internal readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
+            // They are the base splashes. They shouldn't be moved to the splash addon pack as such movement breaks things.
             { "Welcome", new SplashInfo("Welcome", new SplashWelcome()) },
             { "Blank", new SplashInfo("Blank", new SplashBlank(), false) },
         };
@@ -212,25 +213,23 @@ namespace KS.Misc.Splash
         public static SplashInfo GetSplashFromName(string splashName)
         {
             if (Splashes.ContainsKey(splashName))
-            {
                 return Splashes[splashName];
-            }
             else
-            {
                 return Splashes["Welcome"];
-            }
         }
 
         /// <summary>
         /// Opens the splash screen
         /// </summary>
-        public static void OpenSplash() => OpenSplash(CurrentSplash);
+        public static void OpenSplash() =>
+            OpenSplash(CurrentSplash);
 
         /// <summary>
         /// Opens the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
-        public static void OpenSplash(string splashName) => OpenSplash(GetSplashFromName(splashName).EntryPoint);
+        public static void OpenSplash(string splashName) =>
+            OpenSplash(GetSplashFromName(splashName).EntryPoint);
 
         /// <summary>
         /// Opens the splash screen
@@ -252,19 +251,22 @@ namespace KS.Misc.Splash
         /// <summary>
         /// Closes the splash screen
         /// </summary>
-        public static void CloseSplash() => CloseSplash(CurrentSplash);
+        public static void CloseSplash() =>
+            CloseSplash(CurrentSplash);
 
         /// <summary>
         /// Closes the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
-        public static void CloseSplash(string splashName) => CloseSplash(GetSplashFromName(splashName).EntryPoint);
+        public static void CloseSplash(string splashName) =>
+            CloseSplash(GetSplashFromName(splashName).EntryPoint);
 
         /// <summary>
         /// Closes the splash screen
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
-        public static void CloseSplash(ISplash splash) => CloseSplash(splash, true);
+        public static void CloseSplash(ISplash splash) =>
+            CloseSplash(splash, true);
 
         /// <summary>
         /// Closes the splash screen
