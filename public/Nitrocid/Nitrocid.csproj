@@ -94,7 +94,9 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="System.Formats.Asn1" Version="7.0.0" />
+    <PackageReference Include="System.Formats.Asn1" Version="7.0.0">
+      <TreatAsUsed>true</TreatAsUsed>
+    </PackageReference>
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
@@ -152,9 +154,6 @@
     <None Include="OfficialAppIcon-KernelSimulator.ico" Pack="true" PackagePath="\" />
     <None Include="OfficialAppIcon-KernelSimulator-512.png" Pack="true" PackagePath="\" />
     <None Include="..\..\README.md" Pack="true" PackagePath="\" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Nitrocid.LocaleGen.Core\Nitrocid.LocaleGen.Core.csproj" />
   </ItemGroup>
   <!-- KS Package Files End -->
   
