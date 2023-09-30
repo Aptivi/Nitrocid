@@ -20,13 +20,8 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-
-#if AIASSISTANT
 using KS.ConsoleBase.Inputs;
 using KS.Misc.Assistant;
-#else
-using KS.Kernel;
-#endif
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -41,7 +36,6 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-#if AIASSISTANT
             string question = Input.ReadLine(Translate.DoTranslation("Ask the Assistant") + ": ");
             var sampleData = new AssistantPredictor.ModelInput()
             {
@@ -53,9 +47,6 @@ namespace KS.Shell.Shells.UESH.Commands
             var result = AssistantPredictor.Predict(sampleData);
             string answer = result.PredictedLabel;
             TextWriterColor.Write(Translate.DoTranslation("The Assistant says:") + $" {answer}", true, KernelColorType.Success);
-#else
-            TextWriterColor.Write(Translate.DoTranslation("The Assistant is unavailable for your current platform. You need a 64-bit computer to be able to use Assistant. You're running") + $" {KernelPlatform.GetCurrentRid()}. " + Translate.DoTranslation("If you believe this to be incorrect, report this issue to us!"), true, KernelColorType.Error);
-#endif
             return 0;
         }
 

@@ -20,7 +20,7 @@
     <RepositoryUrl>https://github.com/Aptivi/NitrocidKS.git</RepositoryUrl>
     <RepositoryType>git</RepositoryType>
     <Configurations>Debug;Release</Configurations>
-    <Platforms>AnyCPU;x64</Platforms>
+    <Platforms>AnyCPU</Platforms>
   </PropertyGroup>
   <!-- KS NuGet Information End -->
 
@@ -50,6 +50,7 @@
     <PackageVersion>0.1.0.0-beta2</PackageVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <Deterministic>true</Deterministic>
+    <EnableMLUnsupportedPlatformTargetCheck>false</EnableMLUnsupportedPlatformTargetCheck>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
     
@@ -66,23 +67,10 @@
     <DebugType>portable</DebugType>
     <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERBETA</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <DefineDebug>true</DefineDebug>
-    <Optimize>false</Optimize>
-    <DebugType>portable</DebugType>
-    <DefineConstants>SPECIFIERDEV;MILESTONESPECIFIERBETA;AIASSISTANT</DefineConstants>
-    <EnableMLUnsupportedPlatformTargetCheck>false</EnableMLUnsupportedPlatformTargetCheck>
-  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
     <Optimize>true</Optimize>
     <DebugType>pdbonly</DebugType>
     <DefineConstants>SPECIFIERREL</DefineConstants>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <DefineConstants>SPECIFIERREL;AIASSISTANT</DefineConstants>
-    <EnableMLUnsupportedPlatformTargetCheck>false</EnableMLUnsupportedPlatformTargetCheck>
   </PropertyGroup>
   <!-- KS Platform Information End -->
 
@@ -98,7 +86,7 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.0.442202" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.ML" Version="2.0.1" PrivateAssets="all" Condition="'$(Platform)' == 'x64'" />
+    <PackageReference Include="Microsoft.ML" Version="2.0.1" PrivateAssets="all" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SharpCompress" Version="0.34.0" PrivateAssets="all" />
     <PackageReference Include="SSH.NET" Version="2020.0.2" PrivateAssets="all" />
@@ -121,6 +109,9 @@
   </ItemGroup>
   <Target Name="UpdateLaunchersManpages" BeforeTargets="Compile">
     <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutDir)" />
+  </Target>
+  <Target Name="UpdateAssistantTraining" BeforeTargets="Compile">
+    <Copy SourceFiles="Misc/Assistant/AssistantPredictor.zip" DestinationFolder="$(OutDir)" />
   </Target>
   <!-- KS Launchers and Manpages End -->
 
