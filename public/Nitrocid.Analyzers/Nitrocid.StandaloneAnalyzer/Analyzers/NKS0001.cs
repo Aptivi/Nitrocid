@@ -49,7 +49,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                         var lineSpan = location.GetLineSpan();
                         TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses string.Format() instead of TextTools.FormatString()", true, ConsoleColors.Yellow);
                         if (!string.IsNullOrEmpty(document.FilePath))
-                            LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
+                            LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
                         found = true;
                     }
                 }
@@ -63,7 +63,7 @@ namespace Nitrocid.StandaloneAnalyzer.Analyzers
                             var lineSpan = location.GetLineSpan();
                             TextWriterColor.Write($"{GetType().Name}: {document.FilePath} ({lineSpan.StartLinePosition} -> {lineSpan.EndLinePosition}): Caller uses string.Format() instead of TextTools.FormatString()", true, ConsoleColors.Yellow);
                             if (!string.IsNullOrEmpty(document.FilePath))
-                                LineHandleWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1);
+                                LineHandleRangedWriter.PrintLineWithHandle(document.FilePath, lineSpan.StartLinePosition.Line + 1, lineSpan.StartLinePosition.Character + 1, lineSpan.EndLinePosition.Character);
                             found = true;
                         }
                     }
