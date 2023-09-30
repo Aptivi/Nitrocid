@@ -76,7 +76,8 @@ namespace KS.Languages
         public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001)
         {
             // Check to see if the language being installed is found in resources
-            if (!string.IsNullOrEmpty(LanguageResources.ResourceManager.GetString(LangName.Replace("-", "_"))))
+            string localizationTokenValue = LanguageResources.ResourceManager.GetString(LangName.Replace("-", "_"));
+            if (!string.IsNullOrEmpty(localizationTokenValue))
             {
                 // Install values to the object instance
                 ThreeLetterLanguageName = LangName;
@@ -104,13 +105,18 @@ namespace KS.Languages
                 this.Cultures = Cultures;
 
                 // Get instance of language resource
-                JObject LanguageResource = (JObject)JObject.Parse(LanguageResources.ResourceManager.GetString(LangName.Replace("-", "_"))).SelectToken("Localizations");
+                JArray LanguageResource = (JArray)JObject.Parse(localizationTokenValue).SelectToken("Localizations");
+                JArray LanguageResourceEnglish = (JArray)JObject.Parse(LanguageResources.eng).SelectToken("Localizations");
                 Custom = false;
 
                 // Populate language strings
                 var langStrings = new Dictionary<string, string>();
-                foreach (JProperty TranslatedProperty in LanguageResource.Properties())
-                    langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
+                for (int i = 0; i < LanguageResourceEnglish.Count; i++)
+                {
+                    JToken UntranslatedProperty = LanguageResourceEnglish[i];
+                    JToken TranslatedProperty = LanguageResource[i];
+                    langStrings.Add((string)UntranslatedProperty, (string)TranslatedProperty);
+                }
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
                 Strings = langStrings;
             }
@@ -127,8 +133,8 @@ namespace KS.Languages
         /// <param name="LangName">The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.</param>
         /// <param name="FullLanguageName">The full name of language without the country specifier.</param>
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
-        /// <param name="LanguageToken">The language token</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, JObject LanguageToken)
+        /// <param name="LanguageToken">The language token containing localization information</param>
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, JArray LanguageToken)
         {
             // Install values to the object instance
             ThreeLetterLanguageName = LangName;
@@ -155,21 +161,26 @@ namespace KS.Languages
             this.Cultures = Cultures;
 
             // Install it
-            int EnglishLength = JObject.Parse(LanguageResources.eng).SelectToken("Localizations").Count();
+            JArray LanguageResourceEnglish = (JArray)JObject.Parse(LanguageResources.eng).SelectToken("Localizations");
             Custom = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Count, EnglishLength);
-            if (LanguageToken.Count == EnglishLength)
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Count, LanguageResourceEnglish.Count);
+            if (LanguageToken.Count == LanguageResourceEnglish.Count)
             {
                 // Populate language strings
                 var langStrings = new Dictionary<string, string>();
-                foreach (JProperty TranslatedProperty in LanguageToken.Properties())
-                    langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
+                for (int i = 0; i < LanguageResourceEnglish.Count; i++)
+                {
+                    JToken UntranslatedProperty = LanguageResourceEnglish[i];
+                    JToken TranslatedProperty = LanguageToken[i];
+                    langStrings.Add((string)UntranslatedProperty, (string)TranslatedProperty);
+                }
+
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
                 Strings = langStrings;
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} lines according to the English string list, but got {1}.", EnglishLength, LanguageToken.Count);
+                DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} lines according to the English string list, but got {1}.", LanguageResourceEnglish.Count, LanguageToken.Count);
                 throw new KernelException(KernelExceptionType.LanguageParse, Translate.DoTranslation("Length of the English language doesn't match the length of the language token provided."));
             }
         }

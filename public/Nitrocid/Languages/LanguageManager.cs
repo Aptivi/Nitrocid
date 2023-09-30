@@ -196,7 +196,7 @@ namespace KS.Languages
                                 DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Count());
 
                                 // Try to install the language info
-                                var ParsedLanguageInfo = new LanguageInfo(LanguageName, ParsedLanguageName, ParsedLanguageTransliterable, (JObject)ParsedLanguageLocalizations);
+                                var ParsedLanguageInfo = new LanguageInfo(LanguageName, ParsedLanguageName, ParsedLanguageTransliterable, (JArray)ParsedLanguageLocalizations);
                                 DebugWriter.WriteDebug(DebugLevel.I, "Made language info! Checking for existence... (Languages.ContainsKey returns {0})", Languages.ContainsKey(LanguageName));
                                 if (!Languages.ContainsKey(LanguageName))
                                 {
@@ -426,7 +426,7 @@ namespace KS.Languages
             {
                 LanguageInfo LanguageInfo;
                 if (useLocalizationObject)
-                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, (JObject)localizations["Localizations"]);
+                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, (JArray)localizations["Localizations"]);
                 else
                     LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage);
                 DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}", LanguageName, LanguageFullName, LanguageTransliterable);
