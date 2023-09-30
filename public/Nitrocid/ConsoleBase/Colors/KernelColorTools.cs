@@ -131,7 +131,7 @@ namespace KS.ConsoleBase.Colors
                     for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
                     {
                         KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
-                        Color color = Color.Empty;
+                        Color color = type != KernelColorType.Background ? new Color(ConsoleColors.White) : Color.Empty;
                         colors.Add(type, color);
                     }
                     break;

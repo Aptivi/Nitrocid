@@ -126,7 +126,7 @@ namespace Nitrocid.Tests.ConsoleBase
             dict.ShouldNotBeEmpty();
             foreach (var type in dict.Keys)
             {
-                var expected = Color.Empty;
+                var expected = type != KernelColorType.Background ? new Color(ConsoleColors.White) : Color.Empty;
                 var color = dict[type];
                 color.ShouldNotBeNull();
                 color.ShouldBe(expected);
@@ -137,6 +137,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// Tests getting gray color
         /// </summary>
         [Test]
+        [Order(0)]
         [Description("Querying")]
         public void TestGetGrayLight()
         {
@@ -150,6 +151,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// Tests getting gray color
         /// </summary>
         [Test]
+        [Order(1)]
         [Description("Querying")]
         public void TestGetGrayDark()
         {
