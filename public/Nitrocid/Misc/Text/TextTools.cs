@@ -162,6 +162,23 @@ namespace KS.Misc.Text
         }
 
         /// <summary>
+        /// Gets the enclosed double quotes type from the string
+        /// </summary>
+        /// <param name="target">Target string to query</param>
+        /// <returns><see cref="EnclosedDoubleQuotesType"/> containing information about the current string enclosure</returns>
+        public static EnclosedDoubleQuotesType GetEnclosedDoubleQuotesType(this string target)
+        {
+            var type = EnclosedDoubleQuotesType.None;
+            if (target.StartsWith("\"") && target.EndsWith("\"") && target != "\"")
+                type = EnclosedDoubleQuotesType.DoubleQuotes;
+            else if (target.StartsWith("'") && target.EndsWith("'") && target != "'")
+                type = EnclosedDoubleQuotesType.SingleQuotes;
+            else if (target.StartsWith("`") && target.EndsWith("`") && target != "`")
+                type = EnclosedDoubleQuotesType.Backticks;
+            return type;
+        }
+
+        /// <summary>
         /// Truncates the string if the string is larger than the threshold, otherwise, returns an unchanged string
         /// </summary>
         /// <param name="target">Source string to truncate</param>
