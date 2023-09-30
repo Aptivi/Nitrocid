@@ -29,22 +29,8 @@ using Terminaux.Writer.ConsoleWriters;
 
 namespace Nitrocid.StandaloneAnalyzer
 {
-    internal class Program
+    internal class EntryPoint
     {
-        // For contributors: If you're going to add a new analyzer, you need to copy the implementation from Analyzers to here,
-        // and make a dedicated diagnostic class for the standalone analyzer to recognize your new analyzer.
-        private static readonly IAnalyzer[] analyzers = new IAnalyzer[]
-        {
-            new NKS0001(),
-            new NKS0002(),
-            new NKS0003(),
-            new NKS0004(),
-            new NKS0005(),
-            new NKS0006(),
-            new NKS0007(),
-            new NKS0008(),
-        };
-
         static async Task Main(string[] args)
         {
             // Check to see if we've been provided the path to a mod
@@ -82,7 +68,7 @@ namespace Nitrocid.StandaloneAnalyzer
                     var documents = project.Documents;
                     foreach (var document in documents)
                     {
-                        foreach (var analyzer in analyzers)
+                        foreach (var analyzer in AnalyzersList.analyzers)
                         {
                             try
                             {
