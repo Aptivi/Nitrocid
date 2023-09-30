@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -24,6 +25,8 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Screensaver;
+using KS.Misc.Text;
+using KS.Misc.Text.Probers.Motd;
 using KS.Misc.Text.Probers.Placeholder;
 
 namespace KS.Users.Login.Handlers
@@ -36,6 +39,22 @@ namespace KS.Users.Login.Handlers
         /// <inheritdoc/>
         public virtual void LoginScreen()
         {
+            // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
+            if (KernelFlags.ClearOnLogin)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
+                ConsoleWrapper.Clear();
+            }
+
+            // Show MOTD once
+            DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", KernelFlags.ShowMOTDOnceFlag, KernelFlags.ShowMOTD);
+            if (KernelFlags.ShowMOTDOnceFlag && KernelFlags.ShowMOTD)
+            {
+                // This is not going to happen when the modern logon is enabled.
+                TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
+                KernelFlags.ShowMOTDOnceFlag = false;
+            }
+
             // Generate user list
             if (KernelFlags.ShowAvailableUsers)
             {

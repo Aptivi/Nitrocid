@@ -68,23 +68,6 @@ namespace KS.Users.Login
                 throw new KernelException(KernelExceptionType.NullUsers, Translate.DoTranslation("There are no more users remaining in the list."));
             }
 
-            // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
-            // TODO: When implementing "custom" login handlers, move these two if conditions to the classic login handler.
-            if (KernelFlags.ClearOnLogin)
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
-                ConsoleWrapper.Clear();
-            }
-
-            // Show MOTD once
-            DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", KernelFlags.ShowMOTDOnceFlag, KernelFlags.ShowMOTD);
-            if (KernelFlags.ShowMOTDOnceFlag && KernelFlags.ShowMOTD && !KernelFlags.ModernLogon)
-            {
-                // This is not going to happen when the modern logon is enabled.
-                TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
-                KernelFlags.ShowMOTDOnceFlag = false;
-            }
-
             // How do we prompt user to login?
             string handlerName = "classic";
             if (KernelFlags.ModernLogon)
@@ -94,12 +77,10 @@ namespace KS.Users.Login
             }
 
             // Get the handler!
-            var handler = LoginHandlerTools.GetHandler(handlerName);
-
             try
             {
                 // Sanity check...
-                if (handler is null)
+                var handler = LoginHandlerTools.GetHandler(handlerName) ??
                     throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("The login handler is not found!") + $" {handlerName}");
 
                 // Login loop until either power action (in case login handler tries to shut the kernel down) or sign in action
