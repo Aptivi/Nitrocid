@@ -61,6 +61,9 @@
     <None Update="AddonMetadata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="Resources\Languages\Metadata.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <!-- LanguagePacks addon metadata End -->
 

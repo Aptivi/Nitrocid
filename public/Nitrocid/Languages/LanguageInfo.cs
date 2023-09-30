@@ -46,6 +46,10 @@ namespace KS.Languages
         /// </summary>
         public readonly int Codepage;
         /// <summary>
+        /// Culture code to use. If blank, the language manager will find the appropriate culture.
+        /// </summary>
+        public readonly string CultureCode;
+        /// <summary>
         /// Whether or not the language is transliterable (Arabic, Korea, ...)
         /// </summary>
         [JsonIgnore]
@@ -73,7 +77,8 @@ namespace KS.Languages
         /// <param name="FullLanguageName">The full name of language without the country specifier.</param>
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
         /// <param name="Codepage">Appropriate codepage number for language</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001)
+        /// <param name="cultureCode">Culture code to use. If blank, the language manager will find the appropriate culture.</param>
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string cultureCode = "")
         {
             // Check to see if the language being installed is found in resources
             string localizationTokenValue = LanguageResources.ResourceManager.GetString(LangName.Replace("-", "_"));
@@ -91,7 +96,7 @@ namespace KS.Languages
                 var Cultures = new List<CultureInfo>();
                 foreach (CultureInfo Cult in Cults)
                 {
-                    if (Cult.EnglishName.ToLower().Contains(FullLanguageName.ToLower()))
+                    if (Cult.EnglishName.ToLower().Contains(FullLanguageName.ToLower()) || Cult.Name == cultureCode)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Adding culture {0} found from {1} to list...", Cult.EnglishName.ToLower(), FullLanguageName.ToLower());
                         Cultures.Add(Cult);
@@ -103,6 +108,7 @@ namespace KS.Languages
                     Cultures.Add(CultureInfo.CurrentCulture);
                 }
                 this.Cultures = Cultures;
+                CultureCode = cultureCode;
 
                 // Get instance of language resource
                 JArray LanguageResource = (JArray)JObject.Parse(localizationTokenValue).SelectToken("Localizations");
@@ -134,7 +140,8 @@ namespace KS.Languages
         /// <param name="FullLanguageName">The full name of language without the country specifier.</param>
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
         /// <param name="LanguageToken">The language token containing localization information</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, JArray LanguageToken)
+        /// <param name="cultureCode">Culture code to use. If blank, the language manager will find the appropriate culture.</param>
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, JArray LanguageToken, string cultureCode = "")
         {
             // Install values to the object instance
             ThreeLetterLanguageName = LangName;
@@ -147,7 +154,7 @@ namespace KS.Languages
             var Cultures = new List<CultureInfo>();
             foreach (CultureInfo Cult in Cults)
             {
-                if (Cult.EnglishName.ToLower().Contains(FullLanguageName.ToLower()))
+                if (Cult.EnglishName.ToLower().Contains(FullLanguageName.ToLower()) || Cult.Name == cultureCode)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Adding culture {0} found from {1} to list...", Cult.EnglishName.ToLower(), FullLanguageName.ToLower());
                     Cultures.Add(Cult);
@@ -159,6 +166,7 @@ namespace KS.Languages
                 Cultures.Add(CultureInfo.CurrentCulture);
             }
             this.Cultures = Cultures;
+            CultureCode = cultureCode;
 
             // Install it
             JArray LanguageResourceEnglish = (JArray)JObject.Parse(LanguageResources.eng).SelectToken("Localizations");

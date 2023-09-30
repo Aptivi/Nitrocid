@@ -35,7 +35,8 @@
     },
     "enk": {
         "name": "English (UK)",
-        "transliterable": false
+        "transliterable": false,
+        "culture": "en-GB"
     },
     "fre": {
         "name": "French",

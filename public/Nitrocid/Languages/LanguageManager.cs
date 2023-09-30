@@ -420,15 +420,16 @@ namespace KS.Languages
             string LanguageFullName = (string)Language.First.SelectToken("name");
             bool LanguageTransliterable = (bool)Language.First.SelectToken("transliterable");
             int LanguageCodepage = (int)(Language.First.SelectToken("codepage") ?? 65001);
+            string LanguageCultureCode = (string)Language.First.SelectToken("culture");
 
             // If the language is not found in the base languages cache dictionary, add it
             if (!BaseLanguages.ContainsKey(LanguageName))
             {
                 LanguageInfo LanguageInfo;
                 if (useLocalizationObject)
-                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, (JArray)localizations["Localizations"]);
+                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, (JArray)localizations["Localizations"], LanguageCultureCode);
                 else
-                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage);
+                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage, LanguageCultureCode);
                 DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}", LanguageName, LanguageFullName, LanguageTransliterable);
                 BaseLanguages.Add(LanguageName, LanguageInfo);
             }
