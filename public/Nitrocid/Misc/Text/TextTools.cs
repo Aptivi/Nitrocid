@@ -31,6 +31,8 @@ namespace KS.Misc.Text
     /// </summary>
     public static class TextTools
     {
+        private static readonly string regexMatchEnclosedStrings = /* lang=regex */ @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+";
+
         /// <summary>
         /// Gets the wrapped sentences for text wrapping for console
         /// </summary>
@@ -124,9 +126,8 @@ namespace KS.Misc.Text
         public static string[] SplitEncloseDoubleQuotes(this string target)
         {
             return DriverHandler.CurrentRegexpDriverLocal
-                .Matches(target, /* lang=regex */ @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+")
-                .Select((m) => m.Value)
-                .Select((m) => (m.StartsWith("\"") && m.EndsWith("\"")) ? m.ReleaseDoubleQuotes() : m)
+                .Matches(target, regexMatchEnclosedStrings)
+                .Select((m) => m.Value.ReleaseDoubleQuotes())
                 .ToArray();
         }
 
@@ -137,7 +138,7 @@ namespace KS.Misc.Text
         public static string[] SplitEncloseDoubleQuotesNoRelease(this string target)
         {
             return DriverHandler.CurrentRegexpDriverLocal
-                .Matches(target, /* lang=regex */ @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+")
+                .Matches(target, regexMatchEnclosedStrings)
                 .Select((m) => m.Value)
                 .ToArray();
         }
