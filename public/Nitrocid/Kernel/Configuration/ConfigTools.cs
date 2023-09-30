@@ -33,6 +33,7 @@ using Terminaux.Colors;
 using KS.Resources;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Configuration.Settings;
+using Newtonsoft.Json;
 
 namespace KS.Kernel.Configuration
 {
@@ -162,25 +163,25 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static Dictionary<string, bool> CheckConfigVariables()
         {
-            var SettingsToken = JToken.Parse(SettingsResources.SettingsEntries);
-            var SaverSettingsToken = JToken.Parse(SettingsResources.ScreensaverSettingsEntries);
-            var SplashSettingsToken = JToken.Parse(SettingsResources.SplashSettingsEntries);
-            var Tokens = new[] { SettingsToken, SaverSettingsToken, SplashSettingsToken };
+            var settingsEntries = OpenSettingsResource(ConfigType.Kernel);
+            var settingsSaverEntries = OpenSettingsResource(ConfigType.Screensaver);
+            var settingsSplashEntries = OpenSettingsResource(ConfigType.Splash);
+            var entries = new[] { settingsEntries, settingsSaverEntries, settingsSplashEntries };
             var Results = new Dictionary<string, bool>();
 
             // Parse all the settings
-            foreach (JToken Token in Tokens)
+            foreach (var entryArray in entries)
             {
-                foreach (JProperty Section in Token.Cast<JProperty>())
+                foreach (var entry in entryArray)
                 {
-                    var SectionToken = Token[Section.Name];
-                    foreach (JToken Key in SectionToken["Keys"])
+                    var keys = entry.Keys;
+                    foreach (var key in keys)
                     {
-                        string KeyName = (string)Key["Name"];
-                        string KeyVariable = (string)Key["Variable"];
-                        string KeyEnumeration = (string)Key["Enumeration"];
-                        bool KeyEnumerationInternal = (bool)(Key["EnumerationInternal"] ?? false);
-                        string KeyEnumerationAssembly = (string)Key["EnumerationAssembly"];
+                        string KeyName = key.Name;
+                        string KeyVariable = key.Variable;
+                        string KeyEnumeration = key.Enumeration;
+                        bool KeyEnumerationInternal = key.EnumerationInternal;
+                        string KeyEnumerationAssembly = key.EnumerationAssembly;
                         bool KeyFound;
 
                         // Check the variable
@@ -238,6 +239,21 @@ namespace KS.Kernel.Configuration
         {
             // TODO: This is not implemented. Even the signature is unfinished.
             throw new KernelException(KernelExceptionType.NotImplementedYet, "Custom settings manipulation for your mods is coming soon.");
+        }
+
+        /// <summary>
+        /// Open the settings resource
+        /// </summary>
+        /// <param name="SettingsType">The settings type</param>
+        internal static SettingsEntry[] OpenSettingsResource(ConfigType SettingsType)
+        {
+            return SettingsType switch
+            {
+                ConfigType.Kernel =>        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SettingsEntries),
+                ConfigType.Screensaver =>   JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.ScreensaverSettingsEntries),
+                ConfigType.Splash =>        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SplashSettingsEntries),
+                _ =>                        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SettingsEntries),
+            };
         }
 
     }

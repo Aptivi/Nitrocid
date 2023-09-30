@@ -61,7 +61,7 @@ namespace KS.Kernel.Configuration.Settings
         {
             PermissionsTools.Demand(PermissionTypes.ManipulateSettings);
             bool PromptFinished = false;
-            var SettingsEntries = OpenSettingsResource(SettingsType);
+            var SettingsEntries = ConfigTools.OpenSettingsResource(SettingsType);
             int MaxSections = SettingsEntries.Length;
 
             while (!PromptFinished)
@@ -919,21 +919,6 @@ namespace KS.Kernel.Configuration.Settings
             {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, KernelColorType.Error);
             }
-        }
-
-        /// <summary>
-        /// Open the settings resource
-        /// </summary>
-        /// <param name="SettingsType">The settings type</param>
-        private static SettingsEntry[] OpenSettingsResource(ConfigType SettingsType)
-        {
-            return SettingsType switch
-            {
-                ConfigType.Kernel =>        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SettingsEntries),
-                ConfigType.Screensaver =>   JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.ScreensaverSettingsEntries),
-                ConfigType.Splash =>        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SplashSettingsEntries),
-                _ =>                        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SettingsEntries),
-            };
         }
 
         private static void SetPropertyValue(string KeyVar, object Value, ConfigType SettingsType)
