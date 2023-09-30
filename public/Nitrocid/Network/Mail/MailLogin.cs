@@ -165,7 +165,7 @@ namespace KS.Network.Mail
         public static NetworkConnection ParseAddresses(string IMAP_Address, int IMAP_Port, string SMTP_Address, int SMTP_Port)
         {
             // If the address is <address>:[port]
-            if (IMAP_Address.Contains(":"))
+            if (IMAP_Address.Contains(':'))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
                 IMAP_Port = Convert.ToInt32(IMAP_Address[(IMAP_Address.IndexOf(":") + 1)..]);
@@ -174,7 +174,7 @@ namespace KS.Network.Mail
             }
 
             // If the address is <address>:[port]
-            if (SMTP_Address.Contains(":"))
+            if (SMTP_Address.Contains(':'))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
                 SMTP_Port = Convert.ToInt32(SMTP_Address[(SMTP_Address.IndexOf(":") + 1)..]);

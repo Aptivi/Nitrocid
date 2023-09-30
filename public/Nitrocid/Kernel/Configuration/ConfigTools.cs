@@ -18,14 +18,12 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Reflection;
 using System.Text.RegularExpressions;
 using KS.ConsoleBase.Inputs;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
-using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using static KS.Kernel.Configuration.Config;
 using KS.ConsoleBase.Colors;

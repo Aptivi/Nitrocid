@@ -23,15 +23,12 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
-using KS.Misc.Text;
 using KS.Kernel.Events;
 using KS.Kernel.Configuration;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Users.Login.Handlers;
 using System;
-using KS.Misc.Text.Probers.Motd;
 using KS.Misc.Text.Probers.Placeholder;
-using KS.ConsoleBase;
 
 namespace KS.Users.Login
 {

@@ -60,7 +60,7 @@ namespace Nitrocid.Tests.Misc.Probers
             };
             foreach (string ParsedString in ParsedStrings)
             {
-                if (ParsedString.Contains("<") & ParsedString.Contains(">"))
+                if (ParsedString.Contains('<') & ParsedString.Contains('>'))
                 {
                     UnparsedStrings.Add(ParsedString);
                 }
