@@ -50,6 +50,22 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
         }
         /// <summary>
+        /// [BarWave] The level of the frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>.
+        /// </summary>
+        public static double BarWaveFrequencyLevel
+        {
+            get
+            {
+                return Config.SaverConfig.BarWaveFrequencyLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 2;
+                Config.SaverConfig.BarWaveFrequencyLevel = value;
+            }
+        }
+        /// <summary>
         /// [BarWave] How many milliseconds to wait before making the next write?
         /// </summary>
         public static int BarWaveDelay
@@ -240,7 +256,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Then, go ahead and make these bars wave themselves.
             int[] CurrentPos = new int[BarCount];
-            double Frequency = Math.PI / 2;
+            double Frequency = Math.PI / BarWaveSettings.BarWaveFrequencyLevel;
 
             // Set the current positions
             for (int i = 0; i < BarCount; i++)

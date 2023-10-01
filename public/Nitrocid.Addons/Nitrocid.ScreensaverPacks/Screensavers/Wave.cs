@@ -54,6 +54,22 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
         }
         /// <summary>
+        /// [Wave] The level of the frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>.
+        /// </summary>
+        public static double WaveFrequencyLevel
+        {
+            get
+            {
+                return Config.SaverConfig.WaveFrequencyLevel;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 3;
+                Config.SaverConfig.WaveFrequencyLevel = value;
+            }
+        }
+        /// <summary>
         /// [Wave] The minimum red color level (true color)
         /// </summary>
         public static int WaveMinimumRedColorLevel
@@ -227,7 +243,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Then, go ahead and make these bars wave themselves.
             List<int> CurrentPos = new();
-            double Frequency = Math.PI / 3;
+            double Frequency = Math.PI / WaveSettings.WaveFrequencyLevel;
 
             // Set the current positions
             double TimeSecs = 0.0;

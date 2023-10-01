@@ -2271,6 +2271,10 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public int BarWaveDelay { get; set; } = 1;
         /// <summary>
+        /// [BarWave] The level of the frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>.
+        /// </summary>
+        public double BarWaveFrequencyLevel { get; set; } = 2;
+        /// <summary>
         /// [BarWave] The minimum red color level (true color)
         /// </summary>
         public int BarWaveMinimumRedColorLevel { get; set; } = 0;
@@ -2306,6 +2310,10 @@ namespace KS.Kernel.Configuration.Instances
         /// [Wave] How many milliseconds to wait before making the next write?
         /// </summary>
         public int WaveDelay { get; set; } = 100;
+        /// <summary>
+        /// [Wave] The level of the frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>.
+        /// </summary>
+        public double WaveFrequencyLevel { get; set; } = 3;
         /// <summary>
         /// [Wave] The minimum red color level (true color)
         /// </summary>

@@ -4321,6 +4321,12 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             },
             {
+                "Name": "Frequency Level",
+                "Type": "SDouble",
+                "Variable": "BarWaveFrequencyLevel",
+                "Description": "The level of the frequency. This is the denominator of the Pi value in mathematics."
+            },
+            {
                 "Name": "Minimum red color level",
                 "Type": "SIntSlider",
                 "Variable": "BarWaveMinimumRedColorLevel",
@@ -4396,6 +4402,12 @@
                 "Type": "SInt",
                 "Variable": "WaveDelay",
                 "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Frequency Level",
+                "Type": "SDouble",
+                "Variable": "WaveFrequencyLevel",
+                "Description": "The level of the frequency. This is the denominator of the Pi value in mathematics."
             },
             {
                 "Name": "Minimum red color level",
