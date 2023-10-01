@@ -48,7 +48,8 @@
   <!-- Extras.BassBoom addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="SharpLyrics" Version="1.0.0.2" />
+    <PackageReference Include="SharpLyrics" Version="1.0.0.2" Condition="'$(TargetFramework)' == 'net6.0'" />
+    <PackageReference Include="BassBoom.Basolia" Version="0.0.1" Condition="'$(TargetFramework)' == 'net7.0'" />
   </ItemGroup>
 
 </Project>

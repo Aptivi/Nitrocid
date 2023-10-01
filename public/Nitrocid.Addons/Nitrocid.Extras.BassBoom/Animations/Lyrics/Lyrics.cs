@@ -33,8 +33,13 @@ using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
-using SharpLyrics;
 using KS.Kernel.Configuration;
+
+#if NET6_0
+using SharpLyrics;
+#else
+using BassBoom.Basolia.Lyrics;
+#endif
 
 namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
 {
