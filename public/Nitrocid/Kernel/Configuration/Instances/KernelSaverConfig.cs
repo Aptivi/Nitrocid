@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System;
 using Terminaux.Colors;
 
 namespace KS.Kernel.Configuration.Instances
@@ -2949,5 +2950,49 @@ namespace KS.Kernel.Configuration.Instances
         /// [TextWander] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int TextWanderMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Swivel] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int SwivelDelay { get; set; } = 100;
+        /// <summary>
+        /// [Swivel] The level of the horizontal frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>. Use this to create beautiful wavy swivels!
+        /// </summary>
+        public double SwivelHorizontalFrequencyLevel { get; set; } = 3;
+        /// <summary>
+        /// [Swivel] The level of the vertical frequency. This is the denominator of the Pi value (3.1415926...) in mathematics, defined by <see cref="Math.PI"/>. Use this to create beautiful wavy swivels!
+        /// </summary>
+        public double SwivelVerticalFrequencyLevel { get; set; } = 8;
+        /// <summary>
+        /// [Swivel] The minimum red color level (true color)
+        /// </summary>
+        public int SwivelMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Swivel] The minimum green color level (true color)
+        /// </summary>
+        public int SwivelMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Swivel] The minimum blue color level (true color)
+        /// </summary>
+        public int SwivelMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Swivel] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int SwivelMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Swivel] The maximum red color level (true color)
+        /// </summary>
+        public int SwivelMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Swivel] The maximum green color level (true color)
+        /// </summary>
+        public int SwivelMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Swivel] The maximum blue color level (true color)
+        /// </summary>
+        public int SwivelMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Swivel] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int SwivelMaximumColorLevel { get; set; } = 255;
     }
 }

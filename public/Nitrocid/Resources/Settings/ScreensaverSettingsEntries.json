@@ -5734,5 +5734,94 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    {
+        "Name": "Swivel",
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.Swivel",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "SwivelDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Horizontal Frequency Level",
+                "Type": "SDouble",
+                "Variable": "SwivelHorizontalFrequencyLevel",
+                "Description": "The level of the horizontal frequency. This is the denominator of the Pi value in mathematics. Use this to create beautiful wavy swivels!"
+            },
+            {
+                "Name": "Vertical Frequency Level",
+                "Type": "SDouble",
+                "Variable": "SwivelVerticalFrequencyLevel",
+                "Description": "The level of the vertical frequency. This is the denominator of the Pi value in mathematics. Use this to create beautiful wavy swivels!"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SIntSlider",
+                "Variable": "SwivelMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SIntSlider",
+                "Variable": "SwivelMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "SwivelMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SIntSlider",
+                "Variable": "SwivelMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SIntSlider",
+                "Variable": "SwivelMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SIntSlider",
+                "Variable": "SwivelMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "SwivelMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SIntSlider",
+                "Variable": "SwivelMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            }
+        ]
     }
 ]
