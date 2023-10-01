@@ -29,6 +29,7 @@ using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Encryption;
 using KS.Shell.Shells.UESH.Presets;
+using KS.Drivers.Encoding;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -426,6 +427,27 @@ namespace KS.Shell.Shells.UESH
                     }, new DebugShellCommand(), CommandFlags.Strict)
             },
             
+            { "decodetext",
+                new CommandInfo("decodetext", ShellType, /* Localizable */ "Decodes the encoded text",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                            new CommandArgumentPart(true, "encodedString"),
+                        }, new[]
+                        {
+                            new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                            }),
+                            new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                            }),
+                        })
+                    }, new DecodeTextCommand())
+            },
+            
             { "dirinfo",
                 new CommandInfo("dirinfo", ShellType, /* Localizable */ "Provides information about a directory",
                     new[] {
@@ -516,7 +538,28 @@ namespace KS.Shell.Shells.UESH
                         })
                     }, new EditCommand())
             },
-            
+
+            { "encodetext",
+                new CommandInfo("encodetext", ShellType, /* Localizable */ "Encodes the text",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                            new CommandArgumentPart(true, "string"),
+                        }, new[]
+                        {
+                            new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                            }),
+                            new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                            }),
+                        })
+                    }, new EncodeTextCommand())
+            },
+
             { "fileinfo",
                 new CommandInfo("fileinfo", ShellType, /* Localizable */ "Provides information about a file",
                     new[] {

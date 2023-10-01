@@ -35,6 +35,8 @@ using KS.Kernel.Debugging;
 using KS.Drivers.DebugLogger.Bases;
 using KS.Drivers.DebugLogger;
 using System;
+using KS.Drivers.Encoding.Bases;
+using KS.Drivers.Encoding;
 
 namespace KS.Drivers
 {
@@ -111,6 +113,13 @@ namespace KS.Drivers
                     { "Console", new ConsoleDebugLogger() },
                     { "UnitTest", new UnitTestDebugLogger() },
                 }
+            },
+            { 
+                DriverTypes.Encoding, new()
+                { 
+                    { "Default", new AesEncoding() },
+                    { "RSA", new RsaEncoding() },
+                }
             }
         };
 
@@ -123,6 +132,7 @@ namespace KS.Drivers
             { DriverTypes.Encryption,   new() },
             { DriverTypes.Regexp,       new() },
             { DriverTypes.DebugLogger,  new() },
+            { DriverTypes.Encoding,     new() },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
@@ -134,6 +144,7 @@ namespace KS.Drivers
             { DriverTypes.Encryption,   drivers[DriverTypes.Encryption]["Default"] },
             { DriverTypes.Regexp,       drivers[DriverTypes.Regexp]["Default"] },
             { DriverTypes.DebugLogger,  drivers[DriverTypes.DebugLogger]["Default"] },
+            { DriverTypes.Encoding,     drivers[DriverTypes.Encoding]["Default"] },
         };
 
         internal static Dictionary<Type, DriverTypes> knownTypes = new()
@@ -145,6 +156,7 @@ namespace KS.Drivers
             { typeof(IEncryptionDriver),  DriverTypes.Encryption },
             { typeof(IRegexpDriver),      DriverTypes.Regexp },
             { typeof(IDebugLoggerDriver), DriverTypes.DebugLogger },
+            { typeof(IEncodingDriver),    DriverTypes.Encoding },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
@@ -192,6 +204,12 @@ namespace KS.Drivers
             begunLocal ? (IDebugLoggerDriver)currentDriversLocal[DriverTypes.DebugLogger] : CurrentDebugLoggerDriver;
 
         /// <summary>
+        /// Gets the current encoding driver (use this when possible)
+        /// </summary>
+        public static IEncodingDriver CurrentEncodingDriverLocal =>
+            begunLocal ? (IEncodingDriver)currentDriversLocal[DriverTypes.Encoding] : CurrentEncodingDriver;
+
+        /// <summary>
         /// Gets the system-wide current random driver
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
@@ -232,6 +250,12 @@ namespace KS.Drivers
         /// </summary>
         public static IDebugLoggerDriver CurrentDebugLoggerDriver =>
             (IDebugLoggerDriver)currentDrivers[DriverTypes.DebugLogger];
+
+        /// <summary>
+        /// Gets the system-wide current encoding driver
+        /// </summary>
+        public static IEncodingDriver CurrentEncodingDriver =>
+            (IEncodingDriver)currentDrivers[DriverTypes.Encoding];
 
         /// <summary>
         /// Gets the driver

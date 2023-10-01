@@ -22,6 +22,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using Encryptor = System.Security.Cryptography.SHA256;
 using FS = KS.Files.Filesystem;
+using TextEncoding = System.Text.Encoding;
 
 namespace KS.Drivers.Encryption
 {
@@ -70,7 +71,7 @@ namespace KS.Drivers.Encryption
         public virtual string GetEncryptedString(string str)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
-            var hashbyte = Encryptor.HashData(Encoding.UTF8.GetBytes(str));
+            var hashbyte = Encryptor.HashData(TextEncoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }
 

@@ -430,6 +430,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// Login handler failed. Please ensure that it's registered properly and that it does its job as expected.
         /// </summary>
-        LoginHandler
+        LoginHandler,
+        /// <summary>
+        /// Encoding has failed. Check to make sure that your encoding driver works correctly and fix any problems if found, then try again.
+        /// </summary>
+        Encoding
     }
 }

@@ -19,6 +19,7 @@
 using System.IO;
 using System.Text;
 using System;
+using TextEncoding = System.Text.Encoding;
 
 namespace KS.Drivers.Console
 {
@@ -191,12 +192,12 @@ namespace KS.Drivers.Console
         /// <summary>
         /// The output encoding
         /// </summary>
-        Encoding OutputEncoding { get; set; }
+        TextEncoding OutputEncoding { get; set; }
 
         /// <summary>
         /// The input encoding
         /// </summary>
-        Encoding InputEncoding { get; set; }
+        TextEncoding InputEncoding { get; set; }
 
         /// <summary>
         /// Whether a key is pressed

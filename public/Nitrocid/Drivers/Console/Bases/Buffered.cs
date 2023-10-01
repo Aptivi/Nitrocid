@@ -26,6 +26,7 @@ using System.Text;
 using KS.Kernel.Exceptions;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using TextEncoding = System.Text.Encoding;
 
 namespace KS.Drivers.Console.Bases
 {
@@ -62,9 +63,9 @@ namespace KS.Drivers.Console.Bases
 
         public override bool CursorVisible { set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
-        public override Encoding OutputEncoding { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
+        public override TextEncoding OutputEncoding { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
-        public override Encoding InputEncoding { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
+        public override TextEncoding InputEncoding { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
         public override bool KeyAvailable =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);

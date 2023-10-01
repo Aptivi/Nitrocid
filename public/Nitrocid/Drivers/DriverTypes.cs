@@ -50,6 +50,10 @@ namespace KS.Drivers
         /// <summary>
         /// Debug logging drivers
         /// </summary>
-        DebugLogger
+        DebugLogger,
+        /// <summary>
+        /// Encoding drivers
+        /// </summary>
+        Encoding
     }
 }

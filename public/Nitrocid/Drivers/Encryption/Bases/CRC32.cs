@@ -22,6 +22,7 @@ using KS.Kernel.Debugging;
 using System.IO;
 using System.Text;
 using System.Text.RegularExpressions;
+using TextEncoding = System.Text.Encoding;
 
 namespace KS.Drivers.Encryption.Bases
 {
@@ -67,7 +68,7 @@ namespace KS.Drivers.Encryption.Bases
         public override string GetEncryptedString(string str)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "String length: {0}", str.Length);
-            var hashbyte = new Crc32Algorithm().ComputeHash(Encoding.UTF8.GetBytes(str));
+            var hashbyte = new Crc32Algorithm().ComputeHash(TextEncoding.UTF8.GetBytes(str));
             return Encryption.GetArrayEnc(hashbyte);
         }
 

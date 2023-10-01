@@ -132,6 +132,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.NoteManagement,                   Translate.DoTranslation("There was an error when trying to perform an operation for the note management.") },
                 { KernelExceptionType.Hardware,                         Translate.DoTranslation("Hardware component management failed.") },
                 { KernelExceptionType.LoginHandler,                     Translate.DoTranslation("Login handler failed. Please ensure that it's registered properly and that it does its job as expected.") },
+                { KernelExceptionType.Encoding,                         Translate.DoTranslation("Encoding has failed. Check to make sure that your encoding driver works correctly and fix any problems if found, then try again.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

@@ -25,6 +25,7 @@ using System.Text;
 using System.Threading;
 using KS.Kernel;
 using SystemConsole = System.Console;
+using TextEncoding = System.Text.Encoding;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -236,12 +237,12 @@ namespace KS.Drivers.Console
         }
 
         /// <inheritdoc/>
-        public virtual Encoding OutputEncoding
+        public virtual TextEncoding OutputEncoding
         {
             get
             {
                 if (IsDumb)
-                    return Encoding.Default;
+                    return TextEncoding.Default;
                 return SystemConsole.OutputEncoding;
             }
             set
@@ -252,12 +253,12 @@ namespace KS.Drivers.Console
         }
 
         /// <inheritdoc/>
-        public virtual Encoding InputEncoding
+        public virtual TextEncoding InputEncoding
         {
             get
             {
                 if (IsDumb)
-                    return Encoding.Default;
+                    return TextEncoding.Default;
                 return SystemConsole.InputEncoding;
             }
             set
