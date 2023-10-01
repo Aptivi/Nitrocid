@@ -274,6 +274,11 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static bool ShowTip =>
             Config.MainConfig.ShowTip;
+        /// <summary>
+        /// Development notice acknowledged
+        /// </summary>
+        public static bool DevNoticeConsented =>
+            Config.MainConfig.DevNoticeConsented;
 
         // Private flags
         internal static bool NotifyConfigError;

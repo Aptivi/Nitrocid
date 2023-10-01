@@ -34,11 +34,14 @@ namespace KS.Kernel.Starting
     {
         internal static void Stage01SystemInitialization()
         {
-            // If running on development version, interrupt boot and show developer disclaimer.
-            SplashManager.BeginSplashOut();
-            WelcomeMessage.ShowDevelopmentDisclaimer();
-            WelcomeMessage.ShowDotnet7Disclaimer();
-            SplashManager.EndSplashOut();
+            // If running on development version and not consented, interrupt boot and show developer disclaimer.
+            if (!KernelFlags.DevNoticeConsented)
+            {
+                SplashManager.BeginSplashOut();
+                WelcomeMessage.ShowDevelopmentDisclaimer();
+                WelcomeMessage.ShowDotnet7Disclaimer();
+                SplashManager.EndSplashOut();
+            }
 
             // Now, initialize remote debugger if the kernel is running in debug mode
             if (RemoteDebugger.RDebugAutoStart & KernelFlags.DebugMode)

@@ -189,6 +189,10 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool SetCodepage { get; set; } = true;
         /// <summary>
+        /// Development notice acknowledged
+        /// </summary>
+        public bool DevNoticeConsented { get; set; }
+        /// <summary>
         /// User Name Shell Color
         /// </summary>
         public string UserNameShellColor

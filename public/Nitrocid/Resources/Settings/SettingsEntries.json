@@ -173,6 +173,12 @@
                 "Variable": "SetCodepage",
                 "Description": "Set the language codepage upon switching languages.",
                 "UnsupportedPlatforms": [ "Unix", "macOS" ]
+            },
+            {
+                "Name": "Development notice acknowledged",
+                "Type": "SBoolean",
+                "Variable": "DevNoticeConsented",
+                "Description": "If set to true, the kernel won't show you the development notice every time you boot to the kernel in development versions."
             }
         ]
     },
