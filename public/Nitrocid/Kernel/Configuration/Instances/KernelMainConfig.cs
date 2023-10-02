@@ -54,6 +54,8 @@ using Terminaux.Colors.Accessibility;
 using Figletize;
 using KS.Users.Login.Handlers;
 using KS.Kernel.Configuration.Settings;
+using KS.Drivers.Encoding;
+using KS.Drivers.DebugLogger;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -1237,6 +1239,22 @@ namespace KS.Kernel.Configuration.Instances
         {
             get => DriverHandler.GetDriverName<IRegexpDriver>(DriverHandler.CurrentRegexpDriver);
             set => RegexpDriverTools.SetRegexpDriver(value);
+        }
+        /// <summary>
+        /// Current regular expression driver
+        /// </summary>
+        public string CurrentDebugLoggerDriver
+        {
+            get => DriverHandler.GetDriverName<IDebugLoggerDriver>(DriverHandler.CurrentDebugLoggerDriver);
+            set => DebugLoggerDriverTools.SetDebugLoggerDriver(value);
+        }
+        /// <summary>
+        /// Current regular expression driver
+        /// </summary>
+        public string CurrentEncodingDriver
+        {
+            get => DriverHandler.GetDriverName<IEncodingDriver>(DriverHandler.CurrentEncodingDriver);
+            set => EncodingDriverTools.SetEncodingDriver(value);
         }
         /// <summary>
         /// The time and date will be shown in the upper right corner of the screen

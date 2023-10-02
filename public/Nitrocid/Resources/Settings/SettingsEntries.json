@@ -1254,6 +1254,26 @@
                 "SelectionFunctionType": "RegexpDriverTools",
                 "SelectionFallback": [ "Default" ],
                 "Description": "Which regular expression driver would you like to use?"
+            },
+            {
+                "Name": "Current debug logger driver",
+                "Type": "SSelection",
+                "Variable": "CurrentDebugLoggerDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetDebugLoggerDriverNames",
+                "SelectionFunctionType": "DebugLoggerDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which debug logger driver would you like to use?"
+            },
+            {
+                "Name": "Current encoding driver",
+                "Type": "SSelection",
+                "Variable": "CurrentEncodingDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetEncodingDriverNames",
+                "SelectionFunctionType": "EncodingDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which encoding driver would you like to use?"
             }
         ]
     },
