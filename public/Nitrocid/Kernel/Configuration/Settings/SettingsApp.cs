@@ -327,14 +327,15 @@ namespace KS.Kernel.Configuration.Settings
 
         internal static void SetPropertyValue(string KeyVar, object Value, BaseKernelConfig configType)
         {
+            // Consult a comment in ConfigTools about "as dynamic" for more info.
             if (PropertyManager.CheckProperty(KeyVar))
-                PropertyManager.SetPropertyValueInstance(configType, KeyVar, Value);
+                PropertyManager.SetPropertyValueInstance(configType as dynamic, KeyVar, Value);
         }
 
         internal static object GetPropertyValue(string KeyVar, BaseKernelConfig configType)
         {
             if (PropertyManager.CheckProperty(KeyVar))
-                return PropertyManager.GetPropertyValueInstance(configType, KeyVar);
+                return PropertyManager.GetPropertyValueInstance(configType as dynamic, KeyVar);
             return null;
         }
 
