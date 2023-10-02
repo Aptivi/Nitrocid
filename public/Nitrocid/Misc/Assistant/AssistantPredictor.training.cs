@@ -40,7 +40,7 @@ namespace KS.Misc.Assistant
         }
 
         /// <summary>
-        /// build the pipeline that is used from model builder. Use this function to retrain model.
+        /// Builds the pipeline that is used from model builder. Use this function to retrain model.
         /// </summary>
         /// <param name="mlContext"></param>
         /// <returns></returns>
