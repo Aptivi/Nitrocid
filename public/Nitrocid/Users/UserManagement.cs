@@ -139,12 +139,33 @@ namespace KS.Users
 
             // Now, get each user from the config file
             List<UserInfo> users = new();
+            int rootIdx = 0;
+            bool sawRoot = false;
             foreach (var userInfoArray in userInfoArrays)
             {
                 // Add the user info to the users list after populating it
                 UserInfo userInfo = (UserInfo)JsonConvert.DeserializeObject(userInfoArray.ToString(), typeof(UserInfo));
                 users.Add(userInfo);
+                if (userInfo.Username == "root")
+                    sawRoot = true;
+                if (!sawRoot)
+                    rootIdx++;
             }
+
+            // Check the root user for administrator status
+            if (users.Count > 0)
+            {
+                // Get root account
+                var root = users[rootIdx];
+                if (!root.Flags.HasFlag(UserFlags.Administrator))
+                {
+                    // Either it's an upgrade from the old user format, or a malicious mod removed admin from root.
+                    DebugWriter.WriteDebug(DebugLevel.W, "Root account doesn't have admin status. Setting...");
+                    root.Flags |= UserFlags.Administrator;
+                }
+            }
+
+            // Install values
             Users = users;
         }
 
