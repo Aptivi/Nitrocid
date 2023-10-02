@@ -52,6 +52,7 @@ using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
 using Figletize;
+using KS.Users.Login.Handlers;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -697,10 +698,6 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool IncludeDisabled { get; set; }
         /// <summary>
-        /// Whether to use the modern way to present log-on screen or the classic way (write your username)
-        /// </summary>
-        public bool ModernLogon { get; set; } = true;
-        /// <summary>
         /// Whether to show the MOTD and the headline at the bottom or at the top of the clock
         /// </summary>
         public bool MotdHeadlineBottom { get; set; }
@@ -708,6 +705,14 @@ namespace KS.Kernel.Configuration.Instances
         /// Show the tip after logging in.
         /// </summary>
         public bool ShowTip { get; set; } = true;
+        /// <summary>
+        /// Current login handler.
+        /// </summary>
+        public string CurrentLoginHandler
+        {
+            get => LoginHandlerTools.CurrentHandlerName;
+            set => LoginHandlerTools.CurrentHandlerName = value;
+        }
         /// <summary>
         /// Simplified help command for all the shells
         /// </summary>

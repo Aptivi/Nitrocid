@@ -169,11 +169,6 @@ namespace KS.Kernel.Configuration
         public static bool PrintLineNumbers =>
             Config.MainConfig.PrintLineNumbers;
         /// <summary>
-        /// Whether to use the modern way to present log-on screen or the classic way (write your username)
-        /// </summary>
-        public static bool ModernLogon =>
-            Config.MainConfig.ModernLogon;
-        /// <summary>
         /// Whether to print the stack trace on kernel error
         /// </summary>
         public static bool ShowStackTraceOnKernelError =>

@@ -26,11 +26,28 @@ namespace KS.Users.Login.Handlers
     /// </summary>
     public static class LoginHandlerTools
     {
+        private static string currentHandler = "modern";
         private readonly static Dictionary<string, BaseLoginHandler> handlers = new()
         {
             { "classic", new ClassicLogin() },
             { "modern", new ModernLogin() },
         };
+        private readonly static Dictionary<string, BaseLoginHandler> customHandlers = new();
+
+        /// <summary>
+        /// Gets and sets the current login handler name
+        /// </summary>
+        public static string CurrentHandlerName
+        {
+            get => IsHandlerRegistered(currentHandler) ? currentHandler : "modern";
+            set => currentHandler = IsHandlerRegistered(value) ? value : "modern";
+        }
+
+        /// <summary>
+        /// Gets the current login handler
+        /// </summary>
+        public static BaseLoginHandler CurrentHandler =>
+            GetHandler(CurrentHandlerName);
 
         /// <summary>
         /// Checks to see if the built-in or custom handler is registered
@@ -38,6 +55,18 @@ namespace KS.Users.Login.Handlers
         /// <param name="name">Name of the built-in or custom handler</param>
         /// <returns>True if found. False otherwise.</returns>
         public static bool IsHandlerRegistered(string name)
+        {
+            if (string.IsNullOrEmpty(name))
+                return false;
+            return handlers.ContainsKey(name) || customHandlers.ContainsKey(name);
+        }
+
+        /// <summary>
+        /// Checks to see if the handler is built-in
+        /// </summary>
+        /// <param name="name">Name of the built-in handler</param>
+        /// <returns>True if found. False otherwise.</returns>
+        public static bool IsHandlerBuiltin(string name)
         {
             if (string.IsNullOrEmpty(name))
                 return false;
@@ -51,11 +80,44 @@ namespace KS.Users.Login.Handlers
         /// <returns>A <see cref="BaseLoginHandler"/> instance containing handler data if found. Otherwise, null is returned.</returns>
         public static BaseLoginHandler GetHandler(string name)
         {
-            if (IsHandlerRegistered(name))
+            if (IsHandlerBuiltin(name))
                 return handlers[name];
+            if (IsHandlerRegistered(name))
+                return customHandlers[name];
             return null;
         }
 
-        // TODO: Add handler registration/unregistration mechanics.
+        /// <summary>
+        /// Registers a custom login handler
+        /// </summary>
+        /// <param name="name">Custom login handler name</param>
+        /// <param name="handler">Handler base to use</param>
+        public static void RegisterHandler(string name, BaseLoginHandler handler)
+        {
+            if (!IsHandlerRegistered(name) && !IsHandlerBuiltin(name))
+                customHandlers.Add(name, handler);
+        }
+
+        /// <summary>
+        /// Unregisters a custom login handler
+        /// </summary>
+        /// <param name="name">Custom login handler name</param>
+        public static void UnregisterHandler(string name)
+        {
+            if (IsHandlerRegistered(name) && !IsHandlerBuiltin(name))
+                customHandlers.Remove(name);
+        }
+
+        /// <summary>
+        /// Gets the handler names for built-in and custom handlers
+        /// </summary>
+        /// <returns>List of handler names</returns>
+        public static string[] GetHandlerNames()
+        {
+            List<string> names = new();
+            names.AddRange(handlers.Keys);
+            names.AddRange(customHandlers.Keys);
+            return names.ToArray();
+        }
     }
 }

@@ -65,18 +65,11 @@ namespace KS.Users.Login
                 throw new KernelException(KernelExceptionType.NullUsers, Translate.DoTranslation("There are no more users remaining in the list."));
             }
 
-            // How do we prompt user to login?
-            string handlerName = "classic";
-            if (KernelFlags.ModernLogon)
-            {
-                // Invoke the modern logon handler
-                handlerName = "modern";
-            }
-
             // Get the handler!
             try
             {
                 // Sanity check...
+                string handlerName = LoginHandlerTools.CurrentHandlerName;
                 var handler = LoginHandlerTools.GetHandler(handlerName) ??
                     throw new KernelException(KernelExceptionType.LoginHandler, Translate.DoTranslation("The login handler is not found!") + $" {handlerName}");
 
