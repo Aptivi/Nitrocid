@@ -22,9 +22,7 @@ using KS.Drivers;
 using KS.Drivers.Encoding;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Text.Probers.Placeholder;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

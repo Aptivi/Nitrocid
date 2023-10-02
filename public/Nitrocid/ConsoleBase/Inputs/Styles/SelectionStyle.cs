@@ -138,7 +138,26 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="Answers">Set of answers.</param>
         /// <param name="AltAnswers">Set of alternate answers.</param>
         /// <param name="kiosk">Whether to prevent exiting or not</param>
-        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false)
+        public static int PromptSelection(string Question, List<InputChoiceInfo> Answers, List<InputChoiceInfo> AltAnswers, bool kiosk = false) =>
+            PromptSelection(Question, Answers.ToArray(), AltAnswers.ToArray(), kiosk);
+
+        /// <summary>
+        /// Prompts user for Selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, InputChoiceInfo[] Answers, bool kiosk = false) =>
+            PromptSelection(Question, Answers, Array.Empty<InputChoiceInfo>(), kiosk);
+
+        /// <summary>
+        /// Prompts user for Selection
+        /// </summary>
+        /// <param name="Question">A question</param>
+        /// <param name="Answers">Set of answers.</param>
+        /// <param name="AltAnswers">Set of alternate answers.</param>
+        /// <param name="kiosk">Whether to prevent exiting or not</param>
+        public static int PromptSelection(string Question, InputChoiceInfo[] Answers, InputChoiceInfo[] AltAnswers, bool kiosk = false)
         {
             // Variables
             int HighlightedAnswer = savedPos;
@@ -150,7 +169,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 HighlightedAnswer = 1;
 
             // First alt answer index
-            int altAnswersFirstIdx = Answers.Count;
+            int altAnswersFirstIdx = Answers.Length;
             ConsoleKeyInfo Answer;
             ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear(true);

@@ -18,7 +18,6 @@
 
 using KS.Kernel.Debugging;
 using System.IO;
-using System.Text;
 using System.Text.RegularExpressions;
 using Encryptor = System.Security.Cryptography.SHA512;
 using FS = KS.Files.Filesystem;

@@ -20,12 +20,8 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers;
 using KS.Drivers.Encoding;
-using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

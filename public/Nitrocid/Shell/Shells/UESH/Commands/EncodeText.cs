@@ -24,7 +24,6 @@ using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
 using System;
-using System.Text;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

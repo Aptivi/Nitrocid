@@ -20,7 +20,6 @@ using Force.Crc32;
 using FS = KS.Files.Filesystem;
 using KS.Kernel.Debugging;
 using System.IO;
-using System.Text;
 using System.Text.RegularExpressions;
 using TextEncoding = System.Text.Encoding;
 

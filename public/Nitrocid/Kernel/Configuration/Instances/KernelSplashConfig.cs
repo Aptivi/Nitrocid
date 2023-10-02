@@ -17,15 +17,22 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Colors;
+using KS.Kernel.Configuration.Settings;
 using KS.Misc.Text;
+using Newtonsoft.Json;
 
 namespace KS.Kernel.Configuration.Instances
 {
     /// <summary>
     /// Configuration instance for splashes (to be serialized)
     /// </summary>
-    public class KernelSplashConfig
+    public class KernelSplashConfig : BaseKernelConfig, IKernelConfig
     {
+        /// <inheritdoc/>
+        [JsonIgnore]
+        public override SettingsEntry[] SettingsEntries =>
+            ConfigTools.OpenSettingsResource(ConfigType.Splash);
+
         /// <summary>
         /// [Simple] The progress text location
         /// </summary>

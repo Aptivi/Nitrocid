@@ -32,6 +32,8 @@ using KS.Resources;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Configuration.Settings;
 using Newtonsoft.Json;
+using KS.Kernel.Configuration.Instances;
+using KS.Files;
 
 namespace KS.Kernel.Configuration
 {
@@ -74,33 +76,16 @@ namespace KS.Kernel.Configuration
         /// Gets the value from a settings entry
         /// </summary>
         /// <param name="Setting">An entry to get the value from</param>
-        /// <param name="SettingsType">Settings type</param>
+        /// <param name="configType">Settings type</param>
         /// <returns>The value</returns>
-        public static object GetValueFromEntry(SettingsKey Setting, ConfigType SettingsType)
+        public static object GetValueFromEntry(SettingsKey Setting, BaseKernelConfig configType)
         {
             object CurrentValue = "Unknown";
             string Variable = Setting.Variable;
 
             // Print the option by determining how to get the current value
             if (PropertyManager.CheckProperty(Variable))
-            {
-                // We're dealing with the property, get the value from it
-                switch (SettingsType)
-                {
-                    case ConfigType.Kernel:
-                        CurrentValue = PropertyManager.GetPropertyValueInstance(MainConfig, Variable);
-                        break;
-                    case ConfigType.Screensaver:
-                        CurrentValue = PropertyManager.GetPropertyValueInstance(SaverConfig, Variable);
-                        break;
-                    case ConfigType.Splash:
-                        CurrentValue = PropertyManager.GetPropertyValueInstance(SplashConfig, Variable);
-                        break;
-                    default:
-                        DebugCheck.AssertFail($"dealing with settings type other than kernel, screensaver, and splash. {SettingsType}");
-                        break;
-                }
-            }
+                CurrentValue = PropertyManager.GetPropertyValueInstance(configType, Variable);
 
             // Get the plain sequence from the color
             if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
@@ -119,21 +104,22 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Finds a setting with the matching pattern
         /// </summary>
-        public static List<InputChoiceInfo> FindSetting(string Pattern, SettingsEntry[] SettingsEntries, ConfigType SettingsType)
+        public static List<InputChoiceInfo> FindSetting(string Pattern, BaseKernelConfig configType)
         {
             var Results = new List<InputChoiceInfo>();
 
             // Search the settings for the given pattern
             try
             {
-                for (int SectionIndex = 0; SectionIndex <= SettingsEntries.Length - 1; SectionIndex++)
+                var settingsEntries = configType.SettingsEntries;
+                for (int SectionIndex = 0; SectionIndex <= settingsEntries.Length - 1; SectionIndex++)
                 {
-                    var SectionToken = SettingsEntries[SectionIndex];
+                    var SectionToken = settingsEntries[SectionIndex];
                     var keys = SectionToken.Keys;
                     for (int SettingIndex = 0; SettingIndex <= keys.Length - 1; SettingIndex++)
                     {
                         var Setting = keys[SettingIndex];
-                        object CurrentValue = GetValueFromEntry(Setting, SettingsType);
+                        object CurrentValue = GetValueFromEntry(Setting, configType);
                         string KeyName = Translate.DoTranslation(Setting.Name) + $" [{CurrentValue}]";
                         if (Regex.IsMatch(KeyName, Pattern, RegexOptions.IgnoreCase))
                         {
@@ -149,6 +135,7 @@ namespace KS.Kernel.Configuration
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to find setting {0}: {1}", Pattern, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
+                throw;
             }
 
             // Return the results
@@ -214,43 +201,143 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Registers a custom setting
         /// </summary>
-        public static void RegisterCustomSetting()
+        /// <param name="kernelConfig">Kernel configuration instance</param>
+        public static void RegisterCustomSetting(BaseKernelConfig kernelConfig)
         {
-            // TODO: This is not implemented. Even the signature is unfinished.
-            throw new KernelException(KernelExceptionType.NotImplementedYet, "Custom settings registration for your mods is coming soon.");
+            // Check to see if the kernel config is null
+            if (kernelConfig is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a custom setting with no content."));
+
+            // Now, register!
+            string name = kernelConfig.GetType().Name;
+            if (!IsCustomSettingRegistered(name))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} not registered. Registering...", name);
+                customConfigurations.Add(name, kernelConfig);
+            }
+
+            // Make a configuration file
+            CreateConfig(kernelConfig);
         }
 
         /// <summary>
         /// Unregisters a custom setting
         /// </summary>
-        public static void UnregisterCustomSetting()
+        public static void UnregisterCustomSetting(string setting)
         {
-            // TODO: This is not implemented. Even the signature is unfinished.
-            throw new KernelException(KernelExceptionType.NotImplementedYet, "Custom settings unregistration for your mods is coming soon.");
+            // Check to see if the kernel config is null
+            if (string.IsNullOrEmpty(setting))
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to unregister a custom setting with no name."));
+
+            // Now, register!
+            if (IsCustomSettingRegistered(setting))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Unregistering...", setting);
+                customConfigurations.Remove(setting);
+            }
         }
 
         /// <summary>
         /// Checks to see whether the custom setting is registered
         /// </summary>
+        /// <param name="setting">Settings type to query</param>
         /// <returns>True if found. False otherwise.</returns>
-        public static bool IsCustomSettingRegistered()
+        public static bool IsCustomSettingRegistered(string setting) =>
+            IsCustomSettingBuiltin(setting) || customConfigurations.ContainsKey(setting);
+
+        /// <summary>
+        /// Checks to see whether the custom setting is built-in
+        /// </summary>
+        /// <param name="setting">Settings type to query</param>
+        /// <returns>True if found. False otherwise.</returns>
+        public static bool IsCustomSettingBuiltin(string setting) =>
+            baseConfigurations.ContainsKey(setting);
+
+        /// <summary>
+        /// Gets a path to the custom settings JSON file
+        /// </summary>
+        /// <param name="setting">Settings type to query</param>
+        /// <returns>Path to the custom settings JSON file to read from or write to.</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string GetPathToCustomSettingsFile(string setting)
         {
-            // TODO: This is not implemented. Even the signature is unfinished.
-            throw new KernelException(KernelExceptionType.NotImplementedYet, "Custom settings manipulation for your mods is coming soon.");
+            // Check to see if the kernel config is null
+            if (string.IsNullOrEmpty(setting))
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to unregister a custom setting with no name."));
+
+            // Now, register!
+            if (IsCustomSettingRegistered(setting))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Getting path...", setting);
+                var config = GetKernelConfig(setting);
+                return GetPathToCustomSettingsFile(config);
+            }
+            else
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("The custom setting is not registered.") + $" {setting}");
+        }
+
+        /// <summary>
+        /// Gets a path to the custom settings JSON file
+        /// </summary>
+        /// <param name="setting">Settings type to query</param>
+        /// <returns>Path to the custom settings JSON file to read from or write to.</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string GetPathToCustomSettingsFile(BaseKernelConfig setting)
+        {
+            // Sanity checks...
+            if (setting is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to query an empty custom setting."));
+
+            // Now, do the job!
+            string path = Filesystem.NeutralizePath($"{setting.GetType().Name}.json", Paths.AppDataPath);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got path {0}...", path);
+            return path;
+        }
+
+        /// <summary>
+        /// Gets the settings entries
+        /// </summary>
+        /// <param name="entriesText">Settings entries JSON contents</param>
+        /// <returns>An array of <see cref="SettingsEntry"/> instances</returns>
+        /// <exception cref="KernelException"></exception>
+        public static SettingsEntry[] GetSettingsEntries(string entriesText)
+        {
+            // Some sanity checks
+            if (string.IsNullOrEmpty(entriesText))
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("The settings entries JSON value is empty."));
+
+            // Now, try to get the settings entry array.
+            return JsonConvert.DeserializeObject<SettingsEntry[]>(entriesText);
         }
 
         /// <summary>
         /// Open the settings resource
         /// </summary>
         /// <param name="SettingsType">The settings type</param>
-        internal static SettingsEntry[] OpenSettingsResource(ConfigType SettingsType)
+        public static SettingsEntry[] OpenSettingsResource(ConfigType SettingsType)
         {
             return SettingsType switch
             {
-                ConfigType.Kernel =>        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SettingsEntries),
-                ConfigType.Screensaver =>   JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.ScreensaverSettingsEntries),
-                ConfigType.Splash =>        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SplashSettingsEntries),
-                _ =>                        JsonConvert.DeserializeObject<SettingsEntry[]>(SettingsResources.SettingsEntries),
+                ConfigType.Kernel =>        GetSettingsEntries(SettingsResources.SettingsEntries),
+                ConfigType.Screensaver =>   GetSettingsEntries(SettingsResources.ScreensaverSettingsEntries),
+                ConfigType.Splash =>        GetSettingsEntries(SettingsResources.SplashSettingsEntries),
+                _ =>                        GetSettingsEntries(SettingsResources.SettingsEntries),
+            };
+        }
+
+        /// <summary>
+        /// Translates the names of <see cref="ConfigType"/> entries to their config class name equivalent
+        /// </summary>
+        /// <param name="SettingsType">The settings type</param>
+        /// <returns>Class name of a setting that represents it, like <see cref="KernelMainConfig"/></returns>
+        public static string TranslateBuiltinConfigType(ConfigType SettingsType)
+        {
+            return SettingsType switch
+            {
+                ConfigType.Kernel =>        nameof(KernelMainConfig),
+                ConfigType.Screensaver =>   nameof(KernelSaverConfig),
+                ConfigType.Splash =>        nameof(KernelSplashConfig),
+                _ =>                        nameof(KernelMainConfig),
             };
         }
 

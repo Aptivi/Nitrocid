@@ -18,7 +18,6 @@
 
 using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using Newtonsoft.Json;

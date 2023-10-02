@@ -53,14 +53,20 @@ using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
 using Figletize;
 using KS.Users.Login.Handlers;
+using KS.Kernel.Configuration.Settings;
 
 namespace KS.Kernel.Configuration.Instances
 {
     /// <summary>
     /// Main kernel configuration instance
     /// </summary>
-    public class KernelMainConfig
+    public class KernelMainConfig : BaseKernelConfig, IKernelConfig
     {
+        /// <inheritdoc/>
+        [JsonIgnore]
+        public override SettingsEntry[] SettingsEntries =>
+            ConfigTools.OpenSettingsResource(ConfigType.Kernel);
+
         /// <summary>
         /// Each startup, it will check for updates.
         /// </summary>

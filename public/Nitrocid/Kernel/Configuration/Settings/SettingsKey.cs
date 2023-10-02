@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files;
+using KS.Kernel.Configuration.Settings.KeyInputs;
 using Newtonsoft.Json;
 using System;
 using System.Diagnostics;
@@ -90,6 +91,10 @@ namespace KS.Kernel.Configuration.Settings
         internal string shellType;
         [JsonProperty(nameof(Tip))]
         internal string tip;
+
+        // Internal
+        [JsonIgnore]
+        internal ISettingsKeyInput keyInput;
 
         /// <summary>
         /// Settings key name
@@ -274,6 +279,34 @@ namespace KS.Kernel.Configuration.Settings
         [JsonIgnore]
         public string Tip =>
             tip;
+
+        internal ISettingsKeyInput KeyInput
+        {
+            get
+            {
+                // Get cached key input
+                if (keyInput is not null)
+                    return keyInput;
+
+                keyInput = Type switch
+                {
+                    SettingsKeyType.SBoolean    => new BooleanSettingsKeyInput(),
+                    SettingsKeyType.SInt        => new IntSettingsKeyInput(),
+                    SettingsKeyType.SString     => new StringSettingsKeyInput(),
+                    SettingsKeyType.SSelection  => new SelectionSettingsKeyInput(),
+                    SettingsKeyType.SList       => new ListSettingsKeyInput(),
+                    SettingsKeyType.SColor      => new ColorSettingsKeyInput(),
+                    SettingsKeyType.SChar       => new CharSettingsKeyInput(),
+                    SettingsKeyType.SIntSlider  => new IntSliderSettingsKeyInput(),
+                    SettingsKeyType.SDouble     => new DoubleSettingsKeyInput(),
+                    SettingsKeyType.SPreset     => new PresetSettingsKeyInput(),
+                    SettingsKeyType.SFiglet     => new FigletSettingsKeyInput(),
+                    SettingsKeyType.SUnknown    => new UnknownSettingsKeyInput(),
+                    _                           => new UnknownSettingsKeyInput(),
+                };
+                return keyInput;
+            }
+        }
 
         [JsonConstructor]
         internal SettingsKey()

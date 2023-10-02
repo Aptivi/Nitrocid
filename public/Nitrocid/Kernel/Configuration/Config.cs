@@ -32,6 +32,7 @@ using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration.Instances;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using System.Collections.Generic;
 
 namespace KS.Kernel.Configuration
 {
@@ -41,31 +42,67 @@ namespace KS.Kernel.Configuration
     public static class Config
     {
 
-        internal static KernelMainConfig mainConfig = new();
-        internal static KernelSaverConfig saverConfig = new();
-        internal static KernelSplashConfig splashConfig = new();
+        internal static Dictionary<string, BaseKernelConfig> customConfigurations = new();
+        internal static Dictionary<string, BaseKernelConfig> baseConfigurations = new()
+        {
+            { nameof(KernelMainConfig),   new KernelMainConfig() },
+            { nameof(KernelSaverConfig),  new KernelSaverConfig() },
+            { nameof(KernelSplashConfig), new KernelSplashConfig() },
+        };
 
         /// <summary>
         /// Main configuration entry for the kernel
         /// </summary>
-        public static KernelMainConfig MainConfig { get => mainConfig; }
+        public static KernelMainConfig MainConfig =>
+            baseConfigurations is not null ? (KernelMainConfig)baseConfigurations[nameof(KernelMainConfig)] : new KernelMainConfig();
         /// <summary>
         /// Screensaver configuration entry for the kernel
         /// </summary>
-        public static KernelSaverConfig SaverConfig { get => saverConfig; }
+        public static KernelSaverConfig SaverConfig =>
+            baseConfigurations is not null ? (KernelSaverConfig)baseConfigurations[nameof(KernelSaverConfig)] : new KernelSaverConfig();
         /// <summary>
         /// Splash configuration entry for the kernel
         /// </summary>
-        public static KernelSplashConfig SplashConfig { get => splashConfig; }
+        public static KernelSplashConfig SplashConfig =>
+            baseConfigurations is not null ? (KernelSplashConfig)baseConfigurations[nameof(KernelSplashConfig)] : new KernelSplashConfig();
+
+        /// <summary>
+        /// Gets the kernel configuration
+        /// </summary>
+        /// <param name="type">Built-in config type to query</param>
+        /// <returns>An instance of <see cref="BaseKernelConfig"/> if found. Otherwise, null.</returns>
+        public static BaseKernelConfig GetKernelConfig(ConfigType type) =>
+            GetKernelConfig(ConfigTools.TranslateBuiltinConfigType(type));
+
+        /// <summary>
+        /// Gets the kernel configuration
+        /// </summary>
+        /// <param name="name">Custom config type name to query</param>
+        /// <returns>An instance of <see cref="BaseKernelConfig"/> if found. Otherwise, null.</returns>
+        public static BaseKernelConfig GetKernelConfig(string name)
+        {
+            if (ConfigTools.IsCustomSettingBuiltin(name))
+                return baseConfigurations[name];
+            if (ConfigTools.IsCustomSettingRegistered(name))
+                return customConfigurations[name];
+            return null;
+        }
+
+        /// <summary>
+        /// Gets the kernel configuration instances
+        /// </summary>
+        /// <returns>Kernel configuration instances</returns>
+        public static BaseKernelConfig[] GetKernelConfigs() =>
+            baseConfigurations.Values.Union(customConfigurations.Values).ToArray();
 
         /// <summary>
         /// Creates the kernel configuration file
         /// </summary>
         public static void CreateConfig()
         {
-            CreateConfig(ConfigType.Kernel, Paths.GetKernelPath(KernelPathType.Configuration));
-            CreateConfig(ConfigType.Screensaver, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
-            CreateConfig(ConfigType.Splash, Paths.GetKernelPath(KernelPathType.SplashConfiguration));
+            var configs = GetKernelConfigs();
+            foreach (var config in configs)
+                CreateConfig(config);
         }
 
         /// <summary>
@@ -81,10 +118,10 @@ namespace KS.Kernel.Configuration
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent folder to store the three configuration files on."));
             DebugWriter.WriteDebug(DebugLevel.I, "Config folder {0} exists, so saving...", ConfigFolder);
 
-            // Save all three configuration types
-            CreateConfig(ConfigType.Kernel, ConfigFolder + "/" + Path.GetFileName(Paths.GetKernelPath(KernelPathType.Configuration)));
-            CreateConfig(ConfigType.Screensaver, ConfigFolder + "/" + Path.GetFileName(Paths.GetKernelPath(KernelPathType.SaverConfiguration)));
-            CreateConfig(ConfigType.Splash, ConfigFolder + "/" + Path.GetFileName(Paths.GetKernelPath(KernelPathType.SplashConfiguration)));
+            // Save all configuration types
+            var configs = GetKernelConfigs();
+            foreach (var config in configs)
+                CreateConfig(config, ConfigFolder + "/" + config.GetType().Name + ".json");
         }
 
         /// <summary>
@@ -92,12 +129,26 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static void CreateConfig(ConfigType type, string ConfigPath)
         {
+            var config = GetKernelConfig(ConfigTools.TranslateBuiltinConfigType(type));
+            CreateConfig(config, ConfigPath);
+        }
+
+        /// <summary>
+        /// Creates the kernel configuration file with custom path and custom type
+        /// </summary>
+        public static void CreateConfig(BaseKernelConfig type) =>
+            CreateConfig(type, ConfigTools.GetPathToCustomSettingsFile(type));
+
+        /// <summary>
+        /// Creates the kernel configuration file with custom path and custom type
+        /// </summary>
+        public static void CreateConfig(BaseKernelConfig type, string ConfigPath)
+        {
             if (KernelFlags.SafeMode)
                 return;
 
-            Filesystem.ThrowOnInvalidPath(ConfigPath);
-
             // Serialize the config object
+            Filesystem.ThrowOnInvalidPath(ConfigPath);
             string serialized = GetSerializedConfig(type);
             DebugWriter.WriteDebug(DebugLevel.I, "Got serialized config object of length {0}...", serialized.Length);
 
@@ -167,13 +218,53 @@ namespace KS.Kernel.Configuration
         }
 
         /// <summary>
+        /// Creates the kernel configuration file with custom folder
+        /// </summary>
+        /// <returns>True if successful; False if unsuccessful.</returns>
+        public static bool TryCreateConfig(BaseKernelConfig type)
+        {
+            try
+            {
+                CreateConfig(type);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                EventsManager.FireEvent(EventType.ConfigSaveError, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                return false;
+            }
+        }
+
+        /// <summary>
+        /// Creates the kernel configuration file with custom folder
+        /// </summary>
+        /// <returns>True if successful; False if unsuccessful.</returns>
+        public static bool TryCreateConfig(BaseKernelConfig type, string ConfigPath)
+        {
+            try
+            {
+                CreateConfig(type, ConfigPath);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                EventsManager.FireEvent(EventType.ConfigSaveError, ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Configures the kernel according to the kernel configuration file
         /// </summary>
         public static void ReadConfig()
         {
-            ReadConfig(ConfigType.Kernel, Paths.GetKernelPath(KernelPathType.Configuration));
-            ReadConfig(ConfigType.Screensaver, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
-            ReadConfig(ConfigType.Splash, Paths.GetKernelPath(KernelPathType.SplashConfiguration));
+            var configs = GetKernelConfigs();
+            foreach (var config in configs)
+                ReadConfig(config);
         }
 
         /// <summary>
@@ -181,24 +272,29 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static void ReadConfig(ConfigType type)
         {
-            switch (type)
-            {
-                case ConfigType.Kernel:
-                    ReadConfig(type, Paths.GetKernelPath(KernelPathType.Configuration));
-                    break;
-                case ConfigType.Screensaver:
-                    ReadConfig(type, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
-                    break;
-                case ConfigType.Splash:
-                    ReadConfig(type, Paths.GetKernelPath(KernelPathType.SplashConfiguration));
-                    break;
-            }
+            var config = GetKernelConfig(ConfigTools.TranslateBuiltinConfigType(type));
+            ReadConfig(config, ConfigTools.GetPathToCustomSettingsFile(config));
         }
 
         /// <summary>
         /// Configures the kernel according to the custom kernel configuration type and file
         /// </summary>
         public static void ReadConfig(ConfigType type, string ConfigPath)
+        {
+            var config = GetKernelConfig(ConfigTools.TranslateBuiltinConfigType(type));
+            ReadConfig(config, ConfigPath);
+        }
+
+        /// <summary>
+        /// Configures the kernel according to the custom kernel configuration type
+        /// </summary>
+        public static void ReadConfig(BaseKernelConfig type) =>
+            ReadConfig(type, ConfigTools.GetPathToCustomSettingsFile(type));
+
+        /// <summary>
+        /// Configures the kernel according to the custom kernel configuration type and file
+        /// </summary>
+        public static void ReadConfig<TConfig>(TConfig type, string ConfigPath)
         {
             // Open the config JSON file
             Filesystem.ThrowOnInvalidPath(ConfigPath);
@@ -207,29 +303,20 @@ namespace KS.Kernel.Configuration
 
             // Fix up and read!
             DebugWriter.WriteDebug(DebugLevel.I, "Config path {0} exists, so fixing and reading...", ConfigPath);
+            if (type is not BaseKernelConfig baseType)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Not a valid config class."));
             try
             {
                 // First, fix the configuration file up
-                RepairConfig(type);
+                RepairConfig(baseType);
                 string jsonContents = File.ReadAllText(ConfigPath);
-                JObject configObj = JObject.Parse(jsonContents);
 
                 // Now, deserialize the config state.
-                switch (type)
-                {
-                    case ConfigType.Kernel:
-                        mainConfig = JsonConvert.DeserializeObject<KernelMainConfig>(jsonContents);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Read kernel config!");
-                        break;
-                    case ConfigType.Screensaver:
-                        saverConfig = JsonConvert.DeserializeObject<KernelSaverConfig>(jsonContents);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Read screensaver config!");
-                        break;
-                    case ConfigType.Splash:
-                        splashConfig = JsonConvert.DeserializeObject<KernelSplashConfig>(jsonContents);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Read splash config!");
-                        break;
-                }
+                string typeName = type.GetType().Name;
+                if (ConfigTools.IsCustomSettingBuiltin(typeName))
+                    baseConfigurations[typeName] = (BaseKernelConfig)JsonConvert.DeserializeObject(jsonContents, type.GetType());
+                else
+                    customConfigurations[typeName] = (BaseKernelConfig)JsonConvert.DeserializeObject(jsonContents, type.GetType());
             }
             catch (Exception e)
             {
@@ -344,22 +431,10 @@ namespace KS.Kernel.Configuration
             }
         }
 
-        private static string GetSerializedConfig(ConfigType type)
+        private static string GetSerializedConfig(BaseKernelConfig type)
         {
             // Serialize the config object
-            string serialized = "";
-            switch (type)
-            {
-                case ConfigType.Kernel:
-                    serialized = JsonConvert.SerializeObject(mainConfig, Formatting.Indented);
-                    break;
-                case ConfigType.Screensaver:
-                    serialized = JsonConvert.SerializeObject(saverConfig, Formatting.Indented);
-                    break;
-                case ConfigType.Splash:
-                    serialized = JsonConvert.SerializeObject(splashConfig, Formatting.Indented);
-                    break;
-            }
+            string serialized = JsonConvert.SerializeObject(type, Formatting.Indented);
             DebugCheck.AssertNull(serialized, "serialized config object is null!");
             DebugCheck.Assert(!string.IsNullOrEmpty(serialized), "serialized config object is empty or whitespace!");
             return serialized;
@@ -367,28 +442,17 @@ namespace KS.Kernel.Configuration
 
         private static void RepairConfig()
         {
-            RepairConfig(ConfigType.Kernel);
-            RepairConfig(ConfigType.Screensaver);
-            RepairConfig(ConfigType.Splash);
+            var configs = GetKernelConfigs();
+            foreach (var config in configs)
+                RepairConfig(config);
         }
 
-        private static void RepairConfig(ConfigType type)
+        private static void RepairConfig(BaseKernelConfig type)
         {
             // Get the current kernel config JSON file vs the serialized config JSON string
+            string path = ConfigTools.GetPathToCustomSettingsFile(type);
             string serialized = GetSerializedConfig(type);
-            string current = "";
-            switch (type)
-            {
-                case ConfigType.Kernel:
-                    current = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Configuration));
-                    break;
-                case ConfigType.Screensaver:
-                    current = File.ReadAllText(Paths.GetKernelPath(KernelPathType.SaverConfiguration));
-                    break;
-                case ConfigType.Splash:
-                    current = File.ReadAllText(Paths.GetKernelPath(KernelPathType.SplashConfiguration));
-                    break;
-            }
+            string current = File.ReadAllText(path);
 
             // Compare the two config JSON files
             try
@@ -426,18 +490,7 @@ namespace KS.Kernel.Configuration
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Saving updated config...");
                     string modified = JsonConvert.SerializeObject(currentObj, Formatting.Indented);
-                    switch (type)
-                    {
-                        case ConfigType.Kernel:
-                            File.WriteAllText(Paths.GetKernelPath(KernelPathType.Configuration), modified);
-                            break;
-                        case ConfigType.Screensaver:
-                            File.WriteAllText(Paths.GetKernelPath(KernelPathType.SaverConfiguration), modified);
-                            break;
-                        case ConfigType.Splash:
-                            File.WriteAllText(Paths.GetKernelPath(KernelPathType.SplashConfiguration), modified);
-                            break;
-                    }
+                    File.WriteAllText(path, modified);
                 }
             }
             catch (Exception ex)
@@ -449,7 +502,7 @@ namespace KS.Kernel.Configuration
             }
         }
 
-        private static void RepairConfigLastResort(ConfigType type)
+        private static void RepairConfigLastResort(BaseKernelConfig type)
         {
             try
             {
@@ -457,11 +510,7 @@ namespace KS.Kernel.Configuration
                 string serialized = GetSerializedConfig(type);
 
                 // Re-create config
-                string path =
-                    type == ConfigType.Kernel ? Paths.GetKernelPath(KernelPathType.Configuration) :
-                    type == ConfigType.Screensaver ? Paths.GetKernelPath(KernelPathType.SaverConfiguration) :
-                    type == ConfigType.Splash ? Paths.GetKernelPath(KernelPathType.SplashConfiguration) :
-                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Invalid config type."));
+                string path = ConfigTools.GetPathToCustomSettingsFile(type);
                 CreateConfig(type, path);
                 DebugWriter.WriteDebug(DebugLevel.F, "Last Resort: Bailed!");
             }

@@ -36,7 +36,7 @@ namespace KS.Files.Folders
         /// The current directory
         /// </summary>
         public static string CurrentDir =>
-            Config.MainConfig is not null ? Config.MainConfig.CurrentDir : Paths.HomePath;
+            Config.baseConfigurations is not null && Config.MainConfig is not null ? Config.MainConfig.CurrentDir : Paths.HomePath;
 
         /// <summary>
         /// Sets the current working directory

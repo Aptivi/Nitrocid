@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration.Settings;
+using Newtonsoft.Json;
 using System;
 using Terminaux.Colors;
 
@@ -24,8 +26,13 @@ namespace KS.Kernel.Configuration.Instances
     /// <summary>
     /// Screensaver kernel configuration instance
     /// </summary>
-    public class KernelSaverConfig
+    public class KernelSaverConfig : BaseKernelConfig, IKernelConfig
     {
+        /// <inheritdoc/>
+        [JsonIgnore]
+        public override SettingsEntry[] SettingsEntries =>
+            ConfigTools.OpenSettingsResource(ConfigType.Screensaver);
+
         /// <summary>
         /// [ColorMix] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
