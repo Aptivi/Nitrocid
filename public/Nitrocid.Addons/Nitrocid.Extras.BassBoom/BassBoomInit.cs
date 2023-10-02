@@ -43,6 +43,15 @@ namespace Nitrocid.Extras.BassBoom
                         }, Array.Empty<SwitchInfo>())
                     }, new PlayLyricCommand())
             },
+            { "playsound",
+                new CommandInfo("playsound", ShellType.Shell, /* Localizable */ "Plays a sound",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "musicFile"),
+                        }, Array.Empty<SwitchInfo>())
+                    }, new PlaySoundCommand())
+            },
         };
 
         string IAddon.AddonName => "Extras - BassBoom";
