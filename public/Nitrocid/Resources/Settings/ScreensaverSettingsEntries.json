@@ -5835,5 +5835,93 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    {
+        "Name": "DoorShift",
+        "Desc": "Settings for this screensaver are available here.",
+        "Path": "Screensaver.DoorShift",
+        "Keys": [
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "DoorShiftTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "DoorShiftDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Background color",
+                "Type": "SColor",
+                "Variable": "DoorShiftBackgroundColor"
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SIntSlider",
+                "Variable": "DoorShiftMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SIntSlider",
+                "Variable": "DoorShiftMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "DoorShiftMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SIntSlider",
+                "Variable": "DoorShiftMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SIntSlider",
+                "Variable": "DoorShiftMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SIntSlider",
+                "Variable": "DoorShiftMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "DoorShiftMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SIntSlider",
+                "Variable": "DoorShiftMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            }
+        ]
     }
 ]

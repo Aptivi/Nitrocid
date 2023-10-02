@@ -45,6 +45,7 @@ namespace Nitrocid.ScreensaverPacks
             { "dateandtime", new DateAndTimeDisplay() },
             { "disco", new DiscoDisplay() },
             { "dissolve", new DissolveDisplay() },
+            { "doorshift", new DoorShiftDisplay() },
             { "edgepulse", new EdgePulseDisplay() },
             { "equalizer", new EqualizerDisplay() },
             { "excalibeats", new ExcaliBeatsDisplay() },

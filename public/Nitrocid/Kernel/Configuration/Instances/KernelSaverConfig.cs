@@ -3009,5 +3009,49 @@ namespace KS.Kernel.Configuration.Instances
         /// [Swivel] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int SwivelMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [DoorShift] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool DoorShiftTrueColor { get; set; } = true;
+        /// <summary>
+        /// [DoorShift] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int DoorShiftDelay { get; set; } = 10;
+        /// <summary>
+        /// [DoorShift] Screensaver background color
+        /// </summary>
+        public string DoorShiftBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        /// <summary>
+        /// [DoorShift] The minimum red color level (true color)
+        /// </summary>
+        public int DoorShiftMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [DoorShift] The minimum green color level (true color)
+        /// </summary>
+        public int DoorShiftMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [DoorShift] The minimum blue color level (true color)
+        /// </summary>
+        public int DoorShiftMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [DoorShift] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int DoorShiftMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [DoorShift] The maximum red color level (true color)
+        /// </summary>
+        public int DoorShiftMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [DoorShift] The maximum green color level (true color)
+        /// </summary>
+        public int DoorShiftMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [DoorShift] The maximum blue color level (true color)
+        /// </summary>
+        public int DoorShiftMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [DoorShift] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int DoorShiftMaximumColorLevel { get; set; } = 255;
     }
 }
