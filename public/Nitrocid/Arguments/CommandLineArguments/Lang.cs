@@ -33,6 +33,7 @@ namespace KS.Arguments.CommandLineArguments
             {
                 AddonTools.ProcessAddon(langPacksAddonPath, AddonType.Important);
                 LanguageManager.SetLangDry(ListArgsOnly[0]);
+                AddonTools.probedAddons.Clear();
             }
         }
 

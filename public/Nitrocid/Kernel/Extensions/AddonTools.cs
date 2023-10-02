@@ -35,7 +35,9 @@ namespace KS.Kernel.Extensions
 {
     internal static class AddonTools
     {
+        internal static readonly List<string> probedAddons = new();
         private static readonly List<AddonInfo> addons = new();
+        private const string windowsSuffix = ".Windows";
 
         internal static List<AddonInfo> ListAddons() =>
             new(addons);
@@ -50,12 +52,23 @@ namespace KS.Kernel.Extensions
             foreach (var addon in addonFolders)
                 ProcessAddon(addon, type);
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded all addons!");
+            probedAddons.Clear();
         }
 
         internal static void ProcessAddon(string addon, AddonType type)
         {
             try
             {
+                // First, check the platform
+                string windowsAddonPath = addon + windowsSuffix;
+                if (KernelPlatform.IsOnWindows() && Checking.FolderExists(windowsAddonPath))
+                    addon = windowsAddonPath;
+                if (addon.EndsWith(windowsSuffix) && !KernelPlatform.IsOnWindows())
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because it's built for Windows...", addon);
+                    return;
+                }
+
                 // Get the folder info and recurse through them to get actual addon file
                 DebugWriter.WriteDebug(DebugLevel.I, "Processing addon entry {0}...", addon);
                 var folderInfo = new FileSystemEntry(addon);
@@ -99,6 +112,12 @@ namespace KS.Kernel.Extensions
                 }
 
                 // Now, process the assembly
+                if (probedAddons.Contains(addonPath))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Skipping addon entry {0} because of conflicts with the already-loaded addon in the queue [{1}]...", addon, addonPath);
+                    return;
+                }
+                probedAddons.Add(addonPath);
                 var asm = Assembly.LoadFrom(addonPath);
                 var addonInstance = GetAddonInstance(asm) ??
                     throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("This addon is not a valid addon.") + $" {addonPath}");
