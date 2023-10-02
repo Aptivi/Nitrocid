@@ -643,6 +643,16 @@ namespace KS.Shell.Shells.UESH
                     }, new Get_Command())
             },
 
+            { "getkeyiv",
+                new CommandInfo("getkeyiv", ShellType, /* Localizable */ "Gets the key and the initialization vector for symmetrical encoding",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new GetKeyIvCommand())
+            },
+
             { "host",
                 new CommandInfo("host", ShellType, /* Localizable */ "Gets the current host name",
                     new[] {
