@@ -36,8 +36,8 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string algorithm = parameters.ArgumentsList[0];
-            string encoded = parameters.ArgumentsList[1];
+            string algorithm = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : DriverHandler.CurrentEncodingDriverLocal.DriverName;
+            string encoded = parameters.ArgumentsList[0];
             string keyValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-key");
             string ivValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-iv");
             string decoded;

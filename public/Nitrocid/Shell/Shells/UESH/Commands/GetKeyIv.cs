@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string algorithm = parameters.ArgumentsList[0];
+            string algorithm = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : DriverHandler.CurrentEncodingDriverLocal.DriverName;
             var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
             driver.Initialize();
             if (!driver.IsSymmetric)

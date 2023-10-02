@@ -432,8 +432,8 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
                             new CommandArgumentPart(true, "encodedString"),
+                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
                         }, new[]
                         {
                             new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -544,8 +544,8 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
                             new CommandArgumentPart(true, "string"),
+                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
                         }, new[]
                         {
                             new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -648,7 +648,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new GetKeyIvCommand())
             },
