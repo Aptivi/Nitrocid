@@ -1002,6 +1002,32 @@ namespace Nitrocid.ThemePacks.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Oktoberfest&quot;,
+        ///        &quot;Description&quot;: &quot;October is coming soon, so get ready!&quot;,
+        ///        &quot;IsEvent&quot;: true,
+        ///        &quot;StartMonth&quot;: 9,
+        ///        &quot;StartDay&quot;: 26,
+        ///        &quot;EndMonth&quot;: 10,
+        ///        &quot;EndDay&quot;: 12,
+        ///        &quot;Localizable&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;#C390D9&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#C390D9&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#752EFD&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#752EFD&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#752EFD&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#752EFD&quot;,
+        ///    &quot;Backgr [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Oktoberfest {
+            get {
+                return ResourceManager.GetString("Oktoberfest", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Orange Sea&quot;,
         ///        &quot;Description&quot;: &quot;The sea of orange&quot;,
         ///        &quot;Localizable&quot;: true
