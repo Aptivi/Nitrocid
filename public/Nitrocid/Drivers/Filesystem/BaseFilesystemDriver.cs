@@ -230,7 +230,7 @@ namespace KS.Drivers.Filesystem
             // Iterate through every file and copy them to destination
             foreach (FileInfo SourceFile in SourceFiles)
             {
-                string DestinationFilePath = Path.Combine(Destination, SourceFile.Name);
+                string DestinationFilePath = IOPath.Combine(Destination, SourceFile.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Copying file {0} to destination...", DestinationFilePath);
                 if (ShowProgress)
                     TextWriterColor.Write("-> {0}", DestinationFilePath);
@@ -240,7 +240,7 @@ namespace KS.Drivers.Filesystem
             // Iterate through every subdirectory and copy them to destination
             foreach (DirectoryInfo SourceDirectory in SourceDirectories)
             {
-                string DestinationDirectoryPath = Path.Combine(Destination, SourceDirectory.Name);
+                string DestinationDirectoryPath = IOPath.Combine(Destination, SourceDirectory.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Calling CopyDirectory() with destination {0}...", DestinationDirectoryPath);
                 if (ShowProgress)
                     TextWriterColor.Write("* {0}", DestinationDirectoryPath);
@@ -257,7 +257,7 @@ namespace KS.Drivers.Filesystem
             DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
             Destination = FS.NeutralizePath(Destination);
             DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
-            string FileName = Path.GetFileName(Source);
+            string FileName = IOPath.GetFileName(Source);
             DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
             if (Checking.FolderExists(Source))
             {
@@ -719,7 +719,7 @@ namespace KS.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual char[] GetInvalidPathChars()
         {
-            var FinalInvalidPathChars = Path.GetInvalidPathChars();
+            var FinalInvalidPathChars = IOPath.GetInvalidPathChars();
             var WindowsInvalidPathChars = new[] { '"', '<', '>' };
             if (KernelPlatform.IsOnWindows())
             {
@@ -734,7 +734,7 @@ namespace KS.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual char[] GetInvalidFileChars()
         {
-            var FinalInvalidFileChars = Path.GetInvalidFileNameChars();
+            var FinalInvalidFileChars = IOPath.GetInvalidFileNameChars();
             var WindowsInvalidFileChars = new[] { '*', '?' };
             if (KernelPlatform.IsOnUnix())
             {
@@ -803,8 +803,8 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(path);
             FS.ThrowOnInvalidPath(fileName);
             path = FS.NeutralizePath(path);
-            string fileNameWithoutExtension = Path.GetFileNameWithoutExtension(fileName);
-            string fileNameExtension = Path.GetExtension(fileName);
+            string fileNameWithoutExtension = IOPath.GetFileNameWithoutExtension(fileName);
+            string fileNameExtension = IOPath.GetExtension(fileName);
             int fileNumber = 0;
 
             // Check if the target file exists
@@ -826,11 +826,11 @@ namespace KS.Drivers.Filesystem
 
         /// <inheritdoc/>
         public string GetRandomFileName() =>
-            FS.NeutralizePath(Path.GetRandomFileName(), Paths.TempPath);
+            FS.NeutralizePath(IOPath.GetRandomFileName(), Paths.TempPath);
 
         /// <inheritdoc/>
         public string GetRandomFolderName() =>
-            FS.NeutralizePath(Path.GetRandomFileName() + "/", Paths.TempPath);
+            FS.NeutralizePath(IOPath.GetRandomFileName() + "/", Paths.TempPath);
 
         /// <inheritdoc/>
         public virtual bool IsBinaryFile(string Path)
@@ -1012,7 +1012,7 @@ namespace KS.Drivers.Filesystem
             // Iterate through every file and copy them to destination
             foreach (FileInfo SourceFile in SourceFiles)
             {
-                string DestinationFilePath = Path.Combine(Destination, SourceFile.Name);
+                string DestinationFilePath = IOPath.Combine(Destination, SourceFile.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Moving file {0} to destination...", DestinationFilePath);
                 if (ShowProgress)
                     TextWriterColor.Write("-> {0}", DestinationFilePath);
@@ -1022,7 +1022,7 @@ namespace KS.Drivers.Filesystem
             // Iterate through every subdirectory and copy them to destination
             foreach (DirectoryInfo SourceDirectory in SourceDirectories)
             {
-                string DestinationDirectoryPath = Path.Combine(Destination, SourceDirectory.Name);
+                string DestinationDirectoryPath = IOPath.Combine(Destination, SourceDirectory.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Calling MoveDirectory() with destination {0}...", DestinationDirectoryPath);
                 if (ShowProgress)
                     TextWriterColor.Write("* {0}", DestinationDirectoryPath);
@@ -1042,7 +1042,7 @@ namespace KS.Drivers.Filesystem
             DebugWriter.WriteDebug(DebugLevel.I, "Source directory: {0}", Source);
             Destination = FS.NeutralizePath(Destination);
             DebugWriter.WriteDebug(DebugLevel.I, "Target directory: {0}", Destination);
-            string FileName = Path.GetFileName(Source);
+            string FileName = IOPath.GetFileName(Source);
             DebugWriter.WriteDebug(DebugLevel.I, "Source file name: {0}", FileName);
             if (Checking.FolderExists(Source))
             {
@@ -1256,7 +1256,7 @@ namespace KS.Drivers.Filesystem
             // Iterate through every file and delete them
             foreach (FileInfo SourceFile in SourceFiles)
             {
-                string DestinationFilePath = Path.Combine(Target, SourceFile.Name);
+                string DestinationFilePath = IOPath.Combine(Target, SourceFile.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Removing file {0}...", DestinationFilePath);
                 if (ShowProgress)
                     TextWriterColor.Write("-> {0}", DestinationFilePath);
@@ -1266,11 +1266,11 @@ namespace KS.Drivers.Filesystem
             // Iterate through every subdirectory and delete them
             foreach (DirectoryInfo SourceDirectory in SourceDirectories)
             {
-                string DestinationDirectoryPath = Path.Combine(Target, SourceDirectory.Name);
+                string DestinationDirectoryPath = IOPath.Combine(Target, SourceDirectory.Name);
                 DebugWriter.WriteDebug(DebugLevel.I, "Calling RemoveDirectory() with destination {0}...", DestinationDirectoryPath);
                 if (ShowProgress)
                     TextWriterColor.Write("* {0}", DestinationDirectoryPath);
-                RemoveDirectory(DestinationDirectoryPath);
+                RemoveDirectory(DestinationDirectoryPath, ShowProgress, secureRemove);
             }
 
             // Raise event
@@ -1442,7 +1442,7 @@ namespace KS.Drivers.Filesystem
             try
             {
                 FS.ThrowOnInvalidPath(Name);
-                return !(Name.IndexOfAny(Path.GetInvalidFileNameChars()) >= 0);
+                return !(Name.IndexOfAny(IOPath.GetInvalidFileNameChars()) >= 0);
             }
             catch (Exception ex)
             {

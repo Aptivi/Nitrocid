@@ -1033,7 +1033,14 @@ namespace KS.Shell.Shells.UESH
                         }, Array.Empty<SwitchInfo>())
                     }, new PutCommand())
             },
-            
+
+            { "rdebug",
+                new CommandInfo("rdebug", ShellType, /* Localizable */ "Enables or disables remote debugging.",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new RdebugCommand(), CommandFlags.Strict)
+            },
+
             { "reboot",
                 new CommandInfo("reboot", ShellType, /* Localizable */ "Restarts your computer (WARNING: No syncing, because it is not a final kernel)",
                     new[] {
@@ -1081,11 +1088,14 @@ namespace KS.Shell.Shells.UESH
                     }, new RmCommand())
             },
             
-            { "rdebug",
-                new CommandInfo("rdebug", ShellType, /* Localizable */ "Enables or disables remote debugging.",
+            { "rmsec",
+                new CommandInfo("rmsec", ShellType, /* Localizable */ "Removes a file or a directory securely",
                     new[] {
-                        new CommandArgumentInfo()
-                    }, new RdebugCommand(), CommandFlags.Strict)
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "target"),
+                        }, Array.Empty<SwitchInfo>())
+                    }, new RmSecCommand())
             },
             
             { "rmuser",
