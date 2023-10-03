@@ -20,7 +20,6 @@ using System;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -41,11 +40,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeTrueColor;
+                return ScreensaverPackInit.SaversConfig.WipeTrueColor;
             }
             set
             {
-                Config.SaverConfig.WipeTrueColor = value;
+                ScreensaverPackInit.SaversConfig.WipeTrueColor = value;
             }
         }
         /// <summary>
@@ -55,11 +54,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeDelay;
+                return ScreensaverPackInit.SaversConfig.WipeDelay;
             }
             set
             {
-                Config.SaverConfig.WipeDelay = value;
+                ScreensaverPackInit.SaversConfig.WipeDelay = value;
             }
         }
         /// <summary>
@@ -69,11 +68,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeWipesNeededToChangeDirection;
+                return ScreensaverPackInit.SaversConfig.WipeWipesNeededToChangeDirection;
             }
             set
             {
-                Config.SaverConfig.WipeWipesNeededToChangeDirection = value;
+                ScreensaverPackInit.SaversConfig.WipeWipesNeededToChangeDirection = value;
             }
         }
         /// <summary>
@@ -83,11 +82,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeBackgroundColor;
+                return ScreensaverPackInit.SaversConfig.WipeBackgroundColor;
             }
             set
             {
-                Config.SaverConfig.WipeBackgroundColor = value;
+                ScreensaverPackInit.SaversConfig.WipeBackgroundColor = value;
             }
         }
         /// <summary>
@@ -97,11 +96,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.WipeMinimumRedColorLevel;
             }
             set
             {
-                Config.SaverConfig.WipeMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WipeMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -111,11 +110,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.WipeMinimumGreenColorLevel;
             }
             set
             {
-                Config.SaverConfig.WipeMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WipeMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -125,11 +124,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.WipeMinimumBlueColorLevel;
             }
             set
             {
-                Config.SaverConfig.WipeMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WipeMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -139,11 +138,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.WipeMinimumColorLevel;
             }
             set
             {
-                Config.SaverConfig.WipeMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WipeMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -153,11 +152,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.WipeMaximumRedColorLevel;
             }
             set
             {
-                Config.SaverConfig.WipeMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WipeMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -167,11 +166,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.WipeMaximumGreenColorLevel;
             }
             set
             {
-                Config.SaverConfig.WipeMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WipeMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -181,11 +180,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.WipeMaximumBlueColorLevel;
             }
             set
             {
-                Config.SaverConfig.WipeMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WipeMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -195,11 +194,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WipeMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.WipeMaximumColorLevel;
             }
             set
             {
-                Config.SaverConfig.WipeMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WipeMaximumColorLevel = value;
             }
         }
 

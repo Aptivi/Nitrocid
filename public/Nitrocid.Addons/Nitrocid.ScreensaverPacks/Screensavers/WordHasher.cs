@@ -24,7 +24,6 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Screensaver;
@@ -46,11 +45,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherTrueColor;
+                return ScreensaverPackInit.SaversConfig.WordHasherTrueColor;
             }
             set
             {
-                Config.SaverConfig.WordHasherTrueColor = value;
+                ScreensaverPackInit.SaversConfig.WordHasherTrueColor = value;
             }
         }
         /// <summary>
@@ -60,13 +59,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherDelay;
+                return ScreensaverPackInit.SaversConfig.WordHasherDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1000;
-                Config.SaverConfig.WordHasherDelay = value;
+                ScreensaverPackInit.SaversConfig.WordHasherDelay = value;
             }
         }
         /// <summary>
@@ -76,7 +75,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.WordHasherMinimumRedColorLevel;
             }
             set
             {
@@ -84,7 +83,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.WordHasherMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WordHasherMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -94,7 +93,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.WordHasherMinimumGreenColorLevel;
             }
             set
             {
@@ -102,7 +101,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.WordHasherMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WordHasherMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -112,7 +111,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.WordHasherMinimumBlueColorLevel;
             }
             set
             {
@@ -120,7 +119,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.WordHasherMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WordHasherMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -130,7 +129,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.WordHasherMinimumColorLevel;
             }
             set
             {
@@ -139,7 +138,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.WordHasherMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WordHasherMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -149,15 +148,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.WordHasherMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.WordHasherMinimumRedColorLevel)
-                    value = Config.SaverConfig.WordHasherMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.WordHasherMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.WordHasherMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.WordHasherMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WordHasherMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -167,15 +166,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.WordHasherMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.WordHasherMinimumGreenColorLevel)
-                    value = Config.SaverConfig.WordHasherMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.WordHasherMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.WordHasherMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.WordHasherMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WordHasherMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -185,15 +184,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.WordHasherMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.WordHasherMinimumBlueColorLevel)
-                    value = Config.SaverConfig.WordHasherMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.WordHasherMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.WordHasherMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.WordHasherMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WordHasherMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -203,16 +202,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.WordHasherMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.WordHasherMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.WordHasherMinimumColorLevel)
-                    value = Config.SaverConfig.WordHasherMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.WordHasherMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.WordHasherMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.WordHasherMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.WordHasherMaximumColorLevel = value;
             }
         }
 

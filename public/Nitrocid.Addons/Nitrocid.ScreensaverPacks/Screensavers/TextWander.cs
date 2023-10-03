@@ -19,7 +19,6 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
@@ -39,11 +38,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderTrueColor;
+                return ScreensaverPackInit.SaversConfig.TextWanderTrueColor;
             }
             set
             {
-                Config.SaverConfig.TextWanderTrueColor = value;
+                ScreensaverPackInit.SaversConfig.TextWanderTrueColor = value;
             }
         }
         /// <summary>
@@ -53,13 +52,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderDelay;
+                return ScreensaverPackInit.SaversConfig.TextWanderDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1000;
-                Config.SaverConfig.TextWanderDelay = value;
+                ScreensaverPackInit.SaversConfig.TextWanderDelay = value;
             }
         }
         /// <summary>
@@ -69,13 +68,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderWrite;
+                return ScreensaverPackInit.SaversConfig.TextWanderWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                Config.SaverConfig.TextWanderWrite = value;
+                ScreensaverPackInit.SaversConfig.TextWanderWrite = value;
             }
         }
         /// <summary>
@@ -85,7 +84,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.TextWanderMinimumRedColorLevel;
             }
             set
             {
@@ -93,7 +92,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.TextWanderMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.TextWanderMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -103,7 +102,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.TextWanderMinimumGreenColorLevel;
             }
             set
             {
@@ -111,7 +110,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.TextWanderMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.TextWanderMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -121,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.TextWanderMinimumBlueColorLevel;
             }
             set
             {
@@ -129,7 +128,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.TextWanderMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.TextWanderMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -139,7 +138,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.TextWanderMinimumColorLevel;
             }
             set
             {
@@ -148,7 +147,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.TextWanderMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.TextWanderMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -158,15 +157,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.TextWanderMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.TextWanderMinimumRedColorLevel)
-                    value = Config.SaverConfig.TextWanderMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.TextWanderMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.TextWanderMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.TextWanderMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.TextWanderMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -176,15 +175,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.TextWanderMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.TextWanderMinimumGreenColorLevel)
-                    value = Config.SaverConfig.TextWanderMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.TextWanderMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.TextWanderMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.TextWanderMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.TextWanderMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -194,15 +193,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.TextWanderMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.TextWanderMinimumBlueColorLevel)
-                    value = Config.SaverConfig.TextWanderMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.TextWanderMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.TextWanderMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.TextWanderMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.TextWanderMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -212,16 +211,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TextWanderMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.TextWanderMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.TextWanderMinimumColorLevel)
-                    value = Config.SaverConfig.TextWanderMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.TextWanderMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.TextWanderMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.TextWanderMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.TextWanderMaximumColorLevel = value;
             }
         }
 

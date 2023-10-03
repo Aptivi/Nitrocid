@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -42,11 +41,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockTrueColor;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockTrueColor;
             }
             set
             {
-                Config.SaverConfig.BouncingBlockTrueColor = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockTrueColor = value;
             }
         }
         /// <summary>
@@ -56,13 +55,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockDelay;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.BouncingBlockDelay = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockDelay = value;
             }
         }
         /// <summary>
@@ -72,11 +71,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockBackgroundColor;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockBackgroundColor;
             }
             set
             {
-                Config.SaverConfig.BouncingBlockBackgroundColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.BouncingBlockBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -86,11 +85,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockForegroundColor;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockForegroundColor;
             }
             set
             {
-                Config.SaverConfig.BouncingBlockForegroundColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.BouncingBlockForegroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -100,7 +99,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockMinimumRedColorLevel;
             }
             set
             {
@@ -108,7 +107,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BouncingBlockMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -118,7 +117,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockMinimumGreenColorLevel;
             }
             set
             {
@@ -126,7 +125,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BouncingBlockMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -136,7 +135,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockMinimumBlueColorLevel;
             }
             set
             {
@@ -144,7 +143,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BouncingBlockMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -154,7 +153,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockMinimumColorLevel;
             }
             set
             {
@@ -163,7 +162,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.BouncingBlockMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -173,15 +172,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.BouncingBlockMinimumRedColorLevel)
-                    value = Config.SaverConfig.BouncingBlockMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BouncingBlockMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BouncingBlockMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BouncingBlockMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -191,15 +190,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.BouncingBlockMinimumGreenColorLevel)
-                    value = Config.SaverConfig.BouncingBlockMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BouncingBlockMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BouncingBlockMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BouncingBlockMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -209,15 +208,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.BouncingBlockMinimumBlueColorLevel)
-                    value = Config.SaverConfig.BouncingBlockMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BouncingBlockMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BouncingBlockMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BouncingBlockMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -227,16 +226,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BouncingBlockMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.BouncingBlockMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.BouncingBlockMinimumColorLevel)
-                    value = Config.SaverConfig.BouncingBlockMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BouncingBlockMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BouncingBlockMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.BouncingBlockMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BouncingBlockMaximumColorLevel = value;
             }
         }
 

@@ -19,7 +19,6 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Screensaver;
@@ -40,11 +39,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeTrueColor;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeTrueColor;
             }
             set
             {
-                Config.SaverConfig.DateAndTimeTrueColor = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeTrueColor = value;
             }
         }
         /// <summary>
@@ -54,13 +53,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeDelay;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1000;
-                Config.SaverConfig.DateAndTimeDelay = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeDelay = value;
             }
         }
         /// <summary>
@@ -70,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeMinimumRedColorLevel;
             }
             set
             {
@@ -78,7 +77,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.DateAndTimeMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -88,7 +87,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeMinimumGreenColorLevel;
             }
             set
             {
@@ -96,7 +95,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.DateAndTimeMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -106,7 +105,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeMinimumBlueColorLevel;
             }
             set
             {
@@ -114,7 +113,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.DateAndTimeMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -124,7 +123,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeMinimumColorLevel;
             }
             set
             {
@@ -133,7 +132,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.DateAndTimeMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -143,15 +142,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.DateAndTimeMinimumRedColorLevel)
-                    value = Config.SaverConfig.DateAndTimeMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.DateAndTimeMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.DateAndTimeMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.DateAndTimeMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -161,15 +160,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.DateAndTimeMinimumGreenColorLevel)
-                    value = Config.SaverConfig.DateAndTimeMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.DateAndTimeMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.DateAndTimeMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.DateAndTimeMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -179,15 +178,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.DateAndTimeMinimumBlueColorLevel)
-                    value = Config.SaverConfig.DateAndTimeMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.DateAndTimeMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.DateAndTimeMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.DateAndTimeMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -197,16 +196,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DateAndTimeMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.DateAndTimeMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.DateAndTimeMinimumColorLevel)
-                    value = Config.SaverConfig.DateAndTimeMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.DateAndTimeMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.DateAndTimeMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.DateAndTimeMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DateAndTimeMaximumColorLevel = value;
             }
         }
 

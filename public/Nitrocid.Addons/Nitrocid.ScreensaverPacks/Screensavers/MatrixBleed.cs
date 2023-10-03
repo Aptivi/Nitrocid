@@ -23,7 +23,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -45,11 +44,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedTrueColor;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedTrueColor;
             }
             set
             {
-                Config.SaverConfig.MatrixBleedTrueColor = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedTrueColor = value;
             }
         }
         /// <summary>
@@ -59,13 +58,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedDelay;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.MatrixBleedDelay = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedDelay = value;
             }
         }
         /// <summary>
@@ -75,13 +74,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedMaxSteps;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                Config.SaverConfig.MatrixBleedMaxSteps = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedMaxSteps = value;
             }
         }
         /// <summary>
@@ -91,13 +90,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedDropChance;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedDropChance;
             }
             set
             {
                 if (value <= 0)
                     value = 40;
-                Config.SaverConfig.MatrixBleedDropChance = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedDropChance = value;
             }
         }
         /// <summary>
@@ -107,7 +106,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedMinimumRedColorLevel;
             }
             set
             {
@@ -115,7 +114,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MatrixBleedMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -125,7 +124,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedMinimumGreenColorLevel;
             }
             set
             {
@@ -133,7 +132,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MatrixBleedMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -143,7 +142,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedMinimumBlueColorLevel;
             }
             set
             {
@@ -151,7 +150,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MatrixBleedMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -161,7 +160,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedMinimumColorLevel;
             }
             set
             {
@@ -170,7 +169,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.MatrixBleedMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -180,15 +179,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.MatrixBleedMinimumRedColorLevel)
-                    value = Config.SaverConfig.MatrixBleedMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MatrixBleedMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MatrixBleedMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MatrixBleedMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -198,15 +197,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.MatrixBleedMinimumGreenColorLevel)
-                    value = Config.SaverConfig.MatrixBleedMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MatrixBleedMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MatrixBleedMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MatrixBleedMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -216,15 +215,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.MatrixBleedMinimumBlueColorLevel)
-                    value = Config.SaverConfig.MatrixBleedMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MatrixBleedMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MatrixBleedMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MatrixBleedMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -234,16 +233,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MatrixBleedMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.MatrixBleedMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.MatrixBleedMinimumColorLevel)
-                    value = Config.SaverConfig.MatrixBleedMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MatrixBleedMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MatrixBleedMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.MatrixBleedMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MatrixBleedMaximumColorLevel = value;
             }
         }
 

@@ -22,7 +22,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -43,13 +42,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SpecklesDelay;
+                return ScreensaverPackInit.SaversConfig.SpecklesDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.SpecklesDelay = value;
+                ScreensaverPackInit.SaversConfig.SpecklesDelay = value;
             }
         }
 

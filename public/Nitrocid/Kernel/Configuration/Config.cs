@@ -47,7 +47,6 @@ namespace KS.Kernel.Configuration
         {
             { nameof(KernelMainConfig),   new KernelMainConfig() },
             { nameof(KernelSaverConfig),  new KernelSaverConfig() },
-            { nameof(KernelSplashConfig), new KernelSplashConfig() },
         };
 
         /// <summary>
@@ -60,11 +59,6 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static KernelSaverConfig SaverConfig =>
             baseConfigurations is not null ? (KernelSaverConfig)baseConfigurations[nameof(KernelSaverConfig)] : new KernelSaverConfig();
-        /// <summary>
-        /// Splash configuration entry for the kernel
-        /// </summary>
-        public static KernelSplashConfig SplashConfig =>
-            baseConfigurations is not null ? (KernelSplashConfig)baseConfigurations[nameof(KernelSplashConfig)] : new KernelSplashConfig();
 
         /// <summary>
         /// Gets the kernel configuration
@@ -407,11 +401,6 @@ namespace KS.Kernel.Configuration
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "No saver config file found. Creating...");
                 CreateConfig(ConfigType.Screensaver, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
-            }
-            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.SplashConfiguration)))
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "No splash config file found. Creating...");
-                CreateConfig(ConfigType.Splash, Paths.GetKernelPath(KernelPathType.SplashConfiguration));
             }
 
             // Load and read config

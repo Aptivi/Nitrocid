@@ -23,7 +23,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -45,11 +44,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletTrueColor;
+                return ScreensaverPackInit.SaversConfig.FigletTrueColor;
             }
             set
             {
-                Config.SaverConfig.FigletTrueColor = value;
+                ScreensaverPackInit.SaversConfig.FigletTrueColor = value;
             }
         }
         /// <summary>
@@ -59,13 +58,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletDelay;
+                return ScreensaverPackInit.SaversConfig.FigletDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1000;
-                Config.SaverConfig.FigletDelay = value;
+                ScreensaverPackInit.SaversConfig.FigletDelay = value;
             }
         }
         /// <summary>
@@ -75,13 +74,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletText;
+                return ScreensaverPackInit.SaversConfig.FigletText;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                Config.SaverConfig.FigletText = value;
+                ScreensaverPackInit.SaversConfig.FigletText = value;
             }
         }
         /// <summary>
@@ -91,11 +90,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletFont;
+                return ScreensaverPackInit.SaversConfig.FigletFont;
             }
             set
             {
-                Config.SaverConfig.FigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
+                ScreensaverPackInit.SaversConfig.FigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "small";
             }
         }
         /// <summary>
@@ -105,7 +104,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.FigletMinimumRedColorLevel;
             }
             set
             {
@@ -113,7 +112,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FigletMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FigletMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -123,7 +122,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.FigletMinimumGreenColorLevel;
             }
             set
             {
@@ -131,7 +130,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FigletMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FigletMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -141,7 +140,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.FigletMinimumBlueColorLevel;
             }
             set
             {
@@ -149,7 +148,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FigletMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FigletMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -159,7 +158,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.FigletMinimumColorLevel;
             }
             set
             {
@@ -168,7 +167,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.FigletMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FigletMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -178,15 +177,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.FigletMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.FigletMinimumRedColorLevel)
-                    value = Config.SaverConfig.FigletMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FigletMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FigletMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FigletMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FigletMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -196,15 +195,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.FigletMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.FigletMinimumGreenColorLevel)
-                    value = Config.SaverConfig.FigletMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FigletMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FigletMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FigletMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FigletMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -214,15 +213,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.FigletMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.FigletMinimumBlueColorLevel)
-                    value = Config.SaverConfig.FigletMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FigletMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FigletMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FigletMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FigletMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -232,16 +231,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FigletMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.FigletMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.FigletMinimumColorLevel)
-                    value = Config.SaverConfig.FigletMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FigletMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FigletMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.FigletMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FigletMaximumColorLevel = value;
             }
         }
 

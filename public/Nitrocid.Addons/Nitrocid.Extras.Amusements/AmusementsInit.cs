@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files.Querying;
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
@@ -25,6 +27,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Amusements.Commands;
 using Nitrocid.Extras.Amusements.Screensavers;
+using Nitrocid.Extras.Amusements.Settings;
 using Nitrocid.Extras.Amusements.Splashes;
 using System;
 using System.Collections.Generic;
@@ -168,6 +171,12 @@ namespace Nitrocid.Extras.Amusements
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
+        internal static AmusementsSaversConfig SaversConfig =>
+            (AmusementsSaversConfig)Config.baseConfigurations[nameof(AmusementsSaversConfig)];
+
+        internal static AmusementsSplashesConfig SplashConfig =>
+            (AmusementsSplashesConfig)Config.baseConfigurations[nameof(AmusementsSplashesConfig)];
+
         void IAddon.FinalizeAddon()
         { }
 
@@ -179,6 +188,22 @@ namespace Nitrocid.Extras.Amusements
             ScreensaverManager.Screensavers.Add("shipduet", new ShipDuetDisplay());
             ScreensaverManager.Screensavers.Add("snaker", new SnakerDisplay());
             SplashManager.InstalledSplashes.Add("Quote", new SplashInfo("Quote", new SplashQuote(), false));
+
+            // Initialize configuration in a way that no mod can play with them
+            var saversConfig = new AmusementsSaversConfig();
+            Config.baseConfigurations.Add(nameof(AmusementsSaversConfig), saversConfig);
+            string saversConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(AmusementsSaversConfig));
+            if (!Checking.FileExists(saversConfigPath))
+                Config.CreateConfig(saversConfig, saversConfigPath);
+            Config.ReadConfig(saversConfig, saversConfigPath);
+
+            // Splashes...
+            var splashesConfig = new AmusementsSplashesConfig();
+            Config.baseConfigurations.Add(nameof(AmusementsSplashesConfig), splashesConfig);
+            string splashesConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(AmusementsSplashesConfig));
+            if (!Checking.FileExists(splashesConfigPath))
+                Config.CreateConfig(splashesConfig, splashesConfigPath);
+            Config.ReadConfig(splashesConfig, splashesConfigPath);
         }
 
         void IAddon.StopAddon()
@@ -189,6 +214,8 @@ namespace Nitrocid.Extras.Amusements
             ScreensaverManager.Screensavers.Remove("shipduet");
             ScreensaverManager.Screensavers.Remove("snaker");
             SplashManager.InstalledSplashes.Remove("Quote");
+            Config.baseConfigurations.Remove(nameof(AmusementsSaversConfig));
+            Config.baseConfigurations.Remove(nameof(AmusementsSplashesConfig));
         }
     }
 }

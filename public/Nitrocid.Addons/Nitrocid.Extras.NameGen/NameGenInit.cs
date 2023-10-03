@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files.Querying;
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
 using KS.Shell.ShellBase.Arguments;
@@ -24,6 +26,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.NameGen.Commands;
 using Nitrocid.Extras.NameGen.Screensavers;
+using Nitrocid.Extras.NameGen.Settings;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -57,16 +60,28 @@ namespace Nitrocid.Extras.NameGen
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
+        internal static NameGenSaversConfig SaversConfig =>
+            (NameGenSaversConfig)Config.baseConfigurations[nameof(NameGenSaversConfig)];
+
         void IAddon.StartAddon()
         {
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
             ScreensaverManager.Screensavers.Add("personlookup", new PersonLookupDisplay());
+
+            // Then, initialize configuration in a way that no mod can play with them
+            var saversConfig = new NameGenSaversConfig();
+            Config.baseConfigurations.Add(nameof(NameGenSaversConfig), saversConfig);
+            string saversConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(NameGenSaversConfig));
+            if (!Checking.FileExists(saversConfigPath))
+                Config.CreateConfig(saversConfig, saversConfigPath);
+            Config.ReadConfig(saversConfig, saversConfigPath);
         }
 
         void IAddon.StopAddon()
         {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ScreensaverManager.Screensavers.Remove("personlookup");
+            Config.baseConfigurations.Remove(nameof(NameGenSaversConfig));
         }
 
         void IAddon.FinalizeAddon()

@@ -53,4 +53,20 @@
     <PackageReference Include="BassBoom.Basolia" Version="0.0.1" Condition="'$(TargetFramework)' == 'net7.0' OR '$(TargetFramework)' == 'net7.0-windows'" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Compile Update="Resources\AddonResources.Designer.cs">
+      <DependentUpon>AddonResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\AddonResources.resx">
+      <SubType>Designer</SubType>
+      <LastGenOutput>AddonResources.Designer.cs</LastGenOutput>
+      <Generator>ResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
 </Project>

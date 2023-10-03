@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -42,13 +41,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StarfieldDelay;
+                return ScreensaverPackInit.SaversConfig.StarfieldDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.StarfieldDelay = value;
+                ScreensaverPackInit.SaversConfig.StarfieldDelay = value;
             }
         }
 

@@ -21,7 +21,7 @@ using KS.Drivers.RNG;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using GlitchSettings = Nitrocid.ScreensaverPacks.Screensavers.GlitchSettings;
-using Settings = Nitrocid.ScreensaverPacks.Screensavers.BSODSettings;
+using BsodSettings = Nitrocid.ScreensaverPacks.Screensavers.BSODSettings;
 
 namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 {
@@ -30,7 +30,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         public override void Simulate()
         {
             int millisecondsElapsed = 0;
-            while (!(millisecondsElapsed >= Settings.BSODDelay | ConsoleResizeListener.WasResized(false)))
+            while (!(millisecondsElapsed >= BsodSettings.BSODDelay | ConsoleResizeListener.WasResized(false)))
             {
                 if (!ConsoleResizeListener.WasResized(false))
                 {

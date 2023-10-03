@@ -157,8 +157,7 @@ namespace KS.Kernel.Configuration
         {
             var settingsEntries = OpenSettingsResource(ConfigType.Kernel);
             var settingsSaverEntries = OpenSettingsResource(ConfigType.Screensaver);
-            var settingsSplashEntries = OpenSettingsResource(ConfigType.Splash);
-            var entries = new[] { settingsEntries, settingsSaverEntries, settingsSplashEntries };
+            var entries = new[] { settingsEntries, settingsSaverEntries };
             var Results = new Dictionary<string, bool>();
 
             // Parse all the settings
@@ -330,7 +329,6 @@ namespace KS.Kernel.Configuration
             {
                 ConfigType.Kernel =>        GetSettingsEntries(SettingsResources.SettingsEntries),
                 ConfigType.Screensaver =>   GetSettingsEntries(SettingsResources.ScreensaverSettingsEntries),
-                ConfigType.Splash =>        GetSettingsEntries(SettingsResources.SplashSettingsEntries),
                 _ =>                        GetSettingsEntries(SettingsResources.SettingsEntries),
             };
         }
@@ -346,7 +344,6 @@ namespace KS.Kernel.Configuration
             {
                 ConfigType.Kernel =>        nameof(KernelMainConfig),
                 ConfigType.Screensaver =>   nameof(KernelSaverConfig),
-                ConfigType.Splash =>        nameof(KernelSplashConfig),
                 _ =>                        nameof(KernelMainConfig),
             };
         }

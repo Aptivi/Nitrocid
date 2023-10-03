@@ -21,7 +21,6 @@ using System.Threading;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Splash;
 using KS.Misc.Text;
@@ -40,7 +39,7 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             get
             {
-                return Config.SplashConfig.SimpleProgressTextLocation switch
+                return SplashPackInit.SplashConfig.SimpleProgressTextLocation switch
                 {
                     (int)TextLocation.Top => 1,
                     (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 2,
@@ -55,7 +54,7 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             get
             {
-                return Config.SplashConfig.SimpleProgressTextLocation switch
+                return SplashPackInit.SplashConfig.SimpleProgressTextLocation switch
                 {
                     (int)TextLocation.Top => 1,
                     (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 2,

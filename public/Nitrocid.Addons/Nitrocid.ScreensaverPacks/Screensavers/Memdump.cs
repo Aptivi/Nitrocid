@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
@@ -41,13 +40,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MemdumpDelay;
+                return ScreensaverPackInit.SaversConfig.MemdumpDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                Config.SaverConfig.MemdumpDelay = value;
+                ScreensaverPackInit.SaversConfig.MemdumpDelay = value;
             }
         }
 

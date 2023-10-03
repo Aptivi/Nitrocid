@@ -21,7 +21,6 @@ using System.IO;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Files.Querying;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -43,13 +42,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SpotWriteDelay;
+                return ScreensaverPackInit.SaversConfig.SpotWriteDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 100;
-                Config.SaverConfig.SpotWriteDelay = value;
+                ScreensaverPackInit.SaversConfig.SpotWriteDelay = value;
             }
         }
         /// <summary>
@@ -59,13 +58,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SpotWriteWrite;
+                return ScreensaverPackInit.SaversConfig.SpotWriteWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                Config.SaverConfig.SpotWriteWrite = value;
+                ScreensaverPackInit.SaversConfig.SpotWriteWrite = value;
             }
         }
         /// <summary>
@@ -75,13 +74,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SpotWriteNewScreenDelay;
+                return ScreensaverPackInit.SaversConfig.SpotWriteNewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                Config.SaverConfig.SpotWriteNewScreenDelay = value;
+                ScreensaverPackInit.SaversConfig.SpotWriteNewScreenDelay = value;
             }
         }
         /// <summary>
@@ -91,11 +90,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SpotWriteTextColor;
+                return ScreensaverPackInit.SaversConfig.SpotWriteTextColor;
             }
             set
             {
-                Config.SaverConfig.SpotWriteTextColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.SpotWriteTextColor = new Color(value).PlainSequence;
             }
         }
 

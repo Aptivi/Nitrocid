@@ -30,10 +30,6 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Screensaver configuration
         /// </summary>
-        Screensaver,
-        /// <summary>
-        /// Splash configuration
-        /// </summary>
-        Splash
+        Screensaver
     }
 }

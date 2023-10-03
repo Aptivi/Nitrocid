@@ -33,7 +33,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(ConfigType.Kernel, nameof(KernelMainConfig))]
         [TestCase(ConfigType.Screensaver, nameof(KernelSaverConfig))]
-        [TestCase(ConfigType.Splash, nameof(KernelSplashConfig))]
         [Description("Management")]
         public void TestCheckSettingsInstances(ConfigType type, string expectedType)
         {
@@ -48,7 +47,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(ConfigType.Kernel)]
         [TestCase(ConfigType.Screensaver)]
-        [TestCase(ConfigType.Splash)]
         [Description("Management")]
         public void TestCheckSettingsResourcesShallow(ConfigType type)
         {
@@ -64,7 +62,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(ConfigType.Kernel)]
         [TestCase(ConfigType.Screensaver)]
-        [TestCase(ConfigType.Splash)]
         [Description("Management")]
         public void TestCheckSettingsResourcesDeep(ConfigType type)
         {
@@ -90,7 +87,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(ConfigType.Kernel)]
         [TestCase(ConfigType.Screensaver)]
-        [TestCase(ConfigType.Splash)]
         [Description("Management")]
         public void TestCheckSettingsResourcesShallowGet(ConfigType type)
         {
@@ -108,7 +104,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(ConfigType.Kernel)]
         [TestCase(ConfigType.Screensaver)]
-        [TestCase(ConfigType.Splash)]
         [Description("Management")]
         public void TestCheckSettingsResourcesDeepGet(ConfigType type)
         {
@@ -136,7 +131,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(ConfigType.Kernel)]
         [TestCase(ConfigType.Screensaver)]
-        [TestCase(ConfigType.Splash)]
         [Description("Management")]
         public void TestCheckSettingsResourcesDeepEvalGet(ConfigType type)
         {
@@ -169,7 +163,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(ConfigType.Kernel, nameof(KernelMainConfig))]
         [TestCase(ConfigType.Screensaver, nameof(KernelSaverConfig))]
-        [TestCase(ConfigType.Splash, nameof(KernelSplashConfig))]
         [Description("Management")]
         public void TestTranslateBuiltinConfigType(ConfigType type, string expectedType) =>
             ConfigTools.TranslateBuiltinConfigType(type).ShouldBe(expectedType);

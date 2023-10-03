@@ -50,7 +50,6 @@ namespace KS.Files
             { KernelPathType.Contacts,            (() => ContactsPath, true) },
             { KernelPathType.ContactsImport,      (() => ContactsImportPath, true) },
             { KernelPathType.SaverConfiguration,  (() => SaverConfigurationPath, true) },
-            { KernelPathType.SplashConfiguration, (() => SplashConfigurationPath, true) },
             { KernelPathType.ToDoList,            (() => ToDoListPath, true) },
             { KernelPathType.UserGroups,          (() => UserGroupsPath, true) },
             { KernelPathType.Addons,              (() => AddonsPath, false) },

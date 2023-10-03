@@ -19,7 +19,6 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -40,11 +39,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorTrueColor;
+                return ScreensaverPackInit.SaversConfig.GlitterColorTrueColor;
             }
             set
             {
-                Config.SaverConfig.GlitterColorTrueColor = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorTrueColor = value;
             }
         }
         /// <summary>
@@ -54,13 +53,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorDelay;
+                return ScreensaverPackInit.SaversConfig.GlitterColorDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                Config.SaverConfig.GlitterColorDelay = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorDelay = value;
             }
         }
         /// <summary>
@@ -70,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.GlitterColorMinimumRedColorLevel;
             }
             set
             {
@@ -78,7 +77,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.GlitterColorMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -88,7 +87,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.GlitterColorMinimumGreenColorLevel;
             }
             set
             {
@@ -96,7 +95,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.GlitterColorMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -106,7 +105,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.GlitterColorMinimumBlueColorLevel;
             }
             set
             {
@@ -114,7 +113,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.GlitterColorMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -124,7 +123,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.GlitterColorMinimumColorLevel;
             }
             set
             {
@@ -133,7 +132,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.GlitterColorMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -143,15 +142,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.GlitterColorMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.GlitterColorMinimumRedColorLevel)
-                    value = Config.SaverConfig.GlitterColorMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.GlitterColorMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.GlitterColorMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.GlitterColorMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -161,15 +160,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.GlitterColorMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.GlitterColorMinimumGreenColorLevel)
-                    value = Config.SaverConfig.GlitterColorMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.GlitterColorMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.GlitterColorMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.GlitterColorMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -179,15 +178,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.GlitterColorMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.GlitterColorMinimumBlueColorLevel)
-                    value = Config.SaverConfig.GlitterColorMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.GlitterColorMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.GlitterColorMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.GlitterColorMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -197,16 +196,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterColorMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.GlitterColorMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.GlitterColorMinimumColorLevel)
-                    value = Config.SaverConfig.GlitterColorMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.GlitterColorMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.GlitterColorMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.GlitterColorMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.GlitterColorMaximumColorLevel = value;
             }
         }
 

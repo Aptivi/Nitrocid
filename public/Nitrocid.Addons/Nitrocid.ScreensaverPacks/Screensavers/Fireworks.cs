@@ -18,7 +18,6 @@
 
 using System;
 using KS.ConsoleBase;
-using KS.Kernel.Configuration;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Misc.Reflection;
@@ -58,11 +57,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksTrueColor;
+                return ScreensaverPackInit.SaversConfig.FireworksTrueColor;
             }
             set
             {
-                Config.SaverConfig.FireworksTrueColor = value;
+                ScreensaverPackInit.SaversConfig.FireworksTrueColor = value;
             }
         }
         /// <summary>
@@ -72,13 +71,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksDelay;
+                return ScreensaverPackInit.SaversConfig.FireworksDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.FireworksDelay = value;
+                ScreensaverPackInit.SaversConfig.FireworksDelay = value;
             }
         }
         /// <summary>
@@ -88,13 +87,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksRadius;
+                return ScreensaverPackInit.SaversConfig.FireworksRadius;
             }
             set
             {
                 if (value <= 0)
                     value = 5;
-                Config.SaverConfig.FireworksRadius = value;
+                ScreensaverPackInit.SaversConfig.FireworksRadius = value;
             }
         }
         /// <summary>
@@ -104,7 +103,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.FireworksMinimumRedColorLevel;
             }
             set
             {
@@ -112,7 +111,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FireworksMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FireworksMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -122,7 +121,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.FireworksMinimumGreenColorLevel;
             }
             set
             {
@@ -130,7 +129,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FireworksMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FireworksMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -140,7 +139,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.FireworksMinimumBlueColorLevel;
             }
             set
             {
@@ -148,7 +147,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FireworksMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FireworksMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -158,7 +157,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.FireworksMinimumColorLevel;
             }
             set
             {
@@ -167,7 +166,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.FireworksMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FireworksMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -177,15 +176,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.FireworksMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.FireworksMinimumRedColorLevel)
-                    value = Config.SaverConfig.FireworksMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FireworksMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FireworksMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FireworksMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FireworksMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -195,15 +194,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.FireworksMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.FireworksMinimumGreenColorLevel)
-                    value = Config.SaverConfig.FireworksMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FireworksMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FireworksMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FireworksMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FireworksMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -213,15 +212,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.FireworksMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.FireworksMinimumBlueColorLevel)
-                    value = Config.SaverConfig.FireworksMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FireworksMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FireworksMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FireworksMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FireworksMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -231,16 +230,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FireworksMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.FireworksMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.FireworksMinimumColorLevel)
-                    value = Config.SaverConfig.FireworksMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FireworksMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FireworksMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.FireworksMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FireworksMaximumColorLevel = value;
             }
         }
 

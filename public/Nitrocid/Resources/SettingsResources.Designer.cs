@@ -61,21 +61,22 @@ namespace KS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;ColorMix&quot;: {
+        ///   Looks up a localized string similar to [
+        ///    {
+        ///        &quot;Name&quot;: &quot;Matrix&quot;,
         ///        &quot;Desc&quot;: &quot;Settings for this screensaver are available here.&quot;,
-        ///        &quot;Path&quot;: &quot;Screensaver.ColorMix&quot;,
+        ///        &quot;Path&quot;: &quot;Screensaver.Matrix&quot;,
         ///        &quot;Keys&quot;: [
-        ///            {
-        ///                &quot;Name&quot;: &quot;Activate true colors&quot;,
-        ///                &quot;Type&quot;: &quot;SBoolean&quot;,
-        ///                &quot;Variable&quot;: &quot;ColorMixTrueColor&quot;,
-        ///                &quot;Description&quot;: &quot;Activates the true color support.&quot;
-        ///            },
         ///            {
         ///                &quot;Name&quot;: &quot;Delay in Milliseconds&quot;,
         ///                &quot;Type&quot;: &quot;SInt&quot;,
-        ///                &quot;Variable&quot;: [rest of string was truncated]&quot;;.
+        ///                &quot;Variable&quot;: &quot;MatrixDelay&quot;,
+        ///                &quot;Description&quot;: &quot;How many milliseconds to wait before making the next write?&quot;
+        ///            },
+        ///            {
+        ///                &quot;Name&quot;: &quot;Max Fade Steps&quot;,
+        ///                &quot;Type&quot;: &quot;SInt&quot;,
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ScreensaverSettingsEntries {
             get {
@@ -84,8 +85,9 @@ namespace KS.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;General&quot;: {
+        ///   Looks up a localized string similar to [
+        ///    {
+        ///        &quot;Name&quot;: &quot;General&quot;,
         ///        &quot;Desc&quot;: &quot;This section lists all general kernel settings, mainly for maintaining the kernel.&quot;,
         ///        &quot;Path&quot;: &quot;General&quot;,
         ///        &quot;DisplayAs&quot;: &quot;General kernel settings&quot;,
@@ -97,33 +99,11 @@ namespace KS.Resources {
         ///                &quot;Description&quot;: &quot;Each startup, it will check for updates.&quot;
         ///            },
         ///            {
-        ///                &quot;Name&quot;: &quot;Cus [rest of string was truncated]&quot;;.
+        ///            [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SettingsEntries {
             get {
                 return ResourceManager.GetString("SettingsEntries", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;Simple&quot;: {
-        ///        &quot;Desc&quot;: &quot;Settings for this splash screen are available here.&quot;,
-        ///        &quot;Path&quot;: &quot;Splash.Simple&quot;,
-        ///        &quot;Keys&quot;: [
-        ///            {
-        ///                &quot;Name&quot;: &quot;Progress text location&quot;,
-        ///                &quot;Type&quot;: &quot;SSelection&quot;,
-        ///                &quot;Variable&quot;: &quot;SimpleProgressTextLocation&quot;,
-        ///                &quot;IsEnumeration&quot;: true,
-        ///                &quot;EnumerationInternal&quot;: true,
-        ///                &quot;Enumeration&quot;: &quot;Misc.Text.TextLocation&quot;,
-        ///                &quot;EnumerationZeroBased&quot;: true,
-        ///             [rest of string was truncated]&quot;;.
-        /// </summary>
-        public static string SplashSettingsEntries {
-            get {
-                return ResourceManager.GetString("SplashSettingsEntries", resourceCulture);
             }
         }
     }

@@ -18,7 +18,6 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -39,11 +38,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseTrueColor;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseTrueColor;
             }
             set
             {
-                Config.SaverConfig.BeatEdgePulseTrueColor = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseTrueColor = value;
             }
         }
         /// <summary>
@@ -53,11 +52,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseCycleColors;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseCycleColors;
             }
             set
             {
-                Config.SaverConfig.BeatEdgePulseCycleColors = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseCycleColors = value;
             }
         }
         /// <summary>
@@ -67,11 +66,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseBeatColor;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseBeatColor;
             }
             set
             {
-                Config.SaverConfig.BeatEdgePulseBeatColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseBeatColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -81,13 +80,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseDelay;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.BeatEdgePulseDelay = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseDelay = value;
             }
         }
         /// <summary>
@@ -97,13 +96,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseMaxSteps;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                Config.SaverConfig.BeatEdgePulseMaxSteps = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseMaxSteps = value;
             }
         }
         /// <summary>
@@ -113,7 +112,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumRedColorLevel;
             }
             set
             {
@@ -121,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BeatEdgePulseMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -131,7 +130,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumGreenColorLevel;
             }
             set
             {
@@ -139,7 +138,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BeatEdgePulseMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -149,7 +148,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumBlueColorLevel;
             }
             set
             {
@@ -157,7 +156,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BeatEdgePulseMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -167,7 +166,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumColorLevel;
             }
             set
             {
@@ -176,7 +175,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.BeatEdgePulseMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -186,15 +185,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.BeatEdgePulseMinimumRedColorLevel)
-                    value = Config.SaverConfig.BeatEdgePulseMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BeatEdgePulseMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -204,15 +203,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.BeatEdgePulseMinimumGreenColorLevel)
-                    value = Config.SaverConfig.BeatEdgePulseMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BeatEdgePulseMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -222,15 +221,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.BeatEdgePulseMinimumBlueColorLevel)
-                    value = Config.SaverConfig.BeatEdgePulseMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BeatEdgePulseMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -240,16 +239,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BeatEdgePulseMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.BeatEdgePulseMinimumColorLevel)
-                    value = Config.SaverConfig.BeatEdgePulseMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BeatEdgePulseMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.BeatEdgePulseMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BeatEdgePulseMaximumColorLevel = value;
             }
         }
 

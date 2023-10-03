@@ -18,7 +18,6 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
@@ -38,13 +37,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BloomDelay;
+                return ScreensaverPackInit.SaversConfig.BloomDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.BloomDelay = value;
+                ScreensaverPackInit.SaversConfig.BloomDelay = value;
             }
         }
         /// <summary>
@@ -54,11 +53,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BloomDarkColors;
+                return ScreensaverPackInit.SaversConfig.BloomDarkColors;
             }
             set
             {
-                Config.SaverConfig.BloomDarkColors = value;
+                ScreensaverPackInit.SaversConfig.BloomDarkColors = value;
             }
         }
 

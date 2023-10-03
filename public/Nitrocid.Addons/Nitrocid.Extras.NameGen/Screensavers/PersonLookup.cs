@@ -20,7 +20,6 @@ using System;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Screensaver;
@@ -42,13 +41,13 @@ namespace Nitrocid.Extras.NameGen.Screensavers
         {
             get
             {
-                return Config.SaverConfig.PersonLookupDelay;
+                return NameGenInit.SaversConfig.PersonLookupDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 75;
-                Config.SaverConfig.PersonLookupDelay = value;
+                NameGenInit.SaversConfig.PersonLookupDelay = value;
             }
         }
         /// <summary>
@@ -58,13 +57,13 @@ namespace Nitrocid.Extras.NameGen.Screensavers
         {
             get
             {
-                return Config.SaverConfig.PersonLookupLookedUpDelay;
+                return NameGenInit.SaversConfig.PersonLookupLookedUpDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10000;
-                Config.SaverConfig.PersonLookupLookedUpDelay = value;
+                NameGenInit.SaversConfig.PersonLookupLookedUpDelay = value;
             }
         }
         /// <summary>
@@ -74,7 +73,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
         {
             get
             {
-                return Config.SaverConfig.PersonLookupMinimumNames;
+                return NameGenInit.SaversConfig.PersonLookupMinimumNames;
             }
             set
             {
@@ -82,7 +81,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                     value = 10;
                 if (value > 1000)
                     value = 1000;
-                Config.SaverConfig.PersonLookupMinimumNames = value;
+                NameGenInit.SaversConfig.PersonLookupMinimumNames = value;
             }
         }
         /// <summary>
@@ -92,15 +91,15 @@ namespace Nitrocid.Extras.NameGen.Screensavers
         {
             get
             {
-                return Config.SaverConfig.PersonLookupMaximumNames;
+                return NameGenInit.SaversConfig.PersonLookupMaximumNames;
             }
             set
             {
-                if (value <= Config.SaverConfig.PersonLookupMinimumNames)
-                    value = Config.SaverConfig.PersonLookupMinimumNames;
+                if (value <= NameGenInit.SaversConfig.PersonLookupMinimumNames)
+                    value = NameGenInit.SaversConfig.PersonLookupMinimumNames;
                 if (value > 1000)
                     value = 1000;
-                Config.SaverConfig.PersonLookupMaximumNames = value;
+                NameGenInit.SaversConfig.PersonLookupMaximumNames = value;
             }
         }
         /// <summary>
@@ -110,7 +109,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
         {
             get
             {
-                return Config.SaverConfig.PersonLookupMinimumAgeYears;
+                return NameGenInit.SaversConfig.PersonLookupMinimumAgeYears;
             }
             set
             {
@@ -118,7 +117,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
                     value = 18;
                 if (value > 100)
                     value = 100;
-                Config.SaverConfig.PersonLookupMinimumAgeYears = value;
+                NameGenInit.SaversConfig.PersonLookupMinimumAgeYears = value;
             }
         }
         /// <summary>
@@ -128,15 +127,15 @@ namespace Nitrocid.Extras.NameGen.Screensavers
         {
             get
             {
-                return Config.SaverConfig.PersonLookupMaximumAgeYears;
+                return NameGenInit.SaversConfig.PersonLookupMaximumAgeYears;
             }
             set
             {
-                if (value <= Config.SaverConfig.PersonLookupMinimumAgeYears)
-                    value = Config.SaverConfig.PersonLookupMinimumAgeYears;
+                if (value <= NameGenInit.SaversConfig.PersonLookupMinimumAgeYears)
+                    value = NameGenInit.SaversConfig.PersonLookupMinimumAgeYears;
                 if (value > 100)
                     value = 100;
-                Config.SaverConfig.PersonLookupMaximumAgeYears = value;
+                NameGenInit.SaversConfig.PersonLookupMaximumAgeYears = value;
             }
         }
 

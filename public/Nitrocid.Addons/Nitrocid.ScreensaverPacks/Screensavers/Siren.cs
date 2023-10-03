@@ -18,7 +18,6 @@
 
 using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
@@ -38,13 +37,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SirenDelay;
+                return ScreensaverPackInit.SaversConfig.SirenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                Config.SaverConfig.SirenDelay = value;
+                ScreensaverPackInit.SaversConfig.SirenDelay = value;
             }
         }
 
@@ -55,11 +54,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SirenStyle;
+                return ScreensaverPackInit.SaversConfig.SirenStyle;
             }
             set
             {
-                Config.SaverConfig.SirenStyle = SirenDisplay.sirens.ContainsKey(value) ? value : "Cop";
+                ScreensaverPackInit.SaversConfig.SirenStyle = SirenDisplay.sirens.ContainsKey(value) ? value : "Cop";
             }
         }
 

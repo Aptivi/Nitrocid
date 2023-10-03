@@ -20,7 +20,6 @@ using System;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Reflection;
@@ -42,11 +41,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxTrueColor;
+                return ScreensaverPackInit.SaversConfig.StackBoxTrueColor;
             }
             set
             {
-                Config.SaverConfig.StackBoxTrueColor = value;
+                ScreensaverPackInit.SaversConfig.StackBoxTrueColor = value;
             }
         }
         /// <summary>
@@ -56,13 +55,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxDelay;
+                return ScreensaverPackInit.SaversConfig.StackBoxDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.StackBoxDelay = value;
+                ScreensaverPackInit.SaversConfig.StackBoxDelay = value;
             }
         }
         /// <summary>
@@ -72,11 +71,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxFill;
+                return ScreensaverPackInit.SaversConfig.StackBoxFill;
             }
             set
             {
-                Config.SaverConfig.StackBoxFill = value;
+                ScreensaverPackInit.SaversConfig.StackBoxFill = value;
             }
         }
         /// <summary>
@@ -86,7 +85,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.StackBoxMinimumRedColorLevel;
             }
             set
             {
@@ -94,7 +93,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.StackBoxMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.StackBoxMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -104,7 +103,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.StackBoxMinimumGreenColorLevel;
             }
             set
             {
@@ -112,7 +111,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.StackBoxMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.StackBoxMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -122,7 +121,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.StackBoxMinimumBlueColorLevel;
             }
             set
             {
@@ -130,7 +129,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.StackBoxMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.StackBoxMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -140,7 +139,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.StackBoxMinimumColorLevel;
             }
             set
             {
@@ -149,7 +148,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.StackBoxMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.StackBoxMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -159,15 +158,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.StackBoxMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.StackBoxMinimumRedColorLevel)
-                    value = Config.SaverConfig.StackBoxMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.StackBoxMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.StackBoxMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.StackBoxMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.StackBoxMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -177,15 +176,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.StackBoxMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.StackBoxMinimumGreenColorLevel)
-                    value = Config.SaverConfig.StackBoxMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.StackBoxMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.StackBoxMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.StackBoxMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.StackBoxMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -195,15 +194,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.StackBoxMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.StackBoxMinimumBlueColorLevel)
-                    value = Config.SaverConfig.StackBoxMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.StackBoxMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.StackBoxMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.StackBoxMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.StackBoxMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -213,16 +212,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.StackBoxMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.StackBoxMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.StackBoxMinimumColorLevel)
-                    value = Config.SaverConfig.StackBoxMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.StackBoxMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.StackBoxMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.StackBoxMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.StackBoxMaximumColorLevel = value;
             }
         }
 

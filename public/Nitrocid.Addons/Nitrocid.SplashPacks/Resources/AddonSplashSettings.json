@@ -59,22 +59,5 @@
                 "Description": "Select your preferred progress text location."
             }
         ]
-    },
-    {
-        "Name": "Quote",
-        "Desc": "Settings for this splash screen are available here.",
-        "Path": "Splash.Quote",
-        "Keys": [
-            {
-                "Name": "Progress text location",
-                "Type": "SSelection",
-                "Variable": "QuoteProgressTextLocation",
-                "IsEnumeration": true,
-                "EnumerationInternal": true,
-                "Enumeration": "Misc.Text.TextLocation",
-                "EnumerationZeroBased": true,
-                "Description": "Select your preferred progress text location."
-            }
-        ]
     }
 ]

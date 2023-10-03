@@ -19,7 +19,9 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
+using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Configuration.Settings;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
@@ -66,18 +68,35 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var SettingsType = ConfigType.Kernel;
-            if (parameters.SwitchesList.Length > 0)
-            {
-                if (parameters.SwitchesList[0] == "-saver")
-                    SettingsType = ConfigType.Screensaver;
-                if (parameters.SwitchesList[0] == "-splash")
-                    SettingsType = ConfigType.Splash;
-            }
             var typeFinal =
                 SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type") ?
                 SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") :
-                ConfigTools.TranslateBuiltinConfigType(SettingsType);
+                nameof(KernelMainConfig);
+            if (parameters.SwitchesList.Length > 0)
+            {
+                if (parameters.SwitchesList[0] == "-saver")
+                    typeFinal = nameof(KernelSaverConfig);
+                else if (parameters.SwitchesList[0] == "-addonsaver")
+                {
+                    if (ConfigTools.IsCustomSettingBuiltin("ExtraSaversConfig"))
+                        typeFinal = "ExtraSaversConfig";
+                    else
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("To get additional screensavers, install the screensaver pack addon."), true, KernelColorType.Error);
+                        return 10000 + (int)KernelExceptionType.Config;
+                    }
+                }
+                else if (parameters.SwitchesList[0] == "-splash")
+                {
+                    if (ConfigTools.IsCustomSettingBuiltin("ExtraSplashesConfig"))
+                        typeFinal = "ExtraSplashesConfig";
+                    else
+                    {
+                        TextWriterColor.Write(Translate.DoTranslation("To get additional splashes, install the splash pack addon."), true, KernelColorType.Error);
+                        return 10000 + (int)KernelExceptionType.Config;
+                    }
+                }
+            }
             SettingsApp.OpenMainPage(typeFinal);
             return 0;
         }

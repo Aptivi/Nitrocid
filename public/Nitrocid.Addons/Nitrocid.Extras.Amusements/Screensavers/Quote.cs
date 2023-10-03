@@ -19,7 +19,6 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
@@ -42,11 +41,11 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteTrueColor;
+                return AmusementsInit.SaversConfig.QuoteTrueColor;
             }
             set
             {
-                Config.SaverConfig.QuoteTrueColor = value;
+                AmusementsInit.SaversConfig.QuoteTrueColor = value;
             }
         }
         /// <summary>
@@ -56,13 +55,13 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteDelay;
+                return AmusementsInit.SaversConfig.QuoteDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10000;
-                Config.SaverConfig.QuoteDelay = value;
+                AmusementsInit.SaversConfig.QuoteDelay = value;
             }
         }
         /// <summary>
@@ -72,7 +71,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteMinimumRedColorLevel;
+                return AmusementsInit.SaversConfig.QuoteMinimumRedColorLevel;
             }
             set
             {
@@ -80,7 +79,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.QuoteMinimumRedColorLevel = value;
+                AmusementsInit.SaversConfig.QuoteMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -90,7 +89,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteMinimumGreenColorLevel;
+                return AmusementsInit.SaversConfig.QuoteMinimumGreenColorLevel;
             }
             set
             {
@@ -98,7 +97,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.QuoteMinimumGreenColorLevel = value;
+                AmusementsInit.SaversConfig.QuoteMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -108,7 +107,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteMinimumBlueColorLevel;
+                return AmusementsInit.SaversConfig.QuoteMinimumBlueColorLevel;
             }
             set
             {
@@ -116,7 +115,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.QuoteMinimumBlueColorLevel = value;
+                AmusementsInit.SaversConfig.QuoteMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -126,7 +125,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteMinimumColorLevel;
+                return AmusementsInit.SaversConfig.QuoteMinimumColorLevel;
             }
             set
             {
@@ -135,7 +134,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.QuoteMinimumColorLevel = value;
+                AmusementsInit.SaversConfig.QuoteMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -145,15 +144,15 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteMaximumRedColorLevel;
+                return AmusementsInit.SaversConfig.QuoteMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.QuoteMinimumRedColorLevel)
-                    value = Config.SaverConfig.QuoteMinimumRedColorLevel;
+                if (value <= AmusementsInit.SaversConfig.QuoteMinimumRedColorLevel)
+                    value = AmusementsInit.SaversConfig.QuoteMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.QuoteMaximumRedColorLevel = value;
+                AmusementsInit.SaversConfig.QuoteMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -163,15 +162,15 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteMaximumGreenColorLevel;
+                return AmusementsInit.SaversConfig.QuoteMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.QuoteMinimumGreenColorLevel)
-                    value = Config.SaverConfig.QuoteMinimumGreenColorLevel;
+                if (value <= AmusementsInit.SaversConfig.QuoteMinimumGreenColorLevel)
+                    value = AmusementsInit.SaversConfig.QuoteMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.QuoteMaximumGreenColorLevel = value;
+                AmusementsInit.SaversConfig.QuoteMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -181,15 +180,15 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteMaximumBlueColorLevel;
+                return AmusementsInit.SaversConfig.QuoteMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.QuoteMinimumBlueColorLevel)
-                    value = Config.SaverConfig.QuoteMinimumBlueColorLevel;
+                if (value <= AmusementsInit.SaversConfig.QuoteMinimumBlueColorLevel)
+                    value = AmusementsInit.SaversConfig.QuoteMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.QuoteMaximumBlueColorLevel = value;
+                AmusementsInit.SaversConfig.QuoteMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -199,16 +198,16 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.QuoteMaximumColorLevel;
+                return AmusementsInit.SaversConfig.QuoteMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.QuoteMinimumColorLevel)
-                    value = Config.SaverConfig.QuoteMinimumColorLevel;
+                if (value <= AmusementsInit.SaversConfig.QuoteMinimumColorLevel)
+                    value = AmusementsInit.SaversConfig.QuoteMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.QuoteMaximumColorLevel = value;
+                AmusementsInit.SaversConfig.QuoteMaximumColorLevel = value;
             }
         }
 

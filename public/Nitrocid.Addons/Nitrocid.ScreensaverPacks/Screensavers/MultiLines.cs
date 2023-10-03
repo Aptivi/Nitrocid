@@ -19,7 +19,6 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -40,11 +39,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesTrueColor;
+                return ScreensaverPackInit.SaversConfig.MultiLinesTrueColor;
             }
             set
             {
-                Config.SaverConfig.MultiLinesTrueColor = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesTrueColor = value;
             }
         }
         /// <summary>
@@ -54,13 +53,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesDelay;
+                return ScreensaverPackInit.SaversConfig.MultiLinesDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                Config.SaverConfig.MultiLinesDelay = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesDelay = value;
             }
         }
         /// <summary>
@@ -70,13 +69,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesLineChar;
+                return ScreensaverPackInit.SaversConfig.MultiLinesLineChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "-";
-                Config.SaverConfig.MultiLinesLineChar = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesLineChar = value;
             }
         }
         /// <summary>
@@ -86,11 +85,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesBackgroundColor;
+                return ScreensaverPackInit.SaversConfig.MultiLinesBackgroundColor;
             }
             set
             {
-                Config.SaverConfig.MultiLinesBackgroundColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.MultiLinesBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -100,7 +99,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.MultiLinesMinimumRedColorLevel;
             }
             set
             {
@@ -108,7 +107,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MultiLinesMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -118,7 +117,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.MultiLinesMinimumGreenColorLevel;
             }
             set
             {
@@ -126,7 +125,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MultiLinesMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -136,7 +135,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.MultiLinesMinimumBlueColorLevel;
             }
             set
             {
@@ -144,7 +143,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MultiLinesMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -154,7 +153,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.MultiLinesMinimumColorLevel;
             }
             set
             {
@@ -163,7 +162,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.MultiLinesMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -173,15 +172,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.MultiLinesMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.MultiLinesMinimumRedColorLevel)
-                    value = Config.SaverConfig.MultiLinesMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MultiLinesMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MultiLinesMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MultiLinesMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -191,15 +190,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.MultiLinesMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.MultiLinesMinimumGreenColorLevel)
-                    value = Config.SaverConfig.MultiLinesMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MultiLinesMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MultiLinesMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MultiLinesMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -209,15 +208,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.MultiLinesMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.MultiLinesMinimumBlueColorLevel)
-                    value = Config.SaverConfig.MultiLinesMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MultiLinesMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MultiLinesMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MultiLinesMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -227,16 +226,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MultiLinesMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.MultiLinesMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.MultiLinesMinimumColorLevel)
-                    value = Config.SaverConfig.MultiLinesMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MultiLinesMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MultiLinesMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.MultiLinesMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MultiLinesMaximumColorLevel = value;
             }
         }
 

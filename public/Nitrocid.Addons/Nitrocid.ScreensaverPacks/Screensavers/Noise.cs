@@ -20,7 +20,6 @@ using System;
 using System.Collections;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 
@@ -39,13 +38,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.NoiseNewScreenDelay;
+                return ScreensaverPackInit.SaversConfig.NoiseNewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 5000;
-                Config.SaverConfig.NoiseNewScreenDelay = value;
+                ScreensaverPackInit.SaversConfig.NoiseNewScreenDelay = value;
             }
         }
         /// <summary>
@@ -55,7 +54,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.NoiseDensity;
+                return ScreensaverPackInit.SaversConfig.NoiseDensity;
             }
             set
             {
@@ -63,7 +62,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 40;
                 if (value > 100)
                     value = 40;
-                Config.SaverConfig.NoiseDensity = value;
+                ScreensaverPackInit.SaversConfig.NoiseDensity = value;
             }
         }
 

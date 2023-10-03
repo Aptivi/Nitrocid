@@ -18,7 +18,6 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -38,13 +37,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.EdgePulseDelay;
+                return ScreensaverPackInit.SaversConfig.EdgePulseDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.EdgePulseDelay = value;
+                ScreensaverPackInit.SaversConfig.EdgePulseDelay = value;
             }
         }
         /// <summary>
@@ -54,13 +53,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.EdgePulseMaxSteps;
+                return ScreensaverPackInit.SaversConfig.EdgePulseMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                Config.SaverConfig.EdgePulseMaxSteps = value;
+                ScreensaverPackInit.SaversConfig.EdgePulseMaxSteps = value;
             }
         }
         /// <summary>
@@ -70,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.EdgePulseMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.EdgePulseMinimumRedColorLevel;
             }
             set
             {
@@ -78,7 +77,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.EdgePulseMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.EdgePulseMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -88,7 +87,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.EdgePulseMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.EdgePulseMinimumGreenColorLevel;
             }
             set
             {
@@ -96,7 +95,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.EdgePulseMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.EdgePulseMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -106,7 +105,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.EdgePulseMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.EdgePulseMinimumBlueColorLevel;
             }
             set
             {
@@ -114,7 +113,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.EdgePulseMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.EdgePulseMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -124,15 +123,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.EdgePulseMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.EdgePulseMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.EdgePulseMinimumRedColorLevel)
-                    value = Config.SaverConfig.EdgePulseMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.EdgePulseMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.EdgePulseMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.EdgePulseMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.EdgePulseMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -142,15 +141,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.EdgePulseMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.EdgePulseMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.EdgePulseMinimumGreenColorLevel)
-                    value = Config.SaverConfig.EdgePulseMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.EdgePulseMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.EdgePulseMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.EdgePulseMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.EdgePulseMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -160,15 +159,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.EdgePulseMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.EdgePulseMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.EdgePulseMinimumBlueColorLevel)
-                    value = Config.SaverConfig.EdgePulseMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.EdgePulseMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.EdgePulseMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.EdgePulseMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.EdgePulseMaximumBlueColorLevel = value;
             }
         }
 

@@ -22,7 +22,6 @@ using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using Terminaux.Colors;
@@ -42,7 +41,7 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             get
             {
-                return Config.SplashConfig.ProgressProgressTextLocation switch
+                return SplashPackInit.SplashConfig.ProgressProgressTextLocation switch
                 {
                     (int)TextLocation.Top => 1,
                     (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 6,
@@ -57,7 +56,7 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             get
             {
-                return Config.SplashConfig.ProgressProgressTextLocation switch
+                return SplashPackInit.SplashConfig.ProgressProgressTextLocation switch
                 {
                     (int)TextLocation.Top => 1,
                     (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 6,
@@ -113,9 +112,9 @@ namespace Nitrocid.SplashPacks.Splashes
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar
-            if (!string.IsNullOrEmpty(Config.SplashConfig.ProgressProgressColor) & KernelColorTools.TryParseColor(Config.SplashConfig.ProgressProgressColor))
+            if (!string.IsNullOrEmpty(SplashPackInit.SplashConfig.ProgressProgressColor) & KernelColorTools.TryParseColor(SplashPackInit.SplashConfig.ProgressProgressColor))
             {
-                var ProgressColor = new Color(Config.SplashConfig.ProgressProgressColor);
+                var ProgressColor = new Color(SplashPackInit.SplashConfig.ProgressProgressColor);
                 ProgressBarColor.WriteProgress(Progress, 4, ConsoleWrapper.WindowHeight - 4, ProgressColor);
             }
             else

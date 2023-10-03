@@ -20,7 +20,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -41,11 +40,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillTrueColor;
+                return ScreensaverPackInit.SaversConfig.SnakeFillTrueColor;
             }
             set
             {
-                Config.SaverConfig.SnakeFillTrueColor = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillTrueColor = value;
             }
         }
         /// <summary>
@@ -55,11 +54,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillDelay;
+                return ScreensaverPackInit.SaversConfig.SnakeFillDelay;
             }
             set
             {
-                Config.SaverConfig.SnakeFillDelay = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillDelay = value;
             }
         }
         /// <summary>
@@ -69,11 +68,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.SnakeFillMinimumRedColorLevel;
             }
             set
             {
-                Config.SaverConfig.SnakeFillMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -83,11 +82,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.SnakeFillMinimumGreenColorLevel;
             }
             set
             {
-                Config.SaverConfig.SnakeFillMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -97,11 +96,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.SnakeFillMinimumBlueColorLevel;
             }
             set
             {
-                Config.SaverConfig.SnakeFillMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -111,11 +110,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.SnakeFillMinimumColorLevel;
             }
             set
             {
-                Config.SaverConfig.SnakeFillMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -125,11 +124,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.SnakeFillMaximumRedColorLevel;
             }
             set
             {
-                Config.SaverConfig.SnakeFillMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -139,11 +138,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.SnakeFillMaximumGreenColorLevel;
             }
             set
             {
-                Config.SaverConfig.SnakeFillMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -153,11 +152,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.SnakeFillMaximumBlueColorLevel;
             }
             set
             {
-                Config.SaverConfig.SnakeFillMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -167,11 +166,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakeFillMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.SnakeFillMaximumColorLevel;
             }
             set
             {
-                Config.SaverConfig.SnakeFillMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SnakeFillMaximumColorLevel = value;
             }
         }
 

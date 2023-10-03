@@ -19,7 +19,6 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -40,13 +39,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterMatrixDelay;
+                return ScreensaverPackInit.SaversConfig.GlitterMatrixDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                Config.SaverConfig.GlitterMatrixDelay = value;
+                ScreensaverPackInit.SaversConfig.GlitterMatrixDelay = value;
             }
         }
         /// <summary>
@@ -56,11 +55,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterMatrixBackgroundColor;
+                return ScreensaverPackInit.SaversConfig.GlitterMatrixBackgroundColor;
             }
             set
             {
-                Config.SaverConfig.GlitterMatrixBackgroundColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.GlitterMatrixBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -70,11 +69,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitterMatrixForegroundColor;
+                return ScreensaverPackInit.SaversConfig.GlitterMatrixForegroundColor;
             }
             set
             {
-                Config.SaverConfig.GlitterMatrixForegroundColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.GlitterMatrixForegroundColor = new Color(value).PlainSequence;
             }
         }
 

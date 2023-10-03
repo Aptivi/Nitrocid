@@ -19,7 +19,6 @@
 using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Themes;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
@@ -39,13 +38,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SirenThemeDelay;
+                return ScreensaverPackInit.SaversConfig.SirenThemeDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                Config.SaverConfig.SirenThemeDelay = value;
+                ScreensaverPackInit.SaversConfig.SirenThemeDelay = value;
             }
         }
 
@@ -56,11 +55,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SirenThemeStyle;
+                return ScreensaverPackInit.SaversConfig.SirenThemeStyle;
             }
             set
             {
-                Config.SaverConfig.SirenThemeStyle = ThemeTools.GetInstalledThemes().ContainsKey(value) ? value : "Default";
+                ScreensaverPackInit.SaversConfig.SirenThemeStyle = ThemeTools.GetInstalledThemes().ContainsKey(value) ? value : "Default";
             }
         }
 

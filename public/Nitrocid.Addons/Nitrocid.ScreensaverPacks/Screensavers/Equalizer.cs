@@ -22,7 +22,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -43,13 +42,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.EqualizerNextScreenDelay;
+                return ScreensaverPackInit.SaversConfig.EqualizerNextScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                Config.SaverConfig.EqualizerNextScreenDelay = value;
+                ScreensaverPackInit.SaversConfig.EqualizerNextScreenDelay = value;
             }
         }
 

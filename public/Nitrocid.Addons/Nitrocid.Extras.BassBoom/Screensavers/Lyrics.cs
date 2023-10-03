@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 
@@ -36,13 +35,13 @@ namespace Nitrocid.Extras.BassBoom.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LyricsDelay;
+                return BassBoomInit.SaversConfig.LyricsDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10000;
-                Config.SaverConfig.LyricsDelay = value;
+                BassBoomInit.SaversConfig.LyricsDelay = value;
             }
         }
 

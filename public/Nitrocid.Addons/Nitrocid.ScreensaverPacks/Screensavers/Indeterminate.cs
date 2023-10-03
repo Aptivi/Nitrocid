@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -40,20 +39,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static bool IndeterminateTrueColor
         {
-            get => Config.SaverConfig.IndeterminateTrueColor;
-            set => Config.SaverConfig.IndeterminateTrueColor = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateTrueColor;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateTrueColor = value;
         }
         /// <summary>
         /// [Indeterminate] How many milliseconds to wait before making the next write?
         /// </summary>
         public static int IndeterminateDelay
         {
-            get => Config.SaverConfig.IndeterminateDelay;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateDelay;
             set
             {
                 if (value <= 0)
                     value = 20;
-                Config.SaverConfig.IndeterminateDelay = value;
+                ScreensaverPackInit.SaversConfig.IndeterminateDelay = value;
             }
         }
         /// <summary>
@@ -61,78 +60,78 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static char IndeterminateUpperLeftCornerChar
         {
-            get => Config.SaverConfig.IndeterminateUpperLeftCornerChar;
-            set => Config.SaverConfig.IndeterminateUpperLeftCornerChar = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateUpperLeftCornerChar;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateUpperLeftCornerChar = value;
         }
         /// <summary>
         /// [Indeterminate] Upper right corner character 
         /// </summary>
         public static char IndeterminateUpperRightCornerChar
         {
-            get => Config.SaverConfig.IndeterminateUpperRightCornerChar;
-            set => Config.SaverConfig.IndeterminateUpperRightCornerChar = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateUpperRightCornerChar;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateUpperRightCornerChar = value;
         }
         /// <summary>
         /// [Indeterminate] Lower left corner character 
         /// </summary>
         public static char IndeterminateLowerLeftCornerChar
         {
-            get => Config.SaverConfig.IndeterminateLowerLeftCornerChar;
-            set => Config.SaverConfig.IndeterminateLowerLeftCornerChar = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateLowerLeftCornerChar;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateLowerLeftCornerChar = value;
         }
         /// <summary>
         /// [Indeterminate] Lower right corner character 
         /// </summary>
         public static char IndeterminateLowerRightCornerChar
         {
-            get => Config.SaverConfig.IndeterminateLowerRightCornerChar;
-            set => Config.SaverConfig.IndeterminateLowerRightCornerChar = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateLowerRightCornerChar;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateLowerRightCornerChar = value;
         }
         /// <summary>
         /// [Indeterminate] Upper frame character 
         /// </summary>
         public static char IndeterminateUpperFrameChar
         {
-            get => Config.SaverConfig.IndeterminateUpperFrameChar;
-            set => Config.SaverConfig.IndeterminateUpperFrameChar = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateUpperFrameChar;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateUpperFrameChar = value;
         }
         /// <summary>
         /// [Indeterminate] Lower frame character 
         /// </summary>
         public static char IndeterminateLowerFrameChar
         {
-            get => Config.SaverConfig.IndeterminateLowerFrameChar;
-            set => Config.SaverConfig.IndeterminateLowerFrameChar = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateLowerFrameChar;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateLowerFrameChar = value;
         }
         /// <summary>
         /// [Indeterminate] Left frame character 
         /// </summary>
         public static char IndeterminateLeftFrameChar
         {
-            get => Config.SaverConfig.IndeterminateLeftFrameChar;
-            set => Config.SaverConfig.IndeterminateLeftFrameChar = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateLeftFrameChar;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateLeftFrameChar = value;
         }
         /// <summary>
         /// [Indeterminate] Right frame character 
         /// </summary>
         public static char IndeterminateRightFrameChar
         {
-            get => Config.SaverConfig.IndeterminateRightFrameChar;
-            set => Config.SaverConfig.IndeterminateRightFrameChar = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateRightFrameChar;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateRightFrameChar = value;
         }
         /// <summary>
         /// [Indeterminate] The minimum red color level (true color)
         /// </summary>
         public static int IndeterminateMinimumRedColorLevel
         {
-            get => Config.SaverConfig.IndeterminateMinimumRedColorLevel;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateMinimumRedColorLevel;
             set
             {
                 if (value <= 0)
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.IndeterminateMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.IndeterminateMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -140,14 +139,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int IndeterminateMinimumGreenColorLevel
         {
-            get => Config.SaverConfig.IndeterminateMinimumGreenColorLevel;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateMinimumGreenColorLevel;
             set
             {
                 if (value <= 0)
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.IndeterminateMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.IndeterminateMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -155,14 +154,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int IndeterminateMinimumBlueColorLevel
         {
-            get => Config.SaverConfig.IndeterminateMinimumBlueColorLevel;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateMinimumBlueColorLevel;
             set
             {
                 if (value <= 0)
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.IndeterminateMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.IndeterminateMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -170,7 +169,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int IndeterminateMinimumColorLevel
         {
-            get => Config.SaverConfig.IndeterminateMinimumColorLevel;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateMinimumColorLevel;
             set
             {
                 int FinalMinimumLevel = 255;
@@ -178,7 +177,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.IndeterminateMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.IndeterminateMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -186,14 +185,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int IndeterminateMaximumRedColorLevel
         {
-            get => Config.SaverConfig.IndeterminateMaximumRedColorLevel;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateMaximumRedColorLevel;
             set
             {
-                if (value <= Config.SaverConfig.IndeterminateMinimumRedColorLevel)
-                    value = Config.SaverConfig.IndeterminateMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.IndeterminateMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.IndeterminateMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.IndeterminateMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.IndeterminateMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -201,14 +200,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int IndeterminateMaximumGreenColorLevel
         {
-            get => Config.SaverConfig.IndeterminateMaximumGreenColorLevel;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateMaximumGreenColorLevel;
             set
             {
-                if (value <= Config.SaverConfig.IndeterminateMinimumGreenColorLevel)
-                    value = Config.SaverConfig.IndeterminateMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.IndeterminateMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.IndeterminateMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.IndeterminateMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.IndeterminateMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -216,14 +215,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int IndeterminateMaximumBlueColorLevel
         {
-            get => Config.SaverConfig.IndeterminateMaximumBlueColorLevel;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateMaximumBlueColorLevel;
             set
             {
-                if (value <= Config.SaverConfig.IndeterminateMinimumBlueColorLevel)
-                    value = Config.SaverConfig.IndeterminateMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.IndeterminateMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.IndeterminateMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.IndeterminateMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.IndeterminateMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -231,15 +230,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int IndeterminateMaximumColorLevel
         {
-            get => Config.SaverConfig.IndeterminateMaximumColorLevel;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateMaximumColorLevel;
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.IndeterminateMinimumColorLevel)
-                    value = Config.SaverConfig.IndeterminateMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.IndeterminateMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.IndeterminateMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.IndeterminateMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.IndeterminateMaximumColorLevel = value;
             }
         }
         /// <summary>
@@ -247,72 +246,72 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static string IndeterminateUpperLeftCornerColor
         {
-            get => Config.SaverConfig.IndeterminateUpperLeftCornerColor;
-            set => Config.SaverConfig.IndeterminateUpperLeftCornerColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateUpperLeftCornerColor;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateUpperLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Upper right corner color.
         /// </summary>
         public static string IndeterminateUpperRightCornerColor
         {
-            get => Config.SaverConfig.IndeterminateUpperRightCornerColor;
-            set => Config.SaverConfig.IndeterminateUpperRightCornerColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateUpperRightCornerColor;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateUpperRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Lower left corner color.
         /// </summary>
         public static string IndeterminateLowerLeftCornerColor
         {
-            get => Config.SaverConfig.IndeterminateLowerLeftCornerColor;
-            set => Config.SaverConfig.IndeterminateLowerLeftCornerColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateLowerLeftCornerColor;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateLowerLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Lower right corner color.
         /// </summary>
         public static string IndeterminateLowerRightCornerColor
         {
-            get => Config.SaverConfig.IndeterminateLowerRightCornerColor;
-            set => Config.SaverConfig.IndeterminateLowerRightCornerColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateLowerRightCornerColor;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateLowerRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Upper frame color.
         /// </summary>
         public static string IndeterminateUpperFrameColor
         {
-            get => Config.SaverConfig.IndeterminateUpperFrameColor;
-            set => Config.SaverConfig.IndeterminateUpperFrameColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateUpperFrameColor;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateUpperFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Lower frame color.
         /// </summary>
         public static string IndeterminateLowerFrameColor
         {
-            get => Config.SaverConfig.IndeterminateLowerFrameColor;
-            set => Config.SaverConfig.IndeterminateLowerFrameColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateLowerFrameColor;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateLowerFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Left frame color.
         /// </summary>
         public static string IndeterminateLeftFrameColor
         {
-            get => Config.SaverConfig.IndeterminateLeftFrameColor;
-            set => Config.SaverConfig.IndeterminateLeftFrameColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateLeftFrameColor;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateLeftFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Right frame color.
         /// </summary>
         public static string IndeterminateRightFrameColor
         {
-            get => Config.SaverConfig.IndeterminateRightFrameColor;
-            set => Config.SaverConfig.IndeterminateRightFrameColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateRightFrameColor;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateRightFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [Indeterminate] Use the border colors.
         /// </summary>
         public static bool IndeterminateUseBorderColors
         {
-            get => Config.SaverConfig.IndeterminateUseBorderColors;
-            set => Config.SaverConfig.IndeterminateUseBorderColors = value;
+            get => ScreensaverPackInit.SaversConfig.IndeterminateUseBorderColors;
+            set => ScreensaverPackInit.SaversConfig.IndeterminateUseBorderColors = value;
         }
 
     }

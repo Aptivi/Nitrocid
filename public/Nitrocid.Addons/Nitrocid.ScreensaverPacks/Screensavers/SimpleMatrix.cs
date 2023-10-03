@@ -19,7 +19,6 @@
 using System;
 using KS.ConsoleBase;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -39,13 +38,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SimpleMatrixDelay;
+                return ScreensaverPackInit.SaversConfig.SimpleMatrixDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                Config.SaverConfig.SimpleMatrixDelay = value;
+                ScreensaverPackInit.SaversConfig.SimpleMatrixDelay = value;
             }
         }
 

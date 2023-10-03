@@ -1207,17 +1207,22 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
                             new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "splash", "type" },
+                                ConflictsWith = new[] { "splash", "type", "addonsaver" },
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("addonsaver", /* Localizable */ "Opens the addon screensaver settings", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "splash", "type", "saver" },
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("splash", /* Localizable */ "Opens the splash settings", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "saver", "type" },
+                                ConflictsWith = new[] { "saver", "type", "addonsaver" },
                                 AcceptsValues = false
                             }),
                             new SwitchInfo("type", /* Localizable */ "Opens the custom settings", new SwitchOptions()
                             {
-                                ConflictsWith = new[] { "saver", "splash" },
+                                ConflictsWith = new[] { "saver", "splash", "addonsaver" },
                                 ArgumentsRequired = true
                             })
                         })

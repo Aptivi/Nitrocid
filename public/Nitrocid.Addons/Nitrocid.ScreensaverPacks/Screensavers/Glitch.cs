@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 
@@ -36,13 +35,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitchDelay;
+                return ScreensaverPackInit.SaversConfig.GlitchDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.GlitchDelay = value;
+                ScreensaverPackInit.SaversConfig.GlitchDelay = value;
             }
         }
         /// <summary>
@@ -52,7 +51,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.GlitchDensity;
+                return ScreensaverPackInit.SaversConfig.GlitchDensity;
             }
             set
             {
@@ -60,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 40;
                 if (value > 100)
                     value = 40;
-                Config.SaverConfig.GlitchDensity = value;
+                ScreensaverPackInit.SaversConfig.GlitchDensity = value;
             }
         }
 

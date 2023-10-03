@@ -20,7 +20,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -42,13 +41,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LetterScatterDelay;
+                return ScreensaverPackInit.SaversConfig.LetterScatterDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                Config.SaverConfig.LetterScatterDelay = value;
+                ScreensaverPackInit.SaversConfig.LetterScatterDelay = value;
             }
         }
         /// <summary>
@@ -58,11 +57,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LetterScatterBackgroundColor;
+                return ScreensaverPackInit.SaversConfig.LetterScatterBackgroundColor;
             }
             set
             {
-                Config.SaverConfig.LetterScatterBackgroundColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.LetterScatterBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -72,11 +71,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LetterScatterForegroundColor;
+                return ScreensaverPackInit.SaversConfig.LetterScatterForegroundColor;
             }
             set
             {
-                Config.SaverConfig.LetterScatterForegroundColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.LetterScatterForegroundColor = new Color(value).PlainSequence;
             }
         }
 

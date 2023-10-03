@@ -18,7 +18,6 @@
 
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
@@ -38,13 +37,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderDelay;
+                return ScreensaverPackInit.SaversConfig.FaderDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.FaderDelay = value;
+                ScreensaverPackInit.SaversConfig.FaderDelay = value;
             }
         }
         /// <summary>
@@ -54,13 +53,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderFadeOutDelay;
+                return ScreensaverPackInit.SaversConfig.FaderFadeOutDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                Config.SaverConfig.FaderFadeOutDelay = value;
+                ScreensaverPackInit.SaversConfig.FaderFadeOutDelay = value;
             }
         }
         /// <summary>
@@ -70,13 +69,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderWrite;
+                return ScreensaverPackInit.SaversConfig.FaderWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                Config.SaverConfig.FaderWrite = value;
+                ScreensaverPackInit.SaversConfig.FaderWrite = value;
             }
         }
         /// <summary>
@@ -86,13 +85,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderMaxSteps;
+                return ScreensaverPackInit.SaversConfig.FaderMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                Config.SaverConfig.FaderMaxSteps = value;
+                ScreensaverPackInit.SaversConfig.FaderMaxSteps = value;
             }
         }
         /// <summary>
@@ -102,11 +101,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderBackgroundColor;
+                return ScreensaverPackInit.SaversConfig.FaderBackgroundColor;
             }
             set
             {
-                Config.SaverConfig.FaderBackgroundColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.FaderBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -116,7 +115,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.FaderMinimumRedColorLevel;
             }
             set
             {
@@ -124,7 +123,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FaderMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FaderMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -134,7 +133,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.FaderMinimumGreenColorLevel;
             }
             set
             {
@@ -142,7 +141,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FaderMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FaderMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -152,7 +151,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.FaderMinimumBlueColorLevel;
             }
             set
             {
@@ -160,7 +159,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FaderMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FaderMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -170,15 +169,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.FaderMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.FaderMinimumRedColorLevel)
-                    value = Config.SaverConfig.FaderMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FaderMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FaderMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FaderMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FaderMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -188,15 +187,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.FaderMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.FaderMinimumGreenColorLevel)
-                    value = Config.SaverConfig.FaderMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FaderMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FaderMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FaderMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FaderMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -206,15 +205,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.FaderMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.FaderMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.FaderMinimumBlueColorLevel)
-                    value = Config.SaverConfig.FaderMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.FaderMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.FaderMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.FaderMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.FaderMaximumBlueColorLevel = value;
             }
         }
 

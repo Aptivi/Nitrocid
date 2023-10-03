@@ -46,7 +46,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(nameof(KernelMainConfig))]
         [TestCase(nameof(KernelSaverConfig))]
-        [TestCase(nameof(KernelSplashConfig))]
         [Description("Management")]
         public void TestCheckBuiltinConfig(string name)
         {
@@ -71,7 +70,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(nameof(KernelMainConfig))]
         [TestCase(nameof(KernelSaverConfig))]
-        [TestCase(nameof(KernelSplashConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesShallow(string name)
         {
@@ -89,7 +87,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(nameof(KernelMainConfig))]
         [TestCase(nameof(KernelSaverConfig))]
-        [TestCase(nameof(KernelSplashConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesDeep(string name)
         {
@@ -117,7 +114,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
         [Test]
         [TestCase(nameof(KernelMainConfig))]
         [TestCase(nameof(KernelSaverConfig))]
-        [TestCase(nameof(KernelSplashConfig))]
         [Description("Management")]
         public void TestCheckBuiltinSettingsResourcesDeepEval(string name)
         {

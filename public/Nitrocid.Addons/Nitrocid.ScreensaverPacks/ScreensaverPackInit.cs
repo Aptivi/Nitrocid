@@ -16,10 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files.Querying;
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
 using KS.Misc.Splash;
 using Nitrocid.ScreensaverPacks.Screensavers;
+using Nitrocid.ScreensaverPacks.Settings;
 using Nitrocid.ScreensaverPacks.Splashes;
 using System.Collections.Generic;
 
@@ -124,20 +127,36 @@ namespace Nitrocid.ScreensaverPacks
 
         AddonType IAddon.AddonType => AddonType.Important;
 
+        internal static ExtraSaversConfig SaversConfig =>
+            (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)];
+
         void IAddon.StartAddon()
         {
+            // First, initialize screensavers and splashes
             foreach (var saver in Screensavers.Keys)
                 ScreensaverManager.Screensavers.Add(saver, Screensavers[saver]);
             foreach (var splash in Splashes.Keys)
                 SplashManager.InstalledSplashes.Add(splash, Splashes[splash]);
+
+            // Then, initialize configuration in a way that no mod can play with them
+            var saversConfig = new ExtraSaversConfig();
+            Config.baseConfigurations.Add(nameof(ExtraSaversConfig), saversConfig);
+            string saversConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(ExtraSaversConfig));
+            if (!Checking.FileExists(saversConfigPath))
+                Config.CreateConfig(saversConfig, saversConfigPath);
+            Config.ReadConfig(saversConfig, saversConfigPath);
         }
 
         void IAddon.StopAddon()
         {
+            // First, unload screensavers and splashes
             foreach (var saver in Screensavers.Keys)
                 ScreensaverManager.Screensavers.Remove(saver);
             foreach (var splash in Splashes.Keys)
                 SplashManager.InstalledSplashes.Remove(splash);
+
+            // Then, unload the configuration
+            Config.baseConfigurations.Remove(nameof(ExtraSaversConfig));
         }
 
         void IAddon.FinalizeAddon()

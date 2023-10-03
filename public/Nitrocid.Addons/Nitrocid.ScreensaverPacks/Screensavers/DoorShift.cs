@@ -20,7 +20,6 @@ using System;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -41,11 +40,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftTrueColor;
+                return ScreensaverPackInit.SaversConfig.DoorShiftTrueColor;
             }
             set
             {
-                Config.SaverConfig.DoorShiftTrueColor = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftTrueColor = value;
             }
         }
         /// <summary>
@@ -55,11 +54,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftDelay;
+                return ScreensaverPackInit.SaversConfig.DoorShiftDelay;
             }
             set
             {
-                Config.SaverConfig.DoorShiftDelay = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftDelay = value;
             }
         }
         /// <summary>
@@ -69,11 +68,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftBackgroundColor;
+                return ScreensaverPackInit.SaversConfig.DoorShiftBackgroundColor;
             }
             set
             {
-                Config.SaverConfig.DoorShiftBackgroundColor = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftBackgroundColor = value;
             }
         }
         /// <summary>
@@ -83,11 +82,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.DoorShiftMinimumRedColorLevel;
             }
             set
             {
-                Config.SaverConfig.DoorShiftMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -97,11 +96,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.DoorShiftMinimumGreenColorLevel;
             }
             set
             {
-                Config.SaverConfig.DoorShiftMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -111,11 +110,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.DoorShiftMinimumBlueColorLevel;
             }
             set
             {
-                Config.SaverConfig.DoorShiftMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -125,11 +124,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.DoorShiftMinimumColorLevel;
             }
             set
             {
-                Config.SaverConfig.DoorShiftMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -139,11 +138,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.DoorShiftMaximumRedColorLevel;
             }
             set
             {
-                Config.SaverConfig.DoorShiftMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -153,11 +152,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.DoorShiftMaximumGreenColorLevel;
             }
             set
             {
-                Config.SaverConfig.DoorShiftMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -167,11 +166,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.DoorShiftMaximumBlueColorLevel;
             }
             set
             {
-                Config.SaverConfig.DoorShiftMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -181,11 +180,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.DoorShiftMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.DoorShiftMaximumColorLevel;
             }
             set
             {
-                Config.SaverConfig.DoorShiftMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.DoorShiftMaximumColorLevel = value;
             }
         }
 

@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Nitrocid.Extras.Amusements.Amusements.Games;
@@ -36,11 +35,11 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerTrueColor;
+                return AmusementsInit.SaversConfig.SnakerTrueColor;
             }
             set
             {
-                Config.SaverConfig.SnakerTrueColor = value;
+                AmusementsInit.SaversConfig.SnakerTrueColor = value;
             }
         }
         /// <summary>
@@ -50,13 +49,13 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerDelay;
+                return AmusementsInit.SaversConfig.SnakerDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 100;
-                Config.SaverConfig.SnakerDelay = value;
+                AmusementsInit.SaversConfig.SnakerDelay = value;
             }
         }
         /// <summary>
@@ -66,13 +65,13 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerStageDelay;
+                return AmusementsInit.SaversConfig.SnakerStageDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 5000;
-                Config.SaverConfig.SnakerStageDelay = value;
+                AmusementsInit.SaversConfig.SnakerStageDelay = value;
             }
         }
         /// <summary>
@@ -82,7 +81,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerMinimumRedColorLevel;
+                return AmusementsInit.SaversConfig.SnakerMinimumRedColorLevel;
             }
             set
             {
@@ -90,7 +89,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SnakerMinimumRedColorLevel = value;
+                AmusementsInit.SaversConfig.SnakerMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -100,7 +99,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerMinimumGreenColorLevel;
+                return AmusementsInit.SaversConfig.SnakerMinimumGreenColorLevel;
             }
             set
             {
@@ -108,7 +107,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SnakerMinimumGreenColorLevel = value;
+                AmusementsInit.SaversConfig.SnakerMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -118,7 +117,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerMinimumBlueColorLevel;
+                return AmusementsInit.SaversConfig.SnakerMinimumBlueColorLevel;
             }
             set
             {
@@ -126,7 +125,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SnakerMinimumBlueColorLevel = value;
+                AmusementsInit.SaversConfig.SnakerMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -136,7 +135,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerMinimumColorLevel;
+                return AmusementsInit.SaversConfig.SnakerMinimumColorLevel;
             }
             set
             {
@@ -145,7 +144,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.SnakerMinimumColorLevel = value;
+                AmusementsInit.SaversConfig.SnakerMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -155,15 +154,15 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerMaximumRedColorLevel;
+                return AmusementsInit.SaversConfig.SnakerMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.SnakerMinimumRedColorLevel)
-                    value = Config.SaverConfig.SnakerMinimumRedColorLevel;
+                if (value <= AmusementsInit.SaversConfig.SnakerMinimumRedColorLevel)
+                    value = AmusementsInit.SaversConfig.SnakerMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SnakerMaximumRedColorLevel = value;
+                AmusementsInit.SaversConfig.SnakerMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -173,15 +172,15 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerMaximumGreenColorLevel;
+                return AmusementsInit.SaversConfig.SnakerMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.SnakerMinimumGreenColorLevel)
-                    value = Config.SaverConfig.SnakerMinimumGreenColorLevel;
+                if (value <= AmusementsInit.SaversConfig.SnakerMinimumGreenColorLevel)
+                    value = AmusementsInit.SaversConfig.SnakerMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SnakerMaximumGreenColorLevel = value;
+                AmusementsInit.SaversConfig.SnakerMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -191,15 +190,15 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerMaximumBlueColorLevel;
+                return AmusementsInit.SaversConfig.SnakerMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.SnakerMinimumBlueColorLevel)
-                    value = Config.SaverConfig.SnakerMinimumBlueColorLevel;
+                if (value <= AmusementsInit.SaversConfig.SnakerMinimumBlueColorLevel)
+                    value = AmusementsInit.SaversConfig.SnakerMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SnakerMaximumBlueColorLevel = value;
+                AmusementsInit.SaversConfig.SnakerMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -209,16 +208,16 @@ namespace Nitrocid.Extras.Amusements.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SnakerMaximumColorLevel;
+                return AmusementsInit.SaversConfig.SnakerMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.SnakerMinimumColorLevel)
-                    value = Config.SaverConfig.SnakerMinimumColorLevel;
+                if (value <= AmusementsInit.SaversConfig.SnakerMinimumColorLevel)
+                    value = AmusementsInit.SaversConfig.SnakerMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.SnakerMaximumColorLevel = value;
+                AmusementsInit.SaversConfig.SnakerMaximumColorLevel = value;
             }
         }
 

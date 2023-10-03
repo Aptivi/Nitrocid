@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using System.Text;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -42,13 +41,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.AuroraDelay;
+                return ScreensaverPackInit.SaversConfig.AuroraDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 100;
-                Config.SaverConfig.AuroraDelay = value;
+                ScreensaverPackInit.SaversConfig.AuroraDelay = value;
             }
         }
 

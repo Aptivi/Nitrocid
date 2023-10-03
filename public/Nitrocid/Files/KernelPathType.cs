@@ -92,10 +92,6 @@ namespace KS.Files
         /// </summary>
         SaverConfiguration,
         /// <summary>
-        /// Splash configuration file.
-        /// </summary>
-        SplashConfiguration,
-        /// <summary>
         /// User groups configuration file.
         /// </summary>
         UserGroups,

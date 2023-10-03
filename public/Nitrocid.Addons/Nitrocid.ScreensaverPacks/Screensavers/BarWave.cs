@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -42,11 +41,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveTrueColor;
+                return ScreensaverPackInit.SaversConfig.BarWaveTrueColor;
             }
             set
             {
-                Config.SaverConfig.BarWaveTrueColor = value;
+                ScreensaverPackInit.SaversConfig.BarWaveTrueColor = value;
             }
         }
         /// <summary>
@@ -56,13 +55,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveFrequencyLevel;
+                return ScreensaverPackInit.SaversConfig.BarWaveFrequencyLevel;
             }
             set
             {
                 if (value <= 0)
                     value = 2;
-                Config.SaverConfig.BarWaveFrequencyLevel = value;
+                ScreensaverPackInit.SaversConfig.BarWaveFrequencyLevel = value;
             }
         }
         /// <summary>
@@ -72,13 +71,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveDelay;
+                return ScreensaverPackInit.SaversConfig.BarWaveDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                Config.SaverConfig.BarWaveDelay = value;
+                ScreensaverPackInit.SaversConfig.BarWaveDelay = value;
             }
         }
         /// <summary>
@@ -88,7 +87,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.BarWaveMinimumRedColorLevel;
             }
             set
             {
@@ -96,7 +95,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarWaveMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BarWaveMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -106,7 +105,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.BarWaveMinimumGreenColorLevel;
             }
             set
             {
@@ -114,7 +113,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarWaveMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BarWaveMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -124,7 +123,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.BarWaveMinimumBlueColorLevel;
             }
             set
             {
@@ -132,7 +131,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarWaveMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BarWaveMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -142,7 +141,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.BarWaveMinimumColorLevel;
             }
             set
             {
@@ -151,7 +150,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.BarWaveMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BarWaveMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -161,15 +160,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.BarWaveMaximumRedColorLevel)
-                    value = Config.SaverConfig.BarWaveMaximumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarWaveMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BarWaveMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -179,15 +178,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.BarWaveMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.BarWaveMaximumGreenColorLevel)
-                    value = Config.SaverConfig.BarWaveMaximumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BarWaveMaximumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BarWaveMaximumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarWaveMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BarWaveMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -197,15 +196,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.BarWaveMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.BarWaveMaximumBlueColorLevel)
-                    value = Config.SaverConfig.BarWaveMaximumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BarWaveMaximumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BarWaveMaximumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarWaveMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BarWaveMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -215,16 +214,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.BarWaveMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.BarWaveMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.BarWaveMaximumColorLevel)
-                    value = Config.SaverConfig.BarWaveMaximumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.BarWaveMaximumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.BarWaveMaximumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.BarWaveMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.BarWaveMaximumColorLevel = value;
             }
         }
 

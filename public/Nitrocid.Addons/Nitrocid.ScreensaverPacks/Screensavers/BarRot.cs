@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -40,20 +39,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static bool BarRotTrueColor
         {
-            get => Config.SaverConfig.BarRotTrueColor;
-            set => Config.SaverConfig.BarRotTrueColor = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotTrueColor;
+            set => ScreensaverPackInit.SaversConfig.BarRotTrueColor = value;
         }
         /// <summary>
         /// [BarRot] How many milliseconds to wait before making the next write?
         /// </summary>
         public static int BarRotDelay
         {
-            get => Config.SaverConfig.BarRotDelay;
+            get => ScreensaverPackInit.SaversConfig.BarRotDelay;
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.BarRotDelay = value;
+                ScreensaverPackInit.SaversConfig.BarRotDelay = value;
             }
         }
         /// <summary>
@@ -61,12 +60,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotNextRampDelay
         {
-            get => Config.SaverConfig.BarRotNextRampDelay;
+            get => ScreensaverPackInit.SaversConfig.BarRotNextRampDelay;
             set
             {
                 if (value <= 0)
                     value = 250;
-                Config.SaverConfig.BarRotNextRampDelay = value;
+                ScreensaverPackInit.SaversConfig.BarRotNextRampDelay = value;
             }
         }
         /// <summary>
@@ -74,78 +73,78 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static char BarRotUpperLeftCornerChar
         {
-            get => Config.SaverConfig.BarRotUpperLeftCornerChar;
-            set => Config.SaverConfig.BarRotUpperLeftCornerChar = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotUpperLeftCornerChar;
+            set => ScreensaverPackInit.SaversConfig.BarRotUpperLeftCornerChar = value;
         }
         /// <summary>
         /// [BarRot] Upper right corner character 
         /// </summary>
         public static char BarRotUpperRightCornerChar
         {
-            get => Config.SaverConfig.BarRotUpperRightCornerChar;
-            set => Config.SaverConfig.BarRotUpperRightCornerChar = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotUpperRightCornerChar;
+            set => ScreensaverPackInit.SaversConfig.BarRotUpperRightCornerChar = value;
         }
         /// <summary>
         /// [BarRot] Lower left corner character 
         /// </summary>
         public static char BarRotLowerLeftCornerChar
         {
-            get => Config.SaverConfig.BarRotLowerLeftCornerChar;
-            set => Config.SaverConfig.BarRotLowerLeftCornerChar = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotLowerLeftCornerChar;
+            set => ScreensaverPackInit.SaversConfig.BarRotLowerLeftCornerChar = value;
         }
         /// <summary>
         /// [BarRot] Lower right corner character 
         /// </summary>
         public static char BarRotLowerRightCornerChar
         {
-            get => Config.SaverConfig.BarRotLowerRightCornerChar;
-            set => Config.SaverConfig.BarRotLowerRightCornerChar = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotLowerRightCornerChar;
+            set => ScreensaverPackInit.SaversConfig.BarRotLowerRightCornerChar = value;
         }
         /// <summary>
         /// [BarRot] Upper frame character 
         /// </summary>
         public static char BarRotUpperFrameChar
         {
-            get => Config.SaverConfig.BarRotUpperFrameChar;
-            set => Config.SaverConfig.BarRotUpperFrameChar = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotUpperFrameChar;
+            set => ScreensaverPackInit.SaversConfig.BarRotUpperFrameChar = value;
         }
         /// <summary>
         /// [BarRot] Lower frame character 
         /// </summary>
         public static char BarRotLowerFrameChar
         {
-            get => Config.SaverConfig.BarRotLowerFrameChar;
-            set => Config.SaverConfig.BarRotLowerFrameChar = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotLowerFrameChar;
+            set => ScreensaverPackInit.SaversConfig.BarRotLowerFrameChar = value;
         }
         /// <summary>
         /// [BarRot] Left frame character 
         /// </summary>
         public static char BarRotLeftFrameChar
         {
-            get => Config.SaverConfig.BarRotLeftFrameChar;
-            set => Config.SaverConfig.BarRotLeftFrameChar = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotLeftFrameChar;
+            set => ScreensaverPackInit.SaversConfig.BarRotLeftFrameChar = value;
         }
         /// <summary>
         /// [BarRot] Right frame character 
         /// </summary>
         public static char BarRotRightFrameChar
         {
-            get => Config.SaverConfig.BarRotRightFrameChar;
-            set => Config.SaverConfig.BarRotRightFrameChar = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotRightFrameChar;
+            set => ScreensaverPackInit.SaversConfig.BarRotRightFrameChar = value;
         }
         /// <summary>
         /// [BarRot] The minimum red color level (true color - start)
         /// </summary>
         public static int BarRotMinimumRedColorLevelStart
         {
-            get => Config.SaverConfig.BarRotMinimumRedColorLevelStart;
+            get => ScreensaverPackInit.SaversConfig.BarRotMinimumRedColorLevelStart;
             set
             {
                 if (value <= 0)
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMinimumRedColorLevelStart = value;
+                ScreensaverPackInit.SaversConfig.BarRotMinimumRedColorLevelStart = value;
             }
         }
         /// <summary>
@@ -153,14 +152,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMinimumGreenColorLevelStart
         {
-            get => Config.SaverConfig.BarRotMinimumGreenColorLevelStart;
+            get => ScreensaverPackInit.SaversConfig.BarRotMinimumGreenColorLevelStart;
             set
             {
                 if (value <= 0)
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMinimumGreenColorLevelStart = value;
+                ScreensaverPackInit.SaversConfig.BarRotMinimumGreenColorLevelStart = value;
             }
         }
         /// <summary>
@@ -168,14 +167,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMinimumBlueColorLevelStart
         {
-            get => Config.SaverConfig.BarRotMinimumBlueColorLevelStart;
+            get => ScreensaverPackInit.SaversConfig.BarRotMinimumBlueColorLevelStart;
             set
             {
                 if (value <= 0)
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMinimumBlueColorLevelStart = value;
+                ScreensaverPackInit.SaversConfig.BarRotMinimumBlueColorLevelStart = value;
             }
         }
         /// <summary>
@@ -183,14 +182,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMaximumRedColorLevelStart
         {
-            get => Config.SaverConfig.BarRotMaximumRedColorLevelStart;
+            get => ScreensaverPackInit.SaversConfig.BarRotMaximumRedColorLevelStart;
             set
             {
-                if (value <= Config.SaverConfig.BarRotMinimumRedColorLevelStart)
-                    value = Config.SaverConfig.BarRotMinimumRedColorLevelStart;
+                if (value <= ScreensaverPackInit.SaversConfig.BarRotMinimumRedColorLevelStart)
+                    value = ScreensaverPackInit.SaversConfig.BarRotMinimumRedColorLevelStart;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMaximumRedColorLevelStart = value;
+                ScreensaverPackInit.SaversConfig.BarRotMaximumRedColorLevelStart = value;
             }
         }
         /// <summary>
@@ -198,14 +197,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMaximumGreenColorLevelStart
         {
-            get => Config.SaverConfig.BarRotMaximumGreenColorLevelStart;
+            get => ScreensaverPackInit.SaversConfig.BarRotMaximumGreenColorLevelStart;
             set
             {
-                if (value <= Config.SaverConfig.BarRotMinimumGreenColorLevelStart)
-                    value = Config.SaverConfig.BarRotMinimumGreenColorLevelStart;
+                if (value <= ScreensaverPackInit.SaversConfig.BarRotMinimumGreenColorLevelStart)
+                    value = ScreensaverPackInit.SaversConfig.BarRotMinimumGreenColorLevelStart;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMaximumGreenColorLevelStart = value;
+                ScreensaverPackInit.SaversConfig.BarRotMaximumGreenColorLevelStart = value;
             }
         }
         /// <summary>
@@ -213,14 +212,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMaximumBlueColorLevelStart
         {
-            get => Config.SaverConfig.BarRotMaximumBlueColorLevelStart;
+            get => ScreensaverPackInit.SaversConfig.BarRotMaximumBlueColorLevelStart;
             set
             {
-                if (value <= Config.SaverConfig.BarRotMinimumBlueColorLevelStart)
-                    value = Config.SaverConfig.BarRotMinimumBlueColorLevelStart;
+                if (value <= ScreensaverPackInit.SaversConfig.BarRotMinimumBlueColorLevelStart)
+                    value = ScreensaverPackInit.SaversConfig.BarRotMinimumBlueColorLevelStart;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMaximumBlueColorLevelStart = value;
+                ScreensaverPackInit.SaversConfig.BarRotMaximumBlueColorLevelStart = value;
             }
         }
         /// <summary>
@@ -228,14 +227,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMinimumRedColorLevelEnd
         {
-            get => Config.SaverConfig.BarRotMinimumRedColorLevelEnd;
+            get => ScreensaverPackInit.SaversConfig.BarRotMinimumRedColorLevelEnd;
             set
             {
                 if (value <= 0)
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMinimumRedColorLevelEnd = value;
+                ScreensaverPackInit.SaversConfig.BarRotMinimumRedColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -243,14 +242,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMinimumGreenColorLevelEnd
         {
-            get => Config.SaverConfig.BarRotMinimumGreenColorLevelEnd;
+            get => ScreensaverPackInit.SaversConfig.BarRotMinimumGreenColorLevelEnd;
             set
             {
                 if (value <= 0)
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMinimumGreenColorLevelEnd = value;
+                ScreensaverPackInit.SaversConfig.BarRotMinimumGreenColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -258,14 +257,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMinimumBlueColorLevelEnd
         {
-            get => Config.SaverConfig.BarRotMinimumBlueColorLevelEnd;
+            get => ScreensaverPackInit.SaversConfig.BarRotMinimumBlueColorLevelEnd;
             set
             {
                 if (value <= 0)
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMinimumBlueColorLevelEnd = value;
+                ScreensaverPackInit.SaversConfig.BarRotMinimumBlueColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -273,14 +272,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMaximumRedColorLevelEnd
         {
-            get => Config.SaverConfig.BarRotMaximumRedColorLevelEnd;
+            get => ScreensaverPackInit.SaversConfig.BarRotMaximumRedColorLevelEnd;
             set
             {
-                if (value <= Config.SaverConfig.BarRotMinimumRedColorLevelEnd)
-                    value = Config.SaverConfig.BarRotMinimumRedColorLevelEnd;
+                if (value <= ScreensaverPackInit.SaversConfig.BarRotMinimumRedColorLevelEnd)
+                    value = ScreensaverPackInit.SaversConfig.BarRotMinimumRedColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMaximumRedColorLevelEnd = value;
+                ScreensaverPackInit.SaversConfig.BarRotMaximumRedColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -288,14 +287,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMaximumGreenColorLevelEnd
         {
-            get => Config.SaverConfig.BarRotMaximumGreenColorLevelEnd;
+            get => ScreensaverPackInit.SaversConfig.BarRotMaximumGreenColorLevelEnd;
             set
             {
-                if (value <= Config.SaverConfig.BarRotMinimumGreenColorLevelEnd)
-                    value = Config.SaverConfig.BarRotMinimumGreenColorLevelEnd;
+                if (value <= ScreensaverPackInit.SaversConfig.BarRotMinimumGreenColorLevelEnd)
+                    value = ScreensaverPackInit.SaversConfig.BarRotMinimumGreenColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMaximumGreenColorLevelEnd = value;
+                ScreensaverPackInit.SaversConfig.BarRotMaximumGreenColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -303,14 +302,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static int BarRotMaximumBlueColorLevelEnd
         {
-            get => Config.SaverConfig.BarRotMaximumBlueColorLevelEnd;
+            get => ScreensaverPackInit.SaversConfig.BarRotMaximumBlueColorLevelEnd;
             set
             {
-                if (value <= Config.SaverConfig.BarRotMinimumBlueColorLevelEnd)
-                    value = Config.SaverConfig.BarRotMinimumBlueColorLevelEnd;
+                if (value <= ScreensaverPackInit.SaversConfig.BarRotMinimumBlueColorLevelEnd)
+                    value = ScreensaverPackInit.SaversConfig.BarRotMinimumBlueColorLevelEnd;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.BarRotMaximumBlueColorLevelEnd = value;
+                ScreensaverPackInit.SaversConfig.BarRotMaximumBlueColorLevelEnd = value;
             }
         }
         /// <summary>
@@ -318,72 +317,72 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// </summary>
         public static string BarRotUpperLeftCornerColor
         {
-            get => Config.SaverConfig.BarRotUpperLeftCornerColor;
-            set => Config.SaverConfig.BarRotUpperLeftCornerColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.BarRotUpperLeftCornerColor;
+            set => ScreensaverPackInit.SaversConfig.BarRotUpperLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Upper right corner color.
         /// </summary>
         public static string BarRotUpperRightCornerColor
         {
-            get => Config.SaverConfig.BarRotUpperRightCornerColor;
-            set => Config.SaverConfig.BarRotUpperRightCornerColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.BarRotUpperRightCornerColor;
+            set => ScreensaverPackInit.SaversConfig.BarRotUpperRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Lower left corner color.
         /// </summary>
         public static string BarRotLowerLeftCornerColor
         {
-            get => Config.SaverConfig.BarRotLowerLeftCornerColor;
-            set => Config.SaverConfig.BarRotLowerLeftCornerColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.BarRotLowerLeftCornerColor;
+            set => ScreensaverPackInit.SaversConfig.BarRotLowerLeftCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Lower right corner color.
         /// </summary>
         public static string BarRotLowerRightCornerColor
         {
-            get => Config.SaverConfig.BarRotLowerRightCornerColor;
-            set => Config.SaverConfig.BarRotLowerRightCornerColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.BarRotLowerRightCornerColor;
+            set => ScreensaverPackInit.SaversConfig.BarRotLowerRightCornerColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Upper frame color.
         /// </summary>
         public static string BarRotUpperFrameColor
         {
-            get => Config.SaverConfig.BarRotUpperFrameColor;
-            set => Config.SaverConfig.BarRotUpperFrameColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.BarRotUpperFrameColor;
+            set => ScreensaverPackInit.SaversConfig.BarRotUpperFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Lower frame color.
         /// </summary>
         public static string BarRotLowerFrameColor
         {
-            get => Config.SaverConfig.BarRotLowerFrameColor;
-            set => Config.SaverConfig.BarRotLowerFrameColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.BarRotLowerFrameColor;
+            set => ScreensaverPackInit.SaversConfig.BarRotLowerFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Left frame color.
         /// </summary>
         public static string BarRotLeftFrameColor
         {
-            get => Config.SaverConfig.BarRotLeftFrameColor;
-            set => Config.SaverConfig.BarRotLeftFrameColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor;
+            set => ScreensaverPackInit.SaversConfig.BarRotLeftFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Right frame color.
         /// </summary>
         public static string BarRotRightFrameColor
         {
-            get => Config.SaverConfig.BarRotRightFrameColor;
-            set => Config.SaverConfig.BarRotRightFrameColor = new Color(value).PlainSequence;
+            get => ScreensaverPackInit.SaversConfig.BarRotRightFrameColor;
+            set => ScreensaverPackInit.SaversConfig.BarRotRightFrameColor = new Color(value).PlainSequence;
         }
         /// <summary>
         /// [BarRot] Use the border colors.
         /// </summary>
         public static bool BarRotUseBorderColors
         {
-            get => Config.SaverConfig.BarRotUseBorderColors;
-            set => Config.SaverConfig.BarRotUseBorderColors = value;
+            get => ScreensaverPackInit.SaversConfig.BarRotUseBorderColors;
+            set => ScreensaverPackInit.SaversConfig.BarRotUseBorderColors = value;
         }
 
     }

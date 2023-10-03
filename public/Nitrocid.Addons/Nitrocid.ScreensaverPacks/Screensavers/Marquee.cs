@@ -20,7 +20,6 @@ using System;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -42,11 +41,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeTrueColor;
+                return ScreensaverPackInit.SaversConfig.MarqueeTrueColor;
             }
             set
             {
-                Config.SaverConfig.MarqueeTrueColor = value;
+                ScreensaverPackInit.SaversConfig.MarqueeTrueColor = value;
             }
         }
         /// <summary>
@@ -56,11 +55,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeDelay;
+                return ScreensaverPackInit.SaversConfig.MarqueeDelay;
             }
             set
             {
-                Config.SaverConfig.MarqueeDelay = value;
+                ScreensaverPackInit.SaversConfig.MarqueeDelay = value;
             }
         }
         /// <summary>
@@ -70,11 +69,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeWrite;
+                return ScreensaverPackInit.SaversConfig.MarqueeWrite;
             }
             set
             {
-                Config.SaverConfig.MarqueeWrite = value;
+                ScreensaverPackInit.SaversConfig.MarqueeWrite = value;
             }
         }
         /// <summary>
@@ -84,11 +83,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeAlwaysCentered;
+                return ScreensaverPackInit.SaversConfig.MarqueeAlwaysCentered;
             }
             set
             {
-                Config.SaverConfig.MarqueeAlwaysCentered = value;
+                ScreensaverPackInit.SaversConfig.MarqueeAlwaysCentered = value;
             }
         }
         /// <summary>
@@ -98,11 +97,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeUseConsoleAPI;
+                return ScreensaverPackInit.SaversConfig.MarqueeUseConsoleAPI;
             }
             set
             {
-                Config.SaverConfig.MarqueeUseConsoleAPI = value;
+                ScreensaverPackInit.SaversConfig.MarqueeUseConsoleAPI = value;
             }
         }
         /// <summary>
@@ -112,11 +111,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeBackgroundColor;
+                return ScreensaverPackInit.SaversConfig.MarqueeBackgroundColor;
             }
             set
             {
-                Config.SaverConfig.MarqueeBackgroundColor = value;
+                ScreensaverPackInit.SaversConfig.MarqueeBackgroundColor = value;
             }
         }
         /// <summary>
@@ -126,11 +125,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.MarqueeMinimumRedColorLevel;
             }
             set
             {
-                Config.SaverConfig.MarqueeMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MarqueeMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -140,11 +139,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.MarqueeMinimumGreenColorLevel;
             }
             set
             {
-                Config.SaverConfig.MarqueeMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MarqueeMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -154,11 +153,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.MarqueeMinimumBlueColorLevel;
             }
             set
             {
-                Config.SaverConfig.MarqueeMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MarqueeMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -168,11 +167,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.MarqueeMinimumColorLevel;
             }
             set
             {
-                Config.SaverConfig.MarqueeMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MarqueeMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -182,11 +181,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.MarqueeMaximumRedColorLevel;
             }
             set
             {
-                Config.SaverConfig.MarqueeMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MarqueeMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -196,11 +195,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.MarqueeMaximumGreenColorLevel;
             }
             set
             {
-                Config.SaverConfig.MarqueeMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MarqueeMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -210,11 +209,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.MarqueeMaximumBlueColorLevel;
             }
             set
             {
-                Config.SaverConfig.MarqueeMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MarqueeMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -224,11 +223,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MarqueeMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.MarqueeMaximumColorLevel;
             }
             set
             {
-                Config.SaverConfig.MarqueeMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MarqueeMaximumColorLevel = value;
             }
         }
 

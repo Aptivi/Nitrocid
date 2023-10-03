@@ -21,7 +21,6 @@ using System.Collections.Generic;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -42,13 +41,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypoDelay;
+                return ScreensaverPackInit.SaversConfig.TypoDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.TypoDelay = value;
+                ScreensaverPackInit.SaversConfig.TypoDelay = value;
             }
         }
         /// <summary>
@@ -58,13 +57,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypoWriteAgainDelay;
+                return ScreensaverPackInit.SaversConfig.TypoWriteAgainDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                Config.SaverConfig.TypoWriteAgainDelay = value;
+                ScreensaverPackInit.SaversConfig.TypoWriteAgainDelay = value;
             }
         }
         /// <summary>
@@ -74,13 +73,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypoWrite;
+                return ScreensaverPackInit.SaversConfig.TypoWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                Config.SaverConfig.TypoWrite = value;
+                ScreensaverPackInit.SaversConfig.TypoWrite = value;
             }
         }
         /// <summary>
@@ -90,13 +89,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypoWritingSpeedMin;
+                return ScreensaverPackInit.SaversConfig.TypoWritingSpeedMin;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.TypoWritingSpeedMin = value;
+                ScreensaverPackInit.SaversConfig.TypoWritingSpeedMin = value;
             }
         }
         /// <summary>
@@ -106,13 +105,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypoWritingSpeedMax;
+                return ScreensaverPackInit.SaversConfig.TypoWritingSpeedMax;
             }
             set
             {
                 if (value <= 0)
                     value = 80;
-                Config.SaverConfig.TypoWritingSpeedMax = value;
+                ScreensaverPackInit.SaversConfig.TypoWritingSpeedMax = value;
             }
         }
         /// <summary>
@@ -122,13 +121,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypoMissStrikePossibility;
+                return ScreensaverPackInit.SaversConfig.TypoMissStrikePossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 20;
-                Config.SaverConfig.TypoMissStrikePossibility = value;
+                ScreensaverPackInit.SaversConfig.TypoMissStrikePossibility = value;
             }
         }
         /// <summary>
@@ -138,13 +137,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypoMissPossibility;
+                return ScreensaverPackInit.SaversConfig.TypoMissPossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.TypoMissPossibility = value;
+                ScreensaverPackInit.SaversConfig.TypoMissPossibility = value;
             }
         }
         /// <summary>
@@ -154,11 +153,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypoTextColor;
+                return ScreensaverPackInit.SaversConfig.TypoTextColor;
             }
             set
             {
-                Config.SaverConfig.TypoTextColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.TypoTextColor = new Color(value).PlainSequence;
             }
         }
 

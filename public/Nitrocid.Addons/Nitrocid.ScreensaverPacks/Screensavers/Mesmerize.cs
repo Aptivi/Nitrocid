@@ -21,7 +21,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -42,13 +41,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MesmerizeDelay;
+                return ScreensaverPackInit.SaversConfig.MesmerizeDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.MesmerizeDelay = value;
+                ScreensaverPackInit.SaversConfig.MesmerizeDelay = value;
             }
         }
         /// <summary>
@@ -58,7 +57,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MesmerizeMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.MesmerizeMinimumRedColorLevel;
             }
             set
             {
@@ -66,7 +65,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MesmerizeMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MesmerizeMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -76,7 +75,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MesmerizeMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.MesmerizeMinimumGreenColorLevel;
             }
             set
             {
@@ -84,7 +83,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MesmerizeMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MesmerizeMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -94,7 +93,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MesmerizeMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.MesmerizeMinimumBlueColorLevel;
             }
             set
             {
@@ -102,7 +101,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MesmerizeMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MesmerizeMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -112,7 +111,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MesmerizeMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.MesmerizeMinimumColorLevel;
             }
             set
             {
@@ -121,7 +120,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.MesmerizeMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MesmerizeMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -131,15 +130,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MesmerizeMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.MesmerizeMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.MesmerizeMaximumRedColorLevel)
-                    value = Config.SaverConfig.MesmerizeMaximumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MesmerizeMaximumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MesmerizeMaximumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MesmerizeMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MesmerizeMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -149,15 +148,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MesmerizeMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.MesmerizeMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.MesmerizeMaximumGreenColorLevel)
-                    value = Config.SaverConfig.MesmerizeMaximumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MesmerizeMaximumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MesmerizeMaximumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MesmerizeMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MesmerizeMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -167,15 +166,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MesmerizeMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.MesmerizeMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.MesmerizeMaximumBlueColorLevel)
-                    value = Config.SaverConfig.MesmerizeMaximumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MesmerizeMaximumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MesmerizeMaximumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.MesmerizeMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MesmerizeMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -185,16 +184,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.MesmerizeMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.MesmerizeMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.MesmerizeMaximumColorLevel)
-                    value = Config.SaverConfig.MesmerizeMaximumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.MesmerizeMaximumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.MesmerizeMaximumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.MesmerizeMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.MesmerizeMaximumColorLevel = value;
             }
         }
 

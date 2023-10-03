@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files.Querying;
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
 using KS.Shell.ShellBase.Arguments;
@@ -24,6 +26,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.BassBoom.Commands;
 using Nitrocid.Extras.BassBoom.Screensavers;
+using Nitrocid.Extras.BassBoom.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -58,16 +61,28 @@ namespace Nitrocid.Extras.BassBoom
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
+        internal static BassBoomSaversConfig SaversConfig =>
+            (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)];
+
         void IAddon.StartAddon()
         {
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
             ScreensaverManager.Screensavers.Add("lyrics", new LyricsDisplay());
+
+            // Then, initialize configuration in a way that no mod can play with them
+            var saversConfig = new BassBoomSaversConfig();
+            Config.baseConfigurations.Add(nameof(BassBoomSaversConfig), saversConfig);
+            string saversConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(BassBoomSaversConfig));
+            if (!Checking.FileExists(saversConfigPath))
+                Config.CreateConfig(saversConfig, saversConfigPath);
+            Config.ReadConfig(saversConfig, saversConfigPath);
         }
 
         void IAddon.StopAddon()
         {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ScreensaverManager.Screensavers.Remove("lyrics");
+            Config.baseConfigurations.Remove(nameof(BassBoomSaversConfig));
         }
 
         void IAddon.FinalizeAddon()

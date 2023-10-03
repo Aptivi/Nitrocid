@@ -16,8 +16,11 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files.Querying;
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Splash;
+using Nitrocid.SplashPacks.Settings;
 using Nitrocid.SplashPacks.Splashes;
 using System.Collections.Generic;
 
@@ -42,16 +45,31 @@ namespace Nitrocid.SplashPacks
 
         AddonType IAddon.AddonType => AddonType.Important;
 
+        internal static ExtraSplashesConfig SplashConfig =>
+            (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)];
+
         void IAddon.StartAddon()
         {
+            // First, initialize splashes
             foreach (var splash in Splashes.Keys)
                 SplashManager.InstalledSplashes.Add(splash, Splashes[splash]);
+
+            // Then, initialize configuration in a way that no mod can play with them
+            var splashesConfig = new ExtraSplashesConfig();
+            Config.baseConfigurations.Add(nameof(ExtraSplashesConfig), splashesConfig);
+            string splashesConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(ExtraSplashesConfig));
+            if (!Checking.FileExists(splashesConfigPath))
+                Config.CreateConfig(splashesConfig, splashesConfigPath);
+            Config.ReadConfig(splashesConfig, splashesConfigPath);
         }
 
         void IAddon.StopAddon()
         {
             foreach (var splash in Splashes.Keys)
                 SplashManager.InstalledSplashes.Remove(splash);
+
+            // Then, unload the configuration
+            Config.baseConfigurations.Remove(nameof(ExtraSplashesConfig));
         }
 
         void IAddon.FinalizeAddon()

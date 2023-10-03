@@ -23,7 +23,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -45,11 +44,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsTrueColor;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsTrueColor;
             }
             set
             {
-                Config.SaverConfig.LaserBeamsTrueColor = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsTrueColor = value;
             }
         }
         /// <summary>
@@ -59,13 +58,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsDelay;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 500;
-                Config.SaverConfig.LaserBeamsDelay = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsDelay = value;
             }
         }
         /// <summary>
@@ -75,13 +74,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsLineChar;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsLineChar;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "-";
-                Config.SaverConfig.LaserBeamsLineChar = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsLineChar = value;
             }
         }
         /// <summary>
@@ -91,11 +90,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsBackgroundColor;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsBackgroundColor;
             }
             set
             {
-                Config.SaverConfig.LaserBeamsBackgroundColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.LaserBeamsBackgroundColor = new Color(value).PlainSequence;
             }
         }
         /// <summary>
@@ -105,7 +104,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsMinimumRedColorLevel;
             }
             set
             {
@@ -113,7 +112,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.LaserBeamsMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -123,7 +122,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsMinimumGreenColorLevel;
             }
             set
             {
@@ -131,7 +130,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.LaserBeamsMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -141,7 +140,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsMinimumBlueColorLevel;
             }
             set
             {
@@ -149,7 +148,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.LaserBeamsMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -159,7 +158,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsMinimumColorLevel;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsMinimumColorLevel;
             }
             set
             {
@@ -168,7 +167,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > FinalMinimumLevel)
                     value = FinalMinimumLevel;
-                Config.SaverConfig.LaserBeamsMinimumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsMinimumColorLevel = value;
             }
         }
         /// <summary>
@@ -178,15 +177,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.LaserBeamsMinimumRedColorLevel)
-                    value = Config.SaverConfig.LaserBeamsMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.LaserBeamsMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.LaserBeamsMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.LaserBeamsMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -196,15 +195,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.LaserBeamsMinimumGreenColorLevel)
-                    value = Config.SaverConfig.LaserBeamsMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.LaserBeamsMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.LaserBeamsMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.LaserBeamsMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -214,15 +213,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.LaserBeamsMinimumBlueColorLevel)
-                    value = Config.SaverConfig.LaserBeamsMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.LaserBeamsMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.LaserBeamsMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.LaserBeamsMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsMaximumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -232,16 +231,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LaserBeamsMaximumColorLevel;
+                return ScreensaverPackInit.SaversConfig.LaserBeamsMaximumColorLevel;
             }
             set
             {
                 int FinalMaximumLevel = 255;
-                if (value <= Config.SaverConfig.LaserBeamsMinimumColorLevel)
-                    value = Config.SaverConfig.LaserBeamsMinimumColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.LaserBeamsMinimumColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.LaserBeamsMinimumColorLevel;
                 if (value > FinalMaximumLevel)
                     value = FinalMaximumLevel;
-                Config.SaverConfig.LaserBeamsMaximumColorLevel = value;
+                ScreensaverPackInit.SaversConfig.LaserBeamsMaximumColorLevel = value;
             }
         }
 

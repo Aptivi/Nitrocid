@@ -31,7 +31,6 @@ using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
-using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Reflection;

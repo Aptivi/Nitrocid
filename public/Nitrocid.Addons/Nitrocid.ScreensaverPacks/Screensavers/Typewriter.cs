@@ -22,7 +22,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Files.Querying;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -44,13 +43,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypewriterDelay;
+                return ScreensaverPackInit.SaversConfig.TypewriterDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.TypewriterDelay = value;
+                ScreensaverPackInit.SaversConfig.TypewriterDelay = value;
             }
         }
         /// <summary>
@@ -60,13 +59,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypewriterNewScreenDelay;
+                return ScreensaverPackInit.SaversConfig.TypewriterNewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                Config.SaverConfig.TypewriterNewScreenDelay = value;
+                ScreensaverPackInit.SaversConfig.TypewriterNewScreenDelay = value;
             }
         }
         /// <summary>
@@ -76,13 +75,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypewriterWrite;
+                return ScreensaverPackInit.SaversConfig.TypewriterWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                Config.SaverConfig.TypewriterWrite = value;
+                ScreensaverPackInit.SaversConfig.TypewriterWrite = value;
             }
         }
         /// <summary>
@@ -92,13 +91,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypewriterWritingSpeedMin;
+                return ScreensaverPackInit.SaversConfig.TypewriterWritingSpeedMin;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.TypewriterWritingSpeedMin = value;
+                ScreensaverPackInit.SaversConfig.TypewriterWritingSpeedMin = value;
             }
         }
         /// <summary>
@@ -108,13 +107,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypewriterWritingSpeedMax;
+                return ScreensaverPackInit.SaversConfig.TypewriterWritingSpeedMax;
             }
             set
             {
                 if (value <= 0)
                     value = 80;
-                Config.SaverConfig.TypewriterWritingSpeedMax = value;
+                ScreensaverPackInit.SaversConfig.TypewriterWritingSpeedMax = value;
             }
         }
         /// <summary>
@@ -124,11 +123,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypewriterShowArrowPos;
+                return ScreensaverPackInit.SaversConfig.TypewriterShowArrowPos;
             }
             set
             {
-                Config.SaverConfig.TypewriterShowArrowPos = value;
+                ScreensaverPackInit.SaversConfig.TypewriterShowArrowPos = value;
             }
         }
         /// <summary>
@@ -138,11 +137,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.TypewriterTextColor;
+                return ScreensaverPackInit.SaversConfig.TypewriterTextColor;
             }
             set
             {
-                Config.SaverConfig.TypewriterTextColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.TypewriterTextColor = new Color(value).PlainSequence;
             }
         }
 

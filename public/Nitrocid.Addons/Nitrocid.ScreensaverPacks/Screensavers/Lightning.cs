@@ -20,7 +20,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using System;
@@ -41,13 +40,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LightningDelay;
+                return ScreensaverPackInit.SaversConfig.LightningDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 100;
-                Config.SaverConfig.LightningDelay = value;
+                ScreensaverPackInit.SaversConfig.LightningDelay = value;
             }
         }
         /// <summary>
@@ -57,13 +56,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LightningStrikeProbability;
+                return ScreensaverPackInit.SaversConfig.LightningStrikeProbability;
             }
             set
             {
                 if (value <= 0)
                     value = 5;
-                Config.SaverConfig.LightningStrikeProbability = value;
+                ScreensaverPackInit.SaversConfig.LightningStrikeProbability = value;
             }
         }
 

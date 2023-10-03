@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Misc.Screensaver;
 
@@ -36,13 +35,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SquareCornerDelay;
+                return ScreensaverPackInit.SaversConfig.SquareCornerDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.SquareCornerDelay = value;
+                ScreensaverPackInit.SaversConfig.SquareCornerDelay = value;
             }
         }
         /// <summary>
@@ -52,13 +51,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SquareCornerFadeOutDelay;
+                return ScreensaverPackInit.SaversConfig.SquareCornerFadeOutDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                Config.SaverConfig.SquareCornerFadeOutDelay = value;
+                ScreensaverPackInit.SaversConfig.SquareCornerFadeOutDelay = value;
             }
         }
         /// <summary>
@@ -68,13 +67,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SquareCornerMaxSteps;
+                return ScreensaverPackInit.SaversConfig.SquareCornerMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                Config.SaverConfig.SquareCornerMaxSteps = value;
+                ScreensaverPackInit.SaversConfig.SquareCornerMaxSteps = value;
             }
         }
         /// <summary>
@@ -84,7 +83,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SquareCornerMinimumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.SquareCornerMinimumRedColorLevel;
             }
             set
             {
@@ -92,7 +91,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SquareCornerMinimumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SquareCornerMinimumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -102,7 +101,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SquareCornerMinimumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.SquareCornerMinimumGreenColorLevel;
             }
             set
             {
@@ -110,7 +109,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SquareCornerMinimumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SquareCornerMinimumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -120,7 +119,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SquareCornerMinimumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.SquareCornerMinimumBlueColorLevel;
             }
             set
             {
@@ -128,7 +127,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 0;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SquareCornerMinimumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SquareCornerMinimumBlueColorLevel = value;
             }
         }
         /// <summary>
@@ -138,15 +137,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SquareCornerMaximumRedColorLevel;
+                return ScreensaverPackInit.SaversConfig.SquareCornerMaximumRedColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.SquareCornerMinimumRedColorLevel)
-                    value = Config.SaverConfig.SquareCornerMinimumRedColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.SquareCornerMinimumRedColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.SquareCornerMinimumRedColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SquareCornerMaximumRedColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SquareCornerMaximumRedColorLevel = value;
             }
         }
         /// <summary>
@@ -156,15 +155,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SquareCornerMaximumGreenColorLevel;
+                return ScreensaverPackInit.SaversConfig.SquareCornerMaximumGreenColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.SquareCornerMinimumGreenColorLevel)
-                    value = Config.SaverConfig.SquareCornerMinimumGreenColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.SquareCornerMinimumGreenColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.SquareCornerMinimumGreenColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SquareCornerMaximumGreenColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SquareCornerMaximumGreenColorLevel = value;
             }
         }
         /// <summary>
@@ -174,15 +173,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.SquareCornerMaximumBlueColorLevel;
+                return ScreensaverPackInit.SaversConfig.SquareCornerMaximumBlueColorLevel;
             }
             set
             {
-                if (value <= Config.SaverConfig.SquareCornerMinimumBlueColorLevel)
-                    value = Config.SaverConfig.SquareCornerMinimumBlueColorLevel;
+                if (value <= ScreensaverPackInit.SaversConfig.SquareCornerMinimumBlueColorLevel)
+                    value = ScreensaverPackInit.SaversConfig.SquareCornerMinimumBlueColorLevel;
                 if (value > 255)
                     value = 255;
-                Config.SaverConfig.SquareCornerMaximumBlueColorLevel = value;
+                ScreensaverPackInit.SaversConfig.SquareCornerMaximumBlueColorLevel = value;
             }
         }
 

@@ -30,7 +30,6 @@ namespace KS.Misc.Reflection
         { 
             typeof(KernelMainConfig),
             typeof(KernelSaverConfig),
-            typeof(KernelSplashConfig)
         };
         internal static Type[] KernelTypes = Assembly.GetExecutingAssembly().GetTypes();
 

@@ -23,7 +23,6 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Files.Querying;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -45,13 +44,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoDelay;
+                return ScreensaverPackInit.SaversConfig.LinotypoDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.LinotypoDelay = value;
+                ScreensaverPackInit.SaversConfig.LinotypoDelay = value;
             }
         }
         /// <summary>
@@ -61,13 +60,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoNewScreenDelay;
+                return ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 3000;
-                Config.SaverConfig.LinotypoNewScreenDelay = value;
+                ScreensaverPackInit.SaversConfig.LinotypoNewScreenDelay = value;
             }
         }
         /// <summary>
@@ -77,13 +76,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoWrite;
+                return ScreensaverPackInit.SaversConfig.LinotypoWrite;
             }
             set
             {
                 if (string.IsNullOrEmpty(value))
                     value = "Nitrocid KS";
-                Config.SaverConfig.LinotypoWrite = value;
+                ScreensaverPackInit.SaversConfig.LinotypoWrite = value;
             }
         }
         /// <summary>
@@ -93,13 +92,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoWritingSpeedMin;
+                return ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMin;
             }
             set
             {
                 if (value <= 0)
                     value = 50;
-                Config.SaverConfig.LinotypoWritingSpeedMin = value;
+                ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMin = value;
             }
         }
         /// <summary>
@@ -109,13 +108,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoWritingSpeedMax;
+                return ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMax;
             }
             set
             {
                 if (value <= 0)
                     value = 80;
-                Config.SaverConfig.LinotypoWritingSpeedMax = value;
+                ScreensaverPackInit.SaversConfig.LinotypoWritingSpeedMax = value;
             }
         }
         /// <summary>
@@ -125,13 +124,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoMissStrikePossibility;
+                return ScreensaverPackInit.SaversConfig.LinotypoMissStrikePossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 1;
-                Config.SaverConfig.LinotypoMissStrikePossibility = value;
+                ScreensaverPackInit.SaversConfig.LinotypoMissStrikePossibility = value;
             }
         }
         /// <summary>
@@ -141,7 +140,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoTextColumns;
+                return ScreensaverPackInit.SaversConfig.LinotypoTextColumns;
             }
             set
             {
@@ -149,7 +148,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 3;
                 if (value > 3)
                     value = 3;
-                Config.SaverConfig.LinotypoTextColumns = value;
+                ScreensaverPackInit.SaversConfig.LinotypoTextColumns = value;
             }
         }
         /// <summary>
@@ -159,7 +158,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoEtaoinThreshold;
+                return ScreensaverPackInit.SaversConfig.LinotypoEtaoinThreshold;
             }
             set
             {
@@ -167,7 +166,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     value = 5;
                 if (value > 8)
                     value = 8;
-                Config.SaverConfig.LinotypoEtaoinThreshold = value;
+                ScreensaverPackInit.SaversConfig.LinotypoEtaoinThreshold = value;
             }
         }
         /// <summary>
@@ -177,13 +176,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoEtaoinCappingPossibility;
+                return ScreensaverPackInit.SaversConfig.LinotypoEtaoinCappingPossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 5;
-                Config.SaverConfig.LinotypoEtaoinCappingPossibility = value;
+                ScreensaverPackInit.SaversConfig.LinotypoEtaoinCappingPossibility = value;
             }
         }
         /// <summary>
@@ -193,11 +192,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return (FillType)Config.SaverConfig.LinotypoEtaoinType;
+                return (FillType)ScreensaverPackInit.SaversConfig.LinotypoEtaoinType;
             }
             set
             {
-                Config.SaverConfig.LinotypoEtaoinType = (int)value;
+                ScreensaverPackInit.SaversConfig.LinotypoEtaoinType = (int)value;
             }
         }
         /// <summary>
@@ -207,13 +206,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoMissPossibility;
+                return ScreensaverPackInit.SaversConfig.LinotypoMissPossibility;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                Config.SaverConfig.LinotypoMissPossibility = value;
+                ScreensaverPackInit.SaversConfig.LinotypoMissPossibility = value;
             }
         }
         /// <summary>
@@ -223,11 +222,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return Config.SaverConfig.LinotypoTextColor;
+                return ScreensaverPackInit.SaversConfig.LinotypoTextColor;
             }
             set
             {
-                Config.SaverConfig.LinotypoTextColor = new Color(value).PlainSequence;
+                ScreensaverPackInit.SaversConfig.LinotypoTextColor = new Color(value).PlainSequence;
             }
         }
 
