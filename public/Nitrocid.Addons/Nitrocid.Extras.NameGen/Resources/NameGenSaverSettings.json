@@ -2,7 +2,6 @@
     {
         "Name": "PersonLookup",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.PersonLookup",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",

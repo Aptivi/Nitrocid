@@ -2,7 +2,6 @@
     {
         "Name": "Snaker",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Snaker",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -91,7 +90,6 @@
     {
         "Name": "Quote",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Quote",
         "Keys": [
             {
                 "Name": "Activate true colors",

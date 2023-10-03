@@ -2,7 +2,6 @@
     {
         "Name": "ColorMix",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.ColorMix",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -90,7 +89,6 @@
     {
         "Name": "Disco",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Disco",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -191,7 +189,6 @@
     {
         "Name": "GlitterColor",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.GlitterColor",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -274,7 +271,6 @@
     {
         "Name": "Lines",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Lines",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -368,7 +364,6 @@
     {
         "Name": "Dissolve",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Dissolve",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -450,7 +445,6 @@
     {
         "Name": "BouncingBlock",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.BouncingBlock",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -543,7 +537,6 @@
     {
         "Name": "ProgressClock",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.ProgressClock",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1012,7 +1005,6 @@
     {
         "Name": "Lighter",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Lighter",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1106,7 +1098,6 @@
     {
         "Name": "Wipe",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Wipe",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1200,7 +1191,6 @@
     {
         "Name": "SimpleMatrix",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.SimpleMatrix",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1213,7 +1203,6 @@
     {
         "Name": "GlitterMatrix",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.GlitterMatrix",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1236,7 +1225,6 @@
     {
         "Name": "BouncingText",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.BouncingText",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1335,7 +1323,6 @@
     {
         "Name": "Fader",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Fader",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1419,7 +1406,6 @@
     {
         "Name": "FaderBack",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.FaderBack",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1492,7 +1478,6 @@
     {
         "Name": "BeatFader",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.BeatFader",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1592,7 +1577,6 @@
     {
         "Name": "Typo",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Typo",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1650,7 +1634,6 @@
     {
         "Name": "Marquee",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Marquee",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1757,7 +1740,6 @@
     {
         "Name": "Linotypo",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Linotypo",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1848,7 +1830,6 @@
     {
         "Name": "Typewriter",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Typewriter",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1897,7 +1878,6 @@
     {
         "Name": "FlashColor",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.FlashColor",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1985,7 +1965,6 @@
     {
         "Name": "SpotWrite",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.SpotWrite",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -2016,7 +1995,6 @@
     {
         "Name": "Ramp",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Ramp",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2263,7 +2241,6 @@
     {
         "Name": "StackBox",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.StackBox",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2352,7 +2329,6 @@
     {
         "Name": "BarRot",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.BarRot",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2567,7 +2543,6 @@
     {
         "Name": "Fireworks",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Fireworks",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2658,7 +2633,6 @@
     {
         "Name": "Figlet",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Figlet",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2753,7 +2727,6 @@
     {
         "Name": "FlashText",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.FlashText",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2847,7 +2820,6 @@
     {
         "Name": "Noise",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Noise",
         "Keys": [
             {
                 "Name": "New Screen Delay in Milliseconds",
@@ -2868,7 +2840,6 @@
     {
         "Name": "DateAndTime",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.DateAndTime",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2951,7 +2922,6 @@
     {
         "Name": "Glitch",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Glitch",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -2972,7 +2942,6 @@
     {
         "Name": "FallingLine",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.FallingLine",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -3061,7 +3030,6 @@
     {
         "Name": "Indeterminate",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Indeterminate",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -3238,7 +3206,6 @@
     {
         "Name": "Pulse",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Pulse",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3305,7 +3272,6 @@
     {
         "Name": "BeatPulse",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.BeatPulse",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -3405,7 +3371,6 @@
     {
         "Name": "EdgePulse",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.EdgePulse",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3472,7 +3437,6 @@
     {
         "Name": "BeatEdgePulse",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.BeatEdgePulse",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -3572,7 +3536,6 @@
     {
         "Name": "GradientRot",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.GradientRot",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3687,7 +3650,6 @@
     {
         "Name": "Gradient",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Gradient",
         "Keys": [
             {
                 "Name": "Next gradient rot interval",
@@ -3796,7 +3758,6 @@
     {
         "Name": "Lightspeed",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Lightspeed",
         "Keys": [
             {
                 "Name": "Cycle colors",
@@ -3873,7 +3834,6 @@
     {
         "Name": "Starfield",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Starfield",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3886,7 +3846,6 @@
     {
         "Name": "Siren",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Siren",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3905,7 +3864,6 @@
     {
         "Name": "Spin",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Spin",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3918,7 +3876,6 @@
     {
         "Name": "SnakeFill",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.SnakeFill",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4001,7 +3958,6 @@
     {
         "Name": "Equalizer",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Equalizer",
         "Keys": [
             {
                 "Name": "Next Screen Delay in Milliseconds",
@@ -4014,7 +3970,6 @@
     {
         "Name": "BSOD",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.BSOD",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4027,7 +3982,6 @@
     {
         "Name": "Memdump",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Memdump",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4040,7 +3994,6 @@
     {
         "Name": "ExcaliBeats",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.ExcaliBeats",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4153,7 +4106,6 @@
     {
         "Name": "BarWave",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.BarWave",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4242,7 +4194,6 @@
     {
         "Name": "Wave",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Wave",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4325,7 +4276,6 @@
     {
         "Name": "Mesmerize",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Mesmerize",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4402,7 +4352,6 @@
     {
         "Name": "Aurora",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Aurora",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4415,7 +4364,6 @@
     {
         "Name": "Lightning",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Lightning",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4436,7 +4384,6 @@
     {
         "Name": "Bloom",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Bloom",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4455,7 +4402,6 @@
     {
         "Name": "WordHasher",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.WordHasher",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4538,7 +4484,6 @@
     {
         "Name": "SquareCorner",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.SquareCorner",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4611,7 +4556,6 @@
     {
         "Name": "NumberScatter",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.NumberScatter",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4634,7 +4578,6 @@
     {
         "Name": "BoxGrid",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.BoxGrid",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4695,7 +4638,6 @@
     {
         "Name": "ColorBleed",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.ColorBleed",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4792,7 +4734,6 @@
     {
         "Name": "MatrixBleed",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.MatrixBleed",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4889,7 +4830,6 @@
     {
         "Name": "Text",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Text",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4978,7 +4918,6 @@
     {
         "Name": "TextBox",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.TextBox",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5067,7 +5006,6 @@
     {
         "Name": "WordHasherWrite",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.WordHasherWrite",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5150,7 +5088,6 @@
     {
         "Name": "SirenTheme",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.SirenTheme",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5169,7 +5106,6 @@
     {
         "Name": "StarfieldWarp",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.StarfieldWarp",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5182,7 +5118,6 @@
     {
         "Name": "Speckles",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Speckles",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5195,7 +5130,6 @@
     {
         "Name": "LetterScatter",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.LetterScatter",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5218,7 +5152,6 @@
     {
         "Name": "MultiLines",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.MultiLines",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5312,7 +5245,6 @@
     {
         "Name": "LaserBeams",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.LaserBeams",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5406,7 +5338,6 @@
     {
         "Name": "TextWander",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.TextWander",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5495,7 +5426,6 @@
     {
         "Name": "Swivel",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.Swivel",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5584,7 +5514,6 @@
     {
         "Name": "DoorShift",
         "Desc": "Settings for this screensaver are available here.",
-        "Path": "Screensaver.DoorShift",
         "Keys": [
             {
                 "Name": "Activate true colors",

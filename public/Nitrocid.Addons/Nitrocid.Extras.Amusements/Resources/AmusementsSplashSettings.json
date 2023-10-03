@@ -2,7 +2,6 @@
     {
         "Name": "Quote",
         "Desc": "Settings for this splash screen are available here.",
-        "Path": "Splash.Quote",
         "Keys": [
             {
                 "Name": "Progress text location",

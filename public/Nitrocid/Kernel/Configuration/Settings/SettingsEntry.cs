@@ -25,15 +25,13 @@ namespace KS.Kernel.Configuration.Settings
     /// <summary>
     /// Settings entry class
     /// </summary>
-    [DebuggerDisplay("Name = {Name}, Path = {Path}, Keys = {Keys.Length}, Display = {DisplayAs}, Desc = {Desc}")]
+    [DebuggerDisplay("Name = {Name}, Keys = {Keys.Length}, Display = {DisplayAs}, Desc = {Desc}")]
     public class SettingsEntry
     {
         [JsonProperty(nameof(Name))]
         internal string name;
         [JsonProperty(nameof(Desc))]
         internal string desc;
-        [JsonProperty(nameof(Path))]
-        internal string path;
         [JsonProperty(nameof(DisplayAs))]
         internal string displayAs;
         [JsonProperty(nameof(Keys))]
@@ -52,13 +50,6 @@ namespace KS.Kernel.Configuration.Settings
         [JsonIgnore]
         public string Desc =>
             desc;
-
-        /// <summary>
-        /// Settings entry path
-        /// </summary>
-        [JsonIgnore]
-        public string Path =>
-            path;
 
         /// <summary>
         /// Settings entry display name
