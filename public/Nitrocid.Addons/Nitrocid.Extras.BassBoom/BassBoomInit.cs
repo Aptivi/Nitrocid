@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
@@ -71,18 +70,14 @@ namespace Nitrocid.Extras.BassBoom
 
             // Then, initialize configuration in a way that no mod can play with them
             var saversConfig = new BassBoomSaversConfig();
-            Config.baseConfigurations.Add(nameof(BassBoomSaversConfig), saversConfig);
-            string saversConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(BassBoomSaversConfig));
-            if (!Checking.FileExists(saversConfigPath))
-                Config.CreateConfig(saversConfig, saversConfigPath);
-            Config.ReadConfig(saversConfig, saversConfigPath);
+            ConfigTools.RegisterBaseSetting(saversConfig);
         }
 
         void IAddon.StopAddon()
         {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ScreensaverManager.Screensavers.Remove("lyrics");
-            Config.baseConfigurations.Remove(nameof(BassBoomSaversConfig));
+            ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
         }
 
         void IAddon.FinalizeAddon()

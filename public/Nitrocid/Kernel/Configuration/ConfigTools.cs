@@ -400,5 +400,59 @@ namespace KS.Kernel.Configuration
             };
         }
 
+        /// <summary>
+        /// Registers a base setting
+        /// </summary>
+        /// <param name="kernelConfig">Kernel configuration instance</param>
+        internal static void RegisterBaseSetting(BaseKernelConfig kernelConfig)
+        {
+            // Check to see if the kernel config is null
+            if (kernelConfig is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a base setting with no content."));
+
+            // Now, register!
+            string name = kernelConfig.GetType().Name;
+            if (!IsCustomSettingBuiltin(name))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} not registered. Registering...", name);
+                baseConfigurations.Add(name, kernelConfig);
+            }
+
+            // Now, verify that we have a valid kernel config.
+            var vars = CheckConfigVariables(kernelConfig);
+            if (vars.Values.Any((varFound) => !varFound))
+            {
+                var invalidKeys = vars
+                    .Where((kvp) => !kvp.Value)
+                    .Select((kvp) => kvp.Key)
+                    .ToArray();
+                baseConfigurations.Remove(name);
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a base setting with invalid content. The invalid keys are") + ":\n\n  - " + string.Join("\n  - ", invalidKeys));
+            }
+
+            // Make a configuration file
+            string path = GetPathToCustomSettingsFile(kernelConfig);
+            if (!Checking.FileExists(path))
+                CreateConfig(kernelConfig);
+            ReadConfig(kernelConfig, path);
+        }
+
+        /// <summary>
+        /// Unregisters a base setting
+        /// </summary>
+        internal static void UnregisterBaseSetting(string setting)
+        {
+            // Check to see if the kernel config is null
+            if (string.IsNullOrEmpty(setting))
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to unregister a base setting with no name."));
+
+            // Now, register!
+            if (IsCustomSettingBuiltin(setting))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} registered. Unregistering...", setting);
+                baseConfigurations.Remove(setting);
+            }
+        }
+
     }
 }

@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Splash;
@@ -56,11 +55,7 @@ namespace Nitrocid.SplashPacks
 
             // Then, initialize configuration in a way that no mod can play with them
             var splashesConfig = new ExtraSplashesConfig();
-            Config.baseConfigurations.Add(nameof(ExtraSplashesConfig), splashesConfig);
-            string splashesConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(ExtraSplashesConfig));
-            if (!Checking.FileExists(splashesConfigPath))
-                Config.CreateConfig(splashesConfig, splashesConfigPath);
-            Config.ReadConfig(splashesConfig, splashesConfigPath);
+            ConfigTools.RegisterBaseSetting(splashesConfig);
         }
 
         void IAddon.StopAddon()
@@ -69,7 +64,7 @@ namespace Nitrocid.SplashPacks
                 SplashManager.InstalledSplashes.Remove(splash);
 
             // Then, unload the configuration
-            Config.baseConfigurations.Remove(nameof(ExtraSplashesConfig));
+            ConfigTools.UnregisterBaseSetting(nameof(ExtraSplashesConfig));
         }
 
         void IAddon.FinalizeAddon()

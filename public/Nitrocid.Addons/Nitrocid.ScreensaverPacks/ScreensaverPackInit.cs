@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
@@ -140,11 +139,7 @@ namespace Nitrocid.ScreensaverPacks
 
             // Then, initialize configuration in a way that no mod can play with them
             var saversConfig = new ExtraSaversConfig();
-            Config.baseConfigurations.Add(nameof(ExtraSaversConfig), saversConfig);
-            string saversConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(ExtraSaversConfig));
-            if (!Checking.FileExists(saversConfigPath))
-                Config.CreateConfig(saversConfig, saversConfigPath);
-            Config.ReadConfig(saversConfig, saversConfigPath);
+            ConfigTools.RegisterBaseSetting(saversConfig);
         }
 
         void IAddon.StopAddon()
@@ -156,7 +151,7 @@ namespace Nitrocid.ScreensaverPacks
                 SplashManager.InstalledSplashes.Remove(splash);
 
             // Then, unload the configuration
-            Config.baseConfigurations.Remove(nameof(ExtraSaversConfig));
+            ConfigTools.UnregisterBaseSetting(nameof(ExtraSaversConfig));
         }
 
         void IAddon.FinalizeAddon()

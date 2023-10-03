@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
@@ -70,18 +69,14 @@ namespace Nitrocid.Extras.NameGen
 
             // Then, initialize configuration in a way that no mod can play with them
             var saversConfig = new NameGenSaversConfig();
-            Config.baseConfigurations.Add(nameof(NameGenSaversConfig), saversConfig);
-            string saversConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(NameGenSaversConfig));
-            if (!Checking.FileExists(saversConfigPath))
-                Config.CreateConfig(saversConfig, saversConfigPath);
-            Config.ReadConfig(saversConfig, saversConfigPath);
+            ConfigTools.RegisterBaseSetting(saversConfig);
         }
 
         void IAddon.StopAddon()
         {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ScreensaverManager.Screensavers.Remove("personlookup");
-            Config.baseConfigurations.Remove(nameof(NameGenSaversConfig));
+            ConfigTools.UnregisterBaseSetting(nameof(NameGenSaversConfig));
         }
 
         void IAddon.FinalizeAddon()

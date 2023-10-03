@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Misc.Screensaver;
@@ -191,19 +190,11 @@ namespace Nitrocid.Extras.Amusements
 
             // Initialize configuration in a way that no mod can play with them
             var saversConfig = new AmusementsSaversConfig();
-            Config.baseConfigurations.Add(nameof(AmusementsSaversConfig), saversConfig);
-            string saversConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(AmusementsSaversConfig));
-            if (!Checking.FileExists(saversConfigPath))
-                Config.CreateConfig(saversConfig, saversConfigPath);
-            Config.ReadConfig(saversConfig, saversConfigPath);
+            ConfigTools.RegisterBaseSetting(saversConfig);
 
             // Splashes...
             var splashesConfig = new AmusementsSplashesConfig();
-            Config.baseConfigurations.Add(nameof(AmusementsSplashesConfig), splashesConfig);
-            string splashesConfigPath = ConfigTools.GetPathToCustomSettingsFile(nameof(AmusementsSplashesConfig));
-            if (!Checking.FileExists(splashesConfigPath))
-                Config.CreateConfig(splashesConfig, splashesConfigPath);
-            Config.ReadConfig(splashesConfig, splashesConfigPath);
+            ConfigTools.RegisterBaseSetting(splashesConfig);
         }
 
         void IAddon.StopAddon()
@@ -214,8 +205,8 @@ namespace Nitrocid.Extras.Amusements
             ScreensaverManager.Screensavers.Remove("shipduet");
             ScreensaverManager.Screensavers.Remove("snaker");
             SplashManager.InstalledSplashes.Remove("Quote");
-            Config.baseConfigurations.Remove(nameof(AmusementsSaversConfig));
-            Config.baseConfigurations.Remove(nameof(AmusementsSplashesConfig));
+            ConfigTools.UnregisterBaseSetting(nameof(AmusementsSaversConfig));
+            ConfigTools.UnregisterBaseSetting(nameof(AmusementsSplashesConfig));
         }
     }
 }

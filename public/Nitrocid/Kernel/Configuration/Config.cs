@@ -31,8 +31,8 @@ using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration.Instances;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using System.Collections.Generic;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Kernel.Configuration
 {
@@ -403,6 +403,26 @@ namespace KS.Kernel.Configuration
                 CreateConfig(ConfigType.Screensaver, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
             }
 
+            // Validate config
+            try
+            {
+                var vars = ConfigTools.CheckConfigVariables();
+                if (vars.Values.Any((varFound) => !varFound))
+                {
+                    var invalidKeys = vars
+                        .Where((kvp) => !kvp.Value)
+                        .Select((kvp) => kvp.Key)
+                        .ToArray();
+                    throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Kernel configuration will not work properly. The invalid keys are") + ":\n\n  - " + string.Join("\n  - ", invalidKeys));
+                }
+            }
+            catch (KernelException cex)
+            {
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Validation failed!") + $" {cex.Message}", KernelColorType.Error);
+                DebugWriter.WriteDebug(DebugLevel.E, "Config validation error! {0}", cex.Message);
+                DebugWriter.WriteDebugStackTrace(cex);
+            }
+
             // Load and read config
             try
             {
@@ -410,12 +430,12 @@ namespace KS.Kernel.Configuration
             }
             catch (KernelException cex) when (cex.ExceptionType == KernelExceptionType.Config)
             {
-                TextWriterColor.Write(cex.Message, true, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Reading failed!") + $" {cex.Message}", KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", cex.Message);
                 DebugWriter.WriteDebugStackTrace(cex);
 
                 // Fix anyways, for compatibility...
-                TextWriterColor.Write(Translate.DoTranslation("Trying to fix configuration..."), true, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Trying to fix configuration..."), false, KernelColorType.Error);
                 RepairConfig();
             }
         }
