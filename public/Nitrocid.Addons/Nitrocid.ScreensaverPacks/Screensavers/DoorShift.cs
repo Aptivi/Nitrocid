@@ -214,6 +214,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             ConsoleWrapper.CursorVisible = false;
 
+            // Whether the door is closing or opening
+            bool isClosing = RandomDriver.RandomChance(30);
+
             // Select a color
             if (DoorShiftSettings.DoorShiftTrueColor)
             {
@@ -236,32 +239,65 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int MaxWindowHeight = ConsoleWrapper.WindowHeight - 1;
             int halfWidth = ConsoleWrapper.WindowWidth / 2;
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Max height {0}", MaxWindowHeight);
-            for (int column = 0; column <= halfWidth; column++)
+            if (isClosing)
             {
-                if (ConsoleResizeListener.WasResized(false))
-                    break;
-                for (int Row = 0; Row <= MaxWindowHeight; Row++)
+                for (int column = 0; column <= halfWidth; column++)
                 {
                     if (ConsoleResizeListener.WasResized(false))
                         break;
+                    for (int Row = 0; Row <= MaxWindowHeight; Row++)
+                    {
+                        if (ConsoleResizeListener.WasResized(false))
+                            break;
 
-                    // Check the positions
-                    int leftDoorPos = halfWidth - column;
-                    int rightDoorPos = halfWidth + column;
-                    if (leftDoorPos < 0)
-                        leftDoorPos = 0;
-                    if (rightDoorPos >= ConsoleWrapper.WindowWidth)
-                        rightDoorPos = ConsoleWrapper.WindowWidth - 1;
+                        // Check the positions
+                        int leftDoorPos = column;
+                        int rightDoorPos = ConsoleWrapper.WindowWidth - column - 1;
+                        if (leftDoorPos > halfWidth)
+                            leftDoorPos = halfWidth;
+                        if (rightDoorPos < halfWidth)
+                            rightDoorPos = halfWidth;
 
-                    // Do the actual writing
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Setting position to {0}", column - 1, Row);
-                    ConsoleWrapper.SetCursorPosition(leftDoorPos, Row);
-                    ConsoleWrapper.Write(" ");
-                    ConsoleWrapper.SetCursorPosition(rightDoorPos, Row);
-                    ConsoleWrapper.Write(" ");
-                    DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", ConsoleWrapper.WindowWidth - column + 1);
+                        // Do the actual writing
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Setting position to {0}", column - 1, Row);
+                        ConsoleWrapper.SetCursorPosition(leftDoorPos, Row);
+                        ConsoleWrapper.Write(" ");
+                        ConsoleWrapper.SetCursorPosition(rightDoorPos, Row);
+                        ConsoleWrapper.Write(" ");
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", ConsoleWrapper.WindowWidth - column + 1);
+                    }
+                    ThreadManager.SleepNoBlock(DoorShiftSettings.DoorShiftDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                 }
-                ThreadManager.SleepNoBlock(DoorShiftSettings.DoorShiftDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            }
+            else
+            {
+                for (int column = 0; column <= halfWidth; column++)
+                {
+                    if (ConsoleResizeListener.WasResized(false))
+                        break;
+                    for (int Row = 0; Row <= MaxWindowHeight; Row++)
+                    {
+                        if (ConsoleResizeListener.WasResized(false))
+                            break;
+
+                        // Check the positions
+                        int leftDoorPos = halfWidth - column;
+                        int rightDoorPos = halfWidth + column;
+                        if (leftDoorPos < 0)
+                            leftDoorPos = 0;
+                        if (rightDoorPos >= ConsoleWrapper.WindowWidth)
+                            rightDoorPos = ConsoleWrapper.WindowWidth - 1;
+
+                        // Do the actual writing
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Setting position to {0}", column - 1, Row);
+                        ConsoleWrapper.SetCursorPosition(leftDoorPos, Row);
+                        ConsoleWrapper.Write(" ");
+                        ConsoleWrapper.SetCursorPosition(rightDoorPos, Row);
+                        ConsoleWrapper.Write(" ");
+                        DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Written blanks {0} times", ConsoleWrapper.WindowWidth - column + 1);
+                    }
+                    ThreadManager.SleepNoBlock(DoorShiftSettings.DoorShiftDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                }
             }
 
             ConsoleResizeListener.WasResized();
