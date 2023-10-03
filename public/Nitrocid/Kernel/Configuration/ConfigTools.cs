@@ -34,6 +34,7 @@ using KS.Kernel.Configuration.Settings;
 using Newtonsoft.Json;
 using KS.Kernel.Configuration.Instances;
 using KS.Files;
+using KS.Files.Querying;
 
 namespace KS.Kernel.Configuration
 {
@@ -223,7 +224,10 @@ namespace KS.Kernel.Configuration
             }
 
             // Make a configuration file
-            CreateConfig(kernelConfig);
+            string path = GetPathToCustomSettingsFile(kernelConfig);
+            if (!Checking.FileExists(path))
+                CreateConfig(kernelConfig);
+            ReadConfig(kernelConfig, path);
         }
 
         /// <summary>
