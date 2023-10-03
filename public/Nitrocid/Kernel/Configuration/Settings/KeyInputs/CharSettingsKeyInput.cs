@@ -50,25 +50,22 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
 
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
         {
-            // We're dealing with boolean
-            DebugWriter.WriteDebug(DebugLevel.I, "Answer is numeric and key is of the Boolean type.");
-            var FinalBool = true;
+            // We're dealing with integers
+            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the String or Char (inferred from keytype {0}) type. Setting variable...", key.Type.ToString());
 
-            // Set boolean
-            switch (value)
+            // Check to see if written answer is empty
+            if (value is not string AnswerString)
+                return;
+
+            // Check to see if the user intended to clear the variable to make it consist of nothing
+            if (AnswerString.ToLower() == "/clear")
             {
-                case 0: // False
-                    DebugWriter.WriteDebug(DebugLevel.I, "Setting to False...");
-                    FinalBool = false;
-                    break;
-                case 1: // True
-                    DebugWriter.WriteDebug(DebugLevel.I, "Setting to True...");
-                    FinalBool = true;
-                    break;
+                DebugWriter.WriteDebug(DebugLevel.I, "User requested clear.");
+                AnswerString = "";
             }
 
-            // Now, set the value
-            SettingsApp.SetPropertyValue(key.Variable, FinalBool, configType);
+            // Set the value
+            SettingsApp.SetPropertyValue(key.Variable, AnswerString, configType);
         }
 
     }
