@@ -155,10 +155,9 @@ namespace KS.Misc.Splash.Splashes
             string text = Translate.DoTranslation("Welcome!").ToUpper();
             var figFont = FigletTools.GetFigletFont("banner3");
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
-            int consoleX = (ConsoleWrapper.WindowWidth / 2) - (ProgressReport.Length / 2);
             int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
             TextWriterWhereColor.WriteWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, col, Vars);
-            TextWriterWhereColor.WriteWhere(ProgressReport, consoleX, consoleY - 2, true, col, Vars);
+            CenteredTextColor.WriteCenteredOneLine(consoleY - 2, ProgressReport, Vars);
         }
 
         public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
