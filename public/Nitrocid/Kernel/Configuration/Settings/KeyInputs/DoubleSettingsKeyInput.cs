@@ -59,7 +59,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                 DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", key.Variable, number);
 
                 // Now, set the value
-                SettingsApp.SetPropertyValue(key.Variable, number, configType);
+                SettingsAppTools.SetPropertyValue(key.Variable, number, configType);
             }
             else
             {

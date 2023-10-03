@@ -225,7 +225,7 @@ namespace KS.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                HandleError(Translate.DoTranslation("Invalid section. Please go back."), ex);
+                SettingsAppTools.HandleError(Translate.DoTranslation("Invalid section. Please go back."), ex);
             }
         }
 
@@ -272,7 +272,7 @@ namespace KS.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                HandleError(Translate.DoTranslation("Invalid key. Please go back."), ex);
+                SettingsAppTools.HandleError(Translate.DoTranslation("Invalid key. Please go back."), ex);
             }
         }
 
@@ -330,54 +330,6 @@ namespace KS.Kernel.Configuration.Settings
             catch (Exception ex)
             {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", true, KernelColorType.Error);
-            }
-        }
-
-        internal static void SetPropertyValue(string KeyVar, object Value, BaseKernelConfig configType)
-        {
-            // Consult a comment in ConfigTools about "as dynamic" for more info.
-            var configTypeInstance = configType.GetType();
-            string configTypeName = configTypeInstance.Name;
-
-            if (ConfigTools.IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(KeyVar))
-                PropertyManager.SetPropertyValueInstance(configType as dynamic, KeyVar, Value);
-            else if (ConfigTools.IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(KeyVar, configTypeInstance))
-                PropertyManager.SetPropertyValueInstanceExplicit(configType, KeyVar, Value, configTypeInstance);
-        }
-
-        internal static object GetPropertyValue(string KeyVar, BaseKernelConfig configType)
-        {
-            var configTypeInstance = configType.GetType();
-            string configTypeName = configTypeInstance.Name;
-
-            if (ConfigTools.IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(KeyVar))
-                return PropertyManager.GetPropertyValueInstance(configType as dynamic, KeyVar);
-            else if (ConfigTools.IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(KeyVar, configTypeInstance))
-                return PropertyManager.GetPropertyValueInstanceExplicit(configType, KeyVar, configTypeInstance);
-            return null;
-        }
-
-        internal static void HandleError(string message, Exception ex = null)
-        {
-            if (ex is null)
-            {
-                ConsoleWrapper.Clear();
-                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section.");
-                string finalSection = Translate.DoTranslation("You're Lost!");
-                TextWriterColor.Write("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + message, true, KernelColorType.Error);
-                TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs."), true, KernelColorType.Error);
-                Input.DetectKeypress();
-            }
-            else
-            {
-                ConsoleWrapper.Clear();
-                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
-                string finalSection = Translate.DoTranslation("You're Lost!");
-                TextWriterColor.Write("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + message, true, KernelColorType.Error);
-                TextWriterColor.Write(Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:"), true, KernelColorType.Error);
-                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
-                TextWriterColor.Write(Translate.DoTranslation("If you don't understand the above message, turn on the kernel debugger, reproduce, and try to investigate the logs."), true, KernelColorType.Error);
-                Input.DetectKeypress();
             }
         }
 

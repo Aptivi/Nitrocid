@@ -57,7 +57,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             // key.Variable is not always KernelColors, which is a dictionary. This applies to standard settings. Everything else should
             // be either the Color type or a String type.
             if (PropertyManager.CheckProperty(key.Variable) &&
-                SettingsApp.GetPropertyValue(key.Variable, configType) is Dictionary<KernelColorType, Color> colors2)
+                SettingsAppTools.GetPropertyValue(key.Variable, configType) is Dictionary<KernelColorType, Color> colors2)
             {
                 var colorTypeOnDict = colors2.ElementAt(key.EnumerableIndex).Key;
                 colors2[colorTypeOnDict] = new Color(colorValue);
@@ -74,7 +74,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             }
 
             // Now, set the value
-            SettingsApp.SetPropertyValue(key.Variable, FinalColor, configType);
+            SettingsAppTools.SetPropertyValue(key.Variable, FinalColor, configType);
         }
 
     }

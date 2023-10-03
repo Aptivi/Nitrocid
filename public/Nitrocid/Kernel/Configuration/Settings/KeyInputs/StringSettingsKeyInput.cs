@@ -81,7 +81,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             }
 
             // Set the value
-            SettingsApp.SetPropertyValue(key.Variable, AnswerString, configType);
+            SettingsAppTools.SetPropertyValue(key.Variable, AnswerString, configType);
         }
 
     }

@@ -37,7 +37,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             // Already set by SetPresetInternal
             if (value is not string figletFont)
                 return;
-            SettingsApp.SetPropertyValue(key.Variable, figletFont, configType);
+            SettingsAppTools.SetPropertyValue(key.Variable, figletFont, configType);
             return;
         }
 

@@ -25,6 +25,7 @@ using KS.Files.Querying;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Reflection;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -159,6 +160,58 @@ namespace KS.Kernel.Configuration.Settings
                 }
             }
             return platformUnsupported;
+        }
+
+        internal static void SetPropertyValue(string KeyVar, object Value, BaseKernelConfig configType)
+        {
+            // Consult a comment in ConfigTools about "as dynamic" for more info.
+            var configTypeInstance = configType.GetType();
+            string configTypeName = configTypeInstance.Name;
+
+            if (ConfigTools.IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(KeyVar))
+                PropertyManager.SetPropertyValueInstance(configType as dynamic, KeyVar, Value);
+            else if (ConfigTools.IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(KeyVar, configTypeInstance))
+                PropertyManager.SetPropertyValueInstanceExplicit(configType, KeyVar, Value, configTypeInstance);
+        }
+
+        internal static object GetPropertyValue(string KeyVar, BaseKernelConfig configType)
+        {
+            var configTypeInstance = configType.GetType();
+            string configTypeName = configTypeInstance.Name;
+
+            if (ConfigTools.IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(KeyVar))
+                return PropertyManager.GetPropertyValueInstance(configType as dynamic, KeyVar);
+            else if (ConfigTools.IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(KeyVar, configTypeInstance))
+                return PropertyManager.GetPropertyValueInstanceExplicit(configType, KeyVar, configTypeInstance);
+            return null;
+        }
+
+        internal static void HandleError(string message, Exception ex = null)
+        {
+            if (ex is null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section.");
+                string finalSection = Translate.DoTranslation("You're Lost!");
+                InfoBoxColor.WriteInfoBox(
+                    $"  * {finalSection}\n\n" +
+                    $"{message}\n\n" +
+                    $"{Translate.DoTranslation("If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs.")}",
+                    KernelColorType.Error
+                );
+            }
+            else
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
+                string finalSection = Translate.DoTranslation("You're Lost!");
+                InfoBoxColor.WriteInfoBox(
+                    $"  * {finalSection}\n\n" +
+                    $"{message}\n\n" +
+                    $"{Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:")}\n" +
+                    $"  - {ex.Message}\n\n" +
+                    $"{Translate.DoTranslation("If you don't understand the above message, turn on the kernel debugger, reproduce, and try to investigate the logs.")}",
+                    KernelColorType.Error
+                );
+            }
         }
     }
 }

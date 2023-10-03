@@ -50,7 +50,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             }
 
             // Now, set the value
-            SettingsApp.SetPropertyValue(key.Variable, FinalBool, configType);
+            SettingsAppTools.SetPropertyValue(key.Variable, FinalBool, configType);
         }
 
     }

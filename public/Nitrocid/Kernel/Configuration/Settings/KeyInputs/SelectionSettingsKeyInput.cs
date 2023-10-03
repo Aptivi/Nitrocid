@@ -113,7 +113,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to item index {1}...", key.Variable, AnswerInt);
 
                     // Now, set the value
-                    SettingsApp.SetPropertyValue(key.Variable, selectionsArray.ToArray()[AnswerIndex], configType);
+                    SettingsAppTools.SetPropertyValue(key.Variable, selectionsArray.ToArray()[AnswerIndex], configType);
                 }
                 else if (!(AnswerInt > MaxKeyOptions))
                 {
@@ -124,7 +124,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                         FinalValue = Enum.Parse(SelectionEnumType, FinalValue.ToString());
 
                     // Now, set the value
-                    SettingsApp.SetPropertyValue(key.Variable, FinalValue, configType);
+                    SettingsAppTools.SetPropertyValue(key.Variable, FinalValue, configType);
                 }
                 else
                 {

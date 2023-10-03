@@ -103,7 +103,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             if (value is not IEnumerable<object>)
                 return;
             string JoinedString = string.Join(FinalDelimiter, value);
-            SettingsApp.SetPropertyValue(key.Variable, JoinedString, configType);
+            SettingsAppTools.SetPropertyValue(key.Variable, JoinedString, configType);
         }
 
     }
