@@ -60,6 +60,14 @@ namespace KS.Kernel.Configuration.Settings
         /// <param name="settingsType">Type of settings</param>
         public static void OpenMainPage(BaseKernelConfig settingsType)
         {
+            // Verify that we actually have the type
+            if (settingsType is null)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Settings type is not found."), true, KernelColorType.Error);
+                return;
+            }
+
+            // Now, the main loop
             PermissionsTools.Demand(PermissionTypes.ManipulateSettings);
             bool PromptFinished = false;
             SettingsEntry[] SettingsEntries = settingsType.SettingsEntries;

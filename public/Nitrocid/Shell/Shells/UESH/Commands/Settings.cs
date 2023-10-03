@@ -16,9 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Configuration.Settings;
+using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -70,8 +74,21 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (parameters.SwitchesList[0] == "-splash")
                     SettingsType = ConfigType.Splash;
             }
-            SettingsApp.OpenMainPage(SettingsType);
+            var typeFinal =
+                SwitchManager.ContainsSwitch(parameters.SwitchesList, "-type") ?
+                SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type") :
+                ConfigTools.TranslateBuiltinConfigType(SettingsType);
+            SettingsApp.OpenMainPage(typeFinal);
             return 0;
+        }
+
+        public override void HelpHelper()
+        {
+            TextWriterColor.Write(Translate.DoTranslation("You can use the type switch to open the following settings") + ": ", true, KernelColorType.Tip);
+            TextWriterColor.Write("- " + Translate.DoTranslation("Base settings") + ": ", true, KernelColorType.ListTitle);
+            ListWriterColor.WriteList(Config.baseConfigurations.Keys);
+            TextWriterColor.Write("- " + Translate.DoTranslation("Custom settings") + ": ", true, KernelColorType.ListTitle);
+            ListWriterColor.WriteList(Config.customConfigurations.Keys);
         }
 
     }
