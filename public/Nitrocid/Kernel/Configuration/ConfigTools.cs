@@ -35,6 +35,7 @@ using Newtonsoft.Json;
 using KS.Kernel.Configuration.Instances;
 using KS.Files;
 using KS.Files.Querying;
+using System.Linq;
 
 namespace KS.Kernel.Configuration
 {
@@ -155,46 +156,85 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static Dictionary<string, bool> CheckConfigVariables()
         {
+            var Results = new Dictionary<string, bool>();
             var settingsEntries = OpenSettingsResource(ConfigType.Kernel);
             var settingsSaverEntries = OpenSettingsResource(ConfigType.Screensaver);
-            var entries = new[] { settingsEntries, settingsSaverEntries };
+            var entries = new Dictionary<SettingsEntry[], BaseKernelConfig>()
+            {
+                { settingsEntries, MainConfig },
+                { settingsSaverEntries, SaverConfig },
+            };
+            foreach (var entry in entries)
+            {
+                var variables = CheckConfigVariables(entry.Key, entry.Value);
+                foreach (var variable in variables)
+                    Results.Add(variable.Key, variable.Value);
+            }
+            return Results;
+        }
+
+        /// <summary>
+        /// Checks all the config variables to see if they can be parsed
+        /// </summary>
+        public static Dictionary<string, bool> CheckConfigVariables(string configTypeName)
+        {
+            if (string.IsNullOrEmpty(configTypeName))
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no type specified."));
+            var config = GetKernelConfig(configTypeName);
+            return CheckConfigVariables(config);
+        }
+
+        /// <summary>
+        /// Checks all the config variables to see if they can be parsed
+        /// </summary>
+        public static Dictionary<string, bool> CheckConfigVariables(BaseKernelConfig entries)
+        {
+            if (entries is null)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no entries are specified."));
+            return CheckConfigVariables(entries.SettingsEntries, entries);
+        }
+
+        /// <summary>
+        /// Checks all the config variables to see if they can be parsed
+        /// </summary>
+        public static Dictionary<string, bool> CheckConfigVariables(SettingsEntry[] entries, BaseKernelConfig config)
+        {
+            if (entries is null || entries.Length == 0)
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no entries are specified."));
             var Results = new Dictionary<string, bool>();
 
             // Parse all the settings
-            foreach (var entryArray in entries)
+            foreach (var entry in entries)
             {
-                foreach (var entry in entryArray)
+                var keys = entry.Keys;
+                foreach (var key in keys)
                 {
-                    var keys = entry.Keys;
-                    foreach (var key in keys)
+                    string KeyName = key.Name;
+                    string KeyVariable = key.Variable;
+                    string KeyEnumeration = key.Enumeration;
+                    bool KeyEnumerationInternal = key.EnumerationInternal;
+                    string KeyEnumerationAssembly = key.EnumerationAssembly;
+                    bool KeyFound;
+
+                    // Check the variable
+                    DebugWriter.WriteDebug(DebugLevel.I, "Checking {0} for existence...", KeyVariable);
+                    KeyFound = PropertyManager.CheckProperty(KeyVariable, config.GetType());
+                    Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
+
+                    // Check the enumeration
+                    if (KeyEnumeration is not null)
                     {
-                        string KeyName = key.Name;
-                        string KeyVariable = key.Variable;
-                        string KeyEnumeration = key.Enumeration;
-                        bool KeyEnumerationInternal = key.EnumerationInternal;
-                        string KeyEnumerationAssembly = key.EnumerationAssembly;
-                        bool KeyFound;
-
-                        // Check the variable
-                        DebugWriter.WriteDebug(DebugLevel.I, "Checking {0} for existence...", KeyVariable);
-                        KeyFound = PropertyManager.CheckProperty(KeyVariable);
-                        Results.Add($"{KeyName}, {KeyVariable}", KeyFound);
-
-                        // Check the enumeration
-                        if (KeyEnumeration is not null)
+                        bool Result;
+                        if (KeyEnumerationInternal)
                         {
-                            bool Result;
-                            if (KeyEnumerationInternal)
-                            {
-                                // Apparently, we need to have a full assembly name for getting types.
-                                Result = Type.GetType("KS." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly().FullName) is not null;
-                            }
-                            else
-                            {
-                                Result = Type.GetType(KeyEnumeration + ", " + KeyEnumerationAssembly) is not null;
-                            }
-                            Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result);
+                            // Apparently, we need to have a full assembly name for getting types.
+                            Result = Type.GetType("KS." + KeyEnumeration + ", " + Assembly.GetExecutingAssembly().FullName) is not null;
                         }
+                        else
+                        {
+                            Result = Type.GetType(KeyEnumeration + ", " + KeyEnumerationAssembly) is not null;
+                        }
+                        Results.Add($"{KeyName}, {KeyVariable}, {KeyEnumeration}", Result);
                     }
                 }
             }
@@ -220,6 +260,18 @@ namespace KS.Kernel.Configuration
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} not registered. Registering...", name);
                 customConfigurations.Add(name, kernelConfig);
+            }
+
+            // Now, verify that we have a valid kernel config.
+            var vars = CheckConfigVariables(kernelConfig);
+            if (vars.Values.Any((varFound) => !varFound))
+            {
+                var invalidKeys = vars
+                    .Where((kvp) => !kvp.Value)
+                    .Select((kvp) => kvp.Key)
+                    .ToArray();
+                customConfigurations.Remove(name);
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a custom setting with invalid content. The invalid keys are") + ":\n\n  - " + string.Join("\n  - ", invalidKeys));
             }
 
             // Make a configuration file

@@ -55,7 +55,7 @@
     <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
     
     <!-- Increment NitrocidModAPIVersion every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersion>3.0.25.157</NitrocidModAPIVersion>
+    <NitrocidModAPIVersion>3.0.25.158</NitrocidModAPIVersion>
     <FileVersion>$(NitrocidModAPIVersion)</FileVersion>
   </PropertyGroup>
   <!-- KS General Information End -->
