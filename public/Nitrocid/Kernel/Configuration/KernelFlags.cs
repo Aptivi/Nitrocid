@@ -274,6 +274,11 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static bool DevNoticeConsented =>
             Config.MainConfig.DevNoticeConsented;
+        /// <summary>
+        /// Allow untrusted mods
+        /// </summary>
+        public static bool AllowUntrustedMods =>
+            Config.MainConfig.AllowUntrustedMods;
 
         // Private flags
         internal static bool NotifyConfigError;

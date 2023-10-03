@@ -35,6 +35,7 @@ using KS.Kernel.Events;
 using Newtonsoft.Json.Linq;
 using SemanVer.Instance;
 using KS.Modifications.Dependencies;
+using KS.Kernel.Configuration;
 
 namespace KS.Modifications
 {
@@ -72,8 +73,22 @@ namespace KS.Modifications
                 // Mod is a dynamic DLL
                 try
                 {
+                    // Load the mod assembly
+                    var modAsm = Assembly.LoadFrom(ModPath + modFile);
+
+                    // Check the public key
+                    var modAsmName = new AssemblyName(modAsm.FullName);
+                    var modAsmPublicKey = modAsmName.GetPublicKeyToken();
+                    if (modAsmPublicKey is null || modAsmPublicKey.Length == 0)
+                    {
+                        if (KernelFlags.AllowUntrustedMods)
+                            SplashReport.ReportProgressWarning(Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));
+                        else
+                            throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));
+                    }
+
                     // Check to see if the DLL is actually a mod
-                    var script = GetModInstance(Assembly.LoadFrom(ModPath + modFile)) ??
+                    var script = GetModInstance(modAsm) ??
                         throw new KernelException(KernelExceptionType.InvalidMod, Translate.DoTranslation("The modfile is invalid."));
 
                     // Finalize the mod

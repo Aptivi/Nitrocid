@@ -202,6 +202,10 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool DevNoticeConsented { get; set; }
         /// <summary>
+        /// Allow untrusted mods
+        /// </summary>
+        public bool AllowUntrustedMods { get; set; }
+        /// <summary>
         /// User Name Shell Color
         /// </summary>
         public string UserNameShellColor

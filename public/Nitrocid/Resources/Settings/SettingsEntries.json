@@ -179,6 +179,12 @@
                 "Type": "SBoolean",
                 "Variable": "DevNoticeConsented",
                 "Description": "If set to true, the kernel won't show you the development notice every time you boot to the kernel in development versions."
+            },
+            {
+                "Name": "Allow loading untrusted mods",
+                "Type": "SBoolean",
+                "Variable": "AllowUntrustedMods",
+                "Description": "If set to true, the kernel won't error out upon loading mods that don't have the signed public key."
             }
         ]
     },

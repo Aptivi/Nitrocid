@@ -31,6 +31,7 @@ using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Reflection;
@@ -109,6 +110,18 @@ namespace KS.Misc.Splash
                         // Now, actually parse that.
                         DebugWriter.WriteDebug(DebugLevel.I, "Parsing splash file {0}...", FilePath);
                         var SplashAssembly = Assembly.LoadFrom(FilePath);
+
+                        // Check the public key
+                        var modAsmName = new AssemblyName(SplashAssembly.FullName);
+                        var modAsmPublicKey = modAsmName.GetPublicKeyToken();
+                        if (modAsmPublicKey is null || modAsmPublicKey.Length == 0)
+                        {
+                            SplashReport.ReportProgressWarning(Translate.DoTranslation("The splash is not strongly signed. It may contain untrusted code."));
+                            if (!KernelFlags.AllowUntrustedMods)
+                                continue;
+                        }
+
+                        // Now, get the instance
                         var SplashInstance = GetSplashInstance(SplashAssembly);
                         if (SplashInstance is not null)
                         {
