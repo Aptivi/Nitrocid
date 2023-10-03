@@ -269,6 +269,10 @@ namespace KS.Kernel.Starting
             LanguageManager.SetLangDry(LanguageManager.CurrentLanguage);
             LanguageManager.currentUserLanguage = LanguageManager.Languages[LanguageManager.CurrentLanguage];
 
+            // Save all settings
+            Config.CreateConfig();
+            DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
+
             // Stop all mods
             ModManager.StopMods();
             DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
