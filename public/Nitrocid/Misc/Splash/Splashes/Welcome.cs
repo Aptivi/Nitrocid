@@ -141,30 +141,32 @@ namespace KS.Misc.Splash.Splashes
                 FigletWhereColor.WriteFigletWhere(text, consoleX, consoleY, true, figFont, col);
                 consoleY += figHeight * 2;
             }
-            consoleX = (ConsoleWrapper.WindowWidth / 2) - (KernelReleaseInfo.ConsoleTitle.Length / 2);
-            TextWriterWhereColor.WriteWhere(KernelReleaseInfo.ConsoleTitle, consoleX, consoleY + 2, true, col);
+            CenteredTextColor.WriteCenteredOneLine(consoleY + 2, KernelReleaseInfo.ConsoleTitle, col);
             Thread.Sleep(3000);
 
             // Clear the console
             ConsoleWrapper.Clear();
         }
 
-        public override void Report(int Progress, string ProgressReport, params object[] Vars)
+        public override void Report(int Progress, string ProgressReport, params object[] Vars) =>
+            ReportProgress(Progress, ProgressReport, KernelColorType.Stage, Vars);
+
+        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
+            ReportProgress(Progress, WarningReport, KernelColorType.Warning, Vars);
+
+        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
+            ReportProgress(Progress, ErrorReport, KernelColorType.Error, Vars);
+
+        private void ReportProgress(int Progress, string ProgressReport, KernelColorType colorType, params object[] Vars)
         {
-            Color col = KernelColorTools.GetColor(KernelColorType.Stage);
+            Color col = KernelColorTools.GetColor(colorType);
             string text = Translate.DoTranslation("Welcome!").ToUpper();
             var figFont = FigletTools.GetFigletFont("banner3");
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
             TextWriterWhereColor.WriteWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, col, Vars);
-            CenteredTextColor.WriteCenteredOneLine(consoleY - 2, ProgressReport, Vars);
+            CenteredTextColor.WriteCenteredOneLine(consoleY - 2, $"{Progress}% - {ProgressReport}", Vars);
         }
-
-        public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars) =>
-            Report(Progress, WarningReport, Vars);
-
-        public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars) =>
-            Report(Progress, ErrorReport, Vars);
 
     }
 }
