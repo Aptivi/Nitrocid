@@ -169,6 +169,64 @@ namespace KS.Misc.Reflection
         }
 
         /// <summary>
+        /// Sets the value of a property to the new value dynamically
+        /// </summary>
+        /// <param name="instance">Instance class to make changes on</param>
+        /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
+        /// <param name="VariableValue">New value</param>
+        /// <param name="VariableType">Property type</param>
+        public static void SetPropertyValueInstanceExplicit(object instance, string Variable, object VariableValue, Type VariableType)
+        {
+            // Get field for specified variable
+            PropertyInfo TargetProperty = default;
+            if (VariableType is not null)
+                TargetProperty = GetProperty(Variable, VariableType);
+
+            // Set the variable if found
+            if (TargetProperty is not null)
+            {
+                // Expressions are claimed that it's faster than Reflection, but let's see!
+                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
+                ExpressionSetPropertyValueInstanceExplicit(instance, TargetProperty, VariableValue);
+            }
+            else
+            {
+                // Variable not found on any of the "flag" modules.
+                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
+            }
+        }
+
+        private static void ExpressionSetPropertyValueInstanceExplicit(object instance, PropertyInfo propertyInfo, object value)
+        {
+            if (instance is null)
+                throw new ArgumentNullException(nameof(instance));
+            if (value is null)
+                throw new ArgumentNullException(nameof(value));
+
+            var type = instance.GetType();
+
+            var finalValue = Convert.ChangeType(value, propertyInfo.PropertyType);
+            string cachedName = $"{type.FullName} - {propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
+            if (cachedSetters.ContainsKey(cachedName))
+            {
+                var cachedExpression = cachedSetters[cachedName];
+                cachedExpression(finalValue);
+                return;
+            }
+
+            var instanceParam = Expression.Parameter(type);
+            var argumentParam = Expression.Parameter(typeof(object));
+
+            var convExpr = Expression.Convert(argumentParam, propertyInfo.PropertyType);
+            var callExpr = Expression.Call(instanceParam, propertyInfo.GetSetMethod(), convExpr);
+
+            var expression = Expression.Lambda(callExpr, instanceParam, argumentParam).Compile();
+
+            expression.DynamicInvoke(instance, finalValue);
+        }
+
+        /// <summary>
         /// Gets the value of a property dynamically 
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
@@ -302,6 +360,60 @@ namespace KS.Misc.Reflection
         }
 
         /// <summary>
+        /// Gets the value of a property dynamically 
+        /// </summary>
+        /// <param name="instance">Instance class to fetch value from</param>
+        /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
+        /// <param name="VariableType">Property type</param>
+        /// <returns>Value of a property</returns>
+        public static object GetPropertyValueInstanceExplicit(object instance, string Variable, Type VariableType)
+        {
+            // Get field for specified variable
+            PropertyInfo TargetProperty = default;
+            if (VariableType is not null)
+                TargetProperty = GetProperty(Variable, VariableType);
+
+            // Get the variable if found
+            if (TargetProperty is not null)
+            {
+                // The "obj" description says this: "The object whose field value will be returned."
+                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
+                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
+                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
+                return ExpressionGetPropertyValueInstanceExplicit(Convert.ChangeType(instance, VariableType), TargetProperty);
+            }
+            else
+            {
+                // Variable not found on any of the "flag" modules.
+                DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
+                throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
+            }
+        }
+
+        private static object ExpressionGetPropertyValueInstanceExplicit(object instance, PropertyInfo propertyInfo)
+        {
+            if (instance is null)
+                throw new ArgumentNullException(nameof(instance));
+
+            var type = instance.GetType();
+            string cachedName = $"{type.FullName} - {propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
+            if (cachedGetters.ContainsKey(cachedName))
+            {
+                var cachedExpression = cachedGetters[cachedName];
+                return cachedExpression();
+            }
+
+            var instanceParam = Expression.Parameter(type);
+
+            var callExpr = Expression.Call(instanceParam, propertyInfo.GetGetMethod());
+            var convExpr = Expression.Convert(callExpr, typeof(object));
+
+            var expression = Expression.Lambda(convExpr, instanceParam).Compile();
+
+            return expression.DynamicInvoke(instance);
+        }
+
+        /// <summary>
         /// Gets a property from variable name
         /// </summary>
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
@@ -374,6 +486,20 @@ namespace KS.Misc.Reflection
         {
             // Get field for specified variable
             var TargetProperty = GetProperty(Variable);
+
+            // Set the variable if found
+            return TargetProperty is not null;
+        }
+
+        /// <summary>
+        /// Checks the specified property if it exists
+        /// </summary>
+        /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
+        /// <param name="Type">Property type</param>
+        public static bool CheckProperty(string Variable, Type Type)
+        {
+            // Get field for specified variable
+            var TargetProperty = GetProperty(Variable, Type);
 
             // Set the variable if found
             return TargetProperty is not null;

@@ -336,14 +336,24 @@ namespace KS.Kernel.Configuration.Settings
         internal static void SetPropertyValue(string KeyVar, object Value, BaseKernelConfig configType)
         {
             // Consult a comment in ConfigTools about "as dynamic" for more info.
-            if (PropertyManager.CheckProperty(KeyVar))
+            var configTypeInstance = configType.GetType();
+            string configTypeName = configTypeInstance.Name;
+
+            if (ConfigTools.IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(KeyVar))
                 PropertyManager.SetPropertyValueInstance(configType as dynamic, KeyVar, Value);
+            else if (ConfigTools.IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(KeyVar, configTypeInstance))
+                PropertyManager.SetPropertyValueInstanceExplicit(configType, KeyVar, Value, configTypeInstance);
         }
 
         internal static object GetPropertyValue(string KeyVar, BaseKernelConfig configType)
         {
-            if (PropertyManager.CheckProperty(KeyVar))
+            var configTypeInstance = configType.GetType();
+            string configTypeName = configTypeInstance.Name;
+
+            if (ConfigTools.IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(KeyVar))
                 return PropertyManager.GetPropertyValueInstance(configType as dynamic, KeyVar);
+            else if (ConfigTools.IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(KeyVar, configTypeInstance))
+                return PropertyManager.GetPropertyValueInstanceExplicit(configType, KeyVar, configTypeInstance);
             return null;
         }
 

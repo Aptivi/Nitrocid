@@ -82,12 +82,16 @@ namespace KS.Kernel.Configuration
         {
             object CurrentValue = "Unknown";
             string Variable = Setting.Variable;
+            var configTypeInstance = configType.GetType();
+            string configTypeName = configTypeInstance.Name;
 
             // Print the option by determining how to get the current value. "as dynamic" will need to stay as we're passing the
             // configuration type instance to the generic version of the below PropertyManager function, because if we're passing
             // it as it is, we're passing the base class of it, not the one that we need.
-            if (PropertyManager.CheckProperty(Variable))
+            if (IsCustomSettingBuiltin(configTypeName) && PropertyManager.CheckProperty(Variable))
                 CurrentValue = PropertyManager.GetPropertyValueInstance(configType as dynamic, Variable);
+            else if (IsCustomSettingRegistered(configTypeName) && PropertyManager.CheckProperty(Variable, configTypeInstance))
+                CurrentValue = PropertyManager.GetPropertyValueInstanceExplicit(configType, Variable, configTypeInstance);
 
             // Get the plain sequence from the color
             if (CurrentValue is KeyValuePair<KernelColorType, Color> color)
