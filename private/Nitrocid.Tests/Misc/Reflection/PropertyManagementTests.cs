@@ -39,7 +39,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Test]
         [Description("Management")]
         public void TestCheckProperty() =>
-            PropertyManager.CheckProperty("PersonLookupDelay").ShouldBeTrue();
+            PropertyManager.CheckProperty(nameof(KernelSaverConfig.MatrixDelay)).ShouldBeTrue();
 
         /// <summary>
         /// Tests getting value
@@ -48,7 +48,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetPropertyValueInstance()
         {
-            string Value = Convert.ToString(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, "PersonLookupDelay"));
+            string Value = Convert.ToString(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixDelay)));
             Value.ShouldNotBeNullOrEmpty();
         }
 
@@ -59,9 +59,9 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestSetPropertyValueInstance()
         {
-            PropertyManager.SetPropertyValueInstance(Config.SaverConfig, "PersonLookupDelay", 100);
-            int Value = Convert.ToInt32(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, "PersonLookupDelay"));
-            Value.ShouldBe(100);
+            PropertyManager.SetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixDelay), 50);
+            int Value = Convert.ToInt32(PropertyManager.GetPropertyValueInstance(Config.SaverConfig, nameof(KernelSaverConfig.MatrixDelay)));
+            Value.ShouldBe(50);
         }
 
         /// <summary>
@@ -94,8 +94,8 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetConfigProperty()
         {
-            var PropertyInfo = PropertyManager.GetProperty("PersonLookupDelay");
-            PropertyInfo.Name.ShouldBe("PersonLookupDelay");
+            var PropertyInfo = PropertyManager.GetProperty(nameof(KernelSaverConfig.MatrixDelay));
+            PropertyInfo.Name.ShouldBe(nameof(KernelSaverConfig.MatrixDelay));
         }
 
         /// <summary>
@@ -118,9 +118,9 @@ namespace Nitrocid.Tests.Misc.Reflection
         [Description("Management")]
         public void TestGetPropertyGeneral()
         {
-            var Property = PropertyManager.GetPropertyGeneral("CheckUpdateStart");
+            var Property = PropertyManager.GetPropertyGeneral(nameof(KernelMainConfig.CheckUpdateStart));
             Property.ShouldNotBeNull();
-            Property.Name.ShouldBe("CheckUpdateStart");
+            Property.Name.ShouldBe(nameof(KernelMainConfig.CheckUpdateStart));
             Property.DeclaringType.ShouldBe(typeof(KernelFlags));
         }
 
