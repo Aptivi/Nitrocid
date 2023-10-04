@@ -43,7 +43,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
                                             "*  Press any key to terminate the current application.\n" +
                                             "*  Press CTRL+ALT+DEL again to restart your computer. You will\n" +
                                             "   lose any unsaved information in all applications.\n\n" +
-                                            "                      Press any key to continue ",
+                                            "                      Press any key to continue",
                                             errorLeft, headerStartTop + 2, new Color(ConsoleColors.White), new Color(ConsoleColors.DarkBlue_000087));
         }
     }

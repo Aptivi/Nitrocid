@@ -69,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
 
             // First, write the introduction
             TextWriterColor.WritePlain("A problem has been detected and Windows has been shut down to prevent damage\n" +
-                                       "to your computer.\n\n", true);
+                                       "to your computer.\n", true);
 
             // Then, get the message
             bool displayCodeName = RandomDriver.RandomRussianRoulette();
@@ -77,17 +77,17 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
                                      // We're not displaying message, but display code if Russian Roulette returned true.
                                      displayCodeName ? BugCheckCode.ToString() : "";
             if (!string.IsNullOrEmpty(bugCheckMessage))
-                TextWriterColor.WritePlain($"{bugCheckMessage}\n\n", true);
+                TextWriterColor.WritePlain($"{bugCheckMessage}\n", true);
 
             // If this is the first time...
             TextWriterColor.WritePlain("If this is the first time you've seen this Stop error screen,\n" +
                                        "restart your computer. If this screen appears again, follow\n" +
-                                       "these steps:\n\n", true);
+                                       "these steps:\n", true);
 
             // Display some steps as to how to update your software and hardware drivers through Windows Update
             TextWriterColor.WritePlain("Check to make sure any new hardware or software is properly installed.\n" +
                                        "If this is a new installation, ask your hardware or software manufacturer\n" +
-                                       "for any Windows updates you might need.\n\n", true);
+                                       "for any Windows updates you might need.\n", true);
 
             // Display an unhelpful step that only applies to 2001-era computers or older
             TextWriterColor.WritePlain("If problems continue, disable or remove any newly installed hardware\n" +
@@ -96,11 +96,11 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             // Safe mode...
             TextWriterColor.WritePlain("If you need to use Safe Mode to remove or disable components, restart\n" +
                                        "your computer, press F8 to select Advanced Startup Options, and then\n" +
-                                       "select Safe Mode.\n\n", true);
+                                       "select Safe Mode.\n", true);
 
             // Display technical information
             TextWriterColor.WritePlain("Technical information:\n\n" +
-                                      $"*** STOP: 0x{bugParams.WindowsBugCheckCode:X8} (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n\n", true);
+                                      $"*** STOP: 0x{bugParams.WindowsBugCheckCode:X8} (0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8}, 0x{RandomDriver.Random():X8})\n", true);
 
             // Display dumping message and stop here
             TextWriterColor.WritePlain("Collecting data for crash dump...\n" +
