@@ -3019,5 +3019,13 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [DoorShift] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int DoorShiftMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [GradientBloom] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int GradientBloomDelay { get; set; } = 50;
+        /// <summary>
+        /// [GradientBloom] Whether to use dark colors or not
+        /// </summary>
+        public bool GradientBloomDarkColors { get; set; }
     }
 }

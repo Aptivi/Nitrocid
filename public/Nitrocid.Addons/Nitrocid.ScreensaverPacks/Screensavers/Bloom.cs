@@ -116,7 +116,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 KernelColorTools.LoadBack(col);
 
                 // Sleep
-                ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
+                ThreadManager.SleepNoBlock(BloomSettings.BloomDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }
 
             // Generate new colors

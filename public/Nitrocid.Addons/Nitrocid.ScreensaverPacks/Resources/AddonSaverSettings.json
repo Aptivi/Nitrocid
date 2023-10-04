@@ -5597,5 +5597,23 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    {
+        "Name": "GradientBloom",
+        "Desc": "Settings for this screensaver are available here.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "GradientBloomDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Dark colors",
+                "Type": "SBoolean",
+                "Variable": "GradientBloomDarkColors",
+                "Description": "Whether to use the dark colors or light colors."
+            }
+        ]
     }
 ]

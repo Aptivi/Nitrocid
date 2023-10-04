@@ -62,6 +62,7 @@ namespace Nitrocid.ScreensaverPacks
             { "glittercolor", new GlitterColorDisplay() },
             { "glittermatrix", new GlitterMatrixDisplay() },
             { "gradient", new GradientDisplay() },
+            { "gradientbloom", new GradientBloomDisplay() },
             { "gradientrot", new GradientRotDisplay() },
             { "indeterminate", new IndeterminateDisplay() },
             { "ksx", new KSXDisplay() },
