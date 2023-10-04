@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Reflection;
 using KS.Files;
+using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 
@@ -74,7 +75,8 @@ namespace KS.Misc.Reflection
         {
             Assembly FinalAssembly = null;
             string DepAssemblyName = new AssemblyName(args.Name).Name;
-            DebugWriter.WriteDebug(DebugLevel.I, "Requested to load {0}.", args.Name);
+            string ReqAssemblyName = args.RequestingAssembly is not null ? args.RequestingAssembly.GetName().Name : "An unknown assembly";
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} has requested to load {1}.", ReqAssemblyName, args.Name);
 
             if (DepAssemblyName == "Kernel Simulator")
                 throw new KernelException(KernelExceptionType.OldModDetected);
@@ -85,6 +87,13 @@ namespace KS.Misc.Reflection
                 string DepAssemblyFilePath = Path.Combine(LookupPath, DepAssemblyName + ".dll");
                 try
                 {
+                    // Check to see if the dependency file exists
+                    if (!Checking.FileExists(DepAssemblyFilePath))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Assembly {0} doesn't exist...", DepAssemblyFilePath);
+                        continue;
+                    }
+
                     // Try loading
                     DebugWriter.WriteDebug(DebugLevel.I, "Loading from {0}...", DepAssemblyFilePath);
                     FinalAssembly = Assembly.LoadFrom(DepAssemblyFilePath);
