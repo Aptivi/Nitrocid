@@ -157,13 +157,9 @@ namespace KS.Kernel.Configuration
         public static Dictionary<string, bool> CheckConfigVariables()
         {
             var Results = new Dictionary<string, bool>();
-            var settingsEntries = OpenSettingsResource(ConfigType.Kernel);
-            var settingsSaverEntries = OpenSettingsResource(ConfigType.Screensaver);
-            var entries = new Dictionary<SettingsEntry[], BaseKernelConfig>()
-            {
-                { settingsEntries, MainConfig },
-                { settingsSaverEntries, SaverConfig },
-            };
+            var entries = new Dictionary<SettingsEntry[], BaseKernelConfig>();
+            foreach (var config in GetKernelConfigs())
+                entries.Add(config.SettingsEntries, config);
             foreach (var entry in entries)
             {
                 var variables = CheckConfigVariables(entry.Key, entry.Value);
@@ -369,35 +365,6 @@ namespace KS.Kernel.Configuration
 
             // Now, try to get the settings entry array.
             return JsonConvert.DeserializeObject<SettingsEntry[]>(entriesText);
-        }
-
-        /// <summary>
-        /// Open the settings resource
-        /// </summary>
-        /// <param name="SettingsType">The settings type</param>
-        public static SettingsEntry[] OpenSettingsResource(ConfigType SettingsType)
-        {
-            return SettingsType switch
-            {
-                ConfigType.Kernel =>        GetSettingsEntries(SettingsResources.SettingsEntries),
-                ConfigType.Screensaver =>   GetSettingsEntries(SettingsResources.ScreensaverSettingsEntries),
-                _ =>                        GetSettingsEntries(SettingsResources.SettingsEntries),
-            };
-        }
-
-        /// <summary>
-        /// Translates the names of <see cref="ConfigType"/> entries to their config class name equivalent
-        /// </summary>
-        /// <param name="SettingsType">The settings type</param>
-        /// <returns>Class name of a setting that represents it, like <see cref="KernelMainConfig"/></returns>
-        public static string TranslateBuiltinConfigType(ConfigType SettingsType)
-        {
-            return SettingsType switch
-            {
-                ConfigType.Kernel =>        nameof(KernelMainConfig),
-                ConfigType.Screensaver =>   nameof(KernelSaverConfig),
-                _ =>                        nameof(KernelMainConfig),
-            };
         }
 
         /// <summary>

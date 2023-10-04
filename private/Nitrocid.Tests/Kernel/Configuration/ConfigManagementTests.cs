@@ -31,10 +31,10 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// Tests checking the three settings instance variables
         /// </summary>
         [Test]
-        [TestCase(ConfigType.Kernel, nameof(KernelMainConfig))]
-        [TestCase(ConfigType.Screensaver, nameof(KernelSaverConfig))]
+        [TestCase(nameof(KernelMainConfig), nameof(KernelMainConfig))]
+        [TestCase(nameof(KernelSaverConfig), nameof(KernelSaverConfig))]
         [Description("Management")]
-        public void TestCheckSettingsInstances(ConfigType type, string expectedType)
+        public void TestCheckSettingsInstances(string type, string expectedType)
         {
             var instance = Config.GetKernelConfig(type);
             instance.ShouldNotBeNull();
@@ -45,50 +45,10 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// Tests checking settings resources (shallow)
         /// </summary>
         [Test]
-        [TestCase(ConfigType.Kernel)]
-        [TestCase(ConfigType.Screensaver)]
+        [TestCase(nameof(KernelMainConfig))]
+        [TestCase(nameof(KernelSaverConfig))]
         [Description("Management")]
-        public void TestCheckSettingsResourcesShallow(ConfigType type)
-        {
-            // Shallow
-            var res = ConfigTools.OpenSettingsResource(type);
-            res.ShouldNotBeNull();
-            res.ShouldNotBeEmpty();
-        }
-
-        /// <summary>
-        /// Tests checking settings resources (deep)
-        /// </summary>
-        [Test]
-        [TestCase(ConfigType.Kernel)]
-        [TestCase(ConfigType.Screensaver)]
-        [Description("Management")]
-        public void TestCheckSettingsResourcesDeep(ConfigType type)
-        {
-            // Shallow
-            var res = ConfigTools.OpenSettingsResource(type);
-            res.ShouldNotBeNull();
-            res.ShouldNotBeEmpty();
-
-            // Deep
-            foreach (var entry in res)
-            {
-                entry.ShouldNotBeNull();
-                entry.Keys.ShouldNotBeNull();
-                entry.Keys.ShouldNotBeEmpty();
-                foreach (var key in entry.Keys)
-                    key.ShouldNotBeNull();
-            }
-        }
-
-        /// <summary>
-        /// Tests checking settings resources (shallow)
-        /// </summary>
-        [Test]
-        [TestCase(ConfigType.Kernel)]
-        [TestCase(ConfigType.Screensaver)]
-        [Description("Management")]
-        public void TestCheckSettingsResourcesShallowGet(ConfigType type)
+        public void TestCheckSettingsResourcesShallowGet(string type)
         {
             // Shallow
             var config = Config.GetKernelConfig(type);
@@ -102,10 +62,10 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// Tests checking settings resources (deep)
         /// </summary>
         [Test]
-        [TestCase(ConfigType.Kernel)]
-        [TestCase(ConfigType.Screensaver)]
+        [TestCase(nameof(KernelMainConfig))]
+        [TestCase(nameof(KernelSaverConfig))]
         [Description("Management")]
-        public void TestCheckSettingsResourcesDeepGet(ConfigType type)
+        public void TestCheckSettingsResourcesDeepGet(string type)
         {
             // Shallow
             var config = Config.GetKernelConfig(type);
@@ -129,10 +89,10 @@ namespace Nitrocid.Tests.Kernel.Configuration
         /// Tests checking settings resources (deep with evaluation)
         /// </summary>
         [Test]
-        [TestCase(ConfigType.Kernel)]
-        [TestCase(ConfigType.Screensaver)]
+        [TestCase(nameof(KernelMainConfig))]
+        [TestCase(nameof(KernelSaverConfig))]
         [Description("Management")]
-        public void TestCheckSettingsResourcesDeepEvalGet(ConfigType type)
+        public void TestCheckSettingsResourcesDeepEvalGet(string type)
         {
             // Shallow
             var config = Config.GetKernelConfig(type);
@@ -156,16 +116,6 @@ namespace Nitrocid.Tests.Kernel.Configuration
                 }
             }
         }
-
-        /// <summary>
-        /// Tests translating the built-in config types
-        /// </summary>
-        [Test]
-        [TestCase(ConfigType.Kernel, nameof(KernelMainConfig))]
-        [TestCase(ConfigType.Screensaver, nameof(KernelSaverConfig))]
-        [Description("Management")]
-        public void TestTranslateBuiltinConfigType(ConfigType type, string expectedType) =>
-            ConfigTools.TranslateBuiltinConfigType(type).ShouldBe(expectedType);
 
         /// <summary>
         /// Tests checking the settings variables

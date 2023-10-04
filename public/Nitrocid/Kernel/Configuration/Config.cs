@@ -63,14 +63,6 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Gets the kernel configuration
         /// </summary>
-        /// <param name="type">Built-in config type to query</param>
-        /// <returns>An instance of <see cref="BaseKernelConfig"/> if found. Otherwise, null.</returns>
-        public static BaseKernelConfig GetKernelConfig(ConfigType type) =>
-            GetKernelConfig(ConfigTools.TranslateBuiltinConfigType(type));
-
-        /// <summary>
-        /// Gets the kernel configuration
-        /// </summary>
         /// <param name="name">Custom config type name to query</param>
         /// <returns>An instance of <see cref="BaseKernelConfig"/> if found. Otherwise, null.</returns>
         public static BaseKernelConfig GetKernelConfig(string name)
@@ -116,15 +108,6 @@ namespace KS.Kernel.Configuration
             var configs = GetKernelConfigs();
             foreach (var config in configs)
                 CreateConfig(config, ConfigFolder + "/" + config.GetType().Name + ".json");
-        }
-
-        /// <summary>
-        /// Creates the kernel configuration file with custom path and custom type
-        /// </summary>
-        public static void CreateConfig(ConfigType type, string ConfigPath)
-        {
-            var config = GetKernelConfig(ConfigTools.TranslateBuiltinConfigType(type));
-            CreateConfig(config, ConfigPath);
         }
 
         /// <summary>
@@ -195,26 +178,6 @@ namespace KS.Kernel.Configuration
         /// Creates the kernel configuration file with custom folder
         /// </summary>
         /// <returns>True if successful; False if unsuccessful.</returns>
-        public static bool TryCreateConfig(ConfigType type, string ConfigPath)
-        {
-            try
-            {
-                CreateConfig(type, ConfigPath);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                EventsManager.FireEvent(EventType.ConfigSaveError, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Config saving error: {0}", ex.Message);
-                DebugWriter.WriteDebugStackTrace(ex);
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// Creates the kernel configuration file with custom folder
-        /// </summary>
-        /// <returns>True if successful; False if unsuccessful.</returns>
         public static bool TryCreateConfig(BaseKernelConfig type)
         {
             try
@@ -259,24 +222,6 @@ namespace KS.Kernel.Configuration
             var configs = GetKernelConfigs();
             foreach (var config in configs)
                 ReadConfig(config);
-        }
-
-        /// <summary>
-        /// Configures the kernel according to the custom kernel configuration type
-        /// </summary>
-        public static void ReadConfig(ConfigType type)
-        {
-            var config = GetKernelConfig(ConfigTools.TranslateBuiltinConfigType(type));
-            ReadConfig(config, ConfigTools.GetPathToCustomSettingsFile(config));
-        }
-
-        /// <summary>
-        /// Configures the kernel according to the custom kernel configuration type and file
-        /// </summary>
-        public static void ReadConfig(ConfigType type, string ConfigPath)
-        {
-            var config = GetKernelConfig(ConfigTools.TranslateBuiltinConfigType(type));
-            ReadConfig(config, ConfigPath);
         }
 
         /// <summary>
@@ -343,50 +288,6 @@ namespace KS.Kernel.Configuration
         }
 
         /// <summary>
-        /// Configures the kernel according to the custom kernel configuration file
-        /// </summary>
-        /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryReadConfig(ConfigType type)
-        {
-            try
-            {
-                ReadConfig(type);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                EventsManager.FireEvent(EventType.ConfigReadError, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
-                DebugWriter.WriteDebugStackTrace(ex);
-                if (!SplashReport.KernelBooted)
-                    NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationPriority.Medium, NotificationType.Normal));
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
-            }
-        }
-
-        /// <summary>
-        /// Configures the kernel according to the custom kernel configuration file
-        /// </summary>
-        /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TryReadConfig(ConfigType type, string ConfigPath)
-        {
-            try
-            {
-                ReadConfig(type, ConfigPath);
-                return true;
-            }
-            catch (Exception ex)
-            {
-                EventsManager.FireEvent(EventType.ConfigReadError, ex);
-                DebugWriter.WriteDebug(DebugLevel.E, "Error trying to read config: {0}", ex.Message);
-                DebugWriter.WriteDebugStackTrace(ex);
-                if (!SplashReport.KernelBooted)
-                    NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error loading settings"), Translate.DoTranslation("There is an error while loading settings. You may need to check the settings file."), NotificationPriority.Medium, NotificationType.Normal));
-                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("There is an error trying to read configuration: {0}."), ex, ex.Message);
-            }
-        }
-
-        /// <summary>
         /// Main loader for configuration file
         /// </summary>
         public static void InitializeConfig()
@@ -395,12 +296,12 @@ namespace KS.Kernel.Configuration
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.Configuration)))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "No config file found. Creating...");
-                CreateConfig(ConfigType.Kernel, Paths.GetKernelPath(KernelPathType.Configuration));
+                CreateConfig(MainConfig);
             }
             if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.SaverConfiguration)))
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "No saver config file found. Creating...");
-                CreateConfig(ConfigType.Screensaver, Paths.GetKernelPath(KernelPathType.SaverConfiguration));
+                CreateConfig(SaverConfig);
             }
 
             // Validate config

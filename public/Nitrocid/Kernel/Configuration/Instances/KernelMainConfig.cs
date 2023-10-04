@@ -67,7 +67,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.OpenSettingsResource(ConfigType.Kernel);
+            ConfigTools.GetSettingsEntries(Resources.SettingsResources.SettingsEntries);
 
         /// <summary>
         /// Each startup, it will check for updates.

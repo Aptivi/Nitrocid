@@ -29,7 +29,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <inheritdoc/>
         [JsonIgnore]
         public override SettingsEntry[] SettingsEntries =>
-            ConfigTools.OpenSettingsResource(ConfigType.Screensaver);
+            ConfigTools.GetSettingsEntries(Resources.SettingsResources.ScreensaverSettingsEntries);
 
         /// <summary>
         /// [Matrix] How many milliseconds to wait before making the next write?

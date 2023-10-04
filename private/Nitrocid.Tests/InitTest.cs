@@ -25,6 +25,7 @@ using NUnit.Framework;
 using KS.Files.Operations;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
+using KS.Kernel.Configuration.Instances;
 
 namespace Nitrocid.Tests
 {
@@ -54,7 +55,7 @@ namespace Nitrocid.Tests
                     File.Move(Paths.GetKernelPath(KernelPathType.Configuration), Paths.GetKernelPath(KernelPathType.Configuration) + ".old");
                 Config.CreateConfig();
             }
-            Config.ReadConfig(ConfigType.Kernel, Paths.GetKernelPath(KernelPathType.Configuration));
+            Config.ReadConfig(Config.MainConfig, Paths.GetKernelPath(KernelPathType.Configuration));
 
             // NUnit sets current directory to a wrong directory, so set it to the test context directory
             string TestAssemblyDir = TestContext.CurrentContext.TestDirectory;

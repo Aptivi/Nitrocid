@@ -42,13 +42,6 @@ namespace KS.Kernel.Configuration.Settings
         /// <summary>
         /// Opens the main page for settings, listing all the sections that are configurable
         /// </summary>
-        /// <param name="SettingsType">Settings type to use for listing settings sections</param>
-        public static void OpenMainPage(ConfigType SettingsType) =>
-            OpenMainPage(ConfigTools.TranslateBuiltinConfigType(SettingsType));
-
-        /// <summary>
-        /// Opens the main page for settings, listing all the sections that are configurable
-        /// </summary>
         /// <param name="settingsType">Type of settings</param>
         public static void OpenMainPage(string settingsType) =>
             OpenMainPage(Config.GetKernelConfig(settingsType));
