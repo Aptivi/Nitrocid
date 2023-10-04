@@ -1478,37 +1478,37 @@
                 "Name": "Show the commands count on help",
                 "Type": "SBoolean",
                 "Variable": "ShowCommandsCount",
-                "Description": "Shows the commands count in the command list, controlled by the three count show switches for different kinds of commands."
+                "Description": "Shows the commands count in the command list, controlled by the count show switches for different kinds of commands."
             },
             {
                 "Name": "Show the shell commands count on help",
                 "Type": "SBoolean",
                 "Variable": "ShowShellCommandsCount",
-                "Description": "Show the shell commands count on help"
+                "Description": "Show the count of shell commands when listing them in the help command"
             },
             {
                 "Name": "Show the mod commands count on help",
                 "Type": "SBoolean",
                 "Variable": "ShowModCommandsCount",
-                "Description": "Show the mod commands count on help"
+                "Description": "Show the count of kernel modification commands when listing them in the help command"
             },
             {
                 "Name": "Show the aliases count on help",
                 "Type": "SBoolean",
                 "Variable": "ShowShellAliasesCount",
-                "Description": "Show the aliases count on help"
+                "Description": "Show the count of aliased commands when listing them in the help command"
             },
             {
                 "Name": "Show the unified commands count on help",
                 "Type": "SBoolean",
                 "Variable": "ShowUnifiedCommandsCount",
-                "Description": "Show the aliases count on help"
+                "Description": "Show the count of unified shell commands when listing them in the help command"
             },
             {
                 "Name": "Show the addon commands count on help",
                 "Type": "SBoolean",
                 "Variable": "ShowAddonCommandsCount",
-                "Description": "Show the aliases count on help"
+                "Description": "Show the count of kernel addon commands when listing them in the help command"
             },
             {
                 "Name": "Password mask character",
