@@ -32,7 +32,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
         {
             // Check to see if the translations directory exists
             if (!Directory.Exists(pathToTranslations))
-                throw new Exception( /* Localizable */ "Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
+                throw new Exception("Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
 
             // Determine several paths
             pathToTranslations = string.IsNullOrEmpty(pathToTranslations) ? Path.GetFullPath("Translations") : pathToTranslations;
@@ -42,9 +42,9 @@ namespace Nitrocid.LocaleGen.Core.Serializer
 
             // Check to see if the required files exist
             if (!File.Exists(metadataFile))
-                throw new Exception( /* Localizable */ "Metadata file doesn't exist.");
+                throw new Exception("Metadata file doesn't exist.");
             if (!File.Exists(englishFile))
-                throw new Exception( /* Localizable */ "English translations file doesn't exist.");
+                throw new Exception("English translations file doesn't exist.");
             if (!Directory.Exists(outputFolder))
                 Directory.CreateDirectory(outputFolder);
 
@@ -97,7 +97,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
         {
             // Check to see if the translations directory exists
             if (!Directory.Exists(pathToTranslations))
-                throw new Exception( /* Localizable */ "Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
+                throw new Exception("Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
 
             // Determine several paths
             pathToTranslations = string.IsNullOrEmpty(pathToTranslations) ? Path.GetFullPath("Translations") : pathToTranslations;
@@ -122,7 +122,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
         {
             // Check to see if the translations directory exists
             if (!Directory.Exists(pathToTranslations))
-                throw new Exception( /* Localizable */ "Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
+                throw new Exception("Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
 
             // Get all the language files
             bool custom = pathToTranslations == Path.GetFullPath("Translations");
