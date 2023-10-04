@@ -375,6 +375,7 @@ namespace KS.Shell.ShellBase.Shells
             }
 
             // Check for a type of command
+            CancellationHandlers.canCancel = true;
             TermReaderTools.SetHistory(histories["General"]);
             var SplitCommands = FullCommand.Split(new[] { " ; " }, StringSplitOptions.RemoveEmptyEntries);
             var Commands = CommandManager.GetCommands(ShellType);
@@ -483,7 +484,6 @@ namespace KS.Shell.ShellBase.Shells
                                 else
                                 {
                                     var ShellInstance = ShellStart.ShellStack[^1];
-                                    CancellationHandlers.canCancel = true;
                                     DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
                                     var Params = new CommandExecutorParameters(Command, ShellType, ShellInstance);
                                     CommandExecutor.StartCommandThread(Params);
@@ -503,7 +503,6 @@ namespace KS.Shell.ShellBase.Shells
                                     PermissionsTools.Demand(PermissionTypes.ExecuteProcesses);
                                     if (pathValid)
                                     {
-                                        CancellationHandlers.canCancel = true;
                                         var targetCommand = Command.Replace(TargetFileName, "");
                                         targetCommand = targetCommand.TrimStart('\0', ' ');
                                         DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
@@ -529,7 +528,6 @@ namespace KS.Shell.ShellBase.Shells
                             {
                                 try
                                 {
-                                    CancellationHandlers.canCancel = true;
                                     PermissionsTools.Demand(PermissionTypes.ExecuteScripts);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded because it's a UESH script.", commandName);
                                     UESHParse.Execute(TargetFile, arguments);

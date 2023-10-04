@@ -138,6 +138,9 @@ namespace KS.ConsoleBase.Inputs
         {
             TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
             string Output = TermReader.Read(InputText, DefaultValue, finalSettings, false, OneLineWrap, true);
+
+            // For some reason, Terminaux tends to forget to restore the below property to the state before the read.
+            Console.TreatControlCAsInput = false;
             return Output;
         }
 
@@ -233,6 +236,9 @@ namespace KS.ConsoleBase.Inputs
             TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
             finalSettings.PasswordMaskChar = MaskChar;
             string pass = TermReader.Read("", "", settings, true, false, true);
+
+            // For some reason, Terminaux tends to forget to restore the below property to the state before the read.
+            Console.TreatControlCAsInput = false;
             return pass;
         }
 
