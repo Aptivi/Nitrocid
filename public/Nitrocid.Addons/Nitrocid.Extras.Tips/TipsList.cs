@@ -25,6 +25,7 @@ namespace Nitrocid.Extras.Tips
             /* Localizable */ "that you can execute process commands in two ways: entering the executable file name directly, and using the 'exec' command?",
             /* Localizable */ "that you can lock your screen using the 'lockscreen' command?",
             /* Localizable */ "that you can build your own kernel modifications using C# and Visual Basic?",
+            /* Localizable */ "that you can use multiple commands using the semicolon between commands?",
         };
     }
 }

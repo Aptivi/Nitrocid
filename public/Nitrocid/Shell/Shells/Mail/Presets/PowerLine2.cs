@@ -18,13 +18,13 @@
 
 using System.Text;
 using KS.Network.Mail;
-using KS.Shell.Shells.Mail;
 using KS.ConsoleBase.Colors;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
+using KS.Shell.Prompts;
 
-namespace KS.Shell.Prompts.Presets.Mail
+namespace KS.Shell.Shells.Mail.Presets
 {
     /// <summary>
     /// PowerLine 2 preset

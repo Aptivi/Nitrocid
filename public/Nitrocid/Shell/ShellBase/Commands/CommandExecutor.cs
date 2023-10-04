@@ -36,6 +36,7 @@ using KS.Kernel.Configuration;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Console.Bases;
+using KS.Shell.ShellBase.Help;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -238,7 +239,7 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Arguments not satisfied.");
                     TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
-                    HelpSystem.ShowHelp(Command, ShellType);
+                    HelpPrint.ShowHelp(Command, ShellType);
                     ShellInstance.LastErrorCode = -6;
                 }
             }

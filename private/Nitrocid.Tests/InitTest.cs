@@ -25,7 +25,6 @@ using NUnit.Framework;
 using KS.Files.Operations;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
-using KS.Kernel.Configuration.Instances;
 
 namespace Nitrocid.Tests
 {

@@ -28,7 +28,6 @@ using KS.Kernel.Events;
 using static KS.Kernel.Configuration.Config;
 using KS.ConsoleBase.Colors;
 using Terminaux.Colors;
-using KS.Resources;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Configuration.Settings;
 using Newtonsoft.Json;

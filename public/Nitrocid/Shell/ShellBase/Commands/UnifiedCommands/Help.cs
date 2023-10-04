@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Shell.ShellBase.Help;
 using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.ShellBase.Commands.UnifiedCommands
@@ -45,9 +46,9 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
             
             // Now, show the help
             if (string.IsNullOrWhiteSpace(parameters.ArgumentsText))
-                HelpSystem.ShowHelp(showGeneral, showMod, showAlias, showUnified, showAddon);
+                HelpPrint.ShowHelp(showGeneral, showMod, showAlias, showUnified, showAddon);
             else
-                HelpSystem.ShowHelp(parameters.ArgumentsList[0]);
+                HelpPrint.ShowHelp(parameters.ArgumentsList[0]);
             return 0;
         }
 

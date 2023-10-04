@@ -19,9 +19,9 @@
 using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.Network.Mail;
-using KS.Shell.Shells.Mail;
+using KS.Shell.Prompts;
 
-namespace KS.Shell.Prompts.Presets.Mail
+namespace KS.Shell.Shells.Mail.Presets
 {
     /// <summary>
     /// Default preset

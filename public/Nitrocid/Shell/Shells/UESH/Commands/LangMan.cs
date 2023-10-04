@@ -25,6 +25,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Help;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -129,7 +130,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     default:
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
-                            HelpSystem.ShowHelp("langman");
+                            HelpPrint.ShowHelp("langman");
                             return 10000 + (int)KernelExceptionType.LanguageManagement;
                         }
                 }
