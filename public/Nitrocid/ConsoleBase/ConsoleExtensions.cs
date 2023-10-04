@@ -144,6 +144,8 @@ namespace KS.ConsoleBase
                                 // We're at the end of buffer! Decrement by one and bail.
                                 TopSeekPosition -= 1;
                                 LeftSeekPosition = texts[^1].Length;
+                                if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
+                                    LeftSeekPosition = ConsoleWrapper.WindowWidth - 1;
                                 break;
                             }
                         }
