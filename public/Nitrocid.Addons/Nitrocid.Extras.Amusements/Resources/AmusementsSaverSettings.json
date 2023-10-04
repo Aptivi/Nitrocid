@@ -1,7 +1,7 @@
 [
     {
         "Name": "Snaker",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "A snake game.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -89,7 +89,7 @@
     },
     {
         "Name": "Quote",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you nice famous quotes.",
         "Keys": [
             {
                 "Name": "Activate true colors",

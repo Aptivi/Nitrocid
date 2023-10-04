@@ -1,7 +1,7 @@
 [
     {
         "Name": "Matrix",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "The falling binary number in your screen.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",

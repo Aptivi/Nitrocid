@@ -1,7 +1,7 @@
 [
     {
         "Name": "ColorMix",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Mixing colors and printing them to the console.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -88,7 +88,7 @@
     },
     {
         "Name": "Disco",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "This is the disco light, one of the very first screensavers.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -188,7 +188,7 @@
     },
     {
         "Name": "GlitterColor",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Color glitters across the screen.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -270,7 +270,7 @@
     },
     {
         "Name": "Lines",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "A line that wanders around the console vertically.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -363,7 +363,7 @@
     },
     {
         "Name": "Dissolve",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Dissolves the random colors.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -444,7 +444,7 @@
     },
     {
         "Name": "BouncingBlock",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a colorful block that bounces across the console.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -536,7 +536,7 @@
     },
     {
         "Name": "ProgressClock",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you three progress bars that represent the time.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1004,7 +1004,7 @@
     },
     {
         "Name": "Lighter",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Lighting blocks.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1097,7 +1097,7 @@
     },
     {
         "Name": "Wipe",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Wipes the screen with a color.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1190,7 +1190,7 @@
     },
     {
         "Name": "SimpleMatrix",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simple matrix.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1202,7 +1202,7 @@
     },
     {
         "Name": "GlitterMatrix",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Matrix numbers that spread randomly across the screen.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1224,7 +1224,7 @@
     },
     {
         "Name": "BouncingText",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a text that bounces around the console.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1322,7 +1322,7 @@
     },
     {
         "Name": "Fader",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Fading text in and out.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1405,7 +1405,7 @@
     },
     {
         "Name": "FaderBack",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Fading background in and out.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1477,7 +1477,7 @@
     },
     {
         "Name": "BeatFader",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Fading text in and out in beats.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1576,7 +1576,7 @@
     },
     {
         "Name": "Typo",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates a person writing text with typos.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1633,7 +1633,7 @@
     },
     {
         "Name": "Marquee",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a scrolling text from the right to the left.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1739,7 +1739,7 @@
     },
     {
         "Name": "Linotypo",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates a person writing text for a newspaper in the linotype keyboard in the old times.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1829,7 +1829,7 @@
     },
     {
         "Name": "Typewriter",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates a person writing text perfectly.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1877,7 +1877,7 @@
     },
     {
         "Name": "FlashColor",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Flashing colors in your screen.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -1964,7 +1964,7 @@
     },
     {
         "Name": "SpotWrite",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates a spotlight that seeks across your text.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -1994,7 +1994,7 @@
     },
     {
         "Name": "Ramp",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Fills the ramp with gradient colors.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2240,7 +2240,7 @@
     },
     {
         "Name": "StackBox",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Stacks the boxes across the screen.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2328,7 +2328,7 @@
     },
     {
         "Name": "BarRot",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates a bar that gets rotten with another background color, making a gradient.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2542,7 +2542,7 @@
     },
     {
         "Name": "Fireworks",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you fireworks that get launched and blow up.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2632,7 +2632,7 @@
     },
     {
         "Name": "Figlet",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a colored figlet text.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2726,7 +2726,7 @@
     },
     {
         "Name": "FlashText",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Show you a colored flashing text.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2819,7 +2819,7 @@
     },
     {
         "Name": "Noise",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates a TV static noise.",
         "Keys": [
             {
                 "Name": "New Screen Delay in Milliseconds",
@@ -2839,7 +2839,7 @@
     },
     {
         "Name": "DateAndTime",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simple date and time in the middle of the screen.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -2921,7 +2921,7 @@
     },
     {
         "Name": "Glitch",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates a glitch on your screen.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -2941,7 +2941,7 @@
     },
     {
         "Name": "FallingLine",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a falling line that goes down and fades out.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -3029,7 +3029,7 @@
     },
     {
         "Name": "Indeterminate",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you an indeterminate progress bar.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -3205,7 +3205,7 @@
     },
     {
         "Name": "Pulse",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a pulsing background.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3271,7 +3271,7 @@
     },
     {
         "Name": "BeatPulse",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a pulsing background in beats.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -3370,7 +3370,7 @@
     },
     {
         "Name": "EdgePulse",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a pulsing edge.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3436,7 +3436,7 @@
     },
     {
         "Name": "BeatEdgePulse",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a pulsing edge in beats.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -3535,7 +3535,7 @@
     },
     {
         "Name": "GradientRot",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a screen filled with color that slowly rots itself to another color, creating gradients.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3649,7 +3649,7 @@
     },
     {
         "Name": "Gradient",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a gradient in your screen.",
         "Keys": [
             {
                 "Name": "Next gradient rot interval",
@@ -3757,7 +3757,7 @@
     },
     {
         "Name": "Lightspeed",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Changes colors quickly.",
         "Keys": [
             {
                 "Name": "Cycle colors",
@@ -3833,7 +3833,7 @@
     },
     {
         "Name": "Starfield",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a star journey in 2D.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3845,7 +3845,7 @@
     },
     {
         "Name": "Siren",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Changes the background according to the set colors, which simulates a siren.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3863,7 +3863,7 @@
     },
     {
         "Name": "Spin",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Spinning slashes.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3875,7 +3875,7 @@
     },
     {
         "Name": "SnakeFill",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Fills the console with a color like a snake.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -3957,7 +3957,7 @@
     },
     {
         "Name": "Equalizer",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you an equalizer that shows you bass, mid, and treble.",
         "Keys": [
             {
                 "Name": "Next Screen Delay in Milliseconds",
@@ -3969,7 +3969,7 @@
     },
     {
         "Name": "BSOD",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates system errors from different operating systems.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3981,7 +3981,7 @@
     },
     {
         "Name": "Memdump",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Generates colors from the random shifting.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -3993,7 +3993,7 @@
     },
     {
         "Name": "ExcaliBeats",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a text that fades out and flashes in beats.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4105,7 +4105,7 @@
     },
     {
         "Name": "BarWave",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a group of waves in bars.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4193,7 +4193,7 @@
     },
     {
         "Name": "Wave",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a wave that generates itself and advances.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4275,7 +4275,7 @@
     },
     {
         "Name": "Mesmerize",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Gives you a mesmerizing feel.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4351,7 +4351,7 @@
     },
     {
         "Name": "Aurora",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates the aurora borealis.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4363,7 +4363,7 @@
     },
     {
         "Name": "Lightning",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a striking lightning.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4383,7 +4383,7 @@
     },
     {
         "Name": "Bloom",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a slowly changing background color.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4401,7 +4401,7 @@
     },
     {
         "Name": "WordHasher",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a word and its hash sum.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4483,7 +4483,7 @@
     },
     {
         "Name": "SquareCorner",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a fading square in four corners.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4555,7 +4555,7 @@
     },
     {
         "Name": "NumberScatter",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Scatters the number across the whole screen.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4577,7 +4577,7 @@
     },
     {
         "Name": "BoxGrid",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Gives you a box pattern.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -4637,7 +4637,7 @@
     },
     {
         "Name": "ColorBleed",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Falling line of colors.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4733,7 +4733,7 @@
     },
     {
         "Name": "MatrixBleed",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Falling line of matrix numbers.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4829,7 +4829,7 @@
     },
     {
         "Name": "Text",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a simple text.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -4917,7 +4917,7 @@
     },
     {
         "Name": "TextBox",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a simple text in a text box.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5005,7 +5005,7 @@
     },
     {
         "Name": "WordHasherWrite",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a word that writes slowly and its hash sum.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5087,7 +5087,7 @@
     },
     {
         "Name": "SirenTheme",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates a siren that uses your theme as a set of colors.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5105,7 +5105,7 @@
     },
     {
         "Name": "StarfieldWarp",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a group of stars in the ship's front view.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5117,7 +5117,7 @@
     },
     {
         "Name": "Speckles",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a group of speckles in the ship's front view.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5129,7 +5129,7 @@
     },
     {
         "Name": "LetterScatter",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a scattering letter across the whole screen.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5151,7 +5151,7 @@
     },
     {
         "Name": "MultiLines",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you multiple lines.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5244,7 +5244,7 @@
     },
     {
         "Name": "LaserBeams",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you laser beams.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5337,7 +5337,7 @@
     },
     {
         "Name": "TextWander",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a text that wanders across the console.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5425,7 +5425,7 @@
     },
     {
         "Name": "Swivel",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Swiveling wave horizontally and vertically to make great patterns.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",
@@ -5513,7 +5513,7 @@
     },
     {
         "Name": "DoorShift",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates door opening and closing.",
         "Keys": [
             {
                 "Name": "Activate true colors",
@@ -5600,7 +5600,7 @@
     },
     {
         "Name": "GradientBloom",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Shows you a dynamically-changing gradient.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",

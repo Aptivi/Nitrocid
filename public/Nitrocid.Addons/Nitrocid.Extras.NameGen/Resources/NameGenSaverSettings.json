@@ -1,7 +1,7 @@
 [
     {
         "Name": "PersonLookup",
-        "Desc": "Settings for this screensaver are available here.",
+        "Desc": "Simulates a database lookup for a random person.",
         "Keys": [
             {
                 "Name": "Delay in Milliseconds",

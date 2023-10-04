@@ -1,7 +1,7 @@
 [
     {
         "Name": "Simple",
-        "Desc": "Settings for this splash screen are available here.",
+        "Desc": "Simple splash screen.",
         "Keys": [
             {
                 "Name": "Progress text location",
@@ -17,7 +17,7 @@
     },
     {
         "Name": "Progress",
-        "Desc": "Settings for this splash screen are available here.",
+        "Desc": "A splash screen that shows you progress.",
         "Keys": [
             {
                 "Name": "Progress bar color",
@@ -38,7 +38,7 @@
     },
     {
         "Name": "PowerLineProgress",
-        "Desc": "Settings for this splash screen are available here.",
+        "Desc": "A splash screen that shows you progress using the PowerLine text.",
         "Keys": [
             {
                 "Name": "Progress bar color",

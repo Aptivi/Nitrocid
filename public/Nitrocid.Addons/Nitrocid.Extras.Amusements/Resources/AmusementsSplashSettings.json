@@ -1,7 +1,7 @@
 [
     {
         "Name": "Quote",
-        "Desc": "Settings for this splash screen are available here.",
+        "Desc": "Shows you nice famous quotes.",
         "Keys": [
             {
                 "Name": "Progress text location",
