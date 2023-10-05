@@ -67,50 +67,55 @@ namespace KS.Misc.Text
             {
                 int vtSeqIdx = 0;
                 int vtSeqCompensate = 0;
-                for (int i = 0; i < text.Length; i++)
+                foreach (string splitText in text.SplitNewLines())
                 {
-                    // Check the character to see if we're at the VT sequence
-                    bool explicitNewLine = text[^1] == '\n';
-                    char ParagraphChar = text[i];
-                    bool isNewLine = text[i] == '\n';
-                    string seq = "";
-                    if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                    if (splitText.Length == 0)
+                        IncompleteSentences.Add(splitText);
+                    for (int i = 0; i < splitText.Length; i++)
                     {
-                        // We're at an index which is the same as the captured VT sequence. Get the sequence
-                        seq = sequences[vtSeqIdx].Value;
+                        // Check the character to see if we're at the VT sequence
+                        bool explicitNewLine = splitText[^1] == '\n';
+                        char ParagraphChar = splitText[i];
+                        bool isNewLine = splitText[i] == '\n';
+                        string seq = "";
+                        if (sequences.Count > 0 && sequences[vtSeqIdx].Index == i)
+                        {
+                            // We're at an index which is the same as the captured VT sequence. Get the sequence
+                            seq = sequences[vtSeqIdx].Value;
 
-                        // Raise the index in case we have the next sequence, but only if we're sure that we have another
-                        if (vtSeqIdx + 1 < sequences.Count)
-                            vtSeqIdx++;
+                            // Raise the index in case we have the next sequence, but only if we're sure that we have another
+                            if (vtSeqIdx + 1 < sequences.Count)
+                                vtSeqIdx++;
 
-                        // Raise the paragraph index by the length of the sequence
-                        i += seq.Length - 1;
-                        vtSeqCompensate += seq.Length;
-                    }
+                            // Raise the paragraph index by the length of the sequence
+                            i += seq.Length - 1;
+                            vtSeqCompensate += seq.Length;
+                        }
 
-                    // Append the character into the incomplete sentence builder.
-                    if (!isNewLine)
-                        IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
+                        // Append the character into the incomplete sentence builder.
+                        if (!isNewLine)
+                            IncompleteSentenceBuilder.Append(!string.IsNullOrEmpty(seq) ? seq : ParagraphChar.ToString());
 
-                    // Also, compensate the \0 characters
-                    if (text[i] == '\0')
-                        vtSeqCompensate++;
+                        // Also, compensate the \0 characters
+                        if (splitText[i] == '\0')
+                            vtSeqCompensate++;
 
-                    // Check to see if we're at the maximum character number or at the new line
-                    if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate |
-                        i == text.Length - 1 |
-                        isNewLine)
-                    {
-                        // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
-                        IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
-                        if (explicitNewLine)
-                            IncompleteSentences.Add("");
+                        // Check to see if we're at the maximum character number or at the new line
+                        if (IncompleteSentenceBuilder.Length == maximumLength - indentLength + vtSeqCompensate |
+                            i == splitText.Length - 1 |
+                            isNewLine)
+                        {
+                            // We're at the character number of maximum character. Add the sentence to the list for "wrapping" in columns.
+                            DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the list... Incomplete sentences: {1}", IncompleteSentenceBuilder.ToString(), IncompleteSentences.Count);
+                            IncompleteSentences.Add(IncompleteSentenceBuilder.ToString());
+                            if (explicitNewLine)
+                                IncompleteSentences.Add("");
 
-                        // Clean everything up
-                        IncompleteSentenceBuilder.Clear();
-                        indentLength = 0;
-                        vtSeqCompensate = 0;
+                            // Clean everything up
+                            IncompleteSentenceBuilder.Clear();
+                            indentLength = 0;
+                            vtSeqCompensate = 0;
+                        }
                     }
                 }
             }

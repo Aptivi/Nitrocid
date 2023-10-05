@@ -118,37 +118,41 @@ namespace KS.ConsoleBase
             if (!noSeek)
             {
                 var texts = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth, ConsoleWrapper.CursorLeft);
-                for (int i = 1; i <= Text.Length; i++)
+                for (int i = 0; i < texts.Length; i++)
                 {
-                    // If we spotted a new line character, get down by one line.
-                    if (Text[i - 1] == Convert.ToChar(10))
+                    string text = texts[i];
+                    for (int j = 1; j <= text.Length; j++)
                     {
-                        if (TopSeekPosition < ConsoleWrapper.BufferHeight - 1)
-                            TopSeekPosition += 1;
-                        LeftSeekPosition = 0;
-                    }
-                    else
-                    {
-                        // Simulate seeking through text
-                        LeftSeekPosition += 1;
-                        if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
+                        // If we spotted a new line character, get down by one line.
+                        if (text[j - 1] == Convert.ToChar(10))
                         {
-                            // We've reached end of line
-                            LeftSeekPosition = 0;
-
-                            // Get down by one line
-                            if (i < Text.Length || !line)
+                            if (TopSeekPosition < ConsoleWrapper.BufferHeight - 1)
                                 TopSeekPosition += 1;
-                            if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
+                            LeftSeekPosition = 0;
+                        }
+                        else
+                        {
+                            // Simulate seeking through text
+                            LeftSeekPosition += 1;
+                            if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
                             {
-                                // We're at the end of buffer! Decrement by one and bail.
-                                TopSeekPosition -= 1;
-                                LeftSeekPosition = texts[^1].Length;
-                                if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
-                                    LeftSeekPosition = ConsoleWrapper.WindowWidth - 1;
-                                break;
+                                // We've reached end of line
+                                LeftSeekPosition = 0;
                             }
                         }
+                    }
+
+                    // Get down by one line
+                    if (i < texts.Length - 1)
+                        TopSeekPosition += 1;
+                    if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
+                    {
+                        // We're at the end of buffer! Decrement by one and bail.
+                        TopSeekPosition -= 1;
+                        LeftSeekPosition = texts[^1].Length;
+                        if (LeftSeekPosition >= ConsoleWrapper.WindowWidth)
+                            LeftSeekPosition = ConsoleWrapper.WindowWidth - 1;
+                        break;
                     }
                 }
             }
