@@ -53,6 +53,19 @@ namespace KS.ConsoleBase
             return false;
         }
 
+        /// <summary>
+        /// Gets the console size from the cached window height and width position
+        /// </summary>
+        public static (int Width, int Height) GetCurrentConsoleSize()
+        {
+            if (!ResizeListenerThread.IsAlive)
+            {
+                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
+                return (termDriver.WindowWidth, termDriver.WindowHeight);
+            }
+            return (CurrentWindowWidth, CurrentWindowHeight);
+        }
+
         private static void PollForResize()
         {
             try

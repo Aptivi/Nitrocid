@@ -69,13 +69,13 @@ namespace KS.ConsoleBase
         /// The console window width (columns)
         /// </summary>
         public static int WindowWidth => 
-            DriverHandler.CurrentConsoleDriverLocal.WindowWidth;
+            ConsoleResizeListener.GetCurrentConsoleSize().Width;
 
         /// <summary>
         /// The console window height (rows)
         /// </summary>
-        public static int WindowHeight => 
-            DriverHandler.CurrentConsoleDriverLocal.WindowHeight;
+        public static int WindowHeight =>
+            ConsoleResizeListener.GetCurrentConsoleSize().Height;
 
         /// <summary>
         /// The console window topmost
