@@ -37,6 +37,7 @@ using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Console.Bases;
 using KS.Shell.ShellBase.Help;
+using System.Runtime;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -203,10 +204,34 @@ namespace KS.Shell.ShellBase.Commands
                     DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);
                     var CommandBase = TargetCommands[Command].CommandBase;
                     string value = "";
+#if NET7_0
+#pragma warning disable SYSLIB0046
+                    CancellationHandlers.cts = new CancellationTokenSource();
+
+                    // TODO: Actually use interactive methods to notify cancellation, as ControlledExecution behaves like Thread.Abort() in .NET Framework.
+                    try
+                    {
+                        ControlledExecution.Run(() =>
+                        {
+                            if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
+                                ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
+                            else
+                                ShellInstance.LastErrorCode = CommandBase.Execute(parameters, ref value);
+                        }, CancellationHandlers.cts.Token);
+                    }
+                    catch (OperationCanceledException ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.W, "Command aborted in the .NET Framework way. This is currently not supported as it may corrupt the state. Any weird behavior logged below is most likely from this.");
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        TextWriterColor.Write(Translate.DoTranslation("Command has been aborted."), true, KernelColorType.Error);
+                    }
+#pragma warning restore SYSLIB0046
+#else
                     if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
                         ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
                     else
                         ShellInstance.LastErrorCode = CommandBase.Execute(parameters, ref value);
+#endif
 
                     // Set the error code and set the UESH variable as appropriate
                     DebugWriter.WriteDebug(DebugLevel.I, "Error code is {0}", ShellInstance.LastErrorCode);

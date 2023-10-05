@@ -23,12 +23,14 @@ using KS.Drivers.Console;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Kernel.Configuration;
+using System.Threading;
 
 namespace KS.Shell.ShellBase.Commands
 {
     internal static class CancellationHandlers
     {
 
+        internal static CancellationTokenSource cts = new();
         internal static bool canCancel = false;
         internal static bool installed;
 
@@ -62,7 +64,11 @@ namespace KS.Shell.ShellBase.Commands
                     KernelFlags.CancelRequested = true;
                     TextWriterColor.Write();
                     DriverHandler.SetDriver<IConsoleDriver>("Null");
+#if NET7_0
+                    cts.Cancel();
+#else
                     StartCommandThread.Stop();
+#endif
                     ProcessStartCommandThread.Stop();
                     DriverHandler.SetDriver<IConsoleDriver>("Default");
                     DebugWriter.WriteDebug(DebugLevel.I, "Cancelled command.");
