@@ -88,7 +88,7 @@
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.0.442202" PrivateAssets="all" />
     <PackageReference Include="Microsoft.ML" Version="2.0.1" PrivateAssets="all" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
-    <PackageReference Include="SharpCompress" Version="0.34.1" PrivateAssets="all" />
+    <PackageReference Include="SharpCompress" Version="[0.33.0,0.33.0]" PrivateAssets="all" />
     <PackageReference Include="SSH.NET" Version="2020.0.2" PrivateAssets="all" />
     <PackageReference Include="Syndian" Version="0.3.1" PrivateAssets="all" />
   </ItemGroup>
