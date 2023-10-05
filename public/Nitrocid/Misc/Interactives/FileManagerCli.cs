@@ -42,6 +42,7 @@ using KS.Misc.Reflection;
 using System.Reflection;
 using KS.Files.Instances;
 using KS.ConsoleBase.Interactive;
+using KS.Files.Extensions;
 
 namespace KS.Misc.Interactives
 {
@@ -199,14 +200,14 @@ namespace KS.Misc.Interactives
                 {
                     // We're dealing with a file. Clear the screen and open the appropriate editor.
                     KernelColorTools.LoadBack();
-                    Opening.OpenEditor(currentFileSystemEntry.FilePath);
+                    Opening.OpenDeterministically(currentFileSystemEntry.FilePath);
                     RedrawRequired = true;
                 }
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
-                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open folder") + TextTools.FormatString(": {0}", ex.Message));
+                finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open file or folder") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;

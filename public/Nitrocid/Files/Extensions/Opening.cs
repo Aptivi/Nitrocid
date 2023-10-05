@@ -20,10 +20,12 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Querying;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Shells;
+using System.IO;
 
-namespace KS.Files.Operations
+namespace KS.Files.Extensions
 {
     /// <summary>
     /// Routines related to opening the files
@@ -41,7 +43,7 @@ namespace KS.Files.Operations
         public static void OpenEditor(string path, bool forceText = false, bool forceJson = false, bool forceHex = false, bool forceSql = false)
         {
             bool fileExists = Checking.FileExists(path);
-            
+
             // Check to see if the file exists
             DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", path, fileExists);
             DebugWriter.WriteDebug(DebugLevel.I, "Force text: {0}", forceText);
@@ -49,11 +51,8 @@ namespace KS.Files.Operations
             DebugWriter.WriteDebug(DebugLevel.I, "Force Hex: {0}", forceHex);
             DebugWriter.WriteDebug(DebugLevel.I, "Force SQL: {0}", forceSql);
             if (!fileExists)
-            {
-                TextWriterColor.Write(Translate.DoTranslation("File doesn't exist."), true, KernelColorType.Error);
-                return;
-            }
-            
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File doesn't exist."));
+
             // First, forced types
             if (forceText)
                 ShellStart.StartShell(ShellType.TextShell, path);
@@ -63,7 +62,7 @@ namespace KS.Files.Operations
                 ShellStart.StartShell(ShellType.SqlShell, path);
             else if (forceHex)
                 ShellStart.StartShell(ShellType.HexShell, path);
-            
+
             // Exit if forced types
             if (forceText || forceJson || forceHex || forceSql)
                 return;
@@ -77,6 +76,36 @@ namespace KS.Files.Operations
                 ShellStart.StartShell(ShellType.JsonShell, path);
             else
                 ShellStart.StartShell(ShellType.TextShell, path);
+        }
+
+        /// <summary>
+        /// Opens the file deterministically using the extension handlers or the deterministic text editor if the target file is a text.
+        /// </summary>
+        /// <param name="file">File to open</param>
+        /// <exception cref="KernelException"></exception>
+        public static void OpenDeterministically(string file)
+        {
+            // Check the file for existence
+            bool fileExists = Checking.FileExists(file);
+            if (!fileExists)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File doesn't exist."));
+
+            // Now, check to see if the file is a text or a binary file
+            if (Parsing.IsBinaryFile(file))
+            {
+                // This file is a binary file.
+                string extension = Path.GetExtension(file);
+                var handler = ExtensionHandlerTools.GetExtensionHandler(extension) ??
+                    throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No handler to handle this extension.") + $" {extension}");
+
+                // Now that we have the handler, we'll execute it.
+                handler.Handler(file);
+            }
+            else
+            {
+                // This file is a text file.
+                OpenEditor(file);
+            }
         }
     }
 }

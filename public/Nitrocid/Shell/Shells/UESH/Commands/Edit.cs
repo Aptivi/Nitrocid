@@ -16,8 +16,12 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
-using KS.Files.Operations;
+using KS.Files.Extensions;
+using KS.Files.Querying;
+using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
 
@@ -41,7 +45,10 @@ namespace KS.Shell.Shells.UESH.Commands
             bool forceJson = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-json");
             bool forceHex = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hex");
             bool forceSql = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-sql");
-            Opening.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
+            if (Checking.FileExists(path))
+                Opening.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
+            else
+                TextWriterColor.Write(Translate.DoTranslation("Can't edit file {0} because it's not found."), true, KernelColorType.Error, path);
             return 0;
         }
 
