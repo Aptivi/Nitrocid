@@ -1638,5 +1638,9 @@ namespace KS.Kernel.Configuration.Instances
         /// Whether to show the file size in the status
         /// </summary>
         public bool IfmShowFileSize { get; set; }
+        /// <summary>
+        /// If enabled, uses the classic header style in the settings app. Otherwise, the new one.
+        /// </summary>
+        public bool ClassicSettingsHeaderStyle { get; set; }
     }
 }

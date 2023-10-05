@@ -1677,6 +1677,12 @@
                 "Type": "SBoolean",
                 "Variable": "IfmShowFileSize",
                 "Description": "Whether to show the file size in the status."
+            },
+            {
+                "Name": "Use classic style of headers in the Settings app",
+                "Type": "SBoolean",
+                "Variable": "ClassicSettingsHeaderStyle",
+                "Description": "This provides you an option to switch to either the modern or the classic header look of the settings application."
             }
         ]
     }

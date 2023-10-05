@@ -81,7 +81,7 @@ namespace KS.Kernel.Configuration.Settings
 
                 // Prompt for selection and check the answer
                 string finalTitle = Translate.DoTranslation("Welcome to Settings!");
-                int Answer = SelectionStyle.PromptSelection("\n  * " + finalTitle + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation("Select section:"),
+                int Answer = SelectionStyle.PromptSelection(RenderHeader(finalTitle, Translate.DoTranslation("Select section:")),
                     sections, altSections);
                 if (Answer >= 1 & Answer <= MaxSections)
                 {
@@ -188,7 +188,7 @@ namespace KS.Kernel.Configuration.Settings
 
                     // Prompt user and check for input
                     string finalSection = SectionTranslateName ? Translate.DoTranslation(SectionDisplayName) : SectionDisplayName;
-                    int Answer = SelectionStyle.PromptSelection("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(SectionDescription) + (!string.IsNullOrEmpty(Notes) ? CharManager.NewLine + Notes : ""),
+                    int Answer = SelectionStyle.PromptSelection(RenderHeader(finalSection, Translate.DoTranslation(SectionDescription), Notes),
                         sections, altSections);
 
                     // Check the answer
@@ -323,6 +323,23 @@ namespace KS.Kernel.Configuration.Settings
             {
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", true, KernelColorType.Error);
             }
+        }
+
+        private static string RenderHeader(string title, string description, string notes = "")
+        {
+            string classicTitle = "- " + title + " ";
+            if (Config.MainConfig.ClassicSettingsHeaderStyle)
+                // User prefers the classic style
+                return
+                    classicTitle +
+                    new string('-', ConsoleWrapper.WindowWidth - (classicTitle).Length) + CharManager.NewLine + CharManager.NewLine +
+                    description +
+                    (!string.IsNullOrEmpty(notes) ? CharManager.NewLine + notes : "");
+            else
+                // User prefers the modern style
+                return "\n  * " + title + CharManager.NewLine + CharManager.NewLine +
+                    description +
+                    (!string.IsNullOrEmpty(notes) ? CharManager.NewLine + notes : "");
         }
 
     }
