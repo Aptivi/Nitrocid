@@ -280,6 +280,14 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
                     DisplayMessage = false
                 }
             },
+
+            { BugCheckCodes.UNEXPECTED_STORE_EXCEPTION,
+                new BugCheckParams()
+                {
+                    WindowsBugCheckCode = 0x154,
+                    DisplayMessage = false
+                }
+            },
         };
 
         public override void Simulate()
