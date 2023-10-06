@@ -180,9 +180,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int boxHeight = boxHeightExterior - 2;
             int boxColumns = 0;
             int boxRows = 0;
-            for (int i = 0; i < Console.WindowWidth - boxWidthExterior; i += boxWidthExterior + 1)
+            for (int i = 0; i < ConsoleWrapper.WindowWidth - boxWidthExterior; i += boxWidthExterior + 1)
                 boxColumns++;
-            for (int i = 0; i < Console.WindowHeight - boxHeightExterior + 1; i += boxHeightExterior)
+            for (int i = 0; i < ConsoleWrapper.WindowHeight - boxHeightExterior + 1; i += boxHeightExterior)
                 boxRows++;
 
             // Draw the boxes

@@ -289,8 +289,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             );
 
             // Draw few beams
-            int laserStartPosX = Console.WindowWidth - 1;
-            int laserStartPosY = Console.WindowHeight - 1;
+            int laserStartPosX = ConsoleWrapper.WindowWidth - 1;
+            int laserStartPosY = ConsoleWrapper.WindowHeight - 1;
             StringBuilder laserBeamsBuilder = new();
             for (int i = 0; i < 11; i++)
             {

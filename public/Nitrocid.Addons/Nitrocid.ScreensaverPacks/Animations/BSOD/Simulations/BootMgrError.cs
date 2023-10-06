@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using System;
 using Terminaux.Colors;
@@ -26,14 +28,17 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
     {
         public override void Simulate()
         {
+            // Clear the screen
+            KernelColorTools.LoadBack(new Color(0, 0, 0));
+
             // Render the header and footer
             int marginX = 2;
             int headerY = 0;
-            int footerY = Console.WindowHeight - 1;
-            int barLength = Console.WindowWidth - 4;
+            int footerY = ConsoleWrapper.WindowHeight - 1;
+            int barLength = ConsoleWrapper.WindowWidth - 4;
             string header = "Windows Boot Manager";
             string footer = "ENTER=Continue";
-            int headerTextX = (Console.WindowWidth / 2) - (header.Length / 2);
+            int headerTextX = (ConsoleWrapper.WindowWidth / 2) - (header.Length / 2);
             ConsoleColor barColor = ConsoleColor.Gray;
             ConsoleColor barForeground = ConsoleColor.Black;
             TextWriterWhereColor.WriteWhere(new string(' ', barLength), marginX, headerY, new Color(barForeground), new Color(barColor));
