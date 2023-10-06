@@ -37,7 +37,7 @@ namespace KS.Users.Login.Handlers.Logins
             // Clear the console
             ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear();
-            TextWriterColor.Write(Translate.DoTranslation("Loading modern logon... This shouldn't take long."), true, KernelColorType.Progress);
+            DebugWriter.WriteDebug(DebugLevel.I, "Loading modern logon... This shouldn't take long.");
 
             // Start the date and time update thread to show time and date in the modern way
             ModernLogonScreen.DateTimeUpdateThread.Start();
