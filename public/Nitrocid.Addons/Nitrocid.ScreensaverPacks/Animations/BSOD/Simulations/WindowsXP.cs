@@ -309,7 +309,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
 
             // First, write the introduction
-            TextWriterColor.WritePlain("A problem has been detected and Windows has been shut down to prevent damage\n" +
+            TextWriterColor.WritePlain("\nA problem has been detected and Windows has been shut down to prevent damage\n" +
                                        "to your computer.\n", true);
 
             // Then, get the message
