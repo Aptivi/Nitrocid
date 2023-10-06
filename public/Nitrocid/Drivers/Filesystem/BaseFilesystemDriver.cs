@@ -1209,15 +1209,84 @@ namespace KS.Drivers.Filesystem
         {
             // Read the contents
             FS.ThrowOnInvalidPath(filename);
-            var FileContents = new List<string>();
             filename = FS.NeutralizePath(filename);
-            using (var FStream = new StreamReader(filename))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Stream to file {0} opened.", filename);
-                while (!FStream.EndOfStream)
-                    FileContents.Add(FStream.ReadLine());
-            }
-            return FileContents.ToArray();
+            return File.ReadAllLines(filename);
+        }
+
+        /// <inheritdoc/>
+        public virtual string ReadAllTextNoBlock(string path)
+        {
+            FS.ThrowOnInvalidPath(path);
+
+            // Read all the lines, bypassing the restrictions.
+            path = FS.NeutralizePath(path);
+            var fileContentBuilder = new StringBuilder();
+            var FOpen = new StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
+            while (!FOpen.EndOfStream)
+                fileContentBuilder.Append(FOpen.ReadLine());
+            FOpen.Close();
+            return fileContentBuilder.ToString();
+        }
+
+        /// <inheritdoc/>
+        public virtual string ReadContentsText(string filename)
+        {
+            // Read the contents
+            FS.ThrowOnInvalidPath(filename);
+            filename = FS.NeutralizePath(filename);
+            return File.ReadAllText(filename);
+        }
+
+        /// <inheritdoc/>
+        public virtual void WriteAllBytes(string path, byte[] contents)
+        {
+            // Write the bytes
+            FS.ThrowOnInvalidPath(path);
+            path = FS.NeutralizePath(path);
+            File.WriteAllBytes(path, contents);
+        }
+
+        /// <inheritdoc/>
+        public virtual void WriteAllLinesNoBlock(string path, string[] contents)
+        {
+            FS.ThrowOnInvalidPath(path);
+
+            // Write all the lines, bypassing the restrictions.
+            path = FS.NeutralizePath(path);
+            var FOpen = new StreamWriter(File.Open(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite));
+            foreach (var content in contents)
+                FOpen.WriteLine(content);
+            FOpen.Close();
+        }
+
+        /// <inheritdoc/>
+        public virtual void WriteContents(string filename, string[] contents)
+        {
+            // Write the contents
+            FS.ThrowOnInvalidPath(filename);
+            filename = FS.NeutralizePath(filename);
+            File.WriteAllLines(filename, contents);
+        }
+
+        /// <inheritdoc/>
+        public virtual void WriteAllTextNoBlock(string path, string contents)
+        {
+            FS.ThrowOnInvalidPath(path);
+
+            // Write all the lines, bypassing the restrictions.
+            path = FS.NeutralizePath(path);
+            var FOpen = new StreamWriter(File.Open(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite));
+            FOpen.WriteLine(contents);
+            FOpen.Close();
+        }
+
+        /// <inheritdoc/>
+        public virtual void WriteContentsText(string filename, string contents)
+        {
+            // Write the contents
+            FS.ThrowOnInvalidPath(filename);
+            filename = FS.NeutralizePath(filename);
+            File.WriteAllText(filename, contents);
         }
 
         /// <inheritdoc/>

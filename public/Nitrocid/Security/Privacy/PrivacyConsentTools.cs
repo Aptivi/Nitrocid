@@ -53,7 +53,8 @@ namespace KS.Security.Privacy
 
             // Verify the type and the context
             var type = methodInfo.ReflectedType;
-            if (finalContext == "KS" && ReflectionCommon.KernelTypes.Contains(type))
+            if ((finalContext == "KS" && ReflectionCommon.KernelTypes.Contains(type)) ||
+                 finalContext == "Nitrocid")
                 return true;
 
             // We're not calling from the built-in methods, so make a consent

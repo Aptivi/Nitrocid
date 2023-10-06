@@ -21,71 +21,78 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Security.Privacy;
 using KS.Security.Privacy.Consents;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace KS.Files.Read
+namespace KS.Files.Operations
 {
     /// <summary>
-    /// File reading module
+    /// Writing tools for files
     /// </summary>
-    public static class FileRead
+    public static class Writing
     {
+
         /// <summary>
-        /// Reads the contents of a file and writes it to the array. This is blocking and will put a lock on the file until read.
+        /// Writes the contents to the file. This is blocking and will put a lock on the file until written.
         /// </summary>
         /// <param name="filename">Full path to file</param>
-        /// <returns>An array full of file contents</returns>
-        public static string[] ReadContents(string filename)
+        /// <param name="contents">File contents to write to</param>
+        public static void WriteContents(string filename, string[] contents)
         {
-            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
-            return DriverHandler.CurrentFilesystemDriverLocal.ReadContents(filename);
+            DriverHandler.CurrentFilesystemDriverLocal.WriteContents(filename, contents);
         }
 
         /// <summary>
-        /// Reads the contents of a file and writes it to the string. This is blocking and will put a lock on the file until read.
+        /// Writes the contents to the file. This is blocking and will put a lock on the file until written.
         /// </summary>
         /// <param name="filename">Full path to file</param>
-        /// <returns>A text full of file contents</returns>
-        public static string ReadContentsText(string filename)
+        /// <param name="contents">File contents to write to</param>
+        public static void WriteContentsText(string filename, string contents)
         {
-            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
-            return DriverHandler.CurrentFilesystemDriverLocal.ReadContentsText(filename);
+            DriverHandler.CurrentFilesystemDriverLocal.WriteContentsText(filename, contents);
         }
 
         /// <summary>
-        /// Opens a file, reads all lines, and returns the array of lines
+        /// Opens a file, writes all lines, and closes it
         /// </summary>
         /// <param name="path">Path to file</param>
-        /// <returns>Array of lines</returns>
-        public static string[] ReadAllLinesNoBlock(string path)
+        /// <param name="contents">File contents to write to</param>
+        public static void WriteAllLinesNoBlock(string path, string[] contents)
         {
-            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
-            return DriverHandler.CurrentFilesystemDriverLocal.ReadAllLinesNoBlock(path);
+            DriverHandler.CurrentFilesystemDriverLocal.WriteAllLinesNoBlock(path, contents);
         }
 
         /// <summary>
-        /// Opens a file, reads all lines, and returns the string of lines
+        /// Opens a file, writes all lines, and closes it
         /// </summary>
         /// <param name="path">Path to file</param>
-        /// <returns>String of lines</returns>
-        public static string ReadAllTextNoBlock(string path)
+        /// <param name="contents">File contents to write to</param>
+        public static void WriteAllTextNoBlock(string path, string contents)
         {
-            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
-            return DriverHandler.CurrentFilesystemDriverLocal.ReadAllTextNoBlock(path);
+            DriverHandler.CurrentFilesystemDriverLocal.WriteAllTextNoBlock(path, contents);
         }
 
         /// <summary>
-        /// Reads all the bytes
+        /// Writes all the bytes
         /// </summary>
         /// <param name="path">Path to the file</param>
-        public static byte[] ReadAllBytes(string path)
+        /// <param name="contents">File contents to write to</param>
+        public static void WriteAllBytes(string path, byte[] contents)
         {
-            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
-            return DriverHandler.CurrentFilesystemDriverLocal.ReadAllBytes(path);
+            DriverHandler.CurrentFilesystemDriverLocal.WriteAllBytes(path, contents);
         }
     }
 }

@@ -269,6 +269,118 @@ namespace Nitrocid.Tests.Files
         }
 
         /// <summary>
+        /// Tests reading all text without roadblocks
+        /// </summary>
+        [Test]
+        [Description("Manipulation")]
+        public void TestReadAllTextNoBlock()
+        {
+            string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
+            string LinesTestText = FileRead.ReadAllTextNoBlock(PathToTestText);
+            LinesTestText.ShouldBeOfType(typeof(string));
+            LinesTestText.ShouldNotBeNull();
+            LinesTestText.ShouldNotBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests reading all text
+        /// </summary>
+        [Test]
+        [Description("Manipulation")]
+        public void TestReadContentsText()
+        {
+            string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
+            string LinesTestText = FileRead.ReadContentsText(PathToTestText);
+            LinesTestText.ShouldBeOfType(typeof(string));
+            LinesTestText.ShouldNotBeNull();
+            LinesTestText.ShouldNotBeEmpty();
+        }
+
+        /// <summary>
+        /// Tests reading all lines without roadblocks
+        /// </summary>
+        [Test]
+        [Description("Manipulation")]
+        public void TestWriteAllLinesNoBlock()
+        {
+            string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
+            var LinesTestText = FileRead.ReadContents(PathToTestText);
+            LinesTestText.ShouldBeOfType(typeof(string[]));
+            LinesTestText.ShouldNotBeNull();
+            LinesTestText.ShouldNotBeEmpty();
+            string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteAllLinesNoBlock)}.txt");
+            Writing.WriteAllLinesNoBlock(PathToTestDestinationText, LinesTestText);
+            var LinesTestText2 = FileRead.ReadContents(PathToTestText);
+            LinesTestText2.ShouldBeOfType(typeof(string[]));
+            LinesTestText2.ShouldNotBeNull();
+            LinesTestText2.ShouldNotBeEmpty();
+            LinesTestText2.ShouldBe(LinesTestText);
+        }
+
+        /// <summary>
+        /// Tests reading all lines
+        /// </summary>
+        [Test]
+        [Description("Manipulation")]
+        public void TestWriteContents()
+        {
+            string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
+            var LinesTestText = FileRead.ReadContents(PathToTestText);
+            LinesTestText.ShouldBeOfType(typeof(string[]));
+            LinesTestText.ShouldNotBeNull();
+            LinesTestText.ShouldNotBeEmpty();
+            string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteContents)}.txt");
+            Writing.WriteContents(PathToTestDestinationText, LinesTestText);
+            var LinesTestText2 = FileRead.ReadContents(PathToTestText);
+            LinesTestText2.ShouldBeOfType(typeof(string[]));
+            LinesTestText2.ShouldNotBeNull();
+            LinesTestText2.ShouldNotBeEmpty();
+            LinesTestText2.ShouldBe(LinesTestText);
+        }
+
+        /// <summary>
+        /// Tests reading all text without roadblocks
+        /// </summary>
+        [Test]
+        [Description("Manipulation")]
+        public void TestWriteAllTextNoBlock()
+        {
+            string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
+            string LinesTestText = FileRead.ReadContentsText(PathToTestText);
+            LinesTestText.ShouldBeOfType(typeof(string));
+            LinesTestText.ShouldNotBeNull();
+            LinesTestText.ShouldNotBeEmpty();
+            string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteAllTextNoBlock)}.txt");
+            Writing.WriteAllTextNoBlock(PathToTestDestinationText, LinesTestText);
+            string LinesTestText2 = FileRead.ReadContentsText(PathToTestText);
+            LinesTestText2.ShouldBeOfType(typeof(string));
+            LinesTestText2.ShouldNotBeNull();
+            LinesTestText2.ShouldNotBeEmpty();
+            LinesTestText2.ShouldBe(LinesTestText);
+        }
+
+        /// <summary>
+        /// Tests reading all text
+        /// </summary>
+        [Test]
+        [Description("Manipulation")]
+        public void TestWriteContentsText()
+        {
+            string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
+            string LinesTestText = FileRead.ReadContentsText(PathToTestText);
+            LinesTestText.ShouldBeOfType(typeof(string));
+            LinesTestText.ShouldNotBeNull();
+            LinesTestText.ShouldNotBeEmpty();
+            string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteContentsText)}.txt");
+            Writing.WriteContentsText(PathToTestDestinationText, LinesTestText);
+            string LinesTestText2 = FileRead.ReadContentsText(PathToTestText);
+            LinesTestText2.ShouldBeOfType(typeof(string));
+            LinesTestText2.ShouldNotBeNull();
+            LinesTestText2.ShouldNotBeEmpty();
+            LinesTestText2.ShouldBe(LinesTestText);
+        }
+
+        /// <summary>
         /// Tests getting lookup path list
         /// </summary>
         [Test]

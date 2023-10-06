@@ -469,10 +469,59 @@ namespace KS.Drivers.Filesystem
         string[] ReadAllLinesNoBlock(string path);
 
         /// <summary>
+        /// Reads the contents of a file and writes it to the string. This is blocking and will put a lock on the file until read.
+        /// </summary>
+        /// <param name="filename">Full path to file</param>
+        /// <returns>A text full of file contents</returns>
+        string ReadContentsText(string filename);
+
+        /// <summary>
+        /// Opens a file, reads all lines, and returns the string of lines
+        /// </summary>
+        /// <param name="path">Path to file</param>
+        /// <returns>String of lines</returns>
+        string ReadAllTextNoBlock(string path);
+
+        /// <summary>
         /// Reads all the bytes
         /// </summary>
         /// <param name="path">Path to the file</param>
         byte[] ReadAllBytes(string path);
+
+        /// <summary>
+        /// Writes the contents of a file and writes it to the array. This is blocking and will put a lock on the file until read.
+        /// </summary>
+        /// <param name="filename">Full path to file</param>
+        /// <param name="contents">File contents to write to</param>
+        void WriteContents(string filename, string[] contents);
+
+        /// <summary>
+        /// Opens a file, reads all lines, and returns the array of lines
+        /// </summary>
+        /// <param name="path">Path to file</param>
+        /// <param name="contents">File contents to write to</param>
+        void WriteAllLinesNoBlock(string path, string[] contents);
+
+        /// <summary>
+        /// Writes the contents of a file and writes it to the string. This is blocking and will put a lock on the file until read.
+        /// </summary>
+        /// <param name="filename">Full path to file</param>
+        /// <param name="contents">File contents to write to</param>
+        void WriteContentsText(string filename, string contents);
+
+        /// <summary>
+        /// Opens a file, reads all lines, and returns the string of lines
+        /// </summary>
+        /// <param name="path">Path to file</param>
+        /// <param name="contents">File contents to write to</param>
+        void WriteAllTextNoBlock(string path, string contents);
+
+        /// <summary>
+        /// Writes all the bytes
+        /// </summary>
+        /// <param name="path">Path to the file</param>
+        /// <param name="contents">File contents to write to</param>
+        void WriteAllBytes(string path, byte[] contents);
 
         /// <summary>
         /// Clears the contents of a file
