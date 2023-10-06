@@ -89,6 +89,7 @@ namespace Nitrocid.ScreensaverPacks
             { "simplematrix", new SimpleMatrixDisplay() },
             { "siren", new SirenDisplay() },
             { "sirentheme", new SirenThemeDisplay() },
+            { "skycomet", new SkyCometDisplay() },
             { "snakefill", new SnakeFillDisplay() },
             { "speckles", new SpecklesDisplay() },
             { "spin", new SpinDisplay() },

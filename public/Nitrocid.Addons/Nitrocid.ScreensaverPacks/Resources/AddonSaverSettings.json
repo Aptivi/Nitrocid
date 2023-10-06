@@ -5615,5 +5615,17 @@
                 "Description": "Whether to use the dark colors or light colors."
             }
         ]
+    },
+    {
+        "Name": "SkyComet",
+        "Desc": "A comet is on the sky running quickly.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "SkyCometDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
     }
 ]

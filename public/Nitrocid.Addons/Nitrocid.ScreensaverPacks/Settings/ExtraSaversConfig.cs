@@ -3027,5 +3027,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [GradientBloom] Whether to use dark colors or not
         /// </summary>
         public bool GradientBloomDarkColors { get; set; }
+        /// <summary>
+        /// [SkyComet] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int SkyCometDelay { get; set; } = 10;
     }
 }
