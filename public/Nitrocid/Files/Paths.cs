@@ -54,6 +54,7 @@ namespace KS.Files
             { KernelPathType.UserGroups,          (() => UserGroupsPath, true) },
             { KernelPathType.Addons,              (() => AddonsPath, false) },
             { KernelPathType.ShellHistories,      (() => ShellHistoriesPath, true) },
+            { KernelPathType.Consents,            (() => ConsentsPath, true) },
         };
 
         /// <summary>
@@ -249,6 +250,12 @@ namespace KS.Files
         /// </summary>
         public static string ShellHistoriesPath =>
             Filesystem.NeutralizePath(AppDataPath + "/ShellHistories.json");
+
+        /// <summary>
+        /// Privacy consents path
+        /// </summary>
+        public static string ConsentsPath =>
+            Filesystem.NeutralizePath(AppDataPath + "/Consents.json");
 
         /// <summary>
         /// Gets the neutralized kernel path

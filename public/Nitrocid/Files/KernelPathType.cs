@@ -106,6 +106,10 @@ namespace KS.Files
         /// <summary>
         /// Shell histories file
         /// </summary>
-        ShellHistories
+        ShellHistories,
+        /// <summary>
+        /// Privacy consents file
+        /// </summary>
+        Consents,
     }
 }

@@ -46,6 +46,7 @@ using KS.Modifications;
 using KS.Network.Base.Connections;
 using KS.Network.RPC;
 using KS.Network.SpeedDial;
+using KS.Security.Privacy;
 using KS.Shell.ShellBase.Aliases;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Scripting;
@@ -160,6 +161,10 @@ namespace KS.Kernel.Starting
                 Config.InitializeConfig();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");
 
+            // Read privacy consents
+            PrivacyConsentTools.LoadConsents();
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded privacy consents.");
+
             // Load background
             KernelColorTools.LoadBack();
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded background.");
@@ -256,6 +261,10 @@ namespace KS.Kernel.Starting
             // Save shell command histories
             ShellManager.SaveHistories();
             DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
+
+            // Save privacy consents
+            PrivacyConsentTools.SaveConsents();
+            DebugWriter.WriteDebug(DebugLevel.I, "Saved privacy consents.");
 
             // Reset hardware info
             HardwareProbe.HardwareInfo = null;

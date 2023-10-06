@@ -17,6 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
+using KS.Kernel.Exceptions;
+using KS.Languages;
+using KS.Security.Privacy;
+using KS.Security.Privacy.Consents;
 
 namespace KS.Files.Read
 {
@@ -31,23 +35,34 @@ namespace KS.Files.Read
         /// </summary>
         /// <param name="filename">Full path to file</param>
         /// <returns>An array full of file contents</returns>
-        public static string[] ReadContents(string filename) =>
-            DriverHandler.CurrentFilesystemDriverLocal.ReadContents(filename);
+        public static string[] ReadContents(string filename)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+            return DriverHandler.CurrentFilesystemDriverLocal.ReadContents(filename);
+        }
 
         /// <summary>
         /// Opens a file, reads all lines, and returns the array of lines
         /// </summary>
         /// <param name="path">Path to file</param>
         /// <returns>Array of lines</returns>
-        public static string[] ReadAllLinesNoBlock(string path) =>
-            DriverHandler.CurrentFilesystemDriverLocal.ReadAllLinesNoBlock(path);
+        public static string[] ReadAllLinesNoBlock(string path)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+            return DriverHandler.CurrentFilesystemDriverLocal.ReadAllLinesNoBlock(path);
+        }
 
         /// <summary>
         /// Reads all the bytes
         /// </summary>
         /// <param name="path">Path to the file</param>
-        public static byte[] ReadAllBytes(string path) =>
-            DriverHandler.CurrentFilesystemDriverLocal.ReadAllBytes(path);
-
+        public static byte[] ReadAllBytes(string path)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+            return DriverHandler.CurrentFilesystemDriverLocal.ReadAllBytes(path);
+        }
     }
 }

@@ -434,6 +434,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// Encoding has failed. Check to make sure that your encoding driver works correctly and fix any problems if found, then try again.
         /// </summary>
-        Encoding
+        Encoding,
+        /// <summary>
+        /// Invalid privacy consent operation. Please make sure that the consent is correct and try again.
+        /// </summary>
+        PrivacyConsent
     }
 }

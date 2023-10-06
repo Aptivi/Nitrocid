@@ -133,6 +133,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.Hardware,                         Translate.DoTranslation("Hardware component management failed.") },
                 { KernelExceptionType.LoginHandler,                     Translate.DoTranslation("Login handler failed. Please ensure that it's registered properly and that it does its job as expected.") },
                 { KernelExceptionType.Encoding,                         Translate.DoTranslation("Encoding has failed. Check to make sure that your encoding driver works correctly and fix any problems if found, then try again.") },
+                { KernelExceptionType.PrivacyConsent,                   Translate.DoTranslation("Invalid privacy consent operation. Please make sure that the consent is correct and try again.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

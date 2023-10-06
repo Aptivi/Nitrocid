@@ -19,6 +19,10 @@
 using System;
 using KS.Kernel.Debugging;
 using KS.Drivers;
+using KS.Security.Privacy;
+using KS.Security.Privacy.Consents;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 
 namespace KS.Files.Operations
 {
@@ -32,8 +36,12 @@ namespace KS.Files.Operations
         /// Removes a directory
         /// </summary>
         /// <param name="Target">Target directory</param>
-        public static void RemoveDirectory(string Target) =>
+        public static void RemoveDirectory(string Target)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
             DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, Filesystem.ShowFilesystemProgress);
+        }
 
         /// <summary>
         /// Removes a directory
@@ -41,8 +49,12 @@ namespace KS.Files.Operations
         /// <param name="Target">Target directory</param>
         /// <param name="ShowProgress">Whether or not to show what files are being removed</param>
         /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
-        public static void RemoveDirectory(string Target, bool ShowProgress, bool secureRemove = false) =>
+        public static void RemoveDirectory(string Target, bool ShowProgress, bool secureRemove = false)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
             DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, ShowProgress, secureRemove);
+        }
 
         /// <summary>
         /// Removes a directory
@@ -69,8 +81,12 @@ namespace KS.Files.Operations
         /// </summary>
         /// <param name="Target">Target directory</param>
         /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
-        public static void RemoveFile(string Target, bool secureRemove = false) =>
+        public static void RemoveFile(string Target, bool secureRemove = false)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
             DriverHandler.CurrentFilesystemDriverLocal.RemoveFile(Target, secureRemove);
+        }
 
         /// <summary>
         /// Removes a file
@@ -97,8 +113,12 @@ namespace KS.Files.Operations
         /// </summary>
         /// <param name="Target">Path to file or directory</param>
         /// <param name="secureRemove">Securely remove file by filling it with zeroes</param>
-        public static void RemoveFileOrDir(string Target, bool secureRemove = false) =>
+        public static void RemoveFileOrDir(string Target, bool secureRemove = false)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
             DriverHandler.CurrentFilesystemDriverLocal.RemoveFileOrDir(Target, secureRemove);
+        }
 
         /// <summary>
         /// Removes a file or directory
