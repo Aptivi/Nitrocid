@@ -19,15 +19,13 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations;
-using KS.Files.Querying;
-using KS.Files.Read;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
-using System.IO;
 
 namespace KS.Kernel.Journaling
 {
@@ -79,7 +77,7 @@ namespace KS.Kernel.Journaling
                 };
 
                 // Open the journal and add the new journal entry to it
-                var JournalFileObject = JArray.Parse(FileRead.ReadContentsText(JournalPath));
+                var JournalFileObject = JArray.Parse(Reading.ReadContentsText(JournalPath));
                 var journalObject = JObject.FromObject(JournalEntry);
                 JournalFileObject.Add(journalObject);
 
@@ -100,7 +98,7 @@ namespace KS.Kernel.Journaling
                 return Array.Empty<JournalEntry>();
 
             // Now, parse the journal
-            var journals = JsonConvert.DeserializeObject<JournalEntry[]>(FileRead.ReadContentsText(JournalPath));
+            var journals = JsonConvert.DeserializeObject<JournalEntry[]>(Reading.ReadContentsText(JournalPath));
             return journals;
         }
 

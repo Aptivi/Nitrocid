@@ -23,7 +23,6 @@ using System.IO;
 using System.Linq;
 using KS.Files;
 using KS.Files.Folders;
-using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
@@ -32,7 +31,8 @@ using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.Resources;
 using System.Globalization;
-using KS.Files.Read;
+using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 
 namespace KS.Languages
 {
@@ -178,7 +178,7 @@ namespace KS.Languages
                         DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
 
                         // Check the metadata to see if it has relevant information for the language
-                        JToken MetadataToken = JObject.Parse(FileRead.ReadContentsText(LanguagePath));
+                        JToken MetadataToken = JObject.Parse(Reading.ReadContentsText(LanguagePath));
                         DebugWriter.WriteDebug(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
                         if (MetadataToken is not null)
                         {
@@ -279,7 +279,7 @@ namespace KS.Languages
                         DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
 
                         // Now, check the metadata to see if it has relevant information for the language
-                        JToken MetadataToken = JObject.Parse(FileRead.ReadContentsText(LanguagePath));
+                        JToken MetadataToken = JObject.Parse(Reading.ReadContentsText(LanguagePath));
                         DebugWriter.WriteDebug(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
                         if (MetadataToken is not null)
                         {

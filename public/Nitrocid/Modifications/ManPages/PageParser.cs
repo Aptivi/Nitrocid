@@ -21,8 +21,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using KS.Files;
-using KS.Files.Querying;
-using KS.Files.Read;
+using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -74,7 +74,7 @@ namespace KS.Modifications.ManPages
                 DebugWriter.WriteDebug(DebugLevel.I, "Current manual file: {0}", ManualFile);
 
                 // First, get all lines in the file
-                var ManLines = FileRead.ReadContents(ManualFile);
+                var ManLines = Reading.ReadContents(ManualFile);
                 var BodyParsing = false;
                 foreach (string ManLine in ManLines)
                 {

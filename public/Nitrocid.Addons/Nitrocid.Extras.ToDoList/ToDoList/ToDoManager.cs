@@ -18,11 +18,9 @@
 
 using KS.Files;
 using KS.Files.Operations;
-using KS.Files.Querying;
-using KS.Files.Read;
+using KS.Files.Operations.Querying;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace Nitrocid.Extras.ToDoList.ToDoList
@@ -128,7 +126,7 @@ namespace Nitrocid.Extras.ToDoList.ToDoList
             string path = Paths.GetKernelPath(KernelPathType.ToDoList);
             if (!Checking.FileExists(path))
                 Making.MakeJsonFile(path, true, true);
-            string serializedTasks = FileRead.ReadContentsText(path);
+            string serializedTasks = Reading.ReadContentsText(path);
             toDoTasks = (List<ToDoTask>)JsonConvert.DeserializeObject(serializedTasks, typeof(List<ToDoTask>));
         }
     }

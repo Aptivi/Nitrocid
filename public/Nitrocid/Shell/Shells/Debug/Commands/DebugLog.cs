@@ -23,8 +23,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Files;
 using KS.Files.Folders;
-using System.IO;
-using KS.Files.Read;
+using KS.Files.Operations;
 
 namespace KS.Shell.Shells.Debug.Commands
 {
@@ -73,7 +72,7 @@ namespace KS.Shell.Shells.Debug.Commands
             }
 
             // Get the contents of the file and write it to the console
-            string contents = FileRead.ReadContentsText(finalDebug);
+            string contents = Reading.ReadContentsText(finalDebug);
             TextWriterColor.Write(contents);
             return 0;
         }

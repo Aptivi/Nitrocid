@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Exceptions;
-using KS.Files.Querying;
 using System.Collections.Generic;
 using VisualCard.Parts;
 using VisualCard;
@@ -32,6 +31,7 @@ using KS.Drivers.Encryption;
 using System.IO;
 using VisualCard.Converters;
 using KS.Misc.Text.Probers.Regexp;
+using KS.Files.Operations.Querying;
 
 namespace Nitrocid.Extras.Contacts.Contacts
 {

@@ -23,7 +23,7 @@ using System.Runtime.Loader;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Updates;
 using KS.Languages;
 using KS.Network.Base.Transfer;

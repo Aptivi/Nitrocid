@@ -16,7 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Exceptions;
 using System;

@@ -23,7 +23,7 @@ using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers;
-using KS.Files.Print;
+using KS.Files.Operations.Printing;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;

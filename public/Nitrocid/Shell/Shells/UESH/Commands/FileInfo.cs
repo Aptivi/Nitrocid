@@ -24,7 +24,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.LineEndings;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;

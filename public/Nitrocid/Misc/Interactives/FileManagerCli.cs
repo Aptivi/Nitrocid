@@ -22,7 +22,6 @@ using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Files.Folders;
 using KS.Files.Operations;
-using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using System;
@@ -43,6 +42,7 @@ using System.Reflection;
 using KS.Files.Instances;
 using KS.ConsoleBase.Interactive;
 using KS.Files.Extensions;
+using KS.Files.Operations.Querying;
 
 namespace KS.Misc.Interactives
 {

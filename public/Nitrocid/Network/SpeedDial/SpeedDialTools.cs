@@ -21,13 +21,11 @@ using KS.Languages;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using KS.Kernel.Exceptions;
 using KS.Network.Base.Connections;
-using KS.Files.Querying;
 using KS.Files.Operations;
-using KS.Files.Read;
+using KS.Files.Operations.Querying;
 
 namespace KS.Network.SpeedDial
 {
@@ -217,7 +215,7 @@ namespace KS.Network.SpeedDial
             string path = Paths.GetKernelPath(KernelPathType.SpeedDial);
             if (!Checking.FileExists(path))
                 return;
-            speedDialEntries = JsonConvert.DeserializeObject<List<SpeedDialEntry>>(FileRead.ReadContentsText(path));
+            speedDialEntries = JsonConvert.DeserializeObject<List<SpeedDialEntry>>(Reading.ReadContentsText(path));
         }
     }
 }

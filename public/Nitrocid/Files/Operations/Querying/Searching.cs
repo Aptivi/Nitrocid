@@ -21,7 +21,7 @@ using System.IO;
 using System.Text.RegularExpressions;
 using KS.Drivers;
 
-namespace KS.Files.Querying
+namespace KS.Files.Operations.Querying
 {
     /// <summary>
     /// File searching module

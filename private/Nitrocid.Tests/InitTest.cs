@@ -19,12 +19,12 @@
 using System;
 using System.IO;
 using KS.Files;
-using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using NUnit.Framework;
 using KS.Files.Operations;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
+using KS.Files.Operations.Querying;
 
 namespace Nitrocid.Tests
 {

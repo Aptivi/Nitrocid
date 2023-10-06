@@ -19,7 +19,6 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
-using KS.Files.Querying;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.Mail.Transfer;
@@ -28,6 +27,7 @@ using MimeKit;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
+using KS.Files.Operations.Querying;
 
 namespace KS.Shell.Shells.Mail.Commands
 {

@@ -26,7 +26,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Files;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;

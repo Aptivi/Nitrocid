@@ -21,11 +21,6 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Security.Privacy;
 using KS.Security.Privacy.Consents;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KS.Files.Operations
 {

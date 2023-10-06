@@ -18,8 +18,7 @@
 
 using KS.Files;
 using KS.Files.Operations;
-using KS.Files.Querying;
-using KS.Files.Read;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -27,7 +26,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace KS.Users.Groups
@@ -197,7 +195,7 @@ namespace KS.Users.Groups
                 SaveGroups();
 
             // Get the group information instances to the user groups path
-            string groupInfosJson = FileRead.ReadContentsText(Paths.UserGroupsPath);
+            string groupInfosJson = Reading.ReadContentsText(Paths.UserGroupsPath);
             JArray groupInfoArrays = (JArray)JsonConvert.DeserializeObject(groupInfosJson);
             List<GroupInfo> groups = new();
             foreach (var groupInfoArray in groupInfoArrays)

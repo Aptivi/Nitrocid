@@ -23,15 +23,13 @@ using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
-using KS.Files.Querying;
-using KS.Files.Read;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using Newtonsoft.Json.Linq;
 using Nitrocid.LocaleGen.Core.Serializer;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace Nitrocid.Extras.LanguageStudio.Studio
@@ -78,7 +76,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             }
 
             // Check the provided languages
-            JToken metadata = JObject.Parse(FileRead.ReadContentsText(manifestFile));
+            JToken metadata = JObject.Parse(Reading.ReadContentsText(manifestFile));
             string[] finalLangs = metadata
                 .Select((token) => token.Path)
                 .Where(LanguageManager.Languages.ContainsKey)
@@ -92,7 +90,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             }
 
             // Populate the English strings and fill the translated lines
-            List<string> englishLines = FileRead.ReadContents(englishFile).ToList();
+            List<string> englishLines = Reading.ReadContents(englishFile).ToList();
             Dictionary<string, List<string>> translatedLines = new();
             foreach (string language in finalLangs)
             {
@@ -101,7 +99,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 List<string> finalLangLines = new();
                 DebugWriter.WriteDebug(DebugLevel.I, "Language path is {0}", languagePath);
                 if (Checking.FileExists(languagePath))
-                    finalLangLines.AddRange(FileRead.ReadContents(languagePath));
+                    finalLangLines.AddRange(Reading.ReadContents(languagePath));
                 else
                     finalLangLines.AddRange(new string[englishLines.Count]);
 

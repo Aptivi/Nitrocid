@@ -25,7 +25,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Files.PathLookup;
-using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -69,6 +68,7 @@ using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Misc.Text.Probers.Regexp;
 using KS.Drivers.Console.Bases;
+using KS.Files.Operations.Querying;
 
 namespace KS.Shell.ShellBase.Shells
 {

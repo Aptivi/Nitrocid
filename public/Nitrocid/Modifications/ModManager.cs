@@ -25,7 +25,6 @@ using System.Reflection;
 using KS.ConsoleBase.Colors;
 using KS.Files;
 using KS.Files.Operations;
-using KS.Files.Querying;
 using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Splash;
@@ -38,6 +37,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Reflection;
 using System.Diagnostics;
 using KS.Misc.Screensaver;
+using KS.Files.Operations.Querying;
 
 namespace KS.Modifications
 {

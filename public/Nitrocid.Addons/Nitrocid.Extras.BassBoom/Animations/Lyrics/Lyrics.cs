@@ -27,13 +27,13 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
 using KS.Files;
 using KS.Files.Folders;
-using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Kernel.Configuration;
+using KS.Files.Operations.Querying;
 
 #if NET6_0
 using SharpLyrics;

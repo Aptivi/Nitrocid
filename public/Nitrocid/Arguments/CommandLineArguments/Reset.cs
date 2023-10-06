@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Querying;
 using KS.Files;
 using System.IO;
 using System;
@@ -26,6 +25,7 @@ using KS.Languages;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Kernel.Configuration;
+using KS.Files.Operations.Querying;
 
 namespace KS.Arguments.CommandLineArguments
 {

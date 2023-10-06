@@ -23,7 +23,6 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using KS.Files;
-using KS.Files.Querying;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -36,7 +35,8 @@ using Newtonsoft.Json.Linq;
 using SemanVer.Instance;
 using KS.Modifications.Dependencies;
 using KS.Kernel.Configuration;
-using KS.Files.Read;
+using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 
 namespace KS.Modifications
 {
@@ -185,7 +185,7 @@ namespace KS.Modifications
                         {
                             // This json file, as always, contains "Name" (ignored), "Transliterable" (ignored), and "Localizations" keys.
                             string LanguageName = Path.GetFileNameWithoutExtension(ModManualFile);
-                            string ModManualFileContents = FileRead.ReadContentsText(ModManualFile);
+                            string ModManualFileContents = Reading.ReadContentsText(ModManualFile);
                             JToken MetadataToken = JObject.Parse(ModManualFileContents);
                             DebugWriter.WriteDebug(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
                             if (MetadataToken is not null)

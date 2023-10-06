@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using System;
@@ -28,6 +27,7 @@ using KS.Misc.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Sequences.Tools;
 using TextEncoding = System.Text.Encoding;
+using KS.Files.Operations.Querying;
 
 namespace KS.Drivers.Console.Bases
 {

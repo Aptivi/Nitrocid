@@ -19,7 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.LineEndings;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;

@@ -21,13 +21,14 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Security.Privacy;
 using KS.Security.Privacy.Consents;
+using System.IO;
 
-namespace KS.Files.Read
+namespace KS.Files.Operations
 {
     /// <summary>
     /// File reading module
     /// </summary>
-    public static class FileRead
+    public static class Reading
     {
         /// <summary>
         /// Reads the contents of a file and writes it to the array. This is blocking and will put a lock on the file until read.
@@ -87,5 +88,13 @@ namespace KS.Files.Read
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
             return DriverHandler.CurrentFilesystemDriverLocal.ReadAllBytes(path);
         }
+
+        /// <summary>
+        /// Reads all the characters in the stream until the end and seeks the stream to the beginning, if possible.
+        /// </summary>
+        /// <param name="stream">The stream reader</param>
+        /// <returns>Contents of the stream</returns>
+        public static string ReadToEndAndSeek(ref StreamReader stream) =>
+            DriverHandler.CurrentFilesystemDriverLocal.ReadToEndAndSeek(ref stream);
     }
 }

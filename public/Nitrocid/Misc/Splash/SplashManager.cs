@@ -28,7 +28,7 @@ using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Instances;
 using KS.Files.Operations;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;

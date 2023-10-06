@@ -19,8 +19,8 @@
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Instances;
-using KS.Files.Querying;
-using KS.Files.Read;
+using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -94,7 +94,7 @@ namespace KS.Kernel.Extensions
 
                 // Read the metadata
                 DebugWriter.WriteDebug(DebugLevel.I, "Metadata {0} found!", metadataPath);
-                string metadataContents = FileRead.ReadContentsText(metadataPath);
+                string metadataContents = Reading.ReadContentsText(metadataPath);
                 JToken metadataToken = JToken.Parse(metadataContents);
 
                 // Check the metadata value

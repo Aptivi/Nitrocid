@@ -18,12 +18,10 @@
 
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using KS.Drivers;
 using KS.Drivers.Encryption;
 using KS.Files;
-using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -34,8 +32,8 @@ using KS.Kernel.Events;
 using KS.Users.Login;
 using KS.Kernel.Configuration;
 using KS.Misc.Text.Probers.Regexp;
-using KS.Files.Read;
 using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 
 namespace KS.Users
 {
@@ -136,7 +134,7 @@ namespace KS.Users
                 SaveUsers();
 
             // Get the content and parse it
-            string UsersTokenContent = FileRead.ReadContentsText(Paths.GetKernelPath(KernelPathType.Users));
+            string UsersTokenContent = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.Users));
             JArray userInfoArrays = (JArray)JsonConvert.DeserializeObject(UsersTokenContent);
 
             // Now, get each user from the config file

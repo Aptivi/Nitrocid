@@ -21,9 +21,9 @@ using System.Collections.Generic;
 using System.Linq;
 using static System.TimeZoneInfo;
 using KS.Kernel.Debugging;
-using KS.Files.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Files.Operations.Querying;
 
 namespace KS.Kernel.Time.Timezones
 {

@@ -21,7 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;

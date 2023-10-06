@@ -23,12 +23,12 @@ using System.Collections.Generic;
 using System.Linq;
 using VisualCard.Parts;
 using System.Text;
-using KS.Files.Querying;
 using System.Collections;
 using KS.Misc.Text;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Interactive;
 using KS.Misc.Text.Probers.Regexp;
+using KS.Files.Operations.Querying;
 
 namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 {

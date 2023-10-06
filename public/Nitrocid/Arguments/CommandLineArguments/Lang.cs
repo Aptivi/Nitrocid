@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Extensions;
 using KS.Languages;
 

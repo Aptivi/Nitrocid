@@ -19,13 +19,11 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
-using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
-using KS.Files.Read;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -50,7 +48,7 @@ namespace KS.Shell.ShellBase.Aliases
         {
             // Get all aliases from file
             Making.MakeFile(Paths.GetKernelPath(KernelPathType.Aliases), false);
-            string AliasJsonContent = FileRead.ReadContentsText(Paths.GetKernelPath(KernelPathType.Aliases));
+            string AliasJsonContent = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.Aliases));
             var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent) ??
                 Array.Empty<AliasInfo>();
             aliases = aliasesArray.ToList();

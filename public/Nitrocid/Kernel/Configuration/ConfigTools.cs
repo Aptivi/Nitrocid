@@ -33,8 +33,8 @@ using KS.Kernel.Configuration.Settings;
 using Newtonsoft.Json;
 using KS.Kernel.Configuration.Instances;
 using KS.Files;
-using KS.Files.Querying;
 using System.Linq;
+using KS.Files.Operations.Querying;
 
 namespace KS.Kernel.Configuration
 {

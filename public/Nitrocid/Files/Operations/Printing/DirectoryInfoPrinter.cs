@@ -20,25 +20,25 @@ using KS.Drivers;
 using KS.Files.Folders;
 using KS.Files.Instances;
 
-namespace KS.Files.Print
+namespace KS.Files.Operations.Printing
 {
     /// <summary>
-    /// File information printing module
+    /// Directory information printing module
     /// </summary>
-    public static class FileInfoPrinter
+    public static class DirectoryInfoPrinter
     {
 
         /// <summary>
-        /// Prints the file information to the console
+        /// Prints the directory information to the console
         /// </summary>
-        public static void PrintFileInfo(FileSystemEntry FileInfo) => 
-            DriverHandler.CurrentFilesystemDriverLocal.PrintFileInfo(FileInfo, Listing.ShowFileDetailsList);
+        public static void PrintDirectoryInfo(FileSystemEntry DirectoryInfo) =>
+            DriverHandler.CurrentFilesystemDriverLocal.PrintDirectoryInfo(DirectoryInfo, Listing.ShowFileDetailsList);
 
         /// <summary>
-        /// Prints the file information to the console
+        /// Prints the directory information to the console
         /// </summary>
-        public static void PrintFileInfo(FileSystemEntry FileInfo, bool ShowFileDetails) =>
-            DriverHandler.CurrentFilesystemDriverLocal.PrintFileInfo(FileInfo, ShowFileDetails);
+        public static void PrintDirectoryInfo(FileSystemEntry DirectoryInfo, bool ShowDirectoryDetails) =>
+            DriverHandler.CurrentFilesystemDriverLocal.PrintDirectoryInfo(DirectoryInfo, ShowDirectoryDetails);
 
     }
 }

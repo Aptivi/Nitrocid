@@ -20,7 +20,6 @@ using System;
 using System.IO;
 using System.Linq;
 using KS.Files.Folders;
-using KS.Files.Querying;
 using KS.Languages;
 using KS.Kernel.Debugging;
 using KS.Kernel;
@@ -31,6 +30,7 @@ using KS.Misc.Text;
 using IOPath = System.IO.Path;
 using System.Threading;
 using KS.Files.Instances;
+using KS.Files.Operations.Querying;
 
 namespace KS.Files
 {

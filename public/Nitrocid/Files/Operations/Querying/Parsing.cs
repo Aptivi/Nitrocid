@@ -18,7 +18,7 @@
 
 using KS.Drivers;
 
-namespace KS.Files.Querying
+namespace KS.Files.Operations.Querying
 {
     /// <summary>
     /// File parsing module
@@ -52,7 +52,7 @@ namespace KS.Files.Querying
         /// Is the file a binary file?
         /// </summary>
         /// <param name="Path">Path to file</param>
-        public static bool IsBinaryFile(string Path) => 
+        public static bool IsBinaryFile(string Path) =>
             DriverHandler.CurrentFilesystemDriverLocal.IsBinaryFile(Path);
 
         /// <summary>

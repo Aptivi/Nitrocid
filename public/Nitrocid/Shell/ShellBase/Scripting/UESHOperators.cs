@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers.Encryption;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 
 namespace KS.Shell.ShellBase.Scripting

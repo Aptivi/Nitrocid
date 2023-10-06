@@ -17,21 +17,28 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
-using System.IO;
+using KS.Files.Folders;
+using KS.Files.Instances;
 
-namespace KS.Files.Read
+namespace KS.Files.Operations.Printing
 {
     /// <summary>
-    /// Stream reading tools
+    /// File information printing module
     /// </summary>
-    public static class StreamRead
+    public static class FileInfoPrinter
     {
+
         /// <summary>
-        /// Reads all the characters in the stream until the end and seeks the stream to the beginning, if possible.
+        /// Prints the file information to the console
         /// </summary>
-        /// <param name="stream">The stream reader</param>
-        /// <returns>Contents of the stream</returns>
-        public static string ReadToEndAndSeek(ref StreamReader stream) =>
-            DriverHandler.CurrentFilesystemDriverLocal.ReadToEndAndSeek(ref stream);
+        public static void PrintFileInfo(FileSystemEntry FileInfo) =>
+            DriverHandler.CurrentFilesystemDriverLocal.PrintFileInfo(FileInfo, Listing.ShowFileDetailsList);
+
+        /// <summary>
+        /// Prints the file information to the console
+        /// </summary>
+        public static void PrintFileInfo(FileSystemEntry FileInfo, bool ShowFileDetails) =>
+            DriverHandler.CurrentFilesystemDriverLocal.PrintFileInfo(FileInfo, ShowFileDetails);
+
     }
 }

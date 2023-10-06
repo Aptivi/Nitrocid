@@ -17,10 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.IO;
 using System.Linq;
 using KS.Files;
-using KS.Files.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -34,7 +32,7 @@ using KS.Kernel.Configuration.Instances;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files.Operations;
-using KS.Files.Read;
+using KS.Files.Operations.Querying;
 
 namespace KS.Kernel.Configuration
 {
@@ -250,7 +248,7 @@ namespace KS.Kernel.Configuration
             {
                 // First, fix the configuration file up
                 RepairConfig(baseType);
-                string jsonContents = FileRead.ReadContentsText(ConfigPath);
+                string jsonContents = Reading.ReadContentsText(ConfigPath);
 
                 // Now, deserialize the config state.
                 string typeName = type.GetType().Name;
@@ -364,7 +362,7 @@ namespace KS.Kernel.Configuration
             // Get the current kernel config JSON file vs the serialized config JSON string
             string path = ConfigTools.GetPathToCustomSettingsFile(type);
             string serialized = GetSerializedConfig(type);
-            string current = FileRead.ReadContentsText(path);
+            string current = Reading.ReadContentsText(path);
 
             // Compare the two config JSON files
             try

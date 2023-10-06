@@ -26,7 +26,7 @@ using FluentFTP;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.Files;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;

@@ -18,7 +18,7 @@
 
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Files.Read;
+using KS.Files.Operations;
 using KS.Languages;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -33,7 +33,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         {
             string TextPath = Input.ReadLine(Translate.DoTranslation("Write a translatable string list file path to check:") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
-            var Texts = FileRead.ReadContents(TextPath);
+            var Texts = Reading.ReadContents(TextPath);
             bool hasMissingEntries = false;
             foreach (string Text in Texts)
             {

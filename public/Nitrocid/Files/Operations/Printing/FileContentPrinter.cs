@@ -19,7 +19,7 @@
 using KS.Drivers;
 using KS.Kernel.Configuration;
 
-namespace KS.Files.Print
+namespace KS.Files.Operations.Printing
 {
     /// <summary>
     /// File content printing module
@@ -31,7 +31,7 @@ namespace KS.Files.Print
         /// Prints the contents of a file to the console
         /// </summary>
         /// <param name="filename">Full path to file</param>
-        public static void PrintContents(string filename) => 
+        public static void PrintContents(string filename) =>
             DriverHandler.CurrentFilesystemDriverLocal.PrintContents(filename, KernelFlags.PrintLineNumbers);
 
         /// <summary>

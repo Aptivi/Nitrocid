@@ -19,7 +19,7 @@
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Operations;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Shell.ShellBase.Commands;
 using KS.Users.Permissions;
 using System.IO;

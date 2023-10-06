@@ -19,7 +19,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
-using KS.Files.Read;
+using KS.Files.Operations;
 using System.Text;
 using Terminaux.Colors;
 
@@ -155,7 +155,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             // Read the contents
             Filesystem.ThrowOnInvalidPath(Filename);
             Filename = Filesystem.NeutralizePath(Filename);
-            var FileContents = FileRead.ReadContents(Filename);
+            var FileContents = Reading.ReadContents(Filename);
 
             // Do the job
             PrintLineWithHandle(FileContents, LineNumber, ColumnNumber, color);
@@ -297,7 +297,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             // Read the contents
             Filesystem.ThrowOnInvalidPath(Filename);
             Filename = Filesystem.NeutralizePath(Filename);
-            var FileContents = FileRead.ReadContents(Filename);
+            var FileContents = Reading.ReadContents(Filename);
 
             // Do the job
             return RenderLineWithHandle(FileContents, LineNumber, ColumnNumber, color);

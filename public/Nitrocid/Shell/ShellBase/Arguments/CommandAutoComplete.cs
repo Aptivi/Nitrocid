@@ -17,7 +17,7 @@
 
 using KS.Files;
 using KS.Files.Folders;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;

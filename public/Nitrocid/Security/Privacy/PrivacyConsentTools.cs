@@ -19,8 +19,7 @@
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Files;
 using KS.Files.Operations;
-using KS.Files.Querying;
-using KS.Files.Read;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Reflection;
@@ -30,7 +29,6 @@ using KS.Security.Privacy.Consents;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 
 namespace KS.Security.Privacy
@@ -106,7 +104,7 @@ namespace KS.Security.Privacy
                 SaveConsents();
 
             // Now, load all the consents
-            string serialized = FileRead.ReadContentsText(consentsPath);
+            string serialized = Reading.ReadContentsText(consentsPath);
             consentedPermissions = JsonConvert.DeserializeObject<List<ConsentedPermission>>(serialized);
         }
 

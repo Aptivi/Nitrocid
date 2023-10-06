@@ -16,9 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System.IO;
 using KS.Files;
-using KS.Files.Read;
+using KS.Files.Operations;
 using KS.Misc.Text.Probers.Motd;
 using NUnit.Framework;
 using Shouldly;
@@ -39,7 +38,7 @@ namespace Nitrocid.Tests.Misc.Probers
         public void TestReadMOTDFromFile()
         {
             MotdParse.ReadMotd();
-            string MOTDLine = FileRead.ReadContentsText(Paths.GetKernelPath(KernelPathType.MOTD));
+            string MOTDLine = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.MOTD));
             MOTDLine.ShouldBe(MotdParse.MOTDMessage);
         }
 
@@ -51,7 +50,7 @@ namespace Nitrocid.Tests.Misc.Probers
         public void TestReadMALFromFile()
         {
             MalParse.ReadMal();
-            string MALLine = FileRead.ReadContentsText(Paths.GetKernelPath(KernelPathType.MAL));
+            string MALLine = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.MAL));
             MALLine.ShouldBe(MalParse.MAL);
         }
 

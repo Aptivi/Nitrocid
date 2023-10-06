@@ -21,7 +21,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Files.Folders;
-using KS.Files.Querying;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -56,6 +55,7 @@ using KS.Users.Login.Handlers;
 using KS.Kernel.Configuration.Settings;
 using KS.Drivers.Encoding;
 using KS.Drivers.DebugLogger;
+using KS.Files.Operations.Querying;
 
 namespace KS.Kernel.Configuration.Instances
 {

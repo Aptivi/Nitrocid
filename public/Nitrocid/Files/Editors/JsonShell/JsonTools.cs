@@ -21,7 +21,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading;
-using KS.Files.Read;
+using KS.Files.Operations;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -49,7 +49,7 @@ namespace KS.Files.Editors.JsonShell
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
                 JsonShellCommon.JsonShell_FileStream = new FileStream(File, FileMode.Open);
                 var JsonFileReader = new StreamReader(JsonShellCommon.JsonShell_FileStream);
-                string JsonFileContents = StreamRead.ReadToEndAndSeek(ref JsonFileReader);
+                string JsonFileContents = Reading.ReadToEndAndSeek(ref JsonFileReader);
                 JsonShellCommon.JsonShell_FileToken = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
                 JsonShellCommon.JsonShell_FileTokenOrig = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
                 DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, JsonShellCommon.JsonShell_FileStream.Length, JsonShellCommon.JsonShell_FileStream.Position);
@@ -332,7 +332,7 @@ namespace KS.Files.Editors.JsonShell
             DebugWriter.WriteDebug(DebugLevel.I, "Got json file {0}...", JsonFile);
 
             // Try to beautify JSON
-            string JsonFileContents = FileRead.ReadContentsText(JsonFile);
+            string JsonFileContents = Reading.ReadContentsText(JsonFile);
             return BeautifyJsonText(JsonFileContents);
         }
 
@@ -367,7 +367,7 @@ namespace KS.Files.Editors.JsonShell
             DebugWriter.WriteDebug(DebugLevel.I, "Got json file {0}...", JsonFile);
 
             // Try to minify JSON
-            string JsonFileContents = FileRead.ReadContentsText(JsonFile);
+            string JsonFileContents = Reading.ReadContentsText(JsonFile);
             return MinifyJsonText(JsonFileContents);
         }
 

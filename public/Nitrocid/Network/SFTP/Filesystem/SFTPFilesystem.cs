@@ -21,7 +21,7 @@ using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
 using KS.ConsoleBase.Colors;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;

@@ -19,8 +19,6 @@
 using KS.Files.Attributes;
 using KS.Files.Folders;
 using KS.Files.LineEndings;
-using KS.Files.Querying;
-using KS.Files.Read;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -48,6 +46,7 @@ using KS.Files.PathLookup;
 using KS.Files.Instances;
 using KS.Files.Editors.SqlEdit;
 using KS.Misc.Text.Probers.Regexp;
+using KS.Files.Operations.Querying;
 
 namespace KS.Drivers.Filesystem
 {
@@ -118,7 +117,7 @@ namespace KS.Drivers.Filesystem
                 FS.ThrowOnInvalidPath(Input);
                 if (!Parsing.IsBinaryFile(Input))
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + Input + ")");
-                CombinedContents.AddRange(FileRead.ReadAllBytes(Input));
+                CombinedContents.AddRange(Reading.ReadAllBytes(Input));
 
                 // Enumerate the target inputs
                 foreach (string TargetInput in TargetInputs)
@@ -126,7 +125,7 @@ namespace KS.Drivers.Filesystem
                     FS.ThrowOnInvalidPath(TargetInput);
                     if (!Parsing.IsBinaryFile(TargetInput))
                         throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine text files, use the appropriate function.") + " " + nameof(CombineTextFiles) + "(" + TargetInput + ")");
-                    CombinedContents.AddRange(FileRead.ReadAllBytes(TargetInput));
+                    CombinedContents.AddRange(Reading.ReadAllBytes(TargetInput));
                 }
 
                 // Return the combined contents
@@ -151,7 +150,7 @@ namespace KS.Drivers.Filesystem
                 FS.ThrowOnInvalidPath(Input);
                 if (Parsing.IsBinaryFile(Input))
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + Input + ")");
-                CombinedContents.AddRange(FileRead.ReadContents(Input));
+                CombinedContents.AddRange(Reading.ReadContents(Input));
 
                 // Enumerate the target inputs
                 foreach (string TargetInput in TargetInputs)
@@ -159,7 +158,7 @@ namespace KS.Drivers.Filesystem
                     FS.ThrowOnInvalidPath(TargetInput);
                     if (Parsing.IsBinaryFile(TargetInput))
                         throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("To combine binary files, use the appropriate function.") + " " + nameof(CombineBinaryFiles) + "(" + TargetInput + ")");
-                    CombinedContents.AddRange(FileRead.ReadContents(TargetInput));
+                    CombinedContents.AddRange(Reading.ReadContents(TargetInput));
                 }
 
                 // Return the combined contents
@@ -186,7 +185,7 @@ namespace KS.Drivers.Filesystem
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("File {0} not found."), TextFile);
 
             // Get all the file lines, regardless of the new line style on the target file
-            var FileContents = FileRead.ReadAllLinesNoBlock(TextFile);
+            var FileContents = Reading.ReadAllLinesNoBlock(TextFile);
             DebugWriter.WriteDebug(DebugLevel.I, "Got {0} lines. Converting newlines in {1} to {2}...", FileContents.Length, TextFile, LineEndingStyle.ToString());
 
             // Get the newline string according to the current style
@@ -866,12 +865,12 @@ namespace KS.Drivers.Filesystem
                 // Try to parse the content as JSON object
                 try
                 {
-                    var ParsedObject = JObject.Parse(FileRead.ReadContentsText(Path));
+                    var ParsedObject = JObject.Parse(Reading.ReadContentsText(Path));
                     return true;
                 }
                 catch
                 {
-                    var ParsedObject = JArray.Parse(FileRead.ReadContentsText(Path));
+                    var ParsedObject = JArray.Parse(Reading.ReadContentsText(Path));
                     return true;
                 }
             }
@@ -1097,7 +1096,7 @@ namespace KS.Drivers.Filesystem
                 // Read the contents
                 foreach (string FilePath in Listing.GetFilesystemEntries(filename, true))
                 {
-                    var Contents = FileRead.ReadContents(FilePath);
+                    var Contents = Reading.ReadContents(FilePath);
                     for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                     {
                         if (PrintLineNumbers)
@@ -1418,7 +1417,7 @@ namespace KS.Drivers.Filesystem
                 FS.ThrowOnInvalidPath(FilePath);
                 FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<string>();
-                var Filebyte = FileRead.ReadContents(FilePath);
+                var Filebyte = Reading.ReadContents(FilePath);
                 int MatchNum = 1;
                 int LineNumber = 1;
                 foreach (string Str in Filebyte)
@@ -1447,7 +1446,7 @@ namespace KS.Drivers.Filesystem
                 FS.ThrowOnInvalidPath(FilePath);
                 FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<string>();
-                var Filebyte = FileRead.ReadContents(FilePath);
+                var Filebyte = Reading.ReadContents(FilePath);
                 int MatchNum = 1;
                 int LineNumber = 1;
                 foreach (string Str in Filebyte)
@@ -1476,7 +1475,7 @@ namespace KS.Drivers.Filesystem
                 FS.ThrowOnInvalidPath(FilePath);
                 FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<(string, MatchCollection)>();
-                var Filebyte = FileRead.ReadContents(FilePath);
+                var Filebyte = Reading.ReadContents(FilePath);
                 foreach (string Str in Filebyte)
                     if (StringLookup.IsMatch(Str))
                         Matches.Add((Str, StringLookup.Matches(Str)));

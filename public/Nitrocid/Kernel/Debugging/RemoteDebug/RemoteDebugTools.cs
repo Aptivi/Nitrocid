@@ -18,7 +18,6 @@
 
 using System;
 using System.Data;
-using System.IO;
 using System.Linq;
 using System.Net.Sockets;
 using KS.Files;
@@ -27,9 +26,8 @@ using KS.Languages;
 using Newtonsoft.Json;
 using KS.Kernel.Events;
 using System.Collections.Generic;
-using KS.Files.Querying;
 using KS.Files.Operations;
-using KS.Files.Read;
+using KS.Files.Operations.Querying;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -334,7 +332,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         {
             string devicesPath = Paths.GetKernelPath(KernelPathType.DebugDevices);
             if (Checking.FileExists(devicesPath))
-                remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(FileRead.ReadContentsText(devicesPath));
+                remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(Reading.ReadContentsText(devicesPath));
         }
     }
 }

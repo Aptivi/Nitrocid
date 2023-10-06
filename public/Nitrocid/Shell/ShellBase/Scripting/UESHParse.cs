@@ -22,13 +22,13 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Kernel.Events;
 using System.Linq;
-using KS.Files.Read;
 using System.Collections.Generic;
 using FluentFTP.Helpers;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Scripting.Conditions;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Shell.ShellBase.Shells;
+using KS.Files.Operations;
 
 namespace KS.Shell.ShellBase.Scripting
 {
@@ -53,7 +53,7 @@ namespace KS.Shell.ShellBase.Scripting
                 EventsManager.FireEvent(EventType.UESHPreExecute, ScriptPath, ScriptArguments);
 
                 // Open the script file for reading
-                var FileLines = FileRead.ReadAllLinesNoBlock(ScriptPath);
+                var FileLines = Reading.ReadAllLinesNoBlock(ScriptPath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Stream opened. Parsing script");
 
                 // Look for $variables and initialize them

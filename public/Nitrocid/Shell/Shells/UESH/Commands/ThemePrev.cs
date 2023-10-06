@@ -21,7 +21,7 @@ using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Themes;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
-using KS.Files.Querying;
+using KS.Files.Operations.Querying;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;

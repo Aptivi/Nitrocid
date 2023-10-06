@@ -30,7 +30,6 @@ using KS.Shell.Shells.SFTP;
 using KS.Users;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
-using KS.Files.Querying;
 using System.Collections.Generic;
 using KS.Kernel.Power;
 using KS.Kernel.Time;
@@ -38,6 +37,7 @@ using KS.Kernel.Time.Renderers;
 using KS.Shell.ShellBase.Scripting;
 using Terminaux.Colors;
 using KS.Kernel;
+using KS.Files.Operations.Querying;
 
 namespace KS.Misc.Text.Probers.Placeholder
 {

@@ -22,9 +22,8 @@ using KS.Files;
 using KS.Files.Attributes;
 using KS.Files.Folders;
 using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 using KS.Files.PathLookup;
-using KS.Files.Querying;
-using KS.Files.Read;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using NUnit.Framework;
@@ -248,7 +247,7 @@ namespace Nitrocid.Tests.Files
         public void TestReadAllLinesNoBlock()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            var LinesTestText = FileRead.ReadAllLinesNoBlock(PathToTestText);
+            var LinesTestText = Reading.ReadAllLinesNoBlock(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string[]));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
@@ -262,7 +261,7 @@ namespace Nitrocid.Tests.Files
         public void TestReadContents()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            var LinesTestText = FileRead.ReadContents(PathToTestText);
+            var LinesTestText = Reading.ReadContents(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string[]));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
@@ -276,7 +275,7 @@ namespace Nitrocid.Tests.Files
         public void TestReadAllTextNoBlock()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            string LinesTestText = FileRead.ReadAllTextNoBlock(PathToTestText);
+            string LinesTestText = Reading.ReadAllTextNoBlock(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
@@ -290,7 +289,7 @@ namespace Nitrocid.Tests.Files
         public void TestReadContentsText()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            string LinesTestText = FileRead.ReadContentsText(PathToTestText);
+            string LinesTestText = Reading.ReadContentsText(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
@@ -304,13 +303,13 @@ namespace Nitrocid.Tests.Files
         public void TestWriteAllLinesNoBlock()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            var LinesTestText = FileRead.ReadContents(PathToTestText);
+            var LinesTestText = Reading.ReadContents(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string[]));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
             string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteAllLinesNoBlock)}.txt");
             Writing.WriteAllLinesNoBlock(PathToTestDestinationText, LinesTestText);
-            var LinesTestText2 = FileRead.ReadContents(PathToTestText);
+            var LinesTestText2 = Reading.ReadContents(PathToTestText);
             LinesTestText2.ShouldBeOfType(typeof(string[]));
             LinesTestText2.ShouldNotBeNull();
             LinesTestText2.ShouldNotBeEmpty();
@@ -325,13 +324,13 @@ namespace Nitrocid.Tests.Files
         public void TestWriteContents()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            var LinesTestText = FileRead.ReadContents(PathToTestText);
+            var LinesTestText = Reading.ReadContents(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string[]));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
             string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteContents)}.txt");
             Writing.WriteContents(PathToTestDestinationText, LinesTestText);
-            var LinesTestText2 = FileRead.ReadContents(PathToTestText);
+            var LinesTestText2 = Reading.ReadContents(PathToTestText);
             LinesTestText2.ShouldBeOfType(typeof(string[]));
             LinesTestText2.ShouldNotBeNull();
             LinesTestText2.ShouldNotBeEmpty();
@@ -346,13 +345,13 @@ namespace Nitrocid.Tests.Files
         public void TestWriteAllTextNoBlock()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            string LinesTestText = FileRead.ReadContentsText(PathToTestText);
+            string LinesTestText = Reading.ReadContentsText(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
             string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteAllTextNoBlock)}.txt");
             Writing.WriteAllTextNoBlock(PathToTestDestinationText, LinesTestText);
-            string LinesTestText2 = FileRead.ReadContentsText(PathToTestText);
+            string LinesTestText2 = Reading.ReadContentsText(PathToTestText);
             LinesTestText2.ShouldBeOfType(typeof(string));
             LinesTestText2.ShouldNotBeNull();
             LinesTestText2.ShouldNotBeEmpty();
@@ -367,13 +366,13 @@ namespace Nitrocid.Tests.Files
         public void TestWriteContentsText()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            string LinesTestText = FileRead.ReadContentsText(PathToTestText);
+            string LinesTestText = Reading.ReadContentsText(PathToTestText);
             LinesTestText.ShouldBeOfType(typeof(string));
             LinesTestText.ShouldNotBeNull();
             LinesTestText.ShouldNotBeEmpty();
             string PathToTestDestinationText = Path.GetFullPath($"TestData/{nameof(TestWriteContentsText)}.txt");
             Writing.WriteContentsText(PathToTestDestinationText, LinesTestText);
-            string LinesTestText2 = FileRead.ReadContentsText(PathToTestText);
+            string LinesTestText2 = Reading.ReadContentsText(PathToTestText);
             LinesTestText2.ShouldBeOfType(typeof(string));
             LinesTestText2.ShouldNotBeNull();
             LinesTestText2.ShouldNotBeEmpty();
