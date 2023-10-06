@@ -47,6 +47,7 @@ namespace KS.Misc.Screensaver
         /// </summary>
         public virtual void ScreensaverSeizureWarning()
         {
+            ConsoleWrapper.CursorVisible = false;
             KernelColorTools.LoadBack();
             InfoBoxColor.WriteInfoBox(
                 Translate.DoTranslation("Photosensitive seizure warning") + CharManager.NewLine + CharManager.NewLine +
