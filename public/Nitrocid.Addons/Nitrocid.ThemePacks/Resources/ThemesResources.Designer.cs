@@ -88,6 +88,33 @@ namespace Nitrocid.ThemePacks.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Hacker&quot;,
+        ///        &quot;Description&quot;: &quot;Green text on gray&quot;,
+        ///        &quot;Localizable&quot;: true
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;10&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;10&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;10&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;10&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;10&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;10&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;8&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;10&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;2&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;10&quot;,
+        ///    &quot;StageColor&quot;: &quot;2&quot;,
+        ///    &quot;ErrorColor&quot;: &quot;2&quot;,
+        ///    &quot;WarningColor&quot;: &quot;10&quot;, [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Android {
+            get {
+                return ResourceManager.GetString("Android", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Aptivi&quot;,
         ///        &quot;Description&quot;: &quot;Our branding harmony&quot;,
         ///        &quot;Localizable&quot;: true
@@ -1011,13 +1038,12 @@ namespace Nitrocid.ThemePacks.Resources {
         ///        &quot;EndDay&quot;: 12,
         ///        &quot;Localizable&quot;: true
         ///    },
-        ///    &quot;InputColor&quot;: &quot;#C390D9&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;#C390D9&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;#752EFD&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;#752EFD&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;#752EFD&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;#752EFD&quot;,
-        ///    &quot;Backgr [rest of string was truncated]&quot;;.
+        ///    &quot;InputColor&quot;: &quot;129;69;3&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;129;69;3&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;250;139;18&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;250;139;18&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;250;139;18&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;250;139;18&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Oktoberfest {
             get {
