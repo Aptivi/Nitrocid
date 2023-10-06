@@ -25,6 +25,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
+using KS.Files.Read;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -49,7 +50,7 @@ namespace KS.Shell.ShellBase.Aliases
         {
             // Get all aliases from file
             Making.MakeFile(Paths.GetKernelPath(KernelPathType.Aliases), false);
-            string AliasJsonContent = File.ReadAllText(Paths.GetKernelPath(KernelPathType.Aliases));
+            string AliasJsonContent = FileRead.ReadContentsText(Paths.GetKernelPath(KernelPathType.Aliases));
             var aliasesArray = JsonConvert.DeserializeObject<AliasInfo[]>(AliasJsonContent) ??
                 Array.Empty<AliasInfo>();
             aliases = aliasesArray.ToList();
@@ -62,7 +63,7 @@ namespace KS.Shell.ShellBase.Aliases
         {
             // Save all aliases
             DebugWriter.WriteDebug(DebugLevel.I, "Saving aliases...");
-            File.WriteAllText(Paths.GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(aliases.ToArray(), Formatting.Indented));
+            Writing.WriteContentsText(Paths.GetKernelPath(KernelPathType.Aliases), JsonConvert.SerializeObject(aliases.ToArray(), Formatting.Indented));
         }
 
         /// <summary>

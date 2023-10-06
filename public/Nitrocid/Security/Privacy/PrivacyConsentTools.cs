@@ -18,7 +18,9 @@
 
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Files;
+using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Files.Read;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Reflection;
@@ -104,7 +106,7 @@ namespace KS.Security.Privacy
                 SaveConsents();
 
             // Now, load all the consents
-            string serialized = File.ReadAllText(consentsPath);
+            string serialized = FileRead.ReadContentsText(consentsPath);
             consentedPermissions = JsonConvert.DeserializeObject<List<ConsentedPermission>>(serialized);
         }
 
@@ -113,7 +115,7 @@ namespace KS.Security.Privacy
             // Save all the consents to JSON
             string consentsPath = Paths.ConsentsPath;
             string serialized = JsonConvert.SerializeObject(consentedPermissions, Formatting.Indented);
-            File.WriteAllText(consentsPath, serialized);
+            Writing.WriteContentsText(consentsPath, serialized);
         }
     }
 }

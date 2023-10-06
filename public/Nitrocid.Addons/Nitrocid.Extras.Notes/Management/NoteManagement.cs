@@ -19,6 +19,7 @@
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Files.Read;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
@@ -90,7 +91,7 @@ namespace Nitrocid.Extras.Notes.Management
 
             // Now, serialize the array of notes to the JSON file
             string serialized = JsonConvert.SerializeObject(notes.ToArray(), Formatting.Indented);
-            File.WriteAllText(NotesPath, serialized);
+            Writing.WriteContentsText(NotesPath, serialized);
         }
 
         /// <summary>
@@ -103,7 +104,7 @@ namespace Nitrocid.Extras.Notes.Management
                 SaveNotes();
 
             // Now, serialize the array of notes to the JSON file
-            string serialized = File.ReadAllText(NotesPath);
+            string serialized = FileRead.ReadContentsText(NotesPath);
             var notesArray = JsonConvert.DeserializeObject<string[]>(serialized);
             notes = notesArray.ToList();
         }

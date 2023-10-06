@@ -21,6 +21,7 @@ using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
+using KS.Files.Operations;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
@@ -395,7 +396,7 @@ namespace KS.Kernel.Exceptions
 
                 // Save the dump file
                 string filePath = $"{Paths.AppDataPath}/dmp_{TimeDateRenderers.RenderDate(FormatType.Short).Replace("/", "-")}_{TimeDateRenderers.RenderTime(FormatType.Long).Replace(":", "-")}.txt";
-                File.WriteAllText(filePath, dumpBuilder.ToString());
+                Writing.WriteContentsText(filePath, dumpBuilder.ToString());
                 DebugWriter.WriteDebug(DebugLevel.I, "Opened file stream in home directory, saved as {0}", filePath);
             }
             catch (Exception ex)

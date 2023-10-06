@@ -332,7 +332,7 @@ namespace KS.Files.Editors.JsonShell
             DebugWriter.WriteDebug(DebugLevel.I, "Got json file {0}...", JsonFile);
 
             // Try to beautify JSON
-            string JsonFileContents = File.ReadAllText(JsonFile);
+            string JsonFileContents = FileRead.ReadContentsText(JsonFile);
             return BeautifyJsonText(JsonFileContents);
         }
 
@@ -367,7 +367,7 @@ namespace KS.Files.Editors.JsonShell
             DebugWriter.WriteDebug(DebugLevel.I, "Got json file {0}...", JsonFile);
 
             // Try to minify JSON
-            string JsonFileContents = File.ReadAllText(JsonFile);
+            string JsonFileContents = FileRead.ReadContentsText(JsonFile);
             return MinifyJsonText(JsonFileContents);
         }
 

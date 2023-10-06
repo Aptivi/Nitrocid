@@ -33,6 +33,8 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration.Instances;
 using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Files.Operations;
+using KS.Files.Read;
 
 namespace KS.Kernel.Configuration
 {
@@ -130,7 +132,7 @@ namespace KS.Kernel.Configuration
             DebugWriter.WriteDebug(DebugLevel.I, "Got serialized config object of length {0}...", serialized.Length);
 
             // Save Config
-            File.WriteAllText(ConfigPath, serialized);
+            Writing.WriteContentsText(ConfigPath, serialized);
             EventsManager.FireEvent(EventType.ConfigSaved);
         }
 
@@ -248,7 +250,7 @@ namespace KS.Kernel.Configuration
             {
                 // First, fix the configuration file up
                 RepairConfig(baseType);
-                string jsonContents = File.ReadAllText(ConfigPath);
+                string jsonContents = FileRead.ReadContentsText(ConfigPath);
 
                 // Now, deserialize the config state.
                 string typeName = type.GetType().Name;
@@ -362,7 +364,7 @@ namespace KS.Kernel.Configuration
             // Get the current kernel config JSON file vs the serialized config JSON string
             string path = ConfigTools.GetPathToCustomSettingsFile(type);
             string serialized = GetSerializedConfig(type);
-            string current = File.ReadAllText(path);
+            string current = FileRead.ReadContentsText(path);
 
             // Compare the two config JSON files
             try
@@ -400,7 +402,7 @@ namespace KS.Kernel.Configuration
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Saving updated config...");
                     string modified = JsonConvert.SerializeObject(currentObj, Formatting.Indented);
-                    File.WriteAllText(path, modified);
+                    Writing.WriteContentsText(path, modified);
                 }
             }
             catch (Exception ex)

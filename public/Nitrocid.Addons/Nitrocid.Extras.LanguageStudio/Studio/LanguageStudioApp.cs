@@ -24,6 +24,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Files.Read;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
@@ -77,7 +78,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             }
 
             // Check the provided languages
-            JToken metadata = JObject.Parse(File.ReadAllText(manifestFile));
+            JToken metadata = JObject.Parse(FileRead.ReadContentsText(manifestFile));
             string[] finalLangs = metadata
                 .Select((token) => token.Path)
                 .Where(LanguageManager.Languages.ContainsKey)
@@ -91,7 +92,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             }
 
             // Populate the English strings and fill the translated lines
-            List<string> englishLines = File.ReadAllLines(englishFile).ToList();
+            List<string> englishLines = FileRead.ReadContents(englishFile).ToList();
             Dictionary<string, List<string>> translatedLines = new();
             foreach (string language in finalLangs)
             {
@@ -100,7 +101,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                 List<string> finalLangLines = new();
                 DebugWriter.WriteDebug(DebugLevel.I, "Language path is {0}", languagePath);
                 if (Checking.FileExists(languagePath))
-                    finalLangLines.AddRange(File.ReadAllLines(languagePath));
+                    finalLangLines.AddRange(FileRead.ReadContents(languagePath));
                 else
                     finalLangLines.AddRange(new string[englishLines.Count]);
 
@@ -174,7 +175,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
                         string language = translatedLine.Key;
                         List<string> localizations = translatedLine.Value;
                         string languagePath = $"{pathToTranslations}/{language}.txt";
-                        File.WriteAllLines(languagePath, localizations);
+                        Writing.WriteContents(languagePath, localizations.ToArray());
                     }
                     LanguageGenerator.GenerateLocaleFiles(pathToTranslations);
                 }

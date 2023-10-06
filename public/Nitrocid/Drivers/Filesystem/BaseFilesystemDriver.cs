@@ -198,7 +198,7 @@ namespace KS.Drivers.Filesystem
                 Result.Append(FileContent + NewLineString);
 
             // Save the changes
-            File.WriteAllText(TextFile, Result.ToString());
+            Writing.WriteContentsText(TextFile, Result.ToString());
         }
 
         /// <inheritdoc/>
@@ -866,12 +866,12 @@ namespace KS.Drivers.Filesystem
                 // Try to parse the content as JSON object
                 try
                 {
-                    var ParsedObject = JObject.Parse(File.ReadAllText(Path));
+                    var ParsedObject = JObject.Parse(FileRead.ReadContentsText(Path));
                     return true;
                 }
                 catch
                 {
-                    var ParsedObject = JArray.Parse(File.ReadAllText(Path));
+                    var ParsedObject = JArray.Parse(FileRead.ReadContentsText(Path));
                     return true;
                 }
             }
@@ -1089,7 +1089,7 @@ namespace KS.Drivers.Filesystem
             // If interacting with the binary file, display it in hex. Otherwise, display it as if it is text. Except if forced to view binaries as texts.
             if (Parsing.IsBinaryFile(filename) && !ForcePlain)
             {
-                byte[] bytes = File.ReadAllBytes(filename);
+                byte[] bytes = ReadAllBytes(filename);
                 DisplayInHex(1, bytes.LongLength, bytes);
             }
             else
@@ -1418,7 +1418,7 @@ namespace KS.Drivers.Filesystem
                 FS.ThrowOnInvalidPath(FilePath);
                 FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<string>();
-                var Filebyte = File.ReadAllLines(FilePath);
+                var Filebyte = FileRead.ReadContents(FilePath);
                 int MatchNum = 1;
                 int LineNumber = 1;
                 foreach (string Str in Filebyte)
@@ -1447,7 +1447,7 @@ namespace KS.Drivers.Filesystem
                 FS.ThrowOnInvalidPath(FilePath);
                 FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<string>();
-                var Filebyte = File.ReadAllLines(FilePath);
+                var Filebyte = FileRead.ReadContents(FilePath);
                 int MatchNum = 1;
                 int LineNumber = 1;
                 foreach (string Str in Filebyte)
@@ -1476,7 +1476,7 @@ namespace KS.Drivers.Filesystem
                 FS.ThrowOnInvalidPath(FilePath);
                 FilePath = FS.NeutralizePath(FilePath);
                 var Matches = new List<(string, MatchCollection)>();
-                var Filebyte = File.ReadAllLines(FilePath);
+                var Filebyte = FileRead.ReadContents(FilePath);
                 foreach (string Str in Filebyte)
                     if (StringLookup.IsMatch(Str))
                         Matches.Add((Str, StringLookup.Matches(Str)));

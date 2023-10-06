@@ -26,6 +26,8 @@ using System.Linq;
 using KS.Kernel.Exceptions;
 using KS.Network.Base.Connections;
 using KS.Files.Querying;
+using KS.Files.Operations;
+using KS.Files.Read;
 
 namespace KS.Network.SpeedDial
 {
@@ -205,7 +207,7 @@ namespace KS.Network.SpeedDial
         /// Saves all the speed dial entries
         /// </summary>
         public static void SaveAll() =>
-            File.WriteAllText(Paths.GetKernelPath(KernelPathType.SpeedDial), JsonConvert.SerializeObject(speedDialEntries, Formatting.Indented));
+            Writing.WriteContentsText(Paths.GetKernelPath(KernelPathType.SpeedDial), JsonConvert.SerializeObject(speedDialEntries, Formatting.Indented));
 
         /// <summary>
         /// Loads all the speed dial entries
@@ -215,7 +217,7 @@ namespace KS.Network.SpeedDial
             string path = Paths.GetKernelPath(KernelPathType.SpeedDial);
             if (!Checking.FileExists(path))
                 return;
-            speedDialEntries = JsonConvert.DeserializeObject<List<SpeedDialEntry>>(File.ReadAllText(path));
+            speedDialEntries = JsonConvert.DeserializeObject<List<SpeedDialEntry>>(FileRead.ReadContentsText(path));
         }
     }
 }

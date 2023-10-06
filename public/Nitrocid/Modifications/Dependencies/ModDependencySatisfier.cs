@@ -18,6 +18,7 @@
 
 using KS.Files;
 using KS.Files.Querying;
+using KS.Files.Read;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -47,7 +48,7 @@ namespace KS.Modifications.Dependencies
                 return Array.Empty<ModDependency>();
 
             // Parse it and return all dependencies
-            ModDependency[] deps = JsonConvert.DeserializeObject<ModDependency[]>(File.ReadAllText(metadataPath));
+            ModDependency[] deps = JsonConvert.DeserializeObject<ModDependency[]>(FileRead.ReadContentsText(metadataPath));
             DebugWriter.WriteDebug(DebugLevel.I, "Initial dep count: {0}", deps.Length);
             List<ModDependency> finalDeps = new();
             foreach (ModDependency dep in deps)

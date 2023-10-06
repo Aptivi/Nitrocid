@@ -23,6 +23,7 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Files.Querying;
+using KS.Files.Read;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
@@ -311,7 +312,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 // File found! Now, write the contents of it to the local variable that stores the actual written text.
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Opening file {0} to write...", LinotypoSettings.LinotypoWrite);
-                LinotypeWrite = File.ReadAllText(LinotypoSettings.LinotypoWrite);
+                LinotypeWrite = FileRead.ReadContentsText(LinotypoSettings.LinotypoWrite);
             }
 
             // For each line, write four spaces, and extra two spaces if paragraph starts.

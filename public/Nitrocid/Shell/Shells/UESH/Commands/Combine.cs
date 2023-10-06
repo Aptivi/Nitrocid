@@ -71,13 +71,13 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 var CombinedContents = Combination.CombineTextFiles(InputPath, CombineInputPaths);
                 Making.MakeFile(OutputPath, false);
-                File.WriteAllLines(OutputPath, CombinedContents);
+                Writing.WriteContents(OutputPath, CombinedContents);
             }
             else
             {
                 var CombinedContents = Combination.CombineBinaryFiles(InputPath, CombineInputPaths);
                 Making.MakeFile(OutputPath, false);
-                File.WriteAllBytes(OutputPath, CombinedContents);
+                Writing.WriteAllBytes(OutputPath, CombinedContents);
             }
             return 0;
         }

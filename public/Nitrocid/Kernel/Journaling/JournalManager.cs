@@ -20,6 +20,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations;
 using KS.Files.Querying;
+using KS.Files.Read;
 using KS.Kernel.Debugging;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Text;
@@ -78,12 +79,12 @@ namespace KS.Kernel.Journaling
                 };
 
                 // Open the journal and add the new journal entry to it
-                var JournalFileObject = JArray.Parse(File.ReadAllText(JournalPath));
+                var JournalFileObject = JArray.Parse(FileRead.ReadContentsText(JournalPath));
                 var journalObject = JObject.FromObject(JournalEntry);
                 JournalFileObject.Add(journalObject);
 
                 // Save the journal with the changes in it
-                File.WriteAllText(JournalPath, JsonConvert.SerializeObject(JournalFileObject, Formatting.Indented));
+                Writing.WriteContentsText(JournalPath, JsonConvert.SerializeObject(JournalFileObject, Formatting.Indented));
                 DebugWriter.WriteDebug(DebugLevel.I, "Saved successfully!");
             }
         }
@@ -99,7 +100,7 @@ namespace KS.Kernel.Journaling
                 return Array.Empty<JournalEntry>();
 
             // Now, parse the journal
-            var journals = JsonConvert.DeserializeObject<JournalEntry[]>(File.ReadAllText(JournalPath));
+            var journals = JsonConvert.DeserializeObject<JournalEntry[]>(FileRead.ReadContentsText(JournalPath));
             return journals;
         }
 

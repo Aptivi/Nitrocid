@@ -28,6 +28,8 @@ using Newtonsoft.Json;
 using KS.Kernel.Events;
 using System.Collections.Generic;
 using KS.Files.Querying;
+using KS.Files.Operations;
+using KS.Files.Read;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -326,13 +328,13 @@ namespace KS.Kernel.Debugging.RemoteDebug
         }
 
         internal static void SaveAllDevices() =>
-            File.WriteAllText(Paths.GetKernelPath(KernelPathType.DebugDevices), JsonConvert.SerializeObject(remoteDebugDevices, Formatting.Indented));
+            Writing.WriteContentsText(Paths.GetKernelPath(KernelPathType.DebugDevices), JsonConvert.SerializeObject(remoteDebugDevices, Formatting.Indented));
 
         internal static void LoadAllDevices()
         {
             string devicesPath = Paths.GetKernelPath(KernelPathType.DebugDevices);
             if (Checking.FileExists(devicesPath))
-                remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(File.ReadAllText(devicesPath));
+                remoteDebugDevices = JsonConvert.DeserializeObject<List<RemoteDebugDeviceInfo>>(FileRead.ReadContentsText(devicesPath));
         }
     }
 }

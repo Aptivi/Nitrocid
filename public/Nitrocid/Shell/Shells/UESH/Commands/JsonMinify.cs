@@ -21,6 +21,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Editors.JsonShell;
+using KS.Files.Operations;
 using KS.Files.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -53,7 +54,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (parameters.ArgumentsList.Length > 1)
                 {
                     JsonOutputFile = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
-                    File.WriteAllText(JsonOutputFile, MinifiedJson);
+                    Writing.WriteContentsText(JsonOutputFile, MinifiedJson);
                 }
                 variableValue = MinifiedJson;
                 return 0;
