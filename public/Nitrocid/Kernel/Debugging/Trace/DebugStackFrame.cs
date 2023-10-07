@@ -42,7 +42,7 @@ namespace KS.Kernel.Debugging.Trace
             if (frameNumber <= 0 || frameNumber > trace.FrameCount)
                 throw new KernelException(KernelExceptionType.Debug, Translate.DoTranslation("Stack frame number shouldn't exceed current amount of frames or shouldn't be negative."));
 
-            string FrameFilePath = Filesystem.NeutralizePath(trace.GetFrame(frameNumber).GetFileName());
+            string FrameFilePath = trace.GetFrame(frameNumber).GetFileName();
             string Source = Path.GetFileName(FrameFilePath);
             int LineNum = trace.GetFrame(frameNumber).GetFileLineNumber();
             int ColNum = trace.GetFrame(frameNumber).GetFileColumnNumber();

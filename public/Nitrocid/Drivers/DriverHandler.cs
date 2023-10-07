@@ -85,7 +85,12 @@ namespace KS.Drivers
             { 
                 DriverTypes.Filesystem, new()
                 { 
-                    { "Default", new DefaultFilesystem() }
+                    { "Default", new DefaultFilesystem() },
+
+#if !SPECIFIERREL
+                    // Below are excluded from the final release
+                    { "DefaultDebug", new DefaultFilesystemDebug() }
+#endif
                 }
             },
             { 
