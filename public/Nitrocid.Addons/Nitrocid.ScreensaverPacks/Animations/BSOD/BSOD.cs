@@ -48,6 +48,11 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD
             new GrubError(),
             new BootMgrFatalError(),
             new BootMgrError(),
+            new MacPpcPanic(),
+            new BeOs5Error(),
+            new FreeBsdBoot(),
+            new FreeBsdPanic(),
+            new WindowsNt(),
         };
 
         /// <summary>
