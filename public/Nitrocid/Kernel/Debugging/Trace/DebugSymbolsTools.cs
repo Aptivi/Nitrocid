@@ -18,7 +18,6 @@
 #if SPECIFIERREL
 using static KS.Misc.Notifications.NotificationManager;
 using KS.Files;
-using KS.Files.Querying;
 using KS.Network.Base;
 using KS.Network.Base.Transfer;
 using System.Reflection;
@@ -26,6 +25,7 @@ using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Splash;
 using System;
+using KS.Files.Operations.Querying;
 #endif
 
 namespace KS.Kernel.Debugging.Trace
