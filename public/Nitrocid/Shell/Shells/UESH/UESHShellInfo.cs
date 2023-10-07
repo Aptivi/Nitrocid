@@ -427,6 +427,27 @@ namespace KS.Shell.Shells.UESH
                     }, new DebugShellCommand(), CommandFlags.Strict)
             },
             
+            { "decodefile",
+                new CommandInfo("decodefile", ShellType, /* Localizable */ "Decodes the encoded file",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "file"),
+                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                        }, new[]
+                        {
+                            new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                            }),
+                            new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                            }),
+                        })
+                    }, new DecodeFileCommand())
+            },
+            
             { "decodetext",
                 new CommandInfo("decodetext", ShellType, /* Localizable */ "Decodes the encoded text",
                     new[] {
@@ -537,6 +558,27 @@ namespace KS.Shell.Shells.UESH
                             }),
                         })
                     }, new EditCommand())
+            },
+
+            { "encodefile",
+                new CommandInfo("encodefile", ShellType, /* Localizable */ "Encodes the file",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "file"),
+                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                        }, new[]
+                        {
+                            new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                            }),
+                            new SwitchInfo("iv", /* Localizable */ "Specifies the initialization vector", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                            }),
+                        })
+                    }, new EncodeFileCommand())
             },
 
             { "encodetext",

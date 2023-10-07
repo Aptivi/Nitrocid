@@ -94,5 +94,33 @@ namespace KS.Drivers.Encoding
         /// <param name="encoded">Encoded byte array to decompose</param>
         /// <returns>Encoded string</returns>
         string DecomposeBytesFromString(byte[] encoded);
+
+        /// <summary>
+        /// Encodes a file
+        /// </summary>
+        /// <param name="path">Path to the file to encode (non-neutralized)</param>
+        void EncodeFile(string path);
+
+        /// <summary>
+        /// Decodes a file
+        /// </summary>
+        /// <param name="path">Path to the file to decode (non-neutralized)</param>
+        void DecodeFile(string path);
+
+        /// <summary>
+        /// Encodes a file
+        /// </summary>
+        /// <param name="path">Path to the file to encode (non-neutralized)</param>
+        /// <param name="key">Key to use while encoding</param>
+        /// <param name="iv">Initialization vector</param>
+        void EncodeFile(string path, byte[] key, byte[] iv);
+
+        /// <summary>
+        /// Decodes a file
+        /// </summary>
+        /// <param name="path">Path to the file to decode (non-neutralized)</param>
+        /// <param name="key">Key to use while decoding</param>
+        /// <param name="iv">Initialization vector</param>
+        void DecodeFile(string path, byte[] key, byte[] iv);
     }
 }

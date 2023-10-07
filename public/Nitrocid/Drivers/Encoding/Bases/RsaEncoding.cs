@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using System.Security.Cryptography;
@@ -87,5 +89,45 @@ namespace KS.Drivers.Encoding.Bases
         /// <inheritdoc/>
         public override string GetDecodedString(byte[] encoded, byte[] key, byte[] iv) =>
             GetDecodedString(encoded);
+
+        /// <inheritdoc/>
+        public override void EncodeFile(string path)
+        {
+            if (string.IsNullOrEmpty(path))
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
+            if (!Checking.FileExists(path))
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
+
+            // Get the bytes of the file
+            byte[] file = Reading.ReadAllBytes(path);
+            byte[] encrypted = rsa.Encrypt(file, RSAEncryptionPadding.Pkcs1);
+
+            // Write the array of bytes
+            Writing.WriteAllBytes(path, encrypted);
+        }
+
+        /// <inheritdoc/>
+        public override void DecodeFile(string path)
+        {
+            if (string.IsNullOrEmpty(path))
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
+            if (!Checking.FileExists(path))
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
+
+            // Get the bytes of the file
+            byte[] encoded = Reading.ReadAllBytes(path);
+            byte[] decrypted = rsa.Decrypt(encoded, RSAEncryptionPadding.Pkcs1);
+
+            // Write the array of bytes
+            Writing.WriteAllBytes(path, decrypted);
+        }
+
+        /// <inheritdoc/>
+        public override void EncodeFile(string path, byte[] key, byte[] iv) =>
+            EncodeFile(path);
+
+        /// <inheritdoc/>
+        public override void DecodeFile(string path, byte[] key, byte[] iv) =>
+            DecodeFile(path);
     }
 }

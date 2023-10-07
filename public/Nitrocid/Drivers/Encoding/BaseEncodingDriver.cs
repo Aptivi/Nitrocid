@@ -16,6 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using FluentFTP.Helpers;
+using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
@@ -149,6 +152,73 @@ namespace KS.Drivers.Encoding
             foreach (var value in encoded)
                 encodedStringBuilder.Append($"{value:000}");
             return encodedStringBuilder.ToString();
+        }
+
+        /// <inheritdoc/>
+        public virtual void EncodeFile(string path) =>
+            EncodeFile(path, aes.Key, aes.IV);
+
+        /// <inheritdoc/>
+        public virtual void DecodeFile(string path) =>
+            DecodeFile(path, aes.Key, aes.IV);
+            
+        /// <inheritdoc/>
+        public virtual void EncodeFile(string path, byte[] key, byte[] iv)
+        {
+            if (string.IsNullOrEmpty(path))
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
+            if (!Checking.FileExists(path))
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
+
+            // Get the bytes of the file
+            byte[] file = Reading.ReadAllBytes(path);
+            byte[] encrypted;
+            using Aes aesEncryptor = Aes.Create();
+
+            // Populate the key and the initialization vector
+            aesEncryptor.Key = key;
+            aesEncryptor.IV = iv;
+
+            // Now, make the encryptor
+            var encryptor = aesEncryptor.CreateEncryptor(aesEncryptor.Key, aesEncryptor.IV);
+            using MemoryStream msEncrypt = new();
+            using (CryptoStream csEncrypt = new(msEncrypt, encryptor, CryptoStreamMode.Write))
+            {
+                csEncrypt.Write(file, 0, file.Length);
+            }
+            encrypted = msEncrypt.ToArray();
+
+            // Write the array of bytes
+            string encodedPath = path + ".encoded";
+            Writing.WriteAllBytes(encodedPath, encrypted);
+        }
+
+        /// <inheritdoc/>
+        public virtual void DecodeFile(string path, byte[] key, byte[] iv)
+        {
+            if (string.IsNullOrEmpty(path))
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("The path must not be empty."));
+            if (!Checking.FileExists(path))
+                throw new KernelException(KernelExceptionType.Encoding, Translate.DoTranslation("File doesn't exist."));
+
+            // Get the bytes of the file
+            byte[] encoded = Reading.ReadAllBytes(path);
+            byte[] decrypted = new byte[encoded.Length];
+            using Aes aesDecryptor = Aes.Create();
+
+            // Populate the key and the initialization vector
+            aesDecryptor.Key = key;
+            aesDecryptor.IV = iv;
+
+            // Now, make the decryptor
+            ICryptoTransform decryptor = aesDecryptor.CreateDecryptor(aesDecryptor.Key, aesDecryptor.IV);
+            using MemoryStream msDecrypt = new(encoded);
+            using CryptoStream csDecrypt = new(msDecrypt, decryptor, CryptoStreamMode.Read);
+            csDecrypt.Read(decrypted, 0, decrypted.Length);
+
+            // Write the array of bytes
+            string decodedPath = path.RemovePostfix(".encoded");
+            Writing.WriteAllBytes(decodedPath, decrypted);
         }
     }
 }
