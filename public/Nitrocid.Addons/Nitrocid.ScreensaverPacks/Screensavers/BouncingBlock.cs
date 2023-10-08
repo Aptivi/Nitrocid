@@ -276,7 +276,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Render a block
             if (!ConsoleResizeListener.WasResized(false))
             {
-                TextWriterWhereColor.WriteWhere(" ", ColumnBlock, RowBlock, true, Color.Empty, blockColor);
+                TextWriterWhereColor.WriteWhereColorBack(" ", ColumnBlock, RowBlock, true, Color.Empty, blockColor);
             }
             else
             {

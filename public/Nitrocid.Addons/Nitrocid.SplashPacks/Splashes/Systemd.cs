@@ -57,7 +57,7 @@ namespace Nitrocid.SplashPacks.Splashes
         public override void Report(int Progress, string ProgressReport, params object[] Vars)
         {
             if (!Beginning)
-                TextWriterWhereColor.WriteWhere("  OK  ", IndicatorLeft, IndicatorTop, true, KernelColorType.Success);
+                TextWriterWhereColor.WriteWhereKernelColor("  OK  ", IndicatorLeft, IndicatorTop, true, KernelColorType.Success);
             TextWriterColor.Write($" [      ] {ProgressReport}", Vars);
             if (!Beginning)
             {
@@ -70,7 +70,7 @@ namespace Nitrocid.SplashPacks.Splashes
         public override void ReportWarning(int Progress, string WarningReport, Exception ExceptionInfo, params object[] Vars)
         {
             if (!Beginning)
-                TextWriterWhereColor.WriteWhere(" WARN ", IndicatorLeft, IndicatorTop, true, KernelColorType.Warning);
+                TextWriterWhereColor.WriteWhereKernelColor(" WARN ", IndicatorLeft, IndicatorTop, true, KernelColorType.Warning);
             TextWriterColor.Write($" [      ] {WarningReport}", Vars);
             if (!Beginning)
             {
@@ -83,7 +83,7 @@ namespace Nitrocid.SplashPacks.Splashes
         public override void ReportError(int Progress, string ErrorReport, Exception ExceptionInfo, params object[] Vars)
         {
             if (!Beginning)
-                TextWriterWhereColor.WriteWhere("FAILED", IndicatorLeft, IndicatorTop, true, KernelColorType.Error);
+                TextWriterWhereColor.WriteWhereKernelColor("FAILED", IndicatorLeft, IndicatorTop, true, KernelColorType.Error);
             TextWriterColor.Write($" [      ] {ErrorReport}", Vars);
             if (!Beginning)
             {

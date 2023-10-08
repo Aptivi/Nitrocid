@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                         return 10000 + (int)KernelExceptionType.HexEditor;
                     }
@@ -76,7 +76,7 @@ namespace KS.Shell.Shells.Hex.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("The byte number is not numeric."), true, KernelColorType.Error);
                         DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                         return 10000 + (int)KernelExceptionType.HexEditor;
                     }

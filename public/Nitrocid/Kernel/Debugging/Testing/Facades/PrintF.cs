@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            TextWriterColor.Write("Hi, {0}!", true, KernelColorType.Success, "Nitrocid KS");
+            TextWriterColor.WriteKernelColor("Hi, {0}!", true, KernelColorType.Success, "Nitrocid KS");
         }
     }
 }

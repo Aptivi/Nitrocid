@@ -59,13 +59,13 @@ namespace KS.Network.Mail.Transfer
             if (Message < 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Trying to access message 0 or less than 0.");
-                TextWriterColor.Write(Translate.DoTranslation("Message number may not be negative or zero."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Message number may not be negative or zero."), true, KernelColorType.Error);
                 return;
             }
             else if (Message > MaxMessagesIndex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Message {0} not in list. It was larger than MaxMessagesIndex ({1})", Message, MaxMessagesIndex);
-                TextWriterColor.Write(Translate.DoTranslation("Message specified is not found."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Message specified is not found."), true, KernelColorType.Error);
                 return;
             }
 
@@ -92,7 +92,7 @@ namespace KS.Network.Mail.Transfer
                 foreach (InternetAddress Address in Msg.From)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
-                    TextWriterColor.Write(Translate.DoTranslation("- From {0}"), true, KernelColorType.ListEntry, Address.ToString());
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("- From {0}"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print all the addresses that received the mail
@@ -100,23 +100,23 @@ namespace KS.Network.Mail.Transfer
                 foreach (InternetAddress Address in Msg.To)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Address: {0} ({1})", Address.Name, Address.Encoding.EncodingName);
-                    TextWriterColor.Write(Translate.DoTranslation("- To {0}"), true, KernelColorType.ListEntry, Address.ToString());
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("- To {0}"), true, KernelColorType.ListEntry, Address.ToString());
                 }
 
                 // Print the date and time when the user received the mail
                 DebugWriter.WriteDebug(DebugLevel.I, "Rendering time and date of {0}.", Msg.Date.DateTime.ToString());
-                TextWriterColor.Write(Translate.DoTranslation("- Sent at {0} in {1}"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("- Sent at {0} in {1}"), true, KernelColorType.ListEntry, TimeDateRenderers.RenderTime(Msg.Date.DateTime), TimeDateRenderers.RenderDate(Msg.Date.DateTime));
 
                 // Prepare subject
                 TextWriterColor.Write();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject length: {0}, {1}", Msg.Subject.Length, Msg.Subject);
-                TextWriterColor.Write($"- {Msg.Subject}", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor($"- {Msg.Subject}", false, KernelColorType.ListEntry);
 
                 // Write a sign after the subject if attachments are found
                 DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", Msg.Attachments.Count());
                 if (Msg.Attachments.Count() > 0)
                 {
-                    TextWriterColor.Write(" - [*]", true, KernelColorType.ListEntry);
+                    TextWriterColor.WriteKernelColor(" - [*]", true, KernelColorType.ListEntry);
                 }
                 else
                 {
@@ -152,7 +152,7 @@ namespace KS.Network.Mail.Transfer
                                     var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
                                     DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
-                                    TextWriterColor.Write(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
+                                    TextWriterColor.WriteKernelColor(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
                                 }
                             }
                         }
@@ -165,12 +165,12 @@ namespace KS.Network.Mail.Transfer
                         var DecryptedByte = new byte[(int)(DecryptedStream.Length + 1)];
                         DecryptedStream.Read(DecryptedByte, 0, (int)DecryptedStream.Length);
                         DebugWriter.WriteDebug(DebugLevel.I, "Written {0} bytes to buffer.", DecryptedByte.Length);
-                        TextWriterColor.Write(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor(Encoding.Default.GetString(DecryptedByte), true, KernelColorType.ListValue);
                     }
                 }
                 else
                 {
-                    TextWriterColor.Write(Msg.GetTextBody(MailShellCommon.Mail_TextFormat), true, KernelColorType.ListValue);
+                    TextWriterColor.WriteKernelColor(Msg.GetTextBody(MailShellCommon.Mail_TextFormat), true, KernelColorType.ListValue);
                 }
                 TextWriterColor.Write();
 

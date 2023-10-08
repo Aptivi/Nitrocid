@@ -49,7 +49,7 @@ namespace KS.Shell.Shells.Mail.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Message number is not a numeric value."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Message number is not a numeric value."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Mail;
             }
         }

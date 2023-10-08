@@ -72,9 +72,9 @@ namespace KS.Network.FTP
 
             // Prompt for password
             if (!string.IsNullOrWhiteSpace(FTPShellCommon.FtpPassPromptStyle))
-                TextWriterColor.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpPassPromptStyle), false, KernelColorType.Input, user);
+                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(FTPShellCommon.FtpPassPromptStyle), false, KernelColorType.Input, user);
             else
-                TextWriterColor.Write(Translate.DoTranslation("Password for {0}: "), false, KernelColorType.Input, user);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Password for {0}: "), false, KernelColorType.Input, user);
 
             // Get input
             FTPShellCommon.FtpPass = Input.ReadLineNoInput();
@@ -103,7 +103,7 @@ namespace KS.Network.FTP
                 bool portParsed = int.TryParse(FtpHost == FtpPortString ? "0" : FtpPortString, out int FtpPort);
                 if (!portParsed)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Make sure that you specify the port correctly."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Make sure that you specify the port correctly."), true, KernelColorType.Error);
                     return null;
                 }
 
@@ -130,11 +130,11 @@ namespace KS.Network.FTP
                 // Prompt for username
                 if (!string.IsNullOrWhiteSpace(FTPShellCommon.FtpUserPromptStyle))
                 {
-                    TextWriterColor.Write(PlaceParse.ProbePlaces(FTPShellCommon.FtpUserPromptStyle), false, KernelColorType.Input, address);
+                    TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(FTPShellCommon.FtpUserPromptStyle), false, KernelColorType.Input, address);
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
                 }
                 FTPShellCommon.FtpUser = Input.ReadLine();
                 if (string.IsNullOrEmpty(FTPShellCommon.FtpUser))
@@ -150,7 +150,7 @@ namespace KS.Network.FTP
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
                 return null;
             }
         }
@@ -190,7 +190,7 @@ namespace KS.Network.FTP
                     TableColor.WriteTable(ProfHeaders, ProfData, 2);
                     while (!profanswered)
                     {
-                        TextWriterColor.Write(CharManager.NewLine + ">> ", false, KernelColorType.Input);
+                        TextWriterColor.WriteKernelColor(CharManager.NewLine + ">> ", false, KernelColorType.Input);
                         profanswer = Input.ReadLine();
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", profanswer);
                         if (TextTools.IsStringNumeric(profanswer))
@@ -205,7 +205,7 @@ namespace KS.Network.FTP
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Profile invalid");
-                                TextWriterColor.Write(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, KernelColorType.Error);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid profile selection.") + CharManager.NewLine, true, KernelColorType.Error);
                                 DebugWriter.WriteDebugStackTrace(ex);
                             }
                         }
@@ -218,7 +218,7 @@ namespace KS.Network.FTP
             else
             {
                 // Failed trying to get profiles
-                TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection"), true, KernelColorType.Error, clientFTP.Host);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error when trying to connect to {0}: Connection timeout or lost connection"), true, KernelColorType.Error, clientFTP.Host);
                 return null;
             }
 
@@ -229,7 +229,7 @@ namespace KS.Network.FTP
             var ftpConnection = NetworkConnectionTools.EstablishConnection("FTP connection", clientFTP.Host, NetworkConnectionType.FTP, clientFTP);
 
             // Show that it's connected
-            TextWriterColor.Write(Translate.DoTranslation("Connected to {0}"), true, KernelColorType.Success, clientFTP.Host);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Connected to {0}"), true, KernelColorType.Success, clientFTP.Host);
             DebugWriter.WriteDebug(DebugLevel.I, "Connected.");
             return ftpConnection;
         }
@@ -249,8 +249,8 @@ namespace KS.Network.FTP
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, $"Certificate error is {e.PolicyErrors}");
-                TextWriterColor.Write(Translate.DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:"), true, KernelColorType.Error);
-                TextWriterColor.Write("- {0}", true, KernelColorType.Error, e.PolicyErrors.ToString());
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:"), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor("- {0}", true, KernelColorType.Error, e.PolicyErrors.ToString());
                 if (FTPShellCommon.FtpAlwaysAcceptInvalidCerts)
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Certificate accepted, although there are errors.");
@@ -262,7 +262,7 @@ namespace KS.Network.FTP
                     string Answer = "";
                     while (!(Answer.ToLower() == "y" | Answer.ToLower() == "n"))
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Are you sure that you want to connect?") + " (y/n) ", false, KernelColorType.Question);
                         KernelColorTools.SetConsoleColor(KernelColorTools.GetColor(KernelColorType.Input));
                         Answer = Convert.ToString(Input.DetectKeypress().KeyChar);
                         TextWriterColor.Write();
@@ -276,7 +276,7 @@ namespace KS.Network.FTP
                         else if (Answer.ToLower() != "n")
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Invalid answer.");
-                            TextWriterColor.Write(Translate.DoTranslation("Invalid answer. Please try again."), true, KernelColorType.Error);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid answer. Please try again."), true, KernelColorType.Error);
                         }
                     }
                 }

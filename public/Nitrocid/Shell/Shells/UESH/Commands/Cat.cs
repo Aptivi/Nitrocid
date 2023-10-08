@@ -71,7 +71,7 @@ namespace KS.Shell.Shells.UESH.Commands
             catch (Exception ex)
             {
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(ex.Message, true, KernelColorType.Error);
                 return ex.GetHashCode();
             }
         }

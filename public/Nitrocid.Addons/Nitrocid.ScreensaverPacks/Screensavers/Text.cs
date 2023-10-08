@@ -245,7 +245,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int textPosX = ConsoleWrapper.WindowWidth / 2 - renderedText.Length / 2;
 
             // Write the text
-            TextWriterWhereColor.WriteWhere(renderedText, textPosX, halfConsoleY, color);
+            TextWriterWhereColor.WriteWhereColor(renderedText, textPosX, halfConsoleY, color);
 
             // Delay
             ThreadManager.SleepNoBlock(TextSettings.TextDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (Checking.FileExists(path))
                 Opening.OpenEditor(path, forceText, forceJson, forceHex, forceSql);
             else
-                TextWriterColor.Write(Translate.DoTranslation("Can't edit file {0} because it's not found."), true, KernelColorType.Error, path);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't edit file {0} because it's not found."), true, KernelColorType.Error, path);
             return 0;
         }
 

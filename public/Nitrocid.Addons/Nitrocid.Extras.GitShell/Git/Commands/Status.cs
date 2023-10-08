@@ -42,96 +42,96 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriterColor.Write(Translate.DoTranslation("No modifications are done."), true, KernelColorType.Success);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No modifications are done."), true, KernelColorType.Success);
                 return 0;
             }
 
             // Show all the statuses starting from untracked...
-            TextWriterColor.Write(Translate.DoTranslation("Untracked files") + ":", true, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Untracked files") + ":", true, KernelColorType.ListEntry);
             if (status.Untracked.Any())
             {
                 foreach (var item in status.Untracked)
-                    TextWriterColor.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriterColor.WriteKernelColor("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("No untracked files."), true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No untracked files."), true, KernelColorType.ListValue);
             TextWriterColor.Write();
 
             // ...added...
-            TextWriterColor.Write(Translate.DoTranslation("Added files") + ":", true, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Added files") + ":", true, KernelColorType.ListEntry);
             if (status.Added.Any())
             {
                 foreach (var item in status.Added)
-                    TextWriterColor.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriterColor.WriteKernelColor("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("No added files."), true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No added files."), true, KernelColorType.ListValue);
             TextWriterColor.Write();
 
             // ...modified...
-            TextWriterColor.Write(Translate.DoTranslation("Modified files") + ":", true, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Modified files") + ":", true, KernelColorType.ListEntry);
             if (status.Modified.Any())
             {
                 foreach (var item in status.Modified)
-                    TextWriterColor.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriterColor.WriteKernelColor("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("No modified files."), true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No modified files."), true, KernelColorType.ListValue);
             TextWriterColor.Write();
 
             // ...removed...
-            TextWriterColor.Write(Translate.DoTranslation("Removed files") + ":", true, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Removed files") + ":", true, KernelColorType.ListEntry);
             if (status.Removed.Any())
             {
                 foreach (var item in status.Removed)
-                    TextWriterColor.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriterColor.WriteKernelColor("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("No removed files."), true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No removed files."), true, KernelColorType.ListValue);
             TextWriterColor.Write();
 
             // ...staged...
-            TextWriterColor.Write(Translate.DoTranslation("Staged files") + ":", true, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Staged files") + ":", true, KernelColorType.ListEntry);
             if (status.Staged.Any())
             {
                 foreach (var item in status.Staged)
-                    TextWriterColor.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriterColor.WriteKernelColor("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("No staged files."), true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No staged files."), true, KernelColorType.ListValue);
             TextWriterColor.Write();
 
             // ...renamed...
-            TextWriterColor.Write(Translate.DoTranslation("Renamed staged files") + ":", true, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Renamed staged files") + ":", true, KernelColorType.ListEntry);
             if (status.RenamedInIndex.Any())
             {
                 foreach (var item in status.RenamedInIndex)
-                    TextWriterColor.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriterColor.WriteKernelColor("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("No renamed staged files."), true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No renamed staged files."), true, KernelColorType.ListValue);
             TextWriterColor.Write();
 
             // ...renamed unstaged...
-            TextWriterColor.Write(Translate.DoTranslation("Renamed files") + ":", true, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Renamed files") + ":", true, KernelColorType.ListEntry);
             if (status.RenamedInWorkDir.Any())
             {
                 foreach (var item in status.RenamedInWorkDir)
-                    TextWriterColor.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriterColor.WriteKernelColor("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("No renamed files."), true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No renamed files."), true, KernelColorType.ListValue);
             TextWriterColor.Write();
 
             // ...and missing
-            TextWriterColor.Write(Translate.DoTranslation("Missing files") + ":", true, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Missing files") + ":", true, KernelColorType.ListEntry);
             if (status.Missing.Any())
             {
                 foreach (var item in status.Missing)
-                    TextWriterColor.Write("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
+                    TextWriterColor.WriteKernelColor("  - {0}: {1}", true, KernelColorType.ListValue, item.FilePath, item.State.ToString());
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("No missing files."), true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No missing files."), true, KernelColorType.ListValue);
             TextWriterColor.Write();
             return 0;
         }

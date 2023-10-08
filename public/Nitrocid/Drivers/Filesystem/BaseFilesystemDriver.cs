@@ -391,7 +391,7 @@ namespace KS.Drivers.Filesystem
                 //    0x00000020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                 //    0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
                 // ... and so on.
-                TextWriterColor.Write($"0x{StartByte - 1L:X8}", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor($"0x{StartByte - 1L:X8}", false, KernelColorType.ListEntry);
                 int ByteWritePositionX = $"0x{StartByte - 1L:X8}".Length + 2;
                 int ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                 int ByteNumberEachSixteen = 1;
@@ -413,8 +413,8 @@ namespace KS.Drivers.Filesystem
                         RenderedByteChar = ProjectedByteChar;
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
-                    TextWriterWhereColor.WriteWhere($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, (ByteContent == CurrentByte ? highlightedColor : unhighlightedColor));
-                    TextWriterWhereColor.WriteWhere($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, (ByteContent == CurrentByte ? highlightedColor : unhighlightedColor));
+                    TextWriterWhereColor.WriteWhereColor($"{CurrentByte:X2}", ByteWritePositionX + 3 * (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, (ByteContent == CurrentByte ? highlightedColor : unhighlightedColor));
+                    TextWriterWhereColor.WriteWhereColor($"{RenderedByteChar}", ByteCharWritePositionX + (ByteNumberEachSixteen - 1), ConsoleBase.ConsoleWrapper.CursorTop, false, (ByteContent == CurrentByte ? highlightedColor : unhighlightedColor));
 
                     // Increase the byte number
                     ByteNumberEachSixteen += 1;
@@ -423,7 +423,7 @@ namespace KS.Drivers.Filesystem
                     if (ByteNumberEachSixteen > 16)
                     {
                         // OK, let's increase the byte iteration and get the next line ready
-                        TextWriterColor.Write(CharManager.NewLine + $"0x{CurrentByteNumber:X8}", false, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor(CharManager.NewLine + $"0x{CurrentByteNumber:X8}", false, KernelColorType.ListEntry);
                         ByteWritePositionX = $"0x{CurrentByteNumber:X8}".Length + 2;
                         ByteCharWritePositionX = 61 + (ByteWritePositionX - 12);
                         ByteNumberEachSixteen = 1;
@@ -433,11 +433,11 @@ namespace KS.Drivers.Filesystem
             }
             else if (StartByte > FileByte.LongLength)
             {
-                TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
             }
             else if (EndByte > FileByte.LongLength)
             {
-                TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
             }
         }
 
@@ -507,15 +507,15 @@ namespace KS.Drivers.Filesystem
                     }
                     builder.AppendLine($"{entryColor.VTSequenceForeground}");
                 }
-                TextWriterColor.Write(builder.ToString(), false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(builder.ToString(), false, KernelColorType.ListEntry);
             }
             else if (StartByte > FileByte.LongLength)
             {
-                TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
             }
             else if (EndByte > FileByte.LongLength)
             {
-                TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
             }
         }
 
@@ -1101,7 +1101,7 @@ namespace KS.Drivers.Filesystem
                     {
                         if (PrintLineNumbers)
                         {
-                            TextWriterColor.Write("{0,4}: ", false, KernelColorType.ListEntry, ContentIndex + 1);
+                            TextWriterColor.WriteKernelColor("{0,4}: ", false, KernelColorType.ListEntry, ContentIndex + 1);
                         }
                         TextWriterColor.Write(Contents[ContentIndex]);
                     }
@@ -1125,18 +1125,18 @@ namespace KS.Drivers.Filesystem
                 // Print information
                 if (finalDirInfo.Attributes == FileAttributes.Hidden & KernelFlags.HiddenFiles | !finalDirInfo.Attributes.HasFlag(FileAttributes.Hidden))
                 {
-                    TextWriterColor.Write("- " + finalDirInfo.Name + "/", false, KernelColorType.ListEntry);
+                    TextWriterColor.WriteKernelColor("- " + finalDirInfo.Name + "/", false, KernelColorType.ListEntry);
                     if (ShowDirectoryDetails)
                     {
-                        TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
-                        TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, TotalSize.FileSizeToString(), finalDirInfo.CreationTime.ToShortDateString(), finalDirInfo.CreationTime.ToShortTimeString(), finalDirInfo.LastWriteTime.ToShortDateString(), finalDirInfo.LastWriteTime.ToShortTimeString());
+                        TextWriterColor.WriteKernelColor(": ", false, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, TotalSize.FileSizeToString(), finalDirInfo.CreationTime.ToShortDateString(), finalDirInfo.CreationTime.ToShortTimeString(), finalDirInfo.LastWriteTime.ToShortDateString(), finalDirInfo.LastWriteTime.ToShortTimeString());
                     }
                     TextWriterColor.Write();
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, DirectoryInfo.FilePath);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Directory {0} not found"), true, KernelColorType.Error, DirectoryInfo.FilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Folder doesn't exist. {0}", DirectoryInfo.FilePath);
             }
         }
@@ -1155,26 +1155,26 @@ namespace KS.Drivers.Filesystem
                 {
                     if (finalDirInfo.Name.EndsWith(".uesh"))
                     {
-                        TextWriterColor.Write("- " + finalDirInfo.Name, false, KernelColorType.Stage);
+                        TextWriterColor.WriteKernelColor("- " + finalDirInfo.Name, false, KernelColorType.Stage);
                         if (ShowFileDetails)
-                            TextWriterColor.Write(": ", false, KernelColorType.Stage);
+                            TextWriterColor.WriteKernelColor(": ", false, KernelColorType.Stage);
                     }
                     else
                     {
-                        TextWriterColor.Write("- " + finalDirInfo.Name, false, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor("- " + finalDirInfo.Name, false, KernelColorType.ListEntry);
                         if (ShowFileDetails)
-                            TextWriterColor.Write(": ", false, KernelColorType.ListEntry);
+                            TextWriterColor.WriteKernelColor(": ", false, KernelColorType.ListEntry);
                     }
                     if (ShowFileDetails)
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.FileSizeToString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("{0}, Created in {1} {2}, Modified in {3} {4}"), false, KernelColorType.ListValue, ((FileInfo)FileInfo.BaseEntry).Length.FileSizeToString(), FileInfo.BaseEntry.CreationTime.ToShortDateString(), FileInfo.BaseEntry.CreationTime.ToShortTimeString(), FileInfo.BaseEntry.LastWriteTime.ToShortDateString(), FileInfo.BaseEntry.LastWriteTime.ToShortTimeString());
                     }
                     TextWriterColor.Write();
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("File {0} not found"), true, KernelColorType.Error, FileInfo.FilePath);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File {0} not found"), true, KernelColorType.Error, FileInfo.FilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "File doesn't exist. {0}", FileInfo.FilePath);
             }
         }

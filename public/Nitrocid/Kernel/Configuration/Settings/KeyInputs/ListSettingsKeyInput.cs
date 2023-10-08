@@ -41,17 +41,17 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
 
             // Make an introductory banner
             string finalSection = Translate.DoTranslation(key.Name);
-            TextWriterColor.Write("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(key.Description), true, KernelColorType.Question);
+            TextWriterColor.WriteKernelColor("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(key.Description), true, KernelColorType.Question);
 
             // Write the prompt
             var TargetList = (IEnumerable<object>)MethodManager.GetMethod(key.SelectionFunctionName).Invoke(key.SelectionFunctionType, null);
-            TextWriterColor.Write(Translate.DoTranslation("Current items:"), true, KernelColorType.ListTitle);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Current items:"), true, KernelColorType.ListTitle);
             ListWriterColor.WriteList(TargetList);
             TextWriterColor.Write();
-            TextWriterColor.Write(CharManager.NewLine + " q) " + Translate.DoTranslation("Save Changes...") + CharManager.NewLine, true, KernelColorType.Option);
+            TextWriterColor.WriteKernelColor(CharManager.NewLine + " q) " + Translate.DoTranslation("Save Changes...") + CharManager.NewLine, true, KernelColorType.Option);
 
             // Prompt the user and parse the answer
-            TextWriterColor.Write("> ", false, KernelColorType.Input);
+            TextWriterColor.WriteKernelColor("> ", false, KernelColorType.Input);
             string AnswerString = "";
             while (AnswerString != "q")
             {
@@ -79,7 +79,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                         TargetList = TargetList.Except(DeletedItems);
                     }
                     DebugWriter.WriteDebug(DebugLevel.I, "Added answer {0} to list.", AnswerString);
-                    TextWriterColor.Write("> ", false, KernelColorType.Input);
+                    TextWriterColor.WriteKernelColor("> ", false, KernelColorType.Input);
                 }
             }
             bail = true;

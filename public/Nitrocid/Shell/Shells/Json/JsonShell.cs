@@ -49,7 +49,7 @@ namespace KS.Shell.Shells.Json
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.Json
                     DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
                     if (!JsonTools.JsonShell_OpenJsonFile(FilePath))
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
                         break;
                     }
                     JsonShellCommon.JsonShell_AutoSave.Start();

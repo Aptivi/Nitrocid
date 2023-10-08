@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (status.IsDirty)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
                 return 11;
             }
 
@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 string requestedRemote = parameters.ArgumentsList[0];
                 if (!remoteNames.Contains(requestedRemote))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Remote doesn't exist.") + $" {requestedRemote}", true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Remote doesn't exist.") + $" {requestedRemote}", true, KernelColorType.Error);
                     return 12;
                 }
             }
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                     // We don't have origin! Let's select the first remote
                     if (remoteNames.Length == 0)
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("No remotes found to pull updates from."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("No remotes found to pull updates from."), true, KernelColorType.Error);
                         return 13;
                     }
                     selectedRemote = remoteNames[0];

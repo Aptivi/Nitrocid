@@ -66,7 +66,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                 if (maxHeight < 0)
                 {
                     // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
-                    TextWriterWhereColor.WriteWhere(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
+                    TextWriterWhereColor.WriteWhereKernelColor(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
                     Input.DetectKeypress();
                     PresentationTools.ClearPresentation();
                     seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
@@ -77,7 +77,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                 buffer.Append(split + "\n");
                 top++;
             }
-            TextWriterWhereColor.WriteWhere(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhereKernelColor(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
 
             // Check the bounds
             int height = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
@@ -100,7 +100,7 @@ namespace KS.ConsoleBase.Presentation.Elements
             }
 
             // Render the choices (with checking for bounds, again)
-            TextWriterWhereColor.WriteWhere("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhereKernelColor("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             string[] finalChoices = choices.ToArray();
             int choiceNum = 1;
             var choiceBuffer = new StringBuilder();
@@ -116,7 +116,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                     if (maxHeight < 0)
                     {
                         // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
-                        TextWriterWhereColor.WriteWhere(choiceBuffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, choiceSeekTop, false, KernelColorType.NeutralText);
+                        TextWriterWhereColor.WriteWhereKernelColor(choiceBuffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, choiceSeekTop, false, KernelColorType.NeutralText);
                         Input.DetectKeypress();
                         PresentationTools.ClearPresentation();
                         choiceSeekTop = choiceTop = PresentationTools.PresentationUpperInnerBorderTop;
@@ -129,7 +129,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                 }
                 choiceNum++;
             }
-            TextWriterWhereColor.WriteWhere(choiceBuffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, choiceSeekTop, false, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhereKernelColor(choiceBuffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, choiceSeekTop, false, KernelColorType.NeutralText);
 
             // Check the bounds
             height = PresentationTools.PresentationLowerInnerBorderTop - ConsoleWrapper.CursorTop + 3;
@@ -147,12 +147,12 @@ namespace KS.ConsoleBase.Presentation.Elements
             };
 
             // Get the input
-            TextWriterWhereColor.WriteWhere("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhereKernelColor("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
             string[] selected = Array.Empty<string>();
             while (selected.Length == 0 || !selected.All((selectedChoice) => finalChoices.Contains(selectedChoice)))
             {
                 ConsoleWrapper.CursorLeft = PresentationTools.PresentationUpperInnerBorderLeft;
-                TextWriterColor.Write(Translate.DoTranslation("Select your choice separated by semicolons: "), false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Select your choice separated by semicolons: "), false, KernelColorType.Input);
                 ConsoleWrapper.CursorVisible = true;
                 WrittenInput = Input.ReadLineWrapped("", "", settings);
                 selected = WrittenInput.Split(';', StringSplitOptions.RemoveEmptyEntries);

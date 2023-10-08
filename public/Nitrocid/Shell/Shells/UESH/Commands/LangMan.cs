@@ -62,13 +62,13 @@ namespace KS.Shell.Shells.UESH.Commands
                                 TargetLanguagePath = Filesystem.NeutralizePath(TargetLanguage + ".json", Paths.GetKernelPath(KernelPathType.CustomLanguages));
                                 if (!(Parsing.TryParsePath(TargetLanguagePath) && Checking.FileExists(TargetLanguagePath)) & !LanguageManager.Languages.ContainsKey(TargetLanguage))
                                 {
-                                    TextWriterColor.Write(Translate.DoTranslation("Language not found or file has invalid characters."), true, KernelColorType.Error);
+                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Language not found or file has invalid characters."), true, KernelColorType.Error);
                                     return 10000 + (int)KernelExceptionType.NoSuchLanguage;
                                 }
                             }
                             else
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("Language is not specified."), true, KernelColorType.Error);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Language is not specified."), true, KernelColorType.Error);
                                 return 10000 + (int)KernelExceptionType.NoSuchLanguage;
                             }
 
@@ -109,14 +109,14 @@ namespace KS.Shell.Shells.UESH.Commands
                             foreach (string Language in LanguageManager.ListLanguages(LanguageListTerm).Keys)
                             {
                                 SeparatorWriterColor.WriteSeparator(Language, true);
-                                TextWriterColor.Write("- " + Translate.DoTranslation("Language short name:") + " ", false, KernelColorType.ListEntry);
-                                TextWriterColor.Write(LanguageManager.Languages[Language].ThreeLetterLanguageName, true, KernelColorType.ListValue);
-                                TextWriterColor.Write("- " + Translate.DoTranslation("Language full name:") + " ", false, KernelColorType.ListEntry);
-                                TextWriterColor.Write(LanguageManager.Languages[Language].FullLanguageName, true, KernelColorType.ListValue);
-                                TextWriterColor.Write("- " + Translate.DoTranslation("Language transliterable:") + " ", false, KernelColorType.ListEntry);
-                                TextWriterColor.Write($"{LanguageManager.Languages[Language].Transliterable}", true, KernelColorType.ListValue);
-                                TextWriterColor.Write("- " + Translate.DoTranslation("Custom language:") + " ", false, KernelColorType.ListEntry);
-                                TextWriterColor.Write($"{LanguageManager.Languages[Language].Custom}", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Language short name:") + " ", false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor(LanguageManager.Languages[Language].ThreeLetterLanguageName, true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Language full name:") + " ", false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor(LanguageManager.Languages[Language].FullLanguageName, true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Language transliterable:") + " ", false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($"{LanguageManager.Languages[Language].Transliterable}", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Custom language:") + " ", false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($"{LanguageManager.Languages[Language].Custom}", true, KernelColorType.ListValue);
                             }
 
                             break;
@@ -129,7 +129,7 @@ namespace KS.Shell.Shells.UESH.Commands
                         }
                     default:
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid command {0}. Check the usage below:"), true, KernelColorType.Error, CommandMode);
                             HelpPrint.ShowHelp("langman");
                             return 10000 + (int)KernelExceptionType.LanguageManagement;
                         }
@@ -137,7 +137,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Language management is disabled in safe mode."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Language management is disabled in safe mode."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.LanguageManagement;
             }
             return 0;

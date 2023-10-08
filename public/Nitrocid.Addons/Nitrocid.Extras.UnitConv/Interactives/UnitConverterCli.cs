@@ -74,15 +74,15 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             try
             {
                 // Open a dialog box asking for number to convert
-                string answer = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a number to convert..."), BoxForegroundColor, BoxBackgroundColor);
+                string answer = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a number to convert..."), BoxForegroundColor, BoxBackgroundColor);
                 if (string.IsNullOrEmpty(answer))
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("You haven't entered a number to convert."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("You haven't entered a number to convert."), BoxForegroundColor, BoxBackgroundColor);
                     return;
                 }
                 else if (!answer.IsNumeric())
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("The entered number is invalid."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The entered number is invalid."), BoxForegroundColor, BoxBackgroundColor);
                     return;
                 }
                 else
@@ -98,13 +98,13 @@ namespace Nitrocid.Extras.UnitConv.Interactives
                     var QuantityInfos = Quantity.Infos.Where(x => x.Name == UnitType).ToArray();
                     var TargetUnitInstance = parser.Parse(TargetUnit, QuantityInfos[0].UnitType);
                     var ConvertedUnit = Quantity.Parse(QuantityInfos[0].ValueType, $"{QuantityNum} {SourceUnit}").ToUnit(TargetUnitInstance);
-                    InfoBoxColor.WriteInfoBox("{0} => {1}: {2}", BoxForegroundColor, BoxBackgroundColor,
+                    InfoBoxColor.WriteInfoBoxColorBack("{0} => {1}: {2}", BoxForegroundColor, BoxBackgroundColor,
                         SourceUnit, TargetUnit, ConvertedUnit.ToString(CultureManager.CurrentCult.NumberFormat));
                 }
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Can't convert unit.") + ex.Message, BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Can't convert unit.") + ex.Message, BoxForegroundColor, BoxBackgroundColor);
             }
             RedrawRequired = true;
         }

@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.Text.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextEditTools.TextEdit_Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
-            TextWriterColor.Write(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
             return 0;
         }
 

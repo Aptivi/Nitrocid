@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            SeparatorWriterColor.WriteSeparator("Hello world!", true, KernelColorType.Success);
+            SeparatorWriterColor.WriteSeparatorKernelColor("Hello world!", true, KernelColorType.Success);
         }
     }
 }

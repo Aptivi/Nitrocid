@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.Notes.Commands
                 NoteManagement.RemoveNote(Convert.ToInt32(parameters.ArgumentsList[0]) - 1);
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("The note ID must be a note number"), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The note ID must be a note number"), true, KernelColorType.Error);
                 return 8;
             }
             return 0;

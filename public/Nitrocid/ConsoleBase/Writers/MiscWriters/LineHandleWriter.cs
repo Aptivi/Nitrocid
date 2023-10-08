@@ -169,7 +169,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// <param name="ColumnNumber">Column number (not index). This tells the handle where to place itself</param>
         /// <param name="color">The color</param>
         public static void PrintLineWithHandle(string[] Array, int LineNumber, int ColumnNumber, Color color) =>
-            TextWriterColor.Write(RenderLineWithHandle(Array, LineNumber, ColumnNumber, color), true, color);
+            TextWriterColor.WriteColor(RenderLineWithHandle(Array, LineNumber, ColumnNumber, color), true, color);
 
         /// <summary>
         /// Renders the line of a text file with the specified line number and the column number if the specified condition is satisfied

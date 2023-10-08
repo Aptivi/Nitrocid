@@ -100,15 +100,15 @@ namespace KS.Network.RSS
                     var Feed = new RSSFeed(RssHeadlineUrl, RSSFeedType.Infer);
                     if (Feed.FeedArticles.Count > 0)
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, Feed.FeedTitle);
-                        TextWriterColor.Write(Feed.FeedArticles[0].ArticleTitle, true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, Feed.FeedTitle);
+                        TextWriterColor.WriteKernelColor(Feed.FeedArticles[0].ArticleTitle, true, KernelColorType.ListValue);
                     }
                 }
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to get the latest news."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to get the latest news."), true, KernelColorType.Error);
                 }
             }
         }

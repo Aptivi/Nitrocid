@@ -122,16 +122,16 @@ namespace Nitrocid.Extras.Timers.Timers
                 int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
 
                 // Print the keys text
-                TextWriterWhereColor.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
+                TextWriterWhereColor.WriteWhereKernelColor(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
 
                 // Print the time interval
                 if (KernelFlags.EnableFigletTimer)
-                    FigletWhereColor.WriteFigletWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
+                    FigletWhereColor.WriteFigletWhereKernelColor(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
                 else
-                    TextWriterWhereColor.WriteWhere(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
+                    TextWriterWhereColor.WriteWhereKernelColor(CurrentRemainingString, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
 
                 // Print the border
-                TextWriterWhereColor.WriteWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray());
 
                 // Wait for a keypress
                 var KeysKeypress = Input.DetectKeypress().Key;
@@ -155,11 +155,11 @@ namespace Nitrocid.Extras.Timers.Timers
                             break;
 
                         // Try to parse the interval
-                        string UnparsedInterval = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", KernelColorType.Question, TimerInterval);
+                        string UnparsedInterval = InfoBoxColor.WriteInfoBoxInputKernelColor(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", KernelColorType.Question, TimerInterval);
                         if (!double.TryParse(UnparsedInterval, out TimerInterval))
                         {
                             // Not numeric.
-                            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorType.Error);
+                            InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Indicated timeout is not numeric."), KernelColorType.Error);
                             TimerInterval = 60000d;
                         }
                         rerender = true;
@@ -199,9 +199,9 @@ namespace Nitrocid.Extras.Timers.Timers
             if (TimerUpdate.IsAlive)
                 TimerUpdate.Stop();
             if (KernelFlags.EnableFigletTimer)
-                FigletWhereColor.WriteFigletWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.Success);
+                FigletWhereColor.WriteFigletWhereKernelColor(ElapsedText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.Success);
             else
-                TextWriterWhereColor.WriteWhere(ElapsedText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.Success);
+                TextWriterWhereColor.WriteWhereKernelColor(ElapsedText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.Success);
             Timer.Stop();
         }
 
@@ -226,9 +226,9 @@ namespace Nitrocid.Extras.Timers.Timers
                     UpdateRemainingPositions(UntilText, ref TimeLeftPosition, ref TimeTopPosition);
                     ClearRemainingTimeDisplay(UntilText, FigletTimeOldWidth, FigletTimeOldWidthEnd);
                     if (KernelFlags.EnableFigletTimer)
-                        FigletWhereColor.WriteFigletWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
+                        FigletWhereColor.WriteFigletWhereKernelColor(UntilText, TimeLeftPosition, TimeTopPosition, true, FigletFont, KernelColorType.NeutralText);
                     else
-                        TextWriterWhereColor.WriteWhere(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
+                        TextWriterWhereColor.WriteWhereKernelColor(UntilText, TimeLeftPosition, TimeTopPosition, true, KernelColorType.NeutralText);
                 }
                 catch (ThreadInterruptedException)
                 {
@@ -283,12 +283,12 @@ namespace Nitrocid.Extras.Timers.Timers
                     for (int Position = FigletOldWidth - 1; Position <= FigletTimeLeftPosition - 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterColor.WriteColorBack(" ", false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background));
                     }
                     for (int Position = FigletOldWidthEnd; Position <= FigletTimeLeftEndPosition + 1; Position++)
                     {
                         ConsoleWrapper.CursorLeft = Position;
-                        TextWriterColor.Write(" ", false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterColor.WriteColorBack(" ", false, KernelColorTools.GetColor(KernelColorType.NeutralText), KernelColorTools.GetColor(KernelColorType.Background));
                     }
                 }
             }

@@ -237,12 +237,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Clear old date/time
             int oldDatePosX = ConsoleWrapper.WindowWidth / 2 - lastRenderedDate.Length / 2;
             int oldTimePosX = ConsoleWrapper.WindowWidth / 2 - lastRenderedTime.Length / 2;
-            TextWriterWhereColor.WriteWhere(new string(' ', lastRenderedDate.Length), oldDatePosX, halfConsoleY, timeColor);
-            TextWriterWhereColor.WriteWhere(new string(' ', lastRenderedTime.Length), oldTimePosX, halfConsoleY + 1, timeColor);
+            TextWriterWhereColor.WriteWhereColor(new string(' ', lastRenderedDate.Length), oldDatePosX, halfConsoleY, timeColor);
+            TextWriterWhereColor.WriteWhereColor(new string(' ', lastRenderedTime.Length), oldTimePosX, halfConsoleY + 1, timeColor);
 
             // Write date and time
-            TextWriterWhereColor.WriteWhere(renderedDate, datePosX, halfConsoleY, timeColor);
-            TextWriterWhereColor.WriteWhere(renderedTime, timePosX, halfConsoleY + 1, timeColor);
+            TextWriterWhereColor.WriteWhereColor(renderedDate, datePosX, halfConsoleY, timeColor);
+            TextWriterWhereColor.WriteWhereColor(renderedTime, timePosX, halfConsoleY + 1, timeColor);
 
             // Delay
             lastRenderedDate = renderedDate;

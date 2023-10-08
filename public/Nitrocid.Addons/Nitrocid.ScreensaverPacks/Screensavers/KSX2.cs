@@ -191,9 +191,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             int selector3PositionX = 5 * oneThirdConsoleWidth / 2 - selector3.Length / 2;
 
                             // Print the selected values to the console
-                            TextWriterWhereColor.WriteWhere(selector1, selector1PositionX, selectorsPositionY, white, darkRed);
-                            TextWriterWhereColor.WriteWhere(selector2, selector2PositionX, selectorsPositionY, white, darkRed);
-                            TextWriterWhereColor.WriteWhere(selector3, selector3PositionX, selectorsPositionY, white, darkRed);
+                            TextWriterWhereColor.WriteWhereColorBack(selector1, selector1PositionX, selectorsPositionY, white, darkRed);
+                            TextWriterWhereColor.WriteWhereColorBack(selector2, selector2PositionX, selectorsPositionY, white, darkRed);
+                            TextWriterWhereColor.WriteWhereColorBack(selector3, selector3PositionX, selectorsPositionY, white, darkRed);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -213,7 +213,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 int s5figHeight = FigletTools.GetFigletHeight("2021", s5figFont) / 2;
                                 int s5consoleX = ConsoleWrapper.WindowWidth / 2 - s5figWidth;
                                 int s5consoleY = ConsoleWrapper.WindowHeight / 2 - s5figHeight;
-                                FigletWhereColor.WriteFigletWhere("2021", s5consoleX, s5consoleY, true, s5figFont, darkRed, black);
+                                FigletWhereColor.WriteFigletWhereColorBack("2021", s5consoleX, s5consoleY, true, s5figFont, darkRed, black);
                             }
                             else
                                 KernelColorTools.LoadBack(darkRed);
@@ -251,13 +251,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Show it as a normal font
                             string renderedLong = $"     {TimeDateRenderers.RenderDate(selectedDate, FormatType.Long)}     ";
-                            TextWriterWhereColor.WriteWhere(renderedLong, ConsoleWrapper.WindowWidth / 2 - renderedLong.Length / 2, s7consoleY + 5, darkRed, black);
+                            TextWriterWhereColor.WriteWhereColorBack(renderedLong, ConsoleWrapper.WindowWidth / 2 - renderedLong.Length / 2, s7consoleY + 5, darkRed, black);
                             Glitch.GlitchAt();
                         }
 
                         // Print the target date
-                        FigletWhereColor.WriteFigletWhere(renderedTarget, s7consoleX, s7consoleY, true, s7figFont, darkRed, black);
-                        TextWriterWhereColor.WriteWhere(renderedTargetLong, ConsoleWrapper.WindowWidth / 2 - renderedTargetLong.Length / 2, s7consoleY + 5, darkRed, black);
+                        FigletWhereColor.WriteFigletWhereColorBack(renderedTarget, s7consoleX, s7consoleY, true, s7figFont, darkRed, black);
+                        TextWriterWhereColor.WriteWhereColorBack(renderedTargetLong, ConsoleWrapper.WindowWidth / 2 - renderedTargetLong.Length / 2, s7consoleY + 5, darkRed, black);
                         for (int delayed = 0; delayed < 5000; delayed += 10)
                         {
                             ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -270,7 +270,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         {
                             int xwidth = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
                             int xheight = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
-                            TextWriterWhereColor.WriteWhere("X", xwidth, xheight, darkRed, black);
+                            TextWriterWhereColor.WriteWhereColorBack("X", xwidth, xheight, darkRed, black);
                             ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
@@ -300,7 +300,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             int s5figHeight = FigletTools.GetFigletHeight("X", s5figFont) / 2;
                             int s5consoleX = ConsoleWrapper.WindowWidth / 2 - s5figWidth;
                             int s5consoleY = ConsoleWrapper.WindowHeight / 2 - s5figHeight;
-                            FigletWhereColor.WriteFigletWhere("X", s5consoleX, s5consoleY, true, s5figFont, darkRed, color);
+                            FigletWhereColor.WriteFigletWhereColorBack("X", s5consoleX, s5consoleY, true, s5figFont, darkRed, color);
                             ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
@@ -347,7 +347,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             int figHeight = FigletTools.GetFigletHeight("0.0.16.0 M5", figFont) / 2;
                             int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
                             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                            FigletWhereColor.WriteFigletWhere("0.0.16.0 M5", consoleX, consoleY, true, figFont, col, red);
+                            FigletWhereColor.WriteFigletWhereColorBack("0.0.16.0 M5", consoleX, consoleY, true, figFont, col, red);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -385,15 +385,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     case 13:
                         string tbc = Translate.DoTranslation("To be continued...").ToUpper();
                         ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
+                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(40, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
+                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
                         ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
+                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(50, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
+                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, black, black);
                         ThreadManager.SleepNoBlock(1000, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                        TextWriterWhereColor.WriteWhere(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
+                        TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(5000, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         break;
                 }

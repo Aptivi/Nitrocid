@@ -101,7 +101,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Determine the color by draw mode
                     var finalColor = drawingEdge ? selectedColor : colorShaded;
-                    TextWriterWhereColor.WriteWhere(" ", left, top, Color.Empty, finalColor);
+                    TextWriterWhereColor.WriteWhereColorBack(" ", left, top, Color.Empty, finalColor);
                 }
             }
 
@@ -117,7 +117,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Determine the color by draw mode
                     var finalColor = drawingEdge ? selectedColor : colorShaded;
-                    TextWriterWhereColor.WriteWhere(" ", left, top, Color.Empty, finalColor);
+                    TextWriterWhereColor.WriteWhereColorBack(" ", left, top, Color.Empty, finalColor);
                 }
             }
 

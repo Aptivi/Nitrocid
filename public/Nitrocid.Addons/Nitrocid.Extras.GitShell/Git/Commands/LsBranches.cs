@@ -36,8 +36,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             var branches = GitShellCommon.Repository.Branches;
             foreach (var branch in branches)
             {
-                TextWriterColor.Write($"- [{(branch.IsRemote ? "R" : " ")}-{(branch.IsTracking ? "T" : " ")}-{(branch.IsCurrentRepositoryHead ? "H" : " ")}] {branch.CanonicalName} [{branch.FriendlyName}]", true, KernelColorType.ListEntry);
-                TextWriterColor.Write($"  {branch.Tip.Sha[..7]}: {branch.Tip.MessageShort}", true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor($"- [{(branch.IsRemote ? "R" : " ")}-{(branch.IsTracking ? "T" : " ")}-{(branch.IsCurrentRepositoryHead ? "H" : " ")}] {branch.CanonicalName} [{branch.FriendlyName}]", true, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor($"  {branch.Tip.Sha[..7]}: {branch.Tip.MessageShort}", true, KernelColorType.ListValue);
             }
             return 0;
         }

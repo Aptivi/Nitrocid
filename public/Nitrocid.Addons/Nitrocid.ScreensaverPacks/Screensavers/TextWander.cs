@@ -246,11 +246,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int randomPosY = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
 
             // Write the text
-            TextWriterWhereColor.WriteWhere(renderedTextWander, randomPosX, randomPosY, color);
+            TextWriterWhereColor.WriteWhereColor(renderedTextWander, randomPosX, randomPosY, color);
 
             // Delay
             ThreadManager.SleepNoBlock(TextWanderSettings.TextWanderDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            TextWriterWhereColor.WriteWhere(new string(' ', renderedTextWander.Length), randomPosX, randomPosY, color);
+            TextWriterWhereColor.WriteWhereColor(new string(' ', renderedTextWander.Length), randomPosX, randomPosY, color);
         }
 
         /// <summary>

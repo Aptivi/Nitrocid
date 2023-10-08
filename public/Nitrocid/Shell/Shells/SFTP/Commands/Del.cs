@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.SFTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriterColor.Write(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Deleting {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
 
             // Make a confirmation message so user will not accidentally delete a file or folder
             string answer = ChoiceStyle.PromptChoice(TextTools.FormatString(Translate.DoTranslation("Are you sure you want to delete {0}?"), parameters.ArgumentsList[0]), "y/n");
@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.SFTP.Commands
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(ex.Message, true, KernelColorType.Error);
                 return ex.GetHashCode();
             }
         }

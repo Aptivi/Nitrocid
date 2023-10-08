@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.HTTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Print a message
-            TextWriterColor.Write(Translate.DoTranslation("Uploading file {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[1]);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Uploading file {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[1]);
 
             try
             {
@@ -46,20 +46,20 @@ namespace KS.Shell.Shells.HTTP.Commands
             }
             catch (AggregateException aex)
             {
-                TextWriterColor.Write(aex.Message + ":", true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(aex.Message + ":", true, KernelColorType.Error);
                 foreach (Exception InnerException in aex.InnerExceptions)
                 {
-                    TextWriterColor.Write("- " + InnerException.Message, true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor("- " + InnerException.Message, true, KernelColorType.Error);
                     if (InnerException.InnerException is not null)
                     {
-                        TextWriterColor.Write("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor("- " + InnerException.InnerException.Message, true, KernelColorType.Error);
                     }
                 }
                 return aex.GetHashCode();
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(ex.Message, true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(ex.Message, true, KernelColorType.Error);
                 return ex.GetHashCode();
             }
         }

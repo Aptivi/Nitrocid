@@ -51,7 +51,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 if (!string.IsNullOrWhiteSpace(Text))
                 {
                     if (PrintSuffix)
-                        TextWriterColor.Write("- ", false, KernelColorType.Separator);
+                        TextWriterColor.WriteKernelColor("- ", false, KernelColorType.Separator);
                     if (!Text.EndsWith("-"))
                         Text += " ";
 
@@ -62,7 +62,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         {
                             if (Convert.ToString(Text[CharIndex]) == "-")
                             {
-                                TextWriterColor.Write(Convert.ToString(Text[CharIndex]), false, KernelColorType.Separator);
+                                TextWriterColor.WriteKernelColor(Convert.ToString(Text[CharIndex]), false, KernelColorType.Separator);
                             }
                             else
                             {
@@ -75,7 +75,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                     // Render the text accordingly
                     Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
-                    TextWriterColor.Write(Text, false, KernelColorType.SeparatorText);
+                    TextWriterColor.WriteKernelColor(Text, false, KernelColorType.SeparatorText);
                 }
 
                 // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -84,7 +84,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length - 1;
 
                 // Write the closing minus sign.
-                TextWriterColor.Write(new string('-', RepeatTimes), true, KernelColorType.Separator);
+                TextWriterColor.WriteKernelColor(new string('-', RepeatTimes), true, KernelColorType.Separator);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -100,8 +100,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, KernelColorType ColTypes, params object[] Vars) =>
-            WriteSeparator(Text, PrintSuffix, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteSeparatorKernelColor(string Text, bool PrintSuffix, KernelColorType ColTypes, params object[] Vars) =>
+            WriteSeparatorColorBack(Text, PrintSuffix, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -111,8 +111,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            WriteSeparator(Text, PrintSuffix, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+        public static void WriteSeparatorKernelColor(string Text, bool PrintSuffix, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
+            WriteSeparatorColorBack(Text, PrintSuffix, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -121,8 +121,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, ConsoleColors Color, params object[] Vars) =>
-            WriteSeparator(Text, PrintSuffix, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteSeparatorColor(string Text, bool PrintSuffix, ConsoleColors Color, params object[] Vars) =>
+            WriteSeparatorColorBack(Text, PrintSuffix, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -132,8 +132,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteSeparator(Text, PrintSuffix, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
+        public static void WriteSeparatorColorBack(string Text, bool PrintSuffix, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
+            WriteSeparatorColorBack(Text, PrintSuffix, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -142,8 +142,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you have suffix on your text.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, Color Color, params object[] Vars) =>
-            WriteSeparator(Text, PrintSuffix, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteSeparatorColor(string Text, bool PrintSuffix, Color Color, params object[] Vars) =>
+            WriteSeparatorColorBack(Text, PrintSuffix, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draw a separator with text
@@ -153,7 +153,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteSeparator(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteSeparatorColorBack(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             try
             {
@@ -170,7 +170,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                     // Render the text accordingly
                     Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
-                    TextWriterColor.Write(Text, false, ForegroundColor, BackgroundColor);
+                    TextWriterColor.WriteColorBack(Text, false, ForegroundColor, BackgroundColor);
                 }
 
                 // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
@@ -179,7 +179,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length + 1;
 
                 // Write the closing minus sign.
-                TextWriterColor.Write(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
+                TextWriterColor.WriteColorBack(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

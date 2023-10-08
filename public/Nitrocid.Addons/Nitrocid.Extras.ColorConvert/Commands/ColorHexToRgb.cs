@@ -39,12 +39,12 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
             // Do the job
             Color color = new(Hex);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write($"{color.R}", true, KernelColorType.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write($"{color.G}", true, KernelColorType.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write($"{color.B}", true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Red color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{color.R}", true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Green color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{color.G}", true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Blue color level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{color.B}", true, KernelColorType.ListValue);
             variableValue = color.PlainSequence;
             return 0;
         }

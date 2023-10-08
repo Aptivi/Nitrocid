@@ -52,10 +52,10 @@ namespace KS.Shell.Shells.Hex
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
                 Bail = true;
             }
-            TextWriterColor.Write(Translate.DoTranslation("Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.") + CharManager.NewLine + Translate.DoTranslation("DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!"), true, KernelColorType.Warning);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.") + CharManager.NewLine + Translate.DoTranslation("DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!"), true, KernelColorType.Warning);
 
             // Actual shell logic
             while (!Bail)
@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.Hex
                         DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
                         if (!HexEditTools.HexEdit_OpenBinaryFile(FilePath))
                         {
-                            TextWriterColor.Write(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
                             Bail = true;
                             break;
                         }
@@ -86,7 +86,7 @@ namespace KS.Shell.Shells.Hex
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

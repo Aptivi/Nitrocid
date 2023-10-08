@@ -119,8 +119,8 @@ namespace KS.Kernel.Journaling
                 string Message = journal.Message;
 
                 // Now, print the entries
-                TextWriterColor.Write($"[{Date} {Time}] [{i + 1}] [{Status}]: ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(Message, true, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor($"[{Date} {Time}] [{i + 1}] [{Status}]: ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(Message, true, KernelColorType.ListEntry);
             }
         }
 

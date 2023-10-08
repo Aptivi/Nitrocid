@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 int underscoresPosY = ConsoleWrapper.WindowHeight - 2;
                 Color underscoresSeq = new(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for underscore length", underscoresRender.Length);
-                TextWriterWhereColor.WriteWhere(underscoresRender.ToString(), underscoresPosX, underscoresPosY, underscoresSeq);
+                TextWriterWhereColor.WriteWhereColor(underscoresRender.ToString(), underscoresPosX, underscoresPosY, underscoresSeq);
 
                 // Draw the wrong characters written
                 string wrongRender = string.Join(" ", wrongChars);
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 int wrongPosY = ConsoleWrapper.WindowHeight - 4;
                 Color wrongSeq = new(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} cells for {1} wrong letters", wrongRender.Length, wrongChars.Count);
-                TextWriterWhereColor.WriteWhere(wrongRender.ToString(), wrongPosX, wrongPosY, wrongSeq);
+                TextWriterWhereColor.WriteWhereColor(wrongRender.ToString(), wrongPosX, wrongPosY, wrongSeq);
 
                 // Draw the hanger
                 string hangerSprite =
@@ -84,7 +84,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 int hangerPosX = 3;
                 int hangerPosY = 2;
                 Color hangerSeq = new(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
-                TextWriterWhereColor.WriteWhere(hangerSprite, hangerPosX, hangerPosY, hangerSeq);
+                TextWriterWhereColor.WriteWhereColor(hangerSprite, hangerPosX, hangerPosY, hangerSeq);
 
                 // Now, draw the hung man based on attempts
                 if (currentAttempt >= 1)
@@ -92,43 +92,43 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // Draw the head
                     int headPosX = 14;
                     int headPosY = 5;
-                    TextWriterWhereColor.WriteWhere("*", headPosX, headPosY, hangerSeq);
+                    TextWriterWhereColor.WriteWhereColor("*", headPosX, headPosY, hangerSeq);
                 }
                 if (currentAttempt >= 2)
                 {
                     // Draw the body
                     int bodyPosX = 14;
                     int bodyPosY = 6;
-                    TextWriterWhereColor.WriteWhere("|", bodyPosX, bodyPosY, hangerSeq);
-                    TextWriterWhereColor.WriteWhere("|", bodyPosX, bodyPosY + 1, hangerSeq);
+                    TextWriterWhereColor.WriteWhereColor("|", bodyPosX, bodyPosY, hangerSeq);
+                    TextWriterWhereColor.WriteWhereColor("|", bodyPosX, bodyPosY + 1, hangerSeq);
                 }
                 if (currentAttempt >= 3)
                 {
                     // Draw the first hand
                     int handPosX = 13;
                     int handPosY = 6;
-                    TextWriterWhereColor.WriteWhere("-", handPosX, handPosY, hangerSeq);
+                    TextWriterWhereColor.WriteWhereColor("-", handPosX, handPosY, hangerSeq);
                 }
                 if (currentAttempt >= 4)
                 {
                     // Draw the second hand
                     int handPosX = 15;
                     int handPosY = 6;
-                    TextWriterWhereColor.WriteWhere("-", handPosX, handPosY, hangerSeq);
+                    TextWriterWhereColor.WriteWhereColor("-", handPosX, handPosY, hangerSeq);
                 }
                 if (currentAttempt >= 5)
                 {
                     // Draw the first leg
                     int legPosX = 13;
                     int legPosY = 8;
-                    TextWriterWhereColor.WriteWhere("/", legPosX, legPosY, hangerSeq);
+                    TextWriterWhereColor.WriteWhereColor("/", legPosX, legPosY, hangerSeq);
                 }
                 if (currentAttempt >= 6)
                 {
                     // Draw the second leg
                     int legPosX = 15;
                     int legPosY = 8;
-                    TextWriterWhereColor.WriteWhere("\\", legPosX, legPosY, hangerSeq);
+                    TextWriterWhereColor.WriteWhereColor("\\", legPosX, legPosY, hangerSeq);
                     hung = true;
                 }
 
@@ -150,7 +150,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     string hungStr = Translate.DoTranslation("You're hung!");
                     int hungPosX = ConsoleWrapper.WindowWidth / 2 - hungStr.Length / 2;
                     int hungPosY = ConsoleWrapper.WindowHeight - 6;
-                    TextWriterWhereColor.WriteWhere(hungStr, hungPosX, hungPosY, hangerSeq);
+                    TextWriterWhereColor.WriteWhereColor(hungStr, hungPosX, hungPosY, hangerSeq);
                     Thread.Sleep(5000);
                 }
                 else if (won)
@@ -160,7 +160,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     string wonStr = Translate.DoTranslation("You win!");
                     int wonPosX = ConsoleWrapper.WindowWidth / 2 - wonStr.Length / 2;
                     int wonPosY = ConsoleWrapper.WindowHeight - 6;
-                    TextWriterWhereColor.WriteWhere(wonStr, wonPosX, wonPosY, hangerSeq);
+                    TextWriterWhereColor.WriteWhereColor(wonStr, wonPosX, wonPosY, hangerSeq);
                     Thread.Sleep(5000);
                 }
                 else

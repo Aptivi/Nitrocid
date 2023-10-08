@@ -294,7 +294,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Actually write it
             if (!ConsoleResizeListener.WasResized(false))
-                TextWriterWhereColor.WriteWhere(FigletWrite, FigletWidth, FigletHeight, true, ColorStorage);
+                TextWriterWhereColor.WriteWhereColor(FigletWrite, FigletWidth, FigletHeight, true, ColorStorage);
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();

@@ -45,22 +45,22 @@ namespace KS.Shell.Shells.UESH.Commands
             int waitForUnlockMs = waitForUnlockTimed ? int.Parse(waitForUnlockMsStr) : 0;
             if (locked)
             {
-                TextWriterColor.Write(Translate.DoTranslation("File or folder is already in use."), true, KernelColorType.Warning);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File or folder is already in use."), true, KernelColorType.Warning);
                 if (waitForUnlock)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Waiting until the file or the folder is unlocked..."), true, KernelColorType.Progress);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Waiting until the file or the folder is unlocked..."), true, KernelColorType.Progress);
                     if (waitForUnlockTimed)
                         Filesystem.WaitForLockRelease(path, waitForUnlockMs);
                     else
                         Filesystem.WaitForLockReleaseIndefinite(path);
-                    TextWriterColor.Write(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
                     return 0;
                 }
                 else
                     return 10000 + (int)KernelExceptionType.Filesystem;
             }
             else
-                TextWriterColor.Write(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
             return 0;
         }
     }

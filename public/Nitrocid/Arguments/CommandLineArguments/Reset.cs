@@ -74,7 +74,7 @@ namespace KS.Arguments.CommandLineArguments
             string[] files = Listing.GetFilesystemEntries(Paths.AppDataPath);
             if (files.Length > 0)
             {
-                TextWriterColor.Write(Translate.DoTranslation("The following files are not wiped:"), true, KernelColorType.Warning);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The following files are not wiped:"), true, KernelColorType.Warning);
                 ListWriterColor.WriteList(files);
                 string answer = ChoiceStyle.PromptChoice(Translate.DoTranslation("Are you sure to wipe these files?"), "y/n");
                 if (answer == "y")

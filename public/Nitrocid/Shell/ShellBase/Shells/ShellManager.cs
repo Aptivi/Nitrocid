@@ -467,7 +467,7 @@ namespace KS.Shell.ShellBase.Shells
                                             !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
                                         {
                                             DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: adminList(signedinusrnm) is False, strictCmds.Contains({0}) is True", commandName);
-                                            TextWriterColor.Write(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);
+                                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("You don't have permission to use {0}"), true, KernelColorType.Error, commandName);
                                             UESHVariables.SetVariable("UESHErrorCode", "-4");
                                             break;
                                         }
@@ -478,7 +478,7 @@ namespace KS.Shell.ShellBase.Shells
                                 if (KernelFlags.Maintenance & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", commandName);
-                                    TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);
+                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);
                                     UESHVariables.SetVariable("UESHErrorCode", "-3");
                                 }
                                 else
@@ -516,7 +516,7 @@ namespace KS.Shell.ShellBase.Shells
                                 catch (Exception ex)
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to start process: {0}", ex.Message);
-                                    TextWriterColor.Write(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, KernelColorType.Error, commandName, ex.Message);
+                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to start \"{0}\": {1}"), true, KernelColorType.Error, commandName, ex.Message);
                                     DebugWriter.WriteDebugStackTrace(ex);
                                     if (ex is KernelException kex)
                                         UESHVariables.SetVariable("UESHErrorCode", $"{10000 + (int)kex.ExceptionType}");
@@ -535,7 +535,7 @@ namespace KS.Shell.ShellBase.Shells
                                 }
                                 catch (Exception ex)
                                 {
-                                    TextWriterColor.Write(Translate.DoTranslation("Error trying to execute script: {0}"), true, KernelColorType.Error, ex.Message);
+                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to execute script: {0}"), true, KernelColorType.Error, ex.Message);
                                     DebugWriter.WriteDebugStackTrace(ex);
                                     if (ex is KernelException kex)
                                         UESHVariables.SetVariable("UESHErrorCode", $"{10000 + (int)kex.ExceptionType}");
@@ -546,21 +546,21 @@ namespace KS.Shell.ShellBase.Shells
                             else
                             {
                                 DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found parsing target file", commandName);
-                                TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
                                 UESHVariables.SetVariable("UESHErrorCode", "-2");
                             }
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: command {0} not found", commandName);
-                            TextWriterColor.Write(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Shell message: The requested command {0} is not found. See 'help' for available commands."), true, KernelColorType.Error, commandName);
                             UESHVariables.SetVariable("UESHErrorCode", "-1");
                         }
                     }
                     catch (Exception ex)
                     {
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to execute command.") + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                         if (ex is KernelException kex)
                             UESHVariables.SetVariable("UESHErrorCode", $"{10000 + (int)kex.ExceptionType}");
                         else

@@ -115,21 +115,21 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             var lyricLines = lyric.Lines;
             var shownLines = new List<LyricLine>();
             DebugWriter.WriteDebug(DebugLevel.I, "{0} lyric lines", lyricLines.Count);
-            TextWriterWhereColor.WriteWhere($" {fileName.Truncate(infoMaxChars)} ", 4, ConsoleWrapper.WindowHeight - 4, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhereKernelColor($" {fileName.Truncate(infoMaxChars)} ", 4, ConsoleWrapper.WindowHeight - 4, KernelColorType.NeutralText);
             DebugWriter.WriteDebug(DebugLevel.I, "Visualizing lyric file {0} [file name: {1}]", path, fileName);
 
             // Start the elapsed time in 3...
             for (int i = 3; i > 0; i--)
             {
                 TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-                TextWriterWhereColor.WriteWhere($"{i}...", ConsoleWrapper.WindowWidth / 2 - $"{i}...".Length / 2, infoHeight, KernelColorType.NeutralText);
+                TextWriterWhereColor.WriteWhereKernelColor($"{i}...", ConsoleWrapper.WindowWidth / 2 - $"{i}...".Length / 2, infoHeight, KernelColorType.NeutralText);
                 ThreadManager.SleepNoBlock(1000, Thread.CurrentThread);
             }
 
             // Go!
             DebugWriter.WriteDebug(DebugLevel.I, "Let's do this!");
             TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-            TextWriterWhereColor.WriteWhere("Go!", ConsoleWrapper.WindowWidth / 2 - "Go!".Length / 2, infoHeight, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhereKernelColor("Go!", ConsoleWrapper.WindowWidth / 2 - "Go!".Length / 2, infoHeight, KernelColorType.NeutralText);
             var sw = new Stopwatch();
             sw.Start();
             foreach (var ts in lyricLines)
@@ -148,7 +148,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
                     if (ts.LineSpan != lyricLines[^1].LineSpan)
                         DebugWriter.WriteDebug(DebugLevel.I, "Next lyric occurs at {0}. {1}", lyricLines[lyricLines.IndexOf(ts) + 1].LineSpan, lyricLines[lyricLines.IndexOf(ts) + 1].Line);
                     TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
-                    TextWriterWhereColor.WriteWhere(tsLine.Truncate(infoMaxChars), ConsoleWrapper.WindowWidth / 2 - tsLine.Length / 2, infoHeight, KernelColorType.NeutralText);
+                    TextWriterWhereColor.WriteWhereKernelColor(tsLine.Truncate(infoMaxChars), ConsoleWrapper.WindowWidth / 2 - tsLine.Length / 2, infoHeight, KernelColorType.NeutralText);
                     shownLines.Add(ts);
                     DebugWriter.WriteDebug(DebugLevel.I, "shownLines = {0} / {1}", shownLines.Count, lyricLines.Count);
                     if (shownLines.Count == lyricLines.Count)

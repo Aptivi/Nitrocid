@@ -74,7 +74,7 @@ namespace KS.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox(ex.Message, true, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(ex.Message, true, KernelColorType.Error);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -90,25 +90,25 @@ namespace KS.Kernel.Configuration.Settings
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox(ex.Message, true, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(ex.Message, true, KernelColorType.Error);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
 
         internal static void SaveSettingsAs()
         {
-            string Location = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Where do you want to save the current kernel settings?"), KernelColorType.Question);
+            string Location = InfoBoxColor.WriteInfoBoxInputKernelColor(Translate.DoTranslation("Where do you want to save the current kernel settings?"), KernelColorType.Question);
             Location = Filesystem.NeutralizePath(Location);
             ConsoleWrapper.CursorVisible = false;
             if (!Checking.FileExists(Location))
                 SaveSettings(Location);
             else
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Can't save kernel settings on top of existing file."), true, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Can't save kernel settings on top of existing file."), true, KernelColorType.Error);
         }
 
         internal static void LoadSettingsFrom(BaseKernelConfig config)
         {
-            string Location = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), KernelColorType.Question);
+            string Location = InfoBoxColor.WriteInfoBoxInputKernelColor(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), KernelColorType.Question);
             Location = Filesystem.NeutralizePath(Location);
             if (Checking.FileExists(Location))
             {
@@ -121,12 +121,12 @@ namespace KS.Kernel.Configuration.Settings
                 }
                 catch (Exception ex)
                 {
-                    InfoBoxColor.WriteInfoBox(ex.Message, true, KernelColorType.Error);
+                    InfoBoxColor.WriteInfoBoxKernelColor(ex.Message, true, KernelColorType.Error);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
             else
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("File not found."), true, KernelColorType.Error);
         }
 
         internal static void ReloadConfig()
@@ -192,7 +192,7 @@ namespace KS.Kernel.Configuration.Settings
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section.");
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                InfoBoxColor.WriteInfoBox(
+                InfoBoxColor.WriteInfoBoxKernelColor(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
                     $"{Translate.DoTranslation("If you're sure that you've opened the right section, turn on the kernel debugger, reproduce, and try to investigate the logs.")}",
@@ -203,7 +203,7 @@ namespace KS.Kernel.Configuration.Settings
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to open section: {0}", ex.Message);
                 string finalSection = Translate.DoTranslation("You're Lost!");
-                InfoBoxColor.WriteInfoBox(
+                InfoBoxColor.WriteInfoBoxKernelColor(
                     $"  * {finalSection}\n\n" +
                     $"{message}\n\n" +
                     $"{Translate.DoTranslation("If you're sure that you've opened the right section, check this message out:")}\n" +

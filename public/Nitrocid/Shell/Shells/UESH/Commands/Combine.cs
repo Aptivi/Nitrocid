@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.UESH.Commands
             AreAllInputsText = InputStates.Count == InputStates.Where((binary) => !binary).Count();
             if (!AreAllInputsBinary && !AreAllInputsText)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Can't combine a mix of text and binary files."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't combine a mix of text and binary files."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Filesystem;
             }
 

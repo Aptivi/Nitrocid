@@ -52,7 +52,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 byte[] iv = driver.ComposeBytesFromString(ivValue);
                 decoded = driver.GetDecodedString(composed, key, iv);
             }
-            TextWriterColor.Write(decoded, true, KernelColorType.Success);
+            TextWriterColor.WriteKernelColor(decoded, true, KernelColorType.Success);
             return 0;
         }
     }

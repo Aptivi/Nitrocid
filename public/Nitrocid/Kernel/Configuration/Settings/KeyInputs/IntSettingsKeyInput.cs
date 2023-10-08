@@ -35,10 +35,10 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
 
             // Make an introductory banner
             string finalSection = Translate.DoTranslation(key.Name);
-            TextWriterColor.Write("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(key.Description), true, KernelColorType.Question);
+            TextWriterColor.WriteKernelColor("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(key.Description), true, KernelColorType.Question);
 
             // Write the prompt
-            TextWriterColor.Write("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
+            TextWriterColor.WriteKernelColor("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
             string AnswerString = Input.ReadLine();
 
             // Neutralize path if required with the assumption that the keytype is not list
@@ -64,8 +64,8 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Negative values are disallowed.");
-                TextWriterColor.Write(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
-                TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The answer may not be negative."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                 Input.DetectKeypress();
             }
         }

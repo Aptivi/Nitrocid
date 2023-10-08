@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
             string modName = parameters.ArgumentsList[0];
             if (!ModManager.Mods.ContainsKey(modName))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Tried to query the manuals for nonexistent mod {0}."), true, KernelColorType.Error, modName);
                 return 10000 + (int)KernelExceptionType.NoSuchMod;
             }
 

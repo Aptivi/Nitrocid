@@ -400,7 +400,7 @@ namespace KS.Kernel.Exceptions
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Dump generator failed to dump a kernel error caused by") + " {0}: {1}", true, KernelColorType.Error, Exc.GetType().FullName, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Dump generator failed to dump a kernel error caused by") + " {0}: {1}", true, KernelColorType.Error, Exc.GetType().FullName, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -418,7 +418,7 @@ namespace KS.Kernel.Exceptions
                 failureBuilder.AppendLine(Translate.DoTranslation("We apologize for your inconvenience, but it looks like that the kernel was having trouble booting. The below error message might help:") + "\n");
                 failureBuilder.AppendLine(LastKernelErrorException.Message + "\n");
                 failureBuilder.AppendLine(Translate.DoTranslation("For further investigation, enable debugging mode on the kernel and try to reproduce the issue. Also, try to investigate the latest dump file created."));
-                InfoBoxColor.WriteInfoBox(failureBuilder.ToString(), KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(failureBuilder.ToString(), KernelColorType.Error);
                 SplashManager.EndSplashOut();
             }
         }

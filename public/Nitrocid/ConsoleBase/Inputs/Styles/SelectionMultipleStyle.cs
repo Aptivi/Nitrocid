@@ -155,7 +155,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             ConsoleWrapper.Clear(true);
 
             // Ask a question
-            TextWriterColor.Write(Question, true, KernelColorType.Question);
+            TextWriterColor.WriteKernelColor(Question, true, KernelColorType.Question);
 
             // Make pages based on console window height
             int listStartPosition = ConsoleWrapper.CursorTop;
@@ -180,7 +180,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 {
                     refreshRequired = false;
                     ConsoleWrapper.Clear(true);
-                    TextWriterColor.Write(Question, true, KernelColorType.Question);
+                    TextWriterColor.WriteKernelColor(Question, true, KernelColorType.Question);
                 }
 
                 // Populate the answers
@@ -232,10 +232,10 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int descArea = ConsoleWrapper.WindowHeight - 2;
                 var highlightedAnswer = AllAnswers[HighlightedAnswer - 1];
                 string descFinal = highlightedAnswer.ChoiceDescription is not null ? highlightedAnswer.ChoiceDescription.Truncate((ConsoleWrapper.WindowWidth * 2) - 3) : "";
-                TextWriterWhereColor.WriteWhere(new string('=', ConsoleWrapper.WindowWidth), 0, descSepArea, KernelColorType.Separator);
+                TextWriterWhereColor.WriteWhereKernelColor(new string('=', ConsoleWrapper.WindowWidth), 0, descSepArea, KernelColorType.Separator);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth), 0, descArea);
                 TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth), 0, descArea + 1);
-                TextWriterWhereColor.WriteWhere(descFinal, 0, descArea, KernelColorType.NeutralText);
+                TextWriterWhereColor.WriteWhereKernelColor(descFinal, 0, descArea, KernelColorType.NeutralText);
 
                 // Write keybindings and page and answer number
                 bool isExtendable = !string.IsNullOrEmpty(highlightedAnswer.ChoiceDescription);
@@ -251,8 +251,8 @@ namespace KS.ConsoleBase.Inputs.Styles
                 // Now, render the bindings and the page numbers
                 int bindingsLeft = 2;
                 int numbersLeft = ConsoleWrapper.WindowWidth - numberRender.Length - bindingsLeft;
-                TextWriterWhereColor.WriteWhere(bindingsRender, bindingsLeft, descSepArea, KernelColorType.Separator);
-                TextWriterWhereColor.WriteWhere(numberRender, numbersLeft, descSepArea, KernelColorType.Separator);
+                TextWriterWhereColor.WriteWhereKernelColor(bindingsRender, bindingsLeft, descSepArea, KernelColorType.Separator);
+                TextWriterWhereColor.WriteWhereKernelColor(numberRender, numbersLeft, descSepArea, KernelColorType.Separator);
 
                 // Wait for an answer
                 Answer = Input.DetectKeypress();

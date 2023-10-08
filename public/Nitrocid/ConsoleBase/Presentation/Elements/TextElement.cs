@@ -62,7 +62,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                 if (maxHeight < 0)
                 {
                     // If the text is going to overflow the presentation view, clear the presentation and finish writing the parts
-                    TextWriterWhereColor.WriteWhere(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
+                    TextWriterWhereColor.WriteWhereKernelColor(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
                     Input.DetectKeypress();
                     PresentationTools.ClearPresentation();
                     seekTop = top = PresentationTools.PresentationUpperInnerBorderTop;
@@ -73,7 +73,7 @@ namespace KS.ConsoleBase.Presentation.Elements
                 buffer.Append(split + "\n");
                 top++;
             }
-            TextWriterWhereColor.WriteWhere(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhereKernelColor(buffer.ToString(), PresentationTools.PresentationUpperInnerBorderLeft, seekTop, false, KernelColorType.NeutralText);
         }
 
         /// <summary>

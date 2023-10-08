@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.FTP.Commands
             }
             Entries.Sort();
             foreach (string Entry in Entries)
-                TextWriterColor.Write(Entry, true, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(Entry, true, KernelColorType.ListEntry);
             return 0;
         }
 

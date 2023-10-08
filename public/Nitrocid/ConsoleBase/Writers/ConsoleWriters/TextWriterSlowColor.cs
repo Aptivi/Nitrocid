@@ -64,7 +64,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorType, params object[] vars)
+        public static void WriteSlowlyKernelColor(string msg, bool Line, double MsEachLetter, KernelColorType colorType, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -93,7 +93,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+        public static void WriteSlowlyKernelColor(string msg, bool Line, double MsEachLetter, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -122,7 +122,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ConsoleColors color, params object[] vars)
+        public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, ConsoleColors color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -151,7 +151,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
+        public static void WriteSlowlyColorBack(string msg, bool Line, double MsEachLetter, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -179,7 +179,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, Color color, params object[] vars)
+        public static void WriteSlowlyColor(string msg, bool Line, double MsEachLetter, Color color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -208,7 +208,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteSlowly(string msg, bool Line, double MsEachLetter, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        public static void WriteSlowlyColorBack(string msg, bool Line, double MsEachLetter, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {

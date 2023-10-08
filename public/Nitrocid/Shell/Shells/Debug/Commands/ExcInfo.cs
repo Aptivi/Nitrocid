@@ -41,15 +41,15 @@ namespace KS.Shell.Shells.Debug.Commands
             if (!Enum.TryParse(exceptionStr, out KernelExceptionType type))
             {
                 // There is no such exception number being requested
-                TextWriterColor.Write(Translate.DoTranslation("No such exception type") + $" {exceptionStr}", true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such exception type") + $" {exceptionStr}", true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
 
             // Get the exception type and its message
-            TextWriterColor.Write("- " + Translate.DoTranslation("Exception type name") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write($"{type} [{(int)type}]", true, KernelColorType.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Message") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(KernelExceptionMessages.GetMessageFromType(type), true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Exception type name") + ": ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{type} [{(int)type}]", true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Message") + ": ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(KernelExceptionMessages.GetMessageFromType(type), true, KernelColorType.ListValue);
             return 0;
         }
 

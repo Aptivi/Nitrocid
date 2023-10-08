@@ -43,10 +43,10 @@ namespace KS.Shell.Shells.UESH.Commands
             };
 
             // Try to get the answer
-            TextWriterColor.Write(Translate.DoTranslation("The Assistant is thinking..."), true, KernelColorType.Progress);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("The Assistant is thinking..."), true, KernelColorType.Progress);
             var result = AssistantPredictor.Predict(sampleData);
             string answer = result.PredictedLabel;
-            TextWriterColor.Write(Translate.DoTranslation("The Assistant says:") + $" {answer}", true, KernelColorType.Success);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("The Assistant says:") + $" {answer}", true, KernelColorType.Success);
             return 0;
         }
 

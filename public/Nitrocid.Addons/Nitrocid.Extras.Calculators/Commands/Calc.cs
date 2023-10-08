@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.Calculators.Commands
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Error trying to calculate expression {0}: {1}", parameters.ArgumentsText, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Error in calculation.") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error in calculation.") + " {0}", true, KernelColorType.Error, ex.Message);
                 return ex.GetHashCode();
             }
         }

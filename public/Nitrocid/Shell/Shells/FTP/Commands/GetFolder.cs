@@ -38,18 +38,18 @@ namespace KS.Shell.Shells.FTP.Commands
         {
             string RemoteFolder = parameters.ArgumentsList[0];
             string LocalFolder = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : "";
-            TextWriterColor.Write(Translate.DoTranslation("Downloading folder {0}..."), true, KernelColorType.Progress, RemoteFolder);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Downloading folder {0}..."), true, KernelColorType.Progress, RemoteFolder);
             bool Result = !string.IsNullOrWhiteSpace(LocalFolder) ? FTPTransfer.FTPGetFolder(RemoteFolder, LocalFolder) : FTPTransfer.FTPGetFolder(RemoteFolder);
             if (Result)
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Translate.DoTranslation("Downloaded folder {0}."), true, KernelColorType.Success, RemoteFolder);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Downloaded folder {0}."), true, KernelColorType.Success, RemoteFolder);
                 return 0;
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Translate.DoTranslation("Download failed for folder {0}."), true, KernelColorType.Error, RemoteFolder);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Download failed for folder {0}."), true, KernelColorType.Error, RemoteFolder);
                 return 10000 + (int)KernelExceptionType.FTPNetwork;
             }
         }

@@ -274,8 +274,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 {
                     ThreadManager.SleepNoBlock(WaveSettings.WaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
                     for (int j = 0; j < ConsoleWrapper.WindowHeight; j++)
-                        TextWriterWhereColor.WriteWhere(" ", i, j, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
-                    TextWriterWhereColor.WriteWhere(" ", i, Pos, Color.Empty, ColorStorage);
+                        TextWriterWhereColor.WriteWhereColorBack(" ", i, j, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                    TextWriterWhereColor.WriteWhereColorBack(" ", i, Pos, Color.Empty, ColorStorage);
                 }
             }
 

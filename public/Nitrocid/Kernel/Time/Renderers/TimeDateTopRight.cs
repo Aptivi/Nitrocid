@@ -51,10 +51,10 @@ namespace KS.Kernel.Time.Renderers
                         string TimeString = $"{TimeDateRenderers.RenderDate()} - {TimeDateRenderers.RenderTime()}";
                         oldWid = ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1;
                         oldTop = ConsoleBase.ConsoleWrapper.WindowTop;
-                        TextWriterWhereColor.WriteWhere(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, KernelColorType.NeutralText);
+                        TextWriterWhereColor.WriteWhereKernelColor(TimeString, ConsoleBase.ConsoleWrapper.WindowWidth - TimeString.Length - 1, ConsoleBase.ConsoleWrapper.WindowTop, true, KernelColorType.NeutralText);
                         Thread.Sleep(1000);
                         if (oldWid != 0)
-                            TextWriterWhereColor.WriteWhere(new string(' ', TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);
+                            TextWriterWhereColor.WriteWhereKernelColor(new string(' ', TimeString.Length), oldWid, oldTop, true, KernelColorType.NeutralText);
                     }
                 }
             }

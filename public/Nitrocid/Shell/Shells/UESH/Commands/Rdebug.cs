@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Debugging not enabled."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Debugging not enabled."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
         }

@@ -72,7 +72,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             if (string.Join("", chars) == RandomWord)
                             {
                                 RenderBoxes(RandomWord, maxGuesses, currentTries);
-                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("You guessed the right word! You win!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Green);
+                                TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("You guessed the right word! You win!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Green);
                                 Thread.Sleep(3000);
                                 done = true;
                                 break;
@@ -81,7 +81,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             if (currentGuessTry > maxGuesses)
                             {
                                 RenderBoxes(RandomWord, maxGuesses, currentTries);
-                                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                                TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Game over"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
                                 Thread.Sleep(3000);
                                 done = true;
                             }

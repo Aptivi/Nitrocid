@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.Amusements.Amusements
         internal static void EntryPoint()
         {
             // Disclaimer
-            TextWriterColor.Write(Translate.DoTranslation("This \"mock app\" mocks \"HDD Cleaner 2.1,\" which was released on November 24th, 2015. We'll call it \"HDD Uncleaner 2015.\" It'll basically do nothing except display messages to the console using the Nitrocid KS API. It'll try to simulate how this archived program looks like. Please don't take this too literally as it's just a joke program intended to amuse you. It also doesn't simulate extraneous features, like the \"AutoRecovery\" routine. Please note that we don't intend to localize this. Press any key to start."), true, KernelColorType.Warning);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("This \"mock app\" mocks \"HDD Cleaner 2.1,\" which was released on November 24th, 2015. We'll call it \"HDD Uncleaner 2015.\" It'll basically do nothing except display messages to the console using the Nitrocid KS API. It'll try to simulate how this archived program looks like. Please don't take this too literally as it's just a joke program intended to amuse you. It also doesn't simulate extraneous features, like the \"AutoRecovery\" routine. Please note that we don't intend to localize this. Press any key to start."), true, KernelColorType.Warning);
             Input.DetectKeypress();
 
             while (!exiting)

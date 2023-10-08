@@ -39,15 +39,15 @@ namespace KS.Shell.Shells.FTP.Commands
             var ExecutedReply = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Execute(parameters.ArgumentsText);
             if (ExecutedReply.Success)
             {
-                TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
-                TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                TextWriterColor.WriteKernelColor(">>> [{0}] M: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.Message);
+                TextWriterColor.WriteKernelColor(">>> [{0}] I: {1}", true, KernelColorType.Success, ExecutedReply.Code, ExecutedReply.InfoMessages);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(">>> [{0}] M: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
-                TextWriterColor.Write(">>> [{0}] I: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
-                TextWriterColor.Write(">>> [{0}] E: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
+                TextWriterColor.WriteKernelColor(">>> [{0}] M: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.Message);
+                TextWriterColor.WriteKernelColor(">>> [{0}] I: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.InfoMessages);
+                TextWriterColor.WriteKernelColor(">>> [{0}] E: {1}", true, KernelColorType.Error, ExecutedReply.Code, ExecutedReply.ErrorMessage);
                 return 10000 + (int)KernelExceptionType.FTPShell;
             }
         }

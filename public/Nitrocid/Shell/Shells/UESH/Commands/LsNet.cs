@@ -57,8 +57,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
 
                 // Print info
-                TextWriterColor.Write($"- {address}: ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(host, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor($"- {address}: ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(host, true, KernelColorType.ListValue);
             }
             return 0;
         }

@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, finalSaverName);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Screensaver {0} not found."), true, KernelColorType.Error, finalSaverName);
                 return 10000 + (int)KernelExceptionType.NoSuchScreensaver;
             }
         }

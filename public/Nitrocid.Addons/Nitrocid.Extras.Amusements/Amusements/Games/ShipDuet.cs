@@ -271,7 +271,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         char StarSymbol = '*';
                         int StarX = Star.Item1;
                         int StarY = Star.Item2;
-                        TextWriterWhereColor.WriteWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White);
+                        TextWriterWhereColor.WriteWhereColor(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White);
                     }
 
                     // Check to see if the spaceship is blown up by the opposing spaceship
@@ -308,7 +308,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             catch (Exception ex)
             {
                 // Game is over with an unexpected error.
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
+                TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Unexpected error") + ": {0}", 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: ex.Message);
                 ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
                 GameExiting = true;
                 ConsoleWrapper.Clear();
@@ -319,9 +319,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (!GameExiting)
                 {
                     if (player1Won && player2Won || !player1Won && !player2Won)
-                        TextWriterWhereColor.WriteWhere(Translate.DoTranslation("It's a draw."), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
+                        TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("It's a draw."), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red);
                     else if (player1Won || player2Won)
-                        TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Player {0} wins!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: player1Won ? 1 : 2);
+                        TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Player {0} wins!"), 0, ConsoleWrapper.WindowHeight - 1, false, ConsoleColors.Red, vars: player1Won ? 1 : 2);
                     ThreadManager.SleepNoBlock(3000L, ShipDuetDrawThread);
                 }
                 ConsoleWrapper.Clear();
@@ -334,14 +334,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             char PowerLineSpaceshipP2 = Convert.ToChar(0xE0B2);
             char SpaceshipSymbolP1 = ShipDuetUsePowerLine ? PowerLineSpaceshipP1 : '>';
             char SpaceshipSymbolP2 = ShipDuetUsePowerLine ? PowerLineSpaceshipP2 : '<';
-            TextWriterWhereColor.WriteWhere(Convert.ToString(SpaceshipSymbolP1), 0, SpaceshipHeightPlayer1, false, ConsoleColors.Green);
-            TextWriterWhereColor.WriteWhere(Convert.ToString(SpaceshipSymbolP2), ConsoleWrapper.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen);
+            TextWriterWhereColor.WriteWhereColor(Convert.ToString(SpaceshipSymbolP1), 0, SpaceshipHeightPlayer1, false, ConsoleColors.Green);
+            TextWriterWhereColor.WriteWhereColor(Convert.ToString(SpaceshipSymbolP2), ConsoleWrapper.WindowWidth - 1, SpaceshipHeightPlayer2, false, ConsoleColors.DarkGreen);
         }
 
         private static void DrawBullet(int BulletX, int BulletY)
         {
             char BulletSymbol = '-';
-            TextWriterWhereColor.WriteWhere(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Cyan);
+            TextWriterWhereColor.WriteWhereColor(Convert.ToString(BulletSymbol), BulletX, BulletY, false, ConsoleColors.Cyan);
         }
 
     }

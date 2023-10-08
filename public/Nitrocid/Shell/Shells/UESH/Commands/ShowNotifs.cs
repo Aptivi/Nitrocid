@@ -40,11 +40,11 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 foreach (Notification Notif in NotificationManager.NotifRecents)
                 {
-                    TextWriterColor.Write($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, KernelColorType.ListEntry);
-                    TextWriterColor.Write(Notif.Desc, false, KernelColorType.ListValue);
+                    TextWriterColor.WriteKernelColor($"[{Count}/{NotificationManager.NotifRecents.Count}] {Notif.Title}: ", false, KernelColorType.ListEntry);
+                    TextWriterColor.WriteKernelColor(Notif.Desc, false, KernelColorType.ListValue);
                     if (Notif.Type == NotificationType.Progress)
                     {
-                        TextWriterColor.Write($" ({Notif.Progress}%)", false, Notif.ProgressFailed ? KernelColorType.Error : KernelColorType.Success);
+                        TextWriterColor.WriteKernelColor($" ({Notif.Progress}%)", false, Notif.ProgressFailed ? KernelColorType.Error : KernelColorType.Success);
                     }
                     TextWriterColor.Write();
                     Count += 1;

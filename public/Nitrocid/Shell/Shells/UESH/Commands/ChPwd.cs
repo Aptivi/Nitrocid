@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 PermissionsTools.Demand(PermissionTypes.ManageUsers);
                 if (parameters.ArgumentsList[3].Contains(' '))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Spaces are not allowed."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.UserManagement;
                 }
                 else if (parameters.ArgumentsList[3] == parameters.ArgumentsList[2])
@@ -60,13 +60,13 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else if (parameters.ArgumentsList[3] != parameters.ArgumentsList[2])
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Passwords doesn't match."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Passwords doesn't match."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.UserManagement;
                 }
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Failed to change password of username: {0}"), true, KernelColorType.Error, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to change password of username: {0}"), true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return ex.GetHashCode();
             }

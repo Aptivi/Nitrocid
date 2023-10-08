@@ -55,7 +55,7 @@ namespace KS.Kernel.Configuration.Settings
             // Verify that we actually have the type
             if (settingsType is null)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Settings type is not found."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Settings type is not found."), true, KernelColorType.Error);
                 return;
             }
 
@@ -127,7 +127,7 @@ namespace KS.Kernel.Configuration.Settings
                 {
                     // Invalid selection
                     DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error, Answer);
+                    InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Specified option {0} is invalid.") + " " + Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error, Answer);
                 }
             }
         }
@@ -209,8 +209,8 @@ namespace KS.Kernel.Configuration.Settings
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                        TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
-                        TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                         Input.DetectKeypress();
                     }
                 }
@@ -284,7 +284,7 @@ namespace KS.Kernel.Configuration.Settings
                 // Prompt the user
                 TextWriterColor.Write(Translate.DoTranslation("Write what do you want to search for."));
                 DebugWriter.WriteDebug(DebugLevel.I, "Prompting user for searching...");
-                TextWriterColor.Write(">> ", false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
                 string SearchFor = Input.ReadLine();
 
                 // Search for the setting
@@ -316,12 +316,12 @@ namespace KS.Kernel.Configuration.Settings
                 }
                 else
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, KernelColorType.Error);
+                    InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Nothing is found. Make sure that you've written the setting correctly."), true, KernelColorType.Error);
                 }
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", true, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Failed to find your requested setting.") + $" {ex.Message}", true, KernelColorType.Error);
             }
         }
 

@@ -78,7 +78,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, GetColor(BoxColor));
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, GetColor(BoxColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -100,7 +100,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, new Color(BoxColor));
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, new Color(BoxColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -122,7 +122,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhere(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, BoxColor);
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, BoxColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

@@ -343,7 +343,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Print a block and add the covered position to the list so fading down can be done
             string renderedNumber = RandomDriver.Random(1).ToString();
-            TextWriterWhereColor.WriteWhere(renderedNumber, ColumnLine, fallStep, false, foreground, background);
+            TextWriterWhereColor.WriteWhereColorBack(renderedNumber, ColumnLine, fallStep, false, foreground, background);
             var PositionTuple = (ColumnLine, fallStep, renderedNumber);
             CoveredPositions.Add(PositionTuple);
         }
@@ -381,7 +381,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 string renderedNumber = PositionTuple.Item3;
                 bleedBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, PositionLeft + 1, PositionTop + 1)}{renderedNumber}");
             }
-            TextWriterWhereColor.WriteWhere(bleedBuilder.ToString(), ColumnLine, 0, false, CurrentFadeColor, background);
+            TextWriterWhereColor.WriteWhereColorBack(bleedBuilder.ToString(), ColumnLine, 0, false, CurrentFadeColor, background);
         }
 
         internal void Unreserve(int column) =>

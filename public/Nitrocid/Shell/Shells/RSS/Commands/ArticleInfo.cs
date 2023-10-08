@@ -43,23 +43,23 @@ namespace KS.Shell.Shells.RSS.Commands
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
             if (ArticleIndex > RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1);
                 return 10000 + (int)KernelExceptionType.RSSShell;
             }
             else
             {
                 var Article = RSSShellCommon.RSSFeedInstance.FeedArticles[ArticleIndex];
-                TextWriterColor.Write("- " + Translate.DoTranslation("Title:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(Article.ArticleTitle, true, KernelColorType.ListValue);
-                TextWriterColor.Write("- " + Translate.DoTranslation("Link:") + " ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Title:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(Article.ArticleTitle, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Link:") + " ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(Article.ArticleLink, true, KernelColorType.ListValue);
                 foreach (string Variable in Article.ArticleVariables.Keys)
                 {
                     if (!(Variable == "title") & !(Variable == "link") & !(Variable == "summary") & !(Variable == "description") & !(Variable == "content"))
                     {
-                        TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, Variable);
-                        TextWriterColor.Write(Article.ArticleVariables[Variable].InnerText, true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Variable);
+                        TextWriterColor.WriteKernelColor(Article.ArticleVariables[Variable].InnerText, true, KernelColorType.ListValue);
                     }
                 }
                 TextWriterColor.Write(CharManager.NewLine + Article.ArticleDescription);

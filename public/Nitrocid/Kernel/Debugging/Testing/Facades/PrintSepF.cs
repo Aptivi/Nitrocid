@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, Vars: new object[] { "Nitrocid KS" });
+            SeparatorWriterColor.WriteSeparator("Hi, {0}!", true, "Nitrocid KS");
         }
     }
 }

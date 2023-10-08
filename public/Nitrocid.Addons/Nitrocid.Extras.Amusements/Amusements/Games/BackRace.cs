@@ -85,7 +85,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     var finalColor = i + 1 == selected ? ConsoleColors.White : horseColors[i];
                     var horse = horses[i];
                     BorderColor.WriteBorder(boxLeft, height, boxWidth, 1, finalColor);
-                    TextWriterWhereColor.WriteWhere($"{horse.HorseProgress:000}%", 2, height + 1, finalColor);
+                    TextWriterWhereColor.WriteWhereColor($"{horse.HorseProgress:000}%", 2, height + 1, finalColor);
                     ProgressBarColor.WriteProgress(horse.HorseProgress, progressLeft, height, finalColor, finalColor);
                 }
 
@@ -96,7 +96,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 if (racing)
                 {
                     // Race mode. Wipe the keybindings
-                    TextWriterWhereColor.WriteWhere(new string(' ', bindings.Length), bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
+                    TextWriterWhereColor.WriteWhereKernelColor(new string(' ', bindings.Length), bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
 
                     // Write the positions
                     var horsesSorted = horses
@@ -107,7 +107,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         positions.Add(Translate.DoTranslation("Horse") + $" {horsesSorted[i].HorseNumber}: #{i + 1}");
                     string renderedPositions = string.Join(" | ", positions);
                     int positionsPositionX = ConsoleWrapper.WindowWidth / 2 - renderedPositions.Length / 2;
-                    TextWriterWhereColor.WriteWhere(renderedPositions, positionsPositionX, bindingsPositionY, KernelColorType.NeutralText);
+                    TextWriterWhereColor.WriteWhereKernelColor(renderedPositions, positionsPositionX, bindingsPositionY, KernelColorType.NeutralText);
 
                     // Update each horse with their own movement
                     for (int i = 0; i < 5; i++)
@@ -131,7 +131,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     // If the user chose the same horse that won, congratulate the user.
                     if (selected == winner)
                     {
-                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Your horse won the race!"), KernelColorType.Success);
+                        InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Your horse won the race!"), KernelColorType.Success);
                         ConsoleWrapper.Clear();
                         ResetAll();
                     }
@@ -145,7 +145,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                 else
                 {
                     // Rest mode. Write the keybindings
-                    TextWriterWhereColor.WriteWhere(bindings, bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
+                    TextWriterWhereColor.WriteWhereKernelColor(bindings, bindingsPositionX, bindingsPositionY, KernelColorType.NeutralText);
 
                     // Wait for the input
                     winner = 0;

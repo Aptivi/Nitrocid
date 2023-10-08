@@ -85,7 +85,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
             if (finalLangs.Length == 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "No languages!");
-                TextWriterColor.Write(Translate.DoTranslation("No valid language is specified."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No valid language is specified."), true, KernelColorType.Error);
                 return;
             }
 

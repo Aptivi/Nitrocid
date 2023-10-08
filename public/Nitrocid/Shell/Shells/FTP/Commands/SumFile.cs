@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.FTP.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }

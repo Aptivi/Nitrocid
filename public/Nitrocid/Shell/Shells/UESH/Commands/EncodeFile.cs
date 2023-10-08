@@ -59,10 +59,10 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 string keyDecomposed = driver.DecomposeBytesFromString(key);
                 string ivDecomposed = driver.DecomposeBytesFromString(iv);
-                TextWriterColor.Write("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(keyDecomposed, true, KernelColorType.ListValue);
-                TextWriterColor.Write("- " + Translate.DoTranslation("Initialization vector used") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(ivDecomposed, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(keyDecomposed, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Initialization vector used") + ": ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(ivDecomposed, true, KernelColorType.ListValue);
             }
             return 0;
         }

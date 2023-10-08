@@ -36,17 +36,17 @@ namespace KS.Shell.Shells.SFTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Downloading file {0}..."), false, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Downloading file {0}..."), false, KernelColorType.Progress, parameters.ArgumentsList[0]);
             if (SFTPTransfer.SFTPGetFile(parameters.ArgumentsList[0]))
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Translate.DoTranslation("Downloaded file {0}."), true, KernelColorType.Success, parameters.ArgumentsList[0]);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Downloaded file {0}."), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Download failed for file {0}."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.SFTPFilesystem;
             }
         }

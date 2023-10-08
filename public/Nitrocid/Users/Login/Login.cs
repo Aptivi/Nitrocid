@@ -93,7 +93,7 @@ namespace KS.Users.Login
                     // the second time for these handlers to behave.
                     if (!UserManagement.ValidateUsername(user))
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Wrong username or username not found."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Wrong username or username not found."), true, KernelColorType.Error);
                         continue;
                     }
 
@@ -102,7 +102,7 @@ namespace KS.Users.Login
                     bool valid = handler.PasswordHandler(user, ref pass);
                     valid = UserManagement.ValidatePassword(user, pass);
                     if (!valid)
-                        TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                     else
                         break;
                 }
@@ -139,9 +139,9 @@ namespace KS.Users.Login
                     // Wait for input
                     DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
                     if (!string.IsNullOrWhiteSpace(PasswordPrompt))
-                        TextWriterColor.Write(PlaceParse.ProbePlaces(PasswordPrompt), false, KernelColorType.Input);
+                        TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(PasswordPrompt), false, KernelColorType.Input);
                     else
-                        TextWriterColor.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, usernamerequested);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, usernamerequested);
 
                     // Get input
                     string answerpass = Input.ReadLineNoInputUnsafe();
@@ -150,7 +150,7 @@ namespace KS.Users.Login
                         return true;
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                         if (!KernelFlags.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
@@ -221,7 +221,7 @@ namespace KS.Users.Login
                     {
                         TextWriterColor.Write(Translate.DoTranslation("Incorrect admin password. You have {0} tries."), 3 - (tries + 1), true, KernelColorType.Error);
                         if (tries == 2)
-                            TextWriterColor.Write(Translate.DoTranslation("Out of chances. Rebooting..."), true, KernelColorType.Error);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Out of chances. Rebooting..."), true, KernelColorType.Error);
                     }
                 }
             }

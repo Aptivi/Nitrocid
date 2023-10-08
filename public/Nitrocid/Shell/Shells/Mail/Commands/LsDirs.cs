@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Mail.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(MailDirectory.MailListDirectories(), false, KernelColorType.NeutralText);
+            TextWriterColor.WriteKernelColor(MailDirectory.MailListDirectories(), false, KernelColorType.NeutralText);
             return 0;
         }
     }

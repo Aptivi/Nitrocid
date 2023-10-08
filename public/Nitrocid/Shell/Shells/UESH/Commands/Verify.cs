@@ -73,7 +73,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
                         return 4;
                     }
                 }
@@ -84,26 +84,26 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Hashes don't match."), true, KernelColorType.Warning);
                     return 4;
                 }
             }
             catch (KernelException ihae) when (ihae.ExceptionType == KernelExceptionType.InvalidHashAlgorithm)
             {
                 DebugWriter.WriteDebugStackTrace(ihae);
-                TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
                 return 10000 + (int)ihae.ExceptionType;
             }
             catch (KernelException ihe) when (ihe.ExceptionType == KernelExceptionType.InvalidHash)
             {
                 DebugWriter.WriteDebugStackTrace(ihe);
-                TextWriterColor.Write(Translate.DoTranslation("Hashes are malformed."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Hashes are malformed."), true, KernelColorType.Error);
                 return 10000 + (int)ihe.ExceptionType;
             }
             catch (FileNotFoundException fnfe)
             {
                 DebugWriter.WriteDebugStackTrace(fnfe);
-                TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, parameters.ArgumentsList[3]);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, parameters.ArgumentsList[3]);
                 return 10000 + (int)KernelExceptionType.Encryption;
             }
         }

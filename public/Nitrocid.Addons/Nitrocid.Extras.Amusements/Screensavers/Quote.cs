@@ -244,7 +244,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             {
                 int currentY = oldHalfConsoleY + i;
                 string str = oldQuoteSplit[i];
-                TextWriterWhereColor.WriteWhere(str, oldQuotePosX, currentY, quoteColor);
+                TextWriterWhereColor.WriteWhereColor(str, oldQuotePosX, currentY, quoteColor);
             }
 
             // Write quote
@@ -252,7 +252,7 @@ namespace Nitrocid.Extras.Amusements.Screensavers
             {
                 int currentY = halfConsoleY + i;
                 string str = quoteSplit[i];
-                TextWriterWhereColor.WriteWhere(str, quotePosX, currentY, quoteColor);
+                TextWriterWhereColor.WriteWhereColor(str, quotePosX, currentY, quoteColor);
             }
 
             // Delay

@@ -38,8 +38,8 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             TextWriterColor.Write(Translate.DoTranslation("Commits for branch") + $" {GitShellCommon.BranchName}:");
             foreach (var commit in commits)
             {
-                TextWriterColor.Write($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, KernelColorType.ListEntry);
-                TextWriterColor.Write($"  - {commit.MessageShort}", true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor($"- {commit.Sha[..7]}, {commit.Committer.Name} <{commit.Committer.Email}>", true, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor($"  - {commit.MessageShort}", true, KernelColorType.ListValue);
             }
             return 0;
         }

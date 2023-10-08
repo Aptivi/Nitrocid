@@ -60,7 +60,7 @@ namespace KS.ConsoleBase.Interactive
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
                     CountElements(interactiveTui.PrimaryDataSource) == 0 && CountElements(interactiveTui.SecondaryDataSource) == 0 && !interactiveTui.AcceptsEmptyData)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The interactive TUI {0} doesn't contain any data source. This program can't continue."), true, KernelColorType.Error, interactiveTui.GetType().Name);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The interactive TUI {0} doesn't contain any data source. This program can't continue."), true, KernelColorType.Error, interactiveTui.GetType().Name);
                     TextWriterColor.Write();
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to exit this program..."));
                     Input.DetectKeypress();
@@ -131,7 +131,7 @@ namespace KS.ConsoleBase.Interactive
                 if (notifyCrash)
                 {
                     notifyCrash = false;
-                    TextWriterColor.Write(crashReason, true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(crashReason, true, KernelColorType.Error);
                     TextWriterColor.Write();
                     TextWriterColor.Write(Translate.DoTranslation("Press any key to exit this program..."));
                     Input.DetectKeypress();
@@ -283,14 +283,14 @@ namespace KS.ConsoleBase.Interactive
                     if (canDraw)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", binding.BindingKeyName.ToString(), binding.BindingName);
-                        TextWriterWhereColor.WriteWhere($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
-                        TextWriterWhereColor.WriteWhere($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.OptionForegroundColor, BaseInteractiveTui.BackgroundColor);
+                        TextWriterWhereColor.WriteWhereColorBack($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
+                        TextWriterWhereColor.WriteWhereColorBack($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.OptionForegroundColor, BaseInteractiveTui.BackgroundColor);
                     }
                     else
                     {
                         // We can't render anymore, so just break and write a binding to show more
                         DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
-                        TextWriterWhereColor.WriteWhere($" K ", ConsoleWrapper.WindowWidth - 3, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
+                        TextWriterWhereColor.WriteWhereColorBack($" K ", ConsoleWrapper.WindowWidth - 3, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
                         break;
                     }
                 }
@@ -362,7 +362,7 @@ namespace KS.ConsoleBase.Interactive
                 var finalBackColor = finalIndex == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemBackColor : BaseInteractiveTui.PaneItemBackColor;
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
+                TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
                 KernelColorTools.SetConsoleColor(BaseInteractiveTui.PaneItemBackColor, true);
             }
 
@@ -439,7 +439,7 @@ namespace KS.ConsoleBase.Interactive
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + index - startIndex;
                 if (top > 0)
-                    TextWriterWhereColor.WriteWhere(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
+                    TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
                 KernelColorTools.SetConsoleColor(BaseInteractiveTui.PaneItemBackColor, true);
             }
 
@@ -522,14 +522,14 @@ namespace KS.ConsoleBase.Interactive
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Info is overflowing! {0} >= {1}", infoIndex, SeparatorMaximumHeightInterior - 1);
                     string truncated = Translate.DoTranslation("Shift+I = more info");
-                    TextWriterWhereColor.WriteWhere(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
+                    TextWriterWhereColor.WriteWhereColorBack(truncated + new string(' ', SeparatorHalfConsoleWidthInterior - truncated.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
                     break;
                 }
 
                 // Now, render the info
                 string finalInfo = finalInfoStrings[infoIndex];
                 DebugWriter.WriteDebug(DebugLevel.I, "Rendering final info {0}...", finalInfo);
-                TextWriterWhereColor.WriteWhere(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
+                TextWriterWhereColor.WriteWhereColorBack(finalInfo + new string(' ', SeparatorHalfConsoleWidthInterior - finalInfo.Length), SeparatorHalfConsoleWidth + 1, SeparatorMinimumHeightInterior + infoIndex, ForegroundColor, PaneItemBackColor);
             }
         }
 
@@ -547,7 +547,7 @@ namespace KS.ConsoleBase.Interactive
             DebugWriter.WriteDebug(DebugLevel.I, "Status rendered. {0}", BaseInteractiveTui.Status);
 
             // Now, write info
-            TextWriterWhereColor.WriteWhere(BaseInteractiveTui.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, BaseInteractiveTui.ForegroundColor, BaseInteractiveTui.BackgroundColor);
+            TextWriterWhereColor.WriteWhereColorBack(BaseInteractiveTui.Status.Truncate(ConsoleWrapper.WindowWidth - 3), 0, 0, BaseInteractiveTui.ForegroundColor, BaseInteractiveTui.BackgroundColor);
             ConsoleExtensions.ClearLineToRight();
         }
 
@@ -619,7 +619,7 @@ namespace KS.ConsoleBase.Interactive
                         {
                             // User needs more information in the infobox
                             DebugWriter.WriteDebug(DebugLevel.I, "Rendering information in the infobox...");
-                            InfoBoxColor.WriteInfoBox(_finalInfoRendered, BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+                            InfoBoxColor.WriteInfoBoxColorBack(_finalInfoRendered, BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
                             BaseInteractiveTui.RedrawRequired = true;
                         }
                         break;
@@ -632,7 +632,7 @@ namespace KS.ConsoleBase.Interactive
                         string[] bindingRepresentations = bindings
                             .Select((itb) => $"{$"[{itb.BindingKeyName}]" + new string(' ', maxBindingLength - $"[{itb.BindingKeyName}]".Length) + $" | {(itb._localizable ? Translate.DoTranslation(itb.BindingName) : itb.BindingName)}"}")
                             .ToArray();
-                        InfoBoxColor.WriteInfoBox(
+                        InfoBoxColor.WriteInfoBoxColorBack(
                             $"{section}{CharManager.NewLine}" +
                             $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                             $"{string.Join('\n', bindingRepresentations)}"

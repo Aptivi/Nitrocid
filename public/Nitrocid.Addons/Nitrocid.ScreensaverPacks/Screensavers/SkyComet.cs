@@ -110,7 +110,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     if (currentPosY < 0)
                         break;
                     coveredPositions.Add((currentPosX, currentPosY));
-                    TextWriterWhereColor.WriteWhere(starChar, currentPosX, currentPosY, ConsoleColors.LightSkyBlue1);
+                    TextWriterWhereColor.WriteWhereColor(starChar, currentPosX, currentPosY, ConsoleColors.LightSkyBlue1);
                 }
 
                 // Finally, fade out
@@ -135,7 +135,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Actually print things out
                     foreach (var pos in coveredPositions)
-                        TextWriterWhereColor.WriteWhere(starChar, pos.Item1, pos.Item2, result);
+                        TextWriterWhereColor.WriteWhereColor(starChar, pos.Item1, pos.Item2, result);
                 }
             }
 
@@ -174,7 +174,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Get the position and write it
                 int left = star.left;
                 int top = star.top;
-                TextWriterWhereColor.WriteWhere(starChar, left, top, ConsoleColors.White);
+                TextWriterWhereColor.WriteWhereColor(starChar, left, top, ConsoleColors.White);
             }
         }
 

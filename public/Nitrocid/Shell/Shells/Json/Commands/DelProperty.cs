@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.Json.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             JsonTools.JsonShell_RemoveProperty(parameters.ArgumentsList[0]);
-            TextWriterColor.Write(Translate.DoTranslation("Removed property."), true, KernelColorType.Success);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Removed property."), true, KernelColorType.Success);
             return 0;
         }
 

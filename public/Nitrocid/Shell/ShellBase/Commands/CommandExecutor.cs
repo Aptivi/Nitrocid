@@ -223,7 +223,7 @@ namespace KS.Shell.ShellBase.Commands
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Command aborted in the .NET Framework way. This is currently not supported as it may corrupt the state. Any weird behavior logged below is most likely from this.");
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriterColor.Write(Translate.DoTranslation("Command has been aborted."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Command has been aborted."), true, KernelColorType.Error);
                     }
 #pragma warning restore SYSLIB0046
 #else
@@ -278,7 +278,7 @@ namespace KS.Shell.ShellBase.Commands
                 EventsManager.FireEvent(EventType.CommandError, ShellType, RequestedCommand, ex);
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to execute command {0} from type {1}: {2}", RequestedCommand, ShellType.ToString(), ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to execute command") + " {2}." + CharManager.NewLine + Translate.DoTranslation("Error {0}: {1}"), true, KernelColorType.Error, ex.GetType().FullName, ex.Message, RequestedCommand);
                 ShellInstance.LastErrorCode = ex.GetHashCode();
             }
         }
@@ -299,7 +299,7 @@ namespace KS.Shell.ShellBase.Commands
             if (!CommandManager.IsCommandFound(CommandToBeWrapped, currentType))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Wrappable command {0} not found", Command);
-                TextWriterColor.Write(Translate.DoTranslation("The wrappable command is not found."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The wrappable command is not found."), true, KernelColorType.Error);
                 return;
             }
 
@@ -307,7 +307,7 @@ namespace KS.Shell.ShellBase.Commands
             if (!StartCommandThread.IsAlive)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Can't directly execute command {0} in wrapped mode.", Command);
-                TextWriterColor.Write(Translate.DoTranslation("You must not directly execute this command in a wrapped mode."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You must not directly execute this command in a wrapped mode."), true, KernelColorType.Error);
                 return;
             }
 
@@ -316,7 +316,7 @@ namespace KS.Shell.ShellBase.Commands
             {
                 var WrappableCmds = GetWrappableCommands(currentType);
                 DebugWriter.WriteDebug(DebugLevel.E, "Unwrappable command {0}! Wrappable commands: [{1}]", Command, string.Join(", ", WrappableCmds));
-                TextWriterColor.Write(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:"), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The command is not wrappable. These commands are wrappable:"), true, KernelColorType.Error);
                 ListWriterColor.WriteList(WrappableCmds);
                 return;
             }
@@ -347,13 +347,13 @@ namespace KS.Shell.ShellBase.Commands
 
                 // Now, print the output
                 DebugWriter.WriteDebug(DebugLevel.I, "Printing...");
-                TextWriterWrappedColor.WriteWrapped(wrapOutput, false, KernelColorType.NeutralText);
+                TextWriterWrappedColor.WriteWrappedKernelColor(wrapOutput, false, KernelColorType.NeutralText);
             }
             catch (Exception ex)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to wrap command {0}: {1}", CommandToBeWrapped, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("An error occurred while trying to wrap a command output") + ": {0}", true, KernelColorType.Error, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("An error occurred while trying to wrap a command output") + ": {0}", true, KernelColorType.Error, ex.Message);
             }
 
             // In case error happens

@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (ShowAll)
                 TimeZoneRenderers.ShowAllTimeZones();
             else if (!TimeZoneRenderers.ShowTimeZones(parameters.ArgumentsList[0]))
-                TextWriterColor.Write(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
             return 0;
         }
 

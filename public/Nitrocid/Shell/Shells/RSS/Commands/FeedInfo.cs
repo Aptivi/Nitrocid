@@ -34,16 +34,16 @@ namespace KS.Shell.Shells.RSS.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write("- " + Translate.DoTranslation("Title:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(RSSShellCommon.RSSFeedInstance.FeedTitle, true, KernelColorType.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Link:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(RSSShellCommon.RSSFeedInstance.FeedUrl, true, KernelColorType.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Description:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(RSSShellCommon.RSSFeedInstance.FeedDescription, true, KernelColorType.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Feed type:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(RSSShellCommon.RSSFeedInstance.FeedType.ToString(), true, KernelColorType.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Number of articles:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(RSSShellCommon.RSSFeedInstance.FeedArticles.Count.ToString(), true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Title:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(RSSShellCommon.RSSFeedInstance.FeedTitle, true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Link:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(RSSShellCommon.RSSFeedInstance.FeedUrl, true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Description:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(RSSShellCommon.RSSFeedInstance.FeedDescription, true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Feed type:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(RSSShellCommon.RSSFeedInstance.FeedType.ToString(), true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Number of articles:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(RSSShellCommon.RSSFeedInstance.FeedArticles.Count.ToString(), true, KernelColorType.ListValue);
             return 0;
         }
 

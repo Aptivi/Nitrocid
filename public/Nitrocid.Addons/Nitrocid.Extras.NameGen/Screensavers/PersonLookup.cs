@@ -156,7 +156,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
             base.ScreensaverPreparation();
 
             // Populate the names
-            InfoBoxColor.WriteInfoBox("Welcome to the database! Fetching identities...", false, ConsoleColors.Green);
+            InfoBoxColor.WriteInfoBoxColor("Welcome to the database! Fetching identities...", false, ConsoleColors.Green);
             PopulateNames();
         }
 
@@ -199,7 +199,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
 
                 // Print all information
                 ConsoleWrapper.Clear();
-                InfoBoxColor.WriteInfoBox(
+                InfoBoxColor.WriteInfoBoxColor(
                     "- Name:                  {0}\n" +
                    $"{new string('=', $"- Name:                  {GeneratedName}".Length)}\n" +
                     "\n" +

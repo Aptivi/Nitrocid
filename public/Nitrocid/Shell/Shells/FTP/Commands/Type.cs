@@ -41,8 +41,8 @@ namespace KS.Shell.Shells.FTP.Commands
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType = FtpDataType.ASCII;
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.ListingDataType = FtpDataType.ASCII;
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.UploadDataType = FtpDataType.ASCII;
-                TextWriterColor.Write(Translate.DoTranslation("Data type set to ASCII!"), true, KernelColorType.Success);
-                TextWriterColor.Write(Translate.DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), true, KernelColorType.Warning);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Data type set to ASCII!"), true, KernelColorType.Success);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Beware that most files won't download or upload properly using this mode, so we highly recommend using the Binary mode on most situations."), true, KernelColorType.Warning);
                 return 0;
             }
             else if (parameters.ArgumentsList[0].ToLower() == "b")
@@ -50,12 +50,12 @@ namespace KS.Shell.Shells.FTP.Commands
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.DownloadDataType = FtpDataType.Binary;
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.ListingDataType = FtpDataType.Binary;
                 ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).Config.UploadDataType = FtpDataType.Binary;
-                TextWriterColor.Write(Translate.DoTranslation("Data type set to Binary!"), true, KernelColorType.Success);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Data type set to Binary!"), true, KernelColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Invalid data type."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid data type."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.FTPFilesystem;
             }
         }

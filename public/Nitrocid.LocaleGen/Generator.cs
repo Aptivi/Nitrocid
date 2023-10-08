@@ -80,7 +80,7 @@ namespace Nitrocid.LocaleGen
                 else if (singular)
                 {
                     // We can't be singular without providing the language!
-                    TextWriterColor.Write("Provide a language to generate.", true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor("Provide a language to generate.", true, KernelColorType.Error);
                     Environment.Exit(1);
                 }
 
@@ -101,7 +101,7 @@ namespace Nitrocid.LocaleGen
 
                 // Warn if dry
                 if (dry)
-                    TextWriterColor.Write("Running in dry mode. No changes will be made. Take out the --Dry switch if you really want to apply changes. Look at the debug window.", true, KernelColorType.Warning);
+                    TextWriterColor.WriteKernelColor("Running in dry mode. No changes will be made. Take out the --Dry switch if you really want to apply changes. Look at the debug window.", true, KernelColorType.Warning);
 
                 // Now, do the job!
                 if (normal)
@@ -113,8 +113,8 @@ namespace Nitrocid.LocaleGen
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write("Unexpected error in converter:" + $" {ex.Message}", true, KernelColorType.Error);
-                TextWriterColor.Write(ex.StackTrace, true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor("Unexpected error in converter:" + $" {ex.Message}", true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(ex.StackTrace, true, KernelColorType.Error);
             }
         }
     }

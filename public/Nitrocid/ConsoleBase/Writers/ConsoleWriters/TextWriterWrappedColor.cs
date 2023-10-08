@@ -62,7 +62,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrapped(string Text, bool Line, KernelColorType colorType, params object[] vars)
+        public static void WriteWrappedKernelColor(string Text, bool Line, KernelColorType colorType, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -90,7 +90,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrapped(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+        public static void WriteWrappedKernelColor(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -118,7 +118,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrapped(string Text, bool Line, ConsoleColors color, params object[] vars)
+        public static void WriteWrappedColor(string Text, bool Line, ConsoleColors color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -147,7 +147,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrapped(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
+        public static void WriteWrappedColorBack(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -175,7 +175,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrapped(string Text, bool Line, Color color, params object[] vars)
+        public static void WriteWrappedColor(string Text, bool Line, Color color, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {
@@ -204,7 +204,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void WriteWrapped(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        public static void WriteWrappedColorBack(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
             lock (TextWriterColor.WriteLock)
             {

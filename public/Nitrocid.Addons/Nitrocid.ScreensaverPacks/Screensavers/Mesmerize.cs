@@ -289,7 +289,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Color finalDotColor = dotColorShades[dotPositions.Count - 1 - i];
 
                     // Just place the dot in its place.
-                    TextWriterWhereColor.WriteWhere(" ", left, top, Color.Empty, finalDotColor);
+                    TextWriterWhereColor.WriteWhereColorBack(" ", left, top, Color.Empty, finalDotColor);
                 }
 
                 // For positioning, change the dot position based on the state of movement

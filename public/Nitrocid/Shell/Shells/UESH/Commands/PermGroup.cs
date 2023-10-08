@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             if (!Enum.TryParse(typeof(PermissionTypes), perm, out object permission))
             {
                 // Permission not found
-                TextWriterColor.Write(Translate.DoTranslation("No such permission"), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such permission"), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.PermissionManagement;
             }
 
@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
             else
             {
                 // No mode
-                TextWriterColor.Write(Translate.DoTranslation("No such permission mode"), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such permission mode"), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.PermissionManagement;
             }
             return 0;

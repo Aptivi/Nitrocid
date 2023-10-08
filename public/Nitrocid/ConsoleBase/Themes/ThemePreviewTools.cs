@@ -73,7 +73,7 @@ namespace KS.ConsoleBase.Themes
                 themeColorPromptText.Append($"\n{KernelColorTools.GetColor(KernelColorType.Option).VTSequenceForeground}*) {type}: ");
                 themeColorPromptText.Append($"[{color.PlainSequence}]{color.VTSequenceForeground} Lorem ipsum dolor sit amet, consectetur adipiscing elit.");
             }
-            TextWriterWrappedColor.WriteWrapped(themeColorPromptText.ToString(), false, KernelColorType.Option);
+            TextWriterWrappedColor.WriteWrappedKernelColor(themeColorPromptText.ToString(), false, KernelColorType.Option);
         }
 
         /// <summary>
@@ -116,7 +116,7 @@ namespace KS.ConsoleBase.Themes
 
                 // Render the border
                 int bindingsY = ConsoleWrapper.WindowHeight - 2;
-                TextWriterWhereColor.WriteWhere(new string('═', ConsoleWrapper.WindowWidth), 0, bindingsY - 2, true, KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(new string('═', ConsoleWrapper.WindowWidth), 0, bindingsY - 2, true, KernelColorTools.GetGray());
 
                 // Render the bindings
                 string bindings = $"[ENTER] {Translate.DoTranslation("Done")} - [<-|->] {Translate.DoTranslation("Switch Types")}";

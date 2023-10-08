@@ -99,14 +99,14 @@ namespace KS.Misc.Splash
                     else if (!KernelFlags.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriterColor.Write($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
+                        TextWriterColor.WriteKernelColor($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
                     }
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted. Reporting {0}...", Text);
-                TextWriterColor.Write(Text, true, KernelColorType.Tip, Vars);
+                TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Tip, Vars);
             }
             JournalManager.WriteJournal(Text, Vars);
         }
@@ -163,14 +163,14 @@ namespace KS.Misc.Splash
                     else if (!KernelFlags.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriterColor.Write($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
+                        TextWriterColor.WriteKernelColor($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
                     }
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Kernel booted. Reporting {0}...", Text);
-                TextWriterColor.Write(Text, true, KernelColorType.Warning, Vars);
+                TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Warning, Vars);
             }
             JournalManager.WriteJournal(Text, JournalStatus.Warning, Vars);
         }
@@ -227,14 +227,14 @@ namespace KS.Misc.Splash
                     else if (!KernelFlags.QuietKernel)
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Kernel not booted and not quiet. Reporting {0}...", Text);
-                        TextWriterColor.Write($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
+                        TextWriterColor.WriteKernelColor($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
                     }
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Kernel booted. Reporting {0}...", Text);
-                TextWriterColor.Write(Text, true, KernelColorType.Error, Vars);
+                TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Error, Vars);
             }
             JournalManager.WriteJournal(Text, JournalStatus.Error, Vars);
         }

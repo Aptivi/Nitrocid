@@ -61,7 +61,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Spin
             // Spin!
             if (!ConsoleResizeListener.WasResized(false))
             {
-                TextWriterWhereColor.WriteWhere(spinBuffer.ToString(), 0, 0, true, new Color(ConsoleColors.White), new Color(ConsoleColors.Black));
+                TextWriterWhereColor.WriteWhereColorBack(spinBuffer.ToString(), 0, 0, true, new Color(ConsoleColors.White), new Color(ConsoleColors.Black));
                 ThreadManager.SleepNoBlock(Settings.SpinDelay, System.Threading.Thread.CurrentThread);
             }
 

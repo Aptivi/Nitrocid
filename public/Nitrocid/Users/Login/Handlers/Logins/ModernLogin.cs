@@ -76,7 +76,7 @@ namespace KS.Users.Login.Handlers.Logins
                 return true;
 
             // The password is not empty. Prompt for password.
-            TextWriterColor.Write(Translate.DoTranslation("Enter the password for user") + " {0}: ", false, vars: new object[] { user });
+            TextWriterColor.Write(Translate.DoTranslation("Enter the password for user") + " {0}: ", false, user);
             string password = Input.ReadLineNoInput();
 
             // Validate the password
@@ -86,7 +86,7 @@ namespace KS.Users.Login.Handlers.Logins
                 return true;
             else
                 // Wrong password.
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Wrong password for user."), KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Wrong password for user."), KernelColorType.Error);
             return false;
         }
     }

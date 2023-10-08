@@ -56,14 +56,14 @@ namespace KS.Shell.Shells.Sql.Commands
             string[] replies = Array.Empty<string>();
             if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, sqlParameters.ToArray()))
             {
-                TextWriterColor.Write(Translate.DoTranslation("SQL command succeeded. Here are the replies:"), true, KernelColorType.Success);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("SQL command succeeded. Here are the replies:"), true, KernelColorType.Success);
                 foreach (string reply in replies)
-                    TextWriterColor.Write(reply, true, KernelColorType.Success);
+                    TextWriterColor.WriteKernelColor(reply, true, KernelColorType.Success);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("SQL command failed."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("SQL command failed."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.SqlEditor;
             }
         }

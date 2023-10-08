@@ -316,7 +316,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Write the background gradient!
                 var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
                 for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
-                    TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, RampCurrentColorInstance);
+                    TextWriterWhereColor.WriteWhereColorBack(" ", x, y, Color.Empty, RampCurrentColorInstance);
 
                 // Change the colors
                 RampCurrentColorRed -= RampColorRedSteps;

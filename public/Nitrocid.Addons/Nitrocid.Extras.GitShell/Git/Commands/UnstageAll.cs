@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (!status.IsDirty)
             {
-                TextWriterColor.Write(Translate.DoTranslation("No modifications are done to unstage."), true, KernelColorType.Success);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No modifications are done to unstage."), true, KernelColorType.Success);
                 return 0;
             }
 
@@ -53,11 +53,11 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
                 try
                 {
                     GitCommand.Unstage(GitShellCommon.Repository, item.FilePath);
-                    TextWriterColor.Write(Translate.DoTranslation("Unstaged file {0} successfully!"), true, KernelColorType.Success, item.FilePath);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Unstaged file {0} successfully!"), true, KernelColorType.Success, item.FilePath);
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Failed to unstage file {0}.") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to unstage file {0}.") + "{1}", true, KernelColorType.Error, item.FilePath, ex.Message);
                 }
             }
             return 0;

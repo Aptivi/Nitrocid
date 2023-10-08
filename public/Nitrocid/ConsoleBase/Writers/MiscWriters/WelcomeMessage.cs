@@ -81,11 +81,11 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                 // Finally, write the message
                 if (KernelFlags.StartScroll)
                 {
-                    TextWriterSlowColor.WriteSlowly(MessageWrite, true, 10d, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
+                    TextWriterSlowColor.WriteSlowlyKernelColor(MessageWrite, true, 10d, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
                 }
                 else
                 {
-                    TextWriterColor.Write(MessageWrite, true, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
+                    TextWriterColor.WriteKernelColor(MessageWrite, true, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
                 }
 
                 string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", BannerFigletFont);
@@ -99,13 +99,13 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// </summary>
         public static void WriteLicense()
         {
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
-            TextWriterColor.Write(CharManager.NewLine + "    Nitrocid KS  Copyright (C) 2018-2023  Aptivi" +
+            SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
+            TextWriterColor.WriteKernelColor(CharManager.NewLine + "    Nitrocid KS  Copyright (C) 2018-2023  Aptivi" +
                                   CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " +
                                   CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." +
                                   CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" +
                                   CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, KernelColorType.License);
-            TextWriterColor.Write("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/\n", true, KernelColorType.License);
+            TextWriterColor.WriteKernelColor("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/\n", true, KernelColorType.License);
         }
 
         internal static void ShowDevelopmentDisclaimer()
@@ -126,9 +126,9 @@ namespace KS.ConsoleBase.Writers.MiscWriters
 
             // Show development disclaimer
             if (KernelFlags.EnableSplash)
-                InfoBoxColor.WriteInfoBox($"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue."), KernelColorType.DevelopmentWarning);
+                InfoBoxColor.WriteInfoBoxKernelColor($"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue."), KernelColorType.DevelopmentWarning);
             else
-                TextWriterColor.Write($"* {message}", true, KernelColorType.DevelopmentWarning);
+                TextWriterColor.WriteKernelColor($"* {message}", true, KernelColorType.DevelopmentWarning);
 #endif
         }
 
@@ -139,9 +139,9 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             // TODO: Remove this when .NET 8.0 releases on November and Nitrocid KS gets re-targeted to that version on December.
             string message = "You're running a .NET 7.0 version of Nitrocid KS. This is going to be used as a testing ground to ensure that we can have smooth upgrade experience to .NET 8.0. Meanwhile, you can evaluate this version until .NET 8.0 gets released on November.";
             if (KernelFlags.EnableSplash)
-                InfoBoxColor.WriteInfoBox($"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue."), KernelColorType.DevelopmentWarning);
+                InfoBoxColor.WriteInfoBoxKernelColor($"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue."), KernelColorType.DevelopmentWarning);
             else
-                TextWriterColor.Write($"* {message}", true, KernelColorType.DevelopmentWarning);
+                TextWriterColor.WriteKernelColor($"* {message}", true, KernelColorType.DevelopmentWarning);
 #endif
         }
         
@@ -154,7 +154,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                 int tipIdx = RandomDriver.RandomIdx(tips.Length);
                 tip = Translate.DoTranslation(tips[tipIdx]);
             }
-            TextWriterColor.Write(
+            TextWriterColor.WriteKernelColor(
                 "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + tip, true, KernelColorType.Tip);
         }
 

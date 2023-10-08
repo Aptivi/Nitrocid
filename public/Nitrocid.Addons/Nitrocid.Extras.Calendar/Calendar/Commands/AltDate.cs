@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
             string culture = parameters.ArgumentsList[0];
             if (!Enum.TryParse(culture, out CalendarTypes calendarType))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Culture isn't found.") + $" {culture}", true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Culture isn't found.") + $" {culture}", true, KernelColorType.Error);
                 return 16;
             }
             var cultureInstance = CalendarTools.GetCultureFromCalendar(calendarType);

@@ -310,7 +310,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             if (!ConsoleResizeListener.WasResized(false))
             {
                 ThreadManager.SleepNoBlock(SwivelSettings.SwivelDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                TextWriterWhereColor.WriteWhere(" ", PosHorizontal, PosVertical, Color.Empty, ColorStorage);
+                TextWriterWhereColor.WriteWhereColorBack(" ", PosHorizontal, PosVertical, Color.Empty, ColorStorage);
             }
 
             // Reset resize sync

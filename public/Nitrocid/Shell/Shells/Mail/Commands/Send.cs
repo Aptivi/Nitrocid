@@ -67,7 +67,7 @@ namespace KS.Shell.Shells.Mail.Commands
             var Body = new BodyBuilder();
 
             // Prompt for receiver e-mail address
-            TextWriterColor.Write(Translate.DoTranslation("Enter recipient mail address:") + " ", false, KernelColorType.Input);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter recipient mail address:") + " ", false, KernelColorType.Input);
             Receiver = Input.ReadLine();
             DebugWriter.WriteDebug(DebugLevel.I, "Recipient: {0}", Receiver);
 
@@ -77,12 +77,12 @@ namespace KS.Shell.Shells.Mail.Commands
                 DebugWriter.WriteDebug(DebugLevel.I, "Mail format satisfied. Contains \"@\" and contains \".\" in the second part after the \"@\" symbol.");
 
                 // Prompt for subject
-                TextWriterColor.Write(Translate.DoTranslation("Enter the subject:") + " ", false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter the subject:") + " ", false, KernelColorType.Input);
                 Subject = Input.ReadLine();
                 DebugWriter.WriteDebug(DebugLevel.I, "Subject: {0} ({1} chars)", Subject, Subject.Length);
 
                 // Prompt for body
-                TextWriterColor.Write(Translate.DoTranslation("Enter your message below. Write \"EOF\" to confirm."), true, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter your message below. Write \"EOF\" to confirm."), true, KernelColorType.Input);
                 string BodyLine = "";
                 while (!(BodyLine.ToUpper() == "EOF"))
                 {
@@ -99,7 +99,7 @@ namespace KS.Shell.Shells.Mail.Commands
                 string PathLine = " ";
                 while (!string.IsNullOrEmpty(PathLine))
                 {
-                    TextWriterColor.Write("> ", false, KernelColorType.Input);
+                    TextWriterColor.WriteKernelColor("> ", false, KernelColorType.Input);
                     PathLine = Input.ReadLine();
                     if (!string.IsNullOrEmpty(PathLine))
                     {
@@ -113,24 +113,24 @@ namespace KS.Shell.Shells.Mail.Commands
                 }
 
                 // Send the message
-                TextWriterColor.Write(Translate.DoTranslation("Sending message..."), true, KernelColorType.Progress);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Sending message..."), true, KernelColorType.Progress);
                 if (MailTransfer.MailSendMessage(Receiver, Subject, Body.ToMessageBody()))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Message sent.");
-                    TextWriterColor.Write(Translate.DoTranslation("Message sent."), true, KernelColorType.Success);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Message sent."), true, KernelColorType.Success);
                     return 0;
                 }
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "See debug output to find what's wrong.");
-                    TextWriterColor.Write(Translate.DoTranslation("Error sending message."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error sending message."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.Mail;
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mail format unsatisfied." + Receiver);
-                TextWriterColor.Write(Translate.DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid e-mail address. Make sure you've written the address correctly and that it matches the format of the example shown:") + " john.s@example.com", true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Mail;
             }
         }

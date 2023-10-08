@@ -324,11 +324,11 @@ namespace KS.Files.Editors.HexEdit
                 }
                 else if (StartByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
                 else if (EndByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
             }
             else
@@ -380,11 +380,11 @@ namespace KS.Files.Editors.HexEdit
                 }
                 else if (StartByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
                 else if (EndByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
             }
             else

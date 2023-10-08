@@ -46,12 +46,12 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (string.IsNullOrEmpty(parameters.ArgumentsList[0]))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Blank host name."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Blank host name."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Network;
             }
             else if (parameters.ArgumentsList[0].IndexOfAny("[~`!@#$%^&*()-+=|{}':;.,<>/?]".ToCharArray()) != -1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Special characters are not allowed."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Special characters are not allowed."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Network;
             }
             else

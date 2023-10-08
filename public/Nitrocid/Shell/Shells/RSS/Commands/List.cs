@@ -37,8 +37,8 @@ namespace KS.Shell.Shells.RSS.Commands
         {
             foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance.FeedArticles)
             {
-                TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
-                TextWriterColor.Write(Article.ArticleLink, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
+                TextWriterColor.WriteKernelColor(Article.ArticleLink, true, KernelColorType.ListValue);
                 TextWriterColor.Write("    {0}", Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
             }
             return 0;

@@ -68,8 +68,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, KernelColorType ColTypes, params object[] Vars) =>
-            WriteCentered(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredKernelColor(int top, string Text, KernelColorType ColTypes, params object[] Vars) =>
+            WriteCenteredColorBack(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -79,8 +79,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            WriteCentered(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+        public static void WriteCenteredKernelColor(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
+            WriteCenteredColorBack(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -89,8 +89,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCentered(top, Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredColor(int top, string Text, ConsoleColors Color, params object[] Vars) =>
+            WriteCenteredColorBack(top, Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -100,8 +100,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCentered(top, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
+        public static void WriteCenteredColorBack(int top, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
+            WriteCenteredColorBack(top, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -110,8 +110,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, Color Color, params object[] Vars) =>
-            WriteCentered(top, Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredColor(int top, string Text, Color Color, params object[] Vars) =>
+            WriteCenteredColorBack(top, Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draws a centered text
@@ -121,7 +121,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteCenteredColorBack(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             try
             {
@@ -133,7 +133,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     string sentence = sentences[i];
                     int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
                     consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, ForegroundColor, BackgroundColor, Vars);
+                    TextWriterWhereColor.WriteWhereColorBack(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, ForegroundColor, BackgroundColor, Vars);
                 }
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -171,8 +171,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="ColTypes">A type of colors that will be changed.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, KernelColorType ColTypes, params object[] Vars) =>
-            WriteCenteredOneLine(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredOneLineKernelColor(int top, string Text, KernelColorType ColTypes, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(top, Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -182,8 +182,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
-            WriteCenteredOneLine(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+        public static void WriteCenteredOneLineKernelColor(int top, string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(top, Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -192,8 +192,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, ConsoleColors Color, params object[] Vars) =>
-            WriteCenteredOneLine(top, Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredOneLineColor(int top, string Text, ConsoleColors Color, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(top, Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -203,8 +203,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
-            WriteCenteredOneLine(top, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
+        public static void WriteCenteredOneLineColorBack(int top, string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(top, Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -213,8 +213,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
         /// <param name="Color">A color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, Color Color, params object[] Vars) =>
-            WriteCenteredOneLine(top, Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
+        public static void WriteCenteredOneLineColor(int top, string Text, Color Color, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(top, Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
 
         /// <summary>
         /// Draws a centered text (just the first line)
@@ -224,7 +224,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="Vars">Variables to format the message before it's written.</param>
-        public static void WriteCenteredOneLine(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        public static void WriteCenteredOneLineColorBack(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
         {
             try
             {

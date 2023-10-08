@@ -102,7 +102,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
                 WeatherInfo = GetWeatherInfo(CityID, APIKey);
             }
             DebugWriter.WriteDebug(DebugLevel.I, "City name: {0}, City ID: {1}", WeatherInfo.CityName, WeatherInfo.CityID);
-            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info for {0} --"), false, Vars: new object[] { WeatherInfo.CityName });
+            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("-- Weather info for {0} --"), false, WeatherInfo.CityName);
             TextWriterColor.Write(Translate.DoTranslation("Weather: {0}"), WeatherInfo.Weather);
             if (WeatherInfo.TemperatureMeasurement == UnitMeasurement.Metric)
             {

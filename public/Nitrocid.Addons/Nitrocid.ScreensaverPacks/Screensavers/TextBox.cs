@@ -242,7 +242,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string renderedTextBox = TextBox.TextBoxWrite;
 
             // Write the text
-            InfoBoxColor.WriteInfoBox(renderedTextBox, false, color);
+            InfoBoxColor.WriteInfoBoxColor(renderedTextBox, false, color);
 
             // Delay
             ThreadManager.SleepNoBlock(TextBox.TextBoxDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

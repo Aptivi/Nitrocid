@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
             string language = inferSysLang ? "eng" : parameters.ArgumentsList[0];
             if (!LanguageManager.ListAllLanguages().ContainsKey(language))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid language") + $" {language}", true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.NoSuchLanguage;
             }
 

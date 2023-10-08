@@ -263,7 +263,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             {
                 // Render the box frame
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                TextWriterWhereColor.WriteWhere(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhereKernelColor(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -320,7 +320,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             {
                 // Render the box frame
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                TextWriterWhereColor.WriteWhere(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -377,7 +377,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             {
                 // Render the box frame
                 string frame = RenderBoxFrame(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
-                TextWriterWhereColor.WriteWhere(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
+                TextWriterWhereColor.WriteWhereColorBack(frame, Left, Top, false, BoxFrameColor, BackgroundColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

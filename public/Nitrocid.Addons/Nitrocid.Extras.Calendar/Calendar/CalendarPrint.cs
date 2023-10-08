@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var CalendarCellOptions = new List<CellOptions>();
 
             // Populate the calendar data
-            TextWriterWhereColor.WriteWhere(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleWrapper.CursorTop, true, KernelColorType.TableTitle);
+            TextWriterWhereColor.WriteWhereKernelColor(CalendarTitle, (int)Math.Round((ConsoleWrapper.WindowWidth - CalendarTitle.Length) / 2d), ConsoleWrapper.CursorTop, true, KernelColorType.TableTitle);
             TextWriterColor.Write();
             for (int CurrentDay = 1; CurrentDay <= DateTo.Day; CurrentDay++)
             {

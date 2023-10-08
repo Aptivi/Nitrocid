@@ -50,10 +50,10 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
             }
             foreach (IArchiveEntry Entry in Entries)
             {
-                TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, Entry.Key);
+                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Entry.Key);
                 if (!Entry.IsDirectory) // Entry is a file
                 {
-                    TextWriterColor.Write("{0} ({1})", true, KernelColorType.ListValue, Entry.CompressedSize.FileSizeToString(), Entry.Size.FileSizeToString());
+                    TextWriterColor.WriteKernelColor("{0} ({1})", true, KernelColorType.ListValue, Entry.CompressedSize.FileSizeToString(), Entry.Size.FileSizeToString());
                 }
                 else
                 {

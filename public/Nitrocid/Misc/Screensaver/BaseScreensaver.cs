@@ -49,7 +49,7 @@ namespace KS.Misc.Screensaver
         {
             ConsoleWrapper.CursorVisible = false;
             KernelColorTools.LoadBack();
-            InfoBoxColor.WriteInfoBox(
+            InfoBoxColor.WriteInfoBoxColorBack(
                 Translate.DoTranslation("Photosensitive seizure warning") + CharManager.NewLine + CharManager.NewLine +
                 Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive."),
                 false, ConsoleColors.White, ConsoleColors.Red);

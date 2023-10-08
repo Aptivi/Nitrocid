@@ -53,18 +53,18 @@ namespace KS.Network.SFTP
                 bool portParsed = int.TryParse(SftpHost == SftpPortString ? "22" : SftpPortString, out int SftpPort);
                 if (!portParsed)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Make sure that you specify the port correctly."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Make sure that you specify the port correctly."), true, KernelColorType.Error);
                     return null;
                 }
 
                 // Prompt for username
                 if (!string.IsNullOrWhiteSpace(SFTPShellCommon.SFTPUserPromptStyle))
                 {
-                    TextWriterColor.Write(PlaceParse.ProbePlaces(SFTPShellCommon.SFTPUserPromptStyle), false, KernelColorType.Input, address);
+                    TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(SFTPShellCommon.SFTPUserPromptStyle), false, KernelColorType.Input, address);
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Username for {0}: "), false, KernelColorType.Input, address);
                 }
                 SFTPShellCommon.SFTPUser = Input.ReadLine();
                 if (string.IsNullOrEmpty(SFTPShellCommon.SFTPUser))
@@ -83,7 +83,7 @@ namespace KS.Network.SFTP
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Error connecting to {0}: {1}", address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error when trying to connect to {0}: {1}"), true, KernelColorType.Error, address, ex.Message);
                 return null;
             }
         }

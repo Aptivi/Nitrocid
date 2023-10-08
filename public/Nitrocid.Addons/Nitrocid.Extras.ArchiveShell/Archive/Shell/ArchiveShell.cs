@@ -62,7 +62,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("File not specified. Exiting shell..."), true, KernelColorType.Error);
                 Bail = true;
             }
 
@@ -92,7 +92,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                             ArchiveShellCommon.ArchiveShell_Archive ??= TarArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
                             break;
                         default:
-                            TextWriterColor.Write(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
                             Bail = true;
                             break;
                     }
@@ -108,7 +108,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

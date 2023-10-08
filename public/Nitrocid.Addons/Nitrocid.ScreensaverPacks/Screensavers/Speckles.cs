@@ -160,7 +160,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int BlockX = (int)Block.Item1;
                     int BlockY = (int)Block.Item2;
                     var color = Block.Item7;
-                    TextWriterWhereColor.WriteWhere(Convert.ToString(BlockSymbol), BlockX, BlockY, false, Color.Empty, color);
+                    TextWriterWhereColor.WriteWhereColorBack(Convert.ToString(BlockSymbol), BlockX, BlockY, false, Color.Empty, color);
                 }
             }
             else

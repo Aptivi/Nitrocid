@@ -40,24 +40,24 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             // Check to see if we have the numeric arguments
             if (!int.TryParse(parameters.ArgumentsList[0], out int R))
             {
-                TextWriterColor.Write(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[1], out int G))
             {
-                TextWriterColor.Write(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
             if (!int.TryParse(parameters.ArgumentsList[2], out int B))
             {
-                TextWriterColor.Write(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
 
             // Do the job
             Hex = KernelColorTools.ConvertFromRGBToHex(R, G, B);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(Hex, true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(Hex, true, KernelColorType.ListValue);
             variableValue = Hex;
             return 0;
         }

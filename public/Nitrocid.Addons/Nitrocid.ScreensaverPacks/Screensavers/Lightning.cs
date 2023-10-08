@@ -118,32 +118,32 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         for (int y = 0; y < boltFirstHalfEndY; y++)
                         {
                             int x = (int)Math.Round(boltTopEdgeX + boltFromTopToFirstHalfX * y, MidpointRounding.ToZero);
-                            TextWriterWhereColor.WriteWhere(" ", x + 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x - 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x + 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x - 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
                         }
                         int xCount = 0;
                         for (int x = boltFirstHalfEndX; x < boltSecondHalfEndX; x++)
                         {
                             int y = (int)Math.Round(boltFirstHalfEndY + boltFromFirstHalfToSecondHalfY * xCount, MidpointRounding.ToZero);
-                            TextWriterWhereColor.WriteWhere(" ", x + 1, y + 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x + 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x + 1, y - 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x, y + 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x, y - 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x - 1, y + 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x - 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x - 1, y - 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x + 1, y + 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x + 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x + 1, y - 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x, y + 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x, y - 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x - 1, y + 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x - 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x - 1, y - 1, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
                             xCount++;
                         }
                         int yCount = 0;
                         for (int y = boltSecondHalfEndY; y < ConsoleWrapper.WindowHeight; y++)
                         {
                             int x = (int)Math.Round(boltSecondHalfEndX + boltFromSecondHalfToBottomX * yCount, MidpointRounding.ToZero);
-                            TextWriterWhereColor.WriteWhere(" ", x + 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
-                            TextWriterWhereColor.WriteWhere(" ", x - 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x + 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x - 1, y, Color.Empty, new Color(ConsoleColors.Yellow3_d7d700));
                             yCount++;
                         }
 
@@ -151,20 +151,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         for (int y = 0; y < boltFirstHalfEndY; y++)
                         {
                             int x = (int)Math.Round(boltTopEdgeX + boltFromTopToFirstHalfX * y, MidpointRounding.ToZero);
-                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.LightYellow3));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x, y, Color.Empty, new Color(ConsoleColors.LightYellow3));
                         }
                         xCount = 0;
                         for (int x = boltFirstHalfEndX; x < boltSecondHalfEndX; x++)
                         {
                             int y = (int)Math.Round(boltFirstHalfEndY + boltFromFirstHalfToSecondHalfY * xCount, MidpointRounding.ToZero);
-                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.LightYellow3));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x, y, Color.Empty, new Color(ConsoleColors.LightYellow3));
                             xCount++;
                         }
                         yCount = 0;
                         for (int y = boltSecondHalfEndY; y < ConsoleWrapper.WindowHeight; y++)
                         {
                             int x = (int)Math.Round(boltSecondHalfEndX + boltFromSecondHalfToBottomX * yCount, MidpointRounding.ToZero);
-                            TextWriterWhereColor.WriteWhere(" ", x, y, Color.Empty, new Color(ConsoleColors.LightYellow3));
+                            TextWriterWhereColor.WriteWhereColorBack(" ", x, y, Color.Empty, new Color(ConsoleColors.LightYellow3));
                             yCount++;
                         }
                         ThreadManager.SleepNoBlock(LightningSettings.LightningDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

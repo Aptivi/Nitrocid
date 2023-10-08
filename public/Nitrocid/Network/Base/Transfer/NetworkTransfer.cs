@@ -238,11 +238,11 @@ namespace KS.Network.Base.Transfer
                         {
                             if (!string.IsNullOrWhiteSpace(DownloadPercentagePrint))
                             {
-                                TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
+                                TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhere(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
+                                TextWriterWhereColor.WriteWhereKernelColor(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
                             }
                             ConsoleExtensions.ClearLineToRight();
                         }

@@ -214,7 +214,7 @@ namespace KS.Modifications
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
-                TextWriterColor.Write(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);
             }
         }
 
@@ -232,19 +232,19 @@ namespace KS.Modifications
             if (KernelFlags.SafeMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
-                TextWriterColor.Write(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);
                 return;
             }
             if (!Checking.FileExists(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
-                TextWriterColor.Write(Translate.DoTranslation("Mod {0} not found."), true, KernelColorType.Error, ModFilename);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Mod {0} not found."), true, KernelColorType.Error, ModFilename);
                 return;
             }
             if (!HasModStarted(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod not started yet!");
-                TextWriterColor.Write(Translate.DoTranslation("Mod hasn't started yet!"), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Mod hasn't started yet!"), true, KernelColorType.Error);
                 return;
             }
 
@@ -392,7 +392,7 @@ namespace KS.Modifications
             // Check for upgrade
             if (Checking.FileExists(TargetModPath))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Trying to install an already-installed mod. Updating mod..."), true, KernelColorType.Warning);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Trying to install an already-installed mod. Updating mod..."), true, KernelColorType.Warning);
                 StopMod(Path.GetFileName(TargetModPath));
             }
 
@@ -412,14 +412,14 @@ namespace KS.Modifications
                     {
                         DebugWriter.WriteDebug(DebugLevel.E, "Error trying to load dynamic mod {0}: {1}", ModPath, ex.Message);
                         DebugWriter.WriteDebugStackTrace(ex);
-                        TextWriterColor.Write(Translate.DoTranslation("Mod can't be loaded because of the following: "), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Mod can't be loaded because of the following: "), true, KernelColorType.Error);
                         foreach (Exception LoaderException in ex.LoaderExceptions)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Loader exception: {0}", LoaderException.Message);
                             DebugWriter.WriteDebugStackTrace(LoaderException);
-                            TextWriterColor.Write(LoaderException.Message, true, KernelColorType.Error);
+                            TextWriterColor.WriteKernelColor(LoaderException.Message, true, KernelColorType.Error);
                         }
-                        TextWriterColor.Write(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Contact the vendor of the mod to upgrade the mod to the compatible version."), true, KernelColorType.Error);
                         throw;
                     }
                 }
@@ -450,7 +450,7 @@ namespace KS.Modifications
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Installation failed for {0}: {1}", ModPath, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Installation failed for") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Installation failed for") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
             }
         }
 
@@ -485,7 +485,7 @@ namespace KS.Modifications
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Uninstallation failed for {0}: {1}", ModPath, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Uninstallation failed for") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Uninstallation failed for") + " {0}: {1}", true, KernelColorType.Error, ModPath, ex.Message);
             }
         }
 

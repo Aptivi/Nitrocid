@@ -330,7 +330,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int PositionTop = PositionTuple.Item2;
                     bleedBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, PositionLeft + 1, PositionTop + 1)} ");
                 }
-                TextWriterWhereColor.WriteWhere(bleedBuilder.ToString(), ColumnLine, 0, false, Color.Empty, CurrentFadeColor);
+                TextWriterWhereColor.WriteWhereColorBack(bleedBuilder.ToString(), ColumnLine, 0, false, Color.Empty, CurrentFadeColor);
 
                 // Delay
                 ThreadManager.SleepNoBlock(FallingLineSettings.FallingLineDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);

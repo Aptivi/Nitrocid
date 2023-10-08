@@ -42,7 +42,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                 ProgressBarColor.WriteProgress(100d * (CurrentValue / (double)key.MaximumValue), 4, ConsoleWrapper.WindowHeight - 4);
 
                 // Show the current value
-                TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 5, ConsoleWrapper.WindowHeight - 5, false, KernelColorType.NeutralText, CurrentValue, key.MinimumValue, key.MaximumValue);
+                TextWriterWhereColor.WriteWhereKernelColor(Translate.DoTranslation("Current value:") + " {0} / {1} - {2}" + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 5, ConsoleWrapper.WindowHeight - 5, false, KernelColorType.NeutralText, CurrentValue, key.MinimumValue, key.MaximumValue);
 
                 // Parse the user input
                 PressedKey = Input.DetectKeypress().Key;

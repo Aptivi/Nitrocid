@@ -89,7 +89,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Can't get information about nonexistent file."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't get information about nonexistent file."), true, KernelColorType.Error);
                 }
             }
             return 0;

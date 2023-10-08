@@ -133,7 +133,7 @@ namespace KS.Kernel.Hardware
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Either the hardware type {0} is not probed, or is not valid."), true, KernelColorType.Error, HardwareType);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Either the hardware type {0} is not probed, or is not valid."), true, KernelColorType.Error, HardwareType);
             }
         }
 
@@ -149,10 +149,10 @@ namespace KS.Kernel.Hardware
                 {
                     foreach (string HardwareKey in FieldValueDict.Keys)
                     {
-                        TextWriterColor.Write("- {0}: ", true, KernelColorType.ListEntry, HardwareKey);
+                        TextWriterColor.WriteKernelColor("- {0}: ", true, KernelColorType.ListEntry, HardwareKey);
                         foreach (PropertyInfo HardwareValuePropertyInfo in FieldValueDict[HardwareKey].GetType().GetProperties())
                         {
-                            TextWriterColor.Write("  - {0}: ", false, KernelColorType.ListEntry, HardwareValuePropertyInfo.Name);
+                            TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, HardwareValuePropertyInfo.Name);
                             if (Field.Name == "HDD" & HardwareValuePropertyInfo.Name == "Partitions")
                             {
                                 TextWriterColor.Write();
@@ -161,26 +161,26 @@ namespace KS.Kernel.Hardware
                                 {
                                     foreach (string PartitionKey in Partitions.Keys)
                                     {
-                                        TextWriterColor.Write("    - {0}: ", true, KernelColorType.ListEntry, PartitionKey);
+                                        TextWriterColor.WriteKernelColor("    - {0}: ", true, KernelColorType.ListEntry, PartitionKey);
                                         foreach (PropertyInfo PartitionValuePropertyInfo in Partitions[PartitionKey].GetType().GetProperties())
                                         {
-                                            TextWriterColor.Write("      - {0}: ", false, KernelColorType.ListEntry, PartitionValuePropertyInfo.Name);
-                                            TextWriterColor.Write(Convert.ToString(PartitionValuePropertyInfo.GetValue(Partitions[PartitionKey])), true, KernelColorType.ListValue);
+                                            TextWriterColor.WriteKernelColor("      - {0}: ", false, KernelColorType.ListEntry, PartitionValuePropertyInfo.Name);
+                                            TextWriterColor.WriteKernelColor(Convert.ToString(PartitionValuePropertyInfo.GetValue(Partitions[PartitionKey])), true, KernelColorType.ListValue);
                                         }
                                     }
                                 }
                                 else
                                 {
-                                    TextWriterColor.Write(Translate.DoTranslation("Partitions not parsed to list."), true, KernelColorType.Error);
+                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Partitions not parsed to list."), true, KernelColorType.Error);
                                 }
                             }
                             else if (Field.Name == "CPU" & HardwareValuePropertyInfo.Name == "Flags")
                             {
-                                TextWriterColor.Write(string.Join(", ", HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey]) as string[]), true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(string.Join(", ", HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey]) as string[]), true, KernelColorType.ListValue);
                             }
                             else
                             {
-                                TextWriterColor.Write(Convert.ToString(HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey])), true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(Convert.ToString(HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey])), true, KernelColorType.ListValue);
                             }
                         }
                     }
@@ -189,14 +189,14 @@ namespace KS.Kernel.Hardware
                 {
                     foreach (FieldInfo HardwareFieldInfo in Field.FieldType.GetFields())
                     {
-                        TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, HardwareFieldInfo.Name);
-                        TextWriterColor.Write(Convert.ToString(HardwareFieldInfo.GetValue(FieldValue)), true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, HardwareFieldInfo.Name);
+                        TextWriterColor.WriteKernelColor(Convert.ToString(HardwareFieldInfo.GetValue(FieldValue)), true, KernelColorType.ListValue);
                     }
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled."), true, KernelColorType.Error, Field.Name);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled."), true, KernelColorType.Error, Field.Name);
             }
         }
 

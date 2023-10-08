@@ -94,13 +94,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Now, fill the colors!
             for (int i = 0; i < 3; i++)
-                TextWriterWhereColor.WriteWhere(new string(' ', 8), 3, 2 + i, Color.Empty, initialColor);
+                TextWriterWhereColor.WriteWhereColorBack(new string(' ', 8), 3, 2 + i, Color.Empty, initialColor);
             for (int i = 0; i < 3; i++)
-                TextWriterWhereColor.WriteWhere(new string(' ', 8), 14, 2 + i, Color.Empty, shiftedColor);
+                TextWriterWhereColor.WriteWhereColorBack(new string(' ', 8), 14, 2 + i, Color.Empty, shiftedColor);
 
             // Print the hexes
-            TextWriterWhereColor.WriteWhere(initialHex, initialInfoMargin, infoTop, initialColor);
-            TextWriterWhereColor.WriteWhere(shiftedHex, shiftedInfoMargin, infoTop, shiftedColor);
+            TextWriterWhereColor.WriteWhereColor(initialHex, initialInfoMargin, infoTop, initialColor);
+            TextWriterWhereColor.WriteWhereColor(shiftedHex, shiftedInfoMargin, infoTop, shiftedColor);
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();

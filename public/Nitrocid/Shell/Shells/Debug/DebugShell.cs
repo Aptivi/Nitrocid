@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.Debug
         {
             if (!KernelFlags.DebugMode)
             {
-                TextWriterColor.Write(Translate.DoTranslation("You must enable debug mode before you can use the debug shell."), true, KernelColorType.Warning);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You must enable debug mode before you can use the debug shell."), true, KernelColorType.Warning);
                 Bail = true;
             }
 
@@ -64,7 +64,7 @@ namespace KS.Shell.Shells.Debug
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.Write(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
                     continue;
                 }
             }

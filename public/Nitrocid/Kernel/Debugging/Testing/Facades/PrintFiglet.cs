@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            FigletColor.WriteFiglet("Hello world!", FigletizeFonts.TryGetByName("small"), KernelColorType.Success);
+            FigletColor.WriteFigletKernelColor("Hello world!", FigletizeFonts.TryGetByName("small"), KernelColorType.Success);
         }
     }
 }

@@ -510,7 +510,7 @@ namespace KS.Network.Base.Connections
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to establish a connection [type: {0}] to a network [address: {1}] for shell: {2}", shellType, address, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Unknown networked shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Unknown networked shell error:") + " {0}", true, KernelColorType.Error, ex.Message);
             }
         }
     }

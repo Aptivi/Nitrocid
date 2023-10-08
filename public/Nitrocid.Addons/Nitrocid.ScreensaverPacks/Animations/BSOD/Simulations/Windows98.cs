@@ -34,11 +34,11 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             string headerText = " Windows ";
             int headerStartLeft = ConsoleWrapper.WindowWidth / 2 - headerText.Length / 2;
             int headerStartTop = ConsoleWrapper.WindowHeight / 2 - 5;
-            TextWriterWhereColor.WriteWhere(headerText, headerStartLeft, headerStartTop, new Color(ConsoleColors.DarkBlue_000087), new Color(ConsoleColors.White));
+            TextWriterWhereColor.WriteWhereColorBack(headerText, headerStartLeft, headerStartTop, new Color(ConsoleColors.DarkBlue_000087), new Color(ConsoleColors.White));
 
             // Write error
             int errorLeft = ConsoleWrapper.WindowWidth / 2 - 35;
-            TextWriterWhereColor.WriteWhere("A fatal exception 0E has occurred at 0028:C0011E36 in VXD VMM(01) +\n" +
+            TextWriterWhereColor.WriteWhereColorBack("A fatal exception 0E has occurred at 0028:C0011E36 in VXD VMM(01) +\n" +
                                             "00010E36. The current application will be terminated.\n\n" +
                                             "*  Press any key to terminate the current application.\n" +
                                             "*  Press CTRL+ALT+DEL again to restart your computer. You will\n" +

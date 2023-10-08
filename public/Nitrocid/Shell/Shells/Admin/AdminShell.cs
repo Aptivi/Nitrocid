@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.Admin
                 }
                 catch (Exception ex)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Error in administrative shell: {0}"), true, KernelColorType.Error, ex.Message);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error in administrative shell: {0}"), true, KernelColorType.Error, ex.Message);
                     DebugWriter.WriteDebug(DebugLevel.E, "Error: {0}", ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }

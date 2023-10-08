@@ -74,7 +74,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid encryption algorithm."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.Encryption;
                 }
                 if (!string.IsNullOrEmpty(@out))
@@ -87,7 +87,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, file);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("{0} is not found."), true, KernelColorType.Error, file);
                 return 10000 + (int)KernelExceptionType.Encryption;
             }
         }

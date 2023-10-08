@@ -165,7 +165,7 @@ namespace KS.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.I, "Requested screensaver: {0}", saver);
                 if (!IsScreensaverRegistered(saver))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The requested screensaver {0} is not found."), true, KernelColorType.Error, saver);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The requested screensaver {0} is not found."), true, KernelColorType.Error, saver);
                     DebugWriter.WriteDebug(DebugLevel.I, "Screensaver {0} not found in the dictionary.", saver);
                     return;
                 }
@@ -217,12 +217,12 @@ namespace KS.Misc.Screensaver
             }
             catch (InvalidOperationException ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Error when trying to start screensaver, because of an invalid operation."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error when trying to start screensaver, because of an invalid operation."), true, KernelColorType.Error);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Error when trying to start screensaver:") + " {0}", true, KernelColorType.Error, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error when trying to start screensaver:") + " {0}", true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -335,7 +335,7 @@ namespace KS.Misc.Screensaver
                 DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", Exception.Message);
                 DebugWriter.WriteDebugStackTrace(Exception);
                 HandleSaverCancel();
-                TextWriterColor.Write(Translate.DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), true, KernelColorType.Error, Exception.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), true, KernelColorType.Error, Exception.Message);
             }
         }
 

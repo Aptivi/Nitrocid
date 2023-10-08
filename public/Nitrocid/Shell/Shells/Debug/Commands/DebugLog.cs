@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.Debug.Commands
             if (!int.TryParse(sessionNumStr, out int sessionNum))
             {
                 // There is invalid session number being requested
-                TextWriterColor.Write(Translate.DoTranslation("Invalid session number") + $" {sessionNumStr}", true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Invalid session number") + $" {sessionNumStr}", true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
 
@@ -67,7 +67,7 @@ namespace KS.Shell.Shells.Debug.Commands
             if (string.IsNullOrEmpty(finalDebug))
             {
                 // There is no such session number being requested
-                TextWriterColor.Write(Translate.DoTranslation("No such session number") + $" {sessionNumStr}", true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such session number") + $" {sessionNumStr}", true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Debug;
             }
 

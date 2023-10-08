@@ -62,7 +62,7 @@ namespace KS.Kernel
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine +
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine +
                                       Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning);
                 Input.DetectKeypress();
                 KernelFlags.CheckingForConsoleSize = true;
@@ -122,7 +122,7 @@ namespace KS.Kernel
                 WelcomeMessage.WriteLicense();
 
                 // Show current time
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
+                SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
                 if (KernelFlags.ShowCurrentTimeBeforeLogin)
                     TimeDateMiscRenderers.ShowCurrentTimes();
                 TextWriterColor.Write();
@@ -134,7 +134,7 @@ namespace KS.Kernel
                 // Show MOTD
                 KernelFlags.ShowMOTDOnceFlag = true;
                 if (KernelFlags.ShowMAL)
-                    TextWriterColor.Write(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
+                    TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
 
                 // Show headline

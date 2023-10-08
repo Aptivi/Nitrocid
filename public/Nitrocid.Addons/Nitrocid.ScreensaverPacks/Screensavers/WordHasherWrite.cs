@@ -239,8 +239,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int figHeight = FigletTools.GetFigletHeight(word, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
-            CenteredFigletTextColor.WriteCenteredFiglet(consoleY, figFont, word, ConsoleColors.Green);
-            TextWriterWhereColor.WriteWhere(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, ConsoleColors.Green);
+            CenteredFigletTextColor.WriteCenteredFigletColor(consoleY, figFont, word, ConsoleColors.Green);
+            TextWriterWhereColor.WriteWhereColor(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, ConsoleColors.Green);
         }
 
         /// <inheritdoc/>
@@ -263,8 +263,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
                 ThreadManager.SleepNoBlock(250, ScreensaverDisplayer.ScreensaverDisplayerThread);
                 ConsoleWrapper.Clear();
-                CenteredFigletTextColor.WriteCenteredFiglet(consoleY, figFont, finalWord, hasherColor);
-                TextWriterWhereColor.WriteWhere(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, hasherColor);
+                CenteredFigletTextColor.WriteCenteredFigletColor(consoleY, figFont, finalWord, hasherColor);
+                TextWriterWhereColor.WriteWhereColor(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, hasherColor);
             }
 
             // Delay
@@ -283,8 +283,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
                 ThreadManager.SleepNoBlock(250, ScreensaverDisplayer.ScreensaverDisplayerThread);
                 ConsoleWrapper.Clear();
-                CenteredFigletTextColor.WriteCenteredFiglet(consoleY, figFont, finalWord, hasherColor);
-                TextWriterWhereColor.WriteWhere(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, hasherColor);
+                CenteredFigletTextColor.WriteCenteredFigletColor(consoleY, figFont, finalWord, hasherColor);
+                TextWriterWhereColor.WriteWhereColor(wordHash, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - wordHash.Length / 2d), hashY, hasherColor);
             }
         }
 

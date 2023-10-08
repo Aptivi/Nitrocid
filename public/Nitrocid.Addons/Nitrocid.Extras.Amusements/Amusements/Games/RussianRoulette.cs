@@ -43,9 +43,9 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Finally, check if the user is lucky or not
             if (unlucky)
-                TextWriterColor.Write(Translate.DoTranslation("But, you're unlucky. Loser."), true, KernelColorType.Warning);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("But, you're unlucky. Loser."), true, KernelColorType.Warning);
             else
-                TextWriterColor.Write(Translate.DoTranslation("You're lucky! Winner!"), true, KernelColorType.Success);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You're lucky! Winner!"), true, KernelColorType.Success);
         }
     }
 }

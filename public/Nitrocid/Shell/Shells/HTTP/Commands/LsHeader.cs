@@ -34,8 +34,8 @@ namespace KS.Shell.Shells.HTTP.Commands
             var headers = HTTPTools.HttpListHeaders();
             foreach (var header in headers)
             {
-                TextWriterColor.Write("  - {0}: ", false, KernelColorType.ListEntry, header.Item1);
-                TextWriterColor.Write("{0}", true, KernelColorType.ListValue, header.Item2);
+                TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, header.Item1);
+                TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, header.Item2);
             }
             return 0;
         }

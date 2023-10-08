@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Cannot log out from the subshell."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Cannot log out from the subshell."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.ShellOperation;
             }
         }

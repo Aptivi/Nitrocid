@@ -45,18 +45,18 @@ namespace Nitrocid.Extras.UnitConv.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Available unit types and their units:"));
                 foreach (QuantityInfo QuantityInfo in Quantities)
                 {
-                    TextWriterColor.Write("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
+                    TextWriterColor.WriteKernelColor("- {0}:", true, KernelColorType.ListEntry, QuantityInfo.Name);
                     foreach (Enum UnitValues in QuantityInfo.UnitInfos.Select(x => x.Value))
                     {
-                        TextWriterColor.Write("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
-                        TextWriterColor.Write(UnitValues.ToString(), true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, string.Join(", ", abbreviations.GetDefaultAbbreviation(UnitValues.GetType(), Convert.ToInt32(UnitValues))));
+                        TextWriterColor.WriteKernelColor(UnitValues.ToString(), true, KernelColorType.ListValue);
                     }
                 }
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("No such unit type:") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such unit type:") + " {0}", true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 3;
             }
         }
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.UnitConv.Commands
         {
             TextWriterColor.Write(Translate.DoTranslation("Available unit types:"));
             foreach (QuantityInfo QuantityInfo in Quantity.Infos)
-                TextWriterColor.Write("- {0}", true, KernelColorType.ListEntry, QuantityInfo.Name);
+                TextWriterColor.WriteKernelColor("- {0}", true, KernelColorType.ListEntry, QuantityInfo.Name);
         }
 
     }

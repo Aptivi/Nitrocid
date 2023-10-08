@@ -42,7 +42,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             // Check to see if the repo has been modified
             if (status.IsDirty)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Save your work first by creating a commit before checking out a branch."), true, KernelColorType.Error);
                 return 9;
             }
 
@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
             string requestedBranch = parameters.ArgumentsList[0];
             if (!branchFriendlyNames.Contains(requestedBranch) && !branchCanonNames.Contains(requestedBranch))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Branch doesn't exist.") + $" {requestedBranch}", true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Branch doesn't exist.") + $" {requestedBranch}", true, KernelColorType.Error);
                 return 10;
             }
 

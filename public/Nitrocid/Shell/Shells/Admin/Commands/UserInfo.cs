@@ -44,27 +44,27 @@ namespace KS.Shell.Shells.Admin.Commands
             if (user is not null)
             {
                 // First off, basic user information
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Basic user info"), true, KernelColorType.ListTitle);
-                TextWriterColor.Write(Translate.DoTranslation("Username") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(user.Username, true, KernelColorType.ListValue);
-                TextWriterColor.Write(Translate.DoTranslation("Full name") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(user.FullName, true, KernelColorType.ListValue);
-                TextWriterColor.Write(Translate.DoTranslation("Preferred language") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(user.PreferredLanguage, true, KernelColorType.ListValue);
-                TextWriterColor.Write(Translate.DoTranslation("Flags") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.Write(string.Join(", ", user.Flags), true, KernelColorType.ListValue);
+                SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("Basic user info"), true, KernelColorType.ListTitle);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Username") + ": ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(user.Username, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Full name") + ": ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(user.FullName, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Preferred language") + ": ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(user.PreferredLanguage, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Flags") + ": ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(string.Join(", ", user.Flags), true, KernelColorType.ListValue);
                 TextWriterColor.Write();
 
                 // Now, the permissions.
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Permissions"), true, KernelColorType.ListTitle);
+                SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("Permissions"), true, KernelColorType.ListTitle);
                 foreach (string perm in user.Permissions)
-                    TextWriterColor.Write($"  - {perm}", true, KernelColorType.ListValue);
+                    TextWriterColor.WriteKernelColor($"  - {perm}", true, KernelColorType.ListValue);
                 TextWriterColor.Write();
 
                 // Now, the groups.
-                SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Groups"), true, KernelColorType.ListTitle);
+                SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("Groups"), true, KernelColorType.ListTitle);
                 foreach (string group in user.Groups)
-                    TextWriterColor.Write($"  - {group}", true, KernelColorType.ListValue);
+                    TextWriterColor.WriteKernelColor($"  - {group}", true, KernelColorType.ListValue);
             }
             return 0;
         }

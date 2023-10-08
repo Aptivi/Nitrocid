@@ -53,7 +53,7 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             if (!Beginning)
                 TextWriterColor.Write(".");
-            TextWriterColor.Write($"{ProgressReport}:", false, KernelColorType.NeutralText, Vars);
+            TextWriterColor.WriteKernelColor($"{ProgressReport}:", false, KernelColorType.NeutralText, Vars);
             Beginning = false;
         }
 

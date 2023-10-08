@@ -56,17 +56,17 @@ namespace KS.Misc.Splash.Splashes
                 // The figlet won't fit, so use small text
                 consoleX = (ConsoleWrapper.WindowWidth / 2) - (text.Length / 2);
                 consoleY = ConsoleWrapper.WindowHeight / 2;
-                TextWriterWhereColor.WriteWhere(text, consoleX, consoleY, true, col);
+                TextWriterWhereColor.WriteWhereColor(text, consoleX, consoleY, true, col);
             }
             else
             {
                 // Write the figlet.
                 consoleX = (ConsoleWrapper.WindowWidth / 2) - figWidth;
                 consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
-                FigletWhereColor.WriteFigletWhere(text, consoleX, consoleY, true, figFont, col);
+                FigletWhereColor.WriteFigletWhereColor(text, consoleX, consoleY, true, figFont, col);
                 consoleY += figHeight * 2;
             }
-            CenteredTextColor.WriteCentered(consoleY + 2, Translate.DoTranslation("Starting") + $" {KernelReleaseInfo.ConsoleTitle}...", col);
+            CenteredTextColor.WriteCenteredColor(consoleY + 2, Translate.DoTranslation("Starting") + $" {KernelReleaseInfo.ConsoleTitle}...", col);
         }
 
         public override void Display()
@@ -126,22 +126,22 @@ namespace KS.Misc.Splash.Splashes
                     // The fallback figlet also won't fit, so use smaller text
                     consoleX = (ConsoleWrapper.WindowWidth / 2) - (text.Length / 2);
                     consoleY = ConsoleWrapper.WindowHeight / 2;
-                    TextWriterWhereColor.WriteWhere(text, consoleX, consoleY, true, col);
+                    TextWriterWhereColor.WriteWhereColor(text, consoleX, consoleY, true, col);
                 }
                 else
                 {
                     // Write the figlet.
-                    FigletWhereColor.WriteFigletWhere(text, consoleX, consoleY, true, figFontFallback, col);
+                    FigletWhereColor.WriteFigletWhereColor(text, consoleX, consoleY, true, figFontFallback, col);
                     consoleY += figHeightFallback * 2;
                 }
             }
             else
             {
                 // Write the figlet.
-                FigletWhereColor.WriteFigletWhere(text, consoleX, consoleY, true, figFont, col);
+                FigletWhereColor.WriteFigletWhereColor(text, consoleX, consoleY, true, figFont, col);
                 consoleY += figHeight * 2;
             }
-            CenteredTextColor.WriteCenteredOneLine(consoleY + 2, KernelReleaseInfo.ConsoleTitle, col);
+            CenteredTextColor.WriteCenteredOneLineColor(consoleY + 2, KernelReleaseInfo.ConsoleTitle, col);
             Thread.Sleep(3000);
 
             // Clear the console
@@ -164,7 +164,7 @@ namespace KS.Misc.Splash.Splashes
             var figFont = FigletTools.GetFigletFont("banner3");
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
-            TextWriterWhereColor.WriteWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, col, Vars);
+            TextWriterWhereColor.WriteWhereColor(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, col, Vars);
             CenteredTextColor.WriteCenteredOneLine(consoleY - 2, $"{Progress}% - {ProgressReport}", Vars);
         }
 

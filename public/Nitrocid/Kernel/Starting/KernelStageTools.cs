@@ -94,7 +94,7 @@ namespace KS.Kernel.Starting
                 if (!KernelFlags.EnableSplash & !KernelFlags.QuietKernel)
                 {
                     TextWriterColor.Write();
-                    SeparatorWriterColor.WriteSeparator(StageText, false, KernelColorType.Stage);
+                    SeparatorWriterColor.WriteSeparatorKernelColor(StageText, false, KernelColorType.Stage);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, $"- Kernel stage {StageNumber} | Text: {StageText}");
             }

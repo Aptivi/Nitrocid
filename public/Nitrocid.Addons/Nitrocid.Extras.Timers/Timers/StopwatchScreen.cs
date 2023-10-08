@@ -69,17 +69,17 @@ namespace Nitrocid.Extras.Timers.Timers
             var KeysKeypress = default(ConsoleKey);
 
             // Print the keys text
-            TextWriterWhereColor.WriteWhere(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
+            TextWriterWhereColor.WriteWhereKernelColor(KeysText, KeysTextLeftPosition, KeysTextTopPosition, true, KernelColorType.Tip);
 
             // Print the time interval and the current lap
-            TextWriterWhereColor.WriteWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor);
-            TextWriterWhereColor.WriteWhere(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, vars: new object[] { Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult) });
+            TextWriterWhereColor.WriteWhereColor(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor);
+            TextWriterWhereColor.WriteWhereColor(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult));
 
             // Print the border
             MakeBorder();
 
             // Print informational messages
-            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
+            TextWriterWhereColor.WriteWhereKernelColor(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
             ConsoleExtensions.ClearLineToRight();
 
             while (KeysKeypress != ConsoleKey.Escape)
@@ -104,7 +104,7 @@ namespace Nitrocid.Extras.Timers.Timers
                                 Stopwatch.Stop();
                             else
                                 Stopwatch.Start();
-                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Stopwatch running!"), 1, 0, false, KernelColorType.NeutralText);
+                            TextWriterWhereColor.WriteWhereKernelColor(Translate.DoTranslation("Stopwatch running!"), 1, 0, false, KernelColorType.NeutralText);
                             ConsoleExtensions.ClearLineToRight();
                             break;
                         }
@@ -146,13 +146,13 @@ namespace Nitrocid.Extras.Timers.Timers
 
                             // Reset the indicators
                             LapColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
-                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, false, LapColor, vars: new object[] { Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult) });
+                            TextWriterWhereColor.WriteWhereColor(Translate.DoTranslation("Lap") + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, false, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult));
                             ConsoleExtensions.ClearLineToRight();
                             ConsoleWrapper.SetCursorPosition(0, TimeTopPosition);
                             ConsoleExtensions.ClearLineToRight();
-                            TextWriterWhereColor.WriteWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, false, LapColor);
+                            TextWriterWhereColor.WriteWhereColor(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, false, LapColor);
                             MakeBorder();
-                            TextWriterWhereColor.WriteWhere(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
+                            TextWriterWhereColor.WriteWhereKernelColor(Translate.DoTranslation("Ready!"), 1, 0, false, KernelColorType.NeutralText);
                             ConsoleExtensions.ClearLineToRight();
                             break;
                         }
@@ -197,8 +197,8 @@ namespace Nitrocid.Extras.Timers.Timers
                 try
                 {
                     // Update the elapsed display
-                    TextWriterWhereColor.WriteWhere(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor);
-                    TextWriterWhereColor.WriteWhere(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, vars: new object[] { Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult) });
+                    TextWriterWhereColor.WriteWhereColor(Stopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult), TimeLeftPosition, TimeTopPosition, true, LapColor);
+                    TextWriterWhereColor.WriteWhereColor(LapsText + " {0}: {1}", LapsCurrentLapLeftPosition, LapsCurrentLapTopPosition, true, LapColor, Laps.Count + 1, LappedStopwatch.Elapsed.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult));
 
                     // Update the laps list if new lap is acknowledged
                     if (NewLapAcknowledged)
@@ -213,7 +213,7 @@ namespace Nitrocid.Extras.Timers.Timers
                             var Lap = Laps[LapIndex];
                             LapsListBuilder.AppendLine(Lap.LapColor.VTSequenceForeground + Translate.DoTranslation("Lap") + $" {LapIndex + 1}: {Lap.LapInterval.ToString(@"d\.hh\:mm\:ss\.fff", CultureManager.CurrentCult)}");
                         }
-                        TextWriterWhereColor.WriteWhere(LapsListBuilder.ToString(), LapsLapsListLeftPosition, LapsLapsListTopPosition, true, LapColor);
+                        TextWriterWhereColor.WriteWhereColor(LapsListBuilder.ToString(), LapsLapsListLeftPosition, LapsLapsListTopPosition, true, LapColor);
                         NewLapAcknowledged = false;
                     }
                 }
@@ -231,12 +231,12 @@ namespace Nitrocid.Extras.Timers.Timers
         {
             int KeysTextTopPosition = ConsoleWrapper.WindowHeight - 2;
             int HalfWidth = (int)Math.Round(ConsoleWrapper.WindowWidth / 2d);
-            TextWriterWhereColor.WriteWhere(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray());
-            TextWriterWhereColor.WriteWhere(new string('═', ConsoleWrapper.WindowWidth), 0, 1, true, KernelColorTools.GetGray());
+            TextWriterWhereColor.WriteWhereColor(new string('═', ConsoleWrapper.WindowWidth), 0, KeysTextTopPosition - 2, true, KernelColorTools.GetGray());
+            TextWriterWhereColor.WriteWhereColor(new string('═', ConsoleWrapper.WindowWidth), 0, 1, true, KernelColorTools.GetGray());
             for (int Height = 2; Height <= KeysTextTopPosition - 2; Height++)
-                TextWriterWhereColor.WriteWhere("║", HalfWidth, Height, true, KernelColorTools.GetGray());
-            TextWriterWhereColor.WriteWhere("╩", HalfWidth, KeysTextTopPosition - 2, true, KernelColorTools.GetGray());
-            TextWriterWhereColor.WriteWhere("╦", HalfWidth, 1, true, KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor("║", HalfWidth, Height, true, KernelColorTools.GetGray());
+            TextWriterWhereColor.WriteWhereColor("╩", HalfWidth, KeysTextTopPosition - 2, true, KernelColorTools.GetGray());
+            TextWriterWhereColor.WriteWhereColor("╦", HalfWidth, 1, true, KernelColorTools.GetGray());
         }
 
     }

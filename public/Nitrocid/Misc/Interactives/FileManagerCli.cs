@@ -209,7 +209,7 @@ namespace KS.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open file or folder") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
             }
         }
@@ -299,14 +299,14 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
                 // Now, render the info box
-                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
             }
             catch (Exception ex)
             {
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't get file system info") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
             }
             RedrawRequired = true;
         }
@@ -331,7 +331,7 @@ namespace KS.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
             }
         }
@@ -356,7 +356,7 @@ namespace KS.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
             }
         }
@@ -377,7 +377,7 @@ namespace KS.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't remove file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
             }
         }
@@ -385,7 +385,7 @@ namespace KS.Misc.Interactives
         private static void GoTo()
         {
             // Now, render the search box
-            string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path or a full path to a local folder."), BoxForegroundColor, BoxBackgroundColor);
+            string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a local folder."), BoxForegroundColor, BoxBackgroundColor);
             path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
             if (Checking.FolderExists(path))
             {
@@ -403,7 +403,7 @@ namespace KS.Misc.Interactives
             }
             else
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
             }
         }
@@ -417,7 +417,7 @@ namespace KS.Misc.Interactives
             try
             {
                 InteractiveTuiTools.ForceRefreshSelection();
-                string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), BoxForegroundColor, BoxBackgroundColor);
+                string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), BoxForegroundColor, BoxBackgroundColor);
                 path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
@@ -428,13 +428,13 @@ namespace KS.Misc.Interactives
                         Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
                     else
                     {
-                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
                         RedrawRequired = true;
                     }
                 }
                 else
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
                     RedrawRequired = true;
                 }
             }
@@ -443,7 +443,7 @@ namespace KS.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
             }
         }
@@ -457,7 +457,7 @@ namespace KS.Misc.Interactives
             try
             {
                 InteractiveTuiTools.ForceRefreshSelection();
-                string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), BoxForegroundColor, BoxBackgroundColor);
+                string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), BoxForegroundColor, BoxBackgroundColor);
                 path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
@@ -468,13 +468,13 @@ namespace KS.Misc.Interactives
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
                     else
                     {
-                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
                         RedrawRequired = true;
                     }
                 }
                 else
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
                     RedrawRequired = true;
                 }
             }
@@ -483,7 +483,7 @@ namespace KS.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
             }
         }
@@ -496,7 +496,7 @@ namespace KS.Misc.Interactives
 
             try
             {
-                string filename = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new file name."), BoxForegroundColor, BoxBackgroundColor);
+                string filename = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new file name."), BoxForegroundColor, BoxBackgroundColor);
                 DebugWriter.WriteDebug(DebugLevel.I, $"New filename is {filename}");
                 if (!Checking.FileExists(filename))
                 {
@@ -504,13 +504,13 @@ namespace KS.Misc.Interactives
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
                     else
                     {
-                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
+                        InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
                         RedrawRequired = true;
                     }
                 }
                 else
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File already exists. The name shouldn't be occupied by another file."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File already exists. The name shouldn't be occupied by another file."), BoxForegroundColor, BoxBackgroundColor);
                     RedrawRequired = true;
                 }
             }
@@ -519,7 +519,7 @@ namespace KS.Misc.Interactives
                 var finalInfoRendered = new StringBuilder();
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
-                InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
             }
         }
@@ -527,12 +527,12 @@ namespace KS.Misc.Interactives
         private static void MakeDir()
         {
             // Now, render the search box
-            string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a new directory name."), BoxForegroundColor, BoxBackgroundColor);
+            string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), BoxForegroundColor, BoxBackgroundColor);
             path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
             if (!Checking.FolderExists(path))
                 Making.TryMakeDirectory(path);
             else
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
 
@@ -541,14 +541,14 @@ namespace KS.Misc.Interactives
             // First, check to see if it's a file
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
                 return;
             }
 
             // Render the hash box
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            string hashDriver = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
+            string hashDriver = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
             string hash;
             if (string.IsNullOrEmpty(hashDriver))
                 hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
@@ -556,11 +556,11 @@ namespace KS.Misc.Interactives
                 hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
             else
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
                 return;
             }
-            InfoBoxColor.WriteInfoBox(hash, BoxForegroundColor, BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(hash, BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
 
@@ -569,14 +569,14 @@ namespace KS.Misc.Interactives
             // First, check to see if it's a file
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
                 return;
             }
 
             // Render the hash box
             string[] hashDrivers = EncryptionDriverTools.GetEncryptionDriverNames();
-            string hashDriver = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
+            string hashDriver = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a hash driver:") + $" {string.Join(", ", hashDrivers)}", BoxForegroundColor, BoxBackgroundColor);
             string hash;
             if (string.IsNullOrEmpty(hashDriver))
                 hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, DriverHandler.CurrentEncryptionDriver.DriverName);
@@ -584,17 +584,17 @@ namespace KS.Misc.Interactives
                 hash = Encryption.GetEncryptedFile(currentFileSystemEntry.FilePath, hashDriver);
             else
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
                 RedrawRequired = true;
                 return;
             }
 
             // Now, let the user write the expected hash
-            string expectedHash = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter your expected hash"), BoxForegroundColor, BoxBackgroundColor);
+            string expectedHash = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter your expected hash"), BoxForegroundColor, BoxBackgroundColor);
             if (expectedHash == hash)
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Two hashes match!"), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes match!"), BoxForegroundColor, BoxBackgroundColor);
             else
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Two hashes don't match."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes don't match."), BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
     }

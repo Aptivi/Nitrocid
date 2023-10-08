@@ -62,9 +62,9 @@ namespace KS.Shell.Shells.FTP
             if (FTPShellCommon.FtpShowMotd)
             {
                 if (clientFTP.FileExists("welcome.msg"))
-                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString("welcome.msg"), true, KernelColorType.Banner);
+                    TextWriterColor.WriteKernelColor(FTPTransfer.FTPDownloadToString("welcome.msg"), true, KernelColorType.Banner);
                 else if (clientFTP.FileExists(".message"))
-                    TextWriterColor.Write(FTPTransfer.FTPDownloadToString(".message"), true, KernelColorType.Banner);
+                    TextWriterColor.WriteKernelColor(FTPTransfer.FTPDownloadToString(".message"), true, KernelColorType.Banner);
             }
 
             // Prepare to print current FTP directory

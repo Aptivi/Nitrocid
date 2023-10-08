@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
         {
             if (!ArchiveTools.ChangeWorkingArchiveLocalDirectory(parameters.ArgumentsList[0]))
             {
-                TextWriterColor.Write(Translate.DoTranslation("Directory {0} doesn't exist"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Directory {0} doesn't exist"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.Archive;
             }
             return 0;

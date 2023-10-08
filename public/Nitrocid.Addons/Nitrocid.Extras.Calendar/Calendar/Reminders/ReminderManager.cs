@@ -143,8 +143,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         {
             foreach (ReminderInfo Reminder in Reminders)
             {
-                TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, Reminder.ReminderDate);
-                TextWriterColor.Write(Reminder.ReminderTitle, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Reminder.ReminderDate);
+                TextWriterColor.WriteKernelColor(Reminder.ReminderTitle, true, KernelColorType.ListValue);
             }
         }
 

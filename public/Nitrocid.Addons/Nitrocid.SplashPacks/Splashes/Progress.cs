@@ -106,9 +106,9 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             // Display the text and percentage
             string RenderedText = ProgressReport.Truncate(ConsoleWrapper.WindowWidth - ProgressReportWritePositionX - ProgressWritePositionX - 3);
-            TextWriterWhereColor.WriteWhere("{0:000}%", ProgressWritePositionX, ProgressWritePositionY, true, KernelColorType.Progress, Progress);
-            TextWriterWhereColor.WriteWhere($"{(ProgressErrored ? "[X] " : "")}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, KernelColorType.Error, Vars);
-            TextWriterWhereColor.WriteWhere($"{(ProgressWarning ? "[!] " : "")}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, KernelColorType.Warning, Vars);
+            TextWriterWhereColor.WriteWhereKernelColor("{0:000}%", ProgressWritePositionX, ProgressWritePositionY, true, KernelColorType.Progress, Progress);
+            TextWriterWhereColor.WriteWhereKernelColor($"{(ProgressErrored ? "[X] " : "")}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, KernelColorType.Error, Vars);
+            TextWriterWhereColor.WriteWhereKernelColor($"{(ProgressWarning ? "[!] " : "")}{RenderedText}", ProgressReportWritePositionX, ProgressReportWritePositionY, false, KernelColorType.Warning, Vars);
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar

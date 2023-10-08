@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.TimeInfo.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Failed to parse date information for") + " {0}. " + Translate.DoTranslation("Ensure that the format is correct."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to parse date information for") + " {0}. " + Translate.DoTranslation("Ensure that the format is correct."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.TimeDate;
             }
         }

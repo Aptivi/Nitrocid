@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 if (string.IsNullOrEmpty(parameters.ArgumentsText))
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Blank message of the day."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Blank message of the day."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.MOTD;
                 }
                 else

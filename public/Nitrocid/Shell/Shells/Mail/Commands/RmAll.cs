@@ -38,12 +38,12 @@ namespace KS.Shell.Shells.Mail.Commands
         {
             if (MailManager.MailRemoveAllBySender(parameters.ArgumentsList[0]))
             {
-                TextWriterColor.Write(Translate.DoTranslation("All mail made by {0} are removed successfully."), true, KernelColorType.Success, parameters.ArgumentsList[0]);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("All mail made by {0} are removed successfully."), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Failed to remove all mail made by {0}."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to remove all mail made by {0}."), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.Mail;
             }
         }

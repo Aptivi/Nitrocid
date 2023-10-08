@@ -49,37 +49,37 @@ namespace Nitrocid.Extras.Dictionary.Commands
 
                 // Now, we can write the word information
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word information for") + $" {parameters.ArgumentsList[0]}", true);
-                TextWriterColor.Write(Translate.DoTranslation("Word:"), false, KernelColorType.ListEntry);
-                TextWriterColor.Write($" {Word.Word}", true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Word:"), false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor($" {Word.Word}", true, KernelColorType.ListValue);
 
                 // Meanings...
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word meanings for") + $" {parameters.ArgumentsList[0]}", true);
                 foreach (DictionaryWord.Meaning MeaningBase in Word.Meanings)
                 {
                     // Base part of speech
-                    TextWriterColor.Write(Translate.DoTranslation("Part of Speech:"), false, KernelColorType.ListEntry);
-                    TextWriterColor.Write($" {MeaningBase.PartOfSpeech}", true, KernelColorType.ListValue);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Part of Speech:"), false, KernelColorType.ListEntry);
+                    TextWriterColor.WriteKernelColor($" {MeaningBase.PartOfSpeech}", true, KernelColorType.ListValue);
 
                     // Get the definitions
                     foreach (DictionaryWord.DefinitionType DefinitionBase in MeaningBase.Definitions)
                     {
                         // Write definition and, if applicable, example
-                        TextWriterColor.Write("  - " + Translate.DoTranslation("Definition:"), false, KernelColorType.ListEntry);
-                        TextWriterColor.Write($" {DefinitionBase.Definition}", true, KernelColorType.ListValue);
-                        TextWriterColor.Write("  - " + Translate.DoTranslation("Example in Sentence:"), false, KernelColorType.ListEntry);
-                        TextWriterColor.Write($" {DefinitionBase.Example}", true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Definition:"), false, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor($" {DefinitionBase.Definition}", true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Example in Sentence:"), false, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor($" {DefinitionBase.Example}", true, KernelColorType.ListValue);
 
                         // Now, write the specific synonyms (usually blank)
                         if (DefinitionBase.Synonyms.Any())
                         {
-                            TextWriterColor.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
+                            TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
                             ListWriterColor.WriteList(DefinitionBase.Synonyms);
                         }
 
                         // ...and the specific antonyms (usually blank)
                         if (DefinitionBase.Antonyms.Any())
                         {
-                            TextWriterColor.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
+                            TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
                             ListWriterColor.WriteList(DefinitionBase.Antonyms);
                         }
                     }
@@ -87,14 +87,14 @@ namespace Nitrocid.Extras.Dictionary.Commands
                     // Now, write the base synonyms (usually blank)
                     if (MeaningBase.Synonyms.Any())
                     {
-                        TextWriterColor.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
                         ListWriterColor.WriteList(MeaningBase.Synonyms);
                     }
 
                     // ...and the base antonyms (usually blank)
                     if (MeaningBase.Antonyms.Any())
                     {
-                        TextWriterColor.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
                         ListWriterColor.WriteList(MeaningBase.Antonyms);
                     }
                 }
@@ -119,30 +119,30 @@ namespace Nitrocid.Extras.Dictionary.Commands
 
                 // Now, we can write the word information
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word information for") + $" {parameters.ArgumentsList[0]}", true);
-                TextWriterColor.Write(Translate.DoTranslation("Word:"), false, KernelColorType.ListEntry);
-                TextWriterColor.Write($" {Word.Word}", true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Word:"), false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor($" {Word.Word}", true, KernelColorType.ListValue);
 
                 // Meanings...
                 SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Word meanings for") + $" {parameters.ArgumentsList[0]}", true);
                 foreach (DictionaryWord.Meaning MeaningBase in Word.Meanings)
                 {
                     // Base part of speech
-                    TextWriterColor.Write(Translate.DoTranslation("Part of Speech:"), false, KernelColorType.ListEntry);
-                    TextWriterColor.Write($" {MeaningBase.PartOfSpeech}", true, KernelColorType.ListValue);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Part of Speech:"), false, KernelColorType.ListEntry);
+                    TextWriterColor.WriteKernelColor($" {MeaningBase.PartOfSpeech}", true, KernelColorType.ListValue);
 
                     // Get the definitions
                     foreach (DictionaryWord.DefinitionType DefinitionBase in MeaningBase.Definitions)
                     {
                         // Write definition and, if applicable, example
-                        TextWriterColor.Write("  - " + Translate.DoTranslation("Definition:"), false, KernelColorType.ListEntry);
-                        TextWriterColor.Write($" {DefinitionBase.Definition}", true, KernelColorType.ListValue);
-                        TextWriterColor.Write("  - " + Translate.DoTranslation("Example in Sentence:"), false, KernelColorType.ListEntry);
-                        TextWriterColor.Write($" {DefinitionBase.Example}", true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Definition:"), false, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor($" {DefinitionBase.Definition}", true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Example in Sentence:"), false, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor($" {DefinitionBase.Example}", true, KernelColorType.ListValue);
 
                         // Now, write the specific synonyms (usually blank)
                         if (DefinitionBase.Synonyms.Any())
                         {
-                            TextWriterColor.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
+                            TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
                             foreach (string synonym in DefinitionBase.Synonyms)
                                 TextWriterColor.Write($"    {synonym}");
                         }
@@ -150,7 +150,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                         // ...and the specific antonyms (usually blank)
                         if (DefinitionBase.Antonyms.Any())
                         {
-                            TextWriterColor.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
+                            TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
                             foreach (string antonym in DefinitionBase.Antonyms)
                                 TextWriterColor.Write($"    {antonym}");
                         }
@@ -159,7 +159,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                     // Now, write the base synonyms (usually blank)
                     if (MeaningBase.Synonyms.Any())
                     {
-                        TextWriterColor.Write("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Synonyms:"), true, KernelColorType.ListEntry);
                         foreach (string synonym in MeaningBase.Synonyms)
                             TextWriterColor.Write($"    {synonym}");
                     }
@@ -167,7 +167,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
                     // ...and the base antonyms (usually blank)
                     if (MeaningBase.Antonyms.Any())
                     {
-                        TextWriterColor.Write("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
+                        TextWriterColor.WriteKernelColor("  - " + Translate.DoTranslation("Antonyms:"), true, KernelColorType.ListEntry);
                         foreach (string antonym in MeaningBase.Antonyms)
                             TextWriterColor.Write($"    {antonym}");
                     }

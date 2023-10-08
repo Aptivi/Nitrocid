@@ -284,7 +284,7 @@ namespace KS.Kernel.Debugging.Testing
                         // Compare the actual value with the expected value
                         if (!facade.TestActualValue.Equals(facade.TestExpectedValue))
                         {
-                            InfoBoxColor.WriteInfoBox(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), KernelColorType.Error, facade.TestExpectedValue.ToString(), facade.TestActualValue.ToString());
+                            InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The test failed. Expected value is {0}, but actual value is {1}."), KernelColorType.Error, facade.TestExpectedValue.ToString(), facade.TestActualValue.ToString());
                             facade.status = TestStatus.Failed;
                             tested = true;
                         }
@@ -299,7 +299,7 @@ namespace KS.Kernel.Debugging.Testing
             catch (Exception ex)
             {
                 // Facade failed unexpectedly
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("The test failed unexpectedly.") + $" {ex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The test failed unexpectedly.") + $" {ex.Message}", KernelColorType.Error);
                 facade.status = TestStatus.Failed;
             }
         }
@@ -313,7 +313,7 @@ namespace KS.Kernel.Debugging.Testing
                 "  * " + Translate.DoTranslation("Successful tests:") + " {0}\n" +
                 "  * " + Translate.DoTranslation("Failed tests:") + " {1}\n" +
                 "  * " + Translate.DoTranslation("Tests to be run:") + " {2}",
-                vars: new object[] { successCount, failureCount, neutralCount });
+                successCount, failureCount, neutralCount);
         }
 
         internal static void PrintTestStats()
@@ -325,7 +325,7 @@ namespace KS.Kernel.Debugging.Testing
                 "  * " + Translate.DoTranslation("Successful tests:") + " {0}\n" +
                 "  * " + Translate.DoTranslation("Failed tests:") + " {1}\n" +
                 "  * " + Translate.DoTranslation("Tests to be run:") + " {2}",
-                vars: new object[] { successCount, failureCount, neutralCount });
+                successCount, failureCount, neutralCount);
         }
     }
 }

@@ -106,7 +106,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     char StarSymbol = '*';
                     int StarX = Star.Item1;
                     int StarY = Star.Item2;
-                    TextWriterWhereColor.WriteWhere(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White);
+                    TextWriterWhereColor.WriteWhereColor(Convert.ToString(StarSymbol), StarX, StarY, false, ConsoleColors.White);
                 }
             }
             else

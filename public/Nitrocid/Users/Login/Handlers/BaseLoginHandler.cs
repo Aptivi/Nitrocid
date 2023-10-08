@@ -51,7 +51,7 @@ namespace KS.Users.Login.Handlers
             if (KernelFlags.ShowMOTDOnceFlag && KernelFlags.ShowMOTD)
             {
                 // This is not going to happen when the modern logon is enabled.
-                TextWriterColor.Write(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
+                TextWriterColor.WriteKernelColor(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
                 KernelFlags.ShowMOTDOnceFlag = false;
             }
 
@@ -80,9 +80,9 @@ namespace KS.Users.Login.Handlers
                     // Wait for input
                     DebugWriter.WriteDebug(DebugLevel.I, "Password not empty");
                     if (!string.IsNullOrWhiteSpace(Login.PasswordPrompt))
-                        TextWriterColor.Write(PlaceParse.ProbePlaces(Login.PasswordPrompt), false, KernelColorType.Input);
+                        TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(Login.PasswordPrompt), false, KernelColorType.Input);
                     else
-                        TextWriterColor.Write(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, user);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("{0}'s password: "), false, KernelColorType.Input, user);
 
                     // Get input
                     string answerpass = Input.ReadLineNoInputUnsafe();
@@ -91,7 +91,7 @@ namespace KS.Users.Login.Handlers
                         return true;
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
                         if (!KernelFlags.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
@@ -117,9 +117,9 @@ namespace KS.Users.Login.Handlers
         {
             // Prompt user to login
             if (!string.IsNullOrWhiteSpace(Login.UsernamePrompt))
-                TextWriterColor.Write(PlaceParse.ProbePlaces(Login.UsernamePrompt), false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(Login.UsernamePrompt), false, KernelColorType.Input);
             else
-                TextWriterColor.Write(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Username: "), false, KernelColorType.Input);
             return Input.ReadLine();
         }
     }

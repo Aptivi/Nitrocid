@@ -127,8 +127,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         {
             foreach (EventInfo EventInstance in CalendarEvents)
             {
-                TextWriterColor.Write("- {0}: ", false, KernelColorType.ListEntry, EventInstance.EventDate);
-                TextWriterColor.Write(EventInstance.EventTitle, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, EventInstance.EventDate);
+                TextWriterColor.WriteKernelColor(EventInstance.EventTitle, true, KernelColorType.ListValue);
             }
         }
 

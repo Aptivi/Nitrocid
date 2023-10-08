@@ -83,7 +83,7 @@ namespace KS.Users.Login
                         cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
                         var figFont = FigletTools.GetFigletFont("banner3");
                         int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
-                        CenteredFigletTextColor.WriteCenteredFiglet(figFont, timeStr, KernelColorType.Stage);
+                        CenteredFigletTextColor.WriteCenteredFigletKernelColor(figFont, timeStr, KernelColorType.Stage);
 
                         // Print the date
                         string dateStr = $"{TimeDateRenderers.RenderDate()}";

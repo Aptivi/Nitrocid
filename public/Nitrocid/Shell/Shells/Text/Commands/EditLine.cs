@@ -45,20 +45,20 @@ namespace KS.Shell.Shells.Text.Commands
                 if (lineNum <= TextEditShellCommon.TextEdit_FileLines.Count)
                 {
                     string OriginalLine = TextEditShellCommon.TextEdit_FileLines[lineNum - 1];
-                    TextWriterColor.Write(">> ", false, KernelColorType.Input);
+                    TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
                     string EditedLine = Input.ReadLine("", OriginalLine);
                     TextEditShellCommon.TextEdit_FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified line number may not be larger than the last file line number."), true, KernelColorType.Error);
                     return 10000 + (int)KernelExceptionType.TextEditor;
                 }
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specified line number {0} is not a valid number."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "{0} is not a numeric value.", parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.TextEditor;
             }

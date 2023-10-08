@@ -108,10 +108,10 @@ namespace KS.ConsoleBase.Presentation
 
                 // Write the name and the page number
                 TextWriterWhereColor.WriteWhere(ConsoleExtensions.GetClearLineToRightSequence(), 0, PresentationTitleTop);
-                CenteredTextColor.WriteCentered(PresentationTitleTop, $"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1) + ConsoleExtensions.GetClearLineToRightSequence(), KernelColorType.NeutralText);
+                CenteredTextColor.WriteCenteredKernelColor(PresentationTitleTop, $"{(!kiosk ? $"[{i + 1}/{pages.Count}] - " : "")}{page.Name} - {presentation.Name}".Truncate(PresentationLowerInnerBorderLeft + 1) + ConsoleExtensions.GetClearLineToRightSequence(), KernelColorType.NeutralText);
 
                 // Write the bindings
-                CenteredTextColor.WriteCentered(PresentationInformationalTop, $"[ENTER] {Translate.DoTranslation("Advance")}{(!kiosk && !required ? $" - [ESC] {Translate.DoTranslation("Exit")}" : "")}".Truncate(PresentationLowerInnerBorderLeft + 1), KernelColorType.NeutralText);
+                CenteredTextColor.WriteCenteredKernelColor(PresentationInformationalTop, $"[ENTER] {Translate.DoTranslation("Advance")}{(!kiosk && !required ? $" - [ESC] {Translate.DoTranslation("Exit")}" : "")}".Truncate(PresentationLowerInnerBorderLeft + 1), KernelColorType.NeutralText);
 
                 // Clear the presentation screen
                 ClearPresentation();

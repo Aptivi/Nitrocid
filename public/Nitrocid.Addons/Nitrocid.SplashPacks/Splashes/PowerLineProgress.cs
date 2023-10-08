@@ -124,7 +124,7 @@ namespace Nitrocid.SplashPacks.Splashes
             PresetStringBuilder.AppendFormat("{0} ", TransitionChar);
 
             // Display the text and percentage
-            TextWriterWhereColor.WriteWhere(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars);
+            TextWriterWhereColor.WriteWhereKernelColor(PresetStringBuilder.ToString(), 0, ProgressWritePositionY, false, KernelColorType.Progress, Vars);
             ConsoleExtensions.ClearLineToRight();
 
             // Display the progress bar

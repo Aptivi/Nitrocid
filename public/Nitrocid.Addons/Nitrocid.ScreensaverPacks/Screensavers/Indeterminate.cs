@@ -362,18 +362,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Draw the frame
             if (!ConsoleResizeListener.WasResized(false))
             {
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperLeftCornerColor) : KernelColorTools.GetGray());
-                TextWriterColor.Write(new string(IndeterminateSettings.IndeterminateUpperFrameChar, RampFrameSpaces), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperFrameColor) : KernelColorTools.GetGray());
-                TextWriterColor.Write(IndeterminateSettings.IndeterminateUpperRightCornerChar.ToString(), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperRightCornerColor) : KernelColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition - 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition + 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition - 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition + 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
-                TextWriterWhereColor.WriteWhere(IndeterminateSettings.IndeterminateLowerLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition + 2, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerLeftCornerColor) : KernelColorTools.GetGray());
-                TextWriterColor.Write(new string(IndeterminateSettings.IndeterminateLowerFrameChar, RampFrameSpaces), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerFrameColor) : KernelColorTools.GetGray());
-                TextWriterColor.Write(IndeterminateSettings.IndeterminateLowerRightCornerChar.ToString(), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerRightCornerColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(IndeterminateSettings.IndeterminateUpperLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition - 2, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperLeftCornerColor) : KernelColorTools.GetGray());
+                TextWriterColor.WriteColor(new string(IndeterminateSettings.IndeterminateUpperFrameChar, RampFrameSpaces), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperFrameColor) : KernelColorTools.GetGray());
+                TextWriterColor.WriteColor(IndeterminateSettings.IndeterminateUpperRightCornerChar.ToString(), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateUpperRightCornerColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(IndeterminateSettings.IndeterminateLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition - 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(IndeterminateSettings.IndeterminateLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(IndeterminateSettings.IndeterminateLeftFrameChar.ToString(), RampFrameStartWidth, RampCenterPosition + 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(IndeterminateSettings.IndeterminateRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition - 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(IndeterminateSettings.IndeterminateRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(IndeterminateSettings.IndeterminateRightFrameChar.ToString(), RampFrameEndWidth + 1, RampCenterPosition + 1, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLeftFrameColor) : KernelColorTools.GetGray());
+                TextWriterWhereColor.WriteWhereColor(IndeterminateSettings.IndeterminateLowerLeftCornerChar.ToString(), RampFrameStartWidth, RampCenterPosition + 2, false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerLeftCornerColor) : KernelColorTools.GetGray());
+                TextWriterColor.WriteColor(new string(IndeterminateSettings.IndeterminateLowerFrameChar, RampFrameSpaces), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerFrameColor) : KernelColorTools.GetGray());
+                TextWriterColor.WriteColor(IndeterminateSettings.IndeterminateLowerRightCornerChar.ToString(), false, IndeterminateSettings.IndeterminateUseBorderColors ? new Color(IndeterminateSettings.IndeterminateLowerRightCornerColor) : KernelColorTools.GetGray());
             }
 
             // Draw the ramp
@@ -398,9 +398,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int start = IndeterminateCurrentBlockStart == RampFrameStartWidth + 1 ? IndeterminateCurrentBlockStart : IndeterminateCurrentBlockStart - 1;
                     for (int BlockPos = start; BlockPos <= IndeterminateCurrentBlockEnd; BlockPos++)
                     {
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition + 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition + 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
                     }
                 }
                 else
@@ -408,9 +408,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     int end = IndeterminateCurrentBlockEnd == RampFrameEndWidth ? IndeterminateCurrentBlockEnd : IndeterminateCurrentBlockEnd + 1;
                     for (int BlockPos = IndeterminateCurrentBlockStart; BlockPos <= end; BlockPos++)
                     {
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
-                        TextWriterWhereColor.WriteWhere(" ", BlockPos, RampCenterPosition + 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition - 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
+                        TextWriterWhereColor.WriteWhereColorBack(" ", BlockPos, RampCenterPosition + 1, true, Color.Empty, KernelColorTools.GetColor(KernelColorType.Background));
                     }
                 }
 

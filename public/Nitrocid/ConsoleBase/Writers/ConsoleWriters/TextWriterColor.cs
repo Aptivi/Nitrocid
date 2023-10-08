@@ -64,7 +64,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// </summary>
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, params object[] vars) => Write(Text, true, vars);
+        public static void Write(string Text, params object[] vars) =>
+            Write(Text, true, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt.
@@ -72,7 +73,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Text">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, params object[] vars) => Write(Text, Line, false, vars);
+        public static void Write(string Text, bool Line, params object[] vars) =>
+            Write(Text, Line, false, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt.
@@ -81,7 +83,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, params object[] vars) => Write(Text, Line, Highlight, KernelColorType.NeutralText, vars);
+        public static void Write(string Text, bool Line, bool Highlight, params object[] vars) =>
+            WriteKernelColor(Text, Line, Highlight, KernelColorType.NeutralText, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
@@ -90,7 +93,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, KernelColorType colorType, params object[] vars) => Write(Text, Line, false, colorType, vars);
+        public static void WriteKernelColor(string Text, bool Line, KernelColorType colorType, params object[] vars) =>
+            WriteKernelColor(Text, Line, false, colorType, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
@@ -100,7 +104,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="colorType">A type of colors that will be changed.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
+        public static void WriteKernelColor(string Text, bool Line, bool Highlight, KernelColorType colorType, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -138,7 +142,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) => Write(Text, Line, false, colorTypeForeground, colorTypeBackground, vars);
+        public static void WriteKernelColor(string Text, bool Line, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars) =>
+            WriteKernelColor(Text, Line, false, colorTypeForeground, colorTypeBackground, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt, and sets colors as needed.
@@ -149,7 +154,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
         /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
+        public static void WriteKernelColor(string Text, bool Line, bool Highlight, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -187,7 +192,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, ConsoleColors color, params object[] vars) => Write(Text, Line, false, color, vars);
+        public static void WriteColor(string Text, bool Line, ConsoleColors color, params object[] vars) =>
+            WriteColor(Text, Line, false, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -197,7 +203,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, ConsoleColors color, params object[] vars)
+        public static void WriteColor(string Text, bool Line, bool Highlight, ConsoleColors color, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -235,7 +241,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) => Write(Text, Line, false, ForegroundColor, BackgroundColor, vars);
+        public static void WriteColorBack(string Text, bool Line, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars) =>
+            WriteColorBack(Text, Line, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -246,7 +253,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
+        public static void WriteColorBack(string Text, bool Line, bool Highlight, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -284,7 +291,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Line">Whether to print a new line or not</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, Color color, params object[] vars) => Write(Text, Line, false, color, vars);
+        public static void WriteColor(string Text, bool Line, Color color, params object[] vars) =>
+            WriteColor(Text, Line, false, color, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -294,7 +302,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="Highlight">Highlight the text written</param>
         /// <param name="color">A color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, Color color, params object[] vars)
+        public static void WriteColor(string Text, bool Line, bool Highlight, Color color, params object[] vars)
         {
             lock (WriteLock)
             {
@@ -333,7 +341,8 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars) => Write(Text, Line, false, ForegroundColor, BackgroundColor, vars);
+        public static void WriteColorBack(string Text, bool Line, Color ForegroundColor, Color BackgroundColor, params object[] vars) =>
+            WriteColorBack(Text, Line, false, ForegroundColor, BackgroundColor, vars);
 
         /// <summary>
         /// Outputs the text into the terminal prompt with custom color support.
@@ -344,7 +353,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
         /// <param name="BackgroundColor">A background color that will be changed to.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        public static void Write(string Text, bool Line, bool Highlight, Color ForegroundColor, Color BackgroundColor, params object[] vars)
+        public static void WriteColorBack(string Text, bool Line, bool Highlight, Color ForegroundColor, Color BackgroundColor, params object[] vars)
         {
             lock (WriteLock)
             {

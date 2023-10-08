@@ -31,12 +31,12 @@ namespace KS.Arguments.CommandLineArguments
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
             // Kernel arguments
-            TextWriterColor.Write(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
             ArgumentHelpSystem.ShowArgsHelp();
             TextWriterColor.Write();
 
             // Either start the kernel or exit it
-            TextWriterColor.Write(Translate.DoTranslation("* Press any key to start the kernel or ESC to exit."), true, KernelColorType.Tip);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("* Press any key to start the kernel or ESC to exit."), true, KernelColorType.Tip);
             if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                 KernelFlags.KernelShutdown = true;
         }

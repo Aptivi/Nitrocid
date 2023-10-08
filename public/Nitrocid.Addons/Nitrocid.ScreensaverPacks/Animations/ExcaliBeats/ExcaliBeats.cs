@@ -124,7 +124,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
                 var CurrentColorOut = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
-                    FigletWhereColor.WriteFigletWhere(exStr, consoleX, consoleY, false, figFont, CurrentColorOut);
+                    FigletWhereColor.WriteFigletWhereColor(exStr, consoleX, consoleY, false, figFont, CurrentColorOut);
             }
 
             // Reset resize sync

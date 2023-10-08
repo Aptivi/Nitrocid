@@ -33,7 +33,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
             if (LocalizedStrings.ContainsKey(Text))
             {
-                TextWriterColor.Write(Translate.DoTranslation("String found in the localization resources."), true, KernelColorType.Success);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("String found in the localization resources."), true, KernelColorType.Success);
             }
             else
             {

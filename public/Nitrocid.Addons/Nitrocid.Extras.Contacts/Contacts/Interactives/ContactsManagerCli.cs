@@ -155,7 +155,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
             catch (Exception ex)
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, BoxForegroundColor, BoxBackgroundColor);
             }
             RedrawRequired = true;
         }
@@ -163,7 +163,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         private static void ImportContactsFrom()
         {
             // Now, render the search box
-            string path = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), BoxForegroundColor, BoxBackgroundColor);
+            string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), BoxForegroundColor, BoxBackgroundColor);
             if (Checking.FileExists(path))
             {
                 try
@@ -173,11 +173,11 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 }
                 catch
                 {
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Contact file is invalid."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Contact file is invalid."), BoxForegroundColor, BoxBackgroundColor);
                 }
             }
             else
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
 
@@ -253,7 +253,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
 
@@ -268,24 +268,24 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             finalInfoRendered.Append(Translate.DoTranslation("Press any key to close this window."));
 
             // Now, render the info box
-            InfoBoxColor.WriteInfoBox(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
+            InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
 
         private static void SearchBox()
         {
             // Now, render the search box
-            string exp = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter regular expression to search the contacts."), BoxForegroundColor, BoxBackgroundColor);
+            string exp = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter regular expression to search the contacts."), BoxForegroundColor, BoxBackgroundColor);
             if (RegexpTools.IsValidRegex(exp))
             {
                 // Initiate the search
                 var foundCard = ContactsManager.SearchNext(exp);
                 if (foundCard is null)
-                    InfoBoxColor.WriteInfoBox(Translate.DoTranslation("There are no contacts that contains your requested expression."), BoxForegroundColor, BoxBackgroundColor);
+                    InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("There are no contacts that contains your requested expression."), BoxForegroundColor, BoxBackgroundColor);
                 UpdateIndex(foundCard);
             }
             else
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Regular expression is invalid."), BoxForegroundColor, BoxBackgroundColor);
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Regular expression is invalid."), BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
 

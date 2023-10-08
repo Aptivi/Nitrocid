@@ -50,23 +50,23 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
             switch (excVariant)
             {
                 case Variant.Long:
-                    TextWriterColor.Write("Bootloader exception", true, red, black);
-                    TextWriterColor.Write("[ RST_STAT = 0x10000 ]", true, red, black);
-                    TextWriterColor.Write("EVT 1.0", true, green, black);
-                    TextWriterColor.Write("ASV TBL VER = 0, Grade = C", true, green, black);
-                    TextWriterColor.Write("ECT : PARA005e", true, red, black);
-                    TextWriterColor.Write("LOT_ID = NAD8W", true, green, black);
-                    TextWriterColor.Write($"CHIP_ID = {RandomDriver.Random():X12}", true, green, black);
-                    TextWriterColor.Write("CHIP_ID2 = 00000000", true, green, black);
-                    TextWriterColor.Write("MNGS:19'C APOLLO:21'C G3D:21'C ISP:22'C\n", true, green, black);
-                    TextWriterColor.Write($"Exception: do_handler_serror: SERROR(esr: 0x{RandomDriver.Random():X8})\n", true, red, black);
-                    TextWriterColor.Write($"pc : 0x{RandomDriver.Random():X8}      ir : 0x{RandomDriver.Random():X8}      sp : 0x{RandomDriver.Random():X8}", true, red, black);
+                    TextWriterColor.WriteColorBack("Bootloader exception", true, red, black);
+                    TextWriterColor.WriteColorBack("[ RST_STAT = 0x10000 ]", true, red, black);
+                    TextWriterColor.WriteColorBack("EVT 1.0", true, green, black);
+                    TextWriterColor.WriteColorBack("ASV TBL VER = 0, Grade = C", true, green, black);
+                    TextWriterColor.WriteColorBack("ECT : PARA005e", true, red, black);
+                    TextWriterColor.WriteColorBack("LOT_ID = NAD8W", true, green, black);
+                    TextWriterColor.WriteColorBack($"CHIP_ID = {RandomDriver.Random():X12}", true, green, black);
+                    TextWriterColor.WriteColorBack("CHIP_ID2 = 00000000", true, green, black);
+                    TextWriterColor.WriteColorBack("MNGS:19'C APOLLO:21'C G3D:21'C ISP:22'C\n", true, green, black);
+                    TextWriterColor.WriteColorBack($"Exception: do_handler_serror: SERROR(esr: 0x{RandomDriver.Random():X8})\n", true, red, black);
+                    TextWriterColor.WriteColorBack($"pc : 0x{RandomDriver.Random():X8}      ir : 0x{RandomDriver.Random():X8}      sp : 0x{RandomDriver.Random():X8}", true, red, black);
                     break;
                 case Variant.Short:
-                    TextWriterColor.Write("Bootloader exception", true, red, black);
-                    TextWriterColor.Write("[ RST_STAT = 0x10000 ]\n", true, red, black);
-                    TextWriterColor.Write($"Exception: do_handler_sync: DABT_EL1(esr: 0x{RandomDriver.Random():X8})\n", true, red, black);
-                    TextWriterColor.Write($"pc : 0x{RandomDriver.Random():X8}      ir : 0x{RandomDriver.Random():X8}      sp : 0x{RandomDriver.Random():X8}", true, red, black);
+                    TextWriterColor.WriteColorBack("Bootloader exception", true, red, black);
+                    TextWriterColor.WriteColorBack("[ RST_STAT = 0x10000 ]\n", true, red, black);
+                    TextWriterColor.WriteColorBack($"Exception: do_handler_sync: DABT_EL1(esr: 0x{RandomDriver.Random():X8})\n", true, red, black);
+                    TextWriterColor.WriteColorBack($"pc : 0x{RandomDriver.Random():X8}      ir : 0x{RandomDriver.Random():X8}      sp : 0x{RandomDriver.Random():X8}", true, red, black);
                     break;
             }
         }

@@ -40,11 +40,11 @@ namespace KS.Network.Mail.Transfer
             {
                 if (!string.IsNullOrWhiteSpace(MailShellCommon.Mail_ProgressStyle))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.FileSizeToString(), totalSize.FileSizeToString());
+                    TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.FileSizeToString(), totalSize.FileSizeToString());
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere("{0}/{1} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.FileSizeToString(), totalSize.FileSizeToString());
+                    TextWriterWhereColor.WriteWhereKernelColor("{0}/{1} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.FileSizeToString(), totalSize.FileSizeToString());
                 }
             }
         }
@@ -56,11 +56,11 @@ namespace KS.Network.Mail.Transfer
             {
                 if (!string.IsNullOrWhiteSpace(MailShellCommon.Mail_ProgressStyleSingle))
                 {
-                    TextWriterWhereColor.WriteWhere(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyleSingle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.FileSizeToString());
+                    TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyleSingle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.FileSizeToString());
                 }
                 else
                 {
-                    TextWriterWhereColor.WriteWhere("{0} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.FileSizeToString());
+                    TextWriterWhereColor.WriteWhereKernelColor("{0} " + Translate.DoTranslation("of mail transferred...") + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.FileSizeToString());
                 }
             }
         }

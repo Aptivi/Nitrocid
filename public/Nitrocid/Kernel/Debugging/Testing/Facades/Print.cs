@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.ConsoleBase;
         public override void Run()
         {
-            TextWriterColor.Write("Hello world!", true, KernelColorType.Success);
+            TextWriterColor.WriteKernelColor("Hello world!", true, KernelColorType.Success);
         }
     }
 }

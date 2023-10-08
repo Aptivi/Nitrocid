@@ -61,8 +61,8 @@ namespace Nitrocid.SplashPacks.Splashes
                     {
                         if (SplashClosing)
                             break;
-                        TextWriterWhereColor.WriteWhere(new string(' ', PowerLineLength), 0, Top, Color.Empty, FirstColorSegmentBackground);
-                        TextWriterWhereColor.WriteWhere(Convert.ToString(TransitionChar), PowerLineLength, Top, LastTransitionForeground);
+                        TextWriterWhereColor.WriteWhereColorBack(new string(' ', PowerLineLength), 0, Top, Color.Empty, FirstColorSegmentBackground);
+                        TextWriterWhereColor.WriteWhereColor(Convert.ToString(TransitionChar), PowerLineLength, Top, LastTransitionForeground);
                         ConsoleExtensions.ClearLineToRight();
                     }
 

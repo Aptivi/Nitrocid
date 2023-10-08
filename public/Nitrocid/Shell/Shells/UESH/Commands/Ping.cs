@@ -69,19 +69,19 @@ namespace KS.Shell.Shells.UESH.Commands
                             }
                             else
                             {
-                                TextWriterColor.Write("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
+                                TextWriterColor.WriteKernelColor("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, PingReplied.Status, CurrentTime);
                             }
                         }
                         catch (Exception ex)
                         {
-                            TextWriterColor.Write("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, ex.Message, CurrentTime);
+                            TextWriterColor.WriteKernelColor("[{2}] " + Translate.DoTranslation("Failed to ping {0}: {1}"), true, KernelColorType.Error, PingedAddress, ex.Message, CurrentTime);
                             DebugWriter.WriteDebugStackTrace(ex);
                         }
                     }
                 }
                 else
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Address may not be empty."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Address may not be empty."), true, KernelColorType.Error);
                 }
             }
             return 0;

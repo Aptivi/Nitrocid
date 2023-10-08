@@ -53,7 +53,7 @@ namespace Nitrocid.Extras.Amusements.Splashes
                 {
                     int currentY = halfConsoleY + i;
                     string str = quoteSplit[i];
-                    TextWriterWhereColor.WriteWhere(str, quotePosX, currentY, quoteColor);
+                    TextWriterWhereColor.WriteWhereColor(str, quotePosX, currentY, quoteColor);
                 }
 
                 // Loop until closing

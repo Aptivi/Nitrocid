@@ -41,19 +41,19 @@ namespace KS.Shell.Shells.SFTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(Translate.DoTranslation("Uploading file {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Uploading file {0}..."), true, KernelColorType.Progress, parameters.ArgumentsList[0]);
 
             // Begin the uploading process
             if (SFTPTransfer.SFTPUploadFile(parameters.ArgumentsList[0]))
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Uploaded file {0}"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
+                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Uploaded file {0}"), true, KernelColorType.Success, parameters.ArgumentsList[0]);
                 return 0;
             }
             else
             {
                 TextWriterColor.Write();
-                TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
+                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Failed to upload {0}"), true, KernelColorType.Error, parameters.ArgumentsList[0]);
                 return 10000 + (int)KernelExceptionType.SFTPFilesystem;
             }
         }

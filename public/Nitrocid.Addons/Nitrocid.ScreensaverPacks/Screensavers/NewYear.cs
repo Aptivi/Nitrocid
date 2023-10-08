@@ -69,7 +69,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int figHeight = FigletTools.GetFigletHeight(currentYearStr, figFont) / 2;
                 int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
                 int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                FigletWhereColor.WriteFigletWhere(currentYearStr, consoleX, consoleY, true, figFont, green);
+                FigletWhereColor.WriteFigletWhereColor(currentYearStr, consoleX, consoleY, true, figFont, green);
 
                 // Congratulate!
                 string cong = Translate.DoTranslation("Happy new year!");
@@ -86,7 +86,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 int figHeight = FigletTools.GetFigletHeight(nextYearStr, figFont) / 2;
                 int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
                 int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                FigletWhereColor.WriteFigletWhere(nextYearStr, consoleX, consoleY, true, figFont, darkGreen);
+                FigletWhereColor.WriteFigletWhereColor(nextYearStr, consoleX, consoleY, true, figFont, darkGreen);
 
                 // Print the time remaining
                 var nextYearDate = new DateTime(currentYear + 1, 1, 1);

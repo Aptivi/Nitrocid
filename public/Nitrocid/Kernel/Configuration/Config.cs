@@ -319,7 +319,7 @@ namespace KS.Kernel.Configuration
             }
             catch (KernelException cex)
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Validation failed!") + $" {cex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Validation failed!") + $" {cex.Message}", KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Config validation error! {0}", cex.Message);
                 DebugWriter.WriteDebugStackTrace(cex);
             }
@@ -331,12 +331,12 @@ namespace KS.Kernel.Configuration
             }
             catch (KernelException cex) when (cex.ExceptionType == KernelExceptionType.Config)
             {
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Reading failed!") + $" {cex.Message}", KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Reading failed!") + $" {cex.Message}", KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", cex.Message);
                 DebugWriter.WriteDebugStackTrace(cex);
 
                 // Fix anyways, for compatibility...
-                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Trying to fix configuration..."), false, KernelColorType.Error);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Trying to fix configuration..."), false, KernelColorType.Error);
                 RepairConfig();
             }
         }

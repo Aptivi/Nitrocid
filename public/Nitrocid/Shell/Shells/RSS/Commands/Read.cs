@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.RSS.Commands
             int ArticleIndex = (int)Math.Round(Convert.ToDouble(parameters.ArgumentsList[0]) - 1d);
             if (ArticleIndex > RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Article number couldn't be bigger than the available articles."), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to access article number {0}, but count is {1}.", ArticleIndex, RSSShellCommon.RSSFeedInstance.FeedArticles.Count - 1);
                 return 10000 + (int)KernelExceptionType.RSSShell;
             }
@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.RSS.Commands
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Article doesn't have a link!"), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Article doesn't have a link!"), true, KernelColorType.Error);
                 DebugWriter.WriteDebug(DebugLevel.E, "Tried to open a web browser to link of article number {0}, but it's empty. \"{1}\"", ArticleIndex, RSSShellCommon.RSSFeedInstance.FeedArticles[ArticleIndex].ArticleLink);
                 return 10000 + (int)KernelExceptionType.RSSShell;
             }

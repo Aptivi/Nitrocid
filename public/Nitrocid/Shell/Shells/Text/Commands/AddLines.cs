@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.Text.Commands
             TextWriterColor.Write(Translate.DoTranslation("Enter the text that you want to append to the end of the file. When you're done, write \"EOF\" on its own line."));
             while (FinalLine != "EOF")
             {
-                TextWriterColor.Write(">> ", false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
                 FinalLine = Input.ReadLine();
                 if (!(FinalLine == "EOF"))
                 {

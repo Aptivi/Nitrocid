@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
             driver.Initialize();
             if (!driver.IsSymmetric)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Only symmetric encoding algorithms which use both the key and the initialization vector are supported."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Only symmetric encoding algorithms which use both the key and the initialization vector are supported."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Encoding;
             }
 
@@ -51,10 +51,10 @@ namespace KS.Shell.Shells.UESH.Commands
             byte[] iv = driver.Iv;
             string keyDecomposed = driver.DecomposeBytesFromString(key);
             string ivDecomposed = driver.DecomposeBytesFromString(iv);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(keyDecomposed, true, KernelColorType.ListValue);
-            TextWriterColor.Write("- " + Translate.DoTranslation("Initialization vector used") + ": ", false, KernelColorType.ListEntry);
-            TextWriterColor.Write(ivDecomposed, true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Key used") + ": ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(keyDecomposed, true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Initialization vector used") + ": ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor(ivDecomposed, true, KernelColorType.ListValue);
             variableValue = $"[{keyDecomposed}, {ivDecomposed}]";
             return 0;
         }

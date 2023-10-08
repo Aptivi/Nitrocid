@@ -83,10 +83,10 @@ namespace KS.Network.SSH
             while (true)
             {
                 // Ask for authentication method
-                TextWriterColor.Write(Translate.DoTranslation("How do you want to authenticate?") + CharManager.NewLine, true, KernelColorType.Question);
-                TextWriterColor.Write("1) " + Translate.DoTranslation("Private key file"), true, KernelColorType.Option);
-                TextWriterColor.Write("2) " + Translate.DoTranslation("Password") + CharManager.NewLine, true, KernelColorType.Option);
-                TextWriterColor.Write(">> ", false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("How do you want to authenticate?") + CharManager.NewLine, true, KernelColorType.Question);
+                TextWriterColor.WriteKernelColor("1) " + Translate.DoTranslation("Private key file"), true, KernelColorType.Option);
+                TextWriterColor.WriteKernelColor("2) " + Translate.DoTranslation("Password") + CharManager.NewLine, true, KernelColorType.Option);
+                TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
                 if (int.TryParse(Input.ReadLine(), out Answer))
                 {
                     // Check for answer
@@ -99,8 +99,8 @@ namespace KS.Network.SSH
                             break;
                         default:
                             DebugWriter.WriteDebug(DebugLevel.W, "Option is not valid. Returning...");
-                            TextWriterColor.Write(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
-                            TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Specified option {0} is invalid."), true, KernelColorType.Error, Answer);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                             Input.DetectKeypress();
                             break;
                     }
@@ -111,8 +111,8 @@ namespace KS.Network.SSH
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Answer is not numeric.");
-                    TextWriterColor.Write(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
-                    TextWriterColor.Write(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("The answer must be numeric."), true, KernelColorType.Error);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press any key to go back."), true, KernelColorType.Error);
                     Input.DetectKeypress();
                 }
             }
@@ -130,13 +130,13 @@ namespace KS.Network.SSH
                         PrivateKeyFile PrivateKeyAuth;
 
                         // Ask for location
-                        TextWriterColor.Write(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
                         PrivateKeyFile = Input.ReadLine();
                         PrivateKeyFile = Filesystem.NeutralizePath(PrivateKeyFile);
                         if (Checking.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase
-                            TextWriterColor.Write(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter the passphrase for key {0}: "), false, KernelColorType.Input, PrivateKeyFile);
                             PrivateKeyPassphrase = Input.ReadLineNoInput();
 
                             // Add authentication method
@@ -152,13 +152,13 @@ namespace KS.Network.SSH
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
                                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to add private key authentication method: {0}", ex.Message);
-                                TextWriterColor.Write(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to add private key:") + " {0}", true, KernelColorType.Error, ex.Message);
                             }
                         }
                         else if (PrivateKeyFile.EndsWith("/q"))
                             break;
                         else
-                            TextWriterColor.Write(Translate.DoTranslation("Key file {0} doesn't exist."), true, KernelColorType.Error, PrivateKeyFile);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Key file {0} doesn't exist."), true, KernelColorType.Error, PrivateKeyFile);
                     }
 
                     // Add authentication method
@@ -169,7 +169,7 @@ namespace KS.Network.SSH
                     string Pass;
 
                     // Ask for password
-                    TextWriterColor.Write(Translate.DoTranslation("Enter the password for {0}: "), false, KernelColorType.Input, Username);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter the password for {0}: "), false, KernelColorType.Input, Username);
                     Pass = Input.ReadLineNoInput();
 
                     // Add authentication method
@@ -221,7 +221,7 @@ namespace KS.Network.SSH
             catch (Exception ex)
             {
                 EventsManager.FireEvent(EventType.SSHError, ex);
-                TextWriterColor.Write(Translate.DoTranslation("Error trying to connect to SSH server: {0}"), true, KernelColorType.Error, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to connect to SSH server: {0}"), true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
         }
@@ -287,7 +287,7 @@ namespace KS.Network.SSH
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error on SSH shell in {0}: {1}", SSHClient.ConnectionInfo.Host, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Error on SSH shell") + ": {0}", true, KernelColorType.Error, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error on SSH shell") + ": {0}", true, KernelColorType.Error, ex.Message);
             }
             finally
             {
@@ -354,7 +354,7 @@ namespace KS.Network.SSH
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Error trying to execute SSH command \"{0}\" to {1}: {2}", Command, SSHClient.ConnectionInfo.Host, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                TextWriterColor.Write(Translate.DoTranslation("Error executing SSH command") + " {0}: {1}", true, KernelColorType.Error, Command, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error executing SSH command") + " {0}: {1}", true, KernelColorType.Error, Command, ex.Message);
                 EventsManager.FireEvent(EventType.SSHCommandError, SSHClient.ConnectionInfo.Host + ":" + SSHClient.ConnectionInfo.Port.ToString(), Command, ex);
             }
             finally

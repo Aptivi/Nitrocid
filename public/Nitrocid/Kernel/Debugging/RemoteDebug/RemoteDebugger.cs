@@ -200,7 +200,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     }
                     else
                     {
-                        TextWriterColor.Write(Translate.DoTranslation("Remote debugger connection error") + ": {0}", true, KernelColorType.Error, ex.Message);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Remote debugger connection error") + ": {0}", true, KernelColorType.Error, ex.Message);
                     }
                     DebugWriter.WriteDebugStackTrace(ex);
                 }

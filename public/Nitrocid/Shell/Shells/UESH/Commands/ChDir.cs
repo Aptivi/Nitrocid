@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Changing directory has failed: {0}"), true, KernelColorType.Error, ex.Message);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Changing directory has failed: {0}"), true, KernelColorType.Error, ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return ex.GetHashCode();
             }

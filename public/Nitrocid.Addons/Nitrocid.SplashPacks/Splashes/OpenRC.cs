@@ -78,10 +78,10 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             if (!Beginning)
             {
-                TextWriterWhereColor.WriteWhere("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
-                TextWriterWhereColor.WriteWhere(" ok ", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
+                TextWriterWhereColor.WriteWhereColor("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
+                TextWriterWhereColor.WriteWhereColor(" ok ", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
             }
-            TextWriterColor.Write($" * ", false, OpenRCIndicatorColor);
+            TextWriterColor.WriteColor($" * ", false, OpenRCIndicatorColor);
             TextWriterColor.Write(ProgressReport, Vars);
             if (!Beginning)
             {
@@ -95,10 +95,10 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             if (!Beginning)
             {
-                TextWriterWhereColor.WriteWhere("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
-                TextWriterWhereColor.WriteWhere("fail", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
+                TextWriterWhereColor.WriteWhereColor("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
+                TextWriterWhereColor.WriteWhereColor("fail", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
             }
-            TextWriterColor.Write($" * ", false, OpenRCIndicatorColor);
+            TextWriterColor.WriteColor($" * ", false, OpenRCIndicatorColor);
             TextWriterColor.Write(ErrorReport, Vars);
             if (!Beginning)
             {
@@ -112,10 +112,10 @@ namespace Nitrocid.SplashPacks.Splashes
         {
             if (!Beginning)
             {
-                TextWriterWhereColor.WriteWhere("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
-                TextWriterWhereColor.WriteWhere("warn", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
+                TextWriterWhereColor.WriteWhereColor("[    ]", IndicatorLeft, IndicatorTop, true, OpenRCPlaceholderColor);
+                TextWriterWhereColor.WriteWhereColor("warn", IndicatorLeft + 1, IndicatorTop, true, OpenRCIndicatorColor);
             }
-            TextWriterColor.Write($" * ", false, OpenRCIndicatorColor);
+            TextWriterColor.WriteColor($" * ", false, OpenRCIndicatorColor);
             TextWriterColor.Write(WarningReport, Vars);
             if (!Beginning)
             {
