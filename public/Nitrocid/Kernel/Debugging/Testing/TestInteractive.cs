@@ -176,6 +176,7 @@ namespace KS.Kernel.Debugging.Testing
                     else if (sel == sectionCount + 2 || sel == -1)
                     {
                         // Shutdown
+                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Shutting down..."), false);
                         exiting = true;
                     }
                 }
