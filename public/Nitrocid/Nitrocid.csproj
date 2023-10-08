@@ -54,8 +54,14 @@
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
     
-    <!-- Increment NitrocidModAPIVersion every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersion>3.0.25.167</NitrocidModAPIVersion>
+    <!-- Increment NitrocidModAPIVersionMajor every time there is a new version of Nitrocid KS. For example, N-KS 0.1.1 is 3.0.26. -->
+    <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
+
+    <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
+    <NitrocidModAPIVersionChangeset>168</NitrocidModAPIVersionChangeset>
+
+    <!-- To be installed to the file version -->
+    <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
     <FileVersion>$(NitrocidModAPIVersion)</FileVersion>
   </PropertyGroup>
   <!-- KS General Information End -->
