@@ -33,6 +33,14 @@ namespace KS.Files.Extensions
         {
             new ExtensionHandler(".bin", (path) => Opening.OpenEditor(path, false, false, true)),
         };
+        private static readonly List<ExtensionHandler> customHandlers = new();
+
+        /// <summary>
+        /// Gets all extension handlers
+        /// </summary>
+        /// <returns></returns>
+        public static ExtensionHandler[] GetExtensionHandlers() =>
+            extensionHandlers.Union(customHandlers).ToArray();
 
         /// <summary>
         /// Checks to see if the extension handler is registered
@@ -40,6 +48,29 @@ namespace KS.Files.Extensions
         /// <param name="extension">Extension to check</param>
         /// <returns>True if registered; False otherwise. Also false if the extension doesn't start with the dot.</returns>
         public static bool IsHandlerRegistered(string extension)
+        {
+            // If nothing is registered, indicate that it isn't registered
+            if (customHandlers.Count == 0)
+                return false;
+
+            // Extensions must start with a dot
+            if (!extension.StartsWith("."))
+                return false;
+
+            // Check to see if this handler is built-in
+            if (IsHandlerBuiltin(extension))
+                return true;
+
+            // Now, check to see if we have this handler
+            return customHandlers.Any((ext) => ext.Extension == extension);
+        }
+
+        /// <summary>
+        /// Checks to see if the extension handler is registered
+        /// </summary>
+        /// <param name="extension">Extension to check</param>
+        /// <returns>True if registered; False otherwise. Also false if the extension doesn't start with the dot.</returns>
+        public static bool IsHandlerBuiltin(string extension)
         {
             // If nothing is registered, indicate that it isn't registered
             if (extensionHandlers.Count == 0)
@@ -69,8 +100,7 @@ namespace KS.Files.Extensions
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
 
             // Get the handler
-            var handler = extensionHandlers.First((ext) => ext.Extension == extension);
-            return handler;
+            return GetExtensionHandlers().First((ext) => ext.Extension == extension);
         }
 
         /// <summary>
@@ -89,8 +119,7 @@ namespace KS.Files.Extensions
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
 
             // Get the handler
-            var handler = extensionHandlers.Where((ext) => ext.Extension == extension).ToArray();
-            return handler;
+            return GetExtensionHandlers().Where((ext) => ext.Extension == extension).ToArray();
         }
 
         /// <summary>
@@ -100,17 +129,13 @@ namespace KS.Files.Extensions
         /// <param name="handlerAction">Action containing a function that opens the specified file</param>
         public static void RegisterHandler(string extension, Action<string> handlerAction)
         {
-            // Don't register if the handler is already registered
-            if (IsHandlerRegistered(extension))
-                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler for extension is already registered.") + $" {extension}");
-
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
 
             // Add the handler
             var handler = new ExtensionHandler(extension, handlerAction);
-            extensionHandlers.Add(handler);
+            customHandlers.Add(handler);
         }
 
         /// <summary>
@@ -134,7 +159,26 @@ namespace KS.Files.Extensions
                 handlerIndex = handlers.Length - 1;
             if (handlerIndex < 0)
                 handlerIndex = 0;
-            extensionHandlers.RemoveAt(handlerIndex);
+            customHandlers.RemoveAt(handlerIndex);
+        }
+
+        /// <summary>
+        /// Unregisters the handler
+        /// </summary>
+        /// <param name="extension">Extension to unregister</param>
+        /// <param name="handler">Handler to look for when removing</param>
+        public static void UnregisterHandler(string extension, ExtensionHandler handler)
+        {
+            // Don't register if the handler is not registered
+            if (!IsHandlerRegistered(extension))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler for extension is not registered.") + $" {extension}");
+
+            // Extensions must start with a dot
+            if (!extension.StartsWith("."))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+
+            // Remove the handler
+            customHandlers.Remove(handler);
         }
 
         /// <summary>
@@ -154,7 +198,7 @@ namespace KS.Files.Extensions
             // Remove the handler
             var handlers = GetExtensionHandlers(extension);
             foreach (var handler in handlers)
-                extensionHandlers.Remove(handler);
+                customHandlers.Remove(handler);
         }
 
         /// <summary>
@@ -162,8 +206,8 @@ namespace KS.Files.Extensions
         /// </summary>
         public static void UnregisterAllHandlers()
         {
-            for (int i = extensionHandlers.Count - 1; i >= 0; i--)
-                extensionHandlers.RemoveAt(i);
+            for (int i = customHandlers.Count - 1; i >= 0; i--)
+                customHandlers.RemoveAt(i);
         }
     }
 }
