@@ -29,11 +29,11 @@ namespace KS.Files.Extensions
     /// </summary>
     public static class ExtensionHandlerTools
     {
-        private static readonly List<ExtensionHandler> extensionHandlers = new()
+        internal static readonly List<ExtensionHandler> extensionHandlers = new()
         {
             new ExtensionHandler(".bin", (path) => Opening.OpenEditor(path, false, false, true)),
         };
-        private static readonly List<ExtensionHandler> customHandlers = new();
+        internal static readonly List<ExtensionHandler> customHandlers = new();
 
         /// <summary>
         /// Gets all extension handlers
