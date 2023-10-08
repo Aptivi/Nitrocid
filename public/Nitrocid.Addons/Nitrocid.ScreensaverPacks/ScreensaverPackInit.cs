@@ -45,6 +45,7 @@ namespace Nitrocid.ScreensaverPacks
             { "colorbleed", new ColorBleedDisplay() },
             { "colormix", new ColorMixDisplay() },
             { "dateandtime", new DateAndTimeDisplay() },
+            { "diamond", new DiamondDisplay() },
             { "disco", new DiscoDisplay() },
             { "dissolve", new DissolveDisplay() },
             { "doorshift", new DoorShiftDisplay() },

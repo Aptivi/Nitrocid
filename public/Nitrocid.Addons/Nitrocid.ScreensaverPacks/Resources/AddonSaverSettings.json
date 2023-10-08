@@ -5627,5 +5627,17 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
+    },
+    {
+        "Name": "Diamond",
+        "Desc": "The diamond that shines.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "DiamondDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            }
+        ]
     }
 ]

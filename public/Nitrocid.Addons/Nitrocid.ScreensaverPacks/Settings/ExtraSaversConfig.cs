@@ -3031,5 +3031,9 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [SkyComet] How many milliseconds to wait before making the next write?
         /// </summary>
         public int SkyCometDelay { get; set; } = 10;
+        /// <summary>
+        /// [Diamond] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int DiamondDelay { get; set; } = 500;
     }
 }
