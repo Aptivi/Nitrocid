@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Themes;
@@ -63,7 +64,10 @@ namespace KS.Shell.Shells.UESH.Commands
                 // If the color index is -2, exit. PromptSelection returns -1 if ESC is pressed to cancel selecting. However, the index just decreases to -2
                 // even if that PromptSelection returned the abovementioned value, so bail if index is -2
                 if (colorIndex == -2)
+                {
+                    KernelColorTools.LoadBack();
                     return 3;
+                }
 
                 // Get the theme name from index
                 selectedTheme = ThemeTools.GetInstalledThemes().Keys.ElementAt(colorIndex);
