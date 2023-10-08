@@ -60,122 +60,144 @@ namespace KS.Kernel.Starting
     {
         internal static void InitializeCritical()
         {
-            // Check for terminal
-            ConsoleChecker.CheckConsole();
-
-            // Initialize crucial things
-            if (!KernelPlatform.IsOnUnix())
+            try
             {
-                if (!ConsoleExtensions.InitializeSequences())
+                // Check for terminal
+                ConsoleChecker.CheckConsole();
+
+                // Initialize crucial things
+                if (!KernelPlatform.IsOnUnix())
                 {
-                    TextWriterColor.Write("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.");
-                    Input.DetectKeypress();
+                    if (!ConsoleExtensions.InitializeSequences())
+                    {
+                        TextWriterColor.Write("Can not initialize VT sequences for your Windows terminal. Make sure that you're running Windows 10 or later.");
+                        Input.DetectKeypress();
+                    }
+                }
+
+                // Load the assembly resolver
+                AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
+
+                // Check to see if we have an appdata folder for KS
+                if (!Checking.FolderExists(Paths.AppDataPath))
+                    Making.MakeDirectory(Paths.AppDataPath, false);
+
+                // Set the first time run variable
+                if (!Checking.FileExists(Paths.ConfigurationPath))
+                    KernelFlags.FirstTime = true;
+
+                // Initialize debug path
+                DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+
+                // Power signal handlers
+                if (!PowerSignalHandlers.initialized)
+                {
+                    PowerSignalHandlers.initialized = true;
+                    PowerSignalHandlers.RegisterHandlers();
                 }
             }
-
-            // Load the assembly resolver
-            AppDomain.CurrentDomain.AssemblyResolve += AssemblyLookup.LoadFromAssemblySearchPaths;
-
-            // Check to see if we have an appdata folder for KS
-            if (!Checking.FolderExists(Paths.AppDataPath))
-                Making.MakeDirectory(Paths.AppDataPath, false);
-
-            // Set the first time run variable
-            if (!Checking.FileExists(Paths.ConfigurationPath))
-                KernelFlags.FirstTime = true;
-
-            // Initialize debug path
-            DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
-
-            // Power signal handlers
-            if (!PowerSignalHandlers.initialized)
+            catch (Exception ex)
             {
-                PowerSignalHandlers.initialized = true;
-                PowerSignalHandlers.RegisterHandlers();
+                TextWriterColor.Write($"{ex}");
+                throw;
             }
         }
 
         internal static void InitializeEssential()
         {
-            // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
-            if (!KernelPlatform.IsOnWindows() && KernelFlags.UseAltBuffer)
+            try
             {
-                TextWriterColor.Write("\u001b[?1049h");
-                ConsoleWrapper.SetCursorPosition(0, 0);
-                ConsoleWrapper.CursorVisible = false;
-                KernelFlags.HasSetAltBuffer = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
+                // Load alternative buffer (only supported on Linux, because Windows doesn't seem to respect CursorVisible = false on alt buffers)
+                if (!KernelPlatform.IsOnWindows() && KernelFlags.UseAltBuffer)
+                {
+                    TextWriterColor.Write("\u001b[?1049h");
+                    ConsoleWrapper.SetCursorPosition(0, 0);
+                    ConsoleWrapper.CursorVisible = false;
+                    KernelFlags.HasSetAltBuffer = true;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Loaded alternative buffer.");
+                }
+
+                // A title
+                ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
+
+                // Set the buffer size
+                if (KernelFlags.SetBufferSize)
+                    ConsoleExtensions.SetBufferSize();
+
+                // Initialize console wrappers for TermRead
+                Input.InitializeTerminauxWrappers();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
+
+                // Initialize watchdog
+                ThreadWatchdog.StartWatchdog();
+
+                // Show initializing
+                if (KernelFlags.TalkativePreboot)
+                {
+                    TextWriterColor.Write(Translate.DoTranslation("Welcome!"));
+                    TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
+                }
+
+                // Initialize journal path
+                JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journaling)), Paths.GetKernelPath(KernelPathType.Journaling));
+
+                // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
+                if (KernelFlags.TalkativePreboot)
+                    TextWriterColor.Write(Translate.DoTranslation("Downloading debug symbols..."));
+                DebugSymbolsTools.CheckDebugSymbols();
+
+                // Initialize custom languages
+                if (KernelFlags.TalkativePreboot)
+                    TextWriterColor.Write(Translate.DoTranslation("Loading custom languages..."));
+                LanguageManager.InstallCustomLanguages();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
+
+                // Initialize splashes
+                if (KernelFlags.TalkativePreboot)
+                    TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
+                SplashManager.LoadSplashes();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom splashes.");
+
+                // Initialize addons
+                if (KernelFlags.TalkativePreboot)
+                    TextWriterColor.Write(Translate.DoTranslation("Loading kernel addons..."));
+                AddonTools.ProcessAddons(AddonType.Important);
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
+
+                // Create config file and then read it
+                if (KernelFlags.TalkativePreboot)
+                    TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
+                if (!KernelFlags.SafeMode)
+                    Config.InitializeConfig();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");
+
+                // Read privacy consents
+                PrivacyConsentTools.LoadConsents();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded privacy consents.");
+
+                // Load background
+                KernelColorTools.LoadBack();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded background.");
+
+                // Load splash
+                SplashManager.OpenSplash();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
+
+                // Populate debug devices
+                RemoteDebugTools.LoadAllDevices();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded remote debug devices.");
             }
-
-            // A title
-            ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
-
-            // Set the buffer size
-            if (KernelFlags.SetBufferSize)
-                ConsoleExtensions.SetBufferSize();
-
-            // Initialize console wrappers for TermRead
-            Input.InitializeTerminauxWrappers();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
-
-            // Initialize watchdog
-            ThreadWatchdog.StartWatchdog();
-
-            // Show initializing
-            if (KernelFlags.TalkativePreboot)
+            catch (Exception ex)
             {
-                TextWriterColor.Write(Translate.DoTranslation("Welcome!"));
-                TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
+                SplashManager.BeginSplashOut();
+                DebugWriter.WriteDebug(DebugLevel.E, $"Failed to initialize essential components! {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                InfoBoxColor.WriteInfoBox(
+                    Translate.DoTranslation("The kernel failed to initialize some of the essential components. The kernel will not work properly at this point.") + "\n\n" +
+                    Translate.DoTranslation("Error information:") + $" {ex.Message}"
+                );
+                SplashManager.EndSplashOut();
             }
-
-            // Initialize journal path
-            JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journaling)), Paths.GetKernelPath(KernelPathType.Journaling));
-
-            // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-            if (KernelFlags.TalkativePreboot)
-                TextWriterColor.Write(Translate.DoTranslation("Downloading debug symbols..."));
-            DebugSymbolsTools.CheckDebugSymbols();
-
-            // Initialize custom languages
-            if (KernelFlags.TalkativePreboot)
-                TextWriterColor.Write(Translate.DoTranslation("Loading custom languages..."));
-            LanguageManager.InstallCustomLanguages();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
-
-            // Initialize splashes
-            if (KernelFlags.TalkativePreboot)
-                TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
-            SplashManager.LoadSplashes();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom splashes.");
-
-            // Initialize addons
-            if (KernelFlags.TalkativePreboot)
-                TextWriterColor.Write(Translate.DoTranslation("Loading kernel addons..."));
-            AddonTools.ProcessAddons(AddonType.Important);
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
-
-            // Create config file and then read it
-            if (KernelFlags.TalkativePreboot)
-                TextWriterColor.Write(Translate.DoTranslation("Loading configuration..."));
-            if (!KernelFlags.SafeMode)
-                Config.InitializeConfig();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded configuration.");
-
-            // Read privacy consents
-            PrivacyConsentTools.LoadConsents();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded privacy consents.");
-
-            // Load background
-            KernelColorTools.LoadBack();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded background.");
-
-            // Load splash
-            SplashManager.OpenSplash();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
-
-            // Populate debug devices
-            RemoteDebugTools.LoadAllDevices();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded remote debug devices.");
         }
 
         internal static void InitializeWelcomeMessages()
@@ -195,141 +217,172 @@ namespace KS.Kernel.Starting
 
         internal static void InitializeOptional()
         {
-            // Initialize notifications
-            if (!NotificationManager.NotifThread.IsAlive)
-                NotificationManager.NotifThread.Start();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded notification thread.");
+            try
+            {
+                // Initialize notifications
+                if (!NotificationManager.NotifThread.IsAlive)
+                    NotificationManager.NotifThread.Start();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded notification thread.");
 
-            // Install cancellation handler
-            CancellationHandlers.InstallHandler();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded cancellation handler.");
+                // Install cancellation handler
+                CancellationHandlers.InstallHandler();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded cancellation handler.");
 
-            // Initialize aliases
-            AliasManager.InitAliases();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
+                // Initialize aliases
+                AliasManager.InitAliases();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded aliases.");
 
-            // Initialize speed dial
-            SpeedDialTools.LoadAll();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded speed dial entries.");
+                // Initialize speed dial
+                SpeedDialTools.LoadAll();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded speed dial entries.");
 
-            // Initialize top right date
-            TimeDateTopRight.InitTopRightDate();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded top right date.");
+                // Initialize top right date
+                TimeDateTopRight.InitTopRightDate();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded top right date.");
 
-            // Start screensaver timeout
-            if (!ScreensaverManager.Timeout.IsAlive)
-                ScreensaverManager.Timeout.Start();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded screensaver timeout.");
+                // Start screensaver timeout
+                if (!ScreensaverManager.Timeout.IsAlive)
+                    ScreensaverManager.Timeout.Start();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded screensaver timeout.");
 
-            // Load system env vars and convert them
-            UESHVariables.ConvertSystemEnvironmentVariables();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
+                // Load system env vars and convert them
+                UESHVariables.ConvertSystemEnvironmentVariables();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
 
-            // Finalize addons
-            AddonTools.ProcessAddons(AddonType.Optional);
-            AddonTools.FinalizeAddons();
-            DebugWriter.WriteDebug(DebugLevel.I, "Finalized addons.");
+                // Finalize addons
+                AddonTools.ProcessAddons(AddonType.Optional);
+                AddonTools.FinalizeAddons();
+                DebugWriter.WriteDebug(DebugLevel.I, "Finalized addons.");
 
-            // If the two files are not found, create two MOTD files with current config.
-            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
-                MotdParse.SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
-            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
-                MalParse.SetMal(Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!");
+                // If the two files are not found, create two MOTD files with current config.
+                if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
+                    MotdParse.SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
+                if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
+                    MalParse.SetMal(Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!");
 
-            // Load MOTD and MAL
-            MotdParse.ReadMotd();
-            MalParse.ReadMal();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded MOTD and MAL.");
+                // Load MOTD and MAL
+                MotdParse.ReadMotd();
+                MalParse.ReadMal();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded MOTD and MAL.");
 
-            // Load shell command histories
-            ShellManager.LoadHistories();
-            DebugWriter.WriteDebug(DebugLevel.I, "Loaded shell command histories.");
+                // Load shell command histories
+                ShellManager.LoadHistories();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded shell command histories.");
+            }
+            catch (Exception ex)
+            {
+                SplashManager.BeginSplashOut();
+                DebugWriter.WriteDebug(DebugLevel.E, $"Failed to initialize optional components! {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                InfoBoxColor.WriteInfoBox(
+                    Translate.DoTranslation("The kernel failed to initialize some of the optional components. If it's trying to read a configuration file, make sure that it's formatted correctly.") + "\n\n" +
+                    Translate.DoTranslation("Error information:") + $" {ex.Message}"
+                );
+                SplashManager.EndSplashOut();
+            }
         }
 
         internal static void ResetEverything()
         {
-            // Reset every variable below
-            KernelFlags.SafeMode = false;
-            KernelFlags.QuietKernel = false;
-            KernelFlags.Maintenance = false;
-            KernelFlags.HasSetAltBuffer = false;
-            SplashReport._Progress = 0;
-            SplashReport._ProgressText = "";
-            SplashReport._KernelBooted = false;
-            DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
-
-            // Save shell command histories
-            ShellManager.SaveHistories();
-            DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
-
-            // Save privacy consents
-            PrivacyConsentTools.SaveConsents();
-            DebugWriter.WriteDebug(DebugLevel.I, "Saved privacy consents.");
-
-            // Reset hardware info
-            HardwareProbe.HardwareInfo = null;
-            DebugWriter.WriteDebug(DebugLevel.I, "Hardware info reset.");
-
-            // Disconnect all hosts from remote debugger
-            RemoteDebugger.StopRDebugThread();
-            DebugWriter.WriteDebug(DebugLevel.I, "Remote debugger stopped");
-
-            // Reset languages
-            LanguageManager.SetLangDry(LanguageManager.CurrentLanguage);
-            LanguageManager.currentUserLanguage = LanguageManager.Languages[LanguageManager.CurrentLanguage];
-
-            // Save all settings
-            Config.CreateConfig();
-            DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
-
-            // Stop all mods
-            ModManager.StopMods();
-            DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
-
-            // Stop all addons
-            AddonTools.UnloadAddons();
-            DebugWriter.WriteDebug(DebugLevel.I, "Addons stopped");
-
-            // Stop RPC
-            RemoteProcedure.StopRPC();
-            DebugWriter.WriteDebug(DebugLevel.I, "RPC stopped");
-
-            // Disconnect all connections
-            NetworkConnectionTools.CloseAllConnections();
-            DebugWriter.WriteDebug(DebugLevel.I, "Closed all connections");
-
-            // Unload all splashes
-            SplashManager.UnloadSplashes();
-            DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");
-
-            // Disable safe mode
-            KernelFlags.SafeMode = false;
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode disabled");
-
-            // Stop the time/date change thread
-            TimeDateTopRight.TimeTopRightChange.Stop();
-            DebugWriter.WriteDebug(DebugLevel.I, "Time/date corner stopped");
-
-            // Disable Debugger
-            if (KernelFlags.DebugMode)
+            try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Shutting down debugger");
-                KernelFlags.DebugMode = false;
-                DebugWriter.DebugStreamWriter.Close();
-                DebugWriter.DebugStreamWriter.Dispose();
-                DebugWriter.isDisposed = true;
+                // Reset every variable below
+                KernelFlags.SafeMode = false;
+                KernelFlags.QuietKernel = false;
+                KernelFlags.Maintenance = false;
+                KernelFlags.HasSetAltBuffer = false;
+                SplashReport._Progress = 0;
+                SplashReport._ProgressText = "";
+                SplashReport._KernelBooted = false;
+                DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
+
+                // Save shell command histories
+                ShellManager.SaveHistories();
+                DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
+
+                // Save privacy consents
+                PrivacyConsentTools.SaveConsents();
+                DebugWriter.WriteDebug(DebugLevel.I, "Saved privacy consents.");
+
+                // Reset hardware info
+                HardwareProbe.HardwareInfo = null;
+                DebugWriter.WriteDebug(DebugLevel.I, "Hardware info reset.");
+
+                // Disconnect all hosts from remote debugger
+                RemoteDebugger.StopRDebugThread();
+                DebugWriter.WriteDebug(DebugLevel.I, "Remote debugger stopped");
+
+                // Reset languages
+                LanguageManager.SetLangDry(LanguageManager.CurrentLanguage);
+                LanguageManager.currentUserLanguage = LanguageManager.Languages[LanguageManager.CurrentLanguage];
+
+                // Save all settings
+                Config.CreateConfig();
+                DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
+
+                // Stop all mods
+                ModManager.StopMods();
+                DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
+
+                // Stop all addons
+                AddonTools.UnloadAddons();
+                DebugWriter.WriteDebug(DebugLevel.I, "Addons stopped");
+
+                // Stop RPC
+                RemoteProcedure.StopRPC();
+                DebugWriter.WriteDebug(DebugLevel.I, "RPC stopped");
+
+                // Disconnect all connections
+                NetworkConnectionTools.CloseAllConnections();
+                DebugWriter.WriteDebug(DebugLevel.I, "Closed all connections");
+
+                // Unload all splashes
+                SplashManager.UnloadSplashes();
+                DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");
+
+                // Disable safe mode
+                KernelFlags.SafeMode = false;
+                DebugWriter.WriteDebug(DebugLevel.I, "Safe mode disabled");
+
+                // Stop the time/date change thread
+                TimeDateTopRight.TimeTopRightChange.Stop();
+                DebugWriter.WriteDebug(DebugLevel.I, "Time/date corner stopped");
+
+                // Disable Debugger
+                if (KernelFlags.DebugMode)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Shutting down debugger");
+                    KernelFlags.DebugMode = false;
+                    DebugWriter.DebugStreamWriter.Close();
+                    DebugWriter.DebugStreamWriter.Dispose();
+                    DebugWriter.isDisposed = true;
+                }
+
+                // Reset the buffer size
+                ConsoleExtensions.RestoreBufferSize();
+
+                // Clear all active threads as we're rebooting
+                ThreadManager.StopAllThreads();
             }
+            catch (Exception ex)
+            {
+                // We could fail with the debugger enabled
+                KernelColorTools.LoadBack();
+                DebugWriter.WriteDebug(DebugLevel.E, $"Failed to reset everything! {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                InfoBoxColor.WriteInfoBox(
+                    Translate.DoTranslation("The kernel failed to reset all the configuration to their initial states. Some of the components might have not unloaded correctly. If you're experiencing problems after the reboot, this might be the cause. Please shut down the kernel once rebooted.") + "\n\n" +
+                    Translate.DoTranslation("Error information:") + $" {ex.Message}"
+                );
+            }
+            finally
+            {
+                PowerManager.Uptime.Reset();
 
-            // Reset the buffer size
-            ConsoleExtensions.RestoreBufferSize();
-
-            // Clear all active threads as we're rebooting
-            ThreadManager.StopAllThreads();
-            PowerManager.Uptime.Reset();
-
-            // Reset power state
-            KernelFlags.RebootRequested = false;
-            KernelFlags.LogoutRequested = false;
+                // Reset power state
+                KernelFlags.RebootRequested = false;
+                KernelFlags.LogoutRequested = false;
+            }
         }
     }
 }
