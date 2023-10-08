@@ -27,6 +27,7 @@ using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace KS.Arguments
 {
@@ -80,6 +81,8 @@ namespace KS.Arguments
             // Check for the arguments written by the user
             try
             {
+                if (ArgumentHelpSystem.acknowledged)
+                    ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToList();
                 var Arguments = AvailableCMDLineArgs;
 
                 // Parse them now

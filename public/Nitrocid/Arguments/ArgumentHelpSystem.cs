@@ -33,6 +33,7 @@ namespace KS.Arguments
     /// </summary>
     public static class ArgumentHelpSystem
     {
+        internal static bool acknowledged = false;
 
         /// <summary>
         /// Shows the help of an argument, or argument list if nothing is specified
@@ -46,6 +47,7 @@ namespace KS.Arguments
         /// <param name="Argument">A specified argument</param>
         public static void ShowArgsHelp(string Argument)
         {
+            acknowledged = true;
             var ArgumentList = ArgumentParse.AvailableCMDLineArgs
                                .OrderBy((CommandValuePair) => CommandValuePair.Key)
                                .ToDictionary((CommandValuePair) => CommandValuePair.Key, (CommandValuePair) => CommandValuePair.Value);
