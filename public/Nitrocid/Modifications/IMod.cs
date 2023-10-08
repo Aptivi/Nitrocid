@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.ObjectModel;
 
 namespace KS.Modifications
 {
@@ -41,6 +42,10 @@ namespace KS.Modifications
         /// Minimum supported API version that the mod supports
         /// </summary>
         Version MinimumSupportedApiVersion { get; }
+        /// <summary>
+        /// Publicly available functions for other mods to use
+        /// </summary>
+        ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions { get; }
         /// <summary>
         /// Code executed when starting mod
         /// </summary>
