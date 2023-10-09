@@ -348,6 +348,10 @@ namespace KS.Kernel.Starting
                 TimeDateTopRight.TimeTopRightChange.Stop();
                 DebugWriter.WriteDebug(DebugLevel.I, "Time/date corner stopped");
 
+                // Reset the boot log
+                SplashReport.logBuffer.Clear();
+                DebugWriter.WriteDebug(DebugLevel.I, "Boot log buffer reset");
+
                 // Disable Debugger
                 if (KernelFlags.DebugMode)
                 {

@@ -39,6 +39,13 @@ namespace KS.Shell.Shells.Admin
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
+            { "bootlog",
+                new CommandInfo("bootlog", ShellType, /* Localizable */ "Prints the boot log",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+            
             { "cdbglog",
                 new CommandInfo("cdbglog", ShellType, /* Localizable */ "Deletes everything in debug log",
                     new[] {

@@ -21,7 +21,12 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Journaling;
+using KS.Kernel.Time;
+using KS.Kernel.Time.Renderers;
+using KS.Misc.Text;
 using System;
+using System.Collections.Generic;
+using System.Text;
 
 namespace KS.Misc.Splash
 {
@@ -35,26 +40,37 @@ namespace KS.Misc.Splash
         internal static string _ProgressText = "";
         internal static bool _KernelBooted = false;
         internal static bool _InSplash = false;
+        internal static readonly List<string> logBuffer = new();
 
         /// <summary>
         /// The progress indicator of the kernel 
         /// </summary>
-        public static int Progress => _Progress;
+        public static int Progress =>
+            _Progress;
 
         /// <summary>
         /// The progress text to indicate how did the kernel progress
         /// </summary>
-        public static string ProgressText => _ProgressText;
+        public static string ProgressText =>
+            _ProgressText;
 
         /// <summary>
         /// Did the kernel boot successfully?
         /// </summary>
-        public static bool KernelBooted => _KernelBooted;
+        public static bool KernelBooted =>
+            _KernelBooted;
 
         /// <summary>
         /// Did the kernel enter splash screen?
         /// </summary>
-        public static bool InSplash => _InSplash;
+        public static bool InSplash =>
+            _InSplash;
+
+        /// <summary>
+        /// Log buffer of the boot process
+        /// </summary>
+        public static string[] LogBuffer =>
+            logBuffer.ToArray();
 
         /// <summary>
         /// Reports the progress for the splash screen while the kernel is booting.
@@ -102,6 +118,7 @@ namespace KS.Misc.Splash
                         TextWriterColor.WriteKernelColor($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
                     }
                 }
+                logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Info: {TextTools.FormatString(Text, Vars)}");
             }
             else
             {
@@ -166,6 +183,7 @@ namespace KS.Misc.Splash
                         TextWriterColor.WriteKernelColor($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
                     }
                 }
+                logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Warning: {TextTools.FormatString(Text, Vars)}");
             }
             else
             {
@@ -230,6 +248,7 @@ namespace KS.Misc.Splash
                         TextWriterColor.WriteKernelColor($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
                     }
                 }
+                logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Error: {TextTools.FormatString(Text, Vars)}");
             }
             else
             {
