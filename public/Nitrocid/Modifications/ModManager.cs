@@ -38,6 +38,7 @@ using KS.Misc.Reflection;
 using System.Diagnostics;
 using KS.Misc.Screensaver;
 using KS.Files.Operations.Querying;
+using KS.Users.Permissions;
 
 namespace KS.Modifications
 {
@@ -581,6 +582,9 @@ namespace KS.Modifications
         /// <param name="parameters">Parameters to execute the function with</param>
         public static object ExecuteCustomModFunction(string modName, string functionName, params object[] parameters)
         {
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
+
             // Get the mod
             var modInfo = GetMod(modName) ??
                 throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom function with non-existent mod"));

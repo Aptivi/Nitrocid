@@ -25,6 +25,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.Debug
 {
@@ -48,6 +49,9 @@ namespace KS.Shell.Shells.Debug
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("You must enable debug mode before you can use the debug shell."), true, KernelColorType.Warning);
                 Bail = true;
             }
+
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.OpenDebugShell);
 
             // Actual shell logic
             while (!Bail)

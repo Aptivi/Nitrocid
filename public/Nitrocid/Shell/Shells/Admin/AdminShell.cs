@@ -24,6 +24,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Shell.ShellBase.Shells;
+using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.Admin
 {
@@ -42,6 +43,9 @@ namespace KS.Shell.Shells.Admin
         /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
+            // Check the user permission
+            PermissionsTools.Demand(PermissionTypes.OpenAdminShell);
+
             while (!Bail)
             {
                 try

@@ -63,5 +63,17 @@ namespace KS.Users.Permissions
         /// Allows the user to manage the user groups
         /// </summary>
         ManageGroups = 512,
+        /// <summary>
+        /// Allows the user to run mod commands that depend on inter-mod communication
+        /// </summary>
+        IntermodCommunication = 1024,
+        /// <summary>
+        /// Allows the user to open an administrative shell
+        /// </summary>
+        OpenAdminShell = 2048,
+        /// <summary>
+        /// Allows the user to open a debug shell
+        /// </summary>
+        OpenDebugShell = 4096,
     }
 }
