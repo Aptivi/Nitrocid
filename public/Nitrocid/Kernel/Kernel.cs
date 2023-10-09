@@ -69,7 +69,8 @@ namespace KS.Kernel
                 finally
                 {
                     // Reset everything to their initial state
-                    KernelInitializers.ResetEverything();
+                    if (!KernelFlags.hardShutdown)
+                        KernelInitializers.ResetEverything();
 
                     // Clear the console
                     KernelColorTools.LoadBack();

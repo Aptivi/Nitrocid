@@ -86,6 +86,7 @@ namespace KS.Arguments.CommandLineArguments
 
             // Exit now.
             KernelFlags.KernelShutdown = true;
+            KernelFlags.hardShutdown = true;
         }
     }
 }

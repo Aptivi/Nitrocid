@@ -304,6 +304,7 @@ namespace KS.Kernel.Configuration
         internal static bool Maintenance;
         internal static bool TalkativePreboot;
         internal static bool SetBufferSize = true;
+        internal static bool hardShutdown;
 
     }
 }
