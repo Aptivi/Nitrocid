@@ -29,6 +29,7 @@ using KS.Kernel.Exceptions;
 using KS.Kernel.Debugging;
 using KS.Kernel.Starting;
 using KS.Kernel.Configuration;
+using KS.ConsoleBase.Writers.FancyWriters;
 
 namespace KS.Kernel
 {
@@ -86,10 +87,7 @@ namespace KS.Kernel
 
             // If "No APM" is enabled, simply print the text
             if (KernelFlags.SimulateNoAPM)
-            {
-                ConsoleWrapper.WriteLine(Translate.DoTranslation("It's now safe to turn off your computer."));
-                Input.DetectKeypress();
-            }
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("It's now safe to turn off your computer."));
 
             // Load main buffer
             if (!KernelPlatform.IsOnWindows() && KernelFlags.UseAltBuffer && KernelFlags.HasSetAltBuffer)
