@@ -1222,7 +1222,7 @@ namespace KS.Drivers.Filesystem
             var fileContentBuilder = new StringBuilder();
             var FOpen = new StreamReader(File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite));
             while (!FOpen.EndOfStream)
-                fileContentBuilder.Append(FOpen.ReadLine());
+                fileContentBuilder.AppendLine(FOpen.ReadLine());
             FOpen.Close();
             return fileContentBuilder.ToString();
         }
