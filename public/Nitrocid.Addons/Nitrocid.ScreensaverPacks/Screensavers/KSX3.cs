@@ -598,9 +598,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         }
                         break;
-                    // Step 13: Show "coming soon"
                     case 13:
-                        string tbc = Translate.DoTranslation("Coming soon...").ToUpper();
+                        string tbc = Translate.DoTranslation("To be continued...").ToUpper();
                         ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
                         TextWriterWhereColor.WriteWhereColorBack(tbc, ConsoleWrapper.WindowWidth / 2 - tbc.Length / 2, ConsoleWrapper.WindowHeight / 2, green, black);
                         ThreadManager.SleepNoBlock(40, ScreensaverDisplayer.ScreensaverDisplayerThread);
