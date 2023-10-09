@@ -82,6 +82,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     //   - 0.0.16 with red color
                     //   - 0.0.24 with pink color
                     case 1:
+                        KernelColorTools.LoadBack(black);
                         int colorSteps = 30;
 
                         // Get the color thresholds
