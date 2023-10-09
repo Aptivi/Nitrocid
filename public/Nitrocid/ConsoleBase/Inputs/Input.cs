@@ -278,6 +278,19 @@ namespace KS.ConsoleBase.Inputs
         /// </summary>
         public static ConsoleKeyInfo DetectKeypress()
         {
+            var key = DetectKeypressUnsafe();
+
+            // If in lock mode, wait until release
+            DebugWriter.WriteDebug(DebugLevel.I, "Waiting for lock mode to release...");
+            SpinWait.SpinUntil(() => !ScreensaverManager.LockMode);
+            return key;
+        }
+
+        /// <summary>
+        /// Detects the keypress
+        /// </summary>
+        public static ConsoleKeyInfo DetectKeypressUnsafe()
+        {
             SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
             var key = ConsoleWrapper.ReadKey(true);
             DebugWriter.WriteDebug(DebugLevel.I, "Got key! {0} [{1}] {2}", key.Key.ToString(), (int)key.KeyChar, key.Modifiers.ToString());
