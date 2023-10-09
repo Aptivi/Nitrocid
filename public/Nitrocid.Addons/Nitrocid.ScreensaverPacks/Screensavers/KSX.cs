@@ -182,23 +182,36 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                                 ThreadManager.SleepNoBlock(10, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
                                 // Check to see if we're at the end
-                                if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - 1 &&
-                                    ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1)
+                                if (ConsoleWrapper.CursorLeft == ConsoleWrapper.WindowWidth - 1)
                                 {
-                                    // We're at the end. Increment the index or reset to zero
-                                    currentIdx++;
-                                    if (currentIdx > sample.Length - 1)
-                                        currentIdx = 0;
+                                    if (ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 1)
+                                    {
+                                        // We're at the end. Increment the index or reset to zero
+                                        currentIdx++;
+                                        if (currentIdx > sample.Length - 1)
+                                            currentIdx = 0;
 
-                                    // Write the current character
-                                    TextWriterColor.WriteColorBack(sample[currentIdx].ToString(), false, darkGreen, black);
+                                        // Write the current character
+                                        TextWriterColor.WriteColorBack(sample[currentIdx].ToString(), false, darkGreen, black);
 
-                                    // Reset position
-                                    ConsoleWrapper.CursorLeft = 0;
-                                    ConsoleWrapper.CursorTop = 0;
+                                        // Reset position
+                                        ConsoleWrapper.CursorLeft = 0;
+                                        ConsoleWrapper.CursorTop = 0;
 
-                                    // Declare as done
-                                    printDone = true;
+                                        // Declare as done
+                                        printDone = true;
+                                    }
+                                    else
+                                    {
+                                        // We're at the end. Increment the index or reset to zero
+                                        currentIdx++;
+                                        if (currentIdx > sample.Length - 1)
+                                            currentIdx = 0;
+
+                                        // Write the current character
+                                        TextWriterColor.WriteColorBack(sample[currentIdx].ToString(), false, darkGreen, black);
+                                        TextWriterColor.Write();
+                                    }
                                 }
                             }
                         }
