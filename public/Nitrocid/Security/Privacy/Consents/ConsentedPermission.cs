@@ -31,6 +31,8 @@ namespace KS.Security.Privacy.Consents
         internal ConsentedPermissionType type;
         [JsonProperty(nameof(Context))]
         internal string context;
+        [JsonProperty(nameof(Username))]
+        internal string user;
 
         /// <summary>
         /// Consented permission type
@@ -45,6 +47,13 @@ namespace KS.Security.Privacy.Consents
         [JsonIgnore]
         public string Context =>
             context;
+
+        /// <summary>
+        /// Username that agreed to the consent
+        /// </summary>
+        [JsonIgnore]
+        public string Username =>
+            user;
 
         /// <inheritdoc/>
         public override bool Equals(object obj) =>

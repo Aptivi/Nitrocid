@@ -26,6 +26,7 @@ using KS.Misc.Reflection;
 using KS.Misc.Splash;
 using KS.Misc.Text;
 using KS.Security.Privacy.Consents;
+using KS.Users;
 using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -61,7 +62,8 @@ namespace KS.Security.Privacy
             var consent = new ConsentedPermission()
             {
                 type = consentType,
-                context = finalContext
+                context = finalContext,
+                user = UserManagement.CurrentUser.Username,
             };
             return ConsentPermission(consent);
         }
