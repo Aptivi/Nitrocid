@@ -22,6 +22,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Kernel.Threading;
 using KS.Kernel.Configuration;
+using KS.ConsoleBase;
 
 namespace KS.Misc.Screensaver
 {
@@ -41,6 +42,7 @@ namespace KS.Misc.Screensaver
         /// <param name="Screensaver">Screensaver base containing information about the screensaver</param>
         internal static void DisplayScreensaver(BaseScreensaver Screensaver)
         {
+            bool initialVisible = ConsoleWrapper.CursorVisible;
             try
             {
                 // Preparations
@@ -54,11 +56,11 @@ namespace KS.Misc.Screensaver
             }
             catch (ThreadInterruptedException)
             {
-                ScreensaverManager.HandleSaverCancel();
+                ScreensaverManager.HandleSaverCancel(initialVisible);
             }
             catch (Exception ex)
             {
-                ScreensaverManager.HandleSaverError(ex);
+                ScreensaverManager.HandleSaverError(ex, initialVisible);
             }
             finally
             {

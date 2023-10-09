@@ -347,13 +347,13 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Screensaver error handler
         /// </summary>
-        internal static void HandleSaverError(Exception Exception)
+        internal static void HandleSaverError(Exception Exception, bool initialVisible)
         {
             if (Exception is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Screensaver experienced an error: {0}.", Exception.Message);
                 DebugWriter.WriteDebugStackTrace(Exception);
-                HandleSaverCancel();
+                HandleSaverCancel(initialVisible);
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Screensaver experienced an error while displaying: {0}. Press any key to exit."), true, KernelColorType.Error, Exception.Message);
             }
         }
@@ -361,11 +361,11 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Screensaver cancellation handler
         /// </summary>
-        internal static void HandleSaverCancel()
+        internal static void HandleSaverCancel(bool initialVisible)
         {
             DebugWriter.WriteDebug(DebugLevel.W, "Cancellation is pending. Cleaning everything up...");
             KernelColorTools.LoadBack();
-            ConsoleWrapper.CursorVisible = true;
+            ConsoleWrapper.CursorVisible = initialVisible;
             DebugWriter.WriteDebug(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();
         }
