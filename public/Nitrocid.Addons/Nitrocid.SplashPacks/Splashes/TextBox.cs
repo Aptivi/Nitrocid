@@ -32,7 +32,7 @@ namespace Nitrocid.SplashPacks.Splashes
         // Standalone splash information
         public override string SplashName => "TextBox";
 
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {

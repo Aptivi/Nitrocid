@@ -160,7 +160,7 @@ namespace KS.Modifications
                 // Check to see if we have mods
                 if (count != 0)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Stopping mods..."));
+                    SplashReport.ReportProgress(Translate.DoTranslation("Stopping mods..."), 0);
                     DebugWriter.WriteDebug(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count);
 
                     // Enumerate and delete the script as soon as the stopping is complete
@@ -180,7 +180,7 @@ namespace KS.Modifications
                             ScriptPartInfo.PartScript.StopMod();
                             if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
                             {
-                                TextWriterColor.Write(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+                                SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), 0, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
                             }
 
                             // Remove the part from the list
@@ -209,13 +209,13 @@ namespace KS.Modifications
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Mods not found!");
-                    TextWriterColor.Write(Translate.DoTranslation("No mods detected."));
+                    SplashReport.ReportProgress(Translate.DoTranslation("No mods detected."), 0);
                 }
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Stopping mods not allowed on safe mode."));
             }
         }
 
@@ -233,24 +233,24 @@ namespace KS.Modifications
             if (KernelFlags.SafeMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Stopping mods not allowed on safe mode."), true, KernelColorType.Error);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Stopping mods not allowed on safe mode."));
                 return;
             }
             if (!Checking.FileExists(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Mod {0} not found."), true, KernelColorType.Error, ModFilename);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} not found."), ModFilename);
                 return;
             }
             if (!HasModStarted(PathToMod))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod not started yet!");
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Mod hasn't started yet!"), true, KernelColorType.Error);
+                SplashReport.ReportProgressError(Translate.DoTranslation("Mod hasn't started yet!"));
                 return;
             }
 
             // Iterate through all the mods
-            TextWriterColor.Write(Translate.DoTranslation("Stopping mod {0}..."), ModFilename);
+            SplashReport.ReportProgress(Translate.DoTranslation("Stopping mod {0}..."), 0, ModFilename);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
             for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
             {
@@ -272,14 +272,14 @@ namespace KS.Modifications
                     // Stop the associated part
                     ScriptPartInfo.PartScript.StopMod();
                     if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
-                        TextWriterColor.Write(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+                        SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), 0, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
 
                     // Remove the part from the list
                     ScriptParts.Remove(ScriptParts.Keys.ElementAtOrDefault(PartIndex));
                 }
 
                 // Remove the mod from the list
-                TextWriterColor.Write(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
+                SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} stopped"), 0, TargetMod.ModName);
                 Mods.Remove(Mods.Keys.ElementAtOrDefault(ScriptIndex));
 
                 // Remove the mod dependency from the lookup

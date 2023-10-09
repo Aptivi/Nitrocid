@@ -28,6 +28,7 @@ using Terminaux.Sequences.Tools;
 using KS.ConsoleBase.Colors;
 using Figletize;
 using System;
+using KS.Kernel.Configuration;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -40,9 +41,9 @@ namespace KS.Misc.Splash.Splashes
         public override bool SplashDisplaysProgress => true;
 
         // Actual logic
-        public override void Opening()
+        public override void Opening(SplashContext context)
         {
-            base.Opening();
+            base.Opening(context);
 
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
@@ -69,7 +70,7 @@ namespace KS.Misc.Splash.Splashes
             CenteredTextColor.WriteCenteredColor(consoleY + 2, Translate.DoTranslation("Starting") + $" {KernelReleaseInfo.ConsoleTitle}...", col);
         }
 
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {
@@ -100,14 +101,17 @@ namespace KS.Misc.Splash.Splashes
             }
         }
 
-        public override void Closing()
+        public override void Closing(SplashContext context)
         {
             ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
+            if (context == SplashContext.Showcase)
+                return;
+
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
-            string text = Translate.DoTranslation("Welcome!").ToUpper();
+            string text = (context == SplashContext.StartingUp ? Translate.DoTranslation("Welcome!") : Translate.DoTranslation("Goodbye!")).ToUpper();
             var figFont = FigletTools.GetFigletFont("banner3");
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
@@ -142,7 +146,8 @@ namespace KS.Misc.Splash.Splashes
                 consoleY += figHeight * 2;
             }
             CenteredTextColor.WriteCenteredOneLineColor(consoleY + 2, KernelReleaseInfo.ConsoleTitle, col);
-            Thread.Sleep(3000);
+            if (context != SplashContext.ShuttingDown || context == SplashContext.ShuttingDown && KernelFlags.DelayOnShutdown)
+                Thread.Sleep(3000);
 
             // Clear the console
             ConsoleWrapper.Clear();

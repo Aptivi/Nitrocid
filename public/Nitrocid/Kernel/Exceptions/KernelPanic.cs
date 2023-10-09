@@ -411,14 +411,14 @@ namespace KS.Kernel.Exceptions
                 string translated = Translate.DoTranslation("Previous boot failed");
                 var failureBuilder = new StringBuilder();
                 KernelFlags.NotifyKernelError = false;
-                SplashManager.BeginSplashOut();
+                SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 failureBuilder.AppendLine(translated);
                 failureBuilder.AppendLine(new string('=', translated.Length) + "\n");
                 failureBuilder.AppendLine(Translate.DoTranslation("We apologize for your inconvenience, but it looks like that the kernel was having trouble booting. The below error message might help:") + "\n");
                 failureBuilder.AppendLine(LastKernelErrorException.Message + "\n");
                 failureBuilder.AppendLine(Translate.DoTranslation("For further investigation, enable debugging mode on the kernel and try to reproduce the issue. Also, try to investigate the latest dump file created."));
                 InfoBoxColor.WriteInfoBoxKernelColor(failureBuilder.ToString(), KernelColorType.Error);
-                SplashManager.EndSplashOut();
+                SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
             }
         }
     }

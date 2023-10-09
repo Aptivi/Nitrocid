@@ -27,7 +27,7 @@ namespace KS.Misc.Splash
     {
 
         /// <summary>
-        /// Whether the splash is closing. If true, the thread of which handles the display should close itself. <see cref="Closing()"/> should set this property to True.
+        /// Whether the splash is closing. If true, the thread of which handles the display should close itself. <see cref="Closing(SplashContext)"/> should set this property to True.
         /// </summary>
         bool SplashClosing { get; set; }
         /// <summary>
@@ -41,15 +41,18 @@ namespace KS.Misc.Splash
         /// <summary>
         /// The opening screen. Should be synchronous.
         /// </summary>
-        void Opening();
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        void Opening(SplashContext context);
         /// <summary>
         /// The screen which is meant to be looped. You can set it to do nothing. Should be async. It should also handle <see cref="System.Threading.ThreadInterruptedException"/> to avoid kernel exiting on startup.
         /// </summary>
-        void Display();
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        void Display(SplashContext context);
         /// <summary>
         /// The closing screen. Should be synchronous.
         /// </summary>
-        void Closing();
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        void Closing(SplashContext context);
         /// <summary>
         /// Report the progress
         /// </summary>

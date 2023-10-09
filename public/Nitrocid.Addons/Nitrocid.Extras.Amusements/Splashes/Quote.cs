@@ -36,7 +36,7 @@ namespace Nitrocid.Extras.Amusements.Splashes
         public override string SplashName => "Quote";
 
         // Actual logic
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {

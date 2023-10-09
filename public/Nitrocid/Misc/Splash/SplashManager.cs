@@ -44,7 +44,8 @@ namespace KS.Misc.Splash
     public static class SplashManager
     {
 
-        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splash) => GetSplashFromName((string)splash).EntryPoint.Display());
+        internal static SplashContext currentContext = SplashContext.StartingUp;
+        internal static KernelThread SplashThread = new("Kernel Splash Thread", false, (splashParams) => SplashThreadHandler((SplashThreadParameters)splashParams));
         internal readonly static Dictionary<string, SplashInfo> InstalledSplashes = new()
         {
             // They are the base splashes. They shouldn't be moved to the splash addon pack as such movement breaks things.
@@ -75,6 +76,12 @@ namespace KS.Misc.Splash
         /// </summary>
         public static Dictionary<string, SplashInfo> Splashes =>
             InstalledSplashes;
+
+        /// <summary>
+        /// Gets the current splash context
+        /// </summary>
+        public static SplashContext CurrentSplashContext =>
+            currentContext;
 
         /// <summary>
         /// Gets names of the installed splashes
@@ -233,29 +240,33 @@ namespace KS.Misc.Splash
         /// <summary>
         /// Opens the splash screen
         /// </summary>
-        public static void OpenSplash() =>
-            OpenSplash(CurrentSplash);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void OpenSplash(SplashContext context) =>
+            OpenSplash(CurrentSplash, context);
 
         /// <summary>
         /// Opens the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
-        public static void OpenSplash(string splashName) =>
-            OpenSplash(GetSplashFromName(splashName).EntryPoint);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void OpenSplash(string splashName, SplashContext context) =>
+            OpenSplash(GetSplashFromName(splashName).EntryPoint, context);
 
         /// <summary>
         /// Opens the splash screen
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
-        public static void OpenSplash(ISplash splash)
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void OpenSplash(ISplash splash, SplashContext context)
         {
             if (KernelFlags.EnableSplash)
             {
+                currentContext = context;
                 SplashReport._Progress = 0;
                 ConsoleBase.ConsoleWrapper.CursorVisible = false;
-                splash.Opening();
+                splash.Opening(context);
                 SplashThread.Stop();
-                SplashThread.Start(splash.SplashName);
+                SplashThread.Start(new SplashThreadParameters(splash.SplashName, context));
                 SplashReport._InSplash = true;
             }
         }
@@ -263,32 +274,37 @@ namespace KS.Misc.Splash
         /// <summary>
         /// Closes the splash screen
         /// </summary>
-        public static void CloseSplash() =>
-            CloseSplash(CurrentSplash);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void CloseSplash(SplashContext context) =>
+            CloseSplash(CurrentSplash, context);
 
         /// <summary>
         /// Closes the splash screen
         /// </summary>
         /// <param name="splashName">Splash name</param>
-        public static void CloseSplash(string splashName) =>
-            CloseSplash(GetSplashFromName(splashName).EntryPoint);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void CloseSplash(string splashName, SplashContext context) =>
+            CloseSplash(GetSplashFromName(splashName).EntryPoint, context);
 
         /// <summary>
         /// Closes the splash screen
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
-        public static void CloseSplash(ISplash splash) =>
-            CloseSplash(splash, true);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void CloseSplash(ISplash splash, SplashContext context) =>
+            CloseSplash(splash, true, context);
 
         /// <summary>
         /// Closes the splash screen
         /// </summary>
         /// <param name="splash">Splash interface to use</param>
         /// <param name="showClosing">Shows the closing animation, or clears the screen</param>
-        internal static void CloseSplash(ISplash splash, bool showClosing)
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        internal static void CloseSplash(ISplash splash, bool showClosing, SplashContext context)
         {
             if (KernelFlags.EnableSplash)
             {
+                currentContext = context;
                 splash.SplashClosing = true;
 
                 // We need to wait for the splash display thread to finish its work once SplashClosing is set, because some splashes, like PowerLine,
@@ -298,9 +314,9 @@ namespace KS.Misc.Splash
                 SplashThread.Wait();
                 SplashThread.Stop();
                 if (showClosing)
-                    splash.Closing();
+                    splash.Closing(context);
                 else
-                    InstalledSplashes["Blank"].EntryPoint.Closing();
+                    InstalledSplashes["Blank"].EntryPoint.Closing(context);
                 ConsoleBase.ConsoleWrapper.CursorVisible = true;
 
                 // Reset the SplashClosing variable in case it needs to be open again. Some splashes don't do anything if they detect that the splash
@@ -313,47 +329,53 @@ namespace KS.Misc.Splash
         /// <summary>
         /// Previews the splash by name
         /// </summary>
-        public static void PreviewSplash() =>
-            PreviewSplash(CurrentSplash, false);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void PreviewSplash(SplashContext context) =>
+            PreviewSplash(CurrentSplash, false, context);
 
         /// <summary>
         /// Previews the splash by name
         /// </summary>
         /// <param name="splashOut">Whether to test out the important messages on splash.</param>
-        public static void PreviewSplash(bool splashOut) =>
-            PreviewSplash(CurrentSplash, splashOut);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void PreviewSplash(bool splashOut, SplashContext context) =>
+            PreviewSplash(CurrentSplash, splashOut, context);
 
         /// <summary>
         /// Previews the splash by name
         /// </summary>
         /// <param name="splashName">Splash name</param>
-        public static void PreviewSplash(string splashName) =>
-            PreviewSplash(GetSplashFromName(splashName).EntryPoint, false);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void PreviewSplash(string splashName, SplashContext context) =>
+            PreviewSplash(GetSplashFromName(splashName).EntryPoint, false, context);
 
         /// <summary>
         /// Previews the splash by name
         /// </summary>
         /// <param name="splashName">Splash name</param>
         /// <param name="splashOut">Whether to test out the important messages on splash.</param>
-        public static void PreviewSplash(string splashName, bool splashOut) =>
-            PreviewSplash(GetSplashFromName(splashName).EntryPoint, splashOut);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void PreviewSplash(string splashName, bool splashOut, SplashContext context) =>
+            PreviewSplash(GetSplashFromName(splashName).EntryPoint, splashOut, context);
 
         /// <summary>
         /// Previews the splash by name
         /// </summary>
         /// <param name="splash">Splash name</param>
-        public static void PreviewSplash(ISplash splash) =>
-            PreviewSplash(splash, false);
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void PreviewSplash(ISplash splash, SplashContext context) =>
+            PreviewSplash(splash, false, context);
 
         /// <summary>
         /// Previews the splash by name
         /// </summary>
         /// <param name="splash">Splash name</param>
         /// <param name="splashOut">Whether to test out the important messages on splash.</param>
-        public static void PreviewSplash(ISplash splash, bool splashOut)
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void PreviewSplash(ISplash splash, bool splashOut, SplashContext context)
         {
             // Open the splash and reset the report progress to 0%
-            OpenSplash(splash);
+            OpenSplash(splash, context);
 
             // Report progress 5 times
             for (int i = 1; i <= 5; i++)
@@ -363,32 +385,40 @@ namespace KS.Misc.Splash
                 Thread.Sleep(1000);
                 if (splashOut)
                 {
-                    BeginSplashOut();
+                    BeginSplashOut(context);
                     InfoBoxColor.WriteInfoBox(Translate.DoTranslation("We've reached {0}%!"), vars: prog);
-                    EndSplashOut();
+                    EndSplashOut(context);
                 }
             }
 
             // Close
-            CloseSplash(splash);
+            CloseSplash(splash, context);
         }
 
         /// <summary>
         /// Clears the screen for important messages to show up during kernel booting
         /// </summary>
-        public static void BeginSplashOut()
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void BeginSplashOut(SplashContext context)
         {
             if (KernelFlags.EnableSplash && SplashReport._InSplash)
-                CloseSplash(CurrentSplash, false);
+                CloseSplash(CurrentSplash, false, context);
         }
 
         /// <summary>
         /// Declares that it's done showing important messages during kernel booting
         /// </summary>
-        public static void EndSplashOut()
+        /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
+        public static void EndSplashOut(SplashContext context)
         {
             if (KernelFlags.EnableSplash && !SplashReport._InSplash)
-                OpenSplash();
+                OpenSplash(context);
+        }
+
+        private static void SplashThreadHandler(SplashThreadParameters threadParameters)
+        {
+            var splash = GetSplashFromName(threadParameters.SplashName).EntryPoint;
+            splash.Display(threadParameters.SplashContext);
         }
 
     }

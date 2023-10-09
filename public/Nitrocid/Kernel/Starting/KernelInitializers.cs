@@ -180,7 +180,7 @@ namespace KS.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded background.");
 
                 // Load splash
-                SplashManager.OpenSplash();
+                SplashManager.OpenSplash(SplashContext.StartingUp);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
 
                 // Populate debug devices
@@ -189,14 +189,14 @@ namespace KS.Kernel.Starting
             }
             catch (Exception ex)
             {
-                SplashManager.BeginSplashOut();
+                SplashManager.BeginSplashOut(SplashContext.StartingUp);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to initialize essential components! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxColor.WriteInfoBox(
                     Translate.DoTranslation("The kernel failed to initialize some of the essential components. The kernel will not work properly at this point.") + "\n\n" +
                     Translate.DoTranslation("Error information:") + $" {ex.Message}"
                 );
-                SplashManager.EndSplashOut();
+                SplashManager.EndSplashOut(SplashContext.StartingUp);
             }
         }
 
@@ -271,14 +271,14 @@ namespace KS.Kernel.Starting
             }
             catch (Exception ex)
             {
-                SplashManager.BeginSplashOut();
+                SplashManager.BeginSplashOut(SplashContext.StartingUp);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to initialize optional components! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxColor.WriteInfoBox(
                     Translate.DoTranslation("The kernel failed to initialize some of the optional components. If it's trying to read a configuration file, make sure that it's formatted correctly.") + "\n\n" +
                     Translate.DoTranslation("Error information:") + $" {ex.Message}"
                 );
-                SplashManager.EndSplashOut();
+                SplashManager.EndSplashOut(SplashContext.StartingUp);
             }
         }
 
@@ -295,10 +295,12 @@ namespace KS.Kernel.Starting
                 SplashReport._ProgressText = "";
                 SplashReport._KernelBooted = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
+                SplashReport.ReportProgress(Translate.DoTranslation("General variables reset"), 0);
 
                 // Save shell command histories
                 ShellManager.SaveHistories();
                 DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
+                SplashReport.ReportProgress(Translate.DoTranslation("Saved shell command histories."), 0);
 
                 // Save privacy consents
                 PrivacyConsentTools.SaveConsents();
@@ -319,6 +321,7 @@ namespace KS.Kernel.Starting
                 // Save all settings
                 Config.CreateConfig();
                 DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
+                SplashReport.ReportProgress(Translate.DoTranslation("Config saved."), 0);
 
                 // Stop all mods
                 ModManager.StopMods();
@@ -327,6 +330,7 @@ namespace KS.Kernel.Starting
                 // Stop all addons
                 AddonTools.UnloadAddons();
                 DebugWriter.WriteDebug(DebugLevel.I, "Addons stopped");
+                SplashReport.ReportProgress(Translate.DoTranslation("Extra kernel functions stopped."), 0);
 
                 // Stop RPC
                 RemoteProcedure.StopRPC();
@@ -335,10 +339,6 @@ namespace KS.Kernel.Starting
                 // Disconnect all connections
                 NetworkConnectionTools.CloseAllConnections();
                 DebugWriter.WriteDebug(DebugLevel.I, "Closed all connections");
-
-                // Unload all splashes
-                SplashManager.UnloadSplashes();
-                DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");
 
                 // Disable safe mode
                 KernelFlags.SafeMode = false;
@@ -372,15 +372,23 @@ namespace KS.Kernel.Starting
             {
                 // We could fail with the debugger enabled
                 KernelColorTools.LoadBack();
+                SplashManager.BeginSplashOut(SplashContext.ShuttingDown);
                 DebugWriter.WriteDebug(DebugLevel.E, $"Failed to reset everything! {ex.Message}");
                 DebugWriter.WriteDebugStackTrace(ex);
                 InfoBoxColor.WriteInfoBox(
                     Translate.DoTranslation("The kernel failed to reset all the configuration to their initial states. Some of the components might have not unloaded correctly. If you're experiencing problems after the reboot, this might be the cause. Please shut down the kernel once rebooted.") + "\n\n" +
                     Translate.DoTranslation("Error information:") + $" {ex.Message}"
                 );
+                SplashManager.EndSplashOut(SplashContext.ShuttingDown);
             }
             finally
             {
+                // Unload all splashes
+                SplashReport.ReportProgress(Translate.DoTranslation("Goodbye!"), 0);
+                SplashManager.CloseSplash(SplashContext.ShuttingDown);
+                SplashManager.UnloadSplashes();
+                DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");
+                SplashReport.logBuffer.Clear();
                 PowerManager.Uptime.Reset();
 
                 // Reset power state

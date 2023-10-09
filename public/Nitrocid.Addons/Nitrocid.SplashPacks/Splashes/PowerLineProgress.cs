@@ -57,7 +57,7 @@ namespace Nitrocid.SplashPacks.Splashes
         private readonly char TransitionChar = Convert.ToChar(0xE0B0);
 
         // Actual logic
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {

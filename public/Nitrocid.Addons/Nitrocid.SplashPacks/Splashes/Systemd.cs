@@ -38,7 +38,7 @@ namespace Nitrocid.SplashPacks.Splashes
         private bool Beginning = true;
 
         // Actual logic
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {

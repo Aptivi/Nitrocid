@@ -34,7 +34,7 @@ namespace Nitrocid.ScreensaverPacks.Splashes
 
         public SplashSpin() => SpinSettings = new SpinSettings();
 
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {

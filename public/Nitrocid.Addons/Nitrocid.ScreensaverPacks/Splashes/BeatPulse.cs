@@ -35,7 +35,7 @@ namespace Nitrocid.ScreensaverPacks.Splashes
         public SplashBeatPulse() => BeatPulseSettings = new BeatPulseSettings();
 
         // Actual logic
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {

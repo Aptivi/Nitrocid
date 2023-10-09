@@ -37,10 +37,10 @@ namespace KS.Kernel.Starting
             // If running on development version and not consented, interrupt boot and show developer disclaimer.
             if (!KernelFlags.DevNoticeConsented)
             {
-                SplashManager.BeginSplashOut();
+                SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 WelcomeMessage.ShowDevelopmentDisclaimer();
                 WelcomeMessage.ShowDotnet7Disclaimer();
-                SplashManager.EndSplashOut();
+                SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
             }
 
             // Now, initialize remote debugger if the kernel is running in debug mode

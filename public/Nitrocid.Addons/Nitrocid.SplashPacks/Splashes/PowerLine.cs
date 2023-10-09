@@ -41,15 +41,15 @@ namespace Nitrocid.SplashPacks.Splashes
         private readonly char TransitionChar = Convert.ToChar(0xE0B0);
 
         // Actual logic
-        public override void Opening()
+        public override void Opening(SplashContext context)
         {
             // Select the color segment background and mirror it to the transition foreground color
             FirstColorSegmentBackground = new Color(RandomDriver.Random(255), RandomDriver.Random(255), RandomDriver.Random(255));
             LastTransitionForeground = FirstColorSegmentBackground;
-            base.Opening();
+            base.Opening(context);
         }
 
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {

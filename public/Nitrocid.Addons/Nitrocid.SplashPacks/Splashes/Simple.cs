@@ -64,7 +64,7 @@ namespace Nitrocid.SplashPacks.Splashes
         }
 
         // Actual logic
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {

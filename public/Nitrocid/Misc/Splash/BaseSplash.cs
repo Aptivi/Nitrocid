@@ -44,14 +44,14 @@ namespace KS.Misc.Splash
 
         // Actual logic
         /// <inheritdoc/>
-        public virtual void Opening()
+        public virtual void Opening(SplashContext context)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             KernelColorTools.LoadBack();
         }
 
         /// <inheritdoc/>
-        public virtual void Display()
+        public virtual void Display(SplashContext context)
         {
             try
             {
@@ -66,7 +66,7 @@ namespace KS.Misc.Splash
         }
 
         /// <inheritdoc/>
-        public virtual void Closing()
+        public virtual void Closing(SplashContext context)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
             KernelColorTools.LoadBack();

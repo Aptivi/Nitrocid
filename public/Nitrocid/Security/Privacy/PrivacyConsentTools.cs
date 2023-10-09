@@ -80,7 +80,7 @@ namespace KS.Security.Privacy
 
             // Now, ask for consent, but respect the splash screen display
             if (!SplashReport.KernelBooted)
-                SplashManager.BeginSplashOut();
+                SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
             string consentAnswer = ChoiceStyle.PromptChoice(
                 TextTools.FormatString(
                     Translate.DoTranslation("It looks like that a mod with the root namespace of {0} tries to access your data with the permission of {1}. Do you want to allow this mod to access your data?"),
@@ -88,7 +88,7 @@ namespace KS.Security.Privacy
                 ), "y/n"
             );
             if (!SplashReport.KernelBooted)
-                SplashManager.EndSplashOut();
+                SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
             if (consentAnswer.ToLower() != "y")
                 return false;
 

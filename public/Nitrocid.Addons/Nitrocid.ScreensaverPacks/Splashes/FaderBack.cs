@@ -34,7 +34,7 @@ namespace Nitrocid.ScreensaverPacks.Splashes
         public SplashFaderBack() => FaderBackSettingsInstance = new FaderBackSettings();
 
         // Actual logic
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {

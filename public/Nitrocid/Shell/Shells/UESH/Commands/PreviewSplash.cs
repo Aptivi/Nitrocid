@@ -35,11 +35,12 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            // TODO: Add a switch that specifies the context
             bool splashOut = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-splashout");
             if (!(parameters.ArgumentsList.Length == 0))
-                SplashManager.PreviewSplash(parameters.ArgumentsList[0], splashOut);
+                SplashManager.PreviewSplash(parameters.ArgumentsList[0], splashOut, SplashContext.Showcase);
             else
-                SplashManager.PreviewSplash(splashOut);
+                SplashManager.PreviewSplash(splashOut, SplashContext.Showcase);
             return 0;
         }
 

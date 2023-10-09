@@ -84,7 +84,7 @@ namespace KS.Kernel
 
             // Show the closing screen
             SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
-            SplashManager.CloseSplash();
+            SplashManager.CloseSplash(SplashContext.StartingUp);
             SplashReport._KernelBooted = true;
             if (!KernelFlags.EnableSplash)
                 TextWriterColor.Write();
@@ -145,6 +145,11 @@ namespace KS.Kernel
                 DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
                 ShellStart.StartShellForced(ShellType.Shell);
             }
+
+            // Load splash
+            SplashReport._KernelBooted = false;
+            SplashManager.OpenSplash(SplashContext.ShuttingDown);
+            DebugWriter.WriteDebug(DebugLevel.I, "Loaded splash.");
         }
     }
 }

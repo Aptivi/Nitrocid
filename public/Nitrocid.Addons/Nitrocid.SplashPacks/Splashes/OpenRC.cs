@@ -44,7 +44,7 @@ namespace Nitrocid.SplashPacks.Splashes
         private readonly Color OpenRCPlaceholderColor = new(85, 85, 255);
 
         // Actual logic
-        public override void Opening()
+        public override void Opening(SplashContext context)
         {
             Beginning = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
@@ -52,7 +52,7 @@ namespace Nitrocid.SplashPacks.Splashes
             TextWriterColor.Write(CharManager.NewLine + $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC {OpenRCVersionColor.VTSequenceForeground}0.13.11 {KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground}is starting up {OpenRCPlaceholderColor.VTSequenceForeground}Nitrocid KS {KernelTools.KernelVersion}" + CharManager.NewLine);
         }
 
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {
@@ -68,7 +68,7 @@ namespace Nitrocid.SplashPacks.Splashes
             }
         }
 
-        public override void Closing()
+        public override void Closing(SplashContext context)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing. Clearing console...");
             ConsoleWrapper.Clear();

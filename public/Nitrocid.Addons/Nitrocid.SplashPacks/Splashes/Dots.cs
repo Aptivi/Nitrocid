@@ -37,7 +37,7 @@ namespace Nitrocid.SplashPacks.Splashes
         readonly Color secondColor = new(ConsoleColors.Cyan);
 
         // Actual logic
-        public override void Display()
+        public override void Display(SplashContext context)
         {
             try
             {
