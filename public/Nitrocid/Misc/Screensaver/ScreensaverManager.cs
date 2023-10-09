@@ -59,6 +59,7 @@ namespace KS.Misc.Screensaver
         internal static bool LockMode;
         internal static bool ShellSuppressLockMode;
         internal static bool inSaver;
+        internal static bool screenRefresh;
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
 
@@ -92,6 +93,23 @@ namespace KS.Misc.Screensaver
         /// </summary>
         public static string DefaultSaverName =>
             Config.MainConfig.DefaultSaverName;
+
+        /// <summary>
+        /// Whether the screen refresh is required
+        /// </summary>
+        public static bool ScreenRefreshRequired
+        {
+            get
+            {
+                bool refresh = screenRefresh;
+                if (refresh)
+                {
+                    screenRefresh = false;
+                    SpinWait.SpinUntil(() => !inSaver);
+                }
+                return refresh;
+            }
+        }
 
         /// <summary>
         /// Gets the name of the screensavers
@@ -171,6 +189,7 @@ namespace KS.Misc.Screensaver
                 }
 
                 // Now, judge how to launch the screensaver
+                screenRefresh = true;
                 if (saver.ToLower() == "random")
                 {
                     // Random screensaver selection function

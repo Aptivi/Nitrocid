@@ -25,6 +25,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
 using KS.Languages;
+using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using Terminaux.Sequences.Tools;
 
@@ -176,7 +177,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int endIndex = (answersPerPage * (currentPage + 1)) - 1;
 
                 // If the refresh is required, refresh the entire screen.
-                if (refreshRequired)
+                if (ScreensaverManager.ScreenRefreshRequired || refreshRequired)
                 {
                     refreshRequired = false;
                     ConsoleWrapper.Clear(true);

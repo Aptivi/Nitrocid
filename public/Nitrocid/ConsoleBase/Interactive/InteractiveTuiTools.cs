@@ -24,6 +24,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using System;
 using System.Collections;
@@ -233,7 +234,7 @@ namespace KS.ConsoleBase.Interactive
             int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
             // Redraw the entire TUI screen
-            if (BaseInteractiveTui.RedrawRequired)
+            if (ScreensaverManager.ScreenRefreshRequired || BaseInteractiveTui.RedrawRequired)
             {
                 _refreshSelection = true;
                 DebugWriter.WriteDebug(DebugLevel.I, "We're redrawing.");
