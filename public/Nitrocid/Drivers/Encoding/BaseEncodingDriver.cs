@@ -24,6 +24,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
@@ -214,11 +215,22 @@ namespace KS.Drivers.Encoding
             ICryptoTransform decryptor = aesDecryptor.CreateDecryptor(aesDecryptor.Key, aesDecryptor.IV);
             using MemoryStream msDecrypt = new(encoded);
             using CryptoStream csDecrypt = new(msDecrypt, decryptor, CryptoStreamMode.Read);
-            csDecrypt.Read(decrypted, 0, decrypted.Length);
+            int idx = 0;
+            int result = csDecrypt.ReadByte();
+            decrypted[idx] = (byte)result;
+            while (true)
+            {
+                idx++;
+                result = csDecrypt.ReadByte();
+                if (result == -1)
+                    break;
+                decrypted[idx] = (byte)result;
+            }
+            int diffIdx = encoded.Length - idx;
 
             // Write the array of bytes
             string decodedPath = path.RemovePostfix(".encoded");
-            Writing.WriteAllBytes(decodedPath, decrypted);
+            Writing.WriteAllBytes(decodedPath, decrypted.SkipLast(diffIdx).ToArray());
         }
     }
 }
