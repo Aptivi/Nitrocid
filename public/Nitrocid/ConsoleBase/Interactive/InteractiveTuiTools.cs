@@ -182,6 +182,11 @@ namespace KS.ConsoleBase.Interactive
                 _refreshSelection = true;
             if (pos == elements)
                 _refreshSelection = true;
+            if (ConsoleResizeListener.WasResized())
+            {
+                _refreshSelection = true;
+                BaseInteractiveTui.RedrawRequired = true;
+            }
         }
 
         /// <summary>
