@@ -16,11 +16,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Splash;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
+using System;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -35,12 +38,27 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            // TODO: Add a switch that specifies the context
             bool splashOut = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-splashout");
-            if (!(parameters.ArgumentsList.Length == 0))
-                SplashManager.PreviewSplash(parameters.ArgumentsList[0], splashOut, SplashContext.Showcase);
+            bool customContext = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-context");
+            string contextName =
+                customContext ?
+                SwitchManager.GetSwitchValue(parameters.SwitchesList, "-context") :
+                nameof(SplashContext.Showcase);
+            SplashContext context = SplashContext.Showcase;
+            bool contextValid =
+                customContext ?
+                Enum.TryParse(contextName, out context) :
+                true;
+            if (!contextValid)
+            {
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The splash context is not valid"), true, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.Splash;
+            }
+
+            if (parameters.ArgumentsList.Length > 0)
+                SplashManager.PreviewSplash(parameters.ArgumentsList[0], splashOut, context);
             else
-                SplashManager.PreviewSplash(splashOut, SplashContext.Showcase);
+                SplashManager.PreviewSplash(splashOut, context);
             return 0;
         }
 

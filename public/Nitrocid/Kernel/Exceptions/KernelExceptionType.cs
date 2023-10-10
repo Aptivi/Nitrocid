@@ -438,6 +438,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// Invalid privacy consent operation. Please make sure that the consent is correct and try again.
         /// </summary>
-        PrivacyConsent
+        PrivacyConsent,
+        /// <summary>
+        /// Splash manager has failed to perform your requested operation. Please check the splash name and try again.
+        /// </summary>
+        Splash
     }
 }

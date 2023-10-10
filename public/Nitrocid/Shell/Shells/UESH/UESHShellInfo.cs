@@ -1060,7 +1060,11 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("splashout", /* Localizable */ "Specifies whether to test out the important messages feature on splash", new SwitchOptions()
                             {
                                 AcceptsValues = false
-                            })
+                            }),
+                            new SwitchInfo("context", /* Localizable */ "Specifies the splash screen context", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            }),
                         })
                     }, new PreviewSplashCommand())
             },
