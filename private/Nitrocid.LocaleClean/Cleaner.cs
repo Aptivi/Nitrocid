@@ -90,7 +90,7 @@ namespace Nitrocid.LocaleClean
                     if (!found)
                     {
                         redundantIndexes.Add(lineNumber - 1);
-                        TextWriterColor.Write("Unused string found at eng.txt line {0}: {1}", true, ConsoleColors.Yellow, vars: new object[] { lineNumber, engString });
+                        TextWriterColor.WriteColor("Unused string found at eng.txt line {0}: {1}", true, ConsoleColors.Yellow, lineNumber, engString);
 
                         // Check to see if this detection is a false positive
                         bool falsePositive = false;
@@ -130,7 +130,7 @@ namespace Nitrocid.LocaleClean
 
                         // Print possible false positive
                         if (falsePositive)
-                            TextWriterColor.Write("  - Possible false positive in source {0} at eng.txt line {1}. Double-check the source.", true, ConsoleColors.Red, vars: new object[] { falsePositiveSource, lineNumber });
+                            TextWriterColor.WriteColor("  - Possible false positive in source {0} at eng.txt line {1}. Double-check the source.", true, ConsoleColors.Red, falsePositiveSource, lineNumber);
                     }
                     lineNumber++;
                 }
