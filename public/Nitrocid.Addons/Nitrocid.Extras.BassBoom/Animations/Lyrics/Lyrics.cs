@@ -117,11 +117,16 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             DebugWriter.WriteDebug(DebugLevel.I, "Visualizing lyric file {0} [file name: {1}]", path, fileName);
 
             // Start the elapsed time in 3...
+            bool bail = false;
             for (int i = 3; i > 0; i--)
             {
                 TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
                 TextWriterWhereColor.WriteWhereKernelColor($"{i}...", ConsoleWrapper.WindowWidth / 2 - $"{i}...".Length / 2, infoHeight, KernelColorType.NeutralText);
-                ThreadManager.SleepNoBlock(1000, Thread.CurrentThread);
+                if (ThreadManager.SleepUntilInput(1000))
+                {
+                    bail = true;
+                    break;
+                }
             }
 
             // Go!
@@ -129,14 +134,15 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
             TextWriterWhereColor.WriteWhereKernelColor("Go!", ConsoleWrapper.WindowWidth / 2 - "Go!".Length / 2, infoHeight, KernelColorType.NeutralText);
             var sw = new Stopwatch();
-            bool bail = false;
             sw.Start();
             foreach (var ts in lyricLines)
             {
+                if (bail)
+                    break;
+
                 while (sw.Elapsed < ts.LineSpan)
                 {
-                    ThreadManager.SleepNoBlock(1, Thread.CurrentThread);
-                    if (ConsoleWrapper.KeyAvailable)
+                    if (ThreadManager.SleepUntilInput(10))
                     {
                         bail = true;
                         break;

@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase;
+using KS.ConsoleBase.Inputs;
 using KS.Languages;
 using Microsoft.Diagnostics.Runtime;
 using System;
@@ -63,11 +65,40 @@ namespace KS.Kernel.Threading
         }
 
         /// <summary>
+        /// Sleeps until a key is input.
+        /// </summary>
+        public static void SleepUntilInput()
+        {
+            SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable);
+            if (ConsoleWrapper.KeyAvailable)
+                Input.DetectKeypressUnsafe();
+        }
+
+        /// <summary>
+        /// Sleeps until either the time specified, or a key is input.
+        /// </summary>
+        /// <param name="Time">Time in milliseconds</param>
+        public static bool SleepUntilInput(long Time)
+        {
+            bool result = SpinWait.SpinUntil(() => ConsoleWrapper.KeyAvailable, (int)Time);
+            if (result)
+                Input.DetectKeypressUnsafe();
+            return result;
+        }
+
+        /// <summary>
+        /// Sleeps until either the time specified, or the current thread is no longer alive.
+        /// </summary>
+        /// <param name="Time">Time in milliseconds</param>
+        public static bool SleepNoBlock(long Time) =>
+            Thread.CurrentThread.Join((int)Time);
+
+        /// <summary>
         /// Sleeps until either the time specified, or the thread is no longer alive.
         /// </summary>
         /// <param name="Time">Time in milliseconds</param>
         /// <param name="ThreadWork">The working thread</param>
-        public static void SleepNoBlock(long Time, Thread ThreadWork) =>
+        public static bool SleepNoBlock(long Time, Thread ThreadWork) =>
             ThreadWork.Join((int)Time);
 
         /// <summary>
@@ -75,7 +106,7 @@ namespace KS.Kernel.Threading
         /// </summary>
         /// <param name="Time">Time in milliseconds</param>
         /// <param name="ThreadWork">The working thread</param>
-        public static void SleepNoBlock(long Time, KernelThread ThreadWork) =>
+        public static bool SleepNoBlock(long Time, KernelThread ThreadWork) =>
             ThreadWork.Wait((int)Time);
 
         /// <summary>
