@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             var lyricLines = lyric.Lines;
             var shownLines = new List<LyricLine>();
             DebugWriter.WriteDebug(DebugLevel.I, "{0} lyric lines", lyricLines.Count);
-            TextWriterWhereColor.WriteWhereKernelColor($" {fileName.Truncate(infoMaxChars)} ", 4, ConsoleWrapper.WindowHeight - 4, KernelColorType.NeutralText);
+            BoxFrameTextColor.WriteBoxFrame(fileName, 2, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 6, 1);
             DebugWriter.WriteDebug(DebugLevel.I, "Visualizing lyric file {0} [file name: {1}]", path, fileName);
 
             // Start the elapsed time in 3...
