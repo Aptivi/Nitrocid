@@ -90,11 +90,7 @@ namespace KS.Kernel.Starting
                 DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
 
                 // Power signal handlers
-                if (!PowerSignalHandlers.initialized)
-                {
-                    PowerSignalHandlers.initialized = true;
-                    PowerSignalHandlers.RegisterHandlers();
-                }
+                PowerSignalHandlers.RegisterHandlers();
             }
             catch (Exception ex)
             {

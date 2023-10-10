@@ -33,9 +33,10 @@ namespace KS.ConsoleBase
     /// </summary>
     public static class ConsoleResizeListener
     {
+        internal static bool usesSigWinch;
         internal static bool ResizeDetected;
-        private static int CurrentWindowWidth;
-        private static int CurrentWindowHeight;
+        internal static int CurrentWindowWidth;
+        internal static int CurrentWindowHeight;
         private static readonly KernelThread ResizeListenerThread = new("Console Resize Listener Thread", true, PollForResize) { isCritical = true };
 
         /// <summary>
@@ -58,11 +59,12 @@ namespace KS.ConsoleBase
         /// </summary>
         public static (int Width, int Height) GetCurrentConsoleSize()
         {
-            if (!ResizeListenerThread.IsAlive)
+            if (!ResizeListenerThread.IsAlive && !usesSigWinch)
             {
                 var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
                 return (termDriver.WindowWidth, termDriver.WindowHeight);
             }
+            DebugWriter.WriteDebug(DebugLevel.W, "Cached: {0}x{1}", CurrentWindowWidth, CurrentWindowHeight);
             return (CurrentWindowWidth, CurrentWindowHeight);
         }
 

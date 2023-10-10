@@ -97,6 +97,10 @@ namespace KS.Misc.Screensaver.Displays
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
+            KernelColorTools.LoadBack("0;0;0");
+            ConsoleWrapper.Clear();
+            ConsoleWrapper.CursorVisible = false;
+
             // Choose the column for the falling line
             ColumnLine = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
 

@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
+using KS.Drivers;
+using KS.Drivers.Console;
 using KS.Kernel.Debugging;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -30,6 +32,9 @@ namespace KS.Kernel.Power
 
         internal static void RegisterHandlers()
         {
+            if (initialized)
+                return;
+
             // Works on Windows and Linux
             signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGINT, SigQuit));
             signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGTERM, SigQuit));
@@ -39,13 +44,18 @@ namespace KS.Kernel.Power
             {
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR1, SigReboot));
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGUSR2, SigReboot));
+                ConsoleResizeListener.CurrentWindowWidth = ConsoleWrapper.WindowWidth;
+                ConsoleResizeListener.CurrentWindowHeight = ConsoleWrapper.WindowHeight;
             }
 
             // Handle window change
-            if (KernelPlatform.IsOnUnix())
+            ConsoleResizeListener.usesSigWinch = KernelPlatform.IsOnUnix();
+            if (ConsoleResizeListener.usesSigWinch)
                 signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGWINCH, SigWindowChange));
             else
                 ConsoleResizeListener.StartResizeListener();
+
+            initialized = true;
         }
 
         internal static void DisposeHandlers()
@@ -70,6 +80,9 @@ namespace KS.Kernel.Power
         {
             DebugWriter.WriteDebug(DebugLevel.I, "SIGWINCH recieved!");
             ConsoleResizeListener.ResizeDetected = true;
+            var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
+            ConsoleResizeListener.CurrentWindowWidth = termDriver.WindowWidth;
+            ConsoleResizeListener.CurrentWindowHeight = termDriver.WindowHeight;
             psc.Cancel = true;
         }
     }
