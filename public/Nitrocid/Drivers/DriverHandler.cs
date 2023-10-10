@@ -37,6 +37,8 @@ using KS.Drivers.DebugLogger;
 using System;
 using KS.Drivers.Encoding.Bases;
 using KS.Drivers.Encoding;
+using KS.Drivers.HardwareProber.Bases;
+using KS.Drivers.HardwareProber;
 
 namespace KS.Drivers
 {
@@ -125,43 +127,53 @@ namespace KS.Drivers
                     { "Default", new AesEncoding() },
                     { "RSA", new RsaEncoding() },
                 }
+            },
+            { 
+                DriverTypes.HardwareProber, new()
+                { 
+                    { "Default", new DefaultHardwareProber() },
+                    { "SpecProbe", new SpecProbeHardwareProber() },
+                }
             }
         };
 
         internal static Dictionary<DriverTypes, Dictionary<string, IDriver>> customDrivers = new()
         {
-            { DriverTypes.Console,      new() },
-            { DriverTypes.RNG,          new() },
-            { DriverTypes.Network,      new() },
-            { DriverTypes.Filesystem,   new() },
-            { DriverTypes.Encryption,   new() },
-            { DriverTypes.Regexp,       new() },
-            { DriverTypes.DebugLogger,  new() },
-            { DriverTypes.Encoding,     new() },
+            { DriverTypes.Console,              new() },
+            { DriverTypes.RNG,                  new() },
+            { DriverTypes.Network,              new() },
+            { DriverTypes.Filesystem,           new() },
+            { DriverTypes.Encryption,           new() },
+            { DriverTypes.Regexp,               new() },
+            { DriverTypes.DebugLogger,          new() },
+            { DriverTypes.Encoding,             new() },
+            { DriverTypes.HardwareProber,       new() },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
         {
-            { DriverTypes.Console,      drivers[DriverTypes.Console]["Default"] },
-            { DriverTypes.RNG,          drivers[DriverTypes.RNG]["Default"] },
-            { DriverTypes.Network,      drivers[DriverTypes.Network]["Default"] },
-            { DriverTypes.Filesystem,   drivers[DriverTypes.Filesystem]["Default"] },
-            { DriverTypes.Encryption,   drivers[DriverTypes.Encryption]["Default"] },
-            { DriverTypes.Regexp,       drivers[DriverTypes.Regexp]["Default"] },
-            { DriverTypes.DebugLogger,  drivers[DriverTypes.DebugLogger]["Default"] },
-            { DriverTypes.Encoding,     drivers[DriverTypes.Encoding]["Default"] },
+            { DriverTypes.Console,              drivers[DriverTypes.Console]["Default"] },
+            { DriverTypes.RNG,                  drivers[DriverTypes.RNG]["Default"] },
+            { DriverTypes.Network,              drivers[DriverTypes.Network]["Default"] },
+            { DriverTypes.Filesystem,           drivers[DriverTypes.Filesystem]["Default"] },
+            { DriverTypes.Encryption,           drivers[DriverTypes.Encryption]["Default"] },
+            { DriverTypes.Regexp,               drivers[DriverTypes.Regexp]["Default"] },
+            { DriverTypes.DebugLogger,          drivers[DriverTypes.DebugLogger]["Default"] },
+            { DriverTypes.Encoding,             drivers[DriverTypes.Encoding]["Default"] },
+            { DriverTypes.HardwareProber,       drivers[DriverTypes.HardwareProber]["Default"] },
         };
 
         internal static Dictionary<Type, DriverTypes> knownTypes = new()
         {
-            { typeof(IConsoleDriver),     DriverTypes.Console },
-            { typeof(IRandomDriver),      DriverTypes.RNG },
-            { typeof(INetworkDriver),     DriverTypes.Network },
-            { typeof(IFilesystemDriver),  DriverTypes.Filesystem },
-            { typeof(IEncryptionDriver),  DriverTypes.Encryption },
-            { typeof(IRegexpDriver),      DriverTypes.Regexp },
-            { typeof(IDebugLoggerDriver), DriverTypes.DebugLogger },
-            { typeof(IEncodingDriver),    DriverTypes.Encoding },
+            { typeof(IConsoleDriver),           DriverTypes.Console },
+            { typeof(IRandomDriver),            DriverTypes.RNG },
+            { typeof(INetworkDriver),           DriverTypes.Network },
+            { typeof(IFilesystemDriver),        DriverTypes.Filesystem },
+            { typeof(IEncryptionDriver),        DriverTypes.Encryption },
+            { typeof(IRegexpDriver),            DriverTypes.Regexp },
+            { typeof(IDebugLoggerDriver),       DriverTypes.DebugLogger },
+            { typeof(IEncodingDriver),          DriverTypes.Encoding },
+            { typeof(IHardwareProberDriver),    DriverTypes.HardwareProber },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
@@ -215,6 +227,12 @@ namespace KS.Drivers
             begunLocal ? (IEncodingDriver)currentDriversLocal[DriverTypes.Encoding] : CurrentEncodingDriver;
 
         /// <summary>
+        /// Gets the current hardware prober driver (use this when possible)
+        /// </summary>
+        public static IHardwareProberDriver CurrentHardwareProberDriverLocal =>
+            begunLocal ? (IHardwareProberDriver)currentDriversLocal[DriverTypes.HardwareProber] : CurrentHardwareProberDriver;
+
+        /// <summary>
         /// Gets the system-wide current random driver
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
@@ -261,6 +279,12 @@ namespace KS.Drivers
         /// </summary>
         public static IEncodingDriver CurrentEncodingDriver =>
             (IEncodingDriver)currentDrivers[DriverTypes.Encoding];
+
+        /// <summary>
+        /// Gets the system-wide current hardware prober driver
+        /// </summary>
+        public static IHardwareProberDriver CurrentHardwareProberDriver =>
+            (IHardwareProberDriver)currentDrivers[DriverTypes.HardwareProber];
 
         /// <summary>
         /// Gets the driver

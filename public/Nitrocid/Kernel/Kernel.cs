@@ -19,7 +19,6 @@
 using System.Threading;
 using KS.ConsoleBase;
 using KS.Languages;
-using KS.ConsoleBase.Inputs;
 using KS.Kernel.Power;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Starting.Environment;

@@ -56,6 +56,7 @@ using KS.Kernel.Configuration.Settings;
 using KS.Drivers.Encoding;
 using KS.Drivers.DebugLogger;
 using KS.Files.Operations.Querying;
+using KS.Drivers.HardwareProber;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -1253,12 +1254,20 @@ namespace KS.Kernel.Configuration.Instances
             set => DebugLoggerDriverTools.SetDebugLoggerDriver(value);
         }
         /// <summary>
-        /// Current regular expression driver
+        /// Current encoding driver
         /// </summary>
         public string CurrentEncodingDriver
         {
             get => DriverHandler.GetDriverName<IEncodingDriver>(DriverHandler.CurrentEncodingDriver);
             set => EncodingDriverTools.SetEncodingDriver(value);
+        }
+        /// <summary>
+        /// Current hardware prober driver
+        /// </summary>
+        public string CurrentHardwareProberDriver
+        {
+            get => DriverHandler.GetDriverName<IHardwareProberDriver>(DriverHandler.CurrentHardwareProberDriver);
+            set => HardwareProberDriverTools.SetHardwareProberDriver(value);
         }
         /// <summary>
         /// The time and date will be shown in the upper right corner of the screen

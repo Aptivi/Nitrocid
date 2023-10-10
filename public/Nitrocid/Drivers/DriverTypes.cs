@@ -54,6 +54,10 @@ namespace KS.Drivers
         /// <summary>
         /// Encoding drivers
         /// </summary>
-        Encoding
+        Encoding,
+        /// <summary>
+        /// Hardware prober drivers
+        /// </summary>
+        HardwareProber,
     }
 }

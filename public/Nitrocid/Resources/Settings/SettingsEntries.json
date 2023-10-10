@@ -1271,6 +1271,16 @@
                 "SelectionFunctionType": "EncodingDriverTools",
                 "SelectionFallback": [ "Default" ],
                 "Description": "Which encoding driver would you like to use?"
+            },
+            {
+                "Name": "Current hardware prober driver",
+                "Type": "SSelection",
+                "Variable": "CurrentHardwareProberDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetHardwareProberDriverNames",
+                "SelectionFunctionType": "HardwareProberDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which hardware prober driver would you like to use?"
             }
         ]
     },

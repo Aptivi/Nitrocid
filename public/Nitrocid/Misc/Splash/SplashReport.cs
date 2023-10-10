@@ -26,7 +26,6 @@ using KS.Kernel.Time.Renderers;
 using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace KS.Misc.Splash
 {
