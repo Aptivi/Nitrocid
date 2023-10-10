@@ -92,7 +92,6 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.0.442202" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.ML" Version="2.0.1" PrivateAssets="all" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SharpCompress" Version="[0.33.0,0.33.0]" PrivateAssets="all" />
     <PackageReference Include="SSH.NET" Version="2020.0.2" PrivateAssets="all" />
@@ -115,9 +114,6 @@
   </ItemGroup>
   <Target Name="UpdateLaunchersManpages" BeforeTargets="Compile">
     <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutDir)" />
-  </Target>
-  <Target Name="UpdateAssistantTraining" BeforeTargets="Compile">
-    <Copy SourceFiles="Misc/Assistant/AssistantPredictor.zip" DestinationFolder="$(OutDir)" />
   </Target>
   <!-- KS Launchers and Manpages End -->
 

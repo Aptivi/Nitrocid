@@ -96,13 +96,6 @@ namespace KS.Shell.Shells.UESH
                     }, new AliasCommand(), CommandFlags.Strict)
             },
             
-            { "assistant",
-                new CommandInfo("assistant", ShellType, /* Localizable */ "Experimental AI assistant for Nitrocid",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new AssistantCommand(), CommandFlags.Strict)
-            },
-            
             { "beep",
                 new CommandInfo("beep", ShellType, /* Localizable */ "Beeps from the console",
                     new[] {
