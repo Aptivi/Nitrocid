@@ -94,18 +94,16 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             ConsoleWrapper.CursorVisible = false;
             KernelColorTools.LoadBack();
 
-            // Render the border in the lower part of the console for lyric line
+            // Get the height and the maximum number of characters
             int infoHeight = ConsoleWrapper.WindowHeight - 3;
             int infoMaxChars = ConsoleWrapper.WindowWidth - 9;
-            BorderColor.WriteBorder(2, ConsoleWrapper.WindowHeight - 4, ConsoleWrapper.WindowWidth - 6, 1);
 
             // If there is no lyric path, or if it doesn't exist, tell the user that they have to provide a path to the
             // lyrics folder.
             if (string.IsNullOrWhiteSpace(path) || !Checking.FileExists(path))
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", path);
-                ConsoleWrapper.SetCursorPosition(2, 1);
-                TextWriterColor.Write(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files."));
+                InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files."), false);
                 return;
             }
 
@@ -131,6 +129,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             TextWriterWhereColor.WriteWhere(new string(' ', infoMaxChars), 3, infoHeight);
             TextWriterWhereColor.WriteWhereKernelColor("Go!", ConsoleWrapper.WindowWidth / 2 - "Go!".Length / 2, infoHeight, KernelColorType.NeutralText);
             var sw = new Stopwatch();
+            bool bail = false;
             sw.Start();
             foreach (var ts in lyricLines)
             {
@@ -138,8 +137,14 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
                 {
                     ThreadManager.SleepNoBlock(1, Thread.CurrentThread);
                     if (ConsoleWrapper.KeyAvailable)
-                        return;
+                    {
+                        bail = true;
+                        break;
+                    }
                 }
+
+                if (bail)
+                    break;
 
                 if (sw.Elapsed > ts.LineSpan)
                 {
@@ -152,7 +157,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
                     shownLines.Add(ts);
                     DebugWriter.WriteDebug(DebugLevel.I, "shownLines = {0} / {1}", shownLines.Count, lyricLines.Count);
                     if (shownLines.Count == lyricLines.Count)
-                        return;
+                        break;
                 }
             }
             ConsoleWrapper.Clear();

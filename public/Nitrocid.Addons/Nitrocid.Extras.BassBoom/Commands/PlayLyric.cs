@@ -18,6 +18,9 @@
 
 using System.Threading;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Files.Operations.Querying;
+using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.BassBoom.Animations.Lyrics;
 
@@ -36,10 +39,16 @@ namespace Nitrocid.Extras.BassBoom.Commands
         {
             string pathToLyrics = parameters.ArgumentsList[0];
 
+            // If there is no lyric path, or if it doesn't exist, tell the user that they have to provide a path to the
+            // lyrics folder.
+            if (string.IsNullOrWhiteSpace(pathToLyrics) || !Checking.FileExists(pathToLyrics))
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Make sure to specify the path to a directory containing your lyric files in the LRC format. You can also specify a custom path to your music library folder containing the lyric files."));
+                return 17;
+            }
+
             // Visualize it!
             Lyrics.VisualizeLyric(pathToLyrics);
-            Thread.Sleep(10000);
-            ConsoleWrapper.CursorVisible = true;
             return 0;
         }
 
