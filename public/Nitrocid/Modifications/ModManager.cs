@@ -74,7 +74,7 @@ namespace KS.Modifications
                 // Check to see if we have mods
                 if (count != 0)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Loading mods..."), 0);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Loading mods..."));
                     DebugWriter.WriteDebug(DebugLevel.I, "Mods are being loaded. Total mods = {0}", count);
                     foreach (string modFilePath in Directory.EnumerateFiles(ModPath))
                     {
@@ -84,7 +84,7 @@ namespace KS.Modifications
                 }
                 else
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("No mods detected."), 0);
+                    SplashReport.ReportProgress(Translate.DoTranslation("No mods detected."));
                 }
             }
             else
@@ -114,13 +114,13 @@ namespace KS.Modifications
                         if (!GetBlacklistedMods().Contains(PathToMod))
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is not blacklisted.", ModFilename);
-                            SplashReport.ReportProgress(Translate.DoTranslation("Starting mod") + " {0}...", 0, ModFilename);
+                            SplashReport.ReportProgress(Translate.DoTranslation("Starting mod") + " {0}...", ModFilename);
                             ModParser.ParseMod(ModFilename);
                         }
                         else
                         {
                             DebugWriter.WriteDebug(DebugLevel.W, "Trying to start blacklisted mod {0}. Ignoring...", ModFilename);
-                            SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} is blacklisted."), 0, ModFilename);
+                            SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} is blacklisted."), ModFilename);
                         }
                     }
                     else
@@ -132,7 +132,7 @@ namespace KS.Modifications
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Mod not found!");
-                    SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} not found."), 0, ModFilename);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} not found."), ModFilename);
                 }
             }
             else
@@ -160,7 +160,7 @@ namespace KS.Modifications
                 // Check to see if we have mods
                 if (count != 0)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Stopping mods..."), 0);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Stopping mods..."));
                     DebugWriter.WriteDebug(DebugLevel.I, "Mods are being stopped. Total mods with screensavers = {0}", count);
 
                     // Enumerate and delete the script as soon as the stopping is complete
@@ -180,7 +180,7 @@ namespace KS.Modifications
                             ScriptPartInfo.PartScript.StopMod();
                             if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
                             {
-                                SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), 0, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+                                SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
                             }
 
                             // Remove the part from the list
@@ -209,7 +209,7 @@ namespace KS.Modifications
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Mods not found!");
-                    SplashReport.ReportProgress(Translate.DoTranslation("No mods detected."), 0);
+                    SplashReport.ReportProgress(Translate.DoTranslation("No mods detected."));
                 }
             }
             else
@@ -250,7 +250,7 @@ namespace KS.Modifications
             }
 
             // Iterate through all the mods
-            SplashReport.ReportProgress(Translate.DoTranslation("Stopping mod {0}..."), 0, ModFilename);
+            SplashReport.ReportProgress(Translate.DoTranslation("Stopping mod {0}..."), ModFilename);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod {0} is being stopped.", ModFilename);
             for (int ScriptIndex = Mods.Count - 1; ScriptIndex >= 0; ScriptIndex -= 1)
             {
@@ -272,14 +272,14 @@ namespace KS.Modifications
                     // Stop the associated part
                     ScriptPartInfo.PartScript.StopMod();
                     if (!string.IsNullOrWhiteSpace(ScriptPartInfo.PartName) & !string.IsNullOrWhiteSpace(ScriptPartInfo.PartScript.Version))
-                        SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), 0, ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
+                        SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} stopped"), ScriptPartInfo.PartName, ScriptPartInfo.PartScript.Version);
 
                     // Remove the part from the list
                     ScriptParts.Remove(ScriptParts.Keys.ElementAtOrDefault(PartIndex));
                 }
 
                 // Remove the mod from the list
-                SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} stopped"), 0, TargetMod.ModName);
+                SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} stopped"), TargetMod.ModName);
                 Mods.Remove(Mods.Keys.ElementAtOrDefault(ScriptIndex));
 
                 // Remove the mod dependency from the lookup

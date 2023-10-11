@@ -55,10 +55,10 @@ namespace KS.Kernel.Starting
                     if ((KernelFlags.Maintenance && stage.StageRunsInMaintenance) || !KernelFlags.Maintenance)
                         stage.StageAction();
                     else
-                        SplashReport.ReportProgress(Translate.DoTranslation("Running in maintenance mode. Skipping stage..."), 0);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Running in maintenance mode. Skipping stage..."));
                 }
                 else
-                    SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."));
                 KernelTools.CheckErrored();
             }
             else
@@ -77,7 +77,7 @@ namespace KS.Kernel.Starting
             {
                 if (KernelFlags.ShowStageFinishTimes)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {KernelTools.StageTimer.Elapsed}", 0);
+                    SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {KernelTools.StageTimer.Elapsed}");
                     KernelTools.StageTimer.Restart();
                 }
             }

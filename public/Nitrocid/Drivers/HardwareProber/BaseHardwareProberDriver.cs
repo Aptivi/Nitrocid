@@ -102,22 +102,22 @@ namespace KS.Drivers.HardwareProber
             // Verify the types
             if (processors is not Dictionary<string, Processor> procDict)
             {
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Failed to parse the CPU info. Ensure that it's a valid info list."), 0);
+                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Failed to parse the CPU info. Ensure that it's a valid info list."));
                 return;
             }
             if (memory is not PCMemory[] memList)
             {
-                SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Failed to parse the RAM info. Ensure that it's a valid info list."), 0);
+                SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Failed to parse the RAM info. Ensure that it's a valid info list."));
                 return;
             }
             if (graphics is not Dictionary<string, Graphics> gpuDict)
             {
-                SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Failed to parse the GPU info. Ensure that it's a valid info list."), 0);
+                SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Failed to parse the GPU info. Ensure that it's a valid info list."));
                 return;
             }
             if (hardDrives is not Dictionary<string, HardDrive> hddDict)
             {
-                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Failed to parse the HDD info. Ensure that it's a valid info list."), 0);
+                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Failed to parse the HDD info. Ensure that it's a valid info list."));
                 return;
             }
 
@@ -125,9 +125,9 @@ namespace KS.Drivers.HardwareProber
             foreach (string cpuName in procDict.Keys)
             {
                 var ProcessorInfo = procDict[cpuName];
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor name:") + " {0}", 0, cpuName);
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor clock speed:") + " {0}", 0, ProcessorInfo.Speed);
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor bits:") + $" {ProcessorInfo.Bits}-bit", 0);
+                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor name:") + " {0}", cpuName);
+                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor clock speed:") + " {0}", ProcessorInfo.Speed);
+                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor bits:") + $" {ProcessorInfo.Bits}-bit");
             }
             SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Total number of processors:") + $" {Environment.ProcessorCount}", 3);
 
@@ -139,7 +139,7 @@ namespace KS.Drivers.HardwareProber
             foreach (string GPUInfo in gpuDict.Keys)
             {
                 var TargetGraphics = gpuDict[GPUInfo];
-                SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Graphics card:") + " {0}", 0, TargetGraphics.Name);
+                SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Graphics card:") + " {0}", TargetGraphics.Name);
             }
 
             // Drive Info
@@ -147,15 +147,15 @@ namespace KS.Drivers.HardwareProber
             {
                 var TargetDrive = hddDict[DriveInfo];
                 string DriveModel = TargetDrive.Vendor == "(Standard disk drives)" ? $" {TargetDrive.Model}" : $" {TargetDrive.Vendor} {TargetDrive.Model}";
-                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk model:") + " {0}", 0, DriveModel);
-                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk size:") + " {0}", 0, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).SizeString() : TargetDrive.Size);
+                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk model:") + " {0}", DriveModel);
+                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk size:") + " {0}", KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).SizeString() : TargetDrive.Size);
 
                 // Partition info
                 foreach (string PartInfo in TargetDrive.Partitions.Keys)
                 {
                     var TargetPart = TargetDrive.Partitions[PartInfo];
-                    SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition size:") + " {1}", 0, TargetPart.ID, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetPart.Size).SizeString() : TargetPart.Size);
-                    SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition filesystem:") + " {1}", 0, TargetPart.ID, TargetPart.FileSystem);
+                    SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition size:") + " {1}", TargetPart.ID, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetPart.Size).SizeString() : TargetPart.Size);
+                    SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition filesystem:") + " {1}", TargetPart.ID, TargetPart.FileSystem);
                 }
             }
         }

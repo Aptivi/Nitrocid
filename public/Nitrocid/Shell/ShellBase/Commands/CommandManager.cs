@@ -196,7 +196,7 @@ namespace KS.Shell.ShellBase.Commands
             // Check to see if the help definition is full
             if (string.IsNullOrEmpty(commandBase.HelpDefinition))
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), 0, command);
+                SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), command);
                 DebugWriter.WriteDebug(DebugLevel.W, "No definition, {0}.Def = \"Command not defined\"", command);
                 commandBase.HelpDefinition = Translate.DoTranslation("Command not defined");
             }
@@ -339,7 +339,7 @@ namespace KS.Shell.ShellBase.Commands
             // Check to see if the help definition is full
             if (string.IsNullOrEmpty(commandBase.HelpDefinition))
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), 0, command);
+                SplashReport.ReportProgress(Translate.DoTranslation("No definition for command {0}."), command);
                 DebugWriter.WriteDebug(DebugLevel.W, "No definition, {0}.Def = \"Command not defined\"", command);
                 commandBase.HelpDefinition = Translate.DoTranslation("Command not defined");
             }

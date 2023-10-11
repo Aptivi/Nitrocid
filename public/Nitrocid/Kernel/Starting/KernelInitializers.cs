@@ -292,12 +292,12 @@ namespace KS.Kernel.Starting
                 SplashReport._ProgressText = "";
                 SplashReport._KernelBooted = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
-                SplashReport.ReportProgress(Translate.DoTranslation("General variables reset"), 0);
+                SplashReport.ReportProgress(Translate.DoTranslation("General variables reset"));
 
                 // Save shell command histories
                 ShellManager.SaveHistories();
                 DebugWriter.WriteDebug(DebugLevel.I, "Saved shell command histories.");
-                SplashReport.ReportProgress(Translate.DoTranslation("Saved shell command histories."), 0);
+                SplashReport.ReportProgress(Translate.DoTranslation("Saved shell command histories."));
 
                 // Save privacy consents
                 PrivacyConsentTools.SaveConsents();
@@ -322,7 +322,7 @@ namespace KS.Kernel.Starting
                 // Save all settings
                 Config.CreateConfig();
                 DebugWriter.WriteDebug(DebugLevel.I, "Config saved");
-                SplashReport.ReportProgress(Translate.DoTranslation("Config saved."), 0);
+                SplashReport.ReportProgress(Translate.DoTranslation("Config saved."));
 
                 // Stop all mods
                 ModManager.StopMods();
@@ -331,7 +331,7 @@ namespace KS.Kernel.Starting
                 // Stop all addons
                 AddonTools.UnloadAddons();
                 DebugWriter.WriteDebug(DebugLevel.I, "Addons stopped");
-                SplashReport.ReportProgress(Translate.DoTranslation("Extra kernel functions stopped."), 0);
+                SplashReport.ReportProgress(Translate.DoTranslation("Extra kernel functions stopped."));
 
                 // Stop RPC
                 RemoteProcedure.StopRPC();
@@ -385,7 +385,7 @@ namespace KS.Kernel.Starting
             finally
             {
                 // Unload all splashes
-                SplashReport.ReportProgress(Translate.DoTranslation("Goodbye!"), 0);
+                SplashReport.ReportProgress(Translate.DoTranslation("Goodbye!"));
                 SplashManager.CloseSplash(SplashContext.ShuttingDown);
                 SplashManager.UnloadSplashes();
                 DebugWriter.WriteDebug(DebugLevel.I, "Unloaded all splashes");

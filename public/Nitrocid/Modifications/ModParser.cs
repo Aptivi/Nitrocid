@@ -172,7 +172,7 @@ namespace KS.Modifications
                     catch
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that has undeterminable minimum API version.", modFile);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), 0, modFile);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} may not work properly with this API version. Mod may fail to start up. Contact the mod vendor to get a latest copy."), modFile);
                     }
 
                     // Locate the mod's localization files
@@ -244,7 +244,7 @@ namespace KS.Modifications
                         // Mod has no name! Give it a file name.
                         ModName = modFile;
                         DebugWriter.WriteDebug(DebugLevel.W, "No name for {0}", modFile);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the name. Review the source code."), 0, modFile);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the name. Review the source code."), modFile);
                     }
                     else
                     {
@@ -267,7 +267,7 @@ namespace KS.Modifications
                     if (string.IsNullOrWhiteSpace(script.Version))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "{0}.Version = \"\" | {0}.Name = {1}", modFile, script.Name);
-                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the version. Setting as") + " 1.0.0...", 0, script.Name);
+                        SplashReport.ReportProgress(Translate.DoTranslation("Mod {0} does not have the version. Setting as") + " 1.0.0...", script.Name);
                         script.Version = "1.0.0";
                     }
                     else
@@ -277,7 +277,7 @@ namespace KS.Modifications
                         {
                             // Parse the semantic version of the mod
                             var versionInfo = SemVer.Parse(script.Version);
-                            SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started") + " ({2})", 0, script.Name, script.Version, script.ModPart);
+                            SplashReport.ReportProgress(Translate.DoTranslation("{0} v{1} started") + " ({2})", script.Name, script.Version, script.ModPart);
                         }
                         catch (Exception ex)
                         {
