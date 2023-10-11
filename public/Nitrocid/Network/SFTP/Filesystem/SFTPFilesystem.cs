@@ -56,7 +56,7 @@ namespace KS.Network.SFTP.Filesystem
             var Entries = new List<string>();
             long FileSize;
             DateTime ModDate;
-            IEnumerable<SftpFile> Listing;
+            IEnumerable<ISftpFile> Listing;
 
             try
             {
@@ -68,7 +68,7 @@ namespace KS.Network.SFTP.Filesystem
                 {
                     Listing = ((SftpClient)SFTPShellCommon.ClientSFTP.ConnectionInstance).ListDirectory(SFTPShellCommon.SFTPCurrentRemoteDir);
                 }
-                foreach (SftpFile DirListSFTP in Listing)
+                foreach (ISftpFile DirListSFTP in Listing)
                 {
                     EntryBuilder.Append($"- {DirListSFTP.Name}");
                     // Check to see if the file that we're dealing with is a symbolic link

@@ -90,11 +90,11 @@
     <PackageReference Include="LibGit2Sharp.NativeBinaries" Version="2.0.320" PrivateAssets="all" />
     <PackageReference Include="MailKit" Version="4.2.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="5.2.9" PrivateAssets="all" />
-    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.11" PrivateAssets="all" />
+    <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.12" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.0.442202" PrivateAssets="all" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SharpCompress" Version="[0.33.0,0.33.0]" PrivateAssets="all" />
-    <PackageReference Include="SSH.NET" Version="2020.0.2" PrivateAssets="all" />
+    <PackageReference Include="SSH.NET" Version="2023.0.0" PrivateAssets="all" />
     <PackageReference Include="Syndian" Version="0.3.1" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
