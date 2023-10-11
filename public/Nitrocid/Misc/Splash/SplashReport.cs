@@ -87,7 +87,7 @@ namespace KS.Misc.Splash
         /// Reports the progress for the splash screen while the kernel is booting.
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
-        /// <param name="Progress">The progress indicator of the kernel</param>
+        /// <param name="Progress">The progress percentage from 0 to 100 to increment to the overall percentage</param>
         /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
@@ -100,7 +100,7 @@ namespace KS.Misc.Splash
         /// Reports the progress for the splash screen while the kernel is booting.
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
-        /// <param name="Progress">The progress indicator of the kernel</param>
+        /// <param name="Progress">The progress percentage from 0 to 100 to increment to the overall percentage</param>
         /// <param name="force">Force report progress to splash</param>
         /// <param name="splash">Splash interface</param>
         /// <param name="Vars">Variables to be expanded to text</param>
@@ -112,10 +112,21 @@ namespace KS.Misc.Splash
         {
             if (!KernelBooted && InSplash || force)
             {
+                // Check the progress value
+                if (Progress < 0)
+                    Progress = 0;
+                if (Progress > 100)
+                    Progress = 100;
+
+                // Increment and check
                 _Progress += Progress;
-                _ProgressText = Text;
                 if (_Progress >= 100)
                     _Progress = 100;
+
+                // Set the progress text
+                _ProgressText = Text;
+
+                // Report it
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
                 {
                     if (KernelFlags.EnableSplash && splash != null)
@@ -129,6 +140,8 @@ namespace KS.Misc.Splash
                         TextWriterColor.WriteKernelColor($"  [{_Progress}%] {Text}", true, KernelColorType.Tip, Vars);
                     }
                 }
+
+                // Add to the log buffer
                 logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Info: {TextTools.FormatString(Text, Vars)}");
             }
             else
@@ -180,7 +193,10 @@ namespace KS.Misc.Splash
         {
             if (!KernelBooted && InSplash || force)
             {
+                // Set the progress text
                 _ProgressText = Text;
+
+                // Report it
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
                 {
                     if (KernelFlags.EnableSplash && splash != null)
@@ -194,6 +210,8 @@ namespace KS.Misc.Splash
                         TextWriterColor.WriteKernelColor($"  [{_Progress}%] Warning: {Text}", true, KernelColorType.Warning, Vars);
                     }
                 }
+
+                // Add to the log buffer
                 logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Warning: {TextTools.FormatString(Text, Vars)}");
             }
             else
@@ -245,7 +263,10 @@ namespace KS.Misc.Splash
         {
             if (!KernelBooted && InSplash || force)
             {
+                // Set the progress text
                 _ProgressText = Text;
+
+                // Report it
                 if (SplashManager.CurrentSplashInfo.DisplaysProgress)
                 {
                     if (KernelFlags.EnableSplash && splash != null)
@@ -259,6 +280,8 @@ namespace KS.Misc.Splash
                         TextWriterColor.WriteKernelColor($"  [{_Progress}%] Error: {Text}", true, KernelColorType.Error, Vars);
                     }
                 }
+
+                // Add to the log buffer
                 logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Error: {TextTools.FormatString(Text, Vars)}");
             }
             else
