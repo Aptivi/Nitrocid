@@ -35,8 +35,6 @@ namespace Nitrocid.Extras.ColorConvert.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string Hex;
-
             // Check to see if we have the numeric arguments
             if (!int.TryParse(parameters.ArgumentsList[0], out int R))
             {
@@ -55,10 +53,10 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             }
 
             // Do the job
-            Hex = KernelColorTools.ConvertFromRGBToHex(R, G, B);
+            string hex = KernelColorConversionTools.ConvertFromRGBToHex(R, G, B);
             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(Hex, true, KernelColorType.ListValue);
-            variableValue = Hex;
+            TextWriterColor.WriteKernelColor(hex, true, KernelColorType.ListValue);
+            variableValue = hex;
             return 0;
         }
 

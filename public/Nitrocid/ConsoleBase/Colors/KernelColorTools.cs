@@ -24,7 +24,6 @@ using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
-using KS.Languages;
 using Terminaux.Colors;
 using Terminaux.Colors.Accessibility;
 
@@ -356,77 +355,6 @@ namespace KS.ConsoleBase.Colors
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
-        }
-
-        /// <summary>
-        /// Converts from the hexadecimal representation of a color to the RGB sequence
-        /// </summary>
-        /// <param name="Hex">A hexadecimal representation of a color (#AABBCC for example)</param>
-        /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
-        public static string ConvertFromHexToRGB(string Hex)
-        {
-            if (Hex.StartsWith("#"))
-            {
-                int ColorDecimal = Convert.ToInt32(Hex[1..], 16);
-                int R = (byte)((ColorDecimal & 0xFF0000) >> 0x10);
-                int G = (byte)((ColorDecimal & 0xFF00) >> 8);
-                int B = (byte)(ColorDecimal & 0xFF);
-                DebugWriter.WriteDebug(DebugLevel.I, "Got color (R;G;B: {0};{1};{2})", R, G, B);
-                return $"{R};{G};{B}";
-            }
-            else
-                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid hex color specifier."));
-        }
-
-        /// <summary>
-        /// Converts from the RGB sequence of a color to the hexadecimal representation
-        /// </summary>
-        /// <param name="RGBSequence">&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</param>
-        /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
-        public static string ConvertFromRGBToHex(string RGBSequence)
-        {
-            if (RGBSequence.Contains(';'))
-            {
-                // Split the VT sequence into three parts
-                var ColorSpecifierArray = RGBSequence.Split(';');
-                if (ColorSpecifierArray.Length == 3)
-                {
-                    int R = Convert.ToInt32(ColorSpecifierArray[0]);
-                    int G = Convert.ToInt32(ColorSpecifierArray[1]);
-                    int B = Convert.ToInt32(ColorSpecifierArray[2]);
-                    string hex = $"#{R:X2}{G:X2}{B:X2}";
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (#RRGGBB: {0})", hex);
-                    return hex;
-                }
-                else
-                {
-                    throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid RGB color specifier."));
-                }
-            }
-            else
-            {
-                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid RGB color specifier."));
-            }
-        }
-
-        /// <summary>
-        /// Converts from the RGB sequence of a color to the hexadecimal representation
-        /// </summary>
-        /// <param name="R">The red level</param>
-        /// <param name="G">The green level</param>
-        /// <param name="B">The blue level</param>
-        /// <returns>A hexadecimal representation of a color (#AABBCC for example)</returns>
-        public static string ConvertFromRGBToHex(int R, int G, int B)
-        {
-            if (R < 0 | R > 255)
-                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid red color specifier."));
-            if (G < 0 | G > 255)
-                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid green color specifier."));
-            if (B < 0 | B > 255)
-                throw new KernelException(KernelExceptionType.Color, Translate.DoTranslation("Invalid blue color specifier."));
-            string hex = $"#{R:X2}{G:X2}{B:X2}";
-            DebugWriter.WriteDebug(DebugLevel.I, "Got color (#RRGGBB: {0})", hex);
-            return hex;
         }
 
         /// <summary>

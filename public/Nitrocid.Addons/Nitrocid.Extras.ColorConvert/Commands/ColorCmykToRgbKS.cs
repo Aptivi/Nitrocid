@@ -21,7 +21,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
@@ -59,10 +58,10 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             }
 
             // Do the job
-            var rgb = new Color($"cmyk:{C};{M};{Y};{K}");
+            var rgb = KernelColorConversionTools.ConvertFromCmykToRgb(C, M, Y, K);
             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("RGB color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"{rgb.PlainSequenceTrueColor}", true, KernelColorType.ListValue);
-            variableValue = rgb.PlainSequence;
+            TextWriterColor.WriteKernelColor($"{rgb}", true, KernelColorType.ListValue);
+            variableValue = rgb;
             return 0;
         }
 

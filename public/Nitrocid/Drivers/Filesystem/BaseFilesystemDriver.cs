@@ -33,7 +33,6 @@ using FS = KS.Files.Filesystem;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using KS.Files.Operations;
-using FluentFTP.Helpers;
 using KS.Kernel;
 using KS.ConsoleBase.Colors;
 using KS.Misc.Text;

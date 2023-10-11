@@ -20,7 +20,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
@@ -36,14 +35,13 @@ namespace Nitrocid.Extras.ColorConvert.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string Hex = parameters.ArgumentsList[0];
+            string CMYK;
 
             // Do the job
-            var rgb = new Color(Hex);
-            var cmyk = rgb.CMYK;
-            var cmy = rgb.CMYK.CMY;
+            CMYK = KernelColorConversionTools.ConvertFromHexToCmyk(Hex);
             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("CMYK color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"cmyk:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole};{cmyk.KWhole}", true, KernelColorType.ListValue);
-            variableValue = $"cmyk:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole};{cmyk.KWhole}";
+            TextWriterColor.WriteKernelColor(CMYK, true, KernelColorType.ListValue);
+            variableValue = CMYK;
             return 0;
         }
 

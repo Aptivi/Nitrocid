@@ -24,7 +24,6 @@ using KS.Languages;
 using KS.Misc.Splash;
 using KS.Kernel.Events;
 using KS.Kernel.Configuration;
-using KS.Drivers;
 using System.Collections;
 using KS.Drivers.HardwareProber;
 

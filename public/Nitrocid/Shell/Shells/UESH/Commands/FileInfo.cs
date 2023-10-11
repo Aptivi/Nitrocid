@@ -18,7 +18,6 @@
 
 using System.IO;
 using System.Reflection;
-using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;

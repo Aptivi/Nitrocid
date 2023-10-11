@@ -19,10 +19,8 @@
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.HardwareProber;
 using KS.Kernel.Exceptions;
-using KS.Kernel.Hardware;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

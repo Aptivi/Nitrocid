@@ -16,11 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.HardwareProber;
-using KS.Kernel.Hardware;
 using KS.Shell.ShellBase.Commands;
-using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

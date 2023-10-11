@@ -297,38 +297,5 @@ namespace Nitrocid.Tests.ConsoleBase
             return KernelColorTools.TryParseColor(specifier);
         }
 
-        /// <summary>
-        /// Tests trying to convert from hex to RGB
-        /// </summary>
-        [Test]
-        [Description("Querying")]
-        public void TestConvertFromHexToRGB()
-        {
-            Console.WriteLine("Converting #0F0F0F...");
-            KernelColorTools.ConvertFromHexToRGB("#0F0F0F").ShouldBe("15;15;15");
-        }
-
-        /// <summary>
-        /// Tests trying to convert from RGB sequence to hex
-        /// </summary>
-        [Test]
-        [Description("Querying")]
-        public void TestConvertFromRGBSequenceToHex()
-        {
-            Console.WriteLine("Converting 15;15;15...");
-            KernelColorTools.ConvertFromRGBToHex("15;15;15").ShouldBe("#0F0F0F");
-        }
-
-        /// <summary>
-        /// Tests trying to convert from RGB numbers to hex
-        /// </summary>
-        [Test]
-        [Description("Querying")]
-        public void TestConvertFromRGBNumbersToHex()
-        {
-            Console.WriteLine("Converting 15, 15, 15...");
-            KernelColorTools.ConvertFromRGBToHex(15, 15, 15).ShouldBe("#0F0F0F");
-        }
-
     }
 }

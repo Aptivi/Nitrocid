@@ -21,7 +21,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
@@ -59,10 +58,10 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             }
 
             // Do the job
-            var color = new Color($"cmyk:{C};{M};{Y};{K}");
+            string hex = KernelColorConversionTools.ConvertFromCmykToHex(C, M, Y, K);
             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(color.Hex, true, KernelColorType.ListValue);
-            variableValue = color.Hex;
+            TextWriterColor.WriteKernelColor(hex, true, KernelColorType.ListValue);
+            variableValue = hex;
             return 0;
         }
 

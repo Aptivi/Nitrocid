@@ -20,7 +20,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
@@ -36,13 +35,13 @@ namespace Nitrocid.Extras.ColorConvert.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string Hex = parameters.ArgumentsList[0];
+            string HSL;
 
             // Do the job
-            var rgb = new Color(Hex);
-            var hsl = rgb.HSL;
+            HSL = KernelColorConversionTools.ConvertFromHexToHsl(Hex);
             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("HSL color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor($"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}", true, KernelColorType.ListValue);
-            variableValue = $"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
+            TextWriterColor.WriteKernelColor(HSL, true, KernelColorType.ListValue);
+            variableValue = HSL;
             return 0;
         }
 

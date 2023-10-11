@@ -19,7 +19,6 @@
 using KS.Misc.Reflection;
 using NUnit.Framework;
 using Shouldly;
-using System;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
