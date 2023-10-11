@@ -143,7 +143,10 @@ namespace Nitrocid.LocaleGen.Core.Serializer
 
             // Save metadata
             if (!dry)
+            {
+                File.Delete($"{outputFolder}/Metadata.json");
                 File.Copy(metadataPath, $"{outputFolder}/Metadata.json");
+            }
             else
                 Debug.WriteLine($"Would be saved to: {outputFolder}/Metadata.json");
         }
