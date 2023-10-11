@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Drivers.HardwareProber;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Hardware;
 using KS.Languages;
@@ -36,17 +37,11 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var driveKeyValues = HardwareProbe.HardwareInfo.Hardware.HDD;
-            var hardDrives = HardwareProbe.HardwareInfo.Hardware.HDD.Keys.ToArray();
             bool isDriveNum = int.TryParse(parameters.ArgumentsList[0], out int driveNum);
-            if (isDriveNum && driveNum <= hardDrives.Length)
+            if (isDriveNum)
             {
-                // Get the drive index and get the partition info
-                int driveIdx = driveNum - 1;
-                var drive = driveKeyValues[hardDrives[driveIdx]];
-                TextWriterColor.Write($"[{drive.ID}] {drive.Vendor} {drive.Model}");
-                TextWriterColor.Write($"  - {drive.Size}, {drive.Speed}, {drive.Serial}");
-                variableValue = $"[{drive.ID}] {drive.Vendor} {drive.Model} | {drive.Size}, {drive.Speed}, {drive.Serial}";
+                // Get the drive index and get the disk info
+                variableValue = HardwareProberDriver.DiskInfo(driveNum - 1);
                 return 0;
             }
             else

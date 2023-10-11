@@ -24,6 +24,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Reflection;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using System;
@@ -59,7 +60,7 @@ namespace KS.ConsoleBase.Interactive
 
                 // First, check to see if the interactive TUI has no data source
                 if (interactiveTui.PrimaryDataSource is null && interactiveTui.SecondaryDataSource is null ||
-                    CountElements(interactiveTui.PrimaryDataSource) == 0 && CountElements(interactiveTui.SecondaryDataSource) == 0 && !interactiveTui.AcceptsEmptyData)
+                    EnumerableTools.CountElements(interactiveTui.PrimaryDataSource) == 0 && EnumerableTools.CountElements(interactiveTui.SecondaryDataSource) == 0 && !interactiveTui.AcceptsEmptyData)
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("The interactive TUI {0} doesn't contain any data source. This program can't continue."), true, KernelColorType.Error, interactiveTui.GetType().Name);
                     TextWriterColor.Write();
@@ -158,7 +159,7 @@ namespace KS.ConsoleBase.Interactive
             var data = BaseInteractiveTui.CurrentPane == 2 ?
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
-            int elements = CountElements(data);
+            int elements = EnumerableTools.CountElements(data);
             if (pos < 1)
                 pos = 1;
             if (pos > elements)
@@ -194,36 +195,6 @@ namespace KS.ConsoleBase.Interactive
         /// </summary>
         public static void ForceRefreshSelection() =>
             _refreshSelection = true;
-
-        internal static int CountElements(IEnumerable enumerable)
-        {
-            int dataCount = 0;
-            foreach (var item in enumerable)
-                // IEnumerable from System.Collections doesn't implement Count() or Length, hence the array, List<>, Dictionary<>,
-                // and other collections have either Count or Length. This is an ugly hack that we should live with.
-                dataCount++;
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} elements.", dataCount);
-            return dataCount;
-        }
-
-        internal static object GetElementFromIndex(IEnumerable enumerable, int index)
-        {
-            // Here, it's getting uglier as we don't have ElementAt() in IEnumerable, too!
-            object dataObject = null;
-            int steppedItems = 0;
-            foreach (var item in enumerable)
-            {
-                steppedItems++;
-                if (steppedItems == index + 1)
-                {
-                    // We found the item that we need! Assign it to dataObject so GetEntryFromItem() can formulate a string.
-                    DebugWriter.WriteDebug(DebugLevel.I, "Found required item index {0}.", index);
-                    dataObject = item;
-                    break;
-                }
-            }
-            return dataObject;
-        }
 
         private static void DrawInteractiveTui(BaseInteractiveTui interactiveTui)
         {
@@ -330,7 +301,7 @@ namespace KS.ConsoleBase.Interactive
 
             // Get how many data are there in the chosen data source
             var data = paneNum == 2 ? interactiveTui.SecondaryDataSource : interactiveTui.PrimaryDataSource;
-            int dataCount = CountElements(data);
+            int dataCount = EnumerableTools.CountElements(data);
 
             // Render the pane right away
             int answersPerPage = SeparatorMaximumHeightInterior;
@@ -405,7 +376,7 @@ namespace KS.ConsoleBase.Interactive
 
             // Get how many data are there in the chosen data source
             var data = paneNum == 2 ? interactiveTui.SecondaryDataSource : interactiveTui.PrimaryDataSource;
-            int dataCount = CountElements(data);
+            int dataCount = EnumerableTools.CountElements(data);
 
             // Render the pane right away
             int answersPerPage = SeparatorMaximumHeightInterior;
@@ -491,13 +462,13 @@ namespace KS.ConsoleBase.Interactive
                 var data = BaseInteractiveTui.CurrentPane == 2 ?
                            interactiveTui.SecondaryDataSource :
                            interactiveTui.PrimaryDataSource;
-                int dataCount = CountElements(data);
+                int dataCount = EnumerableTools.CountElements(data);
 
                 // Populate selected data
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} elements.", dataCount);
                 if (dataCount > 0)
                 {
-                    object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
+                    object selectedData = EnumerableTools.GetElementFromIndex(data, paneCurrentSelection - 1);
                     DebugCheck.AssertNull(selectedData,
                         "attempted to render info about null data");
                     finalInfoRendered = interactiveTui.GetInfoFromItem(selectedData);
@@ -548,7 +519,7 @@ namespace KS.ConsoleBase.Interactive
             var data = BaseInteractiveTui.CurrentPane == 2 ?
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
-            object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
+            object selectedData = EnumerableTools.GetElementFromIndex(data, paneCurrentSelection - 1);
             interactiveTui.RenderStatus(selectedData);
             DebugWriter.WriteDebug(DebugLevel.I, "Status rendered. {0}", BaseInteractiveTui.Status);
 
@@ -570,10 +541,10 @@ namespace KS.ConsoleBase.Interactive
             var data = BaseInteractiveTui.CurrentPane == 2 ?
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
-            int dataCount = CountElements(data);
+            int dataCount = EnumerableTools.CountElements(data);
 
             // Populate selected data
-            object selectedData = GetElementFromIndex(data, paneCurrentSelection - 1);
+            object selectedData = EnumerableTools.GetElementFromIndex(data, paneCurrentSelection - 1);
 
             // Wait for key
             try
@@ -669,9 +640,9 @@ namespace KS.ConsoleBase.Interactive
 
         private static void CheckSelectionForUnderflow(BaseInteractiveTui interactiveTui)
         {
-            if (BaseInteractiveTui.FirstPaneCurrentSelection <= 0 && CountElements(interactiveTui.PrimaryDataSource) > 0)
+            if (BaseInteractiveTui.FirstPaneCurrentSelection <= 0 && EnumerableTools.CountElements(interactiveTui.PrimaryDataSource) > 0)
                 BaseInteractiveTui.FirstPaneCurrentSelection = 1;
-            if (BaseInteractiveTui.SecondPaneCurrentSelection <= 0 && CountElements(interactiveTui.SecondaryDataSource) > 0)
+            if (BaseInteractiveTui.SecondPaneCurrentSelection <= 0 && EnumerableTools.CountElements(interactiveTui.SecondaryDataSource) > 0)
                 BaseInteractiveTui.SecondPaneCurrentSelection = 1;
         }
     }

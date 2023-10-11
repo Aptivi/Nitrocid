@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Exceptions;
+using System.Collections;
 
 namespace KS.Drivers.HardwareProber.Bases
 {
@@ -25,7 +26,26 @@ namespace KS.Drivers.HardwareProber.Bases
         public override string DriverName =>
             "SpecProbe";
 
-        public override void ProbeHardware()
+        /// <inheritdoc/>
+        public override IEnumerable ProbeGraphics()
+        {
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+        }
+
+        /// <inheritdoc/>
+        public override IEnumerable ProbeHardDrive()
+        {
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+        }
+
+        /// <inheritdoc/>
+        public override IEnumerable ProbePcMemory()
+        {
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+        }
+
+        /// <inheritdoc/>
+        public override IEnumerable ProbeProcessor()
         {
             throw new KernelException(KernelExceptionType.NotImplementedYet);
         }

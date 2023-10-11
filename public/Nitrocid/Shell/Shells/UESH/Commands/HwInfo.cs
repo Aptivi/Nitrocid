@@ -38,9 +38,5 @@ namespace KS.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        public override void HelpHelper() =>
-            TextWriterColor.Write(Translate.DoTranslation("where HardwareType will be") +
-                " HDD, LogicalParts, CPU, GPU, Sound, Network, System, Machine, BIOS, RAM, all.");
-
     }
 }

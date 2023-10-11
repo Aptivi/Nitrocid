@@ -486,12 +486,6 @@
                 "Description": "Keep hardware probing messages silent."
             },
             {
-                "Name": "Full Probe",
-                "Type": "SBoolean",
-                "Variable": "FullHardwareProbe",
-                "Description": "If true, probes all the hardware; else, will only probe the needed hardware."
-            },
-            {
                 "Name": "Verbose Probe",
                 "Type": "SBoolean",
                 "Variable": "VerboseHardwareProbe",

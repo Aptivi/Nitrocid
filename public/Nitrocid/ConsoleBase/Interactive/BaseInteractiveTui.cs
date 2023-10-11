@@ -18,6 +18,7 @@
 
 using KS.Kernel.Configuration;
 using KS.Languages;
+using KS.Misc.Reflection;
 using System;
 using System.Collections;
 using System.Collections.Generic;
@@ -119,8 +120,8 @@ namespace KS.ConsoleBase.Interactive
         /// <inheritdoc/>
         public virtual void LastOnOverflow()
         {
-            int primaryCount = InteractiveTuiTools.CountElements(PrimaryDataSource);
-            int secondaryCount = InteractiveTuiTools.CountElements(SecondaryDataSource);
+            int primaryCount = EnumerableTools.CountElements(PrimaryDataSource);
+            int secondaryCount = EnumerableTools.CountElements(SecondaryDataSource);
             if (FirstPaneCurrentSelection > primaryCount)
                 FirstPaneCurrentSelection = primaryCount;
             if (SecondPaneCurrentSelection > secondaryCount)

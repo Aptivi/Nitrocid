@@ -64,8 +64,7 @@ namespace KS.Resources {
         ///   Looks up a localized string similar to [
         ///    {
         ///        &quot;Name&quot;: &quot;Matrix&quot;,
-        ///        &quot;Desc&quot;: &quot;Settings for this screensaver are available here.&quot;,
-        ///        &quot;Path&quot;: &quot;Screensaver.Matrix&quot;,
+        ///        &quot;Desc&quot;: &quot;The falling binary number in your screen.&quot;,
         ///        &quot;Keys&quot;: [
         ///            {
         ///                &quot;Name&quot;: &quot;Delay in Milliseconds&quot;,
@@ -76,6 +75,7 @@ namespace KS.Resources {
         ///            {
         ///                &quot;Name&quot;: &quot;Max Fade Steps&quot;,
         ///                &quot;Type&quot;: &quot;SInt&quot;,
+        ///                &quot;Variable&quot;: &quot;MatrixMaxSteps&quot;,
         ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ScreensaverSettingsEntries {
@@ -89,7 +89,6 @@ namespace KS.Resources {
         ///    {
         ///        &quot;Name&quot;: &quot;General&quot;,
         ///        &quot;Desc&quot;: &quot;This section lists all general kernel settings, mainly for maintaining the kernel.&quot;,
-        ///        &quot;Path&quot;: &quot;General&quot;,
         ///        &quot;DisplayAs&quot;: &quot;General kernel settings&quot;,
         ///        &quot;Keys&quot;: [
         ///            {
@@ -99,7 +98,7 @@ namespace KS.Resources {
         ///                &quot;Description&quot;: &quot;Each startup, it will check for updates.&quot;
         ///            },
         ///            {
-        ///            [rest of string was truncated]&quot;;.
+        ///                &quot;Name&quot;: &quot;Custom Startup [rest of string was truncated]&quot;;.
         /// </summary>
         public static string SettingsEntries {
             get {

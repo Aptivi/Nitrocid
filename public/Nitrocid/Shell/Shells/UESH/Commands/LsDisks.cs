@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Drivers.HardwareProber;
 using KS.Kernel.Hardware;
 using KS.Shell.ShellBase.Commands;
 using System.Linq;
@@ -34,21 +35,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var hardDrives = HardwareProbe.HardwareInfo.Hardware.HDD.Keys.ToArray();
-            ListWriterColor.WriteList(hardDrives);
-            variableValue = $"[{string.Join(", ", hardDrives)}]";
-            return 0;
-        }
-
-        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
-        {
-            var hardDrives = HardwareProbe.HardwareInfo.Hardware.HDD.Keys.ToArray();
-            for (int i = 0; i < hardDrives.Length; i++)
-            {
-                string hardDrive = hardDrives[i];
-                TextWriterColor.Write($"- [{i + 1}] {hardDrive}");
-            }
-            variableValue = $"[{string.Join(", ", hardDrives)}]";
+            HardwareProberDriver.ListDisks();
             return 0;
         }
 

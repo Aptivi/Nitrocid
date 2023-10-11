@@ -707,7 +707,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "HardwareType", () => new[] { "HDD", "LogicalParts", "CPU", "GPU", "Sound", "Network", "System", "Machine", "BIOS", "RAM", "all" })
+                            new CommandArgumentPart(true, "HardwareType", () => new[] { "HDD", "CPU", "GPU", "RAM", "all" })
                         }, Array.Empty<SwitchInfo>())
                     }, new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },

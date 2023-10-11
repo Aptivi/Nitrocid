@@ -119,11 +119,6 @@ namespace KS.Kernel.Configuration
         public static bool WrapListOutputs =>
             Config.MainConfig.WrapListOutputs;
         /// <summary>
-        /// Ensures that all hardware will be probed
-        /// </summary>
-        public static bool FullHardwareProbe =>
-            Config.MainConfig.FullHardwareProbe;
-        /// <summary>
         /// Makes the hardware prober a bit talkative
         /// </summary>
         public static bool VerboseHardwareProbe =>

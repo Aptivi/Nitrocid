@@ -659,10 +659,6 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool QuietHardwareProbe { get; set; }
         /// <summary>
-        /// If true, probes all the hardware; else, will only probe the needed hardware.
-        /// </summary>
-        public bool FullHardwareProbe { get; set; }
-        /// <summary>
         /// Make hardware probing messages a bit talkative.
         /// </summary>
         public bool VerboseHardwareProbe { get; set; }

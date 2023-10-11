@@ -64,11 +64,14 @@ namespace KS.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;English&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Invalid color template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will be probed. Please wait...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing info [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Invalid color template {0}&quot;,
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;,
+        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;,
+        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;,
+        ///    &quot;HDD: One or more of the hard drives failed to be probed. Showing information anyway...&quot;,
+        ///    &quot;Enter the admin password for maintenance.&quot;,
+        ///    &quot;Kern [rest of string was truncated]&quot;;.
         /// </summary>
         public static string eng {
             get {
@@ -78,30 +81,12 @@ namespace KS.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///    &quot;arb&quot;: {
-        ///        &quot;name&quot;: &quot;Arabic&quot;,
-        ///        &quot;transliterable&quot;: true
-        ///    },
-        ///    &quot;arb-T&quot;: {
-        ///        &quot;name&quot;: &quot;Arabic&quot;,
-        ///        &quot;transliterable&quot;: true,
-        ///        &quot;codepage&quot;: 1256
-        ///    },
-        ///    &quot;chi&quot;: {
-        ///        &quot;name&quot;: &quot;Chinese&quot;,
-        ///        &quot;transliterable&quot;: true
-        ///    },
-        ///    &quot;chi-T&quot;: {
-        ///        &quot;name&quot;: &quot;Chinese&quot;,
-        ///        &quot;transliterable&quot;: true,
-        ///        &quot;codepage&quot;: 936
-        ///    },
-        ///    &quot;cnt&quot;: {
-        ///        &quot;name&quot;: &quot;Chinese (Traditional)&quot;,
-        ///        &quot;transliterable&quot;: true
-        ///    },
-        ///    &quot;cnt-T&quot;: {
-        ///        &quot;name&quot; [rest of string was truncated]&quot;;.
+        ///    &quot;eng&quot;: {
+        ///        &quot;name&quot;: &quot;English&quot;,
+        ///        &quot;transliterable&quot;: false
+        ///    }
+        ///}
+        ///.
         /// </summary>
         public static string LanguageMetadata {
             get {

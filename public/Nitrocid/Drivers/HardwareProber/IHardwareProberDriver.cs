@@ -15,6 +15,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using System.Collections;
+
 namespace KS.Drivers.HardwareProber
 {
     /// <summary>
@@ -23,8 +25,71 @@ namespace KS.Drivers.HardwareProber
     public interface IHardwareProberDriver : IDriver
     {
         /// <summary>
-        /// Probes the hardware
+        /// Probes the processor
         /// </summary>
-        void ProbeHardware();
+        /// <returns>An object representing the processor collection object</returns>
+        IEnumerable ProbeProcessor();
+
+        /// <summary>
+        /// Probes the PC memory
+        /// </summary>
+        /// <returns>An object representing the PC memory collection object</returns>
+        IEnumerable ProbePcMemory();
+
+        /// <summary>
+        /// Probes the graphics adapter
+        /// </summary>
+        /// <returns>An object representing the graphics adapter collection object</returns>
+        IEnumerable ProbeGraphics();
+
+        /// <summary>
+        /// Probes the hard drives
+        /// </summary>
+        /// <returns>An object representing the hard drive collection object</returns>
+        IEnumerable ProbeHardDrive();
+
+        /// <summary>
+        /// Lists all the probed hardware. Please note that this overload probes all the hardware
+        /// </summary>
+        void ListHardware();
+
+        /// <summary>
+        /// Lists all the probed hardware.
+        /// </summary>
+        /// <param name="processors">List of processors returned from the same driver</param>
+        /// <param name="memory">List of memory returned from the same driver</param>
+        /// <param name="graphics">List of graphics adapters returned from the same driver</param>
+        /// <param name="hardDrives">List of hard drives returned from the same driver</param>
+        void ListHardware(IEnumerable processors, IEnumerable memory, IEnumerable graphics, IEnumerable hardDrives);
+
+        /// <summary>
+        /// Lists information about hardware
+        /// </summary>
+        /// <param name="hardwareType">Hardware type defined by Inxi.NET and supported by the prober driver. If "all", prints all information.</param>
+        void ListHardware(string hardwareType);
+
+        /// <summary>
+        /// Lists the disk partitions
+        /// </summary>
+        /// <param name="diskIndex">The zero-based number of the disk number</param>
+        string ListDiskPartitions(int diskIndex);
+
+        /// <summary>
+        /// Lists the disks
+        /// </summary>
+        string ListDisks();
+
+        /// <summary>
+        /// Prints the disk info
+        /// </summary>
+        /// <param name="diskIndex">The zero-based number of the disk number</param>
+        string DiskInfo(int diskIndex);
+
+        /// <summary>
+        /// Prints the disk partition info
+        /// </summary>
+        /// <param name="diskIndex">The zero-based number of the disk number</param>
+        /// <param name="diskPartitionIndex">The zero-based number of the disk partition number</param>
+        string DiskPartitionInfo(int diskIndex, int diskPartitionIndex);
     }
 }

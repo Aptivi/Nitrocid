@@ -24,6 +24,9 @@ using KS.Languages;
 using KS.Misc.Splash;
 using KS.Kernel.Events;
 using KS.Kernel.Configuration;
+using KS.Drivers;
+using System.Collections;
+using KS.Drivers.HardwareProber;
 
 namespace KS.Kernel.Hardware
 {
@@ -32,8 +35,10 @@ namespace KS.Kernel.Hardware
     /// </summary>
     public static class HardwareProbe
     {
-
-        internal static Inxi HardwareInfo;
+        internal static IEnumerable processors;
+        internal static IEnumerable pcMemory;
+        internal static IEnumerable hardDrive;
+        internal static IEnumerable graphics;
 
         /// <summary>
         /// Starts probing hardware
@@ -46,16 +51,11 @@ namespace KS.Kernel.Hardware
             {
                 InxiTrace.DebugDataReceived += WriteInxiDebugData;
                 InxiTrace.HardwareParsed += WriteWhatProbed;
-                if (KernelFlags.FullHardwareProbe)
-                {
-                    HardwareInfo = new Inxi();
-                    DebugWriter.WriteDebug(DebugLevel.I, "Probe finished.");
-                }
-                else
-                {
-                    HardwareInfo = new Inxi(InxiHardwareType.Processor | InxiHardwareType.PCMemory | InxiHardwareType.Graphics | InxiHardwareType.HardDrive);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Probe finished. InxiHardwareType.Processor | InxiHardwareType.PCMemory | InxiHardwareType.Graphics | InxiHardwareType.HardDrive");
-                }
+                processors = HardwareProberDriver.ProbeProcessor();
+                pcMemory = HardwareProberDriver.ProbePcMemory();
+                hardDrive = HardwareProberDriver.ProbeHardDrive();
+                graphics = HardwareProberDriver.ProbeGraphics();
+                DebugWriter.WriteDebug(DebugLevel.I, "Probe finished.");
                 InxiTrace.DebugDataReceived -= WriteInxiDebugData;
                 InxiTrace.HardwareParsed -= WriteWhatProbed;
             }
@@ -83,7 +83,8 @@ namespace KS.Kernel.Hardware
         /// <summary>
         /// Write Inxi.NET debug data to debugger
         /// </summary>
-        private static void WriteInxiDebugData(string Message, string PlainMessage) => DebugWriter.WriteDebug(DebugLevel.I, PlainMessage);
+        private static void WriteInxiDebugData(string Message, string PlainMessage) =>
+            DebugWriter.WriteDebug(DebugLevel.I, PlainMessage);
 
     }
 }

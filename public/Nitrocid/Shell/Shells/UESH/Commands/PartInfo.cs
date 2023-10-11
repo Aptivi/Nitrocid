@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Drivers.HardwareProber;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Hardware;
 using KS.Languages;
@@ -36,31 +37,17 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var driveKeyValues = HardwareProbe.HardwareInfo.Hardware.HDD;
-            var hardDrives = driveKeyValues.Keys.ToArray();
             bool isDriveNum = int.TryParse(parameters.ArgumentsList[0], out int driveNum);
-            if (isDriveNum && driveNum <= hardDrives.Length)
+            if (isDriveNum)
             {
                 // Get the drive index and get the partition info
                 int driveIdx = driveNum - 1;
-                var partKeyValues = driveKeyValues[hardDrives[driveIdx]].Partitions;
-                var parts = partKeyValues.Keys.ToArray();
                 bool isPartNum = int.TryParse(parameters.ArgumentsList[1], out int partNum);
-                if (isPartNum && partNum <= parts.Length)
+                if (isPartNum)
                 {
                     // Get the part index and get the partition info
                     int partIdx = partNum - 1;
-                    var part = partKeyValues[parts[partIdx]];
-
-                    // Write partition information
-                    string id = part.ID;
-                    string name = part.Name;
-                    string size = part.Size;
-                    string used = part.Used;
-                    string fileSystem = part.FileSystem;
-                    TextWriterColor.Write($"[{partNum}] {name}, {id}");
-                    TextWriterColor.Write($"  - {used} / {size}, {fileSystem}");
-                    variableValue = $"[{partNum}] {name}, {id} | {used} / {size}, {fileSystem}";
+                    variableValue = HardwareProberDriver.DiskPartitionInfo(driveIdx, partIdx);
                     return 0;
                 }
                 else

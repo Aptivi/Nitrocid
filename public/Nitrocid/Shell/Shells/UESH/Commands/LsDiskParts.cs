@@ -17,11 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Drivers.HardwareProber;
 using KS.Kernel.Exceptions;
-using KS.Kernel.Hardware;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -36,29 +35,16 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var driveKeyValues = HardwareProbe.HardwareInfo.Hardware.HDD;
-            var hardDrives = HardwareProbe.HardwareInfo.Hardware.HDD.Keys.ToArray();
             bool isDriveNum = int.TryParse(parameters.ArgumentsList[0], out int driveNum);
-            if (isDriveNum && driveNum <= hardDrives.Length)
+            if (isDriveNum)
             {
-                // Get the drive index and get the partition info
-                int driveIdx = driveNum - 1;
-                var parts = driveKeyValues[hardDrives[driveIdx]].Partitions;
-                int partNum = 1;
-                foreach (var part in parts.Values)
-                {
-                    // Write partition information
-                    string id = part.ID;
-                    string name = part.Name;
-                    TextWriterColor.Write($"[{partNum}] {name}, {id}");
-                    partNum++;
-                }
-                variableValue = $"[{string.Join(", ", parts.Keys)}]";
+                // Get the drive index and get the disk info
+                variableValue = HardwareProberDriver.ListDiskPartitions(driveNum - 1);
                 return 0;
             }
             else
             {
-                TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
+                TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
                 return 10000 + (int)KernelExceptionType.Hardware;
             }
         }
