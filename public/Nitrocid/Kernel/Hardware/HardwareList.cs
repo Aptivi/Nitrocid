@@ -20,13 +20,13 @@ using System;
 using System.Collections;
 using System.Linq;
 using System.Reflection;
-using FluentFTP.Helpers;
 using InxiFrontend;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Reflection;
 using KS.Misc.Splash;
 
 namespace KS.Kernel.Hardware
@@ -85,7 +85,7 @@ namespace KS.Kernel.Hardware
                 SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Total number of processors:") + $" {Environment.ProcessorCount}", 3);
 
                 // Print RAM info
-                SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Total memory:") + " {0}", 2, KernelPlatform.IsOnWindows() ? ((long)Math.Round(Convert.ToDouble(HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory) * 1024d)).FileSizeToString() : HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory);
+                SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Total memory:") + " {0}", 2, KernelPlatform.IsOnWindows() ? ((long)Math.Round(Convert.ToDouble(HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory) * 1024d)).SizeString() : HardwareProbe.HardwareInfo.Hardware.RAM.TotalMemory);
 
                 // GPU info
                 foreach (string GPUInfo in HardwareProbe.HardwareInfo.Hardware.GPU.Keys)
@@ -100,13 +100,13 @@ namespace KS.Kernel.Hardware
                     var TargetDrive = HardwareProbe.HardwareInfo.Hardware.HDD[DriveInfo];
                     string DriveModel = TargetDrive.Vendor == "(Standard disk drives)" ? $" {TargetDrive.Model}" : $" {TargetDrive.Vendor} {TargetDrive.Model}";
                     SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk model:") + " {0}", 0, DriveModel);
-                    SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk size:") + " {0}", 0, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).FileSizeToString() : TargetDrive.Size);
+                    SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk size:") + " {0}", 0, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).SizeString() : TargetDrive.Size);
 
                     // Partition info
                     foreach (string PartInfo in TargetDrive.Partitions.Keys)
                     {
                         var TargetPart = TargetDrive.Partitions[PartInfo];
-                        SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition size:") + " {1}", 0, TargetPart.ID, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetPart.Size).FileSizeToString() : TargetPart.Size);
+                        SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition size:") + " {1}", 0, TargetPart.ID, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetPart.Size).SizeString() : TargetPart.Size);
                         SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition filesystem:") + " {1}", 0, TargetPart.ID, TargetPart.FileSystem);
                     }
                 }

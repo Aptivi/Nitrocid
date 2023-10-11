@@ -19,6 +19,7 @@
 using KS.Misc.Reflection;
 using NUnit.Framework;
 using Shouldly;
+using System;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
@@ -134,6 +135,26 @@ namespace Nitrocid.Tests.Misc.Reflection
             int expectedDigits = 5;
             int digits = number.GetDigits();
             digits.ShouldBe(expectedDigits);
+        }
+
+        /// <summary>
+        /// Tests getting digits
+        /// </summary>
+        [Test]
+        [TestCase(-1, "0 B")]
+        [TestCase(0, "0 B")]
+        [TestCase(1, "1 B")]
+        [TestCase(1024, "1 KB")]
+        [TestCase(1024 * 1024, "1 MB")]
+        [TestCase(1024 * 1024 * 1024, "1 GB")]
+        [TestCase(1024L * 1024 * 1024 * 1024, "1 TB")]
+        [TestCase(1024L * 1024 * 1024 * 1024 * 1024, "1 PB")]
+        [TestCase(1024L * 1024 * 1024 * 1024 * 1024 * 1024, "1 EB")]
+        [Description("Querying")]
+        public static void TestFileSizeString(long bytes, string expectedHumanized)
+        {
+            string humanized = bytes.SizeString();
+            humanized.ShouldBe(expectedHumanized);
         }
 
     }

@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     // General info
                     TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), FileInfo.Name);
                     TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(FileInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), FileInfo.Length.FileSizeToString());
+                    TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), FileInfo.Length.SizeString());
                     TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(FileInfo.CreationTime));
                     TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(FileInfo.LastAccessTime));
                     TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(FileInfo.LastWriteTime));

@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.IO;
-using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
@@ -26,6 +25,7 @@ using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
+using KS.Misc.Reflection;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     var DirInfo = new DirectoryInfo(DirectoryPath);
                     TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), DirInfo.Name);
                     TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(DirInfo.FullName));
-                    TextWriterColor.Write(Translate.DoTranslation("Size: {0}"), SizeGetter.GetAllSizesInFolder(DirInfo).FileSizeToString());
+                    TextWriterColor.Write(Translate.DoTranslation("Size: {0}"), SizeGetter.GetAllSizesInFolder(DirInfo).SizeString());
                     TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(DirInfo.CreationTime));
                     TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime));
                     TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime));

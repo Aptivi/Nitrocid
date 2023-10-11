@@ -20,7 +20,6 @@ using System;
 using System.Net.Http;
 using System.Net.Http.Handlers;
 using System.Threading;
-using FluentFTP.Helpers;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -30,6 +29,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;
+using KS.Misc.Reflection;
 using KS.Misc.Text.Probers.Placeholder;
 
 namespace KS.Network.Base.Transfer
@@ -238,11 +238,11 @@ namespace KS.Network.Base.Transfer
                         {
                             if (!string.IsNullOrWhiteSpace(DownloadPercentagePrint))
                             {
-                                TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
+                                TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(DownloadPercentagePrint), 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
                             }
                             else
                             {
-                                TextWriterWhereColor.WriteWhereKernelColor(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.FileSizeToString(), TransferInfo.FileSize.FileSizeToString(), Progress);
+                                TextWriterWhereColor.WriteWhereKernelColor(" {2:000.00}% | " + indicator, 0, ConsoleWrapper.CursorTop, false, KernelColorType.NeutralText, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString(), Progress);
                             }
                             ConsoleExtensions.ClearLineToRight();
                         }

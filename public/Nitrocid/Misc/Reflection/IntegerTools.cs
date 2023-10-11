@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Misc.Text;
 using System;
 
 namespace KS.Misc.Reflection
@@ -25,6 +26,23 @@ namespace KS.Misc.Reflection
     /// </summary>
     public static class IntegerTools
     {
+        private static readonly string[] sizeOrders =
+        {
+            "B",  // Bytes
+            "KB", // Kilobytes
+            "MB", // Megabytes
+            "GB", // Gigabytes
+            "TB", // Terabytes
+            "PB", // Petabytes
+            "EB", // Exabytes
+#if NET8_0
+            "ZB", // Zettabytes
+            "YB", // Yottabytes
+            "RB", // Ronnabytes
+            "QB"  // Quettabytes
+#endif
+        };
+
         /// <summary>
         /// Swaps the two numbers if the source is larger than the target
         /// </summary>
@@ -72,5 +90,43 @@ namespace KS.Misc.Reflection
         /// <returns>How many digits are there in a number</returns>
         public static int GetDigits(this int Number) =>
             Number == 0 ? 1 : (int)Math.Log10(Math.Abs(Number)) + 1;
+
+        /// <summary>
+		/// Converts a file size in bytes to a human-readable format
+		/// </summary>
+		public static string SizeString(this int bytes) =>
+            ((long)bytes).SizeString();
+
+        /// <summary>
+        /// Converts a file size in bytes to a human-readable format
+        /// </summary>
+        public static string SizeString(this uint bytes) =>
+            ((long)bytes).SizeString();
+
+        /// <summary>
+        /// Converts a file size in bytes to a human-readable format
+        /// </summary>
+        public static string SizeString(this ulong bytes) =>
+            ((long)bytes).SizeString();
+
+        /// <summary>
+        /// Converts a file size in bytes to a human-readable format
+        /// </summary>
+        public static string SizeString(this long bytes)
+        {
+            if (double.IsNaN(bytes) || bytes < 0)
+                bytes = 0;
+
+            double bytesForEachKilobyte = 1024;
+            var orderIdx = 0;
+            double len = bytes;
+            while (len >= bytesForEachKilobyte && orderIdx < sizeOrders.Length - 1)
+            {
+                orderIdx++;
+                len /= bytesForEachKilobyte;
+            }
+
+            return TextTools.FormatString("{0:0.#} {1}", len, sizeOrders[orderIdx]);
+        }
     }
 }

@@ -20,13 +20,12 @@ using System;
 using System.Collections.Generic;
 using System.Reflection;
 using System.Text;
-using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Text;
+using KS.Misc.Reflection;
 using KS.Shell.Shells.SFTP;
 using Renci.SshNet;
 using Renci.SshNet.Sftp;
@@ -87,7 +86,7 @@ namespace KS.Network.SFTP.Filesystem
                         {
                             FileSize = DirListSFTP.Length;
                             ModDate = DirListSFTP.LastWriteTime;
-                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + $"{FileSize.FileSizeToString()} | {Translate.DoTranslation("Modified:")} {ModDate}");
+                            EntryBuilder.Append(KernelColorTools.GetColor(KernelColorType.ListValue).VTSequenceForeground + $"{FileSize.SizeString()} | {Translate.DoTranslation("Modified:")} {ModDate}");
                         }
                     }
                     else if (DirListSFTP.IsDirectory)

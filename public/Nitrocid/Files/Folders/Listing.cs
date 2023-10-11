@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
@@ -30,6 +29,7 @@ using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Reflection;
 using KS.Misc.Text;
 
 namespace KS.Files.Folders
@@ -152,7 +152,7 @@ namespace KS.Files.Folders
 
                     // Show total size in list optionally
                     if (ShowTotalSizeInList)
-                        TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Total size in folder:") + " {0}", TotalSize.FileSizeToString());
+                        TextWriterColor.Write(CharManager.NewLine + Translate.DoTranslation("Total size in folder:") + " {0}", TotalSize.SizeString());
                 }
                 catch (Exception ex)
                 {
