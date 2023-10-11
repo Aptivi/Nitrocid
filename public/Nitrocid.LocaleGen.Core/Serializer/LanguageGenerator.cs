@@ -46,6 +46,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
                         var finalLang = targetLanguage.Item1;
                         var finalLocalization = targetLanguage.Item2;
                         SerializerTools.SaveTargetLanguage(finalLang, finalLocalization, targetKeyValue.Item1, copyToResources, dry);
+                        SerializerTools.SaveMetadata(finalLang, targetKeyValue.Item1, copyToResources, dry);
                     }
                 }
                 catch (Exception)

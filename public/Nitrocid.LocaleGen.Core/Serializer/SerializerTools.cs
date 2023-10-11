@@ -108,7 +108,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
                 Path.GetFullPath("../../Resources/Languages");
 
             // Check to see if the output folder exists
-            if (!Directory.Exists(outputFolder))
+            if (!Directory.Exists(outputFolder) && !dry)
                 Directory.CreateDirectory(outputFolder);
 
             // Save changes
@@ -116,6 +116,36 @@ namespace Nitrocid.LocaleGen.Core.Serializer
                 File.WriteAllText($"{outputFolder}/" + fileName + ".json", serializedLocale);
             else
                 Debug.WriteLine($"Would be saved to: {outputFolder}/" + fileName + ".json");
+        }
+
+        internal static void SaveMetadata(TargetLanguage target, string pathToTranslations = "", bool copyToResources = false, bool dry = false)
+        {
+            // Check to see if the translations directory exists
+            if (!Directory.Exists(pathToTranslations))
+                throw new Exception("Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
+
+            // Determine several paths
+            pathToTranslations = string.IsNullOrEmpty(pathToTranslations) ? Path.GetFullPath("Translations") : pathToTranslations;
+            string metadataPath = pathToTranslations + "/Metadata.json";
+            string fileName = target.LanguageName;
+            string outputFolder =
+                !copyToResources ? $"{pathToTranslations}/Output" :
+                fileName != "eng" ? Path.GetFullPath("../../../Nitrocid.Addons/Nitrocid.LanguagePacks/Resources/Languages") :
+                Path.GetFullPath("../../Resources/Languages");
+
+            // Check to see if the metadata file exists
+            if (!File.Exists(metadataPath))
+                throw new Exception("Metadata file doesn't exist.");
+
+            // Check to see if the output folder exists
+            if (!Directory.Exists(outputFolder) && !dry)
+                Directory.CreateDirectory(outputFolder);
+
+            // Save metadata
+            if (!dry)
+                File.Copy(metadataPath, $"{outputFolder}/Metadata.json");
+            else
+                Debug.WriteLine($"Would be saved to: {outputFolder}/Metadata.json");
         }
 
         internal static TargetLanguage[] GetTargetLanguages(string pathToTranslations, string toSearch = "")
