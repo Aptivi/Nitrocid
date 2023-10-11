@@ -78,11 +78,15 @@ namespace KS.Network.FTP.Filesystem
                 {
                     FtpListItem finalDirListFTP = DirListFTP;
                     EntryBuilder.Append($"- {finalDirListFTP.Name}");
+
                     // Check to see if the file that we're dealing with is a symbolic link
                     if (finalDirListFTP.Type == FtpObjectType.Link)
                     {
                         EntryBuilder.Append(" >> ");
-                        EntryBuilder.Append(finalDirListFTP.LinkTarget);
+                        if (!string.IsNullOrEmpty(finalDirListFTP.LinkTarget))
+                            EntryBuilder.Append(finalDirListFTP.LinkTarget);
+                        else
+                            EntryBuilder.Append(Translate.DoTranslation("No symlink info"));
                         finalDirListFTP = finalDirListFTP.LinkObject;
                     }
 
