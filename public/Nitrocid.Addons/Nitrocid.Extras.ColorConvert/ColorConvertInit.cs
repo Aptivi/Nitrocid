@@ -52,6 +52,46 @@ namespace Nitrocid.Extras.ColorConvert
                     }, new ColorHexToRgbKSCommand())
             },
 
+            { "colorhextocmyk",
+                new CommandInfo("colorhextocmyk", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to CMYK numbers.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorHexToCmykCommand())
+            },
+
+            { "colorhextocmykks",
+                new CommandInfo("colorhextocmykks", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to CMYK numbers in KS format.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorHexToCmykKSCommand())
+            },
+
+            { "colorhextohsl",
+                new CommandInfo("colorhextohsl", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to HSL numbers.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorHexToHslCommand())
+            },
+
+            { "colorhextohslks",
+                new CommandInfo("colorhextohslks", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to HSL numbers in KS format.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "#RRGGBB"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorHexToHslKSCommand())
+            },
+
             { "colorrgbtohex",
                 new CommandInfo("colorrgbtohex", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to hex.",
                     new[] {
@@ -62,6 +102,179 @@ namespace Nitrocid.Extras.ColorConvert
                             new CommandArgumentPart(true, "B"),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorRgbToHexCommand())
+            },
+
+            { "colorrgbtocmyk",
+                new CommandInfo("colorrgbtocmyk", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to CMYK.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "R"),
+                            new CommandArgumentPart(true, "G"),
+                            new CommandArgumentPart(true, "B"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorRgbToCmykCommand())
+            },
+
+            { "colorrgbtocmykks",
+                new CommandInfo("colorrgbtocmykks", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to CMYK in KS format.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "R"),
+                            new CommandArgumentPart(true, "G"),
+                            new CommandArgumentPart(true, "B"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorRgbToCmykKSCommand())
+            },
+
+            { "colorrgbtohsl",
+                new CommandInfo("colorrgbtohsl", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to HSL.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "R"),
+                            new CommandArgumentPart(true, "G"),
+                            new CommandArgumentPart(true, "B"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorRgbToHslCommand())
+            },
+
+            { "colorrgbtohslks",
+                new CommandInfo("colorrgbtohslks", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to HSL in KS format.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "R"),
+                            new CommandArgumentPart(true, "G"),
+                            new CommandArgumentPart(true, "B"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorRgbToHslKSCommand())
+            },
+
+            { "colorhsltohex",
+                new CommandInfo("colorhsltohex", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to hex.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "H"),
+                            new CommandArgumentPart(true, "S"),
+                            new CommandArgumentPart(true, "L"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorHslToHexCommand())
+            },
+
+            { "colorhsltocmyk",
+                new CommandInfo("colorhsltocmyk", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to CMYK.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "H"),
+                            new CommandArgumentPart(true, "S"),
+                            new CommandArgumentPart(true, "L"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorHslToCmykCommand())
+            },
+
+            { "colorhsltocmykks",
+                new CommandInfo("colorhsltocmykks", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to CMYK in KS format.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "H"),
+                            new CommandArgumentPart(true, "S"),
+                            new CommandArgumentPart(true, "L"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorHslToCmykKSCommand())
+            },
+
+            { "colorhsltorgb",
+                new CommandInfo("colorhsltorgb", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to RGB.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "H"),
+                            new CommandArgumentPart(true, "S"),
+                            new CommandArgumentPart(true, "L"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorHslToRgbCommand())
+            },
+
+            { "colorhsltorgbks",
+                new CommandInfo("colorhsltorgbks", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to RGB in KS format.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "H"),
+                            new CommandArgumentPart(true, "S"),
+                            new CommandArgumentPart(true, "L"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorHslToRgbKSCommand())
+            },
+
+            { "colorcmyktohex",
+                new CommandInfo("colorcmyktohex", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to hex.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "C"),
+                            new CommandArgumentPart(true, "M"),
+                            new CommandArgumentPart(true, "Y"),
+                            new CommandArgumentPart(true, "K"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorCmykToHexCommand())
+            },
+
+            { "colorcmyktorgb",
+                new CommandInfo("colorcmyktorgb", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to RGB.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "C"),
+                            new CommandArgumentPart(true, "M"),
+                            new CommandArgumentPart(true, "Y"),
+                            new CommandArgumentPart(true, "K"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorCmykToRgbCommand())
+            },
+
+            { "colorcmyktorgbks",
+                new CommandInfo("colorcmyktorgbks", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to RGB in KS format.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "C"),
+                            new CommandArgumentPart(true, "M"),
+                            new CommandArgumentPart(true, "Y"),
+                            new CommandArgumentPart(true, "K"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorCmykToRgbKSCommand())
+            },
+
+            { "colorcmyktohsl",
+                new CommandInfo("colorcmyktohsl", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to HSL.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "C"),
+                            new CommandArgumentPart(true, "M"),
+                            new CommandArgumentPart(true, "Y"),
+                            new CommandArgumentPart(true, "K"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorCmykToHslCommand())
+            },
+
+            { "colorcmyktohslks",
+                new CommandInfo("colorcmyktohslks", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to HSL in KS format.",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "C"),
+                            new CommandArgumentPart(true, "M"),
+                            new CommandArgumentPart(true, "Y"),
+                            new CommandArgumentPart(true, "K"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new ColorCmykToHslKSCommand())
             },
         };
 
