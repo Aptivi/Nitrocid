@@ -39,6 +39,7 @@ using KS.Drivers.Encoding.Bases;
 using KS.Drivers.Encoding;
 using KS.Drivers.HardwareProber.Bases;
 using KS.Drivers.HardwareProber;
+using KS.Languages;
 
 namespace KS.Drivers
 {
@@ -314,7 +315,7 @@ namespace KS.Drivers
             {
                 // Found no driver under both lists
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, not found in any list.", name, driverType.ToString());
-                return (TResult)drivers[driverType]["Default"];
+                return GetFallbackDriver<TResult>();
             }
         }
 
@@ -348,7 +349,7 @@ namespace KS.Drivers
             {
                 // Found no driver under both lists
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, not found in any list.", driver.GetType().Name, driverType.ToString());
-                return "Default";
+                return GetFallbackDriverName<TResult>();
             }
         }
 
@@ -384,6 +385,52 @@ namespace KS.Drivers
             // Get the drivers and fetch their names
             var drivers = GetDrivers<TResult>();
             return drivers.Select((kvp) => kvp.Key).ToArray();
+        }
+
+        /// <summary>
+        /// Gets the fallback (default) driver
+        /// </summary>
+        /// <typeparam name="TResult">The required driver type</typeparam>
+        /// <returns>The driver responsible for performing operations according to driver type</returns>
+        public static TResult GetFallbackDriver<TResult>()
+        {
+            // First, infer the type from the TResult
+            var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
+
+            // Then, get the fallback (default) driver from name
+            if (drivers[driverType].ContainsKey("Default"))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", driverType.ToString());
+                return (TResult)drivers[driverType]["Default"];
+            }
+            else
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Kernel driver, type {0}, no fallback found!", driverType.ToString());
+                throw new KernelException(KernelExceptionType.Hardware, Translate.DoTranslation("No fallback driver found."));
+            }
+        }
+
+        /// <summary>
+        /// Gets the fallback (default) name
+        /// </summary>
+        /// <typeparam name="TResult">The required driver type</typeparam>
+        /// <returns>Fallback (default) name</returns>
+        public static string GetFallbackDriverName<TResult>()
+        {
+            // First, infer the type from the TResult
+            var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
+
+            // Then, get the fallback (default) driver from name
+            if (drivers[driverType].ContainsKey("Default"))
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", driverType.ToString());
+                return "Default";
+            }
+            else
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Kernel driver, type {0}, no fallback found!", driverType.ToString());
+                throw new KernelException(KernelExceptionType.Hardware, Translate.DoTranslation("No fallback driver found."));
+            }
         }
 
         /// <summary>

@@ -459,6 +459,43 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [Test]
+        [TestCase<IConsoleDriver>("Default")]
+        [TestCase<IEncryptionDriver>("SHA256")]
+        [TestCase<IFilesystemDriver>("Default")]
+        [TestCase<INetworkDriver>("Default")]
+        [TestCase<IRandomDriver>("Default")]
+        [TestCase<IRegexpDriver>("Default")]
+        [TestCase<IDebugLoggerDriver>("Default")]
+        [TestCase<IEncodingDriver>("AES")]
+        [TestCase<IHardwareProberDriver>("Default")]
+        [Description("Management")]
+        public void TestGetFallbackDriver<T>(string driverName)
+        {
+            var driver = DriverHandler.GetFallbackDriver<T>();
+            ((IDriver)driver).ShouldNotBeNull();
+            ((IDriver)driver).DriverName.ShouldBe(driverName);
+        }
+
+        [Test]
+        [TestCase<IConsoleDriver>]
+        [TestCase<IEncryptionDriver>]
+        [TestCase<IFilesystemDriver>]
+        [TestCase<INetworkDriver>]
+        [TestCase<IRandomDriver>]
+        [TestCase<IRegexpDriver>]
+        [TestCase<IDebugLoggerDriver>]
+        [TestCase<IEncodingDriver>]
+        [TestCase<IHardwareProberDriver>]
+        [Description("Management")]
+        public void TestGetFallbackDriverName<T>()
+        {
+            string driverName = DriverHandler.GetFallbackDriverName<T>();
+            driverName.ShouldNotBeNull();
+            driverName.ShouldNotBeEmpty();
+            driverName.ShouldBe("Default");
+        }
+
+        [Test]
         [TestCaseSource<IConsoleDriver>(nameof(RegisteredConsoleDriver))]
         [TestCaseSource<IEncryptionDriver>(nameof(RegisteredEncryptionDriver))]
         [TestCaseSource<IFilesystemDriver>(nameof(RegisteredFilesystemDriver))]
