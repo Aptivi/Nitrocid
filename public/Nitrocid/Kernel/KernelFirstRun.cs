@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Presentation;
 using KS.ConsoleBase.Presentation.Elements;
@@ -428,6 +429,14 @@ namespace KS.Kernel
             band.AppendLine();
             for (double i = 0; i < 255; i += threshold)
                 band.Append($"{new Color(0, 0, Convert.ToInt32(i)).VTSequenceBackground} ");
+            band.AppendLine();
+            band.Append($"{CharManager.GetEsc() + $"[49m"}");
+            band.AppendLine();
+
+            // Now, show the hue band
+            double hueThreshold = 360 / (double)times;
+            for (double h = 0; h < 360; h += hueThreshold)
+                band.Append($"{new Color($"hsl:{(int)h};100;50").VTSequenceBackground} ");
             band.AppendLine();
             band.Append($"{CharManager.GetEsc() + $"[49m"}");
             return band.ToString();
