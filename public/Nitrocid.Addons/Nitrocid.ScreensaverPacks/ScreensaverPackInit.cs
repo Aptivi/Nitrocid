@@ -65,6 +65,7 @@ namespace Nitrocid.ScreensaverPacks
             { "gradient", new GradientDisplay() },
             { "gradientbloom", new GradientBloomDisplay() },
             { "gradientrot", new GradientRotDisplay() },
+            { "hueback", new HueBackDisplay() },
             { "indeterminate", new IndeterminateDisplay() },
             { "ksx", new KSXDisplay() },
             { "ksx2", new KSX2Display() },

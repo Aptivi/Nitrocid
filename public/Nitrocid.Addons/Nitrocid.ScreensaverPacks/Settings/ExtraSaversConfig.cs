@@ -3035,5 +3035,17 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Diamond] How many milliseconds to wait before making the next write?
         /// </summary>
         public int DiamondDelay { get; set; } = 500;
+        /// <summary>
+        /// [HueBack] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int HueBackDelay { get; set; } = 50;
+        /// <summary>
+        /// [HueBack] How intense is the color?
+        /// </summary>
+        public int HueBackSaturation { get; set; } = 100;
+        /// <summary>
+        /// [HueBack] How light is the color?
+        /// </summary>
+        public int HueBackLuminance { get; set; } = 50;
     }
 }

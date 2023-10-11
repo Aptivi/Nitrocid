@@ -5639,5 +5639,33 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             }
         ]
+    },
+    {
+        "Name": "HueBack",
+        "Desc": "Changing background color according to increasing hue. Rainbow!",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "HueBackDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Color hue saturation",
+                "Type": "SIntSlider",
+                "Variable": "HueBackSaturation",
+                "Description": "How intense is the color?",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            },
+            {
+                "Name": "Color hue luminance (lightness)",
+                "Type": "SIntSlider",
+                "Variable": "HueBackLuminance",
+                "Description": "How light is the color?",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            }
+        ]
     }
 ]
