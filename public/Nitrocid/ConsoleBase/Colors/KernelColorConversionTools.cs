@@ -416,7 +416,7 @@ namespace KS.ConsoleBase.Colors
             if (HSLSequence.Contains(';') && HSLSequence.StartsWith("hsl:"))
             {
                 // Split the VT sequence into three parts
-                var ColorSpecifierArray = HSLSequence.Split(';');
+                var ColorSpecifierArray = HSLSequence[4..].Split(';');
                 if (ColorSpecifierArray.Length == 3)
                 {
                     int H = Convert.ToInt32(ColorSpecifierArray[0]);
