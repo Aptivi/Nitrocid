@@ -75,7 +75,7 @@ namespace KS.Misc.Splash
         /// Reports the progress for the splash screen while the kernel is booting.
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
-        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
@@ -88,7 +88,7 @@ namespace KS.Misc.Splash
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
         /// <param name="Progress">The progress indicator of the kernel</param>
-        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
@@ -103,7 +103,7 @@ namespace KS.Misc.Splash
         /// <param name="Progress">The progress indicator of the kernel</param>
         /// <param name="force">Force report progress to splash</param>
         /// <param name="splash">Splash interface</param>
-        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
@@ -143,7 +143,7 @@ namespace KS.Misc.Splash
         /// Reports the progress for the splash screen while the kernel is booting.
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
-        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
@@ -156,7 +156,7 @@ namespace KS.Misc.Splash
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
         /// <param name="exception">Exception information</param>
-        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
@@ -171,7 +171,7 @@ namespace KS.Misc.Splash
         /// <param name="force">Force report progress to splash</param>
         /// <param name="splash">Splash interface</param>
         /// <param name="exception">Exception information</param>
-        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
@@ -208,7 +208,7 @@ namespace KS.Misc.Splash
         /// Reports the progress for the splash screen while the kernel is booting.
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
-        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
@@ -221,7 +221,7 @@ namespace KS.Misc.Splash
         /// </summary>
         /// <param name="Text">The progress text to indicate how did the kernel progress</param>
         /// <param name="exception">Exception information</param>
-        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
@@ -236,7 +236,7 @@ namespace KS.Misc.Splash
         /// <param name="force">Force report progress to splash</param>
         /// <param name="splash">Splash interface</param>
         /// <param name="exception">Exception information</param>
-        /// <param name="Vars">Varibales to be expanded to text</param>
+        /// <param name="Vars">Variables to be expanded to text</param>
         /// <remarks>
         /// If the kernel has booted successfully, it will act like the normal printing command. If this routine was called during boot,<br></br>
         /// it will report the progress to the splash system. You can force it to report the progress by passing force.
