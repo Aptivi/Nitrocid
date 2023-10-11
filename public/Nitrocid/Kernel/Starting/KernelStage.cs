@@ -26,18 +26,20 @@ namespace KS.Kernel.Starting
 
         internal string StageName { get; private set; }
         internal bool StageRunsInSafeMode { get; private set; }
+        internal bool StageRunsInMaintenance { get; private set; }
         internal Action StageAction =>
             _stageAction;
 
         internal KernelStage(string stageName, Action stageAction) :
-            this(stageName, stageAction, true)
+            this(stageName, stageAction, true, true)
         { }
 
-        internal KernelStage(string stageName, Action stageAction, bool stageRunsInSafeMode)
+        internal KernelStage(string stageName, Action stageAction, bool stageRunsInSafeMode, bool stageRunsInMaintenance)
         {
             // Properties
             StageName = stageName;
             StageRunsInSafeMode = stageRunsInSafeMode;
+            StageRunsInMaintenance = stageRunsInMaintenance;
             
             // Fields
             _stageAction = stageAction;

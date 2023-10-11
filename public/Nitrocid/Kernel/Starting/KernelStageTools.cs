@@ -34,9 +34,9 @@ namespace KS.Kernel.Starting
             new KernelStage( /* Localizable */ "System initialization", KernelStageActions.Stage01SystemInitialization),
             new KernelStage( /* Localizable */ "Kernel updates",        KernelStageActions.Stage02KernelUpdates),
             new KernelStage( /* Localizable */ "Hardware detection",    KernelStageActions.Stage03HardwareProbe),
-            new KernelStage( /* Localizable */ "Kernel modifications",  KernelStageActions.Stage04KernelModifications, false),
-            new KernelStage( /* Localizable */ "Optional components",   KernelStageActions.Stage05OptionalComponents, false),
-            new KernelStage( /* Localizable */ "User initialization",   KernelStageActions.Stage06UserInitialization),
+            new KernelStage( /* Localizable */ "Kernel modifications",  KernelStageActions.Stage04KernelModifications, false, false),
+            new KernelStage( /* Localizable */ "Optional components",   KernelStageActions.Stage05OptionalComponents, false, false),
+            new KernelStage( /* Localizable */ "User initialization",   KernelStageActions.Stage06UserInitialization, true, false),
         };
 
         internal static void RunKernelStage(int stageNum)
@@ -51,7 +51,12 @@ namespace KS.Kernel.Starting
                 // Report the stage to the splash manager
                 ReportNewStage(stageNum, $"- {Translate.DoTranslation("Stage")} {stageNum}: {Translate.DoTranslation(stage.StageName)}");
                 if ((KernelFlags.SafeMode && stage.StageRunsInSafeMode) || !KernelFlags.SafeMode)
-                    stage.StageAction();
+                {
+                    if ((KernelFlags.Maintenance && stage.StageRunsInMaintenance) || !KernelFlags.Maintenance)
+                        stage.StageAction();
+                    else
+                        SplashReport.ReportProgress(Translate.DoTranslation("Running in maintenance mode. Skipping stage..."), 0);
+                }
                 else
                     SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."), 0);
                 KernelTools.CheckErrored();
