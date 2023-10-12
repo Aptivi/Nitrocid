@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Text;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
@@ -24,6 +25,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
+using Terminaux.Sequences.Builder;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -36,17 +38,17 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <summary>
         /// [Gradient] How many milliseconds to wait before rotting the next screen?
         /// </summary>
-        public static int GradientNextRampDelay
+        public static int GradientNextRotDelay
         {
             get
             {
-                return ScreensaverPackInit.SaversConfig.GradientNextRampDelay;
+                return ScreensaverPackInit.SaversConfig.GradientNextRotDelay;
             }
             set
             {
                 if (value <= 0)
-                    value = 250;
-                ScreensaverPackInit.SaversConfig.GradientNextRampDelay = value;
+                    value = 3000;
+                ScreensaverPackInit.SaversConfig.GradientNextRotDelay = value;
             }
         }
         /// <summary>
@@ -291,46 +293,44 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int BlueColorNumTo = RandomDriver.Random(GradientSettings.GradientMinimumBlueColorLevelEnd, GradientSettings.GradientMaximumBlueColorLevelEnd);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color from (R;G;B: {0};{1};{2}) to (R;G;B: {3};{4};{5})", RedColorNumFrom, GreenColorNumFrom, BlueColorNumFrom, RedColorNumTo, GreenColorNumTo, BlueColorNumTo);
 
-            // Set thresholds for color ramp
-            int RampFrameSpaces = ConsoleWrapper.WindowWidth;
-            int RampColorRedThreshold = RedColorNumFrom - RedColorNumTo;
-            int RampColorGreenThreshold = GreenColorNumFrom - GreenColorNumTo;
-            int RampColorBlueThreshold = BlueColorNumFrom - BlueColorNumTo;
-            double RampColorRedSteps = RampColorRedThreshold / RampFrameSpaces;
-            double RampColorGreenSteps = RampColorGreenThreshold / RampFrameSpaces;
-            double RampColorBlueSteps = RampColorBlueThreshold / RampFrameSpaces;
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", RampColorRedThreshold, RampColorGreenThreshold, RampColorBlueThreshold);
-            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RampFrameSpaces, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
+            // Set thresholds for color gradient rot
+            int RotFrameSpaces = ConsoleWrapper.WindowWidth;
+            int RotColorRedThreshold = RedColorNumFrom - RedColorNumTo;
+            int RotColorGreenThreshold = GreenColorNumFrom - GreenColorNumTo;
+            int RotColorBlueThreshold = BlueColorNumFrom - BlueColorNumTo;
+            double RotColorRedSteps = RotColorRedThreshold / RotFrameSpaces;
+            double RotColorGreenSteps = RotColorGreenThreshold / RotFrameSpaces;
+            double RotColorBlueSteps = RotColorBlueThreshold / RotFrameSpaces;
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Set thresholds (RGB: {0};{1};{2})", RotColorRedThreshold, RotColorGreenThreshold, RotColorBlueThreshold);
+            DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Steps by {0} spaces (RGB: {1};{2};{3})", RotFrameSpaces, RotColorRedSteps, RotColorGreenSteps, RotColorBlueSteps);
 
             // Set the current colors
-            double RampCurrentColorRed = RedColorNumFrom;
-            double RampCurrentColorGreen = GreenColorNumFrom;
-            double RampCurrentColorBlue = BlueColorNumFrom;
+            double RotCurrentColorRed = RedColorNumFrom;
+            double RotCurrentColorGreen = GreenColorNumFrom;
+            double RotCurrentColorBlue = BlueColorNumFrom;
 
             // Fill the entire screen
+            StringBuilder gradientBuilder = new();
             for (int x = 0; x < ConsoleWrapper.WindowWidth; x++)
             {
                 if (ConsoleResizeListener.WasResized(false))
                     break;
 
                 // Write the background gradient!
-                var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
+                var RotCurrentColorInstance = new Color($"{Convert.ToInt32(RotCurrentColorRed)};{Convert.ToInt32(RotCurrentColorGreen)};{Convert.ToInt32(RotCurrentColorBlue)}");
                 for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
-                    TextWriterWhereColor.WriteWhereColorBack(" ", x, y, Color.Empty, RampCurrentColorInstance);
+                    gradientBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, x + 1, y + 1)}{RotCurrentColorInstance.VTSequenceBackgroundTrueColor} ");
 
                 // Change the colors
-                RampCurrentColorRed -= RampColorRedSteps;
-                RampCurrentColorGreen -= RampColorGreenSteps;
-                RampCurrentColorBlue -= RampColorBlueSteps;
-                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RampCurrentColorRed, RampCurrentColorGreen, RampCurrentColorBlue, RampColorRedSteps, RampColorGreenSteps, RampColorBlueSteps);
+                RotCurrentColorRed -= RotColorRedSteps;
+                RotCurrentColorGreen -= RotColorGreenSteps;
+                RotCurrentColorBlue -= RotColorBlueSteps;
+                DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got new current colors (R;G;B: {0};{1};{2}) subtracting from {3};{4};{5}", RotCurrentColorRed, RotCurrentColorGreen, RotCurrentColorBlue, RotColorRedSteps, RotColorGreenSteps, RotColorBlueSteps);
             }
-
-            // Clear the scene
-            ThreadManager.SleepNoBlock(GradientSettings.GradientNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.Clear();
+            TextWriterColor.WritePlain(gradientBuilder.ToString(), false);
 
             // Reset resize sync
+            ThreadManager.SleepNoBlock(GradientSettings.GradientNextRotDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
             ConsoleResizeListener.WasResized();
         }
 

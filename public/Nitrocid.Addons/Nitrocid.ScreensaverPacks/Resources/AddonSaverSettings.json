@@ -3660,7 +3660,7 @@
             {
                 "Name": "Next gradient rot interval",
                 "Type": "SInt",
-                "Variable": "GradientNextRampDelay",
+                "Variable": "GradientNextRotDelay",
                 "Description": "How many milliseconds to wait before rotting the next screen?"
             },
             {

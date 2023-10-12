@@ -2034,7 +2034,7 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// <summary>
         /// [Gradient] How many milliseconds to wait before rotting the next screen?
         /// </summary>
-        public int GradientNextRampDelay { get; set; } = 250;
+        public int GradientNextRotDelay { get; set; } = 3000;
         /// <summary>
         /// [Gradient] The minimum red color level (true color - start)
         /// </summary>
