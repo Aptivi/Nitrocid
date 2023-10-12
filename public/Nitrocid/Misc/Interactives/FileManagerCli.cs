@@ -42,6 +42,8 @@ using KS.Files.Instances;
 using KS.ConsoleBase.Interactive;
 using KS.Files.Extensions;
 using KS.Files.Operations.Querying;
+using KS.Files.Operations.Printing;
+using Terminaux.Sequences.Tools;
 
 namespace KS.Misc.Interactives
 {
@@ -72,6 +74,7 @@ namespace KS.Misc.Interactives
             new InteractiveTuiBinding(/* Localizable */ "New Folder",   ConsoleKey.F10,   (_, _)    => MakeDir(), true),
             new InteractiveTuiBinding(/* Localizable */ "Hash...",      ConsoleKey.F11,   (info, _) => Hash((FileSystemEntry)info)),
             new InteractiveTuiBinding(/* Localizable */ "Verify...",    ConsoleKey.F12,   (info, _) => Verify((FileSystemEntry)info)),
+            new InteractiveTuiBinding(/* Localizable */ "Preview",      ConsoleKey.P,   (info, _) => Preview((FileSystemEntry)info)),
 
             // Misc bindings
             new InteractiveTuiBinding(/* Localizable */ "Switch",       ConsoleKey.Tab,   (_, _)    => Switch(), true),
@@ -594,6 +597,23 @@ namespace KS.Misc.Interactives
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes match!"), BoxForegroundColor, BoxBackgroundColor);
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes don't match."), BoxForegroundColor, BoxBackgroundColor);
+            RedrawRequired = true;
+        }
+
+        private static void Preview(FileSystemEntry currentFileSystemEntry)
+        {
+            // First, check to see if it's a file
+            if (!Checking.FileExists(currentFileSystemEntry.FilePath))
+            {
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
+                RedrawRequired = true;
+                return;
+            }
+
+            // Render the preview box
+            string preview = FileContentPrinter.RenderContents(currentFileSystemEntry.FilePath);
+            string filtered = VtSequenceTools.FilterVTSequences(preview);
+            InfoBoxColor.WriteInfoBoxColorBack(filtered, BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
         }
     }
