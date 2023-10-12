@@ -120,7 +120,7 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Split the switches properly now
             string switchRegex =
-                /* lang=regex */ @"(-\S+=((""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+))|(?<= )-\S+";
+                /* lang=regex */ @"((?<= )-\S+=((""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+))|(?<= )-\S+";
             var EnclosedSwitches = DriverHandler.CurrentRegexpDriverLocal
                 .Matches(CommandText, switchRegex)
                 .Select((match) => match.Value)
