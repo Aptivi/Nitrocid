@@ -65,7 +65,8 @@ namespace KS.ConsoleBase
         /// <param name="MaximumNumber">The maximum number.</param>
         /// <param name="WidthOffset">The console window width offset. It's usually a multiple of 2.</param>
         /// <returns>How many times to repeat the character</returns>
-        public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset) => (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * ((ConsoleWrapper.WindowWidth - WidthOffset) * 0.01d));
+        public static int PercentRepeat(int CurrentNumber, int MaximumNumber, int WidthOffset) =>
+            (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * ((ConsoleWrapper.WindowWidth - WidthOffset) * 0.01d));
 
         /// <summary>
         /// Gets how many times to repeat the character to represent the appropriate percentage level for the specified number.
@@ -74,7 +75,8 @@ namespace KS.ConsoleBase
         /// <param name="MaximumNumber">The maximum number.</param>
         /// <param name="TargetWidth">The target width</param>
         /// <returns>How many times to repeat the character</returns>
-        public static int PercentRepeatTargeted(int CurrentNumber, int MaximumNumber, int TargetWidth) => (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * (TargetWidth * 0.01d));
+        public static int PercentRepeatTargeted(int CurrentNumber, int MaximumNumber, int TargetWidth) =>
+            (int)Math.Round(CurrentNumber * 100 / (double)MaximumNumber * (TargetWidth * 0.01d));
 
         /// <summary>
         /// Filters the VT sequences that matches the regex

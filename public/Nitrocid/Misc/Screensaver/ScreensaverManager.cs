@@ -124,7 +124,7 @@ namespace KS.Misc.Screensaver
         {
             try
             {
-                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
+                var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
                 while (!KernelFlags.KernelShutdown)
                 {
                     int OldCursorLeft = termDriver.CursorLeft;

@@ -304,7 +304,7 @@ namespace KS.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.I, "Saved privacy consents.");
 
                 // Reset hardware info
-                var baseProber = DriverHandler.GetDriver<IHardwareProberDriver>("Default") as BaseHardwareProberDriver;
+                var baseProber = DriverHandler.GetFallbackDriver<IHardwareProberDriver>() as BaseHardwareProberDriver;
                 baseProber.processors = null;
                 baseProber.graphics = null;
                 baseProber.hardDrive = null;

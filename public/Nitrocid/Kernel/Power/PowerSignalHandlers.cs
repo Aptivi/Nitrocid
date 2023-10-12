@@ -80,7 +80,7 @@ namespace KS.Kernel.Power
         {
             DebugWriter.WriteDebug(DebugLevel.I, "SIGWINCH recieved!");
             ConsoleResizeListener.ResizeDetected = true;
-            var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
+            var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
             ConsoleResizeListener.CurrentWindowWidth = termDriver.WindowWidth;
             ConsoleResizeListener.CurrentWindowHeight = termDriver.WindowHeight;
             psc.Cancel = true;

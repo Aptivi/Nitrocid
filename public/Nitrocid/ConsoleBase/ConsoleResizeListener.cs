@@ -61,7 +61,7 @@ namespace KS.ConsoleBase
         {
             if (!ResizeListenerThread.IsAlive && !usesSigWinch)
             {
-                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
+                var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
                 return (termDriver.WindowWidth, termDriver.WindowHeight);
             }
             DebugWriter.WriteDebug(DebugLevel.W, "Cached: {0}x{1}", CurrentWindowWidth, CurrentWindowHeight);
@@ -72,7 +72,7 @@ namespace KS.ConsoleBase
         {
             try
             {
-                var termDriver = DriverHandler.GetDriver<IConsoleDriver>("Default");
+                var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
                 while (!KernelFlags.KernelShutdown)
                 {
                     SpinWait.SpinUntil(() => KernelFlags.KernelShutdown, 10);
