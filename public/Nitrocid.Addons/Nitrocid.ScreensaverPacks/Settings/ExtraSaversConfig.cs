@@ -1516,6 +1516,10 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// </summary>
         public string FigletFont { get; set; } = "small";
         /// <summary>
+        /// [Figlet] Enables the rainbow colors mode
+        /// </summary>
+        public bool FigletRainbowMode { get; set; }
+        /// <summary>
         /// [Figlet] The minimum red color level (true color)
         /// </summary>
         public int FigletMinimumRedColorLevel { get; set; } = 0;
@@ -2648,6 +2652,10 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// </summary>
         public string TextWrite { get; set; } = "Nitrocid KS";
         /// <summary>
+        /// [Text] Enables the rainbow colors mode
+        /// </summary>
+        public bool TextRainbowMode { get; set; }
+        /// <summary>
         /// [Text] The minimum red color level (true color)
         /// </summary>
         public int TextMinimumRedColorLevel { get; set; } = 0;
@@ -2691,6 +2699,10 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [TextBox] TextBox for Bouncing TextBox. Shorter is better.
         /// </summary>
         public string TextBoxWrite { get; set; } = "Nitrocid KS";
+        /// <summary>
+        /// [TextBox] Enables the rainbow colors mode
+        /// </summary>
+        public bool TextBoxRainbowMode { get; set; }
         /// <summary>
         /// [TextBox] The minimum red color level (true color)
         /// </summary>

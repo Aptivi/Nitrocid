@@ -78,6 +78,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
         }
         /// <summary>
+        /// [Text] Enables the rainbow colors mode
+        /// </summary>
+        public static bool TextRainbowMode
+        {
+            get
+            {
+                return ScreensaverPackInit.SaversConfig.TextRainbowMode;
+            }
+            set
+            {
+                ScreensaverPackInit.SaversConfig.TextRainbowMode = value;
+            }
+        }
+        /// <summary>
         /// [Text] The minimum red color level (true color)
         /// </summary>
         public static int TextMinimumRedColorLevel
@@ -232,6 +246,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class TextDisplay : BaseScreensaver, IScreensaver
     {
 
+        private int currentHueAngle = 0;
+
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Text";
 
@@ -245,10 +261,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int textPosX = ConsoleWrapper.WindowWidth / 2 - renderedText.Length / 2;
 
             // Write the text
+            if (TextSettings.TextRainbowMode)
+            {
+                color = new($"hsl:{currentHueAngle};100;50");
+                currentHueAngle++;
+                if (currentHueAngle > 360)
+                    currentHueAngle = 0;
+            }
             TextWriterWhereColor.WriteWhereColor(renderedText, textPosX, halfConsoleY, color);
 
             // Delay
-            ThreadManager.SleepNoBlock(TextSettings.TextDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            int delay = TextSettings.TextRainbowMode ? 16 : TextSettings.TextDelay;
+            ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         /// <summary>

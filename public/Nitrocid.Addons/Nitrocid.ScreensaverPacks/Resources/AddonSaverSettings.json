@@ -2659,6 +2659,12 @@
                 "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
             },
             {
+                "Name": "Rainbow mode",
+                "Type": "SBoolean",
+                "Variable": "FigletRainbowMode",
+                "Description": "Enables the rainbow colors mode"
+            },
+            {
                 "Name": "Minimum red color level",
                 "Type": "SIntSlider",
                 "Variable": "FigletMinimumRedColorLevel",
@@ -4850,6 +4856,12 @@
                 "Description": "Write any text you want shown. Shorter is better."
             },
             {
+                "Name": "Rainbow mode",
+                "Type": "SBoolean",
+                "Variable": "TextRainbowMode",
+                "Description": "Enables the rainbow colors mode"
+            },
+            {
                 "Name": "Minimum red color level",
                 "Type": "SIntSlider",
                 "Variable": "TextMinimumRedColorLevel",
@@ -4932,10 +4944,16 @@
                 "Description": "How many milliseconds to wait before making the next write?"
             },
             {
-                "Name": "TextBox shown",
+                "Name": "Text shown",
                 "Type": "SString",
                 "Variable": "TextBoxWrite",
                 "Description": "Write any text you want shown. Shorter is better."
+            },
+            {
+                "Name": "Rainbow mode",
+                "Type": "SBoolean",
+                "Variable": "TextBoxRainbowMode",
+                "Description": "Enables the rainbow colors mode"
             },
             {
                 "Name": "Minimum red color level",

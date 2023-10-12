@@ -77,6 +77,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
         }
         /// <summary>
+        /// [TextBox] Enables the rainbow colors mode
+        /// </summary>
+        public static bool TextBoxRainbowMode
+        {
+            get
+            {
+                return ScreensaverPackInit.SaversConfig.TextBoxRainbowMode;
+            }
+            set
+            {
+                ScreensaverPackInit.SaversConfig.TextBoxRainbowMode = value;
+            }
+        }
+        /// <summary>
         /// [TextBox] The minimum red color level (true color)
         /// </summary>
         public static int TextBoxMinimumRedColorLevel
@@ -231,6 +245,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class TextBoxDisplay : BaseScreensaver, IScreensaver
     {
 
+        private int currentHueAngle = 0;
+
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "TextBox";
 
@@ -242,10 +258,18 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             string renderedTextBox = TextBox.TextBoxWrite;
 
             // Write the text
+            if (TextBox.TextBoxRainbowMode)
+            {
+                color = new($"hsl:{currentHueAngle};100;50");
+                currentHueAngle++;
+                if (currentHueAngle > 360)
+                    currentHueAngle = 0;
+            }
             InfoBoxColor.WriteInfoBoxColor(renderedTextBox, false, color);
 
             // Delay
-            ThreadManager.SleepNoBlock(TextBox.TextBoxDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            int delay = TextBox.TextBoxRainbowMode ? 16 : TextBox.TextBoxDelay;
+            ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
         /// <summary>

@@ -98,6 +98,20 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
         }
         /// <summary>
+        /// [Figlet] Enables the rainbow colors mode
+        /// </summary>
+        public static bool FigletRainbowMode
+        {
+            get
+            {
+                return ScreensaverPackInit.SaversConfig.FigletRainbowMode;
+            }
+            set
+            {
+                ScreensaverPackInit.SaversConfig.FigletRainbowMode = value;
+            }
+        }
+        /// <summary>
         /// [Figlet] The minimum red color level (true color)
         /// </summary>
         public static int FigletMinimumRedColorLevel
@@ -252,6 +266,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     public class FigletDisplay : BaseScreensaver, IScreensaver
     {
 
+        private int currentHueAngle = 0;
+
         /// <inheritdoc/>
         public override string ScreensaverName { get; set; } = "Figlet";
 
@@ -284,6 +300,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got color ({0})", ColorNum);
                 ColorStorage = new Color(ColorNum);
             }
+            if (FigletSettings.FigletRainbowMode)
+            {
+                ColorStorage = new($"hsl:{currentHueAngle};100;50");
+                currentHueAngle++;
+                if (currentHueAngle > 360)
+                    currentHueAngle = 0;
+            }
 
             // Prepare the figlet font for writing
             string FigletWrite = FigletSettings.FigletText.ReplaceAll(new string[] { Convert.ToChar(13).ToString(), Convert.ToChar(10).ToString() }, " - ");
@@ -298,7 +321,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();
-            ThreadManager.SleepNoBlock(FigletSettings.FigletDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
+            int delay = FigletSettings.FigletRainbowMode ? 16 : FigletSettings.FigletDelay;
+            ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
     }
