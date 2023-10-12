@@ -38,6 +38,7 @@ using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Console.Bases;
 using KS.Shell.ShellBase.Help;
 using System.Runtime;
+using System.Threading.Tasks;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -204,9 +205,9 @@ namespace KS.Shell.ShellBase.Commands
                     DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);
                     var CommandBase = TargetCommands[Command].CommandBase;
                     string value = "";
+                    CancellationHandlers.cts = new CancellationTokenSource();
 #if NET7_0
 #pragma warning disable SYSLIB0046
-                    CancellationHandlers.cts = new CancellationTokenSource();
 
                     // TODO: Actually use interactive methods to notify cancellation, as ControlledExecution behaves like Thread.Abort() in .NET Framework.
                     try
@@ -227,10 +228,24 @@ namespace KS.Shell.ShellBase.Commands
                     }
 #pragma warning restore SYSLIB0046
 #else
-                    if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
-                        ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
-                    else
-                        ShellInstance.LastErrorCode = CommandBase.Execute(parameters, ref value);
+                    try
+                    {
+                        var task = new Task(() =>
+                        {
+                            if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
+                                ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
+                            else
+                                ShellInstance.LastErrorCode = CommandBase.Execute(parameters, ref value);
+                        }, CancellationHandlers.cts.Token, TaskCreationOptions.LongRunning);
+                        task.Start();
+                        task.Wait(CancellationHandlers.cts.Token);
+                    }
+                    catch (Exception ex)
+                    {
+                        KernelFlags.CancelRequested = false;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Command aborted.");
+                        DebugWriter.WriteDebugStackTrace(ex);
+                    }
 #endif
 
                     // Set the error code and set the UESH variable as appropriate

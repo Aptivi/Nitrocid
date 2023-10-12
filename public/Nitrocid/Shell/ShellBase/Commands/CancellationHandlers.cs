@@ -64,11 +64,7 @@ namespace KS.Shell.ShellBase.Commands
                     KernelFlags.CancelRequested = true;
                     TextWriterColor.Write();
                     DriverHandler.SetDriver<IConsoleDriver>("Null");
-#if NET7_0
                     cts.Cancel();
-#else
-                    StartCommandThread.Stop();
-#endif
                     ProcessStartCommandThread.Stop();
                     DriverHandler.SetDriver<IConsoleDriver>("Default");
                     DebugWriter.WriteDebug(DebugLevel.I, "Cancelled command.");
