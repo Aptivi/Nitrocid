@@ -108,15 +108,6 @@ namespace KS.ConsoleBase.Themes
         { }
 
         /// <summary>
-        /// Generates a new theme info from KS resources
-        /// </summary>
-        /// <param name="ThemeResourceName">Theme name (must match resource name)</param>
-        [Obsolete("Theme addons can't use this. It's only useful for getting the default theme.")]
-        public ThemeInfo(string ThemeResourceName) :
-            this(JToken.Parse(ThemesResources.ResourceManager.GetString(ThemeResourceName)))
-        { }
-
-        /// <summary>
         /// Generates a new theme info from file stream
         /// </summary>
         /// <param name="ThemeFileStream">Theme file stream reader</param>
