@@ -447,6 +447,32 @@ namespace KS.Drivers.Filesystem
         /// <inheritdoc/>
         public virtual void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
         {
+            // Now, do the job!
+            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
+            StartByte.SwapIfSourceLarger(ref EndByte);
+            if (StartByte < 1)
+            {
+                TextWriterColor.Write(Translate.DoTranslation("Byte number must start with 1."));
+                return;
+            }
+            if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
+            {
+                string rendered = RenderContentsInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
+                TextWriterColor.WriteKernelColor(rendered, false, KernelColorType.ListEntry);
+            }
+            else if (StartByte > FileByte.LongLength)
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
+            else if (EndByte > FileByte.LongLength)
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
+        }
+
+        /// <inheritdoc/>
+        public virtual string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte) =>
+            RenderContentsInHex(0, false, StartByte, EndByte, FileByte);
+
+        /// <inheritdoc/>
+        public virtual string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
+        {
             // Get the un-highlighted and highlighted colors
             var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
             var unhighlightedColor = KernelColorTools.GetColor(KernelColorType.ListValue);
@@ -456,11 +482,9 @@ namespace KS.Drivers.Filesystem
             DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
             StartByte.SwapIfSourceLarger(ref EndByte);
             if (StartByte < 1)
-            {
-                TextWriterColor.Write(Translate.DoTranslation("Byte number must start with 1."));
-                return;
-            }
-            if (StartByte <= FileByte.LongLength & EndByte <= FileByte.LongLength)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Byte number must start with 1."));
+
+            if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
             {
                 // We need to know how to write the bytes and their contents in this shape:
                 // -> 0x00000010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
@@ -470,7 +494,7 @@ namespace KS.Drivers.Filesystem
                 var builder = new StringBuilder();
                 for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
                 {
-                    builder.Append($"0x{CurrentByteNumber - 1L:X8} ");
+                    builder.Append($"{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8} ");
 
                     // Iterate these number of bytes for the ASCII codes
                     long byteNum;
@@ -504,18 +528,16 @@ namespace KS.Drivers.Filesystem
                         DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
                         builder.Append($"{(ByteContent == CurrentByte ? highlightedColor : unhighlightedColor).VTSequenceForeground}{RenderedByteChar}");
                     }
-                    builder.AppendLine($"{entryColor.VTSequenceForeground}");
+                    builder.AppendLine();
                 }
-                TextWriterColor.WriteKernelColor(builder.ToString(), false, KernelColorType.ListEntry);
+                return builder.ToString();
             }
             else if (StartByte > FileByte.LongLength)
-            {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
-            }
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified start byte number may not be larger than the file size."));
             else if (EndByte > FileByte.LongLength)
-            {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
-            }
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified end byte number may not be larger than the file size."));
+            else
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified byte number is invalid."));
         }
 
         /// <inheritdoc/>
@@ -1074,6 +1096,51 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
+        public virtual string RenderContents(string filename) =>
+            RenderContents(filename, KernelFlags.PrintLineNumbers);
+
+        /// <inheritdoc/>
+        public virtual string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
+        {
+            // Some variables
+            var builder = new StringBuilder();
+
+            // Check the path
+            FS.ThrowOnInvalidPath(filename);
+            filename = FS.NeutralizePath(filename);
+
+            // If interacting with the binary file, display it in hex. Otherwise, display it as if it is text except if forced to view binaries as texts.
+            if (Parsing.IsBinaryFile(filename) && !ForcePlain)
+            {
+                byte[] bytes = ReadAllBytes(filename);
+                return RenderContentsInHex(1, bytes.LongLength, bytes);
+            }
+            else
+            {
+                // Read the contents
+                string[] array = Listing.GetFilesystemEntries(filename, true);
+                for (int i = 0; i < array.Length; i++)
+                {
+                    string FilePath = array[i];
+                    var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
+                    var valueColor = KernelColorTools.GetColor(KernelColorType.ListValue);
+
+                    builder.AppendLine(FilePath);
+                    var Contents = Reading.ReadContents(FilePath);
+                    for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
+                    {
+                        if (PrintLineNumbers)
+                            builder.Append(TextTools.FormatString("{0}{1,4}: ", entryColor.VTSequenceForeground, ContentIndex + 1));
+                        builder.AppendLine($"{valueColor.VTSequenceForeground}{Contents[ContentIndex]}");
+                    }
+                    if (i != array.Length - 1)
+                        builder.AppendLine();
+                }
+            }
+            return builder.ToString();
+        }
+
+        /// <inheritdoc/>
         public virtual void PrintContents(string filename) =>
             PrintContents(filename, KernelFlags.PrintLineNumbers);
 
@@ -1084,28 +1151,9 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(filename);
             filename = FS.NeutralizePath(filename);
 
-            // If interacting with the binary file, display it in hex. Otherwise, display it as if it is text. Except if forced to view binaries as texts.
-            if (Parsing.IsBinaryFile(filename) && !ForcePlain)
-            {
-                byte[] bytes = ReadAllBytes(filename);
-                DisplayInHex(1, bytes.LongLength, bytes);
-            }
-            else
-            {
-                // Read the contents
-                foreach (string FilePath in Listing.GetFilesystemEntries(filename, true))
-                {
-                    var Contents = Reading.ReadContents(FilePath);
-                    for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
-                    {
-                        if (PrintLineNumbers)
-                        {
-                            TextWriterColor.WriteKernelColor("{0,4}: ", false, KernelColorType.ListEntry, ContentIndex + 1);
-                        }
-                        TextWriterColor.Write(Contents[ContentIndex]);
-                    }
-                }
-            }
+            // Now, render the contents
+            string rendered = RenderContents(filename, PrintLineNumbers, ForcePlain);
+            TextWriterColor.Write(rendered, false);
         }
 
         /// <inheritdoc/>

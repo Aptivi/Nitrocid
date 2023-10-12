@@ -51,5 +51,53 @@ namespace KS.Files.Operations.Printing
         /// <param name="FileByte">File content in bytes</param>
         public static void DisplayInHex(long StartByte, long EndByte, byte[] FileByte) =>
             DriverHandler.CurrentFilesystemDriverLocal.DisplayInHex(StartByte, EndByte, FileByte);
+
+        /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="ByteContent">Content to highlight</param>
+        /// <param name="HighlightResults">Whether to highlight the results. For querying.</param>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        public static void DisplayInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte) =>
+            DriverHandler.CurrentFilesystemDriverLocal.DisplayInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
+
+        /// <summary>
+        /// Renders the contents of a file
+        /// </summary>
+        /// <param name="filename">Full path to file with wildcards supported</param>
+        public static string RenderContents(string filename) =>
+            DriverHandler.CurrentFilesystemDriverLocal.RenderContents(filename, KernelFlags.PrintLineNumbers);
+
+        /// <summary>
+        /// Renders the contents of a file
+        /// </summary>
+        /// <param name="filename">Full path to file with wildcards supported</param>
+        /// <param name="PrintLineNumbers">Whether to also print the line numbers or not</param>
+        /// <param name="ForcePlain">Forces binary files to be printed verbatim</param>
+        public static string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false) =>
+            DriverHandler.CurrentFilesystemDriverLocal.RenderContents(filename, PrintLineNumbers, ForcePlain);
+
+        /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        public static string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte) =>
+            DriverHandler.CurrentFilesystemDriverLocal.RenderContentsInHex(StartByte, EndByte, FileByte);
+
+        /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="ByteContent">Content to highlight</param>
+        /// <param name="HighlightResults">Whether to highlight the results. For querying.</param>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        public static string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte) =>
+            DriverHandler.CurrentFilesystemDriverLocal.RenderContentsInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
+
     }
 }

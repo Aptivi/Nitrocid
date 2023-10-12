@@ -301,6 +301,20 @@ namespace KS.Drivers.Filesystem
         void PrintContents(string filename, bool PrintLineNumbers, bool ForcePlain = false);
 
         /// <summary>
+        /// Renders the contents of a file
+        /// </summary>
+        /// <param name="filename">Full path to file</param>
+        string RenderContents(string filename);
+
+        /// <summary>
+        /// Renders the contents of a file
+        /// </summary>
+        /// <param name="filename">Full path to file with wildcards supported</param>
+        /// <param name="PrintLineNumbers">Whether to also print the line numbers or not</param>
+        /// <param name="ForcePlain">Forces binary files to be printed verbatim</param>
+        string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false);
+
+        /// <summary>
         /// Renders the file in hex
         /// </summary>
         /// <param name="StartByte">Start byte position</param>
@@ -335,6 +349,24 @@ namespace KS.Drivers.Filesystem
         /// <param name="EndByte">End byte position</param>
         /// <param name="FileByte">File content in bytes</param>
         void DisplayInHexDumbMode(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte);
+
+        /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte);
+
+        /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="ByteContent">Content to highlight</param>
+        /// <param name="HighlightResults">Whether to highlight the results. For querying.</param>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte);
 
         /// <summary>
         /// Checks to see if the file exists. Windows 10/11 bug aware.

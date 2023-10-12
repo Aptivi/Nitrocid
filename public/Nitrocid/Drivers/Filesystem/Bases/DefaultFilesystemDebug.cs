@@ -18,6 +18,7 @@
 
 using KS.Files.Instances;
 using KS.Files.LineEndings;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using System.Collections.Generic;
 using System.IO;
@@ -144,6 +145,38 @@ namespace KS.Drivers.Filesystem.Bases
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHexDumbMode)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) entry");
             base.DisplayInHexDumbMode(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(DisplayInHexDumbMode)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, {nameof(FileByte)}[{FileByte.Length}]) exit");
+        }
+
+        public override string RenderContentsInHex(long StartByte, long EndByte, byte[] FileByte)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({StartByte}, {EndByte}, byte[{FileByte.Length}]) entry");
+            string result = RenderContentsInHex(StartByte, EndByte, FileByte);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({StartByte}, {EndByte}, byte[{FileByte.Length}]) exit with result length [{result.Length}]");
+            return result;
+        }
+
+        public override string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, byte[{FileByte.Length}]) entry");
+            string result = RenderContentsInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContentsInHex)}({ByteContent}, {HighlightResults}, {StartByte}, {EndByte}, byte[{FileByte.Length}]) exit with result length [{result.Length}]");
+            return result;
+        }
+
+        public override string RenderContents(string filename)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}) entry");
+            string result = RenderContents(filename, KernelFlags.PrintLineNumbers);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}) exit with result length [{result.Length}]");
+            return result;
+        }
+
+        public override string RenderContents(string filename, bool PrintLineNumbers, bool ForcePlain = false)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}, {PrintLineNumbers}, {ForcePlain}) entry");
+            string result = RenderContents(filename, PrintLineNumbers, ForcePlain);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}, {PrintLineNumbers}, {ForcePlain}) exit with result length [{result.Length}]");
+            return result;
         }
 
         public override bool Exists(string Path, bool Neutralize = false)
