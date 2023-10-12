@@ -5667,5 +5667,33 @@
                 "MaximumValue": 100
             }
         ]
+    },
+    {
+        "Name": "HueBackGradient",
+        "Desc": "Changing background color according to increasing hue. More Rainbow!",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "HueBackGradientDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Color hue saturation",
+                "Type": "SIntSlider",
+                "Variable": "HueBackGradientSaturation",
+                "Description": "How intense is the color?",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            },
+            {
+                "Name": "Color hue luminance (lightness)",
+                "Type": "SIntSlider",
+                "Variable": "HueBackGradientLuminance",
+                "Description": "How light is the color?",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            }
+        ]
     }
 ]

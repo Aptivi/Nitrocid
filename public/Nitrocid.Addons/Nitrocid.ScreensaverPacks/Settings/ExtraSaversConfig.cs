@@ -3047,5 +3047,17 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [HueBack] How light is the color?
         /// </summary>
         public int HueBackLuminance { get; set; } = 50;
+        /// <summary>
+        /// [HueBackGradient] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int HueBackGradientDelay { get; set; } = 50;
+        /// <summary>
+        /// [HueBackGradient] How intense is the color?
+        /// </summary>
+        public int HueBackGradientSaturation { get; set; } = 100;
+        /// <summary>
+        /// [HueBackGradient] How light is the color?
+        /// </summary>
+        public int HueBackGradientLuminance { get; set; } = 50;
     }
 }
