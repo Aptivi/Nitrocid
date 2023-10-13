@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Text;
 using System.Threading;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
@@ -24,6 +25,7 @@ using KS.Languages;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
+using Terminaux.Sequences.Builder;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -93,8 +95,10 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int times = Targeted ?
                     ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                     ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
-                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
-                TextWriterWhereColor.WriteWhere(new string('*', times), Left + 1, Top + 1, true);
+                StringBuilder progBuilder = new();
+                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
+                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + 2) + new string('*', times));
+                TextWriterColor.WritePlain(progBuilder.ToString());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -290,10 +294,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int times = Targeted ?
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
-                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
-                KernelColorTools.SetConsoleColor(ProgressColor, true);
-                TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
-                KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
+                StringBuilder progBuilder = new();
+                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
+                progBuilder.Append(KernelColorTools.GetColor(ProgressColor).VTSequenceBackground);
+                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + 2) + new string(' ', times));
+                progBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
+                TextWriterColor.WritePlain(progBuilder.ToString());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -453,10 +459,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int times = Targeted ?
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
-                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
-                KernelColorTools.SetConsoleColor(new Color(ProgressColor), true);
-                TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
-                KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
+                StringBuilder progBuilder = new();
+                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
+                progBuilder.Append(new Color(ProgressColor).VTSequenceBackground);
+                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + 2) + new string(' ', times));
+                progBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
+                TextWriterColor.WritePlain(progBuilder.ToString());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -616,10 +624,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int times = Targeted ?
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
-                TextWriterWhereColor.WriteWhere(new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times), Left + 1 + times, Top + 1, true);
-                KernelColorTools.SetConsoleColor(ProgressColor, true);
-                TextWriterWhereColor.WriteWhere(new string(' ', times), Left + 1, Top + 1, true);
-                KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
+                StringBuilder progBuilder = new();
+                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
+                progBuilder.Append(ProgressColor.VTSequenceBackground);
+                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + 2) + new string(' ', times));
+                progBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
+                TextWriterColor.WritePlain(progBuilder.ToString());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
