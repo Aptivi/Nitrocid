@@ -49,7 +49,7 @@ namespace KS.Kernel
             KernelInitializers.InitializeCritical();
 
             // Check for kernel command-line arguments
-            ArgumentParse.ParseArguments(args.ToList());
+            ArgumentParse.ParseArguments(args);
 
             // Some command-line arguments may request kernel shutdown
             if (KernelFlags.KernelShutdown)

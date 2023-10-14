@@ -68,25 +68,23 @@ namespace KS.Arguments
                 new[] { new CommandArgumentInfo() }, new VerbosePrebootArgument()) },
             { "nosetbuffersize", new ArgumentInfo("nosetbuffersize", /* Localizable */ "Tells the kernel not to set the console buffer size [Only available on Windows]",
                 new[] { new CommandArgumentInfo() }, new NoSetBufferSizeArgument()) },
-            { "help", new ArgumentInfo("help", /* Localizable */ "Help page",
-                new[] { new CommandArgumentInfo() }, new HelpArgument()) }
         };
 
         /// <summary>
         /// Parses specified arguments
         /// </summary>
         /// <param name="ArgumentsInput">Input Arguments</param>
-        public static void ParseArguments(List<string> ArgumentsInput)
+        public static void ParseArguments(string[] ArgumentsInput)
         {
             // Check for the arguments written by the user
             try
             {
                 if (ArgumentHelpSystem.acknowledged)
-                    ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToList();
+                    ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToArray();
                 var Arguments = AvailableCMDLineArgs;
 
                 // Parse them now
-                for (int i = 0; i <= ArgumentsInput.Count - 1; i++)
+                for (int i = 0; i <= ArgumentsInput.Length - 1; i++)
                 {
                     string Argument = ArgumentsInput[i];
                     string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
@@ -128,6 +126,41 @@ namespace KS.Arguments
             catch (Exception ex)
             {
                 KernelPanic.KernelError(KernelErrorLevel.U, true, 5L, Translate.DoTranslation("Unrecoverable error in argument:") + " " + ex.Message, ex);
+            }
+        }
+
+        /// <summary>
+        /// Checks to see if the specific argument name is passed
+        /// </summary>
+        /// <param name="ArgumentsInput">List of passed arguments</param>
+        /// <param name="argumentName">Argument name to check</param>
+        /// <returns>True if found in the arguments list and passed. False otherwise.</returns>
+        public static bool IsArgumentPassed(string[] ArgumentsInput, string argumentName)
+        {
+            // Check for the arguments written by the user
+            try
+            {
+                if (ArgumentHelpSystem.acknowledged)
+                    ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToArray();
+                var Arguments = AvailableCMDLineArgs;
+
+                // Parse them now
+                bool found = false;
+                for (int i = 0; i <= ArgumentsInput.Length - 1; i++)
+                {
+                    string Argument = ArgumentsInput[i];
+                    string ArgumentName = Argument.SplitEncloseDoubleQuotes()[0];
+                    found = ArgumentName == "help" || (ArgumentName == argumentName && Arguments.ContainsKey(ArgumentName));
+                    if (found)
+                        break;
+                }
+                return found;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Error trying to check for passed arguments: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                return false;
             }
         }
 

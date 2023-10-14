@@ -29,6 +29,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Starting;
 using KS.Kernel.Configuration;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Arguments;
 
 namespace KS.Kernel
 {
@@ -44,6 +45,15 @@ namespace KS.Kernel
         {
             // Set main thread name
             Thread.CurrentThread.Name = "Main Nitrocid Kernel Thread";
+
+            // Show help prior to starting the kernel if help is passed
+            if (ArgumentParse.IsArgumentPassed(Args, "help"))
+            {
+                // Kernel arguments
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
+                ArgumentHelpSystem.ShowArgsHelp();
+                return;
+            }
 
             // This is a kernel entry point
             while (!KernelFlags.KernelShutdown)
