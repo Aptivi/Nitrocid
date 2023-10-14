@@ -78,10 +78,13 @@ namespace KS.Kernel.Power
                         TextWriterColor.Write(Translate.DoTranslation("Shutting down..."));
 
                         // Simulate 0.0.1's behavior on shutting down
-                        if (KernelFlags.BeepOnShutdown)
-                            ConsoleWrapper.Beep();
-                        if (KernelFlags.DelayOnShutdown)
-                            Thread.Sleep(3000);
+                        if (!KernelFlags.EnableSplash)
+                        {
+                            if (KernelFlags.BeepOnShutdown)
+                                ConsoleWrapper.Beep();
+                            if (KernelFlags.DelayOnShutdown)
+                                Thread.Sleep(3000);
+                        }
 
                         // Set appropriate flags
                         KernelFlags.RebootRequested = true;
@@ -100,12 +103,6 @@ namespace KS.Kernel.Power
                         EventsManager.FireEvent(EventType.PreReboot);
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel is restarting!");
                         TextWriterColor.Write(Translate.DoTranslation("Rebooting..."));
-
-                        // Simulate 0.0.1's behavior on shutting down
-                        if (KernelFlags.BeepOnShutdown)
-                            ConsoleWrapper.Beep();
-                        if (KernelFlags.DelayOnShutdown)
-                            Thread.Sleep(3000);
 
                         // Set appropriate flags
                         KernelFlags.RebootRequested = true;
