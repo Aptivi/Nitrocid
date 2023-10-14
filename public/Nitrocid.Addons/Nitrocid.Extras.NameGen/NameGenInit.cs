@@ -49,7 +49,22 @@ namespace Nitrocid.Extras.NameGen
                             new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
                             {
                                 AcceptsValues = false
-                            })
+                            }),
+                            new SwitchInfo("male", /* Localizable */ "Generate names using the male names list", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "female", "both" },
+                                AcceptsValues = false,
+                            }),
+                            new SwitchInfo("female", /* Localizable */ "Generate names using the female names list", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "male", "both" },
+                                AcceptsValues = false,
+                            }),
+                            new SwitchInfo("both", /* Localizable */ "Generate names using the unified names list", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "female", "male" },
+                                AcceptsValues = false,
+                            }),
                         }, true)
                     }, new GenNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },

@@ -19,6 +19,7 @@
 using System.Linq;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
+using Namer;
 using static Namer.NameGenerator;
 
 namespace Nitrocid.Extras.NameGen.Commands
@@ -50,6 +51,11 @@ namespace Nitrocid.Extras.NameGen.Commands
             string SurnamePrefix = "";
             string SurnameSuffix = "";
             bool nametags = parameters.SwitchesList.Contains("-t");
+            NameGenderType genderType = NameGenderType.Unified;
+            if (parameters.SwitchesList.Contains("-male"))
+                genderType = NameGenderType.Male;
+            else if (parameters.SwitchesList.Contains("-female"))
+                genderType = NameGenderType.Female;
             string[] NamesList;
             if (parameters.ArgumentsList.Length >= 1)
                 NamesCount = int.Parse(parameters.ArgumentsList[0]);
@@ -64,7 +70,7 @@ namespace Nitrocid.Extras.NameGen.Commands
 
             // Generate n names
             PopulateNames();
-            NamesList = GenerateNames(NamesCount, NamePrefix, NameSuffix, SurnamePrefix, SurnameSuffix);
+            NamesList = GenerateNames(NamesCount, NamePrefix, NameSuffix, SurnamePrefix, SurnameSuffix, genderType);
 
             // Check to see if we need to modify the list to have nametags
             if (nametags)
