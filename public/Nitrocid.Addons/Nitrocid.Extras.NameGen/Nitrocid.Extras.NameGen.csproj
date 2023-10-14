@@ -48,7 +48,7 @@
   <!-- Extras.NameGen addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="Namer" Version="1.1.1" />
+    <PackageReference Include="Namer" Version="1.2.0" />
   </ItemGroup>
 
   <ItemGroup>
