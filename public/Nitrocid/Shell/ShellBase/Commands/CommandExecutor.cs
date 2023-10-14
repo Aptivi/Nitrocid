@@ -100,6 +100,7 @@ namespace KS.Shell.ShellBase.Commands
                 bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
                 bool RequiredSwitchesProvided = ArgumentInfo.RequiredSwitchesProvided;
                 bool RequiredSwitchArgumentsProvided = ArgumentInfo.RequiredSwitchArgumentsProvided;
+                bool numberProvided = ArgumentInfo.NumberProvided;
                 bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
                 string variable = "";
 
@@ -191,6 +192,14 @@ namespace KS.Shell.ShellBase.Commands
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", Command);
                             TextWriterColor.Write(Translate.DoTranslation("The below switches don't accept values."));
                             ListWriterColor.WriteList(ArgumentInfo.NoValueSwitchesList);
+                        }
+                    
+                        // Check for invalid number in numeric arguments
+                        if (!numberProvided)
+                        {
+                            argSatisfied = false;
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", Command);
+                            TextWriterColor.Write(Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."));
                         }
                     }
                 }

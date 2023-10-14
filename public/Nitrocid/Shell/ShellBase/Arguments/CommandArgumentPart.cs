@@ -39,6 +39,10 @@ namespace KS.Shell.ShellBase.Arguments
         /// Auto completion function delegate
         /// </summary>
         public Func<string[]> AutoCompleter { get; private set; }
+        /// <summary>
+        /// Command argument expression
+        /// </summary>
+        public bool IsNumeric { get; private set; }
 
         /// <summary>
         /// Installs a new instance of the command argument part class
@@ -46,10 +50,12 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="argumentExpression">Command argument expression</param>
         /// <param name="argumentRequired">Is this argument part required?</param>
         /// <param name="autoCompleter">Auto completion function</param>
-        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null)
+        /// <param name="isNumeric">Specifies whether the argument accepts only numbers (and dots for float values)</param>
+        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null, bool isNumeric = false)
         {
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;
+            IsNumeric = isNumeric;
 
             // Check to see if the expression points to a known auto completion function
             if (!string.IsNullOrEmpty(argumentExpression))

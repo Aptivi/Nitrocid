@@ -230,7 +230,10 @@ namespace KS.Shell.ShellBase.Help
                             bool acceptsValue = Switch.AcceptsValues;
                             string switchName = Switch.SwitchName;
                             string renderedSwitchValue = argRequired ? $"=value" : acceptsValue ? $"[=value]" : "";
-                            string renderedSwitch = required ? $" <-{switchName}{renderedSwitchValue}>" : $" [-{switchName}{renderedSwitchValue}]";
+                            string renderedSwitch =
+                                required ?
+                                $" <-{switchName}{renderedSwitchValue}>" :
+                                $" [-{switchName}{renderedSwitchValue}]";
                             TextWriterColor.WriteKernelColor(renderedSwitch, false, KernelColorType.ListEntry);
                         }
 
@@ -240,7 +243,11 @@ namespace KS.Shell.ShellBase.Help
                         foreach (var Argument in Arguments)
                         {
                             bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
-                            string renderedArgument = required ? $" <{Argument.ArgumentExpression}>" : $" [{Argument.ArgumentExpression}]";
+                            bool justNumeric = Argument.IsNumeric;
+                            string renderedArgument =
+                                required ?
+                                $" <{Argument.ArgumentExpression}{(justNumeric ? ":int" : "")}>" :
+                                $" [{Argument.ArgumentExpression}{(justNumeric ? ":int" : "")}]";
                             TextWriterColor.WriteKernelColor(renderedArgument, false, KernelColorType.ListEntry);
                             queriedArgs++;
                         }
