@@ -148,7 +148,7 @@ namespace KS.Shell.ShellBase.Commands
                         {
                             argSatisfied = false;
                             DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                            TextWriterColor.Write(Translate.DoTranslation("Required arguments are not provided."));
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Required arguments are not provided."), true, KernelColorType.Error);
                         }
                     
                         // Check for required switches
@@ -156,7 +156,7 @@ namespace KS.Shell.ShellBase.Commands
                         {
                             argSatisfied = false;
                             DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
-                            TextWriterColor.Write(Translate.DoTranslation("Required switches are not provided."));
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Required switches are not provided."), true, KernelColorType.Error);
                         }
                     
                         // Check for required switch arguments
@@ -164,7 +164,7 @@ namespace KS.Shell.ShellBase.Commands
                         {
                             argSatisfied = false;
                             DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
-                            TextWriterColor.Write(Translate.DoTranslation("One of the switches requires a value that is not provided."));
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("One of the switches requires a value that is not provided."), true, KernelColorType.Error);
                         }
                     
                         // Check for unknown switches
@@ -172,7 +172,7 @@ namespace KS.Shell.ShellBase.Commands
                         {
                             argSatisfied = false;
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
-                            TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below are unknown."));
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Switches that are listed below are unknown."), true, KernelColorType.Error);
                             ListWriterColor.WriteList(ArgumentInfo.UnknownSwitchesList);
                         }
                     
@@ -181,7 +181,7 @@ namespace KS.Shell.ShellBase.Commands
                         {
                             argSatisfied = false;
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
-                            TextWriterColor.Write(Translate.DoTranslation("Switches that are listed below conflict with each other."));
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Switches that are listed below conflict with each other."), true, KernelColorType.Error);
                             ListWriterColor.WriteList(ArgumentInfo.ConflictingSwitchesList);
                         }
                     
@@ -190,7 +190,7 @@ namespace KS.Shell.ShellBase.Commands
                         {
                             argSatisfied = false;
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", Command);
-                            TextWriterColor.Write(Translate.DoTranslation("The below switches don't accept values."));
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("The below switches don't accept values."), true, KernelColorType.Error);
                             ListWriterColor.WriteList(ArgumentInfo.NoValueSwitchesList);
                         }
                     
@@ -199,7 +199,7 @@ namespace KS.Shell.ShellBase.Commands
                         {
                             argSatisfied = false;
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", Command);
-                            TextWriterColor.Write(Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."));
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."), true, KernelColorType.Error);
                         }
                     }
                 }
