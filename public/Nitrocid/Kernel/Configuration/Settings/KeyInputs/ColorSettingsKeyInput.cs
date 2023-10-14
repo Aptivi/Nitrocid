@@ -40,7 +40,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
 
             // Get the color value from the color wheel
             KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
-            string ColorValue = ColorWheel.InputForColor(keyColorValue).PlainSequence;
+            string ColorValue = ColorSelector.OpenColorSelector(keyColorValue).PlainSequence;
 
             // Bail and return
             bail = true;

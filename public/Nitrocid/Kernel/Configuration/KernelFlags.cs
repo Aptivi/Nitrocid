@@ -274,6 +274,11 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static bool AllowUntrustedMods =>
             Config.MainConfig.AllowUntrustedMods;
+        /// <summary>
+        /// Opts in to the new color selector
+        /// </summary>
+        public static bool UseNewColorSelector =>
+            Config.MainConfig.UseNewColorSelector;
 
         // Private flags
         internal static bool NotifyConfigError;

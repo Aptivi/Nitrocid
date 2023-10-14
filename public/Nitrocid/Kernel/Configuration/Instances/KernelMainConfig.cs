@@ -1647,5 +1647,9 @@ namespace KS.Kernel.Configuration.Instances
         /// If enabled, uses the classic header style in the settings app. Otherwise, the new one.
         /// </summary>
         public bool ClassicSettingsHeaderStyle { get; set; }
+        /// <summary>
+        /// If enabled, opts you in to the new color selector.
+        /// </summary>
+        public bool UseNewColorSelector { get; set; }
     }
 }
