@@ -71,8 +71,8 @@ namespace Nitrocid.Extras.Calendar
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "show"),
-                            new CommandArgumentPart(false, "year"),
-                            new CommandArgumentPart(false, "month")
+                            new CommandArgumentPart(false, "year", null, true),
+                            new CommandArgumentPart(false, "month", null, true)
                         }, Array.Empty<SwitchInfo>()),
                         new CommandArgumentInfo(new[]
                         {
@@ -85,7 +85,7 @@ namespace Nitrocid.Extras.Calendar
                         {
                             new CommandArgumentPart(true, "event"),
                             new CommandArgumentPart(true, "remove"),
-                            new CommandArgumentPart(true, "eventId")
+                            new CommandArgumentPart(true, "eventId", null, true)
                         }, Array.Empty<SwitchInfo>()),
                         new CommandArgumentInfo(new[]
                         {
@@ -108,7 +108,7 @@ namespace Nitrocid.Extras.Calendar
                         {
                             new CommandArgumentPart(true, "reminder"),
                             new CommandArgumentPart(true, "remove"),
-                            new CommandArgumentPart(true, "reminderid")
+                            new CommandArgumentPart(true, "reminderid", null, true)
                         }, Array.Empty<SwitchInfo>()),
                         new CommandArgumentInfo(new[]
                         {

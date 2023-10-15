@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.Hex
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "bytenumber")
+                            new CommandArgumentPart(true, "bytenumber", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_DelByteCommand())
             },
@@ -78,8 +78,8 @@ namespace KS.Shell.Shells.Hex
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "startbyte"),
-                            new CommandArgumentPart(false, "endbyte")
+                            new CommandArgumentPart(true, "startbyte", null, true),
+                            new CommandArgumentPart(false, "endbyte", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_DelBytesCommand())
             },
@@ -96,8 +96,8 @@ namespace KS.Shell.Shells.Hex
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "startbyte"),
-                            new CommandArgumentPart(false, "endbyte")
+                            new CommandArgumentPart(false, "startbyte", null, true),
+                            new CommandArgumentPart(false, "endbyte", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_PrintCommand(), CommandFlags.Wrappable)
             },
@@ -108,8 +108,8 @@ namespace KS.Shell.Shells.Hex
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "byte"),
-                            new CommandArgumentPart(false, "startbyte"),
-                            new CommandArgumentPart(false, "endbyte")
+                            new CommandArgumentPart(false, "startbyte", null, true),
+                            new CommandArgumentPart(false, "endbyte", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new HexEdit_QueryByteCommand(), CommandFlags.Wrappable)
             },

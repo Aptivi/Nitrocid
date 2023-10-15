@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "pageNum")
+                            new CommandArgumentPart(false, "pageNum", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new Mail_ListCommand())
             },
@@ -88,7 +88,7 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "mailId"),
+                            new CommandArgumentPart(true, "mailId", null, true),
                             new CommandArgumentPart(true, "targetFolder")
                         }, Array.Empty<SwitchInfo>())
                     }, new Mail_MvCommand())
@@ -110,7 +110,7 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "mailid")
+                            new CommandArgumentPart(true, "mailid", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new Mail_ReadCommand())
             },
@@ -120,7 +120,7 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "mailid")
+                            new CommandArgumentPart(true, "mailid", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new Mail_ReadEncCommand())
             },
@@ -141,7 +141,7 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "mailid")
+                            new CommandArgumentPart(true, "mailid", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new Mail_RmCommand())
             },

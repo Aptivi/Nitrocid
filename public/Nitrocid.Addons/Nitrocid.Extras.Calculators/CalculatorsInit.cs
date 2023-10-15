@@ -47,8 +47,8 @@ namespace Nitrocid.Extras.Calculators
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "real"),
-                            new CommandArgumentPart(true, "imaginary"),
+                            new CommandArgumentPart(true, "real", null, true),
+                            new CommandArgumentPart(true, "imaginary", null, true),
                         }, Array.Empty<SwitchInfo>())
                     }, new ImaginaryCommand())
             },

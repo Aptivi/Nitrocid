@@ -487,7 +487,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "diskNum"),
+                            new CommandArgumentPart(true, "diskNum", null, true),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new DiskInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -497,7 +497,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "notificationNumber"),
+                            new CommandArgumentPart(true, "notificationNumber", null, true),
                         }, Array.Empty<SwitchInfo>())
                     }, new DismissNotifCommand())
             },
@@ -850,7 +850,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "diskNum"),
+                            new CommandArgumentPart(true, "diskNum", null, true),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new LsDiskPartsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -952,8 +952,8 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "diskNum"),
-                            new CommandArgumentPart(true, "partNum"),
+                            new CommandArgumentPart(true, "diskNum", null, true),
+                            new CommandArgumentPart(true, "partNum", null, true),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new PartInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -1086,7 +1086,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "ip"),
-                            new CommandArgumentPart(false, "port"),
+                            new CommandArgumentPart(false, "port", null, true),
                         }, Array.Empty<SwitchInfo>())
                     }, new RebootCommand())
             },
@@ -1111,7 +1111,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "address"),
-                            new CommandArgumentPart(true, "port"),
+                            new CommandArgumentPart(true, "port", null, true),
                             new CommandArgumentPart(false, "command"),
                         }, Array.Empty<SwitchInfo>())
                     }, new RexecCommand(), CommandFlags.Strict)
@@ -1336,7 +1336,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "ip"),
-                            new CommandArgumentPart(false, "port"),
+                            new CommandArgumentPart(false, "port", null, true),
                         }, Array.Empty<SwitchInfo>())
                     }, new ShutdownCommand())
             },

@@ -68,8 +68,8 @@ namespace KS.Shell.Shells.Text
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "charNum"),
-                            new CommandArgumentPart(true, "lineNum")
+                            new CommandArgumentPart(true, "charNum", null, true),
+                            new CommandArgumentPart(true, "lineNum", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_DelCharNumCommand())
             },
@@ -79,8 +79,8 @@ namespace KS.Shell.Shells.Text
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "lineNum"),
-                            new CommandArgumentPart(false, "lineNum2")
+                            new CommandArgumentPart(true, "lineNum", null, true),
+                            new CommandArgumentPart(false, "lineNum2", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_DelLineCommand())
             },
@@ -91,8 +91,8 @@ namespace KS.Shell.Shells.Text
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "word/phrase"),
-                            new CommandArgumentPart(true, "lineNum"),
-                            new CommandArgumentPart(false, "lineNum2")
+                            new CommandArgumentPart(true, "lineNum", null, true),
+                            new CommandArgumentPart(false, "lineNum2", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_DelWordCommand())
             },
@@ -102,7 +102,7 @@ namespace KS.Shell.Shells.Text
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "linenumber")
+                            new CommandArgumentPart(true, "linenumber", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_EditLineCommand())
             },
@@ -119,8 +119,8 @@ namespace KS.Shell.Shells.Text
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "lineNum"),
-                            new CommandArgumentPart(false, "lineNum2")
+                            new CommandArgumentPart(false, "lineNum", null, true),
+                            new CommandArgumentPart(false, "lineNum2", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_PrintCommand(), CommandFlags.Wrappable)
             },
@@ -132,7 +132,7 @@ namespace KS.Shell.Shells.Text
                         {
                             new CommandArgumentPart(true, "char"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2")
+                            new CommandArgumentPart(false, "lineNum2", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_QueryCharCommand(), CommandFlags.Wrappable)
             },
@@ -144,7 +144,7 @@ namespace KS.Shell.Shells.Text
                         {
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2")
+                            new CommandArgumentPart(false, "lineNum2", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_QueryWordCommand(), CommandFlags.Wrappable)
             },
@@ -156,7 +156,7 @@ namespace KS.Shell.Shells.Text
                         {
                             new CommandArgumentPart(true, "regex"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2")
+                            new CommandArgumentPart(false, "lineNum2", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_QueryWordRegexCommand(), CommandFlags.Wrappable)
             },
@@ -180,7 +180,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2")
+                            new CommandArgumentPart(false, "lineNum2", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_ReplaceInlineCommand())
             },
@@ -204,7 +204,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "regex"),
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2")
+                            new CommandArgumentPart(false, "lineNum2", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new TextEdit_ReplaceInlineRegexCommand())
             },

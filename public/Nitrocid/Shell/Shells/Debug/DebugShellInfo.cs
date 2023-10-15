@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.Debug
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "sessionNum")
+                            new CommandArgumentPart(true, "sessionNum", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new Debug_DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.Debug
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "excNum")
+                            new CommandArgumentPart(true, "excNum", null, true)
                         }, Array.Empty<SwitchInfo>())
                     }, new Debug_ExcInfoCommand())
             },

@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.UnitConv
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "unittype", () => Quantity.Infos.Select((src) => src.Name).ToArray()),
-                            new CommandArgumentPart(true, "quantity"),
+                            new CommandArgumentPart(true, "quantity", null, true),
                             new CommandArgumentPart(true, "sourceunit"),
                             new CommandArgumentPart(true, "targetunit"),
                         }, new[]

@@ -50,7 +50,7 @@ namespace Nitrocid.Extras.Notes
                     {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "noteNumber")
+                            new CommandArgumentPart(true, "noteNumber", null, true)
                         }, Array.Empty<SwitchInfo>()),
                     }, new RemoveNote())
             },
