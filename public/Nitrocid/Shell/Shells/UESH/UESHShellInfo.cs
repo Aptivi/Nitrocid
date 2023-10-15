@@ -1435,14 +1435,14 @@ namespace KS.Shell.Shells.UESH
                     }, new ThemePrevCommand())
             },
             
-            { "themesel",
-                new CommandInfo("themesel", ShellType, /* Localizable */ "Selects a theme and sets it",
+            { "themeset",
+                new CommandInfo("themeset", ShellType, /* Localizable */ "Selects a theme and sets it",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "theme"),
                         }, Array.Empty<SwitchInfo>())
-                    }, new ThemeSelCommand())
+                    }, new ThemeSetCommand())
             },
 
             { "unblockdbgdev",
