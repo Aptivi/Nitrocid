@@ -48,7 +48,8 @@ namespace KS.Shell.Shells.UESH.Commands
             string selectedTheme = "";
             string ThemePath = "";
 
-            while (answer != "y")
+            bool bail = false;
+            while (answer != "y" && !bail)
             {
                 // Selected theme null for now
                 selectedTheme = parameters.ArgumentsList.Length > 0 ? parameters.ArgumentsList[0] : "";
@@ -97,10 +98,18 @@ namespace KS.Shell.Shells.UESH.Commands
                 // Pause until a key is pressed
                 answer = ChoiceStyle.PromptChoice(
                     TextTools.FormatString(Translate.DoTranslation("Would you like to set this theme?") + "\n{0}: {1}", selectedTheme, Theme.Localizable ? Translate.DoTranslation(Theme.Description) : Theme.Description), "y/n",
-                    new[] { Translate.DoTranslation("Yes, set it!"), Translate.DoTranslation("No, don't set it.") },
+                    new[] {
+                        Translate.DoTranslation("Yes, set it!"),
+                        Translate.DoTranslation("No, don't set it.")
+                    },
                     ChoiceOutputType.Modern
                 );
+                if (answer == "n" && parameters.ArgumentsList.Length > 0)
+                    bail = true;
             }
+
+            if (bail)
+                return 0;
 
             // User answered yes, so set it
             if (Checking.FileExists(ThemePath))
