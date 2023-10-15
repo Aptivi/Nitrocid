@@ -153,12 +153,15 @@ namespace KS.ConsoleBase.Themes
             {
                 var calendarInstance = CalendarTools.GetCalendar(calendar);
                 int year = calendarInstance.Culture.DateTimeFormat.Calendar.GetYear(TimeDateTools.KernelDateTime);
+                int yearEnd = year;
                 int monthStart = StartMonth;
                 int monthEnd = EndMonth;
                 var dayStart = StartDay;
                 var dayEnd = EndDay;
+                if (monthEnd < monthStart)
+                    yearEnd++;
                 var dateTimeStart = new DateTime(year, monthStart, dayStart, calendarInstance.Culture.DateTimeFormat.Calendar);
-                var dateTimeEnd = new DateTime(year, monthEnd, dayEnd, calendarInstance.Culture.DateTimeFormat.Calendar);
+                var dateTimeEnd = new DateTime(yearEnd, monthEnd, dayEnd, calendarInstance.Culture.DateTimeFormat.Calendar);
                 StartMonth = dateTimeStart.Month;
                 EndMonth = dateTimeEnd.Month;
                 StartDay = dateTimeStart.Day;
@@ -199,7 +202,7 @@ namespace KS.ConsoleBase.Themes
 
                 // Deal with the start and the end
                 if (StartMonth > EndMonth)
-                    (EndMonth, StartMonth) = (StartMonth, EndMonth);
+                    end = end.AddYears(1);
                 else if (StartDay > EndDay)
                     (EndDay, StartDay) = (StartDay, EndDay);
             }
