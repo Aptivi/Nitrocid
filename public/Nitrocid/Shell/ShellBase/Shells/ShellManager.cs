@@ -78,6 +78,7 @@ namespace KS.Shell.ShellBase.Shells
     public static class ShellManager
     {
 
+        internal static string lastCommand = "";
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
         internal static Dictionary<string, List<string>> histories = new()
         {
@@ -164,6 +165,17 @@ namespace KS.Shell.ShellBase.Shells
                     new[] {
                         new CommandArgumentInfo()
                     }, new PresetsUnifiedCommand())
+            },
+
+            { "repeat",
+                new CommandInfo("repeat", ShellType.Shell, /* Localizable */ "Repeats the last action or the specified command",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "times", null, true),
+                            new CommandArgumentPart(false, "command"),
+                        }, Array.Empty<SwitchInfo>())
+                    }, new RepeatUnifiedCommand())
             },
 
             { "savehistories",
@@ -593,6 +605,7 @@ namespace KS.Shell.ShellBase.Shells
             // Restore title and cancel possibility state
             ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
             CancellationHandlers.canCancel = false;
+            lastCommand = FullCommand;
         }
 
         /// <summary>
