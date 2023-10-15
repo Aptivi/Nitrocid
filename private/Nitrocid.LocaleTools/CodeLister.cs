@@ -28,26 +28,42 @@ namespace Nitrocid.LocaleTools
         {
             // Check to see if we have the Nitrocid KS folder
             string kernelSimulatorSource = "../../../../../public/Nitrocid/";
+            string kernelSimulatorAddonsSource = "../../../../../public/Nitrocid.Addons/";
+            List<string> sources = new();
             if (Directory.Exists(kernelSimulatorSource))
             {
                 // Iterate through all the source files for Nitrocid KS
                 string[] files = Directory.GetFiles(kernelSimulatorSource, "*.cs", SearchOption.AllDirectories);
-                return files;
+                sources.AddRange(files);
             }
-            return Array.Empty<string>();
+            if (Directory.Exists(kernelSimulatorAddonsSource))
+            {
+                // Iterate through all the source files for Nitrocid KS addons
+                string[] files = Directory.GetFiles(kernelSimulatorAddonsSource, "*.cs", SearchOption.AllDirectories);
+                sources.AddRange(files);
+            }
+            return sources.ToArray();
         }
 
         private static string[] ListDataFilesForKS()
         {
             // Check to see if we have the Nitrocid KS folder
             string kernelSimulatorDataSource = "../../../../../public/Nitrocid/Resources/Settings/";
+            string kernelSimulatorDataAddonsSource = "../../../../../public/Nitrocid.Addons/";
+            List<string> data = new();
             if (Directory.Exists(kernelSimulatorDataSource))
             {
                 // Iterate through all the data files for Nitrocid KS
                 string[] files = Directory.GetFiles(kernelSimulatorDataSource, "*Entries.json", SearchOption.AllDirectories);
-                return files;
+                data.AddRange(files);
             }
-            return Array.Empty<string>();
+            if (Directory.Exists(kernelSimulatorDataAddonsSource))
+            {
+                // Iterate through all the data files for Nitrocid KS
+                string[] files = Directory.GetFiles(kernelSimulatorDataAddonsSource, "*Settings.json", SearchOption.AllDirectories);
+                data.AddRange(files);
+            }
+            return data.ToArray();
         }
 
         internal static List<(string, string)> PopulateSources()
