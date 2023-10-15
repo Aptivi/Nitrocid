@@ -26,6 +26,7 @@ using System;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Wheel;
+using Terminaux.Sequences.Tools;
 
 namespace KS.ConsoleBase.Colors
 {
@@ -40,6 +41,7 @@ namespace KS.ConsoleBase.Colors
         private static ConsoleColors colorValue255 = ConsoleColors.Magenta;
         private static ConsoleColor colorValue16 = ConsoleColor.Magenta;
         private static bool refresh = true;
+        private static bool save = true;
 
         /// <summary>
         /// Opens the color selector
@@ -78,6 +80,25 @@ namespace KS.ConsoleBase.Colors
             Color selectedColor = initialColor;
             ColorType type = initialColor.Type;
 
+            // Set initial colors
+            switch (type)
+            {
+                case ColorType.TrueColor:
+                    trueColorHue = selectedColor.HSL.HueWhole;
+                    trueColorSaturation = selectedColor.HSL.SaturationWhole;
+                    trueColorLightness = selectedColor.HSL.LightnessWhole;
+                    break;
+                case ColorType._255Color:
+                    colorValue255 = selectedColor.ColorEnum255;
+                    break;
+                case ColorType._16Color:
+                    colorValue16 = selectedColor.ColorEnum16;
+                    break;
+                default:
+                    DebugCheck.AssertFail("invalid color type in the color selector");
+                    break;
+            }
+
             // Now, the selector main loop
             bool bail = false;
             while (!bail)
@@ -111,6 +132,12 @@ namespace KS.ConsoleBase.Colors
             }
 
             // Return the selected color
+            refresh = true;
+            if (!save)
+            {
+                save = true;
+                selectedColor = initialColor;
+            }
             return selectedColor;
         }
 
@@ -310,6 +337,10 @@ namespace KS.ConsoleBase.Colors
                 case ConsoleKey.Enter:
                     bail = true;
                     break;
+                case ConsoleKey.Escape:
+                    bail = true;
+                    save = false;
+                    break;
             }
             UpdateColor(ref selectedColor, type);
             return bail;
@@ -363,6 +394,10 @@ namespace KS.ConsoleBase.Colors
                     break;
                 case ConsoleKey.Enter:
                     bail = true;
+                    break;
+                case ConsoleKey.Escape:
+                    bail = true;
+                    save = false;
                     break;
             }
             UpdateColor(ref selectedColor, type);
@@ -418,6 +453,10 @@ namespace KS.ConsoleBase.Colors
                 case ConsoleKey.Enter:
                     bail = true;
                     break;
+                case ConsoleKey.Escape:
+                    bail = true;
+                    save = false;
+                    break;
             }
             UpdateColor(ref selectedColor, type);
             return bail;
@@ -442,15 +481,23 @@ namespace KS.ConsoleBase.Colors
         {
             // Print the RGB color values
             int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 2;
+            int hueBarEndX = ConsoleWrapper.WindowWidth - 2;
             int rgbValuesY = 1;
-            int redValueX = hueBarX;
-            int greenValueX = hueBarX + 11;
-            int blueValueX = hueBarX + 22;
-            TextWriterWhereColor.WriteWhereColor($"R: {selectedColor.R:000}", redValueX, rgbValuesY, new Color(255, 0, 0));
-            TextWriterWhereColor.WriteWhereColor(" | ", redValueX + 8, rgbValuesY, ConsoleColors.White);
-            TextWriterWhereColor.WriteWhereColor($"G: {selectedColor.G:000}", greenValueX, rgbValuesY, new Color(0, 255, 0));
-            TextWriterWhereColor.WriteWhereColor(" | ", redValueX + 19, rgbValuesY, ConsoleColors.White);
-            TextWriterWhereColor.WriteWhereColor($"B: {selectedColor.B:000}", blueValueX, rgbValuesY, new Color(0, 0, 255));
+            int hueBarMiddleX = (ConsoleWrapper.WindowWidth / 2) + (hueBarEndX - hueBarX) / 2;
+            string rendered =
+                KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground +
+                new Color(255, 0, 0).VTSequenceForegroundTrueColor +
+                $"R: {selectedColor.R:000}" +
+                new Color(ConsoleColors.White).VTSequenceForegroundTrueColor +
+                " | " +
+                new Color(0, 255, 0).VTSequenceForegroundTrueColor +
+                $"G: {selectedColor.G:000}" +
+                new Color(ConsoleColors.White).VTSequenceForegroundTrueColor +
+                " | " +
+                new Color(0, 0, 255).VTSequenceForegroundTrueColor +
+                $"B: {selectedColor.B:000}";
+            hueBarMiddleX -= VtSequenceTools.FilterVTSequences(rendered).Length / 2 - 2;
+            TextWriterWhereColor.WriteWhere(rendered, hueBarMiddleX, rgbValuesY);
         }
 
         private static void UpdateColor(ref Color selectedColor, ColorType newType)
