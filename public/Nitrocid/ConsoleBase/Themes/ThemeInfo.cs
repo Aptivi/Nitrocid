@@ -22,6 +22,8 @@ using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Time;
+using KS.Kernel.Time.Calendars;
+using KS.Kernel.Time.Renderers;
 using KS.Resources;
 using Newtonsoft.Json.Linq;
 using Terminaux.Colors;
@@ -92,6 +94,10 @@ namespace KS.ConsoleBase.Themes
         /// </summary>
         public bool Localizable =>
             localizable;
+        /// <summary>
+        /// The calendar name in which the event is assigned to
+        /// </summary>
+        public string Calendar { get; }
 
         /// <summary>
         /// Gets a color from the color type
@@ -138,9 +144,29 @@ namespace KS.ConsoleBase.Themes
             StartDay = (int)(ThemeResourceJson["Metadata"]["StartDay"] ?? 1);
             EndMonth = (int)(ThemeResourceJson["Metadata"]["EndMonth"] ?? 1);
             EndDay = (int)(ThemeResourceJson["Metadata"]["EndDay"] ?? 1);
+            Calendar = (string)(ThemeResourceJson["Metadata"]["Calendar"] ?? "Gregorian");
+            if (!Enum.TryParse(Calendar, out CalendarTypes calendar))
+                calendar = CalendarTypes.Gregorian;
+
+            // If the calendar is not Gregorian (for example, Hijri), convert that to Gregorian using the current date
+            if (calendar != CalendarTypes.Gregorian)
+            {
+                var calendarInstance = CalendarTools.GetCalendar(calendar);
+                int year = calendarInstance.Culture.DateTimeFormat.Calendar.GetYear(TimeDateTools.KernelDateTime);
+                int monthStart = StartMonth;
+                int monthEnd = EndMonth;
+                var dayStart = StartDay;
+                var dayEnd = EndDay;
+                var dateTimeStart = new DateTime(year, monthStart, dayStart, calendarInstance.Culture.DateTimeFormat.Calendar);
+                var dateTimeEnd = new DateTime(year, monthEnd, dayEnd, calendarInstance.Culture.DateTimeFormat.Calendar);
+                StartMonth = dateTimeStart.Month;
+                EndMonth = dateTimeEnd.Month;
+                StartDay = dateTimeStart.Day;
+                EndDay = dateTimeEnd.Day;
+            }
 
             // Month sanity checks
-            StartMonth = 
+            StartMonth =
                 StartMonth < 1 ? 1 :
                 StartMonth > 12 ? 12 :
                 StartMonth;
