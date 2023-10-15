@@ -22,7 +22,6 @@ using KS.Misc.Reflection;
 using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Colors;
-using Terminaux.Colors.Wheel;
 
 namespace KS.Kernel.Configuration.Settings.KeyInputs
 {
