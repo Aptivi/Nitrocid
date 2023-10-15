@@ -42,8 +42,8 @@ namespace KS.Drivers.HardwareProber
         public static Dictionary<string, IDriver> GetHardwareProberDrivers()
         {
             // First, exclude internal drivers from the list
-            var filteredDrivers = DriverHandler.drivers[DriverTypes.RNG].Where((kvp) => !kvp.Value.DriverInternal);
-            var filteredCustomDrivers = DriverHandler.customDrivers[DriverTypes.RNG].Where((kvp) => !kvp.Value.DriverInternal);
+            var filteredDrivers = DriverHandler.drivers[DriverTypes.HardwareProber].Where((kvp) => !kvp.Value.DriverInternal);
+            var filteredCustomDrivers = DriverHandler.customDrivers[DriverTypes.HardwareProber].Where((kvp) => !kvp.Value.DriverInternal);
 
             // Then, get the list of drivers
             return filteredDrivers.Union(filteredCustomDrivers).ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
