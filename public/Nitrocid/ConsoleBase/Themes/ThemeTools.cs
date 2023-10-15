@@ -145,15 +145,31 @@ namespace KS.ConsoleBase.Themes
                 var ThemeInfo = new ThemeInfo(ThemeStream);
                 ThemeStream.Close();
 
-                if (!(ThemeFile == "Default"))
+                // Check if the console supports true color
+                if ((KernelFlags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
                 {
+                    // Check to see if the event is finished
+                    if (ThemeInfo.IsExpired)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Setting event theme in a day that the event finished...");
+                        EventsManager.FireEvent(EventType.ThemeSetError, ThemeInfo.Name, ThemeSetErrorReasons.EventFinished);
+                        throw new KernelException(KernelExceptionType.ThemeManagement, Translate.DoTranslation("The theme {0} celebrates an event, but you're either too early or too late to attend. Each year, this theme is accessible from {1}/{2} to {3}/{4}."), ThemeInfo.Name, ThemeInfo.StartMonth, ThemeInfo.StartDay, ThemeInfo.EndMonth, ThemeInfo.EndDay);
+                    }
+
                     // Set colors as appropriate
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting colors as appropriate...");
                     SetColorsTheme(ThemeInfo);
                 }
+                else
+                {
+                    // We're trying to apply true color on unsupported console
+                    DebugWriter.WriteDebug(DebugLevel.E, "Unsupported console or the terminal doesn't support true color.");
+                    EventsManager.FireEvent(EventType.ThemeSetError, ThemeInfo.Name, ThemeSetErrorReasons.ConsoleUnsupported);
+                    throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("The theme {0} needs true color support, but your console doesn't support it."), ThemeInfo.Name);
+                }
 
                 // Raise event
-                EventsManager.FireEvent(EventType.ThemeSet, ThemeFile);
+                EventsManager.FireEvent(EventType.ThemeSet, ThemeInfo.Name);
             }
             catch (FileNotFoundException)
             {
