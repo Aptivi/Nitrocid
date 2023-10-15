@@ -1,16 +1,11 @@
 Ungültige Farbvorlage {0}
 hwprobe: Ihre Hardware wird geprüft. Bitte warten ...
-CPU: Ein oder mehrere CPU-Kerne konnten nicht geprüft werden. Zeige trotzdem Informationen ...
-RAM: Einer oder mehrere der RAM-Chips konnten nicht geprüft werden. Zeige trotzdem Informationen ...
-HDD: Eine oder mehrere Festplatten wurden nicht geprüft. Zeige trotzdem Informationen ...
 Geben Sie das Administratorkennwort für die Wartung ein.
 Kernelfehler beim Booten: {0}
 DOUBLE PANIC: Die Neustartzeit überschreitet die maximal erlaubte Fehlerzeit für den Neustart von {0}. Du hast einen Kernel-Fehler gefunden.
 [{0}] panic: Neustart aufgrund der Fehlerstufe {0} aktiviert.
 [{0}] panic: Zeit zum Neustart: {1} Sekunden, überschreitet 1 Stunde. Es ist auf 1 Minute eingestellt.
 DOUBLE PANIC: Fehlertyp {0} ist ungültig.
-[{0}] panic: Neustart deaktiviert aufgrund der Fehlerstufe {0}.
-[{0}] panic: {1} - Drücken Sie eine beliebige Taste, um den Kernel weiter zu verwenden.
 [{0}] panic: {1} - Drücken Sie eine beliebige Taste zum Herunterfahren.
 [{0}] panic: {1} - Neustart in {2} Sekunden ...
 DOUBLE PANIC: Kernel Bug: {0}
@@ -31,21 +26,14 @@ Der Benutzer {0} ist bereits angemeldet. Melden Sie sich ab und melden Sie sich 
 Benutzer {0} wurde entfernt.
 Fehler beim Versuch, den Nutzernamen zu entfernen.
 Der angeforderte Bildschirmschoner {0} wurde nicht gefunden.
-{0} wurde ordnungsgemäß initialisiert.
-Der Bildschirmschoner {0} existiert nicht.
 {0} ist auf den Standard-Bildschirmschoner eingestellt.
 Der Bildschirmschoner {0} wurde nicht in der Datenbank gefunden. Überprüfen Sie den Namen und versuchen Sie es erneut.
-Der Bildschirmschoner kann aufgrund folgender Ursachen nicht geladen werden:
 Beim Drucken von Text ist ein schwerwiegender Fehler aufgetreten.
 Der Mod kann wegen folgendem nicht geladen werden:
-mod: Lade Mods ...
-mod: Mods stoppen ...
 Mod {0} hat keinen Namen. Überprüfen Sie den Quellcode.
-Mod {0} hat die Version nicht.
 {0} v {1} gestartet
 Keine Definition für den Befehl {0}.
 Befehl definiert durch 
-Sie sollten die Verbindung zum Server trennen, bevor Sie eine Verbindung zu einem anderen Server herstellen
 Benutzername für {0}:
 Passwort für {0}:
 Verbunden mit {0}
@@ -54,18 +42,10 @@ Das lokale Verzeichnis {0} existiert nicht.
 Geben Sie ein lokales Verzeichnis ein. ".." zurück zu gehen.
 Das Verzeichnis {0} wurde nicht gefunden.
 Geben Sie ein Remote-Verzeichnis ein. ".." zurückgehen
-Sie müssen eine Verbindung zu einem Server herstellen, bevor Sie das Verzeichnis ändern
 Lokales Verzeichnis: {0}
 Entferntes Verzeichnis: {0}
-Sie müssen eine Verbindung zum Server herstellen, bevor Sie das aktuelle Remote-Verzeichnis erhalten.
-Sie müssen eine Verbindung zum Server mit Administratorrechten herstellen, bevor Sie den Löschvorgang ausführen.
-Von {0} getrennt
-Sie haben noch keine Verbindung zu einem Server hergestellt
 Download der Datei {0} ...
 Heruntergeladene Datei {0}.
-Sie müssen eine Verbindung zum Server herstellen, bevor Sie die Übertragung durchführen.
-{0} KB | Geändert in: {1}
-Sie sollten eine Verbindung zum Server herstellen, bevor Sie alle Remote-Dateien auflisten.
 Upload der Datei {0} ...
 Hochgeladene Datei {0}
 Ruft das aktuelle lokale Verzeichnis ab
@@ -73,7 +53,6 @@ Ruft das aktuelle ferne Verzeichnis ab
 Ändert das lokale Verzeichnis zum Herunterladen oder Hochladen von
 Ändert das Remote-Verzeichnis zum Herunterladen von oder Hochladen zu
 Löscht die entfernte Datei vom Server
-Trennt die Verbindung zum Server
 Lädt die Remote-Datei in das lokale Verzeichnis unter Verwendung von Binär- oder Textdateien
 Listet das lokale Verzeichnis auf
 Listet das entfernte Verzeichnis auf
@@ -83,7 +62,6 @@ Befehl wurde nicht gefunden, um zu {0} zu führen.
 Sie können jetzt "{0}" als Befehl ausführen: "{1}".
 Alias ​​{0} wird nicht entfernt.
 Ungültiger Modus {0}
-Es gab nicht genug Argumente. Siehe unten für die Verwendung:
 Verzeichnis {0} nicht gefunden
 Leerer Hostname
 Wechseln von: {0} zu {1} ...
@@ -128,25 +106,7 @@ Dieser Befehl ist veraltet und wird in einer zukünftigen Version entfernt.
 Sie sind nicht berechtigt, das Kennwort von {0} zu ändern, da das Ziel ein Administrator war.
 Löscht alles im Debug-Protokoll
 Ungültige Sprache
------------------------------ Kernel Panic Dump ------------------------------
->> Panikmeldungen <<
-> Beschreibung: {0}
-> Fehlertyp: {1}
-> Datum und Uhrzeit: {2}
->> Ausnahmeinformationen <<
-> Ausnahme: {0}
-> Beschreibung: {1}
-> HRESULT: {2}
-> Quelle: {3}
-> Stack trace <
->> Informationen zur inneren Ausnahme {0} <<
->> Ausnahme {0} ist die Grundursache <<
->> Keine Ausnahme; könnte ein Kernelfehler sein. <<
->> Rahmen, Dateien, Zeilen und Spalten <<
-> Frame {0}: Datei: {1} | Zeile: {2} | Spalte: {3}
-> Beim Versuch, Frame-Informationen abzurufen, ist ein Fehler aufgetreten. {0}: {1}
 Willkommen im Kernel!
-Erfolgreich als <Benutzer> angemeldet
 Der Download ist abgeschlossen.
 Download in Versuch {0} fehlgeschlagen: {1}
 Bitte verwenden Sie "ftp", wenn Sie Dateien vom FTP-Server herunterladen möchten.
@@ -164,13 +124,7 @@ Geben Sie die Adresse an
 Die Zeitzone ist falsch angegeben.
 Ungültige Profilauswahl.
 Es wird versucht, eine Verbindung zu {0} mit dem Profil {1} herzustellen ...
-Die von Ihnen ausgewählte Sprache enthält zwei Varianten. Wähle eins:
-Ungültige Wahl. Versuch es noch einmal.
-Sie sind nicht berechtigt, das aktuelle Verzeichnis auf {0} zu setzen: {1}
-Der angegebene Pfad ist zu lang.
-Speicherauszugsinformationssammler stürzte ab, als versucht wurde, Informationen zu {0} abzurufen: {1}
 Fehler beim Versuch, den Bildschirmschoner zu starten, aufgrund eines ungültigen Vorgangs.
-Nachladen im abgesicherten Modus nicht erlaubt.
 Parsing-Mods im abgesicherten Modus nicht erlaubt.
 Der Pfad ist weder eine Datei noch ein Verzeichnis.
 Erstellt eine weitere Kopie einer Datei unter einem anderen Verzeichnis oder Namen.
@@ -180,7 +134,6 @@ Verschiebt eine Datei in ein anderes Verzeichnis
 Zeitaufwand: {0} Millisekunden
 Name: {0}
 Berechnet die Dateisummen.
-Führt Sie zu unserem GitHub Wiki.
 Ungültiger Verschlüsselungsalgorithmus.
 Aktiviert oder deaktiviert das Remote-Debugging.
 Finden Sie heraus, ob Sie mathematische Gleichungen rechtzeitig lösen können
@@ -192,16 +145,11 @@ RPC wird gestartet ...
 Stellt eine Verbindung zu einem SSH-Server her.
 Geben Sie das Passwort für {0} ein:
 SSH getrennt.
-Codepage kann nicht festgelegt werden. Die Sprache wird möglicherweise nicht richtig angezeigt.
 Debugging nicht aktiviert.
 Zeigt alle empfangenen Benachrichtigungen an
 Lehnt eine Benachrichtigung ab
 Benachrichtigung erfolgreich abgewiesen.
 Führt einen Remote-Befehl an den Remote-PC aus
-- Stufe 1: Systeminitialisierung
-- Stufe 2: Hardwareerkennung
-- Stufe 3: Erkennung von Mods und Bildschirmschonern
-- Stufe 4: Einloggen
 Ungültiger Typ {0}.
 Größe: {0}
 Das Verzeichnis {0} ist bereits vorhanden.
@@ -234,21 +182,15 @@ Profile vorbereiten ... Es kann einige Minuten dauern ...
 Fehler beim Ausführen des Skripts: {0}
 Schreibt Text in die Konsole
 Trifft Benutzerauswahl
-Dabei ist <$variable> eine beliebige Variable, die zum Speichern der Antwort verwendet wird
 Dabei sind <Antworten> Antworten mit einem Buchstaben auf die Frage, die durch Schrägstriche getrennt sind
 Fehler beim Versuch, eine Verbindung zum SSH-Server herzustellen: {0}
 Ermöglicht dem Benutzer die Eingabe
 Ändert das aktuelle Mail-Verzeichnis
 E-Mail-Ordner {0} kann nicht geöffnet werden: {1}
 Listet Verzeichnisse in Ihrer E-Mail-Adresse auf
-Verwendet Informationen von der Kurzwahl, um schnell eine Verbindung zu einem beliebigen Netzwerk herzustellen
-Wählen Sie eine Adresse aus, zu der eine Verbindung hergestellt werden soll:
-Die Auswahl liegt außerhalb des Bereichs. Wählen Sie zwischen 1- {0}. Versuch es noch einmal.
-Die Auswahl ist keine Zahl. Versuch es noch einmal.
 Während der Zertifikatsüberprüfung treten Zertifikatfehler auf. Es ist möglicherweise das erste Mal, dass Sie eine Verbindung zum Server herstellen, oder das Zertifikat ist abgelaufen. Hier ist ein Fehler:
 Sind Sie sicher, dass Sie eine Verbindung herstellen möchten?
 Ungültige Antwort. Bitte versuche es erneut.
-Kurzwahl ist leer. Stellen Sie eine Verbindung zu einem Server her, um ihm eine Adresse hinzuzufügen.
 Geben Sie die Adresse und den Port des IMAP-Servers ein (<Adresse> oder <Adresse>: [Port]):
 Geben Sie die Adresse und den Port des SMTP-Servers ein (<Adresse> oder <Adresse>: [Port]):
 Sendet eine Nachricht an eine Adresse
@@ -309,13 +251,11 @@ Größenanalyse-Modus
 Festzelt beim Start
 Lange Zeit und Datum
 Zeige versteckte Dateien
-Ungültiger Abschnitt eingegeben. Bitte geh zurück.
 Geh zurück...
 Schreiben Sie einen Remote-Debugger-Port. Es muss numerisch sein und darf nicht bereits verwendet werden. Andernfalls kann der Remote-Debugger den Port nicht öffnen.
 Schreiben Sie, wie oft der Befehl "" get "" fehlgeschlagene Downloads wiederholen soll. Es muss numerisch sein.
 Schreiben Sie, wann der Bildschirmschoner nach den angegebenen Millisekunden gestartet werden soll. Es muss numerisch sein.
 Die Antwort darf nicht negativ sein.
-Die Antwort ist ungültig. Stellen Sie sicher, dass die Antwort für Konfigurationseinträge, für die Zahlen als Antworten erforderlich sind, numerisch ist.
 Die Variable {0} wurde in keinem der Module gefunden.
 Ändert die Kernelkonfiguration
 Kultur beim Sprachenwechsel ändern
@@ -329,12 +269,10 @@ Fügt Aliasnamen zu Befehlen hinzu
 Ändert MOTD, die Botschaft des Tages
 Ändert den Benutzernamen
 Verwalten von Berechtigungen für Benutzer
-Lädt die Bildschirmschonerdatei in KSMods neu
 Entfernt einen Benutzer aus der Liste
 Alias ​​{0} erfolgreich entfernt.
 Fehler beim Suchen nach Updates.
 Es sind keine Benutzer mehr in der Liste.
-Sprache konnte nicht eingestellt werden.
 Fehler beim Versuch, die Benachrichtigung zu schließen.
 usrmgr: Benutzername {0} konnte nicht erstellt werden: {1}
 Benutzer konnte nicht umbenannt werden. {0}
@@ -367,9 +305,7 @@ Wetter: {0}
 Druck: {0}
 Luftfeuchtigkeit: {0}
 Sie können Ihren eigenen API-Schlüssel unter https://home.openweathermap.org/api_keys erhalten.
-Die Liste der Städte mit ihren IDs finden Sie jederzeit unter http://bulk.openweathermap.org/sample/city.list.json.gz.
 Bevorzugte Einheit für die Temperatur
-Löst den Wartungsmodus aus. Dadurch werden mehrere Konten deaktiviert.
 Bei jedem Start wird nach Updates gesucht.
 Ändern Sie beim Wechseln der Sprache die Monatsnamen, den Kalender usw.
 Halten Sie Hardware-Prüfmeldungen stumm.
@@ -385,7 +321,6 @@ Wenn aktiviert, analysiert der Kernel den gesamten Ordner auf seine Gesamtgröß
 Aktiviert Eyecandy beim Start
 Die Uhrzeit und das Datum sind länger und zeigen die vollständigen Monatsnamen usw. an.
 Zeigt versteckte Dateien an.
-Wählen Sie Ihre bevorzugte Einheit für die Temperatur (dies gilt nur für den Befehl "Wetter").
 Mod {0} gestoppt
 {0} v {1} gestoppt
 Mod {0} hat keinen Teilenamen. Mod-Analyse fehlgeschlagen. Überprüfen Sie den Quellcode.
@@ -461,12 +396,10 @@ Hashes passen nicht zusammen.
 Hashes passen zusammen.
 Benennt einen Ordner um
 Öffnet eine Testhülle
-* Drücken Sie eine beliebige Taste, um den Kernel zu starten, oder ESC, um den Vorgang zu beenden.
 Fehler beim Starten von "{0}": {1}
 Vorschau der E-Mail-Nachricht anzeigen
 Zeigen Sie beim Auflisten von E-Mail-Nachrichten die Vorschau des Körpers an.
 Hintergrundfarbe
-Versuch, auf einen ungültigen Pfad zuzugreifen.
 Löscht die Textdatei
 Beendet den Texteditor
 Fragt ein Zeichen in einer bestimmten Zeile oder in allen Zeilen ab
@@ -493,20 +426,15 @@ Macht ein neues Thema
 Erstellen eines neuen Themas "{0}".
 Thema im aktuellen Verzeichnis speichern
 Thema in einem anderen Verzeichnis speichern...
-Wählen Sie die Farbe mit den Tasten "<-" und "->". Drücken Sie zum Beenden ENTER. Drücken Sie "i", um die Farbnummer manuell einzugeben.
-Wählen Sie die Farbe mit den Tasten "<-" und "->". Verwenden Sie die Pfeil-nach-oben- und Pfeil-nach-unten-Tasten, um zwischen den Farbbereichen auszuwählen. Drücken Sie zum Beenden ENTER. Drücken Sie "i", um die Farbnummer manuell einzugeben.
-Farbnummer von 0 bis 255 eingeben:
 Druckt Hardwareinformationen
 Prozessorname:
 Prozessorbits:
 Partitionsdateisystem:
 Partitionsgröße:
-GPU: Eine oder mehrere Grafikkarten konnten nicht überprüft werden. Informationen werden trotzdem angezeigt...
 >> Willkommen! Dies ist das erste Mal, dass Sie Remote-Debugging und -Chat aufrufen. Verwenden Sie "/register <name>", um sich zu registrieren.
 Gerät ist bereits vorhanden.
 Kein solches Gerät.
 Druckt den Inhalt der Datei auf die Konsole
-Oder übergeben Sie "listcities" an diesen Befehl.
 Eintrag ist bereits vorhanden.
 Umschließt die Konsolenausgabe
 Der Befehl ist nicht umschließbar. Diese Befehle können verpackt werden:
@@ -536,11 +464,8 @@ Anzahl der maximalen Positionen
 Wie viele Positionen werden vor dem Dimmen beleuchtet?
 Verbindet sich mit einem SSH-Server, um einen Befehl auszuführen.
 Setzt eine Variable auf einen Wert in einem Skript
-Eine Aufforderung zur Fehlerberichterstattung.
 In der FTP-Shell ist ein Fehler aufgetreten:
-Unbekannter FTP-Shell-Fehler:
 In der SFTP-Shell ist ein Fehler aufgetreten:
-Unbekannter SFTP-Shell-Fehler:
 SSH-Banner anzeigen
 Zeigt das SSH-Server-Banner bei der Verbindung an.
 Wie möchten Sie sich authentifizieren?
@@ -550,9 +475,6 @@ Geben Sie die Passphrase für den Schlüssel {0} ein:
 Neutralisiert einen nicht existierenden Pfad.
 Schlüsseldatei {0} existiert nicht.
 Fehler beim Hinzufügen des privaten Schlüssels:
-Drücken Sie "t", um in den 255-Farbmodus zu wechseln.
-Drücken Sie "t", um in den True Color-Modus zu wechseln.
-mod: Keine Mods erkannt.
 Allgemeine Befehle:
 Mod-Befehle:
 Alias-Befehle:
@@ -573,10 +495,8 @@ Startet alle Mods
 Testet die VT-Sequenz für 255 Farben
 Testet die VT-Sequenz auf True Color
 Sendet eine Benachrichtigung, um den Empfänger zu testen
-Testet das Druckdatum mit verschiedenen Kalendern
 Listet alle unterstützten Codepages auf
 Tests zur Sondierung der Hardware
-Speichert das aktuelle Verzeichnis in der Kernel-Konfigurationsdatei
 Testet den Listenschreiber mit dem String und dem String-Array
 Testet den Listenschreiber mit dem Integer- und Integer-Array
 Testet den Listenschreiber mit dem char- und char-Array
@@ -619,7 +539,6 @@ Datum:
 Zeit:
 Legt Dateiberechtigungen fest. Dies wird nur auf FTP-Servern unterstützt, auf denen Unix ausgeführt wird.
 Legt den Typ für diese Sitzung fest
-Sie müssen eine Verbindung zum Server herstellen, bevor Sie Dateisystemoperationen ausführen.
 Die Berechtigungen von {0} konnten nicht auf {1} festgelegt werden.
 Berechtigungen für Datei erfolgreich festgelegt
 Datentyp auf ASCII gesetzt!
@@ -631,21 +550,9 @@ Ausblendverzögerung in Millisekunden
 Max. Fade-Schritte
 Wie viele Millisekunden muss man warten, bevor der Text ausgeblendet wird?
 Wie viele Fade-Schritte sind zu tun?
-Volle Sonde
-Bei true wird die gesamte Hardware überprüft; Sonst wird nur die benötigte Hardware getestet.
-Fehler beim Entfernen des Bildschirmschoners {0} aus der Konfiguration.
-Ruft benutzerdefinierte Spareinstellungen ab
-Legt benutzerdefinierte Spareinstellungen fest
-Einstellungen für Bildschirmschoner erfolgreich eingestellt
-Einstellung für Bildschirmschoner fehlgeschlagen
 Öffnet eine RSS-Shell zum Lesen der Feeds
-Ändert den Feed-Link
 Listet alle Feeds auf
 Liest einen Feed in einem Webbrowser
-Ungültiger RSS2-Feed.
-Ungültiger RSS1-Feed.
-Ungültiger Atom-Feed.
-Geben Sie eine RSS-Feed-URL ein:
 Ungültiger RSS-Feed-Typ.
 Ruft die Artikelinfo ab
 Artikelnummer könnte nicht größer sein als die verfügbaren Artikel.
@@ -667,16 +574,11 @@ Schreiben Sie einen beliebigen Text, der angezeigt werden soll. Länger ist bess
 Minimale Schreibgeschwindigkeit in WPM
 Maximale Schreibgeschwindigkeit in WPM
 Tippfehlerwahrscheinlichkeit in Prozent
-Fehler beim Speichern des aktuellen Verzeichnisses: {0}
 Wischt zum Richtungswechsel
 Wie viele Wischvorgänge müssen durchgeführt werden, bevor die Richtung zufällig geändert wird?
 Etappe fertig in
 Interne Initialisierung abgeschlossen in
 Startmodus
-Befehlsname:
-Befehlsdefinition:
-Befehlstyp:
-Strenger Befehl?
 Mod-Version:
 Mod {0} nicht gefunden.
 Der Texteditor hat noch keinen Dateistream geöffnet.
@@ -698,7 +600,6 @@ Wörterbuch für normale Zeichen:
 Array-Zeichen-Wörterbuch:
 Fortschritt bei Dateisystemvorgängen anzeigen
 Zeigt an, welche Datei während der Dateisystemoperationen verarbeitet wird
-wo HardwareType sein wird
 Entweder wird der Hardwaretyp {0} nicht geprüft oder er ist ungültig.
 Der Hardwaretyp {0} wird noch nicht untersucht. Wenn Sie sicher sind, dass es sondiert wurde, starten Sie den Kernel mit aktiviertem Debugging neu.
 Partitionen nicht in die Liste geparst.
@@ -709,7 +610,6 @@ Beim Bildschirmschoner ist bei der Anzeige ein Fehler aufgetreten: {0}. Zum Verl
 Vorschau...
 So sieht Ihr Theme aus:
 Umwickelbare Befehle:
-Mod {0} hat einen ungültigen Befehl. Mod-Parsing fehlgeschlagen. Überprüfen Sie den Quellcode.
 Mod-Teile:
 Konsolen-API verwenden
 Ob die Konsolen-API zum Löschen von Text oder die schnellere VT-Sequenz zum Löschen von Zeilen verwendet werden soll. Bei False verwendet Marquee die entsprechende VT-Sequenz. Andernfalls wird die wahrscheinlich langsamere Konsolen-API verwendet.
@@ -719,19 +619,11 @@ Mod-Name:
 Name der Mod-Datei:
 Pfad der Mod-Datei:
 Teilversion:
-Mindestanzahl der erforderlichen Argumente:
-Argumente erforderlich?
-Shell-Variable setzen?
-Kann nicht im Wartungsmodus ausgeführt werden?
-Obsolet?
 Der Ordner ist leer.
 {0} erfolgreich getestet.
 Ausführliche Sonde
 Machen Sie Hardware-Probing-Meldungen etwas gesprächig.
-> Es liegen keine Informationen zu Frames vor.
 Verschönert die JSON-Datei
-Konfigurationskategorie {0} nicht gefunden.
-Konfigurationseintrag {0} nicht gefunden.
 Beats pro Minute verwenden
 Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu schreiben.
 Verzögerung in Schlägen pro Minute
@@ -745,8 +637,6 @@ Heruntergeladener Ordner {0}.
 Download für Ordner {0} fehlgeschlagen.
 Ordner {0} wird hochgeladen...
 Hochgeladener Ordner {0}
-Drücken Sie "c", um den vollständigen Farbcode zu schreiben.
-Geben Sie einen Farbcode ein, der diese Formate erfüllt:
 Minimiert die JSON-Datei
 Neue Bildschirmverzögerung in Millisekunden
 Spaltenanzahl
@@ -757,7 +647,6 @@ Wie viele Millisekunden müssen Sie warten, bevor Sie den Text erneut in den neu
 Die zu druckenden Textspalten.
 Wie viele Zeichen müssen geschrieben werden, bevor die "Zeilenfüllung" ausgelöst wird?
 Möglichkeit, dass das Linienfüllmuster in Großbuchstaben in Prozent gedruckt wird
-Linienfüllmustertyp
 Die Antwort darf nicht null sein.
 Die Antwort darf die angezeigten Einträge nicht überschreiten.
 Änderungen speichern...
@@ -772,9 +661,6 @@ Kein Netzwerk beim Herunterladen von Debug-Daten
 Überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.
 Die Handbuchseite {0} ist ungültig.
 Ziehen Sie in Betracht, diese Handbuchseite auszufüllen.
-Drücken Sie eine beliebige Taste, um die Handbuchseite zu lesen...
-Diese Handbuchseite benötigt Arbeit für:
-Handbuchseite {0} nicht gefunden.
 Mod-Handbuch
 Verfügbare Kernel-Argumente:
 Nicht behebbarer Fehler im Argument:
@@ -788,7 +674,6 @@ Mod-Teil ist nichts.
 Mods stoppen ist im abgesicherten Modus nicht erlaubt.
 Mod wurde bereits gestartet!
 Mod hat noch nicht begonnen!
-Befehlsverwendung:
 Dateiname des Teils:
 Dateipfad des Teils:
 Fehler beim Versuch, den Bildschirmschoner zu starten:
@@ -808,7 +693,6 @@ Benachrichtigungsrahmen zeichnen
 Deckt die Benachrichtigung mit dem Rahmen ab.
 Wenden Sie sich an den Anbieter des Mods, um den Mod auf die kompatible Version zu aktualisieren.
 Sendet eine Fortschrittsbenachrichtigung, um den Empfänger zu testen
-Testet das Farbrad
 Zeigt die lokale Kernelzeit an
 Zeigt das Datum des lokalen Kernels an
 Zeigt Datum und Uhrzeit des lokalen Kernels an
@@ -1015,7 +899,6 @@ Rechtes Rahmenzeichen für Benachrichtigungsrahmen
 Ob angezeigt werden soll, was in der Eingabeaufforderung geschrieben steht.
 Was ist die Mindestanzahl zur Auswahl?
 Was ist die maximale Anzahl zu wählen?
-Starten Sie das Farbrad im Echtfarbenmodus
 Falls angegeben, wird ein benutzerdefiniertes Startbanner mit Platzhalterunterstützung angezeigt. Sie können {0} für die Kernel-Version verwenden.
 Welche Variante der aktuellen Sprache wird verwendet, um die Monatsnamen, den Kalender usw. zu ändern?
 Aktiviert die True-Color-Unterstützung.
@@ -1034,13 +917,11 @@ Verbindungstyp für Serverdaten:
 Serversystem:
 Server-Download-Datentyp:
 Datentyp des Server-Uploads:
-Sie müssen eine Verbindung zu einem Server herstellen, bevor Sie diesen Vorgang ausführen.
 Geben Sie eine Remote-Datei ein, die gehasht werden soll.
 Geben Sie ein Remote-Verzeichnis ein.
 Rekursives Hashing für FTP
 Ob ein Verzeichnis rekursiv gehasht werden soll. Bitte beachten Sie, dass dies nicht von allen FTP-Servern unterstützt wird.
 Prozessortaktrate:
-Prozessor SSE2-Unterstützung:
 Gesamtzahl der Prozessoren:
 Festplattengröße:
 Gesamtspeicher:
@@ -1076,10 +957,7 @@ Versuch, einen bereits installierten Mod zu installieren. Mod aktualisieren...
 Installation fehlgeschlagen für
 Die bereitgestellte Mod-Datei ist nicht kompatibel.
 Deinstallation fehlgeschlagen für
-Öffnet eine URL
 Zeilennummern beim Drucken von Dateiinhalten drucken
-Transliterierte Fassung
-Übersetzte Fassung
 Schließt alle Benachrichtigungen
 Wird heruntergeladen...
 Hochladen...
@@ -1105,19 +983,15 @@ Rechte Rahmenfarbe für Rampenstange
 Verwenden Sie Rahmenfarben für die Rampenleiste
 Verwenden Sie die Rahmenfarben für die Rampenleiste. Wenn deaktiviert, wird ein grauer Balken erzeugt.
 Startet die HTTP-Shell
-Legt die HTTP-Site fest. Muss ein gültiger URI sein.
 Ruft die Antwort vom HTTP-Server mithilfe der angegebenen Anforderung ab
 Löscht Inhalte vom HTTP-Server
 In der HTTP-Shell ist ein Fehler aufgetreten:
 Ruft die Zeichenfolge mithilfe der angegebenen Anforderung vom HTTP-Server ab
 {0} erhalten...
-Das Format des Website-URI ist ungültig.
-Website einstellen auf
 Farben erfordern keinen Neustart, aber die meisten Einstellungen erfordern einen Neustart.
 Keine Hilfe für Argument "{0}".
 Standardschwierigkeit für SpeedPress
 Tastendruck-Timeout für SpeedPress
-Wählen Sie Ihren bevorzugten Schwierigkeitsgrad.
 Wie viele Millisekunden soll vor dem Timeout auf den Tastendruck gewartet werden? (In benutzerdefinierter Schwierigkeit)
 Ersetzt ein Wort oder einen Satz durch einen anderen unter Verwendung regulärer Ausdrücke
 Ersetzt ein Wort oder einen Satz durch ein anderes in einer Zeile unter Verwendung regulärer Ausdrücke
@@ -1128,7 +1002,6 @@ Es wird nichts gefunden. Stellen Sie sicher, dass Sie die Einstellung richtig ge
 Packt eine lokale Datei in das Archiv
 Kann nichts packen.
 Antwortbeschreibung
-Host-Port
 Weitere Informationen zu den Nutzungsbedingungen dieser Software finden Sie unter
 Ausgangstyp der Standardauswahl
 Überprüft alle KS-Einstellungen, um zu sehen, ob die Variablen korrekt geschrieben sind
@@ -1184,7 +1057,6 @@ Starten oder stoppen
 Runde
 Zurücksetzen
 Ein einfacher Timer
-Beginnen Sie (erneut) mit dem Herunterzählen
 Intervall einstellen
 Das angegebene Timeout ist nicht numerisch.
 Geben Sie das Timeout in Millisekunden an
@@ -1199,14 +1071,6 @@ Wie viele Millisekunden bis zum Timeout der FTP-Verbindung warten?
 Wie viele Millisekunden bis zum Timeout der FTP-Datenverbindung warten?
 Wählen Sie die Version des Internetprotokolls aus, die der FTP-Server unterstützt und die der FTP-Client verwendet.
 Versuch, RPC zu starten, während es bereits gestartet ist.
-Zeichen in der oberen linken Ecke für das RGB-Farbrad
-Zeichen in der oberen rechten Ecke für das RGB-Farbrad
-Zeichen in der unteren linken Ecke für das RGB-Farbrad
-Zeichen in der unteren rechten Ecke für das RGB-Farbrad
-Zeichen des oberen Rahmens für das RGB-Farbrad
-Unterer Rahmencharakter für RGB-Farbrad
-Zeichen des linken Rahmens für das RGB-Farbrad
-Rechtes Rahmenzeichen für RGB-Farbrad
 Findet eine Datei im angegebenen Verzeichnis oder im aktuellen Verzeichnis
 Konvertiert die Zeilenenden in das Format für die aktuelle Plattform oder in das angegebene benutzerdefinierte Format
 Gesamtgröße im Ordner:
@@ -1221,14 +1085,6 @@ Wenn es ein Update gibt, lädt der Kernel es automatisch herunter.
 Explosionsradius von Feuerwerk
 Wie viele Blöcke (bis zu 10) beträgt der Explosionsradius für das Feuerwerk, wenn es gezündet wird?
 Dieser Befehl hat die folgenden Schalter, die seine Funktionsweise ändern:
-Druckt die Zeilennummern, die der zu druckenden Zeile folgen
-Verhindert das Drucken der Zeilennummern
-Geben Sie an, dass die Antwort mehr als ein Zeichen umfassen kann
-Geben Sie an, dass die Antwort nur ein Zeichen umfassen darf
-Geben Sie die Frage und die Antworten in einer Zeile aus
-Geben Sie die Frage und die Antworten in zwei Zeilen aus
-Drucken Sie die Frage und die Antworten auf moderne Weise aus
-Drucken Sie die Frage und die Antworten in einer Tabelle aus
 Zeigt die Dateidetails in der Liste an
 Unterdrückt die lästigen "Erlaubnis verweigert"-Meldungen
 Zeigt alle Zeitzonen an
@@ -1242,10 +1098,7 @@ Zeigt alle verfügbaren Städte an
 Schnelle Komprimierung
 Keine Komprimierung
 Kein Basisverzeichnis im Archiv erstellen
-Trennt sich schändlich vom Server
 Gibt an, dass der Zielpfad absolut ist
-Speichert die JSON-Datei und verschönert sie dabei
-Speichert die JSON-Datei und minimiert sie dabei
 Löscht alle ausgelösten Ereignisse
 Ereignisdebugging aktivieren
 Aktiviert das Debuggen für das Kernel-Ereignissystem
@@ -1273,9 +1126,6 @@ Stilvoller Splash-Screen
 Aktiviert den eleganten Begrüßungsbildschirm beim Start. Bitte beachten Sie, dass die Eingabeaufforderung für Argumente deaktiviert und der Pre-Boot der Shell getestet wird.
 Splash-Name
 Splash-Name aus den verfügbaren Splashes, die im Kernel implementiert sind.
-Generierte Standard-MOTD.
-Generierte Standard-MAL.
-Systemkonto initialisiert
 Benutzer initialisiert
 Herzlich willkommen!
 Starten des Remote-Debuggers...
@@ -1295,7 +1145,6 @@ Zeigen Sie die Befehle an, die auf Hilfe zählen
 Zeigen Sie die Anzahl der Shell-Befehle in der Hilfe an
 Zeigen Sie die Mod-Befehle an, die auf Hilfe zählen
 Zeigen Sie die Anzahl der Aliase in der Hilfe an
-Zeigt die Anzahl der Befehle in der Befehlsliste an, gesteuert durch die drei Count-Show-Schalter für verschiedene Arten von Befehlen.
 Führt Befehle aus, sobald die UESH-Ausdrücke erfüllt sind
 Die Bedingung wurde im Ausdruck nicht gefunden.
 Bedingung {0} erfordert {1} Argumente. {2} erhalten.
@@ -1319,7 +1168,6 @@ Aktiviert den Debug-Modus
 Aktivieren Sie den Schwarz-Weiß-Modus
 Macht die Disco schwarz auf weiß. Wird Ihre Augen wirklich verletzen, wenn es zu schnell war, also nicht empfohlen, wenn Sie einen Anfall von schnellen Bildern erleben.
 Aktuelle Farben laden
-Öffnet die Mod-API-Dokumentation für die Struktur des Quellcodes in seiner aktuellsten Form
 Aktueller Wert:
 Ungültiger Hex-Farbbezeichner.
 Ungültiger RGB-Farbbezeichner.
@@ -1345,13 +1193,6 @@ Die Bytenummer ist nicht numerisch.
 Die angegebene Startbytezahl darf nicht größer als die Dateigröße sein.
 Die angegebene Endbytezahl darf nicht größer als die Dateigröße sein.
 Gelöschte Bytes.
-Wählt den Feed aus der bestehenden Feed-Liste aus Online-Quellen aus
-Feedliste wird heruntergeladen...
-Feedliste konnte nicht heruntergeladen werden.
-Wählen Sie Ihr Land aus, indem Sie die Pfeiltaste nach links oder die Pfeiltaste nach rechts drücken. Drücken Sie ENTER, um Ihre Auswahl zu bestätigen.
-Dieses Land hat {0} Nachrichtenquellen.
-Wählen Sie Ihre bevorzugte Nachrichtenquelle aus, indem Sie die Nummer eingeben. Drücken Sie ENTER, um Ihre Auswahl zu bestätigen.
-Wählen Sie einen Feed für Ihre bevorzugte Nachrichtenquelle aus. Drücken Sie ENTER, um Ihre Auswahl zu bestätigen.
 Bitte beachten Sie, dass das Bearbeiten von Binärdateien mit dieser Shell experimentell ist und bei unsachgemäßer Verwendung zu Datenbeschädigung oder Datenverlust führen kann.
 STARTEN SIE DIE SHELL NICHT, WENN SIE NICHT WISSEN, WAS SIE TUN!
 Ruft Tasteninformationen für eine gedrückte Taste ab. Nützlich zum Debuggen
@@ -1405,7 +1246,6 @@ Simulieren Sie keinen APM-Modus
 Ob eine Situation simuliert werden soll, in der kein APM verfügbar ist. Wenn aktiviert, informiert es den Benutzer, dass es jetzt sicher ist, den Computer beim Herunterfahren auszuschalten.
 Glitch-Dichte
 Je größer der Prozentsatz, desto dichter der Glitch!
-Die Gangsta-Sprache enthält eine starke Sprache, bei der Sie sich beim Lesen unwohl fühlen können. Sind Sie sicher, dass Sie die Sprache trotzdem einstellen möchten?
 Das englische Wörterbuch
 Wortinformationen für
 API ist lizenziert unter
@@ -1417,8 +1257,6 @@ Beispiel im Satz:
 Quellen verwendet, um zu definieren
 Synonyme:
 Antonyme:
-Vielen Dank, dass Sie uns einen Fehler gemeldet haben! Bitte folgen Sie den Anweisungen auf dem Bildschirm.
-Vorschau-Bildschirmschoner
 Testet Ihre Konsole auf PowerLine-Unterstützung
 Stellen Sie sicher, dass Sie eine Konsolenschriftart verwenden, die PowerLine-Glyphen unterstützt, da die Ausgabe sonst möglicherweise nicht richtig gerendert wird. Wir empfehlen
 Öffnet die Shell-Preset-Bibliothek
@@ -1433,7 +1271,6 @@ Einheitenumwandler
 Verfügbare Einheitentypen und ihre Einheiten:
 Spiel ist aus
 Unerwarteter Fehler
-Andersfarbig hervorgehobene Befehle sind einheitliche Befehle und in jeder Shell verfügbar.
 Suche nach Aktualisierungen...
 Version herunterladen
 Version installieren

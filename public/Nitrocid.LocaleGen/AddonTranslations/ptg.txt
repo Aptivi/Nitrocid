@@ -1,16 +1,11 @@
 Modelo de cor inválido {0}
 hwprobe: Seu hardware será testado. Por favor aguarde ...
-CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...
-RAM: Um ou mais dos chips de RAM não foram analisados. Mostrando informações de qualquer maneira ...
-HDD: Um ou mais discos rígidos não foram testados. Mostrando informações de qualquer maneira ...
 Digite a senha do administrador para manutenção.
 Erro de kernel durante a inicialização: {0}
 PAINEL DUPLO: O tempo de reinicialização excede o tempo máximo permitido de reinicialização do erro {0}. Você encontrou um bug do kernel.
 [{0}] panic: Reinicialização ativada devido ao nível de erro ser {0}.
 [{0}] panic: Hora de reiniciar: {1} segundos, excede 1 hora. Está definido para 1 minuto.
 PÂNICO DUPLO: Tipo de erro {0} inválido.
-[{0}] pânico: Reinicialização desativada devido ao nível de erro ser {0}.
-[{0}] panic: {1} - Pressione qualquer tecla para continuar usando o kernel.
 [{0}] pânico: {1} - Pressione qualquer tecla para desligar.
 [{0}] panic: {1} - Reiniciando em {2} segundos ...
 PANIC DUPLO: Bug do Kernel: {0}
@@ -31,21 +26,14 @@ O usuário {0} já está conectado. Efetue logout e login como outro administrad
 Usuário {0} removido.
 Erro ao tentar remover o nome de usuário.
 O protetor de tela solicitado {0} não foi encontrado.
-{0} foi inicializado corretamente.
-O protetor de tela {0} não existe.
 {0} está definido como protetor de tela padrão.
 Protetor de tela {0} não encontrado no banco de dados. Verifique o nome e tente novamente.
-O protetor de tela não pode ser carregado por causa do seguinte: 
 Há um erro sério ao imprimir texto.
 Mod não pode ser carregado por causa do seguinte: 
-mod: Carregando mods ...
-mod: Parando mods ...
 O mod {0} não possui o nome. Revise o código-fonte.
-O mod {0} não possui a versão.
 {0} v {1} iniciado
 Nenhuma definição para o comando {0}.
 Comando definido por
-Você deve desconectar do servidor antes de se conectar a outro servidor
 Nome de usuário para {0}: 
 Senha para {0}: 
 Conectado a {0}
@@ -54,18 +42,10 @@ O diretório local {0} não existe.
 Digite um diretório local. ".." voltar.
 Diretório {0} não encontrado.
 Digite um diretório remoto. ".." para voltar
-Você deve se conectar a um servidor antes de alterar o diretório
 Diretório local: {0}
 Diretório remoto: {0}
-Você deve se conectar ao servidor antes de obter o diretório remoto atual.
-Você deve se conectar ao servidor com privilégios administrativos antes de executar a exclusão.
-Desconectado de {0}
-Você ainda não se conectou a nenhum servidor
 Fazendo o download do arquivo {0} ...
 Arquivo baixado {0}.
-Você deve se conectar ao servidor antes de realizar a transmissão.
-{0} KB | Modificado em: {1}
-Você deve se conectar ao servidor antes de listar todos os arquivos remotos.
 Fazendo upload do arquivo {0} ...
 Arquivo enviado {0}
 Obtém o diretório local atual
@@ -73,7 +53,6 @@ Obtém o diretório remoto atual
 Altera o diretório local para download ou upload de
 Altera o diretório remoto para download ou upload para
 Exclui o arquivo remoto do servidor
-Desconecta do servidor
 Faz o download do arquivo remoto para o diretório local usando binário ou texto
 Lista o diretório local
 Lista o diretório remoto
@@ -83,7 +62,6 @@ Comando não encontrado para alias para {0}.
 Agora você pode executar "{0}" como um comando: "{1}".
 O alias {0} não foi encontrado para ser removido
 Modo inválido {0}.
-Não houve argumentos suficientes. Veja abaixo para uso:
 Diretório {0} não encontrado
 Nome do host em branco.
 Alterando de: {0} para {1} ...
@@ -128,25 +106,7 @@ Este comando é obsoleto e será removido em uma versão futura.
 Você não está autorizado a alterar a senha de {0} porque o alvo era um administrador.
 Exclui tudo no log de depuração
 Idioma inválido
------------------------------ Kernel panic dump ------------------------------
->> informação de pânico <<
-> Descrição: {0}
-> Tipo de erro: {1}
-> Data e hora: {2}
->> Informação de exceção <<
-> Exceção: {0}
-> Descrição: {1}
-> HRESULT: {2}
-> Fonte: {3}
-> Rastreio de pilha <
->> Exceção interna {0} informação <<
->> Exceção {0} é a causa raiz <<
->> Nenhuma exceção; pode ser um erro do kernel. << <<
->> Quadros, arquivos, linhas e colunas <<
-> Frame {0}: Arquivo: {1} | Linha: {2} | Coluna: {3}
-> Ocorreu um erro ao tentar obter informações sobre o quadro. {0}: {1}
 Bem vindo ao Kernel!
-Conectado com sucesso como <user>
 Pengunduhan telah selesai.
 Gagal mengunduh dalam percobaan {0}: {1}
 Silakan gunakan "ftp" jika Anda akan mengunduh file dari server FTP.
@@ -164,13 +124,7 @@ Especifique o endereço
 O fuso horário está especificado incorretamente.
 Seleção de perfil inválida.
 Tentando conectar-se a {0} com o perfil {1} ...
-O idioma que você selecionou contém duas variantes. Selecione um:
-Escolha inválida. Tente novamente.
-Você não está autorizado a definir o diretório atual como {0}: {1}
-O caminho que você especificou é muito longo.
-O coletor de informações de despejo falhou ao tentar obter informações sobre {0}: {1}
 Erro ao tentar iniciar o protetor de tela devido a uma operação inválida.
-Recarregar não permitido no modo de segurança.
 Mods de análise não permitidos no modo de segurança.
 O caminho não é um arquivo nem um diretório.
 Cria outra cópia de um arquivo em um diretório ou nome diferente.
@@ -180,7 +134,6 @@ Correspondência {0}: {1}
 Tempo gasto: {0} milissegundos
 Nome: {0}
 Calcula as somas dos arquivos.
-Leva você ao nosso Wiki do GitHub.
 Algoritmo de criptografia inválido.
 Ativa ou desativa a depuração remota.
 Veja se você pode resolver equações matemáticas no prazo
@@ -192,16 +145,11 @@ Começando RPC ...
 Conecta-se a um servidor SSH.
 Digite a senha para {0}:
 SSH desconectado.
-Não foi possível definir a página de código. O idioma pode não ser exibido corretamente.
 Depuração não ativada.
 Mostra todas as notificações recebidas
 Ignora uma notificação
 Notificação rejeitada com sucesso.
 Executa remotamente um comando para PC remoto
-- Estágio 1: inicialização do sistema
-- Estágio 2: detecção de hardware
-- Estágio 3: detecção de mods e protetores de tela
-- Estágio 4: faça o login
 Tipo inválido {0}.
 Tamanho: {0}
 O diretório {0} já existe.
@@ -234,21 +182,15 @@ Preparando perfis ... Pode levar alguns minutos ...
 Erro ao tentar executar o script: {0}
 Grava texto no console
 Faz escolhas do usuário
-onde <$variable> é qualquer variável que será usada para armazenar a resposta
 onde <respostas> são respostas com uma letra da pergunta separadas em barras
 Erro ao tentar conectar-se ao servidor SSH: {0}
 Permite que o usuário insira entrada
 Altera o diretório de mensagens atual
 Não foi possível abrir a pasta de correio {0}: {1}
 Lista diretórios no seu endereço de email
-Utiliza informações da Discagem rápida para conectar-se rapidamente a qualquer rede
-Selecione um endereço para se conectar:
-A seleção está fora de alcance. Selecione entre 1- {0}. Tente novamente.
-A seleção não é um número. Tente novamente.
 Durante a validação do certificado, há erros de certificado. Pode ser a primeira vez que você se conecta ao servidor ou o certificado pode ter expirado. Aqui está um erro:
 Tem certeza de que deseja se conectar?
 Resposta inválida. Por favor, tente novamente.
-A discagem rápida está vazia. Conecte-se a um servidor para adicionar um endereço a ele.
 Digite o endereço e a porta do servidor IMAP (<endereço> ou <endereço>: [porta]):
 Digite o endereço e a porta do servidor SMTP (<endereço> ou <endereço>: [porta]):
 Envia uma mensagem para um endereço
@@ -309,13 +251,11 @@ Modo de análise de tamanho
 Marquee na inicialização
 Muito tempo e data
 Mostrar arquivos ocultos
-Seção inválida inserida. Por favor, volte.
 Volte...
 Escreva uma porta de depurador remoto. Deve ser numérico e ainda não deve ser usado. Caso contrário, o depurador remoto não conseguirá abrir a porta.
 Escreva quantas vezes o comando "" get "" deve tentar downloads com falha. Deve ser numérico.
 Escreva quando iniciar o protetor de tela após milissegundos especificados. Deve ser numérico.
 A resposta pode não ser negativa.
-A resposta é inválida. Certifique-se de que a resposta seja numérica para entradas de configuração que precisam de números como respostas.
 A variável {0} não foi encontrada em nenhum dos módulos.
 Altera a configuração do kernel
 Mudança de cultura ao mudar de idioma
@@ -329,12 +269,10 @@ MAL muda, o MOTD após o login
 Muda MOTD, a mensagem do dia
 Altera o nome do usuário
 Gerenciar permissões para usuários
-Recarrega o arquivo de proteção de tela em KSMods
 Remove um usuário da lista
 Alias ​​removido {0} com sucesso.
 Falha ao verificar atualizações.
 Não há mais usuários restantes na lista.
-Falha ao definir o idioma.
 Erro ao tentar dispensar notificação.
 usrmgr: Falha ao criar nome de usuário {0}: {1}
 Falha ao renomear o usuário. {0}
@@ -367,9 +305,7 @@ Tempo: {0}
 Pressão: {0}
 Umidade: {0}
 Você pode obter sua própria chave de API em https://home.openweathermap.org/api_keys.
-Você sempre pode consultar http://bulk.openweathermap.org/sample/city.list.json.gz para obter a lista de cidades com seus IDs.
 Unidade preferida para temperatura
-Modo de manutenção de gatilhos. Isso desativa várias contas.
 A cada inicialização, ele verificará se há atualizações.
 Ao mudar de idioma, altere os nomes dos meses, calendário, etc.
 Mantenha as mensagens de sondagem de hardware silenciosas.
@@ -385,7 +321,6 @@ Se habilitado, o kernel analisará a pasta inteira para seu tamanho total. Caso 
 Ativa o eyecandy na inicialização
 A hora e a data serão mais longas, mostrando os nomes dos meses completos, etc.
 Mostra arquivos ocultos.
-Selecione sua unidade preferida de temperatura (isso se aplica apenas ao comando "clima")
 Mod {0} parou
 {0} v {1} parado
 O mod {0} não tem o nome da peça. A análise do mod falhou. Revise o código-fonte.
@@ -461,12 +396,10 @@ Hashes não correspondem.
 Hashes correspondem.
 Renomeia uma pasta
 Abre um shell de teste
-* Pressione qualquer tecla para iniciar o kernel ou ESC para sair.
 Falha ao iniciar "{0}": {1}
 Mostrar visualização da mensagem de e-mail
 Ao listar mensagens de correio, mostre a visualização do corpo.
 Cor de fundo
-Tentando acessar um caminho inválido.
 Limpa o arquivo de texto
 Sai do editor de texto
 Consulta um caractere em uma linha especificada ou em todas as linhas
@@ -493,20 +426,15 @@ Cria um novo tema
 Fazendo um novo tema "{0}".
 Salvar tema no diretório atual
 Salvar tema em outro diretório ...
-Selecione a cor usando as teclas "<-" e "->". Pressione ENTER para sair. Pressione "i" para inserir o número da cor manualmente.
-Selecione a cor usando as teclas "<-" e "->". Use as teclas de seta para cima e para baixo para selecionar entre as faixas de cores. Pressione ENTER para sair. Pressione "i" para inserir o número da cor manualmente.
-Digite o número da cor de 0 a 255:
 Imprime informações de hardware
 Nome do processador:
 Bits do processador:
 Sistema de arquivos de partição:
 Tamanho da partição:
-GPU: uma ou mais placas gráficas não foram sondadas. Mostrando informações mesmo assim ...
 >> Bem-vindo! Esta é a primeira vez que você entra no bate-papo e depuração remota. Use "/ register <nome>" para se registrar.
 O dispositivo já existe.
 Esse dispositivo não existe.
 Imprime o conteúdo do arquivo para o console
-Ou passe "listcities" para este comando.
 A entrada já existe.
 Envolve a saída do console
 O comando não pode ser encapsulado. Esses comandos podem ser agrupados:
@@ -536,11 +464,8 @@ Contagem de posições máximas
 Quantas posições são iluminadas antes do escurecimento?
 Conecta-se a um servidor SSH para executar um comando.
 Define uma variável para um valor em um script
-Um prompt de relatório de bug.
 Ocorreu um erro no shell do FTP:
-Erro de shell de FTP desconhecido:
 Ocorreu um erro no shell SFTP:
-Erro de shell SFTP desconhecido:
 Mostrar banner SSH
 Mostra o banner do servidor SSH na conexão.
 Como você deseja se autenticar?
@@ -550,9 +475,6 @@ Digite a senha longa para a chave {0}:
 Neutralizou um caminho inexistente.
 O arquivo de chave {0} não existe.
 Erro ao tentar adicionar chave privada:
-Pressione "t" para mudar para o modo de 255 cores.
-Pressione "t" para mudar para o modo true color.
-mod: Nenhum mod detectado.
 Comandos gerais:
 Comandos mod:
 Comandos de alias:
@@ -573,10 +495,8 @@ Inicia todos os mods
 Testa a sequência VT para 255 cores
 Testa a sequência VT para a cor verdadeira
 Envia uma notificação para testar o receptor
-Testa a impressão da data usando diferentes calendários
 Lista todas as páginas de código com suporte
 Testes sondando o hardware
-Salva o diretório atual no arquivo de configuração do kernel
 Testa o escritor da lista com a string e o array de strings
 Testa o gravador de lista com a matriz de inteiros e inteiros
 Testa o gravador da lista com a matriz char e char
@@ -619,7 +539,6 @@ Data:
 Tempo:
 Define permissões de arquivo. Isso é suportado apenas em servidores FTP que executam Unix.
 Define o tipo para esta sessão
-Você deve se conectar ao servidor antes de executar as operações do sistema de arquivos.
 Falha ao definir permissões de {0} para {1}.
 Permissões definidas com sucesso para o arquivo
 Tipo de dados definido como ASCII!
@@ -631,21 +550,9 @@ Fade Out Delay em Milissegundos
 Max Fade Steps
 Quantos milissegundos esperar antes de o texto esmaecer?
 Quantas etapas de fade para fazer?
-Full Probe
-Se verdadeiro, testa todo o hardware; caso contrário, só testará o hardware necessário.
-Falha ao remover protetor de tela {0} da configuração.
-Obtém configurações de proteção personalizadas
-Define configurações de proteção personalizadas
-Configurações definidas com sucesso para o protetor de tela
-Falha ao definir uma configuração para o protetor de tela
 Abre um shell RSS para ler os feeds
-Altera o link do feed
 Lista todos os feeds
 Lê um feed em um navegador da web
-Feed RSS2 inválido.
-Feed RSS1 inválido.
-Feed Atom inválido.
-Insira um URL de feed RSS:
 Tipo de feed RSS inválido.
 Obtém as informações do artigo
 O número do artigo não pode ser maior do que os artigos disponíveis.
@@ -667,16 +574,11 @@ Escreva qualquer texto que você deseja mostrar. Quanto mais tempo, melhor.
 Velocidade mínima de gravação em WPM
 Velocidade máxima de gravação em WPM
 Probabilidade de erro de digitação em porcentagem
-Falha ao salvar o diretório atual: {0}
 Limpa para mudar de direção
 Quantas limpezas a serem feitas antes de mudar de direção aleatoriamente?
 Etapa finalizada em
 A inicialização interna terminou em
 Mod começando
-Nome do comando:
-Definição de comando:
-Tipo de comando:
-Comando estrito?
 Versão mod:
 Mod {0} não encontrado.
 O editor de texto ainda não abriu um fluxo de arquivo.
@@ -698,7 +600,6 @@ Dicionário normal de caracteres:
 Dicionário de caracteres de matriz:
 Mostra o progresso nas operações do sistema de arquivos
 Mostra qual arquivo está sendo processado durante as operações do sistema de arquivos
-onde HardwareType estará
 O tipo de hardware {0} não foi testado ou não é válido.
 O tipo de hardware {0} ainda não foi testado. Se você tiver certeza de que foi testado, reinicie o kernel com a depuração habilitada.
 Partições não analisadas para a lista.
@@ -709,7 +610,6 @@ O protetor de tela encontrou um erro ao exibir: {0}. Aperte qualquer tecla para 
 Pré-visualizar ...
 Veja como será o seu tema:
 Comandos que podem ser embalados:
-O mod {0} possui um comando inválido. A análise do mod falhou. Revise o código-fonte.
 Partes mod:
 Use a API do console
 Se deve usar a API do console para limpar o texto ou usar a sequência VT de limpeza de linha mais rápida. Se for False, o Marquee usará a sequência VT apropriada. Caso contrário, ele usará a API do console provavelmente mais lenta.
@@ -719,19 +619,11 @@ Nome do mod:
 Nome do arquivo mod:
 Caminho do arquivo mod:
 Versão da peça:
-Contagem mínima de argumentos necessários:
-Argumentos necessários?
-Definindo a variável do shell?
-Não pode ser executado no modo de manutenção?
-Obsoleto?
 Pasta está vazia.
 Sondado com sucesso {0}.
 Verbose Probe
 Torne as mensagens de sondagem de hardware um pouco comunicativas.
-> Não há informações sobre frames.
 Embeleza o arquivo JSON
-Categoria de configuração {0} não encontrada.
-Entrada de configuração {0} não encontrada.
 Use batidas por minuto
 Se deve usar a unidade de batidas por minuto para escrever a próxima cor.
 Atraso em batidas por minuto
@@ -745,8 +637,6 @@ Pasta baixada {0}.
 O download falhou para a pasta {0}.
 Fazendo upload da pasta {0} ...
 Pasta enviada {0}
-Pressione "c" para escrever o código de cores completo.
-Insira um código de cor que atenda a estes formatos:
 Minimiza o arquivo JSON
 Novo atraso de tela em milissegundos
 Contagem de Colunas
@@ -757,7 +647,6 @@ Quantos milissegundos esperar antes de escrever o texto na nova tela novamente?
 As colunas de texto a serem impressas.
 Quantos caracteres escrever antes de acionar o "preenchimento de linha"?
 Possibilidade de que o padrão de preenchimento de linha seja impresso em letras maiúsculas em porcentagem
-Tipo de padrão de preenchimento de linha
 A resposta pode não ser zero.
 A resposta não pode exceder as entradas mostradas.
 Salvar alterações ...
@@ -772,9 +661,6 @@ Sem rede durante o download de dados de depuração
 Verifique sua conexão com a Internet e tente novamente.
 A página do manual {0} é inválida.
 Considere preencher esta página do manual.
-Pressione qualquer tecla para ler a página do manual ...
-Esta página do manual precisa ser trabalhada para:
-Página do manual {0} não encontrada.
 Manual do Mod
 Argumentos de kernel disponíveis:
 Erro irrecuperável no argumento:
@@ -788,7 +674,6 @@ A parte do mod não é nada.
 Parar mods não é permitido no modo de segurança.
 O mod já foi iniciado!
 O mod ainda não começou!
-Uso do comando:
 Nome do arquivo da peça:
 Caminho do arquivo da peça:
 Erro ao tentar iniciar o protetor de tela:
@@ -808,7 +693,6 @@ Desenhar borda de notificação
 Cobre a notificação com a borda.
 Entre em contato com o fornecedor do mod para atualizar o mod para a versão compatível.
 Envia uma notificação de progresso para testar o receptor
-Testa a roda de cores
 Mostra a hora local do kernel
 Mostra a data do kernel local
 Mostra a data e hora do kernel local
@@ -1015,7 +899,6 @@ Caractere de quadro direito para borda de notificação
 Se deve mostrar o que está escrito no prompt de entrada.
 Qual é o número mínimo para escolher?
 Qual é o número máximo para escolher?
-Inicie a roda de cores no modo true color
 Se especificado, ele exibirá um banner de inicialização personalizado com suporte a espaço reservado. Você pode usar {0} para a versão do kernel.
 Qual variante do idioma atual está sendo usada para alterar os nomes dos meses, calendário, etc.?
 Ativa o suporte a cores verdadeiras.
@@ -1034,13 +917,11 @@ Tipo de conexão de dados do servidor:
 Sistema do servidor:
 Tipo de dados de download do servidor:
 Tipo de dados de upload do servidor:
-Você deve se conectar a um servidor antes de realizar esta operação.
 Insira um arquivo remoto a ser hash.
 Insira um diretório remoto.
 Hash recursivo para FTP
 Se o hash recursivamente de um diretório. Observe que nem todos os servidores FTP suportam isso.
 Velocidade do clock do processador:
-Suporte ao processador SSE2:
 Número total de processadores:
 Tamanho do disco:
 Memória total:
@@ -1076,10 +957,7 @@ Tentando instalar um mod já instalado. Atualizando mod...
 Falha na instalação para
 O arquivo mod fornecido é incompatível.
 Falha na desinstalação para
-Abre um URL
 Imprimir números de linha no conteúdo do arquivo de impressão
-Versão transliterada
-Versão traduzida
 Dispensa todas as notificações
 Baixando...
 Enviando...
@@ -1105,19 +983,15 @@ Cor da moldura certa para a barra de rampa
 Use cores de borda para barra de rampa
 Use as cores da borda para a barra de rampa. Se desabilitado, irá gerar uma barra cinza.
 Inicia o shell HTTP
-Define o site HTTP. Deve ser um URI válido.
 Obtém a resposta do servidor HTTP usando a solicitação especificada
 Exclui conteúdo do servidor HTTP
 Ocorreu um erro no shell HTTP:
 Obtém a string do servidor HTTP usando a solicitação especificada
 Obtendo {0}...
-O formato de URI do site é inválido.
-Configurando o site para
 As cores não exigem uma reinicialização, mas a maioria das configurações exige uma reinicialização.
 Sem ajuda para o argumento "{0}".
 Dificuldade padrão para SpeedPress
 Tempo limite de pressionamento de tecla para SpeedPress
-Selecione sua dificuldade preferida.
 Quantos milissegundos esperar pelo pressionamento da tecla antes do tempo limite? (Na dificuldade personalizada)
 Substitui uma palavra ou frase por outra usando expressões regulares
 Substitui uma palavra ou frase por outra em uma linha usando expressões regulares
@@ -1128,7 +1002,6 @@ Nada é encontrado. Certifique-se de ter escrito a configuração corretamente.
 Empacota um arquivo local para o arquivo
 Não pode embalar nada.
 Descrição da resposta
-Porta do host
 Para obter mais informações sobre os termos e condições de uso deste software, visite
 Tipo de saída de escolha padrão
 Verifica todas as configurações do KS para ver se as variáveis ​​estão escritas corretamente
@@ -1184,7 +1057,6 @@ Iniciar ou parar
 Colo
 Redefinir
 Um temporizador simples
-Comece a (re)contagem regressiva
 Definir intervalo
 O tempo limite indicado não é numérico.
 Especifique o tempo limite em milissegundos
@@ -1199,14 +1071,6 @@ Quantos milissegundos esperar antes do tempo limite da conexão FTP?
 Quantos milissegundos esperar antes do tempo limite da conexão de dados FTP?
 Escolha a versão do Internet Protocol que o servidor FTP suporta e que o cliente FTP usa.
 Tentando iniciar o RPC enquanto ele já foi iniciado.
-Caractere do canto superior esquerdo para roda de cores RGB
-Caractere do canto superior direito para roda de cores RGB
-Caractere do canto inferior esquerdo para roda de cores RGB
-Caractere do canto inferior direito para roda de cores RGB
-Caractere de quadro superior para roda de cores RGB
-Caractere de quadro inferior para roda de cores RGB
-Caractere de quadro esquerdo para roda de cores RGB
-Caractere de quadro direito para roda de cores RGB
 Localiza um arquivo no diretório especificado ou no diretório atual
 Converte as terminações de linha para o formato da plataforma atual ou para o formato personalizado especificado
 Tamanho total na pasta:
@@ -1221,14 +1085,6 @@ Se houver alguma atualização, o kernel fará o download automaticamente.
 Raio de explosão de fogos de artifício
 Quantos blocos (até 10) é o raio de explosão do fogo de artifício quando aceso?
 Este comando tem as opções abaixo que alteram como ele funciona:
-Imprime os números de linha que seguem a linha que está sendo impressa
-Impede a impressão dos números de linha
-Indique que a resposta pode ter mais de um caractere
-Indique que a resposta pode levar apenas um caractere
-Imprima a pergunta e as respostas em uma linha
-Imprima a pergunta e as respostas em duas linhas
-Imprima a pergunta e as respostas da maneira moderna
-Imprima a pergunta e as respostas em uma tabela
 Mostra os detalhes do arquivo na lista
 Suprime as mensagens irritantes de "permissão negada"
 Mostra todos os fusos horários
@@ -1242,10 +1098,7 @@ Mostra todas as cidades disponíveis
 Compressão rápida
 Sem compressão
 Não crie diretório base no arquivo
-Desconecta-se do servidor vergonhosamente
 Indica que o caminho de destino é absoluto
-Salva o arquivo JSON, embelezando-o no processo
-Salva o arquivo JSON, minimizando-o no processo
 Limpa todos os eventos disparados
 Ativar depuração de eventos
 Habilita a depuração para o sistema de eventos do kernel
@@ -1273,9 +1126,6 @@ Tela inicial elegante
 Ativa a elegante tela inicial na inicialização. Observe que ele desabilitará o prompt de argumento e testará a pré-inicialização do shell.
 Nome inicial
 Nome do splash dos splashes disponíveis implementados no kernel.
-MOTD padrão gerado.
-MAL padrão gerado.
-Conta do sistema inicializada
 Usuários inicializados
 Bem vinda!
 Iniciando o depurador remoto...
@@ -1295,7 +1145,6 @@ Mostrar a contagem de comandos na ajuda
 Mostrar a contagem de comandos do shell na ajuda
 Mostrar os comandos mod contam com ajuda
 Mostrar a contagem de aliases com ajuda
-Mostra a contagem de comandos na lista de comandos, controlada pelos três switches count show para diferentes tipos de comandos.
 Executa comandos quando as expressões UESH são satisfeitas
 A condição não foi encontrada na expressão.
 A condição {0} requer {1} argumentos. Obteve {2}.
@@ -1319,7 +1168,6 @@ Ativa o modo de depuração
 Ativar o modo preto e branco
 Torna a discoteca a preto e branco. Vai realmente machucar seus olhos se for muito rápido, então não é recomendado se você estiver tendo uma apreensão de imagens rápidas.
 Carregar cores atuais
-Abre a documentação da API do mod para a estrutura do código-fonte em sua forma mais atual
 Valor atual:
 Especificador de cor hexadecimal inválido.
 Especificador de cor RGB inválido.
@@ -1345,13 +1193,6 @@ O número do byte não é numérico.
 O número de byte inicial especificado não pode ser maior que o tamanho do arquivo.
 O número do byte final especificado não pode ser maior que o tamanho do arquivo.
 Bytes excluídos.
-Seleciona o feed da lista de feeds existente de fontes online
-Baixando lista de feeds...
-Falha ao baixar a lista de feeds.
-Selecione seu país pressionando as teclas de seta para a esquerda ou seta para a direita. Pressione ENTER para confirmar sua seleção.
-Este país tem {0} fontes de notícias.
-Selecione sua fonte de notícias favorita escrevendo o número. Pressione ENTER para confirmar sua seleção.
-Selecione um feed para sua fonte de notícias favorita. Pressione ENTER para confirmar sua seleção.
 Observe que editar arquivos binários usando este shell é experimental e pode levar à corrupção ou perda de dados se não for usado corretamente.
 NÃO LANÇA O SHELL SEM SABER O QUE ESTÁ FAZENDO!
 Obtém informações de chave para uma tecla pressionada. Útil para depuração
@@ -1405,7 +1246,6 @@ Simular nenhum modo APM
 Se deve simular uma situação em que não há APM disponível. Se ativado, ele informa ao usuário que agora é seguro desligar o computador ao desligar.
 Densidade de falha
 Quanto maior a porcentagem, mais densa a falha!
-A linguagem gangsta contém uma linguagem forte que pode fazer você se sentir desconfortável ao lê-la. Tem certeza de que deseja definir o idioma de qualquer maneira?
 O Dicionário de Inglês
 Informações da palavra para
 A API é licenciada sob
@@ -1417,8 +1257,6 @@ Exemplo na frase:
 Fontes usadas para definir
 Sinônimos:
 Antônimos:
-Obrigado por relatar um bug para nós! Por favor siga as instruções na tela.
-Protetor de tela de visualização
 Testa seu console para suporte a PowerLine
 Certifique-se de usar uma fonte de console compatível com glifos PowerLine, ou a saída pode não ser renderizada corretamente. Nós recomendamos
 Abre a biblioteca de predefinições do shell
@@ -1433,7 +1271,6 @@ Conversor de unidades
 Tipos de unidades disponíveis e suas unidades:
 Fim de jogo
 Erro inesperado
-Os comandos destacados em outra cor são comandos unificados e estão disponíveis em cada shell.
 Verificando atualizações...
 Baixando a versão
 Instalando a versão

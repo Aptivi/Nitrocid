@@ -1,16 +1,11 @@
 Modello di colore non valido {0}
 hwprobe: il tuo hardware verrà verificato. Attendere prego...
-CPU: uno o più core della CPU non sono stati rilevati. Mostrare informazioni comunque ...
-RAM: uno o più chip RAM non sono stati rilevati. Mostrare informazioni comunque ...
-HDD: uno o più dischi rigidi non sono stati rilevati. Mostrare informazioni comunque ...
 Immettere la password dell'amministratore per la manutenzione.
 Errore del kernel durante l'avvio: {0}
 DOPPIO PANICO: il tempo di riavvio supera il tempo massimo consentito per il riavvio dell'errore {0}. Hai trovato un bug del kernel.
 [{0}] panico: riavvio attivato a causa del livello di errore {0}.
 [{0}] panico: tempo di riavvio: {1} secondi, superiore a 1 ora. È impostato su 1 minuto.
 DOUBLE PANIC: Tipo di errore {0} non valido.
-[{0}] panico: riavvio disabilitato a causa del livello di errore {0}.
-[{0}] panico: {1}: premi un tasto qualsiasi per continuare a utilizzare il kernel.
 [{0}] panico: {1}: premi un tasto qualsiasi per chiudere.
 [{0}] panico: {1} - Riavvio in {2} secondi ...
 DOUBLE PANIC: bug del kernel: {0}
@@ -31,21 +26,14 @@ L'utente {0} è già connesso. Disconnettersi e accedere come altro amministrato
 Utente {0} rimosso.
 Errore durante il tentativo di rimuovere il nome utente.
 Lo screensaver richiesto {0} non è stato trovato.
-{0} è stato inizializzato correttamente.
-Il salvaschermo {0} non esiste.
 {0} è impostato sullo screensaver predefinito.
 Screensaver {0} non trovato nel database. Controlla il nome e riprova.
-Il salvaschermo non può essere caricato a causa di quanto segue:
 Si è verificato un errore grave durante la stampa del testo.
 Mod non può essere caricato a causa di quanto segue:
-mod: caricamento mod ...
-mod: interruzione mod ...
 Il mod {0} non ha il nome. Rivedere il codice sorgente
-Il mod {0} non ha la versione.
 {0} v {1} avviato
 Nessuna definizione per il comando {0}.
 Comando definito da
-È necessario disconnettersi dal server prima di connettersi a un altro server
 Nome utente per {0}:
 Password per {0}:
 Connesso a {0}
@@ -54,18 +42,10 @@ La directory locale {0} non esiste.
 Inserisci una directory locale ".." tornare indietro.
 Directory {0} non trovata.
 Inserisci una directory remota ".." tornare indietro
-È necessario connettersi a un server prima di cambiare directory
 Directory locale: {0}
 Directory remota: {0}
-È necessario connettersi al server prima di ottenere la directory remota corrente.
-È necessario connettersi al server con privilegi amministrativi prima di eseguire l'eliminazione.
-Disconnesso da {0}
-Non sei ancora connesso a nessun server
 Download del file {0} ...
 File scaricato {0}.
-È necessario connettersi al server prima di eseguire la trasmissione.
-{0} KB | Modificato in: {1}
-È necessario connettersi al server prima di elencare tutti i file remoti.
 Caricamento del file {0} ...
 File caricato {0}
 Ottiene la directory locale corrente
@@ -73,7 +53,6 @@ Ottiene la directory remota corrente
 Cambia la directory locale da scaricare o caricare da
 Cambia la directory remota da scaricare o caricare in
 Elimina il file remoto dal server
-Disconnette dal server
 Scarica il file remoto nella directory locale usando binari o testo
 Elenca la directory locale
 Elenca la directory remota
@@ -83,7 +62,6 @@ Comando non trovato per l'alias su {0}.
 Ora puoi eseguire "{0}" come comando: "{1}".
 Alias ​​{0} non è stato trovato per essere rimosso.
 Modalità non valida {0}.
-Non c'erano abbastanza argomenti. Vedi sotto per l'uso:
 Directory {0} non trovata
 Nome host vuoto.
 Passaggio da: {0} a {1} ...
@@ -128,25 +106,7 @@ Questo comando è obsoleto e verrà rimosso in una versione futura.
 Non sei autorizzato a cambiare la password di {0} perché il target era un amministratore.
 Elimina tutto nel registro di debug
 Lingua non valida
------------------------------ Dump di panico del kernel ------------------------------
->> Informazioni di panico <<
-> Descrizione: {0}
-> Tipo di errore: {1}
-> Data e ora: {2}
->> Informazioni sull'eccezione <<
-> Eccezione: {0}
-> Descrizione: {1}
-> HRESULT: {2}
-> Fonte: {3}
-> Traccia stack <
->> Informazioni sull'eccezione interna {0} <<
->> L'eccezione {0} è la causa principale <<
->> Nessuna eccezione; potrebbe essere un errore del kernel. <<
->> Cornici, file, linee e colonne <<
-> Frame {0}: File: {1} | Riga: {2} | Colonna: {3}
-> Si è verificato un errore durante il tentativo di ottenere informazioni sul frame. {0}: {1}
 Benvenuto in Kernel!
-Accesso eseguito correttamente come <utente>
 Download completato.
 Download non riuscito nel tentativo {0}: {1}
 Utilizzare "ftp" se si intende scaricare file dal server FTP.
@@ -164,13 +124,7 @@ Specifica l'indirizzo
 Il fuso orario non è specificato correttamente.
 Selezione profilo non valida.
 Tentativo di connessione a {0} con il profilo {1} ...
-La lingua che hai selezionato contiene due varianti. Seleziona uno:
-Scelta non valida. Riprova.
-Non sei autorizzato a impostare la directory corrente su {0}: {1}
-Il percorso che hai specificato è troppo lungo.
-Il raccoglitore di informazioni sul dump si è arrestato in modo anomalo durante il tentativo di ottenere informazioni su {0}: {1}
 Errore durante il tentativo di avvio dello screensaver, a causa di un'operazione non valida.
-Ricarica non consentita in modalità provvisoria.
 Mod di analisi non consentite in modalità provvisoria.
 Il percorso non è né un file né una directory.
 Crea un'altra copia di un file con directory o nome diversi.
@@ -180,7 +134,6 @@ Corrispondenza {0}: {1}
 Tempo trascorso: {0} millisecondi
 Nome: {0}
 Calcola le somme dei file.
-Ti porta al nostro GitHub Wiki.
 Algoritmo di crittografia non valido.
 Abilita o disabilita il debug remoto.
 Vedi se riesci a risolvere le equazioni matematiche in tempo
@@ -192,16 +145,11 @@ Avvio di RPC ...
 Si collega a un server SSH.
 Inserisci la password per {0}:
 SSH disconnesso.
-Impossibile impostare la tabella codici. La lingua potrebbe non essere visualizzata correttamente.
 Debug non abilitato.
 Mostra tutte le notifiche ricevute
 Respinge una notifica
 Notifica respinta correttamente.
 Esegue da remoto un comando sul PC remoto
-- Fase 1: inizializzazione del sistema
-- Fase 2: rilevamento dell'hardware
-- Fase 3: rilevamento di mod e screensaver
-- Fase 4: accesso
 Tipo non valido {0}.
 Dimensione: {0}
 La directory {0} esiste già.
@@ -234,21 +182,15 @@ Preparazione dei profili ... Potrebbero essere necessari diversi minuti ...
 Errore durante il tentativo di eseguire lo script: {0}
 Scrive il testo nella console
 Fa le scelte dell'utente
-dove <$ variabile> è qualsiasi variabile che verrà utilizzata per memorizzare la risposta
 dove <risposte> sono le risposte di una lettera della domanda separate da barre
 Errore durante il tentativo di connessione al server SSH: {0}
 Consente all'utente di inserire input
 Cambia la directory di posta corrente
 Impossibile aprire la cartella di posta {0}: {1}
 Elenca le directory nel tuo indirizzo e-mail
-Utilizza le informazioni di Chiamata veloce per connettersi rapidamente a qualsiasi rete
-Seleziona un indirizzo a cui connetterti:
-La selezione è fuori portata. Selezionare tra 1- {0}. Riprova.
-La selezione non è un numero. Riprova.
 Durante la convalida del certificato, ci sono errori di certificato. Potrebbe essere la prima volta che ti connetti al server o il certificato potrebbe essere scaduto. Ecco un errore:
 Sei sicuro di voler connetterti?
 Risposta non valida Per favore riprova.
-La composizione rapida è vuota. Connettiti a un server per aggiungere un indirizzo ad esso.
 Immettere l'indirizzo e la porta del server IMAP (<indirizzo> o <indirizzo>: [porta]):
 Immettere l'indirizzo e la porta del server SMTP (<indirizzo> o <indirizzo>: [porta]):
 Invia un messaggio a un indirizzo
@@ -309,13 +251,11 @@ Modalità di analisi delle dimensioni
 Marquee all'avvio
 Tempo e data lunghi
 Mostra file nascosti
-Sezione non valida inserita. Per favore torna indietro.
 Torna indietro...
 Scrivi una porta del debugger remoto. Deve essere numerico e non deve essere già utilizzato. In caso contrario, il debugger remoto non riuscirà ad aprire la porta.
 Scrivi quante volte il comando "" get "" deve ritentare i download non riusciti. Deve essere numerico.
 Scrivi quando avviare lo screensaver dopo i millisecondi specificati. Deve essere numerico.
 La risposta potrebbe non essere negativa.
-La risposta non è valida. Verificare che la risposta sia numerica per le voci di configurazione che richiedono numeri come risposte.
 La variabile {0} non è stata trovata su nessuno dei moduli.
 Modifica la configurazione del kernel
 Cambia cultura quando si cambia lingua
@@ -329,12 +269,10 @@ Cambia MAL, il MOTD dopo il login
 Cambia MOTD, il messaggio del giorno
 Modifica il nome utente
 Gestisci le autorizzazioni per gli utenti
-Ricarica il file del salvaschermo in KSMods
 Rimuove un utente dall'elenco
 Alias ​​rimosso {0} correttamente.
 Impossibile controllare gli aggiornamenti.
 Non ci sono più utenti rimasti nell'elenco.
-Impossibile impostare la lingua.
 Errore durante il tentativo di ignorare la notifica.
 usrmgr: impossibile creare il nome utente {0}: {1}
 Impossibile rinominare l'utente. {0}
@@ -367,9 +305,7 @@ Meteo: {0}
 Pressione: {0}
 Umidità: {0}
 Puoi ottenere la tua chiave API su https://home.openweathermap.org/api_keys.
-Puoi sempre consultare http://bulk.openweathermap.org/sample/city.list.json.gz per l'elenco delle città con i loro ID.
 Unità preferita per la temperatura
-Attiva la modalità di manutenzione. Questo disabilita più account.
 Ad ogni avvio, verificherà la presenza di aggiornamenti.
 Quando si cambia lingua, modificare i nomi dei mesi, il calendario, ecc.
 Mantieni silenziosi i messaggi di verifica hardware.
@@ -385,7 +321,6 @@ Se abilitato, il kernel analizzerà l'intera cartella per la sua dimensione tota
 Abilita eyecandy all'avvio
 L'ora e la data saranno più lunghe, mostrando i nomi completi dei mesi, ecc.
 Mostra i file nascosti.
-Seleziona la tua unità preferita per la temperatura (questo vale solo per il comando "meteo")
 Mod {0} interrotto
 {0} v {1} interrotto
 La mod {0} non ha il nome della parte. Analisi mod non riuscita. Rivedi il codice sorgente.
@@ -461,12 +396,10 @@ Gli hash non corrispondono.
 Corrispondenza hash.
 Rinomina una cartella
 Apre una shell di prova
-* Premere un tasto qualsiasi per avviare il kernel o ESC per uscire.
 Impossibile avviare "{0}": {1}
 Mostra l'anteprima del messaggio di posta
 Quando si elencano i messaggi di posta, mostra l'anteprima del corpo.
 Colore di sfondo
-Tentativo di accesso a un percorso non valido.
 Cancella il file di testo
 Esce dall'editor di testo
 Interroga un carattere in una riga specificata o in tutte le righe
@@ -493,20 +426,15 @@ Crea un nuovo tema
 Creare un nuovo tema "{0}".
 Salva tema nella directory corrente
 Salva tema in un'altra directory...
-Selezionare il colore utilizzando i tasti "<-" e "->". Premere INVIO per uscire. Premere "i" per inserire manualmente il numero del colore.
-Selezionare il colore utilizzando i tasti "<-" e "->". Utilizzare i tasti freccia su e freccia giù per selezionare tra le gamme di colori. Premere INVIO per uscire. Premere "i" per inserire manualmente il numero del colore.
-Inserisci il numero del colore da 0 a 255:
 Stampa le informazioni sull'hardware
 Nome del processore:
 Bit del processore:
 File system della partizione:
 Dimensione della partizione:
-GPU: impossibile rilevare una o più schede grafiche. Visualizzazione delle informazioni comunque...
 >> Benvenuto! Questa è la prima volta che accedi al debug e alla chat remoti. Usa "/register <name>" per registrarti.
 Il dispositivo esiste già.
 Nessun apparecchio di questo tipo.
 Stampa il contenuto del file sulla console
-Oppure passa "listcities" a questo comando.
 La voce esiste già.
 Avvolge l'output della console
 Il comando non è avvolgente. Questi comandi sono wrappabili:
@@ -536,11 +464,8 @@ Numero massimo di posizioni
 Quante posizioni sono illuminate prima dell'oscuramento?
 Si connette a un server SSH per eseguire un comando.
 Imposta una variabile su un valore in uno script
-Una richiesta di segnalazione di bug.
 Si è verificato un errore nella shell FTP:
-Errore sconosciuto della shell FTP:
 Si è verificato un errore nella shell SFTP:
-Errore sconosciuto della shell SFTP:
 Mostra banner SSH
 Mostra il banner del server SSH alla connessione.
 Come vuoi autenticarti?
@@ -550,9 +475,6 @@ Inserisci la passphrase per la chiave {0}:
 Neutralizzato un percorso inesistente.
 Il file chiave {0} non esiste.
 Errore durante il tentativo di aggiungere la chiave privata:
-Premere "t" per passare alla modalità 255 colori.
-Premere "t" per passare alla modalità True Color.
-mod: nessuna mod rilevata.
 Comandi generali:
 Comandi mod:
 Comandi alias:
@@ -573,10 +495,8 @@ Avvia tutte le mod
 Testa la sequenza VT per 255 colori
 Verifica la sequenza VT per il colore reale
 Invia una notifica per testare il ricevitore
-Prova la data di stampa utilizzando calendari diversi
 Elenca tutte le codepage supportate
 Test che sondano l'hardware
-Salva la directory corrente nel file di configurazione del kernel
 Verifica il writer dell'elenco con la stringa e l'array di stringhe
 Verifica il writer dell'elenco con l'intero e l'array intero
 Verifica il writer dell'elenco con l'array char e char
@@ -619,7 +539,6 @@ Data:
 Tempo:
 Imposta i permessi dei file. Questo è supportato solo su server FTP che eseguono Unix.
 Imposta il tipo per questa sessione
-È necessario connettersi al server prima di eseguire operazioni sul filesystem.
 Impossibile impostare le autorizzazioni di {0} su {1}.
 Permessi impostati con successo per il file
 Tipo di dati impostato su ASCII!
@@ -631,21 +550,9 @@ Ritardo di dissolvenza in uscita in millisecondi
 Passi di dissolvenza massimi
 Quanti millisecondi aspettare prima di dissolvere il testo?
 Quanti passaggi di dissolvenza fare?
-Sonda completa
-Se true, verifica tutto l'hardware; altrimenti, esaminerà solo l'hardware necessario.
-Impossibile rimuovere lo screensaver {0} dalla configurazione.
-Ottiene impostazioni di risparmio personalizzate
-Imposta le impostazioni di risparmio personalizzate
-Impostazioni impostate correttamente per lo screensaver
-Impossibile impostare un'impostazione per il salvaschermo
 Apre una shell RSS per leggere i feed
-Cambia il collegamento al feed
 Elenca tutti i feed
 Legge un feed in un browser web
-Feed RSS2 non valido.
-Feed RSS1 non valido.
-Feed Atom non valido.
-Inserisci l'URL di un feed RSS:
 Tipo di feed RSS non valido.
 Ottiene le informazioni sull'articolo
 Il numero dell'articolo non può essere più grande degli articoli disponibili.
@@ -667,16 +574,11 @@ Scrivi il testo che vuoi mostrare. Più a lungo è meglio.
 Velocità minima di scrittura in WPM
 Massima velocità di scrittura in WPM
 Probabilità di errore di battitura in percentuale
-Impossibile salvare la directory corrente: {0}
 Salviette per cambiare direzione
 Quante passate da fare prima di cambiare direzione a caso?
 Fase finita tra
 Inizializzazione interna terminata tra
 Modalità di avvio
-Nome del comando:
-Definizione del comando:
-Tipo di comando:
-Comando rigoroso?
 Versione mod:
 Modulo {0} non trovato.
 L'editor di testo non ha ancora aperto un flusso di file.
@@ -698,7 +600,6 @@ Dizionario di caratteri normali:
 Dizionario dei caratteri di matrice:
 Mostra i progressi sulle operazioni del filesystem file
 Mostra quale file viene elaborato durante le operazioni del filesystem
-dove sarà HardwareType
 Il tipo di hardware {0} non è stato verificato o non è valido.
 Il tipo di hardware {0} non è ancora stato verificato. Se sei sicuro che sia stato verificato, riavvia il kernel con il debug abilitato.
 Partizioni non analizzate nell'elenco.
@@ -709,7 +610,6 @@ Screensaver ha riscontrato un errore durante la visualizzazione: {0}. Premi qual
 Anteprima...
 Ecco come sarà il tuo tema:
 Comandi a capo:
-Il mod {0} ha un comando non valido. Analisi della mod non riuscita. Rivedere il codice sorgente.
 Parti del modulo:
 Usa l'API della console
 Se utilizzare l'API della console per cancellare il testo o utilizzare la sequenza VT di cancellazione della riga più veloce. Se False, Marquee utilizzerà la sequenza VT appropriata. In caso contrario, utilizzerà l'API Console probabilmente più lenta.
@@ -719,19 +619,11 @@ Nome del modulo:
 Nome del file del modulo:
 Percorso file mod:
 Versione parziale:
-Conteggio minimo di argomenti richiesti:
-Argomenti richiesti?
-Impostazione variabile shell?
-Non è possibile eseguire in modalità di manutenzione?
-Obsoleto?
 La cartella è vuota.
 Sondaggio {0} riuscito.
 Sonda verbosa
 Rendi un po' loquaci i messaggi di ispezione dell'hardware.
-> Non ci sono informazioni sui frame.
 Abbellisce il file JSON
-Categoria di configurazione {0} non trovata.
-Voce di configurazione {0} non trovata.
 Usa battiti al minuto
 Se utilizzare l'unità Beats Per Minute per scrivere il colore successivo.
 Ritardo in battiti al minuto
@@ -745,8 +637,6 @@ Cartella scaricata {0}.
 Download non riuscito per la cartella {0}.
 Caricamento cartella {0}...
 Cartella caricata {0}
-Premere "c" per scrivere il codice colore completo.
-Inserisci il codice colore che soddisfi questi formati:
 Minimizza il file JSON
 Nuovo ritardo dello schermo in millisecondi
 Conteggio colonne
@@ -757,7 +647,6 @@ Quanti millisecondi attendere prima di scrivere nuovamente il testo nella nuova 
 Le colonne di testo da stampare.
 Quanti caratteri scrivere prima di attivare il "riempimento riga"?
 Possibilità che il modello di riempimento della linea venga stampato in maiuscolo in percentuale
-Tipo di motivo di riempimento della linea
 La risposta potrebbe non essere zero.
 La risposta non può superare le voci mostrate.
 Salvare le modifiche...
@@ -772,9 +661,6 @@ Nessuna rete durante il download dei dati di debug
 Controlla la tua connessione Internet e riprova.
 La pagina di manuale {0} non è valida.
 Considera di riempire questa pagina di manuale.
-Premi un tasto qualsiasi per leggere la pagina del manuale...
-Questa pagina di manuale necessita di lavori per:
-Pagina del manuale {0} non trovata.
 Manuale del modulo
 Argomenti del kernel disponibili:
 Errore irreversibile nell'argomento:
@@ -788,7 +674,6 @@ La parte mod non è niente.
 Arresto delle mod non consentito in modalità provvisoria.
 La mod è già stata avviata!
 La mod non è ancora iniziata!
-Utilizzo del comando:
 Nome file parte:
 Percorso del file di parti:
 Errore durante il tentativo di avviare lo screensaver:
@@ -808,7 +693,6 @@ Disegna il bordo di notifica
 Copre la notifica con il confine.
 Contatta il fornitore della mod per aggiornare la mod alla versione compatibile.
 Invia una notifica di avanzamento per testare il ricevitore
-Testa la ruota dei colori
 Mostra l'ora del kernel locale
 Mostra la data del kernel locale
 Mostra la data e l'ora del kernel locale
@@ -1015,7 +899,6 @@ Carattere della cornice destra per il bordo di notifica
 Se mostrare ciò che è scritto nel prompt di input.
 Qual è il numero minimo da scegliere?
 Qual è il numero massimo da scegliere?
-Avvia la ruota dei colori in modalità True Color
 Se specificato, visualizzerà un banner di avvio personalizzato con supporto per segnaposto. Puoi usare {0} per la versione del kernel.
 Quale variante della lingua corrente viene utilizzata per modificare i nomi dei mesi, il calendario, ecc.?
 Attiva il supporto True Color.
@@ -1034,13 +917,11 @@ Tipo di connessione dati del server:
 Sistema server:
 Tipo di dati di download del server:
 Tipo di dati di caricamento del server:
-È necessario connettersi a un server prima di eseguire questa operazione.
 Immettere un file remoto di cui eseguire l'hashing.
 Immettere una directory remota.
 Hashing ricorsivo per FTP
 Se eseguire l'hashing ricorsivo di una directory. Tieni presente che non tutti i server FTP lo supportano.
 Velocità di clock del processore:
-Supporto processore SSE2:
 Numero totale di processori:
 Dimensione del disco:
 Memoria totale:
@@ -1076,10 +957,7 @@ Tentativo di installare una mod già installata. Aggiornamento mod...
 Installazione non riuscita per
 Il file mod fornito è incompatibile.
 Disinstallazione non riuscita per
-Apre un URL
 Stampa i numeri di riga sul contenuto del file di stampa
-Versione traslitterata
-Versione tradotta
 Ignora tutte le notifiche
 Download in corso...
 Caricamento in corso...
@@ -1105,19 +983,15 @@ Colore del telaio destro per la barra della rampa
 Usa i colori dei bordi per la barra della rampa
 Usa i colori del bordo per la barra della rampa. Se disabilitato, genererà una barra grigia.
 Avvia la shell HTTP
-Imposta il sito HTTP. Deve essere un URI valido.
 Ottiene la risposta dal server HTTP utilizzando la richiesta specificata
 Elimina il contenuto dal server HTTP
 Si è verificato un errore nella shell HTTP:
 Ottiene la stringa dal server HTTP utilizzando la richiesta specificata
 Ottenere {0}...
-Il formato dell'URI del sito non è valido.
-Impostazione del sito su
 I colori non richiedono un riavvio, ma la maggior parte delle impostazioni richiede un riavvio.
 Nessun aiuto per l'argomento "{0}".
 Difficoltà predefinita per SpeedPress
 Timeout pressione tasti per SpeedPress
-Seleziona la tua difficoltà preferita.
 Quanti millisecondi devono attendere la pressione del tasto prima del timeout? (In difficoltà personalizzata)
 Sostituisce una parola o una frase con un'altra utilizzando espressioni regolari
 Sostituisce una parola o una frase con un'altra in una riga utilizzando espressioni regolari
@@ -1128,7 +1002,6 @@ Non si trova nulla. Assicurati di aver scritto l'impostazione correttamente.
 Impacchetta un file locale nell'archivio
 Non posso imballare nulla.
 Descrizione della risposta
-Porta ospite
 Per ulteriori informazioni sui termini e le condizioni di utilizzo di questo software, visitare
 Tipo di output predefinito
 Controlla tutte le impostazioni di KS per vedere se le variabili sono scritte correttamente
@@ -1184,7 +1057,6 @@ Inizia o ferma
 Giro
 Ripristina
 Un semplice timer
-Inizia (ri)conto alla rovescia
 Imposta intervallo
 Il timeout indicato non è numerico.
 Specificare il timeout in millisecondi
@@ -1199,14 +1071,6 @@ Quanti millisecondi devono attendere prima del timeout della connessione FTP?
 Quanti millisecondi devono attendere prima del timeout della connessione dati FTP?
 Scegliere la versione del protocollo Internet supportata dal server FTP e utilizzata dal client FTP.
 Tentativo di avviare RPC mentre è già avviato.
-Carattere nell'angolo in alto a sinistra per la ruota dei colori RGB
-Carattere nell'angolo in alto a destra per la ruota dei colori RGB
-Carattere nell'angolo inferiore sinistro per la ruota dei colori RGB
-Carattere nell'angolo inferiore destro per la ruota dei colori RGB
-Carattere della cornice superiore per la ruota dei colori RGB
-Carattere della cornice inferiore per la ruota dei colori RGB
-Carattere del riquadro sinistro per la ruota dei colori RGB
-Carattere del frame destro per la ruota dei colori RGB
 Trova un file nella directory specificata o nella directory corrente
 Converte le terminazioni di riga nel formato per la piattaforma corrente o nel formato personalizzato specificato
 Dimensione totale nella cartella:
@@ -1221,14 +1085,6 @@ Se sono presenti aggiornamenti, il kernel lo scaricherà automaticamente.
 Raggio di esplosione del fuoco d'artificio
 Quanti blocchi (fino a 10) è il raggio di esplosione dei fuochi d'artificio quando vengono accesi?
 Questo comando ha le seguenti opzioni che cambiano il modo in cui funziona:
-Stampa i numeri di riga che seguono la riga in fase di stampa
-Impedisce la stampa dei numeri di riga
-Indica che la risposta può richiedere più di un carattere
-Indica che la risposta può richiedere un solo carattere
-Stampa la domanda e le risposte in una riga
-Stampa la domanda e le risposte su due righe
-Stampa la domanda e le risposte in modo moderno
-Stampa la domanda e le risposte in una tabella
 Mostra i dettagli del file nell'elenco
 Sopprime i fastidiosi messaggi di "autorizzazione negata".
 Mostra tutti i fusi orari
@@ -1242,10 +1098,7 @@ Mostra tutte le città disponibili
 Compressione veloce
 Nessuna compressione
 Non creare la directory di base nell'archivio
-Si disconnette dal server in modo vergognoso
 Indica che il percorso di destinazione è assoluto
-Salva il file JSON, abbellendolo nel processo
-Salva il file JSON, minimizzandolo nel processo
 Cancella tutti gli eventi attivati
 Abilita il debug degli eventi
 Abilita il debug per il sistema di eventi del kernel
@@ -1273,9 +1126,6 @@ Schermata iniziale alla moda
 Abilita l'elegante schermata iniziale all'avvio. Si noti che disabiliterà il prompt degli argomenti e testerà il pre-avvio della shell.
 Nome splash
 Nome splash dagli splash disponibili implementati nel kernel.
-MOTD predefinito generato.
-MAL predefinito generato.
-Account di sistema inizializzato
 Utenti inizializzati
 Ben arrivato!
 Avvio del debugger remoto...
@@ -1295,7 +1145,6 @@ Mostra i comandi contano sull'aiuto
 Mostra i comandi della shell contano sull'aiuto
 Mostra i comandi mod contano sull'aiuto
 Mostra gli alias contano sull'aiuto
-Mostra il conteggio dei comandi nell'elenco dei comandi, controllato dai tre switch count show per diversi tipi di comandi.
 Esegue i comandi una volta che le espressioni UESH sono soddisfatte
 La condizione non è stata trovata nell'espressione.
 La condizione {0} richiede {1} argomenti. Hai {2}.
@@ -1319,7 +1168,6 @@ Abilita la modalità di debug
 Abilita la modalità bianco e nero
 Rende la discoteca in bianco e nero. Ti farà davvero male agli occhi se è stato troppo veloce, quindi non consigliato se stai riscontrando un sequestro di immagini veloci.
 Carica i colori correnti
-Apre la documentazione dell'API mod per la struttura del codice sorgente nella sua forma più recente
 Valore corrente:
 Identificatore di colore esadecimale non valido.
 Identificatore di colore RGB non valido.
@@ -1345,13 +1193,6 @@ Il numero di byte non è numerico.
 Il numero di byte iniziale specificato potrebbe non essere maggiore della dimensione del file.
 Il numero di byte finale specificato potrebbe non essere maggiore della dimensione del file.
 Byte cancellati.
-Seleziona il feed dall'elenco di feed esistente da fonti online
-Download elenco feed in corso...
-Impossibile scaricare l'elenco dei feed.
-Seleziona il tuo paese premendo i tasti freccia sinistra o freccia destra. Premere INVIO per confermare la selezione.
-Questo paese ha {0} fonti di notizie.
-Seleziona la tua fonte di notizie preferita scrivendo il numero. Premere INVIO per confermare la selezione.
-Seleziona un feed per la tua fonte di notizie preferita. Premere INVIO per confermare la selezione.
 Tieni presente che la modifica di file binari utilizzando questa shell è sperimentale e può causare il danneggiamento o la perdita di dati se non utilizzata correttamente.
 NON LANCIARE IL SHELL A MENO CHE NON SAI COSA STAI FACENDO!
 Ottiene le informazioni chiave per un tasto premuto. Utile per il debug
@@ -1405,7 +1246,6 @@ Simula la modalità senza APM
 Se simulare una situazione in cui non è disponibile APM. Se abilitato, informa l'utente che ora è possibile spegnere il computer allo spegnimento.
 Densità di glitch
 Maggiore è la percentuale, più denso è il glitch!
-Il linguaggio gangsta contiene un linguaggio forte che potrebbe farti sentire a disagio a leggerlo. Sei sicuro di voler comunque impostare la lingua?
 Il dizionario inglese
 Informazioni sulla parola per
 L'API è concessa in licenza
@@ -1417,8 +1257,6 @@ Esempio nella frase:
 Fonti utilizzate per definire
 Sinonimi:
 Contrari:
-Grazie per averci segnalato un bug! Si prega di seguire le istruzioni sullo schermo.
-Salvaschermo in anteprima
 Testa la tua console per il supporto PowerLine
 Assicurati di utilizzare un carattere della console che supporti i glifi PowerLine, altrimenti l'output potrebbe non essere visualizzato correttamente. Noi raccomandiamo
 Apre la libreria dei preset della shell
@@ -1433,7 +1271,6 @@ Convertitore di unità
 Tipi di unità disponibili e relative unità:
 Gioco finito
 Errore inaspettato
-I comandi evidenziati in un altro colore sono comandi unificati e sono disponibili in ogni shell.
 Verifica aggiornamenti...
 Download della versione
 Installazione della versione

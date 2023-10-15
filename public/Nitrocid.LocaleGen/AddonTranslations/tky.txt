@@ -1,16 +1,11 @@
 Geçersiz renk şablonu {0}
 hwprobe: Donanımınız incelenecek. Lütfen bekle...
-CPU: Bir veya daha fazla CPU çekirdeği araştırılamadı. Yine de bilgi gösteriliyor...
-RAM: Bir veya daha fazla RAM yongası araştırılamadı. Yine de bilgi gösteriliyor...
-HDD: Bir veya daha fazla sabit sürücü araştırılamadı. Yine de bilgi gösteriliyor...
 Bakım için yönetici şifresini girin.
 Önyükleme sırasında Çekirdek Hatası: {0}
 ÇİFT PANİK: Yeniden Başlatma Süresi, izin verilen maksimum {0} hata yeniden başlatma süresini aşıyor. Bir çekirdek hatası buldunuz.
 [{0}] panik: Hata düzeyi {0} olduğu için yeniden başlatma etkinleştirildi.
 [{0}] panik: Yeniden başlatma süresi: {1} saniye, 1 saati aşıyor. 1 dakika olarak ayarlanmıştır.
 ÇİFT PANİK: Hata Türü {0} geçersiz.
-[{0}] panik: Hata düzeyi {0} olduğu için yeniden başlatma devre dışı bırakıldı.
-[{0}] panik: {1} -- Çekirdeği kullanmaya devam etmek için herhangi bir tuşa basın.
 [{0}] panik: {1} -- Kapatmak için herhangi bir tuşa basın.
 [{0}] panik: {1} -- {2} saniye içinde yeniden başlatılıyor...
 ÇİFT PANİK: Çekirdek hatası: {0}
@@ -31,21 +26,14 @@ usrmgr: {0} kullanıcı adı oluşturuluyor...
 {0} adlı kullanıcı kaldırıldı.
 Kullanıcı adını kaldırmaya çalışırken hata oluştu.
 İstenen ekran koruyucu {0} bulunamadı.
-{0} düzgün bir şekilde başlatıldı.
-{0} ekran koruyucusu mevcut değil.
 {0}, varsayılan ekran koruyucuya ayarlandı.
 Ekran koruyucu {0} veritabanında bulunamadı. Adı kontrol edin ve tekrar deneyin.
-Aşağıdakilerden dolayı ekran koruyucu yüklenemiyor:
 Metin yazdırırken ciddi bir hata var.
 Mod, aşağıdakilerden dolayı yüklenemiyor:
-mod: Modlar yükleniyor...
-mod: Modlar durduruluyor...
 {0} modunun adı yok. Kaynak kodunu gözden geçirin.
-Mod {0} sürümüne sahip değil.
 {0} v{1} başladı
 {0} komutu için tanım yok.
 tarafından tanımlanan komut
-Başka bir sunucuya bağlanmadan önce sunucuyla bağlantınızı kesmeniz gerekir.
 {0} için kullanıcı adı:
 {0} için şifre:
 {0} ile bağlandı
@@ -54,18 +42,10 @@ Başka bir sunucuya bağlanmadan önce sunucuyla bağlantınızı kesmeniz gerek
 Yerel bir dizin girin. ".." geri dönmek için.
 {0} dizini bulunamadı.
 Uzak bir dizine girin. ".." geri dönmek için
-Dizini değiştirmeden önce bir sunucuya bağlanmalısınız
 Yerel dizin: {0}
 Uzak dizin: {0}
-Geçerli uzak dizini almadan önce sunucuya bağlanmalısınız.
-Silme işlemini gerçekleştirmeden önce sunucuya yönetici ayrıcalıklarıyla bağlanmalısınız.
-{0} ile bağlantı kesildi
-Henüz herhangi bir sunucuya bağlanmadınız
 {0} dosyası indiriliyor...
 İndirilen dosya {0}.
-İletim gerçekleştirmeden önce sunucuya bağlanmalısınız.
-{0} KB | Değiştirildi: {1}
-Tüm uzak dosyaları listelemeden önce sunucuya bağlanmalısınız.
 {0} dosyası yükleniyor...
 {0} dosyası yüklendi
 Geçerli yerel dizini alır
@@ -73,7 +53,6 @@ Geçerli uzak dizini alır
 İndirilecek veya buradan yüklenecek yerel dizini değiştirir
 İndirilecek veya yüklenecek uzak dizini değiştirir
 Uzak dosyayı sunucudan siler
-Sunucuyla bağlantıyı keser
 Uzak dosyayı ikili veya metin kullanarak yerel dizine indirir
 Yerel dizini listeler
 Uzak dizini listeler
@@ -83,7 +62,6 @@ Komut, {0} takma adıyla bulunamadı.
 Artık "{0}" komutunu şu komut olarak çalıştırabilirsiniz: "{1}".
 {0} takma adı kaldırılmamış.
 Geçersiz mod {0}.
-Yeterli argüman yoktu. Kullanım için aşağıya bakın:
 {0} dizini bulunamadı
 Boş ana bilgisayar adı.
 {0} ile {1} arasında değiştiriliyor...
@@ -128,25 +106,7 @@ Bu komut artık kullanılmamaktadır ve gelecekteki bir sürümde kaldırılacak
 Hedef bir yönetici olduğu için {0} şifresini değiştirme yetkiniz yok.
 Hata ayıklama günlüğündeki her şeyi siler
 Geçersiz dil
------------------------------ Çekirdek panik dökümü ------------------ -----------
->> Panik bilgisi <<
-> Açıklama: {0}
-> Hata türü: {1}
-> Tarih ve Saat: {2}
->> İstisna bilgisi <<
-> İstisna: {0}
-> Açıklama: {1}
-> SONUÇ: {2}
-> Kaynak: {3}
-> Yığın izleme <
->> İç istisna {0} bilgisi <<
->> İstisna {0}, temel nedendir <<
->> İstisna yok; çekirdek hatası olabilir. <<
->> Çerçeveler, dosyalar, çizgiler ve sütunlar <<
-> Çerçeve {0}: Dosya: {1} | Satır: {2} | Sütun: {3}
-> Çerçeve bilgisi alınmaya çalışılırken bir hata oluştu. {0}: {1}
 Çekirdeğe hoş geldiniz!
-<user> olarak başarıyla oturum açıldı
 İndirme tamamlandı.
 {0} denemesinde indirme başarısız oldu: {1}
 FTP sunucusundan dosya indirecekseniz lütfen "ftp" kullanın.
@@ -164,13 +124,7 @@ adresi belirtin
 Saat dilimi yanlış belirtildi.
 Geçersiz profil seçimi.
 {1} profiliyle {0} ile bağlantı kurulmaya çalışılıyor...
-Seçtiğiniz dilin iki çeşidi var. Birini seç:
-Geçersiz seçim. Tekrar deneyin.
-Geçerli dizini {0} olarak ayarlama yetkiniz yok: {1}
-Belirttiğiniz yol çok uzun.
-Döküm bilgi toplayıcı, {0} hakkında bilgi almaya çalışırken çöktü: {1}
 Geçersiz bir işlem nedeniyle ekran koruyucuyu başlatmaya çalışırken hata oluştu.
-Güvenli modda yeniden yüklemeye izin verilmez.
 Güvenli modda modların ayrıştırılmasına izin verilmez.
 Yol ne bir dosya ne de bir dizindir.
 Farklı dizin veya ad altında bir dosyanın başka bir kopyasını oluşturur.
@@ -180,7 +134,6 @@ Eşleştirme {0} ({1}): {2}
 Harcanan süre: {0} milisaniye
 Ad: {0}
 Dosya toplamlarını hesaplar.
-Sizi GitHub Wiki'mize götürür.
 Geçersiz şifreleme algoritması.
 Uzaktan hata ayıklamayı etkinleştirir veya devre dışı bırakır.
 Bakalım matematiksel denklemleri zamanında çözebilecek misin?
@@ -192,16 +145,11 @@ RPC başlatılıyor...
 Bir SSH sunucusuna bağlanır.
 {0} için şifreyi girin:
 SSH Bağlantısı Kesildi.
-Kod sayfası ayarlanamadı. Dil düzgün görüntülenmeyebilir.
 Hata ayıklama etkin değil.
 Alınan tüm bildirimleri gösterir
 Bir bildirimi kapatır
 Bildirim başarıyla reddedildi.
 Uzak PC'ye bir komutu uzaktan yürütür
-- Aşama 1: Sistem başlatma
-- Aşama 2: Donanım algılama
-- Aşama 3: Modlar ve ekran koruyucular algılama
-- 4. Aşama: Giriş yap
 Geçersiz tür {0}.
 Boyut: {0}
 {0} dizini zaten var.
@@ -234,21 +182,15 @@ Profiller hazırlanıyor... Birkaç dakika sürebilir...
 Komut dosyasını çalıştırmaya çalışırken hata oluştu: {0}
 Konsola metin yazar
 Kullanıcı seçimlerini yapar
-Burada <$değişken> yanıtı depolamak için kullanılacak herhangi bir değişkendir
 <cevaplar>, eğik çizgiyle ayrılmış sorunun tek harfli yanıtlarıdır
 SSH sunucusuna bağlanmaya çalışırken hata oluştu: {0}
 Kullanıcının giriş girmesine izin verir
 Geçerli posta dizinini değiştirir
 {0} posta klasörü açılamıyor: {1}
 Posta adresinizdeki dizinleri listeler
-Herhangi bir ağa hızlı bir şekilde bağlanmak için Hızlı Arama'dan gelen bilgileri kullanır
-Bağlanmak için bir adres seçin:
-Seçim aralık dışında. 1-{0} arasında seçim yapın. Tekrar deneyin.
-Seçim bir sayı değil. Tekrar deneyin.
 Sertifika doğrulaması sırasında sertifika hataları oluyor. Sunucuya ilk kez bağlanıyorsunuz veya sertifikanın süresi dolmuş olabilir. İşte bir hata:
 Bağlanmak istediğinizden emin misiniz?
 Geçersiz cevap. Lütfen tekrar deneyin.
-Hızlı arama boş. Adres eklemek için bir sunucuya bağlanın.
 IMAP sunucu adresini ve bağlantı noktasını girin (<adres> veya <adres>:[bağlantı noktası]):
 SMTP sunucu adresini ve bağlantı noktasını girin (<adres> veya <adres>:[port]):
 Bir adrese mesaj gönderir
@@ -309,13 +251,11 @@ Boyut ayrıştırma modu
 Başlangıçta seçim çerçevesi
 Uzun Saat ve Tarih
 Gizli dosyaları göster
-Geçersiz bölüm girildi. Lütfen geri dön.
 Geri gitmek...
 Bir uzak hata ayıklayıcı bağlantı noktası yazın. Sayısal olmalı ve daha önce kullanılmamış olmalıdır. Aksi takdirde, uzak hata ayıklayıcı bağlantı noktasını açamaz.
 Başarısız indirmeleri "get" komutunun kaç kez yeniden denemesi gerektiğini yazın. Sayısal olmalıdır.
 Belirtilen milisaniyeden sonra ekran koruyucunun ne zaman başlatılacağını yazın. Sayısal olmalıdır.
 Cevap olumsuz olmayabilir.
-Cevap geçersiz. Yanıt olarak sayılara ihtiyaç duyan yapılandırma girişleri için yanıtın sayısal olduğundan emin olun.
 Modüllerin hiçbirinde {0} değişkeni bulunamadı.
 Çekirdek yapılandırmasını değiştirir
 Dil Değiştirirken Kültürü Değiştirin
@@ -329,12 +269,10 @@ Oturum Açtıktan Sonra MOTD olan MAL'yi değiştirir
 Günün Mesajı olan MOTD'yi Değiştirir
 Kullanıcı adını değiştirir
 Kullanıcılar için izinleri yönetin
-KSMod'larda ekran koruyucu dosyasını yeniden yükler
 Bir kullanıcıyı listeden kaldırır
 {0} takma adı başarıyla kaldırıldı.
 Güncellemeler kontrol edilemedi.
 Listede başka kullanıcı kalmadı.
-Dil ayarlanamadı.
 Bildirim kapatılmaya çalışılırken hata oluştu.
 usrmgr: {0} kullanıcı adı oluşturulamadı: {1}
 Kullanıcı yeniden adlandırılamadı. {0}
@@ -367,9 +305,7 @@ Hava Durumu: {0}
 Basınç: {0}
 Nem: {0}
 https://home.openweathermap.org/api_keys adresinden kendi API anahtarınızı alabilirsiniz.
-Kimlikleri ile şehirlerin listesi için her zaman http://bulk.openweathermap.org/sample/city.list.json.gz adresine başvurabilirsiniz.
 Sıcaklık için Tercih Edilen Birim
-Bakım modunu tetikler. Bu, birden fazla hesabı devre dışı bırakır.
 Her başlangıç, güncellemeleri kontrol edecektir.
 Dilleri değiştirirken ay adlarını, takvimi vb. değiştirin.
 Donanım araştırma mesajlarını sessiz tutun.
@@ -385,7 +321,6 @@ Etkinleştirilirse, çekirdek tüm klasörü toplam boyutu için ayrıştırır.
 Başlangıçta göz şekerini etkinleştirir
 Saat ve tarih, tam ay adlarını vb. gösterecek şekilde daha uzun olacaktır.
 Gizli dosyaları gösterir.
-Sıcaklık için tercih ettiğiniz birimi seçin (bu yalnızca "hava" komutu için geçerlidir)
 {0} modu durduruldu
 {0} v{1} durduruldu
 Mod {0}, parça adına sahip değil. Mod ayrıştırma başarısız oldu. Kaynak kodunu gözden geçirin.
@@ -461,12 +396,10 @@ Hash'ler eşleşmiyor.
 Hash'ler eşleşiyor.
 Bir klasörü yeniden adlandırır
 Bir test kabuğu açar
-* Çekirdeği başlatmak için herhangi bir tuşa veya çıkmak için ESC'ye basın.
 "{0}" başlatılamadı: {1}
 Posta mesajı önizlemesini göster
 Posta mesajlarını listelerken gövde önizlemesini göster.
 Arka plan rengi
-Geçersiz yola erişmeye çalışıyor.
 Metin dosyasını temizler
 Metin düzenleyiciden çıkar
 Belirtilen satırdaki veya tüm satırlardaki bir karakteri sorgular
@@ -493,20 +426,15 @@ Yeni bir tema yapar
 Yeni bir "{0}" teması oluşturuluyor.
 Temayı Geçerli Dizine Kaydet
 Temayı Başka Bir Dizine Kaydet...
-"<-" ve "->" tuşlarını kullanarak rengi seçin. Çıkmak için ENTER'a basın. Renk numarasını manuel olarak girmek için "i" tuşuna basın.
-"<-" ve "->" tuşlarını kullanarak rengi seçin. Renk aralıkları arasında seçim yapmak için yukarı ve aşağı ok tuşlarını kullanın. Çıkmak için ENTER'a basın. Renk numarasını manuel olarak girmek için "i" tuşuna basın.
-0 ile 255 arasında renk numarası girin:
 Donanım bilgilerini yazdırır
 İşlemci adı:
 İşlemci bitleri:
 Bölüm dosya sistemi:
 Bölüm boyutu:
-GPU: Bir veya daha fazla grafik kartı araştırılamadı. Yine de bilgi gösteriliyor...
 >> Hoş Geldiniz! Bu, uzaktan hata ayıklama ve sohbete ilk kez giriyorsunuz. Kaydolmak için "/register <ad>" kullanın.
 Cihaz zaten var.
 Böyle bir cihaz yok.
 Dosyanın içeriğini konsola yazdırır
-Veya bu komuta "listcities" iletin.
 Giriş zaten var.
 Konsol çıktısını sarar
 Komut sarılabilir değil. Bu komutlar sarılabilir:
@@ -536,11 +464,8 @@ Maks. Pozisyon Sayısı
 Karartmadan önce kaç konum yanıyor?
 Bir komutu yürütmek için bir SSH sunucusuna bağlanır.
 Bir komut dosyasında bir değere bir değişken ayarlar
-Bir hata raporlama istemi.
 FTP kabuğunda bir hata oluştu:
-Bilinmeyen FTP kabuğu hatası:
 SFTP kabuğunda bir hata oluştu:
-Bilinmeyen SFTP kabuk hatası:
 SSH başlığını göster
 Bağlantıda SSH sunucusu başlığını gösterir.
 Nasıl kimlik doğrulaması yapmak istiyorsunuz?
@@ -550,9 +475,6 @@ Parola
 Var olmayan bir yolu nötralize etti.
 {0} anahtar dosyası mevcut değil.
 Özel anahtar eklemeye çalışırken hata oluştu:
-255 renk moduna geçmek için "t" tuşuna basın.
-Gerçek renk moduna geçmek için "t" düğmesine basın.
-mod: Mod algılanmadı.
 Genel komutlar:
 Mod komutları:
 Takma ad komutları:
@@ -573,10 +495,8 @@ Tüm modları başlatır
 255 renk için VT dizisini test eder
 Gerçek renk için VT dizisini test eder
 Alıcıyı test etmek için bir bildirim gönderir
-Farklı takvimler kullanarak baskı tarihini test eder
 Desteklenen tüm kod sayfalarını listeler
 Donanımı araştıran testler
-Geçerli dizini çekirdek yapılandırma dosyasına kaydeder
 Liste yazıcısını dize ve dize dizisiyle test eder
 Liste yazıcısını tamsayı ve tamsayı dizisiyle test eder
 Liste yazarını char ve char dizisiyle test eder
@@ -619,7 +539,6 @@ Tarih:
 Zaman:
 Dosya izinlerini ayarlar. Bu, yalnızca Unix çalıştıran FTP sunucularında desteklenir.
 Bu oturumun türünü ayarlar
-Dosya sistemi işlemlerini gerçekleştirmeden önce sunucuya bağlanmalısınız.
 {0} izinleri {1} olarak ayarlanamadı.
 Dosya için izinler başarıyla ayarlandı
 Veri türü ASCII olarak ayarlandı!
@@ -631,21 +550,9 @@ Milisaniye cinsinden Fade Out Gecikmesi
 Maksimum Soldurma Adımları
 Metnin karartılması için kaç milisaniye beklenmeli?
 Kaç tane soldurma adımı yapılmalı?
-Tam Sonda
-Doğruysa, tüm donanımı araştırır; aksi takdirde, yalnızca gerekli donanımı araştırır.
-{0} ekran koruyucusu yapılandırmadan kaldırılamadı.
-Özel koruyucu ayarları alır
-Özel koruyucu ayarlarını belirler
-Ekran koruyucu için ayarlar başarıyla ayarlandı
-Ekran koruyucu için bir ayar belirlenemedi
 Beslemeleri okumak için bir RSS kabuğu açar
-Besleme bağlantısını değiştirir
 Tüm yayınları listeler
 Bir web tarayıcısında bir beslemeyi okur
-Geçersiz RSS2 beslemesi.
-Geçersiz RSS1 beslemesi.
-Geçersiz Atom beslemesi.
-Bir RSS beslemesi URL'si girin:
 Geçersiz RSS besleme türü.
 Makale bilgilerini alır
 Makale numarası mevcut makalelerden büyük olamaz.
@@ -667,16 +574,11 @@ Gösterilmesini istediğiniz herhangi bir metni yazın. Daha uzun daha iyidir.
 WPM'de minimum yazma hızı
 WPM'de maksimum yazma hızı
 Yüzde olarak yazım hatası olasılığı
-Geçerli dizin kaydedilemedi: {0}
 Yön değiştirmek için mendil
 Yönü rastgele değiştirmeden önce kaç mendil yapmalı?
 Etap tamamlandı
 Dahili başlatma tamamlandı
 Başlangıç ​​modu
-Komut adı:
-Komut tanımı:
-Komut türü:
-Sıkı komut?
 Mod sürümü:
 {0} modu bulunamadı.
 Metin düzenleyici henüz bir dosya akışı açmadı.
@@ -698,7 +600,6 @@ Normal karakter sözlüğü:
 Dizi karakteri sözlüğü:
 Dosya sistemi işlemlerinde ilerlemeyi göster
 Dosya sistemi işlemleri sırasında hangi dosyanın işlendiğini gösterir
-HardwareType nerede olacak
 {0} donanım türü araştırılmamış veya geçerli değil.
 {0} donanım türü henüz araştırılmadı. Araştırıldığından eminseniz, hata ayıklama etkinken çekirdeği yeniden başlatın.
 Bölümler listeye ayrıştırılmadı.
@@ -709,7 +610,6 @@ Ekran koruyucu şunu görüntülerken bir hatayla karşılaştı: {0}. Çıkmak 
 Ön izleme...
 İşte temanız nasıl görünecek:
 Sarılabilir komutlar:
-{0} modunda geçersiz komut var. Mod ayrıştırma başarısız oldu. Kaynak kodunu gözden geçirin.
 Mod parçaları:
 Konsol API'sini kullanın
 Metni temizlemek için Konsol API'sinin mi yoksa daha hızlı satır temizleme VT sırasının mı kullanılacağı. False ise, Marquee uygun VT dizisini kullanacaktır. Aksi takdirde, muhtemelen daha yavaş Konsol API'sini kullanır.
@@ -719,19 +619,11 @@ Modun adı:
 Mod dosya adı:
 Mod dosya yolu:
 Parça versiyonu:
-Minimum gerekli bağımsız değişken sayısı:
-Argümanlar gerekli mi?
-Kabuk değişkeni ayarlanıyor mu?
-Bakım modunda çalıştırılamıyor mu?
-Modası geçmiş?
 Klasör boş.
 {0} başarıyla araştırıldı.
 Ayrıntılı Prob
 Donanım araştırma mesajlarını biraz konuşkan yapın.
-> Çerçeveler hakkında bilgi yok.
 JSON dosyasını güzelleştirir
-{0} yapılandırma kategorisi bulunamadı.
-{0} yapılandırma girişi bulunamadı.
 Dakikada Vuruş Sayısını Kullan
 Bir sonraki rengi yazmak için Dakika Başına Vuruş biriminin kullanılıp kullanılmayacağı.
 Dakikada Vuruş Gecikmesi
@@ -745,8 +637,6 @@ Etkinleştirilmişse, BeatFader rastgele renkler seçecektir. Aksi takdirde, yap
 {0} klasörü için indirme başarısız oldu.
 {0} klasörü yükleniyor...
 Yüklenen klasör {0}
-Tam renkli kod yazmak için "c" tuşuna basın.
-Bu biçimleri karşılayan renk kodunu girin:
 JSON dosyasını küçültür
 Milisaniye cinsinden Yeni Ekran Gecikmesi
 Sütun Sayısı
@@ -757,7 +647,6 @@ Metni yeni ekrana tekrar yazmadan önce kaç milisaniye beklenmeli?
 Yazdırılacak metin sütunları.
 "Satır doldurmayı" tetiklemeden önce kaç karakter yazılmalı?
 Satır doldurma deseninin yüzde olarak tüm büyük harflerle yazdırılma imkanı
-Çizgi dolgu deseni türü
 Cevap sıfır olmayabilir.
 Cevap gösterilen girişleri aşamaz.
 Değişiklikleri Kaydet...
@@ -772,9 +661,6 @@ Hata ayıklama verilerini indirirken ağ yok
 İnternet bağlantınızı kontrol edin ve tekrar deneyin.
 Kılavuz sayfası {0} geçersiz.
 Bu kılavuz sayfasını doldurmayı düşünün.
-Kılavuz sayfasını okumak için herhangi bir tuşa basın...
-Bu kılavuz sayfasının aşağıdakiler için çalışması gerekiyor:
-Manuel sayfa {0} bulunamadı.
 mod kılavuzu
 Kullanılabilir çekirdek argümanları:
 Argümanda kurtarılamaz hata:
@@ -788,7 +674,6 @@ Mod kısmı bir şey değil.
 Güvenli modda modların durdurulmasına izin verilmez.
 Mod zaten başlatıldı!
 Mod daha başlamadı!
-Komut kullanımı:
 Parça dosya adı:
 Parça dosya yolu:
 Ekran koruyucuyu başlatmaya çalışırken hata oluştu:
@@ -808,7 +693,6 @@ Bildirim kenarlığı çiz
 Bildirimi kenarlıkla kaplar.
 Modu uyumlu sürüme yükseltmek için modun satıcısıyla iletişime geçin.
 Alıcıyı test etmek için bir ilerleme bildirimi gönderir
-Renk tekerleğini test eder
 Yerel çekirdek zamanını gösterir
 Yerel çekirdek tarihini gösterir
 Yerel çekirdek tarihini ve saatini gösterir
@@ -1015,7 +899,6 @@ Bildirim kenarlığı için sağ çerçeve karakteri
 Giriş isteminde yazılanların gösterilip gösterilmeyeceği.
 Seçilecek minimum sayı nedir?
 Seçilecek maksimum sayı nedir?
-Renk tekerleğini gerçek renk modunda başlatın
 Belirtilirse, yer tutucu desteğiyle özelleştirilmiş başlangıç ​​başlığını görüntüler. Çekirdek sürümü için {0} kullanabilirsiniz.
 Ay adlarını, takvimi vb. değiştirmek için geçerli dilin hangi türevi kullanılıyor?
 Gerçek renk desteğini etkinleştirir.
@@ -1034,13 +917,11 @@ Sunucu veri bağlantı türü:
 Sunucu sistemi:
 Sunucu indirme veri türü:
 Sunucu yükleme veri türü:
-Bu işlemi gerçekleştirmeden önce bir sunucuya bağlanmalısınız.
 Karma oluşturulacak bir uzak dosya girin.
 Uzak bir dizine girin.
 FTP için özyinelemeli karma
 Bir dizinin özyinelemeli olarak hash edilip edilmeyeceği. Lütfen tüm FTP sunucularının bunu desteklemediğini unutmayın.
 İşlemci saat hızı:
-İşlemci SSE2 desteği:
 Toplam işlemci sayısı:
 Disk boyutu:
 Toplam hafıza:
@@ -1076,10 +957,7 @@ Mod dosyası belirtilmemiş.
 Yükleme başarısız oldu
 Sağlanan mod dosyası uyumsuz.
 Kaldırma işlemi için başarısız oldu
-Bir URL açar
 Dosya içeriğini yazdırırken satır numaralarını yazdır
-Çevrilmiş versiyon
-çevrilmiş versiyon
 Tüm bildirimleri kapatır
 İndiriliyor...
 yükleniyor...
@@ -1105,19 +983,15 @@ Rampa çubuğu için sağ çerçeve rengi
 Rampa çubuğu için kenarlık renklerini kullanın
 Rampa çubuğu için kenarlık renklerini kullanın. Devre dışı bırakılırsa, gri bir çubuk oluşturur.
 HTTP kabuğunu başlatır
-HTTP sitesini ayarlar. Geçerli bir URI olmalıdır.
 Belirtilen isteği kullanarak HTTP sunucusundan yanıt alır
 İçeriği HTTP sunucusundan siler
 HTTP kabuğunda bir hata oluştu:
 Belirtilen isteği kullanarak dizeyi HTTP sunucusundan alır
 {0} alınıyor...
-Site URI biçimi geçersiz.
-site ayarlanıyor
 Renkler için yeniden başlatma gerekmez, ancak ayarların çoğu yeniden başlatma gerektirir.
 "{0}" bağımsız değişkeni için yardım yok.
 SpeedPress için varsayılan zorluk
 SpeedPress için tuşa basma zaman aşımı
-Tercih ettiğiniz zorluğu seçin.
 Zaman aşımından önce tuşa basılması için kaç milisaniye beklenmelidir? (özel zorlukta)
 Normal ifadeler kullanarak bir kelimeyi veya tümceyi başka bir kelimeyle değiştirir
 Normal ifadeler kullanarak bir satırdaki bir kelimeyi veya ifadeyi başka bir kelimeyle değiştirir
@@ -1128,7 +1002,6 @@ Hiçbir şey bulunamadı. Ayarı doğru yazdığınızdan emin olun.
 Arşive yerel bir dosya paketler
 Hiçbir şey paketleyemem.
 Cevap açıklaması
-Ana bilgisayar bağlantı noktası
 Bu yazılımı kullanmanın hüküm ve koşulları hakkında daha fazla bilgi için, adresini ziyaret edin.
 Varsayılan seçim çıktı türü
 Değişkenlerin doğru yazılıp yazılmadığını görmek için tüm KS ayarlarını kontrol eder
@@ -1184,7 +1057,6 @@ Başlat veya durdur
 Kucak
 Sıfırla
 Basit bir zamanlayıcı
-(tekrar) geri sayıma başlayın
 Aralığı ayarla
 Belirtilen zaman aşımı sayısal değil.
 Zaman aşımını milisaniye cinsinden belirtin
@@ -1199,14 +1071,6 @@ FTP bağlantı zaman aşımından önce kaç milisaniye beklenmeli?
 FTP veri bağlantısı zaman aşımından önce kaç milisaniye beklenmeli?
 FTP sunucusunun desteklediği ve FTP istemcisinin kullandığı İnternet Protokolü sürümünü seçin.
 Zaten başlamışken RPC'yi başlatmaya çalışmak.
-RGB renk tekerleği için sol üst köşe karakteri
-RGB renk tekerleği için sağ üst köşe karakteri
-RGB renk tekerleği için sol alt köşe karakteri
-RGB renk tekerleği için sağ alt köşe karakteri
-RGB renk tekerleği için üst çerçeve karakteri
-RGB renk tekerleği için alt çerçeve karakteri
-RGB renk tekerleği için sol çerçeve karakteri
-RGB renk tekerleği için sağ çerçeve karakteri
 Belirtilen dizinde veya geçerli dizinde bir dosya bulur
 Satır sonlarını geçerli platform için formata veya belirtilen özel formata dönüştürür
 Klasördeki toplam boyut:
@@ -1221,14 +1085,6 @@ Herhangi bir güncelleme varsa, çekirdek onu otomatik olarak indirecektir.
 havai fişek patlama yarıçapı
 Ateşlendiğinde havai fişek için patlama yarıçapı kaç blok (10'a kadar)?
 Bu komut, çalışma şeklini değiştiren aşağıdaki anahtarlara sahiptir:
-Yazdırılmakta olan satırı takip eden satır numaralarını yazdırır
-Satır numaralarının yazdırılmasını engeller
-Cevabın birden fazla karakter alabileceğini belirtin
-Cevabın sadece bir karakter alabileceğini belirtin
-Soruyu ve cevapları tek satırda yazdırın
-Soruyu ve cevapları iki satıra yazdır
-Soruyu ve cevapları modern bir şekilde yazdırın
-Soruyu ve cevapları bir tabloya yazdırın
 Listedeki dosya ayrıntılarını gösterir
 Can sıkıcı "izin reddedildi" mesajlarını bastırır
 Tüm zaman dilimlerini gösterir
@@ -1242,10 +1098,7 @@ Mevcut tüm şehirleri gösterir
 Hızlı sıkıştırma
 Sıkıştırma yok
 Arşivde temel dizin oluşturmayın
-Utanç verici bir şekilde sunucuyla bağlantıyı kesiyor
 Hedef yolun mutlak olduğunu gösterir
-JSON dosyasını işlem sırasında güzelleştirerek kaydeder
-JSON dosyasını süreçte küçülterek kaydeder
 Tüm tetiklenen olayları temizler
 Olay hata ayıklamasını etkinleştir
 Çekirdek olay sistemi için hata ayıklamayı etkinleştirir
@@ -1273,9 +1126,6 @@ Dil çevrilebilir:
 Başlangıçta şık açılış ekranını etkinleştirir. Lütfen argüman istemini devre dışı bırakacağını ve kabuk önyüklemesini test edeceğini unutmayın.
 Sıçrama adı
 Çekirdekte uygulanan mevcut sıçramalardan gelen sıçrama adı.
-Oluşturulan varsayılan MOTD.
-Oluşturulan varsayılan MAL.
-Sistem hesabı başlatıldı
 Kullanıcılar başlatıldı
 Hoş geldin!
 Uzaktan hata ayıklayıcı başlatılıyor...
@@ -1295,7 +1145,6 @@ Yardıma bağlı komutların sayısını göster
 Yardıma bağlı kabuk komutlarının sayısını göster
 Yardıma bağlı mod komutlarının sayısını göster
 Takma adların yardıma bağlılığını göster
-Farklı komut türleri için üç sayım gösteri anahtarı tarafından kontrol edilen komut listesindeki komut sayısını gösterir.
 UESH ifadeleri karşılandığında komutları yürütür
 Koşul ifadede bulunamadı.
 {0} koşulu, {1} bağımsız değişken gerektirir. {2} var.
@@ -1319,7 +1168,6 @@ Hata ayıklama modunu etkinleştirir
 Siyah Beyaz Modu Etkinleştir
 Diskoyu siyah beyaz yapar. Çok hızlı olursa gözlerinize gerçekten zarar verir, bu nedenle hızlı görüntü nöbeti yaşıyorsanız önerilmez.
 Geçerli Renkleri Yükle
-Kaynak kodun yapısı için mod API belgelerini en güncel haliyle açar
 Mevcut değer:
 Geçersiz onaltılık renk belirteci.
 Geçersiz RGB renk belirteci.
@@ -1345,13 +1193,6 @@ Bayt numarası sayısal değildir.
 Belirtilen başlangıç ​​bayt numarası dosya boyutundan büyük olamaz.
 Belirtilen bitiş bayt numarası dosya boyutundan büyük olamaz.
 Silinen baytlar.
-Çevrimiçi kaynaklardan mevcut besleme listesinden beslemeyi seçer
-Yayın listesi indiriliyor...
-Yayın listesi indirilemedi.
-Sol ok veya sağ ok tuşlarına basarak ülkenizi seçin. Seçiminizi onaylamak için ENTER'a basın.
-Bu ülkenin {0} haber kaynağı var.
-Numarayı yazarak favori haber kaynağınızı seçin. Seçiminizi onaylamak için ENTER'a basın.
-Favori haber kaynağınız için bir besleme seçin. Seçiminizi onaylamak için ENTER'a basın.
 Lütfen bu kabuğu kullanarak ikili dosyaları düzenlemenin deneysel olduğunu ve doğru kullanılmadığında veri bozulmasına veya veri kaybına yol açabileceğini unutmayın.
 NE YAPTIĞINIZI BİLMİYORSANIZ SHELL'İ ÇALIŞTIRMAYIN!
 Basılan bir tuş için anahtar bilgileri alır. Hata ayıklama için kullanışlıdır
@@ -1405,7 +1246,6 @@ APM Yok Modunun Simüle Edilmesi
 Kullanılabilir APM'nin olmadığı bir durumu simüle edip etmeyeceği. Etkinleştirilirse, kullanıcıya bilgisayarı kapattıktan sonra kapatmanın artık güvenli olduğunu bildirir.
 aksaklık yoğunluğu
 Yüzde ne kadar büyük olursa, aksaklık o kadar yoğun olur!
-Gangsta dili, okurken kendinizi rahatsız hissetmenize neden olabilecek güçlü bir dil içeriyor. Yine de dili ayarlamak istediğinizden emin misiniz?
 İngilizce Sözlük
 için kelime bilgisi
 API lisanslıdır
@@ -1417,8 +1257,6 @@ Cümledeki Örnek:
 Tanımlamak için kullanılan kaynaklar
 Eş anlamlı:
 Zıtlıklar:
-Bize bir hatayı bildirdiğiniz için teşekkür ederiz! Lütfen ekrandaki talimatları izleyin.
-Önizleme ekran koruyucu
 Konsolunuzu PowerLine desteği için test eder
 PowerLine gliflerini destekleyen bir konsol yazı tipi kullandığınızdan emin olun, aksi takdirde çıktı düzgün işlenmeyebilir. Öneririz
 Kabuk ön ayar kitaplığını açar
@@ -1433,7 +1271,6 @@ Birim dönüştürücü
 Mevcut birim türleri ve birimleri:
 Oyun bitti
 Beklenmeyen hata
-Başka bir renkle vurgulanan komutlar birleştirilmiş komutlardır ve her kabukta bulunur.
 Güncellemeler kontrol ediliyor...
 Sürüm indiriliyor
 Sürüm yükleniyor

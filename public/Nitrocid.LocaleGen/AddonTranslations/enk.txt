@@ -1,16 +1,11 @@
 Invalid colour template {0}
 hwprobe: Your hardware will be probed. Please wait...
-CPU: One or more of the CPU cores failed to be probed. Showing information anyway...
-RAM: One or more of the RAM chips failed to be probed. Showing information anyway...
-HDD: One or more of the hard drives failed to be probed. Showing information anyway...
 Enter the admin password for maintenance.
 Kernel Error while booting: {0}
 DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.
 [{0}] panic: Reboot enabled due to error level being {0}.
 [{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1 minute.
 DOUBLE PANIC: Error Type {0} invalid.
-[{0}] panic: Reboot disabled due to error level being {0}.
-[{0}] panic: {1} -- Press any key to continue using the kernel.
 [{0}] panic: {1} -- Press any key to shutdown.
 [{0}] panic: {1} -- Rebooting in {2} seconds...
 DOUBLE PANIC: Kernel bug: {0}
@@ -31,21 +26,14 @@ User {0} is already logged in. Log-out and log-in as another admin.
 User {0} removed.
 Error trying to remove username.
 The requested screensaver {0} is not found.
-{0} has been initialised properly.
-Screensaver {0} does not exist.
 {0} is set to default screensaver.
 Screensaver {0} not found in database. Check the name and try again.
-Screensaver can't be loaded because of the following: 
 There is a serious error when printing text.
 Mod can't be loaded because of the following: 
-mod: Loading mods...
-mod: Stopping mods...
 Mod {0} does not have the name. Review the source code.
-Mod {0} does not have the version.
 {0} v{1} started
 No definition for command {0}.
 Command defined by 
-You should disconnect from server before connecting to another server
 Username for {0}: 
 Password for {0}: 
 Connected to {0}
@@ -54,18 +42,10 @@ Local directory {0} doesn't exist.
 Enter a local directory. ".." to go back.
 Directory {0} not found.
 Enter a remote directory. ".." to go back
-You must connect to a server before changing directory
 Local directory: {0}
 Remote directory: {0}
-You must connect to server before getting current remote directory.
-You must connect to server with administrative privileges before performing the deletion.
-Disconnected from {0}
-You haven't connected to any server yet
 Downloading file {0}...
 Downloaded file {0}.
-You must connect to server before performing transmission.
-{0} KB | Modified in: {1}
-You should connect to server before listing all remote files.
 Uploading file {0}...
 Uploaded file {0}
 Gets current local directory
@@ -73,7 +53,6 @@ Gets current remote directory
 Changes local directory to download to or upload from
 Changes remote directory to download from or upload to
 Deletes remote file from server
-Disconnects from server
 Downloads remote file to local directory using binary or text
 Lists local directory
 Lists remote directory
@@ -83,7 +62,6 @@ Command not found to alias to {0}.
 You can now run "{0}" as a command: "{1}".
 Alias {0} is not found to be removed.
 Invalid mode {0}.
-There was not enough arguments. See below for usage:
 Directory {0} not found
 Blank host name.
 Changing from: {0} to {1}...
@@ -128,25 +106,7 @@ This command is obsolete and will be removed in a future release.
 You are not authorised to change password of {0} because the target was an admin.
 Deletes everything in debug log
 Invalid language
------------------------------ Kernel panic dump -----------------------------
->> Panic information <<
-> Description: {0}
-> Error type: {1}
-> Date and Time: {2}
->> Exception information <<
-> Exception: {0}
-> Description: {1}
-> HRESULT: {2}
-> Source: {3}
-> Stack trace <
->> Inner exception {0} information <<
->> Exception {0} is the root cause <<
->> No exception; might be a kernel error. <<
->> Frames, files, lines, and columns <<
-> Frame {0}: File: {1} | Line: {2} | Column: {3}
-> There is an error when trying to get frame information. {0}: {1}
 Welcome to Kernel!
-Logged in successfully as <user>
 Download has completed.
 Download failed in try {0}: {1}
 Please use "ftp" if you are going to download files from the FTP server.
@@ -164,13 +124,7 @@ Specify the address
 Timezone is specified incorrectly.
 Invalid profile selection.
 Trying to connect to {0} with profile {1}...
-The language you've selected contains two variants. Select one:
-Invalid choice. Try again.
-You are unauthorised to set current directory to {0}: {1}
-The path you've specified is too long.
-Dump information gatherer crashed when trying to get information about {0}: {1}
 Error when trying to start screensaver, because of an invalid operation.
-Reloading not allowed in safe mode.
 Parsing mods not allowed on safe mode.
 The path is neither a file nor a directory.
 Creates another copy of a file under different directory or name.
@@ -180,7 +134,6 @@ Match {0}: {1}
 Time spent: {0} milliseconds
 Name: {0}
 Calculates file sums.
-Takes you to our GitHub Wiki.
 Invalid encryption algorithm.
 Enables or disables remote debugging.
 See if you can solve mathematical equations on time
@@ -192,16 +145,11 @@ Starting RPC...
 Connects to an SSH server.
 Enter the password for {0}: 
 SSH Disconnected.
-Unable to set codepage. The language may not display properly.
 Debugging not enabled.
 Shows all received notifications
 Dismisses a notification
 Notification dismissed successfully.
 Remotely executes a command to remote PC
-- Stage 1: System initialisation
-- Stage 2: Hardware detection
-- Stage 3: Mods and screensavers detection
-- Stage 4: Log in
 Invalid type {0}.
 Size: {0}
 Directory {0} already exists.
@@ -234,21 +182,15 @@ Preparing profiles... It could take several minutes...
 Error trying to execute script: {0}
 Writes text into the console
 Makes user choices
-where <$variable> is any variable that will be used to store response
 where <answers> are one-lettered answers of the question separated in slashes
 Error trying to connect to SSH server: {0}
 Allows user to enter input
 Changes current mail directory
 Unable to open mail folder {0}: {1}
 Lists directories in your mail address
-Uses information from Speed Dial to connect to any network quickly
-Select an address to connect to:
-The selection is out of range. Select between 1-{0}. Try again.
-The selection is not a number. Try again.
 During certificate validation, there are certificate errors. It might be the first time you've connected to the server or the certificate might have been expired. Here's an error:
 Are you sure that you want to connect?
 Invalid answer. Please try again.
-Speed dial is empty. Connect to a server to add an address to it.
 Enter IMAP server address and port (<address> or <address>:[port]): 
 Enter SMTP server address and port (<address> or <address>:[port]): 
 Sends a message to an address
@@ -309,13 +251,11 @@ Size parse mode
 Marquee on startup
 Long Time and Date
 Show Hidden Files
-Invalid section entered. Please go back.
 Go Back...
 Write a remote debugger port. It must be numeric, and must not be already used. Otherwise, remote debugger will fail to open the port.
 Write how many times the "get" command should retry failed downloads. It must be numeric.
 Write when to launch screensaver after specified milliseconds. It must be numeric.
 The answer may not be negative.
-The answer is invalid. Check to make sure that the answer is numeric for config entries that need numbers as answers.
 Variable {0} is not found on any of the modules.
 Changes kernel configuration
 Change Culture when Switching Languages
@@ -329,12 +269,10 @@ Changes MAL, the MOTD After Login
 Changes MOTD, the Message Of The Day
 Changes user name
 Manage permissions for users
-Reloads screensaver file in KSMods
 Removes a user from the list
 Removed alias {0} successfully.
 Failed to check for updates.
 There are no more users remaining in the list.
-Failed to set language.
 Error trying to dismiss notification.
 usrmgr: Failed to create username {0}: {1}
 Failed to rename user. {0}
@@ -367,9 +305,7 @@ Weather: {0}
 Pressure: {0}
 Humidity: {0}
 You can get your own API key at https://home.openweathermap.org/api_keys.
-You can always consult http://bulk.openweathermap.org/sample/city.list.json.gz for the list of cities with their IDs.
 Preferred Unit for Temperature
-Triggers maintenance mode. This disables multiple accounts.
 Each startup, it will check for updates.
 When switching languages, change the month names, calendar, etc.
 Keep hardware probing messages silent.
@@ -385,7 +321,6 @@ If enabled, the kernel will parse the whole folder for its total size. Else, wil
 Enables eyecandy on startup
 The time and date will be longer, showing full month names, etc.
 Shows hidden files.
-Select your preferred unit for temperature (this only applies to the "weather" command)
 Mod {0} stopped
 {0} v{1} stopped
 Mod {0} does not have the part name. Mod parsing failed. Review the source code.
@@ -461,12 +396,10 @@ Hashes don't match.
 Hashes match.
 Renames a folder
 Opens a test shell
-* Press any key to start the kernel or ESC to exit.
 Failed to start "{0}": {1}
 Show mail message preview
 When listing mail messages, show body preview.
 Background colour
-Trying to access invalid path.
 Clears the text file
 Exits the text editor
 Queries a character in a specified line or all lines
@@ -493,20 +426,15 @@ Makes a new theme
 Making a new theme "{0}".
 Save Theme to Current Directory
 Save Theme to Another Directory...
-Select colour using "<-" and "->" keys. Press ENTER to quit. Press "i" to insert colour number manually.
-Select colour using "<-" and "->" keys. Use arrow up and arrow down keys to select between colour ranges. Press ENTER to quit. Press "i" to insert colour number manually.
-Enter colour number from 0 to 255:
 Prints hardware information
 Processor name:
 Processor bits:
 Partition filesystem:
 Partition size:
-GPU: One or more of the graphics cards failed to be probed. Showing information anyway...
 >> Welcome! This is your first time entering remote debug and chat. Use "/register <name>" to register.
 Device already exists.
 No such device.
 Prints content of file to console
-Or, pass "listcities" to this command.
 Entry already exists.
 Wraps the console output
 The command is not wrappable. These commands are wrappable:
@@ -536,11 +464,8 @@ Max Positions Count
 How many positions are lit before dimming?
 Connects to an SSH server to execute a command.
 Sets a variable to a value in a script
-A bug reporting prompt.
 There was an error in the FTP shell:
-Unknown FTP shell error:
 There was an error in the SFTP shell:
-Unknown SFTP shell error:
 Show SSH banner
 Shows the SSH server banner on connection.
 How do you want to authenticate?
@@ -550,9 +475,6 @@ Enter the passphrase for key {0}:
 Neutralised a non-existent path.
 Key file {0} doesn't exist.
 Error trying to add private key:
-Press "t" to switch to 255 colour mode.
-Press "t" to switch to true colour mode.
-mod: No mods detected.
 General commands:
 Mod commands:
 Alias commands:
@@ -573,10 +495,8 @@ Starts all mods
 Tests the VT sequence for 255 colours
 Tests the VT sequence for true colour
 Sends a notification to test the receiver
-Tests printing date using different calendars
 Lists all supported codepages
 Tests probing the hardware
-Saves the current directory to kernel configuration file
 Tests the list writer with the string and string array
 Tests the list writer with the integer and integer array
 Tests the list writer with the char and char array
@@ -619,7 +539,6 @@ Date:
 Time:
 Sets file permissions. This is supported only on FTP servers that run Unix.
 Sets the type for this session
-You must connect to server before performing filesystem operations.
 Failed to set permissions of {0} to {1}.
 Permissions set successfully for file
 Data type set to ASCII!
@@ -631,21 +550,9 @@ Fade Out Delay in Milliseconds
 Max Fade Steps
 How many milliseconds to wait before fading out text?
 How many fade steps to do?
-Full Probe
-If true, probes all the hardware; else, will only probe the needed hardware.
-Failed to remove screensaver {0} from config.
-Gets custom saver settings
-Sets custom saver settings
-Settings set successfully for screensaver
-Failed to set a setting for screensaver
 Opens an RSS shell to read the feeds
-Changes the feed link
 Lists all feeds
 Reads a feed in a web browser
-Invalid RSS2 feed.
-Invalid RSS1 feed.
-Invalid Atom feed.
-Enter an RSS feed URL:
 Invalid RSS feed type.
 Gets the article info
 Article number couldn't be bigger than the available articles.
@@ -667,16 +574,11 @@ Write any text you want shown. Longer is better.
 Minimum writing speed in WPM
 Maximum writing speed in WPM
 Probability of typo in percent
-Failed to save current directory: {0}
 Wipes to change direction
 How many wipes to do before changing direction randomly?
 Stage finished in
 Internal initialisation finished in
 Starting mod
-Command name:
-Command definition:
-Command type:
-Strict command?
 Mod version:
 Mod {0} not found.
 The text editor hasn't opened a file stream yet.
@@ -698,7 +600,6 @@ Normal char dictionary:
 Array char dictionary:
 Show progress on filesystem operations
 Shows what file is being processed during the filesystem operations
-where HardwareType will be
 Either the hardware type {0} is not probed, or is not valid.
 The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled.
 Partitions not parsed to list.
@@ -709,7 +610,6 @@ Screensaver experienced an error while displaying: {0}. Press any key to exit.
 Preview...
 Here's how your theme will look like:
 Wrappable commands:
-Mod {0} has invalid command. Mod parsing failed. Review the source code.
 Mod parts:
 Use Console API
 Whether to use the Console API to clear text or to use the faster line clearing VT sequence. If False, Marquee will use the appropriate VT sequence. Otherwise, it will use the probably slower Console API.
@@ -719,19 +619,11 @@ Mod name:
 Mod file name:
 Mod file path:
 Part version:
-Minimum count of required arguments:
-Arguments required?
-Setting shell variable?
-Can not run in maintenance mode?
-Obsolete?
 Folder is empty.
 Successfully probed {0}.
 Verbose Probe
 Make hardware probing messages a bit talkative.
-> There are no information about frames.
 Beautifies the JSON file
-Config category {0} not found.
-Config entry {0} not found.
 Use Beats Per Minute
 Whether to use the Beats Per Minute unit to write the next colour.
 Delay in Beats Per Minute
@@ -745,8 +637,6 @@ Downloaded folder {0}.
 Download failed for folder {0}.
 Uploading folder {0}...
 Uploaded folder {0}
-Press "c" to write full colour code.
-Enter colour code that satisfies these formats:
 Minifies the JSON file
 New Screen Delay in Milliseconds
 Column Count
@@ -757,7 +647,6 @@ How many milliseconds to wait before writing the text in the new screen again?
 The text columns to be printed.
 How many characters to write before triggering the "line fill"?
 Possibility that the line fill pattern will be printed in all caps in percent
-Line fill pattern type
 The answer may not be zero.
 The answer may not exceed the entries shown.
 Save Changes...
@@ -772,9 +661,6 @@ No network while downloading debug data
 Check your internet connection and try again.
 The manual page {0} is invalid.
 Consider filling this manual page.
-Press any key to read the manual page...
-This manual page needs work for:
-Manual page {0} not found.
 Mod manual
 Available kernel arguments:
 Unrecoverable error in argument:
@@ -788,7 +674,6 @@ Mod part is nothing.
 Stopping mods not allowed on safe mode.
 Mod has already been started!
 Mod hasn't started yet!
-Command usage:
 Part file name:
 Part file path:
 Error when trying to start screensaver:
@@ -808,7 +693,6 @@ Draw notification border
 Covers the notification with the border.
 Contact the vendor of the mod to upgrade the mod to the compatible version.
 Sends a progress notification to test the receiver
-Tests the colour wheel
 Shows local kernel time
 Shows local kernel date
 Shows local kernel date and time
@@ -1015,7 +899,6 @@ Right frame character for notification border
 Whether to show what's written in the input prompt.
 What is the minimum number to choose?
 What is the maximum number to choose?
-Start colour wheel in true colour mode
 If specified, it will display customised startup banner with placeholder support. You can use {0} for kernel version.
 Which variant of the current language is being used to change the month names, calendar, etc.?
 Activates the true colour support.
@@ -1034,13 +917,11 @@ Server data connection type:
 Server system:
 Server download data type:
 Server upload data type:
-You must connect to a server before performing this operation.
 Enter a remote file to be hashed.
 Enter a remote directory.
 Recursive hashing for FTP
 Whether to recursively hash a directory. Please note that not all the FTP servers support that.
 Processor clock speed:
-Processor SSE2 support:
 Total number of processors:
 Disk size:
 Total memory:
@@ -1076,10 +957,7 @@ Trying to install an already-installed mod. Updating mod...
 Installation failed for
 The mod file provided is incompatible.
 Uninstallation failed for
-Opens a URL
 Print line numbers on printing file contents
-Transliterated version
-Translated version
 Dismisses all notifications
 Downloading...
 Uploading...
@@ -1105,19 +983,15 @@ Right frame colour for ramp bar
 Use border colours for ramp bar
 Use the border colours for the ramp bar. If disabled, will generate a grey bar.
 Starts the HTTP shell
-Sets the HTTP site. Must be a valid URI.
 Gets the response from the HTTP server using the specified request
 Deletes content from HTTP server
 There was an error in the HTTP shell:
 Gets the string from the HTTP server using the specified request
 Getting {0}...
-The site URI format is invalid.
-Setting site to
 Colours don't require a restart, but most of the settings require a restart.
 No help for argument "{0}".
 Default difficulty for SpeedPress
 Keypress timeout for SpeedPress
-Select your preferred difficulty.
 How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)
 Replaces a word or phrase with another one using regular expressions
 Replaces a word or phrase with another one in a line using regular expressions
@@ -1128,7 +1002,6 @@ Nothing is found. Make sure that you've written the setting correctly.
 Packs a local file to the archive
 Can't pack nothing.
 Answer description
-Host Port
 For more information about the terms and conditions of using this software, visit
 Default choice output type
 Checks all the KS settings to see if the variables are written correctly
@@ -1184,7 +1057,6 @@ Start or stop
 Lap
 Reset
 A simple timer
-Start (re)counting down
 Set interval
 Indicated timeout is not numeric.
 Specify the timeout in milliseconds
@@ -1199,14 +1071,6 @@ How many milliseconds to wait before the FTP connection timeout?
 How many milliseconds to wait before the FTP data connection timeout?
 Choose the version of Internet Protocol that the FTP server supports and that the FTP client uses.
 Trying to start RPC while it's already started.
-Upper left corner character for RGB colour wheel
-Upper right corner character for RGB colour wheel
-Lower left corner character for RGB colour wheel
-Lower right corner character for RGB colour wheel
-Upper frame character for RGB colour wheel
-Lower frame character for RGB colour wheel
-Left frame character for RGB colour wheel
-Right frame character for RGB colour wheel
 Finds a file in the specified directory or in the current directory
 Converts the line endings to format for the current platform or to specified custom format
 Total size in folder:
@@ -1221,14 +1085,6 @@ If there is any update, the kernel will automatically download it.
 Firework explosion radius
 How many blocks (up to 10) is the explosion radius for the firework when ignited?
 This command has the below switches that change how it works:
-Prints the line numbers that follow the line being printed
-Prevents printing the line numbers
-Indicate that the answer can take more than one character
-Indicate that the answer can take just one character
-Print the question and the answers in one line
-Print the question and the answers in two lines
-Print the question and the answers in the modern way
-Print the question and the answers in a table
 Shows the file details in the list
 Suppresses the annoying "permission denied" messages
 Shows all the time zones
@@ -1242,10 +1098,7 @@ Shows all the available cities
 Fast compression
 No compression
 Don't create base directory in archive
-Disconnects from server disgracefully
 Indicates that the target path is absolute
-Saves the JSON file, beautifying it in the process
-Saves the JSON file, minifying it in the process
 Clears all fired events
 Enable event debugging
 Enables debugging for the kernel event system
@@ -1273,9 +1126,6 @@ Stylish splash screen
 Enables the stylish splash screen on startup. Please note that it will disable argument prompt and test shell pre-boot.
 Splash name
 Splash name from the available splashes implemented in the kernel.
-Generated default MOTD.
-Generated default MAL.
-System account initialised
 Users initialised
 Welcome!
 Starting the remote debugger...
@@ -1295,7 +1145,6 @@ Show the commands count on help
 Show the shell commands count on help
 Show the mod commands count on help
 Show the aliases count on help
-Shows the commands count in the command list, controlled by the three count show switches for different kinds of commands.
 Executes commands once the UESH expressions are satisfied
 The condition was not found in the expression.
 Condition {0} requires {1} arguments. Got {2}.
@@ -1319,7 +1168,6 @@ Enables debug mode
 Enable Black and White Mode
 Makes the disco black and white. Will really hurt your eyes if it was too fast, so not recommended if you're experiencing a seizure of fast images.
 Load Current Colours
-Opens the mod API documentation for the structure of the source code in its most current form
 Current value:
 Invalid hex colour specifier.
 Invalid RGB colour specifier.
@@ -1345,13 +1193,6 @@ The byte number is not numeric.
 The specified start byte number may not be larger than the file size.
 The specified end byte number may not be larger than the file size.
 Deleted bytes.
-Selects the feed from the existing feed list from online sources
-Downloading feed list...
-Failed to download feed list.
-Select your country by pressing the arrow left or arrow right keys. Press ENTER to confirm your selection.
-This country has {0} news sources.
-Select your favourite news source by writing the number. Press ENTER to confirm your selection.
-Select a feed for your favourite news source. Press ENTER to confirm your selection.
 Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.
 DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!
 Gets key information for a pressed key. Useful for debugging
@@ -1405,7 +1246,6 @@ Simulate No APM Mode
 Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.
 Glitch density
 The greater the percentage, the more dense the glitch!
-The gangsta language contains strong language that may make you feel uncomfortable reading it. Are you sure that you want to set the language anyways?
 The English Dictionary
 Word information for
 API is licenced under
@@ -1417,8 +1257,6 @@ Example in Sentence:
 Sources used to define
 Synonyms:
 Antonyms:
-Thank you for reporting a bug to us! Please follow the instructions on the screen.
-Preview screensaver
 Tests your console for PowerLine support
 Be sure to use a console font supporting PowerLine glyphs, or the output may not render properly. We recommend
 Opens the shell preset library
@@ -1433,7 +1271,6 @@ Unit converter
 Available unit types and their units:
 Game over
 Unexpected error
-Commands highlighted in another colour are unified commands and are available in every shell.
 Checking for updates...
 Downloading version
 Installing version

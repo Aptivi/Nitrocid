@@ -1,16 +1,11 @@
 Modèle de couleur non valide {0}
 hwprobe: Votre matériel sera sondé. S'il vous plaît, attendez...
-CPU: Un ou plusieurs des cœurs de la CPU n'ont pas été sondés. Montrer des informations quand même ...
-RAM: une ou plusieurs des puces de RAM n'ont pas été sondées. Montrer des informations quand même ...
-HDD: Un ou plusieurs disques durs n'ont pas été sondés. Montrer des informations quand même ...
 Entrez le mot de passe administrateur pour la maintenance.
 Erreur du noyau lors du démarrage: {0}
 DOUBLE PANIQUE: le temps de redémarrage dépasse le temps de redémarrage maximal autorisé {0}. Vous avez trouvé un bogue dans le noyau.
 [{0}] panique: le redémarrage est activé car le niveau d'erreur est {0}.
 [{0}] panique: heure de redémarrage: {1} secondes, dépasse 1 heure. Il est réglé à 1 minute.
 DOUBLE PANIQUE: Type d'erreur {0} invalide.
-[{0}] panique: le redémarrage est désactivé car le niveau d'erreur est {0}.
-[{0}] panique: {1} - appuyez sur n'importe quelle touche pour continuer à utiliser le noyau.
 [{0}] panique: {1} - appuyez sur n’importe quelle touche pour l’arrêter.
 [{0}] panique: {1} - Redémarrage en {2} secondes ...
 DOUBLE PANIC: Bug du noyau: {0}
@@ -31,21 +26,14 @@ L'utilisateur {0} est déjà connecté. Déconnectez-vous et connectez-vous en t
 Utilisateur {0} supprimé.
 Erreur lors de la tentative de suppression du nom d'utilisateur.
 L'économiseur d'écran demandé {0} est introuvable.
-{0} a été initialisé correctement.
-L'économiseur d'écran {0} n'existe pas.
 {0} est défini sur l'écran de veille par défaut.
 Économiseur d'écran {0} introuvable dans la base de données. Vérifiez le nom et réessayez.
-L'économiseur d'écran ne peut pas être chargé à cause des problèmes suivants: 
 Il y a une grave erreur lors de l’impression de texte.
 Mod ne peut pas être chargé pour les raisons suivantes:
-mod: Chargement des mods ...
-mod: Arrêter les mods ...
 Mod {0} n'a pas le nom. Vérifiez le code source.
-Mod {0} n'a pas la version.
 {0} v {1} a commencé
 Aucune définition pour la commande {0}.
 Commande définie par 
-Vous devez vous déconnecter du serveur avant de vous connecter à un autre serveur.
 Nom d'utilisateur pour {0}: 
 Mot de passe pour {0}: 
 Connecté à {0}
@@ -54,18 +42,10 @@ Le répertoire local {0} n'existe pas.
 Entrez un répertoire local. ".." retourner.
 Répertoire {0} introuvable.
 Entrez un répertoire distant. ".." retourner
-Vous devez vous connecter à un serveur avant de changer de répertoire
 Répertoire local: {0}
 Répertoire distant: {0}
-Vous devez vous connecter au serveur avant d’obtenir le répertoire distant actuel.
-Vous devez vous connecter au serveur avec des privilèges d'administrateur avant de procéder à la suppression.
-Déconnecté de {0}
-Vous n'avez encore connecté à aucun serveur
 Téléchargement du fichier {0} ...
 Fichier téléchargé {0}.
-Vous devez vous connecter au serveur avant d'effectuer la transmission.
-{0} KB | Modifié dans: {1}
-Vous devez vous connecter au serveur avant de répertorier tous les fichiers distants.
 Téléchargement du fichier {0} ...
 Fichier téléchargé {0}
 Obtient le répertoire local actuel
@@ -73,7 +53,6 @@ Obtient le répertoire distant actuel
 Modifie le répertoire local à télécharger ou à télécharger
 Modifie le répertoire distant vers lequel télécharger ou télécharger
 Supprime le fichier distant du serveur
-Déconnecte du serveur
 Télécharge un fichier distant dans un répertoire local à l'aide de binaire ou de texte
 Répertorie le répertoire local
 Répertorie le répertoire distant
@@ -83,7 +62,6 @@ Commande introuvable pour un alias pour {0}.
 Vous pouvez maintenant exécuter "{0}" en tant que commande: "{1}".
 L'alias {0} ne semble pas avoir été supprimé.
 Mode non valide {0}.
-Il n'y avait pas assez d'arguments. Voir ci-dessous pour l'utilisation:
 Répertoire {0} introuvable
 Nom d'hôte vide.
 Passage de: {0} à {1} ...
@@ -128,25 +106,7 @@ Cette commande est obsolète et sera supprimée dans une prochaine version.
 Vous n'êtes pas autorisé à changer le mot de passe de {0} car la cible était un administrateur.
 Supprime tout dans le journal de débogage
 Langue invalide
------------------------------ Dommage panique du noyau ------------------------------
->> Information sur la panique <<
-> Description: {0}
-> Type d'erreur: {1}
-> Date et heure: {2}
->> Information sur les exceptions <<
-> Exception: {0}
-> Description: {1}
-> HRESULT: {2}
-> Source: {3}
-> Trace de pile <
->> Information sur l'exception interne {0} <<
->> L'exception {0} est la cause première <<
->> Pas d'exception; pourrait être une erreur du noyau. <<
->> Cadres, fichiers, lignes et colonnes <<
-> Cadre {0}: Fichier: {1} | Ligne: {2} | Colonne: {3}
-> Il y a une erreur en essayant d'obtenir des informations sur le cadre. {0}: {1}
 Bienvenue sur Kernel!
-Connecté avec succès en tant que <utilisateur>
 Le téléchargement est terminé.
 Le téléchargement a échoué lors de l'essai {0}: {1}
 Veuillez utiliser "ftp" si vous allez télécharger des fichiers depuis le serveur FTP.
@@ -164,13 +124,7 @@ Spécifiez l'adresse
 Le fuseau horaire est spécifié de manière incorrecte.
 Sélection de profil invalide.
 Vous essayez de vous connecter à {0} avec le profil {1} ...
-La langue que vous avez sélectionnée contient deux variantes. Sélectionnez-en un:
-Choix invalide. Réessayer.
-Vous n'êtes pas autorisé à définir le répertoire actuel sur {0}: {1}
-Le chemin que vous avez spécifié est trop long.
-Le regroupeur d'informations de vidage s'est arrêté lors de la tentative d'obtention d'informations sur {0}: {1}
 Erreur lors de la tentative de démarrage de l'économiseur d'écran, en raison d'une opération non valide.
-Le rechargement n'est pas autorisé en mode sans échec.
 L'analyse des mods n'est pas autorisée en mode sans échec.
 Le chemin n'est ni un fichier ni un répertoire.
 Crée une autre copie d'un fichier sous un répertoire ou un nom différent.
@@ -180,7 +134,6 @@ Correspondance {0}: {1}
 Temps passé: {0} millisecondes
 Nom: {0}
 Calcule les sommes des fichiers.
-Vous amène à notre GitHub Wiki.
 Algorithme de chiffrement non valide.
 Active ou désactive le débogage distant.
 Voyez si vous pouvez résoudre des équations mathématiques à temps
@@ -192,16 +145,11 @@ Démarrage de RPC ...
 Se connecte à un serveur SSH.
 Entrez le mot de passe pour {0}:
 SSH déconnecté.
-Impossible de définir la page de code. La langue peut ne pas s'afficher correctement.
 Le débogage n'est pas activé.
 Affiche toutes les notifications reçues
 Rejette une notification
 Notification rejetée avec succès.
 Exécute à distance une commande vers un PC distant
-- Étage 1: Initialisation du système
-- Étage 2: Détection matérielle
-- Étage 3: Détection de mods et d'économiseurs d'écran
-- Étage 4: Connectez-vous
 Type non valide {0}.
 Taille: {0}
 Le répertoire {0} existe déjà.
@@ -234,21 +182,15 @@ Préparation des profils ... Cela peut prendre plusieurs minutes ...
 Erreur lors de la tentative d'exécution du script: {0}
 Écrit du texte dans la console
 Fait des choix d'utilisateur
-où <$variable> est une variable qui sera utilisée pour stocker la réponse
 où <réponses> sont des réponses à une lettre de la question séparées par des barres obliques
 Erreur lors de la tentative de connexion au serveur SSH: {0}
 Permet à l'utilisateur d'entrer une entrée
 Modifie le répertoire de messagerie actuel
 Impossible d'ouvrir le dossier de messagerie {0}: {1}
 Répertorie les répertoires de votre adresse e-mail
-Utilise les informations de Speed ​​Dial pour se connecter rapidement à n'importe quel réseau
-Sélectionnez une adresse à laquelle vous connecter:
-La sélection est hors de portée. Sélectionnez entre 1 et {0}. Réessayer.
-La sélection n'est pas un nombre. Réessayer.
 Lors de la validation du certificat, il y a des erreurs de certificat. Cela peut être la première fois que vous vous connectez au serveur ou le certificat a peut-être expiré. Voici une erreur:
 Êtes-vous sûr de vouloir vous connecter?
 Réponse invalide. Veuillez réessayer.
-Le numéro abrégé est vide. Connectez-vous à un serveur pour y ajouter une adresse.
 Entrez l'adresse et le port du serveur IMAP (<adresse> ou <adresse>: [port]):
 Entrez l'adresse et le port du serveur SMTP (<adresse> ou <adresse>: [port]):
 Envoie un message à une adresse
@@ -309,13 +251,11 @@ Mode d'analyse de taille
 Marquee au démarrage
 Heure et date longues
 Montrer les fichiers cachés
-Section non valide saisie. Veuillez revenir en arrière.
 Retourner...
 Ecrivez un port de débogage distant. Il doit être numérique et ne doit pas être déjà utilisé. Sinon, le débogueur distant ne parviendra pas à ouvrir le port.
 Indiquez combien de fois la commande "" get "" doit réessayer les téléchargements ayant échoué. Il doit être numérique.
 Écrivez quand lancer l'économiseur d'écran après des millisecondes spécifiées. Il doit être numérique.
 La réponse n'est peut-être pas négative.
-La réponse est invalide. Assurez-vous que la réponse est numérique pour les entrées de configuration qui nécessitent des nombres comme réponses.
 La variable {0} n'est trouvée sur aucun des modules.
 Modifie la configuration du noyau
 Changer de culture lors du changement de langue
@@ -329,12 +269,10 @@ Modifie MAL, le MOTD après la connexion
 Change MOTD, le message du jour
 Modifie le nom d'utilisateur
 Gérer les autorisations des utilisateurs
-Recharge le fichier d'économiseur d'écran dans KSMods
 Supprime un utilisateur de la liste
 L'alias {0} a bien été supprimé.
 Échec de la vérification des mises à jour.
 Il ne reste plus d'utilisateurs dans la liste.
-Échec de la définition de la langue.
 Erreur lors de la tentative de rejet de la notification.
 usrmgr: échec de la création du nom d'utilisateur {0}: {1}
 Échec du changement de nom de l'utilisateur. {0}
@@ -367,9 +305,7 @@ Météo: {0}
 Pression: {0}
 Humidité: {0}
 Vous pouvez obtenir votre propre clé API sur https://home.openweathermap.org/api_keys.
-Vous pouvez toujours consulter http://bulk.openweathermap.org/sample/city.list.json.gz pour la liste des villes avec leurs identifiants.
 Unité préférée pour la température
-Déclenche le mode maintenance. Cela désactive plusieurs comptes.
 À chaque démarrage, il vérifiera les mises à jour.
 Lorsque vous changez de langue, changez les noms de mois, le calendrier, etc.
 Gardez les messages de détection du matériel silencieux.
@@ -385,7 +321,6 @@ Si activé, le noyau analysera le dossier entier pour sa taille totale. Sinon, a
 Active eyecandy au démarrage
 L'heure et la date seront plus longues, affichant les noms complets des mois, etc.
 Affiche les fichiers cachés.
-Sélectionnez votre unité préférée pour la température (cela s'applique uniquement à la commande "météo")
 Mod {0} arrêté
 {0} v {1} arrêté
 Le mod {0} n'a pas le nom de la pièce. L'analyse du mod a échoué. Vérifiez le code source.
@@ -461,12 +396,10 @@ Les hachages ne correspondent pas.
 Les hachages correspondent.
 Renomme un dossier
 Ouvre un shell de test
-* Appuyez sur n'importe quelle touche pour démarrer le noyau ou sur ESC pour quitter.
 Échec du démarrage de «{0}»: {1}
 Afficher l'aperçu du message électronique
 Lors de la liste des messages électroniques, affichez l'aperçu du corps.
 Couleur de l'arrière plan
-Tentative d'accès à un chemin non valide.
 Efface le fichier texte
 Quitte l'éditeur de texte
 Interroge un caractère dans une ligne spécifiée ou sur toutes les lignes
@@ -493,20 +426,15 @@ Crée un nouveau thème
 Créer un nouveau thème "{0}".
 Enregistrer le thème dans le répertoire actuel
 Enregistrer le thème dans un autre répertoire...
-Sélectionnez la couleur à l'aide des touches "<-" et "->". Appuyez sur ENTER pour quitter. Appuyez sur "i" pour insérer le numéro de couleur manuellement.
-Sélectionnez la couleur à l'aide des touches "<-" et "->". Utilisez les touches fléchées vers le haut et vers le bas pour sélectionner entre les gammes de couleurs. Appuyez sur ENTER pour quitter. Appuyez sur "i" pour insérer le numéro de couleur manuellement.
-Entrez le numéro de couleur de 0 à 255 :
 Imprime les informations sur le matériel
 Nom du processeur :
 Bits du processeur :
 Partitionner le système de fichiers :
 Taille de la partition:
-GPU : une ou plusieurs des cartes graphiques n'ont pas pu être testées. Affichage des informations quand même...
 >> Bienvenue ! C'est la première fois que vous entrez dans le débogage et le chat à distance. Utilisez "/register <nom>" pour vous inscrire.
 L'appareil existe déjà.
 Pas de tel appareil.
 Imprime le contenu du fichier sur la console
-Ou passez "listcities" à cette commande.
 L'entrée existe déjà.
 Enveloppe la sortie de la console
 La commande n'est pas enveloppable. Ces commandes sont enveloppables :
@@ -536,11 +464,8 @@ Nombre maximal de positions
 Combien de positions sont allumées avant la gradation ?
 Se connecte à un serveur SSH pour exécuter une commande.
 Définit une variable à une valeur dans un script
-Une invite de rapport de bogue.
 Une erreur s'est produite dans le shell FTP :
-Erreur de shell FTP inconnue :
 Une erreur s'est produite dans le shell SFTP :
-Erreur de shell SFTP inconnue :
 Afficher la bannière SSH
 Affiche la bannière du serveur SSH lors de la connexion.
 Comment voulez-vous vous authentifier ?
@@ -550,9 +475,6 @@ Saisissez la phrase secrète pour la clé {0} :
 Neutralisé un chemin inexistant.
 Le fichier de clé {0} n'existe pas.
 Erreur lors de la tentative d'ajout de clé privée :
-Appuyez sur "t" pour passer en mode 255 couleurs.
-Appuyez sur "t" pour passer en mode couleurs vraies.
-mod : aucun mod détecté.
 Commandes générales :
 Commandes de modules :
 Commandes d'alias :
@@ -573,10 +495,8 @@ Démarre tous les mods
 Teste la séquence VT pour 255 couleurs
 Teste la séquence VT pour la vraie couleur
 Envoie une notification pour tester le récepteur
-Teste la date d'impression à l'aide de différents calendriers
 Répertorie toutes les pages de codes prises en charge
 Tests sondant le matériel
-Enregistre le répertoire actuel dans le fichier de configuration du noyau
 Teste le rédacteur de liste avec la chaîne et le tableau de chaînes
 Teste le rédacteur de liste avec l'entier et le tableau d'entiers
 Teste le rédacteur de liste avec le tableau char et char
@@ -619,7 +539,6 @@ Date:
 Temps:
 Définit les autorisations de fichier. Ceci est pris en charge uniquement sur les serveurs FTP qui exécutent Unix.
 Définit le type de cette session
-Vous devez vous connecter au serveur avant d'effectuer des opérations sur le système de fichiers.
 Échec de la définition des autorisations de {0} sur {1}.
 Autorisations définies avec succès pour le fichier
 Type de données défini sur ASCII !
@@ -631,21 +550,9 @@ Délai de fondu en millisecondes
 Étapes de fondu max.
 Combien de millisecondes attendre avant de faire disparaître le texte ?
 Combien d'étapes de fondu faire ?
-Sonde complète
-Si vrai, sonde tout le matériel ; sinon, ne sondera que le matériel nécessaire.
-Échec de la suppression de l'économiseur d'écran {0} de la configuration.
-Obtient des paramètres d'économiseur personnalisés
-Définit les paramètres d'économiseur personnalisés
-Paramètres définis avec succès pour l'économiseur d'écran
-Échec de la définition d'un paramètre pour l'économiseur d'écran
 Ouvre un shell RSS pour lire les flux
-Modifie le lien de flux
 Répertorie tous les flux
 Lit un flux dans un navigateur Web
-Flux RSS2 non valide.
-Flux RSS1 non valide.
-Flux Atom non valide.
-Saisissez une URL de flux RSS :
 Type de flux RSS non valide.
 Obtient les informations sur l'article
 Le numéro d'article ne peut pas être plus grand que les articles disponibles.
@@ -667,16 +574,11 @@ Combien de millisecondes attendre avant de réécrire du texte ?
 Vitesse d'écriture minimale en WPM
 Vitesse d'écriture maximale en WPM
 Probabilité de faute de frappe en pourcentage
-Échec de l'enregistrement du répertoire actuel : {0}
 Lingettes pour changer de direction
 Combien de balayages faire avant de changer de direction au hasard ?
 Étape terminée en
 Initialisation interne terminée en
 Mode de démarrage
-Nom de la commande :
-Définition de la commande :
-Type de commande :
-Commande stricte ?
 Version du module :
 Mod {0} introuvable.
 L'éditeur de texte n'a pas encore ouvert de flux de fichiers.
@@ -698,7 +600,6 @@ Dictionnaire de caractères normaux :
 Dictionnaire de caractères de tableau :
 Afficher la progression des opérations du système de fichiers
 Affiche quel fichier est en cours de traitement pendant les opérations du système de fichiers
-où HardwareType sera
 Soit le type de matériel {0} n'est pas testé, soit il n'est pas valide.
 Le type de matériel {0} n'est pas encore sondé. Si vous êtes sûr qu'il est testé, redémarrez le noyau avec le débogage activé.
 Partitions non analysées pour la liste.
@@ -709,7 +610,6 @@ L'économiseur d'écran a rencontré une erreur lors de l'affichage : {0}. Appuy
 Aperçu...
 Voici à quoi ressemblera votre thème :
 Commandes enveloppables :
-Mod {0} a une commande invalide. Échec de l'analyse du module. Passez en revue le code source.
 Pièces de modules :
 Utiliser l'API de la console
 Que ce soit pour utiliser l'API de la console pour effacer le texte ou pour utiliser la séquence VT d'effacement de ligne plus rapide. Si False, Marquee utilisera la séquence VT appropriée. Sinon, il utilisera l'API de la console probablement plus lente.
@@ -719,19 +619,11 @@ Nom du module :
 Nom du fichier mod :
 Chemin du fichier de modification :
 Version de la pièce :
-Nombre minimum d'arguments requis :
-Arguments requis ?
-Paramétrer la variable shell ?
-Impossible de fonctionner en mode maintenance ?
-Obsolète?
 Le dossier est vide.
 {0} erfolgreich getestet.
 Ausführliche Sonde
 Machen Sie Hardware-Probing-Meldungen etwas gesprächig.
-> Es liegen keine Informationen zu Frames vor.
 Verschönert die JSON-Datei
-Konfigurationskategorie {0} nicht gefunden.
-Konfigurationseintrag {0} nicht gefunden.
 Beats pro Minute verwenden
 Ob die Einheit Beats Per Minute verwendet werden soll, um die nächste Farbe zu schreiben.
 Verzögerung in Schlägen pro Minute
@@ -745,8 +637,6 @@ Dossier téléchargé {0}.
 Échec du téléchargement pour le dossier {0}.
 Téléchargement du dossier {0}...
 Dossier téléchargé {0}
-Appuyez sur "c" pour écrire le code couleur complet.
-Saisissez le code couleur correspondant à ces formats :
 Minimise le fichier JSON
 Nouveau délai d'écran en millisecondes
 Nombre de colonnes
@@ -757,7 +647,6 @@ Combien de millisecondes attendre avant de réécrire le texte dans le nouvel é
 Les colonnes de texte à imprimer.
 Combien de caractères écrire avant de déclencher le "remplissage de ligne" ?
 Possibilité que le motif de remplissage de ligne soit imprimé en majuscules en pourcentage
-Type de motif de remplissage de ligne
 La réponse peut ne pas être zéro.
 La réponse ne doit pas dépasser les entrées affichées.
 Sauvegarder les modifications...
@@ -772,9 +661,6 @@ Pas de réseau lors du téléchargement des données de débogage
 Vérifiez votre connexion Internet et réessayez.
 La page de manuel {0} n'est pas valide.
 Pensez à remplir cette page de manuel.
-Appuyez sur n'importe quelle touche pour lire la page de manuel...
-Cette page de manuel a besoin de travail pour :
-Page de manuel {0} introuvable.
 Mode d'emploi
 Arguments de noyau disponibles :
 Erreur irrécupérable dans l'argument :
@@ -788,7 +674,6 @@ La partie mod n'est rien.
 L'arrêt des mods n'est pas autorisé en mode sans échec.
 Le mod a déjà été lancé !
 Le mod n'a pas encore commencé !
-Utilisation de la commande :
 Nom du fichier pièce :
 Chemin d'accès au fichier partiel :
 Erreur lors de la tentative de démarrage de l'économiseur d'écran :
@@ -808,7 +693,6 @@ Dessiner la bordure de notification
 Couvre la notification avec la bordure.
 Contactez le vendeur du mod pour mettre à niveau le mod vers la version compatible.
 Envoie une notification de progression pour tester le récepteur
-Teste la roue des couleurs
 Affiche l'heure du noyau local
 Affiche la date du noyau local
 Affiche la date et l'heure du noyau local
@@ -1015,7 +899,6 @@ Caractère de cadre droit pour la bordure de notification
 Indique s'il faut afficher ce qui est écrit dans l'invite de saisie.
 Quel est le nombre minimum à choisir ?
 Quel est le nombre maximum à choisir ?
-Démarrer la roue chromatique en mode couleurs vraies
 Si spécifié, il affichera une bannière de démarrage personnalisée avec prise en charge des espaces réservés. Vous pouvez utiliser {0} pour la version du noyau.
 Quelle variante de la langue actuelle est utilisée pour modifier les noms de mois, le calendrier, etc. ?
 Active la prise en charge des couleurs vraies.
@@ -1034,13 +917,11 @@ Type de connexion de données serveur :
 Système serveur :
 Type de données de téléchargement du serveur :
 Type de données de téléchargement du serveur :
-Vous devez vous connecter à un serveur avant d'effectuer cette opération.
 Entrez un fichier distant à hacher.
 Entrez un répertoire distant.
 Hachage récursif pour FTP
 Indique s'il faut hacher récursivement un répertoire. Veuillez noter que tous les serveurs FTP ne le prennent pas en charge.
 Fréquence d'horloge du processeur :
-Prise en charge du processeur SSE2 :
 Nombre total de processeurs :
 Taille du disque :
 Mémoire totale:
@@ -1076,10 +957,7 @@ Essayer d'installer un mod déjà installé. Mise à jour du module...
 Échec de l'installation pour
 Le fichier mod fourni est incompatible.
 La désinstallation a échoué pour
-Ouvre une URL
 Imprimer les numéros de ligne lors de l'impression du contenu du fichier
-Version translittérée
-Version traduite
 Ignore toutes les notifications
 Téléchargement...
 Téléchargement...
@@ -1105,19 +983,15 @@ Couleur du cadre droit pour la barre de rampe
 Utiliser les couleurs de bordure pour la barre de rampe
 Utilisez les couleurs de bordure pour la barre de rampe. Si désactivé, générera une barre grise.
 Démarre le shell HTTP
-Définit le site HTTP. Doit être un URI valide.
 Obtient la réponse du serveur HTTP à l'aide de la requête spécifiée
 Supprime le contenu du serveur HTTP
 Une erreur s'est produite dans le shell HTTP :
 Obtient la chaîne du serveur HTTP à l'aide de la requête spécifiée
 Obtenir {0}...
-Le format URI du site n'est pas valide.
-Paramétrer le site sur
 Les couleurs ne nécessitent pas de redémarrage, mais la plupart des paramètres nécessitent un redémarrage.
 Aucune aide pour l'argument "{0}".
 Difficulté par défaut pour SpeedPress
 Délai d'expiration de la touche pour SpeedPress
-Sélectionnez votre difficulté préférée.
 Combien de millisecondes attendre l'appui sur la touche avant l'expiration du délai ? (En difficulté personnalisée)
 Remplace un mot ou une phrase par un autre en utilisant des expressions régulières
 Remplace un mot ou une phrase par un autre dans une ligne à l'aide d'expressions régulières
@@ -1128,7 +1002,6 @@ Rien n'est trouvé. Assurez-vous que vous avez correctement écrit le paramètre
 Emballe un fichier local dans l'archive
 Je ne peux rien emballer.
 Description de la réponse
-Port hôte
 Pour plus d'informations sur les termes et conditions d'utilisation de ce logiciel, visitez
 Type de sortie de choix par défaut
 Vérifie tous les paramètres KS pour voir si les variables sont écrites correctement
@@ -1184,7 +1057,6 @@ Démarrer ou arrêter
 Genoux
 Réinitialiser
 Une simple minuterie
-Commencer à (re)compter à rebours
 Définir l'intervalle
 Le délai d'attente indiqué n'est pas numérique.
 Spécifiez le délai d'attente en millisecondes
@@ -1199,14 +1071,6 @@ Combien de millisecondes attendre avant l'expiration de la connexion FTP ?
 Combien de millisecondes attendre avant l'expiration de la connexion de données FTP ?
 Choisissez la version du protocole Internet prise en charge par le serveur FTP et utilisée par le client FTP.
 Tentative de démarrage de RPC alors qu'il est déjà lancé.
-Caractère du coin supérieur gauche pour la roue chromatique RVB
-Caractère du coin supérieur droit pour la roue chromatique RVB
-Caractère du coin inférieur gauche pour la roue chromatique RVB
-Caractère du coin inférieur droit pour la roue chromatique RVB
-Caractère du cadre supérieur pour la roue chromatique RVB
-Caractère du cadre inférieur pour la roue chromatique RVB
-Caractère de cadre gauche pour la roue chromatique RVB
-Caractère de cadre droit pour la roue chromatique RVB
 Recherche un fichier dans le répertoire spécifié ou dans le répertoire courant
 Convertit les fins de ligne au format de la plate-forme actuelle ou au format personnalisé spécifié
 Taille totale dans le dossier :
@@ -1221,14 +1085,6 @@ S'il y a une mise à jour, le noyau la téléchargera automatiquement.
 Rayon d'explosion du feu d'artifice
 Combien de blocs (jusqu'à 10) est le rayon d'explosion du feu d'artifice lorsqu'il est allumé ?
 Cette commande a les commutateurs ci-dessous qui changent son fonctionnement :
-Imprime les numéros de ligne qui suivent la ligne en cours d'impression
-Empêche l'impression des numéros de ligne
-Indiquez que la réponse peut prendre plus d'un caractère
-Indiquez que la réponse ne peut prendre qu'un seul caractère
-Imprimer la question et les réponses sur une seule ligne
-Imprimez la question et les réponses sur deux lignes
-Imprimez la question et les réponses de manière moderne
-Imprimer la question et les réponses dans un tableau
 Affiche les détails du fichier dans la liste
 Supprime les messages ennuyeux "autorisation refusée"
 Affiche tous les fuseaux horaires
@@ -1242,10 +1098,7 @@ Affiche toutes les villes disponibles
 Compression rapide
 Pas de compression
 Ne pas créer de répertoire de base dans l'archive
-Se déconnecte honteusement du serveur
 Indique que le chemin cible est absolu
-Enregistre le fichier JSON, l'embellissant dans le processus
-Enregistre le fichier JSON, en le minimisant dans le processus
 Efface tous les événements déclenchés
 Activer le débogage des événements
 Active le débogage pour le système d'événements du noyau
@@ -1273,9 +1126,6 @@ Langue personnalisée :
 Active l'écran de démarrage élégant au démarrage. Veuillez noter que cela désactivera l'invite d'arguments et testera le pré-démarrage du shell.
 Nom de l'éclaboussure
 Nom du splash parmi les splash disponibles implémentés dans le noyau.
-MOTD par défaut généré.
-MAL par défaut généré.
-Compte système initialisé
 Utilisateurs initialisés
 Bienvenue!
 Démarrage du débogueur distant...
@@ -1295,7 +1145,6 @@ Afficher le nombre de commandes dans l'aide
 Afficher le nombre de commandes shell dans l'aide
 Afficher les commandes de mod comptent sur l'aide
 Afficher le nombre d'alias dans l'aide
-Affiche le nombre de commandes dans la liste de commandes, contrôlé par les trois commutateurs d'affichage de nombre pour différents types de commandes.
 Exécute les commandes une fois que les expressions UESH sont satisfaites
 La condition n'a pas été trouvée dans l'expression.
 La condition {0} nécessite {1} arguments. J'ai {2}.
@@ -1319,7 +1168,6 @@ Active le mode débogage
 Activer le mode noir et blanc
 Rend la discothèque en noir et blanc. Cela vous fera vraiment mal aux yeux si c'était trop rapide, donc déconseillé si vous rencontrez une crise d'images rapides.
 Charger les couleurs actuelles
-Ouvre la documentation de l'API mod pour la structure du code source dans sa forme la plus actuelle
 Valeur actuelle:
 Spécificateur de couleur hexadécimal non valide.
 Spécificateur de couleur RVB non valide.
@@ -1345,13 +1193,6 @@ Le numéro d'octet n'est pas numérique.
 Le nombre d'octets de début spécifié ne doit pas être supérieur à la taille du fichier.
 Le nombre d'octets de fin spécifié ne doit pas être supérieur à la taille du fichier.
 Octets supprimés.
-Sélectionne le flux dans la liste de flux existante à partir de sources en ligne
-Téléchargement de la liste des flux...
-Échec du téléchargement de la liste de flux.
-Sélectionnez votre pays en appuyant sur les touches fléchées vers la gauche ou vers la droite. Appuyez sur ENTER pour confirmer votre sélection.
-Ce pays compte {0} sources d'informations.
-Sélectionnez votre source d'information préférée en écrivant le numéro. Appuyez sur ENTER pour confirmer votre sélection.
-Sélectionnez un flux pour votre source d'actualités préférée. Appuyez sur ENTER pour confirmer votre sélection.
 Veuillez noter que l'édition de fichiers binaires à l'aide de ce shell est expérimentale et peut entraîner une corruption ou une perte de données s'il n'est pas utilisé correctement.
 NE LANCEZ PAS LE SHELL SI VOUS NE SAVEZ PAS CE QUE VOUS FAITES !
 Obtient des informations clés pour une touche enfoncée. Utile pour le débogage
@@ -1405,7 +1246,6 @@ Simuler aucun mode APM
 S'il faut simuler une situation où il n'y a pas d'APM disponible. S'il est activé, il informe l'utilisateur qu'il est maintenant sûr d'éteindre l'ordinateur lors de l'arrêt.
 Densité de glitch
 Plus le pourcentage est élevé, plus le glitch est dense !
-Le langage gangsta contient un langage fort qui peut vous mettre mal à l'aise de le lire. Êtes-vous sûr de vouloir quand même définir la langue ?
 Le dictionnaire anglais
 Informations sur les mots pour
 L'API est sous licence
@@ -1417,8 +1257,6 @@ Exemple dans la phrase :
 Sources utilisées pour définir
 Synonymes :
 Antonymes :
-Merci de nous avoir signalé un bug ! Veuillez suivre les instructions à l'écran.
-Aperçu de l'économiseur d'écran
 Teste votre console pour le support PowerLine
 Assurez-vous d'utiliser une police de console prenant en charge les glyphes PowerLine, sinon la sortie risque de ne pas s'afficher correctement. Nous recommandons
 Ouvre la bibliothèque de préréglages du shell
@@ -1433,7 +1271,6 @@ Convertisseur d'unité
 Types d'unités disponibles et leurs unités :
 Jeu terminé
 Erreur inattendue
-Les commandes surlignées dans une autre couleur sont des commandes unifiées et sont disponibles dans chaque shell.
 Vérification des mises à jour...
 Version de téléchargement
 Version d'installation

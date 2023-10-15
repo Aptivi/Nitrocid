@@ -1,16 +1,11 @@
 Mẫu màu không hợp lệ {0}
 hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...
-CPU: Một hoặc nhiều lõi CPU không được phát hiện. Dù sao cũng hiển thị thông tin ...
-RAM: Một hoặc nhiều chip RAM không được phát hiện. Dù sao cũng hiển thị thông tin ...
-Ổ cứng: Một hoặc nhiều ổ đĩa cứng không bị phát hiện. Dù sao cũng hiển thị thông tin ...
 Nhập mật khẩu quản trị để bảo trì.
 Lỗi hạt nhân khi khởi động: {0}
 NHÂN ĐÔI: Thời gian khởi động lại vượt quá thời gian khởi động lại lỗi tối đa cho phép {0}. Bạn đã tìm thấy một lỗi kernel.
 [{0}] hoảng loạn: Đã bật lại do mức lỗi là {0}.
 [{0}] hoảng loạn: Thời gian để khởi động lại: {1} giây, vượt quá 1 giờ. Nó được đặt thành 1 phút.
 NHÂN ĐÔI: Loại lỗi {0} không hợp lệ.
-[{0}] hoảng loạn: Khởi động lại bị vô hiệu hóa do mức lỗi là {0}.
-[{0}] hoảng loạn: {1} - Nhấn phím bất kỳ để tiếp tục sử dụng kernel.
 [{0}] hoảng loạn: {1} - Nhấn phím bất kỳ để tắt máy.
 [{0}] hoảng loạn: {1} - Khởi động lại sau {2} giây ...
 NHÂN ĐÔI: Lỗi hạt nhân: {0}
@@ -31,21 +26,14 @@ Người dùng {0} đã đăng nhập. Đăng xuất và đăng nhập với tư
 Đã xóa người dùng {0}.
 Lỗi khi cố gắng xóa tên người dùng.
 Không tìm thấy trình bảo vệ màn hình được yêu cầu {0}.
-{0} đã được khởi tạo đúng cách.
-Trình bảo vệ màn hình {0} không tồn tại.
 {0} được đặt thành trình bảo vệ màn hình mặc định.
 Trình bảo vệ màn hình {0} không tìm thấy trong cơ sở dữ liệu. Kiểm tra tên và thử lại.
-Trình bảo vệ màn hình không thể được tải vì những điều sau đây:
 Có một lỗi nghiêm trọng khi in văn bản.
 Mod không thể được tải vì những điều sau đây:
-mod: Đang tải mod ...
-mod: Dừng mod ...
 Mod {0} không có tên. Xem lại mã nguồn.
-Mod {0} không có phiên bản.
 {0} v {1} đã bắt đầu
 Không có định nghĩa cho lệnh {0}.
 Lệnh được xác định bởi
-Bạn nên ngắt kết nối với máy chủ trước khi kết nối với máy chủ khác
 Tên người dùng cho {0}:
 Mật khẩu cho {0}:
 Đã kết nối với {0}
@@ -54,18 +42,10 @@ Thư mục cục bộ {0} không tồn tại.
 Nhập một thư mục địa phương. ".." quay trở lại.
 Không tìm thấy thư mục {0}.
 Nhập một thư mục từ xa. ".." quay trở lại
-Bạn phải kết nối với máy chủ trước khi thay đổi thư mục
 Thư mục địa phương: {0}
 Thư mục từ xa: {0}
-Bạn phải kết nối với máy chủ trước khi nhận được thư mục từ xa hiện tại.
-Bạn phải kết nối với máy chủ với các đặc quyền quản trị trước khi thực hiện xóa.
-Đã ngắt kết nối từ {0}
-Bạn chưa kết nối với bất kỳ máy chủ nào
 Đang tải xuống tệp {0} ...
 Đã tải xuống tệp {0}.
-Bạn phải kết nối với máy chủ trước khi thực hiện truyền.
-{0} KB | Được sửa đổi trong: {1}
-Bạn nên kết nối với máy chủ trước khi liệt kê tất cả các tệp từ xa.
 Đang tải lên tệp {0} ...
 Tệp đã tải lên {0}
 Nhận thư mục địa phương hiện tại
@@ -73,7 +53,6 @@ Nhận thư mục từ xa hiện tại
 Thay đổi thư mục cục bộ để tải xuống hoặc tải lên từ
 Thay đổi thư mục từ xa để tải xuống từ hoặc tải lên
 Xóa tập tin từ xa khỏi máy chủ
-Ngắt kết nối với máy chủ
 Tải tập tin từ xa vào thư mục cục bộ bằng cách sử dụng nhị phân hoặc văn bản
 Liệt kê thư mục địa phương
 Liệt kê thư mục từ xa
@@ -83,7 +62,6 @@ Lệnh không tìm thấy bí danh cho {0}.
 Bây giờ bạn có thể chạy "{0}" dưới dạng lệnh: "{1}".
 Bí danh {0} không được tìm thấy để xóa.
 Chế độ không hợp lệ {0}.
-Không có đủ lý lẽ. Xem bên dưới để sử dụng:
 Không tìm thấy thư mục {0}
 Tên máy chủ trống.
 Thay đổi từ: {0} thành {1} ...
@@ -128,25 +106,7 @@ Lệnh này đã lỗi thời và sẽ bị xóa trong phiên bản tương lai.
 Bạn không được phép thay đổi mật khẩu của {0} vì mục tiêu là quản trị viên.
 Xóa mọi thứ trong nhật ký gỡ lỗi
 Ngôn ngữ không hợp lệ
------------------------------ Hạt nhân hoảng loạn ------------------ -----------
->> Thông tin hoảng loạn <<
-> Mô tả: {0}
-> Loại lỗi: {1}
-> Ngày và giờ: {2}
->> Thông tin ngoại lệ <<
-> Ngoại lệ: {0}
-> Mô tả: {1}
-> HRESULT: {2}
-> Nguồn: {3}
-> Dấu vết ngăn xếp <
->> Thông tin ngoại lệ {0} bên trong <<
->> Ngoại lệ {0} là nguyên nhân gốc <<
->> Không có ngoại lệ; có thể là một lỗi kernel. <<
->> Khung, tệp, dòng và cột <<
-> Khung {0}: Tệp: {1} | Dòng: {2} | Cột: {3}
-> Có lỗi khi cố lấy thông tin khung. {0}: {1}
 Chào mừng bạn đến với hạt nhân!
-Đăng nhập thành công với tư cách là <user>
 Tải về đã hoàn thành.
 Tải xuống thất bại trong thử {0}: {1}
 Vui lòng sử dụng "ftp" nếu bạn định tải xuống các tệp từ máy chủ FTP.
@@ -164,13 +124,7 @@ Chỉ định địa chỉ
 Múi giờ được chỉ định không chính xác.
 Lựa chọn hồ sơ không hợp lệ.
 Đang cố gắng kết nối với {0} với hồ sơ {1} ...
-Ngôn ngữ bạn đã chọn chứa hai biến thể. Chọn một:
-Lựa chọn không hợp lệ. Thử lại.
-Bạn không được phép đặt thư mục hiện tại thành {0}: {1}
-Đường dẫn bạn đã chỉ định quá dài.
-Trình thu thập thông tin kết xuất bị hỏng khi cố gắng lấy thông tin về {0}: {1}
 Lỗi khi cố gắng khởi động trình bảo vệ màn hình, do hoạt động không hợp lệ.
-Tải lại không được phép trong chế độ an toàn.
 Phân tích cú pháp mod không được phép trên chế độ an toàn.
 Đường dẫn không phải là một tập tin hay một thư mục.
 Tạo một bản sao khác của một tập tin dưới thư mục hoặc tên khác nhau.
@@ -180,7 +134,6 @@ Khớp {0}: {1}
 Thời gian sử dụng: {0} mili giây
 Tên: {0}
 Tính toán tổng số tập tin.
-Đưa bạn đến Wiki GitHub của chúng tôi.
 Thuật toán mã hóa không hợp lệ.
 Cho phép hoặc vô hiệu hóa gỡ lỗi từ xa.
 Xem nếu bạn có thể giải phương trình toán học đúng thời gian
@@ -192,16 +145,11 @@ Bắt đầu RPC ...
 Kết nối với máy chủ SSH.
 Nhập mật khẩu cho {0}:
 SSH bị ngắt kết nối.
-Không thể đặt codepage. Ngôn ngữ có thể không hiển thị đúng.
 Gỡ lỗi không được kích hoạt.
 Hiển thị tất cả các thông báo nhận được
 Bỏ thông báo
 Thông báo bác bỏ thành công.
 Điều khiển từ xa một lệnh đến PC từ xa
-- Giai đoạn 1: Khởi tạo hệ thống
-- Giai đoạn 2: Phát hiện phần cứng
-- Giai đoạn 3: Phát hiện mod và trình bảo vệ màn hình
-- Giai đoạn 4: Đăng nhập
 Loại không hợp lệ {0}.
 Kích thước: {0}
 Thư mục {0} đã tồn tại.
@@ -234,21 +182,15 @@ Chuẩn bị hồ sơ ... Có thể mất vài phút ...
 Lỗi khi cố thực thi tập lệnh: {0}
 Viết văn bản vào bảng điều khiển
 Làm cho người dùng lựa chọn
-trong đó <$biến> là bất kỳ biến nào sẽ được sử dụng để lưu trữ phản hồi
 trong đó <answer> là các câu trả lời một chữ cái của câu hỏi được phân tách bằng dấu gạch chéo
 Lỗi khi cố gắng kết nối với máy chủ SSH: {0}
 Cho phép người dùng nhập dữ liệu đầu vào
 Thay đổi thư mục thư hiện tại
 Không thể mở thư mục thư {0}: {1}
 Liệt kê các thư mục trong địa chỉ mail của bạn
-Sử dụng thông tin từ Quay số nhanh để kết nối với bất kỳ mạng nào một cách nhanh chóng
-Chọn một địa chỉ để kết nối với:
-Lựa chọn nằm ngoài phạm vi. Chọn giữa 1- {0}. Thử lại.
-Lựa chọn không phải là một con số. Thử lại.
 Trong quá trình xác nhận chứng chỉ, có lỗi chứng chỉ. Đây có thể là lần đầu tiên bạn kết nối với máy chủ hoặc chứng chỉ có thể đã hết hạn. Đây là một lỗi:
 Bạn có chắc chắn rằng bạn muốn kết nối?
 Câu trả lời không hợp lệ. Vui lòng thử lại.
-Quay số nhanh là trống rỗng. Kết nối với một máy chủ để thêm một địa chỉ cho nó.
 Nhập địa chỉ máy chủ IMAP và cổng (<địa chỉ> hoặc <địa chỉ>: [cổng]):
 Nhập địa chỉ và cổng máy chủ SMTP (<địa chỉ> hoặc <địa chỉ>: [cổng]):
 Gửi tin nhắn đến một địa chỉ
@@ -309,13 +251,11 @@ Chế độ phân tích kích thước
 Marquee khi khởi động
 Thời gian và Ngày dài
 Hiển thị cac file bị ẩn
-Đã nhập phần không hợp lệ. Hãy quay lại.
 Quay lại...
 Viết một cổng gỡ lỗi từ xa. Nó phải là số và không được sử dụng. Nếu không, trình gỡ lỗi từ xa sẽ không mở được cổng.
 Viết số lần lệnh "" get "" sẽ thử lại các lần tải xuống không thành công. Nó phải là số.
 Viết thời điểm khởi chạy trình bảo vệ màn hình sau phần nghìn giây được chỉ định. Nó phải là số.
 Câu trả lời có thể không phủ định.
-Câu trả lời là không hợp lệ. Kiểm tra để đảm bảo rằng câu trả lời là số cho các mục nhập cấu hình cần số làm câu trả lời.
 Biến {0} không được tìm thấy trên bất kỳ mô-đun nào.
 Thay đổi cấu hình hạt nhân
 Thay đổi văn hóa khi chuyển đổi ngôn ngữ
@@ -329,12 +269,10 @@ Thay đổi MAL, MOTD sau khi đăng nhập
 Thay đổi MOTD, Thông điệp trong ngày
 Thay đổi tên người dùng
 Quản lý quyền cho người dùng
-Tải lại tệp bảo vệ màn hình trong KSMods
 Xóa người dùng khỏi danh sách
 Đã xóa bí danh {0} thành công.
 Không thể kiểm tra các bản cập nhật.
 Không có người dùng nào còn lại trong danh sách.
-Không đặt được ngôn ngữ.
 Lỗi khi cố gắng loại bỏ thông báo.
 usrmgr: Không tạo được tên người dùng {0}: {1}
 Không thể đổi tên người dùng. {0}
@@ -367,9 +305,7 @@ Thời tiết: {0}
 Áp lực: {0}
 Độ ẩm: {0}
 Bạn có thể lấy khóa API của riêng mình tại https://home.openweathermap.org/api_keys.
-Bạn luôn có thể tham khảo http://bulk.openweathermap.org/sample/city.list.json.gz để biết danh sách các thành phố có ID của họ.
 Đơn vị ưu tiên cho nhiệt độ
-Kích hoạt chế độ bảo trì. Điều này vô hiệu hóa nhiều tài khoản.
 Mỗi lần khởi động, nó sẽ kiểm tra các bản cập nhật.
 Khi chuyển đổi ngôn ngữ, hãy thay đổi tên tháng, lịch, v.v.
 Giữ im lặng các thông báo thăm dò phần cứng.
@@ -385,7 +321,6 @@ Nếu được bật, hạt nhân sẽ phân tích cú pháp toàn bộ thư m�
 Bật chế độ mỏi mắt khi khởi động
 Ngày và giờ sẽ dài hơn, hiển thị tên tháng đầy đủ, v.v.
 Hiển thị các tệp ẩn.
-Chọn đơn vị ưa thích của bạn cho nhiệt độ (điều này chỉ áp dụng cho lệnh "thời tiết")
 Mod {0} đã dừng
 {0} v {1} đã dừng
 Mod {0} không có tên bộ phận. Phân tích cú pháp mod không thành công. Xem lại mã nguồn.
@@ -461,12 +396,10 @@ Hàm băm không khớp.
 Kết hợp băm.
 Đổi tên một thư mục
 Mở vỏ thử nghiệm
-* Nhấn phím bất kỳ để khởi động nhân hoặc phím ESC để thoát.
 Không khởi động được "{0}": {1}
 Hiển thị bản xem trước thư
 Khi liệt kê các thư, hãy hiển thị phần xem trước nội dung.
 Màu nền
-Đang cố gắng truy cập đường dẫn không hợp lệ.
 Xóa tệp văn bản
 Thoát khỏi trình soạn thảo văn bản
 Truy vấn một ký tự trong một dòng cụ thể hoặc tất cả các dòng
@@ -493,20 +426,15 @@ Tạo chủ đề mới
 Tạo chủ đề mới "{0}".
 Lưu chủ đề vào thư mục hiện tại
 Lưu chủ đề vào một thư mục khác ...
-Chọn màu bằng phím "<-" và "->". Nhấn ENTER để thoát. Nhấn "i" để chèn số màu theo cách thủ công.
-Chọn màu bằng phím "<-" và "->". Sử dụng các phím mũi tên lên và mũi tên xuống để chọn giữa các dải màu. Nhấn ENTER để thoát. Nhấn "i" để chèn số màu theo cách thủ công.
-Nhập số màu từ 0 đến 255:
 In thông tin phần cứng
 Tên bộ xử lý:
 Bộ xử lý bit:
 Hệ thống tệp phân vùng:
 Kích thước phân vùng:
-GPU: Không thể thăm dò một hoặc nhiều cạc đồ họa. Vẫn hiển thị thông tin ...
 >> Chào mừng bạn! Đây là lần đầu tiên bạn vào gỡ lỗi và trò chuyện từ xa. Sử dụng "/ register <name>" để đăng ký.
 Thiết bị đã tồn tại.
 Không có thiết bị như vậy.
 In nội dung của tệp vào bảng điều khiển
-Hoặc, chuyển "listcities" vào lệnh này.
 Mục nhập đã tồn tại.
 Bao bọc đầu ra bảng điều khiển
 Lệnh không thể kết thúc. Các lệnh này có thể được bao bọc:
@@ -536,11 +464,8 @@ Số lượng vị trí tối đa
 Có bao nhiêu vị trí sáng trước khi mờ?
 Kết nối với máy chủ SSH để thực hiện lệnh.
 Đặt một biến thành một giá trị trong một tập lệnh
-Lời nhắc báo cáo lỗi.
 Đã xảy ra lỗi trong FTP shell:
-Lỗi trình bao FTP không xác định:
 Đã xảy ra lỗi trong trình bao SFTP:
-Lỗi khung SFTP không xác định:
 Hiển thị biểu ngữ SSH
 Hiển thị biểu ngữ máy chủ SSH khi kết nối.
 Bạn muốn xác thực như thế nào?
@@ -550,9 +475,6 @@ Nhập cụm mật khẩu cho khóa {0}:
 Đã trung hòa một con đường không tồn tại.
 Tệp khóa {0} không tồn tại.
 Lỗi khi cố thêm khóa cá nhân:
-Nhấn "t" để chuyển sang chế độ 255 màu.
-Nhấn "t" để chuyển sang chế độ màu thực.
-mod: Không có mod nào được phát hiện.
 Các lệnh chung:
 Lệnh mod:
 Lệnh bí danh:
@@ -573,10 +495,8 @@ Bắt đầu tất cả các mod
 Kiểm tra chuỗi VT cho 255 màu
 Kiểm tra chuỗi VT cho màu sắc trung thực
 Gửi thông báo để kiểm tra người nhận
-Kiểm tra ngày in bằng các lịch khác nhau
 Liệt kê tất cả các mã được hỗ trợ
 Kiểm tra thăm dò phần cứng
-Lưu thư mục hiện tại vào tệp cấu hình hạt nhân
 Kiểm tra trình ghi danh sách với chuỗi và mảng chuỗi
 Kiểm tra trình ghi danh sách với mảng số nguyên và số nguyên
 Kiểm tra trình viết danh sách với mảng char và mảng char
@@ -619,7 +539,6 @@ Ngày:
 Thời gian:
 Đặt quyền đối với tệp. Điều này chỉ được hỗ trợ trên các máy chủ FTP chạy Unix.
 Đặt loại cho phiên này
-Bạn phải kết nối với máy chủ trước khi thực hiện các hoạt động hệ thống tệp.
 Không đặt được quyền của {0} thành {1}.
 Quyền được đặt thành công cho tệp
 Kiểu dữ liệu được đặt thành ASCII!
@@ -631,21 +550,9 @@ Làm mờ dần độ trễ tính bằng mili giây
 Các bước làm mờ tối đa
 Phải đợi bao nhiêu mili giây trước khi xóa mờ văn bản?
 Làm thế nào nhiều bước phai để làm gì?
-Thăm dò đầy đủ
-Nếu đúng, hãy thăm dò tất cả phần cứng; khác, sẽ chỉ thăm dò phần cứng cần thiết.
-Không xóa được trình bảo vệ màn hình {0} khỏi cấu hình.
-Nhận cài đặt trình tiết kiệm tùy chỉnh
-Đặt cài đặt trình tiết kiệm tùy chỉnh
-Đã đặt thành công cài đặt cho trình bảo vệ màn hình
-Không đặt được cài đặt cho trình bảo vệ màn hình
 Mở trình bao RSS để đọc nguồn cấp dữ liệu
-Thay đổi liên kết nguồn cấp dữ liệu
 Liệt kê tất cả các nguồn cấp dữ liệu
 Đọc nguồn cấp dữ liệu trong trình duyệt web
-Nguồn cấp dữ liệu RSS2 không hợp lệ.
-Nguồn cấp dữ liệu RSS1 không hợp lệ.
-Nguồn cấp dữ liệu Atom không hợp lệ.
-Nhập URL nguồn cấp RSS:
 Loại nguồn cấp dữ liệu RSS không hợp lệ.
 Nhận thông tin bài viết
 Số lượng bài viết không được lớn hơn các bài viết có sẵn.
@@ -667,16 +574,11 @@ Viết bất kỳ văn bản nào bạn muốn hiển thị. Dài hơn là tốt
 Tốc độ ghi tối thiểu trong WPM
 Tốc độ ghi tối đa trong WPM
 Xác suất lỗi đánh máy tính bằng phần trăm
-Không lưu được thư mục hiện tại: {0}
 Lau để thay đổi hướng
 Có bao nhiêu lần lau phải làm trước khi đổi hướng ngẫu nhiên?
 Giai đoạn kết thúc trong
 Khởi tạo nội bộ đã hoàn thành trong
 Bắt đầu mod
-Tên lệnh:
-Định nghĩa lệnh:
-Loại lệnh:
-Lệnh nghiêm minh?
 Phiên bản mod:
 Không tìm thấy bản mod {0}.
 Trình soạn thảo văn bản chưa mở luồng tệp.
@@ -698,7 +600,6 @@ Từ điển char bình thường:
 Từ điển char mảng:
 Hiển thị tiến trình hoạt động của hệ thống tệp
 Hiển thị tệp nào đang được xử lý trong các hoạt động của hệ thống tệp
-HardwareType sẽ ở đâu
 Loại phần cứng {0} không được thăm dò hoặc không hợp lệ.
 Loại phần cứng {0} chưa được thăm dò. Nếu bạn chắc chắn rằng nó đã được thăm dò, hãy khởi động lại hạt nhân với tính năng gỡ lỗi được bật.
 Các phần không được phân tích cú pháp thành danh sách.
@@ -709,7 +610,6 @@ Trình bảo vệ màn hình gặp lỗi khi hiển thị: {0}. Nhấn bất kì
 Xem trước ...
 Đây là cách chủ đề của bạn sẽ trông như thế nào:
 Các lệnh có thể quấn:
-Mod {0} có lệnh không hợp lệ. Phân tích cú pháp mô-đun không thành công. Xem lại mã nguồn.
 Phần mod:
 Sử dụng API bảng điều khiển
 Sử dụng API Console để xóa văn bản hay sử dụng trình tự VT xóa dòng nhanh hơn. Nếu Sai, Marquee sẽ sử dụng trình tự VT thích hợp. Nếu không, nó sẽ sử dụng API Console chậm hơn.
@@ -719,19 +619,11 @@ Tên mod:
 Tên tệp mod:
 Đường dẫn tệp mod:
 Phiên bản một phần:
-Số lượng tối thiểu các đối số bắt buộc:
-Lập luận bắt buộc?
-Đặt biến shell?
-Không thể chạy ở chế độ bảo trì?
-Đã lỗi thời?
 Tệp này rỗng.
 Đã thăm dò thành công {0}.
 Verbose Probe
 Làm cho các tin nhắn thăm dò phần cứng trở nên nói nhiều.
-> Không có thông tin về khung.
 Làm đẹp tệp JSON
-Không tìm thấy danh mục cấu hình {0}.
-Không tìm thấy mục nhập cấu hình {0}.
 Sử dụng nhịp mỗi phút
 Có sử dụng đơn vị Nhịp mỗi phút để viết màu tiếp theo hay không.
 Độ trễ theo nhịp mỗi phút
@@ -745,8 +637,6 @@ Thư mục đã tải xuống {0}.
 Tải xuống không thành công cho thư mục {0}.
 Đang tải lên thư mục {0} ...
 Thư mục đã tải lên {0}
-Nhấn "c" để viết mã màu đầy đủ.
-Nhập mã màu đáp ứng các định dạng sau:
 Thu nhỏ tệp JSON
 Độ trễ màn hình mới tính bằng mili giây
 Số cột
@@ -757,7 +647,6 @@ Phải đợi bao nhiêu mili giây trước khi viết lại văn bản trên m
 Các cột văn bản sẽ được in.
 Cần viết bao nhiêu ký tự trước khi kích hoạt "điền dòng"?
 Khả năng mẫu tô dòng sẽ được in hoa toàn bộ tính bằng phần trăm
-Kiểu điền dòng
 Câu trả lời có thể không phải là số không.
 Câu trả lời không được vượt quá các mục được hiển thị.
 Lưu thay đổi...
@@ -772,9 +661,6 @@ Không có mạng khi tải xuống dữ liệu gỡ lỗi
 Kiểm tra kết nối internet của bạn và thử lại.
 Trang thủ công {0} không hợp lệ.
 Hãy xem xét việc điền vào trang hướng dẫn này.
-Nhấn phím bất kỳ để đọc trang hướng dẫn sử dụng ...
-Trang hướng dẫn này cần hoạt động cho:
-Không tìm thấy trang thủ công {0}.
 Hướng dẫn mod
 Các đối số hạt nhân có sẵn:
 Lỗi không thể khôi phục trong đối số:
@@ -788,7 +674,6 @@ Phần mod là không có gì.
 Không cho phép dừng các bản mod ở chế độ an toàn.
 Mod đã được bắt đầu!
 Mod vẫn chưa bắt đầu!
-Sử dụng lệnh:
 Tên tệp phần:
 Đường dẫn tệp một phần:
 Lỗi khi cố gắng khởi động trình bảo vệ màn hình:
@@ -808,7 +693,6 @@ Vẽ đường viền thông báo
 Che thông báo bằng đường viền.
 Liên hệ với nhà cung cấp mod để nâng cấp mod lên phiên bản tương thích.
 Gửi thông báo tiến độ để kiểm tra người nhận
-Kiểm tra bánh xe màu
 Hiển thị thời gian hạt nhân cục bộ
 Hiển thị ngày hạt nhân cục bộ
 Hiển thị ngày và giờ hạt nhân cục bộ
@@ -1015,7 +899,6 @@ Ký tự khung bên phải cho đường viền thông báo
 Có hiển thị những gì được viết trong lời nhắc đầu vào hay không.
 Số lượng tối thiểu để chọn là gì?
 Số lượng tối đa để chọn là bao nhiêu?
-Bắt đầu bánh xe màu ở chế độ màu thực
 Nếu được chỉ định, nó sẽ hiển thị biểu ngữ khởi động tùy chỉnh với hỗ trợ giữ chỗ. Bạn có thể sử dụng {0} cho phiên bản hạt nhân.
 Biến thể nào của ngôn ngữ hiện tại đang được sử dụng để thay đổi tên tháng, lịch, v.v.?
 Kích hoạt hỗ trợ màu sắc trung thực.
@@ -1034,13 +917,11 @@ Kiểu kết nối dữ liệu máy chủ:
 Hệ thống máy chủ:
 Loại dữ liệu tải xuống máy chủ:
 Loại dữ liệu tải lên máy chủ:
-Bạn phải kết nối với máy chủ trước khi thực hiện thao tác này.
 Nhập tệp từ xa sẽ được băm.
 Nhập một thư mục từ xa.
 Băm đệ quy cho FTP
 Có nên băm một cách đệ quy một thư mục hay không. Xin lưu ý rằng không phải tất cả các máy chủ FTP đều hỗ trợ điều đó.
 Tốc độ đồng hồ của bộ xử lý:
-Hỗ trợ bộ xử lý SSE2:
 Tổng số bộ xử lý:
 Kích thước đĩa:
 Tổng bộ nhớ:
@@ -1076,10 +957,7 @@ Tệp mod không được chỉ định.
 Cài đặt không thành công cho
 Tệp mod được cung cấp không tương thích.
 Gỡ cài đặt không thành công cho
-Mở một URL
 In số dòng trên nội dung tệp in
-Phiên bản chuyển ngữ
-Phiên bản đã dịch
 Loại bỏ tất cả các thông báo
 Đang tải xuống ...
 Đang tải lên ...
@@ -1105,19 +983,15 @@ Màu khung bên phải cho thanh đoạn nối
 Sử dụng màu đường viền cho thanh đoạn nối
 Sử dụng màu viền cho thanh đường nối. Nếu bị vô hiệu hóa, sẽ tạo ra một thanh màu xám.
 Bắt đầu HTTP shell
-Đặt trang web HTTP. Phải là một URI hợp lệ.
 Nhận phản hồi từ máy chủ HTTP bằng cách sử dụng yêu cầu được chỉ định
 Xóa nội dung khỏi máy chủ HTTP
 Đã xảy ra lỗi trong HTTP shell:
 Lấy chuỗi từ máy chủ HTTP bằng cách sử dụng yêu cầu đã chỉ định
 Bắt {0} ...
-Định dạng URI của trang web không hợp lệ.
-Đặt trang web thành
 Màu sắc không yêu cầu khởi động lại, nhưng hầu hết các cài đặt yêu cầu khởi động lại.
 Không có trợ giúp cho đối số "{0}".
 Độ khó mặc định cho SpeedPress
 Thời gian chờ khi nhấn phím cho SpeedPress
-Chọn khó khăn ưa thích của bạn.
 Phải đợi bao nhiêu mili giây để nhấn phím trước khi hết thời gian? (Trong độ khó tùy chỉnh)
 Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khác bằng cách sử dụng biểu thức chính quy
 Thay thế một từ hoặc cụm từ bằng một từ hoặc cụm từ khác trong một dòng bằng cách sử dụng biểu thức chính quy
@@ -1128,7 +1002,6 @@ Không có gì được tìm thấy. Đảm bảo rằng bạn đã viết cài 
 Đóng gói một tệp cục bộ vào kho lưu trữ
 Không thể đóng gói gì cả.
 Mô tả câu trả lời
-Tổ cổng
 Để biết thêm thông tin về các điều khoản và điều kiện sử dụng phần mềm này, hãy truy cập
 Loại đầu ra lựa chọn mặc định
 Kiểm tra tất cả các cài đặt KS để xem các biến có được viết đúng không
@@ -1184,7 +1057,6 @@ Bắt đầu hoặc dừng lại
 Lap
 Cài lại
 Một bộ đếm thời gian đơn giản
-Bắt đầu (lại) đếm ngược
 Đặt khoảng thời gian
 Thời gian chờ được chỉ định không phải là số.
 Chỉ định thời gian chờ tính bằng mili giây
@@ -1199,14 +1071,6 @@ Phải đợi bao nhiêu mili giây trước khi hết thời gian chờ kết n
 Phải đợi bao nhiêu mili giây trước khi hết thời gian chờ kết nối dữ liệu FTP?
 Chọn phiên bản Giao thức Internet mà máy chủ FTP hỗ trợ và máy khách FTP sử dụng.
 Đang cố gắng khởi động RPC khi nó đã được khởi động.
-Ký tự góc trên bên trái cho bánh xe màu RGB
-Ký tự góc trên bên phải cho bánh xe màu RGB
-Ký tự góc dưới bên trái cho bánh xe màu RGB
-Ký tự góc dưới bên phải cho bánh xe màu RGB
-Ký tự khung trên cho bánh xe màu RGB
-Ký tự khung dưới cho bánh xe màu RGB
-Ký tự khung bên trái cho bánh xe màu RGB
-Ký tự khung bên phải cho bánh xe màu RGB
 Tìm một tệp trong thư mục được chỉ định hoặc trong thư mục hiện tại
 Chuyển đổi phần cuối của dòng thành định dạng cho nền tảng hiện tại hoặc thành định dạng tùy chỉnh được chỉ định
 Tổng kích thước trong thư mục:
@@ -1221,14 +1085,6 @@ Nếu có bất kỳ bản cập nhật nào, hạt nhân sẽ tự động tả
 Bán kính nổ pháo hoa
 Bán kính nổ của pháo hoa khi bắt lửa là bao nhiêu khối (tối đa 10)?
 Lệnh này có các công tắc bên dưới thay đổi cách nó hoạt động:
-In các số dòng tiếp theo dòng đang được in
-Ngăn in số dòng
-Cho biết rằng câu trả lời có thể có nhiều hơn một ký tự
-Cho biết rằng câu trả lời chỉ có một ký tự
-In câu hỏi và câu trả lời trong một dòng
-In câu hỏi và câu trả lời trong hai dòng
-In câu hỏi và câu trả lời theo cách hiện đại
-In câu hỏi và câu trả lời trong bảng
 Hiển thị chi tiết tệp trong danh sách
 Loại bỏ các thông báo "quyền bị từ chối" gây phiền nhiễu
 Hiển thị tất cả các múi giờ
@@ -1242,10 +1098,7 @@ Hiển thị tất cả các thành phố có sẵn
 Nén nhanh
 Không nén
 Không tạo thư mục cơ sở trong kho lưu trữ
-Ngắt kết nối khỏi máy chủ một cách đáng xấu hổ
 Cho biết rằng đường dẫn mục tiêu là tuyệt đối
-Lưu tệp JSON, làm đẹp nó trong quá trình này
-Lưu tệp JSON, giảm thiểu nó trong quá trình này
 Xóa tất cả các sự kiện đã kích hoạt
 Bật gỡ lỗi sự kiện
 Cho phép gỡ lỗi cho hệ thống sự kiện hạt nhân
@@ -1273,9 +1126,6 @@ Màn hình giật gân thời trang
 Bật màn hình giật gân phong cách khi khởi động. Xin lưu ý rằng nó sẽ vô hiệu hóa lời nhắc đối số và kiểm tra khởi động trước trình bao.
 Splash tên
 Splash tên từ các Splash có sẵn được triển khai trong kernel.
-Đã tạo MOTD mặc định.
-Đã tạo MAL mặc định.
-Tài khoản hệ thống được khởi tạo
 Người dùng đã khởi tạo
 Chào mừng!
 Khởi động trình gỡ lỗi từ xa ...
@@ -1295,7 +1145,6 @@ Hiển thị các lệnh đếm trên trợ giúp
 Hiển thị các lệnh shell đếm trên trợ giúp
 Hiển thị số lệnh mod khi được trợ giúp
 Hiển thị số bí danh khi được trợ giúp
-Hiển thị số lệnh trong danh sách lệnh, được điều khiển bởi ba công tắc hiển thị số đếm cho các loại lệnh khác nhau.
 Thực hiện các lệnh khi các biểu thức UESH được thỏa mãn
 Điều kiện không được tìm thấy trong biểu thức.
 Điều kiện {0} yêu cầu {1} đối số. Có {2}.
@@ -1319,7 +1168,6 @@ Bật chế độ gỡ lỗi
 Bật chế độ đen trắng
 Làm cho vũ trường có màu đen và trắng. Sẽ thực sự làm tổn thương mắt của bạn nếu nó quá nhanh, vì vậy không nên sử dụng nếu bạn đang gặp phải tình trạng thu giữ hình ảnh nhanh.
 Tải màu hiện tại
-Mở tài liệu API mod cho cấu trúc của mã nguồn ở dạng mới nhất
 Giá trị hiện tại:
 Chỉ định màu hệ lục phân không hợp lệ.
 Bộ chỉ định màu RGB không hợp lệ.
@@ -1345,13 +1193,6 @@ Số byte không phải là số.
 Số byte bắt đầu được chỉ định không được lớn hơn kích thước tệp.
 Số byte kết thúc được chỉ định không được lớn hơn kích thước tệp.
 Đã xóa các byte.
-Chọn nguồn cấp dữ liệu từ danh sách nguồn cấp dữ liệu hiện có từ các nguồn trực tuyến
-Đang tải xuống danh sách nguồn cấp dữ liệu ...
-Không tải xuống được danh sách nguồn cấp dữ liệu.
-Chọn quốc gia của bạn bằng cách nhấn phím mũi tên trái hoặc mũi tên phải. Nhấn ENTER để xác nhận lựa chọn của bạn.
-Quốc gia này có {0} nguồn tin tức.
-Chọn nguồn tin tức yêu thích của bạn bằng cách viết số. Nhấn ENTER để xác nhận lựa chọn của bạn.
-Chọn một nguồn cấp dữ liệu cho nguồn tin tức yêu thích của bạn. Nhấn ENTER để xác nhận lựa chọn của bạn.
 Xin lưu ý rằng việc chỉnh sửa tệp nhị phân bằng cách sử dụng trình bao này là thử nghiệm và có thể dẫn đến hỏng dữ liệu hoặc mất dữ liệu nếu không được sử dụng đúng cách.
 ĐỪNG KHỞI ĐỘNG VỎ VỎ MÀ BẠN KHÔNG BIẾT BẠN ĐANG LÀM GÌ!
 Nhận thông tin chính cho một phím được nhấn. Hữu ích để gỡ lỗi
@@ -1405,7 +1246,6 @@ Mô phỏng Không có Chế độ APM
 Có mô phỏng một tình huống không có sẵn APM hay không. Nếu được bật, nó sẽ thông báo cho người dùng rằng bây giờ có thể an toàn để tắt máy tính khi tắt máy.
 Mật độ trục trặc
 Tỷ lệ phần trăm càng lớn, trục trặc càng dày đặc!
-Ngôn ngữ gangsta chứa ngôn ngữ mạnh có thể khiến bạn cảm thấy không thoải mái khi đọc nó. Bạn có chắc chắn rằng bạn muốn đặt ngôn ngữ nào không?
 Từ điển tiếng Anh
 Thông tin từ cho
 API được cấp phép theo
@@ -1417,8 +1257,6 @@ Ví dụ trong câu:
 Các nguồn được sử dụng để xác định
 Từ đồng nghĩa:
 Từ trái nghĩa:
-Cảm ơn bạn đã báo cáo lỗi cho chúng tôi! Hãy làm theo các hướng dẫn trên màn hình.
-Xem trước trình bảo vệ màn hình
 Kiểm tra bảng điều khiển của bạn để được hỗ trợ PowerLine
 Đảm bảo sử dụng phông chữ bảng điều khiển hỗ trợ PowerLine glyphs, nếu không đầu ra có thể không hiển thị đúng cách. Chúng tôi đề nghị
 Mở thư viện đặt trước shell
@@ -1433,7 +1271,6 @@ Bộ chuyển đổi đơn vị
 Các loại đơn vị có sẵn và đơn vị của chúng:
 Trò chơi kết thúc
 Lỗi không mong đợi
-Các lệnh được tô sáng bằng màu khác là các lệnh hợp nhất và có sẵn trong mọi trình bao.
 Đang kiểm tra các bản cập nhật ...
 Đang tải xuống phiên bản
 Đang cài đặt phiên bản

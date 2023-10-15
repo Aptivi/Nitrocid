@@ -1,16 +1,11 @@
 Neplatná šablona barev {0}
 hwprobe: Váš hardware bude testován. Prosím, čekejte...
-CPU: Jedno nebo více jader CPU selhalo. Zobrazení informací tak jako tak ...
-RAM: Jeden nebo více RAM čipů selhalo. Zobrazení informací tak jako tak ...
-HDD: Jeden nebo více pevných disků se nepodařilo sondovat. Zobrazení informací tak jako tak ...
 Zadejte heslo správce pro údržbu.
 Chyba při zavádění jádra: {0}
 DOUBLE PANIC: Reboot Time překračuje maximální povolený čas restartu {0}. Našli jste chybu jádra.
 [{0}] panic: Reboot povolen z důvodu chybové úrovně {0}.
 [{0}] panic: Čas restartu: {1} sekund, překročí 1 hodinu. Je nastavena na 1 minutu.
 DOUBLE PANIC: Chyba typu {0} neplatná.
-[{0}] panika: Reboot vypnut z důvodu chyby {0}.
-[{0}] panic: {1} - Pro pokračování v používání jádra stiskněte libovolnou klávesu.
 [{0}] panika: {1} - Stisknutím libovolného tlačítka vypnete.
 [{0}] panika: {1} - Restart v {2} sekundách ...
 DOUBLE PANIC: Chyba jádra: {0}
@@ -31,21 +26,14 @@ Uživatel {0} je již přihlášen. Odhlásit se a přihlásit se jako jiný adm
 Uživatel {0} byl odstraněn.
 Chyba při pokusu o odebrání uživatelského jména.
 Požadovaný spořič obrazovky {0} nebyl nalezen.
-{0} bylo správně inicializováno.
-Spořič obrazovky {0} neexistuje.
 {0} je nastaven na výchozí spořič obrazovky.
 Spořič obrazovky {0} nebyl nalezen v databázi. Zkontrolujte název a zkuste to znovu.
-Spořič obrazovky nelze načíst z následujících důvodů:
 Při tisku textu došlo k závažné chybě.
 Mod nelze načíst z následujících důvodů:
-mod: Načítání modů ...
-mod: Zastavení modů ...
 Mod {0} nemá název. Zkontrolujte zdrojový kód.
-Mod {0} nemá verzi.
 Začalo {0} v {1}
 Žádné příkazy pro příkaz {0}.
 Příkaz definovaný
-Před připojením k jinému serveru byste se měli odpojit od serveru
 Uživatelské jméno pro {0}:
 Heslo pro {0}:
 Připojeno k {0}
@@ -54,18 +42,10 @@ Místní adresář {0} neexistuje.
 Zadejte místní adresář. ".." vrátit se.
 Adresář {0} nebyl nalezen.
 Zadejte vzdálený adresář. ".." vrátit se
-Před změnou adresáře se musíte připojit k serveru
 Místní adresář: {0}
 Vzdálený adresář: {0}
-Před získáním aktuálního vzdáleného adresáře se musíte připojit k serveru.
-Před provedením odstranění se musíte připojit k serveru s oprávněními pro správu.
-Odpojeno od {0}
-Ještě jste se nepřipojili k žádnému serveru
 Stažení souboru {0} ...
 Stažený soubor {0}.
-Před přenosem se musíte připojit k serveru.
-{0} KB | Upraveno v: {1}
-Před zápisem všech vzdálených souborů byste se měli připojit k serveru.
 Soubor pro nahrání {0} ...
 Nahraný soubor {0}
 Získá aktuální místní adresář
@@ -73,7 +53,6 @@ Získá aktuální vzdálený adresář
 Změní místní adresář ke stažení nebo nahrávání
 Změní vzdálený adresář ke stažení z nebo nahrajte na
 Odstraní vzdálený soubor ze serveru
-Odpojí se od serveru
 Stažení vzdáleného souboru do lokálního adresáře pomocí binárního nebo textového souboru
 Seznam místních adresářů
 Seznamy vzdáleného adresáře
@@ -83,7 +62,6 @@ Příkaz nebyl nalezen jako alias {0}.
 Nyní můžete spustit příkaz "{0}" jako příkaz: "{1}".
 Alias ​​{0} nebyl nalezen.
 Neplatný režim {0}.
-Nebylo dost argumentů. Níže naleznete použití:
 Adresář {0} nebyl nalezen
 Prázdný název hostitele.
 Změna z: {0} na {1} ...
@@ -128,25 +106,7 @@ Tento příkaz je zastaralý a bude odstraněn v budoucí verzi.
 Nemáte oprávnění změnit heslo {0}, protože cíl byl admin.
 Odstraní vše v protokolu ladění
 Neplatný jazyk
------------------------------ Panikový výpis jádra ------------------------------
->> Informace o panice <<
-> Popis: {0}
-> Typ chyby: {1}
-> Datum a čas: {2}
->> Informace o výjimkách <<
-> Výjimka: {0}
-> Popis: {1}
-> HRESULT: {2}
-> Zdroj: {3}
-> Sledování zásobníku <
->> Vnitřní výjimka {0} informace <<
->> Výjimka {0} je hlavní příčinou <<
->> Žádná výjimka; může to být chyba jádra. <<
->> Rámečky, soubory, řádky a sloupce <<
-> Rámeček {0}: Soubor: {1} | Řádek: {2} | Sloupec: {3}
-> Při pokusu o získání rámových informací došlo k chybě. {0}: {1}
 Vítejte v Kernelu!
-Úspěšně přihlášeno jako <user>
 Stahování bylo dokončeno.
 Stažení se nezdařilo v pokusu {0}: {1}
 Pokud se chystáte stahovat soubory ze serveru FTP, použijte „ftp“.
@@ -164,13 +124,7 @@ Zadejte adresu
 Časové pásmo je zadáno nesprávně.
 Neplatný výběr profilu.
 Pokouší se připojit k {0} s profilem {1} ...
-Zvolený jazyk obsahuje dvě varianty. Vyber jeden:
-Neplatná volba. Zkus to znovu.
-Nemáte oprávnění nastavit aktuální adresář na {0}: {1}
-Cesta, kterou jste zadali, je příliš dlouhá.
-Při pokusu získat informace o {0}: {1} došlo k selhání sběrače informací o výpisu
 Chyba při pokusu o spuštění spořiče obrazovky z důvodu neplatné operace.
-Obnovení není povoleno v nouzovém režimu.
 Režimy analýzy nejsou v bezpečném režimu povoleny.
 Cesta není ani soubor, ani adresář.
 Vytvoří další kopii souboru pod jiným adresářem nebo názvem.
@@ -180,7 +134,6 @@ Zápas {0}: {1}
 Čas strávený: {0} milisekund
 Název: {0}
 Vypočítá součty souborů.
-Vezme vás na naši GitHub Wiki.
 Neplatný šifrovací algoritmus.
 Povoluje nebo zakazuje vzdálené ladění.
 Podívejte se, jestli dokážete vyřešit matematické rovnice včas
@@ -192,16 +145,11 @@ Spuštění RPC ...
 Připojení k serveru SSH.
 Zadejte heslo pro {0}:
 SSH odpojen.
-Nelze nastavit kódovou stránku. Jazyk se nemusí zobrazit správně.
 Ladění není povoleno.
 Zobrazuje všechna přijatá oznámení
 Odmítne oznámení
 Oznámení bylo úspěšně zamítnuto.
 Vzdáleně provede příkaz na vzdálené PC
-- Fáze 1: Inicializace systému
-- Fáze 2: Detekce hardwaru
-- Fáze 3: Detekce režimů a spořičů obrazovky
-- Fáze 4: Přihlaste se
 Neplatný typ {0}.
 Velikost: {0}
 Adresář {0} již existuje.
@@ -234,21 +182,15 @@ Příprava profilů ... Může to trvat několik minut ...
 Chyba při pokusu o spuštění skriptu: {0}
 Zapíše text do konzole
 Umožňuje výběr uživatelů
-kde <$proměnná> je libovolná proměnná, která bude použita k uložení odpovědi
 kde <answer> jsou jednopísmenné odpovědi na otázku oddělenou lomítky
 Chyba při pokusu o připojení k serveru SSH: {0}
 Umožňuje uživateli zadat vstup
 Změní aktuální poštovní adresář
 Nelze otevřít poštovní složku {0}: {1}
 Uvádí adresáře ve vaší e-mailové adrese
-K rychlému připojení k jakékoli síti používá informace z rychlé volby
-Vyberte adresu, ke které se chcete připojit:
-Výběr je mimo rozsah. Vyberte mezi 1-{0}. Zkus to znovu.
-Výběr není číslo. Zkus to znovu.
 Během ověřování certifikátu existují chyby certifikátu. Může to být poprvé, kdy jste se připojili k serveru, nebo mohlo dojít k vypršení platnosti certifikátu. Zde je chyba:
 Jste si jisti, že se chcete připojit?
 Neplatná odpověď. Prosím zkuste to znovu.
-Rychlá volba je prázdná. Připojte se k serveru a přidejte na něj adresu.
 Zadejte adresu a port serveru IMAP (<adresa> nebo <adresa>:[port]):
 Zadejte adresu a port serveru SMTP (<adresa> nebo <adresa>:[port]):
 Odešle zprávu na adresu
@@ -309,13 +251,11 @@ Režim analýzy velikosti
 Značka při spuštění
 Dlouhý čas a datum
 Zobrazit skryté soubory
-Zadána neplatná část. Vraťte se zpět.
 Vraťte se zpět ...
 Napište vzdálený port ladicího programu. Musí být číselné a nesmí být již použito. Jinak vzdálený ladicí program neotevře port.
 Napište, kolikrát by měl příkaz "" dostat "" zkusit opakovat neúspěšná stahování. Musí to být číselné.
 Napište, kdy se má spořič obrazovky spustit po zadaných milisekundách. Musí to být číselné.
 Odpověď nemusí být záporná.
-Odpověď je neplatná. Zkontrolujte, zda je číselná odpověď pro položky konfigurace, které jako odpověď vyžadují čísla.
 Proměnná {0} se nenachází na žádném z modulů.
 Změní konfiguraci jádra
 Změnit kulturu při přepínání jazyků
@@ -329,12 +269,10 @@ Mění MAL, MOTD po přihlášení
 Změní MOTD, poselství dne
 Změní uživatelské jméno
 Spravujte oprávnění pro uživatele
-Znovu načte soubor spořiče obrazovky v KSMods
 Odebere uživatele ze seznamu
 Alias ​​{0} byl úspěšně odstraněn.
 Zkontrolovat aktualizace se nezdařilo.
 V seznamu již nezbývají žádní uživatelé.
-Nastavení jazyka se nezdařilo.
 Při pokusu o odmítnutí oznámení došlo k chybě.
 usrmgr: Nepodařilo se vytvořit uživatelské jméno {0}: {1}
 Nepodařilo se přejmenovat uživatele. {0}
@@ -367,9 +305,7 @@ Počasí: {0}
 Tlak: {0}
 Vlhkost: {0}
 Svůj vlastní klíč API můžete získat na adrese https://home.openweathermap.org/api_keys.
-Seznam měst s jejich ID můžete vždy vyhledat na adrese http://bulk.openweathermap.org/sample/city.list.json.gz.
 Preferovaná jednotka teploty
-Spustí režim údržby. Tím se deaktivuje více účtů.
 Každé spuštění zkontroluje aktualizace.
 Při přepínání jazyků změňte názvy měsíců, kalendář atd.
 Udržujte tiché zprávy o hardwaru.
@@ -385,7 +321,6 @@ Pokud je povoleno, jádro analyzuje celou složku na její celkovou velikost. Ji
 Umožňuje eyecandy při spuštění
 Čas a datum budou delší, zobrazují se názvy celých měsíců atd.
 Zobrazuje skryté soubory.
-Vyberte preferovanou jednotku teploty (to platí pouze pro příkaz „počasí“)
 Mod {0} se zastavil
 {0} v {1} se zastavilo
 Mod {0} nemá název součásti. Analýza modů se nezdařila. Zkontrolujte zdrojový kód.
@@ -461,12 +396,10 @@ Hash se neshodují.
 Hashes zápas.
 Přejmenuje složku
 Otevře testovací prostředí
-* Stisknutím libovolné klávesy spustíte jádro nebo klávesu ESC opustíte.
 Nepodařilo se spustit „{0}“: {1}
 Zobrazit náhled e-mailové zprávy
 Při výpisu e-mailových zpráv zobrazte náhled těla.
 Barva pozadí
-Pokus o přístup k neplatné cestě.
 Vymaže textový soubor
 Ukončí textový editor
 Dotazy na znak v zadaném řádku nebo na všech řádcích
@@ -493,20 +426,15 @@ Maakt een nieuw thema
 Een nieuw thema "{0}" maken.
 Thema opslaan in huidige map
 Thema opslaan in een andere map...
-Selecteer kleur met behulp van de toetsen "<-" en "->". Druk op ENTER om te stoppen. Druk op "i" om het kleurnummer handmatig in te voeren.
-Selecteer kleur met behulp van de toetsen "<-" en "->". Gebruik de pijltoetsen omhoog en omlaag om tussen kleurbereiken te kiezen. Druk op ENTER om te stoppen. Druk op "i" om het kleurnummer handmatig in te voeren.
-Voer het kleurnummer in van 0 tot 255:
 Drukt hardware-informatie af
 Naam processor:
 Processorbits:
 Partitie bestandssysteem:
 partitie grootte:
-GPU: het testen van een of meer grafische kaarten is mislukt. Toch informatie weergeven...
 >> Welkom! Dit is de eerste keer dat u op afstand debuggen en chatten. Gebruik "/register <naam>" om te registreren.
 Apparaat bestaat al.
 Geen dergelijk apparaat.
 Drukt inhoud van bestand af naar console
-Of geef "listcities" door aan dit commando.
 Invoer bestaat al.
 Wikkelt de console-uitvoer
 De opdracht kan niet worden ingepakt. Deze commando's zijn wrappable:
@@ -536,11 +464,8 @@ Max aantal posities
 Hoeveel standen branden er voordat er wordt gedimd?
 Maakt verbinding met een SSH-server om een ​​opdracht uit te voeren.
 Stelt een variabele in op een waarde in een script
-Een prompt voor het melden van fouten.
 Er is een fout opgetreden in de FTP-shell:
-Onbekende FTP-shellfout:
 Er is een fout opgetreden in de SFTP-shell:
-Onbekende SFTP-shellfout:
 SSH-banner weergeven
 Toont de SSH-serverbanner bij verbinding.
 Hoe wil je authenticeren?
@@ -550,9 +475,6 @@ Voer de wachtwoordzin in voor sleutel {0}:
 Een niet-bestaand pad geneutraliseerd.
 Sleutelbestand {0} bestaat niet.
 Fout bij het toevoegen van een persoonlijke sleutel:
-Druk op "t" om over te schakelen naar de 255 kleurmodus.
-Druk op "t" om over te schakelen naar de modus voor ware kleuren.
-mod: Geen mods gedetecteerd.
 Algemene commando's:
 Mod-commando's:
 Alias-opdrachten:
@@ -573,10 +495,8 @@ Start alle mods
 Test de VT-reeks voor 255 kleuren
 Test de VT-reeks op ware kleuren
 Stuurt een melding om de ontvanger te testen
-Test de afdrukdatum met verschillende kalenders
 Geeft een overzicht van alle ondersteunde codepagina's
 Tests die de hardware onderzoeken
-Slaat de huidige map op in het kernelconfiguratiebestand
 Test de lijstschrijver met de tekenreeks en tekenreeksarray
 Test de lijstschrijver met de integer en integer array
 Test de lijstschrijver met de char en char array
@@ -619,7 +539,6 @@ Datum:
 Tijd:
 Stelt bestandsrechten in. Dit wordt alleen ondersteund op FTP-servers waarop Unix draait.
 Stelt het type in voor deze sessie
-U moet verbinding maken met de server voordat u bestandssysteembewerkingen uitvoert.
 Kan de rechten van {0} niet instellen op {1}.
 Machtigingen succesvol ingesteld voor bestand
 Gegevenstype ingesteld op ASCII!
@@ -631,21 +550,9 @@ Vertraging uitfaden in milliseconden
 Max. fade-stappen
 Hoeveel milliseconden moet ik wachten voordat de tekst vervaagt?
 Hoeveel fade-stappen te doen?
-Volledige sonde
-Indien waar, wordt alle hardware doorzocht; anders zal alleen de benodigde hardware worden onderzocht.
-Kan screensaver {0} niet verwijderen uit config.
-Krijgt aangepaste spaarinstellingen
-Stelt aangepaste spaarinstellingen in
-Instellingen succesvol ingesteld voor screensaver
-Kan geen instelling voor screensaver instellen
 Opent een RSS-shell om de feeds te lezen
-Wijzigt de feedlink
 Geeft alle feeds weer
 Leest een feed in een webbrowser
-Ongeldige RSS2-feed.
-Ongeldige RSS1-feed.
-Ongeldige Atom-feed.
-Voer een RSS-feed-URL in:
 Ongeldig RSS-feedtype.
 Krijgt de artikelinformatie
 Artikelnummer kon niet groter zijn dan de beschikbare artikelen.
@@ -667,16 +574,11 @@ Schrijf elke tekst die u wilt laten zien. Langer is beter.
 Minimale schrijfsnelheid in WPM
 Maximale schrijfsnelheid in WPM
 Kans op typefout in procent
-Kan huidige map niet opslaan: {0}
 Doekjes om van richting te veranderen
 Hoeveel doekjes moet je doen voordat je willekeurig van richting verandert?
 Stage geëindigd in
 Interne initialisatie voltooid in
 Startmodus
-Commando naam:
-Commando definitie:
-Opdrachttype:
-Strikte opdracht?
 Mod-versie:
 Mod {0} niet gevonden.
 De teksteditor heeft nog geen bestandsstream geopend.
@@ -698,7 +600,6 @@ Normaal char woordenboek:
 Array char-woordenboek:
 Voortgang weergeven op bestandssysteembewerkingen
 Toont welk bestand wordt verwerkt tijdens de bewerkingen van het bestandssysteem
-waar HardwareType zal zijn
 Het hardwaretype {0} is niet onderzocht of is niet geldig.
 Het hardwaretype {0} is nog niet onderzocht. Als je zeker weet dat het wordt onderzocht, herstart dan de kernel met debugging ingeschakeld.
 Partities niet geparseerd naar lijst.
@@ -709,7 +610,6 @@ Er is een fout opgetreden in de screensaver bij het weergeven van: {0}. Druk op 
 Voorbeeld...
 Zo ziet je thema eruit:
 Inpakbare commando's:
-Mod {0} heeft een ongeldige opdracht. Mod-parsing is mislukt. Bekijk de broncode.
 Mod-onderdelen:
 Použijte Console API
 Zda použít rozhraní Console API k vymazání textu nebo k použití rychlejší sekvence vymazání řádků VT. Pokud je False, použije Marquee příslušnou sekvenci VT. Jinak použije pravděpodobně pomalejší rozhraní Console API.
@@ -719,19 +619,11 @@ Název módu:
 Název souboru mod:
 Cesta k souboru mod:
 Verze dílu:
-Minimální počet požadovaných argumentů:
-Vyžadují se argumenty?
-Nastavení proměnné prostředí?
-Nelze spustit v režimu údržby?
-Zastaralý?
 Složka je prázdná.
 Úspěšně sondováno {0}.
 Podrobná sonda
 Udělejte ze zpráv sondování hardwaru trochu upovídané.
-> Neexistují žádné informace o rámcích.
 Zkrášluje soubor JSON
-Kategorie konfigurace {0} nebyla nalezena.
-Záznam konfigurace {0} nebyl nalezen.
 Používejte údery za minutu
 Zda použít jednotku Beats Per Minute k napsání další barvy.
 Zpoždění v úderech za minutu
@@ -745,8 +637,6 @@ Stažená složka {0}.
 Stahování složky {0} se nezdařilo.
 Nahrávání složky {0} ...
 Nahraná složka {0}
-Stisknutím „c“ zapíšete barevný kód.
-Zadejte kód barvy, který odpovídá těmto formátům:
 Minimalizuje soubor JSON
 Nové zpoždění obrazovky v milisekundách
 Počet sloupců
@@ -757,7 +647,6 @@ Kolik milisekund počkat, než znovu napíšete text na novou obrazovku?
 Sloupce textu, které se mají vytisknout.
 Kolik znaků napsat před spuštěním „vyplnění řádku“?
 Možnost, že vzor výplně čáry bude vytištěn všemi velkými písmeny v procentech
-Typ vzoru čáry
 Odpověď nemusí být nulová.
 Odpověď nesmí překročit zobrazené položky.
 Uložit změny...
@@ -772,9 +661,6 @@ Při stahování dat ladění není žádná síť
 Zkontrolujte připojení k internetu a zkuste to znovu.
 Stránka manuálu {0} je neplatná.
 Zvažte vyplnění této stránky manuálu.
-Stránku manuálu si přečtete stisknutím libovolné klávesy ...
-Tato příručka vyžaduje práci pro:
-Stránka manuálu {0} nebyla nalezena.
 Mod manuál
 Dostupné argumenty jádra:
 Neopravitelná chyba v argumentu:
@@ -788,7 +674,6 @@ Mod část je o ničem.
 Zastavení modů není v nouzovém režimu povoleno.
 Mod již byl spuštěn!
 Mod ještě nezačal!
-Použití příkazů:
 Název souboru části:
 Cesta k souboru části:
 Chyba při pokusu o spuštění spořiče obrazovky:
@@ -808,7 +693,6 @@ Nakreslete ohraničení oznámení
 Překrývá oznámení okrajem.
 Obraťte se na dodavatele modu a upgradujte mod na kompatibilní verzi.
 Odešle oznámení o průběhu pro testování přijímače
-Testuje barevné kolečko
 Zobrazuje místní čas jádra
 Zobrazuje datum místního jádra
 Zobrazuje datum a čas místního jádra
@@ -1015,7 +899,6 @@ Znak pravého rámečku pro ohraničení oznámení
 Zda se má zobrazit, co je napsáno ve vstupní výzvě.
 Jaký je minimální počet pro výběr?
 Jaký je maximální počet na výběr?
-Spusťte barevné kolo v režimu skutečných barev
 Pokud je zadán, zobrazí přizpůsobený úvodní banner s podporou zástupných symbolů. Pro verzi jádra můžete použít {0}.
 Která varianta aktuálního jazyka se používá ke změně názvů měsíců, kalendáře atd.?
 Aktivuje podporu skutečných barev.
@@ -1034,13 +917,11 @@ Typ datového připojení serveru:
 Serverový systém:
 Typ dat pro stahování serveru:
 Typ dat pro nahrávání serveru:
-Před provedením této operace se musíte připojit k serveru.
 Zadejte vzdálený soubor, který má být hašován.
 Zadejte vzdálený adresář.
 Rekurzivní hašování pro FTP
 Zda rekurzivně hashovat adresář. Upozorňujeme, že ne všechny FTP servery to podporují.
 Takt procesoru:
-Podpora procesoru SSE2:
 Celkový počet procesorů:
 Velikost disku:
 Celková paměť:
@@ -1076,10 +957,7 @@ Pokus o instalaci již nainstalovaného modu. Aktualizace modu...
 Instalace se nezdařila pro
 Poskytnutý soubor modu je nekompatibilní.
 Odinstalace se nezdařila pro
-Otevře adresu URL
 Tisk čísel řádků na obsah tiskového souboru
-Přepsaná verze
-Přeložená verze
 Zavře všechna oznámení
 Stahování...
 Nahrávání...
@@ -1105,19 +983,15 @@ Pravá barva rámu pro rampu
 Pro pruh rampy použijte barvy ohraničení
 Použijte barvy okraje pro pruh rampy. Pokud je zakázáno, vygeneruje se šedý pruh.
 Spustí prostředí HTTP
-Nastaví web HTTP. Musí být platný identifikátor URI.
 Získá odpověď ze serveru HTTP pomocí zadaného požadavku
 Odstraní obsah ze serveru HTTP
 V prostředí HTTP došlo k chybě:
 Získá řetězec ze serveru HTTP pomocí zadaného požadavku
 Získávání {0}...
-Formát URI webu je neplatný.
-Nastavení webu na
 Barvy nevyžadují restart, ale většina nastavení restart vyžaduje.
 Žádná nápověda pro argument „{0}“.
 Výchozí obtížnost pro SpeedPress
 Časový limit stisku klávesy pro SpeedPress
-Vyberte preferovanou obtížnost.
 Kolik milisekund čekat na stisknutí klávesy před vypršením časového limitu? (Ve vlastní obtížnosti)
 Nahradí slovo nebo frázi jiným pomocí regulárních výrazů
 Nahradí slovo nebo frázi jiným v řádku pomocí regulárních výrazů
@@ -1128,7 +1002,6 @@ Nic nebylo nalezeno. Ujistěte se, že jste nastavení napsali správně.
 Zabalí místní soubor do archivu
 Nejde nic zabalit.
 Popis odpovědi
-Hostitelský port
 Další informace o podmínkách používání tohoto softwaru naleznete na adrese
 Výchozí volba typu výstupu
 Zkontroluje všechna nastavení KS, zda jsou proměnné zapsány správně
@@ -1184,7 +1057,6 @@ Start nebo stop
 Klín
 Resetovat
 Jednoduchý časovač
-Začněte (znovu) odpočítávat
 Nastavte interval
 Uvedený časový limit není číselný.
 Zadejte časový limit v milisekundách
@@ -1199,14 +1071,6 @@ Kolik milisekund je třeba čekat, než vyprší časový limit připojení FTP?
 Kolik milisekund je třeba čekat, než vyprší časový limit datového připojení FTP?
 Vyberte verzi internetového protokolu, kterou FTP server podporuje a kterou FTP klient používá.
 Pokus o spuštění RPC, když už je spuštěno.
-Znak v levém horním rohu pro barevné kolo RGB
-Znak v pravém horním rohu pro barevné kolo RGB
-Znak v levém dolním rohu pro barevné kolo RGB
-Znak v pravém dolním rohu pro barevné kolo RGB
-Znak horního rámečku pro barevné kolo RGB
-Znak nižšího rámečku pro barevné kolo RGB
-Znak levého rámu pro barevné kolo RGB
-Znak pravého rámu pro barevné kolo RGB
 Vyhledá soubor v zadaném adresáři nebo v aktuálním adresáři
 Převede konce řádků na formát pro aktuální platformu nebo na zadaný vlastní formát
 Celková velikost ve složce:
@@ -1221,14 +1085,6 @@ Pokud existuje nějaká aktualizace, jádro ji automaticky stáhne.
 Poloměr výbuchu ohňostroje
 Kolik bloků (až 10) je poloměr výbuchu ohňostroje při zapálení?
 Tento příkaz má níže uvedené přepínače, které mění způsob jeho fungování:
-Vytiskne čísla řádků, která následují za tištěným řádkem
-Zabraňuje tisku čísel řádků
-Označte, že odpověď může mít více než jeden znak
-Označte, že odpověď může mít pouze jeden znak
-Vytiskněte otázku a odpovědi na jeden řádek
-Vytiskněte otázku a odpovědi na dva řádky
-Vytiskněte si otázku a odpovědi moderním způsobem
-Vytiskněte otázku a odpovědi do tabulky
 Zobrazí podrobnosti o souboru v seznamu
 Potlačuje nepříjemné zprávy „povolení odepřeno“.
 Zobrazuje všechna časová pásma
@@ -1242,10 +1098,7 @@ Zobrazuje všechna dostupná města
 Rychlá komprese
 Žádná komprese
 Nevytvářejte základní adresář v archivu
-Hanebně se odpojí od serveru
 Označuje, že cílová cesta je absolutní
-Uloží soubor JSON a během procesu jej zkrášlí
-Uloží soubor JSON a během procesu jej minifikuje
 Vymaže všechny spuštěné události
 Povolit ladění událostí
 Umožňuje ladění systému událostí jádra
@@ -1273,9 +1126,6 @@ Stylová úvodní obrazovka
 Umožňuje stylovou úvodní obrazovku při spuštění. Všimněte si prosím, že deaktivuje argument prompt a otestuje shell před zavedením.
 Úvodní jméno
 Splash name z dostupných splashů implementovaných v jádře.
-Generováno výchozí MOTD.
-Vygenerovaný výchozí MAL.
-Systémový účet inicializován
 Uživatelé inicializováni
 Vítejte!
 Spouštění vzdáleného ladicího programu...
@@ -1295,7 +1145,6 @@ Zobrazit příkazy počítat s nápovědou
 Zobrazit příkazy shellu počítejte s nápovědou
 Ukažte příkazům modu počítat s nápovědou
 Zobrazit aliasy počítat s nápovědou
-Zobrazuje počet příkazů v seznamu příkazů, ovládaný třemi přepínači zobrazení počtu pro různé druhy příkazů.
 Provádí příkazy, jakmile jsou splněny výrazy UESH
 Podmínka nebyla ve výrazu nalezena.
 Podmínka {0} vyžaduje {1} argumentů. Mám {2}.
@@ -1319,7 +1168,6 @@ Povolí režim ladění
 Povolit černobílý režim
 Dělá diskotéku černobílou. Pokud by to bylo příliš rychlé, bude to opravdu bolet oči, takže se nedoporučuje, pokud zažíváte záchvat rychlých snímků.
 Načíst aktuální barvy
-Otevře dokumentaci mod API pro strukturu zdrojového kódu v jeho nejaktuálnější podobě
 Současná cena:
 Neplatný hexadecimální specifikátor barvy.
 Neplatný specifikátor barev RGB.
@@ -1345,13 +1193,6 @@ Byte smazán.
 Zadané počáteční číslo bajtu nesmí být větší než velikost souboru.
 Zadané koncové číslo bajtu nesmí být větší než velikost souboru.
 Smazané bajty.
-Vybere zdroj ze stávajícího seznamu zdrojů z online zdrojů
-Stahování seznamu zdrojů...
-Stažení seznamu zdrojů se nezdařilo.
-Vyberte svou zemi stisknutím šipky vlevo nebo šipky vpravo. Stiskněte ENTER pro potvrzení vašeho výběru.
-Tato země má {0} zdrojů zpráv.
-Napsáním čísla vyberte svůj oblíbený zpravodajský zdroj. Stiskněte ENTER pro potvrzení vašeho výběru.
-Vyberte zdroj pro svůj oblíbený zpravodajský zdroj. Stiskněte ENTER pro potvrzení vašeho výběru.
 Vezměte prosím na vědomí, že úpravy binárních souborů pomocí tohoto shellu jsou experimentální a mohou vést k poškození dat nebo ztrátě dat, pokud nejsou používány správně.
 NESPUŠTĚJTE SHELL, POKUD NEVÍTE, CO DĚLÁTE!
 Získá klíčové informace pro stisknutou klávesu. Užitečné pro ladění
@@ -1405,7 +1246,6 @@ Simulovat bez režimu APM
 Zda se má simulovat situace, kdy není k dispozici APM. Pokud je povoleno, informuje uživatele, že je nyní bezpečné vypnout počítač po vypnutí.
 Hustota závad
 Čím větší procento, tím hustší závada!
-Jazyk gangsta obsahuje silné výrazy, které vám mohou při čtení způsobit nepříjemné pocity. Jste si jisti, že chcete přesto nastavit jazyk?
 Anglický slovník
 Slovní informace pro
 API je licencováno pod
@@ -1417,8 +1257,6 @@ Příklad ve větě:
 Zdroje používané k definování
 Synonyma:
 Antonyma:
-Děkujeme, že jste nám nahlásili chybu! Postupujte podle pokynů na obrazovce.
-Náhled spořiče obrazovky
 Otestuje vaši konzolu na podporu PowerLine
 Ujistěte se, že používáte konzolové písmo podporující glyfy PowerLine, jinak se výstup nemusí vykreslit správně. Doporučujeme
 Otevře knihovnu přednastavení prostředí
@@ -1433,7 +1271,6 @@ Převodník jednotek
 Dostupné typy jednotek a jejich jednotky:
 Konec hry
 Neočekávaná chyba
-Příkazy zvýrazněné jinou barvou jsou jednotné příkazy a jsou dostupné v každém shellu.
 Kontrola aktualizací...
 Stahování verze
 Instalace verze
