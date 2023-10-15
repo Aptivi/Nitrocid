@@ -29,13 +29,21 @@ namespace Nitrocid.LocaleTools
         {
             // Check to see if we have the Nitrocid KS folder
             string ksJsonifyLocalesSource = "../../../../../public/Nitrocid.LocaleGen/Translations";
+            string ksJsonifyLocalesAddonSource = "../../../../../public/Nitrocid.LocaleGen/AddonTranslations";
+            List<string> translations = new();
             if (Directory.Exists(ksJsonifyLocalesSource))
             {
                 // Iterate through all the source files for Nitrocid KS
                 string[] files = Directory.GetFiles(ksJsonifyLocalesSource, "*.txt");
-                return files;
+                translations.AddRange(files);
             }
-            return Array.Empty<string>();
+            if (Directory.Exists(ksJsonifyLocalesAddonSource))
+            {
+                // Iterate through all the source files for Nitrocid KS addons
+                string[] files = Directory.GetFiles(ksJsonifyLocalesAddonSource, "*.txt");
+                translations.AddRange(files);
+            }
+            return translations.ToArray();
         }
 
         internal static Dictionary<string, List<string>> PopulateLanguages()
