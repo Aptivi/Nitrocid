@@ -22,6 +22,7 @@ using Shouldly;
 using System;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
+using KS.Kernel.Time.Calendars;
 
 namespace Nitrocid.Tests.Kernel.Time
 {
@@ -73,6 +74,29 @@ namespace Nitrocid.Tests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering kernel date with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelDateCalendar()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.RenderDate(calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with specified calendar and format type
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelDateCalendarType()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.RenderDate(calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
         /// Tests rendering kernel date (UTC)
         /// </summary>
         [Test]
@@ -112,6 +136,29 @@ namespace Nitrocid.Tests.Kernel.Time
             var TargetCult = new CultureInfo("es-ES");
             TimeDateRenderersUtc.RenderDateUtc(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
             TimeDateRenderersUtc.RenderDateUtc(TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with specified calendar (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelDateUtcCalendar()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderDateUtc(calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with specified calendar and format type (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelDateUtcCalendarType()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderDateUtc(calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -163,6 +210,31 @@ namespace Nitrocid.Tests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering custom date with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomDateCalendar()
+        {
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.RenderDate(TargetDate, calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom date with specified calendar and format type
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomDateCalendarType()
+        {
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.RenderDate(TargetDate, calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderDate(TargetDate, calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
         /// Tests rendering custom date (UTC)
         /// </summary>
         [Test]
@@ -211,6 +283,31 @@ namespace Nitrocid.Tests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering custom date with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomDateUtcCalendar()
+        {
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderDateUtc(TargetDate, calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom date with specified calendar and format type
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomDateUtcCalendarType()
+        {
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderDateUtc(TargetDate, calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderDateUtc(TargetDate, calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
         /// Tests rendering kernel time
         /// </summary>
         [Test]
@@ -253,6 +350,29 @@ namespace Nitrocid.Tests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering kernel time with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelTimeCalendar()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.RenderTime(calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel time with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelTimeCalendarType()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.RenderTime(calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
         /// Tests rendering kernel time (UTC)
         /// </summary>
         [Test]
@@ -292,6 +412,29 @@ namespace Nitrocid.Tests.Kernel.Time
             var TargetCult = new CultureInfo("es-ES");
             TimeDateRenderersUtc.RenderTimeUtc(TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
             TimeDateRenderersUtc.RenderTimeUtc(TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel time with specified calendar (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelTimeUtcCalendar()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderTimeUtc(calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel time with specified calendar (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelTimeUtcCalendarType()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderTimeUtc(calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -343,6 +486,31 @@ namespace Nitrocid.Tests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering custom time with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomTimeCalendar()
+        {
+            var TargetTime = new DateTime(2018, 2, 22, 5, 40, 37);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.RenderTime(TargetTime, calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom time with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomTimeCalendarType()
+        {
+            var TargetTime = new DateTime(2018, 2, 22, 5, 40, 37);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.RenderTime(TargetTime, calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.RenderTime(TargetTime, calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
         /// Tests rendering custom time (UTC)
         /// </summary>
         [Test]
@@ -388,6 +556,31 @@ namespace Nitrocid.Tests.Kernel.Time
             var TargetCult = new CultureInfo("es-ES");
             TimeDateRenderersUtc.RenderTimeUtc(TargetTime, TargetCult, FormatType.Long).ShouldNotBeNullOrEmpty();
             TimeDateRenderersUtc.RenderTimeUtc(TargetTime, TargetCult, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom time with specified calendar (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomTimeUtcCalendar()
+        {
+            var TargetTime = new DateTime(2018, 2, 22, 5, 40, 37);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom time with specified calendar (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomTimeUtcCalendarType()
+        {
+            var TargetTime = new DateTime(2018, 2, 22, 5, 40, 37);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderTimeUtc(TargetTime, calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
         }
 
         /// <summary>
@@ -460,6 +653,43 @@ namespace Nitrocid.Tests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering kernel date with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelCalendar()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.Render(calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with specified calendar and format
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelCalendarType()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.Render(calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with specified calendar and custom format
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelCalendarCustomFormat()
+        {
+            string formatted = "";
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            Should.NotThrow(() => formatted = TimeDateRenderers.Render(calendar, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
+        }
+
+        /// <summary>
         /// Tests rendering kernel date (UTC)
         /// </summary>
         [Test]
@@ -524,6 +754,43 @@ namespace Nitrocid.Tests.Kernel.Time
             string formatted = "";
             var TargetCult = new CultureInfo("es-ES");
             Should.NotThrow(() => formatted = TimeDateRenderersUtc.RenderUtc(TargetCult, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with specified calendar (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelUtcCalendar()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderUtc(calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with specified calendar and format (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelUtcCalendarType()
+        {
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderUtc(calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering kernel date with specified calendar and custom format (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderKernelUtcCalendarCustomFormat()
+        {
+            string formatted = "";
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            Should.NotThrow(() => formatted = TimeDateRenderersUtc.RenderUtc(calendar, "yyyy-MM-dd--hh-mm-ss"));
             formatted.ShouldNotBeNullOrEmpty();
             formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
         }
@@ -606,6 +873,46 @@ namespace Nitrocid.Tests.Kernel.Time
         }
 
         /// <summary>
+        /// Tests rendering custom date with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomCalendar()
+        {
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.Render(TargetDate, calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom date with specified calendar
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomCalendarType()
+        {
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderers.Render(TargetDate, calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderers.Render(TargetDate, calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom date with custom format
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomCalendarFormat()
+        {
+            string formatted = "";
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            Should.NotThrow(() => formatted = TimeDateRenderers.Render(TargetDate, calendar, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
+        }
+
+        /// <summary>
         /// Tests rendering custom date (UTC)
         /// </summary>
         [Test]
@@ -678,6 +985,46 @@ namespace Nitrocid.Tests.Kernel.Time
             var TargetDate = new DateTime(2018, 2, 22);
             var TargetCult = new CultureInfo("es-ES");
             Should.NotThrow(() => formatted = TimeDateRenderersUtc.RenderUtc(TargetDate, TargetCult, "yyyy-MM-dd--hh-mm-ss"));
+            formatted.ShouldNotBeNullOrEmpty();
+            formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
+        }
+
+        /// <summary>
+        /// Tests rendering custom date with specified calendar (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomUtcCalendar()
+        {
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderUtc(TargetDate, calendar).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom date with specified calendar (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomUtcCalendarType()
+        {
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            TimeDateRenderersUtc.RenderUtc(TargetDate, calendar, FormatType.Long).ShouldNotBeNullOrEmpty();
+            TimeDateRenderersUtc.RenderUtc(TargetDate, calendar, FormatType.Short).ShouldNotBeNullOrEmpty();
+        }
+
+        /// <summary>
+        /// Tests rendering custom date with custom format (UTC)
+        /// </summary>
+        [Test]
+        [Description("Action")]
+        public void TestRenderCustomUtcCalendarFormat()
+        {
+            string formatted = "";
+            var TargetDate = new DateTime(2018, 2, 22);
+            var calendar = CalendarTools.GetCalendar(CalendarTypes.Hijri);
+            Should.NotThrow(() => formatted = TimeDateRenderersUtc.RenderUtc(TargetDate, calendar, "yyyy-MM-dd--hh-mm-ss"));
             formatted.ShouldNotBeNullOrEmpty();
             formatted.ShouldMatch( /* lang=regex */ @"[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]--[0-9][0-9]-[0-9][0-9]-[0-9][0-9]");
         }

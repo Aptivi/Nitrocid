@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Time.Calendars;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -57,7 +58,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Culture isn't found.") + $" {culture}", true, KernelColorType.Error);
                 return 16;
             }
-            var cultureInstance = CalendarTools.GetCultureFromCalendar(calendarType);
+            var cultureInstance = CalendarTools.GetCalendar(calendarType);
 
             // Now, show the date and the time
             if (showDate)

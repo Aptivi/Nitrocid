@@ -19,6 +19,7 @@
 using System;
 using System.Globalization;
 using KS.Kernel.Configuration;
+using KS.Kernel.Time.Calendars;
 using KS.Languages;
 
 namespace KS.Kernel.Time.Renderers
@@ -70,6 +71,27 @@ namespace KS.Kernel.Time.Renderers
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
         /// <summary>
+        /// Renders the current time based on specified culture
+        /// </summary>
+        /// <param name="calendar">A base calendar</param>
+        /// <returns>A time</returns>
+        public static string RenderTimeUtc(BaseCalendar calendar) =>
+            KernelFlags.LongTimeDate
+            ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.LongTimePattern, calendar.Culture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
+
+        /// <summary>
+        /// Renders the current time based on specified culture
+        /// </summary>
+        /// <param name="calendar">A base calendar</param>
+        /// <param name="FormatType">Date/time format type</param>
+        /// <returns>A time</returns>
+        public static string RenderTimeUtc(BaseCalendar calendar, FormatType FormatType) =>
+            FormatType == FormatType.Long
+            ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.LongTimePattern, calendar.Culture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
+
+        /// <summary>
         /// Renders the time based on specified time using the kernel config (long or short) and current culture
         /// </summary>
         /// <param name="DT">Specified time</param>
@@ -114,6 +136,29 @@ namespace KS.Kernel.Time.Renderers
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
         /// <summary>
+        /// Renders the time based on specified date and culture using the kernel config (long or short)
+        /// </summary>
+        /// <param name="DT">Specified time</param>
+        /// <param name="calendar">A base calendar</param>
+        /// <returns>A time</returns>
+        public static string RenderTimeUtc(DateTime DT, BaseCalendar calendar) =>
+            KernelFlags.LongTimeDate
+            ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.LongTimePattern, calendar.Culture)
+            : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
+
+        /// <summary>
+        /// Renders the time based on specified date and culture using the kernel config (long or short)
+        /// </summary>
+        /// <param name="DT">Specified time</param>
+        /// <param name="calendar">A base calendar</param>
+        /// <param name="FormatType">Date/time format type</param>
+        /// <returns>A time</returns>
+        public static string RenderTimeUtc(DateTime DT, BaseCalendar calendar, FormatType FormatType) =>
+            FormatType == FormatType.Long
+            ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.LongTimePattern, calendar.Culture)
+            : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
+
+        /// <summary>
         /// Renders the current date based on kernel config (long or short) and current culture
         /// </summary>
         /// <returns>A long or short date</returns>
@@ -152,6 +197,27 @@ namespace KS.Kernel.Time.Renderers
             FormatType == FormatType.Long
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.LongDatePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
+
+        /// <summary>
+        /// Renders the current date based on specified culture
+        /// </summary>
+        /// <param name="calendar">A base calendar</param>
+        /// <returns>A date</returns>
+        public static string RenderDateUtc(BaseCalendar calendar) =>
+            KernelFlags.LongTimeDate
+            ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.LongDatePattern, calendar.Culture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture);
+
+        /// <summary>
+        /// Renders the current date based on specified culture
+        /// </summary>
+        /// <param name="calendar">A base calendar</param>
+        /// <param name="FormatType">Date/time format type</param>
+        /// <returns>A date</returns>
+        public static string RenderDateUtc(BaseCalendar calendar, FormatType FormatType) =>
+            FormatType == FormatType.Long
+            ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.LongDatePattern, calendar.Culture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture);
 
         /// <summary>
         /// Renders the date based on specified date using the kernel config (long or short) and current culture
@@ -198,6 +264,29 @@ namespace KS.Kernel.Time.Renderers
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
 
         /// <summary>
+        /// Renders the date based on specified date and culture using the kernel config (long or short)
+        /// </summary>
+        /// <param name="DT">Specified date</param>
+        /// <param name="calendar">A base calendar</param>
+        /// <returns>A date</returns>
+        public static string RenderDateUtc(DateTime DT, BaseCalendar calendar) =>
+            KernelFlags.LongTimeDate
+            ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.LongDatePattern, calendar.Culture)
+            : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture);
+
+        /// <summary>
+        /// Renders the date based on specified date and culture using the kernel config (long or short)
+        /// </summary>
+        /// <param name="DT">Specified date</param>
+        /// <param name="calendar">A base calendar</param>
+        /// <param name="FormatType">Date/time format type</param>
+        /// <returns>A date</returns>
+        public static string RenderDateUtc(DateTime DT, BaseCalendar calendar, FormatType FormatType) =>
+            FormatType == FormatType.Long
+            ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.LongDatePattern, calendar.Culture)
+            : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture);
+
+        /// <summary>
         /// Renders the current time and date based on kernel config (long or short) and current culture
         /// </summary>
         /// <returns>A long or short time and date</returns>
@@ -227,23 +316,44 @@ namespace KS.Kernel.Time.Renderers
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
         /// <summary>
-        /// Renders the current time based on specified custom format
+        /// Renders the current time and date based on specified culture
         /// </summary>
-        /// <param name="CustomFormat">A custom format for rendering the time</param>
-        /// <returns>A time</returns>
-        public static string RenderUtc(string CustomFormat) =>
-            TimeDateTools.KernelDateTimeUtc.ToString(CustomFormat, CultureManager.CurrentCult);
+        /// <param name="calendar">A base calendar</param>
+        /// <returns>A time and date</returns>
+        public static string RenderUtc(BaseCalendar calendar) =>
+            KernelFlags.LongTimeDate
+            ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.FullDateTimePattern, calendar.Culture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
 
         /// <summary>
         /// Renders the current time and date based on specified culture
         /// </summary>
-        /// <param name="Cult">A culture.</param>
+        /// <param name="Cult">A culture</param>
         /// <param name="FormatType">Date/time format type</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(CultureInfo Cult, FormatType FormatType) =>
             FormatType == FormatType.Long
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
+
+        /// <summary>
+        /// Renders the current time and date based on specified culture
+        /// </summary>
+        /// <param name="calendar">A base calendar</param>
+        /// <param name="FormatType">Date/time format type</param>
+        /// <returns>A time and date</returns>
+        public static string RenderUtc(BaseCalendar calendar, FormatType FormatType) =>
+            FormatType == FormatType.Long
+            ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.FullDateTimePattern, calendar.Culture)
+            : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
+
+        /// <summary>
+        /// Renders the current time based on specified custom format
+        /// </summary>
+        /// <param name="CustomFormat">A custom format for rendering the time</param>
+        /// <returns>A time</returns>
+        public static string RenderUtc(string CustomFormat) =>
+            TimeDateTools.KernelDateTimeUtc.ToString(CustomFormat, CultureManager.CurrentCult);
 
         /// <summary>
         /// Renders the current time based on specified culture and custom format
@@ -253,6 +363,15 @@ namespace KS.Kernel.Time.Renderers
         /// <returns>A time</returns>
         public static string RenderUtc(CultureInfo Cult, string CustomFormat) =>
             TimeDateTools.KernelDateTimeUtc.ToString(CustomFormat, Cult);
+
+        /// <summary>
+        /// Renders the current time based on specified culture and custom format
+        /// </summary>
+        /// <param name="calendar">A base calendar</param>
+        /// <param name="CustomFormat">A custom format for rendering the time</param>
+        /// <returns>A time</returns>
+        public static string RenderUtc(BaseCalendar calendar, string CustomFormat) =>
+            TimeDateTools.KernelDateTimeUtc.ToString(CustomFormat, calendar.Culture);
 
         /// <summary>
         /// Renders the time and date based on specified time using the kernel config (long or short) and current culture
@@ -287,15 +406,6 @@ namespace KS.Kernel.Time.Renderers
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
         /// <summary>
-        /// Renders the current time based on current culture using the custom format
-        /// </summary>
-        /// <param name="DT">Specified time and date</param>
-        /// <param name="CustomFormat">A custom format for rendering the time</param>
-        /// <returns>A time</returns>
-        public static string RenderUtc(DateTime DT, string CustomFormat) =>
-            DT.ToUniversalTime().ToString(CustomFormat, CultureManager.CurrentCult);
-
-        /// <summary>
         /// Renders the time and date based on specified date and culture using the kernel config (long or short)
         /// </summary>
         /// <param name="DT">Specified time and date</param>
@@ -308,6 +418,38 @@ namespace KS.Kernel.Time.Renderers
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
         /// <summary>
+        /// Renders the time and date based on specified date and culture using the kernel config (long or short)
+        /// </summary>
+        /// <param name="DT">Specified time and date</param>
+        /// <param name="calendar">A base calendar</param>
+        /// <returns>A time and date</returns>
+        public static string RenderUtc(DateTime DT, BaseCalendar calendar) =>
+            KernelFlags.LongTimeDate
+            ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.FullDateTimePattern, calendar.Culture)
+            : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture) + " - " + DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
+
+        /// <summary>
+        /// Renders the time and date based on specified date and culture using the kernel config (long or short)
+        /// </summary>
+        /// <param name="DT">Specified time and date</param>
+        /// <param name="calendar">A base calendar</param>
+        /// <param name="FormatType">Date/time format type</param>
+        /// <returns>A time and date</returns>
+        public static string RenderUtc(DateTime DT, BaseCalendar calendar, FormatType FormatType) =>
+            FormatType == FormatType.Long
+            ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.FullDateTimePattern, calendar.Culture)
+            : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture) + " - " + DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
+
+        /// <summary>
+        /// Renders the current time based on current culture using the custom format
+        /// </summary>
+        /// <param name="DT">Specified time and date</param>
+        /// <param name="CustomFormat">A custom format for rendering the time</param>
+        /// <returns>A time</returns>
+        public static string RenderUtc(DateTime DT, string CustomFormat) =>
+            DT.ToUniversalTime().ToString(CustomFormat, CultureManager.CurrentCult);
+
+        /// <summary>
         /// Renders the current time based on specified date and culture using the custom format
         /// </summary>
         /// <param name="DT">Specified time and date</param>
@@ -316,6 +458,16 @@ namespace KS.Kernel.Time.Renderers
         /// <returns>A time</returns>
         public static string RenderUtc(DateTime DT, CultureInfo Cult, string CustomFormat) =>
             DT.ToUniversalTime().ToString(CustomFormat, Cult);
+
+        /// <summary>
+        /// Renders the current time based on specified date and culture using the custom format
+        /// </summary>
+        /// <param name="DT">Specified time and date</param>
+        /// <param name="calendar">A base calendar</param>
+        /// <param name="CustomFormat">A custom format for rendering the time</param>
+        /// <returns>A time</returns>
+        public static string RenderUtc(DateTime DT, BaseCalendar calendar, string CustomFormat) =>
+            DT.ToUniversalTime().ToString(CustomFormat, calendar.Culture);
 
     }
 }
