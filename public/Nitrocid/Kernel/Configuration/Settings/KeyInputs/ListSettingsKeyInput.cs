@@ -19,7 +19,9 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Kernel.Configuration.Instances;
@@ -40,46 +42,66 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             ConsoleWrapper.Clear();
 
             // Make an introductory banner
-            string finalSection = Translate.DoTranslation(key.Name);
-            TextWriterColor.WriteKernelColor("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(key.Description), true, KernelColorType.Question);
+            string finalSection = "\n  * " + Translate.DoTranslation(key.Name) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(key.Description);
 
             // Write the prompt
-            var TargetList = (IEnumerable<object>)MethodManager.GetMethod(key.SelectionFunctionName).Invoke(key.SelectionFunctionType, null);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Current items:"), true, KernelColorType.ListTitle);
-            ListWriterColor.WriteList(TargetList);
-            TextWriterColor.Write();
-            TextWriterColor.WriteKernelColor(CharManager.NewLine + " q) " + Translate.DoTranslation("Save Changes...") + CharManager.NewLine, true, KernelColorType.Option);
-
-            // Prompt the user and parse the answer
-            TextWriterColor.WriteKernelColor("> ", false, KernelColorType.Input);
-            string AnswerString = "";
-            while (AnswerString != "q")
+            var TargetEnum = (IEnumerable<object>)MethodManager.GetMethod(key.SelectionFunctionName).Invoke(key.SelectionFunctionType, null);
+            var TargetList = TargetEnum.ToList();
+            bool promptBail = false;
+            while (!promptBail)
             {
-                AnswerString = Input.ReadLine();
-                if (AnswerString != "q")
-                {
-                    if (key.IsValuePath)
-                    {
-                        // Neutralize the path as appropriate
-                        string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : Paths.GetKernelPath(key.ValuePathType);
-                        AnswerString = Filesystem.NeutralizePath(AnswerString, NeutralizeRootPath);
-                    }
+                List<InputChoiceInfo> choices = new();
 
-                    // Check to see if we're removing an item
-                    if (!AnswerString.StartsWith("-"))
+                // Populate input choices
+                int targetNum = 1;
+                foreach (var target in TargetList)
+                {
+                    if (target is string targetStr)
+                        choices.Add(new InputChoiceInfo($"{targetNum}", targetStr));
+                    else
+                        choices.Add(new InputChoiceInfo($"{targetNum}", target.ToString()));
+                    targetNum++;
+                }
+                List<InputChoiceInfo> altChoices = new()
+                {
+                    new InputChoiceInfo($"{choices.Count + 1}", Translate.DoTranslation("Exit")),
+                };
+
+                // Wait for an answer and handle it
+                int selectionAnswer = SelectionStyle.PromptSelection(finalSection, choices, altChoices, true);
+                if (selectionAnswer == choices.Count + 1)
+                    promptBail = true;
+                else
+                {
+                    // Tell the user to choose between adding, removing, or exiting
+                    int selectedItemIdx = selectionAnswer - 1;
+                    var choice = choices[selectedItemIdx];
+                    string result = InfoBoxColor.WriteInfoBoxInput(
+                        Translate.DoTranslation("What do you want to do with this item?") + CharManager.NewLine +
+                        $"{choice.ChoiceName}: {choice.ChoiceTitle}" + CharManager.NewLine + CharManager.NewLine +
+                        $"  1) {Translate.DoTranslation("Keep this item")}" + CharManager.NewLine +
+                        $"  2) {Translate.DoTranslation("Remove this item")}" + CharManager.NewLine +
+                        $"  3) {Translate.DoTranslation("Add new item")}"
+                    );
+
+                    // Check the action number
+                    if (int.TryParse(result, out int selectedAction) && selectedAction >= 1 && selectedAction <= 3)
                     {
-                        // We're not removing an item!
-                        TargetList = TargetList.Append(AnswerString);
+                        // Depending on the action, select whether to add, remove, or keep
+                        if (selectedAction == 2)
+                        {
+                            // Removing item
+                            TargetList.RemoveAt(selectedItemIdx);
+                        }
+                        else if (selectedAction == 3)
+                        {
+                            // Adding new item
+                            string newItemValue = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a value for the new item"));
+                            TargetList.Add(newItemValue);
+                        }
                     }
                     else
-                    {
-                        // We're removing an item.
-                        var DeletedItems = Enumerable.Empty<object>();
-                        DeletedItems = DeletedItems.Append(AnswerString[1..]);
-                        TargetList = TargetList.Except(DeletedItems);
-                    }
-                    DebugWriter.WriteDebug(DebugLevel.I, "Added answer {0} to list.", AnswerString);
-                    TextWriterColor.WriteKernelColor("> ", false, KernelColorType.Input);
+                        InfoBoxColor.WriteInfoBox(Translate.DoTranslation("Invalid action selected."));
                 }
             }
             bail = true;
