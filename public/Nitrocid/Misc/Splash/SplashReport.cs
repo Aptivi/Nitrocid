@@ -23,6 +23,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Journaling;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
+using KS.Languages;
 using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
@@ -291,6 +292,19 @@ namespace KS.Misc.Splash
             }
             JournalManager.WriteJournal(Text, JournalStatus.Error, Vars);
         }
+
+        /// <summary>
+        /// Resets the splash progress report area with the generic loading text
+        /// </summary>
+        public static void ResetProgressReportArea() =>
+            ResetProgressReportArea(null);
+
+        /// <summary>
+        /// Resets the splash progress report area with the generic loading text
+        /// </summary>
+        /// <param name="splash">Splash screen instance</param>
+        public static void ResetProgressReportArea(ISplash splash = null) =>
+            ReportProgress(Translate.DoTranslation("Loading..."), 0, false, splash ?? SplashManager.CurrentSplash);
 
     }
 }
