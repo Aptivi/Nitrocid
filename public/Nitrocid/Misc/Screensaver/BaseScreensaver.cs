@@ -53,7 +53,7 @@ namespace KS.Misc.Screensaver
                 Translate.DoTranslation("Photosensitive seizure warning") + CharManager.NewLine + CharManager.NewLine +
                 Translate.DoTranslation("This screensaver may contain flashing images and fast-paced animations that may cause seizures for the photosensitive."),
                 false, ConsoleColors.White, ConsoleColors.Red);
-            Thread.Sleep(10000);
+            ThreadManager.SleepUntilInput(10000);
         }
 
         /// <summary>
