@@ -67,6 +67,7 @@ namespace Nitrocid.Tests.Kernel.Time
         [TestCase(CalendarTypes.Japanese, 26, 9, 20)]
         [TestCase(CalendarTypes.Persian, 1393, 6, 29)]
         [TestCase(CalendarTypes.SaudiHijri, 1435, 11, 25)]
+        [TestCase(CalendarTypes.Taiwanese, 103, 9, 20)]
         [TestCase(CalendarTypes.ThaiBuddhist, 2557, 9, 20)]
         [Description("Conversion")]
         public void GetDateFromCalendar(CalendarTypes calendarType, int year, int month, int day)

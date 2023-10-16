@@ -49,6 +49,10 @@ namespace KS.Kernel.Time.Calendars
         /// <summary>
         /// The Japanese calendar (ja-JP culture)
         /// </summary>
-        Japanese
+        Japanese,
+        /// <summary>
+        /// The Taiwanese calendar (zh-TW culture)
+        /// </summary>
+        Taiwanese,
     }
 }

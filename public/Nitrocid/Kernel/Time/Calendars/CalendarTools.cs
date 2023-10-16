@@ -34,6 +34,7 @@ namespace KS.Kernel.Time.Calendars
             { CalendarTypes.Japanese, new JapaneseCalendar() },
             { CalendarTypes.Persian, new PersianCalendar() },
             { CalendarTypes.SaudiHijri, new SaudiHijriCalendar() },
+            { CalendarTypes.Taiwanese, new TaiwaneseCalendar() },
             { CalendarTypes.ThaiBuddhist, new ThaiBuddhistCalendar() },
         };
 
