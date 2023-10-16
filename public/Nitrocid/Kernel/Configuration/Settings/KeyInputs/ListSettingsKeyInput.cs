@@ -100,9 +100,9 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                 FinalDelimiter = ListJoinString;
 
             // Now, set the value
-            if (value is not IEnumerable<object>)
+            if (value is not IEnumerable<object> valueList)
                 return;
-            string JoinedString = string.Join(FinalDelimiter, value);
+            string JoinedString = string.Join(FinalDelimiter, valueList);
             SettingsAppTools.SetPropertyValue(key.Variable, JoinedString, configType);
         }
 
