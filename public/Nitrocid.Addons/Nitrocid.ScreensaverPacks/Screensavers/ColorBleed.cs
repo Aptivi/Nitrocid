@@ -28,6 +28,7 @@ using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -376,7 +377,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Actually fade the line out
                 int PositionLeft = PositionTuple.Item1;
                 int PositionTop = PositionTuple.Item2;
-                bleedBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, PositionLeft + 1, PositionTop + 1)} ");
+                bleedBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(PositionLeft + 1, PositionTop + 1)} ");
             }
             TextWriterWhereColor.WriteWhereColorBack(bleedBuilder.ToString(), ColumnLine, 0, false, Color.Empty, CurrentFadeColor);
         }

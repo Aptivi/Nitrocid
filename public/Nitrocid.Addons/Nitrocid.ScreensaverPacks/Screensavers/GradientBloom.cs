@@ -24,6 +24,7 @@ using KS.Misc.Screensaver;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -155,7 +156,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     Color col = new((int)currentR, (int)currentG, (int)currentB);
                     buffered.Append(col.VTSequenceBackground);
                     for (int height = 0; height < ConsoleWrapper.WindowHeight; height++)
-                        buffered.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, currentStepGradient, height + 1)} ");
+                        buffered.Append($"{CsiSequences.GenerateCsiCursorPosition(currentStepGradient, height + 1)} ");
                 }
 
                 // Render

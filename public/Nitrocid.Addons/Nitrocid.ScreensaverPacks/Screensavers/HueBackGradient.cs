@@ -25,6 +25,7 @@ using System;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -136,7 +137,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Write the background gradient!
                 var RampCurrentColorInstance = new Color($"{Convert.ToInt32(RampCurrentColorRed)};{Convert.ToInt32(RampCurrentColorGreen)};{Convert.ToInt32(RampCurrentColorBlue)}");
                 for (int y = 0; y < ConsoleWrapper.WindowHeight; y++)
-                    gradientBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, x + 1, y + 1)}{RampCurrentColorInstance.VTSequenceBackgroundTrueColor} ");
+                    gradientBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(x + 1, y + 1)}{RampCurrentColorInstance.VTSequenceBackgroundTrueColor} ");
 
                 // Change the colors
                 RampCurrentColorRed -= RampColorRedSteps;
