@@ -148,7 +148,7 @@ namespace KS.Kernel.Debugging
                                 // Show stack information
                                 if (routinePath != lastRoutinePath)
                                 {
-                                    message.Append($"\n\n");
+                                    message.Append($"\n");
                                     message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} ");
                                     message.Append($"({routineName} - {fileName})\n");
                                     message.Append(new string('=', message.Length - 3));
