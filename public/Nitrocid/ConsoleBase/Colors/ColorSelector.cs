@@ -148,9 +148,10 @@ namespace KS.ConsoleBase.Colors
 
             // Then, render the hue, saturation, and lightness bars
             int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 2;
-            int hueBarY = 3;
-            int saturationBarY = 7;
-            int lightnessBarY = 11;
+            int hueBarY = 1;
+            int saturationBarY = 5;
+            int lightnessBarY = 9;
+            int rgbRampBarY = 13;
             int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
             int boxHeight = 1;
             var initialBackground = KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground;
@@ -182,8 +183,20 @@ namespace KS.ConsoleBase.Colors
                 ligRamp.Append($"{new Color($"hsl:{trueColorHue};100;{lig}").VTSequenceBackgroundTrueColor} {initialBackground}");
             }
 
-            // Render the RGB color values
-            RenderRgbColorValues(selectedColor);
+            // Buffer the RGB ramp
+            StringBuilder redRamp = new();
+            StringBuilder greenRamp = new();
+            StringBuilder blueRamp = new();
+            for (int i = 0; i < boxWidth; i++)
+            {
+                double width = (double)i / boxWidth;
+                int red = (int)(selectedColor.R * width);
+                int green = (int)(selectedColor.G * width);
+                int blue = (int)(selectedColor.B * width);
+                redRamp.Append($"{new Color($"{red};0;0").VTSequenceBackgroundTrueColor} {initialBackground}");
+                greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
+                blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
+            }
 
             // then, the boxes
             BoxFrameTextColor.WriteBoxFrame(Translate.DoTranslation("Hue") + $": {trueColorHue}/360", hueBarX, hueBarY, boxWidth, boxHeight);
@@ -192,6 +205,10 @@ namespace KS.ConsoleBase.Colors
             TextWriterWhereColor.WriteWhere(satRamp.ToString(), hueBarX + 1, saturationBarY + 1);
             BoxFrameTextColor.WriteBoxFrame(Translate.DoTranslation("Lightness") + $": {trueColorLightness}/100", hueBarX, lightnessBarY, boxWidth, boxHeight);
             TextWriterWhereColor.WriteWhere(ligRamp.ToString(), hueBarX + 1, lightnessBarY + 1);
+            BoxFrameTextColor.WriteBoxFrame(Translate.DoTranslation("Red, Green, and Blue") + $": {selectedColor.R};{selectedColor.G};{selectedColor.B}", hueBarX, rgbRampBarY, boxWidth, boxHeight + 2);
+            TextWriterWhereColor.WriteWhere(redRamp.ToString(), hueBarX + 1, rgbRampBarY + 1);
+            TextWriterWhereColor.WriteWhere(greenRamp.ToString(), hueBarX + 1, rgbRampBarY + 2);
+            TextWriterWhereColor.WriteWhere(blueRamp.ToString(), hueBarX + 1, rgbRampBarY + 3);
 
             // Finally, the keybindings
             int bindingsPos = ConsoleWrapper.WindowHeight - 2;
@@ -205,12 +222,26 @@ namespace KS.ConsoleBase.Colors
 
             // Then, render the color info
             int infoBoxX = (ConsoleWrapper.WindowWidth / 2) + 2;
-            int infoBoxY = 3;
+            int infoBoxY = 1;
             int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
             int boxHeight = 6;
+            int rgbRampBarY = 13;
+            var initialBackground = KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground;
 
-            // Render the RGB color values
-            RenderRgbColorValues(selectedColor);
+            // Buffer the RGB ramp
+            StringBuilder redRamp = new();
+            StringBuilder greenRamp = new();
+            StringBuilder blueRamp = new();
+            for (int i = 0; i < boxWidth; i++)
+            {
+                double width = (double)i / boxWidth;
+                int red = (int)(selectedColor.R * width);
+                int green = (int)(selectedColor.G * width);
+                int blue = (int)(selectedColor.B * width);
+                redRamp.Append($"{new Color($"{red};0;0").VTSequenceBackgroundTrueColor} {initialBackground}");
+                greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
+                blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
+            }
 
             // then, the boxes
             BoxFrameTextColor.WriteBoxFrame(Translate.DoTranslation("Info for") + $": {colorValue255}", infoBoxX, infoBoxY, boxWidth, boxHeight);
@@ -221,6 +252,10 @@ namespace KS.ConsoleBase.Colors
             TextWriterWhereColor.WriteWhere(Translate.DoTranslation("RGB sequence (real)") + $": {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4);
             TextWriterWhereColor.WriteWhere($"CMYK: cmyk:{selectedColor.CMYK.CMY.CWhole};{selectedColor.CMYK.CMY.MWhole};{selectedColor.CMYK.CMY.YWhole};{selectedColor.CMYK.KWhole}", infoBoxX + 1, infoBoxY + 5);
             TextWriterWhereColor.WriteWhere($"HSL: hsl:{selectedColor.HSL.HueWhole};{selectedColor.HSL.SaturationWhole};{selectedColor.HSL.LightnessWhole}", infoBoxX + 1, infoBoxY + 6);
+            BoxFrameTextColor.WriteBoxFrame(Translate.DoTranslation("Red, Green, and Blue") + $": {selectedColor.R};{selectedColor.G};{selectedColor.B}", infoBoxX, rgbRampBarY, boxWidth, 3);
+            TextWriterWhereColor.WriteWhere(redRamp.ToString(), infoBoxX + 1, rgbRampBarY + 1);
+            TextWriterWhereColor.WriteWhere(greenRamp.ToString(), infoBoxX + 1, rgbRampBarY + 2);
+            TextWriterWhereColor.WriteWhere(blueRamp.ToString(), infoBoxX + 1, rgbRampBarY + 3);
 
             // Finally, the keybindings
             int bindingsPos = ConsoleWrapper.WindowHeight - 2;
@@ -234,12 +269,26 @@ namespace KS.ConsoleBase.Colors
 
             // Then, render the color info
             int infoBoxX = (ConsoleWrapper.WindowWidth / 2) + 2;
-            int infoBoxY = 3;
+            int infoBoxY = 1;
             int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
             int boxHeight = 6;
+            int rgbRampBarY = 13;
+            var initialBackground = KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground;
 
-            // Render the RGB color values
-            RenderRgbColorValues(selectedColor);
+            // Buffer the RGB ramp
+            StringBuilder redRamp = new();
+            StringBuilder greenRamp = new();
+            StringBuilder blueRamp = new();
+            for (int i = 0; i < boxWidth; i++)
+            {
+                double width = (double)i / boxWidth;
+                int red = (int)(selectedColor.R * width);
+                int green = (int)(selectedColor.G * width);
+                int blue = (int)(selectedColor.B * width);
+                redRamp.Append($"{new Color($"{red};0;0").VTSequenceBackgroundTrueColor} {initialBackground}");
+                greenRamp.Append($"{new Color($"0;{green};0").VTSequenceBackgroundTrueColor} {initialBackground}");
+                blueRamp.Append($"{new Color($"0;0;{blue}").VTSequenceBackgroundTrueColor} {initialBackground}");
+            }
 
             // then, the boxes
             BoxFrameTextColor.WriteBoxFrame(Translate.DoTranslation("Info for") + $": {colorValue16}", infoBoxX, infoBoxY, boxWidth, boxHeight);
@@ -250,6 +299,10 @@ namespace KS.ConsoleBase.Colors
             TextWriterWhereColor.WriteWhere(Translate.DoTranslation("RGB sequence (real)") + $": {selectedColor.PlainSequenceTrueColor}", infoBoxX + 1, infoBoxY + 4);
             TextWriterWhereColor.WriteWhere($"CMYK: cmyk:{selectedColor.CMYK.CMY.CWhole};{selectedColor.CMYK.CMY.MWhole};{selectedColor.CMYK.CMY.YWhole};{selectedColor.CMYK.KWhole}", infoBoxX + 1, infoBoxY + 5);
             TextWriterWhereColor.WriteWhere($"HSL: hsl:{selectedColor.HSL.HueWhole};{selectedColor.HSL.SaturationWhole};{selectedColor.HSL.LightnessWhole}", infoBoxX + 1, infoBoxY + 6);
+            BoxFrameTextColor.WriteBoxFrame(Translate.DoTranslation("Red, Green, and Blue") + $": {selectedColor.R};{selectedColor.G};{selectedColor.B}", infoBoxX, rgbRampBarY, boxWidth, 3);
+            TextWriterWhereColor.WriteWhere(redRamp.ToString(), infoBoxX + 1, rgbRampBarY + 1);
+            TextWriterWhereColor.WriteWhere(greenRamp.ToString(), infoBoxX + 1, rgbRampBarY + 2);
+            TextWriterWhereColor.WriteWhere(blueRamp.ToString(), infoBoxX + 1, rgbRampBarY + 3);
 
             // Finally, the keybindings
             int bindingsPos = ConsoleWrapper.WindowHeight - 2;
@@ -475,29 +528,6 @@ namespace KS.ConsoleBase.Colors
 
             // then, the box
             BoxColor.WriteBox(boxX + 1, boxY, boxWidth, boxHeight, selectedColor);
-        }
-
-        private static void RenderRgbColorValues(Color selectedColor)
-        {
-            // Print the RGB color values
-            int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 2;
-            int hueBarEndX = ConsoleWrapper.WindowWidth - 2;
-            int rgbValuesY = 1;
-            int hueBarMiddleX = (ConsoleWrapper.WindowWidth / 2) + (hueBarEndX - hueBarX) / 2;
-            string rendered =
-                KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground +
-                new Color(255, 0, 0).VTSequenceForegroundTrueColor +
-                $"R: {selectedColor.R:000}" +
-                new Color(ConsoleColors.White).VTSequenceForegroundTrueColor +
-                " | " +
-                new Color(0, 255, 0).VTSequenceForegroundTrueColor +
-                $"G: {selectedColor.G:000}" +
-                new Color(ConsoleColors.White).VTSequenceForegroundTrueColor +
-                " | " +
-                new Color(0, 0, 255).VTSequenceForegroundTrueColor +
-                $"B: {selectedColor.B:000}";
-            hueBarMiddleX -= VtSequenceTools.FilterVTSequences(rendered).Length / 2 - 2;
-            TextWriterWhereColor.WriteWhere(rendered, hueBarMiddleX, rgbValuesY);
         }
 
         private static void UpdateColor(ref Color selectedColor, ColorType newType)
