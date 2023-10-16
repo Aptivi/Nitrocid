@@ -18,6 +18,8 @@
 
 using KS.Drivers;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,7 +33,8 @@ namespace KS.Misc.Text
     /// </summary>
     public static class TextTools
     {
-        private static readonly string regexMatchEnclosedStrings = /* lang=regex */ @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+";
+        private static readonly string regexMatchEnclosedStrings = /* lang=regex */
+            @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+";
 
         /// <summary>
         /// Gets the wrapped sentences for text wrapping for console
@@ -130,6 +133,9 @@ namespace KS.Misc.Text
         /// <param name="target">Target string</param>
         public static string[] SplitEncloseDoubleQuotes(this string target)
         {
+            if (target is null)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
+
             return DriverHandler.CurrentRegexpDriverLocal
                 .Matches(target, regexMatchEnclosedStrings)
                 .Select((m) => m.Value.ReleaseDoubleQuotes())
@@ -142,6 +148,9 @@ namespace KS.Misc.Text
         /// <param name="target">Target string</param>
         public static string[] SplitEncloseDoubleQuotesNoRelease(this string target)
         {
+            if (target is null)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
+
             return DriverHandler.CurrentRegexpDriverLocal
                 .Matches(target, regexMatchEnclosedStrings)
                 .Select((m) => m.Value)
@@ -155,6 +164,9 @@ namespace KS.Misc.Text
         /// <returns>A string that doesn't contain double quotation marks at the start and at the end of the string</returns>
         public static string ReleaseDoubleQuotes(this string target)
         {
+            if (target is null)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
+
             string ReleasedString = target;
             if (target.StartsWith("\"") && target.EndsWith("\"") && target != "\"" ||
                 target.StartsWith("'") && target.EndsWith("'") && target != "'" ||
@@ -173,6 +185,9 @@ namespace KS.Misc.Text
         /// <returns><see cref="EnclosedDoubleQuotesType"/> containing information about the current string enclosure</returns>
         public static EnclosedDoubleQuotesType GetEnclosedDoubleQuotesType(this string target)
         {
+            if (target is null)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
+
             var type = EnclosedDoubleQuotesType.None;
             if (target.StartsWith("\"") && target.EndsWith("\"") && target != "\"")
                 type = EnclosedDoubleQuotesType.DoubleQuotes;
@@ -192,7 +207,7 @@ namespace KS.Misc.Text
         public static string Truncate(this string target, int threshold)
         {
             if (target is null)
-                throw new ArgumentNullException(nameof(target));
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
 
             // Try to truncate string. If the string length is bigger than the threshold, it'll be truncated to the length of
             // the threshold, putting three dots next to it. We don't use ellipsis marks here because we're dealing with the
@@ -209,9 +224,15 @@ namespace KS.Misc.Text
         /// </summary>
         /// <param name="target">Target string</param>
         /// <returns>List of words that are separated by the new lines</returns>
-        public static string[] SplitNewLines(this string target) =>
-            target.Replace(Convert.ToChar(13).ToString(), "")
-               .Split(Convert.ToChar(10));
+        public static string[] SplitNewLines(this string target)
+        {
+            if (target is null)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
+
+            return target
+                .Replace(Convert.ToChar(13).ToString(), "")
+                .Split(Convert.ToChar(10));
+        }
 
         /// <summary>
         /// Checks to see if the string starts with any of the values
@@ -222,7 +243,8 @@ namespace KS.Misc.Text
         public static bool StartsWithAnyOf(this string target, string[] values)
         {
             if (target is null)
-                throw new ArgumentNullException(nameof(target));
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
+
             bool started = false;
             foreach (string value in values)
                 if (target.StartsWith(value))
@@ -239,7 +261,8 @@ namespace KS.Misc.Text
         public static bool ContainsAnyOf(this string source, string[] targets)
         {
             if (source is null)
-                throw new ArgumentNullException(nameof(source));
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The source may not be null"));
+
             foreach (string target in targets)
                 if (source.Contains(target))
                     return true;
@@ -257,11 +280,10 @@ namespace KS.Misc.Text
         public static string ReplaceAll(this string target, string[] toBeReplaced, string toReplace)
         {
             if (target is null)
-                throw new ArgumentNullException(nameof(target));
-            if (toBeReplaced is null)
-                throw new ArgumentNullException(nameof(toBeReplaced));
-            if (toBeReplaced.Length == 0)
-                throw new ArgumentNullException(nameof(toBeReplaced));
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
+            if (toBeReplaced is null || toBeReplaced.Length == 0)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("Array of to be replaced strings may not be null"));
+
             foreach (string ReplaceTarget in toBeReplaced)
                 target = target.Replace(ReplaceTarget, toReplace);
             return target;
@@ -279,17 +301,14 @@ namespace KS.Misc.Text
         public static string ReplaceAllRange(this string target, string[] toBeReplaced, string[] toReplace)
         {
             if (target is null)
-                throw new ArgumentNullException(nameof(target));
-            if (toBeReplaced is null)
-                throw new ArgumentNullException(nameof(toBeReplaced));
-            if (toBeReplaced.Length == 0)
-                throw new ArgumentNullException(nameof(toBeReplaced));
-            if (toReplace is null)
-                throw new ArgumentNullException(nameof(toReplace));
-            if (toReplace.Length == 0)
-                throw new ArgumentNullException(nameof(toReplace));
-            if (toBeReplaced.Length != toBeReplaced.Length)
-                throw new ArgumentException("Array length of which strings to be replaced doesn't equal the array length of which strings to replace.");
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
+            if (toBeReplaced is null || toBeReplaced.Length == 0)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("Array of to be replaced strings may not be null"));
+            if (toReplace is null || toReplace.Length == 0)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("Array of to be replacement strings may not be null"));
+            if (toBeReplaced.Length != toReplace.Length)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("Array length of which strings to be replaced doesn't equal the array length of which strings to replace."));
+
             for (int i = 0, loopTo = toBeReplaced.Length - 1; i <= loopTo; i++)
                 target = target.Replace(toBeReplaced[i], toReplace[i]);
             return target;
@@ -305,9 +324,10 @@ namespace KS.Misc.Text
         public static string ReplaceLastOccurrence(this string source, string searchText, string replace)
         {
             if (source is null)
-                throw new ArgumentNullException(nameof(source));
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The source may not be null"));
             if (searchText is null)
-                throw new ArgumentNullException(nameof(searchText));
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The search text may not be null"));
+
             int position = source.LastIndexOf(searchText);
             if (position == -1)
                 return source;
@@ -324,9 +344,10 @@ namespace KS.Misc.Text
         public static IEnumerable<int> AllIndexesOf(this string target, string value)
         {
             if (target is null)
-                throw new ArgumentNullException(nameof(target));
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target may not be null"));
             if (string.IsNullOrEmpty(value))
-                throw new ArgumentException("Empty string specified", nameof(value));
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("Empty string value specified"));
+
             int index = 0;
             while (true)
             {
@@ -346,6 +367,9 @@ namespace KS.Misc.Text
         /// <returns>A formatted string if successful, or the unformatted one if failed.</returns>
         public static string FormatString(string Format, params object[] Vars)
         {
+            if (Format is null)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target format may not be null"));
+
             string FormattedString = Format;
             try
             {
@@ -364,7 +388,12 @@ namespace KS.Misc.Text
         /// Is the string numeric?
         /// </summary>
         /// <param name="Expression">The expression</param>
-        public static bool IsStringNumeric(string Expression) =>
-            double.TryParse(Expression, out double _);
+        public static bool IsStringNumeric(string Expression)
+        {
+            if (Expression is null)
+                throw new KernelException(KernelExceptionType.Text, Translate.DoTranslation("The target expression may not be null"));
+
+            return double.TryParse(Expression, out double _);
+        }
     }
 }

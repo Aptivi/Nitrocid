@@ -135,6 +135,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.Encoding,                         Translate.DoTranslation("Encoding has failed. Check to make sure that your encoding driver works correctly and fix any problems if found, then try again.") },
                 { KernelExceptionType.PrivacyConsent,                   Translate.DoTranslation("Invalid privacy consent operation. Please make sure that the consent is correct and try again.") },
                 { KernelExceptionType.Splash,                           Translate.DoTranslation("Splash manager has failed to perform your requested operation. Please check the splash name and try again.") },
+                { KernelExceptionType.Text,                             Translate.DoTranslation("Text tools failed to process your request.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

@@ -442,6 +442,10 @@ namespace KS.Kernel.Exceptions
         /// <summary>
         /// Splash manager has failed to perform your requested operation. Please check the splash name and try again.
         /// </summary>
-        Splash
+        Splash,
+        /// <summary>
+        /// Text tools failed to process your request.
+        /// </summary>
+        Text,
     }
 }
