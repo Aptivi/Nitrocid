@@ -52,6 +52,7 @@ namespace KS.Kernel
                 // Kernel arguments
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
                 ArgumentHelpSystem.ShowArgsHelp();
+                ConsoleExtensions.ResetColors();
                 return;
             }
 

@@ -204,6 +204,15 @@ namespace KS.ConsoleBase
             ConsoleWrapper.Write(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiSoftTerminalReset));
         }
 
+        /// <summary>
+        /// Resets the console colors without clearing screen
+        /// </summary>
+        public static void ResetColors()
+        {
+            ConsoleWrapper.Write($"{CharManager.GetEsc()}[39m");
+            ConsoleWrapper.Write($"{CharManager.GetEsc()}[49m");
+        }
+
         #region Windows-specific
         #pragma warning disable CA1416
         private const string winKernel = "kernel32.dll";
