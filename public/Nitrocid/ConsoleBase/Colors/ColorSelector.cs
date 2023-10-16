@@ -102,6 +102,7 @@ namespace KS.ConsoleBase.Colors
                         DebugCheck.AssertFail("invalid color type in the color selector");
                         break;
                 }
+                UpdateColor(ref selectedColor, type);
 
                 // Now, the selector main loop
                 bool bail = false;
