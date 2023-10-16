@@ -32,7 +32,6 @@ namespace KS.Arguments.CommandLineArguments
 
             // Write headers for debug
             DebugWriter.WriteDebug(DebugLevel.I,
-                "-------------------------------------------------------------------\n" +
                 "Kernel initialized, version {0}.\n" +
                 "Kernel mod API version {1}.\n" +
                 "OS: {2}",

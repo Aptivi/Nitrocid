@@ -151,10 +151,10 @@ namespace KS.Kernel.Debugging
                                     message.Append($"\n");
                                     message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} ");
                                     message.Append($"({routineName} - {fileName})\n");
-                                    message.Append(new string('=', message.Length - 3));
+                                    message.Append(new string('-', message.Length - 2));
                                     message.Append($"\n\n");
                                 }
-                                message.Append($"[line: {lineNum:0000}] [{Level}] : {splitText}\n");
+                                message.Append($"[line: {lineNum,5}] [{Level}] : {splitText}\n");
                                 lastRoutinePath = routinePath;
                             }
                             else
