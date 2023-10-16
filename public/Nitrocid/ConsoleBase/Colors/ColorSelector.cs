@@ -22,6 +22,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Text;
 using System;
 using System.Text;
 using Terminaux.Colors;
@@ -80,63 +81,78 @@ namespace KS.ConsoleBase.Colors
             Color selectedColor = initialColor;
             ColorType type = initialColor.Type;
 
-            // Set initial colors
-            switch (type)
+            // Color selector entry
+            try
             {
-                case ColorType.TrueColor:
-                    trueColorHue = selectedColor.HSL.HueWhole;
-                    trueColorSaturation = selectedColor.HSL.SaturationWhole;
-                    trueColorLightness = selectedColor.HSL.LightnessWhole;
-                    break;
-                case ColorType._255Color:
-                    colorValue255 = selectedColor.ColorEnum255;
-                    break;
-                case ColorType._16Color:
-                    colorValue16 = selectedColor.ColorEnum16;
-                    break;
-                default:
-                    DebugCheck.AssertFail("invalid color type in the color selector");
-                    break;
-            }
-
-            // Now, the selector main loop
-            bool bail = false;
-            while (!bail)
-            {
-                // We need to refresh the screen if it's required
-                if (refresh)
-                {
-                    refresh = false;
-                    KernelColorTools.LoadBack();
-                }
-
-                // Now, render the selector and handle input
+                // Set initial colors
                 switch (type)
                 {
                     case ColorType.TrueColor:
-                        RenderTrueColorSelector(selectedColor);
-                        bail = HandleKeypressTrueColor(ref selectedColor, ref type);
+                        trueColorHue = selectedColor.HSL.HueWhole;
+                        trueColorSaturation = selectedColor.HSL.SaturationWhole;
+                        trueColorLightness = selectedColor.HSL.LightnessWhole;
                         break;
                     case ColorType._255Color:
-                        Render255ColorsSelector(selectedColor);
-                        bail = HandleKeypress255Colors(ref selectedColor, ref type);
+                        colorValue255 = selectedColor.ColorEnum255;
                         break;
                     case ColorType._16Color:
-                        Render16ColorsSelector(selectedColor);
-                        bail = HandleKeypress16Colors(ref selectedColor, ref type);
+                        colorValue16 = selectedColor.ColorEnum16;
                         break;
                     default:
                         DebugCheck.AssertFail("invalid color type in the color selector");
                         break;
                 }
-            }
 
-            // Return the selected color
-            refresh = true;
-            if (!save)
+                // Now, the selector main loop
+                bool bail = false;
+                while (!bail)
+                {
+                    // We need to refresh the screen if it's required
+                    if (refresh)
+                    {
+                        refresh = false;
+                        KernelColorTools.LoadBack();
+                    }
+
+                    // Now, render the selector and handle input
+                    switch (type)
+                    {
+                        case ColorType.TrueColor:
+                            RenderTrueColorSelector(selectedColor);
+                            bail = HandleKeypressTrueColor(ref selectedColor, ref type);
+                            break;
+                        case ColorType._255Color:
+                            Render255ColorsSelector(selectedColor);
+                            bail = HandleKeypress255Colors(ref selectedColor, ref type);
+                            break;
+                        case ColorType._16Color:
+                            Render16ColorsSelector(selectedColor);
+                            bail = HandleKeypress16Colors(ref selectedColor, ref type);
+                            break;
+                        default:
+                            DebugCheck.AssertFail("invalid color type in the color selector");
+                            break;
+                    }
+                }
+            }
+            catch (Exception ex)
             {
-                save = true;
-                selectedColor = initialColor;
+                DebugWriter.WriteDebug(DebugLevel.E, $"Color selector failed to do its job: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                InfoBoxColor.WriteInfoBox(
+                    Translate.DoTranslation("Color selector has failed") + $": {ex.Message}" + CharManager.NewLine + CharManager.NewLine +
+                    Translate.DoTranslation("Check your input and try again. If it still didn't work, contact us.")
+                );
+            }
+            finally
+            {
+                // Return the selected color
+                refresh = true;
+                if (!save)
+                {
+                    save = true;
+                    selectedColor = initialColor;
+                }
             }
             return selectedColor;
         }
