@@ -26,6 +26,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -86,26 +87,26 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 StringBuilder borderBuilder = new();
                 if (DrawBorder)
                 {
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + 1)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
                     borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
                     for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                     {
-                        borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + i + 2)}");
+                        borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
                         borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
                     }
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + MaximumHeight + 2)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + MaximumHeight + 2)}");
                     borderBuilder.Append(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar);
                 }
 
                 // Draw the progress bar
                 for (int i = ProgressFilled; i < MaximumHeight; i++)
                 {
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
                     borderBuilder.Append(" ");
                 }
                 for (int i = 0; i < ProgressFilled; i++)
                 {
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
                     borderBuilder.Append("*");
                 }
 
@@ -246,27 +247,27 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 if (DrawBorder)
                 {
                     borderBuilder.Append($"{KernelColorTools.GetColor(FrameColor).VTSequenceForeground}");
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + 1)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
                     borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
                     for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                     {
-                        borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + i + 2)}");
+                        borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
                         borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
                     }
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + MaximumHeight + 2)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + MaximumHeight + 2)}");
                     borderBuilder.Append(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar);
                 }
 
                 // Draw the progress bar
                 for (int i = ProgressFilled; i < MaximumHeight; i++)
                 {
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
                     borderBuilder.Append(" ");
                 }
                 borderBuilder.Append($"{KernelColorTools.GetColor(ProgressColor).VTSequenceBackground}");
                 for (int i = 0; i < ProgressFilled; i++)
                 {
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + MaximumHeight - i + 1)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
                     borderBuilder.Append(" ");
                 }
                 borderBuilder.Append($"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}");
@@ -375,27 +376,27 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 if (DrawBorder)
                 {
                     borderBuilder.Append($"{new Color(FrameColor).VTSequenceForeground}");
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + 1)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
                     borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
                     for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                     {
-                        borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + i + 2)}");
+                        borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
                         borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
                     }
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + MaximumHeight + 2)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + MaximumHeight + 2)}");
                     borderBuilder.Append(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar);
                 }
 
                 // Draw the progress bar
                 for (int i = ProgressFilled; i < MaximumHeight; i++)
                 {
-                     borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + MaximumHeight - i + 1)}");
+                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
                      borderBuilder.Append(" ");
                  }
                  borderBuilder.Append($"{new Color(ProgressColor).VTSequenceBackground}");
                  for (int i = 0; i < ProgressFilled; i++)
                  {
-                     borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + MaximumHeight - i + 1)}");
+                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
                      borderBuilder.Append(" ");
                  }
                  borderBuilder.Append($"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}");
@@ -504,27 +505,27 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 if (DrawBorder)
                 {
                     borderBuilder.Append($"{FrameColor.VTSequenceForeground}");
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + 1)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1)}");
                     borderBuilder.Append($"{ProgressTools.ProgressUpperLeftCornerChar}{ProgressTools.ProgressUpperFrameChar}{ProgressTools.ProgressUpperRightCornerChar}");
                     for (int i = 0; i < ConsoleWrapper.WindowHeight - FinalHeightOffset; i++)
                     {
-                        borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + i + 2)}");
+                        borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + i + 2)}");
                         borderBuilder.Append(ProgressTools.ProgressLeftFrameChar + " " + ProgressTools.ProgressRightFrameChar);
                     }
-                    borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + MaximumHeight + 2)}");
+                    borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + MaximumHeight + 2)}");
                     borderBuilder.Append(ProgressTools.ProgressLowerLeftCornerChar.ToString() + ProgressTools.ProgressLowerFrameChar + ProgressTools.ProgressLowerRightCornerChar);
                 }
 
                 // Draw the progress bar
                  for (int i = ProgressFilled; i < MaximumHeight; i++)
                  {
-                     borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + MaximumHeight - i + 1)}");
+                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
                      borderBuilder.Append(" ");
                  }
                  borderBuilder.Append($"{ProgressColor.VTSequenceBackground}");
                  for (int i = 0; i < ProgressFilled; i++)
                  {
-                     borderBuilder.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + MaximumHeight - i + 1)}");
+                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
                      borderBuilder.Append(" ");
                  }
                  borderBuilder.Append($"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}");

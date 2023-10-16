@@ -26,6 +26,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using System.Text;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -135,9 +136,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             // Fill the box with spaces inside it
             StringBuilder box = new();
-            box.Append($"{VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + 2)}");
+            box.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 2)}");
             for (int y = 1; y <= InteriorHeight; y++)
-                box.Append(new string(' ', InteriorWidth) + VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1, Top + y + 2));
+                box.Append(new string(' ', InteriorWidth) + CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + y + 2));
             return box.ToString();
         }
     }

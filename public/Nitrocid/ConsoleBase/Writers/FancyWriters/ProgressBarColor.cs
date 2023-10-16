@@ -26,6 +26,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -96,8 +97,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                     ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 StringBuilder progBuilder = new();
-                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
-                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + 2) + new string('*', times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string('*', times));
                 TextWriterColor.WritePlain(progBuilder.ToString());
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -295,9 +296,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 StringBuilder progBuilder = new();
-                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
                 progBuilder.Append(KernelColorTools.GetColor(ProgressColor).VTSequenceBackground);
-                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + 2) + new string(' ', times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(' ', times));
                 progBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
                 TextWriterColor.WritePlain(progBuilder.ToString());
             }
@@ -460,9 +461,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 StringBuilder progBuilder = new();
-                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
                 progBuilder.Append(new Color(ProgressColor).VTSequenceBackground);
-                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + 2) + new string(' ', times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(' ', times));
                 progBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
                 TextWriterColor.WritePlain(progBuilder.ToString());
             }
@@ -625,9 +626,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                             ConsoleExtensions.PercentRepeatTargeted((int)Math.Round(Progress), 100, FinalWidthOffset) :
                             ConsoleExtensions.PercentRepeat((int)Math.Round(Progress), 100, FinalWidthOffset);
                 StringBuilder progBuilder = new();
-                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1 + times + 1, Top + 2) + new string(' ', ConsoleWrapper.WindowWidth - FinalWidthOffset - times));
                 progBuilder.Append(ProgressColor.VTSequenceBackground);
-                progBuilder.Append(VtSequenceBuilderTools.BuildVtSequence(VtSequenceSpecificTypes.CsiCursorPosition, Left + 2, Top + 2) + new string(' ', times));
+                progBuilder.Append(CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + 2) + new string(' ', times));
                 progBuilder.Append(KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground);
                 TextWriterColor.WritePlain(progBuilder.ToString());
             }
