@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Time.Calendars;
 using KS.Kernel.Time.Converters;
 using NUnit.Framework;
 using Shouldly;
@@ -54,6 +55,28 @@ namespace Nitrocid.Tests.Kernel.Time
             var ExpectedDate = new DateTime(2014, 9, 20, 5, 4, 34, DateTimeKind.Utc);
             var ActualDate = TimeDateConverters.UnixToDate(TargetUnixTime);
             ActualDate.ShouldBe(ExpectedDate);
+        }
+
+        /// <summary>
+        /// Tests getting date from calendar
+        /// </summary>
+        [Test]
+        [TestCase(CalendarTypes.Chinese, 2014, 9, 20)]
+        [TestCase(CalendarTypes.Gregorian, 2014, 9, 20)]
+        [TestCase(CalendarTypes.Hijri, 1435, 11, 26)]
+        [TestCase(CalendarTypes.Japanese, 26, 9, 20)]
+        [TestCase(CalendarTypes.Persian, 1393, 6, 29)]
+        [TestCase(CalendarTypes.SaudiHijri, 1435, 11, 25)]
+        [TestCase(CalendarTypes.ThaiBuddhist, 2557, 9, 20)]
+        [Description("Conversion")]
+        public void GetDateFromCalendar(CalendarTypes calendarType, int year, int month, int day)
+        {
+            // Convert the target date (for example: September 20, 2014, 8:04:34 AM) to all calendar types
+            var date = new DateTime(2014, 9, 20, 5, 4, 34, DateTimeKind.Utc);
+            var (actualYear, actualMonth, actualDay, _) = TimeDateConverters.GetDateFromCalendar(date, calendarType);
+            actualDay.ShouldBe(day);
+            actualMonth.ShouldBe(month);
+            actualYear.ShouldBe(year);
         }
 
     }

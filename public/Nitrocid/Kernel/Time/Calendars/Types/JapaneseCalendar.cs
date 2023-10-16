@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Globalization;
+using DtfCalendar = System.Globalization.JapaneseCalendar;
 
 namespace KS.Kernel.Time.Calendars.Types
 {
@@ -30,7 +31,14 @@ namespace KS.Kernel.Time.Calendars.Types
             "Japanese";
 
         /// <inheritdoc/>
-        public override CultureInfo Culture =>
-            new("ja-JP");
+        public override CultureInfo Culture
+        {
+            get
+            {
+                var Cult = new CultureInfo("ja-JP");
+                Cult.DateTimeFormat.Calendar = new DtfCalendar();
+                return Cult;
+            }
+        }
     }
 }

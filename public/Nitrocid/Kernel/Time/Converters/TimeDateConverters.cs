@@ -16,7 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Time.Calendars;
 using System;
+using System.Globalization;
 
 namespace KS.Kernel.Time.Converters
 {
@@ -42,6 +44,30 @@ namespace KS.Kernel.Time.Converters
         /// </summary>
         public static DateTime UnixToDate(double UnixTime) =>
             UnixEpoch.AddSeconds(UnixTime);
+
+        /// <summary>
+        /// Gets a date from a specified calendar
+        /// </summary>
+        /// <param name="calendar">Calendar to use during conversion</param>
+        /// <returns>Resulting year, month, day, and a calendar information instance</returns>
+        public static (int year, int month, int day, Calendar calendarInfo) GetDateFromCalendar(CalendarTypes calendar) =>
+            GetDateFromCalendar(TimeDateTools.KernelDateTime, calendar);
+
+        /// <summary>
+        /// Gets a date from a specified calendar
+        /// </summary>
+        /// <param name="dt">Date and time</param>
+        /// <param name="calendar">Calendar to use during conversion</param>
+        /// <returns>Resulting year, month, day, and a calendar information instance</returns>
+        public static (int year, int month, int day, Calendar calendarInfo) GetDateFromCalendar(DateTime dt, CalendarTypes calendar)
+        {
+            var calendarInstance = CalendarTools.GetCalendar(calendar);
+            var calendarInfo = calendarInstance.Culture.DateTimeFormat.Calendar;
+            int year = calendarInfo.GetYear(dt);
+            int month = calendarInfo.GetMonth(dt);
+            int day = calendarInfo.GetDayOfMonth(dt);
+            return (year, month, day, calendarInfo);
+        }
 
     }
 }
