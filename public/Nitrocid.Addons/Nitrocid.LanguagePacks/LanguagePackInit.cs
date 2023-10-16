@@ -52,8 +52,9 @@ namespace Nitrocid.LanguagePacks
             string[] languageResNames = GetLanguageResourceNames();
             foreach (string key in languageResNames)
             {
-                bool result = LanguageManager.BaseLanguages.Remove(key);
-                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", key, result);
+                string keyNormalized = key.Replace("_", "-");
+                bool result = LanguageManager.BaseLanguages.Remove(keyNormalized);
+                DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}: {1}", keyNormalized, result);
             }
         }
 
