@@ -15,7 +15,7 @@
 #    along with this program.  If not, see <https://www.gnu.org/licenses/>.
 #
 
-OUTPUTS = public/Nitrocid/KSBuild public/Nitrocid/obj private/*/bin private/*/obj debian/kernel-simulator
+OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/kernel-simulator
 OUTPUT = public/Nitrocid/KSBuild/net6.0
 BINARIES = assets/ks-n assets/ks-jl
 MANUALS = assets/*.1
