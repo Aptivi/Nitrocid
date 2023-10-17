@@ -55,14 +55,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         /// Use PowerLine characters for the spaceship?
         /// </summary>
         public static bool ShipDuetUsePowerLine =>
-            Config.MainConfig.ShipDuetUsePowerLine;
+            AmusementsInit.AmusementsConfig.ShipDuetUsePowerLine;
         /// <summary>
         /// ShipDuet speed in milliseconds
         /// </summary>
         public static int ShipDuetSpeed
         {
-            get => Config.MainConfig.ShipDuetSpeed;
-            set => Config.MainConfig.ShipDuetSpeed = value < 0 ? 10 : value;
+            get => AmusementsInit.AmusementsConfig.ShipDuetSpeed;
+            set => AmusementsInit.AmusementsConfig.ShipDuetSpeed = value < 0 ? 10 : value;
         }
 
         /// <summary>

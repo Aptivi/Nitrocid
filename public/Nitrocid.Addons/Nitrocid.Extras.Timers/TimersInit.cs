@@ -16,11 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.Timers.Commands;
+using Nitrocid.Extras.Timers.Settings;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -49,11 +51,21 @@ namespace Nitrocid.Extras.Timers
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
-        void IAddon.StartAddon() =>
-            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+        internal static TimersConfig TimersConfig =>
+            (TimersConfig)Config.baseConfigurations[nameof(TimersConfig)];
 
-        void IAddon.StopAddon() =>
+        void IAddon.StartAddon()
+        {
+            var config = new TimersConfig();
+            ConfigTools.RegisterBaseSetting(config);
+            CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+        }
+
+        void IAddon.StopAddon()
+        {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            ConfigTools.UnregisterBaseSetting(nameof(TimersConfig));
+        }
 
         void IAddon.FinalizeAddon()
         { }

@@ -56,11 +56,11 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
         /// </summary>
         public static string LyricsPath
         {
-            get => Config.MainConfig.LyricsPath;
+            get => BassBoomInit.BassBoomConfig.LyricsPath;
             set
             {
-                Config.MainConfig.LyricsPath = Checking.FolderExists(value) ? Filesystem.NeutralizePath(value) : Config.MainConfig.LyricsPath;
-                lyricsLrc = Listing.GetFilesystemEntries(Config.MainConfig.LyricsPath, "*.lrc");
+                BassBoomInit.BassBoomConfig.LyricsPath = Checking.FolderExists(value) ? Filesystem.NeutralizePath(value) : BassBoomInit.BassBoomConfig.LyricsPath;
+                lyricsLrc = Listing.GetFilesystemEntries(BassBoomInit.BassBoomConfig.LyricsPath, "*.lrc");
             }
         }
 

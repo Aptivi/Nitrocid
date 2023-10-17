@@ -176,6 +176,9 @@ namespace Nitrocid.Extras.Amusements
         internal static AmusementsSplashesConfig SplashConfig =>
             (AmusementsSplashesConfig)Config.baseConfigurations[nameof(AmusementsSplashesConfig)];
 
+        internal static AmusementsConfig AmusementsConfig =>
+            (AmusementsConfig)Config.baseConfigurations[nameof(AmusementsConfig)];
+
         void IAddon.FinalizeAddon()
         { }
 
@@ -195,6 +198,10 @@ namespace Nitrocid.Extras.Amusements
             // Splashes...
             var splashesConfig = new AmusementsSplashesConfig();
             ConfigTools.RegisterBaseSetting(splashesConfig);
+
+            // Main...
+            var config = new AmusementsConfig();
+            ConfigTools.RegisterBaseSetting(config);
         }
 
         void IAddon.StopAddon()
@@ -207,6 +214,7 @@ namespace Nitrocid.Extras.Amusements
             SplashManager.InstalledSplashes.Remove("Quote");
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSplashesConfig));
+            ConfigTools.UnregisterBaseSetting(nameof(AmusementsConfig));
         }
     }
 }

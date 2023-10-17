@@ -51,14 +51,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         /// Use PowerLine characters for the spaceship?
         /// </summary>
         public static bool MeteorUsePowerLine =>
-            Config.MainConfig.MeteorUsePowerLine;
+            AmusementsInit.AmusementsConfig.MeteorUsePowerLine;
         /// <summary>
         /// Meteor speed in milliseconds
         /// </summary>
         public static int MeteorSpeed
         {
-            get => Config.MainConfig.MeteorSpeed;
-            set => Config.MainConfig.MeteorSpeed = value < 0 ? 10 : value;
+            get => AmusementsInit.AmusementsConfig.MeteorSpeed;
+            set => AmusementsInit.AmusementsConfig.MeteorSpeed = value < 0 ? 10 : value;
         }
 
         /// <summary>

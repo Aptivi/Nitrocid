@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Nitrocid.Extras.BassBoom.Resources {
+namespace Nitrocid.Extras.Calendar.Resources {
     using System;
     
     
@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.BassBoom.Resources {
         internal static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
-                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Nitrocid.Extras.BassBoom.Resources.AddonResources", typeof(AddonResources).Assembly);
+                    global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("Nitrocid.Extras.Calendar.Resources.AddonResources", typeof(AddonResources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
@@ -63,44 +63,20 @@ namespace Nitrocid.Extras.BassBoom.Resources {
         /// <summary>
         ///   Looks up a localized string similar to [
         ///    {
-        ///        &quot;Name&quot;: &quot;Lyrics&quot;,
-        ///        &quot;Desc&quot;: &quot;Settings for this screensaver are available here.&quot;,
+        ///        &quot;Name&quot;: &quot;Forecast&quot;,
+        ///        &quot;Desc&quot;: &quot;This section lets you configure how Forecast works.&quot;,
         ///        &quot;Keys&quot;: [
         ///            {
-        ///                &quot;Name&quot;: &quot;Delay in Milliseconds&quot;,
-        ///                &quot;Type&quot;: &quot;SInt&quot;,
-        ///                &quot;Variable&quot;: &quot;LyricsDelay&quot;,
-        ///                &quot;Description&quot;: &quot;How many milliseconds to wait before making the next write?&quot;
-        ///            }
-        ///        ]
-        ///    }
-        ///]
-        ///.
+        ///                &quot;Name&quot;: &quot;Preferred Unit for Temperature&quot;,
+        ///                &quot;Type&quot;: &quot;SIntSlider&quot;,
+        ///                &quot;Variable&quot;: &quot;PreferredUnit&quot;,
+        ///                &quot;Description&quot;: &quot;Select your preferred unit for temperature (this only applies to the \&quot;weather\&quot; command). 1 is Kelvin, 2 is Metric, and 3 is Imperial.&quot;,
+        ///                &quot;MinimumValue&quot;: 1,
+        ///                 [rest of string was truncated]&quot;;.
         /// </summary>
-        internal static string BassBoomSaverSettings {
+        internal static string CalendarSettings {
             get {
-                return ResourceManager.GetString("BassBoomSaverSettings", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to [
-        ///    {
-        ///        &quot;Name&quot;: &quot;Timers&quot;,
-        ///        &quot;Desc&quot;: &quot;This section lets you configure how the timers work.&quot;,
-        ///        &quot;Keys&quot;: [
-        ///            {
-        ///                &quot;Name&quot;: &quot;Enable Figlet for timer&quot;,
-        ///                &quot;Type&quot;: &quot;SBoolean&quot;,
-        ///                &quot;Variable&quot;: &quot;EnableFigletTimer&quot;,
-        ///                &quot;Description&quot;: &quot;If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.&quot;
-        ///            },
-        ///            {
-        ///                &quot;Nam [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string BassBoomSettings {
-            get {
-                return ResourceManager.GetString("BassBoomSettings", resourceCulture);
+                return ResourceManager.GetString("CalendarSettings", resourceCulture);
             }
         }
     }

@@ -39,14 +39,14 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         /// Current difficulty for the game
         /// </summary>
         public static SpeedPressDifficulty SpeedPressCurrentDifficulty =>
-            (SpeedPressDifficulty)Config.MainConfig.SpeedPressCurrentDifficulty;
+            (SpeedPressDifficulty)AmusementsInit.AmusementsConfig.SpeedPressCurrentDifficulty;
         /// <summary>
         /// Timeout in milliseconds before declaring that the time is up
         /// </summary>
         public static int SpeedPressTimeout
         {
-            get => Config.MainConfig.SpeedPressTimeout;
-            set => Config.MainConfig.SpeedPressTimeout = value < 0 ? 3000 : value;
+            get => AmusementsInit.AmusementsConfig.SpeedPressTimeout;
+            set => AmusementsInit.AmusementsConfig.SpeedPressTimeout = value < 0 ? 3000 : value;
         }
 
         /// <summary>

@@ -202,7 +202,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// Saves all the reminders from the reminder list to their individual files
         /// </summary>
         public static void SaveReminders() =>
-            SaveReminders(Paths.GetKernelPath(KernelPathType.Reminders), KernelFlags.SaveEventsRemindersDestructively);
+            SaveReminders(Paths.GetKernelPath(KernelPathType.Reminders), CalendarInit.CalendarConfig.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the reminders from the reminder list to their individual files

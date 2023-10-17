@@ -575,12 +575,6 @@
                 "Description": "Whether to show the MOTD and the headline at the bottom or at the top of the clock"
             },
             {
-                "Name": "Show kernel tips",
-                "Type": "SBoolean",
-                "Variable": "ShowTip",
-                "Description": "If enabled, the shell shows you the tips on every login."
-            },
-            {
                 "Name": "Login handler",
                 "Type": "SSelection",
                 "Variable": "CurrentLoginHandler",
@@ -1302,14 +1296,6 @@
                 "Description": "The time and date will be longer, showing full month names, etc."
             },
             {
-                "Name": "Preferred Unit for Temperature",
-                "Type": "SIntSlider",
-                "Variable": "PreferredUnit",
-                "Description": "Select your preferred unit for temperature (this only applies to the \"weather\" command). 1 is Kelvin, 2 is Metric, and 3 is Imperial.",
-                "MinimumValue": 1,
-                "MaximumValue": 3
-            },
-            {
                 "Name": "Enable text editor autosave",
                 "Type": "SBoolean",
                 "Variable": "TextEdit_AutoSaveFlag",
@@ -1356,24 +1342,6 @@
                 "IsPathCurrentPath": false,
                 "ValuePathType": "Mods",
                 "Description": "Write the filenames of the mods that will not run on startup. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing mod."
-            },
-            {
-                "Name": "Solver minimum number",
-                "Type": "SInt",
-                "Variable": "SolverMinimumNumber",
-                "Description": "What is the minimum number to choose?"
-            },
-            {
-                "Name": "Solver maximum number",
-                "Type": "SInt",
-                "Variable": "SolverMaximumNumber",
-                "Description": "What is the maximum number to choose?"
-            },
-            {
-                "Name": "Solver show input",
-                "Type": "SBoolean",
-                "Variable": "SolverShowInput",
-                "Description": "Whether to show what's written in the input prompt."
             },
             {
                 "Name": "Upper left corner character for notification border",
@@ -1424,20 +1392,6 @@
                 "Description": "A character that resembles the right frame. Be sure to only input one character."
             },
             {
-                "Name": "Default difficulty for SpeedPress",
-                "Type": "SIntSlider",
-                "Variable": "SpeedPressCurrentDifficulty",
-                "Description": "Select your preferred difficulty, where 0 is easy, 1 is medium, 2 is hard, 3 is very hard, and 4 is custom.",
-                "MinimumValue": 0,
-                "MaximumValue": 4
-            },
-            {
-                "Name": "Keypress timeout for SpeedPress",
-                "Type": "SInt",
-                "Variable": "SpeedPressTimeout",
-                "Description": "How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)"
-            },
-            {
                 "Name": "Show latest RSS headline on login",
                 "Type": "SBoolean",
                 "Variable": "ShowHeadlineOnLogin",
@@ -1450,12 +1404,6 @@
                 "Description": "RSS headline URL to be used when showing the latest headline. This is usually your favorite feed."
             },
             {
-                "Name": "Save all events and/or reminders destructively",
-                "Type": "SBoolean",
-                "Variable": "SaveEventsRemindersDestructively",
-                "Description": "If enabled, deletes all events and/or reminders before saving all of them using the calendar command."
-            },
-            {
                 "Name": "Default JSON formatting for JSON shell",
                 "Type": "SSelection",
                 "Variable": "JsonShell_Formatting",
@@ -1465,18 +1413,6 @@
                 "EnumerationAssembly": "Newtonsoft.Json",
                 "EnumerationZeroBased": true,
                 "Description": "Selects the default JSON formatting (beautified or minified) for the JSON shell to save."
-            },
-            {
-                "Name": "Enable Figlet for timer",
-                "Type": "SBoolean",
-                "Variable": "EnableFigletTimer",
-                "Description": "If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled."
-            },
-            {
-                "Name": "Figlet font for timer",
-                "Type": "SFiglet",
-                "Variable": "TimerFigletFont",
-                "Description": "Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information"
             },
             {
                 "Name": "Show the commands count on help",
@@ -1575,18 +1511,6 @@
                 "Description": "Whether the input history is enabled or not. If enabled, you can access recently typed commands using the up or down arrow keys."
             },
             {
-                "Name": "Use PowerLine for rendering spaceship",
-                "Type": "SBoolean",
-                "Variable": "MeteorUsePowerLine",
-                "Description": "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support."
-            },
-            {
-                "Name": "Meteor game speed",
-                "Type": "SInt",
-                "Variable": "MeteorSpeed",
-                "Description": "Specifies the game speed in milliseconds."
-            },
-            {
                 "Name": "Enable scroll bar in selection",
                 "Type": "SBoolean",
                 "Variable": "EnableScrollBarInSelection",
@@ -1657,24 +1581,6 @@
                 "Type": "SBoolean",
                 "Variable": "NotifyDisplayAsAsterisk",
                 "Description": "Shows all new notifications as asterisks. This option is ignored in notifications with progress bar."
-            },
-            {
-                "Name": "Use PowerLine for rendering spaceship in ShipDuet",
-                "Type": "SBoolean",
-                "Variable": "ShipDuetUsePowerLine",
-                "Description": "Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with ShipDuet, you need to install an appropriate font with PowerLine support."
-            },
-            {
-                "Name": "Game speed in ShipDuet",
-                "Type": "SInt",
-                "Variable": "ShipDuetSpeed",
-                "Description": "Specifies the game speed in milliseconds."
-            },
-            {
-                "Name": "Lyrics Path",
-                "Type": "SString",
-                "Variable": "LyricsPath",
-                "Description": "Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory."
             },
             {
                 "Name": "Show file size in the file manager",

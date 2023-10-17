@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.Forecast.Forecast
         /// Preferred unit for forecast measurements
         /// </summary>
         public static UnitMeasurement PreferredUnit =>
-            (UnitMeasurement)Config.MainConfig.PreferredUnit;
+            (UnitMeasurement)ForecastInit.ForecastConfig.PreferredUnit;
 
         /// <summary>
         /// Gets current weather info from OpenWeatherMap

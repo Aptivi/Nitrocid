@@ -17,7 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.MiscWriters;
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
+using Nitrocid.Extras.Tips.Settings;
 using System;
 
 namespace Nitrocid.Extras.Tips
@@ -28,13 +30,23 @@ namespace Nitrocid.Extras.Tips
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
+        internal static TipsConfig TipsConfig =>
+            (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];
+
         void IAddon.FinalizeAddon() =>
             WelcomeMessage.tips = TipsList.tips;
 
         void IAddon.StartAddon()
-        { }
+        {
+            var config = new TipsConfig();
+            ConfigTools.RegisterBaseSetting(config);
+            KernelFlags.ShowTip = TipsConfig.ShowTip;
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
             WelcomeMessage.tips = Array.Empty<string>();
+            ConfigTools.UnregisterBaseSetting(nameof(TipsConfig));
+        }
     }
 }

@@ -169,11 +169,6 @@ namespace KS.Kernel.Configuration
         public static bool ShowStackTraceOnKernelError =>
             Config.MainConfig.ShowStackTraceOnKernelError;
         /// <summary>
-        /// Deletes all events and/or reminders before saving them using saveall
-        /// </summary>
-        public static bool SaveEventsRemindersDestructively =>
-            Config.MainConfig.SaveEventsRemindersDestructively;
-        /// <summary>
         /// Automatically downloads the kernel updates and notifies the user
         /// </summary>
         public static bool AutoDownloadUpdate =>
@@ -193,11 +188,6 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static bool NotifyOnRemoteDebugConnectionError =>
             Config.MainConfig.NotifyOnRemoteDebugConnectionError;
-        /// <summary>
-        /// Enables the Figlet font for the timer
-        /// </summary>
-        public static bool EnableFigletTimer =>
-            Config.MainConfig.EnableFigletTimer;
         /// <summary>
         /// Shows how many commands available in help for shells
         /// </summary>
@@ -262,8 +252,7 @@ namespace KS.Kernel.Configuration
         /// <summary>
         /// Show tips on log-in
         /// </summary>
-        public static bool ShowTip =>
-            Config.MainConfig.ShowTip;
+        public static bool ShowTip { get; internal set; }
         /// <summary>
         /// Development notice acknowledged
         /// </summary>

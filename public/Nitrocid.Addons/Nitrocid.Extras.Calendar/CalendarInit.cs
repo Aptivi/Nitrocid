@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
@@ -25,6 +26,7 @@ using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Calendar.Calendar.Commands;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
+using Nitrocid.Extras.Calendar.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -131,6 +133,9 @@ namespace Nitrocid.Extras.Calendar
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
+        internal static CalendarConfig CalendarConfig =>
+            (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)];
+
         void IAddon.FinalizeAddon()
         {
             // Initialize events and reminders
@@ -143,14 +148,19 @@ namespace Nitrocid.Extras.Calendar
             DebugWriter.WriteDebug(DebugLevel.I, "Loaded events & reminders.");
         }
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
+            var config = new CalendarConfig();
+            ConfigTools.RegisterBaseSetting(config);
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+        }
 
         void IAddon.StopAddon()
         {
             ReminderManager.Reminders.Clear();
             EventManager.CalendarEvents.Clear();
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            ConfigTools.UnregisterBaseSetting(nameof(CalendarConfig));
         }
     }
 }

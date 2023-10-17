@@ -63,6 +63,9 @@ namespace Nitrocid.Extras.BassBoom
         internal static BassBoomSaversConfig SaversConfig =>
             (BassBoomSaversConfig)Config.baseConfigurations[nameof(BassBoomSaversConfig)];
 
+        internal static BassBoomConfig BassBoomConfig =>
+            (BassBoomConfig)Config.baseConfigurations[nameof(BassBoomConfig)];
+
         void IAddon.StartAddon()
         {
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
@@ -70,7 +73,9 @@ namespace Nitrocid.Extras.BassBoom
 
             // Then, initialize configuration in a way that no mod can play with them
             var saversConfig = new BassBoomSaversConfig();
+            var bbConfig = new BassBoomConfig();
             ConfigTools.RegisterBaseSetting(saversConfig);
+            ConfigTools.RegisterBaseSetting(bbConfig);
         }
 
         void IAddon.StopAddon()
@@ -78,6 +83,7 @@ namespace Nitrocid.Extras.BassBoom
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ScreensaverManager.Screensavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
+            ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
         }
 
         void IAddon.FinalizeAddon()

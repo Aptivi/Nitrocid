@@ -40,22 +40,22 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
         /// </summary>
         public static int SolverMinimumNumber
         {
-            get => Config.MainConfig.SolverMinimumNumber;
-            set => Config.MainConfig.SolverMinimumNumber = value < 0 ? 0 : value;
+            get => AmusementsInit.AmusementsConfig.SolverMinimumNumber;
+            set => AmusementsInit.AmusementsConfig.SolverMinimumNumber = value < 0 ? 0 : value;
         }
         /// <summary>
         /// Maximum number for solver
         /// </summary>
         public static int SolverMaximumNumber
         {
-            get => Config.MainConfig.SolverMaximumNumber;
-            set => Config.MainConfig.SolverMaximumNumber = value < 0 ? 1000 : value;
+            get => AmusementsInit.AmusementsConfig.SolverMaximumNumber;
+            set => AmusementsInit.AmusementsConfig.SolverMaximumNumber = value < 0 ? 1000 : value;
         }
         /// <summary>
         /// Whether to show the input or not
         /// </summary>
         public static bool SolverShowInput =>
-            Config.MainConfig.SolverShowInput;
+            AmusementsInit.AmusementsConfig.SolverShowInput;
 
         /// <summary>
         /// Initializes the game

@@ -187,7 +187,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// Saves all the events from the event list to their individual files
         /// </summary>
         public static void SaveEvents() =>
-            SaveEvents(Paths.GetKernelPath(KernelPathType.Events), KernelFlags.SaveEventsRemindersDestructively);
+            SaveEvents(Paths.GetKernelPath(KernelPathType.Events), CalendarInit.CalendarConfig.SaveEventsRemindersDestructively);
 
         /// <summary>
         /// Saves all the events from the event list to their individual files

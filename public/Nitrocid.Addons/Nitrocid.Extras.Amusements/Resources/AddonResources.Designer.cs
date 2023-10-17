@@ -64,8 +64,7 @@ namespace Nitrocid.Extras.Amusements.Resources {
         ///   Looks up a localized string similar to [
         ///    {
         ///        &quot;Name&quot;: &quot;Snaker&quot;,
-        ///        &quot;Desc&quot;: &quot;Settings for this screensaver are available here.&quot;,
-        ///        &quot;Path&quot;: &quot;Screensaver.Snaker&quot;,
+        ///        &quot;Desc&quot;: &quot;A snake game.&quot;,
         ///        &quot;Keys&quot;: [
         ///            {
         ///                &quot;Name&quot;: &quot;Activate true colors&quot;,
@@ -76,7 +75,8 @@ namespace Nitrocid.Extras.Amusements.Resources {
         ///            {
         ///                &quot;Name&quot;: &quot;Delay in Milliseconds&quot;,
         ///                &quot;Type&quot;: &quot;SInt&quot;,
-        ///                 [rest of string was truncated]&quot;;.
+        ///                &quot;Variable&quot;: &quot;SnakerDelay&quot;,
+        ///                &quot;Description&quot;: &quot;How many millis [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AmusementsSaverSettings {
             get {
@@ -87,9 +87,29 @@ namespace Nitrocid.Extras.Amusements.Resources {
         /// <summary>
         ///   Looks up a localized string similar to [
         ///    {
+        ///        &quot;Name&quot;: &quot;Timers&quot;,
+        ///        &quot;Desc&quot;: &quot;This section lets you configure how the timers work.&quot;,
+        ///        &quot;Keys&quot;: [
+        ///            {
+        ///                &quot;Name&quot;: &quot;Enable Figlet for timer&quot;,
+        ///                &quot;Type&quot;: &quot;SBoolean&quot;,
+        ///                &quot;Variable&quot;: &quot;EnableFigletTimer&quot;,
+        ///                &quot;Description&quot;: &quot;If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.&quot;
+        ///            },
+        ///            {
+        ///                &quot;Nam [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string AmusementsSettings {
+            get {
+                return ResourceManager.GetString("AmusementsSettings", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to [
+        ///    {
         ///        &quot;Name&quot;: &quot;Quote&quot;,
-        ///        &quot;Desc&quot;: &quot;Settings for this splash screen are available here.&quot;,
-        ///        &quot;Path&quot;: &quot;Splash.Quote&quot;,
+        ///        &quot;Desc&quot;: &quot;Shows you nice famous quotes.&quot;,
         ///        &quot;Keys&quot;: [
         ///            {
         ///                &quot;Name&quot;: &quot;Progress text location&quot;,
@@ -98,7 +118,8 @@ namespace Nitrocid.Extras.Amusements.Resources {
         ///                &quot;IsEnumeration&quot;: true,
         ///                &quot;EnumerationInternal&quot;: true,
         ///                &quot;Enumeration&quot;: &quot;Misc.Text.TextLocation&quot;,
-        ///                &quot;EnumerationZeroBased&quot;: true, [rest of string was truncated]&quot;;.
+        ///                &quot;EnumerationZeroBased&quot;: true,
+        ///                &quot;Description&quot;: &quot;Select your preferred [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string AmusementsSplashSettings {
             get {

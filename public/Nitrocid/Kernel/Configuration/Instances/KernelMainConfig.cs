@@ -711,10 +711,6 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool MotdHeadlineBottom { get; set; }
         /// <summary>
-        /// Show the tip after logging in.
-        /// </summary>
-        public bool ShowTip { get; set; } = true;
-        /// <summary>
         /// Current login handler.
         /// </summary>
         public string CurrentLoginHandler
@@ -1278,10 +1274,6 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool LongTimeDate { get; set; } = true;
         /// <summary>
-        /// Select your preferred unit for temperature (this only applies to the "weather" command)
-        /// </summary>
-        public int PreferredUnit { get; set; } = 2;
-        /// <summary>
         /// Turns on or off the text editor autosave feature
         /// </summary>
         public bool TextEdit_AutoSaveFlag { get; set; } = true;
@@ -1317,18 +1309,6 @@ namespace KS.Kernel.Configuration.Instances
         /// Write the filenames of the mods that will not run on startup. When you're finished, write "q". Write a minus sign next to the path to remove an existing mod.
         /// </summary>
         public string BlacklistedModsString { get; set; } = "";
-        /// <summary>
-        /// What is the minimum number to choose?
-        /// </summary>
-        public int SolverMinimumNumber { get; set; } = 0;
-        /// <summary>
-        /// What is the maximum number to choose?
-        /// </summary>
-        public int SolverMaximumNumber { get; set; } = 1000;
-        /// <summary>
-        /// Whether to show what's written in the input prompt.
-        /// </summary>
-        public bool SolverShowInput { get; set; }
         /// <summary>
         /// A character that resembles the upper left corner. Be sure to only input one character
         /// </summary>
@@ -1394,14 +1374,6 @@ namespace KS.Kernel.Configuration.Instances
             set => NotificationManager.notifyRightFrameChar = value;
         }
         /// <summary>
-        /// Select your preferred difficulty
-        /// </summary>
-        public int SpeedPressCurrentDifficulty { get; set; } = 1;
-        /// <summary>
-        /// How many milliseconds to wait for the keypress before the timeout? (In custom difficulty)
-        /// </summary>
-        public int SpeedPressTimeout { get; set; } = 3000;
-        /// <summary>
         /// Each login, it will show the latest RSS headline from the selected headline URL
         /// </summary>
         public bool ShowHeadlineOnLogin { get; set; }
@@ -1410,21 +1382,9 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public string RssHeadlineUrl { get; set; } = "https://www.techrepublic.com/rssfeeds/articles/";
         /// <summary>
-        /// If enabled, deletes all events and/or reminders before saving all of them using the calendar command
-        /// </summary>
-        public bool SaveEventsRemindersDestructively { get; set; }
-        /// <summary>
         /// Selects the default JSON formatting (beautified or minified) for the JSON shell to save
         /// </summary>
         public int JsonShell_Formatting { get; set; } = (int)Formatting.Indented;
-        /// <summary>
-        /// If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.
-        /// </summary>
-        public bool EnableFigletTimer { get; set; }
-        /// <summary>
-        /// Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information
-        /// </summary>
-        public string TimerFigletFont { get; set; } = "small";
         /// <summary>
         /// Shows the commands count in the command list, controlled by the three count show switches for different kinds of commands.
         /// </summary>
@@ -1536,14 +1496,6 @@ namespace KS.Kernel.Configuration.Instances
             }
         }
         /// <summary>
-        /// Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.
-        /// </summary>
-        public bool MeteorUsePowerLine { get; set; } = true;
-        /// <summary>
-        /// Specifies the game speed in milliseconds.
-        /// </summary>
-        public int MeteorSpeed { get; set; } = 10;
-        /// <summary>
         /// Enables the scroll bar in selection screens
         /// </summary>
         public bool EnableScrollBarInSelection { get; set; } = true;
@@ -1627,18 +1579,6 @@ namespace KS.Kernel.Configuration.Instances
         /// Shows all new notifications as asterisks. This option is ignored in notifications with progress bar.
         /// </summary>
         public bool NotifyDisplayAsAsterisk { get; set; }
-        /// <summary>
-        /// Whether to use PowerLine to render the spaceship or to use the standard greater than character. If you want to use PowerLine with Meteor, you need to install an appropriate font with PowerLine support.
-        /// </summary>
-        public bool ShipDuetUsePowerLine { get; set; } = true;
-        /// <summary>
-        /// Specifies the game speed in milliseconds.
-        /// </summary>
-        public int ShipDuetSpeed { get; set; } = 10;
-        /// <summary>
-        /// Path to the lyrics
-        /// </summary>
-        public string LyricsPath { get; set; } = Paths.HomePath + "/Music/";
         /// <summary>
         /// Whether to show the file size in the status
         /// </summary>

@@ -16,12 +16,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Forecast.Forecast.Commands;
+using Nitrocid.Extras.Forecast.Settings;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -53,13 +55,23 @@ namespace Nitrocid.Extras.Forecast
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
+        internal static ForecastConfig ForecastConfig =>
+            (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)];
+
         void IAddon.FinalizeAddon()
         { }
 
-        void IAddon.StartAddon() =>
+        void IAddon.StartAddon()
+        {
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            var config = new ForecastConfig();
+            ConfigTools.RegisterBaseSetting(config);
+        }
 
-        void IAddon.StopAddon() =>
+        void IAddon.StopAddon()
+        {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            ConfigTools.UnregisterBaseSetting(nameof(ForecastConfig));
+        }
     }
 }
