@@ -111,6 +111,7 @@ namespace KS.ConsoleBase.Colors
                     // We need to refresh the screen if it's required
                     if (refresh)
                     {
+                        ConsoleWrapper.CursorVisible = false;
                         refresh = false;
                         KernelColorTools.LoadBack();
                     }
