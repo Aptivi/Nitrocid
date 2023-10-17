@@ -60,7 +60,6 @@ namespace Nitrocid.Extras.GitShell
             ConfigTools.RegisterBaseSetting(config);
             ShellTypeManager.RegisterShell("GitShell", new GitShellInfo());
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
-            PromptPresetManager.CurrentPresets.Add("GitShell", "Default");
         }
 
         void IAddon.StartAddon()
@@ -70,7 +69,6 @@ namespace Nitrocid.Extras.GitShell
         {
             ShellTypeManager.UnregisterShell("GitShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
-            PromptPresetManager.CurrentPresets.Remove("GitShell");
             ConfigTools.UnregisterBaseSetting(nameof(GitConfig));
         }
     }
