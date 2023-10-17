@@ -46,6 +46,7 @@ namespace KS.Misc.Text.Probers.Placeholder
     /// </summary>
     public static class PlaceParse
     {
+        private readonly static Dictionary<string, Func<string>> customPlaceholders = new();
         private readonly static Dictionary<string, Func<string>> placeholders = new()
         {
             { "<user>",                             () => UserManagement.CurrentUser.Username },
@@ -107,7 +108,23 @@ namespace KS.Misc.Text.Probers.Placeholder
                     if (text.Contains(placeholder))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "{0} placeholder found.", placeholder);
-                        text = text.Replace(placeholder, placeholders[placeholder]());
+                        var action = GetPlaceholderAction(placeholder);
+                        string result = action();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Result: {0}", result);
+                        text = text.Replace(placeholder, result);
+                    }
+                }
+
+                // -> Custom placeholders
+                foreach (string placeholder in customPlaceholders.Keys)
+                {
+                    if (text.Contains(placeholder))
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "{0} custom placeholder found.", placeholder);
+                        var action = GetPlaceholderAction(placeholder);
+                        string result = action();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Result: {0}", result);
+                        text = text.Replace(placeholder, result);
                     }
                 }
 
@@ -169,5 +186,99 @@ namespace KS.Misc.Text.Probers.Placeholder
             return text;
         }
 
+        /// <summary>
+        /// Registers a custom placeholder
+        /// </summary>
+        /// <param name="placeholder">Custom placeholder to register</param>
+        /// <param name="placeholderAction">Action associated with the placeholder</param>
+        public static void RegisterCustomPlaceholder(string placeholder, Func<string> placeholderAction)
+        {
+            // Sanity checks
+            if (string.IsNullOrEmpty(placeholder))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+            if (placeholderAction is null)
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder action may not be null"));
+            if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+
+            // Try to register
+            if (!customPlaceholders.ContainsKey(placeholder))
+                customPlaceholders.Add(placeholder, placeholderAction);
+        }
+
+        /// <summary>
+        /// Unregisters a custom placeholder
+        /// </summary>
+        /// <param name="placeholder">Custom placeholder to unregister</param>
+        public static void UnregisterCustomPlaceholder(string placeholder)
+        {
+            // Sanity checks
+            if (string.IsNullOrEmpty(placeholder))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+            if (!IsPlaceholderRegistered(placeholder))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder action may not be null"));
+            if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+
+            // Try to unregister
+            customPlaceholders.Remove(placeholder);
+        }
+
+        /// <summary>
+        /// Checks to see whether the placeholder is built in
+        /// </summary>
+        /// <param name="placeholder">Placeholder to query</param>
+        /// <returns>True if the placeholder is in the list of built-in placeholders</returns>
+        /// <exception cref="KernelException"></exception>
+        public static bool IsPlaceholderBuiltin(string placeholder)
+        {
+            // Sanity checks
+            if (string.IsNullOrEmpty(placeholder))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+            if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+
+            // Check to see if we have this placeholder
+            return placeholders.ContainsKey(placeholder);
+        }
+
+        /// <summary>
+        /// Checks to see whether the placeholder is registered
+        /// </summary>
+        /// <param name="placeholder">Placeholder to query</param>
+        /// <returns>True if the placeholder is in the list of placeholders</returns>
+        /// <exception cref="KernelException"></exception>
+        public static bool IsPlaceholderRegistered(string placeholder)
+        {
+            // Sanity checks
+            if (string.IsNullOrEmpty(placeholder))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+            if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+
+            // Check to see if we have this placeholder
+            return IsPlaceholderBuiltin(placeholder) || customPlaceholders.ContainsKey(placeholder);
+        }
+
+        /// <summary>
+        /// Gets a placeholder action from the placeholder name
+        /// </summary>
+        /// <param name="placeholder">Placeholder to query</param>
+        public static Func<string> GetPlaceholderAction(string placeholder)
+        {
+            // Sanity checks
+            if (string.IsNullOrEmpty(placeholder))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+            if (!IsPlaceholderRegistered(placeholder))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder action may not be null"));
+            if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+
+            // Try to register
+            return
+                IsPlaceholderBuiltin(placeholder) ?
+                placeholders[placeholder] :
+                customPlaceholders[placeholder];
+        }
     }
 }

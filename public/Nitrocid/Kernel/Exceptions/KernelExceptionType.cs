@@ -447,5 +447,9 @@ namespace KS.Kernel.Exceptions
         /// Text tools failed to process your request.
         /// </summary>
         Text,
+        /// <summary>
+        /// Invalid placeholder action. Consult the kernel documentation for more information.
+        /// </summary>
+        InvalidPlaceholderAction,
     }
 }

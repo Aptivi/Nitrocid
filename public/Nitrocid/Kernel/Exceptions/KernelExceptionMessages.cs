@@ -136,6 +136,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.PrivacyConsent,                   Translate.DoTranslation("Invalid privacy consent operation. Please make sure that the consent is correct and try again.") },
                 { KernelExceptionType.Splash,                           Translate.DoTranslation("Splash manager has failed to perform your requested operation. Please check the splash name and try again.") },
                 { KernelExceptionType.Text,                             Translate.DoTranslation("Text tools failed to process your request.") },
+                { KernelExceptionType.InvalidPlaceholderAction,         Translate.DoTranslation("Invalid placeholder action. Consult the kernel documentation for more information.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)
