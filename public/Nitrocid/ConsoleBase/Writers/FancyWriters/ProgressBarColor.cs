@@ -25,7 +25,6 @@ using KS.Languages;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
 
 namespace KS.ConsoleBase.Writers.FancyWriters

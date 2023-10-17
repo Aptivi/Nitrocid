@@ -23,7 +23,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Text;
 
 namespace KS.Kernel.Configuration.Settings.KeyInputs
 {

@@ -22,7 +22,6 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Text;
-using System.Threading;
 using Terminaux.Colors;
 
 namespace KS.Misc.Screensaver

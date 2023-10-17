@@ -25,7 +25,6 @@ using KS.Files.Folders;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Text;
 using System;
 
 namespace KS.Kernel.Configuration.Settings.KeyInputs

@@ -27,7 +27,6 @@ using System;
 using System.Text;
 using Terminaux.Colors;
 using Terminaux.Colors.Wheel;
-using Terminaux.Sequences.Tools;
 
 namespace KS.ConsoleBase.Colors
 {

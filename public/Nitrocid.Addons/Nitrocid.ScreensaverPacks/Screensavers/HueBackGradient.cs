@@ -24,7 +24,6 @@ using KS.Misc.Screensaver;
 using System;
 using System.Text;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers

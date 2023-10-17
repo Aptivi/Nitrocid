@@ -27,7 +27,6 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using Terminaux.Colors;
-using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Builder.Types;
 
 namespace KS.Misc.Screensaver.Displays

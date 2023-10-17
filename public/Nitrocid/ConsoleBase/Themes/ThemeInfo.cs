@@ -23,7 +23,6 @@ using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Calendars;
-using KS.Kernel.Time.Renderers;
 using KS.Resources;
 using Newtonsoft.Json.Linq;
 using Terminaux.Colors;
