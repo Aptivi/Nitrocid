@@ -67,7 +67,7 @@ namespace KS.Shell.Shells.Sql
         public override BaseShell ShellBase => new SqlShell();
 
         public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.SqlShellPromptPreset];
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
 
     }
 }

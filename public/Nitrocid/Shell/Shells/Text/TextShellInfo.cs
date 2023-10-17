@@ -232,7 +232,7 @@ namespace KS.Shell.Shells.Text
         public override BaseShell ShellBase => new TextShell();
 
         public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.TextEditPromptPreset];
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
 
     }
 }

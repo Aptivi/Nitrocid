@@ -148,7 +148,7 @@ namespace KS.Shell.Shells.Hex
         public override BaseShell ShellBase => new HexShell();
 
         public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.HexEditPromptPreset];
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
 
     }
 }

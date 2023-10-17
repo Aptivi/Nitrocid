@@ -144,7 +144,7 @@ namespace KS.Shell.Shells.RSS
         public override BaseShell ShellBase => new RSSShell();
 
         public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.RSSPromptPreset];
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
 
         public override bool AcceptsNetworkConnection => true;
 

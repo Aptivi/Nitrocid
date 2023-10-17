@@ -234,7 +234,7 @@ namespace KS.Shell.Shells.Json
         public override BaseShell ShellBase => new JsonShell();
 
         public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.JSONShellPromptPreset];
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
 
     }
 }

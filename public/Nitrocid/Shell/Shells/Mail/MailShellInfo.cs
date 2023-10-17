@@ -196,7 +196,7 @@ namespace KS.Shell.Shells.Mail
         public override BaseShell ShellBase => new MailShell();
 
         public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.MailPromptPreset];
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
 
         public override bool AcceptsNetworkConnection => true;
 

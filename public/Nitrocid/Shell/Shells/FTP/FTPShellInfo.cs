@@ -277,7 +277,7 @@ namespace KS.Shell.Shells.FTP
         public override BaseShell ShellBase => new FTPShell();
 
         public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.FTPPromptPreset];
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
 
         public override bool AcceptsNetworkConnection => true;
 

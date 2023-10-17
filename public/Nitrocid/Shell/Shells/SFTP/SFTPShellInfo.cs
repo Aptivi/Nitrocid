@@ -170,7 +170,7 @@ namespace KS.Shell.Shells.SFTP
         public override BaseShell ShellBase => new SFTPShell();
 
         public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.SFTPPromptPreset];
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
 
         public override bool AcceptsNetworkConnection => true;
 

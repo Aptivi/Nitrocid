@@ -1589,6 +1589,6 @@ namespace KS.Shell.Shells.UESH
         public override BaseShell ShellBase => new UESHShell();
 
         public override PromptPresetBase CurrentPreset =>
-            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.PromptPreset];
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
     }
 }
