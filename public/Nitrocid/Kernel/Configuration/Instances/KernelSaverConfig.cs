@@ -39,5 +39,17 @@ namespace KS.Kernel.Configuration.Instances
         /// [Matrix] How many fade steps to do?
         /// </summary>
         public int MatrixMaxSteps { get; set; } = 25;
+        /// <summary>
+        /// [MatrixBleed] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int MatrixBleedDelay { get; set; } = 10;
+        /// <summary>
+        /// [MatrixBleed] How many fade steps to do?
+        /// </summary>
+        public int MatrixBleedMaxSteps { get; set; } = 25;
+        /// <summary>
+        /// [MatrixBleed] Chance to drop a new falling matrix
+        /// </summary>
+        public int MatrixBleedDropChance { get; set; } = 40;
     }
 }

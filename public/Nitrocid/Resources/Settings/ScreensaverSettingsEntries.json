@@ -16,5 +16,31 @@
                 "Description": "How many fade steps to do?"
             }
         ]
+    },
+    {
+        "Name": "MatrixBleed",
+        "Desc": "Falling line of matrix numbers.",
+        "Keys": [
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "MatrixBleedDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Max Fade Steps",
+                "Type": "SInt",
+                "Variable": "MatrixBleedMaxSteps",
+                "Description": "How many fade steps to do?"
+            },
+            {
+                "Name": "Drop chance",
+                "Type": "SIntSlider",
+                "Variable": "MatrixBleedDropChance",
+                "Description": "Chance to drop a new falling matrix",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            }
+        ]
     }
 ]

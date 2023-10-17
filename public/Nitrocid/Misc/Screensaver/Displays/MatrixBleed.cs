@@ -23,13 +23,14 @@ using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 
-namespace Nitrocid.ScreensaverPacks.Screensavers
+namespace KS.Misc.Screensaver.Displays
 {
     /// <summary>
     /// Settings for MatrixBleed
@@ -38,33 +39,19 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         /// <summary>
-        /// [MatrixBleed] Enable truecolor support. Has a higher priority than 255 color support.
-        /// </summary>
-        public static bool MatrixBleedTrueColor
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedTrueColor;
-            }
-            set
-            {
-                ScreensaverPackInit.SaversConfig.MatrixBleedTrueColor = value;
-            }
-        }
-        /// <summary>
         /// [MatrixBleed] How many milliseconds to wait before making the next write?
         /// </summary>
         public static int MatrixBleedDelay
         {
             get
             {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedDelay;
+                return Config.SaverConfig.MatrixBleedDelay;
             }
             set
             {
                 if (value <= 0)
                     value = 10;
-                ScreensaverPackInit.SaversConfig.MatrixBleedDelay = value;
+                Config.SaverConfig.MatrixBleedDelay = value;
             }
         }
         /// <summary>
@@ -74,13 +61,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedMaxSteps;
+                return Config.SaverConfig.MatrixBleedMaxSteps;
             }
             set
             {
                 if (value <= 0)
                     value = 25;
-                ScreensaverPackInit.SaversConfig.MatrixBleedMaxSteps = value;
+                Config.SaverConfig.MatrixBleedMaxSteps = value;
             }
         }
         /// <summary>
@@ -90,159 +77,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             get
             {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedDropChance;
+                return Config.SaverConfig.MatrixBleedDropChance;
             }
             set
             {
                 if (value <= 0)
                     value = 40;
-                ScreensaverPackInit.SaversConfig.MatrixBleedDropChance = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] The minimum red color level (true color)
-        /// </summary>
-        public static int MatrixBleedMinimumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedMinimumRedColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MatrixBleedMinimumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] The minimum green color level (true color)
-        /// </summary>
-        public static int MatrixBleedMinimumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedMinimumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MatrixBleedMinimumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] The minimum blue color level (true color)
-        /// </summary>
-        public static int MatrixBleedMinimumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedMinimumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= 0)
-                    value = 0;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MatrixBleedMinimumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int MatrixBleedMinimumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedMinimumColorLevel;
-            }
-            set
-            {
-                int FinalMinimumLevel = 255;
-                if (value <= 0)
-                    value = 0;
-                if (value > FinalMinimumLevel)
-                    value = FinalMinimumLevel;
-                ScreensaverPackInit.SaversConfig.MatrixBleedMinimumColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] The maximum red color level (true color)
-        /// </summary>
-        public static int MatrixBleedMaximumRedColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedMaximumRedColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.MatrixBleedMinimumRedColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.MatrixBleedMinimumRedColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MatrixBleedMaximumRedColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] The maximum green color level (true color)
-        /// </summary>
-        public static int MatrixBleedMaximumGreenColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedMaximumGreenColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.MatrixBleedMinimumGreenColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.MatrixBleedMinimumGreenColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MatrixBleedMaximumGreenColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] The maximum blue color level (true color)
-        /// </summary>
-        public static int MatrixBleedMaximumBlueColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedMaximumBlueColorLevel;
-            }
-            set
-            {
-                if (value <= ScreensaverPackInit.SaversConfig.MatrixBleedMinimumBlueColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.MatrixBleedMinimumBlueColorLevel;
-                if (value > 255)
-                    value = 255;
-                ScreensaverPackInit.SaversConfig.MatrixBleedMaximumBlueColorLevel = value;
-            }
-        }
-        /// <summary>
-        /// [MatrixBleed] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public static int MatrixBleedMaximumColorLevel
-        {
-            get
-            {
-                return ScreensaverPackInit.SaversConfig.MatrixBleedMaximumColorLevel;
-            }
-            set
-            {
-                int FinalMaximumLevel = 255;
-                if (value <= ScreensaverPackInit.SaversConfig.MatrixBleedMinimumColorLevel)
-                    value = ScreensaverPackInit.SaversConfig.MatrixBleedMinimumColorLevel;
-                if (value > FinalMaximumLevel)
-                    value = FinalMaximumLevel;
-                ScreensaverPackInit.SaversConfig.MatrixBleedMaximumColorLevel = value;
+                Config.SaverConfig.MatrixBleedDropChance = value;
             }
         }
 

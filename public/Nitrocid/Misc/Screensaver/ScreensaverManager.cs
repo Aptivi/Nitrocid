@@ -51,11 +51,12 @@ namespace KS.Misc.Screensaver
         internal static Dictionary<string, BaseScreensaver> Screensavers = new()
         {
             { "matrix", new MatrixDisplay() },
+            { "matrixbleed", new MatrixBleedDisplay() },
             { "plain", new PlainDisplay() }
         };
         internal static Dictionary<string, BaseScreensaver> CustomSavers = new();
         internal static int scrnTimeout = 300000;
-        internal static string defSaverName = "matrix";
+        internal static string defSaverName = "matrixbleed";
         internal static bool LockMode;
         internal static bool ShellSuppressLockMode;
         internal static bool inSaver;

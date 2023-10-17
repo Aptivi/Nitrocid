@@ -1158,7 +1158,7 @@
                 "IsEnumeration": false,
                 "SelectionFunctionName": "GetScreensaverNames",
                 "SelectionFunctionType": "Screensaver",
-                "SelectionFallback": [ "matrix" ],
+                "SelectionFallback": [ "matrixbleed" ],
                 "Description": "Which screensaver do you want to lock your screen with?"
             },
             {
