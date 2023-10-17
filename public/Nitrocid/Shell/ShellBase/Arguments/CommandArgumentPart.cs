@@ -43,6 +43,10 @@ namespace KS.Shell.ShellBase.Arguments
         /// Command argument expression
         /// </summary>
         public bool IsNumeric { get; private set; }
+        /// <summary>
+        /// User is required to provide this exact wording
+        /// </summary>
+        public string ExactWording { get; private set; }
 
         /// <summary>
         /// Installs a new instance of the command argument part class
@@ -51,7 +55,8 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="argumentRequired">Is this argument part required?</param>
         /// <param name="autoCompleter">Auto completion function</param>
         /// <param name="isNumeric">Specifies whether the argument accepts only numbers (and dots for float values)</param>
-        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null, bool isNumeric = false)
+        /// <param name="exactWording">User is required to provide this exact wording</param>
+        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null, bool isNumeric = false, string exactWording = null)
         {
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;
@@ -83,6 +88,7 @@ namespace KS.Shell.ShellBase.Arguments
                 }
             }
             AutoCompleter = autoCompleter;
+            ExactWording = exactWording;
         }
 
     }

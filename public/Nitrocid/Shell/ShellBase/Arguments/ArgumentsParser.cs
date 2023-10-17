@@ -79,7 +79,7 @@ namespace KS.Shell.ShellBase.Arguments
             if (CommandInfo != null)
                 return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
             else
-                return new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true);
+                return new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true);
         }
 
         /// <summary>
@@ -106,7 +106,7 @@ namespace KS.Shell.ShellBase.Arguments
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
             else
-                return new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true);
+                return new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true);
         }
 
         private static ProvidedArgumentsInfo ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo, ArgumentInfo ArgumentInfo)
@@ -115,6 +115,7 @@ namespace KS.Shell.ShellBase.Arguments
             bool RequiredSwitchesProvided = true;
             bool RequiredSwitchArgumentsProvided = true;
             bool numberProvided = true;
+            bool exactWordingProvided = true;
 
             // Check the command and argument info
             bool isCommand = CommandInfo is not null;
@@ -295,14 +296,27 @@ namespace KS.Shell.ShellBase.Arguments
                         numberProvided = false;
                 }
 
+                // Check to see if the caller has provided a wording other than the expected exact wording if found
+                for (int i = 0; i < argInfo.Arguments.Length && i < EnclosedArgs.Length; i++)
+                {
+                    // Get the argument and the part
+                    string arg = EnclosedArgs[i];
+                    var argPart = argInfo.Arguments[i];
+
+                    // Check to see if the argument expects a number and that the provided argument is numeric
+                    // or if the argument allows string values
+                    if (!string.IsNullOrEmpty(argPart.ExactWording) && arg != argPart.ExactWording)
+                        exactWordingProvided = false;
+                }
+
                 // If all is well, bail.
-                if (RequiredArgumentsProvided && RequiredSwitchesProvided && RequiredSwitchArgumentsProvided && unknownSwitchesList.Length == 0 && conflictingSwitchesList.Length == 0)
+                if (RequiredArgumentsProvided && RequiredSwitchesProvided && RequiredSwitchArgumentsProvided && unknownSwitchesList.Length == 0 && conflictingSwitchesList.Length == 0 && numberProvided && exactWordingProvided)
                     break;
             }
 
             // Install the parsed values to the new class instance
             DebugWriter.WriteDebug(DebugLevel.I, "Finalizing...");
-            return new ProvidedArgumentsInfo(words[0], strArgs, EnclosedArgs, strArgsOrig, EnclosedArgsOrig, EnclosedSwitches, RequiredArgumentsProvided, RequiredSwitchesProvided, RequiredSwitchArgumentsProvided, unknownSwitchesList, conflictingSwitchesList, noValueSwitchesList, numberProvided);
+            return new ProvidedArgumentsInfo(words[0], strArgs, EnclosedArgs, strArgsOrig, EnclosedArgsOrig, EnclosedSwitches, RequiredArgumentsProvided, RequiredSwitchesProvided, RequiredSwitchArgumentsProvided, unknownSwitchesList, conflictingSwitchesList, noValueSwitchesList, numberProvided, exactWordingProvided);
         }
     }
 }

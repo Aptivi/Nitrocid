@@ -63,12 +63,16 @@ namespace KS.Shell.ShellBase.Arguments
         /// Checks to see if the number is provided for numeric argument. Also true if the argument doesn't expect a number.
         /// </summary>
         public bool NumberProvided { get; private set; }
+        /// <summary>
+        /// Checks to see if the exact wording is provided. Also true if the argument doesn't expect exact wording.
+        /// </summary>
+        public bool ExactWordingProvided { get; private set; }
 
         internal string[] UnknownSwitchesList { get; private set; }
         internal string[] ConflictingSwitchesList { get; private set; }
         internal string[] NoValueSwitchesList { get; private set; }
 
-        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string argumentsTextOrig, string[] argumentsListOrig, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList, string[] noValueSwitchesList, bool numberProvided)
+        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string argumentsTextOrig, string[] argumentsListOrig, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList, string[] noValueSwitchesList, bool numberProvided, bool exactWordingProvided)
         {
             Command = command;
             ArgumentsText = argumentsText;
@@ -83,6 +87,7 @@ namespace KS.Shell.ShellBase.Arguments
             ConflictingSwitchesList = conflictingSwitchesList;
             NoValueSwitchesList = noValueSwitchesList;
             NumberProvided = numberProvided;
+            ExactWordingProvided = exactWordingProvided;
         }
 
     }

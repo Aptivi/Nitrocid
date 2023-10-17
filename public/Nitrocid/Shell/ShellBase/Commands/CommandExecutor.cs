@@ -101,6 +101,7 @@ namespace KS.Shell.ShellBase.Commands
                 bool RequiredSwitchesProvided = ArgumentInfo.RequiredSwitchesProvided;
                 bool RequiredSwitchArgumentsProvided = ArgumentInfo.RequiredSwitchArgumentsProvided;
                 bool numberProvided = ArgumentInfo.NumberProvided;
+                bool exactWordingProvided = ArgumentInfo.ExactWordingProvided;
                 bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
                 string variable = "";
 
@@ -200,6 +201,14 @@ namespace KS.Shell.ShellBase.Commands
                             argSatisfied = false;
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", Command);
                             TextWriterColor.WriteKernelColor(Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."), true, KernelColorType.Error);
+                        }
+                    
+                        // Check for invalid exact wording
+                        if (!exactWordingProvided)
+                        {
+                            argSatisfied = false;
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided non-exact wording for {0}", Command);
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("One or more of the arguments expect an exact wording, but you provided an invalid word."), true, KernelColorType.Error);
                         }
                     }
                 }
