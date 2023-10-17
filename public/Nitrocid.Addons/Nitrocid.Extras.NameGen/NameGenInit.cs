@@ -26,6 +26,7 @@ using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.NameGen.Commands;
 using Nitrocid.Extras.NameGen.Screensavers;
 using Nitrocid.Extras.NameGen.Settings;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -35,6 +36,46 @@ namespace Nitrocid.Extras.NameGen
     {
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
+            { "findfirstname",
+                new CommandInfo("findfirstname", ShellType.Shell, /* Localizable */ "First name finder",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "nameprefix"),
+                            new CommandArgumentPart(false, "namesuffix"),
+                        }, new[] {
+                            new SwitchInfo("t", /* Localizable */ "Generate nametags (umlauts are currently not supported)", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            }),
+                            new SwitchInfo("male", /* Localizable */ "Generate names using the male names list", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "female", "both" },
+                                AcceptsValues = false,
+                            }),
+                            new SwitchInfo("female", /* Localizable */ "Generate names using the female names list", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "male", "both" },
+                                AcceptsValues = false,
+                            }),
+                            new SwitchInfo("both", /* Localizable */ "Generate names using the unified names list", new SwitchOptions()
+                            {
+                                ConflictsWith = new[] { "female", "male" },
+                                AcceptsValues = false,
+                            }),
+                        }, true)
+                    }, new FindFirstNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+            { "findsurname",
+                new CommandInfo("findsurname", ShellType.Shell, /* Localizable */ "Surname finder",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "surnameprefix"),
+                            new CommandArgumentPart(false, "surnamesuffix"),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
             { "genname",
                 new CommandInfo("genname", ShellType.Shell, /* Localizable */ "Name and surname generator",
                     new[] {

@@ -25,7 +25,7 @@ using static Namer.NameGenerator;
 namespace Nitrocid.Extras.NameGen.Commands
 {
     /// <summary>
-    /// Name generator
+    /// First name generator
     /// </summary>
     /// <remarks>
     /// If you're stuck trying to make out your character names (male or female) in your story, or if you just like to generate names, you can use this command. Please note that it requires Internet access.
@@ -52,16 +52,13 @@ namespace Nitrocid.Extras.NameGen.Commands
     /// </item>
     /// </list>
     /// </remarks>
-    class GenNameCommand : BaseCommand, ICommand
+    class FindFirstNameCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            int NamesCount = 10;
             string NamePrefix = "";
             string NameSuffix = "";
-            string SurnamePrefix = "";
-            string SurnameSuffix = "";
             bool nametags = parameters.SwitchesList.Contains("-t");
             NameGenderType genderType = NameGenderType.Unified;
             if (parameters.SwitchesList.Contains("-male"))
@@ -70,19 +67,19 @@ namespace Nitrocid.Extras.NameGen.Commands
                 genderType = NameGenderType.Female;
             string[] NamesList;
             if (parameters.ArgumentsList.Length >= 1)
-                NamesCount = int.Parse(parameters.ArgumentsList[0]);
+                NamePrefix = parameters.ArgumentsList[0];
             if (parameters.ArgumentsList.Length >= 2)
-                NamePrefix = parameters.ArgumentsList[1];
-            if (parameters.ArgumentsList.Length >= 3)
-                NameSuffix = parameters.ArgumentsList[2];
-            if (parameters.ArgumentsList.Length >= 4)
-                SurnamePrefix = parameters.ArgumentsList[3];
-            if (parameters.ArgumentsList.Length >= 5)
-                SurnameSuffix = parameters.ArgumentsList[4];
+                NameSuffix = parameters.ArgumentsList[1];
 
             // Generate n names
+            // TODO: Namer needs GenerateFirstNames and FindFirstNames in order for this to be more accurate
             PopulateNames();
-            NamesList = GenerateNames(NamesCount, NamePrefix, NameSuffix, SurnamePrefix, SurnameSuffix, genderType);
+            NamesList = GenerateNames(10, NamePrefix, NameSuffix, "", "", genderType);
+            for (int i = 0; i < NamesList.Length; i++)
+            {
+                if (NamesList[i].Contains(' '))
+                    NamesList[i] = NamesList[i][..NamesList[i].IndexOf(' ')];
+            }
 
             // Check to see if we need to modify the list to have nametags
             if (nametags)

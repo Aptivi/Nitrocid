@@ -25,64 +25,35 @@ using static Namer.NameGenerator;
 namespace Nitrocid.Extras.NameGen.Commands
 {
     /// <summary>
-    /// Name generator
+    /// Surname generator
     /// </summary>
     /// <remarks>
     /// If you're stuck trying to make out your character names (male or female) in your story, or if you just like to generate names, you can use this command. Please note that it requires Internet access.
-    /// <list type="table">
-    /// <listheader>
-    /// <term>Switches</term>
-    /// <description>Description</description>
-    /// </listheader>
-    /// <item>
-    /// <term>-t</term>
-    /// <description>Generate nametags (umlauts are currently not supported)</description>
-    /// </item>
-    /// <item>
-    /// <term>-male</term>
-    /// <description>Generate names using the male names list</description>
-    /// </item>
-    /// <item>
-    /// <term>-female</term>
-    /// <description>Generate names using the female names list</description>
-    /// </item>
-    /// <item>
-    /// <term>-both</term>
-    /// <description>Generate names using both male and female names list</description>
-    /// </item>
-    /// </list>
     /// </remarks>
-    class GenNameCommand : BaseCommand, ICommand
+    class FindSurnameCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            int NamesCount = 10;
-            string NamePrefix = "";
-            string NameSuffix = "";
             string SurnamePrefix = "";
             string SurnameSuffix = "";
             bool nametags = parameters.SwitchesList.Contains("-t");
             NameGenderType genderType = NameGenderType.Unified;
-            if (parameters.SwitchesList.Contains("-male"))
-                genderType = NameGenderType.Male;
-            else if (parameters.SwitchesList.Contains("-female"))
-                genderType = NameGenderType.Female;
             string[] NamesList;
             if (parameters.ArgumentsList.Length >= 1)
-                NamesCount = int.Parse(parameters.ArgumentsList[0]);
+                SurnamePrefix = parameters.ArgumentsList[0];
             if (parameters.ArgumentsList.Length >= 2)
-                NamePrefix = parameters.ArgumentsList[1];
-            if (parameters.ArgumentsList.Length >= 3)
-                NameSuffix = parameters.ArgumentsList[2];
-            if (parameters.ArgumentsList.Length >= 4)
-                SurnamePrefix = parameters.ArgumentsList[3];
-            if (parameters.ArgumentsList.Length >= 5)
-                SurnameSuffix = parameters.ArgumentsList[4];
+                SurnameSuffix = parameters.ArgumentsList[1];
 
             // Generate n names
+            // TODO: Namer needs GenerateSurnames and FindSurnames in order for this to be more accurate
             PopulateNames();
-            NamesList = GenerateNames(NamesCount, NamePrefix, NameSuffix, SurnamePrefix, SurnameSuffix, genderType);
+            NamesList = GenerateNames(10, "", "", SurnamePrefix, SurnameSuffix, genderType);
+            for (int i = 0; i < NamesList.Length; i++)
+            {
+                if (NamesList[i].Contains(' '))
+                    NamesList[i] = NamesList[i][(NamesList[i].LastIndexOf(' ') + 1)..];
+            }
 
             // Check to see if we need to modify the list to have nametags
             if (nametags)
