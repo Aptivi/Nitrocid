@@ -80,5 +80,28 @@ namespace Nitrocid.Tests.Kernel.Time
             actualYear.ShouldBe(year);
         }
 
+        /// <summary>
+        /// Tests getting date from calendar without accessing the culture information
+        /// </summary>
+        [Test]
+        [TestCase(CalendarTypes.Chinese, 2014, 9, 20)]
+        [TestCase(CalendarTypes.Gregorian, 2014, 9, 20)]
+        [TestCase(CalendarTypes.Hijri, 1435, 11, 26)]
+        [TestCase(CalendarTypes.Japanese, 26, 9, 20)]
+        [TestCase(CalendarTypes.Persian, 1393, 6, 29)]
+        [TestCase(CalendarTypes.SaudiHijri, 1435, 11, 25)]
+        [TestCase(CalendarTypes.Taiwanese, 103, 9, 20)]
+        [TestCase(CalendarTypes.ThaiBuddhist, 2557, 9, 20)]
+        [Description("Conversion")]
+        public void GetDateFromCalendarNoCulture(CalendarTypes calendarType, int year, int month, int day)
+        {
+            // Convert the target date (for example: September 20, 2014, 8:04:34 AM) to all calendar types
+            var date = new DateTime(2014, 9, 20, 5, 4, 34, DateTimeKind.Utc);
+            var (actualYear, actualMonth, actualDay, _) = TimeDateConverters.GetDateFromCalendarNoCulture(date, calendarType);
+            actualDay.ShouldBe(day);
+            actualMonth.ShouldBe(month);
+            actualYear.ShouldBe(year);
+        }
+
     }
 }

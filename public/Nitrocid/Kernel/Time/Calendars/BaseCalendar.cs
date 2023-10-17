@@ -32,5 +32,9 @@ namespace KS.Kernel.Time.Calendars
         /// <inheritdoc/>
         public virtual CultureInfo Culture =>
             new("en-US");
+
+        /// <inheritdoc/>
+        public virtual Calendar Calendar =>
+            Culture.DateTimeFormat.Calendar;
     }
 }

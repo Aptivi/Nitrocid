@@ -69,5 +69,41 @@ namespace KS.Kernel.Time.Converters
             return (year, month, day, calendarInfo);
         }
 
+        /// <summary>
+        /// Gets a date from a specified calendar without accessing the culture information, depending on the implementation of the calendar
+        /// </summary>
+        /// <param name="calendar">Calendar to use during conversion</param>
+        /// <returns>Resulting year, month, day, and a calendar information instance</returns>
+        /// <remarks>
+        /// Nitrocid calendars and all calendars that don't override the base <see cref="ICalendar.Calendar"/> usually access the
+        /// culture information to get the calendar. You can override the <see cref="ICalendar.Calendar"/> property so that it
+        /// doesn't access the culture information to make this function behave differently from the <see cref="GetDateFromCalendar(CalendarTypes)"/>
+        /// and the <see cref="GetDateFromCalendar(DateTime, CalendarTypes)"/> functions that access the culture information.
+        /// </remarks>
+        public static (int year, int month, int day, Calendar calendarInfo) GetDateFromCalendarNoCulture(CalendarTypes calendar) =>
+            GetDateFromCalendarNoCulture(TimeDateTools.KernelDateTime, calendar);
+
+        /// <summary>
+        /// Gets a date from a specified calendar without accessing the culture information, depending on the implementation of the calendar
+        /// </summary>
+        /// <param name="dt">Date and time</param>
+        /// <param name="calendar">Calendar to use during conversion</param>
+        /// <returns>Resulting year, month, day, and a calendar information instance</returns>
+        /// <remarks>
+        /// Nitrocid calendars and all calendars that don't override the base <see cref="ICalendar.Calendar"/> usually access the
+        /// culture information to get the calendar. You can override the <see cref="ICalendar.Calendar"/> property so that it
+        /// doesn't access the culture information to make this function behave differently from the <see cref="GetDateFromCalendar(CalendarTypes)"/>
+        /// and the <see cref="GetDateFromCalendar(DateTime, CalendarTypes)"/> functions that access the culture information.
+        /// </remarks>
+        public static (int year, int month, int day, Calendar calendarInfo) GetDateFromCalendarNoCulture(DateTime dt, CalendarTypes calendar)
+        {
+            var calendarInstance = CalendarTools.GetCalendar(calendar);
+            var calendarInfo = calendarInstance.Calendar;
+            int year = calendarInfo.GetYear(dt);
+            int month = calendarInfo.GetMonth(dt);
+            int day = calendarInfo.GetDayOfMonth(dt);
+            return (year, month, day, calendarInfo);
+        }
+
     }
 }

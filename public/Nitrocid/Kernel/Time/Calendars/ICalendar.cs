@@ -33,5 +33,9 @@ namespace KS.Kernel.Time.Calendars
         /// Culture information class associated with the calendar
         /// </summary>
         CultureInfo Culture { get; }
+        /// <summary>
+        /// Calendar information class associated with this calendar instance (for direct access)
+        /// </summary>
+        Calendar Calendar { get; }
     }
 }
