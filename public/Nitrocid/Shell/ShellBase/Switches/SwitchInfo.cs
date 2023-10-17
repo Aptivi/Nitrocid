@@ -105,7 +105,7 @@ namespace KS.Shell.ShellBase.Switches
             this.HelpDefinition = HelpDefinition;
             Options = new SwitchOptions()
             {
-                AcceptsValues = AcceptsValues,
+                AcceptsValues = ArgumentsRequired ? true : AcceptsValues,
                 ArgumentsRequired = ArgumentsRequired,
                 ConflictsWith = conflictsWith,
                 IsRequired = IsRequired,
