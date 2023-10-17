@@ -73,7 +73,10 @@ namespace Nitrocid.Extras.Calendar
                             new CommandArgumentPart(true, "show"),
                             new CommandArgumentPart(false, "year", null, true),
                             new CommandArgumentPart(false, "month", null, true)
-                        }, Array.Empty<SwitchInfo>()),
+                        }, new[]
+                        {
+                            new SwitchInfo("calendar", /* Localizable */ "Calendar type to work on")
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "event"),

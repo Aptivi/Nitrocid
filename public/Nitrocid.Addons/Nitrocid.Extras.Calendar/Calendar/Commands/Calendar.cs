@@ -22,8 +22,10 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Time.Calendars;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 
@@ -50,6 +52,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                 case "show":
                     {
                         // User chose to show the calendar
+                        var calendar = CalendarTypes.Gregorian;
+                        if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-calendar"))
+                            calendar = Enum.Parse<CalendarTypes>(SwitchManager.GetSwitchValue(parameters.SwitchesList, "-calendar"));
                         if (ActionArguments.Length != 0)
                         {
                             try
@@ -60,18 +65,20 @@ namespace Nitrocid.Extras.Calendar.Calendar.Commands
                                     StringMonth = ActionArguments[1];
 
                                 // Show the calendar using the provided year and month
-                                CalendarPrint.PrintCalendar(Convert.ToInt32(StringYear), Convert.ToInt32(StringMonth));
+                                int yearInt = Convert.ToInt32(StringYear);
+                                int monthInt = Convert.ToInt32(StringMonth);
+                                CalendarPrint.PrintCalendar(yearInt, monthInt, calendar);
                             }
                             catch (Exception ex)
                             {
                                 DebugWriter.WriteDebugStackTrace(ex);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to add or remove an event.") + " {0}", true, KernelColorType.Error, ex.Message);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to show the calendar.") + " {0}", true, KernelColorType.Error, ex.Message);
                                 return ex.GetHashCode();
                             }
                         }
                         else
                         {
-                            CalendarPrint.PrintCalendar();
+                            CalendarPrint.PrintCalendar(calendar);
                         }
 
                         return 0;
