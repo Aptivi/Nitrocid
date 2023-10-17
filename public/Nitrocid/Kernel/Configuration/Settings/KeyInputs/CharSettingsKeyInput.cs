@@ -35,8 +35,10 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             ConsoleWrapper.Clear();
 
             // Make an introductory banner
-            string finalSection = Translate.DoTranslation(key.Name);
-            TextWriterColor.WriteKernelColor("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(key.Description), true, KernelColorType.Question);
+            string keyName = Translate.DoTranslation(key.Name);
+            string keyDesc = Translate.DoTranslation(key.Description);
+            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
+            TextWriterColor.WriteKernelColor(finalSection + "\n", true, KernelColorType.Question);
 
             // Write the prompt
             TextWriterColor.WriteKernelColor("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);

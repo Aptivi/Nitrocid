@@ -325,7 +325,7 @@ namespace KS.Kernel.Configuration.Settings
             }
         }
 
-        private static string RenderHeader(string title, string description, string notes = "")
+        internal static string RenderHeader(string title, string description, string notes = "")
         {
             string classicTitle = "- " + title + " ";
             if (Config.MainConfig.ClassicSettingsHeaderStyle)

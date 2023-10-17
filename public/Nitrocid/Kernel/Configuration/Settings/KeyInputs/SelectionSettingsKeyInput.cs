@@ -73,8 +73,10 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             }
 
             // Prompt user and check for input
-            string finalSection = Translate.DoTranslation(key.Name);
-            int Answer = SelectionStyle.PromptSelection("\n  * " + finalSection + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(key.Description),
+            string keyName = Translate.DoTranslation(key.Name);
+            string keyDesc = Translate.DoTranslation(key.Description);
+            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
+            int Answer = SelectionStyle.PromptSelection(finalSection,
                 string.Join("/", itemNums), items.ToArray(),
                 string.Join("/", altSectionNums), altSections.ToArray());
             if (Answer != -1)

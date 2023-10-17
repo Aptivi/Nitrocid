@@ -42,7 +42,9 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             ConsoleWrapper.Clear();
 
             // Make an introductory banner
-            string finalSection = "\n  * " + Translate.DoTranslation(key.Name) + CharManager.NewLine + CharManager.NewLine + Translate.DoTranslation(key.Description);
+            string keyName = Translate.DoTranslation(key.Name);
+            string keyDesc = Translate.DoTranslation(key.Description);
+            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
 
             // Write the prompt
             var TargetEnum = (IEnumerable<object>)MethodManager.GetMethod(key.SelectionFunctionName).Invoke(key.SelectionFunctionType, null);

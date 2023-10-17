@@ -36,6 +36,12 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             int CurrentValue = Convert.ToInt32(KeyDefaultValue);
             ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear();
+
+            // Make an introductory banner
+            string keyName = Translate.DoTranslation(key.Name);
+            string keyDesc = Translate.DoTranslation(key.Description);
+            string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
+            TextWriterColor.WriteKernelColor(finalSection, true, KernelColorType.Question);
             while (PressedKey != ConsoleKey.Enter)
             {
                 // Draw the progress bar
