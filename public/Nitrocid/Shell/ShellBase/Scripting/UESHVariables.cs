@@ -85,7 +85,7 @@ namespace KS.Shell.ShellBase.Scripting
         /// <returns>A command line in script that has a value of $variable</returns>
         public static string GetVariableCommand(string var, string cmd)
         {
-            var CommandArgumentsInfo = ArgumentsParser.ParseShellCommandArguments(cmd, ShellType.Shell);
+            var CommandArgumentsInfo = ArgumentsParser.ParseShellCommandArguments(cmd, ShellType.Shell).total[0];
             string NewCommand = $"{CommandArgumentsInfo.Command} ";
             if (!CommandManager.IsCommandFound(CommandArgumentsInfo.Command) ||
                 !ShellManager.GetShellInfo(ShellType.Shell).Commands[CommandArgumentsInfo.Command].CommandArgumentInfo.Any((cai) => cai.AcceptsSet))

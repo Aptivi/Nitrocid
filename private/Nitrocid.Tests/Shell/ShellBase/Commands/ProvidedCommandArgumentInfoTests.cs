@@ -45,7 +45,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgNoArg(ShellType type)
         {
             // Create instance
-            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help", type).total[0];
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -78,7 +78,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithArg(ShellType type)
         {
             // Create instance
-            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help list", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help list", type).total[0];
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -114,7 +114,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithSwitch(ShellType type)
         {
             // Create instance
-            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch", type).total[0];
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -149,7 +149,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgFull(ShellType type)
         {
             // Create instance
-            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch list", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch list", type).total[0];
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -187,7 +187,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgNoArg(string type)
         {
             // Create instance
-            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help", type).total[0];
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -220,7 +220,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithArg(string type)
         {
             // Create instance
-            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help list", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help list", type).total[0];
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -256,7 +256,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgWithSwitch(string type)
         {
             // Create instance
-            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch", type).total[0];
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();
@@ -291,7 +291,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializeProvidedCommandArgumentsInfoInstanceFromCommandLineArgFull(string type)
         {
             // Create instance
-            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch list", type);
+            var cmdArginfo = ArgumentsParser.ParseShellCommandArguments("help -switch list", type).total[0];
 
             // Test for null
             cmdArginfo.ShouldNotBeNull();

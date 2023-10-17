@@ -33,7 +33,7 @@ namespace Nitrocid.Tests.Arguments
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgNoArg()
         {
             // Create instance
-            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang");
+            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang").total[0];
 
             // Test for null
             argArginfo.ShouldNotBeNull();
@@ -55,7 +55,7 @@ namespace Nitrocid.Tests.Arguments
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgWithArg()
         {
             // Create instance
-            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang eng");
+            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang eng").total[0];
 
             // Test for null
             argArginfo.ShouldNotBeNull();
@@ -80,7 +80,7 @@ namespace Nitrocid.Tests.Arguments
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgWithSwitch()
         {
             // Create instance
-            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang -switch");
+            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang -switch").total[0];
 
             // Test for null
             argArginfo.ShouldNotBeNull();
@@ -104,7 +104,7 @@ namespace Nitrocid.Tests.Arguments
         public void TestInitializeProvidedArgumentArgumentInfoInstanceFromCommandLineArgFull()
         {
             // Create instance
-            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang -switch eng");
+            var argArginfo = ArgumentsParser.ParseArgumentArguments("lang -switch eng").total[0];
 
             // Test for null
             argArginfo.ShouldNotBeNull();

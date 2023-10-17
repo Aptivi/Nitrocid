@@ -51,7 +51,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
                 lastCommand = parameters.ArgumentsList[1];
 
             // Check to see if we're trying to call repeat
-            var argumentInfo = ArgumentsParser.ParseShellCommandArguments(lastCommand, ShellManager.CurrentShellType);
+            var argumentInfo = ArgumentsParser.ParseShellCommandArguments(lastCommand, ShellManager.CurrentShellType).total[0];
             if (argumentInfo.Command == "repeat")
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't repeat self."), true, KernelColorType.Error);

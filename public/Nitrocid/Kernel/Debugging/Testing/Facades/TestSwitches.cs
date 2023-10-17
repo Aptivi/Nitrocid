@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Shell;
         public override void Run()
         {
-            string[] ListSwitchesOnly = ArgumentsParser.ParseShellCommandArguments("help -r", ShellType.Shell).SwitchesList;
+            string[] ListSwitchesOnly = ArgumentsParser.ParseShellCommandArguments("help -r", ShellType.Shell).total[0].SwitchesList;
             ListWriterColor.WriteList(ListSwitchesOnly);
         }
     }

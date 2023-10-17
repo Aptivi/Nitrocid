@@ -41,8 +41,8 @@ namespace KS.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="CommandText">Command text that the user provided</param>
         /// <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
-        /// <returns>An instance of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static ProvidedArgumentsInfo ParseShellCommandArguments(string CommandText, ShellType CommandType) =>
+        /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
+        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, ShellType CommandType) =>
             ParseShellCommandArguments(CommandText, ShellManager.GetShellTypeName(CommandType));
 
         /// <summary>
@@ -50,8 +50,8 @@ namespace KS.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="CommandText">Command text that the user provided</param>
         /// <param name="CommandType">Shell command type.</param>
-        /// <returns>An instance of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static ProvidedArgumentsInfo ParseShellCommandArguments(string CommandText, string CommandType)
+        /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
+        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, string CommandType)
         {
             string Command;
             Dictionary<string, CommandInfo> ShellCommands;
@@ -79,15 +79,15 @@ namespace KS.Shell.ShellBase.Arguments
             if (CommandInfo != null)
                 return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
             else
-                return new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true);
+                return (new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true), Array.Empty<ProvidedArgumentsInfo>());
         }
 
         /// <summary>
         /// Parses the kernel argument arguments
         /// </summary>
         /// <param name="ArgumentText">Kernel argument text that the user provided</param>
-        /// <returns>An instance of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static ProvidedArgumentsInfo ParseArgumentArguments(string ArgumentText)
+        /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
+        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseArgumentArguments(string ArgumentText)
         {
             string Argument;
             var KernelArguments = ArgumentParse.AvailableCMDLineArgs;
@@ -106,16 +106,13 @@ namespace KS.Shell.ShellBase.Arguments
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
             else
-                return new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true);
+                return (new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true), Array.Empty<ProvidedArgumentsInfo>());
         }
 
-        private static ProvidedArgumentsInfo ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo, ArgumentInfo ArgumentInfo)
+        private static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ProcessArgumentOrShellCommandArguments(string CommandText, CommandInfo CommandInfo, ArgumentInfo ArgumentInfo)
         {
-            bool RequiredArgumentsProvided = true;
-            bool RequiredSwitchesProvided = true;
-            bool RequiredSwitchArgumentsProvided = true;
-            bool numberProvided = true;
-            bool exactWordingProvided = true;
+            ProvidedArgumentsInfo satisfiedArg = null;
+            List<ProvidedArgumentsInfo> totalArgs = new();
 
             // Check the command and argument info
             bool isCommand = CommandInfo is not null;
@@ -157,8 +154,17 @@ namespace KS.Shell.ShellBase.Arguments
             var argInfos = isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo;
             foreach (var argInfo in argInfos)
             {
+                bool RequiredArgumentsProvided = true;
+                bool RequiredSwitchesProvided = true;
+                bool RequiredSwitchArgumentsProvided = true;
+                bool numberProvided = true;
+                bool exactWordingProvided = true;
+
+                // Check for argument info
                 bool withArgInfo = argInfo is not null;
                 DebugWriter.WriteDebug(DebugLevel.I, "Argument info is full? {0}", withArgInfo);
+
+                // Optionalize some of the arguments if there are switches that optionalize them
                 if (withArgInfo)
                 {
                     foreach (string enclosedSwitch in EnclosedSwitches)
@@ -310,13 +316,37 @@ namespace KS.Shell.ShellBase.Arguments
                 }
 
                 // If all is well, bail.
-                if (RequiredArgumentsProvided && RequiredSwitchesProvided && RequiredSwitchArgumentsProvided && unknownSwitchesList.Length == 0 && conflictingSwitchesList.Length == 0 && numberProvided && exactWordingProvided)
-                    break;
+                var paiInstance = new ProvidedArgumentsInfo
+                (
+                    words[0],
+                    strArgs,
+                    EnclosedArgs,
+                    strArgsOrig,
+                    EnclosedArgsOrig,
+                    EnclosedSwitches,
+                    RequiredArgumentsProvided,
+                    RequiredSwitchesProvided,
+                    RequiredSwitchArgumentsProvided,
+                    unknownSwitchesList,
+                    conflictingSwitchesList,
+                    noValueSwitchesList,
+                    numberProvided,
+                    exactWordingProvided
+                );
+                if (RequiredArgumentsProvided &&
+                    RequiredSwitchesProvided &&
+                    RequiredSwitchArgumentsProvided &&
+                    unknownSwitchesList.Length == 0 &&
+                    conflictingSwitchesList.Length == 0 &&
+                    numberProvided &&
+                    exactWordingProvided)
+                    satisfiedArg = paiInstance;
+                totalArgs.Add(paiInstance);
             }
 
             // Install the parsed values to the new class instance
             DebugWriter.WriteDebug(DebugLevel.I, "Finalizing...");
-            return new ProvidedArgumentsInfo(words[0], strArgs, EnclosedArgs, strArgsOrig, EnclosedArgsOrig, EnclosedSwitches, RequiredArgumentsProvided, RequiredSwitchesProvided, RequiredSwitchArgumentsProvided, unknownSwitchesList, conflictingSwitchesList, noValueSwitchesList, numberProvided, exactWordingProvided);
+            return (satisfiedArg, totalArgs.ToArray());
         }
     }
 }

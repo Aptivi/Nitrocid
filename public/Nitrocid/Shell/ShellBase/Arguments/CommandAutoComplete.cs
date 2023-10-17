@@ -55,7 +55,7 @@ namespace KS.Shell.ShellBase.Arguments
                 return ShellCommands.Keys.ToArray();
 
             // Get the provided command and argument information
-            var commandArgumentInfo = ArgumentsParser.ParseShellCommandArguments(text, shellType);
+            var commandArgumentInfo = ArgumentsParser.ParseShellCommandArguments(text, shellType).total[0];
 
             // We're providing completion for argument.
             string CommandName = commandArgumentInfo.Command;

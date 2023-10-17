@@ -87,21 +87,100 @@ namespace KS.Shell.ShellBase.Commands
             string RequestedCommand = ThreadParams.RequestedCommand;
             string ShellType = ThreadParams.ShellType;
             var ShellInstance = ThreadParams.ShellInstance;
+            bool argSatisfied = true;
             try
             {
                 // Variables
-                var ArgumentInfo = ArgumentsParser.ParseShellCommandArguments(RequestedCommand, ShellType);
-                string Command = ArgumentInfo.Command;
+                string Command = "nonexistent-command";
+                var (satisfied, total) = ArgumentsParser.ParseShellCommandArguments(RequestedCommand, ShellType);
+
+                // Check to see if we have satisfied arguments list
+                argSatisfied = satisfied is not null;
+                if (!argSatisfied)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.W, "Arguments not satisfied.");
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Required arguments are not provided for all usages. See below for more info:"), true, KernelColorType.Error);
+                    for (int i = 0; i < total.Length; i++)
+                    {
+                        ProvidedArgumentsInfo unsatisfied = total[i];
+                        Command = unsatisfied.Command;
+
+                        // Write usage number
+                        TextWriterColor.WriteKernelColor("\n" + Translate.DoTranslation("For usage number") + $" #{i + 1}:", true, KernelColorType.Error);
+
+                        // Check for required arguments
+                        if (!unsatisfied.RequiredArgumentsProvided)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
+                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Required arguments are not provided."), true, KernelColorType.Error);
+                        }
+
+                        // Check for required switches
+                        if (!unsatisfied.RequiredSwitchesProvided)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
+                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Required switches are not provided."), true, KernelColorType.Error);
+                        }
+
+                        // Check for required switch arguments
+                        if (!unsatisfied.RequiredSwitchArgumentsProvided)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
+                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("One of the switches requires a value that is not provided."), true, KernelColorType.Error);
+                        }
+
+                        // Check for unknown switches
+                        if (unsatisfied.UnknownSwitchesList.Length > 0)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
+                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Switches that are listed below are unknown."), true, KernelColorType.Error);
+                            ListWriterColor.WriteList(unsatisfied.UnknownSwitchesList);
+                        }
+
+                        // Check for conflicting switches
+                        if (unsatisfied.ConflictingSwitchesList.Length > 0)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
+                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Switches that are listed below conflict with each other."), true, KernelColorType.Error);
+                            ListWriterColor.WriteList(unsatisfied.ConflictingSwitchesList);
+                        }
+
+                        // Check for switches that don't accept values
+                        if (unsatisfied.NoValueSwitchesList.Length > 0)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", Command);
+                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("The below switches don't accept values."), true, KernelColorType.Error);
+                            ListWriterColor.WriteList(unsatisfied.NoValueSwitchesList);
+                        }
+
+                        // Check for invalid number in numeric arguments
+                        if (!unsatisfied.NumberProvided)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", Command);
+                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."), true, KernelColorType.Error);
+                        }
+
+                        // Check for invalid exact wording
+                        if (!unsatisfied.ExactWordingProvided)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided non-exact wording for {0}", Command);
+                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("One or more of the arguments expect an exact wording, but you provided an invalid word."), true, KernelColorType.Error);
+                        }
+                    }
+                    TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
+                    HelpPrint.ShowHelp(Command, ShellType);
+                    ShellInstance.LastErrorCode = -6;
+                    return;
+                }
+
+                // Now, assume that an argument is satisfied
+                var ArgumentInfo = satisfied;
+                Command = ArgumentInfo.Command;
                 var Args = ArgumentInfo.ArgumentsList;
                 var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
                 var Switches = ArgumentInfo.SwitchesList;
                 string StrArgs = ArgumentInfo.ArgumentsText;
                 string StrArgsOrig = ArgumentInfo.ArgumentsTextOrig;
-                bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
-                bool RequiredSwitchesProvided = ArgumentInfo.RequiredSwitchesProvided;
-                bool RequiredSwitchArgumentsProvided = ArgumentInfo.RequiredSwitchArgumentsProvided;
-                bool numberProvided = ArgumentInfo.NumberProvided;
-                bool exactWordingProvided = ArgumentInfo.ExactWordingProvided;
                 bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
                 string variable = "";
 
@@ -114,7 +193,6 @@ namespace KS.Shell.ShellBase.Commands
 
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
                 var ArgInfos = TargetCommands[Command].CommandArgumentInfo;
-                bool argSatisfied = true;
                 for (int i = 0; i < ArgInfos.Length; i++)
                 {
                     argSatisfied = true;
@@ -143,74 +221,9 @@ namespace KS.Shell.ShellBase.Commands
                                 }
                             }
                         }
-
-                        // Check for required arguments
-                        if (!RequiredArgumentsProvided && ArgInfo.ArgumentsRequired && isLast)
-                        {
-                            argSatisfied = false;
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Required arguments are not provided."), true, KernelColorType.Error);
-                        }
-                    
-                        // Check for required switches
-                        if (!RequiredSwitchesProvided && ArgInfo.Switches.Any((@switch) => @switch.IsRequired) && isLast)
-                        {
-                            argSatisfied = false;
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough switches for {0}", Command);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Required switches are not provided."), true, KernelColorType.Error);
-                        }
-                    
-                        // Check for required switch arguments
-                        if (!RequiredSwitchArgumentsProvided && ArgInfo.Switches.Any((@switch) => @switch.ArgumentsRequired) && isLast)
-                        {
-                            argSatisfied = false;
-                            DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided a value for one of the switches for {0}", Command);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("One of the switches requires a value that is not provided."), true, KernelColorType.Error);
-                        }
-                    
-                        // Check for unknown switches
-                        if (ArgumentInfo.UnknownSwitchesList.Length > 0 && isLast)
-                        {
-                            argSatisfied = false;
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided unknown switches {0}", Command);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Switches that are listed below are unknown."), true, KernelColorType.Error);
-                            ListWriterColor.WriteList(ArgumentInfo.UnknownSwitchesList);
-                        }
-                    
-                        // Check for conflicting switches
-                        if (ArgumentInfo.ConflictingSwitchesList.Length > 0 && isLast)
-                        {
-                            argSatisfied = false;
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided conflicting switches for {0}", Command);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Switches that are listed below conflict with each other."), true, KernelColorType.Error);
-                            ListWriterColor.WriteList(ArgumentInfo.ConflictingSwitchesList);
-                        }
-                    
-                        // Check for switches that don't accept values
-                        if (ArgumentInfo.NoValueSwitchesList.Length > 0 && isLast)
-                        {
-                            argSatisfied = false;
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided switches that don't accept values for {0}", Command);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("The below switches don't accept values."), true, KernelColorType.Error);
-                            ListWriterColor.WriteList(ArgumentInfo.NoValueSwitchesList);
-                        }
-                    
-                        // Check for invalid number in numeric arguments
-                        if (!numberProvided)
-                        {
-                            argSatisfied = false;
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the arguments for {0}", Command);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("One or more of the arguments expect a numeric value, but you provided an invalid number."), true, KernelColorType.Error);
-                        }
-                    
-                        // Check for invalid exact wording
-                        if (!exactWordingProvided)
-                        {
-                            argSatisfied = false;
-                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided non-exact wording for {0}", Command);
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("One or more of the arguments expect an exact wording, but you provided an invalid word."), true, KernelColorType.Error);
-                        }
                     }
+                    if (argSatisfied)
+                        break;
                 }
 
                 // Execute the command
@@ -296,8 +309,6 @@ namespace KS.Shell.ShellBase.Commands
                 else
                 {
                     DebugWriter.WriteDebug(DebugLevel.W, "Arguments not satisfied.");
-                    TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
-                    HelpPrint.ShowHelp(Command, ShellType);
                     ShellInstance.LastErrorCode = -6;
                 }
             }
@@ -326,7 +337,7 @@ namespace KS.Shell.ShellBase.Commands
             var currentType = currentShell.ShellType;
             var StartCommandThread = currentShell.ShellCommandThread;
             var argumentInfo = ArgumentsParser.ParseShellCommandArguments(Command, currentType);
-            string CommandToBeWrapped = argumentInfo.Command;
+            string CommandToBeWrapped = argumentInfo.total[0].Command;
 
             // Check to see if the command is found
             if (!CommandManager.IsCommandFound(CommandToBeWrapped, currentType))

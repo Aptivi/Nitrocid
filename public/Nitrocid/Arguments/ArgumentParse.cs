@@ -91,28 +91,32 @@ namespace KS.Arguments
                     if (Arguments.ContainsKey(ArgumentName))
                     {
                         // Variables
-                        var ArgumentInfo = ArgumentsParser.ParseArgumentArguments(Argument);
-                        var Arg = Arguments[ArgumentName];
-                        var Args = ArgumentInfo.ArgumentsList;
-                        var Switches = ArgumentInfo.SwitchesList;
-                        string strArgs = ArgumentInfo.ArgumentsText;
-                        bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
-
-                        // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                        for (int idx = 0; idx < Arg.ArgArgumentInfo.Length; idx++)
+                        var ArgumentInfos = ArgumentsParser.ParseArgumentArguments(Argument);
+                        for (int j = 0; j < ArgumentInfos.total.Length; j++)
                         {
-                            var argInfo = Arg.ArgArgumentInfo[idx];
-                            bool isLast = idx == Arg.ArgArgumentInfo.Length - 1;
-                            if (argInfo.ArgumentsRequired & RequiredArgumentsProvided | !argInfo.ArgumentsRequired)
+                            var ArgumentInfo = ArgumentInfos.total[j];
+                            var Arg = Arguments[ArgumentName];
+                            var Args = ArgumentInfo.ArgumentsList;
+                            var Switches = ArgumentInfo.SwitchesList;
+                            string strArgs = ArgumentInfo.ArgumentsText;
+                            bool RequiredArgumentsProvided = ArgumentInfo.RequiredArgumentsProvided;
+
+                            // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
+                            for (int idx = 0; idx < Arg.ArgArgumentInfo.Length; idx++)
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", Argument, strArgs);
-                                var ArgumentBase = Arg.ArgumentBase;
-                                ArgumentBase.Execute(strArgs, Args, Switches);
-                            }
-                            else if (isLast)
-                            {
-                                DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument);
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was not enough arguments."), true, KernelColorType.Error);
+                                var argInfo = Arg.ArgArgumentInfo[idx];
+                                bool isLast = idx == Arg.ArgArgumentInfo.Length - 1 && j == ArgumentInfos.total.Length - 1;
+                                if (argInfo.ArgumentsRequired & RequiredArgumentsProvided | !argInfo.ArgumentsRequired)
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", Argument, strArgs);
+                                    var ArgumentBase = Arg.ArgumentBase;
+                                    ArgumentBase.Execute(strArgs, Args, Switches);
+                                }
+                                else if (isLast)
+                                {
+                                    DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Argument);
+                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was not enough arguments."), true, KernelColorType.Error);
+                                }
                             }
                         }
                     }
