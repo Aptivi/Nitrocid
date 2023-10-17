@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.GitShell.Settings
         /// <summary>
         /// Prompt Preset
         /// </summary>
-        public string PromptPreset
+        public string GitPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell("GitShell").PresetName;
             set => PromptPresetManager.SetPreset(value, "GitShell", false);

@@ -6,7 +6,7 @@
             {
                 "Name": "Prompt Preset",
                 "Type": "SPreset",
-                "Variable": "PromptPreset",
+                "Variable": "ArchivePromptPreset",
                 "ShellType": "ArchiveShell",
                 "Description": ""
             }

@@ -37,10 +37,10 @@ namespace Nitrocid.Extras.ArchiveShell.Settings
         /// <summary>
         /// Prompt Preset
         /// </summary>
-        public string PromptPreset
+        public string ArchivePromptPreset
         {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell("GitShell").PresetName;
-            set => PromptPresetManager.SetPreset(value, "GitShell", false);
+            get => PromptPresetManager.GetCurrentPresetBaseFromShell("ArchiveShell").PresetName;
+            set => PromptPresetManager.SetPreset(value, "ArchiveShell", false);
         }
     }
 }
