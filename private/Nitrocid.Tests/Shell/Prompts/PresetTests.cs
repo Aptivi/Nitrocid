@@ -44,7 +44,7 @@ namespace Nitrocid.Tests.Shell.Prompts
         [Description("Action")]
         public static string TestSetPresetDry(string presetName, ShellType type)
         {
-            PromptPresetManager.SetPresetDry(presetName, type);
+            PromptPresetManager.SetPreset(presetName, type);
             return PromptPresetManager.GetCurrentPresetBaseFromShell(presetName).PresetName;
         }
 
@@ -66,7 +66,7 @@ namespace Nitrocid.Tests.Shell.Prompts
         [Description("Action")]
         public static string TestSetPresetDry(string presetName, string type)
         {
-            PromptPresetManager.SetPresetDry(presetName, type);
+            PromptPresetManager.SetPreset(presetName, type);
             return PromptPresetManager.GetCurrentPresetBaseFromShell(presetName).PresetName;
         }
 

@@ -25,6 +25,7 @@ using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Hex.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Hex
 {
@@ -146,7 +147,8 @@ namespace KS.Shell.Shells.Hex
 
         public override BaseShell ShellBase => new HexShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["HexShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.HexEditPromptPreset];
 
     }
 }

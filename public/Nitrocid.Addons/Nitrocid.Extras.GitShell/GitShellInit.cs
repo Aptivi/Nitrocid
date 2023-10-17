@@ -16,12 +16,15 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
+using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.GitShell.Git;
+using Nitrocid.Extras.GitShell.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,10 +51,16 @@ namespace Nitrocid.Extras.GitShell
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
+        internal static GitConfig GitConfig =>
+            (GitConfig)Config.baseConfigurations[nameof(GitConfig)];
+
         void IAddon.FinalizeAddon()
         {
+            var config = new GitConfig();
+            ConfigTools.RegisterBaseSetting(config);
             ShellTypeManager.RegisterShell("GitShell", new GitShellInfo());
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            PromptPresetManager.CurrentPresets.Add("GitShell", "Default");
         }
 
         void IAddon.StartAddon()
@@ -61,6 +70,8 @@ namespace Nitrocid.Extras.GitShell
         {
             ShellTypeManager.UnregisterShell("GitShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            PromptPresetManager.CurrentPresets.Remove("GitShell");
+            ConfigTools.UnregisterBaseSetting(nameof(GitConfig));
         }
     }
 }

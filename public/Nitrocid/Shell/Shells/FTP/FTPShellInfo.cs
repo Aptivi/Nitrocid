@@ -25,6 +25,7 @@ using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.FTP.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.FTP
 {
@@ -275,7 +276,8 @@ namespace KS.Shell.Shells.FTP
 
         public override BaseShell ShellBase => new FTPShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["FTPShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.FTPPromptPreset];
 
         public override bool AcceptsNetworkConnection => true;
 

@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Configuration.Instances;
+using KS.Kernel.Debugging;
 using KS.Shell.Prompts;
 
 namespace KS.Kernel.Configuration.Settings.KeyInputs
@@ -25,18 +26,24 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
     {
         public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
         {
-            PromptPresetManager.PromptForPresets(key.ShellType);
+            string selectedPreset = PromptPresetManager.PromptForPresets(key.ShellType);
 
             // Bail and return
             bail = true;
-            return null;
+            return selectedPreset;
         }
 
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
         {
-            // Already set by SetPresetInternal
-            return;
-        }
+            // We're dealing with presets
+            DebugWriter.WriteDebug(DebugLevel.I, "Answer is not numeric and key is of the Preset type. Setting variable...");
 
+            // Check to see if written answer is empty
+            if (value is not string presetName)
+                return;
+
+            // Set the value
+            SettingsAppTools.SetPropertyValue(key.Variable, presetName, configType);
+        }
     }
 }

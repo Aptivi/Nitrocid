@@ -25,6 +25,7 @@ using System;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.Shells.Json.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Json
 {
@@ -232,7 +233,8 @@ namespace KS.Shell.Shells.Json
 
         public override BaseShell ShellBase => new JsonShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["JsonShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.JSONShellPromptPreset];
 
     }
 }

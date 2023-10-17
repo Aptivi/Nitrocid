@@ -114,7 +114,8 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 
         public override BaseShell ShellBase => new ArchiveShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["ArchiveShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[PromptPresetManager.CurrentPresets[ShellType]];
 
     }
 }

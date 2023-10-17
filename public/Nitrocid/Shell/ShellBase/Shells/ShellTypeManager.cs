@@ -45,14 +45,14 @@ namespace KS.Shell.ShellBase.Shells
                 {
                     // Add a default preset
                     if (presets.ContainsKey("Default"))
-                        PromptPresetManager.CurrentPresets.Add(ShellType, presets["Default"]);
+                        PromptPresetManager.CurrentPresets.Add(ShellType, "Default");
                     else
-                        PromptPresetManager.CurrentPresets.Add(ShellType, basePreset);
+                        PromptPresetManager.CurrentPresets.Add(ShellType, basePreset.PresetName);
                 }
                 else
                 {
                     // Make a base shell preset and set it as default.
-                    PromptPresetManager.CurrentPresets.Add(ShellType, basePreset);
+                    PromptPresetManager.CurrentPresets.Add(ShellType, basePreset.PresetName);
                 }
             }
         }

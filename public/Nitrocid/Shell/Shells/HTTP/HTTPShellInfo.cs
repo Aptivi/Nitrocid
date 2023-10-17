@@ -25,6 +25,7 @@ using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.HTTP.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.HTTP
 {
@@ -190,7 +191,8 @@ namespace KS.Shell.Shells.HTTP
 
         public override BaseShell ShellBase => new HTTPShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["HTTPShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.HTTPShellPromptPreset];
 
         public override bool AcceptsNetworkConnection => true;
 

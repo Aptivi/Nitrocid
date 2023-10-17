@@ -25,6 +25,7 @@ using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Mail.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Mail
 {
@@ -194,7 +195,8 @@ namespace KS.Shell.Shells.Mail
 
         public override BaseShell ShellBase => new MailShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["MailShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.MailPromptPreset];
 
         public override bool AcceptsNetworkConnection => true;
 

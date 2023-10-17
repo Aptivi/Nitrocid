@@ -25,6 +25,7 @@ using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.RSS.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.RSS
 {
@@ -142,7 +143,8 @@ namespace KS.Shell.Shells.RSS
 
         public override BaseShell ShellBase => new RSSShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["RSSShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.RSSPromptPreset];
 
         public override bool AcceptsNetworkConnection => true;
 

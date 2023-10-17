@@ -23,6 +23,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Sql.Commands;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Sql.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Sql
 {
@@ -65,7 +66,8 @@ namespace KS.Shell.Shells.Sql
 
         public override BaseShell ShellBase => new SqlShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["SqlShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.SqlShellPromptPreset];
 
     }
 }

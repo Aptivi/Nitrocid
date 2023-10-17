@@ -755,7 +755,7 @@ namespace KS.Kernel.Configuration.Instances
         public string PromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.Shell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.Shell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.Shell, false);
         }
         /// <summary>
         /// FTP Prompt Preset
@@ -763,7 +763,7 @@ namespace KS.Kernel.Configuration.Instances
         public string FTPPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.FTPShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.FTPShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.FTPShell, false);
         }
         /// <summary>
         /// Mail Prompt Preset
@@ -771,7 +771,7 @@ namespace KS.Kernel.Configuration.Instances
         public string MailPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.MailShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.MailShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.MailShell, false);
         }
         /// <summary>
         /// SFTP Prompt Preset
@@ -779,7 +779,7 @@ namespace KS.Kernel.Configuration.Instances
         public string SFTPPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.SFTPShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.SFTPShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.SFTPShell, false);
         }
         /// <summary>
         /// RSS Prompt Preset
@@ -787,7 +787,7 @@ namespace KS.Kernel.Configuration.Instances
         public string RSSPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.RSSShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.RSSShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.RSSShell, false);
         }
         /// <summary>
         /// Text Edit Prompt Preset
@@ -795,7 +795,7 @@ namespace KS.Kernel.Configuration.Instances
         public string TextEditPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.TextShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.TextShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.TextShell, false);
         }
         /// <summary>
         /// JSON Shell Prompt Preset
@@ -803,7 +803,7 @@ namespace KS.Kernel.Configuration.Instances
         public string JSONShellPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.JsonShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.JsonShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.JsonShell, false);
         }
         /// <summary>
         /// Hex Edit Prompt Preset
@@ -811,7 +811,7 @@ namespace KS.Kernel.Configuration.Instances
         public string HexEditPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.HexShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.HexShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.HexShell, false);
         }
         /// <summary>
         /// HTTP Shell Prompt Preset
@@ -819,7 +819,7 @@ namespace KS.Kernel.Configuration.Instances
         public string HTTPShellPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.HTTPShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.HTTPShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.HTTPShell, false);
         }
         /// <summary>
         /// Admin Shell Prompt Preset
@@ -827,7 +827,7 @@ namespace KS.Kernel.Configuration.Instances
         public string AdminShellPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.AdminShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.AdminShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.AdminShell, false);
         }
         /// <summary>
         /// SQL Shell Prompt Preset
@@ -835,7 +835,7 @@ namespace KS.Kernel.Configuration.Instances
         public string SqlShellPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.SqlShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.SqlShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.SqlShell, false);
         }
         /// <summary>
         /// Debug Shell Prompt Preset
@@ -843,7 +843,7 @@ namespace KS.Kernel.Configuration.Instances
         public string DebugShellPromptPreset
         {
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.DebugShell).PresetName;
-            set => PromptPresetManager.SetPresetDry(value, ShellType.DebugShell, false);
+            set => PromptPresetManager.SetPreset(value, ShellType.DebugShell, false);
         }
         /// <summary>
         /// Default choice output type

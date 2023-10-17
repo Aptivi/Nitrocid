@@ -30,6 +30,7 @@ using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Encryption;
 using KS.Shell.Shells.UESH.Presets;
 using KS.Drivers.Encoding;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -1587,6 +1588,7 @@ namespace KS.Shell.Shells.UESH
 
         public override BaseShell ShellBase => new UESHShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["Shell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.PromptPreset];
     }
 }

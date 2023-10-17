@@ -25,6 +25,7 @@ using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.SFTP.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.SFTP
 {
@@ -168,7 +169,8 @@ namespace KS.Shell.Shells.SFTP
 
         public override BaseShell ShellBase => new SFTPShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["SFTPShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.SFTPPromptPreset];
 
         public override bool AcceptsNetworkConnection => true;
 

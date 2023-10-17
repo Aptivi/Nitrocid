@@ -25,6 +25,7 @@ using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using System;
 using KS.Shell.Shells.Debug.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Debug
 {
@@ -108,7 +109,8 @@ namespace KS.Shell.Shells.Debug
 
         public override BaseShell ShellBase => new DebugShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["DebugShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.DebugShellPromptPreset];
 
     }
 }

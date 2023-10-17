@@ -16,13 +16,16 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
+using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.ArchiveShell.Archive.Commands;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell;
+using Nitrocid.Extras.ArchiveShell.Settings;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -48,9 +51,15 @@ namespace Nitrocid.Extras.ArchiveShell
 
         AddonType IAddon.AddonType => AddonType.Optional;
 
+        internal static ArchiveConfig ArchiveConfig =>
+            (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)];
+
         void IAddon.FinalizeAddon()
         {
+            var config = new ArchiveConfig();
+            ConfigTools.RegisterBaseSetting(config);
             ShellTypeManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
+            PromptPresetManager.CurrentPresets.Add("ArchiveShell", "Default");
         }
 
         void IAddon.StartAddon() =>
@@ -60,6 +69,8 @@ namespace Nitrocid.Extras.ArchiveShell
         {
             ShellTypeManager.UnregisterShell("ArchiveShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
+            PromptPresetManager.CurrentPresets.Remove("ArchiveShell");
+            ConfigTools.UnregisterBaseSetting(nameof(ArchiveConfig));
         }
     }
 }

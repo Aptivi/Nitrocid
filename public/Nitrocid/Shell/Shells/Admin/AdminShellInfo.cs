@@ -25,6 +25,7 @@ using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Admin.Presets;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Admin
 {
@@ -128,7 +129,8 @@ namespace KS.Shell.Shells.Admin
 
         public override BaseShell ShellBase => new AdminShell();
 
-        public override PromptPresetBase CurrentPreset => PromptPresetManager.CurrentPresets["AdminShell"];
+        public override PromptPresetBase CurrentPreset =>
+            PromptPresetManager.GetAllPresetsFromShell(ShellType)[Config.MainConfig.AdminShellPromptPreset];
 
     }
 }
