@@ -69,32 +69,14 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             Card selectedContact = (Card)item;
             if (selectedContact is null)
                 return Translate.DoTranslation("There is no contact. If you'd like to import contacts, please use the import options using the keystrokes defined at the bottom of the screen.");
-            bool hasName = selectedContact.ContactNames.Any();
-            bool hasAddress = selectedContact.ContactAddresses.Any();
-            bool hasMail = selectedContact.ContactMails.Any();
-            bool hasOrganization = selectedContact.ContactOrganizations.Any();
-            bool hasTelephone = selectedContact.ContactTelephones.Any();
-            bool hasURL = selectedContact.ContactURL.Any();
 
             // Generate the rendered text
-            string finalRenderedContactName = hasName ?
-                Translate.DoTranslation("Contact name") + $": {selectedContact.ContactFullName}" :
-                Translate.DoTranslation("No contact name");
-            string finalRenderedContactAddress = hasAddress ?
-                Translate.DoTranslation("Contact address") + $": {selectedContact.ContactAddresses[0].StreetAddress}, {selectedContact.ContactAddresses[0].PostalCode}, {selectedContact.ContactAddresses[0].PostOfficeBox}, {selectedContact.ContactAddresses[0].ExtendedAddress}, {selectedContact.ContactAddresses[0].Locality}, {selectedContact.ContactAddresses[0].Region}, {selectedContact.ContactAddresses[0].Country}" :
-                Translate.DoTranslation("No contact address");
-            string finalRenderedContactMail = hasMail ?
-                Translate.DoTranslation("Contact mail") + $": {selectedContact.ContactMails[0].ContactEmailAddress}" :
-                Translate.DoTranslation("No contact mail");
-            string finalRenderedContactOrganization = hasOrganization ?
-                Translate.DoTranslation("Contact organization") + $": {selectedContact.ContactOrganizations[0].Name}, {selectedContact.ContactOrganizations[0].Unit}, {selectedContact.ContactOrganizations[0].Role}" :
-                Translate.DoTranslation("No contact organization");
-            string finalRenderedContactTelephone = hasTelephone ?
-                Translate.DoTranslation("Contact telephone") + $": {selectedContact.ContactTelephones[0].ContactPhoneNumber}" :
-                Translate.DoTranslation("No contact telephone");
-            string finalRenderedContactURL = hasURL ?
-                Translate.DoTranslation("Contact URL") + $": {selectedContact.ContactURL}" :
-                Translate.DoTranslation("No contact URL");
+            string finalRenderedContactName = GetContactNameFinal(selectedContact);
+            string finalRenderedContactAddress = GetContactAddressFinal(selectedContact);
+            string finalRenderedContactMail = GetContactMailFinal(selectedContact);
+            string finalRenderedContactOrganization = GetContactOrganizationFinal(selectedContact);
+            string finalRenderedContactTelephone = GetContactTelephoneFinal(selectedContact);
+            string finalRenderedContactURL = GetContactURLFinal(selectedContact);
 
             // Render them to the second pane
             return
@@ -114,12 +96,9 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             Card selectedContact = (Card)item;
             if (selectedContact is null)
                 return;
-            bool hasName = selectedContact.ContactNames.Any();
 
             // Generate the rendered text
-            string finalRenderedContactName = hasName ?
-                Translate.DoTranslation("Contact name") + $": {selectedContact.ContactFullName}" :
-                Translate.DoTranslation("No contact name");
+            string finalRenderedContactName = GetContactNameFinal(selectedContact);
 
             // Render them to the status
             Status = finalRenderedContactName;
@@ -185,70 +164,29 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         {
             // Render the final information string
             var finalInfoRendered = new StringBuilder();
-            var card = ContactsManager.GetContact(index);
-            bool hasName = card.ContactNames.Any();
-            bool hasAddress = card.ContactAddresses.Any();
-            bool hasMail = card.ContactMails.Any();
-            bool hasOrganization = card.ContactOrganizations.Any();
-            bool hasTelephone = card.ContactTelephones.Any();
-            bool hasURL = card.ContactURL.Any();
-            bool hasGeo = card.ContactGeo.Any();
-            bool hasImpps = card.ContactImpps.Any();
-            bool hasNicknames = card.ContactNicknames.Any();
-            bool hasRoles = card.ContactRoles.Any();
-            bool hasTitles = card.ContactTitles.Any();
-            bool hasNotes = string.IsNullOrEmpty(card.ContactNotes);
-
-            string finalRenderedContactName =
-                hasName ?
-                Translate.DoTranslation("Contact name") + $": {card.ContactFullName}" :
-                Translate.DoTranslation("No contact name");
-            string finalRenderedContactAddress =
-                hasAddress ?
-                Translate.DoTranslation("Contact address") + $": {card.ContactAddresses[0].StreetAddress}, {card.ContactAddresses[0].PostalCode}, {card.ContactAddresses[0].PostOfficeBox}, {card.ContactAddresses[0].ExtendedAddress}, {card.ContactAddresses[0].Locality}, {card.ContactAddresses[0].Region}, {card.ContactAddresses[0].Country}" :
-                Translate.DoTranslation("No contact address");
-            string finalRenderedContactMail =
-                hasMail ?
-                Translate.DoTranslation("Contact mail") + $": {card.ContactMails[0].ContactEmailAddress}" :
-                Translate.DoTranslation("No contact mail");
-            string finalRenderedContactOrganization = hasOrganization ?
-                Translate.DoTranslation("Contact organization") + $": {card.ContactOrganizations[0].Name}, {card.ContactOrganizations[0].Unit}, {card.ContactOrganizations[0].Role}" :
-                Translate.DoTranslation("No contact organization");
-            string finalRenderedContactTelephone = hasTelephone ?
-                Translate.DoTranslation("Contact telephone") + $": {card.ContactTelephones[0].ContactPhoneNumber}" :
-                Translate.DoTranslation("No contact telephone");
-            string finalRenderedContactURL = hasURL ?
-                Translate.DoTranslation("Contact URL") + $": {card.ContactURL}" :
-                Translate.DoTranslation("No contact URL");
-            string finalRenderedContactGeo = hasGeo ?
-                Translate.DoTranslation("Contact geo") + $": {card.ContactURL}" :
-                Translate.DoTranslation("No contact geo");
-            string finalRenderedContactImpps = hasImpps ?
-                Translate.DoTranslation("Contact IMPP") + $": {card.ContactURL}" :
-                Translate.DoTranslation("No contact IMPP");
-            string finalRenderedContactNicknames = hasNicknames ?
-                Translate.DoTranslation("Contact nicknames") + $": {card.ContactURL}" :
-                Translate.DoTranslation("No contact nicknames");
-            string finalRenderedContactRoles = hasRoles ?
-                Translate.DoTranslation("Contact roles") + $": {card.ContactURL}" :
-                Translate.DoTranslation("No contact Roles");
-            string finalRenderedContactTitles = hasTitles ?
-                Translate.DoTranslation("Contact titles") + $": {card.ContactURL}" :
-                Translate.DoTranslation("No contact titles");
-            string finalRenderedContactNotes = hasNotes ?
-                Translate.DoTranslation("Contact notes") + $": {card.ContactURL}" :
-                Translate.DoTranslation("No contact notes");
+            string finalRenderedContactName = GetContactNameFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactName);
+            string finalRenderedContactAddress = GetContactAddressFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactAddress);
+            string finalRenderedContactMail = GetContactMailFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactMail);
+            string finalRenderedContactOrganization = GetContactOrganizationFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactOrganization);
+            string finalRenderedContactTelephone = GetContactTelephoneFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactTelephone);
+            string finalRenderedContactURL = GetContactURLFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactURL);
+            string finalRenderedContactGeo = GetContactGeoFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactGeo);
+            string finalRenderedContactImpps = GetContactImppFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactImpps);
+            string finalRenderedContactNicknames = GetContactNicknameFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactNicknames);
+            string finalRenderedContactRoles = GetContactRoleFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactRoles);
+            string finalRenderedContactTitles = GetContactTitleFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactTitles);
+            string finalRenderedContactNotes = GetContactNotesFinal(index);
             finalInfoRendered.AppendLine(finalRenderedContactNotes);
             finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
 
@@ -313,6 +251,312 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
                 DebugCheck.Assert(idx != -1, "contact index is -1!!!");
                 FirstPaneCurrentSelection = idx + 1;
             }
+        }
+
+        private static string GetContactNameFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactNameFinal(card);
+        }
+
+        private static string GetContactNameFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasName = card.ContactNames.Any();
+
+            if (hasName)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact name") + $": {card.ContactFullName}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact name"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactAddressFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactAddressFinal(card);
+        }
+
+        private static string GetContactAddressFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasAddress = card.ContactAddresses.Any();
+
+            if (hasAddress)
+            {
+                finalInfoRendered.Append(Translate.DoTranslation("Contact address") + ": ");
+
+                var address = card.ContactAddresses[0];
+                List<string> fullElements = new();
+                string street = address.StreetAddress;
+                string postal = address.PostalCode;
+                string poBox = address.PostOfficeBox;
+                string extended = address.ExtendedAddress;
+                string locality = address.Locality;
+                string region = address.Region;
+                string country = address.Country;
+                if (!string.IsNullOrEmpty(street))
+                    fullElements.Add(street);
+                if (!string.IsNullOrEmpty(postal))
+                    fullElements.Add(postal);
+                if (!string.IsNullOrEmpty(poBox))
+                    fullElements.Add(poBox);
+                if (!string.IsNullOrEmpty(extended))
+                    fullElements.Add(extended);
+                if (!string.IsNullOrEmpty(locality))
+                    fullElements.Add(locality);
+                if (!string.IsNullOrEmpty(region))
+                    fullElements.Add(region);
+                if (!string.IsNullOrEmpty(country))
+                    fullElements.Add(country);
+                finalInfoRendered.Append(string.Join(", ", fullElements));
+            }
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact name"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactMailFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactMailFinal(card);
+        }
+
+        private static string GetContactMailFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasMail = card.ContactMails.Any();
+
+            if (hasMail)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact mail") + $": {card.ContactMails[0].ContactEmailAddress}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact mail"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactOrganizationFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactOrganizationFinal(card);
+        }
+
+        private static string GetContactOrganizationFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasOrganization = card.ContactOrganizations.Any();
+
+            if (hasOrganization)
+            {
+                finalInfoRendered.Append(Translate.DoTranslation("Contact organization") + ": ");
+
+                var org = card.ContactOrganizations[0];
+                List<string> fullElements = new();
+                string name = org.Name;
+                string unit = org.Unit;
+                string role = org.Role;
+                if (!string.IsNullOrEmpty(name))
+                    fullElements.Add(name);
+                if (!string.IsNullOrEmpty(unit))
+                    fullElements.Add(unit);
+                if (!string.IsNullOrEmpty(role))
+                    fullElements.Add(role);
+                finalInfoRendered.Append(string.Join(", ", fullElements));
+            }
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact organization"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactTelephoneFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactTelephoneFinal(card);
+        }
+
+        private static string GetContactTelephoneFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasTelephone = card.ContactTelephones.Any();
+
+            if (hasTelephone)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact telephone") + $": {card.ContactTelephones[0].ContactPhoneNumber}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact telephone"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactURLFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactURLFinal(card);
+        }
+
+        private static string GetContactURLFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasURL = !string.IsNullOrEmpty(card.ContactURL);
+
+            if (hasURL)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact URL") + $": {card.ContactURL}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact URL"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactGeoFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactGeoFinal(card);
+        }
+
+        private static string GetContactGeoFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasGeo = card.ContactGeo.Any();
+
+            if (hasGeo)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact geo") + $": {card.ContactGeo[0].Geo}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact geo"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactImppFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactImppFinal(card);
+        }
+
+        private static string GetContactImppFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasImpp = card.ContactImpps.Any();
+
+            if (hasImpp)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact IMPP") + $": {card.ContactImpps[0].ContactIMPP}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact IMPP"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactNicknameFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactNicknameFinal(card);
+        }
+
+        private static string GetContactNicknameFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasNickname = card.ContactNicknames.Any();
+
+            if (hasNickname)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact nickname") + $": {card.ContactNicknames[0].ContactNickname}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact nickname"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactRoleFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactRoleFinal(card);
+        }
+
+        private static string GetContactRoleFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasRoles = card.ContactRoles.Any();
+
+            if (hasRoles)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact role") + $": {card.ContactRoles[0].ContactRole}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact role"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactTitleFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactTitleFinal(card);
+        }
+
+        private static string GetContactTitleFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasTitles = card.ContactTitles.Any();
+
+            if (hasTitles)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact title") + $": {card.ContactTitles[0].ContactTitle}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact title"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
+        }
+
+        private static string GetContactNotesFinal(int index)
+        {
+            // Render the final information string
+            var card = ContactsManager.GetContact(index);
+            return GetContactNotesFinal(card);
+        }
+
+        private static string GetContactNotesFinal(Card card)
+        {
+            // Render the final information string
+            var finalInfoRendered = new StringBuilder();
+            bool hasNotes = !string.IsNullOrEmpty(card.ContactNotes);
+
+            if (hasNotes)
+                finalInfoRendered.Append(Translate.DoTranslation("Contact notes") + $": {card.ContactNotes}");
+            else
+                finalInfoRendered.Append(Translate.DoTranslation("No contact notes"));
+
+            // Now, return the value
+            return finalInfoRendered.ToString();
         }
     }
 }
