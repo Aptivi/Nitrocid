@@ -69,34 +69,35 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             // Open file if not open
             ArchiveShellCommon.ArchiveShell_FileStream ??= new FileStream(ArchiveFile, FileMode.Open);
             ArchiveType type = ReaderFactory.Open(ArchiveShellCommon.ArchiveShell_FileStream).ArchiveType;
+
+            // Select archive type and open it
+            switch (type)
+            {
+                case ArchiveType.Rar:
+                    ArchiveShellCommon.ArchiveShell_Archive ??= RarArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    break;
+                case ArchiveType.Zip:
+                    ArchiveShellCommon.ArchiveShell_Archive ??= ZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    break;
+                case ArchiveType.GZip:
+                    ArchiveShellCommon.ArchiveShell_Archive ??= GZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    break;
+                case ArchiveType.SevenZip:
+                    ArchiveShellCommon.ArchiveShell_Archive ??= SevenZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    break;
+                case ArchiveType.Tar:
+                    ArchiveShellCommon.ArchiveShell_Archive ??= TarArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    break;
+                default:
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
+                    Bail = true;
+                    break;
+            }
+
             while (!Bail)
             {
                 try
                 {
-                    // Select archive type and open it
-                    switch (type)
-                    {
-                        case ArchiveType.Rar:
-                            ArchiveShellCommon.ArchiveShell_Archive ??= RarArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
-                            break;
-                        case ArchiveType.Zip:
-                            ArchiveShellCommon.ArchiveShell_Archive ??= ZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
-                            break;
-                        case ArchiveType.GZip:
-                            ArchiveShellCommon.ArchiveShell_Archive ??= GZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
-                            break;
-                        case ArchiveType.SevenZip:
-                            ArchiveShellCommon.ArchiveShell_Archive ??= SevenZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
-                            break;
-                        case ArchiveType.Tar:
-                            ArchiveShellCommon.ArchiveShell_Archive ??= TarArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
-                            break;
-                        default:
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
-                            Bail = true;
-                            break;
-                    }
-
                     // Prompt for the command
                     ShellManager.GetLine();
                 }
