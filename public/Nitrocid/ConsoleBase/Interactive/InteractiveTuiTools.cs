@@ -242,7 +242,7 @@ namespace KS.ConsoleBase.Interactive
                 DebugWriter.WriteDebug(DebugLevel.I, "0, {0}, {1}, {2}, {3}, {4}", SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane.PlainSequence, BaseInteractiveTui.PaneBackgroundColor.PlainSequence);
                 BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorFirstPane, BaseInteractiveTui.PaneBackgroundColor);
                 DebugWriter.WriteDebug(DebugLevel.I, "{0}, {1}, {2}, {3}, {4}, {5}", SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorSecondPane.PlainSequence, BaseInteractiveTui.PaneBackgroundColor.PlainSequence);
-                BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorSecondPane, BaseInteractiveTui.PaneBackgroundColor);
+                BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, BaseInteractiveTui.PaneBackgroundColor);
 
                 // Render the key bindings
                 ConsoleWrapper.CursorLeft = 0;
@@ -338,7 +338,7 @@ namespace KS.ConsoleBase.Interactive
                 var finalBackColor = finalIndex == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemBackColor : BaseInteractiveTui.PaneItemBackColor;
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
+                TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)), left, top, finalForeColor, finalBackColor);
                 KernelColorTools.SetConsoleColor(BaseInteractiveTui.PaneItemBackColor, true);
             }
 
@@ -346,7 +346,7 @@ namespace KS.ConsoleBase.Interactive
             if (Config.MainConfig.EnableScrollBarInSelection)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
-                int left = paneNum == 2 ? ConsoleWrapper.WindowWidth - 4 : SeparatorHalfConsoleWidthInterior - 1;
+                int left = paneNum == 2 ? (SeparatorHalfConsoleWidthInterior * 2) + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
                 ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, false);
             }
         }
@@ -415,7 +415,7 @@ namespace KS.ConsoleBase.Interactive
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + index - startIndex;
                 if (top > 0)
-                    TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - 1), left, top, finalForeColor, finalBackColor);
+                    TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)), left, top, finalForeColor, finalBackColor);
                 KernelColorTools.SetConsoleColor(BaseInteractiveTui.PaneItemBackColor, true);
             }
 
@@ -423,7 +423,7 @@ namespace KS.ConsoleBase.Interactive
             if (Config.MainConfig.EnableScrollBarInSelection)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
-                int left = paneNum == 2 ? ConsoleWrapper.WindowWidth - 4 : SeparatorHalfConsoleWidthInterior - 1;
+                int left = paneNum == 2 ? (SeparatorHalfConsoleWidthInterior * 2) + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
                 ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, false);
             }
             _refreshSelection = false;
@@ -488,7 +488,7 @@ namespace KS.ConsoleBase.Interactive
 
             // Now, write info
             var finalForeColorSecondPane = BaseInteractiveTui.CurrentPane == 2 ? BaseInteractiveTui.PaneSelectedSeparatorColor : BaseInteractiveTui.PaneSeparatorColor;
-            BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorSecondPane, BaseInteractiveTui.PaneBackgroundColor);
+            BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, BaseInteractiveTui.PaneBackgroundColor);
             _finalInfoRendered = finalInfoRendered;
             string[] finalInfoStrings = TextTools.GetWrappedSentences(finalInfoRendered, SeparatorHalfConsoleWidthInterior);
             for (int infoIndex = 0; infoIndex < finalInfoStrings.Length; infoIndex++)
