@@ -145,18 +145,46 @@ namespace KS.Kernel.Extensions
 
         internal static void FinalizeAddons()
         {
+            Dictionary<string, string> errors = new();
             foreach (var addonInfo in addons)
-                addonInfo.Addon.FinalizeAddon();
+            {
+                try
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Finalizing addon {0}...", addonInfo.AddonName);
+                    addonInfo.Addon.FinalizeAddon();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Finalized addon {0}!", addonInfo.AddonName);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to finalize addon {0}. {1}", addonInfo.AddonName, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    errors.Add(addonInfo.AddonName, ex.Message);
+                }
+            }
+            if (errors.Any())
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Failed to finalize addons. Below addons have failed to finalize:") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
         }
 
         internal static void UnloadAddons()
         {
+            Dictionary<string, string> errors = new();
             for (int addonIdx = addons.Count - 1; addonIdx >= 0; addonIdx--)
             {
                 var addonInstance = addons[addonIdx].Addon;
-                addonInstance.StopAddon();
-                addons.RemoveAt(addonIdx);
+                try
+                {
+                    addonInstance.StopAddon();
+                    addons.RemoveAt(addonIdx);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop addon {0}. {1}", addonInstance.AddonName, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    errors.Add(addonInstance.AddonName, ex.Message);
+                }
             }
+            if (errors.Any())
+                throw new KernelException(KernelExceptionType.AddonManagement, Translate.DoTranslation("Failed to stop addons. Below addons have failed to stop:") + $"\n  - {string.Join("\n  - ", errors.Select((kvp) => $"{kvp.Key}: {kvp.Value}"))}");
         }
 
         /// <summary>
