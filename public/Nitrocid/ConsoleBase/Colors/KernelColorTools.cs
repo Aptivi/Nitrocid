@@ -104,57 +104,55 @@ namespace KS.ConsoleBase.Colors
         /// Populate the empty color dictionary
         /// </summary>
         public static Dictionary<KernelColorType, Color> PopulateColorsEmpty() =>
-            PopulateColors(0);
+            PopulateColors(KernelColorPopulationType.Empty);
 
         /// <summary>
         /// Populate the default color dictionary
         /// </summary>
         public static Dictionary<KernelColorType, Color> PopulateColorsDefault() =>
-            PopulateColors(1);
+            PopulateColors(KernelColorPopulationType.Default);
 
         /// <summary>
         /// Populate the current color dictionary
         /// </summary>
         public static Dictionary<KernelColorType, Color> PopulateColorsCurrent() =>
-            PopulateColors(2);
+            PopulateColors(KernelColorPopulationType.Current);
 
-        private static Dictionary<KernelColorType, Color> PopulateColors(int populationType)
+        private static Dictionary<KernelColorType, Color> PopulateColors(KernelColorPopulationType populationType)
         {
             Dictionary<KernelColorType, Color> colors = new();
+            ThemeInfo themeInfo = default;
 
             // Select population type
-            switch (populationType)
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
             {
-                case 0:
-                    // Population type is empty colors
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
-                    {
-                        KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
-                        Color color = type != KernelColorType.Background ? new Color(ConsoleColors.White) : Color.Empty;
-                        colors.Add(type, color);
-                    }
-                    break;
-                case 1:
-                    // Population type is default colors
-                    ThemeInfo themeInfo = new();
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
-                    {
-                        KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
-                        Color color = themeInfo.GetColor(type);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color.PlainSequence);
-                        colors.Add(type, color);
-                    }
-                    break;
-                case 2:
-                    // Population type is current colors
-                    for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
-                    {
-                        KernelColorType type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
-                        Color color = GetColor(type);
-                        DebugWriter.WriteDebug(DebugLevel.I, "Adding color type {0} with color {1}...", type, color.PlainSequence);
-                        colors.Add(type, color);
-                    }
-                    break;
+                // Necessary variables
+                KernelColorType type = KernelColorType.NeutralText;
+                Color color = Color.Empty;
+
+                // Now, change the two above variables depending on the type.
+                switch (populationType)
+                {
+                    case KernelColorPopulationType.Empty:
+                        // Population type is empty colors
+                        type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
+                        color = type != KernelColorType.Background ? new Color(ConsoleColors.White) : Color.Empty;
+                        break;
+                    case KernelColorPopulationType.Default:
+                        // Population type is default colors
+                        themeInfo ??= new();
+                        type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
+                        color = themeInfo.GetColor(type);
+                        DebugWriter.WriteDebug(DebugLevel.I, "[DEFAULT] Adding color type {0} with color {1}...", type, color.PlainSequence);
+                        break;
+                    case KernelColorPopulationType.Current:
+                        // Population type is current colors
+                        type = (KernelColorType)Enum.Parse(typeof(KernelColorType), typeIndex.ToString());
+                        color = GetColor(type);
+                        DebugWriter.WriteDebug(DebugLevel.I, "[CURRENT] Adding color type {0} with color {1}...", type, color.PlainSequence);
+                        break;
+                }
+                colors.Add(type, color);
             }
 
             // Return it
