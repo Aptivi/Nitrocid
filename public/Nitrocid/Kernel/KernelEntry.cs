@@ -121,10 +121,11 @@ namespace KS.Kernel
                 WelcomeMessage.WriteLicense();
 
                 // Show current time
-                SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("Welcome!"), true, KernelColorType.Stage);
                 if (KernelFlags.ShowCurrentTimeBeforeLogin)
+                {
                     TimeDateMiscRenderers.ShowCurrentTimes();
-                TextWriterColor.Write();
+                    TextWriterColor.Write();
+                }
 
                 // Show the tip
                 if (KernelFlags.ShowTip)

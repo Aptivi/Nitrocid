@@ -71,12 +71,9 @@ namespace KS.Kernel.Time.Renderers
         /// <summary>
         /// Shows current time, date, and timezone.
         /// </summary>
-        public static void ShowCurrentTimes()
-        {
-            TextWriterColor.Write(Translate.DoTranslation("Current time is {0}"), TimeDateRenderers.RenderTime());
-            TextWriterColor.Write(Translate.DoTranslation("Today is {0}"), TimeDateRenderers.RenderDate());
-            TextWriterColor.Write(Translate.DoTranslation("Time and date in UTC: {0}"), TimeDateRenderersUtc.RenderUtc());
-            TextWriterColor.Write(Translate.DoTranslation("Time Zone:") + " {0} ({1})", TimeZoneInfo.Local.StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal());
-        }
+        public static void ShowCurrentTimes() =>
+            TextWriterColor.Write(Translate.DoTranslation("Today is") + " {0} @ {1} ({2}), {3} @ UTC",
+                TimeDateRenderers.Render(), TimeZoneInfo.Local.StandardName, TimeZoneRenderers.ShowTimeZoneUtcOffsetStringLocal(),
+                TimeDateRenderersUtc.RenderTimeUtc());
     }
 }
