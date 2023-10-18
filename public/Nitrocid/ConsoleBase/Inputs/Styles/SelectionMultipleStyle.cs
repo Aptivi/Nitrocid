@@ -308,7 +308,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                             new[]
                             {
                                 highlightedAnswer.ChoiceTitle,
-                                new string('-', highlightedAnswer.ChoiceTitle.Length),
+                                new string('-', highlightedAnswer.ChoiceTitle.Length > ConsoleWrapper.WindowWidth ? ConsoleWrapper.WindowWidth - 4 : highlightedAnswer.ChoiceTitle.Length),
                                 "",
                                 highlightedAnswer.ChoiceDescription,
                             }
