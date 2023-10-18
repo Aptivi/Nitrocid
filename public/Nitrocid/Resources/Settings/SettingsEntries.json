@@ -612,7 +612,7 @@
                 "DelimiterVariable": "PathLookupDelimiter",
                 "IsValuePath": true,
                 "IsPathCurrentPath": true,
-                "Description": "Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name. When you're finished, write \"q\". Write a minus sign next to the path to remove an existing directory."
+                "Description": "Group of paths separated by the colon. It works the same as PATH. Write a full path to a folder or a folder name."
             },
             {
                 "Name": "Prompt Preset",
