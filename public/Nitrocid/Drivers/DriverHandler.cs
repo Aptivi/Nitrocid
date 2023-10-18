@@ -299,7 +299,7 @@ namespace KS.Drivers
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
             // Then, get the actual driver from name
-            if (drivers[driverType].ContainsKey(name))
+            if (IsBuiltin(driverType, name))
             {
                 // Found a driver under the kernel driver list
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver {0}, type {1}, found under the built-in driver list.", name, driverType.ToString());
@@ -331,7 +331,7 @@ namespace KS.Drivers
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
             // Then, get the actual driver from name
-            if (drivers[driverType].ContainsValue(driver))
+            if (IsBuiltin(driverType, driver))
             {
                 // Found a driver under the kernel driver list
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver of type {0}, type {1}, found under the built-in driver list.", driver.GetType().Name, driverType.ToString());
@@ -398,7 +398,7 @@ namespace KS.Drivers
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
             // Then, get the fallback (default) driver from name
-            if (drivers[driverType].ContainsKey("Default"))
+            if (IsBuiltin(driverType, "Default"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", driverType.ToString());
                 return (TResult)drivers[driverType]["Default"];
@@ -421,7 +421,7 @@ namespace KS.Drivers
             var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
 
             // Then, get the fallback (default) driver from name
-            if (drivers[driverType].ContainsKey("Default"))
+            if (IsBuiltin(driverType, "Default"))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel driver, type {0}, fallback.", driverType.ToString());
                 return "Default";
@@ -455,11 +455,37 @@ namespace KS.Drivers
         /// <param name="name">Driver name to be unregistered</param>
         public static void UnregisterDriver(DriverTypes type, string name)
         {
-            if (IsRegistered(type, name) && customDrivers[type][name].DriverType == type)
+            if (IsRegistered(type, name) && !IsBuiltin(type, name) && customDrivers[type][name].DriverType == type)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Unregistered driver {0} [{1}] under type {2}", name, customDrivers[type][name].GetType().Name, type.ToString());
                 customDrivers[type].Remove(name);
             }
+        }
+
+        /// <summary>
+        /// Is the driver built-in?
+        /// </summary>
+        /// <param name="type">Driver type</param>
+        /// <param name="name">Driver name</param>
+        /// <returns>True if built-in. Otherwise, false.</returns>
+        public static bool IsBuiltin(DriverTypes type, string name)
+        {
+            bool registered = drivers[type].ContainsKey(name);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered built-in {0} for {1}? {2}", name, type.ToString(), registered);
+            return registered;
+        }
+
+        /// <summary>
+        /// Is the driver built-in?
+        /// </summary>
+        /// <param name="type">Driver type</param>
+        /// <param name="driver">Driver to query its name from the key</param>
+        /// <returns>True if built-in. Otherwise, false.</returns>
+        public static bool IsBuiltin(DriverTypes type, IDriver driver)
+        {
+            bool registered = drivers[type].ContainsValue(driver);
+            DebugWriter.WriteDebug(DebugLevel.I, "Registered built-in {0} for {1}? {2}", driver.GetType().Name, type.ToString(), registered);
+            return registered;
         }
 
         /// <summary>
@@ -470,7 +496,7 @@ namespace KS.Drivers
         /// <returns>True if registered. Otherwise, false.</returns>
         public static bool IsRegistered(DriverTypes type, string name)
         {
-            bool registered = customDrivers[type].ContainsKey(name) || drivers[type].ContainsKey(name);
+            bool registered = customDrivers[type].ContainsKey(name) || IsBuiltin(type, name);
             DebugWriter.WriteDebug(DebugLevel.I, "Registered {0} for {1}? {2}", name, type.ToString(), registered);
             return registered;
         }
@@ -483,7 +509,7 @@ namespace KS.Drivers
         /// <returns>True if registered. Otherwise, false.</returns>
         public static bool IsRegistered(DriverTypes type, IDriver driver)
         {
-            bool registered = customDrivers[type].ContainsValue(driver) || drivers[type].ContainsValue(driver);
+            bool registered = customDrivers[type].ContainsValue(driver) || IsBuiltin(type, driver);
             DebugWriter.WriteDebug(DebugLevel.I, "Registered {0} for {1}? {2}", driver.GetType().Name, type.ToString(), registered);
             return registered;
         }
