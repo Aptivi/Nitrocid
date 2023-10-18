@@ -18,6 +18,7 @@
 
 using KS.Kernel.Debugging;
 using KS.Modifications;
+using System.Linq;
 
 namespace KS.Languages
 {
@@ -62,8 +63,8 @@ namespace KS.Languages
                 // We might have this string from a mod
                 foreach (ModInfo mod in ModManager.ListMods().Values)
                 {
-                    if (mod.ModStrings.ContainsKey(lang) && mod.ModStrings[lang].ContainsKey(text))
-                        return mod.ModStrings[lang][text];
+                    if (mod.ModStrings.ContainsKey(lang) && mod.ModStrings[lang].Contains(text))
+                        return mod.ModStrings[lang].Single((t) => t == text);
                 }
 
                 // String wasn't found
@@ -102,8 +103,8 @@ namespace KS.Languages
                 // We might have this string from a mod
                 foreach (ModInfo mod in ModManager.ListMods().Values)
                 {
-                    if (mod.ModStrings.ContainsKey(langname) && mod.ModStrings[langname].ContainsKey(text))
-                        return mod.ModStrings[langname][text];
+                    if (mod.ModStrings.ContainsKey(langname) && mod.ModStrings[langname].Contains(text))
+                        return mod.ModStrings[langname].Single((t) => t == text);
                 }
 
                 // String wasn't found

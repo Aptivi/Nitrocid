@@ -1,109 +1,134 @@
-{
-    "arb": {
+[
+    {
+        "three": "arb",
         "name": "Arabic",
         "transliterable": true
     },
-    "arb-T": {
+    {
+        "three": "arb-T",
         "name": "Arabic",
         "transliterable": true,
         "codepage": 1256
     },
-    "chi": {
+    {
+        "three": "chi",
         "name": "Chinese",
         "transliterable": true
     },
-    "chi-T": {
+    {
+        "three": "chi-T",
         "name": "Chinese",
         "transliterable": true,
         "codepage": 936
     },
-    "cnt": {
+    {
+        "three": "cnt",
         "name": "Chinese (Traditional)",
         "transliterable": true
     },
-    "cnt-T": {
+    {
+        "three": "cnt-T",
         "name": "Chinese (Traditional)",
         "transliterable": true
     },
-    "cze": {
+    {
+        "three": "cze",
         "name": "Czech",
         "transliterable": false
     },
-    "dtc": {
+    {
+        "three": "dtc",
         "name": "Dutch",
         "transliterable": false
     },
-    "enk": {
+    {
+        "three": "enk",
         "name": "English (UK)",
         "transliterable": false,
         "culture": "en-GB"
     },
-    "fre": {
+    {
+        "three": "fre",
         "name": "French",
         "transliterable": false
     },
-    "ger": {
+    {
+        "three": "ger",
         "name": "German",
         "transliterable": false
     },
-    "ind": {
+    {
+        "three": "ind",
         "name": "Hindi",
         "transliterable": true
     },
-    "ind-T": {
+    {
+        "three": "ind-T",
         "name": "Hindi",
         "transliterable": true
     },
-    "ita": {
+    {
+        "three": "ita",
         "name": "Italian",
         "transliterable": false
     },
-    "jpn": {
+    {
+        "three": "jpn",
         "name": "Japanese",
         "transliterable": false,
         "codepage": 932
     },
-    "kor": {
+    {
+        "three": "kor",
         "name": "Korean",
         "transliterable": true
     },
-    "kor-T": {
+    {
+        "three": "kor-T",
         "name": "Korean",
         "transliterable": true,
         "codepage": 949
     },
-    "ptg": {
+    {
+        "three": "ptg",
         "name": "Portuguese",
         "transliterable": false
     },
-    "rus": {
+    {
+        "three": "rus",
         "name": "Russian",
         "transliterable": true
     },
-    "rus-T": {
+    {
+        "three": "rus-T",
         "name": "Russian",
         "transliterable": true,
         "codepage": 866
     },
-    "spa": {
+    {
+        "three": "spa",
         "name": "Spanish",
         "transliterable": false
     },
-    "tky": {
+    {
+        "three": "tky",
         "name": "Turkish",
         "transliterable": false
     },
-    "ukr": {
+    {
+        "three": "ukr",
         "name": "Ukrainian",
         "transliterable": true
     },
-    "ukr-T": {
+    {
+        "three": "ukr-T",
         "name": "Ukrainian",
         "transliterable": true
     },
-    "vtn": {
+    {
+        "three": "vtn",
         "name": "Vietnamese",
         "transliterable": false,
         "codepage": 1258
     }
-}
+]

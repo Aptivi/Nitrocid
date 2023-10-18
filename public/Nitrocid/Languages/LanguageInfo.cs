@@ -23,6 +23,7 @@ using KS.Kernel.Exceptions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using KS.Resources;
+using KS.Languages.Decoy;
 
 namespace KS.Languages
 {
@@ -110,17 +111,17 @@ namespace KS.Languages
                 CultureCode = cultureCode;
 
                 // Get instance of language resource
-                JArray LanguageResource = (JArray)JObject.Parse(localizationTokenValue).SelectToken("Localizations");
-                JArray LanguageResourceEnglish = (JArray)JObject.Parse(LanguageResources.eng).SelectToken("Localizations");
+                string[] LanguageResource = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationTokenValue).Localizations;
+                string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(LanguageResources.eng).Localizations;
                 Custom = false;
 
                 // Populate language strings
                 var langStrings = new Dictionary<string, string>();
-                for (int i = 0; i < LanguageResourceEnglish.Count; i++)
+                for (int i = 0; i < LanguageResourceEnglish.Length; i++)
                 {
-                    JToken UntranslatedProperty = LanguageResourceEnglish[i];
-                    JToken TranslatedProperty = LanguageResource[i];
-                    langStrings.Add((string)UntranslatedProperty, (string)TranslatedProperty);
+                    string UntranslatedProperty = LanguageResourceEnglish[i];
+                    string TranslatedProperty = LanguageResource[i];
+                    langStrings.Add(UntranslatedProperty, TranslatedProperty);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
                 Strings = langStrings;
@@ -140,7 +141,7 @@ namespace KS.Languages
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
         /// <param name="LanguageToken">The language token containing localization information</param>
         /// <param name="cultureCode">Culture code to use. If blank, the language manager will find the appropriate culture.</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, JArray LanguageToken, string cultureCode = "")
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[] LanguageToken, string cultureCode = "")
         {
             // Install values to the object instance
             ThreeLetterLanguageName = LangName;
@@ -168,18 +169,18 @@ namespace KS.Languages
             CultureCode = cultureCode;
 
             // Install it
-            JArray LanguageResourceEnglish = (JArray)JObject.Parse(LanguageResources.eng).SelectToken("Localizations");
+            string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(LanguageResources.eng).Localizations;
             Custom = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Count, LanguageResourceEnglish.Count);
-            if (LanguageToken.Count == LanguageResourceEnglish.Count)
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Length, LanguageResourceEnglish.Length);
+            if (LanguageToken.Length == LanguageResourceEnglish.Length)
             {
                 // Populate language strings
                 var langStrings = new Dictionary<string, string>();
-                for (int i = 0; i < LanguageResourceEnglish.Count; i++)
+                for (int i = 0; i < LanguageResourceEnglish.Length; i++)
                 {
-                    JToken UntranslatedProperty = LanguageResourceEnglish[i];
-                    JToken TranslatedProperty = LanguageToken[i];
-                    langStrings.Add((string)UntranslatedProperty, (string)TranslatedProperty);
+                    string UntranslatedProperty = LanguageResourceEnglish[i];
+                    string TranslatedProperty = LanguageToken[i];
+                    langStrings.Add(UntranslatedProperty, TranslatedProperty);
                 }
 
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
@@ -187,7 +188,7 @@ namespace KS.Languages
             }
             else
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} lines according to the English string list, but got {1}.", LanguageResourceEnglish.Count, LanguageToken.Count);
+                DebugWriter.WriteDebug(DebugLevel.E, "Expected {0} lines according to the English string list, but got {1}.", LanguageResourceEnglish.Length, LanguageToken.Length);
                 throw new KernelException(KernelExceptionType.LanguageParse, Translate.DoTranslation("Length of the English language doesn't match the length of the language token provided."));
             }
         }

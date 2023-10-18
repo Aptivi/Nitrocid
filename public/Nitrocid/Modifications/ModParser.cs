@@ -37,6 +37,8 @@ using KS.Modifications.Dependencies;
 using KS.Kernel.Configuration;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using Newtonsoft.Json;
+using KS.Languages.Decoy;
 
 namespace KS.Modifications
 {
@@ -177,23 +179,21 @@ namespace KS.Modifications
 
                     // Locate the mod's localization files
                     string ModLocalizationPath = ModPath + "Localization/" + Path.GetFileNameWithoutExtension(modFile) + "-" + FileVersionInfo.GetVersionInfo(ModPath + modFile).FileVersion + "/";
-                    Dictionary<string, Dictionary<string, string>> localizations = new();
+                    Dictionary<string, string[]> localizations = new();
                     if (Checking.FolderExists(ModLocalizationPath))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Found mod localization collection in {0}", ModLocalizationPath);
-                        foreach (string ModManualFile in Directory.EnumerateFiles(ModLocalizationPath, "*.json", SearchOption.AllDirectories))
+                        foreach (string ModLocFile in Directory.EnumerateFiles(ModLocalizationPath, "*.json", SearchOption.AllDirectories))
                         {
                             // This json file, as always, contains "Name" (ignored), "Transliterable" (ignored), and "Localizations" keys.
-                            string LanguageName = Path.GetFileNameWithoutExtension(ModManualFile);
-                            string ModManualFileContents = Reading.ReadContentsText(ModManualFile);
-                            JToken MetadataToken = JObject.Parse(ModManualFileContents);
-                            DebugWriter.WriteDebug(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
-                            if (MetadataToken is not null)
+                            string LanguageName = Path.GetFileNameWithoutExtension(ModLocFile);
+                            string ModLocFileContents = Reading.ReadContentsText(ModLocFile);
+                            var modLocs = JsonConvert.DeserializeObject<LanguageLocalizations[]>(ModLocFileContents);
+                            DebugWriter.WriteDebug(DebugLevel.I, "{0} localizations.", modLocs.Length);
+                            foreach (var modLoc in modLocs)
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Metadata exists!");
-
                                 // Parse the values and install the language
-                                var ParsedLanguageLocalizations = MetadataToken.SelectToken("Localizations");
+                                var ParsedLanguageLocalizations = modLoc.Localizations;
 
                                 // Check to see if we have that language...
                                 if (!LanguageManager.Languages.ContainsKey(LanguageName))
@@ -211,7 +211,7 @@ namespace KS.Modifications
 
                                     // Try to install the localizations
                                     if (!localizations.ContainsKey(LanguageName))
-                                        localizations.Add(LanguageName, LanguageManager.ProbeLocalizations((JObject)MetadataToken));
+                                        localizations.Add(LanguageName, LanguageManager.ProbeLocalizations(modLoc));
                                 }
                                 else
                                 {
@@ -220,7 +220,7 @@ namespace KS.Modifications
                                     return;
                                 }
                             }
-                            else
+                            if (modLocs.Length == 0)
                             {
                                 DebugWriter.WriteDebug(DebugLevel.E, "Metadata for language doesn't exist!");
                                 SplashReport.ReportProgressError(Translate.DoTranslation("The metadata information needed to install the custom language doesn't exist."));

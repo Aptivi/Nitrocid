@@ -33,6 +33,8 @@ using KS.Resources;
 using System.Globalization;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using Newtonsoft.Json;
+using KS.Languages.Decoy;
 
 namespace KS.Languages
 {
@@ -42,7 +44,7 @@ namespace KS.Languages
     public static class LanguageManager
     {
 
-        internal readonly static JToken LanguageMetadata = JToken.Parse(LanguageResources.LanguageMetadata);
+        internal readonly static LanguageMetadata[] LanguageMetadata = JsonConvert.DeserializeObject<LanguageMetadata[]>(LanguageResources.LanguageMetadata);
         internal static Dictionary<string, LanguageInfo> BaseLanguages = new();
         internal static Dictionary<string, LanguageInfo> CustomLanguages = new();
         internal static LanguageInfo currentLanguage = Languages[CurrentLanguage];
@@ -77,7 +79,7 @@ namespace KS.Languages
                 var InstalledLanguages = new Dictionary<string, LanguageInfo>();
 
                 // For each language, get information for localization and cache them
-                foreach (JToken Language in LanguageMetadata)
+                foreach (var Language in LanguageMetadata)
                     AddBaseLanguage(Language);
 
                 // Add the base languages to the final dictionary
@@ -178,26 +180,24 @@ namespace KS.Languages
                         DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
 
                         // Check the metadata to see if it has relevant information for the language
-                        JToken MetadataToken = JObject.Parse(Reading.ReadContentsText(LanguagePath));
-                        DebugWriter.WriteDebug(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
-                        if (MetadataToken is not null)
+                        var locs = Reading.ReadContentsText(LanguagePath);
+                        var localization = JsonConvert.DeserializeObject<LanguageLocalizations>(locs);
+                        if (localization is not null)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Metadata exists!");
-
                             // Parse the values and install the language
-                            string ParsedLanguageName = (string)(MetadataToken.SelectToken("Name") ?? LanguageName);
-                            bool ParsedLanguageTransliterable = (bool)(MetadataToken.SelectToken("Transliterable") ?? false);
-                            var ParsedLanguageLocalizations = MetadataToken.SelectToken("Localizations");
+                            string ParsedLanguageName = localization.Name ?? LanguageName;
+                            bool ParsedLanguageTransliterable = localization.Transliterable;
+                            var ParsedLanguageLocalizations = localization.Localizations;
                             DebugWriter.WriteDebug(DebugLevel.I, "Metadata says: Name: {0}, Transliterable: {1}", ParsedLanguageName, ParsedLanguageTransliterable);
 
                             // Check the localizations...
                             DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", ParsedLanguageLocalizations is null);
                             if (ParsedLanguageLocalizations is not null)
                             {
-                                DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Count());
+                                DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Length);
 
                                 // Try to install the language info
-                                var ParsedLanguageInfo = new LanguageInfo(LanguageName, ParsedLanguageName, ParsedLanguageTransliterable, (JArray)ParsedLanguageLocalizations);
+                                var ParsedLanguageInfo = new LanguageInfo(LanguageName, ParsedLanguageName, ParsedLanguageTransliterable, ParsedLanguageLocalizations);
                                 DebugWriter.WriteDebug(DebugLevel.I, "Made language info! Checking for existence... (Languages.ContainsKey returns {0})", Languages.ContainsKey(LanguageName));
                                 if (!Languages.ContainsKey(LanguageName))
                                 {
@@ -279,12 +279,10 @@ namespace KS.Languages
                         DebugWriter.WriteDebug(DebugLevel.I, "Language {0} exists in {1}", LanguageName, LanguagePath);
 
                         // Now, check the metadata to see if it has relevant information for the language
-                        JToken MetadataToken = JObject.Parse(Reading.ReadContentsText(LanguagePath));
-                        DebugWriter.WriteDebug(DebugLevel.I, "MetadataToken is null: {0}", MetadataToken is null);
-                        if (MetadataToken is not null)
+                        var locs = Reading.ReadContentsText(LanguagePath);
+                        var localization = JsonConvert.DeserializeObject<LanguageLocalizations>(locs);
+                        if (localization is not null)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.I, "Metadata exists!");
-
                             // Uninstall the language
                             if (!CustomLanguages.Remove(LanguageName))
                             {
@@ -405,34 +403,31 @@ namespace KS.Languages
             return finalLang;
         }
 
-        internal static Dictionary<string, string> ProbeLocalizations(JObject LanguageToken)
+        internal static string[] ProbeLocalizations(LanguageLocalizations loc)
         {
-            DebugCheck.Assert(LanguageToken.ContainsKey("Localizations"), "language has no localizations!!!");
-            var langStrings = new Dictionary<string, string>();
-            foreach (JProperty TranslatedProperty in LanguageToken.SelectToken("Localizations").Cast<JProperty>())
-                langStrings.Add(TranslatedProperty.Name, (string)TranslatedProperty.Value);
-            DebugWriter.WriteDebug(DebugLevel.I, "{0} strings probed from localizations token.", langStrings.Count);
-            return langStrings;
+            DebugCheck.Assert(loc.Localizations.Length == 0, "language has no localizations!!!");
+            DebugWriter.WriteDebug(DebugLevel.I, "{0} strings probed from localizations token.", loc.Localizations.Length);
+            return loc.Localizations;
         }
 
-        internal static void AddBaseLanguage(JToken Language, bool useLocalizationObject = false, JObject localizations = null)
+        internal static void AddBaseLanguage(LanguageMetadata Language, bool useLocalizationObject = false, string[] localizations = null)
         {
-            string LanguageName = Language.Path;
-            string LanguageFullName = (string)Language.First.SelectToken("name");
-            bool LanguageTransliterable = (bool)Language.First.SelectToken("transliterable");
-            int LanguageCodepage = (int)(Language.First.SelectToken("codepage") ?? 65001);
-            string LanguageCultureCode = (string)Language.First.SelectToken("culture");
+            string shortName = Language.ThreeLetterLanguageName;
+            string LanguageFullName = Language.Name;
+            bool LanguageTransliterable = Language.Transliterable;
+            int LanguageCodepage = Language.Codepage;
+            string LanguageCultureCode = Language.Culture ?? "";
 
             // If the language is not found in the base languages cache dictionary, add it
-            if (!BaseLanguages.ContainsKey(LanguageName))
+            if (!BaseLanguages.ContainsKey(shortName))
             {
                 LanguageInfo LanguageInfo;
                 if (useLocalizationObject)
-                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, (JArray)localizations["Localizations"], LanguageCultureCode);
+                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, localizations, LanguageCultureCode);
                 else
-                    LanguageInfo = new LanguageInfo(LanguageName, LanguageFullName, LanguageTransliterable, LanguageCodepage, LanguageCultureCode);
-                DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}", LanguageName, LanguageFullName, LanguageTransliterable);
-                BaseLanguages.Add(LanguageName, LanguageInfo);
+                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, LanguageCodepage, LanguageCultureCode);
+                DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}", shortName, LanguageFullName, LanguageTransliterable);
+                BaseLanguages.Add(shortName, LanguageInfo);
             }
         }
     }

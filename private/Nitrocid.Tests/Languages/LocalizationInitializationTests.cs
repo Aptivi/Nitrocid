@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Languages;
+using KS.Languages.Decoy;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using Shouldly;
@@ -29,7 +31,7 @@ namespace Nitrocid.Tests.Languages
     public class LocalizationInitializationTests
     {
 
-        private readonly JObject localizationExample = JObject.Parse(
+        private readonly string localizationExample =
             """
             {
               "Name": "French",
@@ -39,8 +41,7 @@ namespace Nitrocid.Tests.Languages
                 "This is Nitrocid KS!": "C'est Nitrocid KS !"
               }
             }
-            """
-        );
+            """;
 
         /// <summary>
         /// Tests creating the new instance of the language information
@@ -49,12 +50,13 @@ namespace Nitrocid.Tests.Languages
         [Description("Initialization")]
         public void TestProbeLocalizations()
         {
-            Dictionary<string, string> localizations = new();
-            Should.NotThrow(() => localizations = LanguageManager.ProbeLocalizations(localizationExample));
+            string[] localizations = default;
+            var localization = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationExample);
+            Should.NotThrow(() => localizations = LanguageManager.ProbeLocalizations(localization));
             localizations.ShouldNotBeNull();
             localizations.ShouldNotBeEmpty();
-            localizations["Hello, world!"].ShouldBe("Bonjour le monde !");
-            localizations["This is Nitrocid KS!"].ShouldBe("C'est Nitrocid KS !");
+            localizations[0].ShouldBe("Bonjour le monde !");
+            localizations[1].ShouldBe("C'est Nitrocid KS !");
         }
 
     }

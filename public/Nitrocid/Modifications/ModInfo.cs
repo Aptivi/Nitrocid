@@ -53,12 +53,12 @@ namespace KS.Modifications
         /// <summary>
         /// The localization information containing the mod's strings
         /// </summary>
-        public Dictionary<string, Dictionary<string, string>> ModStrings { get; private set; } = new();
+        public Dictionary<string, string[]> ModStrings { get; private set; } = new();
 
         /// <summary>
         /// Creates new mod info instance
         /// </summary>
-        internal ModInfo(string ModName, string ModFileName, string ModFilePath, Dictionary<string, ModPartInfo> ModParts, string ModVersion, Dictionary<string, Dictionary<string, string>> ModStrings)
+        internal ModInfo(string ModName, string ModFileName, string ModFilePath, Dictionary<string, ModPartInfo> ModParts, string ModVersion, Dictionary<string, string[]> ModStrings)
         {
             // Validate values. Check to see if the name is null. If so, it will take the mod file name.
             if (string.IsNullOrWhiteSpace(ModName))

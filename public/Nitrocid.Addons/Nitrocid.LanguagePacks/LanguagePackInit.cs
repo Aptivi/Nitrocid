@@ -19,7 +19,9 @@
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
 using KS.Languages;
+using KS.Languages.Decoy;
 using KS.Misc.Reflection;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Nitrocid.LanguagePacks.Resources;
 using System.Linq;
@@ -36,13 +38,14 @@ namespace Nitrocid.LanguagePacks
         {
             // Add them all!
             string[] languageResNames = GetLanguageResourceNames();
-            foreach (string key in languageResNames)
+            var languageMetadataToken = JsonConvert.DeserializeObject<LanguageMetadata[]>(LanguageResources.LanguageMetadata);
+            for (int i = 0; i < languageResNames.Length; i++)
             {
-                string keyNormalized = key.Replace("_", "-");
-                var languageMetadataToken = JToken.Parse(LanguageResources.LanguageMetadata);
-                var languageToken = JToken.Parse(LanguageResources.ResourceManager.GetString(key));
-                LanguageManager.AddBaseLanguage(languageMetadataToken[keyNormalized].Parent, true, (JObject)languageToken);
-                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}", keyNormalized);
+                var metadata = languageMetadataToken[i];
+                string key = languageResNames[i].Replace("_", "-");
+                var languageToken = JsonConvert.DeserializeObject<LanguageLocalizations>(LanguageResources.ResourceManager.GetString(languageResNames[i]));
+                LanguageManager.AddBaseLanguage(metadata, true, languageToken.Localizations);
+                DebugWriter.WriteDebug(DebugLevel.I, "Added {0}", key);
             }
         }
 

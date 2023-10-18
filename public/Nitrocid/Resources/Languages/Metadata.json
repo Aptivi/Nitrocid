@@ -1,6 +1,7 @@
-{
-    "eng": {
+[
+    {
+        "three": "eng",
         "name": "English",
         "transliterable": false
     }
-}
+]
