@@ -24,6 +24,7 @@ using KS.Drivers;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
+using KS.Kernel.Exceptions;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Text;
@@ -316,7 +317,7 @@ namespace KS.Kernel.Debugging
         }
 
         internal static string GetExceptionTraceString(Exception ex) =>
-            $"{ex.GetType().FullName}: {ex.Message}{CharManager.NewLine}{ex.StackTrace}{CharManager.NewLine}";
+            $"{ex.GetType().FullName}: {(ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message)}{CharManager.NewLine}{ex.StackTrace}{CharManager.NewLine}";
 
     }
 }
