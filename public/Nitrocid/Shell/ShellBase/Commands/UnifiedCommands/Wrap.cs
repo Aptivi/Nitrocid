@@ -33,7 +33,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            CommandExecutor.ExecuteCommandWrapped(parameters.ArgumentsOriginalText);
+            CommandExecutor.ExecuteCommandWrapped(parameters.ArgumentsText);
             return 0;
         }
 

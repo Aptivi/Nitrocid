@@ -39,6 +39,7 @@ using KS.Drivers.Console.Bases;
 using KS.Shell.ShellBase.Help;
 using System.Runtime;
 using System.Threading.Tasks;
+using KS.Drivers.Regexp;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -176,10 +177,10 @@ namespace KS.Shell.ShellBase.Commands
                 // Now, assume that an argument is satisfied
                 var ArgumentInfo = satisfied;
                 Command = ArgumentInfo.Command;
-                var Args = ArgumentInfo.ArgumentsList;
+                var Args = ArgumentInfo.ArgumentsList.Select(DriverHandler.CurrentRegexpDriverLocal.Unescape).ToArray();
                 var ArgsOrig = ArgumentInfo.ArgumentsListOrig;
-                var Switches = ArgumentInfo.SwitchesList;
-                string StrArgs = ArgumentInfo.ArgumentsText;
+                var Switches = ArgumentInfo.SwitchesList.Select(DriverHandler.CurrentRegexpDriverLocal.Unescape).ToArray();
+                string StrArgs = DriverHandler.CurrentRegexpDriverLocal.Unescape(ArgumentInfo.ArgumentsText);
                 string StrArgsOrig = ArgumentInfo.ArgumentsTextOrig;
                 bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
                 string variable = "";
