@@ -24,6 +24,7 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Calendars;
 using KS.Resources;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Terminaux.Colors;
 
@@ -132,18 +133,20 @@ namespace KS.ConsoleBase.Themes
                 KernelColorType type = ThemeColors.Keys.ElementAt(typeIndex);
                 ThemeColors[type] = new Color(ThemeResourceJson.SelectToken($"{type}Color").ToString());
             }
-            Name = ThemeResourceJson["Metadata"]["Name"].ToString();
-            Description = ThemeResourceJson["Metadata"]["Description"]?.ToString();
+            var metadataObj = ThemeResourceJson["Metadata"];
+            var metadata = JsonConvert.DeserializeObject<ThemeMetadata>(metadataObj.ToString());
+            Name = metadata.Name;
+            Description = metadata.Description;
             TrueColorRequired = ThemeTools.IsTrueColorRequired(ThemeColors);
-            localizable = (bool)(ThemeResourceJson["Metadata"]["Localizable"] ?? false);
+            localizable = metadata.Localizable;
 
             // Parse event-related info
-            IsEvent = (bool)(ThemeResourceJson["Metadata"]["IsEvent"] ?? false);
-            StartMonth = (int)(ThemeResourceJson["Metadata"]["StartMonth"] ?? 1);
-            StartDay = (int)(ThemeResourceJson["Metadata"]["StartDay"] ?? 1);
-            EndMonth = (int)(ThemeResourceJson["Metadata"]["EndMonth"] ?? 1);
-            EndDay = (int)(ThemeResourceJson["Metadata"]["EndDay"] ?? 1);
-            Calendar = (string)(ThemeResourceJson["Metadata"]["Calendar"] ?? "Gregorian");
+            IsEvent = metadata.IsEvent;
+            StartMonth = metadata.StartMonth;
+            StartDay = metadata.StartDay;
+            EndMonth = metadata.EndMonth;
+            EndDay = metadata.EndDay;
+            Calendar = metadata.Calendar;
             if (!Enum.TryParse(Calendar, out CalendarTypes calendar))
                 calendar = CalendarTypes.Gregorian;
 
