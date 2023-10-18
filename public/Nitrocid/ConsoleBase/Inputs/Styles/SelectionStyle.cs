@@ -220,22 +220,24 @@ namespace KS.ConsoleBase.Inputs.Styles
                     else
                     {
                         // Populate the answer
+                        bool selected = AnswerIndex + 1 == HighlightedAnswer;
                         var AnswerInstance = AllAnswers[AnswerIndex];
                         string AnswerTitle = AnswerInstance.ChoiceTitle ?? "";
 
                         // Get the option
-                        string AnswerOption = $"  {AnswerInstance}) {AnswerTitle}";
-                        int AnswerTitleLeft = AllAnswers.Max(x => $"  {x.ChoiceName}) ".Length);
+                        string AnswerOption = $"{(selected ? ">" : " ")} {AnswerInstance}) {AnswerTitle}";
+                        int AnswerTitleLeft = AllAnswers.Max(x => $"{(selected ? ">" : " ")} {x.ChoiceName}) ".Length);
                         int answerTitleMaxLeft = ConsoleWrapper.WindowWidth;
                         if (AnswerTitleLeft < answerTitleMaxLeft)
                         {
-                            string renderedChoice = $"  {AnswerInstance.ChoiceName}) ";
+                            string renderedChoice = $"{(selected ? ">" : " ")} {AnswerInstance.ChoiceName}) ";
                             int blankRepeats = AnswerTitleLeft - renderedChoice.Length;
                             AnswerOption = renderedChoice + new string(' ', blankRepeats) + $"{AnswerTitle}" + $"{ConsoleExtensions.GetClearLineToRightSequence()}";
                         }
-                        var AnswerColor = AnswerIndex + 1 == HighlightedAnswer ? 
-                                          KernelColorType.SelectedOption : 
-                                          AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
+                        var AnswerColor =
+                            selected ? 
+                            KernelColorType.SelectedOption : 
+                            AltAnswer ? KernelColorType.AlternativeOption : KernelColorType.Option;
                         AnswerOption = $"{KernelColorTools.GetColor(AnswerColor).VTSequenceForeground}{AnswerOption}";
                         TextWriterColor.Write(AnswerOption.Truncate(answerTitleMaxLeft - 8 + VtSequenceTools.MatchVTSequences(AnswerOption).Sum((mc) => mc.Sum((m) => m.Length))));
                     }
