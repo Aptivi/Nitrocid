@@ -234,7 +234,7 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Can't register custom command: {ex.Message}");
                     DebugWriter.WriteDebugStackTrace(ex);
-                    failedCommands.Add($"  - {(commandBase is not null ? commandBase.Command : "???")}: {ex.Message}");
+                    failedCommands.Add($"  - {(commandBase is not null ? commandBase.Command : "???")}: {(ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message)}");
                 }
             }
             if (failedCommands.Count > 0)
@@ -295,7 +295,7 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Can't unregister custom command: {ex.Message}");
                     DebugWriter.WriteDebugStackTrace(ex);
-                    failedCommands.Add($"  - {(!string.IsNullOrEmpty(commandBase) ? commandBase : "???")}: {ex.Message}");
+                    failedCommands.Add($"  - {(!string.IsNullOrEmpty(commandBase) ? commandBase : "???")}: {(ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message)}");
                 }
             }
             if (failedCommands.Count > 0)
@@ -377,7 +377,7 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Can't register addon command: {ex.Message}");
                     DebugWriter.WriteDebugStackTrace(ex);
-                    failedCommands.Add($"  - {(commandBase is not null ? commandBase.Command : "???")}: {ex.Message}");
+                    failedCommands.Add($"  - {(commandBase is not null ? commandBase.Command : "???")}: {(ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message)}");
                 }
             }
             if (failedCommands.Count > 0)
@@ -438,7 +438,7 @@ namespace KS.Shell.ShellBase.Commands
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, $"Can't unregister addon command: {ex.Message}");
                     DebugWriter.WriteDebugStackTrace(ex);
-                    failedCommands.Add($"  - {(!string.IsNullOrEmpty(commandBase) ? commandBase : "???")}: {ex.Message}");
+                    failedCommands.Add($"  - {(!string.IsNullOrEmpty(commandBase) ? commandBase : "???")}: {(ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message)}");
                 }
             }
             if (failedCommands.Count > 0)

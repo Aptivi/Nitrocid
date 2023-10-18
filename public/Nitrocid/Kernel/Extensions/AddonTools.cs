@@ -158,7 +158,7 @@ namespace KS.Kernel.Extensions
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to finalize addon {0}. {1}", addonInfo.AddonName, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    errors.Add(addonInfo.AddonName, ex.Message);
+                    errors.Add(addonInfo.AddonName, ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message);
                 }
             }
             if (errors.Any())
@@ -180,7 +180,7 @@ namespace KS.Kernel.Extensions
                 {
                     DebugWriter.WriteDebug(DebugLevel.E, "Failed to stop addon {0}. {1}", addonInstance.AddonName, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
-                    errors.Add(addonInstance.AddonName, ex.Message);
+                    errors.Add(addonInstance.AddonName, ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message);
                 }
             }
             if (errors.Any())
