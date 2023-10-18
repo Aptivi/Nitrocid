@@ -405,7 +405,7 @@ namespace KS.Languages
 
         internal static string[] ProbeLocalizations(LanguageLocalizations loc)
         {
-            DebugCheck.Assert(loc.Localizations.Length == 0, "language has no localizations!!!");
+            DebugCheck.Assert(loc.Localizations.Length != 0, "language has no localizations!!!");
             DebugWriter.WriteDebug(DebugLevel.I, "{0} strings probed from localizations token.", loc.Localizations.Length);
             return loc.Localizations;
         }

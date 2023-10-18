@@ -42,11 +42,15 @@ namespace KS.Languages
             new(CurrentCultStr);
 
         /// <summary>
-        /// Updates current culture based on current language. If there are no cultures in the curent language, assume current culture.
+        /// Updates current culture based on current language. If there are no cultures in the current language, assume current culture.
         /// </summary>
         public static void UpdateCultureDry()
         {
-            string StrCult = !(GetCulturesFromCurrentLang().Count == 0) ? GetCulturesFromCurrentLang()[0].EnglishName : CultureInfo.CurrentCulture.EnglishName;
+            var cultures = GetCulturesFromCurrentLang();
+            string StrCult =
+                !(cultures.Count == 0 && cultures.Any((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName))) ?
+                cultures.First((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName)).EnglishName :
+                CultureInfo.CurrentCulture.EnglishName;
             DebugWriter.WriteDebug(DebugLevel.I, "Culture for {0} is {1}", LanguageManager.CurrentLanguageInfo, StrCult);
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);
             DebugWriter.WriteDebug(DebugLevel.I, "Parsing {0} cultures for {1}", Cults.Length, StrCult);

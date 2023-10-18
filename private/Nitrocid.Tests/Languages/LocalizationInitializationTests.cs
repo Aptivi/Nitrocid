@@ -36,10 +36,10 @@ namespace Nitrocid.Tests.Languages
             {
               "Name": "French",
               "Transliterable": false,
-              "Localizations": {
-                "Hello, world!": "Bonjour le monde !",
-                "This is Nitrocid KS!": "C'est Nitrocid KS !"
-              }
+              "Localizations": [
+                "Bonjour le monde !",
+                "C'est Nitrocid KS !"
+              ]
             }
             """;
 
