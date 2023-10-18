@@ -101,12 +101,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 for (int i = ProgressFilled; i < MaximumHeight; i++)
                 {
                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
-                    borderBuilder.Append(" ");
+                    borderBuilder.Append(' ');
                 }
                 for (int i = 0; i < ProgressFilled; i++)
                 {
                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
-                    borderBuilder.Append("*");
+                    borderBuilder.Append('*');
                 }
 
                 // Render to the console
@@ -261,13 +261,13 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 for (int i = ProgressFilled; i < MaximumHeight; i++)
                 {
                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
-                    borderBuilder.Append(" ");
+                    borderBuilder.Append(' ');
                 }
                 borderBuilder.Append($"{KernelColorTools.GetColor(ProgressColor).VTSequenceBackground}");
                 for (int i = 0; i < ProgressFilled; i++)
                 {
                     borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
-                    borderBuilder.Append(" ");
+                    borderBuilder.Append(' ');
                 }
                 borderBuilder.Append($"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}");
                 
@@ -390,13 +390,13 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 for (int i = ProgressFilled; i < MaximumHeight; i++)
                 {
                      borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
-                     borderBuilder.Append(" ");
+                     borderBuilder.Append(' ');
                  }
                  borderBuilder.Append($"{new Color(ProgressColor).VTSequenceBackground}");
                  for (int i = 0; i < ProgressFilled; i++)
                  {
                      borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
-                     borderBuilder.Append(" ");
+                     borderBuilder.Append(' ');
                  }
                  borderBuilder.Append($"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}");
 
@@ -519,13 +519,13 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                  for (int i = ProgressFilled; i < MaximumHeight; i++)
                  {
                      borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
-                     borderBuilder.Append(" ");
+                     borderBuilder.Append(' ');
                  }
                  borderBuilder.Append($"{ProgressColor.VTSequenceBackground}");
                  for (int i = 0; i < ProgressFilled; i++)
                  {
                      borderBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(Left + 2, Top + MaximumHeight - i + 1)}");
-                     borderBuilder.Append(" ");
+                     borderBuilder.Append(' ');
                  }
                  borderBuilder.Append($"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}");
 

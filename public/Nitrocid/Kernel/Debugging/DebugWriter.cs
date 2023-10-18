@@ -135,7 +135,7 @@ namespace KS.Kernel.Debugging
                         text = text.Replace(char.ToString((char)13), "");
 
                         // Handle the new lines
-                        string[] texts = text.Split("\n");
+                        string[] texts = text.Split('\n');
                         foreach (string splitText in texts)
                         {
                             string routineName = STrace.RoutineName;
@@ -149,7 +149,7 @@ namespace KS.Kernel.Debugging
                                 // Show stack information
                                 if (routinePath != lastRoutinePath)
                                 {
-                                    message.Append($"\n");
+                                    message.Append('\n');
                                     message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} ");
                                     message.Append($"({routineName} - {fileName})\n");
                                     message.Append(new string('-', message.Length - 2));
