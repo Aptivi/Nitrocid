@@ -103,7 +103,7 @@
     <PackageReference Include="System.Formats.Asn1" Version="7.0.0">
       <TreatAsUsed>true</TreatAsUsed>
     </PackageReference>
-    <PackageReference Include="Terminaux" Version="1.9.0" />
+    <PackageReference Include="Terminaux" Version="1.9.1" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
