@@ -30,7 +30,6 @@ using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Encryption;
 using KS.Shell.Shells.UESH.Presets;
 using KS.Drivers.Encoding;
-using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.UESH
 {

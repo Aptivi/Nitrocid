@@ -22,7 +22,6 @@ using System.Threading;
 using KS.Drivers.RNG;
 using KS.Languages;
 using KS.ConsoleBase.Inputs;
-using KS.Kernel.Configuration;
 using KS.ConsoleBase;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;

@@ -18,7 +18,6 @@
 
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
-using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;

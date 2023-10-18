@@ -19,7 +19,6 @@
 using KS.Misc.Text.Probers.Placeholder;
 using NUnit.Framework;
 using Shouldly;
-using System.Collections.Generic;
 
 namespace Nitrocid.Tests.Misc.Probers
 {

@@ -26,7 +26,6 @@ using KS.Drivers.RNG;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
-using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using Terminaux.Sequences.Builder.Types;
 

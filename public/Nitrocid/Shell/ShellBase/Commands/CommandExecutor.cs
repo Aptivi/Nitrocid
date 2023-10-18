@@ -39,7 +39,6 @@ using KS.Drivers.Console.Bases;
 using KS.Shell.ShellBase.Help;
 using System.Runtime;
 using System.Threading.Tasks;
-using KS.Drivers.Regexp;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -337,8 +336,8 @@ namespace KS.Shell.ShellBase.Commands
             var currentShell = ShellStart.ShellStack[^1];
             var currentType = currentShell.ShellType;
             var StartCommandThread = currentShell.ShellCommandThread;
-            var argumentInfo = ArgumentsParser.ParseShellCommandArguments(Command, currentType);
-            string CommandToBeWrapped = argumentInfo.total[0].Command;
+            var (satisfied, total) = ArgumentsParser.ParseShellCommandArguments(Command, currentType);
+            string CommandToBeWrapped = total[0].Command;
 
             // Check to see if the command is found
             if (!CommandManager.IsCommandFound(CommandToBeWrapped, currentType))

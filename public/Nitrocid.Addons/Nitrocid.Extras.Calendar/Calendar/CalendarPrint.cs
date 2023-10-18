@@ -18,7 +18,6 @@
 
 using System;
 using System.Collections.Generic;
-using KS.Languages;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
