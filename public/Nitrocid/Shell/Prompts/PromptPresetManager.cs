@@ -221,7 +221,7 @@ namespace KS.Shell.Prompts
 
             // Now, prompt the user
             var PresetNames = Presets.Keys.ToArray();
-            var PresetDisplays = Presets.Values.Select(Preset => Preset.PresetPrompt).ToArray();
+            var PresetDisplays = Presets.Values.Select(Preset => Preset.PresetPromptShowcase).ToArray();
             int SelectedPreset = SelectionStyle.PromptSelection(TextTools.FormatString(Translate.DoTranslation("Select preset for {0}:"), shellType), string.Join("/", PresetNames), PresetDisplays);
             if (SelectedPreset == -1)
                 return "Default";

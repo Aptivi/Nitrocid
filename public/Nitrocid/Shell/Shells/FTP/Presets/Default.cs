@@ -18,6 +18,7 @@
 
 using System.Text;
 using KS.ConsoleBase.Colors;
+using KS.Languages;
 using KS.Shell.Prompts;
 
 namespace KS.Shell.Shells.FTP.Presets
@@ -32,7 +33,12 @@ namespace KS.Shell.Shells.FTP.Presets
         public override string PresetName { get; } = "Default";
 
         /// <inheritdoc/>
-        public override string PresetPrompt => PresetPromptBuilder();
+        public override string PresetPrompt =>
+            PresetPromptBuilder();
+
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
 
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "FTPShell";
@@ -61,6 +67,36 @@ namespace KS.Shell.Shells.FTP.Presets
             // Closing
             PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
             PresetStringBuilder.AppendFormat("]{0}> ", FTPShellCommon.FtpCurrentRemoteDir);
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // Build the preset
+            var PresetStringBuilder = new StringBuilder();
+
+            // Opening
+            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append('[');
+
+            // SFTP user
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.AppendFormat(Translate.DoTranslation("User"));
+
+            // "at" sign
+            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append('@');
+
+            // SFTP site
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
+            PresetStringBuilder.AppendFormat(Translate.DoTranslation("Site"));
+
+            // Closing
+            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.AppendFormat("]/dir> ");
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
 
             // Present final string

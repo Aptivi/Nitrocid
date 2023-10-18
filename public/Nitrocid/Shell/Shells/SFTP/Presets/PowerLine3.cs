@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using KS.Shell.Prompts;
+using KS.Languages;
 
 namespace KS.Shell.Shells.SFTP.Presets
 {
@@ -46,6 +47,14 @@ namespace KS.Shell.Shells.SFTP.Presets
         public override string PresetPromptCompletion =>
             PresetPromptCompletionBuilder();
 
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletionShowcase =>
+            PresetPromptCompletionBuilder();
+
         internal override string PresetPromptBuilder()
         {
             // PowerLine glyphs
@@ -57,6 +66,29 @@ namespace KS.Shell.Shells.SFTP.Presets
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), SFTPShellCommon.SFTPUser),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), SFTPShellCommon.SFTPSite, PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), SFTPShellCommon.SFTPCurrentRemoteDir),
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // PowerLine glyphs
+            char PadlockChar = Convert.ToChar(0xE0A2);
+
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), Translate.DoTranslation("User")),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), Translate.DoTranslation("User"), PadlockChar),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), "/path"),
             };
 
             // Builder

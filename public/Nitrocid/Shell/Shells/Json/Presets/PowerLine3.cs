@@ -45,12 +45,39 @@ namespace KS.Shell.Shells.Json.Presets
         public override string PresetPromptCompletion =>
             PresetPromptCompletionBuilder();
 
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletionShowcase =>
+            PresetPromptCompletionBuilder();
+
         internal override string PresetPromptBuilder()
         {
             // Segments
             List<PowerLineSegment> segments = new()
             {
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), JsonShellCommon.JsonShell_FileStream.Name)
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "file.json")
             };
 
             // Builder

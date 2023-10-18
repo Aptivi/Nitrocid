@@ -36,6 +36,14 @@ namespace KS.Shell.Prompts
         /// </summary>
         string PresetPromptCompletion { get; }
         /// <summary>
+        /// Preset prompt style (showcase)
+        /// </summary>
+        string PresetPromptShowcase { get; }
+        /// <summary>
+        /// Preset prompt completion style (showcase)
+        /// </summary>
+        string PresetPromptCompletionShowcase { get; }
+        /// <summary>
         /// Preset shell type
         /// </summary>
         string PresetShellType { get; }
@@ -48,6 +56,14 @@ namespace KS.Shell.Prompts
         /// Preset prompt completion builder logic for advanced prompts, like PowerLine, ...
         /// </summary>
         string PresetPromptCompletionBuilder();
+        /// <summary>
+        /// Preset prompt builder logic for advanced prompts, like PowerLine, ... (showcase)
+        /// </summary>
+        string PresetPromptBuilderShowcase();
+        /// <summary>
+        /// Preset prompt completion builder logic for advanced prompts, like PowerLine, ... (showcase)
+        /// </summary>
+        string PresetPromptCompletionBuilderShowcase();
 
     }
 }

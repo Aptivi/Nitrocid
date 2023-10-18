@@ -33,6 +33,9 @@ namespace KS.Shell.Shells.Admin.Presets
         public override string PresetPrompt { get => Translate.DoTranslation("Administrator Shell") + "> "; }
 
         /// <inheritdoc/>
+        public override string PresetPromptShowcase => PresetPrompt;
+
+        /// <inheritdoc/>
         public override string PresetShellType { get; } = "AdminShell";
 
     }

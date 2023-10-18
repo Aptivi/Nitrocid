@@ -38,7 +38,12 @@ namespace KS.Shell.Shells.UESH.Presets
         public override string PresetName { get; } = "Default";
 
         /// <inheritdoc/>
-        public override string PresetPrompt => PresetPromptBuilder();
+        public override string PresetPrompt =>
+            PresetPromptBuilder();
+
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
 
         internal override string PresetPromptBuilder()
         {
@@ -71,6 +76,50 @@ namespace KS.Shell.Shells.UESH.Presets
                 // User dollar sign
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserDollar).VTSequenceForeground);
                 PresetStringBuilder.AppendFormat(" {0} ", UserDollarSign);
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            }
+            else
+            {
+                // Maintenance mode
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            }
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            var PresetStringBuilder = new StringBuilder();
+
+            // Build the preset
+            if (!KernelFlags.Maintenance)
+            {
+                // Opening
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.AppendFormat("[1:");
+
+                // Current username
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+                PresetStringBuilder.AppendFormat("user");
+
+                // "At" sign
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append('@');
+
+                // Current hostname
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
+                PresetStringBuilder.AppendFormat("host");
+
+                // Current directory and shell stack
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.AppendFormat("]/home/user:");
+
+                // User dollar sign
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserDollar).VTSequenceForeground);
+                PresetStringBuilder.AppendFormat(" $ ");
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
             }
             else

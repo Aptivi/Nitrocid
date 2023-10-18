@@ -49,6 +49,14 @@ namespace KS.Shell.Shells.UESH.Presets
         public override string PresetPromptCompletion =>
             PresetPromptCompletionBuilder();
 
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletionShowcase =>
+            PresetPromptCompletionBuilder();
+
         internal override string PresetPromptBuilder()
         {
             // PowerLine glyphs
@@ -60,6 +68,41 @@ namespace KS.Shell.Shells.UESH.Presets
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), UserManagement.CurrentUser.Username),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), NetworkTools.HostName, PadlockChar),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), $"{CurrentDirectory.CurrentDir} [{ShellStart.ShellStack.Count}]"),
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            // Build the preset
+            if (!KernelFlags.Maintenance)
+            {
+                // Use RenderSegments to render our segments
+                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            }
+            else
+            {
+                // Maintenance mode
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            }
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // PowerLine glyphs
+            char PadlockChar = Convert.ToChar(0xE0A2);
+
+            // PowerLine presets
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "user"),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), "host", PadlockChar),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), "/home/user [1]"),
             };
 
             // Builder

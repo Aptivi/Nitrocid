@@ -23,6 +23,7 @@ using System.Collections.Generic;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using KS.Shell.Prompts;
+using KS.Languages;
 
 namespace KS.Shell.Shells.SFTP.Presets
 {
@@ -46,6 +47,14 @@ namespace KS.Shell.Shells.SFTP.Presets
         public override string PresetPromptCompletion =>
             PresetPromptCompletionBuilder();
 
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletionShowcase =>
+            PresetPromptCompletionBuilder();
+
         internal override string PresetPromptBuilder()
         {
             // PowerLine glyphs
@@ -58,6 +67,30 @@ namespace KS.Shell.Shells.SFTP.Presets
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), SFTPShellCommon.SFTPUser, default, TransitionPartChar),
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), SFTPShellCommon.SFTPSite, PadlockChar, TransitionPartChar),
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), SFTPShellCommon.SFTPCurrentRemoteDir, default, TransitionPartChar),
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // PowerLine glyphs
+            char TransitionPartChar = Convert.ToChar(0xE0B1);
+            char PadlockChar = Convert.ToChar(0xE0A2);
+
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), Translate.DoTranslation("User"), default, TransitionPartChar),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), Translate.DoTranslation("Site"), PadlockChar, TransitionPartChar),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), "/path", default, TransitionPartChar),
             };
 
             // Builder

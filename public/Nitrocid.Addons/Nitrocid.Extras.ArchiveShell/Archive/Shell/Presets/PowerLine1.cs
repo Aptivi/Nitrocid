@@ -46,6 +46,14 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
         public override string PresetPromptCompletion =>
             PresetPromptCompletionBuilder();
 
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletionShowcase =>
+            PresetPromptCompletionBuilder();
+
         internal override string PresetPromptBuilder()
         {
             // Segments
@@ -53,6 +61,26 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             {
                 new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), Path.GetFileName(ArchiveShellCommon.ArchiveShell_FileStream.Name)),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory)
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // Segments
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), "archive.zip"),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(85, 255, 255), "/dir")
             };
 
             // Builder

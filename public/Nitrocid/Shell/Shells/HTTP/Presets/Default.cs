@@ -18,6 +18,7 @@
 
 using System.Text;
 using KS.ConsoleBase.Colors;
+using KS.Languages;
 using KS.Shell.Prompts;
 
 namespace KS.Shell.Shells.HTTP.Presets
@@ -32,7 +33,12 @@ namespace KS.Shell.Shells.HTTP.Presets
         public override string PresetName { get; } = "Default";
 
         /// <inheritdoc/>
-        public override string PresetPrompt => PresetPromptBuilder();
+        public override string PresetPrompt =>
+            PresetPromptBuilder();
+
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
 
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "HTTPShell";
@@ -49,6 +55,28 @@ namespace KS.Shell.Shells.HTTP.Presets
             // HTTP site
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", HTTPShellCommon.HTTPSite);
+
+            // Closing
+            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append("] > ");
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // Build the preset
+            var PresetStringBuilder = new StringBuilder();
+
+            // Opening
+            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append('[');
+
+            // HTTP site
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.HostNameShell).VTSequenceForeground);
+            PresetStringBuilder.AppendFormat(Translate.DoTranslation("Site"));
 
             // Closing
             PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);

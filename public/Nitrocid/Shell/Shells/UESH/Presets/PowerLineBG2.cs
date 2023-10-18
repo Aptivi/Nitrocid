@@ -49,6 +49,14 @@ namespace KS.Shell.Shells.UESH.Presets
         public override string PresetPromptCompletion =>
             PresetPromptCompletionBuilder();
 
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletionShowcase =>
+            PresetPromptCompletionBuilder();
+
         internal override string PresetPromptBuilder()
         {
             // PowerLine glyphs
@@ -61,6 +69,42 @@ namespace KS.Shell.Shells.UESH.Presets
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), UserManagement.CurrentUser.Username, default, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), NetworkTools.HostName, PadlockChar, TransitionPartChar),
                 new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), $"{CurrentDirectory.CurrentDir} [{ShellStart.ShellStack.Count}]", default, TransitionPartChar),
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            // Build the preset
+            if (!KernelFlags.Maintenance)
+            {
+                // Use RenderSegments to render our segments
+                PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            }
+            else
+            {
+                // Maintenance mode
+                PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+                PresetStringBuilder.Append(Translate.DoTranslation("Maintenance Mode") + "> ");
+                PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+            }
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // PowerLine glyphs
+            char TransitionPartChar = Convert.ToChar(0xE0B1);
+            char PadlockChar = Convert.ToChar(0xE0A2);
+
+            // PowerLine presets
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "user", default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "host", PadlockChar, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 85, 255), new Color(25, 25, 25), "/home/user [1]", default, TransitionPartChar),
             };
 
             // Builder

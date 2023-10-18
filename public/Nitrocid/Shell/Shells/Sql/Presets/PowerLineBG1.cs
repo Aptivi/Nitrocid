@@ -46,6 +46,14 @@ namespace KS.Shell.Shells.Sql.Presets
         public override string PresetPromptCompletion =>
             PresetPromptCompletionBuilder();
 
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletionShowcase =>
+            PresetPromptCompletionBuilder();
+
         internal override string PresetPromptBuilder()
         {
             // PowerLine glyphs
@@ -55,6 +63,28 @@ namespace KS.Shell.Shells.Sql.Presets
             List<PowerLineSegment> segments = new()
             {
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), SqlShellCommon.Sql_DatabaseFileName, default, TransitionPartChar)
+            };
+
+            // Builder
+            var PresetStringBuilder = new StringBuilder();
+
+            // Use RenderSegments to render our segments
+            PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // PowerLine glyphs
+            char TransitionPartChar = Convert.ToChar(0xE0B1);
+
+            // PowerLine presets
+            List<PowerLineSegment> segments = new()
+            {
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), "database.sqlite", default, TransitionPartChar)
             };
 
             // Builder

@@ -46,6 +46,14 @@ namespace KS.Shell.Shells.Debug.Presets
         public override string PresetPromptCompletion =>
             PresetPromptCompletionBuilder();
 
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPrompt;
+
+        /// <inheritdoc/>
+        public override string PresetPromptCompletionShowcase =>
+            PresetPromptCompletion;
+
         internal override string PresetPromptBuilder()
         {
             // Segments

@@ -34,7 +34,12 @@ namespace KS.Shell.Shells.Json.Presets
         public override string PresetName { get; } = "Default";
 
         /// <inheritdoc/>
-        public override string PresetPrompt => PresetPromptBuilder();
+        public override string PresetPrompt =>
+            PresetPromptBuilder();
+
+        /// <inheritdoc/>
+        public override string PresetPromptShowcase =>
+            PresetPromptBuilderShowcase();
 
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "JsonShell";
@@ -55,6 +60,32 @@ namespace KS.Shell.Shells.Json.Presets
             // Was file edited?
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
             PresetStringBuilder.AppendFormat("{0}", JsonTools.JsonShell_WasJsonEdited() ? "*" : "");
+
+            // Closing
+            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append("] > ");
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.Input).VTSequenceForeground);
+
+            // Present final string
+            return PresetStringBuilder.ToString();
+        }
+
+        internal override string PresetPromptBuilderShowcase()
+        {
+            // Build the preset
+            var PresetStringBuilder = new StringBuilder();
+
+            // Opening
+            PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
+            PresetStringBuilder.Append('[');
+
+            // File name
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.AppendFormat("file.json");
+
+            // Was file edited?
+            PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
+            PresetStringBuilder.AppendFormat("*");
 
             // Closing
             PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
