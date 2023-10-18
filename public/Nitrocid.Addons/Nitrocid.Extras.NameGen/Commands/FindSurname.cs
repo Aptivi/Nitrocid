@@ -35,25 +35,21 @@ namespace Nitrocid.Extras.NameGen.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            string term = "";
             string SurnamePrefix = "";
             string SurnameSuffix = "";
             bool nametags = parameters.SwitchesList.Contains("-t");
-            NameGenderType genderType = NameGenderType.Unified;
             string[] NamesList;
             if (parameters.ArgumentsList.Length >= 1)
-                SurnamePrefix = parameters.ArgumentsList[0];
+                term = parameters.ArgumentsList[0];
             if (parameters.ArgumentsList.Length >= 2)
-                SurnameSuffix = parameters.ArgumentsList[1];
+                SurnamePrefix = parameters.ArgumentsList[1];
+            if (parameters.ArgumentsList.Length >= 3)
+                SurnameSuffix = parameters.ArgumentsList[2];
 
             // Generate n names
-            // TODO: Namer needs GenerateSurnames and FindSurnames in order for this to be more accurate
             PopulateNames();
-            NamesList = GenerateNames(10, "", "", SurnamePrefix, SurnameSuffix, genderType);
-            for (int i = 0; i < NamesList.Length; i++)
-            {
-                if (NamesList[i].Contains(' '))
-                    NamesList[i] = NamesList[i][(NamesList[i].LastIndexOf(' ') + 1)..];
-            }
+            NamesList = FindLastNames(term, SurnamePrefix, SurnameSuffix);
 
             // Check to see if we need to modify the list to have nametags
             if (nametags)

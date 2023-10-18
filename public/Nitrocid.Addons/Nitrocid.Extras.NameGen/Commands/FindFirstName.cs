@@ -57,6 +57,7 @@ namespace Nitrocid.Extras.NameGen.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            string term = "";
             string NamePrefix = "";
             string NameSuffix = "";
             bool nametags = parameters.SwitchesList.Contains("-t");
@@ -67,19 +68,15 @@ namespace Nitrocid.Extras.NameGen.Commands
                 genderType = NameGenderType.Female;
             string[] NamesList;
             if (parameters.ArgumentsList.Length >= 1)
-                NamePrefix = parameters.ArgumentsList[0];
+                term = parameters.ArgumentsList[0];
             if (parameters.ArgumentsList.Length >= 2)
-                NameSuffix = parameters.ArgumentsList[1];
+                NamePrefix = parameters.ArgumentsList[1];
+            if (parameters.ArgumentsList.Length >= 3)
+                NameSuffix = parameters.ArgumentsList[2];
 
             // Generate n names
-            // TODO: Namer needs GenerateFirstNames and FindFirstNames in order for this to be more accurate
             PopulateNames();
-            NamesList = GenerateNames(10, NamePrefix, NameSuffix, "", "", genderType);
-            for (int i = 0; i < NamesList.Length; i++)
-            {
-                if (NamesList[i].Contains(' '))
-                    NamesList[i] = NamesList[i][..NamesList[i].IndexOf(' ')];
-            }
+            NamesList = FindFirstNames(term, NamePrefix, NameSuffix, genderType);
 
             // Check to see if we need to modify the list to have nametags
             if (nametags)

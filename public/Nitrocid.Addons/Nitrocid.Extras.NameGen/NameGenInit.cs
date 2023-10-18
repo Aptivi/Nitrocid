@@ -41,6 +41,7 @@ namespace Nitrocid.Extras.NameGen
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
+                            new CommandArgumentPart(false, "term"),
                             new CommandArgumentPart(false, "nameprefix"),
                             new CommandArgumentPart(false, "namesuffix"),
                         }, new[] {
@@ -71,6 +72,7 @@ namespace Nitrocid.Extras.NameGen
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
+                            new CommandArgumentPart(false, "term"),
                             new CommandArgumentPart(false, "surnameprefix"),
                             new CommandArgumentPart(false, "surnamesuffix"),
                         }, Array.Empty<SwitchInfo>(), true)
