@@ -75,15 +75,10 @@ namespace KS.Shell.Prompts
             var CustomPresets = GetCustomPresetsFromShell(ShellType);
 
             // Check to see if we have the preset
-            if (Presets.ContainsKey(PresetName))
+            if (Presets.ContainsKey(PresetName) || CustomPresets.ContainsKey(PresetName))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} exists. Setting dryly...", PresetName, ShellType.ToString());
-                Presets[ShellType] = Presets[PresetName];
-            }
-            else if (CustomPresets.ContainsKey(PresetName))
-            {
-                DebugWriter.WriteDebug(DebugLevel.I, "Preset {0} for {1} from the custom presets exists. Setting dryly...", PresetName, ShellType.ToString());
-                CustomPresets[ShellType] = Presets[PresetName];
+                CurrentPresets[ShellType] = PresetName;
             }
             else if (ThrowOnNotFound)
             {
@@ -93,7 +88,7 @@ namespace KS.Shell.Prompts
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Preset {0} for {1} doesn't exist. Setting dryly to default...", PresetName, ShellType.ToString());
-                Presets[ShellType] = Presets["Default"];
+                CurrentPresets[ShellType] = "Default";
             }
         }
 

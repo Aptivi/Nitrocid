@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging;
 using KS.Shell.Prompts;
 using System;
 
@@ -38,7 +39,12 @@ namespace KS.Shell.ShellBase.Shells
                 // First, add the shell
                 ShellManager.availableShells.Add(ShellType, ShellTypeInfo);
 
-                // Then, add the default preset
+                // Then, add the default preset if the current preset is not found
+                if (PromptPresetManager.CurrentPresets.ContainsKey(ShellType))
+                    return;
+
+                // Rare state.
+                DebugWriter.WriteDebug(DebugLevel.I, "Reached rare state or unconfigurable shell.");
                 var presets = ShellTypeInfo.ShellPresets;
                 var basePreset = new PromptPresetBase();
                 if (presets is not null)
