@@ -21,6 +21,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
 using KS.Files.Operations.Querying;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -42,7 +43,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (!KernelFlags.SafeMode)
+            if (!KernelEntry.SafeMode)
             {
                 string CommandMode = parameters.ArgumentsList[0].ToLower();
                 string TargetLanguage = "";

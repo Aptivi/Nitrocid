@@ -20,10 +20,12 @@ using System;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Users.Permissions;
 
@@ -44,7 +46,7 @@ namespace KS.Shell.Shells.Debug
         /// <inheritdoc/>
         public override void InitializeShell(params object[] ShellArgs)
         {
-            if (!KernelFlags.DebugMode)
+            if (!KernelEntry.DebugMode)
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("You must enable debug mode before you can use the debug shell."), true, KernelColorType.Warning);
                 Bail = true;
@@ -62,7 +64,7 @@ namespace KS.Shell.Shells.Debug
                 }
                 catch (ThreadInterruptedException)
                 {
-                    KernelFlags.CancelRequested = false;
+                    CancellationHandlers.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

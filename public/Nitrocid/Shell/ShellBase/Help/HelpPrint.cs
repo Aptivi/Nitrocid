@@ -92,7 +92,7 @@ namespace KS.Shell.ShellBase.Help
             else if (string.IsNullOrWhiteSpace(command))
             {
                 // List the available commands
-                if (KernelFlags.SimHelp)
+                if (HelpPrintTools.SimHelp)
                     HelpPrintTools.ShowCommandListSimplified(commandType);
                 else
                     HelpPrintTools.ShowCommandList(commandType, showGeneral, showMod, showAlias, showUnified, showAddon);

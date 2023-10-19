@@ -29,6 +29,7 @@ using Terminaux.Colors;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Configuration;
 using KS.Shell.Prompts;
+using KS.Kernel;
 
 namespace KS.Shell.Shells.UESH.Presets
 {
@@ -75,7 +76,7 @@ namespace KS.Shell.Shells.UESH.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Build the preset
-            if (!KernelFlags.Maintenance)
+            if (!KernelEntry.Maintenance)
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));
@@ -111,7 +112,7 @@ namespace KS.Shell.Shells.UESH.Presets
             var PresetStringBuilder = new StringBuilder();
 
             // Build the preset
-            if (!KernelFlags.Maintenance)
+            if (!KernelEntry.Maintenance)
             {
                 // Use RenderSegments to render our segments
                 PresetStringBuilder.Append(PowerLineTools.RenderSegments(segments));

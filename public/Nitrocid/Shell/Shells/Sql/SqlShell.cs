@@ -26,6 +26,7 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Sql
 {
@@ -78,7 +79,7 @@ namespace KS.Shell.Shells.Sql
                 }
                 catch (ThreadInterruptedException)
                 {
-                    KernelFlags.CancelRequested = false;
+                    CancellationHandlers.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

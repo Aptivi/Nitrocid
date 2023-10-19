@@ -31,7 +31,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            WelcomeMessage.ShowTip();
+            WelcomeMessage.ShowRandomTip();
             return 0;
         }
 

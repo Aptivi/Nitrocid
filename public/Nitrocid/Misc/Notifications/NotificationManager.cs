@@ -32,6 +32,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
+using KS.Kernel.Power;
 
 namespace KS.Misc.Notifications
 {
@@ -49,65 +50,83 @@ namespace KS.Misc.Notifications
         internal static char notifyLowerFrameChar = '═';
         internal static char notifyLeftFrameChar = '║';
         internal static char notifyRightFrameChar = '║';
+        internal static bool dnd;
         internal static KernelThread NotifThread = new("Notification Thread", false, NotifListen) { isCritical = true };
         private static bool sent = false;
-        private static bool dismissing = false;
+        private static bool dismissing;
         private static readonly List<Notification> notifRecents = new();
 
         /// <summary>
         /// Recent notifications
         /// </summary>
-        public static List<Notification> NotifRecents => notifRecents;
+        public static List<Notification> NotifRecents =>
+            notifRecents;
+
         /// <summary>
         /// Upper left corner character for the notfication box
         /// </summary>
         public static char NotifyUpperLeftCornerChar =>
             Config.MainConfig.NotifyUpperLeftCornerChar;
+
         /// <summary>
         /// Upper right corner character for the notfication box
         /// </summary>
         public static char NotifyUpperRightCornerChar =>
             Config.MainConfig.NotifyUpperRightCornerChar;
+
         /// <summary>
         /// Lower left corner character for the notfication box
         /// </summary>
         public static char NotifyLowerLeftCornerChar =>
             Config.MainConfig.NotifyLowerLeftCornerChar;
+
         /// <summary>
         /// Lower right corner character for the notfication box
         /// </summary>
         public static char NotifyLowerRightCornerChar =>
             Config.MainConfig.NotifyLowerRightCornerChar;
+
         /// <summary>
         /// Upper frame character for the notfication box
         /// </summary>
         public static char NotifyUpperFrameChar =>
             Config.MainConfig.NotifyUpperFrameChar;
+
         /// <summary>
         /// Lower frame character for the notfication box
         /// </summary>
         public static char NotifyLowerFrameChar =>
             Config.MainConfig.NotifyLowerFrameChar;
+
         /// <summary>
         /// Left frame character for the notfication box
         /// </summary>
         public static char NotifyLeftFrameChar =>
             Config.MainConfig.NotifyLeftFrameChar;
+
         /// <summary>
         /// Right frame character for the notfication box
         /// </summary>
         public static char NotifyRightFrameChar =>
             Config.MainConfig.NotifyRightFrameChar;
+
         /// <summary>
         /// Don't disturb, meaning don't show any notification when this mode is on
         /// </summary>
         public static bool DoNotDisturb =>
             Config.MainConfig.DoNotDisturb;
+
         /// <summary>
         /// Shows all new notifications as asterisks. This option is ignored in notifications with progress bar.
         /// </summary>
         public static bool NotifyDisplayAsAsterisk =>
             Config.MainConfig.NotifyDisplayAsAsterisk;
+
+        /// <summary>
+        /// Draws the border around the notification
+        /// </summary>
+        public static bool DrawBorderNotification =>
+            Config.MainConfig.DrawBorderNotification;
 
         /// <summary>
         /// Listens for notifications and notifies the user if one has been found
@@ -118,7 +137,7 @@ namespace KS.Misc.Notifications
             {
                 var OldNotificationsList = new List<Notification>(NotifRecents);
                 List<Notification> NewNotificationsList;
-                while (!KernelFlags.KernelShutdown)
+                while (!PowerManager.KernelShutdown)
                 {
                     SpinWait.SpinUntil(() => NotifRecents.Except(OldNotificationsList).ToList().Count > 0 || dismissing);
                     if (dismissing)
@@ -216,7 +235,7 @@ namespace KS.Misc.Notifications
                             }
 
                             // Optionally, draw a border
-                            if (KernelFlags.DrawBorderNotification && !useSimplified)
+                            if (DrawBorderNotification && !useSimplified)
                             {
                                 // Prepare the variables
                                 char CurrentNotifyUpperLeftCornerChar = NotifyUpperLeftCornerChar;
@@ -270,7 +289,7 @@ namespace KS.Misc.Notifications
                                     TextWriterWhereColor.WriteWhereKernelColor($"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, 0, true, KernelColorType.NeutralText);
                                     TextWriterWhereColor.WriteWhereColor(ProgressTitle + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, notifTitleTop, true, NotifyTitleColor);
                                     TextWriterWhereColor.WriteWhereColor(Desc + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
-                                    ProgressBarColor.WriteProgress(NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), KernelFlags.DrawBorderNotification, true);
+                                    ProgressBarColor.WriteProgress(NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification, true);
                                     Thread.Sleep(1);
                                     if (NewNotification.ProgressFailed)
                                         TextWriterWhereColor.WriteWhereColor(ProgressTitle + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, notifTitleTop, true, NotifyProgressFailureColor);
@@ -279,7 +298,7 @@ namespace KS.Misc.Notifications
 
                             // Clear the area
                             SpinWait.SpinUntil(() => sent, 5000);
-                            NotifClearArea(ConsoleWrapper.WindowWidth - (KernelFlags.DrawBorderNotification ? 41 : 40));
+                            NotifClearArea(ConsoleWrapper.WindowWidth - (DrawBorderNotification ? 41 : 40));
                         }
                     }
                 }

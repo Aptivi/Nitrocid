@@ -18,7 +18,7 @@
 
 using KS.Files.Instances;
 using KS.Files.LineEndings;
-using KS.Kernel.Configuration;
+using FS = KS.Files.Filesystem;
 using KS.Kernel.Debugging;
 using System.Collections.Generic;
 using System.IO;
@@ -166,7 +166,7 @@ namespace KS.Drivers.Filesystem.Bases
         public override string RenderContents(string filename)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}) entry");
-            string result = RenderContents(filename, KernelFlags.PrintLineNumbers);
+            string result = RenderContents(filename, FS.PrintLineNumbers);
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(RenderContents)}({filename}) exit with result length [{result.Length}]");
             return result;
         }

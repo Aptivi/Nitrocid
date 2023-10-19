@@ -24,6 +24,7 @@ using KS.Drivers.RNG;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Languages;
+using KS.Misc.Splash;
 using KS.Misc.Text;
 using KS.Misc.Text.Probers.Placeholder;
 using System;
@@ -44,11 +45,35 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// </summary>
         public static string CustomBanner =>
             Config.MainConfig.CustomBanner;
+
         /// <summary>
         /// Current banner figlet font
         /// </summary>
         public static string BannerFigletFont =>
             Config.MainConfig.BannerFigletFont;
+
+        /// <summary>
+        /// Show tips on log-in
+        /// </summary>
+        public static bool ShowTip { get; internal set; }
+
+        /// <summary>
+        /// Whether to show the app information on boot
+        /// </summary>
+        public static bool ShowAppInfoOnBoot =>
+            Config.MainConfig.ShowAppInfoOnBoot;
+
+        /// <summary>
+        /// Enable marquee on startup
+        /// </summary>
+        public static bool StartScroll =>
+            Config.MainConfig.StartScroll;
+
+        /// <summary>
+        /// Development notice acknowledged
+        /// </summary>
+        public static bool DevNoticeConsented =>
+            Config.MainConfig.DevNoticeConsented;
 
         /// <summary>
         /// Gets the custom banner actual text with placeholders parsed
@@ -71,7 +96,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         /// </summary>
         public static void WriteMessage()
         {
-            if (!KernelFlags.EnableSplash)
+            if (!SplashManager.EnableSplash)
             {
                 ConsoleWrapper.CursorVisible = false;
 
@@ -79,7 +104,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                 string MessageWrite = GetCustomBanner();
 
                 // Finally, write the message
-                if (KernelFlags.StartScroll)
+                if (StartScroll)
                 {
                     TextWriterSlowColor.WriteSlowlyKernelColor(MessageWrite, true, 10d, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
                 }
@@ -125,7 +150,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             ;
 
             // Show development disclaimer
-            if (KernelFlags.EnableSplash)
+            if (SplashManager.EnableSplash)
                 InfoBoxColor.WriteInfoBoxKernelColor($"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue."), KernelColorType.DevelopmentWarning);
             else
                 TextWriterColor.WriteKernelColor($"* {message}", true, KernelColorType.DevelopmentWarning);
@@ -138,14 +163,14 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             // Show .NET 7.0 version disclaimer
             // TODO: Remove this when .NET 8.0 releases on November 14th and Nitrocid KS gets re-targeted to that version on December.
             string message = "You're running a .NET 7.0 version of Nitrocid KS. This is going to be used as a testing ground to ensure that we can have smooth upgrade experience to .NET 8.0. Meanwhile, you can evaluate this version until .NET 8.0 gets released on November.";
-            if (KernelFlags.EnableSplash)
+            if (SplashManager.EnableSplash)
                 InfoBoxColor.WriteInfoBoxKernelColor($"{message}\n\n" + Translate.DoTranslation("To dismiss forever, enable \"Development notice acknowledged\" in the kernel settings. Press any key to continue."), KernelColorType.DevelopmentWarning);
             else
                 TextWriterColor.WriteKernelColor($"* {message}", true, KernelColorType.DevelopmentWarning);
 #endif
         }
         
-        internal static void ShowTip()
+        internal static void ShowRandomTip()
         {
             // Get a random tip and print it
             string tip = Translate.DoTranslation("that you can get extra tips from the kernel addon shipped with the full build of Nitrocid?");

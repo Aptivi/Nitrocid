@@ -39,6 +39,7 @@ using System.Diagnostics;
 using KS.Misc.Screensaver;
 using KS.Files.Operations.Querying;
 using KS.Users.Permissions;
+using KS.Kernel;
 
 namespace KS.Modifications
 {
@@ -57,13 +58,25 @@ namespace KS.Modifications
             Config.MainConfig.BlacklistedModsString;
 
         /// <summary>
+        /// Whether to start the kernel mods on boot
+        /// </summary>
+        public static bool StartKernelMods =>
+            Config.MainConfig.StartKernelMods;
+
+        /// <summary>
+        /// Allow untrusted mods
+        /// </summary>
+        public static bool AllowUntrustedMods =>
+            Config.MainConfig.AllowUntrustedMods;
+
+        /// <summary>
         /// Loads all mods in KSMods
         /// </summary>
         public static void StartMods()
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelFlags.SafeMode);
-            if (!KernelFlags.SafeMode)
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
+            if (!KernelEntry.SafeMode)
             {
                 // We're not in safe mode. We're good now.
                 if (!Checking.FolderExists(ModPath))
@@ -101,10 +114,10 @@ namespace KS.Modifications
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelFlags.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
 
-            if (!KernelFlags.SafeMode)
+            if (!KernelEntry.SafeMode)
             {
                 if (Checking.FileExists(PathToMod))
                 {
@@ -148,8 +161,8 @@ namespace KS.Modifications
         public static void StopMods()
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelFlags.SafeMode);
-            if (!KernelFlags.SafeMode)
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
+            if (!KernelEntry.SafeMode)
             {
                 // We're not in safe mode. We're good now.
                 if (!Checking.FolderExists(ModPath))
@@ -227,10 +240,10 @@ namespace KS.Modifications
         {
             string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
             string PathToMod = Path.Combine(ModPath, ModFilename);
-            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelFlags.SafeMode);
+            DebugWriter.WriteDebug(DebugLevel.I, "Safe mode: {0}", KernelEntry.SafeMode);
             DebugWriter.WriteDebug(DebugLevel.I, "Mod file path: {0}", PathToMod);
 
-            if (KernelFlags.SafeMode)
+            if (KernelEntry.SafeMode)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Mod can't be stopped in safe mode!");
                 SplashReport.ReportProgressError(Translate.DoTranslation("Stopping mods not allowed on safe mode."));

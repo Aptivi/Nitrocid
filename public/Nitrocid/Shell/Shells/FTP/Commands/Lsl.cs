@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.FTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || KernelFlags.SuppressUnauthorizedMessages;
+            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || Filesystem.SuppressUnauthorizedMessages;
             if (parameters.ArgumentsList?.Length == 0)
             {
                 Listing.List(FTPShellCommon.FtpCurrentDirectory, ShowFileDetails, SuppressUnauthorizedMessage);

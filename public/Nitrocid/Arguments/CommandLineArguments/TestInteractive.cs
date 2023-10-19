@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.Testing;
+using KS.Kernel.Power;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -30,7 +30,7 @@ namespace KS.Arguments.CommandLineArguments
             KernelTools.StageTimer.Stop();
             TestInteractive.Open();
             KernelTools.StageTimer.Start();
-            KernelFlags.KernelShutdown = true;
+            PowerManager.KernelShutdown = true;
         }
 
     }

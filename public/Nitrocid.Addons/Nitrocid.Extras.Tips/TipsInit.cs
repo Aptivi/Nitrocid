@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.Tips
         {
             var config = new TipsConfig();
             ConfigTools.RegisterBaseSetting(config);
-            KernelFlags.ShowTip = TipsConfig.ShowTip;
+            WelcomeMessage.ShowTip = TipsConfig.ShowTip;
         }
 
         void IAddon.StopAddon()

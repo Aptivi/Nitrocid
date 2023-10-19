@@ -20,6 +20,7 @@ using System;
 using System.Runtime.InteropServices;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Misc.Text;
 using Terminaux.Sequences.Builder;
 using Terminaux.Sequences.Tools;
@@ -32,8 +33,41 @@ namespace KS.ConsoleBase
     public static class ConsoleExtensions
     {
 
+        internal static bool setBufferSize = true;
+        internal static bool UseAltBuffer = true;
+        internal static bool HasSetAltBuffer;
         private static readonly int OldBufferHeight = ConsoleWrapper.BufferHeight;
         private static readonly int OldBufferWidth = ConsoleWrapper.BufferWidth;
+
+        /// <summary>
+        /// Does your console support true color?
+        /// </summary>
+        public static bool ConsoleSupportsTrueColor =>
+            Config.MainConfig.ConsoleSupportsTrueColor;
+
+        /// <summary>
+        /// Whether the input history is enabled
+        /// </summary>
+        public static bool InputHistoryEnabled =>
+            Config.MainConfig.InputHistoryEnabled;
+
+        /// <summary>
+        /// Enables the scroll bar in selection screens
+        /// </summary>
+        public static bool EnableScrollBarInSelection =>
+            Config.MainConfig.EnableScrollBarInSelection;
+
+        /// <summary>
+        /// Opts in to the new color selector
+        /// </summary>
+        public static bool UseNewColorSelector =>
+            Config.MainConfig.UseNewColorSelector;
+
+        /// <summary>
+        /// Wraps the list outputs
+        /// </summary>
+        public static bool WrapListOutputs =>
+            Config.MainConfig.WrapListOutputs;
 
         /// <summary>
         /// Clears the console buffer, but keeps the current cursor position

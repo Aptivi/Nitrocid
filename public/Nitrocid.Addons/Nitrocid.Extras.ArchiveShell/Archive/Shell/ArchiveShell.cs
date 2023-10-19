@@ -34,6 +34,7 @@ using KS.Kernel.Configuration;
 using SharpCompress.Archives.GZip;
 using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;
+using KS.Shell.ShellBase.Commands;
 
 namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
 {
@@ -103,7 +104,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 }
                 catch (ThreadInterruptedException)
                 {
-                    KernelFlags.CancelRequested = false;
+                    CancellationHandlers.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

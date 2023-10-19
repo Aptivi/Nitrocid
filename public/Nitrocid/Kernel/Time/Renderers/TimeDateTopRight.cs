@@ -44,7 +44,7 @@ namespace KS.Kernel.Time.Renderers
             try
             {
                 int oldWid = default, oldTop = default;
-                while (KernelFlags.CornerTimeDate)
+                while (TimeDateTools.CornerTimeDate)
                 {
                     if (!ScreensaverManager.InSaver)
                     {
@@ -74,7 +74,7 @@ namespace KS.Kernel.Time.Renderers
         /// </summary>
         public static void InitTopRightDate()
         {
-            if (!TimeTopRightChange.IsAlive && KernelFlags.CornerTimeDate)
+            if (!TimeTopRightChange.IsAlive && TimeDateTools.CornerTimeDate)
                 TimeTopRightChange.Start();
         }
 

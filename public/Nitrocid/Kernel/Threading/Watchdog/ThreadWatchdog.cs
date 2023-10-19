@@ -19,6 +19,7 @@
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Power;
 using KS.Languages;
 using System;
 using System.Collections.Generic;
@@ -41,7 +42,7 @@ namespace KS.Kernel.Threading.Watchdog
         {
             try
             {
-                while (!KernelFlags.RebootRequested)
+                while (!PowerManager.RebootRequested)
                 {
                     // Get the list of threads and supervise them
                     var threads = ThreadManager.KernelThreads.Where((thread) => thread.IsCritical).ToArray();

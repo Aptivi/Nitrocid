@@ -16,13 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Configuration;
+using KS.Kernel;
 
 namespace KS.Arguments.CommandLineArguments
 {
     class VerbosePrebootArgument : ArgumentExecutor, IArgument
     {
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
-            KernelFlags.TalkativePreboot = true;
+            KernelEntry.TalkativePreboot = true;
     }
 }

@@ -39,6 +39,12 @@ namespace KS.Kernel.Starting
             new KernelStage( /* Localizable */ "User initialization",   KernelStageActions.Stage06UserInitialization, true, false),
         };
 
+        /// <summary>
+        /// Show how much time a stage took on boot
+        /// </summary>
+        public static bool ShowStageFinishTimes =>
+            Config.MainConfig.ShowStageFinishTimes;
+
         internal static void RunKernelStage(int stageNum)
         {
             int stageIdx = stageNum - 1;
@@ -50,9 +56,9 @@ namespace KS.Kernel.Starting
 
                 // Report the stage to the splash manager
                 ReportNewStage(stageNum, $"- {Translate.DoTranslation("Stage")} {stageNum}: {Translate.DoTranslation(stage.StageName)}");
-                if ((KernelFlags.SafeMode && stage.StageRunsInSafeMode) || !KernelFlags.SafeMode)
+                if ((KernelEntry.SafeMode && stage.StageRunsInSafeMode) || !KernelEntry.SafeMode)
                 {
-                    if ((KernelFlags.Maintenance && stage.StageRunsInMaintenance) || !KernelFlags.Maintenance)
+                    if ((KernelEntry.Maintenance && stage.StageRunsInMaintenance) || !KernelEntry.Maintenance)
                         stage.StageAction();
                     else
                         SplashReport.ReportProgress(Translate.DoTranslation("Running in maintenance mode. Skipping stage..."));
@@ -75,13 +81,13 @@ namespace KS.Kernel.Starting
             // Show the stage finish times
             if (StageNumber <= 1)
             {
-                if (KernelFlags.ShowStageFinishTimes)
+                if (ShowStageFinishTimes)
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {KernelTools.StageTimer.Elapsed}");
                     KernelTools.StageTimer.Restart();
                 }
             }
-            else if (KernelFlags.ShowStageFinishTimes)
+            else if (ShowStageFinishTimes)
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {KernelTools.StageTimer.Elapsed}", 10);
                 if (StageNumber > Stages.Count)
@@ -96,7 +102,7 @@ namespace KS.Kernel.Starting
             // Actually report the stage
             if (StageNumber >= 1 & StageNumber <= Stages.Count)
             {
-                if (!KernelFlags.EnableSplash & !KernelFlags.QuietKernel)
+                if (!SplashManager.EnableSplash & !KernelEntry.QuietKernel)
                 {
                     TextWriterColor.Write();
                     SeparatorWriterColor.WriteSeparatorKernelColor(StageText, false, KernelColorType.Stage);

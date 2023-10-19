@@ -35,6 +35,7 @@ using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using Newtonsoft.Json;
 using KS.Languages.Decoy;
+using KS.Users.Login;
 
 namespace KS.Languages
 {
@@ -55,11 +56,13 @@ namespace KS.Languages
         /// </summary>
         public static string CurrentLanguage =>
             Config.MainConfig.CurrentLanguage;
+
         /// <summary>
         /// Current language
         /// </summary>
         public static LanguageInfo CurrentLanguageInfo =>
-            KernelFlags.LoggedIn ? currentUserLanguage : currentLanguage;
+            Login.LoggedIn ? currentUserLanguage : currentLanguage;
+
         /// <summary>
         /// Set the language codepage upon switching languages (Windows only)
         /// </summary>
@@ -68,6 +71,12 @@ namespace KS.Languages
             get => Config.MainConfig.SetCodepage;
             set => Config.MainConfig.SetCodepage = value;
         }
+
+        /// <summary>
+        /// Change culture when changing language
+        /// </summary>
+        public static bool LangChangeCulture =>
+            Config.MainConfig.LangChangeCulture;
 
         /// <summary>
         /// The installed languages list.
@@ -129,7 +138,7 @@ namespace KS.Languages
                     currentLanguage = Languages[lang];
 
                     // Update Culture if applicable
-                    if (KernelFlags.LangChangeCulture)
+                    if (LangChangeCulture)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Updating culture.");
                         CultureManager.UpdateCultureDry();
@@ -170,7 +179,7 @@ namespace KS.Languages
         /// <param name="ThrowOnAlreadyInstalled">If the custom language is already installed, throw an exception</param>
         public static void InstallCustomLanguage(string LanguageName, bool ThrowOnAlreadyInstalled = true)
         {
-            if (!KernelFlags.SafeMode)
+            if (!KernelEntry.SafeMode)
             {
                 try
                 {
@@ -239,7 +248,7 @@ namespace KS.Languages
         /// </summary>
         public static void InstallCustomLanguages()
         {
-            if (!KernelFlags.SafeMode)
+            if (!KernelEntry.SafeMode)
             {
                 try
                 {
@@ -269,7 +278,7 @@ namespace KS.Languages
         /// <param name="LanguageName">The custom three-letter language name found in KSLanguages directory</param>
         public static void UninstallCustomLanguage(string LanguageName)
         {
-            if (!KernelFlags.SafeMode)
+            if (!KernelEntry.SafeMode)
             {
                 try
                 {
@@ -313,7 +322,7 @@ namespace KS.Languages
         /// </summary>
         public static void UninstallCustomLanguages()
         {
-            if (!KernelFlags.SafeMode)
+            if (!KernelEntry.SafeMode)
             {
                 try
                 {

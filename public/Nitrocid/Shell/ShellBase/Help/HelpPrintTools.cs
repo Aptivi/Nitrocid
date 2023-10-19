@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Text;
@@ -36,6 +37,48 @@ namespace KS.Shell.ShellBase.Help
 {
     internal static class HelpPrintTools
     {
+        /// <summary>
+        /// Simplified Help Command
+        /// </summary>
+        public static bool SimHelp =>
+            Config.MainConfig.SimHelp;
+
+        /// <summary>
+        /// Shows how many commands available in help for shells
+        /// </summary>
+        public static bool ShowCommandsCount =>
+            Config.MainConfig.ShowCommandsCount;
+
+        /// <summary>
+        /// Shows how many shell commands available in help for shells
+        /// </summary>
+        public static bool ShowShellCommandsCount =>
+            Config.MainConfig.ShowShellCommandsCount;
+
+        /// <summary>
+        /// Shows how many mod commands available in help for shells
+        /// </summary>
+        public static bool ShowModCommandsCount =>
+            Config.MainConfig.ShowModCommandsCount;
+
+        /// <summary>
+        /// Shows how many aliases available in help for shells
+        /// </summary>
+        public static bool ShowShellAliasesCount =>
+            Config.MainConfig.ShowShellAliasesCount;
+
+        /// <summary>
+        /// Shows how many unified commands available in help for shells
+        /// </summary>
+        public static bool ShowUnifiedCommandsCount =>
+            Config.MainConfig.ShowUnifiedCommandsCount;
+
+        /// <summary>
+        /// Shows how many addon commands available in help for shells
+        /// </summary>
+        public static bool ShowAddonCommandsCount =>
+            Config.MainConfig.ShowAddonCommandsCount;
+
         internal static Dictionary<string, CommandInfo> GetCommandsNoHidden(string commandType)
         {
             // Determine command type
@@ -57,17 +100,17 @@ namespace KS.Shell.ShellBase.Help
             var AddonCommandList = ShellManager.GetShellInfo(commandType).addonCommands;
             var unifiedCommandList = ShellManager.unifiedCommandDict;
             var AliasedCommandList = AliasManager.GetAliasesListFromType(commandType);
-            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available commands:") + (KernelFlags.ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Count);
+            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available commands:") + (ShowCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commands.Count);
 
             // The built-in commands
             if (showGeneral)
             {
-                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("General commands:") + (KernelFlags.ShowCommandsCount & KernelFlags.ShowShellCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commandList.Count);
+                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("General commands:") + (ShowCommandsCount & ShowShellCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, commandList.Count);
                 if (commandList.Count == 0)
                     TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Shell commands not implemented!!!"), true, KernelColorType.Warning);
                 foreach (string cmd in commandList.Keys)
                 {
-                    if ((!commandList[cmd].Flags.HasFlag(CommandFlags.Strict) | commandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelFlags.Maintenance & !commandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelFlags.Maintenance))
+                    if ((!commandList[cmd].Flags.HasFlag(CommandFlags.Strict) | commandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !commandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
                         TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, cmd);
                         TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, commandList[cmd].GetTranslatedHelpEntry());
@@ -78,12 +121,12 @@ namespace KS.Shell.ShellBase.Help
             // The addon commands
             if (showAddon)
             {
-                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Kernel addon commands:") + (KernelFlags.ShowCommandsCount & KernelFlags.ShowAddonCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AddonCommandList.Count);
+                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Kernel addon commands:") + (ShowCommandsCount & ShowAddonCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AddonCommandList.Count);
                 if (AddonCommandList.Count == 0)
                     TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("No kernel addon commands."), true, KernelColorType.Warning);
                 foreach (string cmd in AddonCommandList.Keys)
                 {
-                    if ((!AddonCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | AddonCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelFlags.Maintenance & !AddonCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelFlags.Maintenance))
+                    if ((!AddonCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | AddonCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !AddonCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
                         TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, cmd);
                         TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, AddonCommandList[cmd].GetTranslatedHelpEntry());
@@ -94,12 +137,12 @@ namespace KS.Shell.ShellBase.Help
             // The mod commands
             if (showMod)
             {
-                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (KernelFlags.ShowCommandsCount & KernelFlags.ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Count);
+                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Mod commands:") + (ShowCommandsCount & ShowModCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, ModCommandList.Count);
                 if (ModCommandList.Count == 0)
                     TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("No mod commands."), true, KernelColorType.Warning);
                 foreach (string cmd in ModCommandList.Keys)
                 {
-                    if ((!ModCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | ModCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelFlags.Maintenance & !ModCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelFlags.Maintenance))
+                    if ((!ModCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | ModCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !ModCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
                         TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, cmd);
                         TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, ModCommandList[cmd].HelpDefinition);
@@ -110,12 +153,12 @@ namespace KS.Shell.ShellBase.Help
             // The alias commands
             if (showAlias)
             {
-                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Alias commands:") + (KernelFlags.ShowCommandsCount & KernelFlags.ShowShellAliasesCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AliasedCommandList.Count);
+                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Alias commands:") + (ShowCommandsCount & ShowShellAliasesCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, AliasedCommandList.Count);
                 if (AliasedCommandList.Count == 0)
                     TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("No alias commands."), true, KernelColorType.Warning);
                 foreach (var cmd in AliasedCommandList)
                 {
-                    if ((!cmd.TargetCommand.Flags.HasFlag(CommandFlags.Strict) | cmd.TargetCommand.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelFlags.Maintenance & !cmd.TargetCommand.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelFlags.Maintenance))
+                    if ((!cmd.TargetCommand.Flags.HasFlag(CommandFlags.Strict) | cmd.TargetCommand.Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !cmd.TargetCommand.Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
                         TextWriterColor.WriteKernelColor("  - {0} -> {1}: ", false, KernelColorType.ListEntry, cmd.Alias, cmd.Command);
                         TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, cmd.TargetCommand.GetTranslatedHelpEntry());
@@ -126,12 +169,12 @@ namespace KS.Shell.ShellBase.Help
             // The unified commands
             if (showUnified)
             {
-                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Unified commands:") + (KernelFlags.ShowCommandsCount & KernelFlags.ShowUnifiedCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, unifiedCommandList.Count);
+                TextWriterColor.WriteKernelColor(CharManager.NewLine + Translate.DoTranslation("Unified commands:") + (ShowCommandsCount & ShowUnifiedCommandsCount ? " [{0}]" : ""), true, KernelColorType.ListTitle, unifiedCommandList.Count);
                 if (unifiedCommandList.Count == 0)
                     TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Unified commands not implemented!!!"), true, KernelColorType.Warning);
                 foreach (string cmd in unifiedCommandList.Keys)
                 {
-                    if ((!unifiedCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | unifiedCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelFlags.Maintenance & !unifiedCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelFlags.Maintenance))
+                    if ((!unifiedCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | unifiedCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !unifiedCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
                         TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, cmd);
                         TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, unifiedCommandList[cmd].GetTranslatedHelpEntry());
@@ -154,7 +197,7 @@ namespace KS.Shell.ShellBase.Help
 
                 // Now, populate the command list
                 if ((!isStrict | isStrict & hasAdmin) &
-                    (KernelFlags.Maintenance & !isNoMaintenance | !KernelFlags.Maintenance))
+                    (KernelEntry.Maintenance & !isNoMaintenance | !KernelEntry.Maintenance))
                     finalCommand.Add(cmd);
             }
             TextWriterColor.Write(string.Join(", ", finalCommand));

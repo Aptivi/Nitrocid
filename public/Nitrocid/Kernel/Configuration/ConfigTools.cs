@@ -44,6 +44,8 @@ namespace KS.Kernel.Configuration
     public static class ConfigTools
     {
 
+        internal static bool NotifyConfigError;
+
         /// <summary>
         /// Reloads config
         /// </summary>

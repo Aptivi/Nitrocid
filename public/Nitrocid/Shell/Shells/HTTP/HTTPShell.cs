@@ -25,6 +25,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.Base.Connections;
 using KS.Network.SpeedDial;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.Shells.HTTP
@@ -63,7 +64,7 @@ namespace KS.Shell.Shells.HTTP
                 }
                 catch (ThreadInterruptedException)
                 {
-                    KernelFlags.CancelRequested = false;
+                    CancellationHandlers.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

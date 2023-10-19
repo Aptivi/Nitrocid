@@ -29,6 +29,8 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Users.Login.Handlers;
 using System;
 using KS.Misc.Text.Probers.Placeholder;
+using KS.Kernel.Power;
+using KS.Kernel;
 
 namespace KS.Users.Login
 {
@@ -37,6 +39,9 @@ namespace KS.Users.Login
     /// </summary>
     public static class Login
     {
+
+        internal static bool LogoutRequested;
+        internal static bool LoggedIn;
 
         /// <summary>
         /// Username prompt
@@ -75,7 +80,7 @@ namespace KS.Users.Login
 
                 // Login loop until either power action (in case login handler tries to shut the kernel down) or sign in action
                 string user = "";
-                while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
+                while (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
                 {
                     // First, set root account
                     UserManagement.CurrentUserInfo =
@@ -108,7 +113,7 @@ namespace KS.Users.Login
                 }
 
                 // Check for the state before the final login flow
-                if (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
+                if (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
                     SignIn(user);
             }
             catch (Exception ex)
@@ -127,7 +132,7 @@ namespace KS.Users.Login
         public static bool ShowPasswordPrompt(string usernamerequested)
         {
             // Prompts user to enter a user's password
-            while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
+            while (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
             {
                 // Get the password from dictionary
                 int userIndex = UserManagement.GetUserIndex(usernamerequested);
@@ -151,7 +156,7 @@ namespace KS.Users.Login
                     else
                     {
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
-                        if (!KernelFlags.Maintenance)
+                        if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
                                 return false;
@@ -187,7 +192,7 @@ namespace KS.Users.Login
             }
 
             // Notifies the kernel that the user has signed in
-            KernelFlags.LoggedIn = true;
+            Login.LoggedIn = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Logged in to {0}!", signedInUser);
 
             // Sign in to user.
@@ -213,7 +218,7 @@ namespace KS.Users.Login
             if (UserManagement.UserExists(user))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Root account found. Prompting for password...");
-                for (int tries = 0; tries < 3 && !KernelFlags.RebootRequested; tries++)
+                for (int tries = 0; tries < 3 && !PowerManager.RebootRequested; tries++)
                 {
                     if (ShowPasswordPrompt(user))
                         SignIn(user);

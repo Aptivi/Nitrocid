@@ -55,9 +55,9 @@ namespace KS.Kernel
         /// </summary>
         internal static void CheckErrored()
         {
-            if (KernelFlags.KernelErrored)
+            if (KernelPanic.KernelErrored)
             {
-                KernelFlags.KernelErrored = false;
+                KernelPanic.KernelErrored = false;
                 var exception = KernelPanic.LastKernelErrorException;
                 throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), exception, exception.Message);
             }

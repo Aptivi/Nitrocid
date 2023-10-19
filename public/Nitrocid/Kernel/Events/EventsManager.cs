@@ -52,17 +52,17 @@ namespace KS.Kernel.Events
             var Events = new Dictionary<string, object[]>();
 
             // Enumerate all the fired events
-            DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, "Searching events from search term {0}...", SearchTerm);
+            DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, "Searching events from search term {0}...", SearchTerm);
             foreach (string FiredEvent in FiredEvents.Keys)
             {
                 if (FiredEvent.Contains(SearchTerm))
                 {
-                    DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, "Got event {0} from search term {1}...", FiredEvent, SearchTerm);
+                    DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, "Got event {0} from search term {1}...", FiredEvent, SearchTerm);
                     var EventArguments = FiredEvents[FiredEvent];
                     Events.Add(FiredEvent, EventArguments);
                 }
             }
-            DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, "{0} events.", Events.Count);
+            DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, "{0} events.", Events.Count);
             return Events;
         }
 
@@ -84,7 +84,7 @@ namespace KS.Kernel.Events
                 throw new KernelException(KernelExceptionType.NoSuchEvent, Translate.DoTranslation("Event {0} not found."), Event);
 
             // Add fired event to the list
-            DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, $"Raising event {Event}...");
+            DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, $"Raising event {Event}...");
             FiredEvents.Add($"[{FiredEvents.Count}] {Event}", Params);
             JournalManager.WriteJournal(Translate.DoTranslation("Kernel event fired:") + $" {Event} [{FiredEvents.Count}]");
 
@@ -95,13 +95,13 @@ namespace KS.Kernel.Events
             {
                 try
                 {
-                    DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.I, "A mod responded to event {0}...", Event);
+                    DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.I, "A mod responded to event {0}...", Event);
                     handler.Invoke(Params);
                 }
                 catch (Exception ex)
                 {
-                    DebugWriter.WriteDebugConditional(KernelFlags.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
-                    DebugWriter.WriteDebugStackTraceConditional(KernelFlags.EventDebug, ex);
+                    DebugWriter.WriteDebugConditional(DebugWriter.EventDebug, DebugLevel.E, "Error in event handler: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTraceConditional(DebugWriter.EventDebug, ex);
                 }
             }
         }

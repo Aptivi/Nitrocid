@@ -25,6 +25,7 @@ using KS.Files.Operations;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
 using KS.Files.Operations.Querying;
+using KS.Kernel;
 
 namespace Nitrocid.Tests
 {
@@ -69,7 +70,7 @@ namespace Nitrocid.Tests
             // Enable debugging
             string debugPath = TestAssemblyDir + "/UnitTestDebug.log";
             DebugWriter.DebugPath = debugPath;
-            KernelFlags.DebugMode = true;
+            KernelEntry.DebugMode = true;
 
             // Load necessary addons for testing
             AddonTools.ProcessAddons(AddonType.Important);

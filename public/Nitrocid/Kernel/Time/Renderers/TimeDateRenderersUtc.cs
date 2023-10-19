@@ -35,7 +35,7 @@ namespace KS.Kernel.Time.Renderers
         /// </summary>
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc() =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -55,7 +55,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture.</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(CultureInfo Cult) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.LongTimePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -76,7 +76,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(BaseCalendar calendar) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.LongTimePattern, calendar.Culture)
             : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
 
@@ -97,7 +97,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="DT">Specified time</param>
         /// <returns>A long or short time</returns>
         public static string RenderTimeUtc(DateTime DT) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongTimePattern, CultureManager.CurrentCult)
             : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -119,7 +119,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(DateTime DT, CultureInfo Cult) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? DT.ToUniversalTime().ToString(Cult.DateTimeFormat.LongTimePattern, Cult)
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -142,7 +142,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A time</returns>
         public static string RenderTimeUtc(DateTime DT, BaseCalendar calendar) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.LongTimePattern, calendar.Culture)
             : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
 
@@ -163,7 +163,7 @@ namespace KS.Kernel.Time.Renderers
         /// </summary>
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc() =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
 
@@ -183,7 +183,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture.</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(CultureInfo Cult) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.LongDatePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
 
@@ -204,7 +204,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(BaseCalendar calendar) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.LongDatePattern, calendar.Culture)
             : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture);
 
@@ -225,7 +225,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="DT">Specified date</param>
         /// <returns>A long or short date</returns>
         public static string RenderDateUtc(DateTime DT) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.LongDatePattern, CultureManager.CurrentCult)
             : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult);
 
@@ -247,7 +247,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(DateTime DT, CultureInfo Cult) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? DT.ToUniversalTime().ToString(Cult.DateTimeFormat.LongDatePattern, Cult)
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortDatePattern, Cult);
 
@@ -270,7 +270,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A date</returns>
         public static string RenderDateUtc(DateTime DT, BaseCalendar calendar) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.LongDatePattern, calendar.Culture)
             : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture);
 
@@ -291,7 +291,7 @@ namespace KS.Kernel.Time.Renderers
         /// </summary>
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc() =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
             : TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -311,7 +311,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture.</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(CultureInfo Cult) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
             : TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -321,7 +321,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(BaseCalendar calendar) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.FullDateTimePattern, calendar.Culture)
             : TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture) + " - " + TimeDateTools.KernelDateTimeUtc.ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
 
@@ -379,7 +379,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="DT">Specified time and date</param>
         /// <returns>A long or short time and date</returns>
         public static string RenderUtc(DateTime DT) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.FullDateTimePattern, CultureManager.CurrentCult)
             : DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortDatePattern, CultureManager.CurrentCult) + " - " + DT.ToUniversalTime().ToString(CultureManager.CurrentCult.DateTimeFormat.ShortTimePattern, CultureManager.CurrentCult);
 
@@ -401,7 +401,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="Cult">A culture</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(DateTime DT, CultureInfo Cult) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? DT.ToUniversalTime().ToString(Cult.DateTimeFormat.FullDateTimePattern, Cult)
             : DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortDatePattern, Cult) + " - " + DT.ToUniversalTime().ToString(Cult.DateTimeFormat.ShortTimePattern, Cult);
 
@@ -424,7 +424,7 @@ namespace KS.Kernel.Time.Renderers
         /// <param name="calendar">A base calendar</param>
         /// <returns>A time and date</returns>
         public static string RenderUtc(DateTime DT, BaseCalendar calendar) =>
-            KernelFlags.LongTimeDate
+            TimeDateTools.LongTimeDate
             ? DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.FullDateTimePattern, calendar.Culture)
             : DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortDatePattern, calendar.Culture) + " - " + DT.ToUniversalTime().ToString(calendar.Culture.DateTimeFormat.ShortTimePattern, calendar.Culture);
 

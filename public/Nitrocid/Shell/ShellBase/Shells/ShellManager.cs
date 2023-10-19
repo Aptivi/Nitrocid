@@ -69,6 +69,7 @@ using KS.Shell.ShellBase.Switches;
 using KS.Misc.Text.Probers.Regexp;
 using KS.Drivers.Console.Bases;
 using KS.Files.Operations.Querying;
+using KS.Kernel.Power;
 
 namespace KS.Shell.ShellBase.Shells
 {
@@ -382,7 +383,7 @@ namespace KS.Shell.ShellBase.Shells
 
                 // There are cases when the kernel panics or reboots in the middle of the command input. If reboot is requested,
                 // ensure that we're really gone.
-                if (KernelFlags.RebootRequested)
+                if (PowerManager.RebootRequested)
                     return;
             }
 
@@ -487,7 +488,7 @@ namespace KS.Shell.ShellBase.Shells
                                 }
 
                                 // Check the command before starting
-                                if (KernelFlags.Maintenance & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
+                                if (KernelEntry.Maintenance & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", commandName);
                                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);

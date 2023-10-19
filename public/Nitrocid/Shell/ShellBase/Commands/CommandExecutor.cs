@@ -273,7 +273,7 @@ namespace KS.Shell.ShellBase.Commands
                     }
                     catch (Exception ex)
                     {
-                        KernelFlags.CancelRequested = false;
+                        CancellationHandlers.CancelRequested = false;
                         DebugWriter.WriteDebug(DebugLevel.I, "Command aborted.");
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
@@ -314,7 +314,7 @@ namespace KS.Shell.ShellBase.Commands
             }
             catch (ThreadInterruptedException)
             {
-                KernelFlags.CancelRequested = false;
+                CancellationHandlers.CancelRequested = false;
                 ShellInstance.LastErrorCode = -5;
             }
             catch (Exception ex)

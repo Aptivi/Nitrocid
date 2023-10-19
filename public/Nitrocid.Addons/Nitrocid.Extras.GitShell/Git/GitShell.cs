@@ -24,6 +24,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
 namespace Nitrocid.Extras.GitShell.Git
@@ -77,7 +78,7 @@ namespace Nitrocid.Extras.GitShell.Git
                 }
                 catch (ThreadInterruptedException)
                 {
-                    KernelFlags.CancelRequested = false;
+                    CancellationHandlers.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

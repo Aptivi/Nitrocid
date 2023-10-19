@@ -70,7 +70,7 @@ namespace KS.Users.Permissions
         public static void Demand(PermissionTypes permissionType)
         {
             // Don't demand when kernel is errored
-            if (KernelFlags.KernelErrored)
+            if (KernelPanic.KernelErrored)
                 return;
 
             // Get all the permission types

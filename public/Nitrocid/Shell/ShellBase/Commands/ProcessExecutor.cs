@@ -111,7 +111,7 @@ namespace KS.Shell.ShellBase.Commands
                 CommandProcess.BeginErrorReadLine();
 
                 // Wait for process exit
-                while (!HasProcessExited | !KernelFlags.CancelRequested)
+                while (!HasProcessExited | !CancellationHandlers.CancelRequested)
                 {
                     if (HasProcessExited)
                     {
@@ -120,7 +120,7 @@ namespace KS.Shell.ShellBase.Commands
                         DebugWriter.WriteDebug(DebugLevel.I, "Flushed as much as possible.");
                         break;
                     }
-                    else if (KernelFlags.CancelRequested)
+                    else if (CancellationHandlers.CancelRequested)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Process killed! Output may not be complete!");
                         CommandProcess.Kill();
@@ -134,7 +134,7 @@ namespace KS.Shell.ShellBase.Commands
             }
             catch (ThreadInterruptedException)
             {
-                KernelFlags.CancelRequested = false;
+                CancellationHandlers.CancelRequested = false;
                 return default;
             }
             catch (Exception ex)
@@ -208,7 +208,7 @@ namespace KS.Shell.ShellBase.Commands
                     CommandProcess.BeginErrorReadLine();
 
                 // Wait for process exit
-                while (!HasProcessExited | !KernelFlags.CancelRequested)
+                while (!HasProcessExited | !CancellationHandlers.CancelRequested)
                 {
                     if (HasProcessExited)
                     {
@@ -217,7 +217,7 @@ namespace KS.Shell.ShellBase.Commands
                         DebugWriter.WriteDebug(DebugLevel.I, "Flushed as much as possible.");
                         break;
                     }
-                    else if (KernelFlags.CancelRequested)
+                    else if (CancellationHandlers.CancelRequested)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Process killed! Output may not be complete!");
                         CommandProcess.Kill();
@@ -231,7 +231,7 @@ namespace KS.Shell.ShellBase.Commands
             }
             catch (ThreadInterruptedException)
             {
-                KernelFlags.CancelRequested = false;
+                CancellationHandlers.CancelRequested = false;
                 exitCode = -1;
             }
             catch (Exception ex)

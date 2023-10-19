@@ -33,6 +33,7 @@ namespace KS.Shell.ShellBase.Commands
         internal static CancellationTokenSource cts = new();
         internal static bool canCancel = false;
         internal static bool installed;
+        internal static bool CancelRequested;
 
         internal static void CancelCommand(object sender, ConsoleCancelEventArgs e)
         {
@@ -61,7 +62,7 @@ namespace KS.Shell.ShellBase.Commands
                 lock (syncLock)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Locking to cancel...");
-                    KernelFlags.CancelRequested = true;
+                    CancelRequested = true;
                     TextWriterColor.Write();
                     DriverHandler.SetDriver<IConsoleDriver>("Null");
                     cts.Cancel();

@@ -30,6 +30,8 @@ using KS.Kernel.Threading;
 using Terminaux.Reader;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel.Configuration;
+using KS.Users.Login;
+using KS.Misc.Splash;
 
 namespace KS.Kernel.Power
 {
@@ -39,8 +41,30 @@ namespace KS.Kernel.Power
     public static class PowerManager
     {
 
+        internal static bool KernelShutdown;
+        internal static bool RebootRequested;
+        internal static bool hardShutdown;
         internal static Stopwatch Uptime = new();
         internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManage((PowerMode)arg));
+
+        /// <summary>
+        /// Beeps on shutdown (to restore the way of 0.0.1's shutdown)
+        /// </summary>
+        public static bool BeepOnShutdown =>
+            Config.MainConfig.BeepOnShutdown;
+
+        /// <summary>
+        /// Delay on shutdown (to restore the way of 0.0.1's shutdown)
+        /// </summary>
+        public static bool DelayOnShutdown =>
+            Config.MainConfig.DelayOnShutdown;
+
+        /// <summary>
+        /// Whether to simulate a situation where there is no APM available. If enabled, it shows the "It's now safe to
+        /// turn off your computer" text.
+        /// </summary>
+        public static bool SimulateNoAPM =>
+            Config.MainConfig.SimulateNoAPM;
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
@@ -77,19 +101,19 @@ namespace KS.Kernel.Power
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel is shutting down!");
 
                         // Simulate 0.0.1's behavior on shutting down
-                        if (!KernelFlags.EnableSplash)
+                        if (!SplashManager.EnableSplash)
                         {
                             TextWriterColor.Write(Translate.DoTranslation("Shutting down..."));
-                            if (KernelFlags.BeepOnShutdown)
+                            if (BeepOnShutdown)
                                 ConsoleWrapper.Beep();
-                            if (KernelFlags.DelayOnShutdown)
+                            if (DelayOnShutdown)
                                 Thread.Sleep(3000);
                         }
 
                         // Set appropriate flags
-                        KernelFlags.RebootRequested = true;
-                        KernelFlags.LogoutRequested = true;
-                        KernelFlags.KernelShutdown = true;
+                        RebootRequested = true;
+                        Login.LogoutRequested = true;
+                        KernelShutdown = true;
 
                         // Kill all shells and interrupt any input
                         for (int i = ShellStart.ShellStack.Count - 1; i >= 0; i--)
@@ -102,19 +126,19 @@ namespace KS.Kernel.Power
                     {
                         EventsManager.FireEvent(EventType.PreReboot);
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel is restarting!");
-                        if (!KernelFlags.EnableSplash)
+                        if (!SplashManager.EnableSplash)
                             TextWriterColor.Write(Translate.DoTranslation("Rebooting..."));
 
                         // Set appropriate flags
-                        KernelFlags.RebootRequested = true;
-                        KernelFlags.LogoutRequested = true;
-                        KernelFlags.SafeMode = PowerMode == PowerMode.RebootSafe;
+                        RebootRequested = true;
+                        Login.LogoutRequested = true;
+                        KernelEntry.SafeMode = PowerMode == PowerMode.RebootSafe;
 
                         // Kill all shells and interrupt any input
                         for (int i = ShellStart.ShellStack.Count - 1; i >= 0; i--)
                             ShellStart.KillShellForced();
                         TermReaderTools.Interrupt();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", KernelFlags.SafeMode);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", KernelEntry.SafeMode);
                         break;
                     }
                 case PowerMode.RemoteShutdown:

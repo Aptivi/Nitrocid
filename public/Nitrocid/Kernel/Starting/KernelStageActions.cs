@@ -35,7 +35,7 @@ namespace KS.Kernel.Starting
         internal static void Stage01SystemInitialization()
         {
             // If running on development version and not consented, interrupt boot and show developer disclaimer.
-            if (!KernelFlags.DevNoticeConsented)
+            if (!WelcomeMessage.DevNoticeConsented)
             {
                 SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 WelcomeMessage.ShowDevelopmentDisclaimer();
@@ -44,7 +44,7 @@ namespace KS.Kernel.Starting
             }
 
             // Now, initialize remote debugger if the kernel is running in debug mode
-            if (RemoteDebugger.RDebugAutoStart & KernelFlags.DebugMode)
+            if (RemoteDebugger.RDebugAutoStart & KernelEntry.DebugMode)
             {
                 SplashReport.ReportProgress(Translate.DoTranslation("Starting the remote debugger..."), 3);
                 RemoteDebugger.StartRDebugThread();
@@ -61,22 +61,22 @@ namespace KS.Kernel.Starting
 
         internal static void Stage02KernelUpdates()
         {
-            if (KernelFlags.CheckUpdateStart)
+            if (UpdateManager.CheckUpdateStart)
                 UpdateManager.CheckKernelUpdates();
         }
 
         internal static void Stage03HardwareProbe()
         {
-            if (!KernelFlags.QuietHardwareProbe)
+            if (!HardwareProbe.QuietHardwareProbe)
                 SplashReport.ReportProgress(Translate.DoTranslation("hwprobe: Your hardware will be probed. Please wait..."), 15);
             HardwareProbe.StartProbing();
-            if (!KernelFlags.EnableSplash & !KernelFlags.QuietKernel)
+            if (!SplashManager.EnableSplash & !KernelEntry.QuietKernel)
                 HardwareList.ListHardware();
         }
 
         internal static void Stage04KernelModifications()
         {
-            if (KernelFlags.StartKernelMods)
+            if (ModManager.StartKernelMods)
                 ModManager.StartMods();
         }
 

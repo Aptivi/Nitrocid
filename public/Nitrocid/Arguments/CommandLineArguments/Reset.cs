@@ -26,6 +26,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Kernel.Configuration;
 using KS.Files.Operations.Querying;
+using KS.Kernel.Power;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -85,8 +86,8 @@ namespace KS.Arguments.CommandLineArguments
             }
 
             // Exit now.
-            KernelFlags.KernelShutdown = true;
-            KernelFlags.hardShutdown = true;
+            PowerManager.KernelShutdown = true;
+            PowerManager.hardShutdown = true;
         }
     }
 }

@@ -21,8 +21,10 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.Encryption;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Power;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
@@ -36,27 +38,51 @@ namespace KS.Users.Login.Handlers
     /// </summary>
     public abstract class BaseLoginHandler : ILoginHandler
     {
+
+        internal static bool ShowMOTDOnceFlag = true;
+
+        /// <summary>
+        /// Clear Screen On Log-in
+        /// </summary>
+        public static bool ClearOnLogin =>
+            Config.MainConfig.ClearOnLogin;
+        /// <summary>
+        /// Show MOTD on log-in
+        /// </summary>
+        public static bool ShowMOTD =>
+            Config.MainConfig.ShowMOTD;
+        /// <summary>
+        /// Show MAL on log-in
+        /// </summary>
+        public static bool ShowMAL =>
+            Config.MainConfig.ShowMAL;
+        /// <summary>
+        /// Whether or not to show available usernames on login
+        /// </summary>
+        public static bool ShowAvailableUsers =>
+            Config.MainConfig.ShowAvailableUsers;
+
         /// <inheritdoc/>
         public virtual void LoginScreen()
         {
             // Clear console if ClearOnLogin is set to True (If a user has enabled Clear Screen on Login)
-            if (KernelFlags.ClearOnLogin)
+            if (ClearOnLogin)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Clearing screen...");
                 ConsoleWrapper.Clear();
             }
 
             // Show MOTD once
-            DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", KernelFlags.ShowMOTDOnceFlag, KernelFlags.ShowMOTD);
-            if (KernelFlags.ShowMOTDOnceFlag && KernelFlags.ShowMOTD)
+            DebugWriter.WriteDebug(DebugLevel.I, "showMOTDOnceFlag = {0}, showMOTD = {1}", ShowMOTDOnceFlag, ShowMOTD);
+            if (ShowMOTDOnceFlag && ShowMOTD)
             {
                 // This is not going to happen when the modern logon is enabled.
                 TextWriterColor.WriteKernelColor(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MOTDMessage), true, KernelColorType.Banner);
-                KernelFlags.ShowMOTDOnceFlag = false;
+                ShowMOTDOnceFlag = false;
             }
 
             // Generate user list
-            if (KernelFlags.ShowAvailableUsers)
+            if (ShowAvailableUsers)
             {
                 var UsersList = UserManagement.ListAllUsers();
                 TextWriterColor.Write(Translate.DoTranslation("You can log in to these accounts:"));
@@ -68,7 +94,7 @@ namespace KS.Users.Login.Handlers
         public virtual bool PasswordHandler(string user, ref string pass)
         {
             // Prompts user to enter a user's password
-            while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
+            while (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
             {
                 // Get the password from dictionary
                 int userIndex = UserManagement.GetUserIndex(user);
@@ -92,7 +118,7 @@ namespace KS.Users.Login.Handlers
                     else
                     {
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Wrong password."), true, KernelColorType.Error);
-                        if (!KernelFlags.Maintenance)
+                        if (!KernelEntry.Maintenance)
                         {
                             if (!ScreensaverManager.LockMode)
                                 return false;

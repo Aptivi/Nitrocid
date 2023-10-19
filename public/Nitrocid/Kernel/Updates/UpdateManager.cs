@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
 
 #if SPECIFIERREL
 using KS.Files;
-using KS.Kernel.Configuration;
 using KS.Misc.Splash;
 using KS.Languages;
 using System.IO;
@@ -41,6 +41,18 @@ namespace KS.Kernel.Updates
     /// </summary>
     public static class UpdateManager
     {
+
+        /// <summary>
+        /// Whether or not to check for updates on startup
+        /// </summary>
+        public static bool CheckUpdateStart =>
+            Config.MainConfig.CheckUpdateStart;
+
+        /// <summary>
+        /// Automatically downloads the kernel updates and notifies the user
+        /// </summary>
+        public static bool AutoDownloadUpdate =>
+            Config.MainConfig.AutoDownloadUpdate;
 
         /// <summary>
         /// Fetches the GitHub repo to see if there are any updates
@@ -85,7 +97,7 @@ namespace KS.Kernel.Updates
                 {
                     SplashReport.ReportProgress(Translate.DoTranslation("Found new version: "), 10);
                     SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
-                    if (KernelFlags.AutoDownloadUpdate)
+                    if (AutoDownloadUpdate)
                     {
                         NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(Paths.ExecPath, "update.rar"));
                         SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10);

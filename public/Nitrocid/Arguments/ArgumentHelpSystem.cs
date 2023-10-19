@@ -22,6 +22,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Shell.ShellBase.Arguments;
+using KS.Shell.ShellBase.Help;
 using KS.Shell.ShellBase.Switches;
 using System;
 using System.Linq;
@@ -115,7 +116,7 @@ namespace KS.Arguments
             else if (string.IsNullOrWhiteSpace(Argument))
             {
                 // List the available arguments
-                if (!KernelFlags.SimHelp)
+                if (!HelpPrintTools.SimHelp)
                 {
                     foreach (string cmd in ArgumentList.Keys)
                     {

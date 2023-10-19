@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel;
 using KS.Kernel.Configuration;
 
 namespace KS.Arguments.CommandLineArguments
@@ -24,7 +25,7 @@ namespace KS.Arguments.CommandLineArguments
     {
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly) =>
-            KernelFlags.Maintenance = true;
+            KernelEntry.Maintenance = true;
 
     }
 }

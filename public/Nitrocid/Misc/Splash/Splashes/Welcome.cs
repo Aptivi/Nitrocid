@@ -29,6 +29,7 @@ using KS.ConsoleBase.Colors;
 using Figletize;
 using System;
 using KS.Kernel.Configuration;
+using KS.Kernel.Power;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -148,9 +149,9 @@ namespace KS.Misc.Splash.Splashes
             CenteredTextColor.WriteCenteredOneLineColor(consoleY + 2, KernelReleaseInfo.ConsoleTitle, col);
 
             // Simulate 0.0.1's behavior on shutting down
-            if (context != SplashContext.ShuttingDown || context == SplashContext.ShuttingDown && KernelFlags.BeepOnShutdown)
+            if (context != SplashContext.ShuttingDown || context == SplashContext.ShuttingDown && PowerManager.BeepOnShutdown)
                 ConsoleWrapper.Beep();
-            if (context != SplashContext.ShuttingDown || context == SplashContext.ShuttingDown && KernelFlags.DelayOnShutdown)
+            if (context != SplashContext.ShuttingDown || context == SplashContext.ShuttingDown && PowerManager.DelayOnShutdown)
                 Thread.Sleep(3000);
 
             // Clear the console

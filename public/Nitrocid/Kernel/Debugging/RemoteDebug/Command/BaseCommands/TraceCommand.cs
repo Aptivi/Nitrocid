@@ -25,7 +25,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
     {
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device)
         {
-            if (DebugWriter.DebugStackTraces.Count != 0)
+            if (DebugWriter.DebugStackTraces.Length != 0)
             {
                 if (ListArgsOnly.Length != 0)
                 {
@@ -35,7 +35,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
                     }
                     catch (Exception ex)
                     {
-                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, device, ListArgsOnly[0], DebugWriter.DebugStackTraces.Count, ex.Message);
+                        DebugWriter.WriteDebugDeviceOnly(DebugLevel.I, Translate.DoTranslation("Index {0} invalid. There are {1} stack traces. Index is zero-based, so try subtracting by 1.") + " {2}", true, device, ListArgsOnly[0], DebugWriter.DebugStackTraces.Length, ex.Message);
                     }
                 }
                 else

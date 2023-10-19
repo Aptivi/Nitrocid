@@ -21,6 +21,7 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Users;
+using KS.Users.Login;
 using KS.Users.Permissions;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -46,7 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
             UserManagement.ChangeUsername(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             TextWriterColor.Write(Translate.DoTranslation("Username has been changed to {0}!"), parameters.ArgumentsList[1]);
             if (parameters.ArgumentsList[0] == UserManagement.CurrentUser.Username)
-                KernelFlags.LogoutRequested = true;
+                Login.LogoutRequested = true;
             return 0;
         }
 

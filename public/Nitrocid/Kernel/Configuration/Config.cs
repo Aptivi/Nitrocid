@@ -96,7 +96,7 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static void CreateConfig(string ConfigFolder)
         {
-            if (KernelFlags.SafeMode)
+            if (KernelEntry.SafeMode)
                 return;
 
             Filesystem.ThrowOnInvalidPath(ConfigFolder);
@@ -121,7 +121,7 @@ namespace KS.Kernel.Configuration
         /// </summary>
         public static void CreateConfig(BaseKernelConfig type, string ConfigPath)
         {
-            if (KernelFlags.SafeMode)
+            if (KernelEntry.SafeMode)
                 return;
 
             // Serialize the config object

@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || KernelFlags.SuppressUnauthorizedMessages;
+            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || Filesystem.SuppressUnauthorizedMessages;
             bool Recursive = parameters.SwitchesList.Contains("-recursive");
             if (parameters.ArgumentsList.Length == 0)
             {

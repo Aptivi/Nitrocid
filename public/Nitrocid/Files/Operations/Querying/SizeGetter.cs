@@ -18,7 +18,6 @@
 
 using System.IO;
 using KS.Drivers;
-using KS.Kernel.Configuration;
 
 namespace KS.Files.Operations.Querying
 {
@@ -29,12 +28,12 @@ namespace KS.Files.Operations.Querying
     {
 
         /// <summary>
-        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="KernelFlags.FullParseMode"/>
+        /// Gets all file sizes in a folder, depending on the kernel setting <see cref="Filesystem.FullParseMode"/>
         /// </summary>
         /// <param name="DirectoryInfo">Directory information</param>
         /// <returns>Directory Size</returns>
         public static long GetAllSizesInFolder(DirectoryInfo DirectoryInfo) =>
-            DriverHandler.CurrentFilesystemDriverLocal.GetAllSizesInFolder(DirectoryInfo, KernelFlags.FullParseMode);
+            DriverHandler.CurrentFilesystemDriverLocal.GetAllSizesInFolder(DirectoryInfo, Filesystem.FullParseMode);
 
         /// <summary>
         /// Gets all file sizes in a folder, and optionally parses the entire folder

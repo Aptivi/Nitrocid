@@ -84,7 +84,7 @@ namespace KS.Modifications
                     var modAsmPublicKey = modAsmName.GetPublicKeyToken();
                     if (modAsmPublicKey is null || modAsmPublicKey.Length == 0)
                     {
-                        if (KernelFlags.AllowUntrustedMods)
+                        if (ModManager.AllowUntrustedMods)
                             SplashReport.ReportProgressWarning(Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));
                         else
                             throw new KernelException(KernelExceptionType.ModManagement, Translate.DoTranslation("The mod is not strongly signed. It may contain untrusted code."));

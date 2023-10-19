@@ -30,6 +30,7 @@ using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Power;
 using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
@@ -56,11 +57,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// </summary>
         private static void ReminderListen()
         {
-            while (!KernelFlags.KernelShutdown)
+            while (!PowerManager.KernelShutdown)
             {
                 try
                 {
-                    SpinWait.SpinUntil(() => KernelFlags.KernelShutdown, 100);
+                    SpinWait.SpinUntil(() => PowerManager.KernelShutdown, 100);
                     lock (ReminderManagerLock)
                     {
                         for (int ReminderIndex = 0; ReminderIndex <= Reminders.Count - 1; ReminderIndex++)

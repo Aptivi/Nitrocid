@@ -45,16 +45,19 @@ namespace KS.Network.Base
         /// </summary>
         public static string HostName =>
             Config.MainConfig.HostName;
+
         /// <summary>
         /// Download retries before giving up
         /// </summary>
         public static int DownloadRetries =>
             Config.MainConfig.DownloadRetries;
+
         /// <summary>
         /// Upload retries before giving up
         /// </summary>
         public static int UploadRetries =>
             Config.MainConfig.UploadRetries;
+
         /// <summary>
         /// Ping timeout in milliseconds
         /// </summary>
@@ -72,6 +75,12 @@ namespace KS.Network.Base
         /// </summary>
         public static bool InternetAvailable => 
             IsInternetAvailable();
+
+        /// <summary>
+        /// Shows the progress bar while downloading using the {Down|Up}load{File|String}() API.
+        /// </summary>
+        public static bool ShowProgress =>
+            Config.MainConfig.ShowProgress;
 
         /// <summary>
         /// Pings an address

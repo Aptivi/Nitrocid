@@ -95,7 +95,7 @@ namespace KS.ConsoleBase.Themes
                 var ThemeInfo = GetThemeInfo(theme);
 
                 // Check if the console supports true color
-                if ((KernelFlags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
+                if ((ConsoleExtensions.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
                 {
                     // Check to see if the event is finished
                     if (ThemeInfo.IsExpired)
@@ -146,7 +146,7 @@ namespace KS.ConsoleBase.Themes
                 ThemeStream.Close();
 
                 // Check if the console supports true color
-                if ((KernelFlags.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
+                if ((ConsoleExtensions.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)
                 {
                     // Check to see if the event is finished
                     if (ThemeInfo.IsExpired)
@@ -190,7 +190,7 @@ namespace KS.ConsoleBase.Themes
                 throw new KernelException(KernelExceptionType.Color, nameof(ThemeInfo));
 
             // Check to see if we're trying to preview theme on non-true color console
-            if (IsTrueColorRequired(ThemeInfo) && !KernelFlags.ConsoleSupportsTrueColor)
+            if (IsTrueColorRequired(ThemeInfo) && !ConsoleExtensions.ConsoleSupportsTrueColor)
                 throw new KernelException(KernelExceptionType.UnsupportedConsole, Translate.DoTranslation("Your console must support true color to use this theme."));
 
             // Set the colors

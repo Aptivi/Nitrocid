@@ -29,6 +29,7 @@ using System.Threading;
 using System;
 using KS.Kernel.Threading;
 using KS.Network.SpeedDial;
+using KS.Shell.ShellBase.Commands;
 using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Mail
@@ -81,7 +82,7 @@ namespace KS.Shell.Shells.Mail
                 }
                 catch (ThreadInterruptedException)
                 {
-                    KernelFlags.CancelRequested = false;
+                    CancellationHandlers.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

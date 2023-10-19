@@ -57,7 +57,7 @@ namespace KS.Kernel
             }
 
             // This is a kernel entry point
-            while (!KernelFlags.KernelShutdown)
+            while (!PowerManager.KernelShutdown)
             {
                 try
                 {
@@ -66,12 +66,12 @@ namespace KS.Kernel
                 catch (KernelException icde) when (icde.ExceptionType == KernelExceptionType.InsaneConsoleDetected)
                 {
                     ConsoleWrapper.WriteLine(icde.Message);
-                    KernelFlags.KernelShutdown = true;
+                    PowerManager.KernelShutdown = true;
                 }
                 catch (KernelErrorException kee)
                 {
                     DebugWriter.WriteDebugStackTrace(kee);
-                    KernelFlags.SafeMode = false;
+                    KernelEntry.SafeMode = false;
                 }
                 catch (Exception ex)
                 {
@@ -80,7 +80,7 @@ namespace KS.Kernel
                 finally
                 {
                     // Reset everything to their initial state
-                    if (!KernelFlags.hardShutdown)
+                    if (!PowerManager.hardShutdown)
                         KernelInitializers.ResetEverything();
 
                     // Clear the console
@@ -96,11 +96,11 @@ namespace KS.Kernel
             }
 
             // If "No APM" is enabled, simply print the text
-            if (KernelFlags.SimulateNoAPM)
+            if (PowerManager.SimulateNoAPM)
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("It's now safe to turn off your computer."));
 
             // Load main buffer
-            if (!KernelPlatform.IsOnWindows() && KernelFlags.UseAltBuffer && KernelFlags.HasSetAltBuffer)
+            if (!KernelPlatform.IsOnWindows() && ConsoleExtensions.UseAltBuffer && ConsoleExtensions.HasSetAltBuffer)
                 TextWriterColor.Write("\u001b[?1049l");
 
             // Reset colors and clear the console

@@ -227,7 +227,7 @@ namespace KS.ConsoleBase.Inputs.Styles
 
                 // If we need to write the vertical progress bar, do so. But, we need to refresh in case we're told to redraw on demand when
                 // we're not switching pages yet.
-                if (KernelFlags.EnableScrollBarInSelection)
+                if (ConsoleExtensions.EnableScrollBarInSelection)
                     ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)HighlightedAnswer / AllAnswers.Count), ConsoleWrapper.WindowWidth - 2, listStartPosition, listStartPosition + 1, 4, false);
 
                 // Write description area

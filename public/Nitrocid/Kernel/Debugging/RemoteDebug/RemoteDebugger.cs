@@ -77,7 +77,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         /// </summary>
         public static void StartRDebugThread()
         {
-            if (KernelFlags.DebugMode)
+            if (KernelEntry.DebugMode)
             {
                 if (!RDebugThread.IsAlive)
                 {
@@ -92,7 +92,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         /// </summary>
         public static void StopRDebugThread()
         {
-            if (KernelFlags.DebugMode)
+            if (KernelEntry.DebugMode)
             {
                 if (RDebugThread.IsAlive)
                 {
@@ -193,7 +193,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 }
                 catch (Exception ex)
                 {
-                    if (KernelFlags.NotifyOnRemoteDebugConnectionError)
+                    if (RemoteDebugTools.NotifyOnRemoteDebugConnectionError)
                     {
                         var RemoteDebugError = new Notification(Translate.DoTranslation("Remote debugger connection error"), ex.Message, NotificationPriority.Medium, NotificationType.Normal);
                         NotificationManager.NotifySend(RemoteDebugError);
@@ -267,7 +267,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                                 Config.MainConfig.RDebugMessageFormat = "{0}> {1}";
 
                             // Decide if we're recording the chat to the debug log
-                            if (KernelFlags.RecordChatToDebugLog)
+                            if (RemoteDebugTools.RecordChatToDebugLog)
                                 DebugWriter.WriteDebugLogOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
                             DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), true, SocketName, Message);
 

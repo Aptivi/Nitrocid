@@ -25,7 +25,9 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Users.Login;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -46,11 +48,11 @@ namespace KS.Shell.Shells.UESH
         {
             while (!Bail)
             {
-                if (KernelFlags.LogoutRequested)
+                if (Login.LogoutRequested)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", KernelFlags.LogoutRequested);
-                    KernelFlags.LogoutRequested = false;
-                    KernelFlags.LoggedIn = false;
+                    DebugWriter.WriteDebug(DebugLevel.I, "Requested log out: {0}", Login.LogoutRequested);
+                    Login.LogoutRequested = false;
+                    Login.LoggedIn = false;
                     Bail = true;
                 }
                 else if (!ScreensaverManager.InSaver)
@@ -61,7 +63,7 @@ namespace KS.Shell.Shells.UESH
                     }
                     catch (ThreadInterruptedException)
                     {
-                        KernelFlags.CancelRequested = false;
+                        CancellationHandlers.CancelRequested = false;
                         Bail = true;
                     }
                     catch (Exception ex)

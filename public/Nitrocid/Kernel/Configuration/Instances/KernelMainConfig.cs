@@ -1504,8 +1504,8 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool DoNotDisturb
         {
-            get => KernelFlags.DoNotDisturb;
-            set => KernelFlags.DoNotDisturb = value;
+            get => NotificationManager.dnd;
+            set => NotificationManager.dnd = value;
         }
         /// <summary>
         /// A character that resembles the upper left corner. Be sure to only input one character.

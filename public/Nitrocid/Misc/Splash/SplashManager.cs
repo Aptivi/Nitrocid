@@ -35,6 +35,7 @@ using KS.Kernel.Threading;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Splash.Splashes;
+using KS.Modifications;
 
 namespace KS.Misc.Splash
 {
@@ -84,6 +85,12 @@ namespace KS.Misc.Splash
             currentContext;
 
         /// <summary>
+        /// Enable the stylish splash screen in place of the regular verbose boot messages
+        /// </summary>
+        public static bool EnableSplash =>
+            Config.MainConfig.EnableSplash;
+
+        /// <summary>
         /// Gets names of the installed splashes
         /// </summary>
         public static List<string> GetNamesOfSplashes() =>
@@ -123,7 +130,7 @@ namespace KS.Misc.Splash
                         if (modAsmPublicKey is null || modAsmPublicKey.Length == 0)
                         {
                             SplashReport.ReportProgressWarning(Translate.DoTranslation("The splash is not strongly signed. It may contain untrusted code."));
-                            if (!KernelFlags.AllowUntrustedMods)
+                            if (!ModManager.AllowUntrustedMods)
                                 continue;
                         }
 
@@ -259,7 +266,7 @@ namespace KS.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void OpenSplash(ISplash splash, SplashContext context)
         {
-            if (KernelFlags.EnableSplash)
+            if (EnableSplash)
             {
                 currentContext = context;
                 SplashReport._Progress = 0;
@@ -302,7 +309,7 @@ namespace KS.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         internal static void CloseSplash(ISplash splash, bool showClosing, SplashContext context)
         {
-            if (KernelFlags.EnableSplash)
+            if (EnableSplash)
             {
                 currentContext = context;
                 splash.SplashClosing = true;
@@ -401,7 +408,7 @@ namespace KS.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void BeginSplashOut(SplashContext context)
         {
-            if (KernelFlags.EnableSplash && SplashReport._InSplash)
+            if (EnableSplash && SplashReport._InSplash)
                 CloseSplash(CurrentSplash, false, context);
         }
 
@@ -411,7 +418,7 @@ namespace KS.Misc.Splash
         /// <param name="context">Context of the splash screen (can be used as a reason as to why do you want to display the splash)</param>
         public static void EndSplashOut(SplashContext context)
         {
-            if (KernelFlags.EnableSplash && !SplashReport._InSplash)
+            if (EnableSplash && !SplashReport._InSplash)
                 OpenSplash(context);
         }
 

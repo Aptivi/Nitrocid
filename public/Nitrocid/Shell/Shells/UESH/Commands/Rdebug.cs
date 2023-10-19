@@ -18,7 +18,7 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
+using KS.Kernel;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (KernelFlags.DebugMode)
+            if (KernelEntry.DebugMode)
             {
                 if (RemoteDebugger.RDebugThread.IsAlive)
                 {

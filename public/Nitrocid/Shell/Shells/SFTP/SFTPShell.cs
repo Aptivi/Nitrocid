@@ -25,6 +25,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.Base.Connections;
 using KS.Network.SpeedDial;
+using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Renci.SshNet;
 
@@ -75,7 +76,7 @@ namespace KS.Shell.Shells.SFTP
                 }
                 catch (ThreadInterruptedException)
                 {
-                    KernelFlags.CancelRequested = false;
+                    CancellationHandlers.CancelRequested = false;
                     Bail = true;
                 }
                 catch (Exception ex)

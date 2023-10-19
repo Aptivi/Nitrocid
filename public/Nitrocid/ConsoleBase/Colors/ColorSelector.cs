@@ -73,7 +73,7 @@ namespace KS.ConsoleBase.Colors
         /// <returns>An instance of Color to get the resulting color</returns>
         public static Color OpenColorSelector(Color initialColor)
         {
-            if (!KernelFlags.UseNewColorSelector)
+            if (!ConsoleExtensions.UseNewColorSelector)
                 return ColorWheel.InputForColor(initialColor);
 
             // Initial color is selected

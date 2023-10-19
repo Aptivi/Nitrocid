@@ -30,6 +30,7 @@ using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Power;
 using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
@@ -51,11 +52,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// </summary>
         private static void EventListen()
         {
-            while (!KernelFlags.KernelShutdown)
+            while (!PowerManager.KernelShutdown)
             {
                 try
                 {
-                    SpinWait.SpinUntil(() => KernelFlags.KernelShutdown, 100);
+                    SpinWait.SpinUntil(() => PowerManager.KernelShutdown, 100);
                     lock (EventManagerLock)
                     {
                         for (int EventIndex = 0; EventIndex <= CalendarEvents.Count - 1; EventIndex++)

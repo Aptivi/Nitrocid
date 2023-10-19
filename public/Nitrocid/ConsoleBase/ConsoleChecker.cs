@@ -36,6 +36,7 @@ namespace KS.ConsoleBase
     public static class ConsoleChecker
     {
 
+        internal static bool CheckingForConsoleSize = true;
         private static bool acknowledged = false;
 
         /// <summary>

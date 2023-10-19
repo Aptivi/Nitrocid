@@ -80,14 +80,16 @@ namespace KS.Files.Folders
         /// List all files and folders in a specified folder
         /// </summary>
         /// <param name="folder">Full path to folder</param>
-        public static void List(string folder) => List(folder, ShowFileDetailsList, KernelFlags.SuppressUnauthorizedMessages, SortList);
+        public static void List(string folder) =>
+            List(folder, ShowFileDetailsList, Filesystem.SuppressUnauthorizedMessages, SortList);
 
         /// <summary>
         /// List all files and folders in a specified folder
         /// </summary>
         /// <param name="folder">Full path to folder</param>
         /// <param name="Sort">Whether to sort the filesystem entries</param>
-        public static void List(string folder, bool Sort) => List(folder, ShowFileDetailsList, KernelFlags.SuppressUnauthorizedMessages, Sort);
+        public static void List(string folder, bool Sort) =>
+            List(folder, ShowFileDetailsList, Filesystem.SuppressUnauthorizedMessages, Sort);
 
         /// <summary>
         /// List all files and folders in a specified folder
@@ -95,7 +97,8 @@ namespace KS.Files.Folders
         /// <param name="folder">Full path to folder</param>
         /// <param name="ShowFileDetails">Whether to show the file details</param>
         /// <param name="SuppressUnauthorizedMessage">Whether to silence the access denied messages</param>
-        public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage) => List(folder, ShowFileDetails, SuppressUnauthorizedMessage, SortList);
+        public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage) =>
+            List(folder, ShowFileDetails, SuppressUnauthorizedMessage, SortList);
 
         /// <summary>
         /// List all files and folders in a specified folder

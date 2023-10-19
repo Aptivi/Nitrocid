@@ -21,6 +21,7 @@ using System.IO;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -40,7 +41,7 @@ namespace KS.Shell.Shells.Admin.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (KernelFlags.DebugMode)
+            if (KernelEntry.DebugMode)
             {
                 try
                 {

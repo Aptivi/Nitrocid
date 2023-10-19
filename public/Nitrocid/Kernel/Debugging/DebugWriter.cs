@@ -40,16 +40,32 @@ namespace KS.Kernel.Debugging
         /// <summary>
         /// Debug stack trace list
         /// </summary>
-        public readonly static List<string> DebugStackTraces = new();
-        /// <summary>
-        /// Censor private information that may be printed to the debug logs.
-        /// </summary>
-        public static bool DebugCensorPrivateInfo => Config.MainConfig.DebugCensorPrivateInfo;
         internal static string DebugPath = "";
         internal static string lastRoutinePath = "";
         internal static StreamWriter DebugStreamWriter;
         internal static bool isDisposed;
         internal static object WriteLock = new();
+        internal static bool NotifyDebugDownloadError;
+        internal static bool NotifyDebugDownloadNetworkUnavailable;
+        internal readonly static List<string> debugStackTraces = new();
+
+        /// <summary>
+        /// Debug stack trace list
+        /// </summary>
+        public static string[] DebugStackTraces =>
+            debugStackTraces.ToArray();
+
+        /// <summary>
+        /// Censor private information that may be printed to the debug logs.
+        /// </summary>
+        public static bool DebugCensorPrivateInfo =>
+            Config.MainConfig.DebugCensorPrivateInfo;
+
+        /// <summary>
+        /// Enables event debugging
+        /// </summary>
+        public static bool EventDebug =>
+            Config.MainConfig.EventDebug;
 
         /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="DebugCensorPrivateInfo"/> is on.
@@ -88,7 +104,7 @@ namespace KS.Kernel.Debugging
         {
             lock (WriteLock)
             {
-                if (KernelFlags.DebugMode)
+                if (KernelEntry.DebugMode)
                 {
                     WriteDebugLogOnly(Level, text, vars);
                     WriteDebugDevicesOnly(Level, text, false, vars);
@@ -106,7 +122,7 @@ namespace KS.Kernel.Debugging
         {
             lock (WriteLock)
             {
-                if (KernelFlags.DebugMode)
+                if (KernelEntry.DebugMode)
                 {
                     // Open debugging stream
                     string debugFilePath = DebugPath;
@@ -213,7 +229,7 @@ namespace KS.Kernel.Debugging
         {
             lock (WriteLock)
             {
-                if (KernelFlags.DebugMode)
+                if (KernelEntry.DebugMode)
                 {
                     for (int i = 0; i <= RemoteDebugger.DebugDevices.Count - 1; i++)
                     {
@@ -238,7 +254,7 @@ namespace KS.Kernel.Debugging
         {
             lock (WriteLock)
             {
-                if (KernelFlags.DebugMode)
+                if (KernelEntry.DebugMode)
                 {
                     try
                     {
@@ -286,7 +302,7 @@ namespace KS.Kernel.Debugging
         {
             lock (WriteLock)
             {
-                if (KernelFlags.DebugMode)
+                if (KernelEntry.DebugMode)
                 {
                     // These two NewLines are padding for accurate stack tracing.
                     var Inner = Ex.InnerException;
@@ -311,7 +327,7 @@ namespace KS.Kernel.Debugging
                     for (int i = 0; i <= StkTrcs.Count - 1; i++)
                         WriteDebug(DebugLevel.T, StkTrcs[i]);
                     WriteDebug(DebugLevel.T, $"Event of incident: {TimeDateRenderers.Render()}");
-                    DebugStackTraces.AddRange(NewStackTraces);
+                    debugStackTraces.AddRange(NewStackTraces);
                 }
             }
         }

@@ -28,6 +28,7 @@ using KS.Kernel.Events;
 using System.Collections.Generic;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.Kernel.Configuration;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -38,6 +39,18 @@ namespace KS.Kernel.Debugging.RemoteDebug
     {
 
         private static List<RemoteDebugDeviceInfo> remoteDebugDevices = new();
+
+        /// <summary>
+        /// When there is a remote debug connection error, notify the user
+        /// </summary>
+        public static bool NotifyOnRemoteDebugConnectionError =>
+            Config.MainConfig.NotifyOnRemoteDebugConnectionError;
+
+        /// <summary>
+        /// Records remote debug chat to debug log
+        /// </summary>
+        public static bool RecordChatToDebugLog =>
+            Config.MainConfig.RecordChatToDebugLog;
 
         /// <summary>
         /// Disconnects a specified debug device

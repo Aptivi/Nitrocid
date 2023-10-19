@@ -18,6 +18,7 @@
 
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
+using KS.Kernel.Power;
 using KS.Languages;
 
 namespace KS.Kernel.Debugging.Testing.Facades
@@ -28,21 +29,21 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Kernel;
         public override void Run()
         {
-            TextWriterColor.Write(Translate.DoTranslation("Previous value") + ": {0}", KernelFlags.DebugMode);
-            if (!KernelFlags.DebugMode)
+            TextWriterColor.Write(Translate.DoTranslation("Previous value") + ": {0}", KernelEntry.DebugMode);
+            if (!KernelEntry.DebugMode)
             {
-                KernelFlags.DebugMode = true;
+                KernelEntry.DebugMode = true;
             }
             else
             {
                 // This is to abort the remote debugger.
-                KernelFlags.RebootRequested = true;
+                PowerManager.RebootRequested = true;
 
                 // Now, do the job!
-                KernelFlags.DebugMode = false;
-                KernelFlags.RebootRequested = false;
+                KernelEntry.DebugMode = false;
+                PowerManager.RebootRequested = false;
             }
-            TextWriterColor.Write(Translate.DoTranslation("Current value") + ": {0}", KernelFlags.DebugMode);
+            TextWriterColor.Write(Translate.DoTranslation("Current value") + ": {0}", KernelEntry.DebugMode);
         }
     }
 }

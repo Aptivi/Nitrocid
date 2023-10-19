@@ -23,6 +23,7 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Users.Login;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -41,7 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (ShellStart.ShellStack.Count == 1)
             {
-                KernelFlags.LogoutRequested = true;
+                Login.LogoutRequested = true;
                 return 0;
             }
             else

@@ -40,6 +40,18 @@ namespace KS.Kernel.Hardware
         internal static IEnumerable graphics;
 
         /// <summary>
+        /// Probe the hardware quietly. This overrides the <see cref="VerboseHardwareProbe"/> flag.
+        /// </summary>
+        public static bool QuietHardwareProbe =>
+            Config.MainConfig.QuietHardwareProbe;
+
+        /// <summary>
+        /// Makes the hardware prober a bit talkative
+        /// </summary>
+        public static bool VerboseHardwareProbe =>
+            Config.MainConfig.VerboseHardwareProbe;
+
+        /// <summary>
         /// Starts probing hardware
         /// </summary>
         public static void StartProbing()
@@ -75,7 +87,7 @@ namespace KS.Kernel.Hardware
         private static void WriteWhatProbed(InxiHardwareType Hardware)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Hardware {0} ({1}) successfully probed.", Hardware, Hardware.ToString());
-            if (!KernelFlags.QuietHardwareProbe & KernelFlags.VerboseHardwareProbe | KernelFlags.EnableSplash)
+            if (!QuietHardwareProbe & VerboseHardwareProbe | SplashManager.EnableSplash)
                 SplashReport.ReportProgress(Translate.DoTranslation("Successfully probed {0}."), 5, Hardware.ToString());
         }
 

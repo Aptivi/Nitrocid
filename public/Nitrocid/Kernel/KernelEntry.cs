@@ -37,11 +37,20 @@ using KS.Misc.Text.Probers.Placeholder;
 using KS.Network.RSS;
 using KS.Shell.ShellBase.Shells;
 using KS.Misc.Text.Probers.Motd;
+using KS.Kernel.Time;
+using KS.Users.Login.Handlers;
 
 namespace KS.Kernel
 {
     internal static class KernelEntry
     {
+        internal static bool FirstTime;
+        internal static bool DebugMode;
+        internal static bool SafeMode;
+        internal static bool Maintenance;
+        internal static bool QuietKernel;
+        internal static bool TalkativePreboot;
+
         internal static void EntryPoint(string[] args)
         {
             // Initialize very important components
@@ -51,20 +60,22 @@ namespace KS.Kernel
             ArgumentParse.ParseArguments(args);
 
             // Some command-line arguments may request kernel shutdown
-            if (KernelFlags.KernelShutdown)
+            if (PowerManager.KernelShutdown)
                 return;
 
             // Check for console size
-            if (KernelFlags.CheckingForConsoleSize)
+            if (ConsoleChecker.CheckingForConsoleSize)
             {
                 ConsoleChecker.CheckConsoleSize();
             }
             else
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine +
-                                      Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning);
+                TextWriterColor.WriteKernelColor(
+                    Translate.DoTranslation("Looks like you're bypassing the console size detection. Things may not work properly on small screens.") + CharManager.NewLine +
+                    Translate.DoTranslation("To have a better experience, resize your console window while still being on this screen. Press any key to continue..."), true, KernelColorType.Warning
+                );
                 Input.DetectKeypress();
-                KernelFlags.CheckingForConsoleSize = true;
+                ConsoleChecker.CheckingForConsoleSize = true;
             }
 
             // Initialize important components
@@ -85,13 +96,13 @@ namespace KS.Kernel
             SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"), 100);
             SplashManager.CloseSplash(SplashContext.StartingUp);
             SplashReport._KernelBooted = true;
-            if (!KernelFlags.EnableSplash)
+            if (!SplashManager.EnableSplash)
                 TextWriterColor.Write();
 
             // If this is the first time, run the first run presentation
-            if (KernelFlags.FirstTime)
+            if (FirstTime)
             {
-                KernelFlags.FirstTime = false;
+                FirstTime = false;
                 KernelFirstRun.PresentFirstRun();
             }
 
@@ -104,36 +115,36 @@ namespace KS.Kernel
 
         private static void MainLoop()
         {
-            while (!(KernelFlags.RebootRequested | KernelFlags.KernelShutdown))
+            while (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
             {
                 // Initialize login prompt
-                if (!KernelFlags.Maintenance)
+                if (!Maintenance)
                     Login.LoginPrompt();
                 else
                     Login.PromptMaintenanceLogin();
                 KernelTools.CheckErrored();
 
                 // Check to see if login handler requested power action
-                if (KernelFlags.RebootRequested | KernelFlags.KernelShutdown)
+                if (PowerManager.RebootRequested | PowerManager.KernelShutdown)
                     return;
 
                 // Show license information
                 WelcomeMessage.WriteLicense();
 
                 // Show current time
-                if (KernelFlags.ShowCurrentTimeBeforeLogin)
+                if (TimeDateTools.ShowCurrentTimeBeforeLogin)
                 {
                     TimeDateMiscRenderers.ShowCurrentTimes();
                     TextWriterColor.Write();
                 }
 
                 // Show the tip
-                if (KernelFlags.ShowTip)
-                    WelcomeMessage.ShowTip();
+                if (WelcomeMessage.ShowTip)
+                    WelcomeMessage.ShowRandomTip();
 
                 // Show MOTD
-                KernelFlags.ShowMOTDOnceFlag = true;
-                if (KernelFlags.ShowMAL)
+                BaseLoginHandler.ShowMOTDOnceFlag = true;
+                if (BaseLoginHandler.ShowMAL)
                     TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
 
