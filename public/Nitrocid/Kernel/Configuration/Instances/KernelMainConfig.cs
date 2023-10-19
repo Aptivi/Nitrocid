@@ -1304,7 +1304,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Covers the notification with the border
         /// </summary>
-        public bool DrawBorderNotification { get; set; }
+        public bool DrawBorderNotification { get; set; } = true;
         /// <summary>
         /// Write the filenames of the mods that will not run on startup. When you're finished, write "q". Write a minus sign next to the path to remove an existing mod.
         /// </summary>
