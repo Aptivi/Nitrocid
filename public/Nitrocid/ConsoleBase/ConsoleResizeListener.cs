@@ -64,7 +64,6 @@ namespace KS.ConsoleBase
                 var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
                 return (termDriver.WindowWidth, termDriver.WindowHeight);
             }
-            DebugWriter.WriteDebug(DebugLevel.W, "Cached: {0}x{1}", CurrentWindowWidth, CurrentWindowHeight);
             return (CurrentWindowWidth, CurrentWindowHeight);
         }
 
