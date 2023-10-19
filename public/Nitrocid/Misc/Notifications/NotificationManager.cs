@@ -219,6 +219,7 @@ namespace KS.Misc.Notifications
                             int notifTitleTop = notifTopAgnostic + 1;
                             int notifDescTop = notifTopAgnostic + 2;
                             int notifWipeTop = notifTopAgnostic + 3;
+                            string clear = ConsoleExtensions.GetClearLineToRightSequence();
                             if (useSimplified)
                             {
                                 // Simplified way
@@ -229,10 +230,8 @@ namespace KS.Misc.Notifications
                             {
                                 // Normal way
                                 DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}", notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop);
-                                TextWriterWhereColor.WriteWhereKernelColor($"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeft, notifTop, true, KernelColorType.NeutralText);
-                                TextWriterWhereColor.WriteWhereColor(Title + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeft, notifTitleTop, true, NotifyTitleColor);
-                                TextWriterWhereColor.WriteWhereColor(Desc + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeft, notifDescTop, true, NotifyDescColor);
-                                TextWriterWhereColor.WriteWhereKernelColor($"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeft, notifWipeTop, true, KernelColorType.NeutralText);
+                                TextWriterWhereColor.WriteWhereColor(Title + clear, notifLeft, notifTitleTop, true, NotifyTitleColor);
+                                TextWriterWhereColor.WriteWhereColor(Desc + clear, notifLeft, notifDescTop, true, NotifyDescColor);
                             }
 
                             // Optionally, draw a border
@@ -262,14 +261,16 @@ namespace KS.Misc.Notifications
                                 }
 
                                 // Just draw the border!
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyUpperLeftCornerChar + new string(CurrentNotifyUpperFrameChar, 38) + CurrentNotifyUpperRightCornerChar, ConsoleWrapper.WindowWidth - 41, 0, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), ConsoleWrapper.WindowWidth - 41, notifTitleTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), ConsoleWrapper.WindowWidth - 41, notifDescTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), ConsoleWrapper.WindowWidth - 41, notifWipeTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereKernelColor(clear, notifLeftAgnostic - 1, notifTopAgnostic, true, KernelColorType.NeutralText);
+                                TextWriterWhereColor.WriteWhereKernelColor(clear, notifLeftAgnostic - 1, notifWipeTop, true, KernelColorType.NeutralText);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyUpperLeftCornerChar + new string(CurrentNotifyUpperFrameChar, 38) + CurrentNotifyUpperRightCornerChar, notifLeftAgnostic - 1, notifTopAgnostic, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifTitleTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifDescTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifWipeTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifTitleTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifDescTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifWipeTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLowerLeftCornerChar + new string(CurrentNotifyLowerFrameChar, 38) + CurrentNotifyLowerRightCornerChar, ConsoleWrapper.WindowWidth - 41, 4, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLowerLeftCornerChar + new string(CurrentNotifyLowerFrameChar, 38) + CurrentNotifyLowerRightCornerChar, notifLeftAgnostic - 1, notifWipeTop, true, NotifyBorderColor);
                             }
 
                             // Beep according to priority
@@ -287,19 +288,33 @@ namespace KS.Misc.Notifications
                                     string ProgressTitle = Title + " (" + NewNotification.Progress.ToString() + "%)";
                                     DebugWriter.WriteDebug(DebugLevel.I, "Where to store progress: {0},{1}", notifLeftAgnostic, notifWipeTop);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
-                                    TextWriterWhereColor.WriteWhereKernelColor($"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, 0, true, KernelColorType.NeutralText);
-                                    TextWriterWhereColor.WriteWhereColor(ProgressTitle + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, notifTitleTop, true, NotifyTitleColor);
-                                    TextWriterWhereColor.WriteWhereColor(Desc + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
+                                    TextWriterWhereColor.WriteWhereKernelColor(clear, notifLeftAgnostic, 0, true, KernelColorType.NeutralText);
+                                    TextWriterWhereColor.WriteWhereColor(ProgressTitle + clear, notifLeftAgnostic, notifTitleTop, true, NotifyTitleColor);
+                                    TextWriterWhereColor.WriteWhereColor(Desc + clear, notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
                                     ProgressBarColor.WriteProgress(NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification, true);
                                     Thread.Sleep(1);
                                     if (NewNotification.ProgressFailed)
-                                        TextWriterWhereColor.WriteWhereColor(ProgressTitle + $"{ConsoleExtensions.GetClearLineToRightSequence()}", notifLeftAgnostic, notifTitleTop, true, NotifyProgressFailureColor);
+                                        TextWriterWhereColor.WriteWhereColor(ProgressTitle + clear, notifLeftAgnostic, notifTitleTop, true, NotifyProgressFailureColor);
                                 }
                             }
 
                             // Clear the area
                             SpinWait.SpinUntil(() => sent, 5000);
-                            NotifClearArea(ConsoleWrapper.WindowWidth - (DrawBorderNotification ? 41 : 40));
+                            int width = ConsoleWrapper.WindowWidth - (DrawBorderNotification ? 41 : 40);
+                            if (useSimplified)
+                                TextWriterWhereColor.WriteWhere(" ", notifLeft, notifTop, true);
+                            else
+                            {
+                                if (DrawBorderNotification)
+                                {
+                                    TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifTopAgnostic, true, KernelColorType.NeutralText);
+                                    TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifWipeTop, true, KernelColorType.NeutralText);
+                                }
+                                TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifTitleTop, true, KernelColorType.NeutralText);
+                                TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifDescTop, true, KernelColorType.NeutralText);
+                                if (NewNotification.Type == NotificationType.Progress)
+                                    TextWriterWhereColor.WriteWhereKernelColor(clear, width, 4, true, KernelColorType.NeutralText);
+                            }
                         }
                     }
                 }
@@ -309,19 +324,6 @@ namespace KS.Misc.Notifications
                 DebugWriter.WriteDebug(DebugLevel.E, "Shutting down notification thread because of {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
             }
-        }
-
-        /// <summary>
-        /// Clears the area of the displayed notification
-        /// </summary>
-        /// <param name="Width">Width of area to clear</param>
-        private static void NotifClearArea(int Width)
-        {
-            TextWriterWhereColor.WriteWhereKernelColor($"{ConsoleExtensions.GetClearLineToRightSequence()}", Width, 0, true, KernelColorType.NeutralText);
-            TextWriterWhereColor.WriteWhereKernelColor($"{ConsoleExtensions.GetClearLineToRightSequence()}", Width, 1, true, KernelColorType.NeutralText);
-            TextWriterWhereColor.WriteWhereKernelColor($"{ConsoleExtensions.GetClearLineToRightSequence()}", Width, 2, true, KernelColorType.NeutralText);
-            TextWriterWhereColor.WriteWhereKernelColor($"{ConsoleExtensions.GetClearLineToRightSequence()}", Width, 3, true, KernelColorType.NeutralText);
-            TextWriterWhereColor.WriteWhereKernelColor($"{ConsoleExtensions.GetClearLineToRightSequence()}", Width, 4, true, KernelColorType.NeutralText);
         }
 
         /// <summary>

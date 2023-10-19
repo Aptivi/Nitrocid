@@ -94,7 +94,7 @@ namespace KS.Kernel.Starting
         internal static void Stage07SysIntegrity()
         {
             SplashReport.ReportProgress(Translate.DoTranslation("Verifying system integrity"), 5);
-            if (ConfigTools.NotifyConfigError)
+            if (!ConfigTools.NotifyConfigError)
             {
                 ConfigTools.NotifyConfigError = false;
                 SplashReport.ReportProgressError(Translate.DoTranslation("Configuration error will be notified"));
