@@ -25,7 +25,6 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Kernel.Events;
-using static KS.Kernel.Configuration.Config;
 using KS.ConsoleBase.Colors;
 using Terminaux.Colors;
 using KS.Kernel.Exceptions;
@@ -52,7 +51,7 @@ namespace KS.Kernel.Configuration
         public static void ReloadConfig()
         {
             EventsManager.FireEvent(EventType.PreReloadConfig);
-            InitializeConfig();
+            Config.InitializeConfig();
             EventsManager.FireEvent(EventType.PostReloadConfig);
         }
 
@@ -159,7 +158,7 @@ namespace KS.Kernel.Configuration
         {
             var Results = new Dictionary<string, bool>();
             var entries = new Dictionary<SettingsEntry[], BaseKernelConfig>();
-            foreach (var config in GetKernelConfigs())
+            foreach (var config in Config.GetKernelConfigs())
                 entries.Add(config.SettingsEntries, config);
             foreach (var entry in entries)
             {
@@ -177,7 +176,7 @@ namespace KS.Kernel.Configuration
         {
             if (string.IsNullOrEmpty(configTypeName))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Can't check configuration variables when no type specified."));
-            var config = GetKernelConfig(configTypeName);
+            var config = Config.GetKernelConfig(configTypeName);
             return CheckConfigVariables(config);
         }
 
@@ -256,7 +255,7 @@ namespace KS.Kernel.Configuration
             if (!IsCustomSettingRegistered(name))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} not registered. Registering...", name);
-                customConfigurations.Add(name, kernelConfig);
+                Config.customConfigurations.Add(name, kernelConfig);
             }
 
             // Now, verify that we have a valid kernel config.
@@ -267,15 +266,15 @@ namespace KS.Kernel.Configuration
                     .Where((kvp) => !kvp.Value)
                     .Select((kvp) => kvp.Key)
                     .ToArray();
-                customConfigurations.Remove(name);
+                Config.customConfigurations.Remove(name);
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a custom setting with invalid content. The invalid keys are") + ":\n\n  - " + string.Join("\n  - ", invalidKeys));
             }
 
             // Make a configuration file
             string path = GetPathToCustomSettingsFile(kernelConfig);
             if (!Checking.FileExists(path))
-                CreateConfig(kernelConfig);
-            ReadConfig(kernelConfig, path);
+                Config.CreateConfig(kernelConfig);
+            Config.ReadConfig(kernelConfig, path);
         }
 
         /// <summary>
@@ -291,7 +290,7 @@ namespace KS.Kernel.Configuration
             if (IsCustomSettingRegistered(setting))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Unregistering...", setting);
-                customConfigurations.Remove(setting);
+                Config.customConfigurations.Remove(setting);
             }
         }
 
@@ -301,7 +300,7 @@ namespace KS.Kernel.Configuration
         /// <param name="setting">Settings type to query</param>
         /// <returns>True if found. False otherwise.</returns>
         public static bool IsCustomSettingRegistered(string setting) =>
-            IsCustomSettingBuiltin(setting) || customConfigurations.ContainsKey(setting);
+            IsCustomSettingBuiltin(setting) || Config.customConfigurations.ContainsKey(setting);
 
         /// <summary>
         /// Checks to see whether the custom setting is built-in
@@ -309,7 +308,7 @@ namespace KS.Kernel.Configuration
         /// <param name="setting">Settings type to query</param>
         /// <returns>True if found. False otherwise.</returns>
         public static bool IsCustomSettingBuiltin(string setting) =>
-            baseConfigurations.ContainsKey(setting);
+            Config.baseConfigurations.ContainsKey(setting);
 
         /// <summary>
         /// Gets a path to the custom settings JSON file
@@ -327,7 +326,7 @@ namespace KS.Kernel.Configuration
             if (IsCustomSettingRegistered(setting))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Custom settings type {0} registered. Getting path...", setting);
-                var config = GetKernelConfig(setting);
+                var config = Config.GetKernelConfig(setting);
                 return GetPathToCustomSettingsFile(config);
             }
             else
@@ -383,7 +382,7 @@ namespace KS.Kernel.Configuration
             if (!IsCustomSettingBuiltin(name))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} not registered. Registering...", name);
-                baseConfigurations.Add(name, kernelConfig);
+                Config.baseConfigurations.Add(name, kernelConfig);
             }
 
             // Now, verify that we have a valid kernel config.
@@ -394,15 +393,15 @@ namespace KS.Kernel.Configuration
                     .Where((kvp) => !kvp.Value)
                     .Select((kvp) => kvp.Key)
                     .ToArray();
-                baseConfigurations.Remove(name);
+                Config.baseConfigurations.Remove(name);
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to register a base setting with invalid content. The invalid keys are") + ":\n\n  - " + string.Join("\n  - ", invalidKeys));
             }
 
             // Make a configuration file
             string path = GetPathToCustomSettingsFile(kernelConfig);
             if (!Checking.FileExists(path))
-                CreateConfig(kernelConfig);
-            ReadConfig(kernelConfig, path);
+                Config.CreateConfig(kernelConfig);
+            Config.ReadConfig(kernelConfig, path);
         }
 
         /// <summary>
@@ -418,7 +417,7 @@ namespace KS.Kernel.Configuration
             if (IsCustomSettingBuiltin(setting))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Base settings type {0} registered. Unregistering...", setting);
-                baseConfigurations.Remove(setting);
+                Config.baseConfigurations.Remove(setting);
             }
         }
 

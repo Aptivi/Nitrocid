@@ -29,7 +29,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Reader;
-using static KS.ConsoleBase.Colors.KernelColorTools;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -356,7 +355,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
+                        new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -371,7 +370,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
+                        new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -416,7 +415,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxColor, GetColor(KernelColorType.Background), vars);
+                        InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -431,7 +430,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxColor, GetColor(KernelColorType.Background), vars);
+                        InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -702,7 +701,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxColorBack(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, GetColor(KernelColorType.Background), vars);
+            WriteInfoBoxColorBack(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -743,7 +742,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxColorBack(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
+            WriteInfoBoxColorBack(text, true, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -785,7 +784,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxColorBack(text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, GetColor(KernelColorType.Background), vars);
+            WriteInfoBoxColorBack(text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -902,7 +901,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxColorBack(text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
+            WriteInfoBoxColorBack(text, waitForInput, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -1054,7 +1053,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
+                        new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -1083,7 +1082,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        InfoBoxColor, GetColor(KernelColorType.Background), vars);
+                        InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -1244,7 +1243,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, GetColor(KernelColorType.Background), vars);
+            WriteInfoBoxInputColorBack(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly
@@ -1352,7 +1351,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxColor, params object[] vars) =>
-            WriteInfoBoxInputColorBack(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), GetColor(KernelColorType.Background), vars);
+            WriteInfoBoxInputColorBack(text, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(InfoBoxColor), KernelColorTools.GetColor(KernelColorType.Background), vars);
 
         /// <summary>
         /// Writes the info box plainly

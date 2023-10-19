@@ -16,7 +16,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 #if SPECIFIERREL
-using static KS.Misc.Notifications.NotificationManager;
 using KS.Files;
 using KS.Network.Base;
 using KS.Network.Base.Transfer;
@@ -40,7 +39,7 @@ namespace KS.Kernel.Debugging.Trace
 #if SPECIFIERREL
 			if (!NetworkTools.NetworkAvailable)
 			{
-				NotifySend(new Notification(Translate.DoTranslation("No network while downloading debug data"), Translate.DoTranslation("Check your internet connection and try again."), NotificationPriority.Medium, NotificationType.Normal));
+                NotificationManager.NotifySend(new Notification(Translate.DoTranslation("No network while downloading debug data"), Translate.DoTranslation("Check your internet connection and try again."), NotificationPriority.Medium, NotificationType.Normal));
 			}
 			if (NetworkTools.NetworkAvailable)
 			{
@@ -58,7 +57,7 @@ namespace KS.Kernel.Debugging.Trace
 					}
 					catch (Exception)
 					{
-						NotifySend(new Notification(Translate.DoTranslation("Error downloading debug data"), Translate.DoTranslation("There is an error while downloading debug data. Check your internet connection."), NotificationPriority.Medium, NotificationType.Normal));
+                        NotificationManager.NotifySend(new Notification(Translate.DoTranslation("Error downloading debug data"), Translate.DoTranslation("There is an error while downloading debug data. Check your internet connection."), NotificationPriority.Medium, NotificationType.Normal));
 					}
 				}
 			}

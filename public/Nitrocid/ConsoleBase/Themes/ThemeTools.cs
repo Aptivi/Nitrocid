@@ -27,7 +27,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Kernel.Events;
-using static KS.ConsoleBase.Colors.KernelColorTools;
 using Terminaux.Colors;
 using KS.Resources;
 using Newtonsoft.Json.Linq;
@@ -198,12 +197,12 @@ namespace KS.ConsoleBase.Themes
             {
                 for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
                 {
-                    KernelColorType type = KernelColors.Keys.ElementAt(typeIndex);
+                    KernelColorType type = KernelColorTools.KernelColors.Keys.ElementAt(typeIndex);
                     var themeColor = ThemeInfo.ThemeColors[type];
                     DebugWriter.WriteDebug(DebugLevel.I, "Kernel color type {0}, setting theme color {1}...", type.ToString(), themeColor.PlainSequence);
-                    KernelColors[type] = themeColor;
+                    KernelColorTools.KernelColors[type] = themeColor;
                 }
-                LoadBack();
+                KernelColorTools.LoadBack();
                 Config.CreateConfig();
 
                 // Raise event

@@ -20,7 +20,6 @@ using System.Linq;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using Namer;
-using static Namer.NameGenerator;
 
 namespace Nitrocid.Extras.NameGen.Commands
 {
@@ -75,8 +74,8 @@ namespace Nitrocid.Extras.NameGen.Commands
                 NameSuffix = parameters.ArgumentsList[2];
 
             // Generate n names
-            PopulateNames();
-            NamesList = FindFirstNames(term, NamePrefix, NameSuffix, genderType);
+            NameGenerator.PopulateNames();
+            NamesList = NameGenerator.FindFirstNames(term, NamePrefix, NameSuffix, genderType);
 
             // Check to see if we need to modify the list to have nametags
             if (nametags)

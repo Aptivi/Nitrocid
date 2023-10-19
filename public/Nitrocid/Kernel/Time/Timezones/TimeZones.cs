@@ -19,7 +19,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using static System.TimeZoneInfo;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -38,7 +37,7 @@ namespace KS.Kernel.Time.Timezones
         public static Dictionary<string, DateTime> GetTimeZones()
         {
             // Get all system time zones (IANA on Unix)
-            var Zones = GetSystemTimeZones().ToArray();
+            var Zones = TimeZoneInfo.GetSystemTimeZones().ToArray();
             var ZoneTimes = new Dictionary<string, DateTime>();
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", Zones.Length);
 
@@ -48,7 +47,7 @@ namespace KS.Kernel.Time.Timezones
 
             // Adds date and time to every single time zone to the list
             foreach (var Zone in Zones)
-                ZoneTimes.Add(Zone.Id, ConvertTime(TimeDateTools.KernelDateTime, FindSystemTimeZoneById(Zone.Id)));
+                ZoneTimes.Add(Zone.Id, TimeZoneInfo.ConvertTime(TimeDateTools.KernelDateTime, TimeZoneInfo.FindSystemTimeZoneById(Zone.Id)));
             DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", ZoneTimes.Count);
 
             // Return the populated array

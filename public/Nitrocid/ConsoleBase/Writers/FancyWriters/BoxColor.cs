@@ -18,7 +18,6 @@
 
 using System;
 using System.Threading;
-using static KS.ConsoleBase.Colors.KernelColorTools;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
@@ -78,7 +77,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, GetColor(BoxColor));
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, KernelColorTools.CurrentForegroundColor, KernelColorTools.GetColor(BoxColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -100,7 +99,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, new Color(BoxColor));
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, KernelColorTools.CurrentForegroundColor, new Color(BoxColor));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -122,7 +121,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             try
             {
                 // Fill the box with spaces inside it
-                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, CurrentForegroundColor, BoxColor);
+                TextWriterWhereColor.WriteWhereColorBack(RenderBox(Left, Top, InteriorWidth, InteriorHeight), Left, Top, false, KernelColorTools.CurrentForegroundColor, BoxColor);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

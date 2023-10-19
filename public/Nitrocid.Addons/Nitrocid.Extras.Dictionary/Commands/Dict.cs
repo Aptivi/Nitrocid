@@ -17,13 +17,13 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System.Linq;
-using static Dictify.Manager.DictionaryManager;
 using Dictify.Models;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
+using Dictify.Manager;
 
 namespace Nitrocid.Extras.Dictionary.Commands
 {
@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var Words = GetWordInfo(parameters.ArgumentsList[0]);
+            var Words = DictionaryManager.GetWordInfo(parameters.ArgumentsList[0]);
 
             // Iterate for each word
             foreach (DictionaryWord Word in Words)
@@ -108,7 +108,7 @@ namespace Nitrocid.Extras.Dictionary.Commands
 
         public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
-            var Words = GetWordInfo(parameters.ArgumentsList[0]);
+            var Words = DictionaryManager.GetWordInfo(parameters.ArgumentsList[0]);
 
             // Iterate for each word
             foreach (DictionaryWord Word in Words)

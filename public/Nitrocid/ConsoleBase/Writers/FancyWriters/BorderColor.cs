@@ -18,7 +18,6 @@
 
 using System;
 using System.Threading;
-using static KS.ConsoleBase.Colors.KernelColorTools;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
@@ -144,7 +143,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        new Color(BorderColor), GetColor(KernelColorType.Background));
+                        new Color(BorderColor), KernelColorTools.GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the border plainly
@@ -177,7 +176,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         BorderTools.BorderUpperRightCornerChar, BorderTools.BorderLowerRightCornerChar,
                         BorderTools.BorderUpperFrameChar, BorderTools.BorderLowerFrameChar,
                         BorderTools.BorderLeftFrameChar, BorderTools.BorderRightFrameChar,
-                        BorderColor, GetColor(KernelColorType.Background));
+                        BorderColor, KernelColorTools.GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the border plainly
@@ -295,7 +294,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color BorderColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, GetColor(KernelColorType.Background));
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, BorderColor, KernelColorTools.GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the border plainly
@@ -354,7 +353,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors BorderColor) =>
-            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(BorderColor), GetColor(KernelColorType.Background));
+            WriteBorder(Left, Top, InteriorWidth, InteriorHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, new Color(BorderColor), KernelColorTools.GetColor(KernelColorType.Background));
 
         /// <summary>
         /// Writes the border plainly

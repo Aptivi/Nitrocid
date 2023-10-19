@@ -24,7 +24,7 @@ using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
-using static Namer.NameGenerator;
+using Namer;
 
 namespace Nitrocid.Extras.NameGen.Screensavers
 {
@@ -157,7 +157,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
 
             // Populate the names
             InfoBoxColor.WriteInfoBoxColor("Welcome to the database! Fetching identities...", false, ConsoleColors.Green);
-            PopulateNames();
+            NameGenerator.PopulateNames();
         }
 
         /// <inheritdoc/>
@@ -168,7 +168,7 @@ namespace Nitrocid.Extras.NameGen.Screensavers
 
             // Generate names
             int NumberOfPeople = RandomDriver.Random(PersonLookupSettings.PersonLookupMinimumNames, PersonLookupSettings.PersonLookupMaximumNames);
-            var NamesToLookup = GenerateNames(NumberOfPeople);
+            var NamesToLookup = NameGenerator.GenerateNames(NumberOfPeople);
 
             // Loop through names
             foreach (string GeneratedName in NamesToLookup)
