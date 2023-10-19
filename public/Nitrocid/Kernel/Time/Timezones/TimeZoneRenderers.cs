@@ -49,7 +49,7 @@ namespace KS.Kernel.Time.Timezones
         /// <returns>True if found; False if not found</returns>
         public static bool ShowTimeZones(string Zone)
         {
-            var ZoneTimes = TimeZones.GetTimeZones();
+            var ZoneTimes = TimeZones.GetTimeZoneTimes();
             var ZoneFound = false;
             foreach (string ZoneName in ZoneTimes.Keys)
             {
@@ -67,7 +67,7 @@ namespace KS.Kernel.Time.Timezones
         /// </summary>
         public static void ShowAllTimeZones()
         {
-            var ZoneTimes = TimeZones.GetTimeZones();
+            var ZoneTimes = TimeZones.GetTimeZoneTimes();
             foreach (var TimeZone in ZoneTimes.Keys)
                 ShowTimeZone(TimeZone);
         }
@@ -82,7 +82,7 @@ namespace KS.Kernel.Time.Timezones
         {
             if (!TimeZones.TimeZoneExists(Zone))
                 throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("Time zone {0} not found"), Zone);
-            var ZoneTimes = TimeZones.GetTimeZones();
+            var ZoneTimes = TimeZones.GetTimeZoneTimes();
             return ZoneTimes[Zone];
         }
 

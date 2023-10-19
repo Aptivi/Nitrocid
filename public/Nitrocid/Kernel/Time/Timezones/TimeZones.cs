@@ -23,6 +23,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Files.Operations.Querying;
+using KS.Kernel.Time.Converters;
 
 namespace KS.Kernel.Time.Timezones
 {
@@ -31,27 +32,55 @@ namespace KS.Kernel.Time.Timezones
     /// </summary>
     public static class TimeZones
     {
+        private static string[] recognizedZones;
+
         /// <summary>
-        /// Populates current time in all of the time zones (IANA on Unix).
+        /// Populates names of all the time zones (IANA on Unix).
         /// </summary>
-        public static Dictionary<string, DateTime> GetTimeZones()
+        public static string[] GetTimeZoneNames()
         {
+            CheckZoneInfoDirectory();
+
+            // Get the cached zones
+            if (recognizedZones is not null)
+                return recognizedZones;
+
             // Get all system time zones (IANA on Unix)
             var Zones = TimeZoneInfo.GetSystemTimeZones().ToArray();
-            var ZoneTimes = new Dictionary<string, DateTime>();
+            var ZoneTimes = new List<string>();
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", Zones.Length);
-
-            // Run a cleanup in the list
-            ZoneTimes.Clear();
-            DebugWriter.WriteDebug(DebugLevel.I, "Cleaned up zoneTimes.");
 
             // Adds date and time to every single time zone to the list
             foreach (var Zone in Zones)
-                ZoneTimes.Add(Zone.Id, TimeZoneInfo.ConvertTime(TimeDateTools.KernelDateTime, TimeZoneInfo.FindSystemTimeZoneById(Zone.Id)));
+                ZoneTimes.Add(Zone.Id);
             DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", ZoneTimes.Count);
 
             // Return the populated array
+            recognizedZones = ZoneTimes.ToArray();
+            return recognizedZones;
+        }
+
+        /// <summary>
+        /// Populates current time in all of the time zones (IANA on Unix).
+        /// </summary>
+        public static Dictionary<string, DateTime> GetTimeZoneTimes()
+        {
             CheckZoneInfoDirectory();
+
+            // Get all system time zones (IANA on Unix)
+            var Zones = GetTimeZoneNames();
+            var ZoneTimes = new Dictionary<string, DateTime>();
+            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", Zones.Length);
+
+            // Adds date and time to every single time zone to the list
+            foreach (var Zone in Zones)
+            {
+                var time = TimeDateConverters.GetDateTimeFromZone(TimeDateTools.KernelDateTime, Zone);
+                ZoneTimes.Add(Zone, time);
+            }
+            DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", ZoneTimes.Count);
+
+            // Return the populated array
             return ZoneTimes;
         }
 
@@ -62,9 +91,24 @@ namespace KS.Kernel.Time.Timezones
         /// <returns>True if found; false otherwise</returns>
         public static bool TimeZoneExists(string zone)
         {
-            var ZoneTimes = GetTimeZones();
-            bool ZoneFound = ZoneTimes.ContainsKey(zone);
+            CheckZoneInfoDirectory();
+            var ZoneTimes = GetTimeZoneNames();
+            bool ZoneFound = ZoneTimes.Contains(zone);
             return ZoneFound;
+        }
+
+        /// <summary>
+        /// Gets the time zone info from the name
+        /// </summary>
+        /// <param name="zone">Zone name (usually the zone ID)</param>
+        /// <returns></returns>
+        /// <exception cref="KernelException"></exception>
+        public static TimeZoneInfo GetZoneInfo(string zone)
+        {
+            CheckZoneInfoDirectory();
+            if (TimeZoneExists(zone))
+                return TimeZoneInfo.FindSystemTimeZoneById(zone);
+            throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("Time zone not found.") + $" {zone}");
         }
 
         internal static void CheckZoneInfoDirectory()

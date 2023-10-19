@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers.RNG;
+using KS.Kernel.Time.Converters;
 using KS.Kernel.Time.Renderers;
 using KS.Kernel.Time.Timezones;
 using NUnit.Framework;
@@ -38,7 +39,7 @@ namespace Nitrocid.Tests.Kernel.Time
         [Description("Initialization")]
         public void TestGetTimeZones()
         {
-            var timeZones = TimeZones.GetTimeZones();
+            var timeZones = TimeZones.GetTimeZoneTimes();
             timeZones.ShouldNotBeNull();
             timeZones.ShouldNotBeEmpty();
         }
@@ -50,7 +51,7 @@ namespace Nitrocid.Tests.Kernel.Time
         [Description("Initialization")]
         public void TestGetZoneTime()
         {
-            var timeZones = TimeZones.GetTimeZones();
+            var timeZones = TimeZones.GetTimeZoneTimes();
             int randomZone = RandomDriver.RandomIdx(timeZones.Count);
             string zone = timeZones.ElementAt(randomZone).Key;
             DateTime unexpected = new(1970, 1, 1);
@@ -64,9 +65,25 @@ namespace Nitrocid.Tests.Kernel.Time
         /// </summary>
         [Test]
         [Description("Initialization")]
+        public void TestGetDateTimeFromZone()
+        {
+            var timeZones = TimeZones.GetTimeZoneTimes();
+            int randomZone = RandomDriver.RandomIdx(timeZones.Count);
+            string zone = timeZones.ElementAt(randomZone).Key;
+            DateTime unexpected = new(1970, 1, 1);
+            DateTime zoneTime = unexpected;
+            Should.NotThrow(() => zoneTime = TimeDateConverters.GetDateTimeFromZone(zone));
+            zoneTime.ShouldNotBe(unexpected);
+        }
+
+        /// <summary>
+        /// Tests getting time from timezone
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
         public void TestGetZoneTimeString()
         {
-            var timeZones = TimeZones.GetTimeZones();
+            var timeZones = TimeZones.GetTimeZoneTimes();
             int randomZone = RandomDriver.RandomIdx(timeZones.Count);
             string zone = timeZones.ElementAt(randomZone).Key;
             string unexpected = TimeDateRenderers.Render(new DateTime(1970, 1, 1));
@@ -82,7 +99,7 @@ namespace Nitrocid.Tests.Kernel.Time
         [Description("Initialization")]
         public void TestTimeZoneExists()
         {
-            var timeZones = TimeZones.GetTimeZones();
+            var timeZones = TimeZones.GetTimeZoneTimes();
             int randomZone = RandomDriver.RandomIdx(timeZones.Count);
             string zone = timeZones.ElementAt(randomZone).Key;
             TimeZones.TimeZoneExists(zone).ShouldBeTrue();

@@ -86,7 +86,7 @@ namespace Nitrocid.Tests.Kernel.Time
         [Description("Querying")]
         public void TestShowTimeZoneUtcOffset()
         {
-            var timeZones = TimeZones.GetTimeZones();
+            var timeZones = TimeZones.GetTimeZoneTimes();
             int randomZone = RandomDriver.RandomIdx(timeZones.Count);
             string zone = timeZones.ElementAt(randomZone).Key;
             TimeSpan timeSpan = new();
@@ -105,7 +105,7 @@ namespace Nitrocid.Tests.Kernel.Time
         [Description("Querying")]
         public void TestShowTimeZoneUtcOffsetString()
         {
-            var timeZones = TimeZones.GetTimeZones();
+            var timeZones = TimeZones.GetTimeZoneTimes();
             int randomZone = RandomDriver.RandomIdx(timeZones.Count);
             string zone = timeZones.ElementAt(randomZone).Key;
             TimeSpan timeSpan = new();

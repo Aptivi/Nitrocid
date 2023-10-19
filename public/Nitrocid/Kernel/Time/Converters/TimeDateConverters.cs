@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Kernel.Time.Calendars;
+using KS.Kernel.Time.Timezones;
 using System;
 using System.Globalization;
 
@@ -105,5 +106,34 @@ namespace KS.Kernel.Time.Converters
             return (year, month, day, calendarInfo);
         }
 
+        /// <summary>
+        /// Gets the date and the time from the specified timezone
+        /// </summary>
+        /// <param name="zone">Time zone ID</param>
+        public static DateTime GetDateTimeFromZone(string zone) =>
+            GetDateTimeFromZone(TimeDateTools.KernelDateTime, TimeZones.GetZoneInfo(zone));
+
+        /// <summary>
+        /// Gets the date and the time from the specified timezone
+        /// </summary>
+        /// <param name="zone">Time zone info instance</param>
+        public static DateTime GetDateTimeFromZone(TimeZoneInfo zone) =>
+            GetDateTimeFromZone(TimeDateTools.KernelDateTime, zone);
+
+        /// <summary>
+        /// Gets the date and the time from the specified timezone
+        /// </summary>
+        /// <param name="date">Specified date</param>
+        /// <param name="zone">Time zone ID</param>
+        public static DateTime GetDateTimeFromZone(DateTime date, string zone) =>
+            GetDateTimeFromZone(date, TimeZones.GetZoneInfo(zone));
+
+        /// <summary>
+        /// Gets the date and the time from the specified timezone
+        /// </summary>
+        /// <param name="date">Specified date</param>
+        /// <param name="zone">Time zone info instance</param>
+        public static DateTime GetDateTimeFromZone(DateTime date, TimeZoneInfo zone) =>
+            TimeZoneInfo.ConvertTime(date, zone);
     }
 }
