@@ -114,7 +114,7 @@ namespace KS.Network.Mail.Transfer
 
                 // Write a sign after the subject if attachments are found
                 DebugWriter.WriteDebug(DebugLevel.I, "Attachments count: {0}", Msg.Attachments.Count());
-                if (Msg.Attachments.Count() > 0)
+                if (Msg.Attachments.Any())
                 {
                     TextWriterColor.WriteKernelColor(" - [*]", true, KernelColorType.ListEntry);
                 }
@@ -175,7 +175,7 @@ namespace KS.Network.Mail.Transfer
                 TextWriterColor.Write();
 
                 // Populate attachments
-                if (Msg.Attachments.Count() > 0)
+                if (Msg.Attachments.Any())
                 {
                     TextWriterColor.Write(Translate.DoTranslation("Attachments:"));
                     var AttachmentEntities = new List<MimeEntity>();

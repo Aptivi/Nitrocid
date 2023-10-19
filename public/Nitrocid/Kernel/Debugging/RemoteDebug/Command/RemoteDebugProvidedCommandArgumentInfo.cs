@@ -89,7 +89,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             if (CommandInfo?.CommandArgumentInfo is not null)
                 if (EnclosedArgs is not null)
                     RequiredArgumentsProvided = (bool)(CommandInfo.CommandArgumentInfo.MinimumArguments is int expectedArgumentNum &&
-                                                      (EnclosedArgs?.Count()) is int actualArgumentNum ? actualArgumentNum >= expectedArgumentNum : (bool?)null);
+                                                      (EnclosedArgs?.Length) is int actualArgumentNum ? actualArgumentNum >= expectedArgumentNum : (bool?)null);
                 else if (CommandInfo.CommandArgumentInfo.ArgumentsRequired & EnclosedArgs is null)
                     RequiredArgumentsProvided = false;
             else

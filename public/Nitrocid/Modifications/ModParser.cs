@@ -207,7 +207,7 @@ namespace KS.Modifications
                                 DebugWriter.WriteDebug(DebugLevel.I, "Checking localizations... (Null: {0})", ParsedLanguageLocalizations is null);
                                 if (ParsedLanguageLocalizations is not null)
                                 {
-                                    DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Count());
+                                    DebugWriter.WriteDebug(DebugLevel.I, "Valid localizations found! Length: {0}", ParsedLanguageLocalizations.Length);
 
                                     // Try to install the localizations
                                     if (!localizations.ContainsKey(LanguageName))

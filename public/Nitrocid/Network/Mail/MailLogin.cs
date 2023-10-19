@@ -205,7 +205,7 @@ namespace KS.Network.Mail
                 case ServerType.IMAP:
                     {
                         var ImapServers = DynamicConfiguration.EmailProvider.IncomingServer.Select(x => x).Where(x => x.Type == "imap");
-                        if (ImapServers.Count() > 0)
+                        if (ImapServers.Any())
                         {
                             var ImapServer = ImapServers.ElementAtOrDefault(0);
                             ReturnedMailAddress = ImapServer.Hostname;
