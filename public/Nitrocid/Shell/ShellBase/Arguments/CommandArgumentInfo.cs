@@ -18,6 +18,7 @@
 
 using System;
 using System.Linq;
+using System.Text;
 using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.ShellBase.Arguments
@@ -52,6 +53,45 @@ namespace KS.Shell.ShellBase.Arguments
         /// Whether to accept the -set switch to set the UESH variable value
         /// </summary>
         public bool AcceptsSet { get; private set; }
+        /// <summary>
+        /// Rendered usage
+        /// </summary>
+        public string RenderedUsage
+        {
+            get
+            {
+                var usageBuilder = new StringBuilder();
+
+                // Enumerate through the available switches first
+                foreach (var Switch in Switches)
+                {
+                    bool required = Switch.IsRequired;
+                    bool argRequired = Switch.ArgumentsRequired;
+                    bool acceptsValue = Switch.AcceptsValues;
+                    string switchName = Switch.SwitchName;
+                    string renderedSwitchValue = argRequired ? $"=value" : acceptsValue ? $"[=value]" : "";
+                    string renderedSwitch =
+                        required ?
+                        $"<-{switchName}{renderedSwitchValue}> " :
+                        $"[-{switchName}{renderedSwitchValue}] ";
+                    usageBuilder.Append(renderedSwitch);
+                }
+
+                // Enumerate through the available arguments
+                foreach (var Argument in Arguments)
+                {
+                    bool required = Argument.ArgumentRequired;
+                    bool justNumeric = Argument.IsNumeric;
+                    string renderedArgument =
+                        required ?
+                        $"<{Argument.ArgumentExpression}{(justNumeric ? ":int" : "")}> " :
+                        $"[{Argument.ArgumentExpression}{(justNumeric ? ":int" : "")}] ";
+                    usageBuilder.Append(renderedArgument);
+                }
+
+                return usageBuilder.ToString();
+            }
+        }
 
         /// <summary>
         /// Installs a new instance of the command argument info class

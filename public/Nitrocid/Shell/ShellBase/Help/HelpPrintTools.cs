@@ -217,44 +217,7 @@ namespace KS.Shell.ShellBase.Help
                     }
 
                     // Print usage information
-                    if (Arguments.Length != 0 || Switches.Length != 0)
-                    {
-                        // Print the usage information holder
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Usage:") + $" {FinalCommand}", false, KernelColorType.ListEntry);
-
-                        // Enumerate through the available switches first
-                        foreach (var Switch in Switches)
-                        {
-                            bool required = Switch.IsRequired;
-                            bool argRequired = Switch.ArgumentsRequired;
-                            bool acceptsValue = Switch.AcceptsValues;
-                            string switchName = Switch.SwitchName;
-                            string renderedSwitchValue = argRequired ? $"=value" : acceptsValue ? $"[=value]" : "";
-                            string renderedSwitch =
-                                required ?
-                                $" <-{switchName}{renderedSwitchValue}>" :
-                                $" [-{switchName}{renderedSwitchValue}]";
-                            TextWriterColor.WriteKernelColor(renderedSwitch, false, KernelColorType.ListEntry);
-                        }
-
-                        // Enumerate through the available arguments
-                        int howManyRequired = argumentInfo.MinimumArguments;
-                        int queriedArgs = 1;
-                        foreach (var Argument in Arguments)
-                        {
-                            bool required = argumentInfo.ArgumentsRequired && queriedArgs <= howManyRequired;
-                            bool justNumeric = Argument.IsNumeric;
-                            string renderedArgument =
-                                required ?
-                                $" <{Argument.ArgumentExpression}{(justNumeric ? ":int" : "")}>" :
-                                $" [{Argument.ArgumentExpression}{(justNumeric ? ":int" : "")}]";
-                            TextWriterColor.WriteKernelColor(renderedArgument, false, KernelColorType.ListEntry);
-                            queriedArgs++;
-                        }
-                        TextWriterColor.Write();
-                    }
-                    else
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Usage:") + $" {FinalCommand}", true, KernelColorType.ListEntry);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Usage:") + $" {FinalCommand} {argumentInfo.RenderedUsage}", true, KernelColorType.ListEntry);
 
                     // If we have switches, print their descriptions
                     if (Switches.Length != 0)
