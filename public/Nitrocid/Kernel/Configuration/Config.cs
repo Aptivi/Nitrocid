@@ -335,6 +335,9 @@ namespace KS.Kernel.Configuration
                 DebugWriter.WriteDebug(DebugLevel.E, "Config read error! {0}", cex.Message);
                 DebugWriter.WriteDebugStackTrace(cex);
 
+                // Set to notify the user about config error
+                ConfigTools.NotifyConfigError = true;
+
                 // Fix anyways, for compatibility...
                 InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("Trying to fix configuration..."), false, KernelColorType.Error);
                 RepairConfig();

@@ -17,10 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.ConsoleBase.Writers.MiscWriters;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Hardware;
 using KS.Kernel.Updates;
 using KS.Languages;
+using KS.Misc.Notifications;
 using KS.Misc.Splash;
 using KS.Modifications;
 using KS.Network.RPC;
@@ -87,6 +89,24 @@ namespace KS.Kernel.Starting
             UserManagement.InitializeUsers();
             GroupManagement.InitializeGroups();
             SplashReport.ReportProgress(Translate.DoTranslation("Users initialized"), 5);
+        }
+
+        internal static void Stage07SysIntegrity()
+        {
+            SplashReport.ReportProgress(Translate.DoTranslation("Verifying system integrity"), 5);
+            if (ConfigTools.NotifyConfigError)
+            {
+                ConfigTools.NotifyConfigError = false;
+                SplashReport.ReportProgressError(Translate.DoTranslation("Configuration error will be notified"));
+                NotificationManager.NotifySend(
+                    new Notification(
+                        Translate.DoTranslation("Configuration error"),
+                        Translate.DoTranslation("There is a problem with one of the configuration files. Please check its contents."),
+                        NotificationPriority.High,
+                        NotificationType.Normal
+                    )
+                );
+            }
         }
     }
 }

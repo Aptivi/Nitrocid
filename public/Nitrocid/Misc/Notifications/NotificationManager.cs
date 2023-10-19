@@ -33,6 +33,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using KS.Kernel.Power;
+using KS.Users.Login;
 
 namespace KS.Misc.Notifications
 {
@@ -156,9 +157,9 @@ namespace KS.Misc.Notifications
                         EventsManager.FireEvent(EventType.NotificationsReceived, NewNotificationsList);
 
                         // Iterate through new notifications. If we're on the booting stage, ensure that the notifications are only queued until the
-                        // kernel has finished booting.
-                        while (!SplashReport.KernelBooted)
-                            SpinWait.SpinUntil(() => SplashReport.KernelBooted);
+                        // kernel has finished booting and that the user is signed in.
+                        while (!SplashReport.KernelBooted || !Login.LoggedIn)
+                            SpinWait.SpinUntil(() => SplashReport.KernelBooted && Login.LoggedIn);
                         foreach (Notification NewNotification in NewNotificationsList)
                         {
                             EventsManager.FireEvent(EventType.NotificationReceived, NewNotification);
