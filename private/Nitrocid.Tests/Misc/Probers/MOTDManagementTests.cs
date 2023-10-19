@@ -39,7 +39,7 @@ namespace Nitrocid.Tests.Misc.Probers
         {
             MotdParse.ReadMotd();
             string MOTDLine = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.MOTD));
-            MOTDLine.ShouldBe(MotdParse.MOTDMessage);
+            MOTDLine.ShouldBe(MotdParse.MotdMessage);
         }
 
         /// <summary>
@@ -51,7 +51,7 @@ namespace Nitrocid.Tests.Misc.Probers
         {
             MalParse.ReadMal();
             string MALLine = Reading.ReadContentsText(Paths.GetKernelPath(KernelPathType.MAL));
-            MALLine.ShouldBe(MalParse.MAL);
+            MALLine.ShouldBe(MalParse.MalMessage);
         }
 
     }

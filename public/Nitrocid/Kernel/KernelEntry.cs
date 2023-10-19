@@ -143,7 +143,7 @@ namespace KS.Kernel
                 // Show MOTD
                 BaseLoginHandler.ShowMOTDOnceFlag = true;
                 if (BaseLoginHandler.ShowMAL)
-                    TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MalParse.MAL), true, KernelColorType.Banner);
+                    TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
 
                 // Show headline

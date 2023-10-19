@@ -102,7 +102,7 @@ namespace KS.Users.Login
                         }
 
                         // Print the MOTD
-                        string[] motdStrs = TextTools.GetWrappedSentences(MotdParse.MOTDMessage, ConsoleWrapper.WindowWidth - 4);
+                        string[] motdStrs = TextTools.GetWrappedSentences(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
                         for (int i = 0; i < motdStrs.Length && i < 2; i++)
                         {
                             string motdStr = motdStrs[i];

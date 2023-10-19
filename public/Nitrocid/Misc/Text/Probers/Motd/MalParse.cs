@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
-using System.IO;
 using KS.Files;
+using KS.Files.Operations;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -38,10 +38,11 @@ namespace KS.Misc.Text.Probers.Motd
         /// </summary>
         public static string MalFilePath =>
             Config.MainConfig.MalFilePath;
+
         /// <summary>
         /// Current MAL message
         /// </summary>
-        public static string MAL
+        public static string MalMessage
         {
             get => malMessage ?? Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!";
             set => malMessage = value ?? Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!";
@@ -55,21 +56,12 @@ namespace KS.Misc.Text.Probers.Motd
         {
             try
             {
-                StreamWriter MALStreamW;
-
                 // Get the MOTD file path
                 Config.MainConfig.MalFilePath = Filesystem.NeutralizePath(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Set the message
-                MALStreamW = new StreamWriter(MalFilePath) { AutoFlush = true };
-                DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MAL path");
-                MALStreamW.Write(Message);
-                MAL = Message;
-
-                // Close the message stream
-                MALStreamW.Close();
-                DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
+                Writing.WriteContentsText(MalFilePath, Message);
             }
             catch (Exception ex)
             {
@@ -85,22 +77,12 @@ namespace KS.Misc.Text.Probers.Motd
         {
             try
             {
-                StreamReader MALStreamR;
-                var MALBuilder = new System.Text.StringBuilder();
-
                 // Get the MAL file path
                 Config.MainConfig.MalFilePath = Filesystem.NeutralizePath(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Read the message
-                MALStreamR = new StreamReader(MalFilePath);
-                DebugWriter.WriteDebug(DebugLevel.I, "Opened stream to MAL path");
-                MALBuilder.Append(MALStreamR.ReadToEnd());
-                MAL = MALBuilder.ToString();
-
-                // Close the message stream
-                MALStreamR.Close();
-                DebugWriter.WriteDebug(DebugLevel.I, "Stream closed");
+                MalMessage = Reading.ReadContentsText(MalFilePath);
             }
             catch (Exception ex)
             {
