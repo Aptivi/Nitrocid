@@ -57,25 +57,24 @@ namespace KS.Shell.Shells.Hex
                 Bail = true;
             }
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.") + CharManager.NewLine + Translate.DoTranslation("DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!"), true, KernelColorType.Warning);
+                    
+            // Open file if not open
+            if (HexEditShellCommon.HexEdit_FileStream is null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                if (!HexEditTools.HexEdit_OpenBinaryFile(FilePath))
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    Bail = true;
+                }
+                HexEditShellCommon.HexEdit_AutoSave.Start();
+            }
 
             // Actual shell logic
             while (!Bail)
             {
                 try
                 {
-                    // Open file if not open
-                    if (HexEditShellCommon.HexEdit_FileStream is null)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
-                        if (!HexEditTools.HexEdit_OpenBinaryFile(FilePath))
-                        {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
-                            Bail = true;
-                            break;
-                        }
-                        HexEditShellCommon.HexEdit_AutoSave.Start();
-                    }
-
                     // Prompt for the command
                     ShellManager.GetLine();
                 }

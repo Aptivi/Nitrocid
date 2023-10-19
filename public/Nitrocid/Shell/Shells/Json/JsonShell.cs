@@ -53,20 +53,20 @@ namespace KS.Shell.Shells.Json
                 Bail = true;
             }
 
+            // Open file if not open
+            if (JsonShellCommon.JsonShell_FileStream is null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                if (!JsonTools.JsonShell_OpenJsonFile(FilePath))
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    Bail = true;
+                }
+                JsonShellCommon.JsonShell_AutoSave.Start();
+            }
+
             while (!Bail)
             {
-                // Open file if not open
-                if (JsonShellCommon.JsonShell_FileStream is null)
-                {
-                    DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
-                    if (!JsonTools.JsonShell_OpenJsonFile(FilePath))
-                    {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
-                        break;
-                    }
-                    JsonShellCommon.JsonShell_AutoSave.Start();
-                }
-
                 // Prompt for the command
                 ShellManager.GetLine();
             }

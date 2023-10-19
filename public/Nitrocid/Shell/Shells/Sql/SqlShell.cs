@@ -57,23 +57,22 @@ namespace KS.Shell.Shells.Sql
                 Bail = true;
             }
 
+            // Open file if not open
+            if (SqlShellCommon.sqliteConnection is null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                if (!SqlEditTools.SqlEdit_OpenSqlFile(FilePath))
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    Bail = true;
+                }
+            }
+
             // Actual shell logic
             while (!Bail)
             {
                 try
                 {
-                    // Open file if not open
-                    if (SqlShellCommon.sqliteConnection is null)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
-                        if (!SqlEditTools.SqlEdit_OpenSqlFile(FilePath))
-                        {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
-                            Bail = true;
-                            break;
-                        }
-                    }
-
                     // Prompt for the command
                     ShellManager.GetLine();
                 }

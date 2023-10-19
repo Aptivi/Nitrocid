@@ -56,23 +56,22 @@ namespace Nitrocid.Extras.GitShell.Git
                 Bail = true;
             }
 
+            // Open repo
+            if (GitShellCommon.repo is null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", RepoPath);
+                if (!GitShellCommon.OpenRepository(RepoPath))
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open repository. Exiting shell..."), true, KernelColorType.Error);
+                    Bail = true;
+                }
+            }
+
             // Actual shell logic
             while (!Bail)
             {
                 try
                 {
-                    // Open repo
-                    if (GitShellCommon.repo is null)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Repo not open yet. Trying to open {0}...", RepoPath);
-                        if (!GitShellCommon.OpenRepository(RepoPath))
-                        {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open repository. Exiting shell..."), true, KernelColorType.Error);
-                            Bail = true;
-                            break;
-                        }
-                    }
-
                     // Prompt for the command
                     ShellManager.GetLine();
                 }

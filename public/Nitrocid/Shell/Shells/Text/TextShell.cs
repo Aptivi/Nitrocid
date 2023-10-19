@@ -57,23 +57,23 @@ namespace KS.Shell.Shells.Text
                 Bail = true;
             }
 
+            // Open file if not open
+            if (TextEditShellCommon.TextEdit_FileStream is null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
+                if (!TextEditTools.TextEdit_OpenTextFile(FilePath))
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
+                    Bail = true;
+                }
+                TextEditShellCommon.TextEdit_AutoSave.Start();
+            }
+
             // Actual shell logic
             while (!Bail)
             {
                 try
                 {
-                    // Open file if not open
-                    if (TextEditShellCommon.TextEdit_FileStream is null)
-                    {
-                        DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
-                        if (!TextEditTools.TextEdit_OpenTextFile(FilePath))
-                        {
-                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
-                            Bail = true;
-                            break;
-                        }
-                        TextEditShellCommon.TextEdit_AutoSave.Start();
-                    }
                     // Prompt for the command
                     ShellManager.GetLine();
                 }
