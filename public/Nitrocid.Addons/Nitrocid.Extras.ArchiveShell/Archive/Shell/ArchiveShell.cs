@@ -30,7 +30,6 @@ using SharpCompress.Common;
 using SharpCompress.Readers;
 using SharpCompress.Archives.Zip;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
 using SharpCompress.Archives.GZip;
 using SharpCompress.Archives.SevenZip;
 using SharpCompress.Archives.Tar;

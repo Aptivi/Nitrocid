@@ -20,7 +20,6 @@ using System;
 using System.Linq;
 using KS.Files;
 using KS.Files.Folders;
-using KS.Kernel.Configuration;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands

@@ -27,7 +27,6 @@ using System;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Debugging;
 using KS.Kernel.Starting;
-using KS.Kernel.Configuration;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Arguments;
 

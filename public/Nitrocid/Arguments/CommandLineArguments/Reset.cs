@@ -24,7 +24,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
-using KS.Kernel.Configuration;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Power;
 

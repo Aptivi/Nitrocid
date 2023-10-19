@@ -21,9 +21,7 @@ using System.Threading;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Kernel.Threading;
-using KS.Kernel.Configuration;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Writers.MiscWriters;
 
 namespace KS.Misc.Screensaver
 {

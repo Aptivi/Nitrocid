@@ -18,7 +18,6 @@
 
 using System;
 using System.Linq;
-using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Shell.ShellBase.Help;
 

@@ -22,7 +22,6 @@ using KS.Languages;
 using KS.Languages.Decoy;
 using KS.Misc.Reflection;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Nitrocid.LanguagePacks.Resources;
 using System.Linq;
 

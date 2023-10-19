@@ -25,7 +25,6 @@ using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Mail.Presets;
-using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Mail
 {

@@ -22,7 +22,6 @@ using KS.Shell.ShellBase.Shells;
 using KS.Drivers.Console;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
-using KS.Kernel.Configuration;
 using System.Threading;
 
 namespace KS.Shell.ShellBase.Commands

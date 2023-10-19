@@ -27,7 +27,6 @@ using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
-using Newtonsoft.Json.Linq;
 using KS.Kernel.Events;
 using KS.Resources;
 using System.Globalization;

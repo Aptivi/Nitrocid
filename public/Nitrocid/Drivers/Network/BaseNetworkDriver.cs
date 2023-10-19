@@ -34,7 +34,6 @@ using System.Collections.Generic;
 using System.Net.Sockets;
 using System.Net;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Drivers.Network

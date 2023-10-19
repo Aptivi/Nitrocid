@@ -32,7 +32,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Threading;
 using KS.Shell.ShellBase.Scripting;
 using KS.Shell.ShellBase.Aliases;
-using KS.Kernel.Configuration;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Console.Bases;

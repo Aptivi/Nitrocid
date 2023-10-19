@@ -30,7 +30,6 @@ using System;
 using KS.Kernel.Threading;
 using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Commands;
-using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Mail
 {

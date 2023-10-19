@@ -23,7 +23,6 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Sql.Commands;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Sql.Presets;
-using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.Sql
 {

@@ -25,7 +25,6 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using Terminaux.Colors;
-using KS.Kernel.Configuration;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
 {

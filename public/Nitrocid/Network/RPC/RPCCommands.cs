@@ -33,7 +33,6 @@ using KS.Kernel.Exceptions;
 using System.Linq;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Shells;
-using KS.Kernel.Configuration;
 using KS.Users.Login;
 
 namespace KS.Network.RPC

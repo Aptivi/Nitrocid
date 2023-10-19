@@ -18,7 +18,6 @@
 
 using System;
 using System.Globalization;
-using KS.Kernel.Configuration;
 using KS.Kernel.Time.Calendars;
 using KS.Languages;
 

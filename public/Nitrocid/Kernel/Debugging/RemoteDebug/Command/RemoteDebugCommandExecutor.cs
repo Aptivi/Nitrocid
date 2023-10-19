@@ -23,7 +23,6 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Kernel.Events;
 using KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands;
-using KS.Kernel.Configuration;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command

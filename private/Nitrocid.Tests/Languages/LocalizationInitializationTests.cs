@@ -19,10 +19,8 @@
 using KS.Languages;
 using KS.Languages.Decoy;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using Shouldly;
-using System.Collections.Generic;
 
 namespace Nitrocid.Tests.Languages
 {

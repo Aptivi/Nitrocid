@@ -23,7 +23,6 @@ using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;

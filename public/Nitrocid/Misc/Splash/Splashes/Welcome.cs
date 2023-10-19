@@ -28,7 +28,6 @@ using Terminaux.Sequences.Tools;
 using KS.ConsoleBase.Colors;
 using Figletize;
 using System;
-using KS.Kernel.Configuration;
 using KS.Kernel.Power;
 
 namespace KS.Misc.Splash.Splashes

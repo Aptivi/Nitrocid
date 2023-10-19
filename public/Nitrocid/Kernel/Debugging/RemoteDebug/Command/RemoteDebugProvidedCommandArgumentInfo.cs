@@ -18,7 +18,6 @@
 
 using KS.Misc.Text;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command
 {

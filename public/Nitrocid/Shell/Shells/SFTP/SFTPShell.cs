@@ -19,7 +19,6 @@
 using System;
 using System.Threading;
 using KS.Files;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;

@@ -27,7 +27,6 @@ using KS.Users;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using KS.Shell.ShellBase.Shells;
-using KS.Kernel.Configuration;
 using KS.Shell.Prompts;
 using KS.Kernel;
 

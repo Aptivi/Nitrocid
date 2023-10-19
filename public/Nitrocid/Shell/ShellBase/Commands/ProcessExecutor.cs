@@ -27,7 +27,6 @@ using KS.Misc.Text;
 using KS.Kernel.Events;
 using System.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
 
 namespace KS.Shell.ShellBase.Commands
 {

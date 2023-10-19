@@ -18,7 +18,6 @@
 
 using KS.Drivers;
 using KS.Drivers.Console;
-using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Events;
 using KS.Kernel.Power;

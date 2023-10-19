@@ -30,7 +30,6 @@ using KS.Network.FTP;
 using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Shells;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel.Configuration;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.FTP
