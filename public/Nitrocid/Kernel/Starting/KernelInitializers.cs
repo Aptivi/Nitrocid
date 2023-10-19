@@ -256,7 +256,7 @@ namespace KS.Kernel.Starting
                 if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
                     MotdParse.SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
                 if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
-                    MalParse.SetMal(Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!");
+                    MalParse.SetMal(Translate.DoTranslation("Enjoy your day") + ", <user>!");
 
                 // Load MOTD and MAL
                 MotdParse.ReadMotd();

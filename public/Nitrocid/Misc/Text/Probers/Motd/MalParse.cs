@@ -44,8 +44,8 @@ namespace KS.Misc.Text.Probers.Motd
         /// </summary>
         public static string MalMessage
         {
-            get => malMessage ?? Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!";
-            set => malMessage = value ?? Translate.DoTranslation("Welcome to Nitrocid Kernel") + ", <user>!";
+            get => malMessage ?? Translate.DoTranslation("Enjoy your day") + ", <user>!";
+            set => malMessage = value ?? Translate.DoTranslation("Enjoy your day") + ", <user>!";
         }
 
         /// <summary>
