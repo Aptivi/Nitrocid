@@ -105,7 +105,8 @@ namespace KS.Shell.ShellBase.Commands
                         Command = unsatisfied.Command;
 
                         // Write usage number
-                        TextWriterColor.WriteKernelColor("\n" + Translate.DoTranslation("For usage number") + $" #{i + 1}:", true, KernelColorType.Error);
+                        string renderedUsage = !string.IsNullOrEmpty(unsatisfied.ArgumentInfo.RenderedUsage) ? " " + unsatisfied.ArgumentInfo.RenderedUsage : "";
+                        TextWriterColor.WriteKernelColor("\n" + Translate.DoTranslation("For usage number") + $" #{i + 1} [{Command}{renderedUsage}]:", true, KernelColorType.Error);
 
                         // Check for required arguments
                         if (!unsatisfied.RequiredArgumentsProvided)

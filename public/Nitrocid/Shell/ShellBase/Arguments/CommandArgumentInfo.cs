@@ -89,7 +89,7 @@ namespace KS.Shell.ShellBase.Arguments
                     usageBuilder.Append(renderedArgument);
                 }
 
-                return usageBuilder.ToString();
+                return usageBuilder.ToString().Trim();
             }
         }
 
