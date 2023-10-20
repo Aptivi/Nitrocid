@@ -21,24 +21,24 @@
 ksversion=$(cat version)
 
 # Check for dependencies
-rarpath=`which rar`
+zippath=`which zip`
 if [ ! $? == 0 ]; then
-	echo rar is not found.
+	echo zip is not found.
 	exit 1
 fi
 
 # Pack binary
 echo Packing binary...
-"$rarpath" a -ep1 -r -m5 /tmp/$ksversion-bin.rar "../public/Nitrocid/KSBuild/net6.0/"
-"$rarpath" a -ep1 -r -m5 /tmp/$ksversion-analyzers.rar "../public/Nitrocid/KSBuild/netstandard2.0/"
+cd "../public/Nitrocid/KSBuild/net7.0/" && "$zippath" -r /tmp/$ksversion-bin.zip . && cd -
+cd "../public/Nitrocid/KSBuild/netstandard2.0/" && "$zippath" -r /tmp/$ksversion-analyzers.zip . && cd -
 if [ ! $? == 0 ]; then
-	echo Packing using rar failed.
+	echo Packing failed.
 	exit 1
 fi
 
 # Inform success
-mv ~/tmp/$ksversion-bin.rar .
-mv ~/tmp/$ksversion-analyzers.rar .
-cp "../public/Nitrocid/KSBuild/net6.0/Nitrocid.pdb" ./$ksversion.pdb
+mv /tmp/$ksversion-bin.zip .
+mv /tmp/$ksversion-analyzers.zip .
+cp "../public/Nitrocid/KSBuild/net7.0/Nitrocid.pdb" ./$ksversion.pdb
 echo Build and pack successful.
 exit 0
