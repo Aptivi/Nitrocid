@@ -22,7 +22,7 @@ for /f "tokens=* USEBACKQ" %%f in (`type version`) do set ksversion=%%f
 
 :pack
 echo Packing documentation...
-"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%ksversion%-doc.rar "..\docs\"
+"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%ksversion%-doc.zip "..\docs\*"
 if %errorlevel% == 0 goto :finalize
 echo There was an error trying to pack documentation (%errorlevel%).
 goto :finished
@@ -31,7 +31,7 @@ goto :finished
 rmdir /S /Q "..\DocGen\api\"
 rmdir /S /Q "..\DocGen\obj\"
 rmdir /S /Q "..\docs\"
-move %temp%\%ksversion%-doc.rar
+move %temp%\%ksversion%-doc.zip
 echo Build and pack successful.
 goto :finished
 

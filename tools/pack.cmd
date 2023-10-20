@@ -21,16 +21,16 @@ for /f "tokens=* USEBACKQ" %%f in (`type version`) do set ksversion=%%f
 
 :packbin
 echo Packing binary...
-"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%ksversion%-bin.rar "..\public\Nitrocid\KSBuild\net6.0\"
-"%ProgramFiles%\WinRAR\rar.exe" a -ep1 -r -m5 %temp%/%ksversion%-analyzers.rar "..\public\Nitrocid\KSBuild\netstandard2.0\"
+"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%ksversion%-bin.zip "..\public\Nitrocid\KSBuild\net7.0\*"
+"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%ksversion%-analyzers.zip "..\public\Nitrocid\KSBuild\netstandard2.0\*"
 if %errorlevel% == 0 goto :complete
 echo There was an error trying to pack binary (%errorlevel%).
 goto :finished
 
 :complete
-move %temp%\%ksversion%-bin.rar
-move %temp%\%ksversion%-analyzers.rar
-copy "..\public\Nitrocid\KSBuild\net6.0\Nitrocid.pdb" .\%ksversion%.pdb
+move %temp%\%ksversion%-bin.zip
+move %temp%\%ksversion%-analyzers.zip
+copy "..\public\Nitrocid\KSBuild\net7.0\Nitrocid.pdb" .\%ksversion%.pdb
 
 echo Pack successful.
 :finished
