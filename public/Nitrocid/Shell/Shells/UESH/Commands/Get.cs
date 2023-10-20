@@ -64,7 +64,7 @@ namespace KS.Shell.Shells.UESH.Commands
                             else
                             {
                                 // Use the custom path
-                                outputPath = Filesystem.NeutralizePath(outputPath);
+                                outputPath = FilesystemTools.NeutralizePath(outputPath);
                                 if (NetworkTransfer.DownloadFile(parameters.ArgumentsList[0], outputPath))
                                     TextWriterColor.Write(Translate.DoTranslation("Download has completed."));
                             }

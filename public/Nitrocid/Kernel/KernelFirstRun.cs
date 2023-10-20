@@ -47,7 +47,7 @@ namespace KS.Kernel
                 bool moveOn = false;
 
                 // Populate the first run presentations in case language changed during the first start-up
-                Presentation firstRunPresIntro = new(
+                Slideshow firstRunPresIntro = new(
                     // Presentation name
                     Translate.DoTranslation("Kernel first-run"),
 
@@ -81,7 +81,7 @@ namespace KS.Kernel
                     }
                 );
 
-                Presentation firstRunPresStep1 = new(
+                Slideshow firstRunPresStep1 = new(
                     // Presentation name
                     Translate.DoTranslation("Kernel first-run"),
 
@@ -126,7 +126,7 @@ namespace KS.Kernel
                     }
                 );
 
-                Presentation firstRunPresStep2 = new(
+                Slideshow firstRunPresStep2 = new(
                     // Presentation name
                     Translate.DoTranslation("Kernel first-run"),
 
@@ -201,7 +201,7 @@ namespace KS.Kernel
                     }
                 );
 
-                Presentation firstRunPresStep3 = new(
+                Slideshow firstRunPresStep3 = new(
                     // Presentation name
                     Translate.DoTranslation("Kernel first-run"),
 
@@ -260,7 +260,7 @@ namespace KS.Kernel
                     }
                 );
 
-                Presentation firstRunPresStep4 = new(
+                Slideshow firstRunPresStep4 = new(
                     // Presentation name
                     Translate.DoTranslation("Kernel first-run"),
 
@@ -334,7 +334,7 @@ namespace KS.Kernel
                     }
                 );
 
-                Presentation firstRunPresOutro = new(
+                Slideshow firstRunPresOutro = new(
                     // Presentation name
                     Translate.DoTranslation("Kernel first-run"),
 
@@ -369,7 +369,7 @@ namespace KS.Kernel
                 );
 
                 // Assign all first runs
-                Presentation[] firstRuns = {
+                Slideshow[] firstRuns = {
                     // Introduction
                     firstRunPresIntro,
 

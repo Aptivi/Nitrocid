@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
-            string OutputPath = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            string OutputPath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string InputPath = parameters.ArgumentsList[1];
             var CombineInputPaths = parameters.ArgumentsList.Skip(2).ToArray();
 

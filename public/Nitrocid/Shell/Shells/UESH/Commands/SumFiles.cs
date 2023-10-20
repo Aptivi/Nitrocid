@@ -45,19 +45,19 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string folder = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
+            string folder = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
             string @out = "";
             bool UseRelative = parameters.SwitchesList.Contains("-relative");
             var FileBuilder = new StringBuilder();
             if (!(parameters.ArgumentsList.Length < 3))
             {
-                @out = Filesystem.NeutralizePath(parameters.ArgumentsList[2]);
+                @out = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
             }
             if (Checking.FolderExists(folder))
             {
                 foreach (string file in Directory.EnumerateFiles(folder, "*", SearchOption.TopDirectoryOnly))
                 {
-                    string finalFile = Filesystem.NeutralizePath(file);
+                    string finalFile = FilesystemTools.NeutralizePath(file);
                     SeparatorWriterColor.WriteSeparator(finalFile, true);
                     if (DriverHandler.IsRegistered(DriverTypes.Encryption, parameters.ArgumentsList[0]))
                     {

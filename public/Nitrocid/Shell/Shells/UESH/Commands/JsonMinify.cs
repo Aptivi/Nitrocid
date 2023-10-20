@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string JsonFile = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            string JsonFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string JsonOutputFile;
             string MinifiedJson;
 
@@ -52,7 +52,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 // Minify it to an output file specified (optional)
                 if (parameters.ArgumentsList.Length > 1)
                 {
-                    JsonOutputFile = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
+                    JsonOutputFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
                     Writing.WriteContentsText(JsonOutputFile, MinifiedJson);
                 }
                 variableValue = MinifiedJson;

@@ -76,7 +76,7 @@ namespace KS.ConsoleBase.Presentation
         /// Present the presentation
         /// </summary>
         /// <param name="presentation">Presentation instance</param>
-        public static void Present(Presentation presentation) =>
+        public static void Present(Slideshow presentation) =>
             Present(presentation, false, false);
 
         /// <summary>
@@ -85,7 +85,7 @@ namespace KS.ConsoleBase.Presentation
         /// <param name="presentation">Presentation instance</param>
         /// <param name="kiosk">Prevent any key other than ENTER from being pressed</param>
         /// <param name="required">Prevents exiting the presentation</param>
-        public static void Present(Presentation presentation, bool kiosk, bool required)
+        public static void Present(Slideshow presentation, bool kiosk, bool required)
         {
             // Clear the console
             ConsoleWrapper.Clear();
@@ -176,7 +176,7 @@ namespace KS.ConsoleBase.Presentation
         /// </summary>
         /// <param name="presentation">Target presentation</param>
         /// <returns>True if one of the elements in a page contains input</returns>
-        public static bool PresentationContainsInput(Presentation presentation)
+        public static bool PresentationContainsInput(Slideshow presentation)
         {
             // Check every page
             foreach (var page in presentation.Pages)

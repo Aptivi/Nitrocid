@@ -163,7 +163,7 @@ namespace KS.Network.SFTP.Filesystem
         {
             string targetDir;
             targetDir = $"{SFTPShellCommon.SFTPCurrDirect}/{Directory}";
-            Files.Filesystem.ThrowOnInvalidPath(targetDir);
+            Files.FilesystemTools.ThrowOnInvalidPath(targetDir);
 
             // Check if folder exists
             if (Checking.FolderExists(targetDir))

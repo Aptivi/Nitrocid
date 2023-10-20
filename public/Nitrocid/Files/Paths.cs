@@ -123,139 +123,139 @@ namespace KS.Files
         /// Path to KS addons folder
         /// </summary>
         public static string AddonsPath =>
-            Filesystem.NeutralizePath(ExecPath + "/Addons");
+            FilesystemTools.NeutralizePath(ExecPath + "/Addons");
 
         /// <summary>
         /// Mods path
         /// </summary>
         public static string ModsPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KSMods/");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KSMods/");
 
         /// <summary>
         /// Configuration path
         /// </summary>
         public static string ConfigurationPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KernelMainConfig.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KernelMainConfig.json");
 
         /// <summary>
         /// Debugging path
         /// </summary>
         public static string DebuggingPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/kernelDbg.log");
+            FilesystemTools.NeutralizePath(AppDataPath + "/kernelDbg.log");
 
         /// <summary>
         /// Aliases path
         /// </summary>
         public static string AliasesPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/Aliases.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/Aliases.json");
 
         /// <summary>
         /// Users path
         /// </summary>
         public static string UsersPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/Users.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/Users.json");
 
         /// <summary>
         /// Speed dial path
         /// </summary>
         public static string SpeedDialPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/SpeedDial.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/SpeedDial.json");
 
         /// <summary>
         /// Debug devices path
         /// </summary>
         public static string DebugDevicesPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/DebugDevices.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/DebugDevices.json");
 
         /// <summary>
         /// MOTD path
         /// </summary>
         public static string MOTDPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/MOTD.txt");
+            FilesystemTools.NeutralizePath(AppDataPath + "/MOTD.txt");
 
         /// <summary>
         /// MAL path
         /// </summary>
         public static string MALPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/MAL.txt");
+            FilesystemTools.NeutralizePath(AppDataPath + "/MAL.txt");
 
         /// <summary>
         /// Events path
         /// </summary>
         public static string EventsPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KSEvents/");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KSEvents/");
 
         /// <summary>
         /// Reminders path
         /// </summary>
         public static string RemindersPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KSReminders/");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KSReminders/");
 
         /// <summary>
         /// CustomLanguages path
         /// </summary>
         public static string CustomLanguagesPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KSLanguages/");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KSLanguages/");
 
         /// <summary>
         /// CustomSplashes path
         /// </summary>
         public static string CustomSplashesPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KSSplashes/");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KSSplashes/");
 
         /// <summary>
         /// Journaling path
         /// </summary>
         public static string JournalingPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KSJournal.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KSJournal.json");
 
         /// <summary>
         /// Contacts path
         /// </summary>
         public static string ContactsPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KSContacts/");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KSContacts/");
 
         /// <summary>
         /// Contacts path
         /// </summary>
         public static string ContactsImportPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KSContactsImport/");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KSContactsImport/");
 
         /// <summary>
         /// Configuration path
         /// </summary>
         public static string SaverConfigurationPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KernelSaverConfig.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KernelSaverConfig.json");
 
         /// <summary>
         /// Configuration path
         /// </summary>
         public static string SplashConfigurationPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/KernelSplashConfig.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/KernelSplashConfig.json");
 
         /// <summary>
         /// User groups path
         /// </summary>
         public static string UserGroupsPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/UserGroups.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/UserGroups.json");
 
         /// <summary>
         /// To-do list path
         /// </summary>
         public static string ToDoListPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/ToDoList.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/ToDoList.json");
 
         /// <summary>
         /// Shell histories path
         /// </summary>
         public static string ShellHistoriesPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/ShellHistories.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/ShellHistories.json");
 
         /// <summary>
         /// Privacy consents path
         /// </summary>
         public static string ConsentsPath =>
-            Filesystem.NeutralizePath(AppDataPath + "/Consents.json");
+            FilesystemTools.NeutralizePath(AppDataPath + "/Consents.json");
 
         /// <summary>
         /// Gets the neutralized kernel path

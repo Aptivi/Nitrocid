@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             try
             {
-                string pathToScript = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+                string pathToScript = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
                 UESHParse.Execute(pathToScript, "", true);
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Script lint succeeded."), true, KernelColorType.Success);
                 variableValue = "1";

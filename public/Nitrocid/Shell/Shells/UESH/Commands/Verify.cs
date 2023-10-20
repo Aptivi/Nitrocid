@@ -63,7 +63,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             try
             {
-                string HashFile = Filesystem.NeutralizePath(parameters.ArgumentsList[2]);
+                string HashFile = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
                 if (Checking.FileExists(HashFile))
                 {
                     if (HashVerifier.VerifyHashFromHashesFile(parameters.ArgumentsList[3], parameters.ArgumentsList[0], parameters.ArgumentsList[2], parameters.ArgumentsList[1]))

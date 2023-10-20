@@ -55,8 +55,8 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string ZipArchiveName = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
-            string Destination = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
+            string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+            string Destination = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
             var ZipCompression = CompressionLevel.Optimal;
             bool ZipBaseDir = true;
             if (parameters.SwitchesList.Contains("-fast"))

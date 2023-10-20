@@ -37,7 +37,7 @@ namespace Nitrocid.Tests.Misc.Presentation
         public static void BuildPresentation()
         {
             // Presentation...
-            var presentation = new KS.ConsoleBase.Presentation.Presentation("MyPresentation", new()
+            var presentation = new Slideshow("MyPresentation", new()
             {
                 new PresentationPage("Page one", new()
                 {

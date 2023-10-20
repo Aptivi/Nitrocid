@@ -61,7 +61,7 @@ namespace KS.Network.FTP.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading file {0}...", File);
 
                 // Try to download 3 times
-                string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
+                string LocalFilePath = Files.FilesystemTools.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
                 var Result = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadFile(LocalFilePath, File, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), FTPTransferProgress.FileProgress);
 
                 // Show a message that it's downloaded
@@ -100,7 +100,7 @@ namespace KS.Network.FTP.Transfer
                 DebugWriter.WriteDebug(DebugLevel.I, "Downloading folder {0}...", Folder);
 
                 // Try to download folder
-                string LocalFolderPath = Files.Filesystem.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
+                string LocalFolderPath = Files.FilesystemTools.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
                 var Results = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).DownloadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpLocalExists.Resume, (FtpVerify)((int)FtpVerify.Retry + (int)FtpVerify.Throw), null, FTPTransferProgress.MultipleProgress);
 
                 // Print download results to debugger
@@ -171,7 +171,7 @@ namespace KS.Network.FTP.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Where in the remote: {0}", File);
 
             // Try to upload
-            string LocalFilePath = Files.Filesystem.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
+            string LocalFilePath = Files.FilesystemTools.NeutralizePath(LocalFile, FTPShellCommon.FtpCurrentDirectory);
             bool Success = Convert.ToBoolean(((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadFile(LocalFilePath, File, FtpRemoteExists.Resume, true, FtpVerify.Retry, FTPTransferProgress.FileProgress));
             DebugWriter.WriteDebug(DebugLevel.I, "Uploaded file {0} to {1} with status {2}.", LocalFile, File, Success);
             EventsManager.FireEvent(EventType.FTPPostUpload, File, Success);
@@ -198,7 +198,7 @@ namespace KS.Network.FTP.Transfer
             DebugWriter.WriteDebug(DebugLevel.I, "Uploading folder {0}...", Folder);
 
             // Try to upload
-            string LocalFolderPath = Files.Filesystem.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
+            string LocalFolderPath = Files.FilesystemTools.NeutralizePath(LocalFolder, FTPShellCommon.FtpCurrentDirectory);
             var Results = ((FtpClient)FTPShellCommon.ClientFTP.ConnectionInstance).UploadDirectory(LocalFolderPath, Folder, FtpFolderSyncMode.Update, FtpRemoteExists.Resume, FtpVerify.Retry, null, FTPTransferProgress.MultipleProgress);
 
             // Print upload results to debugger

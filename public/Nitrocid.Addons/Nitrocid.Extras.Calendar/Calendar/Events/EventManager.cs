@@ -160,8 +160,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         {
             lock (EventManagerLock)
             {
-                Filesystem.ThrowOnInvalidPath(EventFile);
-                EventFile = Filesystem.NeutralizePath(EventFile);
+                FilesystemTools.ThrowOnInvalidPath(EventFile);
+                EventFile = FilesystemTools.NeutralizePath(EventFile);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loading event {0}...", EventFile);
 
                 // If file exists, convert the file to the event instance
@@ -194,8 +194,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// </summary>
         public static void SaveEvents(string Path, bool Destructive)
         {
-            Filesystem.ThrowOnInvalidPath(Path);
-            Path = Filesystem.NeutralizePath(Path);
+            FilesystemTools.ThrowOnInvalidPath(Path);
+            Path = FilesystemTools.NeutralizePath(Path);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving events to {0}...", Path);
 
             // Remove all events from path, if running destructively
@@ -219,7 +219,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
                 var EventInstance = CalendarEvents[EventIndex];
                 string EventFileName = $"[{EventIndex}] {EventInstance.EventTitle}.ksevent";
                 DebugWriter.WriteDebug(DebugLevel.I, "Event file name: {0}...", EventFileName);
-                string EventFilePath = Filesystem.NeutralizePath(EventFileName, Path);
+                string EventFilePath = FilesystemTools.NeutralizePath(EventFileName, Path);
                 DebugWriter.WriteDebug(DebugLevel.I, "Event file path: {0}...", EventFilePath);
                 SaveEvent(EventInstance, EventFilePath);
             }
@@ -236,8 +236,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// </summary>
         public static void SaveEvent(EventInfo EventInstance, string File)
         {
-            Filesystem.ThrowOnInvalidPath(File);
-            File = Filesystem.NeutralizePath(File);
+            FilesystemTools.ThrowOnInvalidPath(File);
+            File = FilesystemTools.NeutralizePath(File);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving event to {0}...", File);
             var Converter = new XmlSerializer(typeof(EventInfo));
             var EventFileStream = new FileStream(File, FileMode.OpenOrCreate);

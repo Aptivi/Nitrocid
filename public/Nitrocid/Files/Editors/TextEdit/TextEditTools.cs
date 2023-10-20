@@ -41,7 +41,7 @@ namespace KS.Files.Editors.TextEdit
         /// <summary>
         /// Opens the text file
         /// </summary>
-        /// <param name="File">Target file. We recommend you to use <see cref="Filesystem.NeutralizePath(string, bool)"></see> to neutralize path.</param>
+        /// <param name="File">Target file. We recommend you to use <see cref="FilesystemTools.NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool TextEdit_OpenTextFile(string File)
         {

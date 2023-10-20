@@ -52,7 +52,7 @@ namespace KS.Files.Instances
             filePathUnneutralized;
 
         /// <summary>
-        /// Gets the actual file path processed by <see cref="Filesystem.NeutralizePath(string, bool)"/>
+        /// Gets the actual file path processed by <see cref="FilesystemTools.NeutralizePath(string, bool)"/>
         /// </summary>
         public string FilePath =>
             filePath;
@@ -76,10 +76,10 @@ namespace KS.Files.Instances
         /// <summary>
         /// Makes a new instance of this class
         /// </summary>
-        /// <param name="filePath">File path (will be neutralized by <see cref="Filesystem.NeutralizePath(string, bool)"/>)</param>
+        /// <param name="filePath">File path (will be neutralized by <see cref="FilesystemTools.NeutralizePath(string, bool)"/>)</param>
         public FileSystemEntry(string filePath)
         {
-            this.filePath = Filesystem.NeutralizePath(filePath);
+            this.filePath = FilesystemTools.NeutralizePath(filePath);
             filePathUnneutralized = filePath;
         }
     }

@@ -103,7 +103,7 @@ namespace KS.Shell.Shells.Mail.Commands
                     PathLine = Input.ReadLine();
                     if (!string.IsNullOrEmpty(PathLine))
                     {
-                        PathLine = Filesystem.NeutralizePath(PathLine);
+                        PathLine = FilesystemTools.NeutralizePath(PathLine);
                         DebugWriter.WriteDebug(DebugLevel.I, "Path line: {0} ({1} chars)", PathLine, PathLine.Length);
                         if (Checking.FileExists(PathLine))
                         {

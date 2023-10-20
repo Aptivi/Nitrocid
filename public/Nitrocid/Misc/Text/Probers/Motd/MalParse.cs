@@ -57,7 +57,7 @@ namespace KS.Misc.Text.Probers.Motd
             try
             {
                 // Get the MOTD file path
-                Config.MainConfig.MalFilePath = Filesystem.NeutralizePath(MalFilePath);
+                Config.MainConfig.MalFilePath = FilesystemTools.NeutralizePath(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Set the message
@@ -78,7 +78,7 @@ namespace KS.Misc.Text.Probers.Motd
             try
             {
                 // Get the MAL file path
-                Config.MainConfig.MalFilePath = Filesystem.NeutralizePath(MalFilePath);
+                Config.MainConfig.MalFilePath = FilesystemTools.NeutralizePath(MalFilePath);
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Read the message

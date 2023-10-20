@@ -210,7 +210,7 @@ namespace KS.Kernel.Configuration.Settings
             unsupportedPlatforms ?? Array.Empty<string>();
 
         /// <summary>
-        /// Is the value a path that will be neutralized by <see cref="Filesystem.NeutralizePath(string, bool)"/>?
+        /// Is the value a path that will be neutralized by <see cref="FilesystemTools.NeutralizePath(string, bool)"/>?
         /// </summary>
         [JsonIgnore]
         public bool IsValuePath =>

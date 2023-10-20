@@ -84,7 +84,7 @@ namespace KS.Network.HTTP
         /// <param name="ContentPath">Path to the file to open a stream and put it to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPutFile(string ContentUri, string ContentPath)
         {
-            ContentPath = Filesystem.NeutralizePath(ContentPath);
+            ContentPath = FilesystemTools.NeutralizePath(ContentPath);
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
             var stringContent = new StreamContent(TargetStream);
@@ -110,7 +110,7 @@ namespace KS.Network.HTTP
         /// <param name="ContentPath">Path to the file to open a stream and post it to the HTTP server</param>
         public async static Task<HttpResponseMessage> HttpPostFile(string ContentUri, string ContentPath)
         {
-            ContentPath = Filesystem.NeutralizePath(ContentPath);
+            ContentPath = FilesystemTools.NeutralizePath(ContentPath);
             var TargetUri = new Uri(NeutralizeUri(ContentUri));
             var TargetStream = new FileStream(ContentPath, FileMode.Open, FileAccess.Read);
             var stringContent = new StreamContent(TargetStream);

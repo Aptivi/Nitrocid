@@ -153,8 +153,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         public static void PrintLineWithHandle(string Filename, int LineNumber, int ColumnNumber, Color color)
         {
             // Read the contents
-            Filesystem.ThrowOnInvalidPath(Filename);
-            Filename = Filesystem.NeutralizePath(Filename);
+            FilesystemTools.ThrowOnInvalidPath(Filename);
+            Filename = FilesystemTools.NeutralizePath(Filename);
             var FileContents = Reading.ReadContents(Filename);
 
             // Do the job
@@ -295,8 +295,8 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         public static string RenderLineWithHandle(string Filename, int LineNumber, int ColumnNumber, Color color)
         {
             // Read the contents
-            Filesystem.ThrowOnInvalidPath(Filename);
-            Filename = Filesystem.NeutralizePath(Filename);
+            FilesystemTools.ThrowOnInvalidPath(Filename);
+            Filename = FilesystemTools.NeutralizePath(Filename);
             var FileContents = Reading.ReadContents(Filename);
 
             // Do the job

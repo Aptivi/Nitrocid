@@ -40,7 +40,7 @@ namespace KS.Modifications.ManPages
         /// <param name="ManualFile">A manual file path (neutralized)</param>
         public static void InitMan(string modName, string ManualFile)
         {
-            ManualFile = Filesystem.NeutralizePath(ManualFile);
+            ManualFile = FilesystemTools.NeutralizePath(ManualFile);
             if (!ModManager.Mods.ContainsKey(modName))
                 throw new KernelException(KernelExceptionType.ModManual, Translate.DoTranslation("Tried to initialize the manual file {0} for nonexistent mod {1}."), ManualFile, modName);
             if (!Checking.FileExists(ManualFile))
@@ -70,7 +70,7 @@ namespace KS.Modifications.ManPages
             try
             {
                 bool InternalParseDone = false;
-                ManualFile = Filesystem.NeutralizePath(ManualFile);
+                ManualFile = FilesystemTools.NeutralizePath(ManualFile);
                 DebugWriter.WriteDebug(DebugLevel.I, "Current manual file: {0}", ManualFile);
 
                 // First, get all lines in the file

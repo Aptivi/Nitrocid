@@ -37,7 +37,7 @@ namespace KS.ConsoleBase.Presentation
             "Sarah"
         };
 
-        internal static Presentation Debug =>
+        internal static Slideshow Debug =>
             new(
                 "Debugging the Presentation",
                 new List<PresentationPage>()

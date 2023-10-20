@@ -51,8 +51,8 @@ namespace KS.Misc.RetroKS
             var update = new KernelUpdate(RetroKSToken);
 
             // Populate paths
-            string RetroKSPath = Filesystem.NeutralizePath("retroks.rar", Paths.RetroKSDownloadPath);
-            string RetroExecKSPath = Filesystem.NeutralizePath(ExecutableName, Paths.RetroKSDownloadPath);
+            string RetroKSPath = FilesystemTools.NeutralizePath("retroks.rar", Paths.RetroKSDownloadPath);
+            string RetroExecKSPath = FilesystemTools.NeutralizePath(ExecutableName, Paths.RetroKSDownloadPath);
 
             // Make the directory for RetroKS
             Making.MakeDirectory(Paths.RetroKSDownloadPath, false);

@@ -36,7 +36,7 @@ namespace Nitrocid.Tests.Modifications
         public void TestAddModToBlacklist()
         {
             ModManager.AddModToBlacklist("MaliciousMod.dll");
-            ModManager.GetBlacklistedMods().ShouldContain(Filesystem.NeutralizePath("MaliciousMod.dll", Paths.GetKernelPath(KernelPathType.Mods)));
+            ModManager.GetBlacklistedMods().ShouldContain(FilesystemTools.NeutralizePath("MaliciousMod.dll", Paths.GetKernelPath(KernelPathType.Mods)));
         }
 
         /// <summary>
@@ -47,7 +47,7 @@ namespace Nitrocid.Tests.Modifications
         public void TestRemoveModFromBlacklist()
         {
             ModManager.RemoveModFromBlacklist("MaliciousMod.dll");
-            ModManager.GetBlacklistedMods().ShouldNotContain(Filesystem.NeutralizePath("MaliciousMod.dll", Paths.GetKernelPath(KernelPathType.Mods)));
+            ModManager.GetBlacklistedMods().ShouldNotContain(FilesystemTools.NeutralizePath("MaliciousMod.dll", Paths.GetKernelPath(KernelPathType.Mods)));
         }
 
     }

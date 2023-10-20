@@ -111,7 +111,7 @@ namespace KS.Network.Base.Transfer
         /// <summary>
         /// Uploads a file to the current working directory.
         /// </summary>
-        /// <param name="FileName">A target file name. Use <see cref="Filesystem.NeutralizePath(string, bool)"/> to get full path of source.</param>
+        /// <param name="FileName">A target file name. Use <see cref="FilesystemTools.NeutralizePath(string, bool)"/> to get full path of source.</param>
         /// <param name="URL">A URL to a file</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>
         public static bool UploadFile(string FileName, string URL) => 
@@ -120,7 +120,7 @@ namespace KS.Network.Base.Transfer
         /// <summary>
         /// Uploads a file from the current working directory.
         /// </summary>
-        /// <param name="FileName">A target file name. Use <see cref="Filesystem.NeutralizePath(string, bool)"/> to get full path of source.</param>
+        /// <param name="FileName">A target file name. Use <see cref="FilesystemTools.NeutralizePath(string, bool)"/> to get full path of source.</param>
         /// <param name="URL">A URL</param>
         /// <param name="ShowProgress">Whether or not to show progress bar</param>
         /// <returns>True if successful. Throws exception if unsuccessful.</returns>

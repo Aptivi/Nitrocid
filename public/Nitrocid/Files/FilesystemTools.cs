@@ -37,7 +37,7 @@ namespace KS.Files
     /// <summary>
     /// Filesystem module
     /// </summary>
-    public static class Filesystem
+    public static class FilesystemTools
     {
 
         private const int maxLockTimeoutMs = 300000;

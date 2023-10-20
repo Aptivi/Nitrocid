@@ -51,16 +51,16 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             if (parameters.ArgumentsList.Length == 1)
             {
-                string ZipArchiveName = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+                string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
                 ZipFile.ExtractToDirectory(ZipArchiveName, CurrentDirectory.CurrentDir);
             }
             else if (parameters.ArgumentsList.Length > 1)
             {
-                string ZipArchiveName = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
-                string Destination = !(parameters.SwitchesList[0] == "-createdir") ? Filesystem.NeutralizePath(parameters.ArgumentsList[1]) : "";
+                string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
+                string Destination = !(parameters.SwitchesList[0] == "-createdir") ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : "";
                 if (parameters.SwitchesList.Contains("-createdir"))
                 {
-                    Destination = $"{(!(parameters.SwitchesList[0] == "-createdir") ? Filesystem.NeutralizePath(parameters.ArgumentsList[1]) : "")}/{(!(parameters.SwitchesList[0] == "-createdir") ? Path.GetFileNameWithoutExtension(ZipArchiveName) : Filesystem.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}";
+                    Destination = $"{(!(parameters.SwitchesList[0] == "-createdir") ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : "")}/{(!(parameters.SwitchesList[0] == "-createdir") ? Path.GetFileNameWithoutExtension(ZipArchiveName) : FilesystemTools.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}";
                     if (Convert.ToString(Destination[0]) == "/")
                         Destination = Destination[1..];
                 }

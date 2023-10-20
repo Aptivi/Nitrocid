@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.UESH.Commands
                             if (parameters.ArgumentsList.Length > 1)
                             {
                                 TargetLanguage = parameters.ArgumentsList[1];
-                                TargetLanguagePath = Filesystem.NeutralizePath(TargetLanguage + ".json", Paths.GetKernelPath(KernelPathType.CustomLanguages));
+                                TargetLanguagePath = FilesystemTools.NeutralizePath(TargetLanguage + ".json", Paths.GetKernelPath(KernelPathType.CustomLanguages));
                                 if (!(Parsing.TryParsePath(TargetLanguagePath) && Checking.FileExists(TargetLanguagePath)) & !LanguageManager.Languages.ContainsKey(TargetLanguage))
                                 {
                                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Language not found or file has invalid characters."), true, KernelColorType.Error);

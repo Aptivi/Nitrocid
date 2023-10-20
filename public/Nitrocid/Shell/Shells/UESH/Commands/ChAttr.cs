@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
         // Warning: Don't use parameters.SwitchesList to replace parameters.ArgumentsList(1); the removal signs of ChAttr are treated as switches and will cause unexpected behavior if changed.
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string NeutralizedFilePath = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            string NeutralizedFilePath = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             if (Checking.FileExists(NeutralizedFilePath))
             {

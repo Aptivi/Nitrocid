@@ -150,7 +150,7 @@ namespace KS.Modifications
             if (script is not null)
             {
                 string ModPath = Paths.GetKernelPath(KernelPathType.Mods);
-                string modFilePath = Filesystem.NeutralizePath(modFile, ModPath);
+                string modFilePath = FilesystemTools.NeutralizePath(modFile, ModPath);
                 EventsManager.FireEvent(EventType.ModParsed, modFile);
                 try
                 {
@@ -303,7 +303,7 @@ namespace KS.Modifications
                         ModManager.Mods.Add(ModName, ModInstance);
 
                     // Check for accompanying manual pages for mods
-                    string ModManualPath = Filesystem.NeutralizePath(modFile + ".manual", ModPath);
+                    string ModManualPath = FilesystemTools.NeutralizePath(modFile + ".manual", ModPath);
                     if (Checking.FolderExists(ModManualPath))
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Found manual page collection in {0}", ModManualPath);

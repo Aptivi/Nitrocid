@@ -189,12 +189,12 @@ namespace KS.Misc.Interactives
                     InteractiveTuiTools.ForceRefreshSelection();
                     if (CurrentPane == 2)
                     {
-                        secondPanePath = Filesystem.NeutralizePath(currentFileSystemEntry.FilePath + "/");
+                        secondPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         SecondPaneCurrentSelection = 1;
                     }
                     else
                     {
-                        firstPanePath = Filesystem.NeutralizePath(currentFileSystemEntry.FilePath + "/");
+                        firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         FirstPaneCurrentSelection = 1;
                     }
                 }
@@ -221,12 +221,12 @@ namespace KS.Misc.Interactives
             InteractiveTuiTools.ForceRefreshSelection();
             if (CurrentPane == 2)
             {
-                secondPanePath = Filesystem.NeutralizePath(secondPanePath + "/..");
+                secondPanePath = FilesystemTools.NeutralizePath(secondPanePath + "/..");
                 SecondPaneCurrentSelection = 1;
             }
             else
             {
-                firstPanePath = Filesystem.NeutralizePath(firstPanePath + "/..");
+                firstPanePath = FilesystemTools.NeutralizePath(firstPanePath + "/..");
                 FirstPaneCurrentSelection = 1;
             }
         }
@@ -255,13 +255,13 @@ namespace KS.Misc.Interactives
                     // The file system info instance points to a folder
                     var DirInfo = new DirectoryInfo(fullPath);
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), DirInfo.Name));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(DirInfo.FullName)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), FilesystemTools.NeutralizePath(DirInfo.FullName)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Size: {0}"), SizeGetter.GetAllSizesInFolder(DirInfo).SizeString()));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(DirInfo.CreationTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(DirInfo.LastAccessTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(DirInfo.LastWriteTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Attributes: {0}"), DirInfo.Attributes));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Parent directory: {0}"), Filesystem.NeutralizePath(DirInfo.Parent.FullName)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Parent directory: {0}"), FilesystemTools.NeutralizePath(DirInfo.Parent.FullName)));
                 }
                 else
                 {
@@ -269,20 +269,20 @@ namespace KS.Misc.Interactives
                     FileInfo fileInfo = new(fullPath);
                     bool isBinary = Parsing.IsBinaryFile(fileInfo.FullName);
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Name: {0}"), fileInfo.Name));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(fileInfo.FullName)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name: {0}"), FilesystemTools.NeutralizePath(fileInfo.FullName)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("File size: {0}"), fileInfo.Length.SizeString()));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(fileInfo.CreationTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(fileInfo.LastAccessTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(fileInfo.LastWriteTime)));
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Attributes: {0}"), fileInfo.Attributes));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(fileInfo.DirectoryName)));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Where to find: {0}"), FilesystemTools.NeutralizePath(fileInfo.DirectoryName)));
                     if (!isBinary)
                     {
                         var Style = LineEndingsTools.GetLineEndingFromFile(fullPath);
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
                     }
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Binary file:") + " {0}", isBinary));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}\n", MimeTypes.GetMimeType(Filesystem.NeutralizePath(fileInfo.FullName))));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}\n", MimeTypes.GetMimeType(FilesystemTools.NeutralizePath(fileInfo.FullName))));
 
                     // .NET managed info
                     if (ReflectionCommon.IsDotnetAssemblyFile(fullPath, out AssemblyName asmName))
@@ -388,7 +388,7 @@ namespace KS.Misc.Interactives
         {
             // Now, render the search box
             string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a local folder."), BoxForegroundColor, BoxBackgroundColor);
-            path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
+            path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
             if (Checking.FolderExists(path))
             {
                 InteractiveTuiTools.ForceRefreshSelection();
@@ -420,7 +420,7 @@ namespace KS.Misc.Interactives
             {
                 InteractiveTuiTools.ForceRefreshSelection();
                 string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), BoxForegroundColor, BoxBackgroundColor);
-                path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -460,7 +460,7 @@ namespace KS.Misc.Interactives
             {
                 InteractiveTuiTools.ForceRefreshSelection();
                 string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), BoxForegroundColor, BoxBackgroundColor);
-                path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
+                path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
                 DebugCheck.AssertNull(path, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(path), "destination is empty or whitespace!");
@@ -530,7 +530,7 @@ namespace KS.Misc.Interactives
         {
             // Now, render the search box
             string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), BoxForegroundColor, BoxBackgroundColor);
-            path = Filesystem.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
+            path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
             if (!Checking.FolderExists(path))
                 Making.TryMakeDirectory(path);
             else

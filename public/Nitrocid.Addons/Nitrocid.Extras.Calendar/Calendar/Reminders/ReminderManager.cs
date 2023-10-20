@@ -175,8 +175,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         {
             lock (ReminderManagerLock)
             {
-                Filesystem.ThrowOnInvalidPath(ReminderFile);
-                ReminderFile = Filesystem.NeutralizePath(ReminderFile);
+                FilesystemTools.ThrowOnInvalidPath(ReminderFile);
+                ReminderFile = FilesystemTools.NeutralizePath(ReminderFile);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loading reminder {0}...", ReminderFile);
 
                 // If file exists, convert the file to the reminder instance
@@ -209,8 +209,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// </summary>
         public static void SaveReminders(string Path, bool Destructive)
         {
-            Filesystem.ThrowOnInvalidPath(Path);
-            Path = Filesystem.NeutralizePath(Path);
+            FilesystemTools.ThrowOnInvalidPath(Path);
+            Path = FilesystemTools.NeutralizePath(Path);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving reminders to {0}...", Path);
 
             // Remove all events from path, if running destructively
@@ -234,7 +234,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
                 var ReminderInstance = Reminders[ReminderIndex];
                 string ReminderFileName = $"[{ReminderIndex}] {ReminderInstance.ReminderTitle}.ksreminder";
                 DebugWriter.WriteDebug(DebugLevel.I, "Reminder file name: {0}...", ReminderFileName);
-                string ReminderFilePath = Filesystem.NeutralizePath(ReminderFileName, Path);
+                string ReminderFilePath = FilesystemTools.NeutralizePath(ReminderFileName, Path);
                 DebugWriter.WriteDebug(DebugLevel.I, "Reminder file path: {0}...", ReminderFilePath);
                 SaveReminder(ReminderInstance, ReminderFilePath);
             }
@@ -251,8 +251,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         /// </summary>
         public static void SaveReminder(ReminderInfo ReminderInstance, string File)
         {
-            Filesystem.ThrowOnInvalidPath(File);
-            File = Filesystem.NeutralizePath(File);
+            FilesystemTools.ThrowOnInvalidPath(File);
+            File = FilesystemTools.NeutralizePath(File);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving reminder to {0}...", File);
             var Converter = new XmlSerializer(typeof(ReminderInfo));
             var ReminderFileStream = new FileStream(File, FileMode.OpenOrCreate);

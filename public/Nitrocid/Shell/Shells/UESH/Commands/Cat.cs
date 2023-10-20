@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             try
             {
-                bool PrintLines = Filesystem.PrintLineNumbers;
+                bool PrintLines = FilesystemTools.PrintLineNumbers;
                 bool ForcePlain = false;
                 if (parameters.SwitchesList.Contains("-lines"))
                     PrintLines = true;

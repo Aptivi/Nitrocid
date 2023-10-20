@@ -145,7 +145,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
             }
 
             // Define local destination while getting an entry from target
-            Target = Filesystem.NeutralizePath(Target, Where);
+            Target = FilesystemTools.NeutralizePath(Target, Where);
             DebugWriter.WriteDebug(DebugLevel.I, "Where: {0}", Target);
             ((IWritableArchive)ArchiveShellCommon.ArchiveShell_Archive).AddEntry(ArchiveTarget, Target);
             ((IWritableArchive)ArchiveShellCommon.ArchiveShell_Archive).SaveTo(ArchiveShellCommon.ArchiveShell_FileStream, new WriterOptions(compression));
@@ -236,7 +236,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive
         {
             if (string.IsNullOrWhiteSpace(Target))
                 Target = ArchiveShellCommon.ArchiveShell_CurrentDirectory;
-            if (Checking.FolderExists(Filesystem.NeutralizePath(Target, ArchiveShellCommon.ArchiveShell_CurrentDirectory)))
+            if (Checking.FolderExists(FilesystemTools.NeutralizePath(Target, ArchiveShellCommon.ArchiveShell_CurrentDirectory)))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} found. Changing...", Target);
                 ArchiveShellCommon.ArchiveShell_CurrentDirectory = Target;

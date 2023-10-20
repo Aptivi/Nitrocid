@@ -29,7 +29,7 @@ using IOPath = System.IO.Path;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
-using FS = KS.Files.Filesystem;
+using FS = KS.Files.FilesystemTools;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using KS.Files.Operations;

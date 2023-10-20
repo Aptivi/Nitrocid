@@ -39,7 +39,7 @@ namespace Nitrocid.Tests.Files
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
             string TestPath = "Documents";
             string ExpectedPath = InitTest.PathToTestSlotFolder + "/" + TestPath;
-            string NeutPath = Filesystem.NeutralizePath(TestPath);
+            string NeutPath = FilesystemTools.NeutralizePath(TestPath);
             NeutPath.ShouldBe(ExpectedPath);
         }
 
@@ -53,7 +53,7 @@ namespace Nitrocid.Tests.Files
         {
             string TestPath = "sources.list";
             string TargetPath = "/etc/apt";
-            string NeutPath = Filesystem.NeutralizePath(TestPath, TargetPath);
+            string NeutPath = FilesystemTools.NeutralizePath(TestPath, TargetPath);
             NeutPath.ShouldBe(TargetPath + "/" + TestPath);
         }
 
@@ -68,7 +68,7 @@ namespace Nitrocid.Tests.Files
         [TestCase("Music")]
         [Description("Neutralization")]
         public void TestThrowOnInvalidPathValid(string path) =>
-            Should.NotThrow(() => Filesystem.ThrowOnInvalidPath(path));
+            Should.NotThrow(() => FilesystemTools.ThrowOnInvalidPath(path));
 
         /// <summary>
         /// Tests throwing on invalid path
@@ -79,7 +79,7 @@ namespace Nitrocid.Tests.Files
         [Platform("Win")]
         [Description("Neutralization")]
         public void TestThrowOnInvalidPathInvalid(string path) =>
-            Should.Throw(() => Filesystem.ThrowOnInvalidPath(path), typeof(KernelException));
+            Should.Throw(() => FilesystemTools.ThrowOnInvalidPath(path), typeof(KernelException));
 
     }
 }

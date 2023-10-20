@@ -40,7 +40,7 @@ namespace KS.Files.Operations
         {
             if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
-            DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, Filesystem.ShowFilesystemProgress);
+            DriverHandler.CurrentFilesystemDriverLocal.RemoveDirectory(Target, FilesystemTools.ShowFilesystemProgress);
         }
 
         /// <summary>

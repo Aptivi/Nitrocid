@@ -27,7 +27,7 @@ namespace Nitrocid.Extras.GitShell
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string path = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             ShellStart.StartShell("GitShell", path);
             return 0;
         }

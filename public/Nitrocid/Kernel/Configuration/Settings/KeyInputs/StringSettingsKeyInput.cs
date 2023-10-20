@@ -49,7 +49,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             if (key.IsValuePath)
             {
                 string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : Paths.GetKernelPath(key.ValuePathType);
-                AnswerString = Filesystem.NeutralizePath(AnswerString, NeutralizeRootPath);
+                AnswerString = FilesystemTools.NeutralizePath(AnswerString, NeutralizeRootPath);
             }
 
             // Set to default is nothing is written

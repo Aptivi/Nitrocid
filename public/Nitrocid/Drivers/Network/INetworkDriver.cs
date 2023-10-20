@@ -18,7 +18,7 @@
 
 using System.Net;
 using System.Net.NetworkInformation;
-using FS = KS.Files.Filesystem;
+using FS = KS.Files.FilesystemTools;
 
 namespace KS.Drivers.Network
 {

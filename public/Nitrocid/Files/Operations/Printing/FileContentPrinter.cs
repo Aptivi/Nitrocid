@@ -31,7 +31,7 @@ namespace KS.Files.Operations.Printing
         /// </summary>
         /// <param name="filename">Full path to file</param>
         public static void PrintContents(string filename) =>
-            DriverHandler.CurrentFilesystemDriverLocal.PrintContents(filename, Filesystem.PrintLineNumbers);
+            DriverHandler.CurrentFilesystemDriverLocal.PrintContents(filename, FilesystemTools.PrintLineNumbers);
 
         /// <summary>
         /// Prints the contents of a file to the console
@@ -67,7 +67,7 @@ namespace KS.Files.Operations.Printing
         /// </summary>
         /// <param name="filename">Full path to file with wildcards supported</param>
         public static string RenderContents(string filename) =>
-            DriverHandler.CurrentFilesystemDriverLocal.RenderContents(filename, Filesystem.PrintLineNumbers);
+            DriverHandler.CurrentFilesystemDriverLocal.RenderContents(filename, FilesystemTools.PrintLineNumbers);
 
         /// <summary>
         /// Renders the contents of a file

@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.Amusements.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var annivPres = new Presentation(
+            var annivPres = new Slideshow(
                 Translate.DoTranslation("Commemorating the 5-year anniversary of the kernel"),
                 new List<PresentationPage>()
                 {

@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
             string Where = "";
             if (parameters.ArgumentsList.Length > 1)
             {
-                Where = Filesystem.NeutralizePath(parameters.ArgumentsList[1], ArchiveShellCommon.ArchiveShell_CurrentDirectory);
+                Where = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1], ArchiveShellCommon.ArchiveShell_CurrentDirectory);
             }
             ArchiveTools.PackFile(parameters.ArgumentsList[0], Where);
             return 0;

@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || Filesystem.SuppressUnauthorizedMessages;
+            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || FilesystemTools.SuppressUnauthorizedMessages;
             bool Recursive = parameters.SwitchesList.Contains("-recursive");
             if (parameters.ArgumentsList.Length == 0)
             {
@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
             {
                 foreach (string Directory in parameters.ArgumentsList)
                 {
-                    string direct = Filesystem.NeutralizePath(Directory);
+                    string direct = FilesystemTools.NeutralizePath(Directory);
                     Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage, Listing.SortList, Recursive);
                 }
             }

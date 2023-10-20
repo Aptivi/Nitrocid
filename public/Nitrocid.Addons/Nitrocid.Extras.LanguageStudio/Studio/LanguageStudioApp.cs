@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.LanguageStudio.Studio
         public static void StartLanguageStudio(string pathToTranslations)
         {
             // Neutralize the translations path
-            pathToTranslations = Filesystem.NeutralizePath(pathToTranslations);
+            pathToTranslations = FilesystemTools.NeutralizePath(pathToTranslations);
             string initialManifestFile = $"{Paths.ExecPath}/Translations/Metadata.json";
             string initialEnglishFile = $"{Paths.ExecPath}/Translations/eng.txt";
             string manifestFile = $"{pathToTranslations}/Metadata.json";

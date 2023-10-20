@@ -38,7 +38,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string path = parameters.ArgumentsList[0];
-            bool locked = Filesystem.IsLocked(path);
+            bool locked = FilesystemTools.IsLocked(path);
             bool waitForUnlock = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-waitforunlock");
             string waitForUnlockMsStr = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-waitforunlock");
             bool waitForUnlockTimed = !string.IsNullOrEmpty(waitForUnlockMsStr);
@@ -50,9 +50,9 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Waiting until the file or the folder is unlocked..."), true, KernelColorType.Progress);
                     if (waitForUnlockTimed)
-                        Filesystem.WaitForLockRelease(path, waitForUnlockMs);
+                        FilesystemTools.WaitForLockRelease(path, waitForUnlockMs);
                     else
-                        Filesystem.WaitForLockReleaseIndefinite(path);
+                        FilesystemTools.WaitForLockReleaseIndefinite(path);
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("File or folder is not in use."), true, KernelColorType.Success);
                     return 0;
                 }

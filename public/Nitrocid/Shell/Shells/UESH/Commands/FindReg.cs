@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
             bool isRecursive = parameters.SwitchesList.Contains("-recursive");
             string command = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-exec").ReleaseDoubleQuotes();
             if (parameters.ArgumentsList.Length > 1)
-                DirectoryToSearch = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
+                DirectoryToSearch = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
 
             // Print the results if found
             var AllFileEntries = Listing.GetFilesystemEntriesRegex(DirectoryToSearch, RegexToMatch, isRecursive);

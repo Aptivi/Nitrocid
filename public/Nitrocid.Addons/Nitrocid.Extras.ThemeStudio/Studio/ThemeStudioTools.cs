@@ -46,18 +46,18 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         public static void SaveThemeToCurrentDirectory(string Theme)
         {
             var ThemeJson = GetThemeJson();
-            Writing.WriteContentsText(Filesystem.NeutralizePath(Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
+            Writing.WriteContentsText(FilesystemTools.NeutralizePath(Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
         }
 
         /// <summary>
         /// Saves theme to another directory under "<paramref name="Theme"/>.json."
         /// </summary>
         /// <param name="Theme">Theme name</param>
-        /// <param name="Path">Path name. Neutralized by <see cref="Filesystem.NeutralizePath(string, bool)"/></param>
+        /// <param name="Path">Path name. Neutralized by <see cref="FilesystemTools.NeutralizePath(string, bool)"/></param>
         public static void SaveThemeToAnotherDirectory(string Theme, string Path)
         {
             var ThemeJson = GetThemeJson();
-            Writing.WriteContentsText(Filesystem.NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
+            Writing.WriteContentsText(FilesystemTools.NeutralizePath(Path + "/" + Theme + ".json"), JsonConvert.SerializeObject(ThemeJson, Formatting.Indented));
         }
 
         /// <summary>
@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         public static void LoadThemeFromFile(string Theme)
         {
             // Populate theme info
-            var ThemeStream = new StreamReader(Filesystem.NeutralizePath(Theme));
+            var ThemeStream = new StreamReader(FilesystemTools.NeutralizePath(Theme));
             var ThemeInfo = new ThemeInfo(ThemeStream);
             ThemeStream.Close();
             LoadThemeFromThemeInfo(ThemeInfo);

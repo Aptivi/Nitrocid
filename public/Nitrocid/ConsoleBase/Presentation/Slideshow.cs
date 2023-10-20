@@ -24,7 +24,7 @@ namespace KS.ConsoleBase.Presentation
     /// <summary>
     /// The presentation containing all the pages
     /// </summary>
-    public class Presentation
+    public class Slideshow
     {
         /// <summary>
         /// Presentation name
@@ -41,7 +41,7 @@ namespace KS.ConsoleBase.Presentation
         /// </summary>
         /// <param name="name">Presentation name</param>
         /// <param name="pages">Presentation pages</param>
-        public Presentation(string name, List<PresentationPage> pages)
+        public Slideshow(string name, List<PresentationPage> pages)
         {
             Name = name;
             Pages = pages;

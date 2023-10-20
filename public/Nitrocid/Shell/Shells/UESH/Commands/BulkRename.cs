@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
                 // Now, construct the file name and rename it to that
                 string finalName = $"{newName}-{fileNo}{Path.GetExtension(file)}";
-                Moving.MoveFileOrDir(file, Filesystem.NeutralizePath(finalName, targetDir));
+                Moving.MoveFileOrDir(file, FilesystemTools.NeutralizePath(finalName, targetDir));
 
                 // Increment the number
                 fileNo += 1;

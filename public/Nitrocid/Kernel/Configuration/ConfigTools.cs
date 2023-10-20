@@ -346,7 +346,7 @@ namespace KS.Kernel.Configuration
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Trying to query an empty custom setting."));
 
             // Now, do the job!
-            string path = Filesystem.NeutralizePath($"{setting.GetType().Name}.json", Paths.AppDataPath);
+            string path = FilesystemTools.NeutralizePath($"{setting.GetType().Name}.json", Paths.AppDataPath);
             DebugWriter.WriteDebug(DebugLevel.I, "Got path {0}...", path);
             return path;
         }

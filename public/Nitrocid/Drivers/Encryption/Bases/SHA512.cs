@@ -20,7 +20,7 @@ using KS.Kernel.Debugging;
 using System.IO;
 using System.Text.RegularExpressions;
 using Encryptor = System.Security.Cryptography.SHA512;
-using FS = KS.Files.Filesystem;
+using FS = KS.Files.FilesystemTools;
 using TextEncoding = System.Text.Encoding;
 
 namespace KS.Drivers.Encryption.Bases

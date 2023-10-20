@@ -81,7 +81,7 @@ namespace KS.Files.Folders
         /// </summary>
         /// <param name="folder">Full path to folder</param>
         public static void List(string folder) =>
-            List(folder, ShowFileDetailsList, Filesystem.SuppressUnauthorizedMessages, SortList);
+            List(folder, ShowFileDetailsList, FilesystemTools.SuppressUnauthorizedMessages, SortList);
 
         /// <summary>
         /// List all files and folders in a specified folder
@@ -89,7 +89,7 @@ namespace KS.Files.Folders
         /// <param name="folder">Full path to folder</param>
         /// <param name="Sort">Whether to sort the filesystem entries</param>
         public static void List(string folder, bool Sort) =>
-            List(folder, ShowFileDetailsList, Filesystem.SuppressUnauthorizedMessages, Sort);
+            List(folder, ShowFileDetailsList, FilesystemTools.SuppressUnauthorizedMessages, Sort);
 
         /// <summary>
         /// List all files and folders in a specified folder
@@ -110,11 +110,11 @@ namespace KS.Files.Folders
         /// <param name="Recursive">Whether the list is recursive or not</param>
         public static void List(string folder, bool ShowFileDetails, bool SuppressUnauthorizedMessage, bool Sort, bool Recursive = false)
         {
-            Filesystem.ThrowOnInvalidPath(folder);
+            FilesystemTools.ThrowOnInvalidPath(folder);
             DebugWriter.WriteDebug(DebugLevel.I, "Folder {0} will be listed...", folder);
 
             // List files and folders
-            folder = Filesystem.NeutralizePath(folder);
+            folder = FilesystemTools.NeutralizePath(folder);
             if (Checking.FolderExists(folder) | folder.ContainsAnyOf(new[] { "?", "*" }))
             {
                 List<FileSystemEntry> enumeration;

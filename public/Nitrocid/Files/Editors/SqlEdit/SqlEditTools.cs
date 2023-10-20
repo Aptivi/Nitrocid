@@ -35,7 +35,7 @@ namespace KS.Files.Editors.SqlEdit
         /// <summary>
         /// Opens the SQL file
         /// </summary>
-        /// <param name="File">Target file. We recommend you to use <see cref="Filesystem.NeutralizePath(string, bool)"></see> to neutralize path.</param>
+        /// <param name="File">Target file. We recommend you to use <see cref="FilesystemTools.NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool SqlEdit_OpenSqlFile(string File)
         {

@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// Previews the splash
     /// </summary>
     /// <remarks>
-    /// This command previews either the current splash as set in the kernel settings or the specified splash. Refer the current splash list found in <see cref="Misc.Splash.SplashManager.Splashes"/>.
+    /// This command previews either the current splash as set in the kernel settings or the specified splash. Refer the current splash list found in <see cref="SplashManager.Splashes"/>.
     /// </remarks>
     class PreviewSplashCommand : BaseCommand, ICommand
     {

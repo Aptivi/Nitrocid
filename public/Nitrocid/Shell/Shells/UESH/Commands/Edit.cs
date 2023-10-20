@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string path = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             bool forceText = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-text");
             bool forceJson = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-json");
             bool forceHex = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-hex");

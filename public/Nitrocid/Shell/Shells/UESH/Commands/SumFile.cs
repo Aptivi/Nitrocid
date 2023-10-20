@@ -44,13 +44,13 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string file = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
+            string file = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
             string @out = "";
             bool UseRelative = parameters.SwitchesList.Contains("-relative");
             var FileBuilder = new StringBuilder();
             if (!(parameters.ArgumentsList.Length < 3))
             {
-                @out = Filesystem.NeutralizePath(parameters.ArgumentsList[2]);
+                @out = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
             }
             if (Checking.FileExists(file))
             {

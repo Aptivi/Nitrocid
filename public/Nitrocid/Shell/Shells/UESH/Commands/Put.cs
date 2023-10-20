@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             int RetryCount = 1;
-            string FileName = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            string FileName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string URL = parameters.ArgumentsList[1];
             int failCode = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);

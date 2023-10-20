@@ -19,7 +19,7 @@
 
 using KS.Files.Instances;
 using KS.Files.LineEndings;
-using FS = KS.Files.Filesystem;
+using FS = KS.Files.FilesystemTools;
 using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;

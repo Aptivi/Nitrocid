@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
             get => BassBoomInit.BassBoomConfig.LyricsPath;
             set
             {
-                BassBoomInit.BassBoomConfig.LyricsPath = Checking.FolderExists(value) ? Filesystem.NeutralizePath(value) : BassBoomInit.BassBoomConfig.LyricsPath;
+                BassBoomInit.BassBoomConfig.LyricsPath = Checking.FolderExists(value) ? FilesystemTools.NeutralizePath(value) : BassBoomInit.BassBoomConfig.LyricsPath;
                 lyricsLrc = Listing.GetFilesystemEntries(BassBoomInit.BassBoomConfig.LyricsPath, "*.lrc");
             }
         }
@@ -88,7 +88,7 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
         public static void VisualizeLyric(string path)
         {
             // Neutralize the path
-            path = Filesystem.NeutralizePath(path);
+            path = FilesystemTools.NeutralizePath(path);
             ConsoleWrapper.CursorVisible = false;
             KernelColorTools.LoadBack();
 

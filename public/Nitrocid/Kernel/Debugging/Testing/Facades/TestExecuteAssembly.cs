@@ -30,7 +30,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override void Run()
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
-            Text = Filesystem.NeutralizePath(Text);
+            Text = FilesystemTools.NeutralizePath(Text);
             Assembly.LoadFrom(Text).EntryPoint.Invoke("", Array.Empty<object>());
         }
     }

@@ -99,7 +99,7 @@ namespace KS.Kernel.Configuration
             if (KernelEntry.SafeMode)
                 return;
 
-            Filesystem.ThrowOnInvalidPath(ConfigFolder);
+            FilesystemTools.ThrowOnInvalidPath(ConfigFolder);
             if (!Checking.FolderExists(ConfigFolder))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent folder to store the three configuration files on."));
             DebugWriter.WriteDebug(DebugLevel.I, "Config folder {0} exists, so saving...", ConfigFolder);
@@ -125,7 +125,7 @@ namespace KS.Kernel.Configuration
                 return;
 
             // Serialize the config object
-            Filesystem.ThrowOnInvalidPath(ConfigPath);
+            FilesystemTools.ThrowOnInvalidPath(ConfigPath);
             string serialized = GetSerializedConfig(type);
             DebugWriter.WriteDebug(DebugLevel.I, "Got serialized config object of length {0}...", serialized.Length);
 
@@ -236,7 +236,7 @@ namespace KS.Kernel.Configuration
         public static void ReadConfig<TConfig>(TConfig type, string ConfigPath)
         {
             // Open the config JSON file
-            Filesystem.ThrowOnInvalidPath(ConfigPath);
+            FilesystemTools.ThrowOnInvalidPath(ConfigPath);
             if (!Checking.FileExists(ConfigPath))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Specify an existent path to a configuration file"));
 

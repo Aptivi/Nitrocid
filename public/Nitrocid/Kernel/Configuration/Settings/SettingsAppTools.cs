@@ -98,7 +98,7 @@ namespace KS.Kernel.Configuration.Settings
         internal static void SaveSettingsAs()
         {
             string Location = InfoBoxColor.WriteInfoBoxInputKernelColor(Translate.DoTranslation("Where do you want to save the current kernel settings?"), KernelColorType.Question);
-            Location = Filesystem.NeutralizePath(Location);
+            Location = FilesystemTools.NeutralizePath(Location);
             ConsoleWrapper.CursorVisible = false;
             if (!Checking.FileExists(Location))
                 SaveSettings(Location);
@@ -109,7 +109,7 @@ namespace KS.Kernel.Configuration.Settings
         internal static void LoadSettingsFrom(BaseKernelConfig config)
         {
             string Location = InfoBoxColor.WriteInfoBoxInputKernelColor(Translate.DoTranslation("Where do you want to load the current kernel settings from?"), KernelColorType.Question);
-            Location = Filesystem.NeutralizePath(Location);
+            Location = FilesystemTools.NeutralizePath(Location);
             if (Checking.FileExists(Location))
             {
                 try

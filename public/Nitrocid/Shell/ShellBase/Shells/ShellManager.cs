@@ -436,7 +436,7 @@ namespace KS.Shell.ShellBase.Shells
                     bool existsInPath = PathLookupTools.FileExistsInPath(commandName, ref TargetFile);
                     bool pathValid = Parsing.TryParsePath(TargetFile);
                     if (!existsInPath || string.IsNullOrEmpty(TargetFile))
-                        TargetFile = Filesystem.NeutralizePath(commandName);
+                        TargetFile = FilesystemTools.NeutralizePath(commandName);
                     if (pathValid)
                         TargetFileName = Path.GetFileName(TargetFile);
                     DebugWriter.WriteDebug(DebugLevel.I, "Finished finalCommand: {0}", commandName);
@@ -657,7 +657,7 @@ namespace KS.Shell.ShellBase.Shells
                 {
                     bool isOverwrite = !outputFile.StartsWith(" >>> ");
                     string OutputFileName = outputFile[(outputFile.LastIndexOf(">") + 2)..];
-                    string OutputFilePath = Filesystem.NeutralizePath(OutputFileName);
+                    string OutputFilePath = FilesystemTools.NeutralizePath(OutputFileName);
                     DebugWriter.WriteDebug(DebugLevel.I, "Output redirection found for file {1} with overwrite mode [{0}].", isOverwrite, OutputFilePath);
                     if (isOverwrite)
                         Manipulation.ClearFile(OutputFilePath);
@@ -687,7 +687,7 @@ namespace KS.Shell.ShellBase.Shells
             if (!string.IsNullOrWhiteSpace(OutputPath))
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Optional output redirection found using OutputPath ({0}).", OutputPath);
-                OutputPath = Filesystem.NeutralizePath(OutputPath);
+                OutputPath = FilesystemTools.NeutralizePath(OutputPath);
                 DriverHandler.BeginLocalDriver<IConsoleDriver>("File");
                 ((File)DriverHandler.CurrentConsoleDriverLocal).PathToWrite = OutputPath;
             }

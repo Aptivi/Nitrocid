@@ -356,7 +356,7 @@ namespace KS.Modifications
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         public static void AddModToBlacklist(string ModFilename)
         {
-            ModFilename = Filesystem.NeutralizePath(ModFilename, Paths.GetKernelPath(KernelPathType.Mods));
+            ModFilename = FilesystemTools.NeutralizePath(ModFilename, Paths.GetKernelPath(KernelPathType.Mods));
             DebugWriter.WriteDebug(DebugLevel.I, "Adding {0} to the mod blacklist...", ModFilename);
             var BlacklistedMods = GetBlacklistedMods();
             if (!BlacklistedMods.Contains(ModFilename))
@@ -374,7 +374,7 @@ namespace KS.Modifications
         /// <param name="ModFilename">Mod filename found in KSMods</param>
         public static void RemoveModFromBlacklist(string ModFilename)
         {
-            ModFilename = Filesystem.NeutralizePath(ModFilename, Paths.GetKernelPath(KernelPathType.Mods));
+            ModFilename = FilesystemTools.NeutralizePath(ModFilename, Paths.GetKernelPath(KernelPathType.Mods));
             DebugWriter.WriteDebug(DebugLevel.I, "Removing {0} from the mod blacklist...", ModFilename);
             var BlacklistedMods = GetBlacklistedMods();
             if (BlacklistedMods.Contains(ModFilename))
@@ -397,10 +397,10 @@ namespace KS.Modifications
         /// <param name="ModPath">Target mod path</param>
         public static void InstallMod(string ModPath)
         {
-            string TargetModPath = Filesystem.NeutralizePath(Path.GetFileName(ModPath), Paths.GetKernelPath(KernelPathType.Mods));
+            string TargetModPath = FilesystemTools.NeutralizePath(Path.GetFileName(ModPath), Paths.GetKernelPath(KernelPathType.Mods));
             string ModName = Path.GetFileNameWithoutExtension(ModPath);
             IMod Script;
-            ModPath = Filesystem.NeutralizePath(ModPath, true);
+            ModPath = FilesystemTools.NeutralizePath(ModPath, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Installing mod {0} to {1}...", ModPath, TargetModPath);
 
             // Check for upgrade
@@ -474,7 +474,7 @@ namespace KS.Modifications
         /// <param name="ModPath">Target mod path found in KSMods</param>
         public static void UninstallMod(string ModPath)
         {
-            string TargetModPath = Filesystem.NeutralizePath(ModPath, Paths.GetKernelPath(KernelPathType.Mods), true);
+            string TargetModPath = FilesystemTools.NeutralizePath(ModPath, Paths.GetKernelPath(KernelPathType.Mods), true);
             string ModName = Path.GetFileNameWithoutExtension(ModPath);
             DebugWriter.WriteDebug(DebugLevel.I, "Uninstalling mod {0}...", TargetModPath);
             try

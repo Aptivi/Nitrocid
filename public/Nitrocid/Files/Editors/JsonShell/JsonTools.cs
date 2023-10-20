@@ -40,7 +40,7 @@ namespace KS.Files.Editors.JsonShell
         /// <summary>
         /// Opens the JSON file
         /// </summary>
-        /// <param name="File">Target file. We recommend you to use <see cref="Filesystem.NeutralizePath(string, bool)"></see> to neutralize path.</param>
+        /// <param name="File">Target file. We recommend you to use <see cref="FilesystemTools.NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
         public static bool JsonShell_OpenJsonFile(string File)
         {
@@ -321,14 +321,14 @@ namespace KS.Files.Editors.JsonShell
         /// <summary>
         /// Beautifies the JSON text contained in the file.
         /// </summary>
-        /// <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="Filesystem.NeutralizePath(string, bool)"/>.</param>
+        /// <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="FilesystemTools.NeutralizePath(string, bool)"/>.</param>
         /// <returns>Beautified JSON</returns>
         /// <exception cref="FileNotFoundException"></exception>
         public static string BeautifyJson(string JsonFile)
         {
             // Neutralize the file path
             DebugWriter.WriteDebug(DebugLevel.I, "Neutralizing json file {0}...", JsonFile);
-            JsonFile = Filesystem.NeutralizePath(JsonFile, true);
+            JsonFile = FilesystemTools.NeutralizePath(JsonFile, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Got json file {0}...", JsonFile);
 
             // Try to beautify JSON
@@ -356,14 +356,14 @@ namespace KS.Files.Editors.JsonShell
         /// <summary>
         /// Minifies the JSON text contained in the file.
         /// </summary>
-        /// <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="Filesystem.NeutralizePath(string, bool)"/>.</param>
+        /// <param name="JsonFile">Path to JSON file. It's automatically neutralized using <see cref="FilesystemTools.NeutralizePath(string, bool)"/>.</param>
         /// <returns>Minified JSON</returns>
         /// <exception cref="FileNotFoundException"></exception>
         public static string MinifyJson(string JsonFile)
         {
             // Neutralize the file path
             DebugWriter.WriteDebug(DebugLevel.I, "Neutralizing json file {0}...", JsonFile);
-            JsonFile = Filesystem.NeutralizePath(JsonFile, true);
+            JsonFile = FilesystemTools.NeutralizePath(JsonFile, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Got json file {0}...", JsonFile);
 
             // Try to minify JSON

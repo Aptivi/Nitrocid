@@ -17,7 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Files.Folders;
-using FS = KS.Files.Filesystem;
+using FS = KS.Files.FilesystemTools;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;

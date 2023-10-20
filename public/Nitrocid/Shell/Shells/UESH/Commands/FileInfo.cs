@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH.Commands
         {
             foreach (string FileName in parameters.ArgumentsList)
             {
-                string FilePath = Filesystem.NeutralizePath(FileName);
+                string FilePath = FilesystemTools.NeutralizePath(FileName);
                 DebugWriter.WriteDebug(DebugLevel.I, "Neutralized file path: {0} ({1})", FilePath, Checking.FileExists(FilePath));
                 SeparatorWriterColor.WriteSeparator(FileName, true);
                 if (Checking.FileExists(FilePath))
@@ -55,15 +55,15 @@ namespace KS.Shell.Shells.UESH.Commands
 
                     // General info
                     TextWriterColor.Write(Translate.DoTranslation("Name: {0}"), FileInfo.Name);
-                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), Filesystem.NeutralizePath(FileInfo.FullName));
+                    TextWriterColor.Write(Translate.DoTranslation("Full name: {0}"), FilesystemTools.NeutralizePath(FileInfo.FullName));
                     TextWriterColor.Write(Translate.DoTranslation("File size: {0}"), FileInfo.Length.SizeString());
                     TextWriterColor.Write(Translate.DoTranslation("Creation time: {0}"), TimeDateRenderers.Render(FileInfo.CreationTime));
                     TextWriterColor.Write(Translate.DoTranslation("Last access time: {0}"), TimeDateRenderers.Render(FileInfo.LastAccessTime));
                     TextWriterColor.Write(Translate.DoTranslation("Last write time: {0}"), TimeDateRenderers.Render(FileInfo.LastWriteTime));
                     TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), FileInfo.Attributes);
-                    TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), Filesystem.NeutralizePath(FileInfo.DirectoryName));
+                    TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), FilesystemTools.NeutralizePath(FileInfo.DirectoryName));
                     TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", $"{Parsing.IsBinaryFile(FileInfo.FullName)}");
-                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(Filesystem.NeutralizePath(FileInfo.FullName)));
+                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(FilesystemTools.NeutralizePath(FileInfo.FullName)));
                     if (!Parsing.IsBinaryFile(FileInfo.FullName))
                     {
                         var Style = LineEndingsTools.GetLineEndingFromFile(FilePath);

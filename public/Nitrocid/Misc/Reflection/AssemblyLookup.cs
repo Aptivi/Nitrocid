@@ -41,7 +41,7 @@ namespace KS.Misc.Reflection
         /// <param name="Path">Path to the dependencies</param>
         public static void AddPathToAssemblySearchPath(string Path)
         {
-            Path = Filesystem.NeutralizePath(Path);
+            Path = FilesystemTools.NeutralizePath(Path);
 
             // Add the path to the search path
             if (!AssemblyLookupPaths.Contains(Path))
@@ -57,7 +57,7 @@ namespace KS.Misc.Reflection
         /// <param name="Path">Path to the dependencies</param>
         public static void RemovePathFromAssemblySearchPath(string Path)
         {
-            Path = Filesystem.NeutralizePath(Path);
+            Path = FilesystemTools.NeutralizePath(Path);
 
             // Remove the path from the search path
             if (AssemblyLookupPaths.Contains(Path))

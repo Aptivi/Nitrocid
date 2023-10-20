@@ -733,8 +733,8 @@ namespace KS.Kernel.Configuration.Instances
             }
             set
             {
-                Filesystem.ThrowOnInvalidPath(value);
-                value = Filesystem.NeutralizePath(value);
+                FilesystemTools.ThrowOnInvalidPath(value);
+                value = FilesystemTools.NeutralizePath(value);
                 if (Checking.FolderExists(value))
                 {
                     CurrentDirectory._CurrentDirectory = value;

@@ -191,7 +191,7 @@ namespace KS.Network.FTP.Filesystem
             {
                 string targetDir;
                 targetDir = $"{FTPShellCommon.FtpCurrentDirectory}/{Directory}";
-                Files.Filesystem.ThrowOnInvalidPath(targetDir);
+                Files.FilesystemTools.ThrowOnInvalidPath(targetDir);
 
                 // Check if folder exists
                 if (Checking.FolderExists(targetDir))

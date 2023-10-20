@@ -66,7 +66,7 @@ namespace KS.Shell.Shells.UESH.Commands
                             if (parameters.ArgumentsList.Length > 1)
                             {
                                 TargetMod = parameters.ArgumentsList[1];
-                                TargetModPath = Filesystem.NeutralizePath(TargetMod, Paths.GetKernelPath(KernelPathType.Mods));
+                                TargetModPath = FilesystemTools.NeutralizePath(TargetMod, Paths.GetKernelPath(KernelPathType.Mods));
                                 if (!(Parsing.TryParsePath(TargetModPath) && Checking.FileExists(TargetModPath)))
                                 {
                                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Mod not found or file has invalid characters."), true, KernelColorType.Error);

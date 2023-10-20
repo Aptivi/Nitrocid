@@ -132,7 +132,7 @@ namespace KS.Network.SSH
                         // Ask for location
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter the location of the private key for {0}. Write \"q\" to finish adding keys: "), false, KernelColorType.Input, Username);
                         PrivateKeyFile = Input.ReadLine();
-                        PrivateKeyFile = Filesystem.NeutralizePath(PrivateKeyFile);
+                        PrivateKeyFile = FilesystemTools.NeutralizePath(PrivateKeyFile);
                         if (Checking.FileExists(PrivateKeyFile))
                         {
                             // Ask for passphrase

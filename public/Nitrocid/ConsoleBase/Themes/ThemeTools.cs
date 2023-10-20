@@ -136,7 +136,7 @@ namespace KS.ConsoleBase.Themes
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Theme file name: {0}", ThemeFile);
-                ThemeFile = Filesystem.NeutralizePath(ThemeFile, true);
+                ThemeFile = FilesystemTools.NeutralizePath(ThemeFile, true);
                 DebugWriter.WriteDebug(DebugLevel.I, "Theme file path: {0}", ThemeFile);
 
                 // Populate theme info

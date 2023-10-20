@@ -171,7 +171,7 @@ namespace Nitrocid.Tests.Files
         public void TestRemoveDirectory()
         {
             Config.MainConfig.CurrentDir = InitTest.PathToTestSlotFolder;
-            string TargetPath = Filesystem.NeutralizePath("TestDir2");
+            string TargetPath = FilesystemTools.NeutralizePath("TestDir2");
             Should.NotThrow(() => Removing.RemoveDirectory(TargetPath));
         }
 
@@ -398,7 +398,7 @@ namespace Nitrocid.Tests.Files
         public void TestAddToPathLookupNeutralized()
         {
             string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/bin";
-            string NeutralizedPath = Filesystem.NeutralizePath(Path);
+            string NeutralizedPath = FilesystemTools.NeutralizePath(Path);
             Should.NotThrow(() => PathLookupTools.AddToPathLookup(NeutralizedPath));
             PathLookupTools.PathsToLookup.ShouldContain(NeutralizedPath);
         }
@@ -411,7 +411,7 @@ namespace Nitrocid.Tests.Files
         public void TestAddToPathLookupNonNeutralized()
         {
             string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "bin";
-            string NeutralizedPath = Filesystem.NeutralizePath(Path);
+            string NeutralizedPath = FilesystemTools.NeutralizePath(Path);
             Should.NotThrow(() => PathLookupTools.AddToPathLookup(Path));
             PathLookupTools.PathsToLookup.ShouldContain(NeutralizedPath);
         }
@@ -425,7 +425,7 @@ namespace Nitrocid.Tests.Files
         {
             string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/bin";
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
-            string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
+            string NeutralizedPath = FilesystemTools.NeutralizePath(Path, RootPath);
             Should.NotThrow(() => PathLookupTools.AddToPathLookup(NeutralizedPath, RootPath));
             PathLookupTools.PathsToLookup.ShouldContain(NeutralizedPath);
         }
@@ -439,7 +439,7 @@ namespace Nitrocid.Tests.Files
         {
             string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "bin";
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
-            string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
+            string NeutralizedPath = FilesystemTools.NeutralizePath(Path, RootPath);
             Should.NotThrow(() => PathLookupTools.AddToPathLookup(Path, RootPath));
             PathLookupTools.PathsToLookup.ShouldContain(NeutralizedPath);
         }
@@ -452,7 +452,7 @@ namespace Nitrocid.Tests.Files
         public void TestRemoveFromPathLookupNeutralized()
         {
             string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/bin";
-            string NeutralizedPath = Filesystem.NeutralizePath(Path);
+            string NeutralizedPath = FilesystemTools.NeutralizePath(Path);
             Should.NotThrow(() => PathLookupTools.RemoveFromPathLookup(NeutralizedPath));
         }
 
@@ -464,7 +464,7 @@ namespace Nitrocid.Tests.Files
         public void TestRemoveFromPathLookupNonNeutralized()
         {
             string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "bin";
-            string NeutralizedPath = Filesystem.NeutralizePath(Path);
+            string NeutralizedPath = FilesystemTools.NeutralizePath(Path);
             Should.NotThrow(() => PathLookupTools.RemoveFromPathLookup(Path));
         }
 
@@ -477,7 +477,7 @@ namespace Nitrocid.Tests.Files
         {
             string Path = KernelPlatform.IsOnWindows() ? @"C:\Program Files\dotnet" : "/usr/bin";
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
-            string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
+            string NeutralizedPath = FilesystemTools.NeutralizePath(Path, RootPath);
             Should.NotThrow(() => PathLookupTools.RemoveFromPathLookup(NeutralizedPath, RootPath));
         }
 
@@ -490,7 +490,7 @@ namespace Nitrocid.Tests.Files
         {
             string Path = KernelPlatform.IsOnWindows() ? "dotnet" : "usr/bin";
             string RootPath = KernelPlatform.IsOnWindows() ? @"C:\Program Files" : "/";
-            string NeutralizedPath = Filesystem.NeutralizePath(Path, RootPath);
+            string NeutralizedPath = FilesystemTools.NeutralizePath(Path, RootPath);
             Should.NotThrow(() => PathLookupTools.RemoveFromPathLookup(Path, RootPath));
             PathLookupTools.GetPathList().ShouldNotContain(NeutralizedPath);
         }

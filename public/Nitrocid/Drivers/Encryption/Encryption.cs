@@ -18,7 +18,7 @@
 
 using System.IO;
 using KS.Kernel.Debugging;
-using FS = KS.Files.Filesystem;
+using FS = KS.Files.FilesystemTools;
 
 namespace KS.Drivers.Encryption
 {

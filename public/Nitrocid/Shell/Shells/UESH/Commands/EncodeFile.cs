@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string algorithm = parameters.ArgumentsList.Length > 1 ? parameters.ArgumentsList[1] : DriverHandler.CurrentEncodingDriverLocal.DriverName;
-            string path = Filesystem.NeutralizePath(parameters.ArgumentsList[0]);
+            string path = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string keyValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-key");
             string ivValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-iv");
             var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);

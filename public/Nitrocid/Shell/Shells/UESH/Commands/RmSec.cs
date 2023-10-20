@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             foreach (string Path in parameters.ArgumentsList)
             {
-                string NeutPath = Filesystem.NeutralizePath(Path);
+                string NeutPath = FilesystemTools.NeutralizePath(Path);
                 Removing.RemoveFileOrDir(NeutPath, true);
             }
             return 0;

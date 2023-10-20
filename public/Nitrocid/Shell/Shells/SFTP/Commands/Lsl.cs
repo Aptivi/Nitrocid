@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.SFTP.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || Listing.ShowFileDetailsList;
-            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || Filesystem.SuppressUnauthorizedMessages;
+            bool SuppressUnauthorizedMessage = parameters.SwitchesList.Contains("-suppressmessages") || FilesystemTools.SuppressUnauthorizedMessages;
             if (parameters.ArgumentsList?.Length == 0)
             {
                 Listing.List(SFTPShellCommon.SFTPCurrDirect, ShowFileDetails, SuppressUnauthorizedMessage);
@@ -63,7 +63,7 @@ namespace KS.Shell.Shells.SFTP.Commands
             {
                 foreach (string Directory in parameters.ArgumentsList)
                 {
-                    string direct = Filesystem.NeutralizePath(Directory);
+                    string direct = FilesystemTools.NeutralizePath(Directory);
                     Listing.List(direct, ShowFileDetails, SuppressUnauthorizedMessage);
                 }
             }

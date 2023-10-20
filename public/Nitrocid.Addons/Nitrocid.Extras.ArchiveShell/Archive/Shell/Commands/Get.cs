@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
                 if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-absolute"))
                     Absolute = true;
                 else
-                    Where = Filesystem.NeutralizePath(parameters.ArgumentsList[1]);
+                    Where = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
             }
             ArchiveTools.ExtractFileEntry(parameters.ArgumentsList[0], Where, Absolute);
             return 0;

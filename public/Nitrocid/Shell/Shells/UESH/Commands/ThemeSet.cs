@@ -81,7 +81,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 }
 
                 // Load the theme to the instance
-                ThemePath = Filesystem.NeutralizePath(selectedTheme);
+                ThemePath = FilesystemTools.NeutralizePath(selectedTheme);
                 ThemeInfo Theme;
                 if (Checking.FileExists(ThemePath))
                 {
