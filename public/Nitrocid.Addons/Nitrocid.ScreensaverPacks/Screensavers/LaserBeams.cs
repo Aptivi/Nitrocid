@@ -317,11 +317,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Now, draw a laser beam
                 double laserPosThresholdX = -(laserEndPosX - laserStartPosX) / (double)ConsoleWrapper.WindowWidth;
                 double laserPosThresholdY = -(laserEndPosY - laserStartPosY) / ((double)ConsoleWrapper.WindowHeight * 4);
-                for (int j = 0; j < ConsoleWrapper.WindowWidth; j++)
+                int currentPosX = laserStartPosX;
+                int currentPosY = laserStartPosY;
+                int step = 0;
+                while (currentPosX > 0 && currentPosY > 0)
                 {
-                    int currentPosX = (int)(laserStartPosX - (laserPosThresholdX * j));
-                    int currentPosY = (int)(laserStartPosY - (laserPosThresholdY * j));
+                    currentPosX = (int)(laserStartPosX - (laserPosThresholdX * step));
+                    currentPosY = (int)(laserStartPosY - (laserPosThresholdY * step));
                     laserBeamsBuilder.Append($"{colorStorage.VTSequenceBackground}{CsiSequences.GenerateCsiCursorPosition(currentPosX + 1, currentPosY + 1)} ");
+                    step++;
                 }
             }
 
