@@ -292,6 +292,7 @@ namespace KS.Kernel.Starting
                 SplashReport._Progress = 0;
                 SplashReport._ProgressText = "";
                 SplashReport._KernelBooted = false;
+                JournalManager.journalEntries.Clear();
                 DebugWriter.WriteDebug(DebugLevel.I, "General variables reset");
                 SplashReport.ReportProgress(Translate.DoTranslation("General variables reset"));
 

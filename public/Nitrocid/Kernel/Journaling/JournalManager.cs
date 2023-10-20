@@ -26,6 +26,7 @@ using KS.Misc.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
+using System.Collections.Generic;
 
 namespace KS.Kernel.Journaling
 {
@@ -35,6 +36,7 @@ namespace KS.Kernel.Journaling
     public static class JournalManager
     {
 
+        internal static List<JournalEntry> journalEntries = new();
         internal static string JournalPath = "";
         private static readonly object journalLock = new();
 
@@ -62,7 +64,7 @@ namespace KS.Kernel.Journaling
             {
                 // If we don't have the target journal file, create it
                 if (!Checking.FileExists(JournalPath))
-                    Making.MakeJsonFile(JournalPath, false, true);
+                    SaveJournals();
                 DebugWriter.WriteDebug(DebugLevel.I, "Opening journal {0}...", JournalPath);
 
                 // Make a new journal entry and store everything in it
@@ -76,13 +78,11 @@ namespace KS.Kernel.Journaling
                     message = Message,
                 };
 
-                // Open the journal and add the new journal entry to it
-                var JournalFileObject = JArray.Parse(Reading.ReadContentsText(JournalPath));
-                var journalObject = JObject.FromObject(JournalEntry);
-                JournalFileObject.Add(journalObject);
+                // Add the new journal entry to it
+                journalEntries.Add(JournalEntry);
 
                 // Save the journal with the changes in it
-                Writing.WriteContentsText(JournalPath, JsonConvert.SerializeObject(JournalFileObject, Formatting.Indented));
+                SaveJournals();
                 DebugWriter.WriteDebug(DebugLevel.I, "Saved successfully!");
             }
         }
@@ -97,9 +97,8 @@ namespace KS.Kernel.Journaling
             if (string.IsNullOrEmpty(JournalPath))
                 return Array.Empty<JournalEntry>();
 
-            // Now, parse the journal
-            var journals = JsonConvert.DeserializeObject<JournalEntry[]>(Reading.ReadContentsText(JournalPath));
-            return journals;
+            // Now, return the journal entries
+            return journalEntries.ToArray();
         }
 
         /// <summary>
@@ -123,6 +122,12 @@ namespace KS.Kernel.Journaling
                 TextWriterColor.WriteKernelColor(Message, true, KernelColorType.ListEntry);
             }
         }
+
+        /// <summary>
+        /// Saves the journals
+        /// </summary>
+        public static void SaveJournals() =>
+            Writing.WriteContentsText(JournalPath, JsonConvert.SerializeObject(journalEntries, Formatting.Indented));
 
     }
 }
