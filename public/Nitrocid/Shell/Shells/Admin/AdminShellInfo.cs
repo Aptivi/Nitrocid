@@ -25,6 +25,8 @@ using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Admin.Presets;
+using KS.Arguments;
+using System.Linq;
 
 namespace KS.Shell.Shells.Admin
 {
@@ -39,6 +41,16 @@ namespace KS.Shell.Shells.Admin
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
+            { "arghelp",
+                new CommandInfo("arghelp", ShellType, /* Localizable */ "Kernel arguments help system",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "argument", () => ArgumentParse.AvailableCMDLineArgs.Keys.ToArray())
+                        }, Array.Empty<SwitchInfo>())
+                    }, new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+            
             { "bootlog",
                 new CommandInfo("bootlog", ShellType, /* Localizable */ "Prints the boot log",
                     new[] {
