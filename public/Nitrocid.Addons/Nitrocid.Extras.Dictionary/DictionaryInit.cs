@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Dictionary
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "word"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new DictCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
         };

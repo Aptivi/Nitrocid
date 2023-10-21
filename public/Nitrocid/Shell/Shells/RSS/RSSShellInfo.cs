@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.RSS
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "feednum", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RSS_ArticleInfoCommand())
             },
 
@@ -90,7 +90,7 @@ namespace KS.Shell.Shells.RSS
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "feednum", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RSS_ReadCommand())
             },
 

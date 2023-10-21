@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "key"),
                             new CommandArgumentPart(true, "value")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_AddHeaderCommand())
             },
 
@@ -63,7 +63,7 @@ namespace KS.Shell.Shells.HTTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_DeleteCommand())
             },
 
@@ -81,7 +81,7 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "key"),
                             new CommandArgumentPart(true, "value")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_EditHeaderCommand())
             },
 
@@ -91,7 +91,7 @@ namespace KS.Shell.Shells.HTTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_GetCommand(), CommandFlags.Wrappable)
             },
 
@@ -101,7 +101,7 @@ namespace KS.Shell.Shells.HTTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "request")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_GetStringCommand(), CommandFlags.Wrappable)
             },
 
@@ -119,7 +119,7 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "pathtofile")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_PutCommand(), CommandFlags.Wrappable)
             },
 
@@ -130,7 +130,7 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "string")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_PutStringCommand(), CommandFlags.Wrappable)
             },
 
@@ -141,7 +141,7 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "pathtofile")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_PostCommand(), CommandFlags.Wrappable)
             },
 
@@ -152,7 +152,7 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "string")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_PostStringCommand(), CommandFlags.Wrappable)
             },
 
@@ -162,7 +162,7 @@ namespace KS.Shell.Shells.HTTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "key")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_RmHeaderCommand())
             },
 
@@ -172,7 +172,7 @@ namespace KS.Shell.Shells.HTTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "userAgent")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HTTP_SetAgentCommand())
             },
         };

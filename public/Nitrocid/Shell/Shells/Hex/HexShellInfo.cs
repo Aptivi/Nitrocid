@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.Hex
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "byte")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HexEdit_AddByteCommand())
             },
             
@@ -69,7 +69,7 @@ namespace KS.Shell.Shells.Hex
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "bytenumber", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HexEdit_DelByteCommand())
             },
             
@@ -80,7 +80,7 @@ namespace KS.Shell.Shells.Hex
                         {
                             new CommandArgumentPart(true, "startbyte", null, true),
                             new CommandArgumentPart(false, "endbyte", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HexEdit_DelBytesCommand())
             },
             
@@ -98,7 +98,7 @@ namespace KS.Shell.Shells.Hex
                         {
                             new CommandArgumentPart(false, "startbyte", null, true),
                             new CommandArgumentPart(false, "endbyte", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HexEdit_PrintCommand(), CommandFlags.Wrappable)
             },
             
@@ -110,7 +110,7 @@ namespace KS.Shell.Shells.Hex
                             new CommandArgumentPart(true, "byte"),
                             new CommandArgumentPart(false, "startbyte", null, true),
                             new CommandArgumentPart(false, "endbyte", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HexEdit_QueryByteCommand(), CommandFlags.Wrappable)
             },
             
@@ -121,7 +121,7 @@ namespace KS.Shell.Shells.Hex
                         {
                             new CommandArgumentPart(true, "byte"),
                             new CommandArgumentPart(true, "replacebyte")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HexEdit_ReplaceCommand())
             },
             

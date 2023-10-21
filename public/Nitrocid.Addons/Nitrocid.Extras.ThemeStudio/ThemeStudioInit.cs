@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.ThemeStudio
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "themeName"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new MkThemeCommand())
             },
         };

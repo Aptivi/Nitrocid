@@ -107,7 +107,7 @@ namespace KS.Shell.ShellBase.Shells
                         {
                             new CommandArgumentPart(true, "process"),
                             new CommandArgumentPart(false, "args")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ExecUnifiedCommand())
             },
 
@@ -175,7 +175,7 @@ namespace KS.Shell.ShellBase.Shells
                         {
                             new CommandArgumentPart(true, "times", null, true),
                             new CommandArgumentPart(false, "command"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RepeatUnifiedCommand())
             },
 
@@ -199,7 +199,7 @@ namespace KS.Shell.ShellBase.Shells
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "command", () => CommandExecutor.GetWrappableCommands(CurrentShellType))
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new WrapUnifiedCommand())
             }
         };

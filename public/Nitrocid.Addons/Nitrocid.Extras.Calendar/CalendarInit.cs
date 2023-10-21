@@ -85,46 +85,46 @@ namespace Nitrocid.Extras.Calendar
                             new CommandArgumentPart(true, "add", null, false, "add"),
                             new CommandArgumentPart(true, "date"),
                             new CommandArgumentPart(true, "title")
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "event", null, false, "event"),
                             new CommandArgumentPart(true, "remove", null, false, "remove"),
                             new CommandArgumentPart(true, "eventId", null, true)
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "event", null, false, "event"),
                             new CommandArgumentPart(true, "list", null, false, "list")
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "event", null, false, "event"),
                             new CommandArgumentPart(true, "saveall", null, false, "saveall")
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "reminder", null, false, "reminder"),
                             new CommandArgumentPart(true, "add", null, false, "add"),
                             new CommandArgumentPart(true, "dateandtime"),
                             new CommandArgumentPart(true, "title")
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "reminder", null, false, "reminder"),
                             new CommandArgumentPart(true, "remove", null, false, "remove"),
                             new CommandArgumentPart(true, "reminderid", null, true)
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "reminder", null, false, "reminder"),
                             new CommandArgumentPart(true, "list", null, false, "list")
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "reminder", null, false, "reminder"),
                             new CommandArgumentPart(true, "saveall", null, false, "saveall")
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                     }, new CalendarCommand())
             },
         };

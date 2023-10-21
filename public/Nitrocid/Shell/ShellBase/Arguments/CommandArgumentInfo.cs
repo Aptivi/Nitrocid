@@ -103,6 +103,48 @@ namespace KS.Shell.ShellBase.Arguments
         /// <summary>
         /// Installs a new instance of the command argument info class
         /// </summary>
+        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
+        public CommandArgumentInfo(bool AcceptsSet)
+            : this(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), AcceptsSet)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="Arguments">Command arguments</param>
+        public CommandArgumentInfo(CommandArgumentPart[] Arguments)
+            : this(Arguments, Array.Empty<SwitchInfo>(), false)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="Arguments">Command arguments</param>
+        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
+        public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet)
+            : this(Arguments, Array.Empty<SwitchInfo>(), AcceptsSet)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="Switches">Command switches</param>
+        public CommandArgumentInfo(SwitchInfo[] Switches)
+            : this(Array.Empty<CommandArgumentPart>(), Switches, false)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
+        /// <param name="Switches">Command switches</param>
+        /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
+        public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet)
+            : this(Array.Empty<CommandArgumentPart>(), Switches, AcceptsSet)
+        { }
+
+        /// <summary>
+        /// Installs a new instance of the command argument info class
+        /// </summary>
         /// <param name="Arguments">Command arguments</param>
         /// <param name="Switches">Command switches</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches)
@@ -115,7 +157,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="Arguments">Command arguments</param>
         /// <param name="Switches">Command switches</param>
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
-        public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet = false)
+        public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet)
         {
             this.Arguments = Arguments;
             if (AcceptsSet)

@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.ArchiveShell
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "archivefile"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ArchiveCommand())
             },
         };

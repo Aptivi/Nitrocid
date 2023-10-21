@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.Admin
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "argument", () => ArgumentParse.AvailableCMDLineArgs.Keys.ToArray())
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
             
@@ -89,7 +89,7 @@ namespace KS.Shell.Shells.Admin
             { "lsusers",
                 new CommandInfo("lsusers", ShellType, /* Localizable */ "Lists the users",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), true)
+                        new CommandArgumentInfo(true)
                     }, new LsUsersCommand())
             },
 
@@ -101,7 +101,7 @@ namespace KS.Shell.Shells.Admin
                             new CommandArgumentPart(true, "user"),
                             new CommandArgumentPart(true, "admin/anonymous/disabled"),
                             new CommandArgumentPart(true, "false/true")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new UserFlagCommand())
             },
 
@@ -111,7 +111,7 @@ namespace KS.Shell.Shells.Admin
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "user")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new UserInfoCommand())
             },
 
@@ -122,7 +122,7 @@ namespace KS.Shell.Shells.Admin
                         {
                             new CommandArgumentPart(true, "user"),
                             new CommandArgumentPart(true, "lang/clear")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new UserLangCommand())
             },
         };

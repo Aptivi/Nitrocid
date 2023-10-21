@@ -48,7 +48,7 @@ namespace Nitrocid.Extras.Amusements
             { "hangman",
                 new CommandInfo("hangman", ShellType.Shell, /* Localizable */ "Starts the Hangman game",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
+                        new CommandArgumentInfo(new[] {
                             new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", new SwitchOptions()
                             {
                                 ConflictsWith = new string[] { "practice" },
@@ -108,7 +108,7 @@ namespace Nitrocid.Extras.Amusements
             { "speedpress",
                 new CommandInfo("speedpress", ShellType.Shell, /* Localizable */ "See if you can press a key on time",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
+                        new CommandArgumentInfo(new[] {
                             new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", new SwitchOptions()
                             {
                                 ConflictsWith = new string[] { "m", "h", "v", "c" },
@@ -141,7 +141,7 @@ namespace Nitrocid.Extras.Amusements
             { "wordle",
                 new CommandInfo("wordle", ShellType.Shell, /* Localizable */ "The Wordle game simulator",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
+                        new CommandArgumentInfo(new[] {
                             new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
                             {
                                 AcceptsValues = false

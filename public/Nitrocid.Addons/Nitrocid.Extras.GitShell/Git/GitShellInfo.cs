@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "branch")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Git_CheckoutCommand())
             },
 
@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "summary")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Git_CommitCommand())
             },
 
@@ -65,7 +65,7 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "remote")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Git_FetchCommand())
             },
             
@@ -107,7 +107,7 @@ namespace Nitrocid.Extras.GitShell.Git
             { "reset",
                 new CommandInfo("reset", ShellType, /* Localizable */ "Resets the local repository",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                        new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("soft", /* Localizable */ "Does a soft reset", new SwitchOptions()
                             {
@@ -135,7 +135,7 @@ namespace Nitrocid.Extras.GitShell.Git
                         {
                             new CommandArgumentPart(true, "email"),
                             new CommandArgumentPart(true, "username"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Git_SetIdCommand())
             },
 
@@ -145,7 +145,7 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "unstagedFile")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Git_StageCommand())
             },
             
@@ -169,7 +169,7 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "stagedFile")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Git_UnstageCommand())
             },
 

@@ -49,7 +49,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "groupName")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new AddGroupCommand(), CommandFlags.Strict)
             },
             
@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "username"),
                             new CommandArgumentPart(false, "password"),
                             new CommandArgumentPart(false, "confirm"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new AddUserCommand(), CommandFlags.Strict)
             },
             
@@ -72,7 +72,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "username"),
                             new CommandArgumentPart(true, "group"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new AddUserToGroupCommand(), CommandFlags.Strict)
             },
             
@@ -92,7 +92,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, $"{string.Join("/", Enum.GetNames(typeof(ShellType)))}"),
                             new CommandArgumentPart(true, "alias"),
                             new CommandArgumentPart(false, "cmd"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new AliasCommand(), CommandFlags.Strict)
             },
             
@@ -109,7 +109,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "ipaddress"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new BlockDbgDevCommand(), CommandFlags.Strict)
             },
             
@@ -121,7 +121,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "targetdir"),
                             new CommandArgumentPart(true, "pattern"),
                             new CommandArgumentPart(false, "newname"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new BulkRenameCommand())
             },
             
@@ -153,7 +153,7 @@ namespace KS.Shell.Shells.UESH
             { "cdir",
                 new CommandInfo("cdir", ShellType, /* Localizable */ "Gets the current directory",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), true)
+                        new CommandArgumentInfo(true)
                     }, new CDirCommand())
             },
 
@@ -165,7 +165,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(true, "add/rem"),
                             new CommandArgumentPart(true, "Normal/ReadOnly/Hidden/Archive"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ChAttrCommand())
             },
             
@@ -175,7 +175,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory/.."),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ChDirCommand())
             },
             
@@ -185,7 +185,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "hostname"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ChHostNameCommand(), CommandFlags.Strict)
             },
             
@@ -231,7 +231,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "message"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ChMalCommand(), CommandFlags.Strict)
             },
             
@@ -241,7 +241,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "message"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ChMotdCommand(), CommandFlags.Strict)
             },
             
@@ -298,7 +298,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "UserPass"),
                             new CommandArgumentPart(true, "newPass"),
                             new CommandArgumentPart(true, "confirm"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ChPwdCommand(), CommandFlags.Strict)
             },
             
@@ -309,7 +309,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "oldUserName", () => UserManagement.ListAllUsers().ToArray()),
                             new CommandArgumentPart(true, "newUserName"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ChUsrNameCommand(), CommandFlags.Strict)
             },
             
@@ -341,7 +341,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "input"),
                             new CommandArgumentPart(true, "input2"),
                             new CommandArgumentPart(false, "input3 ..."),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new CombineCommand())
             },
             
@@ -382,14 +382,14 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "source"),
                             new CommandArgumentPart(true, "target"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new CopyCommand())
             },
             
             { "date",
                 new CommandInfo("date", ShellType, /* Localizable */ "Shows date and time",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
+                        new CommandArgumentInfo(new[] {
                             new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
                             {
                                 ConflictsWith = new[] { "time", "full" },
@@ -468,7 +468,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new DirInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -478,7 +478,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "ip"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new DisconnDbgDevCommand(), CommandFlags.Strict)
             },
 
@@ -498,7 +498,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "notificationNumber", null, true),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new DismissNotifCommand())
             },
             
@@ -601,7 +601,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new FileInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -658,7 +658,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "server"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new FtpCommand())
             },
             
@@ -691,7 +691,7 @@ namespace KS.Shell.Shells.UESH
             { "host",
                 new CommandInfo("host", ShellType, /* Localizable */ "Gets the current host name",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), true)
+                        new CommandArgumentInfo(true)
                     }, new HostCommand())
             },
             
@@ -708,7 +708,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "HardwareType", () => new[] { "HDD", "CPU", "GPU", "RAM", "all" })
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
             
@@ -719,7 +719,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "ueshExpression"),
                             new CommandArgumentPart(true, "command"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new IfCommand())
             },
             
@@ -769,11 +769,11 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "reload/load/unload"),
                             new CommandArgumentPart(true, "customlanguagename", () => LanguageManager.CustomLanguages.Keys.ToArray()),
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "list/reloadall"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new LangManCommand(), CommandFlags.Strict)
             },
             
@@ -858,7 +858,7 @@ namespace KS.Shell.Shells.UESH
             { "lsdisks",
                 new CommandInfo("lsdisks", ShellType, /* Localizable */ "Lists all the disks",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), true)
+                        new CommandArgumentInfo(true)
                     }, new LsDisksCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -882,7 +882,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "emailAddress"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new MailCommand())
             },
             
@@ -913,16 +913,16 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "start/stop/info/reload/install/uninstall"),
                             new CommandArgumentPart(true, "modfilename"),
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "list/listparts"),
                             new CommandArgumentPart(true, "modname"),
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "reloadall/stopall/startall"),
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                     }, new ModManCommand(), CommandFlags.Strict)
             },
             
@@ -932,7 +932,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "modname"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ModManualCommand())
             },
             
@@ -943,7 +943,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "source"),
                             new CommandArgumentPart(true, "target"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new MoveCommand())
             },
 
@@ -976,7 +976,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "userName"),
                             new CommandArgumentPart(true, "allow/revoke"),
                             new CommandArgumentPart(true, "perm"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new PermCommand(), CommandFlags.Strict)
             },
             
@@ -988,7 +988,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "groupName"),
                             new CommandArgumentPart(true, "allow/revoke"),
                             new CommandArgumentPart(true, "perm"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new PermGroupCommand(), CommandFlags.Strict)
             },
             
@@ -1011,7 +1011,7 @@ namespace KS.Shell.Shells.UESH
             { "platform",
                 new CommandInfo("platform", ShellType, /* Localizable */ "Gets the current platform",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                        new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("n", /* Localizable */ "Shows the platform name", new SwitchOptions()
                             {
@@ -1069,7 +1069,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "FileName"),
                             new CommandArgumentPart(true, "URL"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new PutCommand())
             },
 
@@ -1087,7 +1087,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(false, "ip"),
                             new CommandArgumentPart(false, "port", null, true),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RebootCommand())
             },
             
@@ -1113,7 +1113,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "address"),
                             new CommandArgumentPart(true, "port", null, true),
                             new CommandArgumentPart(false, "command"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RexecCommand(), CommandFlags.Strict)
             },
             
@@ -1123,7 +1123,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "target"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RmCommand())
             },
             
@@ -1133,7 +1133,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "target"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RmSecCommand())
             },
             
@@ -1143,7 +1143,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "Username"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RmUserCommand(), CommandFlags.Strict)
             },
             
@@ -1153,7 +1153,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "GroupName"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RmGroupCommand(), CommandFlags.Strict)
             },
             
@@ -1164,7 +1164,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "UserName"),
                             new CommandArgumentPart(true, "GroupName"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RmUserFromGroupCommand(), CommandFlags.Strict)
             },
             
@@ -1174,7 +1174,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "feedlink"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new RssCommand())
             },
             
@@ -1191,7 +1191,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "saver"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SaveScreenCommand())
             },
             
@@ -1202,7 +1202,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "Regexp"),
                             new CommandArgumentPart(true, "File"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SearchCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -1213,7 +1213,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "StringEnclosedInDoubleQuotes"),
                             new CommandArgumentPart(true, "File"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SearchWordCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -1236,14 +1236,14 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "saver"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SetSaverCommand(), CommandFlags.Strict)
             },
             
             { "settings",
                 new CommandInfo("settings", ShellType, /* Localizable */ "Changes kernel configuration",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
+                        new CommandArgumentInfo(new[] {
                             new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", new SwitchOptions()
                             {
                                 ConflictsWith = new[] { "splash", "type", "addonsaver" },
@@ -1296,7 +1296,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "server"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SftpCommand())
             },
             
@@ -1337,7 +1337,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(false, "ip"),
                             new CommandArgumentPart(false, "port", null, true),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ShutdownCommand())
             },
             
@@ -1347,7 +1347,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "ms"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SleepCommand())
             },
             
@@ -1358,7 +1358,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "address:port"),
                             new CommandArgumentPart(true, "username"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SshellCommand())
             },
             
@@ -1370,7 +1370,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "address:port"),
                             new CommandArgumentPart(true, "username"),
                             new CommandArgumentPart(true, "command"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SshcmdCommand())
             },
 
@@ -1380,7 +1380,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "command"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SudoCommand())
             },
 
@@ -1431,7 +1431,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "theme"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ThemePrevCommand())
             },
             
@@ -1441,7 +1441,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "theme"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ThemeSetCommand())
             },
 
@@ -1451,7 +1451,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "ipaddress"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new UnblockDbgDevCommand(), CommandFlags.Strict)
             },
             
@@ -1497,7 +1497,7 @@ namespace KS.Shell.Shells.UESH
             { "uptime",
                 new CommandInfo("uptime", ShellType, /* Localizable */ "Shows the kernel uptime",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), true)
+                        new CommandArgumentInfo(true)
                     }, new UptimeCommand())
             },
             
@@ -1517,14 +1517,14 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "calculatedhash"),
                             new CommandArgumentPart(true, "hashfile/expectedhash"),
                             new CommandArgumentPart(true, "file"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new VerifyCommand())
             },
 
             { "version",
                 new CommandInfo("version", ShellType, /* Localizable */ "Gets the current version",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[]
+                        new CommandArgumentInfo(new[]
                         {
                             new SwitchInfo("m", /* Localizable */ "Shows the kernel mod API version", new SwitchOptions()
                             {
@@ -1543,7 +1543,7 @@ namespace KS.Shell.Shells.UESH
             { "whoami",
                 new CommandInfo("whoami", ShellType, /* Localizable */ "Gets the current user name",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), true)
+                        new CommandArgumentInfo(true)
                     }, new WhoamiCommand())
             },
 

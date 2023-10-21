@@ -62,7 +62,7 @@ namespace KS.Arguments
             { "noaltbuffer", new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer",
                 new[] { new CommandArgumentInfo() }, new NoAltBufferArgument()) },
             { "lang", new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language",
-                new[] { new CommandArgumentInfo(new[] { new CommandArgumentPart(true, "lang") }, Array.Empty<SwitchInfo>()) }, new LangArgument()) },
+                new[] { new CommandArgumentInfo(new[] { new CommandArgumentPart(true, "lang") }) }, new LangArgument()) },
             { "attach", new ArgumentInfo("attach", /* Localizable */ "Attaches the Visual Studio debugger to this instance of Nitrocid",
                 new[] { new CommandArgumentInfo() }, new AttachArgument()) },
             { "verbosepreboot", new ArgumentInfo("verbosepreboot", /* Localizable */ "Turns on verbose messages for pre-boot environment",

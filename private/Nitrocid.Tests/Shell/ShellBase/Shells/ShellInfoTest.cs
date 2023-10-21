@@ -19,8 +19,6 @@
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Switches;
-using System;
 using System.Collections.Generic;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Shells
@@ -33,7 +31,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         {
             { "test",
                 new CommandInfo("test", ShellType, "Test command", new[] {
-                    new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>())
+                    new CommandArgumentInfo()
                 }, null)
             },
         };

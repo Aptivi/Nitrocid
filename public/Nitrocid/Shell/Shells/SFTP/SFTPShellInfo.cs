@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.SFTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SFTP_CatCommand(), CommandFlags.Wrappable)
             },
             
@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.SFTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SFTP_CdlCommand())
             },
             
@@ -65,7 +65,7 @@ namespace KS.Shell.Shells.SFTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SFTP_CdrCommand())
             },
             
@@ -75,7 +75,7 @@ namespace KS.Shell.Shells.SFTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SFTP_DelCommand())
             },
             
@@ -92,7 +92,7 @@ namespace KS.Shell.Shells.SFTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SFTP_GetCommand())
             },
             
@@ -136,7 +136,7 @@ namespace KS.Shell.Shells.SFTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new SFTP_PutCommand())
             },
             

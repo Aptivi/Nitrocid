@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.GitShell
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "repoPath")
-                        }, Array.Empty<SwitchInfo>()),
+                        }),
                     }, new GitCommandExec())
             },
         };

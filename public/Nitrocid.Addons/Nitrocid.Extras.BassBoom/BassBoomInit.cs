@@ -85,7 +85,7 @@ namespace Nitrocid.Extras.BassBoom
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "lyric.lrc"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new PlayLyricCommand())
             },
             { "playsound",
@@ -94,7 +94,7 @@ namespace Nitrocid.Extras.BassBoom
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "musicFile"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new PlaySoundCommand())
             },
         };

@@ -45,7 +45,7 @@ namespace KS.Shell.Shells.Mail
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "folder")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_CdCommand())
             },
             
@@ -69,7 +69,7 @@ namespace KS.Shell.Shells.Mail
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "pageNum", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_ListCommand())
             },
             
@@ -79,7 +79,7 @@ namespace KS.Shell.Shells.Mail
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "foldername")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_MkdirCommand())
             },
             
@@ -90,7 +90,7 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "mailId", null, true),
                             new CommandArgumentPart(true, "targetFolder")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_MvCommand())
             },
             
@@ -101,7 +101,7 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "senderName"),
                             new CommandArgumentPart(true, "targetFolder")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_MvAllCommand())
             },
             
@@ -111,7 +111,7 @@ namespace KS.Shell.Shells.Mail
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "mailid", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_ReadCommand())
             },
             
@@ -121,7 +121,7 @@ namespace KS.Shell.Shells.Mail
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "mailid", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_ReadEncCommand())
             },
             
@@ -132,7 +132,7 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "oldFolderName"),
                             new CommandArgumentPart(true, "newFolderName")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_RenCommand())
             },
             
@@ -142,7 +142,7 @@ namespace KS.Shell.Shells.Mail
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "mailid", null, true)
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_RmCommand())
             },
             
@@ -152,7 +152,7 @@ namespace KS.Shell.Shells.Mail
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "sendername")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_RmAllCommand())
             },
             
@@ -162,7 +162,7 @@ namespace KS.Shell.Shells.Mail
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "foldername")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new Mail_RmdirCommand())
             },
             

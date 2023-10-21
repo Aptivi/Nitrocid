@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.Calculators
                         {
                             new CommandArgumentPart(true, "real", null, true),
                             new CommandArgumentPart(true, "imaginary", null, true),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ImaginaryCommand())
             },
         };

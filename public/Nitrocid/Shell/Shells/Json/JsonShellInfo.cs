@@ -118,7 +118,7 @@ namespace KS.Shell.Shells.Json
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "propertyName")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new JsonShell_DelPropertyCommand())
             },
             
@@ -147,7 +147,7 @@ namespace KS.Shell.Shells.Json
             { "jsoninfo",
                 new CommandInfo("jsoninfo", ShellType, /* Localizable */ "Shows information about the JSON file",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
+                        new CommandArgumentInfo(new[] {
                             new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", new SwitchOptions()
                             {
                                 AcceptsValues = false
@@ -166,7 +166,7 @@ namespace KS.Shell.Shells.Json
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "propertyName")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new JsonShell_PrintCommand(), CommandFlags.Wrappable)
             },
             
@@ -203,7 +203,7 @@ namespace KS.Shell.Shells.Json
             { "save",
                 new CommandInfo("save", ShellType, /* Localizable */ "Saves the JSON file",
                     new[] {
-                        new CommandArgumentInfo(Array.Empty<CommandArgumentPart>(), new[] {
+                        new CommandArgumentInfo(new[] {
                             new SwitchInfo("b", /* Localizable */ "Beautified JSON", new SwitchOptions()
                             {
                                 ConflictsWith = new[] { "m" },

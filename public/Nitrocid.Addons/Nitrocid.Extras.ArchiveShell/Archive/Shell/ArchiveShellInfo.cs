@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "directory")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ArchiveShell_ChDirCommand())
             },
 
@@ -62,7 +62,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "archivedirectory")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ArchiveShell_ChADirCommand())
             },
 
@@ -85,7 +85,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "directory")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ArchiveShell_ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
@@ -96,7 +96,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         {
                             new CommandArgumentPart(true, "localfile"),
                             new CommandArgumentPart(false, "where")
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new ArchiveShell_PackCommand())
             },
         };

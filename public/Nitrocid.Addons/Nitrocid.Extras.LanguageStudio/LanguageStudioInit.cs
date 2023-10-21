@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.LanguageStudio
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "pathToTranslations"),
-                        }, Array.Empty<SwitchInfo>())
+                        })
                     }, new MkLangCommand())
             },
         };
