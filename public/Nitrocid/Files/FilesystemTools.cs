@@ -119,7 +119,7 @@ namespace KS.Files
 
             // If strict, checks for existence of file
             if (Strict)
-                if (Checking.FileExists(Path) | Checking.FolderExists(Path))
+                if (Checking.Exists(Path))
                     return Path;
                 else
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Neutralized a non-existent path.") + " {0}", Path);
