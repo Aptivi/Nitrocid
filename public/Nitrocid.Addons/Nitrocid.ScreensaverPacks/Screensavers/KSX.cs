@@ -101,11 +101,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
-                            int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
-                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
-                            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                            FigletWhereColor.WriteFigletWhereColor("X", consoleX, consoleY, true, figFont, col);
+                            CenteredFigletTextColor.WriteCenteredFigletColor(figFont, "X", col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -123,11 +119,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                             // Pulse the X character, alternating between darkGreen and Green colors
                             var figFont = FigletTools.GetFigletFont("banner");
-                            int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
-                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
-                            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                            FigletWhereColor.WriteFigletWhereColor("X", consoleX, consoleY, true, figFont, finalCol);
+                            CenteredFigletTextColor.WriteCenteredFigletColor(figFont, "X", finalCol);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -155,11 +147,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and write the X character using figlet
                             Color col = new(currentR, currentG, currentB);
                             var figFont = FigletTools.GetFigletFont("banner");
-                            int figWidth = FigletTools.GetFigletWidth("X", figFont) / 2;
-                            int figHeight = FigletTools.GetFigletHeight("X", figFont) / 2;
-                            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                            FigletWhereColor.WriteFigletWhereColor("X", consoleX, consoleY, true, figFont, col);
+                            CenteredFigletTextColor.WriteCenteredFigletColor(figFont, "X", col);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);

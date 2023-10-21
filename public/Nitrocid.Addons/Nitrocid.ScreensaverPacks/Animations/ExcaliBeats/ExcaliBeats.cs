@@ -107,10 +107,6 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";
             var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
-            int figWidth = FigletTools.GetFigletWidth(exStr, figFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(exStr, figFont) / 2;
-            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
 
             // Fade out
             for (int CurrentStep = 1; CurrentStep <= maxSteps; CurrentStep++)
@@ -125,7 +121,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
                 var CurrentColorOut = new Color($"{CurrentColorRedOut};{CurrentColorGreenOut};{CurrentColorBlueOut}");
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Color out (R;G;B: {0};{1};{2})", RedColorNum, GreenColorNum, BlueColorNum);
                 if (!ConsoleResizeListener.WasResized(false))
-                    FigletWhereColor.WriteFigletWhereColor(exStr, consoleX, consoleY, false, figFont, CurrentColorOut);
+                    CenteredFigletTextColor.WriteCenteredFigletColor(figFont, exStr, CurrentColorOut);
             }
 
             // Reset resize sync

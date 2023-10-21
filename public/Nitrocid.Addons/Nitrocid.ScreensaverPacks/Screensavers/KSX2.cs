@@ -343,11 +343,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                             // Now, make a color and fill the console with it
                             Color col = new(currentFigletR, currentFigletG, currentFigletB);
                             var figFont = FigletTools.GetFigletFont("banner");
-                            int figWidth = FigletTools.GetFigletWidth("0.0.16.0 M5", figFont) / 2;
-                            int figHeight = FigletTools.GetFigletHeight("0.0.16.0 M5", figFont) / 2;
-                            int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
-                            int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
-                            FigletWhereColor.WriteFigletWhereColorBack("0.0.16.0 M5", consoleX, consoleY, true, figFont, col, red);
+                            CenteredFigletTextColor.WriteCenteredFigletColorBack(figFont, "0.0.16.0 M5", col, red);
 
                             // Sleep
                             ThreadManager.SleepNoBlock(100, ScreensaverDisplayer.ScreensaverDisplayerThread);
