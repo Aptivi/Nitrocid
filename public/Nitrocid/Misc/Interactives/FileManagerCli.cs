@@ -74,7 +74,7 @@ namespace KS.Misc.Interactives
             new InteractiveTuiBinding(/* Localizable */ "New Folder",   ConsoleKey.F10,   (_, _)    => MakeDir(), true),
             new InteractiveTuiBinding(/* Localizable */ "Hash...",      ConsoleKey.F11,   (info, _) => Hash((FileSystemEntry)info)),
             new InteractiveTuiBinding(/* Localizable */ "Verify...",    ConsoleKey.F12,   (info, _) => Verify((FileSystemEntry)info)),
-            new InteractiveTuiBinding(/* Localizable */ "Preview",      ConsoleKey.P,   (info, _) => Preview((FileSystemEntry)info)),
+            new InteractiveTuiBinding(/* Localizable */ "Preview",      ConsoleKey.P,     (info, _) => Preview((FileSystemEntry)info)),
 
             // Misc bindings
             new InteractiveTuiBinding(/* Localizable */ "Switch",       ConsoleKey.Tab,   (_, _)    => Switch(), true),
@@ -291,11 +291,18 @@ namespace KS.Misc.Interactives
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Full name") + ": {0}", asmName.FullName));
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Version") + ": {0}", asmName.Version.ToString()));
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Culture name") + ": {0}", asmName.CultureName));
-                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Content type") + ": {0}", asmName.ContentType.ToString()));
+                        finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Content type") + ": {0}\n", asmName.ContentType.ToString()));
                     }
                     else
                     {
-                        finalInfoRendered.AppendLine(Translate.DoTranslation("File is not a valid .NET assembly."));
+                        finalInfoRendered.AppendLine(Translate.DoTranslation("File is not a valid .NET assembly.\n"));
+                    }
+
+                    // Other info handled by the extension handler
+                    if (ExtensionHandlerTools.IsHandlerRegistered(fileInfo.Extension))
+                    {
+                        var handler = ExtensionHandlerTools.GetExtensionHandler(fileInfo.Extension);
+                        finalInfoRendered.AppendLine(handler.InfoHandler(fullPath));
                     }
                 }
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));

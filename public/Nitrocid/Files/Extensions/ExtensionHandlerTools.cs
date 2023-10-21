@@ -16,6 +16,8 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Drivers;
+using KS.Drivers.Encryption;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using System;
@@ -31,7 +33,7 @@ namespace KS.Files.Extensions
     {
         internal static readonly List<ExtensionHandler> extensionHandlers = new()
         {
-            new ExtensionHandler(".bin", (path) => Opening.OpenEditor(path, false, false, true)),
+            new ExtensionHandler(".bin", (path) => Opening.OpenEditor(path, false, false, true), (path) => $"{Translate.DoTranslation("File hash sum")}: {Encryption.GetEncryptedFile(path, DriverHandler.CurrentEncryptionDriver.DriverName)}"),
         };
         internal static readonly List<ExtensionHandler> customHandlers = new();
 
@@ -49,6 +51,10 @@ namespace KS.Files.Extensions
         /// <returns>True if registered; False otherwise. Also false if the extension doesn't start with the dot.</returns>
         public static bool IsHandlerRegistered(string extension)
         {
+            // Check to see if this handler is built-in
+            if (IsHandlerBuiltin(extension))
+                return true;
+
             // If nothing is registered, indicate that it isn't registered
             if (customHandlers.Count == 0)
                 return false;
@@ -56,10 +62,6 @@ namespace KS.Files.Extensions
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
                 return false;
-
-            // Check to see if this handler is built-in
-            if (IsHandlerBuiltin(extension))
-                return true;
 
             // Now, check to see if we have this handler
             return customHandlers.Any((ext) => ext.Extension == extension);
@@ -127,14 +129,15 @@ namespace KS.Files.Extensions
         /// </summary>
         /// <param name="extension">Extension to register</param>
         /// <param name="handlerAction">Action containing a function that opens the specified file</param>
-        public static void RegisterHandler(string extension, Action<string> handlerAction)
+        /// <param name="infoHandlerAction">Action containing a function that gets information about the specified file</param>
+        public static void RegisterHandler(string extension, Action<string> handlerAction, Func<string, string> infoHandlerAction)
         {
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
 
             // Add the handler
-            var handler = new ExtensionHandler(extension, handlerAction);
+            var handler = new ExtensionHandler(extension, handlerAction, infoHandlerAction);
             customHandlers.Add(handler);
         }
 

@@ -22,6 +22,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files;
+using KS.Files.Extensions;
 using KS.Files.LineEndings;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
@@ -84,6 +85,15 @@ namespace KS.Shell.Shells.UESH.Commands
                     else
                     {
                         TextWriterColor.Write(Translate.DoTranslation("File is not a valid .NET assembly."));
+                    }
+                    TextWriterColor.Write();
+
+                    // Other info handled by the extension handler
+                    SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Extra info"), true);
+                    if (ExtensionHandlerTools.IsHandlerRegistered(FileInfo.Extension))
+                    {
+                        var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension);
+                        TextWriterColor.Write(handler.InfoHandler(FilePath));
                     }
                 }
                 else

@@ -34,11 +34,11 @@ namespace Nitrocid.Tests.Files
         [Description("Extension")]
         public void TestRegisterHandler()
         {
-            ExtensionHandlerTools.RegisterHandler(".mp3", (path) =>
+            ExtensionHandlerTools.RegisterHandler(".ext", (path) =>
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Custom .mp3 handler");
+                DebugWriter.WriteDebug(DebugLevel.I, "Custom .ext handler");
                 DebugWriter.WriteDebug(DebugLevel.I, path);
-            });
+            }, (path) => "Just a test info");
             ExtensionHandlerTools.customHandlers.ShouldNotBeEmpty();
             ExtensionHandlerTools.customHandlers.Count.ShouldBe(1);
         }
@@ -63,12 +63,12 @@ namespace Nitrocid.Tests.Files
         [Description("Extension")]
         public void TestGetExtensionHandlers()
         {
-            var handlers = ExtensionHandlerTools.GetExtensionHandlers(".mp3");
+            var handlers = ExtensionHandlerTools.GetExtensionHandlers(".ext");
             handlers.ShouldNotBeNull();
             handlers.ShouldNotBeEmpty();
             foreach (var handler in handlers)
             {
-                handler.Extension.ShouldBe(".mp3");
+                handler.Extension.ShouldBe(".ext");
                 handler.MimeType.ShouldBe("audio/mpeg");
             }
         }
@@ -77,7 +77,7 @@ namespace Nitrocid.Tests.Files
         /// Tests checking to see if the handler is built-in and registered
         /// </summary>
         [Test]
-        [TestCase(".mp3", false, true)]
+        [TestCase(".ext", false, true)]
         [TestCase(".bin", true, true)]
         [TestCase(".invalidformat", false, false)]
         [Description("Extension")]
@@ -93,7 +93,7 @@ namespace Nitrocid.Tests.Files
         /// Tests checking to see if the handler is registered
         /// </summary>
         [Test]
-        [TestCase(".mp3", true)]
+        [TestCase(".ext", true)]
         [TestCase(".bin", true)]
         [TestCase(".invalidformat", false)]
         [Description("Extension")]
@@ -107,7 +107,7 @@ namespace Nitrocid.Tests.Files
         /// Tests checking to see if the handler is built-in
         /// </summary>
         [Test]
-        [TestCase(".mp3", false)]
+        [TestCase(".ext", false)]
         [TestCase(".bin", true)]
         [TestCase(".invalidformat", false)]
         [Description("Extension")]
@@ -124,8 +124,8 @@ namespace Nitrocid.Tests.Files
         [Description("Extension")]
         public void TestUnregisterHandler()
         {
-            var handler = ExtensionHandlerTools.GetExtensionHandler(".mp3");
-            ExtensionHandlerTools.UnregisterHandler(".mp3", handler);
+            var handler = ExtensionHandlerTools.GetExtensionHandler(".ext");
+            ExtensionHandlerTools.UnregisterHandler(".ext", handler);
             ExtensionHandlerTools.customHandlers.ShouldBeEmpty();
         }
 

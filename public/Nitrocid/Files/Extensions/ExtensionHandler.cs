@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Languages;
 using MimeKit;
 using System;
 
@@ -29,6 +30,7 @@ namespace KS.Files.Extensions
         private readonly string extension;
         private readonly string mimeType;
         private readonly Action<string> handler;
+        private readonly Func<string, string> infoHandler;
 
         /// <summary>
         /// Supported extension
@@ -45,12 +47,21 @@ namespace KS.Files.Extensions
         /// </summary>
         public Action<string> Handler =>
             handler;
+        /// <summary>
+        /// Handler for getting information about files that have the same extension
+        /// </summary>
+        public Func<string, string> InfoHandler =>
+            infoHandler;
 
-        internal ExtensionHandler(string extension, Action<string> handler)
+        internal ExtensionHandler(string extension, Action<string> handler, Func<string, string> infoHandler)
         {
-            this.extension = extension;
+            // First, get the MIME type
             mimeType = MimeTypes.GetMimeType($"file{extension}");
+
+            // Then, install the below values
+            this.extension = extension;
             this.handler = handler;
+            this.infoHandler = infoHandler ?? ((_) => Translate.DoTranslation("No extra information."));
         }
     }
 }
