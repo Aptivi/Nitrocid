@@ -49,7 +49,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         internal static TcpListener DebugTCP;
         internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
         internal static int debugPort = 3014;
-        private readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.8.3.0");
+        private readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.8.3.1");
         private static readonly AutoResetEvent RDebugBailer = new(false);
 
         /// <summary>
@@ -258,28 +258,31 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     // from the message and comparing it to the null char ASCII number, which is 0.
                     if (!(Convert.ToInt32(Message[0]) == 0))
                     {
-                        // Check to see if the unnamed stranger is trying to send a message
-                        var deviceInfo = RemoteDebugTools.GetDeviceFromIp(SocketIP);
-                        if (!string.IsNullOrEmpty(SocketName))
-                        {
-                            // Check the message format
-                            if (string.IsNullOrWhiteSpace(RDebugMessageFormat))
-                                Config.MainConfig.RDebugMessageFormat = "{0}> {1}";
-
-                            // Decide if we're recording the chat to the debug log
-                            if (RemoteDebugTools.RecordChatToDebugLog)
-                                DebugWriter.WriteDebugLogOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
-                            DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), true, SocketName, Message);
-
-                            // Add the message to the chat history
-                            deviceInfo.chatHistory.Add($"[{TimeDateRenderers.Render()}] {Message}");
-                        }
-
                         // Now, check to see if the message is a command
                         if (Message.StartsWith("/"))
                         {
+                            // The message is a command!
                             string finalCommand = Message[1..];
                             RemoteDebugCommandExecutor.ExecuteCommand(finalCommand, device);
+                        }
+                        else
+                        {
+                            // Check to see if the unnamed stranger is trying to send a message
+                            var deviceInfo = RemoteDebugTools.GetDeviceFromIp(SocketIP);
+                            if (!string.IsNullOrEmpty(SocketName))
+                            {
+                                // Check the message format
+                                if (string.IsNullOrWhiteSpace(RDebugMessageFormat))
+                                    Config.MainConfig.RDebugMessageFormat = "{0}> {1}";
+
+                                // Decide if we're recording the chat to the debug log
+                                if (RemoteDebugTools.RecordChatToDebugLog)
+                                    DebugWriter.WriteDebugLogOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
+                                DebugWriter.WriteDebugDevicesOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), true, SocketName, Message);
+
+                                // Add the message to the chat history
+                                deviceInfo.chatHistory.Add($"[{TimeDateRenderers.Render()}] {Message}");
+                            }
                         }
                     }
                 }
