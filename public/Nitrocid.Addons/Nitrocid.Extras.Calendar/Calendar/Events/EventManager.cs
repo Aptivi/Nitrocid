@@ -25,6 +25,7 @@ using System.Xml.Serialization;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
@@ -138,8 +139,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         public static void LoadEvents()
         {
             Making.MakeDirectory(Paths.GetKernelPath(KernelPathType.Events), false);
-            var EventFiles = Directory.EnumerateFileSystemEntries(Paths.GetKernelPath(KernelPathType.Events), "*", SearchOption.AllDirectories).ToList();
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} events.", EventFiles.Count);
+            var EventFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Events), "*", true);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} events.", EventFiles.Length);
 
             // Load all the events
             foreach (string EventFile in EventFiles)

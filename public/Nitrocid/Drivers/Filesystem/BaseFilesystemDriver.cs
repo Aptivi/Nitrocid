@@ -698,7 +698,7 @@ namespace KS.Drivers.Filesystem
                         RecurseSubdirectories = Recursive,
                         AttributesToSkip = FS.HiddenFiles ? FileAttributes.System : FileAttributes.Hidden | FileAttributes.System
                     };
-                    Entries = Directory.EnumerateFileSystemEntries(Parent, Pattern, options).ToArray();
+                    Entries = Directory.GetFileSystemEntries(Parent, Pattern, options);
                     DebugWriter.WriteDebug(DebugLevel.I, "Enumerated {0} entries from parent {1} using pattern {2}", Entries.Length, Parent, Pattern);
                 }
                 else

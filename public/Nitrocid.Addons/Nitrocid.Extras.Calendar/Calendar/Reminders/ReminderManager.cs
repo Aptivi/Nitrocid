@@ -25,6 +25,7 @@ using System.Xml.Serialization;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Files.Folders;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
@@ -154,8 +155,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         public static void LoadReminders()
         {
             Making.MakeDirectory(Paths.GetKernelPath(KernelPathType.Reminders), false);
-            var ReminderFiles = Directory.EnumerateFileSystemEntries(Paths.GetKernelPath(KernelPathType.Reminders), "*", SearchOption.AllDirectories).ToList();
-            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} reminders.", ReminderFiles.Count);
+            var ReminderFiles = Listing.GetFilesystemEntries(Paths.GetKernelPath(KernelPathType.Reminders), "*", true);
+            DebugWriter.WriteDebug(DebugLevel.I, "Got {0} reminders.", ReminderFiles.Length);
 
             // Load all the reminders
             foreach (string ReminderFile in ReminderFiles)
