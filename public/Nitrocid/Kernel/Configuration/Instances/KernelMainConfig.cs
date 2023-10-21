@@ -1591,5 +1591,9 @@ namespace KS.Kernel.Configuration.Instances
         /// If enabled, opts you in to the new color selector.
         /// </summary>
         public bool UseNewColorSelector { get; set; }
+        /// <summary>
+        /// Specifies the default figlet font name
+        /// </summary>
+        public string DefaultFigletFontName { get; set; } = "speed";
     }
 }

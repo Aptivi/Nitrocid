@@ -29,6 +29,7 @@ using KS.ConsoleBase.Colors;
 using Figletize;
 using System;
 using KS.Kernel.Power;
+using KS.Misc.Text;
 
 namespace KS.Misc.Splash.Splashes
 {
@@ -48,7 +49,7 @@ namespace KS.Misc.Splash.Splashes
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             string text = Translate.DoTranslation("Loading").ToUpper();
-            var figFont = FigletTools.GetFigletFont("speed");
+            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleX, consoleY;
@@ -112,7 +113,7 @@ namespace KS.Misc.Splash.Splashes
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
             string text = (context == SplashContext.StartingUp ? Translate.DoTranslation("Welcome!") : Translate.DoTranslation("Goodbye!")).ToUpper();
-            var figFont = FigletTools.GetFigletFont("speed");
+            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
@@ -170,7 +171,7 @@ namespace KS.Misc.Splash.Splashes
         {
             Color col = KernelColorTools.GetColor(colorType);
             string text = Translate.DoTranslation("Welcome!").ToUpper();
-            var figFont = FigletTools.GetFigletFont("speed");
+            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = (ConsoleWrapper.WindowHeight / 2) - figHeight;
             TextWriterWhereColor.WriteWhereColor(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, col, Vars);

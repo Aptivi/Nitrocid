@@ -25,6 +25,7 @@ using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
+using KS.Misc.Text;
 using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
@@ -105,7 +106,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";
-            var figFont = FigletTools.GetFigletFont("speed");
+            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             int figWidth = FigletTools.GetFigletWidth(exStr, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(exStr, figFont) / 2;
             int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;

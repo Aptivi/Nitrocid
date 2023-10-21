@@ -28,6 +28,7 @@ using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Screensaver;
+using KS.Misc.Text;
 using Nitrocid.ScreensaverPacks.Animations.Glitch;
 using System;
 using Terminaux.Colors;
@@ -67,7 +68,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             Color white = new(255, 255, 255);
             Color selectedColor = Color.Empty;
             string year = "2018";
-            var font = FigletTools.GetFigletFont("speed");
+            var font = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)

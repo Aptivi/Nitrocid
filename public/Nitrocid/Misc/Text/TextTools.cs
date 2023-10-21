@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Drivers;
+using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -35,6 +36,12 @@ namespace KS.Misc.Text
     {
         private static readonly string regexMatchEnclosedStrings = /* lang=regex */
             @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+";
+
+        /// <summary>
+        /// Default figlet font name
+        /// </summary>
+        public static string DefaultFigletFontName =>
+            Config.MainConfig.DefaultFigletFontName ?? "speed";
 
         /// <summary>
         /// Gets the wrapped sentences for text wrapping for console
