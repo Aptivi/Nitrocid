@@ -57,6 +57,7 @@ using KS.Drivers.Encoding;
 using KS.Drivers.DebugLogger;
 using KS.Files.Operations.Querying;
 using KS.Drivers.HardwareProber;
+using KS.Misc.Text;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -138,14 +139,6 @@ namespace KS.Kernel.Configuration.Instances
         /// Splash name from the available splashes implemented in the kernel.
         /// </summary>
         public string SplashName { get; set; } = "Welcome";
-        /// <summary>
-        /// Write a figlet font that is supported by the Figgle library. Consult the library documentation for more information
-        /// </summary>
-        public string BannerFigletFont
-        {
-            get => KernelTools.bannerFigletFont;
-            set => KernelTools.bannerFigletFont = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "banner";
-        }
         /// <summary>
         /// Whether to simulate a situation where there is no APM available. If enabled, it informs the user that it's now safe to turn off the computer upon shutdown.
         /// </summary>
@@ -1594,6 +1587,10 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Specifies the default figlet font name
         /// </summary>
-        public string DefaultFigletFontName { get; set; } = "speed";
+        public string DefaultFigletFontName
+        {
+            get => TextTools.defaultFigletFontName;
+            set => TextTools.defaultFigletFontName = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "speed";
+        }
     }
 }

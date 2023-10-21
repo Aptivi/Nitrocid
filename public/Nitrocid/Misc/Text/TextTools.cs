@@ -34,6 +34,7 @@ namespace KS.Misc.Text
     /// </summary>
     public static class TextTools
     {
+        internal static string defaultFigletFontName = "speed";
         private static readonly string regexMatchEnclosedStrings = /* lang=regex */
             @"(""(.+?)(?<![^\\]\\)"")|('(.+?)(?<![^\\]\\)')|(`(.+?)(?<![^\\]\\)`)|(?:[^\\\s]|\\.)+|\S+";
 

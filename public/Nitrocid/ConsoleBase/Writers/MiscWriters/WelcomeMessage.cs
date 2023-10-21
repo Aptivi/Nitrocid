@@ -47,12 +47,6 @@ namespace KS.ConsoleBase.Writers.MiscWriters
             Config.MainConfig.CustomBanner;
 
         /// <summary>
-        /// Current banner figlet font
-        /// </summary>
-        public static string BannerFigletFont =>
-            Config.MainConfig.BannerFigletFont;
-
-        /// <summary>
         /// Show tips on log-in
         /// </summary>
         public static bool ShowTip { get; internal set; }
@@ -113,7 +107,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                     TextWriterColor.WriteKernelColor(MessageWrite, true, KernelColorType.Banner, KernelTools.KernelVersion.ToString());
                 }
 
-                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", BannerFigletFont);
+                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelTools.KernelVersion}", TextTools.DefaultFigletFontName);
                 TextWriterColor.Write(CharManager.NewLine + FigletRenderedBanner + CharManager.NewLine);
                 ConsoleWrapper.CursorVisible = true;
             }
@@ -125,11 +119,13 @@ namespace KS.ConsoleBase.Writers.MiscWriters
         public static void WriteLicense()
         {
             SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("License information"), true, KernelColorType.Stage);
-            TextWriterColor.WriteKernelColor(CharManager.NewLine + "    Nitrocid KS  Copyright (C) 2018-2023  Aptivi" +
-                                  CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " +
-                                  CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." +
-                                  CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" +
-                                  CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, KernelColorType.License);
+            TextWriterColor.WriteKernelColor(
+                CharManager.NewLine + "    Nitrocid KS  Copyright (C) 2018-2023  Aptivi" +
+                CharManager.NewLine + "    This program comes with ABSOLUTELY NO WARRANTY, not even " +
+                CharManager.NewLine + "    MERCHANTABILITY or FITNESS for particular purposes." +
+                CharManager.NewLine + "    This is free software, and you are welcome to redistribute it" +
+                CharManager.NewLine + "    under certain conditions; See COPYING file in source code." + CharManager.NewLine, true, KernelColorType.License
+            );
             TextWriterColor.WriteKernelColor("* " + Translate.DoTranslation("For more information about the terms and conditions of using this software, visit") + " http://www.gnu.org/licenses/\n", true, KernelColorType.License);
         }
 
