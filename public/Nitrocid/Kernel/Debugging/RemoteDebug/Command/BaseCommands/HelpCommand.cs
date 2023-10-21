@@ -16,11 +16,13 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Kernel.Debugging.RemoteDebug.Command.Help;
+
 namespace KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands
 {
     internal class HelpCommand : RemoteDebugBaseCommand
     {
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly, RemoteDebugDevice device) =>
-            RemoteDebugHelpSystem.ShowHelp(StringArgs, device);
+            RemoteDebugHelpPrint.ShowHelp(StringArgs, device);
     }
 }

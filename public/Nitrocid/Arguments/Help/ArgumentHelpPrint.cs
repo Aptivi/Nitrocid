@@ -44,7 +44,7 @@ namespace KS.Arguments.Help
             // Check to see if argument exists
             if (!string.IsNullOrWhiteSpace(Argument))
                 ArgumentHelpPrintTools.ShowHelpUsage(Argument);
-            else if (string.IsNullOrWhiteSpace(Argument))
+            else
             {
                 // List the available arguments
                 if (!HelpPrintTools.SimHelp)

@@ -24,6 +24,7 @@ using KS.Misc.Text;
 using KS.Kernel.Events;
 using KS.Kernel.Debugging.RemoteDebug.Command.BaseCommands;
 using KS.Shell.ShellBase.Commands;
+using KS.Kernel.Debugging.RemoteDebug.Command.Help;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command
 {
@@ -75,7 +76,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "User hasn't provided enough arguments for {0}", Command);
                         DebugWriter.WriteDebugDeviceOnly(DebugLevel.W, Translate.DoTranslation("There were not enough arguments. See below for usage:"), true, Device);
-                        RemoteDebugHelpSystem.ShowHelp(Command, Device);
+                        RemoteDebugHelpPrint.ShowHelp(Command, Device);
                     }
                 }
                 else

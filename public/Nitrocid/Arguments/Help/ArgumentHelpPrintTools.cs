@@ -28,7 +28,7 @@ using System.Linq;
 
 namespace KS.Arguments.Help
 {
-    internal class ArgumentHelpPrintTools
+    internal static class ArgumentHelpPrintTools
     {
         internal static Dictionary<string, ArgumentInfo> GetArguments()
         {
