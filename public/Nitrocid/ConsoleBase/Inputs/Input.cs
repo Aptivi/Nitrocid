@@ -136,8 +136,11 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="settings">Reader settings</param>
         public static string ReadLineUnsafe(string InputText, string DefaultValue, bool OneLineWrap = false, TermReaderSettings settings = null)
         {
+            bool cursorState = ConsoleWrapper.CursorVisible;
+            ConsoleWrapper.CursorVisible = true;
             TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
             string Output = TermReader.Read(InputText, DefaultValue, finalSettings, false, OneLineWrap, true);
+            ConsoleWrapper.CursorVisible = cursorState;
 
             // For some reason, Terminaux tends to forget to restore the below property to the state before the read.
             Console.TreatControlCAsInput = false;
@@ -233,9 +236,12 @@ namespace KS.ConsoleBase.Inputs
         /// <param name="settings">Reader settings</param>
         public static string ReadLineNoInputUnsafe(char MaskChar, TermReaderSettings settings)
         {
+            bool cursorState = ConsoleWrapper.CursorVisible;
+            ConsoleWrapper.CursorVisible = true;
             TermReaderSettings finalSettings = settings is null ? globalSettings : settings;
             finalSettings.PasswordMaskChar = MaskChar;
             string pass = TermReader.Read("", "", settings, true, false, true);
+            ConsoleWrapper.CursorVisible = cursorState;
 
             // For some reason, Terminaux tends to forget to restore the below property to the state before the read.
             Console.TreatControlCAsInput = false;
