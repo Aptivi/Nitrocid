@@ -16,12 +16,9 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Colors;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files.Extensions;
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
-using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
@@ -32,19 +29,23 @@ using Nitrocid.Extras.BassBoom.Screensavers;
 using Nitrocid.Extras.BassBoom.Settings;
 using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 #if NET7_0
 using BassBoom.Basolia;
 using BassBoom.Basolia.File;
 using BassBoom.Basolia.Format;
+using System.IO;
+using KS.Languages;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.FancyWriters;
 #endif
 
 namespace Nitrocid.Extras.BassBoom
 {
     internal class BassBoomInit : IAddon
     {
+#if NET7_0
         private readonly ExtensionHandler handler = new(
             ".mp3",
             (_) => InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("You'll be able to play music soon. Hang tight!"), KernelColorType.Warning),
@@ -74,6 +75,8 @@ namespace Nitrocid.Extras.BassBoom
                     $"{Translate.DoTranslation("Song genre")}: {musicGenre}";
             }
         );
+#endif
+
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "playlyric",
@@ -130,7 +133,9 @@ namespace Nitrocid.Extras.BassBoom
             ScreensaverManager.Screensavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
+#if NET7_0
             ExtensionHandlerTools.extensionHandlers.Remove(handler);
+#endif
         }
 
         void IAddon.FinalizeAddon()

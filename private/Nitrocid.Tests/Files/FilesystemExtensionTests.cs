@@ -69,7 +69,7 @@ namespace Nitrocid.Tests.Files
             foreach (var handler in handlers)
             {
                 handler.Extension.ShouldBe(".ext");
-                handler.MimeType.ShouldBe("audio/mpeg");
+                handler.MimeType.ShouldBe("application/octet-stream");
             }
         }
 
