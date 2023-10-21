@@ -81,7 +81,7 @@ namespace KS.Users.Login
                     {
                         ConsoleWrapper.Clear();
                         cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                        var figFont = FigletTools.GetFigletFont("banner3");
+                        var figFont = FigletTools.GetFigletFont("speed");
                         int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
                         CenteredFigletTextColor.WriteCenteredFigletKernelColor(figFont, timeStr, KernelColorType.Stage);
 

@@ -67,7 +67,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             Color white = new(255, 255, 255);
             Color selectedColor = Color.Empty;
             string year = "2018";
-            var font = FigletTools.GetFigletFont("banner3");
+            var font = FigletTools.GetFigletFont("speed");
 
             // Start stepping
             for (step = 1; step <= maxSteps; step++)

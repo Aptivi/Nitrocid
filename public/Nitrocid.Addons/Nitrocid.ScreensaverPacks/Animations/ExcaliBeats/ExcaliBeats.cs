@@ -105,7 +105,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.ExcaliBeats
 
             // Populate the text
             string exStr = Settings.ExcaliBeatsExplicit ? "EXCALIBUR" : "EXCALIBEATS";
-            var figFont = FigletTools.GetFigletFont("banner3");
+            var figFont = FigletTools.GetFigletFont("speed");
             int figWidth = FigletTools.GetFigletWidth(exStr, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(exStr, figFont) / 2;
             int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
