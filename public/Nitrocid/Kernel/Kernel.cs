@@ -29,6 +29,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Starting;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Arguments;
+using KS.Arguments.Help;
 
 namespace KS.Kernel
 {
@@ -50,7 +51,7 @@ namespace KS.Kernel
             {
                 // Kernel arguments
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Available kernel arguments:"), true, KernelColorType.ListTitle);
-                ArgumentHelpSystem.ShowArgsHelp();
+                ArgumentHelpPrint.ShowArgsHelp();
                 ConsoleExtensions.ResetColors();
                 return;
             }

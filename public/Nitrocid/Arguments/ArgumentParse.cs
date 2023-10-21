@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using KS.Arguments.CommandLineArguments;
+using KS.Arguments.Help;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Debugging;
@@ -79,7 +80,7 @@ namespace KS.Arguments
             // Check for the arguments written by the user
             try
             {
-                if (ArgumentHelpSystem.acknowledged)
+                if (ArgumentHelpPrint.acknowledged)
                     ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToArray();
                 var Arguments = AvailableCMDLineArgs;
 
@@ -144,7 +145,7 @@ namespace KS.Arguments
             // Check for the arguments written by the user
             try
             {
-                if (ArgumentHelpSystem.acknowledged)
+                if (ArgumentHelpPrint.acknowledged)
                     ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToArray();
                 var Arguments = AvailableCMDLineArgs;
 
