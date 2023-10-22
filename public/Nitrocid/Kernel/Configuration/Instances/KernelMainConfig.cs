@@ -58,6 +58,7 @@ using KS.Drivers.DebugLogger;
 using KS.Files.Operations.Querying;
 using KS.Drivers.HardwareProber;
 using KS.Misc.Text;
+using KS.Shell.Shells.Json;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -1283,12 +1284,24 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool HexEditAutoSaveFlag { get; set; } = true;
         /// <summary>
-        /// If autosave is enabled, the binary file will be saved for each \"n\" seconds
+        /// If autosave is enabled, the binary file will be saved for each "n" seconds
         /// </summary>
         public int HexEditAutoSaveInterval
         {
             get => HexEditShellCommon.autoSaveInterval;
             set => HexEditShellCommon.autoSaveInterval = value < 0 ? 60 : value;
+        }
+        /// <summary>
+        /// Turns on or off the hex editor autosave feature
+        /// </summary>
+        public bool JsonEditAutoSaveFlag { get; set; } = true;
+        /// <summary>
+        /// If autosave is enabled, the binary file will be saved for each "n" seconds
+        /// </summary>
+        public int JsonEditAutoSaveInterval
+        {
+            get => JsonShellCommon.autoSaveInterval;
+            set => JsonShellCommon.autoSaveInterval = value < 0 ? 60 : value;
         }
         /// <summary>
         /// Wraps the list outputs if it seems too long for the current console geometry

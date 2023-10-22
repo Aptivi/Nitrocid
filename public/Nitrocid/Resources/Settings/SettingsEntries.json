@@ -1314,6 +1314,18 @@
                 "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
             },
             {
+                "Name": "Enable JSON editor autosave",
+                "Type": "SBoolean",
+                "Variable": "JsonEditAutoSaveFlag",
+                "Description": "Turns on or off the JSON editor autosave feature."
+            },
+            {
+                "Name": "JSON editor autosave interval",
+                "Type": "SInt",
+                "Variable": "JsonEditAutoSaveInterval",
+                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
+            },
+            {
                 "Name": "Wrap list outputs",
                 "Type": "SBoolean",
                 "Variable": "WrapListOutputs",
