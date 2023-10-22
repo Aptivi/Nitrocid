@@ -55,6 +55,7 @@ namespace KS.Drivers
                 DriverTypes.Console, new()
                 {
                     { "Default", new Terminal() },
+                    { "MonoCompat", new TerminalMonoCompat() },
                     { "File", new File() },
                     { "FileSequence", new FileSequence() },
                     { "Null", new Null() },
