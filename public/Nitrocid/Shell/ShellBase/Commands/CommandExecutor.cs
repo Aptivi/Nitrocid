@@ -239,8 +239,6 @@ namespace KS.Shell.ShellBase.Commands
                     CancellationHandlers.cts = new CancellationTokenSource();
 #if NET7_0
 #pragma warning disable SYSLIB0046
-
-                    // TODO: Actually use interactive methods to notify cancellation, as ControlledExecution behaves like Thread.Abort() in .NET Framework.
                     try
                     {
                         ControlledExecution.Run(() =>
