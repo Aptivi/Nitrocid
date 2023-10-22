@@ -25,7 +25,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
     {
         public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
         {
-            string figletFont = FigletSelector.PromptForFiglet();
+            string figletFont = FigletSelector.PromptForFiglet((string)KeyDefaultValue);
 
             // Bail and return
             bail = true;
