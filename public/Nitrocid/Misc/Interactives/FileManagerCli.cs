@@ -411,10 +411,8 @@ namespace KS.Misc.Interactives
                 }
             }
             else
-            {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
-            }
+            RedrawRequired = true;
         }
 
         private static void CopyTo(FileSystemEntry currentFileSystemEntry)
@@ -436,16 +434,10 @@ namespace KS.Misc.Interactives
                     if (Parsing.TryParsePath(path))
                         Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
                     else
-                    {
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
-                        RedrawRequired = true;
-                    }
                 }
                 else
-                {
                     InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
-                    RedrawRequired = true;
-                }
             }
             catch (Exception ex)
             {
@@ -453,8 +445,8 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
             }
+            RedrawRequired = true;
         }
 
         private static void MoveTo(FileSystemEntry currentFileSystemEntry)
@@ -476,16 +468,10 @@ namespace KS.Misc.Interactives
                     if (Parsing.TryParsePath(path))
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
                     else
-                    {
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
-                        RedrawRequired = true;
-                    }
                 }
                 else
-                {
                     InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
-                    RedrawRequired = true;
-                }
             }
             catch (Exception ex)
             {
@@ -493,8 +479,8 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
             }
+            RedrawRequired = true;
         }
 
         private static void Rename(FileSystemEntry currentFileSystemEntry)
@@ -512,16 +498,10 @@ namespace KS.Misc.Interactives
                     if (Parsing.TryParseFileName(filename))
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
                     else
-                    {
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
-                        RedrawRequired = true;
-                    }
                 }
                 else
-                {
                     InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File already exists. The name shouldn't be occupied by another file."), BoxForegroundColor, BoxBackgroundColor);
-                    RedrawRequired = true;
-                }
             }
             catch (Exception ex)
             {
@@ -529,8 +509,8 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
             }
+            RedrawRequired = true;
         }
 
         private static void MakeDir()
