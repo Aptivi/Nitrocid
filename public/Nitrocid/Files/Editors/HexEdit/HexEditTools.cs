@@ -43,22 +43,22 @@ namespace KS.Files.Editors.HexEdit
         /// </summary>
         /// <param name="File">Target file. We recommend you to use <see cref="FilesystemTools.NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool HexEdit_OpenBinaryFile(string File)
+        public static bool OpenBinaryFile(string File)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
-                HexEditShellCommon.HexEdit_FileStream = new FileStream(File, FileMode.Open);
-                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, HexEditShellCommon.HexEdit_FileStream.Length, HexEditShellCommon.HexEdit_FileStream.Position);
+                HexEditShellCommon.FileStream = new FileStream(File, FileMode.Open);
+                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, HexEditShellCommon.FileStream.Length, HexEditShellCommon.FileStream.Position);
 
                 // Read the file
-                var FileBytes = new byte[(int)(HexEditShellCommon.HexEdit_FileStream.Length + 1)];
-                HexEditShellCommon.HexEdit_FileStream.Read(FileBytes, 0, (int)HexEditShellCommon.HexEdit_FileStream.Length);
-                HexEditShellCommon.HexEdit_FileStream.Seek(0L, SeekOrigin.Begin);
+                var FileBytes = new byte[(int)(HexEditShellCommon.FileStream.Length + 1)];
+                HexEditShellCommon.FileStream.Read(FileBytes, 0, (int)HexEditShellCommon.FileStream.Length);
+                HexEditShellCommon.FileStream.Seek(0L, SeekOrigin.Begin);
 
                 // Add the information to the arrays
-                HexEditShellCommon.HexEdit_FileBytes = FileBytes;
-                HexEditShellCommon.HexEdit_FileBytesOrig = FileBytes;
+                HexEditShellCommon.FileBytes = FileBytes;
+                HexEditShellCommon.FileBytesOrig = FileBytes;
                 return true;
             }
             catch (Exception ex)
@@ -73,16 +73,16 @@ namespace KS.Files.Editors.HexEdit
         /// Closes binary file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool HexEdit_CloseBinaryFile()
+        public static bool CloseBinaryFile()
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
-                HexEditShellCommon.HexEdit_FileStream.Close();
-                HexEditShellCommon.HexEdit_FileStream = null;
+                HexEditShellCommon.FileStream.Close();
+                HexEditShellCommon.FileStream = null;
                 DebugWriter.WriteDebug(DebugLevel.I, "File is no longer open.");
-                HexEditShellCommon.HexEdit_FileBytes = Array.Empty<byte>();
-                HexEditShellCommon.HexEdit_FileBytesOrig = Array.Empty<byte>();
+                HexEditShellCommon.FileBytes = Array.Empty<byte>();
+                HexEditShellCommon.FileBytesOrig = Array.Empty<byte>();
                 return true;
             }
             catch (Exception ex)
@@ -97,18 +97,18 @@ namespace KS.Files.Editors.HexEdit
         /// Saves binary file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool HexEdit_SaveBinaryFile()
+        public static bool SaveBinaryFile()
         {
             try
             {
-                var FileBytes = HexEditShellCommon.HexEdit_FileBytes;
+                var FileBytes = HexEditShellCommon.FileBytes;
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
-                HexEditShellCommon.HexEdit_FileStream.SetLength(0L);
+                HexEditShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
-                HexEditShellCommon.HexEdit_FileStream.Write(FileBytes, 0, FileBytes.Length);
-                HexEditShellCommon.HexEdit_FileStream.Flush();
+                HexEditShellCommon.FileStream.Write(FileBytes, 0, FileBytes.Length);
+                HexEditShellCommon.FileStream.Flush();
                 DebugWriter.WriteDebug(DebugLevel.I, "File is saved.");
-                HexEditShellCommon.HexEdit_FileBytesOrig = FileBytes;
+                HexEditShellCommon.FileBytesOrig = FileBytes;
                 return true;
             }
             catch (Exception ex)
@@ -122,16 +122,16 @@ namespace KS.Files.Editors.HexEdit
         /// <summary>
         /// Handles autosave
         /// </summary>
-        public static void HexEdit_HandleAutoSaveBinaryFile()
+        public static void HandleAutoSaveBinaryFile()
         {
-            if (HexEditShellCommon.HexEdit_AutoSaveFlag)
+            if (HexEditShellCommon.AutoSaveFlag)
             {
                 try
                 {
-                    Thread.Sleep(HexEditShellCommon.HexEdit_AutoSaveInterval * 1000);
-                    if (HexEditShellCommon.HexEdit_FileStream is not null)
+                    Thread.Sleep(HexEditShellCommon.AutoSaveInterval * 1000);
+                    if (HexEditShellCommon.FileStream is not null)
                     {
-                        HexEdit_SaveBinaryFile();
+                        SaveBinaryFile();
                     }
                 }
                 catch (Exception ex)
@@ -144,11 +144,11 @@ namespace KS.Files.Editors.HexEdit
         /// <summary>
         /// Was binary edited?
         /// </summary>
-        public static bool HexEdit_WasHexEdited()
+        public static bool WasHexEdited()
         {
-            if (HexEditShellCommon.HexEdit_FileBytes is not null & HexEditShellCommon.HexEdit_FileBytesOrig is not null)
+            if (HexEditShellCommon.FileBytes is not null & HexEditShellCommon.FileBytesOrig is not null)
             {
-                return !HexEditShellCommon.HexEdit_FileBytes.SequenceEqual(HexEditShellCommon.HexEdit_FileBytesOrig);
+                return !HexEditShellCommon.FileBytes.SequenceEqual(HexEditShellCommon.FileBytesOrig);
             }
             return false;
         }
@@ -157,12 +157,12 @@ namespace KS.Files.Editors.HexEdit
         /// Adds a new byte to the current hex
         /// </summary>
         /// <param name="Content">New byte content</param>
-        public static void HexEdit_AddNewByte(byte Content)
+        public static void AddNewByte(byte Content)
         {
-            if (HexEditShellCommon.HexEdit_FileStream is not null)
+            if (HexEditShellCommon.FileStream is not null)
             {
-                Array.Resize(ref HexEditShellCommon.HexEdit_FileBytes, HexEditShellCommon.HexEdit_FileBytes.Length + 1);
-                HexEditShellCommon.HexEdit_FileBytes[^1] = Content;
+                Array.Resize(ref HexEditShellCommon.FileBytes, HexEditShellCommon.FileBytes.Length + 1);
+                HexEditShellCommon.FileBytes[^1] = Content;
             }
             else
             {
@@ -174,12 +174,12 @@ namespace KS.Files.Editors.HexEdit
         /// Adds the new bytes to the current hex
         /// </summary>
         /// <param name="Bytes">New bytes</param>
-        public static void HexEdit_AddNewBytes(byte[] Bytes)
+        public static void AddNewBytes(byte[] Bytes)
         {
-            if (HexEditShellCommon.HexEdit_FileStream is not null)
+            if (HexEditShellCommon.FileStream is not null)
             {
                 foreach (byte ByteContent in Bytes)
-                    HexEdit_AddNewByte(ByteContent);
+                    AddNewByte(ByteContent);
             }
             else
             {
@@ -191,23 +191,23 @@ namespace KS.Files.Editors.HexEdit
         /// Deletes a byte
         /// </summary>
         /// <param name="ByteNumber">The byte number</param>
-        public static void HexEdit_DeleteByte(long ByteNumber)
+        public static void DeleteByte(long ByteNumber)
         {
-            if (HexEditShellCommon.HexEdit_FileStream is not null)
+            if (HexEditShellCommon.FileStream is not null)
             {
                 if (ByteNumber < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
-                var FileBytesList = HexEditShellCommon.HexEdit_FileBytes.ToList();
+                var FileBytesList = HexEditShellCommon.FileBytes.ToList();
                 long ByteIndex = ByteNumber - 1L;
                 DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", ByteIndex, ByteNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", HexEditShellCommon.HexEdit_FileBytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", HexEditShellCommon.FileBytes.LongLength);
 
                 // Actually remove a byte
-                if (ByteNumber <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                if (ByteNumber <= HexEditShellCommon.FileBytes.LongLength)
                 {
                     FileBytesList.RemoveAt((int)ByteIndex);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", ByteIndex, HexEditShellCommon.HexEdit_FileBytes.LongLength);
-                    HexEditShellCommon.HexEdit_FileBytes = FileBytesList.ToArray();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", ByteIndex, HexEditShellCommon.FileBytes.LongLength);
+                    HexEditShellCommon.FileBytes = FileBytesList.ToArray();
                 }
                 else
                 {
@@ -224,41 +224,41 @@ namespace KS.Files.Editors.HexEdit
         /// Deletes the bytes
         /// </summary>
         /// <param name="StartByteNumber">Start from the byte number</param>
-        public static void HexEdit_DeleteBytes(long StartByteNumber) => HexEdit_DeleteBytes(StartByteNumber, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void DeleteBytes(long StartByteNumber) => DeleteBytes(StartByteNumber, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
         /// Deletes the bytes
         /// </summary>
         /// <param name="StartByteNumber">Start from the byte number</param>
         /// <param name="EndByteNumber">Ending byte number</param>
-        public static void HexEdit_DeleteBytes(long StartByteNumber, long EndByteNumber)
+        public static void DeleteBytes(long StartByteNumber, long EndByteNumber)
         {
-            if (HexEditShellCommon.HexEdit_FileStream is not null)
+            if (HexEditShellCommon.FileStream is not null)
             {
                 if (StartByteNumber < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 StartByteNumber.SwapIfSourceLarger(ref EndByteNumber);
                 long StartByteNumberIndex = StartByteNumber - 1L;
                 long EndByteNumberIndex = EndByteNumber - 1L;
-                var FileBytesList = HexEditShellCommon.HexEdit_FileBytes.ToList();
+                var FileBytesList = HexEditShellCommon.FileBytes.ToList();
                 DebugWriter.WriteDebug(DebugLevel.I, "Start byte number: {0}, end: {1}", StartByteNumber, EndByteNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got start byte index: {0}", StartByteNumberIndex);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got end byte index: {0}", EndByteNumberIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", HexEditShellCommon.HexEdit_FileBytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", HexEditShellCommon.FileBytes.LongLength);
 
                 // Actually remove the bytes
-                if (StartByteNumber <= HexEditShellCommon.HexEdit_FileBytes.LongLength & EndByteNumber <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                if (StartByteNumber <= HexEditShellCommon.FileBytes.LongLength & EndByteNumber <= HexEditShellCommon.FileBytes.LongLength)
                 {
                     for (long ByteNumber = EndByteNumber; ByteNumber >= StartByteNumber; ByteNumber -= 1)
                         FileBytesList.RemoveAt((int)(ByteNumber - 1L));
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0} to {1}. New length: {2}", StartByteNumber, EndByteNumber, HexEditShellCommon.HexEdit_FileBytes.LongLength);
-                    HexEditShellCommon.HexEdit_FileBytes = FileBytesList.ToArray();
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0} to {1}. New length: {2}", StartByteNumber, EndByteNumber, HexEditShellCommon.FileBytes.LongLength);
+                    HexEditShellCommon.FileBytes = FileBytesList.ToArray();
                 }
-                else if (StartByteNumber > HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                else if (StartByteNumber > HexEditShellCommon.FileBytes.LongLength)
                 {
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified start byte number may not be larger than the file size."));
                 }
-                else if (EndByteNumber > HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                else if (EndByteNumber > HexEditShellCommon.FileBytes.LongLength)
                 {
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified end byte number may not be larger than the file size."));
                 }
@@ -272,25 +272,25 @@ namespace KS.Files.Editors.HexEdit
         /// <summary>
         /// Renders the file in hex
         /// </summary>
-        public static void HexEdit_DisplayHex() =>
-            HexEdit_DisplayHex(1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void DisplayHex() =>
+            DisplayHex(1L, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
         /// Renders the file in hex
         /// </summary>
-        public static void HexEdit_DisplayHex(long Start) =>
-            HexEdit_DisplayHex(Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void DisplayHex(long Start) =>
+            DisplayHex(Start, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
         /// Renders the file in hex
         /// </summary>
-        public static void HexEdit_DisplayHex(long StartByte, long EndByte)
+        public static void DisplayHex(long StartByte, long EndByte)
         {
-            if (HexEditShellCommon.HexEdit_FileStream is not null)
+            if (HexEditShellCommon.FileStream is not null)
             {
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
-                FileContentPrinter.DisplayInHex(StartByte, EndByte, HexEditShellCommon.HexEdit_FileBytes);
+                FileContentPrinter.DisplayInHex(StartByte, EndByte, HexEditShellCommon.FileBytes);
             }
             else
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
@@ -299,34 +299,34 @@ namespace KS.Files.Editors.HexEdit
         /// <summary>
         /// Queries the byte and displays the results
         /// </summary>
-        public static void HexEdit_QueryByteAndDisplay(byte ByteContent) =>
-            HexEdit_QueryByteAndDisplay(ByteContent, 1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void QueryByteAndDisplay(byte ByteContent) =>
+            QueryByteAndDisplay(ByteContent, 1L, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
         /// Queries the byte and displays the results
         /// </summary>
-        public static void HexEdit_QueryByteAndDisplay(byte ByteContent, long Start) =>
-            HexEdit_QueryByteAndDisplay(ByteContent, Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void QueryByteAndDisplay(byte ByteContent, long Start) =>
+            QueryByteAndDisplay(ByteContent, Start, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
         /// Queries the byte and displays the results
         /// </summary>
-        public static void HexEdit_QueryByteAndDisplay(byte ByteContent, long StartByte, long EndByte)
+        public static void QueryByteAndDisplay(byte ByteContent, long StartByte, long EndByte)
         {
-            if (HexEditShellCommon.HexEdit_FileStream is not null)
+            if (HexEditShellCommon.FileStream is not null)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.HexEdit_FileBytes.LongLength);
+                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.FileBytes.LongLength);
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
-                if (StartByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength & EndByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                if (StartByte <= HexEditShellCommon.FileBytes.LongLength & EndByte <= HexEditShellCommon.FileBytes.LongLength)
                 {
-                    DriverHandler.CurrentFilesystemDriverLocal.DisplayInHex(ByteContent, true, StartByte, EndByte, HexEditShellCommon.HexEdit_FileBytes);
+                    DriverHandler.CurrentFilesystemDriverLocal.DisplayInHex(ByteContent, true, StartByte, EndByte, HexEditShellCommon.FileBytes);
                 }
-                else if (StartByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                else if (StartByte > HexEditShellCommon.FileBytes.LongLength)
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
-                else if (EndByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                else if (EndByte > HexEditShellCommon.FileBytes.LongLength)
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
@@ -342,7 +342,7 @@ namespace KS.Files.Editors.HexEdit
         /// </summary>
         /// <param name="FromByte">Byte to be replaced</param>
         /// <param name="WithByte">Byte to replace with</param>
-        public static void HexEdit_Replace(byte FromByte, byte WithByte) => HexEdit_Replace(FromByte, WithByte, 1L, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void Replace(byte FromByte, byte WithByte) => Replace(FromByte, WithByte, 1L, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
         /// Replaces every occurence of a byte with the replacement
@@ -350,7 +350,7 @@ namespace KS.Files.Editors.HexEdit
         /// <param name="FromByte">Byte to be replaced</param>
         /// <param name="WithByte">Byte to replace with</param>
         /// <param name="Start">Start byte number</param>
-        public static void HexEdit_Replace(byte FromByte, byte WithByte, long Start) => HexEdit_Replace(FromByte, WithByte, Start, HexEditShellCommon.HexEdit_FileBytes.LongLength);
+        public static void Replace(byte FromByte, byte WithByte, long Start) => Replace(FromByte, WithByte, Start, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
         /// Replaces every occurence of a byte with the replacement
@@ -359,30 +359,30 @@ namespace KS.Files.Editors.HexEdit
         /// <param name="WithByte">Byte to replace with</param>
         /// <param name="StartByte">Start byte number</param>
         /// <param name="EndByte">End byte number</param>
-        public static void HexEdit_Replace(byte FromByte, byte WithByte, long StartByte, long EndByte)
+        public static void Replace(byte FromByte, byte WithByte, long StartByte, long EndByte)
         {
-            if (HexEditShellCommon.HexEdit_FileStream is not null)
+            if (HexEditShellCommon.FileStream is not null)
             {
                 if (StartByte < 1)
                     throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Byte number must start with 1."));
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", FromByte, WithByte);
-                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.HexEdit_FileBytes.LongLength);
-                if (StartByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength & EndByte <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", HexEditShellCommon.FileBytes.LongLength);
+                if (StartByte <= HexEditShellCommon.FileBytes.LongLength & EndByte <= HexEditShellCommon.FileBytes.LongLength)
                 {
                     for (long ByteNumber = StartByte; ByteNumber <= EndByte; ByteNumber++)
                     {
-                        if (HexEditShellCommon.HexEdit_FileBytes[(int)(ByteNumber - 1L)] == FromByte)
+                        if (HexEditShellCommon.FileBytes[(int)(ByteNumber - 1L)] == FromByte)
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in byte {2}", FromByte, WithByte, ByteNumber);
-                            HexEditShellCommon.HexEdit_FileBytes[(int)(ByteNumber - 1L)] = WithByte;
+                            HexEditShellCommon.FileBytes[(int)(ByteNumber - 1L)] = WithByte;
                         }
                     }
                 }
-                else if (StartByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                else if (StartByte > HexEditShellCommon.FileBytes.LongLength)
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified start byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }
-                else if (EndByte > HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                else if (EndByte > HexEditShellCommon.FileBytes.LongLength)
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("The specified end byte number may not be larger than the file size."), true, KernelColorType.Error);
                 }

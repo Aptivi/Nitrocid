@@ -57,15 +57,15 @@ namespace KS.Shell.Shells.Text
             }
 
             // Open file if not open
-            if (TextEditShellCommon.TextEdit_FileStream is null)
+            if (TextEditShellCommon.FileStream is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
-                if (!TextEditTools.TextEdit_OpenTextFile(FilePath))
+                if (!TextEditTools.OpenTextFile(FilePath))
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
                     Bail = true;
                 }
-                TextEditShellCommon.TextEdit_AutoSave.Start();
+                TextEditShellCommon.AutoSave.Start();
             }
 
             // Actual shell logic
@@ -90,8 +90,8 @@ namespace KS.Shell.Shells.Text
             }
 
             // Close file
-            TextEditTools.TextEdit_CloseTextFile();
-            TextEditShellCommon.TextEdit_AutoSave.Stop();
+            TextEditTools.CloseTextFile();
+            TextEditShellCommon.AutoSave.Stop();
         }
 
     }

@@ -913,67 +913,67 @@
             {
                 "Name": "Username prompt style for mail",
                 "Type": "SString",
-                "Variable": "Mail_UserPromptStyle",
+                "Variable": "MailUserPromptStyle",
                 "Description": "Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
                 "Name": "Password prompt style for mail",
                 "Type": "SString",
-                "Variable": "Mail_PassPromptStyle",
+                "Variable": "MailPassPromptStyle",
                 "Description": "Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
                 "Name": "IMAP prompt style for mail",
                 "Type": "SString",
-                "Variable": "Mail_IMAPPromptStyle",
+                "Variable": "MailIMAPPromptStyle",
                 "Description": "Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
                 "Name": "SMTP prompt style for mail",
                 "Type": "SString",
-                "Variable": "Mail_SMTPPromptStyle",
+                "Variable": "MailSMTPPromptStyle",
                 "Description": "Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
                 "Name": "Automatically detect mail server",
                 "Type": "SBoolean",
-                "Variable": "Mail_AutoDetectServer",
+                "Variable": "MailAutoDetectServer",
                 "Description": "Automatically detect the mail server based on the given address."
             },
             {
                 "Name": "Enable mail debug",
                 "Type": "SBoolean",
-                "Variable": "Mail_Debug",
+                "Variable": "MailDebug",
                 "Description": "Enables mail server debug."
             },
             {
                 "Name": "Notify for new mail messages",
                 "Type": "SBoolean",
-                "Variable": "Mail_NotifyNewMail",
+                "Variable": "MailNotifyNewMail",
                 "Description": "Notifies you for any new mail messages."
             },
             {
                 "Name": "GPG password prompt style for mail",
                 "Type": "SString",
-                "Variable": "Mail_GPGPromptStyle",
+                "Variable": "MailGPGPromptStyle",
                 "Description": "Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed."
             },
             {
                 "Name": "Send IMAP ping interval",
                 "Type": "SInt",
-                "Variable": "Mail_ImapPingInterval",
+                "Variable": "MailImapPingInterval",
                 "Description": "How many milliseconds to send the IMAP ping?"
             },
             {
                 "Name": "Send SMTP ping interval",
                 "Type": "SInt",
-                "Variable": "Mail_SmtpPingInterval",
+                "Variable": "MailSmtpPingInterval",
                 "Description": "How many milliseconds to send the SMTP ping?"
             },
             {
                 "Name": "Mail text format",
                 "Type": "SSelection",
-                "Variable": "Mail_TextFormat",
+                "Variable": "MailTextFormat",
                 "IsEnumeration": true,
                 "EnumerationInternal": false,
                 "Enumeration": "MimeKit.Text.TextFormat",
@@ -1056,7 +1056,7 @@
             {
                 "Name": "Maximum number of e-mails in one page",
                 "Type": "SIntSlider",
-                "Variable": "Mail_MaxMessagesInPage",
+                "Variable": "MailMaxMessagesInPage",
                 "Description": "How many e-mail messages to display in one page?",
                 "MinimumValue": 0,
                 "MaximumValue": 25
@@ -1064,19 +1064,19 @@
             {
                 "Name": "Show mail transfer progress",
                 "Type": "SBoolean",
-                "Variable": "Mail_ShowProgress",
+                "Variable": "MailShowProgress",
                 "Description": "If enabled, the mail shell will show how many bytes transmitted when downloading mail."
             },
             {
                 "Name": "Mail transfer progress",
                 "Type": "SString",
-                "Variable": "Mail_ProgressStyle",
+                "Variable": "MailProgressStyle",
                 "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size and {1} for total size."
             },
             {
                 "Name": "Mail transfer progress (single)",
                 "Type": "SString",
-                "Variable": "Mail_ProgressStyleSingle",
+                "Variable": "MailProgressStyleSingle",
                 "Description": "Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size."
             },
             {
@@ -1292,25 +1292,25 @@
             {
                 "Name": "Enable text editor autosave",
                 "Type": "SBoolean",
-                "Variable": "TextEdit_AutoSaveFlag",
+                "Variable": "TextEditAutoSaveFlag",
                 "Description": "Turns on or off the text editor autosave feature."
             },
             {
                 "Name": "Text editor autosave interval",
                 "Type": "SInt",
-                "Variable": "TextEdit_AutoSaveInterval",
+                "Variable": "TextEditAutoSaveInterval",
                 "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
             },
             {
                 "Name": "Enable hex editor autosave",
                 "Type": "SBoolean",
-                "Variable": "HexEdit_AutoSaveFlag",
+                "Variable": "HexEditAutoSaveFlag",
                 "Description": "Turns on or off the hex editor autosave feature."
             },
             {
                 "Name": "Hex editor autosave interval",
                 "Type": "SInt",
-                "Variable": "HexEdit_AutoSaveInterval",
+                "Variable": "HexEditAutoSaveInterval",
                 "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
             },
             {
@@ -1400,7 +1400,7 @@
             {
                 "Name": "Default JSON formatting for JSON shell",
                 "Type": "SSelection",
-                "Variable": "JsonShell_Formatting",
+                "Variable": "JsonShellFormatting",
                 "IsEnumeration": true,
                 "EnumerationInternal": false,
                 "Enumeration": "Newtonsoft.Json.Formatting",

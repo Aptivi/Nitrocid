@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to query a character and get its number from the specified line or all lines. This is useful for some commands like delcharnum.
     /// </remarks>
-    class TextEdit_QueryCharCommand : BaseCommand, ICommand
+    class QueryCharCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -44,14 +44,14 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
                     {
                         int LineIndex = Convert.ToInt32(parameters.ArgumentsList[1]);
-                        var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineIndex);
+                        var QueriedChars = TextEditTools.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineIndex);
                         TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineIndex);
 
                         // Process the output
-                        string text = TextEditShellCommon.TextEdit_FileLines[LineIndex - 1];
+                        string text = TextEditShellCommon.FileLines[LineIndex - 1];
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
                             char Character = text[charIndex];
@@ -68,14 +68,14 @@ namespace KS.Shell.Shells.Text.Commands
                 }
                 else if (parameters.ArgumentsList[1].ToLower() == "all")
                 {
-                    var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(parameters.ArgumentsList[0]));
+                    var QueriedChars = TextEditTools.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]));
                     foreach (var QueriedChar in QueriedChars)
                     {
                         int LineIndex = QueriedChar.Item1;
                         TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineIndex + 1);
 
                         // Process the output
-                        string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
+                        string text = TextEditShellCommon.FileLines[LineIndex];
                         var queried = QueriedChar.Item2;
                         for (int charIndex = 0; charIndex < text.Length; charIndex++)
                         {
@@ -91,19 +91,19 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count)
                     {
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[1]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[2]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            var QueriedChars = TextEditTools.TextEdit_QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineNumber);
+                            var QueriedChars = TextEditTools.QueryChar(Convert.ToChar(parameters.ArgumentsList[0]), LineNumber);
                             int LineIndex = LineNumber - 1;
                             TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
 
                             // Process the output
-                            string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
+                            string text = TextEditShellCommon.FileLines[LineIndex];
                             for (int charIndex = 0; charIndex < text.Length; charIndex++)
                             {
                                 char Character = text[charIndex];

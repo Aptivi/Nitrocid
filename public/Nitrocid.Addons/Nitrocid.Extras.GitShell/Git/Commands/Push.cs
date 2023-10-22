@@ -26,7 +26,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command pushes all updates to the server.
     /// </remarks>
-    class Git_PushCommand : BaseCommand, ICommand
+    class PushCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

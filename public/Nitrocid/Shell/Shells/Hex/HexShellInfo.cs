@@ -21,8 +21,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Hex.Commands;
-using System;
-using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Hex.Presets;
 
@@ -46,21 +44,21 @@ namespace KS.Shell.Shells.Hex
                         {
                             new CommandArgumentPart(true, "byte")
                         })
-                    }, new HexEdit_AddByteCommand())
+                    }, new AddByteCommand())
             },
             
             { "addbytes",
                 new CommandInfo("addbytes", ShellType, /* Localizable */ "Adds the new bytes at the end of the file",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new HexEdit_AddBytesCommand())
+                    }, new AddBytesCommand())
             },
             
             { "clear",
                 new CommandInfo("clear", ShellType, /* Localizable */ "Clears the binary file",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new HexEdit_ClearCommand())
+                    }, new ClearCommand())
             },
             
             { "delbyte",
@@ -70,7 +68,7 @@ namespace KS.Shell.Shells.Hex
                         {
                             new CommandArgumentPart(true, "bytenumber", null, true)
                         })
-                    }, new HexEdit_DelByteCommand())
+                    }, new DelByteCommand())
             },
             
             { "delbytes",
@@ -81,14 +79,14 @@ namespace KS.Shell.Shells.Hex
                             new CommandArgumentPart(true, "startbyte", null, true),
                             new CommandArgumentPart(false, "endbyte", null, true)
                         })
-                    }, new HexEdit_DelBytesCommand())
+                    }, new DelBytesCommand())
             },
             
             { "exitnosave",
                 new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the hex editor",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new HexEdit_ExitNoSaveCommand())
+                    }, new ExitNoSaveCommand())
             },
             
             { "print",
@@ -99,7 +97,7 @@ namespace KS.Shell.Shells.Hex
                             new CommandArgumentPart(false, "startbyte", null, true),
                             new CommandArgumentPart(false, "endbyte", null, true)
                         })
-                    }, new HexEdit_PrintCommand(), CommandFlags.Wrappable)
+                    }, new PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "querybyte",
@@ -111,7 +109,7 @@ namespace KS.Shell.Shells.Hex
                             new CommandArgumentPart(false, "startbyte", null, true),
                             new CommandArgumentPart(false, "endbyte", null, true)
                         })
-                    }, new HexEdit_QueryByteCommand(), CommandFlags.Wrappable)
+                    }, new QueryByteCommand(), CommandFlags.Wrappable)
             },
             
             { "replace",
@@ -122,14 +120,14 @@ namespace KS.Shell.Shells.Hex
                             new CommandArgumentPart(true, "byte"),
                             new CommandArgumentPart(true, "replacebyte")
                         })
-                    }, new HexEdit_ReplaceCommand())
+                    }, new ReplaceCommand())
             },
             
             { "save",
                 new CommandInfo("save", ShellType, /* Localizable */ "Saves the file",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new HexEdit_SaveCommand())
+                    }, new SaveCommand())
             },
         };
 

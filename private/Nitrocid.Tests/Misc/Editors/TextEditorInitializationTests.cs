@@ -37,11 +37,11 @@ namespace Nitrocid.Tests.Misc.Editors
         public void TestOpenSaveCloseTextFile()
         {
             string PathToTestText = Path.GetFullPath("TestData/TestText.txt");
-            TextEditTools.TextEdit_OpenTextFile(PathToTestText).ShouldBeTrue();
-            TextEditShellCommon.TextEdit_FileLines.Add("Hello!");
-            TextEditTools.TextEdit_SaveTextFile(false).ShouldBeTrue();
-            TextEditShellCommon.TextEdit_FileLines.ShouldContain("Hello!");
-            TextEditTools.TextEdit_CloseTextFile().ShouldBeTrue();
+            TextEditTools.OpenTextFile(PathToTestText).ShouldBeTrue();
+            TextEditShellCommon.FileLines.Add("Hello!");
+            TextEditTools.SaveTextFile(false).ShouldBeTrue();
+            TextEditShellCommon.FileLines.ShouldContain("Hello!");
+            TextEditTools.CloseTextFile().ShouldBeTrue();
         }
 
     }

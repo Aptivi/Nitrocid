@@ -55,11 +55,11 @@ namespace KS.Shell.Shells.Text.Presets
 
             // File name
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat(Path.GetFileName(TextEditShellCommon.TextEdit_FileStream.Name));
+            PresetStringBuilder.AppendFormat(Path.GetFileName(TextEditShellCommon.FileStream.Name));
 
             // Was file edited?
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat("{0}", TextEditTools.TextEdit_WasTextEdited() ? "*" : "");
+            PresetStringBuilder.AppendFormat("{0}", TextEditTools.WasTextEdited() ? "*" : "");
 
             // Closing
             PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);

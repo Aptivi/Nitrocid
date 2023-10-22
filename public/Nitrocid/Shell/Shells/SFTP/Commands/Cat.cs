@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <remarks>
     /// This command lets you read the content of a remote file to the console
     /// </remarks>
-    class SFTP_CatCommand : BaseCommand, ICommand
+    class CatCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

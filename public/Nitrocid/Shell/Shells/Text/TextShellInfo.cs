@@ -21,8 +21,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Text.Commands;
-using System;
-using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Text.Presets;
 
@@ -46,21 +44,21 @@ namespace KS.Shell.Shells.Text
                         {
                             new CommandArgumentPart(true, "text")
                         })
-                    }, new TextEdit_AddLineCommand())
+                    }, new AddLineCommand())
             },
             
             { "addlines",
                 new CommandInfo("addlines", ShellType, /* Localizable */ "Adds the new lines at the end of the file",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new TextEdit_AddLinesCommand())
+                    }, new AddLinesCommand())
             },
             
             { "clear",
                 new CommandInfo("clear", ShellType, /* Localizable */ "Clears the text file",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new TextEdit_ClearCommand())
+                    }, new ClearCommand())
             },
             
             { "delcharnum",
@@ -71,7 +69,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "charNum", null, true),
                             new CommandArgumentPart(true, "lineNum", null, true)
                         })
-                    }, new TextEdit_DelCharNumCommand())
+                    }, new DelCharNumCommand())
             },
             
             { "delline",
@@ -82,7 +80,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "lineNum", null, true),
                             new CommandArgumentPart(false, "lineNum2", null, true)
                         })
-                    }, new TextEdit_DelLineCommand())
+                    }, new DelLineCommand())
             },
             
             { "delword",
@@ -94,7 +92,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "lineNum", null, true),
                             new CommandArgumentPart(false, "lineNum2", null, true)
                         })
-                    }, new TextEdit_DelWordCommand())
+                    }, new DelWordCommand())
             },
             
             { "editline",
@@ -104,14 +102,14 @@ namespace KS.Shell.Shells.Text
                         {
                             new CommandArgumentPart(true, "linenumber", null, true)
                         })
-                    }, new TextEdit_EditLineCommand())
+                    }, new EditLineCommand())
             },
             
             { "exitnosave",
                 new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the text editor",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new TextEdit_ExitNoSaveCommand())
+                    }, new ExitNoSaveCommand())
             },
             
             { "print",
@@ -122,7 +120,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(false, "lineNum", null, true),
                             new CommandArgumentPart(false, "lineNum2", null, true)
                         })
-                    }, new TextEdit_PrintCommand(), CommandFlags.Wrappable)
+                    }, new PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "querychar",
@@ -134,7 +132,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "lineNum/all"),
                             new CommandArgumentPart(false, "lineNum2", null, true)
                         })
-                    }, new TextEdit_QueryCharCommand(), CommandFlags.Wrappable)
+                    }, new QueryCharCommand(), CommandFlags.Wrappable)
             },
             
             { "queryword",
@@ -146,7 +144,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "lineNum/all"),
                             new CommandArgumentPart(false, "lineNum2", null, true)
                         })
-                    }, new TextEdit_QueryWordCommand(), CommandFlags.Wrappable)
+                    }, new QueryWordCommand(), CommandFlags.Wrappable)
             },
             
             { "querywordregex",
@@ -158,7 +156,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "lineNum/all"),
                             new CommandArgumentPart(false, "lineNum2", null, true)
                         })
-                    }, new TextEdit_QueryWordRegexCommand(), CommandFlags.Wrappable)
+                    }, new QueryWordRegexCommand(), CommandFlags.Wrappable)
             },
             
             { "replace",
@@ -169,7 +167,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "word/phrase")
                         })
-                    }, new TextEdit_ReplaceCommand())
+                    }, new ReplaceCommand())
             },
             
             { "replaceinline",
@@ -182,7 +180,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "lineNum/all"),
                             new CommandArgumentPart(false, "lineNum2", null, true)
                         })
-                    }, new TextEdit_ReplaceInlineCommand())
+                    }, new ReplaceInlineCommand())
             },
             
             { "replaceregex",
@@ -193,7 +191,7 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "regex"),
                             new CommandArgumentPart(true, "word/phrase")
                         })
-                    }, new TextEdit_ReplaceRegexCommand())
+                    }, new ReplaceRegexCommand())
             },
             
             { "replaceinlineregex",
@@ -206,14 +204,14 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "lineNum/all"),
                             new CommandArgumentPart(false, "lineNum2", null, true)
                         })
-                    }, new TextEdit_ReplaceInlineRegexCommand())
+                    }, new ReplaceInlineRegexCommand())
             },
             
             { "save",
                 new CommandInfo("save", ShellType, /* Localizable */ "Saves the file",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new TextEdit_SaveCommand())
+                    }, new SaveCommand())
             }
         };
 

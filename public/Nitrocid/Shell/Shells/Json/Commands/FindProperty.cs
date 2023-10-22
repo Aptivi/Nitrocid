@@ -30,13 +30,13 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to search for a property in the parent property. Note that the parent property must exist.
     /// </remarks>
-    class JsonShell_FindPropertyCommand : BaseCommand, ICommand
+    class FindPropertyCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
-            var token = JsonTools.JsonShell_GetPropertySafe(parent, parameters.ArgumentsList[0]);
+            var token = JsonTools.GetPropertySafe(parent, parameters.ArgumentsList[0]);
             if (token != null)
                 TextWriterColor.Write(Translate.DoTranslation("Property is found in") + $" {token.Path}");
             else

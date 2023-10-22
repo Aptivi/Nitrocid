@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <remarks>
     /// Downloads the binary or text file and saves it to the current working local directory for you to use the downloaded file that is provided in the FTP server.
     /// </remarks>
-    class FTP_GetCommand : BaseCommand, ICommand
+    class GetCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

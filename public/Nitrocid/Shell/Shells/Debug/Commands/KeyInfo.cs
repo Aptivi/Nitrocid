@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Debug.Commands
     /// <remarks>
     /// This command lets you view the details about a pressed key on your keyboard, including the pressed key and character, the hexadecimal representation of the letter, the pressed modifiers, and the keyboard shortcut.
     /// </remarks>
-    class Debug_KeyInfoCommand : BaseCommand, ICommand
+    class KeyInfoCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

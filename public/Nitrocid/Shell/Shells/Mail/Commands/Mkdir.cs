@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// If you want an additional mail folder to organize your messages there, you can use this command. Works with the combination of the mv or mvall command.
     /// </remarks>
-    class Mail_MkdirCommand : BaseCommand, ICommand
+    class MkdirCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

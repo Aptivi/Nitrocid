@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.Json.Presets
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), JsonShellCommon.JsonShell_FileStream.Name)
+                new PowerLineSegment(new Color(85, 255, 255), new Color(43, 127, 127), JsonShellCommon.FileStream.Name)
             };
 
             // Builder

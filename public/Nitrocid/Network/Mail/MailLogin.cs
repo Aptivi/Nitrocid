@@ -45,22 +45,22 @@ namespace KS.Network.Mail
         // Variables
         public static ImapClient IMAP_Client = new();
         public static SmtpClient SMTP_Client = new();
-        internal static NetworkCredential Mail_Authentication = new();
+        internal static NetworkCredential Authentication = new();
 
-        public static string Mail_UserPromptStyle =>
-            Config.MainConfig.Mail_UserPromptStyle;
-        public static string Mail_PassPromptStyle =>
-            Config.MainConfig.Mail_PassPromptStyle;
-        public static string Mail_IMAPPromptStyle =>
-            Config.MainConfig.Mail_IMAPPromptStyle;
-        public static string Mail_SMTPPromptStyle =>
-            Config.MainConfig.Mail_SMTPPromptStyle;
-        public static string Mail_GPGPromptStyle =>
-            Config.MainConfig.Mail_GPGPromptStyle;
-        public static bool Mail_Debug =>
-            Config.MainConfig.Mail_Debug;
-        public static bool Mail_AutoDetectServer =>
-            Config.MainConfig.Mail_AutoDetectServer;
+        public static string UserPromptStyle =>
+            Config.MainConfig.MailUserPromptStyle;
+        public static string PassPromptStyle =>
+            Config.MainConfig.MailPassPromptStyle;
+        public static string IMAPPromptStyle =>
+            Config.MainConfig.MailIMAPPromptStyle;
+        public static string SMTPPromptStyle =>
+            Config.MainConfig.MailSMTPPromptStyle;
+        public static string GPGPromptStyle =>
+            Config.MainConfig.MailGPGPromptStyle;
+        public static bool Debug =>
+            Config.MainConfig.MailDebug;
+        public static bool AutoDetectServer =>
+            Config.MainConfig.MailAutoDetectServer;
 
         /// <summary>
         /// Mail server type
@@ -83,9 +83,9 @@ namespace KS.Network.Mail
         public static NetworkConnection PromptUser()
         {
             // Username or mail address
-            if (!string.IsNullOrWhiteSpace(Mail_UserPromptStyle))
+            if (!string.IsNullOrWhiteSpace(UserPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(Mail_UserPromptStyle), false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(UserPromptStyle), false, KernelColorType.Input);
             }
             else
             {
@@ -105,21 +105,21 @@ namespace KS.Network.Mail
         {
             // Password
             DebugWriter.WriteDebug(DebugLevel.I, "Username: {0}", Username);
-            Mail_Authentication.UserName = Username;
-            if (!string.IsNullOrWhiteSpace(Mail_PassPromptStyle))
+            Authentication.UserName = Username;
+            if (!string.IsNullOrWhiteSpace(PassPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(Mail_PassPromptStyle), false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(PassPromptStyle), false, KernelColorType.Input);
             }
             else
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter password: "), false, KernelColorType.Input);
             }
-            Mail_Authentication.Password = Input.ReadLineNoInput();
+            Authentication.Password = Input.ReadLineNoInput();
 
             string DynamicAddressIMAP = ServerDetect(Username, ServerType.IMAP);
             string DynamicAddressSMTP = ServerDetect(Username, ServerType.SMTP);
 
-            if (!string.IsNullOrEmpty(DynamicAddressIMAP) & !string.IsNullOrEmpty(DynamicAddressSMTP) & Mail_AutoDetectServer)
+            if (!string.IsNullOrEmpty(DynamicAddressIMAP) & !string.IsNullOrEmpty(DynamicAddressSMTP) & AutoDetectServer)
                 return ParseAddresses(DynamicAddressIMAP, 0, DynamicAddressSMTP, 0);
             else
                 return PromptServer();
@@ -135,9 +135,9 @@ namespace KS.Network.Mail
             int SMTP_Port;
 
             // IMAP server address and port
-            if (!string.IsNullOrWhiteSpace(Mail_IMAPPromptStyle))
+            if (!string.IsNullOrWhiteSpace(IMAPPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(Mail_IMAPPromptStyle), false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(IMAPPromptStyle), false, KernelColorType.Input);
             }
             else
             {
@@ -147,9 +147,9 @@ namespace KS.Network.Mail
             DebugWriter.WriteDebug(DebugLevel.I, "IMAP Server: \"{0}\"", IMAP_Address);
 
             // SMTP server address and port
-            if (!string.IsNullOrWhiteSpace(Mail_SMTPPromptStyle))
+            if (!string.IsNullOrWhiteSpace(SMTPPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(Mail_SMTPPromptStyle), false, KernelColorType.Input);
+                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(SMTPPromptStyle), false, KernelColorType.Input);
             }
             else
             {
@@ -168,7 +168,7 @@ namespace KS.Network.Mail
             // If the address is <address>:[port]
             if (IMAP_Address.Contains(':'))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Authentication.UserName);
                 IMAP_Port = Convert.ToInt32(IMAP_Address[(IMAP_Address.IndexOf(":") + 1)..]);
                 IMAP_Address = IMAP_Address.Remove(IMAP_Address.IndexOf(":"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", IMAP_Address, IMAP_Port);
@@ -177,14 +177,14 @@ namespace KS.Network.Mail
             // If the address is <address>:[port]
             if (SMTP_Address.Contains(':'))
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Mail_Authentication.UserName);
+                DebugWriter.WriteDebug(DebugLevel.I, "Found colon in address. Separating...", Authentication.UserName);
                 SMTP_Port = Convert.ToInt32(SMTP_Address[(SMTP_Address.IndexOf(":") + 1)..]);
                 SMTP_Address = SMTP_Address.Remove(SMTP_Address.IndexOf(":"));
                 DebugWriter.WriteDebug(DebugLevel.I, "Final address: {0}, Final port: {1}", SMTP_Address, SMTP_Port);
             }
 
             // Try to connect
-            Mail_Authentication.Domain = IMAP_Address;
+            Authentication.Domain = IMAP_Address;
             return ConnectShell(IMAP_Address, IMAP_Port, SMTP_Address, SMTP_Port);
         }
 
@@ -242,7 +242,7 @@ namespace KS.Network.Mail
             try
             {
                 // Register the context and initialize the loggers if debug mode is on
-                if (KernelEntry.DebugMode & Mail_Debug)
+                if (KernelEntry.DebugMode & Debug)
                 {
                     IMAP_Client = new ImapClient(new ProtocolLogger(Paths.HomePath + "/ImapDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
                     SMTP_Client = new SmtpClient(new ProtocolLogger(Paths.HomePath + "/SmtpDebug.log") { LogTimestamps = true, RedactSecrets = true, ClientPrefix = "KS:  ", ServerPrefix = "SRV: " });
@@ -262,17 +262,17 @@ namespace KS.Network.Mail
 
                 // IMAP Authentication
                 TextWriterColor.Write(Translate.DoTranslation("Authenticating..."));
-                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Mail_Authentication.UserName, Address);
-                IMAP_Client.Authenticate(Mail_Authentication);
+                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to IMAP server {1}...", Authentication.UserName, Address);
+                IMAP_Client.Authenticate(Authentication);
 
                 // SMTP Authentication
-                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Mail_Authentication.UserName, SmtpAddress);
-                SMTP_Client.Authenticate(Mail_Authentication);
+                DebugWriter.WriteDebug(DebugLevel.I, "Authenticating {0} to SMTP server {1}...", Authentication.UserName, SmtpAddress);
+                SMTP_Client.Authenticate(Authentication);
                 IMAP_Client.WebAlert -= MailHandlers.HandleWebAlert;
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Authentication succeeded. Opening shell...");
-                var Client = NetworkConnectionTools.EstablishConnection("Mail client", $"mailto:{Mail_Authentication.UserName}", NetworkConnectionType.Mail, new object[] { IMAP_Client, SMTP_Client });
+                var Client = NetworkConnectionTools.EstablishConnection("Mail client", $"mailto:{Authentication.UserName}", NetworkConnectionType.Mail, new object[] { IMAP_Client, SMTP_Client });
                 return Client;
             }
             catch (Exception ex)

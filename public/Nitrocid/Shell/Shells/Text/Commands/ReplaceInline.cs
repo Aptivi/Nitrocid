@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to replace a word or a complete phrase enclosed in double quotes with another one (enclosed in double quotes again) in a line.
     /// </remarks>
-    class TextEdit_ReplaceInlineCommand : BaseCommand, ICommand
+    class ReplaceInlineCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -44,9 +44,9 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count)
                     {
-                        TextEditTools.TextEdit_Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], Convert.ToInt32(parameters.ArgumentsList[2]));
+                        TextEditTools.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], Convert.ToInt32(parameters.ArgumentsList[2]));
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
                         return 0;
                     }
@@ -67,14 +67,14 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]) & TextTools.IsStringNumeric(parameters.ArgumentsList[3]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[3]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[3]) <= TextEditShellCommon.FileLines.Count)
                     {
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[2]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[3]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            TextEditTools.TextEdit_Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], LineNumber);
+                            TextEditTools.Replace(parameters.ArgumentsList[0], parameters.ArgumentsList[1], LineNumber);
                             TextWriterColor.WriteKernelColor(Translate.DoTranslation("String replaced in line {0}."), true, KernelColorType.Success, LineNumber);
                         }
                         return 0;

@@ -42,17 +42,17 @@ namespace KS.Files.Editors.JsonShell
         /// </summary>
         /// <param name="File">Target file. We recommend you to use <see cref="FilesystemTools.NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool JsonShell_OpenJsonFile(string File)
+        public static bool OpenJsonFile(string File)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
-                JsonShellCommon.JsonShell_FileStream = new FileStream(File, FileMode.Open);
-                var JsonFileReader = new StreamReader(JsonShellCommon.JsonShell_FileStream);
+                JsonShellCommon.FileStream = new FileStream(File, FileMode.Open);
+                var JsonFileReader = new StreamReader(JsonShellCommon.FileStream);
                 string JsonFileContents = Reading.ReadToEndAndSeek(ref JsonFileReader);
-                JsonShellCommon.JsonShell_FileToken = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
-                JsonShellCommon.JsonShell_FileTokenOrig = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
-                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, JsonShellCommon.JsonShell_FileStream.Length, JsonShellCommon.JsonShell_FileStream.Position);
+                JsonShellCommon.FileToken = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
+                JsonShellCommon.FileTokenOrig = JToken.Parse(!string.IsNullOrWhiteSpace(JsonFileContents) ? JsonFileContents : "{}");
+                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, JsonShellCommon.FileStream.Length, JsonShellCommon.FileStream.Position);
                 return true;
             }
             catch (Exception ex)
@@ -67,16 +67,16 @@ namespace KS.Files.Editors.JsonShell
         /// Closes text file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool JsonShell_CloseTextFile()
+        public static bool CloseTextFile()
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
-                JsonShellCommon.JsonShell_FileStream.Close();
-                JsonShellCommon.JsonShell_FileStream = null;
+                JsonShellCommon.FileStream.Close();
+                JsonShellCommon.FileStream = null;
                 DebugWriter.WriteDebug(DebugLevel.I, "File is no longer open.");
-                JsonShellCommon.JsonShell_FileToken = JToken.Parse("{}");
-                JsonShellCommon.JsonShell_FileTokenOrig = JToken.Parse("{}");
+                JsonShellCommon.FileToken = JToken.Parse("{}");
+                JsonShellCommon.FileTokenOrig = JToken.Parse("{}");
                 return true;
             }
             catch (Exception ex)
@@ -91,30 +91,30 @@ namespace KS.Files.Editors.JsonShell
         /// Saves JSON file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool JsonShell_SaveFile(bool ClearJson) => JsonShell_SaveFile(ClearJson, JsonShellCommon.JsonShell_Formatting);
+        public static bool SaveFile(bool ClearJson) => SaveFile(ClearJson, JsonShellCommon.Formatting);
 
         /// <summary>
         /// Saves JSON file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool JsonShell_SaveFile(bool ClearJson, Formatting Formatting)
+        public static bool SaveFile(bool ClearJson, Formatting Formatting)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
-                JsonShellCommon.JsonShell_FileStream.SetLength(0L);
+                JsonShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
-                var FileLinesByte = Encoding.Default.GetBytes(JsonConvert.SerializeObject(JsonShellCommon.JsonShell_FileToken, Formatting));
+                var FileLinesByte = Encoding.Default.GetBytes(JsonConvert.SerializeObject(JsonShellCommon.FileToken, Formatting));
                 DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
-                JsonShellCommon.JsonShell_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
-                JsonShellCommon.JsonShell_FileStream.Flush();
+                JsonShellCommon.FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
+                JsonShellCommon.FileStream.Flush();
                 DebugWriter.WriteDebug(DebugLevel.I, "File is saved.");
                 if (ClearJson)
                 {
-                    JsonShellCommon.JsonShell_FileToken = JToken.Parse("{}");
+                    JsonShellCommon.FileToken = JToken.Parse("{}");
                 }
-                JsonShellCommon.JsonShell_FileTokenOrig = JToken.Parse("{}");
-                JsonShellCommon.JsonShell_FileTokenOrig = JsonShellCommon.JsonShell_FileToken;
+                JsonShellCommon.FileTokenOrig = JToken.Parse("{}");
+                JsonShellCommon.FileTokenOrig = JsonShellCommon.FileToken;
                 return true;
             }
             catch (Exception ex)
@@ -128,16 +128,16 @@ namespace KS.Files.Editors.JsonShell
         /// <summary>
         /// Handles autosave
         /// </summary>
-        public static void JsonShell_HandleAutoSaveJsonFile()
+        public static void HandleAutoSaveJsonFile()
         {
-            if (JsonShellCommon.JsonShell_AutoSaveFlag)
+            if (JsonShellCommon.AutoSaveFlag)
             {
                 try
                 {
-                    Thread.Sleep(JsonShellCommon.JsonShell_AutoSaveInterval * 1000);
-                    if (JsonShellCommon.JsonShell_FileStream is not null)
+                    Thread.Sleep(JsonShellCommon.AutoSaveInterval * 1000);
+                    if (JsonShellCommon.FileStream is not null)
                     {
-                        JsonShell_SaveFile(false);
+                        SaveFile(false);
                     }
                 }
                 catch (Exception ex)
@@ -150,17 +150,17 @@ namespace KS.Files.Editors.JsonShell
         /// <summary>
         /// Was JSON edited?
         /// </summary>
-        public static bool JsonShell_WasJsonEdited() => !JToken.DeepEquals(JsonShellCommon.JsonShell_FileToken, JsonShellCommon.JsonShell_FileTokenOrig);
+        public static bool WasJsonEdited() => !JToken.DeepEquals(JsonShellCommon.FileToken, JsonShellCommon.FileTokenOrig);
 
         /// <summary>
         /// Gets a property in the JSON file
         /// </summary>
         /// <param name="Property">The property. You can use JSONPath.</param>
-        public static JToken JsonShell_GetProperty(string Property)
+        public static JToken GetProperty(string Property)
         {
-            if (JsonShellCommon.JsonShell_FileStream is not null)
+            if (JsonShellCommon.FileStream is not null)
             {
-                var TargetToken = JsonShellCommon.JsonShell_FileToken.SelectToken(Property);
+                var TargetToken = JsonShellCommon.FileToken.SelectToken(Property);
                 if (TargetToken is not null)
                 {
                     return TargetToken;
@@ -181,11 +181,11 @@ namespace KS.Files.Editors.JsonShell
         /// </summary>
         /// <param name="ParentProperty">Where is the target property found?</param>
         /// <param name="Property">The property. You can use JSONPath.</param>
-        public static JToken JsonShell_GetPropertySafe(string ParentProperty, string Property)
+        public static JToken GetPropertySafe(string ParentProperty, string Property)
         {
-            if (JsonShellCommon.JsonShell_FileStream is not null)
+            if (JsonShellCommon.FileStream is not null)
             {
-                var TargetToken = JsonShell_GetProperty(ParentProperty);
+                var TargetToken = GetProperty(ParentProperty);
                 TargetToken = TargetToken.SelectToken(Property);
                 if (TargetToken is not null)
                 {
@@ -208,16 +208,16 @@ namespace KS.Files.Editors.JsonShell
         /// <param name="ParentProperty">Where is the target array found?</param>
         /// <param name="Key">Name of property containing the array</param>
         /// <param name="Value">The new value</param>
-        public static void JsonShell_AddNewObject(string ParentProperty, string Key, JToken Value)
+        public static void AddNewObject(string ParentProperty, string Key, JToken Value)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
-            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
+            var TargetToken = GetProperty(ParentProperty);
             JToken PropertyToken = TargetToken[Key];
 
             // Check to see if we're dealing with the array
             if (PropertyToken.Type == JTokenType.Array)
                 ((JArray)PropertyToken).Add(Value);
-            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.FileToken.Count());
         }
 
         /// <summary>
@@ -226,16 +226,16 @@ namespace KS.Files.Editors.JsonShell
         /// <param name="ParentProperty">Where is the target array found?</param>
         /// <param name="Index">Index number of an array to add the value to</param>
         /// <param name="Value">The new value</param>
-        public static void JsonShell_AddNewObjectIndexed(string ParentProperty, int Index, JToken Value)
+        public static void AddNewObjectIndexed(string ParentProperty, int Index, JToken Value)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
-            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
+            var TargetToken = GetProperty(ParentProperty);
             JToken PropertyToken = TargetToken.ElementAt(Index);
 
             // Check to see if we're dealing with the array
             if (PropertyToken.Type == JTokenType.Array)
                 ((JArray)PropertyToken).Add(Value);
-            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.FileToken.Count());
         }
 
         /// <summary>
@@ -244,13 +244,13 @@ namespace KS.Files.Editors.JsonShell
         /// <param name="ParentProperty">Where to place the new property?</param>
         /// <param name="Key">New property</param>
         /// <param name="Value">The value for the new property</param>
-        public static void JsonShell_AddNewProperty(string ParentProperty, string Key, JToken Value)
+        public static void AddNewProperty(string ParentProperty, string Key, JToken Value)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
-            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
+            var TargetToken = GetProperty(ParentProperty);
             JObject TokenObject = (JObject)TargetToken;
             TokenObject.Add(Key, Value);
-            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.FileToken.Count());
         }
 
         /// <summary>
@@ -259,25 +259,25 @@ namespace KS.Files.Editors.JsonShell
         /// <param name="ParentProperty">Where to place the new array?</param>
         /// <param name="Key">New array</param>
         /// <param name="Values">The values for the new array</param>
-        public static void JsonShell_AddNewArray(string ParentProperty, string Key, JArray Values)
+        public static void AddNewArray(string ParentProperty, string Key, JArray Values)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
-            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
+            var TargetToken = GetProperty(ParentProperty);
             JObject TokenObject = (JObject)TargetToken;
             TokenObject.Add(Key, Values);
-            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.FileToken.Count());
         }
 
         /// <summary>
         /// Removes a property from the current JSON file
         /// </summary>
         /// <param name="Property">The property. You can use JSONPath.</param>
-        public static void JsonShell_RemoveProperty(string Property)
+        public static void RemoveProperty(string Property)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
-            var TargetToken = JsonShell_GetProperty(Property);
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
+            var TargetToken = GetProperty(Property);
             TargetToken.Parent.Remove();
-            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.FileToken.Count());
         }
 
         /// <summary>
@@ -285,13 +285,13 @@ namespace KS.Files.Editors.JsonShell
         /// </summary>
         /// <param name="ParentProperty">Where is the target object found?</param>
         /// <param name="ObjectName">The object name. You can use JSONPath.</param>
-        public static void JsonShell_RemoveObject(string ParentProperty, string ObjectName)
+        public static void RemoveObject(string ParentProperty, string ObjectName)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
-            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
+            var TargetToken = GetProperty(ParentProperty);
             JToken PropertyToken = TargetToken[ObjectName];
             PropertyToken.Remove();
-            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.FileToken.Count());
         }
 
         /// <summary>
@@ -299,22 +299,22 @@ namespace KS.Files.Editors.JsonShell
         /// </summary>
         /// <param name="ParentProperty">Where is the target object found?</param>
         /// <param name="Index">Index number of an array to add the value to</param>
-        public static void JsonShell_RemoveObjectIndexed(string ParentProperty, int Index)
+        public static void RemoveObjectIndexed(string ParentProperty, int Index)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
-            var TargetToken = JsonShell_GetProperty(ParentProperty);
+            DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
+            var TargetToken = GetProperty(ParentProperty);
             JToken PropertyToken = TargetToken.ElementAt(Index);
             PropertyToken.Remove();
-            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.JsonShell_FileToken.Count());
+            DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", JsonShellCommon.FileToken.Count());
         }
 
         /// <summary>
         /// Serializes the property to the string
         /// </summary>
         /// <param name="Property">The property. You can use JSONPath.</param>
-        public static string JsonShell_SerializeToString(string Property)
+        public static string SerializeToString(string Property)
         {
-            var TargetToken = JsonShell_GetProperty(Property);
+            var TargetToken = GetProperty(Property);
             return JsonConvert.SerializeObject(TargetToken, Formatting.Indented);
         }
 

@@ -22,8 +22,6 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Debug.Commands;
 using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Switches;
-using System;
 using KS.Shell.Shells.Debug.Presets;
 
 namespace KS.Shell.Shells.Debug
@@ -43,7 +41,7 @@ namespace KS.Shell.Shells.Debug
                 new CommandInfo("currentbt", ShellType, /* Localizable */ "Gets current backtrace",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Debug_CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    }, new CurrentBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "debuglog",
@@ -53,7 +51,7 @@ namespace KS.Shell.Shells.Debug
                         {
                             new CommandArgumentPart(true, "sessionNum", null, true)
                         })
-                    }, new Debug_DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    }, new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "excinfo",
@@ -63,35 +61,35 @@ namespace KS.Shell.Shells.Debug
                         {
                             new CommandArgumentPart(true, "excNum", null, true)
                         })
-                    }, new Debug_ExcInfoCommand())
+                    }, new ExcInfoCommand())
             },
 
             { "keyinfo",
                 new CommandInfo("keyinfo", ShellType, /* Localizable */ "Gets key information for a pressed key. Useful for debugging",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Debug_KeyInfoCommand())
+                    }, new KeyInfoCommand())
             },
 
             { "lsaddons",
                 new CommandInfo("lsaddons", ShellType, /* Localizable */ "Lists all available addons",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Debug_LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    }, new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsshells",
                 new CommandInfo("lsshells", ShellType, /* Localizable */ "Lists all available shells",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Debug_LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    }, new LsShellsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "threadsbt",
                 new CommandInfo("threadsbt", ShellType, /* Localizable */ "Gets backtrace for all threads",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Debug_ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    }, new ThreadsBtCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
         };
 

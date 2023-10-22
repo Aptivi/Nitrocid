@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.Hex.Presets
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), HexEditShellCommon.HexEdit_FileStream.Name)
+                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), HexEditShellCommon.FileStream.Name)
             };
 
             // Builder

@@ -28,13 +28,13 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to remove an object from the parent property. Note that the parent property must exist.
     /// </remarks>
-    class JsonShell_RmObjectIndexedCommand : BaseCommand, ICommand
+    class RmObjectIndexedCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
-            JsonTools.JsonShell_RemoveObjectIndexed(parent, int.Parse(parameters.ArgumentsList[0]));
+            JsonTools.RemoveObjectIndexed(parent, int.Parse(parameters.ArgumentsList[0]));
             return 0;
         }
     }

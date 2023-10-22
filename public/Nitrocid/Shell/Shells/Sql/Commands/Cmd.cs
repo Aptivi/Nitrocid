@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.Sql.Commands
     /// <remarks>
     /// This command will execute any SQL query.
     /// </remarks>
-    class Sql_CmdCommand : BaseCommand, ICommand
+    class CmdCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

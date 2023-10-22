@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <remarks>
     /// If you want to get the local directory, use this command.
     /// </remarks>
-    class FTP_PwdlCommand : BaseCommand, ICommand
+    class PwdlCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

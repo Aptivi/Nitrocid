@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to exit the text editor shell without saving changes.
     /// </remarks>
-    class TextEdit_ExitNoSaveCommand : BaseCommand, ICommand
+    class ExitNoSaveCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

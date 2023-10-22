@@ -24,12 +24,12 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <summary>
     /// Clears the binary file
     /// </summary>
-    class HexEdit_ClearCommand : BaseCommand, ICommand
+    class ClearCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            HexEditShellCommon.HexEdit_FileBytes = Array.Empty<byte>();
+            HexEditShellCommon.FileBytes = Array.Empty<byte>();
             return 0;
         }
     }

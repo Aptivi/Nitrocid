@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <br></br>
     /// The authenticated user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class SFTP_DelCommand : BaseCommand, ICommand
+    class DelCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

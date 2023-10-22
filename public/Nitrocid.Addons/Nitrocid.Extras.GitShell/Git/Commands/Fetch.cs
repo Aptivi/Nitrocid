@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command lets you fetch all the updates from the remote.
     /// </remarks>
-    class Git_FetchCommand : BaseCommand, ICommand
+    class FetchCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

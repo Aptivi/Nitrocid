@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <remarks>
     /// If you want to get the remote directory, use this command.
     /// </remarks>
-    class SFTP_PwdrCommand : BaseCommand, ICommand
+    class PwdrCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

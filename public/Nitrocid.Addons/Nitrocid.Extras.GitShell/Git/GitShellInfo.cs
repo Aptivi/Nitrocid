@@ -16,7 +16,6 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using System;
 using System.Collections.Generic;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
@@ -46,7 +45,7 @@ namespace Nitrocid.Extras.GitShell.Git
                         {
                             new CommandArgumentPart(true, "branch")
                         })
-                    }, new Git_CheckoutCommand())
+                    }, new CheckoutCommand())
             },
 
             { "commit",
@@ -56,7 +55,7 @@ namespace Nitrocid.Extras.GitShell.Git
                         {
                             new CommandArgumentPart(true, "summary")
                         })
-                    }, new Git_CommitCommand())
+                    }, new CommitCommand())
             },
 
             { "fetch",
@@ -66,42 +65,42 @@ namespace Nitrocid.Extras.GitShell.Git
                         {
                             new CommandArgumentPart(false, "remote")
                         })
-                    }, new Git_FetchCommand())
+                    }, new FetchCommand())
             },
             
             { "lsbranches",
                 new CommandInfo("lsbranches", ShellType, /* Localizable */ "Lists all branches",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    }, new LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lscommits",
                 new CommandInfo("lscommits", ShellType, /* Localizable */ "Lists all commits",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    }, new LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lsremotes",
                 new CommandInfo("lsremotes", ShellType, /* Localizable */ "Lists all remotes",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+                    }, new LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
             { "pull",
                 new CommandInfo("pull", ShellType, /* Localizable */ "Pulls all updates from the server",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_PullCommand())
+                    }, new PullCommand())
             },
 
             { "push",
                 new CommandInfo("push", ShellType, /* Localizable */ "Pushes all updates to the server",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_PushCommand())
+                    }, new PushCommand())
             },
 
             { "reset",
@@ -125,7 +124,7 @@ namespace Nitrocid.Extras.GitShell.Git
                                 AcceptsValues = false
                             }),
                         })
-                    }, new Git_ResetCommand())
+                    }, new ResetCommand())
             },
 
             { "setid",
@@ -136,7 +135,7 @@ namespace Nitrocid.Extras.GitShell.Git
                             new CommandArgumentPart(true, "email"),
                             new CommandArgumentPart(true, "username"),
                         })
-                    }, new Git_SetIdCommand())
+                    }, new SetIdCommand())
             },
 
             { "stage",
@@ -146,21 +145,21 @@ namespace Nitrocid.Extras.GitShell.Git
                         {
                             new CommandArgumentPart(true, "unstagedFile")
                         })
-                    }, new Git_StageCommand())
+                    }, new StageCommand())
             },
             
             { "stageall",
                 new CommandInfo("stageall", ShellType, /* Localizable */ "Stages all changes",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_StageAllCommand())
+                    }, new StageAllCommand())
             },
 
             { "status",
                 new CommandInfo("status", ShellType, /* Localizable */ "Repository status",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_StatusCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    }, new StatusCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "unstage",
@@ -170,14 +169,14 @@ namespace Nitrocid.Extras.GitShell.Git
                         {
                             new CommandArgumentPart(true, "stagedFile")
                         })
-                    }, new Git_UnstageCommand())
+                    }, new UnstageCommand())
             },
 
             { "unstageall",
                 new CommandInfo("unstageall", ShellType, /* Localizable */ "Unstages all changes",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Git_UnstageAllCommand())
+                    }, new UnstageAllCommand())
             },
         };
 

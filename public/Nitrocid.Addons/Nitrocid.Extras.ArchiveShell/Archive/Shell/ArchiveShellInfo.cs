@@ -20,7 +20,6 @@ using System.Collections.Generic;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using System;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets;
 using KS.Shell.ShellBase.Switches;
@@ -43,7 +42,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                 new CommandInfo("cdir", ShellType, /* Localizable */ "Gets current local directory",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new ArchiveShell_CDirCommand())
+                    }, new CDirCommand())
             },
 
             { "chdir",
@@ -53,7 +52,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new ArchiveShell_ChDirCommand())
+                    }, new ChDirCommand())
             },
 
             { "chadir",
@@ -63,7 +62,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         {
                             new CommandArgumentPart(true, "archivedirectory")
                         })
-                    }, new ArchiveShell_ChADirCommand())
+                    }, new ChADirCommand())
             },
 
             { "get",
@@ -76,7 +75,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         }, new[] {
                             new SwitchInfo("absolute", /* Localizable */ "Indicates that the target path is absolute")
                         })
-                    }, new ArchiveShell_GetCommand())
+                    }, new GetCommand())
             },
 
             { "list",
@@ -86,7 +85,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                         {
                             new CommandArgumentPart(false, "directory")
                         })
-                    }, new ArchiveShell_ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+                    }, new ListCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "pack",
@@ -97,7 +96,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
                             new CommandArgumentPart(true, "localfile"),
                             new CommandArgumentPart(false, "where")
                         })
-                    }, new ArchiveShell_PackCommand())
+                    }, new PackCommand())
             },
         };
 

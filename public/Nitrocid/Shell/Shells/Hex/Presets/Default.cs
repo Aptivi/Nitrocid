@@ -55,11 +55,11 @@ namespace KS.Shell.Shells.Hex.Presets
 
             // File name
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat(Path.GetFileName(HexEditShellCommon.HexEdit_FileStream.Name));
+            PresetStringBuilder.AppendFormat(Path.GetFileName(HexEditShellCommon.FileStream.Name));
 
             // Was file edited?
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat("{0}", HexEditTools.HexEdit_WasHexEdited() ? "*" : "");
+            PresetStringBuilder.AppendFormat("{0}", HexEditTools.WasHexEdited() ? "*" : "");
 
             // Closing
             PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);

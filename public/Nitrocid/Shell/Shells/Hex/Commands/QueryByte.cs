@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to query a byte and get its number from the specified byte, a range of bytes, or entirely.
     /// </remarks>
-    class HexEdit_QueryByteCommand : BaseCommand, ICommand
+    class QueryByteCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -42,17 +42,17 @@ namespace KS.Shell.Shells.Hex.Commands
             if (parameters.ArgumentsList.Length == 1)
             {
                 byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                HexEditTools.HexEdit_QueryByteAndDisplay(ByteContent);
+                HexEditTools.QueryByteAndDisplay(ByteContent);
                 return 0;
             }
             else if (parameters.ArgumentsList.Length == 2)
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.FileBytes.LongLength)
                     {
                         byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
-                        HexEditTools.HexEdit_QueryByteAndDisplay(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
+                        HexEditTools.QueryByteAndDisplay(ByteContent, Convert.ToInt64(parameters.ArgumentsList[1]));
                         return 0;
                     }
                     else
@@ -66,13 +66,13 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.FileBytes.LongLength)
                     {
                         byte ByteContent = Convert.ToByte(parameters.ArgumentsList[0], 16);
                         long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[1]);
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[2]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
-                        HexEditTools.HexEdit_QueryByteAndDisplay(ByteContent, ByteNumberStart, ByteNumberEnd);
+                        HexEditTools.QueryByteAndDisplay(ByteContent, ByteNumberStart, ByteNumberEnd);
                         return 0;
                     }
                     else

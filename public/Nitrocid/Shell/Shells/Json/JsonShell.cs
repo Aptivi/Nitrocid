@@ -54,15 +54,15 @@ namespace KS.Shell.Shells.Json
             }
 
             // Open file if not open
-            if (JsonShellCommon.JsonShell_FileStream is null)
+            if (JsonShellCommon.FileStream is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
-                if (!JsonTools.JsonShell_OpenJsonFile(FilePath))
+                if (!JsonTools.OpenJsonFile(FilePath))
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
                     Bail = true;
                 }
-                JsonShellCommon.JsonShell_AutoSave.Start();
+                JsonShellCommon.AutoSave.Start();
             }
 
             while (!Bail)
@@ -72,8 +72,8 @@ namespace KS.Shell.Shells.Json
             }
 
             // Close file
-            JsonTools.JsonShell_CloseTextFile();
-            JsonShellCommon.JsonShell_AutoSave.Stop();
+            JsonTools.CloseTextFile();
+            JsonShellCommon.AutoSave.Stop();
         }
 
     }

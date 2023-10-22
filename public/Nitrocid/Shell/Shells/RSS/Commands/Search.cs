@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class RSS_SearchCommand : BaseCommand, ICommand
+    class SearchCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

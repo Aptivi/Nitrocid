@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command lets you checkout a branch in your Git repository.
     /// </remarks>
-    class Git_CheckoutCommand : BaseCommand, ICommand
+    class CheckoutCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

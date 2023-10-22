@@ -33,20 +33,20 @@ namespace KS.Shell.Shells.Sql
         /// <summary>
         /// Current connection for the SQL
         /// </summary>
-        public static SqliteConnection Sql_Connection =>
+        public static SqliteConnection Connection =>
             sqliteConnection;
 
         /// <summary>
         /// Database path for the SQL
         /// </summary>
-        public static string Sql_DatabasePath =>
+        public static string DatabasePath =>
             sqliteDatabasePath;
 
         /// <summary>
         /// Database file name for the SQL
         /// </summary>
-        public static string Sql_DatabaseFileName =>
-            Path.GetFileName(Sql_DatabasePath);
+        public static string DatabaseFileName =>
+            Path.GetFileName(DatabasePath);
 
     }
 }

@@ -27,12 +27,12 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     /// <remarks>
     /// Should you want to get the current local directory in the ZIP shell, you can use this command.
     /// </remarks>
-    class ArchiveShell_CDirCommand : BaseCommand, ICommand
+    class CDirCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextWriterColor.Write(ArchiveShellCommon.ArchiveShell_CurrentDirectory);
+            TextWriterColor.Write(ArchiveShellCommon.CurrentDirectory);
             return 0;
         }
     }

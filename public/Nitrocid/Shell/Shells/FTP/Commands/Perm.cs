@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <br></br>
     /// The authenticated user must have at least the administrative privileges before they can run the below commands.
     /// </remarks>
-    class FTP_PermCommand : BaseCommand, ICommand
+    class PermCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

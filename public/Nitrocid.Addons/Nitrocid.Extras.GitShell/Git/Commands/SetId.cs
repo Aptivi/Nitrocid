@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command sets your Git identity for merge, pull, and push operations.
     /// </remarks>
-    class Git_SetIdCommand : BaseCommand, ICommand
+    class SetIdCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

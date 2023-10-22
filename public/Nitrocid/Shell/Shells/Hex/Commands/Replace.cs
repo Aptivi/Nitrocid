@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to replace a byte with another one.
     /// </remarks>
-    class HexEdit_ReplaceCommand : BaseCommand, ICommand
+    class ReplaceCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -43,7 +43,7 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
                 byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
-                HexEditTools.HexEdit_Replace(ByteFrom, ByteWith);
+                HexEditTools.Replace(ByteFrom, ByteWith);
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                 return 0;
             }
@@ -51,11 +51,11 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.FileBytes.LongLength)
                     {
                         byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
                         byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
-                        HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, Convert.ToInt64(parameters.ArgumentsList[2]));
+                        HexEditTools.Replace(ByteFrom, ByteWith, Convert.ToInt64(parameters.ArgumentsList[2]));
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                         return 0;
                     }
@@ -70,14 +70,14 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[2]) & TextTools.IsStringNumeric(parameters.ArgumentsList[3]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[3]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[2]) <= HexEditShellCommon.FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[3]) <= HexEditShellCommon.FileBytes.LongLength)
                     {
                         byte ByteFrom = Convert.ToByte(parameters.ArgumentsList[0], 16);
                         byte ByteWith = Convert.ToByte(parameters.ArgumentsList[1], 16);
                         long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[2]);
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[3]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
-                        HexEditTools.HexEdit_Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
+                        HexEditTools.Replace(ByteFrom, ByteWith, ByteNumberStart, ByteNumberEnd);
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Byte replaced."), true, KernelColorType.Success);
                         return 0;
                     }

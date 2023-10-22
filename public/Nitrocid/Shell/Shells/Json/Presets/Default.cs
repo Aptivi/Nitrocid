@@ -55,11 +55,11 @@ namespace KS.Shell.Shells.Json.Presets
 
             // File name
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat(JsonShellCommon.JsonShell_FileStream is not null ? Path.GetFileName(JsonShellCommon.JsonShell_FileStream.Name) : "???");
+            PresetStringBuilder.AppendFormat(JsonShellCommon.FileStream is not null ? Path.GetFileName(JsonShellCommon.FileStream.Name) : "???");
 
             // Was file edited?
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat("{0}", JsonTools.JsonShell_WasJsonEdited() ? "*" : "");
+            PresetStringBuilder.AppendFormat("{0}", JsonTools.WasJsonEdited() ? "*" : "");
 
             // Closing
             PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);

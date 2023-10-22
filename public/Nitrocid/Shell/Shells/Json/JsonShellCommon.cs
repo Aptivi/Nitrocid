@@ -31,28 +31,28 @@ namespace KS.Shell.Shells.Json
     public static class JsonShellCommon
     {
 
-        internal static JToken JsonShell_FileTokenOrig = JToken.Parse("{}");
-        internal static FileStream JsonShell_FileStream;
-        internal static KernelThread JsonShell_AutoSave = new("JSON Shell Autosave Thread", false, JsonTools.JsonShell_HandleAutoSaveJsonFile);
+        internal static JToken FileTokenOrig = JToken.Parse("{}");
+        internal static FileStream FileStream;
+        internal static KernelThread AutoSave = new("JSON Shell Autosave Thread", false, JsonTools.HandleAutoSaveJsonFile);
         private static int autoSaveInterval = 60;
 
         /// <summary>
         /// JSON shell file token
         /// </summary>
-        public static JToken JsonShell_FileToken { get; set; } = JToken.Parse("{}");
+        public static JToken FileToken { get; set; } = JToken.Parse("{}");
         /// <summary>
         /// Auto save flag
         /// </summary>
-        public static bool JsonShell_AutoSaveFlag { get; set; } = true;
+        public static bool AutoSaveFlag { get; set; } = true;
         /// <summary>
         /// JSON formatting
         /// </summary>
-        public static Formatting JsonShell_Formatting =>
-            (Formatting)Config.MainConfig.JsonShell_Formatting;
+        public static Formatting Formatting =>
+            (Formatting)Config.MainConfig.JsonShellFormatting;
         /// <summary>
         /// Auto save interval in seconds
         /// </summary>
-        public static int JsonShell_AutoSaveInterval
+        public static int AutoSaveInterval
         {
             get => autoSaveInterval;
             set => autoSaveInterval = value < 0 ? 60 : value;

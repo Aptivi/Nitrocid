@@ -21,7 +21,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Json.Commands;
-using System;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.Shells.Json.Presets;
@@ -54,7 +53,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new JsonShell_AddArrayCommand())
+                    }, new AddArrayCommand())
             },
 
             { "addproperty",
@@ -70,7 +69,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new JsonShell_AddPropertyCommand())
+                    }, new AddPropertyCommand())
             },
             
             { "addobject",
@@ -86,7 +85,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new JsonShell_AddObjectCommand())
+                    }, new AddObjectCommand())
             },
             
             { "addobjectindexed",
@@ -102,14 +101,14 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new JsonShell_AddObjectIndexedCommand())
+                    }, new AddObjectIndexedCommand())
             },
             
             { "clear",
                 new CommandInfo("clear", ShellType, /* Localizable */ "Clears the JSON file",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new JsonShell_ClearCommand())
+                    }, new ClearCommand())
             },
             
             { "delproperty",
@@ -119,14 +118,14 @@ namespace KS.Shell.Shells.Json
                         {
                             new CommandArgumentPart(true, "propertyName")
                         })
-                    }, new JsonShell_DelPropertyCommand())
+                    }, new DelPropertyCommand())
             },
             
             { "exitnosave",
                 new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the JSON shell without saving the changes",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new JsonShell_ExitNoSaveCommand())
+                    }, new ExitNoSaveCommand())
             },
 
             { "findproperty",
@@ -141,7 +140,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new JsonShell_FindPropertyCommand())
+                    }, new FindPropertyCommand())
             },
 
             { "jsoninfo",
@@ -157,7 +156,7 @@ namespace KS.Shell.Shells.Json
                                 AcceptsValues = false
                             })
                         })
-                    }, new JsonShell_JsonInfoCommand(), CommandFlags.Wrappable)
+                    }, new JsonInfoCommand(), CommandFlags.Wrappable)
             },
             
             { "print",
@@ -167,7 +166,7 @@ namespace KS.Shell.Shells.Json
                         {
                             new CommandArgumentPart(false, "propertyName")
                         })
-                    }, new JsonShell_PrintCommand(), CommandFlags.Wrappable)
+                    }, new PrintCommand(), CommandFlags.Wrappable)
             },
             
             { "rmobject",
@@ -182,7 +181,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new JsonShell_RmObjectCommand())
+                    }, new RmObjectCommand())
             },
             
             { "rmobjectindexed",
@@ -197,7 +196,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new JsonShell_RmObjectIndexedCommand())
+                    }, new RmObjectIndexedCommand())
             },
             
             { "save",
@@ -215,7 +214,7 @@ namespace KS.Shell.Shells.Json
                                 AcceptsValues = false
                             })
                         })
-                    }, new JsonShell_SaveCommand())
+                    }, new SaveCommand())
             }
         };
 

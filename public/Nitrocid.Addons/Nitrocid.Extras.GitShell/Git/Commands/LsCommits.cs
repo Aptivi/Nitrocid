@@ -29,7 +29,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command lets you list all commits in your Git repository.
     /// </remarks>
-    class Git_LsCommitsCommand : BaseCommand, ICommand
+    class LsCommitsCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

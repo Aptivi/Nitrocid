@@ -28,7 +28,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command lets you list all remotes in your Git repository.
     /// </remarks>
-    class Git_LsRemotesCommand : BaseCommand, ICommand
+    class LsRemotesCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

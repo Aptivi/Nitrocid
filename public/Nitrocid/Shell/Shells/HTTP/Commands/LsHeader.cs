@@ -26,7 +26,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     /// <summary>
     /// Lists headers from the request header
     /// </summary>
-    class HTTP_LsHeaderCommand : BaseCommand, ICommand
+    class LsHeaderCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

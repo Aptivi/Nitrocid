@@ -28,13 +28,13 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to add an object to the end of the parent property. Note that the parent property must exist.
     /// </remarks>
-    class JsonShell_AddObjectIndexedCommand : BaseCommand, ICommand
+    class AddObjectIndexedCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
-            JsonTools.JsonShell_AddNewObjectIndexed(parent, int.Parse(parameters.ArgumentsList[0]), parameters.ArgumentsList[1]);
+            JsonTools.AddNewObjectIndexed(parent, int.Parse(parameters.ArgumentsList[0]), parameters.ArgumentsList[1]);
             return 0;
         }
     }

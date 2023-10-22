@@ -28,13 +28,13 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to add a property to the end of the parent property. Note that the parent property must exist.
     /// </remarks>
-    class JsonShell_AddPropertyCommand : BaseCommand, ICommand
+    class AddPropertyCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
-            JsonTools.JsonShell_AddNewProperty(parent, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            JsonTools.AddNewProperty(parent, parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             return 0;
         }
     }

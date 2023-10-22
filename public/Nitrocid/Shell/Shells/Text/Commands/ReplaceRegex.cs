@@ -30,12 +30,12 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to replace a word or phrase enclosed in double quotes with another one enclosed in double quotes.
     /// </remarks>
-    class TextEdit_ReplaceRegexCommand : BaseCommand, ICommand
+    class ReplaceRegexCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextEditTools.TextEdit_ReplaceRegex(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
+            TextEditTools.ReplaceRegex(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("String replaced."), true, KernelColorType.Success);
             return 0;
         }

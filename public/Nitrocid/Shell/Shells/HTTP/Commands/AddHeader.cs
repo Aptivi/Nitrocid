@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     /// <summary>
     /// Adds a header to the request header
     /// </summary>
-    class HTTP_AddHeaderCommand : BaseCommand, ICommand
+    class AddHeaderCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

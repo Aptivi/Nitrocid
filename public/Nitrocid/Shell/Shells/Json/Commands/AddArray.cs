@@ -30,13 +30,13 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to add an array to the end of the parent property. Note that the parent property must exist.
     /// </remarks>
-    class JsonShell_AddArrayCommand : BaseCommand, ICommand
+    class AddArrayCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
-            JsonTools.JsonShell_AddNewArray(parent, parameters.ArgumentsList[0], JArray.Parse("[ \"" + string.Join("\", \"", parameters.ArgumentsList.Skip(1).ToArray()) + "\" ]"));
+            JsonTools.AddNewArray(parent, parameters.ArgumentsList[0], JArray.Parse("[ \"" + string.Join("\", \"", parameters.ArgumentsList.Skip(1).ToArray()) + "\" ]"));
             return 0;
         }
     }

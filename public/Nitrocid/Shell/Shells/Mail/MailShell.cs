@@ -65,7 +65,7 @@ namespace KS.Shell.Shells.Mail
             DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about SMTPKeepConnection()");
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(connection.ConnectionUri.AbsoluteUri, connection.ConnectionUri.Port, NetworkConnectionType.Mail, false, MailLogin.Mail_Authentication.UserName);
+            SpeedDialTools.TryAddEntryToSpeedDial(connection.ConnectionUri.AbsoluteUri, connection.ConnectionUri.Port, NetworkConnectionType.Mail, false, MailLogin.Authentication.UserName);
 
             while (!Bail)
             {
@@ -73,7 +73,7 @@ namespace KS.Shell.Shells.Mail
                 {
                     // Populate messages
                     MailTransfer.PopulateMessages();
-                    if (MailShellCommon.Mail_NotifyNewMail)
+                    if (MailShellCommon.NotifyNewMail)
                         MailHandlers.InitializeHandlers();
 
                     // Prompt for the command
@@ -97,7 +97,7 @@ namespace KS.Shell.Shells.Mail
                     if (!detaching)
                     {
                         DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
-                        if (MailShellCommon.Mail_NotifyNewMail)
+                        if (MailShellCommon.NotifyNewMail)
                             MailHandlers.ReleaseHandlers();
                         IMAP_NoOp.Stop();
                         SMTP_NoOp.Stop();

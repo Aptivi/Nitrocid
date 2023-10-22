@@ -22,7 +22,6 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.UnitConv.Commands;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnitsNet;

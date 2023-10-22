@@ -43,23 +43,23 @@ namespace KS.Files.Editors.TextEdit
         /// </summary>
         /// <param name="File">Target file. We recommend you to use <see cref="FilesystemTools.NeutralizePath(string, bool)"></see> to neutralize path.</param>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TextEdit_OpenTextFile(string File)
+        public static bool OpenTextFile(string File)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to open file {0}...", File);
                 TextEditShellCommon.fileStream = new FileStream(File, FileMode.Open);
                 TextEditShellCommon.fileLines ??= new List<string>();
-                TextEditShellCommon.TextEdit_FileLinesOrig ??= new List<string>();
-                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, TextEditShellCommon.TextEdit_FileStream.Length, TextEditShellCommon.TextEdit_FileStream.Position);
-                var TextFileStreamReader = new StreamReader(TextEditShellCommon.TextEdit_FileStream);
+                TextEditShellCommon.FileLinesOrig ??= new List<string>();
+                DebugWriter.WriteDebug(DebugLevel.I, "File {0} is open. Length: {1}, Pos: {2}", File, TextEditShellCommon.FileStream.Length, TextEditShellCommon.FileStream.Position);
+                var TextFileStreamReader = new StreamReader(TextEditShellCommon.FileStream);
                 while (!TextFileStreamReader.EndOfStream)
                 {
                     string StreamLine = TextFileStreamReader.ReadLine();
-                    TextEditShellCommon.TextEdit_FileLines.Add(StreamLine);
-                    TextEditShellCommon.TextEdit_FileLinesOrig.Add(StreamLine);
+                    TextEditShellCommon.FileLines.Add(StreamLine);
+                    TextEditShellCommon.FileLinesOrig.Add(StreamLine);
                 }
-                TextEditShellCommon.TextEdit_FileStream.Seek(0L, SeekOrigin.Begin);
+                TextEditShellCommon.FileStream.Seek(0L, SeekOrigin.Begin);
                 return true;
             }
             catch (Exception ex)
@@ -74,16 +74,16 @@ namespace KS.Files.Editors.TextEdit
         /// Closes text file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TextEdit_CloseTextFile()
+        public static bool CloseTextFile()
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to close file...");
-                TextEditShellCommon.TextEdit_FileStream.Close();
+                TextEditShellCommon.FileStream.Close();
                 TextEditShellCommon.fileStream = null;
                 DebugWriter.WriteDebug(DebugLevel.I, "File is no longer open.");
-                TextEditShellCommon.TextEdit_FileLines.Clear();
-                TextEditShellCommon.TextEdit_FileLinesOrig.Clear();
+                TextEditShellCommon.FileLines.Clear();
+                TextEditShellCommon.FileLinesOrig.Clear();
                 return true;
             }
             catch (Exception ex)
@@ -98,24 +98,24 @@ namespace KS.Files.Editors.TextEdit
         /// Saves text file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool TextEdit_SaveTextFile(bool ClearLines)
+        public static bool SaveTextFile(bool ClearLines)
         {
             try
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
-                TextEditShellCommon.TextEdit_FileStream.SetLength(0L);
+                TextEditShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
-                var FileLinesByte = Encoding.Default.GetBytes(TextEditShellCommon.TextEdit_FileLines.ToArray().Join(CharManager.NewLine));
+                var FileLinesByte = Encoding.Default.GetBytes(TextEditShellCommon.FileLines.ToArray().Join(CharManager.NewLine));
                 DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
-                TextEditShellCommon.TextEdit_FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
-                TextEditShellCommon.TextEdit_FileStream.Flush();
+                TextEditShellCommon.FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
+                TextEditShellCommon.FileStream.Flush();
                 DebugWriter.WriteDebug(DebugLevel.I, "File is saved.");
                 if (ClearLines)
                 {
-                    TextEditShellCommon.TextEdit_FileLines.Clear();
+                    TextEditShellCommon.FileLines.Clear();
                 }
-                TextEditShellCommon.TextEdit_FileLinesOrig.Clear();
-                TextEditShellCommon.TextEdit_FileLinesOrig.AddRange(TextEditShellCommon.TextEdit_FileLines);
+                TextEditShellCommon.FileLinesOrig.Clear();
+                TextEditShellCommon.FileLinesOrig.AddRange(TextEditShellCommon.FileLines);
                 return true;
             }
             catch (Exception ex)
@@ -129,16 +129,16 @@ namespace KS.Files.Editors.TextEdit
         /// <summary>
         /// Handles autosave
         /// </summary>
-        public static void TextEdit_HandleAutoSaveTextFile()
+        public static void HandleAutoSaveTextFile()
         {
-            if (TextEditShellCommon.TextEdit_AutoSaveFlag)
+            if (TextEditShellCommon.AutoSaveFlag)
             {
                 try
                 {
-                    Thread.Sleep(TextEditShellCommon.TextEdit_AutoSaveInterval * 1000);
-                    if (TextEditShellCommon.TextEdit_FileStream is not null)
+                    Thread.Sleep(TextEditShellCommon.AutoSaveInterval * 1000);
+                    if (TextEditShellCommon.FileStream is not null)
                     {
-                        TextEdit_SaveTextFile(false);
+                        SaveTextFile(false);
                     }
                 }
                 catch (Exception ex)
@@ -151,11 +151,11 @@ namespace KS.Files.Editors.TextEdit
         /// <summary>
         /// Was text edited?
         /// </summary>
-        public static bool TextEdit_WasTextEdited()
+        public static bool WasTextEdited()
         {
-            if (TextEditShellCommon.TextEdit_FileLines is not null & TextEditShellCommon.TextEdit_FileLinesOrig is not null)
+            if (TextEditShellCommon.FileLines is not null & TextEditShellCommon.FileLinesOrig is not null)
             {
-                return !TextEditShellCommon.TextEdit_FileLines.SequenceEqual(TextEditShellCommon.TextEdit_FileLinesOrig);
+                return !TextEditShellCommon.FileLines.SequenceEqual(TextEditShellCommon.FileLinesOrig);
             }
             return false;
         }
@@ -164,11 +164,11 @@ namespace KS.Files.Editors.TextEdit
         /// Adds a new line to the current text
         /// </summary>
         /// <param name="Content">New line content</param>
-        public static void TextEdit_AddNewLine(string Content)
+        public static void AddNewLine(string Content)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
-                TextEditShellCommon.TextEdit_FileLines.Add(Content);
+                TextEditShellCommon.FileLines.Add(Content);
             }
             else
             {
@@ -180,12 +180,12 @@ namespace KS.Files.Editors.TextEdit
         /// Adds the new lines to the current text
         /// </summary>
         /// <param name="Lines">New lines</param>
-        public static void TextEdit_AddNewLines(string[] Lines)
+        public static void AddNewLines(string[] Lines)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 foreach (string Line in Lines)
-                    TextEditShellCommon.TextEdit_FileLines.Add(Line);
+                    TextEditShellCommon.FileLines.Add(Line);
             }
             else
             {
@@ -197,17 +197,17 @@ namespace KS.Files.Editors.TextEdit
         /// Removes a line from the current text
         /// </summary>
         /// <param name="LineNumber">The line number to remove</param>
-        public static void TextEdit_RemoveLine(int LineNumber)
+        public static void RemoveLine(int LineNumber)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
                 DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
+                DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", TextEditShellCommon.FileLines.Count);
+                if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
-                    TextEditShellCommon.TextEdit_FileLines.RemoveAt(LineIndex);
-                    DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                    TextEditShellCommon.FileLines.RemoveAt(LineIndex);
+                    DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", TextEditShellCommon.FileLines.Count);
                 }
                 else
                 {
@@ -225,17 +225,17 @@ namespace KS.Files.Editors.TextEdit
         /// </summary>
         /// <param name="From">Regular expression to be replaced</param>
         /// <param name="With">String to replace with</param>
-        public static void TextEdit_ReplaceRegex(string From, string With)
+        public static void ReplaceRegex(string From, string With)
         {
             if (string.IsNullOrEmpty(From))
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
-                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
-                    TextEditShellCommon.TextEdit_FileLines[LineIndex] = Regex.Replace(TextEditShellCommon.TextEdit_FileLines[LineIndex], From, With);
+                    TextEditShellCommon.FileLines[LineIndex] = Regex.Replace(TextEditShellCommon.FileLines[LineIndex], From, With);
                 }
             }
             else
@@ -250,19 +250,19 @@ namespace KS.Files.Editors.TextEdit
         /// <param name="From">Regular expression to be replaced</param>
         /// <param name="With">String to replace with</param>
         /// <param name="LineNumber">The line number</param>
-        public static void TextEdit_ReplaceRegex(string From, string With, int LineNumber)
+        public static void ReplaceRegex(string From, string With, int LineNumber)
         {
             if (string.IsNullOrEmpty(From))
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
                 long LineIndex = LineNumber - 1;
-                if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
+                if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
-                    TextEditShellCommon.TextEdit_FileLines[(int)LineIndex] = Regex.Replace(TextEditShellCommon.TextEdit_FileLines[(int)LineIndex], From, With);
+                    TextEditShellCommon.FileLines[(int)LineIndex] = Regex.Replace(TextEditShellCommon.FileLines[(int)LineIndex], From, With);
                 }
                 else
                 {
@@ -280,17 +280,17 @@ namespace KS.Files.Editors.TextEdit
         /// </summary>
         /// <param name="From">String to be replaced</param>
         /// <param name="With">String to replace with</param>
-        public static void TextEdit_Replace(string From, string With)
+        public static void Replace(string From, string With)
         {
             if (string.IsNullOrEmpty(From))
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
-                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
-                    TextEditShellCommon.TextEdit_FileLines[LineIndex] = TextEditShellCommon.TextEdit_FileLines[LineIndex].Replace(From, With);
+                    TextEditShellCommon.FileLines[LineIndex] = TextEditShellCommon.FileLines[LineIndex].Replace(From, With);
                 }
             }
             else
@@ -305,19 +305,19 @@ namespace KS.Files.Editors.TextEdit
         /// <param name="From">String to be replaced</param>
         /// <param name="With">String to replace with</param>
         /// <param name="LineNumber">The line number</param>
-        public static void TextEdit_Replace(string From, string With, int LineNumber)
+        public static void Replace(string From, string With, int LineNumber)
         {
             if (string.IsNullOrEmpty(From))
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
                 long LineIndex = LineNumber - 1;
-                if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
+                if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
-                    TextEditShellCommon.TextEdit_FileLines[(int)LineIndex] = TextEditShellCommon.TextEdit_FileLines[(int)LineIndex].Replace(From, With);
+                    TextEditShellCommon.FileLines[(int)LineIndex] = TextEditShellCommon.FileLines[(int)LineIndex].Replace(From, With);
                 }
                 else
                 {
@@ -335,20 +335,20 @@ namespace KS.Files.Editors.TextEdit
         /// </summary>
         /// <param name="Word">The word or phrase</param>
         /// <param name="LineNumber">The line number</param>
-        public static void TextEdit_DeleteWord(string Word, int LineNumber)
+        public static void DeleteWord(string Word, int LineNumber)
         {
             if (string.IsNullOrEmpty(Word))
                 throw new KernelException(KernelExceptionType.TextEditor, nameof(Word));
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
                 DebugWriter.WriteDebug(DebugLevel.I, "Word/Phrase: {0}, Line: {1}", Word, LineNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
-                    TextEditShellCommon.TextEdit_FileLines[LineIndex] = TextEditShellCommon.TextEdit_FileLines[LineIndex].Replace(Word, "");
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.TextEdit_FileLines.Count);
+                    TextEditShellCommon.FileLines[LineIndex] = TextEditShellCommon.FileLines[LineIndex].Replace(Word, "");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.FileLines.Count);
                 }
                 else
                 {
@@ -366,20 +366,20 @@ namespace KS.Files.Editors.TextEdit
         /// </summary>
         /// <param name="CharNumber">The character number</param>
         /// <param name="LineNumber">The line number</param>
-        public static void TextEdit_DeleteChar(int CharNumber, int LineNumber)
+        public static void DeleteChar(int CharNumber, int LineNumber)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
                 int CharIndex = CharNumber - 1;
                 DebugWriter.WriteDebug(DebugLevel.I, "Char number: {0}, Line: {1}", CharNumber, LineNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got char index: {0}", CharIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
-                    TextEditShellCommon.TextEdit_FileLines[LineIndex] = TextEditShellCommon.TextEdit_FileLines[LineIndex].Remove(CharIndex, 1);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.TextEdit_FileLines[LineIndex]);
+                    TextEditShellCommon.FileLines[LineIndex] = TextEditShellCommon.FileLines[LineIndex].Remove(CharIndex, 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, TextEditShellCommon.FileLines[LineIndex]);
                 }
                 else
                 {
@@ -396,19 +396,19 @@ namespace KS.Files.Editors.TextEdit
         /// Queries a character in all lines.
         /// </summary>
         /// <param name="Char">The character to query</param>
-        public static List<(int, int[])> TextEdit_QueryChar(char Char)
+        public static List<(int, int[])> QueryChar(char Char)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 var Lines = new List<(int, int[])>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}", Char);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
                     List<int> charIndexes = new();
-                    for (int CharIndex = 0; CharIndex <= TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex++)
+                    for (int CharIndex = 0; CharIndex <= TextEditShellCommon.FileLines[LineIndex].Length - 1; CharIndex++)
                     {
-                        if (TextEditShellCommon.TextEdit_FileLines[LineIndex][CharIndex] == Char)
+                        if (TextEditShellCommon.FileLines[LineIndex][CharIndex] == Char)
                             charIndexes.Add(CharIndex);
                     }
                     Lines.Add((LineIndex, charIndexes.ToArray()));
@@ -426,20 +426,20 @@ namespace KS.Files.Editors.TextEdit
         /// </summary>
         /// <param name="Char">The character to query</param>
         /// <param name="LineNumber">The line number</param>
-        public static List<int> TextEdit_QueryChar(char Char, int LineNumber)
+        public static List<int> QueryChar(char Char, int LineNumber)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new List<int>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}, Line: {1}", Char, LineNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
-                    for (int CharIndex = 0; CharIndex <= TextEditShellCommon.TextEdit_FileLines[LineIndex].Length - 1; CharIndex++)
+                    for (int CharIndex = 0; CharIndex <= TextEditShellCommon.FileLines[LineIndex].Length - 1; CharIndex++)
                     {
-                        if (TextEditShellCommon.TextEdit_FileLines[LineIndex][CharIndex] == Char)
+                        if (TextEditShellCommon.FileLines[LineIndex][CharIndex] == Char)
                             Results.Add(CharIndex);
                     }
                 }
@@ -459,16 +459,16 @@ namespace KS.Files.Editors.TextEdit
         /// Queries a word in all lines.
         /// </summary>
         /// <param name="Word">The word to query</param>
-        public static List<(int, int[])> TextEdit_QueryWord(string Word)
+        public static List<(int, int[])> QueryWord(string Word)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 var Lines = new List<(int, int[])>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
-                    var Words = TextEditShellCommon.TextEdit_FileLines[LineIndex].Split(' ');
+                    var Words = TextEditShellCommon.FileLines[LineIndex].Split(' ');
                     List<int> wordIndexes = new();
                     for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
                     {
@@ -490,18 +490,18 @@ namespace KS.Files.Editors.TextEdit
         /// </summary>
         /// <param name="Word">The word to query</param>
         /// <param name="LineNumber">The line number</param>
-        public static List<int> TextEdit_QueryWord(string Word, int LineNumber)
+        public static List<int> QueryWord(string Word, int LineNumber)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new List<int>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
-                    var Words = TextEditShellCommon.TextEdit_FileLines[LineIndex].Split(' ');
+                    var Words = TextEditShellCommon.FileLines[LineIndex].Split(' ');
                     for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
                     {
                         if (Words[WordIndex].ToLower().Contains(Word.ToLower()))
@@ -524,16 +524,16 @@ namespace KS.Files.Editors.TextEdit
         /// Queries a word in all lines using regular expressions
         /// </summary>
         /// <param name="Word">The regular expression to query</param>
-        public static List<(int, int[])> TextEdit_QueryWordRegex(string Word)
+        public static List<(int, int[])> QueryWordRegex(string Word)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 var Lines = new List<(int, int[])>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.TextEdit_FileLines.Count - 1; LineIndex++)
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                for (int LineIndex = 0; LineIndex <= TextEditShellCommon.FileLines.Count - 1; LineIndex++)
                 {
-                    var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);
+                    var LineMatches = Regex.Matches(TextEditShellCommon.FileLines[LineIndex], Word);
                     List<int> wordIndexes = new();
                     for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
                         wordIndexes.Add(MatchIndex);
@@ -552,18 +552,18 @@ namespace KS.Files.Editors.TextEdit
         /// </summary>
         /// <param name="Word">The regular expression to query</param>
         /// <param name="LineNumber">The line number</param>
-        public static List<int> TextEdit_QueryWordRegex(string Word, int LineNumber)
+        public static List<int> QueryWordRegex(string Word, int LineNumber)
         {
-            if (TextEditShellCommon.TextEdit_FileStream is not null)
+            if (TextEditShellCommon.FileStream is not null)
             {
                 int LineIndex = LineNumber - 1;
                 var Results = new List<int>();
                 DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
                 DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
-                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                if (LineNumber <= TextEditShellCommon.TextEdit_FileLines.Count)
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                if (LineNumber <= TextEditShellCommon.FileLines.Count)
                 {
-                    var LineMatches = Regex.Matches(TextEditShellCommon.TextEdit_FileLines[LineIndex], Word);
+                    var LineMatches = Regex.Matches(TextEditShellCommon.FileLines[LineIndex], Word);
                     for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
                         Results.Add(MatchIndex);
                 }

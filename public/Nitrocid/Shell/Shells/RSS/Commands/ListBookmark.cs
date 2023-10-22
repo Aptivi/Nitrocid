@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// <remarks>
     /// If you want to list all bookmarks, use this command.
     /// </remarks>
-    class RSS_ListBookmarkCommand : BaseCommand, ICommand
+    class ListBookmarkCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

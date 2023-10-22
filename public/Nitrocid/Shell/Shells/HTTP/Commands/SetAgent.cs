@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     /// <summary>
     /// Sets the current user agent
     /// </summary>
-    class HTTP_SetAgentCommand : BaseCommand, ICommand
+    class SetAgentCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

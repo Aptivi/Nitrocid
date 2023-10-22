@@ -23,12 +23,12 @@ namespace KS.Shell.Shells.Text.Commands
     /// <summary>
     /// Clears the text file
     /// </summary>
-    class TextEdit_ClearCommand : BaseCommand, ICommand
+    class ClearCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextEditShellCommon.TextEdit_FileLines.Clear();
+            TextEditShellCommon.FileLines.Clear();
             return 0;
         }
     }

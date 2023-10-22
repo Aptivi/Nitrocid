@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class ArchiveShell_GetCommand : BaseCommand, ICommand
+    class GetCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

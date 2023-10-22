@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Debug.Commands
     /// <remarks>
     /// This command lets you list all the available addons that Nitrocid KS registered.
     /// </remarks>
-    class Debug_LsAddonsCommand : BaseCommand, ICommand
+    class LsAddonsCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Debug.Commands
     /// <remarks>
     /// This command lets you list all the available shells that either Nitrocid KS registered or your custom mods registered.
     /// </remarks>
-    class Debug_LsShellsCommand : BaseCommand, ICommand
+    class LsShellsCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

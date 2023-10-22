@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to remove an extraneous word or phrase enclosed in double quotes in a specified line number. You can use the print command to review the changes and line numbers.
     /// </remarks>
-    class TextEdit_DelWordCommand : BaseCommand, ICommand
+    class DelWordCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -44,9 +44,9 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
                     {
-                        TextEditTools.TextEdit_DeleteWord(parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
+                        TextEditTools.DeleteWord(parameters.ArgumentsList[0], Convert.ToInt32(parameters.ArgumentsList[1]));
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Word deleted."), true, KernelColorType.Success);
                         return 0;
                     }
@@ -67,14 +67,14 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count)
                     {
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[1]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[2]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            TextEditTools.TextEdit_DeleteWord(parameters.ArgumentsList[0], LineNumber);
+                            TextEditTools.DeleteWord(parameters.ArgumentsList[0], LineNumber);
                             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Word deleted in line {0}."), true, KernelColorType.Success, LineNumber);
                         }
                         return 0;

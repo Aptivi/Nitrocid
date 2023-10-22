@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to exit the hex editor shell without saving changes.
     /// </remarks>
-    class HexEdit_ExitNoSaveCommand : BaseCommand, ICommand
+    class ExitNoSaveCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

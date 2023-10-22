@@ -20,10 +20,8 @@ using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Notes.Commands;
 using Nitrocid.Extras.Notes.Management;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

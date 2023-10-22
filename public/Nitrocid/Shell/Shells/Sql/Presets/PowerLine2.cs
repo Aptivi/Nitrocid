@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.Sql.Presets
             // PowerLine presets
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), SqlShellCommon.Sql_DatabaseFileName)
+                new PowerLineSegment(new Color(255, 85, 255), new Color(127, 43, 127), SqlShellCommon.DatabaseFileName)
             };
 
             // Builder

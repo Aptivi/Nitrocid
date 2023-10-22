@@ -44,47 +44,47 @@ namespace KS.Shell.Shells.Mail
         /// <summary>
         /// Notify on new mail arrival
         /// </summary>
-        public static bool Mail_NotifyNewMail =>
-            Config.MainConfig.Mail_NotifyNewMail;
+        public static bool NotifyNewMail =>
+            Config.MainConfig.MailNotifyNewMail;
         /// <summary>
         /// IMAP ping interval in milliseconds
         /// </summary>
-        public static int Mail_ImapPingInterval =>
-            Config.MainConfig.Mail_ImapPingInterval;
+        public static int ImapPingInterval =>
+            Config.MainConfig.MailImapPingInterval;
         /// <summary>
         /// SMTP ping interval in milliseconds
         /// </summary>
-        public static int Mail_SmtpPingInterval =>
-            Config.MainConfig.Mail_SmtpPingInterval;
+        public static int SmtpPingInterval =>
+            Config.MainConfig.MailSmtpPingInterval;
         /// <summary>
         /// Max messages per page
         /// </summary>
-        public static int Mail_MaxMessagesInPage =>
-            Config.MainConfig.Mail_MaxMessagesInPage;
+        public static int MaxMessagesInPage =>
+            Config.MainConfig.MailMaxMessagesInPage;
         /// <summary>
         /// Message text format
         /// </summary>
-        public static TextFormat Mail_TextFormat =>
-            (TextFormat)Config.MainConfig.Mail_TextFormat;
+        public static TextFormat TextFormat =>
+            (TextFormat)Config.MainConfig.MailTextFormat;
         /// <summary>
         /// Show progress on mail transfer
         /// </summary>
-        public static bool Mail_ShowProgress =>
-            Config.MainConfig.Mail_ShowProgress;
+        public static bool ShowProgress =>
+            Config.MainConfig.ShowProgress;
         /// <summary>
         /// Mail progress style
         /// </summary>
-        public static string Mail_ProgressStyle =>
-            Config.MainConfig.Mail_ProgressStyle;
+        public static string ProgressStyle =>
+            Config.MainConfig.MailProgressStyle;
         /// <summary>
         /// Mail progress style (single)
         /// </summary>
-        public static string Mail_ProgressStyleSingle =>
-            Config.MainConfig.Mail_ProgressStyleSingle;
+        public static string ProgressStyleSingle =>
+            Config.MainConfig.MailProgressStyleSingle;
         /// <summary>
         /// The mail progress
         /// </summary>
-        public readonly static MailTransferProgress Mail_Progress = new();
+        public readonly static MailTransferProgress Progress = new();
 
     }
 }

@@ -59,7 +59,7 @@ namespace KS.Shell.Shells.Mail.Presets
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), MailLogin.Mail_Authentication.UserName),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), MailLogin.Authentication.UserName),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 85), MailShellCommon.IMAP_CurrentDirectory),
             };
 

@@ -34,16 +34,16 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to remove a specified byte by number. You can use the print command to take a look at the unneeded byte and its number.
     /// </remarks>
-    class HexEdit_DelByteCommand : BaseCommand, ICommand
+    class DelByteCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
-                if (Convert.ToInt32(parameters.ArgumentsList[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                if (Convert.ToInt32(parameters.ArgumentsList[0]) <= HexEditShellCommon.FileBytes.LongLength)
                 {
-                    HexEditTools.HexEdit_DeleteByte(Convert.ToInt64(parameters.ArgumentsList[0]));
+                    HexEditTools.DeleteByte(Convert.ToInt64(parameters.ArgumentsList[0]));
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Byte deleted."), true, KernelColorType.Success);
                     return 0;
                 }

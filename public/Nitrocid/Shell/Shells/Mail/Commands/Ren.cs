@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// If you want to change the name of a directory to something else, you can use this command.
     /// </remarks>
-    class Mail_RenCommand : BaseCommand, ICommand
+    class RenCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

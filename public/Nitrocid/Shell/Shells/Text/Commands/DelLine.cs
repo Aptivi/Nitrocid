@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to remove a specified line by number. You can use the print command to take a look at the unneeded line and its number.
     /// </remarks>
-    class TextEdit_DelLineCommand : BaseCommand, ICommand
+    class DelLineCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -44,9 +44,9 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.FileLines.Count)
                     {
-                        TextEditTools.TextEdit_RemoveLine(Convert.ToInt32(parameters.ArgumentsList[0]));
+                        TextEditTools.RemoveLine(Convert.ToInt32(parameters.ArgumentsList[0]));
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Removed line."), true, KernelColorType.Success);
                         return 0;
                     }
@@ -67,14 +67,14 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
                     {
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[0]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[1]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            TextEditTools.TextEdit_RemoveLine(LineNumber);
+                            TextEditTools.RemoveLine(LineNumber);
                             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Removed line number {0}."), true, KernelColorType.Success, LineNumber);
                         }
                         return 0;

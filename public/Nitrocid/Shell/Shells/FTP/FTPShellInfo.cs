@@ -21,7 +21,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.FTP.Commands;
-using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.FTP.Presets;
@@ -46,7 +45,7 @@ namespace KS.Shell.Shells.FTP
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new FTP_CatCommand(), CommandFlags.Wrappable)
+                    }, new CatCommand(), CommandFlags.Wrappable)
             },
             
             { "cdl",
@@ -56,7 +55,7 @@ namespace KS.Shell.Shells.FTP
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new FTP_CdlCommand())
+                    }, new CdlCommand())
             },
             
             { "cdr",
@@ -66,7 +65,7 @@ namespace KS.Shell.Shells.FTP
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new FTP_CdrCommand())
+                    }, new CdrCommand())
             },
             
             { "cp",
@@ -77,7 +76,7 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "sourcefileordir"),
                             new CommandArgumentPart(true, "where")
                         })
-                    }, new FTP_CpCommand())
+                    }, new CpCommand())
             },
             
             { "del",
@@ -87,14 +86,14 @@ namespace KS.Shell.Shells.FTP
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new FTP_DelCommand())
+                    }, new DelCommand())
             },
             
             { "detach",
                 new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new FTP_DetachCommand())
+                    }, new DetachCommand())
             },
             
             { "execute",
@@ -105,7 +104,7 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "command"),
                             new CommandArgumentPart(false, "where")
                         })
-                    }, new FTP_ExecuteCommand())
+                    }, new ExecuteCommand())
             },
             
             { "get",
@@ -116,7 +115,7 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "where")
                         })
-                    }, new FTP_GetCommand())
+                    }, new GetCommand())
             },
             
             { "getfolder",
@@ -127,14 +126,14 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "folder"),
                             new CommandArgumentPart(false, "where")
                         })
-                    }, new FTP_GetFolderCommand())
+                    }, new GetFolderCommand())
             },
             
             { "info",
                 new CommandInfo("info", ShellType, /* Localizable */ "FTP server information",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new FTP_InfoCommand())
+                    }, new InfoCommand())
             },
             
             { "lsl",
@@ -153,7 +152,7 @@ namespace KS.Shell.Shells.FTP
                                 AcceptsValues = false
                             })
                         })
-                    }, new FTP_LslCommand(), CommandFlags.Wrappable)
+                    }, new LslCommand(), CommandFlags.Wrappable)
             },
             
             { "lsr",
@@ -168,7 +167,7 @@ namespace KS.Shell.Shells.FTP
                                 AcceptsValues = false
                             })
                         })
-                    }, new FTP_LsrCommand(), CommandFlags.Wrappable)
+                    }, new LsrCommand(), CommandFlags.Wrappable)
             },
             
             { "mv",
@@ -179,7 +178,7 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "sourcefileordir"),
                             new CommandArgumentPart(true, "targetfileordir")
                         })
-                    }, new FTP_MvCommand())
+                    }, new MvCommand())
             },
             
             { "put",
@@ -190,7 +189,7 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "output")
                         })
-                    }, new FTP_PutCommand())
+                    }, new PutCommand())
             },
             
             { "putfolder",
@@ -201,21 +200,21 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "folder"),
                             new CommandArgumentPart(false, "outputfolder")
                         })
-                    }, new FTP_PutFolderCommand())
+                    }, new PutFolderCommand())
             },
             
             { "pwdl",
                 new CommandInfo("pwdl", ShellType, /* Localizable */ "Gets current local directory",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new FTP_PwdlCommand())
+                    }, new PwdlCommand())
             },
             
             { "pwdr",
                 new CommandInfo("pwdr", ShellType, /* Localizable */ "Gets current remote directory",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new FTP_PwdrCommand())
+                    }, new PwdrCommand())
             },
             
             { "perm",
@@ -226,7 +225,7 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(true, "permnumber", null, true)
                         })
-                    }, new FTP_PermCommand())
+                    }, new PermCommand())
             },
             
             { "sumfile",
@@ -237,7 +236,7 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(true, "algorithm")
                         })
-                    }, new FTP_SumFileCommand())
+                    }, new SumFileCommand())
             },
             
             { "sumfiles",
@@ -248,7 +247,7 @@ namespace KS.Shell.Shells.FTP
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(true, "algorithm")
                         })
-                    }, new FTP_SumFilesCommand())
+                    }, new SumFilesCommand())
             },
             
             { "type",
@@ -258,7 +257,7 @@ namespace KS.Shell.Shells.FTP
                         {
                             new CommandArgumentPart(true, "a/b")
                         })
-                    }, new FTP_TypeCommand())
+                    }, new TypeCommand())
             }
         };
 

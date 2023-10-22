@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// It allows you to list all the messages in the current working folder in pages. It lists 10 messages in a page, so you can optionally specify the page number.
     /// </remarks>
-    class Mail_ListCommand : BaseCommand, ICommand
+    class ListCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

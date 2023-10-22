@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// If you no longer want a message in your mail account, use this command to remove a mail permanently.
     /// </remarks>
-    class Mail_RmCommand : BaseCommand, ICommand
+    class RmCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

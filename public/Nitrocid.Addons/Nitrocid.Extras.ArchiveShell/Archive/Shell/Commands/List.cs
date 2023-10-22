@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     /// <remarks>
     /// If you want to know what this ZIP file contains, you can use this command to list all the files and folders included in the archive.
     /// </remarks>
-    class ArchiveShell_ListCommand : BaseCommand, ICommand
+    class ListCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -46,7 +46,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Listing entries with current directory as target directory");
-                Entries = ArchiveTools.ListArchiveEntries(ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory);
+                Entries = ArchiveTools.ListArchiveEntries(ArchiveShellCommon.CurrentArchiveDirectory);
             }
             foreach (IArchiveEntry Entry in Entries)
             {

@@ -21,7 +21,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.RSS.Commands;
-using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.RSS.Presets;
@@ -46,42 +45,42 @@ namespace KS.Shell.Shells.RSS
                         {
                             new CommandArgumentPart(true, "feednum", null, true)
                         })
-                    }, new RSS_ArticleInfoCommand())
+                    }, new ArticleInfoCommand())
             },
 
             { "bookmark",
                 new CommandInfo("bookmark", ShellType, /* Localizable */ "Bookmarks the feed",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new RSS_BookmarkCommand())
+                    }, new BookmarkCommand())
             },
 
             { "detach",
                 new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new RSS_DetachCommand())
+                    }, new DetachCommand())
             },
 
             { "feedinfo",
                 new CommandInfo("feedinfo", ShellType, /* Localizable */ "Gets the feed info",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new RSS_FeedInfoCommand())
+                    }, new FeedInfoCommand())
             },
 
             { "list",
                 new CommandInfo("list", ShellType, /* Localizable */ "Lists all feeds",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new RSS_ListCommand(), CommandFlags.Wrappable)
+                    }, new ListCommand(), CommandFlags.Wrappable)
             },
 
             { "listbookmark",
                 new CommandInfo("listbookmark", ShellType, /* Localizable */ "Lists all bookmarked feeds",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new RSS_ListBookmarkCommand(), CommandFlags.Wrappable)
+                    }, new ListBookmarkCommand(), CommandFlags.Wrappable)
             },
 
             { "read",
@@ -91,7 +90,7 @@ namespace KS.Shell.Shells.RSS
                         {
                             new CommandArgumentPart(true, "feednum", null, true)
                         })
-                    }, new RSS_ReadCommand())
+                    }, new ReadCommand())
             },
 
             { "search",
@@ -118,14 +117,14 @@ namespace KS.Shell.Shells.RSS
                                 AcceptsValues = false
                             })
                         })
-                    }, new RSS_SearchCommand(), CommandFlags.Wrappable)
+                    }, new SearchCommand(), CommandFlags.Wrappable)
             },
 
             { "unbookmark",
                 new CommandInfo("unbookmark", ShellType, /* Localizable */ "Removes the feed bookmark",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new RSS_UnbookmarkCommand())
+                    }, new UnbookmarkCommand())
             },
         };
 

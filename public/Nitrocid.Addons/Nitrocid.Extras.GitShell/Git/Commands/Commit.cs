@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command makes a commit containing all the changes.
     /// </remarks>
-    class Git_CommitCommand : BaseCommand, ICommand
+    class CommitCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

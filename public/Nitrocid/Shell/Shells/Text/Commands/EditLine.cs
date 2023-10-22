@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to edit a line seamlessly.
     /// </remarks>
-    class TextEdit_EditLineCommand : BaseCommand, ICommand
+    class EditLineCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -42,12 +42,12 @@ namespace KS.Shell.Shells.Text.Commands
             if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
             {
                 int lineNum = Convert.ToInt32(parameters.ArgumentsList[0]);
-                if (lineNum <= TextEditShellCommon.TextEdit_FileLines.Count)
+                if (lineNum <= TextEditShellCommon.FileLines.Count)
                 {
-                    string OriginalLine = TextEditShellCommon.TextEdit_FileLines[lineNum - 1];
+                    string OriginalLine = TextEditShellCommon.FileLines[lineNum - 1];
                     TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
                     string EditedLine = Input.ReadLine("", OriginalLine);
-                    TextEditShellCommon.TextEdit_FileLines[lineNum - 1] = EditedLine;
+                    TextEditShellCommon.FileLines[lineNum - 1] = EditedLine;
                     return 0;
                 }
                 else

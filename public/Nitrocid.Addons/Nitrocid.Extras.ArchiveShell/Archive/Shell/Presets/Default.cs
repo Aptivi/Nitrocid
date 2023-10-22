@@ -54,11 +54,11 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
 
             // File name
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat(Path.GetFileName(ArchiveShellCommon.ArchiveShell_FileStream.Name));
+            PresetStringBuilder.AppendFormat(Path.GetFileName(ArchiveShellCommon.FileStream.Name));
 
             // Current archive directory
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat("{0}", ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory);
+            PresetStringBuilder.AppendFormat("{0}", ArchiveShellCommon.CurrentArchiveDirectory);
 
             // Closing
             PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);

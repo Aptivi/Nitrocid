@@ -38,7 +38,7 @@ namespace KS.Network.Mail.Transfer
                 // Every 30 seconds, send a ping to IMAP server
                 while (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).IsConnected)
                 {
-                    Thread.Sleep(MailShellCommon.Mail_ImapPingInterval);
+                    Thread.Sleep(MailShellCommon.ImapPingInterval);
                     if (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).IsConnected)
                     {
                         lock (((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).SyncRoot)
@@ -69,7 +69,7 @@ namespace KS.Network.Mail.Transfer
                 // Every 30 seconds, send a ping to SMTP server
                 while (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).IsConnected)
                 {
-                    Thread.Sleep(MailShellCommon.Mail_SmtpPingInterval);
+                    Thread.Sleep(MailShellCommon.SmtpPingInterval);
                     if (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).IsConnected)
                     {
                         lock (((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).SyncRoot)

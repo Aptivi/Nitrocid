@@ -21,7 +21,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.SFTP.Commands;
-using System;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.SFTP.Presets;
@@ -46,7 +45,7 @@ namespace KS.Shell.Shells.SFTP
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new SFTP_CatCommand(), CommandFlags.Wrappable)
+                    }, new CatCommand(), CommandFlags.Wrappable)
             },
             
             { "cdl",
@@ -56,7 +55,7 @@ namespace KS.Shell.Shells.SFTP
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new SFTP_CdlCommand())
+                    }, new CdlCommand())
             },
             
             { "cdr",
@@ -66,7 +65,7 @@ namespace KS.Shell.Shells.SFTP
                         {
                             new CommandArgumentPart(true, "directory")
                         })
-                    }, new SFTP_CdrCommand())
+                    }, new CdrCommand())
             },
             
             { "del",
@@ -76,14 +75,14 @@ namespace KS.Shell.Shells.SFTP
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new SFTP_DelCommand())
+                    }, new DelCommand())
             },
             
             { "detach",
                 new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new SFTP_DetachCommand())
+                    }, new DetachCommand())
             },
             
             { "get",
@@ -93,7 +92,7 @@ namespace KS.Shell.Shells.SFTP
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new SFTP_GetCommand())
+                    }, new GetCommand())
             },
             
             { "lsl",
@@ -112,7 +111,7 @@ namespace KS.Shell.Shells.SFTP
                                 AcceptsValues = false
                             })
                         })
-                    }, new SFTP_LslCommand(), CommandFlags.Wrappable)
+                    }, new LslCommand(), CommandFlags.Wrappable)
             },
             
             { "lsr",
@@ -127,7 +126,7 @@ namespace KS.Shell.Shells.SFTP
                                 AcceptsValues = false
                             })
                         })
-                    }, new SFTP_LsrCommand(), CommandFlags.Wrappable)
+                    }, new LsrCommand(), CommandFlags.Wrappable)
             },
             
             { "put",
@@ -137,21 +136,21 @@ namespace KS.Shell.Shells.SFTP
                         {
                             new CommandArgumentPart(true, "file")
                         })
-                    }, new SFTP_PutCommand())
+                    }, new PutCommand())
             },
             
             { "pwdl",
                 new CommandInfo("pwdl", ShellType, /* Localizable */ "Gets current local directory",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new SFTP_PwdlCommand())
+                    }, new PwdlCommand())
             },
 
             { "pwdr",
                 new CommandInfo("pwdr", ShellType, /* Localizable */ "Gets current remote directory",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new SFTP_PwdrCommand())
+                    }, new PwdrCommand())
             },
         };
 

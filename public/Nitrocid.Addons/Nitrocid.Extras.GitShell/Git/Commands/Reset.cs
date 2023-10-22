@@ -28,7 +28,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command lets you reset your local Git repository to the most recent change.
     /// </remarks>
-    class Git_ResetCommand : BaseCommand, ICommand
+    class ResetCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

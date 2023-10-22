@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// Prints the contents of the file with bytes to the console. This is useful if you need to view the contents before and after editing.
     /// </remarks>
-    class HexEdit_PrintCommand : BaseCommand, ICommand
+    class PrintCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.Hex.Commands
                     if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                     {
                         ByteNumber = Convert.ToInt64(parameters.ArgumentsList[0]);
-                        HexEditTools.HexEdit_DisplayHex(ByteNumber);
+                        HexEditTools.DisplayHex(ByteNumber);
                         return 0;
                     }
                     else
@@ -71,7 +71,7 @@ namespace KS.Shell.Shells.Hex.Commands
                         long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[0]);
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
-                        HexEditTools.HexEdit_DisplayHex(ByteNumberStart, ByteNumberEnd);
+                        HexEditTools.DisplayHex(ByteNumberStart, ByteNumberEnd);
                         return 0;
                     }
                     else
@@ -84,7 +84,7 @@ namespace KS.Shell.Shells.Hex.Commands
             }
             else
             {
-                HexEditTools.HexEdit_DisplayHex();
+                HexEditTools.DisplayHex();
                 return 0;
             }
         }

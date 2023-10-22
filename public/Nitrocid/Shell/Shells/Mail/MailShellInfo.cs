@@ -21,8 +21,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Mail.Commands;
-using System;
-using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Mail.Presets;
 
@@ -46,21 +44,21 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "folder")
                         })
-                    }, new Mail_CdCommand())
+                    }, new CdCommand())
             },
             
             { "detach",
                 new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Mail_DetachCommand())
+                    }, new DetachCommand())
             },
             
             { "lsdirs",
                 new CommandInfo("lsdirs", ShellType, /* Localizable */ "Lists directories in your mail address",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Mail_LsDirsCommand())
+                    }, new LsDirsCommand())
             },
             
             { "list",
@@ -70,7 +68,7 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(false, "pageNum", null, true)
                         })
-                    }, new Mail_ListCommand())
+                    }, new ListCommand())
             },
             
             { "mkdir",
@@ -80,7 +78,7 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "foldername")
                         })
-                    }, new Mail_MkdirCommand())
+                    }, new MkdirCommand())
             },
             
             { "mv",
@@ -91,7 +89,7 @@ namespace KS.Shell.Shells.Mail
                             new CommandArgumentPart(true, "mailId", null, true),
                             new CommandArgumentPart(true, "targetFolder")
                         })
-                    }, new Mail_MvCommand())
+                    }, new MvCommand())
             },
             
             { "mvall",
@@ -102,7 +100,7 @@ namespace KS.Shell.Shells.Mail
                             new CommandArgumentPart(true, "senderName"),
                             new CommandArgumentPart(true, "targetFolder")
                         })
-                    }, new Mail_MvAllCommand())
+                    }, new MvAllCommand())
             },
             
             { "read",
@@ -112,7 +110,7 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "mailid", null, true)
                         })
-                    }, new Mail_ReadCommand())
+                    }, new ReadCommand())
             },
             
             { "readenc",
@@ -122,7 +120,7 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "mailid", null, true)
                         })
-                    }, new Mail_ReadEncCommand())
+                    }, new ReadEncCommand())
             },
             
             { "ren",
@@ -133,7 +131,7 @@ namespace KS.Shell.Shells.Mail
                             new CommandArgumentPart(true, "oldFolderName"),
                             new CommandArgumentPart(true, "newFolderName")
                         })
-                    }, new Mail_RenCommand())
+                    }, new RenCommand())
             },
             
             { "rm",
@@ -143,7 +141,7 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "mailid", null, true)
                         })
-                    }, new Mail_RmCommand())
+                    }, new RmCommand())
             },
             
             { "rmall",
@@ -153,7 +151,7 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "sendername")
                         })
-                    }, new Mail_RmAllCommand())
+                    }, new RmAllCommand())
             },
             
             { "rmdir",
@@ -163,21 +161,21 @@ namespace KS.Shell.Shells.Mail
                         {
                             new CommandArgumentPart(true, "foldername")
                         })
-                    }, new Mail_RmdirCommand())
+                    }, new RmdirCommand())
             },
             
             { "send",
                 new CommandInfo("send", ShellType, /* Localizable */ "Sends a message to an address",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Mail_SendCommand())
+                    }, new SendCommand())
             },
 
             { "sendenc",
                 new CommandInfo("sendenc", ShellType, /* Localizable */ "Sends an encrypted message to an address",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Mail_SendEncCommand())
+                    }, new SendEncCommand())
             }
         };
 

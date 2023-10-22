@@ -31,7 +31,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command prints a Git repository status.
     /// </remarks>
-    class Git_StatusCommand : BaseCommand, ICommand
+    class StatusCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

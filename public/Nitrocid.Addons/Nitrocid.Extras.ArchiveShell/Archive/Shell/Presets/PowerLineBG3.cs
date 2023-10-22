@@ -63,8 +63,8 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Presets
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Path.GetFileName(ArchiveShellCommon.ArchiveShell_FileStream.Name), default, TransitionPartChar),
-                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory, default, TransitionPartChar)
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), Path.GetFileName(ArchiveShellCommon.FileStream.Name), default, TransitionPartChar),
+                new PowerLineSegment(new Color(255, 255, 85), new Color(25, 25, 25), ArchiveShellCommon.CurrentArchiveDirectory, default, TransitionPartChar)
             };
 
             // Builder

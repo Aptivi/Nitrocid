@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Debug.Commands
     /// <remarks>
     /// This command will print backtrace information for all kernel threads
     /// </remarks>
-    class Debug_ThreadsBtCommand : BaseCommand, ICommand
+    class ThreadsBtCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.HTTP.Commands
     /// <summary>
     /// Removes a header to the request header
     /// </summary>
-    class HTTP_RmHeaderCommand : BaseCommand, ICommand
+    class RmHeaderCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

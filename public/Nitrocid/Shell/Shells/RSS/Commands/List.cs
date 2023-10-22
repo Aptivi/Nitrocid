@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// <remarks>
     /// If you want to get articles found in the current RSS feed, you can use this command.
     /// </remarks>
-    class RSS_ListCommand : BaseCommand, ICommand
+    class ListCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

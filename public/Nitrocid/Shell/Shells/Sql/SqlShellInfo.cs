@@ -41,14 +41,14 @@ namespace KS.Shell.Shells.Sql
                 new CommandInfo("cmd", ShellType, /* Localizable */ "Executes an SQL query",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Sql_CmdCommand())
+                    }, new CmdCommand())
             },
 
             { "dbinfo",
                 new CommandInfo("dbinfo", ShellType, /* Localizable */ "Database info",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Sql_DbInfoCommand())
+                    }, new DbInfoCommand())
             },
         };
 

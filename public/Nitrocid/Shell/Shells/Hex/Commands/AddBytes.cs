@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to add new bytes at the end of the file.
     /// </remarks>
-    class HexEdit_AddBytesCommand : BaseCommand, ICommand
+    class AddBytesCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.Hex.Commands
             }
 
             // Add the new bytes
-            HexEditTools.HexEdit_AddNewBytes(FinalBytes.ToArray());
+            HexEditTools.AddNewBytes(FinalBytes.ToArray());
             return 0;
         }
 

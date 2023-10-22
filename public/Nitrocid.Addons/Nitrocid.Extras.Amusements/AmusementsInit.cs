@@ -28,7 +28,6 @@ using Nitrocid.Extras.Amusements.Commands;
 using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Extras.Amusements.Settings;
 using Nitrocid.Extras.Amusements.Splashes;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

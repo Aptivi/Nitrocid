@@ -28,13 +28,13 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to add a new byte at the end of the file.
     /// </remarks>
-    class HexEdit_AddByteCommand : BaseCommand, ICommand
+    class AddByteCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             byte ByteContent = Convert.ToByte(parameters.ArgumentsText, 16);
-            HexEditTools.HexEdit_AddNewByte(ByteContent);
+            HexEditTools.AddNewByte(ByteContent);
             return 0;
         }
 

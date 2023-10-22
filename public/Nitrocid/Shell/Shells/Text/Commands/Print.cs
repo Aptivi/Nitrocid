@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// Prints the contents of the file with line numbers to the console. This is useful if you need to view the contents before and after editing.
     /// </remarks>
-    class TextEdit_PrintCommand : BaseCommand, ICommand
+    class PrintCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -50,10 +50,10 @@ namespace KS.Shell.Shells.Text.Commands
                     if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                     {
                         LineNumber = Convert.ToInt32(parameters.ArgumentsList[0]);
-                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                        if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                        if (Convert.ToInt32(parameters.ArgumentsList[0]) <= TextEditShellCommon.FileLines.Count)
                         {
-                            string Line = TextEditShellCommon.TextEdit_FileLines[LineNumber - 1];
+                            string Line = TextEditShellCommon.FileLines[LineNumber - 1];
                             DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
                             TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
                             TextWriterColor.WriteKernelColor(Line, true, KernelColorType.ListValue);
@@ -82,12 +82,12 @@ namespace KS.Shell.Shells.Text.Commands
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[0]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[1]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
-                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.TextEdit_FileLines.Count);
-                        if (LineNumberStart <= TextEditShellCommon.TextEdit_FileLines.Count & LineNumberEnd <= TextEditShellCommon.TextEdit_FileLines.Count)
+                        DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", TextEditShellCommon.FileLines.Count);
+                        if (LineNumberStart <= TextEditShellCommon.FileLines.Count & LineNumberEnd <= TextEditShellCommon.FileLines.Count)
                         {
                             for (LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                             {
-                                string Line = TextEditShellCommon.TextEdit_FileLines[LineNumber - 1];
+                                string Line = TextEditShellCommon.FileLines[LineNumber - 1];
                                 DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
                                 TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineNumber);
                                 TextWriterColor.WriteKernelColor(Line, true, KernelColorType.ListValue);
@@ -110,7 +110,7 @@ namespace KS.Shell.Shells.Text.Commands
             }
             else
             {
-                foreach (string Line in TextEditShellCommon.TextEdit_FileLines)
+                foreach (string Line in TextEditShellCommon.FileLines)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Line number: {0} ({1})", LineNumber, Line);
                     TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineNumber);

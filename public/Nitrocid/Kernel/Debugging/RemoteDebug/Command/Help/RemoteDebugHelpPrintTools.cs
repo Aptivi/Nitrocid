@@ -23,8 +23,6 @@ using KS.Shell.ShellBase.Help;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace KS.Kernel.Debugging.RemoteDebug.Command.Help
 {

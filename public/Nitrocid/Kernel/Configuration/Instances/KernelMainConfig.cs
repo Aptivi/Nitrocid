@@ -985,39 +985,39 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed
         /// </summary>
-        public string Mail_UserPromptStyle { get; set; } = "";
+        public string MailUserPromptStyle { get; set; } = "";
         /// <summary>
         /// Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed
         /// </summary>
-        public string Mail_PassPromptStyle { get; set; } = "";
+        public string MailPassPromptStyle { get; set; } = "";
         /// <summary>
         /// Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed
         /// </summary>
-        public string Mail_IMAPPromptStyle { get; set; } = "";
+        public string MailIMAPPromptStyle { get; set; } = "";
         /// <summary>
         /// Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed
         /// </summary>
-        public string Mail_SMTPPromptStyle { get; set; } = "";
+        public string MailSMTPPromptStyle { get; set; } = "";
         /// <summary>
         /// Automatically detect the mail server based on the given address
         /// </summary>
-        public bool Mail_AutoDetectServer { get; set; } = true;
+        public bool MailAutoDetectServer { get; set; } = true;
         /// <summary>
         /// Enables mail server debug
         /// </summary>
-        public bool Mail_Debug { get; set; }
+        public bool MailDebug { get; set; }
         /// <summary>
         /// Notifies you for any new mail messages
         /// </summary>
-        public bool Mail_NotifyNewMail { get; set; } = true;
+        public bool MailNotifyNewMail { get; set; } = true;
         /// <summary>
         /// Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed
         /// </summary>
-        public string Mail_GPGPromptStyle { get; set; } = "";
+        public string MailGPGPromptStyle { get; set; } = "";
         /// <summary>
         /// How many milliseconds to send the IMAP ping?
         /// </summary>
-        public int Mail_ImapPingInterval
+        public int MailImapPingInterval
         {
             get => MailShellCommon.imapPingInterval;
             set => MailShellCommon.imapPingInterval = value < 0 ? 30000 : value;
@@ -1025,7 +1025,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// How many milliseconds to send the SMTP ping?
         /// </summary>
-        public int Mail_SmtpPingInterval
+        public int MailSmtpPingInterval
         {
             get => MailShellCommon.smtpPingInterval;
             set => MailShellCommon.smtpPingInterval = value < 0 ? 30000 : value;
@@ -1033,7 +1033,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Controls how the mail text will be shown
         /// </summary>
-        public int Mail_TextFormat { get; set; } = (int)TextFormat.Plain;
+        public int MailTextFormat { get; set; } = (int)TextFormat.Plain;
         /// <summary>
         /// If you want remote debug to start on boot, enable this
         /// </summary>
@@ -1093,7 +1093,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// How many e-mail messages to display in one page?
         /// </summary>
-        public int Mail_MaxMessagesInPage
+        public int MailMaxMessagesInPage
         {
             get => MailShellCommon.maxMessagesInPage;
             set => MailShellCommon.maxMessagesInPage = value < 0 ? 10 : value;
@@ -1101,15 +1101,15 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// If enabled, the mail shell will show how many bytes transmitted when downloading mail.
         /// </summary>
-        public bool Mail_ShowProgress { get; set; } = true;
+        public bool MailShowProgress { get; set; } = true;
         /// <summary>
         /// Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size and {1} for total size.
         /// </summary>
-        public string Mail_ProgressStyle { get; set; } = "";
+        public string MailProgressStyle { get; set; } = "";
         /// <summary>
         /// Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size.
         /// </summary>
-        public string Mail_ProgressStyleSingle { get; set; } = "";
+        public string MailProgressStyleSingle { get; set; } = "";
         /// <summary>
         /// Shows the notification showing the download progress
         /// </summary>
@@ -1269,11 +1269,11 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Turns on or off the text editor autosave feature
         /// </summary>
-        public bool TextEdit_AutoSaveFlag { get; set; } = true;
+        public bool TextEditAutoSaveFlag { get; set; } = true;
         /// <summary>
         /// If autosave is enabled, the text file will be saved for each "n" seconds
         /// </summary>
-        public int TextEdit_AutoSaveInterval
+        public int TextEditAutoSaveInterval
         {
             get => TextEditShellCommon.autoSaveInterval;
             set => TextEditShellCommon.autoSaveInterval = value < 0 ? 60 : value;
@@ -1281,11 +1281,11 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Turns on or off the hex editor autosave feature
         /// </summary>
-        public bool HexEdit_AutoSaveFlag { get; set; } = true;
+        public bool HexEditAutoSaveFlag { get; set; } = true;
         /// <summary>
         /// If autosave is enabled, the binary file will be saved for each \"n\" seconds
         /// </summary>
-        public int HexEdit_AutoSaveInterval
+        public int HexEditAutoSaveInterval
         {
             get => HexEditShellCommon.autoSaveInterval;
             set => HexEditShellCommon.autoSaveInterval = value < 0 ? 60 : value;
@@ -1377,7 +1377,7 @@ namespace KS.Kernel.Configuration.Instances
         /// <summary>
         /// Selects the default JSON formatting (beautified or minified) for the JSON shell to save
         /// </summary>
-        public int JsonShell_Formatting { get; set; } = (int)Formatting.Indented;
+        public int JsonShellFormatting { get; set; } = (int)Formatting.Indented;
         /// <summary>
         /// Shows the commands count in the command list, controlled by the three count show switches for different kinds of commands.
         /// </summary>

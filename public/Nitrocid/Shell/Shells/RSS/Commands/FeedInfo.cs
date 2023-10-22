@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.RSS.Commands
     /// <remarks>
     /// If you want to know more about the current RSS feed, you can use this command to get some information about it. It currently provides you the title, the link, the description, the feed type, and the number of articles.
     /// </remarks>
-    class RSS_FeedInfoCommand : BaseCommand, ICommand
+    class FeedInfoCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

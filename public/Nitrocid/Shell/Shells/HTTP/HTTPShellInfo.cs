@@ -21,8 +21,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.HTTP.Commands;
-using System;
-using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.HTTP.Presets;
 
@@ -47,14 +45,14 @@ namespace KS.Shell.Shells.HTTP
                             new CommandArgumentPart(true, "key"),
                             new CommandArgumentPart(true, "value")
                         })
-                    }, new HTTP_AddHeaderCommand())
+                    }, new AddHeaderCommand())
             },
 
             { "curragent",
                 new CommandInfo("curragent", ShellType, /* Localizable */ "Gets current user agent",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new HTTP_CurrAgentCommand())
+                    }, new CurrAgentCommand())
             },
 
             { "delete",
@@ -64,14 +62,14 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "request")
                         })
-                    }, new HTTP_DeleteCommand())
+                    }, new DeleteCommand())
             },
 
             { "detach",
                 new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new HTTP_DetachCommand())
+                    }, new DetachCommand())
             },
 
             { "editheader",
@@ -82,7 +80,7 @@ namespace KS.Shell.Shells.HTTP
                             new CommandArgumentPart(true, "key"),
                             new CommandArgumentPart(true, "value")
                         })
-                    }, new HTTP_EditHeaderCommand())
+                    }, new EditHeaderCommand())
             },
 
             { "get",
@@ -92,7 +90,7 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "request")
                         })
-                    }, new HTTP_GetCommand(), CommandFlags.Wrappable)
+                    }, new GetCommand(), CommandFlags.Wrappable)
             },
 
             { "getstring",
@@ -102,14 +100,14 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "request")
                         })
-                    }, new HTTP_GetStringCommand(), CommandFlags.Wrappable)
+                    }, new GetStringCommand(), CommandFlags.Wrappable)
             },
 
             { "lsheader",
                 new CommandInfo("lsheader", ShellType, /* Localizable */ "Lists the request headers",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new HTTP_LsHeaderCommand(), CommandFlags.Wrappable)
+                    }, new LsHeaderCommand(), CommandFlags.Wrappable)
             },
 
             { "put",
@@ -120,7 +118,7 @@ namespace KS.Shell.Shells.HTTP
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "pathtofile")
                         })
-                    }, new HTTP_PutCommand(), CommandFlags.Wrappable)
+                    }, new PutCommand(), CommandFlags.Wrappable)
             },
 
             { "putstring",
@@ -131,7 +129,7 @@ namespace KS.Shell.Shells.HTTP
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "string")
                         })
-                    }, new HTTP_PutStringCommand(), CommandFlags.Wrappable)
+                    }, new PutStringCommand(), CommandFlags.Wrappable)
             },
 
             { "post",
@@ -142,7 +140,7 @@ namespace KS.Shell.Shells.HTTP
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "pathtofile")
                         })
-                    }, new HTTP_PostCommand(), CommandFlags.Wrappable)
+                    }, new PostCommand(), CommandFlags.Wrappable)
             },
 
             { "poststring",
@@ -153,7 +151,7 @@ namespace KS.Shell.Shells.HTTP
                             new CommandArgumentPart(true, "request"),
                             new CommandArgumentPart(true, "string")
                         })
-                    }, new HTTP_PostStringCommand(), CommandFlags.Wrappable)
+                    }, new PostStringCommand(), CommandFlags.Wrappable)
             },
 
             { "rmheader",
@@ -163,7 +161,7 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "key")
                         })
-                    }, new HTTP_RmHeaderCommand())
+                    }, new RmHeaderCommand())
             },
 
             { "setagent",
@@ -173,7 +171,7 @@ namespace KS.Shell.Shells.HTTP
                         {
                             new CommandArgumentPart(true, "userAgent")
                         })
-                    }, new HTTP_SetAgentCommand())
+                    }, new SetAgentCommand())
             },
         };
 

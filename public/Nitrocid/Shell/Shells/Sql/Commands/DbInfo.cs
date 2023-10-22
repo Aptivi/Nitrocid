@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Sql.Commands
     /// <remarks>
     /// This command prints database information.
     /// </remarks>
-    class Sql_DbInfoCommand : BaseCommand, ICommand
+    class DbInfoCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

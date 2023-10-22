@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <remarks>
     /// This command lets you change your remote directory in your connected FTP server to another directory that exists in the subdirectory. However, when specifying .., it goes backwards.
     /// </remarks>
-    class FTP_CdrCommand : BaseCommand, ICommand
+    class CdrCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

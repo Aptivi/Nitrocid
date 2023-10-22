@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class SFTP_LsrCommand : BaseCommand, ICommand
+    class LsrCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

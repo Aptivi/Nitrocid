@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// <remarks>
     /// This command lets you change your local directory in your hard drives to another directory that exists in the subdirectory. However, when specifying .., it goes backwards.
     /// </remarks>
-    class SFTP_CdlCommand : BaseCommand, ICommand
+    class CdlCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

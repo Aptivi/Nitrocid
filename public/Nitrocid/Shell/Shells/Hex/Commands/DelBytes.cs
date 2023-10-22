@@ -35,7 +35,7 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// You can use this command to remove a extraneous bytes in a specified range. You can use the print command to review the changes.
     /// </remarks>
-    class HexEdit_DelBytesCommand : BaseCommand, ICommand
+    class DelBytesCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -44,9 +44,9 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= HexEditShellCommon.FileBytes.LongLength)
                     {
-                        HexEditTools.HexEdit_DeleteBytes(Convert.ToInt64(parameters.ArgumentsList[0]));
+                        HexEditTools.DeleteBytes(Convert.ToInt64(parameters.ArgumentsList[0]));
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("Deleted bytes."), true, KernelColorType.Success);
                         return 0;
                     }
@@ -67,12 +67,12 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[0]) & TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.HexEdit_FileBytes.LongLength)
+                    if (Convert.ToInt64(parameters.ArgumentsList[0]) <= HexEditShellCommon.FileBytes.LongLength & Convert.ToInt64(parameters.ArgumentsList[1]) <= HexEditShellCommon.FileBytes.LongLength)
                     {
                         long ByteNumberStart = Convert.ToInt64(parameters.ArgumentsList[0]);
                         long ByteNumberEnd = Convert.ToInt64(parameters.ArgumentsList[1]);
                         ByteNumberStart.SwapIfSourceLarger(ref ByteNumberEnd);
-                        HexEditTools.HexEdit_DeleteBytes(ByteNumberStart, ByteNumberEnd);
+                        HexEditTools.DeleteBytes(ByteNumberStart, ByteNumberEnd);
                         return 0;
                     }
                     else

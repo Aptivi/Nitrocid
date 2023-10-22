@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.Sql.Presets
 
             // File name
             PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);
-            PresetStringBuilder.AppendFormat(SqlShellCommon.Sql_DatabaseFileName);
+            PresetStringBuilder.AppendFormat(SqlShellCommon.DatabaseFileName);
 
             // Closing
             PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);

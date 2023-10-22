@@ -48,7 +48,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class FTP_LsrCommand : BaseCommand, ICommand
+    class LsrCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

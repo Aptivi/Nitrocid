@@ -28,23 +28,23 @@ namespace KS.Shell.Shells.Json.Commands
     /// <summary>
     /// Gets information about the JSON file and its contents
     /// </summary>
-    class JsonShell_JsonInfoCommand : BaseCommand, ICommand
+    class JsonInfoCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Base info
             SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Base JSON token information"), true);
-            TextWriterColor.Write(Translate.DoTranslation("Base type") + ": {0}", JsonShellCommon.JsonShell_FileToken.Type);
-            TextWriterColor.Write(Translate.DoTranslation("Base has values") + ": {0}", true, false, JsonShellCommon.JsonShell_FileToken.HasValues);
-            TextWriterColor.Write(Translate.DoTranslation("Children token count") + ": {0}", JsonShellCommon.JsonShell_FileToken.Count());
-            TextWriterColor.Write(Translate.DoTranslation("Base path") + ": {0}", JsonShellCommon.JsonShell_FileToken.Path);
+            TextWriterColor.Write(Translate.DoTranslation("Base type") + ": {0}", JsonShellCommon.FileToken.Type);
+            TextWriterColor.Write(Translate.DoTranslation("Base has values") + ": {0}", true, false, JsonShellCommon.FileToken.HasValues);
+            TextWriterColor.Write(Translate.DoTranslation("Children token count") + ": {0}", JsonShellCommon.FileToken.Count());
+            TextWriterColor.Write(Translate.DoTranslation("Base path") + ": {0}", JsonShellCommon.FileToken.Path);
             TextWriterColor.Write();
 
             // Individual properties
             if (!parameters.SwitchesList.Contains("-simplified"))
             {
-                foreach (var token in JsonShellCommon.JsonShell_FileToken)
+                foreach (var token in JsonShellCommon.FileToken)
                 {
                     SeparatorWriterColor.WriteSeparatorColor(Translate.DoTranslation("Individual JSON token information") + " [{0}]", true, token.Path);
                     TextWriterColor.Write(Translate.DoTranslation("Token type") + ": {0}", token.Type);

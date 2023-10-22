@@ -58,15 +58,15 @@ namespace KS.Shell.Shells.Hex
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Please note that editing binary files using this shell is experimental and may lead to data corruption or data loss if not used properly.") + CharManager.NewLine + Translate.DoTranslation("DON'T LAUNCH THE SHELL UNLESS YOU KNOW WHAT YOU'RE DOING!"), true, KernelColorType.Warning);
                     
             // Open file if not open
-            if (HexEditShellCommon.HexEdit_FileStream is null)
+            if (HexEditShellCommon.FileStream is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "File not open yet. Trying to open {0}...", FilePath);
-                if (!HexEditTools.HexEdit_OpenBinaryFile(FilePath))
+                if (!HexEditTools.OpenBinaryFile(FilePath))
                 {
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Failed to open file. Exiting shell..."), true, KernelColorType.Error);
                     Bail = true;
                 }
-                HexEditShellCommon.HexEdit_AutoSave.Start();
+                HexEditShellCommon.AutoSave.Start();
             }
 
             // Actual shell logic
@@ -91,8 +91,8 @@ namespace KS.Shell.Shells.Hex
             }
 
             // Close file
-            HexEditTools.HexEdit_CloseBinaryFile();
-            HexEditShellCommon.HexEdit_AutoSave.Stop();
+            HexEditTools.CloseBinaryFile();
+            HexEditShellCommon.AutoSave.Stop();
         }
 
     }

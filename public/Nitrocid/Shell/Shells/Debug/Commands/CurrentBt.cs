@@ -29,7 +29,7 @@ namespace KS.Shell.Shells.Debug.Commands
     /// <remarks>
     /// This command will print a backtrace for the current thread
     /// </remarks>
-    class Debug_CurrentBtCommand : BaseCommand, ICommand
+    class CurrentBtCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

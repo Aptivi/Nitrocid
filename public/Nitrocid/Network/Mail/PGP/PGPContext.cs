@@ -39,9 +39,9 @@ namespace KS.Network.Mail.PGP
         /// <returns>Entered Password</returns>
         protected override string GetPasswordForKey(PgpSecretKey key)
         {
-            if (!string.IsNullOrWhiteSpace(MailLogin.Mail_GPGPromptStyle))
+            if (!string.IsNullOrWhiteSpace(MailLogin.GPGPromptStyle))
             {
-                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MailLogin.Mail_GPGPromptStyle), false, KernelColorType.Input, key.KeyId);
+                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MailLogin.GPGPromptStyle), false, KernelColorType.Input, key.KeyId);
             }
             else
             {

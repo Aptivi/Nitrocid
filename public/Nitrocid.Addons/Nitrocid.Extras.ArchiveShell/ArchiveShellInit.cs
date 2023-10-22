@@ -21,11 +21,9 @@ using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.ArchiveShell.Archive.Commands;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell;
 using Nitrocid.Extras.ArchiveShell.Settings;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

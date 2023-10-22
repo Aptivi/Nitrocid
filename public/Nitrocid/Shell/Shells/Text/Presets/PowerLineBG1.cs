@@ -63,7 +63,7 @@ namespace KS.Shell.Shells.Text.Presets
             // PowerLine presets
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), Path.GetFileName(TextEditShellCommon.TextEdit_FileStream.Name), default, TransitionPartChar)
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), Path.GetFileName(TextEditShellCommon.FileStream.Name), default, TransitionPartChar)
             };
 
             // Builder

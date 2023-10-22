@@ -31,7 +31,7 @@ namespace KS.Shell.Shells.Debug.Commands
     /// <remarks>
     /// This command lets you view the exception information from the list of available kernel exceptions, including the name, the number, and the message.
     /// </remarks>
-    class Debug_ExcInfoCommand : BaseCommand, ICommand
+    class ExcInfoCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

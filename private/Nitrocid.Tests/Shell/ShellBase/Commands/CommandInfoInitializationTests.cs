@@ -22,7 +22,6 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using NUnit.Framework;
 using Shouldly;
-using System;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Commands
 {

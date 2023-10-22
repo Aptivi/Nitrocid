@@ -28,18 +28,18 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to print the contents of either the full JSON file or a property.
     /// </remarks>
-    class JsonShell_PrintCommand : BaseCommand, ICommand
+    class PrintCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             if (parameters.ArgumentsList.Length > 0)
             {
-                TextWriterColor.Write(JsonTools.JsonShell_SerializeToString(parameters.ArgumentsText));
+                TextWriterColor.Write(JsonTools.SerializeToString(parameters.ArgumentsText));
             }
             else
             {
-                TextWriterColor.Write(JsonTools.JsonShell_SerializeToString("$"));
+                TextWriterColor.Write(JsonTools.SerializeToString("$"));
             }
             return 0;
         }

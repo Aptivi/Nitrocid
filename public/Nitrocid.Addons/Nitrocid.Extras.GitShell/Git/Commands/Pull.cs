@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command pulls all updates from the server.
     /// </remarks>
-    class Git_PullCommand : BaseCommand, ICommand
+    class PullCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

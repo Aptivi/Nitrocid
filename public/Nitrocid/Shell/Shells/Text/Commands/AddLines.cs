@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to add new lines at the end of the file.
     /// </remarks>
-    class TextEdit_AddLinesCommand : BaseCommand, ICommand
+    class AddLinesCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -53,7 +53,7 @@ namespace KS.Shell.Shells.Text.Commands
             }
 
             // Add the new lines
-            TextEditTools.TextEdit_AddNewLines(FinalLines.ToArray());
+            TextEditTools.AddNewLines(FinalLines.ToArray());
             return 0;
         }
 

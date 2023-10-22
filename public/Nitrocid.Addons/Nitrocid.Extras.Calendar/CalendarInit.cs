@@ -27,7 +27,6 @@ using Nitrocid.Extras.Calendar.Calendar.Commands;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Settings;
-using System;
 using System.Collections.Generic;
 using System.Linq;
 

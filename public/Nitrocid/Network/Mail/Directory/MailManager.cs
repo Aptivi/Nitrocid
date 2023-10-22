@@ -50,7 +50,7 @@ namespace KS.Network.Mail.Directory
         /// </summary>
         /// <param name="PageNum">Page number</param>
         /// <exception cref="ArgumentException"></exception>
-        public static void MailListMessages(int PageNum) => MailListMessages(PageNum, MailShellCommon.Mail_MaxMessagesInPage);
+        public static void MailListMessages(int PageNum) => MailListMessages(PageNum, MailShellCommon.MaxMessagesInPage);
 
         /// <summary>
         /// Lists messages
@@ -86,11 +86,11 @@ namespace KS.Network.Mail.Directory
                         if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                         {
                             var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                            Msg = Dir.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(i), default, MailShellCommon.Mail_Progress);
+                            Msg = Dir.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(i), default, MailShellCommon.Progress);
                         }
                         else
                         {
-                            Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(i), default, MailShellCommon.Mail_Progress);
+                            Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(i), default, MailShellCommon.Progress);
                         }
                         MsgFrom = Msg.From.ToString();
                         MsgSubject = Msg.Subject;
@@ -185,11 +185,11 @@ namespace KS.Network.Mail.Directory
                         if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                         {
                             var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                            Msg = Dir.GetMessage(MessageId, default, MailShellCommon.Mail_Progress);
+                            Msg = Dir.GetMessage(MessageId, default, MailShellCommon.Progress);
                         }
                         else
                         {
-                            Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MessageId, default, MailShellCommon.Mail_Progress);
+                            Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MessageId, default, MailShellCommon.Progress);
                         }
                         SteppedMsgNumber += 1;
 
@@ -303,11 +303,11 @@ namespace KS.Network.Mail.Directory
                         if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                         {
                             var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                            Msg = Dir.GetMessage(MessageId, default, MailShellCommon.Mail_Progress);
+                            Msg = Dir.GetMessage(MessageId, default, MailShellCommon.Progress);
                         }
                         else
                         {
-                            Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MessageId, default, MailShellCommon.Mail_Progress);
+                            Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MessageId, default, MailShellCommon.Progress);
                         }
                         SteppedMsgNumber += 1;
 

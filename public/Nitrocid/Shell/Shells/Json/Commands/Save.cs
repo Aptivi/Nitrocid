@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.Json.Commands
     /// </list>
     /// <br></br>
     /// </remarks>
-    class JsonShell_SaveCommand : BaseCommand, ICommand
+    class SaveCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -57,7 +57,7 @@ namespace KS.Shell.Shells.Json.Commands
                 if (parameters.SwitchesList[0] == "-m")
                     TargetFormatting = Formatting.None;
             }
-            JsonTools.JsonShell_SaveFile(false, TargetFormatting);
+            JsonTools.SaveFile(false, TargetFormatting);
             return 0;
         }
 

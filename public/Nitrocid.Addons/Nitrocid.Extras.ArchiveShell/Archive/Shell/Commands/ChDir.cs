@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     /// <remarks>
     /// If you want to interact with the ZIP file in another local directory, you can use this command to change the current local directory. This change isn't applied to the main shell.
     /// </remarks>
-    class ArchiveShell_ChDirCommand : BaseCommand, ICommand
+    class ChDirCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

@@ -28,7 +28,7 @@ namespace KS.Shell.Shells.SFTP.Commands
     /// If you want to detach the shell from the current working server, but don't want to disconnect from it, use this command.
     /// <br></br>
     /// </remarks>
-    class SFTP_DetachCommand : BaseCommand, ICommand
+    class DetachCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.GitShell.Git.Commands
     /// <remarks>
     /// This command lets you stage all unstaged files in your Git repository.
     /// </remarks>
-    class Git_StageAllCommand : BaseCommand, ICommand
+    class StageAllCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

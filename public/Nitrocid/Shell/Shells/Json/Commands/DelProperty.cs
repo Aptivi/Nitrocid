@@ -30,12 +30,12 @@ namespace KS.Shell.Shells.Json.Commands
     /// <remarks>
     /// You can use this command to remove a property from the end of the JSON file.
     /// </remarks>
-    class JsonShell_DelPropertyCommand : BaseCommand, ICommand
+    class DelPropertyCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            JsonTools.JsonShell_RemoveProperty(parameters.ArgumentsList[0]);
+            JsonTools.RemoveProperty(parameters.ArgumentsList[0]);
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Removed property."), true, KernelColorType.Success);
             return 0;
         }

@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.Text.Commands
     /// <remarks>
     /// You can use this command to query a word and get its number from the specified line or all lines.
     /// </remarks>
-    class TextEdit_QueryWordRegexCommand : BaseCommand, ICommand
+    class QueryWordRegexCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -43,14 +43,14 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count)
                     {
                         int LineIndex = Convert.ToInt32(parameters.ArgumentsList[1]);
-                        var QueriedChars = TextEditTools.TextEdit_QueryWordRegex(parameters.ArgumentsList[0], LineIndex);
+                        var QueriedChars = TextEditTools.QueryWordRegex(parameters.ArgumentsList[0], LineIndex);
                         TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineIndex);
 
                         // Process the output
-                        string text = TextEditShellCommon.TextEdit_FileLines[LineIndex - 1];
+                        string text = TextEditShellCommon.FileLines[LineIndex - 1];
                         var Words = text.Split(' ');
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
@@ -68,15 +68,15 @@ namespace KS.Shell.Shells.Text.Commands
                 }
                 else if (parameters.ArgumentsList[1].ToLower() == "all")
                 {
-                    var QueriedWords = TextEditTools.TextEdit_QueryWordRegex(parameters.ArgumentsList[0]);
+                    var QueriedWords = TextEditTools.QueryWordRegex(parameters.ArgumentsList[0]);
                     foreach (var QueriedWord in QueriedWords)
                     {
                         int LineIndex = QueriedWord.Item1;
-                        var QueriedChars = TextEditTools.TextEdit_QueryWordRegex(parameters.ArgumentsList[0], LineIndex + 1);
+                        var QueriedChars = TextEditTools.QueryWordRegex(parameters.ArgumentsList[0], LineIndex + 1);
                         TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineIndex + 1);
 
                         // Process the output
-                        string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
+                        string text = TextEditShellCommon.FileLines[LineIndex];
                         var Words = text.Split(' ');
                         for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                         {
@@ -92,19 +92,19 @@ namespace KS.Shell.Shells.Text.Commands
             {
                 if (TextTools.IsStringNumeric(parameters.ArgumentsList[1]) & TextTools.IsStringNumeric(parameters.ArgumentsList[2]))
                 {
-                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.TextEdit_FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.TextEdit_FileLines.Count)
+                    if (Convert.ToInt32(parameters.ArgumentsList[1]) <= TextEditShellCommon.FileLines.Count & Convert.ToInt32(parameters.ArgumentsList[2]) <= TextEditShellCommon.FileLines.Count)
                     {
                         int LineNumberStart = Convert.ToInt32(parameters.ArgumentsList[1]);
                         int LineNumberEnd = Convert.ToInt32(parameters.ArgumentsList[2]);
                         LineNumberStart.SwapIfSourceLarger(ref LineNumberEnd);
                         for (int LineNumber = LineNumberStart; LineNumber <= LineNumberEnd; LineNumber++)
                         {
-                            var QueriedChars = TextEditTools.TextEdit_QueryWordRegex(parameters.ArgumentsList[0], LineNumber);
+                            var QueriedChars = TextEditTools.QueryWordRegex(parameters.ArgumentsList[0], LineNumber);
                             int LineIndex = LineNumber - 1;
                             TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, LineIndex);
 
                             // Process the output
-                            string text = TextEditShellCommon.TextEdit_FileLines[LineIndex];
+                            string text = TextEditShellCommon.FileLines[LineIndex];
                             var Words = text.Split(' ');
                             for (int wordIndex = 0; wordIndex < Words.Length; wordIndex++)
                             {

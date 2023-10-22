@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.FTP.Commands
     /// <remarks>
     /// If you want to go advanced and execute a server command to the FTP server, you can use this command.
     /// </remarks>
-    class FTP_ExecuteCommand : BaseCommand, ICommand
+    class ExecuteCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

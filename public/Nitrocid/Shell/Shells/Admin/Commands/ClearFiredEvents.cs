@@ -24,7 +24,7 @@ namespace KS.Shell.Shells.Admin.Commands
     /// <summary>
     /// Clears the list of fired events
     /// </summary>
-    class Admin_ClearFiredEventsCommand : BaseCommand, ICommand
+    class ClearFiredEventsCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

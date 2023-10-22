@@ -30,21 +30,21 @@ namespace KS.Shell.Shells.Hex
     {
 
         internal static int autoSaveInterval = 60;
-        internal static byte[] HexEdit_FileBytesOrig;
-        internal static FileStream HexEdit_FileStream;
-        internal static byte[] HexEdit_FileBytes;
-        internal static KernelThread HexEdit_AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HexEdit_HandleAutoSaveBinaryFile);
+        internal static byte[] FileBytesOrig;
+        internal static FileStream FileStream;
+        internal static byte[] FileBytes;
+        internal static KernelThread AutoSave = new("Hex Edit Autosave Thread", false, HexEditTools.HandleAutoSaveBinaryFile);
 
         /// <summary>
         /// Auto save flag
         /// </summary>
-        public static bool HexEdit_AutoSaveFlag =>
-            Config.MainConfig.HexEdit_AutoSaveFlag;
+        public static bool AutoSaveFlag =>
+            Config.MainConfig.HexEditAutoSaveFlag;
         /// <summary>
         /// Auto save interval in seconds
         /// </summary>
-        public static int HexEdit_AutoSaveInterval =>
-            Config.MainConfig.HexEdit_AutoSaveInterval;
+        public static int AutoSaveInterval =>
+            Config.MainConfig.HexEditAutoSaveInterval;
 
     }
 }

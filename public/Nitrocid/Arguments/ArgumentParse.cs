@@ -25,7 +25,6 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Switches;
 using System;
 using System.Collections.Generic;
 using System.Linq;

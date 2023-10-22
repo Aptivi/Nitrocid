@@ -27,7 +27,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <remarks>
     /// This command lets you change your directory in your mail folders to another directory that exists in the subdirectory.
     /// </remarks>
-    class Mail_CdCommand : BaseCommand, ICommand
+    class CdCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

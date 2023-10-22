@@ -36,11 +36,11 @@ namespace KS.Network.Mail.Transfer
         /// <inheritdoc/>
         public void Report(long bytesTransferred, long totalSize)
         {
-            if (MailShellCommon.Mail_ShowProgress)
+            if (MailShellCommon.ShowProgress)
             {
-                if (!string.IsNullOrWhiteSpace(MailShellCommon.Mail_ProgressStyle))
+                if (!string.IsNullOrWhiteSpace(MailShellCommon.ProgressStyle))
                 {
-                    TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
+                    TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(MailShellCommon.ProgressStyle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString(), totalSize.SizeString());
                 }
                 else
                 {
@@ -52,11 +52,11 @@ namespace KS.Network.Mail.Transfer
         /// <inheritdoc/>
         public void Report(long bytesTransferred)
         {
-            if (MailShellCommon.Mail_ShowProgress)
+            if (MailShellCommon.ShowProgress)
             {
-                if (!string.IsNullOrWhiteSpace(MailShellCommon.Mail_ProgressStyleSingle))
+                if (!string.IsNullOrWhiteSpace(MailShellCommon.ProgressStyleSingle))
                 {
-                    TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(MailShellCommon.Mail_ProgressStyleSingle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
+                    TextWriterWhereColor.WriteWhereKernelColor(PlaceParse.ProbePlaces(MailShellCommon.ProgressStyleSingle) + $"{ConsoleExtensions.GetClearLineToRightSequence()}", 0, ConsoleWrapper.CursorTop, true, KernelColorType.Progress, bytesTransferred.SizeString());
                 }
                 else
                 {

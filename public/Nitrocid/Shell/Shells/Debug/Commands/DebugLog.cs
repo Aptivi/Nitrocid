@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Debug.Commands
     /// <remarks>
     /// This command lets you view the detailed debug log of a session by printing the contents of the whole file directly to the console. You'll most likely need to wrap the output.
     /// </remarks>
-    class Debug_DebugLogCommand : BaseCommand, ICommand
+    class DebugLogCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

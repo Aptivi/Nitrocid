@@ -25,7 +25,7 @@ using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.HTTP.Commands
 {
-    class HTTP_PutCommand : BaseCommand, ICommand
+    class PutCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

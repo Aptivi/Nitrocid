@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <br></br>
     /// This command doesn't support decrypting a message. To read encrypted e-mail, you should use readenc, assuming you have the public key.
     /// </remarks>
-    class Mail_ReadCommand : BaseCommand, ICommand
+    class ReadCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

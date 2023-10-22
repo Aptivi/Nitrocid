@@ -37,14 +37,14 @@ namespace Nitrocid.Tests.Misc.Editors
         public void TestOpenSaveCloseJsonFile()
         {
             string PathToTestJson = Path.GetFullPath("TestData/TestJson.json");
-            JsonTools.JsonShell_OpenJsonFile(PathToTestJson).ShouldBeTrue();
-            JsonTools.JsonShell_AddNewProperty("$", "HowText", "How are you today?");
-            JsonShellCommon.JsonShell_FileToken["HowText"].ShouldNotBeNull();
-            JsonTools.JsonShell_GetProperty("HelloText").ShouldNotBeNull();
-            JsonTools.JsonShell_SerializeToString("HelloText").ShouldNotBeNullOrEmpty();
-            JsonTools.JsonShell_RemoveProperty("HowText");
-            JsonTools.JsonShell_SaveFile(false).ShouldBeTrue();
-            JsonTools.JsonShell_CloseTextFile().ShouldBeTrue();
+            JsonTools.OpenJsonFile(PathToTestJson).ShouldBeTrue();
+            JsonTools.AddNewProperty("$", "HowText", "How are you today?");
+            JsonShellCommon.FileToken["HowText"].ShouldNotBeNull();
+            JsonTools.GetProperty("HelloText").ShouldNotBeNull();
+            JsonTools.SerializeToString("HelloText").ShouldNotBeNullOrEmpty();
+            JsonTools.RemoveProperty("HowText");
+            JsonTools.SaveFile(false).ShouldBeTrue();
+            JsonTools.CloseTextFile().ShouldBeTrue();
         }
 
     }

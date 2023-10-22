@@ -77,11 +77,11 @@ namespace KS.Network.Mail.Transfer
                 if (!string.IsNullOrEmpty(MailShellCommon.IMAP_CurrentDirectory) & !(MailShellCommon.IMAP_CurrentDirectory == "Inbox"))
                 {
                     var Dir = MailDirectory.OpenFolder(MailShellCommon.IMAP_CurrentDirectory);
-                    Msg = Dir.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), default, MailShellCommon.Mail_Progress);
+                    Msg = Dir.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
                 }
                 else
                 {
-                    Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), default, MailShellCommon.Mail_Progress);
+                    Msg = ((ImapClient)((object[])MailShellCommon.Client.ConnectionInstance)[0]).Inbox.GetMessage(MailShellCommon.IMAP_Messages.ElementAtOrDefault(Message), default, MailShellCommon.Progress);
                 }
 
                 // Prepare view
@@ -170,7 +170,7 @@ namespace KS.Network.Mail.Transfer
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(Msg.GetTextBody(MailShellCommon.Mail_TextFormat), true, KernelColorType.ListValue);
+                    TextWriterColor.WriteKernelColor(Msg.GetTextBody(MailShellCommon.TextFormat), true, KernelColorType.ListValue);
                 }
                 TextWriterColor.Write();
 
@@ -288,7 +288,7 @@ namespace KS.Network.Mail.Transfer
         {
             // Construct a message
             var FinalMessage = new MimeMessage();
-            FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Mail_Authentication.UserName));
+            FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Authentication.UserName));
             DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
             FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
             DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
@@ -302,7 +302,7 @@ namespace KS.Network.Mail.Transfer
             {
                 try
                 {
-                    ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).Send(FinalMessage, default, MailShellCommon.Mail_Progress);
+                    ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).Send(FinalMessage, default, MailShellCommon.Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -325,7 +325,7 @@ namespace KS.Network.Mail.Transfer
         {
             // Construct a message
             var FinalMessage = new MimeMessage();
-            FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Mail_Authentication.UserName));
+            FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Authentication.UserName));
             DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
             FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
             DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
@@ -339,7 +339,7 @@ namespace KS.Network.Mail.Transfer
             {
                 try
                 {
-                    ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).Send(FinalMessage, default, MailShellCommon.Mail_Progress);
+                    ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).Send(FinalMessage, default, MailShellCommon.Progress);
                     return true;
                 }
                 catch (Exception ex)
@@ -362,7 +362,7 @@ namespace KS.Network.Mail.Transfer
         {
             // Construct a message
             var FinalMessage = new MimeMessage();
-            FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Mail_Authentication.UserName));
+            FinalMessage.From.Add(MailboxAddress.Parse(MailLogin.Authentication.UserName));
             DebugWriter.WriteDebug(DebugLevel.I, "Added sender to FinalMessage.From.");
             FinalMessage.To.Add(MailboxAddress.Parse(Recipient));
             DebugWriter.WriteDebug(DebugLevel.I, "Added address to FinalMessage.To.");
@@ -376,7 +376,7 @@ namespace KS.Network.Mail.Transfer
             {
                 try
                 {
-                    ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).Send(FinalMessage, default, MailShellCommon.Mail_Progress);
+                    ((SmtpClient)((object[])MailShellCommon.Client.ConnectionInstance)[1]).Send(FinalMessage, default, MailShellCommon.Progress);
                     return true;
                 }
                 catch (Exception ex)

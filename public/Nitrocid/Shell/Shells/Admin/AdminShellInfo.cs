@@ -21,8 +21,6 @@ using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Admin.Commands;
-using System;
-using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Admin.Presets;
 using KS.Arguments;
@@ -62,14 +60,14 @@ namespace KS.Shell.Shells.Admin
                 new CommandInfo("cdbglog", ShellType, /* Localizable */ "Deletes everything in debug log",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Admin_CdbgLogCommand())
+                    }, new CdbgLogCommand())
             },
 
             { "clearfiredevents",
                 new CommandInfo("clearfiredevents", ShellType, /* Localizable */ "Clears all fired events",
                     new[] {
                         new CommandArgumentInfo()
-                    }, new Admin_ClearFiredEventsCommand())
+                    }, new ClearFiredEventsCommand())
             },
 
             { "journal",

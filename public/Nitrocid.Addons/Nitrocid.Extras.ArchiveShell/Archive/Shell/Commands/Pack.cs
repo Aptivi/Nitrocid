@@ -27,7 +27,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     /// <remarks>
     /// If you want to compress a single file from the ZIP archive, you can use this command.
     /// </remarks>
-    class ArchiveShell_PackCommand : BaseCommand, ICommand
+    class PackCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
             string Where = "";
             if (parameters.ArgumentsList.Length > 1)
             {
-                Where = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1], ArchiveShellCommon.ArchiveShell_CurrentDirectory);
+                Where = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1], ArchiveShellCommon.CurrentDirectory);
             }
             ArchiveTools.PackFile(parameters.ArgumentsList[0], Where);
             return 0;

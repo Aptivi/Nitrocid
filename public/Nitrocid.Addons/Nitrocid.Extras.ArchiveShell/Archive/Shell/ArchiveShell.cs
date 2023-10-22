@@ -52,7 +52,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Set current directory for RAR shell
-            ArchiveShellCommon.ArchiveShell_CurrentDirectory = CurrentDirectory.CurrentDir;
+            ArchiveShellCommon.CurrentDirectory = CurrentDirectory.CurrentDir;
 
             // Get file path
             string ArchiveFile = "";
@@ -67,26 +67,26 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             }
 
             // Open file if not open
-            ArchiveShellCommon.ArchiveShell_FileStream ??= new FileStream(ArchiveFile, FileMode.Open);
-            ArchiveType type = ReaderFactory.Open(ArchiveShellCommon.ArchiveShell_FileStream).ArchiveType;
+            ArchiveShellCommon.FileStream ??= new FileStream(ArchiveFile, FileMode.Open);
+            ArchiveType type = ReaderFactory.Open(ArchiveShellCommon.FileStream).ArchiveType;
 
             // Select archive type and open it
             switch (type)
             {
                 case ArchiveType.Rar:
-                    ArchiveShellCommon.ArchiveShell_Archive ??= RarArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    ArchiveShellCommon.Archive ??= RarArchive.Open(ArchiveShellCommon.FileStream);
                     break;
                 case ArchiveType.Zip:
-                    ArchiveShellCommon.ArchiveShell_Archive ??= ZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    ArchiveShellCommon.Archive ??= ZipArchive.Open(ArchiveShellCommon.FileStream);
                     break;
                 case ArchiveType.GZip:
-                    ArchiveShellCommon.ArchiveShell_Archive ??= GZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    ArchiveShellCommon.Archive ??= GZipArchive.Open(ArchiveShellCommon.FileStream);
                     break;
                 case ArchiveType.SevenZip:
-                    ArchiveShellCommon.ArchiveShell_Archive ??= SevenZipArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    ArchiveShellCommon.Archive ??= SevenZipArchive.Open(ArchiveShellCommon.FileStream);
                     break;
                 case ArchiveType.Tar:
-                    ArchiveShellCommon.ArchiveShell_Archive ??= TarArchive.Open(ArchiveShellCommon.ArchiveShell_FileStream);
+                    ArchiveShellCommon.Archive ??= TarArchive.Open(ArchiveShellCommon.FileStream);
                     break;
                 default:
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("This archive type is not supported.") + $" {type}", true, KernelColorType.Error);
@@ -115,12 +115,12 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             }
 
             // Close file stream
-            ArchiveShellCommon.ArchiveShell_Archive.Dispose();
-            ArchiveShellCommon.ArchiveShell_FileStream.Close();
-            ArchiveShellCommon.ArchiveShell_CurrentDirectory = "";
-            ArchiveShellCommon.ArchiveShell_CurrentArchiveDirectory = "";
-            ArchiveShellCommon.ArchiveShell_Archive = null;
-            ArchiveShellCommon.ArchiveShell_FileStream = null;
+            ArchiveShellCommon.Archive.Dispose();
+            ArchiveShellCommon.FileStream.Close();
+            ArchiveShellCommon.CurrentDirectory = "";
+            ArchiveShellCommon.CurrentArchiveDirectory = "";
+            ArchiveShellCommon.Archive = null;
+            ArchiveShellCommon.FileStream = null;
         }
     }
 }

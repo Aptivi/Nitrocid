@@ -27,12 +27,12 @@ namespace KS.Shell.Shells.Hex.Commands
     /// <remarks>
     /// This command will save any changes made to the binary file that is currently open.
     /// </remarks>
-    class HexEdit_SaveCommand : BaseCommand, ICommand
+    class SaveCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            HexEditTools.HexEdit_SaveBinaryFile();
+            HexEditTools.SaveBinaryFile();
             return 0;
         }
     }

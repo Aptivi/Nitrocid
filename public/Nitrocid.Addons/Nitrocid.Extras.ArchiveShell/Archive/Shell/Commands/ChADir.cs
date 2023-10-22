@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell.Commands
     /// <remarks>
     /// If you want to go to a folder inside the ZIP archive, you can use this command to change the working archive directory.
     /// </remarks>
-    class ArchiveShell_ChADirCommand : BaseCommand, ICommand
+    class ChADirCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)

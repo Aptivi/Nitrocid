@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.Mail.Commands
     /// <br></br>
     /// This command doesn't support encryption. Use sendenc for this functionality.
     /// </remarks>
-    class Mail_SendCommand : BaseCommand, ICommand
+    class SendCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
