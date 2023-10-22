@@ -31,6 +31,17 @@ namespace Nitrocid.Tests.Misc.Editors
     public class JsonActionTests
     {
 
+        private static string demoJson =
+            """
+            {
+              "LyricsPath": "C:/Users/MyUser/Music/"
+            }
+            """;
+        private static string minifiedJson =
+            """
+            {"LyricsPath":"C:/Users/MyUser/Music/"}
+            """;
+
         /// <summary>
         /// Tests beautifying the JSON text
         /// </summary>
@@ -38,9 +49,9 @@ namespace Nitrocid.Tests.Misc.Editors
         [Description("Action")]
         public void TestBeautifyJsonText()
         {
-            string Beautified = JsonTools.BeautifyJsonText(JsonConvert.SerializeObject(Color255.ColorDataJson));
+            string Beautified = JsonTools.BeautifyJsonText(minifiedJson);
             Beautified.ShouldNotBeEmpty();
-            Beautified.ShouldBe(JsonConvert.SerializeObject(Color255.ColorDataJson, Formatting.Indented));
+            Beautified.ShouldBe(demoJson);
         }
 
         /// <summary>
@@ -63,9 +74,9 @@ namespace Nitrocid.Tests.Misc.Editors
         [Description("Action")]
         public void TestMinifyJsonText()
         {
-            string Minified = JsonTools.MinifyJsonText(JsonConvert.SerializeObject(Color255.ColorDataJson));
+            string Minified = JsonTools.MinifyJsonText(demoJson);
             Minified.ShouldNotBeEmpty();
-            Minified.ShouldBe(JsonConvert.SerializeObject(Color255.ColorDataJson, Formatting.None));
+            Minified.ShouldBe(minifiedJson);
         }
 
         /// <summary>
