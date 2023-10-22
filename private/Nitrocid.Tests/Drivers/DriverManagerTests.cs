@@ -496,6 +496,74 @@ namespace Nitrocid.Tests.Drivers
         }
 
         [Test]
+        [TestCase(DriverTypes.Console, "Default")]
+        [TestCase(DriverTypes.Encryption, "SHA256")]
+        [TestCase(DriverTypes.Filesystem, "Default")]
+        [TestCase(DriverTypes.Network, "Default")]
+        [TestCase(DriverTypes.RNG, "Default")]
+        [TestCase(DriverTypes.Regexp, "Default")]
+        [TestCase(DriverTypes.DebugLogger, "Default")]
+        [TestCase(DriverTypes.Encoding, "AES")]
+        [TestCase(DriverTypes.HardwareProber, "Default")]
+        [Description("Management")]
+        public void TestGetCurrentDriver(DriverTypes driverType, string expectedName)
+        {
+            var currentDriver = DriverHandler.GetCurrentDriver(driverType);
+            currentDriver.DriverName.ShouldBe(expectedName);
+        }
+
+        [Test]
+        [TestCase(DriverTypes.Console, "Default")]
+        [TestCase(DriverTypes.Encryption, "SHA256")]
+        [TestCase(DriverTypes.Filesystem, "Default")]
+        [TestCase(DriverTypes.Network, "Default")]
+        [TestCase(DriverTypes.RNG, "Default")]
+        [TestCase(DriverTypes.Regexp, "Default")]
+        [TestCase(DriverTypes.DebugLogger, "Default")]
+        [TestCase(DriverTypes.Encoding, "AES")]
+        [TestCase(DriverTypes.HardwareProber, "Default")]
+        [Description("Management")]
+        public void TestGetCurrentDriverLocal(DriverTypes driverType, string expectedName)
+        {
+            var currentDriver = DriverHandler.GetCurrentDriverLocal(driverType);
+            currentDriver.DriverName.ShouldBe(expectedName);
+        }
+
+        [Test]
+        [TestCase<IConsoleDriver>("Default")]
+        [TestCase<IEncryptionDriver>("SHA256")]
+        [TestCase<IFilesystemDriver>("Default")]
+        [TestCase<INetworkDriver>("Default")]
+        [TestCase<IRandomDriver>("Default")]
+        [TestCase<IRegexpDriver>("Default")]
+        [TestCase<IDebugLoggerDriver>("Default")]
+        [TestCase<IEncodingDriver>("AES")]
+        [TestCase<IHardwareProberDriver>("Default")]
+        [Description("Management")]
+        public void TestGetCurrentDriver<T>(string expectedName)
+        {
+            var currentDriver = DriverHandler.GetCurrentDriver<T>() as IDriver;
+            currentDriver.DriverName.ShouldBe(expectedName);
+        }
+
+        [Test]
+        [TestCase<IConsoleDriver>("Default")]
+        [TestCase<IEncryptionDriver>("SHA256")]
+        [TestCase<IFilesystemDriver>("Default")]
+        [TestCase<INetworkDriver>("Default")]
+        [TestCase<IRandomDriver>("Default")]
+        [TestCase<IRegexpDriver>("Default")]
+        [TestCase<IDebugLoggerDriver>("Default")]
+        [TestCase<IEncodingDriver>("AES")]
+        [TestCase<IHardwareProberDriver>("Default")]
+        [Description("Management")]
+        public void TestGetCurrentDriverLocal<T>(string expectedName)
+        {
+            var currentDriver = DriverHandler.GetCurrentDriverLocal<T>() as IDriver;
+            currentDriver.DriverName.ShouldBe(expectedName);
+        }
+
+        [Test]
         [TestCaseSource<IConsoleDriver>(nameof(RegisteredConsoleDriver))]
         [TestCaseSource<IEncryptionDriver>(nameof(RegisteredEncryptionDriver))]
         [TestCaseSource<IFilesystemDriver>(nameof(RegisteredFilesystemDriver))]

@@ -434,6 +434,56 @@ namespace KS.Drivers
         }
 
         /// <summary>
+        /// Gets the current driver
+        /// </summary>
+        /// <param name="driverType">The required driver type</param>
+        /// <returns>The current driver responsible for performing operations according to driver type</returns>
+        public static IDriver GetCurrentDriver(DriverTypes driverType)
+        {
+            // Get the current driver
+            return currentDrivers[driverType];
+        }
+
+        /// <summary>
+        /// Gets the current local driver
+        /// </summary>
+        /// <param name="driverType">The required driver type</param>
+        /// <returns>The current local driver responsible for performing operations according to driver type</returns>
+        public static IDriver GetCurrentDriverLocal(DriverTypes driverType)
+        {
+            // Get the current driver
+            return currentDriversLocal[driverType];
+        }
+
+        /// <summary>
+        /// Gets the current driver
+        /// </summary>
+        /// <typeparam name="TResult">The required driver type</typeparam>
+        /// <returns>The current driver responsible for performing operations according to driver type</returns>
+        public static TResult GetCurrentDriver<TResult>()
+        {
+            // First, infer the type from the TResult
+            var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
+
+            // Then, get the current driver
+            return (TResult)GetCurrentDriver(driverType);
+        }
+
+        /// <summary>
+        /// Gets the current local driver
+        /// </summary>
+        /// <typeparam name="TResult">The required driver type</typeparam>
+        /// <returns>The current local driver responsible for performing operations according to driver type</returns>
+        public static TResult GetCurrentDriverLocal<TResult>()
+        {
+            // First, infer the type from the TResult
+            var driverType = InferDriverTypeFromDriverInterfaceType<TResult>();
+
+            // Then, get the current local driver
+            return (TResult)GetCurrentDriverLocal(driverType);
+        }
+
+        /// <summary>
         /// Registers the driver
         /// </summary>
         /// <param name="type">Type of driver to register</param>
@@ -619,13 +669,16 @@ namespace KS.Drivers
 
         internal static DriverTypes InferDriverTypeFromDriverInterfaceType<T>()
         {
-            var driverType = default(DriverTypes);
+            DriverTypes driverType;
             var type = typeof(T);
-            if (knownTypes.ContainsKey(type))
-            {
-                driverType = knownTypes[type];
-                DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), type.Name);
-            }
+
+            // Check the type
+            if (!knownTypes.ContainsKey(type))
+                throw new KernelException(KernelExceptionType.DriverHandler, Translate.DoTranslation("Failed to infer driver type from unknown type") + $" {type.Name} [{type.FullName}]");
+            
+            // Now, actually infer the type from the driver interface type
+            driverType = knownTypes[type];
+            DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), type.Name);
             return driverType;
         }
     }
