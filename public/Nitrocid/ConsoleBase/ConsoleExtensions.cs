@@ -180,7 +180,10 @@ namespace KS.ConsoleBase
 
                     // Get down by one line
                     if (i < texts.Length - 1)
+                    {
                         TopSeekPosition += 1;
+                        LeftSeekPosition = 0;
+                    }
                     if (TopSeekPosition > ConsoleWrapper.BufferHeight - 1)
                     {
                         // We're at the end of buffer! Decrement by one and bail.
