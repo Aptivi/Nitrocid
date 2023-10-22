@@ -19,6 +19,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Threading;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -85,6 +86,12 @@ namespace KS.Kernel.Threading
         public int ThreadId => BaseThread.ManagedThreadId;
 
         /// <summary>
+        /// Native Thread ID for this kernel thread (unstable, don't use unless necessary)
+        /// </summary>
+        public ulong NativeThreadId =>
+            (ulong)BaseThread.GetType().GetProperty("CurrentOSThreadId", BindingFlags.Static | BindingFlags.GetProperty | BindingFlags.NonPublic).GetValue(null);
+
+        /// <summary>
         /// Makes a new kernel thread
         /// </summary>
         /// <param name="ThreadName">The thread name</param>
@@ -112,7 +119,7 @@ namespace KS.Kernel.Threading
             Name = ThreadName;
             IsBackground = Background;
             isReady = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}, Child: {2}", ThreadName, ThreadId, Child);
+            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1} [OS: {3}], Child: {2}", ThreadName, ThreadId, Child, NativeThreadId);
             if (Child && ParentThread is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "This parent thread was specified as a child with ParentThread as null. Unsetting Child...");
@@ -152,7 +159,7 @@ namespace KS.Kernel.Threading
             Name = ThreadName;
             IsBackground = Background;
             isReady = true;
-            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1}, Child: {2}", ThreadName, ThreadId, Child);
+            DebugWriter.WriteDebug(DebugLevel.I, "Made a new kernel thread {0} with ID {1} [OS: {3}], Child: {2}", ThreadName, ThreadId, Child, NativeThreadId);
             if (Child && ParentThread is null)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "This parent thread was specified as a child with ParentThread as null. Unsetting Child...");
@@ -174,9 +181,9 @@ namespace KS.Kernel.Threading
             if (BaseThread.ThreadState.HasFlag(ThreadState.Stopped) || IsAlive)
                 return;
 
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1} [OS: {2}]", BaseThread.Name, ThreadId, NativeThreadId);
             BaseThread.Start();
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1} [OS: {2}]", BaseThread.Name, ThreadId, NativeThreadId);
             StartChildThreads(null);
             DebugWriter.WriteDebug(DebugLevel.I, "Complete.");
         }
@@ -193,9 +200,9 @@ namespace KS.Kernel.Threading
                 return;
 
             // Start the parent thread
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1} with parameters", BaseThread.Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting kernel thread {0} with ID {1} [OS: {2}] with parameters", BaseThread.Name, ThreadId, NativeThreadId);
             BaseThread.Start(Parameter);
-            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1} with parameters", BaseThread.Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Starting child threads kernel thread {0} with ID {1} [OS: {2}] with parameters", BaseThread.Name, ThreadId, NativeThreadId);
             StartChildThreads(Parameter);
             DebugWriter.WriteDebug(DebugLevel.I, "Complete.");
         }
@@ -214,10 +221,10 @@ namespace KS.Kernel.Threading
         {
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0} with ID {1}", Name, ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "Stopping kernel thread {0} with ID {1} [OS: {2}]", Name, ThreadId, NativeThreadId);
                 isStopping = true;
                 BaseThread.Interrupt();
-                DebugWriter.WriteDebug(DebugLevel.I, "Stopping child threads for kernel thread {0} with ID {1}", Name, ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "Stopping child threads for kernel thread {0} with ID {1} [OS: {2}]", Name, ThreadId, NativeThreadId);
                 StopChildThreads();
                 if (!Wait(60000))
                     DebugWriter.WriteDebug(DebugLevel.W, "Either the parent thread or the child thread timed out for 60000 ms waiting for it to stop");
@@ -244,9 +251,9 @@ namespace KS.Kernel.Threading
 
             try
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1} [OS: {2}]", BaseThread.Name, ThreadId, NativeThreadId);
                 BaseThread.Join();
-                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for child threads for kernel thread {0} with ID {1}", BaseThread.Name, ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for child threads for kernel thread {0} with ID {1} [OS: {2}]", BaseThread.Name, ThreadId, NativeThreadId);
                 WaitForChildThreads();
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited.");
             }
@@ -268,7 +275,7 @@ namespace KS.Kernel.Threading
             try
             {
                 bool SuccessfullyWaited = true;
-                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1} for {2} milliseconds", BaseThread.Name, ThreadId, timeoutMs);
+                DebugWriter.WriteDebug(DebugLevel.I, "Waiting for kernel thread {0} with ID {1} [OS: {3}] for {2} milliseconds", BaseThread.Name, ThreadId, timeoutMs, NativeThreadId);
                 if (!BaseThread.Join(timeoutMs))
                     SuccessfullyWaited = false;
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for child kernel threads for {0} milliseconds", timeoutMs);
@@ -300,7 +307,7 @@ namespace KS.Kernel.Threading
                 BaseThread = new Thread(ThreadDelegateParameterized) { Name = Name, IsBackground = IsBackground };
             else
                 BaseThread = new Thread(ThreadDelegate) { Name = Name, IsBackground = IsBackground };
-            DebugWriter.WriteDebug(DebugLevel.I, "Regenerated a new kernel thread {0} with ID {1} successfully.", Name, ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Regenerated a new kernel thread {0} with ID {1} [OS: {2}] successfully.", Name, ThreadId, NativeThreadId);
             isReady = true;
         }
 
@@ -318,7 +325,7 @@ namespace KS.Kernel.Threading
 
             KernelThread target = new(ThreadName, Background, Executor, true, this);
             ChildThreads.Add(target);
-            DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1}", ThreadName, target.ThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1} [OS: {2}]", ThreadName, target.ThreadId, target.NativeThreadId);
             if (IsAlive && !IsStopping)
                 target.Start();
         }
@@ -337,7 +344,7 @@ namespace KS.Kernel.Threading
 
             KernelThread target = new(ThreadName, Background, Executor, true, this);
             ChildThreads.Add(target);
-            DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1}", ThreadName, target.BaseThread.ManagedThreadId);
+            DebugWriter.WriteDebug(DebugLevel.I, "Added a new child kernel thread {0} with ID {1} [OS: {2}]", ThreadName, target.ThreadId, target.NativeThreadId);
             if (IsAlive && !IsStopping)
                 target.Start();
         }
@@ -352,7 +359,7 @@ namespace KS.Kernel.Threading
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, ThreadId, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}, OS: {3}] failed: {2}", Name, ThreadId, ex.Message, NativeThreadId);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
             }
@@ -368,7 +375,7 @@ namespace KS.Kernel.Threading
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}] failed: {2}", Name, ThreadId, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Thread {0} [{1}, OS: {3}] failed: {2}", Name, ThreadId, ex.Message, NativeThreadId);
                 DebugWriter.WriteDebugStackTrace(ex);
                 KernelPanic.KernelErrorContinuable(Translate.DoTranslation("Kernel thread {0} failed.") + " {1}", ex, Name, ex.Message);
             }
@@ -380,7 +387,7 @@ namespace KS.Kernel.Threading
             DebugWriter.WriteDebug(DebugLevel.I, "Starting {0} child threads...", ChildThreads.Count);
             foreach (var ChildThread in ChildThreads)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, starting the child thread {2} with ID {3} [child parameterized: {4}].", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId, ChildThread.IsParameterized);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1} [OS: {5}], starting the child thread {2} with ID {3} [OS: {6}] [child parameterized: {4}].", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId, ChildThread.IsParameterized, NativeThreadId, ChildThread.NativeThreadId);
                 if (ChildThread.IsParameterized)
                     ChildThread.Start(Parameter);
                 else
@@ -395,7 +402,7 @@ namespace KS.Kernel.Threading
             DebugWriter.WriteDebug(DebugLevel.I, "Stopping {0} active child threads...", ActiveChildThreads.Length);
             foreach (var ChildThread in ActiveChildThreads)
             {
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, stopping the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1} [OS: {4}], stopping the child thread {2} with ID {3} [OS: {5}].", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId, NativeThreadId, ChildThread.NativeThreadId);
                 ChildThread.Stop();
             }
         }
@@ -411,7 +418,7 @@ namespace KS.Kernel.Threading
                 if (!ChildThread.IsAlive)
                     continue;
 
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, waiting for the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1} [OS: {4}], stopping the child thread {2} with ID {3} [OS: {5}].", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId, NativeThreadId, ChildThread.NativeThreadId);
                 ChildThread.Wait();
             }
         }
@@ -428,7 +435,7 @@ namespace KS.Kernel.Threading
                 if (!ChildThread.IsAlive)
                     continue;
 
-                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1}, waiting for the child thread {2} with ID {3}.", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId);
+                DebugWriter.WriteDebug(DebugLevel.I, "For parent kernel thread {0} with ID {1} [OS: {4}], stopping the child thread {2} with ID {3} [OS: {5}].", BaseThread.Name, ThreadId, ChildThread.Name, ChildThread.ThreadId, NativeThreadId, ChildThread.NativeThreadId);
                 if (!ChildThread.Wait(timeoutMs))
                     SuccessfullyWaited = false;
             }
