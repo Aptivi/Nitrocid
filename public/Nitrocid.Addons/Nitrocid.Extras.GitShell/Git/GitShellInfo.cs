@@ -88,6 +88,13 @@ namespace Nitrocid.Extras.GitShell.Git
                     }, new FileStatusCommand())
             },
             
+            { "info",
+                new CommandInfo("info", ShellType, /* Localizable */ "Gets a simple repository information",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new InfoCommand())
+            },
+            
             { "lsbranches",
                 new CommandInfo("lsbranches", ShellType, /* Localizable */ "Lists all branches",
                     new[] {
