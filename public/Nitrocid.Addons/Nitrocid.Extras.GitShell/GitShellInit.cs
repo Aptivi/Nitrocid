@@ -16,11 +16,14 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Files;
+using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using LibGit2Sharp;
 using Nitrocid.Extras.GitShell.Git;
 using Nitrocid.Extras.GitShell.Settings;
 using System.Collections.Generic;
@@ -30,6 +33,7 @@ namespace Nitrocid.Extras.GitShell
 {
     internal class GitShellInit : IAddon
     {
+        private static bool nativeLibIsSet = false;
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "gitsh",
@@ -57,6 +61,11 @@ namespace Nitrocid.Extras.GitShell
             ConfigTools.RegisterBaseSetting(config);
             ShellTypeManager.RegisterShell("GitShell", new GitShellInfo());
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
+            if (!nativeLibIsSet)
+            {
+                nativeLibIsSet = true;
+                GlobalSettings.NativeLibraryPath = Paths.AddonsPath + "/Extras.GitShell/runtimes/" + KernelPlatform.GetCurrentGenericRid() + "/native/";
+            }
         }
 
         void IAddon.StartAddon()
