@@ -38,6 +38,18 @@ namespace Nitrocid.Extras.GitShell.Git
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
+            { "blame",
+                new CommandInfo("blame", ShellType, /* Localizable */ "Fetches the list of changes in a file line by line",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "file"),
+                            new CommandArgumentPart(false, "startLineNum", null, true),
+                            new CommandArgumentPart(false, "endLineNum", null, true),
+                        })
+                    }, new BlameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+
             { "checkout",
                 new CommandInfo("checkout", ShellType, /* Localizable */ "Checks out a branch",
                     new[] {
