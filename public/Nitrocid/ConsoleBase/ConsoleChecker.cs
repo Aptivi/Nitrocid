@@ -117,12 +117,17 @@ namespace KS.ConsoleBase
         }
 
         /// <summary>
-        /// Does the console support 256 colors? Always true on Windows
+        /// Does the console support 256 colors?
         /// </summary>
         public static bool IsConsole256Colors()
         {
-            string TerminalType = KernelPlatform.GetTerminalType();
-            return TerminalType.Contains("-256col") || ConsoleExtensions.CheckForConHostSequenceSupport() == 7;
+            if (KernelPlatform.IsOnUnix())
+            {
+                string TerminalType = KernelPlatform.GetTerminalType();
+                return TerminalType.Contains("-256col");
+            }
+            else
+                return ConsoleExtensions.CheckForConHostSequenceSupport() == 7;
         }
 
         /// <summary>
