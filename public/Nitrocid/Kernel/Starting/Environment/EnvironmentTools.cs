@@ -18,12 +18,14 @@
 
 using KS.Kernel.Debugging;
 using KS.Kernel.Starting.Environment.Instances;
+using System;
 
 namespace KS.Kernel.Starting.Environment
 {
     internal static class EnvironmentTools
     {
         internal static bool resetEnvironment = false;
+        internal static string[] arguments = Array.Empty<string>();
         private readonly static BaseEnvironment mainEnvironment = new NitrocidKS();
         private static BaseEnvironment environment = mainEnvironment;
 
@@ -43,6 +45,7 @@ namespace KS.Kernel.Starting.Environment
         {
             if (environment != mainEnvironment)
                 resetEnvironment = true;
+            arguments = args;
             environment.EnvironmentEntry(args);
         }
     }

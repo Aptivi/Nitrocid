@@ -1547,6 +1547,13 @@ namespace KS.Shell.Shells.UESH
                     }, new WhoamiCommand())
             },
 
+            { "winelevate",
+                new CommandInfo("winelevate", ShellType, /* Localizable */ "Restarts Nitrocid with the elevated permissions (Windows only)",
+                    new[] {
+                        new CommandArgumentInfo(true)
+                    }, new WinElevateCommand())
+            },
+
             { "zip",
                 new CommandInfo("zip", ShellType, /* Localizable */ "Creates a ZIP archive",
                     new[] {

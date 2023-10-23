@@ -109,6 +109,10 @@ namespace KS.Kernel
             // Reset cursor state and dispose handlers
             ConsoleWrapper.CursorVisible = true;
             PowerSignalHandlers.DisposeHandlers();
+
+            // Check to see if we're restarting Nitrocid with elevated permissions
+            if (PowerManager.elevating && KernelPlatform.IsOnWindows())
+                PowerManager.ElevateSelf();
         }
     }
 }
