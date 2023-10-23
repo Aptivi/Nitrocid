@@ -18,6 +18,8 @@
 
 using System;
 using System.Collections.Generic;
+using KS.ConsoleBase;
+using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Threading;
@@ -87,6 +89,9 @@ namespace KS.Shell.ShellBase.Shells
                 ShellStack.Add(ShellInfo);
                 if (!ShellManager.histories.ContainsKey(ShellType))
                     ShellManager.histories.Add(ShellType, new());
+
+                // Reset title in case we're going to another shell
+                ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
                 ShellExecute.InitializeShell(ShellArgs);
             }
             catch (Exception ex)
