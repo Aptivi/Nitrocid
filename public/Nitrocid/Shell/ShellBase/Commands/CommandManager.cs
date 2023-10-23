@@ -175,7 +175,7 @@ namespace KS.Shell.ShellBase.Commands
         public static void RegisterCustomCommand(string ShellType, CommandInfo commandBase)
         {
             // First, check the values
-            if (!ShellTypeManager.ShellTypeExists(ShellType))
+            if (!ShellManager.ShellTypeExists(ShellType))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
             if (commandBase is null)
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command base."));
@@ -257,7 +257,7 @@ namespace KS.Shell.ShellBase.Commands
         public static void UnregisterCustomCommand(string ShellType, string commandName)
         {
             // First, check the values
-            if (!ShellTypeManager.ShellTypeExists(ShellType))
+            if (!ShellManager.ShellTypeExists(ShellType))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
             if (string.IsNullOrEmpty(commandName))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));
@@ -318,7 +318,7 @@ namespace KS.Shell.ShellBase.Commands
         internal static void RegisterAddonCommand(string ShellType, CommandInfo commandBase)
         {
             // First, check the values
-            if (!ShellTypeManager.ShellTypeExists(ShellType))
+            if (!ShellManager.ShellTypeExists(ShellType))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
             if (commandBase is null)
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command base."));
@@ -400,7 +400,7 @@ namespace KS.Shell.ShellBase.Commands
         internal static void UnregisterAddonCommand(string ShellType, string commandName)
         {
             // First, check the values
-            if (!ShellTypeManager.ShellTypeExists(ShellType))
+            if (!ShellManager.ShellTypeExists(ShellType))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("Shell type {0} doesn't exist."), ShellType);
             if (string.IsNullOrEmpty(commandName))
                 throw new KernelException(KernelExceptionType.CommandManager, Translate.DoTranslation("You must provide the command."));

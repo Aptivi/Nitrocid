@@ -77,7 +77,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
             var instanceInfo = new ShellInfoTest();
 
             // Register the shell and get its info
-            ShellTypeManager.RegisterShell("Basic debug shell", instanceInfo);
+            ShellManager.RegisterShell("Basic debug shell", instanceInfo);
             var shellInfo = ShellManager.GetShellInfo("Basic debug shell");
 
             // Verify correctness
@@ -86,13 +86,13 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
             shellInfo.ShellType.ShouldBe("Basic debug shell");
 
             // Start the shell
-            Should.NotThrow(new Action(() => ShellStart.StartShellForced("Basic debug shell")));
+            Should.NotThrow(new Action(() => ShellManager.StartShellForced("Basic debug shell")));
 
             // Make sure that the shell stack is empty due to manual Bail.
-            ShellStart.ShellStack.ShouldBeEmpty();
+            ShellManager.ShellStack.ShouldBeEmpty();
 
             // Unregister the shell
-            ShellTypeManager.UnregisterShell("Basic debug shell");
+            ShellManager.UnregisterShell("Basic debug shell");
 
             // Check to see if we no longer have this shell
             ShellManager.AvailableShells.ShouldNotContainKey("Basic debug shell");
@@ -108,7 +108,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
             var instanceInfo = new ShellInfoTest();
 
             // Register the shell and get its info
-            ShellTypeManager.RegisterShell("Basic debug shell", instanceInfo);
+            ShellManager.RegisterShell("Basic debug shell", instanceInfo);
             var shellInfo = ShellManager.GetShellInfo("Basic debug shell");
 
             // Verify correctness
@@ -117,13 +117,13 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
             shellInfo.ShellType.ShouldBe("Basic debug shell");
 
             // Start the shell
-            Should.NotThrow(new Action(() => ShellStart.StartShellForced("Basic debug shell", "Hello", "World")));
+            Should.NotThrow(new Action(() => ShellManager.StartShellForced("Basic debug shell", "Hello", "World")));
 
             // Make sure that the shell stack is empty due to manual Bail.
-            ShellStart.ShellStack.ShouldBeEmpty();
+            ShellManager.ShellStack.ShouldBeEmpty();
 
             // Unregister the shell
-            ShellTypeManager.UnregisterShell("Basic debug shell");
+            ShellManager.UnregisterShell("Basic debug shell");
 
             // Check to see if we no longer have this shell
             ShellManager.AvailableShells.ShouldNotContainKey("Basic debug shell");
@@ -136,8 +136,8 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         [Description("Initialization")]
         public void TestIsShellBuiltin()
         {
-            ShellTypeManager.IsShellBuiltin("Shell").ShouldBeTrue();
-            ShellTypeManager.IsShellBuiltin("NoShell").ShouldBeFalse();
+            ShellManager.IsShellBuiltin("Shell").ShouldBeTrue();
+            ShellManager.IsShellBuiltin("NoShell").ShouldBeFalse();
         }
 
         /// <summary>

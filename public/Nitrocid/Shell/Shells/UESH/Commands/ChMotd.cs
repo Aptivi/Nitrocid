@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                ShellStart.StartShell(ShellType.TextShell, Paths.GetKernelPath(KernelPathType.MOTD));
+                ShellManager.StartShell(ShellType.TextShell, Paths.GetKernelPath(KernelPathType.MOTD));
                 TextWriterColor.Write(Translate.DoTranslation("Changing MOTD..."));
                 MotdParse.ReadMotd();
                 return 0;

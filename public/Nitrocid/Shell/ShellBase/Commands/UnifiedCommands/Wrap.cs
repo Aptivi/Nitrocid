@@ -40,7 +40,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
         public override void HelpHelper()
         {
             // Print the wrappable commands along with help description
-            var currentShell = ShellStart.ShellStack[^1];
+            var currentShell = ShellManager.ShellStack[^1];
             var currentType = currentShell.ShellType;
             var WrappableCmds = CommandExecutor.GetWrappableCommands(currentType);
             TextWriterColor.Write(Translate.DoTranslation("Wrappable commands:"));

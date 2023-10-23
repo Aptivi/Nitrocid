@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else
             {
-                ShellStart.StartShell(ShellType.TextShell, Paths.GetKernelPath(KernelPathType.MAL));
+                ShellManager.StartShell(ShellType.TextShell, Paths.GetKernelPath(KernelPathType.MAL));
                 TextWriterColor.Write(Translate.DoTranslation("Changing MAL..."));
                 MalParse.ReadMal();
                 return 0;

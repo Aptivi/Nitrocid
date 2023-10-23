@@ -33,8 +33,8 @@ namespace KS.Shell.Shells.HTTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ((HTTPShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
-            ShellStart.KillShell();
+            ((HTTPShell)ShellManager.ShellStack[^1].ShellBase).detaching = true;
+            ShellManager.KillShell();
             return 0;
         }
 

@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.ArchiveShell
         {
             var config = new ArchiveConfig();
             ConfigTools.RegisterBaseSetting(config);
-            ShellTypeManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
+            ShellManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
         }
 
         void IAddon.StartAddon() =>
@@ -63,7 +63,7 @@ namespace Nitrocid.Extras.ArchiveShell
 
         void IAddon.StopAddon()
         {
-            ShellTypeManager.UnregisterShell("ArchiveShell");
+            ShellManager.UnregisterShell("ArchiveShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ConfigTools.UnregisterBaseSetting(nameof(ArchiveConfig));
         }

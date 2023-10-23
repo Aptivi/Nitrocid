@@ -33,8 +33,8 @@ namespace KS.Shell.Shells.RSS.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ((RSSShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
-            ShellStart.KillShell();
+            ((RSSShell)ShellManager.ShellStack[^1].ShellBase).detaching = true;
+            ShellManager.KillShell();
             return 0;
         }
 

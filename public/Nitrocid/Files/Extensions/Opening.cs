@@ -53,13 +53,13 @@ namespace KS.Files.Extensions
 
             // First, forced types
             if (forceText)
-                ShellStart.StartShell(ShellType.TextShell, path);
+                ShellManager.StartShell(ShellType.TextShell, path);
             else if (forceJson)
-                ShellStart.StartShell(ShellType.JsonShell, path);
+                ShellManager.StartShell(ShellType.JsonShell, path);
             else if (forceSql)
-                ShellStart.StartShell(ShellType.SqlShell, path);
+                ShellManager.StartShell(ShellType.SqlShell, path);
             else if (forceHex)
-                ShellStart.StartShell(ShellType.HexShell, path);
+                ShellManager.StartShell(ShellType.HexShell, path);
 
             // Exit if forced types
             if (forceText || forceJson || forceHex || forceSql)
@@ -67,13 +67,13 @@ namespace KS.Files.Extensions
 
             // Determine the type
             if (Parsing.IsSql(path))
-                ShellStart.StartShell(ShellType.SqlShell, path);
+                ShellManager.StartShell(ShellType.SqlShell, path);
             else if (Parsing.IsBinaryFile(path))
-                ShellStart.StartShell(ShellType.HexShell, path);
+                ShellManager.StartShell(ShellType.HexShell, path);
             else if (Parsing.IsJson(path))
-                ShellStart.StartShell(ShellType.JsonShell, path);
+                ShellManager.StartShell(ShellType.JsonShell, path);
             else
-                ShellStart.StartShell(ShellType.TextShell, path);
+                ShellManager.StartShell(ShellType.TextShell, path);
         }
 
         /// <summary>

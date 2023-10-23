@@ -31,7 +31,7 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ShellStart.KillShell();
+            ShellManager.KillShell();
             return 0;
         }
     }

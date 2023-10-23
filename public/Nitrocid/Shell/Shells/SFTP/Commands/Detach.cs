@@ -33,8 +33,8 @@ namespace KS.Shell.Shells.SFTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ((SFTPShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
-            ShellStart.KillShell();
+            ((SFTPShell)ShellManager.ShellStack[^1].ShellBase).detaching = true;
+            ShellManager.KillShell();
             return 0;
         }
 

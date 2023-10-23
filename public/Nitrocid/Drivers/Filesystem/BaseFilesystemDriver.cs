@@ -631,7 +631,7 @@ namespace KS.Drivers.Filesystem
 
                 // Check to see if we're calling from the root path
                 string Pattern = IsFile ? "" : "*";
-                string pathRoot = FS.NeutralizePath(System.IO.Path.GetPathRoot(Path));
+                string pathRoot = FS.NeutralizePath(IOPath.GetPathRoot(Path));
                 if (pathRoot == Path)
                 {
                     Entries = GetFilesystemEntries(Path, Pattern, Recursive);
@@ -657,11 +657,11 @@ namespace KS.Drivers.Filesystem
                 }
 
                 // Split the path and the pattern
-                string Parent = FS.NeutralizePath(System.IO.Path.GetDirectoryName(Path) + "/" + System.IO.Path.GetFileName(Path));
+                string Parent = FS.NeutralizePath(IOPath.GetDirectoryName(Path) + "/" + IOPath.GetFileName(Path));
                 if (Parent.ContainsAnyOf(Parsing.GetInvalidPathChars().Select(Character => Character.ToString()).ToArray()))
                 {
-                    Parent = System.IO.Path.GetDirectoryName(Path);
-                    Pattern = System.IO.Path.GetFileName(Path);
+                    Parent = IOPath.GetDirectoryName(Path);
+                    Pattern = IOPath.GetFileName(Path);
                 }
                 if (SelectedPatternIndex != 0)
                 {

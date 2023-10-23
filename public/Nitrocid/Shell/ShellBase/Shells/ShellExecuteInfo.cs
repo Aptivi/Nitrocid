@@ -22,7 +22,7 @@ using KS.Kernel.Threading;
 namespace KS.Shell.ShellBase.Shells
 {
     /// <summary>
-    /// Shell information
+    /// Shell execution information
     /// </summary>
     public class ShellExecuteInfo
     {

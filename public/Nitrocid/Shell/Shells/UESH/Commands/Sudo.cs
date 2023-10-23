@@ -52,11 +52,11 @@ namespace KS.Shell.Shells.UESH.Commands
                     UserManagement.CurrentUserInfo = UserManagement.GetUser("root");
                     UserManagement.LockUser(currentUsername);
                     UserManagement.LockUser("root");
-                    var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
+                    var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
                     if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                     {
                         var CommandThread = new KernelThread($"Sudo Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
-                        ShellStart.ShellStack[^1].AltCommandThreads.Add(CommandThread);
+                        ShellManager.ShellStack[^1].AltCommandThreads.Add(CommandThread);
                     }
                     ShellManager.GetLine(parameters.ArgumentsText);
                 }

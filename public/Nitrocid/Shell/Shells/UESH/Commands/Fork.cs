@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ShellStart.StartShell(ShellType.Shell);
+            ShellManager.StartShell(ShellType.Shell);
             return 0;
         }
 

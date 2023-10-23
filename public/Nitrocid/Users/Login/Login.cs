@@ -192,7 +192,7 @@ namespace KS.Users.Login
             }
 
             // Notifies the kernel that the user has signed in
-            Login.LoggedIn = true;
+            LoggedIn = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Logged in to {0}!", signedInUser);
 
             // Sign in to user.

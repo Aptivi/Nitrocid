@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (ShellStart.ShellStack.Count == 1)
+            if (ShellManager.ShellStack.Count == 1)
             {
                 Login.LogoutRequested = true;
                 return 0;

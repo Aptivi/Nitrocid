@@ -107,7 +107,7 @@ namespace KS.Kernel
             // Start the main loop
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop start.");
             MainLoop();
-            ShellStart.PurgeShells();
+            ShellManager.PurgeShells();
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop end.");
         }
 
@@ -152,7 +152,7 @@ namespace KS.Kernel
 
                 // Initialize shell
                 DebugWriter.WriteDebug(DebugLevel.I, "Shell is being initialized.");
-                ShellStart.StartShellForced(ShellType.Shell);
+                ShellManager.StartShellForced(ShellType.Shell);
             }
 
             // Load splash

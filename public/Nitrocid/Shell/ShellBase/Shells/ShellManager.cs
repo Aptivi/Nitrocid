@@ -79,6 +79,7 @@ namespace KS.Shell.ShellBase.Shells
     public static class ShellManager
     {
 
+        internal static List<ShellExecuteInfo> ShellStack = new();
         internal static string lastCommand = "";
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
         internal static Dictionary<string, List<string>> histories = new()
@@ -236,7 +237,7 @@ namespace KS.Shell.ShellBase.Shells
         /// Current shell type
         /// </summary>
         public static string CurrentShellType =>
-            ShellStart.ShellStack[^1].ShellType;
+            ShellStack[^1].ShellType;
 
         /// <summary>
         /// Last shell type
@@ -245,13 +246,13 @@ namespace KS.Shell.ShellBase.Shells
         {
             get
             {
-                if (ShellStart.ShellStack.Count == 0)
+                if (ShellStack.Count == 0)
                 {
                     // We don't have any shell. Return Shell.
                     DebugWriter.WriteDebug(DebugLevel.W, "Trying to call LastShellType on empty shell stack. Assuming UESH...");
                     return "Shell";
                 }
-                else if (ShellStart.ShellStack.Count == 1)
+                else if (ShellStack.Count == 1)
                 {
                     // We only have one shell. Consider current as last.
                     DebugWriter.WriteDebug(DebugLevel.W, "Trying to call LastShellType on shell stack containing only one shell. Assuming curent...");
@@ -260,7 +261,7 @@ namespace KS.Shell.ShellBase.Shells
                 else
                 {
                     // We have more than one shell. Return the shell type for a shell before the last one.
-                    var type = ShellStart.ShellStack[^2].ShellType;
+                    var type = ShellStack[^2].ShellType;
                     DebugWriter.WriteDebug(DebugLevel.I, "Returning shell type {0} for last shell from the stack...", type);
                     return type;
                 }
@@ -496,7 +497,7 @@ namespace KS.Shell.ShellBase.Shells
                                 }
                                 else
                                 {
-                                    var ShellInstance = ShellStart.ShellStack[^1];
+                                    var ShellInstance = ShellStack[^1];
                                     DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
                                     var Params = new CommandExecutorParameters(Command, ShellType, ShellInstance);
                                     CommandExecutor.StartCommandThread(Params);
@@ -629,6 +630,206 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="shellType">Shell type name</param>
         public static BaseShellInfo GetShellInfo(string shellType) =>
             AvailableShells.ContainsKey(shellType) ? AvailableShells[shellType] : AvailableShells["Shell"];
+
+        /// <summary>
+        /// Starts the shell
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
+        public static void StartShell(ShellType ShellType, params object[] ShellArgs) =>
+            StartShell(GetShellTypeName(ShellType), ShellArgs);
+
+        /// <summary>
+        /// Starts the shell
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
+        public static void StartShell(string ShellType, params object[] ShellArgs)
+        {
+            if (ShellStack.Count >= 1)
+            {
+                // The shell stack has a mother shell. Start another shell.
+                StartShellForced(ShellType, ShellArgs);
+            }
+        }
+
+        /// <summary>
+        /// Force starts the shell
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
+        public static void StartShellForced(ShellType ShellType, params object[] ShellArgs) =>
+            StartShellForced(GetShellTypeName(ShellType), ShellArgs);
+
+        /// <summary>
+        /// Force starts the shell
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellArgs">Arguments to pass to shell</param>
+        public static void StartShellForced(string ShellType, params object[] ShellArgs)
+        {
+            int shellCount = ShellStack.Count;
+            try
+            {
+                // Make a shell executor based on shell type to select a specific executor (if the shell type is not UESH, and if the new shell isn't a mother shell)
+                // Please note that the remote debug shell is not supported because it works on its own space, so it can't be interfaced using the standard IShell.
+                var ShellExecute = GetShellExecutor(ShellType);
+
+                // Make a new instance of shell information
+                var ShellCommandThread = new KernelThread($"{ShellType} Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
+                var ShellInfo = new ShellExecuteInfo(ShellType, ShellExecute, ShellCommandThread);
+
+                // Add a new shell to the shell stack to indicate that we have a new shell (a visitor)!
+                ShellStack.Add(ShellInfo);
+                if (!histories.ContainsKey(ShellType))
+                    histories.Add(ShellType, new());
+
+                // Reset title in case we're going to another shell
+                ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
+                ShellExecute.InitializeShell(ShellArgs);
+            }
+            catch (Exception ex)
+            {
+                // There is an exception trying to run the shell. Throw the message to the debugger and to the caller.
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed initializing shell!!! Type: {0}, Message: {1}", ShellType, ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "Additional info: Args: {0} [{1}], Shell Stack: {2} shells, shellCount: {3} shells", ShellArgs.Length, string.Join(", ", ShellArgs), ShellStack.Count, shellCount);
+                DebugWriter.WriteDebug(DebugLevel.E, "This shell needs to be killed in order for the shell manager to proceed. Passing exception to caller...");
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, "If you don't see \"Purge\" from {0} after few lines, this indicates that we're in a seriously corrupted state.", nameof(StartShellForced));
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Failed trying to initialize shell"), ex);
+            }
+            finally
+            {
+                // There is either an unknown shell error trying to be initialized or a shell has manually set Bail to true prior to exiting, like the JSON shell
+                // that sets this property when it fails to open the JSON file due to syntax error or something. If we haven't added the shell to the shell stack,
+                // do nothing. Else, purge that shell with KillShell(). Otherwise, we'll get another shell's commands in the wrong shell and other problems will
+                // occur until the ghost shell has exited either automatically or manually, so check to see if we have added the newly created shell to the shell
+                // stack and kill that faulted shell so that we can have the correct shell in the most recent shell, ^1, from the stack.
+                int newShellCount = ShellStack.Count;
+                DebugWriter.WriteDebug(DebugLevel.I, "Purge: newShellCount: {0} shells, shellCount: {1} shells", newShellCount, shellCount);
+                if (newShellCount > shellCount)
+                    KillShellForced();
+                TermReaderTools.SetHistory(histories[LastShellType]);
+            }
+        }
+
+        /// <summary>
+        /// Kills the last running shell
+        /// </summary>
+        public static void KillShell()
+        {
+            // We must have at least two shells to kill the last shell. Else, we will have zero shells running, making us look like we've logged out!
+            if (ShellStack.Count >= 2)
+            {
+                ShellStack[^1].ShellBase.Bail = true;
+                PurgeShells();
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can not kill the mother shell!"));
+            }
+        }
+
+        /// <summary>
+        /// Force kills the last running shell
+        /// </summary>
+        public static void KillShellForced()
+        {
+            if (ShellStack.Count >= 1)
+            {
+                ShellStack[^1].ShellBase.Bail = true;
+                PurgeShells();
+            }
+        }
+
+        /// <summary>
+        /// Cleans up the shell stack
+        /// </summary>
+        public static void PurgeShells() =>
+            // Remove these shells from the stack
+            ShellStack.RemoveAll(x => x.ShellBase.Bail);
+
+        /// <summary>
+        /// Gets the shell executor based on the shell type
+        /// </summary>
+        /// <param name="ShellType">The requested shell type</param>
+        public static BaseShell GetShellExecutor(ShellType ShellType) =>
+            GetShellExecutor(GetShellTypeName(ShellType));
+
+        /// <summary>
+        /// Gets the shell executor based on the shell type
+        /// </summary>
+        /// <param name="ShellType">The requested shell type</param>
+        public static BaseShell GetShellExecutor(string ShellType) =>
+            GetShellInfo(ShellType).ShellBase;
+
+        /// <summary>
+        /// Registers the custom shell. Should be called when the mods start up.
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        /// <param name="ShellTypeInfo">The shell type information</param>
+        public static void RegisterShell(string ShellType, BaseShellInfo ShellTypeInfo)
+        {
+            if (!ShellTypeExists(ShellType))
+            {
+                // First, add the shell
+                availableShells.Add(ShellType, ShellTypeInfo);
+
+                // Then, add the default preset if the current preset is not found
+                if (PromptPresetManager.CurrentPresets.ContainsKey(ShellType))
+                    return;
+
+                // Rare state.
+                DebugWriter.WriteDebug(DebugLevel.I, "Reached rare state or unconfigurable shell.");
+                var presets = ShellTypeInfo.ShellPresets;
+                var basePreset = new PromptPresetBase();
+                if (presets is not null)
+                {
+                    // Add a default preset
+                    if (presets.ContainsKey("Default"))
+                        PromptPresetManager.CurrentPresets.Add(ShellType, "Default");
+                    else
+                        PromptPresetManager.CurrentPresets.Add(ShellType, basePreset.PresetName);
+                }
+                else
+                {
+                    // Make a base shell preset and set it as default.
+                    PromptPresetManager.CurrentPresets.Add(ShellType, basePreset.PresetName);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Unregisters the custom shell. Should be called when the mods shut down.
+        /// </summary>
+        /// <param name="ShellType">The shell type</param>
+        public static void UnregisterShell(string ShellType)
+        {
+            if (!IsShellBuiltin(ShellType))
+            {
+                // First, remove the shell
+                availableShells.Remove(ShellType);
+
+                // Then, remove the preset
+                PromptPresetManager.CurrentPresets.Remove(ShellType);
+            }
+        }
+
+        /// <summary>
+        /// Is the shell pre-defined in Nitrocid KS?
+        /// </summary>
+        /// <param name="ShellType">Shell type</param>
+        /// <returns>If available in ShellType, then it's a built-in shell, thus returning true. Otherwise, false for custom shells.</returns>
+        public static bool IsShellBuiltin(string ShellType) =>
+            Enum.IsDefined(typeof(ShellType), ShellType);
+
+        /// <summary>
+        /// Does the shell exist?
+        /// </summary>
+        /// <param name="ShellType">Shell type to check</param>
+        /// <returns>True if it exists; false otherwise.</returns>
+        public static bool ShellTypeExists(string ShellType) =>
+            AvailableShells.ContainsKey(ShellType);
 
         internal static void SaveHistories() =>
             FileIO.WriteAllText(Paths.ShellHistoriesPath, JsonConvert.SerializeObject(histories, Formatting.Indented));

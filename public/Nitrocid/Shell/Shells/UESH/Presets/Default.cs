@@ -55,7 +55,7 @@ namespace KS.Shell.Shells.UESH.Presets
             {
                 // Opening
                 PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("[{0}:", ShellStart.ShellStack.Count);
+                PresetStringBuilder.AppendFormat("[{0}:", ShellManager.ShellStack.Count);
 
                 // Current username
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);

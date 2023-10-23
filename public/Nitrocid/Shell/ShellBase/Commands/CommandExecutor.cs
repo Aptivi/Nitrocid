@@ -331,7 +331,7 @@ namespace KS.Shell.ShellBase.Commands
         /// <param name="Command">Requested command with its arguments and switches</param>
         public static void ExecuteCommandWrapped(string Command)
         {
-            var currentShell = ShellStart.ShellStack[^1];
+            var currentShell = ShellManager.ShellStack[^1];
             var currentType = currentShell.ShellType;
             var StartCommandThread = currentShell.ShellCommandThread;
             var (satisfied, total) = ArgumentsParser.ParseShellCommandArguments(Command, currentType);
@@ -367,12 +367,12 @@ namespace KS.Shell.ShellBase.Commands
             try
             {
                 // First, initialize the alternative command thread
-                var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
+                var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
                 if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for wrapped command {0}...", Command);
                     var WrappedCommand = new KernelThread($"Wrapped Shell Command Thread", false, (cmdThreadParams) => ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
-                    ShellStart.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
+                    ShellManager.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
                 }
 
                 // Then, initialize the buffered writer and execute the commands

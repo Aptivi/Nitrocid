@@ -37,7 +37,7 @@ namespace KS.Shell.ShellBase.Commands
         internal static void CancelCommand(object sender, ConsoleCancelEventArgs e)
         {
             // We can't cancel in a situation where there are no shells.
-            if (ShellStart.ShellStack.Count <= 0)
+            if (ShellManager.ShellStack.Count <= 0)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "No shells. Can't cancel.");
                 e.Cancel = true;
@@ -55,7 +55,7 @@ namespace KS.Shell.ShellBase.Commands
             // Now, handle the command cancellation
             try
             {
-                var StartCommandThread = ShellStart.ShellStack[^1].ShellCommandThread;
+                var StartCommandThread = ShellManager.ShellStack[^1].ShellCommandThread;
                 var ProcessStartCommandThread = ShellManager.ProcessStartCommandThread;
                 var syncLock = GetCancelSyncLock(ShellManager.CurrentShellType);
                 lock (syncLock)

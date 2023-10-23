@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.UESH.Presets
             {
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), UserManagement.CurrentUser.Username, default, TransitionPartChar),
                 new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), NetworkTools.HostName, PadlockChar, TransitionPartChar),
-                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), $"{CurrentDirectory.CurrentDir} [{ShellStart.ShellStack.Count}]", default, TransitionPartChar),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), $"{CurrentDirectory.CurrentDir} [{ShellManager.ShellStack.Count}]", default, TransitionPartChar),
             };
 
             // Builder

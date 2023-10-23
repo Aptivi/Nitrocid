@@ -120,8 +120,8 @@ namespace KS.Kernel.Power
                         KernelShutdown = true;
 
                         // Kill all shells and interrupt any input
-                        for (int i = ShellStart.ShellStack.Count - 1; i >= 0; i--)
-                            ShellStart.KillShellForced();
+                        for (int i = ShellManager.ShellStack.Count - 1; i >= 0; i--)
+                            ShellManager.KillShellForced();
                         TermReaderTools.Interrupt();
                         break;
                     }
@@ -139,8 +139,8 @@ namespace KS.Kernel.Power
                         KernelEntry.SafeMode = PowerMode == PowerMode.RebootSafe;
 
                         // Kill all shells and interrupt any input
-                        for (int i = ShellStart.ShellStack.Count - 1; i >= 0; i--)
-                            ShellStart.KillShellForced();
+                        for (int i = ShellManager.ShellStack.Count - 1; i >= 0; i--)
+                            ShellManager.KillShellForced();
                         TermReaderTools.Interrupt();
                         DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", KernelEntry.SafeMode);
                         break;

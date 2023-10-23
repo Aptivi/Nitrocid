@@ -475,7 +475,7 @@ namespace KS.Network.Base.Connections
 
                     // Use that information to start the shell
                     DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to connection {0}...", selectedConnection);
-                    ShellStart.StartShell(shellType, connection);
+                    ShellManager.StartShell(shellType, connection);
                 }
                 else
                 {
@@ -497,12 +497,12 @@ namespace KS.Network.Base.Connections
                         if (selectedConnectionNumber == -1)
                             return;
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection...");
-                        ShellStart.StartShell(shellType, availableConnectionInstances[selectedConnectionNumber - 1]);
+                        ShellManager.StartShell(shellType, availableConnectionInstances[selectedConnectionNumber - 1]);
                     }
                     else
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Opening shell to selected connection created by the invoker for address {0}...", address);
-                        ShellStart.StartShell(shellType, establisher(address));
+                        ShellManager.StartShell(shellType, establisher(address));
                     }
                 }
             }

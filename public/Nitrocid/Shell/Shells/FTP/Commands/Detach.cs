@@ -33,8 +33,8 @@ namespace KS.Shell.Shells.FTP.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ((FTPShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
-            ShellStart.KillShell();
+            ((FTPShell)ShellManager.ShellStack[^1].ShellBase).detaching = true;
+            ShellManager.KillShell();
             return 0;
         }
 

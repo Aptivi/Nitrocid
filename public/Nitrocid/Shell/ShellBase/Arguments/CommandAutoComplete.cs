@@ -41,12 +41,12 @@ namespace KS.Shell.ShellBase.Arguments
             DebugWriter.WriteDebug(DebugLevel.I, "Text to auto complete: {0} (idx: {1})", text, index);
 
             // Then, check to see is we have shells
-            DebugWriter.WriteDebug(DebugLevel.I, "Shell count: {0}", ShellStart.ShellStack.Count);
-            if (ShellStart.ShellStack.Count <= 0)
+            DebugWriter.WriteDebug(DebugLevel.I, "Shell count: {0}", ShellManager.ShellStack.Count);
+            if (ShellManager.ShellStack.Count <= 0)
                 return Array.Empty<string>();
 
             // Get the commands based on the current shell type
-            var shellType = ShellStart.ShellStack[^1].ShellType;
+            var shellType = ShellManager.ShellStack[^1].ShellType;
             var ShellCommands = CommandManager.GetCommands(shellType);
             DebugWriter.WriteDebug(DebugLevel.I, "Commands count for type {0}: {1}", shellType, ShellCommands.Count);
 

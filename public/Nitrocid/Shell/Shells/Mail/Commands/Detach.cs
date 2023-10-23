@@ -33,8 +33,8 @@ namespace KS.Shell.Shells.Mail.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ((MailShell)ShellStart.ShellStack[^1].ShellBase).detaching = true;
-            ShellStart.KillShell();
+            ((MailShell)ShellManager.ShellStack[^1].ShellBase).detaching = true;
+            ShellManager.KillShell();
             return 0;
         }
 

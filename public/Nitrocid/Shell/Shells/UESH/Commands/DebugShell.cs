@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ShellStart.StartShell(ShellType.DebugShell);
+            ShellManager.StartShell(ShellType.DebugShell);
             return 0;
         }
     }

@@ -32,7 +32,7 @@ namespace KS.Shell.Shells.Hex.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            ShellStart.KillShell();
+            ShellManager.KillShell();
             return 0;
         }
     }

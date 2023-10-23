@@ -59,12 +59,12 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
             }
 
             // First, initialize the alternative command thread
-            var AltThreads = ShellStart.ShellStack[^1].AltCommandThreads;
+            var AltThreads = ShellManager.ShellStack[^1].AltCommandThreads;
             if (AltThreads.Count == 0 || AltThreads[^1].IsAlive)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Making alt thread for repeated command {0}...", lastCommand);
                 var WrappedCommand = new KernelThread($"Repeated Shell Command Thread", false, (cmdThreadParams) => CommandExecutor.ExecuteCommand((CommandExecutorParameters)cmdThreadParams));
-                ShellStart.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
+                ShellManager.ShellStack[^1].AltCommandThreads.Add(WrappedCommand);
             }
 
             // Now, execute the command n times
