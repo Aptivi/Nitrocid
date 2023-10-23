@@ -67,6 +67,16 @@ namespace Nitrocid.Extras.GitShell.Git
                         })
                     }, new FetchCommand())
             },
+
+            { "filestatus",
+                new CommandInfo("filestatus", ShellType, /* Localizable */ "Fetches the file status",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "file")
+                        })
+                    }, new FileStatusCommand())
+            },
             
             { "lsbranches",
                 new CommandInfo("lsbranches", ShellType, /* Localizable */ "Lists all branches",
