@@ -58,6 +58,16 @@ namespace Nitrocid.Extras.GitShell.Git
                     }, new CommitCommand())
             },
 
+            { "describe",
+                new CommandInfo("describe", ShellType, /* Localizable */ "Describes a commit",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "commitsha")
+                        })
+                    }, new DescribeCommand())
+            },
+
             { "fetch",
                 new CommandInfo("fetch", ShellType, /* Localizable */ "Fetches all updates from a remote",
                     new[] {

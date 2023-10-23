@@ -18,27 +18,28 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using LibGit2Sharp;
+using System.Linq;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {
     /// <summary>
-    /// Lists all tags
+    /// Describes a commit
     /// </summary>
     /// <remarks>
-    /// This command lets you list all tags in your Git repository.
+    /// This command lets you describe a commit.
     /// </remarks>
-    class LsTagsCommand : BaseCommand, ICommand
+    class DescribeCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var tags = GitShellCommon.Repository.Tags;
-            foreach (var tag in tags)
-            {
-                TextWriterColor.WriteKernelColor($"- [{(tag.IsAnnotated ? "A" : " ")}] {tag.CanonicalName} [{tag.FriendlyName}]", true, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor($"  {tag.Target.Sha}", true, KernelColorType.ListValue);
-            }
+            string commitish = parameters.ArgumentsList[0];
+            var commit = GitShellCommon.Repository.Commits.Single((c) => c.Sha.StartsWith(commitish));
+            TextWriterColor.Write(Translate.DoTranslation("Description for commit") + $" {commit.Sha}:");
+            TextWriterColor.Write(GitShellCommon.Repository.Describe(commit, new DescribeOptions()));
             return 0;
         }
 
