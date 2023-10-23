@@ -410,20 +410,20 @@ namespace KS.Drivers.Console
                     {
                         if (!(vars.Length == 0))
                         {
-                            ConsoleWrapper.WriteLine(Text, vars);
+                            WriteLine(Text, vars);
                         }
                         else
                         {
-                            ConsoleWrapper.WriteLine(Text);
+                            WriteLine(Text);
                         }
                     }
                     else if (!(vars.Length == 0))
                     {
-                        ConsoleWrapper.Write(Text, vars);
+                        Write(Text, vars);
                     }
                     else
                     {
-                        ConsoleWrapper.Write(Text);
+                        Write(Text);
                     }
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
