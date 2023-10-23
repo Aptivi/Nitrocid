@@ -123,6 +123,11 @@ namespace KS.Drivers.HardwareProber.Bases
                 var hardDrive = hardDrives[i];
                 TextWriterColor.Write($"- [{i + 1}] {hardDrive.HardDiskSize.SizeString()}");
             }
+            if (hardDrives.Length == 0)
+            {
+                // SpecProbe may have failed to parse hard disks due to insufficient permissions.
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The hardware probing library has failed to probe hard drives. If you're running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives."), true, KernelColorType.Warning);
+            }
             return $"[{string.Join(", ", hardDrives.Select((hdp) => hdp.HardDiskNumber))}]";
         }
 
