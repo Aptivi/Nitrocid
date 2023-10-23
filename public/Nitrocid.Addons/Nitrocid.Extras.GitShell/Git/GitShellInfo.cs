@@ -134,6 +134,17 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo()
                     }, new LsTagsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
+            
+            { "maketag",
+                new CommandInfo("maketag", ShellType, /* Localizable */ "Makes a tag from the HEAD",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "tagname"),
+                            new CommandArgumentPart(false, "message"),
+                        })
+                    }, new MakeTagCommand())
+            },
 
             { "pull",
                 new CommandInfo("pull", ShellType, /* Localizable */ "Pulls all updates from the server",
