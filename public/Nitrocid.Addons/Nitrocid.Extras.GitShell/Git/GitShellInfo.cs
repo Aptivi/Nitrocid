@@ -98,6 +98,13 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo()
                     }, new LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
+            
+            { "lstags",
+                new CommandInfo("lstags", ShellType, /* Localizable */ "Lists all tags",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new LsTagsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
 
             { "pull",
                 new CommandInfo("pull", ShellType, /* Localizable */ "Pulls all updates from the server",
