@@ -341,43 +341,61 @@ namespace KS.Drivers.Console
         /// <inheritdoc/>
         public virtual void Write(char value)
         {
-            SystemConsole.Write(value);
-            _moved = true;
+            lock (TextWriterColor.WriteLock)
+            {
+                SystemConsole.Write(value);
+                _moved = true;
+            }
         }
 
         /// <inheritdoc/>
         public virtual void Write(string text)
         {
-            SystemConsole.Write(text);
-            _moved = true;
+            lock (TextWriterColor.WriteLock)
+            {
+                SystemConsole.Write(text);
+                _moved = true;
+            }
         }
 
         /// <inheritdoc/>
         public virtual void Write(string text, params object[] args)
         {
-            SystemConsole.Write(text, args);
-            _moved = true;
+            lock (TextWriterColor.WriteLock)
+            {
+                SystemConsole.Write(text, args);
+                _moved = true;
+            }
         }
 
         /// <inheritdoc/>
         public virtual void WriteLine()
         {
-            SystemConsole.WriteLine();
-            _moved = true;
+            lock (TextWriterColor.WriteLock)
+            {
+                SystemConsole.WriteLine();
+                _moved = true;
+            }
         }
 
         /// <inheritdoc/>
         public virtual void WriteLine(string text)
         {
-            SystemConsole.WriteLine(text);
-            _moved = true;
+            lock (TextWriterColor.WriteLock)
+            {
+                SystemConsole.WriteLine(text);
+                _moved = true;
+            }
         }
 
         /// <inheritdoc/>
         public virtual void WriteLine(string text, params object[] args)
         {
-            SystemConsole.WriteLine(text, args);
-            _moved = true;
+            lock (TextWriterColor.WriteLock)
+            {
+                SystemConsole.WriteLine(text, args);
+                _moved = true;
+            }
         }
 
         /// <inheritdoc/>
