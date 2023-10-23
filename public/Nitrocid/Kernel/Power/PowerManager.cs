@@ -216,10 +216,13 @@ namespace KS.Kernel.Power
             // References:
             //   - https://github.com/dotnet/runtime/blob/release/8.0/src/libraries/System.Diagnostics.Process/src/System/Diagnostics/Process.Win32.cs#L47
             //   - https://github.com/dotnet/runtime/blob/release/8.0/src/libraries/System.Diagnostics.Process/src/System/Diagnostics/ProcessStartInfo.cs#L91
-            var privateReflection = BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetField;
-            var startInfoType = selfProcess.StartInfo.GetType();
-            var envVarsField = startInfoType.GetField("_environmentVariables", privateReflection);
-            envVarsField.SetValue(selfProcess.StartInfo, null);
+            if (Debugger.IsAttached)
+            {
+                var privateReflection = BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetField;
+                var startInfoType = selfProcess.StartInfo.GetType();
+                var envVarsField = startInfoType.GetField("_environmentVariables", privateReflection);
+                envVarsField.SetValue(selfProcess.StartInfo, null);
+            }
             // 
             // --- UseShellExecute and the Environment property population Hack End ---
 

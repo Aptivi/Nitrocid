@@ -30,6 +30,7 @@ using KS.Kernel.Starting;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Arguments;
 using KS.Arguments.Help;
+using KS.Users.Windows;
 
 namespace KS.Kernel
 {
@@ -111,7 +112,7 @@ namespace KS.Kernel
             PowerSignalHandlers.DisposeHandlers();
 
             // Check to see if we're restarting Nitrocid with elevated permissions
-            if (PowerManager.elevating && KernelPlatform.IsOnWindows())
+            if (PowerManager.elevating && KernelPlatform.IsOnWindows() && !WindowsUserTools.IsAdministrator())
                 PowerManager.ElevateSelf();
         }
     }
