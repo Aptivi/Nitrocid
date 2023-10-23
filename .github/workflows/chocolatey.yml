@@ -17,11 +17,17 @@ jobs:
       run: choco apikey --key ${{ secrets.CHOCO_APIKEY }} --source https://push.chocolatey.org/
     - name: Application Pack
       run: |
-        $path = "ChocolateyPack"
+        $path = "tools/chocopack"
+        $pathlite = "tools/chocopack-lite"
         choco pack (Get-Item "$path\ks.nuspec").FullName
+        choco pack (Get-Item "$pathlite\kslite.nuspec").FullName
     - name: Package Publication
       run: |
         $FileName = Get-ChildItem -Path $pwd.Path -Name -Filter "KS*.nupkg"
+        foreach($fn in $FileName) {
+            choco push "$pwd\$fn" --source https://push.chocolatey.org/
+        }
+        $FileName = Get-ChildItem -Path $pwd.Path -Name -Filter "kslite*.nupkg"
         foreach($fn in $FileName) {
             choco push "$pwd\$fn" --source https://push.chocolatey.org/
         }
