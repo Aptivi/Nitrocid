@@ -127,7 +127,16 @@ namespace KS.Kernel.Extensions
                 if (addonInstance.AddonType == type)
                 {
                     // Call the start function
-                    addonInstance.StartAddon();
+                    try
+                    {
+                        addonInstance.StartAddon();
+                        DebugWriter.WriteDebug(DebugLevel.I, "Started!");
+                    }
+                    catch (Exception ex)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to start addon {0}. {1}", addon, ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                    }
 
                     // Add the addon
                     AddonInfo info = new(addonInstance);
