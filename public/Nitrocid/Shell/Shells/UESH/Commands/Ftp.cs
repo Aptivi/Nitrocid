@@ -22,6 +22,7 @@ using KS.Network.FTP;
 using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using System;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -42,8 +43,10 @@ namespace KS.Shell.Shells.UESH.Commands
             return 0;
         }
 
-        private NetworkConnection EstablishFtpConnection(string address, SpeedDialEntry connection) =>
-            FTPTools.PromptForPassword(null, connection.Options[0].ToString(), address, connection.Port, connection.Options.Length > 1 ? (FtpEncryptionMode)connection.Options[1] : FtpEncryptionMode.None);
-
+        private NetworkConnection EstablishFtpConnection(string address, SpeedDialEntry connection)
+        {
+            var encMode = Enum.Parse<FtpEncryptionMode>(connection.Options[1].ToString());
+            return FTPTools.PromptForPassword(null, connection.Options[0].ToString(), address, connection.Port, connection.Options.Length > 1 ? encMode : FtpEncryptionMode.None);
+        }
     }
 }
