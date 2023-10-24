@@ -146,8 +146,7 @@ namespace KS.Arguments
             // Check for the arguments written by the user
             try
             {
-                if (ArgumentHelpPrint.acknowledged)
-                    ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToArray();
+                ArgumentsInput = GetFilteredArguments(ArgumentsInput);
                 var Arguments = AvailableCMDLineArgs;
 
                 // Parse them now
@@ -158,10 +157,10 @@ namespace KS.Arguments
                     if (Arguments.ContainsKey(ArgumentName))
                     {
                         // Variables
-                        var ArgumentInfos = ArgumentsParser.ParseArgumentArguments(Argument);
-                        for (int j = 0; j < ArgumentInfos.total.Length; j++)
+                        var (satisfied, total) = ArgumentsParser.ParseArgumentArguments(Argument);
+                        for (int j = 0; j < total.Length; j++)
                         {
-                            var ArgumentInfo = ArgumentInfos.total[j];
+                            var ArgumentInfo = total[j];
                             var Arg = Arguments[ArgumentName];
                             var Args = ArgumentInfo.ArgumentsList;
                             var Switches = ArgumentInfo.SwitchesList;
@@ -172,7 +171,7 @@ namespace KS.Arguments
                             for (int idx = 0; idx < Arg.ArgArgumentInfo.Length; idx++)
                             {
                                 var argInfo = Arg.ArgArgumentInfo[idx];
-                                bool isLast = idx == Arg.ArgArgumentInfo.Length - 1 && j == ArgumentInfos.total.Length - 1;
+                                bool isLast = idx == Arg.ArgArgumentInfo.Length - 1 && j == total.Length - 1;
                                 if (argInfo.ArgumentsRequired & RequiredArgumentsProvided | !argInfo.ArgumentsRequired)
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.I, "Executing argument {0} with args {1}...", Argument, strArgs);
@@ -211,8 +210,7 @@ namespace KS.Arguments
             // Check for the arguments written by the user
             try
             {
-                if (ArgumentHelpPrint.acknowledged)
-                    ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToArray();
+                ArgumentsInput = GetFilteredArguments(ArgumentsInput);
                 var Arguments = AvailableCMDLineArgs;
 
                 // Parse them now
@@ -233,6 +231,13 @@ namespace KS.Arguments
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }
+        }
+
+        private static string[] GetFilteredArguments(string[] ArgumentsInput)
+        {
+            if (ArgumentHelpPrint.acknowledged)
+                ArgumentsInput = ArgumentsInput.Where((arg) => arg != "help").ToArray();
+            return ArgumentsInput;
         }
 
     }
