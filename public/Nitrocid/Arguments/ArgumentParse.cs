@@ -42,32 +42,99 @@ namespace KS.Arguments
         /// </summary>
         public readonly static Dictionary<string, ArgumentInfo> AvailableCMDLineArgs = new()
         {
-            { "quiet", new ArgumentInfo("quiet", /* Localizable */ "Starts the kernel quietly",
-                new[] { new CommandArgumentInfo() }, new QuietArgument()) },
-            { "maintenance", new ArgumentInfo("maintenance", /* Localizable */ "Like safe mode, but also disables multi-user and some customization",
-                new[] { new CommandArgumentInfo() }, new MaintenanceArgument()) },
-            { "safe", new ArgumentInfo("safe", /* Localizable */ "Starts the kernel in safe mode, disabling all mods",
-                new[] { new CommandArgumentInfo() }, new SafeArgument()) },
-            { "testInteractive", new ArgumentInfo("testInteractive", /* Localizable */ "Opens a test shell",
-                new[] { new CommandArgumentInfo() }, new TestInteractiveArgument()) },
-            { "debug", new ArgumentInfo("debug", /* Localizable */ "Enables debug mode",
-                new[] { new CommandArgumentInfo() }, new DebugArgument()) },
-            { "terminaldebug", new ArgumentInfo("terminaldebug", /* Localizable */ "Enables terminal debug mode",
-                new[] { new CommandArgumentInfo() }, new TerminalDebugArgument()) },
-            { "reset", new ArgumentInfo("reset", /* Localizable */ "Resets the kernel to the factory settings",
-                new[] { new CommandArgumentInfo() }, new ResetArgument()) },
-            { "bypasssizedetection", new ArgumentInfo("bypasssizedetection", /* Localizable */ "Bypasses the console size detection",
-                new[] { new CommandArgumentInfo() }, new BypassSizeDetectionArgument()) },
-            { "noaltbuffer", new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer",
-                new[] { new CommandArgumentInfo() }, new NoAltBufferArgument()) },
-            { "lang", new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language",
-                new[] { new CommandArgumentInfo(new[] { new CommandArgumentPart(true, "lang") }) }, new LangArgument()) },
-            { "attach", new ArgumentInfo("attach", /* Localizable */ "Attaches the Visual Studio debugger to this instance of Nitrocid",
-                new[] { new CommandArgumentInfo() }, new AttachArgument()) },
-            { "verbosepreboot", new ArgumentInfo("verbosepreboot", /* Localizable */ "Turns on verbose messages for pre-boot environment",
-                new[] { new CommandArgumentInfo() }, new VerbosePrebootArgument()) },
-            { "nosetbuffersize", new ArgumentInfo("nosetbuffersize", /* Localizable */ "Tells the kernel not to set the console buffer size [Only available on Windows]",
-                new[] { new CommandArgumentInfo() }, new NoSetBufferSizeArgument()) },
+            { "quiet",
+                new ArgumentInfo("quiet", /* Localizable */ "Starts the kernel quietly",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new QuietArgument())
+            },
+
+            { "maintenance",
+                new ArgumentInfo("maintenance", /* Localizable */ "Like safe mode, but also disables multi-user and some customization",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new MaintenanceArgument())
+            },
+
+            { "safe",
+                new ArgumentInfo("safe", /* Localizable */ "Starts the kernel in safe mode, disabling all mods",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new SafeArgument())
+            },
+
+            { "testInteractive",
+                new ArgumentInfo("testInteractive", /* Localizable */ "Opens a test shell",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TestInteractiveArgument())
+            },
+
+            { "debug",
+                new ArgumentInfo("debug", /* Localizable */ "Enables debug mode",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new DebugArgument())
+            },
+
+            { "terminaldebug",
+                new ArgumentInfo("terminaldebug", /* Localizable */ "Enables terminal debug mode",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TerminalDebugArgument())
+            },
+
+            { "reset",
+                new ArgumentInfo("reset", /* Localizable */ "Resets the kernel to the factory settings",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new ResetArgument())
+            },
+
+            { "bypasssizedetection",
+                new ArgumentInfo("bypasssizedetection", /* Localizable */ "Bypasses the console size detection",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new BypassSizeDetectionArgument())
+            },
+
+            { "noaltbuffer",
+                new ArgumentInfo("noaltbuffer", /* Localizable */ "Prevents the kernel from using the alternative buffer",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new NoAltBufferArgument())
+            },
+
+            { "lang",
+                new ArgumentInfo("lang", /* Localizable */ "Sets the initial pre-boot environment language",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "lang")
+                        })
+                    }, new LangArgument())
+            },
+
+            { "attach",
+                new ArgumentInfo("attach", /* Localizable */ "Attaches the Visual Studio debugger to this instance of Nitrocid",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new AttachArgument())
+            },
+
+            { "verbosepreboot",
+                new ArgumentInfo("verbosepreboot", /* Localizable */ "Turns on verbose messages for pre-boot environment",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new VerbosePrebootArgument())
+            },
+
+            { "nosetbuffersize",
+                new ArgumentInfo("nosetbuffersize", /* Localizable */ "Tells the kernel not to set the console buffer size [Only available on Windows]",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new NoSetBufferSizeArgument())
+            },
         };
 
         /// <summary>

@@ -84,19 +84,19 @@ namespace KS.Shell.ShellBase.Shells
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
         internal static Dictionary<string, List<string>> histories = new()
         {
-            { "General", new() },
-            { ShellType.AdminShell.ToString(), new() },
-            { ShellType.DebugShell.ToString(), new() },
-            { ShellType.FTPShell.ToString(), new() },
-            { ShellType.HexShell.ToString(), new() },
-            { ShellType.HTTPShell.ToString(), new() },
-            { ShellType.JsonShell.ToString(), new() },
-            { ShellType.MailShell.ToString(), new() },
-            { ShellType.RSSShell.ToString(), new() },
-            { ShellType.SFTPShell.ToString(), new() },
-            { ShellType.Shell.ToString(), new() },
-            { ShellType.SqlShell.ToString(), new() },
-            { ShellType.TextShell.ToString(), new() },
+            { "General",                    new() },
+            { $"{ShellType.AdminShell}",    new() },
+            { $"{ShellType.DebugShell}",    new() },
+            { $"{ShellType.FTPShell}",      new() },
+            { $"{ShellType.HexShell}",      new() },
+            { $"{ShellType.HTTPShell}",     new() },
+            { $"{ShellType.JsonShell}",     new() },
+            { $"{ShellType.MailShell}",     new() },
+            { $"{ShellType.RSSShell}",      new() },
+            { $"{ShellType.SFTPShell}",     new() },
+            { $"{ShellType.Shell}",         new() },
+            { $"{ShellType.SqlShell}",      new() },
+            { $"{ShellType.TextShell}",     new() },
         };
 
         internal readonly static Dictionary<string, CommandInfo> unifiedCommandDict = new()
