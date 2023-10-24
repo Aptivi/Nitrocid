@@ -312,5 +312,34 @@ namespace Nitrocid.Tests.Kernel.Threading
             }
         }
 
+        /// <summary>
+        /// Tests getting actual milliseconds
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetActualTimeSpan()
+        {
+            var actualSpan = ThreadManager.GetActualTimeSpan(1);
+            actualSpan.Milliseconds.ShouldBeGreaterThanOrEqualTo(1);
+            actualSpan.TotalMilliseconds.ShouldBeGreaterThanOrEqualTo(1);
+            actualSpan.Ticks.ShouldBeGreaterThanOrEqualTo(1000);
+        }
+
+        /// <summary>
+        /// Tests getting actual milliseconds
+        /// </summary>
+        [Test]
+        [Description("Querying")]
+        public void TestGetActualTimeSpanRecursive()
+        {
+            for (int i = 1; i <= 100; i++)
+            {
+                var actualSpan = ThreadManager.GetActualTimeSpan(i);
+                actualSpan.Milliseconds.ShouldBeGreaterThanOrEqualTo(i);
+                actualSpan.TotalMilliseconds.ShouldBeGreaterThanOrEqualTo(i);
+                actualSpan.Ticks.ShouldBeGreaterThanOrEqualTo(i * 1000);
+            }
+        }
+
     }
 }

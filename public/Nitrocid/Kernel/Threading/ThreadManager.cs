@@ -138,6 +138,20 @@ namespace KS.Kernel.Threading
         }
 
         /// <summary>
+        /// Gets the actual time span from the sleep time provided
+        /// </summary>
+        /// <param name="Time">Sleep time</param>
+        /// <returns>The time span which describes the actual time span from the sleep time provided</returns>
+        public static TimeSpan GetActualTimeSpan(int Time)
+        {
+            var SleepStopwatch = new Stopwatch();
+            SleepStopwatch.Start();
+            Thread.Sleep(Time);
+            SleepStopwatch.Stop();
+            return SleepStopwatch.Elapsed;
+        }
+
+        /// <summary>
         /// Gets all thread backtraces
         /// </summary>
         /// <returns>A dictionary containing thread names and addresses as keys and stack traces as values</returns>
