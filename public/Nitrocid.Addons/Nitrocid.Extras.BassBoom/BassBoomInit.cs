@@ -45,7 +45,7 @@ namespace Nitrocid.Extras.BassBoom
     {
 #if NET7_0
         private readonly ExtensionHandler handler = new(
-            ".mp3",
+            ".mp3", "Mp3BassBoom",
             (_) => InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("You'll be able to play music soon. Hang tight!"), KernelColorType.Warning),
             (path) =>
             {

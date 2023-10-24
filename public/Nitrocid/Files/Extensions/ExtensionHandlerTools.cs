@@ -33,7 +33,7 @@ namespace KS.Files.Extensions
     {
         internal static readonly List<ExtensionHandler> extensionHandlers = new()
         {
-            new ExtensionHandler(".bin", (path) => Opening.OpenEditor(path, false, false, true), (path) => $"{Translate.DoTranslation("File hash sum")}: {Encryption.GetEncryptedFile(path, DriverHandler.CurrentEncryptionDriver.DriverName)}"),
+            new ExtensionHandler(".bin", "NitrocidBin", (path) => Opening.OpenEditor(path, false, false, true), (path) => $"{Translate.DoTranslation("File hash sum")}: {Encryption.GetEncryptedFile(path, DriverHandler.CurrentEncryptionDriver.DriverName)}"),
         };
         internal static readonly List<ExtensionHandler> customHandlers = new();
 
@@ -68,6 +68,30 @@ namespace KS.Files.Extensions
         }
 
         /// <summary>
+        /// Checks to see if the extension handler is registered with the implementer
+        /// </summary>
+        /// <param name="extension">Extension to check</param>
+        /// <param name="implementer">Implementer to check</param>
+        /// <returns>True if registered; False otherwise. Also false if the extension doesn't start with the dot.</returns>
+        public static bool IsHandlerRegisteredSpecific(string extension, string implementer)
+        {
+            // Check to see if this handler is built-in
+            if (IsHandlerBuiltinSpecific(extension, implementer))
+                return true;
+
+            // If nothing is registered, indicate that it isn't registered
+            if (customHandlers.Count == 0)
+                return false;
+
+            // Extensions must start with a dot
+            if (!extension.StartsWith("."))
+                return false;
+
+            // Now, check to see if we have this handler
+            return customHandlers.Any((ext) => ext.Extension == extension && ext.Implementer == implementer);
+        }
+
+        /// <summary>
         /// Checks to see if the extension handler is registered
         /// </summary>
         /// <param name="extension">Extension to check</param>
@@ -87,11 +111,51 @@ namespace KS.Files.Extensions
         }
 
         /// <summary>
-        /// Gets the extension handler from the extension
+        /// Checks to see if the extension handler is registered
+        /// </summary>
+        /// <param name="extension">Extension to check</param>
+        /// <param name="implementer">Implementer to check</param>
+        /// <returns>True if registered; False otherwise. Also false if the extension doesn't start with the dot.</returns>
+        public static bool IsHandlerBuiltinSpecific(string extension, string implementer)
+        {
+            // If nothing is registered, indicate that it isn't registered
+            if (extensionHandlers.Count == 0)
+                return false;
+
+            // Extensions must start with a dot
+            if (!extension.StartsWith("."))
+                return false;
+
+            // Now, check to see if we have this handler
+            return extensionHandlers.Any((ext) => ext.Extension == extension && ext.Implementer == implementer);
+        }
+
+        /// <summary>
+        /// Gets the extension handler from the extension and the implementer
+        /// </summary>
+        /// <param name="extension">Extension to check</param>
+        /// <param name="implementer">Implementer to check</param>
+        /// <returns>An instance of <see cref="ExtensionHandler"/> containing info about the extension, or null if there is no handler.</returns>
+        public static ExtensionHandler GetExtensionHandler(string extension, string implementer)
+        {
+            // If nothing is registered, indicate that it isn't registered
+            if (!IsHandlerRegisteredSpecific(extension, implementer))
+                return null;
+
+            // Extensions must start with a dot
+            if (!extension.StartsWith("."))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+
+            // Get the handler
+            return GetExtensionHandlers().First((ext) => ext.Extension == extension && ext.Implementer == implementer);
+        }
+
+        /// <summary>
+        /// Gets the first extension handler from the extension
         /// </summary>
         /// <param name="extension">Extension to check</param>
         /// <returns>An instance of <see cref="ExtensionHandler"/> containing info about the extension, or null if there is no handler.</returns>
-        public static ExtensionHandler GetExtensionHandler(string extension)
+        public static ExtensionHandler GetFirstExtensionHandler(string extension)
         {
             // If nothing is registered, indicate that it isn't registered
             if (!IsHandlerRegistered(extension))
@@ -128,16 +192,23 @@ namespace KS.Files.Extensions
         /// Registers the handler
         /// </summary>
         /// <param name="extension">Extension to register</param>
+        /// <param name="implementer">The implementer name to add to the handler</param>
         /// <param name="handlerAction">Action containing a function that opens the specified file</param>
         /// <param name="infoHandlerAction">Action containing a function that gets information about the specified file</param>
-        public static void RegisterHandler(string extension, Action<string> handlerAction, Func<string, string> infoHandlerAction)
+        public static void RegisterHandler(string extension, string implementer, Action<string> handlerAction, Func<string, string> infoHandlerAction)
         {
+            // Extension and implementer must not be null
+            if (string.IsNullOrEmpty(extension))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The extension isn't specified."));
+            if (string.IsNullOrEmpty(implementer))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The implementer name isn't specified."));
+
             // Extensions must start with a dot
             if (!extension.StartsWith("."))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
 
             // Add the handler
-            var handler = new ExtensionHandler(extension, handlerAction, infoHandlerAction);
+            var handler = new ExtensionHandler(extension, implementer, handlerAction, infoHandlerAction);
             customHandlers.Add(handler);
         }
 
@@ -145,11 +216,11 @@ namespace KS.Files.Extensions
         /// Unregisters the handler
         /// </summary>
         /// <param name="extension">Extension to unregister</param>
-        /// <param name="handlerIndex">Extension handler index</param>
-        public static void UnregisterHandler(string extension, int handlerIndex)
+        /// <param name="implementer">The implementer name to remove from the handler</param>
+        public static void UnregisterHandler(string extension, string implementer)
         {
             // Don't register if the handler is not registered
-            if (!IsHandlerRegistered(extension))
+            if (!IsHandlerRegisteredSpecific(extension, implementer))
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Handler for extension is not registered.") + $" {extension}");
 
             // Extensions must start with a dot
@@ -157,12 +228,8 @@ namespace KS.Files.Extensions
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
 
             // Remove the handler
-            var handlers = GetExtensionHandlers(extension);
-            if (handlerIndex >= handlers.Length)
-                handlerIndex = handlers.Length - 1;
-            if (handlerIndex < 0)
-                handlerIndex = 0;
-            customHandlers.RemoveAt(handlerIndex);
+            var handler = GetExtensionHandler(extension, implementer);
+            UnregisterHandler(extension, handler);
         }
 
         /// <summary>

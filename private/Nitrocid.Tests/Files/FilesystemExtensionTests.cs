@@ -34,7 +34,7 @@ namespace Nitrocid.Tests.Files
         [Description("Extension")]
         public void TestRegisterHandler()
         {
-            ExtensionHandlerTools.RegisterHandler(".ext", (path) =>
+            ExtensionHandlerTools.RegisterHandler(".ext", "ext", (path) =>
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Custom .ext handler");
                 DebugWriter.WriteDebug(DebugLevel.I, path);
@@ -48,12 +48,27 @@ namespace Nitrocid.Tests.Files
         /// </summary>
         [Test]
         [Description("Extension")]
-        public void TestGetExtensionHandler()
+        public void TestGetFirstExtensionHandler()
         {
-            var handler = ExtensionHandlerTools.GetExtensionHandler(".bin");
+            var handler = ExtensionHandlerTools.GetFirstExtensionHandler(".bin");
             handler.ShouldNotBeNull();
             handler.Extension.ShouldBe(".bin");
             handler.MimeType.ShouldBe("application/octet-stream");
+            handler.Implementer.ShouldBe("NitrocidBin");
+        }
+
+        /// <summary>
+        /// Tests getting an extension handler
+        /// </summary>
+        [Test]
+        [Description("Extension")]
+        public void TestGetExtensionHandler()
+        {
+            var handler = ExtensionHandlerTools.GetExtensionHandler(".bin", "NitrocidBin");
+            handler.ShouldNotBeNull();
+            handler.Extension.ShouldBe(".bin");
+            handler.MimeType.ShouldBe("application/octet-stream");
+            handler.Implementer.ShouldBe("NitrocidBin");
         }
 
         /// <summary>
@@ -70,6 +85,7 @@ namespace Nitrocid.Tests.Files
             {
                 handler.Extension.ShouldBe(".ext");
                 handler.MimeType.ShouldBe("application/octet-stream");
+                handler.Implementer.ShouldBe("ext");
             }
         }
 
@@ -124,7 +140,7 @@ namespace Nitrocid.Tests.Files
         [Description("Extension")]
         public void TestUnregisterHandler()
         {
-            var handler = ExtensionHandlerTools.GetExtensionHandler(".ext");
+            var handler = ExtensionHandlerTools.GetFirstExtensionHandler(".ext");
             ExtensionHandlerTools.UnregisterHandler(".ext", handler);
             ExtensionHandlerTools.customHandlers.ShouldBeEmpty();
         }

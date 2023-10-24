@@ -28,6 +28,7 @@ namespace KS.Files.Extensions
     public class ExtensionHandler
     {
         private readonly string extension;
+        private readonly string implementer;
         private readonly string mimeType;
         private readonly Action<string> handler;
         private readonly Func<string, string> infoHandler;
@@ -37,6 +38,11 @@ namespace KS.Files.Extensions
         /// </summary>
         public string Extension =>
             extension;
+        /// <summary>
+        /// Extension handler implementer name
+        /// </summary>
+        public string Implementer =>
+            implementer;
         /// <summary>
         /// MIME type for extension
         /// </summary>
@@ -53,13 +59,14 @@ namespace KS.Files.Extensions
         public Func<string, string> InfoHandler =>
             infoHandler;
 
-        internal ExtensionHandler(string extension, Action<string> handler, Func<string, string> infoHandler)
+        internal ExtensionHandler(string extension, string implementer, Action<string> handler, Func<string, string> infoHandler)
         {
             // First, get the MIME type
             mimeType = MimeTypes.GetMimeType($"file{extension}");
 
             // Then, install the below values
             this.extension = extension;
+            this.implementer = implementer;
             this.handler = handler;
             this.infoHandler = infoHandler ?? ((_) => Translate.DoTranslation("No extra information."));
         }
