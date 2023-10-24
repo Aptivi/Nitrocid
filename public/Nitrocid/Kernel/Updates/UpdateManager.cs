@@ -99,7 +99,7 @@ namespace KS.Kernel.Updates
                     SplashReport.ReportProgress(AvailableUpdate.UpdateVersion.ToString(), 10);
                     if (AutoDownloadUpdate)
                     {
-                        NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(Paths.ExecPath, "update.rar"));
+                        NetworkTransfer.DownloadFile(AvailableUpdate.UpdateURL.ToString(), Path.Combine(Paths.ExecPath, "update.zip"));
                         SplashReport.ReportProgress(Translate.DoTranslation("Downloaded the update successfully!"), 10);
                     }
                     else
