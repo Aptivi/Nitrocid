@@ -33,15 +33,25 @@ namespace KS.ConsoleBase.Interactive
     {
         internal bool isExiting = false;
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Whether redrawing is required
+        /// </summary>
         public static bool RedrawRequired { get; set; } = true;
-        /// <inheritdoc/>
+        /// <summary>
+        /// Current selection for the first pane
+        /// </summary>
         public static int FirstPaneCurrentSelection { get; set; } = 1;
-        /// <inheritdoc/>
+        /// <summary>
+        /// Current selection for the second pane
+        /// </summary>
         public static int SecondPaneCurrentSelection { get; set; } = 1;
-        /// <inheritdoc/>
+        /// <summary>
+        /// Current status
+        /// </summary>
         public static string Status { get; set; } = "";
-        /// <inheritdoc/>
+        /// <summary>
+        /// Current pane
+        /// </summary>
         public static int CurrentPane { get; set; } = 1;
 
         /// <inheritdoc/>
@@ -60,46 +70,74 @@ namespace KS.ConsoleBase.Interactive
         /// <inheritdoc/>
         public virtual IEnumerable SecondaryDataSource => Array.Empty<string>();
 
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI background color
+        /// </summary>
         public static Color BackgroundColor =>
             new(Config.MainConfig.TuiBackgroundColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI foreground color
+        /// </summary>
         public static Color ForegroundColor =>
             new(Config.MainConfig.TuiForegroundColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI pane background color
+        /// </summary>
         public static Color PaneBackgroundColor =>
             new(Config.MainConfig.TuiPaneBackgroundColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI pane separator color
+        /// </summary>
         public static Color PaneSeparatorColor =>
             new(Config.MainConfig.TuiPaneSeparatorColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI pane selected separator color
+        /// </summary>
         public static Color PaneSelectedSeparatorColor =>
             new(Config.MainConfig.TuiPaneSelectedSeparatorColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI pane selected item color (foreground)
+        /// </summary>
         public static Color PaneSelectedItemForeColor =>
             new(Config.MainConfig.TuiPaneSelectedItemForeColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI pane selected item color (background)
+        /// </summary>
         public static Color PaneSelectedItemBackColor =>
             new(Config.MainConfig.TuiPaneSelectedItemBackColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI pane item color (foreground)
+        /// </summary>
         public static Color PaneItemForeColor =>
             new(Config.MainConfig.TuiPaneItemForeColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI pane item color (background)
+        /// </summary>
         public static Color PaneItemBackColor =>
             new(Config.MainConfig.TuiPaneItemBackColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI option background color
+        /// </summary>
         public static Color OptionBackgroundColor =>
             new(Config.MainConfig.TuiOptionBackgroundColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI key binding in option color
+        /// </summary>
         public static Color KeyBindingOptionColor =>
             new(Config.MainConfig.TuiKeyBindingOptionColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI option foreground color
+        /// </summary>
         public static Color OptionForegroundColor =>
             new(Config.MainConfig.TuiOptionForegroundColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI box background color
+        /// </summary>
         public static Color BoxBackgroundColor =>
             new(Config.MainConfig.TuiBoxBackgroundColor);
-        /// <inheritdoc/>
+        /// <summary>
+        /// Interactive TUI box foreground color
+        /// </summary>
         public static Color BoxForegroundColor =>
             new(Config.MainConfig.TuiBoxForegroundColor);
 
