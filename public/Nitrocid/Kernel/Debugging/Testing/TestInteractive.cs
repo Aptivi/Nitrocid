@@ -210,13 +210,14 @@ namespace KS.Kernel.Debugging.Testing
             while (!sectionExiting)
             {
                 // We need to update the names in case the status updated
-                var listFacadesNames = facadesList.Values.Select((fac) =>
-                    $"[{(fac.TestStatus == TestStatus.Success ? "+" : fac.TestStatus == TestStatus.Failed ? "X" : "-")}|" +
-                    $"{(fac.TestOptionalParameters > 0 ? "O" : " ")}] " +
-                    fac.TestName).ToArray();
+                var listFacadesFinalCodeNames = facadesList.Select((fac) =>
+                    $"[{(fac.Value.TestStatus == TestStatus.Success ? "+" : fac.Value.TestStatus == TestStatus.Failed ? "X" : "-")}|" +
+                    $"{(fac.Value.TestOptionalParameters > 0 ? "O" : " ")}] " +
+                    fac.Key).ToArray();
+                var listFacadesNames = facadesList.Values.Select((fac) => fac.TestName).ToArray();
 
                 // Now, prompt for the selection of the facade
-                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test facade to run"), string.Join("/", listFacadesCodeNames), listFacadesNames, string.Join("/", listFacadesAltOptionName), listFacadesAltOptionDesc, true);
+                int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test facade to run"), listFacadesFinalCodeNames, listFacadesNames, listFacadesAltOptionName, listFacadesAltOptionDesc, true);
                 if (sel <= facadeCount)
                 {
                     RunFacade(facadesList[listFacadesCodeNames[sel - 1]]);
