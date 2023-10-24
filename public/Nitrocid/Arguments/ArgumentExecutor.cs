@@ -41,5 +41,11 @@ namespace KS.Arguments
             throw new KernelException(KernelExceptionType.NotImplementedYet);
         }
 
+        /// <summary>
+        /// The help helper
+        /// </summary>
+        public virtual void HelpHelper() =>
+            DebugWriter.WriteDebug(DebugLevel.I, "No additional information found.");
+
     }
 }

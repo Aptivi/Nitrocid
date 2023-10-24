@@ -31,5 +31,10 @@ namespace KS.Arguments
         /// <param name="ListSwitchesOnly">List of provided switches</param>
         void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly);
 
+        /// <summary>
+        /// Shows additional information for the argument when "arghelp argument" is invoked in the admin shell
+        /// </summary>
+        void HelpHelper();
+
     }
 }

@@ -125,7 +125,7 @@ namespace KS.Arguments.Help
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Description:") + $" {HelpDefinition}", true, KernelColorType.ListValue);
 
             // Extra help action for some arguments
-            argumentList[argument].AdditionalHelpAction?.DynamicInvoke();
+            argumentList[argument].ArgumentBase.HelpHelper();
         }
     }
 }

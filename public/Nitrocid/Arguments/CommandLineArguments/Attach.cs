@@ -31,5 +31,9 @@ namespace KS.Arguments.CommandLineArguments
             if (!Debugger.Launch())
                 TextWriterColor.Write(Translate.DoTranslation("Debugger failed to attach. Starting anyways..."));
         }
+
+        public override void HelpHelper() =>
+            TextWriterColor.Write(Translate.DoTranslation("Make sure that you have an appropriate debugger set up in your system before being able to attach Nitrocid to it."));
+
     }
 }

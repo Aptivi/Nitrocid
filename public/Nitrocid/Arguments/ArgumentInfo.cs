@@ -48,10 +48,6 @@ namespace KS.Arguments
         /// Is the argument obsolete?
         /// </summary>
         public bool Obsolete { get; private set; }
-        /// <summary>
-        /// An extra help action intended to show extra information
-        /// </summary>
-        public Action AdditionalHelpAction { get; private set; }
 
         /// <summary>
         /// Installs a new instance of argument info class
@@ -61,21 +57,20 @@ namespace KS.Arguments
         /// <param name="ArgArgumentInfo">Argument info</param>
         /// <param name="ArgumentBase">Kernel argument base for execution</param>
         /// <param name="Obsolete">Is the command obsolete?</param>
-        /// <param name="AdditionalHelpAction">An extra help action intended to show extra information</param>
-        public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo[] ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false, Action AdditionalHelpAction = null)
+        public ArgumentInfo(string Argument, string HelpDefinition, CommandArgumentInfo[] ArgArgumentInfo, ArgumentExecutor ArgumentBase, bool Obsolete = false)
         {
             this.Argument = Argument;
             this.HelpDefinition = HelpDefinition;
             this.ArgArgumentInfo = ArgArgumentInfo;
             this.ArgumentBase = ArgumentBase;
             this.Obsolete = Obsolete;
-            this.AdditionalHelpAction = AdditionalHelpAction;
         }
 
         /// <summary>
         /// Gets the translated version of help entry (KS built-in arguments only)
         /// </summary>
-        public string GetTranslatedHelpEntry() => Translate.DoTranslation(HelpDefinition);
+        public string GetTranslatedHelpEntry() =>
+            Translate.DoTranslation(HelpDefinition);
 
     }
 }
