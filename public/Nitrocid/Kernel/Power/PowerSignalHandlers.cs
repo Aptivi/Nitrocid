@@ -36,8 +36,8 @@ namespace KS.Kernel.Power
                 return;
 
             // Works on Windows and Linux
-            signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGINT, SigQuit));
-            signalHandlers.Add(PosixSignalRegistration.Create((PosixSignal)PowerSignals.SIGTERM, SigQuit));
+            signalHandlers.Add(PosixSignalRegistration.Create(PosixSignal.SIGINT, SigQuit));
+            signalHandlers.Add(PosixSignalRegistration.Create(PosixSignal.SIGTERM, SigQuit));
 
             // Works on Linux only
             if (KernelPlatform.IsOnUnix())
