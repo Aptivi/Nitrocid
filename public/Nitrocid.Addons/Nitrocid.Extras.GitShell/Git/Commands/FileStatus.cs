@@ -16,13 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using LibGit2Sharp;
 using System.IO;
-using System.Linq;
 
 namespace Nitrocid.Extras.GitShell.Git.Commands
 {

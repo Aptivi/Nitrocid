@@ -22,7 +22,6 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;
 using Shouldly;
-using Terminaux.Colors;
 
 namespace Nitrocid.Tests.Misc.Editors
 {
