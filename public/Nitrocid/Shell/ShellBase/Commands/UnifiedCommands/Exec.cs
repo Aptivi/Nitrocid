@@ -16,6 +16,7 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.Shell.ShellBase.Switches;
 using System.Linq;
 
 namespace KS.Shell.ShellBase.Commands.UnifiedCommands
@@ -33,6 +34,11 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
         {
             string command = parameters.ArgumentsList[0];
             string arguments = string.Join(' ', parameters.ArgumentsList.Skip(1).ToArray());
+            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-forked"))
+            {
+                ProcessExecutor.ExecuteProcessForked(command, arguments);
+                return 0;
+            }
             return ProcessExecutor.ExecuteProcess(command, arguments);
         }
 
