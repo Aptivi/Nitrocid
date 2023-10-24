@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class SendNotificationSimple : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Sends a notification as asterisk to test the receiver");
-        public override void Run()
+        public override void Run(params string[] args)
         {
             foreach (var value in Enum.GetValues(typeof(NotificationPriority)))
             {

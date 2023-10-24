@@ -26,9 +26,11 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Print a string to console");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run()
+        public override int TestOptionalParameters => 1;
+        public override void Run(params string[] args)
         {
-            TextWriterColor.WriteKernelColor("Hello world!", true, KernelColorType.Success);
+            string rendered = args.Length > 0 ? args[0] : "Hello world!";
+            TextWriterColor.WriteKernelColor(rendered, true, KernelColorType.Success);
         }
     }
 }

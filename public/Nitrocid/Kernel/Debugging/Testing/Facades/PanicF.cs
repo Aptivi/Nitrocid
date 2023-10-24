@@ -25,7 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the kernel error facility with format support");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             KernelPanic.KernelErrorContinuable("{0}", null, Translate.DoTranslation("Test panicking the kernel"));
         }

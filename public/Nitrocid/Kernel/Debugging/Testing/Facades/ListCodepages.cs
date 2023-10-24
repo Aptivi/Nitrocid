@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Lists all supported codepages");
         public override TestSection TestSection => TestSection.Languages;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             string[] Encodings = Encoding.GetEncodings().Select((ei) => $"[{ei.CodePage}] {ei.Name}: {ei.DisplayName}").ToArray();
             ListWriterColor.WriteList(Encodings);

@@ -31,7 +31,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Kernel;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => false;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             var Results = ConfigTools.CheckConfigVariables();
             var NotFound = new List<string>();

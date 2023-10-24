@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the cryptographically secure random number generator");
         public override TestSection TestSection => TestSection.Drivers;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             DriverHandler.SetDriver<IRandomDriver>("Cryptographic");
             int randomNum = RandomDriver.Random();

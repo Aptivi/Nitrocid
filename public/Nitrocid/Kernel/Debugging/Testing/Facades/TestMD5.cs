@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Encrypts a string using MD5");
         public override TestSection TestSection => TestSection.Drivers;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             // Time when you're on a breakpoint is counted
             var spent = new Stopwatch();

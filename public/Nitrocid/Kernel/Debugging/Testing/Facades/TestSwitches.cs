@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests switches");
         public override TestSection TestSection => TestSection.Shell;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             string[] ListSwitchesOnly = ArgumentsParser.ParseShellCommandArguments("help -r", ShellType.Shell).total[0].SwitchesList;
             ListWriterColor.WriteList(ListSwitchesOnly);

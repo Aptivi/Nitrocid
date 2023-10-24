@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests changing the language to your preferred language");
         public override TestSection TestSection => TestSection.Languages;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             var langCodes = InputChoiceTools.GetInputChoices(string.Join("/", LanguageManager.Languages.Keys), LanguageManager.Languages.Values.Select((lang) => lang.FullLanguageName).ToArray());
             int langIndex = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose your language"), langCodes) - 1;

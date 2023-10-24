@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the regular expression facility");
         public override TestSection TestSection => TestSection.Drivers;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a string to check:") + " ");
             string Regex = Input.ReadLine(Translate.DoTranslation("Write a regular expression:") + " ");

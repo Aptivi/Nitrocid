@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests an event");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write an event name:") + " ");
             string[] eventArgs = new string[] { "RanByTest" };

@@ -26,7 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the list writer with the integer and integer array");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             var NormalIntegerList = new List<int>() { 1, 2, 3 };
             var ArrayIntegerList = new List<int[]>() { { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } }, { new int[] { 1, 2, 3 } } };

@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestExecuteAssembly : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests assembly entry point execution");
-        public override void Run()
+        public override void Run(params string[] args)
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
             Text = FilesystemTools.NeutralizePath(Text);

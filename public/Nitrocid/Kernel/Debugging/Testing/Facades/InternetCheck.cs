@@ -28,7 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Network;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => true;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             bool netFound = NetworkTools.InternetAvailable;
             TextWriterColor.Write(Translate.DoTranslation("Internet availability is") + $": {netFound}");

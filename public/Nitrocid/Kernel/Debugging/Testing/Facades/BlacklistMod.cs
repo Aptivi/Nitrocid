@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Modification;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => true;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             ModManager.AddModToBlacklist("MaliciousMod");
             TestActualValue = ModManager.GetBlacklistedMods().Contains("MaliciousMod");

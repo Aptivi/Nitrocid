@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class PowerLineTest : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests your console for PowerLine support");
-        public override void Run()
+        public override void Run(params string[] args)
         {
             char TransitionChar = Convert.ToChar(0xE0B0);
             char PadlockChar = Convert.ToChar(0xE0A2);

@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Lists supported cultures");
         public override TestSection TestSection => TestSection.Languages;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             string Text = Input.ReadLine(Translate.DoTranslation("Write a search term:") + " ");
             var Cults = CultureInfo.GetCultures(CultureTypes.AllCultures);

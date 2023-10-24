@@ -25,7 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests probing the hardware");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             HardwareProbe.StartProbing();
         }

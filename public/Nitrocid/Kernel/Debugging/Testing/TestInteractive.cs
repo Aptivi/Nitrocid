@@ -210,7 +210,10 @@ namespace KS.Kernel.Debugging.Testing
             while (!sectionExiting)
             {
                 // We need to update the names in case the status updated
-                var listFacadesNames = facadesList.Values.Select((fac) => $"[{(fac.TestStatus == TestStatus.Success ? "+" : fac.TestStatus == TestStatus.Failed ? "X" : "-")}] " + fac.TestName).ToArray();
+                var listFacadesNames = facadesList.Values.Select((fac) =>
+                    $"[{(fac.TestStatus == TestStatus.Success ? "+" : fac.TestStatus == TestStatus.Failed ? "X" : "-")}|" +
+                    $"{(fac.TestOptionalParameters > 0 ? "O" : " ")}] " +
+                    fac.TestName).ToArray();
 
                 // Now, prompt for the selection of the facade
                 int sel = SelectionStyle.PromptSelection(Translate.DoTranslation("Choose a test facade to run"), string.Join("/", listFacadesCodeNames), listFacadesNames, string.Join("/", listFacadesAltOptionName), listFacadesAltOptionDesc, true);
@@ -251,10 +254,21 @@ namespace KS.Kernel.Debugging.Testing
             {
                 while (!tested)
                 {
+                    // Check for optional test parameters
+                    List<string> parameters = new();
+                    for (int i = 0; i < facade.TestOptionalParameters; i++)
+                    {
+                        string answer = InfoBoxColor.WriteInfoBoxInput(
+                            Translate.DoTranslation("This test contains optional parameters. Enter the value of the parameter to add to the test parameters.") + "\n" +
+                            Translate.DoTranslation("Parameters count") + $": {i + 1}/{facade.TestOptionalParameters}"
+                        );
+                        parameters.Add(answer);
+                    }
+
                     // ...test the facade
                     ConsoleWrapper.Clear();
                     facade.status = TestStatus.Neutral;
-                    facade.Run();
+                    facade.Run(parameters.ToArray());
 
                     if (facade.TestInteractive)
                     {
@@ -263,7 +277,8 @@ namespace KS.Kernel.Debugging.Testing
                             Translate.DoTranslation("Did the test run as expected?") + "\n\n" +
                             "  * y: " + Translate.DoTranslation("Yes, the test ran as expected") + "\n" +
                             "  * n: " + Translate.DoTranslation("No, the test didn't run as expected") + "\n" +
-                            "  * r: " + Translate.DoTranslation("Retry the test"));
+                            "  * r: " + Translate.DoTranslation("Retry the test")
+                        );
 
                         // Set status or retry
                         switch (answer)

@@ -26,7 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("How many milliseconds did it really take to sleep for just one millisecond?");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             TextWriterColor.WriteColor("{0} ms", true, ThreadManager.GetActualMilliseconds(1));
         }

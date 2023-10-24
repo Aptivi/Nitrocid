@@ -25,7 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class CliDoublePaneTest : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests the interactive TUI system with a double pane interaction");
-        public override void Run() =>
+        public override void Run(params string[] args) =>
             InteractiveTuiTools.OpenInteractiveTui(new CliDoublePaneTestData());
     }
 }

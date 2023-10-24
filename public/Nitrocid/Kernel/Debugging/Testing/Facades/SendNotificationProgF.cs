@@ -26,7 +26,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class SendNotificationProgF : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Sends a failing progress notification to test the receiver");
-        public override void Run()
+        public override void Run(params string[] args)
         {
             SplashReport._KernelBooted = true;
             var Notif = new Notification(Translate.DoTranslation("Test notification"), Translate.DoTranslation("Description is here"), NotificationPriority.Low, NotificationType.Progress);

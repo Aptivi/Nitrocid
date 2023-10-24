@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Checks all the localization text line numbers to see if they're all equal");
         public override TestSection TestSection => TestSection.Languages;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             var EnglishJson = JToken.Parse(LanguageResources.eng);
             JToken LanguageJson;

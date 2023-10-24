@@ -26,6 +26,6 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Shows local kernel date");
         public override TestSection TestSection => TestSection.Kernel;
-        public override void Run() => TextWriterColor.Write(TimeDateRenderers.RenderDate());
+        public override void Run(params string[] args) => TextWriterColor.Write(TimeDateRenderers.RenderDate());
     }
 }

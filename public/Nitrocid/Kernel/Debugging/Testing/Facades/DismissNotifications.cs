@@ -24,7 +24,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class DismissNotifications : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Dismisses all sent notifications");
-        public override void Run()
+        public override void Run(params string[] args)
         {
             for (int i = NotificationManager.NotifRecents.Count - 1; i >= 0; i--)
                 NotificationManager.NotifDismiss(i);

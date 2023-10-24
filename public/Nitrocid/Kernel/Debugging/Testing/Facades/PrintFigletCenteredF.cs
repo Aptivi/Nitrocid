@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Print a figlet string to console with formatting (centered)");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             CenteredFigletTextColor.WriteCenteredFigletKernelColor(FigletizeFonts.TryGetByName("speed"), "Hello, {0}!", KernelColorType.Success, "Nitrocid KS");
         }

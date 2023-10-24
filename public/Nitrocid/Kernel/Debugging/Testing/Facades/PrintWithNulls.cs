@@ -27,7 +27,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Print a string to console with null characters");
         public override TestSection TestSection => TestSection.ConsoleBase;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             TextWriterColor.WriteKernelColor("Hello world!\nHow's your day going? \0Should be after this:\0\0\0", false, KernelColorType.Success);
             TextWriterColor.WriteKernelColor(" [{0}, {1}] ", true, KernelColorType.NeutralText, ConsoleWrapper.CursorLeft, ConsoleWrapper.CursorTop);

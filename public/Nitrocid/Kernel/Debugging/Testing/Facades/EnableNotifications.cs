@@ -25,7 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class EnableNotifications : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Enables the notification system");
-        public override void Run()
+        public override void Run(params string[] args)
         {
             if (!NotificationManager.NotifThread.IsAlive)
                 NotificationManager.NotifThread.Start();

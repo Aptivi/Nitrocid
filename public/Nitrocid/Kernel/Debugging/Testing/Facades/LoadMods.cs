@@ -25,7 +25,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Starts all mods");
         public override TestSection TestSection => TestSection.Modification;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             ModManager.StartMods();
         }

@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override TestSection TestSection => TestSection.Languages;
         public override bool TestInteractive => false;
         public override object TestExpectedValue => false;
-        public override void Run()
+        public override void Run(params string[] args)
         {
             string TextPath = Input.ReadLine(Translate.DoTranslation("Write a translatable string list file path to check:") + " ");
             var LocalizedStrings = LanguageManager.Languages["eng"].Strings;
