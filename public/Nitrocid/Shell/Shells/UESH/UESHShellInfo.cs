@@ -1618,6 +1618,22 @@ namespace KS.Shell.Shells.UESH
                     }, new WinElevateCommand())
             },
 
+            { "wraptext",
+                new CommandInfo("wraptext", ShellType, /* Localizable */ "Wraps the text file",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "file"),
+                        }, new[]
+                        {
+                            new SwitchInfo("columns", /* Localizable */ "Specifies the columns per line", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                            })
+                        }, true)
+                    }, new WrapTextCommand())
+            },
+
             { "zip",
                 new CommandInfo("zip", ShellType, /* Localizable */ "Creates a ZIP archive",
                     new[] {

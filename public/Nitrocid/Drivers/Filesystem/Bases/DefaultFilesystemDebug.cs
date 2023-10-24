@@ -570,5 +570,19 @@ namespace KS.Drivers.Filesystem.Bases
             base.WriteContentsText(filename, contents);
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WriteContentsText)}({filename}, length {contents.Length}) exit");
         }
+
+        public override void WrapTextFile(string path)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WrapTextFile)}({path}) entry");
+            base.WrapTextFile(path);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WrapTextFile)}({path}) exit");
+        }
+
+        public override void WrapTextFile(string path, int columns)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WrapTextFile)}({path}, {columns}) entry");
+            base.WrapTextFile(path, columns);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WrapTextFile)}({path}, {columns}) exit");
+        }
     }
 }

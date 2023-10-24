@@ -31,5 +31,20 @@ namespace KS.Files.Operations
         /// <param name="path">Path to an existing file</param>
         public static void ClearFile(string path) =>
             DriverHandler.CurrentFilesystemDriverLocal.ClearFile(path);
+
+        /// <summary>
+        /// Wraps the text file contents with 78 columns per line (depending on the current driver).
+        /// </summary>
+        /// <param name="path">Path to an existing text file</param>
+        public static void WrapTextFile(string path) =>
+            DriverHandler.CurrentFilesystemDriverLocal.WrapTextFile(path);
+
+        /// <summary>
+        /// Wraps the text file contents with 78 columns per line.
+        /// </summary>
+        /// <param name="path">Path to an existing text file</param>
+        /// <param name="columns">How many columns until wrapping begins?</param>
+        public static void WrapTextFile(string path, int columns) =>
+            DriverHandler.CurrentFilesystemDriverLocal.WrapTextFile(path, columns);
     }
 }

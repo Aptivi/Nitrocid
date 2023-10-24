@@ -568,5 +568,18 @@ namespace KS.Drivers.Filesystem
         /// <returns>Contents of the stream</returns>
         string ReadToEndAndSeek(ref StreamReader stream);
 
+        /// <summary>
+        /// Wraps the text file contents with 78 columns per line.
+        /// </summary>
+        /// <param name="path">Path to an existing text file</param>
+        void WrapTextFile(string path);
+
+        /// <summary>
+        /// Wraps the text file contents with 78 columns per line.
+        /// </summary>
+        /// <param name="path">Path to an existing text file</param>
+        /// <param name="columns">How many columns until wrapping begins?</param>
+        void WrapTextFile(string path, int columns);
+
     }
 }

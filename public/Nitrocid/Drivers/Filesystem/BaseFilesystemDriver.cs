@@ -1583,17 +1583,30 @@ namespace KS.Drivers.Filesystem
             return false;
         }
 
-        /// <summary>
-        /// Reads all the characters in the stream until the end and seeks the stream to the beginning, if possible.
-        /// </summary>
-        /// <param name="stream">The stream reader</param>
-        /// <returns>Contents of the stream</returns>
+        /// <inheritdoc/>
         public virtual string ReadToEndAndSeek(ref StreamReader stream)
         {
             string StreamString = stream.ReadToEnd();
             if (stream.BaseStream.CanSeek)
                 stream.BaseStream.Seek(0L, SeekOrigin.Begin);
             return StreamString;
+        }
+
+        /// <inheritdoc/>
+        public virtual void WrapTextFile(string path) =>
+            WrapTextFile(path, 78);
+
+        /// <inheritdoc/>
+        public virtual void WrapTextFile(string path, int columns)
+        {
+            // Check to see if we're interacting with a text file
+            if (IsBinaryFile(path) || IsJson(path) || IsSql(path))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The file you provided, {0}, is not a valid text file. If this file is a JSON file, this function might cause it to be unreadable. For your file's safety, this operation is halted to prevent file corruption."));
+
+            // Now, do the wrapping!
+            string contents = ReadContentsText(path);
+            var wrapped = TextTools.GetWrappedSentences(contents, columns);
+            WriteContents(path, wrapped);
         }
     }
 }
