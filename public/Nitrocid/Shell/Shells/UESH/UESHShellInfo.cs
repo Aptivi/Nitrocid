@@ -874,6 +874,13 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo()
                     }, new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
+
+            { "lsexthandlers",
+                new CommandInfo("lsexthandlers", ShellType, /* Localizable */ "Lists available extension handlers",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new LsExtHandlersCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
            
             { "lsdiskparts",
                 new CommandInfo("lsdiskparts", ShellType, /* Localizable */ "Lists all the disk partitions",
