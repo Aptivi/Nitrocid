@@ -66,7 +66,10 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "pageNum", null, true)
+                            new CommandArgumentPart(false, "pageNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new ListCommand())
             },
@@ -86,7 +89,10 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "mailId", null, true),
+                            new CommandArgumentPart(true, "mailId", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                             new CommandArgumentPart(true, "targetFolder")
                         })
                     }, new MvCommand())
@@ -108,7 +114,10 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "mailid", null, true)
+                            new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new ReadCommand())
             },
@@ -118,7 +127,10 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "mailid", null, true)
+                            new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new ReadEncCommand())
             },
@@ -139,7 +151,10 @@ namespace KS.Shell.Shells.Mail
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "mailid", null, true)
+                            new CommandArgumentPart(true, "mailid", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new RmCommand())
             },

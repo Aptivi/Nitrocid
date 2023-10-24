@@ -49,7 +49,10 @@ namespace KS.Shell.Shells.Debug
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "sessionNum", null, true)
+                            new CommandArgumentPart(true, "sessionNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new DebugLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
@@ -59,7 +62,10 @@ namespace KS.Shell.Shells.Debug
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "excNum", null, true)
+                            new CommandArgumentPart(true, "excNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new ExcInfoCommand())
             },

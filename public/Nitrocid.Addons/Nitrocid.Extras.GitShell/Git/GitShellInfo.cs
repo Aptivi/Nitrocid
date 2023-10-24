@@ -44,8 +44,14 @@ namespace Nitrocid.Extras.GitShell.Git
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
-                            new CommandArgumentPart(false, "startLineNum", null, true),
-                            new CommandArgumentPart(false, "endLineNum", null, true),
+                            new CommandArgumentPart(false, "startLineNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(false, "endLineNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         })
                     }, new BlameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },

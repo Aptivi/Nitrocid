@@ -48,7 +48,10 @@ namespace Nitrocid.Extras.Notes
                     {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "noteNumber", null, true)
+                            new CommandArgumentPart(true, "noteNumber", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         }),
                     }, new RemoveNote())
             },

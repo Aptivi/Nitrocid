@@ -93,7 +93,10 @@ namespace KS.Shell.Shells.Json
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "index", null, true),
+                            new CommandArgumentPart(true, "index", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                             new CommandArgumentPart(true, "valueInArray")
                         }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
@@ -189,7 +192,10 @@ namespace KS.Shell.Shells.Json
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "index", null, true)
+                            new CommandArgumentPart(true, "index", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
                             {

@@ -37,7 +37,10 @@ namespace Nitrocid.Extras.UnitConv
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "type", () => Quantity.Infos.Select((src) => src.Name).ToArray()),
+                            new CommandArgumentPart(true, "type", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => Quantity.Infos.Select((src) => src.Name).ToArray()
+                            }),
                         })
                     }, new ListUnitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -47,8 +50,14 @@ namespace Nitrocid.Extras.UnitConv
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "unittype", () => Quantity.Infos.Select((src) => src.Name).ToArray()),
-                            new CommandArgumentPart(true, "quantity", null, true),
+                            new CommandArgumentPart(true, "unittype", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => Quantity.Infos.Select((src) => src.Name).ToArray()
+                            }),
+                            new CommandArgumentPart(true, "quantity", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                             new CommandArgumentPart(true, "sourceunit"),
                             new CommandArgumentPart(true, "targetunit"),
                         }, new[]

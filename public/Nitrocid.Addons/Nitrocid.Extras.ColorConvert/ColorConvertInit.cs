@@ -97,9 +97,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "R", null, true),
-                            new CommandArgumentPart(true, "G", null, true),
-                            new CommandArgumentPart(true, "B", null, true),
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorRgbToHexCommand())
             },
@@ -109,9 +118,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "R", null, true),
-                            new CommandArgumentPart(true, "G", null, true),
-                            new CommandArgumentPart(true, "B", null, true),
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorRgbToCmykCommand())
             },
@@ -121,9 +139,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "R", null, true),
-                            new CommandArgumentPart(true, "G", null, true),
-                            new CommandArgumentPart(true, "B", null, true),
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorRgbToCmykKSCommand())
             },
@@ -133,9 +160,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "R", null, true),
-                            new CommandArgumentPart(true, "G", null, true),
-                            new CommandArgumentPart(true, "B", null, true),
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorRgbToHslCommand())
             },
@@ -145,9 +181,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "R", null, true),
-                            new CommandArgumentPart(true, "G", null, true),
-                            new CommandArgumentPart(true, "B", null, true),
+                            new CommandArgumentPart(true, "R", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "G", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "B", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorRgbToHslKSCommand())
             },
@@ -157,9 +202,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "H", null, true),
-                            new CommandArgumentPart(true, "S", null, true),
-                            new CommandArgumentPart(true, "L", null, true),
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorHslToHexCommand())
             },
@@ -169,9 +223,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "H", null, true),
-                            new CommandArgumentPart(true, "S", null, true),
-                            new CommandArgumentPart(true, "L", null, true),
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorHslToCmykCommand())
             },
@@ -181,9 +244,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "H", null, true),
-                            new CommandArgumentPart(true, "S", null, true),
-                            new CommandArgumentPart(true, "L", null, true),
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorHslToCmykKSCommand())
             },
@@ -193,9 +265,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "H", null, true),
-                            new CommandArgumentPart(true, "S", null, true),
-                            new CommandArgumentPart(true, "L", null, true),
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorHslToRgbCommand())
             },
@@ -205,9 +286,18 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "H", null, true),
-                            new CommandArgumentPart(true, "S", null, true),
-                            new CommandArgumentPart(true, "L", null, true),
+                            new CommandArgumentPart(true, "H", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "S", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "L", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorHslToRgbKSCommand())
             },
@@ -217,10 +307,22 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "C", null, true),
-                            new CommandArgumentPart(true, "M", null, true),
-                            new CommandArgumentPart(true, "Y", null, true),
-                            new CommandArgumentPart(true, "K", null, true),
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorCmykToHexCommand())
             },
@@ -230,10 +332,22 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "C", null, true),
-                            new CommandArgumentPart(true, "M", null, true),
-                            new CommandArgumentPart(true, "Y", null, true),
-                            new CommandArgumentPart(true, "K", null, true),
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorCmykToRgbCommand())
             },
@@ -243,10 +357,22 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "C", null, true),
-                            new CommandArgumentPart(true, "M", null, true),
-                            new CommandArgumentPart(true, "Y", null, true),
-                            new CommandArgumentPart(true, "K", null, true),
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorCmykToRgbKSCommand())
             },
@@ -256,10 +382,22 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "C", null, true),
-                            new CommandArgumentPart(true, "M", null, true),
-                            new CommandArgumentPart(true, "Y", null, true),
-                            new CommandArgumentPart(true, "K", null, true),
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorCmykToHslCommand())
             },
@@ -269,10 +407,22 @@ namespace Nitrocid.Extras.ColorConvert
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "C", null, true),
-                            new CommandArgumentPart(true, "M", null, true),
-                            new CommandArgumentPart(true, "Y", null, true),
-                            new CommandArgumentPart(true, "K", null, true),
+                            new CommandArgumentPart(true, "C", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "M", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "Y", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "K", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new ColorCmykToHslKSCommand())
             },

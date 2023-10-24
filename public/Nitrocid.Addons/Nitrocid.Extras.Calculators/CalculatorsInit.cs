@@ -47,8 +47,14 @@ namespace Nitrocid.Extras.Calculators
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "real", null, true),
-                            new CommandArgumentPart(true, "imaginary", null, true),
+                            new CommandArgumentPart(true, "real", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "imaginary", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         })
                     }, new ImaginaryCommand())
             },

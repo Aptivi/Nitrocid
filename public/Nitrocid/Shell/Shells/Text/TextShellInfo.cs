@@ -66,8 +66,14 @@ namespace KS.Shell.Shells.Text
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "charNum", null, true),
-                            new CommandArgumentPart(true, "lineNum", null, true)
+                            new CommandArgumentPart(true, "charNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new DelCharNumCommand())
             },
@@ -77,8 +83,14 @@ namespace KS.Shell.Shells.Text
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "lineNum", null, true),
-                            new CommandArgumentPart(false, "lineNum2", null, true)
+                            new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new DelLineCommand())
             },
@@ -89,8 +101,14 @@ namespace KS.Shell.Shells.Text
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "word/phrase"),
-                            new CommandArgumentPart(true, "lineNum", null, true),
-                            new CommandArgumentPart(false, "lineNum2", null, true)
+                            new CommandArgumentPart(true, "lineNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new DelWordCommand())
             },
@@ -100,7 +118,10 @@ namespace KS.Shell.Shells.Text
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "linenumber", null, true)
+                            new CommandArgumentPart(true, "linenumber", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new EditLineCommand())
             },
@@ -117,8 +138,14 @@ namespace KS.Shell.Shells.Text
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "lineNum", null, true),
-                            new CommandArgumentPart(false, "lineNum2", null, true)
+                            new CommandArgumentPart(false, "lineNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new PrintCommand(), CommandFlags.Wrappable)
             },
@@ -130,7 +157,10 @@ namespace KS.Shell.Shells.Text
                         {
                             new CommandArgumentPart(true, "char"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", null, true)
+                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new QueryCharCommand(), CommandFlags.Wrappable)
             },
@@ -142,7 +172,10 @@ namespace KS.Shell.Shells.Text
                         {
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", null, true)
+                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new QueryWordCommand(), CommandFlags.Wrappable)
             },
@@ -154,7 +187,10 @@ namespace KS.Shell.Shells.Text
                         {
                             new CommandArgumentPart(true, "regex"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", null, true)
+                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new QueryWordRegexCommand(), CommandFlags.Wrappable)
             },
@@ -178,7 +214,10 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", null, true)
+                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new ReplaceInlineCommand())
             },
@@ -202,7 +241,10 @@ namespace KS.Shell.Shells.Text
                             new CommandArgumentPart(true, "regex"),
                             new CommandArgumentPart(true, "word/phrase"),
                             new CommandArgumentPart(true, "lineNum/all"),
-                            new CommandArgumentPart(false, "lineNum2", null, true)
+                            new CommandArgumentPart(false, "lineNum2", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new ReplaceInlineRegexCommand())
             },

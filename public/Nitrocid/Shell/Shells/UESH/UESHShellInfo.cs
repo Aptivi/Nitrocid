@@ -307,7 +307,10 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "oldUserName", () => UserManagement.ListAllUsers().ToArray()),
+                            new CommandArgumentPart(true, "oldUserName", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => UserManagement.ListAllUsers().ToArray()
+                            }),
                             new CommandArgumentPart(true, "newUserName"),
                         })
                     }, new ChUsrNameCommand(), CommandFlags.Strict)
@@ -426,7 +429,10 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
-                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                            new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                            }),
                         }, new[]
                         {
                             new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -447,7 +453,10 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "encodedString"),
-                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                            new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                            }),
                         }, new[]
                         {
                             new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -487,7 +496,10 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "diskNum", null, true),
+                            new CommandArgumentPart(true, "diskNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new DiskInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -497,7 +509,10 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "notificationNumber", null, true),
+                            new CommandArgumentPart(true, "notificationNumber", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         })
                     }, new DismissNotifCommand())
             },
@@ -559,7 +574,10 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
-                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                            new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                            }),
                         }, new[]
                         {
                             new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -580,7 +598,10 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "string"),
-                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                            new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                            }),
                         }, new[]
                         {
                             new SwitchInfo("key", /* Localizable */ "Specifies the key", new SwitchOptions()
@@ -683,7 +704,10 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "algorithm", EncodingDriverTools.GetEncodingDriverNames),
+                            new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new GetKeyIvCommand())
             },
@@ -707,7 +731,10 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "HardwareType", () => new[] { "HDD", "CPU", "GPU", "RAM", "all" })
+                            new CommandArgumentPart(true, "HardwareType", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => new[] { "HDD", "CPU", "GPU", "RAM", "all" }
+                            })
                         })
                     }, new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
@@ -768,7 +795,10 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "reload/load/unload"),
-                            new CommandArgumentPart(true, "customlanguagename", () => LanguageManager.CustomLanguages.Keys.ToArray()),
+                            new CommandArgumentPart(true, "customlanguagename", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => LanguageManager.CustomLanguages.Keys.ToArray()
+                            }),
                         }),
                         new CommandArgumentInfo(new[]
                         {
@@ -850,7 +880,10 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "diskNum", null, true),
+                            new CommandArgumentPart(true, "diskNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new LsDiskPartsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -952,8 +985,14 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "diskNum", null, true),
-                            new CommandArgumentPart(true, "partNum", null, true),
+                            new CommandArgumentPart(true, "diskNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(true, "partNum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new PartInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -1086,7 +1125,10 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "ip"),
-                            new CommandArgumentPart(false, "port", null, true),
+                            new CommandArgumentPart(false, "port", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         })
                     }, new RebootCommand())
             },
@@ -1111,7 +1153,10 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "address"),
-                            new CommandArgumentPart(true, "port", null, true),
+                            new CommandArgumentPart(true, "port", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                             new CommandArgumentPart(false, "command"),
                         })
                     }, new RexecCommand(), CommandFlags.Strict)
@@ -1336,7 +1381,10 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "ip"),
-                            new CommandArgumentPart(false, "port", null, true),
+                            new CommandArgumentPart(false, "port", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                         })
                     }, new ShutdownCommand())
             },
@@ -1389,7 +1437,10 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm/all", () => EncryptionDriverTools.GetEncryptionDriverNames()),
+                            new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = EncryptionDriverTools.GetEncryptionDriverNames
+                            }),
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "outputFile"),
                         }, new[] {
@@ -1406,7 +1457,10 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm/all", () => EncryptionDriverTools.GetEncryptionDriverNames()),
+                            new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = EncryptionDriverTools.GetEncryptionDriverNames
+                            }),
                             new CommandArgumentPart(true, "dir"),
                             new CommandArgumentPart(false, "outputFile"),
                         }, new[] {
@@ -1513,7 +1567,10 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "algorithm", () => EncryptionDriverTools.GetEncryptionDriverNames()),
+                            new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = EncryptionDriverTools.GetEncryptionDriverNames
+                            }),
                             new CommandArgumentPart(true, "calculatedhash"),
                             new CommandArgumentPart(true, "hashfile/expectedhash"),
                             new CommandArgumentPart(true, "file"),

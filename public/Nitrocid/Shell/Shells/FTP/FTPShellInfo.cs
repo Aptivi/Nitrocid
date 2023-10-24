@@ -223,7 +223,10 @@ namespace KS.Shell.Shells.FTP
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "file"),
-                            new CommandArgumentPart(true, "permnumber", null, true)
+                            new CommandArgumentPart(true, "permnumber", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new PermCommand())
             },

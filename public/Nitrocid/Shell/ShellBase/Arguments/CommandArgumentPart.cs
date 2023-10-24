@@ -53,6 +53,28 @@ namespace KS.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="argumentExpression">Command argument expression</param>
         /// <param name="argumentRequired">Is this argument part required?</param>
+        /// <param name="options">Command argument part options</param>
+        public CommandArgumentPart(bool argumentRequired, string argumentExpression, CommandArgumentPartOptions options)
+        {
+            // Get a part instance
+            options ??= new CommandArgumentPartOptions();
+            var part = new CommandArgumentPart(argumentRequired, argumentExpression, options.AutoCompleter, options.IsNumeric, options.ExactWording);
+
+            // Install some values
+            ArgumentRequired = argumentRequired;
+            ArgumentExpression = argumentExpression;
+
+            // Install values from the instance
+            AutoCompleter = part.AutoCompleter;
+            IsNumeric = part.IsNumeric;
+            ExactWording = part.ExactWording;
+        }
+
+        /// <summary>
+        /// Installs a new instance of the command argument part class
+        /// </summary>
+        /// <param name="argumentExpression">Command argument expression</param>
+        /// <param name="argumentRequired">Is this argument part required?</param>
         /// <param name="autoCompleter">Auto completion function</param>
         /// <param name="isNumeric">Specifies whether the argument accepts only numbers (and dots for float values)</param>
         /// <param name="exactWording">User is required to provide this exact wording</param>

@@ -66,7 +66,10 @@ namespace KS.Shell.Shells.Hex
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "bytenumber", null, true)
+                            new CommandArgumentPart(true, "bytenumber", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new DelByteCommand())
             },
@@ -76,8 +79,14 @@ namespace KS.Shell.Shells.Hex
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "startbyte", null, true),
-                            new CommandArgumentPart(false, "endbyte", null, true)
+                            new CommandArgumentPart(true, "startbyte", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new DelBytesCommand())
             },
@@ -94,8 +103,14 @@ namespace KS.Shell.Shells.Hex
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "startbyte", null, true),
-                            new CommandArgumentPart(false, "endbyte", null, true)
+                            new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new PrintCommand(), CommandFlags.Wrappable)
             },
@@ -106,8 +121,14 @@ namespace KS.Shell.Shells.Hex
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "byte"),
-                            new CommandArgumentPart(false, "startbyte", null, true),
-                            new CommandArgumentPart(false, "endbyte", null, true)
+                            new CommandArgumentPart(false, "startbyte", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(false, "endbyte", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new QueryByteCommand(), CommandFlags.Wrappable)
             },

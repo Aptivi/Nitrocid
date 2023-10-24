@@ -71,58 +71,121 @@ namespace Nitrocid.Extras.Calendar
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "show", null, false, "show"),
-                            new CommandArgumentPart(false, "year", null, true),
-                            new CommandArgumentPart(false, "month", null, true)
+                            new CommandArgumentPart(true, "show", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "show"
+                            }),
+                            new CommandArgumentPart(false, "year", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
+                            new CommandArgumentPart(false, "month", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         }, new[]
                         {
                             new SwitchInfo("calendar", /* Localizable */ "Calendar type to work on")
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "event", null, false, "event"),
-                            new CommandArgumentPart(true, "add", null, false, "add"),
+                            new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "event"
+                            }),
+                            new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "add"
+                            }),
                             new CommandArgumentPart(true, "date"),
                             new CommandArgumentPart(true, "title")
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "event", null, false, "event"),
-                            new CommandArgumentPart(true, "remove", null, false, "remove"),
-                            new CommandArgumentPart(true, "eventId", null, true)
+                            new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "event"
+                            }),
+                            new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "remove"
+                            }),
+                            new CommandArgumentPart(true, "eventId", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "event", null, false, "event"),
-                            new CommandArgumentPart(true, "list", null, false, "list")
+                            new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "event"
+                            }),
+                            new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "list"
+                            })
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "event", null, false, "event"),
-                            new CommandArgumentPart(true, "saveall", null, false, "saveall")
+                            new CommandArgumentPart(true, "event", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "event"
+                            }),
+                            new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "saveall"
+                            })
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "reminder", null, false, "reminder"),
-                            new CommandArgumentPart(true, "add", null, false, "add"),
+                            new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "reminder"
+                            }),
+                            new CommandArgumentPart(true, "add", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "add"
+                            }),
                             new CommandArgumentPart(true, "dateandtime"),
                             new CommandArgumentPart(true, "title")
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "reminder", null, false, "reminder"),
-                            new CommandArgumentPart(true, "remove", null, false, "remove"),
-                            new CommandArgumentPart(true, "reminderid", null, true)
+                            new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "reminder"
+                            }),
+                            new CommandArgumentPart(true, "remove", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "remove"
+                            }),
+                            new CommandArgumentPart(true, "reminderid", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "reminder", null, false, "reminder"),
-                            new CommandArgumentPart(true, "list", null, false, "list")
+                            new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "reminder"
+                            }),
+                            new CommandArgumentPart(true, "list", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "list"
+                            })
                         }),
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "reminder", null, false, "reminder"),
-                            new CommandArgumentPart(true, "saveall", null, false, "saveall")
+                            new CommandArgumentPart(true, "reminder", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "reminder"
+                            }),
+                            new CommandArgumentPart(true, "saveall", new CommandArgumentPartOptions()
+                            {
+                                ExactWording = "saveall"
+                            })
                         }),
                     }, new CalendarCommand())
             },

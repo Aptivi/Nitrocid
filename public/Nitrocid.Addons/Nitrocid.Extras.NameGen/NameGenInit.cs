@@ -83,7 +83,10 @@ namespace Nitrocid.Extras.NameGen
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "namescount", null, true),
+                            new CommandArgumentPart(true, "namescount", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                             new CommandArgumentPart(false, "nameprefix"),
                             new CommandArgumentPart(false, "namesuffix"),
                             new CommandArgumentPart(false, "surnameprefix"),

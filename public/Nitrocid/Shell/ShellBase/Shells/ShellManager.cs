@@ -124,7 +124,10 @@ namespace KS.Shell.ShellBase.Shells
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "command", () => CommandManager.GetCommands(CurrentShellType).Keys.ToArray())
+                            new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => CommandManager.GetCommands(CurrentShellType).Keys.ToArray()
+                            })
                         }, new[]
                         {
                             new SwitchInfo("general", /* Localizable */ "Shows general commands (default)", new SwitchOptions()
@@ -174,7 +177,10 @@ namespace KS.Shell.ShellBase.Shells
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "times", null, true),
+                            new CommandArgumentPart(true, "times", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            }),
                             new CommandArgumentPart(false, "command"),
                         })
                     }, new RepeatUnifiedCommand())
@@ -199,7 +205,10 @@ namespace KS.Shell.ShellBase.Shells
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "command", () => CommandExecutor.GetWrappableCommands(CurrentShellType))
+                            new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => CommandExecutor.GetWrappableCommands(CurrentShellType)
+                            })
                         })
                     }, new WrapUnifiedCommand())
             }

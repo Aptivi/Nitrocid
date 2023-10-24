@@ -44,7 +44,10 @@ namespace KS.Shell.Shells.Admin
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "argument", () => ArgumentParse.AvailableCMDLineArgs.Keys.ToArray())
+                            new CommandArgumentPart(false, "argument", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => ArgumentParse.AvailableCMDLineArgs.Keys.ToArray()
+                            })
                         })
                     }, new ArgHelpCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },

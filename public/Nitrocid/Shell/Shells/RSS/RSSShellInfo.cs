@@ -43,7 +43,10 @@ namespace KS.Shell.Shells.RSS
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "feednum", null, true)
+                            new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new ArticleInfoCommand())
             },
@@ -88,7 +91,10 @@ namespace KS.Shell.Shells.RSS
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "feednum", null, true)
+                            new CommandArgumentPart(true, "feednum", new CommandArgumentPartOptions()
+                            {
+                                IsNumeric = true
+                            })
                         })
                     }, new ReadCommand())
             },
