@@ -111,5 +111,9 @@ namespace KS.Files
         /// Privacy consents file
         /// </summary>
         Consents,
+        /// <summary>
+        /// Extension handlers file
+        /// </summary>
+        ExtensionHandlers,
     }
 }

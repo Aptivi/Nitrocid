@@ -92,7 +92,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Extra info"), true);
                     if (ExtensionHandlerTools.IsHandlerRegistered(FileInfo.Extension))
                     {
-                        var handler = ExtensionHandlerTools.GetFirstExtensionHandler(FileInfo.Extension);
+                        var handler = ExtensionHandlerTools.GetExtensionHandler(FileInfo.Extension);
                         TextWriterColor.Write(handler.InfoHandler(FilePath));
                     }
                 }

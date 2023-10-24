@@ -18,8 +18,11 @@
 
 using KS.Drivers;
 using KS.Drivers.Encryption;
+using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -31,6 +34,10 @@ namespace KS.Files.Extensions
     /// </summary>
     public static class ExtensionHandlerTools
     {
+        internal static Dictionary<string, string> defaultHandlers = new()
+        {
+            { ".bin", "NitrocidBin" },
+        };
         internal static readonly List<ExtensionHandler> extensionHandlers = new()
         {
             new ExtensionHandler(".bin", "NitrocidBin", (path) => Opening.OpenEditor(path, false, false, true), (path) => $"{Translate.DoTranslation("File hash sum")}: {Encryption.GetEncryptedFile(path, DriverHandler.CurrentEncryptionDriver.DriverName)}"),
@@ -131,6 +138,22 @@ namespace KS.Files.Extensions
         }
 
         /// <summary>
+        /// Gets the extension handler from the extension and the default implementer
+        /// </summary>
+        /// <param name="extension">Extension to check</param>
+        /// <returns>An instance of <see cref="ExtensionHandler"/> containing info about the extension, or null if there is no handler.</returns>
+        public static ExtensionHandler GetExtensionHandler(string extension)
+        {
+            // Check to see if we have the extension in the default handlers list
+            if (!defaultHandlers.ContainsKey(extension))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No default extension handler found for this extension.") + $" {extension}");
+
+            // Now, get the default handler name and get the handler instance from it
+            string handlerName = defaultHandlers[extension];
+            return GetExtensionHandler(extension, handlerName);
+        }
+
+        /// <summary>
         /// Gets the extension handler from the extension and the implementer
         /// </summary>
         /// <param name="extension">Extension to check</param>
@@ -210,6 +233,10 @@ namespace KS.Files.Extensions
             // Add the handler
             var handler = new ExtensionHandler(extension, implementer, handlerAction, infoHandlerAction);
             customHandlers.Add(handler);
+
+            // Check to see if the extension is found in the default handler list
+            if (!defaultHandlers.ContainsKey(extension))
+                defaultHandlers.Add(extension, implementer);
         }
 
         /// <summary>
@@ -249,6 +276,17 @@ namespace KS.Files.Extensions
 
             // Remove the handler
             customHandlers.Remove(handler);
+
+            // Check to see if the extension is found in the default handler list
+            if (defaultHandlers.ContainsKey(extension))
+            {
+                // There are two cases: one in which we still have at least one implementer, and one in which we don't have any more
+                // implementers.
+                if (IsHandlerRegistered(extension))
+                    defaultHandlers[extension] = GetFirstExtensionHandler(extension).Implementer;
+                else
+                    defaultHandlers.Remove(extension);
+            }
         }
 
         /// <summary>
@@ -268,7 +306,7 @@ namespace KS.Files.Extensions
             // Remove the handler
             var handlers = GetExtensionHandlers(extension);
             foreach (var handler in handlers)
-                customHandlers.Remove(handler);
+                UnregisterHandler(extension, handler);
         }
 
         /// <summary>
@@ -277,7 +315,24 @@ namespace KS.Files.Extensions
         public static void UnregisterAllHandlers()
         {
             for (int i = customHandlers.Count - 1; i >= 0; i--)
-                customHandlers.RemoveAt(i);
+            {
+                var handler = customHandlers[i];
+                UnregisterHandler(handler.Extension, handler.Implementer);
+            }
+        }
+
+        internal static void SaveAllHandlers()
+        {
+            string serialized = JsonConvert.SerializeObject(defaultHandlers);
+            Writing.WriteContentsText(Paths.ExtensionHandlersPath, serialized);
+        }
+
+        internal static void LoadAllHandlers()
+        {
+            if (!Checking.FileExists(Paths.ExtensionHandlersPath))
+                SaveAllHandlers();
+            string contents = Reading.ReadContentsText(Paths.ExtensionHandlersPath);
+            defaultHandlers = JsonConvert.DeserializeObject<Dictionary<string, string>>(contents);
         }
     }
 }

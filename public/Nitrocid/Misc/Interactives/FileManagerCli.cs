@@ -301,7 +301,7 @@ namespace KS.Misc.Interactives
                     // Other info handled by the extension handler
                     if (ExtensionHandlerTools.IsHandlerRegistered(fileInfo.Extension))
                     {
-                        var handler = ExtensionHandlerTools.GetFirstExtensionHandler(fileInfo.Extension);
+                        var handler = ExtensionHandlerTools.GetExtensionHandler(fileInfo.Extension);
                         finalInfoRendered.AppendLine(handler.InfoHandler(fullPath));
                     }
                 }

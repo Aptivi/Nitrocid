@@ -25,6 +25,7 @@ using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Drivers;
 using KS.Drivers.HardwareProber;
 using KS.Files;
+using KS.Files.Extensions;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
@@ -266,6 +267,10 @@ namespace KS.Kernel.Starting
                 // Load shell command histories
                 ShellManager.LoadHistories();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded shell command histories.");
+
+                // Load extension handlers
+                ExtensionHandlerTools.LoadAllHandlers();
+                DebugWriter.WriteDebug(DebugLevel.I, "Loaded extension handlers.");
             }
             catch (Exception ex)
             {
@@ -320,6 +325,10 @@ namespace KS.Kernel.Starting
                 // Reset languages
                 LanguageManager.SetLangDry(LanguageManager.CurrentLanguage);
                 LanguageManager.currentUserLanguage = LanguageManager.Languages[LanguageManager.CurrentLanguage];
+
+                // Save extension handlers
+                ExtensionHandlerTools.SaveAllHandlers();
+                DebugWriter.WriteDebug(DebugLevel.I, "Extension handlers saved");
 
                 // Save all settings
                 Config.CreateConfig();

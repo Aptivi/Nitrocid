@@ -93,7 +93,7 @@ namespace KS.Files.Extensions
             {
                 // This file is a binary file.
                 string extension = Path.GetExtension(file);
-                var handler = ExtensionHandlerTools.GetFirstExtensionHandler(extension) ??
+                var handler = ExtensionHandlerTools.GetExtensionHandler(extension) ??
                     throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No handler to handle this extension.") + $" {extension}");
 
                 // Now that we have the handler, we'll execute it.

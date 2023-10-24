@@ -55,6 +55,7 @@ namespace KS.Files
             { KernelPathType.Addons,              (() => AddonsPath, false) },
             { KernelPathType.ShellHistories,      (() => ShellHistoriesPath, true) },
             { KernelPathType.Consents,            (() => ConsentsPath, true) },
+            { KernelPathType.ExtensionHandlers,   (() => ExtensionHandlersPath, true) },
         };
 
         /// <summary>
@@ -256,6 +257,12 @@ namespace KS.Files
         /// </summary>
         public static string ConsentsPath =>
             FilesystemTools.NeutralizePath(AppDataPath + "/Consents.json");
+
+        /// <summary>
+        /// Extension handlers path
+        /// </summary>
+        public static string ExtensionHandlersPath =>
+            FilesystemTools.NeutralizePath(AppDataPath + "/ExtensionHandlers.json");
 
         /// <summary>
         /// Gets the neutralized kernel path
