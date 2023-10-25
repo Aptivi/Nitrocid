@@ -253,13 +253,7 @@ namespace KS.Kernel.Starting
                 AddonTools.FinalizeAddons();
                 DebugWriter.WriteDebug(DebugLevel.I, "Finalized addons.");
 
-                // If the two files are not found, create two MOTD files with current config.
-                if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
-                    MotdParse.SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
-                if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
-                    MalParse.SetMal(Translate.DoTranslation("Enjoy your day") + ", <user>!");
-
-                // Load MOTD and MAL
+                // If the two files are not found, create two MOTD files with current config and load them.
                 MotdParse.ReadMotd();
                 MalParse.ReadMal();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded MOTD and MAL.");

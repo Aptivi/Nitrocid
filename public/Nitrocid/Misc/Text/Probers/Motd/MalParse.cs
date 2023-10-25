@@ -19,6 +19,7 @@
 using System;
 using KS.Files;
 using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -49,6 +50,15 @@ namespace KS.Misc.Text.Probers.Motd
         }
 
         /// <summary>
+        /// Initializes the MAL if the file isn't found.
+        /// </summary>
+        public static void InitMal()
+        {
+            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MAL)))
+                SetMal(Translate.DoTranslation("Enjoy your day") + ", <user>!");
+        }
+
+        /// <summary>
         /// Sets the MAL
         /// </summary>
         /// <param name="Message">A message of the day after login</param>
@@ -61,6 +71,7 @@ namespace KS.Misc.Text.Probers.Motd
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Set the message
+                MalMessage = Message;
                 Writing.WriteContentsText(MalFilePath, Message);
             }
             catch (Exception ex)
@@ -82,6 +93,7 @@ namespace KS.Misc.Text.Probers.Motd
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MalFilePath);
 
                 // Read the message
+                InitMal();
                 MalMessage = Reading.ReadContentsText(MalFilePath);
             }
             catch (Exception ex)

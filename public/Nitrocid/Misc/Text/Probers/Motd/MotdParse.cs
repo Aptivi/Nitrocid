@@ -19,6 +19,7 @@
 using System;
 using KS.Files;
 using KS.Files.Operations;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -49,6 +50,15 @@ namespace KS.Misc.Text.Probers.Motd
         }
 
         /// <summary>
+        /// Initializes the MOTD if the file isn't found.
+        /// </summary>
+        public static void InitMotd()
+        {
+            if (!Checking.FileExists(Paths.GetKernelPath(KernelPathType.MOTD)))
+                SetMotd(Translate.DoTranslation("Welcome to Nitrocid Kernel!"));
+        }
+
+        /// <summary>
         /// Sets the Message of the Day
         /// </summary>
         /// <param name="Message">A message of the day</param>
@@ -61,6 +71,7 @@ namespace KS.Misc.Text.Probers.Motd
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
 
                 // Set the message
+                MotdMessage = Message;
                 Writing.WriteContentsText(MotdFilePath, Message);
             }
             catch (Exception ex)
@@ -82,6 +93,7 @@ namespace KS.Misc.Text.Probers.Motd
                 DebugWriter.WriteDebug(DebugLevel.I, "Path: {0}", MotdFilePath);
 
                 // Read the message
+                InitMotd();
                 MotdMessage = Reading.ReadContentsText(MotdFilePath);
             }
             catch (Exception ex)
