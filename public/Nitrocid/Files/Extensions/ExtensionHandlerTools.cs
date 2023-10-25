@@ -212,6 +212,25 @@ namespace KS.Files.Extensions
         }
 
         /// <summary>
+        /// Sets the default extension handler of the extension to the specified implementer
+        /// </summary>
+        /// <param name="extension">Extension to query</param>
+        /// <param name="implementer">Implementer to set</param>
+        public static void SetExtensionHandler(string extension, string implementer)
+        {
+            // If nothing is registered, indicate that it isn't registered
+            if (!IsHandlerRegisteredSpecific(extension, implementer))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("No such implementer.") + $" .{extension}, {implementer}");
+
+            // Extensions must start with a dot
+            if (!extension.StartsWith("."))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Extensions must start with the dot. Hint:") + $" .{extension}");
+
+            // Set the handler
+            defaultHandlers[extension] = implementer;
+        }
+
+        /// <summary>
         /// Registers the handler
         /// </summary>
         /// <param name="extension">Extension to register</param>

@@ -18,21 +18,19 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files.Extensions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Gets the extension handlers with specific extension
+    /// Sets the default extension handler
     /// </summary>
     /// <remarks>
-    /// This command lets you know all the extension handlers for a specified extension
+    /// This command lets you set the default extension handler to a specified implementer
     /// </remarks>
-    class GetExtHandlersCommand : BaseCommand, ICommand
+    class SetExtHandlerCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -40,19 +38,14 @@ namespace KS.Shell.Shells.UESH.Commands
             if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such extension."), KernelColorType.Error);
-                return 22;
+                return 23;
             }
-            var handlers = ExtensionHandlerTools.GetExtensionHandlers(parameters.ArgumentsList[0]);
-            for (int i = 0; i < handlers.Length; i++)
+            if (!ExtensionHandlerTools.IsHandlerRegisteredSpecific(parameters.ArgumentsList[0], parameters.ArgumentsList[1]))
             {
-                ExtensionHandler handler = handlers[i];
-                SeparatorWriterColor.WriteSeparatorKernelColor($"{i + 1}/{handlers.Length}", KernelColorType.ListTitle);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Extension") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(handler.Extension, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Extension handler") + ": ", false, KernelColorType.ListEntry);
-                TextWriterColor.WriteKernelColor(handler.Implementer, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such implementer."), KernelColorType.Error);
+                return 24;
             }
-            variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Implementer))}]";
+            ExtensionHandlerTools.SetExtensionHandler(parameters.ArgumentsList[0], parameters.ArgumentsList[1]);
             return 0;
         }
     }

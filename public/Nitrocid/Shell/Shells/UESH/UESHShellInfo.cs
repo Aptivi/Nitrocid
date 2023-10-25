@@ -1370,7 +1370,24 @@ namespace KS.Shell.Shells.UESH
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new SetCommand())
             },
-            
+
+            { "setexthandler",
+                new CommandInfo("setexthandler", ShellType, /* Localizable */ "Sets the default extension handler of the specified extension to the specific implementer",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
+                            }),
+                            new CommandArgumentPart(true, "implementer", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Implementer).ToArray()
+                            }),
+                        })
+                    }, new SetExtHandlerCommand())
+            },
+
             { "setrange",
                 new CommandInfo("setrange", ShellType, /* Localizable */ "Creates a variable array with the provided values",
                     new[] {
