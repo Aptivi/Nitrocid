@@ -131,7 +131,13 @@ namespace KS.ConsoleBase.Themes
             for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
             {
                 KernelColorType type = ThemeColors.Keys.ElementAt(typeIndex);
-                ThemeColors[type] = new Color(ThemeResourceJson.SelectToken($"{type}Color").ToString());
+
+                // Get the color value and check to see if it's null
+                var colorToken = ThemeResourceJson.SelectToken($"{type}Color");
+                if (colorToken is null)
+                    ThemeColors[type] = KernelColorTools.PopulateColorsDefault()[type];
+                else
+                    ThemeColors[type] = new Color(colorToken.ToString());
             }
             var metadataObj = ThemeResourceJson["Metadata"];
             var metadata = JsonConvert.DeserializeObject<ThemeMetadata>(metadataObj.ToString());
