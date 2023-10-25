@@ -27,27 +27,27 @@ using System.Linq;
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Gets the default extension handlers and their info
+    /// Gets the extension handlers
     /// </summary>
     /// <remarks>
-    /// This command lets you know the default extension handlers for all extensions
+    /// This command lets you know all the extension handlers
     /// </remarks>
-    class GetDefaultExtHandlersCommand : BaseCommand, ICommand
+    class GetAllExtHandlersCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var handlers = ExtensionHandlerTools.defaultHandlers;
-            for (int i = 0; i < handlers.Count; i++)
+            var handlers = ExtensionHandlerTools.GetExtensionHandlers();
+            for (int i = 0; i < handlers.Length; i++)
             {
-                ExtensionHandler handler = ExtensionHandlerTools.GetExtensionHandler(handlers.ElementAt(i).Key, handlers.ElementAt(i).Value);
-                SeparatorWriterColor.WriteSeparatorKernelColor($"{i + 1}/{handlers.Count}", KernelColorType.ListTitle);
+                ExtensionHandler handler = handlers[i];
+                SeparatorWriterColor.WriteSeparatorKernelColor($"{i + 1}/{handlers.Length}", KernelColorType.ListTitle);
                 TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Extension") + ": ", false, KernelColorType.ListEntry);
                 TextWriterColor.WriteKernelColor(handler.Extension, KernelColorType.ListValue);
-                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Default extension handler") + ": ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Extension handler") + ": ", false, KernelColorType.ListEntry);
                 TextWriterColor.WriteKernelColor(handler.Implementer, KernelColorType.ListValue);
             }
-            variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Value))}]";
+            variableValue = $"[{string.Join(", ", handlers.Select((h) => h.Implementer))}]";
             return 0;
         }
     }

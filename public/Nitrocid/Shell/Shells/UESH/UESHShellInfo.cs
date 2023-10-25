@@ -700,6 +700,13 @@ namespace KS.Shell.Shells.UESH
                     }, new Get_Command())
             },
 
+            { "getallexthandlers",
+                new CommandInfo("getallexthandlers", ShellType, /* Localizable */ "Gets all the extension handlers from all the extensions",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new GetAllExtHandlersCommand())
+            },
+
             { "getdefaultexthandler",
                 new CommandInfo("getdefaultexthandler", ShellType, /* Localizable */ "Gets the default extension handler from the specified extension",
                     new[] {
@@ -714,10 +721,23 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "getdefaultexthandlers",
-                new CommandInfo("getdefaultexthandlers", ShellType, /* Localizable */ "Gets the extension handlers from all the extensions",
+                new CommandInfo("getdefaultexthandlers", ShellType, /* Localizable */ "Gets the default extension handlers from all the extensions",
                     new[] {
                         new CommandArgumentInfo()
                     }, new GetDefaultExtHandlersCommand())
+            },
+
+            { "getexthandlers",
+                new CommandInfo("getexthandlers", ShellType, /* Localizable */ "Gets the extension handlers from the specified extension",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
+                            }),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new GetExtHandlersCommand())
             },
 
             { "getkeyiv",

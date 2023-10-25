@@ -35,6 +35,11 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (!ExtensionHandlerTools.IsHandlerRegistered(parameters.ArgumentsList[0]))
+            {
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("No such extension."), KernelColorType.Error);
+                return 21;
+            }
             var handler = ExtensionHandlerTools.GetExtensionHandler(parameters.ArgumentsList[0]);
             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Default extension handler") + ": ", false, KernelColorType.ListEntry);
             TextWriterColor.WriteKernelColor(handler.Implementer, KernelColorType.ListValue);
