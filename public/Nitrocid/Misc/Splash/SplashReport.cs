@@ -145,7 +145,7 @@ namespace KS.Misc.Splash
                 // Add to the log buffer
                 logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Info: {TextTools.FormatString(Text, Vars)}");
             }
-            else
+            else if (KernelBooted)
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Kernel booted. Reporting {0}...", Text);
                 TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Tip, Vars);
@@ -215,7 +215,7 @@ namespace KS.Misc.Splash
                 // Add to the log buffer
                 logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Warning: {TextTools.FormatString(Text, Vars)}");
             }
-            else
+            else if (KernelBooted)
             {
                 DebugWriter.WriteDebug(DebugLevel.W, "Kernel booted. Reporting {0}...", Text);
                 TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Warning, Vars);
@@ -285,7 +285,7 @@ namespace KS.Misc.Splash
                 // Add to the log buffer
                 logBuffer.Add($" [{TimeDateRenderers.Render(FormatType.Short)}] [{_Progress}%] Error: {TextTools.FormatString(Text, Vars)}");
             }
-            else
+            else if (KernelBooted)
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Kernel booted. Reporting {0}...", Text);
                 TextWriterColor.WriteKernelColor(Text, true, KernelColorType.Error, Vars);
