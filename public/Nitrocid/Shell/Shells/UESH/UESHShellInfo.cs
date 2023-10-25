@@ -697,7 +697,7 @@ namespace KS.Shell.Shells.UESH
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new Get_Command())
+                    }, new GetCommand())
             },
 
             { "getallexthandlers",

@@ -36,7 +36,7 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <remarks>
     /// This command downloads a file from the website to a file, preserving the file name. This is currently very basic, but it will be expanded in future releases.
     /// </remarks>
-    class Get_Command : BaseCommand, ICommand
+    class GetCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
