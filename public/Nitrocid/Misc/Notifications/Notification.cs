@@ -53,9 +53,14 @@ namespace KS.Misc.Notifications
         public NotificationType Type { get; set; }
 
         /// <summary>
+        /// Whether the progress is indeterminate
+        /// </summary>
+        public bool ProgressIndeterminate { get; set; }
+
+        /// <summary>
         /// Whether the progress failed
         /// </summary>
-        public bool ProgressFailed { get; set; }
+        public NotificationProgressState ProgressState { get; set; }
 
         /// <summary>
         /// Notification progress
@@ -175,7 +180,8 @@ namespace KS.Misc.Notifications
         /// <summary>
         /// Whether the progress has been compeleted successfully or with failure
         /// </summary>
-        public bool ProgressCompleted => _Progress >= 100 | ProgressFailed;
+        public bool ProgressCompleted =>
+            _Progress >= 100 || ProgressState != NotificationProgressState.Progressing;
 
         /// <summary>
         /// The notification border color. Must be empty for custom priority notifications.
@@ -188,7 +194,7 @@ namespace KS.Misc.Notifications
             }
             set
             {
-                if (!(Priority == NotificationPriority.Custom))
+                if (Priority != NotificationPriority.Custom)
                 {
                     _NotificationBorderColor = value;
                 }
@@ -245,7 +251,8 @@ namespace KS.Misc.Notifications
                 CustomLowerFrameChar == other.CustomLowerFrameChar &&
                 CustomLeftFrameChar == other.CustomLeftFrameChar &&
                 CustomRightFrameChar == other.CustomRightFrameChar &&
-                NotificationBorderColor == other.NotificationBorderColor;
+                NotificationBorderColor == other.NotificationBorderColor &&
+                ProgressIndeterminate == other.ProgressIndeterminate;
         }
 
         /// <inheritdoc/>
@@ -271,6 +278,7 @@ namespace KS.Misc.Notifications
             hash.Add(CustomLeftFrameChar);
             hash.Add(CustomRightFrameChar);
             hash.Add(NotificationBorderColor);
+            hash.Add(ProgressIndeterminate);
             return hash.ToHashCode();
         }
 

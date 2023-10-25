@@ -44,7 +44,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.WriteKernelColor(Notif.Desc, false, KernelColorType.ListValue);
                     if (Notif.Type == NotificationType.Progress)
                     {
-                        TextWriterColor.WriteKernelColor($" ({Notif.Progress}%)", false, Notif.ProgressFailed ? KernelColorType.Error : KernelColorType.Success);
+                        TextWriterColor.WriteKernelColor($" ({Notif.Progress}%)", false, Notif.ProgressState == NotificationProgressState.Failure ? KernelColorType.Error : KernelColorType.Success);
                     }
                     TextWriterColor.Write();
                     Count += 1;

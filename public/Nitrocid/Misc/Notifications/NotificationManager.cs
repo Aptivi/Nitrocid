@@ -283,17 +283,22 @@ namespace KS.Misc.Notifications
                             // Show progress
                             if (NewNotification.Type == NotificationType.Progress)
                             {
-                                while (!(NewNotification.Progress >= 100 | NewNotification.ProgressFailed))
+                                while (NewNotification.Progress < 100 && NewNotification.ProgressState == NotificationProgressState.Progressing)
                                 {
-                                    string ProgressTitle = Title + " (" + NewNotification.Progress.ToString() + "%)";
+                                    string ProgressTitle =
+                                        !NewNotification.ProgressIndeterminate ?
+                                        Title + $" ({NewNotification.Progress}%)" :
+                                        Title + " (...%)";
                                     DebugWriter.WriteDebug(DebugLevel.I, "Where to store progress: {0},{1}", notifLeftAgnostic, notifWipeTop);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
+
+                                    // Write the title, the description, and the progress
                                     TextWriterWhereColor.WriteWhereKernelColor(clear, notifLeftAgnostic, 0, true, KernelColorType.NeutralText);
                                     TextWriterWhereColor.WriteWhereColor(ProgressTitle + clear, notifLeftAgnostic, notifTitleTop, true, NotifyTitleColor);
                                     TextWriterWhereColor.WriteWhereColor(Desc + clear, notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
-                                    ProgressBarColor.WriteProgress(NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification, true);
+                                    ProgressBarColor.WriteProgress(NewNotification.ProgressIndeterminate ? 0 : NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification, true);
                                     Thread.Sleep(1);
-                                    if (NewNotification.ProgressFailed)
+                                    if (NewNotification.ProgressState == NotificationProgressState.Failure)
                                         TextWriterWhereColor.WriteWhereColor(ProgressTitle + clear, notifLeftAgnostic, notifTitleTop, true, NotifyProgressFailureColor);
                                 }
                             }

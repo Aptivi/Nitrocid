@@ -172,10 +172,12 @@ namespace KS.Network.Base.Transfer
             if (e is not null)
             {
                 if (DownloadNotificationProvoke)
-                    DownloadNotif.ProgressFailed = true;
+                    DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 ReasonError = e;
                 IsError = true;
             }
+            else if (DownloadNotificationProvoke)
+                DownloadNotif.ProgressState = NotificationProgressState.Success;
             NetworkTools.TransferFinished = true;
         }
 
@@ -188,10 +190,12 @@ namespace KS.Network.Base.Transfer
             if (e is not null)
             {
                 if (UploadNotificationProvoke)
-                    UploadNotif.ProgressFailed = true;
+                    UploadNotif.ProgressState = NotificationProgressState.Failure;
                 ReasonError = e;
                 IsError = true;
             }
+            else if (UploadNotificationProvoke)
+                DownloadNotif.ProgressState = NotificationProgressState.Success;
             NetworkTools.TransferFinished = true;
         }
 

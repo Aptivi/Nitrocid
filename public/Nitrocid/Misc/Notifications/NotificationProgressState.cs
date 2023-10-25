@@ -19,17 +19,21 @@
 namespace KS.Misc.Notifications
 {
     /// <summary>
-    /// Notification type
+    /// Notification progress state
     /// </summary>
-    public enum NotificationType
+    public enum NotificationProgressState
     {
         /// <summary>
-        /// Normal notification.
+        /// Progressing...
         /// </summary>
-        Normal = 1,
+        Progressing,
         /// <summary>
-        /// A notification with the progress bar. Use if you're going to notify the user while your mod is doing something.
+        /// Progress has succeeded
         /// </summary>
-        Progress
+        Success,
+        /// <summary>
+        /// Progress has failed
+        /// </summary>
+        Failure,
     }
 }

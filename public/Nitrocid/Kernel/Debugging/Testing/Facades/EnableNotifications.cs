@@ -19,6 +19,7 @@
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Misc.Notifications;
+using KS.Users.Login;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
@@ -27,6 +28,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override string TestName => Translate.DoTranslation("Enables the notification system");
         public override void Run(params string[] args)
         {
+            Login.LoggedIn = true;
             if (!NotificationManager.NotifThread.IsAlive)
                 NotificationManager.NotifThread.Start();
             else

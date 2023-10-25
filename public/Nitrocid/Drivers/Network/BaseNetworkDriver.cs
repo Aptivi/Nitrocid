@@ -130,14 +130,17 @@ namespace KS.Drivers.Network
             if (NetworkTransfer.IsError)
             {
                 if (NetworkTransfer.DownloadNotificationProvoke)
-                    NetworkTransfer.DownloadNotif.ProgressFailed = true;
+                    NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError;
             }
             else
             {
                 if (NetworkTransfer.DownloadNotificationProvoke)
+                {
                     NetworkTransfer.DownloadNotif.Progress = 100;
+                    NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Success;
+                }
                 return true;
             }
         }
@@ -200,14 +203,17 @@ namespace KS.Drivers.Network
             if (NetworkTransfer.IsError)
             {
                 if (NetworkTransfer.DownloadNotificationProvoke)
-                    NetworkTransfer.DownloadNotif.ProgressFailed = true;
+                    NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError;
             }
             else
             {
                 if (NetworkTransfer.DownloadNotificationProvoke)
+                {
                     NetworkTransfer.DownloadNotif.Progress = 100;
+                    NetworkTransfer.DownloadNotif.ProgressState = NotificationProgressState.Success;
+                }
                 return new StreamReader(ContentStream).ReadToEnd();
             }
         }
@@ -278,14 +284,17 @@ namespace KS.Drivers.Network
             if (NetworkTransfer.IsError)
             {
                 if (NetworkTransfer.UploadNotificationProvoke)
-                    NetworkTransfer.UploadNotif.ProgressFailed = true;
+                    NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError;
             }
             else
             {
                 if (NetworkTransfer.UploadNotificationProvoke)
+                {
                     NetworkTransfer.UploadNotif.Progress = 100;
+                    NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Success;
+                }
                 return true;
             }
         }
@@ -332,14 +341,17 @@ namespace KS.Drivers.Network
             if (NetworkTransfer.IsError)
             {
                 if (NetworkTransfer.UploadNotificationProvoke)
-                    NetworkTransfer.UploadNotif.ProgressFailed = true;
+                    NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Failure;
                 NetworkTransfer.CancellationToken.Cancel();
                 throw NetworkTransfer.ReasonError;
             }
             else
             {
                 if (NetworkTransfer.UploadNotificationProvoke)
+                {
                     NetworkTransfer.UploadNotif.Progress = 100;
+                    NetworkTransfer.UploadNotif.ProgressState = NotificationProgressState.Success;
+                }
                 return true;
             }
         }

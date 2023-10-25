@@ -16,30 +16,30 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Misc.Splash;
-using System;
 using System.Threading;
 
 namespace KS.Kernel.Debugging.Testing.Facades
 {
-    internal class SendNotificationSimple : TestFacade
+    internal class SendNotificationProgIndeterminate : TestFacade
     {
-        public override string TestName => Translate.DoTranslation("Sends a notification as asterisk to test the receiver");
+        public override string TestName => Translate.DoTranslation("Sends a progress notification to test the receiver");
         public override void Run(params string[] args)
         {
-            foreach (var value in Enum.GetValues(typeof(NotificationPriority)))
+            SplashReport._KernelBooted = true;
+            var Notif = new Notification(Translate.DoTranslation("Test indeterminate notification"), Translate.DoTranslation("Description is here"), NotificationPriority.Low, NotificationType.Progress)
             {
-                SplashReport._KernelBooted = true;
-                Config.MainConfig.NotifyDisplayAsAsterisk = true;
-                var Notif = new Notification(Translate.DoTranslation("Test simple notification"), Translate.DoTranslation("Description is here"), (NotificationPriority)value, NotificationType.Normal);
-                NotificationManager.NotifySend(Notif);
-                Thread.Sleep(500);
-                Config.MainConfig.NotifyDisplayAsAsterisk = false;
-                SplashReport._KernelBooted = false;
+                ProgressIndeterminate = true
+            };
+            NotificationManager.NotifySend(Notif);
+            while (!Notif.ProgressCompleted)
+            {
+                Thread.Sleep(100);
+                Notif.Progress += 1;
             }
+            SplashReport._KernelBooted = false;
         }
     }
 }

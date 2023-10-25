@@ -29,7 +29,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
         public override void Run(params string[] args)
         {
             SplashReport._KernelBooted = true;
-            var Notif = new Notification(Translate.DoTranslation("Test notification"), Translate.DoTranslation("Description is here"), NotificationPriority.Low, NotificationType.Progress);
+            var Notif = new Notification(Translate.DoTranslation("Test progress notification"), Translate.DoTranslation("Description is here"), NotificationPriority.Low, NotificationType.Progress);
             NotificationManager.NotifySend(Notif);
             while (!Notif.ProgressCompleted)
             {

@@ -94,6 +94,7 @@ namespace KS.Kernel.Debugging.Testing
             { "ProbeHardware",                      new ProbeHardware() },
             { "EnableNotifications",                new EnableNotifications() },
             { "SendNotification",                   new SendNotification() },
+            { "SendNotificationProgIndeterminate",  new SendNotificationProgIndeterminate() },
             { "SendNotificationSimple",             new SendNotificationSimple() },
             { "SendNotificationProg",               new SendNotificationProg() },
             { "SendNotificationProgF",              new SendNotificationProgF() },
