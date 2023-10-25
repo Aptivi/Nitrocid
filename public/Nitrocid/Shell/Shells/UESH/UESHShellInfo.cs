@@ -30,6 +30,7 @@ using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Encryption;
 using KS.Shell.Shells.UESH.Presets;
 using KS.Drivers.Encoding;
+using KS.Files.Extensions;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -697,6 +698,26 @@ namespace KS.Shell.Shells.UESH
                             })
                         })
                     }, new Get_Command())
+            },
+
+            { "getdefaultexthandler",
+                new CommandInfo("getdefaultexthandler", ShellType, /* Localizable */ "Gets the default extension handler from the specified extension",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = () => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
+                            }),
+                        }, Array.Empty<SwitchInfo>(), true)
+                    }, new GetDefaultExtHandlerCommand())
+            },
+
+            { "getdefaultexthandlers",
+                new CommandInfo("getdefaultexthandlers", ShellType, /* Localizable */ "Gets the extension handlers from all the extensions",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new GetDefaultExtHandlersCommand())
             },
 
             { "getkeyiv",
