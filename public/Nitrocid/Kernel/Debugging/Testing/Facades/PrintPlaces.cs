@@ -26,9 +26,11 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Prints a string to console and parses the placeholders found");
         public override TestSection TestSection => TestSection.ConsoleBase;
+        public override int TestOptionalParameters => 1;
         public override void Run(params string[] args)
         {
-            TextWriterColor.Write("Date: " + PlaceParse.ProbePlaces("<shortdate>"), true);
+            string rendered = args.Length > 0 ? PlaceParse.ProbePlaces(args[0]) : "Date: " + PlaceParse.ProbePlaces("<shortdate>");
+            TextWriterColor.Write(rendered, true);
         }
     }
 }

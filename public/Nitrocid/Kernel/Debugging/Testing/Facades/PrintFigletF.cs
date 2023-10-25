@@ -27,9 +27,11 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Print a figlet string to console with formatting");
         public override TestSection TestSection => TestSection.ConsoleBase;
+        public override int TestOptionalParameters => 1;
         public override void Run(params string[] args)
         {
-            FigletColor.WriteFigletKernelColor("Hi, {0}!", FigletizeFonts.TryGetByName("small"), KernelColorType.Success, "Nitrocid KS");
+            string rendered = args.Length > 0 ? args[0] : "Hi, {0}!";
+            FigletColor.WriteFigletKernelColor(rendered, FigletizeFonts.TryGetByName("small"), KernelColorType.Success, "Nitrocid KS");
         }
     }
 }

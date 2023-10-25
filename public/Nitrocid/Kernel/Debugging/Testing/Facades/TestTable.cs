@@ -37,7 +37,8 @@ namespace KS.Kernel.Debugging.Testing.Facades
                 { "16.04 (Xenial Xerus)", TimeDateRenderers.Render(new DateTime(2016, 4, 21)), TimeDateRenderers.Render(new DateTime(2021, 4, 30)), TimeDateRenderers.Render(new DateTime(2026, 4, 30)) },
                 { "18.04 (Bionic Beaver)", TimeDateRenderers.Render(new DateTime(2018, 4, 26)), TimeDateRenderers.Render(new DateTime(2023, 4, 30)), TimeDateRenderers.Render(new DateTime(2028, 4, 30)) },
                 { "20.04 (Focal Fossa)", TimeDateRenderers.Render(new DateTime(2020, 4, 23)), TimeDateRenderers.Render(new DateTime(2025, 4, 25)), TimeDateRenderers.Render(new DateTime(2030, 4, 25)) },
-                { "22.04 (Jammy Jellyfish)", TimeDateRenderers.Render(new DateTime(2022, 4, 26)), TimeDateRenderers.Render(new DateTime(2027, 4, 25)), TimeDateRenderers.Render(new DateTime(2032, 4, 25)) }
+                { "22.04 (Jammy Jellyfish)", TimeDateRenderers.Render(new DateTime(2022, 4, 21)), TimeDateRenderers.Render(new DateTime(2027, 4, 21)), TimeDateRenderers.Render(new DateTime(2032, 4, 21)) },
+                { "24.04 (Noble N-animal)", TimeDateRenderers.Render(new DateTime(2024, 4, 18)), TimeDateRenderers.Render(new DateTime(2029, 4, 18)), TimeDateRenderers.Render(new DateTime(2034, 4, 18)) },
             };
             TableColor.WriteTable(Headers, Rows, 2);
         }

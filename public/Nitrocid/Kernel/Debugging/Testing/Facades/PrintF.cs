@@ -26,9 +26,11 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Print a string to console with formatting");
         public override TestSection TestSection => TestSection.ConsoleBase;
+        public override int TestOptionalParameters => 1;
         public override void Run(params string[] args)
         {
-            TextWriterColor.WriteKernelColor("Hi, {0}!", true, KernelColorType.Success, "Nitrocid KS");
+            string rendered = args.Length > 0 ? args[0] : "Hi, {0}!";
+            TextWriterColor.WriteKernelColor(rendered, true, KernelColorType.Success, "Nitrocid KS");
         }
     }
 }

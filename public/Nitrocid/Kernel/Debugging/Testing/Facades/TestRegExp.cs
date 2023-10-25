@@ -28,10 +28,15 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the regular expression facility");
         public override TestSection TestSection => TestSection.Drivers;
+        public override int TestOptionalParameters => 2;
         public override void Run(params string[] args)
         {
-            string Text = Input.ReadLine(Translate.DoTranslation("Write a string to check:") + " ");
-            string Regex = Input.ReadLine(Translate.DoTranslation("Write a regular expression:") + " ");
+            string Text = args.Length > 0 ? args[0] : "";
+            string Regex = args.Length > 1 ? args[1] : "";
+            if (string.IsNullOrEmpty(Text))
+                Text = Input.ReadLine(Translate.DoTranslation("Write a string to check:") + " ");
+            if (string.IsNullOrEmpty(Regex))
+                Regex = Input.ReadLine(Translate.DoTranslation("Write a regular expression:") + " ");
             var Reg = new Regex(Regex);
             var Matches = Reg.Matches(Text);
             int MatchNum = 1;

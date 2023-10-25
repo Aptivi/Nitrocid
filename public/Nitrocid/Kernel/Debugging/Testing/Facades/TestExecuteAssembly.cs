@@ -27,11 +27,14 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class TestExecuteAssembly : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Tests assembly entry point execution");
+        public override int TestOptionalParameters => 1;
         public override void Run(params string[] args)
         {
-            string Text = Input.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
-            Text = FilesystemTools.NeutralizePath(Text);
-            Assembly.LoadFrom(Text).EntryPoint.Invoke("", Array.Empty<object>());
+            string path = args.Length > 0 ? args[0] : "";
+            if (string.IsNullOrEmpty(path))
+                path = Input.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
+            path = FilesystemTools.NeutralizePath(path);
+            Assembly.LoadFrom(path).EntryPoint.Invoke("", Array.Empty<object>());
         }
     }
 }

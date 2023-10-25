@@ -27,9 +27,12 @@ namespace KS.Kernel.Debugging.Testing.Facades
     {
         public override string TestName => Translate.DoTranslation("Tests the VT sequence for 255 colors");
         public override TestSection TestSection => TestSection.ConsoleBase;
+        public override int TestOptionalParameters => 1;
         public override void Run(params string[] args)
         {
-            string Text = Input.ReadLine(Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
+            string Text = args.Length > 0 ? args[0] : "";
+            if (string.IsNullOrEmpty(Text))
+                Text = Input.ReadLine(Translate.DoTranslation("Write a color number ranging from 1 to 255:") + " ");
             if (int.TryParse(Text, out int color))
             {
                 var colorInstance = new Color(color);
