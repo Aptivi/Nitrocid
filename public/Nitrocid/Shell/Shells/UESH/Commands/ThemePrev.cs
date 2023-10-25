@@ -77,10 +77,7 @@ namespace KS.Shell.Shells.UESH.Commands
             ThemePath = FilesystemTools.NeutralizePath(selectedTheme);
             ThemeInfo Theme;
             if (Checking.FileExists(ThemePath))
-            {
-                var ThemeStream = new StreamReader(ThemePath);
-                Theme = new ThemeInfo(ThemeStream);
-            }
+                Theme = new ThemeInfo(ThemePath);
             else
                 Theme = ThemeTools.GetThemeInfo(selectedTheme);
 

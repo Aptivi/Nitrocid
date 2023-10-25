@@ -74,9 +74,7 @@ namespace Nitrocid.Extras.ThemeStudio.Studio
         public static void LoadThemeFromFile(string Theme)
         {
             // Populate theme info
-            var ThemeStream = new StreamReader(FilesystemTools.NeutralizePath(Theme));
-            var ThemeInfo = new ThemeInfo(ThemeStream);
-            ThemeStream.Close();
+            var ThemeInfo = new ThemeInfo(FilesystemTools.NeutralizePath(Theme));
             LoadThemeFromThemeInfo(ThemeInfo);
         }
 

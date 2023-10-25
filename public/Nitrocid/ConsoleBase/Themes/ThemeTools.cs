@@ -140,9 +140,7 @@ namespace KS.ConsoleBase.Themes
                 DebugWriter.WriteDebug(DebugLevel.I, "Theme file path: {0}", ThemeFile);
 
                 // Populate theme info
-                var ThemeStream = new StreamReader(ThemeFile);
-                var ThemeInfo = new ThemeInfo(ThemeStream);
-                ThemeStream.Close();
+                var ThemeInfo = new ThemeInfo(ThemeFile);
 
                 // Check if the console supports true color
                 if ((ConsoleExtensions.ConsoleSupportsTrueColor && ThemeInfo.TrueColorRequired) || !ThemeInfo.TrueColorRequired)

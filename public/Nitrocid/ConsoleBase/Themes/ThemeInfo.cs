@@ -21,6 +21,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.Files.Operations;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Calendars;
 using KS.Resources;
@@ -111,6 +112,14 @@ namespace KS.ConsoleBase.Themes
         /// </summary>
         public ThemeInfo() :
             this(JToken.Parse(ThemesResources.Default))
+        { }
+
+        /// <summary>
+        /// Generates a new theme info from file stream
+        /// </summary>
+        /// <param name="themePath">Theme file path</param>
+        public ThemeInfo(string themePath) :
+            this(JToken.Parse(Reading.ReadContentsText(themePath)))
         { }
 
         /// <summary>

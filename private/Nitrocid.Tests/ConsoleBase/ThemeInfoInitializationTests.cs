@@ -106,5 +106,25 @@ namespace Nitrocid.Tests.ConsoleBase
             }
         }
 
+        /// <summary>
+        /// Tests initializing an instance of ThemeInfo from file
+        /// </summary>
+        [Test]
+        [Description("Initialization")]
+        public void TestInitializeThemeInfoFromFilePath()
+        {
+            // Create instance
+            string SourcePath = Path.GetFullPath("TestData/Hacker.json");
+            var ThemeInfoInstance = new ThemeInfo(SourcePath);
+
+            // Check for null
+            ThemeInfoInstance.ThemeColors.ShouldNotBeNull();
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length - 1; typeIndex++)
+            {
+                KernelColorType type = ThemeInfoInstance.ThemeColors.Keys.ElementAt(typeIndex);
+                ThemeInfoInstance.ThemeColors[type].ShouldNotBeNull();
+            }
+        }
+
     }
 }
