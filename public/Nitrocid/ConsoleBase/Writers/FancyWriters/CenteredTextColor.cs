@@ -239,5 +239,198 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             }
         }
 
+        /// <summary>
+        /// Draws a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCentered(string Text, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, Vars);
+                }
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Draws a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredKernelColor(string Text, KernelColorType ColTypes, params object[] Vars) =>
+            WriteCenteredColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+
+        /// <summary>
+        /// Draws a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredKernelColor(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
+            WriteCenteredColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+
+        /// <summary>
+        /// Draws a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredColor(string Text, ConsoleColors Color, params object[] Vars) =>
+            WriteCenteredColorBack(Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+
+        /// <summary>
+        /// Draws a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredColorBack(string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
+            WriteCenteredColorBack(Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
+
+        /// <summary>
+        /// Draws a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredColor(string Text, Color Color, params object[] Vars) =>
+            WriteCenteredColorBack(Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
+
+        /// <summary>
+        /// Draws a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredColorBack(string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    TextWriterWhereColor.WriteWhereColorBack(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, ForegroundColor, BackgroundColor, Vars);
+                }
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Draws a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredOneLine(string Text, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                WriteCentered(sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Draws a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ColTypes">A type of colors that will be changed.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredOneLineKernelColor(string Text, KernelColorType ColTypes, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(Text, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+
+        /// <summary>
+        /// Draws a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="colorTypeForeground">A type of colors that will be changed for the foreground color.</param>
+        /// <param name="colorTypeBackground">A type of colors that will be changed for the background color.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredOneLineKernelColor(string Text, KernelColorType colorTypeForeground, KernelColorType colorTypeBackground, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(Text, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars);
+
+        /// <summary>
+        /// Draws a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredOneLineColor(string Text, ConsoleColors Color, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(Text, new Color(Color), KernelColorTools.GetColor(KernelColorType.Background), Vars);
+
+        /// <summary>
+        /// Draws a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredOneLineColorBack(string Text, ConsoleColors ForegroundColor, ConsoleColors BackgroundColor, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(Text, new Color(ForegroundColor), new Color(BackgroundColor), Vars);
+
+        /// <summary>
+        /// Draws a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Color">A color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredOneLineColor(string Text, Color Color, params object[] Vars) =>
+            WriteCenteredOneLineColorBack(Text, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars);
+
+        /// <summary>
+        /// Draws a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteCenteredOneLineColorBack(string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                WriteCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
     }
 }
