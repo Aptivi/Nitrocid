@@ -189,11 +189,11 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Horizontal? {0}, Vertical? {1}", DidHorizontal, DidVertical);
                             if (DidHorizontal)
                             {
-                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.Random(2).ToString()));
+                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.RandomIdx(2).ToString()));
                             }
                             else if (DidVertical)
                             {
-                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.Random(2, 4).ToString()));
+                                Direction = (SnakeDirection)Convert.ToInt32(Enum.Parse(typeof(SnakeDirection), RandomDriver.RandomIdx(2, 4).ToString()));
                             }
                         }
                         switch (Direction)
