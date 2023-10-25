@@ -34,6 +34,7 @@ using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using KS.Kernel.Power;
 using KS.Users.Login;
+using KS.Languages;
 
 namespace KS.Misc.Notifications
 {
@@ -190,6 +191,7 @@ namespace KS.Misc.Notifications
                             var NotifyDescColor = KernelColorTools.GetColor(KernelColorType.NotificationDescription);
                             var NotifyProgressColor = KernelColorTools.GetColor(KernelColorType.NotificationProgress);
                             var NotifyProgressFailureColor = KernelColorTools.GetColor(KernelColorType.NotificationFailure);
+                            var NotifyProgressSuccessColor = KernelColorTools.GetColor(KernelColorType.Success);
                             switch (NewNotification.Priority)
                             {
                                 case NotificationPriority.Medium:
@@ -204,6 +206,7 @@ namespace KS.Misc.Notifications
                                     NotifyDescColor = NewNotification.CustomDescriptionColor;
                                     NotifyProgressColor = NewNotification.CustomProgressColor;
                                     NotifyProgressFailureColor = NewNotification.CustomProgressFailureColor;
+                                    NotifyProgressSuccessColor = NewNotification.CustomProgressSuccessColor;
                                     break;
                             }
 
@@ -218,7 +221,8 @@ namespace KS.Misc.Notifications
                             int notifTop = useSimplified ? 1 : notifTopAgnostic;
                             int notifTitleTop = notifTopAgnostic + 1;
                             int notifDescTop = notifTopAgnostic + 2;
-                            int notifWipeTop = notifTopAgnostic + 3;
+                            int notifTipTop = notifTopAgnostic + 3;
+                            int notifWipeTop = notifTopAgnostic + 4;
                             string clear = ConsoleExtensions.GetClearLineToRightSequence();
                             if (useSimplified)
                             {
@@ -229,7 +233,7 @@ namespace KS.Misc.Notifications
                             else
                             {
                                 // Normal way
-                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}", notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop);
+                                DebugWriter.WriteDebug(DebugLevel.I, "Where to store: ({0}, {1}), Title top: {2}, Desc top: {3}, Wipe top: {4}, Tip top: {5}", notifLeft, notifTop, notifTitleTop, notifDescTop, notifWipeTop, notifTipTop);
                                 TextWriterWhereColor.WriteWhereColor(Title + clear, notifLeft, notifTitleTop, true, NotifyTitleColor);
                                 TextWriterWhereColor.WriteWhereColor(Desc + clear, notifLeft, notifDescTop, true, NotifyDescColor);
                             }
@@ -266,9 +270,11 @@ namespace KS.Misc.Notifications
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyUpperLeftCornerChar + new string(CurrentNotifyUpperFrameChar, 38) + CurrentNotifyUpperRightCornerChar, notifLeftAgnostic - 1, notifTopAgnostic, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifTitleTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifDescTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifTipTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifWipeTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifTitleTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifDescTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifTipTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifWipeTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyLowerLeftCornerChar + new string(CurrentNotifyLowerFrameChar, 38) + CurrentNotifyLowerRightCornerChar, notifLeftAgnostic - 1, notifWipeTop, true, NotifyBorderColor);
                             }
@@ -283,23 +289,31 @@ namespace KS.Misc.Notifications
                             // Show progress
                             if (NewNotification.Type == NotificationType.Progress)
                             {
+                                int indeterminateStep = 0;
                                 while (NewNotification.Progress < 100 && NewNotification.ProgressState == NotificationProgressState.Progressing)
                                 {
                                     string ProgressTitle =
                                         !NewNotification.ProgressIndeterminate ?
-                                        Title + $" ({NewNotification.Progress}%)" :
-                                        Title + " (...%)";
+                                        Title + $" ({NewNotification.Progress}%) " :
+                                        Title + " (...%) ";
+                                    ProgressTitle = ProgressTitle.Truncate(36);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Where to store progress: {0},{1}", notifLeftAgnostic, notifWipeTop);
                                     DebugWriter.WriteDebug(DebugLevel.I, "Progress: {0}", NewNotification.Progress);
 
                                     // Write the title, the description, and the progress
-                                    TextWriterWhereColor.WriteWhereKernelColor(clear, notifLeftAgnostic, 0, true, KernelColorType.NeutralText);
-                                    TextWriterWhereColor.WriteWhereColor(ProgressTitle + clear, notifLeftAgnostic, notifTitleTop, true, NotifyTitleColor);
-                                    TextWriterWhereColor.WriteWhereColor(Desc + clear, notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
-                                    ProgressBarColor.WriteProgress(NewNotification.ProgressIndeterminate ? 0 : NewNotification.Progress, notifLeftAgnostic, notifWipeTop, 36, 0, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification, true);
+                                    TextWriterWhereColor.WriteWhereColor(ProgressTitle, notifLeftAgnostic, notifTitleTop, true, NotifyTitleColor);
+                                    TextWriterWhereColor.WriteWhereColor(Desc, notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
+
+                                    // For indeterminate progress, flash the box inside the progress bar
+                                    ProgressBarColor.WriteProgress(NewNotification.ProgressIndeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, notifLeftAgnostic, 4, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
+                                    indeterminateStep++;
+                                    if (indeterminateStep > 1)
+                                        indeterminateStep = 0;
                                     Thread.Sleep(1);
                                     if (NewNotification.ProgressState == NotificationProgressState.Failure)
-                                        TextWriterWhereColor.WriteWhereColor(ProgressTitle + clear, notifLeftAgnostic, notifTitleTop, true, NotifyProgressFailureColor);
+                                        TextWriterWhereColor.WriteWhereColor(ProgressTitle, notifLeftAgnostic, notifTitleTop, true, NotifyProgressFailureColor);
+                                    else if (NewNotification.ProgressState == NotificationProgressState.Success)
+                                        TextWriterWhereColor.WriteWhereColor((ProgressTitle + Translate.DoTranslation("Success")).Truncate(36), notifLeftAgnostic, notifTitleTop, true, NotifyProgressSuccessColor);
                                 }
                             }
 
@@ -317,8 +331,9 @@ namespace KS.Misc.Notifications
                                 }
                                 TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifTitleTop, true, KernelColorType.NeutralText);
                                 TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifDescTop, true, KernelColorType.NeutralText);
+                                TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifTipTop, true, KernelColorType.NeutralText);
                                 if (NewNotification.Type == NotificationType.Progress)
-                                    TextWriterWhereColor.WriteWhereKernelColor(clear, width, 4, true, KernelColorType.NeutralText);
+                                    TextWriterWhereColor.WriteWhereKernelColor(clear, width, notifWipeTop + 1, true, KernelColorType.NeutralText);
                             }
                         }
                     }

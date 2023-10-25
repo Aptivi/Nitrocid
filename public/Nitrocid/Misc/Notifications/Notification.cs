@@ -138,6 +138,11 @@ namespace KS.Misc.Notifications
         public Color CustomProgressFailureColor { get; set; } = KernelColorTools.GetColor(KernelColorType.NotificationFailure);
 
         /// <summary>
+        /// Custom progress success color (for custom priority notfications)
+        /// </summary>
+        public Color CustomProgressSuccessColor { get; set; } = KernelColorTools.GetColor(KernelColorType.Success);
+
+        /// <summary>
         /// Upper left corner character for custom priority notification
         /// </summary>
         public char CustomUpperLeftCornerChar { get; set; } = '╔';
@@ -243,6 +248,7 @@ namespace KS.Misc.Notifications
                 CustomDescriptionColor == other.CustomDescriptionColor &&
                 CustomProgressColor == other.CustomProgressColor &&
                 CustomProgressFailureColor == other.CustomProgressFailureColor &&
+                CustomProgressSuccessColor == other.CustomProgressSuccessColor &&
                 CustomUpperLeftCornerChar == other.CustomUpperLeftCornerChar &&
                 CustomUpperRightCornerChar == other.CustomUpperRightCornerChar &&
                 CustomLowerLeftCornerChar == other.CustomLowerLeftCornerChar &&
@@ -269,6 +275,7 @@ namespace KS.Misc.Notifications
             hash.Add(CustomDescriptionColor);
             hash.Add(CustomProgressColor);
             hash.Add(CustomProgressFailureColor);
+            hash.Add(CustomProgressSuccessColor);
             hash.Add(CustomUpperLeftCornerChar);
             hash.Add(CustomUpperRightCornerChar);
             hash.Add(CustomLowerLeftCornerChar);
