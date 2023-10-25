@@ -33,18 +33,21 @@ namespace KS.ConsoleBase.Interactive
         /// <summary>
         /// Key binding name
         /// </summary>
-        public string BindingName { get => _bindingName; }
+        public string BindingName =>
+            _bindingName;
 
         /// <summary>
         /// Which key is bound to the action?
         /// </summary>
-        public ConsoleKey BindingKeyName { get => _bindingKeyName; }
+        public ConsoleKey BindingKeyName =>
+            _bindingKeyName;
 
         /// <summary>
         /// The action to execute.
         /// The integer argument denotes the currently selected data
         /// </summary>
-        public Action<object, int> BindingAction { get => _bindingAction; }
+        public Action<object, int> BindingAction =>
+            _bindingAction;
 
         /// <summary>
         /// Makes a new instance of an interactive TUI key binding

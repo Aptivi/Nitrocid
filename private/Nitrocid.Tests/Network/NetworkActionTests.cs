@@ -32,21 +32,16 @@ namespace Nitrocid.Tests.Network
     public class NetworkActionTests
     {
 
-        private static IEnumerable<TestCaseData> Connections
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData("FTP client", "ftp.fabrikam.com", NetworkConnectionType.FTP, ConnectionThreads.ftpThread),
-                    new TestCaseData("HTTP client", "api.fabrikam.com", NetworkConnectionType.HTTP, ConnectionThreads.httpThread),
-                    new TestCaseData("Mail client", "mail@fabrikam.com", NetworkConnectionType.Mail, ConnectionThreads.mailThread),
-                    new TestCaseData("RSS client", "feed.fabrikam.com/atom", NetworkConnectionType.RSS, ConnectionThreads.rssThread),
-                    new TestCaseData("SFTP client", "sftp.fabrikam.com", NetworkConnectionType.SFTP, ConnectionThreads.sftpThread),
-                    new TestCaseData("SSH client", "freeshell.fabrikam.com", NetworkConnectionType.SSH, ConnectionThreads.sshThread),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> Connections =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData("FTP client", "ftp.fabrikam.com", NetworkConnectionType.FTP, ConnectionThreads.ftpThread),
+                new TestCaseData("HTTP client", "api.fabrikam.com", NetworkConnectionType.HTTP, ConnectionThreads.httpThread),
+                new TestCaseData("Mail client", "mail@fabrikam.com", NetworkConnectionType.Mail, ConnectionThreads.mailThread),
+                new TestCaseData("RSS client", "feed.fabrikam.com/atom", NetworkConnectionType.RSS, ConnectionThreads.rssThread),
+                new TestCaseData("SFTP client", "sftp.fabrikam.com", NetworkConnectionType.SFTP, ConnectionThreads.sftpThread),
+                new TestCaseData("SSH client", "freeshell.fabrikam.com", NetworkConnectionType.SSH, ConnectionThreads.sshThread),
+            };
 
         /// <summary>
         /// Tests establishing network connection (instances)

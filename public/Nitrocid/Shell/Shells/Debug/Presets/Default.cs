@@ -30,10 +30,12 @@ namespace KS.Shell.Shells.Debug.Presets
         public override string PresetName { get; } = "Default";
 
         /// <inheritdoc/>
-        public override string PresetPrompt { get => Translate.DoTranslation("Debug Shell") + "> "; }
+        public override string PresetPrompt =>
+            Translate.DoTranslation("Debug Shell") + "> ";
 
         /// <inheritdoc/>
-        public override string PresetPromptShowcase => PresetPrompt;
+        public override string PresetPromptShowcase =>
+            PresetPrompt;
 
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "DebugShell";

@@ -38,11 +38,13 @@ namespace KS.ConsoleBase.Writers.FancyWriters.Tools
         /// <summary>
         /// The column, or row value, index
         /// </summary>
-        public int ColumnIndex { get => ColumnNumber - 1; }
+        public int ColumnIndex =>
+            ColumnNumber - 1;
         /// <summary>
         /// The row index
         /// </summary>
-        public int RowIndex { get => RowNumber - 1; }
+        public int RowIndex =>
+            RowNumber - 1;
         /// <summary>
         /// Whether to color the cell
         /// </summary>

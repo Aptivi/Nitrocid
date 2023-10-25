@@ -31,7 +31,8 @@ namespace KS.Misc.Text
         /// <summary>
         /// New line constant
         /// </summary>
-        public static string NewLine { get => Environment.NewLine; }
+        public static string NewLine =>
+            Environment.NewLine;
 
         /// <summary>
         /// Gets all the letters and the numbers.

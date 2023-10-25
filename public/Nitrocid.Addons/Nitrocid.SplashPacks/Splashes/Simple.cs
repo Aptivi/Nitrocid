@@ -35,33 +35,23 @@ namespace Nitrocid.SplashPacks.Splashes
 
         public int ProgressWritePositionX => 3;
 
-        public int ProgressWritePositionY
-        {
-            get
+        public int ProgressWritePositionY =>
+            SplashPackInit.SplashConfig.SimpleProgressTextLocation switch
             {
-                return SplashPackInit.SplashConfig.SimpleProgressTextLocation switch
-                {
-                    (int)TextLocation.Top => 1,
-                    (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 2,
-                    _ => 1,
-                };
-            }
-        }
+                (int)TextLocation.Top => 1,
+                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 2,
+                _ => 1,
+            };
 
         public int ProgressReportWritePositionX => 9;
 
-        public int ProgressReportWritePositionY
-        {
-            get
+        public int ProgressReportWritePositionY =>
+            SplashPackInit.SplashConfig.SimpleProgressTextLocation switch
             {
-                return SplashPackInit.SplashConfig.SimpleProgressTextLocation switch
-                {
-                    (int)TextLocation.Top => 1,
-                    (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 2,
-                    _ => 1,
-                };
-            }
-        }
+                (int)TextLocation.Top => 1,
+                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 2,
+                _ => 1,
+            };
 
         // Actual logic
         public override void Display(SplashContext context)

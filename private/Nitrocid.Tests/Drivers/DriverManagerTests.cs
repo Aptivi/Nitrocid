@@ -37,132 +37,82 @@ namespace Nitrocid.Tests.Drivers
     public class DriverManagerTests
     {
 
-        private static IEnumerable<TestCaseData> ExpectedDriverNames
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Actual ----------                       ---------- Expected ----------
-                    new TestCaseData(DriverHandler.CurrentConsoleDriver,                "Default"),
-                    new TestCaseData(DriverHandler.CurrentConsoleDriverLocal,           "Default"),
-                    new TestCaseData(DriverHandler.CurrentEncryptionDriver,             "Default"),
-                    new TestCaseData(DriverHandler.CurrentEncryptionDriverLocal,        "Default"),
-                    new TestCaseData(DriverHandler.CurrentFilesystemDriver,             "Default"),
-                    new TestCaseData(DriverHandler.CurrentFilesystemDriverLocal,        "Default"),
-                    new TestCaseData(DriverHandler.CurrentNetworkDriver,                "Default"),
-                    new TestCaseData(DriverHandler.CurrentNetworkDriverLocal,           "Default"),
-                    new TestCaseData(DriverHandler.CurrentRandomDriver,                 "Default"),
-                    new TestCaseData(DriverHandler.CurrentRandomDriverLocal,            "Default"),
-                    new TestCaseData(DriverHandler.CurrentRegexpDriver,                 "Default"),
-                    new TestCaseData(DriverHandler.CurrentRegexpDriverLocal,            "Default"),
-                    new TestCaseData(DriverHandler.CurrentDebugLoggerDriver,            "Default"),
-                    new TestCaseData(DriverHandler.CurrentDebugLoggerDriverLocal,       "Default"),
-                    new TestCaseData(DriverHandler.CurrentEncodingDriver,               "Default"),
-                    new TestCaseData(DriverHandler.CurrentEncodingDriverLocal,          "Default"),
-                    new TestCaseData(DriverHandler.CurrentHardwareProberDriver,         "Default"),
-                    new TestCaseData(DriverHandler.CurrentHardwareProberDriverLocal,    "Default"),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> ExpectedDriverNames =>
+            new[] {
+                //               ---------- Actual ----------                       ---------- Expected ----------
+                new TestCaseData(DriverHandler.CurrentConsoleDriver,                "Default"),
+                new TestCaseData(DriverHandler.CurrentConsoleDriverLocal,           "Default"),
+                new TestCaseData(DriverHandler.CurrentEncryptionDriver,             "Default"),
+                new TestCaseData(DriverHandler.CurrentEncryptionDriverLocal,        "Default"),
+                new TestCaseData(DriverHandler.CurrentFilesystemDriver,             "Default"),
+                new TestCaseData(DriverHandler.CurrentFilesystemDriverLocal,        "Default"),
+                new TestCaseData(DriverHandler.CurrentNetworkDriver,                "Default"),
+                new TestCaseData(DriverHandler.CurrentNetworkDriverLocal,           "Default"),
+                new TestCaseData(DriverHandler.CurrentRandomDriver,                 "Default"),
+                new TestCaseData(DriverHandler.CurrentRandomDriverLocal,            "Default"),
+                new TestCaseData(DriverHandler.CurrentRegexpDriver,                 "Default"),
+                new TestCaseData(DriverHandler.CurrentRegexpDriverLocal,            "Default"),
+                new TestCaseData(DriverHandler.CurrentDebugLoggerDriver,            "Default"),
+                new TestCaseData(DriverHandler.CurrentDebugLoggerDriverLocal,       "Default"),
+                new TestCaseData(DriverHandler.CurrentEncodingDriver,               "Default"),
+                new TestCaseData(DriverHandler.CurrentEncodingDriverLocal,          "Default"),
+                new TestCaseData(DriverHandler.CurrentHardwareProberDriver,         "Default"),
+                new TestCaseData(DriverHandler.CurrentHardwareProberDriverLocal,    "Default"),
+            };
 
-        private static IEnumerable<TestCaseData> RegisteredConsoleDriver
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData(DriverTypes.Console, new MyCustomConsoleDriver()),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> RegisteredConsoleDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.Console, new MyCustomConsoleDriver()),
+            };
 
-        private static IEnumerable<TestCaseData> RegisteredEncryptionDriver
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData(DriverTypes.Encryption, new MyCustomEncryptionDriver()),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> RegisteredEncryptionDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.Encryption, new MyCustomEncryptionDriver()),
+            };
 
-        private static IEnumerable<TestCaseData> RegisteredFilesystemDriver
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData(DriverTypes.Filesystem, new MyCustomFilesystemDriver()),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> RegisteredFilesystemDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.Filesystem, new MyCustomFilesystemDriver()),
+            };
 
-        private static IEnumerable<TestCaseData> RegisteredNetworkDriver
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData(DriverTypes.Network, new MyCustomNetworkDriver()),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> RegisteredNetworkDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.Network, new MyCustomNetworkDriver()),
+            };
 
-        private static IEnumerable<TestCaseData> RegisteredRNGDriver
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData(DriverTypes.RNG, new MyCustomRNGDriver()),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> RegisteredRNGDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.RNG, new MyCustomRNGDriver()),
+            };
 
-        private static IEnumerable<TestCaseData> RegisteredRegexpDriver
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData(DriverTypes.Regexp, new MyCustomRegexpDriver()),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> RegisteredRegexpDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.Regexp, new MyCustomRegexpDriver()),
+            };
 
-        private static IEnumerable<TestCaseData> RegisteredDebugLoggerDriver
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData(DriverTypes.DebugLogger, new MyCustomDebugLoggerDriver()),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> RegisteredDebugLoggerDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.DebugLogger, new MyCustomDebugLoggerDriver()),
+            };
 
-        private static IEnumerable<TestCaseData> RegisteredEncodingDriver
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData(DriverTypes.Encoding, new MyCustomEncodingDriver()),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> RegisteredEncodingDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.Encoding, new MyCustomEncodingDriver()),
+            };
 
-        private static IEnumerable<TestCaseData> RegisteredHardwareProberDriver
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Provided ----------
-                    new TestCaseData(DriverTypes.HardwareProber, new MyCustomHardwareProberDriver()),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> RegisteredHardwareProberDriver =>
+            new[] {
+                //               ---------- Provided ----------
+                new TestCaseData(DriverTypes.HardwareProber, new MyCustomHardwareProberDriver()),
+            };
 
         [Test]
         [Description("Management")]

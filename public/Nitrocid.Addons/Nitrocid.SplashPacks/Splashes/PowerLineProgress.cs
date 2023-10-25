@@ -36,18 +36,13 @@ namespace Nitrocid.SplashPacks.Splashes
         // Standalone splash information
         public override string SplashName => "PowerLineProgress";
 
-        public int ProgressWritePositionY
-        {
-            get
+        public int ProgressWritePositionY =>
+            SplashPackInit.SplashConfig.PowerLineProgressProgressTextLocation switch
             {
-                return SplashPackInit.SplashConfig.PowerLineProgressProgressTextLocation switch
-                {
-                    (int)TextLocation.Top => 1,
-                    (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 6,
-                    _ => 1,
-                };
-            }
-        }
+                (int)TextLocation.Top => 1,
+                (int)TextLocation.Bottom => ConsoleWrapper.WindowHeight - 6,
+                _ => 1,
+            };
 
         private readonly Color FirstColorSegmentForeground = new(85, 255, 255);
         private readonly Color FirstColorSegmentBackground = new(43, 127, 127);

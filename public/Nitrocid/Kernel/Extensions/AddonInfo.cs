@@ -23,7 +23,10 @@ namespace KS.Kernel.Extensions
     [DebuggerDisplay("Addon name = {AddonName}")]
     internal class AddonInfo
     {
-        internal string AddonName { get => Addon is not null ? Addon.AddonName : ""; }
+        internal string AddonName =>
+            Addon is not null ?
+            Addon.AddonName :
+            "";
         internal IAddon Addon { get; }
 
         internal AddonInfo(IAddon addon)

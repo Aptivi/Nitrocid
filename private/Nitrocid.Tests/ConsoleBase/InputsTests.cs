@@ -29,35 +29,25 @@ namespace Nitrocid.Tests.ConsoleBase
     public class InputsTests
     {
 
-        private static IEnumerable<TestCaseData> ExpectedChoicesString
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Actual ----------                       ---------- Expected ----------
-                    new TestCaseData("y/n", Array.Empty<string>(),                      new object[] { new string[] { "y", "n" }, new string[] { null, null }, 2 }),
-                    new TestCaseData("y/n", new string[] { "Yes", "No" },               new object[] { new string[] { "y", "n" }, new string[] { "Yes", "No" }, 2 }),
-                    new TestCaseData("y/n/c", Array.Empty<string>(),                    new object[] { new string[] { "y", "n", "c" }, new string[] { null, null, null }, 3 }),
-                    new TestCaseData("y/n/c", new string[] { "Yes", "No", "Cancel" },   new object[] { new string[] { "y", "n", "c" }, new string[] { "Yes", "No", "Cancel" }, 3 }),
-                    new TestCaseData("", Array.Empty<string>(),                         new object[] { Array.Empty<string>(), Array.Empty<string>(), 0 }),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> ExpectedChoicesString =>
+            new[] {
+                //               ---------- Actual ----------                       ---------- Expected ----------
+                new TestCaseData("y/n", Array.Empty<string>(),                      new object[] { new string[] { "y", "n" }, new string[] { null, null }, 2 }),
+                new TestCaseData("y/n", new string[] { "Yes", "No" },               new object[] { new string[] { "y", "n" }, new string[] { "Yes", "No" }, 2 }),
+                new TestCaseData("y/n/c", Array.Empty<string>(),                    new object[] { new string[] { "y", "n", "c" }, new string[] { null, null, null }, 3 }),
+                new TestCaseData("y/n/c", new string[] { "Yes", "No", "Cancel" },   new object[] { new string[] { "y", "n", "c" }, new string[] { "Yes", "No", "Cancel" }, 3 }),
+                new TestCaseData("", Array.Empty<string>(),                         new object[] { Array.Empty<string>(), Array.Empty<string>(), 0 }),
+            };
 
-        private static IEnumerable<TestCaseData> ExpectedChoicesArray
-        {
-            get
-            {
-                return new[] {
-                    //               ---------- Actual ----------                                               ---------- Expected ----------
-                    new TestCaseData(new string[] { "y", "n" }, Array.Empty<string>(),                          new object[] { new string[] { "y", "n" }, new string[] { null, null }, 2 }),
-                    new TestCaseData(new string[] { "y", "n" }, new string[] { "Yes", "No" },                   new object[] { new string[] { "y", "n" }, new string[] { "Yes", "No" }, 2 }),
-                    new TestCaseData(new string[] { "y", "n", "c" }, Array.Empty<string>(),                     new object[] { new string[] { "y", "n", "c" }, new string[] { null, null, null }, 3 }),
-                    new TestCaseData(new string[] { "y", "n", "c" }, new string[] { "Yes", "No", "Cancel" },    new object[] { new string[] { "y", "n", "c" }, new string[] { "Yes", "No", "Cancel" }, 3 }),
-                    new TestCaseData(Array.Empty<string>(), Array.Empty<string>(),                              new object[] { Array.Empty<string>(), Array.Empty<string>(), 0 }),
-                };
-            }
-        }
+        private static IEnumerable<TestCaseData> ExpectedChoicesArray =>
+            new[] {
+                //               ---------- Actual ----------                                               ---------- Expected ----------
+                new TestCaseData(new string[] { "y", "n" }, Array.Empty<string>(),                          new object[] { new string[] { "y", "n" }, new string[] { null, null }, 2 }),
+                new TestCaseData(new string[] { "y", "n" }, new string[] { "Yes", "No" },                   new object[] { new string[] { "y", "n" }, new string[] { "Yes", "No" }, 2 }),
+                new TestCaseData(new string[] { "y", "n", "c" }, Array.Empty<string>(),                     new object[] { new string[] { "y", "n", "c" }, new string[] { null, null, null }, 3 }),
+                new TestCaseData(new string[] { "y", "n", "c" }, new string[] { "Yes", "No", "Cancel" },    new object[] { new string[] { "y", "n", "c" }, new string[] { "Yes", "No", "Cancel" }, 3 }),
+                new TestCaseData(Array.Empty<string>(), Array.Empty<string>(),                              new object[] { Array.Empty<string>(), Array.Empty<string>(), 0 }),
+            };
 
         /// <summary>
         /// Tests filtering the VT sequences that matches the regex
