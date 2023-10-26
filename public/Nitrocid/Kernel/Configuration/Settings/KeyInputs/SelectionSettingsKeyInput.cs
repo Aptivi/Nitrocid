@@ -40,10 +40,10 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
         bool SelectionEnumInternal;
         bool SelectionFunctionDict;
         string ListFunctionName;
-        string ListFunctionType;
         bool SelectionEnumZeroBased;
         Type SelectionEnumType = default;
         IEnumerable<object> SelectFrom;
+        string[] selectFallbacks;
         object Selections;
 
         public object PromptForSet(SettingsKey key, object KeyDefaultValue, out bool bail)
@@ -159,8 +159,8 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             SelectionEnumInternal = key.EnumerationInternal;
             SelectionFunctionDict = key.IsSelectionFunctionDict;
             ListFunctionName = key.SelectionFunctionName;
-            ListFunctionType = key.SelectionFunctionType;
             SelectionEnumZeroBased = key.EnumerationZeroBased;
+            selectFallbacks = key.SelectionFallback;
             SelectionEnumType = default;
 
             // Determine which list we're going to select
@@ -185,9 +185,19 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             {
                 var listObj = MethodManager.InvokeMethodStatic(ListFunctionName);
                 if (SelectionFunctionDict)
-                    SelectFrom = (IEnumerable<object>)((IDictionary)listObj).Keys;
+                {
+                    if (listObj is null || listObj is IEnumerable<object> objs && !objs.Any())
+                        SelectFrom = selectFallbacks;
+                    else
+                        SelectFrom = (IEnumerable<object>)((IDictionary)listObj).Keys;
+                }
                 else
-                    SelectFrom = (IEnumerable<object>)listObj;
+                {
+                    if (listObj is null || listObj is IEnumerable<object> objs && !objs.Any())
+                        SelectFrom = selectFallbacks;
+                    else
+                        SelectFrom = (IEnumerable<object>)listObj;
+                }
             }
         }
 
