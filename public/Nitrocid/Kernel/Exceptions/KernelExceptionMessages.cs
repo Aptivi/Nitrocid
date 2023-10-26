@@ -144,45 +144,64 @@ namespace KS.Kernel.Exceptions
         {
             StringBuilder builder = new();
 
-            // Check to see if the exception type is a KernelException
-            if (e is not null && e.GetType() == typeof(KernelException))
+            // Display introduction
+            DebugWriter.WriteDebug(DebugLevel.I, "Not a nested KernelException.");
+            builder.AppendLine(Translate.DoTranslation("There is an error in the kernel, one of the kernel addons, one of your mods, or or one of the kernel components. If the routine tried to process your input, ensure that you've written all the parameters correctly."));
+            builder.AppendLine();
+
+            // Display error type
+            builder.AppendLine("--- " + Translate.DoTranslation("Exception info") + " ---");
+            builder.AppendLine("- " + Translate.DoTranslation("Error type") + $": {exceptionType} [{Convert.ToInt32(exceptionType)}]");
+            builder.AppendLine("  " + Translate.DoTranslation("Error message") + $": {GetMessageFromType(exceptionType)}");
+            builder.AppendLine();
+
+            // Display error message
+            builder.AppendLine("--- " + Translate.DoTranslation("Additional info") + " ---");
+            DebugWriter.WriteDebug(DebugLevel.I, "Error message \"{0}\"", message);
+            if (!string.IsNullOrWhiteSpace(message))
             {
-                // Display message and some extra info
-                DebugWriter.WriteDebug(DebugLevel.I, "Nested KernelException.");
-                builder.AppendLine(Translate.DoTranslation("Another kernel exception has been returned.") + $" {TextTools.FormatString(message, vars)}\n");
-                builder.Append(e.Message);
+                builder.AppendLine("- " + Translate.DoTranslation("The module that caused the fault provided this additional information that may help you further"));
+                builder.AppendLine("  " + TextTools.FormatString(message, vars));
             }
             else
+                builder.AppendLine("- " + Translate.DoTranslation("The module that caused the fault didn't provide additional information."));
+            builder.AppendLine();
+
+            // Display exception
+            builder.AppendLine("--- " + Translate.DoTranslation("Exception details") + " ---");
+            DebugWriter.WriteDebug(DebugLevel.I, "Exception is not null: {0}", e is not null);
+            if (e is not null)
             {
-                // Display error type
-                DebugWriter.WriteDebug(DebugLevel.I, "Not a nested KernelException.");
-                builder.AppendLine(Translate.DoTranslation("There is an error in the kernel or one of the kernel components. The below information may help you figure out why.") + "\n");
-                builder.AppendLine(Translate.DoTranslation("The error type is") + $" {exceptionType} [{Convert.ToInt32(exceptionType)}]");
-                builder.AppendLine(GetMessageFromType(exceptionType) + "\n");
+                builder.AppendLine("- " + Translate.DoTranslation("If the additional info above doesn't help you pinpoint the problem, this may help you pinpoint it."));
+                builder.AppendLine("  " + $"{e.GetType().Name}: {(e is KernelException kex ? kex.OriginalExceptionMessage : e.Message)}");
+            }
+            else
+                builder.AppendLine("- " + Translate.DoTranslation("The module didn't provide the exception information, so it's usually an indicator that something is wrong."));
+            builder.AppendLine();
 
-                // Display error message
-                DebugWriter.WriteDebug(DebugLevel.I, "Error message \"{0}\"", message);
-                if (!string.IsNullOrWhiteSpace(message))
-                    builder.AppendLine(Translate.DoTranslation("The module that caused the fault provided this additional information that may help you further") + $": {TextTools.FormatString(message, vars)}\n");
-                else
-                    builder.AppendLine(Translate.DoTranslation("The module that caused the fault didn't provide additional information.") + "\n");
-
-                // Display exception
-                DebugWriter.WriteDebug(DebugLevel.I, "Exception is not null: {0}", e is not null);
-                if (e is not null)
-                    builder.AppendLine(Translate.DoTranslation("Additionally, the faulty module provided this exception information") + $": {e.GetType().Name}: {e.Message}\n");
-                else
-                    builder.AppendLine(Translate.DoTranslation("Also, the module didn't provide the exception information, so it's usually an indicator that something is wrong.") + "\n");
-
-                builder.Append(Translate.DoTranslation("If the module tried to process your input, ensure that you've written all the parameters correctly."));
+            // Display inner exceptions
+            builder.AppendLine("--- " + Translate.DoTranslation("Inner exception details") + " ---");
+            int exceptionIndex = 1;
+            if (e is not null)
+                e = e.InnerException;
+            if (e is not null)
+                builder.AppendLine("- " + Translate.DoTranslation("Additional errors were found when the routine tried to perform this operation"));
+            while (e is not null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Inner exception {0} is not null: {1}", exceptionIndex, e is not null);
+                builder.AppendLine("  " + $"[{exceptionIndex}] {e.GetType().Name}: {(e is KernelException kex ? kex.OriginalExceptionMessage : e.Message)}");
+                e = e.InnerException;
+                exceptionIndex++;
             }
 
+            builder.AppendLine();
+            builder.Append(Translate.DoTranslation("If you're sure that this error is unexpected, try to restart the kernel with debugging enabled and investigate the logs after retrying the action."));
             return builder.ToString();
         }
 
         internal static string GetMessageFromType(KernelExceptionType exceptionType) =>
             Messages.ContainsKey(exceptionType) ?
             Messages[exceptionType] :
-            Translate.DoTranslation("Unfortunately, an invalid message type was given, so we don't exactly know what is the problem. Try turning on the debugger and reproducing the problem.");
+            Translate.DoTranslation("Unfortunately, an invalid message type was given, so it's possible that something is messed up. Try turning on the debugger and reproducing the problem.");
     }
 }
