@@ -39,5 +39,10 @@ namespace KS.Shell.ShellBase.Arguments
         /// </summary>
         public string ExactWording { get; set; }
 
+        /// <summary>
+        /// Makes a new instance of the command argument part options
+        /// </summary>
+        public CommandArgumentPartOptions()
+        { }
     }
 }
