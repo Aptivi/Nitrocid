@@ -183,10 +183,11 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             }
             else
             {
+                var listObj = MethodManager.InvokeMethodStatic(ListFunctionName);
                 if (SelectionFunctionDict)
-                    SelectFrom = (IEnumerable<object>)((IDictionary)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null)).Keys;
+                    SelectFrom = (IEnumerable<object>)((IDictionary)listObj).Keys;
                 else
-                    SelectFrom = (IEnumerable<object>)MethodManager.GetMethod(ListFunctionName).Invoke(ListFunctionType, null);
+                    SelectFrom = (IEnumerable<object>)listObj;
             }
         }
 

@@ -44,7 +44,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             string finalSection = SettingsApp.RenderHeader(keyName, keyDesc);
 
             // Write the prompt
-            var TargetEnum = (IEnumerable<object>)MethodManager.GetMethod(key.SelectionFunctionName).Invoke(key.SelectionFunctionType, null);
+            var TargetEnum = (IEnumerable<object>)MethodManager.InvokeMethodStatic(key.SelectionFunctionName);
             var TargetList = TargetEnum.ToList();
             bool promptBail = false;
             while (!promptBail)

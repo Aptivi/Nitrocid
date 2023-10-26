@@ -17,9 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.Languages;
 using KS.Misc.Reflection;
+using KS.Shell.ShellBase.Arguments;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
 using Shouldly;
+using System;
+using System.Collections.Generic;
+using System.Globalization;
 
 namespace Nitrocid.Tests.Misc.Reflection
 {
@@ -29,12 +36,54 @@ namespace Nitrocid.Tests.Misc.Reflection
     {
 
         /// <summary>
-        /// Tests getting method
+        /// Tests getting a method (static)
         /// </summary>
         [Test]
         [Description("Management")]
-        public void TestGetMethod() =>
-            MethodManager.GetMethod("GetCulturesFromCurrentLang").ShouldNotBeNull();
+        public void TestGetMethodStatic()
+        {
+            var value = MethodManager.GetMethod(nameof(CultureManager.GetCulturesFromCurrentLang));
+            value.ShouldNotBeNull();
+        }
+
+        /// <summary>
+        /// Tests getting a method
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestGetMethod()
+        {
+            var instance = new CommandInfo("cmd", ShellType.Shell, "Test me!", Array.Empty<CommandArgumentInfo>(), null);
+            var value = MethodManager.GetMethod(nameof(instance.GetTranslatedHelpEntry), instance.GetType());
+            value.ShouldNotBeNull();
+            value.DeclaringType.ShouldBe(instance.GetType());
+        }
+
+        /// <summary>
+        /// Tests invoking a method (static)
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestInvokeMethodStatic()
+        {
+            var value = MethodManager.InvokeMethodStatic(nameof(CultureManager.GetCulturesFromCurrentLang));
+            value.ShouldNotBeNull();
+            value.ShouldBeOfType(typeof(List<CultureInfo>));
+        }
+
+        /// <summary>
+        /// Tests invoking a method (non-static)
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestInvokeMethod()
+        {
+            var instance = new CommandInfo("cmd", ShellType.Shell, "Test me!", Array.Empty<CommandArgumentInfo>(), null);
+            var value = MethodManager.InvokeMethod(nameof(instance.GetTranslatedHelpEntry), instance);
+            value.ShouldNotBeNull();
+            value.ShouldBeOfType(typeof(string));
+            value.ShouldBe("Test me!");
+        }
 
     }
 }
