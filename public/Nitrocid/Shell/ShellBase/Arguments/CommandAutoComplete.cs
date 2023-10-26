@@ -117,7 +117,7 @@ namespace KS.Shell.ShellBase.Arguments
 
                 // We have the delegate! Invoke it.
                 DebugWriter.WriteDebug(DebugLevel.I, "If we reach here, it means we have a delegate! Executing delegate with {0} [{1}]...", LastArgument, LastArgument.Length);
-                finalCompletions = AutoCompleter.Invoke()
+                finalCompletions = AutoCompleter.Invoke(finalCommandArgsEnclosed)
                     .Where(x => x.StartsWith(LastArgument))
                     .Select(x => x[LastArgument.Length..])
                     .ToArray();

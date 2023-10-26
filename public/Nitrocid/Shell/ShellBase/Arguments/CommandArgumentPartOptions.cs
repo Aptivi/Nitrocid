@@ -29,7 +29,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// <summary>
         /// Auto completion function delegate
         /// </summary>
-        public Func<string[]> AutoCompleter { get; set; }
+        public Func<string[], string[]> AutoCompleter { get; set; }
         /// <summary>
         /// Command argument expression
         /// </summary>

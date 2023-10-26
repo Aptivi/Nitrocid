@@ -129,7 +129,7 @@ namespace KS.Shell.ShellBase.Shells
                         {
                             new CommandArgumentPart(false, "command", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = () => CommandManager.GetCommands(CurrentShellType).Keys.ToArray()
+                                AutoCompleter = (_) => CommandManager.GetCommands(CurrentShellType).Keys.ToArray()
                             })
                         }, new[]
                         {
@@ -210,7 +210,7 @@ namespace KS.Shell.ShellBase.Shells
                         {
                             new CommandArgumentPart(true, "command", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = () => CommandExecutor.GetWrappableCommands(CurrentShellType)
+                                AutoCompleter = (_) => CommandExecutor.GetWrappableCommands(CurrentShellType)
                             })
                         })
                     }, new WrapUnifiedCommand())

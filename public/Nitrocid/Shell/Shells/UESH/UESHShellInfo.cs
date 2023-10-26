@@ -310,7 +310,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "oldUserName", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = () => UserManagement.ListAllUsers().ToArray()
+                                AutoCompleter = (_) => UserManagement.ListAllUsers().ToArray()
                             }),
                             new CommandArgumentPart(true, "newUserName"),
                         })
@@ -432,7 +432,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                                AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
                             }),
                         }, new[]
                         {
@@ -456,7 +456,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "encodedString"),
                             new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                                AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
                             }),
                         }, new[]
                         {
@@ -577,7 +577,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                                AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
                             }),
                         }, new[]
                         {
@@ -601,7 +601,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "string"),
                             new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                                AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
                             }),
                         }, new[]
                         {
@@ -714,7 +714,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = () => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
+                                AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
                             }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new GetDefaultExtHandlerCommand())
@@ -734,7 +734,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = () => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
+                                AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
                             }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new GetExtHandlersCommand())
@@ -747,7 +747,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(false, "algorithm", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = EncodingDriverTools.GetEncodingDriverNames
+                                AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
                             }),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new GetKeyIvCommand())
@@ -774,7 +774,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "HardwareType", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = () => new[] { "HDD", "CPU", "GPU", "RAM", "all" }
+                                AutoCompleter = (_) => new[] { "HDD", "CPU", "GPU", "RAM", "all" }
                             })
                         })
                     }, new HwInfoCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
@@ -838,7 +838,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "reload/load/unload"),
                             new CommandArgumentPart(true, "customlanguagename", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = () => LanguageManager.CustomLanguages.Keys.ToArray()
+                                AutoCompleter = (_) => LanguageManager.CustomLanguages.Keys.ToArray()
                             }),
                         }),
                         new CommandArgumentInfo(new[]
@@ -1378,11 +1378,11 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "extension", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = () => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
+                                AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
                             }),
                             new CommandArgumentPart(true, "implementer", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = () => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Implementer).ToArray()
+                                AutoCompleter = (args) => ExtensionHandlerTools.GetExtensionHandlers(args[0]).Select((h) => h.Implementer).ToArray()
                             }),
                         })
                     }, new SetExtHandlerCommand())
@@ -1504,7 +1504,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = EncryptionDriverTools.GetEncryptionDriverNames
+                                AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames()
                             }),
                             new CommandArgumentPart(true, "file"),
                             new CommandArgumentPart(false, "outputFile"),
@@ -1524,7 +1524,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "algorithm/all", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = EncryptionDriverTools.GetEncryptionDriverNames
+                                AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames()
                             }),
                             new CommandArgumentPart(true, "dir"),
                             new CommandArgumentPart(false, "outputFile"),
@@ -1634,7 +1634,7 @@ namespace KS.Shell.Shells.UESH
                         {
                             new CommandArgumentPart(true, "algorithm", new CommandArgumentPartOptions()
                             {
-                                AutoCompleter = EncryptionDriverTools.GetEncryptionDriverNames
+                                AutoCompleter = (_) => EncryptionDriverTools.GetEncryptionDriverNames()
                             }),
                             new CommandArgumentPart(true, "calculatedhash"),
                             new CommandArgumentPart(true, "hashfile/expectedhash"),

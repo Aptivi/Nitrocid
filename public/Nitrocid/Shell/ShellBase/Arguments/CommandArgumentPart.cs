@@ -38,7 +38,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// <summary>
         /// Auto completion function delegate
         /// </summary>
-        public Func<string[]> AutoCompleter { get; private set; }
+        public Func<string[], string[]> AutoCompleter { get; private set; }
         /// <summary>
         /// Command argument expression
         /// </summary>
@@ -78,7 +78,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="autoCompleter">Auto completion function</param>
         /// <param name="isNumeric">Specifies whether the argument accepts only numbers (and dots for float values)</param>
         /// <param name="exactWording">User is required to provide this exact wording</param>
-        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[]> autoCompleter = null, bool isNumeric = false, string exactWording = null)
+        public CommandArgumentPart(bool argumentRequired, string argumentExpression, Func<string[], string[]> autoCompleter = null, bool isNumeric = false, string exactWording = null)
         {
             ArgumentRequired = argumentRequired;
             ArgumentExpression = argumentExpression;
@@ -105,7 +105,7 @@ namespace KS.Shell.ShellBase.Arguments
                 if (!done && argumentExpression.Contains('/'))
                 {
                     string[] expressions = argumentExpression.Split('/');
-                    autoCompleter = expressions.ToArray;
+                    autoCompleter = (_) => expressions.ToArray();
                     done = true;
                 }
             }
