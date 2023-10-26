@@ -731,15 +731,12 @@ namespace KS.Shell.ShellBase.Shells
         public static void KillShell()
         {
             // We must have at least two shells to kill the last shell. Else, we will have zero shells running, making us look like we've logged out!
-            if (ShellStack.Count >= 2)
-            {
-                ShellStack[^1].ShellBase.Bail = true;
-                PurgeShells();
-            }
-            else
-            {
+            if (IsOnMotherShell())
                 throw new KernelException(KernelExceptionType.ShellOperation, Translate.DoTranslation("Can not kill the mother shell!"));
-            }
+            
+            // Not a mother shell, so bail.
+            ShellStack[^1].ShellBase.Bail = true;
+            PurgeShells();
         }
 
         /// <summary>
@@ -842,6 +839,13 @@ namespace KS.Shell.ShellBase.Shells
         /// <returns>True if it exists; false otherwise.</returns>
         public static bool ShellTypeExists(string ShellType) =>
             AvailableShells.ContainsKey(ShellType);
+
+        /// <summary>
+        /// Is the current shell a mother shell?
+        /// </summary>
+        /// <returns>True if the shell stack is at most one shell. False if running in the second shell or higher.</returns>
+        public static bool IsOnMotherShell() =>
+            ShellStack.Count < 2;
 
         internal static void SaveHistories() =>
             FileIO.WriteAllText(Paths.ShellHistoriesPath, JsonConvert.SerializeObject(histories, Formatting.Indented));

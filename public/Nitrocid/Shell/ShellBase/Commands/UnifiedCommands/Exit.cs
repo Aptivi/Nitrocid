@@ -16,6 +16,10 @@
 // You should have received a copy of the GNU General Public License
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using KS.Shell.ShellBase.Shells;
 
 namespace KS.Shell.ShellBase.Commands.UnifiedCommands
@@ -31,6 +35,11 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            if (ShellManager.IsOnMotherShell())
+            {
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("You can't exit the mother shell. Did you mean to log out of your account, shut the kernel down, or reboot it?"), KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.ShellOperation;
+            }
             ShellManager.KillShell();
             return 0;
         }
