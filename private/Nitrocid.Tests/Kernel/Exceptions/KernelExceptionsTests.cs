@@ -68,7 +68,7 @@ namespace Nitrocid.Tests.Kernel.Exceptions
                 string initialMessage = KernelExceptionMessages.Messages[exceptionType];
                 message.ShouldContain(initialMessage);
                 message.ShouldContain("Hello world!");
-                message.ShouldContain("Also, the module didn't provide the exception information, so it's usually an indicator that something is wrong.");
+                message.ShouldContain("The module didn't provide the exception information, so it's usually an indicator that something is wrong.");
             }
         }
 
@@ -87,7 +87,7 @@ namespace Nitrocid.Tests.Kernel.Exceptions
                 string initialMessage = KernelExceptionMessages.Messages[exceptionType];
                 message.ShouldContain(initialMessage);
                 message.ShouldContain("The module that caused the fault didn't provide additional information.");
-                message.ShouldContain("Also, the module didn't provide the exception information, so it's usually an indicator that something is wrong.");
+                message.ShouldContain("The module didn't provide the exception information, so it's usually an indicator that something is wrong.");
             }
         }
 
@@ -107,7 +107,8 @@ namespace Nitrocid.Tests.Kernel.Exceptions
                 string initialMessage = KernelExceptionMessages.Messages[exceptionType];
                 message.ShouldContain(initialMessage);
                 message.ShouldContain("Hello world!");
-                message.ShouldContain($"Additionally, the faulty module provided this exception information: {exc.GetType().Name}: {exc.Message}");
+                message.ShouldContain("If the additional info above doesn't help you pinpoint the problem, this may help you pinpoint it.");
+                message.ShouldContain($"{exc.GetType().Name}: {exc.Message}");
             }
         }
 
@@ -127,7 +128,8 @@ namespace Nitrocid.Tests.Kernel.Exceptions
                 string initialMessage = KernelExceptionMessages.Messages[exceptionType];
                 message.ShouldContain(initialMessage);
                 message.ShouldContain("The module that caused the fault didn't provide additional information.");
-                message.ShouldContain($"Additionally, the faulty module provided this exception information: {exc.GetType().Name}: {exc.Message}");
+                message.ShouldContain("If the additional info above doesn't help you pinpoint the problem, this may help you pinpoint it.");
+                message.ShouldContain($"{exc.GetType().Name}: {exc.Message}");
             }
         }
 
@@ -140,8 +142,8 @@ namespace Nitrocid.Tests.Kernel.Exceptions
         {
             var exceptionType = (KernelExceptionType)(-1);
             string message = KernelExceptionMessages.GetFinalExceptionMessage(exceptionType, "", null);
-            message.ShouldContain("Unfortunately, an invalid message type was given, so we don't exactly know what is the problem. Try turning on the debugger and reproducing the problem.");
-            message.ShouldContain($"Also, the module didn't provide the exception information, so it's usually an indicator that something is wrong.");
+            message.ShouldContain("Unfortunately, an invalid message type was given, so it's possible that something is messed up. Try turning on the debugger and reproducing the problem.");
+            message.ShouldContain("The module didn't provide the exception information, so it's usually an indicator that something is wrong.");
         }
 
     }
