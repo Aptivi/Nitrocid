@@ -38,7 +38,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var Commands = CommandManager.GetCommands(ShellType.Shell);
             Console.WriteLine(format: "Commands from Shell: {0} commands", Commands.Count);
-            Console.WriteLine(format: string.Join(", ", Commands));
+            Console.WriteLine(format: string.Join(", ", Commands.Keys));
             Commands.ShouldNotBeNull();
             Commands.ShouldNotBeEmpty();
         }
@@ -63,7 +63,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var Commands = CommandManager.GetCommands(type);
             Console.WriteLine(format: "Commands from {0}: {1} commands", type.ToString(), Commands.Count);
-            Console.WriteLine(format: string.Join(", ", Commands));
+            Console.WriteLine(format: string.Join(", ", Commands.Keys));
             Commands.ShouldNotBeNull();
             Commands.ShouldNotBeEmpty();
         }
@@ -88,7 +88,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var Commands = CommandManager.GetCommands(type);
             Console.WriteLine(format: "Commands from {0}: {1} commands", type, Commands.Count);
-            Console.WriteLine(format: string.Join(", ", Commands));
+            Console.WriteLine(format: string.Join(", ", Commands.Keys));
             Commands.ShouldNotBeNull();
             Commands.ShouldNotBeEmpty();
         }
