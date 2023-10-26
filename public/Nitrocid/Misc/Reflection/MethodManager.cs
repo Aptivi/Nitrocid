@@ -109,7 +109,7 @@ namespace KS.Misc.Reflection
             var methodInstance = GetMethod(method) ??
                 throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is nonexistent.") + $" {method}");
             if (!methodInstance.IsStatic)
-                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is static. Use the object overload.") + $" {method}");
+                throw new KernelException(KernelExceptionType.Reflection, Translate.DoTranslation("This method is not static. Use the object overload.") + $" {method}");
 
             // Now, invoke the method.
             if (args.Length > 0)
