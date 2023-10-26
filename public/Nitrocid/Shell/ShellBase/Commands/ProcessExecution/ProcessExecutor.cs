@@ -29,34 +29,13 @@ using System.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using System.Reflection;
 
-namespace KS.Shell.ShellBase.Commands
+namespace KS.Shell.ShellBase.Commands.ProcessExecution
 {
     /// <summary>
     /// Process executor module
     /// </summary>
     public static class ProcessExecutor
     {
-
-        /// <summary>
-        /// Thread parameters for ExecuteProcess()
-        /// </summary>
-        internal class ExecuteProcessThreadParameters
-        {
-            /// <summary>
-            /// Full path to file
-            /// </summary>
-            internal string File;
-            /// <summary>
-            /// Arguments, if any
-            /// </summary>
-            internal string Args;
-
-            internal ExecuteProcessThreadParameters(string File, string Args)
-            {
-                this.File = File;
-                this.Args = Args;
-            }
-        }
 
         /// <summary>
         /// Executes a file with specified arguments

@@ -32,6 +32,7 @@ using KS.Misc.Text;
 using KS.Drivers;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Commands.ProcessExecution;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using KS.Shell.Shells.UESH;
 using KS.Shell.Shells.FTP;
@@ -81,7 +82,7 @@ namespace KS.Shell.ShellBase.Shells
 
         internal static List<ShellExecuteInfo> ShellStack = new();
         internal static string lastCommand = "";
-        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ProcessExecutor.ExecuteProcessThreadParameters)processParams));
+        internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters)processParams));
         internal static Dictionary<string, List<string>> histories = new()
         {
             { "General",                    new() },
@@ -532,7 +533,7 @@ namespace KS.Shell.ShellBase.Shells
                                         var targetCommand = Command.Replace(TargetFileName, "");
                                         targetCommand = targetCommand.TrimStart('\0', ' ');
                                         DebugWriter.WriteDebug(DebugLevel.I, "Command: {0}, Arguments: {1}", TargetFile, targetCommand);
-                                        var Params = new ProcessExecutor.ExecuteProcessThreadParameters(TargetFile, targetCommand);
+                                        var Params = new ExecuteProcessThreadParameters(TargetFile, targetCommand);
                                         ProcessStartCommandThread.Start(Params);
                                         ProcessStartCommandThread.Wait();
                                         ProcessStartCommandThread.Stop();
