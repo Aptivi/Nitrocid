@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using KS.Shell.ShellBase.Switches;
@@ -63,17 +64,42 @@ namespace KS.Shell.ShellBase.Arguments
                 var usageBuilder = new StringBuilder();
 
                 // Enumerate through the available switches first
+                List<string> switchStrings = new();
                 foreach (var Switch in Switches)
                 {
                     bool required = Switch.IsRequired;
                     bool argRequired = Switch.ArgumentsRequired;
                     bool acceptsValue = Switch.AcceptsValues;
                     string switchName = Switch.SwitchName;
+
+                    // If we're processing a conflicting switch, don't process it as we've already grouped them.
+                    if (switchStrings.Contains(switchName))
+                        continue;
+                    else
+                        switchStrings.Clear();
+
+                    // Add the switch to the strings list in case we encounter a switch that conflicts with one or more switches.
+                    switchStrings.Add(switchName);
+
+                    // Check to see if there are any conflicts to put them to a group
+                    var conflicts = Switch.ConflictsWith;
+                    if (conflicts.Length > 0)
+                        switchStrings.AddRange(conflicts);
+                    var switchLists = Switches
+                        .Where((si) => switchStrings.Contains(si.SwitchName))
+                        .ToArray();
+                    var switchStringsUsages = switchLists
+                        .Select((si) => $"-{si.SwitchName}{(si.IsRequired ? $"=value" : si.AcceptsValues ? $"[=value]" : "")}")
+                        .ToArray();
+
+                    // Now, render the switch usages
                     string renderedSwitchValue = argRequired ? $"=value" : acceptsValue ? $"[=value]" : "";
+                    string requiredTagStart = required ? "<" : "[";
+                    string requiredTagEnd = required ? ">" : "]";
                     string renderedSwitch =
-                        required ?
-                        $"<-{switchName}{renderedSwitchValue}> " :
-                        $"[-{switchName}{renderedSwitchValue}] ";
+                        conflicts.Length > 0 ?
+                        $"{requiredTagStart}{string.Join("|", switchStringsUsages)}{requiredTagEnd} " :
+                        $"{requiredTagStart}-{switchName}{renderedSwitchValue}{requiredTagEnd} ";
                     usageBuilder.Append(renderedSwitch);
                 }
 
@@ -82,10 +108,11 @@ namespace KS.Shell.ShellBase.Arguments
                 {
                     bool required = Argument.ArgumentRequired;
                     bool justNumeric = Argument.IsNumeric;
+                    string requiredTagStart = required ? "<" : "[";
+                    string requiredTagEnd = required ? ">" : "]";
+                    string numericRender = justNumeric ? ":int" : "";
                     string renderedArgument =
-                        required ?
-                        $"<{Argument.ArgumentExpression}{(justNumeric ? ":int" : "")}> " :
-                        $"[{Argument.ArgumentExpression}{(justNumeric ? ":int" : "")}] ";
+                        $"{requiredTagStart}{Argument.ArgumentExpression}{numericRender}{requiredTagEnd} ";
                     usageBuilder.Append(renderedArgument);
                 }
 
