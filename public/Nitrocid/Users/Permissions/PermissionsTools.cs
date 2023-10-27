@@ -74,6 +74,7 @@ namespace KS.Users.Permissions
                 return;
 
             // Get all the permission types
+            DebugWriter.WriteDebug(DebugLevel.I, "Demanding permissions: {0}", permissionType.ToString());
             foreach (PermissionTypes type in Enum.GetValues(typeof(PermissionTypes)))
             {
                 // Check to see if one or more permissions exist
