@@ -46,7 +46,7 @@ namespace KS.Kernel.Threading.Performance
         {
             var currentProcess = Process.GetCurrentProcess();
             var threadsUsages = new List<(int, DateTime, TimeSpan)>();
-            while (!PowerManager.KernelShutdown)
+            while (!PowerManager.KernelShutdown && usageUpdateEnabled)
             {
                 // First, get the CPU usage
                 var oldDate = previousDate;
@@ -98,7 +98,7 @@ namespace KS.Kernel.Threading.Performance
                 // Finally, update the cache and wait  until the shutdown is requested.
                 previousDate = newDate;
                 previousProcessorTime = newCpuTime;
-                SpinWait.SpinUntil(() => PowerManager.KernelShutdown, usageIntervalUpdatePeriod);
+                SpinWait.SpinUntil(() => PowerManager.KernelShutdown || !usageUpdateEnabled, usageIntervalUpdatePeriod);
             }
         }
     }
