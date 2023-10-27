@@ -60,6 +60,7 @@ using KS.Files.Operations.Querying;
 using KS.Drivers.HardwareProber;
 using KS.Misc.Text;
 using KS.Shell.Shells.Json;
+using KS.Kernel.Threading.Performance;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -1605,6 +1606,26 @@ namespace KS.Kernel.Configuration.Instances
         {
             get => TextTools.defaultFigletFontName;
             set => TextTools.defaultFigletFontName = FigletTools.GetFigletFonts().ContainsKey(value) ? value : "speed";
+        }
+        /// <summary>
+        /// Whether to update the CPU usage or not
+        /// </summary>
+        public bool CpuUsageDebugEnabled
+        {
+            get => CpuUsageDebug.usageUpdateEnabled;
+            set
+            {
+                CpuUsageDebug.usageUpdateEnabled = value;
+                CpuUsageDebug.RunCpuUsageDebugger();
+            }
+        }
+        /// <summary>
+        /// The interval in which the CPU usage is printed
+        /// </summary>
+        public int CpuUsageUpdateInterval
+        {
+            get => CpuUsageDebug.usageIntervalUpdatePeriod;
+            set => CpuUsageDebug.usageIntervalUpdatePeriod = value >= 1000 ? value : 1000;
         }
     }
 }

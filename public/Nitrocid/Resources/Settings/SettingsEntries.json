@@ -1611,6 +1611,20 @@
                 "Type": "SFiglet",
                 "Variable": "DefaultFigletFontName",
                 "Description": "The default figlet font for use with several areas of the kernel, including your modern login screen."
+            },
+            {
+                "Name": "CPU usage debug enabled",
+                "Type": "SBoolean",
+                "Variable": "CpuUsageDebugEnabled",
+                "Description": "If enabled, prints the CPU usage between the two intervals as specified in the CPU usage debug update interval."
+            },
+            {
+                "Name": "CPU usage debug update interval",
+                "Type": "SIntSlider",
+                "Variable": "CpuUsageUpdateInterval",
+                "Description": "How many milliseconds to wait before updating the CPU usage and printing it to the debugger?",
+                "MinimumValue": 1000,
+                "MaximumValue": 1000000
             }
         ]
     }
