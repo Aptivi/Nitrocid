@@ -17,9 +17,9 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel;
 using KS.Kernel.Debugging.Testing;
 using KS.Kernel.Power;
+using KS.Kernel.Starting;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -28,9 +28,9 @@ namespace KS.Arguments.CommandLineArguments
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            KernelTools.StageTimer.Stop();
+            KernelStageTools.StageTimer.Stop();
             TestInteractive.Open();
-            KernelTools.StageTimer.Start();
+            KernelStageTools.StageTimer.Start();
             PowerManager.KernelShutdown = true;
         }
 

@@ -162,10 +162,10 @@ namespace KS.Modifications
                     // Check the API version defined by mod to ensure that we don't load mods that are API incompatible
                     try
                     {
-                        if (KernelTools.KernelApiVersion != script.MinimumSupportedApiVersion)
+                        if (KernelMain.ApiVersion != script.MinimumSupportedApiVersion)
                         {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", modFile, script.MinimumSupportedApiVersion.ToString(), KernelTools.KernelApiVersion.ToString());
-                            SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} requires exactly an API version {1}, but you have version {2}. Upgrading Nitrocid KS and/or the mod usually helps. Mod parsing failed."), modFile, script.MinimumSupportedApiVersion.ToString(), KernelTools.KernelApiVersion.ToString());
+                            DebugWriter.WriteDebug(DebugLevel.W, "Trying to load mod {0} that requires minimum api version {1} on api {2}", modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString());
+                            SplashReport.ReportProgressError(Translate.DoTranslation("Mod {0} requires exactly an API version {1}, but you have version {2}. Upgrading Nitrocid KS and/or the mod usually helps. Mod parsing failed."), modFile, script.MinimumSupportedApiVersion.ToString(), KernelMain.ApiVersion.ToString());
                             return;
                         }
                     }

@@ -83,7 +83,7 @@ namespace KS.Kernel.Updates
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);
 
             // Get the latest version found
-            var CurrentVer = SemVer.ParseWithRev(KernelTools.KernelVersion.ToString());
+            var CurrentVer = SemVer.ParseWithRev(KernelMain.Version.ToString());
             var UpdateVer = SortedVersions[0].UpdateVersion;
             var UpdateURI = SortedVersions[0].UpdateURL;
             DebugWriter.WriteDebug(DebugLevel.I, "Update version: {0}", UpdateVer.ToString());

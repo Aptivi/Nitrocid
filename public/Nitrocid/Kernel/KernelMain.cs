@@ -32,14 +32,33 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Arguments;
 using KS.Arguments.Help;
 using KS.Users.Windows;
+using System.Diagnostics;
+using System.Reflection;
 
 namespace KS.Kernel
 {
     /// <summary>
     /// Kernel main class
     /// </summary>
-    internal static class Kernel
+    public static class KernelMain
     {
+        private static readonly Version kernelVersion =
+            Assembly.GetExecutingAssembly().GetName().Version;
+        private static readonly Version kernelApiVersion =
+            new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
+
+        /// <summary>
+        /// Kernel version
+        /// </summary>
+        public static Version Version =>
+            kernelVersion;
+        /// <summary>
+        /// Kernel API version
+        /// </summary>
+        // Refer to NitrocidModAPIVersion in the project file.
+        public static Version ApiVersion =>
+            kernelApiVersion;
+
         /// <summary>
         /// Entry point
         /// </summary>

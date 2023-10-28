@@ -40,9 +40,9 @@ namespace KS.Shell.Shells.UESH.Commands
 
             // Get the version according to the switches provided
             if (parameters.SwitchesList.Length > 0 && SwitchManager.ContainsSwitch(parameters.SwitchesList, "-m"))
-                ver = KernelTools.KernelApiVersion;
+                ver = KernelMain.ApiVersion;
             else
-                ver = KernelTools.KernelVersion;
+                ver = KernelMain.Version;
 
             // Now, provide the current version as a string and as a decimal
             string currentVersion = ver.ToString();

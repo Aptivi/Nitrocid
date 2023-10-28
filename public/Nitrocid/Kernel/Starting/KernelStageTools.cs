@@ -25,11 +25,13 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Splash;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace KS.Kernel.Starting
 {
     internal static class KernelStageTools
     {
+        internal static Stopwatch StageTimer = new();
         internal static List<KernelStage> Stages = new()
         {
             new KernelStage( /* Localizable */ "System initialization",             KernelStageActions.Stage01SystemInitialization),
@@ -67,7 +69,7 @@ namespace KS.Kernel.Starting
                 }
                 else
                     SplashReport.ReportProgress(Translate.DoTranslation("Running in safe mode. Skipping stage..."));
-                KernelTools.CheckErrored();
+                KernelEntry.CheckErrored();
             }
             else
                 ReportNewStage(stageNum, "");
@@ -85,20 +87,20 @@ namespace KS.Kernel.Starting
             {
                 if (ShowStageFinishTimes)
                 {
-                    SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {KernelTools.StageTimer.Elapsed}");
-                    KernelTools.StageTimer.Restart();
+                    SplashReport.ReportProgress(Translate.DoTranslation("Internal initialization finished in") + $" {StageTimer.Elapsed}");
+                    StageTimer.Restart();
                 }
             }
             else if (ShowStageFinishTimes)
             {
-                SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {KernelTools.StageTimer.Elapsed}", 10);
+                SplashReport.ReportProgress(Translate.DoTranslation("Stage finished in") + $" {StageTimer.Elapsed}", 10);
                 if (StageNumber > Stages.Count)
                 {
-                    KernelTools.StageTimer.Reset();
+                    StageTimer.Reset();
                     TextWriterColor.Write();
                 }
                 else
-                    KernelTools.StageTimer.Restart();
+                    StageTimer.Restart();
             }
 
             // Actually report the stage

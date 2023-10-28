@@ -78,11 +78,11 @@ namespace KS.Kernel
             }
 
             // Initialize important components
-            KernelTools.StageTimer.Start();
+            KernelStageTools.StageTimer.Start();
             PowerManager.Uptime.Start();
             KernelInitializers.InitializeEssential();
             KernelInitializers.InitializeWelcomeMessages();
-            KernelTools.CheckErrored();
+            CheckErrored();
 
             // Notify user of errors if appropriate
             KernelPanic.NotifyBootFailure();
@@ -112,6 +112,19 @@ namespace KS.Kernel
             DebugWriter.WriteDebug(DebugLevel.I, "Main Loop end.");
         }
 
+        /// <summary>
+        /// Check to see if KernelError has been called
+        /// </summary>
+        internal static void CheckErrored()
+        {
+            if (KernelPanic.KernelErrored)
+            {
+                KernelPanic.KernelErrored = false;
+                var exception = KernelPanic.LastKernelErrorException;
+                throw new KernelErrorException(Translate.DoTranslation("Kernel Error while booting: {0}"), exception, exception.Message);
+            }
+        }
+
         private static void MainLoop()
         {
             while (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
@@ -121,7 +134,7 @@ namespace KS.Kernel
                     Login.LoginPrompt();
                 else
                     Login.PromptMaintenanceLogin();
-                KernelTools.CheckErrored();
+                CheckErrored();
 
                 // Check to see if login handler requested power action
                 if (PowerManager.RebootRequested | PowerManager.KernelShutdown)

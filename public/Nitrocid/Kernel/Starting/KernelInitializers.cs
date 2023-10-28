@@ -212,7 +212,7 @@ namespace KS.Kernel.Starting
                 SeparatorWriterColor.WriteSeparatorKernelColor(Translate.DoTranslation("Kernel environment information"), true, KernelColorType.Stage);
                 TextWriterColor.Write("  OS: " + Translate.DoTranslation("Running on {0}"), System.Environment.OSVersion.ToString());
                 TextWriterColor.Write("  KS: " + Translate.DoTranslation("Running from GRILO?") + $" {KernelPlatform.IsRunningFromGrilo()}");
-                TextWriterColor.Write("  KSAPI: " + $"v{KernelTools.KernelApiVersion}");
+                TextWriterColor.Write("  KSAPI: " + $"v{KernelMain.ApiVersion}");
             }
         }
 

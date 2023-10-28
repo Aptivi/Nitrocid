@@ -19,7 +19,6 @@
 
 using System;
 using System.Threading;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
@@ -27,6 +26,8 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Misc.Splash;
 using KS.ConsoleBase;
+using KS;
+using KS.Kernel;
 
 namespace Nitrocid.SplashPacks.Splashes
 {
@@ -50,7 +51,7 @@ namespace Nitrocid.SplashPacks.Splashes
             Beginning = true;
             DebugWriter.WriteDebug(DebugLevel.I, "Splash opening. Clearing console...");
             ConsoleWrapper.Clear();
-            TextWriterColor.Write(CharManager.NewLine + $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC {OpenRCVersionColor.VTSequenceForeground}0.13.11 {KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground}is starting up {OpenRCPlaceholderColor.VTSequenceForeground}Nitrocid KS {KernelTools.KernelVersion}" + CharManager.NewLine);
+            TextWriterColor.Write(CharManager.NewLine + $"   {OpenRCIndicatorColor.VTSequenceForeground}OpenRC {OpenRCVersionColor.VTSequenceForeground}0.13.11 {KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground}is starting up {OpenRCPlaceholderColor.VTSequenceForeground}Nitrocid KS {KernelMain.Version}" + CharManager.NewLine);
         }
 
         public override void Display(SplashContext context)

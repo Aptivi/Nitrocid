@@ -30,7 +30,7 @@ namespace KS.Kernel
 
         public void Boot(string[] args)
         {
-            Kernel.Main(args);
+            KernelMain.Main(args);
 
             // GRILO needs ShutdownRequested to be set; otherwise, boot fails.
             ShutdownRequested = true;

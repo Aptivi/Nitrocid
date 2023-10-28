@@ -55,7 +55,7 @@ namespace KS.Kernel.Debugging.Trace
 				{
 					try
 					{
-						NetworkTransfer.DownloadFile($"https://github.com/Aptivi/NitrocidKS/releases/download/v{KernelTools.KernelVersion}-beta/{KernelTools.KernelVersion}.pdb", Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb"));
+						NetworkTransfer.DownloadFile($"https://github.com/Aptivi/NitrocidKS/releases/download/v{KernelMain.Version}-beta/{KernelMain.Version}.pdb", Assembly.GetExecutingAssembly().Location.Replace(".exe", ".pdb"));
 					}
 					catch (Exception)
 					{
