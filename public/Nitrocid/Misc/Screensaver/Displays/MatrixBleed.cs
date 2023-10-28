@@ -154,6 +154,11 @@ namespace KS.Misc.Screensaver.Displays
                 }
             }
 
+            // Draw and clean the buffer
+            string buffer = MatrixBleedState.bleedBuffer.ToString();
+            MatrixBleedState.bleedBuffer.Clear();
+            TextWriterColor.WritePlain(buffer);
+
             // Reset resize sync
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(MatrixBleedSettings.MatrixBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -171,6 +176,7 @@ namespace KS.Misc.Screensaver.Displays
         internal int ColumnLine;
         internal int fallStep;
         internal int fadeStep;
+        internal static StringBuilder bleedBuffer = new();
         private readonly List<(int, int, string)> CoveredPositions = new();
         private readonly Color foreground = new("0;255;0");
         private readonly Color background = new("0;0;0");
@@ -184,7 +190,12 @@ namespace KS.Misc.Screensaver.Displays
 
             // Print a block and add the covered position to the list so fading down can be done
             string renderedNumber = RandomDriver.Random(1).ToString();
-            TextWriterWhereColor.WriteWhereColorBack(renderedNumber, ColumnLine, fallStep, false, foreground, background);
+            bleedBuffer.Append(
+                $"{CsiSequences.GenerateCsiCursorPosition(ColumnLine + 1, fallStep + 1)}" +
+                $"{foreground.VTSequenceForeground}" +
+                $"{background.VTSequenceBackground}" +
+                $"{renderedNumber}"
+            );
             var PositionTuple = (ColumnLine, fallStep, renderedNumber);
             CoveredPositions.Add(PositionTuple);
         }
@@ -209,7 +220,6 @@ namespace KS.Misc.Screensaver.Displays
 
             // Get the positions and write the block with new color
             var CurrentFadeColor = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
-            var bleedBuilder = new StringBuilder();
             foreach ((int, int, string) PositionTuple in CoveredPositions)
             {
                 // Check to see if user decided to resize
@@ -220,9 +230,13 @@ namespace KS.Misc.Screensaver.Displays
                 int PositionLeft = PositionTuple.Item1;
                 int PositionTop = PositionTuple.Item2;
                 string renderedNumber = PositionTuple.Item3;
-                bleedBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(PositionLeft + 1, PositionTop + 1)}{renderedNumber}");
+                bleedBuffer.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(PositionLeft + 1, PositionTop + 1)}" +
+                    $"{CurrentFadeColor.VTSequenceForeground}" +
+                    $"{background.VTSequenceBackground}" +
+                    $"{renderedNumber}"
+                );
             }
-            TextWriterWhereColor.WriteWhereColorBack(bleedBuilder.ToString(), ColumnLine, 0, false, CurrentFadeColor, background);
         }
 
         internal void Unreserve(int column) =>

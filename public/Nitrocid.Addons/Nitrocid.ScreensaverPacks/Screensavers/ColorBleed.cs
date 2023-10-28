@@ -314,6 +314,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
             }
 
+            // Draw and clean the buffer
+            string buffer = BleedState.bleedBuffer.ToString();
+            BleedState.bleedBuffer.Clear();
+            TextWriterColor.WritePlain(buffer);
+
             // Reset resize sync
             ConsoleResizeListener.WasResized();
             ThreadManager.SleepNoBlock(ColorBleedSettings.ColorBleedDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
@@ -331,6 +336,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         internal int ColumnLine;
         internal int fallStep;
         internal int fadeStep;
+        internal static StringBuilder bleedBuffer = new();
         internal static readonly List<int> reservedColumns = new();
         private readonly Color ColorStorage;
         private readonly List<Tuple<int, int>> CoveredPositions = new();
@@ -342,6 +348,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 return;
 
             // Print a block and add the covered position to the list so fading down can be done
+            bleedBuffer.Append(
+                $"{CsiSequences.GenerateCsiCursorPosition(ColumnLine + 1, fallStep + 1)}" +
+                $"{Color.Empty.VTSequenceForeground}" +
+                $"{ColorStorage.VTSequenceBackground}" +
+                $" "
+            );
             TextWriterWhereColor.WriteWhereColorBack(" ", ColumnLine, fallStep, false, Color.Empty, ColorStorage);
             var PositionTuple = new Tuple<int, int>(ColumnLine, fallStep);
             CoveredPositions.Add(PositionTuple);
@@ -367,7 +379,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Get the positions and write the block with new color
             var CurrentFadeColor = new Color(CurrentColorRedOut, CurrentColorGreenOut, CurrentColorBlueOut);
-            var bleedBuilder = new StringBuilder();
             foreach (Tuple<int, int> PositionTuple in CoveredPositions)
             {
                 // Check to see if user decided to resize
@@ -377,9 +388,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Actually fade the line out
                 int PositionLeft = PositionTuple.Item1;
                 int PositionTop = PositionTuple.Item2;
-                bleedBuilder.Append($"{CsiSequences.GenerateCsiCursorPosition(PositionLeft + 1, PositionTop + 1)} ");
+                bleedBuffer.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(PositionLeft + 1, PositionTop + 1)}" +
+                    $"{Color.Empty.VTSequenceForeground}" +
+                    $"{CurrentFadeColor.VTSequenceBackground}" +
+                     " ");
             }
-            TextWriterWhereColor.WriteWhereColorBack(bleedBuilder.ToString(), ColumnLine, 0, false, Color.Empty, CurrentFadeColor);
         }
 
         internal void Unreserve(int column) =>
