@@ -20,6 +20,7 @@
 using KS.Languages;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Shells;
+using System;
 
 namespace KS.Shell.ShellBase.Commands
 {
@@ -81,8 +82,8 @@ namespace KS.Shell.ShellBase.Commands
             this.Command = Command;
             this.Type = Type;
             this.HelpDefinition = HelpDefinition;
-            this.CommandArgumentInfo = CommandArgumentInfo;
-            this.CommandBase = CommandBase;
+            this.CommandArgumentInfo = CommandArgumentInfo ?? Array.Empty<CommandArgumentInfo>();
+            this.CommandBase = CommandBase ?? new UndefinedCommand();
             this.Flags = Flags;
         }
 

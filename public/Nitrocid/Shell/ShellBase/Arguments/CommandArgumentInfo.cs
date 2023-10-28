@@ -187,11 +187,13 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet)
         {
-            this.Arguments = Arguments;
+            var finalArgs = Arguments ?? Array.Empty<CommandArgumentPart>();
+            var finalSwitches = Switches ?? Array.Empty<SwitchInfo>();
+            this.Arguments = finalArgs;
             if (AcceptsSet)
-                this.Switches = this.Switches.Union(Switches).ToArray();
+                this.Switches = this.Switches.Union(finalSwitches).ToArray();
             else
-                this.Switches = Switches;
+                this.Switches = finalSwitches;
             this.AcceptsSet = AcceptsSet;
         }
 
