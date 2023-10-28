@@ -18,10 +18,7 @@
 //
 
 using System;
-using System.Collections;
-using System.Collections.Generic;
 using System.Threading;
-using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;

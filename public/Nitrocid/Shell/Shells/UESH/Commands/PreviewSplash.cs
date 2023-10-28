@@ -47,9 +47,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 nameof(SplashContext.Showcase);
             SplashContext context = SplashContext.Showcase;
             bool contextValid =
-                customContext ?
-                Enum.TryParse(contextName, out context) :
-                true;
+                !customContext || Enum.TryParse(contextName, out context);
             if (!contextValid)
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("The splash context is not valid"), true, KernelColorType.Error);

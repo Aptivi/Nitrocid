@@ -29,7 +29,6 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands

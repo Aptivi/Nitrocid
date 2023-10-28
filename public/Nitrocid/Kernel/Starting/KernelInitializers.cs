@@ -37,7 +37,6 @@ using KS.Kernel.Extensions;
 using KS.Kernel.Journaling;
 using KS.Kernel.Power;
 using KS.Kernel.Threading;
-using KS.Kernel.Threading.Performance;
 using KS.Kernel.Threading.Watchdog;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;

@@ -26,7 +26,6 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using KS.Misc.Splash;
 using KS.ConsoleBase;
-using KS;
 using KS.Kernel;
 
 namespace Nitrocid.SplashPacks.Splashes
