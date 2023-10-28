@@ -58,6 +58,7 @@ namespace KS.Kernel.Debugging.Testing
             { "TestListWriterStr",                  new TestListWriterStr() },
             { "TestListWriterInt",                  new TestListWriterInt() },
             { "TestListWriterChar",                 new TestListWriterChar() },
+            { "TestListEntryWriter",                new TestListEntryWriter() },
             { "TestCRC32",                          new TestCRC32() },
             { "TestMD5",                            new TestMD5() },
             { "TestSHA1",                           new TestSHA1() },
