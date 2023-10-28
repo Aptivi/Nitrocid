@@ -35,7 +35,7 @@ namespace KS.Kernel
                                     + "Developer Preview"
 #endif // MILESTONESPECIFIERALPHA
 #elif !SPECIFIERREL
-                                    + "- UNSUPPORTED -"
+                                    + "UNSUPPORTED"
 #endif // SPECIFIERDEV
         ;
 
