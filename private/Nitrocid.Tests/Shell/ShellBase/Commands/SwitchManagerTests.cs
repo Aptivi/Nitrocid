@@ -174,5 +174,27 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
             switchValues.Count.ShouldBe(0);
         }
 
+        /// <summary>
+        /// Tests getting switch values
+        /// </summary>
+        [Test]
+        [Description("Management")]
+        public void TestIsSwitchValueNumeric()
+        {
+            string[] switches = new string[] { "-name=Sarah", "-pcnum=3" };
+            var switchValues = SwitchManager.GetSwitchValues(switches, true);
+            switchValues.Count.ShouldBe(2);
+            switchValues[0].Item1.ShouldBe("-name");
+            switchValues[0].Item2.ShouldBe("Sarah");
+            SwitchManager.GetSwitchValue(switches, "-name").ShouldBe("Sarah");
+            SwitchManager.ContainsSwitch(switches, "-name").ShouldBeTrue();
+            SwitchManager.IsSwitchValueNumeric(switches, "-name").ShouldBeFalse();
+            switchValues[1].Item1.ShouldBe("-pcnum");
+            switchValues[1].Item2.ShouldBe("3");
+            SwitchManager.GetSwitchValue(switches, "-pcnum").ShouldBe("3");
+            SwitchManager.ContainsSwitch(switches, "-pcnum").ShouldBeTrue();
+            SwitchManager.IsSwitchValueNumeric(switches, "-pcnum").ShouldBeTrue();
+        }
+
     }
 }

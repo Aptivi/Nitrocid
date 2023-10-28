@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.Misc.Text;
 using System.Collections.Generic;
 
 namespace KS.Shell.ShellBase.Switches
@@ -88,6 +89,17 @@ namespace KS.Shell.ShellBase.Switches
         {
             var switchValues = GetSwitchValues(switches, true);
             return switchValues.Exists((tuple) => tuple.Item1 == switchKey);
+        }
+
+        /// <summary>
+        /// Checks to see if the switch value of a specific switch is numeric
+        /// </summary>
+        /// <param name="switches">List of switches that start with the dash</param>
+        /// <param name="switchKey">Switch key. Must begin with the dash before the switch name.</param>
+        public static bool IsSwitchValueNumeric(string[] switches, string switchKey)
+        {
+            var switchValue = GetSwitchValue(switches, switchKey);
+            return TextTools.IsStringNumeric(switchValue);
         }
     }
 }
