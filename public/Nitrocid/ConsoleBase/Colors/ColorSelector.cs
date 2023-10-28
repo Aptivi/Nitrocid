@@ -22,6 +22,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Languages;
+using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using System;
 using System.Text;
@@ -108,6 +109,7 @@ namespace KS.ConsoleBase.Colors
                 while (!bail)
                 {
                     // We need to refresh the screen if it's required
+                    refresh = ScreensaverManager.ScreenRefreshRequired;
                     if (refresh)
                     {
                         ConsoleWrapper.CursorVisible = false;
