@@ -74,7 +74,18 @@ namespace KS.Kernel.Updates
                     KernelUpdateVer = SemVer.ParseWithRev(tagName);
                 else
                     KernelUpdateVer = SemVer.Parse(tagName);
-                string KernelUpdateURL = (string)KernelUpdate.SelectToken("assets")[0]["browser_download_url"];
+
+                // Now, get the appropriate -bin URLs
+                string KernelUpdateURL = "";
+                foreach (var asset in KernelUpdate.SelectToken("assets"))
+                {
+                    string url = (string)asset["browser_download_url"];
+                    if (url.EndsWith("-bin.zip") || url.EndsWith("-bin.rar"))
+                    {
+                        KernelUpdateURL = url;
+                        break;
+                    }
+                }
                 DebugWriter.WriteDebug(DebugLevel.I, "Update information: {0}, {1}.", KernelUpdateVer.ToString(), KernelUpdateURL);
                 SortedVersions.Add((KernelUpdateVer, new Uri(KernelUpdateURL)));
             }
