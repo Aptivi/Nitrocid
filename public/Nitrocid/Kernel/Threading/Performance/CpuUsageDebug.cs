@@ -38,7 +38,7 @@ namespace KS.Kernel.Threading.Performance
 
         internal static void RunCpuUsageDebugger()
         {
-            if (!usageUpdateThread.IsAlive && usageUpdateEnabled)
+            if (!usageUpdateThread.IsAlive && usageUpdateEnabled && KernelEntry.DebugMode)
                 usageUpdateThread.Start();
         }
 
