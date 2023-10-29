@@ -80,14 +80,26 @@ namespace KS.Kernel.Updates
                 foreach (var asset in KernelUpdate.SelectToken("assets"))
                 {
                     string url = (string)asset["browser_download_url"];
-                    if (url.EndsWith("-bin.zip") || url.EndsWith("-bin.rar"))
+                    string binSpecifier = "" +
+#if NET6_0
+                        "bin6"
+#elif NET7_0
+                        "bin7"
+#elif NET8_0
+                        "bin"
+#else
+                        "bin48"
+#endif
+                        ;
+                    if (url.EndsWith($"-{binSpecifier}.zip") || url.EndsWith($"-{binSpecifier}.rar"))
                     {
                         KernelUpdateURL = url;
                         break;
                     }
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "Update information: {0}, {1}.", KernelUpdateVer.ToString(), KernelUpdateURL);
-                SortedVersions.Add((KernelUpdateVer, new Uri(KernelUpdateURL)));
+                if (!string.IsNullOrEmpty(KernelUpdateURL))
+                    SortedVersions.Add((KernelUpdateVer, new Uri(KernelUpdateURL)));
             }
             SortedVersions = SortedVersions.OrderByDescending((x) => 
                 new Version(x.UpdateVersion.MajorVersion, x.UpdateVersion.MinorVersion, x.UpdateVersion.PatchVersion, x.UpdateVersion.RevisionVersion)).ToList();

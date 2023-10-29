@@ -31,7 +31,7 @@ using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
 using SemanVer.Instance;
 using SharpCompress.Archives;
-using SharpCompress.Archives.Rar;
+using SharpCompress.Archives.Zip;
 using SharpCompress.Common;
 
 namespace Nitrocid.Extras.RetroKS
@@ -70,7 +70,7 @@ namespace Nitrocid.Extras.RetroKS
 
                 // Extract it
                 TextWriterColor.Write(Translate.DoTranslation("Installing version") + " {0}...", update.UpdateVersion.ToString());
-                using var archive = RarArchive.Open(RetroKSPath);
+                using var archive = ZipArchive.Open(RetroKSPath);
                 foreach (var entry in archive.Entries.Where(e => !e.IsDirectory))
                     entry.WriteToDirectory(Paths.RetroKSDownloadPath, new ExtractionOptions()
                     {
