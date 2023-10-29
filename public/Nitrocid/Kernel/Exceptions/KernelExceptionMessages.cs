@@ -147,7 +147,7 @@ namespace KS.Kernel.Exceptions
 
             // Display introduction
             DebugWriter.WriteDebug(DebugLevel.I, "Not a nested KernelException.");
-            builder.AppendLine(Translate.DoTranslation("There is an error in the kernel, one of the kernel addons, one of your mods, or or one of the kernel components. If the routine tried to process your input, ensure that you've written all the parameters correctly."));
+            builder.AppendLine(Translate.DoTranslation("There is an error in the kernel, one of the kernel addons, one of your mods, or one of the kernel components. If the routine tried to process your input, ensure that you've written all the parameters correctly."));
             builder.AppendLine();
 
             // Display error type
