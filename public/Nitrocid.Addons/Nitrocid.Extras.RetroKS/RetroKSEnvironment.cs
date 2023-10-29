@@ -59,7 +59,7 @@ namespace Nitrocid.Extras.RetroKS
             Making.MakeDirectory(Paths.RetroKSDownloadPath, false);
 
             // Check to see if we already have RetroKS installed and up-to-date
-            var currentVersion = AssemblyName.GetAssemblyName(RetroExecKSPath).Version.ToString();
+            var currentVersion = Checking.FileExists(RetroExecKSPath) ? AssemblyName.GetAssemblyName(RetroExecKSPath).Version.ToString() : "0.0.0.0";
             if (Checking.FileExists(RetroExecKSPath) && SemVer.ParseWithRev(currentVersion) < update.UpdateVersion || !Checking.FileExists(RetroExecKSPath))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Downloading version") + " {0}...", update.UpdateVersion.ToString());
