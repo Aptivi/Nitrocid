@@ -22,7 +22,7 @@ using System.Linq;
 using System.Reflection;
 using System.Runtime.Loader;
 
-namespace KS.Misc.RetroKS
+namespace Nitrocid.Extras.RetroKS
 {
     internal class RetroKSContext : AssemblyLoadContext
     {
@@ -35,7 +35,7 @@ namespace KS.Misc.RetroKS
             var finalAsm = Default.Assemblies.FirstOrDefault((asm) => asm.FullName == assemblyName.FullName);
             if (finalAsm is not null)
                 return finalAsm;
-            
+
             // Now, try to resolve
             string assemblyPath = resolver.ResolveAssemblyToPath(assemblyName);
             if (assemblyPath != null)
@@ -43,7 +43,7 @@ namespace KS.Misc.RetroKS
             return null;
         }
 
-        protected override IntPtr LoadUnmanagedDll(string unmanagedDllName)
+        protected override nint LoadUnmanagedDll(string unmanagedDllName)
         {
             string libraryPath = resolver.ResolveUnmanagedDllToPath(unmanagedDllName);
             if (libraryPath != null)

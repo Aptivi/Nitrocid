@@ -34,7 +34,7 @@ using SharpCompress.Archives;
 using SharpCompress.Archives.Rar;
 using SharpCompress.Common;
 
-namespace KS.Misc.RetroKS
+namespace Nitrocid.Extras.RetroKS
 {
     internal static class RetroKSEnvironment
     {
@@ -60,7 +60,7 @@ namespace KS.Misc.RetroKS
 
             // Check to see if we already have RetroKS installed and up-to-date
             var currentVersion = AssemblyName.GetAssemblyName(RetroExecKSPath).Version.ToString();
-            if ((Checking.FileExists(RetroExecKSPath) && SemVer.ParseWithRev(currentVersion) < update.UpdateVersion) || !Checking.FileExists(RetroExecKSPath))
+            if (Checking.FileExists(RetroExecKSPath) && SemVer.ParseWithRev(currentVersion) < update.UpdateVersion || !Checking.FileExists(RetroExecKSPath))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Downloading version") + " {0}...", update.UpdateVersion.ToString());
 

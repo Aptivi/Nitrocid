@@ -20,6 +20,7 @@
 using KS.Kernel.Debugging;
 using KS.Kernel.Starting.Environment.Instances;
 using System;
+using System.Collections.Generic;
 
 namespace KS.Kernel.Starting.Environment
 {
@@ -27,8 +28,34 @@ namespace KS.Kernel.Starting.Environment
     {
         internal static bool resetEnvironment = false;
         internal static string[] arguments = Array.Empty<string>();
+        internal readonly static Dictionary<string, BaseEnvironment> environments = new();
         private readonly static BaseEnvironment mainEnvironment = new NitrocidKS();
         private static BaseEnvironment environment = mainEnvironment;
+
+        internal static void AddEnvironment(string environmentName, BaseEnvironment baseEnvironment)
+        {
+            if (!HasEnvironment(environmentName))
+                environments.Add(environmentName, baseEnvironment);
+        }
+
+        internal static void RemoveEnvironment(string environmentName)
+        {
+            if (HasEnvironment(environmentName))
+                environments.Remove(environmentName);
+        }
+
+        internal static bool HasEnvironment(string environmentName) =>
+            environments.ContainsKey(environmentName);
+
+        internal static BaseEnvironment GetEnvironment(string environmentName)
+        {
+            if (HasEnvironment(environmentName))
+                return environments[environmentName];
+            return mainEnvironment;
+        }
+
+        internal static void SetEnvironment(string environmentName) =>
+            SetEnvironment(GetEnvironment(environmentName) ?? mainEnvironment);
 
         internal static void SetEnvironment(BaseEnvironment baseEnvironment)
         {
@@ -40,7 +67,7 @@ namespace KS.Kernel.Starting.Environment
         }
 
         internal static void ResetEnvironment() =>
-            environment = mainEnvironment;
+            SetEnvironment(mainEnvironment);
 
         internal static void ExecuteEnvironment(string[] args)
         {

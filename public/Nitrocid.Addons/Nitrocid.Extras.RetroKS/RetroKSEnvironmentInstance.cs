@@ -17,28 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Kernel.Power;
 using KS.Kernel.Starting.Environment;
-using KS.Kernel.Starting.Environment.Instances;
-using KS.Shell.ShellBase.Commands;
+using KS.Languages;
+using System;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.RetroKS
 {
-    /// <summary>
-    /// Retro Nitrocid KS based on 0.0.4.1
-    /// </summary>
-    /// <remarks>
-    /// This command runs a legacy version of Nitrocid KS based on 0.0.4.1 with added optimizations for both Linux and Windows operating systems.
-    /// </remarks>
-    class RetroKSCommand : BaseCommand, ICommand
+    internal class RetroKSEnvironmentInstance : BaseEnvironment, IEnvironment
     {
-
-        public override int Execute(CommandParameters parameters, ref string variableValue)
-        {
-            EnvironmentTools.SetEnvironment(new RetroKS());
-            PowerManager.PowerManage(PowerMode.Reboot);
-            return 0;
-        }
-
+        public override string Name =>
+            Translate.DoTranslation("Retro Kernel Simulator");
+        public override Action<string[]> EnvironmentEntry =>
+            RetroKSEnvironment.EntryPoint;
     }
 }

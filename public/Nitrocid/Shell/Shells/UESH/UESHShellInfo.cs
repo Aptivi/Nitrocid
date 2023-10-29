@@ -1189,13 +1189,6 @@ namespace KS.Shell.Shells.UESH
                     }, new ReloadConfigCommand(), CommandFlags.Strict)
             },
             
-            { "retroks",
-                new CommandInfo("retroks", ShellType, /* Localizable */ "Retro Nitrocid KS based on 0.0.4.1",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new RetroKSCommand())
-            },
-            
             { "rexec",
                 new CommandInfo("rexec", ShellType, /* Localizable */ "Remotely executes a command to remote PC",
                     new[] {
