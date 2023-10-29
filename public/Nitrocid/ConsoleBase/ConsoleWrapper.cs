@@ -35,12 +35,6 @@ namespace KS.ConsoleBase
         private static bool cursorVisible = true;
 
         /// <summary>
-        /// The standard output stream that the console uses
-        /// </summary>
-        public static TextWriter Out => 
-            DriverHandler.CurrentConsoleDriverLocal.Out;
-
-        /// <summary>
         /// The cursor left position
         /// </summary>
         public static int CursorLeft

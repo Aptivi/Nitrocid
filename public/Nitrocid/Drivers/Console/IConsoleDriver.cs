@@ -135,11 +135,6 @@ namespace KS.Drivers.Console
         void WriteWrappedPlain(string Text, bool Line, params object[] vars);
 
         /// <summary>
-        /// The standard output stream that the console uses
-        /// </summary>
-        TextWriter Out { get; }
-
-        /// <summary>
         /// The cursor left position
         /// </summary>
         int CursorLeft { get; set; }

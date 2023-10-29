@@ -103,9 +103,6 @@ namespace KS.Drivers.Console
         }
 
         /// <inheritdoc/>
-        public virtual TextWriter Out => SystemConsole.Out;
-
-        /// <inheritdoc/>
         public virtual int CursorLeft
         {
             get

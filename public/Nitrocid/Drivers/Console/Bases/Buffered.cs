@@ -44,8 +44,6 @@ namespace KS.Drivers.Console.Bases
 
         public override bool IsDumb => true;
 
-        public override TextWriter Out => null;
-
         public override int CursorLeft { get => 0; set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
         public override int CursorTop { get => 0; set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
