@@ -30,6 +30,8 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using Terminaux.Reader;
+using System.Text;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -114,7 +116,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
                 int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
                 int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                var boxBuffer = new StringBuilder();
+                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                boxBuffer.Append(border);
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
@@ -127,6 +131,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         // Reached the end of the box. Wait for keypress then clear the box
                         if (waitForInput)
                         {
+                            TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                            boxBuffer.Clear();
                             var keypress = Input.DetectKeypress();
                             if (keypress.Key == ConsoleKey.Q)
                             {
@@ -136,10 +142,12 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         }
                         else
                             Thread.Sleep(5000);
-                        BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                        boxBuffer.Append(border);
                     }
-                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight);
+                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
                 }
+                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                boxBuffer.Clear();
 
                 // Wait until the user presses any key to close the box
                 if (waitForInput && !exiting)
@@ -221,7 +229,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
                 int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
                 int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                var boxBuffer = new StringBuilder();
+                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                boxBuffer.Append(border);
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
@@ -231,11 +241,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     if (i % maxHeight == 0 && i > 0)
                     {
                         // Reached the end of the box. Wait for keypress then clear the box
+                        TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                        boxBuffer.Clear();
                         Input.DetectKeypress();
-                        BorderColor.WriteBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                        boxBuffer.Append(border);
                     }
-                    TextWriterWhereColor.WriteWhere(line, borderX + 1, borderY + 1 + i % maxHeight);
+                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
                 }
+                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                boxBuffer.Clear();
 
                 // Wait until the user presses any key to close the box
                 var settings = new TermReaderSettings()
@@ -642,7 +656,13 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
                 int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
                 int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
+                var boxBuffer = new StringBuilder();
+                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                boxBuffer.Append(
+                    $"{KernelColorTools.GetColor(InfoBoxColor).VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(BackgroundColor).VTSequenceBackground}" +
+                    $"{border}"
+                );
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
@@ -655,6 +675,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         // Reached the end of the box. Wait for keypress then clear the box
                         if (waitForInput)
                         {
+                            TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                            boxBuffer.Clear();
                             var keypress = Input.DetectKeypress();
                             if (keypress.Key == ConsoleKey.Q)
                             {
@@ -664,10 +686,19 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         }
                         else
                             Thread.Sleep(5000);
-                        BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
+                        boxBuffer.Append(
+                            $"{KernelColorTools.GetColor(InfoBoxColor).VTSequenceForeground}" +
+                            $"{KernelColorTools.GetColor(BackgroundColor).VTSequenceBackground}" +
+                            $"{border}"
+                        );
                     }
-                    TextWriterWhereColor.WriteWhereKernelColor(line, borderX + 1, borderY + 1 + i % maxHeight, InfoBoxColor, BackgroundColor);
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
+                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                boxBuffer.Clear();
 
                 // Wait until the user presses any key to close the box
                 if (waitForInput && !exiting)
@@ -841,7 +872,13 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
                 int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
                 int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
+                var boxBuffer = new StringBuilder();
+                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                boxBuffer.Append(
+                    $"{InfoBoxColor.VTSequenceForeground}" +
+                    $"{BackgroundColor.VTSequenceBackground}" +
+                    $"{border}"
+                );
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
@@ -854,6 +891,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         // Reached the end of the box. Wait for keypress then clear the box
                         if (waitForInput)
                         {
+                            TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                            boxBuffer.Clear();
                             var keypress = Input.DetectKeypress();
                             if (keypress.Key == ConsoleKey.Q)
                             {
@@ -863,10 +902,19 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         }
                         else
                             Thread.Sleep(5000);
-                        BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
+                        boxBuffer.Append(
+                            $"{InfoBoxColor.VTSequenceForeground}" +
+                            $"{BackgroundColor.VTSequenceBackground}" +
+                            $"{border}"
+                        );
                     }
-                    TextWriterWhereColor.WriteWhereColorBack(line, borderX + 1, borderY + 1 + i % maxHeight, InfoBoxColor, BackgroundColor);
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
+                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                boxBuffer.Clear();
 
                 // Wait until the user presses any key to close the box
                 if (waitForInput && !exiting)
@@ -958,7 +1006,13 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
                 int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2 - 1;
                 int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2 - 1;
-                BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
+                var boxBuffer = new StringBuilder();
+                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                boxBuffer.Append(
+                    $"{new Color(InfoBoxColor).VTSequenceForeground}" +
+                    $"{new Color(BackgroundColor).VTSequenceBackground}" +
+                    $"{border}"
+                );
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
@@ -971,6 +1025,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         // Reached the end of the box. Wait for keypress then clear the box
                         if (waitForInput)
                         {
+                            TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                            boxBuffer.Clear();
                             var keypress = Input.DetectKeypress();
                             if (keypress.Key == ConsoleKey.Q)
                             {
@@ -980,9 +1036,16 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         }
                         else
                             Thread.Sleep(5000);
-                        BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
+                        boxBuffer.Append(
+                            $"{new Color(InfoBoxColor).VTSequenceForeground}" +
+                            $"{new Color(BackgroundColor).VTSequenceBackground}" +
+                            $"{border}"
+                        );
                     }
-                    TextWriterWhereColor.WriteWhereColorBack(line, borderX + 1, borderY + 1 + i % maxHeight, InfoBoxColor, BackgroundColor);
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
 
                 // Wait until the user presses any key to close the box
@@ -1194,17 +1257,35 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
                 int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2;
                 int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2;
-                BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
+                var boxBuffer = new StringBuilder();
+                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                boxBuffer.Append(
+                    $"{KernelColorTools.GetColor(InfoBoxColor).VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(BackgroundColor).VTSequenceBackground}" +
+                    $"{border}"
+                );
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    TextWriterWhereColor.WriteWhereKernelColor(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i, InfoBoxColor, BackgroundColor);
                     if (i % maxHeight == 0 && i > 0)
+                    {
+                        // Reached the end of the box. Wait for keypress then clear the box
+                        TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                        boxBuffer.Clear();
                         Input.DetectKeypress();
+                        boxBuffer.Append(
+                            $"{KernelColorTools.GetColor(InfoBoxColor).VTSequenceForeground}" +
+                            $"{KernelColorTools.GetColor(BackgroundColor).VTSequenceBackground}" +
+                            $"{border}"
+                        );
+                    }
+                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
                 }
+                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                boxBuffer.Clear();
 
                 // Wait until the user presses any key to close the box
                 var settings = new TermReaderSettings()
@@ -1302,17 +1383,35 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
                 int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2;
                 int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2;
-                BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
+                var boxBuffer = new StringBuilder();
+                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                boxBuffer.Append(
+                    $"{InfoBoxColor.VTSequenceForeground}" +
+                    $"{BackgroundColor.VTSequenceBackground}" +
+                    $"{border}"
+                );
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    TextWriterWhereColor.WriteWhereColorBack(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i, InfoBoxColor, BackgroundColor);
                     if (i % maxHeight == 0 && i > 0)
+                    {
+                        // Reached the end of the box. Wait for keypress then clear the box
+                        TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                        boxBuffer.Clear();
                         Input.DetectKeypress();
+                        boxBuffer.Append(
+                            $"{InfoBoxColor.VTSequenceForeground}" +
+                            $"{BackgroundColor.VTSequenceBackground}" +
+                            $"{border}"
+                        );
+                    }
+                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
                 }
+                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                boxBuffer.Clear();
 
                 // Wait until the user presses any key to close the box
                 var settings = new TermReaderSettings()
@@ -1410,17 +1509,35 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
                 int borderX = ConsoleWrapper.WindowWidth / 2 - maxWidth / 2;
                 int borderY = ConsoleWrapper.WindowHeight / 2 - maxHeight / 2;
-                BorderColor.WriteBorder(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar, InfoBoxColor, BackgroundColor);
+                var boxBuffer = new StringBuilder();
+                string border = BorderColor.RenderBorderPlain(borderX, borderY, maxWidth, maxHeight, UpperLeftCornerChar, LowerLeftCornerChar, UpperRightCornerChar, LowerRightCornerChar, UpperFrameChar, LowerFrameChar, LeftFrameChar, RightFrameChar);
+                boxBuffer.Append(
+                    $"{new Color(InfoBoxColor).VTSequenceForeground}" +
+                    $"{new Color(BackgroundColor).VTSequenceBackground}" +
+                    $"{border}"
+                );
 
                 // Render text inside it
                 ConsoleWrapper.CursorVisible = false;
                 for (int i = 0; i < splitFinalLines.Count; i++)
                 {
                     var line = splitFinalLines[i];
-                    TextWriterWhereColor.WriteWhereColorBack(line.Truncate(maxRenderWidth), borderX + 1, borderY + 1 + i, InfoBoxColor, BackgroundColor);
                     if (i % maxHeight == 0 && i > 0)
+                    {
+                        // Reached the end of the box. Wait for keypress then clear the box
+                        TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                        boxBuffer.Clear();
                         Input.DetectKeypress();
+                        boxBuffer.Append(
+                            $"{new Color(InfoBoxColor).VTSequenceForeground}" +
+                            $"{new Color(BackgroundColor).VTSequenceBackground}" +
+                            $"{border}"
+                        );
+                    }
+                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
                 }
+                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                boxBuffer.Clear();
 
                 // Wait until the user presses any key to close the box
                 var settings = new TermReaderSettings()
