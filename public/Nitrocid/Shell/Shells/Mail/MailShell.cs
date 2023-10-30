@@ -29,8 +29,8 @@ using MailKit.Net.Smtp;
 using System.Threading;
 using System;
 using KS.Kernel.Threading;
-using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Commands;
+using KS.Network.Base.SpeedDial;
 
 namespace KS.Shell.Shells.Mail
 {

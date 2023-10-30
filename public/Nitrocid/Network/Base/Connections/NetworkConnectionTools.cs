@@ -29,7 +29,7 @@ using System.Collections.Generic;
 using System.Linq;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Network.SpeedDial;
+using KS.Network.Base.SpeedDial;
 
 namespace KS.Network.Base.Connections
 {

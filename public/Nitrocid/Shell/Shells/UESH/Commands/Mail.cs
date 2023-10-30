@@ -18,8 +18,8 @@
 //
 
 using KS.Network.Base.Connections;
+using KS.Network.Base.SpeedDial;
 using KS.Network.Mail;
-using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 

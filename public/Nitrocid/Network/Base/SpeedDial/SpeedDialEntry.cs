@@ -19,7 +19,7 @@
 
 using Newtonsoft.Json;
 
-namespace KS.Network.SpeedDial
+namespace KS.Network.Base.SpeedDial
 {
     /// <summary>
     /// Speed dial entry

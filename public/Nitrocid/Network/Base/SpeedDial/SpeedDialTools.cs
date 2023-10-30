@@ -28,7 +28,7 @@ using KS.Network.Base.Connections;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 
-namespace KS.Network.SpeedDial
+namespace KS.Network.Base.SpeedDial
 {
     /// <summary>
     /// Speed dial management tools

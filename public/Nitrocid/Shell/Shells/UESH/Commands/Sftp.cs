@@ -21,7 +21,7 @@ using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Network.SFTP;
-using KS.Network.SpeedDial;
+using KS.Network.Base.SpeedDial;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

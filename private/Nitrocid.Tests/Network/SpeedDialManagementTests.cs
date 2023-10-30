@@ -18,7 +18,7 @@
 //
 
 using KS.Network.Base.Connections;
-using KS.Network.SpeedDial;
+using KS.Network.Base.SpeedDial;
 using NUnit.Framework;
 using Shouldly;
 

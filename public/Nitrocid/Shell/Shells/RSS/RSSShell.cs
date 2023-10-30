@@ -28,8 +28,8 @@ using Syndian.Instance;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.HTTP;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Network.SpeedDial;
 using KS.Shell.ShellBase.Commands;
+using KS.Network.Base.SpeedDial;
 
 namespace KS.Shell.Shells.RSS
 {
