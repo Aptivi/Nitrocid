@@ -1,5 +1,5 @@
 ## Description
-<!-- Describe about your pull request. Note that you need to be as more descriptive as you can so we can understand this request. -->
+<!-- Talk about your pull request. Note that you need to be as descriptive as possible. -->
 
 
 ## Change type
@@ -16,5 +16,5 @@
 - [ ] No, I haven't
 - [ ] Not sure
 
-## Specify other changes
-<!-- Specify the changes that wouldn't fit into the selection. -->
+## Other changes?
+<!-- Specify the changes that don't fit to the categories above. -->
