@@ -102,10 +102,12 @@ namespace KS.Kernel
                 {
                     // Reset everything to their initial state
                     if (!PowerManager.hardShutdown)
+                    {
                         KernelInitializers.ResetEverything();
 
-                    // Clear the console
-                    KernelColorTools.LoadBack();
+                        // Clear the console
+                        KernelColorTools.LoadBack();
+                    }
 
                     // Always switch back to the main environment
                     if (EnvironmentTools.resetEnvironment)
@@ -121,11 +123,14 @@ namespace KS.Kernel
                 InfoBoxColor.WriteInfoBox(Translate.DoTranslation("It's now safe to turn off your computer."));
 
             // Load main buffer
-            if (!KernelPlatform.IsOnWindows() && ConsoleExtensions.UseAltBuffer && ConsoleExtensions.HasSetAltBuffer)
+            if (!KernelPlatform.IsOnWindows() && ConsoleExtensions.UseAltBuffer && ConsoleExtensions.HasSetAltBuffer && !PowerManager.hardShutdown)
                 TextWriterColor.Write("\u001b[?1049l");
 
             // Reset colors and clear the console
-            ConsoleExtensions.ResetAll();
+            if (!PowerManager.hardShutdown)
+                ConsoleExtensions.ResetAll();
+            else
+                ConsoleExtensions.ResetColors();
 
             // Reset cursor state and dispose handlers
             ConsoleWrapper.CursorVisible = true;

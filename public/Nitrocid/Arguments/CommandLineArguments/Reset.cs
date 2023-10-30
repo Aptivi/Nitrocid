@@ -27,7 +27,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Power;
-using KS.ConsoleBase.Inputs;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -36,8 +35,6 @@ namespace KS.Arguments.CommandLineArguments
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
-            bool errored = false;
-
             // Delete every single thing found in KernelPaths
             foreach (string PathName in Enum.GetNames(typeof(KernelPathType)))
             {
@@ -71,7 +68,6 @@ namespace KS.Arguments.CommandLineArguments
                 }
                 catch (Exception ex)
                 {
-                    errored = true;
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't wipe file") + $" {PathName}: {ex.Message}", true, KernelColorType.Error);
                 }
             }
@@ -87,7 +83,6 @@ namespace KS.Arguments.CommandLineArguments
                 }
                 catch (Exception ex)
                 {
-                    errored = true;
                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't wipe dump file") + $" {dump}: {ex.Message}", true, KernelColorType.Error);
                 }
             }
@@ -109,16 +104,11 @@ namespace KS.Arguments.CommandLineArguments
                         }
                         catch (Exception ex)
                         {
-                            errored = true;
                             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't wipe miscellaneous file") + $" {file}: {ex.Message}", true, KernelColorType.Error);
                         }
                     }
                 }
             }
-
-            // If errored, give users a chance to read all the errors
-            if (errored)
-                Input.DetectKeypress();
 
             // Exit now.
             PowerManager.KernelShutdown = true;
