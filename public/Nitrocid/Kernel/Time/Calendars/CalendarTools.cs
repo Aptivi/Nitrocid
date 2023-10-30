@@ -43,6 +43,14 @@ namespace KS.Kernel.Time.Calendars
         /// <summary>
         /// Gets a calendar
         /// </summary>
+        /// <param name="typeName">Type name to look up</param>
+        /// <returns>An instance of BaseCalendar if found. Otherwise, null.</returns>
+        public static BaseCalendar GetCalendar(string typeName) =>
+            GetCalendar(GetCalendarTypeFromName(typeName));
+
+        /// <summary>
+        /// Gets a calendar
+        /// </summary>
         /// <param name="type">Calendar type to get a calendar from</param>
         /// <returns>An instance of BaseCalendar if found. Otherwise, null.</returns>
         public static BaseCalendar GetCalendar(CalendarTypes type) =>
