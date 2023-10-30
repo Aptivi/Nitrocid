@@ -27,6 +27,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Power;
+using KS.ConsoleBase.Inputs;
 
 namespace KS.Arguments.CommandLineArguments
 {
@@ -35,33 +36,43 @@ namespace KS.Arguments.CommandLineArguments
 
         public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
         {
+            bool errored = false;
+
             // Delete every single thing found in KernelPaths
             foreach (string PathName in Enum.GetNames(typeof(KernelPathType)))
             {
-                var pathType = (KernelPathType)Enum.Parse(typeof(KernelPathType), PathName);
-                string TargetPath = Paths.GetKernelPath(pathType);
-                if (!Paths.IsResettable(pathType))
-                    continue;
-                switch (pathType)
+                try
                 {
-                    case KernelPathType.Debugging:
-                        TargetPath = TargetPath[..TargetPath.LastIndexOf(".log")] + "*.log";
-                        string[] debugs = Listing.GetFilesystemEntries(TargetPath);
-                        foreach (string debug in debugs)
-                            File.Delete(debug);
-                        break;
-                    case KernelPathType.Journaling:
-                        TargetPath = TargetPath[..TargetPath.LastIndexOf(".json")] + "*.json";
-                        string[] journals = Listing.GetFilesystemEntries(TargetPath);
-                        foreach (string journal in journals)
-                            File.Delete(journal);
-                        break;
-                    default:
-                        if (Checking.FileExists(TargetPath))
-                            File.Delete(TargetPath);
-                        else if (Checking.FolderExists(TargetPath))
-                            Directory.Delete(TargetPath, true);
-                        break;
+                    var pathType = (KernelPathType)Enum.Parse(typeof(KernelPathType), PathName);
+                    string TargetPath = Paths.GetKernelPath(pathType);
+                    if (!Paths.IsResettable(pathType))
+                        continue;
+                    switch (pathType)
+                    {
+                        case KernelPathType.Debugging:
+                            TargetPath = TargetPath[..TargetPath.LastIndexOf(".log")] + "*.log";
+                            string[] debugs = Listing.GetFilesystemEntries(TargetPath);
+                            foreach (string debug in debugs)
+                                File.Delete(debug);
+                            break;
+                        case KernelPathType.Journaling:
+                            TargetPath = TargetPath[..TargetPath.LastIndexOf(".json")] + "*.json";
+                            string[] journals = Listing.GetFilesystemEntries(TargetPath);
+                            foreach (string journal in journals)
+                                File.Delete(journal);
+                            break;
+                        default:
+                            if (Checking.FileExists(TargetPath))
+                                File.Delete(TargetPath);
+                            else if (Checking.FolderExists(TargetPath))
+                                Directory.Delete(TargetPath, true);
+                            break;
+                    }
+                }
+                catch (Exception ex)
+                {
+                    errored = true;
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't wipe file") + $" {PathName}: {ex.Message}", true, KernelColorType.Error);
                 }
             }
 
@@ -69,7 +80,17 @@ namespace KS.Arguments.CommandLineArguments
             string dumpPath = $"{Paths.AppDataPath}/dmp_*.txt";
             string[] dumps = Listing.GetFilesystemEntries(dumpPath);
             foreach (string dump in dumps)
-                File.Delete(dump);
+            {
+                try
+                {
+                    File.Delete(dump);
+                }
+                catch (Exception ex)
+                {
+                    errored = true;
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't wipe dump file") + $" {dump}: {ex.Message}", true, KernelColorType.Error);
+                }
+            }
 
             // Inform user that the wipe was not complete if there are files.
             string[] files = Listing.GetFilesystemEntries(Paths.AppDataPath);
@@ -81,9 +102,23 @@ namespace KS.Arguments.CommandLineArguments
                 if (answer == "y")
                 {
                     foreach (string file in files)
-                        File.Delete(file);
+                    {
+                        try
+                        {
+                            File.Delete(file);
+                        }
+                        catch (Exception ex)
+                        {
+                            errored = true;
+                            TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't wipe miscellaneous file") + $" {file}: {ex.Message}", true, KernelColorType.Error);
+                        }
+                    }
                 }
             }
+
+            // If errored, give users a chance to read all the errors
+            if (errored)
+                Input.DetectKeypress();
 
             // Exit now.
             PowerManager.KernelShutdown = true;
