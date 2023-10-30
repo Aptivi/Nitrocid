@@ -88,6 +88,7 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.13" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.0.442202" PrivateAssets="all" />
+    <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SharpCompress" Version="[0.33.0,0.33.0]" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.0.0" PrivateAssets="all" />
@@ -116,6 +117,12 @@
 
   <!-- KS Manifest -->
   <ItemGroup>
+    <EmbeddedResource Update="Resources\SchemasResources.resx">
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>KS.Resources</CustomToolNamespace>
+      <LastGenOutput>SchemasResources.Designer.cs</LastGenOutput>
+      <Generator>PublicResXFileCodeGenerator</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Resources\ThemesResources.resx">
       <SubType>Designer</SubType>
       <CustomToolNamespace>KS.Resources</CustomToolNamespace>
@@ -136,6 +143,11 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Resources\SchemasResources.Designer.cs">
+      <DependentUpon>SchemasResources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
     <Compile Update="Resources\ThemesResources.Designer.cs">
       <DependentUpon>ThemesResources.resx</DependentUpon>
       <DesignTime>True</DesignTime>

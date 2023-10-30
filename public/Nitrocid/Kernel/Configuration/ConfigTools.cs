@@ -35,6 +35,9 @@ using KS.Kernel.Configuration.Instances;
 using KS.Files;
 using System.Linq;
 using KS.Files.Operations.Querying;
+using Newtonsoft.Json.Schema;
+using KS.Resources;
+using Newtonsoft.Json.Linq;
 
 namespace KS.Kernel.Configuration
 {
@@ -363,6 +366,12 @@ namespace KS.Kernel.Configuration
             // Some sanity checks
             if (string.IsNullOrEmpty(entriesText))
                 throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("The settings entries JSON value is empty."));
+
+            // Verify that the configuration is of a valid format
+            string schemaStr = SchemasResources.SettingsSchema;
+            var schema = JSchema.Parse(schemaStr);
+            var configObj = JArray.Parse(entriesText);
+            configObj.Validate(schema);
 
             // Now, try to get the settings entry array.
             return JsonConvert.DeserializeObject<SettingsEntry[]>(entriesText);
