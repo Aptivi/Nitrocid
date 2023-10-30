@@ -19,7 +19,9 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel;
 using KS.Languages;
+using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.UESH.Commands
@@ -31,6 +33,24 @@ namespace KS.Shell.Shells.UESH.Commands
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
+        {
+            TextWriterColor.Write(Translate.DoTranslation("To access the user manual for general uses of Nitrocid, please visit the below link:"));
+            TextWriterColor.WriteKernelColor(
+                KernelPlatform.IsOnUnix() ?
+                $"    {CharManager.GetEsc()}]8;;https://aptivi.gitbook.io/kernel-simulator-manual/{CharManager.GetEsc()}\\Manual page{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
+                "    https://aptivi.gitbook.io/kernel-simulator-manual/",
+                true, KernelColorType.Tip
+            );
+            TextWriterColor.Write(Translate.DoTranslation("To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:"));
+            TextWriterColor.WriteKernelColor(
+                KernelPlatform.IsOnUnix() ?
+                $"    {CharManager.GetEsc()}]8;;https://aptivi.github.io/NitrocidKS{CharManager.GetEsc()}\\API documentation{CharManager.GetEsc()}]8;;{CharManager.GetEsc()}\\" :
+                "    https://aptivi.github.io/NitrocidKS",
+                true, KernelColorType.Tip);
+            return 0;
+        }
+
+        public override int ExecuteDumb(CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(Translate.DoTranslation("To access the user manual for general uses of Nitrocid, please visit the below link:"));
             TextWriterColor.WriteKernelColor("    https://aptivi.gitbook.io/kernel-simulator-manual/", true, KernelColorType.Tip);
