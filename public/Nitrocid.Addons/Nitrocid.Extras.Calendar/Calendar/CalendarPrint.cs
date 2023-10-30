@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -28,6 +29,7 @@ using Nitrocid.Extras.Calendar.Calendar.Events;
 using KS.ConsoleBase;
 using KS.Kernel.Time.Calendars;
 using KS.Kernel.Time.Converters;
+using KS.Kernel.Time;
 
 namespace Nitrocid.Extras.Calendar.Calendar
 {
@@ -36,6 +38,12 @@ namespace Nitrocid.Extras.Calendar.Calendar
     /// </summary>
     public static class CalendarPrint
     {
+
+        private static readonly EventInfo[] baseEvents = new EventInfo[]
+        {
+            new(new(2018, 2, 22), /* Localizable */ "Nitrocid KS Release Anniversary", true, 2, 22, 2, 22, "Gregorian"),
+            new(new(2018, 2, 22), /* Localizable */ "Ramadan", true, 9, 1, 10, 1, "Hijri"),
+        };
 
         /// <summary>
         /// Prints the table of the calendar
@@ -58,7 +66,9 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var CalendarDays = calendarInstance.Culture.DateTimeFormat.DayNames;
             var CalendarMonths = calendarInstance.Culture.DateTimeFormat.MonthNames;
             var CalendarData = new string[6, CalendarDays.Length];
-            var (year, month, day, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(Year, Month, DateTime.Today.Day), calendar);
+            var maxDate = calendarInstance.Calendar.GetDaysInMonth(Year, Month);
+            var selectedDate = new DateTime(Year, Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
+            var (year, month, day, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, calendar);
             var DateTo = new DateTime(year, month, calendarInstance.Calendar.GetDaysInMonth(year, month));
             int CurrentWeek = 1;
             string CalendarTitle = CalendarMonths[month - 1] + " " + year;
@@ -77,7 +87,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 bool ReminderMarked = false;
                 bool EventMarked = false;
                 bool IsWeekend = CurrentDate.DayOfWeek == DayOfWeek.Friday | CurrentDate.DayOfWeek == DayOfWeek.Saturday;
-                bool IsToday = CurrentDate.Day == day;
+                bool IsToday = CurrentDate == TimeDateTools.KernelDateTime.Date;
 
                 // Dim out the weekends
                 if (IsWeekend)
@@ -115,12 +125,20 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         ReminderMarked = true;
                     }
                 }
-                foreach (EventInfo EventInstance in EventManager.CalendarEvents)
+                foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(baseEvents))
                 {
-                    var eDate = EventInstance.EventDate.Date;
+                    EventInstance.UpdateEventInfo(new DateTime(Year, 1, 1));
+                    var nDate = EventInstance.EventDate.Date;
+                    var sDate = EventInstance.Start.Date;
+                    var eDate = EventInstance.End.Date;
+                    var (nYear, nMonth, nDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(nDate.Year, nDate.Month, nDate.Day), calendar);
+                    var (sYear, sMonth, sDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(sDate.Year, sDate.Month, sDate.Day), calendar);
                     var (eYear, eMonth, eDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(eDate.Year, eDate.Month, eDate.Day), calendar);
+                    nDate = new(nYear, nMonth, nDay);
+                    sDate = new(sYear, sMonth, sDay);
                     eDate = new(eYear, eMonth, eDay);
-                    if (eDate == CurrentDate & !EventMarked)
+                    if (((EventInstance.IsYearly && CurrentDate >= sDate && CurrentDate <= eDate) ||
+                         (!EventInstance.IsYearly && CurrentDate == nDate)) && !EventMarked)
                     {
                         var EventCell = new CellOptions((int)CurrentDate.DayOfWeek + 1, CurrentWeek)
                         {

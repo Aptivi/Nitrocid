@@ -22,7 +22,6 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading;
-using System.Xml.Serialization;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
@@ -33,8 +32,10 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Power;
 using KS.Kernel.Threading;
+using KS.Kernel.Time;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
+using Newtonsoft.Json;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Events
 {
@@ -63,7 +64,8 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
                         for (int EventIndex = 0; EventIndex <= CalendarEvents.Count - 1; EventIndex++)
                         {
                             var EventInstance = CalendarEvents[EventIndex];
-                            if (DateTime.Today == EventInstance.EventDate.Date)
+                            if ((EventInstance.IsYearly && TimeDateTools.KernelDateTime >= EventInstance.Start && TimeDateTools.KernelDateTime <= EventInstance.End) ||
+                                (!EventInstance.IsYearly && TimeDateTools.KernelDateTime == EventInstance.EventDate))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Event is due! {0} @ {1}", EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate));
                                 EventInstance.NotifyEvent();
@@ -88,11 +90,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         {
             if (string.IsNullOrWhiteSpace(EventTitle))
                 EventTitle = Translate.DoTranslation("Untitled event");
-            var EventInstance = new EventInfo()
-            {
-                EventTitle = EventTitle,
-                EventDate = EventDate
-            };
+            var EventInstance = new EventInfo(EventDate, EventTitle);
             DebugWriter.WriteDebug(DebugLevel.I, "Adding event {0} @ {1} to list...", EventInstance.EventTitle, TimeDateRenderers.Render(EventInstance.EventDate));
             AddEvent(EventInstance);
         }
@@ -169,12 +167,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
                 // If file exists, convert the file to the event instance
                 if (Checking.FileExists(EventFile))
                 {
-                    var Converter = new XmlSerializer(typeof(EventInfo));
-                    var EventFileStream = new FileStream(EventFile, FileMode.Open);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Opened stream [{0}]. Converting...", EventFileStream.Length);
-                    EventInfo ConvertedEvent = (EventInfo)Converter.Deserialize(EventFileStream);
+                    var eventContents = Reading.ReadContentsText(EventFile);
+                    EventInfo ConvertedEvent = JsonConvert.DeserializeObject<EventInfo>(eventContents);
                     DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
-                    EventFileStream.Close();
                     return ConvertedEvent;
                 }
                 else
@@ -239,13 +234,10 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         public static void SaveEvent(EventInfo EventInstance, string File)
         {
             FilesystemTools.ThrowOnInvalidPath(File);
-            File = FilesystemTools.NeutralizePath(File);
+            File = FilesystemTools.NeutralizePath(File, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving event to {0}...", File);
-            var Converter = new XmlSerializer(typeof(EventInfo));
-            var EventFileStream = new FileStream(File, FileMode.OpenOrCreate);
-            DebugWriter.WriteDebug(DebugLevel.I, "Opened stream with length {0}", EventFileStream.Length);
-            Converter.Serialize(EventFileStream, EventInstance);
-            EventFileStream.Close();
+            var contents = JsonConvert.SerializeObject(EventInstance);
+            Writing.WriteContentsText(File, contents);
         }
 
     }

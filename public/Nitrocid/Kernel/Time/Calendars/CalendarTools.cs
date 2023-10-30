@@ -18,6 +18,7 @@
 //
 
 using KS.Kernel.Time.Calendars.Types;
+using System;
 using System.Collections.Generic;
 
 namespace KS.Kernel.Time.Calendars
@@ -46,5 +47,17 @@ namespace KS.Kernel.Time.Calendars
         /// <returns>An instance of BaseCalendar if found. Otherwise, null.</returns>
         public static BaseCalendar GetCalendar(CalendarTypes type) =>
             calendars[type];
+
+        /// <summary>
+        /// Gets a calendar type from the calendar type name
+        /// </summary>
+        /// <param name="typeName">Type name to look up</param>
+        /// <returns>The resulting value of <see cref="CalendarTypes"/></returns>
+        public static CalendarTypes GetCalendarTypeFromName(string typeName)
+        {
+            if (Enum.TryParse(typeName, out CalendarTypes result))
+                return result;
+            return CalendarTypes.Gregorian;
+        }
     }
 }
