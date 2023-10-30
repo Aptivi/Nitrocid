@@ -49,6 +49,7 @@ namespace KS.Kernel
         internal static bool Maintenance;
         internal static bool QuietKernel;
         internal static bool TalkativePreboot;
+        internal static bool PrebootSplash;
 
         internal static void EntryPoint(string[] args)
         {

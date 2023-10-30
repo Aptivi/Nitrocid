@@ -136,6 +136,13 @@ namespace KS.Arguments
                         new CommandArgumentInfo()
                     }, new NoSetBufferSizeArgument())
             },
+
+            { "prebootsplash",
+                new ArgumentInfo("prebootsplash", /* Localizable */ "Shows the pre-boot splash before configuration is loaded",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new PrebootSplashArgument())
+            },
         };
 
         /// <summary>

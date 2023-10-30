@@ -69,7 +69,11 @@ namespace KS.Misc.Splash.Splashes
                 FigletWhereColor.WriteFigletWhereColor(text, consoleX, consoleY, true, figFont, col);
                 consoleY += figHeight * 2;
             }
-            CenteredTextColor.WriteCenteredColor(consoleY + 2, Translate.DoTranslation("Starting") + $" {KernelReleaseInfo.ConsoleTitle}...", col);
+            CenteredTextColor.WriteCenteredColor(
+                consoleY + 2,
+                context == SplashContext.Preboot ? Translate.DoTranslation("Please wait...") : Translate.DoTranslation("Starting") + $" {KernelReleaseInfo.ConsoleTitle}...",
+                col
+            );
         }
 
         public override void Display(SplashContext context)
@@ -108,7 +112,7 @@ namespace KS.Misc.Splash.Splashes
             ConsoleWrapper.Clear();
             DebugWriter.WriteDebug(DebugLevel.I, "Splash closing...");
 
-            if (context == SplashContext.Showcase)
+            if (context == SplashContext.Showcase || context == SplashContext.Preboot)
                 return;
 
             // Write a glorious Welcome screen

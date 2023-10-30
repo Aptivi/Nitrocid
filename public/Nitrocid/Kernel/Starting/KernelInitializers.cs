@@ -124,6 +124,10 @@ namespace KS.Kernel.Starting
                 if (ConsoleExtensions.setBufferSize)
                     ConsoleExtensions.SetBufferSize();
 
+                // Initialize pre-boot splash (if enabled)
+                if (KernelEntry.PrebootSplash)
+                    SplashManager.OpenSplash(SplashContext.Preboot);
+
                 // Initialize console wrappers for TermRead
                 Input.InitializeTerminauxWrappers();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded input wrappers.");
@@ -134,8 +138,8 @@ namespace KS.Kernel.Starting
                 // Show initializing
                 if (KernelEntry.TalkativePreboot)
                 {
-                    TextWriterColor.Write(Translate.DoTranslation("Welcome!"));
-                    TextWriterColor.Write(Translate.DoTranslation("Starting Nitrocid..."));
+                    SplashReport.ReportProgress(Translate.DoTranslation("Welcome!"));
+                    SplashReport.ReportProgress(Translate.DoTranslation("Starting Nitrocid..."));
                 }
 
                 // Initialize journal path
@@ -143,26 +147,30 @@ namespace KS.Kernel.Starting
 
                 // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
                 if (KernelEntry.TalkativePreboot)
-                    TextWriterColor.Write(Translate.DoTranslation("Downloading debug symbols..."));
+                    SplashReport.ReportProgress(Translate.DoTranslation("Downloading debug symbols..."));
                 DebugSymbolsTools.CheckDebugSymbols();
 
                 // Initialize custom languages
                 if (KernelEntry.TalkativePreboot)
-                    TextWriterColor.Write(Translate.DoTranslation("Loading custom languages..."));
+                    SplashReport.ReportProgress(Translate.DoTranslation("Loading custom languages..."));
                 LanguageManager.InstallCustomLanguages();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom languages.");
 
                 // Initialize splashes
                 if (KernelEntry.TalkativePreboot)
-                    TextWriterColor.Write(Translate.DoTranslation("Loading custom splashes..."));
+                    SplashReport.ReportProgress(Translate.DoTranslation("Loading custom splashes..."));
                 SplashManager.LoadSplashes();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded custom splashes.");
 
                 // Initialize addons
                 if (KernelEntry.TalkativePreboot)
-                    TextWriterColor.Write(Translate.DoTranslation("Loading kernel addons..."));
+                    SplashReport.ReportProgress(Translate.DoTranslation("Loading kernel addons..."));
                 AddonTools.ProcessAddons(AddonType.Important);
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded kernel addons.");
+
+                // Stop the splash prior to loading config
+                if (KernelEntry.PrebootSplash)
+                    SplashManager.CloseSplash(SplashContext.Preboot);
 
                 // Create config file and then read it
                 if (KernelEntry.TalkativePreboot)

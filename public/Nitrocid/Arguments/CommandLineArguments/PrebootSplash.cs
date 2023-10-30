@@ -17,28 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Misc.Splash
+using KS.Kernel;
+
+namespace KS.Arguments.CommandLineArguments
 {
-    /// <summary>
-    /// Context of the splash
-    /// </summary>
-    public enum SplashContext
+    class PrebootSplashArgument : ArgumentExecutor, IArgument
     {
-        /// <summary>
-        /// The kernel is showcasing a splash screen
-        /// </summary>
-        Showcase,
-        /// <summary>
-        /// The kernel is starting up
-        /// </summary>
-        StartingUp,
-        /// <summary>
-        /// The kernel is shutting down
-        /// </summary>
-        ShuttingDown,
-        /// <summary>
-        /// The kernel is on the preboot stage
-        /// </summary>
-        Preboot,
+
+        public override void Execute(string StringArgs, string[] ListArgsOnly, string[] ListSwitchesOnly)
+        {
+            KernelEntry.PrebootSplash = true;
+        }
     }
 }

@@ -41,7 +41,11 @@
     },
     "Nitrocid KS - Set buffer size override": {
       "commandName": "Project",
-      "commandLineArgs": "debug"
+      "commandLineArgs": "nosetbuffersize"
+    },
+    "Nitrocid KS - Pre-boot splash": {
+      "commandName": "Project",
+      "commandLineArgs": "verbosepreboot prebootsplash"
     }
   }
 }
