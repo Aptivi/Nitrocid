@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
@@ -32,9 +33,9 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             TextWriterColor.Write(Translate.DoTranslation("To access the user manual for general uses of Nitrocid, please visit the below link:"));
-            TextWriterColor.Write("    https://aptivi.gitbook.io/kernel-simulator-manual/");
+            TextWriterColor.WriteKernelColor("    https://aptivi.gitbook.io/kernel-simulator-manual/", true, KernelColorType.Tip);
             TextWriterColor.Write(Translate.DoTranslation("To access the developer's manual for updated ways of making kernel modifications and screensavers, please visit the below link:"));
-            TextWriterColor.Write("    https://aptivi.github.io/NitrocidKS");
+            TextWriterColor.WriteKernelColor("    https://aptivi.github.io/NitrocidKS", true, KernelColorType.Tip);
             return 0;
         }
 
