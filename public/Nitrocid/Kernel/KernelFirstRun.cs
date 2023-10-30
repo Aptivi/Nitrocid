@@ -421,22 +421,22 @@ namespace KS.Kernel
             int times = ConsoleWrapper.WindowWidth - (PresentationTools.PresentationUpperInnerBorderLeft * 2) - 1;
             DebugWriter.WriteDebug(DebugLevel.I, "Band length: {0} cells", times);
             double threshold = 255 / (double)times;
-            for (double i = 0; i < 255; i += threshold)
-                band.Append($"{new Color(Convert.ToInt32(i), 0, 0).VTSequenceBackground} ");
+            for (double i = 0; i <= times; i++)
+                band.Append($"{new Color(Convert.ToInt32(i * threshold), 0, 0).VTSequenceBackground} ");
             band.AppendLine();
-            for (double i = 0; i < 255; i += threshold)
-                band.Append($"{new Color(0, Convert.ToInt32(i), 0).VTSequenceBackground} ");
+            for (double i = 0; i <= times; i++)
+                band.Append($"{new Color(0, Convert.ToInt32(i * threshold), 0).VTSequenceBackground} ");
             band.AppendLine();
-            for (double i = 0; i < 255; i += threshold)
-                band.Append($"{new Color(0, 0, Convert.ToInt32(i)).VTSequenceBackground} ");
+            for (double i = 0; i <= times; i++)
+                band.Append($"{new Color(0, 0, Convert.ToInt32(i * threshold)).VTSequenceBackground} ");
             band.AppendLine();
             band.Append($"{CharManager.GetEsc() + $"[49m"}");
             band.AppendLine();
 
             // Now, show the hue band
             double hueThreshold = 360 / (double)times;
-            for (double h = 0; h < 360; h += hueThreshold)
-                band.Append($"{new Color($"hsl:{(int)h};100;50").VTSequenceBackground} ");
+            for (double h = 0; h <= times; h++)
+                band.Append($"{new Color($"hsl:{Convert.ToInt32(h * hueThreshold)};100;50").VTSequenceBackground} ");
             band.AppendLine();
             band.Append($"{CharManager.GetEsc() + $"[49m"}");
             return band.ToString();
