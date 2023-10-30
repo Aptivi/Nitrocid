@@ -20,6 +20,7 @@
 using System;
 using KS.Languages;
 using KS.Misc.Notifications;
+using Newtonsoft.Json;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 {
@@ -30,18 +31,33 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
     {
 
         private bool ReminderNotified;
+        [JsonProperty(nameof(ReminderDate))]
+        private readonly DateTime reminderDate;
+        [JsonProperty(nameof(ReminderTitle))]
+        private readonly string reminderTitle;
+        [JsonProperty(nameof(ReminderImportance))]
+        private readonly NotificationPriority reminderImportance;
+
         /// <summary>
         /// Reminder date
         /// </summary>
-        public DateTime ReminderDate { get; set; }
+        [JsonIgnore]
+        public DateTime ReminderDate
+            => reminderDate;
+
         /// <summary>
         /// Reminder title
         /// </summary>
-        public string ReminderTitle { get; set; }
+        [JsonIgnore]
+        public string ReminderTitle
+            => reminderTitle;
+
         /// <summary>
         /// Reminder importance
         /// </summary>
-        public NotificationPriority ReminderImportance { get; set; }
+        [JsonIgnore]
+        public NotificationPriority ReminderImportance
+            => reminderImportance;
 
         /// <summary>
         /// Notifies the user about the reminder
@@ -54,6 +70,17 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
                 NotificationManager.NotifySend(ReminderNotification);
                 ReminderNotified = true;
             }
+        }
+
+        [JsonConstructor]
+        internal ReminderInfo()
+        { }
+
+        internal ReminderInfo(DateTime reminderDate, string reminderTitle, NotificationPriority reminderImportance)
+        {
+            this.reminderDate = reminderDate;
+            this.reminderTitle = reminderTitle;
+            this.reminderImportance = reminderImportance;
         }
 
     }

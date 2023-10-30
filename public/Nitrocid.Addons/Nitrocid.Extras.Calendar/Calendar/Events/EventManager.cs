@@ -214,7 +214,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
             for (int EventIndex = 0; EventIndex <= CalendarEvents.Count - 1; EventIndex++)
             {
                 var EventInstance = CalendarEvents[EventIndex];
-                string EventFileName = $"[{EventIndex}] {EventInstance.EventTitle}.ksevent";
+                string EventFileName = $"{EventIndex,0000}-{EventInstance.EventTitle}.json";
                 DebugWriter.WriteDebug(DebugLevel.I, "Event file name: {0}...", EventFileName);
                 string EventFilePath = FilesystemTools.NeutralizePath(EventFileName, Path);
                 DebugWriter.WriteDebug(DebugLevel.I, "Event file path: {0}...", EventFilePath);

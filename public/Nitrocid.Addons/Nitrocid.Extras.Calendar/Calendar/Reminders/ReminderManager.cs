@@ -35,6 +35,7 @@ using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Notifications;
+using Newtonsoft.Json;
 
 namespace Nitrocid.Extras.Calendar.Calendar.Reminders
 {
@@ -102,12 +103,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         {
             if (string.IsNullOrWhiteSpace(ReminderTitle))
                 ReminderTitle = Translate.DoTranslation("Untitled reminder");
-            var Reminder = new ReminderInfo()
-            {
-                ReminderTitle = ReminderTitle,
-                ReminderImportance = ReminderImportance,
-                ReminderDate = ReminderDate
-            };
+            var Reminder = new ReminderInfo(ReminderDate, ReminderTitle, ReminderImportance);
             DebugWriter.WriteDebug(DebugLevel.I, "Adding reminder {0} @ {1} to list...", Reminder.ReminderTitle, TimeDateRenderers.Render(Reminder.ReminderDate));
             AddReminder(Reminder);
         }
@@ -183,12 +179,9 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
                 // If file exists, convert the file to the reminder instance
                 if (Checking.FileExists(ReminderFile))
                 {
-                    var Converter = new XmlSerializer(typeof(ReminderInfo));
-                    var ReminderFileStream = new FileStream(ReminderFile, FileMode.Open);
-                    DebugWriter.WriteDebug(DebugLevel.I, "Opened stream [{0}]. Converting...", ReminderFileStream.Length);
-                    ReminderInfo ConvertedReminder = (ReminderInfo)Converter.Deserialize(ReminderFileStream);
+                    var reminderContents = Reading.ReadContentsText(ReminderFile);
+                    ReminderInfo ConvertedReminder = JsonConvert.DeserializeObject<ReminderInfo>(reminderContents);
                     DebugWriter.WriteDebug(DebugLevel.I, "Converted!");
-                    ReminderFileStream.Close();
                     return ConvertedReminder;
                 }
                 else
@@ -233,7 +226,7 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
             for (int ReminderIndex = 0; ReminderIndex <= Reminders.Count - 1; ReminderIndex++)
             {
                 var ReminderInstance = Reminders[ReminderIndex];
-                string ReminderFileName = $"[{ReminderIndex}] {ReminderInstance.ReminderTitle}.ksreminder";
+                string ReminderFileName = $"[{ReminderIndex}] {ReminderInstance.ReminderTitle}.json";
                 DebugWriter.WriteDebug(DebugLevel.I, "Reminder file name: {0}...", ReminderFileName);
                 string ReminderFilePath = FilesystemTools.NeutralizePath(ReminderFileName, Path);
                 DebugWriter.WriteDebug(DebugLevel.I, "Reminder file path: {0}...", ReminderFilePath);
@@ -253,13 +246,10 @@ namespace Nitrocid.Extras.Calendar.Calendar.Reminders
         public static void SaveReminder(ReminderInfo ReminderInstance, string File)
         {
             FilesystemTools.ThrowOnInvalidPath(File);
-            File = FilesystemTools.NeutralizePath(File);
+            File = FilesystemTools.NeutralizePath(File, true);
             DebugWriter.WriteDebug(DebugLevel.I, "Saving reminder to {0}...", File);
-            var Converter = new XmlSerializer(typeof(ReminderInfo));
-            var ReminderFileStream = new FileStream(File, FileMode.OpenOrCreate);
-            DebugWriter.WriteDebug(DebugLevel.I, "Opened stream with length {0}", ReminderFileStream.Length);
-            Converter.Serialize(ReminderFileStream, ReminderInstance);
-            ReminderFileStream.Close();
+            var contents = JsonConvert.SerializeObject(ReminderInstance);
+            Writing.WriteContentsText(File, contents);
         }
 
     }
