@@ -157,7 +157,7 @@ namespace KS.Shell.ShellBase.Help
                     if ((!ModCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) | ModCommandList[cmd].Flags.HasFlag(CommandFlags.Strict) & UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator)) & (KernelEntry.Maintenance & !ModCommandList[cmd].Flags.HasFlag(CommandFlags.NoMaintenance) | !KernelEntry.Maintenance))
                     {
                         TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, cmd);
-                        TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, ModCommandList[cmd].HelpDefinition);
+                        TextWriterColor.WriteKernelColor("{0}", true, KernelColorType.ListValue, ModCommandList[cmd].GetTranslatedHelpEntry());
                     }
                 }
             }
@@ -279,7 +279,7 @@ namespace KS.Shell.ShellBase.Help
                         foreach (var Switch in Switches)
                         {
                             string switchName = Switch.SwitchName;
-                            string switchDesc = IsMod ? Switch.HelpDefinition : Switch.GetTranslatedHelpEntry();
+                            string switchDesc = Switch.GetTranslatedHelpEntry();
                             TextWriterColor.WriteKernelColor($"  -{switchName}: ", false, KernelColorType.ListEntry);
                             TextWriterColor.WriteKernelColor(switchDesc, true, KernelColorType.ListValue);
                         }
