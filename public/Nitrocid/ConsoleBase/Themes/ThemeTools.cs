@@ -57,8 +57,13 @@ namespace KS.ConsoleBase.Themes
         /// Gets the theme information
         /// </summary>
         /// <param name="theme">Theme name</param>
-        public static ThemeInfo GetThemeInfo(string theme) =>
-            GetInstalledThemes()[theme];
+        public static ThemeInfo GetThemeInfo(string theme)
+        {
+            var themes = GetInstalledThemes();
+            if (themes.TryGetValue(theme, out ThemeInfo resultingTheme))
+                return resultingTheme;
+            return themes["Default"];
+        }
 
         /// <summary>
         /// Gets the colors from the theme
