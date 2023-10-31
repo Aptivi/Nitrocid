@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Users.Login;
@@ -27,13 +26,14 @@ namespace KS.Kernel.Debugging.Testing.Facades
     internal class EnableNotifications : TestFacade
     {
         public override string TestName => Translate.DoTranslation("Enables the notification system");
+        public override bool TestInteractive => false;
+        public override object TestExpectedValue => true;
         public override void Run(params string[] args)
         {
             Login.LoggedIn = true;
             if (!NotificationManager.NotifThread.IsAlive)
                 NotificationManager.NotifThread.Start();
-            else
-                TextWriterColor.Write(Translate.DoTranslation("The notification system has already started"));
+            TestActualValue = NotificationManager.NotifThread.IsAlive;
         }
     }
 }
