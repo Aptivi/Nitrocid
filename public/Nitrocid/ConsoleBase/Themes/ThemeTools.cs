@@ -66,6 +66,16 @@ namespace KS.ConsoleBase.Themes
         }
 
         /// <summary>
+        /// Checks to see if a built-in (or an addon) theme is found
+        /// </summary>
+        /// <param name="theme">Theme name</param>
+        public static bool IsThemeFound(string theme)
+        {
+            var themes = GetInstalledThemes();
+            return themes.ContainsKey(theme);
+        }
+
+        /// <summary>
         /// Gets the colors from the theme
         /// </summary>
         /// <param name="theme">Theme name</param>
