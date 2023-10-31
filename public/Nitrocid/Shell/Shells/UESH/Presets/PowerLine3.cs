@@ -30,6 +30,7 @@ using Terminaux.Colors;
 using KS.Shell.ShellBase.Shells;
 using KS.Kernel;
 using KS.Shell.Prompts;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.UESH.Presets
 {
@@ -68,7 +69,7 @@ namespace KS.Shell.Shells.UESH.Presets
             {
                 new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), UserManagement.CurrentUser.Username),
                 new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 85), NetworkTools.HostName, PadlockChar),
-                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), $"{CurrentDirectory.CurrentDir} [{ShellManager.ShellStack.Count}]"),
+                new PowerLineSegment(new Color(0, 0, 0), new Color(255, 255, 255), $"{CurrentDirectory.CurrentDir}{(Config.MainConfig.ShowShellCount ? $" [{ShellManager.ShellStack.Count}]" : "")}"),
             };
 
             // Builder

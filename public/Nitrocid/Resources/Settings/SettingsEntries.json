@@ -707,6 +707,12 @@
                 "Type": "SBoolean",
                 "Variable": "SetTitleOnCommandExecution",
                 "Description": "Sets console title on command execution."
+            },
+            {
+                "Name": "Show the shell count",
+                "Type": "SBoolean",
+                "Variable": "ShowShellCount",
+                "Description": "Shows the shell count in the normal UESH shell (depending on the preset)"
             }
         ]
     },

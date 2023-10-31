@@ -21,6 +21,7 @@ using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.Files.Folders;
 using KS.Kernel;
+using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Network.Base;
 using KS.Shell.Prompts;
@@ -56,7 +57,7 @@ namespace KS.Shell.Shells.UESH.Presets
             {
                 // Opening
                 PresetStringBuilder.Append(KernelColorTools.GetGray().VTSequenceForeground);
-                PresetStringBuilder.AppendFormat("[{0}:", ShellManager.ShellStack.Count);
+                PresetStringBuilder.AppendFormat($"[{(Config.MainConfig.ShowShellCount ? $"{ShellManager.ShellStack.Count}:" : "")}");
 
                 // Current username
                 PresetStringBuilder.Append(KernelColorTools.GetColor(KernelColorType.UserNameShell).VTSequenceForeground);

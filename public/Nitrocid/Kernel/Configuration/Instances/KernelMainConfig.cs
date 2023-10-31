@@ -843,13 +843,17 @@ namespace KS.Kernel.Configuration.Instances
             set => PromptPresetManager.SetPreset(value, ShellType.DebugShell, false);
         }
         /// <summary>
-        /// Default choice output type
+        /// Shows the shell count in the normal UESH shell (depending on the preset)
         /// </summary>
-        public int DefaultChoiceOutputType { get; set; } = (int)ChoiceOutputType.Modern;
+        public bool ShowShellCount { get; set; }
         /// <summary>
         /// Sets console title on command execution
         /// </summary>
         public bool SetTitleOnCommandExecution { get; set; } = true;
+        /// <summary>
+        /// Default choice output type
+        /// </summary>
+        public int DefaultChoiceOutputType { get; set; } = (int)ChoiceOutputType.Modern;
         /// <summary>
         /// Controls how the files will be sorted
         /// </summary>
