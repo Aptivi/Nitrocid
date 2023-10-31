@@ -122,53 +122,6 @@ namespace KS.Misc.Screensaver
             Screensavers.Keys.ToArray();
 
         /// <summary>
-        /// Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
-        /// </summary>
-        public static void HandleTimeout()
-        {
-            try
-            {
-                var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
-                while (!PowerManager.KernelShutdown)
-                {
-                    int OldCursorLeft = termDriver.CursorLeft;
-                    SpinWait.SpinUntil(() => !ScrnTimeReached || PowerManager.KernelShutdown);
-                    if (!ScrnTimeReached)
-                    {
-                        // Start the stopwatch for monitoring
-                        var stopwatch = new Stopwatch();
-                        stopwatch.Start();
-
-                        // Detect movement
-                        bool hasMoved = false;
-                        SpinWait.SpinUntil(() =>
-                        {
-                            hasMoved = termDriver.MovementDetected;
-                            return hasMoved || PowerManager.KernelShutdown;
-                        }, ScreenTimeout);
-
-                        // Check to see if we're locking
-                        bool locking = !hasMoved && stopwatch.ElapsedMilliseconds >= ScreenTimeout;
-                        stopwatch.Reset();
-                        if (PowerManager.KernelShutdown || PowerManager.RebootRequested)
-                            break;
-                        else if (locking)
-                        {
-                            DebugWriter.WriteDebug(DebugLevel.W, "Screen time has reached.");
-                            TermReaderTools.Interrupt();
-                            LockScreen();
-                        }
-                    }
-                }
-            }
-            catch (Exception ex)
-            {
-                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", ex.Message);
-                DebugWriter.WriteDebugStackTrace(ex);
-            }
-        }
-
-        /// <summary>
         /// Shows the screensaver
         /// </summary>
         public static void ShowSavers() =>
@@ -372,6 +325,53 @@ namespace KS.Misc.Screensaver
             ConsoleWrapper.CursorVisible = initialVisible;
             DebugWriter.WriteDebug(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();
+        }
+
+        /// <summary>
+        /// Handles the screensaver time so that when it reaches the time threshold, the screensaver launches
+        /// </summary>
+        private static void HandleTimeout()
+        {
+            try
+            {
+                var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
+                while (!PowerManager.KernelShutdown)
+                {
+                    int OldCursorLeft = termDriver.CursorLeft;
+                    SpinWait.SpinUntil(() => !ScrnTimeReached || PowerManager.KernelShutdown);
+                    if (!ScrnTimeReached)
+                    {
+                        // Start the stopwatch for monitoring
+                        var stopwatch = new Stopwatch();
+                        stopwatch.Start();
+
+                        // Detect movement
+                        bool hasMoved = false;
+                        SpinWait.SpinUntil(() =>
+                        {
+                            hasMoved = termDriver.MovementDetected;
+                            return hasMoved || PowerManager.KernelShutdown;
+                        }, ScreenTimeout);
+
+                        // Check to see if we're locking
+                        bool locking = !hasMoved && stopwatch.ElapsedMilliseconds >= ScreenTimeout;
+                        stopwatch.Reset();
+                        if (PowerManager.KernelShutdown || PowerManager.RebootRequested)
+                            break;
+                        else if (locking)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "Screen time has reached.");
+                            TermReaderTools.Interrupt();
+                            LockScreen();
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Shutting down screensaver timeout thread: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
         }
 
     }
