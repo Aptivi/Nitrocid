@@ -31,11 +31,13 @@ namespace KS.Shell.ShellBase.Switches
         private bool acceptsValuesSet;
         private bool conflictsWithSet;
         private bool optionalizeLastRequiredArgumentsSet;
+        private bool isNumericSet;
         private bool isRequired;
         private bool argumentsRequired;
         private bool acceptsValues = true;
         private string[] conflictsWith = Array.Empty<string>();
         private int optionalizeLastRequiredArguments;
+        private bool isNumeric;
 
         /// <summary>
         /// Is the switch required?
@@ -108,6 +110,21 @@ namespace KS.Shell.ShellBase.Switches
                 {
                     optionalizeLastRequiredArgumentsSet = true;
                     optionalizeLastRequiredArguments = value;
+                }
+            }
+        }
+        /// <summary>
+        /// Whether to make this switch only accept numbers
+        /// </summary>
+        public bool IsNumeric
+        {
+            get => isNumeric;
+            set
+            {
+                if (!isNumericSet)
+                {
+                    isNumericSet = true;
+                    isNumeric = value;
                 }
             }
         }

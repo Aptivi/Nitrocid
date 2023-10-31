@@ -69,13 +69,17 @@ namespace KS.Shell.ShellBase.Arguments
         /// Checks to see if the exact wording is provided. Also true if the argument doesn't expect exact wording.
         /// </summary>
         public bool ExactWordingProvided { get; private set; }
+        /// <summary>
+        /// Checks to see if the number is provided for numeric switch. Also true if the switch doesn't expect a number.
+        /// </summary>
+        public bool SwitchNumberProvided { get; private set; }
 
         internal string[] UnknownSwitchesList { get; private set; }
         internal string[] ConflictingSwitchesList { get; private set; }
         internal string[] NoValueSwitchesList { get; private set; }
         internal CommandArgumentInfo ArgumentInfo { get; private set; }
 
-        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string argumentsTextOrig, string[] argumentsListOrig, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList, string[] noValueSwitchesList, bool numberProvided, bool exactWordingProvided, CommandArgumentInfo argumentInfo)
+        internal ProvidedArgumentsInfo(string command, string argumentsText, string[] argumentsList, string argumentsTextOrig, string[] argumentsListOrig, string[] switchesList, bool requiredArgumentsProvided, bool requiredSwitchesProvided, bool requiredSwitchArgumentsProvided, string[] unknownSwitchesList, string[] conflictingSwitchesList, string[] noValueSwitchesList, bool numberProvided, bool exactWordingProvided, bool switchNumberProvided, CommandArgumentInfo argumentInfo)
         {
             Command = command;
             ArgumentsText = argumentsText;
@@ -92,6 +96,7 @@ namespace KS.Shell.ShellBase.Arguments
             NumberProvided = numberProvided;
             ExactWordingProvided = exactWordingProvided;
             ArgumentInfo = argumentInfo;
+            SwitchNumberProvided = switchNumberProvided;
         }
 
     }

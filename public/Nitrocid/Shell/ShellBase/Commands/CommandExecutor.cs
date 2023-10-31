@@ -167,6 +167,13 @@ namespace KS.Shell.ShellBase.Commands
                             DebugWriter.WriteDebug(DebugLevel.W, "User has provided non-exact wording for {0}", Command);
                             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("One or more of the arguments expect an exact wording, but you provided an invalid word."), true, KernelColorType.Error);
                         }
+
+                        // Check for invalid number in numeric switches
+                        if (!unsatisfied.SwitchNumberProvided)
+                        {
+                            DebugWriter.WriteDebug(DebugLevel.W, "User has provided invalid number for one or more of the switches for {0}", Command);
+                            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("One or more of the switches expect a numeric value, but you provided an invalid number."), true, KernelColorType.Error);
+                        }
                     }
                     TextWriterColor.Write(Translate.DoTranslation("See below for usage:"));
                     HelpPrint.ShowHelp(Command, ShellType);

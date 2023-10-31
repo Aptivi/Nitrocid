@@ -64,6 +64,11 @@ namespace KS.Shell.ShellBase.Switches
         /// </summary>
         public int OptionalizeLastRequiredArguments =>
             Options.OptionalizeLastRequiredArguments;
+        /// <summary>
+        /// Whether to make this switch only accept numbers
+        /// </summary>
+        public bool IsNumeric =>
+            Options.IsNumeric;
 
         /// <summary>
         /// Installs a new instance of switch info class
@@ -99,8 +104,9 @@ namespace KS.Shell.ShellBase.Switches
         /// <param name="ArgumentsRequired">Whether the switch requires a value to be set</param>
         /// <param name="conflictsWith">Does the switch conflict with the provided switches?</param>
         /// <param name="optionalizeLastRequiredArguments">Whether to make the last N required arguments optional. This is useful for some switches, like -list.</param>
+        /// <param name="IsNumeric">Whether to make this switch only accept numbers</param>
         /// <param name="AcceptsValues">Does the switch accept values?</param>
-        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0, bool AcceptsValues = true)
+        public SwitchInfo(string Switch, string HelpDefinition, bool IsRequired = false, bool ArgumentsRequired = false, string[] conflictsWith = null, int optionalizeLastRequiredArguments = 0, bool AcceptsValues = true, bool IsNumeric = false)
         {
             SwitchName = Switch;
             this.HelpDefinition = HelpDefinition;
@@ -111,6 +117,7 @@ namespace KS.Shell.ShellBase.Switches
                 ConflictsWith = conflictsWith,
                 IsRequired = IsRequired,
                 OptionalizeLastRequiredArguments = optionalizeLastRequiredArguments,
+                IsNumeric = IsNumeric,
             };
         }
 

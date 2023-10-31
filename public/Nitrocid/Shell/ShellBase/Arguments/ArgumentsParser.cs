@@ -77,7 +77,7 @@ namespace KS.Shell.ShellBase.Arguments
                               ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
                               aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :
                               null;
-            var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true, new());
+            var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true, true, new());
             if (CommandInfo != null)
                 return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
             else
@@ -105,7 +105,7 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
             var ArgumentInfo = KernelArguments.ContainsKey(Argument) ? KernelArguments[Argument] : null;
-            var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true, new());
+            var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true, true, new());
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
             else
@@ -161,6 +161,7 @@ namespace KS.Shell.ShellBase.Arguments
                 bool RequiredSwitchesProvided = true;
                 bool RequiredSwitchArgumentsProvided = true;
                 bool numberProvided = true;
+                bool switchNumberProvided = true;
                 bool exactWordingProvided = true;
 
                 // Check for argument info
@@ -318,6 +319,20 @@ namespace KS.Shell.ShellBase.Arguments
                         exactWordingProvided = false;
                 }
 
+                // Check to see if the caller has provided a non-numeric value to a switch that expects numbers
+                var switchesList = argInfo.Switches.Where((si) => si.SwitchName != "set").ToArray();
+                for (int i = 0; i < switchesList.Length && i < EnclosedSwitchKeyValuePairs.Count; i++)
+                {
+                    // Get the switch and the part
+                    var switches = EnclosedSwitchKeyValuePairs[i];
+                    var switchPart = switchesList[i];
+
+                    // Check to see if the switch expects a number and that the provided switch is numeric
+                    // or if the switch allows string values
+                    if (switchPart.IsNumeric && !double.TryParse(switches.Item2, out _))
+                        switchNumberProvided = false;
+                }
+
                 // If all is well, bail.
                 var paiInstance = new ProvidedArgumentsInfo
                 (
@@ -335,6 +350,7 @@ namespace KS.Shell.ShellBase.Arguments
                     noValueSwitchesList,
                     numberProvided,
                     exactWordingProvided,
+                    switchNumberProvided,
                     argInfo
                 );
                 if (RequiredArgumentsProvided &&
@@ -343,7 +359,8 @@ namespace KS.Shell.ShellBase.Arguments
                     unknownSwitchesList.Length == 0 &&
                     conflictingSwitchesList.Length == 0 &&
                     numberProvided &&
-                    exactWordingProvided)
+                    exactWordingProvided &&
+                    switchNumberProvided)
                     satisfiedArg = paiInstance;
                 totalArgs.Add(paiInstance);
             }

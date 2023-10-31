@@ -71,6 +71,7 @@ namespace KS.Shell.ShellBase.Arguments
                     bool required = Switch.IsRequired;
                     bool argRequired = Switch.ArgumentsRequired;
                     bool acceptsValue = Switch.AcceptsValues;
+                    bool justNumeric = Switch.IsNumeric;
                     string switchName = Switch.SwitchName;
 
                     // If we're processing a conflicting switch, don't process it as we've already grouped them.
@@ -83,6 +84,7 @@ namespace KS.Shell.ShellBase.Arguments
                     switchStrings.Add(switchName);
 
                     // Check to see if there are any conflicts to put them to a group
+                    string numericRender = justNumeric ? ":int" : "";
                     var conflicts = Switch.ConflictsWith;
                     if (conflicts.Length > 0)
                         switchStrings.AddRange(conflicts);
@@ -90,11 +92,11 @@ namespace KS.Shell.ShellBase.Arguments
                         .Where((si) => switchStrings.Contains(si.SwitchName))
                         .ToArray();
                     var switchStringsUsages = switchLists
-                        .Select((si) => $"-{si.SwitchName}{(si.IsRequired ? $"=value" : si.AcceptsValues ? $"[=value]" : "")}")
+                        .Select((si) => $"-{si.SwitchName}{(si.IsRequired ? $"=value{numericRender}" : si.AcceptsValues ? $"[=value{numericRender}]" : "")}")
                         .ToArray();
 
                     // Now, render the switch usages
-                    string renderedSwitchValue = argRequired ? $"=value" : acceptsValue ? $"[=value]" : "";
+                    string renderedSwitchValue = argRequired ? $"=value{numericRender}" : acceptsValue ? $"[=value{numericRender}]" : "";
                     string requiredTagStart = required ? "<" : "[";
                     string requiredTagEnd = required ? ">" : "]";
                     string renderedSwitch =
