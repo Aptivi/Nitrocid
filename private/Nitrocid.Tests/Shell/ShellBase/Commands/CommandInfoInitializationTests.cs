@@ -48,6 +48,78 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.SqlShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgEmptyInternal(ShellType type)
+        {
+            // Create instance
+            var CommandInstance =
+                new CommandInfo("help", $"Help page for type {type}");
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo.ShouldBeEmpty();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
+            CommandInstance.CommandBase.ShouldNotBeNull();
+            CommandInstance.CommandBase.ShouldBeOfType(typeof(UndefinedCommand));
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Initialization")]
+        public void TestInitializeCommandInfoInstanceFromCommandLineArgEmptyPublic(ShellType type)
+        {
+            // Create instance
+            var CommandInstance =
+                new CommandInfo("help", $"Help page for type {type}", null, null);
+
+            // Check for null
+            CommandInstance.ShouldNotBeNull();
+            CommandInstance.Command.ShouldNotBeNullOrEmpty();
+            CommandInstance.HelpDefinition.ShouldNotBeNullOrEmpty();
+            CommandInstance.CommandArgumentInfo.ShouldBeEmpty();
+
+            // Check for property correctness
+            CommandInstance.Command.ShouldBe("help");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
+            CommandInstance.CommandBase.ShouldNotBeNull();
+            CommandInstance.CommandBase.ShouldBeOfType(typeof(UndefinedCommand));
+        }
+
+        /// <summary>
+        /// Tests initializing CommandInfo instance from a command line Command
+        /// </summary>
+        [Test]
+        [TestCase(ShellType.Shell)]
+        [TestCase(ShellType.AdminShell)]
+        [TestCase(ShellType.DebugShell)]
+        [TestCase(ShellType.FTPShell)]
+        [TestCase(ShellType.HexShell)]
+        [TestCase(ShellType.HTTPShell)]
+        [TestCase(ShellType.JsonShell)]
+        [TestCase(ShellType.MailShell)]
+        [TestCase(ShellType.RSSShell)]
+        [TestCase(ShellType.SFTPShell)]
+        [TestCase(ShellType.SqlShell)]
+        [TestCase(ShellType.TextShell)]
+        [Description("Initialization")]
         public void TestInitializeCommandInfoInstanceFromCommandLineArgSimple(ShellType type)
         {
             // Create instance
@@ -67,7 +139,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -117,7 +189,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -167,7 +239,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -230,7 +302,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -293,7 +365,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -359,7 +431,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -416,7 +488,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -466,7 +538,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -516,7 +588,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -579,7 +651,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -642,7 +714,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -708,7 +780,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -766,7 +838,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -825,7 +897,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -883,7 +955,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -966,7 +1038,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -1049,7 +1121,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -1139,7 +1211,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -1209,7 +1281,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -1268,7 +1340,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -1326,7 +1398,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -1409,7 +1481,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -1492,7 +1564,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();
@@ -1582,7 +1654,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
 
             // Check for property correctness
             CommandInstance.Command.ShouldBe("help");
-            CommandInstance.HelpDefinition.ShouldBe("Help page");
+            CommandInstance.HelpDefinition.ShouldBe($"Help page for type {type}");
             CommandInstance.CommandArgumentInfo[0].Arguments.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].Switches.ShouldNotBeEmpty();
             CommandInstance.CommandArgumentInfo[0].ArgumentsRequired.ShouldBeFalse();

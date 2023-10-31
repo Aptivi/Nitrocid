@@ -69,6 +69,15 @@ namespace KS.Shell.ShellBase.Commands
         }
 
         /// <summary>
+        /// Installs a new instance of an empty command info class
+        /// </summary>
+        /// <param name="Command">Command</param>
+        /// <param name="HelpDefinition">Command help definition</param>
+        internal CommandInfo(string Command, string HelpDefinition) :
+            this(Command, HelpDefinition, null, null)
+        { }
+
+        /// <summary>
         /// Gets the translated version of help entry (KS built-in commands and addon commands only)
         /// </summary>
         public string GetTranslatedHelpEntry() =>
