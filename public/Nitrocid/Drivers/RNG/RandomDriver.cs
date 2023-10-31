@@ -27,85 +27,99 @@ namespace KS.Drivers.RNG
         /// <summary>
         /// Gets a random number from 0 to <see cref="int.MaxValue"/>
         /// </summary>
-        public static int Random() => DriverHandler.CurrentRandomDriverLocal.Random();
+        public static int Random() =>
+            DriverHandler.CurrentRandomDriverLocal.Random();
 
         /// <summary>
         /// Gets a random number from 0 to <paramref name="max"/>
         /// </summary>
         /// <param name="max">Max number</param>
-        public static int Random(int max) => DriverHandler.CurrentRandomDriverLocal.Random(0, max);
+        public static int Random(int max) =>
+            DriverHandler.CurrentRandomDriverLocal.Random(0, max);
 
         /// <summary>
         /// Gets a random number from <paramref name="min"/> to <paramref name="max"/>
         /// </summary>
         /// <param name="min">Min number</param>
         /// <param name="max">Max number</param>
-        public static int Random(int min, int max) => DriverHandler.CurrentRandomDriverLocal.Random(min, max);
+        public static int Random(int min, int max) =>
+            DriverHandler.CurrentRandomDriverLocal.Random(min, max);
 
         /// <summary>
         /// Gets a random number from 0 to <see cref="short.MaxValue"/>
         /// </summary>
-        public static short RandomShort() => DriverHandler.CurrentRandomDriverLocal.RandomShort(short.MaxValue);
+        public static short RandomShort() =>
+            DriverHandler.CurrentRandomDriverLocal.RandomShort(short.MaxValue);
 
         /// <summary>
         /// Gets a random number from 0 to <paramref name="max"/>
         /// </summary>
         /// <param name="max">Max number</param>
-        public static short RandomShort(short max) => DriverHandler.CurrentRandomDriverLocal.RandomShort(0, max);
+        public static short RandomShort(short max) =>
+            DriverHandler.CurrentRandomDriverLocal.RandomShort(0, max);
 
         /// <summary>
         /// Gets a random number from <paramref name="min"/> to <paramref name="max"/>
         /// </summary>
         /// <param name="min">Min number</param>
         /// <param name="max">Max number</param>
-        public static short RandomShort(short min, short max) => DriverHandler.CurrentRandomDriverLocal.RandomShort(min, max);
+        public static short RandomShort(short min, short max) =>
+            DriverHandler.CurrentRandomDriverLocal.RandomShort(min, max);
 
         /// <summary>
         /// Gets a random index number from 0 to <see cref="int.MaxValue"/> - 1
         /// </summary>
-        public static int RandomIdx() => DriverHandler.CurrentRandomDriverLocal.RandomIdx(int.MaxValue);
+        public static int RandomIdx() =>
+            DriverHandler.CurrentRandomDriverLocal.RandomIdx(int.MaxValue);
 
         /// <summary>
         /// Gets a random index number from 0 to <paramref name="max"/> - 1
         /// </summary>
         /// <param name="max">Max number</param>
-        public static int RandomIdx(int max) => DriverHandler.CurrentRandomDriverLocal.RandomIdx(0, max);
+        public static int RandomIdx(int max) =>
+            DriverHandler.CurrentRandomDriverLocal.RandomIdx(0, max);
 
         /// <summary>
         /// Gets a random index number from <paramref name="min"/> to <paramref name="max"/> - 1
         /// </summary>
         /// <param name="min">Min number</param>
         /// <param name="max">Max number</param>
-        public static int RandomIdx(int min, int max) => DriverHandler.CurrentRandomDriverLocal.RandomIdx(min, max);
+        public static int RandomIdx(int min, int max) =>
+            DriverHandler.CurrentRandomDriverLocal.RandomIdx(min, max);
 
         /// <summary>
         /// Gets a random double-precision number from 0 to less than 1.0
         /// </summary>
-        public static double RandomDouble() => DriverHandler.CurrentRandomDriverLocal.RandomDouble();
+        public static double RandomDouble() =>
+            DriverHandler.CurrentRandomDriverLocal.RandomDouble();
 
         /// <summary>
         /// Gets a random double-precision number from 0 to less than <paramref name="max"/>
         /// </summary>
         /// <param name="max">Max number</param>
-        public static double RandomDouble(double max) => DriverHandler.CurrentRandomDriverLocal.RandomDouble(max);
+        public static double RandomDouble(double max) =>
+            DriverHandler.CurrentRandomDriverLocal.RandomDouble(max);
 
         /// <summary>
         /// Gets a random chance from the probability by raw value
         /// </summary>
         /// <param name="prob">Probability</param>
-        public static bool RandomChance(double prob) => DriverHandler.CurrentRandomDriverLocal.RandomChance(prob);
+        public static bool RandomChance(double prob) =>
+            DriverHandler.CurrentRandomDriverLocal.RandomChance(prob);
 
         /// <summary>
         /// Gets a random chance from the probability by percentage
         /// </summary>
         /// <param name="probPercent">Probability in percent (from 0 to 100)</param>
         /// <remarks>If the specified probability by percent is larger than 100% or smaller than 0%, then the probability by percentage will be set to a random value from 0% to 100%</remarks>
-        public static bool RandomChance(int probPercent) => DriverHandler.CurrentRandomDriverLocal.RandomChance(probPercent);
+        public static bool RandomChance(int probPercent) =>
+            DriverHandler.CurrentRandomDriverLocal.RandomChance(probPercent);
 
         /// <summary>
         /// Random Russian Roulette!
         /// </summary>
         /// <returns>True if you're unlucky; otherwise, false if lucky.</returns>
-        public static bool RandomRussianRoulette() => DriverHandler.CurrentRandomDriverLocal.RandomRussianRoulette();
+        public static bool RandomRussianRoulette() =>
+            DriverHandler.CurrentRandomDriverLocal.RandomRussianRoulette();
     }
 }

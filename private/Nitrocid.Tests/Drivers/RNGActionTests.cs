@@ -29,47 +29,58 @@ namespace Nitrocid.Tests.Drivers
 
         [Test]
         [Description("Action")]
-        public void TestRandom() => RandomDriver.Random().ShouldBeInRange(0, int.MaxValue);
+        public void TestRandom() =>
+            RandomDriver.Random().ShouldBeInRange(0, int.MaxValue);
 
         [Test]
         [Description("Action")]
-        public void TestRandomMax() => RandomDriver.Random(100).ShouldBeInRange(0, 100);
+        public void TestRandomMax() =>
+            RandomDriver.Random(100).ShouldBeInRange(0, 100);
 
         [Test]
         [Description("Action")]
-        public void TestRandomMinMax() => RandomDriver.Random(50, 100).ShouldBeInRange(50, 100);
+        public void TestRandomMinMax() =>
+            RandomDriver.Random(50, 100).ShouldBeInRange(50, 100);
 
         [Test]
         [Description("Action")]
-        public void TestRandomShort() => RandomDriver.RandomShort().ShouldBeInRange((short)0, short.MaxValue);
+        public void TestRandomShort() =>
+            RandomDriver.RandomShort().ShouldBeInRange((short)0, short.MaxValue);
 
         [Test]
         [Description("Action")]
-        public void TestRandomShortMax() => RandomDriver.RandomShort(100).ShouldBeInRange((short)0, (short)100);
+        public void TestRandomShortMax() =>
+            RandomDriver.RandomShort(100).ShouldBeInRange((short)0, (short)100);
 
         [Test]
         [Description("Action")]
-        public void TestRandomShortMinMax() => RandomDriver.RandomShort(50, 100).ShouldBeInRange((short)50, (short)100);
+        public void TestRandomShortMinMax() =>
+            RandomDriver.RandomShort(50, 100).ShouldBeInRange((short)50, (short)100);
 
         [Test]
         [Description("Action")]
-        public void TestRandomIdx() => RandomDriver.RandomIdx().ShouldBeInRange(0, int.MaxValue - 1);
+        public void TestRandomIdx() =>
+            RandomDriver.RandomIdx().ShouldBeInRange(0, int.MaxValue - 1);
 
         [Test]
         [Description("Action")]
-        public void TestRandomIdxMax() => RandomDriver.RandomIdx(100).ShouldBeInRange(0, 100 - 1);
+        public void TestRandomIdxMax() =>
+            RandomDriver.RandomIdx(100).ShouldBeInRange(0, 100 - 1);
 
         [Test]
         [Description("Action")]
-        public void TestRandomIdxMinMax() => RandomDriver.RandomIdx(50, 100).ShouldBeInRange(50, 100 - 1);
+        public void TestRandomIdxMinMax() =>
+            RandomDriver.RandomIdx(50, 100).ShouldBeInRange(50, 100 - 1);
 
         [Test]
         [Description("Action")]
-        public void TestRandomDouble() => RandomDriver.RandomDouble().ShouldBeInRange(0d, 1.0d);
+        public void TestRandomDouble() =>
+            RandomDriver.RandomDouble().ShouldBeInRange(0d, 1.0d);
 
         [Test]
         [Description("Action")]
-        public void TestRandomDoubleMax() => RandomDriver.RandomDouble(100d).ShouldBeInRange(0d, 100d);
+        public void TestRandomDoubleMax() =>
+            RandomDriver.RandomDouble(100d).ShouldBeInRange(0d, 100d);
 
     }
 }

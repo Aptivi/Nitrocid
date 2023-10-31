@@ -41,6 +41,8 @@ using KS.Drivers.Encoding;
 using KS.Drivers.HardwareProber.Bases;
 using KS.Drivers.HardwareProber;
 using KS.Languages;
+using KS.Drivers.Sorting;
+using KS.Drivers.Sorting.Bases;
 
 namespace KS.Drivers
 {
@@ -137,6 +139,12 @@ namespace KS.Drivers
                     { "Default", new DefaultHardwareProber() },
                     { "SpecProbe", new SpecProbeHardwareProber() },
                 }
+            },
+            { 
+                DriverTypes.Sorting, new()
+                { 
+                    { "Default", new DefaultSorting() },
+                }
             }
         };
 
@@ -151,6 +159,7 @@ namespace KS.Drivers
             { DriverTypes.DebugLogger,          new() },
             { DriverTypes.Encoding,             new() },
             { DriverTypes.HardwareProber,       new() },
+            { DriverTypes.Sorting,              new() },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDrivers = new()
@@ -164,6 +173,7 @@ namespace KS.Drivers
             { DriverTypes.DebugLogger,          drivers[DriverTypes.DebugLogger]["Default"] },
             { DriverTypes.Encoding,             drivers[DriverTypes.Encoding]["Default"] },
             { DriverTypes.HardwareProber,       drivers[DriverTypes.HardwareProber]["Default"] },
+            { DriverTypes.Sorting,              drivers[DriverTypes.Sorting]["Default"] },
         };
 
         internal static Dictionary<Type, DriverTypes> knownTypes = new()
@@ -177,6 +187,7 @@ namespace KS.Drivers
             { typeof(IDebugLoggerDriver),       DriverTypes.DebugLogger },
             { typeof(IEncodingDriver),          DriverTypes.Encoding },
             { typeof(IHardwareProberDriver),    DriverTypes.HardwareProber },
+            { typeof(ISortingDriver),    DriverTypes.Sorting },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
@@ -236,6 +247,12 @@ namespace KS.Drivers
             begunLocal ? (IHardwareProberDriver)currentDriversLocal[DriverTypes.HardwareProber] : CurrentHardwareProberDriver;
 
         /// <summary>
+        /// Gets the current sorting driver (use this when possible)
+        /// </summary>
+        public static ISortingDriver CurrentSortingDriverLocal =>
+            begunLocal ? (ISortingDriver)currentDriversLocal[DriverTypes.Sorting] : CurrentSortingDriver;
+
+        /// <summary>
         /// Gets the system-wide current random driver
         /// </summary>
         public static IRandomDriver CurrentRandomDriver =>
@@ -288,6 +305,12 @@ namespace KS.Drivers
         /// </summary>
         public static IHardwareProberDriver CurrentHardwareProberDriver =>
             (IHardwareProberDriver)currentDrivers[DriverTypes.HardwareProber];
+
+        /// <summary>
+        /// Gets the system-wide current sorting driver
+        /// </summary>
+        public static ISortingDriver CurrentSortingDriver =>
+            (ISortingDriver)currentDrivers[DriverTypes.Sorting];
 
         /// <summary>
         /// Gets the driver

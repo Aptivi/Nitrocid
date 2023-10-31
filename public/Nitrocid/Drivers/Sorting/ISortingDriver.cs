@@ -17,52 +17,41 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Drivers
+namespace KS.Drivers.Sorting
 {
     /// <summary>
-    /// Driver types
+    /// Sorting driver interface for drivers
     /// </summary>
-    public enum DriverTypes
+    public interface ISortingDriver : IDriver
     {
         /// <summary>
-        /// Random number generator drivers
+        /// Sorts the byte numbers
         /// </summary>
-        RNG,
+        /// <returns>Sorted array of byte numbers</returns>
+        byte[] SortNumbersInt8(byte[] unsorted);
+
         /// <summary>
-        /// Console drivers
+        /// Sorts the short numbers
         /// </summary>
-        Console,
+        /// <returns>Sorted array of short numbers</returns>
+        short[] SortNumbersInt16(short[] unsorted);
+
         /// <summary>
-        /// Network drivers
+        /// Sorts the integers
         /// </summary>
-        Network,
+        /// <returns>Sorted array of integers</returns>
+        int[] SortNumbersInt32(int[] unsorted);
+
         /// <summary>
-        /// Filesystem drivers
+        /// Sorts the 64-bit integers
         /// </summary>
-        Filesystem,
+        /// <returns>Sorted array of 64-bit integers</returns>
+        long[] SortNumbersInt64(long[] unsorted);
+
         /// <summary>
-        /// Encryption drivers
+        /// Sorts the 128-bit integers (works the same as 64-bit integers until the migration to .NET 8.0 occurs)
         /// </summary>
-        Encryption,
-        /// <summary>
-        /// Regular expression drivers
-        /// </summary>
-        Regexp,
-        /// <summary>
-        /// Debug logging drivers
-        /// </summary>
-        DebugLogger,
-        /// <summary>
-        /// Encoding drivers
-        /// </summary>
-        Encoding,
-        /// <summary>
-        /// Hardware prober drivers
-        /// </summary>
-        HardwareProber,
-        /// <summary>
-        /// Array sorting drivers
-        /// </summary>
-        Sorting,
+        /// <returns>Sorted array of 128-bit integers</returns>
+        long[] SortNumbersInt128(long[] unsorted);
     }
 }

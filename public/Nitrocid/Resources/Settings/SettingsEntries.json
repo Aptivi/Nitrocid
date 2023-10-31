@@ -1263,6 +1263,16 @@
                 "SelectionFunctionType": "HardwareProberDriverTools",
                 "SelectionFallback": [ "Default" ],
                 "Description": "Which hardware prober driver would you like to use?"
+            },
+            {
+                "Name": "Current sorting driver",
+                "Type": "SSelection",
+                "Variable": "CurrentSortingDriver",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetSortingDriverNames",
+                "SelectionFunctionType": "SortingDriverTools",
+                "SelectionFallback": [ "Default" ],
+                "Description": "Which sorting driver would you like to use?"
             }
         ]
     },
