@@ -747,6 +747,18 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public string PathsToLookup { get; set; } = Environment.GetEnvironmentVariable("PATH");
         /// <summary>
+        /// Default choice output type
+        /// </summary>
+        public int DefaultChoiceOutputType { get; set; } = (int)ChoiceOutputType.Modern;
+        /// <summary>
+        /// Sets console title on command execution
+        /// </summary>
+        public bool SetTitleOnCommandExecution { get; set; } = true;
+        /// <summary>
+        /// Shows the shell count in the normal UESH shell (depending on the preset)
+        /// </summary>
+        public bool ShowShellCount { get; set; }
+        /// <summary>
         /// Prompt Preset
         /// </summary>
         public string PromptPreset
@@ -842,18 +854,6 @@ namespace KS.Kernel.Configuration.Instances
             get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.DebugShell).PresetName;
             set => PromptPresetManager.SetPreset(value, ShellType.DebugShell, false);
         }
-        /// <summary>
-        /// Shows the shell count in the normal UESH shell (depending on the preset)
-        /// </summary>
-        public bool ShowShellCount { get; set; }
-        /// <summary>
-        /// Sets console title on command execution
-        /// </summary>
-        public bool SetTitleOnCommandExecution { get; set; } = true;
-        /// <summary>
-        /// Default choice output type
-        /// </summary>
-        public int DefaultChoiceOutputType { get; set; } = (int)ChoiceOutputType.Modern;
         /// <summary>
         /// Controls how the files will be sorted
         /// </summary>
