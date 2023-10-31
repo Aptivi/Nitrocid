@@ -39,12 +39,6 @@ namespace Nitrocid.Extras.Calendar.Calendar
     public static class CalendarPrint
     {
 
-        private static readonly EventInfo[] baseEvents = new EventInfo[]
-        {
-            new(new(2018, 2, 22), /* Localizable */ "Nitrocid KS Release Anniversary", true, 2, 22, 2, 22, "Gregorian"),
-            new(new(2018, 2, 22), /* Localizable */ "Ramadan", true, 9, 1, 10, 1, "Hijri"),
-        };
-
         /// <summary>
         /// Prints the table of the calendar
         /// </summary>
@@ -122,7 +116,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     if (rDate == CurrentDate & !ReminderMarked)
                         ReminderMarked = true;
                 }
-                foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(baseEvents))
+                foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(EventManager.baseEvents))
                 {
                     EventInstance.UpdateEventInfo(new DateTime(Year, 1, 1));
                     var nDate = EventInstance.EventDate.Date;

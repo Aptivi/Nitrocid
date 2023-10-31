@@ -48,6 +48,11 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         internal static object EventManagerLock = new();
         internal static KernelThread EventThread = new("Event Thread", false, EventListen);
         internal static List<EventInfo> CalendarEvents = new();
+        internal static readonly EventInfo[] baseEvents = new EventInfo[]
+        {
+            new(new(2018, 2, 22), /* Localizable */ "Nitrocid KS Release Anniversary", true, 2, 22, 2, 22, "Gregorian"),
+            new(new(2018, 2, 22), /* Localizable */ "Ramadan", true, 9, 1, 10, 1, "Hijri"),
+        };
 
         /// <summary>
         /// Listens for events and notifies the user if the date is due to the event
@@ -125,10 +130,10 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         /// </summary>
         public static void ListEvents()
         {
-            foreach (EventInfo EventInstance in CalendarEvents)
+            foreach (EventInfo EventInstance in CalendarEvents.Union(baseEvents))
             {
                 TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, EventInstance.EventDate);
-                TextWriterColor.WriteKernelColor(EventInstance.EventTitle, true, KernelColorType.ListValue);
+                TextWriterColor.WriteKernelColor($"{EventInstance.EventTitle}{(EventInstance.IsYearly ? $" [{EventInstance.StartMonth}/{EventInstance.StartDay} -> {EventInstance.EndMonth}/{EventInstance.EndDay}]" : "")}", true, KernelColorType.ListValue);
             }
         }
 
