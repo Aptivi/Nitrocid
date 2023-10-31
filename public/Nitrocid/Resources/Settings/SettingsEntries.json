@@ -1150,6 +1150,12 @@
                 "Description": "Which screensaver do you want to lock your screen with?"
             },
             {
+                "Name": "Enable Screensaver Timeout",
+                "Type": "SBoolean",
+                "Variable": "ScreenTimeoutEnabled",
+                "Description": "If enabled, the screensaver automatically launches after idling for the specified period."
+            },
+            {
                 "Name": "Screensaver Timeout in ms",
                 "Type": "SInt",
                 "Variable": "ScreenTimeout",

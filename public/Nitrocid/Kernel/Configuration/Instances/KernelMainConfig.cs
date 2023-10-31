@@ -1171,6 +1171,21 @@ namespace KS.Kernel.Configuration.Instances
             set => ScreensaverManager.defSaverName = ScreensaverManager.Screensavers.ContainsKey(value) ? value : "plain";
         }
         /// <summary>
+        /// Whether the screen timeout is enabled or not
+        /// </summary>
+        public bool ScreenTimeoutEnabled
+        {
+            get => ScreensaverManager.scrnTimeoutEnabled;
+            set
+            {
+                ScreensaverManager.scrnTimeoutEnabled = value;
+                if (!value)
+                    ScreensaverManager.StopTimeout();
+                else
+                    ScreensaverManager.StartTimeout();
+            }
+        }
+        /// <summary>
         /// Write when to launch screensaver after specified milliseconds. It must be numeric
         /// </summary>
         public int ScreenTimeout

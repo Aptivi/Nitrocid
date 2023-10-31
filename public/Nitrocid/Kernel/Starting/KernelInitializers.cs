@@ -248,11 +248,6 @@ namespace KS.Kernel.Starting
                 TimeDateTopRight.InitTopRightDate();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded top right date.");
 
-                // Start screensaver timeout
-                if (!ScreensaverManager.Timeout.IsAlive)
-                    ScreensaverManager.Timeout.Start();
-                DebugWriter.WriteDebug(DebugLevel.I, "Loaded screensaver timeout.");
-
                 // Load system env vars and convert them
                 UESHVariables.ConvertSystemEnvironmentVariables();
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded environment variables.");
@@ -362,6 +357,10 @@ namespace KS.Kernel.Starting
                 // Stop the time/date change thread
                 TimeDateTopRight.TimeTopRightChange.Stop();
                 DebugWriter.WriteDebug(DebugLevel.I, "Time/date corner stopped");
+
+                // Stop screensaver timeout
+                ScreensaverManager.StopTimeout();
+                DebugWriter.WriteDebug(DebugLevel.I, "Screensaver timeout stopped");
 
                 // Reset the boot log
                 SplashReport.logBuffer.Clear();

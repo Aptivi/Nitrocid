@@ -57,6 +57,7 @@ namespace KS.Misc.Screensaver
             { "plain", new PlainDisplay() }
         };
         internal static Dictionary<string, BaseScreensaver> CustomSavers = new();
+        internal static bool scrnTimeoutEnabled = true;
         internal static int scrnTimeout = 300000;
         internal static string defSaverName = "matrixbleed";
         internal static bool LockMode;
@@ -325,6 +326,18 @@ namespace KS.Misc.Screensaver
             ConsoleWrapper.CursorVisible = initialVisible;
             DebugWriter.WriteDebug(DebugLevel.I, "All clean. Screensaver stopped.");
             SaverAutoReset.Set();
+        }
+
+        internal static void StartTimeout()
+        {
+            if (!Timeout.IsAlive && scrnTimeoutEnabled)
+                Timeout.Start();
+        }
+
+        internal static void StopTimeout()
+        {
+            if (Timeout.IsAlive)
+                Timeout.Stop();
         }
 
         /// <summary>
