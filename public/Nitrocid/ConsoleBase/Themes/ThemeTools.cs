@@ -41,23 +41,17 @@ namespace KS.ConsoleBase.Themes
     {
 
         internal static bool cacheInvalidated = true;
-        internal readonly static Dictionary<string, ThemeInfo> themes = new();
+        internal readonly static Dictionary<string, ThemeInfo> themes = new()
+        {
+            { "Default", new ThemeInfo(JToken.Parse(ThemesResources.Default)) }
+        };
 
         /// <summary>
         /// Gets the installed themes
         /// </summary>
         /// <returns>List of installed themes and their <see cref="ThemeInfo"/> instances</returns>
-        public static Dictionary<string, ThemeInfo> GetInstalledThemes()
-        {
-            // Return cached version
-            if (themes.Count > 0 && !cacheInvalidated)
-                return themes;
-
-            // Now, get all theme names and populate them using ThemeInfo
-            themes.TryAdd("Default", new ThemeInfo(JToken.Parse(ThemesResources.Default)));
-            cacheInvalidated = false;
-            return themes;
-        }
+        public static Dictionary<string, ThemeInfo> GetInstalledThemes() =>
+            new(themes);
 
         /// <summary>
         /// Gets the theme information
