@@ -216,8 +216,8 @@ namespace KS.Misc.Notifications
                                 NotifyBorderColor = NewNotification.NotificationBorderColor;
 
                             // Write notification to console
-                            int notifLeftAgnostic = ConsoleWrapper.WindowWidth - 40;
-                            int notifTopAgnostic = 0;
+                            int notifLeftAgnostic = ConsoleWrapper.WindowWidth - 42;
+                            int notifTopAgnostic = 1;
                             int notifLeft = useSimplified ? ConsoleWrapper.WindowWidth - 3 : notifLeftAgnostic;
                             int notifTop = useSimplified ? 1 : notifTopAgnostic;
                             int notifTitleTop = notifTopAgnostic + 1;
@@ -272,11 +272,9 @@ namespace KS.Misc.Notifications
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifTitleTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifDescTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifTipTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyLeftFrameChar.ToString(), notifLeftAgnostic - 1, notifWipeTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifTitleTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifDescTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifTipTop, true, NotifyBorderColor);
-                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 2, notifWipeTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 4, notifTitleTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 4, notifDescTop, true, NotifyBorderColor);
+                                TextWriterWhereColor.WriteWhereColor(CurrentNotifyRightFrameChar.ToString(), ConsoleWrapper.WindowWidth - 4, notifTipTop, true, NotifyBorderColor);
                                 TextWriterWhereColor.WriteWhereColor(CurrentNotifyLowerLeftCornerChar + new string(CurrentNotifyLowerFrameChar, 38) + CurrentNotifyLowerRightCornerChar, notifLeftAgnostic - 1, notifWipeTop, true, NotifyBorderColor);
                             }
 
@@ -306,7 +304,7 @@ namespace KS.Misc.Notifications
                                     TextWriterWhereColor.WriteWhereColor(Desc, notifLeftAgnostic, notifDescTop, true, NotifyDescColor);
 
                                     // For indeterminate progress, flash the box inside the progress bar
-                                    ProgressBarColor.WriteProgress(NewNotification.ProgressIndeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, notifLeftAgnostic, 4, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
+                                    ProgressBarColor.WriteProgress(NewNotification.ProgressIndeterminate ? 100 * indeterminateStep : NewNotification.Progress, notifLeftAgnostic, notifTipTop, notifLeftAgnostic, 6, NotifyProgressColor, NotifyBorderColor, KernelColorTools.GetColor(KernelColorType.Background), DrawBorderNotification);
                                     indeterminateStep++;
                                     if (indeterminateStep > 1)
                                         indeterminateStep = 0;
@@ -320,7 +318,7 @@ namespace KS.Misc.Notifications
 
                             // Clear the area
                             SpinWait.SpinUntil(() => sent, 5000);
-                            int width = ConsoleWrapper.WindowWidth - (DrawBorderNotification ? 41 : 40);
+                            int width = ConsoleWrapper.WindowWidth - (DrawBorderNotification ? 43 : 42);
                             if (useSimplified)
                                 TextWriterWhereColor.WriteWhere(" ", notifLeft, notifTop, true);
                             else
