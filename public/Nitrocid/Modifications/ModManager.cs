@@ -531,26 +531,6 @@ namespace KS.Modifications
         }
 
         /// <summary>
-        /// Lists the mods
-        /// </summary>
-        /// <param name="SearchTerm">Search term</param>
-        public static Dictionary<string, ModInfo> ListModsStartingWith(string SearchTerm)
-        {
-            var ListedMods = new Dictionary<string, ModInfo>();
-
-            // List the mods using the search term
-            foreach (string ModName in Mods.Keys)
-            {
-                if (ModName.StartsWith(SearchTerm))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Added mod name {0} to list (starts with {1})", ModName, SearchTerm);
-                    ListedMods.Add(ModName, Mods[ModName]);
-                }
-            }
-            return ListedMods;
-        }
-
-        /// <summary>
         /// Lists the mod commands based on the shell
         /// </summary>
         /// <param name="ShellType">Selected shell type</param>
