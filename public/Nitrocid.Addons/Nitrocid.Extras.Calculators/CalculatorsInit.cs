@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Calculators
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "calc",
-                new CommandInfo("calc", ShellType.Shell, /* Localizable */ "Calculator to calculate expressions.",
+                new CommandInfo("calc", /* Localizable */ "Calculator to calculate expressions.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.Calculators
             },
 
             { "imaginary",
-                new CommandInfo("imaginary", ShellType.Shell, /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
+                new CommandInfo("imaginary", /* Localizable */ "Show information about the imaginary number formula specified by a specified real and imaginary number",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

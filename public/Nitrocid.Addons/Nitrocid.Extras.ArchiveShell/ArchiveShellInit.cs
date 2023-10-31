@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.ArchiveShell
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "archive",
-                new CommandInfo("archive", ShellType.Shell, /* Localizable */ "Opens the archive file to the archive shell",
+                new CommandInfo("archive", /* Localizable */ "Opens the archive file to the archive shell",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

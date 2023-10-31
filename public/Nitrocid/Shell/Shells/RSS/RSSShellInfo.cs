@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.RSS
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "articleinfo",
-                new CommandInfo("articleinfo", ShellType, /* Localizable */ "Gets the article info",
+                new CommandInfo("articleinfo", /* Localizable */ "Gets the article info",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -53,42 +53,42 @@ namespace KS.Shell.Shells.RSS
             },
 
             { "bookmark",
-                new CommandInfo("bookmark", ShellType, /* Localizable */ "Bookmarks the feed",
+                new CommandInfo("bookmark", /* Localizable */ "Bookmarks the feed",
                     new[] {
                         new CommandArgumentInfo()
                     }, new BookmarkCommand())
             },
 
             { "detach",
-                new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
                     }, new DetachCommand())
             },
 
             { "feedinfo",
-                new CommandInfo("feedinfo", ShellType, /* Localizable */ "Gets the feed info",
+                new CommandInfo("feedinfo", /* Localizable */ "Gets the feed info",
                     new[] {
                         new CommandArgumentInfo()
                     }, new FeedInfoCommand())
             },
 
             { "list",
-                new CommandInfo("list", ShellType, /* Localizable */ "Lists all feeds",
+                new CommandInfo("list", /* Localizable */ "Lists all feeds",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ListCommand(), CommandFlags.Wrappable)
             },
 
             { "listbookmark",
-                new CommandInfo("listbookmark", ShellType, /* Localizable */ "Lists all bookmarked feeds",
+                new CommandInfo("listbookmark", /* Localizable */ "Lists all bookmarked feeds",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ListBookmarkCommand(), CommandFlags.Wrappable)
             },
 
             { "read",
-                new CommandInfo("read", ShellType, /* Localizable */ "Reads a feed in a web browser",
+                new CommandInfo("read", /* Localizable */ "Reads a feed in a web browser",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -101,7 +101,7 @@ namespace KS.Shell.Shells.RSS
             },
 
             { "search",
-                new CommandInfo("search", ShellType, /* Localizable */ "Searches the feed for a phrase in title and/or description",
+                new CommandInfo("search", /* Localizable */ "Searches the feed for a phrase in title and/or description",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -128,7 +128,7 @@ namespace KS.Shell.Shells.RSS
             },
 
             { "unbookmark",
-                new CommandInfo("unbookmark", ShellType, /* Localizable */ "Removes the feed bookmark",
+                new CommandInfo("unbookmark", /* Localizable */ "Removes the feed bookmark",
                     new[] {
                         new CommandArgumentInfo()
                     }, new UnbookmarkCommand())

@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.Json
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "addarray",
-                new CommandInfo("addarray", ShellType, /* Localizable */ "Adds a new property containing the array",
+                new CommandInfo("addarray", /* Localizable */ "Adds a new property containing the array",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -58,7 +58,7 @@ namespace KS.Shell.Shells.Json
             },
 
             { "addproperty",
-                new CommandInfo("addproperty", ShellType, /* Localizable */ "Adds a new property at the end of the JSON file",
+                new CommandInfo("addproperty", /* Localizable */ "Adds a new property at the end of the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -74,7 +74,7 @@ namespace KS.Shell.Shells.Json
             },
             
             { "addobject",
-                new CommandInfo("addobject", ShellType, /* Localizable */ "Adds a new object inside the array",
+                new CommandInfo("addobject", /* Localizable */ "Adds a new object inside the array",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -90,7 +90,7 @@ namespace KS.Shell.Shells.Json
             },
             
             { "addobjectindexed",
-                new CommandInfo("addobjectindexed", ShellType, /* Localizable */ "Adds a new object inside an object specified by index",
+                new CommandInfo("addobjectindexed", /* Localizable */ "Adds a new object inside an object specified by index",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -109,14 +109,14 @@ namespace KS.Shell.Shells.Json
             },
             
             { "clear",
-                new CommandInfo("clear", ShellType, /* Localizable */ "Clears the JSON file",
+                new CommandInfo("clear", /* Localizable */ "Clears the JSON file",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ClearCommand())
             },
             
             { "delproperty",
-                new CommandInfo("delproperty", ShellType, /* Localizable */ "Removes a property from the JSON file",
+                new CommandInfo("delproperty", /* Localizable */ "Removes a property from the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -126,14 +126,14 @@ namespace KS.Shell.Shells.Json
             },
             
             { "exitnosave",
-                new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the JSON shell without saving the changes",
+                new CommandInfo("exitnosave", /* Localizable */ "Exits the JSON shell without saving the changes",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ExitNoSaveCommand())
             },
 
             { "findproperty",
-                new CommandInfo("findproperty", ShellType, /* Localizable */ "Finds a property",
+                new CommandInfo("findproperty", /* Localizable */ "Finds a property",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -148,7 +148,7 @@ namespace KS.Shell.Shells.Json
             },
 
             { "jsoninfo",
-                new CommandInfo("jsoninfo", ShellType, /* Localizable */ "Shows information about the JSON file",
+                new CommandInfo("jsoninfo", /* Localizable */ "Shows information about the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("simplified", /* Localizable */ "Don't show individual properties", new SwitchOptions()
@@ -164,7 +164,7 @@ namespace KS.Shell.Shells.Json
             },
             
             { "print",
-                new CommandInfo("print", ShellType, /* Localizable */ "Prints the JSON file",
+                new CommandInfo("print", /* Localizable */ "Prints the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -174,7 +174,7 @@ namespace KS.Shell.Shells.Json
             },
             
             { "rmobject",
-                new CommandInfo("rmobject", ShellType, /* Localizable */ "Removes an object",
+                new CommandInfo("rmobject", /* Localizable */ "Removes an object",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -189,7 +189,7 @@ namespace KS.Shell.Shells.Json
             },
             
             { "rmobjectindexed",
-                new CommandInfo("rmobjectindexed", ShellType, /* Localizable */ "Removes an object specified by index",
+                new CommandInfo("rmobjectindexed", /* Localizable */ "Removes an object specified by index",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -207,7 +207,7 @@ namespace KS.Shell.Shells.Json
             },
             
             { "save",
-                new CommandInfo("save", ShellType, /* Localizable */ "Saves the JSON file",
+                new CommandInfo("save", /* Localizable */ "Saves the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("b", /* Localizable */ "Beautified JSON", new SwitchOptions()

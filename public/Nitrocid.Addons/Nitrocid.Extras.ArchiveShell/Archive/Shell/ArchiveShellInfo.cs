@@ -40,14 +40,14 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "cdir",
-                new CommandInfo("cdir", ShellType, /* Localizable */ "Gets current local directory",
+                new CommandInfo("cdir", /* Localizable */ "Gets current local directory",
                     new[] {
                         new CommandArgumentInfo()
                     }, new CDirCommand())
             },
 
             { "chdir",
-                new CommandInfo("chdir", ShellType, /* Localizable */ "Changes directory",
+                new CommandInfo("chdir", /* Localizable */ "Changes directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -57,7 +57,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             },
 
             { "chadir",
-                new CommandInfo("chadir", ShellType, /* Localizable */ "Changes archive directory",
+                new CommandInfo("chadir", /* Localizable */ "Changes archive directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -67,7 +67,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             },
 
             { "get",
-                new CommandInfo("get", ShellType, /* Localizable */ "Extracts a file to a specified directory or a current directory",
+                new CommandInfo("get", /* Localizable */ "Extracts a file to a specified directory or a current directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             },
 
             { "list",
-                new CommandInfo("list", ShellType, /* Localizable */ "Lists all files inside the archive",
+                new CommandInfo("list", /* Localizable */ "Lists all files inside the archive",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -90,7 +90,7 @@ namespace Nitrocid.Extras.ArchiveShell.Archive.Shell
             },
 
             { "pack",
-                new CommandInfo("pack", ShellType, /* Localizable */ "Packs a local file to the archive",
+                new CommandInfo("pack", /* Localizable */ "Packs a local file to the archive",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

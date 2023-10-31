@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.ToDoList
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "todo",
-                new CommandInfo("todo", ShellType.Shell, /* Localizable */ "To-do task manager",
+                new CommandInfo("todo", /* Localizable */ "To-do task manager",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

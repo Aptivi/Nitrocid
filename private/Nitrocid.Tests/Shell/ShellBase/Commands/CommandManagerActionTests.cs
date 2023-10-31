@@ -100,7 +100,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestRegisterCommand(ShellType type)
         {
             Should.NotThrow(() => CommandManager.RegisterCustomCommand(type,
-                new CommandInfo("mycmd", type, "My command help definition...",
+                new CommandInfo("mycmd", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
@@ -129,7 +129,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestRegisterCommand(string type)
         {
             Should.NotThrow(() => CommandManager.RegisterCustomCommand(type,
-                new CommandInfo("mycmd2", type, "My command help definition...",
+                new CommandInfo("mycmd2", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
@@ -158,7 +158,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestRegisterEmptyCommandName(ShellType type)
         {
             Should.Throw(() => CommandManager.RegisterCustomCommand(type,
-                new CommandInfo("", type, "My command help definition...",
+                new CommandInfo("", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
@@ -186,7 +186,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestRegisterEmptyCommandName(string type)
         {
             Should.Throw(() => CommandManager.RegisterCustomCommand(type,
-                new CommandInfo("", type, "My command help definition...",
+                new CommandInfo("", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
@@ -214,7 +214,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestRegisterCommandConflicting(ShellType type)
         {
             Should.Throw(() => CommandManager.RegisterCustomCommand(type,
-                new CommandInfo("exit", type, "My command help definition...",
+                new CommandInfo("exit", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
@@ -242,7 +242,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestRegisterCommandConflicting(string type)
         {
             Should.Throw(() => CommandManager.RegisterCustomCommand(type,
-                new CommandInfo("exit", type, "My command help definition...",
+                new CommandInfo("exit", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
@@ -437,19 +437,19 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new CommandInfo[]
             {
-                new CommandInfo("cmdgroup", type, "My command help definition...",
+                new CommandInfo("cmdgroup", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
                     }, new CustomCommand()),
 
-                new CommandInfo("cmdgroup1", type, "My command help definition...",
+                new CommandInfo("cmdgroup1", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
                     }, new CustomCommand()),
 
-                new CommandInfo("cmdgroup2", type, "My command help definition...",
+                new CommandInfo("cmdgroup2", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
@@ -482,19 +482,19 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new CommandInfo[]
             {
-                new CommandInfo("cmdgroup3", type, "My command help definition...",
+                new CommandInfo("cmdgroup3", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
                     }, new CustomCommand()),
                 
-                new CommandInfo("cmdgroup4", type, "My command help definition...",
+                new CommandInfo("cmdgroup4", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
                     }, new CustomCommand()),
                 
-                new CommandInfo("cmdgroup5", type, "My command help definition...",
+                new CommandInfo("cmdgroup5", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
@@ -527,19 +527,19 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new CommandInfo[]
             {
-                new CommandInfo("command", type, "My command help definition...",
+                new CommandInfo("command", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
                     }, new CustomCommand()),
 
-                new CommandInfo("exit", type, "My command help definition...",
+                new CommandInfo("exit", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
                     }, new CustomCommand()),
 
-                new CommandInfo("", type, "My command help definition...",
+                new CommandInfo("", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
@@ -570,19 +570,19 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         {
             var commandInfos = new CommandInfo[]
             {
-                new CommandInfo("command2", type, "My command help definition...",
+                new CommandInfo("command2", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
                     }, new CustomCommand()),
 
-                new CommandInfo("exit", type, "My command help definition...",
+                new CommandInfo("exit", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()
                     }, new CustomCommand()),
 
-                new CommandInfo("", type, "My command help definition...",
+                new CommandInfo("", $"My command help definition for type {type}...",
                     new[]
                     {
                         new CommandArgumentInfo()

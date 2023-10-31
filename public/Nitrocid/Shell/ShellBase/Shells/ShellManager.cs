@@ -104,7 +104,7 @@ namespace KS.Shell.ShellBase.Shells
         internal readonly static Dictionary<string, CommandInfo> unifiedCommandDict = new()
         {
             { "exec",
-                new CommandInfo("exec", ShellType.Shell, /* Localizable */ "Executes an external process",
+                new CommandInfo("exec", /* Localizable */ "Executes an external process",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -118,14 +118,14 @@ namespace KS.Shell.ShellBase.Shells
             },
 
             { "exit",
-                new CommandInfo("exit", ShellType.Shell, /* Localizable */ "Exits the shell if running on subshell",
+                new CommandInfo("exit", /* Localizable */ "Exits the shell if running on subshell",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ExitUnifiedCommand())
             },
 
             { "help",
-                new CommandInfo("help", ShellType.Shell, /* Localizable */ "Help page",
+                new CommandInfo("help", /* Localizable */ "Help page",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -164,21 +164,21 @@ namespace KS.Shell.ShellBase.Shells
             },
 
             { "loadhistories",
-                new CommandInfo("loadhistories", ShellType.Shell, /* Localizable */ "Loads shell histories",
+                new CommandInfo("loadhistories", /* Localizable */ "Loads shell histories",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LoadHistoriesUnifiedCommand())
             },
 
             { "presets",
-                new CommandInfo("presets", ShellType.Shell, /* Localizable */ "Opens the shell preset library",
+                new CommandInfo("presets", /* Localizable */ "Opens the shell preset library",
                     new[] {
                         new CommandArgumentInfo()
                     }, new PresetsUnifiedCommand())
             },
 
             { "repeat",
-                new CommandInfo("repeat", ShellType.Shell, /* Localizable */ "Repeats the last action or the specified command",
+                new CommandInfo("repeat", /* Localizable */ "Repeats the last action or the specified command",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -192,21 +192,21 @@ namespace KS.Shell.ShellBase.Shells
             },
 
             { "savehistories",
-                new CommandInfo("savehistories", ShellType.Shell, /* Localizable */ "Saves shell histories",
+                new CommandInfo("savehistories", /* Localizable */ "Saves shell histories",
                     new[] {
                         new CommandArgumentInfo()
                     }, new SaveHistoriesUnifiedCommand())
             },
 
             { "tip",
-                new CommandInfo("tip", ShellType.Shell, /* Localizable */ "Shows a random kernel tip",
+                new CommandInfo("tip", /* Localizable */ "Shows a random kernel tip",
                     new[] {
                         new CommandArgumentInfo()
                     }, new TipUnifiedCommand())
             },
 
             { "wrap",
-                new CommandInfo("wrap", ShellType.Shell, /* Localizable */ "Wraps the console output",
+                new CommandInfo("wrap", /* Localizable */ "Wraps the console output",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

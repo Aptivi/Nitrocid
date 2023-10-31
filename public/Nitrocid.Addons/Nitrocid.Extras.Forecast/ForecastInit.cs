@@ -35,7 +35,7 @@ namespace Nitrocid.Extras.Forecast
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "weather",
-                new CommandInfo("weather", ShellType.Shell, /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
+                new CommandInfo("weather", /* Localizable */ "Shows weather info for specified city. Uses OpenWeatherMap.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

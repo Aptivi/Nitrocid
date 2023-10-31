@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.FTP
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "cat",
-                new CommandInfo("cat", ShellType, /* Localizable */ "Reads the content of a remote file to the console",
+                new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "cdl",
-                new CommandInfo("cdl", ShellType, /* Localizable */ "Changes local directory to download to or upload from",
+                new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "cdr",
-                new CommandInfo("cdr", ShellType, /* Localizable */ "Changes remote directory to download from or upload to",
+                new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -70,7 +70,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "cp",
-                new CommandInfo("cp", ShellType, /* Localizable */ "Copies file or directory to another file or directory.",
+                new CommandInfo("cp", /* Localizable */ "Copies file or directory to another file or directory.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -81,7 +81,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "del",
-                new CommandInfo("del", ShellType, /* Localizable */ "Deletes remote file from server",
+                new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -91,14 +91,14 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "detach",
-                new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
                     }, new DetachCommand())
             },
             
             { "execute",
-                new CommandInfo("execute", ShellType, /* Localizable */ "Executes an FTP server command",
+                new CommandInfo("execute", /* Localizable */ "Executes an FTP server command",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -109,7 +109,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "get",
-                new CommandInfo("get", ShellType, /* Localizable */ "Downloads remote file to local directory using binary or text",
+                new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -120,7 +120,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "getfolder",
-                new CommandInfo("getfolder", ShellType, /* Localizable */ "Downloads remote folder to local directory using binary or text",
+                new CommandInfo("getfolder", /* Localizable */ "Downloads remote folder to local directory using binary or text",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -131,14 +131,14 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "info",
-                new CommandInfo("info", ShellType, /* Localizable */ "FTP server information",
+                new CommandInfo("info", /* Localizable */ "FTP server information",
                     new[] {
                         new CommandArgumentInfo()
                     }, new InfoCommand())
             },
             
             { "lsl",
-                new CommandInfo("lsl", ShellType, /* Localizable */ "Lists local directory",
+                new CommandInfo("lsl", /* Localizable */ "Lists local directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -157,7 +157,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "lsr",
-                new CommandInfo("lsr", ShellType, /* Localizable */ "Lists remote directory",
+                new CommandInfo("lsr", /* Localizable */ "Lists remote directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -172,7 +172,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "mv",
-                new CommandInfo("mv", ShellType, /* Localizable */ "Moves file or directory to another file or directory. You can also use that to rename files.",
+                new CommandInfo("mv", /* Localizable */ "Moves file or directory to another file or directory. You can also use that to rename files.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -183,7 +183,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "put",
-                new CommandInfo("put", ShellType, /* Localizable */ "Uploads local file to remote directory using binary or text",
+                new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -194,7 +194,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "putfolder",
-                new CommandInfo("putfolder", ShellType, /* Localizable */ "Uploads local folder to remote directory using binary or text",
+                new CommandInfo("putfolder", /* Localizable */ "Uploads local folder to remote directory using binary or text",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -205,21 +205,21 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "pwdl",
-                new CommandInfo("pwdl", ShellType, /* Localizable */ "Gets current local directory",
+                new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
                     new[] {
                         new CommandArgumentInfo()
                     }, new PwdlCommand())
             },
             
             { "pwdr",
-                new CommandInfo("pwdr", ShellType, /* Localizable */ "Gets current remote directory",
+                new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
                     new[] {
                         new CommandArgumentInfo()
                     }, new PwdrCommand())
             },
             
             { "perm",
-                new CommandInfo("perm", ShellType, /* Localizable */ "Sets file permissions. This is supported only on FTP servers that run Unix.",
+                new CommandInfo("perm", /* Localizable */ "Sets file permissions. This is supported only on FTP servers that run Unix.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -233,7 +233,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "sumfile",
-                new CommandInfo("sumfile", ShellType, /* Localizable */ "Calculates file sums.",
+                new CommandInfo("sumfile", /* Localizable */ "Calculates file sums.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -244,7 +244,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "sumfiles",
-                new CommandInfo("sumfiles", ShellType, /* Localizable */ "Calculates sums of files in specified directory.",
+                new CommandInfo("sumfiles", /* Localizable */ "Calculates sums of files in specified directory.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -255,7 +255,7 @@ namespace KS.Shell.Shells.FTP
             },
             
             { "type",
-                new CommandInfo("type", ShellType, /* Localizable */ "Sets the type for this session",
+                new CommandInfo("type", /* Localizable */ "Sets the type for this session",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

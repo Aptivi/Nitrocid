@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.Hex
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "addbyte",
-                new CommandInfo("addbyte", ShellType, /* Localizable */ "Adds a new byte at the end of the file",
+                new CommandInfo("addbyte", /* Localizable */ "Adds a new byte at the end of the file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -49,21 +49,21 @@ namespace KS.Shell.Shells.Hex
             },
             
             { "addbytes",
-                new CommandInfo("addbytes", ShellType, /* Localizable */ "Adds the new bytes at the end of the file",
+                new CommandInfo("addbytes", /* Localizable */ "Adds the new bytes at the end of the file",
                     new[] {
                         new CommandArgumentInfo()
                     }, new AddBytesCommand())
             },
             
             { "clear",
-                new CommandInfo("clear", ShellType, /* Localizable */ "Clears the binary file",
+                new CommandInfo("clear", /* Localizable */ "Clears the binary file",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ClearCommand())
             },
             
             { "delbyte",
-                new CommandInfo("delbyte", ShellType, /* Localizable */ "Deletes a byte using the byte number",
+                new CommandInfo("delbyte", /* Localizable */ "Deletes a byte using the byte number",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -76,7 +76,7 @@ namespace KS.Shell.Shells.Hex
             },
             
             { "delbytes",
-                new CommandInfo("delbytes", ShellType, /* Localizable */ "Deletes the range of bytes",
+                new CommandInfo("delbytes", /* Localizable */ "Deletes the range of bytes",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -93,14 +93,14 @@ namespace KS.Shell.Shells.Hex
             },
             
             { "exitnosave",
-                new CommandInfo("exitnosave", ShellType, /* Localizable */ "Exits the hex editor",
+                new CommandInfo("exitnosave", /* Localizable */ "Exits the hex editor",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ExitNoSaveCommand())
             },
             
             { "print",
-                new CommandInfo("print", ShellType, /* Localizable */ "Prints the contents of the file with byte numbers to the console",
+                new CommandInfo("print", /* Localizable */ "Prints the contents of the file with byte numbers to the console",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -117,7 +117,7 @@ namespace KS.Shell.Shells.Hex
             },
             
             { "querybyte",
-                new CommandInfo("querybyte", ShellType, /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
+                new CommandInfo("querybyte", /* Localizable */ "Queries a byte in a specified range of bytes or all bytes",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -135,7 +135,7 @@ namespace KS.Shell.Shells.Hex
             },
             
             { "replace",
-                new CommandInfo("replace", ShellType, /* Localizable */ "Replaces a byte with another one",
+                new CommandInfo("replace", /* Localizable */ "Replaces a byte with another one",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -146,7 +146,7 @@ namespace KS.Shell.Shells.Hex
             },
             
             { "save",
-                new CommandInfo("save", ShellType, /* Localizable */ "Saves the file",
+                new CommandInfo("save", /* Localizable */ "Saves the file",
                     new[] {
                         new CommandArgumentInfo()
                     }, new SaveCommand())

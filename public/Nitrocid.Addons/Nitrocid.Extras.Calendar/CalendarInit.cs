@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.Calendar
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "altdate",
-                new CommandInfo("altdate", ShellType.Shell, /* Localizable */ "Shows date and time",
+                new CommandInfo("altdate", /* Localizable */ "Shows date and time",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.Calendar
             },
 
             { "calendar",
-                new CommandInfo("calendar", ShellType.Shell, /* Localizable */ "Calendar, event, and reminder manager",
+                new CommandInfo("calendar", /* Localizable */ "Calendar, event, and reminder manager",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.LanguageStudio
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "mklang",
-                new CommandInfo("mklang", ShellType.Shell, /* Localizable */ "Makes a new language",
+                new CommandInfo("mklang", /* Localizable */ "Makes a new language",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

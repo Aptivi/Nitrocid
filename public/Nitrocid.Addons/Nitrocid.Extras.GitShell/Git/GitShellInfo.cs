@@ -40,7 +40,7 @@ namespace Nitrocid.Extras.GitShell.Git
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "blame",
-                new CommandInfo("blame", ShellType, /* Localizable */ "Fetches the list of changes in a file line by line",
+                new CommandInfo("blame", /* Localizable */ "Fetches the list of changes in a file line by line",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.GitShell.Git
             },
 
             { "checkout",
-                new CommandInfo("checkout", ShellType, /* Localizable */ "Checks out a branch",
+                new CommandInfo("checkout", /* Localizable */ "Checks out a branch",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.GitShell.Git
             },
 
             { "commit",
-                new CommandInfo("commit", ShellType, /* Localizable */ "Makes a commit",
+                new CommandInfo("commit", /* Localizable */ "Makes a commit",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -78,7 +78,7 @@ namespace Nitrocid.Extras.GitShell.Git
             },
 
             { "describe",
-                new CommandInfo("describe", ShellType, /* Localizable */ "Describes a commit",
+                new CommandInfo("describe", /* Localizable */ "Describes a commit",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -88,7 +88,7 @@ namespace Nitrocid.Extras.GitShell.Git
             },
 
             { "fetch",
-                new CommandInfo("fetch", ShellType, /* Localizable */ "Fetches all updates from a remote",
+                new CommandInfo("fetch", /* Localizable */ "Fetches all updates from a remote",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -98,7 +98,7 @@ namespace Nitrocid.Extras.GitShell.Git
             },
 
             { "filestatus",
-                new CommandInfo("filestatus", ShellType, /* Localizable */ "Fetches the file status",
+                new CommandInfo("filestatus", /* Localizable */ "Fetches the file status",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -108,42 +108,42 @@ namespace Nitrocid.Extras.GitShell.Git
             },
             
             { "info",
-                new CommandInfo("info", ShellType, /* Localizable */ "Gets a simple repository information",
+                new CommandInfo("info", /* Localizable */ "Gets a simple repository information",
                     new[] {
                         new CommandArgumentInfo()
                     }, new InfoCommand())
             },
             
             { "lsbranches",
-                new CommandInfo("lsbranches", ShellType, /* Localizable */ "Lists all branches",
+                new CommandInfo("lsbranches", /* Localizable */ "Lists all branches",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsBranchesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lscommits",
-                new CommandInfo("lscommits", ShellType, /* Localizable */ "Lists all commits",
+                new CommandInfo("lscommits", /* Localizable */ "Lists all commits",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsCommitsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lsremotes",
-                new CommandInfo("lsremotes", ShellType, /* Localizable */ "Lists all remotes",
+                new CommandInfo("lsremotes", /* Localizable */ "Lists all remotes",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsRemotesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lstags",
-                new CommandInfo("lstags", ShellType, /* Localizable */ "Lists all tags",
+                new CommandInfo("lstags", /* Localizable */ "Lists all tags",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsTagsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "maketag",
-                new CommandInfo("maketag", ShellType, /* Localizable */ "Makes a tag from the HEAD",
+                new CommandInfo("maketag", /* Localizable */ "Makes a tag from the HEAD",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -154,21 +154,21 @@ namespace Nitrocid.Extras.GitShell.Git
             },
 
             { "pull",
-                new CommandInfo("pull", ShellType, /* Localizable */ "Pulls all updates from the server",
+                new CommandInfo("pull", /* Localizable */ "Pulls all updates from the server",
                     new[] {
                         new CommandArgumentInfo()
                     }, new PullCommand())
             },
 
             { "push",
-                new CommandInfo("push", ShellType, /* Localizable */ "Pushes all updates to the server",
+                new CommandInfo("push", /* Localizable */ "Pushes all updates to the server",
                     new[] {
                         new CommandArgumentInfo()
                     }, new PushCommand())
             },
 
             { "reset",
-                new CommandInfo("reset", ShellType, /* Localizable */ "Resets the local repository",
+                new CommandInfo("reset", /* Localizable */ "Resets the local repository",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -192,7 +192,7 @@ namespace Nitrocid.Extras.GitShell.Git
             },
 
             { "setid",
-                new CommandInfo("setid", ShellType, /* Localizable */ "Sets your identity up",
+                new CommandInfo("setid", /* Localizable */ "Sets your identity up",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -203,7 +203,7 @@ namespace Nitrocid.Extras.GitShell.Git
             },
 
             { "stage",
-                new CommandInfo("stage", ShellType, /* Localizable */ "Stages a change",
+                new CommandInfo("stage", /* Localizable */ "Stages a change",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -213,21 +213,21 @@ namespace Nitrocid.Extras.GitShell.Git
             },
             
             { "stageall",
-                new CommandInfo("stageall", ShellType, /* Localizable */ "Stages all changes",
+                new CommandInfo("stageall", /* Localizable */ "Stages all changes",
                     new[] {
                         new CommandArgumentInfo()
                     }, new StageAllCommand())
             },
 
             { "status",
-                new CommandInfo("status", ShellType, /* Localizable */ "Repository status",
+                new CommandInfo("status", /* Localizable */ "Repository status",
                     new[] {
                         new CommandArgumentInfo()
                     }, new StatusCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "unstage",
-                new CommandInfo("unstage", ShellType, /* Localizable */ "Unstages a change",
+                new CommandInfo("unstage", /* Localizable */ "Unstages a change",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -237,7 +237,7 @@ namespace Nitrocid.Extras.GitShell.Git
             },
 
             { "unstageall",
-                new CommandInfo("unstageall", ShellType, /* Localizable */ "Unstages all changes",
+                new CommandInfo("unstageall", /* Localizable */ "Unstages all changes",
                     new[] {
                         new CommandArgumentInfo()
                     }, new UnstageAllCommand())

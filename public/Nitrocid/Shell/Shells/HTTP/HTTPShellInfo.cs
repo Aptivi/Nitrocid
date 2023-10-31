@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.HTTP
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "addheader",
-                new CommandInfo("addheader", ShellType, /* Localizable */ "Adds a header with the key and the value to all the upcoming requests",
+                new CommandInfo("addheader", /* Localizable */ "Adds a header with the key and the value to all the upcoming requests",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -50,14 +50,14 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "curragent",
-                new CommandInfo("curragent", ShellType, /* Localizable */ "Gets current user agent",
+                new CommandInfo("curragent", /* Localizable */ "Gets current user agent",
                     new[] {
                         new CommandArgumentInfo()
                     }, new CurrAgentCommand())
             },
 
             { "delete",
-                new CommandInfo("delete", ShellType, /* Localizable */ "Deletes content from HTTP server",
+                new CommandInfo("delete", /* Localizable */ "Deletes content from HTTP server",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -67,14 +67,14 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "detach",
-                new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
                     }, new DetachCommand())
             },
 
             { "editheader",
-                new CommandInfo("editheader", ShellType, /* Localizable */ "Edits a key on the header to all the upcoming requests",
+                new CommandInfo("editheader", /* Localizable */ "Edits a key on the header to all the upcoming requests",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -85,7 +85,7 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "get",
-                new CommandInfo("get", ShellType, /* Localizable */ "Gets the response from the HTTP server using the specified request",
+                new CommandInfo("get", /* Localizable */ "Gets the response from the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -95,7 +95,7 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "getstring",
-                new CommandInfo("getstring", ShellType, /* Localizable */ "Gets the string from the HTTP server using the specified request",
+                new CommandInfo("getstring", /* Localizable */ "Gets the string from the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -105,14 +105,14 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "lsheader",
-                new CommandInfo("lsheader", ShellType, /* Localizable */ "Lists the request headers",
+                new CommandInfo("lsheader", /* Localizable */ "Lists the request headers",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsHeaderCommand(), CommandFlags.Wrappable)
             },
 
             { "put",
-                new CommandInfo("put", ShellType, /* Localizable */ "Puts the file to the HTTP server using the specified request",
+                new CommandInfo("put", /* Localizable */ "Puts the file to the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -123,7 +123,7 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "putstring",
-                new CommandInfo("putstring", ShellType, /* Localizable */ "Puts the string to the HTTP server using the specified request",
+                new CommandInfo("putstring", /* Localizable */ "Puts the string to the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -134,7 +134,7 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "post",
-                new CommandInfo("post", ShellType, /* Localizable */ "Posts the file to the HTTP server using the specified request",
+                new CommandInfo("post", /* Localizable */ "Posts the file to the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -145,7 +145,7 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "poststring",
-                new CommandInfo("poststring", ShellType, /* Localizable */ "Posts the string to the HTTP server using the specified request",
+                new CommandInfo("poststring", /* Localizable */ "Posts the string to the HTTP server using the specified request",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -156,7 +156,7 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "rmheader",
-                new CommandInfo("rmheader", ShellType, /* Localizable */ "Removes a key on the header to all the upcoming requests",
+                new CommandInfo("rmheader", /* Localizable */ "Removes a key on the header to all the upcoming requests",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -166,7 +166,7 @@ namespace KS.Shell.Shells.HTTP
             },
 
             { "setagent",
-                new CommandInfo("setagent", ShellType, /* Localizable */ "Sets a user agent",
+                new CommandInfo("setagent", /* Localizable */ "Sets a user agent",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.RetroKS
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "retroks",
-                new CommandInfo("retroks", ShellType.Shell, /* Localizable */ "Retro Nitrocid KS based on the 0.0.4.x series",
+                new CommandInfo("retroks", /* Localizable */ "Retro Nitrocid KS based on the 0.0.4.x series",
                     new[] {
                         new CommandArgumentInfo()
                     }, new RetroKSCommand())

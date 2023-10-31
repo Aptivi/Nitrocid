@@ -39,14 +39,14 @@ namespace KS.Shell.Shells.Sql
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "cmd",
-                new CommandInfo("cmd", ShellType, /* Localizable */ "Executes an SQL query",
+                new CommandInfo("cmd", /* Localizable */ "Executes an SQL query",
                     new[] {
                         new CommandArgumentInfo()
                     }, new CmdCommand())
             },
 
             { "dbinfo",
-                new CommandInfo("dbinfo", ShellType, /* Localizable */ "Database info",
+                new CommandInfo("dbinfo", /* Localizable */ "Database info",
                     new[] {
                         new CommandArgumentInfo()
                     }, new DbInfoCommand())

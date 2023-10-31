@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.InternetRadioInfo
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "netfminfo",
-                new CommandInfo("netfminfo", ShellType.Shell, /* Localizable */ "Gets information about your online radio station",
+                new CommandInfo("netfminfo", /* Localizable */ "Gets information about your online radio station",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

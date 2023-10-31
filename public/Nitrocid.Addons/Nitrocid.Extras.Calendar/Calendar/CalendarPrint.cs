@@ -77,7 +77,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 if (CurrentDate.DayOfWeek == 0)
                     CurrentWeek += 1;
                 int CurrentWeekIndex = CurrentWeek - 1;
-                string CurrentDayMark = $" {CurrentDay} ";
+                string CurrentDayMark;
                 bool ReminderMarked = false;
                 bool EventMarked = false;
                 bool IsWeekend = CurrentDate.DayOfWeek == DayOfWeek.Friday || CurrentDate.DayOfWeek == DayOfWeek.Saturday;

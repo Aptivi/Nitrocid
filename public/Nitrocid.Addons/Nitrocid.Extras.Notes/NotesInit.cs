@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.Notes
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "addnote",
-                new CommandInfo("addnote", ShellType.Shell, /* Localizable */ "Adds a note",
+                new CommandInfo("addnote", /* Localizable */ "Adds a note",
                     new[]
                     {
                         new CommandArgumentInfo(new[]
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.Notes
             },
 
             { "removenote",
-                new CommandInfo("removenote", ShellType.Shell, /* Localizable */ "Removes a note",
+                new CommandInfo("removenote", /* Localizable */ "Removes a note",
                     new[]
                     {
                         new CommandArgumentInfo(new[]
@@ -58,7 +58,7 @@ namespace Nitrocid.Extras.Notes
             },
 
             { "removenotes",
-                new CommandInfo("removenotes", ShellType.Shell, /* Localizable */ "Removes all notes",
+                new CommandInfo("removenotes", /* Localizable */ "Removes all notes",
                     new[]
                     {
                         new CommandArgumentInfo(),
@@ -66,7 +66,7 @@ namespace Nitrocid.Extras.Notes
             },
 
             { "listnotes",
-                new CommandInfo("listnotes", ShellType.Shell, /* Localizable */ "Lists all notes",
+                new CommandInfo("listnotes", /* Localizable */ "Lists all notes",
                     new[]
                     {
                         new CommandArgumentInfo(),
@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.Notes
             },
 
             { "savenotes",
-                new CommandInfo("savenotes", ShellType.Shell, /* Localizable */ "Saves all notes",
+                new CommandInfo("savenotes", /* Localizable */ "Saves all notes",
                     new[]
                     {
                         new CommandArgumentInfo(),
@@ -82,7 +82,7 @@ namespace Nitrocid.Extras.Notes
             },
 
             { "reloadnotes",
-                new CommandInfo("reloadnotes", ShellType.Shell, /* Localizable */ "Reloads all notes",
+                new CommandInfo("reloadnotes", /* Localizable */ "Reloads all notes",
                     new[]
                     {
                         new CommandArgumentInfo(),

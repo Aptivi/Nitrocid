@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.Dictionary
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "dict",
-                new CommandInfo("dict", ShellType.Shell, /* Localizable */ "The English Dictionary",
+                new CommandInfo("dict", /* Localizable */ "The English Dictionary",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

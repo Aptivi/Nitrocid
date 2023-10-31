@@ -46,7 +46,7 @@ namespace KS.Shell.Shells.UESH
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "addgroup",
-                new CommandInfo("addgroup", ShellType, /* Localizable */ "Adds groups",
+                new CommandInfo("addgroup", /* Localizable */ "Adds groups",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "adduser",
-                new CommandInfo("adduser", ShellType, /* Localizable */ "Adds users",
+                new CommandInfo("adduser", /* Localizable */ "Adds users",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -68,7 +68,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "addusertogroup",
-                new CommandInfo("addusertogroup", ShellType, /* Localizable */ "Adds users to a group",
+                new CommandInfo("addusertogroup", /* Localizable */ "Adds users to a group",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -79,14 +79,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "admin",
-                new CommandInfo("admin", ShellType, /* Localizable */ "Administrative shell",
+                new CommandInfo("admin", /* Localizable */ "Administrative shell",
                     new[] {
                         new CommandArgumentInfo()
                     }, new AdminCommand(), CommandFlags.Strict)
             },
             
             { "alias",
-                new CommandInfo("alias", ShellType, /* Localizable */ "Adds aliases to commands",
+                new CommandInfo("alias", /* Localizable */ "Adds aliases to commands",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -99,14 +99,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "beep",
-                new CommandInfo("beep", ShellType, /* Localizable */ "Beeps from the console",
+                new CommandInfo("beep", /* Localizable */ "Beeps from the console",
                     new[] {
                         new CommandArgumentInfo()
                     }, new BeepCommand())
             },
             
             { "blockdbgdev",
-                new CommandInfo("blockdbgdev", ShellType, /* Localizable */ "Block a debug device by IP address",
+                new CommandInfo("blockdbgdev", /* Localizable */ "Block a debug device by IP address",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -116,7 +116,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "bulkrename",
-                new CommandInfo("bulkrename", ShellType, /* Localizable */ "Renames group of files to selected format",
+                new CommandInfo("bulkrename", /* Localizable */ "Renames group of files to selected format",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -128,7 +128,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "cat",
-                new CommandInfo("cat", ShellType, /* Localizable */ "Prints content of file to console",
+                new CommandInfo("cat", /* Localizable */ "Prints content of file to console",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -153,14 +153,14 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "cdir",
-                new CommandInfo("cdir", ShellType, /* Localizable */ "Gets the current directory",
+                new CommandInfo("cdir", /* Localizable */ "Gets the current directory",
                     new[] {
                         new CommandArgumentInfo(true)
                     }, new CDirCommand())
             },
 
             { "chattr",
-                new CommandInfo("chattr", ShellType, /* Localizable */ "Changes attribute of a file",
+                new CommandInfo("chattr", /* Localizable */ "Changes attribute of a file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -172,7 +172,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "chdir",
-                new CommandInfo("chdir", ShellType, /* Localizable */ "Changes directory",
+                new CommandInfo("chdir", /* Localizable */ "Changes directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -182,7 +182,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "chhostname",
-                new CommandInfo("chhostname", ShellType, /* Localizable */ "Changes host name",
+                new CommandInfo("chhostname", /* Localizable */ "Changes host name",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -192,7 +192,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "chklock",
-                new CommandInfo("chklock", ShellType, /* Localizable */ "Checks the file or the folder lock",
+                new CommandInfo("chklock", /* Localizable */ "Checks the file or the folder lock",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -207,7 +207,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "chlang",
-                new CommandInfo("chlang", ShellType, /* Localizable */ "Changes language",
+                new CommandInfo("chlang", /* Localizable */ "Changes language",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -228,7 +228,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "chmal",
-                new CommandInfo("chmal", ShellType, /* Localizable */ "Changes MAL, the MOTD After Login",
+                new CommandInfo("chmal", /* Localizable */ "Changes MAL, the MOTD After Login",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -238,7 +238,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "chmotd",
-                new CommandInfo("chmotd", ShellType, /* Localizable */ "Changes MOTD, the Message Of The Day",
+                new CommandInfo("chmotd", /* Localizable */ "Changes MOTD, the Message Of The Day",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -248,7 +248,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "choice",
-                new CommandInfo("choice", ShellType, /* Localizable */ "Makes user choices",
+                new CommandInfo("choice", /* Localizable */ "Makes user choices",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -292,7 +292,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "chpwd",
-                new CommandInfo("chpwd", ShellType, /* Localizable */ "Changes password for current user",
+                new CommandInfo("chpwd", /* Localizable */ "Changes password for current user",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -305,7 +305,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "chusrname",
-                new CommandInfo("chusrname", ShellType, /* Localizable */ "Changes user name",
+                new CommandInfo("chusrname", /* Localizable */ "Changes user name",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -319,14 +319,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "cls",
-                new CommandInfo("cls", ShellType, /* Localizable */ "Clears the screen",
+                new CommandInfo("cls", /* Localizable */ "Clears the screen",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ClsCommand())
             },
             
             { "combinestr",
-                new CommandInfo("combinestr", ShellType, /* Localizable */ "Combines the two text files or more into the console.",
+                new CommandInfo("combinestr", /* Localizable */ "Combines the two text files or more into the console.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -338,7 +338,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "combine",
-                new CommandInfo("combine", ShellType, /* Localizable */ "Combines the two text files or more into the output file.",
+                new CommandInfo("combine", /* Localizable */ "Combines the two text files or more into the output file.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -351,7 +351,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "convertlineendings",
-                new CommandInfo("convertlineendings", ShellType, /* Localizable */ "Converts the line endings to format for the current platform or to specified custom format",
+                new CommandInfo("convertlineendings", /* Localizable */ "Converts the line endings to format for the current platform or to specified custom format",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -381,7 +381,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "copy",
-                new CommandInfo("copy", ShellType, /* Localizable */ "Creates another copy of a file under different directory or name.",
+                new CommandInfo("copy", /* Localizable */ "Creates another copy of a file under different directory or name.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -392,7 +392,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "date",
-                new CommandInfo("date", ShellType, /* Localizable */ "Shows date and time",
+                new CommandInfo("date", /* Localizable */ "Shows date and time",
                     new[] {
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("date", /* Localizable */ "Shows just the date", new SwitchOptions()
@@ -419,14 +419,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "debugshell",
-                new CommandInfo("debugshell", ShellType, /* Localizable */ "Starts the debug shell",
+                new CommandInfo("debugshell", /* Localizable */ "Starts the debug shell",
                     new[] {
                         new CommandArgumentInfo()
                     }, new DebugShellCommand(), CommandFlags.Strict)
             },
             
             { "decodefile",
-                new CommandInfo("decodefile", ShellType, /* Localizable */ "Decodes the encoded file",
+                new CommandInfo("decodefile", /* Localizable */ "Decodes the encoded file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -450,7 +450,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "decodetext",
-                new CommandInfo("decodetext", ShellType, /* Localizable */ "Decodes the encoded text",
+                new CommandInfo("decodetext", /* Localizable */ "Decodes the encoded text",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -474,7 +474,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "dirinfo",
-                new CommandInfo("dirinfo", ShellType, /* Localizable */ "Provides information about a directory",
+                new CommandInfo("dirinfo", /* Localizable */ "Provides information about a directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -484,7 +484,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "disconndbgdev",
-                new CommandInfo("disconndbgdev", ShellType, /* Localizable */ "Disconnect a debug device",
+                new CommandInfo("disconndbgdev", /* Localizable */ "Disconnect a debug device",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -494,7 +494,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "diskinfo",
-                new CommandInfo("diskinfo", ShellType, /* Localizable */ "Provides information about a disk",
+                new CommandInfo("diskinfo", /* Localizable */ "Provides information about a disk",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -507,7 +507,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "dismissnotif",
-                new CommandInfo("dismissnotif", ShellType, /* Localizable */ "Dismisses a notification",
+                new CommandInfo("dismissnotif", /* Localizable */ "Dismisses a notification",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -520,14 +520,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "dismissnotifs",
-                new CommandInfo("dismissnotifs", ShellType, /* Localizable */ "Dismisses all notifications",
+                new CommandInfo("dismissnotifs", /* Localizable */ "Dismisses all notifications",
                     new[] {
                         new CommandArgumentInfo()
                     }, new DismissNotifsCommand())
             },
             
             { "echo",
-                new CommandInfo("echo", ShellType, /* Localizable */ "Writes text into the console",
+                new CommandInfo("echo", /* Localizable */ "Writes text into the console",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -540,7 +540,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "edit",
-                new CommandInfo("edit", ShellType, /* Localizable */ "Edits a file",
+                new CommandInfo("edit", /* Localizable */ "Edits a file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -571,7 +571,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "encodefile",
-                new CommandInfo("encodefile", ShellType, /* Localizable */ "Encodes the file",
+                new CommandInfo("encodefile", /* Localizable */ "Encodes the file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -595,7 +595,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "encodetext",
-                new CommandInfo("encodetext", ShellType, /* Localizable */ "Encodes the text",
+                new CommandInfo("encodetext", /* Localizable */ "Encodes the text",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -619,7 +619,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "fileinfo",
-                new CommandInfo("fileinfo", ShellType, /* Localizable */ "Provides information about a file",
+                new CommandInfo("fileinfo", /* Localizable */ "Provides information about a file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -629,7 +629,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "find",
-                new CommandInfo("find", ShellType, /* Localizable */ "Finds a file in the specified directory or in the current directory",
+                new CommandInfo("find", /* Localizable */ "Finds a file in the specified directory or in the current directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -649,7 +649,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "findreg",
-                new CommandInfo("findreg", ShellType, /* Localizable */ "Finds a file in the specified directory or in the current directory using regular expressions",
+                new CommandInfo("findreg", /* Localizable */ "Finds a file in the specified directory or in the current directory using regular expressions",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -669,14 +669,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "fork",
-                new CommandInfo("fork", ShellType, /* Localizable */ "Forks the UESH shell to create another instance",
+                new CommandInfo("fork", /* Localizable */ "Forks the UESH shell to create another instance",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ForkCommand())
             },
             
             { "ftp",
-                new CommandInfo("ftp", ShellType, /* Localizable */ "Use an FTP shell to interact with servers",
+                new CommandInfo("ftp", /* Localizable */ "Use an FTP shell to interact with servers",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -686,7 +686,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "get",
-                new CommandInfo("get", ShellType, /* Localizable */ "Downloads a file to current working directory",
+                new CommandInfo("get", /* Localizable */ "Downloads a file to current working directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -702,14 +702,14 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "getallexthandlers",
-                new CommandInfo("getallexthandlers", ShellType, /* Localizable */ "Gets all the extension handlers from all the extensions",
+                new CommandInfo("getallexthandlers", /* Localizable */ "Gets all the extension handlers from all the extensions",
                     new[] {
                         new CommandArgumentInfo()
                     }, new GetAllExtHandlersCommand())
             },
 
             { "getdefaultexthandler",
-                new CommandInfo("getdefaultexthandler", ShellType, /* Localizable */ "Gets the default extension handler from the specified extension",
+                new CommandInfo("getdefaultexthandler", /* Localizable */ "Gets the default extension handler from the specified extension",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -722,14 +722,14 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "getdefaultexthandlers",
-                new CommandInfo("getdefaultexthandlers", ShellType, /* Localizable */ "Gets the default extension handlers from all the extensions",
+                new CommandInfo("getdefaultexthandlers", /* Localizable */ "Gets the default extension handlers from all the extensions",
                     new[] {
                         new CommandArgumentInfo()
                     }, new GetDefaultExtHandlersCommand())
             },
 
             { "getexthandlers",
-                new CommandInfo("getexthandlers", ShellType, /* Localizable */ "Gets the extension handlers from the specified extension",
+                new CommandInfo("getexthandlers", /* Localizable */ "Gets the extension handlers from the specified extension",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -742,7 +742,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "getkeyiv",
-                new CommandInfo("getkeyiv", ShellType, /* Localizable */ "Gets the key and the initialization vector for symmetrical encoding",
+                new CommandInfo("getkeyiv", /* Localizable */ "Gets the key and the initialization vector for symmetrical encoding",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -755,21 +755,21 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "host",
-                new CommandInfo("host", ShellType, /* Localizable */ "Gets the current host name",
+                new CommandInfo("host", /* Localizable */ "Gets the current host name",
                     new[] {
                         new CommandArgumentInfo(true)
                     }, new HostCommand())
             },
             
             { "http",
-                new CommandInfo("http", ShellType, /* Localizable */ "Starts the HTTP shell",
+                new CommandInfo("http", /* Localizable */ "Starts the HTTP shell",
                     new[] {
                         new CommandArgumentInfo()
                     }, new HttpCommand())
             },
             
             { "hwinfo",
-                new CommandInfo("hwinfo", ShellType, /* Localizable */ "Prints hardware information",
+                new CommandInfo("hwinfo", /* Localizable */ "Prints hardware information",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -782,7 +782,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "if",
-                new CommandInfo("if", ShellType, /* Localizable */ "Executes commands once the UESH expressions are satisfied",
+                new CommandInfo("if", /* Localizable */ "Executes commands once the UESH expressions are satisfied",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -793,14 +793,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "ifm",
-                new CommandInfo("ifm", ShellType, /* Localizable */ "Interactive system host file manager",
+                new CommandInfo("ifm", /* Localizable */ "Interactive system host file manager",
                     new[] {
                         new CommandArgumentInfo()
                     }, new IfmCommand())
             },
             
             { "input",
-                new CommandInfo("input", ShellType, /* Localizable */ "Allows user to enter input",
+                new CommandInfo("input", /* Localizable */ "Allows user to enter input",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -810,7 +810,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "jsonbeautify",
-                new CommandInfo("jsonbeautify", ShellType, /* Localizable */ "Beautifies the JSON file",
+                new CommandInfo("jsonbeautify", /* Localizable */ "Beautifies the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -821,7 +821,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "jsonminify",
-                new CommandInfo("jsonminify", ShellType, /* Localizable */ "Minifies the JSON file",
+                new CommandInfo("jsonminify", /* Localizable */ "Minifies the JSON file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -832,7 +832,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "langman",
-                new CommandInfo("langman", ShellType, /* Localizable */ "Manage your languages",
+                new CommandInfo("langman", /* Localizable */ "Manage your languages",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -850,14 +850,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "license",
-                new CommandInfo("license", ShellType, /* Localizable */ "Shows license information for the kernel",
+                new CommandInfo("license", /* Localizable */ "Shows license information for the kernel",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LicenseCommand())
             },
             
             { "lintscript",
-                new CommandInfo("lintscript", ShellType, /* Localizable */ "Checks a UESH script for syntax errors",
+                new CommandInfo("lintscript", /* Localizable */ "Checks a UESH script for syntax errors",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -867,7 +867,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "list",
-                new CommandInfo("list", ShellType, /* Localizable */ "List file/folder contents in current folder",
+                new CommandInfo("list", /* Localizable */ "List file/folder contents in current folder",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -890,42 +890,42 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "lockscreen",
-                new CommandInfo("lockscreen", ShellType, /* Localizable */ "Locks your screen with a password",
+                new CommandInfo("lockscreen", /* Localizable */ "Locks your screen with a password",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LockScreenCommand())
             },
             
             { "logout",
-                new CommandInfo("logout", ShellType, /* Localizable */ "Logs you out",
+                new CommandInfo("logout", /* Localizable */ "Logs you out",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LogoutCommand(), CommandFlags.NoMaintenance)
             },
 
             { "lsconnections",
-                new CommandInfo("lsconnections", ShellType, /* Localizable */ "Lists all available connections",
+                new CommandInfo("lsconnections", /* Localizable */ "Lists all available connections",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsConnectionsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
             { "lsdbgdev",
-                new CommandInfo("lsdbgdev", ShellType, /* Localizable */ "Lists debugging devices connected",
+                new CommandInfo("lsdbgdev", /* Localizable */ "Lists debugging devices connected",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsDbgDevCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
             { "lsexthandlers",
-                new CommandInfo("lsexthandlers", ShellType, /* Localizable */ "Lists available extension handlers",
+                new CommandInfo("lsexthandlers", /* Localizable */ "Lists available extension handlers",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsExtHandlersCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
            
             { "lsdiskparts",
-                new CommandInfo("lsdiskparts", ShellType, /* Localizable */ "Lists all the disk partitions",
+                new CommandInfo("lsdiskparts", /* Localizable */ "Lists all the disk partitions",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -938,28 +938,28 @@ namespace KS.Shell.Shells.UESH
             },
            
             { "lsdisks",
-                new CommandInfo("lsdisks", ShellType, /* Localizable */ "Lists all the disks",
+                new CommandInfo("lsdisks", /* Localizable */ "Lists all the disks",
                     new[] {
                         new CommandArgumentInfo(true)
                     }, new LsDisksCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "lsnet",
-                new CommandInfo("lsnet", ShellType, /* Localizable */ "Lists online network devices",
+                new CommandInfo("lsnet", /* Localizable */ "Lists online network devices",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsNetCommand(), CommandFlags.Strict)
             },
             
             { "lsvars",
-                new CommandInfo("lsvars", ShellType, /* Localizable */ "Lists available UESH variables",
+                new CommandInfo("lsvars", /* Localizable */ "Lists available UESH variables",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "mail",
-                new CommandInfo("mail", ShellType, /* Localizable */ "Opens the mail client",
+                new CommandInfo("mail", /* Localizable */ "Opens the mail client",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -969,7 +969,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "md",
-                new CommandInfo("md", ShellType, /* Localizable */ "Creates a directory",
+                new CommandInfo("md", /* Localizable */ "Creates a directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -979,7 +979,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "mkfile",
-                new CommandInfo("mkfile", ShellType, /* Localizable */ "Makes a new file",
+                new CommandInfo("mkfile", /* Localizable */ "Makes a new file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -989,7 +989,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "modman",
-                new CommandInfo("modman", ShellType, /* Localizable */ "Manage your mods",
+                new CommandInfo("modman", /* Localizable */ "Manage your mods",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1009,7 +1009,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "modmanual",
-                new CommandInfo("modmanual", ShellType, /* Localizable */ "Mod manual",
+                new CommandInfo("modmanual", /* Localizable */ "Mod manual",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1019,7 +1019,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "move",
-                new CommandInfo("move", ShellType, /* Localizable */ "Moves a file to another directory",
+                new CommandInfo("move", /* Localizable */ "Moves a file to another directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1030,7 +1030,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "partinfo",
-                new CommandInfo("partinfo", ShellType, /* Localizable */ "Provides information about a partition from the specified disk",
+                new CommandInfo("partinfo", /* Localizable */ "Provides information about a partition from the specified disk",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1047,7 +1047,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "pathfind",
-                new CommandInfo("pathfind", ShellType, /* Localizable */ "Finds a given file name from path lookup directories",
+                new CommandInfo("pathfind", /* Localizable */ "Finds a given file name from path lookup directories",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1057,7 +1057,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "perm",
-                new CommandInfo("perm", ShellType, /* Localizable */ "Manage permissions for users",
+                new CommandInfo("perm", /* Localizable */ "Manage permissions for users",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1069,7 +1069,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "permgroup",
-                new CommandInfo("permgroup", ShellType, /* Localizable */ "Manage permissions for groups",
+                new CommandInfo("permgroup", /* Localizable */ "Manage permissions for groups",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1081,7 +1081,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "ping",
-                new CommandInfo("ping", ShellType, /* Localizable */ "Pings an address",
+                new CommandInfo("ping", /* Localizable */ "Pings an address",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1098,7 +1098,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "platform",
-                new CommandInfo("platform", ShellType, /* Localizable */ "Gets the current platform",
+                new CommandInfo("platform", /* Localizable */ "Gets the current platform",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1132,7 +1132,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "previewsplash",
-                new CommandInfo("previewsplash", ShellType, /* Localizable */ "Previews the splash",
+                new CommandInfo("previewsplash", /* Localizable */ "Previews the splash",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1152,7 +1152,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "put",
-                new CommandInfo("put", ShellType, /* Localizable */ "Uploads a file to specified website",
+                new CommandInfo("put", /* Localizable */ "Uploads a file to specified website",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1163,14 +1163,14 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "rdebug",
-                new CommandInfo("rdebug", ShellType, /* Localizable */ "Enables or disables remote debugging.",
+                new CommandInfo("rdebug", /* Localizable */ "Enables or disables remote debugging.",
                     new[] {
                         new CommandArgumentInfo()
                     }, new RdebugCommand(), CommandFlags.Strict)
             },
 
             { "reboot",
-                new CommandInfo("reboot", ShellType, /* Localizable */ "Restarts your computer (WARNING: No syncing, because it is not a final kernel)",
+                new CommandInfo("reboot", /* Localizable */ "Restarts your computer (WARNING: No syncing, because it is not a final kernel)",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1184,14 +1184,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "reloadconfig",
-                new CommandInfo("reloadconfig", ShellType, /* Localizable */ "Reloads configuration file that is edited.",
+                new CommandInfo("reloadconfig", /* Localizable */ "Reloads configuration file that is edited.",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ReloadConfigCommand(), CommandFlags.Strict)
             },
             
             { "rexec",
-                new CommandInfo("rexec", ShellType, /* Localizable */ "Remotely executes a command to remote PC",
+                new CommandInfo("rexec", /* Localizable */ "Remotely executes a command to remote PC",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1206,7 +1206,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "rm",
-                new CommandInfo("rm", ShellType, /* Localizable */ "Removes a directory or a file",
+                new CommandInfo("rm", /* Localizable */ "Removes a directory or a file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1216,7 +1216,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "rmsec",
-                new CommandInfo("rmsec", ShellType, /* Localizable */ "Removes a file or a directory securely",
+                new CommandInfo("rmsec", /* Localizable */ "Removes a file or a directory securely",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1226,7 +1226,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "rmuser",
-                new CommandInfo("rmuser", ShellType, /* Localizable */ "Removes a user from the list",
+                new CommandInfo("rmuser", /* Localizable */ "Removes a user from the list",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1236,7 +1236,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "rmgroup",
-                new CommandInfo("rmgroup", ShellType, /* Localizable */ "Removes a group from the list",
+                new CommandInfo("rmgroup", /* Localizable */ "Removes a group from the list",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1246,7 +1246,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "rmuserfromgroup",
-                new CommandInfo("rmuserfromgroup", ShellType, /* Localizable */ "Removes a user from the group",
+                new CommandInfo("rmuserfromgroup", /* Localizable */ "Removes a user from the group",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1257,7 +1257,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "rss",
-                new CommandInfo("rss", ShellType, /* Localizable */ "Opens an RSS shell to read the feeds",
+                new CommandInfo("rss", /* Localizable */ "Opens an RSS shell to read the feeds",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1267,14 +1267,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "saveconfig",
-                new CommandInfo("saveconfig", ShellType, /* Localizable */ "Saves the current kernel configuration to its file",
+                new CommandInfo("saveconfig", /* Localizable */ "Saves the current kernel configuration to its file",
                     new[] {
                         new CommandArgumentInfo()
                     }, new SaveConfigCommand(), CommandFlags.Strict)
             },
             
             { "savescreen",
-                new CommandInfo("savescreen", ShellType, /* Localizable */ "Saves your screen from burn outs",
+                new CommandInfo("savescreen", /* Localizable */ "Saves your screen from burn outs",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1284,7 +1284,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "search",
-                new CommandInfo("search", ShellType, /* Localizable */ "Searches for specified string in the provided file using regular expressions",
+                new CommandInfo("search", /* Localizable */ "Searches for specified string in the provided file using regular expressions",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1295,7 +1295,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "searchword",
-                new CommandInfo("searchword", ShellType, /* Localizable */ "Searches for specified string in the provided file",
+                new CommandInfo("searchword", /* Localizable */ "Searches for specified string in the provided file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1306,7 +1306,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "select",
-                new CommandInfo("select", ShellType, /* Localizable */ "Provides a selection choice",
+                new CommandInfo("select", /* Localizable */ "Provides a selection choice",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1319,7 +1319,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "setsaver",
-                new CommandInfo("setsaver", ShellType, /* Localizable */ "Sets up kernel screensavers",
+                new CommandInfo("setsaver", /* Localizable */ "Sets up kernel screensavers",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1329,7 +1329,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "settings",
-                new CommandInfo("settings", ShellType, /* Localizable */ "Changes kernel configuration",
+                new CommandInfo("settings", /* Localizable */ "Changes kernel configuration",
                     new[] {
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("saver", /* Localizable */ "Opens the screensaver settings", new SwitchOptions()
@@ -1357,7 +1357,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "set",
-                new CommandInfo("set", ShellType, /* Localizable */ "Sets a variable to a value in a script",
+                new CommandInfo("set", /* Localizable */ "Sets a variable to a value in a script",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1367,7 +1367,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "setexthandler",
-                new CommandInfo("setexthandler", ShellType, /* Localizable */ "Sets the default extension handler of the specified extension to the specific implementer",
+                new CommandInfo("setexthandler", /* Localizable */ "Sets the default extension handler of the specified extension to the specific implementer",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1384,7 +1384,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "setrange",
-                new CommandInfo("setrange", ShellType, /* Localizable */ "Creates a variable array with the provided values",
+                new CommandInfo("setrange", /* Localizable */ "Creates a variable array with the provided values",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1396,7 +1396,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "sftp",
-                new CommandInfo("sftp", ShellType, /* Localizable */ "Lets you use an SSH FTP server",
+                new CommandInfo("sftp", /* Localizable */ "Lets you use an SSH FTP server",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1406,21 +1406,21 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "shownotifs",
-                new CommandInfo("shownotifs", ShellType, /* Localizable */ "Shows all received notifications",
+                new CommandInfo("shownotifs", /* Localizable */ "Shows all received notifications",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ShowNotifsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "showtd",
-                new CommandInfo("showtd", ShellType, /* Localizable */ "Shows date and time",
+                new CommandInfo("showtd", /* Localizable */ "Shows date and time",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ShowTdCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
             { "showtdzone",
-                new CommandInfo("showtdzone", ShellType, /* Localizable */ "Shows date and time in zones",
+                new CommandInfo("showtdzone", /* Localizable */ "Shows date and time in zones",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1436,7 +1436,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "shutdown",
-                new CommandInfo("shutdown", ShellType, /* Localizable */ "The kernel will be shut down",
+                new CommandInfo("shutdown", /* Localizable */ "The kernel will be shut down",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1450,7 +1450,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "sleep",
-                new CommandInfo("sleep", ShellType, /* Localizable */ "Sleeps for specified milliseconds",
+                new CommandInfo("sleep", /* Localizable */ "Sleeps for specified milliseconds",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1460,7 +1460,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "sshell",
-                new CommandInfo("sshell", ShellType, /* Localizable */ "Connects to an SSH server.",
+                new CommandInfo("sshell", /* Localizable */ "Connects to an SSH server.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1471,7 +1471,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "sshcmd",
-                new CommandInfo("sshcmd", ShellType, /* Localizable */ "Connects to an SSH server to execute a command.",
+                new CommandInfo("sshcmd", /* Localizable */ "Connects to an SSH server to execute a command.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1483,7 +1483,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "sudo",
-                new CommandInfo("sudo", ShellType, /* Localizable */ "Runs the command as the root user",
+                new CommandInfo("sudo", /* Localizable */ "Runs the command as the root user",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1493,7 +1493,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "sumfile",
-                new CommandInfo("sumfile", ShellType, /* Localizable */ "Calculates file sums.",
+                new CommandInfo("sumfile", /* Localizable */ "Calculates file sums.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1513,7 +1513,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "sumfiles",
-                new CommandInfo("sumfiles", ShellType, /* Localizable */ "Calculates sums of files in specified directory.",
+                new CommandInfo("sumfiles", /* Localizable */ "Calculates sums of files in specified directory.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1533,14 +1533,14 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "taskman",
-                new CommandInfo("taskman", ShellType, /* Localizable */ "Task manager",
+                new CommandInfo("taskman", /* Localizable */ "Task manager",
                     new[] {
                         new CommandArgumentInfo()
                     }, new TaskManCommand())
             },
             
             { "themeprev",
-                new CommandInfo("themeprev", ShellType, /* Localizable */ "Previews a theme",
+                new CommandInfo("themeprev", /* Localizable */ "Previews a theme",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1550,7 +1550,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "themeset",
-                new CommandInfo("themeset", ShellType, /* Localizable */ "Selects a theme and sets it",
+                new CommandInfo("themeset", /* Localizable */ "Selects a theme and sets it",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1560,7 +1560,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "unblockdbgdev",
-                new CommandInfo("unblockdbgdev", ShellType, /* Localizable */ "Unblock a debug device by IP address",
+                new CommandInfo("unblockdbgdev", /* Localizable */ "Unblock a debug device by IP address",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1570,7 +1570,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "unset",
-                new CommandInfo("unset", ShellType, /* Localizable */ "Removes a variable from the UESH variable list",
+                new CommandInfo("unset", /* Localizable */ "Removes a variable from the UESH variable list",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1586,7 +1586,7 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "unzip",
-                new CommandInfo("unzip", ShellType, /* Localizable */ "Extracts a ZIP archive",
+                new CommandInfo("unzip", /* Localizable */ "Extracts a ZIP archive",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1602,28 +1602,28 @@ namespace KS.Shell.Shells.UESH
             },
             
             { "update",
-                new CommandInfo("update", ShellType, /* Localizable */ "System update",
+                new CommandInfo("update", /* Localizable */ "System update",
                     new[] {
                         new CommandArgumentInfo()
                     }, new UpdateCommand(), CommandFlags.Strict)
             },
             
             { "uptime",
-                new CommandInfo("uptime", ShellType, /* Localizable */ "Shows the kernel uptime",
+                new CommandInfo("uptime", /* Localizable */ "Shows the kernel uptime",
                     new[] {
                         new CommandArgumentInfo(true)
                     }, new UptimeCommand())
             },
             
             { "usermanual",
-                new CommandInfo("usermanual", ShellType, /* Localizable */ "Shows the two useful URLs for manual.",
+                new CommandInfo("usermanual", /* Localizable */ "Shows the two useful URLs for manual.",
                     new[] {
                         new CommandArgumentInfo()
                     }, new UserManualCommand())
             },
             
             { "verify",
-                new CommandInfo("verify", ShellType, /* Localizable */ "Verifies sanity of the file",
+                new CommandInfo("verify", /* Localizable */ "Verifies sanity of the file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1639,7 +1639,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "version",
-                new CommandInfo("version", ShellType, /* Localizable */ "Gets the current version",
+                new CommandInfo("version", /* Localizable */ "Gets the current version",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1658,21 +1658,21 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "whoami",
-                new CommandInfo("whoami", ShellType, /* Localizable */ "Gets the current user name",
+                new CommandInfo("whoami", /* Localizable */ "Gets the current user name",
                     new[] {
                         new CommandArgumentInfo(true)
                     }, new WhoamiCommand())
             },
 
             { "winelevate",
-                new CommandInfo("winelevate", ShellType, /* Localizable */ "Restarts Nitrocid with the elevated permissions (Windows only)",
+                new CommandInfo("winelevate", /* Localizable */ "Restarts Nitrocid with the elevated permissions (Windows only)",
                     new[] {
                         new CommandArgumentInfo(true)
                     }, new WinElevateCommand())
             },
 
             { "wraptext",
-                new CommandInfo("wraptext", ShellType, /* Localizable */ "Wraps the text file",
+                new CommandInfo("wraptext", /* Localizable */ "Wraps the text file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -1689,7 +1689,7 @@ namespace KS.Shell.Shells.UESH
             },
 
             { "zip",
-                new CommandInfo("zip", ShellType, /* Localizable */ "Creates a ZIP archive",
+                new CommandInfo("zip", /* Localizable */ "Creates a ZIP archive",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

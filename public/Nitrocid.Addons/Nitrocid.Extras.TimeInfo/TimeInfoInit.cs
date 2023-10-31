@@ -33,7 +33,7 @@ namespace Nitrocid.Extras.TimeInfo
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "gettimeinfo",
-                new CommandInfo("gettimeinfo", ShellType.Shell, /* Localizable */ "Gets the date and time information",
+                new CommandInfo("gettimeinfo", /* Localizable */ "Gets the date and time information",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

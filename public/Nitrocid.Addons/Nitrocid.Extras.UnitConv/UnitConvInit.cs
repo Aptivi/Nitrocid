@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.UnitConv
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "listunits",
-                new CommandInfo("listunits", ShellType.Shell, /* Localizable */ "Lists all available units",
+                new CommandInfo("listunits", /* Localizable */ "Lists all available units",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -47,7 +47,7 @@ namespace Nitrocid.Extras.UnitConv
             },
 
             { "unitconv",
-                new CommandInfo("unitconv", ShellType.Shell, /* Localizable */ "Unit converter",
+                new CommandInfo("unitconv", /* Localizable */ "Unit converter",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.Contacts
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "contacts",
-                new CommandInfo("contacts", ShellType.Shell, /* Localizable */ "Manages your contacts",
+                new CommandInfo("contacts", /* Localizable */ "Manages your contacts",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ContactsCommand())

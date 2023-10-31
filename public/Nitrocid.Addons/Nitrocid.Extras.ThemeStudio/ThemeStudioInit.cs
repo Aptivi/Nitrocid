@@ -32,7 +32,7 @@ namespace Nitrocid.Extras.ThemeStudio
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "mktheme",
-                new CommandInfo("mktheme", ShellType.Shell, /* Localizable */ "Makes a new theme",
+                new CommandInfo("mktheme", /* Localizable */ "Makes a new theme",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

@@ -34,7 +34,7 @@ namespace Nitrocid.Extras.ColorConvert
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "colorhextorgb",
-                new CommandInfo("colorhextorgb", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers.",
+                new CommandInfo("colorhextorgb", /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -44,7 +44,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhextorgbks",
-                new CommandInfo("colorhextorgbks", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers in KS format.",
+                new CommandInfo("colorhextorgbks", /* Localizable */ "Converts the hexadecimal representation of the color to RGB numbers in KS format.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhextocmyk",
-                new CommandInfo("colorhextocmyk", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to CMYK numbers.",
+                new CommandInfo("colorhextocmyk", /* Localizable */ "Converts the hexadecimal representation of the color to CMYK numbers.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -64,7 +64,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhextocmykks",
-                new CommandInfo("colorhextocmykks", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to CMYK numbers in KS format.",
+                new CommandInfo("colorhextocmykks", /* Localizable */ "Converts the hexadecimal representation of the color to CMYK numbers in KS format.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -74,7 +74,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhextohsl",
-                new CommandInfo("colorhextohsl", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to HSL numbers.",
+                new CommandInfo("colorhextohsl", /* Localizable */ "Converts the hexadecimal representation of the color to HSL numbers.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -84,7 +84,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhextohslks",
-                new CommandInfo("colorhextohslks", ShellType.Shell, /* Localizable */ "Converts the hexadecimal representation of the color to HSL numbers in KS format.",
+                new CommandInfo("colorhextohslks", /* Localizable */ "Converts the hexadecimal representation of the color to HSL numbers in KS format.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -94,7 +94,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorrgbtohex",
-                new CommandInfo("colorrgbtohex", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to hex.",
+                new CommandInfo("colorrgbtohex", /* Localizable */ "Converts the color RGB numbers to hex.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -115,7 +115,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorrgbtocmyk",
-                new CommandInfo("colorrgbtocmyk", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to CMYK.",
+                new CommandInfo("colorrgbtocmyk", /* Localizable */ "Converts the color RGB numbers to CMYK.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -136,7 +136,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorrgbtocmykks",
-                new CommandInfo("colorrgbtocmykks", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to CMYK in KS format.",
+                new CommandInfo("colorrgbtocmykks", /* Localizable */ "Converts the color RGB numbers to CMYK in KS format.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -157,7 +157,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorrgbtohsl",
-                new CommandInfo("colorrgbtohsl", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to HSL.",
+                new CommandInfo("colorrgbtohsl", /* Localizable */ "Converts the color RGB numbers to HSL.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -178,7 +178,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorrgbtohslks",
-                new CommandInfo("colorrgbtohslks", ShellType.Shell, /* Localizable */ "Converts the color RGB numbers to HSL in KS format.",
+                new CommandInfo("colorrgbtohslks", /* Localizable */ "Converts the color RGB numbers to HSL in KS format.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -199,7 +199,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhsltohex",
-                new CommandInfo("colorhsltohex", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to hex.",
+                new CommandInfo("colorhsltohex", /* Localizable */ "Converts the color HSL numbers to hex.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -220,7 +220,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhsltocmyk",
-                new CommandInfo("colorhsltocmyk", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to CMYK.",
+                new CommandInfo("colorhsltocmyk", /* Localizable */ "Converts the color HSL numbers to CMYK.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -241,7 +241,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhsltocmykks",
-                new CommandInfo("colorhsltocmykks", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to CMYK in KS format.",
+                new CommandInfo("colorhsltocmykks", /* Localizable */ "Converts the color HSL numbers to CMYK in KS format.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -262,7 +262,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhsltorgb",
-                new CommandInfo("colorhsltorgb", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to RGB.",
+                new CommandInfo("colorhsltorgb", /* Localizable */ "Converts the color HSL numbers to RGB.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -283,7 +283,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorhsltorgbks",
-                new CommandInfo("colorhsltorgbks", ShellType.Shell, /* Localizable */ "Converts the color HSL numbers to RGB in KS format.",
+                new CommandInfo("colorhsltorgbks", /* Localizable */ "Converts the color HSL numbers to RGB in KS format.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -304,7 +304,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorcmyktohex",
-                new CommandInfo("colorcmyktohex", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to hex.",
+                new CommandInfo("colorcmyktohex", /* Localizable */ "Converts the color CMYK numbers to hex.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -329,7 +329,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorcmyktorgb",
-                new CommandInfo("colorcmyktorgb", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to RGB.",
+                new CommandInfo("colorcmyktorgb", /* Localizable */ "Converts the color CMYK numbers to RGB.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -354,7 +354,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorcmyktorgbks",
-                new CommandInfo("colorcmyktorgbks", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to RGB in KS format.",
+                new CommandInfo("colorcmyktorgbks", /* Localizable */ "Converts the color CMYK numbers to RGB in KS format.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -379,7 +379,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorcmyktohsl",
-                new CommandInfo("colorcmyktohsl", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to HSL.",
+                new CommandInfo("colorcmyktohsl", /* Localizable */ "Converts the color CMYK numbers to HSL.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -404,7 +404,7 @@ namespace Nitrocid.Extras.ColorConvert
             },
 
             { "colorcmyktohslks",
-                new CommandInfo("colorcmyktohslks", ShellType.Shell, /* Localizable */ "Converts the color CMYK numbers to HSL in KS format.",
+                new CommandInfo("colorcmyktohslks", /* Localizable */ "Converts the color CMYK numbers to HSL in KS format.",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

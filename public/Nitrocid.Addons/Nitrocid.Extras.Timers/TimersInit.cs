@@ -34,14 +34,14 @@ namespace Nitrocid.Extras.Timers
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "stopwatch",
-                new CommandInfo("stopwatch", ShellType.Shell, /* Localizable */ "A simple stopwatch",
+                new CommandInfo("stopwatch", /* Localizable */ "A simple stopwatch",
                     new[] {
                         new CommandArgumentInfo()
                     }, new StopwatchCommand())
             },
 
             { "timer",
-                new CommandInfo("timer", ShellType.Shell, /* Localizable */ "A simple timer",
+                new CommandInfo("timer", /* Localizable */ "A simple timer",
                     new[] {
                         new CommandArgumentInfo()
                     }, new TimerCommand())

@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.NameGen
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "findfirstname",
-                new CommandInfo("findfirstname", ShellType.Shell, /* Localizable */ "First name finder",
+                new CommandInfo("findfirstname", /* Localizable */ "First name finder",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -69,7 +69,7 @@ namespace Nitrocid.Extras.NameGen
                     }, new FindFirstNameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             { "findsurname",
-                new CommandInfo("findsurname", ShellType.Shell, /* Localizable */ "Surname finder",
+                new CommandInfo("findsurname", /* Localizable */ "Surname finder",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -80,7 +80,7 @@ namespace Nitrocid.Extras.NameGen
                     }, new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             { "genname",
-                new CommandInfo("genname", ShellType.Shell, /* Localizable */ "Name and surname generator",
+                new CommandInfo("genname", /* Localizable */ "Name and surname generator",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

@@ -31,7 +31,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Shells
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "test",
-                new CommandInfo("test", ShellType, "Test command", new[] {
+                new CommandInfo("test", "Test command", new[] {
                     new CommandArgumentInfo()
                 }, null)
             },

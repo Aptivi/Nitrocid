@@ -39,14 +39,14 @@ namespace Nitrocid.Extras.Amusements
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "backrace",
-                new CommandInfo("backrace", ShellType.Shell, /* Localizable */ "Do you back the wrong horse?",
+                new CommandInfo("backrace", /* Localizable */ "Do you back the wrong horse?",
                     new[] {
                         new CommandArgumentInfo()
                     }, new BackRaceCommand())
             },
 
             { "hangman",
-                new CommandInfo("hangman", ShellType.Shell, /* Localizable */ "Starts the Hangman game",
+                new CommandInfo("hangman", /* Localizable */ "Starts the Hangman game",
                     new[] {
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("hardcore", /* Localizable */ "One wrong letter and you're hung!", new SwitchOptions()
@@ -64,49 +64,49 @@ namespace Nitrocid.Extras.Amusements
             },
 
             { "meteor",
-                new CommandInfo("meteor", ShellType.Shell, /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?",
+                new CommandInfo("meteor", /* Localizable */ "You are a spaceship and the meteors are coming to destroy you. Can you save it?",
                     new[] {
                         new CommandArgumentInfo()
                     }, new MeteorCommand())
             },
 
             { "quote",
-                new CommandInfo("quote", ShellType.Shell, /* Localizable */ "Gets a random quote",
+                new CommandInfo("quote", /* Localizable */ "Gets a random quote",
                     new[] {
                         new CommandArgumentInfo()
                     }, new QuoteCommand())
             },
 
             { "roulette",
-                new CommandInfo("roulette", ShellType.Shell, /* Localizable */ "Russian Roulette",
+                new CommandInfo("roulette", /* Localizable */ "Russian Roulette",
                     new[] {
                         new CommandArgumentInfo()
                     }, new RouletteCommand())
             },
 
             { "shipduet",
-                new CommandInfo("shipduet", ShellType.Shell, /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.",
+                new CommandInfo("shipduet", /* Localizable */ "Two spaceships are on a fight with each other. One shot and the spaceship will blow. This is a local two-player game.",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ShipDuetCommand())
             },
 
             { "snaker",
-                new CommandInfo("snaker", ShellType.Shell, /* Localizable */ "The snake game!",
+                new CommandInfo("snaker", /* Localizable */ "The snake game!",
                     new[] {
                         new CommandArgumentInfo()
                     }, new SnakerCommand())
             },
 
             { "solver",
-                new CommandInfo("solver", ShellType.Shell, /* Localizable */ "See if you can solve mathematical equations on time",
+                new CommandInfo("solver", /* Localizable */ "See if you can solve mathematical equations on time",
                     new[] {
                         new CommandArgumentInfo()
                     }, new SolverCommand())
             },
 
             { "speedpress",
-                new CommandInfo("speedpress", ShellType.Shell, /* Localizable */ "See if you can press a key on time",
+                new CommandInfo("speedpress", /* Localizable */ "See if you can press a key on time",
                     new[] {
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("e", /* Localizable */ "Starts the game in easy difficulty", new SwitchOptions()
@@ -139,7 +139,7 @@ namespace Nitrocid.Extras.Amusements
             },
 
             { "wordle",
-                new CommandInfo("wordle", ShellType.Shell, /* Localizable */ "The Wordle game simulator",
+                new CommandInfo("wordle", /* Localizable */ "The Wordle game simulator",
                     new[] {
                         new CommandArgumentInfo(new[] {
                             new SwitchInfo("orig", /* Localizable */ "Play the Wordle game originally", new SwitchOptions()
@@ -152,14 +152,14 @@ namespace Nitrocid.Extras.Amusements
 
             // Hidden
             { "2015",
-                new CommandInfo("2015", ShellType.Shell, /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.",
+                new CommandInfo("2015", /* Localizable */ "Starts the joke program, HDD Uncleaner 2015.",
                     new[] {
                         new CommandArgumentInfo()
                     }, new HddUncleanerCommand(), CommandFlags.Hidden)
             },
 
             { "2018",
-                new CommandInfo("2018", ShellType.Shell, /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
+                new CommandInfo("2018", /* Localizable */ "Commemorates the 5-year anniversary of the kernel release",
                     new[] {
                         new CommandArgumentInfo()
                     }, new AnniversaryCommand(), CommandFlags.Hidden)

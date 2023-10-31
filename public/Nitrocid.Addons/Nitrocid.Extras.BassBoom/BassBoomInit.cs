@@ -79,7 +79,7 @@ namespace Nitrocid.Extras.BassBoom
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "playlyric",
-                new CommandInfo("playlyric", ShellType.Shell, /* Localizable */ "Plays a lyric file",
+                new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -88,7 +88,7 @@ namespace Nitrocid.Extras.BassBoom
                     }, new PlayLyricCommand())
             },
             { "playsound",
-                new CommandInfo("playsound", ShellType.Shell, /* Localizable */ "Plays a sound",
+                new CommandInfo("playsound", /* Localizable */ "Plays a sound",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

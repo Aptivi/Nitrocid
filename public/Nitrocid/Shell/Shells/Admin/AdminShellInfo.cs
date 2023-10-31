@@ -41,7 +41,7 @@ namespace KS.Shell.Shells.Admin
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "arghelp",
-                new CommandInfo("arghelp", ShellType, /* Localizable */ "Kernel arguments help system",
+                new CommandInfo("arghelp", /* Localizable */ "Kernel arguments help system",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -54,49 +54,49 @@ namespace KS.Shell.Shells.Admin
             },
             
             { "bootlog",
-                new CommandInfo("bootlog", ShellType, /* Localizable */ "Prints the boot log",
+                new CommandInfo("bootlog", /* Localizable */ "Prints the boot log",
                     new[] {
                         new CommandArgumentInfo()
                     }, new BootLogCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
             
             { "cdbglog",
-                new CommandInfo("cdbglog", ShellType, /* Localizable */ "Deletes everything in debug log",
+                new CommandInfo("cdbglog", /* Localizable */ "Deletes everything in debug log",
                     new[] {
                         new CommandArgumentInfo()
                     }, new CdbgLogCommand())
             },
 
             { "clearfiredevents",
-                new CommandInfo("clearfiredevents", ShellType, /* Localizable */ "Clears all fired events",
+                new CommandInfo("clearfiredevents", /* Localizable */ "Clears all fired events",
                     new[] {
                         new CommandArgumentInfo()
                     }, new ClearFiredEventsCommand())
             },
 
             { "journal",
-                new CommandInfo("journal", ShellType, /* Localizable */ "Gets current kernel journal log",
+                new CommandInfo("journal", /* Localizable */ "Gets current kernel journal log",
                     new[] {
                         new CommandArgumentInfo()
                     }, new JournalCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsevents",
-                new CommandInfo("lsevents", ShellType, /* Localizable */ "Lists all fired events",
+                new CommandInfo("lsevents", /* Localizable */ "Lists all fired events",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsEventsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsusers",
-                new CommandInfo("lsusers", ShellType, /* Localizable */ "Lists the users",
+                new CommandInfo("lsusers", /* Localizable */ "Lists the users",
                     new[] {
                         new CommandArgumentInfo(true)
                     }, new LsUsersCommand())
             },
 
             { "userflag",
-                new CommandInfo("userflag", ShellType, /* Localizable */ "Manipulates with the user main flags",
+                new CommandInfo("userflag", /* Localizable */ "Manipulates with the user main flags",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -108,7 +108,7 @@ namespace KS.Shell.Shells.Admin
             },
 
             { "userinfo",
-                new CommandInfo("userinfo", ShellType, /* Localizable */ "Gets the user information",
+                new CommandInfo("userinfo", /* Localizable */ "Gets the user information",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -118,7 +118,7 @@ namespace KS.Shell.Shells.Admin
             },
 
             { "userlang",
-                new CommandInfo("userlang", ShellType, /* Localizable */ "Changes the preferred user language",
+                new CommandInfo("userlang", /* Localizable */ "Changes the preferred user language",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {

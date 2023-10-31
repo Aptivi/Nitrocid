@@ -40,7 +40,7 @@ namespace KS.Shell.Shells.SFTP
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "cat",
-                new CommandInfo("cat", ShellType, /* Localizable */ "Reads the content of a remote file to the console",
+                new CommandInfo("cat", /* Localizable */ "Reads the content of a remote file to the console",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.SFTP
             },
             
             { "cdl",
-                new CommandInfo("cdl", ShellType, /* Localizable */ "Changes local directory to download to or upload from",
+                new CommandInfo("cdl", /* Localizable */ "Changes local directory to download to or upload from",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.SFTP
             },
             
             { "cdr",
-                new CommandInfo("cdr", ShellType, /* Localizable */ "Changes remote directory to download from or upload to",
+                new CommandInfo("cdr", /* Localizable */ "Changes remote directory to download from or upload to",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -70,7 +70,7 @@ namespace KS.Shell.Shells.SFTP
             },
             
             { "del",
-                new CommandInfo("del", ShellType, /* Localizable */ "Deletes remote file from server",
+                new CommandInfo("del", /* Localizable */ "Deletes remote file from server",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -80,14 +80,14 @@ namespace KS.Shell.Shells.SFTP
             },
             
             { "detach",
-                new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
                     }, new DetachCommand())
             },
             
             { "get",
-                new CommandInfo("get", ShellType, /* Localizable */ "Downloads remote file to local directory using binary or text",
+                new CommandInfo("get", /* Localizable */ "Downloads remote file to local directory using binary or text",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -97,7 +97,7 @@ namespace KS.Shell.Shells.SFTP
             },
             
             { "lsl",
-                new CommandInfo("lsl", ShellType, /* Localizable */ "Lists local directory",
+                new CommandInfo("lsl", /* Localizable */ "Lists local directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -116,7 +116,7 @@ namespace KS.Shell.Shells.SFTP
             },
             
             { "lsr",
-                new CommandInfo("lsr", ShellType, /* Localizable */ "Lists remote directory",
+                new CommandInfo("lsr", /* Localizable */ "Lists remote directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -131,7 +131,7 @@ namespace KS.Shell.Shells.SFTP
             },
             
             { "put",
-                new CommandInfo("put", ShellType, /* Localizable */ "Uploads local file to remote directory using binary or text",
+                new CommandInfo("put", /* Localizable */ "Uploads local file to remote directory using binary or text",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -141,14 +141,14 @@ namespace KS.Shell.Shells.SFTP
             },
             
             { "pwdl",
-                new CommandInfo("pwdl", ShellType, /* Localizable */ "Gets current local directory",
+                new CommandInfo("pwdl", /* Localizable */ "Gets current local directory",
                     new[] {
                         new CommandArgumentInfo()
                     }, new PwdlCommand())
             },
 
             { "pwdr",
-                new CommandInfo("pwdr", ShellType, /* Localizable */ "Gets current remote directory",
+                new CommandInfo("pwdr", /* Localizable */ "Gets current remote directory",
                     new[] {
                         new CommandArgumentInfo()
                     }, new PwdrCommand())

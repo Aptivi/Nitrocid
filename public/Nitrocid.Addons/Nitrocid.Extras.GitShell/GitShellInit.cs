@@ -38,7 +38,7 @@ namespace Nitrocid.Extras.GitShell
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
             { "gitsh",
-                new CommandInfo("gitsh", ShellType.Shell, /* Localizable */ "Git shell",
+                new CommandInfo("gitsh", /* Localizable */ "Git shell",
                     new[]
                     {
                         new CommandArgumentInfo(new[]

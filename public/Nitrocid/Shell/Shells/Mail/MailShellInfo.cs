@@ -39,7 +39,7 @@ namespace KS.Shell.Shells.Mail
         public override Dictionary<string, CommandInfo> Commands => new()
         {
             { "cd",
-                new CommandInfo("cd", ShellType, /* Localizable */ "Changes current mail directory",
+                new CommandInfo("cd", /* Localizable */ "Changes current mail directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -49,21 +49,21 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "detach",
-                new CommandInfo("detach", ShellType, /* Localizable */ "Exits the shell without disconnecting",
+                new CommandInfo("detach", /* Localizable */ "Exits the shell without disconnecting",
                     new[] {
                         new CommandArgumentInfo()
                     }, new DetachCommand())
             },
             
             { "lsdirs",
-                new CommandInfo("lsdirs", ShellType, /* Localizable */ "Lists directories in your mail address",
+                new CommandInfo("lsdirs", /* Localizable */ "Lists directories in your mail address",
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsDirsCommand())
             },
             
             { "list",
-                new CommandInfo("list", ShellType, /* Localizable */ "Downloads messages and lists them",
+                new CommandInfo("list", /* Localizable */ "Downloads messages and lists them",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -76,7 +76,7 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "mkdir",
-                new CommandInfo("mkdir", ShellType, /* Localizable */ "Makes a directory in the current working directory",
+                new CommandInfo("mkdir", /* Localizable */ "Makes a directory in the current working directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -86,7 +86,7 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "mv",
-                new CommandInfo("mv", ShellType, /* Localizable */ "Moves a message",
+                new CommandInfo("mv", /* Localizable */ "Moves a message",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -100,7 +100,7 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "mvall",
-                new CommandInfo("mvall", ShellType, /* Localizable */ "Moves all messages from recipient",
+                new CommandInfo("mvall", /* Localizable */ "Moves all messages from recipient",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -111,7 +111,7 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "read",
-                new CommandInfo("read", ShellType, /* Localizable */ "Opens a message",
+                new CommandInfo("read", /* Localizable */ "Opens a message",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -124,7 +124,7 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "readenc",
-                new CommandInfo("readenc", ShellType, /* Localizable */ "Opens an encrypted message",
+                new CommandInfo("readenc", /* Localizable */ "Opens an encrypted message",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -137,7 +137,7 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "ren",
-                new CommandInfo("ren", ShellType, /* Localizable */ "Renames a folder",
+                new CommandInfo("ren", /* Localizable */ "Renames a folder",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -148,7 +148,7 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "rm",
-                new CommandInfo("rm", ShellType, /* Localizable */ "Removes a message",
+                new CommandInfo("rm", /* Localizable */ "Removes a message",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -161,7 +161,7 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "rmall",
-                new CommandInfo("rmall", ShellType, /* Localizable */ "Removes all messages from recipient",
+                new CommandInfo("rmall", /* Localizable */ "Removes all messages from recipient",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -171,7 +171,7 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "rmdir",
-                new CommandInfo("rmdir", ShellType, /* Localizable */ "Removes a directory from the current working directory",
+                new CommandInfo("rmdir", /* Localizable */ "Removes a directory from the current working directory",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
@@ -181,14 +181,14 @@ namespace KS.Shell.Shells.Mail
             },
             
             { "send",
-                new CommandInfo("send", ShellType, /* Localizable */ "Sends a message to an address",
+                new CommandInfo("send", /* Localizable */ "Sends a message to an address",
                     new[] {
                         new CommandArgumentInfo()
                     }, new SendCommand())
             },
 
             { "sendenc",
-                new CommandInfo("sendenc", ShellType, /* Localizable */ "Sends an encrypted message to an address",
+                new CommandInfo("sendenc", /* Localizable */ "Sends an encrypted message to an address",
                     new[] {
                         new CommandArgumentInfo()
                     }, new SendEncCommand())
