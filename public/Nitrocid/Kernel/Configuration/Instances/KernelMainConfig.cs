@@ -61,6 +61,7 @@ using KS.Drivers.HardwareProber;
 using KS.Misc.Text;
 using KS.Shell.Shells.Json;
 using KS.Kernel.Threading.Performance;
+using KS.Drivers.Sorting;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -1256,6 +1257,14 @@ namespace KS.Kernel.Configuration.Instances
         {
             get => DriverHandler.GetDriverName<IHardwareProberDriver>(DriverHandler.CurrentHardwareProberDriver);
             set => HardwareProberDriverTools.SetHardwareProberDriver(value);
+        }
+        /// <summary>
+        /// Current sorting driver
+        /// </summary>
+        public string CurrentSortingDriver
+        {
+            get => DriverHandler.GetDriverName<ISortingDriver>(DriverHandler.CurrentSortingDriver);
+            set => SortingDriverTools.SetSortingDriver(value);
         }
         /// <summary>
         /// The time and date will be shown in the upper right corner of the screen
