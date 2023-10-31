@@ -22,6 +22,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Time;
+using KS.Kernel.Time.Calendars;
 using KS.Kernel.Time.Converters;
 using KS.Kernel.Time.Renderers;
 using KS.Languages;
@@ -54,14 +55,27 @@ namespace Nitrocid.Extras.TimeInfo.Commands
                 TextWriterColor.Write(Translate.DoTranslation("Days:") + " {0}", DateTimeInfo.Day);
                 TextWriterColor.Write(Translate.DoTranslation("Months:") + " {0}", DateTimeInfo.Month);
                 TextWriterColor.Write(Translate.DoTranslation("Year:") + " {0}" + CharManager.NewLine, DateTimeInfo.Year);
+
+                // Whole date and time
                 TextWriterColor.Write(Translate.DoTranslation("Date:") + " {0}", TimeDateRenderers.RenderDate(DateTimeInfo));
                 TextWriterColor.Write(Translate.DoTranslation("Time:") + " {0}" + CharManager.NewLine, TimeDateRenderers.RenderTime(DateTimeInfo));
+
+                // Some more info
                 TextWriterColor.Write(Translate.DoTranslation("Day of Year:") + " {0}", DateTimeInfo.DayOfYear);
                 TextWriterColor.Write(Translate.DoTranslation("Day of Week:") + " {0}" + CharManager.NewLine, DateTimeInfo.DayOfWeek.ToString());
+
+                // Conversions
                 TextWriterColor.Write(Translate.DoTranslation("Binary:") + " {0}", DateTimeInfo.ToBinary());
                 TextWriterColor.Write(Translate.DoTranslation("Local Time:") + " {0}", TimeDateRenderers.Render(DateTimeInfo.ToLocalTime()));
                 TextWriterColor.Write(Translate.DoTranslation("Universal Time:") + " {0}", TimeDateRenderers.Render(DateTimeInfo.ToUniversalTime()));
-                TextWriterColor.Write(Translate.DoTranslation("Unix Time:") + " {0}", TimeDateConverters.DateToUnix(DateTimeInfo));
+                TextWriterColor.Write(Translate.DoTranslation("Unix Time:") + " {0}" + CharManager.NewLine, TimeDateConverters.DateToUnix(DateTimeInfo));
+
+                // For the calendars
+                foreach (var calendar in Enum.GetNames(typeof(CalendarTypes)))
+                {
+                    var calendarInstance = CalendarTools.GetCalendar(calendar);
+                    TextWriterColor.Write("{0}: {1}", calendar, TimeDateRenderers.Render(DateTimeInfo, calendarInstance));
+                }
                 return 0;
             }
             else
