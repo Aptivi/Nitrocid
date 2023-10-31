@@ -68,7 +68,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
             var CalendarData = new string[6, CalendarDays.Length];
             var maxDate = calendarInstance.Calendar.GetDaysInMonth(Year, Month);
             var selectedDate = new DateTime(Year, Month, TimeDateTools.KernelDateTime.Day > maxDate ? 1 : TimeDateTools.KernelDateTime.Day);
-            var (year, month, day, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, calendar);
+            var (year, month, _, _) = TimeDateConverters.GetDateFromCalendar(selectedDate, calendar);
             var DateTo = new DateTime(year, month, calendarInstance.Calendar.GetDaysInMonth(year, month));
             int CurrentWeek = 1;
             string CalendarTitle = CalendarMonths[month - 1] + " " + year;
@@ -86,7 +86,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                 string CurrentDayMark = $" {CurrentDay} ";
                 bool ReminderMarked = false;
                 bool EventMarked = false;
-                bool IsWeekend = CurrentDate.DayOfWeek == DayOfWeek.Friday | CurrentDate.DayOfWeek == DayOfWeek.Saturday;
+                bool IsWeekend = CurrentDate.DayOfWeek == DayOfWeek.Friday || CurrentDate.DayOfWeek == DayOfWeek.Saturday;
                 bool IsToday = CurrentDate == TimeDateTools.KernelDateTime.Date;
 
                 // Dim out the weekends
@@ -120,10 +120,7 @@ namespace Nitrocid.Extras.Calendar.Calendar
                     var (rYear, rMonth, rDay, _) = TimeDateConverters.GetDateFromCalendar(new DateTime(rDate.Year, rDate.Month, rDate.Day), calendar);
                     rDate = new(rYear, rMonth, rDay);
                     if (rDate == CurrentDate & !ReminderMarked)
-                    {
-                        CurrentDayMark = $"({CurrentDay})";
                         ReminderMarked = true;
-                    }
                 }
                 foreach (EventInfo EventInstance in EventManager.CalendarEvents.Union(baseEvents))
                 {
@@ -150,6 +147,9 @@ namespace Nitrocid.Extras.Calendar.Calendar
                         EventMarked = true;
                     }
                 }
+                string markStart = ReminderMarked && EventMarked ? "[" : ReminderMarked ? "(" : EventMarked ? "<" : " ";
+                string markEnd = ReminderMarked && EventMarked ? "]" : ReminderMarked ? ")" : EventMarked ? ">" : " ";
+                CurrentDayMark = $"{markStart}{CurrentDay}{markEnd}";
                 CalendarData[CurrentWeekIndex, (int)CurrentDate.DayOfWeek] = CurrentDayMark;
             }
             TableColor.WriteTable(CalendarDays, CalendarData, 2, true, CalendarCellOptions);
