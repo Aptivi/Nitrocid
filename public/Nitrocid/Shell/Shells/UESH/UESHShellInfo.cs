@@ -1090,7 +1090,8 @@ namespace KS.Shell.Shells.UESH
                         }, new[] {
                             new SwitchInfo("times", /* Localizable */ "Specifies number of times to ping", new SwitchOptions()
                             {
-                                ArgumentsRequired = true
+                                ArgumentsRequired = true,
+                                IsNumeric = true
                             })
                         })
                     }, new PingCommand())
@@ -1681,6 +1682,7 @@ namespace KS.Shell.Shells.UESH
                             new SwitchInfo("columns", /* Localizable */ "Specifies the columns per line", new SwitchOptions()
                             {
                                 ArgumentsRequired = true,
+                                IsNumeric = true
                             })
                         }, true)
                     }, new WrapTextCommand())
