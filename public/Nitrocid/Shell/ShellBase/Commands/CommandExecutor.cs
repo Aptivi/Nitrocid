@@ -244,7 +244,7 @@ namespace KS.Shell.ShellBase.Commands
                     var CommandBase = TargetCommands[Command].CommandBase;
                     string value = "";
                     CancellationHandlers.cts = new CancellationTokenSource();
-#if NET7_0
+#if NET8_0
 #pragma warning disable SYSLIB0046
                     try
                     {

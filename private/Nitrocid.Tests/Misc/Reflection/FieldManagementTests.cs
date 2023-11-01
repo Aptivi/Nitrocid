@@ -18,8 +18,6 @@
 //
 
 using System;
-using System.Reflection;
-using KS.Kernel.Configuration;
 using KS.Kernel.Configuration.Instances;
 using KS.Kernel.Updates;
 using KS.Misc.Reflection;

@@ -29,7 +29,7 @@ using Nitrocid.Extras.BassBoom.Settings;
 using System.Collections.Generic;
 using System.Linq;
 
-#if NET7_0
+#if NET8_0
 using BassBoom.Basolia;
 using BassBoom.Basolia.File;
 using BassBoom.Basolia.Format;
@@ -43,7 +43,7 @@ namespace Nitrocid.Extras.BassBoom
 {
     internal class BassBoomInit : IAddon
     {
-#if NET7_0
+#if NET8_0
         private readonly ExtensionHandler handler = new(
             ".mp3", "Mp3BassBoom",
             (_) => InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("You'll be able to play music soon. Hang tight!"), KernelColorType.Warning),
@@ -118,7 +118,7 @@ namespace Nitrocid.Extras.BassBoom
             ConfigTools.RegisterBaseSetting(saversConfig);
             ConfigTools.RegisterBaseSetting(bbConfig);
 
-#if NET7_0
+#if NET8_0
             // Additionally, register a custom extension handler that handles music playback
             InitBasolia.Init();
             ExtensionHandlerTools.extensionHandlers.Add(handler);
@@ -131,7 +131,7 @@ namespace Nitrocid.Extras.BassBoom
             ScreensaverManager.Screensavers.Remove("lyrics");
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(BassBoomConfig));
-#if NET7_0
+#if NET8_0
             ExtensionHandlerTools.extensionHandlers.Remove(handler);
 #endif
         }
