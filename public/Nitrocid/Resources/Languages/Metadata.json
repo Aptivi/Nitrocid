@@ -2,6 +2,7 @@
     {
         "three": "eng",
         "name": "English",
-        "transliterable": false
+        "transliterable": false,
+        "country": "United States of America"
     }
 ]

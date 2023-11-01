@@ -2,133 +2,158 @@
     {
         "three": "arb",
         "name": "Arabic",
-        "transliterable": true
+        "transliterable": true,
+        "country": "Syria"
     },
     {
         "three": "arb-T",
         "name": "Arabic",
         "transliterable": true,
-        "codepage": 1256
+        "codepage": 1256,
+        "country": "Syria"
     },
     {
         "three": "chi",
         "name": "Chinese",
-        "transliterable": true
+        "transliterable": true,
+        "country": "China"
     },
     {
         "three": "chi-T",
         "name": "Chinese",
         "transliterable": true,
-        "codepage": 936
+        "codepage": 936,
+        "country": "China"
     },
     {
         "three": "cnt",
         "name": "Chinese (Traditional)",
-        "transliterable": true
+        "transliterable": true,
+        "country": "China"
     },
     {
         "three": "cnt-T",
         "name": "Chinese (Traditional)",
-        "transliterable": true
+        "transliterable": true,
+        "country": "China"
     },
     {
         "three": "cze",
         "name": "Czech",
-        "transliterable": false
+        "transliterable": false,
+        "country": "Czech"
     },
     {
         "three": "dtc",
         "name": "Dutch",
-        "transliterable": false
+        "transliterable": false,
+        "country": "Netherlands"
     },
     {
         "three": "enk",
-        "name": "English (UK)",
+        "name": "English",
         "transliterable": false,
-        "culture": "en-GB"
+        "culture": "en-GB",
+        "country": "United Kingdom"
     },
     {
         "three": "fre",
         "name": "French",
-        "transliterable": false
+        "transliterable": false,
+        "country": "France"
     },
     {
         "three": "ger",
         "name": "German",
-        "transliterable": false
+        "transliterable": false,
+        "country": "Germany"
     },
     {
         "three": "ind",
         "name": "Hindi",
-        "transliterable": true
+        "transliterable": true,
+        "country": "India"
     },
     {
         "three": "ind-T",
         "name": "Hindi",
-        "transliterable": true
+        "transliterable": true,
+        "country": "India"
     },
     {
         "three": "ita",
         "name": "Italian",
-        "transliterable": false
+        "transliterable": false,
+        "country": "Italy"
     },
     {
         "three": "jpn",
         "name": "Japanese",
         "transliterable": false,
-        "codepage": 932
+        "codepage": 932,
+        "country": "Japan"
     },
     {
         "three": "kor",
         "name": "Korean",
-        "transliterable": true
+        "transliterable": true,
+        "country": "Korea"
     },
     {
         "three": "kor-T",
         "name": "Korean",
         "transliterable": true,
-        "codepage": 949
+        "codepage": 949,
+        "country": "Korea"
     },
     {
         "three": "ptg",
         "name": "Portuguese",
-        "transliterable": false
+        "transliterable": false,
+        "country": "Portugal"
     },
     {
         "three": "rus",
         "name": "Russian",
-        "transliterable": true
+        "transliterable": true,
+        "country": "Russia"
     },
     {
         "three": "rus-T",
         "name": "Russian",
         "transliterable": true,
-        "codepage": 866
+        "codepage": 866,
+        "country": "Russia"
     },
     {
         "three": "spa",
         "name": "Spanish",
-        "transliterable": false
+        "transliterable": false,
+        "country": "Spain"
     },
     {
         "three": "tky",
         "name": "Turkish",
-        "transliterable": false
+        "transliterable": false,
+        "country": "Turkey"
     },
     {
         "three": "ukr",
         "name": "Ukrainian",
-        "transliterable": true
+        "transliterable": true,
+        "country": "Ukraine"
     },
     {
         "three": "ukr-T",
         "name": "Ukrainian",
-        "transliterable": true
+        "transliterable": true,
+        "country": "Ukraine"
     },
     {
         "three": "vtn",
         "name": "Vietnamese",
         "transliterable": false,
-        "codepage": 1258
+        "codepage": 1258,
+        "country": "Viernam"
     }
 ]

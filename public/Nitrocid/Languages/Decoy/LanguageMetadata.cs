@@ -33,6 +33,8 @@ namespace KS.Languages.Decoy
         private readonly int codepage;
         [JsonProperty(nameof(culture))]
         private readonly string culture;
+        [JsonProperty(nameof(country))]
+        private readonly string country;
 
         [JsonIgnore]
         public string ThreeLetterLanguageName =>
@@ -49,15 +51,19 @@ namespace KS.Languages.Decoy
         [JsonIgnore]
         public string Culture =>
             culture;
+        [JsonIgnore]
+        public string Country =>
+            country;
 
         [JsonConstructor]
-        internal LanguageMetadata(string three, string name, bool transliterable, int codepage, string culture)
+        internal LanguageMetadata(string three, string name, bool transliterable, int codepage, string culture, string country)
         {
             this.three = three;
             this.name = name;
             this.transliterable = transliterable;
             this.codepage = codepage;
             this.culture = culture;
+            this.country = country;
         }
     }
 }

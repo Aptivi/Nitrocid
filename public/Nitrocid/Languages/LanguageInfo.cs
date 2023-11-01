@@ -50,6 +50,10 @@ namespace KS.Languages
         /// </summary>
         public readonly string CultureCode;
         /// <summary>
+        /// Country
+        /// </summary>
+        public readonly string Country;
+        /// <summary>
         /// Whether or not the language is transliterable (Arabic, Korea, ...)
         /// </summary>
         [JsonIgnore]
@@ -78,7 +82,8 @@ namespace KS.Languages
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
         /// <param name="Codepage">Appropriate codepage number for language</param>
         /// <param name="cultureCode">Culture code to use. If blank, the language manager will find the appropriate culture.</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string cultureCode = "")
+        /// <param name="country">The country</param>
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, int Codepage = 65001, string cultureCode = "", string country = "")
         {
             // Check to see if the language being installed is found in resources
             string localizationTokenValue = LanguageResources.ResourceManager.GetString(LangName.Replace("-", "_"));
@@ -89,6 +94,7 @@ namespace KS.Languages
                 this.FullLanguageName = FullLanguageName;
                 this.Transliterable = Transliterable;
                 this.Codepage = Codepage;
+                Country = string.IsNullOrEmpty(country) ? "World" : country;
 
                 // Get all cultures associated with the language and install the parsed values. Additionally, it checks if the necessary cultures were added. If not,
                 // the current culture is assumed.
@@ -141,12 +147,14 @@ namespace KS.Languages
         /// <param name="Transliterable">Whether or not the language is transliterable (Arabic, Korea, ...)</param>
         /// <param name="LanguageToken">The language token containing localization information</param>
         /// <param name="cultureCode">Culture code to use. If blank, the language manager will find the appropriate culture.</param>
-        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[] LanguageToken, string cultureCode = "")
+        /// <param name="country">The country</param>
+        public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[] LanguageToken, string cultureCode = "", string country = "")
         {
             // Install values to the object instance
             ThreeLetterLanguageName = LangName;
             this.FullLanguageName = FullLanguageName;
             this.Transliterable = Transliterable;
+            Country = string.IsNullOrEmpty(country) ? "World" : country;
 
             // Get all cultures associated with the language and install the parsed values. Additionally, it checks if the necessary cultures were added. If not,
             // the current culture is assumed.

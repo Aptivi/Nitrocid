@@ -382,6 +382,34 @@ namespace KS.Languages
         }
 
         /// <summary>
+        /// Lists all languages with their country specifiers
+        /// </summary>
+        public static Dictionary<string, LanguageInfo> ListAllLanguagesWithCountry() =>
+            ListLanguagesWithCountry("");
+
+        /// <summary>
+        /// Lists the languages with their country specifiers
+        /// </summary>
+        /// <param name="SearchTerm">Search term</param>
+        public static Dictionary<string, LanguageInfo> ListLanguagesWithCountry(string SearchTerm)
+        {
+            var ListedLanguages = new Dictionary<string, LanguageInfo>();
+
+            // List the Languages using the search term
+            foreach (var Language in Languages)
+            {
+                string LanguageName = Language.Key;
+                var LanguageValue = Language.Value;
+                if (LanguageName.Contains(SearchTerm))
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Adding language {0} to list... Search term: {1}", LanguageName, SearchTerm);
+                    ListedLanguages.Add($"{LanguageName} [{LanguageValue.Country}]", Languages[LanguageName]);
+                }
+            }
+            return ListedLanguages;
+        }
+
+        /// <summary>
         /// Infers the language from the system's current culture settings
         /// </summary>
         /// <returns>Language name if the system culture can be used to infer the language. Otherwise, English (eng).</returns>
@@ -426,15 +454,16 @@ namespace KS.Languages
             bool LanguageTransliterable = Language.Transliterable;
             int LanguageCodepage = Language.Codepage;
             string LanguageCultureCode = Language.Culture ?? "";
+            string LanguageCountry = Language.Country ?? "";
 
             // If the language is not found in the base languages cache dictionary, add it
             if (!BaseLanguages.ContainsKey(shortName))
             {
                 LanguageInfo LanguageInfo;
                 if (useLocalizationObject)
-                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, localizations, LanguageCultureCode);
+                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, localizations, LanguageCultureCode, LanguageCountry);
                 else
-                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, LanguageCodepage, LanguageCultureCode);
+                    LanguageInfo = new LanguageInfo(shortName, LanguageFullName, LanguageTransliterable, LanguageCodepage, LanguageCultureCode, LanguageCountry);
                 DebugWriter.WriteDebug(DebugLevel.I, "Adding language to base languages. {0}, {1}, {2}", shortName, LanguageFullName, LanguageTransliterable);
                 BaseLanguages.Add(shortName, LanguageInfo);
             }
