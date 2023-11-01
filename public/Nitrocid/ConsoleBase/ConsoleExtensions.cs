@@ -20,7 +20,6 @@
 using System;
 using System.Runtime.InteropServices;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Misc.Text;
 using Terminaux.Sequences.Builder;
@@ -34,11 +33,8 @@ namespace KS.ConsoleBase
     public static class ConsoleExtensions
     {
 
-        internal static bool setBufferSize = true;
         internal static bool UseAltBuffer = true;
         internal static bool HasSetAltBuffer;
-        private static readonly int OldBufferHeight = ConsoleWrapper.BufferHeight;
-        private static readonly int OldBufferWidth = ConsoleWrapper.BufferWidth;
 
         /// <summary>
         /// Does your console support true color?
@@ -252,7 +248,6 @@ namespace KS.ConsoleBase
         }
 
         #region Windows-specific
-        #pragma warning disable CA1416
         private const string winKernel = "kernel32.dll";
 
         [DllImport(winKernel, SetLastError = true)]
@@ -279,25 +274,6 @@ namespace KS.ConsoleBase
             GetConsoleMode(stdHandle, out int mode);
             return mode;
         }
-
-        internal static void SetBufferSize()
-        {
-            if (KernelPlatform.IsOnWindows())
-            {
-                Console.BufferWidth = ConsoleWrapper.WindowWidth;
-                Console.BufferHeight = ConsoleWrapper.WindowHeight;
-            }
-        }
-
-        internal static void RestoreBufferSize()
-        {
-            if (KernelPlatform.IsOnWindows())
-            {
-                Console.BufferWidth = OldBufferWidth;
-                Console.BufferHeight = OldBufferHeight;
-            }
-        }
-        #pragma warning restore CA1416
         #endregion
 
     }

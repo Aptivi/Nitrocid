@@ -130,13 +130,6 @@ namespace KS.Arguments
                     }, new VerbosePrebootArgument())
             },
 
-            { "nosetbuffersize",
-                new ArgumentInfo("nosetbuffersize", /* Localizable */ "Tells the kernel not to set the console buffer size [Only available on Windows]",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new NoSetBufferSizeArgument())
-            },
-
             { "prebootsplash",
                 new ArgumentInfo("prebootsplash", /* Localizable */ "Shows the pre-boot splash before configuration is loaded",
                     new[] {

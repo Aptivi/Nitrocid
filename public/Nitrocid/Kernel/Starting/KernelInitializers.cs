@@ -120,10 +120,6 @@ namespace KS.Kernel.Starting
                 // A title
                 ConsoleExtensions.SetTitle(KernelReleaseInfo.ConsoleTitle);
 
-                // Set the buffer size
-                if (ConsoleExtensions.setBufferSize)
-                    ConsoleExtensions.SetBufferSize();
-
                 // Initialize pre-boot splash (if enabled)
                 if (KernelEntry.PrebootSplash)
                     SplashManager.OpenSplash(SplashContext.Preboot);
@@ -375,9 +371,6 @@ namespace KS.Kernel.Starting
                     DebugWriter.DebugStreamWriter.Dispose();
                     DebugWriter.isDisposed = true;
                 }
-
-                // Reset the buffer size
-                ConsoleExtensions.RestoreBufferSize();
 
                 // Clear all active threads as we're rebooting
                 ThreadManager.StopAllThreads();
