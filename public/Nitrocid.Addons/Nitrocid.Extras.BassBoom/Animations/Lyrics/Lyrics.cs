@@ -33,6 +33,7 @@ using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Files.Operations.Querying;
+using KS.Kernel.Exceptions;
 
 #if NET6_0
 using SharpLyrics;
@@ -166,6 +167,30 @@ namespace Nitrocid.Extras.BassBoom.Animations.Lyrics
                 }
             }
             ConsoleWrapper.Clear();
+        }
+
+        /// <summary>
+        /// Gets the lyric lines
+        /// </summary>
+        /// <param name="path">Path to the lyric file (may or may not be neutralized)</param>
+        /// <returns>Lyric lines</returns>
+        /// <exception cref="KernelException"></exception>
+        public static LyricLine[] GetLyricLines(string path)
+        {
+            // Neutralize the path
+            path = FilesystemTools.NeutralizePath(path);
+
+            // If there is no lyric file, bail
+            if (string.IsNullOrWhiteSpace(path) || !Checking.FileExists(path))
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Lyrics file {0} not found!", path);
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("This lyrics file doesn't exist.") + $" {path}");
+            }
+
+            // Here, the lyric file is given. Process it...
+            var lyric = LyricReader.GetLyrics(path);
+            var lyricLines = lyric.Lines;
+            return lyricLines.ToArray();
         }
 
     }

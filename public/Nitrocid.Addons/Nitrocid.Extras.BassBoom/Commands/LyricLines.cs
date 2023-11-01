@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations.Querying;
 using KS.Languages;
@@ -26,12 +27,12 @@ using Nitrocid.Extras.BassBoom.Animations.Lyrics;
 namespace Nitrocid.Extras.BassBoom.Commands
 {
     /// <summary>
-    /// Plays a lyric file
+    /// Lists all lyric lines
     /// </summary>
     /// <remarks>
-    /// This command allows you to play a lyric file by showing you the basic lyrics visualizer.
+    /// This command allows you to list all luric lines from a lyric file.
     /// </remarks>
-    class PlayLyricCommand : BaseCommand, ICommand
+    class LyricLinesCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -42,11 +43,16 @@ namespace Nitrocid.Extras.BassBoom.Commands
             if (string.IsNullOrWhiteSpace(pathToLyrics) || !Checking.FileExists(pathToLyrics))
             {
                 TextWriterColor.Write(Translate.DoTranslation("Make sure to specify the path to an LRC file."));
-                return 17;
+                return 27;
             }
 
             // Visualize it!
-            Lyrics.VisualizeLyric(pathToLyrics);
+            var lines = Lyrics.GetLyricLines(pathToLyrics);
+            foreach (var line in lines)
+            {
+                TextWriterColor.WriteKernelColor($"- [{line.LineSpan.Hours:00}:{line.LineSpan.Minutes:00}:{line.LineSpan.Seconds:00}.{line.LineSpan.Milliseconds:000}] ", false, KernelColorType.ListEntry);
+                TextWriterColor.WriteKernelColor(line.Line, KernelColorType.ListValue);
+            }
             return 0;
         }
 

@@ -77,6 +77,16 @@ namespace Nitrocid.Extras.BassBoom
 
         private readonly Dictionary<string, CommandInfo> addonCommands = new()
         {
+            { "lyriclines",
+                new CommandInfo("lyriclines", /* Localizable */ "Gets all lyric lines from the lyric file",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "lyric.lrc"),
+                        })
+                    }, new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+
             { "playlyric",
                 new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
                     new[] {
@@ -86,6 +96,7 @@ namespace Nitrocid.Extras.BassBoom
                         })
                     }, new PlayLyricCommand())
             },
+
             { "playsound",
                 new CommandInfo("playsound", /* Localizable */ "Plays a sound",
                     new[] {
