@@ -247,11 +247,18 @@ namespace KS.ConsoleBase.Interactive
 
                 // Render the key bindings
                 ConsoleWrapper.CursorLeft = 0;
-                var finalBindings = new List<InteractiveTuiBinding>(interactiveTui.Bindings)
-                {
-                    new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null),
-                    new InteractiveTuiBinding(/* Localizable */ "Keybindings", ConsoleKey.K, null),
-                };
+                List<InteractiveTuiBinding> finalBindings;
+                if (interactiveTui.Bindings.Count == 0)
+                    finalBindings = new()
+                    {
+                        new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null)
+                    };
+                else
+                    finalBindings = new(interactiveTui.Bindings)
+                    {
+                        new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null),
+                        new InteractiveTuiBinding(/* Localizable */ "Keybindings", ConsoleKey.K, null),
+                    };
                 foreach (InteractiveTuiBinding binding in finalBindings)
                 {
                     // First, check to see if the rendered binding info is going to exceed the console window width
@@ -601,9 +608,13 @@ namespace KS.ConsoleBase.Interactive
                         }
                         break;
                     case ConsoleKey.K:
+                        // First, check the bindings length
+                        var bindings = interactiveTui.Bindings;
+                        if (bindings.Count == 0)
+                            break;
+
                         // User needs an infobox that shows all available keys
                         string section = Translate.DoTranslation("Available keys");
-                        var bindings = interactiveTui.Bindings;
                         int maxBindingLength = bindings
                             .Max((itb) => $"[{itb.BindingKeyName}]".Length);
                         string[] bindingRepresentations = bindings
