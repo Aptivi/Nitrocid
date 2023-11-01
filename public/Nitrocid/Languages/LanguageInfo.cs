@@ -24,55 +24,98 @@ using KS.Kernel.Exceptions;
 using Newtonsoft.Json;
 using KS.Resources;
 using KS.Languages.Decoy;
+using System.Diagnostics;
 
 namespace KS.Languages
 {
     /// <summary>
     /// Language information
     /// </summary>
+    [DebuggerDisplay("[{threeLetterLanguageName}] {fullLanguageName}")]
     public class LanguageInfo
     {
+
+        [JsonProperty(nameof(ThreeLetterLanguageName))]
+        private readonly string threeLetterLanguageName;
+        [JsonProperty(nameof(FullLanguageName))]
+        private readonly string fullLanguageName;
+        [JsonProperty(nameof(Codepage))]
+        private readonly int codepage;
+        [JsonProperty(nameof(CultureCode))]
+        private readonly string cultureCode;
+        [JsonProperty(nameof(Country))]
+        private readonly string country;
+        [JsonIgnore]
+        private readonly bool transliterable;
+        [JsonIgnore]
+        private readonly bool custom;
+        [JsonIgnore]
+        private readonly Dictionary<string, string> strings;
+        [JsonIgnore]
+        private readonly CultureInfo[] cultures;
 
         /// <summary>
         /// The three-letter language name found in resources. Some languages have translated variants, and they usually end with "_T" in resources and "-T" in KS.
         /// </summary>
-        public readonly string ThreeLetterLanguageName;
+        [JsonIgnore]
+        public string ThreeLetterLanguageName =>
+            threeLetterLanguageName;
+
         /// <summary>
         /// The full name of language without the country specifier.
         /// </summary>
-        public readonly string FullLanguageName;
+        [JsonIgnore]
+        public string FullLanguageName =>
+            fullLanguageName;
+
         /// <summary>
         /// The codepage number for the language
         /// </summary>
-        public readonly int Codepage;
+        [JsonIgnore]
+        public int Codepage =>
+            codepage;
+
         /// <summary>
         /// Culture code to use. If blank, the language manager will find the appropriate culture.
         /// </summary>
-        public readonly string CultureCode;
+        [JsonIgnore]
+        public string CultureCode =>
+            cultureCode;
+
         /// <summary>
         /// Country
         /// </summary>
-        public readonly string Country;
+        [JsonIgnore]
+        public string Country =>
+            country;
+
         /// <summary>
         /// Whether or not the language is transliterable (Arabic, Korea, ...)
         /// </summary>
         [JsonIgnore]
-        public readonly bool Transliterable;
+        public bool Transliterable =>
+            transliterable;
+
         /// <summary>
         /// Whether the language is custom
         /// </summary>
         [JsonIgnore]
-        public readonly bool Custom;
+        public bool Custom =>
+            custom;
+
         /// <summary>
         /// The localization information containing KS strings
         /// </summary>
         [JsonIgnore]
-        public readonly Dictionary<string, string> Strings;
+        public Dictionary<string, string> Strings =>
+            strings;
+
         /// <summary>
         /// List of cultures of language
         /// </summary>
         [JsonIgnore]
-        public readonly List<CultureInfo> Cultures;
+        public CultureInfo[] Cultures =>
+            cultures;
 
         /// <summary>
         /// Initializes the new instance of language information
@@ -90,11 +133,11 @@ namespace KS.Languages
             if (!string.IsNullOrEmpty(localizationTokenValue))
             {
                 // Install values to the object instance
-                ThreeLetterLanguageName = LangName;
-                this.FullLanguageName = FullLanguageName;
-                this.Transliterable = Transliterable;
-                this.Codepage = Codepage;
-                Country = string.IsNullOrEmpty(country) ? "World" : country;
+                threeLetterLanguageName = LangName;
+                fullLanguageName = FullLanguageName;
+                transliterable = Transliterable;
+                codepage = Codepage;
+                this.country = string.IsNullOrEmpty(country) ? "World" : country;
 
                 // Get all cultures associated with the language and install the parsed values. Additionally, it checks if the necessary cultures were added. If not,
                 // the current culture is assumed.
@@ -113,13 +156,13 @@ namespace KS.Languages
                     DebugWriter.WriteDebug(DebugLevel.W, "Adding current culture because we can't find any culture with the name of {0}...", FullLanguageName.ToLower());
                     Cultures.Add(CultureInfo.CurrentCulture);
                 }
-                this.Cultures = Cultures;
-                CultureCode = cultureCode;
+                cultures = Cultures.ToArray();
+                this.cultureCode = cultureCode;
 
                 // Get instance of language resource
                 string[] LanguageResource = JsonConvert.DeserializeObject<LanguageLocalizations>(localizationTokenValue).Localizations;
                 string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(LanguageResources.eng).Localizations;
-                Custom = false;
+                custom = false;
 
                 // Populate language strings
                 var langStrings = new Dictionary<string, string>();
@@ -130,7 +173,7 @@ namespace KS.Languages
                     langStrings.Add(UntranslatedProperty, TranslatedProperty);
                 }
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
-                Strings = langStrings;
+                strings = langStrings;
             }
             else
             {
@@ -151,10 +194,10 @@ namespace KS.Languages
         public LanguageInfo(string LangName, string FullLanguageName, bool Transliterable, string[] LanguageToken, string cultureCode = "", string country = "")
         {
             // Install values to the object instance
-            ThreeLetterLanguageName = LangName;
-            this.FullLanguageName = FullLanguageName;
-            this.Transliterable = Transliterable;
-            Country = string.IsNullOrEmpty(country) ? "World" : country;
+            threeLetterLanguageName = LangName;
+            fullLanguageName = FullLanguageName;
+            transliterable = Transliterable;
+            this.country = string.IsNullOrEmpty(country) ? "World" : country;
 
             // Get all cultures associated with the language and install the parsed values. Additionally, it checks if the necessary cultures were added. If not,
             // the current culture is assumed.
@@ -173,12 +216,12 @@ namespace KS.Languages
                 DebugWriter.WriteDebug(DebugLevel.W, "Adding current culture because we can't find any culture with the name of {0}...", FullLanguageName.ToLower());
                 Cultures.Add(CultureInfo.CurrentCulture);
             }
-            this.Cultures = Cultures;
-            CultureCode = cultureCode;
+            cultures = Cultures.ToArray();
+            this.cultureCode = cultureCode;
 
             // Install it
             string[] LanguageResourceEnglish = JsonConvert.DeserializeObject<LanguageLocalizations>(LanguageResources.eng).Localizations;
-            Custom = true;
+            custom = true;
             DebugWriter.WriteDebug(DebugLevel.I, "{0} should be {1} from English strings list.", LanguageToken.Length, LanguageResourceEnglish.Length);
             if (LanguageToken.Length == LanguageResourceEnglish.Length)
             {
@@ -192,7 +235,7 @@ namespace KS.Languages
                 }
 
                 DebugWriter.WriteDebug(DebugLevel.I, "{0} strings.", langStrings.Count);
-                Strings = langStrings;
+                strings = langStrings;
             }
             else
             {

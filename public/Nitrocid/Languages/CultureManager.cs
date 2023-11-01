@@ -49,7 +49,7 @@ namespace KS.Languages
         {
             var cultures = GetCulturesFromCurrentLang();
             string StrCult =
-                !(cultures.Count == 0 && cultures.Any((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName))) ?
+                !(cultures.Length == 0 && cultures.Any((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName))) ?
                 cultures.First((ci) => ci.EnglishName.Contains(LanguageManager.CurrentLanguageInfo.FullLanguageName)).EnglishName :
                 CultureInfo.CurrentCulture.EnglishName;
             DebugWriter.WriteDebug(DebugLevel.I, "Culture for {0} is {1}", LanguageManager.CurrentLanguageInfo, StrCult);
@@ -108,13 +108,13 @@ namespace KS.Languages
         /// <summary>
         /// Gets all cultures available for the current language
         /// </summary>
-        public static List<CultureInfo> GetCulturesFromCurrentLang() =>
+        public static CultureInfo[] GetCulturesFromCurrentLang() =>
             LanguageManager.CurrentLanguageInfo.Cultures;
 
         /// <summary>
         /// Gets all cultures available for the current language
         /// </summary>
-        public static List<CultureInfo> GetCulturesFromLang(string Language)
+        public static CultureInfo[] GetCulturesFromLang(string Language)
         {
             if (LanguageManager.Languages.ContainsKey(Language))
             {
