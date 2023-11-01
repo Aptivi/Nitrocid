@@ -166,7 +166,7 @@ namespace KS.ConsoleBase.Colors
             RenderPreviewBox(selectedColor);
 
             // Then, render the hue, saturation, and lightness bars
-            int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 2;
+            int hueBarX = (ConsoleWrapper.WindowWidth / 2) + 3;
             int hueBarY = 1;
             int saturationBarY = 5;
             int lightnessBarY = 9;
@@ -240,7 +240,7 @@ namespace KS.ConsoleBase.Colors
             RenderPreviewBox(selectedColor);
 
             // Then, render the color info
-            int infoBoxX = (ConsoleWrapper.WindowWidth / 2) + 2;
+            int infoBoxX = (ConsoleWrapper.WindowWidth / 2) + 3;
             int infoBoxY = 1;
             int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
             int boxHeight = 6;
@@ -287,7 +287,7 @@ namespace KS.ConsoleBase.Colors
             RenderPreviewBox(selectedColor);
 
             // Then, render the color info
-            int infoBoxX = (ConsoleWrapper.WindowWidth / 2) + 2;
+            int infoBoxX = (ConsoleWrapper.WindowWidth / 2) + 3;
             int infoBoxY = 1;
             int boxWidth = (ConsoleWrapper.WindowWidth / 2) - 6;
             int boxHeight = 6;
