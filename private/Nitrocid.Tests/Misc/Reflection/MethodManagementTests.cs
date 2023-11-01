@@ -65,7 +65,7 @@ namespace Nitrocid.Tests.Misc.Reflection
         {
             var value = MethodManager.InvokeMethodStatic(nameof(CultureManager.GetCulturesFromCurrentLang));
             value.ShouldNotBeNull();
-            value.ShouldBeOfType(typeof(List<CultureInfo>));
+            value.ShouldBeOfType(typeof(CultureInfo[]));
         }
 
         /// <summary>
