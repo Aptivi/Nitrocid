@@ -173,6 +173,7 @@ namespace KS.ConsoleBase.Inputs.Styles
             // First alt answer index
             int altAnswersFirstIdx = Answers.Length;
             ConsoleKeyInfo Answer;
+            bool initialVisible = ConsoleWrapper.CursorVisible;
             ConsoleWrapper.CursorVisible = false;
             ConsoleWrapper.Clear(true);
 
@@ -331,13 +332,15 @@ namespace KS.ConsoleBase.Inputs.Styles
                         HighlightedAnswer = endIndex == AllAnswers.Count - 1 ? endIndex + 1 : HighlightedAnswer;
                         break;
                     case ConsoleKey.Enter:
-                        TextWriterColor.Write();
+                        ConsoleWrapper.CursorVisible = initialVisible;
+                        KernelColorTools.LoadBack();
                         savedPos = HighlightedAnswer;
                         return HighlightedAnswer;
                     case ConsoleKey.Escape:
                         if (kiosk)
                             break;
-                        TextWriterColor.Write();
+                        ConsoleWrapper.CursorVisible = initialVisible;
+                        KernelColorTools.LoadBack();
                         savedPos = HighlightedAnswer;
                         return -1;
                     case ConsoleKey.Tab:
