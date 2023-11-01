@@ -109,13 +109,13 @@ namespace KS.ConsoleBase.Colors
                 while (!bail)
                 {
                     // We need to refresh the screen if it's required
-                    refresh = ScreensaverManager.ScreenRefreshRequired;
                     if (refresh)
                     {
                         ConsoleWrapper.CursorVisible = false;
                         refresh = false;
                         KernelColorTools.LoadBack();
                     }
+                    refresh = ScreensaverManager.ScreenRefreshRequired;
 
                     // Now, render the selector and handle input
                     switch (type)
