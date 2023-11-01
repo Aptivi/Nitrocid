@@ -182,7 +182,7 @@ namespace KS.Misc.Text.Probers.Placeholder
             if (string.IsNullOrEmpty(placeholder))
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
             if (!IsPlaceholderRegistered(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder action may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder is not registered"));
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
@@ -241,7 +241,7 @@ namespace KS.Misc.Text.Probers.Placeholder
             if (string.IsNullOrEmpty(placeholder))
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
             if (!IsPlaceholderRegistered(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder action may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder is not registered"));
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
@@ -263,7 +263,7 @@ namespace KS.Misc.Text.Probers.Placeholder
             if (string.IsNullOrEmpty(placeholder))
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
             if (!IsPlaceholderRegistered(placeholder))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder action may not be null"));
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder is not registered"));
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
