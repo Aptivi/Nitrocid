@@ -902,6 +902,16 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo()
                     }, new LogoutCommand(), CommandFlags.NoMaintenance)
             },
+            
+            { "lsconfigs",
+                new CommandInfo("lsconfigs", /* Localizable */ "Lists all available configurations",
+                    new[] {
+                        new CommandArgumentInfo(new SwitchInfo[]
+                        {
+                            new("deep", /* Localizable */ "Deep details about all configurations, including their entries")
+                        })
+                    }, new LsConfigsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
 
             { "lsconnections",
                 new CommandInfo("lsconnections", /* Localizable */ "Lists all available connections",
