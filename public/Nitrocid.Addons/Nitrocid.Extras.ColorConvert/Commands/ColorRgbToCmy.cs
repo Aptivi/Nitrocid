@@ -22,16 +22,17 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color RGB numbers to CMYK in KS format.
+    /// Converts the color RGB numbers to CMY.
     /// </summary>
     /// <remarks>
-    /// If you want to get the semicolon-delimited sequence of the CMYK color numbers from the RGB representation of the color, you can use this command. You can use this to form a valid color sequence to generate new color instances for your mods.
+    /// If you want to get the CMY representation of the color from the RGB color numbers, you can use this command.
     /// </remarks>
-    class ColorRgbToCmykKSCommand : BaseCommand, ICommand
+    class ColorRgbToCmyCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -54,10 +55,15 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             }
 
             // Do the job
-            string rgb = KernelColorConversionTools.ConvertFromRgbToCmyk(R, G, B);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("CMYK color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(rgb, true, KernelColorType.ListValue);
-            variableValue = rgb;
+            var rgb = new Color(R, G, B);
+            var cmy = rgb.CMY;
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Cyan level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{cmy.CWhole} [{cmy.C:0.00}]", true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Magenta level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{cmy.MWhole} [{cmy.M:0.00}]", true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Yellow level:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{cmy.YWhole} [{cmy.Y:0.00}]", true, KernelColorType.ListValue);
+            variableValue = $"cmy:{cmy.CWhole};{cmy.MWhole};{cmy.YWhole}";
             return 0;
         }
 

@@ -22,16 +22,17 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using Terminaux.Colors;
 
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color RGB numbers to CMYK in KS format.
+    /// Converts the color RGB numbers to HSV.
     /// </summary>
     /// <remarks>
-    /// If you want to get the semicolon-delimited sequence of the CMYK color numbers from the RGB representation of the color, you can use this command. You can use this to form a valid color sequence to generate new color instances for your mods.
+    /// If you want to get the HSV representation of the color from the RGB color numbers, you can use this command.
     /// </remarks>
-    class ColorRgbToCmykKSCommand : BaseCommand, ICommand
+    class ColorRgbToHsvCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -54,10 +55,15 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             }
 
             // Do the job
-            string rgb = KernelColorConversionTools.ConvertFromRgbToCmyk(R, G, B);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("CMYK color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(rgb, true, KernelColorType.ListValue);
-            variableValue = rgb;
+            var rgb = new Color(R, G, B);
+            var hsv = rgb.HSV;
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Hue:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{hsv.HueWhole} [{hsv.Hue:0.00}]", true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Saturation:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{hsv.SaturationWhole} [{hsv.Saturation:0.00}]", true, KernelColorType.ListValue);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Value:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{hsv.ValueWhole} [{hsv.Value:0.00}]", true, KernelColorType.ListValue);
+            variableValue = $"hsv:{hsv.HueWhole};{hsv.SaturationWhole};{hsv.ValueWhole}";
             return 0;
         }
 

@@ -26,38 +26,38 @@ using KS.Shell.ShellBase.Commands;
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color RGB numbers to CMYK in KS format.
+    /// Converts the color CMY numbers to HSL in KS format.
     /// </summary>
     /// <remarks>
-    /// If you want to get the semicolon-delimited sequence of the CMYK color numbers from the RGB representation of the color, you can use this command. You can use this to form a valid color sequence to generate new color instances for your mods.
+    /// If you want to get the semicolon-delimited sequence of the HSL color numbers from the CMY representation of the color, you can use this command. You can use this to form a valid color sequence to generate new color instances for your mods.
     /// </remarks>
-    class ColorRgbToCmykKSCommand : BaseCommand, ICommand
+    class ColorCmyToHslKSCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             // Check to see if we have the numeric arguments
-            if (!int.TryParse(parameters.ArgumentsList[0], out int R))
+            if (!int.TryParse(parameters.ArgumentsList[0], out int C))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The red color level must be numeric."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The cyan color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!int.TryParse(parameters.ArgumentsList[1], out int G))
+            if (!int.TryParse(parameters.ArgumentsList[1], out int M))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The green color level must be numeric."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The magenta color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
-            if (!int.TryParse(parameters.ArgumentsList[2], out int B))
+            if (!int.TryParse(parameters.ArgumentsList[2], out int Y))
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The blue color level must be numeric."), true, KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The yellow color level must be numeric."), true, KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Color;
             }
 
             // Do the job
-            string rgb = KernelColorConversionTools.ConvertFromRgbToCmyk(R, G, B);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("CMYK color sequence:") + " ", false, KernelColorType.ListEntry);
-            TextWriterColor.WriteKernelColor(rgb, true, KernelColorType.ListValue);
-            variableValue = rgb;
+            var HSL = KernelColorConversionTools.ConvertFromCmyToHsl(C, M, Y);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("HSL color sequence:") + " ", false, KernelColorType.ListEntry);
+            TextWriterColor.WriteKernelColor($"{HSL}", true, KernelColorType.ListValue);
+            variableValue = HSL;
             return 0;
         }
 

@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             }
 
             // Do the job
-            string rgb = KernelColorConversionTools.ConvertFromRGBToHsl(R, G, B);
+            string rgb = KernelColorConversionTools.ConvertFromRgbToHsl(R, G, B);
             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("HSL color sequence:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.WriteKernelColor(rgb, true, KernelColorType.ListValue);
             variableValue = rgb;

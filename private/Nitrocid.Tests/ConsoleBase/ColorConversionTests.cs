@@ -52,6 +52,17 @@ namespace Nitrocid.Tests.ConsoleBase
         }
 
         /// <summary>
+        /// Tests trying to convert from hex to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHexToCmy()
+        {
+            Console.WriteLine("Converting #0F0F0F...");
+            KernelColorConversionTools.ConvertFromHexToCmy("#0F0F0F").ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
         /// Tests trying to convert from hex to HSL
         /// </summary>
         [Test]
@@ -63,14 +74,25 @@ namespace Nitrocid.Tests.ConsoleBase
         }
 
         /// <summary>
+        /// Tests trying to convert from hex to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHexToHsv()
+        {
+            Console.WriteLine("Converting #0F0F0F...");
+            KernelColorConversionTools.ConvertFromHexToHsv("#0F0F0F").ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
         /// Tests trying to convert from RGB sequence to hex
         /// </summary>
         [Test]
         [Description("Conversion")]
-        public void TestConvertFromRGBSequenceToHex()
+        public void TestConvertFromRgbSequenceToHex()
         {
             Console.WriteLine("Converting 15;15;15...");
-            KernelColorConversionTools.ConvertFromRGBToHex("15;15;15").ShouldBe("#0F0F0F");
+            KernelColorConversionTools.ConvertFromRgbToHex("15;15;15").ShouldBe("#0F0F0F");
         }
 
         /// <summary>
@@ -78,10 +100,10 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        public void TestConvertFromRGBNumbersToHex()
+        public void TestConvertFromRgbNumbersToHex()
         {
             Console.WriteLine("Converting 15, 15, 15...");
-            KernelColorConversionTools.ConvertFromRGBToHex(15, 15, 15).ShouldBe("#0F0F0F");
+            KernelColorConversionTools.ConvertFromRgbToHex(15, 15, 15).ShouldBe("#0F0F0F");
         }
 
         /// <summary>
@@ -89,7 +111,7 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        public void TestConvertFromCMYKSequenceToHex()
+        public void TestConvertFromCmykSequenceToHex()
         {
             Console.WriteLine("Converting 0;0;0;94...");
             KernelColorConversionTools.ConvertFromCmykToHex("cmyk:0;0;0;94").ShouldBe("#0F0F0F");
@@ -100,10 +122,32 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        public void TestConvertFromCMYKNumbersToHex()
+        public void TestConvertFromCmykNumbersToHex()
         {
             Console.WriteLine("Converting 0, 0, 0, 94...");
             KernelColorConversionTools.ConvertFromCmykToHex(0, 0, 0, 94).ShouldBe("#0F0F0F");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY sequence to hex
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmySequenceToHex()
+        {
+            Console.WriteLine("Converting 94;94;94...");
+            KernelColorConversionTools.ConvertFromCmyToHex("cmy:94;94;94").ShouldBe("#0F0F0F");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY numbers to hex
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmyNumbersToHex()
+        {
+            Console.WriteLine("Converting 94, 94, 94...");
+            KernelColorConversionTools.ConvertFromCmyToHex(94, 94, 94).ShouldBe("#0F0F0F");
         }
 
         /// <summary>
@@ -129,6 +173,28 @@ namespace Nitrocid.Tests.ConsoleBase
         }
 
         /// <summary>
+        /// Tests trying to convert from HSV sequence to hex
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHSVSequenceToHex()
+        {
+            Console.WriteLine("Converting 0;0;5...");
+            KernelColorConversionTools.ConvertFromHsvToHex("hsv:0;0;5").ShouldBe("#0D0D0D");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV numbers to hex
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHSVNumbersToHex()
+        {
+            Console.WriteLine("Converting 0, 0, 5...");
+            KernelColorConversionTools.ConvertFromHsvToHex(0, 0, 5).ShouldBe("#0D0D0D");
+        }
+
+        /// <summary>
         /// Tests trying to convert from RGB sequence to CMYK
         /// </summary>
         [Test]
@@ -136,7 +202,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromRgbSequenceToCmyk()
         {
             Console.WriteLine("Converting 15;15;15...");
-            KernelColorConversionTools.ConvertFromRGBToCmyk("15;15;15").ShouldBe("cmyk:0;0;0;94");
+            KernelColorConversionTools.ConvertFromRgbToCmyk("15;15;15").ShouldBe("cmyk:0;0;0;94");
         }
 
         /// <summary>
@@ -147,7 +213,29 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromRgbNumbersToCmyk()
         {
             Console.WriteLine("Converting 15, 15, 15...");
-            KernelColorConversionTools.ConvertFromRGBToCmyk(15, 15, 15).ShouldBe("cmyk:0;0;0;94");
+            KernelColorConversionTools.ConvertFromRgbToCmyk(15, 15, 15).ShouldBe("cmyk:0;0;0;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RGB sequence to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRgbSequenceToCmy()
+        {
+            Console.WriteLine("Converting 15;15;15...");
+            KernelColorConversionTools.ConvertFromRgbToCmy("15;15;15").ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RGB numbers to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRgbNumbersToCmy()
+        {
+            Console.WriteLine("Converting 15, 15, 15...");
+            KernelColorConversionTools.ConvertFromRgbToCmy(15, 15, 15).ShouldBe("cmy:94;94;94");
         }
 
         /// <summary>
@@ -158,7 +246,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromRgbSequenceToHsl()
         {
             Console.WriteLine("Converting 15;15;15...");
-            KernelColorConversionTools.ConvertFromRGBToHsl("15;15;15").ShouldBe("hsl:0;0;5");
+            KernelColorConversionTools.ConvertFromRgbToHsl("15;15;15").ShouldBe("hsl:0;0;5");
         }
 
         /// <summary>
@@ -169,7 +257,29 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromRgbNumbersToHsl()
         {
             Console.WriteLine("Converting 15, 15, 15...");
-            KernelColorConversionTools.ConvertFromRGBToHsl(15, 15, 15).ShouldBe("hsl:0;0;5");
+            KernelColorConversionTools.ConvertFromRgbToHsl(15, 15, 15).ShouldBe("hsl:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RGB sequence to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRgbSequenceToHsv()
+        {
+            Console.WriteLine("Converting 15;15;15...");
+            KernelColorConversionTools.ConvertFromRgbToHsv("15;15;15").ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RGB numbers to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRgbNumbersToHsv()
+        {
+            Console.WriteLine("Converting 15, 15, 15...");
+            KernelColorConversionTools.ConvertFromRgbToHsv(15, 15, 15).ShouldBe("hsv:0;0;5");
         }
 
         /// <summary>
@@ -217,6 +327,138 @@ namespace Nitrocid.Tests.ConsoleBase
         }
 
         /// <summary>
+        /// Tests trying to convert from HSL sequence to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHslSequenceToCmy()
+        {
+            Console.WriteLine("Converting 0;0;5...");
+            KernelColorConversionTools.ConvertFromHslToCmy("hsl:0;0;5").ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSL numbers to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHslNumbersToCmy()
+        {
+            Console.WriteLine("Converting 0, 0, 5...");
+            KernelColorConversionTools.ConvertFromHslToCmy(0, 0, 5).ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSL sequence to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHslSequenceToHsv()
+        {
+            Console.WriteLine("Converting 0;0;5...");
+            KernelColorConversionTools.ConvertFromHslToHsv("hsl:0;0;5").ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSL numbers to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHslNumbersToHsv()
+        {
+            Console.WriteLine("Converting 0, 0, 5...");
+            KernelColorConversionTools.ConvertFromHslToHsv(0, 0, 5).ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV sequence to RGB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvSequenceToRgb()
+        {
+            Console.WriteLine("Converting 0;0;5...");
+            KernelColorConversionTools.ConvertFromHsvToRgb("hsv:0;0;5").ShouldBe("13;13;13");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV numbers to RGB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvNumbersToRgb()
+        {
+            Console.WriteLine("Converting 0, 0, 5...");
+            KernelColorConversionTools.ConvertFromHsvToRgb(0, 0, 5).ShouldBe("13;13;13");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV sequence to CMYK
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvSequenceToCmyk()
+        {
+            Console.WriteLine("Converting 0;0;5...");
+            KernelColorConversionTools.ConvertFromHsvToCmyk("hsv:0;0;5").ShouldBe("cmyk:0;0;0;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV numbers to CMYK
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvNumbersToCmyk()
+        {
+            Console.WriteLine("Converting 0, 0, 5...");
+            KernelColorConversionTools.ConvertFromHsvToCmyk(0, 0, 5).ShouldBe("cmyk:0;0;0;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV sequence to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvSequenceToCmy()
+        {
+            Console.WriteLine("Converting 0;0;5...");
+            KernelColorConversionTools.ConvertFromHsvToCmy("hsv:0;0;5").ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV numbers to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvNumbersToCmy()
+        {
+            Console.WriteLine("Converting 0, 0, 5...");
+            KernelColorConversionTools.ConvertFromHsvToCmy(0, 0, 5).ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV sequence to HSL
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvSequenceToHsl()
+        {
+            Console.WriteLine("Converting 0;0;5...");
+            KernelColorConversionTools.ConvertFromHsvToHsl("hsv:0;0;5").ShouldBe("hsl:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV numbers to HSL
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvNumbersToHsl()
+        {
+            Console.WriteLine("Converting 0, 0, 5...");
+            KernelColorConversionTools.ConvertFromHsvToHsl(0, 0, 5).ShouldBe("hsl:0;0;5");
+        }
+
+        /// <summary>
         /// Tests trying to convert from CMYK sequence to RGB
         /// </summary>
         [Test]
@@ -258,6 +500,138 @@ namespace Nitrocid.Tests.ConsoleBase
         {
             Console.WriteLine("Converting 0, 0, 0, 94...");
             KernelColorConversionTools.ConvertFromCmykToHsl(0, 0, 0, 94).ShouldBe("hsl:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMYK sequence to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmykSequenceToHsv()
+        {
+            Console.WriteLine("Converting 0;0;0;94...");
+            KernelColorConversionTools.ConvertFromCmykToHsl("cmyk:0;0;0;94").ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMYK numbers to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmykNumbersToHsv()
+        {
+            Console.WriteLine("Converting 0, 0, 0, 94...");
+            KernelColorConversionTools.ConvertFromCmykToHsl(0, 0, 0, 94).ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMYK sequence to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmykSequenceToCmy()
+        {
+            Console.WriteLine("Converting 0;0;0;94...");
+            KernelColorConversionTools.ConvertFromCmykToCmy("cmyk:0;0;0;94").ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMYK numbers to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmykNumbersToCmy()
+        {
+            Console.WriteLine("Converting 0, 0, 0, 94...");
+            KernelColorConversionTools.ConvertFromCmykToCmy(0, 0, 0, 94).ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY sequence to RGB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmySequenceToRgb()
+        {
+            Console.WriteLine("Converting 94;94;94...");
+            KernelColorConversionTools.ConvertFromCmyToRgb("cmy:94;94;94").ShouldBe("15;15;15");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY numbers to RGB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmyNumbersToRgb()
+        {
+            Console.WriteLine("Converting 94, 94, 94...");
+            KernelColorConversionTools.ConvertFromCmyToRgb(94, 94, 94).ShouldBe("15;15;15");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY sequence to HSL
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmySequenceToHsl()
+        {
+            Console.WriteLine("Converting 94;94;94...");
+            KernelColorConversionTools.ConvertFromCmyToHsl("cmy:94;94;94").ShouldBe("hsl:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY numbers to HSL
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmyNumbersToHsl()
+        {
+            Console.WriteLine("Converting 94, 94, 94...");
+            KernelColorConversionTools.ConvertFromCmyToHsl(94, 94, 94).ShouldBe("hsl:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY sequence to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmySequenceToHsv()
+        {
+            Console.WriteLine("Converting 94;94;94...");
+            KernelColorConversionTools.ConvertFromCmyToHsl("cmy:94;94;94").ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY numbers to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmyNumbersToHsv()
+        {
+            Console.WriteLine("Converting 94, 94, 94...");
+            KernelColorConversionTools.ConvertFromCmyToHsl(94, 94, 94).ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY sequence to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmySequenceToCmyk()
+        {
+            Console.WriteLine("Converting 94;94;94...");
+            KernelColorConversionTools.ConvertFromCmyToCmyk("cmy:94;94;94").ShouldBe("cmyk:0;0;0;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY numbers to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmyNumbersToCmyk()
+        {
+            Console.WriteLine("Converting 94, 94, 94...");
+            KernelColorConversionTools.ConvertFromCmyToCmyk(94, 94, 94).ShouldBe("cmyk:0;0;0;94");
         }
 
     }

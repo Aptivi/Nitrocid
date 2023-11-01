@@ -54,7 +54,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             }
 
             // Do the job
-            string hex = KernelColorConversionTools.ConvertFromRGBToHex(R, G, B);
+            string hex = KernelColorConversionTools.ConvertFromRgbToHex(R, G, B);
             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("Color hexadecimal representation:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.WriteKernelColor(hex, true, KernelColorType.ListValue);
             variableValue = hex;

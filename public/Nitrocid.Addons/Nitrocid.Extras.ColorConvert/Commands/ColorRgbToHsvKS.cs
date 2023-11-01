@@ -26,12 +26,12 @@ using KS.Shell.ShellBase.Commands;
 namespace Nitrocid.Extras.ColorConvert.Commands
 {
     /// <summary>
-    /// Converts the color RGB numbers to CMYK in KS format.
+    /// Converts the color RGB numbers to HSV in KS format.
     /// </summary>
     /// <remarks>
-    /// If you want to get the semicolon-delimited sequence of the CMYK color numbers from the RGB representation of the color, you can use this command. You can use this to form a valid color sequence to generate new color instances for your mods.
+    /// If you want to get the semicolon-delimited sequence of the HSV color numbers from the RGB representation of the color, you can use this command. You can use this to form a valid color sequence to generate new color instances for your mods.
     /// </remarks>
-    class ColorRgbToCmykKSCommand : BaseCommand, ICommand
+    class ColorRgbToHsvKSCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -54,8 +54,8 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             }
 
             // Do the job
-            string rgb = KernelColorConversionTools.ConvertFromRgbToCmyk(R, G, B);
-            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("CMYK color sequence:") + " ", false, KernelColorType.ListEntry);
+            string rgb = KernelColorConversionTools.ConvertFromRgbToHsv(R, G, B);
+            TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("HSV color sequence:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.WriteKernelColor(rgb, true, KernelColorType.ListValue);
             variableValue = rgb;
             return 0;
