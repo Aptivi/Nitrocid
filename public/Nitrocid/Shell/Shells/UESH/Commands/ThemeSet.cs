@@ -28,6 +28,7 @@ using KS.Kernel.Configuration;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -87,6 +88,10 @@ namespace KS.Shell.Shells.UESH.Commands
                     Theme = new ThemeInfo(ThemePath);
                 else
                     Theme = ThemeTools.GetThemeInfo(selectedTheme);
+
+                // Immediately bail if -y is passed
+                if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-y"))
+                    break;
 
                 // Now, preview the theme
                 ThemePreviewTools.PreviewThemeSimple(Theme);

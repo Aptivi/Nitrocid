@@ -1565,6 +1565,9 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "theme"),
+                        }, new[]
+                        {
+                            new SwitchInfo("y", /* Localizable */ "Immediately set the theme on selection")
                         })
                     }, new ThemeSetCommand())
             },
