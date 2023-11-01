@@ -814,8 +814,8 @@ namespace KS.ConsoleBase.Colors
                     int K = Convert.ToInt32(ColorSpecifierArray[3]);
                     var rgb = new Color($"cmyk:{C};{M};{Y};{K}");
                     var hsl = rgb.HSL;
-                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSL: hsv:{0};{1};{2})", hsl.HueWhole, hsl.SaturationWhole, hsl.LightnessWhole);
-                    return $"hsv:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
+                    DebugWriter.WriteDebug(DebugLevel.I, "Got color (HSL: hsl:{0};{1};{2})", hsl.HueWhole, hsl.SaturationWhole, hsl.LightnessWhole);
+                    return $"hsl:{hsl.HueWhole};{hsl.SaturationWhole};{hsl.LightnessWhole}";
                 }
                 else
                 {
@@ -1128,7 +1128,7 @@ namespace KS.ConsoleBase.Colors
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;;&lt;K&gt;</returns>
         public static string ConvertFromHsvToCmyk(string HSVSequence)
         {
-            if (HSVSequence.Contains(';') && HSVSequence.StartsWith("hsl:"))
+            if (HSVSequence.Contains(';') && HSVSequence.StartsWith("hsv:"))
             {
                 // Split the VT sequence into three parts
                 var ColorSpecifierArray = HSVSequence[4..].Split(';');
@@ -1172,7 +1172,7 @@ namespace KS.ConsoleBase.Colors
         /// <returns>cmyk:&lt;C&gt;;&lt;M&gt;;&lt;Y&gt;</returns>
         public static string ConvertFromHsvToCmy(string HSVSequence)
         {
-            if (HSVSequence.Contains(';') && HSVSequence.StartsWith("hsl:"))
+            if (HSVSequence.Contains(';') && HSVSequence.StartsWith("hsv:"))
             {
                 // Split the VT sequence into three parts
                 var ColorSpecifierArray = HSVSequence[4..].Split(';');
@@ -1215,7 +1215,7 @@ namespace KS.ConsoleBase.Colors
         /// <returns>hsl:&lt;H&gt;;&lt;S&gt;;&lt;L&gt;</returns>
         public static string ConvertFromHsvToHsl(string HSVSequence)
         {
-            if (HSVSequence.Contains(';') && HSVSequence.StartsWith("hsl:"))
+            if (HSVSequence.Contains(';') && HSVSequence.StartsWith("hsv:"))
             {
                 // Split the VT sequence into three parts
                 var ColorSpecifierArray = HSVSequence[4..].Split(';');
@@ -1258,7 +1258,7 @@ namespace KS.ConsoleBase.Colors
         /// <returns>&lt;R&gt;;&lt;G&gt;;&lt;B&gt;</returns>
         public static string ConvertFromHsvToRgb(string HSVSequence)
         {
-            if (HSVSequence.Contains(';') && HSVSequence.StartsWith("hsl:"))
+            if (HSVSequence.Contains(';') && HSVSequence.StartsWith("hsv:"))
             {
                 // Split the VT sequence into three parts
                 var ColorSpecifierArray = HSVSequence[4..].Split(';');

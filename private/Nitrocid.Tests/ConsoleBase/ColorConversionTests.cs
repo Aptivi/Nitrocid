@@ -510,7 +510,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromCmykSequenceToHsv()
         {
             Console.WriteLine("Converting 0;0;0;94...");
-            KernelColorConversionTools.ConvertFromCmykToHsl("cmyk:0;0;0;94").ShouldBe("hsv:0;0;5");
+            KernelColorConversionTools.ConvertFromCmykToHsv("cmyk:0;0;0;94").ShouldBe("hsv:0;0;5");
         }
 
         /// <summary>
@@ -521,7 +521,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromCmykNumbersToHsv()
         {
             Console.WriteLine("Converting 0, 0, 0, 94...");
-            KernelColorConversionTools.ConvertFromCmykToHsl(0, 0, 0, 94).ShouldBe("hsv:0;0;5");
+            KernelColorConversionTools.ConvertFromCmykToHsv(0, 0, 0, 94).ShouldBe("hsv:0;0;5");
         }
 
         /// <summary>
@@ -598,7 +598,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromCmySequenceToHsv()
         {
             Console.WriteLine("Converting 94;94;94...");
-            KernelColorConversionTools.ConvertFromCmyToHsl("cmy:94;94;94").ShouldBe("hsv:0;0;5");
+            KernelColorConversionTools.ConvertFromCmyToHsv("cmy:94;94;94").ShouldBe("hsv:0;0;5");
         }
 
         /// <summary>
@@ -609,7 +609,7 @@ namespace Nitrocid.Tests.ConsoleBase
         public void TestConvertFromCmyNumbersToHsv()
         {
             Console.WriteLine("Converting 94, 94, 94...");
-            KernelColorConversionTools.ConvertFromCmyToHsl(94, 94, 94).ShouldBe("hsv:0;0;5");
+            KernelColorConversionTools.ConvertFromCmyToHsv(94, 94, 94).ShouldBe("hsv:0;0;5");
         }
 
         /// <summary>
