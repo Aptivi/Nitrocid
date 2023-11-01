@@ -34,7 +34,7 @@ namespace Nitrocid.Tests.Misc.Probers
         [OneTimeSetUp]
         public void TestRegisterPlaceholder()
         {
-            PlaceParse.RegisterCustomPlaceholder("<greeting>", () => "Hello!");
+            PlaceParse.RegisterCustomPlaceholder("<greeting>", (_) => "Hello!");
             PlaceParse.IsPlaceholderRegistered("<greeting>").ShouldBeTrue();
             PlaceParse.IsPlaceholderBuiltin("<greeting>").ShouldBeFalse();
         }

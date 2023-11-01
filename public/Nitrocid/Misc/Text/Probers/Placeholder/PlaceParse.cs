@@ -39,6 +39,8 @@ using KS.Shell.ShellBase.Scripting;
 using Terminaux.Colors;
 using KS.Kernel;
 using KS.Files.Operations.Querying;
+using KS.Drivers;
+using System.Linq;
 
 namespace KS.Misc.Text.Probers.Placeholder
 {
@@ -47,46 +49,49 @@ namespace KS.Misc.Text.Probers.Placeholder
     /// </summary>
     public static class PlaceParse
     {
-        private readonly static Dictionary<string, Func<string>> customPlaceholders = new();
-        private readonly static Dictionary<string, Func<string>> placeholders = new()
+        private readonly static List<PlaceInfo> customPlaceholders = new();
+        private readonly static List<PlaceInfo> placeholders = new()
         {
-            { "<user>",                             () => UserManagement.CurrentUser.Username },
-            { "<ftpuser>",                          () => FTPShellCommon.FtpUser },
-            { "<ftpaddr>",                          () => FTPShellCommon.FtpSite },
-            { "<currentftpdirectory>",              () => FTPShellCommon.FtpCurrentRemoteDir },
-            { "<currentftplocaldirectory>",         () => FTPShellCommon.FtpCurrentDirectory },
-            { "<currentftplocaldirectoryname>",     () => !string.IsNullOrEmpty(FTPShellCommon.FtpCurrentDirectory) ? new DirectoryInfo(FTPShellCommon.FtpCurrentDirectory).Name : ""},
-            { "<sftpuser>",                         () => SFTPShellCommon.SFTPUser },
-            { "<sftpaddr>",                         () => SFTPShellCommon.SFTPSite },
-            { "<currentsftpdirectory>",             () => SFTPShellCommon.SFTPCurrentRemoteDir },
-            { "<currentsftplocaldirectory>",        () => SFTPShellCommon.SFTPCurrDirect },
-            { "<currentsftplocaldirectoryname>",    () => !string.IsNullOrEmpty(SFTPShellCommon.SFTPCurrDirect) ? new DirectoryInfo(SFTPShellCommon.SFTPCurrDirect).Name : ""},
-            { "<mailuser>",                         () => MailLogin.Authentication.UserName },
-            { "<mailaddr>",                         () => MailLogin.Authentication.Domain },
-            { "<currentmaildirectory>",             () => MailShellCommon.IMAP_CurrentDirectory },
-            { "<host>",                             () => NetworkTools.HostName },
-            { "<currentdirectory>",                 () => CurrentDirectory.CurrentDir },
-            { "<currentdirectoryname>",             () => !string.IsNullOrEmpty(CurrentDirectory.CurrentDir) ? new DirectoryInfo(CurrentDirectory.CurrentDir).Name : ""},
-            { "<shortdate>",                        () => TimeDateRenderers.RenderDate(FormatType.Short) },
-            { "<longdate>",                         () => TimeDateRenderers.RenderDate(FormatType.Long) },
-            { "<shorttime>",                        () => TimeDateRenderers.RenderTime(FormatType.Short) },
-            { "<longtime>",                         () => TimeDateRenderers.RenderTime(FormatType.Long) },
-            { "<date>",                                   TimeDateRenderers.RenderDate },
-            { "<time>",                                   TimeDateRenderers.RenderTime },
-            { "<timezone>",                         () => TimeZoneInfo.Local.StandardName },
-            { "<summertimezone>",                   () => TimeZoneInfo.Local.DaylightName },
-            { "<system>",                                 Environment.OSVersion.ToString },
-            { "<newline>",                          () => CharManager.NewLine },
-            { "<dollar>",                                 UserManagement.GetUserDollarSign },
-            { "<randomfile>",                             Getting.GetRandomFileName },
-            { "<randomfolder>",                           Getting.GetRandomFolderName },
-            { "<rid>",                                    KernelPlatform.GetCurrentRid },
-            { "<ridgeneric>",                             KernelPlatform.GetCurrentGenericRid },
-            { "<termemu>",                                KernelPlatform.GetTerminalEmulator },
-            { "<termtype>",                               KernelPlatform.GetTerminalType },
-            { "<f:reset>",                          () => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground },
-            { "<b:reset>",                          () => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground },
-            { "<uptime>",                           () => PowerManager.KernelUptime }
+            new PlaceInfo("user",                             (_) => UserManagement.CurrentUser.Username),
+            new PlaceInfo("ftpuser",                          (_) => FTPShellCommon.FtpUser),
+            new PlaceInfo("ftpaddr",                          (_) => FTPShellCommon.FtpSite),
+            new PlaceInfo("currentftpdirectory",              (_) => FTPShellCommon.FtpCurrentRemoteDir),
+            new PlaceInfo("currentftplocaldirectory",         (_) => FTPShellCommon.FtpCurrentDirectory),
+            new PlaceInfo("currentftplocaldirectoryname",     (_) => !string.IsNullOrEmpty(FTPShellCommon.FtpCurrentDirectory) ? new DirectoryInfo(FTPShellCommon.FtpCurrentDirectory).Name : ""),
+            new PlaceInfo("sftpuser",                         (_) => SFTPShellCommon.SFTPUser),
+            new PlaceInfo("sftpaddr",                         (_) => SFTPShellCommon.SFTPSite),
+            new PlaceInfo("currentsftpdirectory",             (_) => SFTPShellCommon.SFTPCurrentRemoteDir),
+            new PlaceInfo("currentsftplocaldirectory",        (_) => SFTPShellCommon.SFTPCurrDirect),
+            new PlaceInfo("currentsftplocaldirectoryname",    (_) => !string.IsNullOrEmpty(SFTPShellCommon.SFTPCurrDirect) ? new DirectoryInfo(SFTPShellCommon.SFTPCurrDirect).Name : ""),
+            new PlaceInfo("mailuser",                         (_) => MailLogin.Authentication.UserName),
+            new PlaceInfo("mailaddr",                         (_) => MailLogin.Authentication.Domain),
+            new PlaceInfo("currentmaildirectory",             (_) => MailShellCommon.IMAP_CurrentDirectory),
+            new PlaceInfo("host",                             (_) => NetworkTools.HostName),
+            new PlaceInfo("currentdirectory",                 (_) => CurrentDirectory.CurrentDir),
+            new PlaceInfo("currentdirectoryname",             (_) => !string.IsNullOrEmpty(CurrentDirectory.CurrentDir) ? new DirectoryInfo(CurrentDirectory.CurrentDir).Name : ""),
+            new PlaceInfo("shortdate",                        (_) => TimeDateRenderers.RenderDate(FormatType.Short)),
+            new PlaceInfo("longdate",                         (_) => TimeDateRenderers.RenderDate(FormatType.Long)),
+            new PlaceInfo("shorttime",                        (_) => TimeDateRenderers.RenderTime(FormatType.Short)),
+            new PlaceInfo("longtime",                         (_) => TimeDateRenderers.RenderTime(FormatType.Long)),
+            new PlaceInfo("date",                             (_) => TimeDateRenderers.RenderDate()),
+            new PlaceInfo("time",                             (_) => TimeDateRenderers.RenderTime()),
+            new PlaceInfo("timezone",                         (_) => TimeZoneInfo.Local.StandardName),
+            new PlaceInfo("summertimezone",                   (_) => TimeZoneInfo.Local.DaylightName),
+            new PlaceInfo("system",                           (_) => Environment.OSVersion.ToString()),
+            new PlaceInfo("newline",                          (_) => CharManager.NewLine),
+            new PlaceInfo("dollar",                           (_) => UserManagement.GetUserDollarSign()),
+            new PlaceInfo("randomfile",                       (_) => Getting.GetRandomFileName()),
+            new PlaceInfo("randomfolder",                     (_) => Getting.GetRandomFolderName()),
+            new PlaceInfo("rid",                              (_) => KernelPlatform.GetCurrentRid()),
+            new PlaceInfo("ridgeneric",                       (_) => KernelPlatform.GetCurrentGenericRid()),
+            new PlaceInfo("termemu",                          (_) => KernelPlatform.GetTerminalEmulator()),
+            new PlaceInfo("termtype",                         (_) => KernelPlatform.GetTerminalType()),
+            new PlaceInfo("f",                                (c) => new Color(c).VTSequenceForeground),
+            new PlaceInfo("b",                                (c) => new Color(c).VTSequenceBackground),
+            new PlaceInfo("fgreset",                          (_) => KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground),
+            new PlaceInfo("bgreset",                          (_) => KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground),
+            new PlaceInfo("uptime",                           (_) => PowerManager.KernelUptime),
+            new PlaceInfo("$",                                       UESHVariables.GetVariable),
         };
 
         /// <summary>
@@ -102,74 +107,33 @@ namespace KS.Misc.Text.Probers.Placeholder
             {
                 // Parse the text for the following placeholders:
                 DebugWriter.WriteDebug(DebugLevel.I, "Parsing text for placeholders...");
+                var placeMatches = DriverHandler.CurrentRegexpDriverLocal.Matches(text, /* lang=regex */ @"\<.*\>").ToArray();
 
-                // -> Common placeholders
-                foreach (string placeholder in placeholders.Keys)
+                // Get all the placeholder matches and replace them as appropriate
+                foreach (var placeMatch in placeMatches)
                 {
-                    if (text.Contains(placeholder))
+                    // Get the argument (if any)
+                    string place = placeMatch.Value;
+                    string arg = "";
+                    if (place.Contains(':'))
+                        arg = place[(place.IndexOf(':') + 1)..(place.Length - 1)];
+                    string placeNoArg = place.Replace($":{arg}>", ">");
+
+                    // Fetch a placeholder
+                    DebugWriter.WriteDebug(DebugLevel.I, "{0} placeholder found.", place);
+                    try
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "{0} placeholder found.", placeholder);
-                        var action = GetPlaceholderAction(placeholder);
-                        string result = action();
+                        // Execute the action
+                        var action = GetPlaceholderAction(placeNoArg);
+                        string result = action(arg);
                         DebugWriter.WriteDebug(DebugLevel.I, "Result: {0}", result);
-                        text = text.Replace(placeholder, result);
+                        text = text.Replace(place, result);
                     }
-                }
-
-                // -> Custom placeholders
-                foreach (string placeholder in customPlaceholders.Keys)
-                {
-                    if (text.Contains(placeholder))
+                    catch (Exception ex)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "{0} custom placeholder found.", placeholder);
-                        var action = GetPlaceholderAction(placeholder);
-                        string result = action();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Result: {0}", result);
-                        text = text.Replace(placeholder, result);
-                    }
-                }
-
-                // -> Foreground color placeholder
-                if (text.Contains("<f:"))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Foreground color placeholder found.");
-                    while (text.Contains("<f:"))
-                    {
-                        int StartForegroundIndex = text.IndexOf("<f:");
-                        int EndForegroundIndex = text[StartForegroundIndex..].IndexOf(">");
-                        string SequenceSubstring = text.Substring(StartForegroundIndex, EndForegroundIndex + 1);
-                        string PlainSequence = SequenceSubstring[3..^1];
-                        string VTSequence = new Color(PlainSequence).VTSequenceForeground;
-                        text = text.Replace(SequenceSubstring, VTSequence);
-                    }
-                }
-
-                // -> Background color placeholder
-                if (text.Contains("<b:"))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Background color placeholder found.");
-                    while (text.Contains("<b:"))
-                    {
-                        int StartBackgroundIndex = text.IndexOf("<b:");
-                        int EndBackgroundIndex = text[StartBackgroundIndex..].IndexOf(">");
-                        string SequenceSubstring = text.Substring(StartBackgroundIndex, EndBackgroundIndex + 1);
-                        string PlainSequence = SequenceSubstring[3..^1];
-                        string VTSequence = new Color(PlainSequence).VTSequenceBackground;
-                        text = text.Replace(SequenceSubstring, VTSequence);
-                    }
-                }
-
-                // -> UESH variable placeholder
-                if (text.Contains("<$"))
-                {
-                    DebugWriter.WriteDebug(DebugLevel.I, "UESH variable placeholder found.");
-                    while (text.Contains("<$"))
-                    {
-                        int StartShellVariableIndex = text.IndexOf("<$");
-                        int EndShellVariableIndex = text[StartShellVariableIndex..].IndexOf(">");
-                        string ShellVariableSubstring = text.Substring(StartShellVariableIndex, EndShellVariableIndex + 1);
-                        string PlainShellVariable = ShellVariableSubstring[1..^1];
-                        text = text.Replace(ShellVariableSubstring, UESHVariables.GetVariable(PlainShellVariable));
+                        // Leave the text and the placeholder alone in this case.
+                        DebugWriter.WriteDebug(DebugLevel.E, "Leaving placeholder alone because of failure: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
                     }
                 }
 
@@ -192,7 +156,7 @@ namespace KS.Misc.Text.Probers.Placeholder
         /// </summary>
         /// <param name="placeholder">Custom placeholder to register</param>
         /// <param name="placeholderAction">Action associated with the placeholder</param>
-        public static void RegisterCustomPlaceholder(string placeholder, Func<string> placeholderAction)
+        public static void RegisterCustomPlaceholder(string placeholder, Func<string, string> placeholderAction)
         {
             // Sanity checks
             if (string.IsNullOrEmpty(placeholder))
@@ -203,8 +167,11 @@ namespace KS.Misc.Text.Probers.Placeholder
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
             // Try to register
-            if (!customPlaceholders.ContainsKey(placeholder))
-                customPlaceholders.Add(placeholder, placeholderAction);
+            if (!IsPlaceholderRegistered(placeholder))
+            {
+                var place = new PlaceInfo(placeholder, placeholderAction);
+                customPlaceholders.Add(place);
+            }
         }
 
         /// <summary>
@@ -222,7 +189,8 @@ namespace KS.Misc.Text.Probers.Placeholder
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
             // Try to unregister
-            customPlaceholders.Remove(placeholder);
+            var place = GetPlaceholder(placeholder);
+            customPlaceholders.Remove(place);
         }
 
         /// <summary>
@@ -240,7 +208,7 @@ namespace KS.Misc.Text.Probers.Placeholder
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
             // Check to see if we have this placeholder
-            return placeholders.ContainsKey(placeholder);
+            return placeholders.Any((pi) => $"<{pi.Placeholder}>" == placeholder);
         }
 
         /// <summary>
@@ -258,14 +226,16 @@ namespace KS.Misc.Text.Probers.Placeholder
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
             // Check to see if we have this placeholder
-            return IsPlaceholderBuiltin(placeholder) || customPlaceholders.ContainsKey(placeholder);
+            return
+                IsPlaceholderBuiltin(placeholder) ||
+                customPlaceholders.Any((pi) => $"<{pi.Placeholder}>" == placeholder);
         }
 
         /// <summary>
-        /// Gets a placeholder action from the placeholder name
+        /// Gets a placeholder from the placeholder name
         /// </summary>
         /// <param name="placeholder">Placeholder to query</param>
-        public static Func<string> GetPlaceholderAction(string placeholder)
+        public static PlaceInfo GetPlaceholder(string placeholder)
         {
             // Sanity checks
             if (string.IsNullOrEmpty(placeholder))
@@ -278,8 +248,26 @@ namespace KS.Misc.Text.Probers.Placeholder
             // Try to register
             return
                 IsPlaceholderBuiltin(placeholder) ?
-                placeholders[placeholder] :
-                customPlaceholders[placeholder];
+                placeholders.First((pi) => $"<{pi.Placeholder}>" == placeholder) :
+                customPlaceholders.First((pi) => $"<{pi.Placeholder}>" == placeholder);
+        }
+
+        /// <summary>
+        /// Gets a placeholder action from the placeholder name
+        /// </summary>
+        /// <param name="placeholder">Placeholder to query</param>
+        public static Func<string, string> GetPlaceholderAction(string placeholder)
+        {
+            // Sanity checks
+            if (string.IsNullOrEmpty(placeholder))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
+            if (!IsPlaceholderRegistered(placeholder))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder action may not be null"));
+            if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
+                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
+
+            // Try to register
+            return GetPlaceholder(placeholder).PlaceholderAction;
         }
     }
 }
