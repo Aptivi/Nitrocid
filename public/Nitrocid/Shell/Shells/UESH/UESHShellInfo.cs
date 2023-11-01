@@ -1440,6 +1440,11 @@ namespace KS.Shell.Shells.UESH
                             {
                                 OptionalizeLastRequiredArguments = 1,
                                 AcceptsValues = false
+                            }),
+                            new SwitchInfo("selection", /* Localizable */ "Opens an interactive TUI in which you'll be able to see the world clock in real time", new SwitchOptions()
+                            {
+                                OptionalizeLastRequiredArguments = 1,
+                                AcceptsValues = false
                             })
                         })
                     }, new ShowTdZoneCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)

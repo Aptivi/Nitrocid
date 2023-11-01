@@ -20,10 +20,13 @@
 using System;
 using System.Linq;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Time.Timezones;
 using KS.Languages;
+using KS.Misc.Interactives;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -46,6 +49,10 @@ namespace KS.Shell.Shells.UESH.Commands
     /// <term>-all</term>
     /// <description>Displays all timezones and their times and dates</description>
     /// </item>
+    /// <item>
+    /// <term>-selection</term>
+    /// <description>Opens an interactive TUI in which you'll be able to see the world clock in real time</description>
+    /// </item>
     /// </list>
     /// <br></br>
     /// </remarks>
@@ -54,13 +61,17 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var ShowAll = false;
-            if (parameters.SwitchesList.Contains("-all"))
-                ShowAll = true;
-            if (ShowAll)
-                TimeZoneRenderers.ShowAllTimeZones();
-            else if (!TimeZoneRenderers.ShowTimeZones(parameters.ArgumentsList[0]))
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
+            bool ShowAll = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-all");
+            bool useTui = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-selection");
+            if (useTui)
+                InteractiveTuiTools.OpenInteractiveTui(new TimeZoneShowCli());
+            else
+            {
+                if (ShowAll)
+                    TimeZoneRenderers.ShowAllTimeZones();
+                else if (!TimeZoneRenderers.ShowTimeZones(parameters.ArgumentsList[0]))
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Timezone is specified incorrectly."), true, KernelColorType.Error);
+            }
             return 0;
         }
 
