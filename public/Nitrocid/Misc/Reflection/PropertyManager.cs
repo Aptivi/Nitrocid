@@ -19,7 +19,6 @@
 
 using System;
 using System.Collections.Generic;
-using System.Linq.Expressions;
 using System.Reflection;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
@@ -32,9 +31,6 @@ namespace KS.Misc.Reflection
     /// </summary>
     public static class PropertyManager
     {
-
-        private static readonly Dictionary<string, Action<object>> cachedSetters = new();
-        private static readonly Dictionary<string, Func<object>> cachedGetters = new();
 
         /// <summary>
         /// Sets the value of a property to the new value dynamically
@@ -62,9 +58,11 @@ namespace KS.Misc.Reflection
             // Set the variable if found
             if (TargetProperty is not null)
             {
-                // Expressions are claimed that it's faster than Reflection, but let's see!
+                // The "obj" description says this: "The object whose field value will be set."
+                // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
+                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
-                ExpressionSetPropertyValue(TargetProperty, VariableValue);
+                TargetProperty.SetValue(Variable, VariableValue);
             }
             else
             {
@@ -72,32 +70,6 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
-        }
-
-        private static void ExpressionSetPropertyValue(PropertyInfo propertyInfo, object value)
-        {
-            if (propertyInfo is null)
-                throw new ArgumentNullException(nameof(propertyInfo));
-            if (value is null)
-                throw new ArgumentNullException(nameof(value));
-
-            var finalValue = Convert.ChangeType(value, propertyInfo.PropertyType);
-            string cachedName = $"{propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
-            if (cachedSetters.ContainsKey(cachedName))
-            {
-                var cachedExpression = cachedSetters[cachedName];
-                cachedExpression(finalValue);
-                return;
-            }
-
-            var argumentParam = Expression.Parameter(typeof(object));
-            var convExpr = Expression.Convert(argumentParam, propertyInfo.PropertyType);
-            var callExpr = Expression.Call(propertyInfo.GetSetMethod(), convExpr);
-
-            var expression = Expression.Lambda<Action<object>>(callExpr, argumentParam).Compile();
-
-            cachedSetters.Add(cachedName, expression);
-            expression(finalValue);
         }
 
         /// <summary>
@@ -128,9 +100,11 @@ namespace KS.Misc.Reflection
             // Set the variable if found
             if (TargetProperty is not null)
             {
-                // Expressions are claimed that it's faster than Reflection, but let's see!
+                // The "obj" description says this: "The object whose field value will be returned."
+                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
+                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
-                ExpressionSetPropertyValueInstance(instance, TargetProperty, VariableValue);
+                TargetProperty.SetValue(instance, VariableValue);
             }
             else
             {
@@ -138,35 +112,6 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
-        }
-
-        private static void ExpressionSetPropertyValueInstance<T>(T instance, PropertyInfo propertyInfo, object value)
-        {
-            if (instance is null)
-                throw new ArgumentNullException(nameof(instance));
-            if (value is null)
-                throw new ArgumentNullException(nameof(value));
-
-            var type = instance.GetType();
-
-            var finalValue = Convert.ChangeType(value, propertyInfo.PropertyType);
-            string cachedName = $"{type.FullName} - {propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
-            if (cachedSetters.ContainsKey(cachedName))
-            {
-                var cachedExpression = cachedSetters[cachedName];
-                cachedExpression(finalValue);
-                return;
-            }
-
-            var instanceParam = Expression.Parameter(type);
-            var argumentParam = Expression.Parameter(typeof(object));
-
-            var convExpr = Expression.Convert(argumentParam, propertyInfo.PropertyType);
-            var callExpr = Expression.Call(instanceParam, propertyInfo.GetSetMethod(), convExpr);
-
-            var expression = Expression.Lambda<Action<T, object>>(callExpr, instanceParam, argumentParam).Compile();
-
-            expression(instance, finalValue);
         }
 
         /// <summary>
@@ -186,9 +131,11 @@ namespace KS.Misc.Reflection
             // Set the variable if found
             if (TargetProperty is not null)
             {
-                // Expressions are claimed that it's faster than Reflection, but let's see!
+                // The "obj" description says this: "The object whose field value will be returned."
+                // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
+                // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
-                ExpressionSetPropertyValueInstanceExplicit(instance, TargetProperty, VariableValue);
+                TargetProperty.SetValue(instance, VariableValue);
             }
             else
             {
@@ -196,35 +143,6 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
-        }
-
-        private static void ExpressionSetPropertyValueInstanceExplicit(object instance, PropertyInfo propertyInfo, object value)
-        {
-            if (instance is null)
-                throw new ArgumentNullException(nameof(instance));
-            if (value is null)
-                throw new ArgumentNullException(nameof(value));
-
-            var type = instance.GetType();
-
-            var finalValue = Convert.ChangeType(value, propertyInfo.PropertyType);
-            string cachedName = $"{type.FullName} - {propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
-            if (cachedSetters.ContainsKey(cachedName))
-            {
-                var cachedExpression = cachedSetters[cachedName];
-                cachedExpression(finalValue);
-                return;
-            }
-
-            var instanceParam = Expression.Parameter(type);
-            var argumentParam = Expression.Parameter(typeof(object));
-
-            var convExpr = Expression.Convert(argumentParam, propertyInfo.PropertyType);
-            var callExpr = Expression.Call(instanceParam, propertyInfo.GetSetMethod(), convExpr);
-
-            var expression = Expression.Lambda(callExpr, instanceParam, argumentParam).Compile();
-
-            expression.DynamicInvoke(instance, finalValue);
         }
 
         /// <summary>
@@ -260,7 +178,7 @@ namespace KS.Misc.Reflection
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
-                return ExpressionGetPropertyValue(TargetProperty);
+                return TargetProperty.GetValue(Variable);
             }
             else
             {
@@ -268,27 +186,6 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
-        }
-
-        private static object ExpressionGetPropertyValue(PropertyInfo propertyInfo)
-        {
-            if (propertyInfo is null)
-                throw new ArgumentNullException(nameof(propertyInfo));
-
-            string cachedName = $"{propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
-            if (cachedGetters.ContainsKey(cachedName))
-            {
-                var cachedExpression = cachedGetters[cachedName];
-                return cachedExpression();
-            }
-
-            var callExpr = Expression.Call(propertyInfo.GetGetMethod());
-            var convExpr = Expression.Convert(callExpr, typeof(object));
-
-            var expression = Expression.Lambda<Func<object>>(convExpr).Compile();
-
-            cachedGetters.Add(cachedName, expression);
-            return expression();
         }
 
         /// <summary>
@@ -327,7 +224,7 @@ namespace KS.Misc.Reflection
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
-                return ExpressionGetPropertyValueInstance(instance, TargetProperty);
+                return TargetProperty.GetValue(instance);
             }
             else
             {
@@ -335,29 +232,6 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
-        }
-
-        private static object ExpressionGetPropertyValueInstance<T>(T instance, PropertyInfo propertyInfo)
-        {
-            if (instance is null)
-                throw new ArgumentNullException(nameof(instance));
-
-            var type = instance.GetType();
-            string cachedName = $"{type.FullName} - {propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
-            if (cachedGetters.ContainsKey(cachedName))
-            {
-                var cachedExpression = cachedGetters[cachedName];
-                return cachedExpression();
-            }
-
-            var instanceParam = Expression.Parameter(type);
-
-            var callExpr = Expression.Call(instanceParam, propertyInfo.GetGetMethod());
-            var convExpr = Expression.Convert(callExpr, typeof(object));
-
-            var expression = Expression.Lambda<Func<T, object>>(convExpr, instanceParam).Compile();
-
-            return expression(instance);
         }
 
         /// <summary>
@@ -381,7 +255,7 @@ namespace KS.Misc.Reflection
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
                 DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
-                return ExpressionGetPropertyValueInstanceExplicit(Convert.ChangeType(instance, VariableType), TargetProperty);
+                return TargetProperty.GetValue(Convert.ChangeType(instance, VariableType));
             }
             else
             {
@@ -389,29 +263,6 @@ namespace KS.Misc.Reflection
                 DebugWriter.WriteDebug(DebugLevel.I, "Property {0} not found.", Variable);
                 throw new KernelException(KernelExceptionType.NoSuchReflectionVariable, Translate.DoTranslation("Variable {0} is not found on any of the modules."), Variable);
             }
-        }
-
-        private static object ExpressionGetPropertyValueInstanceExplicit(object instance, PropertyInfo propertyInfo)
-        {
-            if (instance is null)
-                throw new ArgumentNullException(nameof(instance));
-
-            var type = instance.GetType();
-            string cachedName = $"{type.FullName} - {propertyInfo.DeclaringType.FullName} - {propertyInfo.Name}";
-            if (cachedGetters.ContainsKey(cachedName))
-            {
-                var cachedExpression = cachedGetters[cachedName];
-                return cachedExpression();
-            }
-
-            var instanceParam = Expression.Parameter(type);
-
-            var callExpr = Expression.Call(instanceParam, propertyInfo.GetGetMethod());
-            var convExpr = Expression.Convert(callExpr, typeof(object));
-
-            var expression = Expression.Lambda(convExpr, instanceParam).Compile();
-
-            return expression.DynamicInvoke(instance);
         }
 
         /// <summary>
@@ -520,7 +371,7 @@ namespace KS.Misc.Reflection
             // Get the properties and get their values
             foreach (PropertyInfo VarProperty in Properties)
             {
-                var PropertyValue = ExpressionGetPropertyValue(VarProperty);
+                var PropertyValue = VarProperty.GetValue(VariableType);
                 PropertyDict.Add(VarProperty.Name, PropertyValue);
             }
             return PropertyDict;
