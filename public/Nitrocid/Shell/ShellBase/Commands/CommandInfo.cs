@@ -19,7 +19,6 @@
 
 using KS.Languages;
 using KS.Shell.ShellBase.Arguments;
-using KS.Shell.ShellBase.Shells;
 using System;
 
 namespace KS.Shell.ShellBase.Commands

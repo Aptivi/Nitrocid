@@ -108,7 +108,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.TimeInfo", 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.InternetRadioInfo", "public\Nitrocid.Addons\Nitrocid.Extras.InternetRadioInfo\Nitrocid.Extras.InternetRadioInfo.csproj", "{05841EA5-C60B-4B56-B878-255DB57AF0F5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.RetroKS", "public\Nitrocid.Addons\Nitrocid.Extras.RetroKS\Nitrocid.Extras.RetroKS.csproj", "{462CC668-4084-4A00-A6EE-13FE2A1BDF2D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.RetroKS", "public\Nitrocid.Addons\Nitrocid.Extras.RetroKS\Nitrocid.Extras.RetroKS.csproj", "{462CC668-4084-4A00-A6EE-13FE2A1BDF2D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.Caffeine", "public\Nitrocid.Addons\Nitrocid.Extras.Caffeine\Nitrocid.Extras.Caffeine.csproj", "{53B6F4EB-1D44-4374-AE80-A62EF30E4512}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -268,6 +270,10 @@ Global
 		{462CC668-4084-4A00-A6EE-13FE2A1BDF2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{462CC668-4084-4A00-A6EE-13FE2A1BDF2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{462CC668-4084-4A00-A6EE-13FE2A1BDF2D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{53B6F4EB-1D44-4374-AE80-A62EF30E4512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{53B6F4EB-1D44-4374-AE80-A62EF30E4512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{53B6F4EB-1D44-4374-AE80-A62EF30E4512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{53B6F4EB-1D44-4374-AE80-A62EF30E4512}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -312,6 +318,7 @@ Global
 		{F8ECF591-B6B0-4F0D-A5A9-8D7031FCB931} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{05841EA5-C60B-4B56-B878-255DB57AF0F5} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{462CC668-4084-4A00-A6EE-13FE2A1BDF2D} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{53B6F4EB-1D44-4374-AE80-A62EF30E4512} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

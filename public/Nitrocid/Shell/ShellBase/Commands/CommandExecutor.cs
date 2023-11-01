@@ -37,7 +37,6 @@ using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Switches;
 using KS.Drivers.Console.Bases;
 using KS.Shell.ShellBase.Help;
-using System.Runtime;
 using System.Threading.Tasks;
 
 namespace KS.Shell.ShellBase.Commands

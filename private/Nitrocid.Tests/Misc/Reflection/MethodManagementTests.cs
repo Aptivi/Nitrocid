@@ -19,12 +19,9 @@
 
 using KS.Languages;
 using KS.Misc.Reflection;
-using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
 using NUnit.Framework;
 using Shouldly;
-using System;
 using System.Collections.Generic;
 using System.Globalization;
 
