@@ -85,6 +85,7 @@ namespace Nitrocid.ScreensaverPacks
             { "newyear", new NewYearDisplay() },
             { "noise", new NoiseDisplay() },
             { "numberscatter", new NumberScatterDisplay() },
+            { "particles", new ParticlesDisplay() },
             { "progressclock", new ProgressClockDisplay() },
             { "pulse", new PulseDisplay() },
             { "ramp", new RampDisplay() },

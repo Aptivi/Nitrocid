@@ -5541,5 +5541,95 @@
                 "MaximumValue": 100
             }
         ]
+    },
+    {
+        "Name": "Particles",
+        "Desc": "Colorful particles!",
+        "Keys": [
+            {
+                "Name": "Activate true colors",
+                "Type": "SBoolean",
+                "Variable": "ParticlesTrueColor",
+                "Description": "Activates the true color support."
+            },
+            {
+                "Name": "Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "ParticlesDelay",
+                "Description": "How many milliseconds to wait before making the next write?"
+            },
+            {
+                "Name": "Particle density",
+                "Type": "SIntSlider",
+                "Variable": "ParticlesDensity",
+                "Description": "How dense are the particles?",
+                "MinimumValue": 0,
+                "MaximumValue": 100
+            },
+            {
+                "Name": "Minimum red color level",
+                "Type": "SIntSlider",
+                "Variable": "ParticlesMinimumRedColorLevel",
+                "Description": "Minimum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum green color level",
+                "Type": "SIntSlider",
+                "Variable": "ParticlesMinimumGreenColorLevel",
+                "Description": "Minimum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "ParticlesMinimumBlueColorLevel",
+                "Description": "Minimum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Minimum color level",
+                "Type": "SIntSlider",
+                "Variable": "ParticlesMinimumColorLevel",
+                "Description": "Minimum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum red color level",
+                "Type": "SIntSlider",
+                "Variable": "ParticlesMaximumRedColorLevel",
+                "Description": "Maximum red color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum green color level",
+                "Type": "SIntSlider",
+                "Variable": "ParticlesMaximumGreenColorLevel",
+                "Description": "Maximum green color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum blue color level",
+                "Type": "SIntSlider",
+                "Variable": "ParticlesMaximumBlueColorLevel",
+                "Description": "Maximum blue color level. The minimum accepted value is 0 and the maximum accepted value is 255.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            },
+            {
+                "Name": "Maximum color level",
+                "Type": "SIntSlider",
+                "Variable": "ParticlesMaximumColorLevel",
+                "Description": "Maximum color level. The minimum accepted value is 0 and the maximum accepted value is 255 for 255 colors or 16 for 16 colors.",
+                "MinimumValue": 0,
+                "MaximumValue": 255
+            }
+        ]
     }
 ]

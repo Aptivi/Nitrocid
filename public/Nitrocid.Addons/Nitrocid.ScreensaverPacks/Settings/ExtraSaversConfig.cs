@@ -2988,5 +2988,49 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [HueBackGradient] How light is the color?
         /// </summary>
         public int HueBackGradientLuminance { get; set; } = 50;
+        /// <summary>
+        /// [Particles] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool ParticlesTrueColor { get; set; } = true;
+        /// <summary>
+        /// [Particles] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int ParticlesDelay { get; set; } = 1;
+        /// <summary>
+        /// [Particles] How dense are the particles?
+        /// </summary>
+        public int ParticlesDensity { get; set; } = 25;
+        /// <summary>
+        /// [Particles] The minimum red color level (true color)
+        /// </summary>
+        public int ParticlesMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Particles] The minimum green color level (true color)
+        /// </summary>
+        public int ParticlesMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Particles] The minimum blue color level (true color)
+        /// </summary>
+        public int ParticlesMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Particles] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int ParticlesMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [Particles] The maximum red color level (true color)
+        /// </summary>
+        public int ParticlesMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Particles] The maximum green color level (true color)
+        /// </summary>
+        public int ParticlesMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Particles] The maximum blue color level (true color)
+        /// </summary>
+        public int ParticlesMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Particles] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int ParticlesMaximumColorLevel { get; set; } = 255;
     }
 }
