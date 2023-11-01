@@ -141,11 +141,6 @@ namespace KS.Kernel.Starting
                 // Initialize journal path
                 JournalManager.JournalPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Journaling)), Paths.GetKernelPath(KernelPathType.Journaling));
 
-                // Download debug symbols if not found (loads automatically, useful for debugging problems and stack traces)
-                if (KernelEntry.TalkativePreboot)
-                    SplashReport.ReportProgress(Translate.DoTranslation("Downloading debug symbols..."));
-                DebugSymbolsTools.CheckDebugSymbols();
-
                 // Initialize custom languages
                 if (KernelEntry.TalkativePreboot)
                     SplashReport.ReportProgress(Translate.DoTranslation("Loading custom languages..."));

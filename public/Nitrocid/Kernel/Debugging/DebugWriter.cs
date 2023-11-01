@@ -136,14 +136,14 @@ namespace KS.Kernel.Debugging
                     // Try to debug...
                     try
                     {
-                        var STrace = new DebugStackFrame();
+                        var STrace = new DebugStackFrameBasic();
                         StringBuilder message = new();
 
                         // Descend a frame until we're out of this class
                         int unwound = 0;
                         while (STrace.RoutinePath.Contains(nameof(DebugWriter)))
                         {
-                            STrace = new DebugStackFrame(unwound);
+                            STrace = new DebugStackFrameBasic(unwound);
                             unwound++;
                         }
 
@@ -155,29 +155,21 @@ namespace KS.Kernel.Debugging
                         string[] texts = text.Split('\n');
                         foreach (string splitText in texts)
                         {
-                            string routineName = STrace.RoutineName;
                             string routinePath = STrace.RoutinePath;
-                            string fileName = STrace.RoutineFileName;
-                            int lineNum = STrace.RoutineLineNumber;
                             
                             // Check to see if source file name is not empty.
-                            if (STrace.RoutineFileName is not null & !(STrace.RoutineLineNumber == 0))
+                            if (routinePath != lastRoutinePath)
                             {
-                                // Show stack information
-                                if (routinePath != lastRoutinePath)
-                                {
-                                    message.Append('\n');
-                                    message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} ");
-                                    message.Append($"({routineName} - {fileName})\n");
-                                    message.Append(new string('-', message.Length - 2));
-                                    message.Append($"\n\n");
-                                }
-                                message.Append($"[line: {lineNum,5}] [{Level}] : {splitText}\n");
-                                lastRoutinePath = routinePath;
+                                message.Append('\n');
+                                message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} ");
+                                message.Append($"({routinePath})\n");
+                                message.Append(new string('-', message.Length - 2));
+                                message.Append($"\n\n");
                             }
-                            else
-                                // Rare case, unless debug symbol is not found.
-                                message.Append($"{TimeDateTools.KernelDateTime.ToShortDateString()} {TimeDateTools.KernelDateTime.ToShortTimeString()} [{Level}] {splitText}\n");
+
+                            // Show stack information
+                            message.Append($"[{Level}] : {splitText}\n");
+                            lastRoutinePath = routinePath;
                         }
 
                         // Debug to file and all connected debug devices (raw mode). The reason for the \r\n is that because
