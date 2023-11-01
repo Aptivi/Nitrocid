@@ -92,6 +92,10 @@ namespace KS.ConsoleBase.Themes
         public bool IsExpired =>
             IsEvent && (TimeDateTools.KernelDateTime < Start || TimeDateTools.KernelDateTime > End);
         /// <summary>
+        /// The category in which the theme is categorized
+        /// </summary>
+        public ThemeCategory Category { get; }
+        /// <summary>
         /// Whether the theme description is localizable (Only set this to true on internal Nitrocid KS themes)
         /// </summary>
         public bool Localizable =>
@@ -154,6 +158,7 @@ namespace KS.ConsoleBase.Themes
             Name = metadata.Name;
             Description = metadata.Description;
             TrueColorRequired = ThemeTools.IsTrueColorRequired(ThemeColors);
+            Category = metadata.Category;
             localizable = metadata.Localizable;
 
             // Parse event-related info

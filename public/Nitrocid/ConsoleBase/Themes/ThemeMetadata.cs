@@ -39,6 +39,8 @@ namespace KS.ConsoleBase.Themes
         private readonly int endDay;
         [JsonProperty(nameof(Calendar))]
         private readonly string calendar;
+        [JsonProperty(nameof(Category))]
+        private readonly ThemeCategory category;
         [JsonProperty(nameof(Localizable))]
         private readonly bool localizable;
 
@@ -67,11 +69,14 @@ namespace KS.ConsoleBase.Themes
         public string Calendar =>
             calendar ?? "Gregorian";
         [JsonIgnore]
+        public ThemeCategory Category =>
+            category;
+        [JsonIgnore]
         public bool Localizable =>
             localizable;
 
         [JsonConstructor]
-        internal ThemeMetadata(string name, string description, bool isEvent, int startMonth, int startDay, int endMonth, int endDay, string calendar, bool localizable)
+        internal ThemeMetadata(string name, string description, bool isEvent, int startMonth, int startDay, int endMonth, int endDay, string calendar, ThemeCategory category, bool localizable)
         {
             this.name = name;
             this.description = description;
@@ -81,6 +86,7 @@ namespace KS.ConsoleBase.Themes
             this.endMonth = endMonth;
             this.endDay = endDay;
             this.calendar = calendar;
+            this.category = category;
             this.localizable = localizable;
         }
     }

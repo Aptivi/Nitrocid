@@ -54,6 +54,16 @@ namespace KS.ConsoleBase.Themes
             new(themes);
 
         /// <summary>
+        /// Gets the installed themes by category
+        /// </summary>
+        /// <param name="category">Category to look for themes</param>
+        /// <returns>List of installed themes and their <see cref="ThemeInfo"/> instances</returns>
+        public static Dictionary<string, ThemeInfo> GetInstalledThemesByCategory(ThemeCategory category) =>
+            themes
+                .Where((kvp) => kvp.Value.Category == category)
+                .ToDictionary((kvp) => kvp.Key, (kvp) => kvp.Value);
+
+        /// <summary>
         /// Gets the theme information
         /// </summary>
         /// <param name="theme">Theme name</param>

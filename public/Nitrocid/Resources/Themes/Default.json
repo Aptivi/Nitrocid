@@ -2,7 +2,8 @@
     "Metadata": {
         "Name": "Default",
         "Description": "The default theme for the kernel",
-        "Localizable": true
+        "Localizable": true,
+        "Category": "Standard"
     },
     "InputColor": "15",
     "LicenseColor": "15",
