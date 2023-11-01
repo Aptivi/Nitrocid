@@ -56,6 +56,10 @@ namespace KS.Misc.Interactives
             osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
 
         /// <inheritdoc/>
+        public override int RefreshInterval =>
+            3000;
+
+        /// <inheritdoc/>
         public override string GetInfoFromItem(object item)
         {
             if (osThreadMode)
