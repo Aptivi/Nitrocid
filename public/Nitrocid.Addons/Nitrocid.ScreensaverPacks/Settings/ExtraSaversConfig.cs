@@ -2085,42 +2085,6 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// </summary>
         public int GradientMaximumBlueColorLevelEnd { get; set; } = 255;
         /// <summary>
-        /// [Lightspeed] Enable color cycling
-        /// </summary>
-        public bool LightspeedCycleColors { get; set; }
-        /// <summary>
-        /// [Lightspeed] The minimum red color level (true color)
-        /// </summary>
-        public int LightspeedMinimumRedColorLevel { get; set; } = 0;
-        /// <summary>
-        /// [Lightspeed] The minimum green color level (true color)
-        /// </summary>
-        public int LightspeedMinimumGreenColorLevel { get; set; } = 0;
-        /// <summary>
-        /// [Lightspeed] The minimum blue color level (true color)
-        /// </summary>
-        public int LightspeedMinimumBlueColorLevel { get; set; } = 0;
-        /// <summary>
-        /// [Lightspeed] The minimum color level (255 colors or 16 colors)
-        /// </summary>
-        public int LightspeedMinimumColorLevel { get; set; } = 0;
-        /// <summary>
-        /// [Lightspeed] The maximum red color level (true color)
-        /// </summary>
-        public int LightspeedMaximumRedColorLevel { get; set; } = 255;
-        /// <summary>
-        /// [Lightspeed] The maximum green color level (true color)
-        /// </summary>
-        public int LightspeedMaximumGreenColorLevel { get; set; } = 255;
-        /// <summary>
-        /// [Lightspeed] The maximum blue color level (true color)
-        /// </summary>
-        public int LightspeedMaximumBlueColorLevel { get; set; } = 255;
-        /// <summary>
-        /// [Lightspeed] The maximum color level (255 colors or 16 colors)
-        /// </summary>
-        public int LightspeedMaximumColorLevel { get; set; } = 255;
-        /// <summary>
         /// [Starfield] How many milliseconds to wait before making the next write?
         /// </summary>
         public int StarfieldDelay { get; set; } = 10;

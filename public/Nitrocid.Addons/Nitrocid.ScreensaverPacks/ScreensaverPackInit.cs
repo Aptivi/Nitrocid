@@ -76,7 +76,6 @@ namespace Nitrocid.ScreensaverPacks
             { "letterscatter", new LetterScatterDisplay() },
             { "lighter", new LighterDisplay() },
             { "lightning", new LightningDisplay() },
-            { "lightspeed", new LightspeedDisplay() },
             { "lines", new LinesDisplay() },
             { "linotypo", new LinotypoDisplay() },
             { "marquee", new MarqueeDisplay() },
