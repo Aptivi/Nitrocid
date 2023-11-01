@@ -41,7 +41,6 @@ namespace KS.Kernel.Starting
             {
                 SplashManager.BeginSplashOut(SplashManager.CurrentSplashContext);
                 WelcomeMessage.ShowDevelopmentDisclaimer();
-                WelcomeMessage.ShowDotnet7Disclaimer();
                 SplashManager.EndSplashOut(SplashManager.CurrentSplashContext);
             }
 

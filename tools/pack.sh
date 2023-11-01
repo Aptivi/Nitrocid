@@ -29,9 +29,9 @@ fi
 
 # Pack binary
 echo Packing binary...
-cd "../public/Nitrocid/KSBuild/net7.0/" && "$zippath" -r /tmp/$ksversion-bin.zip . && cd -
-cd "../public/Nitrocid/KSBuild/net7.0/" && "$zippath" -r /tmp/$ksversion-bin-lite.zip . -x "./Addons/*" && cd -
-cd "../public/Nitrocid/KSBuild/net7.0/Addons/" && "$zippath" -r /tmp/$ksversion-addons.zip . && cd -
+cd "../public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$ksversion-bin.zip . && cd -
+cd "../public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$ksversion-bin-lite.zip . -x "./Addons/*" && cd -
+cd "../public/Nitrocid/KSBuild/net8.0/Addons/" && "$zippath" -r /tmp/$ksversion-addons.zip . && cd -
 cd "../public/Nitrocid/KSBuild/netstandard2.0/" && "$zippath" -r /tmp/$ksversion-analyzers.zip . && cd -
 if [ ! $? == 0 ]; then
 	echo Packing failed.
@@ -43,6 +43,6 @@ mv /tmp/$ksversion-bin.zip .
 mv /tmp/$ksversion-bin-lite.zip .
 mv /tmp/$ksversion-addons.zip .
 mv /tmp/$ksversion-analyzers.zip .
-cp "../public/Nitrocid/KSBuild/net7.0/Nitrocid.pdb" ./$ksversion.pdb
+cp "../public/Nitrocid/KSBuild/net8.0/Nitrocid.pdb" ./$ksversion.pdb
 echo Build and pack successful.
 exit 0

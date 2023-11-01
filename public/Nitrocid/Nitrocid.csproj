@@ -26,7 +26,7 @@
 
   <!-- KS General Information -->
   <PropertyGroup>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
+    <TargetFramework>net6.0</TargetFramework>
     <DebugSymbols>true</DebugSymbols>
     <DefineTrace>true</DefineTrace>
     <PlatformTarget>AnyCPU</PlatformTarget>

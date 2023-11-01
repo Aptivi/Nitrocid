@@ -10,7 +10,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath Condition=" '$(TargetFramework)' != '' ">..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.ToDoList</OutputPath>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.ToDoList</OutputPath>
     <Description>Nitrocid KS Extras - To-do List</Description>
     <AssemblyTitle>Nitrocid KS Extras - To-do List</AssemblyTitle>
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
@@ -19,7 +20,6 @@
     <Version>0.1.0</Version>
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>

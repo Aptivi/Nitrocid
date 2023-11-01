@@ -10,7 +10,8 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <OutputPath Condition=" '$(TargetFramework)' != '' ">..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Forecast</OutputPath>
+    <TargetFramework>net6.0</TargetFramework>
+    <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.Forecast</OutputPath>
     <Description>Nitrocid KS Extras - Forecast</Description>
     <AssemblyTitle>Nitrocid KS Extras - Forecast</AssemblyTitle>
     <Copyright>Copyright © Aptivi 2018 - 2023</Copyright>
@@ -19,7 +20,6 @@
     <Version>0.1.0</Version>
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
-    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <SignAssembly>True</SignAssembly>
