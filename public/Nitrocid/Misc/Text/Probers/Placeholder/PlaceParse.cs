@@ -154,7 +154,7 @@ namespace KS.Misc.Text.Probers.Placeholder
         /// <summary>
         /// Registers a custom placeholder
         /// </summary>
-        /// <param name="placeholder">Custom placeholder to register</param>
+        /// <param name="placeholder">Custom placeholder to register (may be without the &lt; and the &gt; marks)</param>
         /// <param name="placeholderAction">Action associated with the placeholder</param>
         public static void RegisterCustomPlaceholder(string placeholder, Func<string, string> placeholderAction)
         {
@@ -163,11 +163,9 @@ namespace KS.Misc.Text.Probers.Placeholder
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder may not be null"));
             if (placeholderAction is null)
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder action may not be null"));
-            if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
-                throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
             // Try to register
-            if (!IsPlaceholderRegistered(placeholder))
+            if (!IsPlaceholderRegistered($"<{placeholder}>"))
             {
                 var place = new PlaceInfo(placeholder, placeholderAction);
                 customPlaceholders.Add(place);
@@ -177,7 +175,7 @@ namespace KS.Misc.Text.Probers.Placeholder
         /// <summary>
         /// Unregisters a custom placeholder
         /// </summary>
-        /// <param name="placeholder">Custom placeholder to unregister</param>
+        /// <param name="placeholder">Custom placeholder to unregister (should be with the &lt; and the &gt; marks)</param>
         public static void UnregisterCustomPlaceholder(string placeholder)
         {
             // Sanity checks
@@ -196,7 +194,7 @@ namespace KS.Misc.Text.Probers.Placeholder
         /// <summary>
         /// Checks to see whether the placeholder is built in
         /// </summary>
-        /// <param name="placeholder">Placeholder to query</param>
+        /// <param name="placeholder">Placeholder to query (should be with the &lt; and the &gt; marks)</param>
         /// <returns>True if the placeholder is in the list of built-in placeholders</returns>
         /// <exception cref="KernelException"></exception>
         public static bool IsPlaceholderBuiltin(string placeholder)
@@ -208,13 +206,14 @@ namespace KS.Misc.Text.Probers.Placeholder
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
             // Check to see if we have this placeholder
-            return placeholders.Any((pi) => $"<{pi.Placeholder}>" == placeholder);
+            string placeNoArg = StripPlaceholderArgs(placeholder);
+            return placeholders.Any((pi) => $"<{pi.Placeholder}>" == placeNoArg);
         }
 
         /// <summary>
         /// Checks to see whether the placeholder is registered
         /// </summary>
-        /// <param name="placeholder">Placeholder to query</param>
+        /// <param name="placeholder">Placeholder to query (should be with the &lt; and the &gt; marks)</param>
         /// <returns>True if the placeholder is in the list of placeholders</returns>
         /// <exception cref="KernelException"></exception>
         public static bool IsPlaceholderRegistered(string placeholder)
@@ -226,15 +225,16 @@ namespace KS.Misc.Text.Probers.Placeholder
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
             // Check to see if we have this placeholder
+            string placeNoArg = StripPlaceholderArgs(placeholder);
             return
                 IsPlaceholderBuiltin(placeholder) ||
-                customPlaceholders.Any((pi) => $"<{pi.Placeholder}>" == placeholder);
+                customPlaceholders.Any((pi) => $"<{pi.Placeholder}>" == placeNoArg);
         }
 
         /// <summary>
         /// Gets a placeholder from the placeholder name
         /// </summary>
-        /// <param name="placeholder">Placeholder to query</param>
+        /// <param name="placeholder">Placeholder to query (should be with the &lt; and the &gt; marks)</param>
         public static PlaceInfo GetPlaceholder(string placeholder)
         {
             // Sanity checks
@@ -245,17 +245,18 @@ namespace KS.Misc.Text.Probers.Placeholder
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
-            // Try to register
+            // Try to get a placeholder
+            string placeNoArg = StripPlaceholderArgs(placeholder);
             return
                 IsPlaceholderBuiltin(placeholder) ?
-                placeholders.First((pi) => $"<{pi.Placeholder}>" == placeholder) :
-                customPlaceholders.First((pi) => $"<{pi.Placeholder}>" == placeholder);
+                placeholders.First((pi) => $"<{pi.Placeholder}>" == placeNoArg) :
+                customPlaceholders.First((pi) => $"<{pi.Placeholder}>" == placeNoArg);
         }
 
         /// <summary>
         /// Gets a placeholder action from the placeholder name
         /// </summary>
-        /// <param name="placeholder">Placeholder to query</param>
+        /// <param name="placeholder">Placeholder to query (should be with the &lt; and the &gt; marks)</param>
         public static Func<string, string> GetPlaceholderAction(string placeholder)
         {
             // Sanity checks
@@ -266,8 +267,24 @@ namespace KS.Misc.Text.Probers.Placeholder
             if (!placeholder.StartsWith('<') || !placeholder.EndsWith('>'))
                 throw new KernelException(KernelExceptionType.InvalidPlaceholderAction, Translate.DoTranslation("Placeholder must satisfy this format") + ": <place>");
 
-            // Try to register
-            return GetPlaceholder(placeholder).PlaceholderAction;
+            // Try to get a placeholder action
+            string placeNoArg = StripPlaceholderArgs(placeholder);
+            return GetPlaceholder(placeNoArg).PlaceholderAction;
+        }
+
+        /// <summary>
+        /// Strips the placeholder with arguments
+        /// </summary>
+        /// <param name="placeholder">Placeholder with arguments (should be with the &lt; and the &gt; marks)</param>
+        /// <returns>Stripped placeholder</returns>
+        public static string StripPlaceholderArgs(string placeholder)
+        {
+            string place = placeholder;
+            string arg = "";
+            if (place.Contains(':'))
+                arg = place[(place.IndexOf(':') + 1)..(place.Length - 1)];
+            string placeNoArg = place.Replace($":{arg}>", ">");
+            return placeNoArg;
         }
     }
 }

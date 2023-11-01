@@ -34,7 +34,7 @@ namespace Nitrocid.Tests.Misc.Probers
         [OneTimeSetUp]
         public void TestRegisterPlaceholder()
         {
-            PlaceParse.RegisterCustomPlaceholder("<greeting>", (_) => "Hello!");
+            PlaceParse.RegisterCustomPlaceholder("greeting", (_) => "Hello!");
             PlaceParse.IsPlaceholderRegistered("<greeting>").ShouldBeTrue();
             PlaceParse.IsPlaceholderBuiltin("<greeting>").ShouldBeFalse();
         }
@@ -61,8 +61,8 @@ namespace Nitrocid.Tests.Misc.Probers
         [TestCase("RID is <ridgeneric>")]
         [TestCase("Terminal emulator is <termemu>")]
         [TestCase("Terminal type is <termtype>")]
-        [TestCase("Foreground reset is <f:reset>here")]
-        [TestCase("Background reset is <b:reset>here")]
+        [TestCase("Foreground reset is <fgreset>here")]
+        [TestCase("Background reset is <bgreset>here")]
         [TestCase("Foreground color is <f:4>0-15")]
         [TestCase("Foreground color is <b:4>0-15")]
         [TestCase("Foreground color is <f:254>0-255")]
