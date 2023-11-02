@@ -47,19 +47,14 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     foreach (var entry in config.SettingsEntries)
                     {
-                        SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Entry name") + $" {entry.Name}", true);
+                        SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Entry name") + $": {entry.Name}", true);
                         TextWriterColor.Write($"{Translate.DoTranslation("Displaying as")}: {entry.DisplayAs}");
                         TextWriterColor.Write($"{Translate.DoTranslation("Description")}: {entry.Desc}");
                         TextWriterColor.Write($"{Translate.DoTranslation("Keys count")}: {entry.Keys.Length}");
-                        foreach (var key in entry.Keys)
-                        {
-                            SeparatorWriterColor.WriteSeparator(Translate.DoTranslation("Key name") + $" {key.Name}", true);
-                            TextWriterColor.Write($"{Translate.DoTranslation("Key description")}: {key.Description}");
-                            TextWriterColor.Write($"{Translate.DoTranslation("Key type")}: {key.Type}");
-                        }
                     }
                 }
             }
+            TextWriterColor.Write(Translate.DoTranslation("Use the {0} command to get the individual keys"), "lsconfigvalues");
             return 0;
         }
 

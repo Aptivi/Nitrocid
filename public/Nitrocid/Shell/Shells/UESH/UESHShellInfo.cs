@@ -32,6 +32,7 @@ using KS.Drivers.Encryption;
 using KS.Shell.Shells.UESH.Presets;
 using KS.Drivers.Encoding;
 using KS.Files.Extensions;
+using KS.Kernel.Configuration;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -911,6 +912,19 @@ namespace KS.Shell.Shells.UESH
                             new("deep", /* Localizable */ "Deep details about all configurations, including their entries")
                         })
                     }, new LsConfigsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+            
+            { "lsconfigvalues",
+                new CommandInfo("lsconfigvalues", /* Localizable */ "Lists all configuration variables and their values",
+                    new[] {
+                        new CommandArgumentInfo(new CommandArgumentPart[]
+                        {
+                            new(true, "config", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (_) => Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray()
+                            })
+                        })
+                    }, new LsConfigValuesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
             { "lsconnections",
