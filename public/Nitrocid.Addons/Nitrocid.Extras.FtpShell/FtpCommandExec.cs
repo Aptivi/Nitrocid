@@ -37,7 +37,7 @@ namespace Nitrocid.Extras.FtpShell
 
         private NetworkConnection EstablishFtpConnection(string address, SpeedDialEntry connection)
         {
-            var encMode = Enum.Parse<FtpEncryptionMode>(connection.Options[1].ToString());
+            var encMode = connection.Options.Length > 1 ? Enum.Parse<FtpEncryptionMode>(connection.Options[1].ToString()) : FtpEncryptionMode.Auto;
             return FTPTools.PromptForPassword(null, connection.Options[0].ToString(), address, connection.Port, connection.Options.Length > 1 ? encMode : FtpEncryptionMode.None);
         }
 
