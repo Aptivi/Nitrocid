@@ -229,8 +229,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override string ScreensaverName { get; set; } = "Wave";
 
         /// <inheritdoc/>
-        public override void ScreensaverPreparation() =>
+        public override void ScreensaverPreparation()
+        {
+            posIdx = 0;
             KernelColorTools.LoadBack();
+        }
 
         /// <inheritdoc/>
         public override void ScreensaverLogic()

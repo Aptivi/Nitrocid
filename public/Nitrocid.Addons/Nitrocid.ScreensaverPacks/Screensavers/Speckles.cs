@@ -176,5 +176,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             KernelColorTools.LoadBack();
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            Blocks.Clear();
+        }
+
     }
 }

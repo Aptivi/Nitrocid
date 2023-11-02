@@ -112,5 +112,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ThreadManager.SleepNoBlock(1000L, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            Drawn = false;
+        }
+
     }
 }

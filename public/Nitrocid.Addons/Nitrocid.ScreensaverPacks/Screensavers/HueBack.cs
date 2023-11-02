@@ -117,5 +117,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleResizeListener.WasResized();
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            currentHueAngle = 0;
+        }
+
     }
 }

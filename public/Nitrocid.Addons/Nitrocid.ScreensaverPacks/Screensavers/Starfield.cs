@@ -122,5 +122,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.Clear();
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            Stars.Clear();
+        }
+
     }
 }

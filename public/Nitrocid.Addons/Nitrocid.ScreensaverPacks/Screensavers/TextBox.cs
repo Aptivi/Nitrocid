@@ -273,10 +273,16 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            currentHueAngle = 0;
+        }
+
         /// <summary>
         /// Changes the color of date and time
         /// </summary>
-        public Color ChangeTextBoxColor()
+        private Color ChangeTextBoxColor()
         {
             Color ColorInstance;
             if (TextBox.TextBoxTrueColor)

@@ -248,6 +248,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverPreparation()
         {
+            posIdxVertical = 0;
+            posIdxHorizontal = 0;
             KernelColorTools.LoadBack();
         }
 

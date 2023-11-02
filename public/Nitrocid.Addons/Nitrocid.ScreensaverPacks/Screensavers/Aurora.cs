@@ -121,6 +121,14 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleResizeListener.WasResized();
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            redPosIdx = 0;
+            greenPosIdx = 0;
+            bluePosIdx = 0;
+        }
+
         private static int[] GetColorLevels(double Frequency)
         {
             List<int> ColorLevels = new();

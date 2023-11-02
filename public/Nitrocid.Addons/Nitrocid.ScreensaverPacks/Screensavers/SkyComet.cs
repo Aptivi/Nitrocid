@@ -145,6 +145,12 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ThreadManager.SleepNoBlock(SkyCometSettings.SkyCometDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            stars.Clear();
+        }
+
         private static void UpdateStars()
         {
             if (stars.Count > 0)

@@ -286,5 +286,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ThreadManager.SleepNoBlock(BarWaveSettings.BarWaveDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            TimeSecs = 0.0d;
+        }
+
     }
 }

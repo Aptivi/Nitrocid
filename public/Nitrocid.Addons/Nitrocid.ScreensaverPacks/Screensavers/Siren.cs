@@ -86,6 +86,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override bool ScreensaverContainsFlashingImages { get; set; } = true;
 
         /// <inheritdoc/>
+        public override void ScreensaverPreparation()
+        {
+            step = 0;
+            base.ScreensaverPreparation();
+        }
+
+        /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
             // Get step color array from siren type

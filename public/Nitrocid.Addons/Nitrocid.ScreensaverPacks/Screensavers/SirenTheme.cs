@@ -106,6 +106,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Now, add the list with the theme name to the list
                 sirens.Add(theme, colorList.ToArray());
             }
+            step = 0;
         }
 
         /// <inheritdoc/>

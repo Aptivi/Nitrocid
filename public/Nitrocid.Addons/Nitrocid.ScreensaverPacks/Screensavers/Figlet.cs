@@ -326,5 +326,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ThreadManager.SleepNoBlock(delay, ScreensaverDisplayer.ScreensaverDisplayerThread);
         }
 
+        /// <inheritdoc/>
+        public override void ScreensaverOutro()
+        {
+            currentHueAngle = 0;
+        }
+
     }
 }
