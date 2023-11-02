@@ -78,7 +78,7 @@ namespace KS.Users.Login.Handlers
             if (ShowMOTDOnceFlag && ShowMOTD)
             {
                 // This is not going to happen when the modern logon is enabled.
-                TextWriterColor.WriteKernelColor(CharManager.NewLine + PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, KernelColorType.Banner);
+                TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MotdParse.MotdMessage), true, KernelColorType.Banner);
                 MotdParse.ProcessDynamicMotd();
                 ShowMOTDOnceFlag = false;
             }
