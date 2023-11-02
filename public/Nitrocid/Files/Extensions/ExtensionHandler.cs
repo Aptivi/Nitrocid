@@ -18,7 +18,6 @@
 //
 
 using KS.Languages;
-using MimeKit;
 using System;
 
 namespace KS.Files.Extensions
@@ -63,7 +62,7 @@ namespace KS.Files.Extensions
         internal ExtensionHandler(string extension, string implementer, Action<string> handler, Func<string, string> infoHandler)
         {
             // First, get the MIME type
-            mimeType = MimeTypes.GetMimeType($"file{extension}");
+            mimeType = MimeTypes.GetMimeType(extension);
 
             // Then, install the below values
             this.extension = extension;

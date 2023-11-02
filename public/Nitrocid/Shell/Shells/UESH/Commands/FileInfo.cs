@@ -31,7 +31,6 @@ using KS.Kernel.Time.Renderers;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Shell.ShellBase.Commands;
-using MimeKit;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -65,7 +64,7 @@ namespace KS.Shell.Shells.UESH.Commands
                     TextWriterColor.Write(Translate.DoTranslation("Attributes: {0}"), FileInfo.Attributes);
                     TextWriterColor.Write(Translate.DoTranslation("Where to find: {0}"), FilesystemTools.NeutralizePath(FileInfo.DirectoryName));
                     TextWriterColor.Write(Translate.DoTranslation("Binary file:") + " {0}", $"{Parsing.IsBinaryFile(FileInfo.FullName)}");
-                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(FilesystemTools.NeutralizePath(FileInfo.FullName)));
+                    TextWriterColor.Write(Translate.DoTranslation("MIME metadata:") + " {0}", MimeTypes.GetMimeType(FileInfo.Extension));
                     if (!Parsing.IsBinaryFile(FileInfo.FullName))
                     {
                         var Style = LineEndingsTools.GetLineEndingFromFile(FilePath);

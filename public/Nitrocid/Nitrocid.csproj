@@ -55,7 +55,7 @@
     <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
 
     <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersionChangeset>258</NitrocidModAPIVersionChangeset>
+    <NitrocidModAPIVersionChangeset>259</NitrocidModAPIVersionChangeset>
 
     <!-- To be installed to the file version -->
     <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -85,7 +85,6 @@
     <PackageReference Include="Microsoft.AspNet.WebApi.Client" Version="6.0.0" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Data.Sqlite" Version="7.0.13" PrivateAssets="all" />
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.0.442202" PrivateAssets="all" />
-    <PackageReference Include="MimeKit" Version="4.2.0" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SharpCompress" Version="[0.33.0,0.33.0]" PrivateAssets="all" />

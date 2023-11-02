@@ -44,7 +44,6 @@ using KS.Files.Extensions;
 using KS.Files.Operations.Querying;
 using KS.Files.Operations.Printing;
 using Terminaux.Sequences.Tools;
-using MimeKit;
 
 namespace KS.Misc.Interactives
 {
@@ -283,7 +282,7 @@ namespace KS.Misc.Interactives
                         finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Newline style:") + " {0}", Style.ToString()));
                     }
                     finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("Binary file:") + " {0}", isBinary));
-                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}\n", MimeTypes.GetMimeType(FilesystemTools.NeutralizePath(fileInfo.FullName))));
+                    finalInfoRendered.AppendLine(TextTools.FormatString(Translate.DoTranslation("MIME metadata:") + " {0}\n", MimeTypes.GetMimeType(fileInfo.Extension)));
 
                     // .NET managed info
                     if (ReflectionCommon.IsDotnetAssemblyFile(fullPath, out AssemblyName asmName))

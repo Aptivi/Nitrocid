@@ -24,7 +24,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.Base;
-using KS.Shell.Shells.SFTP;
 using KS.Users;
 using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
