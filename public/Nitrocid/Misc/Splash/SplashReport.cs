@@ -112,7 +112,7 @@ namespace KS.Misc.Splash
         /// </remarks>
         public static void ReportProgress(string Text, int Progress, bool force = false, ISplash splash = null, params object[] Vars)
         {
-            if (!KernelBooted && InSplash || force)
+            if (!KernelBooted && (SplashManager.EnableSplash && InSplash || !SplashManager.EnableSplash && !KernelEntry.QuietKernel) || force)
             {
                 // Check the progress value
                 if (Progress < 0)
