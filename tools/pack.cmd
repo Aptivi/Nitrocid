@@ -34,7 +34,6 @@ move %temp%\%ksversion%-bin.zip
 move %temp%\%ksversion%-bin-lite.zip
 move %temp%\%ksversion%-addons.zip
 move %temp%\%ksversion%-analyzers.zip
-copy "..\public\Nitrocid\KSBuild\net8.0\Nitrocid.pdb" .\%ksversion%.pdb
 
 echo Pack successful.
 :finished

@@ -43,6 +43,5 @@ mv /tmp/$ksversion-bin.zip .
 mv /tmp/$ksversion-bin-lite.zip .
 mv /tmp/$ksversion-addons.zip .
 mv /tmp/$ksversion-analyzers.zip .
-cp "../public/Nitrocid/KSBuild/net8.0/Nitrocid.pdb" ./$ksversion.pdb
 echo Build and pack successful.
 exit 0
