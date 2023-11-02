@@ -251,7 +251,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Fill the color if not filled
             if (!ColorFilled)
             {
-                if (!(ConsoleWrapper.CursorLeft >= EndLeft & ConsoleWrapper.CursorTop >= EndTop))
+                if (ConsoleWrapper.CursorLeft < EndLeft || ConsoleWrapper.CursorTop < EndTop)
                 {
                     Color colorStorage = Color.Empty;
                     if (DissolveSettings.DissolveTrueColor)

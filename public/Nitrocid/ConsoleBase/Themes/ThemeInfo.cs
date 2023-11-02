@@ -44,8 +44,8 @@ namespace KS.ConsoleBase.Themes
         internal readonly DateTime start = DateTime.Today;
         internal readonly DateTime end = DateTime.Today;
         private string[] useAccentTypes;
-        private ThemeMetadata metadata;
-        private JToken metadataToken;
+        private readonly ThemeMetadata metadata;
+        private readonly JToken metadataToken;
 
         /// <summary>
         /// Theme name

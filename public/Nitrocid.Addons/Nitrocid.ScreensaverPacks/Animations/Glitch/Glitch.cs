@@ -44,7 +44,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
             int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight - 1;
             int BlocksToCover = (int)Math.Round(AmountOfBlocks * GlitchDense);
             var CoveredBlocks = new ArrayList();
-            while (!(CoveredBlocks.Count == BlocksToCover | ConsoleResizeListener.WasResized(false)))
+            while (CoveredBlocks.Count != BlocksToCover || !ConsoleResizeListener.WasResized(false))
             {
                 if (!ConsoleResizeListener.WasResized(false))
                 {

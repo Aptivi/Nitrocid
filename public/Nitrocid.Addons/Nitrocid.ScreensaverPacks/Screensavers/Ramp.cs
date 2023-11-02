@@ -530,7 +530,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                 // Set the console color and fill the ramp!
                 KernelColorTools.SetConsoleColor(RampCurrentColorInstance, true);
-                while (!(Convert.ToInt32(RampCurrentColorRed) == RedColorNumTo & Convert.ToInt32(RampCurrentColorGreen) == GreenColorNumTo & Convert.ToInt32(RampCurrentColorBlue) == BlueColorNumTo))
+                while (
+                    Convert.ToInt32(RampCurrentColorRed) != RedColorNumTo &&
+                    Convert.ToInt32(RampCurrentColorGreen) != GreenColorNumTo &&
+                    Convert.ToInt32(RampCurrentColorBlue) != BlueColorNumTo
+                )
                 {
                     if (ConsoleResizeListener.WasResized(false))
                         break;

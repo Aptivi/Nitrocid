@@ -433,7 +433,7 @@ namespace KS.Shell.ShellBase.Shells
                 Command = Command[varStoreStringFull.Length..];
 
                 // Check to see if the command is a comment
-                if (!(string.IsNullOrEmpty(Command) || Command.StartsWithAnyOf(new[] { " ", "#" })))
+                if (!string.IsNullOrEmpty(Command) || !Command.StartsWithAnyOf(new[] { " ", "#" }))
                 {
                     // Get the command name
                     var words = Command.SplitEncloseDoubleQuotes();
@@ -483,7 +483,7 @@ namespace KS.Shell.ShellBase.Shells
                                 InitializeOutputPathWriter(OutputPath);
                             }
 
-                            if (!(string.IsNullOrEmpty(commandName) | commandName.StartsWithAnyOf(new[] { " ", "#" })))
+                            if (!string.IsNullOrEmpty(commandName) || !commandName.StartsWithAnyOf(new[] { " ", "#" }))
                             {
 
                                 // Check to see if a user is able to execute a command

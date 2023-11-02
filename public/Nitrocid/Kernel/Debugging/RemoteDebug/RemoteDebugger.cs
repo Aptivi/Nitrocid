@@ -257,7 +257,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     // Don't post message if it starts with a null character. On Unix, the nullchar detection always returns false even if it seems
                     // that the message starts with the actual character, not the null character, so detect nullchar by getting the first character
                     // from the message and comparing it to the null char ASCII number, which is 0.
-                    if (!(Convert.ToInt32(Message[0]) == 0))
+                    if (Convert.ToInt32(Message[0]) != 0)
                     {
                         // Now, check to see if the message is a command
                         if (Message.StartsWith("/"))

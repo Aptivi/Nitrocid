@@ -388,7 +388,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 RampCurrentColorInstance = new Color(ColorNum);
 
             // Fill the ramp!
-            while (!(IndeterminateCurrentBlockEnd == RampFrameBlockEndWidth & IndeterminateCurrentBlockDirection == IndeterminateDirection.LeftToRight | IndeterminateCurrentBlockStart == RampFrameBlockStartWidth & IndeterminateCurrentBlockDirection == IndeterminateDirection.RightToLeft))
+            while (
+                IndeterminateCurrentBlockEnd != RampFrameBlockEndWidth && IndeterminateCurrentBlockDirection != IndeterminateDirection.LeftToRight ||
+                IndeterminateCurrentBlockStart != RampFrameBlockStartWidth && IndeterminateCurrentBlockDirection != IndeterminateDirection.RightToLeft
+            )
             {
                 if (ConsoleResizeListener.WasResized(false))
                     break;

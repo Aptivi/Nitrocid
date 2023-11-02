@@ -31,7 +31,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.BSOD.Simulations
         public override void Simulate()
         {
             int millisecondsElapsed = 0;
-            while (!(millisecondsElapsed >= BsodSettings.BSODDelay | ConsoleResizeListener.WasResized(false)))
+            while (millisecondsElapsed < BsodSettings.BSODDelay || !ConsoleResizeListener.WasResized(false))
             {
                 if (!ConsoleResizeListener.WasResized(false))
                 {

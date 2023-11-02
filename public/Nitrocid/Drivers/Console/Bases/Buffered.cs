@@ -188,7 +188,7 @@ namespace KS.Drivers.Console.Bases
                 try
                 {
                     // Format string as needed
-                    if (!(vars.Length == 0))
+                    if (vars.Length > 0)
                         msg = TextTools.FormatString(msg, vars);
 
                     // Write text slowly

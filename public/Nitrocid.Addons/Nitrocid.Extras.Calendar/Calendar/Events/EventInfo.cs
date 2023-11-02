@@ -54,13 +54,13 @@ namespace Nitrocid.Extras.Calendar.Calendar.Events
         private string calendar;
 
         [JsonIgnore]
-        private int origStartMonth;
+        private readonly int origStartMonth;
         [JsonIgnore]
-        private int origStartDay;
+        private readonly int origStartDay;
         [JsonIgnore]
-        private int origEndMonth;
+        private readonly int origEndMonth;
         [JsonIgnore]
-        private int origEndDay;
+        private readonly int origEndDay;
 
         /// <summary>
         /// Event date

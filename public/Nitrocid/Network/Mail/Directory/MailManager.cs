@@ -73,7 +73,7 @@ namespace KS.Network.Mail.Directory
             DebugWriter.WriteDebug(DebugLevel.I, "10 messages shown in each page. First message number in page {0} is {1} and last message number in page {0} is {2}", MsgsLimitForPg, FirstIndex, LastIndex);
             for (int i = FirstIndex; i <= LastIndex; i++)
             {
-                if (!(i > MaxMessagesIndex))
+                if (i <= MaxMessagesIndex)
                 {
                     string MsgFrom = "";
                     string MsgSubject = "";

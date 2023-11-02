@@ -31,13 +31,13 @@ namespace Nitrocid.Tests.Misc.Editors
     public class JsonActionTests
     {
 
-        private static string demoJson =
+        private static readonly string demoJson =
             """
             {
               "LyricsPath": "C:/Users/MyUser/Music/"
             }
             """;
-        private static string minifiedJson =
+        private static readonly string minifiedJson =
             """
             {"LyricsPath":"C:/Users/MyUser/Music/"}
             """;

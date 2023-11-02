@@ -158,7 +158,7 @@ namespace KS.Drivers.Console.Bases
                     {
                         if (Line)
                         {
-                            if (!(vars.Length == 0))
+                            if (vars.Length > 0)
                             {
                                 fileWriter.WriteLine(Text, vars);
                             }
@@ -167,7 +167,7 @@ namespace KS.Drivers.Console.Bases
                                 fileWriter.WriteLine(Text);
                             }
                         }
-                        else if (!(vars.Length == 0))
+                        else if (vars.Length > 0)
                         {
                             fileWriter.Write(Text, vars);
                         }
@@ -247,7 +247,7 @@ namespace KS.Drivers.Console.Bases
                     try
                     {
                         // Format string as needed
-                        if (!(vars.Length == 0))
+                        if (vars.Length > 0)
                             msg = TextTools.FormatString(msg, vars);
 
                         // Write text slowly

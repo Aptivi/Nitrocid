@@ -101,7 +101,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 TextWriterColor.Write();
                 for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
                 {
-                    if (!(ColumnPosition >= ConsoleWrapper.WindowWidth))
+                    if (ColumnPosition < ConsoleWrapper.WindowWidth)
                     {
                         ColumnPositions.Add(ColumnPosition);
                         if (ColumnPositions.Count == 1)

@@ -264,7 +264,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
 
                 // Write the final character to the console and wait
-                if (!(StruckCharAssigned == Convert.ToChar(0)))
+                if (StruckCharAssigned != Convert.ToChar(0))
                     ConsoleWrapper.Write(StruckCharAssigned);
                 ThreadManager.SleepNoBlock(WriteMs, ScreensaverDisplayer.ScreensaverDisplayerThread);
             }

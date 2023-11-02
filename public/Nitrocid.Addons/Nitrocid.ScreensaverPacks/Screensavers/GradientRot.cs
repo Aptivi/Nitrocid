@@ -326,7 +326,11 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             double RampCurrentColorBlue = BlueColorNumFrom;
 
             // Set the console color and fill the ramp!
-            while (!(Convert.ToInt32(RampCurrentColorRed) == RedColorNumTo & Convert.ToInt32(RampCurrentColorGreen) == GreenColorNumTo & Convert.ToInt32(RampCurrentColorBlue) == BlueColorNumTo))
+            while (
+                Convert.ToInt32(RampCurrentColorRed) != RedColorNumTo &&
+                Convert.ToInt32(RampCurrentColorGreen) != GreenColorNumTo &&
+                Convert.ToInt32(RampCurrentColorBlue) != BlueColorNumTo
+            )
             {
                 if (ConsoleResizeListener.WasResized(false))
                     break;

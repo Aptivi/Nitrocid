@@ -30,7 +30,7 @@ namespace Nitrocid.Extras.Caffeine.Alarm
 {
     internal static class AlarmListener
     {
-        private static KernelThread alarmThread = new("Alarm Listener Thread", true, HandleAlarms);
+        private static readonly KernelThread alarmThread = new("Alarm Listener Thread", true, HandleAlarms);
 
         internal static void StartListener()
         {

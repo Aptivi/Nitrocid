@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.SFTP.Commands
         {
             bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || SFTPShellCommon.SFTPShowDetailsInList;
             var Entries = new List<string>();
-            if (!(parameters.ArgumentsList.Length == 0))
+            if (parameters.ArgumentsList.Length != 0)
             {
                 foreach (string TargetDirectory in parameters.ArgumentsList)
                     Entries = SFTPFilesystem.SFTPListRemote(TargetDirectory, ShowFileDetails);

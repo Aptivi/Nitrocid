@@ -305,7 +305,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // If the current left position is not zero (not on the left), take the substring starting from the beginning of the string until the
                 // written variable equals the base text variable. However, if we're on the left, take the substring so that the character which was
                 // shown previously won't be shown again.
-                if (!(CurrentLeft == 0))
+                if (CurrentLeft != 0)
                 {
                     MarqueeWritten = MarqueeWritten[..(CurrentLeftOtherEnd - CurrentLeft)];
                 }
@@ -328,7 +328,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     CurrentCharacterNum += 1;
 
                 // If we're not on the left, decrement the current left position
-                if (!(CurrentLeft == 0))
+                if (CurrentLeft != 0)
                 {
                     CurrentLeft -= 1;
                     DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Not on left. Decremented left position {0}", CurrentLeft);

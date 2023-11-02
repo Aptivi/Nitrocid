@@ -46,11 +46,11 @@ namespace KS.Shell.Shells.UESH.Commands
             string URL = parameters.ArgumentsList[1];
             int failCode = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);
-            while (!(RetryCount > NetworkTools.UploadRetries))
+            while (RetryCount <= NetworkTools.UploadRetries)
             {
                 try
                 {
-                    if (!(URL.StartsWith("ftp://") | URL.StartsWith("ftps://") | URL.StartsWith("ftpes://")))
+                    if (!URL.StartsWith("ftp://") || !URL.StartsWith("ftps://") || !URL.StartsWith("ftpes://"))
                     {
                         if (!URL.StartsWith(" "))
                         {

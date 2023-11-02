@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
             int Count = 1;
-            if (!(NotificationManager.NotifRecents.Count == 0))
+            if (NotificationManager.NotifRecents.Count != 0)
             {
                 foreach (Notification Notif in NotificationManager.NotifRecents)
                 {

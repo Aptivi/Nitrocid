@@ -92,7 +92,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight;
             int BlocksToCover = (int)Math.Round(AmountOfBlocks * NoiseDense);
             var CoveredBlocks = new ArrayList();
-            while (!(CoveredBlocks.Count == BlocksToCover | ConsoleResizeListener.WasResized(false)))
+            while (CoveredBlocks.Count != BlocksToCover || !ConsoleResizeListener.WasResized(false))
             {
                 if (!ConsoleResizeListener.WasResized(false))
                 {

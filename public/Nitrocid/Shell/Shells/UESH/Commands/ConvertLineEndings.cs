@@ -61,7 +61,7 @@ namespace KS.Shell.Shells.UESH.Commands
             string TargetTextFile = parameters.ArgumentsList[0];
             var TargetLineEnding = LineEndingsTools.NewlineStyle;
             bool force = false;
-            if (!(parameters.SwitchesList.Length == 0))
+            if (parameters.SwitchesList.Length != 0)
             {
                 if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-w"))
                     TargetLineEnding = FilesystemNewlineStyle.CRLF;

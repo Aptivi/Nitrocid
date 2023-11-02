@@ -47,7 +47,7 @@ namespace KS.Shell.Shells.Hex.Commands
             {
                 TextWriterColor.WriteKernelColor(">> ", false, KernelColorType.Input);
                 FinalByte = Input.ReadLine();
-                if (!(FinalByte == "EOF"))
+                if (FinalByte != "EOF")
                 {
                     if (byte.TryParse(FinalByte, System.Globalization.NumberStyles.HexNumber, null, out byte ByteContent))
                     {

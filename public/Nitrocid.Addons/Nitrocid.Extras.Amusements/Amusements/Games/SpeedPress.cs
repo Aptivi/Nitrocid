@@ -132,7 +132,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Enter the loop until the user presses ESC
             TextWriterColor.WriteKernelColor(Translate.DoTranslation("Press ESC to exit.") + CharManager.NewLine, true, KernelColorType.Tip);
-            while (!(WrittenChar.Key == ConsoleKey.Escape) | !(WrittenChar.Modifiers == ConsoleModifiers.Control) & WrittenChar.Key == ConsoleKey.C)
+            while (WrittenChar.Key != ConsoleKey.Escape)
             {
                 // Select a random character
                 SelectedChar = Convert.ToChar(RandomEngine.Next(97, 122));
@@ -150,7 +150,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                     {
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("You've pressed the right character!"), true, KernelColorType.Success);
                     }
-                    else if (!(WrittenChar.Key == ConsoleKey.Escape) | !(WrittenChar.Modifiers == ConsoleModifiers.Control) & WrittenChar.Key == ConsoleKey.C)
+                    else if (WrittenChar.Key != ConsoleKey.Escape)
                     {
                         TextWriterColor.WriteKernelColor(Translate.DoTranslation("You've pressed the wrong character."), true, KernelColorType.Warning);
                     }

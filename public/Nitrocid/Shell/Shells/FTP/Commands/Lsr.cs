@@ -56,7 +56,7 @@ namespace KS.Shell.Shells.FTP.Commands
         {
             bool ShowFileDetails = parameters.SwitchesList.Contains("-showdetails") || FTPShellCommon.FtpShowDetailsInList;
             var Entries = new List<string>();
-            if (!(parameters.ArgumentsList.Length == 0))
+            if (parameters.ArgumentsList.Length != 0)
             {
                 foreach (string TargetDirectory in parameters.ArgumentsList)
                     Entries = FTPFilesystem.FTPListRemote(TargetDirectory, ShowFileDetails);

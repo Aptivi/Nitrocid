@@ -128,7 +128,7 @@ namespace KS.Kernel
 
         private static void MainLoop()
         {
-            while (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
+            while (!PowerManager.RebootRequested || !PowerManager.KernelShutdown)
             {
                 // Initialize login prompt
                 if (!Maintenance)
@@ -138,7 +138,7 @@ namespace KS.Kernel
                 CheckErrored();
 
                 // Check to see if login handler requested power action
-                if (PowerManager.RebootRequested | PowerManager.KernelShutdown)
+                if (PowerManager.RebootRequested || PowerManager.KernelShutdown)
                     return;
 
                 // Show license information

@@ -85,10 +85,10 @@ namespace KS.Shell.Shells.Mail.Commands
                 // Prompt for body
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Enter your message below. Write \"EOF\" to confirm."), true, KernelColorType.Input);
                 string BodyLine = "";
-                while (!(BodyLine.ToUpper() == "EOF"))
+                while (BodyLine.ToUpper() != "EOF")
                 {
                     BodyLine = Input.ReadLine();
-                    if (!(BodyLine.ToUpper() == "EOF"))
+                    if (BodyLine.ToUpper() != "EOF")
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Body line: {0} ({1} chars)", BodyLine, BodyLine.Length);
                         Body.TextBody += BodyLine + CharManager.NewLine;

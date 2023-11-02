@@ -81,7 +81,7 @@ namespace KS.Users.Login
 
                 // Login loop until either power action (in case login handler tries to shut the kernel down) or sign in action
                 string user = "";
-                while (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
+                while (!PowerManager.RebootRequested || !PowerManager.KernelShutdown)
                 {
                     // First, set root account
                     UserManagement.CurrentUserInfo =
@@ -114,7 +114,7 @@ namespace KS.Users.Login
                 }
 
                 // Check for the state before the final login flow
-                if (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
+                if (!PowerManager.RebootRequested || !PowerManager.KernelShutdown)
                     SignIn(user);
             }
             catch (Exception ex)
@@ -133,7 +133,7 @@ namespace KS.Users.Login
         public static bool ShowPasswordPrompt(string usernamerequested)
         {
             // Prompts user to enter a user's password
-            while (!(PowerManager.RebootRequested | PowerManager.KernelShutdown))
+            while (!PowerManager.RebootRequested || !PowerManager.KernelShutdown)
             {
                 // Get the password from dictionary
                 int userIndex = UserManagement.GetUserIndex(usernamerequested);

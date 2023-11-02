@@ -47,11 +47,11 @@ namespace KS.Shell.Shells.UESH.Commands
             string outputPath = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-outputpath");
             int failCode = 0;
             DebugWriter.WriteDebug(DebugLevel.I, "URL: {0}", URL);
-            while (!(RetryCount > NetworkTools.DownloadRetries))
+            while (RetryCount <= NetworkTools.DownloadRetries)
             {
                 try
                 {
-                    if (!(URL.StartsWith("ftp://") | URL.StartsWith("ftps://") | URL.StartsWith("ftpes://")))
+                    if (!URL.StartsWith("ftp://") || !URL.StartsWith("ftps://") || !URL.StartsWith("ftpes://"))
                     {
                         if (!string.IsNullOrEmpty(URL))
                         {

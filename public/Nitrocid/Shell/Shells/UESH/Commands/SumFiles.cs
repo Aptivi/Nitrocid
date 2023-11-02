@@ -50,7 +50,7 @@ namespace KS.Shell.Shells.UESH.Commands
             string @out = "";
             bool UseRelative = parameters.SwitchesList.Contains("-relative");
             var FileBuilder = new StringBuilder();
-            if (!(parameters.ArgumentsList.Length < 3))
+            if (parameters.ArgumentsList.Length >= 3)
             {
                 @out = FilesystemTools.NeutralizePath(parameters.ArgumentsList[2]);
             }

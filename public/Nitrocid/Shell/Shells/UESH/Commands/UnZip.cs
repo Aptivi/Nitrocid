@@ -24,6 +24,7 @@ using System.Linq;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.UESH.Commands
 {
@@ -57,11 +58,13 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             else if (parameters.ArgumentsList.Length > 1)
             {
+                bool createDir = SwitchManager.ContainsSwitch(parameters.SwitchesList, "-createdir");
                 string ZipArchiveName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
-                string Destination = !(parameters.SwitchesList[0] == "-createdir") ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : "";
-                if (parameters.SwitchesList.Contains("-createdir"))
+                string Destination = createDir ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : "";
+                string target = createDir ? Path.GetFileNameWithoutExtension(ZipArchiveName) : FilesystemTools.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName));
+                if (createDir)
                 {
-                    Destination = $"{(!(parameters.SwitchesList[0] == "-createdir") ? FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]) : "")}/{(!(parameters.SwitchesList[0] == "-createdir") ? Path.GetFileNameWithoutExtension(ZipArchiveName) : FilesystemTools.NeutralizePath(Path.GetFileNameWithoutExtension(ZipArchiveName)))}";
+                    Destination = $"{Destination}/{target}";
                     if (Convert.ToString(Destination[0]) == "/")
                         Destination = Destination[1..];
                 }

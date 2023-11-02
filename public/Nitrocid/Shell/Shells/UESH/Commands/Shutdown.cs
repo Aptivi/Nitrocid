@@ -34,7 +34,7 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (!(parameters.ArgumentsList.Length == 0))
+            if (parameters.ArgumentsList.Length != 0)
             {
                 if (parameters.ArgumentsList.Length == 1)
                 {

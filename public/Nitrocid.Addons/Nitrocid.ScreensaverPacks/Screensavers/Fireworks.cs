@@ -302,7 +302,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 double CurrentX = LaunchPositionX;
                 int CurrentY = LaunchPositionY;
-                while (!(CurrentX >= IgnitePositionX & CurrentY <= IgnitePositionY))
+                while (CurrentX < IgnitePositionX && CurrentY > IgnitePositionY)
                 {
                     if (ConsoleResizeListener.WasResized(false))
                         break;

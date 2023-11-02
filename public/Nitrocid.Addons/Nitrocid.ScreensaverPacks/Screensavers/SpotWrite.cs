@@ -145,7 +145,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var IncompleteSentences = TextTools.GetWrappedSentences(Paragraph, ConsoleWrapper.WindowWidth - 2, 4);
 
                 // Prepare display (make a paragraph indentation)
-                if (!(ConsoleWrapper.CursorTop == ConsoleWrapper.WindowHeight - 2))
+                if (ConsoleWrapper.CursorTop != ConsoleWrapper.WindowHeight - 2)
                 {
                     ConsoleWrapper.SetCursorPosition(0, ConsoleWrapper.CursorTop + 1);
                     ConsoleWrapper.Write("    ");

@@ -256,7 +256,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Got left: {0} | Got top: {1}", Left, Top);
 
             // Fill the color if not filled
-            if (!(ConsoleWrapper.CursorLeft >= EndLeft & ConsoleWrapper.CursorTop >= EndTop))
+            if (ConsoleWrapper.CursorLeft >= EndLeft && ConsoleWrapper.CursorTop >= EndTop)
+                ConsoleWrapper.SetCursorPosition(0, 0);
+            else
             {
                 Color colorStorage;
                 if (ColorMixSettings.ColorMixTrueColor)
@@ -286,8 +288,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     KernelColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
                 }
             }
-            else
-                ConsoleWrapper.SetCursorPosition(0, 0);
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();

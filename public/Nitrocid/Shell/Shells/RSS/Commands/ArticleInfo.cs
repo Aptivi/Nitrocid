@@ -57,7 +57,11 @@ namespace KS.Shell.Shells.RSS.Commands
                 TextWriterColor.WriteKernelColor(Article.ArticleLink, true, KernelColorType.ListValue);
                 foreach (string Variable in Article.ArticleVariables.Keys)
                 {
-                    if (!(Variable == "title") & !(Variable == "link") & !(Variable == "summary") & !(Variable == "description") & !(Variable == "content"))
+                    if (Variable != "title" &&
+                        Variable != "link" &&
+                        Variable != "summary" &&
+                        Variable != "description" &&
+                        Variable != "content")
                     {
                         TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Variable);
                         TextWriterColor.WriteKernelColor(Article.ArticleVariables[Variable].InnerText, true, KernelColorType.ListValue);

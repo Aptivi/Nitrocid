@@ -49,7 +49,7 @@ namespace KS.Drivers.Console.Bases
                     // Actually write
                     if (Line)
                     {
-                        if (!(vars.Length == 0))
+                        if (vars.Length > 0)
                         {
                             WriteLine(Text, vars);
                         }
@@ -58,7 +58,7 @@ namespace KS.Drivers.Console.Bases
                             WriteLine(Text);
                         }
                     }
-                    else if (!(vars.Length == 0))
+                    else if (vars.Length > 0)
                     {
                         Write(Text, vars);
                     }

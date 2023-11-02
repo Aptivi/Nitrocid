@@ -407,7 +407,7 @@ namespace KS.Drivers.Console
                     // Actually write
                     if (Line)
                     {
-                        if (!(vars.Length == 0))
+                        if (vars.Length > 0)
                         {
                             WriteLine(Text, vars);
                         }
@@ -416,7 +416,7 @@ namespace KS.Drivers.Console
                             WriteLine(Text);
                         }
                     }
-                    else if (!(vars.Length == 0))
+                    else if (vars.Length > 0)
                     {
                         Write(Text, vars);
                     }
@@ -450,7 +450,7 @@ namespace KS.Drivers.Console
                 try
                 {
                     // Format string as needed
-                    if (!(vars.Length == 0))
+                    if (vars.Length > 0)
                         msg = TextTools.FormatString(msg, vars);
 
                     // Grab each VT sequence from the message and fetch their indexes
@@ -495,7 +495,7 @@ namespace KS.Drivers.Console
                 try
                 {
                     // Format the message as necessary
-                    if (!(vars.Length == 0))
+                    if (vars.Length > 0)
                         msg = TextTools.FormatString(msg, vars);
 
                     // Write text in another place. By the way, we check the text for newlines and console width excess
@@ -538,7 +538,7 @@ namespace KS.Drivers.Console
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
-                        if (!(MessageParagraphIndex == Paragraphs.Length - 1))
+                        if (MessageParagraphIndex != Paragraphs.Length - 1)
                         {
                             buffered.Append($"{CharManager.GetEsc()}[1B");
                             buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
@@ -577,7 +577,7 @@ namespace KS.Drivers.Console
                 try
                 {
                     // Format string as needed
-                    if (!(vars.Length == 0))
+                    if (vars.Length > 0)
                         msg = TextTools.FormatString(msg, vars);
 
                     // Write text in another place slowly
@@ -628,7 +628,7 @@ namespace KS.Drivers.Console
                         }
 
                         // We're starting with the new paragraph, so we increase the CursorTop value by 1.
-                        if (!(MessageParagraphIndex == Paragraphs.Length - 1))
+                        if (MessageParagraphIndex != Paragraphs.Length - 1)
                         {
                             buffered.Append($"{CharManager.GetEsc()}[1B");
                             buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
@@ -655,7 +655,7 @@ namespace KS.Drivers.Console
                 try
                 {
                     // Format string as needed
-                    if (!(vars.Length == 0))
+                    if (vars.Length > 0)
                         Text = TextTools.FormatString(Text, vars);
                     Text = Text.Replace(Convert.ToChar(13), default);
 

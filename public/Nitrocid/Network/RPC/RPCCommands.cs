@@ -153,7 +153,7 @@ namespace KS.Network.RPC
                     SocketException SE = (SocketException)ex.InnerException;
                     if (SE is not null)
                     {
-                        if (!(SE.SocketErrorCode == SocketError.TimedOut))
+                        if (SE.SocketErrorCode != SocketError.TimedOut)
                         {
                             DebugWriter.WriteDebug(DebugLevel.E, "Error from host: {0}", SE.SocketErrorCode.ToString());
                             DebugWriter.WriteDebugStackTrace(ex);

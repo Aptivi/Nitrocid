@@ -73,7 +73,7 @@ namespace KS.Kernel.Debugging.RemoteDebug.Command
             // Get the string of arguments
             string strArgs = CommandText[index..];
             DebugWriter.WriteDebug(DebugLevel.I, "Prototype strArgs: {0}", strArgs);
-            if (!(index == CommandText.Length))
+            if (index != CommandText.Length)
                 strArgs = strArgs[1..];
             DebugWriter.WriteDebug(DebugLevel.I, "Finished strArgs: {0}", strArgs);
 

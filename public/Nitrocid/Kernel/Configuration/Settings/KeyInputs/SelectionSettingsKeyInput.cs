@@ -117,7 +117,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                     // Now, set the value
                     SettingsAppTools.SetPropertyValue(key.Variable, selectionsArray.ToArray()[AnswerIndex], configType);
                 }
-                else if (!(AnswerInt > MaxKeyOptions))
+                else if (AnswerInt <= MaxKeyOptions)
                 {
                     object FinalValue;
                     DebugWriter.WriteDebug(DebugLevel.I, "Setting variable {0} to {1}...", key.Variable, AnswerInt);
