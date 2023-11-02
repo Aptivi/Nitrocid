@@ -61,6 +61,22 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ScreensaverPackInit.SaversConfig.BloomDarkColors = value;
             }
         }
+        /// <summary>
+        /// [Bloom] How many color steps for transitioning between two colors?
+        /// </summary>
+        public static int BloomSteps
+        {
+            get
+            {
+                return ScreensaverPackInit.SaversConfig.BloomSteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 100;
+                ScreensaverPackInit.SaversConfig.BloomSteps = value;
+            }
+        }
 
     }
 
@@ -72,7 +88,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
         private Color nextColor;
         private Color currentColor;
-        private readonly int steps = 100;
 
         private static int MaxLevel =>
             BloomSettings.BloomDarkColors ? 32 : 255;
@@ -94,6 +109,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
 
             // Prepare the colors
+            int steps = BloomSettings.BloomSteps;
             double thresholdR = (currentColor.R - nextColor.R) / (double)steps;
             double thresholdG = (currentColor.G - nextColor.G) / (double)steps;
             double thresholdB = (currentColor.B - nextColor.B) / (double)steps;

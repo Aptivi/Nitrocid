@@ -64,6 +64,22 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 ScreensaverPackInit.SaversConfig.GradientBloomDarkColors = value;
             }
         }
+        /// <summary>
+        /// [GradientBloom] How many color steps for transitioning between two colors?
+        /// </summary>
+        public static int GradientBloomSteps
+        {
+            get
+            {
+                return ScreensaverPackInit.SaversConfig.GradientBloomSteps;
+            }
+            set
+            {
+                if (value <= 0)
+                    value = 100;
+                ScreensaverPackInit.SaversConfig.GradientBloomSteps = value;
+            }
+        }
 
     }
 
@@ -77,7 +93,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         private Color currentColorLeft;
         private Color nextColorRight;
         private Color currentColorRight;
-        private readonly int steps = 100;
 
         private static int MaxLevel =>
             GradientBloomSettings.GradientBloomDarkColors ? 32 : 255;
@@ -101,6 +116,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
 
             // Prepare the colors
+            int steps = GradientBloomSettings.GradientBloomSteps;
             double thresholdLeftR = (currentColorLeft.R - nextColorLeft.R) / (double)steps;
             double thresholdLeftG = (currentColorLeft.G - nextColorLeft.G) / (double)steps;
             double thresholdLeftB = (currentColorLeft.B - nextColorLeft.B) / (double)steps;

@@ -4326,6 +4326,12 @@
                 "Type": "SBoolean",
                 "Variable": "BloomDarkColors",
                 "Description": "Whether to use the dark colors or light colors."
+            },
+            {
+                "Name": "Color steps",
+                "Type": "SInt",
+                "Variable": "BloomSteps",
+                "Description": "How many color steps for transitioning between two colors?"
             }
         ]
     },
@@ -5459,6 +5465,12 @@
                 "Type": "SBoolean",
                 "Variable": "GradientBloomDarkColors",
                 "Description": "Whether to use the dark colors or light colors."
+            },
+            {
+                "Name": "Color steps",
+                "Type": "SInt",
+                "Variable": "GradientBloomSteps",
+                "Description": "How many color steps for transitioning between two colors?"
             }
         ]
     },

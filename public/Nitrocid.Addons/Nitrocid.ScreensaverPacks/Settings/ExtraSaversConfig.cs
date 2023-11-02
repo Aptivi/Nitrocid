@@ -2353,6 +2353,10 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// </summary>
         public bool BloomDarkColors { get; set; }
         /// <summary>
+        /// [Bloom] How many color steps for transitioning between two colors?
+        /// </summary>
+        public int BloomSteps { get; set; } = 100;
+        /// <summary>
         /// [WordHasher] Enable truecolor support. Has a higher priority than 255 color support.
         /// </summary>
         public bool WordHasherTrueColor { get; set; } = true;
@@ -2956,6 +2960,10 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [GradientBloom] Whether to use dark colors or not
         /// </summary>
         public bool GradientBloomDarkColors { get; set; }
+        /// <summary>
+        /// [GradientBloom] How many color steps for transitioning between two colors?
+        /// </summary>
+        public int GradientBloomSteps { get; set; } = 100;
         /// <summary>
         /// [SkyComet] How many milliseconds to wait before making the next write?
         /// </summary>
