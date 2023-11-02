@@ -217,6 +217,12 @@
                 "Description": "For themes that support accents, this is the accented backgound color."
             },
             {
+                "Name": "Use console color palette",
+                "Type": "SBoolean",
+                "Variable": "UseConsoleColorPalette",
+                "Description": "When this is set to true, the color palette defined by the terminal is used."
+            },
+            {
                 "Name": "User Name Shell Color",
                 "Type": "SColor",
                 "Variable": "UserNameShellColor"

@@ -228,6 +228,14 @@ namespace KS.Kernel.Configuration.Instances
             set => KernelColorTools.accentBackgroundColor = new Color(value);
         }
         /// <summary>
+        /// Whether to use accent colors for themes that support accents
+        /// </summary>
+        public bool UseConsoleColorPalette
+        {
+            get => ColorTools.UseTerminalPalette;
+            set => ColorTools.UseTerminalPalette = value;
+        }
+        /// <summary>
         /// User Name Shell Color
         /// </summary>
         public string UserNameShellColor
