@@ -22,6 +22,8 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text;
 using KS.Drivers;
+using KS.Files;
+using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
 using KS.Kernel.Debugging.Trace;
@@ -38,17 +40,13 @@ namespace KS.Kernel.Debugging
     public static class DebugWriter
     {
 
-        /// <summary>
-        /// Debug stack trace list
-        /// </summary>
         internal static string DebugPath = "";
         internal static string lastRoutinePath = "";
         internal static StreamWriter DebugStreamWriter;
         internal static bool isDisposed;
         internal static object WriteLock = new();
-        internal static bool NotifyDebugDownloadError;
-        internal static bool NotifyDebugDownloadNetworkUnavailable;
         internal readonly static List<string> debugStackTraces = new();
+        internal readonly static List<string> debugLines = new();
 
         /// <summary>
         /// Debug stack trace list
@@ -67,6 +65,18 @@ namespace KS.Kernel.Debugging
         /// </summary>
         public static bool EventDebug =>
             Config.MainConfig.EventDebug;
+
+        /// <summary>
+        /// Enables debug quota checks.
+        /// </summary>
+        public static bool DebugQuotaCheck =>
+            Config.MainConfig.DebugQuotaCheck;
+
+        /// <summary>
+        /// How many lines to print to the debug buffer before reaching the quota limit?
+        /// </summary>
+        public static int DebugQuotaLines =>
+            Config.MainConfig.DebugQuotaLines;
 
         /// <summary>
         /// Outputs the text into the debugger file, and sets the time stamp. Censors all secure arguments if <see cref="DebugCensorPrivateInfo"/> is on.
@@ -136,6 +146,10 @@ namespace KS.Kernel.Debugging
                     // Try to debug...
                     try
                     {
+                        // Check for quota
+                        CheckDebugQuota();
+
+                        // Populate the debug stack frame
                         var STrace = new DebugStackFrameBasic();
                         StringBuilder message = new();
 
@@ -185,6 +199,10 @@ namespace KS.Kernel.Debugging
                             DriverHandler.CurrentDebugLoggerDriverLocal.Write(message.ToString(), vars);
                         else
                             DriverHandler.CurrentDebugLoggerDriverLocal.Write(message.ToString());
+
+                        // If quota is enabled, add the line
+                        if (DebugQuotaCheck)
+                            debugLines.Add(message.ToString());
                     }
                     catch (Exception ex)
                     {
@@ -327,6 +345,27 @@ namespace KS.Kernel.Debugging
 
         internal static string GetExceptionTraceString(Exception ex) =>
             $"{ex.GetType().FullName}: {(ex is KernelException kex ? kex.OriginalExceptionMessage : ex.Message)}{CharManager.NewLine}{ex.StackTrace}{CharManager.NewLine}";
+
+        internal static void CheckDebugQuota()
+        {
+            // Don't do anything if debug quota check is disabled.
+            if (!DebugQuotaCheck)
+                return;
+
+            // Now, check how many lines we've written to the buffer
+            if (debugLines.Count > DebugQuotaLines)
+            {
+                debugLines.Clear();
+                InitializeDebugPath();
+                isDisposed = true;
+            }
+        }
+
+        internal static void InitializeDebugPath()
+        {
+            // Initialize debug path
+            DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+        }
 
     }
 }

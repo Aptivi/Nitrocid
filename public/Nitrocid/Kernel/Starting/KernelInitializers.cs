@@ -91,7 +91,7 @@ namespace KS.Kernel.Starting
                     KernelEntry.FirstTime = true;
 
                 // Initialize debug path
-                DebugWriter.DebugPath = Getting.GetNumberedFileName(Path.GetDirectoryName(Paths.GetKernelPath(KernelPathType.Debugging)), Paths.GetKernelPath(KernelPathType.Debugging));
+                DebugWriter.InitializeDebugPath();
 
                 // Power signal handlers
                 PowerSignalHandlers.RegisterHandlers();

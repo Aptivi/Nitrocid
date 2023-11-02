@@ -204,6 +204,14 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool AllowUntrustedMods { get; set; }
         /// <summary>
+        /// Enables debug quota check
+        /// </summary>
+        public bool DebugQuotaCheck { get; set; }
+        /// <summary>
+        /// How many lines to print to the debug buffer before reaching the quota limit?
+        /// </summary>
+        public int DebugQuotaLines { get; set; } = 10000;
+        /// <summary>
         /// Whether to use accent colors for themes that support accents
         /// </summary>
         public bool UseAccentColors { get; set; }
