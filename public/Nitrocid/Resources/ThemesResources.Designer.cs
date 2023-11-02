@@ -65,7 +65,8 @@ namespace KS.Resources {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Default&quot;,
         ///        &quot;Description&quot;: &quot;The default theme for the kernel&quot;,
-        ///        &quot;Localizable&quot;: true
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Standard&quot;
         ///    },
         ///    &quot;InputColor&quot;: &quot;15&quot;,
         ///    &quot;LicenseColor&quot;: &quot;15&quot;,
@@ -78,12 +79,36 @@ namespace KS.Resources {
         ///    &quot;ListEntryColor&quot;: &quot;3&quot;,
         ///    &quot;ListValueColor&quot;: &quot;8&quot;,
         ///    &quot;StageColor&quot;: &quot;10&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;9&quot;,
-        ///    &quot;WarningC [rest of string was truncated]&quot;;.
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Default {
             get {
                 return ResourceManager.GetString("Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Dynamic&quot;,
+        ///        &quot;Description&quot;: &quot;Accents everywhere!&quot;,
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Exciting&quot;,
+        ///        &quot;UseAccentTypes&quot;: [
+        ///            &quot;HostNameShellColor&quot;,
+        ///            &quot;UserNameShellColor&quot;,
+        ///            &quot;NeutralTextColor&quot;,
+        ///            &quot;ListEntryColor&quot;,
+        ///            &quot;StageColor&quot;,
+        ///            &quot;BannerColor&quot;,
+        ///            &quot;NotificationTitleColor&quot;,
+        ///            &quot;SuccessColor&quot;,
+        ///            &quot;UserDollarColor&quot;,
+        ///            &quot;SeparatorTextColor&quot;,        /// [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string Dynamic {
+            get {
+                return ResourceManager.GetString("Dynamic", resourceCulture);
             }
         }
     }

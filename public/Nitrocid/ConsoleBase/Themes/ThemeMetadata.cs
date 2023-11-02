@@ -18,6 +18,7 @@
 //
 
 using Newtonsoft.Json;
+using System;
 
 namespace KS.ConsoleBase.Themes
 {
@@ -43,6 +44,8 @@ namespace KS.ConsoleBase.Themes
         private readonly ThemeCategory category;
         [JsonProperty(nameof(Localizable))]
         private readonly bool localizable;
+        [JsonProperty(nameof(UseAccentTypes))]
+        private readonly string[] useAccentTypes;
 
         [JsonIgnore]
         public string Name =>
@@ -74,9 +77,12 @@ namespace KS.ConsoleBase.Themes
         [JsonIgnore]
         public bool Localizable =>
             localizable;
+        [JsonIgnore]
+        public string[] UseAccentTypes =>
+            useAccentTypes;
 
         [JsonConstructor]
-        internal ThemeMetadata(string name, string description, bool isEvent, int startMonth, int startDay, int endMonth, int endDay, string calendar, ThemeCategory category, bool localizable)
+        internal ThemeMetadata(string name, string description, bool isEvent, int startMonth, int startDay, int endMonth, int endDay, string calendar, ThemeCategory category, bool localizable, string[] useAccentTypes)
         {
             this.name = name;
             this.description = description;
@@ -88,6 +94,7 @@ namespace KS.ConsoleBase.Themes
             this.calendar = calendar;
             this.category = category;
             this.localizable = localizable;
+            this.useAccentTypes = useAccentTypes ?? Array.Empty<string>();
         }
     }
 }

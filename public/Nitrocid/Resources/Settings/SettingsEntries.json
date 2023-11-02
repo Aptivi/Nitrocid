@@ -187,6 +187,24 @@
         "DisplayAs": "Color settings",
         "Keys": [
             {
+                "Name": "Use accent colors",
+                "Type": "SBoolean",
+                "Variable": "UseAccentColors",
+                "Description": "If set to true, the theme manager populates accent colors for specific color types that the theme supports."
+            },
+            {
+                "Name": "Foreground accent color",
+                "Type": "SColor",
+                "Variable": "AccentForegroundColor",
+                "Description": "For themes that support accents, this is the accented foregound color."
+            },
+            {
+                "Name": "Background accent color",
+                "Type": "SColor",
+                "Variable": "AccentBackgroundColor",
+                "Description": "For themes that support accents, this is the accented backgound color."
+            },
+            {
                 "Name": "User Name Shell Color",
                 "Type": "SColor",
                 "Variable": "UserNameShellColor"

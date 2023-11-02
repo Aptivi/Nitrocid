@@ -204,6 +204,26 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool AllowUntrustedMods { get; set; }
         /// <summary>
+        /// Whether to use accent colors for themes that support accents
+        /// </summary>
+        public bool UseAccentColors { get; set; }
+        /// <summary>
+        /// Accent color (foreground)
+        /// </summary>
+        public string AccentForegroundColor
+        {
+            get => KernelColorTools.accentForegroundColor.PlainSequence;
+            set => KernelColorTools.accentForegroundColor = new Color(value);
+        }
+        /// <summary>
+        /// Accent color (background)
+        /// </summary>
+        public string AccentBackgroundColor
+        {
+            get => KernelColorTools.accentBackgroundColor.PlainSequence;
+            set => KernelColorTools.accentBackgroundColor = new Color(value);
+        }
+        /// <summary>
         /// User Name Shell Color
         /// </summary>
         public string UserNameShellColor

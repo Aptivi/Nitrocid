@@ -23,6 +23,7 @@ using System.IO;
 using System.Linq;
 using KS.ConsoleBase.Colors;
 using KS.Files.Operations;
+using KS.Kernel.Configuration;
 using KS.Kernel.Time;
 using KS.Kernel.Time.Calendars;
 using KS.Resources;
@@ -42,6 +43,9 @@ namespace KS.ConsoleBase.Themes
         internal readonly Dictionary<KernelColorType, Color> ThemeColors = KernelColorTools.PopulateColorsEmpty();
         internal readonly DateTime start = DateTime.Today;
         internal readonly DateTime end = DateTime.Today;
+        private string[] useAccentTypes;
+        private ThemeMetadata metadata;
+        private JToken metadataToken;
 
         /// <summary>
         /// Theme name
@@ -104,6 +108,11 @@ namespace KS.ConsoleBase.Themes
         /// The calendar name in which the event is assigned to
         /// </summary>
         public string Calendar { get; }
+        /// <summary>
+        /// Kernel color type list to use accent color
+        /// </summary>
+        public string[] UseAccentTypes =>
+            useAccentTypes;
 
         /// <summary>
         /// Gets a color from the color type
@@ -111,6 +120,27 @@ namespace KS.ConsoleBase.Themes
         /// <param name="type">Color type</param>
         public Color GetColor(KernelColorType type) =>
             ThemeColors[type];
+
+        internal void UpdateColors()
+        {
+            // Populate the colors
+            useAccentTypes = metadata.UseAccentTypes.Where((type) => Enum.IsDefined(typeof(KernelColorType), type[..^5])).ToArray();
+            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
+            {
+                KernelColorType type = ThemeColors.Keys.ElementAt(typeIndex);
+
+                // Get the color value and check to see if it's null
+                string fullTypeName = $"{type}Color";
+                var colorToken = metadataToken.SelectToken(fullTypeName);
+                if (colorToken is null)
+                    ThemeColors[type] = KernelColorTools.PopulateColorsDefault()[type];
+                else
+                    ThemeColors[type] =
+                        UseAccentTypes.Contains(fullTypeName) && Config.MainConfig.UseAccentColors ?
+                        (fullTypeName.EndsWith("BackgroundColor") || fullTypeName.EndsWith("BackColor") ? new Color(Config.MainConfig.AccentBackgroundColor) : new Color(Config.MainConfig.AccentForegroundColor)) :
+                        new Color(colorToken.ToString());
+            }
+        }
 
         /// <summary>
         /// Generates a new theme info from KS resources
@@ -141,20 +171,15 @@ namespace KS.ConsoleBase.Themes
         /// <param name="ThemeResourceJson">Theme resource JSON</param>
         internal ThemeInfo(JToken ThemeResourceJson)
         {
-            // Place information to the class
-            for (int typeIndex = 0; typeIndex < Enum.GetValues(typeof(KernelColorType)).Length; typeIndex++)
-            {
-                KernelColorType type = ThemeColors.Keys.ElementAt(typeIndex);
-
-                // Get the color value and check to see if it's null
-                var colorToken = ThemeResourceJson.SelectToken($"{type}Color");
-                if (colorToken is null)
-                    ThemeColors[type] = KernelColorTools.PopulateColorsDefault()[type];
-                else
-                    ThemeColors[type] = new Color(colorToken.ToString());
-            }
+            // Parse the metadata
             var metadataObj = ThemeResourceJson["Metadata"];
-            var metadata = JsonConvert.DeserializeObject<ThemeMetadata>(metadataObj.ToString());
+            metadata = JsonConvert.DeserializeObject<ThemeMetadata>(metadataObj.ToString());
+            metadataToken = ThemeResourceJson;
+
+            // Populate colors
+            UpdateColors();
+
+            // Install some info to the class
             Name = metadata.Name;
             Description = metadata.Description;
             TrueColorRequired = ThemeTools.IsTrueColorRequired(ThemeColors);

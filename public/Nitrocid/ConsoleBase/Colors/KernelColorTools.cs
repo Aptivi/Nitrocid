@@ -43,6 +43,10 @@ namespace KS.ConsoleBase.Colors
         internal static Color currentForegroundColor = new(ConsoleColors.White);
         internal static Color currentBackgroundColor = Color.Empty;
 
+        // Variables for accent background and foreground colors
+        internal static Color accentForegroundColor = GetColor(KernelColorType.Warning);
+        internal static Color accentBackgroundColor = GetColor(KernelColorType.Background);
+
         /// <summary>
         /// Enables color blindness
         /// </summary>

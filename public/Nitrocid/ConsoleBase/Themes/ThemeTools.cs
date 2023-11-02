@@ -43,7 +43,8 @@ namespace KS.ConsoleBase.Themes
         internal static bool cacheInvalidated = true;
         internal readonly static Dictionary<string, ThemeInfo> themes = new()
         {
-            { "Default", new ThemeInfo(JToken.Parse(ThemesResources.Default)) }
+            { "Default", new ThemeInfo(JToken.Parse(ThemesResources.Default)) },
+            { "Dynamic", new ThemeInfo(JToken.Parse(ThemesResources.Dynamic)) },
         };
 
         /// <summary>
@@ -96,8 +97,12 @@ namespace KS.ConsoleBase.Themes
         /// Gets the colors from the theme
         /// </summary>
         /// <param name="themeInfo">Theme instance</param>
-        public static Dictionary<KernelColorType, Color> GetColorsFromTheme(ThemeInfo themeInfo) => 
-            themeInfo.ThemeColors;
+        public static Dictionary<KernelColorType, Color> GetColorsFromTheme(ThemeInfo themeInfo)
+        {
+            if (themeInfo.UseAccentTypes.Length > 0)
+                themeInfo.UpdateColors();
+            return themeInfo.ThemeColors;
+        }
 
         /// <summary>
         /// Sets system colors according to the programmed templates
