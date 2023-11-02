@@ -155,7 +155,6 @@ namespace KS.ConsoleBase.Inputs.Styles
             ConsoleKeyInfo Answer;
             bool initialVisible = ConsoleWrapper.CursorVisible;
             ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear(true);
 
             // Make pages based on console window height
             int listStartPosition = TextTools.GetWrappedSentences(Question, ConsoleWrapper.WindowWidth).Length;
@@ -165,14 +164,8 @@ namespace KS.ConsoleBase.Inputs.Styles
             if (AllAnswers.Count % answersPerPage == 0)
                 pages--;
             int lastPage = 1;
-            bool refreshRequired = false;
+            bool refreshRequired = true;
             var selectionBuilder = new StringBuilder();
-
-            // Ask a question
-            selectionBuilder.Append(
-                $"{KernelColorTools.GetColor(KernelColorType.Question).VTSequenceForeground}" +
-                $"{Question}"
-            );
 
             while (true)
             {
