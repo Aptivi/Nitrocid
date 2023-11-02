@@ -41,7 +41,6 @@ using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Text;
 using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.Json;
-using KS.Shell.Shells.HTTP;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Admin;
 using KS.Kernel.Events;
@@ -88,7 +87,6 @@ namespace KS.Shell.ShellBase.Shells
             { $"{ShellType.AdminShell}",    new() },
             { $"{ShellType.DebugShell}",    new() },
             { $"{ShellType.HexShell}",      new() },
-            { $"{ShellType.HTTPShell}",     new() },
             { $"{ShellType.JsonShell}",     new() },
             { $"{ShellType.MailShell}",     new() },
             { $"{ShellType.RSSShell}",      new() },
@@ -224,7 +222,6 @@ namespace KS.Shell.ShellBase.Shells
             { "TextShell", new TextShellInfo() },
             { "RSSShell", new RSSShellInfo() },
             { "JsonShell", new JsonShellInfo() },
-            { "HTTPShell", new HTTPShellInfo() },
             { "HexShell", new HexShellInfo() },
             { "AdminShell", new AdminShellInfo() },
             { "SqlShell", new SqlShellInfo() },

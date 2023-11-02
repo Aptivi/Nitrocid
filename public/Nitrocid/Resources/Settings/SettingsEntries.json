@@ -717,13 +717,6 @@
                 "Description": ""
             },
             {
-                "Name": "HTTP Shell Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "HTTPShellPromptPreset",
-                "ShellType": "HTTPShell",
-                "Description": ""
-            },
-            {
                 "Name": "Admin Shell Prompt Preset",
                 "Type": "SPreset",
                 "Variable": "AdminShellPromptPreset",

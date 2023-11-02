@@ -841,14 +841,6 @@ namespace KS.Kernel.Configuration.Instances
             set => PromptPresetManager.SetPreset(value, ShellType.HexShell, false);
         }
         /// <summary>
-        /// HTTP Shell Prompt Preset
-        /// </summary>
-        public string HTTPShellPromptPreset
-        {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.HTTPShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.HTTPShell, false);
-        }
-        /// <summary>
         /// Admin Shell Prompt Preset
         /// </summary>
         public string AdminShellPromptPreset

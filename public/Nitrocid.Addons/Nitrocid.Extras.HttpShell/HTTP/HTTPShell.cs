@@ -18,28 +18,26 @@
 //
 
 using System;
+using System.Net.Http;
 using System.Threading;
-using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Text;
 using KS.Network.Base.Connections;
-using Syndian.Instance;
-using KS.Shell.ShellBase.Shells;
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Shell.ShellBase.Commands;
 using KS.Network.Base.SpeedDial;
+using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Shells;
 
-namespace KS.Shell.Shells.RSS
+namespace Nitrocid.Extras.HttpShell.HTTP
 {
     /// <summary>
-    /// The RSS shell
+    /// The HTTP shell
     /// </summary>
-    public class RSSShell : BaseShell, IShell
+    public class HTTPShell : BaseShell, IShell
     {
 
         /// <inheritdoc/>
-        public override string ShellType => "RSSShell";
+        public override string ShellType => "HTTPShell";
 
         /// <inheritdoc/>
         public override bool Bail { get; set; }
@@ -50,20 +48,12 @@ namespace KS.Shell.Shells.RSS
         public override void InitializeShell(params object[] ShellArgs)
         {
             // Parse shell arguments
-            NetworkConnection rssConnection = (NetworkConnection)ShellArgs[0];
-            RSSFeed rssFeed = (RSSFeed)rssConnection.ConnectionInstance;
-            RSSShellCommon.feedInstance = rssFeed;
-            RSSShellCommon.rssFeedLink = rssFeed.FeedUrl;
-
-            // Send ping to keep the connection alive
-            if (!RSSShellCommon.RSSKeepAlive & !RSSShellCommon.RSSRefresher.IsAlive & RSSShellCommon.RSSRefreshFeeds)
-            {
-                RSSShellCommon.RSSRefresher.Start();
-                DebugWriter.WriteDebug(DebugLevel.I, "Made new thread about RefreshFeeds()");
-            }
+            NetworkConnection httpConnection = (NetworkConnection)ShellArgs[0];
+            HTTPShellCommon.clientConnection = httpConnection;
+            HTTPShellCommon.HTTPSite = httpConnection.ConnectionUri.OriginalString;
 
             // Write connection information to Speed Dial file if it doesn't exist there
-            SpeedDialTools.TryAddEntryToSpeedDial(rssFeed.FeedUrl, rssConnection.ConnectionUri.Port, NetworkConnectionType.RSS, false);
+            SpeedDialTools.TryAddEntryToSpeedDial(HTTPShellCommon.HTTPSite, httpConnection.ConnectionUri.Port, NetworkConnectionType.HTTP, false);
 
             while (!Bail)
             {
@@ -80,8 +70,7 @@ namespace KS.Shell.Shells.RSS
                 catch (Exception ex)
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
-                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("There was an error in the shell.") + CharManager.NewLine + "Error {0}: {1}", true, KernelColorType.Error, ex.GetType().FullName, ex.Message);
-                    continue;
+                    throw new KernelException(KernelExceptionType.HTTPShell, Translate.DoTranslation("There was an error in the HTTP shell:") + " {0}", ex, ex.Message);
                 }
 
                 // Exiting, so reset the site
@@ -89,16 +78,13 @@ namespace KS.Shell.Shells.RSS
                 {
                     if (!detaching)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.W, "Exit requested. Disconnecting host...");
-                        if (RSSShellCommon.RSSRefreshFeeds)
-                            RSSShellCommon.RSSRefresher.Stop();
-                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(rssConnection);
+                        ((HttpClient)HTTPShellCommon.ClientHTTP.ConnectionInstance)?.Dispose();
+                        int connectionIndex = NetworkConnectionTools.GetConnectionIndex(HTTPShellCommon.ClientHTTP);
                         NetworkConnectionTools.CloseConnection(connectionIndex);
-                        RSSShellCommon.clientConnection = null;
+                        HTTPShellCommon.clientConnection = null;
                     }
                     detaching = false;
-                    RSSShellCommon.rssFeedLink = "";
-                    RSSShellCommon.feedInstance = null;
+                    HTTPShellCommon.HTTPSite = "";
                 }
             }
         }

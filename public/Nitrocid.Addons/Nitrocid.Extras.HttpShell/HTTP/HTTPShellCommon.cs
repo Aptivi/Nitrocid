@@ -17,52 +17,31 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-namespace KS.Shell.ShellBase.Shells
+using KS.Network.Base.Connections;
+
+namespace Nitrocid.Extras.HttpShell.HTTP
 {
     /// <summary>
-    /// Shell type enumeration
+    /// Common HTTP shell module
     /// </summary>
-    public enum ShellType
+    public static class HTTPShellCommon
     {
+        internal static NetworkConnection clientConnection;
+
         /// <summary>
-        /// Normal UESH shell
+        /// HTTP site URL
         /// </summary>
-        Shell,
+        public static string HTTPSite { get; set; }
+
         /// <summary>
-        /// Mail shell
+        /// HTTP shell prompt style
         /// </summary>
-        MailShell,
+        public static string HTTPShellPromptStyle { get; set; } = "";
+
         /// <summary>
-        /// SFTP shell
+        /// An HTTP client
         /// </summary>
-        SFTPShell,
-        /// <summary>
-        /// Text shell
-        /// </summary>
-        TextShell,
-        /// <summary>
-        /// RSS Shell
-        /// </summary>
-        RSSShell,
-        /// <summary>
-        /// JSON Shell
-        /// </summary>
-        JsonShell,
-        /// <summary>
-        /// Hex shell
-        /// </summary>
-        HexShell,
-        /// <summary>
-        /// Kernel administration shell
-        /// </summary>
-        AdminShell,
-        /// <summary>
-        /// SQL shell
-        /// </summary>
-        SqlShell,
-        /// <summary>
-        /// Kernel debug shell
-        /// </summary>
-        DebugShell
+        public static NetworkConnection ClientHTTP =>
+            clientConnection;
     }
 }

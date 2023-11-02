@@ -752,13 +752,6 @@ namespace KS.Shell.Shells.UESH
                     }, new HostCommand())
             },
             
-            { "http",
-                new CommandInfo("http", /* Localizable */ "Starts the HTTP shell",
-                    new[] {
-                        new CommandArgumentInfo()
-                    }, new HttpCommand())
-            },
-            
             { "hwinfo",
                 new CommandInfo("hwinfo", /* Localizable */ "Prints hardware information",
                     new[] {
