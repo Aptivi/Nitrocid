@@ -17,10 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using FluentFTP.Helpers;
 using KS.Drivers;
 using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
 
@@ -36,7 +36,7 @@ namespace KS.Shell.ShellBase.Scripting.Conditions.Types
             { "null",       (value) => value is null },
             { "string",     (value) => value is not null },
             { "fullstring", (value) => value is not null && !string.IsNullOrEmpty(value) },
-            { "numeric",    (value) => value is not null && value.IsNumeric() },
+            { "numeric",    (value) => value is not null && TextTools.IsStringNumeric(value) },
             { "byte",       (value) => value is not null && sbyte.TryParse(value, out _) },
             { "i8",         (value) => value is not null && sbyte.TryParse(value, out _) },
             { "ubyte",      (value) => value is not null && byte.TryParse(value, out _) },

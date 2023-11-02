@@ -36,7 +36,6 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Commands.ProcessExecution;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using KS.Shell.Shells.UESH;
-using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Text;
@@ -53,7 +52,6 @@ using KS.Drivers.Console;
 using Manipulation = KS.Files.Operations.Manipulation;
 using System.Text.RegularExpressions;
 using System.Linq;
-using FluentFTP.Helpers;
 using KS.Kernel.Configuration;
 using KS.Shell.Shells.Sql;
 using KS.Users;
@@ -89,7 +87,6 @@ namespace KS.Shell.ShellBase.Shells
             { "General",                    new() },
             { $"{ShellType.AdminShell}",    new() },
             { $"{ShellType.DebugShell}",    new() },
-            { $"{ShellType.FTPShell}",      new() },
             { $"{ShellType.HexShell}",      new() },
             { $"{ShellType.HTTPShell}",     new() },
             { $"{ShellType.JsonShell}",     new() },
@@ -222,7 +219,6 @@ namespace KS.Shell.ShellBase.Shells
         internal readonly static Dictionary<string, BaseShellInfo> availableShells = new()
         {
             { "Shell", new UESHShellInfo() },
-            { "FTPShell", new FTPShellInfo() },
             { "MailShell", new MailShellInfo() },
             { "SFTPShell", new SFTPShellInfo() },
             { "TextShell", new TextShellInfo() },

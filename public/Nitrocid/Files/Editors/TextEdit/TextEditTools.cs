@@ -24,7 +24,6 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using FluentFTP.Helpers;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -106,7 +105,7 @@ namespace KS.Files.Editors.TextEdit
                 DebugWriter.WriteDebug(DebugLevel.I, "Trying to save file...");
                 TextEditShellCommon.FileStream.SetLength(0L);
                 DebugWriter.WriteDebug(DebugLevel.I, "Length set to 0.");
-                var FileLinesByte = Encoding.Default.GetBytes(TextEditShellCommon.FileLines.ToArray().Join(CharManager.NewLine));
+                var FileLinesByte = Encoding.Default.GetBytes(string.Join(CharManager.NewLine, TextEditShellCommon.FileLines.ToArray()));
                 DebugWriter.WriteDebug(DebugLevel.I, "Converted lines to bytes. Length: {0}", FileLinesByte.Length);
                 TextEditShellCommon.FileStream.Write(FileLinesByte, 0, FileLinesByte.Length);
                 TextEditShellCommon.FileStream.Flush();

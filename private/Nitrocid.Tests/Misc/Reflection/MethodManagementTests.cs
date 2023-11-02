@@ -22,7 +22,6 @@ using KS.Misc.Reflection;
 using KS.Shell.ShellBase.Commands;
 using NUnit.Framework;
 using Shouldly;
-using System.Collections.Generic;
 using System.Globalization;
 
 namespace Nitrocid.Tests.Misc.Reflection

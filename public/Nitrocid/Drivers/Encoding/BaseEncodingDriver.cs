@@ -17,7 +17,6 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using FluentFTP.Helpers;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;

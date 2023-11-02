@@ -404,5 +404,25 @@ namespace KS.Misc.Text
 
             return double.TryParse(Expression, out double _);
         }
+
+        /// <summary>
+		/// Removes a prefix from the text
+		/// </summary>
+		public static string RemovePrefix(this string text, string prefix)
+        {
+            if (text.StartsWith(prefix))
+                return text[prefix.Length..].Trim();
+            return text;
+        }
+
+        /// <summary>
+        /// Removes a postfix from the text
+        /// </summary>
+        public static string RemovePostfix(this string text, string postfix)
+        {
+            if (text.EndsWith(postfix))
+                return text[..^postfix.Length];
+            return text;
+        }
     }
 }

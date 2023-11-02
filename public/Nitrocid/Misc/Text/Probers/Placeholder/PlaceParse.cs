@@ -25,7 +25,6 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.Base;
 using KS.Network.Mail;
-using KS.Shell.Shells.FTP;
 using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
 using KS.Users;
@@ -53,11 +52,6 @@ namespace KS.Misc.Text.Probers.Placeholder
         private readonly static List<PlaceInfo> placeholders = new()
         {
             new PlaceInfo("user",                             (_) => UserManagement.CurrentUser.Username),
-            new PlaceInfo("ftpuser",                          (_) => FTPShellCommon.FtpUser),
-            new PlaceInfo("ftpaddr",                          (_) => FTPShellCommon.FtpSite),
-            new PlaceInfo("currentftpdirectory",              (_) => FTPShellCommon.FtpCurrentRemoteDir),
-            new PlaceInfo("currentftplocaldirectory",         (_) => FTPShellCommon.FtpCurrentDirectory),
-            new PlaceInfo("currentftplocaldirectoryname",     (_) => !string.IsNullOrEmpty(FTPShellCommon.FtpCurrentDirectory) ? new DirectoryInfo(FTPShellCommon.FtpCurrentDirectory).Name : ""),
             new PlaceInfo("sftpuser",                         (_) => SFTPShellCommon.SFTPUser),
             new PlaceInfo("sftpaddr",                         (_) => SFTPShellCommon.SFTPSite),
             new PlaceInfo("currentsftpdirectory",             (_) => SFTPShellCommon.SFTPCurrentRemoteDir),

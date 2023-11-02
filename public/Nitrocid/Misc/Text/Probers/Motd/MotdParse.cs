@@ -37,7 +37,7 @@ namespace KS.Misc.Text.Probers.Motd
     public static class MotdParse
     {
         private static string motdMessage;
-        private static List<Func<string>> motdDynamics = new();
+        private static readonly List<Func<string>> motdDynamics = new();
 
         /// <summary>
         /// MOTD file path

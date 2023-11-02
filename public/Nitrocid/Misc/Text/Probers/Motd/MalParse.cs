@@ -37,7 +37,7 @@ namespace KS.Misc.Text.Probers.Motd
     public static class MalParse
     {
         private static string malMessage;
-        private static List<Func<string>> malDynamics = new();
+        private static readonly List<Func<string>> malDynamics = new();
 
         /// <summary>
         /// MAL file path

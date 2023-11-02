@@ -55,7 +55,7 @@
     <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
 
     <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersionChangeset>255</NitrocidModAPIVersionChangeset>
+    <NitrocidModAPIVersionChangeset>256</NitrocidModAPIVersionChangeset>
 
     <!-- To be installed to the file version -->
     <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -81,7 +81,6 @@
   <ItemGroup>
     <PackageReference Include="Addresstigator" Version="0.1.0.5" PrivateAssets="all" />
     <PackageReference Include="Crc32.NET" Version="1.2.0" PrivateAssets="all" />
-    <PackageReference Include="FluentFTP" Version="48.0.3" PrivateAssets="all" />
     <PackageReference Include="GRILO.Boot" Version="0.1.0.3" PrivateAssets="all" />
     <PackageReference Include="Inxi.NET" Version="2022.5.0.4" PrivateAssets="all" />
     <PackageReference Include="MailKit" Version="4.2.0" PrivateAssets="all" />

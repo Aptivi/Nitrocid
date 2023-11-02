@@ -21,7 +21,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
-using FluentFTP.Helpers;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
@@ -134,8 +133,8 @@ namespace KS.Network.RSS
             // Search through the entire article list
             foreach (var article in feedArticles)
             {
-                bool titleFound = caseSensitive ? article.ArticleTitle.Contains(phrase) : article.ArticleTitle.ContainsCI(phrase);
-                bool descriptionFound = caseSensitive ? article.ArticleDescription.Contains(phrase) : article.ArticleDescription.ContainsCI(phrase);
+                bool titleFound = caseSensitive ? article.ArticleTitle.Contains(phrase) : article.ArticleTitle.ToLower().Contains(phrase);
+                bool descriptionFound = caseSensitive ? article.ArticleDescription.Contains(phrase) : article.ArticleDescription.ToLower().Contains(phrase);
 
                 if (searchTitle && titleFound)
                 {

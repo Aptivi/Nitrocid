@@ -20,7 +20,6 @@
 using System;
 using System.IO;
 using System.IO.Compression;
-using System.Linq;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Shell.ShellBase.Commands;

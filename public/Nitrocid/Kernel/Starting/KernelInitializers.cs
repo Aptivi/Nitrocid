@@ -32,7 +32,6 @@ using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Kernel.Debugging.RemoteDebug;
-using KS.Kernel.Debugging.Trace;
 using KS.Kernel.Extensions;
 using KS.Kernel.Journaling;
 using KS.Kernel.Power;

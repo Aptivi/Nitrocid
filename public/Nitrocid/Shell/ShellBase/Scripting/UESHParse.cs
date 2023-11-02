@@ -24,7 +24,6 @@ using KS.Languages;
 using KS.Kernel.Events;
 using System.Linq;
 using System.Collections.Generic;
-using FluentFTP.Helpers;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Scripting.Conditions;
 using KS.ConsoleBase.Writers.MiscWriters;

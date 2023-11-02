@@ -676,16 +676,6 @@ namespace KS.Shell.Shells.UESH
                     }, new ForkCommand())
             },
             
-            { "ftp",
-                new CommandInfo("ftp", /* Localizable */ "Use an FTP shell to interact with servers",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "server"),
-                        })
-                    }, new FtpCommand())
-            },
-            
             { "get",
                 new CommandInfo("get", /* Localizable */ "Downloads a file to current working directory",
                     new[] {
