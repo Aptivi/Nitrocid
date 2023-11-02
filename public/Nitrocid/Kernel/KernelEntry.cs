@@ -158,7 +158,10 @@ namespace KS.Kernel
                 // Show MOTD
                 BaseLoginHandler.ShowMOTDOnceFlag = true;
                 if (BaseLoginHandler.ShowMAL)
+                {
                     TextWriterColor.WriteKernelColor(PlaceParse.ProbePlaces(MalParse.MalMessage), true, KernelColorType.Banner);
+                    MalParse.ProcessDynamicMal();
+                }
                 DebugWriter.WriteDebug(DebugLevel.I, "Loaded MAL.");
 
                 // Show headline

@@ -17,7 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
+using KS.Languages;
 
 namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 {
@@ -32,7 +35,9 @@ namespace KS.Shell.ShellBase.Commands.UnifiedCommands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            WelcomeMessage.ShowRandomTip();
+            string tip = WelcomeMessage.GetRandomTip();
+            TextWriterColor.WriteKernelColor(
+                "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + tip, true, KernelColorType.Tip);
             return 0;
         }
 

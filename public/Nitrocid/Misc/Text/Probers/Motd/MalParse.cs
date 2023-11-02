@@ -18,6 +18,9 @@
 //
 
 using System;
+using System.Collections.Generic;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
@@ -34,6 +37,7 @@ namespace KS.Misc.Text.Probers.Motd
     public static class MalParse
     {
         private static string malMessage;
+        private static List<Func<string>> malDynamics = new();
 
         /// <summary>
         /// MAL file path
@@ -96,6 +100,51 @@ namespace KS.Misc.Text.Probers.Motd
                 // Read the message
                 InitMal();
                 MalMessage = Reading.ReadContentsText(MalFilePath);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("Error when trying to get MAL: {0}"), ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Registers a dynamic MAL
+        /// </summary>
+        /// <param name="dynamicMal">Dynamic MAL function that returns a string containing text to be printed</param>
+        /// <exception cref="KernelException"></exception>
+        public static void RegisterDynamicMal(Func<string> dynamicMal)
+        {
+            if (dynamicMal is null)
+                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("The message of the day after login may not be null."));
+
+            // Now, register it.
+            malDynamics.Add(dynamicMal);
+        }
+
+        /// <summary>
+        /// Unregisters a dynamic MAL
+        /// </summary>
+        /// <param name="dynamicMal">Dynamic MAL function that returns a string containing text to be printed</param>
+        /// <exception cref="KernelException"></exception>
+        public static void UnregisterDynamicMal(Func<string> dynamicMal)
+        {
+            if (dynamicMal is null)
+                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("The message of the day after login may not be null."));
+
+            // Now, unregister it.
+            malDynamics.Remove(dynamicMal);
+        }
+
+        internal static void ProcessDynamicMal()
+        {
+            try
+            {
+                foreach (var malDynamic in malDynamics)
+                {
+                    string result = malDynamic();
+                    TextWriterColor.WriteKernelColor(result, KernelColorType.Banner);
+                }
             }
             catch (Exception ex)
             {

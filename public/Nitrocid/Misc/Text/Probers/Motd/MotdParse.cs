@@ -18,6 +18,9 @@
 //
 
 using System;
+using System.Collections.Generic;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
@@ -34,6 +37,7 @@ namespace KS.Misc.Text.Probers.Motd
     public static class MotdParse
     {
         private static string motdMessage;
+        private static List<Func<string>> motdDynamics = new();
 
         /// <summary>
         /// MOTD file path
@@ -96,6 +100,51 @@ namespace KS.Misc.Text.Probers.Motd
                 // Read the message
                 InitMotd();
                 MotdMessage = Reading.ReadContentsText(MotdFilePath);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("Error when trying to get MOTD: {0}"), ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Registers a dynamic MOTD
+        /// </summary>
+        /// <param name="dynamicMotd">Dynamic MOTD function that returns a string containing text to be printed</param>
+        /// <exception cref="KernelException"></exception>
+        public static void RegisterDynamicMotd(Func<string> dynamicMotd)
+        {
+            if (dynamicMotd is null)
+                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("The message of the day may not be null."));
+
+            // Now, register it.
+            motdDynamics.Add(dynamicMotd);
+        }
+
+        /// <summary>
+        /// Unregisters a dynamic MOTD
+        /// </summary>
+        /// <param name="dynamicMotd">Dynamic MOTD function that returns a string containing text to be printed</param>
+        /// <exception cref="KernelException"></exception>
+        public static void UnregisterDynamicMotd(Func<string> dynamicMotd)
+        {
+            if (dynamicMotd is null)
+                throw new KernelException(KernelExceptionType.MOTD, Translate.DoTranslation("The message of the day may not be null."));
+
+            // Now, unregister it.
+            motdDynamics.Remove(dynamicMotd);
+        }
+
+        internal static void ProcessDynamicMotd()
+        {
+            try
+            {
+                foreach (var motdDynamic in motdDynamics)
+                {
+                    string result = motdDynamic();
+                    TextWriterColor.WriteKernelColor(result, KernelColorType.Banner);
+                }
             }
             catch (Exception ex)
             {

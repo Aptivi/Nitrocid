@@ -154,17 +154,23 @@ namespace KS.ConsoleBase.Writers.MiscWriters
 #endif
         }
         
-        internal static void ShowRandomTip()
+        internal static string GetRandomTip()
         {
-            // Get a random tip and print it
+            // Get a random tip
             string tip = Translate.DoTranslation("that you can get extra tips from the kernel addon shipped with the full build of Nitrocid?");
             if (tips.Length > 0)
             {
                 int tipIdx = RandomDriver.RandomIdx(tips.Length);
                 tip = Translate.DoTranslation(tips[tipIdx]);
             }
+            return tip;
+        }
+        
+        internal static void ShowRandomTip()
+        {
+            // Get a random tip and print it
             TextWriterColor.WriteKernelColor(
-                "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + tip, true, KernelColorType.Tip);
+                "* " + Translate.DoTranslation("Pro tip: Did you know") + " " + GetRandomTip(), true, KernelColorType.Tip);
         }
 
     }
