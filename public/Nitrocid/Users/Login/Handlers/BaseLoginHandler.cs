@@ -96,7 +96,7 @@ namespace KS.Users.Login.Handlers
         public virtual bool PasswordHandler(string user, ref string pass)
         {
             // Prompts user to enter a user's password
-            while (!PowerManager.RebootRequested || !PowerManager.KernelShutdown)
+            while (!PowerManager.RebootRequested && !PowerManager.KernelShutdown)
             {
                 // Get the password from dictionary
                 int userIndex = UserManagement.GetUserIndex(user);

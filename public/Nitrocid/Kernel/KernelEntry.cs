@@ -128,7 +128,7 @@ namespace KS.Kernel
 
         private static void MainLoop()
         {
-            while (!PowerManager.RebootRequested || !PowerManager.KernelShutdown)
+            while (!PowerManager.RebootRequested && !PowerManager.KernelShutdown)
             {
                 // Initialize login prompt
                 if (!Maintenance)
