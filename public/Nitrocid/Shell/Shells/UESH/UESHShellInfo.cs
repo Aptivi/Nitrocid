@@ -965,16 +965,6 @@ namespace KS.Shell.Shells.UESH
                     }, new LsVarsCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
-            { "mail",
-                new CommandInfo("mail", /* Localizable */ "Opens the mail client",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "emailAddress"),
-                        })
-                    }, new MailCommand())
-            },
-            
             { "md",
                 new CommandInfo("md", /* Localizable */ "Creates a directory",
                     new[] {

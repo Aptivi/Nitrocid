@@ -28,7 +28,6 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using MimeKit;
 using KS.Files.LineEndings;
 using System.Text;
 using System.Collections;
@@ -45,6 +44,7 @@ using KS.Files.Extensions;
 using KS.Files.Operations.Querying;
 using KS.Files.Operations.Printing;
 using Terminaux.Sequences.Tools;
+using MimeKit;
 
 namespace KS.Misc.Interactives
 {

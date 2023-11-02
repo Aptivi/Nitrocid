@@ -30,11 +30,9 @@ using KS.Network.Base;
 using KS.Network.RPC;
 using KS.Shell.Prompts;
 using KS.Shell.Shells.Hex;
-using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.Text;
 using KS.Shell.ShellBase.Shells;
-using MimeKit.Text;
 using Newtonsoft.Json;
 using System;
 using KS.Drivers;
@@ -793,14 +791,6 @@ namespace KS.Kernel.Configuration.Instances
             set => PromptPresetManager.SetPreset(value, ShellType.Shell, false);
         }
         /// <summary>
-        /// Mail Prompt Preset
-        /// </summary>
-        public string MailPromptPreset
-        {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.MailShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.MailShell, false);
-        }
-        /// <summary>
         /// SFTP Prompt Preset
         /// </summary>
         public string SFTPPromptPreset
@@ -933,10 +923,6 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool ShowProgress { get; set; } = true;
         /// <summary>
-        /// When listing mail messages, show body preview
-        /// </summary>
-        public bool ShowPreview { get; set; }
-        /// <summary>
         /// Records remote debug chat to debug log
         /// </summary>
         public bool RecordChatToDebugLog { get; set; } = true;
@@ -956,58 +942,6 @@ namespace KS.Kernel.Configuration.Instances
             get => RemoteProcedure.rpcPort;
             set => RemoteProcedure.rpcPort = value < 0 ? 12345 : value;
         }
-        /// <summary>
-        /// Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed
-        /// </summary>
-        public string MailUserPromptStyle { get; set; } = "";
-        /// <summary>
-        /// Write how you want your password prompt to be. Leave blank to use default style. Placeholders are parsed
-        /// </summary>
-        public string MailPassPromptStyle { get; set; } = "";
-        /// <summary>
-        /// Write how you want your IMAP server prompt to be. Leave blank to use default style. Placeholders are parsed
-        /// </summary>
-        public string MailIMAPPromptStyle { get; set; } = "";
-        /// <summary>
-        /// Write how you want your SMTP server prompt to be. Leave blank to use default style. Placeholders are parsed
-        /// </summary>
-        public string MailSMTPPromptStyle { get; set; } = "";
-        /// <summary>
-        /// Automatically detect the mail server based on the given address
-        /// </summary>
-        public bool MailAutoDetectServer { get; set; } = true;
-        /// <summary>
-        /// Enables mail server debug
-        /// </summary>
-        public bool MailDebug { get; set; }
-        /// <summary>
-        /// Notifies you for any new mail messages
-        /// </summary>
-        public bool MailNotifyNewMail { get; set; } = true;
-        /// <summary>
-        /// Write how you want your GPG password prompt to be. Leave blank to use default style. Placeholders are parsed
-        /// </summary>
-        public string MailGPGPromptStyle { get; set; } = "";
-        /// <summary>
-        /// How many milliseconds to send the IMAP ping?
-        /// </summary>
-        public int MailImapPingInterval
-        {
-            get => MailShellCommon.imapPingInterval;
-            set => MailShellCommon.imapPingInterval = value < 0 ? 30000 : value;
-        }
-        /// <summary>
-        /// How many milliseconds to send the SMTP ping?
-        /// </summary>
-        public int MailSmtpPingInterval
-        {
-            get => MailShellCommon.smtpPingInterval;
-            set => MailShellCommon.smtpPingInterval = value < 0 ? 30000 : value;
-        }
-        /// <summary>
-        /// Controls how the mail text will be shown
-        /// </summary>
-        public int MailTextFormat { get; set; } = (int)TextFormat.Plain;
         /// <summary>
         /// If you want remote debug to start on boot, enable this
         /// </summary>
@@ -1060,26 +994,6 @@ namespace KS.Kernel.Configuration.Instances
         /// Write how you want your upload percentage text to be. Leave blank to use default style. Placeholders are parsed. {0} for uploaded size, {1} for target size, {2} for percentage.
         /// </summary>
         public string UploadPercentagePrint { get; set; } = "";
-        /// <summary>
-        /// How many e-mail messages to display in one page?
-        /// </summary>
-        public int MailMaxMessagesInPage
-        {
-            get => MailShellCommon.maxMessagesInPage;
-            set => MailShellCommon.maxMessagesInPage = value < 0 ? 10 : value;
-        }
-        /// <summary>
-        /// If enabled, the mail shell will show how many bytes transmitted when downloading mail.
-        /// </summary>
-        public bool MailShowProgress { get; set; } = true;
-        /// <summary>
-        /// Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size and {1} for total size.
-        /// </summary>
-        public string MailProgressStyle { get; set; } = "";
-        /// <summary>
-        /// Write how you want your mail transfer progress style to be. Leave blank to use default style. Placeholders are parsed. {0} for transferred size.
-        /// </summary>
-        public string MailProgressStyleSingle { get; set; } = "";
         /// <summary>
         /// Shows the notification showing the download progress
         /// </summary>

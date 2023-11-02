@@ -24,8 +24,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Network.Base;
-using KS.Network.Mail;
-using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
 using KS.Users;
 using KS.Kernel.Events;
@@ -52,14 +50,6 @@ namespace KS.Misc.Text.Probers.Placeholder
         private readonly static List<PlaceInfo> placeholders = new()
         {
             new PlaceInfo("user",                             (_) => UserManagement.CurrentUser.Username),
-            new PlaceInfo("sftpuser",                         (_) => SFTPShellCommon.SFTPUser),
-            new PlaceInfo("sftpaddr",                         (_) => SFTPShellCommon.SFTPSite),
-            new PlaceInfo("currentsftpdirectory",             (_) => SFTPShellCommon.SFTPCurrentRemoteDir),
-            new PlaceInfo("currentsftplocaldirectory",        (_) => SFTPShellCommon.SFTPCurrDirect),
-            new PlaceInfo("currentsftplocaldirectoryname",    (_) => !string.IsNullOrEmpty(SFTPShellCommon.SFTPCurrDirect) ? new DirectoryInfo(SFTPShellCommon.SFTPCurrDirect).Name : ""),
-            new PlaceInfo("mailuser",                         (_) => MailLogin.Authentication.UserName),
-            new PlaceInfo("mailaddr",                         (_) => MailLogin.Authentication.Domain),
-            new PlaceInfo("currentmaildirectory",             (_) => MailShellCommon.IMAP_CurrentDirectory),
             new PlaceInfo("host",                             (_) => NetworkTools.HostName),
             new PlaceInfo("currentdirectory",                 (_) => CurrentDirectory.CurrentDir),
             new PlaceInfo("currentdirectoryname",             (_) => !string.IsNullOrEmpty(CurrentDirectory.CurrentDir) ? new DirectoryInfo(CurrentDirectory.CurrentDir).Name : ""),

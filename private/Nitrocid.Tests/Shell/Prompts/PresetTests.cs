@@ -36,9 +36,6 @@ namespace Nitrocid.Tests.Shell.Prompts
         [TestCase("PowerLine1", ShellType.DebugShell, ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", ShellType.HexShell, ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", ShellType.JsonShell, ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", ShellType.MailShell, ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", ShellType.RSSShell, ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", ShellType.SFTPShell, ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", ShellType.TextShell, ExpectedResult = "PowerLine1")]
         [Description("Action")]
         public static string TestSetPresetDry(string presetName, ShellType type)
@@ -56,9 +53,6 @@ namespace Nitrocid.Tests.Shell.Prompts
         [TestCase("PowerLine1", "DebugShell", ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", "HexShell", ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", "JsonShell", ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", "MailShell", ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", "RSSShell", ExpectedResult = "PowerLine1")]
-        [TestCase("PowerLine1", "SFTPShell", ExpectedResult = "PowerLine1")]
         [TestCase("PowerLine1", "TextShell", ExpectedResult = "PowerLine1")]
         [Description("Action")]
         public static string TestSetPresetDry(string presetName, string type)
@@ -76,9 +70,6 @@ namespace Nitrocid.Tests.Shell.Prompts
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
         [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.MailShell)]
-        [TestCase(ShellType.RSSShell)]
-        [TestCase(ShellType.SFTPShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Action")]
         public static void TestGetPresetsFromShell(ShellType type)
@@ -98,9 +89,6 @@ namespace Nitrocid.Tests.Shell.Prompts
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
         [TestCase("JsonShell")]
-        [TestCase("MailShell")]
-        [TestCase("RSSShell")]
-        [TestCase("SFTPShell")]
         [TestCase("TextShell")]
         [Description("Action")]
         public static void TestGetPresetsFromShell(string type)

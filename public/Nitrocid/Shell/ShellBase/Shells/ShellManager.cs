@@ -36,7 +36,6 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Commands.ProcessExecution;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using KS.Shell.Shells.UESH;
-using KS.Shell.Shells.Mail;
 using KS.Shell.Shells.SFTP;
 using KS.Shell.Shells.Text;
 using KS.Shell.Shells.RSS;
@@ -88,7 +87,6 @@ namespace KS.Shell.ShellBase.Shells
             { $"{ShellType.DebugShell}",    new() },
             { $"{ShellType.HexShell}",      new() },
             { $"{ShellType.JsonShell}",     new() },
-            { $"{ShellType.MailShell}",     new() },
             { $"{ShellType.RSSShell}",      new() },
             { $"{ShellType.SFTPShell}",     new() },
             { $"{ShellType.Shell}",         new() },
@@ -217,7 +215,6 @@ namespace KS.Shell.ShellBase.Shells
         internal readonly static Dictionary<string, BaseShellInfo> availableShells = new()
         {
             { "Shell", new UESHShellInfo() },
-            { "MailShell", new MailShellInfo() },
             { "SFTPShell", new SFTPShellInfo() },
             { "TextShell", new TextShellInfo() },
             { "RSSShell", new RSSShellInfo() },

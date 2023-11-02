@@ -53,9 +53,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase(ShellType.DebugShell)]
         [TestCase(ShellType.HexShell)]
         [TestCase(ShellType.JsonShell)]
-        [TestCase(ShellType.MailShell)]
-        [TestCase(ShellType.RSSShell)]
-        [TestCase(ShellType.SFTPShell)]
         [TestCase(ShellType.TextShell)]
         [Description("Querying")]
         public void TestGetCommandListFromAllShells(ShellType type)
@@ -76,9 +73,6 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [TestCase("DebugShell")]
         [TestCase("HexShell")]
         [TestCase("JsonShell")]
-        [TestCase("MailShell")]
-        [TestCase("RSSShell")]
-        [TestCase("SFTPShell")]
         [TestCase("TextShell")]
         [Description("Querying")]
         public void TestGetCommandListFromAllShells(string type)
