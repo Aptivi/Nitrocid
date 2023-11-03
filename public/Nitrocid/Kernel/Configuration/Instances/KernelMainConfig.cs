@@ -30,7 +30,6 @@ using KS.Network.Base;
 using KS.Network.RPC;
 using KS.Shell.Prompts;
 using KS.Shell.Shells.Hex;
-using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.Text;
 using KS.Shell.ShellBase.Shells;
 using Newtonsoft.Json;
@@ -816,14 +815,6 @@ namespace KS.Kernel.Configuration.Instances
             set => PromptPresetManager.SetPreset(value, ShellType.Shell, false);
         }
         /// <summary>
-        /// RSS Prompt Preset
-        /// </summary>
-        public string RSSPromptPreset
-        {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.RSSShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.RSSShell, false);
-        }
-        /// <summary>
         /// Text Edit Prompt Preset
         /// </summary>
         public string TextEditPromptPreset
@@ -968,22 +959,6 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public string RDebugMessageFormat { get; set; } = "";
         /// <summary>
-        /// Write how you want your RSS feed server prompt to be. Leave blank to use default style. Placeholders are parsed.
-        /// </summary>
-        public string RSSFeedUrlPromptStyle { get; set; } = "";
-        /// <summary>
-        /// Auto refresh RSS feed
-        /// </summary>
-        public bool RSSRefreshFeeds { get; set; } = true;
-        /// <summary>
-        /// How many milliseconds to refresh the RSS feed?
-        /// </summary>
-        public int RSSRefreshInterval
-        {
-            get => RSSShellCommon.refreshInterval;
-            set => RSSShellCommon.refreshInterval = value < 0 ? 60000 : value;
-        }
-        /// <summary>
         /// How many milliseconds to wait before declaring timeout?
         /// </summary>
         public int PingTimeout
@@ -1007,14 +982,6 @@ namespace KS.Kernel.Configuration.Instances
         /// Shows the notification showing the upload progress
         /// </summary>
         public bool UploadNotificationProvoke { get; set; }
-        /// <summary>
-        /// How many milliseconds to wait before RSS feed fetch timeout?
-        /// </summary>
-        public int RSSFetchTimeout
-        {
-            get => RSSShellCommon.fetchTimeout;
-            set => RSSShellCommon.fetchTimeout = value < 0 ? 60000 : value;
-        }
         /// <summary>
         /// If enabled, will use the notification system to notify the host of remote debug connection error. Otherwise, will use the default console writing.
         /// </summary>

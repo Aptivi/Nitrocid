@@ -17,36 +17,27 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs;
-using KS.Languages;
-using KS.Network.Base.Connections;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
-using KS.Shell.ShellBase.Shells;
-using Syndian.Instance;
+using Nitrocid.Extras.RssShell.Tools;
 
-namespace KS.Shell.Shells.UESH.Commands
+namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
     /// <summary>
-    /// Opens an RSS shell
+    /// Lists bookmarks
     /// </summary>
     /// <remarks>
-    /// You can interact with the RSS shell to connect to a feed server and interact with them.
+    /// If you want to list all bookmarks, use this command.
     /// </remarks>
-    class RssCommand : BaseCommand, ICommand
+    class ListBookmarkCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell(ShellType.RSSShell, EstablishRssConnection, (_, connection) =>
-            EstablishRssConnection(connection.Address), parameters.ArgumentsText);
+            var Bookmarks = RSSBookmarkManager.GetBookmarks();
+            foreach (var bookmark in Bookmarks)
+                TextWriterColor.Write(bookmark);
             return 0;
-        }
-
-        private NetworkConnection EstablishRssConnection(string address)
-        {
-            if (string.IsNullOrEmpty(address))
-                address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
-            return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
         }
 
     }

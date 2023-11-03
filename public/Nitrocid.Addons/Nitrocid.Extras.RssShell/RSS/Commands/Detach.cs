@@ -20,7 +20,7 @@
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 
-namespace KS.Shell.Shells.RSS.Commands
+namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
     /// <summary>
     /// Detaches the shell from the current working server

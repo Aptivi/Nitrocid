@@ -23,11 +23,11 @@ using System.Linq;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Shell.Shells.RSS;
 using KS.Users;
 using KS.Users.Settings;
+using Nitrocid.Extras.RssShell.RSS;
 
-namespace KS.Network.RSS.Bookmarks
+namespace Nitrocid.Extras.RssShell.Tools
 {
     /// <summary>
     /// RSS bookmark management routines

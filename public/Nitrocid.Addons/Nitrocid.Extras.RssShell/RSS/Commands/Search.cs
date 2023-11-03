@@ -20,12 +20,12 @@
 using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
 using KS.Network.RSS;
-using Syndian.Instance;
 using KS.Shell.ShellBase.Commands;
 using System.Linq;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Syndian.Instance;
 
-namespace KS.Shell.Shells.RSS.Commands
+namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
     /// <summary>
     /// Searhces the articles
@@ -61,15 +61,15 @@ namespace KS.Shell.Shells.RSS.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            bool findTitle       = parameters.SwitchesList.Contains("-t");
+            bool findTitle = parameters.SwitchesList.Contains("-t");
             bool findDescription = parameters.SwitchesList.Contains("-d");
-            bool findAll         = parameters.SwitchesList.Contains("-a");
-            bool caseSensitive   = parameters.SwitchesList.Contains("-cs");
+            bool findAll = parameters.SwitchesList.Contains("-a");
+            bool caseSensitive = parameters.SwitchesList.Contains("-cs");
 
             if (findAll)
                 findTitle = findDescription = true;
 
-            var foundArticles = RSSTools.SearchArticles(parameters.ArgumentsList[0], findTitle, findDescription, caseSensitive);
+            var foundArticles = RSSShellTools.SearchArticles(parameters.ArgumentsList[0], findTitle, findDescription, caseSensitive);
             foreach (RSSArticle Article in foundArticles)
             {
                 TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);

@@ -17,33 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Colors;
-using KS.Misc.Text;
-using Syndian.Instance;
 using KS.Shell.ShellBase.Commands;
-using KS.ConsoleBase.Writers.ConsoleWriters;
+using Nitrocid.Extras.RssShell.Tools;
 
-namespace KS.Shell.Shells.RSS.Commands
+namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
     /// <summary>
-    /// Lists articles
+    /// Unbookmarks current feed
     /// </summary>
     /// <remarks>
-    /// If you want to get articles found in the current RSS feed, you can use this command.
+    /// If you want to remove the bookmark that points to the current feed, you can use this command.
     /// </remarks>
-    class ListCommand : BaseCommand, ICommand
+    class UnbookmarkCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            foreach (RSSArticle Article in RSSShellCommon.RSSFeedInstance.FeedArticles)
-            {
-                TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, Article.ArticleTitle);
-                TextWriterColor.WriteKernelColor(Article.ArticleLink, true, KernelColorType.ListValue);
-                TextWriterColor.Write("    {0}", Article.ArticleDescription.SplitNewLines()[0].Truncate(200));
-            }
+            RSSBookmarkManager.RemoveRSSFeedFromBookmark();
             return 0;
         }
-
     }
 }

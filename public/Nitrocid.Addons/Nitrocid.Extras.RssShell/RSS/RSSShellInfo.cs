@@ -21,12 +21,12 @@ using System.Collections.Generic;
 using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.Shells.RSS.Commands;
 using KS.Shell.ShellBase.Switches;
 using KS.Shell.ShellBase.Arguments;
-using KS.Shell.Shells.RSS.Presets;
+using Nitrocid.Extras.RssShell.RSS.Presets;
+using Nitrocid.Extras.RssShell.RSS.Commands;
 
-namespace KS.Shell.Shells.RSS
+namespace Nitrocid.Extras.RssShell.RSS
 {
     /// <summary>
     /// Common RSS shell class
@@ -153,7 +153,7 @@ namespace KS.Shell.Shells.RSS
 
         public override bool AcceptsNetworkConnection => true;
 
-        public override string NetworkConnectionType => Network.Base.Connections.NetworkConnectionType.RSS.ToString();
+        public override string NetworkConnectionType => "RSS";
 
     }
 }

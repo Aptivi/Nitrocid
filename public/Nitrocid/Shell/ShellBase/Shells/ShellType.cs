@@ -33,10 +33,6 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         TextShell,
         /// <summary>
-        /// RSS Shell
-        /// </summary>
-        RSSShell,
-        /// <summary>
         /// JSON Shell
         /// </summary>
         JsonShell,

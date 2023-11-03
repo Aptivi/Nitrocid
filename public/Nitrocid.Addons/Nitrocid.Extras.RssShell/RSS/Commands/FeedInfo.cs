@@ -22,7 +22,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.RSS.Commands
+namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
     /// <summary>
     /// Gets feed information

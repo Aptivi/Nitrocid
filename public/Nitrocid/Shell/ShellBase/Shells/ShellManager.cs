@@ -37,7 +37,6 @@ using KS.Shell.ShellBase.Commands.ProcessExecution;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using KS.Shell.Shells.UESH;
 using KS.Shell.Shells.Text;
-using KS.Shell.Shells.RSS;
 using KS.Shell.Shells.Json;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Admin;
@@ -86,7 +85,6 @@ namespace KS.Shell.ShellBase.Shells
             { $"{ShellType.DebugShell}",    new() },
             { $"{ShellType.HexShell}",      new() },
             { $"{ShellType.JsonShell}",     new() },
-            { $"{ShellType.RSSShell}",      new() },
             { $"{ShellType.Shell}",         new() },
             { $"{ShellType.SqlShell}",      new() },
             { $"{ShellType.TextShell}",     new() },
@@ -214,7 +212,6 @@ namespace KS.Shell.ShellBase.Shells
         {
             { "Shell", new UESHShellInfo() },
             { "TextShell", new TextShellInfo() },
-            { "RSSShell", new RSSShellInfo() },
             { "JsonShell", new JsonShellInfo() },
             { "HexShell", new HexShellInfo() },
             { "AdminShell", new AdminShellInfo() },

@@ -25,16 +25,16 @@ using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using KS.Shell.Prompts;
 
-namespace KS.Shell.Shells.RSS.Presets
+namespace Nitrocid.Extras.RssShell.RSS.Presets
 {
     /// <summary>
-    /// PowerLine 3 preset
+    /// PowerLine BG 1 preset
     /// </summary>
-    public class RSSPowerLine3Preset : PromptPresetBase, IPromptPreset
+    public class RSSPowerLineBG1Preset : PromptPresetBase, IPromptPreset
     {
 
         /// <inheritdoc/>
-        public override string PresetName { get; } = "PowerLine3";
+        public override string PresetName { get; } = "PowerLineBG1";
 
         /// <inheritdoc/>
         public override string PresetShellType { get; } = "RSSShell";
@@ -60,7 +60,7 @@ namespace KS.Shell.Shells.RSS.Presets
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), new Uri(RSSShellCommon.RSSFeedLink).Host),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), new Uri(RSSShellCommon.RSSFeedLink).Host),
             };
 
             // Builder
@@ -79,7 +79,7 @@ namespace KS.Shell.Shells.RSS.Presets
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "rss.fabrikam.com/news/tech.rss"),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), "rss.fabrikam.com/news/tech.rss"),
             };
 
             // Builder
@@ -98,7 +98,7 @@ namespace KS.Shell.Shells.RSS.Presets
             // Segments
             List<PowerLineSegment> segments = new()
             {
-                new PowerLineSegment(new Color(255, 255, 85), new Color(127, 127, 43), "+"),
+                new PowerLineSegment(new Color(85, 255, 255), new Color(25, 25, 25), "+"),
             };
 
             // Builder

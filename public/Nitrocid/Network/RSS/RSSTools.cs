@@ -18,16 +18,11 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using KS.Misc.Notifications;
 using Syndian.Instance;
-using KS.Shell.Shells.RSS;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 
 namespace KS.Network.RSS
@@ -47,46 +42,6 @@ namespace KS.Network.RSS
         /// </summary>
         public static string RssHeadlineUrl =>
             Config.MainConfig.RssHeadlineUrl;
-
-        /// <summary>
-        /// Refreshes the feeds
-        /// </summary>
-        internal static void RefreshFeeds()
-        {
-            try
-            {
-                var OldFeedsList = new List<RSSArticle>(RSSShellCommon.RSSFeedInstance.FeedArticles);
-                List<RSSArticle> NewFeedsList;
-                while (RSSShellCommon.RSSFeedInstance is not null)
-                {
-                    if (RSSShellCommon.RSSFeedInstance is not null)
-                    {
-                        // Refresh the feed
-                        RSSShellCommon.RSSFeedInstance.Refresh();
-
-                        // Check for new feeds
-                        NewFeedsList = RSSShellCommon.RSSFeedInstance.FeedArticles.Except(OldFeedsList).ToList();
-                        string OldFeedTitle = OldFeedsList.Count == 0 ? "" : OldFeedsList[0].ArticleTitle;
-                        if (NewFeedsList.Count > 0 && NewFeedsList[0].ArticleTitle != OldFeedTitle)
-                        {
-                            // Update the list
-                            DebugWriter.WriteDebug(DebugLevel.W, "Feeds received! Recents count was {0}, Old count was {1}", RSSShellCommon.RSSFeedInstance.FeedArticles.Count, OldFeedsList.Count);
-                            OldFeedsList = new List<RSSArticle>(RSSShellCommon.RSSFeedInstance.FeedArticles);
-                            foreach (RSSArticle NewFeed in NewFeedsList)
-                            {
-                                var FeedNotif = new Notification(NewFeed.ArticleTitle, NewFeed.ArticleDescription, NotificationPriority.Low, NotificationType.Normal);
-                                NotificationManager.NotifySend(FeedNotif);
-                            }
-                        }
-                    }
-                    Thread.Sleep(RSSShellCommon.RSSRefreshInterval);
-                }
-            }
-            catch (ThreadInterruptedException)
-            {
-                DebugWriter.WriteDebug(DebugLevel.W, "Aborting refresher...");
-            }
-        }
 
         /// <summary>
         /// Show a headline on login
@@ -112,45 +67,5 @@ namespace KS.Network.RSS
                 }
             }
         }
-
-        /// <summary>
-        /// Searches for articles
-        /// </summary>
-        /// <param name="phrase">Phrase to look for</param>
-        /// <param name="searchTitle">Whether to search the title or not</param>
-        /// <param name="searchDescription">Whether to search the description or not</param>
-        /// <param name="caseSensitive">Case sensitivity</param>
-        /// <returns>List of articles containing the phrase</returns>
-        public static List<RSSArticle> SearchArticles(string phrase, bool searchTitle = true, bool searchDescription = false, bool caseSensitive = false)
-        {
-            var foundArticles = new List<RSSArticle>();
-            var feedArticles = RSSShellCommon.RSSFeedInstance.FeedArticles;
-
-            // If not searching title and description, assume that we're searching for title
-            if (!searchTitle && !searchDescription)
-                searchTitle = true;
-
-            // Search through the entire article list
-            foreach (var article in feedArticles)
-            {
-                bool titleFound = caseSensitive ? article.ArticleTitle.Contains(phrase) : article.ArticleTitle.ToLower().Contains(phrase);
-                bool descriptionFound = caseSensitive ? article.ArticleDescription.Contains(phrase) : article.ArticleDescription.ToLower().Contains(phrase);
-
-                if (searchTitle && titleFound)
-                {
-                    foundArticles.Add(article);
-                    continue;
-                }
-
-                if (searchDescription && descriptionFound)
-                {
-                    foundArticles.Add(article);
-                    continue;
-                }
-            }
-
-            return foundArticles;
-        }
-
     }
 }

@@ -24,13 +24,13 @@ using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using KS.Network.Base.Connections;
-using Syndian.Instance;
 using KS.Shell.ShellBase.Shells;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands;
 using KS.Network.Base.SpeedDial;
+using Syndian.Instance;
 
-namespace KS.Shell.Shells.RSS
+namespace Nitrocid.Extras.RssShell.RSS
 {
     /// <summary>
     /// The RSS shell

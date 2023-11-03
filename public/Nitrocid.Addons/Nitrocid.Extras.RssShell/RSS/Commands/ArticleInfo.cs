@@ -26,7 +26,7 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Shell.ShellBase.Commands;
 
-namespace KS.Shell.Shells.RSS.Commands
+namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
     /// <summary>
     /// Gets article information

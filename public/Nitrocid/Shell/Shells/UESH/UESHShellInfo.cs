@@ -1253,16 +1253,6 @@ namespace KS.Shell.Shells.UESH
                     }, new RmUserFromGroupCommand(), CommandFlags.Strict)
             },
             
-            { "rss",
-                new CommandInfo("rss", /* Localizable */ "Opens an RSS shell to read the feeds",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "feedlink"),
-                        })
-                    }, new RssCommand())
-            },
-            
             { "saveconfig",
                 new CommandInfo("saveconfig", /* Localizable */ "Saves the current kernel configuration to its file",
                     new[] {

@@ -25,7 +25,7 @@ using KS.Network.Base.Connections;
 using KS.Network.RSS;
 using Syndian.Instance;
 
-namespace KS.Shell.Shells.RSS
+namespace Nitrocid.Extras.RssShell.RSS
 {
     /// <summary>
     /// Common RSS shell module
@@ -37,7 +37,7 @@ namespace KS.Shell.Shells.RSS
         internal static RSSFeed feedInstance;
         internal static int fetchTimeout = 60000;
         internal static int refreshInterval = 60000;
-        internal static KernelThread RSSRefresher = new("RSS Feed Refresher", false, RSSTools.RefreshFeeds);
+        internal static KernelThread RSSRefresher = new("RSS Feed Refresher", false, RSSShellTools.RefreshFeeds);
         internal static HttpClient RSSRefresherClient = new() { Timeout = TimeSpan.FromMilliseconds(RSSFetchTimeout) };
         internal static string rssFeedLink;
 
@@ -50,22 +50,22 @@ namespace KS.Shell.Shells.RSS
         /// RSS feed URL prompt style
         /// </summary>
         public static string RSSFeedUrlPromptStyle =>
-            Config.MainConfig.RSSFeedUrlPromptStyle;
+            RssShellInit.RssConfig.RSSFeedUrlPromptStyle;
         /// <summary>
         /// RSS fetch timeout in milliseconds
         /// </summary>
         public static int RSSFetchTimeout =>
-            Config.MainConfig.RSSFetchTimeout;
+            RssShellInit.RssConfig.RSSFetchTimeout;
         /// <summary>
         /// Whether to refresh RSS feeds or not
         /// </summary>
         public static bool RSSRefreshFeeds =>
-            Config.MainConfig.RSSRefreshFeeds;
+            RssShellInit.RssConfig.RSSRefreshFeeds;
         /// <summary>
         /// RSS refresh interval in milliseconds
         /// </summary>
         public static int RSSRefreshInterval =>
-            Config.MainConfig.RSSRefreshInterval;
+            RssShellInit.RssConfig.RSSRefreshInterval;
         /// <summary>
         /// Whether to keep the connection alive or not
         /// </summary>

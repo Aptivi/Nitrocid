@@ -25,7 +25,7 @@ using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using KS.Shell.Prompts;
 
-namespace KS.Shell.Shells.RSS.Presets
+namespace Nitrocid.Extras.RssShell.RSS.Presets
 {
     /// <summary>
     /// PowerLine BG 2 preset

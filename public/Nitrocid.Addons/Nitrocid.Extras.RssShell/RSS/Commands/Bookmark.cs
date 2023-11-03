@@ -17,28 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Network.RSS.Bookmarks;
 using KS.Shell.ShellBase.Commands;
+using Nitrocid.Extras.RssShell.Tools;
 
-namespace KS.Shell.Shells.RSS.Commands
+namespace Nitrocid.Extras.RssShell.RSS.Commands
 {
     /// <summary>
-    /// Lists bookmarks
+    /// Bookmarks current feed
     /// </summary>
     /// <remarks>
-    /// If you want to list all bookmarks, use this command.
+    /// If you want to bookmark the current feed that you're in, you can use this command.
     /// </remarks>
-    class ListBookmarkCommand : BaseCommand, ICommand
+    class BookmarkCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            var Bookmarks = RSSBookmarkManager.GetBookmarks();
-            foreach (var bookmark in Bookmarks)
-                TextWriterColor.Write(bookmark);
+            RSSBookmarkManager.AddRSSFeedToBookmark();
             return 0;
         }
-
     }
 }

@@ -22,7 +22,7 @@ using System.Text;
 using KS.ConsoleBase.Colors;
 using KS.Shell.Prompts;
 
-namespace KS.Shell.Shells.RSS.Presets
+namespace Nitrocid.Extras.RssShell.RSS.Presets
 {
     /// <summary>
     /// Default preset

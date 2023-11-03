@@ -120,6 +120,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Nitrocid.Extras.MailShell",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.SftpShell", "public\Nitrocid.Addons\Nitrocid.Extras.SftpShell\Nitrocid.Extras.SftpShell.csproj", "{3495603B-2389-410C-899C-F69EFDD17EE1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Nitrocid.Extras.RssShell", "public\Nitrocid.Addons\Nitrocid.Extras.RssShell\Nitrocid.Extras.RssShell.csproj", "{50E56FBD-0CFE-4B47-9211-DA113BDC0D54}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -298,6 +300,10 @@ Global
 		{3495603B-2389-410C-899C-F69EFDD17EE1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3495603B-2389-410C-899C-F69EFDD17EE1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3495603B-2389-410C-899C-F69EFDD17EE1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{50E56FBD-0CFE-4B47-9211-DA113BDC0D54}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{50E56FBD-0CFE-4B47-9211-DA113BDC0D54}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{50E56FBD-0CFE-4B47-9211-DA113BDC0D54}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{50E56FBD-0CFE-4B47-9211-DA113BDC0D54}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -347,6 +353,7 @@ Global
 		{EB30E7B1-667C-4184-A83A-42D47990219B} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{5B956652-C8D2-41FA-97D5-3E00208959D0} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 		{3495603B-2389-410C-899C-F69EFDD17EE1} = {B60F276A-FE12-4001-916E-080344ED1FD9}
+		{50E56FBD-0CFE-4B47-9211-DA113BDC0D54} = {B60F276A-FE12-4001-916E-080344ED1FD9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {424D8E7A-CFEB-40AE-A79C-437D603177FD}

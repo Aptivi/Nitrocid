@@ -17,24 +17,30 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.Network.RSS.Bookmarks;
+using KS.ConsoleBase.Inputs;
+using KS.Languages;
+using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
+using Syndian.Instance;
 
-namespace KS.Shell.Shells.RSS.Commands
+namespace Nitrocid.Extras.RssShell
 {
-    /// <summary>
-    /// Bookmarks current feed
-    /// </summary>
-    /// <remarks>
-    /// If you want to bookmark the current feed that you're in, you can use this command.
-    /// </remarks>
-    class BookmarkCommand : BaseCommand, ICommand
+    internal class RssCommandExec : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            RSSBookmarkManager.AddRSSFeedToBookmark();
+            NetworkConnectionTools.OpenConnectionForShell("RSSShell", EstablishRssConnection, (_, connection) =>
+            EstablishRssConnection(connection.Address), parameters.ArgumentsText);
             return 0;
         }
+
+        private NetworkConnection EstablishRssConnection(string address)
+        {
+            if (string.IsNullOrEmpty(address))
+                address = Input.ReadLine(Translate.DoTranslation("Enter the server address:") + " ");
+            return NetworkConnectionTools.EstablishConnection("RSS connection", address, NetworkConnectionType.RSS, new RSSFeed(address, RSSFeedType.Infer));
+        }
+
     }
 }

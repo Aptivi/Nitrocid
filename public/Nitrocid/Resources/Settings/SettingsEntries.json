@@ -697,13 +697,6 @@
                 "Description": ""
             },
             {
-                "Name": "RSS Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "RSSPromptPreset",
-                "ShellType": "RSSShell",
-                "Description": ""
-            },
-            {
                 "Name": "Text Edit Prompt Preset",
                 "Type": "SPreset",
                 "Variable": "TextEditPromptPreset",
@@ -888,24 +881,6 @@
                 "Description": "Specifies the remote debug message format. {0} for name, {1} for message."
             },
             {
-                "Name": "RSS feed URL prompt style",
-                "Type": "SString",
-                "Variable": "RSSFeedUrlPromptStyle",
-                "Description": "Write how you want your RSS feed server prompt to be. Leave blank to use default style. Placeholders are parsed."
-            },
-            {
-                "Name": "Auto refresh RSS feed",
-                "Type": "SBoolean",
-                "Variable": "RSSRefreshFeeds",
-                "Description": "Auto refresh RSS feed"
-            },
-            {
-                "Name": "Auto refresh RSS feed interval",
-                "Type": "SInt",
-                "Variable": "RSSRefreshInterval",
-                "Description": "How many milliseconds to refresh the RSS feed?"
-            },
-            {
                 "Name": "Ping timeout",
                 "Type": "SInt",
                 "Variable": "PingTimeout",
@@ -934,12 +909,6 @@
                 "Type": "SBoolean",
                 "Variable": "UploadNotificationProvoke",
                 "Description": "Shows the notification showing the upload progress."
-            },
-            {
-                "Name": "RSS feed fetch timeout",
-                "Type": "SInt",
-                "Variable": "RSSFetchTimeout",
-                "Description": "How many milliseconds to wait before RSS feed fetch timeout?"
             },
             {
                 "Name": "Notify on remote debug connection error",
