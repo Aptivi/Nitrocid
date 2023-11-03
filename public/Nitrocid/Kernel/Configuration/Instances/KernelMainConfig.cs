@@ -816,14 +816,6 @@ namespace KS.Kernel.Configuration.Instances
             set => PromptPresetManager.SetPreset(value, ShellType.Shell, false);
         }
         /// <summary>
-        /// SFTP Prompt Preset
-        /// </summary>
-        public string SFTPPromptPreset
-        {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.SFTPShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.SFTPShell, false);
-        }
-        /// <summary>
         /// RSS Prompt Preset
         /// </summary>
         public string RSSPromptPreset
@@ -991,18 +983,6 @@ namespace KS.Kernel.Configuration.Instances
             get => RSSShellCommon.refreshInterval;
             set => RSSShellCommon.refreshInterval = value < 0 ? 60000 : value;
         }
-        /// <summary>
-        /// Shows the SFTP file details while listing remote directories
-        /// </summary>
-        public bool SFTPShowDetailsInList { get; set; } = true;
-        /// <summary>
-        /// Write how you want your login prompt to be. Leave blank to use default style. Placeholders are parsed
-        /// </summary>
-        public string SFTPUserPromptStyle { get; set; } = "";
-        /// <summary>
-        /// If enabled, adds a new connection to the SFTP speed dial
-        /// </summary>
-        public bool SFTPNewConnectionsToSpeedDial { get; set; } = true;
         /// <summary>
         /// How many milliseconds to wait before declaring timeout?
         /// </summary>

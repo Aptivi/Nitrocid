@@ -29,14 +29,6 @@ namespace KS.Shell.ShellBase.Shells
         /// </summary>
         Shell,
         /// <summary>
-        /// Mail shell
-        /// </summary>
-        MailShell,
-        /// <summary>
-        /// SFTP shell
-        /// </summary>
-        SFTPShell,
-        /// <summary>
         /// Text shell
         /// </summary>
         TextShell,

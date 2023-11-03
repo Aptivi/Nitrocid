@@ -55,7 +55,7 @@
     <NitrocidModAPIVersionMajor>3.0.25</NitrocidModAPIVersionMajor>
 
     <!-- Increment NitrocidModAPIVersionChangeset every time there is a breaking change or an API addition in the N-KS API. -->
-    <NitrocidModAPIVersionChangeset>260</NitrocidModAPIVersionChangeset>
+    <NitrocidModAPIVersionChangeset>261</NitrocidModAPIVersionChangeset>
 
     <!-- To be installed to the file version -->
     <NitrocidModAPIVersion>$(NitrocidModAPIVersionMajor).$(NitrocidModAPIVersionChangeset)</NitrocidModAPIVersion>
@@ -89,7 +89,6 @@
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SharpCompress" Version="[0.33.0,0.33.0]" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.0.0" PrivateAssets="all" />
-    <PackageReference Include="SSH.NET" Version="2023.0.0" PrivateAssets="all" />
     <PackageReference Include="Syndian" Version="0.3.1" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->

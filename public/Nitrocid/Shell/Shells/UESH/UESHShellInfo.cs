@@ -1392,16 +1392,6 @@ namespace KS.Shell.Shells.UESH
                     }, new SetRangeCommand())
             },
             
-            { "sftp",
-                new CommandInfo("sftp", /* Localizable */ "Lets you use an SSH FTP server",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(false, "server"),
-                        })
-                    }, new SftpCommand())
-            },
-            
             { "shownotifs",
                 new CommandInfo("shownotifs", /* Localizable */ "Shows all received notifications",
                     new[] {
@@ -1459,29 +1449,6 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "ms"),
                         })
                     }, new SleepCommand())
-            },
-            
-            { "sshell",
-                new CommandInfo("sshell", /* Localizable */ "Connects to an SSH server.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "address:port"),
-                            new CommandArgumentPart(true, "username"),
-                        })
-                    }, new SshellCommand())
-            },
-            
-            { "sshcmd",
-                new CommandInfo("sshcmd", /* Localizable */ "Connects to an SSH server to execute a command.",
-                    new[] {
-                        new CommandArgumentInfo(new[]
-                        {
-                            new CommandArgumentPart(true, "address:port"),
-                            new CommandArgumentPart(true, "username"),
-                            new CommandArgumentPart(true, "command"),
-                        })
-                    }, new SshcmdCommand())
             },
 
             { "sudo",

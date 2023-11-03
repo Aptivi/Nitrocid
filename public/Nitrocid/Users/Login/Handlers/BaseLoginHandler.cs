@@ -28,7 +28,6 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Power;
 using KS.Languages;
 using KS.Misc.Screensaver;
-using KS.Misc.Text;
 using KS.Misc.Text.Probers.Motd;
 using KS.Misc.Text.Probers.Placeholder;
 
