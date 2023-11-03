@@ -33,6 +33,7 @@ using KS.Shell.Shells.UESH.Presets;
 using KS.Drivers.Encoding;
 using KS.Files.Extensions;
 using KS.Kernel.Configuration;
+using KS.Kernel.Configuration.Settings;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -697,6 +698,23 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo()
                     }, new GetAllExtHandlersCommand())
+            },
+
+            { "getconfigvalue",
+                new CommandInfo("getconfigvalue", /* Localizable */ "Gets a configuration variable and its value",
+                    new[] {
+                        new CommandArgumentInfo(new CommandArgumentPart[]
+                        {
+                            new(true, "config", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (_) => Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray()
+                            }),
+                            new(true, "variable", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (arg) => ConfigTools.GetSettingsKeys(arg[0]).Select((sk) => sk.Variable).ToArray()
+                            })
+                        }, true)
+                    }, new GetConfigValueCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
             { "getdefaultexthandler",

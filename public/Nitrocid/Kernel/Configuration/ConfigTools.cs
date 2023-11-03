@@ -356,6 +356,35 @@ namespace KS.Kernel.Configuration
         }
 
         /// <summary>
+        /// Gets the settings keys from the base kernel config
+        /// </summary>
+        /// <param name="settings">Configuration instance</param>
+        /// <returns>An array of <see cref="SettingsKey"/> instances</returns>
+        /// <exception cref="KernelException"></exception>
+        public static SettingsKey[] GetSettingsKeys(BaseKernelConfig settings)
+        {
+            var entries = settings.SettingsEntries;
+            List<SettingsKey> keys = new();
+            foreach (var entry in entries)
+                keys.AddRange(entry.Keys);
+            return keys.ToArray();
+        }
+
+        /// <summary>
+        /// Gets the settings entries
+        /// </summary>
+        /// <param name="settingsType">Settings type name</param>
+        /// <returns>An array of <see cref="SettingsEntry"/> instances or an empty array if the specified type is not found</returns>
+        /// <exception cref="KernelException"></exception>
+        public static SettingsKey[] GetSettingsKeys(string settingsType)
+        {
+            if (!IsCustomSettingRegistered(settingsType))
+                return Array.Empty<SettingsKey>();
+            var config = Config.GetKernelConfigs().Single((bkc) => bkc.GetType().Name == settingsType);
+            return GetSettingsKeys(config);
+        }
+
+        /// <summary>
         /// Gets the settings entries
         /// </summary>
         /// <param name="entriesText">Settings entries JSON contents</param>
