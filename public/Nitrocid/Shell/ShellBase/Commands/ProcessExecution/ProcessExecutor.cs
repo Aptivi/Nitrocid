@@ -311,13 +311,12 @@ namespace KS.Shell.ShellBase.Commands.ProcessExecution
             // References:
             //   - https://github.com/dotnet/runtime/blob/release/8.0/src/libraries/System.Diagnostics.Process/src/System/Diagnostics/Process.Win32.cs#L47
             //   - https://github.com/dotnet/runtime/blob/release/8.0/src/libraries/System.Diagnostics.Process/src/System/Diagnostics/ProcessStartInfo.cs#L91
-            if (Debugger.IsAttached)
-            {
-                var privateReflection = BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetField;
-                var startInfoType = processStartInfo.GetType();
-                var envVarsField = startInfoType.GetField("_environmentVariables", privateReflection);
-                envVarsField.SetValue(processStartInfo, null);
-            }
+            //
+            // Issue report: https://github.com/dotnet/runtime/issues/94338
+            var privateReflection = BindingFlags.NonPublic | BindingFlags.Instance | BindingFlags.SetField;
+            var startInfoType = processStartInfo.GetType();
+            var envVarsField = startInfoType.GetField("_environmentVariables", privateReflection);
+            envVarsField.SetValue(processStartInfo, null);
             // 
             // --- UseShellExecute and the Environment property population Hack End ---
             return processStartInfo;
