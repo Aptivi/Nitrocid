@@ -58,6 +58,7 @@ using KS.Misc.Text;
 using KS.Shell.Shells.Json;
 using KS.Kernel.Threading.Performance;
 using KS.Drivers.Sorting;
+using KS.Kernel.Time.Timezones;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -207,6 +208,22 @@ namespace KS.Kernel.Configuration.Instances
         /// How many lines to print to the debug buffer before reaching the quota limit?
         /// </summary>
         public int DebugQuotaLines { get; set; } = 10000;
+        /// <summary>
+        /// Whether to use the operating system time zone or to use the kernel-wide time zone
+        /// </summary>
+        public bool UseSystemTimeZone
+        {
+            get => TimeZones.useSystemTimezone;
+            set => TimeZones.useSystemTimezone = value;
+        }
+        /// <summary>
+        /// The kenrnel-wide time zone name
+        /// </summary>
+        public string KernelWideTimeZone
+        {
+            get => TimeZones.defaultZoneName;
+            set => TimeZones.defaultZoneName = TimeZones.TimeZoneExists(value) ? value : TimeZones.defaultZoneName;
+        }
         /// <summary>
         /// Whether to use accent colors for themes that support accents
         /// </summary>

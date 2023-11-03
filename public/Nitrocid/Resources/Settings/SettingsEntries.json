@@ -190,6 +190,22 @@
                 "Type": "SInt",
                 "Variable": "DebugQuotaLines",
                 "Description": "How many lines to print to the debug buffer before reaching the quota limit? Please note that it doesn't represent how many lines are in the debug log files.'"
+            },
+            {
+                "Name": "Use system time zone",
+                "Type": "SBoolean",
+                "Variable": "UseSystemTimeZone",
+                "Description": "If this option is enabled, the kernel uses the time zone from your computer settings. Else, uses the kernel-wide time zone that can be configured."
+            },
+            {
+                "Name": "Kernel-wide time zone",
+                "Type": "SSelection",
+                "Variable": "KernelWideTimeZone",
+                "IsEnumeration": false,
+                "SelectionFunctionName": "GetTimeZoneNames",
+                "SelectionFunctionType": "TimeZones",
+                "SelectionFallback": [ "Etc/UTC", "GMT" ],
+                "Description": "The kernel-wide time zone to use"
             }
         ]
     },

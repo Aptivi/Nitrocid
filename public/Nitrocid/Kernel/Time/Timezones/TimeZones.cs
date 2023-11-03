@@ -33,6 +33,8 @@ namespace KS.Kernel.Time.Timezones
     /// </summary>
     public static class TimeZones
     {
+        internal static bool useSystemTimezone = true;
+        internal static string defaultZoneName = TimeZoneInfo.Local.Id;
         private static string[] recognizedZones;
 
         /// <summary>
@@ -102,7 +104,7 @@ namespace KS.Kernel.Time.Timezones
         /// Gets the time zone info from the name
         /// </summary>
         /// <param name="zone">Zone name (usually the zone ID)</param>
-        /// <returns></returns>
+        /// <returns>An instance of <see cref="TimeZoneInfo"/></returns>
         /// <exception cref="KernelException"></exception>
         public static TimeZoneInfo GetZoneInfo(string zone)
         {
@@ -110,6 +112,21 @@ namespace KS.Kernel.Time.Timezones
             if (TimeZoneExists(zone))
                 return TimeZoneInfo.FindSystemTimeZoneById(zone);
             throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("Time zone not found.") + $" {zone}");
+        }
+
+        /// <summary>
+        /// Gets the current time zone info from the name
+        /// </summary>
+        /// <returns>An instance of <see cref="TimeZoneInfo"/></returns>
+        /// <exception cref="KernelException"></exception>
+        public static TimeZoneInfo GetCurrentZoneInfo()
+        {
+            CheckZoneInfoDirectory();
+            if (useSystemTimezone)
+                return TimeZoneInfo.Local;
+            if (TimeZoneExists(defaultZoneName))
+                return TimeZoneInfo.FindSystemTimeZoneById(defaultZoneName);
+            throw new KernelException(KernelExceptionType.TimeDate, Translate.DoTranslation("Time zone not found.") + $" {defaultZoneName}");
         }
 
         internal static void CheckZoneInfoDirectory()

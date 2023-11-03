@@ -18,6 +18,8 @@
 //
 
 using KS.Kernel.Configuration;
+using KS.Kernel.Time.Converters;
+using KS.Kernel.Time.Timezones;
 using System;
 
 namespace KS.Kernel.Time
@@ -32,7 +34,7 @@ namespace KS.Kernel.Time
         /// The kernel time and date
         /// </summary>
         public static DateTime KernelDateTime =>
-            DateTime.Now;
+            TimeZones.useSystemTimezone ? DateTime.Now : TimeDateConverters.GetDateTimeFromZone(DateTime.Now, TimeZones.defaultZoneName);
 
         /// <summary>
         /// The kernel time and date (UTC)
