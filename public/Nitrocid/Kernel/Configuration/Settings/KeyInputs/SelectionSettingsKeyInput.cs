@@ -79,16 +79,8 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             int Answer = SelectionStyle.PromptSelection(finalSection,
                 string.Join("/", itemNums), items.ToArray(),
                 string.Join("/", altSectionNums), altSections.ToArray());
-            if (Answer != -1)
-            {
-                bail = true;
-                return Answer;
-            }
-            else
-            {
-                bail = false;
-                return null;
-            }
+            bail = true;
+            return Answer;
         }
 
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
