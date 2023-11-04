@@ -68,7 +68,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Test]
         [Description("Action")]
         public void TestIsCommandFoundInAllTheShells() =>
-            CommandManager.IsCommandFound("detach").ShouldBeTrue();
+            CommandManager.IsCommandFound("save").ShouldBeTrue();
 
         /// <summary>
         /// Tests registering the command
