@@ -385,6 +385,33 @@ namespace KS.Kernel.Configuration
         }
 
         /// <summary>
+        /// Gets a settings entry from the variable name
+        /// </summary>
+        /// <param name="settings">Configuration instance</param>
+        /// <param name="varName">Variable name to look for</param>
+        /// <returns>A <see cref="SettingsKey"/> instance</returns>
+        /// <exception cref="KernelException"></exception>
+        public static SettingsKey GetSettingsKey(BaseKernelConfig settings, string varName) =>
+            GetSettingsKey(settings.GetType().Name, varName);
+
+        /// <summary>
+        /// Gets a settings entry from the variable name
+        /// </summary>
+        /// <param name="settingsType">Settings type name</param>
+        /// <param name="varName">Variable name to look for</param>
+        /// <returns>A <see cref="SettingsEntry"/> instance</returns>
+        /// <exception cref="KernelException"></exception>
+        public static SettingsKey GetSettingsKey(string settingsType, string varName)
+        {
+            if (!IsCustomSettingRegistered(settingsType))
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings type not found."));
+            var keys = GetSettingsKeys(settingsType);
+            var key = keys.SingleOrDefault((sk) => sk.Variable == varName) ??
+                throw new KernelException(KernelExceptionType.Config, Translate.DoTranslation("Settings key not found to match the specified variable."));
+            return key;
+        }
+
+        /// <summary>
         /// Gets the settings entries
         /// </summary>
         /// <param name="entriesText">Settings entries JSON contents</param>
