@@ -51,12 +51,13 @@ namespace Nitrocid.LocaleGen.Core.Serializer
 
             // Now, iterate through each target language to generate JSON files
             var fileLinesEng = File.ReadAllLines(englishFile);
-            JToken metadata = JObject.Parse(File.ReadAllText(metadataFile));
+            JArray metadatas = JArray.Parse(File.ReadAllText(metadataFile));
             var serializedTargets = new List<(TargetLanguage, string)>();
-            for (int fileIndex = 0; fileIndex < targetLanguages.Length; fileIndex++)
+            for (int i = 0; i < metadatas.Count; i++)
             {
                 // Initialize two arrays for localization
-                var language = targetLanguages[fileIndex];
+                JToken metadata = metadatas[i];
+                var language = targetLanguages[i];
                 string file = language.FileName;
                 string fileName = language.LanguageName;
                 var fileLines = File.ReadAllLines(file);
@@ -64,17 +65,17 @@ namespace Nitrocid.LocaleGen.Core.Serializer
                 // Make a JSON object for each language entry
                 var localizedJson = new JObject();
                 var localizationDataJson = new JArray();
-                for (int i = 0; i <= fileLinesEng.Length - 1; i++)
+                for (int l = 0; l <= fileLinesEng.Length - 1; l++)
                 {
                     try
                     {
                         // First, check to see if the English file contains more text than your language's file
-                        if (i >= fileLines.Length)
-                            localizationDataJson.Add(fileLinesEng[i]);
+                        if (l >= fileLines.Length)
+                            localizationDataJson.Add(fileLinesEng[l]);
                         else
                         {
-                            if (!string.IsNullOrWhiteSpace(fileLines[i]) & !string.IsNullOrWhiteSpace(fileLinesEng[i]))
-                                localizationDataJson.Add(fileLines[i]);
+                            if (!string.IsNullOrWhiteSpace(fileLines[l]) & !string.IsNullOrWhiteSpace(fileLinesEng[l]))
+                                localizationDataJson.Add(fileLines[l]);
                         }
                     }
                     catch (Exception)
@@ -83,12 +84,9 @@ namespace Nitrocid.LocaleGen.Core.Serializer
                     }
                 }
 
-                // Fetch the metadata and put their values, but check the metadata first
-                var languageMetadata = metadata.SelectToken(fileName);
-                if (languageMetadata is null)
-                    continue;
-                var languageName = languageMetadata.SelectToken("name");
-                var languageTransliterable = languageMetadata.SelectToken("transliterable");
+                // Fetch the metadata and put their values
+                var languageName = metadata.SelectToken("name");
+                var languageTransliterable = metadata.SelectToken("transliterable");
                 localizedJson.Add("Name", languageName);
                 localizedJson.Add("Transliterable", languageTransliterable);
                 localizedJson.Add("Localizations", localizationDataJson);
