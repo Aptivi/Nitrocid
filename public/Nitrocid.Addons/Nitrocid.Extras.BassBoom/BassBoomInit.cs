@@ -87,6 +87,16 @@ namespace Nitrocid.Extras.BassBoom
                     }, new LyricLinesCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
+            { "musicplayer",
+                new CommandInfo("musicplayer", /* Localizable */ "Opens an interactive music player",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(false, "musicFile"),
+                        })
+                    }, new MusicPlayerCommand())
+            },
+
             { "playlyric",
                 new CommandInfo("playlyric", /* Localizable */ "Plays a lyric file",
                     new[] {
