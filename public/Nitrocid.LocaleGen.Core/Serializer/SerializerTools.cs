@@ -64,12 +64,18 @@ namespace Nitrocid.LocaleGen.Core.Serializer
                 // Make a JSON object for each language entry
                 var localizedJson = new JObject();
                 var localizationDataJson = new JArray();
-                for (int i = 0; i <= fileLines.Length - 1; i++)
+                for (int i = 0; i <= fileLinesEng.Length - 1; i++)
                 {
                     try
                     {
-                        if (!string.IsNullOrWhiteSpace(fileLines[i]) & !string.IsNullOrWhiteSpace(fileLinesEng[i]))
-                            localizationDataJson.Add(fileLines[i]);
+                        // First, check to see if the English file contains more text than your language's file
+                        if (i >= fileLines.Length)
+                            localizationDataJson.Add(fileLinesEng[i]);
+                        else
+                        {
+                            if (!string.IsNullOrWhiteSpace(fileLines[i]) & !string.IsNullOrWhiteSpace(fileLinesEng[i]))
+                                localizationDataJson.Add(fileLines[i]);
+                        }
                     }
                     catch (Exception)
                     {
