@@ -28,6 +28,8 @@ using KS.ConsoleBase.Inputs;
 using KS.Files.PathLookup;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Shell.ShellBase.Commands.ProcessExecution;
+using KS.Files;
+using KS.Files.Operations;
 
 namespace KS.ConsoleBase
 {
@@ -172,6 +174,21 @@ namespace KS.ConsoleBase
                 {
                     // We couldn't get the status variable from the global TMUX "status" variable. Assume that it's 1.
                     MinimumHeight--;
+                }
+            }
+            else if (KernelPlatform.IsRunningFromScreen())
+            {
+                // The status bar for GNU screen is always one row long.
+                string confPath = Paths.HomePath + "/.screenrc";
+                string statusKey = "hardstatus";
+                string[] screenRcLines = Reading.ReadContents(confPath);
+                foreach (string line in screenRcLines)
+                {
+                    if (line.StartsWith(statusKey) && line != "hardstatus off")
+                    {
+                        MinimumHeight--;
+                        break;
+                    }
                 }
             }
 

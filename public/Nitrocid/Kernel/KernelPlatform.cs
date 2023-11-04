@@ -98,6 +98,12 @@ namespace KS.Kernel
             Environment.GetEnvironmentVariable("TMUX") is not null;
 
         /// <summary>
+        /// Is Nitrocid KS running from GNU Screen?
+        /// </summary>
+        public static bool IsRunningFromScreen() =>
+            Environment.GetEnvironmentVariable("STY") is not null;
+
+        /// <summary>
         /// Gets the current runtime identifier
         /// </summary>
         /// <returns>Returns a runtime identifier (win-x64 for example).</returns>
