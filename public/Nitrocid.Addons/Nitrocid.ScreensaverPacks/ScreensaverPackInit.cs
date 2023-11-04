@@ -111,7 +111,8 @@ namespace Nitrocid.ScreensaverPacks
             { "windowslogo", new WindowsLogoDisplay() },
             { "wipe", new WipeDisplay() },
             { "wordhasher", new WordHasherDisplay() },
-            { "wordhasherwrite", new WordHasherWriteDisplay() }
+            { "wordhasherwrite", new WordHasherWriteDisplay() },
+            { "worldclock", new WorldClockDisplay() },
         };
 
         internal readonly static Dictionary<string, SplashInfo> Splashes = new()

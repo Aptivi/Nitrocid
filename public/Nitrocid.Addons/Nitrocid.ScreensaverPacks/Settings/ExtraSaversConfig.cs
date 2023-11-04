@@ -3040,5 +3040,49 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [Particles] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int ParticlesMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WorldClock] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool WorldClockTrueColor { get; set; } = true;
+        /// <summary>
+        /// [WorldClock] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int WorldClockDelay { get; set; } = 1000;
+        /// <summary>
+        /// [WorldClock] How many refreshes before going to the next time zone?
+        /// </summary>
+        public int WorldClockNextZoneRefreshes { get; set; } = 5;
+        /// <summary>
+        /// [WorldClock] The minimum red color level (true color)
+        /// </summary>
+        public int WorldClockMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WorldClock] The minimum green color level (true color)
+        /// </summary>
+        public int WorldClockMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WorldClock] The minimum blue color level (true color)
+        /// </summary>
+        public int WorldClockMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WorldClock] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int WorldClockMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [WorldClock] The maximum red color level (true color)
+        /// </summary>
+        public int WorldClockMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WorldClock] The maximum green color level (true color)
+        /// </summary>
+        public int WorldClockMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WorldClock] The maximum blue color level (true color)
+        /// </summary>
+        public int WorldClockMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [WorldClock] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int WorldClockMaximumColorLevel { get; set; } = 255;
     }
 }
