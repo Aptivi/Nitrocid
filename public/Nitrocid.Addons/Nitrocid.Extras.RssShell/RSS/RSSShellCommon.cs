@@ -19,7 +19,6 @@
 
 using System;
 using System.Net.Http;
-using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.Network.Base.Connections;
 using KS.Network.RSS;

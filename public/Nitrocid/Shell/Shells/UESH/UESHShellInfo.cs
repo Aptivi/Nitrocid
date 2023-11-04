@@ -33,7 +33,6 @@ using KS.Shell.Shells.UESH.Presets;
 using KS.Drivers.Encoding;
 using KS.Files.Extensions;
 using KS.Kernel.Configuration;
-using KS.Kernel.Configuration.Settings;
 
 namespace KS.Shell.Shells.UESH
 {
@@ -1369,6 +1368,24 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "value"),
                         }, Array.Empty<SwitchInfo>(), true)
                     }, new SetCommand())
+            },
+
+            { "setconfigvalue",
+                new CommandInfo("setconfigvalue", /* Localizable */ "Sets a configuration variable to a specified value",
+                    new[] {
+                        new CommandArgumentInfo(new CommandArgumentPart[]
+                        {
+                            new(true, "config", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (_) => Config.GetKernelConfigs().Select((bkc) => bkc.GetType().Name).ToArray()
+                            }),
+                            new(true, "variable", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (arg) => ConfigTools.GetSettingsKeys(arg[0]).Select((sk) => sk.Variable).ToArray()
+                            }),
+                            new(true, "value")
+                        })
+                    }, new SetConfigValueCommand())
             },
 
             { "setexthandler",

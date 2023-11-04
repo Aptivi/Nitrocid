@@ -20,6 +20,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
+using KS.Kernel.Configuration.Settings;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using System.Linq;
@@ -27,12 +28,12 @@ using System.Linq;
 namespace KS.Shell.Shells.UESH.Commands
 {
     /// <summary>
-    /// Gets a configuration value
+    /// Sets a configuration value
     /// </summary>
     /// <remarks>
     /// This command prints a configuration value.
     /// </remarks>
-    class GetConfigValueCommand : BaseCommand, ICommand
+    class SetConfigValueCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
@@ -47,12 +48,7 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (keys.Any((sk) => sk.Variable == varName))
                 {
                     var key = keys.Single((sk) => sk.Variable == varName);
-                    var value = ConfigTools.GetValueFromEntry(key, config);
-                    TextWriterColor.Write($"{Translate.DoTranslation("Key name")}: {key.Name}");
-                    TextWriterColor.Write($"{Translate.DoTranslation("Key description")}: {key.Description}");
-                    TextWriterColor.Write($"{Translate.DoTranslation("Key type")}: {key.Type}");
-                    TextWriterColor.Write($"{Translate.DoTranslation("Key variable")}: {key.Variable} [{value}]");
-                    variableValue = $"{value}";
+                    SettingsAppTools.SetPropertyValue(key.Variable, parameters.ArgumentsList[2], config);
                 }
                 else
                 {
