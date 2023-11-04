@@ -117,6 +117,44 @@ namespace KS.Kernel.Time.Timezones
             TimeDateRenderers.Render(GetZoneTime(Zone), format);
 
         /// <summary>
+        /// Gets the zone time's date string
+        /// </summary>
+        /// <param name="Zone">Time zone which we'll get the time from</param>
+        /// <returns>The date in the specified time zone in a string</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string GetZoneTimeDateString(string Zone) =>
+            TimeDateRenderers.RenderDate(GetZoneTime(Zone));
+
+        /// <summary>
+        /// Gets the zone time's date string
+        /// </summary>
+        /// <param name="Zone">Time zone which we'll get the time from</param>
+        /// <param name="formatType">Format type</param>
+        /// <returns>The date in the specified time zone in a string</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string GetZoneTimeDateString(string Zone, FormatType formatType) =>
+            TimeDateRenderers.RenderDate(GetZoneTime(Zone), formatType);
+
+        /// <summary>
+        /// Gets the time part of the zone time string
+        /// </summary>
+        /// <param name="Zone">Time zone which we'll get the time from</param>
+        /// <returns>The time in the specified time zone in a string</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string GetZoneTimeTimeString(string Zone) =>
+            TimeDateRenderers.RenderTime(GetZoneTime(Zone));
+
+        /// <summary>
+        /// Gets the time part of the zone time string
+        /// </summary>
+        /// <param name="Zone">Time zone which we'll get the time from</param>
+        /// <param name="formatType">Format type</param>
+        /// <returns>The time in the specified time zone in a string</returns>
+        /// <exception cref="KernelException"></exception>
+        public static string GetZoneTimeTimeString(string Zone, FormatType formatType) =>
+            TimeDateRenderers.RenderTime(GetZoneTime(Zone), formatType);
+
+        /// <summary>
         /// Shows the time zone UTC offset
         /// </summary>
         /// <param name="Zone">Target time zone</param>

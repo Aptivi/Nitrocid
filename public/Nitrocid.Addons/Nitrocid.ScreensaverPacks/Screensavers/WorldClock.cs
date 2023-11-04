@@ -268,14 +268,15 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 var timeZone = TimeZones.GetTimeZoneNames();
                 timeZoneName = timeZone[RandomDriver.RandomIdx(timeZone.Length)];
             }
-            string time = TimeZoneRenderers.GetZoneTimeString(timeZoneName);
+            string time = TimeZoneRenderers.GetZoneTimeTimeString(timeZoneName);
+            string date = TimeZoneRenderers.GetZoneTimeDateString(timeZoneName);
             var figFont = FigletTools.GetFigletFont("small");
             int figHeight = FigletTools.GetFigletHeight(time, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             int hashY = ConsoleWrapper.WindowHeight / 2 + figHeight + 2;
             ConsoleWrapper.Clear();
             CenteredFigletTextColor.WriteCenteredFigletColor(consoleY, figFont, time, color);
-            TextWriterWhereColor.WriteWhereColor(timeZoneName, (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - timeZoneName.Length / 2d), hashY, color);
+            TextWriterWhereColor.WriteWhereColor($"{date} @ {timeZoneName}", (int)Math.Round(ConsoleWrapper.WindowWidth / 2d - $"{date} @ {timeZoneName}".Length / 2d), hashY, color);
 
             // Delay
             ThreadManager.SleepNoBlock(WorldClockSettings.WorldClockDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
