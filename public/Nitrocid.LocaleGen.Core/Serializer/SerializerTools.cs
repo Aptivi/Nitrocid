@@ -163,7 +163,7 @@ namespace Nitrocid.LocaleGen.Core.Serializer
                 throw new Exception("Translations folder doesn't exist. Make sure that it exists, and that it contains both the metadata file containing language information and the eng.txt file containing English localizations for each string.");
 
             // Get all the language files
-            bool custom = pathToTranslations == Path.GetFullPath("Translations");
+            bool custom = pathToTranslations != Path.GetFullPath("Translations") && pathToTranslations != Path.GetFullPath("AddonTranslations");
             var toParse = new List<TargetLanguage>();
             var files = Directory.EnumerateFiles(pathToTranslations).ToArray();
 
