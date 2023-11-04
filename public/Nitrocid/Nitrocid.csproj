@@ -105,6 +105,11 @@
   <Target Name="UpdateLaunchersManpages" BeforeTargets="Compile">
     <Copy SourceFiles="@(Assets)" DestinationFolder="$(OutDir)" />
   </Target>
+  <ItemGroup>
+    <Compile Remove="KSAnalyzer\**" />
+    <EmbeddedResource Remove="KSAnalyzer\**" />
+    <None Remove="KSAnalyzer\**" />
+  </ItemGroup>
   <!-- KS Launchers and Manpages End -->
 
   <!-- KS Manifest -->

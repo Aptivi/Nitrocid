@@ -3,7 +3,7 @@
   <PropertyGroup>
     <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <IsPackable>false</IsPackable>
-    <OutputPath>..\..\Nitrocid\KSBuild\</OutputPath>
+    <OutputPath>..\..\Nitrocid\KSAnalyzer\</OutputPath>
     <LangVersion>latest</LangVersion>
 
     <!-- Avoid ID conflicts with the package project. -->

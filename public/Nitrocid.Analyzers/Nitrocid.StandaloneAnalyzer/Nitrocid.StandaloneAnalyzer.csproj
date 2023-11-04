@@ -12,7 +12,7 @@
     <AssemblyName>Nitrocid.StandaloneAnalyzer</AssemblyName>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <OutputPath>..\..\Nitrocid\KSBuild\</OutputPath>
+    <OutputPath>..\..\Nitrocid\KSAnalyzer\</OutputPath>
     <Description>Nitrocid KS Standalone Analyzer</Description>
     <AssemblyTitle>Nitrocid KS Standalone Analyzer</AssemblyTitle>
     <Company>Aptivi</Company>

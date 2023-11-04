@@ -32,7 +32,8 @@ echo Packing binary...
 cd "../public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$ksversion-bin.zip . && cd -
 cd "../public/Nitrocid/KSBuild/net8.0/" && "$zippath" -r /tmp/$ksversion-bin-lite.zip . -x "./Addons/*" && cd -
 cd "../public/Nitrocid/KSBuild/net8.0/Addons/" && "$zippath" -r /tmp/$ksversion-addons.zip . && cd -
-cd "../public/Nitrocid/KSBuild/netstandard2.0/" && "$zippath" -r /tmp/$ksversion-analyzers.zip . && cd -
+cd "../public/Nitrocid/KSAnalyzer/netstandard2.0/" && "$zippath" -r /tmp/$ksversion-analyzers.zip . && cd -
+cd "../public/Nitrocid/KSAnalyzer/net8.0/" && "$zippath" -r /tmp/$ksversion-mod-analyzer.zip . && cd -
 if [ ! $? == 0 ]; then
 	echo Packing failed.
 	exit 1
@@ -43,5 +44,6 @@ mv /tmp/$ksversion-bin.zip .
 mv /tmp/$ksversion-bin-lite.zip .
 mv /tmp/$ksversion-addons.zip .
 mv /tmp/$ksversion-analyzers.zip .
+mv /tmp/$ksversion-mod-analyzer.zip .
 echo Build and pack successful.
 exit 0

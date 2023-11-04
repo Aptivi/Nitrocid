@@ -24,7 +24,8 @@ echo Packing binary...
 "%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%ksversion%-bin.zip "..\public\Nitrocid\KSBuild\net8.0\*"
 "%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%ksversion%-bin-lite.zip "..\public\Nitrocid\KSBuild\net8.0\*" -xr!Addons
 "%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%ksversion%-addons.zip "..\public\Nitrocid\KSBuild\net8.0\Addons\*"
-"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%ksversion%-analyzers.zip "..\public\Nitrocid\KSBuild\netstandard2.0\*"
+"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%ksversion%-analyzers.zip "..\public\Nitrocid\KSAnalyzer\netstandard2.0\*"
+"%ProgramFiles%\7-Zip\7z.exe" a -tzip %temp%/%ksversion%-mod-analyzer.zip "..\public\Nitrocid\KSAnalyzer\net8.0\*"
 if %errorlevel% == 0 goto :complete
 echo There was an error trying to pack binary (%errorlevel%).
 goto :finished
@@ -34,6 +35,7 @@ move %temp%\%ksversion%-bin.zip
 move %temp%\%ksversion%-bin-lite.zip
 move %temp%\%ksversion%-addons.zip
 move %temp%\%ksversion%-analyzers.zip
+move %temp%\%ksversion%-mod-analyzer.zip
 
 echo Pack successful.
 :finished
