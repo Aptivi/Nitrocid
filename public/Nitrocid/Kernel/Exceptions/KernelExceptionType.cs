@@ -456,5 +456,9 @@ namespace KS.Kernel.Exceptions
         /// The driver handler failed to perform this action because you might have supplied the parameters wrong. If you're sure that they're specified correctly, make sure that you've provided the right driver name and type.
         /// </summary>
         DriverHandler,
+        /// <summary>
+        /// The progress handler has failed to perform the requested operation.
+        /// </summary>
+        ProgressHandler,
     }
 }
