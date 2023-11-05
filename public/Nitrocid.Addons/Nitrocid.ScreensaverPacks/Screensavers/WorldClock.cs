@@ -22,16 +22,11 @@ using Figletize;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Drivers;
-using KS.Drivers.Encryption;
 using KS.Drivers.RNG;
 using KS.Kernel.Threading;
-using KS.Kernel.Time.Renderers;
 using KS.Kernel.Time.Timezones;
-using KS.Languages;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
-using Wordament;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {

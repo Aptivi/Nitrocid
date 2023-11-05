@@ -27,12 +27,10 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using KS.Misc.Notifications;
 using KS.Kernel.Events;
-using KS.Kernel.Debugging.RemoteDebug.Command;
 using KS.Kernel.Configuration;
 using KS.Kernel.Time.Renderers;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using SemanVer.Instance;
 using KS.Misc.Text.Probers.Placeholder;
 
 namespace KS.Kernel.Debugging.RemoteDebug

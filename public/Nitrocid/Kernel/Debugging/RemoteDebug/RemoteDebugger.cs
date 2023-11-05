@@ -29,11 +29,9 @@ using KS.Misc.Notifications;
 using KS.Kernel.Events;
 using KS.Kernel.Debugging.RemoteDebug.Command;
 using KS.Kernel.Configuration;
-using KS.Kernel.Time.Renderers;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using SemanVer.Instance;
-using KS.Misc.Text.Probers.Placeholder;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -50,7 +48,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         internal static TcpListener DebugTCP;
         internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
         internal static int debugPort = 3014;
-        internal readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.9.0");
+        internal readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.9.0.0");
         private static readonly AutoResetEvent RDebugBailer = new(false);
 
         /// <summary>
