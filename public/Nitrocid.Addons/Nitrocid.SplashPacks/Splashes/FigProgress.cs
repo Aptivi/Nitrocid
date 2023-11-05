@@ -180,8 +180,10 @@ namespace Nitrocid.SplashPacks.Splashes
             var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
+            for (int i = consoleY; i <= consoleY + figHeight; i++)
+                TextWriterWhereColor.WriteWhereColor(ConsoleExtensions.GetClearLineToRightSequence(), 0, i, true, col);
             CenteredFigletTextColor.WriteCenteredFigletColor(consoleY, figFont, text, col, Vars);
-            TextWriterWhereColor.WriteWhereColor(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, col, Vars);
+            TextWriterWhereColor.WriteWhereColor(ConsoleExtensions.GetClearLineToRightSequence(), 0, consoleY - 2, true, col);
             CenteredTextColor.WriteCenteredOneLine(consoleY - 2, ProgressReport, Vars);
         }
 
