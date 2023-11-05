@@ -83,6 +83,28 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             return Answer;
         }
 
+        public object TranslateStringValue(SettingsKey key, string value)
+        {
+            PopulateInfo(key);
+
+            if (string.IsNullOrEmpty(value))
+                return 0;
+            if (int.TryParse(value, out int answer))
+                return answer > 0 && answer <= SelectFrom.Count() ? answer : 0;
+            return 0;
+        }
+
+        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        {
+            PopulateInfo(key);
+
+            if (string.IsNullOrEmpty(value))
+                return (int)KeyDefaultValue;
+            if (int.TryParse(value, out int answer))
+                return answer > 0 && answer <= SelectFrom.Count() ? answer : (int)KeyDefaultValue;
+            return (int)KeyDefaultValue;
+        }
+
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
         {
             PopulateInfo(key);

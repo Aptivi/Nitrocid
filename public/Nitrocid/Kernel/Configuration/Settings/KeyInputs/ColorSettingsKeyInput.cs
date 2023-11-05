@@ -47,6 +47,27 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             return ColorValue;
         }
 
+        public object TranslateStringValue(SettingsKey key, string value)
+        {
+            var color = new Color(value);
+            return color.PlainSequence;
+        }
+
+        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        {
+            Color keyColorValue = Color.Empty;
+
+            // Check to see if the color is contained in the dictionary
+            if (KeyDefaultValue is KeyValuePair<KernelColorType, Color> keyColorValuePair)
+                keyColorValue = keyColorValuePair.Value;
+            else if (KeyDefaultValue is string keyColorString)
+                keyColorValue = new Color(keyColorString);
+
+            if (!string.IsNullOrEmpty(value) && ColorTools.TryParseColor(value))
+                keyColorValue = new Color(value);
+            return keyColorValue.PlainSequence;
+        }
+
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
         {
             // We're dealing with integers with limits

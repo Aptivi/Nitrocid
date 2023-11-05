@@ -74,6 +74,24 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             return CurrentValue;
         }
 
+        public object TranslateStringValue(SettingsKey key, string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return 0;
+            if (int.TryParse(value, out int answer))
+                return answer >= key.MinimumValue && answer <= key.MaximumValue ? answer : 0;
+            return 0;
+        }
+
+        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        {
+            if (string.IsNullOrEmpty(value))
+                return (int)KeyDefaultValue;
+            if (int.TryParse(value, out int answer))
+                return answer >= key.MinimumValue && answer <= key.MaximumValue ? answer : (int)KeyDefaultValue;
+            return (int)KeyDefaultValue;
+        }
+
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
         {
             // We're dealing with integers with limits

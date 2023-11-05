@@ -45,25 +45,41 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             // Write the prompt
             TextWriterColor.WriteKernelColor("[{0}] > ", false, KernelColorType.Input, KeyDefaultValue);
             string AnswerString = Input.ReadLine();
+            AnswerString = (string)TranslateStringValueWithDefault(key, AnswerString, KeyDefaultValue);
+            bail = true;
+            return AnswerString;
+        }
 
+        public object TranslateStringValue(SettingsKey key, string value)
+        {
             // Neutralize path if required with the assumption that the keytype is not list
             if (key.IsValuePath)
             {
                 string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : Paths.GetKernelPath(key.ValuePathType);
-                AnswerString = FilesystemTools.NeutralizePath(AnswerString, NeutralizeRootPath);
+                value = FilesystemTools.NeutralizePath(value, NeutralizeRootPath);
+            }
+            return value;
+        }
+
+        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        {
+            // Neutralize path if required with the assumption that the keytype is not list
+            if (key.IsValuePath)
+            {
+                string NeutralizeRootPath = key.IsPathCurrentPath ? CurrentDirectory.CurrentDir : Paths.GetKernelPath(key.ValuePathType);
+                value = FilesystemTools.NeutralizePath(value, NeutralizeRootPath);
             }
 
             // Set to default is nothing is written
-            if (string.IsNullOrWhiteSpace(AnswerString))
+            if (string.IsNullOrWhiteSpace(value))
             {
                 if (KeyDefaultValue is string KeyValue)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Answer is nothing. Setting to {0}...", KeyValue);
-                    AnswerString = Convert.ToString(KeyValue);
+                    value = Convert.ToString(KeyValue);
                 }
             }
-            bail = true;
-            return AnswerString;
+            return value;
         }
 
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
@@ -85,6 +101,5 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             // Set the value
             SettingsAppTools.SetPropertyValue(key.Variable, AnswerString, configType);
         }
-
     }
 }

@@ -30,6 +30,12 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             throw new KernelException(KernelExceptionType.NotImplementedYet);
         }
 
+        public object TranslateStringValue(SettingsKey key, string value) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
+        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue) =>
+            throw new KernelException(KernelExceptionType.NotImplementedYet);
+
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType) =>
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 

@@ -34,6 +34,25 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             return selectedPreset;
         }
 
+        public object TranslateStringValue(SettingsKey key, string value)
+        {
+            var presets = PromptPresetManager.GetAllPresetsFromShell(key.ShellType);
+            if (presets.ContainsKey(value))
+                return value;
+            return PromptPresetManager.GetCurrentPresetBaseFromShell(key.ShellType);
+        }
+
+        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        {
+            var presets = PromptPresetManager.GetAllPresetsFromShell(key.ShellType);
+            if (presets.ContainsKey(value))
+                return value;
+            return
+                KeyDefaultValue is string defaultPreset ?
+                defaultPreset :
+                PromptPresetManager.GetCurrentPresetBaseFromShell(key.ShellType);
+        }
+
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
         {
             // We're dealing with presets

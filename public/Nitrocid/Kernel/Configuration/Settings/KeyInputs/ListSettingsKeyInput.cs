@@ -107,7 +107,39 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             return TargetList;
         }
 
+        public object TranslateStringValue(SettingsKey key, string value)
+        {
+            string FinalDelimiter = GetFinalDelimiter(key);
+
+            // Now, split the value with this delimiter
+            var values = value.Split(FinalDelimiter) as IEnumerable<object>;
+            return values;
+        }
+
+        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        {
+            string FinalDelimiter = GetFinalDelimiter(key);
+
+            // Now, split the value with this delimiter
+            var values =
+                !string.IsNullOrEmpty(value) ?
+                value.Split(FinalDelimiter) :
+                KeyDefaultValue as IEnumerable<object>;
+            return values;
+        }
+
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
+        {
+            string FinalDelimiter = GetFinalDelimiter(key);
+
+            // Now, set the value
+            if (value is not IEnumerable<object> valueList)
+                return;
+            string JoinedString = string.Join(FinalDelimiter, valueList);
+            SettingsAppTools.SetPropertyValue(key.Variable, JoinedString, configType);
+        }
+
+        private string GetFinalDelimiter(SettingsKey key)
         {
             string FinalDelimiter;
             string ListJoinString = key.Delimiter;
@@ -119,12 +151,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                 FinalDelimiter = Convert.ToString(PropertyManager.GetPropertyValue(ListJoinStringVariable, null, true));
             else
                 FinalDelimiter = ListJoinString;
-
-            // Now, set the value
-            if (value is not IEnumerable<object> valueList)
-                return;
-            string JoinedString = string.Join(FinalDelimiter, valueList);
-            SettingsAppTools.SetPropertyValue(key.Variable, JoinedString, configType);
+            return FinalDelimiter;
         }
 
     }

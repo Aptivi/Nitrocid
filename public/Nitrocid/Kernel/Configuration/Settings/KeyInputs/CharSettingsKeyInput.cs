@@ -50,6 +50,20 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             return AnswerString;
         }
 
+        public object TranslateStringValue(SettingsKey key, string value)
+        {
+            char character = value.Length == 0 ? '\0' : value[0] ;
+            return character;
+        }
+
+        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        {
+            if (KeyDefaultValue is not char defaultChar)
+                return '\0';
+            char character = value.Length == 0 ? defaultChar : value[0];
+            return character;
+        }
+
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
         {
             // We're dealing with integers

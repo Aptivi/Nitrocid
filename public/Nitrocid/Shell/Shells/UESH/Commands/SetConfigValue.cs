@@ -48,7 +48,8 @@ namespace KS.Shell.Shells.UESH.Commands
                 if (keys.Any((sk) => sk.Variable == varName))
                 {
                     var key = ConfigTools.GetSettingsKey(config, varName);
-                    SettingsAppTools.SetPropertyValue(key.Variable, parameters.ArgumentsList[2], config);
+                    var finalValue = key.KeyInput.TranslateStringValue(key, parameters.ArgumentsList[2]);
+                    SettingsAppTools.SetPropertyValue(key.Variable, finalValue, config);
                 }
                 else
                 {

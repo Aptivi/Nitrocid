@@ -31,6 +31,26 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
             return Convert.ToInt32(!(bool)KeyDefaultValue);
         }
 
+        public object TranslateStringValue(SettingsKey key, string value)
+        {
+            if (string.IsNullOrEmpty(value))
+                return false;
+            if (bool.TryParse(value, out bool valueBool))
+                return valueBool;
+            return false;
+        }
+
+        public object TranslateStringValueWithDefault(SettingsKey key, string value, object KeyDefaultValue)
+        {
+            if (KeyDefaultValue is not bool defaultBool)
+                return false;
+            if (string.IsNullOrEmpty(value))
+                return defaultBool;
+            if (bool.TryParse(value, out bool valueBool))
+                return valueBool;
+            return defaultBool;
+        }
+
         public void SetValue(SettingsKey key, object value, BaseKernelConfig configType)
         {
             // We're dealing with boolean
