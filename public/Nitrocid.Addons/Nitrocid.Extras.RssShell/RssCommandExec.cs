@@ -17,11 +17,19 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Interactive;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Configuration;
+using KS.Kernel.Exceptions;
 using KS.Languages;
+using KS.Misc.Interactives;
 using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 using Syndian.Instance;
+using System;
 
 namespace Nitrocid.Extras.RssShell
 {
@@ -30,8 +38,30 @@ namespace Nitrocid.Extras.RssShell
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            NetworkConnectionTools.OpenConnectionForShell("RSSShell", EstablishRssConnection, (_, connection) =>
-            EstablishRssConnection(connection.Address), parameters.ArgumentsText);
+            if (SwitchManager.ContainsSwitch(parameters.SwitchesList, "-tui"))
+            {
+                if (parameters.ArgumentsList.Length > 0)
+                {
+                    RssReaderCli.rssConnection = EstablishRssConnection(parameters.ArgumentsList[0]);
+                    ((RSSFeed)RssReaderCli.rssConnection.ConnectionInstance).Refresh();
+                    InteractiveTuiTools.OpenInteractiveTui(new RssReaderCli());
+                }
+                else
+                {
+                    string address = Input.ReadLine(Translate.DoTranslation("Enter the RSS feed URL") + ": ", Config.MainConfig.RssHeadlineUrl);
+                    if (string.IsNullOrEmpty(address) || !Uri.TryCreate(address, UriKind.Absolute, out Uri uri))
+                    {
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Error trying to parse the address. Make sure that you've written the address correctly."), KernelColorType.Error);
+                        return 10000 + (int)KernelExceptionType.RSSNetwork;
+                    }
+                    RssReaderCli.rssConnection = EstablishRssConnection(address);
+                    ((RSSFeed)RssReaderCli.rssConnection.ConnectionInstance).Refresh();
+                    InteractiveTuiTools.OpenInteractiveTui(new RssReaderCli());
+                }
+            }
+            else
+                NetworkConnectionTools.OpenConnectionForShell("RSSShell", EstablishRssConnection, (_, connection) =>
+                    EstablishRssConnection(connection.Address), parameters.ArgumentsText);
             return 0;
         }
 

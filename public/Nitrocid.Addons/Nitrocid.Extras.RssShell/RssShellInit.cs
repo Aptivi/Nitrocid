@@ -22,6 +22,7 @@ using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
+using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.RssShell.RSS;
 using Nitrocid.Extras.RssShell.Settings;
 using System.Collections.Generic;
@@ -39,6 +40,9 @@ namespace Nitrocid.Extras.RssShell
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "feedlink"),
+                        }, new[]
+                        {
+                            new SwitchInfo("tui", /* Localizable */ "Opens an interactive RSS feed reader TUI"),
                         })
                     }, new RssCommandExec())
             },
