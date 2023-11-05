@@ -24,6 +24,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.Shells.Debug.Commands;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Debug.Presets;
+using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.Debug
 {
@@ -83,6 +84,32 @@ namespace KS.Shell.Shells.Debug
                     new[] {
                         new CommandArgumentInfo()
                     }, new LsAddonsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
+            { "lsfields",
+                new CommandInfo("lsfields", /* Localizable */ "Lists all available public fields",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
+                        })
+                    }, new LsFieldsCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
+            },
+
+            { "lsproperties",
+                new CommandInfo("lsproperties", /* Localizable */ "Lists all available public properties",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new SwitchInfo("suppress", /* Localizable */ "Suppresses the error messages", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
+                        })
+                    }, new LsPropertiesCommand(), CommandFlags.Wrappable | CommandFlags.RedirectionSupported)
             },
 
             { "lsshells",
