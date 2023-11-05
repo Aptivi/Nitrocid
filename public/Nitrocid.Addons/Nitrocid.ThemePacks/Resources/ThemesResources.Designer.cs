@@ -88,23 +88,20 @@ namespace Nitrocid.ThemePacks.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
-        ///        &quot;Name&quot;: &quot;Hacker&quot;,
-        ///        &quot;Description&quot;: &quot;Green text on gray&quot;,
+        ///        &quot;Name&quot;: &quot;Android&quot;,
+        ///        &quot;Description&quot;: &quot;This is the Android mascot color in the foreground&quot;,
         ///        &quot;Localizable&quot;: true
         ///    },
-        ///    &quot;InputColor&quot;: &quot;10&quot;,
-        ///    &quot;LicenseColor&quot;: &quot;10&quot;,
-        ///    &quot;ContKernelErrorColor&quot;: &quot;10&quot;,
-        ///    &quot;UncontKernelErrorColor&quot;: &quot;10&quot;,
-        ///    &quot;HostNameShellColor&quot;: &quot;10&quot;,
-        ///    &quot;UserNameShellColor&quot;: &quot;10&quot;,
-        ///    &quot;BackgroundColor&quot;: &quot;8&quot;,
-        ///    &quot;NeutralTextColor&quot;: &quot;10&quot;,
-        ///    &quot;ListEntryColor&quot;: &quot;2&quot;,
-        ///    &quot;ListValueColor&quot;: &quot;10&quot;,
-        ///    &quot;StageColor&quot;: &quot;2&quot;,
-        ///    &quot;ErrorColor&quot;: &quot;2&quot;,
-        ///    &quot;WarningColor&quot;: &quot;10&quot;, [rest of string was truncated]&quot;;.
+        ///    &quot;InputColor&quot;: &quot;#A4C639&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;#657A23&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;#A4C639&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;#A4C639&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;#657A23&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;#A4C639&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;0&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;#657A23&quot;,
+        ///    &quot;ListEntryColor&quot;: &quot;#657A23&quot;,
+        ///    &quot;ListValueColor&quot;: &quot;#A4C6 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Android {
             get {
@@ -407,6 +404,56 @@ namespace Nitrocid.ThemePacks.Resources {
         public static string DefaultVivid {
             get {
                 return ResourceManager.GetString("DefaultVivid", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Dynamic Background&quot;,
+        ///        &quot;Description&quot;: &quot;Background accents in your kernel!&quot;,
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Exciting&quot;,
+        ///        &quot;UseAccentTypes&quot;: [
+        ///            &quot;BackgroundColor&quot;,
+        ///            &quot;TuiBackgroundColor&quot;,
+        ///            &quot;TuiPaneBackgroundColor&quot;,
+        ///            &quot;TuiPaneSelectedItemBackColor&quot;,
+        ///            &quot;TuiPaneItemBackColor&quot;,
+        ///            &quot;TuiOptionBackgroundColor&quot;,
+        ///            &quot;TuiBoxBackgroundColor&quot;
+        ///        ]
+        ///    },
+        ///    &quot;InputCo [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DynamicBack {
+            get {
+                return ResourceManager.GetString("DynamicBack", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Dynamic Extra&quot;,
+        ///        &quot;Description&quot;: &quot;More accents everywhere!&quot;,
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Exciting&quot;,
+        ///        &quot;UseAccentTypes&quot;: [
+        ///            &quot;InputColor&quot;,
+        ///            &quot;LicenseColor&quot;,
+        ///            &quot;ContKernelErrorColor&quot;,
+        ///            &quot;UncontKernelErrorColor&quot;,
+        ///            &quot;HostNameShellColor&quot;,
+        ///            &quot;UserNameShellColor&quot;,
+        ///            &quot;BackgroundColor&quot;,
+        ///            &quot;NeutralTextColor&quot;,
+        ///            &quot;ListEntryColor&quot;,
+        ///            &quot;L [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string DynamicExtra {
+            get {
+                return ResourceManager.GetString("DynamicExtra", resourceCulture);
             }
         }
         
@@ -1647,7 +1694,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Yasai&quot;,
-        ///        &quot;Description&quot;: &quot;Inspired from the Chinese pattern of different fruits, Yasai&quot;,
+        ///        &quot;Description&quot;: &quot;Inspired from the Chinese pattern of different fruits&quot;,
         ///        &quot;Localizable&quot;: true
         ///    },
         ///    &quot;InputColor&quot;: &quot;#C0B596&quot;,
@@ -1659,7 +1706,7 @@ namespace Nitrocid.ThemePacks.Resources {
         ///    &quot;BackgroundColor&quot;: &quot;#16253D&quot;,
         ///    &quot;NeutralTextColor&quot;: &quot;#7B1F68&quot;,
         ///    &quot;ListEntryColor&quot;: &quot;#C0B596&quot;,
-        ///    &quot;ListValue [rest of string was truncated]&quot;;.
+        ///    &quot;ListValueColor&quot;: [rest of string was truncated]&quot;;.
         /// </summary>
         public static string Yasai {
             get {
