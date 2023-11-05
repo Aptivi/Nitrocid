@@ -139,7 +139,7 @@ namespace Nitrocid.ScreensaverPacks
         {
             // First, initialize screensavers and splashes
             foreach (var saver in Screensavers.Keys)
-                ScreensaverManager.Screensavers.Add(saver, Screensavers[saver]);
+                ScreensaverManager.AddonSavers.Add(saver, Screensavers[saver]);
             foreach (var splash in Splashes.Keys)
                 SplashManager.InstalledSplashes.Add(splash, Splashes[splash]);
 
@@ -152,7 +152,7 @@ namespace Nitrocid.ScreensaverPacks
         {
             // First, unload screensavers and splashes
             foreach (var saver in Screensavers.Keys)
-                ScreensaverManager.Screensavers.Remove(saver);
+                ScreensaverManager.AddonSavers.Remove(saver);
             foreach (var splash in Splashes.Keys)
                 SplashManager.InstalledSplashes.Remove(splash);
 

@@ -46,7 +46,7 @@ namespace KS.Shell.ShellBase.Arguments
             { "groupname",  (_) => GroupManagement.AvailableGroups.Select((group) => group.GroupName).ToArray() },
             { "modname",    (_) => ModManager.ListMods().Keys.ToArray() },
             { "splashname", (_) => SplashManager.Splashes.Keys.ToArray() },
-            { "saver",      (_) => ScreensaverManager.Screensavers.Keys.ToArray() },
+            { "saver",      (_) => ScreensaverManager.GetScreensaverNames() },
             { "theme",      (_) => ThemeTools.GetInstalledThemes().Keys.ToArray() },
             { "$variable",  (_) => UESHVariables.Variables.Keys.ToArray() },
             { "perm",       (_) => Enum.GetNames<PermissionTypes>() },

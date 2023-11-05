@@ -51,7 +51,7 @@ namespace KS.Shell.Shells.UESH.Commands
         public override void HelpHelper()
         {
             TextWriterColor.Write(Translate.DoTranslation("Available screensavers:"));
-            ListWriterColor.WriteList(ScreensaverManager.Screensavers.Keys);
+            ListWriterColor.WriteList(ScreensaverManager.GetScreensaverNames());
         }
 
     }

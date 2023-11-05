@@ -56,6 +56,7 @@ namespace KS.Misc.Screensaver
             { "matrixbleed", new MatrixBleedDisplay() },
             { "plain", new PlainDisplay() }
         };
+        internal static Dictionary<string, BaseScreensaver> AddonSavers = new();
         internal static Dictionary<string, BaseScreensaver> CustomSavers = new();
         internal static bool scrnTimeoutEnabled = true;
         internal static int scrnTimeout = 300000;
@@ -119,8 +120,14 @@ namespace KS.Misc.Screensaver
         /// <summary>
         /// Gets the name of the screensavers
         /// </summary>
-        public static string[] GetScreensaverNames() =>
-            Screensavers.Keys.ToArray();
+        public static string[] GetScreensaverNames()
+        {
+            List<string> savers = new();
+            savers.AddRange(Screensavers.Keys);
+            savers.AddRange(AddonSavers.Keys);
+            savers.AddRange(CustomSavers.Keys);
+            return savers.ToArray();
+        }
 
         /// <summary>
         /// Shows the screensaver
@@ -148,7 +155,8 @@ namespace KS.Misc.Screensaver
 
                 // Now, judge how to launch the screensaver
                 screenRefresh = true;
-                if (saver.ToLower() == "random")
+                string saverName = saver.ToLower();
+                if (saverName == "random")
                 {
                     // Random screensaver selection function
                     static string SelectRandom()
@@ -169,10 +177,10 @@ namespace KS.Misc.Screensaver
                     // Run the screensaver
                     ShowSavers(ScreensaverName);
                 }
-                else if (Screensavers.ContainsKey(saver.ToLower()))
+                else if (Screensavers.ContainsKey(saverName) || AddonSavers.ContainsKey(saverName))
                 {
-                    saver = saver.ToLower();
-                    var BaseSaver = Screensavers[saver];
+                    saver = saverName;
+                    var BaseSaver = AddonSavers.ContainsKey(saver) ? AddonSavers[saver] : Screensavers[saver];
                     if (BaseSaver.ScreensaverContainsFlashingImages)
                         BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;
@@ -272,7 +280,11 @@ namespace KS.Misc.Screensaver
         public static bool IsScreensaverRegistered(string name)
         {
             name = name.ToLower();
-            return Screensavers.ContainsKey(name) || CustomSavers.ContainsKey(name) || name == "random";
+            return
+                Screensavers.ContainsKey(name) ||
+                AddonSavers.ContainsKey(name) ||
+                CustomSavers.ContainsKey(name) ||
+                name == "random";
         }
 
         /// <summary>

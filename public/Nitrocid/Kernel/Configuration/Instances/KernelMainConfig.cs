@@ -58,6 +58,7 @@ using KS.Shell.Shells.Json;
 using KS.Kernel.Threading.Performance;
 using KS.Drivers.Sorting;
 using KS.Kernel.Time.Timezones;
+using System.Linq;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -1000,7 +1001,7 @@ namespace KS.Kernel.Configuration.Instances
         public string DefaultSaverName
         {
             get => ScreensaverManager.defSaverName;
-            set => ScreensaverManager.defSaverName = ScreensaverManager.Screensavers.ContainsKey(value) ? value : "plain";
+            set => ScreensaverManager.defSaverName = ScreensaverManager.GetScreensaverNames().Contains(value) ? value : "plain";
         }
         /// <summary>
         /// Whether the screen timeout is enabled or not

@@ -185,10 +185,10 @@ namespace Nitrocid.Extras.Amusements
         void IAddon.StartAddon()
         {
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
-            ScreensaverManager.Screensavers.Add("meteor", new MeteorDisplay());
-            ScreensaverManager.Screensavers.Add("quote", new QuoteDisplay());
-            ScreensaverManager.Screensavers.Add("shipduet", new ShipDuetDisplay());
-            ScreensaverManager.Screensavers.Add("snaker", new SnakerDisplay());
+            ScreensaverManager.AddonSavers.Add("meteor", new MeteorDisplay());
+            ScreensaverManager.AddonSavers.Add("quote", new QuoteDisplay());
+            ScreensaverManager.AddonSavers.Add("shipduet", new ShipDuetDisplay());
+            ScreensaverManager.AddonSavers.Add("snaker", new SnakerDisplay());
             SplashManager.InstalledSplashes.Add("Quote", new SplashInfo("Quote", new SplashQuote(), false));
 
             // Initialize configuration in a way that no mod can play with them
@@ -207,10 +207,10 @@ namespace Nitrocid.Extras.Amusements
         void IAddon.StopAddon()
         {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
-            ScreensaverManager.Screensavers.Remove("meteor");
-            ScreensaverManager.Screensavers.Remove("quote");
-            ScreensaverManager.Screensavers.Remove("shipduet");
-            ScreensaverManager.Screensavers.Remove("snaker");
+            ScreensaverManager.AddonSavers.Remove("meteor");
+            ScreensaverManager.AddonSavers.Remove("quote");
+            ScreensaverManager.AddonSavers.Remove("shipduet");
+            ScreensaverManager.AddonSavers.Remove("snaker");
             SplashManager.InstalledSplashes.Remove("Quote");
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSaversConfig));
             ConfigTools.UnregisterBaseSetting(nameof(AmusementsSplashesConfig));

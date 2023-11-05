@@ -327,10 +327,11 @@ namespace KS.Kernel.Starting
                 ModManager.StopMods();
                 DebugWriter.WriteDebug(DebugLevel.I, "Mods stopped");
 
-                // Stop all addons
+                // Stop all addons and their registered components
                 AddonTools.UnloadAddons();
-                DebugWriter.WriteDebug(DebugLevel.I, "Addons stopped");
-                SplashReport.ReportProgress(Translate.DoTranslation("Extra kernel functions stopped."));
+                ScreensaverManager.AddonSavers.Clear();
+                DebugWriter.WriteDebug(DebugLevel.I, "Addons and their registered components stopped");
+                SplashReport.ReportProgress(Translate.DoTranslation("Extra kernel functions and their registered components stopped."));
 
                 // Stop RPC
                 RemoteProcedure.StopRPC();

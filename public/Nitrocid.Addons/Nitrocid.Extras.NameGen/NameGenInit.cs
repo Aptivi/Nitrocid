@@ -127,7 +127,7 @@ namespace Nitrocid.Extras.NameGen
         void IAddon.StartAddon()
         {
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
-            ScreensaverManager.Screensavers.Add("personlookup", new PersonLookupDisplay());
+            ScreensaverManager.AddonSavers.Add("personlookup", new PersonLookupDisplay());
 
             // Then, initialize configuration in a way that no mod can play with them
             var saversConfig = new NameGenSaversConfig();
@@ -137,7 +137,7 @@ namespace Nitrocid.Extras.NameGen
         void IAddon.StopAddon()
         {
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
-            ScreensaverManager.Screensavers.Remove("personlookup");
+            ScreensaverManager.AddonSavers.Remove("personlookup");
             ConfigTools.UnregisterBaseSetting(nameof(NameGenSaversConfig));
         }
 
