@@ -19,6 +19,7 @@
 
 using System;
 using System.Collections.ObjectModel;
+using System.Reflection;
 
 namespace KS.Modifications
 {
@@ -47,6 +48,14 @@ namespace KS.Modifications
         /// Publicly available functions for other mods to use
         /// </summary>
         ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions { get; }
+        /// <summary>
+        /// Publicly available properties for other mods to use
+        /// </summary>
+        ReadOnlyDictionary<string, PropertyInfo> PubliclyAvailableProperties { get; }
+        /// <summary>
+        /// Publicly available fields for other mods to use
+        /// </summary>
+        ReadOnlyDictionary<string, FieldInfo> PubliclyAvailableFields { get; }
         /// <summary>
         /// Code executed when starting mod
         /// </summary>

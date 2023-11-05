@@ -560,56 +560,5 @@ namespace KS.Modifications
             return null;
         }
 
-        /// <summary>
-        /// Executes a custom mod function
-        /// </summary>
-        /// <param name="modName">The mod name to query</param>
-        /// <param name="functionName">Function name defined in the <see cref="IMod.PubliclyAvailableFunctions"/> dictionary to query</param>
-        public static object ExecuteCustomModFunction(string modName, string functionName) =>
-            ExecuteCustomModFunction(modName, functionName, null);
-
-        /// <summary>
-        /// Executes a custom mod function
-        /// </summary>
-        /// <param name="modName">The mod name to query</param>
-        /// <param name="functionName">Function name defined in the <see cref="IMod.PubliclyAvailableFunctions"/> dictionary to query</param>
-        /// <param name="parameters">Parameters to execute the function with</param>
-        public static object ExecuteCustomModFunction(string modName, string functionName, params object[] parameters)
-        {
-            // Check the user permission
-            PermissionsTools.Demand(PermissionTypes.IntermodCommunication);
-
-            // Get the mod
-            var modInfo = GetMod(modName) ??
-                throw new KernelException(KernelExceptionType.NoSuchMod, Translate.DoTranslation("Can't execute custom function with non-existent mod"));
-
-            // Now, check the list of available functions
-            var modParts = modInfo.ModParts;
-            foreach (var modPart in modParts.Keys)
-            {
-                // Get a mod part
-                var mod = modParts[modPart];
-                DebugWriter.WriteDebug(DebugLevel.I, "Trying to get list of available functions from mod {0} part {1}...", modInfo.ModName, modPart);
-
-                // Get a list of functions
-                var functions = mod.PartScript.PubliclyAvailableFunctions;
-                if (functions is null || functions.Count == 0)
-                    continue;
-
-                // Assuming that we have functions, get a single function containing that name
-                if (!functions.ContainsKey(functionName))
-                    continue;
-
-                // Assuming that we have that function, get a single function delegate
-                var function = functions[functionName];
-                if (function is null)
-                    continue;
-
-                // The function instance is valid. Try to dynamically invoke it.
-                return function.DynamicInvoke(args: parameters);
-            }
-            return null;
-        }
-
     }
 }
