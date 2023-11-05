@@ -161,8 +161,9 @@ namespace KS.Misc.Screensaver
                     // Random screensaver selection function
                     static string SelectRandom()
                     {
-                        int ScreensaverIndex = RandomDriver.RandomIdx(Screensavers.Count);
-                        string ScreensaverName = Screensavers.Keys.ElementAtOrDefault(ScreensaverIndex);
+                        var savers = GetScreensaverNames();
+                        int ScreensaverIndex = RandomDriver.RandomIdx(savers.Length);
+                        string ScreensaverName = savers[ScreensaverIndex];
                         return ScreensaverName;
                     }
 
