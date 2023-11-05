@@ -48,7 +48,7 @@
   <!-- Extras.GitShell addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="LibGit2Sharp" Version="0.27.2" />
+    <PackageReference Include="LibGit2Sharp" Version="0.28.0" />
   </ItemGroup>
 
   <ItemGroup>
