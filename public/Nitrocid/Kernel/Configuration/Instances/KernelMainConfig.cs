@@ -1031,6 +1031,14 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public bool ScreensaverDebug { get; set; }
         /// <summary>
+        /// If you've acknowledged the photosensitive seizure warning, you can turn off the warning message that appears each time a fast-paced screensaver is run.
+        /// </summary>
+        public bool ScreensaverSeizureAcknowledged
+        {
+            get => ScreensaverManager.seizureAcknowledged;
+            set => ScreensaverManager.seizureAcknowledged = value;
+        }
+        /// <summary>
         /// After locking the screen, ask for password
         /// </summary>
         public bool PasswordLock { get; set; } = true;

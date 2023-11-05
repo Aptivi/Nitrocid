@@ -66,6 +66,7 @@ namespace KS.Misc.Screensaver
         internal static bool inSaver;
         internal static bool screenRefresh;
         internal static bool ScrnTimeReached;
+        internal static bool seizureAcknowledged;
         internal static AutoResetEvent SaverAutoReset = new(false);
         internal static KernelThread Timeout = new("Screensaver timeout thread", false, HandleTimeout) { isCritical = true };
 
@@ -133,13 +134,21 @@ namespace KS.Misc.Screensaver
         /// Shows the screensaver
         /// </summary>
         public static void ShowSavers() =>
-            ShowSavers(DefaultSaverName);
+            ShowSavers(DefaultSaverName, seizureAcknowledged);
 
         /// <summary>
         /// Shows the screensaver
         /// </summary>
         /// <param name="saver">A specified screensaver</param>
-        public static void ShowSavers(string saver)
+        public static void ShowSavers(string saver) =>
+            ShowSavers(saver, seizureAcknowledged);
+
+        /// <summary>
+        /// Shows the screensaver
+        /// </summary>
+        /// <param name="saver">A specified screensaver</param>
+        /// <param name="noSeizureWarning">Whether to prevent the seizure warning from showing up</param>
+        public static void ShowSavers(string saver, bool noSeizureWarning)
         {
             try
             {
@@ -176,13 +185,13 @@ namespace KS.Misc.Screensaver
                         ScreensaverName = SelectRandom();
 
                     // Run the screensaver
-                    ShowSavers(ScreensaverName);
+                    ShowSavers(ScreensaverName, true);
                 }
                 else if (Screensavers.ContainsKey(saverName) || AddonSavers.ContainsKey(saverName))
                 {
                     saver = saverName;
                     var BaseSaver = AddonSavers.ContainsKey(saver) ? AddonSavers[saver] : Screensavers[saver];
-                    if (BaseSaver.ScreensaverContainsFlashingImages)
+                    if (BaseSaver.ScreensaverContainsFlashingImages && !noSeizureWarning)
                         BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;
                     ScrnTimeReached = true;
@@ -193,7 +202,7 @@ namespace KS.Misc.Screensaver
                 {
                     // Only one custom screensaver can be used.
                     var BaseSaver = CustomSavers[saver];
-                    if (BaseSaver.ScreensaverContainsFlashingImages)
+                    if (BaseSaver.ScreensaverContainsFlashingImages && !noSeizureWarning)
                         BaseSaver.ScreensaverSeizureWarning();
                     inSaver = true;
                     ScrnTimeReached = true;

@@ -962,6 +962,12 @@
                 "Type": "SBoolean",
                 "Variable": "PasswordLock",
                 "Description": "After locking the screen, ask for password"
+            },
+            {
+                "Name": "Acknowledge the photosensitive seizure warning",
+                "Type": "SBoolean",
+                "Variable": "ScreensaverSeizureAcknowledged",
+                "Description": "If you aren't photosensitive to the fast-paced animations that some of the screensavers show you, you can disable this warning by enabling this option. Please note that we aren't responsible for the side effects that may have come from such animations. Seek a professional medical specialist for more information."
             }
         ]
     },
