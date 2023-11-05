@@ -39,6 +39,7 @@ namespace Nitrocid.SplashPacks
             { "PowerLineProgress", new SplashInfo("PowerLine", new SplashPowerLineProgress()) },
             { "Dots", new SplashInfo("Dots", new SplashDots()) },
             { "TextBox", new SplashInfo("TextBox", new SplashTextBox()) },
+            { "FigProgress", new SplashInfo("FigProgress", new SplashFigProgress()) },
         };
 
         string IAddon.AddonName => "Extra Splashes Pack";
