@@ -911,6 +911,14 @@ namespace KS.Kernel.Configuration.Instances
             set => RemoteDebugger.debugPort = value < 0 ? 3014 : value;
         }
         /// <summary>
+        /// Write a remote debugger chat port. It must be numeric, and must not be already used. Otherwise, remote debugger chat will fail to open the port
+        /// </summary>
+        public int DebugChatPort
+        {
+            get => RemoteChat.debugChatPort;
+            set => RemoteChat.debugChatPort = value < 0 ? 3015 : value;
+        }
+        /// <summary>
         /// Write how many times the "get" command should retry failed downloads. It must be numeric.
         /// </summary>
         public int DownloadRetries

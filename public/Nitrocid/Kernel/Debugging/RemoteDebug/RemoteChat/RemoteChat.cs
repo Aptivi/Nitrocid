@@ -38,68 +38,34 @@ using KS.Misc.Text.Probers.Placeholder;
 namespace KS.Kernel.Debugging.RemoteDebug
 {
     /// <summary>
-    /// Remote debugger module
+    /// Remote chat module
     /// </summary>
-    public static class RemoteDebugger
+    public static class RemoteChat
     {
 
         internal static bool RDebugFailed;
         internal static Exception RDebugFailedReason;
-        internal static List<RemoteDebugDevice> DebugDevices = new();
-        internal static Socket RDebugClient;
-        internal static TcpListener DebugTCP;
-        internal static KernelThread RDebugThread = new("Remote Debug Thread", true, StartRDebugger) { isCritical = true };
-        internal static int debugPort = 3014;
-        internal readonly static SemVer RDebugVersion = SemVer.ParseWithRev("0.9.0");
-        private static readonly AutoResetEvent RDebugBailer = new(false);
+        internal static List<RemoteDebugDevice> DebugChatDevices = new();
+        internal static Socket RDebugChatClient;
+        internal static TcpListener DebugChatTCP;
+        internal static KernelThread RDebugChatThread = new("Remote Debug Chat Thread", true, StartRDebugger) { isCritical = true };
+        internal static int debugChatPort = 3015;
+        private static readonly AutoResetEvent RDebugChatBailer = new(false);
 
         /// <summary>
-        /// Remote debugger port
+        /// Remote debugger chat port
         /// </summary>
-        public static int DebugPort =>
-            Config.MainConfig.DebugPort;
+        public static int DebugChatPort =>
+            Config.MainConfig.DebugChatPort;
         /// <summary>
-        /// Whether the remote debug is stopping
+        /// Whether the remote debug chat is stopping
         /// </summary>
-        public static bool RDebugStopping { get; set; }
+        public static bool RDebugChatStopping { get; set; }
         /// <summary>
-        /// Whether to automatically start the remote debugger
+        /// Remote debug message format
         /// </summary>
-        public static bool RDebugAutoStart =>
-            Config.MainConfig.RDebugAutoStart;
-
-        /// <summary>
-        /// Whether to start or stop the remote debugger
-        /// </summary>
-        public static void StartRDebugThread()
-        {
-            if (KernelEntry.DebugMode)
-            {
-                if (!RDebugThread.IsAlive)
-                {
-                    RDebugThread.Start();
-                    RemoteChat.RDebugChatThread.Start();
-                    RDebugBailer.WaitOne();
-                }
-            }
-        }
-
-        /// <summary>
-        /// Whether to start or stop the remote debugger
-        /// </summary>
-        public static void StopRDebugThread()
-        {
-            if (KernelEntry.DebugMode)
-            {
-                if (RDebugThread.IsAlive)
-                {
-                    RDebugStopping = true;
-                    RemoteChat.RDebugChatStopping = true;
-                    RDebugThread.Stop();
-                    RemoteChat.RDebugChatThread.Stop();
-                }
-            }
-        }
+        public static string RDebugMessageFormat =>
+            Config.MainConfig.RDebugMessageFormat;
 
         /// <summary>
         /// Thread to accept connections after the listener starts
@@ -109,8 +75,8 @@ namespace KS.Kernel.Debugging.RemoteDebug
             // Listen to a current IP address
             try
             {
-                DebugTCP = new TcpListener(IPAddress.Any, DebugPort);
-                DebugTCP.Start();
+                DebugChatTCP = new TcpListener(IPAddress.Any, DebugChatPort);
+                DebugChatTCP.Start();
             }
             catch (SocketException sex)
             {
@@ -118,10 +84,10 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 RDebugFailedReason = sex;
                 DebugWriter.WriteDebugStackTrace(sex);
             }
-            RDebugBailer.Set();
+            RDebugChatBailer.Set();
 
             // Run forever! Until the remote debugger is stopping.
-            while (!RDebugStopping)
+            while (!RDebugChatStopping)
             {
                 try
                 {
@@ -137,10 +103,10 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     RemoteDebugDevice RDebugInstance;
 
                     // Check for pending connections
-                    if (DebugTCP.Pending())
+                    if (DebugChatTCP.Pending())
                     {
                         // Populate the device variables with the information
-                        RDebugClient = DebugTCP.AcceptSocket();
+                        RDebugClient = DebugChatTCP.AcceptSocket();
 
                         // Set the timeout of ten milliseconds to ensure that no device "take turns in messaging"
                         RDebugStream = new NetworkStream(RDebugClient);
@@ -170,11 +136,11 @@ namespace KS.Kernel.Debugging.RemoteDebug
                         else
                         {
                             // Not blocked yet. Add the connection.
-                            DebugDevices.Add(RDebugInstance);
-                            RDebugSWriter.Write(Translate.DoTranslation(">> Remote Debug: version") + $" {RDebugVersion}\r\n");
+                            DebugChatDevices.Add(RDebugInstance);
+                            RDebugSWriter.Write(Translate.DoTranslation(">> Remote Chat: version") + $" {RemoteDebugger.RDebugVersion}\r\n");
                             RDebugSWriter.Write(Translate.DoTranslation(">> Your address is {0}.") + "\r\n", RDebugIP);
                             if (string.IsNullOrEmpty(RDebugName))
-                                RDebugSWriter.Write(Translate.DoTranslation(">> Welcome! This is your first time entering remote debug. Use \"/register <name>\" to register.") + "\r\n", RDebugName);
+                                RDebugSWriter.Write(Translate.DoTranslation(">> Welcome! This is your first time entering remote chat. In the remote debugger, use \"/register <name>\" to register. You can't talk until you register.") + "\r\n", RDebugName);
                             else
                                 RDebugSWriter.Write(Translate.DoTranslation(">> Your name is {0}.") + "\r\n", RDebugName);
 
@@ -205,9 +171,9 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 }
             }
 
-            RDebugStopping = false;
-            DebugTCP.Stop();
-            DebugDevices.Clear();
+            RDebugChatStopping = false;
+            DebugChatTCP.Stop();
+            DebugChatDevices.Clear();
         }
 
         /// <summary>
@@ -218,7 +184,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
             if (RDebugInstance is not RemoteDebugDevice device)
                 return;
 
-            while (!RDebugStopping)
+            while (!RDebugChatStopping)
             {
                 try
                 {
@@ -257,12 +223,21 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     // from the message and comparing it to the null char ASCII number, which is 0.
                     if (Convert.ToInt32(Message[0]) != 0)
                     {
-                        // Now, check to see if the message is a command
-                        if (Message.StartsWith("/"))
+                        // Check to see if the unnamed stranger is trying to send a message
+                        var deviceInfo = RemoteDebugTools.GetDeviceFromIp(SocketIP);
+                        if (!string.IsNullOrEmpty(SocketName))
                         {
-                            // The message is a command!
-                            string finalCommand = Message[1..];
-                            RemoteDebugCommandExecutor.ExecuteCommand(finalCommand, device);
+                            // Check the message format
+                            if (string.IsNullOrWhiteSpace(RDebugMessageFormat))
+                                Config.MainConfig.RDebugMessageFormat = "{0}> {1}";
+
+                            // Decide if we're recording the chat to the debug log
+                            if (RemoteDebugTools.RecordChatToDebugLog)
+                                DebugWriter.WriteDebugLogOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), SocketName, Message);
+                            DebugWriter.WriteDebugChatsOnly(DebugLevel.I, PlaceParse.ProbePlaces(RDebugMessageFormat), true, SocketName, Message);
+
+                            // Add the message to the chat history
+                            deviceInfo.chatHistory.Add($"[{TimeDateRenderers.Render()}] {Message}");
                         }
                     }
                 }

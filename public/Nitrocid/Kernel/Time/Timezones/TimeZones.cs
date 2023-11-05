@@ -51,12 +51,12 @@ namespace KS.Kernel.Time.Timezones
             // Get all system time zones (IANA on Unix)
             var Zones = TimeZoneInfo.GetSystemTimeZones().ToArray();
             var ZoneTimes = new List<string>();
-            DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", Zones.Length);
+            //DebugWriter.WriteDebug(DebugLevel.I, "Found {0} time zones.", Zones.Length);
 
             // Adds date and time to every single time zone to the list
             foreach (var Zone in Zones)
                 ZoneTimes.Add(Zone.Id);
-            DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", ZoneTimes.Count);
+            //DebugWriter.WriteDebug(DebugLevel.I, "ZoneTimes = {0}", ZoneTimes.Count);
 
             // Return the populated array
             recognizedZones = ZoneTimes.ToArray();

@@ -292,6 +292,29 @@ namespace KS.Kernel.Debugging
         }
 
         /// <summary>
+        /// Outputs the text into the debugger devices for chat, and sets the time stamp. Note that it doesn't print where did the debugger debug in source files.
+        /// </summary>
+        /// <param name="Level">Debug level</param>
+        /// <param name="text">A sentence that will be written to the the debugger devices. Supports {0}, {1}, ...</param>
+        /// <param name="force">Force message to appear, regardless of mute settings</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteDebugChatsOnly(DebugLevel Level, string text, bool force, params object[] vars)
+        {
+            lock (WriteLock)
+            {
+                if (KernelEntry.DebugMode)
+                {
+                    for (int i = 0; i <= RemoteChat.DebugChatDevices.Count - 1; i++)
+                    {
+                        var device = RemoteChat.DebugChatDevices[i];
+                        if (!WriteDebugDeviceOnly(Level, text, force, device, vars) && i > 0)
+                            i--;
+                    }
+                }
+            }
+        }
+
+        /// <summary>
         /// Conditionally writes the exception's stack trace to the debugger
         /// </summary>
         /// <param name="Condition">The condition that must be satisfied</param>

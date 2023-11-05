@@ -59,6 +59,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
         /// <param name="address">An IP address of the connected debug device</param>
         public static void DisconnectDevice(string address)
         {
+            // Normal remote debugger devices
             var devices = RemoteDebugger.DebugDevices.Where((rdd) => rdd.ClientIP == address).ToList();
             for (int i = 0; i <= devices.Count - 1; i++)
             {
@@ -77,8 +78,26 @@ namespace KS.Kernel.Debugging.RemoteDebug
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
             }
-            if (!devices.Any())
-                throw new KernelException(KernelExceptionType.RemoteDebugDeviceNotFound, Translate.DoTranslation("Debug device {0} not found."), address);
+
+            // Chat remote debugger devices
+            var chats = RemoteChat.DebugChatDevices.Where((rdd) => rdd.ClientIP == address).ToList();
+            for (int i = 0; i <= chats.Count - 1; i++)
+            {
+                try
+                {
+                    string clientIp = RemoteChat.DebugChatDevices[i].ClientIP;
+                    string clientName = RemoteChat.DebugChatDevices[i].ClientName;
+                    RemoteChat.DebugChatDevices[i].ClientSocket.Disconnect(true);
+                    RemoteChat.DebugChatDevices.RemoveAt(i);
+                    EventsManager.FireEvent(EventType.RemoteDebugConnectionDisconnected, address);
+                    DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected from chat.", clientName, clientIp);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Debug device {0} failed to disconnect from chat: {1}.", address, ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
         }
 
         /// <summary>
