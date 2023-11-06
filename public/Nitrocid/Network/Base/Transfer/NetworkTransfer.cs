@@ -30,7 +30,9 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Notifications;
+using KS.Misc.Progress;
 using KS.Misc.Reflection;
+using KS.Misc.Text;
 using KS.Misc.Text.Probers.Placeholder;
 
 namespace KS.Network.Base.Transfer
@@ -235,6 +237,7 @@ namespace KS.Network.Base.Transfer
                     {
                         // We know the total bytes. Print it out.
                         double Progress = 100d * (TransferInfo.DoneSize / (double)TransferInfo.FileSize);
+                        ProgressManager.ReportProgress((int)Math.Round(Progress), $"{TransferInfo.TransferType}", $" {Progress:000.00}% | {TextTools.FormatString(indicator, TransferInfo.DoneSize.SizeString(), TransferInfo.FileSize.SizeString())}");
                         if (NotificationProvoke)
                         {
                             NotificationInstance.Progress = (int)Math.Round(Progress);
