@@ -19,6 +19,7 @@
 
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
+using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -59,6 +60,7 @@ namespace Nitrocid.Extras.RssShell
         {
             var config = new RssConfig();
             ConfigTools.RegisterBaseSetting(config);
+            ShellManager.reservedShells.Add("RSSShell");
             ShellManager.RegisterShell("RSSShell", new RSSShellInfo());
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
         }
@@ -68,7 +70,9 @@ namespace Nitrocid.Extras.RssShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterShell("RSSShell");
+            ShellManager.availableShells.Remove("RSSShell");
+            PromptPresetManager.CurrentPresets.Remove("RSSShell");
+            ShellManager.reservedShells.Remove("RSSShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ConfigTools.UnregisterBaseSetting(nameof(RssConfig));
         }

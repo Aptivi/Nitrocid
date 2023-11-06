@@ -76,6 +76,7 @@ namespace KS.Shell.ShellBase.Shells
     {
 
         internal static List<ShellExecuteInfo> ShellStack = new();
+        internal static List<string> reservedShells = new();
         internal static string lastCommand = "";
         internal static KernelThread ProcessStartCommandThread = new("Executable Command Thread", false, (processParams) => ProcessExecutor.ExecuteProcess((ExecuteProcessThreadParameters)processParams));
         internal static Dictionary<string, List<string>> histories = new()
@@ -816,7 +817,7 @@ namespace KS.Shell.ShellBase.Shells
         /// <param name="ShellType">Shell type</param>
         /// <returns>If available in ShellType, then it's a built-in shell, thus returning true. Otherwise, false for custom shells.</returns>
         public static bool IsShellBuiltin(string ShellType) =>
-            Enum.IsDefined(typeof(ShellType), ShellType);
+            Enum.IsDefined(typeof(ShellType), ShellType) || reservedShells.Contains(ShellType);
 
         /// <summary>
         /// Does the shell exist?

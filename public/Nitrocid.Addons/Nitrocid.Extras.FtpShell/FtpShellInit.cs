@@ -19,6 +19,7 @@
 
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
+using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -55,6 +56,7 @@ namespace Nitrocid.Extras.FtpShell
         {
             var config = new FtpConfig();
             ConfigTools.RegisterBaseSetting(config);
+            ShellManager.reservedShells.Add("FTPShell");
             ShellManager.RegisterShell("FTPShell", new FTPShellInfo());
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
         }
@@ -64,7 +66,9 @@ namespace Nitrocid.Extras.FtpShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterShell("FTPShell");
+            ShellManager.availableShells.Remove("FTPShell");
+            PromptPresetManager.CurrentPresets.Remove("FTPShell");
+            ShellManager.reservedShells.Remove("FTPShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ConfigTools.UnregisterBaseSetting(nameof(FtpConfig));
         }

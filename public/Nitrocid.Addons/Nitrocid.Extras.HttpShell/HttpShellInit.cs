@@ -19,6 +19,7 @@
 
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
+using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -52,6 +53,7 @@ namespace Nitrocid.Extras.HttpShell
         {
             var config = new HttpConfig();
             ConfigTools.RegisterBaseSetting(config);
+            ShellManager.reservedShells.Add("HTTPShell");
             ShellManager.RegisterShell("HTTPShell", new HTTPShellInfo());
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
         }
@@ -61,7 +63,9 @@ namespace Nitrocid.Extras.HttpShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterShell("HTTPShell");
+            ShellManager.availableShells.Remove("HTTPShell");
+            PromptPresetManager.CurrentPresets.Remove("HTTPShell");
+            ShellManager.reservedShells.Remove("HTTPShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ConfigTools.UnregisterBaseSetting(nameof(HttpConfig));
         }

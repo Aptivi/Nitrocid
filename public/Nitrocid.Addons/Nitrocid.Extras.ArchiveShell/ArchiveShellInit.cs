@@ -19,6 +19,7 @@
 
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
+using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -56,6 +57,7 @@ namespace Nitrocid.Extras.ArchiveShell
         {
             var config = new ArchiveConfig();
             ConfigTools.RegisterBaseSetting(config);
+            ShellManager.reservedShells.Add("ArchiveShell");
             ShellManager.RegisterShell("ArchiveShell", new ArchiveShellInfo());
         }
 
@@ -64,7 +66,9 @@ namespace Nitrocid.Extras.ArchiveShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterShell("ArchiveShell");
+            ShellManager.availableShells.Remove("ArchiveShell");
+            PromptPresetManager.CurrentPresets.Remove("ArchiveShell");
+            ShellManager.reservedShells.Remove("ArchiveShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ConfigTools.UnregisterBaseSetting(nameof(ArchiveConfig));
         }

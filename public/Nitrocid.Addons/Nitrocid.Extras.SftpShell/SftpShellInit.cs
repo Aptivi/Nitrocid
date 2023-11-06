@@ -19,6 +19,7 @@
 
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
+using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -79,6 +80,7 @@ namespace Nitrocid.Extras.SftpShell
         {
             var config = new SftpConfig();
             ConfigTools.RegisterBaseSetting(config);
+            ShellManager.reservedShells.Add("SFTPShell");
             ShellManager.RegisterShell("SFTPShell", new SFTPShellInfo());
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
         }
@@ -88,7 +90,9 @@ namespace Nitrocid.Extras.SftpShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterShell("SFTPShell");
+            ShellManager.availableShells.Remove("SFTPShell");
+            PromptPresetManager.CurrentPresets.Remove("SFTPShell");
+            ShellManager.reservedShells.Remove("SFTPShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ConfigTools.UnregisterBaseSetting(nameof(SftpConfig));
         }

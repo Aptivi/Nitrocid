@@ -21,6 +21,7 @@ using KS.Files;
 using KS.Kernel;
 using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
+using KS.Shell.Prompts;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
@@ -60,6 +61,7 @@ namespace Nitrocid.Extras.GitShell
         {
             var config = new GitConfig();
             ConfigTools.RegisterBaseSetting(config);
+            ShellManager.reservedShells.Add("GitShell");
             ShellManager.RegisterShell("GitShell", new GitShellInfo());
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());
             if (!nativeLibIsSet)
@@ -74,7 +76,9 @@ namespace Nitrocid.Extras.GitShell
 
         void IAddon.StopAddon()
         {
-            ShellManager.UnregisterShell("GitShell");
+            ShellManager.availableShells.Remove("GitShell");
+            PromptPresetManager.CurrentPresets.Remove("GitShell");
+            ShellManager.reservedShells.Remove("GitShell");
             CommandManager.UnregisterAddonCommands(ShellType.Shell, addonCommands.Keys.ToArray());
             ConfigTools.UnregisterBaseSetting(nameof(GitConfig));
         }
