@@ -79,7 +79,10 @@ namespace KS.Shell.Shells.Debug
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "field")
+                            new CommandArgumentPart(true, "field", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (_) => FieldManager.GetAllFieldsNoEvaluation().Keys.ToArray(),
+                            })
                         }, true)
                     }, new GetFieldValueCommand())
             },
@@ -89,7 +92,10 @@ namespace KS.Shell.Shells.Debug
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "property")
+                            new CommandArgumentPart(true, "property", new CommandArgumentPartOptions()
+                            {
+                                AutoCompleter = (_) => PropertyManager.GetAllPropertiesNoEvaluation().Keys.ToArray(),
+                            })
                         }, true)
                     }, new GetPropertyValueCommand())
             },

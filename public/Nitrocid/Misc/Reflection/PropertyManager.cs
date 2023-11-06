@@ -48,7 +48,7 @@ namespace KS.Misc.Reflection
         /// <param name="VariableType">Property type</param>
         public static void SetPropertyValue(string Variable, object VariableValue, Type VariableType)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             PropertyInfo TargetProperty;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
@@ -58,10 +58,10 @@ namespace KS.Misc.Reflection
             // Set the variable if found
             if (TargetProperty is not null)
             {
-                // The "obj" description says this: "The object whose field value will be set."
+                // The "obj" description says this: "The object whose property value will be set."
                 // Apparently, SetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
                 TargetProperty.SetValue(Variable, VariableValue);
             }
             else
@@ -90,7 +90,7 @@ namespace KS.Misc.Reflection
         /// <param name="VariableType">Property type</param>
         public static void SetPropertyValueInstance<T>(T instance, string Variable, object VariableValue, Type VariableType)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             PropertyInfo TargetProperty;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
@@ -100,10 +100,10 @@ namespace KS.Misc.Reflection
             // Set the variable if found
             if (TargetProperty is not null)
             {
-                // The "obj" description says this: "The object whose field value will be returned."
+                // The "obj" description says this: "The object whose property value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
                 TargetProperty.SetValue(instance, VariableValue);
             }
             else
@@ -123,7 +123,7 @@ namespace KS.Misc.Reflection
         /// <param name="VariableType">Property type</param>
         public static void SetPropertyValueInstanceExplicit(object instance, string Variable, object VariableValue, Type VariableType)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             PropertyInfo TargetProperty = default;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
@@ -131,10 +131,10 @@ namespace KS.Misc.Reflection
             // Set the variable if found
             if (TargetProperty is not null)
             {
-                // The "obj" description says this: "The object whose field value will be returned."
+                // The "obj" description says this: "The object whose property value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}. Setting to {1}...", TargetProperty.Name, VariableValue);
                 TargetProperty.SetValue(instance, VariableValue);
             }
             else
@@ -162,7 +162,7 @@ namespace KS.Misc.Reflection
         /// <returns>Value of a property</returns>
         public static object GetPropertyValue(string Variable, Type VariableType, bool UseGeneral = false)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             PropertyInfo TargetProperty;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
@@ -174,10 +174,10 @@ namespace KS.Misc.Reflection
             // Get the variable if found
             if (TargetProperty is not null)
             {
-                // The "obj" description says this: "The object whose field value will be returned."
+                // The "obj" description says this: "The object whose property value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}.", TargetProperty.Name);
                 return TargetProperty.GetValue(Variable);
             }
             else
@@ -206,7 +206,7 @@ namespace KS.Misc.Reflection
         /// <returns>Value of a property</returns>
         public static object GetPropertyValueInstance<T>(T instance, string Variable, Type VariableType)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             PropertyInfo TargetProperty;
             if (VariableType is not null)
             {
@@ -220,10 +220,10 @@ namespace KS.Misc.Reflection
             // Get the variable if found
             if (TargetProperty is not null)
             {
-                // The "obj" description says this: "The object whose field value will be returned."
+                // The "obj" description says this: "The object whose property value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}.", TargetProperty.Name);
                 return TargetProperty.GetValue(instance);
             }
             else
@@ -243,7 +243,7 @@ namespace KS.Misc.Reflection
         /// <returns>Value of a property</returns>
         public static object GetPropertyValueInstanceExplicit(object instance, string Variable, Type VariableType)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             PropertyInfo TargetProperty = default;
             if (VariableType is not null)
                 TargetProperty = GetProperty(Variable, VariableType);
@@ -251,10 +251,10 @@ namespace KS.Misc.Reflection
             // Get the variable if found
             if (TargetProperty is not null)
             {
-                // The "obj" description says this: "The object whose field value will be returned."
+                // The "obj" description says this: "The object whose property value will be returned."
                 // Apparently, GetValue works on modules if you specify a variable name as an object (first argument). Not only classes.
                 // Unfortunately, there are no examples on the MSDN that showcase such situations; classes are being used.
-                DebugWriter.WriteDebug(DebugLevel.I, "Got field {0}.", TargetProperty.Name);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got property {0}.", TargetProperty.Name);
                 return TargetProperty.GetValue(Convert.ChangeType(instance, VariableType));
             }
             else
@@ -273,7 +273,7 @@ namespace KS.Misc.Reflection
         /// <returns>Property information</returns>
         public static PropertyInfo GetProperty(string Variable, Type Type)
         {
-            // Get fields of specified type
+            // Get propertys of specified type
             var PropertyInstance = Type.GetProperty(Variable);
 
             // Check if any of them contains the specified variable
@@ -297,7 +297,7 @@ namespace KS.Misc.Reflection
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelConfigTypes;
 
-            // Get fields of flag modules
+            // Get propertys of flag modules
             foreach (Type PossibleType in PossibleTypes)
             {
                 PossibleProperty = PossibleType.GetProperty(Variable);
@@ -320,7 +320,7 @@ namespace KS.Misc.Reflection
             // Get types of possible flag locations
             PossibleTypes = ReflectionCommon.KernelTypes;
 
-            // Get fields of flag modules
+            // Get propertys of flag modules
             foreach (Type PossibleType in PossibleTypes)
             {
                 PossibleProperty = PossibleType.GetProperty(Variable);
@@ -336,7 +336,7 @@ namespace KS.Misc.Reflection
         /// <param name="Variable">Property name. Use operator NameOf to get name.</param>
         public static bool CheckProperty(string Variable)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             var TargetProperty = GetProperty(Variable);
 
             // Set the variable if found
@@ -350,7 +350,7 @@ namespace KS.Misc.Reflection
         /// <param name="Type">Property type</param>
         public static bool CheckProperty(string Variable, Type Type)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             var TargetProperty = GetProperty(Variable, Type);
 
             // Set the variable if found
@@ -364,7 +364,7 @@ namespace KS.Misc.Reflection
         /// <returns>Dictionary containing all properties</returns>
         public static Dictionary<string, object> GetProperties(Type VariableType)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             var Properties = VariableType.GetProperties();
             var PropertyDict = new Dictionary<string, object>();
 
@@ -384,13 +384,63 @@ namespace KS.Misc.Reflection
         /// <returns>Dictionary containing all properties</returns>
         public static Dictionary<string, Type> GetPropertiesNoEvaluation(Type VariableType)
         {
-            // Get field for specified variable
+            // Get property for specified variable
             var Properties = VariableType.GetProperties();
             var PropertyDict = new Dictionary<string, Type>();
 
             // Get the properties and get their values
             foreach (PropertyInfo VarProperty in Properties)
                 PropertyDict.Add(VarProperty.Name, VarProperty.PropertyType);
+            return PropertyDict;
+        }
+
+        /// <summary>
+        /// Gets all the properties from the type dynamically
+        /// </summary>
+        /// <returns>Dictionary containing all properties</returns>
+        public static Dictionary<string, object> GetAllProperties()
+        {
+            // Get property for specified variable
+            var PropertyDict = new Dictionary<string, object>();
+            foreach (var type in ReflectionCommon.KernelTypes)
+            {
+                try
+                {
+                    var properties = GetProperties(type);
+                    foreach (var property in properties)
+                        PropertyDict.Add(property.Key, property.Value);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Error getting property value for {type.Name}: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
+            return PropertyDict;
+        }
+
+        /// <summary>
+        /// Gets all the properties from the type without evaluation
+        /// </summary>
+        /// <returns>Dictionary containing all properties</returns>
+        public static Dictionary<string, Type> GetAllPropertiesNoEvaluation()
+        {
+            // Get property for specified variable
+            var PropertyDict = new Dictionary<string, Type>();
+            foreach (var type in ReflectionCommon.KernelTypes)
+            {
+                try
+                {
+                    var properties = GetPropertiesNoEvaluation(type);
+                    foreach (var property in properties)
+                        PropertyDict.Add(property.Key, property.Value);
+                }
+                catch (Exception ex)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, $"Error getting property for {type.Name}: {ex.Message}");
+                    DebugWriter.WriteDebugStackTrace(ex);
+                }
+            }
             return PropertyDict;
         }
 
