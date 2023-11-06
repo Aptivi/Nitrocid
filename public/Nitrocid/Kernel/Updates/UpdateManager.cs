@@ -20,6 +20,7 @@
 using System;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
+using KS.Kernel.Extensions;
 using KS.Network.Base.Transfer;
 using Newtonsoft.Json.Linq;
 
@@ -66,10 +67,43 @@ namespace KS.Kernel.Updates
                 // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
                 NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
 
+                // Determine the update kind by fetching the addons
+                var kind = UpdateKind.Binary;
+                if (AddonTools.ListAddons().Count == 0)
+                    kind = UpdateKind.BinaryLite;
+
                 // Populate the following variables with information
                 string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/NitrocidKS/releases");
                 var UpdateToken = JToken.Parse(UpdateStr);
-                var UpdateInstance = new KernelUpdate(UpdateToken);
+                var UpdateInstance = new KernelUpdate(UpdateToken, kind);
+
+                // Return the update instance
+                NetworkTransfer.WClient.DefaultRequestHeaders.Remove("User-Agent");
+                return UpdateInstance;
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to check for updates: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+            }
+            return null;
+        }
+
+        /// <summary>
+        /// Fetches the GitHub repo for addon pack
+        /// </summary>
+        /// <returns>A kernel update instance</returns>
+        public static KernelUpdate FetchAddonPack()
+        {
+            try
+            {
+                // Because api.github.com requires the UserAgent header to be put, else, 403 error occurs. Fortunately for us, "Aptivi" is enough.
+                NetworkTransfer.WClient.DefaultRequestHeaders.Add("User-Agent", "Aptivi");
+
+                // Populate the following variables with information
+                string UpdateStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/NitrocidKS/releases");
+                var UpdateToken = JToken.Parse(UpdateStr);
+                var UpdateInstance = new KernelUpdate(UpdateToken, UpdateKind.Addons);
 
                 // Return the update instance
                 NetworkTransfer.WClient.DefaultRequestHeaders.Remove("User-Agent");

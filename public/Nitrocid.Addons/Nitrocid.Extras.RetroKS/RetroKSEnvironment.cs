@@ -49,7 +49,7 @@ namespace Nitrocid.Extras.RetroKS
             // Populate the following variables with information
             string RetroKSStr = NetworkTransfer.DownloadString("https://api.github.com/repos/Aptivi/RetroKS/releases");
             var RetroKSToken = JToken.Parse(RetroKSStr);
-            var update = new KernelUpdate(RetroKSToken);
+            var update = new KernelUpdate(RetroKSToken, UpdateKind.Binary);
 
             // Populate paths
             string RetroKSPath = FilesystemTools.NeutralizePath("retroks.rar", Paths.RetroKSDownloadPath);

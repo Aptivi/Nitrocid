@@ -692,6 +692,19 @@ namespace KS.Shell.Shells.UESH
                     }, new GetCommand())
             },
 
+            { "getaddons",
+                new CommandInfo("getaddons", /* Localizable */ "Gets all the addons from the official download page and installs them",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new SwitchInfo("reinstall", /* Localizable */ "Reinstalls the addons", new SwitchOptions()
+                            {
+                                AcceptsValues = false
+                            })
+                        })
+                    }, new GetAddonsCommand())
+            },
+
             { "getallexthandlers",
                 new CommandInfo("getallexthandlers", /* Localizable */ "Gets all the extension handlers from all the extensions",
                     new[] {

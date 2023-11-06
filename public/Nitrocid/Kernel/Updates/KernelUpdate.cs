@@ -37,10 +37,17 @@ namespace KS.Kernel.Updates
         /// Updated kernel version
         /// </summary>
         public SemVer UpdateVersion { get; private set; }
+
         /// <summary>
         /// Update file URL
         /// </summary>
         public Uri UpdateURL { get; private set; }
+
+        /// <summary>
+        /// Kind of update
+        /// </summary>
+        public UpdateKind UpdateKind { get; private set; }
+
         /// <summary>
         /// Is the kernel up to date?
         /// </summary>
@@ -50,7 +57,8 @@ namespace KS.Kernel.Updates
         /// Installs a new instance of class KernelUpdate
         /// </summary>
         /// <param name="UpdateToken">The kernel update token</param>
-        protected internal KernelUpdate(JToken UpdateToken)
+        /// <param name="kind">The kernel update kind</param>
+        protected internal KernelUpdate(JToken UpdateToken, UpdateKind kind)
         {
             // Sort the versions (We sometimes release servicing versions of earlier series, like 0.0.8.x, and the GitHub API sorts the releases based
             // on the date of the release, so we retry sorting them, this time, by version, so we get the list in the below format.)
@@ -64,6 +72,9 @@ namespace KS.Kernel.Updates
             // the user that 0.0.21.4 was available due to 0.0.8.12 and versions that came after coming as first according to the API until 0.0.21.5
             // arrived)
             List<(SemVer UpdateVersion, Uri UpdateURL)> SortedVersions = new();
+            string specifier =
+                kind == UpdateKind.Binary ? "bin" :
+                kind == UpdateKind.BinaryLite ? "bin-lite" : "bin";
             foreach (JToken KernelUpdate in UpdateToken)
             {
                 // We usually prefix versions with vx.x.x.x-xxx on Nitrocid KS releases.
@@ -80,15 +91,15 @@ namespace KS.Kernel.Updates
                 foreach (var asset in KernelUpdate.SelectToken("assets"))
                 {
                     string url = (string)asset["browser_download_url"];
-                    string binSpecifier = "" +
+                    string binSpecifier = kind != UpdateKind.Binary ? specifier : specifier +
 #if NET6_0
-                        "bin6"
+                        "6"
 #elif NET7_0
-                        "bin7"
+                        "7"
 #elif NET8_0
-                        "bin"
+                        ""
 #else
-                        "bin48"
+                        "48"
 #endif
                         ;
                     if (url.EndsWith($"-{binSpecifier}.zip") || url.EndsWith($"-{binSpecifier}.rar"))
@@ -106,15 +117,19 @@ namespace KS.Kernel.Updates
             DebugWriter.WriteDebug(DebugLevel.I, "Found {0} kernel updates.", SortedVersions.Count);
 
             // Get the latest version found
-            var CurrentVer = SemVer.ParseWithRev(KernelMain.Version.ToString());
+            var CurrentVer = KernelMain.VersionFull;
             var UpdateVer = SortedVersions[0].UpdateVersion;
-            var UpdateURI = SortedVersions[0].UpdateURL;
+            var UpdateURI =
+                kind == UpdateKind.Addons ?
+                new Uri(SortedVersions[0].UpdateURL.ToString().Replace(SortedVersions[0].UpdateVersion.ToString(), CurrentVer.ToString()).Replace($"-{specifier}", "-addons")) :
+                SortedVersions[0].UpdateURL;
             DebugWriter.WriteDebug(DebugLevel.I, "Update version: {0}", UpdateVer.ToString());
             DebugWriter.WriteDebug(DebugLevel.I, "Update URL: {0}", UpdateURI.ToString());
 
             // Install the values
             UpdateVersion = UpdateVer;
             UpdateURL = UpdateURI;
+            UpdateKind = kind;
 
             // If the updated version is lower or equal to the current version, consider the kernel up-to-date.
             Updated = UpdateVersion <= CurrentVer;

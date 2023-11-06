@@ -34,6 +34,7 @@ using KS.Arguments.Help;
 using KS.Users.Windows;
 using System.Diagnostics;
 using System.Reflection;
+using SemanVer.Instance;
 
 namespace KS.Kernel
 {
@@ -44,6 +45,8 @@ namespace KS.Kernel
     {
         private static readonly Version kernelVersion =
             Assembly.GetExecutingAssembly().GetName().Version;
+        private static readonly SemVer kernelVersionFull =
+            SemVer.ParseWithRev("0.1.0.0-b2");
         private static readonly Version kernelApiVersion =
             new(FileVersionInfo.GetVersionInfo(Assembly.GetExecutingAssembly().Location).FileVersion);
 
@@ -58,6 +61,11 @@ namespace KS.Kernel
         // Refer to NitrocidModAPIVersion in the project file.
         public static Version ApiVersion =>
             kernelApiVersion;
+        /// <summary>
+        /// Kernel version (full)
+        /// </summary>
+        public static SemVer VersionFull =>
+            kernelVersionFull;
 
         /// <summary>
         /// Entry point
