@@ -19,6 +19,7 @@
 
 using KS.Drivers;
 using KS.Kernel.Debugging;
+using KS.Misc.Text;
 using System;
 using System.IO;
 using System.Text;
@@ -246,8 +247,22 @@ namespace KS.ConsoleBase
         /// <param name="settings">Reader settings</param>
         internal static void Write(string text, TermReaderSettings settings)
         {
-            for (int i = 0; i < text.Length; i++)
-                Write(text[i], settings);
+            if (settings.RightMargin > 0 || settings.LeftMargin > 0)
+            {
+                var wrapped = TextTools.GetWrappedSentences(text, WindowWidth - settings.RightMargin - settings.LeftMargin, settings.LeftMargin - 1);
+                for (int i = 0; i < wrapped.Length; i++)
+                {
+                    string textWrapped = wrapped[i];
+                    Write(textWrapped);
+                    if (i + 1 < wrapped.Length)
+                    {
+                        WriteLine();
+                        CursorLeft = settings.LeftMargin;
+                    }
+                }
+            }
+            else
+                Write(text);
         }
 
         /// <summary>
@@ -267,8 +282,7 @@ namespace KS.ConsoleBase
         internal static void Write(string text, TermReaderSettings settings, params object[] args)
         {
             string finalText = string.Format(text, args);
-            for (int i = 0; i < finalText.Length; i++)
-                Write(finalText[i], settings);
+            Write(finalText, settings);
         }
 
         /// <summary>
