@@ -25,6 +25,8 @@ using KS.Shell.Shells.Debug.Commands;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.Shells.Debug.Presets;
 using KS.Shell.ShellBase.Switches;
+using KS.Misc.Reflection;
+using System.Linq;
 
 namespace KS.Shell.Shells.Debug
 {
@@ -70,6 +72,26 @@ namespace KS.Shell.Shells.Debug
                             })
                         })
                     }, new ExcInfoCommand())
+            },
+
+            { "getfieldvalue",
+                new CommandInfo("getfieldvalue", /* Localizable */ "Gets a field value",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "field")
+                        }, true)
+                    }, new GetFieldValueCommand())
+            },
+
+            { "getpropertyvalue",
+                new CommandInfo("getpropertyvalue", /* Localizable */ "Gets a property value",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "property")
+                        }, true)
+                    }, new GetPropertyValueCommand())
             },
 
             { "keyinfo",
