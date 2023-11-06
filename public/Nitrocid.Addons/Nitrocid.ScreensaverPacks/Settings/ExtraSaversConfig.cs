@@ -3084,5 +3084,41 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [WorldClock] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int WorldClockMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [FillFade] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool FillFadeTrueColor { get; set; } = true;
+        /// <summary>
+        /// [FillFade] The minimum red color level (true color)
+        /// </summary>
+        public int FillFadeMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [FillFade] The minimum green color level (true color)
+        /// </summary>
+        public int FillFadeMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [FillFade] The minimum blue color level (true color)
+        /// </summary>
+        public int FillFadeMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [FillFade] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int FillFadeMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [FillFade] The maximum red color level (true color)
+        /// </summary>
+        public int FillFadeMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [FillFade] The maximum green color level (true color)
+        /// </summary>
+        public int FillFadeMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [FillFade] The maximum blue color level (true color)
+        /// </summary>
+        public int FillFadeMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [FillFade] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int FillFadeMaximumColorLevel { get; set; } = 255;
     }
 }

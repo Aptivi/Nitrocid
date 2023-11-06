@@ -57,6 +57,7 @@ namespace Nitrocid.ScreensaverPacks
             { "faderback", new FaderBackDisplay() },
             { "fallingline", new FallingLineDisplay() },
             { "figlet", new FigletDisplay() },
+            { "fillfade", new FillFadeDisplay() },
             { "fireworks", new FireworksDisplay() },
             { "flashcolor", new FlashColorDisplay() },
             { "flashtext", new FlashTextDisplay() },
