@@ -138,7 +138,7 @@ namespace KS.Files.Editors.HexEdit
                 if (canDraw)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", binding.Key.ToString(), binding.Name);
-                    TextWriterWhereColor.WriteWhereColorBack($" {binding.Key} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
+                    TextWriterWhereColor.WriteWhereColorBack(GetBindingKeyShortcut(binding, false), ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
                     TextWriterWhereColor.WriteWhereColorBack($"{(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.OptionForegroundColor, KernelColorTools.GetColor(KernelColorType.Background));
                 }
                 else
@@ -195,9 +195,6 @@ namespace KS.Files.Editors.HexEdit
             if (bindings.Length == 0)
                 return;
 
-            static string GetBindingKeyShortcut(HexEditorBinding bind) =>
-                $"[{(bind.KeyModifiers != 0 ? $"{bind.KeyModifiers} + " : "")}{bind.Key}]";
-
             // User needs an infobox that shows all available keys
             string section = Translate.DoTranslation("Available keys");
             int maxBindingLength = bindings
@@ -211,6 +208,13 @@ namespace KS.Files.Editors.HexEdit
                 $"{string.Join('\n', bindingRepresentations)}"
             , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             refresh = true;
+        }
+
+        private static string GetBindingKeyShortcut(HexEditorBinding bind, bool mark = true)
+        {
+            string markStart = mark ? "[" : " ";
+            string markEnd = mark ? "]" : " ";
+            return $"{markStart}{(bind.KeyModifiers != 0 ? $"{bind.KeyModifiers} + " : "")}{bind.Key}{markEnd}";
         }
 
         private static void MoveBackward()
