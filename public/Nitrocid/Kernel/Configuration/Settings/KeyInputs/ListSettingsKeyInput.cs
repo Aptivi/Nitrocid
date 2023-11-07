@@ -75,7 +75,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                     // Tell the user to choose between adding, removing, or exiting
                     int selectedItemIdx = selectionAnswer - 1;
                     var choice = choices[selectedItemIdx];
-                    string result = InfoBoxColor.WriteInfoBoxInput(
+                    string result = InfoBoxInputColor.WriteInfoBoxInput(
                         Translate.DoTranslation("What do you want to do with this item?") + CharManager.NewLine +
                         $"{choice.ChoiceName}: {choice.ChoiceTitle}" + CharManager.NewLine + CharManager.NewLine +
                         $"  1) {Translate.DoTranslation("Keep this item")}" + CharManager.NewLine +
@@ -95,7 +95,7 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                         else if (selectedAction == 3)
                         {
                             // Adding new item
-                            string newItemValue = InfoBoxColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a value for the new item"));
+                            string newItemValue = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a value for the new item"));
                             TargetList.Add(newItemValue);
                         }
                     }

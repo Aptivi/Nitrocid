@@ -24,7 +24,6 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Misc.Reflection;
 using System;
 using KS.ConsoleBase.Colors;
-using KS.Shell.ShellBase.Switches;
 
 namespace KS.Shell.Shells.Debug.Commands
 {

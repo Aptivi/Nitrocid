@@ -143,7 +143,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         private static void ImportContactsFrom()
         {
             // Now, render the search box
-            string path = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), BoxForegroundColor, BoxBackgroundColor);
+            string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter path to a VCF file containing your contact. Android's contacts2.db file is also supported."), BoxForegroundColor, BoxBackgroundColor);
             if (Checking.FileExists(path))
             {
                 try
@@ -214,7 +214,7 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
         private static void SearchBox()
         {
             // Now, render the search box
-            string exp = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter regular expression to search the contacts."), BoxForegroundColor, BoxBackgroundColor);
+            string exp = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter regular expression to search the contacts."), BoxForegroundColor, BoxBackgroundColor);
             if (RegexpTools.IsValidRegex(exp))
             {
                 // Initiate the search

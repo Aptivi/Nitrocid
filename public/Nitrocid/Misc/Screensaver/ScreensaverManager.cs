@@ -31,7 +31,6 @@ using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
 using KS.Drivers.Console;
 using KS.Drivers;
-using System.Linq;
 using KS.Users;
 using System.Diagnostics;
 using KS.ConsoleBase;

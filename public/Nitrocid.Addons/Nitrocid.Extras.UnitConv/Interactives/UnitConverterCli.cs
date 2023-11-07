@@ -75,7 +75,7 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             try
             {
                 // Open a dialog box asking for number to convert
-                string answer = InfoBoxColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a number to convert..."), BoxForegroundColor, BoxBackgroundColor);
+                string answer = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a number to convert..."), BoxForegroundColor, BoxBackgroundColor);
                 if (string.IsNullOrEmpty(answer))
                 {
                     InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("You haven't entered a number to convert."), BoxForegroundColor, BoxBackgroundColor);

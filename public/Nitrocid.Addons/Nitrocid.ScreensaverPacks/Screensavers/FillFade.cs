@@ -18,8 +18,6 @@
 //
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;

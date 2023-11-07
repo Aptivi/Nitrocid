@@ -263,7 +263,7 @@ namespace KS.Kernel.Debugging.Testing
                     List<string> parameters = new();
                     for (int i = 0; i < facade.TestOptionalParameters; i++)
                     {
-                        string answer = InfoBoxColor.WriteInfoBoxInput(
+                        string answer = InfoBoxInputColor.WriteInfoBoxInput(
                             Translate.DoTranslation("This test contains optional parameters. Enter the value of the parameter to add to the test parameters.") + "\n" +
                             Translate.DoTranslation("Parameters count") + $": {i + 1}/{facade.TestOptionalParameters}"
                         );
@@ -278,7 +278,7 @@ namespace KS.Kernel.Debugging.Testing
                     if (facade.TestInteractive)
                     {
                         // Prompt the user to check to see if the test ran as expected
-                        string answer = InfoBoxColor.WriteInfoBoxInput(
+                        string answer = InfoBoxInputColor.WriteInfoBoxInput(
                             Translate.DoTranslation("Did the test run as expected?") + "\n\n" +
                             "  * y: " + Translate.DoTranslation("Yes, the test ran as expected") + "\n" +
                             "  * n: " + Translate.DoTranslation("No, the test didn't run as expected") + "\n" +

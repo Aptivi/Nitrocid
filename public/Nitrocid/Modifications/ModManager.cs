@@ -39,7 +39,6 @@ using KS.Misc.Reflection;
 using System.Diagnostics;
 using KS.Misc.Screensaver;
 using KS.Files.Operations.Querying;
-using KS.Users.Permissions;
 using KS.Kernel;
 
 namespace KS.Modifications

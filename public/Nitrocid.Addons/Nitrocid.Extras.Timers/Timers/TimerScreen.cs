@@ -155,7 +155,7 @@ namespace Nitrocid.Extras.Timers.Timers
                             break;
 
                         // Try to parse the interval
-                        string UnparsedInterval = InfoBoxColor.WriteInfoBoxInputKernelColor(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", KernelColorType.Question, TimerInterval);
+                        string UnparsedInterval = InfoBoxInputColor.WriteInfoBoxInputKernelColor(Translate.DoTranslation("Specify the timeout in milliseconds") + " [{0}] ", KernelColorType.Question, TimerInterval);
                         if (!double.TryParse(UnparsedInterval, out TimerInterval))
                         {
                             // Not numeric.
