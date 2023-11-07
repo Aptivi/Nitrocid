@@ -510,6 +510,30 @@ namespace Nitrocid.ThemePacks.Resources {
         /// <summary>
         ///   Looks up a localized string similar to {
         ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Golden Palace&quot;,
+        ///        &quot;Description&quot;: &quot;Your epic golden palace on dark blue background&quot;,
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Aesthetic&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;255;255;0&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;255;255;0&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;119;128;0&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;255;255;0&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;119;128;0&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;255;255;0&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;0;0;51&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;119;128;0&quot;,
+        ///    &quot;ListEntryColor&quot;: [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string GoldenPalace {
+            get {
+                return ResourceManager.GetString("GoldenPalace", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
         ///        &quot;Name&quot;: &quot;Grape&quot;,
         ///        &quot;Description&quot;: &quot;Color scheme for grapes&quot;,
         ///        &quot;Localizable&quot;: true
@@ -950,6 +974,30 @@ namespace Nitrocid.ThemePacks.Resources {
         public static string Neutralized {
             get {
                 return ResourceManager.GetString("Neutralized", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
+        ///    &quot;Metadata&quot;: {
+        ///        &quot;Name&quot;: &quot;Night Sky&quot;,
+        ///        &quot;Description&quot;: &quot;This is your night sky at the beginning of the night!&quot;,
+        ///        &quot;Localizable&quot;: true,
+        ///        &quot;Category&quot;: &quot;Mesmerizing&quot;
+        ///    },
+        ///    &quot;InputColor&quot;: &quot;255;255;255&quot;,
+        ///    &quot;LicenseColor&quot;: &quot;255;255;255&quot;,
+        ///    &quot;ContKernelErrorColor&quot;: &quot;255;255;255&quot;,
+        ///    &quot;UncontKernelErrorColor&quot;: &quot;255;255;255&quot;,
+        ///    &quot;HostNameShellColor&quot;: &quot;255;255;255&quot;,
+        ///    &quot;UserNameShellColor&quot;: &quot;255;255;255&quot;,
+        ///    &quot;BackgroundColor&quot;: &quot;0;0;51&quot;,
+        ///    &quot;NeutralTextColor&quot;: &quot;255;255;255&quot;,
+        ///    [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string NightSky {
+            get {
+                return ResourceManager.GetString("NightSky", resourceCulture);
             }
         }
         
