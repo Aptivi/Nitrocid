@@ -112,6 +112,8 @@ namespace KS.Languages
         /// <returns>True if successful, False if unsuccessful.</returns>
         public static bool SetLangDry(string lang)
         {
+            // Settings app may have passed the language name with the country
+            lang = lang.Contains(' ') ? lang.Split(' ')[0] : lang;
             if (Languages.ContainsKey(lang))
             {
                 // Set appropriate codepage for incapable terminals
