@@ -39,7 +39,7 @@ namespace Nitrocid.Extras.ColorConvert.Commands
             string RGB;
 
             // Do the job
-            RGB = KernelColorConversionTools.ConvertFromHexToRGB(Hex);
+            RGB = KernelColorConversionTools.ConvertFromHexToRgb(Hex);
             TextWriterColor.WriteKernelColor("- " + Translate.DoTranslation("RGB color sequence:") + " ", false, KernelColorType.ListEntry);
             TextWriterColor.WriteKernelColor(RGB, true, KernelColorType.ListValue);
             variableValue = RGB;

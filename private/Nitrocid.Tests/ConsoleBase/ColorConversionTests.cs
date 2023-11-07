@@ -34,10 +34,21 @@ namespace Nitrocid.Tests.ConsoleBase
         /// </summary>
         [Test]
         [Description("Conversion")]
-        public void TestConvertFromHexToRGB()
+        public void TestConvertFromHexToRgb()
         {
             Console.WriteLine("Converting #0F0F0F...");
-            KernelColorConversionTools.ConvertFromHexToRGB("#0F0F0F").ShouldBe("15;15;15");
+            KernelColorConversionTools.ConvertFromHexToRgb("#0F0F0F").ShouldBe("15;15;15");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from hex to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHexToRyb()
+        {
+            Console.WriteLine("Converting #0F0F0F...");
+            KernelColorConversionTools.ConvertFromHexToRyb("#0F0F0F").ShouldBe("ryb:15;15;15");
         }
 
         /// <summary>
@@ -104,6 +115,28 @@ namespace Nitrocid.Tests.ConsoleBase
         {
             Console.WriteLine("Converting 15, 15, 15...");
             KernelColorConversionTools.ConvertFromRgbToHex(15, 15, 15).ShouldBe("#0F0F0F");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB sequence to hex
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybSequenceToHex()
+        {
+            Console.WriteLine("Converting 15;15;15...");
+            KernelColorConversionTools.ConvertFromRybToHex("ryb:15;15;15").ShouldBe("#0F0F0F");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB numbers to hex
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybNumbersToHex()
+        {
+            Console.WriteLine("Converting 15, 15, 15...");
+            KernelColorConversionTools.ConvertFromRybToHex(15, 15, 15).ShouldBe("#0F0F0F");
         }
 
         /// <summary>
@@ -217,6 +250,28 @@ namespace Nitrocid.Tests.ConsoleBase
         }
 
         /// <summary>
+        /// Tests trying to convert from RGB sequence to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRgbSequenceToRyb()
+        {
+            Console.WriteLine("Converting 15;15;15...");
+            KernelColorConversionTools.ConvertFromRgbToRyb("15;15;15").ShouldBe("ryb:15;15;15");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RGB numbers to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRgbNumbersToRyb()
+        {
+            Console.WriteLine("Converting 15, 15, 15...");
+            KernelColorConversionTools.ConvertFromRgbToRyb(15, 15, 15).ShouldBe("ryb:15;15;15");
+        }
+
+        /// <summary>
         /// Tests trying to convert from RGB sequence to CMY
         /// </summary>
         [Test]
@@ -283,6 +338,116 @@ namespace Nitrocid.Tests.ConsoleBase
         }
 
         /// <summary>
+        /// Tests trying to convert from RYB sequence to CMYK
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybSequenceToCmyk()
+        {
+            Console.WriteLine("Converting 15;15;15...");
+            KernelColorConversionTools.ConvertFromRybToCmyk("ryb:15;15;15").ShouldBe("cmyk:0;0;0;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB numbers to CMYK
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybNumbersToCmyk()
+        {
+            Console.WriteLine("Converting 15, 15, 15...");
+            KernelColorConversionTools.ConvertFromRybToCmyk(15, 15, 15).ShouldBe("cmyk:0;0;0;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB sequence to RGB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybSequenceToRgb()
+        {
+            Console.WriteLine("Converting 15;15;15...");
+            KernelColorConversionTools.ConvertFromRybToRgb("ryb:15;15;15").ShouldBe("15;15;15");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB numbers to RGB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybNumbersToRgb()
+        {
+            Console.WriteLine("Converting 15, 15, 15...");
+            KernelColorConversionTools.ConvertFromRybToRgb(15, 15, 15).ShouldBe("15;15;15");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB sequence to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybSequenceToCmy()
+        {
+            Console.WriteLine("Converting 15;15;15...");
+            KernelColorConversionTools.ConvertFromRybToCmy("ryb:15;15;15").ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB numbers to CMY
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybNumbersToCmy()
+        {
+            Console.WriteLine("Converting 15, 15, 15...");
+            KernelColorConversionTools.ConvertFromRybToCmy(15, 15, 15).ShouldBe("cmy:94;94;94");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB sequence to HSL
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybSequenceToHsl()
+        {
+            Console.WriteLine("Converting 15;15;15...");
+            KernelColorConversionTools.ConvertFromRybToHsl("ryb:15;15;15").ShouldBe("hsl:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB numbers to HSL
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybNumbersToHsl()
+        {
+            Console.WriteLine("Converting 15, 15, 15...");
+            KernelColorConversionTools.ConvertFromRybToHsl(15, 15, 15).ShouldBe("hsl:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB sequence to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybSequenceToHsv()
+        {
+            Console.WriteLine("Converting 15;15;15...");
+            KernelColorConversionTools.ConvertFromRybToHsv("ryb:15;15;15").ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from RYB numbers to HSV
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromRybNumbersToHsv()
+        {
+            Console.WriteLine("Converting 15, 15, 15...");
+            KernelColorConversionTools.ConvertFromRybToHsv(15, 15, 15).ShouldBe("hsv:0;0;5");
+        }
+
+        /// <summary>
         /// Tests trying to convert from HSL sequence to RGB
         /// </summary>
         [Test]
@@ -302,6 +467,28 @@ namespace Nitrocid.Tests.ConsoleBase
         {
             Console.WriteLine("Converting 0, 0, 5...");
             KernelColorConversionTools.ConvertFromHslToRgb(0, 0, 5).ShouldBe("13;13;13");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSL sequence to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHslSequenceToRyb()
+        {
+            Console.WriteLine("Converting 0;0;5...");
+            KernelColorConversionTools.ConvertFromHslToRyb("hsl:0;0;5").ShouldBe("ryb:13;13;13");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSL numbers to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHslNumbersToRyb()
+        {
+            Console.WriteLine("Converting 0, 0, 5...");
+            KernelColorConversionTools.ConvertFromHslToRyb(0, 0, 5).ShouldBe("ryb:13;13;13");
         }
 
         /// <summary>
@@ -393,6 +580,28 @@ namespace Nitrocid.Tests.ConsoleBase
         }
 
         /// <summary>
+        /// Tests trying to convert from HSV sequence to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvSequenceToRyb()
+        {
+            Console.WriteLine("Converting 0;0;5...");
+            KernelColorConversionTools.ConvertFromHsvToRyb("hsv:0;0;5").ShouldBe("ryb:13;13;13");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from HSV numbers to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromHsvNumbersToRyb()
+        {
+            Console.WriteLine("Converting 0, 0, 5...");
+            KernelColorConversionTools.ConvertFromHsvToRyb(0, 0, 5).ShouldBe("ryb:13;13;13");
+        }
+
+        /// <summary>
         /// Tests trying to convert from HSV sequence to CMYK
         /// </summary>
         [Test]
@@ -481,6 +690,28 @@ namespace Nitrocid.Tests.ConsoleBase
         }
 
         /// <summary>
+        /// Tests trying to convert from CMYK sequence to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmykSequenceToRyb()
+        {
+            Console.WriteLine("Converting 0;0;0;94...");
+            KernelColorConversionTools.ConvertFromCmykToRyb("cmyk:0;0;0;94").ShouldBe("ryb:15;15;15");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMYK numbers to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmykNumbersToRyb()
+        {
+            Console.WriteLine("Converting 0, 0, 0, 94...");
+            KernelColorConversionTools.ConvertFromCmykToRyb(0, 0, 0, 94).ShouldBe("ryb:15;15;15");
+        }
+
+        /// <summary>
         /// Tests trying to convert from CMYK sequence to HSL
         /// </summary>
         [Test]
@@ -566,6 +797,28 @@ namespace Nitrocid.Tests.ConsoleBase
         {
             Console.WriteLine("Converting 94, 94, 94...");
             KernelColorConversionTools.ConvertFromCmyToRgb(94, 94, 94).ShouldBe("15;15;15");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY sequence to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmySequenceToRyb()
+        {
+            Console.WriteLine("Converting 94;94;94...");
+            KernelColorConversionTools.ConvertFromCmyToRyb("cmy:94;94;94").ShouldBe("ryb:15;15;15");
+        }
+
+        /// <summary>
+        /// Tests trying to convert from CMY numbers to RYB
+        /// </summary>
+        [Test]
+        [Description("Conversion")]
+        public void TestConvertFromCmyNumbersToRyb()
+        {
+            Console.WriteLine("Converting 94, 94, 94...");
+            KernelColorConversionTools.ConvertFromCmyToRyb(94, 94, 94).ShouldBe("ryb:15;15;15");
         }
 
         /// <summary>
