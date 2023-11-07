@@ -51,6 +51,7 @@ namespace KS.Files.Editors.HexEdit
             new HexEditorBinding(/* Localizable */ "Exit", ConsoleKey.Escape, default, () => bail = true, true),
             new HexEditorBinding(/* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
             new HexEditorBinding(/* Localizable */ "Insert", ConsoleKey.F1, default, Insert, true),
+            new HexEditorBinding(/* Localizable */ "Remove", ConsoleKey.F2, default, Remove, true),
             new HexEditorBinding(/* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
             new HexEditorBinding(/* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
             new HexEditorBinding(/* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
@@ -250,5 +251,8 @@ namespace KS.Files.Editors.HexEdit
                 HexEditTools.AddNewByte(byteNum, byteIdx + 1);
             refresh = true;
         }
+
+        private static void Remove() =>
+            HexEditTools.DeleteByte(byteIdx + 1);
     }
 }
