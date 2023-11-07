@@ -151,6 +151,13 @@ namespace KS.Shell.Shells.Hex
                         new CommandArgumentInfo()
                     }, new SaveCommand())
             },
+            
+            { "tui",
+                new CommandInfo("tui", /* Localizable */ "Opens the interactive hex editor TUI",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TuiCommand())
+            },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

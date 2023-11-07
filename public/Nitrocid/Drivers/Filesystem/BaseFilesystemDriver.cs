@@ -542,6 +542,87 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
+        public virtual string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte)
+        {
+            // Get the un-highlighted and highlighted colors
+            var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
+            var unhighlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Background);
+            var highlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Success);
+
+            // Now, do the job!
+            DebugWriter.WriteDebug(DebugLevel.I, "File Bytes: {0}", FileByte.LongLength);
+            StartByte.SwapIfSourceLarger(ref EndByte);
+            if (StartByte < 1)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Byte number must start with 1."));
+
+            if (StartByte <= FileByte.LongLength && EndByte <= FileByte.LongLength)
+            {
+                // We need to know how to write the bytes and their contents in this shape:
+                // -> 0x00000010  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+                //    0x00000020  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+                //    0x00000030  00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00  ................
+                // ... and so on.
+                var builder = new StringBuilder();
+                for (long CurrentByteNumber = StartByte; CurrentByteNumber <= EndByte; CurrentByteNumber += 16)
+                {
+                    builder.Append($"{unhighlightedColorBackground.VTSequenceBackground}{entryColor.VTSequenceForeground}0x{CurrentByteNumber - 1L:X8} ");
+
+                    // Iterate these number of bytes for the ASCII codes
+                    long byteNum;
+                    for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
+                    {
+                        byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
+                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
+                        builder.Append(
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground).VTSequenceBackground}" +
+                            $"{CurrentByte:X2}" +
+                            $"{highlightedColorBackground.VTSequenceForeground}" +
+                            $"{unhighlightedColorBackground.VTSequenceBackground}" +
+                            $" "
+                        );
+                    }
+
+                    // Pad the remaining ASCII byte display
+                    int remaining = (int)(16 - byteNum);
+                    int padTimes = remaining * 3;
+                    string padded = new(' ', padTimes);
+                    builder.Append(padded);
+
+                    // Iterate these number of bytes for the actual rendered characters
+                    for (byteNum = 0; byteNum < 16 && CurrentByteNumber + byteNum <= EndByte; byteNum++)
+                    {
+                        byte CurrentByte = FileByte[(int)(CurrentByteNumber + byteNum - 1)];
+                        DebugWriter.WriteDebug(DebugLevel.I, "Byte: {0}", CurrentByte);
+                        char ProjectedByteChar = Convert.ToChar(CurrentByte);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Projected byte char: {0}", ProjectedByteChar);
+                        char RenderedByteChar = '.';
+                        if (!char.IsWhiteSpace(ProjectedByteChar) & !char.IsControl(ProjectedByteChar) & !char.IsHighSurrogate(ProjectedByteChar) & !char.IsLowSurrogate(ProjectedByteChar))
+                        {
+                            // The renderer will actually render the character, not as a dot.
+                            DebugWriter.WriteDebug(DebugLevel.I, "Char is not a whitespace.");
+                            RenderedByteChar = ProjectedByteChar;
+                        }
+                        DebugWriter.WriteDebug(DebugLevel.I, "Rendered byte char: {0}", ProjectedByteChar);
+                        builder.Append(
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? unhighlightedColorBackground : highlightedColorBackground).VTSequenceForeground}" +
+                            $"{(CurrentByteNumber + byteNum == ByteHighlight ? highlightedColorBackground : unhighlightedColorBackground).VTSequenceBackground}" +
+                            $"{RenderedByteChar}"
+                        );
+                    }
+                    builder.AppendLine();
+                }
+                return builder.ToString();
+            }
+            else if (StartByte > FileByte.LongLength)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified start byte number may not be larger than the file size."));
+            else if (EndByte > FileByte.LongLength)
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified end byte number may not be larger than the file size."));
+            else
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The specified byte number is invalid."));
+        }
+
+        /// <inheritdoc/>
         public virtual bool FileExists(string File, bool Neutralize = false)
         {
             FS.ThrowOnInvalidPath(File);

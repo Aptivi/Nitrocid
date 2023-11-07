@@ -370,6 +370,15 @@ namespace KS.Drivers.Filesystem
         string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte);
 
         /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="ByteHighlight">Byte position to highlight</param>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte);
+
+        /// <summary>
         /// Checks to see if the file exists. Windows 10/11 bug aware.
         /// </summary>
         /// <param name="File">Target file</param>

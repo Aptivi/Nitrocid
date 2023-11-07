@@ -99,5 +99,15 @@ namespace KS.Files.Operations.Printing
         public static string RenderContentsInHex(byte ByteContent, bool HighlightResults, long StartByte, long EndByte, byte[] FileByte) =>
             DriverHandler.CurrentFilesystemDriverLocal.RenderContentsInHex(ByteContent, HighlightResults, StartByte, EndByte, FileByte);
 
+        /// <summary>
+        /// Renders the file in hex
+        /// </summary>
+        /// <param name="ByteHighlight">Byte position to highlight</param>
+        /// <param name="StartByte">Start byte position</param>
+        /// <param name="EndByte">End byte position</param>
+        /// <param name="FileByte">File content in bytes</param>
+        public static string RenderContentsInHex(long ByteHighlight, long StartByte, long EndByte, byte[] FileByte) =>
+            DriverHandler.CurrentFilesystemDriverLocal.RenderContentsInHex(ByteHighlight, StartByte, EndByte, FileByte);
+
     }
 }
