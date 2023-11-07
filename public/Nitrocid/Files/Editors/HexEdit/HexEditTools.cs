@@ -261,7 +261,8 @@ namespace KS.Files.Editors.HexEdit
         /// Deletes the bytes
         /// </summary>
         /// <param name="StartByteNumber">Start from the byte number</param>
-        public static void DeleteBytes(long StartByteNumber) => DeleteBytes(StartByteNumber, HexEditShellCommon.FileBytes.LongLength);
+        public static void DeleteBytes(long StartByteNumber) =>
+            DeleteBytes(StartByteNumber, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
         /// Deletes the bytes
@@ -375,22 +376,24 @@ namespace KS.Files.Editors.HexEdit
         }
 
         /// <summary>
-        /// Replaces every occurence of a byte with the replacement
+        /// Replaces every occurrence of a byte with the replacement
         /// </summary>
         /// <param name="FromByte">Byte to be replaced</param>
         /// <param name="WithByte">Byte to replace with</param>
-        public static void Replace(byte FromByte, byte WithByte) => Replace(FromByte, WithByte, 1L, HexEditShellCommon.FileBytes.LongLength);
+        public static void Replace(byte FromByte, byte WithByte) =>
+            Replace(FromByte, WithByte, 1L, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
-        /// Replaces every occurence of a byte with the replacement
+        /// Replaces every occurrence of a byte with the replacement
         /// </summary>
         /// <param name="FromByte">Byte to be replaced</param>
         /// <param name="WithByte">Byte to replace with</param>
         /// <param name="Start">Start byte number</param>
-        public static void Replace(byte FromByte, byte WithByte, long Start) => Replace(FromByte, WithByte, Start, HexEditShellCommon.FileBytes.LongLength);
+        public static void Replace(byte FromByte, byte WithByte, long Start) =>
+            Replace(FromByte, WithByte, Start, HexEditShellCommon.FileBytes.LongLength);
 
         /// <summary>
-        /// Replaces every occurence of a byte with the replacement
+        /// Replaces every occurrence of a byte with the replacement
         /// </summary>
         /// <param name="FromByte">Byte to be replaced</param>
         /// <param name="WithByte">Byte to replace with</param>
