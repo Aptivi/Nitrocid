@@ -54,6 +54,7 @@ namespace KS.Files.Editors.HexEdit
             new HexEditorBinding(/* Localizable */ "Remove", ConsoleKey.F2, default, Remove, true),
             new HexEditorBinding(/* Localizable */ "Replace", ConsoleKey.F3, default, Replace, true),
             new HexEditorBinding(/* Localizable */ "Replace All", ConsoleKey.F3, ConsoleModifiers.Shift, ReplaceAll, true),
+            new HexEditorBinding(/* Localizable */ "Number Info", ConsoleKey.F4, default, NumInfo, true),
             new HexEditorBinding(/* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
             new HexEditorBinding(/* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
             new HexEditorBinding(/* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
@@ -309,6 +310,29 @@ namespace KS.Files.Editors.HexEdit
 
             // Do the replacement!
             HexEditTools.Replace(byteNum, byteNumReplaced);
+            refresh = true;
+        }
+
+        private static void NumInfo()
+        {
+            // Get the hex number in different formats
+            byte byteNum = HexEditShellCommon.FileBytes[byteIdx];
+            string byteNumHex = byteNum.ToString("X2");
+            string byteNumOctal = Convert.ToString(byteNum, 8);
+            string byteNumNumber = Convert.ToString(byteNum);
+            string byteNumBinary = Convert.ToString(byteNum, 2);
+
+            // Print the number information
+            string header = Translate.DoTranslation("Number information:");
+            int maxLength = header.Length > ConsoleWrapper.WindowWidth - 4 ? ConsoleWrapper.WindowWidth - 4 : header.Length;
+            InfoBoxColor.WriteInfoBoxColorBack(
+                header + CharManager.NewLine +
+                new string('=', maxLength) + CharManager.NewLine + CharManager.NewLine +
+                Translate.DoTranslation("Hexadecimal") + $": {byteNumHex}" + CharManager.NewLine +
+                Translate.DoTranslation("Octal") + $": {byteNumOctal}" + CharManager.NewLine +
+                Translate.DoTranslation("Number") + $": {byteNumNumber}" + CharManager.NewLine +
+                Translate.DoTranslation("Binary") + $": {byteNumBinary}"
+                , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             refresh = true;
         }
     }
