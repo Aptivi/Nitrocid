@@ -29,6 +29,7 @@ using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Screensaver;
+using KS.Misc.Text;
 using KS.Shell.Shells.Hex;
 using System;
 using System.Linq;
@@ -47,10 +48,11 @@ namespace KS.Files.Editors.HexEdit
         private static readonly HexEditorBinding[] bindings = new[]
         {
             new HexEditorBinding(/* Localizable */ "Exit", ConsoleKey.Escape, default, () => bail = true, true),
-            new HexEditorBinding(/* Localizable */ "Move Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
-            new HexEditorBinding(/* Localizable */ "Move Right", ConsoleKey.RightArrow, default, MoveForward, true),
-            new HexEditorBinding(/* Localizable */ "Move Up", ConsoleKey.UpArrow, default, MoveUp, true),
-            new HexEditorBinding(/* Localizable */ "Move Down", ConsoleKey.DownArrow, default, MoveDown, true),
+            new HexEditorBinding(/* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
+            new HexEditorBinding(/* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
+            new HexEditorBinding(/* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
+            new HexEditorBinding(/* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
+            new HexEditorBinding(/* Localizable */ "Down", ConsoleKey.DownArrow, default, MoveDown, true),
         };
 
         /// <summary>
@@ -138,7 +140,6 @@ namespace KS.Files.Editors.HexEdit
                 {
                     // We can't render anymore, so just break and write a binding to show more
                     DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
-                    TextWriterWhereColor.WriteWhereColorBack($" K ", ConsoleWrapper.WindowWidth - 3, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
                     break;
                 }
             }
@@ -173,12 +174,38 @@ namespace KS.Files.Editors.HexEdit
 
         private static void HandleKeypress(ConsoleKeyInfo key)
         {
+            // Check to see if we have this binding
             if (!bindings.Any((heb) => heb.Key == key.Key && heb.KeyModifiers == key.Modifiers))
                 return;
 
+            // Now, get the first binding and execute it.
             var bind = bindings
                 .First((heb) => heb.Key == key.Key && heb.KeyModifiers == key.Modifiers);
             bind.Action();
+        }
+
+        private static void RenderKeybindingsBox()
+        {
+            // Show the available keys list
+            if (bindings.Length == 0)
+                return;
+
+            static string GetBindingKeyShortcut(HexEditorBinding bind) =>
+                $"[{(bind.KeyModifiers != 0 ? $"{bind.KeyModifiers} + " : "")}{bind.Key}]";
+
+            // User needs an infobox that shows all available keys
+            string section = Translate.DoTranslation("Available keys");
+            int maxBindingLength = bindings
+                .Max((heb) => GetBindingKeyShortcut(heb).Length);
+            string[] bindingRepresentations = bindings
+                .Select((heb) => $"{GetBindingKeyShortcut(heb) + new string(' ', maxBindingLength - GetBindingKeyShortcut(heb).Length) + $" | {(heb._localizable ? Translate.DoTranslation(heb.Name) : heb.Name)}"}")
+                .ToArray();
+            InfoBoxColor.WriteInfoBoxColorBack(
+                $"{section}{CharManager.NewLine}" +
+                $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
+                $"{string.Join('\n', bindingRepresentations)}"
+            , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            refresh = true;
         }
 
         private static void MoveBackward()
