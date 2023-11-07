@@ -64,10 +64,13 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Arabic&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;qalib &apos;alwan ghayr salih {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: sayatim altahqiq fi al&apos;ajhizat alkhasat bika. arjuk aintazara...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;wahdat almuealajat almarkaziat: fashal tahqiq wahid &apos;aw &apos;akthar min marakiz wahdat almuealajat almarkaziati. earad almaelumat ealaa &apos;ayi hal [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;qalib &apos;alwan ghayr salih {0}&quot;,
+        ///    &quot;hwprobe: sayatim altahqiq fi al&apos;ajhizat alkhasat bika. arjuk aintazara...&quot;,
+        ///    &quot;&apos;udkhul kalimat murur almaswuwl lilsiyanati.&quot;,
+        ///    &quot;khata Kernel &apos;athna&apos; altshghyl: {0}&quot;,
+        ///    &quot;aldhuer almzdwj: waqt &apos;iieadat altashghil yatajawaz alhadu al&apos;aqsaa almasmuh bih liwaqt &apos;iieadat tashghil alkhata {0}. laqad wajadat eilat nawatin.&quot;,
+        ///    &quot;[{0}] halat min aldhiera: tama tamkin &apos;iieadat altashghil nzra [rest of string was truncated]&quot;;.
         /// </summary>
         public static string arb {
             get {
@@ -79,11 +82,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Arabic&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;قالب ألوان غير صالح {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: سيتم التحقيق في الأجهزة الخاصة بك. ارجوك انتظر...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;وحدة المعالجة المركزية: فشل تحقيق واحد أو أكثر من مراكز وحدة المعالجة المركزية. عرض المعلومات على أي حال ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;قالب ألوان غير صالح {0}&quot;,
+        ///    &quot;hwprobe: سيتم التحقيق في الأجهزة الخاصة بك. ارجوك انتظر...&quot;,
+        ///    &quot;أدخل كلمة مرور المسؤول للصيانة.&quot;,
+        ///    &quot;خطأ Kernel أثناء التشغيل: {0}&quot;,
+        ///    &quot;DOUBLE PANIC: وقت إعادة التشغيل يتجاوز الحد الأقصى المسموح به لوقت إعادة تشغيل الخطأ {0}. لقد وجدت علة نواة.&quot;,
+        ///    &quot;[{0}] حالة من الذعر: تم تمكين إعادة التشغيل نظرًا لأن مستوى الخطأ هو {0}.&quot;,
+        ///    &quot;[{0}] الذعر: وقت إعادة التشغيل: {1} ثانية ، يتجاوز 1 ساعة. [rest of string was truncated]&quot;;.
         /// </summary>
         public static string arb_T {
             get {
@@ -95,11 +101,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Chinese&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nǐ de yìngjiàn jiāng bèi tàncè. Qǐng nàixīn děngdài...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Wúfǎ tàncè yīgè huò duō gè CPU héxīn. Wúlùn rúhé xiǎnshì xìnxī......&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing informa [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Wúxiào de yánsè múbǎn {0}&quot;,
+        ///    &quot;hwprobe: Nǐ de yìngjiàn jiāng bèi tàncè. Qǐng nàixīn děngdài...&quot;,
+        ///    &quot;Shūrù guǎnlǐ mìmǎ jìnxíng wéihù.&quot;,
+        ///    &quot;Yǐndǎo shí chūxiàn nèihé cuòwù: {0}&quot;,
+        ///    &quot;DOUBLE PANIC: Chóngxīn qǐdòng shíjiān chāoguò yǔnxǔ de zuìdà {0} cuòwù chóngqǐ shíjiān. Nǐ fāxiànle yīgè nèihé cuòwù.&quot;,
+        ///    &quot;[{0}] Kǒnghuāng: Yóuyú cuòwù jíbié wèi {0} ér chóngqǐ.&quot;,
+        ///    &quot;[{0}] Kǒnghuāng: Chóngqǐ shíjiān: {1} Miǎo, chāoguò 1 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string chi {
             get {
@@ -111,12 +120,25 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Chinese&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;无效的颜色模板{0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：将检测您的硬件。请耐心等待...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一个或多个CPU内核无法探测。仍在显示信息...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM：无法探测一个或多个RAM芯片。仍在显示信息...&quot;,
-        ///    &quot;HDD: One or more of the hard drives failed t [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;无效的颜色模板{0}&quot;,
+        ///    &quot;hwprobe：将检测您的硬件。请耐心等待...&quot;,
+        ///    &quot;输入管理员密码进行维护。&quot;,
+        ///    &quot;引导时出现内核错误：{0}&quot;,
+        ///    &quot;双重恐慌：重新启动时间超过了允许的最大{0}错误重新启动时间。您发现了一个内核错误。&quot;,
+        ///    &quot;[{0}]紧急：由于错误级别为{0}，因此启用了重新启动。&quot;,
+        ///    &quot;[{0}]紧急：重新启动时间：{1}秒，超过1小时。设置为1分钟。&quot;,
+        ///    &quot;双重恐慌：错误类型{0}无效。&quot;,
+        ///    &quot;[{0}]紧急：{1}-按任意键关机。&quot;,
+        ///    &quot;[{0}]紧急：{1}-在{2}秒内重新启动...&quot;,
+        ///    &quot;双重恐慌：内核错误：{0}&quot;,
+        ///    &quot;正在关机...&quot;,
+        ///    &quot;正在重新启动...&quot;,
+        ///    &quot;错误{0}：{1}&quot;,
+        ///    &quot;用户名：&quot;,
+        ///    &quot;不允许使用空格。&quot;,
+        ///    &quot;不允许有特殊字符。&quot;,
+        ///     [rest of string was truncated]&quot;;.
         /// </summary>
         public static string chi_T {
             get {
@@ -128,11 +150,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Chinese (Traditional)&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Wúxiào de yánsè múbǎn {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Nín de yìngjiàn jiāng bèi tàncè. Qǐng shāo děng...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Yīgè huò duō gè CPU nèihé tàncè shībài. Wúlùn rúhé xiǎnshì xìnxī...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showin [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Wúxiào de yánsè múbǎn {0}&quot;,
+        ///    &quot;hwprobe: Nín de yìngjiàn jiāng bèi tàncè. Qǐng shāo děng...&quot;,
+        ///    &quot;Shūrù guǎnlǐ yuán mìmǎ jìnxíng wéihù.&quot;,
+        ///    &quot;Qǐdòng shí chūxiàn nèihé cuòwù:{0}&quot;,
+        ///    &quot;Shuāngchóng kǒnghuāng: Chóngxīn qǐdòng shíjiān chāoguò yǔnxǔ de zuìdà {0} cuòwù chóngxīn qǐdòng shíjiān. Nín fāxiànle yīgè nèihé cuòwù.&quot;,
+        ///    &quot;[{0}] Kǒnghuāng: Yóuyú cuòwù jíbié wèi {0}, chóngxīn qǐdòng yǐ qǐyòng.&quot;,
+        ///    &quot;[{0}] [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cnt {
             get {
@@ -144,12 +169,23 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Chinese (Traditional)&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;無效的顏色模板 {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：您的硬件將被探測。請稍等...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：一個或多個 CPU 內核探測失敗。無論如何顯示信息...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM：一個或多個 RAM 芯片探測失敗。無論如何顯示信息...&quot;,
-        ///    &quot;HDD: One or more of th [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;無效的顏色模板 {0}&quot;,
+        ///    &quot;hwprobe：您的硬件將被探測。請稍等...&quot;,
+        ///    &quot;輸入管理員密碼進行維護。&quot;,
+        ///    &quot;啟動時出現內核錯誤：{0}&quot;,
+        ///    &quot;雙重恐慌：重新啟動時間超過允許的最大 {0} 錯誤重新啟動時間。您發現了一個內核錯誤。&quot;,
+        ///    &quot;[{0}] 恐慌：由於錯誤級別為 {0}，重新啟動已啟用。&quot;,
+        ///    &quot;[{0}] 恐慌：重啟時間：{1} 秒，超過 1 小時。設置為 1 分鐘。&quot;,
+        ///    &quot;雙重恐慌：錯誤類型 {0} 無效。&quot;,
+        ///    &quot;[{0}] panic: {1} -- 按任意鍵關機。&quot;,
+        ///    &quot;[{0}] 恐慌：{1} -- 在 {2} 秒後重新啟動...&quot;,
+        ///    &quot;雙重恐慌：內核錯誤：{0}&quot;,
+        ///    &quot;正在關閉...&quot;,
+        ///    &quot;正在重新啟動...&quot;,
+        ///    &quot;錯誤 {0}：{1}&quot;,
+        ///    &quot;用戶名：&quot;,
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cnt_T {
             get {
@@ -161,11 +197,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Czech&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Neplatná šablona barev {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Váš hardware bude testován. Prosím, čekejte...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Jedno nebo více jader CPU selhalo. Zobrazení informací tak jako tak ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information  [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Neplatná šablona barev {0}&quot;,
+        ///    &quot;hwprobe: Váš hardware bude testován. Prosím, čekejte...&quot;,
+        ///    &quot;Zadejte heslo správce pro údržbu.&quot;,
+        ///    &quot;Chyba při zavádění jádra: {0}&quot;,
+        ///    &quot;DOUBLE PANIC: Reboot Time překračuje maximální povolený čas restartu {0}. Našli jste chybu jádra.&quot;,
+        ///    &quot;[{0}] panic: Reboot povolen z důvodu chybové úrovně {0}.&quot;,
+        ///    &quot;[{0}] panic: Čas restartu: {1} sekund, překročí 1 hodinu. Je nastavena na 1 minutu.&quot; [rest of string was truncated]&quot;;.
         /// </summary>
         public static string cze {
             get {
@@ -177,11 +216,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Dutch&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Ongeldige kleurensjabloon {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Uw hardware wordt ondervraagd. Even geduld aub...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: een of meer van de CPU-kernen konden niet worden getest. Informatie toch laten zien ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Ongeldige kleurensjabloon {0}&quot;,
+        ///    &quot;hwprobe: Uw hardware wordt ondervraagd. Even geduld aub...&quot;,
+        ///    &quot;Voer het beheerderswachtwoord in voor onderhoud.&quot;,
+        ///    &quot;Kernelfout tijdens opstarten: {0}&quot;,
+        ///    &quot;DUBBELE PANIEK: Herstarttijd overschrijdt de maximale toegestane {0} reboottijd. U vond een kernelbug.&quot;,
+        ///    &quot;[{0}] paniek: reboot ingeschakeld vanwege het foutniveau van {0}.&quot;,
+        ///    &quot;[{0}] paniek: Tijd om opnieuw op te starten:  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string dtc {
             get {
@@ -191,13 +233,16 @@ namespace Nitrocid.LanguagePacks.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
-        ///  &quot;Name&quot;: &quot;English (UK)&quot;,
+        ///  &quot;Name&quot;: &quot;English&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Invalid colour template {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Your hardware will be probed. Please wait...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showin [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Invalid colour template {0}&quot;,
+        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;,
+        ///    &quot;Enter the admin password for maintenance.&quot;,
+        ///    &quot;Kernel Error while booting: {0}&quot;,
+        ///    &quot;DOUBLE PANIC: Reboot Time exceeds maximum allowed {0} error reboot time. You found a kernel bug.&quot;,
+        ///    &quot;[{0}] panic: Reboot enabled due to error level being {0}.&quot;,
+        ///    &quot;[{0}] panic: Time to reboot: {1} seconds, exceeds 1 hour. It is set to 1  [rest of string was truncated]&quot;;.
         /// </summary>
         public static string enk {
             get {
@@ -209,11 +254,13 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;French&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Modèle de couleur non valide {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Votre matériel sera sondé. S&apos;il vous plaît, attendez...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Un ou plusieurs des cœurs de la CPU n&apos;ont pas été sondés. Montrer des informations quand même ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Modèle de couleur non valide {0}&quot;,
+        ///    &quot;hwprobe: Votre matériel sera sondé. S&apos;il vous plaît, attendez...&quot;,
+        ///    &quot;Entrez le mot de passe administrateur pour la maintenance.&quot;,
+        ///    &quot;Erreur du noyau lors du démarrage: {0}&quot;,
+        ///    &quot;DOUBLE PANIQUE: le temps de redémarrage dépasse le temps de redémarrage maximal autorisé {0}. Vous avez trouvé un bogue dans le noyau.&quot;,
+        ///    &quot;[{0}] panique: le redémarrage est activé car le niveau d&apos;erreu [rest of string was truncated]&quot;;.
         /// </summary>
         public static string fre {
             get {
@@ -225,11 +272,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;German&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Ungültige Farbvorlage {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ihre Hardware wird geprüft. Bitte warten ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Ein oder mehrere CPU-Kerne konnten nicht geprüft werden. Zeige trotzdem Informationen ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Show [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Ungültige Farbvorlage {0}&quot;,
+        ///    &quot;hwprobe: Ihre Hardware wird geprüft. Bitte warten ...&quot;,
+        ///    &quot;Geben Sie das Administratorkennwort für die Wartung ein.&quot;,
+        ///    &quot;Kernelfehler beim Booten: {0}&quot;,
+        ///    &quot;DOUBLE PANIC: Die Neustartzeit überschreitet die maximal erlaubte Fehlerzeit für den Neustart von {0}. Du hast einen Kernel-Fehler gefunden.&quot;,
+        ///    &quot;[{0}] panic: Neustart aufgrund der Fehlerstufe {0} aktiviert.&quot;,
+        ///    &quot;[{0}] panic: Ze [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ger {
             get {
@@ -239,13 +289,34 @@ namespace Nitrocid.LanguagePacks.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///  &quot;Name&quot;: &quot;Greek&quot;,
+        ///  &quot;Transliterable&quot;: false,
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Μη έγκυρο χρωματικό πρότυπο {0}&quot;,
+        ///    &quot;hwprobe: Το υλικό σας θα διερευνηθεί. Παρακαλώ περιμένετε...&quot;,
+        ///    &quot;Εισαγάγετε τον κωδικό πρόσβασης διαχειριστή για συντήρηση.&quot;,
+        ///    &quot;Σφάλμα πυρήνα κατά την εκκίνηση: {0}&quot;,
+        ///    &quot;ΔΙΠΛΟΣ ΠΑΝΙΚΟΣ: Ο χρόνος επανεκκίνησης υπερβαίνει τον μέγιστο επιτρεπόμενο χρόνο επανεκκίνησης σφάλματος {0}. Βρήκατε ένα σφάλμα πυρήνα.&quot;,
+        ///    &quot;[{0}] πανικός: Η επανεκκίνηση ενεργοποιήθηκε λόγω του επιπέδου σφάλμ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string grk {
+            get {
+                return ResourceManager.GetString("grk", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Hindi&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;amaany rang tempalet {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobai: aapake haardaveyar kee jaanch kee jaegee. krpaya prateeksha karen ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;seepeeyoo: ek ya adhik chpu kor kee jaanch kee viphal rahee. vaise bhee jaanakaaree dikha raha hai ...&quot;,
-        ///    &quot;RAM: One or more of the RAM  [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;amaany rang tempalet {0}&quot;,
+        ///    &quot;hwprobai: aapake haardaveyar kee jaanch kee jaegee. krpaya prateeksha karen ...&quot;,
+        ///    &quot;rakharakhaav ke lie vyavasthaapak paasavard darj karen.&quot;,
+        ///    &quot;booting ke dauraan karnel truti: {0}&quot;,
+        ///    &quot;dabal painik: reeboot taim adhikatam sveekrt {0} truti riboot samay se adhik hai. aapako karnel bag mila.&quot;,
+        ///    &quot;[{0}] aatank: truti star {0} hone ke kaaran saksham reeboot.&quot;,
+        ///    &quot;[{0}] dahashat: reeboo [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ind {
             get {
@@ -257,11 +328,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Hindi&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;अमान्य रंग टेम्पलेट {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: आपके हार्डवेयर की जांच की जाएगी। कृपया प्रतीक्षा करें...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;सीपीयू: सीपीयू कोर का एक या एक से अधिक परीक्षण किया जाना विफल रहा। वैसे भी जानकारी दिखा रहा है ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be  [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;अमान्य रंग टेम्पलेट {0}&quot;,
+        ///    &quot;hwprobe: आपके हार्डवेयर की जांच की जाएगी। कृपया प्रतीक्षा करें...&quot;,
+        ///    &quot;रखरखाव के लिए व्यवस्थापक पासवर्ड दर्ज करें।&quot;,
+        ///    &quot;बूट करते समय कर्नेल त्रुटि: {0}&quot;,
+        ///    &quot;दोहरा PANIC: रिबूट समय अधिकतम अनुमत {0} त्रुटि रिबूट समय से अधिक है। आपको एक कर्नेल बग मिला।&quot;,
+        ///    &quot;[{0}] घबराहट: त्रुटि स्तर {0} होने के कारण रिबूट सक्षम।&quot;,
+        ///    &quot;[{0}] घबराहट: रिबूट करने का समय: {1} सेकंड, 1 घंटे से अधिक। यह 1 मिनट के [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ind_T {
             get {
@@ -273,11 +347,13 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Italian&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Modello di colore non valido {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: il tuo hardware verrà verificato. Attendere prego...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: uno o più core della CPU non sono stati rilevati. Mostrare informazioni comunque ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be p [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Modello di colore non valido {0}&quot;,
+        ///    &quot;hwprobe: il tuo hardware verrà verificato. Attendere prego...&quot;,
+        ///    &quot;Immettere la password dell&apos;amministratore per la manutenzione.&quot;,
+        ///    &quot;Errore del kernel durante l&apos;avvio: {0}&quot;,
+        ///    &quot;DOPPIO PANICO: il tempo di riavvio supera il tempo massimo consentito per il riavvio dell&apos;errore {0}. Hai trovato un bug del kernel.&quot;,
+        ///    &quot;[{0}] panico: riavvio attivato a causa del livello di errore { [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ita {
             get {
@@ -289,11 +365,19 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Japanese&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;無効なカラーテンプレート{0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe：ハードウェアがプローブされます。お待ちください...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU：1つ以上のCPUコアのプローブに失敗しました。とにかく情報を表示しています...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM：1つ以上のRAMチップのプローブに失敗しました。とにかく情報を表示しています...&quot;,        /// [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;無効なカラーテンプレート{0}&quot;,
+        ///    &quot;hwprobe：ハードウェアがプローブされます。お待ちください...&quot;,
+        ///    &quot;メンテナンス用の管理者パスワードを入力します。&quot;,
+        ///    &quot;起動中のカーネルエラー：{0}&quot;,
+        ///    &quot;ダブルパニック：再起動時間が最大許容{0}エラーの再起動時間を超えています。カーネルのバグを見つけました。&quot;,
+        ///    &quot;[{0}]パニック：エラーレベルが{0}であるため、再起動が有効になりました。&quot;,
+        ///    &quot;[{0}]パニック：再起動の時間：{1}秒、1時間を超えています。 1分に設定されています。&quot;,
+        ///    &quot;ダブルパニック：エラータイプ{0}が無効です。&quot;,
+        ///    &quot;[{0}]パニック：{1}-任意のキーを押してシャットダウンします。&quot;,
+        ///    &quot;[{0}]パニック：{1}-{2}秒で再起動しています...&quot;,
+        ///    &quot;ダブルパニック：カーネルバグ：{0}&quot;,
+        ///    &quot;シャ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string jpn {
             get {
@@ -305,11 +389,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Korean&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;jalmosdoen saegsang tempeullis {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe : hadeuweeoga geomsadoebnida. gidalyeojuseyo ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU : hana isang-ui CPU ko-eoleul geomsahaji moshaessseubnida. eojjaessdeun jeongbo pyosi jung ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to  [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;jalmosdoen saegsang tempeullis {0}&quot;,
+        ///    &quot;hwprobe : hadeuweeoga geomsadoebnida. gidalyeojuseyo ...&quot;,
+        ///    &quot;yuji gwanlileul wihae gwanlija bimilbeonholeul iblyeoghasibsio.&quot;,
+        ///    &quot;buting jung keoneol olyu : {0}&quot;,
+        ///    &quot;ijung paenig : jaebuting sigan-i choedae heoyong {0} olyu jaebuting sigan-eul chogwahabnida. keoneol beogeuleul balgyeonhaessseubnida.&quot;,
+        ///    &quot;[{0}] paenig : olyu lebel-i {0}imeulo jaebuting-i ganeunghabnida.&quot;,
+        ///    [rest of string was truncated]&quot;;.
         /// </summary>
         public static string kor {
             get {
@@ -321,11 +408,18 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Korean&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;잘못된 색상 템플릿 {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe : 하드웨어가 검사됩니다. 기다려주세요 ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU : 하나 이상의 CPU 코어를 검사하지 못했습니다. 어쨌든 정보 표시 중 ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing information anyway...&quot;: &quot;RAM : 하나 이상의 RAM 칩을 검사하지 못했습니다. 어쨌든 정보 표시 중 ...&quot;, [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;잘못된 색상 템플릿 {0}&quot;,
+        ///    &quot;hwprobe : 하드웨어가 검사됩니다. 기다려주세요 ...&quot;,
+        ///    &quot;유지 관리를 위해 관리자 비밀번호를 입력하십시오.&quot;,
+        ///    &quot;부팅 중 커널 오류 : {0}&quot;,
+        ///    &quot;이중 패닉 : 재부팅 시간이 최대 허용 {0} 오류 재부팅 시간을 초과합니다. 커널 버그를 발견했습니다.&quot;,
+        ///    &quot;[{0}] 패닉 : 오류 레벨이 {0}이므로 재부팅이 가능합니다.&quot;,
+        ///    &quot;[{0}] 패닉 : 재부팅 시간 : {1} 초, 1 시간을 초과합니다. 1 분으로 설정되어 있습니다.&quot;,
+        ///    &quot;이중 패닉 : 오류 유형 {0}이 (가) 유효하지 않습니다.&quot;,
+        ///    &quot;[{0}] 패닉 : {1}-종료하려면 아무 키나 누르십시오.&quot;,
+        ///    &quot;[{0}] 패닉 : {1}-{2} 초 후에 재부팅 중 ...&quot;,
+        ///    &quot;이중 패닉 [rest of string was truncated]&quot;;.
         /// </summary>
         public static string kor_T {
             get {
@@ -334,31 +428,31 @@ namespace Nitrocid.LanguagePacks.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to {
-        ///    &quot;arb&quot;: {
-        ///        &quot;name&quot;: &quot;Arabic&quot;,
-        ///        &quot;transliterable&quot;: true
-        ///    },
-        ///    &quot;arb-T&quot;: {
+        ///   Looks up a localized string similar to [
+        ///    {
+        ///        &quot;three&quot;: &quot;arb&quot;,
         ///        &quot;name&quot;: &quot;Arabic&quot;,
         ///        &quot;transliterable&quot;: true,
-        ///        &quot;codepage&quot;: 1256
+        ///        &quot;country&quot;: &quot;Syria&quot;
         ///    },
-        ///    &quot;chi&quot;: {
-        ///        &quot;name&quot;: &quot;Chinese&quot;,
-        ///        &quot;transliterable&quot;: true
+        ///    {
+        ///        &quot;three&quot;: &quot;arb-T&quot;,
+        ///        &quot;name&quot;: &quot;Arabic&quot;,
+        ///        &quot;transliterable&quot;: true,
+        ///        &quot;codepage&quot;: 1256,
+        ///        &quot;country&quot;: &quot;Syria&quot;
         ///    },
-        ///    &quot;chi-T&quot;: {
+        ///    {
+        ///        &quot;three&quot;: &quot;chi&quot;,
         ///        &quot;name&quot;: &quot;Chinese&quot;,
         ///        &quot;transliterable&quot;: true,
-        ///        &quot;codepage&quot;: 936
+        ///        &quot;country&quot;: &quot;China&quot;
         ///    },
-        ///    &quot;cnt&quot;: {
-        ///        &quot;name&quot;: &quot;Chinese (Traditional)&quot;,
-        ///        &quot;transliterable&quot;: true
-        ///    },
-        ///    &quot;cnt-T&quot;: {
-        ///        &quot;name&quot; [rest of string was truncated]&quot;;.
+        ///    {
+        ///        &quot;three&quot;: &quot;chi-T&quot;,
+        ///        &quot;name&quot;: &quot;Chinese&quot;,
+        ///        &quot;transliterable&quot;: true,
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string LanguageMetadata {
             get {
@@ -368,13 +462,36 @@ namespace Nitrocid.LanguagePacks.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///  &quot;Name&quot;: &quot;Latin&quot;,
+        ///  &quot;Transliterable&quot;: false,
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Formulae color invalidae {0}&quot;,
+        ///    &quot;hwprobe: Ferramenta tua probabuntur. Please wait...&quot;,
+        ///    &quot;Intrant admin password pro tutela.&quot;,
+        ///    &quot;Error kernel dum patuissent: {0}&quot;,
+        ///    &quot;TUMULUS: Reboot Tempus excedit maximum {0} errorem reboot tempus. Invenisti nucleum cimex.&quot;,
+        ///    &quot;[{0}] terror: Reboot para propter errorum gradu {0}.&quot;,
+        ///    &quot;[{0}] terror: Tempus ut reboot: {1} secundis, unam horam excedit. I positum est minute.&quot;,
+        ///   [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string ltn {
+            get {
+                return ResourceManager.GetString("ltn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Portuguese&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Modelo de cor inválido {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Seu hardware será testado. Por favor aguarde ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Um ou mais núcleos da CPU não puderam ser analisados. Mostrando informações de qualquer maneira ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Modelo de cor inválido {0}&quot;,
+        ///    &quot;hwprobe: Seu hardware será testado. Por favor aguarde ...&quot;,
+        ///    &quot;Digite a senha do administrador para manutenção.&quot;,
+        ///    &quot;Erro de kernel durante a inicialização: {0}&quot;,
+        ///    &quot;PAINEL DUPLO: O tempo de reinicialização excede o tempo máximo permitido de reinicialização do erro {0}. Você encontrou um bug do kernel.&quot;,
+        ///    &quot;[{0}] panic: Reinicialização ativada devido ao nível de erro ser {0}.&quot;,
+        /// [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ptg {
             get {
@@ -384,13 +501,35 @@ namespace Nitrocid.LanguagePacks.Resources {
         
         /// <summary>
         ///   Looks up a localized string similar to {
+        ///  &quot;Name&quot;: &quot;Roman&quot;,
+        ///  &quot;Transliterable&quot;: false,
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Șablon de culoare nevalid {0}&quot;,
+        ///    &quot;hwprobe: hardware-ul dvs. va fi testat. Va rugam asteptati...&quot;,
+        ///    &quot;Introduceți parola de administrator pentru întreținere.&quot;,
+        ///    &quot;Eroare kernel la pornire: {0}&quot;,
+        ///    &quot;PANICĂ DUBLĂ: Timpul de repornire depășește timpul maxim permis de repornire pentru eroare de {0}. Ai găsit o eroare a nucleului.&quot;,
+        ///    &quot;[{0}] panică: repornirea a fost activată din cauza nivelului de eroare {0}.&quot;,
+        ///    &quot;[{ [rest of string was truncated]&quot;;.
+        /// </summary>
+        public static string rmn {
+            get {
+                return ResourceManager.GetString("rmn", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Russian&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Nevernyy tsvetovoy shablon {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Vashe oborudovaniye budet provereno. Pozhaluysta, podozhdite...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: odno ili neskol&apos;ko yader TSP ne byli provereny. Pokaz informatsii v lyubom sluchaye ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips fai [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Nevernyy tsvetovoy shablon {0}&quot;,
+        ///    &quot;hwprobe: Vashe oborudovaniye budet provereno. Pozhaluysta, podozhdite...&quot;,
+        ///    &quot;Vvedite parol&apos; administratora dlya obsluzhivaniya.&quot;,
+        ///    &quot;Oshibka yadra pri zagruzke: {0}&quot;,
+        ///    &quot;DVOYNAYA PANIKA: Vremya perezagruzki prevyshayet maksimal&apos;no dopustimoye vremya perezagruzki {0}. Vy nashli oshibku v yadre.&quot;,
+        ///    &quot;[{0}] panika: perezagruzka vklyuchena iz-za urovnya oshibki {0}.&quot;,
+        ///    &quot;[{0}] pa [rest of string was truncated]&quot;;.
         /// </summary>
         public static string rus {
             get {
@@ -402,11 +541,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Russian&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Неверный цветовой шаблон {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Ваше оборудование будет проверено. Пожалуйста, подождите...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: одно или несколько ядер ЦП не были проверены. Показ информации в любом случае ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be pr [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Неверный цветовой шаблон {0}&quot;,
+        ///    &quot;hwprobe: Ваше оборудование будет проверено. Пожалуйста, подождите...&quot;,
+        ///    &quot;Введите пароль администратора для обслуживания.&quot;,
+        ///    &quot;Ошибка ядра при загрузке: {0}&quot;,
+        ///    &quot;ДВОЙНАЯ ПАНИКА: Время перезагрузки превышает максимально допустимое время перезагрузки {0}. Вы нашли ошибку в ядре.&quot;,
+        ///    &quot;[{0}] паника: перезагрузка включена из-за уровня ошибки {0}.&quot;,
+        ///    &quot;[{0}] паника: время перезагрузки [rest of string was truncated]&quot;;.
         /// </summary>
         public static string rus_T {
             get {
@@ -418,11 +560,13 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Spanish&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Plantilla de color no válida {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Su hardware será probado. Por favor espere ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: uno o más de los núcleos de la CPU no pudieron ser probados. Mostrando información de todos modos ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips fai [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Plantilla de color no válida {0}&quot;,
+        ///    &quot;hwprobe: Su hardware será probado. Por favor espere ...&quot;,
+        ///    &quot;Introduzca la contraseña de administrador para el mantenimiento.&quot;,
+        ///    &quot;Error del núcleo durante el arranque: {0}&quot;,
+        ///    &quot;DOBLE PÁNICO: el tiempo de reinicio excede el máximo permitido {0} tiempo de reinicio de error. Has encontrado un error en el kernel.&quot;,
+        ///    &quot;Pánico [{0}]: reinicio habilitado debido a que el nivel de err [rest of string was truncated]&quot;;.
         /// </summary>
         public static string spa {
             get {
@@ -434,11 +578,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Turkish&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Geçersiz renk şablonu {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Donanımınız incelenecek. Lütfen bekle...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Bir veya daha fazla CPU çekirdeği araştırılamadı. Yine de bilgi gösteriliyor...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. Showing informati [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Geçersiz renk şablonu {0}&quot;,
+        ///    &quot;hwprobe: Donanımınız incelenecek. Lütfen bekle...&quot;,
+        ///    &quot;Bakım için yönetici şifresini girin.&quot;,
+        ///    &quot;Önyükleme sırasında Çekirdek Hatası: {0}&quot;,
+        ///    &quot;ÇİFT PANİK: Yeniden Başlatma Süresi, izin verilen maksimum {0} hata yeniden başlatma süresini aşıyor. Bir çekirdek hatası buldunuz.&quot;,
+        ///    &quot;[{0}] panik: Hata düzeyi {0} olduğu için yeniden başlatma etkinleştirildi.&quot;,
+        ///    &quot;[{0}] panik: Yeniden ba [rest of string was truncated]&quot;;.
         /// </summary>
         public static string tky {
             get {
@@ -450,11 +597,13 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Ukrainian&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Nediysnyy shablon kolʹoru {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: vashe obladnannya bude perevireno. Budʹ laska, zachekayte...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;TSP: ne vdalosya pereviryty odne abo kilʹka yader TSP. Pokaz informatsiyi vse odno...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Nediysnyy shablon kolʹoru {0}&quot;,
+        ///    &quot;hwprobe: vashe obladnannya bude perevireno. Budʹ laska, zachekayte...&quot;,
+        ///    &quot;Vveditʹ parolʹ administratora dlya obsluhovuvannya.&quot;,
+        ///    &quot;Pomylka yadra pid chas zavantazhennya: {0}&quot;,
+        ///    &quot;PODVIYNA PANIKA: chas perezavantazhennya perevyshchuye maksymalʹno dozvolenyy chas perezavantazhennya pomylky {0}. Vy znayshly pomylku yadra.&quot;,
+        ///    &quot;[{0}] panika: perezavantazhennya vvimkneno cherez rive [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ukr {
             get {
@@ -466,11 +615,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Ukrainian&quot;,
         ///  &quot;Transliterable&quot;: true,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Недійсний шаблон кольору {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: ваше обладнання буде перевірено. Будь ласка, зачекайте...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;ЦП: не вдалося перевірити одне або кілька ядер ЦП. Показ інформації все одно...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed. S [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Недійсний шаблон кольору {0}&quot;,
+        ///    &quot;hwprobe: ваше обладнання буде перевірено. Будь ласка, зачекайте...&quot;,
+        ///    &quot;Введіть пароль адміністратора для обслуговування.&quot;,
+        ///    &quot;Помилка ядра під час завантаження: {0}&quot;,
+        ///    &quot;ПОДВІЙНА ПАНІКА: час перезавантаження перевищує максимально дозволений час перезавантаження помилки {0}. Ви знайшли помилку ядра.&quot;,
+        ///    &quot;[{0}] паніка: перезавантаження ввімкнено через рівень помилки {0}.&quot;,
+        ///    &quot;[ [rest of string was truncated]&quot;;.
         /// </summary>
         public static string ukr_T {
             get {
@@ -482,11 +634,14 @@ namespace Nitrocid.LanguagePacks.Resources {
         ///   Looks up a localized string similar to {
         ///  &quot;Name&quot;: &quot;Vietnamese&quot;,
         ///  &quot;Transliterable&quot;: false,
-        ///  &quot;Localizations&quot;: {
-        ///    &quot;Invalid color template {0}&quot;: &quot;Mẫu màu không hợp lệ {0}&quot;,
-        ///    &quot;hwprobe: Your hardware will be probed. Please wait...&quot;: &quot;hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...&quot;,
-        ///    &quot;CPU: One or more of the CPU cores failed to be probed. Showing information anyway...&quot;: &quot;CPU: Một hoặc nhiều lõi CPU không được phát hiện. Dù sao cũng hiển thị thông tin ...&quot;,
-        ///    &quot;RAM: One or more of the RAM chips failed to be probed.  [rest of string was truncated]&quot;;.
+        ///  &quot;Localizations&quot;: [
+        ///    &quot;Mẫu màu không hợp lệ {0}&quot;,
+        ///    &quot;hwprobe: Phần cứng của bạn sẽ được thăm dò. Xin vui lòng chờ ...&quot;,
+        ///    &quot;Nhập mật khẩu quản trị để bảo trì.&quot;,
+        ///    &quot;Lỗi hạt nhân khi khởi động: {0}&quot;,
+        ///    &quot;NHÂN ĐÔI: Thời gian khởi động lại vượt quá thời gian khởi động lại lỗi tối đa cho phép {0}. Bạn đã tìm thấy một lỗi kernel.&quot;,
+        ///    &quot;[{0}] hoảng loạn: Đã bật lại do mức lỗi là {0}.&quot;,
+        ///    &quot;[{0}] hoảng loạn: Thời gian để khởi động lại: {1} gi [rest of string was truncated]&quot;;.
         /// </summary>
         public static string vtn {
             get {

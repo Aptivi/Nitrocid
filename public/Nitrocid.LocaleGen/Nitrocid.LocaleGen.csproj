@@ -109,6 +109,9 @@
     <None Update="AddonTranslations\ger.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="AddonTranslations\grk.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="AddonTranslations\ind-T.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
@@ -127,10 +130,16 @@
     <None Update="AddonTranslations\kor.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Update="AddonTranslations\ltn.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="AddonTranslations\Metadata.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="AddonTranslations\ptg.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="AddonTranslations\rmn.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="AddonTranslations\rus-T.txt">

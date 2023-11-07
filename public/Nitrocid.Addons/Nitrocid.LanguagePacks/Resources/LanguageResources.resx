@@ -193,6 +193,15 @@
   <data name="ukr_T" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\ukr-T.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
+  <data name="grk" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Languages\grk.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="ltn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Languages\ltn.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
+  <data name="rmn" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Languages\rmn.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
+  </data>
   <data name="LanguageMetadata" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Languages\Metadata.json;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;windows-1256</value>
   </data>

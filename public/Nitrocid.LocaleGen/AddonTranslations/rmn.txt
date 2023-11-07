@@ -1,0 +1,1281 @@
+Șablon de culoare nevalid {0}
+hwprobe: hardware-ul dvs. va fi testat. Va rugam asteptati...
+Introduceți parola de administrator pentru întreținere.
+Eroare kernel la pornire: {0}
+PANICĂ DUBLĂ: Timpul de repornire depășește timpul maxim permis de repornire pentru eroare de {0}. Ai găsit o eroare a nucleului.
+[{0}] panică: repornirea a fost activată din cauza nivelului de eroare {0}.
+[{0}] panică: timpul de repornire: {1} secunde, depășește 1 oră. Este setat la 1 minut.
+PANICĂ DUBLĂ: Tipul de eroare {0} nevalid.
+[{0}] panică: {1} -- Apăsați orice tastă pentru a opri.
+[{0}] panică: {1} -- Se repornește în {2} secunde...
+PANICĂ DUBLĂ: Eroare kernel: {0}
+Închidere...
+Se repornește...
+Eroare {0}: {1}
+Nume de utilizator:
+Nu sunt permise spații.
+Caracterele speciale nu sunt permise.
+Parola lui {0}:
+Parola gresita.
+Eroare la încercarea de a analiza substituenții. {0}
+Eroare la încercarea de a adăuga numele de utilizator.
+usrmgr: Se creează numele de utilizator {0}...
+Utilizatorul {0} nu a fost găsit.
+Utilizatorul {0} nu are permisiunea de a fi eliminat.
+Utilizatorul {0} este deja conectat. Deconectați-vă și conectați-vă ca alt administrator.
+Utilizatorul {0} a fost eliminat.
+Eroare la încercarea de a elimina numele de utilizator.
+Screensaver-ul {0} solicitat nu a fost găsit.
+{0} este setat ca screensaver implicit.
+Screensaverul {0} nu a fost găsit în baza de date. Verificați numele și încercați din nou.
+Există o eroare gravă la imprimarea textului.
+Modul nu poate fi încărcat din cauza următoarelor:
+Mod {0} nu are numele. Examinați codul sursă.
+{0} v{1} a început
+Nicio definiție pentru comanda {0}.
+Comanda definită de
+Nume de utilizator pentru {0}:
+Parola pentru {0}:
+Conectat la {0}
+Eroare la încercarea de a vă conecta la {0}: {1}
+Directorul local {0} nu există.
+Introduceți un director local. ".." pentru a reveni.
+Directorul {0} nu a fost găsit.
+Introduceți un director la distanță. ".." pentru a reveni
+Director local: {0}
+Director la distanță: {0}
+Se descarcă fișierul {0}...
+Fișier descărcat {0}.
+Se încarcă fișierul {0}...
+Fișier încărcat {0}
+Obține directorul local curent
+Obține directorul de la distanță curent
+Schimbă directorul local pentru a descărca sau a încărca
+Schimbă directorul de la distanță din care să se descarce sau să se încarce
+Șterge fișierul de la distanță de pe server
+Descărcă fișierul de la distanță în directorul local folosind binar sau text
+Listează directorul local
+Listează directorul de la distanță
+Încarcă fișierul local în directorul de la distanță folosind binar sau text
+Aliasul nu poate fi același nume cu o comandă.
+Comanda nu a fost găsită pentru alias la {0}.
+Acum puteți rula „{0}” ca o comandă: „{1}”.
+Alias ​​{0} nu a fost eliminat.
+Mod nevalid {0}.
+Directorul {0} nu a fost găsit
+Nume gazdă necompletat.
+Se schimbă de la: {0} la {1}...
+Mesajul gol al zilei.
+MAL necompletat după conectare.
+Parolă de utilizator greșită.
+Parolele nu se potrivesc.
+Numele de utilizator a fost schimbat în {0}!
+Noul nume pe care l-ați introdus este deja găsit.
+{0} nu este găsit.
+Configurația a fost reîncărcată. Poate fi necesar să reporniți nucleul pentru ca unele modificări să aibă efect.
+Una sau mai multe culori sunt nevalide.
+Screensaver {0} nu a fost găsit.
+Eroare la încercarea de a executa comanda
+Schimbă directorul
+Schimbă parola pentru utilizatorul actual
+Șterge ecranul
+Utilizați un shell FTP pentru a interacționa cu serverele
+Pagina de ajutor
+Listați conținutul fișierului/dosarului în folderul curent
+Îți blochează ecranul cu o parolă
+Te deconectează
+Creează un director
+Repornește computerul (AVERTISMENT: Fără sincronizare, deoarece nu este un nucleu final)
+Reîncarcă fișierul de configurare care este editat.
+Salvează ecranul de la epuizare
+Setează screensaverele nucleului
+Afișează data și ora
+Afișează data și ora în zone
+Nucleul va fi oprit
+Utilizare:
+unde va fi customsaver
+A apărut o eroare în shell.
+Nu aveți permisiunea de a utiliza {0}
+Mesaj Shell: comanda solicitată {0} nu are permisiunea de a rula în modul de întreținere.
+Mesaj Shell: Comanda solicitată {0} nu a fost găsită. Consultați „ajutor” pentru comenzile disponibile.
+Eroare la încercarea de a executa comanda.
+- Ora de {0}: {1}
+Rulează pe {0}
+Nu sunteți autorizat să obțineți informații pentru {0}.
+Această comandă este învechită și va fi eliminată într-o versiune viitoare.
+Nu sunteți autorizat să schimbați parola pentru {0} deoarece ținta a fost un administrator.
+Șterge totul din jurnalul de depanare
+Limbă nevalidă
+Bun venit la Kernel!
+Descărcarea s-a finalizat.
+Descărcarea a eșuat în încercarea {0}: {1}
+Vă rugăm să utilizați „ftp” dacă doriți să descărcați fișiere de pe serverul FTP.
+Descarcă un fișier în directorul de lucru curent
+Deconectați un dispozitiv de depanare
+Listează dispozitivele de depanare conectate
+Dispozitivul de depanare {0} nu a fost găsit.
+Dispozitivul {0} a fost deconectat.
+Depanați ascultarea la toate adresele folosind portul {0}.
+Alias ​​găsit deja: {0}
+Jurnalul de depanare a fost eliminat. Toate dispozitivele de depanare conectate pot vedea în continuare mesajele.
+Eliminarea jurnalului de depanare a eșuat: {0}
+Schimbarea directorului a eșuat: {0}
+Specificați adresa
+Fusul orar este specificat incorect.
+Selecție de profil nevalidă.
+Se încearcă să se conecteze la {0} cu profilul {1}...
+Eroare la încercarea de a porni screensaverul, din cauza unei operații nevalide.
+Analizarea modurilor nu este permisă în modul sigur.
+Calea nu este nici un fișier, nici un director.
+Creează o altă copie a unui fișier sub alt director sau nume.
+Mută ​​un fișier într-un alt director
+Potrivire {0} ({1}): {2}
+Potrivire {0}: {1}
+Timp petrecut: {0} milisecunde
+Nume: {0}
+Calculează sumele fișierelor.
+Algoritm de criptare nevalid.
+Activează sau dezactivează depanarea la distanță.
+Vezi dacă poți rezolva ecuațiile matematice la timp
+Rezolvat perfect!
+Rezolvat incorect.
+RPC rulează deja.
+RPC ascultă la toate adresele folosind portul {0}.
+Se pornește RPC...
+Se conectează la un server SSH.
+Introduceți parola pentru {0}:
+SSH deconectat.
+Depanarea nu este activată.
+Afișează toate notificările primite
+Respinge o notificare
+Notificarea a fost respinsă cu succes.
+Executează de la distanță o comandă către un computer la distanță
+Tip nevalid {0}.
+Dimensiune: {0}
+Directorul {0} există deja.
+Eroare la încercarea de conectare la {0}: expirarea timpului de conectare sau conexiune pierdută
+Calculator pentru a calcula expresii.
+Eroare la calcul.
+Actualizare de sistem
+Se verifică actualizări de sistem...
+Am găsit o nouă versiune:
+Îl poți descărca de la:
+Nicio notificare recentă
+Caută șirul specificat în fișierul furnizat
+Calculează sumele de fișiere din directorul specificat.
+Introduceți numele de utilizator sau adresa de e-mail:
+Introdu parola:
+Eroare la conectarea la {0}: {1}
+Se conectează la {0}...
+Se autentifică...
+Descarcă mesaje și le afișează
+Deschide un mesaj
+Pagina nu este o valoare numerică.
+Numărul mesajului poate să nu fie negativ sau zero.
+Numărul mesajului nu este o valoare numerică.
+- De la {0}
+- Către {0}
+- Trimis la {0} în {1}
+Mesajul specificat nu a fost găsit.
+Depanarea de la distanță nu a putut porni: {0}
+Pregătirea profilurilor... Ar putea dura câteva minute...
+Eroare la încercarea de a executa scriptul: {0}
+Scrie text în consolă
+Face alegerile utilizatorului
+unde <răspunsuri> sunt răspunsuri cu o literă la întrebare, separate prin bare oblice
+Eroare la încercarea de conectare la serverul SSH: {0}
+Permite utilizatorului să introducă intrarea
+Schimbă directorul de e-mail curent
+Nu se poate deschide folderul de e-mail {0}: {1}
+Listează directoare în adresa dvs. de e-mail
+În timpul validării certificatului, există erori de certificat. Poate fi prima dată când v-ați conectat la server sau certificatul ar fi expirat. Iată o eroare:
+Ești sigur că vrei să te conectezi?
+Răspuns nevalid. Vă rugăm să încercați din nou.
+Introduceți adresa și portul serverului IMAP (<adresă> sau <adresă>:[port]):
+Introduceți adresa și portul serverului SMTP (<adresă> sau <adresă>:[port]):
+Trimite un mesaj la o adresă
+Introdu adresa de e-mail a destinatarului:
+Introduceți subiectul:
+Introduceți mesajul dvs. mai jos. Scrieți „EOF” pentru a confirma.
+Se trimite mesajul...
+Mesaj trimis.
+Adresa email invalida. Asigurați-vă că ați scris adresa corect și că se potrivește cu formatul exemplului afișat:
+Elimină un mesaj
+Elimină toate mesajele de la destinatar
+Mesajul {0} de la {1} a fost șters din {2}. {3} mesaje rămase de analizat.
+Mesajul {0} de la {1} a fost șters din căsuța de e-mail. {2} mesaje rămase de analizat.
+Face un nou fișier
+Fisierul există deja.
+Eroare la încercarea de a crea un fișier: {0}
+Deschiderea fișierului a eșuat. Se ies din shell...
+Imprimă conținutul fișierului cu numere de rând pe consolă
+Adaugă o nouă linie cu text la sfârșitul fișierului
+Elimină numărul de linie specificat
+Înlocuiește un cuvânt sau o expresie cu alta
+Șterge un cuvânt sau o expresie din numărul rândului
+Șterge un caracter din numărul caracterului din rândul specificat
+Linie eliminată.
+Numărul de linie specificat {0} nu este un număr valid.
+Rulează în modul sigur. Sari peste etapa...
+>> Remote Debug and Chat: versiune
+>> Adresa dvs. este {0}.
+>> Numele tău este {0}.
+Indexul {0} nevalid. Există {1} urme de stivă. Indicele este bazat pe zero, așa că încercați să scădeți cu 1.
+Fără urmă de stivă
+Afișează ultima stivă la excepție
+Afișează numele de utilizator curent în sesiune
+Deblocați un dispozitiv de depanare după adresa IP
+Blocați un dispozitiv de depanare prin adresa IP
+{0} se poate alătura acum din nou la depanare la distanță.
+{0} nu este încă blocat.
+Eroare la încărcarea setărilor
+A apărut o eroare la încărcarea setărilor. Poate fi necesar să verificați fișierul de setări.
+Selectați secțiunea:
+Salvează setările
+Ieșire
+Opțiunea specificată {0} este nevalidă.
+Răspunsul trebuie să fie numeric.
+Verificați actualizările la pornire
+Sondă liniștită
+Afișați MOTD la conectare
+Ștergeți ecranul la conectare
+Comanda de ajutor simplificată
+Port de depanare
+Descărcați Retry Times
+Înregistrați numele de utilizator FTP
+Înregistrați adresa IP FTP
+Returnează numai primul profil FTP
+Afișați ora/data în colțul din dreapta sus
+Timeout pentru screensaver în ms
+Modul de analiză a mărimii
+Marquee la pornire
+Timp lung și dată
+Arată fișierele ascunse
+Întoarce-te...
+Scrieți un port de depanare la distanță. Trebuie să fie numeric și nu trebuie să fie deja folosit. În caz contrar, depanatorul de la distanță nu va deschide portul.
+Scrieți de câte ori comanda „get” ar trebui să reîncerce descărcări eșuate. Trebuie să fie numeric.
+Scrieți când să lansați screensaverul după milisecunde specificate. Trebuie să fie numeric.
+Răspunsul poate să nu fie negativ.
+Variabila {0} nu se găsește pe niciunul dintre module.
+Modifică configurația kernelului
+Schimbați cultura atunci când schimbați limbile
+Text afișat
+Scrieți orice text doriți să fie afișat. Mai scurt este mai bine.
+Nu s-a putut încărca {0}
+Adaugă utilizatori
+Adaugă alias-uri la comenzi
+Schimbă numele gazdei
+Schimbă MAL, MOTD după conectare
+Schimbă MOTD, mesajul zilei
+Schimbă numele de utilizator
+Gestionați permisiunile pentru utilizatori
+Elimină un utilizator din listă
+Aliasul {0} a fost eliminat cu succes.
+Nu s-au putut verifica actualizări.
+Nu mai sunt utilizatori în listă.
+Eroare la încercarea de a respinge notificarea.
+usrmgr: Nu s-a putut crea numele de utilizator {0}: {1}
+Nu s-a putut redenumi utilizatorul. {0}
+Utilizator nu a fost găsit
+Nu s-a putut schimba parola numelui de utilizator: {0}
+Imposibil de găsit fișierul care să corespundă șirului „{0}”: {1}
+Descărcarea a eșuat pentru fișierul {0}.
+Nu s-au putut enumera fișierele de la distanță: {0}
+Se șterge {0}...
+{0} nu este găsit pe server.
+Toate e-mailurile trimise de {0} au fost eliminate cu succes.
+Nu s-au putut elimina toate mesajele trimise de {0}.
+Eroare la trimiterea mesajului.
+Se mută {0} în {1}...
+Mutat cu succes
+Mută ​​fișierul sau directorul într-un alt fișier sau director. Puteți folosi asta și pentru a redenumi fișierele.
+Nu s-a mutat {0} în {1}.
+Se copiează {0} în {1}...
+Copiat cu succes
+Copiază fișierul sau directorul într-un alt fișier sau director.
+Nu s-a putut copia {0} în {1}.
+Mută ​​un mesaj
+Mută ​​toate mesajele de la destinatar
+Toate e-mailurile trimise de {0} au fost mutate cu succes.
+Nu s-au mutat toate mesajele trimise de {0}.
+Mesajul {0} de la {1} a fost mutat din {2}. {3} mesaje rămase de analizat.
+Afișează informații despre vreme pentru orașul specificat. Utilizează OpenWeatherMap.
+-- Informații meteo pentru {0} --
+Vremea: {0}
+Presiune: {0}
+Umiditate: {0}
+Puteți obține propria cheie API la https://home.openweathermap.org/api_keys.
+Unitate preferată pentru temperatură
+La fiecare pornire, va verifica dacă există actualizări.
+Când schimbați limbile, schimbați numele lunii, calendarul etc.
+Păstrați mesajele de testare hardware silențioase.
+Afișați mesajul zilei înainte de afișarea ecranului de conectare.
+Ștergeți ecranul înainte de a afișa ecranul de conectare.
+Afișează utilizatorii disponibili dacă este activat.
+Comanda de ajutor simplificată pentru toate shell-urile
+Dacă să înregistrați sau nu numele de utilizator FTP.
+Dacă să înregistrați sau nu adresa IP FTP.
+Alegeți primul profil numai când vă conectați.
+Ora și data vor fi afișate în colțul din dreapta sus al ecranului
+Dacă este activat, nucleul va analiza întregul folder pentru dimensiunea totală. În caz contrar, va analiza doar suprafața.
+Activează eyecandy la pornire
+Ora și data vor fi mai lungi, afișând numele întregii luni etc.
+Afișează fișierele ascunse.
+Mod {0} oprit
+{0} v{1} sa oprit
+Mod {0} nu are numele piesei. Analiza modului a eșuat. Examinați codul sursă.
+Trebuie să activați modul de depanare înainte de a putea șterge jurnalul de depanare.
+{0} mesaje noi au sosit în inbox.
+Deschideți „mail” pentru a le vedea.
+Îndepărtează un director sau un fișier
+Nu se poate elimina {0} deoarece nu există.
+Oferă informații despre un fișier
+Oferă informații despre un director
+Nu pot obține informații despre directorul inexistent.
+Nu pot obține informații despre fișierul inexistent.
+Nume complet: {0}
+Timp de creare: {0}
+Ora ultimului acces: {0}
+Ultima scriere: {0}
+Atribute: {0}
+Directorul părinte: {0}
+Unde găsiți: {0}
+Dimensiunea fișierului: {0}
+Modifică atributul unui fișier
+Fișierul nu a fost găsit.
+unde <atribute> este unul dintre următoarele:
+Fișierul este un fișier normal
+Fișierul este un fișier numai pentru citire
+Fișierul este un fișier ascuns
+Fișierul este o arhivă. Folosit pentru copii de rezervă.
+Atributul „{0}” este nevalid.
+Atributul a fost adăugat cu succes.
+Atributul a fost eliminat cu succes.
+Nu s-a putut adăuga atributul.
+Atributul nu a fost eliminat.
+Înlocuiește un cuvânt sau o expresie cu altul dintr-o linie
+Activați culorile adevărate
+Nu s-a putut debloca {0}.
+{0} este deja blocat.
+{0} nu se poate alătura acum la depanare la distanță.
+Blocarea {0} a eșuat.
+Ciclul de culori
+Disco va ciclu culorile când este activat. În caz contrar, selectați culori aleatorii.
+Introduceți căile fișierelor către atașamente. Apăsați ENTER pe o cale goală pentru a confirma.
+Deschide un mesaj criptat
+Scrieți parola pentru ID-ul cheii {0}
+Trimite un mesaj criptat la o adresă
+Se descarcă de pe {0}...
+Afișați bara de progres în timp ce descărcați sau încărcați din comanda „get” sau „put”.
+Dacă este adevărat, „obține” sau „put” arată bara de progres în timpul descărcării sau încărcării.
+Încarcă un fișier pe site-ul web specificat
+Trimite ping la o adresă
+Se încarcă {0} în {1}...
+Încărcarea a fost finalizată.
+Vă rugăm să utilizați „ftp” dacă aveți de gând să încărcați fișiere pe serverul FTP.
+Încărcarea a eșuat în încercarea {0}: {1}
+Scrieți de câte ori ar trebui să reîncerce comanda „put” încărcările eșuate. Trebuie să fie numeric.
+Este posibil ca adresa să nu fie goală.
+Nu s-a trimis ping la {0}: {1}
+Ping a reușit în {0} ms.
+Numărul de linie specificat nu poate fi mai mare decât numărul ultimului rând al fișierului.
+Se simte ca: {0}
+Temperatura: {0}
+Viteza vântului: {0}
+Direcția vântului: {0}
+Apăsați orice tastă pentru a reveni.
+Imposibil de creat dosarul de e-mail {0}: {1}
+Creează un director în directorul de lucru curent
+Îndepărtează un director din directorul de lucru curent
+Dosarul de e-mail {0} nu a fost găsit.
+Nu se poate șterge dosarul de e-mail {0}: {1}
+{0}, creat în {1} {2}, modificat în {3} {4}
+Verifică corectitudinea fișierului
+Hashurile sunt defectuoase.
+Hashes-urile nu se potrivesc.
+Se potrivesc hashes.
+Redenumește un folder
+Deschide un shell de testare
+Nu s-a putut porni „{0}”: {1}
+Afișează previzualizarea mesajului de e-mail
+Când enumerați mesajele de e-mail, afișați previzualizarea corpului.
+Culoare de fundal
+Șterge fișierul text
+Iese din editorul de text
+Interogează un caracter dintr-o linie specificată sau pe toate liniile
+Verificarea actualizărilor este dezactivată deoarece rulați o versiune de dezvoltare.
+Activează sau dezactivează funcția de salvare automată a editorului de text.
+Dacă salvarea automată este activată, fișierul text va fi salvat pentru fiecare „n” secunde.
+Activați salvarea automată a editorului de text
+Interval de salvare automată a editorului de text
+Salvează fișierul
+Înregistrați chatul pentru a depana jurnalul
+Înregistrează chatul de depanare la distanță în jurnalul de depanare.
+Întârziere în milisecunde
+Câte milisecunde trebuie să așteptați înainte de a face următoarea scriere?
+Vă permite să utilizați un server SSH FTP
+Niciun ajutor pentru comanda „{0}”.
+Bara de culoare a secundelor
+Bara de culoare a minutelor
+Bara de culoare a orelor
+Culoarea informațiilor
+Căpușe pentru a schimba culoarea
+Dacă ciclul de culoare este activat, câte bifări înainte de a schimba culorile în ProgressClock? 1 bifă = 0,5 secunde
+ProgressClock va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.
+Creează o temă nouă
+Crearea unei noi teme „{0}”.
+Salvați tema în directorul curent
+Salvați tema într-un alt director...
+Imprimă informații despre hardware
+Nume procesor:
+Biți de procesor:
+Sistem de fișiere de partiție:
+Mărimea partiției:
+>> Bine ați venit! Este prima dată când intri în depanare și chat la distanță. Folosiți „/register <nume>” pentru a vă înregistra.
+Dispozitivul există deja.
+Nu există un astfel de dispozitiv.
+Imprimă conținutul fișierului pe consolă
+Intrarea există deja.
+Încheie ieșirea consolei
+Comanda nu poate fi ambalată. Aceste comenzi pot fi incluse:
+Extrage o arhivă ZIP
+Creează o arhivă ZIP
+Eroare la descărcarea datelor de depanare
+A apărut o eroare la descărcarea datelor de depanare. Verificați conexiunea la internet.
+Nu s-a finalizat modul {0}: {1}
+Listează toate evenimentele declanșate
+Directorul curent
+Setează directorul curent al shell-ului. Scrieți o cale absolută către orice director existent.
+Wrap list outputs
+Încheie ieșirile listei dacă pare prea lungă pentru geometria actuală a consolei.
+Ping!
+{0} v-a sunat.
+Salvați tema în directorul curent ca...
+Salvați tema într-un alt director ca...
+Specificați numele temei:
+Încărcați tema din temele preconstruite...
+Specificați numele fișierului temă fără extensia .json:
+Listează toate fișierele din arhivă
+Extrage un fișier într-un director specificat sau într-un director curent
+Schimbă directorul arhivei
+Directorul {0} nu există
+Directorul de arhivă {0} nu există
+Număr maxim de poziții
+Câte poziții sunt aprinse înainte de atenuare?
+Se conectează la un server SSH pentru a executa o comandă.
+Setează o variabilă la o valoare într-un script
+A apărut o eroare în shell-ul FTP:
+A apărut o eroare în shell-ul SFTP:
+Afișați bannerul SSH
+Afișează bannerul serverului SSH la conexiune.
+Cum vrei să te autentifici?
+Fișier cu cheie privată
+Parola
+Introduceți expresia de acces pentru cheia {0}:
+Neutralizat o cale inexistentă.
+Fișierul cheie {0} nu există.
+Eroare la încercarea de a adăuga cheia privată:
+Comenzi generale:
+Comenzi de mod:
+Alias ​​comenzi:
+modul de întreținere
+Directoare de căutare
+Grup de căi separate prin două puncte. Funcționează la fel ca PATH. Scrieți o cale completă către un folder sau numele unui folder. Când ai terminat, scrie „q”. Scrieți un semn minus lângă cale pentru a elimina un director existent.
+Fără comenzi de mod.
+Fără comenzi alias.
+Comanda wrappable nu este găsită.
+Interogează un cuvânt dintr-o linie specificată sau pe toate liniile
+{0} din {1} descărcate.
+Testează facilitatea de eroare a nucleului
+Testează facilitatea de eroare a nucleului cu suport de format
+Testează traducerea unui șir care există în resurse într-un anumit limbaj
+Imprimă un șir pentru consolă și analizează substituenții găsiți
+Testează facilitatea expresiei regulate
+Pornește toate modurile
+Testează secvența VT pentru 255 de culori
+Testează secvența VT pentru culoarea adevărată
+Trimite o notificare pentru a testa receptorul
+Listează toate paginile de cod acceptate
+Teste de sondare a hardware-ului
+Testează scriitorul listei cu șiruri și matrice de șiruri
+Testează scriitorul listei cu matricea întregi și întregi
+Testează scriitorul listei cu matricea char și char
+Lista normală de șiruri:
+Lista de șiruri de matrice:
+Lista de numere întregi normale:
+Lista de numere întregi de matrice:
+Lista de caractere normale:
+Lista de caractere cu matrice:
+Activați RPC
+Port RPC
+Dacă se activează sau nu RPC.
+Scrieți un port RPC. Trebuie să fie numeric și nu trebuie să fie deja folosit. În caz contrar, RPC nu va deschide portul.
+Nu pornește RPC deoarece este dezactivat.
+Enumeră culturile acceptate
+Caută șirul specificat în fișierul furnizat folosind expresii regulate
+Vezi dacă poți apăsa o tastă la timp
+Utilizatorul nu a furnizat nicio contribuție în timp util.
+Caracter nu a fost apăsat la timp.
+Ați apăsat pe caracterul potrivit!
+Ați apăsat pe caracterul greșit.
+Apăsați ESC pentru a ieși.
+Obține informații despre dată și oră
+Milisecunde:
+secunde:
+Minute:
+Ore:
+Zile:
+Luni:
+An:
+Ziua anului:
+Zi a săptămânii:
+Binar:
+Ora locala:
+Timp universal:
+Ora Unix:
+Nu s-au putut analiza informațiile despre dată pentru
+Asigurați-vă că formatul este corect.
+Data:
+Timp:
+Setează permisiunile pentru fișiere. Acest lucru este acceptat numai pe serverele FTP care rulează Unix.
+Setează tipul pentru această sesiune
+Nu s-au setat permisiunile pentru {0} la {1}.
+Permisiunile setate cu succes pentru fișier
+Tip de date setat la ASCII!
+Tipul de date setat la Binar!
+Tip de date nevalid.
+Atenție la faptul că majoritatea fișierelor nu se vor descărca sau încărca corect folosind acest mod, așa că vă recomandăm cu căldură să utilizați modul binar în majoritatea situațiilor.
+Încercarea de a trimite o comandă RPC în timp ce RPC nu a pornit.
+Întârziere la dispariție în milisecunde
+Max Fade Steps
+Câte milisecunde să aștepte înainte de a se estompa textul?
+Câți pași de fade trebuie să faci?
+Deschide un shell RSS pentru a citi fluxurile
+Listează toate fluxurile
+Citește un flux într-un browser web
+Tip de feed RSS nevalid.
+Obține informații despre articol
+Numărul articolului nu poate fi mai mare decât articolele disponibile.
+Titlu:
+Legătură:
+Obține informațiile despre feed
+Descriere:
+Tip de hrană:
+Numar de articole:
+Articolul nu are link!
+Nu s-a putut face o listă cu intrările sistemului de fișiere pentru director
+Modul de sortare a sistemului de fișiere
+Direcția de sortare a sistemului de fișiere
+Controlează modul în care vor fi sortate fișierele.
+Controlează direcția sortării sistemului de fișiere, fie că este ascendentă sau descendentă.
+Scrie din nou Întârziere în milisecunde
+Câte milisecunde să aștepte înainte de a scrie din nou text?
+Scrieți orice text doriți să fie afișat. Mai lung este mai bine.
+Viteza minimă de scriere în WPM
+Viteza maximă de scriere în WPM
+Probabilitatea de greșeală de scriere în procente
+Șervețele pentru a schimba direcția
+Câte șervețele de făcut înainte de a schimba direcția la întâmplare?
+Etapa terminată în
+Inițializarea internă s-a încheiat în
+Pornirea mod
+Versiunea mod:
+Mod {0} nu a fost găsit.
+Editorul de text nu a deschis încă un flux de fișiere.
+String înlocuit.
+Unul sau ambele numere nu sunt numerice.
+Cuvântul a fost șters.
+Personajul a fost șters.
+Bun venit la Setări!
+Eroare la executarea comenzii SSH
+Eroare pe shell SSH
+Testează dicționarul cu șiruri și matrice de șiruri
+Testează dicționarul cu matricea char și char
+Testează dicționarul cu matricea întregi și întregi
+Dicționar normal de șiruri:
+Dicționar de șiruri de matrice:
+Dicționar întreg normal:
+Dicționar de matrice întregi:
+Dicționar normal de caractere:
+Dicționar de matrice de caractere:
+Afișați progresul operațiunilor sistemului de fișiere
+Afișează ce fișier este procesat în timpul operațiunilor sistemului de fișiere
+Fie tipul hardware {0} nu este testat, fie nu este valid.
+Tipul hardware {0} nu a fost testat încă. Dacă sunteți sigur că a fost testat, reporniți nucleul cu depanarea activată.
+Partițiile nu au fost analizate în listă.
+Întotdeauna centrat
+Scrieți orice text doriți să fie afișat.
+Dacă textul afișat pe marcaj este întotdeauna centrat.
+Screensaverul a întâmpinat o eroare la afișarea: {0}. Apasă orice tastă pentru a ieși.
+Previzualizare...
+Iată cum va arăta tema ta:
+Comenzi încapsulabile:
+Piese mod:
+Utilizați API-ul Console
+Dacă folosiți API-ul Console pentru a șterge textul sau pentru a utiliza secvența mai rapidă de ștergere a liniilor VT. Dacă este fals, Marquee va folosi secvența VT corespunzătoare. În caz contrar, va folosi API-ul Console, probabil mai lent.
+Deschidere URL... Asigurați-vă că urmați pașii afișați pe ecran.
+Nu există piese în mod.
+Nume mod:
+Nume fișier mod:
+Calea fișierului mod:
+Versiune piesa:
+Folderul este gol.
+Verificat cu succes {0}.
+Sondă Verbosă
+Faceți mesajele de testare hardware puțin vorbărețe.
+Înfrumusețează fișierul JSON
+Utilizați bătăi pe minut
+Dacă să folosiți unitatea Beats Per Minute pentru a scrie următoarea culoare.
+Întârziere în bătăi pe minut
+Câte bătăi pe minut să așteptați înainte de a face următoarea scriere?
+BeatFader va selecta culori aleatorii dacă este activat. În caz contrar, utilizați culorile din config.
+Banner personalizat de pornire
+Descărcă folderul de la distanță în directorul local folosind binar sau text
+Încarcă folderul local în directorul de la distanță folosind binar sau text
+Se descarcă dosarul {0}...
+Dosarul descărcat {0}.
+Descărcarea eșuată pentru folderul {0}.
+Se încarcă dosarul {0}...
+Dosarul încărcat {0}
+Minimizează fișierul JSON
+Noua întârziere a ecranului în milisecunde
+Număr de coloane
+Pragul de umplere a liniilor
+Probabilitatea de limitare a umplerii liniei în procente
+Tip de umplere a liniilor
+Câte milisecunde trebuie să așteptați înainte de a scrie din nou textul în noul ecran?
+Coloanele de text care urmează să fie tipărite.
+Câte caractere să scrieți înainte de a declanșa „line umplere”?
+Posibilitatea ca modelul de umplere a liniilor să fie imprimat cu majuscule, în procente
+Răspunsul poate să nu fie zero.
+Răspunsul nu poate depăși înregistrările afișate.
+Salvează modificările...
+Gestionați-vă modurile
+Gestionarea modurilor este dezactivată în modul sigur.
+Comanda {0} nevalidă. Verificați mai jos utilizarea:
+Modul nu a fost găsit sau fișierul are caractere nevalide.
+Probabilitatea de ratare în procente
+Activați depanarea screensaverului
+Activează depanarea pentru screensavere. Vă rugăm să rețineți că poate umple rapid jurnalul de depanare și poate încetini ușor screensaver-ul, în funcție de screensaver-ul utilizat. Funcționează numai dacă depanarea nucleului este activată în scopuri de diagnosticare.
+Fără rețea la descărcarea datelor de depanare
+Verificați-vă conexiunea la internet și încercați din nou.
+Pagina de manual {0} este nevalidă.
+Luați în considerare completarea acestei pagini de manual.
+Manualul modului
+Argumentele nucleului disponibile:
+Eroare irecuperabilă în argument:
+Criptează un șir folosind SHA512
+Criptează un șir folosind SHA384
+Criptează un șir folosind SHA256
+Criptează un șir folosind SHA1
+Criptează un șir folosind MD5
+unde va fi builtinsaver
+Partea mod nu este nimic.
+Oprirea modurilor nu este permisă în modul sigur.
+Modul a fost deja pornit!
+Mod încă nu a început!
+Numele fișierului piesei:
+Calea fișierului parte:
+Eroare la încercarea de a porni screensaverul:
+Tip de cale de kernel nevalid.
+Pornirea anterioară a eșuat
+Editorul JSON nu a deschis încă un flux de fișiere.
+Proprietatea din fișierul JSON nu este găsită.
+Proprietate eliminată.
+Adaugă o nouă proprietate la sfârșitul fișierului JSON
+Elimină o proprietate din fișierul JSON
+Iese din shell-ul JSON fără a salva modificările
+Salvează fișierul JSON
+Tipărește fișierul JSON
+Următorul interval de rampă
+Câte milisecunde trebuie să așteptați înainte de a umple următoarea rampă?
+Desenați chenarul de notificare
+Acoperă notificarea cu granița.
+Contactați furnizorul modului pentru a actualiza modulul la versiunea compatibilă.
+Trimite o notificare de progres pentru a testa receptorul
+Afișează ora nucleului local
+Afișează data nucleului local
+Afișează data și ora nucleului local
+Afișează ora UTC a nucleului
+Afișează data nucleului UTC
+Afișează data și ora nucleului UTC
+Ce fișier este fișierul text MOTD? Scrieți o cale absolută către fișierul text.
+Ce fișier este fișierul text MAL? Scrieți o cale absolută către fișierul text.
+Moduri pe lista neagră
+Scrieți numele de fișiere ale modurilor care nu vor rula la pornire. Când ai terminat, scrie „q”. Scrieți un semn minus lângă cale pentru a elimina un mod existent.
+Mod {0} este pe lista neagră.
+Reîncarcă toate modurile
+Adaugă un mod la lista neagră
+Elimină un mod din lista neagră
+Ora și data în UTC: {0}
+Afișați informații despre aplicație în timpul pornirii
+Arată orele de încheiere a etapei
+Porniți modificările kernelului la pornire
+Afișați ora curentă înainte de autentificare
+Notificați pentru orice defecțiune în timpul pornirii
+Afișează informații scurte despre aplicație la pornire.
+Afișează cât timp i-a luat nucleului pentru a termina o etapă.
+Porniți automat modificările kernelului la pornire.
+Afișează ora curentă, fusul orar și data înainte de a vă conecta.
+Dacă există o eroare minoră în timpul pornirii nucleului, anunță utilizatorul despre aceasta.
+Stilul prompt al numelui de utilizator
+Stilul de solicitare a parolei
+Scrieți cum doriți să fie solicitarea de conectare. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați.
+Scrieți cum doriți să fie solicitarea parolei. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați.
+Afișează mesajul zilei după afișarea ecranului de conectare.
+Afișați detaliile fișierului în listă
+Afișează detaliile scurte ale fișierului în timp ce listați fișierele
+Afișați detaliile fișierului în lista FTP
+Stilul prompt al numelui de utilizator pentru FTP
+Stilul de solicitare a parolei pentru FTP
+Utilizați primul profil FTP
+Adăugați conexiuni noi la apelarea rapidă FTP
+Încercați să validați certificatele FTP securizate
+Afișați MOTD FTP la conexiune
+Acceptați întotdeauna certificate FTP nevalide
+Afișează detaliile fișierului FTP în timp ce listează directoarele de la distanță.
+Utilizează primul profil FTP pentru a se conecta la FTP.
+Dacă este activat, adaugă o nouă conexiune la apelarea rapidă FTP.
+Încearcă să valideze certificatele FTP. Dezactivarea acestuia nu este recomandată.
+Afișează mesajul FTP al zilei la conectare.
+Acceptați întotdeauna certificate FTP nevalide. Pornirea acestuia nu este recomandată, deoarece poate prezenta riscuri de securitate.
+Stilul prompt al numelui de utilizator pentru e-mail
+Stilul de solicitare a parolei pentru e-mail
+Stilul prompt IMAP pentru e-mail
+Stilul prompt SMTP pentru e-mail
+Detectează automat serverul de e-mail
+Activați depanarea e-mailului
+Notificare pentru mesaje de e-mail noi
+Stilul de solicitare a parolei GPG pentru e-mail
+Trimiteți intervalul de ping IMAP
+Trimiteți intervalul de ping SMTP
+Format text mail
+Scrieți cum doriți să fie promptul serverului IMAP. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați.
+Scrieți cum doriți să fie promptul serverului dvs. SMTP. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați.
+Detectează automat serverul de e-mail pe baza adresei date.
+Activează depanarea serverului de e-mail.
+Vă anunță pentru orice mesaje de e-mail noi.
+Scrieți cum doriți să fie solicitarea parolei dvs. GPG. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați.
+Câte milisecunde pentru a trimite ping-ul IMAP?
+Câte milisecunde pentru a trimite ping-ul SMTP?
+Controlează modul în care va fi afișat textul e-mailului.
+Porniți automat depanarea de la distanță la pornire
+Formatul mesajului de depanare la distanță
+Dacă doriți ca depanarea de la distanță să înceapă la pornire, activați aceasta.
+Specifică formatul mesajului de depanare la distanță. {0} pentru nume, {1} pentru mesaj.
+Stilul de solicitare URL a fluxului RSS
+Actualizează automat fluxul RSS
+Interval de reîmprospătare automată a fluxului RSS
+Scrieți cum doriți să fie promptul serverului de feed RSS. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați.
+Câte milisecunde pentru a reîmprospăta fluxul RSS?
+Afișați detaliile fișierului în lista SFTP
+Stilul prompt al numelui de utilizator pentru SFTP
+Adăugați conexiuni noi la apelarea rapidă SFTP
+Afișează detaliile fișierului SFTP în timp ce listează directoarele de la distanță.
+Dacă este activat, adaugă o nouă conexiune la apelarea rapidă SFTP.
+Ping timeout
+Descărcați textul procentual
+Încărcați text procentual
+Câte milisecunde trebuie să așteptați înainte de a declara timeout?
+Scrieți cum doriți să fie textul procentual de încărcare. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați. {0} pentru dimensiunea încărcată, {1} pentru dimensiunea țintă, {2} pentru procent.
+Scrieți cum doriți să fie textul procentual de descărcare. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați. {0} pentru dimensiunea descărcată, {1} pentru dimensiunea țintă, {2} pentru procent.
+Cereți parola după blocare
+După blocarea ecranului, cereți parola
+Nivel minim de culoare roșie
+Nivel minim de culoare verde
+Nivel minim de culoare albastră
+Nivel minim de culoare
+Nivel maxim de culoare roșie
+Nivel maxim de culoare verde
+Nivel maxim de culoare albastră
+Nivel maxim de culoare
+Nivel minim de culoare roșie. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel minim de culoare verde. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel minim de culoare albastră. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel minim de culoare. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255 pentru 255 de culori sau 16 pentru 16 culori.
+Nivel maxim de culoare roșie. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel maxim de culoare verde. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel maxim de culoare albastră. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255.
+Nivel maxim de culoare. Valoarea minimă acceptată este 0, iar valoarea maximă acceptată este 255 pentru 255 de culori sau 16 pentru 16 culori.
+Culoarea primului plan
+caracter de linie
+Un caracter pentru a forma o linie. Asigurați-vă că introduceți un singur caracter.
+Caracter din colțul din stânga sus pentru bara de ore
+Caracter din colțul din stânga sus pentru bara de minute
+Caracter din colțul din stânga sus pentru bara de secunde
+Caracter din colțul din dreapta sus pentru bara de ore
+Caracter din colțul din dreapta sus pentru bara de minute
+Caracter din colțul din dreapta sus pentru bara de secunde
+Caracter din colțul din stânga jos pentru bara de ore
+Caracter din colțul din stânga jos pentru bara de minute
+Caracter din colțul din stânga jos pentru bara de secunde
+Caracter din colțul din dreapta jos pentru bara de ore
+Caracter din colțul din dreapta jos pentru bara de minute
+Caracter din colțul din dreapta jos pentru bara de secunde
+Caracter de cadru superior pentru bara de ore
+Caracter de cadru superior pentru bara de minute
+Caracter de cadru superior pentru bara de secunde
+Caracter de cadru inferior pentru bara de ore
+Caracter de cadru inferior pentru bara de minute
+Caracter de cadru inferior pentru bara de secunde
+Caracter din cadru din stânga pentru bara de ore
+Caracter din cadru din stânga pentru bara de minute
+Caracter de cadru din stânga pentru bara de secunde
+Caracter cadru din dreapta pentru bara de ore
+Caracter cadru din dreapta pentru bara de minute
+Caracter cadru din dreapta pentru bara de secunde
+Text informativ pentru ore
+Text informativ timp de minute
+Text informativ pentru câteva secunde
+Nivel minim de culoare roșie pentru ore
+Nivel minim de culoare verde pentru ore
+Nivel minim de culoare albastră pentru ore
+Nivel minim de culoare pentru ore
+Nivel maxim de culoare roșie pentru ore
+Nivel maxim de culoare verde pentru ore
+Nivel maxim de culoare albastră pentru ore
+Nivel maxim de culoare pentru ore
+Nivel minim de culoare roșie pentru câteva minute
+Nivel minim de culoare verde pentru minute
+Nivel minim de culoare albastră timp de minute
+Nivel minim de culoare pentru minute
+Nivel maxim de culoare roșie timp de minute
+Nivel maxim de culoare verde pentru minute
+Nivel maxim de culoare albastră timp de minute
+Nivel maxim de culoare pentru minute
+Nivel minim de culoare roșie pentru secunde
+Nivel minim de culoare verde pentru secunde
+Nivel minim de culoare albastră pentru secunde
+Nivel minim de culoare pentru secunde
+Nivel maxim de culoare roșie pentru secunde
+Nivel maxim de culoare verde pentru secunde
+Nivel maxim de culoare albastră pentru secunde
+Nivel maxim de culoare pentru secunde
+Un personaj care seamănă cu colțul din stânga sus. Asigurați-vă că introduceți un singur caracter.
+Un personaj care seamănă cu colțul din stânga jos. Asigurați-vă că introduceți un singur caracter.
+Un personaj care seamănă cu cadrul de sus. Asigurați-vă că introduceți un singur caracter.
+Un personaj care seamănă cu cadrul inferior. Asigurați-vă că introduceți un singur caracter.
+Un personaj care seamănă cu cadrul din stânga. Asigurați-vă că introduceți un singur caracter.
+Un personaj care seamănă cu cadrul potrivit. Asigurați-vă că introduceți un singur caracter.
+Scrieți cum arată textul dvs. informativ pentru ora curentă. {0} pentru ora curentă din 24 de ore.
+Scrieți cum se arată textul dvs. informativ pentru minutul curent. {0} pentru minutul curent din 60 de minute.
+Scrieți cum arată textul dvs. informativ pentru secunda curentă. {0} pentru secunda curentă din 60 de secunde.
+Culoarea textului
+Caracter din colțul din stânga sus pentru bara de rampă
+Caracter din colțul din dreapta sus pentru bara de rampă
+Caracter din colțul din stânga jos pentru bara de rampă
+Caracter din colțul din dreapta jos pentru bara de rampă
+Caracter de cadru superior pentru bara de rampă
+Caracter de cadru inferior pentru bara de rampă
+Caracter de cadru din stânga pentru bara de rampă
+Caracter cadru din dreapta pentru bara de rampă
+Nivel minim de culoare roșie pentru culoarea de început
+Nivel minim de culoare verde pentru culoarea de pornire
+Nivel minim de culoare albastră pentru culoarea de început
+Nivelul minim de culoare pentru culoarea de pornire
+Nivel maxim de culoare roșie pentru culoarea de pornire
+Nivel maxim de culoare verde pentru culoarea de pornire
+Nivel maxim de culoare albastră pentru culoarea de pornire
+Nivel maxim de culoare pentru culoarea de pornire
+Nivel minim de culoare roșie pentru culoarea finală
+Nivel minim de culoare verde pentru culoarea finală
+Nivel minim de culoare albastră pentru culoarea finală
+Nivel minim de culoare pentru culoarea finală
+Nivel maxim de culoare roșie pentru culoarea finală
+Nivel maxim de culoare verde pentru culoarea finală
+Nivel maxim de culoare albastră pentru culoarea finală
+Nivel maxim de culoare pentru culoarea finală
+Numărul minim de rezolvare
+Numărul maxim de rezolvare
+Rezolvatorul arată intrarea
+Caracter din colțul din stânga sus pentru chenarul de notificare
+Caracter din colțul din dreapta sus pentru chenarul de notificare
+Caracter din colțul din stânga jos pentru chenarul de notificare
+Caracter din colțul din dreapta jos pentru chenarul de notificare
+Caracter de cadru superior pentru chenarul de notificare
+Caracter de cadru inferior pentru chenarul de notificare
+Caracter de cadru din stânga pentru chenarul de notificare
+Caracter cadru din dreapta pentru chenarul de notificare
+Dacă să arate ce este scris în promptul de intrare.
+Care este numărul minim de ales?
+Care este numărul maxim de ales?
+Dacă este specificat, va afișa un banner de pornire personalizat cu suport pentru substituenți. Puteți utiliza {0} pentru versiunea de kernel.
+Ce variantă a limbii curente este folosită pentru a schimba numele lunii, calendarul etc.?
+Activează suportul adevărat al culorilor.
+Cuvântul a fost șters în rândul {0}.
+Șir înlocuit pe linia {0}.
+Numărul rândului {0} a fost eliminat.
+Suprimați mesajele neautorizate
+Ascunde mesajul enervant dacă funcția de listare încearcă să deschidă un folder neautorizat
+Informații despre serverul FTP
+Adresa serverului:
+Port server:
+Tip server:
+Tip de sistem server:
+Mod de criptare server:
+Tip conexiune de date server:
+Sistem server:
+Tip de date de descărcare de server:
+Tip de date de încărcare pe server:
+Introduceți un fișier de la distanță pentru a fi hashing.
+Introduceți un director la distanță.
+Hashing recursiv pentru FTP
+Dacă se hash recursiv un director. Vă rugăm să rețineți că nu toate serverele FTP acceptă acest lucru.
+Viteza de ceas a procesorului:
+Numărul total de procesoare:
+Dimensiunea discului:
+Memorie totala:
+Placă grafică:
+Model de disc:
+Dacă ești sigur că ai deschis secțiunea corectă, verifică acest mesaj:
+Execută o comandă de server FTP
+Criptează un șir folosind CRC32
+Deschide clientul de e-mail
+de corespondență transferată...
+Testează funcționalitatea tabelului
+Editează linia specificată
+Adaugă noile linii la sfârșitul fișierului
+Introduceți textul pe care doriți să îl adăugați la sfârșitul fișierului. Când ați terminat, scrieți „EOF” pe propria linie.
+Nume gazdă
+Nume de utilizator
+Tip de date
+Codificare
+Criptare
+Protocoale
+Afișează progresul transferului de e-mail
+Progresul transferului de e-mail
+Progresul transferului de e-mail (singur)
+Dacă este activat, shell-ul de e-mail va arăta câți octeți transmiși la descărcarea e-mailului.
+Scrieți cum doriți să fie stilul de progres al transferului de e-mail. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați. {0} pentru dimensiunea transferată și {1} pentru dimensiunea totală.
+Scrieți cum doriți să fie stilul de progres al transferului de e-mail. Lăsați necompletat pentru a utiliza stilul implicit. Substituenții sunt analizați. {0} pentru dimensiunea transferată.
+Fus orar:
+Astăzi este {0}
+Ora curentă este {0}
+Raspunsuri posibile
+Fișierul mod nu este specificat.
+Încercarea de a instala un mod deja instalat. Se actualizează modul...
+Instalarea a eșuat pentru
+Fișierul mod furnizat este incompatibil.
+Dezinstalarea a eșuat pentru
+Tipăriți numerele de rând pe conținutul fișierului de tipărire
+Respinge toate notificările
+Descărcarea...
+Se încarcă...
+Afișați notificarea pentru progresul descărcării
+Afișați notificarea pentru progresul încărcării
+Afișează notificarea care arată progresul descărcării.
+Afișează notificarea care arată progresul încărcării.
+Verifică dacă șirul translabil există în resursele KS
+Șir găsit în resursele de localizare.
+Șirul nu a fost găsit în resursele de localizare.
+Pornește nucleul în liniște
+Pornește nucleul în modul sigur, dezactivând toate modurile
+Precum modul sigur, dar dezactivează și multi-utilizator și unele personalizări
+Nu au fost suficiente argumente.
+Culoarea colțului din stânga sus pentru bara de rampă
+Culoarea colțului din dreapta sus pentru bara de rampă
+Culoarea colțului din stânga jos pentru bara de rampă
+Culoarea colțului din dreapta jos pentru bara de rampă
+Culoarea cadrului superioară pentru bara de rampă
+Culoarea inferioară a cadrului pentru bara de rampă
+Culoarea cadrului din stânga pentru bara de rampă
+Culoarea dreptă a cadrului pentru bara de rampă
+Folosiți culorile marginilor pentru bara de rampă
+Utilizați culorile marginilor pentru bara de rampă. Dacă este dezactivat, va genera o bară gri.
+Pornește shell-ul HTTP
+Obține răspunsul de la serverul HTTP folosind cererea specificată
+Șterge conținutul de pe serverul HTTP
+A apărut o eroare în shell-ul HTTP:
+Obține șirul de pe serverul HTTP folosind cererea specificată
+Se obține {0}...
+Culorile nu necesită o repornire, dar majoritatea setărilor necesită o repornire.
+Niciun ajutor pentru argumentul „{0}”.
+Dificultate implicită pentru SpeedPress
+Timeout pentru apăsarea tastelor pentru SpeedPress
+Câte milisecunde trebuie să așteptați apăsarea tastei înainte de expirare? (În dificultate personalizată)
+Înlocuiește un cuvânt sau o expresie cu altul folosind expresii regulate
+Înlocuiește un cuvânt sau o expresie cu un altul dintr-o linie folosind expresii regulate
+Interogează un cuvânt dintr-o linie specificată sau pe toate liniile folosind expresii regulate
+Găsiți o setare
+Scrie ce vrei să cauți.
+Nu se găsește nimic. Asigurați-vă că ați scris corect setarea.
+Împachetează un fișier local în arhivă
+Nu pot împacheta nimic.
+Descrierea răspunsului
+Pentru mai multe informații despre termenii și condițiile de utilizare a acestui software, vizitați
+Tip de ieșire de alegere implicită
+Verifică toate setările KS pentru a vedea dacă variabilele sunt scrise corect
+Aceste intrări de configurare au variabile sau enumerari nevalide și trebuie remediate:
+Fișierul {0} nu a fost găsit
+Creează o matrice variabilă cu valorile furnizate
+Verifică toate numerele liniilor de text de localizare pentru a vedea dacă toate sunt egale
+Linie nepotrivită în
+Includeți utilizatori anonimi
+Includeți utilizatorii cu dizabilități
+Include utilizatorii anonimi în listă
+Include utilizatorii cu dizabilități în listă
+Sortați lista
+Sortează lista sistemului de fișiere în mod profesional.
+Oferă o alegere de selecție
+Comenzile Shell nu sunt implementate!!!
+Afișați cel mai recent titlu RSS la conectare
+Adresa URL a titlului RSS
+La fiecare conectare, va afișa cel mai recent titlu RSS de la adresa URL a titlului selectat.
+Adresa URL a titlului RSS care trebuie utilizată atunci când se afișează cel mai recent titlu. Acesta este de obicei feedul tău preferat.
+Nu s-au putut obține cele mai recente știri.
+Afișați urmărirea stivei la eroarea nucleului
+Dacă există vreo eroare de nucleu, alegeți dacă să imprimați sau nu urmărirea stivei pe consolă.
+Salvați setările ca
+Încărcați setările de la
+Unde doriți să salvați setările curente ale nucleului?
+Nu se pot salva setările kernelului peste fișierul existent.
+De unde doriți să încărcați setările curente ale nucleului?
+Verifică dacă șirurile translatable există în resursele KS
+Combină cele două fișiere text sau mai multe în fișierul de ieșire.
+Nu s-au putut combina fișierele.
+Timeout pentru preluarea fluxului RSS
+Câte milisecunde trebuie să aștepte înainte ca fluxul RSS să fie expirat?
+Umpleți casetele
+Desenăm cutia în întregime sau desenăm doar chenarul?
+Întârziere de etapă în milisecunde
+Câte milisecunde trebuie să așteptați înainte de a desena următoarea etapă?
+Următorul interval de putregai la rampă
+Câte milisecunde de așteptat înainte de a putrezi capătul următorului rampă?
+Nu s-a putut adăuga un eveniment.
+Nu s-a putut elimina un eveniment.
+Nu sunt furnizate suficiente argumente pentru a adăuga un eveniment.
+Nu sunt furnizate suficiente argumente pentru a elimina un eveniment.
+Nu există suficiente argumente pentru manipularea evenimentului.
+Nu sunt furnizate suficiente argumente pentru manipularea mementourilor.
+Memento fără titlu
+Eveniment fără titlu
+Acum este o zi de eveniment!
+Nu rata asta!
+Acțiune nevalidă.
+Un simplu cronometru
+Porniți sau opriți
+Poala
+Resetați
+Un simplu cronometru
+Setați intervalul
+Timeout indicat nu este numeric.
+Specificați timpul de expirare în milisecunde
+Salvați toate evenimentele și/sau mementourile în mod distructiv
+Dacă este activat, șterge toate evenimentele și/sau mementourile înainte de a le salva pe toate folosind comanda calendar.
+Verificați încercările de reîncercare pentru transmiterea FTP
+Timeout conexiune FTP
+Timeout pentru conexiunea de date FTP
+Versiuni FTP IP
+De câte ori să verificați încărcarea și descărcarea și reîncercați dacă verificarea eșuează înainte ca descărcarea să eșueze în ansamblu?
+Câte milisecunde trebuie așteptate înainte de expirarea timpului de conexiune FTP?
+Câte milisecunde trebuie așteptate înainte de expirarea conexiunii de date FTP?
+Alegeți versiunea de Internet Protocol pe care o acceptă serverul FTP și pe care o folosește clientul FTP.
+Încercați să porniți RPC cât timp este deja pornit.
+Găsește un fișier în directorul specificat sau în directorul curent
+Convertește sfârșiturile de linie în formatul pentru platforma curentă sau în formatul personalizat specificat
+Dimensiunea totală în folder:
+Afișați dimensiunea totală în listă
+Dacă este activat, afișează dimensiunea totală a folderului în listă, în funcție de modul în care se calculează dimensiunile folderului în funcție de configurație.
+Ești la curent!
+Formatare JSON implicită pentru shell JSON
+Selectează formatarea JSON implicită (înfrumusețată sau redusă) pentru salvarea shell-ului JSON.
+Actualizarea a fost descărcată cu succes!
+Descărcați automat actualizări
+Dacă există vreo actualizare, nucleul o va descărca automat.
+Raza de explozie a focului de artificii
+Câte blocuri (până la 10) este raza exploziei pentru focul de artificii atunci când este aprins?
+Această comandă are următoarele comutatoare care schimbă modul în care funcționează:
+Afișează detaliile fișierului în listă
+Suprimă mesajele enervante „permisiune refuzată”.
+Afișează toate fusurile orare
+Începe jocul în dificultate ușoară
+Începe jocul la dificultate medie
+Începe jocul în dificultate grea
+Începe jocul în dificultate foarte grea
+Începe jocul în dificultate personalizată. Vă rugăm să rețineți că timeout-ul personalizat în milisecunde ar trebui să fie scris ca argument.
+Creează un director care conține conținutul fișierului ZIP
+Afișează toate orașele disponibile
+Compresie rapidă
+Fără compresie
+Nu creați directorul de bază în arhivă
+Indică faptul că calea țintă este absolută
+Șterge toate evenimentele declanșate
+Activați depanarea evenimentelor
+Activează depanarea pentru sistemul de evenimente kernel
+Font Figlet
+Scrieți un font figlet care este acceptat de biblioteca Figgle. Consultați documentația bibliotecii pentru mai multe informații
+Nu s-a putut instala limba personalizată {0}.
+Informațiile despre metadate necesare pentru a instala limba personalizată nu oferă localizările necesare.
+Nu s-a putut dezinstala limba personalizată {0}.
+Lungimea limbii engleze nu se potrivește cu lungimea simbolului de limbă furnizat.
+Limba există deja și nu poate fi suprascrisă.
+Nu s-a putut dezinstala limba personalizată. Cel mai probabil nu există.
+Nu s-au instalat limbi personalizate.
+Nu s-au putut dezinstala limbi personalizate.
+Nu s-au putut dezinstala limbi personalizate. Consultați excepția interioară pentru mai multe informații.
+Informații despre licență
+Gestionați-vă limbile
+Limba nu a fost găsită sau fișierul are caractere nevalide.
+Limba nu este specificată.
+Gestionarea limbii este dezactivată în modul sigur.
+Nume scurt de limbă:
+Limba nume complet:
+Limba transliterabila:
+Limbă personalizată:
+Ecran de splash elegant
+Activează ecranul de splash elegant la pornire. Vă rugăm să rețineți că va dezactiva argumentul prompt și va testa shell pre-boot.
+Splash nume
+Numele splash din splash-urile disponibile implementate în kernel.
+Utilizatori inițializați
+Bine ati venit!
+Se pornește depanatorul de la distanță...
+Eroare de conectare la depanator la distanță
+Notificați despre eroarea conexiunii de depanare la distanță
+Dacă este activat, va folosi sistemul de notificare pentru a notifica gazda despre eroarea conexiunii de depanare la distanță. În caz contrar, va folosi scrierea implicită în consola.
+Font Figlet pentru cronometru
+Activați Figlet pentru cronometru
+Dacă este activat, va folosi figlet pentru cronometru. Vă rugăm să rețineți că are nevoie de un ecran mare de consolă pentru a reda timpul corect cu Figlet activat.
+Resetează nucleul la setările din fabrică
+Ocolește detectarea dimensiunii consolei
+Se pare că ocoliți detectarea dimensiunii consolei. Este posibil ca lucrurile să nu funcționeze corect pe ecranele mici.
+Pentru a avea o experiență mai bună, redimensionați fereastra consolei în timp ce vă aflați în continuare pe acest ecran. Apăsați orice tastă pentru a continua...
+Consola dvs. este prea mică pentru a rula corect:
+Font banner figlet
+Afișați comenzile care contează pe ajutor
+Afișați că comenzile shell contează pe ajutor
+Afișați comenzile de mod se bazează pe ajutor
+Arătați numerele de nume pe ajutor
+Execută comenzi odată ce expresiile UESH sunt satisfăcute
+Condiția nu a fost găsită în expresie.
+Condiția {0} necesită {1} argumente. Am primit {2}.
+Eroare la analizarea expresiei din cauza unei erori de sintaxă.
+Condiția nu a fost îndeplinită. Mai multe informatii aici:
+Caracter de mască de parolă
+Un personaj care maschează parola. Lăsați necompletat pentru mai multă siguranță.
+Iese din shell dacă rulează pe subshell
+Nu se poate ucide coaja mamei!
+Nu se poate deconecta din subshell.
+Fișierul nu este specificat. Se ies din shell...
+Culoarea barei de progres
+Deschide setările screensaverului
+Deschide setările splash
+Enumeră variabilele UESH disponibile
+Locația textului de progres
+Selectați locația preferată a textului de progres.
+Poți scrie doar numerele.
+Apăsați „q” pentru a ieși.
+Activează modul de depanare
+Activați modul Alb-negru
+Face discoteca alb-negru. Vă va răni cu adevărat ochii dacă a fost prea rapid, așa că nu este recomandat dacă aveți o criză de imagini rapide.
+Încărcați culorile curente
+Valoarea curentă:
+Specificator de culoare hexadecimal nevalid.
+Specificator de culoare RGB nevalid.
+Specificator de culoare roșie nevalid.
+Specificator de culoare verde nevalid.
+Specificator de culoare albastră nevalid.
+Adaugă un nou octet la sfârșitul fișierului
+Adaugă noii octeți la sfârșitul fișierului
+Șterge fișierul binar
+Șterge un octet utilizând numărul octetului
+Șterge intervalul de octeți
+Iese din editorul hexadecimal
+Imprimă conținutul fișierului cu numere de octeți pe consolă
+Interogează un octet dintr-un interval specificat de octeți sau toți octeții
+Înlocuiește un octet cu altul
+Octet înlocuit.
+Editorul hexadecimal nu a deschis încă un flux de fișiere.
+Introduceți un octet pe propria linie pe care doriți să îl adăugați la sfârșitul fișierului. Când ați terminat, scrieți „EOF” pe propria linie.
+Nu este un octet valid.
+Numărul de octeți specificat nu poate fi mai mare decât dimensiunea fișierului.
+Octet șters.
+Numărul octetului nu este numeric.
+Numărul octetului de început specificat nu poate fi mai mare decât dimensiunea fișierului.
+Numărul de octet de final specificat nu poate fi mai mare decât dimensiunea fișierului.
+Octeți șterși.
+Vă rugăm să rețineți că editarea fișierelor binare folosind acest shell este experimentală și poate duce la coruperea sau pierderea datelor dacă nu este utilizată corect.
+NU LANSAȚI COCHILA DECÂT DACĂ ȘTIȚI CE FACEȚI!
+Obține informații despre cheie pentru o tastă apăsată. Util pentru depanare
+Introduceți o tastă sau o combinație de taste pentru a afișa informațiile acesteia.
+Tasta apăsată
+Caracter tastă apăsat
+Modificatori apăsați
+Comanda rapidă de la tastatură
+Activați salvarea automată a editorului hex
+Interval de salvare automată a editorului hexadecimal
+Activează sau dezactivează funcția de salvare automată a editorului hexadecimal.
+Densitatea zgomotului
+Câte milisecunde să aștepte înainte de a scrie pe noul ecran?
+Cu cât procentul este mai mare, cu atât semnalul este mai zgomotos
+Scriptul este incorect. Verificați scriptul și rezolvați eventualele erori: {0}
+Jocul șarpelui!
+Folosește calea relativă în loc de cea absolută
+Fișierul mod este invalid.
+Marca feedul
+Generator de nume și prenume
+Elimină marcajul de feed
+Feedul nu există în marcaje.
+Listează toate fluxurile marcate
+Numele minim contează
+Numărul maxim de nume
+Cantitatea minimă de nume de generat
+Numărul maxim de nume de generat
+Vârsta minimă anii contează
+Vârsta maximă contează
+Cantitatea minimă de ani de vârstă de generat
+Cantitatea maximă de ani de vârstă de generat
+Pagina de manual fără titlu
+Istoricul intrărilor este activat
+Indiferent dacă istoricul intrărilor este activat sau nu. Dacă este activată, puteți accesa comenzile introduse recent folosind tastele săgeți sus sau jos.
+Convertește numerele RGB de culoare în hex.
+Convertește reprezentarea hexazecimală a culorii în numere RGB.
+Convertește reprezentarea hexazecimală a culorii în numere RGB în format KS.
+Nivel de culoare roșie:
+Nivel de culoare verde:
+Nivel de culoare albastru:
+Secvență de culori RGB:
+Nivelul de culoare roșie trebuie să fie numeric.
+Nivelul de culoare verde trebuie să fie numeric.
+Nivelul de culoare albastră trebuie să fie numeric.
+Reprezentare hexazecimală de culoare:
+Numele piesei mod:
+Numele fișierului piesei mod:
+Calea fișierului piesei mod:
+Acum puteți opri computerul în siguranță.
+Simulați modul fără APM
+Dacă să simuleze o situație în care nu există APM disponibil. Dacă este activat, informează utilizatorul că acum este sigur să oprească computerul la oprire.
+Densitatea glitch-urilor
+Cu cât procentul este mai mare, cu atât mai dens este glitch-ul!
+Dicționarul englez
+Informații de cuvânt pentru
+API este licențiat sub
+Cuvânt:
+Sensurile cuvintelor pentru
+Parte de vorbire:
+Definiție:
+Exemplu în propoziție:
+Surse folosite pentru a defini
+Sinonime:
+Antonime:
+Testează consola pentru suportul PowerLine
+Asigurați-vă că utilizați un font de consolă care acceptă glife PowerLine, altfel este posibil ca rezultatul să nu fie redat corect. Iti recomandam
+Deschide biblioteca de presetări shell
+Presetarea specificată {0} nu a fost găsită.
+Ești o navă spațială și meteorii vin să te distrugă. Îl poți salva?
+Retro Nitrocid KS bazat pe 0.0.4.1
+Dispozitivul există deja în lista blocate.
+Dispozitivul nu există în lista blocate.
+Testează execuția punctului de intrare a ansamblului
+Selectați presetarea pentru {0}:
+Convertor de unități
+Tipuri de unități disponibile și unitățile acestora:
+Joc încheiat
+Eroare neașteptată
+Se verifică actualizările...
+Se descarcă versiunea
+Se instalează versiunea
+Revenind la 2018...
+Utilizați PowerLine pentru redarea navei spațiale
+Viteza jocului Meteor
+Dacă să folosiți PowerLine pentru a reda nava spațială sau să folosiți standardul mai mare decât caracterul. Dacă doriți să utilizați PowerLine cu Meteor, trebuie să instalați un font adecvat cu suport PowerLine.
+Specifică viteza jocului în milisecunde.

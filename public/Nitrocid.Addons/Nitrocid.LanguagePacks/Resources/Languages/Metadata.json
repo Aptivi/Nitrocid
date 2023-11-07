@@ -69,6 +69,12 @@
         "country": "Germany"
     },
     {
+        "three": "grk",
+        "name": "Greek",
+        "transliterable": false,
+        "country": "Greek"
+    },
+    {
         "three": "ind",
         "name": "Hindi",
         "transliterable": true,
@@ -107,10 +113,22 @@
         "country": "Korea"
     },
     {
+        "three": "ltn",
+        "name": "Latin",
+        "transliterable": false,
+        "country": "Latin"
+    },
+    {
         "three": "ptg",
         "name": "Portuguese",
         "transliterable": false,
         "country": "Portugal"
+    },
+    {
+        "three": "rmn",
+        "name": "Roman",
+        "transliterable": false,
+        "country": "Romania"
     },
     {
         "three": "rus",
