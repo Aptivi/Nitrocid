@@ -94,7 +94,7 @@
 
   <!-- KS Non-private Dependencies Information -->
   <ItemGroup>
-    <PackageReference Include="Terminaux" Version="1.12.0" />
+    <PackageReference Include="Terminaux" Version="1.12.1" />
   </ItemGroup>
   <!-- KS Non-private Dependencies Information End -->
 
