@@ -59,6 +59,10 @@ namespace KS.Files.Editors.HexEdit
             new HexEditorBinding( /* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
             new HexEditorBinding( /* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
             new HexEditorBinding( /* Localizable */ "Down", ConsoleKey.DownArrow, default, MoveDown, true),
+            new HexEditorBinding( /* Localizable */ "Previous page", ConsoleKey.PageUp, default, PreviousPage, true),
+            new HexEditorBinding( /* Localizable */ "Next page", ConsoleKey.PageDown, default, NextPage, true),
+            new HexEditorBinding( /* Localizable */ "Beginning", ConsoleKey.Home, default, Beginning, true),
+            new HexEditorBinding( /* Localizable */ "End", ConsoleKey.End, default, End, true),
         };
 
         /// <summary>
@@ -103,10 +107,10 @@ namespace KS.Files.Editors.HexEdit
 
                     // Now, render the keybindings
                     RenderKeybindings();
-
-                    // Render the box
-                    RenderHexViewBox();
                 }
+
+                // Render the box
+                RenderHexViewBox();
 
                 // Now, render the visual hex with the current selection
                 RenderContentsInHexWithSelection(byteIdx);
@@ -178,6 +182,10 @@ namespace KS.Files.Editors.HexEdit
             int endIndex = byteLinesPerPage * (currentPage + 1);
             int startByte = (startIndex * 16) + 1;
             int endByte = endIndex * 16;
+            if (startByte > HexEditShellCommon.FileBytes.Length)
+                startByte = HexEditShellCommon.FileBytes.Length;
+            if (endByte > HexEditShellCommon.FileBytes.Length)
+                endByte = HexEditShellCommon.FileBytes.Length;
             string rendered = FileContentPrinter.RenderContentsInHex(byteIdx + 1, startByte, endByte, HexEditShellCommon.FileBytes);
             TextWriterWhereColor.WriteWhereColorBack(rendered, 1, 2, BaseInteractiveTui.ForegroundColor, KernelColorTools.GetColor(KernelColorType.Background));
         }
@@ -356,5 +364,35 @@ namespace KS.Files.Editors.HexEdit
                 Translate.DoTranslation("Number") + $": {byteNumNumber} | " +
                 Translate.DoTranslation("Binary") + $": {byteNumBinary}";
         }
+
+        private static void PreviousPage()
+        {
+            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+            int currentSelection = byteIdx / 16;
+            int currentPage = currentSelection / byteLinesPerPage;
+            int startIndex = byteLinesPerPage * currentPage;
+            int startByte = startIndex * 16;
+            if (startByte > HexEditShellCommon.FileBytes.Length)
+                startByte = HexEditShellCommon.FileBytes.Length;
+            byteIdx = startByte - 1 < 0 ? 0 : startByte - 1;
+        }
+
+        private static void NextPage()
+        {
+            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+            int currentSelection = byteIdx / 16;
+            int currentPage = currentSelection / byteLinesPerPage;
+            int endIndex = byteLinesPerPage * (currentPage + 1);
+            int startByte = endIndex * 16;
+            if (startByte > HexEditShellCommon.FileBytes.Length - 1)
+                startByte = HexEditShellCommon.FileBytes.Length - 1;
+            byteIdx = startByte;
+        }
+
+        private static void Beginning() =>
+            byteIdx = 0;
+
+        private static void End() =>
+            byteIdx = HexEditShellCommon.FileBytes.Length - 1;
     }
 }
