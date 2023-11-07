@@ -173,7 +173,7 @@ namespace KS.Files.Editors.HexEdit
             // Then, render the contents with the selection indicator
             int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
             int currentSelection = byteIdx / 16;
-            int currentPage = (currentSelection - 1) / byteLinesPerPage;
+            int currentPage = currentSelection / byteLinesPerPage;
             int startIndex = byteLinesPerPage * currentPage;
             int endIndex = byteLinesPerPage * (currentPage + 1);
             int startByte = (startIndex * 16) + 1;
