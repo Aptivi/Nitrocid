@@ -172,6 +172,42 @@ namespace KS.Files.Editors.HexEdit
         }
 
         /// <summary>
+        /// Adds a new byte to the current hex
+        /// </summary>
+        /// <param name="Content">New byte content</param>
+        /// <param name="pos">Position to insert a new byte to</param>
+        public static void AddNewByte(byte Content, long pos)
+        {
+            if (HexEditShellCommon.FileStream is not null)
+            {
+                // Check the position
+                if (pos < 1 || pos > HexEditShellCommon.FileBytes.Length)
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
+
+                var FileBytesList = HexEditShellCommon.FileBytes.ToList();
+                long ByteIndex = pos - 1L;
+                DebugWriter.WriteDebug(DebugLevel.I, "Byte index: {0}, number: {1}", ByteIndex, pos);
+                DebugWriter.WriteDebug(DebugLevel.I, "File length: {0}", HexEditShellCommon.FileBytes.LongLength);
+
+                // Actually remove a byte
+                if (pos <= HexEditShellCommon.FileBytes.LongLength)
+                {
+                    FileBytesList.Insert((int)ByteIndex, Content);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Inserted {0}. Result: {1}", ByteIndex, HexEditShellCommon.FileBytes.LongLength);
+                    HexEditShellCommon.FileBytes = FileBytesList.ToArray();
+                }
+                else
+                {
+                    throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The specified byte number may not be larger than the file size."));
+                }
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("The hex editor hasn't opened a file stream yet."));
+            }
+        }
+
+        /// <summary>
         /// Adds the new bytes to the current hex
         /// </summary>
         /// <param name="Bytes">New bytes</param>

@@ -54,7 +54,21 @@ namespace KS.Shell.Shells.Hex
                         new CommandArgumentInfo()
                     }, new AddBytesCommand())
             },
-            
+
+            { "addbyteto",
+                new CommandInfo("addbyteto", /* Localizable */ "Adds a new byte to the specified position",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "byte"),
+                            new CommandArgumentPart(true, "pos", new()
+                            {
+                                IsNumeric = true,
+                            })
+                        })
+                    }, new AddByteToCommand())
+            },
+
             { "clear",
                 new CommandInfo("clear", /* Localizable */ "Clears the binary file",
                     new[] {

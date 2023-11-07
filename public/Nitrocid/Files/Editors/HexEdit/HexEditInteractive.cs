@@ -32,6 +32,7 @@ using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Shell.Shells.Hex;
 using System;
+using System.Globalization;
 using System.Linq;
 
 namespace KS.Files.Editors.HexEdit
@@ -49,6 +50,7 @@ namespace KS.Files.Editors.HexEdit
         {
             new HexEditorBinding(/* Localizable */ "Exit", ConsoleKey.Escape, default, () => bail = true, true),
             new HexEditorBinding(/* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
+            new HexEditorBinding(/* Localizable */ "Insert", ConsoleKey.F1, default, Insert, true),
             new HexEditorBinding(/* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
             new HexEditorBinding(/* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
             new HexEditorBinding(/* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
@@ -234,6 +236,19 @@ namespace KS.Files.Editors.HexEdit
             byteIdx += 16;
             if (byteIdx > HexEditShellCommon.FileBytes.Length - 1)
                 byteIdx = HexEditShellCommon.FileBytes.Length - 1;
+        }
+
+        private static void Insert()
+        {
+            // Prompt and parse the number
+            byte byteNum = default;
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            if (byteNumHex.Length != 2 ||
+                (byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum)))
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            else
+                HexEditTools.AddNewByte(byteNum, byteIdx + 1);
+            refresh = true;
         }
     }
 }
