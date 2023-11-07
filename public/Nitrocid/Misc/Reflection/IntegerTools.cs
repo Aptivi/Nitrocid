@@ -129,5 +129,229 @@ namespace KS.Misc.Reflection
 
             return TextTools.FormatString("{0:0.#} {1}", len, sizeOrders[orderIdx]);
         }
+
+        /// <summary>
+        /// Converts the number to the binary representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A binary representation of the number</returns>
+        public static string ToBinary(this short num) =>
+            Convert.ToString(num, 2);
+
+        /// <summary>
+        /// Converts the number to the octal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>An octal representation of the number</returns>
+        public static string ToOctal(this short num) =>
+            Convert.ToString(num, 8);
+
+        /// <summary>
+        /// Converts the number to the number representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A number representation of the number</returns>
+        public static string ToNumber(this short num) =>
+            Convert.ToString(num);
+
+        /// <summary>
+        /// Converts the number to the hexadecimal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A hexadecimal representation of the number</returns>
+        public static string ToHex(this short num) =>
+            Convert.ToString(num, 16);
+
+        /// <summary>
+        /// Converts the number to the binary representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A binary representation of the number</returns>
+        public static string ToBinary(this int num) =>
+            Convert.ToString(num, 2);
+
+        /// <summary>
+        /// Converts the number to the octal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>An octal representation of the number</returns>
+        public static string ToOctal(this int num) =>
+            Convert.ToString(num, 8);
+
+        /// <summary>
+        /// Converts the number to the number representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A number representation of the number</returns>
+        public static string ToNumber(this int num) =>
+            Convert.ToString(num);
+
+        /// <summary>
+        /// Converts the number to the hexadecimal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A hexadecimal representation of the number</returns>
+        public static string ToHex(this int num) =>
+            Convert.ToString(num, 16);
+
+        /// <summary>
+        /// Converts the number to the binary representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A binary representation of the number</returns>
+        public static string ToBinary(this long num) =>
+            Convert.ToString(num, 2);
+
+        /// <summary>
+        /// Converts the number to the octal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>An octal representation of the number</returns>
+        public static string ToOctal(this long num) =>
+            Convert.ToString(num, 8);
+
+        /// <summary>
+        /// Converts the number to the number representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A number representation of the number</returns>
+        public static string ToNumber(this long num) =>
+            Convert.ToString(num);
+
+        /// <summary>
+        /// Converts the number to the hexadecimal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A hexadecimal representation of the number</returns>
+        public static string ToHex(this long num) =>
+            Convert.ToString(num, 16);
+
+        /// <summary>
+        /// Converts the number to the binary representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A binary representation of the number</returns>
+        public static string ToBinary(this byte num) =>
+            Convert.ToString(num, 2);
+
+        /// <summary>
+        /// Converts the number to the octal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>An octal representation of the number</returns>
+        public static string ToOctal(this byte num) =>
+            Convert.ToString(num, 8);
+
+        /// <summary>
+        /// Converts the number to the number representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A number representation of the number</returns>
+        public static string ToNumber(this byte num) =>
+            Convert.ToString(num);
+
+        /// <summary>
+        /// Converts the number to the hexadecimal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A hexadecimal representation of the number</returns>
+        public static string ToHex(this byte num) =>
+            Convert.ToString(num, 16);
+
+        /// <summary>
+        /// Converts the number to the binary representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A binary representation of the number</returns>
+        public static string ToBinary(this ushort num) =>
+            Convert.ToString(num, 2);
+
+        /// <summary>
+        /// Converts the number to the octal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>An octal representation of the number</returns>
+        public static string ToOctal(this ushort num) =>
+            Convert.ToString(num, 8);
+
+        /// <summary>
+        /// Converts the number to the number representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A number representation of the number</returns>
+        public static string ToNumber(this ushort num) =>
+            Convert.ToString(num);
+
+        /// <summary>
+        /// Converts the number to the hexadecimal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A hexadecimal representation of the number</returns>
+        public static string ToHex(this ushort num) =>
+            Convert.ToString(num, 16);
+
+        /// <summary>
+        /// Converts the number to the binary representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A binary representation of the number</returns>
+        public static string ToBinary(this uint num) =>
+            Convert.ToString(num, 2);
+
+        /// <summary>
+        /// Converts the number to the octal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>An octal representation of the number</returns>
+        public static string ToOctal(this uint num) =>
+            Convert.ToString(num, 8);
+
+        /// <summary>
+        /// Converts the number to the number representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A number representation of the number</returns>
+        public static string ToNumber(this uint num) =>
+            Convert.ToString(num);
+
+        /// <summary>
+        /// Converts the number to the hexadecimal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A hexadecimal representation of the number</returns>
+        public static string ToHex(this uint num) =>
+            Convert.ToString(num, 16);
+
+        /// <summary>
+        /// Converts the number to the binary representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A binary representation of the number</returns>
+        public static string ToBinary(this sbyte num) =>
+            Convert.ToString(num, 2);
+
+        /// <summary>
+        /// Converts the number to the octal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>An octal representation of the number</returns>
+        public static string ToOctal(this sbyte num) =>
+            Convert.ToString(num, 8);
+
+        /// <summary>
+        /// Converts the number to the number representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A number representation of the number</returns>
+        public static string ToNumber(this sbyte num) =>
+            Convert.ToString(num);
+
+        /// <summary>
+        /// Converts the number to the hexadecimal representation
+        /// </summary>
+        /// <param name="num">Target number</param>
+        /// <returns>A hexadecimal representation of the number</returns>
+        public static string ToHex(this sbyte num) =>
+            Convert.ToString(num, 16);
     }
 }
