@@ -48,17 +48,17 @@ namespace KS.Files.Editors.HexEdit
         private static int byteIdx = 0;
         private static readonly HexEditorBinding[] bindings = new[]
         {
-            new HexEditorBinding(/* Localizable */ "Exit", ConsoleKey.Escape, default, () => bail = true, true),
-            new HexEditorBinding(/* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
-            new HexEditorBinding(/* Localizable */ "Insert", ConsoleKey.F1, default, Insert, true),
-            new HexEditorBinding(/* Localizable */ "Remove", ConsoleKey.F2, default, Remove, true),
-            new HexEditorBinding(/* Localizable */ "Replace", ConsoleKey.F3, default, Replace, true),
-            new HexEditorBinding(/* Localizable */ "Replace All", ConsoleKey.F3, ConsoleModifiers.Shift, ReplaceAll, true),
-            new HexEditorBinding(/* Localizable */ "Number Info", ConsoleKey.F4, default, NumInfo, true),
-            new HexEditorBinding(/* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
-            new HexEditorBinding(/* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
-            new HexEditorBinding(/* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
-            new HexEditorBinding(/* Localizable */ "Down", ConsoleKey.DownArrow, default, MoveDown, true),
+            new HexEditorBinding( /* Localizable */ "Exit", ConsoleKey.Escape, default, () => bail = true, true),
+            new HexEditorBinding( /* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
+            new HexEditorBinding( /* Localizable */ "Insert", ConsoleKey.F1, default, Insert, true),
+            new HexEditorBinding( /* Localizable */ "Remove", ConsoleKey.F2, default, Remove, true),
+            new HexEditorBinding( /* Localizable */ "Replace", ConsoleKey.F3, default, Replace, true),
+            new HexEditorBinding( /* Localizable */ "Replace All", ConsoleKey.F3, ConsoleModifiers.Shift, ReplaceAll, true),
+            new HexEditorBinding( /* Localizable */ "Number Info", ConsoleKey.F4, default, NumInfo, true),
+            new HexEditorBinding( /* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
+            new HexEditorBinding( /* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
+            new HexEditorBinding( /* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
+            new HexEditorBinding( /* Localizable */ "Down", ConsoleKey.DownArrow, default, MoveDown, true),
         };
 
         /// <summary>
@@ -104,15 +104,15 @@ namespace KS.Files.Editors.HexEdit
                     // Now, render the keybindings
                     RenderKeybindings();
 
-                    // Render the status
-                    RenderStatus();
-
                     // Render the box
                     RenderHexViewBox();
                 }
 
                 // Now, render the visual hex with the current selection
                 RenderContentsInHexWithSelection(byteIdx);
+
+                // Render the status
+                RenderStatus();
 
                 // Wait for a keypress
                 var keypress = Input.DetectKeypress();
@@ -152,7 +152,7 @@ namespace KS.Files.Editors.HexEdit
         }
 
         private static void RenderStatus() =>
-            TextWriterWhereColor.WriteWhereColorBack(status, 0, 0, BaseInteractiveTui.ForegroundColor, KernelColorTools.GetColor(KernelColorType.Background));
+            TextWriterWhereColor.WriteWhereColorBack(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0, BaseInteractiveTui.ForegroundColor, KernelColorTools.GetColor(KernelColorType.Background));
 
         private static void RenderHexViewBox()
         {
@@ -167,9 +167,13 @@ namespace KS.Files.Editors.HexEdit
 
         private static void RenderContentsInHexWithSelection(int byteIdx)
         {
+            // First, update the status
+            StatusNumInfo();
+
+            // Then, render the contents with the selection indicator
             int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
-            int paneCurrentSelection = byteIdx / 16;
-            int currentPage = (paneCurrentSelection - 1) / byteLinesPerPage;
+            int currentSelection = byteIdx / 16;
+            int currentPage = (currentSelection - 1) / byteLinesPerPage;
             int startIndex = byteLinesPerPage * currentPage;
             int endIndex = byteLinesPerPage * (currentPage + 1);
             int startByte = (startIndex * 16) + 1;
@@ -334,6 +338,23 @@ namespace KS.Files.Editors.HexEdit
                 Translate.DoTranslation("Binary") + $": {byteNumBinary}"
                 , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             refresh = true;
+        }
+
+        private static void StatusNumInfo()
+        {
+            // Get the hex number in different formats
+            byte byteNum = HexEditShellCommon.FileBytes[byteIdx];
+            string byteNumHex = byteNum.ToString("X2");
+            string byteNumOctal = Convert.ToString(byteNum, 8);
+            string byteNumNumber = Convert.ToString(byteNum);
+            string byteNumBinary = Convert.ToString(byteNum, 2);
+
+            // Change the status to the number information
+            status =
+                Translate.DoTranslation("Hexadecimal") + $": {byteNumHex} | " +
+                Translate.DoTranslation("Octal") + $": {byteNumOctal} | " +
+                Translate.DoTranslation("Number") + $": {byteNumNumber} | " +
+                Translate.DoTranslation("Binary") + $": {byteNumBinary}";
         }
     }
 }
