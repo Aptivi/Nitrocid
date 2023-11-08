@@ -283,21 +283,24 @@ namespace KS.Kernel.Debugging.Testing
                     if (facade.TestInteractive)
                     {
                         // Prompt the user to check to see if the test ran as expected
-                        string answer = InfoBoxInputColor.WriteInfoBoxInput(
-                            Translate.DoTranslation("Did the test run as expected?") + "\n\n" +
-                            "  * y: " + Translate.DoTranslation("Yes, the test ran as expected") + "\n" +
-                            "  * n: " + Translate.DoTranslation("No, the test didn't run as expected") + "\n" +
-                            "  * r: " + Translate.DoTranslation("Retry the test")
+                        int answer = InfoBoxButtonsColor.WriteInfoBoxButtons(
+                            new[]
+                            {
+                                Translate.DoTranslation("Yes!"),
+                                Translate.DoTranslation("No"),
+                                Translate.DoTranslation("Retry"),
+                            },
+                            Translate.DoTranslation("Did the test run as expected?")
                         );
 
                         // Set status or retry
                         switch (answer)
                         {
-                            case "y":
+                            case 0:
                                 facade.status = TestStatus.Success;
                                 tested = true;
                                 break;
-                            case "r":
+                            case 2:
                                 break;
                             default:
                                 facade.status = TestStatus.Failed;

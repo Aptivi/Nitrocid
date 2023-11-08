@@ -74,25 +74,26 @@ namespace KS.Kernel.Configuration.Settings.KeyInputs
                 {
                     // Tell the user to choose between adding, removing, or exiting
                     int selectedItemIdx = selectionAnswer - 1;
-                    var choice = choices[selectedItemIdx];
-                    string result = InfoBoxInputColor.WriteInfoBoxInput(
-                        Translate.DoTranslation("What do you want to do with this item?") + CharManager.NewLine +
-                        $"{choice.ChoiceName}: {choice.ChoiceTitle}" + CharManager.NewLine + CharManager.NewLine +
-                        $"  1) {Translate.DoTranslation("Keep this item")}" + CharManager.NewLine +
-                        $"  2) {Translate.DoTranslation("Remove this item")}" + CharManager.NewLine +
-                        $"  3) {Translate.DoTranslation("Add new item")}"
-                    );
+                    int result = InfoBoxButtonsColor.WriteInfoBoxButtons(
+                        new[]
+                        {
+                            Translate.DoTranslation("Keep it"),
+                            Translate.DoTranslation("Remove it"),
+                            Translate.DoTranslation("Add new item"),
+                        },
+                        Translate.DoTranslation("What do you want to do with this item?")
+                    ) + 1;
 
                     // Check the action number
-                    if (int.TryParse(result, out int selectedAction) && selectedAction >= 1 && selectedAction <= 3)
+                    if (result >= 1 && result <= 3)
                     {
                         // Depending on the action, select whether to add, remove, or keep
-                        if (selectedAction == 2)
+                        if (result == 2)
                         {
                             // Removing item
                             TargetList.RemoveAt(selectedItemIdx);
                         }
-                        else if (selectedAction == 3)
+                        else if (result == 3)
                         {
                             // Adding new item
                             string newItemValue = InfoBoxInputColor.WriteInfoBoxInput(Translate.DoTranslation("Enter a value for the new item"));
