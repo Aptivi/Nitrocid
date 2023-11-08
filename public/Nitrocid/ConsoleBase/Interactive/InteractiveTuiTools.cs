@@ -549,6 +549,7 @@ namespace KS.ConsoleBase.Interactive
                        interactiveTui.SecondaryDataSource :
                        interactiveTui.PrimaryDataSource;
             int dataCount = EnumerableTools.CountElements(data);
+            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
 
             // Populate selected data
             object selectedData = EnumerableTools.GetElementFromIndex(data, paneCurrentSelection - 1);
@@ -590,13 +591,29 @@ namespace KS.ConsoleBase.Interactive
                             DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", BaseInteractiveTui.FirstPaneCurrentSelection);
                         }
                         break;
-                    case ConsoleKey.PageUp:
+                    case ConsoleKey.Home:
                         SelectionMovement(interactiveTui, 1);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: 1");
                         break;
-                    case ConsoleKey.PageDown:
+                    case ConsoleKey.End:
                         SelectionMovement(interactiveTui, dataCount);
                         DebugWriter.WriteDebug(DebugLevel.I, "Selection: {0}", dataCount);
+                        break;
+                    case ConsoleKey.PageUp:
+                        {
+                            int answersPerPage = SeparatorMaximumHeightInterior;
+                            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
+                            int startIndex = answersPerPage * currentPage;
+                            SelectionMovement(interactiveTui, startIndex);
+                        }
+                        break;
+                    case ConsoleKey.PageDown:
+                        {
+                            int answersPerPage = SeparatorMaximumHeightInterior;
+                            int currentPage = (paneCurrentSelection - 1) / answersPerPage;
+                            int startIndex = answersPerPage * (currentPage + 1) + 1;
+                            SelectionMovement(interactiveTui, startIndex);
+                        }
                         break;
                     case ConsoleKey.I:
                         if (pressedKey.Modifiers.HasFlag(ConsoleModifiers.Shift) && !string.IsNullOrEmpty(_finalInfoRendered))
