@@ -112,6 +112,7 @@ namespace KS.Kernel.Debugging.Testing
             { "TestInputInfoBoxMultiSelection",             new TestInputInfoBoxMultiSelection() },
             { "TestInputInfoBoxSelectionLarge",             new TestInputInfoBoxSelectionLarge() },
             { "TestInputInfoBoxSelectionLargeMultiple",     new TestInputInfoBoxSelectionLargeMultiple() },
+            { "TestInputInfoBoxButtons",                    new TestInputInfoBoxButtons() },
             { "TestPresentation",                           new TestPresentation() },
             { "TestPresentationKiosk",                      new TestPresentationKiosk() },
             { "TestPresentationRequired",                   new TestPresentationRequired() },
