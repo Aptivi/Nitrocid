@@ -1538,7 +1538,18 @@ namespace KS.Shell.Shells.UESH
                         })
                     }, new SumFilesCommand())
             },
-            
+
+            { "symlink",
+                new CommandInfo("symlink", /* Localizable */ "Creates a symbolic link to a file or a folder",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "linkname"),
+                            new CommandArgumentPart(true, "target"),
+                        })
+                    }, new SymlinkCommand())
+            },
+
             { "taskman",
                 new CommandInfo("taskman", /* Localizable */ "Task manager",
                     new[] {
