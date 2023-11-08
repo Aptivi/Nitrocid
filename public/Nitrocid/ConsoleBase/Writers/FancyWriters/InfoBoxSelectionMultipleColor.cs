@@ -189,7 +189,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 3, false);
                     }
 
                     // Handle keypress
@@ -211,6 +211,26 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                 selectedChoices.Remove(currentSelection);
                             else
                                 selectedChoices.Add(currentSelection);
+                            break;
+                        case ConsoleKey.Home:
+                            currentSelection = 0;
+                            break;
+                        case ConsoleKey.End:
+                            currentSelection = selections.Length - 1;
+                            break;
+                        case ConsoleKey.PageUp:
+                            {
+                                int currentPageMove = (currentSelection - 1) / selectionChoices;
+                                int startIndexMove = selectionChoices * currentPageMove;
+                                currentSelection = startIndexMove;
+                            }
+                            break;
+                        case ConsoleKey.PageDown:
+                            {
+                                int currentPageMove = currentSelection / selectionChoices;
+                                int startIndexMove = selectionChoices * (currentPageMove + 1);
+                                currentSelection = startIndexMove;
+                            }
                             break;
                         case ConsoleKey.Enter:
                             bail = true;
@@ -552,7 +572,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 3, false);
                     }
 
                     // Handle keypress
@@ -574,6 +594,26 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                 selectedChoices.Remove(currentSelection);
                             else
                                 selectedChoices.Add(currentSelection);
+                            break;
+                        case ConsoleKey.Home:
+                            currentSelection = 0;
+                            break;
+                        case ConsoleKey.End:
+                            currentSelection = selections.Length - 1;
+                            break;
+                        case ConsoleKey.PageUp:
+                            {
+                                int currentPageMove = (currentSelection - 1) / selectionChoices;
+                                int startIndexMove = selectionChoices * currentPageMove;
+                                currentSelection = startIndexMove;
+                            }
+                            break;
+                        case ConsoleKey.PageDown:
+                            {
+                                int currentPageMove = currentSelection / selectionChoices;
+                                int startIndexMove = selectionChoices * (currentPageMove + 1);
+                                currentSelection = startIndexMove;
+                            }
                             break;
                         case ConsoleKey.Enter:
                             bail = true;
@@ -771,7 +811,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 3, false);
                     }
 
                     // Handle keypress
@@ -793,6 +833,26 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                 selectedChoices.Remove(currentSelection);
                             else
                                 selectedChoices.Add(currentSelection);
+                            break;
+                        case ConsoleKey.Home:
+                            currentSelection = 0;
+                            break;
+                        case ConsoleKey.End:
+                            currentSelection = selections.Length - 1;
+                            break;
+                        case ConsoleKey.PageUp:
+                            {
+                                int currentPageMove = (currentSelection - 1) / selectionChoices;
+                                int startIndexMove = selectionChoices * currentPageMove;
+                                currentSelection = startIndexMove;
+                            }
+                            break;
+                        case ConsoleKey.PageDown:
+                            {
+                                int currentPageMove = currentSelection / selectionChoices;
+                                int startIndexMove = selectionChoices * (currentPageMove + 1);
+                                currentSelection = startIndexMove;
+                            }
                             break;
                         case ConsoleKey.Enter:
                             bail = true;
@@ -968,7 +1028,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 3, false);
                     }
 
                     // Handle keypress
@@ -990,6 +1050,26 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                                 selectedChoices.Remove(currentSelection);
                             else
                                 selectedChoices.Add(currentSelection);
+                            break;
+                        case ConsoleKey.Home:
+                            currentSelection = 0;
+                            break;
+                        case ConsoleKey.End:
+                            currentSelection = selections.Length - 1;
+                            break;
+                        case ConsoleKey.PageUp:
+                            {
+                                int currentPageMove = (currentSelection - 1) / selectionChoices;
+                                int startIndexMove = selectionChoices * currentPageMove;
+                                currentSelection = startIndexMove;
+                            }
+                            break;
+                        case ConsoleKey.PageDown:
+                            {
+                                int currentPageMove = currentSelection / selectionChoices;
+                                int startIndexMove = selectionChoices * (currentPageMove + 1);
+                                currentSelection = startIndexMove;
+                            }
                             break;
                         case ConsoleKey.Enter:
                             bail = true;
