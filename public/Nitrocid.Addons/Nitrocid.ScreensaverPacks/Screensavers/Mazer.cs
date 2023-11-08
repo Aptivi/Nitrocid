@@ -212,9 +212,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         mazeBuilder.Append($"{CharManager.GetEsc()}[47m");
                     mazeBuilder.Append(IsDirection(cell, Direction.South) ? " " : "_");
 
-                    if (IsDirection(cell, Direction.East) && x + 1 < xLength)
+                    if (IsDirection(cell, Direction.East))
                     {
-                        int finalCell = cell | grid[y, x + 1];
+                        int finalCellX = (x + 1 < xLength ? x + 1 : x);
+                        int finalCell = cell | grid[y, finalCellX];
                         mazeBuilder.Append(IsDirection(finalCell, Direction.South) ? " " : "_");
                     }
                     else
