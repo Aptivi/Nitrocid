@@ -112,7 +112,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Fill in some selection properties
                 int selectionBoxPosX = borderX + 4;
                 int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
-                int maxSelectionWidth = maxWidth - (selectionBoxPosX * 2);
+                int maxSelectionWidth = maxWidth - (selectionBoxPosX * 2) + 2;
 
                 // Buffer the box
                 var boxBuffer = new StringBuilder();
@@ -188,7 +188,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     if (Config.MainConfig.EnableScrollBarInSelection)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
-                        int left = maxWidth - 5;
+                        int left = maxWidth - 3;
                         ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
                     }
 
@@ -461,7 +461,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Fill in some selection properties
                 int selectionBoxPosX = borderX + 4;
                 int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
-                int maxSelectionWidth = maxWidth - (selectionBoxPosX * 2);
+                int maxSelectionWidth = maxWidth - (selectionBoxPosX * 2) + 2;
 
                 // Buffer the box
                 var boxBuffer = new StringBuilder();
@@ -545,7 +545,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     if (Config.MainConfig.EnableScrollBarInSelection)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
-                        int left = maxWidth - 5;
+                        int left = maxWidth - 3;
                         ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
                     }
 
@@ -674,7 +674,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Fill in some selection properties
                 int selectionBoxPosX = borderX + 4;
                 int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
-                int maxSelectionWidth = maxWidth - (selectionBoxPosX * 2);
+                int maxSelectionWidth = maxWidth - (selectionBoxPosX * 2) + 2;
 
                 // Buffer the box
                 var boxBuffer = new StringBuilder();
@@ -758,7 +758,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     if (Config.MainConfig.EnableScrollBarInSelection)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
-                        int left = maxWidth - 5;
+                        int left = maxWidth - 3;
                         ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
                     }
 
@@ -865,7 +865,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Fill in some selection properties
                 int selectionBoxPosX = borderX + 4;
                 int selectionBoxPosY = borderY + maxHeight - selectionReservedHeight + 3;
-                int maxSelectionWidth = maxWidth - (selectionBoxPosX * 2);
+                int maxSelectionWidth = maxWidth - (selectionBoxPosX * 2) + 2;
 
                 // Buffer the box
                 var boxBuffer = new StringBuilder();
@@ -949,7 +949,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     if (Config.MainConfig.EnableScrollBarInSelection)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
-                        int left = maxWidth - 5;
+                        int left = maxWidth - 3;
                         ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
                     }
 
