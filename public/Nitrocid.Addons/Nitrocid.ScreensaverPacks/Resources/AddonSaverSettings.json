@@ -5902,5 +5902,29 @@
                 "MaximumValue": 255
             }
         ]
+    },
+    {
+        "Name": "Mazer",
+        "Desc": "Generates nice mazes using the Kruskal's algorithm.",
+        "Keys": [
+            {
+                "Name": "New Maze Delay in Milliseconds",
+                "Type": "SInt",
+                "Variable": "NoiseNewScreenDelay",
+                "Description": "How many milliseconds to wait before writing in the new screen?"
+            },
+            {
+                "Name": "Generation Speed",
+                "Type": "SInt",
+                "Variable": "MazerGenerationSpeed",
+                "Description": "Maze generation speed in milliseconds"
+            },
+            {
+                "Name": "Highlight uncovered positions",
+                "Type": "SBoolean",
+                "Variable": "MazerHighlightUncovered",
+                "Description": "If enabled, highlights the non-covered positions with the gray background color. Otherwise, they render as boxes."
+            }
+        ]
     }
 ]

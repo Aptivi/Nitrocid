@@ -3168,5 +3168,17 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [DanceLines] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int DanceLinesMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [Mazer] How many milliseconds to wait before generating a new maze?
+        /// </summary>
+        public int MazerNewMazeDelay { get; set; } = 10000;
+        /// <summary>
+        /// [Mazer] Maze generation speed in milliseconds
+        /// </summary>
+        public int MazerGenerationSpeed { get; set; } = 20;
+        /// <summary>
+        /// [Mazer] If enabled, highlights the non-covered positions with the gray background color. Otherwise, they render as boxes.
+        /// </summary>
+        public bool MazerHighlightUncovered { get; set; } = false;
     }
 }

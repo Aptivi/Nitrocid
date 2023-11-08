@@ -81,6 +81,7 @@ namespace Nitrocid.ScreensaverPacks
             { "lines", new LinesDisplay() },
             { "linotypo", new LinotypoDisplay() },
             { "marquee", new MarqueeDisplay() },
+            { "mazer", new MazerDisplay() },
             { "memdump", new MemdumpDisplay() },
             { "mesmerize", new MesmerizeDisplay() },
             { "multilines", new MultiLinesDisplay() },
