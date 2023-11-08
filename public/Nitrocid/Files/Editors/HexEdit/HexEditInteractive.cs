@@ -54,6 +54,7 @@ namespace KS.Files.Editors.HexEdit
             new HexEditorBinding( /* Localizable */ "Remove", ConsoleKey.F2, default, Remove, true),
             new HexEditorBinding( /* Localizable */ "Replace", ConsoleKey.F3, default, Replace, true),
             new HexEditorBinding( /* Localizable */ "Replace All", ConsoleKey.F3, ConsoleModifiers.Shift, ReplaceAll, true),
+            new HexEditorBinding( /* Localizable */ "Replace All What", ConsoleKey.F3, ConsoleModifiers.Shift | ConsoleModifiers.Alt, ReplaceAllWhat, true),
             new HexEditorBinding( /* Localizable */ "Number Info", ConsoleKey.F4, default, NumInfo, true),
             new HexEditorBinding( /* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
             new HexEditorBinding( /* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
@@ -276,16 +277,9 @@ namespace KS.Files.Editors.HexEdit
 
         private static void Replace()
         {
-            // Prompt and parse the number
-            byte byteNum = default;
-            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to be replaced.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-            if (byteNumHex.Length != 2 ||
-                (byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum)))
-            {
-                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-                refresh = true;
-                return;
-            }
+            // Get the current byte number and its hex
+            byte byteNum = HexEditShellCommon.FileBytes[byteIdx];
+            string byteNumHex = byteNum.ToString("X2");
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
@@ -305,9 +299,38 @@ namespace KS.Files.Editors.HexEdit
 
         private static void ReplaceAll()
         {
-            // Prompt and parse the number
+            // Get the current byte number and its hex
             byte byteNum = HexEditShellCommon.FileBytes[byteIdx];
             string byteNumHex = byteNum.ToString("X2");
+
+            // Now, prompt for the replacement byte
+            byte byteNumReplaced = default;
+            string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor, byteNumHex);
+            if (byteNumReplacedHex.Length != 2 ||
+                (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
+            {
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+                refresh = true;
+                return;
+            }
+
+            // Do the replacement!
+            HexEditTools.Replace(byteNum, byteNumReplaced);
+            refresh = true;
+        }
+
+        private static void ReplaceAllWhat()
+        {
+            // Prompt and parse the number
+            byte byteNum = default;
+            string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to be replaced.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            if (byteNumHex.Length != 2 ||
+                (byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum)))
+            {
+                InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+                refresh = true;
+                return;
+            }
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
