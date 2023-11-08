@@ -3120,5 +3120,53 @@ namespace Nitrocid.ScreensaverPacks.Settings
         /// [FillFade] The maximum color level (255 colors or 16 colors)
         /// </summary>
         public int FillFadeMaximumColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [DanceLines] Enable truecolor support. Has a higher priority than 255 color support.
+        /// </summary>
+        public bool DanceLinesTrueColor { get; set; } = true;
+        /// <summary>
+        /// [DanceLines] How many milliseconds to wait before making the next write?
+        /// </summary>
+        public int DanceLinesDelay { get; set; } = 50;
+        /// <summary>
+        /// [DanceLines] Line character
+        /// </summary>
+        public string DanceLinesLineChar { get; set; } = "-";
+        /// <summary>
+        /// [DanceLines] Screensaver background color
+        /// </summary>
+        public string DanceLinesBackgroundColor { get; set; } = new Color(ConsoleColors.Black).PlainSequence;
+        /// <summary>
+        /// [DanceLines] The minimum red color level (true color)
+        /// </summary>
+        public int DanceLinesMinimumRedColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [DanceLines] The minimum green color level (true color)
+        /// </summary>
+        public int DanceLinesMinimumGreenColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [DanceLines] The minimum blue color level (true color)
+        /// </summary>
+        public int DanceLinesMinimumBlueColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [DanceLines] The minimum color level (255 colors or 16 colors)
+        /// </summary>
+        public int DanceLinesMinimumColorLevel { get; set; } = 0;
+        /// <summary>
+        /// [DanceLines] The maximum red color level (true color)
+        /// </summary>
+        public int DanceLinesMaximumRedColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [DanceLines] The maximum green color level (true color)
+        /// </summary>
+        public int DanceLinesMaximumGreenColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [DanceLines] The maximum blue color level (true color)
+        /// </summary>
+        public int DanceLinesMaximumBlueColorLevel { get; set; } = 255;
+        /// <summary>
+        /// [DanceLines] The maximum color level (255 colors or 16 colors)
+        /// </summary>
+        public int DanceLinesMaximumColorLevel { get; set; } = 255;
     }
 }

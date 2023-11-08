@@ -45,6 +45,7 @@ namespace Nitrocid.ScreensaverPacks
             { "bsod", new BSODDisplay() },
             { "colorbleed", new ColorBleedDisplay() },
             { "colormix", new ColorMixDisplay() },
+            { "dancelines", new DanceLinesDisplay() },
             { "dateandtime", new DateAndTimeDisplay() },
             { "diamond", new DiamondDisplay() },
             { "disco", new DiscoDisplay() },
