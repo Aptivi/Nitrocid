@@ -92,14 +92,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     splitFinalLines.RemoveAt(i);
                 }
 
-                // Now, we need an extra space for input
-                splitFinalLines.Add("");
-
                 // Fill the info box with text inside it
-                int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= ConsoleWrapper.WindowWidth)
-                    maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count;
+                int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                int maxHeight = splitFinalLines.Count + 5;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -116,21 +111,30 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     var line = splitFinalLines[i];
                     if (i % maxHeight == 0 && i > 0)
                     {
-                        // Reached the end of the box. Wait for keypress then clear the box
-                        TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                        boxBuffer.Clear();
-                        Input.DetectKeypress();
-                        boxBuffer.Append(border);
+                        // Reached the end of the box. Bail, because we need to print the input box.
+                        break;
                     }
-                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
+
+                // Render the final result
+                int inputPosX = borderX + 4;
+                int inputPosY = borderY + maxHeight - 3;
+                int maxInputWidth = maxWidth - (inputPosX * 2) + 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
+
+                // Write the input bar and set the cursor position
+                BorderColor.WriteBorderPlain(inputPosX, inputPosY, maxInputWidth, 1);
+                ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
 
                 // Wait until the user presses any key to close the box
                 var settings = new TermReaderSettings()
                 {
-                    RightMargin = borderX,
+                    RightMargin = inputPosX - 2,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
@@ -328,14 +332,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     splitFinalLines.RemoveAt(i);
                 }
 
-                // Now, we need an extra space for input
-                splitFinalLines.Add("");
-
                 // Fill the info box with text inside it
-                int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= ConsoleWrapper.WindowWidth)
-                    maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count;
+                int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                int maxHeight = splitFinalLines.Count + 5;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -356,25 +355,30 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     var line = splitFinalLines[i];
                     if (i % maxHeight == 0 && i > 0)
                     {
-                        // Reached the end of the box. Wait for keypress then clear the box
-                        TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                        boxBuffer.Clear();
-                        Input.DetectKeypress();
-                        boxBuffer.Append(
-                            $"{KernelColorTools.GetColor(InfoBoxColor).VTSequenceForeground}" +
-                            $"{KernelColorTools.GetColor(BackgroundColor).VTSequenceBackground}" +
-                            $"{border}"
-                        );
+                        // Reached the end of the box. Bail, because we need to print the input box.
+                        break;
                     }
-                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
+
+                // Render the final result
+                int inputPosX = borderX + 4;
+                int inputPosY = borderY + maxHeight - 3;
+                int maxInputWidth = maxWidth - (inputPosX * 2) + 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
+
+                // Write the input bar and set the cursor position
+                BorderColor.WriteBorder(inputPosX, inputPosY, maxInputWidth, 1, InfoBoxColor, BackgroundColor);
+                ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
 
                 // Wait until the user presses any key to close the box
                 var settings = new TermReaderSettings()
                 {
-                    RightMargin = borderX,
+                    RightMargin = inputPosX - 2,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
@@ -454,14 +458,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     splitFinalLines.RemoveAt(i);
                 }
 
-                // Now, we need an extra space for input
-                splitFinalLines.Add("");
-
                 // Fill the info box with text inside it
-                int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= ConsoleWrapper.WindowWidth)
-                    maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count;
+                int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                int maxHeight = splitFinalLines.Count + 5;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -482,25 +481,30 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     var line = splitFinalLines[i];
                     if (i % maxHeight == 0 && i > 0)
                     {
-                        // Reached the end of the box. Wait for keypress then clear the box
-                        TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                        boxBuffer.Clear();
-                        Input.DetectKeypress();
-                        boxBuffer.Append(
-                            $"{InfoBoxColor.VTSequenceForeground}" +
-                            $"{BackgroundColor.VTSequenceBackground}" +
-                            $"{border}"
-                        );
+                        // Reached the end of the box. Bail, because we need to print the input box.
+                        break;
                     }
-                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
+
+                // Render the final result
+                int inputPosX = borderX + 4;
+                int inputPosY = borderY + maxHeight - 3;
+                int maxInputWidth = maxWidth - (inputPosX * 2) + 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
+
+                // Write the input bar and set the cursor position
+                BorderColor.WriteBorder(inputPosX, inputPosY, maxInputWidth, 1, InfoBoxColor, BackgroundColor);
+                ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
 
                 // Wait until the user presses any key to close the box
                 var settings = new TermReaderSettings()
                 {
-                    RightMargin = borderX,
+                    RightMargin = inputPosX - 2,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
@@ -580,14 +584,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     splitFinalLines.RemoveAt(i);
                 }
 
-                // Now, we need an extra space for input
-                splitFinalLines.Add("");
-
                 // Fill the info box with text inside it
-                int maxWidth = splitFinalLines.Max((str) => str.Length);
-                if (maxWidth >= ConsoleWrapper.WindowWidth)
-                    maxWidth = ConsoleWrapper.WindowWidth - 4;
-                int maxHeight = splitFinalLines.Count;
+                int maxWidth = ConsoleWrapper.WindowWidth - 4;
+                int maxHeight = splitFinalLines.Count + 5;
                 if (maxHeight >= ConsoleWrapper.WindowHeight)
                     maxHeight = ConsoleWrapper.WindowHeight - 4;
                 int maxRenderWidth = ConsoleWrapper.WindowWidth - 6;
@@ -608,25 +607,30 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     var line = splitFinalLines[i];
                     if (i % maxHeight == 0 && i > 0)
                     {
-                        // Reached the end of the box. Wait for keypress then clear the box
-                        TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                        boxBuffer.Clear();
-                        Input.DetectKeypress();
-                        boxBuffer.Append(
-                            $"{new Color(InfoBoxColor).VTSequenceForeground}" +
-                            $"{new Color(BackgroundColor).VTSequenceBackground}" +
-                            $"{border}"
-                        );
+                        // Reached the end of the box. Bail, because we need to print the input box.
+                        break;
                     }
-                    boxBuffer.Append($"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}{line}");
+                    boxBuffer.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(borderX + 2, borderY + 1 + i % maxHeight + 1)}" +
+                        $"{line}"
+                    );
                 }
+
+                // Render the final result
+                int inputPosX = borderX + 4;
+                int inputPosY = borderY + maxHeight - 3;
+                int maxInputWidth = maxWidth - (inputPosX * 2) + 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
+
+                // Write the input bar and set the cursor position
+                BorderColor.WriteBorder(inputPosX, inputPosY, maxInputWidth, 1, InfoBoxColor, BackgroundColor);
+                ConsoleWrapper.SetCursorPosition(inputPosX + 1, inputPosY + 1);
 
                 // Wait until the user presses any key to close the box
                 var settings = new TermReaderSettings()
                 {
-                    RightMargin = borderX,
+                    RightMargin = inputPosX - 2,
                 };
                 string input = Input.ReadLineWrapped("", "", settings);
                 return input;
