@@ -35,7 +35,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             {
                 new InputChoiceInfo("focal", "20.04 (Focal Fossa)", "Ubuntu 20.04 LTS, codenamed Focal Fossa, is a long-term support release and was released on 23 April 2020."),
                 new InputChoiceInfo("jammy", "22.04 (Jammy Jellyfish)", "Ubuntu 22.04, codenamed Jammy Jellyfish, was released on 21 April 2022, and is a long-term support release, supported for five years, until April 2027."),
-                new InputChoiceInfo("noble", "24.04 (Noble N-animal)", "Ubuntu 24.04, codenamed Noble N-animal, is planned to be released on April 2024, and is a long-term support release, supported for five years, until April 2029."),
+                new InputChoiceInfo("noble", "24.04 (Noble Numbat)", "Ubuntu 24.04, codenamed Noble Numbat, is planned to be released on April 2024, and is a long-term support release, supported for five years, until April 2029."),
             };
             var altChoices = new List<InputChoiceInfo>()
             {
