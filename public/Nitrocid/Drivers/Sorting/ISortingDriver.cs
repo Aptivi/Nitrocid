@@ -53,5 +53,17 @@ namespace KS.Drivers.Sorting
         /// </summary>
         /// <returns>Sorted array of 128-bit integers</returns>
         long[] SortNumbersInt128(long[] unsorted);
+
+        /// <summary>
+        /// Sorts the single-precision decimal numbers
+        /// </summary>
+        /// <returns>Sorted array of single-precision decimal numbers</returns>
+        float[] SortNumbersFloat(float[] unsorted);
+
+        /// <summary>
+        /// Sorts the double-precision decimal numbers
+        /// </summary>
+        /// <returns>Sorted array of double-precision decimal numbers</returns>
+        double[] SortNumbersDouble(double[] unsorted);
     }
 }

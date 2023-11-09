@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.Drivers;
 using KS.Drivers.RNG;
 using System.Collections.Generic;
 using System.Linq;
@@ -54,5 +55,47 @@ namespace KS.Misc.Reflection
             var randomized = randomizedIndexes.Select((idx) => array[idx]).ToArray();
             return randomized;
         }
+
+        /// <summary>
+        /// Sorts the byte numbers
+        /// </summary>
+        /// <returns>Sorted array of byte numbers</returns>
+        public static byte[] SortNumbers(this byte[] unsorted) =>
+            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt8(unsorted);
+
+        /// <summary>
+        /// Sorts the short numbers
+        /// </summary>
+        /// <returns>Sorted array of short numbers</returns>
+        public static short[] SortNumbers(this short[] unsorted) =>
+            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt16(unsorted);
+
+        /// <summary>
+        /// Sorts the integers
+        /// </summary>
+        /// <returns>Sorted array of integers</returns>
+        public static int[] SortNumbers(this int[] unsorted) =>
+            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt32(unsorted);
+
+        /// <summary>
+        /// Sorts the 64-bit integers
+        /// </summary>
+        /// <returns>Sorted array of 64-bit integers</returns>
+        public static long[] SortNumbers(this long[] unsorted) =>
+            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt64(unsorted);
+
+        /// <summary>
+        /// Sorts the single-precision decimal numbers
+        /// </summary>
+        /// <returns>Sorted array of single-precision decimal numbers</returns>
+        public static float[] SortNumbers(this float[] unsorted) =>
+            DriverHandler.CurrentSortingDriverLocal.SortNumbersFloat(unsorted);
+
+        /// <summary>
+        /// Sorts the double-precision decimal numbers
+        /// </summary>
+        /// <returns>Sorted array of double-precision decimal numbers</returns>
+        public static double[] SortNumbers(this double[] unsorted) =>
+            DriverHandler.CurrentSortingDriverLocal.SortNumbersDouble(unsorted);
     }
 }

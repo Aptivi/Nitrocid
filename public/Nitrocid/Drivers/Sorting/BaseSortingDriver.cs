@@ -185,5 +185,65 @@ namespace KS.Drivers.Sorting
             }
             return unsorted;
         }
+
+        /// <inheritdoc/>
+        public float[] SortNumbersFloat(float[] unsorted)
+        {
+            // Get the number of iterations
+            int iteration = unsorted.Length;
+            bool swap;
+
+            // Now, iterate through the whole array to check to see if we need to sort or not
+            for (int i = 0; i < iteration - 1; i++)
+            {
+                // Reset the swap requirement
+                swap = false;
+
+                // Now, compare the two values to see if they need sorting
+                for (int j = 0; j < iteration - i - 1; j++)
+                {
+                    if (unsorted[j] > unsorted[j + 1])
+                    {
+                        (unsorted[j], unsorted[j + 1]) = (unsorted[j + 1], unsorted[j]);
+                        swap = true;
+                    }
+                }
+
+                // Break if swap is not required
+                if (!swap)
+                    break;
+            }
+            return unsorted;
+        }
+
+        /// <inheritdoc/>
+        public double[] SortNumbersDouble(double[] unsorted)
+        {
+            // Get the number of iterations
+            int iteration = unsorted.Length;
+            bool swap;
+
+            // Now, iterate through the whole array to check to see if we need to sort or not
+            for (int i = 0; i < iteration - 1; i++)
+            {
+                // Reset the swap requirement
+                swap = false;
+
+                // Now, compare the two values to see if they need sorting
+                for (int j = 0; j < iteration - i - 1; j++)
+                {
+                    if (unsorted[j] > unsorted[j + 1])
+                    {
+                        (unsorted[j], unsorted[j + 1]) = (unsorted[j + 1], unsorted[j]);
+                        swap = true;
+                    }
+                }
+
+                // Break if swap is not required
+                if (!swap)
+                    break;
+            }
+            return unsorted;
+        }
     }
 }
