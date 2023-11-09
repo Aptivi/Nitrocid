@@ -44,7 +44,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsPlain(string[] buttons, string text, params object[] vars) =>
             WriteInfoBoxButtonsPlain(buttons, text,
                              BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -66,12 +66,14 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsPlain(string[] buttons, string text,
                                             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
             // First, check the buttons count
+            if (buttons is null || buttons.Length == 0)
+                return -1;
             if (buttons.Length > 3)
             {
                 // Looks like that we have more than three buttons. Use the selection choice instead.
@@ -211,7 +213,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="buttons">Button names to define. This must be from 1 to 3 buttons. Any more of them and you'll have to use the <see cref="InfoBoxSelectionColor"/> to get an option to use more buttons as choice selections.</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtons(string[] buttons, string text, params object[] vars) =>
             WriteInfoBoxButtonsKernelColor(buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -227,7 +229,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxButtonsColor">InfoBoxButtons color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsKernelColor(string[] buttons, string text, KernelColorType InfoBoxButtonsColor, params object[] vars) =>
             WriteInfoBoxButtonsKernelColor(buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -244,7 +246,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxButtons background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsKernelColor(string[] buttons, string text, KernelColorType InfoBoxButtonsColor, KernelColorType BackgroundColor, params object[] vars) =>
             WriteInfoBoxButtonsKernelColor(buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -260,7 +262,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxButtonsColor">InfoBoxButtons color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColor(string[] buttons, string text, ConsoleColors InfoBoxButtonsColor, params object[] vars) =>
             WriteInfoBoxButtonsColorBack(buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -277,7 +279,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxButtons background color from Nitrocid KS's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColorBack(string[] buttons, string text, ConsoleColors InfoBoxButtonsColor, ConsoleColors BackgroundColor, params object[] vars) =>
             WriteInfoBoxButtonsColorBack(buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -293,7 +295,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxButtonsColor">InfoBoxButtons color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColor(string[] buttons, string text, Color InfoBoxButtonsColor, params object[] vars) =>
             WriteInfoBoxButtonsColorBack(buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -310,7 +312,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxButtons background color from Nitrocid KS's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColorBack(string[] buttons, string text, Color InfoBoxButtonsColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxButtonsColorBack(buttons, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -333,7 +335,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtons(string[] buttons, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
@@ -359,7 +361,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxButtonsColor">InfoBoxButtons color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsKernelColor(string[] buttons, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
@@ -387,13 +389,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxButtons background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsKernelColor(string[] buttons, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxButtonsColor, KernelColorType BackgroundColor, params object[] vars)
         {
             // First, check the buttons count
+            if (buttons is null || buttons.Length == 0)
+                return -1;
             if (buttons.Length > 3)
             {
                 // Looks like that we have more than three buttons. Use the selection choice instead.
@@ -547,7 +551,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxButtonsColor">InfoBoxButtons color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColor(string[] buttons, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
@@ -570,13 +574,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxButtons background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColorBack(string[] buttons, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxButtonsColor, Color BackgroundColor, params object[] vars)
         {
             // First, check the buttons count
+            if (buttons is null || buttons.Length == 0)
+                return -1;
             if (buttons.Length > 3)
             {
                 // Looks like that we have more than three buttons. Use the selection choice instead.
@@ -730,7 +736,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxButtonsColor">InfoBoxButtons color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColor(string[] buttons, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
@@ -753,13 +759,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxButtons background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxButtonsColorBack(string[] buttons, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxButtonsColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             // First, check the buttons count
+            if (buttons is null || buttons.Length == 0)
+                return -1;
             if (buttons.Length > 3)
             {
                 // Looks like that we have more than three buttons. Use the selection choice instead.

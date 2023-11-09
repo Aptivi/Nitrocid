@@ -47,7 +47,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="selections">List of choices</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionPlain(InputChoiceInfo[] selections, string text, params object[] vars) =>
             WriteInfoBoxSelectionPlain(selections, text,
                              BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -69,12 +69,17 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionPlain(InputChoiceInfo[] selections, string text,
                                             char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                             char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars)
         {
             int selectedChoice = -1;
+
+            // First, verify that we have selections
+            if (selections is null || selections.Length == 0)
+                return selectedChoice;
+
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
@@ -99,7 +104,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Fill the info box with text inside it
-                int selectionChoices = 5;
+                int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
                 int selectionReservedHeight = 4 + selectionChoices;
                 int maxWidth = ConsoleWrapper.WindowWidth - 4;
                 int maxHeight = splitFinalLines.Count + selectionReservedHeight;
@@ -189,7 +194,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 3, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
                     }
 
                     // Handle keypress
@@ -261,7 +266,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="selections">List of choices</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelection(InputChoiceInfo[] selections, string text, params object[] vars) =>
             WriteInfoBoxSelectionKernelColor(selections, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -277,7 +282,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxSelectionColor">InfoBoxSelection color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionKernelColor(InputChoiceInfo[] selections, string text, KernelColorType InfoBoxSelectionColor, params object[] vars) =>
             WriteInfoBoxSelectionKernelColor(selections, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -294,7 +299,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxSelection background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionKernelColor(InputChoiceInfo[] selections, string text, KernelColorType InfoBoxSelectionColor, KernelColorType BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionKernelColor(selections, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -310,7 +315,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxSelectionColor">InfoBoxSelection color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionColor(InputChoiceInfo[] selections, string text, ConsoleColors InfoBoxSelectionColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -327,7 +332,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxSelection background color from Nitrocid KS's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionColorBack(InputChoiceInfo[] selections, string text, ConsoleColors InfoBoxSelectionColor, ConsoleColors BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -343,7 +348,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxSelectionColor">InfoBoxSelection color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionColor(InputChoiceInfo[] selections, string text, Color InfoBoxSelectionColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -360,7 +365,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxSelection background color from Nitrocid KS's <see cref="Color"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionColorBack(InputChoiceInfo[] selections, string text, Color InfoBoxSelectionColor, Color BackgroundColor, params object[] vars) =>
             WriteInfoBoxSelectionColorBack(selections, text,
                         BorderTools.BorderUpperLeftCornerChar, BorderTools.BorderLowerLeftCornerChar,
@@ -383,7 +388,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="RightFrameChar">Right frame character for info box</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelection(InputChoiceInfo[] selections, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar, params object[] vars) =>
@@ -409,7 +414,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxSelectionColor">InfoBoxSelection color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionKernelColor(InputChoiceInfo[] selections, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
@@ -437,13 +442,18 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxSelection background color from Nitrocid KS's <see cref="KernelColorType"/></param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionKernelColor(InputChoiceInfo[] selections, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        KernelColorType InfoBoxSelectionColor, KernelColorType BackgroundColor, params object[] vars)
         {
             int selectedChoice = -1;
+
+            // First, verify that we have selections
+            if (selections is null || selections.Length == 0)
+                return selectedChoice;
+
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
@@ -468,7 +478,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Fill the info box with text inside it
-                int selectionChoices = 5;
+                int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
                 int selectionReservedHeight = 4 + selectionChoices;
                 int maxWidth = ConsoleWrapper.WindowWidth - 4;
                 int maxHeight = splitFinalLines.Count + selectionReservedHeight;
@@ -566,7 +576,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 3, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
                     }
 
                     // Handle keypress
@@ -647,7 +657,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="InfoBoxSelectionColor">InfoBoxSelection color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionColor(InputChoiceInfo[] selections, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
@@ -670,13 +680,18 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxSelection background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionColorBack(InputChoiceInfo[] selections, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        Color InfoBoxSelectionColor, Color BackgroundColor, params object[] vars)
         {
             int selectedChoice = -1;
+
+            // First, verify that we have selections
+            if (selections is null || selections.Length == 0)
+                return selectedChoice;
+
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
@@ -701,7 +716,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Fill the info box with text inside it
-                int selectionChoices = 5;
+                int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
                 int selectionReservedHeight = 4 + selectionChoices;
                 int maxWidth = ConsoleWrapper.WindowWidth - 4;
                 int maxHeight = splitFinalLines.Count + selectionReservedHeight;
@@ -799,7 +814,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 3, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
                     }
 
                     // Handle keypress
@@ -881,13 +896,18 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         /// <param name="BackgroundColor">InfoBoxSelection background color</param>
         /// <param name="text">Text to be written.</param>
         /// <param name="vars">Variables to format the message before it's written.</param>
-        /// <returns>Selected choice index (starting from zero), or -1 if exited or an error occurred</returns>
+        /// <returns>Selected choice index (starting from zero), or -1 if exited, selection list is empty, or an error occurred</returns>
         public static int WriteInfoBoxSelectionColorBack(InputChoiceInfo[] selections, string text,
                                        char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
                                        char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar,
                                        ConsoleColors InfoBoxSelectionColor, ConsoleColors BackgroundColor, params object[] vars)
         {
             int selectedChoice = -1;
+
+            // First, verify that we have selections
+            if (selections is null || selections.Length == 0)
+                return selectedChoice;
+
             bool initialCursorVisible = ConsoleWrapper.CursorVisible;
             try
             {
@@ -912,7 +932,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Fill the info box with text inside it
-                int selectionChoices = 5;
+                int selectionChoices = selections.Length > 10 ? 10 : selections.Length;
                 int selectionReservedHeight = 4 + selectionChoices;
                 int maxWidth = ConsoleWrapper.WindowWidth - 4;
                 int maxHeight = splitFinalLines.Count + selectionReservedHeight;
@@ -1010,7 +1030,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 3, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
                     }
 
                     // Handle keypress
