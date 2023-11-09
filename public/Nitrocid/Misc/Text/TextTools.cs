@@ -222,7 +222,11 @@ namespace KS.Misc.Text
             // the threshold, putting three dots next to it. We don't use ellipsis marks here because we're dealing with the
             // terminal, and some terminals and some monospace fonts may not support that character, so we mimick it by putting
             // the three dots.
-            if (target.Length > threshold)
+            //
+            // In case VT sequences are inserted to the target string, it can mess with the actual length returned, so only
+            // truncate the non-VT sequences.
+            int newLength = VtSequenceTools.FilterVTSequences(target).Length;
+            if (newLength > threshold)
                 return target[..(threshold - 1)] + "...";
             else
                 return target;
