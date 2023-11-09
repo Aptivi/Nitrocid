@@ -1086,6 +1086,26 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
+        public virtual void MakeSymlink(string linkName, string target)
+        {
+            FS.ThrowOnInvalidPath(linkName);
+            FS.ThrowOnInvalidPath(target);
+
+            // Neutralize the paths
+            linkName = FS.NeutralizePath(linkName);
+            target = FS.NeutralizePath(target);
+
+            // Check for path existence
+            if (!Checking.Exists(target))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("The target file or directory isn't found."));
+            if (Checking.Exists(linkName))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Can't overwrite an existing file or directory with a symbolic link."));
+
+            // Now, make a symlink
+            File.CreateSymbolicLink(linkName, target);
+        }
+
+        /// <inheritdoc/>
         public virtual void MoveDirectory(string Source, string Destination) =>
             MoveDirectory(Source, Destination, FS.ShowFilesystemProgress);
 

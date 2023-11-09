@@ -20,6 +20,7 @@
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files;
+using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -41,7 +42,6 @@ namespace KS.Shell.Shells.UESH.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            // TODO: Condense this to a filesystem API
             PermissionsTools.Demand(PermissionTypes.ManageFilesystem);
             string linkName = FilesystemTools.NeutralizePath(parameters.ArgumentsList[0]);
             string target = FilesystemTools.NeutralizePath(parameters.ArgumentsList[1]);
@@ -57,13 +57,12 @@ namespace KS.Shell.Shells.UESH.Commands
             }
             try
             {
-                File.CreateSymbolicLink(linkName, target);
+                Making.MakeSymlink(linkName, target);
             }
             catch (Exception ex)
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Can't make a symbolic link.") + $"{ex.Message}", KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.Filesystem;
-
             }
             return 0;
         }

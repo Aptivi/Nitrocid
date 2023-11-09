@@ -172,6 +172,14 @@ namespace KS.Drivers.Filesystem
         void MakeJsonFile(string NewFile, bool ThrowIfFileExists = true, bool useArray = false);
 
         /// <summary>
+        /// Makes a symbolic link
+        /// </summary>
+        /// <param name="linkName">New symbolic link</param>
+        /// <param name="target">Target file to link to</param>
+        /// <exception cref="IOException"></exception>
+        void MakeSymlink(string linkName, string target);
+
+        /// <summary>
         /// Moves a file or directory
         /// </summary>
         /// <param name="Source">Source file or directory</param>

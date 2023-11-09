@@ -329,6 +329,13 @@ namespace KS.Drivers.Filesystem.Bases
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(MakeJsonFile)}({NewFile}, {ThrowIfFileExists}, {useArray}) exit");
         }
 
+        public override void MakeSymlink(string linkName, string target)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(MakeSymlink)}({linkName}, {target}) entry");
+            base.MakeSymlink(linkName, target);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(MakeSymlink)}({linkName}, {target}) exit");
+        }
+
         public override void MoveDirectory(string Source, string Destination)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(MoveDirectory)}({Source}, {Destination}) entry");

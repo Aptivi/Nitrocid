@@ -119,6 +119,35 @@ namespace KS.Files.Operations
         }
 
         /// <summary>
+        /// Makes a symbolic link
+        /// </summary>
+        /// <param name="linkName">New symbolic link</param>
+        /// <param name="target">Target file to link to</param>
+        /// <exception cref="IOException"></exception>
+        public static void MakeSymlink(string linkName, string target) =>
+            DriverHandler.CurrentFilesystemDriverLocal.MakeSymlink(linkName, target);
+
+        /// <summary>
+        /// Makes a symbolic link
+        /// </summary>
+        /// <param name="linkName">New symbolic link</param>
+        /// <param name="target">Target file to link to</param>
+        /// <returns>True if successful; False if unsuccessful</returns>
+        /// <exception cref="IOException"></exception>
+        public static bool TryMakeSymlink(string linkName, string target)
+        {
+            try
+            {
+                MakeSymlink(linkName, target);
+                return true;
+            }
+            catch (Exception)
+            {
+                return false;
+            }
+        }
+
+        /// <summary>
         /// Makes a randomized file name
         /// </summary>
         public static void MakeRandomFile() =>
