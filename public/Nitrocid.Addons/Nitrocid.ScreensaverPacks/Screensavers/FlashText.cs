@@ -275,8 +275,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int HalfDelay = (int)Math.Round(FlashTextSettings.FlashTextDelay / 2d);
 
             // Make a flashing text
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.Clear();
             if (FlashTextSettings.FlashTextTrueColor)
             {
                 int RedColorNum = RandomDriver.Random(FlashTextSettings.FlashTextMinimumRedColorLevel, FlashTextSettings.FlashTextMaximumRedColorLevel);
@@ -299,8 +297,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 }
             }
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.Clear();
+            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
             ThreadManager.SleepNoBlock(HalfDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
 
             // Reset resize sync

@@ -45,9 +45,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
             var SnakeMassPositions = new List<string>();
             var Direction = SnakeDirection.Bottom;
             ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleWrapper.Clear();
+            KernelColorTools.LoadBack();
 
             // Get the floor color ready
             var FloorColor = ChangeSnakeColor();
@@ -148,9 +146,8 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
                         break;
 
                     // Remove excess mass
-                    ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
                     ConsoleWrapper.SetCursorPosition(SnakeLastTailToWipeX, SnakeLastTailToWipeY);
-                    ConsoleWrapper.Write(" ");
+                    ConsoleWrapper.Write($"{new Color(ConsoleColors.Black).VTSequenceBackground} ");
 
                     // Set the snake color
                     KernelColorTools.SetConsoleColor(SnakeColor, true);
@@ -378,9 +375,7 @@ namespace Nitrocid.Extras.Amusements.Amusements.Games
 
             // Reset mass and console display
             SnakeMassPositions.Clear();
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
-            ConsoleWrapper.Clear();
+            KernelColorTools.LoadBack();
             ConsoleResizeListener.WasResized();
         }
 

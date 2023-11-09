@@ -107,7 +107,6 @@ namespace KS.ConsoleBase
             // still use the VT sequence to print colored text, but this will be changed later.
             if (!IsConsole256Colors())
             {
-                ConsoleWrapper.ForegroundColor = ConsoleColor.Yellow;
                 if (KernelPlatform.IsOnWindows())
                     TextWriterColor.WritePlain("Warning: Nitrocid KS makes use of the 256 colors. Don't worry; Nitrocid will automatically set your terminal to handle these sequences, assuming that you're running a supported terminal. Press any key to continue.", true);
                 else

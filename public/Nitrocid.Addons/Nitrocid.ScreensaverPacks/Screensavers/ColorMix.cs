@@ -241,7 +241,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             KernelColorTools.LoadBack(new Color(ColorMixSettings.ColorMixBackgroundColor));
         }
 

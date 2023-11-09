@@ -20,9 +20,11 @@
 using System;
 using System.Collections;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
+using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -83,10 +85,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             double NoiseDense = (NoiseSettings.NoiseDensity > 100 ? 100 : NoiseSettings.NoiseDensity) / 100d;
 
-            ConsoleWrapper.BackgroundColor = ConsoleColor.DarkGray;
             ConsoleWrapper.CursorVisible = false;
+            KernelColorTools.LoadBack(new Color(ConsoleColors.DarkGray));
             ConsoleWrapper.Clear();
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            KernelColorTools.SetConsoleColor(ConsoleColors.Black, true);
 
             // Select random positions to generate noise
             int AmountOfBlocks = ConsoleWrapper.WindowWidth * ConsoleWrapper.WindowHeight;

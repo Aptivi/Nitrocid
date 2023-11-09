@@ -39,10 +39,6 @@ namespace KS.ConsoleBase.Colors
         // Variables for colors used by previous versions of the kernel.
         internal static Dictionary<KernelColorType, Color> KernelColors = PopulateColorsDefault();
 
-        // Cache variables for background and foreground colors
-        internal static Color currentForegroundColor = new(ConsoleColors.White);
-        internal static Color currentBackgroundColor = Color.Empty;
-
         // Variables for accent background and foreground colors
         internal static Color accentForegroundColor = GetColor(KernelColorType.Warning);
         internal static Color accentBackgroundColor = GetColor(KernelColorType.Background);
@@ -70,18 +66,6 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         public static double BlindnessSeverity =>
             Config.MainConfig.BlindnessSeverity;
-
-        /// <summary>
-        /// Current foreground color
-        /// </summary>
-        public static Color CurrentForegroundColor =>
-            currentForegroundColor;
-
-        /// <summary>
-        /// Current background color
-        /// </summary>
-        public static Color CurrentBackgroundColor =>
-            currentBackgroundColor;
 
         /// <summary>
         /// Gets a color from the color type
@@ -242,13 +226,11 @@ namespace KS.ConsoleBase.Colors
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Setting console background color to {0}...", ColorSequence.PlainSequence);
                 TextWriterColor.WritePlain(ColorSequence.VTSequenceBackground, false);
-                currentBackgroundColor = ColorSequence;
             }
             else
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "Setting console foreground color to {0}...", ColorSequence.PlainSequence);
                 TextWriterColor.WritePlain(ColorSequence.VTSequenceForeground, false);
-                currentForegroundColor = ColorSequence;
             }
         }
 

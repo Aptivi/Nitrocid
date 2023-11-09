@@ -22,12 +22,14 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Threading;
 using KS.Misc.Reflection;
 using KS.Misc.Screensaver;
 using KS.Misc.Text;
+using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -92,9 +94,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         /// <inheritdoc/>
         public override void ScreensaverLogic()
         {
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
+            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
             ConsoleWrapper.CursorVisible = false;
-            ConsoleWrapper.Clear();
 
             // Use Kruskal's algorithm to generate a maze
             GenerateMaze();

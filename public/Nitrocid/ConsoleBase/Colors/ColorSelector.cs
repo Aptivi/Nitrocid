@@ -50,7 +50,7 @@ namespace KS.ConsoleBase.Colors
         /// </summary>
         /// <returns>An instance of Color to get the resulting color</returns>
         public static Color OpenColorSelector() =>
-            OpenColorSelector(KernelColorTools.CurrentForegroundColor);
+            OpenColorSelector(KernelColorTools.GetColor(KernelColorType.NeutralText));
 
         /// <summary>
         /// Opens the color selector

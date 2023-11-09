@@ -58,10 +58,6 @@ namespace KS.Drivers.Console.Bases
 
         public override int BufferHeight => 0;
 
-        public override ConsoleColor ForegroundColor { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
-
-        public override ConsoleColor BackgroundColor { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
-
         public override bool CursorVisible { set => throw new KernelException(KernelExceptionType.NotImplementedYet); }
 
         public override TextEncoding OutputEncoding { get => throw new KernelException(KernelExceptionType.NotImplementedYet); set => throw new KernelException(KernelExceptionType.NotImplementedYet); }

@@ -19,6 +19,7 @@
 
 using System;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
@@ -243,8 +244,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             ConsoleWrapper.CursorVisible = false;
             if (ConsoleResizeListener.WasResized(false))
             {
-                ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-                ConsoleWrapper.Clear();
+                KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
 
                 // Reset resize sync
                 ConsoleResizeListener.WasResized();

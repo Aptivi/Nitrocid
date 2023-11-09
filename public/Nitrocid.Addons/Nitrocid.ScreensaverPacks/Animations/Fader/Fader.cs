@@ -53,9 +53,6 @@ namespace Nitrocid.ScreensaverPacks.Animations.Fader
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Text length of {0} exceeded window width of {1}.", Settings.FaderWrite.Length + Left, ConsoleWrapper.WindowWidth);
                 Left -= Settings.FaderWrite.Length + 1;
             }
-            ConsoleWrapper.SetCursorPosition(Left, Top);
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleExtensions.ClearKeepPosition();
 
             // Set thresholds
             double ThresholdRed = RedColorNum / (double)Settings.FaderMaxSteps;

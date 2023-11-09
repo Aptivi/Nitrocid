@@ -253,11 +253,10 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int Top = RandomDriver.Random(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
+            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
             ConsoleWrapper.SetCursorPosition(Left, Top);
 
             // Make a flash color
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleExtensions.ClearKeepPosition();
             if (FlashColorSettings.FlashColorTrueColor)
             {
                 int RedColorNum = RandomDriver.Random(FlashColorSettings.FlashColorMinimumRedColorLevel, FlashColorSettings.FlashColorMaximumRedColorLevel);

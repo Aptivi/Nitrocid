@@ -312,8 +312,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(FireworksSettings.FireworksDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                    ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-                    ConsoleWrapper.Clear();
+                    KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
                     KernelColorTools.SetConsoleColor(new Color(255, 255, 255), true);
 
                     // Change positions
@@ -369,8 +368,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Delay writing
                     ThreadManager.SleepNoBlock(FireworksSettings.FireworksDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-                    ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-                    ConsoleWrapper.Clear();
+                    KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
                 }
             }
 

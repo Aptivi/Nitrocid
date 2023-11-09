@@ -222,7 +222,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             KernelColorTools.LoadBack(new Color(WipeSettings.WipeBackgroundColor));
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleWrapper.CursorVisible = false;
             TimesWiped = 0;
             ToDirection = WipeDirections.Right;

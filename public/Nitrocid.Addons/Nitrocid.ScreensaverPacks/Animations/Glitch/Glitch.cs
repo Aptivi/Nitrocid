@@ -157,7 +157,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                         if (ColorLetter)
                             KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
-                            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+                            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
                         ConsoleWrapper.Write(Letter);
                         break;
                     }
@@ -166,7 +166,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                         if (ColorLetter)
                             KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
-                            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+                            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
                         ConsoleWrapper.Write(Symbol);
                         break;
                     }
@@ -181,7 +181,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                         if (ColorLetter)
                             KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
-                            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+                            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
                         KernelColorTools.SetConsoleColor(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Letter);
                         break;
@@ -191,7 +191,7 @@ namespace Nitrocid.ScreensaverPacks.Animations.Glitch
                         if (ColorLetter)
                             KernelColorTools.SetConsoleColor(ColorLetterInstance);
                         else
-                            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
+                            KernelColorTools.SetConsoleColor(new Color(ConsoleColors.White));
                         KernelColorTools.SetConsoleColor(ColorBlockInstance, true);
                         ConsoleWrapper.Write(Symbol);
                         break;

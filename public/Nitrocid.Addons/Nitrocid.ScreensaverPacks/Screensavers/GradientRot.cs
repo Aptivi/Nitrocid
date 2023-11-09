@@ -437,8 +437,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Clear the scene
             ThreadManager.SleepNoBlock(GradientRotSettings.GradientRotNextRampDelay, ScreensaverDisplayer.ScreensaverDisplayerThread);
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.Clear();
+            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
 
             // Reset resize sync
             ConsoleResizeListener.WasResized();

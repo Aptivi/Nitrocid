@@ -92,24 +92,6 @@ namespace KS.ConsoleBase
             DriverHandler.CurrentConsoleDriverLocal.BufferHeight;
 
         /// <summary>
-        /// The foreground color
-        /// </summary>
-        public static ConsoleColor ForegroundColor
-        {
-            get => DriverHandler.CurrentConsoleDriverLocal.ForegroundColor;
-            set => DriverHandler.CurrentConsoleDriverLocal.ForegroundColor = value;
-        }
-
-        /// <summary>
-        /// The background color
-        /// </summary>
-        public static ConsoleColor BackgroundColor
-        {
-            get => DriverHandler.CurrentConsoleDriverLocal.BackgroundColor;
-            set => DriverHandler.CurrentConsoleDriverLocal.BackgroundColor = value;
-        }
-
-        /// <summary>
         /// The cursor visibility mode
         /// </summary>
         public static bool CursorVisible

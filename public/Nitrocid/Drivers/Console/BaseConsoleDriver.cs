@@ -192,40 +192,6 @@ namespace KS.Drivers.Console
         }
 
         /// <inheritdoc/>
-        public virtual ConsoleColor ForegroundColor
-        {
-            get
-            {
-                if (IsDumb)
-                    return ConsoleColor.White;
-                return SystemConsole.ForegroundColor;
-            }
-            set
-            {
-                if (!IsDumb)
-                    SystemConsole.ForegroundColor = value;
-                KernelColorTools.currentForegroundColor = new Color(Convert.ToInt32(value));
-            }
-        }
-
-        /// <inheritdoc/>
-        public virtual ConsoleColor BackgroundColor
-        {
-            get
-            {
-                if (IsDumb)
-                    return ConsoleColor.Black;
-                return SystemConsole.BackgroundColor;
-            }
-            set
-            {
-                if (!IsDumb)
-                    SystemConsole.BackgroundColor = value;
-                KernelColorTools.currentBackgroundColor = new Color(Convert.ToInt32(value));
-            }
-        }
-
-        /// <inheritdoc/>
         public virtual bool CursorVisible
         {
             set

@@ -19,10 +19,12 @@
 
 using System;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.Drivers.RNG;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
 using KS.Misc.Screensaver;
+using Terminaux.Colors;
 
 namespace Nitrocid.ScreensaverPacks.Screensavers
 {
@@ -64,9 +66,8 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         public override void ScreensaverPreparation()
         {
             // Variable preparations
-            ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-            ConsoleWrapper.ForegroundColor = ConsoleColor.Green;
-            ConsoleWrapper.Clear();
+            KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
+            KernelColorTools.SetConsoleColor(ConsoleColors.Green);
         }
 
         /// <inheritdoc/>

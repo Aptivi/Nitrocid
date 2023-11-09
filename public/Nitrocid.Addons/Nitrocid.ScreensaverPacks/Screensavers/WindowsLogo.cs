@@ -19,6 +19,7 @@
 
 using System;
 using KS.ConsoleBase;
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Debugging;
 using KS.Kernel.Threading;
@@ -87,8 +88,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 // Draw the Windows 11 logo
                 if (!Drawn)
                 {
-                    ConsoleWrapper.BackgroundColor = ConsoleColor.Black;
-                    ConsoleWrapper.Clear();
+                    KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
                     var windows11Color = new Color($"0;120;212");
 
                     // First, draw the upper left box

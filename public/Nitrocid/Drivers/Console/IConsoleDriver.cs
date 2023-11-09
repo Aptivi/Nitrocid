@@ -170,16 +170,6 @@ namespace KS.Drivers.Console
         int BufferHeight { get; }
 
         /// <summary>
-        /// The foreground color
-        /// </summary>
-        ConsoleColor ForegroundColor { get; set; }
-
-        /// <summary>
-        /// The background color
-        /// </summary>
-        ConsoleColor BackgroundColor { get; set; }
-
-        /// <summary>
         /// The cursor visibility mode
         /// </summary>
         bool CursorVisible { set; }

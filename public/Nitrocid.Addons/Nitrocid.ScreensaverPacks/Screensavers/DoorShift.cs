@@ -205,7 +205,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
         {
             // Variable preparations
             KernelColorTools.LoadBack(new Color(DoorShiftSettings.DoorShiftBackgroundColor));
-            ConsoleWrapper.ForegroundColor = ConsoleColor.White;
             ConsoleWrapper.CursorVisible = false;
         }
 
