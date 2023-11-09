@@ -939,6 +939,8 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         $"{line}"
                     );
                 }
+                TextWriterColor.WritePlain(boxBuffer.ToString(), false);
+                boxBuffer.Clear();
 
                 // Wait until the user presses any key to close the box
                 if (waitForInput && !exiting)
