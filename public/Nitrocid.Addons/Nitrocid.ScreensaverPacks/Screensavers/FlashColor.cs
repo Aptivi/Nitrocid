@@ -251,7 +251,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
             // Select position
             int Left = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
-            int Top = RandomDriver.Random(ConsoleWrapper.WindowHeight);
+            int Top = RandomDriver.RandomIdx(ConsoleWrapper.WindowHeight);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Selected left and top: {0}, {1}", Left, Top);
             KernelColorTools.LoadBack(new Color(ConsoleColors.Black));
             ConsoleWrapper.SetCursorPosition(Left, Top);
