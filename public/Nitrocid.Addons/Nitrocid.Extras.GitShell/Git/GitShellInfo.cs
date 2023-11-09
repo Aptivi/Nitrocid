@@ -87,6 +87,27 @@ namespace Nitrocid.Extras.GitShell.Git
                     }, new DescribeCommand())
             },
 
+            { "diff",
+                new CommandInfo("diff", /* Localizable */ "Shows a difference between the current commit and the local files",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new SwitchInfo("patch", /* Localizable */ "Shows a difference between the current commit and the local files by their content in a patch hunk form", new()
+                            {
+                                ConflictsWith = new[] { "tree", "all" }
+                            }),
+                            new SwitchInfo("tree", /* Localizable */ "Shows a difference between the current commit and the local files by their existence", new()
+                            {
+                                ConflictsWith = new[] { "patch", "all" }
+                            }),
+                            new SwitchInfo("all", /* Localizable */ "Shows a difference between the current commit and the local files by their existence and by their content", new()
+                            {
+                                ConflictsWith = new[] { "tree", "patch" }
+                            }),
+                        })
+                    }, new DiffCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
+            },
+
             { "fetch",
                 new CommandInfo("fetch", /* Localizable */ "Fetches all updates from a remote",
                     new[] {
