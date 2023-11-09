@@ -36,6 +36,8 @@ using System;
 using System.Globalization;
 using System.Linq;
 using System.Text;
+using Terminaux.Sequences.Tools;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.Files.Editors.TextEdit
 {
@@ -218,6 +220,7 @@ namespace KS.Files.Editors.TextEdit
 
             // Get the lines and highlight the selection
             int count = 0;
+            var sels = new StringBuilder();
             for (int i = startIndex; i <= endIndex; i++)
             {
                 // Get a line
@@ -240,25 +243,34 @@ namespace KS.Files.Editors.TextEdit
                 if (source.Length > 0)
                 {
                     int charsPerPage = SeparatorConsoleWidthInterior;
-                    int currentCharPage = lineIdx / charsPerPage;
-                    int startLineIndex = (charsPerPage * currentCharPage) + 1;
+                    int currentCharPage = lineColIdx / charsPerPage;
+                    int startLineIndex = (charsPerPage * currentCharPage);
                     int endLineIndex = charsPerPage * (currentCharPage + 1);
                     if (startLineIndex > source.Length)
                         startLineIndex = source.Length;
                     if (endLineIndex > source.Length)
                         endLineIndex = source.Length;
+                    int vtSeqLength = 0;
+                    var vtSeqMatches = VtSequenceTools.MatchVTSequences(line);
+                    foreach (var match in vtSeqMatches)
+                        vtSeqLength += match.Sum((mat) => mat.Length);
                     source = source[startLineIndex..endLineIndex];
+                    line = line[startLineIndex..(endLineIndex + vtSeqLength)];
                 }
-
-                // Truncate the source
-                source = source.Truncate(SeparatorConsoleWidthInterior);
-                line = line.Truncate(SeparatorConsoleWidthInterior);
-                line += new string(' ', SeparatorConsoleWidthInterior - source.Length - 1);
+                line += new string(' ', SeparatorConsoleWidthInterior - source.Length);
 
                 // Change the color depending on the highlighted line and column
-                TextWriterWhereColor.WriteWhereColorBack(line, 1, SeparatorMinimumHeightInterior + count, highlightedColorBackground, unhighlightedColorBackground);
+                sels.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(2, SeparatorMinimumHeightInterior + count + 1)}" +
+                    $"{highlightedColorBackground.VTSequenceForeground}" +
+                    $"{unhighlightedColorBackground.VTSequenceBackground}" +
+                    line
+                );
                 count++;
             }
+
+            // Render the selections
+            TextWriterColor.WritePlain(sels.ToString());
         }
 
         private static void HandleKeypress(ConsoleKeyInfo key)
