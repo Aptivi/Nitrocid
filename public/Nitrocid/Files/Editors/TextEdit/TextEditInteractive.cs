@@ -284,6 +284,8 @@ namespace KS.Files.Editors.TextEdit
                 {
                     // Insert a new character or delete it if backspace is entered
                     if (key.Key == ConsoleKey.Backspace)
+                        RuboutChar();
+                    else if (key.Key == ConsoleKey.Delete)
                         DeleteChar();
                     else
                         InsertChar(key.KeyChar);
@@ -308,6 +310,21 @@ namespace KS.Files.Editors.TextEdit
             MoveForward();
         }
 
+        private static void RuboutChar()
+        {
+            // Check the lines
+            if (TextEditShellCommon.FileLines.Count == 0)
+                return;
+            if (TextEditShellCommon.FileLines[lineIdx].Length == 0)
+                return;
+            if (lineColIdx == 0)
+                return;
+
+            // Delete a character
+            TextEditShellCommon.FileLines[lineIdx] = TextEditShellCommon.FileLines[lineIdx].Remove(lineColIdx - 1, 1);
+            MoveBackward();
+        }
+
         private static void DeleteChar()
         {
             // Check the lines
@@ -318,7 +335,7 @@ namespace KS.Files.Editors.TextEdit
 
             // Delete a character
             TextEditShellCommon.FileLines[lineIdx] = TextEditShellCommon.FileLines[lineIdx].Remove(lineColIdx, 1);
-            MoveForward();
+            UpdateLineIndex(lineIdx);
         }
 
         private static void RenderKeybindingsBox()
