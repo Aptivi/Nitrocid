@@ -183,7 +183,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                     // Now, do the connection
                     set1.Connect(set2);
                     grid[y, x] |= (int)direction;
-                    grid[y, x] |= opposites[direction];
+                    grid[ny, nx] |= opposites[direction];
                 }
             }
         }
@@ -212,10 +212,9 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                         mazeBuilder.Append($"{CharManager.GetEsc()}[47m");
                     mazeBuilder.Append(IsDirection(cell, Direction.South) ? " " : "_");
 
-                    if (IsDirection(cell, Direction.East))
+                    if (x + 1 < xLength && IsDirection(cell, Direction.East))
                     {
-                        int finalCellX = (x + 1 < xLength ? x + 1 : x);
-                        int finalCell = cell | grid[y, finalCellX];
+                        int finalCell = cell | grid[y, x + 1];
                         mazeBuilder.Append(IsDirection(finalCell, Direction.South) ? " " : "_");
                     }
                     else
