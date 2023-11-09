@@ -59,7 +59,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
     {
 
         private static bool shining;
-        private static int maxShineSteps = 15;
+        private static readonly int maxShineSteps = 15;
         private static Color selectedColor = ConsoleColors.LightCyan1;
         private static readonly List<Color> diamondColors = new()
         {

@@ -110,7 +110,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             // Necessary variables for maze generation
             int width = (ConsoleWrapper.WindowWidth / 2) - 3;
             int height = ConsoleWrapper.WindowHeight - 3;
-            int seed = RandomDriver.Random();
             double delay = MazerSettings.MazerGenerationSpeed;
 
             // Now, the directions and their opposites
