@@ -194,7 +194,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, false);
                     }
 
                     // Handle keypress
@@ -576,7 +576,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, false);
                     }
 
                     // Handle keypress
@@ -814,7 +814,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, false);
                     }
 
                     // Handle keypress
@@ -1030,7 +1030,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                         int left = maxWidth - 3;
-                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, selectionBoxPosY + 3, selectionBoxPosY - 4, false);
+                        ProgressBarVerticalColor.WriteVerticalProgress(100 * ((double)(currentSelection + 1) / selections.Length), left - 1, selectionBoxPosY - 1, ConsoleWrapper.WindowHeight - selectionChoices, false);
                     }
 
                     // Handle keypress
