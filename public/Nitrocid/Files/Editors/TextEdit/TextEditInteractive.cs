@@ -400,7 +400,10 @@ namespace KS.Files.Editors.TextEdit
         private static void Insert()
         {
             // Insert a line
-            TextEditShellCommon.FileLines.Insert(TextEditShellCommon.FileLines.Count == 0 ? 0 : lineIdx + 1, "");
+            if (TextEditShellCommon.FileLines.Count == 0)
+                TextEditShellCommon.FileLines.Add("");
+            else
+                TextEditShellCommon.FileLines.Insert(lineIdx + 1, "");
             MoveDown();
         }
 
@@ -418,7 +421,10 @@ namespace KS.Files.Editors.TextEdit
         private static void InsertNoMove()
         {
             // Insert a line
-            TextEditShellCommon.FileLines.Insert(TextEditShellCommon.FileLines.Count == 0 ? 0 : lineIdx + 1, "");
+            if (TextEditShellCommon.FileLines.Count == 0)
+                TextEditShellCommon.FileLines.Add("");
+            else
+                TextEditShellCommon.FileLines.Insert(lineIdx + 1, "");
             UpdateLineIndex(lineIdx);
         }
 
@@ -473,6 +479,10 @@ namespace KS.Files.Editors.TextEdit
 
             // Check to see if the current character is unprintable
             if (TextEditShellCommon.FileLines.Count == 0)
+                return;
+            if (TextEditShellCommon.FileLines[lineIdx].Length == 0)
+                return;
+            if (entering)
                 return;
             var currChar = TextEditShellCommon.FileLines[lineIdx][lineColIdx];
             if (CharManager.IsControlChar(currChar) || currChar == '\0')
