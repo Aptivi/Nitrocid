@@ -245,20 +245,26 @@ namespace KS.ConsoleBase.Interactive
                 DebugWriter.WriteDebug(DebugLevel.I, "{0}, {1}, {2}, {3}, {4}, {5}", SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior, SeparatorMaximumHeightInterior, finalForeColorSecondPane.PlainSequence, BaseInteractiveTui.PaneBackgroundColor.PlainSequence);
                 BorderColor.WriteBorder(SeparatorHalfConsoleWidth, SeparatorMinimumHeight, SeparatorHalfConsoleWidthInterior + (ConsoleWrapper.WindowWidth % 2 != 0 ? 1 : 0), SeparatorMaximumHeightInterior, finalForeColorSecondPane, BaseInteractiveTui.PaneBackgroundColor);
 
-                // Render the key bindings
-                ConsoleWrapper.CursorLeft = 0;
+                // Populate appropriate bindings, depending on the SecondPaneInteractable value
                 List<InteractiveTuiBinding> finalBindings;
                 if (interactiveTui.Bindings.Count == 0)
                     finalBindings = new()
                     {
-                        new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null)
+                        new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null, true)
                     };
                 else
                     finalBindings = new(interactiveTui.Bindings)
                     {
-                        new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null),
-                        new InteractiveTuiBinding(/* Localizable */ "Keybindings", ConsoleKey.K, null),
+                        new InteractiveTuiBinding(/* Localizable */ "Exit", ConsoleKey.Escape, null, true),
+                        new InteractiveTuiBinding(/* Localizable */ "Keybindings", ConsoleKey.K, null, true),
                     };
+                if (interactiveTui.SecondPaneInteractable)
+                    finalBindings.Add(
+                        new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab, null, true)
+                    );
+
+                // Render the key bindings
+                ConsoleWrapper.CursorLeft = 0;
                 foreach (InteractiveTuiBinding binding in finalBindings)
                 {
                     // First, check to see if the rendered binding info is going to exceed the console window width
@@ -650,6 +656,11 @@ namespace KS.ConsoleBase.Interactive
                         interactiveTui.HandleExit();
                         interactiveTui.isExiting = true;
                         break;
+                    case ConsoleKey.Tab:
+                        // User needs to switch sides
+                        DebugWriter.WriteDebug(DebugLevel.I, "Switching sides...");
+                        SwitchSides(interactiveTui);
+                        break;
                     default:
                         var implementedBindings = interactiveTui.Bindings.Where((binding) =>
                             binding.BindingKeyName == pressedKey.Key && binding.BindingKeyModifiers == pressedKey.Modifiers);
@@ -680,6 +691,16 @@ namespace KS.ConsoleBase.Interactive
             string markStart = mark ? "[" : " ";
             string markEnd = mark ? "]" : " ";
             return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
+        }
+
+        private static void SwitchSides(BaseInteractiveTui interactiveTui)
+        {
+            if (!interactiveTui.SecondPaneInteractable)
+                return;
+            BaseInteractiveTui.CurrentPane++;
+            if (BaseInteractiveTui.CurrentPane > 2)
+                BaseInteractiveTui.CurrentPane = 1;
+            BaseInteractiveTui.RedrawRequired = true;
         }
     }
 }

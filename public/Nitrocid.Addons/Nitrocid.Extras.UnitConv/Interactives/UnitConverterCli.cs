@@ -41,9 +41,6 @@ namespace Nitrocid.Extras.UnitConv.Interactives
         {
             // Operations
             new InteractiveTuiBinding(/* Localizable */ "Convert...",  ConsoleKey.F1,  (_, _)     => OpenConvert(), true),
-
-            // Misc bindings
-            new InteractiveTuiBinding(/* Localizable */ "Switch",      ConsoleKey.Tab, (_, _)     => Switch(), true),
         };
 
         /// <inheritdoc/>
@@ -107,14 +104,6 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Can't convert unit.") + ex.Message, BoxForegroundColor, BoxBackgroundColor);
             }
-            RedrawRequired = true;
-        }
-
-        private static void Switch()
-        {
-            CurrentPane++;
-            if (CurrentPane > 2)
-                CurrentPane = 1;
             RedrawRequired = true;
         }
 

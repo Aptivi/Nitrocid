@@ -89,10 +89,6 @@ namespace KS.Misc.Interactives
                 (info, _) => Verify((FileSystemEntry)info)),
             new InteractiveTuiBinding(/* Localizable */ "Preview",      ConsoleKey.P, 
                 (info, _) => Preview((FileSystemEntry)info)),
-
-            // Misc bindings
-            new InteractiveTuiBinding(/* Localizable */ "Switch",       ConsoleKey.Tab,
-                (_, _)    => Switch(), true),
         };
 
         /// <summary>
@@ -244,14 +240,6 @@ namespace KS.Misc.Interactives
                 firstPanePath = FilesystemTools.NeutralizePath(firstPanePath + "/..");
                 FirstPaneCurrentSelection = 1;
             }
-        }
-
-        private static void Switch()
-        {
-            CurrentPane++;
-            if (CurrentPane > 2)
-                CurrentPane = 1;
-            RedrawRequired = true;
         }
 
         private static void PrintFileSystemEntry(FileSystemEntry currentFileSystemEntry)
