@@ -63,27 +63,11 @@ namespace KS.Files.Editors.TextEdit
             new TextEditorBinding( /* Localizable */ "Remove Line", ConsoleKey.F2, ConsoleModifiers.Shift, RemoveLineNoMove, true),
             new TextEditorBinding( /* Localizable */ "Replace", ConsoleKey.F3, default, Replace, true),
             new TextEditorBinding( /* Localizable */ "Replace All", ConsoleKey.F3, ConsoleModifiers.Shift, ReplaceAll, true),
-            new TextEditorBinding( /* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
-            new TextEditorBinding( /* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
-            new TextEditorBinding( /* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
-            new TextEditorBinding( /* Localizable */ "Down", ConsoleKey.DownArrow, default, MoveDown, true),
-            new TextEditorBinding( /* Localizable */ "Previous page", ConsoleKey.PageUp, default, PreviousPage, true),
-            new TextEditorBinding( /* Localizable */ "Next page", ConsoleKey.PageDown, default, NextPage, true),
-            new TextEditorBinding( /* Localizable */ "Beginning", ConsoleKey.Home, default, Beginning, true),
-            new TextEditorBinding( /* Localizable */ "End", ConsoleKey.End, default, End, true),
         };
         private static readonly TextEditorBinding[] bindingsEntering = new[]
         {
             new TextEditorBinding( /* Localizable */ "Stop Entering", ConsoleKey.Escape, default, SwitchEnter, true),
-            new TextEditorBinding( /* Localizable */ "Insert", ConsoleKey.Enter, default, Insert, true),
-            new TextEditorBinding( /* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
-            new TextEditorBinding( /* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
-            new TextEditorBinding( /* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
-            new TextEditorBinding( /* Localizable */ "Down", ConsoleKey.DownArrow, default, MoveDown, true),
-            new TextEditorBinding( /* Localizable */ "Previous page", ConsoleKey.PageUp, default, PreviousPage, true),
-            new TextEditorBinding( /* Localizable */ "Next page", ConsoleKey.PageDown, default, NextPage, true),
-            new TextEditorBinding( /* Localizable */ "Beginning", ConsoleKey.Home, default, Beginning, true),
-            new TextEditorBinding( /* Localizable */ "End", ConsoleKey.End, default, End, true),
+            new TextEditorBinding( /* Localizable */ "New Line", ConsoleKey.Enter, default, Insert, true),
         };
 
         /// <summary>
@@ -297,9 +281,36 @@ namespace KS.Files.Editors.TextEdit
             // Check to see if we have this binding
             if (!binds.Any((heb) => heb.Key == key.Key && heb.KeyModifiers == key.Modifiers))
             {
+                switch (key.Key)
+                {
+                    case ConsoleKey.LeftArrow:
+                        MoveBackward();
+                        return;
+                    case ConsoleKey.RightArrow:
+                        MoveForward();
+                        return;
+                    case ConsoleKey.UpArrow:
+                        MoveUp();
+                        return;
+                    case ConsoleKey.DownArrow:
+                        MoveDown();
+                        return;
+                    case ConsoleKey.PageUp:
+                        PreviousPage();
+                        return;
+                    case ConsoleKey.PageDown:
+                        NextPage();
+                        return;
+                    case ConsoleKey.Home:
+                        Beginning();
+                        return;
+                    case ConsoleKey.End:
+                        End();
+                        return;
+                }
                 if (entering)
                 {
-                    // Insert a new character or delete it if backspace is entered
+                    // Handle the entering keys apppropriately
                     if (key.Key == ConsoleKey.Backspace)
                         RuboutChar();
                     else if (key.Key == ConsoleKey.Delete)
