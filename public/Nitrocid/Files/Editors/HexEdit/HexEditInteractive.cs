@@ -139,11 +139,11 @@ namespace KS.Files.Editors.HexEdit
             foreach (HexEditorBinding binding in bindings)
             {
                 // First, check to see if the rendered binding info is going to exceed the console window width
-                string renderedBinding = $" {binding.Key} {Translate.DoTranslation(binding.Name)}  ";
+                string renderedBinding = $" {GetBindingKeyShortcut(binding, false)} {Translate.DoTranslation(binding.Name)}  ";
                 bool canDraw = renderedBinding.Length + ConsoleWrapper.CursorLeft < ConsoleWrapper.WindowWidth - 3;
                 if (canDraw)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", binding.Key.ToString(), binding.Name);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
                     TextWriterWhereColor.WriteWhereColorBack(GetBindingKeyShortcut(binding, false), ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
                     TextWriterWhereColor.WriteWhereColorBack($"{(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.OptionForegroundColor, KernelColorTools.GetColor(KernelColorType.Background));
                 }
