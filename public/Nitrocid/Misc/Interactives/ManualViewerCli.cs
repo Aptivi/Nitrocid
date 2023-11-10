@@ -42,7 +42,8 @@ namespace KS.Misc.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
         {
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Info",        ConsoleKey.F1, (manual, _) => ShowManualInfo(manual), true)
+            new InteractiveTuiBinding(/* Localizable */ "Info",        ConsoleKey.F1,
+                (manual, _) => ShowManualInfo(manual), true)
         };
 
         /// <inheritdoc/>

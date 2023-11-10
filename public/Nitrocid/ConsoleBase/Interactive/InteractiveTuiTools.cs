@@ -262,12 +262,12 @@ namespace KS.ConsoleBase.Interactive
                 foreach (InteractiveTuiBinding binding in finalBindings)
                 {
                     // First, check to see if the rendered binding info is going to exceed the console window width
-                    string renderedBinding = $" {binding.BindingKeyName} {binding.BindingName}  ";
+                    string renderedBinding = $"{GetBindingKeyShortcut(binding, false)}{binding.BindingName}  ";
                     bool canDraw = renderedBinding.Length + ConsoleWrapper.CursorLeft < ConsoleWrapper.WindowWidth - 3;
                     if (canDraw)
                     {
-                        DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", binding.BindingKeyName.ToString(), binding.BindingName);
-                        TextWriterWhereColor.WriteWhereColorBack($" {binding.BindingKeyName} ", ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
+                        DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.BindingName);
+                        TextWriterWhereColor.WriteWhereColorBack(GetBindingKeyShortcut(binding, false), ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
                         TextWriterWhereColor.WriteWhereColorBack($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.OptionForegroundColor, BaseInteractiveTui.BackgroundColor);
                     }
                     else
@@ -633,9 +633,9 @@ namespace KS.ConsoleBase.Interactive
                         // User needs an infobox that shows all available keys
                         string section = Translate.DoTranslation("Available keys");
                         int maxBindingLength = bindings
-                            .Max((itb) => $"[{itb.BindingKeyName}]".Length);
+                            .Max((itb) => GetBindingKeyShortcut(itb).Length);
                         string[] bindingRepresentations = bindings
-                            .Select((itb) => $"{$"[{itb.BindingKeyName}]" + new string(' ', maxBindingLength - $"[{itb.BindingKeyName}]".Length) + $" | {(itb._localizable ? Translate.DoTranslation(itb.BindingName) : itb.BindingName)}"}")
+                            .Select((itb) => $"{GetBindingKeyShortcut(itb) + new string(' ', maxBindingLength - GetBindingKeyShortcut(itb).Length) + $" | {(itb._localizable ? Translate.DoTranslation(itb.BindingName) : itb.BindingName)}"}")
                             .ToArray();
                         InfoBoxColor.WriteInfoBoxColorBack(
                             $"{section}{CharManager.NewLine}" +
@@ -651,7 +651,8 @@ namespace KS.ConsoleBase.Interactive
                         interactiveTui.isExiting = true;
                         break;
                     default:
-                        var implementedBindings = interactiveTui.Bindings.Where((binding) => binding.BindingKeyName == pressedKey.Key);
+                        var implementedBindings = interactiveTui.Bindings.Where((binding) =>
+                            binding.BindingKeyName == pressedKey.Key && binding.BindingKeyModifiers == pressedKey.Modifiers);
                         foreach (var implementedBinding in implementedBindings)
                         {
                             DebugWriter.WriteDebug(DebugLevel.I, "Executing implemented binding {0}...", implementedBinding.BindingKeyName.ToString(), implementedBinding.BindingName);
@@ -672,6 +673,13 @@ namespace KS.ConsoleBase.Interactive
                 BaseInteractiveTui.FirstPaneCurrentSelection = 1;
             if (BaseInteractiveTui.SecondPaneCurrentSelection <= 0 && EnumerableTools.CountElements(interactiveTui.SecondaryDataSource) > 0)
                 BaseInteractiveTui.SecondPaneCurrentSelection = 1;
+        }
+
+        private static string GetBindingKeyShortcut(InteractiveTuiBinding bind, bool mark = true)
+        {
+            string markStart = mark ? "[" : " ";
+            string markEnd = mark ? "]" : " ";
+            return $"{markStart}{(bind.BindingKeyModifiers != 0 ? $"{bind.BindingKeyModifiers} + " : "")}{bind.BindingKeyName}{markEnd}";
         }
     }
 }

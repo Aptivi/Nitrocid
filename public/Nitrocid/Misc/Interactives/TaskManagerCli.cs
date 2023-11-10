@@ -43,8 +43,10 @@ namespace KS.Misc.Interactives
         public override List<InteractiveTuiBinding> Bindings { get; set; } = new()
         {
             // Operations
-            new InteractiveTuiBinding(/* Localizable */ "Kill",   ConsoleKey.F1,     (_, index) => KillThread(index), true),
-            new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab,    (_, _) => SwitchMode(), true)
+            new InteractiveTuiBinding(/* Localizable */ "Kill",   ConsoleKey.F1,
+                (_, index) => KillThread(index), true),
+            new InteractiveTuiBinding(/* Localizable */ "Switch", ConsoleKey.Tab,
+                (_, _) => SwitchMode(), true)
         };
 
         /// <inheritdoc/>

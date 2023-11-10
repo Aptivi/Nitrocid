@@ -28,6 +28,7 @@ namespace KS.ConsoleBase.Interactive
     {
         private readonly string _bindingName;
         private readonly ConsoleKey _bindingKeyName;
+        private readonly ConsoleModifiers _bindingKeyModifiers;
         private readonly Action<object, int> _bindingAction;
         internal bool _localizable;
 
@@ -44,6 +45,12 @@ namespace KS.ConsoleBase.Interactive
             _bindingKeyName;
 
         /// <summary>
+        /// Which key is bound to the action?
+        /// </summary>
+        public ConsoleModifiers BindingKeyModifiers =>
+            _bindingKeyModifiers;
+
+        /// <summary>
         /// The action to execute.
         /// The integer argument denotes the currently selected data
         /// </summary>
@@ -57,13 +64,29 @@ namespace KS.ConsoleBase.Interactive
         /// <param name="bindingKeyName">Which key is bound to the action?</param>
         /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
         public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int> bindingAction) :
-            this(bindingName, bindingKeyName, bindingAction, false)
+            this(bindingName, bindingKeyName, default, bindingAction, false)
         { }
 
-        internal InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int> bindingAction, bool localizable)
+        /// <summary>
+        /// Makes a new instance of an interactive TUI key binding
+        /// </summary>
+        /// <param name="bindingName">Key binding name</param>
+        /// <param name="bindingKeyName">Which key is bound to the action?</param>
+        /// <param name="bindingKeyModifiers">Which modifiers of the key is bound to the action?</param>
+        /// <param name="bindingAction">The action to execute. The object argument denotes the currently selected item, and the integer argument denotes the currently selected data</param>
+        public InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers, Action<object, int> bindingAction) :
+            this(bindingName, bindingKeyName, bindingKeyModifiers, bindingAction, false)
+        { }
+
+        internal InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, Action<object, int> bindingAction, bool localizable) :
+            this(bindingName, bindingKeyName, default, bindingAction, localizable)
+        { }
+
+        internal InteractiveTuiBinding(string bindingName, ConsoleKey bindingKeyName, ConsoleModifiers bindingKeyModifiers, Action<object, int> bindingAction, bool localizable)
         {
             _bindingName = bindingName;
             _bindingKeyName = bindingKeyName;
+            _bindingKeyModifiers = bindingKeyModifiers;
             _bindingAction = bindingAction;
             _localizable = localizable;
         }
