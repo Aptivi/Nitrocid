@@ -228,6 +228,12 @@ namespace KS.Files.Editors.TextEdit
                 if (source.Length == 0)
                     source = " ";
 
+                // Seek through the whole string to find unprintable characters
+                var sourceBuilder = new StringBuilder();
+                for (int l = 0; l < source.Length; l++)
+                    sourceBuilder.Append(CharManager.IsControlChar(source[l]) || source[l] == '\0' ? '.' : source[l]);
+                source = sourceBuilder.ToString();
+
                 // Highlight the selection
                 var lineBuilder = new StringBuilder(source);
                 if (i == lineIdx + 1)
@@ -464,6 +470,13 @@ namespace KS.Files.Editors.TextEdit
                 Translate.DoTranslation("Lines") + $": {TextEditShellCommon.FileLines.Count} | " +
                 Translate.DoTranslation("Column") + $": {lineColIdx + 1} | " +
                 Translate.DoTranslation("Row") + $": {lineIdx + 1}";
+
+            // Check to see if the current character is unprintable
+            if (TextEditShellCommon.FileLines.Count == 0)
+                return;
+            var currChar = TextEditShellCommon.FileLines[lineIdx][lineColIdx];
+            if (CharManager.IsControlChar(currChar) || currChar == '\0')
+                status += " | " + Translate.DoTranslation("Bin") + $": {(int)currChar}";
         }
 
         private static void PreviousPage()
