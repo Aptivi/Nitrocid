@@ -358,7 +358,8 @@ namespace KS.Files.Editors.TextEdit
             // Check the lines
             if (TextEditShellCommon.FileLines.Count == 0)
                 return;
-            if (TextEditShellCommon.FileLines[lineIdx].Length == 0)
+            if (TextEditShellCommon.FileLines[lineIdx].Length == 0 ||
+                TextEditShellCommon.FileLines[lineIdx].Length == lineColIdx)
                 return;
 
             // Delete a character
