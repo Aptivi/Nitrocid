@@ -232,10 +232,21 @@ namespace KS.Files.Editors.TextEdit
                 var lineBuilder = new StringBuilder(source);
                 if (i == lineIdx + 1)
                 {
-                    lineBuilder.Insert(lineColIdx + 1, unhighlightedColorBackground.VTSequenceBackground);
-                    lineBuilder.Insert(lineColIdx + 1, highlightedColorBackground.VTSequenceForeground);
-                    lineBuilder.Insert(lineColIdx, unhighlightedColorBackground.VTSequenceForeground);
-                    lineBuilder.Insert(lineColIdx, highlightedColorBackground.VTSequenceBackground);
+                    if (lineColIdx + 1 > lineBuilder.Length)
+                    {
+                        lineBuilder.Append(unhighlightedColorBackground.VTSequenceForeground);
+                        lineBuilder.Append(highlightedColorBackground.VTSequenceBackground);
+                        lineBuilder.Append(' ');
+                        lineBuilder.Append(unhighlightedColorBackground.VTSequenceBackground);
+                        lineBuilder.Append(highlightedColorBackground.VTSequenceForeground);
+                    }
+                    else
+                    {
+                        lineBuilder.Insert(lineColIdx + 1, unhighlightedColorBackground.VTSequenceBackground);
+                        lineBuilder.Insert(lineColIdx + 1, highlightedColorBackground.VTSequenceForeground);
+                        lineBuilder.Insert(lineColIdx, unhighlightedColorBackground.VTSequenceForeground);
+                        lineBuilder.Insert(lineColIdx, highlightedColorBackground.VTSequenceBackground);
+                    }
                 }
 
                 // Now, get the line range
@@ -499,8 +510,10 @@ namespace KS.Files.Editors.TextEdit
                 lineColIdx = 0;
                 return;
             }
-            if (lineColIdx > TextEditShellCommon.FileLines[lineIdx].Length - 1)
-                lineColIdx = TextEditShellCommon.FileLines[lineIdx].Length - 1;
+            int maxLen = TextEditShellCommon.FileLines[lineIdx].Length;
+            maxLen -= entering ? 0 : 1;
+            if (lineColIdx > maxLen)
+                lineColIdx = maxLen;
             if (lineColIdx < 0)
                 lineColIdx = 0;
         }
@@ -509,6 +522,7 @@ namespace KS.Files.Editors.TextEdit
         {
             entering = !entering;
             refresh = true;
+            UpdateLineIndex(lineIdx);
         }
     }
 }
