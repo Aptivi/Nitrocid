@@ -51,6 +51,13 @@ namespace KS.Shell.Shells.Sql
                         new CommandArgumentInfo()
                     }, new DbInfoCommand())
             },
+
+            { "tui",
+                new CommandInfo("tui", /* Localizable */ "Opens the SQL file in the interactive hex editor TUI",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TuiCommand())
+            },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()

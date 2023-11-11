@@ -222,7 +222,14 @@ namespace KS.Shell.Shells.Json
                             })
                         })
                     }, new SaveCommand())
-            }
+            },
+
+            { "tui",
+                new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive text editor TUI",
+                    new[] {
+                        new CommandArgumentInfo()
+                    }, new TuiCommand())
+            },
         };
 
         public override Dictionary<string, PromptPresetBase> ShellPresets => new()
