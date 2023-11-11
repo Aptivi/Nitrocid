@@ -24,7 +24,6 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
-using Newtonsoft.Json.Linq;
 using System;
 
 namespace KS.Shell.Shells.Json.Commands

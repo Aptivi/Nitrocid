@@ -23,24 +23,29 @@ using KS.Files.Editors.JsonShell;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
+using KS.Shell.ShellBase.Switches;
 using System;
 
 namespace KS.Shell.Shells.Json.Commands
 {
     /// <summary>
-    /// Removes a new object, property, or array
+    /// Sets a new object, property, or array
     /// </summary>
     /// <remarks>
-    /// You can use this command to remove an object, a property, or an from the end of the parent token. Note that the parent token must exist.
+    /// You can use this command to set an object, a property, or an to the end of the parent token. Note that the parent token must exist.
     /// </remarks>
-    class RmCommand : BaseCommand, ICommand
+    class SetCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
+            string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentPath");
+            string type = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-type");
+            string propName = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-propName");
+
             try
             {
-                JsonTools.Remove(parameters.ArgumentsList[0]);
+                JsonTools.Set(parent, type, propName, parameters.ArgumentsList[0]);
             }
             catch (KernelException kex)
             {
@@ -49,7 +54,7 @@ namespace KS.Shell.Shells.Json.Commands
             }
             catch (Exception ex)
             {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The JSON shell failed to remove an item.") + $" {ex.Message}", KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The JSON shell failed to set an item.") + $" {ex.Message}", KernelColorType.Error);
                 return 10000 + (int)KernelExceptionType.JsonEditor;
             }
             return 0;

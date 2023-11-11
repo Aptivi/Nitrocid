@@ -17,14 +17,11 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Text;
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.Drivers.RNG;
 using KS.Kernel.Threading;
 using KS.Misc.Reflection;
 using KS.Misc.Screensaver;

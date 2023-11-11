@@ -19,7 +19,6 @@
 
 using NUnit.Framework;
 using Shouldly;
-using KS.Drivers.Sorting;
 using System.Linq;
 using KS.Misc.Reflection;
 

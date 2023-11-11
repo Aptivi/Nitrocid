@@ -258,6 +258,30 @@ namespace KS.Shell.Shells.Json
                     }, new SaveCommand())
             },
 
+            { "set",
+                new CommandInfo("set", /* Localizable */ "Sets a value to an existing array, object, or property",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "jsonValue")
+                        }, new[] {
+                            new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            }),
+                            new SwitchInfo("type", /* Localizable */ "Specifies the type", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                                IsRequired = true
+                            }),
+                            new SwitchInfo("propName", /* Localizable */ "Specifies the property name to be created with. This is used if the parent path is an object.", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            }),
+                        })
+                    }, new SetCommand())
+            },
+
             { "tui",
                 new CommandInfo("tui", /* Localizable */ "Opens the JSON file in the interactive text editor TUI",
                     new[] {

@@ -321,6 +321,79 @@ namespace KS.Files.Editors.JsonShell
         }
 
         /// <summary>
+        /// Sets a value to an existing object, array, or property in the current JSON file
+        /// </summary>
+        /// <param name="parent">Where is the target to perform an operation on? Use JSONPath.</param>
+        /// <param name="type">Either object, array, property, or raw</param>
+        /// <param name="propName">Property name. Must be empty for non-object parent token type</param>
+        /// <param name="value">Value. It'll be automatically processed into the form of ["value"] for arrays, {} for objects, "value" for properties, and value for raw.</param>
+        public static void Set(string parent, string type, string propName, string value)
+        {
+            // First, do some sanity checks, starting from the parent token
+            var parentToken = GetTokenSafe(parent) ??
+                throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The parent token is not found. Make sure that you've written the path '{0}' correctly."), parent);
+
+            // Then, the new object type
+            if (type.ToLower() != "array" &&
+                type.ToLower() != "object" &&
+                type.ToLower() != "property" &&
+                type.ToLower() != "raw")
+                throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The specified type '{0}' is invalid."), type);
+
+            // Then, the new object's property name (if applicable)
+            var parentTokenType = DetermineType(parent);
+            if (parentTokenType != JTokenType.Object && !string.IsNullOrEmpty(propName))
+                throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("Can't append a new item with the property name with the parent token type of '{0}'."), parentTokenType.ToString());
+
+            // Finally, parse the string JSON token
+            JToken newToken = default;
+            switch (type.ToLower())
+            {
+                case "array":
+                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"[\"{value}\"]");
+                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"[\"{value}\"]");
+                    else
+                        throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("Can't append a new item with the property name '{0}' with the parent token type of '{1}'."), propName, parentTokenType.ToString());
+                    break;
+                case "object":
+                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"{{}}");
+                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"{{}}");
+                    else
+                        throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("Can't append a new item with the property name '{0}' with the parent token type of '{1}'."), propName, parentTokenType.ToString());
+                    break;
+                case "property":
+                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"\"{value}\"");
+                    else
+                        throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("Can't append a new item with the property name with the parent token type of '{0}'."), parentTokenType.ToString());
+                    break;
+                case "raw":
+                    if (parentTokenType == JTokenType.Object && !string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"{value}");
+                    else if (parentTokenType != JTokenType.Object && string.IsNullOrEmpty(propName))
+                        newToken = JToken.Parse($"{value}");
+                    else
+                        throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("Can't append a new item with the property name '{0}' with the parent token type of '{1}'."), propName, parentTokenType.ToString());
+                    break;
+            }
+            switch (parentTokenType)
+            {
+                case JTokenType.Array:
+                    JsonShellCommon.FileToken[parent] = newToken;
+                    break;
+                case JTokenType.Object:
+                    if (parentToken[propName] is null)
+                        throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("Property name '{0}' within parent '{1}', type '{2}', doesn't exist"), propName, parent, parentTokenType.ToString());
+                    parentToken[propName] = newToken;
+                    break;
+            }
+        }
+
+        /// <summary>
         /// Removes an object, array, or property from the current JSON file
         /// </summary>
         /// <param name="parent">Where is the target to perform an operation on? Use JSONPath.</param>

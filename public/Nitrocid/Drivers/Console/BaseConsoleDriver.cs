@@ -31,7 +31,6 @@ using TextEncoding = System.Text.Encoding;
 using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using Terminaux.Colors;
 using Terminaux.Sequences.Tools;
 using System.Text.RegularExpressions;
 
