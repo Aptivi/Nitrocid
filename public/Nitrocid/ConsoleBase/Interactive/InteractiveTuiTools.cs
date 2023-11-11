@@ -31,6 +31,9 @@ using KS.Misc.Text;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Sequences.Tools;
 
 namespace KS.ConsoleBase.Interactive
 {
@@ -264,26 +267,39 @@ namespace KS.ConsoleBase.Interactive
                     );
 
                 // Render the key bindings
-                ConsoleWrapper.CursorLeft = 0;
+                var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
                 foreach (InteractiveTuiBinding binding in finalBindings)
                 {
                     // First, check to see if the rendered binding info is going to exceed the console window width
-                    string renderedBinding = $"{GetBindingKeyShortcut(binding, false)}{binding.BindingName}  ";
-                    bool canDraw = renderedBinding.Length + ConsoleWrapper.CursorLeft < ConsoleWrapper.WindowWidth - 3;
+                    string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {binding.BindingName}  ";
+                    int actualLength = VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()).Length;
+                    bool canDraw = renderedBinding.Length + actualLength < ConsoleWrapper.WindowWidth - 3;
                     if (canDraw)
                     {
                         DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.BindingName);
-                        TextWriterWhereColor.WriteWhereColorBack(GetBindingKeyShortcut(binding, false), ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
-                        TextWriterWhereColor.WriteWhereColorBack($"{(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.OptionForegroundColor, BaseInteractiveTui.BackgroundColor);
+                        bindingsBuilder.Append(
+                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            GetBindingKeyShortcut(binding, false) +
+                            $"{BaseInteractiveTui.OptionForegroundColor.VTSequenceForeground}" +
+                            $"{BaseInteractiveTui.BackgroundColor.VTSequenceBackground}" +
+                            $" {(binding._localizable ? Translate.DoTranslation(binding.BindingName) : binding.BindingName)}  "
+                        );
                     }
                     else
                     {
                         // We can't render anymore, so just break and write a binding to show more
                         DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
-                        TextWriterWhereColor.WriteWhereColorBack($" K ", ConsoleWrapper.WindowWidth - 3, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
+                        bindingsBuilder.Append(
+                            $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
+                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            " K "
+                        );
                         break;
                     }
                 }
+                TextWriterColor.WritePlain(bindingsBuilder.ToString(), false);
 
                 // Don't require redraw
                 BaseInteractiveTui.RedrawRequired = false;
@@ -321,6 +337,7 @@ namespace KS.ConsoleBase.Interactive
             int paneCurrentSelection = paneNum == 2 ? BaseInteractiveTui.SecondPaneCurrentSelection : BaseInteractiveTui.FirstPaneCurrentSelection;
             int currentPage = (paneCurrentSelection - 1) / answersPerPage;
             int startIndex = answersPerPage * currentPage;
+            var listBuilder = new StringBuilder();
             for (int i = 0; i <= answersPerPage - 1; i++)
             {
                 // Populate the first pane
@@ -352,9 +369,16 @@ namespace KS.ConsoleBase.Interactive
                 var finalBackColor = finalIndex == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemBackColor : BaseInteractiveTui.PaneItemBackColor;
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)), left, top, finalForeColor, finalBackColor);
-                KernelColorTools.SetConsoleColor(BaseInteractiveTui.PaneItemBackColor, true);
+                listBuilder.Append(
+                    $"{CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1)}" +
+                    $"{finalForeColor.VTSequenceForeground}" +
+                    $"{finalBackColor.VTSequenceBackground}" +
+                    finalEntry +
+                    new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)) +
+                    $"{BaseInteractiveTui.PaneItemBackColor.VTSequenceBackground}"
+                );
             }
+            TextWriterColor.WritePlain(listBuilder.ToString());
 
             // Render the vertical bar
             if (Config.MainConfig.EnableScrollBarInSelection)
@@ -397,6 +421,7 @@ namespace KS.ConsoleBase.Interactive
             int currentPage = (paneCurrentSelection - 1) / answersPerPage;
             int startIndex = answersPerPage * currentPage;
             int[] indexes = new[] { lastSelection, currentSelection };
+            var listBuilder = new StringBuilder();
             for (int i = 0; i < indexes.Length; i++)
             {
                 // Populate the first pane with changes
@@ -429,9 +454,18 @@ namespace KS.ConsoleBase.Interactive
                 int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
                 int top = SeparatorMinimumHeightInterior + index - startIndex;
                 if (top > 0)
-                    TextWriterWhereColor.WriteWhereColorBack(finalEntry + new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)), left, top, finalForeColor, finalBackColor);
-                KernelColorTools.SetConsoleColor(BaseInteractiveTui.PaneItemBackColor, true);
+                {
+                    listBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1)}" +
+                        $"{finalForeColor.VTSequenceForeground}" +
+                        $"{finalBackColor.VTSequenceBackground}" +
+                        finalEntry +
+                        new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)) +
+                        $"{BaseInteractiveTui.PaneItemBackColor.VTSequenceBackground}"
+                    );
+                }
             }
+            TextWriterColor.WritePlain(listBuilder.ToString());
 
             // Render the vertical bar
             if (Config.MainConfig.EnableScrollBarInSelection)
