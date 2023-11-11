@@ -78,7 +78,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new AddArrayCommand())
+                    }, new AddArrayCommand(), CommandFlags.Obsolete)
             },
 
             { "addproperty",
@@ -94,7 +94,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new AddPropertyCommand())
+                    }, new AddPropertyCommand(), CommandFlags.Obsolete)
             },
             
             { "addobject",
@@ -110,7 +110,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new AddObjectCommand())
+                    }, new AddObjectCommand(), CommandFlags.Obsolete)
             },
             
             { "addobjectindexed",
@@ -129,7 +129,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new AddObjectIndexedCommand())
+                    }, new AddObjectIndexedCommand(), CommandFlags.Obsolete)
             },
             
             { "clear",
@@ -146,7 +146,7 @@ namespace KS.Shell.Shells.Json
                         {
                             new CommandArgumentPart(true, "propertyName")
                         })
-                    }, new DelPropertyCommand())
+                    }, new DelPropertyCommand(), CommandFlags.Obsolete)
             },
             
             { "exitnosave",
@@ -219,7 +219,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new RmObjectCommand())
+                    }, new RmObjectCommand(), CommandFlags.Obsolete)
             },
             
             { "rmobjectindexed",
@@ -237,7 +237,7 @@ namespace KS.Shell.Shells.Json
                                 ArgumentsRequired = true
                             })
                         })
-                    }, new RmObjectIndexedCommand())
+                    }, new RmObjectIndexedCommand(), CommandFlags.Obsolete)
             },
             
             { "save",

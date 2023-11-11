@@ -413,6 +413,7 @@ namespace KS.Files.Editors.JsonShell
         /// <param name="ParentProperty">Where is the target array found?</param>
         /// <param name="Key">Name of property containing the array</param>
         /// <param name="Value">The new value</param>
+        [Obsolete($"Use {nameof(Add)}() instead.")]
         public static void AddNewObject(string ParentProperty, string Key, JToken Value)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
@@ -431,6 +432,7 @@ namespace KS.Files.Editors.JsonShell
         /// <param name="ParentProperty">Where is the target array found?</param>
         /// <param name="Index">Index number of an array to add the value to</param>
         /// <param name="Value">The new value</param>
+        [Obsolete($"Use {nameof(Add)}() instead.")]
         public static void AddNewObjectIndexed(string ParentProperty, int Index, JToken Value)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
@@ -449,6 +451,7 @@ namespace KS.Files.Editors.JsonShell
         /// <param name="ParentProperty">Where to place the new property?</param>
         /// <param name="Key">New property</param>
         /// <param name="Value">The value for the new property</param>
+        [Obsolete($"Use {nameof(Add)}() instead.")]
         public static void AddNewProperty(string ParentProperty, string Key, JToken Value)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
@@ -464,6 +467,7 @@ namespace KS.Files.Editors.JsonShell
         /// <param name="ParentProperty">Where to place the new array?</param>
         /// <param name="Key">New array</param>
         /// <param name="Values">The values for the new array</param>
+        [Obsolete($"Use {nameof(Add)}() instead.")]
         public static void AddNewArray(string ParentProperty, string Key, JArray Values)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
@@ -477,6 +481,7 @@ namespace KS.Files.Editors.JsonShell
         /// Removes a property from the current JSON file
         /// </summary>
         /// <param name="Property">The property. You can use JSONPath.</param>
+        [Obsolete($"Use {nameof(Remove)}() instead.")]
         public static void RemoveProperty(string Property)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
@@ -490,6 +495,7 @@ namespace KS.Files.Editors.JsonShell
         /// </summary>
         /// <param name="ParentProperty">Where is the target object found?</param>
         /// <param name="ObjectName">The object name. You can use JSONPath.</param>
+        [Obsolete($"Use {nameof(Remove)}() instead.")]
         public static void RemoveObject(string ParentProperty, string ObjectName)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
@@ -504,6 +510,7 @@ namespace KS.Files.Editors.JsonShell
         /// </summary>
         /// <param name="ParentProperty">Where is the target object found?</param>
         /// <param name="Index">Index number of an array to add the value to</param>
+        [Obsolete($"Use {nameof(Remove)}() instead.")]
         public static void RemoveObjectIndexed(string ParentProperty, int Index)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", JsonShellCommon.FileToken.Count());
