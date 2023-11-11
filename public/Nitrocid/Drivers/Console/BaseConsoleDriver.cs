@@ -630,16 +630,12 @@ namespace KS.Drivers.Console
 
                     // Iterate through sentences
                     var buffered = new StringBuilder();
-                    bool exiting = false;
                     foreach (string sentence in sentences)
                     {
-                        if (exiting)
-                            break;
-
                         // Grab each VT sequence from the paragraph and fetch their indexes
                         var sequences = VtSequenceTools.MatchVTSequences(sentence);
                         int vtSeqIdx = 0;
-                        for (int i = 0; i < sentence.Length && !exiting; i++)
+                        for (int i = 0; i < sentence.Length; i++)
                         {
                             char TextChar = sentence[i];
 
@@ -649,16 +645,13 @@ namespace KS.Drivers.Console
                                 ConsoleWrapper.Write(buffered.ToString());
                                 buffered.Clear();
                                 if (Input.DetectKeypress().Key == ConsoleKey.Escape)
-                                    exiting = true;
+                                    return;
                                 LinesMade = 0;
                             }
                             buffered.Append(BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
                         }
-                        if (!exiting)
-                        {
-                            buffered.AppendLine();
-                            LinesMade++;
-                        }
+                        buffered.AppendLine();
+                        LinesMade++;
                     }
                     ConsoleWrapper.Write(buffered.ToString());
                     buffered.Clear();
