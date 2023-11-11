@@ -41,7 +41,7 @@ namespace Nitrocid.Tests.Misc.Editors
             JsonTools.OpenJsonFile(PathToTestJson).ShouldBeTrue();
             JsonTools.AddNewProperty("$", "HowText", "How are you today?");
             JsonShellCommon.FileToken["HowText"].ShouldNotBeNull();
-            JsonTools.GetProperty("HelloText").ShouldNotBeNull();
+            JsonTools.GetToken("HelloText").ShouldNotBeNull();
             JsonTools.SerializeToString("HelloText").ShouldNotBeNullOrEmpty();
             JsonTools.RemoveProperty("HowText");
             JsonTools.SaveFile(false).ShouldBeTrue();

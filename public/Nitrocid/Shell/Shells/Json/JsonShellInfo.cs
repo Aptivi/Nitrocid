@@ -39,15 +39,39 @@ namespace KS.Shell.Shells.Json
         /// </summary>
         public override Dictionary<string, CommandInfo> Commands => new()
         {
+            { "add",
+                new CommandInfo("add", /* Localizable */ "Adds a new array, object, or property",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "jsonValue")
+                        }, new[] {
+                            new SwitchInfo("parentPath", /* Localizable */ "Specifies the parent path", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            }),
+                            new SwitchInfo("type", /* Localizable */ "Specifies the type", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true,
+                                IsRequired = true
+                            }),
+                            new SwitchInfo("propName", /* Localizable */ "Specifies the property name to be created with. This is used if the parent path is an object.", new SwitchOptions()
+                            {
+                                ArgumentsRequired = true
+                            }),
+                        })
+                    }, new AddCommand())
+            },
+
             { "addarray",
                 new CommandInfo("addarray", /* Localizable */ "Adds a new property containing the array",
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(true, "propName"),
-                            new CommandArgumentPart(true, "propName1"),
-                            new CommandArgumentPart(false, "propName2"),
-                            new CommandArgumentPart(false, "propName3...")
+                            new CommandArgumentPart(true, "propValue1"),
+                            new CommandArgumentPart(false, "propValue2"),
+                            new CommandArgumentPart(false, "propValue3...")
                         }, new[] {
                             new SwitchInfo("parentProperty", /* Localizable */ "Specifies the parent property", new SwitchOptions()
                             {
@@ -171,6 +195,16 @@ namespace KS.Shell.Shells.Json
                             new CommandArgumentPart(false, "propertyName")
                         })
                     }, new PrintCommand(), CommandFlags.Wrappable)
+            },
+            
+            { "rm",
+                new CommandInfo("rm", /* Localizable */ "Removes a target object",
+                    new[] {
+                        new CommandArgumentInfo(new[]
+                        {
+                            new CommandArgumentPart(true, "objectPath")
+                        })
+                    }, new RmCommand())
             },
             
             { "rmobject",

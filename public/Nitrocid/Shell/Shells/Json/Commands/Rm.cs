@@ -17,31 +17,43 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Editors.JsonShell;
+using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
+using Newtonsoft.Json.Linq;
+using System;
 
 namespace KS.Shell.Shells.Json.Commands
 {
     /// <summary>
-    /// Finds a property
+    /// Removes a new object, property, or array
     /// </summary>
     /// <remarks>
-    /// You can use this command to search for a property in the parent property. Note that the parent property must exist.
+    /// You can use this command to remove an object, a property, or an from the end of the parent token. Note that the parent token must exist.
     /// </remarks>
-    class FindPropertyCommand : BaseCommand, ICommand
+    class RmCommand : BaseCommand, ICommand
     {
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            string parent = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-parentProperty");
-            var token = JsonTools.GetTokenSafe(parent, parameters.ArgumentsList[0]);
-            if (token != null)
-                TextWriterColor.Write(Translate.DoTranslation("Property is found in") + $" {token.Path}");
-            else
-                TextWriterColor.Write(Translate.DoTranslation("Property is not found"));
+            try
+            {
+                JsonTools.Remove(parameters.ArgumentsList[0]);
+            }
+            catch (KernelException kex)
+            {
+                TextWriterColor.WriteKernelColor(kex.Message, KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.JsonEditor;
+            }
+            catch (Exception ex)
+            {
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The JSON shell failed to remove an item.") + $" {ex.Message}", KernelColorType.Error);
+                return 10000 + (int)KernelExceptionType.JsonEditor;
+            }
             return 0;
         }
     }
