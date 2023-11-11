@@ -319,6 +319,9 @@ namespace KS.Shell.ShellBase.Shells
             string TargetFile = "";
             string TargetFileName = "";
 
+            // Get the shell info
+            var shellInfo = GetShellInfo(ShellType);
+
             // Now, initialize the command autocomplete handler. This will not be invoked if we have auto completion disabled.
             var settings = new TermReaderSettings()
             {
@@ -365,7 +368,10 @@ namespace KS.Shell.ShellBase.Shells
 
                 // Wait for command
                 DebugWriter.WriteDebug(DebugLevel.I, "Waiting for command");
-                string strcommand = Input.ReadLine("", "", settings);
+                string strcommand =
+                    shellInfo.OneLineWrap ?
+                    Input.ReadLineWrapped("", "", settings) :
+                    Input.ReadLine("", "", settings);
                 DebugWriter.WriteDebug(DebugLevel.I, "Waited for command [{0}]", strcommand);
                 if (strcommand == ";")
                     strcommand = "";

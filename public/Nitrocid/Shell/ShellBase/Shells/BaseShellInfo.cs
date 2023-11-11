@@ -50,6 +50,8 @@ namespace KS.Shell.ShellBase.Shells
         public virtual bool AcceptsNetworkConnection => false;
         /// <inheritdoc/>
         public virtual string NetworkConnectionType => "";
+        /// <inheritdoc/>
+        public virtual bool OneLineWrap => false;
         /// <summary>
         /// Shell type. Taken from <see cref="ShellBase"/> for easier access
         /// </summary>
