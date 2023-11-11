@@ -31,6 +31,8 @@ namespace KS.Files.Instances
     {
         private readonly string filePath;
         private readonly string filePathUnneutralized;
+        private readonly long fileSize;
+        private readonly FileSystemEntryType fileType;
 
         /// <summary>
         /// Does this file or directory entry exist?
@@ -42,9 +44,7 @@ namespace KS.Files.Instances
         /// Gets the file entry type
         /// </summary>
         public FileSystemEntryType Type =>
-            Checking.FolderExists(filePath) ? FileSystemEntryType.Directory :
-            Checking.FileExists(filePath) ? FileSystemEntryType.File :
-            FileSystemEntryType.Nonexistent;
+            fileType;
 
         /// <summary>
         /// Gets the original file path that was passed to the constructor
@@ -57,6 +57,12 @@ namespace KS.Files.Instances
         /// </summary>
         public string FilePath =>
             filePath;
+
+        /// <summary>
+        /// Gets the file size. -1 if the entry is a directory or non-existent
+        /// </summary>
+        public long FileSize =>
+            fileSize;
 
         /// <summary>
         /// Gets the base entry from the unprocessed file path
@@ -82,6 +88,13 @@ namespace KS.Files.Instances
         {
             this.filePath = FilesystemTools.NeutralizePath(filePath);
             filePathUnneutralized = filePath;
+            fileSize = -1;
+            fileType =
+                Checking.FolderExists(filePath) ? FileSystemEntryType.Directory :
+                Checking.FileExists(filePath) ? FileSystemEntryType.File :
+                FileSystemEntryType.Nonexistent;
+            if (Type == FileSystemEntryType.File)
+                fileSize = new FileInfo(FilePath).Length;
         }
     }
 }

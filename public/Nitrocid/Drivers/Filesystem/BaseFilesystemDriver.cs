@@ -333,7 +333,7 @@ namespace KS.Drivers.Filesystem
             {
                 // We define the max string length for the largest size. This is to overcome the limitation of sorting when it comes to numbers.
                 int MaxLength = FilesystemEntries
-                    .Max((fse) => fse.BaseEntry as FileInfo is not null ? (fse.BaseEntry as FileInfo).Length.GetDigits() : 1);
+                    .Max((fse) => fse.FileSize.GetDigits());
 
                 // Select whether or not to sort descending.
                 switch (Listing.SortDirection)
@@ -352,8 +352,20 @@ namespace KS.Drivers.Filesystem
             }
 
             // We would most likely need to put the folders first, then the files.
-            var listFolders = FilesystemEntries.Where((fsi) => fsi.Type == FileSystemEntryType.Directory).ToList();
-            var listFiles =   FilesystemEntries.Where((fsi) => fsi.Type == FileSystemEntryType.File).ToList();
+            var listFolders = new List<FileSystemEntry>();
+            var listFiles =   new List<FileSystemEntry>();
+            foreach (var entry in FilesystemEntries)
+            {
+                switch (entry.Type)
+                {
+                    case FileSystemEntryType.Directory:
+                        listFolders.Add(entry);
+                        break;
+                    case FileSystemEntryType.File:
+                        listFiles.Add(entry);
+                        break;
+                }
+            }
             return listFolders.Union(listFiles).ToList();
         }
 

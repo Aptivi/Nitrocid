@@ -54,6 +54,10 @@ namespace KS.Misc.Interactives
     {
         private static string firstPanePath = Paths.HomePath;
         private static string secondPanePath = Paths.HomePath;
+        private static bool refreshFirstPaneListing = true;
+        private static bool refreshSecondPaneListing = true;
+        private static List<FileSystemEntry> firstPaneListing = new();
+        private static List<FileSystemEntry> secondPaneListing = new();
 
         /// <summary>
         /// File manager bindings
@@ -104,7 +108,12 @@ namespace KS.Misc.Interactives
             {
                 try
                 {
-                    return Listing.CreateList(firstPanePath, true);
+                    if (refreshFirstPaneListing)
+                    {
+                        refreshFirstPaneListing = false;
+                        firstPaneListing = Listing.CreateList(firstPanePath, true);
+                    }
+                    return firstPaneListing;
                 }
                 catch (Exception ex)
                 {
@@ -122,7 +131,12 @@ namespace KS.Misc.Interactives
             {
                 try
                 {
-                    return Listing.CreateList(secondPanePath, true);
+                    if (refreshSecondPaneListing)
+                    {
+                        refreshSecondPaneListing = false;
+                        secondPaneListing = Listing.CreateList(secondPanePath, true);
+                    }
+                    return secondPaneListing;
                 }
                 catch (Exception ex)
                 {
@@ -202,11 +216,13 @@ namespace KS.Misc.Interactives
                     {
                         secondPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         SecondPaneCurrentSelection = 1;
+                        refreshSecondPaneListing = true;
                     }
                     else
                     {
                         firstPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
                         FirstPaneCurrentSelection = 1;
+                        refreshFirstPaneListing = true;
                     }
                 }
                 else if (currentFileSystemEntry.Type == FileSystemEntryType.File)
@@ -234,11 +250,13 @@ namespace KS.Misc.Interactives
             {
                 secondPanePath = FilesystemTools.NeutralizePath(secondPanePath + "/..");
                 SecondPaneCurrentSelection = 1;
+                refreshSecondPaneListing = true;
             }
             else
             {
                 firstPanePath = FilesystemTools.NeutralizePath(firstPanePath + "/..");
                 FirstPaneCurrentSelection = 1;
+                refreshFirstPaneListing = true;
             }
         }
 
@@ -337,6 +355,10 @@ namespace KS.Misc.Interactives
                 DebugCheck.AssertNull(dest, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                 Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, dest);
+                if (CurrentPane == 2)
+                    refreshFirstPaneListing = true;
+                else
+                    refreshSecondPaneListing = true;
             }
             catch (Exception ex)
             {
@@ -362,6 +384,8 @@ namespace KS.Misc.Interactives
                 DebugCheck.AssertNull(dest, "destination is null!");
                 DebugCheck.Assert(!string.IsNullOrWhiteSpace(dest), "destination is empty or whitespace!");
                 Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, dest);
+                refreshSecondPaneListing = true;
+                refreshFirstPaneListing = true;
             }
             catch (Exception ex)
             {
@@ -383,6 +407,10 @@ namespace KS.Misc.Interactives
             {
                 InteractiveTuiTools.ForceRefreshSelection();
                 Removing.RemoveFileOrDir(currentFileSystemEntry.FilePath);
+                if (CurrentPane == 2)
+                    refreshSecondPaneListing = true;
+                else
+                    refreshFirstPaneListing = true;
             }
             catch (Exception ex)
             {
@@ -406,11 +434,13 @@ namespace KS.Misc.Interactives
                 {
                     SecondPaneCurrentSelection = 1;
                     secondPanePath = path;
+                    refreshSecondPaneListing = true;
                 }
                 else
                 {
                     FirstPaneCurrentSelection = 1;
                     firstPanePath = path;
+                    refreshFirstPaneListing = true;
                 }
             }
             else
@@ -435,7 +465,13 @@ namespace KS.Misc.Interactives
                 if (Checking.FolderExists(path))
                 {
                     if (Parsing.TryParsePath(path))
+                    {
                         Copying.CopyFileOrDir(currentFileSystemEntry.FilePath, path);
+                        if (CurrentPane == 2)
+                            refreshFirstPaneListing = true;
+                        else
+                            refreshSecondPaneListing = true;
+                    }
                     else
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
                 }
@@ -469,7 +505,11 @@ namespace KS.Misc.Interactives
                 if (Checking.FolderExists(path))
                 {
                     if (Parsing.TryParsePath(path))
+                    {
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, path);
+                        refreshSecondPaneListing = true;
+                        refreshFirstPaneListing = true;
+                    }
                     else
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
                 }
@@ -499,7 +539,13 @@ namespace KS.Misc.Interactives
                 if (!Checking.FileExists(filename))
                 {
                     if (Parsing.TryParseFileName(filename))
+                    {
                         Moving.MoveFileOrDir(currentFileSystemEntry.FilePath, Path.GetDirectoryName(currentFileSystemEntry.FilePath) + $"/{filename}");
+                        if (CurrentPane == 2)
+                            refreshSecondPaneListing = true;
+                        else
+                            refreshFirstPaneListing = true;
+                    }
                     else
                         InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Make sure that you've written the correct file name."), BoxForegroundColor, BoxBackgroundColor);
                 }
@@ -522,7 +568,13 @@ namespace KS.Misc.Interactives
             string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a new directory name."), BoxForegroundColor, BoxBackgroundColor);
             path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
             if (!Checking.FolderExists(path))
+            {
                 Making.TryMakeDirectory(path);
+                if (CurrentPane == 2)
+                    refreshSecondPaneListing = true;
+                else
+                    refreshFirstPaneListing = true;
+            }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), BoxForegroundColor, BoxBackgroundColor);
             RedrawRequired = true;
