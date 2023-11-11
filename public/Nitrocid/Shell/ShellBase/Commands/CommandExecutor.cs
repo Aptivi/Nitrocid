@@ -83,7 +83,8 @@ namespace KS.Shell.ShellBase.Commands
 
         private static void ExecuteCommand(CommandExecutorParameters ThreadParams, Dictionary<string, CommandInfo> TargetCommands)
         {
-            string RequestedCommand = ThreadParams.RequestedCommand;
+            var RequestedCommand = ThreadParams.RequestedCommand;
+            var RequestedCommandInfo = ThreadParams.RequestedCommandInfo;
             string ShellType = ThreadParams.ShellType;
             var ShellInstance = ThreadParams.ShellInstance;
             bool argSatisfied = true;
@@ -91,7 +92,7 @@ namespace KS.Shell.ShellBase.Commands
             {
                 // Variables
                 string Command = "nonexistent-command";
-                var (satisfied, total) = ArgumentsParser.ParseShellCommandArguments(RequestedCommand, ShellType);
+                var (satisfied, total) = ArgumentsParser.ParseShellCommandArguments(RequestedCommand, RequestedCommandInfo, ShellType);
 
                 // Check to see if we have satisfied arguments list
                 argSatisfied = satisfied is not null;
@@ -191,15 +192,32 @@ namespace KS.Shell.ShellBase.Commands
                 bool containsSetSwitch = SwitchManager.ContainsSwitch(Switches, "-set");
                 string variable = "";
 
+                // Change the command if a command with no slash is entered on a slash-enabled shells
+                var cmdInfo = TargetCommands.ContainsKey(Command) ? TargetCommands[Command] : RequestedCommandInfo;
+                var shellInfo = ShellManager.GetShellInfo(ShellType);
+                if (shellInfo.SlashCommand)
+                {
+                    if (!Command.StartsWith('/'))
+                    {
+                        // Change the command info to the non-slash one
+                        cmdInfo = RequestedCommandInfo;
+                    }
+                    else
+                    {
+                        // Strip the slash
+                        Command = Command[1..].Trim();
+                    }
+                }
+
                 // Check to see if a requested command is obsolete
-                if (TargetCommands[Command].Flags.HasFlag(CommandFlags.Obsolete))
+                if (cmdInfo.Flags.HasFlag(CommandFlags.Obsolete))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "The command requested {0} is obsolete", Command);
                     TextWriterColor.Write(Translate.DoTranslation("This command is obsolete and will be removed in a future release."));
                 }
 
                 // If there are enough arguments provided, execute. Otherwise, fail with not enough arguments.
-                var ArgInfos = TargetCommands[Command].CommandArgumentInfo;
+                var ArgInfos = cmdInfo.CommandArgumentInfo;
                 for (int i = 0; i < ArgInfos.Length; i++)
                 {
                     argSatisfied = true;
@@ -237,11 +255,11 @@ namespace KS.Shell.ShellBase.Commands
                 if (argSatisfied)
                 {
                     // Prepare the command parameter instance
-                    var parameters = new CommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches);
+                    var parameters = new CommandParameters(StrArgs, Args, StrArgsOrig, ArgsOrig, Switches, Command);
 
                     // Now, get the base command and execute it
                     DebugWriter.WriteDebug(DebugLevel.I, "Really executing command {0} with args {1}", Command, StrArgs);
-                    var CommandBase = TargetCommands[Command].CommandBase;
+                    var CommandBase = cmdInfo.CommandBase;
                     string value = "";
                     CancellationHandlers.cts = new CancellationTokenSource();
 #if NET8_0

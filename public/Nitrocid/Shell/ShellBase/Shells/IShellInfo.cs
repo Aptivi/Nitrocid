@@ -68,5 +68,13 @@ namespace KS.Shell.ShellBase.Shells
         /// Whether the shell uses one line for input
         /// </summary>
         bool OneLineWrap { get; }
+        /// <summary>
+        /// Whether the shell uses a slash before the command executes
+        /// </summary>
+        bool SlashCommand { get; }
+        /// <summary>
+        /// For shells that have <see cref="SlashCommand"/> enabled, this is the command that gets executed everytime we encounter text that doesn't start with the slash.
+        /// </summary>
+        CommandInfo NonSlashCommandInfo { get; }
     }
 }

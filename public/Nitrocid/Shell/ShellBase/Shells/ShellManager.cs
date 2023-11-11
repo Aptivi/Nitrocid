@@ -402,6 +402,26 @@ namespace KS.Shell.ShellBase.Shells
             {
                 string Command = SplitCommands[i];
 
+                // Then, check to see if this shell uses the slash command
+                if (shellInfo.SlashCommand)
+                {
+                    if (!Command.StartsWith('/'))
+                    {
+                        // Not a slash command. Do things differently
+                        var ShellInstance = ShellStack[^1];
+                        DebugWriter.WriteDebug(DebugLevel.I, "Non-slash cmd exec succeeded. Running with {0}", Command);
+                        var Params = new CommandExecutorParameters(Command, shellInfo.NonSlashCommandInfo ?? BaseShellInfo.fallbackNonSlashCommand, ShellType, ShellInstance);
+                        CommandExecutor.StartCommandThread(Params);
+                        UESHVariables.SetVariable("UESHErrorCode", $"{ShellInstance.LastErrorCode}");
+                        continue;
+                    }
+                    else
+                    {
+                        // Strip the slash
+                        Command = Command[1..].Trim();
+                    }
+                }
+
                 // Fire an event of PreExecuteCommand
                 EventsManager.FireEvent(EventType.PreExecuteCommand, ShellType, Command);
 
@@ -459,9 +479,10 @@ namespace KS.Shell.ShellBase.Shells
                         {
                             // Execute the command
                             DebugWriter.WriteDebug(DebugLevel.I, "Executing command");
+                            var cmdInfo = Commands[commandName];
 
                             // Check to see if the command supports redirection
-                            if (Commands[commandName].Flags.HasFlag(CommandFlags.RedirectionSupported))
+                            if (cmdInfo.Flags.HasFlag(CommandFlags.RedirectionSupported))
                             {
                                 DebugWriter.WriteDebug(DebugLevel.I, "Redirection supported!");
                                 Command = InitializeRedirection(Command);
@@ -480,7 +501,7 @@ namespace KS.Shell.ShellBase.Shells
                                 // Check to see if a user is able to execute a command
                                 if (ShellType == "Shell")
                                 {
-                                    if (Commands[commandName].Flags.HasFlag(CommandFlags.Strict))
+                                    if (cmdInfo.Flags.HasFlag(CommandFlags.Strict))
                                     {
                                         if (!PermissionsTools.IsPermissionGranted(PermissionTypes.RunStrictCommands) &&
                                             !UserManagement.CurrentUser.Flags.HasFlag(UserFlags.Administrator))
@@ -494,7 +515,7 @@ namespace KS.Shell.ShellBase.Shells
                                 }
 
                                 // Check the command before starting
-                                if (KernelEntry.Maintenance & Commands[commandName].Flags.HasFlag(CommandFlags.NoMaintenance))
+                                if (KernelEntry.Maintenance & cmdInfo.Flags.HasFlag(CommandFlags.NoMaintenance))
                                 {
                                     DebugWriter.WriteDebug(DebugLevel.W, "Cmd exec {0} failed: In maintenance mode. {0} is in NoMaintenanceCmds", commandName);
                                     TextWriterColor.WriteKernelColor(Translate.DoTranslation("Shell message: The requested command {0} is not allowed to run in maintenance mode."), true, KernelColorType.Error, commandName);
@@ -504,7 +525,7 @@ namespace KS.Shell.ShellBase.Shells
                                 {
                                     var ShellInstance = ShellStack[^1];
                                     DebugWriter.WriteDebug(DebugLevel.I, "Cmd exec {0} succeeded. Running with {1}", commandName, Command);
-                                    var Params = new CommandExecutorParameters(Command, ShellType, ShellInstance);
+                                    var Params = new CommandExecutorParameters(Command, cmdInfo, ShellType, ShellInstance);
                                     CommandExecutor.StartCommandThread(Params);
                                     UESHVariables.SetVariable("UESHErrorCode", $"{ShellInstance.LastErrorCode}");
                                 }

@@ -44,7 +44,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
         public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, ShellType CommandType) =>
-            ParseShellCommandArguments(CommandText, ShellManager.GetShellTypeName(CommandType));
+            ParseShellCommandArguments(CommandText, null, ShellManager.GetShellTypeName(CommandType));
 
         /// <summary>
         /// Parses the shell command arguments
@@ -52,7 +52,27 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="CommandText">Command text that the user provided</param>
         /// <param name="CommandType">Shell command type.</param>
         /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
-        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, string CommandType)
+        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, string CommandType) =>
+            ParseShellCommandArguments(CommandText, null, CommandType);
+
+        /// <summary>
+        /// Parses the shell command arguments
+        /// </summary>
+        /// <param name="CommandText">Command text that the user provided</param>
+        /// <param name="cmdInfo">Command information</param>
+        /// <param name="CommandType">Shell command type. Consult the <see cref="ShellType"/> enum for information about supported shells.</param>
+        /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
+        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo cmdInfo, ShellType CommandType) =>
+            ParseShellCommandArguments(CommandText, cmdInfo, ShellManager.GetShellTypeName(CommandType));
+
+        /// <summary>
+        /// Parses the shell command arguments
+        /// </summary>
+        /// <param name="CommandText">Command text that the user provided</param>
+        /// <param name="cmdInfo">Command information</param>
+        /// <param name="CommandType">Shell command type.</param>
+        /// <returns>An array of <see cref="ProvidedArgumentsInfo"/> that holds information about parsed command</returns>
+        public static (ProvidedArgumentsInfo satisfied, ProvidedArgumentsInfo[] total) ParseShellCommandArguments(string CommandText, CommandInfo cmdInfo, string CommandType)
         {
             string Command;
             Dictionary<string, CommandInfo> ShellCommands;
@@ -76,8 +96,21 @@ namespace KS.Shell.ShellBase.Arguments
             var CommandInfo = ModCommands.ContainsKey(Command) ? ModCommands[Command] :
                               ShellCommands.ContainsKey(Command) ? ShellCommands[Command] :
                               aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :
-                              null;
+                              cmdInfo;
             var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true, true, new());
+
+            // Change the command if a command with no slash is entered on a slash-enabled shells
+            var shellInfo = ShellManager.GetShellInfo(CommandType);
+            if (shellInfo.SlashCommand)
+            {
+                if (!CommandText.StartsWith('/'))
+                {
+                    // Change the command info to the non-slash one
+                    CommandInfo = cmdInfo;
+                }
+            }
+
+            // Now, process the arguments
             if (CommandInfo != null)
                 return ProcessArgumentOrShellCommandArguments(CommandText, CommandInfo, null);
             else

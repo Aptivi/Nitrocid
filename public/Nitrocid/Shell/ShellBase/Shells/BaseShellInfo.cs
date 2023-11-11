@@ -18,6 +18,7 @@
 //
 
 using KS.Shell.Prompts;
+using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using System.Collections.Generic;
 
@@ -31,6 +32,12 @@ namespace KS.Shell.ShellBase.Shells
         internal Dictionary<string, CommandInfo> modCommands = new();
         internal Dictionary<string, CommandInfo> addonCommands = new();
         internal Dictionary<string, PromptPresetBase> customShellPresets = new();
+        internal static CommandInfo fallbackNonSlashCommand =
+            new("slashreminder", /* Localizable */ "Reminder for the slash commands",
+                new[]
+                {
+                    new CommandArgumentInfo()
+                }, new SlashReminderCommand());
 
         /// <inheritdoc/>
         public virtual object ShellLock => new();
@@ -52,6 +59,11 @@ namespace KS.Shell.ShellBase.Shells
         public virtual string NetworkConnectionType => "";
         /// <inheritdoc/>
         public virtual bool OneLineWrap => false;
+        /// <inheritdoc/>
+        public virtual bool SlashCommand => false;
+        /// <inheritdoc/>
+        public virtual CommandInfo NonSlashCommandInfo =>
+            fallbackNonSlashCommand;
         /// <summary>
         /// Shell type. Taken from <see cref="ShellBase"/> for easier access
         /// </summary>

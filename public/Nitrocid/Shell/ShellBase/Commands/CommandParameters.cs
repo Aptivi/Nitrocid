@@ -24,15 +24,21 @@ namespace KS.Shell.ShellBase.Commands
     /// <summary>
     /// Command parameters that holds information about arguments and switches
     /// </summary>
-    [DebuggerDisplay("Args = {ArgumentsText}")]
+    [DebuggerDisplay("Cmd = {CommandText}, Args = {ArgumentsText}")]
     public class CommandParameters
     {
+        private readonly string stringCommand;
         private readonly string stringArgs;
         private readonly string[] listArgsOnly;
         private readonly string stringArgsOrig;
         private readonly string[] listArgsOnlyOrig;
         private readonly string[] listSwitchesOnly;
 
+        /// <summary>
+        /// Name of command
+        /// </summary>
+        public string CommandText =>
+            stringCommand;
         /// <summary>
         /// Text of arguments (filtered)
         /// </summary>
@@ -59,13 +65,14 @@ namespace KS.Shell.ShellBase.Commands
         public string[] SwitchesList =>
             listSwitchesOnly;
 
-        internal CommandParameters(string stringArgs, string[] listArgsOnly, string stringArgsOrig, string[] listArgsOnlyOrig, string[] listSwitchesOnly)
+        internal CommandParameters(string stringArgs, string[] listArgsOnly, string stringArgsOrig, string[] listArgsOnlyOrig, string[] listSwitchesOnly, string commandName)
         {
             this.stringArgs = stringArgs;
             this.listArgsOnly = listArgsOnly;
             this.stringArgsOrig = stringArgsOrig;
             this.listArgsOnlyOrig = listArgsOnlyOrig;
             this.listSwitchesOnly = listSwitchesOnly;
+            stringCommand = commandName;
         }
     }
 }

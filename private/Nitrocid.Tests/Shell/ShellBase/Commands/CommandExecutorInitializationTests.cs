@@ -53,7 +53,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecution()
         {
             string dummy = "";
-            var parameters = new CommandParameters("", Array.Empty<string>(), "", Array.Empty<string>(), Array.Empty<string>());
+            var parameters = new CommandParameters("", Array.Empty<string>(), "", Array.Empty<string>(), Array.Empty<string>(), "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 
@@ -65,7 +65,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecutionWithArguments()
         {
             string dummy = "";
-            var parameters = new CommandParameters("Hello World", new[] { "Hello", "World" }, "Hello World", new[] { "Hello", "World" }, Array.Empty<string>());
+            var parameters = new CommandParameters("Hello World", new[] { "Hello", "World" }, "Hello World", new[] { "Hello", "World" }, Array.Empty<string>(), "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 
@@ -77,7 +77,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecutionWithSwitches()
         {
             string dummy = "";
-            var parameters = new CommandParameters("-s", Array.Empty<string>(), "-s", Array.Empty<string>(), new[] { "-s" });
+            var parameters = new CommandParameters("-s", Array.Empty<string>(), "-s", Array.Empty<string>(), new[] { "-s" }, "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 
@@ -89,7 +89,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecutionWithArgumentsAndSwitches()
         {
             string dummy = "";
-            var parameters = new CommandParameters("-s Hello!", new[] { "Hello!" }, "-s Hello!", new[] { "Hello!" }, new[] { "-s" });
+            var parameters = new CommandParameters("-s Hello!", new[] { "Hello!" }, "-s Hello!", new[] { "Hello!" }, new[] { "-s" }, "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 

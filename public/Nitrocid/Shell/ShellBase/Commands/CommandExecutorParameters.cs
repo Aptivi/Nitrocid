@@ -31,6 +31,10 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         internal string RequestedCommand;
         /// <summary>
+        /// The requested command info
+        /// </summary>
+        internal CommandInfo RequestedCommandInfo;
+        /// <summary>
         /// The shell type
         /// </summary>
         internal string ShellType;
@@ -43,13 +47,14 @@ namespace KS.Shell.ShellBase.Commands
         /// </summary>
         internal ShellExecuteInfo ShellInstance;
 
-        internal CommandExecutorParameters(string RequestedCommand, ShellType ShellType, ShellExecuteInfo ShellInstance) :
-            this(RequestedCommand, ShellManager.GetShellTypeName(ShellType), ShellInstance)
+        internal CommandExecutorParameters(string RequestedCommand, CommandInfo RequestedCommandInfo, ShellType ShellType, ShellExecuteInfo ShellInstance) :
+            this(RequestedCommand, RequestedCommandInfo, ShellManager.GetShellTypeName(ShellType), ShellInstance)
         { }
 
-        internal CommandExecutorParameters(string RequestedCommand, string ShellType, ShellExecuteInfo ShellInstance)
+        internal CommandExecutorParameters(string RequestedCommand, CommandInfo RequestedCommandInfo, string ShellType, ShellExecuteInfo ShellInstance)
         {
             this.RequestedCommand = RequestedCommand;
+            this.RequestedCommandInfo = RequestedCommandInfo;
             this.ShellType = ShellType;
             this.ShellInstance = ShellInstance;
         }
