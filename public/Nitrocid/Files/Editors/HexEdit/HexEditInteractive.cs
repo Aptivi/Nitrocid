@@ -35,6 +35,9 @@ using KS.Shell.Shells.Hex;
 using System;
 using System.Globalization;
 using System.Linq;
+using System.Text;
+using Terminaux.Sequences.Builder.Types;
+using Terminaux.Sequences.Tools;
 
 namespace KS.Files.Editors.HexEdit
 {
@@ -137,24 +140,39 @@ namespace KS.Files.Editors.HexEdit
 
         private static void RenderKeybindings()
         {
+            var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
             foreach (HexEditorBinding binding in bindings)
             {
                 // First, check to see if the rendered binding info is going to exceed the console window width
-                string renderedBinding = $" {GetBindingKeyShortcut(binding, false)} {Translate.DoTranslation(binding.Name)}  ";
-                bool canDraw = renderedBinding.Length + ConsoleWrapper.CursorLeft < ConsoleWrapper.WindowWidth - 3;
+                string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  ";
+                int actualLength = VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()).Length;
+                bool canDraw = renderedBinding.Length + actualLength < ConsoleWrapper.WindowWidth - 3;
                 if (canDraw)
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
-                    TextWriterWhereColor.WriteWhereColorBack(GetBindingKeyShortcut(binding, false), ConsoleWrapper.CursorLeft + 0, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.KeyBindingOptionColor, BaseInteractiveTui.OptionBackgroundColor);
-                    TextWriterWhereColor.WriteWhereColorBack($"{(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  ", ConsoleWrapper.CursorLeft + 1, ConsoleWrapper.WindowHeight - 1, BaseInteractiveTui.OptionForegroundColor, KernelColorTools.GetColor(KernelColorType.Background));
+                    bindingsBuilder.Append(
+                        $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
+                        $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                        GetBindingKeyShortcut(binding, false) +
+                        $"{BaseInteractiveTui.OptionForegroundColor.VTSequenceForeground}" +
+                        $"{BaseInteractiveTui.BackgroundColor.VTSequenceBackground}" +
+                        $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
+                    );
                 }
                 else
                 {
                     // We can't render anymore, so just break and write a binding to show more
                     DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
+                    bindingsBuilder.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
+                        $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
+                        $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                        " K "
+                    );
                     break;
                 }
             }
+            TextWriterColor.WritePlain(bindingsBuilder.ToString(), false);
         }
 
         private static void RenderStatus() =>
