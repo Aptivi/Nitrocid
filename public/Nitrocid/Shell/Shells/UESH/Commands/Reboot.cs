@@ -43,6 +43,14 @@ namespace KS.Shell.Shells.UESH.Commands
                 {
                     PowerManager.PowerManage(PowerMode.RebootSafe);
                 }
+                else if (parameters.ArgumentsList[0] == "maintenance")
+                {
+                    PowerManager.PowerManage(PowerMode.RebootMaintenance);
+                }
+                else if (parameters.ArgumentsList[0] == "debug")
+                {
+                    PowerManager.PowerManage(PowerMode.RebootDebug);
+                }
                 else if (!string.IsNullOrEmpty(parameters.ArgumentsList[0]))
                 {
                     if (parameters.ArgumentsList.Length > 1)

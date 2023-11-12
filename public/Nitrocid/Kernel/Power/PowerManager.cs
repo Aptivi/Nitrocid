@@ -129,6 +129,8 @@ namespace KS.Kernel.Power
                     }
                 case PowerMode.Reboot:
                 case PowerMode.RebootSafe:
+                case PowerMode.RebootMaintenance:
+                case PowerMode.RebootDebug:
                     {
                         EventsManager.FireEvent(EventType.PreReboot);
                         DebugWriter.WriteDebug(DebugLevel.W, "Kernel is restarting!");
@@ -139,6 +141,8 @@ namespace KS.Kernel.Power
                         RebootRequested = true;
                         Login.LogoutRequested = true;
                         KernelEntry.SafeMode = PowerMode == PowerMode.RebootSafe;
+                        KernelEntry.Maintenance = PowerMode == PowerMode.RebootMaintenance;
+                        KernelEntry.DebugMode = PowerMode == PowerMode.RebootDebug;
 
                         // Kill all shells and interrupt any input
                         for (int i = ShellManager.ShellStack.Count - 1; i >= 0; i--)
@@ -163,6 +167,18 @@ namespace KS.Kernel.Power
                     {
                         JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
                         RPCCommands.SendCommand("<Request:RebootSafe>(" + IP + ")", IP, Port);
+                        break;
+                    }
+                case PowerMode.RemoteRestartDebug:
+                    {
+                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
+                        RPCCommands.SendCommand("<Request:RebootDebug>(" + IP + ")", IP, Port);
+                        break;
+                    }
+                case PowerMode.RemoteRestartMaintenance:
+                    {
+                        JournalManager.WriteJournal(Translate.DoTranslation("Remote power management invoked:") + $" {IP}:{Port} => {PowerMode}");
+                        RPCCommands.SendCommand("<Request:RebootMaintenance>(" + IP + ")", IP, Port);
                         break;
                     }
             }

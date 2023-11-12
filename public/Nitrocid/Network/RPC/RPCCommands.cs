@@ -50,6 +50,8 @@ namespace KS.Network.RPC
         /// <br/>&lt;Request:Shutdown&gt;: Shuts down the remote kernel. Usage: &lt;Request:Shutdown&gt;(IP)
         /// <br/>&lt;Request:Reboot&gt;: Reboots the remote kernel. Usage: &lt;Request:Reboot&gt;(IP)
         /// <br/>&lt;Request:RebootSafe&gt;: Reboots the remote kernel to safe mode. Usage: &lt;Request:RebootSafe&gt;(IP)
+        /// <br/>&lt;Request:RebootMaintenance&gt;: Reboots the remote kernel to maintenance mode. Usage: &lt;Request:RebootMaintenance&gt;(IP)
+        /// <br/>&lt;Request:RebootDebug&gt;: Reboots the remote kernel to debug. Usage: &lt;Request:RebootDebug&gt;(IP)
         /// <br/>&lt;Request:SaveScr&gt;: Saves the screen remotely. Usage: &lt;Request:SaveScr&gt;(IP)
         /// <br/>&lt;Request:Exec&gt;: Executes a command remotely. Usage: &lt;Request:Exec&gt;(Command)
         /// <br/>&lt;Request:Acknowledge&gt;: Pings the remote kernel silently. Usage: &lt;Request:Acknowledge&gt;(IP)
@@ -60,6 +62,8 @@ namespace KS.Network.RPC
             "Shutdown",
             "Reboot",
             "RebootSafe",
+            "RebootMaintenance",
+            "RebootDebug",
             "SaveScr",
             "Exec",
             "Acknowledge",
@@ -71,6 +75,8 @@ namespace KS.Network.RPC
             { "ShutdownConfirm",    (_)     => HandleShutdown() },
             { "RebootConfirm",      (_)     => HandleReboot() },
             { "RebootSafeConfirm",  (_)     => HandleRebootSafe() },
+            { "RebootMaintenanceConfirm",  (_)     => HandleRebootMaintenance() },
+            { "RebootDebugConfirm",  (_)     => HandleRebootDebug() },
             { "SaveScrConfirm",     (_)     => HandleSaveScr() },
             { "ExecConfirm",                   HandleExec },
             { "AcknowledgeConfirm",            HandleAcknowledge },
@@ -229,6 +235,18 @@ namespace KS.Network.RPC
         {
             DebugWriter.WriteDebug(DebugLevel.I, "Reboot to safe mode confirmed from remote access.");
             PowerManager.RPCPowerListener.Start(PowerMode.RebootSafe);
+        }
+
+        private static void HandleRebootMaintenance()
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Reboot to maintenance mode confirmed from remote access.");
+            PowerManager.RPCPowerListener.Start(PowerMode.RebootMaintenance);
+        }
+
+        private static void HandleRebootDebug()
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, "Reboot to debug confirmed from remote access.");
+            PowerManager.RPCPowerListener.Start(PowerMode.RebootDebug);
         }
 
         private static void HandleSaveScr()

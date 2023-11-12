@@ -1201,7 +1201,7 @@ namespace KS.Shell.Shells.UESH
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(false, "ip"),
+                            new CommandArgumentPart(false, "ip/safe/maintenance/debug"),
                             new CommandArgumentPart(false, "port", new CommandArgumentPartOptions()
                             {
                                 IsNumeric = true

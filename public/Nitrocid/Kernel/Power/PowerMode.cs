@@ -37,6 +37,14 @@ namespace KS.Kernel.Power
         /// </summary>
         RebootSafe,
         /// <summary>
+        /// Kernel will reboot to maintenance mode (disables all mods and configs)
+        /// </summary>
+        RebootMaintenance,
+        /// <summary>
+        /// Kernel will reboot to debug
+        /// </summary>
+        RebootDebug,
+        /// <summary>
         /// Kernel will remotely shutdown another kernel on the network (if RPC is running here and there)
         /// </summary>
         RemoteShutdown,
@@ -47,6 +55,14 @@ namespace KS.Kernel.Power
         /// <summary>
         /// Kernel will remotely reboot another kernel to safe mode on the network (if RPC is running here and there)
         /// </summary>
-        RemoteRestartSafe
+        RemoteRestartSafe,
+        /// <summary>
+        /// Kernel will remotely reboot another kernel to safe mode on the network (if RPC is running here and there)
+        /// </summary>
+        RemoteRestartMaintenance,
+        /// <summary>
+        /// Kernel will remotely reboot another kernel to safe mode on the network (if RPC is running here and there)
+        /// </summary>
+        RemoteRestartDebug,
     }
 }
