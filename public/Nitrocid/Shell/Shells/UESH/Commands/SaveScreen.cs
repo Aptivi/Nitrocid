@@ -24,7 +24,6 @@ using KS.Languages;
 using KS.Misc.Screensaver;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace KS.Shell.Shells.UESH.Commands

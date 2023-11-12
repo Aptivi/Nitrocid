@@ -22,8 +22,12 @@ using System.Threading;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Drivers;
 using Terminaux.Colors;
+using KS.Misc.Text;
+using System.Text;
+using Terminaux.Sequences.Tools;
+using KS.ConsoleBase.Inputs;
+using KS.Drivers.Console;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
 {
@@ -43,10 +47,46 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         {
             lock (TextWriterColor.WriteLock)
             {
+                var LinesMade = 0;
                 try
                 {
-                    // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    // Format string as needed
+                    if (vars.Length > 0)
+                        Text = TextTools.FormatString(Text, vars);
+                    Text = Text.Replace(Convert.ToChar(13), default);
+
+                    // First, split the text to wrap
+                    string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+
+                    // Iterate through sentences
+                    var buffered = new StringBuilder();
+                    foreach (string sentence in sentences)
+                    {
+                        // Grab each VT sequence from the paragraph and fetch their indexes
+                        var sequences = VtSequenceTools.MatchVTSequences(sentence);
+                        int vtSeqIdx = 0;
+                        for (int i = 0; i < sentence.Length; i++)
+                        {
+                            char TextChar = sentence[i];
+
+                            // Write a character individually
+                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
+                            {
+                                ConsoleWrapper.Write(buffered.ToString());
+                                buffered.Clear();
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
+                                    return;
+                                LinesMade = 0;
+                            }
+                            buffered.Append(ConsoleExtensions.BufferChar(sentence, sequences, ref i, ref vtSeqIdx, out _));
+                        }
+                        buffered.AppendLine();
+                        LinesMade++;
+                    }
+                    ConsoleWrapper.Write(buffered.ToString());
+                    buffered.Clear();
+                    if (Line)
+                        ConsoleWrapper.WriteLine();
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -73,7 +113,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(colorType);
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -102,7 +142,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -130,7 +170,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -159,7 +199,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(new Color(BackgroundColor));
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -187,7 +227,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -216,7 +256,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write wrapped output
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWrappedPlain(Text, Line, vars);
+                    WriteWrappedPlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {

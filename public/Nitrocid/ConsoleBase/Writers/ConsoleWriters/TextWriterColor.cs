@@ -22,7 +22,6 @@ using System.Threading;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Drivers;
 using Terminaux.Colors;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
@@ -42,7 +41,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         {
             lock (WriteLock)
             {
-                DriverHandler.CurrentConsoleDriverLocal.WritePlain();
+                ConsoleWrapper.WriteLine();
             }
         }
 
@@ -64,7 +63,34 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
         {
             lock (WriteLock)
             {
-                DriverHandler.CurrentConsoleDriverLocal.WritePlain(Text, Line, vars);
+                try
+                {
+                    // Actually write
+                    if (Line)
+                    {
+                        if (vars.Length > 0)
+                        {
+                            ConsoleWrapper.WriteLine(Text, vars);
+                        }
+                        else
+                        {
+                            ConsoleWrapper.WriteLine(Text);
+                        }
+                    }
+                    else if (vars.Length > 0)
+                    {
+                        ConsoleWrapper.Write(Text, vars);
+                    }
+                    else
+                    {
+                        ConsoleWrapper.Write(Text);
+                    }
+                }
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
             }
         }
 

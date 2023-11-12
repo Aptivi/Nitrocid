@@ -22,8 +22,11 @@ using System.Threading;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Drivers;
 using Terminaux.Colors;
+using KS.Misc.Text;
+using System.Text;
+using Terminaux.Sequences.Tools;
+using KS.Drivers.Console;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
 {
@@ -32,6 +35,118 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
     /// </summary>
     public static class TextWriterWhereSlowColor
     {
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, params object[] vars) =>
+            WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, false, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, params object[] vars) =>
+            WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, 0, vars);
+
+        /// <summary>
+        /// Outputs the text into the terminal prompt with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Line">Whether to print a new line or not</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="MsEachLetter">Time in milliseconds to delay writing</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        public static void WriteWhereSlowlyPlain(string msg, bool Line, int Left, int Top, double MsEachLetter, bool Return, int RightMargin, params object[] vars)
+        {
+            lock (TextWriterColor.WriteLock)
+            {
+                try
+                {
+                    // Format string as needed
+                    if (vars.Length > 0)
+                        msg = TextTools.FormatString(msg, vars);
+
+                    // Write text in another place slowly
+                    int OldLeft = ConsoleWrapper.CursorLeft;
+                    int OldTop = ConsoleWrapper.CursorTop;
+                    int width = ConsoleWrapper.WindowWidth - RightMargin;
+                    var Paragraphs = msg.SplitNewLines();
+                    if (RightMargin > 0)
+                        Paragraphs = TextTools.GetWrappedSentences(msg, width);
+                    var buffered = new StringBuilder();
+                    ConsoleWrapper.SetCursorPosition(Left, Top);
+                    for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
+                    {
+                        // Get the paragraph
+                        string MessageParagraph = Paragraphs[MessageParagraphIndex];
+
+                        // Grab each VT sequence from the paragraph and fetch their indexes
+                        var sequences = VtSequenceTools.MatchVTSequences(MessageParagraph);
+                        int vtSeqIdx = 0;
+
+                        // Buffer the characters and then write when done
+                        int pos = OldLeft;
+                        for (int i = 0; i < MessageParagraph.Length; i++)
+                        {
+                            // Sleep for a few milliseconds
+                            Thread.Sleep((int)Math.Round(MsEachLetter));
+                            if (MessageParagraph[i] == '\n' || RightMargin > 0 && pos > width)
+                            {
+                                buffered.Append($"{CharManager.GetEsc()}[1B");
+                                buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
+                                pos = OldLeft;
+                            }
+
+                            // Write a character individually
+                            if (MessageParagraph[i] != '\n')
+                            {
+                                string bufferedChar = ConsoleExtensions.BufferChar(MessageParagraph, sequences, ref i, ref vtSeqIdx, out bool isVtSequence);
+                                buffered.Append(bufferedChar);
+                                if (!isVtSequence)
+                                    pos += bufferedChar.Length;
+                            }
+
+                            // If we're writing a new line, write it
+                            if (Line)
+                                ConsoleWrapper.WriteLine(buffered.ToString());
+                            else
+                                ConsoleWrapper.Write(buffered.ToString());
+                        }
+
+                        // We're starting with the new paragraph, so we increase the CursorTop value by 1.
+                        if (MessageParagraphIndex != Paragraphs.Length - 1)
+                        {
+                            buffered.Append($"{CharManager.GetEsc()}[1B");
+                            buffered.Append($"{CharManager.GetEsc()}[{Left + 1}G");
+                            pos = OldLeft;
+                        }
+                    }
+                    if (Return)
+                        ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
+                }
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
+            }
+        }
 
         /// <summary>
         /// Outputs the text into the terminal prompt with location support, and sets colors as needed.
@@ -76,7 +191,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 try
                 {
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -198,7 +313,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -257,7 +372,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -319,7 +434,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(new Color(BackgroundColor));
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -378,7 +493,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -440,7 +555,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text in another place slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
+                    WriteWhereSlowlyPlain(msg, Line, Left, Top, MsEachLetter, Return, RightMargin, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {

@@ -22,7 +22,6 @@ using System.Threading;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.ConsoleBase.Inputs;
 using System.Linq;
 using KS.Misc.Text;
 using System.Collections.Generic;

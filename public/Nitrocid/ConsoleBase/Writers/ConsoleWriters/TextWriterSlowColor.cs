@@ -22,8 +22,10 @@ using System.Threading;
 using KS.Kernel.Debugging;
 using KS.ConsoleBase.Colors;
 using KS.Languages;
-using KS.Drivers;
 using Terminaux.Colors;
+using KS.Misc.Text;
+using Terminaux.Sequences.Tools;
+using KS.Drivers.Console;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
 {
@@ -46,8 +48,27 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
+                    // Format string as needed
+                    if (vars.Length > 0)
+                        msg = TextTools.FormatString(msg, vars);
+
+                    // Grab each VT sequence from the message and fetch their indexes
+                    var sequences = VtSequenceTools.MatchVTSequences(msg);
+                    int vtSeqIdx = 0;
+
                     // Write text slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    for (int i = 0; i < msg.Length; i++)
+                    {
+                        // Sleep for a while
+                        Thread.Sleep((int)Math.Round(MsEachLetter));
+
+                        // Write a character individually
+                        ConsoleWrapper.Write(ConsoleExtensions.BufferChar(msg, sequences, ref i, ref vtSeqIdx, out _));
+                    }
+
+                    // If we're writing a new line, write it
+                    if (Line)
+                        ConsoleWrapper.WriteLine();
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -75,7 +96,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(colorType);
 
                     // Write text slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -105,7 +126,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(colorTypeBackground, true);
 
                     // Write text slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -133,7 +154,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -162,7 +183,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(new Color(BackgroundColor));
 
                     // Write text slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -190,7 +211,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(KernelColorType.Background, true);
 
                     // Write text slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -219,7 +240,7 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     KernelColorTools.SetConsoleColor(BackgroundColor, true);
 
                     // Write text slowly
-                    DriverHandler.CurrentConsoleDriverLocal.WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
+                    WriteSlowlyPlain(msg, Line, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
