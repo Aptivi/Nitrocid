@@ -21,6 +21,7 @@ using KS.Files.Editors.JsonShell;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
 
+#pragma warning disable CS0618
 namespace KS.Shell.Shells.Json.Commands
 {
     /// <summary>
@@ -40,3 +41,4 @@ namespace KS.Shell.Shells.Json.Commands
         }
     }
 }
+#pragma warning restore CS0618

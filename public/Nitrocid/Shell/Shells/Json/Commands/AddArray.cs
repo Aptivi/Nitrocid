@@ -23,6 +23,7 @@ using KS.Shell.ShellBase.Switches;
 using Newtonsoft.Json.Linq;
 using System.Linq;
 
+#pragma warning disable CS0618
 namespace KS.Shell.Shells.Json.Commands
 {
     /// <summary>
@@ -42,3 +43,4 @@ namespace KS.Shell.Shells.Json.Commands
         }
     }
 }
+#pragma warning restore CS0618
