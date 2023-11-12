@@ -1224,22 +1224,25 @@ namespace KS.Drivers.Filesystem
             filename = FS.NeutralizePath(filename);
 
             // If interacting with the binary file, display it in hex. Otherwise, display it as if it is text except if forced to view binaries as texts.
-            if (Parsing.IsBinaryFile(filename) && !ForcePlain)
+            // Read the contents
+            string[] array = Listing.GetFilesystemEntries(filename, true);
+            for (int i = 0; i < array.Length; i++)
             {
-                byte[] bytes = ReadAllBytes(filename);
-                return RenderContentsInHex(1, bytes.LongLength, bytes);
-            }
-            else
-            {
-                // Read the contents
-                string[] array = Listing.GetFilesystemEntries(filename, true);
-                for (int i = 0; i < array.Length; i++)
-                {
-                    string FilePath = array[i];
-                    var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
-                    var valueColor = KernelColorTools.GetColor(KernelColorType.ListValue);
+                string FilePath = array[i];
+                var entryColor = KernelColorTools.GetColor(KernelColorType.ListEntry);
+                var valueColor = KernelColorTools.GetColor(KernelColorType.ListValue);
 
+                if (array.Length > 1)
                     builder.AppendLine(FilePath);
+
+                // Determine the file type
+                if (Parsing.IsBinaryFile(FilePath) && !ForcePlain)
+                {
+                    byte[] bytes = ReadAllBytes(FilePath);
+                    builder.AppendLine(RenderContentsInHex(1, bytes.LongLength, bytes));
+                }
+                else
+                {
                     var Contents = Reading.ReadContents(FilePath);
                     for (int ContentIndex = 0; ContentIndex <= Contents.Length - 1; ContentIndex++)
                     {
@@ -1247,9 +1250,9 @@ namespace KS.Drivers.Filesystem
                             builder.Append(TextTools.FormatString("{0}{1,4}: ", entryColor.VTSequenceForeground, ContentIndex + 1));
                         builder.AppendLine($"{valueColor.VTSequenceForeground}{Contents[ContentIndex]}");
                     }
-                    if (i != array.Length - 1)
-                        builder.AppendLine();
                 }
+                if (i != array.Length - 1)
+                    builder.AppendLine();
             }
             return builder.ToString();
         }
