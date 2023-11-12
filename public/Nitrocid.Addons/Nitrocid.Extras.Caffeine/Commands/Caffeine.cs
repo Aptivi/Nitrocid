@@ -22,6 +22,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using Nitrocid.Extras.Caffeine.Alarm;
+using System.Collections.Generic;
 
 namespace Nitrocid.Extras.Caffeine.Commands
 {
@@ -34,11 +35,21 @@ namespace Nitrocid.Extras.Caffeine.Commands
     class CaffeineCommand : BaseCommand, ICommand
     {
 
+        private static readonly Dictionary<string, int> caffeines = new()
+        {
+            { /* Localizable */ "American Coffee",  60 * 5 },
+            { /* Localizable */ "Red Tea",          60 * 10 },
+            { /* Localizable */ "Green Tea",        60 * 10 },
+        };
+
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            if (!int.TryParse(parameters.ArgumentsList[0], out int alarmSeconds))
+            string secsOrName = parameters.ArgumentsList[0];
+            if (!int.TryParse(secsOrName, out int alarmSeconds) && !caffeines.TryGetValue(secsOrName, out alarmSeconds))
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("The seconds in which your cup will be ready is invalid."), KernelColorType.Error);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("If you're trying to supply a name of the drink, check out the list below:"), KernelColorType.Tip);
+                ListWriterColor.WriteList(caffeines);
                 return 26;
             }
             AlarmTools.StartAlarm(Translate.DoTranslation("Your cup is now ready!"), alarmSeconds);

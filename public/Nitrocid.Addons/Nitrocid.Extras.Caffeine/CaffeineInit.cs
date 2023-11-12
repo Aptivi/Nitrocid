@@ -37,10 +37,7 @@ namespace Nitrocid.Extras.Caffeine
                     new[] {
                         new CommandArgumentInfo(new[]
                         {
-                            new CommandArgumentPart(true, "seconds", new CommandArgumentPartOptions()
-                            {
-                                IsNumeric = true
-                            }),
+                            new CommandArgumentPart(true, "secondsOrName"),
                         })
                     }, new CaffeineCommand())
             },
