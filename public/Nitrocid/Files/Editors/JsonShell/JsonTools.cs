@@ -382,13 +382,13 @@ namespace KS.Files.Editors.JsonShell
             }
             switch (parentTokenType)
             {
-                case JTokenType.Array:
-                    JsonShellCommon.FileToken[parent] = newToken;
-                    break;
                 case JTokenType.Object:
                     if (parentToken[propName] is null)
                         throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("Property name '{0}' within parent '{1}', type '{2}', doesn't exist"), propName, parent, parentTokenType.ToString());
                     parentToken[propName] = newToken;
+                    break;
+                default:
+                    parentToken.Replace(newToken);
                     break;
             }
         }
