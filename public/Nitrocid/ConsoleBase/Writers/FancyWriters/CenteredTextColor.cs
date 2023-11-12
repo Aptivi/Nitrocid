@@ -19,10 +19,12 @@
 
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Drivers;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;
 using System;
+using System.Text;
 using System.Threading;
 using Terminaux.Colors;
 
@@ -44,16 +46,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                ConsoleWrapper.CursorTop = top;
-                for (int i = 0; i < sentences.Length; i++)
-                {
-                    string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
-                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, Vars);
-                }
+                TextWriterColor.WritePlain(RenderCentered(top, Text, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -126,16 +119,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                ConsoleWrapper.CursorTop = top;
-                for (int i = 0; i < sentences.Length; i++)
-                {
-                    string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
-                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    TextWriterWhereColor.WriteWhereColorBack(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, ForegroundColor, BackgroundColor, Vars);
-                }
+                TextWriterColor.WritePlain(RenderCentered(top, Text, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -154,9 +138,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                WriteCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+                TextWriterColor.WritePlain(RenderCenteredOneLine(top, Text, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -229,9 +211,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                WriteCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+                TextWriterColor.WritePlain(RenderCenteredOneLine(top, Text, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -249,16 +229,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
-                for (int i = 0; i < sentences.Length; i++)
-                {
-                    string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
-                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    TextWriterWhereColor.WriteWhere(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, Vars);
-                }
+                TextWriterColor.WritePlain(RenderCentered(Text, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -325,16 +296,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                ConsoleWrapper.CursorTop = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
-                for (int i = 0; i < sentences.Length; i++)
-                {
-                    string sentence = sentences[i];
-                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
-                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
-                    TextWriterWhereColor.WriteWhereColorBack(sentence + "\n", consoleInfoX, ConsoleWrapper.CursorTop, ForegroundColor, BackgroundColor, Vars);
-                }
+                TextWriterColor.WritePlain(RenderCentered(Text, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -352,9 +314,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                WriteCentered(sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+                TextWriterColor.WritePlain(RenderCenteredOneLine(Text, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -421,16 +381,242 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = TextTools.FormatString(Text, Vars);
-                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
-                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
-                WriteCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+                TextWriterColor.WritePlain(RenderCenteredOneLine(Text, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Renders a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCentered(string Text, params object[] Vars)
+        {
+            try
+            {
+                var centered = new StringBuilder();
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    centered.Append(
+                        DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
+                    );
+                }
+                return centered.ToString();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a centered text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCentered(string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            try
+            {
+                var centered = new StringBuilder();
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    centered.Append(
+                        ForegroundColor.VTSequenceForeground +
+                        BackgroundColor.VTSequenceBackground +
+                        DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
+                    );
+                }
+                return centered.ToString();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a centered text
+        /// </summary>
+        /// <param name="top">Top position to write centered text to</param>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCentered(int top, string Text, params object[] Vars)
+        {
+            try
+            {
+                var centered = new StringBuilder();
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    centered.Append(
+                        DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
+                    );
+                }
+                return centered.ToString();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a centered text
+        /// </summary>
+        /// <param name="top">Top position to write centered text to</param>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCentered(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            try
+            {
+                var centered = new StringBuilder();
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                for (int i = 0; i < sentences.Length; i++)
+                {
+                    string sentence = sentences[i];
+                    int consoleInfoX = ConsoleWrapper.WindowWidth / 2 - sentence.Length / 2;
+                    consoleInfoX = consoleInfoX < 0 ? 0 : consoleInfoX;
+                    centered.Append(
+                        ForegroundColor.VTSequenceForeground +
+                        BackgroundColor.VTSequenceBackground +
+                        DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(sentence + "\n", consoleInfoX, top, Vars)
+                    );
+                }
+                return centered.ToString();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCenteredOneLine(string Text, params object[] Vars)
+        {
+            try
+            {
+                var centered = new StringBuilder();
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a centered text (just the first line)
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCenteredOneLine(string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                int top = (ConsoleWrapper.WindowHeight / 2) - (sentences.Length / 2);
+                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor);
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a centered text (just the first line)
+        /// </summary>
+        /// <param name="top">Top position to write centered text to</param>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCenteredOneLine(int top, string Text, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a centered text (just the first line)
+        /// </summary>
+        /// <param name="top">Top position to write centered text to</param>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the centered.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderCenteredOneLine(int top, string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            try
+            {
+                Text = TextTools.FormatString(Text, Vars);
+                string[] sentences = TextTools.GetWrappedSentences(Text, ConsoleWrapper.WindowWidth);
+                return RenderCentered(top, sentences[0].Truncate(ConsoleWrapper.WindowWidth - 4), ForegroundColor, BackgroundColor);
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
         }
 
     }

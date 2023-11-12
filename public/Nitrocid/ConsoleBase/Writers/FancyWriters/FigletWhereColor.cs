@@ -26,6 +26,8 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using Figletize.Utilities;
 using Figletize;
+using System.Text;
+using KS.Drivers;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -48,8 +50,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
-                TextWriterWhereColor.WriteWhere(Text, Left, Top, Return, Vars);
+                TextWriterColor.WritePlain(RenderFigletWherePlain(Text, Left, Top, Return, FigletFont, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -224,6 +225,23 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
+        }
+
+        /// <summary>
+        /// Renders the figlet text with position support
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletWherePlain(string Text, int Left, int Top, bool Return, FigletizeFont FigletFont, params object[] Vars)
+        {
+            Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
+            var builder = new StringBuilder();
+            builder.Append(DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(Text, Left, Top, Return, Vars));
+            return builder.ToString();
         }
 
     }

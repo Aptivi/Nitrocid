@@ -26,6 +26,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Colors;
 using Figletize.Utilities;
 using Figletize;
+using System.Text;
 
 namespace KS.ConsoleBase.Writers.FancyWriters
 {
@@ -34,6 +35,40 @@ namespace KS.ConsoleBase.Writers.FancyWriters
     /// </summary>
     public static class FigletColor
     {
+
+        /// <summary>
+        /// Renders the figlet text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletPlain(string Text, FigletizeFont FigletFont, params object[] Vars)
+        {
+            var builder = new StringBuilder();
+            builder.Append(
+                FigletTools.RenderFiglet(Text, FigletFont, Vars)
+            );
+            return builder.ToString();
+        }
+
+        /// <summary>
+        /// Renders the figlet text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="FigletFont">Figlet font to use in the text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderFigletPlain(string Text, FigletizeFont FigletFont, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            var builder = new StringBuilder();
+            builder.Append(
+                ForegroundColor.VTSequenceForeground +
+                BackgroundColor.VTSequenceBackground +
+                FigletTools.RenderFiglet(Text, FigletFont, Vars)
+            );
+            return builder.ToString();
+        }
 
         /// <summary>
         /// Writes the figlet text
@@ -45,8 +80,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                Text = FigletTools.RenderFiglet(Text, FigletFont, Vars);
-                TextWriterColor.WritePlain(Text, true, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -66,11 +100,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(ColTypes);
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(ColTypes), KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -91,12 +121,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(colorTypeForeground);
-                KernelColorTools.SetConsoleColor(colorTypeBackground, true);
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, KernelColorTools.GetColor(colorTypeForeground), KernelColorTools.GetColor(colorTypeBackground), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -116,11 +141,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(new Color(Color));
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -141,12 +162,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(new Color(ForegroundColor));
-                KernelColorTools.SetConsoleColor(new Color(BackgroundColor), true);
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -166,11 +182,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(Color);
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, Color, KernelColorTools.GetColor(KernelColorType.Background), Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -191,12 +203,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                // Check if default console output equals the new console output text writer. If it does, write in color, else, suppress the colors.
-                KernelColorTools.SetConsoleColor(ForegroundColor);
-                KernelColorTools.SetConsoleColor(BackgroundColor, true);
-
-                // Actually write
-                WriteFigletPlain(Text, FigletFont, Vars);
+                TextWriterColor.WritePlain(RenderFigletPlain(Text, FigletFont, ForegroundColor, BackgroundColor, Vars), false);
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {

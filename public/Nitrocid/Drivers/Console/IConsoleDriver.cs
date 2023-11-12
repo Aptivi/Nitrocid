@@ -91,6 +91,36 @@ namespace KS.Drivers.Console
         void WriteWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars);
 
         /// <summary>
+        /// Renders the text with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        string RenderWherePlain(string msg, int Left, int Top, params object[] vars);
+
+        /// <summary>
+        /// Renders the text with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        string RenderWherePlain(string msg, int Left, int Top, bool Return, params object[] vars);
+
+        /// <summary>
+        /// Renders the text with location support.
+        /// </summary>
+        /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>
+        /// <param name="Left">Column number in console</param>
+        /// <param name="Top">Row number in console</param>
+        /// <param name="Return">Whether or not to return to old position</param>
+        /// <param name="RightMargin">The right margin</param>
+        /// <param name="vars">Variables to format the message before it's written.</param>
+        string RenderWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars);
+
+        /// <summary>
         /// Outputs the text into the terminal prompt with location support.
         /// </summary>
         /// <param name="msg">A sentence that will be written to the terminal prompt. Supports {0}, {1}, ...</param>

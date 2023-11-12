@@ -33,6 +33,7 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Sequences.Tools;
 using System.Text.RegularExpressions;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.Drivers.Console
 {
@@ -459,6 +460,32 @@ namespace KS.Drivers.Console
             {
                 try
                 {
+                    // Render as necessary
+                    ConsoleWrapper.Write(RenderWherePlain(msg, Left, Top, Return, RightMargin, vars));
+                }
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
+            }
+        }
+
+        /// <inheritdoc/>
+        public virtual string RenderWherePlain(string msg, int Left, int Top, params object[] vars) =>
+            RenderWherePlain(msg, Left, Top, false, 0, vars);
+
+        /// <inheritdoc/>
+        public virtual string RenderWherePlain(string msg, int Left, int Top, bool Return, params object[] vars) =>
+            RenderWherePlain(msg, Left, Top, Return, 0, vars);
+
+        /// <inheritdoc/>
+        public virtual string RenderWherePlain(string msg, int Left, int Top, bool Return, int RightMargin, params object[] vars)
+        {
+            lock (TextWriterColor.WriteLock)
+            {
+                try
+                {
                     // Format the message as necessary
                     if (vars.Length > 0)
                         msg = TextTools.FormatString(msg, vars);
@@ -471,7 +498,7 @@ namespace KS.Drivers.Console
                     if (RightMargin > 0)
                         Paragraphs = TextTools.GetWrappedSentences(msg, width);
                     var buffered = new StringBuilder();
-                    ConsoleWrapper.SetCursorPosition(Left, Top);
+                    buffered.Append(CsiSequences.GenerateCsiCursorPosition(Left + 1, Top + 1));
                     for (int MessageParagraphIndex = 0; MessageParagraphIndex <= Paragraphs.Length - 1; MessageParagraphIndex++)
                     {
                         // We can now check to see if we're writing a letter past the console window width
@@ -511,18 +538,19 @@ namespace KS.Drivers.Console
                         }
                     }
 
-                    // Write the resulting buffer
-                    ConsoleWrapper.Write(buffered.ToString());
-
                     // Return if we're told to
                     if (Return)
-                        ConsoleWrapper.SetCursorPosition(OldLeft, OldTop);
+                        buffered.Append(CsiSequences.GenerateCsiCursorPosition(OldLeft + 1, OldTop + 1));
+
+                    // Write the resulting buffer
+                    return buffered.ToString();
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
                     DebugWriter.WriteDebugStackTrace(ex);
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
+                return "";
             }
         }
 
