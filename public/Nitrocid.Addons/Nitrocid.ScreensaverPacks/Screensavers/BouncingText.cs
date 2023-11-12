@@ -349,26 +349,26 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             }
 
             // Check to see if the text is on the edge
-            if (RowText == ConsoleWrapper.WindowHeight - 2)
+            if (RowText == ConsoleWrapper.WindowHeight - 1)
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the bottom.");
                 Direction = Direction.Replace("Bottom", "Top");
                 BouncingColor = ChangeBouncingTextColor();
             }
-            else if (RowText == 1)
+            else if (RowText == 0)
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the top.");
                 Direction = Direction.Replace("Top", "Bottom");
                 BouncingColor = ChangeBouncingTextColor();
             }
 
-            if (ColumnLastLetter == ConsoleWrapper.WindowWidth - 1)
+            if (ColumnLastLetter == ConsoleWrapper.WindowWidth + 1)
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the right.");
                 Direction = Direction.Replace("Right", "Left");
                 BouncingColor = ChangeBouncingTextColor();
             }
-            else if (ColumnFirstLetter == 1)
+            else if (ColumnFirstLetter == 0)
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the left.");
                 Direction = Direction.Replace("Left", "Right");

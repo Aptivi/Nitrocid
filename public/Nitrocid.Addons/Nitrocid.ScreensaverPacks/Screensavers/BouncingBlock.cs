@@ -289,13 +289,13 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 return;
             }
 
-            if (RowBlock == ConsoleWrapper.WindowHeight - 2)
+            if (RowBlock == ConsoleWrapper.WindowHeight - 1)
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the bottom.");
                 Direction = Direction.Replace("Bottom", "Top");
                 blockColor = GetRandomBlockColor();
             }
-            else if (RowBlock == 1)
+            else if (RowBlock == 0)
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the top.");
                 Direction = Direction.Replace("Top", "Bottom");
@@ -308,7 +308,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
                 Direction = Direction.Replace("Right", "Left");
                 blockColor = GetRandomBlockColor();
             }
-            else if (ColumnBlock == 1)
+            else if (ColumnBlock == 0)
             {
                 DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "We're on the left.");
                 Direction = Direction.Replace("Left", "Right");
