@@ -49,7 +49,11 @@ namespace KS.Misc.Splash.Splashes
 
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
-            string text = (context == SplashContext.Preboot ? Translate.DoTranslation("Please wait") :  Translate.DoTranslation("Loading")).ToUpper();
+            string text =
+                (context == SplashContext.Preboot ?
+                 Translate.DoTranslation("Please wait") :
+                 Translate.DoTranslation("Loading"))
+                .ToUpper();
             var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
             int figHeight = FigletTools.GetFigletHeight(text, figFont) / 2;
@@ -71,7 +75,9 @@ namespace KS.Misc.Splash.Splashes
             }
             CenteredTextColor.WriteCenteredColor(
                 consoleY + 2,
-                context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") : Translate.DoTranslation("Starting") + $" {KernelReleaseInfo.ConsoleTitle}...",
+                (context == SplashContext.Preboot ? Translate.DoTranslation("Please wait while the kernel is initializing...") :
+                 context == SplashContext.ShuttingDown ? Translate.DoTranslation("Please wait while the kernel is shutting down...") :
+                 $"{Translate.DoTranslation("Starting")} {KernelReleaseInfo.ConsoleTitle}..."),
                 col
             );
         }
@@ -117,7 +123,11 @@ namespace KS.Misc.Splash.Splashes
 
             // Write a glorious Welcome screen
             Color col = KernelColorTools.GetColor(KernelColorType.Stage);
-            string text = (context == SplashContext.StartingUp ? Translate.DoTranslation("Welcome!") : Translate.DoTranslation("Goodbye!")).ToUpper();
+            string text =
+                (context == SplashContext.StartingUp ?
+                 Translate.DoTranslation("Welcome!") :
+                 Translate.DoTranslation("Goodbye!"))
+                .ToUpper();
             var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(text, figFont) / 2;
