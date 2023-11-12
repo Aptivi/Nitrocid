@@ -39,11 +39,12 @@ namespace Nitrocid.Tests.Misc.Editors
         {
             string PathToTestJson = Path.GetFullPath("TestData/TestJson.json");
             JsonTools.OpenJsonFile(PathToTestJson).ShouldBeTrue();
-            JsonTools.AddNewProperty("$", "HowText", "How are you today?");
+            JsonTools.Add("$", "property", "HowText", "How are you today?");
             JsonShellCommon.FileToken["HowText"].ShouldNotBeNull();
             JsonTools.GetToken("HelloText").ShouldNotBeNull();
             JsonTools.SerializeToString("HelloText").ShouldNotBeNullOrEmpty();
-            JsonTools.RemoveProperty("HowText");
+            JsonTools.Remove("HowText");
+            JsonShellCommon.FileToken["HowText"].ShouldBeNull();
             JsonTools.SaveFile(false).ShouldBeTrue();
             JsonTools.CloseTextFile().ShouldBeTrue();
         }

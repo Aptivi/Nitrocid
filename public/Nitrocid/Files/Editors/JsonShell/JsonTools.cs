@@ -404,7 +404,11 @@ namespace KS.Files.Editors.JsonShell
                 throw new KernelException(KernelExceptionType.JsonEditor, Translate.DoTranslation("The parent token is not found. Make sure that you've written the path '{0}' correctly."), parent);
 
             // Then, do the deletion
-            parentToken.Remove();
+            if ((parentToken.Type != JTokenType.Array && parentToken.Type != JTokenType.Object && parentToken.Type != JTokenType.Property) ||
+                parentToken.Parent.Type == JTokenType.Property)
+                parentToken.Parent.Remove();
+            else
+                parentToken.Remove();
         }
 
         /// <summary>
