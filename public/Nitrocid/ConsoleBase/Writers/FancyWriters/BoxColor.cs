@@ -131,7 +131,15 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             }
         }
 
-        internal static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight)
+        /// <summary>
+        /// Renders the box
+        /// </summary>
+        /// <param name="Left">Where to place the box horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <returns>The rendered box</returns>
+        public static string RenderBox(int Left, int Top, int InteriorWidth, int InteriorHeight)
         {
             // Fill the box with spaces inside it
             StringBuilder box = new();

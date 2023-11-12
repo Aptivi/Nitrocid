@@ -386,9 +386,25 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             }
         }
 
-        internal static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
-                                              char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
-                                              char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar)
+        /// <summary>
+        /// Renders the box frame
+        /// </summary>
+        /// <param name="Left">Where to place the box frame horizontally? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="Top">Where to place the box frame vertically? Please note that this value comes from the upper left corner, which is an exterior position.</param>
+        /// <param name="InteriorWidth">The width of the interior window, excluding the two console columns for left and right frames</param>
+        /// <param name="InteriorHeight">The height of the interior window, excluding the two console columns for upper and lower frames</param>
+        /// <param name="UpperLeftCornerChar">Upper left corner character for box frame</param>
+        /// <param name="LowerLeftCornerChar">Lower left corner character for box frame</param>
+        /// <param name="UpperRightCornerChar">Upper right corner character for box frame</param>
+        /// <param name="LowerRightCornerChar">Lower right corner character for box frame</param>
+        /// <param name="UpperFrameChar">Upper frame character for box frame</param>
+        /// <param name="LowerFrameChar">Lower frame character for box frame</param>
+        /// <param name="LeftFrameChar">Left frame character for box frame</param>
+        /// <param name="RightFrameChar">Right frame character for box frame</param>
+        /// <returns>The rendered frame</returns>
+        public static string RenderBoxFrame(int Left, int Top, int InteriorWidth, int InteriorHeight,
+                                            char UpperLeftCornerChar, char LowerLeftCornerChar, char UpperRightCornerChar, char LowerRightCornerChar,
+                                            char UpperFrameChar, char LowerFrameChar, char LeftFrameChar, char RightFrameChar)
         {
             try
             {
