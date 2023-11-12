@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Text;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
@@ -34,6 +35,33 @@ namespace KS.ConsoleBase.Writers.FancyWriters
     /// </summary>
     public static class SeparatorWriterColor
     {
+
+        /// <summary>
+        /// Draw a separator with text plainly
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparatorPlain(string Text, params object[] Vars) =>
+            WriteSeparatorPlain(Text, true, Vars);
+
+        /// <summary>
+        /// Draw a separator with text plainly
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static void WriteSeparatorPlain(string Text, bool PrintSuffix, params object[] Vars)
+        {
+            try
+            {
+                TextWriterColor.WritePlain(RenderSeparatorPlain(Text, PrintSuffix, Vars));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
 
         /// <summary>
         /// Draw a separator with text
@@ -110,47 +138,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
-                bool canPosition = !DriverHandler.CurrentConsoleDriverLocal.IsDumb;
-                Text = TextTools.FormatString(Text, Vars);
-
-                // Print the suffix and the text
-                if (!string.IsNullOrWhiteSpace(Text))
-                {
-                    if (PrintSuffix)
-                        TextWriterColor.WriteKernelColor("- ", false, KernelColorType.Separator);
-                    if (!Text.EndsWith("-"))
-                        Text += " ";
-
-                    // We need to set an appropriate color for the suffix in the text.
-                    if (Text.StartsWith("-"))
-                    {
-                        for (int CharIndex = 0; CharIndex <= Text.Length - 1; CharIndex++)
-                        {
-                            if (Convert.ToString(Text[CharIndex]) == "-")
-                            {
-                                TextWriterColor.WriteKernelColor(Convert.ToString(Text[CharIndex]), false, KernelColorType.Separator);
-                            }
-                            else
-                            {
-                                // We're (mostly) done
-                                Text = Text[CharIndex..];
-                                break;
-                            }
-                        }
-                    }
-
-                    // Render the text accordingly
-                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
-                    TextWriterColor.WriteKernelColor(Text, false, KernelColorType.SeparatorText);
-                }
-
-                // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
-                int RepeatTimes = 0;
-                if (canPosition)
-                    RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length - 1;
-
-                // Write the closing minus sign.
-                TextWriterColor.WriteKernelColor(new string('-', RepeatTimes), true, KernelColorType.Separator);
+                TextWriterColor.WritePlain(RenderSeparator(Text, PrintSuffix, Vars));
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
@@ -223,6 +211,34 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
+                TextWriterColor.WritePlain(RenderSeparator(Text, PrintSuffix, ForegroundColor, BackgroundColor, Vars));
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+        }
+
+        /// <summary>
+        /// Renders a separator with text plainly
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderSeparatorPlain(string Text, params object[] Vars) =>
+            RenderSeparatorPlain(Text, true, Vars);
+
+        /// <summary>
+        /// Renders a separator with text plainly
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderSeparatorPlain(string Text, bool PrintSuffix, params object[] Vars)
+        {
+            try
+            {
+                var separator = new StringBuilder();
                 bool canPosition = !DriverHandler.CurrentConsoleDriverLocal.IsDumb;
                 Text = TextTools.FormatString(Text, Vars);
 
@@ -230,28 +246,220 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 if (!string.IsNullOrWhiteSpace(Text))
                 {
                     if (PrintSuffix)
-                        Text = "- " + Text;
-                    if (!Text.EndsWith("-"))
+                        separator.Append("- ");
+                    if (!Text.EndsWith('-'))
                         Text += " ";
+
+                    // We need to set an appropriate color for the suffix in the text.
+                    if (Text.StartsWith('-'))
+                    {
+                        for (int CharIndex = 0; CharIndex <= Text.Length - 1; CharIndex++)
+                        {
+                            if (Text[CharIndex] == '-')
+                            {
+                                separator.Append(Text[CharIndex]);
+                            }
+                            else
+                            {
+                                // We're (mostly) done
+                                Text = Text[CharIndex..];
+                                break;
+                            }
+                        }
+                    }
 
                     // Render the text accordingly
                     Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
-                    TextWriterColor.WriteColorBack(Text, false, ForegroundColor, BackgroundColor);
+                    separator.Append(Text);
                 }
 
                 // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
                 int RepeatTimes = 0;
                 if (canPosition)
-                    RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length + 1;
+                    RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length - 1;
 
                 // Write the closing minus sign.
-                TextWriterColor.WriteColorBack(new string('-', RepeatTimes), true, ForegroundColor, BackgroundColor);
+                separator.Append(new string('-', RepeatTimes));
+                return separator.ToString();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
             {
                 DebugWriter.WriteDebugStackTrace(ex);
                 DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
             }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderSeparator(string Text, params object[] Vars) =>
+            RenderSeparator(Text, true, Vars);
+
+        /// <summary>
+        /// Renders a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderSeparator(string Text, bool PrintSuffix, params object[] Vars)
+        {
+            try
+            {
+                var separator = new StringBuilder();
+                bool canPosition = !DriverHandler.CurrentConsoleDriverLocal.IsDumb;
+                Text = TextTools.FormatString(Text, Vars);
+
+                // Print the suffix and the text
+                if (!string.IsNullOrWhiteSpace(Text))
+                {
+                    if (PrintSuffix)
+                        separator.Append(
+                            KernelColorTools.GetColor(KernelColorType.Separator).VTSequenceForeground +
+                            "- "
+                        );
+                    if (!Text.EndsWith('-'))
+                        Text += " ";
+
+                    // We need to set an appropriate color for the suffix in the text.
+                    if (Text.StartsWith('-'))
+                    {
+                        for (int CharIndex = 0; CharIndex <= Text.Length - 1; CharIndex++)
+                        {
+                            if (Text[CharIndex] == '-')
+                            {
+                                separator.Append(
+                                    KernelColorTools.GetColor(KernelColorType.Separator).VTSequenceForeground +
+                                    Text[CharIndex]
+                                );
+                            }
+                            else
+                            {
+                                // We're (mostly) done
+                                Text = Text[CharIndex..];
+                                break;
+                            }
+                        }
+                    }
+
+                    // Render the text accordingly
+                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
+                    separator.Append(
+                        KernelColorTools.GetColor(KernelColorType.SeparatorText).VTSequenceForeground +
+                        Text
+                    );
+                }
+
+                // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+                int RepeatTimes = 0;
+                if (canPosition)
+                    RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length - 1;
+
+                // Write the closing minus sign.
+                separator.Append(
+                    KernelColorTools.GetColor(KernelColorType.Separator).VTSequenceForeground +
+                    new string('-', RepeatTimes)
+                );
+                return separator.ToString();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
+        }
+
+        /// <summary>
+        /// Renders a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderSeparator(string Text, Color ForegroundColor, Color BackgroundColor, params object[] Vars) =>
+            RenderSeparator(Text, true, ForegroundColor, BackgroundColor, Vars);
+
+        /// <summary>
+        /// Renders a separator with text
+        /// </summary>
+        /// <param name="Text">Text to be written. If nothing, the entire line is filled with the separator.</param>
+        /// <param name="PrintSuffix">Whether or not to print the leading suffix. Only use if you don't have suffix on your text.</param>
+        /// <param name="ForegroundColor">A foreground color that will be changed to.</param>
+        /// <param name="BackgroundColor">A background color that will be changed to.</param>
+        /// <param name="Vars">Variables to format the message before it's written.</param>
+        public static string RenderSeparator(string Text, bool PrintSuffix, Color ForegroundColor, Color BackgroundColor, params object[] Vars)
+        {
+            try
+            {
+                var separator = new StringBuilder();
+                bool canPosition = !DriverHandler.CurrentConsoleDriverLocal.IsDumb;
+                Text = TextTools.FormatString(Text, Vars);
+
+                // Print the suffix and the text
+                if (!string.IsNullOrWhiteSpace(Text))
+                {
+                    if (PrintSuffix)
+                        separator.Append(
+                            ForegroundColor.VTSequenceForeground +
+                            BackgroundColor.VTSequenceBackground +
+                            "- "
+                        );
+                    if (!Text.EndsWith('-'))
+                        Text += " ";
+
+                    // We need to set an appropriate color for the suffix in the text.
+                    if (Text.StartsWith('-'))
+                    {
+                        for (int CharIndex = 0; CharIndex <= Text.Length - 1; CharIndex++)
+                        {
+                            if (Text[CharIndex] == '-')
+                            {
+                                separator.Append(
+                                    ForegroundColor.VTSequenceForeground +
+                                    BackgroundColor.VTSequenceBackground +
+                                    Text[CharIndex]
+                                );
+                            }
+                            else
+                            {
+                                // We're (mostly) done
+                                Text = Text[CharIndex..];
+                                break;
+                            }
+                        }
+                    }
+
+                    // Render the text accordingly
+                    Text = canPosition ? Text.Truncate(ConsoleWrapper.WindowWidth - 6) : Text;
+                    separator.Append(
+                        ForegroundColor.VTSequenceForeground +
+                        BackgroundColor.VTSequenceBackground +
+                        Text
+                    );
+                }
+
+                // See how many times to repeat the closing minus sign. We could be running this in the wrap command.
+                int RepeatTimes = 0;
+                if (canPosition)
+                    RepeatTimes = ConsoleWrapper.WindowWidth - (Text + " ").Length - 1;
+
+                // Write the closing minus sign.
+                separator.Append(
+                    ForegroundColor.VTSequenceForeground +
+                    BackgroundColor.VTSequenceBackground +
+                    new string('-', RepeatTimes)
+                );
+                return separator.ToString();
+            }
+            catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+            {
+                DebugWriter.WriteDebugStackTrace(ex);
+                DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+            }
+            return "";
         }
 
     }
