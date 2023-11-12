@@ -26,6 +26,8 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using Terminaux.Colors;
+using System.Text;
+using KS.Misc.Text;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
 {
@@ -35,6 +37,66 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
     public static class ListWriterColor
     {
         #region Dictionary
+        /// <summary>
+        /// Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+        public static void WriteListPlain<TKey, TValue>(Dictionary<TKey, TValue> List) =>
+            WriteListPlain(List, ConsoleExtensions.WrapListOutputs);
+
+        /// <summary>
+        /// Outputs the list entries into the terminal prompt plainly, and wraps output if needed.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+        /// <param name="Wrap">Wraps the output as needed.</param>
+        public static void WriteListPlain<TKey, TValue>(Dictionary<TKey, TValue> List, bool Wrap)
+        {
+            lock (TextWriterColor.WriteLock)
+            {
+                try
+                {
+                    // Variables
+                    var LinesMade = 0;
+
+                    // Try to write list to console
+                    string buffered = RenderList(List);
+                    string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
+                    var buffer = new StringBuilder();
+                    foreach (string bufferedLine in bufferedLines)
+                    {
+                        var Values = new List<object>();
+                        buffer.AppendLine(bufferedLine);
+
+                        if (Wrap)
+                        {
+                            LinesMade += 1;
+                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
+                            {
+                                TextWriterColor.WritePlain(buffer.ToString(), false);
+                                buffer.Clear();
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
+                                    break;
+                                LinesMade = 0;
+                            }
+                        }
+                        else if (ConsoleWrapper.KeyAvailable)
+                        {
+                            TextWriterColor.WritePlain(buffer.ToString(), false);
+                            buffer.Clear();
+                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
+                                break;
+                        }
+                    }
+                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                }
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
+            }
+        }
+
         /// <summary>
         /// Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.
         /// </summary>
@@ -112,31 +174,23 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 {
                     // Variables
                     var LinesMade = 0;
-                    int OldTop;
 
                     // Try to write list to console
-                    OldTop = ConsoleWrapper.CursorTop;
-                    foreach (TKey ListEntry in List.Keys)
+                    string buffered = RenderList(List, ListKeyColor, ListValueColor);
+                    string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
+                    var buffer = new StringBuilder();
+                    foreach (string bufferedLine in bufferedLines)
                     {
                         var Values = new List<object>();
-                        if (List[ListEntry] as IEnumerable is not null & List[ListEntry] as string is null)
-                        {
-                            foreach (var Value in (IEnumerable)List[ListEntry])
-                                Values.Add(Value);
-                            TextWriterColor.WriteColorBack("- {0}: ", false, ListKeyColor, KernelColorTools.GetColor(KernelColorType.Background), ListEntry);
-                            TextWriterColor.WriteColorBack("{0}", true, ListValueColor, KernelColorTools.GetColor(KernelColorType.Background), string.Join(", ", Values));
-                        }
-                        else
-                        {
-                            TextWriterColor.WriteColorBack("- {0}: ", false, ListKeyColor, KernelColorTools.GetColor(KernelColorType.Background), ListEntry);
-                            TextWriterColor.WriteColorBack("{0}", true, ListValueColor, KernelColorTools.GetColor(KernelColorType.Background), List[ListEntry]);
-                        }
+                        buffer.AppendLine(bufferedLine);
+                        
                         if (Wrap)
                         {
-                            LinesMade += ConsoleWrapper.CursorTop - OldTop;
-                            OldTop = ConsoleWrapper.CursorTop;
+                            LinesMade += 1;
                             if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
+                                TextWriterColor.WritePlain(buffer.ToString(), false);
+                                buffer.Clear();
                                 if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
@@ -144,10 +198,13 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         }
                         else if (ConsoleWrapper.KeyAvailable)
                         {
+                            TextWriterColor.WritePlain(buffer.ToString(), false);
+                            buffer.Clear();
                             if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
+                    TextWriterColor.WritePlain(buffer.ToString(), false);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -156,9 +213,125 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 }
             }
         }
+
+        /// <summary>
+        /// Renders the list entries.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed.</param>
+        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List)
+        {
+            var listBuilder = new StringBuilder();
+            foreach (TKey ListEntry in List.Keys)
+            {
+                var Values = new List<object>();
+                var value = List[ListEntry];
+                if (value as IEnumerable is not null & value as string is null)
+                {
+                    foreach (var Value in (IEnumerable)value)
+                        Values.Add(Value);
+                    string valuesString = string.Join(", ", Values);
+                    listBuilder.AppendLine($"- {ListEntry}: {valuesString}");
+                }
+                else
+                    listBuilder.AppendLine($"- {ListEntry}: {value}");
+            }
+            return listBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Renders the list entries.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed.</param>
+        /// <param name="ListKeyColor">A key color.</param>
+        /// <param name="ListValueColor">A value color.</param>
+        public static string RenderList<TKey, TValue>(Dictionary<TKey, TValue> List, Color ListKeyColor, Color ListValueColor)
+        {
+            var listBuilder = new StringBuilder();
+            foreach (TKey ListEntry in List.Keys)
+            {
+                var Values = new List<object>();
+                var value = List[ListEntry];
+                if (value as IEnumerable is not null & value as string is null)
+                {
+                    foreach (var Value in (IEnumerable)value)
+                        Values.Add(Value);
+                    string valuesString = string.Join(", ", Values);
+                    listBuilder.AppendLine(
+                        $"{ListKeyColor.VTSequenceForeground}- {ListEntry}: " +
+                        $"{ListValueColor.VTSequenceForeground}{valuesString}"
+                    );
+                }
+                else
+                    listBuilder.AppendLine(
+                        $"{ListKeyColor.VTSequenceForeground}- {ListEntry}: " +
+                        $"{ListValueColor.VTSequenceForeground}{value}"
+                    );
+            }
+            return listBuilder.ToString();
+        }
         #endregion
 
         #region Enumerables
+        /// <summary>
+        /// Outputs the list entries into the terminal prompt plainly. It wraps output depending on the kernel settings.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+        public static void WriteListPlain<T>(IEnumerable<T> List) =>
+            WriteListPlain(List, ConsoleExtensions.WrapListOutputs);
+
+        /// <summary>
+        /// Outputs the list entries into the terminal prompt plainly, and wraps output if needed.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed to the terminal prompt.</param>
+        /// <param name="Wrap">Wraps the output as needed.</param>
+        public static void WriteListPlain<T>(IEnumerable<T> List, bool Wrap)
+        {
+            lock (TextWriterColor.WriteLock)
+            {
+                try
+                {
+                    // Variables
+                    var LinesMade = 0;
+
+                    // Try to write list to console
+                    string buffered = RenderList(List);
+                    string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
+                    var buffer = new StringBuilder();
+                    foreach (string bufferedLine in bufferedLines)
+                    {
+                        var Values = new List<object>();
+                        buffer.AppendLine(bufferedLine);
+
+                        if (Wrap)
+                        {
+                            LinesMade += 1;
+                            if (LinesMade == ConsoleWrapper.WindowHeight - 1)
+                            {
+                                TextWriterColor.WritePlain(buffer.ToString(), false);
+                                buffer.Clear();
+                                if (Input.DetectKeypress().Key == ConsoleKey.Escape)
+                                    break;
+                                LinesMade = 0;
+                            }
+                        }
+                        else if (ConsoleWrapper.KeyAvailable)
+                        {
+                            TextWriterColor.WritePlain(buffer.ToString(), false);
+                            buffer.Clear();
+                            if (Input.DetectKeypress().Key == ConsoleKey.Escape)
+                                break;
+                        }
+                    }
+                    TextWriterColor.WritePlain(buffer.ToString(), false);
+                }
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
+            }
+        }
+
         /// <summary>
         /// Outputs the list entries into the terminal prompt. It wraps output depending on the kernel settings.
         /// </summary>
@@ -236,33 +409,23 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                 {
                     // Variables
                     var LinesMade = 0;
-                    int OldTop;
-                    int EntryNumber = 1;
 
                     // Try to write list to console
-                    OldTop = ConsoleWrapper.CursorTop;
-                    foreach (T ListEntry in List)
+                    string buffered = RenderList(List, ListKeyColor, ListValueColor);
+                    string[] bufferedLines = TextTools.GetWrappedSentences(buffered, ConsoleWrapper.WindowWidth);
+                    var buffer = new StringBuilder();
+                    foreach (string bufferedLine in bufferedLines)
                     {
                         var Values = new List<object>();
-                        if (ListEntry as IEnumerable is not null & ListEntry as string is null)
-                        {
-                            foreach (var Value in (IEnumerable)ListEntry)
-                                Values.Add(Value);
-                            TextWriterColor.WriteColorBack("- {0}: ", false, ListKeyColor, KernelColorTools.GetColor(KernelColorType.Background), EntryNumber);
-                            TextWriterColor.WriteColorBack("{0}", true, ListValueColor, KernelColorTools.GetColor(KernelColorType.Background), string.Join(", ", Values));
-                        }
-                        else
-                        {
-                            TextWriterColor.WriteColorBack("- {0}: ", false, ListKeyColor, KernelColorTools.GetColor(KernelColorType.Background), EntryNumber);
-                            TextWriterColor.WriteColorBack("{0}", true, ListValueColor, KernelColorTools.GetColor(KernelColorType.Background), ListEntry);
-                        }
-                        EntryNumber += 1;
+                        buffer.AppendLine(bufferedLine);
+
                         if (Wrap)
                         {
-                            LinesMade += ConsoleWrapper.CursorTop - OldTop;
-                            OldTop = ConsoleWrapper.CursorTop;
+                            LinesMade += 1;
                             if (LinesMade == ConsoleWrapper.WindowHeight - 1)
                             {
+                                TextWriterColor.WritePlain(buffer.ToString(), false);
+                                buffer.Clear();
                                 if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                     break;
                                 LinesMade = 0;
@@ -270,10 +433,13 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                         }
                         else if (ConsoleWrapper.KeyAvailable)
                         {
+                            TextWriterColor.WritePlain(buffer.ToString(), false);
+                            buffer.Clear();
                             if (Input.DetectKeypress().Key == ConsoleKey.Escape)
                                 break;
                         }
                     }
+                    TextWriterColor.WritePlain(buffer.ToString(), false);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -281,6 +447,64 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
             }
+        }
+
+        /// <summary>
+        /// Renders the list entries.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed.</param>
+        public static string RenderList<T>(IEnumerable<T> List)
+        {
+            var listBuilder = new StringBuilder();
+            int EntryNumber = 1;
+            foreach (T ListEntry in List)
+            {
+                var Values = new List<object>();
+                if (ListEntry as IEnumerable is not null & ListEntry as string is null)
+                {
+                    foreach (var Value in (IEnumerable)ListEntry)
+                        Values.Add(Value);
+                    string valuesString = string.Join(", ", Values);
+                    listBuilder.AppendLine($"- {EntryNumber}: {valuesString}");
+                }
+                else
+                    listBuilder.AppendLine($"- {EntryNumber}: {ListEntry}");
+                EntryNumber += 1;
+            }
+            return listBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Renders the list entries.
+        /// </summary>
+        /// <param name="List">A dictionary that will be listed.</param>
+        /// <param name="ListKeyColor">A key color.</param>
+        /// <param name="ListValueColor">A value color.</param>
+        public static string RenderList<T>(IEnumerable<T> List, Color ListKeyColor, Color ListValueColor)
+        {
+            var listBuilder = new StringBuilder();
+            int EntryNumber = 1;
+            foreach (T ListEntry in List)
+            {
+                var Values = new List<object>();
+                if (ListEntry as IEnumerable is not null & ListEntry as string is null)
+                {
+                    foreach (var Value in (IEnumerable)ListEntry)
+                        Values.Add(Value);
+                    string valuesString = string.Join(", ", Values);
+                    listBuilder.AppendLine(
+                        $"{ListKeyColor.VTSequenceForeground}- {EntryNumber}: " +
+                        $"{ListValueColor.VTSequenceForeground}{valuesString}"
+                    );
+                }
+                else
+                    listBuilder.AppendLine(
+                        $"{ListKeyColor.VTSequenceForeground}- {EntryNumber}: " +
+                        $"{ListValueColor.VTSequenceForeground}{ListEntry}"
+                    );
+                EntryNumber += 1;
+            }
+            return listBuilder.ToString();
         }
         #endregion
     }
