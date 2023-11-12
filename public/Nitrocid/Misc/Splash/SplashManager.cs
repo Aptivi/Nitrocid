@@ -24,7 +24,7 @@ using System.IO;
 using System.Linq;
 using System.Reflection;
 using System.Threading;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Inputs.Styles;
 using KS.Files;
 using KS.Files.Folders;
 using KS.Files.Instances;

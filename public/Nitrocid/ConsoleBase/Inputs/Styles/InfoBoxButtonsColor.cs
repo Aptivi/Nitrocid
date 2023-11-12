@@ -30,8 +30,9 @@ using Terminaux.Colors;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Writers.FancyWriters;
 
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace KS.ConsoleBase.Inputs.Styles
 {
     /// <summary>
     /// Info box writer with buttons and color support
@@ -139,7 +140,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int buttonPanelPosX = borderX + 4;
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
-                int maxButtonWidth = (maxButtonPanelWidth / 3) - 4;
+                int maxButtonWidth = maxButtonPanelWidth / 3 - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
@@ -151,7 +152,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         // Get the text and the button position
                         string buttonText = buttons[i - 1];
-                        int buttonX = maxButtonPanelWidth - (i * maxButtonWidth);
+                        int buttonX = maxButtonPanelWidth - i * maxButtonWidth;
 
                         // Determine whether it's a selected button or not
                         bool selected = i == selectedButton + 1;
@@ -159,7 +160,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                         // Trim the button text to the max button width
                         buttonText = buttonText.Truncate(maxButtonWidth - 6);
-                        int buttonTextX = buttonX + (maxButtonWidth / 2) - (buttonText.Length / 2);
+                        int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
                         BorderColor.WriteBorderPlain(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1);
@@ -467,7 +468,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int buttonPanelPosX = borderX + 4;
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
-                int maxButtonWidth = (maxButtonPanelWidth / 3) - 4;
+                int maxButtonWidth = maxButtonPanelWidth / 3 - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
@@ -479,7 +480,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         // Get the text and the button position
                         string buttonText = buttons[i - 1];
-                        int buttonX = maxButtonPanelWidth - (i * maxButtonWidth);
+                        int buttonX = maxButtonPanelWidth - i * maxButtonWidth;
 
                         // Determine whether it's a selected button or not
                         bool selected = i == selectedButton + 1;
@@ -488,7 +489,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                         // Trim the button text to the max button width
                         buttonText = buttonText.Truncate(maxButtonWidth - 6);
-                        int buttonTextX = buttonX + (maxButtonWidth / 2) - (buttonText.Length / 2);
+                        int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
                         BorderColor.WriteBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor);
@@ -652,7 +653,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int buttonPanelPosX = borderX + 4;
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
-                int maxButtonWidth = (maxButtonPanelWidth / 3) - 4;
+                int maxButtonWidth = maxButtonPanelWidth / 3 - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
@@ -664,7 +665,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         // Get the text and the button position
                         string buttonText = buttons[i - 1];
-                        int buttonX = maxButtonPanelWidth - (i * maxButtonWidth);
+                        int buttonX = maxButtonPanelWidth - i * maxButtonWidth;
 
                         // Determine whether it's a selected button or not
                         bool selected = i == selectedButton + 1;
@@ -673,7 +674,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                         // Trim the button text to the max button width
                         buttonText = buttonText.Truncate(maxButtonWidth - 6);
-                        int buttonTextX = buttonX + (maxButtonWidth / 2) - (buttonText.Length / 2);
+                        int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
                         BorderColor.WriteBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor);
@@ -837,7 +838,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int buttonPanelPosX = borderX + 4;
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
-                int maxButtonWidth = (maxButtonPanelWidth / 3) - 4;
+                int maxButtonWidth = maxButtonPanelWidth / 3 - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
@@ -849,7 +850,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                     {
                         // Get the text and the button position
                         string buttonText = buttons[i - 1];
-                        int buttonX = maxButtonPanelWidth - (i * maxButtonWidth);
+                        int buttonX = maxButtonPanelWidth - i * maxButtonWidth;
 
                         // Determine whether it's a selected button or not
                         bool selected = i == selectedButton + 1;
@@ -858,7 +859,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
 
                         // Trim the button text to the max button width
                         buttonText = buttonText.Truncate(maxButtonWidth - 6);
-                        int buttonTextX = buttonX + (maxButtonWidth / 2) - (buttonText.Length / 2);
+                        int buttonTextX = buttonX + maxButtonWidth / 2 - buttonText.Length / 2;
 
                         // Render the button box
                         BorderColor.WriteBorder(buttonX, buttonPanelPosY, maxButtonWidth - 3, 1, buttonForegroundColor, buttonBackgroundColor);

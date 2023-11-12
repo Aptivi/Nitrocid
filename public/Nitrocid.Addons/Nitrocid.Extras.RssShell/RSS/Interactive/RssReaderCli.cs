@@ -17,8 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Interactive;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
 using KS.Misc.Text;

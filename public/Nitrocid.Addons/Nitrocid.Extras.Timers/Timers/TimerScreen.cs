@@ -31,6 +31,7 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using Figletize;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace Nitrocid.Extras.Timers.Timers
 {

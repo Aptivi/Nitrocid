@@ -33,7 +33,6 @@ using System.Text;
 using System.Collections;
 using KS.Misc.Text;
 using KS.Kernel.Time.Renderers;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Kernel.Configuration;
 using KS.Files;
 using KS.Misc.Reflection;
@@ -44,6 +43,7 @@ using KS.Files.Extensions;
 using KS.Files.Operations.Querying;
 using KS.Files.Operations.Printing;
 using Terminaux.Sequences.Tools;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace KS.Misc.Interactives
 {

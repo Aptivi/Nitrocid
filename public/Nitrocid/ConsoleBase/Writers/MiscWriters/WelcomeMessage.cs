@@ -19,6 +19,7 @@
 
 using Figletize;
 using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;

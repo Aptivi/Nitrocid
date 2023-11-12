@@ -31,8 +31,9 @@ using Terminaux.Colors;
 using Terminaux.Reader;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
+using KS.ConsoleBase.Writers.FancyWriters;
 
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace KS.ConsoleBase.Inputs.Styles
 {
     /// <summary>
     /// Info box writer with input and color support
@@ -122,7 +123,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Render the final result
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
-                int maxInputWidth = maxWidth - (inputPosX * 2) + 4;
+                int maxInputWidth = maxWidth - inputPosX * 2 + 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -366,7 +367,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Render the final result
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
-                int maxInputWidth = maxWidth - (inputPosX * 2) + 4;
+                int maxInputWidth = maxWidth - inputPosX * 2 + 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -492,7 +493,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Render the final result
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
-                int maxInputWidth = maxWidth - (inputPosX * 2) + 4;
+                int maxInputWidth = maxWidth - inputPosX * 2 + 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 
@@ -618,7 +619,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 // Render the final result
                 int inputPosX = borderX + 4;
                 int inputPosY = borderY + maxHeight - 3;
-                int maxInputWidth = maxWidth - (inputPosX * 2) + 4;
+                int maxInputWidth = maxWidth - inputPosX * 2 + 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
                 boxBuffer.Clear();
 

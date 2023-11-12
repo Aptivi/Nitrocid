@@ -19,13 +19,13 @@
 
 using System;
 using KS.ConsoleBase;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Drivers.RNG;
 using KS.Kernel.Threading;
 using KS.Kernel.Time.Renderers;
 using KS.Misc.Screensaver;
 using Terminaux.Colors;
 using Namer;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace Nitrocid.Extras.NameGen.Screensavers
 {

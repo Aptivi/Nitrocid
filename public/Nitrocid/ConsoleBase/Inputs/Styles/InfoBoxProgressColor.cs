@@ -29,8 +29,9 @@ using KS.ConsoleBase.Writers.FancyWriters.Tools;
 using Terminaux.Colors;
 using System.Text;
 using Terminaux.Sequences.Builder.Types;
+using KS.ConsoleBase.Writers.FancyWriters;
 
-namespace KS.ConsoleBase.Writers.FancyWriters
+namespace KS.ConsoleBase.Inputs.Styles
 {
     /// <summary>
     /// Info box writer with progress and color support
@@ -564,7 +565,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int progressPosY = borderY + maxHeight - 3;
                 int maxProgressWidth = maxWidth - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, (progressPosX * 2) + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
+                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
                 boxBuffer.Clear();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -765,7 +766,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int progressPosY = borderY + maxHeight - 3;
                 int maxProgressWidth = maxWidth - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, (progressPosX * 2) + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
+                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
                 boxBuffer.Clear();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -880,7 +881,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 int progressPosY = borderY + maxHeight - 3;
                 int maxProgressWidth = maxWidth - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
-                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, (progressPosX * 2) + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
+                ProgressBarColor.WriteProgress(progress, progressPosX, progressPosY, progressPosX * 2 + 2, InfoBoxProgressColor, InfoBoxProgressColor, BackgroundColor);
                 boxBuffer.Clear();
             }
             catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))

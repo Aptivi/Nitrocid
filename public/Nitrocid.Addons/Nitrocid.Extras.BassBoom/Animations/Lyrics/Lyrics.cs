@@ -34,6 +34,7 @@ using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Exceptions;
+using KS.ConsoleBase.Inputs.Styles;
 
 #if NET6_0
 using SharpLyrics;

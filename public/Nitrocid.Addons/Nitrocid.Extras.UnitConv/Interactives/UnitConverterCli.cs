@@ -22,10 +22,10 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections;
-using KS.ConsoleBase.Writers.FancyWriters;
 using UnitsNet;
 using FluentFTP.Helpers;
 using KS.ConsoleBase.Interactive;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace Nitrocid.Extras.UnitConv.Interactives
 {

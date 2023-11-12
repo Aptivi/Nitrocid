@@ -18,8 +18,8 @@
 //
 
 using KS.ConsoleBase.Inputs;
+using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Languages;
 using System.Collections.Generic;
 

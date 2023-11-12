@@ -28,13 +28,13 @@ using System;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Debugging;
 using KS.Kernel.Starting;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Arguments;
 using KS.Arguments.Help;
 using KS.Users.Windows;
 using System.Diagnostics;
 using System.Reflection;
 using SemanVer.Instance;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace KS.Kernel
 {

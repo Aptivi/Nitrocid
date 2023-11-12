@@ -35,6 +35,7 @@ using System.Linq;
 using System.Text;
 using Terminaux.Sequences.Tools;
 using Terminaux.Sequences.Builder.Types;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace KS.Files.Editors.TextEdit
 {

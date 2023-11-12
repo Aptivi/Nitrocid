@@ -20,7 +20,7 @@
 using KS.ConsoleBase;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase.Writers.FancyWriters;
+using KS.ConsoleBase.Inputs.Styles;
 using KS.Files;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration.Instances;

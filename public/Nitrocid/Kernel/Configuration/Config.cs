@@ -31,9 +31,9 @@ using KS.Kernel.Events;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration.Instances;
 using System.Collections.Generic;
-using KS.ConsoleBase.Writers.FancyWriters;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
+using KS.ConsoleBase.Inputs.Styles;
 
 namespace KS.Kernel.Configuration
 {
