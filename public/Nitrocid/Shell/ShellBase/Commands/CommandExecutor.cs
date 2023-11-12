@@ -266,13 +266,7 @@ namespace KS.Shell.ShellBase.Commands
 #pragma warning disable SYSLIB0046
                     try
                     {
-                        ControlledExecution.Run(() =>
-                        {
-                            if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
-                                ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
-                            else
-                                ShellInstance.LastErrorCode = CommandBase.Execute(parameters, ref value);
-                        }, CancellationHandlers.cts.Token);
+                        ControlledExecution.Run(() => CommandDelegate(ShellInstance, CommandBase, parameters, ref value), CancellationHandlers.cts.Token);
                     }
                     catch (OperationCanceledException ex)
                     {
@@ -284,20 +278,14 @@ namespace KS.Shell.ShellBase.Commands
 #else
                     try
                     {
-                        var task = new Task(() =>
-                        {
-                            if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
-                                ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
-                            else
-                                ShellInstance.LastErrorCode = CommandBase.Execute(parameters, ref value);
-                        }, CancellationHandlers.cts.Token, TaskCreationOptions.LongRunning);
+                        var task = new Task(() => CommandDelegate(ShellInstance, CommandBase, parameters, ref value), CancellationHandlers.cts.Token, TaskCreationOptions.LongRunning);
                         task.Start();
                         task.Wait(CancellationHandlers.cts.Token);
                     }
                     catch (Exception ex)
                     {
                         CancellationHandlers.CancelRequested = false;
-                        DebugWriter.WriteDebug(DebugLevel.I, "Command aborted.");
+                        DebugWriter.WriteDebug(DebugLevel.W, $"Command aborted. {ex.Message}");
                         DebugWriter.WriteDebugStackTrace(ex);
                     }
 #endif
@@ -466,6 +454,23 @@ namespace KS.Shell.ShellBase.Commands
                 .ToArray();
 
             return finalWrappables;
+        }
+
+        private static void CommandDelegate(ShellExecuteInfo ShellInstance, BaseCommand CommandBase, CommandParameters parameters, ref string value)
+        {
+            try
+            {
+                if (DriverHandler.CurrentConsoleDriverLocal.IsDumb)
+                    ShellInstance.LastErrorCode = CommandBase.ExecuteDumb(parameters, ref value);
+                else
+                    ShellInstance.LastErrorCode = CommandBase.Execute(parameters, ref value);
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Command aborted: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Command aborted for the following reason:") + $" {ex.Message}", KernelColorType.Error);
+            }
         }
 
     }
