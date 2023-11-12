@@ -18,6 +18,7 @@
 //
 
 using System;
+using System.Text;
 using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.Kernel.Debugging;
@@ -31,6 +32,30 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
     /// </summary>
     public static class ListEntryWriterColor
     {
+        /// <summary>
+        /// Outputs a list entry and value into the terminal prompt plainly.
+        /// </summary>
+        /// <param name="entry">A list entry that will be listed to the terminal prompt.</param>
+        /// <param name="value">A list value that will be listed to the terminal prompt.</param>
+        /// <param name="indent">Indentation level</param>
+        public static void WriteListEntryPlain(string entry, string value, int indent = 0)
+        {
+            lock (TextWriterColor.WriteLock)
+            {
+                try
+                {
+                    // Write the list entry
+                    string buffered = RenderListEntry(entry, value, indent);
+                    TextWriterColor.WritePlain(buffered);
+                }
+                catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
+                {
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
+                }
+            }
+        }
+
         /// <summary>
         /// Outputs a list entry and value into the terminal prompt.
         /// </summary>
@@ -76,14 +101,9 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
             {
                 try
                 {
-                    // First, get the spaces count to indent
-                    if (indent < 0)
-                        indent = 0;
-                    string spaces = new(' ', indent * 2);
-
-                    // Then, write the list entry
-                    TextWriterColor.WriteColorBack($"{spaces}- {entry}: ", false, ListKeyColor, KernelColorTools.GetColor(KernelColorType.Background));
-                    TextWriterColor.WriteColorBack($"{value}", true, ListValueColor, KernelColorTools.GetColor(KernelColorType.Background));
+                    // Write the list entry
+                    string buffered = RenderListEntry(entry, value, ListKeyColor, ListValueColor, indent);
+                    TextWriterColor.WritePlain(buffered);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
                 {
@@ -91,6 +111,51 @@ namespace KS.ConsoleBase.Writers.ConsoleWriters
                     DebugWriter.WriteDebug(DebugLevel.E, Translate.DoTranslation("There is a serious error when printing text.") + " {0}", ex.Message);
                 }
             }
+        }
+
+        /// <summary>
+        /// Renders a list entry and value.
+        /// </summary>
+        /// <param name="entry">A list entry that will be listed.</param>
+        /// <param name="value">A list value that will be listed.</param>
+        /// <param name="indent">Indentation level</param>
+        /// <returns>A list entry without the new line at the end</returns>
+        public static string RenderListEntry(string entry, string value, int indent = 0)
+        {
+            // First, get the spaces count to indent
+            if (indent < 0)
+                indent = 0;
+            string spaces = new(' ', indent * 2);
+
+            // Then, write the list entry
+            var listBuilder = new StringBuilder();
+            listBuilder.Append($"{spaces}- {entry}: {value}");
+            return listBuilder.ToString();
+        }
+
+        /// <summary>
+        /// Renders a list entry and value.
+        /// </summary>
+        /// <param name="entry">A list entry that will be listed.</param>
+        /// <param name="value">A list value that will be listed.</param>
+        /// <param name="indent">Indentation level</param>
+        /// <param name="ListKeyColor">A key color.</param>
+        /// <param name="ListValueColor">A value color.</param>
+        /// <returns>A list entry without the new line at the end</returns>
+        public static string RenderListEntry(string entry, string value, Color ListKeyColor, Color ListValueColor, int indent = 0)
+        {
+            // First, get the spaces count to indent
+            if (indent < 0)
+                indent = 0;
+            string spaces = new(' ', indent * 2);
+
+            // Then, write the list entry
+            var listBuilder = new StringBuilder();
+            listBuilder.Append(
+                $"{ListKeyColor.VTSequenceForeground}{spaces}- {entry}: " +
+                $"{ListValueColor.VTSequenceForeground}{value}"
+            );
+            return listBuilder.ToString();
         }
     }
 }
