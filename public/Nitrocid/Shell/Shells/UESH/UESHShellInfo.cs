@@ -1296,6 +1296,12 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(new[]
                         {
                             new CommandArgumentPart(false, "saver"),
+                        }, new[]
+                        {
+                            new SwitchInfo("select", /* Localizable */ "Gives you an option to select the screensaver to try out", new()
+                            {
+                                AcceptsValues = false
+                            })
                         })
                     }, new SaveScreenCommand())
             },
