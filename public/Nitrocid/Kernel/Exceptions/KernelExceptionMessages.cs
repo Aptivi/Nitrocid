@@ -140,6 +140,7 @@ namespace KS.Kernel.Exceptions
                 { KernelExceptionType.InvalidPlaceholderAction,         Translate.DoTranslation("Invalid placeholder action. Consult the kernel documentation for more information.") },
                 { KernelExceptionType.DriverHandler,                    Translate.DoTranslation("The driver handler failed to perform this action because you might have supplied the parameters wrong. If you're sure that they're specified correctly, make sure that you've provided the right driver name and type.") },
                 { KernelExceptionType.ProgressHandler,                  Translate.DoTranslation("The progress handler has failed to perform the requested operation.") },
+                { KernelExceptionType.Console,                          Translate.DoTranslation("The console operation failed to perform the required task.") },
             };
 
         internal static string GetFinalExceptionMessage(KernelExceptionType exceptionType, string message, Exception e, params object[] vars)

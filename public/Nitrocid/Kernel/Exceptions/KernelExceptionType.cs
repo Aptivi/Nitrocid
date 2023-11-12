@@ -460,5 +460,9 @@ namespace KS.Kernel.Exceptions
         /// The progress handler has failed to perform the requested operation.
         /// </summary>
         ProgressHandler,
+        /// <summary>
+        /// The console operation failed to perform the required task.
+        /// </summary>
+        Console,
     }
 }
