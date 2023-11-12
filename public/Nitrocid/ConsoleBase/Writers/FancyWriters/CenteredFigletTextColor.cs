@@ -241,9 +241,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             var figBuilder = new StringBuilder();
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont);
+            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
             int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
-            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback);
+            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
             int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             if (consoleX < 0 || consoleY > ConsoleWrapper.WindowHeight)
@@ -291,9 +291,9 @@ namespace KS.ConsoleBase.Writers.FancyWriters
             var figBuilder = new StringBuilder();
             var figFontFallback = FigletTools.GetFigletFont("small");
             int figWidth = FigletTools.GetFigletWidth(Text, FigletFont) / 2;
-            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont);
+            int figHeight = FigletTools.GetFigletHeight(Text, FigletFont) / 2;
             int figWidthFallback = FigletTools.GetFigletWidth(Text, figFontFallback) / 2;
-            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback);
+            int figHeightFallback = FigletTools.GetFigletHeight(Text, figFontFallback) / 2;
             int consoleX = ConsoleWrapper.WindowWidth / 2 - figWidth;
             int consoleY = ConsoleWrapper.WindowHeight / 2 - figHeight;
             if (consoleX < 0 || consoleY > ConsoleWrapper.WindowHeight)
