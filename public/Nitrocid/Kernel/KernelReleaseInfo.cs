@@ -26,9 +26,9 @@ namespace KS.Kernel
         internal readonly static string ReleaseSpecifier = ""
 #if SPECIFIERDEV
 #if MILESTONESPECIFIERALPHA
-                                    + "Alpha 1"
+                                    + "Alpha"
 #elif MILESTONESPECIFIERBETA
-                                    + "Beta 2"
+                                    + "Beta"
 #elif MILESTONESPECIFIERRC
                                     + "Release Candidate"
 #else
@@ -40,7 +40,7 @@ namespace KS.Kernel
         ;
 
         // Final console window title
-        internal readonly static string ConsoleTitle = $"Nitrocid v{KernelMain.Version} (API v{KernelMain.ApiVersion})"
+        internal readonly static string ConsoleTitle = $"Nitrocid v{KernelMain.VersionFullStr} (API v{KernelMain.ApiVersion})"
 #if !SPECIFIERREL
                                     + $" - {ReleaseSpecifier}"
 #endif

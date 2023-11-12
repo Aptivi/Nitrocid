@@ -35,7 +35,7 @@ namespace KS.Arguments.CommandLineArguments
                 "Kernel initialized, version {0}.\n" +
                 "Kernel mod API version {1}.\n" +
                 "OS: {2}",
-                KernelMain.Version.ToString(), KernelMain.ApiVersion.ToString(), Environment.OSVersion.ToString()
+                KernelMain.VersionFullStr, KernelMain.ApiVersion.ToString(), Environment.OSVersion.ToString()
             );
         }
     }

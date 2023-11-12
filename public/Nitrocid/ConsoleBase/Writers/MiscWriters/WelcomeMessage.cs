@@ -102,14 +102,14 @@ namespace KS.ConsoleBase.Writers.MiscWriters
                 // Finally, write the message
                 if (StartScroll)
                 {
-                    TextWriterSlowColor.WriteSlowlyKernelColor(MessageWrite, true, 10d, KernelColorType.Banner, KernelMain.Version.ToString());
+                    TextWriterSlowColor.WriteSlowlyKernelColor(MessageWrite, true, 10d, KernelColorType.Banner, KernelMain.VersionFullStr);
                 }
                 else
                 {
-                    TextWriterColor.WriteKernelColor(MessageWrite, true, KernelColorType.Banner, KernelMain.Version.ToString());
+                    TextWriterColor.WriteKernelColor(MessageWrite, true, KernelColorType.Banner, KernelMain.VersionFullStr);
                 }
 
-                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.Version}", TextTools.DefaultFigletFontName);
+                string FigletRenderedBanner = FigletTools.RenderFiglet($"{KernelMain.VersionFullStr}", TextTools.DefaultFigletFontName);
                 TextWriterColor.Write(CharManager.NewLine + FigletRenderedBanner + CharManager.NewLine);
                 ConsoleWrapper.CursorVisible = true;
             }
