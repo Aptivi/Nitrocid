@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Exceptions;
 using KS.Languages;
@@ -40,18 +41,24 @@ namespace KS.ConsoleBase.Buffered
         /// <summary>
         /// Renders the current screen one time
         /// </summary>
-        public static void Render() =>
-            Render(CurrentScreen);
+        /// <param name="clearScreen">Whether to clear the screen before writing the buffer down to the console</param>
+        public static void Render(bool clearScreen = false) =>
+            Render(CurrentScreen, clearScreen);
 
         /// <summary>
         /// Renders the screen one time
         /// </summary>
         /// <param name="screen">The screen to be rendered</param>
-        public static void Render(Screen screen)
+        /// <param name="clearScreen">Whether to clear the screen before writing the buffer down to the console</param>
+        public static void Render(Screen screen, bool clearScreen = false)
         {
             // Check the screen instance
             if (screen is null)
                 throw new KernelException(KernelExceptionType.Console, Translate.DoTranslation("Screen is not specified."));
+
+            // Clear if needed
+            if (clearScreen)
+                KernelColorTools.LoadBack();
 
             // Now, render the screen
             string buffer = screen.GetBuffer();
