@@ -280,9 +280,7 @@ namespace KS.Kernel.Starting
             try
             {
                 // Reset every variable below
-                KernelEntry.SafeMode = false;
                 KernelEntry.QuietKernel = false;
-                KernelEntry.Maintenance = false;
                 ConsoleExtensions.HasSetAltBuffer = false;
                 SplashReport._Progress = 0;
                 SplashReport._ProgressText = "";
@@ -395,6 +393,11 @@ namespace KS.Kernel.Starting
                 // Reset power state
                 PowerManager.RebootRequested = false;
                 Login.LogoutRequested = false;
+
+                // Set modes as appropriate
+                KernelEntry.SafeMode = PowerManager.RebootingToSafeMode;
+                KernelEntry.Maintenance = PowerManager.RebootingToMaintenanceMode;
+                KernelEntry.DebugMode = PowerManager.RebootingToDebugMode;
             }
         }
     }

@@ -50,6 +50,9 @@ namespace KS.Kernel.Power
         internal static bool RebootRequested;
         internal static bool hardShutdown;
         internal static bool elevating;
+        internal static bool rebootingToSafeMode;
+        internal static bool rebootingToDebugMode;
+        internal static bool rebootingToMaintenanceMode;
         internal static Stopwatch Uptime = new();
         internal static KernelThread RPCPowerListener = new("RPC Power Listener Thread", true, (object arg) => PowerManage((PowerMode)arg));
 
@@ -71,6 +74,39 @@ namespace KS.Kernel.Power
         /// </summary>
         public static bool SimulateNoAPM =>
             Config.MainConfig.SimulateNoAPM;
+
+        internal static bool RebootingToSafeMode
+        {
+            get
+            {
+                bool status = rebootingToSafeMode;
+                if (rebootingToSafeMode)
+                    rebootingToSafeMode = false;
+                return status;
+            }
+        }
+
+        internal static bool RebootingToDebugMode
+        {
+            get
+            {
+                bool status = rebootingToDebugMode;
+                if (rebootingToDebugMode)
+                    rebootingToDebugMode = false;
+                return status;
+            }
+        }
+
+        internal static bool RebootingToMaintenanceMode
+        {
+            get
+            {
+                bool status = rebootingToMaintenanceMode;
+                if (rebootingToMaintenanceMode)
+                    rebootingToMaintenanceMode = false;
+                return status;
+            }
+        }
 
         /// <summary>
         /// Manage computer's (actually, simulated computer) power
@@ -140,15 +176,17 @@ namespace KS.Kernel.Power
                         // Set appropriate flags
                         RebootRequested = true;
                         Login.LogoutRequested = true;
-                        KernelEntry.SafeMode = PowerMode == PowerMode.RebootSafe;
-                        KernelEntry.Maintenance = PowerMode == PowerMode.RebootMaintenance;
-                        KernelEntry.DebugMode = PowerMode == PowerMode.RebootDebug;
+                        rebootingToSafeMode = PowerMode == PowerMode.RebootSafe;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", rebootingToSafeMode);
+                        rebootingToMaintenanceMode = PowerMode == PowerMode.RebootMaintenance;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Maintenance mode changed to {0}", rebootingToMaintenanceMode);
+                        rebootingToDebugMode = PowerMode == PowerMode.RebootDebug;
+                        DebugWriter.WriteDebug(DebugLevel.I, "Debug mode changed to {0}", rebootingToDebugMode);
 
                         // Kill all shells and interrupt any input
                         for (int i = ShellManager.ShellStack.Count - 1; i >= 0; i--)
                             ShellManager.KillShellForced();
                         TermReaderTools.Interrupt();
-                        DebugWriter.WriteDebug(DebugLevel.I, "Safe mode changed to {0}", KernelEntry.SafeMode);
                         break;
                     }
                 case PowerMode.RemoteShutdown:
