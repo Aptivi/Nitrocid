@@ -17,6 +17,7 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Buffered;
 using KS.Drivers;
 using KS.Drivers.Console;
 using KS.Kernel.Debugging;
@@ -76,23 +77,8 @@ namespace KS.ConsoleBase
                 while (!PowerManager.KernelShutdown)
                 {
                     SpinWait.SpinUntil(() => PowerManager.KernelShutdown, 10);
-
-                    // We need to call the WindowHeight and WindowWidth properties on the Terminal console driver, because
-                    // this polling works for all the terminals. Other drivers that don't use the terminal may not even
-                    // implement these two properties.
                     if (CurrentWindowHeight != termDriver.WindowHeight | CurrentWindowWidth != termDriver.WindowWidth)
-                    {
-                        ResizeDetected = true;
-                        DebugWriter.WriteDebug(DebugLevel.W, "Console resize detected! Old width x height: {0}x{1} | New width x height: {2}x{3}", CurrentWindowWidth, CurrentWindowHeight, termDriver.WindowWidth, termDriver.WindowHeight);
-                        DebugWriter.WriteDebug(DebugLevel.W, "Userspace application will have to call Resized to set ResizeDetected back to false.");
-                        EventsManager.FireEvent(EventType.ResizeDetected, CurrentWindowWidth, CurrentWindowHeight, termDriver.WindowWidth, termDriver.WindowHeight);
-                        CurrentWindowWidth = termDriver.WindowWidth;
-                        CurrentWindowHeight = termDriver.WindowHeight;
-
-                        // Also, tell the screensaver application to refresh itself
-                        if (ScreensaverManager.InSaver)
-                            ScreensaverDisplayer.displayingSaver.ScreensaverResizeSync();
-                    }
+                        HandleResize();
                 }
             }
             catch (Exception ex)
@@ -108,6 +94,29 @@ namespace KS.ConsoleBase
             CurrentWindowHeight = ConsoleWrapper.WindowHeight;
             if (!ResizeListenerThread.IsAlive)
                 ResizeListenerThread.Start();
+        }
+
+        internal static void HandleResize()
+        {
+            ResizeDetected = true;
+
+            // We need to call the WindowHeight and WindowWidth properties on the Terminal console driver, because
+            // this polling works for all the terminals. Other drivers that don't use the terminal may not even
+            // implement these two properties.
+            var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
+            DebugWriter.WriteDebug(DebugLevel.W, "Console resize detected! Old width x height: {0}x{1} | New width x height: {2}x{3}", CurrentWindowWidth, CurrentWindowHeight, termDriver.WindowWidth, termDriver.WindowHeight);
+            DebugWriter.WriteDebug(DebugLevel.W, "Userspace application will have to call Resized to set ResizeDetected back to false.");
+            EventsManager.FireEvent(EventType.ResizeDetected, CurrentWindowWidth, CurrentWindowHeight, termDriver.WindowWidth, termDriver.WindowHeight);
+            CurrentWindowWidth = termDriver.WindowWidth;
+            CurrentWindowHeight = termDriver.WindowHeight;
+
+            // Also, tell the screen-based apps to refresh themselves
+            if (ScreenTools.CurrentScreen is not null)
+                ScreenTools.Render();
+
+            // Also, tell the screensaver application to refresh itself
+            if (ScreensaverManager.InSaver)
+                ScreensaverDisplayer.displayingSaver.ScreensaverResizeSync();
         }
     }
 }

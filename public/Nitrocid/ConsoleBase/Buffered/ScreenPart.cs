@@ -17,7 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
+using System;
+using System.Collections.Generic;
 using System.Text;
+using Terminaux.Colors;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.ConsoleBase.Buffered
 {
@@ -27,6 +32,7 @@ namespace KS.ConsoleBase.Buffered
     public class ScreenPart
     {
         private readonly StringBuilder bufferBuilder = new();
+        private readonly List<Func<string>> dynamicBuffers = new();
 
         /// <summary>
         /// Adds a text to the buffer
@@ -43,6 +49,60 @@ namespace KS.ConsoleBase.Buffered
             bufferBuilder.AppendLine(text);
 
         /// <summary>
+        /// Adds a dynamic text to the buffer
+        /// </summary>
+        /// <param name="textFunc">Text to add to the dynamic buffer queue</param>
+        public void AddDynamicText(Func<string> textFunc)
+        {
+            if (textFunc is null)
+                return;
+
+            dynamicBuffers.Add(textFunc);
+        }
+
+        /// <summary>
+        /// Adds the VT sequence to set the cursor position
+        /// </summary>
+        /// <param name="left">Zero-based left position</param>
+        /// <param name="top">Zero-based top position</param>
+        public void Position(int left, int top)
+        {
+            string pos = CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1);
+            AddText(pos);
+        }
+
+        /// <summary>
+        /// Adds the VT sequence to set the foreground color
+        /// </summary>
+        /// <param name="color">Color to use for foreground color</param>
+        /// <param name="forceTrue">Forces the usage of the true color</param>
+        public void ForegroundColor(Color color, bool forceTrue = false)
+        {
+            string colorSeq = forceTrue ? color.VTSequenceForegroundTrueColor : color.VTSequenceForeground;
+            AddText(colorSeq);
+        }
+
+        /// <summary>
+        /// Adds the VT sequence to set the background color
+        /// </summary>
+        /// <param name="color">Color to use for background color</param>
+        /// <param name="forceTrue">Forces the usage of the true color</param>
+        public void BackgroundColor(Color color, bool forceTrue = false)
+        {
+            string colorSeq = forceTrue ? color.VTSequenceBackgroundTrueColor : color.VTSequenceBackground;
+            AddText(colorSeq);
+        }
+
+        /// <summary>
+        /// Adds the VT sequence to reset the colors to the kernel-defined colors
+        /// </summary>
+        public void ResetColor()
+        {
+            ForegroundColor(KernelColorTools.GetColor(KernelColorType.NeutralText));
+            BackgroundColor(KernelColorTools.GetColor(KernelColorType.Background));
+        }
+
+        /// <summary>
         /// Clears the buffer
         /// </summary>
         public void Clear() =>
@@ -52,8 +112,13 @@ namespace KS.ConsoleBase.Buffered
         /// Gets the resulting buffer
         /// </summary>
         /// <returns>The resulting buffer</returns>
-        public string GetBuffer() =>
-            bufferBuilder.ToString();
+        public string GetBuffer()
+        {
+            var finalBuffer = new StringBuilder(bufferBuilder.ToString());
+            foreach (var dynamicBuffer in dynamicBuffers)
+                finalBuffer.Append(dynamicBuffer());
+            return finalBuffer.ToString();
+        }
 
         /// <summary>
         /// Makes a new instance of the screen part

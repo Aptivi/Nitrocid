@@ -18,8 +18,6 @@
 //
 
 using KS.ConsoleBase;
-using KS.Drivers;
-using KS.Drivers.Console;
 using KS.Kernel.Debugging;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
@@ -80,10 +78,7 @@ namespace KS.Kernel.Power
         private static void SigWindowChange(PosixSignalContext psc)
         {
             DebugWriter.WriteDebug(DebugLevel.I, "SIGWINCH recieved!");
-            ConsoleResizeListener.ResizeDetected = true;
-            var termDriver = DriverHandler.GetFallbackDriver<IConsoleDriver>();
-            ConsoleResizeListener.CurrentWindowWidth = termDriver.WindowWidth;
-            ConsoleResizeListener.CurrentWindowHeight = termDriver.WindowHeight;
+            ConsoleResizeListener.HandleResize();
             psc.Cancel = true;
         }
     }
