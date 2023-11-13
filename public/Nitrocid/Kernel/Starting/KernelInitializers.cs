@@ -26,6 +26,7 @@ using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
 using KS.Drivers;
 using KS.Drivers.HardwareProber;
+using KS.Drivers.HardwareProber.Bases;
 using KS.Files;
 using KS.Files.Extensions;
 using KS.Files.Operations;
@@ -300,11 +301,8 @@ namespace KS.Kernel.Starting
                 DebugWriter.WriteDebug(DebugLevel.I, "Saved privacy consents.");
 
                 // Reset hardware info
-                var baseProber = DriverHandler.GetFallbackDriver<IHardwareProberDriver>() as BaseHardwareProberDriver;
-                baseProber.processors = null;
-                baseProber.graphics = null;
-                baseProber.hardDrive = null;
-                baseProber.pcMemory = null;
+                var baseProber = DriverHandler.GetDriver<IHardwareProberDriver>("Fallback") as FallbackHardwareProber;
+                baseProber.ResetAll();
                 DebugWriter.WriteDebug(DebugLevel.I, "Hardware info reset.");
 
                 // Disconnect all hosts from remote debugger

@@ -26,7 +26,6 @@ using Terminaux.Colors;
 using KS.Misc.Text;
 using System.Text;
 using Terminaux.Sequences.Tools;
-using KS.Drivers.Console;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
 {

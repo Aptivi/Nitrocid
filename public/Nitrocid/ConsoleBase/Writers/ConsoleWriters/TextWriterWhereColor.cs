@@ -27,7 +27,6 @@ using KS.Misc.Text;
 using System.Text;
 using Terminaux.Sequences.Tools;
 using Terminaux.Sequences.Builder.Types;
-using KS.Drivers.Console;
 
 namespace KS.ConsoleBase.Writers.ConsoleWriters
 {

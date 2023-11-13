@@ -17,23 +17,16 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using KS.ConsoleBase.Inputs;
-using KS.ConsoleBase;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using System;
 using System.IO;
-using System.Text;
 using System.Threading;
 using KS.Kernel;
 using SystemConsole = System.Console;
 using TextEncoding = System.Text.Encoding;
-using KS.Misc.Text;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
-using Terminaux.Sequences.Tools;
-using System.Text.RegularExpressions;
-using Terminaux.Sequences.Builder.Types;
 
 namespace KS.Drivers.Console
 {

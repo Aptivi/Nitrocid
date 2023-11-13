@@ -20,6 +20,5 @@
 namespace KS.Drivers.HardwareProber.Bases
 {
     internal class DefaultHardwareProber : BaseHardwareProberDriver, IHardwareProberDriver
-    {
-    }
+    { }
 }

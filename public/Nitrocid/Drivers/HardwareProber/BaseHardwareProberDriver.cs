@@ -17,20 +17,17 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using InxiFrontend;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
-using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Reflection;
 using KS.Misc.Splash;
-using System;
+using SpecProbe.Hardware.Parts.Types;
 using System.Collections;
-using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
+using HwProber = SpecProbe.Hardware.HardwareProber;
 
 namespace KS.Drivers.HardwareProber
 {
@@ -39,13 +36,9 @@ namespace KS.Drivers.HardwareProber
     /// </summary>
     public abstract class BaseHardwareProberDriver : IHardwareProberDriver
     {
-        internal IEnumerable processors;
-        internal IEnumerable pcMemory;
-        internal IEnumerable graphics;
-        internal IEnumerable hardDrive;
-
         /// <inheritdoc/>
-        public virtual string DriverName => "Default";
+        public virtual string DriverName =>
+            "Default";
 
         /// <inheritdoc/>
         public virtual DriverTypes DriverType => DriverTypes.HardwareProber;
@@ -54,43 +47,103 @@ namespace KS.Drivers.HardwareProber
         public virtual bool DriverInternal => false;
 
         /// <inheritdoc/>
-        public virtual IEnumerable ProbeGraphics()
+        public virtual IEnumerable ProbeGraphics() =>
+            HwProber.Video;
+
+        /// <inheritdoc/>
+        public virtual IEnumerable ProbeHardDrive() =>
+            HwProber.HardDisk;
+
+        /// <inheritdoc/>
+        public virtual IEnumerable ProbePcMemory() =>
+            HwProber.Memory;
+
+        /// <inheritdoc/>
+        public virtual IEnumerable ProbeProcessor() =>
+            HwProber.Processors;
+
+        /// <inheritdoc/>
+        public virtual string DiskInfo(int diskIndex)
         {
-            if (graphics is not null)
-                return graphics;
-            var hwInfoBase = new Inxi(InxiHardwareType.Graphics);
-            graphics = hwInfoBase.Hardware.GPU;
-            return graphics;
+            var hardDrives = ProbeHardDrive() as HardDiskPart[];
+            if (diskIndex < hardDrives.Length)
+            {
+                // Get the drive index and get the partition info
+                var drive = hardDrives[diskIndex];
+                TextWriterColor.Write($"[{drive.HardDiskNumber}] {drive.HardDiskSize.SizeString()}");
+                return $"[{drive.HardDiskNumber}] {drive.HardDiskSize.SizeString()}";
+            }
+            else
+                TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
+            return "";
         }
 
         /// <inheritdoc/>
-        public virtual IEnumerable ProbeHardDrive()
+        public virtual string DiskPartitionInfo(int diskIndex, int diskPartitionIndex)
         {
-            if (hardDrive is not null)
-                return hardDrive;
-            var hwInfoBase = new Inxi(InxiHardwareType.HardDrive);
-            hardDrive = hwInfoBase.Hardware.HDD;
-            return hardDrive;
+            var hardDrives = ProbeHardDrive() as HardDiskPart[];
+            if (diskIndex < hardDrives.Length)
+            {
+                // Get the drive index and get the partition info
+                var parts = hardDrives[diskIndex].Partitions;
+                if (diskPartitionIndex < parts.Length)
+                {
+                    // Get the part index and get the partition info
+                    var part = parts[diskPartitionIndex];
+
+                    // Write partition information
+                    int id = part.PartitionNumber;
+                    string size = part.PartitionSize.SizeString();
+                    TextWriterColor.Write($"[{diskPartitionIndex + 1}] {id} - {size}");
+                    return $"[{diskPartitionIndex + 1}] {id} - {size}";
+                }
+                else
+                    TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
+            }
+            else
+                TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
+            return "";
         }
 
         /// <inheritdoc/>
-        public virtual IEnumerable ProbePcMemory()
+        public virtual string ListDiskPartitions(int diskIndex)
         {
-            if (pcMemory is not null)
-                return pcMemory;
-            var hwInfoBase = new Inxi(InxiHardwareType.PCMemory);
-            pcMemory = new[] { hwInfoBase.Hardware.RAM };
-            return pcMemory;
+            var hardDrives = ProbeHardDrive() as HardDiskPart[];
+            if (diskIndex < hardDrives.Length)
+            {
+                // Get the drive index and get the partition info
+                var parts = hardDrives[diskIndex].Partitions;
+                int partNum = 1;
+                foreach (var part in parts)
+                {
+                    // Write partition information
+                    int id = part.PartitionNumber;
+                    string size = part.PartitionSize.SizeString();
+                    TextWriterColor.Write($"[{partNum}] {id}, {size}");
+                    partNum++;
+                }
+                return $"[{string.Join(", ", parts.Select((pp) => pp.PartitionNumber))}]";
+            }
+            else
+                TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
+            return "";
         }
 
         /// <inheritdoc/>
-        public virtual IEnumerable ProbeProcessor()
+        public virtual string ListDisks()
         {
-            if (processors is not null)
-                return processors;
-            var hwInfoBase = new Inxi(InxiHardwareType.Processor);
-            processors = hwInfoBase.Hardware.CPU;
-            return processors;
+            var hardDrives = ProbeHardDrive() as HardDiskPart[];
+            for (int i = 0; i < hardDrives.Length; i++)
+            {
+                var hardDrive = hardDrives[i];
+                TextWriterColor.Write($"- [{i + 1}] {hardDrive.HardDiskSize.SizeString()}");
+            }
+            if (hardDrives.Length == 0)
+            {
+                // SpecProbe may have failed to parse hard disks due to insufficient permissions.
+                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The hardware probing library has failed to probe hard drives. If you're running Windows, the most likely cause is that you have insufficient permissions to access the hard drive information. Restart Nitrocid with elevated administrative privileges to be able to parse hard drives."), true, KernelColorType.Warning);
+            }
+            return $"[{string.Join(", ", hardDrives.Select((hdp) => hdp.HardDiskNumber))}]";
         }
 
         /// <inheritdoc/>
@@ -101,64 +154,53 @@ namespace KS.Drivers.HardwareProber
         public virtual void ListHardware(IEnumerable processors, IEnumerable memory, IEnumerable graphics, IEnumerable hardDrives)
         {
             // Verify the types
-            if (processors is not Dictionary<string, Processor> procDict)
+            if (processors is not ProcessorPart[] procDict)
             {
                 SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Failed to parse the CPU info. Ensure that it's a valid info list."));
                 return;
             }
-            if (memory is not PCMemory[] memList)
+            if (memory is not MemoryPart[] memList)
             {
                 SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Failed to parse the RAM info. Ensure that it's a valid info list."));
                 return;
             }
-            if (graphics is not Dictionary<string, Graphics> gpuDict)
+            if (graphics is not VideoPart[] gpuDict)
             {
                 SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Failed to parse the GPU info. Ensure that it's a valid info list."));
                 return;
             }
-            if (hardDrives is not Dictionary<string, HardDrive> hddDict)
+            if (hardDrives is not HardDiskPart[] hddDict)
             {
                 SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Failed to parse the HDD info. Ensure that it's a valid info list."));
                 return;
             }
 
             // Print information about the probed hardware, starting from the CPU info
-            foreach (string cpuName in procDict.Keys)
+            foreach (var cpu in procDict)
             {
-                var ProcessorInfo = procDict[cpuName];
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor name:") + " {0}", cpuName);
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor clock speed:") + " {0}", ProcessorInfo.Speed);
-                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor bits:") + $" {ProcessorInfo.Bits}-bit");
+                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor name:") + " {0}", cpu.Name);
+                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Processor clock speed:") + " {0} MHz", cpu.Speed);
+                SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Total number of processors:") + $" {cpu.TotalCores}", 3);
             }
-            SplashReport.ReportProgress("CPU: " + Translate.DoTranslation("Total number of processors:") + $" {Environment.ProcessorCount}", 3);
 
             // Print RAM info
             var mem = memList[0];
-            SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Total memory:") + " {0}", 2, KernelPlatform.IsOnWindows() ? ((long)Math.Round(Convert.ToDouble(mem.TotalMemory) * 1024d)).SizeString() : mem.TotalMemory);
+            SplashReport.ReportProgress("RAM: " + Translate.DoTranslation("Total memory:") + " {0}", 2, mem.TotalMemory.SizeString());
 
             // GPU info
-            foreach (string GPUInfo in gpuDict.Keys)
-            {
-                var TargetGraphics = gpuDict[GPUInfo];
-                SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Graphics card:") + " {0}", TargetGraphics.Name);
-            }
+            foreach (var gpu in gpuDict)
+                SplashReport.ReportProgress("GPU: " + Translate.DoTranslation("Graphics card:") + " {0}", gpu.VideoCardName);
 
             // Drive Info
-            foreach (string DriveInfo in hddDict.Keys)
+            foreach (var hdd in hddDict)
             {
-                var TargetDrive = hddDict[DriveInfo];
-                string DriveModel = TargetDrive.Vendor == "(Standard disk drives)" ? $" {TargetDrive.Model}" : $" {TargetDrive.Vendor} {TargetDrive.Model}";
-                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk model:") + " {0}", DriveModel);
-                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk size:") + " {0}", KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetDrive.Size).SizeString() : TargetDrive.Size);
+                SplashReport.ReportProgress("HDD: " + Translate.DoTranslation("Disk size:") + " {0}", hdd.HardDiskSize.SizeString());
 
                 // Partition info
-                foreach (string PartInfo in TargetDrive.Partitions.Keys)
-                {
-                    var TargetPart = TargetDrive.Partitions[PartInfo];
-                    SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition size:") + " {1}", TargetPart.ID, KernelPlatform.IsOnWindows() ? Convert.ToInt64(TargetPart.Size).SizeString() : TargetPart.Size);
-                    SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition filesystem:") + " {1}", TargetPart.ID, TargetPart.FileSystem);
-                }
+                foreach (var part in hdd.Partitions)
+                    SplashReport.ReportProgress("HDD [{0}]: " + Translate.DoTranslation("Partition size:") + " {1}", hdd.HardDiskNumber, part.PartitionSize);
             }
+            PrintErrors();
         }
 
         /// <inheritdoc/>
@@ -172,180 +214,106 @@ namespace KS.Drivers.HardwareProber
             }
             else
                 ListHardwareInternal(hardwareType);
-        }
-
-        /// <inheritdoc/>
-        public virtual string ListDisks()
-        {
-            var hdds = ProbeHardDrive() as Dictionary<string, HardDrive>;
-            var hardDrives = hdds.Keys.ToArray();
-            for (int i = 0; i < hardDrives.Length; i++)
-            {
-                string hardDrive = hardDrives[i];
-                TextWriterColor.Write($"- [{i + 1}] {hardDrive}");
-            }
-            return $"[{string.Join(", ", hardDrives)}]";
-        }
-
-        /// <inheritdoc/>
-        public virtual string ListDiskPartitions(int diskIndex)
-        {
-            var hdds = ProbeHardDrive() as Dictionary<string, HardDrive>;
-            var hardDrives = hdds.Keys.ToArray();
-            if (diskIndex < hardDrives.Length)
-            {
-                // Get the drive index and get the partition info
-                var parts = hdds[hardDrives[diskIndex]].Partitions;
-                int partNum = 1;
-                foreach (var part in parts.Values)
-                {
-                    // Write partition information
-                    string id = part.ID;
-                    string name = part.Name;
-                    TextWriterColor.Write($"[{partNum}] {name}, {id}");
-                    partNum++;
-                }
-                return $"[{string.Join(", ", parts.Keys)}]";
-            }
-            else
-                TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
-            return "";
-        }
-
-        /// <inheritdoc/>
-        public virtual string DiskInfo(int diskIndex)
-        {
-            var hdds = ProbeHardDrive() as Dictionary<string, HardDrive>;
-            var hardDrives = hdds.Keys.ToArray();
-            if (diskIndex < hardDrives.Length)
-            {
-                // Get the drive index and get the partition info
-                var drive = hdds[hardDrives[diskIndex]];
-                TextWriterColor.Write($"[{drive.ID}] {drive.Vendor} {drive.Model} - {drive.Size}, {drive.Speed}, {drive.Serial}");
-                return $"[{drive.ID}] {drive.Vendor} {drive.Model} | {drive.Size}, {drive.Speed}, {drive.Serial}";
-            }
-            else
-                TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
-            return "";
-        }
-
-        /// <inheritdoc/>
-        public virtual string DiskPartitionInfo(int diskIndex, int diskPartitionIndex)
-        {
-            var hdds = ProbeHardDrive() as Dictionary<string, HardDrive>;
-            var hardDrives = hdds.Keys.ToArray();
-            if (diskIndex < hardDrives.Length)
-            {
-                // Get the drive index and get the partition info
-                var partKeyValues = hdds[hardDrives[diskIndex]].Partitions;
-                var parts = partKeyValues.Keys.ToArray();
-                if (diskPartitionIndex < parts.Length)
-                {
-                    // Get the part index and get the partition info
-                    var part = partKeyValues[parts[diskPartitionIndex]];
-
-                    // Write partition information
-                    string id = part.ID;
-                    string name = part.Name;
-                    string size = part.Size;
-                    string used = part.Used;
-                    string fileSystem = part.FileSystem;
-                    TextWriterColor.Write($"[{diskPartitionIndex + 1}] {name}, {id} - {used} / {size}, {fileSystem}");
-                    return $"[{diskPartitionIndex + 1}] {name}, {id} | {used} / {size}, {fileSystem}";
-                }
-                else
-                    TextWriterColor.Write(Translate.DoTranslation("Partition doesn't exist"));
-            }
-            else
-                TextWriterColor.Write(Translate.DoTranslation("Disk doesn't exist"));
-            return "";
+            PrintErrors();
         }
 
         private void ListHardwareInternal(string hardwareType)
         {
-            string[] supportedTypes = new[] { "CPU", "RAM", "HDD", "GPU" };
-            IEnumerable hardwareList = default;
+            SeparatorWriterColor.WriteSeparator(hardwareType, true);
             switch (hardwareType)
             {
                 case "CPU":
-                    hardwareList = ProbeProcessor();
-                    break;
-                case "RAM":
-                    hardwareList = ProbePcMemory();
-                    break;
-                case "HDD":
-                    hardwareList = ProbeHardDrive();
-                    break;
-                case "GPU":
-                    hardwareList = ProbeGraphics();
-                    break;
-            }
-            SeparatorWriterColor.WriteSeparator(hardwareType, true);
-            DebugWriter.WriteDebug(DebugLevel.I, "Got hardware type {0}.", hardwareList is not null ? hardwareType : "unknown");
-            if (supportedTypes.Contains(hardwareType) && (hardwareList is not null || EnumerableTools.CountElements(hardwareList) > 0))
-                ListHardwareProperties(hardwareList, hardwareType);
-            else
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Either the hardware type {0} is not probed, or is not valid."), true, KernelColorType.Error, hardwareType);
-        }
-
-        private static void ListHardwareProperties(IEnumerable hardwareList, string hardwareType)
-        {
-            if (hardwareList is null)
-            {
-                TextWriterColor.WriteKernelColor(Translate.DoTranslation("The hardware type {0} is not probed yet. If you're sure that it's probed, restart the kernel with debugging enabled."), true, KernelColorType.Error, hardwareType);
-                return;
-            }
-
-            IDictionary FieldValueDict = hardwareList as IDictionary;
-            if (FieldValueDict is not null)
-            {
-                foreach (string HardwareKey in FieldValueDict.Keys)
-                {
-                    TextWriterColor.WriteKernelColor("- {0}: ", true, KernelColorType.ListEntry, HardwareKey);
-                    foreach (PropertyInfo HardwareValuePropertyInfo in FieldValueDict[HardwareKey].GetType().GetProperties())
                     {
-                        TextWriterColor.WriteKernelColor("  - {0}: ", false, KernelColorType.ListEntry, HardwareValuePropertyInfo.Name);
-                        if (hardwareType == "HDD" & HardwareValuePropertyInfo.Name == "Partitions")
+                        var hardwareList = ProbeProcessor() as ProcessorPart[];
+                        if (hardwareList is not null)
                         {
-                            TextWriterColor.Write();
-                            IDictionary Partitions = HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey]) as IDictionary;
-                            if (Partitions is not null)
+                            foreach (var processor in hardwareList)
                             {
-                                foreach (string PartitionKey in Partitions.Keys)
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Processor name:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {processor.Name}", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Processor vendor:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {processor.Vendor} [{processor.CpuidVendor}]", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Clock speed:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {processor.Speed} MHz", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Total cores:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {processor.TotalCores} ({processor.ProcessorCores} x{processor.CoresForEachCore})", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Cache sizes:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {processor.L1CacheSize.SizeString()} L1, {processor.L2CacheSize.SizeString()} L2, {processor.L3CacheSize.SizeString()} L3", true, KernelColorType.ListValue);
+                            }
+                        }
+                        break;
+                    }
+                case "RAM":
+                    {
+                        var hardwareList = ProbePcMemory() as MemoryPart[];
+                        if (hardwareList is not null)
+                        {
+                            foreach (var ram in hardwareList)
+                            {
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Total usable memory:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {ram.TotalMemory.SizeString()}", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Total memory:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {ram.TotalPhysicalMemory.SizeString()}", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Reserved memory:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {ram.SystemReservedMemory.SizeString()}", true, KernelColorType.ListValue);
+                            }
+                        }
+                        break;
+                    }
+                case "HDD":
+                    {
+                        var hardwareList = ProbeHardDrive() as HardDiskPart[];
+                        if (hardwareList is not null)
+                        {
+                            foreach (var hdd in hardwareList)
+                            {
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Disk number:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {hdd.HardDiskNumber}", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Disk size:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {hdd.HardDiskSize.SizeString()}", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Partitions:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {hdd.PartitionCount}", true, KernelColorType.ListValue);
+                                foreach (var part in hdd.Partitions)
                                 {
-                                    TextWriterColor.WriteKernelColor("    - {0}: ", true, KernelColorType.ListEntry, PartitionKey);
-                                    foreach (PropertyInfo PartitionValuePropertyInfo in Partitions[PartitionKey].GetType().GetProperties())
-                                    {
-                                        TextWriterColor.WriteKernelColor("      - {0}: ", false, KernelColorType.ListEntry, PartitionValuePropertyInfo.Name);
-                                        TextWriterColor.WriteKernelColor(Convert.ToString(PartitionValuePropertyInfo.GetValue(Partitions[PartitionKey])), true, KernelColorType.ListValue);
-                                    }
+                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Partition number:"), false, KernelColorType.ListEntry);
+                                    TextWriterColor.WriteKernelColor($" {part.PartitionNumber}", true, KernelColorType.ListValue);
+                                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Partition size:"), false, KernelColorType.ListEntry);
+                                    TextWriterColor.WriteKernelColor($" {part.PartitionSize.SizeString()}", true, KernelColorType.ListValue);
                                 }
                             }
-                            else
+                        }
+                        break;
+                    }
+                case "GPU":
+                    {
+                        var hardwareList = ProbeGraphics() as VideoPart[];
+                        if (hardwareList is not null)
+                        {
+                            foreach (var gpu in hardwareList)
                             {
-                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Partitions not parsed to list."), true, KernelColorType.Error);
+                                TextWriterColor.WriteKernelColor(Translate.DoTranslation("Graphics card name:"), false, KernelColorType.ListEntry);
+                                TextWriterColor.WriteKernelColor($" {gpu.VideoCardName}", true, KernelColorType.ListValue);
                             }
                         }
-                        else if (hardwareType == "CPU" & HardwareValuePropertyInfo.Name == "Flags")
-                        {
-                            TextWriterColor.WriteKernelColor(string.Join(", ", HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey]) as string[]), true, KernelColorType.ListValue);
-                        }
-                        else
-                        {
-                            TextWriterColor.WriteKernelColor(Convert.ToString(HardwareValuePropertyInfo.GetValue(FieldValueDict[HardwareKey])), true, KernelColorType.ListValue);
-                        }
+                        break;
                     }
-                }
+                default:
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("Either the hardware type {0} is not probed, or is not valid."), true, KernelColorType.Error, hardwareType);
+                    break;
             }
-            else
+        }
+
+        private void PrintErrors()
+        {
+            if (HwProber.Errors.Length > 0)
             {
-                foreach (var hardware in hardwareList)
+                SplashReport.ReportProgressError(Translate.DoTranslation("SpecProbe failed to parse some of the hardware. Below are the errors reported by SpecProbe:"));
+                DebugWriter.WriteDebug(DebugLevel.E, "SpecProbe failed to parse hardware due to the following errors:");
+                foreach (var error in HwProber.Errors)
                 {
-                    foreach (FieldInfo HardwareFieldInfo in hardware.GetType().GetFields())
-                    {
-                        TextWriterColor.WriteKernelColor("- {0}: ", false, KernelColorType.ListEntry, HardwareFieldInfo.Name);
-                        TextWriterColor.WriteKernelColor(Convert.ToString(HardwareFieldInfo.GetValue(hardware)), true, KernelColorType.ListValue);
-                    }
+                    DebugWriter.WriteDebug(DebugLevel.E, $"- {error.Message}");
+                    DebugWriter.WriteDebugStackTrace(error);
+                    SplashReport.ReportProgressError(error.Message);
                 }
             }
         }

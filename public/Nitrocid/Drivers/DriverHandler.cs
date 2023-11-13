@@ -137,7 +137,7 @@ namespace KS.Drivers
                 DriverTypes.HardwareProber, new()
                 { 
                     { "Default", new DefaultHardwareProber() },
-                    { "SpecProbe", new SpecProbeHardwareProber() },
+                    { "Fallback", new FallbackHardwareProber() },
                 }
             },
             { 
@@ -187,7 +187,7 @@ namespace KS.Drivers
             { typeof(IDebugLoggerDriver),       DriverTypes.DebugLogger },
             { typeof(IEncodingDriver),          DriverTypes.Encoding },
             { typeof(IHardwareProberDriver),    DriverTypes.HardwareProber },
-            { typeof(ISortingDriver),    DriverTypes.Sorting },
+            { typeof(ISortingDriver),           DriverTypes.Sorting },
         };
 
         internal static Dictionary<DriverTypes, IDriver> currentDriversLocal = new(currentDrivers);
