@@ -138,11 +138,11 @@ namespace KS.ConsoleBase.Interactive
 
         /// <inheritdoc/>
         public virtual string GetEntryFromItem(object item) =>
-            item is not null ? item.ToString() : "???";
+            item is not null ? item.ToString() : "";
 
         /// <inheritdoc/>
         public virtual string GetInfoFromItem(object item) =>
-            item is not null ? Translate.DoTranslation("No info.") : "???";
+            item is not null ? Translate.DoTranslation("No info.") : "";
 
         /// <inheritdoc/>
         public virtual void HandleExit() { }

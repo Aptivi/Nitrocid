@@ -196,7 +196,7 @@ namespace KS.Misc.Interactives
             {
                 DebugWriter.WriteDebug(DebugLevel.E, "Failed to get entry: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
-                return "???";
+                return "";
             }
         }
 

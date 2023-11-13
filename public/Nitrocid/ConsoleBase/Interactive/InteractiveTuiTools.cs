@@ -388,7 +388,7 @@ namespace KS.ConsoleBase.Interactive
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Drawing scroll bar.");
                     int left = paneNum == 2 ? (SeparatorHalfConsoleWidthInterior * 2) + (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 2 : 1) : SeparatorHalfConsoleWidthInterior - 1;
-                    builder.Append(ProgressBarVerticalColor.RenderVerticalProgressPlain(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, false));
+                    builder.Append(ProgressBarVerticalColor.RenderVerticalProgress(100 * ((double)paneCurrentSelection / dataCount), left, 1, 2, 2, BaseInteractiveTui.PaneSeparatorColor, BaseInteractiveTui.PaneBackgroundColor, false));
                 }
                 return builder.ToString();
             });
