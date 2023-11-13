@@ -133,7 +133,6 @@ namespace KS.Misc.Interactives
 
             // Now, render the info box
             InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
 
         private static void OpenArticleLink(object item)
@@ -142,10 +141,7 @@ namespace KS.Misc.Interactives
             RSSArticle article = (RSSArticle)item;
             bool hasLink = !string.IsNullOrEmpty(article.ArticleLink);
             if (!hasLink)
-            {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("This article doesn't have a link."), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
-            }
 
             // Now, open the host browser
             try
@@ -155,7 +151,6 @@ namespace KS.Misc.Interactives
             catch (Exception e)
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Can't open the host browser to the article link.") + $" {e.Message}", BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
             }
         }
 

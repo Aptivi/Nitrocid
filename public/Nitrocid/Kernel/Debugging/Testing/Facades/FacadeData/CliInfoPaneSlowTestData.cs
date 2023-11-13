@@ -34,7 +34,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1, (_, index) => strings.Add($"[{index}] --+-- [{index}]"), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2, (_, index) => strings.RemoveAt(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _)     => strings.RemoveAt(strings.Count - 1), true),
-            new InteractiveTuiBinding(/* Localizable */ "Redraw",      ConsoleKey.F4, (_, _)     => RedrawRequired = true, true),
         };
 
         /// <inheritdoc/>
@@ -44,10 +43,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
         /// <inheritdoc/>
         public override bool AcceptsEmptyData =>
             true;
-
-        /// <inheritdoc/>
-        public override bool FastRefresh =>
-            false;
 
         /// <inheritdoc/>
         public override string GetInfoFromItem(object item)

@@ -39,6 +39,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Drivers.RNG;
 using Terminaux.Reader;
 using KS.Kernel.Power;
+using KS.ConsoleBase.Buffered;
 
 namespace KS.Misc.Screensaver
 {
@@ -238,6 +239,7 @@ namespace KS.Misc.Screensaver
                 ScreensaverDisplayer.BailFromScreensaver();
                 if (PasswordLock)
                     Login.ShowPasswordPrompt(UserManagement.CurrentUser.Username);
+                ScreenTools.Render();
             }
             catch (Exception ex)
             {

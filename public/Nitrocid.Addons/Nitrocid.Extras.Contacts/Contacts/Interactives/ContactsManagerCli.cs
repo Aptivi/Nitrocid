@@ -114,17 +114,11 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             return contact.ContactFullName;
         }
 
-        private static void RemoveContact(int index)
-        {
-            InteractiveTuiTools.ForceRefreshSelection();
+        private static void RemoveContact(int index) =>
             ContactsManager.RemoveContact(index);
-        }
 
-        private static void RemoveContacts()
-        {
-            InteractiveTuiTools.ForceRefreshSelection();
+        private static void RemoveContacts() =>
             ContactsManager.RemoveContacts();
-        }
 
         private static void ImportContacts()
         {
@@ -137,7 +131,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Some of the contacts can't be imported.") + ex.Message, BoxForegroundColor, BoxBackgroundColor);
             }
-            RedrawRequired = true;
         }
 
         private static void ImportContactsFrom()
@@ -158,7 +151,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("File doesn't exist. Make sure that you've written the correct path to a VCF file or to a contacts2.db file."), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
 
         private static void ShowContactInfo(int index)
@@ -193,7 +185,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
             // Now, render the info box
             InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
 
         private static void ShowContactRawInfo(int index)
@@ -208,7 +199,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
 
             // Now, render the info box
             InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
 
         private static void SearchBox()
@@ -225,7 +215,6 @@ namespace Nitrocid.Extras.Contacts.Contacts.Interactives
             }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Regular expression is invalid."), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
 
         private static void SearchNext()

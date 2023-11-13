@@ -211,7 +211,6 @@ namespace KS.Misc.Interactives
                 if (currentFileSystemEntry.Type == FileSystemEntryType.Directory)
                 {
                     // We're dealing with a folder. Open it in the selected pane.
-                    InteractiveTuiTools.ForceRefreshSelection();
                     if (CurrentPane == 2)
                     {
                         secondPanePath = FilesystemTools.NeutralizePath(currentFileSystemEntry.FilePath + "/");
@@ -230,7 +229,6 @@ namespace KS.Misc.Interactives
                     // We're dealing with a file. Clear the screen and open the appropriate editor.
                     KernelColorTools.LoadBack();
                     Opening.OpenDeterministically(currentFileSystemEntry.FilePath);
-                    RedrawRequired = true;
                 }
             }
             catch (Exception ex)
@@ -239,13 +237,11 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't open file or folder") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
             }
         }
 
         private static void GoUp()
         {
-            InteractiveTuiTools.ForceRefreshSelection();
             if (CurrentPane == 2)
             {
                 secondPanePath = FilesystemTools.NeutralizePath(secondPanePath + "/..");
@@ -338,7 +334,6 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
             }
-            RedrawRequired = true;
         }
 
         private static void CopyFileOrDir(FileSystemEntry currentFileSystemEntry)
@@ -349,7 +344,6 @@ namespace KS.Misc.Interactives
 
             try
             {
-                InteractiveTuiTools.ForceRefreshSelection();
                 string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
@@ -366,7 +360,6 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't copy file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
             }
         }
 
@@ -378,7 +371,6 @@ namespace KS.Misc.Interactives
 
             try
             {
-                InteractiveTuiTools.ForceRefreshSelection();
                 string dest = (CurrentPane == 2 ? firstPanePath : secondPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {dest}");
                 DebugCheck.AssertNull(dest, "destination is null!");
@@ -393,7 +385,6 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't move file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
             }
         }
 
@@ -405,7 +396,6 @@ namespace KS.Misc.Interactives
 
             try
             {
-                InteractiveTuiTools.ForceRefreshSelection();
                 Removing.RemoveFileOrDir(currentFileSystemEntry.FilePath);
                 if (CurrentPane == 2)
                     refreshSecondPaneListing = true;
@@ -418,7 +408,6 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine(Translate.DoTranslation("Can't remove file or directory") + TextTools.FormatString(": {0}", ex.Message));
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
             }
         }
 
@@ -429,7 +418,6 @@ namespace KS.Misc.Interactives
             path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath);
             if (Checking.FolderExists(path))
             {
-                InteractiveTuiTools.ForceRefreshSelection();
                 if (CurrentPane == 2)
                 {
                     SecondPaneCurrentSelection = 1;
@@ -445,7 +433,6 @@ namespace KS.Misc.Interactives
             }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder doesn't exist. Make sure that you've written the correct path."), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
 
         private static void CopyTo(FileSystemEntry currentFileSystemEntry)
@@ -456,7 +443,6 @@ namespace KS.Misc.Interactives
 
             try
             {
-                InteractiveTuiTools.ForceRefreshSelection();
                 string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to copy the selected file to."), BoxForegroundColor, BoxBackgroundColor);
                 path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
@@ -485,7 +471,6 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
             }
-            RedrawRequired = true;
         }
 
         private static void MoveTo(FileSystemEntry currentFileSystemEntry)
@@ -496,7 +481,6 @@ namespace KS.Misc.Interactives
 
             try
             {
-                InteractiveTuiTools.ForceRefreshSelection();
                 string path = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Enter a path or a full path to a destination folder to move the selected file to."), BoxForegroundColor, BoxBackgroundColor);
                 path = FilesystemTools.NeutralizePath(path, CurrentPane == 2 ? secondPanePath : firstPanePath) + "/";
                 DebugWriter.WriteDebug(DebugLevel.I, $"Destination is {path}");
@@ -523,7 +507,6 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
             }
-            RedrawRequired = true;
         }
 
         private static void Rename(FileSystemEntry currentFileSystemEntry)
@@ -559,7 +542,6 @@ namespace KS.Misc.Interactives
                 finalInfoRendered.AppendLine("\n" + Translate.DoTranslation("Press any key to close this window."));
                 InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
             }
-            RedrawRequired = true;
         }
 
         private static void MakeDir()
@@ -577,7 +559,6 @@ namespace KS.Misc.Interactives
             }
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Folder already exists. The name shouldn't be occupied by another folder."), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
 
         private static void Hash(FileSystemEntry currentFileSystemEntry)
@@ -586,7 +567,6 @@ namespace KS.Misc.Interactives
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
                 return;
             }
 
@@ -601,11 +581,9 @@ namespace KS.Misc.Interactives
             else
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
                 return;
             }
             InfoBoxColor.WriteInfoBoxColorBack(hash, BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
 
         private static void Verify(FileSystemEntry currentFileSystemEntry)
@@ -614,7 +592,6 @@ namespace KS.Misc.Interactives
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
                 return;
             }
 
@@ -629,7 +606,6 @@ namespace KS.Misc.Interactives
             else
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Hash driver not found."), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
                 return;
             }
 
@@ -639,7 +615,6 @@ namespace KS.Misc.Interactives
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes match!"), BoxForegroundColor, BoxBackgroundColor);
             else
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Two hashes don't match."), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
 
         private static void Preview(FileSystemEntry currentFileSystemEntry)
@@ -648,7 +623,6 @@ namespace KS.Misc.Interactives
             if (!Checking.FileExists(currentFileSystemEntry.FilePath))
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Selected entry is not a file."), BoxForegroundColor, BoxBackgroundColor);
-                RedrawRequired = true;
                 return;
             }
 
@@ -656,7 +630,6 @@ namespace KS.Misc.Interactives
             string preview = FileContentPrinter.RenderContents(currentFileSystemEntry.FilePath);
             string filtered = VtSequenceTools.FilterVTSequences(preview);
             InfoBoxColor.WriteInfoBoxColorBack(filtered, BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
     }
 }

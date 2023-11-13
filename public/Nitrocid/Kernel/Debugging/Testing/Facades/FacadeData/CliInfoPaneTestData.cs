@@ -34,7 +34,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1, (_, index) => Add(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2, (_, index) => Remove(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3, (_, _)     => RemoveLast(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Redraw",      ConsoleKey.F4, (_, _)     => RedrawRequired = true, true),
         };
 
         /// <inheritdoc/>
@@ -70,19 +69,16 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
         private static void Add(int index)
         {
             strings.Add($"[{index}] --+-- [{index}]");
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void Remove(int index)
         {
             strings.RemoveAt(index);
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void RemoveLast()
         {
             strings.RemoveAt(strings.Count - 1);
-            InteractiveTuiTools.ForceRefreshSelection();
         }
     }
 }

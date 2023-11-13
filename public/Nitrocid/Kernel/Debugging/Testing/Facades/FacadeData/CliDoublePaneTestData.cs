@@ -35,7 +35,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
             new InteractiveTuiBinding(/* Localizable */ "Add",         ConsoleKey.F1,  (_, index) => Add(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete",      ConsoleKey.F2,  (_, index) => Remove(index), true),
             new InteractiveTuiBinding(/* Localizable */ "Delete Last", ConsoleKey.F3,  (_, _)     => RemoveLast(), true),
-            new InteractiveTuiBinding(/* Localizable */ "Redraw",      ConsoleKey.F4,  (_, _)     => RedrawRequired = true, true),
             new InteractiveTuiBinding(/* Localizable */ "Switch",      ConsoleKey.Tab, (_, _)     => Switch(), true),
         };
 
@@ -79,7 +78,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
                 strings2.Add($"[{index}] --2-- [{index}]");
             else
                 strings.Add($"[{index}] --1-- [{index}]");
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void Remove(int index)
@@ -98,7 +96,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
                 if (FirstPaneCurrentSelection > strings.Count)
                     FirstPaneCurrentSelection = strings.Count;
             }
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void RemoveLast()
@@ -115,7 +112,6 @@ namespace KS.Kernel.Debugging.Testing.Facades.FacadeData
                 if (FirstPaneCurrentSelection > strings.Count)
                     FirstPaneCurrentSelection = strings.Count;
             }
-            InteractiveTuiTools.ForceRefreshSelection();
         }
 
         private static void Switch()

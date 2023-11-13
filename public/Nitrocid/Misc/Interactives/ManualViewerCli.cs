@@ -122,7 +122,6 @@ namespace KS.Misc.Interactives
 
             // Now, render the info box
             InfoBoxColor.WriteInfoBoxColorBack(finalInfoRendered.ToString(), BoxForegroundColor, BoxBackgroundColor);
-            RedrawRequired = true;
         }
     }
 }

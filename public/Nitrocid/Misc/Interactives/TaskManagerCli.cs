@@ -50,10 +50,6 @@ namespace KS.Misc.Interactives
         };
 
         /// <inheritdoc/>
-        public override bool FastRefresh =>
-            false;
-
-        /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>
             osThreadMode ? ThreadManager.OperatingSystemThreads : ThreadManager.KernelThreads;
 

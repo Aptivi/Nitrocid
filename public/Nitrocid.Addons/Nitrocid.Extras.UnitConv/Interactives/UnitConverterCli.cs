@@ -48,10 +48,6 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             true;
 
         /// <inheritdoc/>
-        public override bool FastRefresh =>
-            false;
-
-        /// <inheritdoc/>
         public override IEnumerable PrimaryDataSource =>
             GetUnitTypeNames();
 
@@ -104,7 +100,6 @@ namespace Nitrocid.Extras.UnitConv.Interactives
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("Can't convert unit.") + ex.Message, BoxForegroundColor, BoxBackgroundColor);
             }
-            RedrawRequired = true;
         }
 
         private static IEnumerable GetUnitTypeNames() =>

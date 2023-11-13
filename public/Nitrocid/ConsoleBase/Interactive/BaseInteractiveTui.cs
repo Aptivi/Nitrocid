@@ -35,10 +35,6 @@ namespace KS.ConsoleBase.Interactive
         internal bool isExiting = false;
 
         /// <summary>
-        /// Whether redrawing is required
-        /// </summary>
-        public static bool RedrawRequired { get; set; } = true;
-        /// <summary>
         /// Current selection for the first pane
         /// </summary>
         public static int FirstPaneCurrentSelection { get; set; } = 1;
@@ -63,8 +59,6 @@ namespace KS.ConsoleBase.Interactive
         public virtual int RefreshInterval => 0;
         /// <inheritdoc/>
         public virtual bool AcceptsEmptyData => false;
-        /// <inheritdoc/>
-        public virtual bool FastRefresh => true;
 
         /// <inheritdoc/>
         public virtual IEnumerable PrimaryDataSource => Array.Empty<string>();
