@@ -266,7 +266,6 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             int LaunchPositionY = ConsoleWrapper.WindowHeight - 1;
             int IgnitePositionX = RandomDriver.RandomIdx(ConsoleWrapper.WindowWidth);
             int IgnitePositionY = RandomDriver.Random(HalfHeight, (int)Math.Round(HalfHeight * 1.5d));
-            LaunchPositionX.SwapIfSourceLarger(ref IgnitePositionX);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Launch position {0}, {1}", LaunchPositionX, LaunchPositionY);
             DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Ignite position {0}, {1}", IgnitePositionX, IgnitePositionY);
 
@@ -302,7 +301,7 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
             {
                 double CurrentX = LaunchPositionX;
                 int CurrentY = LaunchPositionY;
-                while (CurrentX < IgnitePositionX && CurrentY > IgnitePositionY)
+                while (CurrentX != IgnitePositionX && CurrentY != IgnitePositionY)
                 {
                     if (ConsoleResizeListener.WasResized(false))
                         break;
