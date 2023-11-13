@@ -341,25 +341,25 @@ namespace Nitrocid.ScreensaverPacks.Screensavers
 
                     // Draw the explosion
                     KernelColorTools.SetConsoleColor(IgniteColor, true);
-                    if (UpperParticleY < ConsoleWrapper.WindowHeight)
+                    if (UpperParticleY < ConsoleWrapper.WindowHeight && UpperParticleY >= 0)
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Making upper particle at {0}, {1}", IgnitePositionX, UpperParticleY);
                         ConsoleWrapper.SetCursorPosition(IgnitePositionX, UpperParticleY);
                         ConsoleWrapper.Write(" ");
                     }
-                    if (LowerParticleY < ConsoleWrapper.WindowHeight)
+                    if (LowerParticleY < ConsoleWrapper.WindowHeight && LowerParticleY >= 0)
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Making lower particle at {0}, {1}", IgnitePositionX, LowerParticleY);
                         ConsoleWrapper.SetCursorPosition(IgnitePositionX, LowerParticleY);
                         ConsoleWrapper.Write(" ");
                     }
-                    if (LeftParticleX < ConsoleWrapper.WindowWidth)
+                    if (LeftParticleX < ConsoleWrapper.WindowWidth && LeftParticleX >= 0)
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Making left particle at {0}, {1}", LeftParticleX, IgnitePositionY);
                         ConsoleWrapper.SetCursorPosition(LeftParticleX, IgnitePositionY);
                         ConsoleWrapper.Write(" ");
                     }
-                    if (RightParticleX < ConsoleWrapper.WindowWidth)
+                    if (RightParticleX < ConsoleWrapper.WindowWidth && RightParticleX >= 0)
                     {
                         DebugWriter.WriteDebugConditional(ScreensaverManager.ScreensaverDebug, DebugLevel.I, "Making right particle at {0}, {1}", RightParticleX, IgnitePositionY);
                         ConsoleWrapper.SetCursorPosition(RightParticleX, IgnitePositionY);
