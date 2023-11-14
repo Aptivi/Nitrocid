@@ -59,6 +59,7 @@ using KS.Kernel.Threading.Performance;
 using KS.Drivers.Sorting;
 using KS.Kernel.Time.Timezones;
 using System.Linq;
+using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
 
 namespace KS.Kernel.Configuration.Instances
 {
@@ -916,8 +917,8 @@ namespace KS.Kernel.Configuration.Instances
         /// </summary>
         public int DebugChatPort
         {
-            get => RemoteChat.debugChatPort;
-            set => RemoteChat.debugChatPort = value < 0 ? 3015 : value;
+            get => RemoteChatTools.debugChatPort;
+            set => RemoteChatTools.debugChatPort = value < 0 ? 3015 : value;
         }
         /// <summary>
         /// Write how many times the "get" command should retry failed downloads. It must be numeric.

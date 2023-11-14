@@ -33,12 +33,12 @@ using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Misc.Text.Probers.Placeholder;
 
-namespace KS.Kernel.Debugging.RemoteDebug
+namespace KS.Kernel.Debugging.RemoteDebug.RemoteChat
 {
     /// <summary>
     /// Remote chat module
     /// </summary>
-    public static class RemoteChat
+    public static class RemoteChatTools
     {
 
         internal static bool RDebugFailed;

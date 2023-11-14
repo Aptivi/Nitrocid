@@ -26,6 +26,7 @@ using KS.Files;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging.RemoteDebug;
+using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
 using KS.Kernel.Debugging.Trace;
 using KS.Kernel.Exceptions;
 using KS.Kernel.Time;
@@ -304,9 +305,9 @@ namespace KS.Kernel.Debugging
             {
                 if (KernelEntry.DebugMode)
                 {
-                    for (int i = 0; i <= RemoteChat.DebugChatDevices.Count - 1; i++)
+                    for (int i = 0; i <= RemoteChatTools.DebugChatDevices.Count - 1; i++)
                     {
-                        var device = RemoteChat.DebugChatDevices[i];
+                        var device = RemoteChatTools.DebugChatDevices[i];
                         if (!WriteDebugDeviceOnly(Level, text, force, device, vars) && i > 0)
                             i--;
                     }

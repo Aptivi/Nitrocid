@@ -30,6 +30,7 @@ using System.Collections.Generic;
 using KS.Files.Operations;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Configuration;
+using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -80,15 +81,15 @@ namespace KS.Kernel.Debugging.RemoteDebug
             }
 
             // Chat remote debugger devices
-            var chats = RemoteChat.DebugChatDevices.Where((rdd) => rdd.ClientIP == address).ToList();
+            var chats = RemoteChatTools.DebugChatDevices.Where((rdd) => rdd.ClientIP == address).ToList();
             for (int i = 0; i <= chats.Count - 1; i++)
             {
                 try
                 {
-                    string clientIp = RemoteChat.DebugChatDevices[i].ClientIP;
-                    string clientName = RemoteChat.DebugChatDevices[i].ClientName;
-                    RemoteChat.DebugChatDevices[i].ClientSocket.Disconnect(true);
-                    RemoteChat.DebugChatDevices.RemoveAt(i);
+                    string clientIp = RemoteChatTools.DebugChatDevices[i].ClientIP;
+                    string clientName = RemoteChatTools.DebugChatDevices[i].ClientName;
+                    RemoteChatTools.DebugChatDevices[i].ClientSocket.Disconnect(true);
+                    RemoteChatTools.DebugChatDevices.RemoveAt(i);
                     EventsManager.FireEvent(EventType.RemoteDebugConnectionDisconnected, address);
                     DebugWriter.WriteDebug(DebugLevel.W, "Debug device {0} ({1}) disconnected from chat.", clientName, clientIp);
                 }

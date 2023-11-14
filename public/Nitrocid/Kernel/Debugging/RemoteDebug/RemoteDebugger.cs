@@ -32,6 +32,7 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Threading;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using SemanVer.Instance;
+using KS.Kernel.Debugging.RemoteDebug.RemoteChat;
 
 namespace KS.Kernel.Debugging.RemoteDebug
 {
@@ -76,7 +77,7 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 if (!RDebugThread.IsAlive)
                 {
                     RDebugThread.Start();
-                    RemoteChat.RDebugChatThread.Start();
+                    RemoteChatTools.RDebugChatThread.Start();
                     RDebugBailer.WaitOne();
                 }
             }
@@ -92,9 +93,9 @@ namespace KS.Kernel.Debugging.RemoteDebug
                 if (RDebugThread.IsAlive)
                 {
                     RDebugStopping = true;
-                    RemoteChat.RDebugChatStopping = true;
+                    RemoteChatTools.RDebugChatStopping = true;
                     RDebugThread.Stop();
-                    RemoteChat.RDebugChatThread.Stop();
+                    RemoteChatTools.RDebugChatThread.Stop();
                 }
             }
         }
