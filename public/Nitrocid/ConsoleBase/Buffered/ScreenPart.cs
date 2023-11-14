@@ -105,8 +105,11 @@ namespace KS.ConsoleBase.Buffered
         /// <summary>
         /// Clears the buffer
         /// </summary>
-        public void Clear() =>
+        public void Clear()
+        {
             bufferBuilder.Clear();
+            dynamicBuffers.Clear();
+        }
 
         /// <summary>
         /// Gets the resulting buffer
