@@ -65,10 +65,10 @@ namespace KS.Files.Editors.JsonShell
         }
 
         /// <summary>
-        /// Closes text file
+        /// Closes the JSON file
         /// </summary>
         /// <returns>True if successful; False if unsuccessful</returns>
-        public static bool CloseTextFile()
+        public static bool CloseJsonFile()
         {
             try
             {

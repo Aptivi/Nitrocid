@@ -42,7 +42,7 @@ namespace KS.Shell.Shells.Json.Commands
             TextEditInteractive.OpenInteractive(JsonShellCommon.FileStream.Name, ref lines);
 
             // Save the changes
-            JsonTools.CloseTextFile();
+            JsonTools.CloseJsonFile();
             Writing.WriteAllLinesNoBlock(path, lines.ToArray());
             JsonTools.OpenJsonFile(path);
             return 0;

@@ -46,7 +46,7 @@ namespace Nitrocid.Tests.Misc.Editors
             JsonTools.Remove("HowText");
             JsonShellCommon.FileToken["HowText"].ShouldBeNull();
             JsonTools.SaveFile(false).ShouldBeTrue();
-            JsonTools.CloseTextFile().ShouldBeTrue();
+            JsonTools.CloseJsonFile().ShouldBeTrue();
         }
 
     }

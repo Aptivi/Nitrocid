@@ -73,7 +73,7 @@ namespace KS.Shell.Shells.Json
             }
 
             // Close file
-            JsonTools.CloseTextFile();
+            JsonTools.CloseJsonFile();
             JsonShellCommon.AutoSave.Stop();
         }
 
