@@ -19,11 +19,11 @@
 
 using KS.ConsoleBase.Colors;
 using KS.Misc.Text;
-using KS.Network.RSS;
 using KS.Shell.ShellBase.Commands;
 using System.Linq;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using Syndian.Instance;
+using Nitrocid.Extras.RssShell.Tools;
 
 namespace Nitrocid.Extras.RssShell.RSS.Commands
 {

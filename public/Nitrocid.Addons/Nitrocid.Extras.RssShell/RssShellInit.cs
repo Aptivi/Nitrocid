@@ -26,6 +26,7 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.RssShell.RSS;
 using Nitrocid.Extras.RssShell.Settings;
+using Nitrocid.Extras.RssShell.Tools;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -59,7 +60,11 @@ namespace Nitrocid.Extras.RssShell
         internal static RssConfig RssConfig =>
             (RssConfig)Config.baseConfigurations[nameof(RssConfig)];
 
-        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions =>
+            new(new Dictionary<string, Delegate>()
+            {
+                { nameof(RSSShellTools.GetFirstArticle), RSSShellTools.GetFirstArticle }
+            });
 
         ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
 

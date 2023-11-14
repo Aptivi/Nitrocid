@@ -17,21 +17,44 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading;
 using KS.Kernel.Debugging;
+using KS.Kernel.Exceptions;
+using KS.Languages;
 using KS.Misc.Notifications;
 using Nitrocid.Extras.RssShell.RSS;
 using Syndian.Instance;
 
-namespace KS.Network.RSS
+namespace Nitrocid.Extras.RssShell.Tools
 {
     /// <summary>
     /// RSS tools module
     /// </summary>
     public static class RSSShellTools
     {
+        internal static (string feedTitle, string articleTitle) GetFirstArticle(string url)
+        {
+            try
+            {
+                var Feed = new RSSFeed(url, RSSFeedType.Infer);
+                Feed.Refresh();
+                if (Feed.FeedArticles.Count > 0)
+                    return (Feed.FeedTitle, Feed.FeedArticles[0].ArticleTitle);
+                if (!string.IsNullOrEmpty(Feed.FeedDescription))
+                    return (Feed.FeedTitle, Feed.FeedDescription);
+                return (Feed.FeedTitle, Translate.DoTranslation("No description"));
+            }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news, throwing to the kernel: {0}", ex.Message);
+                DebugWriter.WriteDebugStackTrace(ex);
+                throw new KernelException(KernelExceptionType.RSSNetwork, ex);
+            }
+        }
+
         /// <summary>
         /// Refreshes the feeds
         /// </summary>

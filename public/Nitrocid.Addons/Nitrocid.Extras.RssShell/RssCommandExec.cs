@@ -24,10 +24,10 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Configuration;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Interactives;
 using KS.Network.Base.Connections;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
+using Nitrocid.Extras.RssShell.RSS.Interactive;
 using Syndian.Instance;
 using System;
 

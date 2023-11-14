@@ -87,7 +87,6 @@
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
     <PackageReference Include="SpecProbe" Version="1.0.0" PrivateAssets="all" />
-    <PackageReference Include="Syndian" Version="0.3.1" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 

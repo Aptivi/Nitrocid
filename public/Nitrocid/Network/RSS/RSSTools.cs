@@ -22,8 +22,9 @@ using KS.ConsoleBase.Colors;
 using KS.Kernel.Configuration;
 using KS.Kernel.Debugging;
 using KS.Languages;
-using Syndian.Instance;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Kernel.Extensions;
+using KS.Kernel.Exceptions;
 
 namespace KS.Network.RSS
 {
@@ -52,12 +53,18 @@ namespace KS.Network.RSS
             {
                 try
                 {
-                    var Feed = new RSSFeed(RssHeadlineUrl, RSSFeedType.Infer);
-                    if (Feed.FeedArticles.Count > 0)
+                    var Feed = InterAddonTools.ExecuteCustomAddonFunction("Extras - RSS Shell", "GetFirstArticle", RssHeadlineUrl);
+                    if (Feed is (string feedTitle, string articleTitle))
                     {
-                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, Feed.FeedTitle);
-                        TextWriterColor.WriteKernelColor(Feed.FeedArticles[0].ArticleTitle, true, KernelColorType.ListValue);
+                        TextWriterColor.WriteKernelColor(Translate.DoTranslation("Latest news from") + " {0}: ", false, KernelColorType.ListEntry, feedTitle);
+                        TextWriterColor.WriteKernelColor(articleTitle, true, KernelColorType.ListValue);
                     }
+                }
+                catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.RSSNetwork || ex.ExceptionType == KernelExceptionType.AddonManagement)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                    DebugWriter.WriteDebugStackTrace(ex);
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("To be able to get the latest news, you must install the RSS Shell Extras addon. You can use the 'getaddons' command to get all the addons!"), true, KernelColorType.Tip);
                 }
                 catch (Exception ex)
                 {

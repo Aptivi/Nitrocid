@@ -21,7 +21,7 @@ using System;
 using System.Net.Http;
 using KS.Kernel.Threading;
 using KS.Network.Base.Connections;
-using KS.Network.RSS;
+using Nitrocid.Extras.RssShell.Tools;
 using Syndian.Instance;
 
 namespace Nitrocid.Extras.RssShell.RSS

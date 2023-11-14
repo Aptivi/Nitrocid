@@ -31,7 +31,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
-namespace KS.Misc.Interactives
+namespace Nitrocid.Extras.RssShell.RSS.Interactive
 {
     /// <summary>
     /// RSS Reader TUI class

@@ -22,7 +22,6 @@ using KS.ConsoleBase.Colors;
 using KS.Languages;
 using System.Threading;
 using KS.Kernel.Debugging;
-using Syndian.Instance;
 using System;
 using KS.Network.RSS;
 using KS.Kernel.Configuration;
@@ -36,6 +35,8 @@ using KS.Misc.Text.Probers.Motd;
 using System.Text;
 using KS.ConsoleBase.Buffered;
 using Terminaux.Sequences.Builder.Types;
+using KS.Kernel.Extensions;
+using KS.Kernel.Exceptions;
 
 namespace KS.Users.Login
 {
@@ -68,10 +69,16 @@ namespace KS.Users.Login
                     {
                         if (!RSSTools.ShowHeadlineOnLogin)
                             return "";
-                        var Feed = new RSSFeed(RSSTools.RssHeadlineUrl, RSSFeedType.Infer);
-                        if (Feed.FeedArticles.Count > 0)
-                            return Translate.DoTranslation("From") + $" {Feed.FeedTitle}: {Feed.FeedArticles[0].ArticleTitle}";
+                        var Feed = InterAddonTools.ExecuteCustomAddonFunction("Extras - RSS Shell", "GetFirstArticle", RSSTools.RssHeadlineUrl);
+                        if (Feed is (string feedTitle, string articleTitle))
+                            return Translate.DoTranslation("From") + $" {feedTitle}: {articleTitle}";
                         return Translate.DoTranslation("No feed.");
+                    }
+                    catch (KernelException ex) when (ex.ExceptionType == KernelExceptionType.RSSNetwork || ex.ExceptionType == KernelExceptionType.AddonManagement)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.E, "Failed to get latest news: {0}", ex.Message);
+                        DebugWriter.WriteDebugStackTrace(ex);
+                        return Translate.DoTranslation("Install the RSS Shell Extras addon!");
                     }
                     catch (Exception ex)
                     {
