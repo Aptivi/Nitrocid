@@ -44,8 +44,6 @@ namespace KS.ConsoleBase.Interactive
     public static class InteractiveTuiTools
     {
 
-        private static int _lastFirstPanePos = 0;
-        private static int _lastSecondPanePos = 0;
         private static string _finalInfoRendered = "";
         private static readonly object _interactiveTuiLock = new();
 
@@ -166,9 +164,6 @@ namespace KS.ConsoleBase.Interactive
                 pos = elements;
 
             // Now, process the movement
-            int itemsPerPage = ConsoleWrapper.WindowHeight - 4;
-            _lastFirstPanePos = BaseInteractiveTui.FirstPaneCurrentSelection;
-            _lastSecondPanePos = BaseInteractiveTui.SecondPaneCurrentSelection;
             if (BaseInteractiveTui.CurrentPane == 2)
                 BaseInteractiveTui.SecondPaneCurrentSelection = pos;
             else
