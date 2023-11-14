@@ -48,7 +48,7 @@
   <!-- Extras.Contacts addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="VisualCard" Version="0.8.2" />
+    <PackageReference Include="VisualCard" Version="0.8.3" />
   </ItemGroup>
 
 </Project>
