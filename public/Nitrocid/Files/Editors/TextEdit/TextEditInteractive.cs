@@ -27,7 +27,6 @@ using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Shell.Shells.Text;
 using System;
@@ -36,6 +35,7 @@ using System.Text;
 using Terminaux.Sequences.Tools;
 using Terminaux.Sequences.Builder.Types;
 using KS.ConsoleBase.Inputs.Styles;
+using KS.ConsoleBase.Buffered;
 
 namespace KS.Files.Editors.TextEdit
 {
@@ -46,7 +46,6 @@ namespace KS.Files.Editors.TextEdit
     {
         private static string status;
         private static bool bail;
-        private static bool refresh = true;
         private static bool entering;
         private static int lineIdx = 0;
         private static int lineColIdx = 0;
@@ -92,43 +91,47 @@ namespace KS.Files.Editors.TextEdit
 
             // Set status
             status = Translate.DoTranslation("Ready");
-            refresh = true;
             bail = false;
 
             // Main loop
             lineIdx = 0;
-            while (!bail)
+            var screen = new Screen();
+            ScreenTools.SetCurrent(screen);
+            ConsoleWrapper.CursorVisible = false;
+            KernelColorTools.LoadBack();
+            try
             {
-                // Check to see if we need to refresh
-                if (refresh)
+                while (!bail)
                 {
-                    refresh = false;
-
-                    // Clear the screen
-                    ConsoleWrapper.CursorVisible = false;
-                    KernelColorTools.LoadBack();
-
                     // Now, render the keybindings
-                    RenderKeybindings();
+                    RenderKeybindings(ref screen);
+
+                    // Render the box
+                    RenderTextViewBox(ref screen);
+
+                    // Now, render the visual hex with the current selection
+                    RenderContentsWithSelection(lineIdx, ref screen);
+
+                    // Render the status
+                    RenderStatus(ref screen);
+
+                    // Wait for a keypress
+                    ScreenTools.Render(screen);
+                    var keypress = Input.DetectKeypress();
+                    HandleKeypress(keypress);
+
+                    // Reset, in case selection changed
+                    screen.RemoveBufferedParts();
                 }
-
-                // Render the box
-                RenderTextViewBox();
-
-                // Now, render the visual text with the current selection
-                RenderContentsWithSelection(lineIdx);
-
-                // Render the status
-                RenderStatus();
-
-                // Wait for a keypress
-                var keypress = Input.DetectKeypress();
-                HandleKeypress(keypress);
-
-                // Finally, set the refresh requirement
-                if (!refresh)
-                    refresh = ScreensaverManager.ScreenRefreshRequired || ConsoleResizeListener.WasResized(false);
             }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Text editor failed: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The text editor failed:") + $" {ex.Message}", KernelColorType.Error);
+            }
+            bail = false;
+            ScreenTools.UnsetCurrent(screen);
 
             // Close the file and clean up
             KernelColorTools.LoadBack();
@@ -136,59 +139,92 @@ namespace KS.Files.Editors.TextEdit
                 TextEditTools.CloseTextFile();
         }
 
-        private static void RenderKeybindings()
+        private static void RenderKeybindings(ref Screen screen)
         {
-            var binds = entering ? bindingsEntering : bindings;
-            var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
-            foreach (TextEditorBinding binding in binds)
+            // Make a screen part
+            var part = new ScreenPart();
+            part.AddDynamicText(() =>
             {
-                // First, check to see if the rendered binding info is going to exceed the console window width
-                string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  ";
-                int actualLength = VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()).Length;
-                bool canDraw = renderedBinding.Length + actualLength < ConsoleWrapper.WindowWidth - 3;
-                if (canDraw)
+                var binds = entering ? bindingsEntering : bindings;
+                var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
+                foreach (TextEditorBinding binding in binds)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
-                    bindingsBuilder.Append(
-                        $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
-                        $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
-                        GetBindingKeyShortcut(binding, false) +
-                        $"{BaseInteractiveTui.OptionForegroundColor.VTSequenceForeground}" +
-                        $"{BaseInteractiveTui.BackgroundColor.VTSequenceBackground}" +
-                        $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
-                    );
+                    // First, check to see if the rendered binding info is going to exceed the console window width
+                    string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  ";
+                    int actualLength = VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()).Length;
+                    bool canDraw = renderedBinding.Length + actualLength < ConsoleWrapper.WindowWidth - 3;
+                    if (canDraw)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
+                        bindingsBuilder.Append(
+                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            GetBindingKeyShortcut(binding, false) +
+                            $"{BaseInteractiveTui.OptionForegroundColor.VTSequenceForeground}" +
+                            $"{BaseInteractiveTui.BackgroundColor.VTSequenceBackground}" +
+                            $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
+                        );
+                    }
+                    else
+                    {
+                        // We can't render anymore, so just break and write a binding to show more
+                        DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
+                        bindingsBuilder.Append(
+                            $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
+                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            " K "
+                        );
+                        break;
+                    }
                 }
-                else
-                {
-                    // We can't render anymore, so just break and write a binding to show more
-                    DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
-                    bindingsBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                        $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
-                        $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
-                        " K "
-                    );
-                    break;
-                }
-            }
-            TextWriterColor.WritePlain(bindingsBuilder.ToString(), false);
+                return bindingsBuilder.ToString();
+            });
+            screen.AddBufferedPart(part);
         }
 
-        private static void RenderStatus() =>
-            TextWriterWhereColor.WriteWhereColorBack(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0, BaseInteractiveTui.ForegroundColor, KernelColorTools.GetColor(KernelColorType.Background));
-
-        private static void RenderTextViewBox()
+        private static void RenderStatus(ref Screen screen)
         {
-            // Get the widths and heights
-            int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
-            int SeparatorMinimumHeight = 1;
-            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-
-            // Render the box
-            BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior, BaseInteractiveTui.PaneSeparatorColor, KernelColorTools.GetColor(KernelColorType.Background));
+            // Make a screen part
+            var part = new ScreenPart();
+            part.AddDynamicText(() =>
+            {
+                var builder = new StringBuilder();
+                builder.Append(
+                    $"{BaseInteractiveTui.ForegroundColor.VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0)}"
+                );
+                return builder.ToString();
+            });
+            screen.AddBufferedPart(part);
         }
 
-        private static void RenderContentsWithSelection(int lineIdx)
+        private static void RenderTextViewBox(ref Screen screen)
+        {
+            // Make a screen part
+            var part = new ScreenPart();
+            part.AddDynamicText(() =>
+            {
+                var builder = new StringBuilder();
+
+                // Get the widths and heights
+                int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
+                int SeparatorMinimumHeight = 1;
+                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+
+                // Render the box
+                builder.Append(
+                    $"{BaseInteractiveTui.PaneSeparatorColor.VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
+                );
+                return builder.ToString();
+            });
+            screen.AddBufferedPart(part);
+        }
+
+        private static void RenderContentsWithSelection(int lineIdx, ref Screen screen)
         {
             // First, update the status
             StatusTextInfo();
@@ -197,94 +233,98 @@ namespace KS.Files.Editors.TextEdit
             if (TextEditShellCommon.FileLines.Count == 0)
                 return;
 
-            // Get the widths and heights
-            int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
-            int SeparatorMinimumHeightInterior = 2;
-
-            // Get the colors
-            var unhighlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Background);
-            var highlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Success);
-
-            // Get the start and the end indexes for lines
-            int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4;
-            int currentPage = lineIdx / lineLinesPerPage;
-            int startIndex = (lineLinesPerPage * currentPage) + 1;
-            int endIndex = lineLinesPerPage * (currentPage + 1);
-            if (startIndex > TextEditShellCommon.FileLines.Count)
-                startIndex = TextEditShellCommon.FileLines.Count;
-            if (endIndex > TextEditShellCommon.FileLines.Count)
-                endIndex = TextEditShellCommon.FileLines.Count;
-
-            // Get the lines and highlight the selection
-            int count = 0;
-            var sels = new StringBuilder();
-            for (int i = startIndex; i <= endIndex; i++)
+            // Now, make a dynamic text
+            var part = new ScreenPart();
+            part.AddDynamicText(() =>
             {
-                // Get a line
-                string source = TextEditShellCommon.FileLines[i - 1];
-                if (source.Length == 0)
-                    source = " ";
+                // Get the widths and heights
+                int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
+                int SeparatorMinimumHeightInterior = 2;
 
-                // Seek through the whole string to find unprintable characters
-                var sourceBuilder = new StringBuilder();
-                for (int l = 0; l < source.Length; l++)
-                    sourceBuilder.Append(CharManager.IsControlChar(source[l]) || source[l] == '\0' ? '.' : source[l]);
-                source = sourceBuilder.ToString();
+                // Get the colors
+                var unhighlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Background);
+                var highlightedColorBackground = KernelColorTools.GetColor(KernelColorType.Success);
 
-                // Highlight the selection
-                var lineBuilder = new StringBuilder(source);
-                if (i == lineIdx + 1)
+                // Get the start and the end indexes for lines
+                int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+                int currentPage = lineIdx / lineLinesPerPage;
+                int startIndex = (lineLinesPerPage * currentPage) + 1;
+                int endIndex = lineLinesPerPage * (currentPage + 1);
+                if (startIndex > TextEditShellCommon.FileLines.Count)
+                    startIndex = TextEditShellCommon.FileLines.Count;
+                if (endIndex > TextEditShellCommon.FileLines.Count)
+                    endIndex = TextEditShellCommon.FileLines.Count;
+
+                // Get the lines and highlight the selection
+                int count = 0;
+                var sels = new StringBuilder();
+                for (int i = startIndex; i <= endIndex; i++)
                 {
-                    if (lineColIdx + 1 > lineBuilder.Length)
+                    // Get a line
+                    string source = TextEditShellCommon.FileLines[i - 1];
+                    if (source.Length == 0)
+                        source = " ";
+
+                    // Seek through the whole string to find unprintable characters
+                    var sourceBuilder = new StringBuilder();
+                    for (int l = 0; l < source.Length; l++)
+                        sourceBuilder.Append(CharManager.IsControlChar(source[l]) || source[l] == '\0' ? '.' : source[l]);
+                    source = sourceBuilder.ToString();
+
+                    // Highlight the selection
+                    var lineBuilder = new StringBuilder(source);
+                    if (i == lineIdx + 1)
                     {
-                        lineBuilder.Append(unhighlightedColorBackground.VTSequenceForeground);
-                        lineBuilder.Append(highlightedColorBackground.VTSequenceBackground);
-                        lineBuilder.Append(' ');
-                        lineBuilder.Append(unhighlightedColorBackground.VTSequenceBackground);
-                        lineBuilder.Append(highlightedColorBackground.VTSequenceForeground);
+                        if (lineColIdx + 1 > lineBuilder.Length)
+                        {
+                            lineBuilder.Append(unhighlightedColorBackground.VTSequenceForeground);
+                            lineBuilder.Append(highlightedColorBackground.VTSequenceBackground);
+                            lineBuilder.Append(' ');
+                            lineBuilder.Append(unhighlightedColorBackground.VTSequenceBackground);
+                            lineBuilder.Append(highlightedColorBackground.VTSequenceForeground);
+                        }
+                        else
+                        {
+                            lineBuilder.Insert(lineColIdx + 1, unhighlightedColorBackground.VTSequenceBackground);
+                            lineBuilder.Insert(lineColIdx + 1, highlightedColorBackground.VTSequenceForeground);
+                            lineBuilder.Insert(lineColIdx, unhighlightedColorBackground.VTSequenceForeground);
+                            lineBuilder.Insert(lineColIdx, highlightedColorBackground.VTSequenceBackground);
+                        }
                     }
-                    else
+
+                    // Now, get the line range
+                    string line = lineBuilder.ToString();
+                    if (source.Length > 0)
                     {
-                        lineBuilder.Insert(lineColIdx + 1, unhighlightedColorBackground.VTSequenceBackground);
-                        lineBuilder.Insert(lineColIdx + 1, highlightedColorBackground.VTSequenceForeground);
-                        lineBuilder.Insert(lineColIdx, unhighlightedColorBackground.VTSequenceForeground);
-                        lineBuilder.Insert(lineColIdx, highlightedColorBackground.VTSequenceBackground);
+                        int charsPerPage = SeparatorConsoleWidthInterior;
+                        int currentCharPage = lineColIdx / charsPerPage;
+                        int startLineIndex = (charsPerPage * currentCharPage);
+                        int endLineIndex = charsPerPage * (currentCharPage + 1);
+                        if (startLineIndex > source.Length)
+                            startLineIndex = source.Length;
+                        if (endLineIndex > source.Length)
+                            endLineIndex = source.Length;
+                        int vtSeqLength = 0;
+                        var vtSeqMatches = VtSequenceTools.MatchVTSequences(line);
+                        foreach (var match in vtSeqMatches)
+                            vtSeqLength += match.Sum((mat) => mat.Length);
+                        source = source[startLineIndex..endLineIndex];
+                        line = line[startLineIndex..(endLineIndex + vtSeqLength)];
                     }
+                    line += new string(' ', SeparatorConsoleWidthInterior - source.Length);
+
+                    // Change the color depending on the highlighted line and column
+                    sels.Append(
+                        $"{CsiSequences.GenerateCsiCursorPosition(2, SeparatorMinimumHeightInterior + count + 1)}" +
+                        $"{highlightedColorBackground.VTSequenceForeground}" +
+                        $"{unhighlightedColorBackground.VTSequenceBackground}" +
+                        line
+                    );
+                    count++;
                 }
-
-                // Now, get the line range
-                string line = lineBuilder.ToString();
-                if (source.Length > 0)
-                {
-                    int charsPerPage = SeparatorConsoleWidthInterior;
-                    int currentCharPage = lineColIdx / charsPerPage;
-                    int startLineIndex = (charsPerPage * currentCharPage);
-                    int endLineIndex = charsPerPage * (currentCharPage + 1);
-                    if (startLineIndex > source.Length)
-                        startLineIndex = source.Length;
-                    if (endLineIndex > source.Length)
-                        endLineIndex = source.Length;
-                    int vtSeqLength = 0;
-                    var vtSeqMatches = VtSequenceTools.MatchVTSequences(line);
-                    foreach (var match in vtSeqMatches)
-                        vtSeqLength += match.Sum((mat) => mat.Length);
-                    source = source[startLineIndex..endLineIndex];
-                    line = line[startLineIndex..(endLineIndex + vtSeqLength)];
-                }
-                line += new string(' ', SeparatorConsoleWidthInterior - source.Length);
-
-                // Change the color depending on the highlighted line and column
-                sels.Append(
-                    $"{CsiSequences.GenerateCsiCursorPosition(2, SeparatorMinimumHeightInterior + count + 1)}" +
-                    $"{highlightedColorBackground.VTSequenceForeground}" +
-                    $"{unhighlightedColorBackground.VTSequenceBackground}" +
-                    line
-                );
-                count++;
-            }
-
-            // Render the selections
-            TextWriterColor.WritePlain(sels.ToString());
+                return sels.ToString();
+            });
+            screen.AddBufferedPart(part);
         }
 
         private static void HandleKeypress(ConsoleKeyInfo key)
@@ -400,7 +440,6 @@ namespace KS.Files.Editors.TextEdit
                 $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                 $"{string.Join('\n', bindingRepresentations)}"
             , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-            refresh = true;
         }
 
         private static string GetBindingKeyShortcut(TextEditorBinding bind, bool mark = true)
@@ -476,7 +515,6 @@ namespace KS.Files.Editors.TextEdit
 
             // Do the replacement!
             TextEditTools.Replace(replacementText, replacedText, lineIdx + 1);
-            refresh = true;
         }
 
         private static void ReplaceAll()
@@ -491,7 +529,6 @@ namespace KS.Files.Editors.TextEdit
 
             // Do the replacement!
             TextEditTools.Replace(replacementText, replacedText);
-            refresh = true;
         }
 
         private static void StatusTextInfo()
@@ -569,7 +606,6 @@ namespace KS.Files.Editors.TextEdit
         private static void SwitchEnter()
         {
             entering = !entering;
-            refresh = true;
             UpdateLineIndex(lineIdx);
         }
     }

@@ -18,6 +18,7 @@
 //
 
 using KS.ConsoleBase;
+using KS.ConsoleBase.Buffered;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Inputs;
 using KS.ConsoleBase.Inputs.Styles;
@@ -29,7 +30,6 @@ using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Screensaver;
 using KS.Misc.Text;
 using KS.Shell.Shells.Hex;
 using System;
@@ -48,7 +48,6 @@ namespace KS.Files.Editors.HexEdit
     {
         private static string status;
         private static bool bail;
-        private static bool refresh = true;
         private static int byteIdx = 0;
         private static readonly HexEditorBinding[] bindings = new[]
         {
@@ -94,43 +93,48 @@ namespace KS.Files.Editors.HexEdit
 
             // Set status
             status = Translate.DoTranslation("Ready");
-            refresh = true;
             bail = false;
 
             // Main loop
             byteIdx = 0;
-            while (!bail)
+            var screen = new Screen();
+            ScreenTools.SetCurrent(screen);
+            ConsoleWrapper.CursorVisible = false;
+            KernelColorTools.LoadBack();
+            try
             {
-                // Check to see if we need to refresh
-                if (refresh)
+                while (!bail)
                 {
-                    refresh = false;
-
-                    // Clear the screen
-                    ConsoleWrapper.CursorVisible = false;
-                    KernelColorTools.LoadBack();
-
                     // Now, render the keybindings
-                    RenderKeybindings();
+                    RenderKeybindings(ref screen);
+
+                    // Render the box
+                    RenderHexViewBox(ref screen);
+
+                    // Now, render the visual hex with the current selection
+                    RenderContentsInHexWithSelection(byteIdx, ref screen);
+
+                    // Render the status
+                    RenderStatus(ref screen);
+
+                    // Wait for a keypress
+                    ScreenTools.Render(screen);
+                    var keypress = Input.DetectKeypress();
+                    HandleKeypress(keypress);
+
+                    // Reset, in case selection changed
+                    screen.RemoveBufferedParts();
                 }
-
-                // Render the box
-                RenderHexViewBox();
-
-                // Now, render the visual hex with the current selection
-                RenderContentsInHexWithSelection(byteIdx);
-
-                // Render the status
-                RenderStatus();
-
-                // Wait for a keypress
-                var keypress = Input.DetectKeypress();
-                HandleKeypress(keypress);
-
-                // Finally, set the refresh requirement
-                if (!refresh)
-                    refresh = ScreensaverManager.ScreenRefreshRequired || ConsoleResizeListener.WasResized(false);
             }
+            catch (Exception ex)
+            {
+                DebugWriter.WriteDebug(DebugLevel.E, $"Hex editor failed: {ex.Message}");
+                DebugWriter.WriteDebugStackTrace(ex);
+                InfoBoxColor.WriteInfoBoxKernelColor(Translate.DoTranslation("The hex editor failed:") + $" {ex.Message}", KernelColorType.Error);
+            }
+            bail = false;
+            ScreenTools.UnsetCurrent(screen);
+
 
             // Close the file and clean up
             KernelColorTools.LoadBack();
@@ -138,76 +142,122 @@ namespace KS.Files.Editors.HexEdit
                 HexEditTools.CloseBinaryFile();
         }
 
-        private static void RenderKeybindings()
+        private static void RenderKeybindings(ref Screen screen)
         {
-            var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
-            foreach (HexEditorBinding binding in bindings)
+            // Make a screen part
+            var part = new ScreenPart();
+            part.AddDynamicText(() =>
             {
-                // First, check to see if the rendered binding info is going to exceed the console window width
-                string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  ";
-                int actualLength = VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()).Length;
-                bool canDraw = renderedBinding.Length + actualLength < ConsoleWrapper.WindowWidth - 3;
-                if (canDraw)
+                var bindingsBuilder = new StringBuilder(CsiSequences.GenerateCsiCursorPosition(1, ConsoleWrapper.WindowHeight));
+                foreach (HexEditorBinding binding in bindings)
                 {
-                    DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
-                    bindingsBuilder.Append(
-                        $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
-                        $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
-                        GetBindingKeyShortcut(binding, false) +
-                        $"{BaseInteractiveTui.OptionForegroundColor.VTSequenceForeground}" +
-                        $"{BaseInteractiveTui.BackgroundColor.VTSequenceBackground}" +
-                        $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
-                    );
+                    // First, check to see if the rendered binding info is going to exceed the console window width
+                    string renderedBinding = $"{GetBindingKeyShortcut(binding, false)} {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  ";
+                    int actualLength = VtSequenceTools.FilterVTSequences(bindingsBuilder.ToString()).Length;
+                    bool canDraw = renderedBinding.Length + actualLength < ConsoleWrapper.WindowWidth - 3;
+                    if (canDraw)
+                    {
+                        DebugWriter.WriteDebug(DebugLevel.I, "Drawing binding {0} with description {1}...", GetBindingKeyShortcut(binding, false), binding.Name);
+                        bindingsBuilder.Append(
+                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            GetBindingKeyShortcut(binding, false) +
+                            $"{BaseInteractiveTui.OptionForegroundColor.VTSequenceForeground}" +
+                            $"{BaseInteractiveTui.BackgroundColor.VTSequenceBackground}" +
+                            $" {(binding._localizable ? Translate.DoTranslation(binding.Name) : binding.Name)}  "
+                        );
+                    }
+                    else
+                    {
+                        // We can't render anymore, so just break and write a binding to show more
+                        DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
+                        bindingsBuilder.Append(
+                            $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
+                            $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
+                            $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
+                            " K "
+                        );
+                        break;
+                    }
                 }
-                else
-                {
-                    // We can't render anymore, so just break and write a binding to show more
-                    DebugWriter.WriteDebug(DebugLevel.I, "Bailing because of no space...");
-                    bindingsBuilder.Append(
-                        $"{CsiSequences.GenerateCsiCursorPosition(ConsoleWrapper.WindowWidth - 2, ConsoleWrapper.WindowHeight)}" +
-                        $"{BaseInteractiveTui.KeyBindingOptionColor.VTSequenceForeground}" +
-                        $"{BaseInteractiveTui.OptionBackgroundColor.VTSequenceBackground}" +
-                        " K "
-                    );
-                    break;
-                }
-            }
-            TextWriterColor.WritePlain(bindingsBuilder.ToString(), false);
+                return bindingsBuilder.ToString();
+            });
+            screen.AddBufferedPart(part);
         }
 
-        private static void RenderStatus() =>
-            TextWriterWhereColor.WriteWhereColorBack(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0, BaseInteractiveTui.ForegroundColor, KernelColorTools.GetColor(KernelColorType.Background));
-
-        private static void RenderHexViewBox()
+        private static void RenderStatus(ref Screen screen)
         {
-            // Get the widths and heights
-            int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
-            int SeparatorMinimumHeight = 1;
-            int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
-
-            // Render the box
-            BorderColor.WriteBorder(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior, BaseInteractiveTui.PaneSeparatorColor, KernelColorTools.GetColor(KernelColorType.Background));
+            // Make a screen part
+            var part = new ScreenPart();
+            part.AddDynamicText(() =>
+            {
+                var builder = new StringBuilder();
+                builder.Append(
+                    $"{BaseInteractiveTui.ForegroundColor.VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{TextWriterWhereColor.RenderWherePlain(status + ConsoleExtensions.GetClearLineToRightSequence(), 0, 0)}"
+                );
+                return builder.ToString();
+            });
+            screen.AddBufferedPart(part);
         }
 
-        private static void RenderContentsInHexWithSelection(int byteIdx)
+        private static void RenderHexViewBox(ref Screen screen)
+        {
+            // Make a screen part
+            var part = new ScreenPart();
+            part.AddDynamicText(() =>
+            {
+                var builder = new StringBuilder();
+
+                // Get the widths and heights
+                int SeparatorConsoleWidthInterior = ConsoleWrapper.WindowWidth - 2;
+                int SeparatorMinimumHeight = 1;
+                int SeparatorMaximumHeightInterior = ConsoleWrapper.WindowHeight - 4;
+
+                // Render the box
+                builder.Append(
+                    $"{BaseInteractiveTui.PaneSeparatorColor.VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{BorderColor.RenderBorderPlain(0, SeparatorMinimumHeight, SeparatorConsoleWidthInterior, SeparatorMaximumHeightInterior)}"
+                );
+                return builder.ToString();
+            });
+            screen.AddBufferedPart(part);
+        }
+
+        private static void RenderContentsInHexWithSelection(int byteIdx, ref Screen screen)
         {
             // First, update the status
             StatusNumInfo();
 
             // Then, render the contents with the selection indicator
-            int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
-            int currentSelection = byteIdx / 16;
-            int currentPage = currentSelection / byteLinesPerPage;
-            int startIndex = byteLinesPerPage * currentPage;
-            int endIndex = byteLinesPerPage * (currentPage + 1);
-            int startByte = (startIndex * 16) + 1;
-            int endByte = endIndex * 16;
-            if (startByte > HexEditShellCommon.FileBytes.Length)
-                startByte = HexEditShellCommon.FileBytes.Length;
-            if (endByte > HexEditShellCommon.FileBytes.Length)
-                endByte = HexEditShellCommon.FileBytes.Length;
-            string rendered = FileContentPrinter.RenderContentsInHex(byteIdx + 1, startByte, endByte, HexEditShellCommon.FileBytes);
-            TextWriterWhereColor.WriteWhereColorBack(rendered, 1, 2, BaseInteractiveTui.ForegroundColor, KernelColorTools.GetColor(KernelColorType.Background));
+            var part = new ScreenPart();
+            part.AddDynamicText(() =>
+            {
+                var builder = new StringBuilder();
+                int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
+                int currentSelection = byteIdx / 16;
+                int currentPage = currentSelection / byteLinesPerPage;
+                int startIndex = byteLinesPerPage * currentPage;
+                int endIndex = byteLinesPerPage * (currentPage + 1);
+                int startByte = (startIndex * 16) + 1;
+                int endByte = endIndex * 16;
+                if (startByte > HexEditShellCommon.FileBytes.Length)
+                    startByte = HexEditShellCommon.FileBytes.Length;
+                if (endByte > HexEditShellCommon.FileBytes.Length)
+                    endByte = HexEditShellCommon.FileBytes.Length;
+                string rendered = FileContentPrinter.RenderContentsInHex(byteIdx + 1, startByte, endByte, HexEditShellCommon.FileBytes);
+
+                // Render the box
+                builder.Append(
+                    $"{BaseInteractiveTui.ForegroundColor.VTSequenceForeground}" +
+                    $"{KernelColorTools.GetColor(KernelColorType.Background).VTSequenceBackground}" +
+                    $"{TextWriterWhereColor.RenderWherePlain(rendered, 1, 2)}"
+                );
+                return builder.ToString();
+            });
+            screen.AddBufferedPart(part);
         }
 
         private static void HandleKeypress(ConsoleKeyInfo key)
@@ -240,7 +290,6 @@ namespace KS.Files.Editors.HexEdit
                 $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                 $"{string.Join('\n', bindingRepresentations)}"
             , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-            refresh = true;
         }
 
         private static string GetBindingKeyShortcut(HexEditorBinding bind, bool mark = true)
@@ -288,7 +337,6 @@ namespace KS.Files.Editors.HexEdit
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             else
                 HexEditTools.AddNewByte(byteNum, byteIdx + 1);
-            refresh = true;
         }
 
         private static void Remove() =>
@@ -307,13 +355,11 @@ namespace KS.Files.Editors.HexEdit
                 (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-                refresh = true;
                 return;
             }
 
             // Do the replacement!
             HexEditTools.Replace(byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
-            refresh = true;
         }
 
         private static void ReplaceAll()
@@ -329,13 +375,11 @@ namespace KS.Files.Editors.HexEdit
                 (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-                refresh = true;
                 return;
             }
 
             // Do the replacement!
             HexEditTools.Replace(byteNum, byteNumReplaced);
-            refresh = true;
         }
 
         private static void ReplaceAllWhat()
@@ -347,7 +391,6 @@ namespace KS.Files.Editors.HexEdit
                 (byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum)))
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-                refresh = true;
                 return;
             }
 
@@ -358,13 +401,11 @@ namespace KS.Files.Editors.HexEdit
                 (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
             {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-                refresh = true;
                 return;
             }
 
             // Do the replacement!
             HexEditTools.Replace(byteNum, byteNumReplaced);
-            refresh = true;
         }
 
         private static void NumInfo()
@@ -387,7 +428,6 @@ namespace KS.Files.Editors.HexEdit
                 Translate.DoTranslation("Number") + $": {byteNumNumber}" + CharManager.NewLine +
                 Translate.DoTranslation("Binary") + $": {byteNumBinary}"
                 , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-            refresh = true;
         }
 
         private static void StatusNumInfo()
