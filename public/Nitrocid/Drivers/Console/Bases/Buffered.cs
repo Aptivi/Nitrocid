@@ -93,40 +93,46 @@ namespace KS.Drivers.Console.Bases
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to the buffered string builder
         /// </summary>
         /// <inheritdoc/>
-        public override void Write(char value) { }
+        public override void Write(char value) =>
+            WritePlain($"{value}", false, Array.Empty<object>());
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to the buffered string builder
         /// </summary>
         /// <inheritdoc/>
-        public override void Write(string text) { }
+        public override void Write(string text) =>
+            WritePlain(text, false, Array.Empty<object>());
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to the buffered string builder
         /// </summary>
         /// <inheritdoc/>
-        public override void Write(string text, params object[] args) { }
+        public override void Write(string text, params object[] args) =>
+            WritePlain(text, false, args);
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to the buffered string builder
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteLine() { }
+        public override void WriteLine() =>
+            WritePlain("", true, Array.Empty<object>());
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to the buffered string builder
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteLine(string text) { }
+        public override void WriteLine(string text) =>
+            WritePlain(text, true, Array.Empty<object>());
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to the buffered string builder
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteLine(string text, params object[] args) { }
+        public override void WriteLine(string text, params object[] args) =>
+            WritePlain(text, true, args);
 
         /// <summary>
         /// Outputs text to the buffered string builder
@@ -231,7 +237,7 @@ namespace KS.Drivers.Console.Bases
             {
                 try
                 {
-                    // We can't do positioning on Buffereds, so change writing mode to WritePlain
+                    // We can't do positioning, so change writing mode to WritePlain
                     WritePlain(msg, false, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -266,7 +272,7 @@ namespace KS.Drivers.Console.Bases
             {
                 try
                 {
-                    // We can't do positioning on Buffereds, so change writing mode to WritePlain
+                    // We can't do positioning, so change writing mode to WritePlain
                     WriteSlowlyPlain(msg, false, MsEachLetter, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
@@ -287,7 +293,7 @@ namespace KS.Drivers.Console.Bases
             {
                 try
                 {
-                    // We can't do positioning on Buffereds, so change writing mode to WritePlain
+                    // We can't do positioning, so change writing mode to WritePlain
                     WritePlain(Text, Line, vars);
                 }
                 catch (Exception ex) when (ex.GetType().Name != nameof(ThreadInterruptedException))
