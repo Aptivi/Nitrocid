@@ -35,6 +35,8 @@ using Figletize;
 using KS.Misc.Text.Probers.Motd;
 using System.Text;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.ConsoleBase.Buffered;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.Users.Login
 {
@@ -51,6 +53,11 @@ namespace KS.Users.Login
 
         internal static void DateTimeWidgetUpdater()
         {
+            // Make a screen
+            var screen = new Screen();
+            ScreenTools.SetCurrent(screen);
+
+            // Now, do the job
             try
             {
                 string cachedTimeStr = "";
@@ -75,68 +82,76 @@ namespace KS.Users.Login
                     }
                 }
                 string headlineStr = UpdateHeadline();
-
                 while (true)
                 {
                     // Print the time
                     string timeStr = TimeDateRenderers.RenderTime(FormatType.Short);
                     if (timeStr != cachedTimeStr)
                     {
-                        var display = new StringBuilder();
-
-                        // Clear the console and write the time using figlet
-                        ConsoleWrapper.Clear();
-                        cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
-                        var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
-                        int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
-                        display.Append(
-                            KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +
-                            CenteredFigletTextColor.RenderCenteredFiglet(figFont, timeStr)
-                        );
-
-                        // Print the date
-                        string dateStr = $"{TimeDateRenderers.RenderDate()}";
-                        int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
-                        display.Append(
-                            CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr) +
-                            KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
-                        );
-
-                        // Print the headline
-                        if (RSSTools.ShowHeadlineOnLogin)
+                        screen.RemoveBufferedParts();
+                        var part = new ScreenPart();
+                        part.AddDynamicText(() =>
                         {
-                            int consoleHeadlineInfoY =
-                                MotdHeadlineBottom ?
-                                (ConsoleWrapper.WindowHeight / 2) + figHeight + 3 :
-                                (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
+                            var display = new StringBuilder();
+
+                            // Clear the console and write the time using figlet
+                            display.Append(CsiSequences.GenerateCsiEraseInDisplay(2));
+                            cachedTimeStr = TimeDateRenderers.RenderTime(FormatType.Short);
+                            var figFont = FigletTools.GetFigletFont(TextTools.DefaultFigletFontName);
+                            int figHeight = FigletTools.GetFigletHeight(timeStr, figFont) / 2;
                             display.Append(
-                                CenteredTextColor.RenderCenteredOneLine(consoleHeadlineInfoY, headlineStr)
+                                KernelColorTools.GetColor(KernelColorType.Stage).VTSequenceForeground +
+                                CenteredFigletTextColor.RenderCenteredFiglet(figFont, timeStr)
                             );
-                        }
 
-                        // Print the MOTD
-                        string[] motdStrs = TextTools.GetWrappedSentences(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
-                        for (int i = 0; i < motdStrs.Length && i < 2; i++)
-                        {
-                            string motdStr = motdStrs[i];
-                            int consoleMotdInfoY =
-                                MotdHeadlineBottom ? 
-                                (ConsoleWrapper.WindowHeight / 2) + figHeight + 4 + i :
-                                (ConsoleWrapper.WindowHeight / 2) - figHeight - (RSSTools.ShowHeadlineOnLogin ? 5 : 3) + i;
+                            // Print the date
+                            string dateStr = $"{TimeDateRenderers.RenderDate()}";
+                            int consoleInfoY = (ConsoleWrapper.WindowHeight / 2) + figHeight + 2;
                             display.Append(
-                                CenteredTextColor.RenderCenteredOneLine(consoleMotdInfoY, motdStr)
+                                CenteredTextColor.RenderCenteredOneLine(consoleInfoY, dateStr) +
+                                KernelColorTools.GetColor(KernelColorType.NeutralText).VTSequenceForeground
                             );
-                        }
 
-                        // Print the instructions
-                        string instStr = Translate.DoTranslation("Press any key to start...");
-                        int consoleInstY = ConsoleWrapper.WindowHeight - 1;
-                        display.Append(
-                            CenteredTextColor.RenderCenteredOneLine(consoleInstY, instStr)
-                        );
+                            // Print the headline
+                            if (RSSTools.ShowHeadlineOnLogin)
+                            {
+                                int consoleHeadlineInfoY =
+                                    MotdHeadlineBottom ?
+                                    (ConsoleWrapper.WindowHeight / 2) + figHeight + 3 :
+                                    (ConsoleWrapper.WindowHeight / 2) - figHeight - 2;
+                                display.Append(
+                                    CenteredTextColor.RenderCenteredOneLine(consoleHeadlineInfoY, headlineStr)
+                                );
+                            }
 
-                        // Print everything
-                        TextWriterColor.WritePlain(display.ToString());
+                            // Print the MOTD
+                            string[] motdStrs = TextTools.GetWrappedSentences(MotdParse.MotdMessage, ConsoleWrapper.WindowWidth - 4);
+                            for (int i = 0; i < motdStrs.Length && i < 2; i++)
+                            {
+                                string motdStr = motdStrs[i];
+                                int consoleMotdInfoY =
+                                    MotdHeadlineBottom ? 
+                                    (ConsoleWrapper.WindowHeight / 2) + figHeight + 4 + i :
+                                    (ConsoleWrapper.WindowHeight / 2) - figHeight - (RSSTools.ShowHeadlineOnLogin ? 5 : 3) + i;
+                                display.Append(
+                                    CenteredTextColor.RenderCenteredOneLine(consoleMotdInfoY, motdStr)
+                                );
+                            }
+
+                            // Print the instructions
+                            string instStr = Translate.DoTranslation("Press any key to start...");
+                            int consoleInstY = ConsoleWrapper.WindowHeight - 2;
+                            display.Append(
+                                CenteredTextColor.RenderCenteredOneLine(consoleInstY, instStr)
+                            );
+
+                            // Print everything
+                            return display.ToString();
+                        });
+                        screen.AddBufferedPart(part);
+
+                        // Render it now
+                        ScreenTools.Render();
                     }
 
                     // Wait for 1 second
@@ -148,6 +163,7 @@ namespace KS.Users.Login
             {
                 DebugWriter.WriteDebug(DebugLevel.I, "User pressed a key to exit the date and time update thread for modern logon. Proceeding...");
             }
+            ScreenTools.UnsetCurrent(screen);
         }
     }
 }
