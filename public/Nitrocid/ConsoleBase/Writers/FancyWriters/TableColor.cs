@@ -38,7 +38,6 @@ namespace KS.ConsoleBase.Writers.FancyWriters
     public static class TableColor
     {
 
-        // TODO: Consider re-writing
         /// <summary>
         /// Draw a table with text
         /// </summary>
@@ -152,17 +151,18 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
+                int width = ConsoleWrapper.WindowWidth;
                 var table = new StringBuilder();
-                int ColumnCapacity = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)Headers.Length);
+                int ColumnCapacity = (int)Math.Round(width / (double)Headers.Length);
                 var ColumnPositions = new List<int>();
                 int RepeatTimes;
                 int line = 1;
 
                 // Populate the positions
                 table.AppendLine();
-                for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
+                for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= width : ColumnPosition >= width; ColumnPosition += ColumnCapacity)
                 {
-                    if (ColumnPosition < ConsoleWrapper.WindowWidth)
+                    if (ColumnPosition < width)
                     {
                         ColumnPositions.Add(ColumnPosition);
                         if (ColumnPositions.Count == 1)
@@ -175,56 +175,56 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Write the headers
+                var headerBuilder = new StringBuilder();
                 for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
                 {
                     string Header = Headers[HeaderIndex];
                     int ColumnPosition = ColumnPositions[HeaderIndex];
                     Header ??= "";
-                    table.Append(
-                        DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleWrapper.CursorTop + line, false)
-                    );
+                    string renderedHeader = Header.Truncate(ColumnCapacity - 3 - Margin);
+                    if (HeaderIndex == 0)
+                        headerBuilder.Append(new string(' ', ColumnPosition));
+                    headerBuilder.Append(renderedHeader);
+                    if (HeaderIndex < Headers.Length - 1)
+                        headerBuilder.Append(new string(' ', ColumnPositions[HeaderIndex + 1] - headerBuilder.Length));
                 }
-                table.AppendLine();
+                table.AppendLine(headerBuilder.ToString());
                 line++;
 
                 // Write the closing minus sign.
-                RepeatTimes = ConsoleWrapper.WindowWidth - Margin * 2;
+                RepeatTimes = width - Margin * 2;
                 if (Margin > 0)
                     table.Append(new string(' ', Margin));
                 table.AppendLine(new string('═', RepeatTimes));
                 line++;
 
                 // Write the rows
+                var rowBuilder = new StringBuilder();
                 for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
                 {
                     for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
                     {
-                        var ColoredCell = false;
-                        var CellColor = KernelColorTools.GetColor(KernelColorType.NeutralText);
-                        var CellBackgroundColor = KernelColorTools.GetColor(KernelColorType.Background);
                         string RowValue = Rows[RowIndex, RowValueIndex];
                         int ColumnPosition = ColumnPositions[RowValueIndex];
                         RowValue ??= "";
 
                         // Now, write the cell value
                         string FinalRowValue = RowValue.Truncate(ColumnCapacity - 3 - Margin);
-                        if (ColoredCell)
-                            table.Append(
-                                DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop + line, false)
-                            );
-                        else
-                            table.Append(
-                                DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop + line, false)
-                            );
+                        if (RowValueIndex == 0)
+                            rowBuilder.Append(new string(' ', ColumnPosition));
+                        rowBuilder.Append(FinalRowValue);
+                        if (RowValueIndex < Headers.Length - 1)
+                            rowBuilder.Append(new string(' ', ColumnPositions[RowValueIndex + 1] - rowBuilder.Length));
                     }
-                    table.AppendLine();
+                    table.AppendLine(rowBuilder.ToString());
+                    rowBuilder.Clear();
                     line++;
 
                     // Separate the rows optionally
                     if (SeparateRows)
                     {
                         // Write the closing minus sign.
-                        RepeatTimes = ConsoleWrapper.WindowWidth - Margin * 2;
+                        RepeatTimes = width - Margin * 2;
                         if (Margin > 0)
                             table.Append(new string(' ', Margin));
                         table.AppendLine(new string('═', RepeatTimes));
@@ -257,17 +257,18 @@ namespace KS.ConsoleBase.Writers.FancyWriters
         {
             try
             {
+                int width = ConsoleWrapper.WindowWidth;
                 var table = new StringBuilder();
-                int ColumnCapacity = (int)Math.Round(ConsoleWrapper.WindowWidth / (double)Headers.Length);
+                int ColumnCapacity = (int)Math.Round(width / (double)Headers.Length);
                 var ColumnPositions = new List<int>();
                 int RepeatTimes;
                 int line = 1;
 
                 // Populate the positions
                 table.AppendLine();
-                for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= ConsoleWrapper.WindowWidth : ColumnPosition >= ConsoleWrapper.WindowWidth; ColumnPosition += ColumnCapacity)
+                for (int ColumnPosition = Margin; ColumnCapacity >= 0 ? ColumnPosition <= width : ColumnPosition >= width; ColumnPosition += ColumnCapacity)
                 {
-                    if (ColumnPosition < ConsoleWrapper.WindowWidth)
+                    if (ColumnPosition < width)
                     {
                         ColumnPositions.Add(ColumnPosition);
                         if (ColumnPositions.Count == 1)
@@ -280,22 +281,28 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 }
 
                 // Write the headers
+                var headerBuilder = new StringBuilder();
+                table.Append(
+                    HeaderForegroundColor.VTSequenceForeground +
+                    BackgroundColor.VTSequenceBackground
+                );
                 for (int HeaderIndex = 0; HeaderIndex <= Headers.Length - 1; HeaderIndex++)
                 {
                     string Header = Headers[HeaderIndex];
                     int ColumnPosition = ColumnPositions[HeaderIndex];
                     Header ??= "";
-                    table.Append(
-                        HeaderForegroundColor.VTSequenceForeground +
-                        BackgroundColor.VTSequenceBackground +
-                        DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(Header.Truncate(ColumnCapacity - 3 - Margin), ColumnPosition, ConsoleWrapper.CursorTop + line, false)
-                    );
+                    string renderedHeader = Header.Truncate(ColumnCapacity - 3 - Margin);
+                    if (HeaderIndex == 0)
+                        headerBuilder.Append(new string(' ', ColumnPosition));
+                    headerBuilder.Append(renderedHeader);
+                    if (HeaderIndex < Headers.Length - 1)
+                        headerBuilder.Append(new string(' ', ColumnPositions[HeaderIndex + 1] - headerBuilder.Length));
                 }
-                table.AppendLine();
+                table.AppendLine(headerBuilder.ToString());
                 line++;
 
                 // Write the closing minus sign.
-                RepeatTimes = ConsoleWrapper.WindowWidth - Margin * 2;
+                RepeatTimes = width - Margin * 2;
                 table.Append(
                     SeparatorForegroundColor.VTSequenceForeground +
                     BackgroundColor.VTSequenceBackground
@@ -306,6 +313,7 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                 line++;
 
                 // Write the rows
+                var rowBuilder = new StringBuilder();
                 for (int RowIndex = 0; RowIndex <= Rows.GetLength(0) - 1; RowIndex++)
                 {
                     for (int RowValueIndex = 0; RowValueIndex <= Rows.GetLength(1) - 1; RowValueIndex++)
@@ -336,24 +344,28 @@ namespace KS.ConsoleBase.Writers.FancyWriters
                         if (ColoredCell)
                             table.Append(
                                 CellColor.VTSequenceForeground +
-                                CellBackgroundColor.VTSequenceBackground +
-                                DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop + line, false)
+                                CellBackgroundColor.VTSequenceBackground
                             );
                         else
                             table.Append(
                                 ValueForegroundColor.VTSequenceForeground +
-                                BackgroundColor.VTSequenceBackground +
-                                DriverHandler.CurrentConsoleDriverLocal.RenderWherePlain(FinalRowValue, ColumnPosition, ConsoleWrapper.CursorTop + line, false)
+                                BackgroundColor.VTSequenceBackground
                             );
+                        if (RowValueIndex == 0)
+                            rowBuilder.Append(new string(' ', ColumnPosition));
+                        rowBuilder.Append(FinalRowValue);
+                        if (RowValueIndex < Headers.Length - 1)
+                            rowBuilder.Append(new string(' ', ColumnPositions[RowValueIndex + 1] - rowBuilder.Length));
                     }
-                    table.AppendLine();
+                    table.AppendLine(rowBuilder.ToString());
+                    rowBuilder.Clear();
                     line++;
 
                     // Separate the rows optionally
                     if (SeparateRows)
                     {
                         // Write the closing minus sign.
-                        RepeatTimes = ConsoleWrapper.WindowWidth - Margin * 2;
+                        RepeatTimes = width - Margin * 2;
                         if (Margin > 0)
                             table.Append(new string(' ', Margin));
                         table.AppendLine(new string('═', RepeatTimes));
