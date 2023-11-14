@@ -36,6 +36,7 @@ using Terminaux.Sequences.Tools;
 using Terminaux.Sequences.Builder.Types;
 using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Buffered;
+using System.Collections.Generic;
 
 namespace KS.Files.Editors.TextEdit
 {
@@ -51,7 +52,7 @@ namespace KS.Files.Editors.TextEdit
         private static int lineColIdx = 0;
         private static readonly TextEditorBinding[] bindings = new[]
         {
-            new TextEditorBinding( /* Localizable */ "Exit", ConsoleKey.Escape, default, () => bail = true, true),
+            new TextEditorBinding( /* Localizable */ "Exit", ConsoleKey.Escape, default, (l) => { bail = true; return l; }, true),
             new TextEditorBinding( /* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
             new TextEditorBinding( /* Localizable */ "Enter...", ConsoleKey.I, default, SwitchEnter, true),
             new TextEditorBinding( /* Localizable */ "Insert", ConsoleKey.F1, default, Insert, true),
@@ -72,22 +73,18 @@ namespace KS.Files.Editors.TextEdit
         /// </summary>
         /// <param name="file">Target file to open</param>
         public static void OpenInteractive(string file) =>
-            OpenInteractive(file, false);
+            OpenInteractive(file, ref TextEditShellCommon.fileLines);
 
         /// <summary>
         /// Opens an interactive text editor
         /// </summary>
         /// <param name="file">Target file to open</param>
-        /// <param name="fromShell">Whether it's open from the text shell</param>
-        internal static void OpenInteractive(string file, bool fromShell)
+        /// <param name="lines">Target number of lines</param>
+        internal static void OpenInteractive(string file, ref List<string> lines)
         {
             // Check to see if the file exists
             if (!Checking.FileExists(file))
                 throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("File not found.") + $" {file}");
-
-            // Open the file
-            if (!fromShell && !TextEditTools.OpenTextFile(file))
-                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Failed to open the text file.") + $" {file}");
 
             // Set status
             status = Translate.DoTranslation("Ready");
@@ -110,7 +107,7 @@ namespace KS.Files.Editors.TextEdit
                     RenderTextViewBox(ref screen);
 
                     // Now, render the visual hex with the current selection
-                    RenderContentsWithSelection(lineIdx, ref screen);
+                    RenderContentsWithSelection(lineIdx, ref screen, lines);
 
                     // Render the status
                     RenderStatus(ref screen);
@@ -118,7 +115,7 @@ namespace KS.Files.Editors.TextEdit
                     // Wait for a keypress
                     ScreenTools.Render(screen);
                     var keypress = Input.DetectKeypress();
-                    HandleKeypress(keypress);
+                    HandleKeypress(keypress, ref lines);
 
                     // Reset, in case selection changed
                     screen.RemoveBufferedParts();
@@ -135,8 +132,6 @@ namespace KS.Files.Editors.TextEdit
 
             // Close the file and clean up
             KernelColorTools.LoadBack();
-            if (!fromShell)
-                TextEditTools.CloseTextFile();
         }
 
         private static void RenderKeybindings(ref Screen screen)
@@ -224,13 +219,13 @@ namespace KS.Files.Editors.TextEdit
             screen.AddBufferedPart(part);
         }
 
-        private static void RenderContentsWithSelection(int lineIdx, ref Screen screen)
+        private static void RenderContentsWithSelection(int lineIdx, ref Screen screen, List<string> lines)
         {
             // First, update the status
-            StatusTextInfo();
+            StatusTextInfo(lines);
 
             // Check the lines
-            if (TextEditShellCommon.FileLines.Count == 0)
+            if (lines.Count == 0)
                 return;
 
             // Now, make a dynamic text
@@ -250,10 +245,10 @@ namespace KS.Files.Editors.TextEdit
                 int currentPage = lineIdx / lineLinesPerPage;
                 int startIndex = (lineLinesPerPage * currentPage) + 1;
                 int endIndex = lineLinesPerPage * (currentPage + 1);
-                if (startIndex > TextEditShellCommon.FileLines.Count)
-                    startIndex = TextEditShellCommon.FileLines.Count;
-                if (endIndex > TextEditShellCommon.FileLines.Count)
-                    endIndex = TextEditShellCommon.FileLines.Count;
+                if (startIndex > lines.Count)
+                    startIndex = lines.Count;
+                if (endIndex > lines.Count)
+                    endIndex = lines.Count;
 
                 // Get the lines and highlight the selection
                 int count = 0;
@@ -261,7 +256,7 @@ namespace KS.Files.Editors.TextEdit
                 for (int i = startIndex; i <= endIndex; i++)
                 {
                     // Get a line
-                    string source = TextEditShellCommon.FileLines[i - 1];
+                    string source = lines[i - 1];
                     if (source.Length == 0)
                         source = " ";
 
@@ -327,7 +322,7 @@ namespace KS.Files.Editors.TextEdit
             screen.AddBufferedPart(part);
         }
 
-        private static void HandleKeypress(ConsoleKeyInfo key)
+        private static void HandleKeypress(ConsoleKeyInfo key, ref List<string> lines)
         {
             var binds = entering ? bindingsEntering : bindings;
 
@@ -337,39 +332,39 @@ namespace KS.Files.Editors.TextEdit
                 switch (key.Key)
                 {
                     case ConsoleKey.LeftArrow:
-                        MoveBackward();
+                        MoveBackward(lines);
                         return;
                     case ConsoleKey.RightArrow:
-                        MoveForward();
+                        MoveForward(lines);
                         return;
                     case ConsoleKey.UpArrow:
-                        MoveUp();
+                        MoveUp(lines);
                         return;
                     case ConsoleKey.DownArrow:
-                        MoveDown();
+                        MoveDown(lines);
                         return;
                     case ConsoleKey.PageUp:
-                        PreviousPage();
+                        PreviousPage(lines);
                         return;
                     case ConsoleKey.PageDown:
-                        NextPage();
+                        NextPage(lines);
                         return;
                     case ConsoleKey.Home:
-                        Beginning();
+                        Beginning(lines);
                         return;
                     case ConsoleKey.End:
-                        End();
+                        End(lines);
                         return;
                 }
                 if (entering)
                 {
                     // Handle the entering keys apppropriately
                     if (key.Key == ConsoleKey.Backspace)
-                        RuboutChar();
+                        RuboutChar(lines);
                     else if (key.Key == ConsoleKey.Delete)
-                        DeleteChar();
+                        DeleteChar(lines);
                     else
-                        InsertChar(key.KeyChar);
+                        InsertChar(key.KeyChar, lines);
                 }
                 return;
             }
@@ -377,56 +372,59 @@ namespace KS.Files.Editors.TextEdit
             // Now, get the first binding and execute it.
             var bind = binds
                 .First((heb) => heb.Key == key.Key && heb.KeyModifiers == key.Modifiers);
-            bind.Action();
+            lines = bind.Action(lines);
         }
 
-        private static void InsertChar(char keyChar)
+        private static List<string> InsertChar(char keyChar, List<string> lines)
         {
             // Check the lines
-            if (TextEditShellCommon.FileLines.Count == 0)
-                return;
+            if (lines.Count == 0)
+                return lines;
 
             // Insert a character
-            TextEditShellCommon.FileLines[lineIdx] = TextEditShellCommon.FileLines[lineIdx].Insert(TextEditShellCommon.FileLines[lineIdx].Length == 0 ? 0 : lineColIdx, $"{keyChar}");
-            MoveForward();
+            lines[lineIdx] = lines[lineIdx].Insert(lines[lineIdx].Length == 0 ? 0 : lineColIdx, $"{keyChar}");
+            MoveForward(lines);
+            return lines;
         }
 
-        private static void RuboutChar()
+        private static List<string> RuboutChar(List<string> lines)
         {
             // Check the lines
-            if (TextEditShellCommon.FileLines.Count == 0)
-                return;
-            if (TextEditShellCommon.FileLines[lineIdx].Length == 0)
-                return;
+            if (lines.Count == 0)
+                return lines;
+            if (lines[lineIdx].Length == 0)
+                return lines;
             if (lineColIdx == 0)
-                return;
+                return lines;
 
             // Delete a character
-            TextEditShellCommon.FileLines[lineIdx] = TextEditShellCommon.FileLines[lineIdx].Remove(lineColIdx - 1, 1);
-            MoveBackward();
+            lines[lineIdx] = lines[lineIdx].Remove(lineColIdx - 1, 1);
+            MoveBackward(lines);
+            return lines;
         }
 
-        private static void DeleteChar()
+        private static List<string> DeleteChar(List<string> lines)
         {
             // Check the lines
-            if (TextEditShellCommon.FileLines.Count == 0)
-                return;
-            if (TextEditShellCommon.FileLines[lineIdx].Length == 0 ||
-                TextEditShellCommon.FileLines[lineIdx].Length == lineColIdx)
-                return;
+            if (lines.Count == 0)
+                return lines;
+            if (lines[lineIdx].Length == 0 ||
+                lines[lineIdx].Length == lineColIdx)
+                return lines;
 
             // Delete a character
-            TextEditShellCommon.FileLines[lineIdx] = TextEditShellCommon.FileLines[lineIdx].Remove(lineColIdx, 1);
-            UpdateLineIndex(lineIdx);
+            lines[lineIdx] = lines[lineIdx].Remove(lineColIdx, 1);
+            UpdateLineIndex(lineIdx, lines);
+            return lines;
         }
 
-        private static void RenderKeybindingsBox()
+        private static List<string> RenderKeybindingsBox(List<string> lines)
         {
             var binds = entering ? bindingsEntering : bindings;
 
             // Show the available keys list
             if (binds.Length == 0)
-                return;
+                return lines;
 
             // User needs an infobox that shows all available keys
             string section = Translate.DoTranslation("Available keys");
@@ -440,6 +438,7 @@ namespace KS.Files.Editors.TextEdit
                 $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                 $"{string.Join('\n', bindingRepresentations)}"
             , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            return lines;
         }
 
         private static string GetBindingKeyShortcut(TextEditorBinding bind, bool mark = true)
@@ -449,153 +448,159 @@ namespace KS.Files.Editors.TextEdit
             return $"{markStart}{(bind.KeyModifiers != 0 ? $"{bind.KeyModifiers} + " : "")}{bind.Key}{markEnd}";
         }
 
-        private static void MoveBackward() =>
-            UpdateColumnIndex(lineColIdx - 1);
+        private static void MoveBackward(List<string> lines) =>
+            UpdateColumnIndex(lineColIdx - 1, lines);
 
-        private static void MoveForward() =>
-            UpdateColumnIndex(lineColIdx + 1);
+        private static void MoveForward(List<string> lines) =>
+            UpdateColumnIndex(lineColIdx + 1, lines);
 
-        private static void MoveUp() =>
-            UpdateLineIndex(lineIdx - 1);
+        private static void MoveUp(List<string> lines) =>
+            UpdateLineIndex(lineIdx - 1, lines);
 
-        private static void MoveDown() =>
-            UpdateLineIndex(lineIdx + 1);
+        private static void MoveDown(List<string> lines) =>
+            UpdateLineIndex(lineIdx + 1, lines);
 
-        private static void Insert()
+        private static List<string> Insert(List<string> lines)
         {
             // Insert a line
-            if (TextEditShellCommon.FileLines.Count == 0)
-                TextEditShellCommon.FileLines.Add("");
+            if (lines.Count == 0)
+                lines.Add("");
             else
-                TextEditShellCommon.FileLines.Insert(lineIdx + 1, "");
-            MoveDown();
+                lines.Insert(lineIdx + 1, "");
+            MoveDown(lines);
+            return lines;
         }
 
-        private static void RemoveLine()
+        private static List<string> RemoveLine(List<string> lines)
         {
             // Check the lines
-            if (TextEditShellCommon.FileLines.Count == 0)
-                return;
+            if (lines.Count == 0)
+                return lines;
 
             // Remove a line
-            TextEditTools.RemoveLine(lineIdx + 1);
-            MoveUp();
+            lines = TextEditTools.RemoveLine(lines, lineIdx + 1);
+            MoveUp(lines);
+            return lines;
         }
 
-        private static void InsertNoMove()
+        private static List<string> InsertNoMove(List<string> lines)
         {
             // Insert a line
-            if (TextEditShellCommon.FileLines.Count == 0)
-                TextEditShellCommon.FileLines.Add("");
+            if (lines.Count == 0)
+                lines.Add("");
             else
-                TextEditShellCommon.FileLines.Insert(lineIdx + 1, "");
-            UpdateLineIndex(lineIdx);
+                lines.Insert(lineIdx + 1, "");
+            UpdateLineIndex(lineIdx, lines);
+            return lines;
         }
 
-        private static void RemoveLineNoMove()
+        private static List<string> RemoveLineNoMove(List<string> lines)
         {
             // Check the lines
-            if (TextEditShellCommon.FileLines.Count == 0)
-                return;
+            if (lines.Count == 0)
+                return lines;
 
             // Remove a line
-            TextEditTools.RemoveLine(lineIdx + 1);
-            UpdateLineIndex(lineIdx);
+            lines = TextEditTools.RemoveLine(lines, lineIdx + 1);
+            UpdateLineIndex(lineIdx, lines);
+            return lines;
         }
 
-        private static void Replace()
+        private static List<string> Replace(List<string> lines)
         {
             // Check the lines
-            if (TextEditShellCommon.FileLines.Count == 0)
-                return;
+            if (lines.Count == 0)
+                return lines;
 
             // Now, prompt for the replacement line
             string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the string to find"), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the replacement string"), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
 
             // Do the replacement!
-            TextEditTools.Replace(replacementText, replacedText, lineIdx + 1);
+            lines = TextEditTools.Replace(lines, replacementText, replacedText, lineIdx + 1);
+            return lines;
         }
 
-        private static void ReplaceAll()
+        private static List<string> ReplaceAll(List<string> lines)
         {
             // Check the lines
-            if (TextEditShellCommon.FileLines.Count == 0)
-                return;
+            if (lines.Count == 0)
+                return lines;
 
             // Now, prompt for the replacement line
             string replacementText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the string to find"), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             string replacedText = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the replacement string"), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
 
             // Do the replacement!
-            TextEditTools.Replace(replacementText, replacedText);
+            lines = TextEditTools.Replace(lines, replacementText, replacedText);
+            return lines;
         }
 
-        private static void StatusTextInfo()
+        private static void StatusTextInfo(List<string> lines)
         {
             // Get the status
             status =
-                Translate.DoTranslation("Lines") + $": {TextEditShellCommon.FileLines.Count} | " +
+                Translate.DoTranslation("Lines") + $": {lines.Count} | " +
                 Translate.DoTranslation("Column") + $": {lineColIdx + 1} | " +
                 Translate.DoTranslation("Row") + $": {lineIdx + 1}";
 
             // Check to see if the current character is unprintable
-            if (TextEditShellCommon.FileLines.Count == 0)
+            if (lines.Count == 0)
                 return;
-            if (TextEditShellCommon.FileLines[lineIdx].Length == 0)
+            if (lines[lineIdx].Length == 0)
                 return;
             if (entering)
                 return;
-            var currChar = TextEditShellCommon.FileLines[lineIdx][lineColIdx];
+            var currChar = lines[lineIdx][lineColIdx];
             if (CharManager.IsControlChar(currChar) || currChar == '\0')
                 status += " | " + Translate.DoTranslation("Bin") + $": {(int)currChar}";
         }
 
-        private static void PreviousPage()
+        private static void PreviousPage(List<string> lines)
         {
             int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4;
             int currentPage = lineIdx / lineLinesPerPage;
             int startIndex = lineLinesPerPage * currentPage;
-            if (startIndex > TextEditShellCommon.FileLines.Count)
-                startIndex = TextEditShellCommon.FileLines.Count;
-            UpdateLineIndex(startIndex - 1 < 0 ? 0 : startIndex - 1);
+            if (startIndex > lines.Count)
+                startIndex = lines.Count;
+            UpdateLineIndex(startIndex - 1 < 0 ? 0 : startIndex - 1, lines);
         }
 
-        private static void NextPage()
+        private static void NextPage(List<string> lines)
         {
             int lineLinesPerPage = ConsoleWrapper.WindowHeight - 4;
             int currentPage = lineIdx / lineLinesPerPage;
             int endIndex = lineLinesPerPage * (currentPage + 1);
-            if (endIndex > TextEditShellCommon.FileLines.Count - 1)
-                endIndex = TextEditShellCommon.FileLines.Count - 1;
-            UpdateLineIndex(endIndex);
+            if (endIndex > lines.Count - 1)
+                endIndex = lines.Count - 1;
+            UpdateLineIndex(endIndex, lines);
         }
 
-        private static void Beginning() =>
-            UpdateLineIndex(0);
+        private static void Beginning(List<string> lines) =>
+            UpdateLineIndex(0, lines);
 
-        private static void End() =>
-            UpdateLineIndex(TextEditShellCommon.FileLines.Count - 1);
+        private static void End(List<string> lines) =>
+            UpdateLineIndex(lines.Count - 1, lines);
 
-        private static void UpdateLineIndex(int lnIdx)
+        private static void UpdateLineIndex(int lnIdx, List<string> lines)
         {
             lineIdx = lnIdx;
-            if (lineIdx > TextEditShellCommon.FileLines.Count - 1)
-                lineIdx = TextEditShellCommon.FileLines.Count - 1;
+            if (lineIdx > lines.Count - 1)
+                lineIdx = lines.Count - 1;
             if (lineIdx < 0)
                 lineIdx = 0;
-            UpdateColumnIndex(lineColIdx);
+            UpdateColumnIndex(lineColIdx, lines);
         }
 
-        private static void UpdateColumnIndex(int clIdx)
+        private static void UpdateColumnIndex(int clIdx, List<string> lines)
         {
             lineColIdx = clIdx;
-            if (TextEditShellCommon.FileLines.Count == 0)
+            if (lines.Count == 0)
             {
                 lineColIdx = 0;
                 return;
             }
-            int maxLen = TextEditShellCommon.FileLines[lineIdx].Length;
+            int maxLen = lines[lineIdx].Length;
             maxLen -= entering ? 0 : 1;
             if (lineColIdx > maxLen)
                 lineColIdx = maxLen;
@@ -603,10 +608,11 @@ namespace KS.Files.Editors.TextEdit
                 lineColIdx = 0;
         }
 
-        private static void SwitchEnter()
+        private static List<string> SwitchEnter(List<string> lines)
         {
             entering = !entering;
-            UpdateLineIndex(lineIdx);
+            UpdateLineIndex(lineIdx, lines);
+            return lines;
         }
     }
 }

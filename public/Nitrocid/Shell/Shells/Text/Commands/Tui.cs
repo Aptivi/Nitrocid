@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Text.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextEditInteractive.OpenInteractive(TextEditShellCommon.FileStream.Name, true);
+            TextEditInteractive.OpenInteractive(TextEditShellCommon.FileStream.Name);
             return 0;
         }
     }

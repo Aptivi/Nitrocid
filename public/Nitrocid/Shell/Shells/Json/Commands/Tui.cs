@@ -17,8 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.Files.Editors.JsonShell;
 using KS.Files.Editors.TextEdit;
+using KS.Files.Operations;
 using KS.Shell.ShellBase.Commands;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace KS.Shell.Shells.Json.Commands
 {
@@ -33,7 +37,14 @@ namespace KS.Shell.Shells.Json.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            TextEditInteractive.OpenInteractive(JsonShellCommon.FileStream.Name);
+            string path = JsonShellCommon.FileStream.Name;
+            List<string> lines = Reading.ReadAllLinesNoBlock(path).ToList();
+            TextEditInteractive.OpenInteractive(JsonShellCommon.FileStream.Name, ref lines);
+
+            // Save the changes
+            JsonTools.CloseTextFile();
+            Writing.WriteAllLinesNoBlock(path, lines.ToArray());
+            JsonTools.OpenJsonFile(path);
             return 0;
         }
     }

@@ -579,5 +579,448 @@ namespace KS.Files.Editors.TextEdit
             }
         }
 
+        /// <summary>
+        /// Adds a new line to the current text
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="Content">New line content</param>
+        public static List<string> AddNewLine(List<string> lines, string Content)
+        {
+            if (lines is not null)
+            {
+                lines.Add(Content);
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+            return lines;
+        }
+
+        /// <summary>
+        /// Adds the new lines to the current text
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="Lines">New lines</param>
+        public static List<string> AddNewLines(List<string> lines, string[] Lines)
+        {
+            if (lines is not null)
+            {
+                foreach (string Line in Lines)
+                    lines.Add(Line);
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+            return lines;
+        }
+
+        /// <summary>
+        /// Removes a line from the current text
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="LineNumber">The line number to remove</param>
+        public static List<string> RemoveLine(List<string> lines, int LineNumber)
+        {
+            if (lines is not null)
+            {
+                int LineIndex = LineNumber - 1;
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "Old file lines: {0}", lines.Count);
+                if (LineNumber <= lines.Count)
+                {
+                    lines.RemoveAt(LineIndex);
+                    DebugWriter.WriteDebug(DebugLevel.I, "New file lines: {0}", lines.Count);
+                }
+                else
+                {
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                }
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+            return lines;
+        }
+
+        /// <summary>
+        /// Replaces every occurence of a string with the replacement using regular expressions
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="From">Regular expression to be replaced</param>
+        /// <param name="With">String to replace with</param>
+        public static List<string> ReplaceRegex(List<string> lines, string From, string With)
+        {
+            if (string.IsNullOrEmpty(From))
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
+            if (lines is not null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
+                for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
+                    lines[LineIndex] = Regex.Replace(lines[LineIndex], From, With);
+                }
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+            return lines;
+        }
+
+        /// <summary>
+        /// Replaces every occurence of a string with the replacement using regular expressions
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="From">Regular expression to be replaced</param>
+        /// <param name="With">String to replace with</param>
+        /// <param name="LineNumber">The line number</param>
+        public static List<string> ReplaceRegex(List<string> lines, string From, string With, int LineNumber)
+        {
+            if (string.IsNullOrEmpty(From))
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
+            if (lines is not null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                long LineIndex = LineNumber - 1;
+                if (LineNumber <= lines.Count)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
+                    lines[(int)LineIndex] = Regex.Replace(lines[(int)LineIndex], From, With);
+                }
+                else
+                {
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                }
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+            return lines;
+        }
+
+        /// <summary>
+        /// Replaces every occurence of a string with the replacement
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="From">String to be replaced</param>
+        /// <param name="With">String to replace with</param>
+        public static List<string> Replace(List<string> lines, string From, string With)
+        {
+            if (string.IsNullOrEmpty(From))
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
+            if (lines is not null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}", From, With);
+                for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1);
+                    lines[LineIndex] = lines[LineIndex].Replace(From, With);
+                }
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+            return lines;
+        }
+
+        /// <summary>
+        /// Replaces every occurence of a string with the replacement
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="From">String to be replaced</param>
+        /// <param name="With">String to replace with</param>
+        /// <param name="LineNumber">The line number</param>
+        public static List<string> Replace(List<string> lines, string From, string With, int LineNumber)
+        {
+            if (string.IsNullOrEmpty(From))
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(From));
+            if (lines is not null)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Source: {0}, Target: {1}, Line Number: {2}", From, With, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                long LineIndex = LineNumber - 1;
+                if (LineNumber <= lines.Count)
+                {
+                    DebugWriter.WriteDebug(DebugLevel.I, "Replacing \"{0}\" with \"{1}\" in line {2}", From, With, LineIndex + 1L);
+                    lines[(int)LineIndex] = lines[(int)LineIndex].Replace(From, With);
+                }
+                else
+                {
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                }
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+            return lines;
+        }
+
+        /// <summary>
+        /// Deletes a word or a phrase from the line
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="Word">The word or phrase</param>
+        /// <param name="LineNumber">The line number</param>
+        public static List<string> DeleteWord(List<string> lines, string Word, int LineNumber)
+        {
+            if (string.IsNullOrEmpty(Word))
+                throw new KernelException(KernelExceptionType.TextEditor, nameof(Word));
+            if (lines is not null)
+            {
+                int LineIndex = LineNumber - 1;
+                DebugWriter.WriteDebug(DebugLevel.I, "Word/Phrase: {0}, Line: {1}", Word, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                if (LineNumber <= lines.Count)
+                {
+                    lines[LineIndex] = lines[LineIndex].Replace(Word, "");
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, lines.Count);
+                }
+                else
+                {
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                }
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+            return lines;
+        }
+
+        /// <summary>
+        /// Deletes a character from the line
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="CharNumber">The character number</param>
+        /// <param name="LineNumber">The line number</param>
+        public static List<string> DeleteChar(List<string> lines, int CharNumber, int LineNumber)
+        {
+            if (lines is not null)
+            {
+                int LineIndex = LineNumber - 1;
+                int CharIndex = CharNumber - 1;
+                DebugWriter.WriteDebug(DebugLevel.I, "Char number: {0}, Line: {1}", CharNumber, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got char index: {0}", CharIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                if (LineNumber <= lines.Count)
+                {
+                    lines[LineIndex] = lines[LineIndex].Remove(CharIndex, 1);
+                    DebugWriter.WriteDebug(DebugLevel.I, "Removed {0}. Result: {1}", LineIndex, lines[LineIndex]);
+                }
+                else
+                {
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                }
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+            return lines;
+        }
+
+        /// <summary>
+        /// Queries a character in all lines.
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="Char">The character to query</param>
+        public static List<(int, int[])> QueryChar(List<string> lines, char Char)
+        {
+            if (lines is not null)
+            {
+                var Lines = new List<(int, int[])>();
+                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}", Char);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
+                {
+                    List<int> charIndexes = new();
+                    for (int CharIndex = 0; CharIndex <= lines[LineIndex].Length - 1; CharIndex++)
+                    {
+                        if (lines[LineIndex][CharIndex] == Char)
+                            charIndexes.Add(CharIndex);
+                    }
+                    Lines.Add((LineIndex, charIndexes.ToArray()));
+                }
+                return Lines;
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+        }
+
+        /// <summary>
+        /// Queries a character in specific line.
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="Char">The character to query</param>
+        /// <param name="LineNumber">The line number</param>
+        public static List<int> QueryChar(List<string> lines, char Char, int LineNumber)
+        {
+            if (lines is not null)
+            {
+                int LineIndex = LineNumber - 1;
+                var Results = new List<int>();
+                DebugWriter.WriteDebug(DebugLevel.I, "Char: {0}, Line: {1}", Char, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                if (LineNumber <= lines.Count)
+                {
+                    for (int CharIndex = 0; CharIndex <= lines[LineIndex].Length - 1; CharIndex++)
+                    {
+                        if (lines[LineIndex][CharIndex] == Char)
+                            Results.Add(CharIndex);
+                    }
+                }
+                else
+                {
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                }
+                return Results;
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+        }
+
+        /// <summary>
+        /// Queries a word in all lines.
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="Word">The word to query</param>
+        public static List<(int, int[])> QueryWord(List<string> lines, string Word)
+        {
+            if (lines is not null)
+            {
+                var Lines = new List<(int, int[])>();
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
+                {
+                    var Words = lines[LineIndex].Split(' ');
+                    List<int> wordIndexes = new();
+                    for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
+                    {
+                        if (Words[WordIndex].ToLower().Contains(Word.ToLower()))
+                            wordIndexes.Add(WordIndex);
+                    }
+                    Lines.Add((LineIndex, wordIndexes.ToArray()));
+                }
+                return Lines;
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+        }
+
+        /// <summary>
+        /// Queries a word in specific line.
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="Word">The word to query</param>
+        /// <param name="LineNumber">The line number</param>
+        public static List<int> QueryWord(List<string> lines, string Word, int LineNumber)
+        {
+            if (lines is not null)
+            {
+                int LineIndex = LineNumber - 1;
+                var Results = new List<int>();
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                if (LineNumber <= lines.Count)
+                {
+                    var Words = lines[LineIndex].Split(' ');
+                    for (int WordIndex = 0; WordIndex <= Words.Length - 1; WordIndex++)
+                    {
+                        if (Words[WordIndex].ToLower().Contains(Word.ToLower()))
+                            Results.Add(WordIndex);
+                    }
+                }
+                else
+                {
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                }
+                return Results;
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+        }
+
+        /// <summary>
+        /// Queries a word in all lines using regular expressions
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="Word">The regular expression to query</param>
+        public static List<(int, int[])> QueryWordRegex(List<string> lines, string Word)
+        {
+            if (lines is not null)
+            {
+                var Lines = new List<(int, int[])>();
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}", Word);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                for (int LineIndex = 0; LineIndex <= lines.Count - 1; LineIndex++)
+                {
+                    var LineMatches = Regex.Matches(lines[LineIndex], Word);
+                    List<int> wordIndexes = new();
+                    for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
+                        wordIndexes.Add(MatchIndex);
+                    Lines.Add((LineIndex, wordIndexes.ToArray()));
+                }
+                return Lines;
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+        }
+
+        /// <summary>
+        /// Queries a word in specific line using regular expressions
+        /// </summary>
+        /// <param name="lines">List of text lines</param>
+        /// <param name="Word">The regular expression to query</param>
+        /// <param name="LineNumber">The line number</param>
+        public static List<int> QueryWordRegex(List<string> lines, string Word, int LineNumber)
+        {
+            if (lines is not null)
+            {
+                int LineIndex = LineNumber - 1;
+                var Results = new List<int>();
+                DebugWriter.WriteDebug(DebugLevel.I, "Word: {0}, Line: {1}", Word, LineNumber);
+                DebugWriter.WriteDebug(DebugLevel.I, "Got line index: {0}", LineIndex);
+                DebugWriter.WriteDebug(DebugLevel.I, "File lines: {0}", lines.Count);
+                if (LineNumber <= lines.Count)
+                {
+                    var LineMatches = Regex.Matches(lines[LineIndex], Word);
+                    for (int MatchIndex = 0; MatchIndex <= LineMatches.Count - 1; MatchIndex++)
+                        Results.Add(MatchIndex);
+                }
+                else
+                {
+                    throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("The specified line number may not be larger than the last file line number."));
+                }
+                return Results;
+            }
+            else
+            {
+                throw new KernelException(KernelExceptionType.TextEditor, Translate.DoTranslation("Can't perform this operation on a null lines list."));
+            }
+        }
+
     }
 }

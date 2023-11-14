@@ -46,7 +46,7 @@ namespace KS.Files.Editors.TextEdit
         /// <summary>
         /// Action to bind with this keybinding
         /// </summary>
-        public Action Action { get; }
+        public Func<List<string>, List<string>> Action { get; }
 
         /// <summary>
         /// Makes a new instance of the text editor binding
@@ -57,7 +57,7 @@ namespace KS.Files.Editors.TextEdit
         /// <param name="action">Action to bind with this keybinding</param>
         /// <param name="localizable">Is the binding localizable?</param>
         /// <exception cref="KernelException"></exception>
-        internal TextEditorBinding(string name, ConsoleKey key, ConsoleModifiers keyModifiers, Action action, bool localizable = false)
+        internal TextEditorBinding(string name, ConsoleKey key, ConsoleModifiers keyModifiers, Func<List<string>, List<string>> action, bool localizable = false)
         {
             Name = name;
             Key = key;
