@@ -124,6 +124,7 @@ namespace KS.ConsoleBase.Interactive
                     DebugWriter.WriteDebug(DebugLevel.E, "Interactive TUI {0} crashed! {1}", interactiveTui.GetType().Name, ex.Message);
                     DebugWriter.WriteDebugStackTrace(ex);
                 }
+                ScreenTools.UnsetCurrent(screen);
 
                 // Clear the console to clean up
                 KernelColorTools.LoadBack();
