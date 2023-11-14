@@ -365,22 +365,22 @@ namespace KS.ConsoleBase.Interactive
                                 break;
                             }
                         }
-                    }
 
-                    // Render an entry
-                    var finalForeColor = finalIndex == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemForeColor : BaseInteractiveTui.PaneItemForeColor;
-                    var finalBackColor = finalIndex == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemBackColor : BaseInteractiveTui.PaneItemBackColor;
-                    int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
-                    int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
-                    finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
-                    string text =
-                        $"{CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1)}" +
-                        $"{finalForeColor.VTSequenceForeground}" +
-                        $"{finalBackColor.VTSequenceBackground}" +
-                        finalEntry +
-                        new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)) +
-                        $"{BaseInteractiveTui.PaneItemBackColor.VTSequenceBackground}";
-                    builder.Append(text);
+                        // Render an entry
+                        var finalForeColor = finalIndex == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemForeColor : BaseInteractiveTui.PaneItemForeColor;
+                        var finalBackColor = finalIndex == paneCurrentSelection - 1 ? BaseInteractiveTui.PaneSelectedItemBackColor : BaseInteractiveTui.PaneItemBackColor;
+                        int left = paneNum == 2 ? SeparatorHalfConsoleWidth + 1 : 1;
+                        int top = SeparatorMinimumHeightInterior + finalIndex - startIndex;
+                        finalEntry = interactiveTui.GetEntryFromItem(dataObject).Truncate(SeparatorHalfConsoleWidthInterior - 4);
+                        string text =
+                            $"{CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1)}" +
+                            $"{finalForeColor.VTSequenceForeground}" +
+                            $"{finalBackColor.VTSequenceBackground}" +
+                            finalEntry +
+                            new string(' ', SeparatorHalfConsoleWidthInterior - finalEntry.Length - (ConsoleWrapper.WindowWidth % 2 != 0 && paneNum == 2 ? 0 : 1)) +
+                            $"{BaseInteractiveTui.PaneItemBackColor.VTSequenceBackground}";
+                        builder.Append(text);
+                    }
                 }
 
                 // Render the vertical bar
