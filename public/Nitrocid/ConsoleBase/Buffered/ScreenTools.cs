@@ -64,6 +64,7 @@ namespace KS.ConsoleBase.Buffered
             string buffer = screen.GetBuffer();
             if (string.IsNullOrEmpty(buffer))
                 return;
+            ConsoleWrapper.CursorVisible = false;
             TextWriterColor.WritePlain(buffer, false);
         }
 
