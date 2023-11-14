@@ -539,6 +539,12 @@ namespace KS.Drivers.Filesystem
         byte[] ReadAllBytes(string path);
 
         /// <summary>
+        /// Reads all the bytes without blocking
+        /// </summary>
+        /// <param name="path">Path to the file</param>
+        byte[] ReadAllBytesNoBlock(string path);
+
+        /// <summary>
         /// Writes the contents of a file and writes it to the array. This is blocking and will put a lock on the file until read.
         /// </summary>
         /// <param name="filename">Full path to file</param>
@@ -572,6 +578,13 @@ namespace KS.Drivers.Filesystem
         /// <param name="path">Path to the file</param>
         /// <param name="contents">File contents to write to</param>
         void WriteAllBytes(string path, byte[] contents);
+
+        /// <summary>
+        /// Writes all the bytes without blocking
+        /// </summary>
+        /// <param name="path">Path to the file</param>
+        /// <param name="contents">File contents to write to</param>
+        void WriteAllBytesNoBlock(string path, byte[] contents);
 
         /// <summary>
         /// Clears the contents of a file

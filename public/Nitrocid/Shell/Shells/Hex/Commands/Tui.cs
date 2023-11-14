@@ -33,7 +33,7 @@ namespace KS.Shell.Shells.Hex.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            HexEditInteractive.OpenInteractive(HexEditShellCommon.FileStream.Name, true);
+            HexEditInteractive.OpenInteractive(HexEditShellCommon.FileStream.Name);
             return 0;
         }
     }

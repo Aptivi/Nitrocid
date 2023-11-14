@@ -126,7 +126,7 @@ namespace KS.Files.Editors.SqlEdit
             }
             catch (Exception ex)
             {
-                DebugWriter.WriteDebug(DebugLevel.E, "Saving file failed: {0}", ex.Message);
+                DebugWriter.WriteDebug(DebugLevel.E, "SQL command failed: {0}", ex.Message);
                 DebugWriter.WriteDebugStackTrace(ex);
                 return false;
             }

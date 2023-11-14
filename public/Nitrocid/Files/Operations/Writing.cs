@@ -90,5 +90,17 @@ namespace KS.Files.Operations
                 throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
             DriverHandler.CurrentFilesystemDriverLocal.WriteAllBytes(path, contents);
         }
+
+        /// <summary>
+        /// Writes all the bytes
+        /// </summary>
+        /// <param name="path">Path to the file</param>
+        /// <param name="contents">File contents to write to</param>
+        public static void WriteAllBytesNoBlock(string path, byte[] contents)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemWrite))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+            DriverHandler.CurrentFilesystemDriverLocal.WriteAllBytesNoBlock(path, contents);
+        }
     }
 }

@@ -91,6 +91,17 @@ namespace KS.Files.Operations
         }
 
         /// <summary>
+        /// Reads all the bytes
+        /// </summary>
+        /// <param name="path">Path to the file</param>
+        public static byte[] ReadAllBytesNoBlock(string path)
+        {
+            if (!PrivacyConsentTools.ConsentPermission(ConsentedPermissionType.FilesystemRead))
+                throw new KernelException(KernelExceptionType.Filesystem, Translate.DoTranslation("Access to the path is denied due to no consent."));
+            return DriverHandler.CurrentFilesystemDriverLocal.ReadAllBytesNoBlock(path);
+        }
+
+        /// <summary>
         /// Reads all the characters in the stream until the end and seeks the stream to the beginning, if possible.
         /// </summary>
         /// <param name="stream">The stream reader</param>

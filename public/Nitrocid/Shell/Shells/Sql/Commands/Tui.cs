@@ -18,6 +18,8 @@
 //
 
 using KS.Files.Editors.HexEdit;
+using KS.Files.Editors.SqlEdit;
+using KS.Files.Operations;
 using KS.Shell.ShellBase.Commands;
 
 namespace KS.Shell.Shells.Sql.Commands
@@ -33,7 +35,14 @@ namespace KS.Shell.Shells.Sql.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            HexEditInteractive.OpenInteractive(SqlShellCommon.DatabasePath);
+            byte[] bytes = null;
+            string path = SqlShellCommon.DatabasePath;
+            HexEditInteractive.OpenInteractive(path, ref bytes);
+
+            // Save the results
+            SqlEditTools.SqlEdit_CloseSqlFile();
+            Writing.WriteAllBytesNoBlock(path, bytes);
+            SqlEditTools.SqlEdit_OpenSqlFile(path);
             return 0;
         }
     }

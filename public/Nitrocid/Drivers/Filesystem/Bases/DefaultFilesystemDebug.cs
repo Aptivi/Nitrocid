@@ -439,6 +439,14 @@ namespace KS.Drivers.Filesystem.Bases
             return result;
         }
 
+        public override byte[] ReadAllBytesNoBlock(string path)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(ReadAllBytesNoBlock)}({path}) entry");
+            var result = base.ReadAllBytesNoBlock(path);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(ReadAllBytesNoBlock)}({path}) exit with result length {result.Length}");
+            return result;
+        }
+
         public override string ReadToEndAndSeek(ref StreamReader stream)
         {
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(ReadToEndAndSeek)}({nameof(stream)}) entry");
@@ -551,11 +559,18 @@ namespace KS.Drivers.Filesystem.Bases
             DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WriteAllBytes)}({path}, byte[{contents.Length}]) exit");
         }
 
+        public override void WriteAllBytesNoBlock(string path, byte[] contents)
+        {
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WriteAllBytesNoBlock)}({path}, byte[{contents.Length}]) entry");
+            base.WriteAllBytesNoBlock(path, contents);
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WriteAllBytesNoBlock)}({path}, byte[{contents.Length}]) exit");
+        }
+
         public override void WriteAllLinesNoBlock(string path, string[] contents)
         {
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WriteAllLinesNoBlock)}({path}, byte[{contents.Length}]) entry");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WriteAllLinesNoBlock)}({path}, string[{contents.Length}]) entry");
             base.WriteAllLinesNoBlock(path, contents);
-            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WriteAllLinesNoBlock)}({path}, byte[{contents.Length}]) exit");
+            DebugWriter.WriteDebug(DebugLevel.I, $"{nameof(WriteAllLinesNoBlock)}({path}, string[{contents.Length}]) exit");
         }
 
         public override void WriteAllTextNoBlock(string path, string contents)

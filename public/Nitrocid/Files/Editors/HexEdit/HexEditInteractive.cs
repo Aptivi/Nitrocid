@@ -25,6 +25,7 @@ using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Interactive;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Files.Operations;
 using KS.Files.Operations.Printing;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
@@ -51,7 +52,7 @@ namespace KS.Files.Editors.HexEdit
         private static int byteIdx = 0;
         private static readonly HexEditorBinding[] bindings = new[]
         {
-            new HexEditorBinding( /* Localizable */ "Exit", ConsoleKey.Escape, default, () => bail = true, true),
+            new HexEditorBinding( /* Localizable */ "Exit", ConsoleKey.Escape, default, (b) => { bail = true; return b; }, true),
             new HexEditorBinding( /* Localizable */ "Keybindings", ConsoleKey.K, default, RenderKeybindingsBox, true),
             new HexEditorBinding( /* Localizable */ "Insert", ConsoleKey.F1, default, Insert, true),
             new HexEditorBinding( /* Localizable */ "Remove", ConsoleKey.F2, default, Remove, true),
@@ -59,14 +60,6 @@ namespace KS.Files.Editors.HexEdit
             new HexEditorBinding( /* Localizable */ "Replace All", ConsoleKey.F3, ConsoleModifiers.Shift, ReplaceAll, true),
             new HexEditorBinding( /* Localizable */ "Replace All What", ConsoleKey.F3, ConsoleModifiers.Shift | ConsoleModifiers.Alt, ReplaceAllWhat, true),
             new HexEditorBinding( /* Localizable */ "Number Info", ConsoleKey.F4, default, NumInfo, true),
-            new HexEditorBinding( /* Localizable */ "Left", ConsoleKey.LeftArrow, default, MoveBackward, true),
-            new HexEditorBinding( /* Localizable */ "Right", ConsoleKey.RightArrow, default, MoveForward, true),
-            new HexEditorBinding( /* Localizable */ "Up", ConsoleKey.UpArrow, default, MoveUp, true),
-            new HexEditorBinding( /* Localizable */ "Down", ConsoleKey.DownArrow, default, MoveDown, true),
-            new HexEditorBinding( /* Localizable */ "Previous page", ConsoleKey.PageUp, default, PreviousPage, true),
-            new HexEditorBinding( /* Localizable */ "Next page", ConsoleKey.PageDown, default, NextPage, true),
-            new HexEditorBinding( /* Localizable */ "Beginning", ConsoleKey.Home, default, Beginning, true),
-            new HexEditorBinding( /* Localizable */ "End", ConsoleKey.End, default, End, true),
         };
 
         /// <summary>
@@ -74,22 +67,21 @@ namespace KS.Files.Editors.HexEdit
         /// </summary>
         /// <param name="file">Target file to open</param>
         public static void OpenInteractive(string file) =>
-            OpenInteractive(file, false);
+            OpenInteractive(file, ref HexEditShellCommon.FileBytes);
 
         /// <summary>
         /// Opens an interactive hex editor
         /// </summary>
         /// <param name="file">Target file to open</param>
-        /// <param name="fromShell">Whether it's open from the hex shell</param>
-        internal static void OpenInteractive(string file, bool fromShell)
+        /// <param name="bytes">Resulting byte array</param>
+        internal static void OpenInteractive(string file, ref byte[] bytes)
         {
             // Check to see if the file exists
             if (!Checking.FileExists(file))
                 throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("File not found.") + $" {file}");
 
-            // Open the file
-            if (!fromShell && !HexEditTools.OpenBinaryFile(file))
-                throw new KernelException(KernelExceptionType.HexEditor, Translate.DoTranslation("Failed to open the binary file.") + $" {file}");
+            // Try to open the file
+            bytes ??= Reading.ReadAllBytesNoBlock(file);
 
             // Set status
             status = Translate.DoTranslation("Ready");
@@ -112,7 +104,7 @@ namespace KS.Files.Editors.HexEdit
                     RenderHexViewBox(ref screen);
 
                     // Now, render the visual hex with the current selection
-                    RenderContentsInHexWithSelection(byteIdx, ref screen);
+                    RenderContentsInHexWithSelection(byteIdx, ref screen, bytes);
 
                     // Render the status
                     RenderStatus(ref screen);
@@ -120,7 +112,7 @@ namespace KS.Files.Editors.HexEdit
                     // Wait for a keypress
                     ScreenTools.Render(screen);
                     var keypress = Input.DetectKeypress();
-                    HandleKeypress(keypress);
+                    HandleKeypress(keypress, ref bytes);
 
                     // Reset, in case selection changed
                     screen.RemoveBufferedParts();
@@ -135,11 +127,8 @@ namespace KS.Files.Editors.HexEdit
             bail = false;
             ScreenTools.UnsetCurrent(screen);
 
-
             // Close the file and clean up
             KernelColorTools.LoadBack();
-            if (!fromShell)
-                HexEditTools.CloseBinaryFile();
         }
 
         private static void RenderKeybindings(ref Screen screen)
@@ -226,10 +215,10 @@ namespace KS.Files.Editors.HexEdit
             screen.AddBufferedPart(part);
         }
 
-        private static void RenderContentsInHexWithSelection(int byteIdx, ref Screen screen)
+        private static void RenderContentsInHexWithSelection(int byteIdx, ref Screen screen, byte[] bytes)
         {
             // First, update the status
-            StatusNumInfo();
+            StatusNumInfo(bytes);
 
             // Then, render the contents with the selection indicator
             var part = new ScreenPart();
@@ -243,11 +232,11 @@ namespace KS.Files.Editors.HexEdit
                 int endIndex = byteLinesPerPage * (currentPage + 1);
                 int startByte = (startIndex * 16) + 1;
                 int endByte = endIndex * 16;
-                if (startByte > HexEditShellCommon.FileBytes.Length)
-                    startByte = HexEditShellCommon.FileBytes.Length;
-                if (endByte > HexEditShellCommon.FileBytes.Length)
-                    endByte = HexEditShellCommon.FileBytes.Length;
-                string rendered = FileContentPrinter.RenderContentsInHex(byteIdx + 1, startByte, endByte, HexEditShellCommon.FileBytes);
+                if (startByte > bytes.Length)
+                    startByte = bytes.Length;
+                if (endByte > bytes.Length)
+                    endByte = bytes.Length;
+                string rendered = FileContentPrinter.RenderContentsInHex(byteIdx + 1, startByte, endByte, bytes);
 
                 // Render the box
                 builder.Append(
@@ -260,23 +249,52 @@ namespace KS.Files.Editors.HexEdit
             screen.AddBufferedPart(part);
         }
 
-        private static void HandleKeypress(ConsoleKeyInfo key)
+        private static void HandleKeypress(ConsoleKeyInfo key, ref byte[] bytes)
         {
             // Check to see if we have this binding
             if (!bindings.Any((heb) => heb.Key == key.Key && heb.KeyModifiers == key.Modifiers))
+            {
+                switch (key.Key)
+                {
+                    case ConsoleKey.LeftArrow:
+                        MoveBackward();
+                        return;
+                    case ConsoleKey.RightArrow:
+                        MoveForward(bytes);
+                        return;
+                    case ConsoleKey.UpArrow:
+                        MoveUp();
+                        return;
+                    case ConsoleKey.DownArrow:
+                        MoveDown(bytes);
+                        return;
+                    case ConsoleKey.PageUp:
+                        PreviousPage(bytes);
+                        return;
+                    case ConsoleKey.PageDown:
+                        NextPage(bytes);
+                        return;
+                    case ConsoleKey.Home:
+                        Beginning();
+                        return;
+                    case ConsoleKey.End:
+                        End(bytes);
+                        return;
+                }
                 return;
+            }
 
             // Now, get the first binding and execute it.
             var bind = bindings
                 .First((heb) => heb.Key == key.Key && heb.KeyModifiers == key.Modifiers);
-            bind.Action();
+            bytes = bind.Action(bytes);
         }
 
-        private static void RenderKeybindingsBox()
+        private static byte[] RenderKeybindingsBox(byte[] bytes)
         {
             // Show the available keys list
             if (bindings.Length == 0)
-                return;
+                return bytes;
 
             // User needs an infobox that shows all available keys
             string section = Translate.DoTranslation("Available keys");
@@ -290,6 +308,7 @@ namespace KS.Files.Editors.HexEdit
                 $"{new string('=', section.Length)}{CharManager.NewLine}{CharManager.NewLine}" +
                 $"{string.Join('\n', bindingRepresentations)}"
             , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            return bytes;
         }
 
         private static string GetBindingKeyShortcut(HexEditorBinding bind, bool mark = true)
@@ -306,11 +325,11 @@ namespace KS.Files.Editors.HexEdit
                 byteIdx = 0;
         }
 
-        private static void MoveForward()
+        private static void MoveForward(byte[] bytes)
         {
             byteIdx++;
-            if (byteIdx > HexEditShellCommon.FileBytes.Length - 1)
-                byteIdx = HexEditShellCommon.FileBytes.Length - 1;
+            if (byteIdx > bytes.Length - 1)
+                byteIdx = bytes.Length - 1;
         }
 
         private static void MoveUp()
@@ -320,14 +339,14 @@ namespace KS.Files.Editors.HexEdit
                 byteIdx = 0;
         }
 
-        private static void MoveDown()
+        private static void MoveDown(byte[] bytes)
         {
             byteIdx += 16;
-            if (byteIdx > HexEditShellCommon.FileBytes.Length - 1)
-                byteIdx = HexEditShellCommon.FileBytes.Length - 1;
+            if (byteIdx > bytes.Length - 1)
+                byteIdx = bytes.Length - 1;
         }
 
-        private static void Insert()
+        private static byte[] Insert(byte[] bytes)
         {
             // Prompt and parse the number
             byte byteNum = default;
@@ -336,16 +355,20 @@ namespace KS.Files.Editors.HexEdit
                 (byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum)))
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             else
-                HexEditTools.AddNewByte(byteNum, byteIdx + 1);
+                bytes = HexEditTools.AddNewByte(bytes, byteNum, byteIdx + 1);
+            return bytes;
         }
 
-        private static void Remove() =>
-            HexEditTools.DeleteByte(byteIdx + 1);
+        private static byte[] Remove(byte[] bytes)
+        {
+            bytes = HexEditTools.DeleteByte(bytes, byteIdx + 1);
+            return bytes;
+        }
 
-        private static void Replace()
+        private static byte[] Replace(byte[] bytes)
         {
             // Get the current byte number and its hex
-            byte byteNum = HexEditShellCommon.FileBytes[byteIdx];
+            byte byteNum = bytes[byteIdx];
             string byteNumHex = byteNum.ToString("X2");
 
             // Now, prompt for the replacement byte
@@ -353,19 +376,17 @@ namespace KS.Files.Editors.HexEdit
             string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
-            {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-                return;
-            }
 
             // Do the replacement!
-            HexEditTools.Replace(byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
+            bytes = HexEditTools.Replace(bytes, byteNum, byteNumReplaced, byteIdx + 1, byteIdx + 1);
+            return bytes;
         }
 
-        private static void ReplaceAll()
+        private static byte[] ReplaceAll(byte[] bytes)
         {
             // Get the current byte number and its hex
-            byte byteNum = HexEditShellCommon.FileBytes[byteIdx];
+            byte byteNum = bytes[byteIdx];
             string byteNumHex = byteNum.ToString("X2");
 
             // Now, prompt for the replacement byte
@@ -373,45 +394,38 @@ namespace KS.Files.Editors.HexEdit
             string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
-            {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-                return;
-            }
 
             // Do the replacement!
-            HexEditTools.Replace(byteNum, byteNumReplaced);
+            bytes = HexEditTools.Replace(bytes, byteNum, byteNumReplaced);
+            return bytes;
         }
 
-        private static void ReplaceAllWhat()
+        private static byte[] ReplaceAllWhat(byte[] bytes)
         {
             // Prompt and parse the number
             byte byteNum = default;
             string byteNumHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to be replaced.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
             if (byteNumHex.Length != 2 ||
                 (byteNumHex.Length == 2 && !byte.TryParse(byteNumHex, NumberStyles.AllowHexSpecifier, null, out byteNum)))
-            {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-                return;
-            }
 
             // Now, prompt for the replacement byte
             byte byteNumReplaced = default;
             string byteNumReplacedHex = InfoBoxInputColor.WriteInfoBoxInputColorBack(Translate.DoTranslation("Write the byte number with the hexadecimal value to replace {0} with.") + " 00 -> FF.", BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor, byteNumHex);
             if (byteNumReplacedHex.Length != 2 ||
                 (byteNumReplacedHex.Length == 2 && !byte.TryParse(byteNumReplacedHex, NumberStyles.AllowHexSpecifier, null, out byteNumReplaced)))
-            {
                 InfoBoxColor.WriteInfoBoxColorBack(Translate.DoTranslation("The byte number specified is not valid."), BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
-                return;
-            }
 
             // Do the replacement!
-            HexEditTools.Replace(byteNum, byteNumReplaced);
+            bytes = HexEditTools.Replace(bytes, byteNum, byteNumReplaced);
+            return bytes;
         }
 
-        private static void NumInfo()
+        private static byte[] NumInfo(byte[] bytes)
         {
             // Get the hex number in different formats
-            byte byteNum = HexEditShellCommon.FileBytes[byteIdx];
+            byte byteNum = bytes[byteIdx];
             string byteNumHex = byteNum.ToString("X2");
             string byteNumOctal = Convert.ToString(byteNum, 8);
             string byteNumNumber = Convert.ToString(byteNum);
@@ -428,12 +442,13 @@ namespace KS.Files.Editors.HexEdit
                 Translate.DoTranslation("Number") + $": {byteNumNumber}" + CharManager.NewLine +
                 Translate.DoTranslation("Binary") + $": {byteNumBinary}"
                 , BaseInteractiveTui.BoxForegroundColor, BaseInteractiveTui.BoxBackgroundColor);
+            return bytes;
         }
 
-        private static void StatusNumInfo()
+        private static void StatusNumInfo(byte[] bytes)
         {
             // Get the hex number in different formats
-            byte byteNum = HexEditShellCommon.FileBytes[byteIdx];
+            byte byteNum = bytes[byteIdx];
             string byteNumHex = byteNum.ToString("X2");
             string byteNumOctal = Convert.ToString(byteNum, 8);
             string byteNumNumber = Convert.ToString(byteNum);
@@ -447,34 +462,34 @@ namespace KS.Files.Editors.HexEdit
                 Translate.DoTranslation("Binary") + $": {byteNumBinary}";
         }
 
-        private static void PreviousPage()
+        private static void PreviousPage(byte[] bytes)
         {
             int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
             int currentSelection = byteIdx / 16;
             int currentPage = currentSelection / byteLinesPerPage;
             int startIndex = byteLinesPerPage * currentPage;
             int startByte = startIndex * 16;
-            if (startByte > HexEditShellCommon.FileBytes.Length)
-                startByte = HexEditShellCommon.FileBytes.Length;
+            if (startByte > bytes.Length)
+                startByte = bytes.Length;
             byteIdx = startByte - 1 < 0 ? 0 : startByte - 1;
         }
 
-        private static void NextPage()
+        private static void NextPage(byte[] bytes)
         {
             int byteLinesPerPage = ConsoleWrapper.WindowHeight - 4;
             int currentSelection = byteIdx / 16;
             int currentPage = currentSelection / byteLinesPerPage;
             int endIndex = byteLinesPerPage * (currentPage + 1);
             int startByte = endIndex * 16;
-            if (startByte > HexEditShellCommon.FileBytes.Length - 1)
-                startByte = HexEditShellCommon.FileBytes.Length - 1;
+            if (startByte > bytes.Length - 1)
+                startByte = bytes.Length - 1;
             byteIdx = startByte;
         }
 
         private static void Beginning() =>
             byteIdx = 0;
 
-        private static void End() =>
-            byteIdx = HexEditShellCommon.FileBytes.Length - 1;
+        private static void End(byte[] bytes) =>
+            byteIdx = bytes.Length - 1;
     }
 }

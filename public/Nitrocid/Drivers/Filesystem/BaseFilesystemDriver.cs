@@ -1353,6 +1353,21 @@ namespace KS.Drivers.Filesystem
         }
 
         /// <inheritdoc/>
+        public virtual byte[] ReadAllBytesNoBlock(string path)
+        {
+            FS.ThrowOnInvalidPath(path);
+
+            // Read all the bytes, bypassing the restrictions.
+            path = FS.NeutralizePath(path);
+            long size = new FileSystemEntry(path).FileSize;
+            var AllBytesList = new byte[size];
+            var FOpen = File.Open(path, FileMode.Open, FileAccess.Read, FileShare.ReadWrite);
+            FOpen.Read(AllBytesList, 0, (int)size);
+            FOpen.Close();
+            return AllBytesList;
+        }
+
+        /// <inheritdoc/>
         public virtual string[] ReadAllLinesNoBlock(string path)
         {
             FS.ThrowOnInvalidPath(path);
@@ -1450,6 +1465,18 @@ namespace KS.Drivers.Filesystem
             FS.ThrowOnInvalidPath(filename);
             filename = FS.NeutralizePath(filename);
             File.WriteAllText(filename, contents);
+        }
+
+        /// <inheritdoc/>
+        public virtual void WriteAllBytesNoBlock(string path, byte[] contents)
+        {
+            FS.ThrowOnInvalidPath(path);
+
+            // Write all the bytes, bypassing the restrictions.
+            path = FS.NeutralizePath(path);
+            var FOpen = File.Open(path, FileMode.OpenOrCreate, FileAccess.Write, FileShare.ReadWrite);
+            FOpen.Write(contents, 0, contents.Length);
+            FOpen.Close();
         }
 
         /// <inheritdoc/>

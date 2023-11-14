@@ -46,7 +46,7 @@ namespace KS.Files.Editors.HexEdit
         /// <summary>
         /// Action to bind with this keybinding
         /// </summary>
-        public Action Action { get; }
+        public Func<byte[], byte[]> Action { get; }
 
         /// <summary>
         /// Makes a new instance of the hex editor binding
@@ -57,7 +57,7 @@ namespace KS.Files.Editors.HexEdit
         /// <param name="action">Action to bind with this keybinding</param>
         /// <param name="localizable">Is the binding localizable?</param>
         /// <exception cref="KernelException"></exception>
-        internal HexEditorBinding(string name, ConsoleKey key, ConsoleModifiers keyModifiers, Action action, bool localizable = false)
+        internal HexEditorBinding(string name, ConsoleKey key, ConsoleModifiers keyModifiers, Func<byte[], byte[]> action, bool localizable = false)
         {
             Name = name;
             Key = key;
