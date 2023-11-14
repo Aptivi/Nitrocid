@@ -27,6 +27,7 @@ using SystemConsole = System.Console;
 using TextEncoding = System.Text.Encoding;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
+using Terminaux.Sequences.Builder.Types;
 
 namespace KS.Drivers.Console
 {
@@ -248,7 +249,11 @@ namespace KS.Drivers.Console
             {
                 if (loadBack)
                     KernelColorTools.LoadBack();
-                SystemConsole.Clear();
+                else
+                {
+                    SystemConsole.Write(CsiSequences.GenerateCsiEraseInDisplay(2));
+                    SetCursorPosition(0, 0);
+                }
             }
         }
 
@@ -283,7 +288,7 @@ namespace KS.Drivers.Console
         public virtual void SetCursorPosition(int left, int top)
         {
             if (!IsDumb)
-                SystemConsole.SetCursorPosition(left, top);
+                SystemConsole.Write(CsiSequences.GenerateCsiCursorPosition(left + 1, top + 1));
             _moved = true;
         }
 
