@@ -24,7 +24,6 @@ using System.Threading;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters.Tools;
-using KS.Drivers;
 using KS.Kernel.Debugging;
 using KS.Languages;
 using KS.Misc.Text;

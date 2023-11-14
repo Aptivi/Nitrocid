@@ -21,6 +21,7 @@ using InxiFrontend;
 using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
+using KS.Drivers.HardwareProber;
 using KS.Kernel;
 using KS.Kernel.Debugging;
 using KS.Languages;
@@ -32,7 +33,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace KS.Drivers.HardwareProber.Bases
+namespace Nitrocid.Legacy.InxiNet
 {
     internal class FallbackHardwareProber : BaseHardwareProberDriver, IHardwareProberDriver
     {

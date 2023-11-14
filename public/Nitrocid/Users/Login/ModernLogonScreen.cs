@@ -34,7 +34,6 @@ using KS.Misc.Text;
 using Figletize;
 using KS.Misc.Text.Probers.Motd;
 using System.Text;
-using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Buffered;
 using Terminaux.Sequences.Builder.Types;
 

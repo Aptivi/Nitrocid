@@ -18,11 +18,9 @@
 //
 
 using System;
-using InxiFrontend;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using KS.Misc.Splash;
 using KS.Kernel.Events;
 using KS.Kernel.Configuration;
 using System.Collections;
@@ -61,15 +59,11 @@ namespace KS.Kernel.Hardware
             EventsManager.FireEvent(EventType.HardwareProbing);
             try
             {
-                InxiTrace.DebugDataReceived += WriteInxiDebugData;
-                InxiTrace.HardwareParsed += WriteWhatProbed;
                 processors = HardwareProberDriver.ProbeProcessor();
                 pcMemory = HardwareProberDriver.ProbePcMemory();
                 hardDrive = HardwareProberDriver.ProbeHardDrive();
                 graphics = HardwareProberDriver.ProbeGraphics();
                 DebugWriter.WriteDebug(DebugLevel.I, "Probe finished.");
-                InxiTrace.DebugDataReceived -= WriteInxiDebugData;
-                InxiTrace.HardwareParsed -= WriteWhatProbed;
             }
             catch (Exception ex)
             {
@@ -81,22 +75,6 @@ namespace KS.Kernel.Hardware
             // Raise event
             EventsManager.FireEvent(EventType.HardwareProbed);
         }
-
-        /// <summary>
-        /// Write Inxi.NET hardware parsing completion to debugger and, if quiet probe is disabled, the console
-        /// </summary>
-        private static void WriteWhatProbed(InxiHardwareType Hardware)
-        {
-            DebugWriter.WriteDebug(DebugLevel.I, "Hardware {0} ({1}) successfully probed.", Hardware, Hardware.ToString());
-            if (!QuietHardwareProbe & VerboseHardwareProbe | SplashManager.EnableSplash)
-                SplashReport.ReportProgress(Translate.DoTranslation("Successfully probed {0}."), 5, Hardware.ToString());
-        }
-
-        /// <summary>
-        /// Write Inxi.NET debug data to debugger
-        /// </summary>
-        private static void WriteInxiDebugData(string Message, string PlainMessage) =>
-            DebugWriter.WriteDebug(DebugLevel.I, PlainMessage);
 
     }
 }

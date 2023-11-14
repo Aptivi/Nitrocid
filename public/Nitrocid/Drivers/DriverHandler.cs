@@ -137,7 +137,6 @@ namespace KS.Drivers
                 DriverTypes.HardwareProber, new()
                 { 
                     { "Default", new DefaultHardwareProber() },
-                    { "Fallback", new FallbackHardwareProber() },
                 }
             },
             { 
@@ -705,6 +704,25 @@ namespace KS.Drivers
             driverType = knownTypes[type];
             DebugWriter.WriteDebug(DebugLevel.I, "Inferred {0} for type {1}", driverType.ToString(), type.Name);
             return driverType;
+        }
+
+        internal static void RegisterBaseDriver<TDriver>(DriverTypes type, IDriver driver)
+        {
+            string name = driver.DriverName;
+            if (!IsRegistered(type, name) && driver.DriverType == type)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Registered driver {0} [{1}] under type {2}", name, driver.GetType().Name, type.ToString());
+                drivers[type].Add(name, driver);
+            }
+        }
+
+        internal static void UnregisterBaseDriver(DriverTypes type, string name)
+        {
+            if (IsRegistered(type, name) && drivers[type][name].DriverType == type)
+            {
+                DebugWriter.WriteDebug(DebugLevel.I, "Unregistered driver {0} [{1}] under type {2}", name, drivers[type][name].GetType().Name, type.ToString());
+                drivers[type].Remove(name);
+            }
         }
     }
 }
