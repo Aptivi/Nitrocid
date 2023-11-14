@@ -24,7 +24,10 @@ using KS.Languages.Decoy;
 using KS.Misc.Reflection;
 using Newtonsoft.Json;
 using Nitrocid.LanguagePacks.Resources;
+using System;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.LanguagePacks
 {
@@ -33,6 +36,12 @@ namespace Nitrocid.LanguagePacks
         string IAddon.AddonName => "Extra Languages Pack";
 
         AddonType IAddon.AddonType => AddonType.Important;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon()
         {

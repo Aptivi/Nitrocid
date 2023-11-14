@@ -23,8 +23,11 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.TimeInfo.Commands;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.TimeInfo
 {
@@ -53,6 +56,12 @@ namespace Nitrocid.Extras.TimeInfo
         string IAddon.AddonName => "Extras - Time Info";
 
         AddonType IAddon.AddonType => AddonType.Optional;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());

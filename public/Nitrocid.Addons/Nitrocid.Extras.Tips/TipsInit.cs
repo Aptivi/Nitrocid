@@ -22,6 +22,8 @@ using KS.Kernel.Configuration;
 using KS.Kernel.Extensions;
 using Nitrocid.Extras.Tips.Settings;
 using System;
+using System.Collections.ObjectModel;
+using System.Reflection;
 
 namespace Nitrocid.Extras.Tips
 {
@@ -33,6 +35,12 @@ namespace Nitrocid.Extras.Tips
 
         internal static TipsConfig TipsConfig =>
             (TipsConfig)Config.baseConfigurations[nameof(TipsConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon() =>
             WelcomeMessage.tips = TipsList.tips;

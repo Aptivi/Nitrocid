@@ -26,8 +26,11 @@ using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.SftpShell.Commands;
 using Nitrocid.Extras.SftpShell.Settings;
 using Nitrocid.Extras.SftpShell.SFTP;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.SftpShell
 {
@@ -75,6 +78,12 @@ namespace Nitrocid.Extras.SftpShell
 
         internal static SftpConfig SftpConfig =>
             (SftpConfig)Config.baseConfigurations[nameof(SftpConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

@@ -23,8 +23,11 @@ using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.RetroKS.Commands;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.RetroKS
 {
@@ -43,6 +46,12 @@ namespace Nitrocid.Extras.RetroKS
         string IAddon.AddonName => "Extras - Retro KS (based on 0.0.4.x)";
 
         AddonType IAddon.AddonType => AddonType.Optional;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon() =>
             EnvironmentTools.AddEnvironment("RetroKS", new RetroKSEnvironmentInstance());

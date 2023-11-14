@@ -24,7 +24,10 @@ using KS.Misc.Splash;
 using Nitrocid.ScreensaverPacks.Screensavers;
 using Nitrocid.ScreensaverPacks.Settings;
 using Nitrocid.ScreensaverPacks.Splashes;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Reflection;
 
 namespace Nitrocid.ScreensaverPacks
 {
@@ -137,6 +140,12 @@ namespace Nitrocid.ScreensaverPacks
 
         internal static ExtraSaversConfig SaversConfig =>
             (ExtraSaversConfig)Config.baseConfigurations[nameof(ExtraSaversConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon()
         {

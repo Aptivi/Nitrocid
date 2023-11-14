@@ -21,6 +21,9 @@ using KS.Drivers;
 using KS.Drivers.HardwareProber;
 using KS.Kernel.Debugging;
 using KS.Kernel.Extensions;
+using System;
+using System.Collections.ObjectModel;
+using System.Reflection;
 
 namespace Nitrocid.Legacy.InxiNet
 {
@@ -31,6 +34,12 @@ namespace Nitrocid.Legacy.InxiNet
         string IAddon.AddonName => "Legacy - Inxi.NET Hardware Prober Driver";
 
         AddonType IAddon.AddonType => AddonType.Important;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         { }

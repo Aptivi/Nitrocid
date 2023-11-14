@@ -25,7 +25,9 @@ using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Calculators.Commands;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.Calculators
 {
@@ -64,6 +66,12 @@ namespace Nitrocid.Extras.Calculators
         string IAddon.AddonName => "Extras - Calculators";
 
         AddonType IAddon.AddonType => AddonType.Optional;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());

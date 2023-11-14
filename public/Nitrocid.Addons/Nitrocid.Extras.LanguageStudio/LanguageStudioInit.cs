@@ -22,8 +22,11 @@ using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.LanguageStudio.Commands;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.LanguageStudio
 {
@@ -45,6 +48,12 @@ namespace Nitrocid.Extras.LanguageStudio
         string IAddon.AddonName => "Extras - Language Studio";
 
         AddonType IAddon.AddonType => AddonType.Optional;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());

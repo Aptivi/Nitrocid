@@ -76,5 +76,9 @@ namespace KS.Users.Permissions
         /// Allows the user to open a debug shell
         /// </summary>
         OpenDebugShell = 4096,
+        /// <summary>
+        /// Allows the user to run mod commands that depend on inter-mod communication
+        /// </summary>
+        InteraddonCommunication = 8192,
     }
 }

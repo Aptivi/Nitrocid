@@ -29,8 +29,11 @@ using Nitrocid.Extras.Amusements.Commands;
 using Nitrocid.Extras.Amusements.Screensavers;
 using Nitrocid.Extras.Amusements.Settings;
 using Nitrocid.Extras.Amusements.Splashes;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.Amusements
 {
@@ -178,6 +181,12 @@ namespace Nitrocid.Extras.Amusements
 
         internal static AmusementsConfig AmusementsConfig =>
             (AmusementsConfig)Config.baseConfigurations[nameof(AmusementsConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         { }

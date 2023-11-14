@@ -28,8 +28,11 @@ using KS.Shell.ShellBase.Shells;
 using LibGit2Sharp;
 using Nitrocid.Extras.GitShell.Git;
 using Nitrocid.Extras.GitShell.Settings;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.GitShell
 {
@@ -56,6 +59,12 @@ namespace Nitrocid.Extras.GitShell
 
         internal static GitConfig GitConfig =>
             (GitConfig)Config.baseConfigurations[nameof(GitConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

@@ -28,8 +28,11 @@ using Nitrocid.Extras.Calendar.Calendar.Commands;
 using Nitrocid.Extras.Calendar.Calendar.Events;
 using Nitrocid.Extras.Calendar.Calendar.Reminders;
 using Nitrocid.Extras.Calendar.Settings;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.Calendar
 {
@@ -198,6 +201,12 @@ namespace Nitrocid.Extras.Calendar
 
         internal static CalendarConfig CalendarConfig =>
             (CalendarConfig)Config.baseConfigurations[nameof(CalendarConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

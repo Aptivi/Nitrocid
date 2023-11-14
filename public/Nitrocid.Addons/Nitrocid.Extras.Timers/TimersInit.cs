@@ -24,8 +24,11 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.Timers.Commands;
 using Nitrocid.Extras.Timers.Settings;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.Timers
 {
@@ -54,6 +57,12 @@ namespace Nitrocid.Extras.Timers
 
         internal static TimersConfig TimersConfig =>
             (TimersConfig)Config.baseConfigurations[nameof(TimersConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon()
         {

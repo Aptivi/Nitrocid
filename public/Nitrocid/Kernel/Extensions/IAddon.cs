@@ -17,6 +17,10 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+using System.Collections.ObjectModel;
+using System.Reflection;
+
 namespace KS.Kernel.Extensions
 {
     internal interface IAddon
@@ -26,5 +30,8 @@ namespace KS.Kernel.Extensions
         internal void StartAddon();
         internal void FinalizeAddon();
         internal void StopAddon();
+        internal ReadOnlyDictionary<string, Delegate> PubliclyAvailableFunctions { get; }
+        internal ReadOnlyDictionary<string, PropertyInfo> PubliclyAvailableProperties { get; }
+        internal ReadOnlyDictionary<string, FieldInfo> PubliclyAvailableFields { get; }
     }
 }

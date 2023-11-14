@@ -25,8 +25,11 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.MailShell.Mail;
 using Nitrocid.Extras.MailShell.Settings;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.MailShell
 {
@@ -51,6 +54,12 @@ namespace Nitrocid.Extras.MailShell
 
         internal static MailConfig MailConfig =>
             (MailConfig)Config.baseConfigurations[nameof(MailConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

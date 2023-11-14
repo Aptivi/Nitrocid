@@ -26,8 +26,11 @@ using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.BassBoom.Commands;
 using Nitrocid.Extras.BassBoom.Screensavers;
 using Nitrocid.Extras.BassBoom.Settings;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 #if NET8_0
 using BassBoom.Basolia;
@@ -127,6 +130,12 @@ namespace Nitrocid.Extras.BassBoom
 
         internal static BassBoomConfig BassBoomConfig =>
             (BassBoomConfig)Config.baseConfigurations[nameof(BassBoomConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon()
         {

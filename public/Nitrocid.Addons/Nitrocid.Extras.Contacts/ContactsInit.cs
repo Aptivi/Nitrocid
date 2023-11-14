@@ -24,8 +24,11 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.Contacts.Contacts;
 using Nitrocid.Extras.Contacts.Contacts.Commands;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.Contacts
 {
@@ -44,6 +47,12 @@ namespace Nitrocid.Extras.Contacts
         string IAddon.AddonName => "Extras - Contacts";
 
         AddonType IAddon.AddonType => AddonType.Optional;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         { }

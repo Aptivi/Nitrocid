@@ -25,7 +25,9 @@ using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.ColorConvert.Commands;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.ColorConvert
 {
@@ -1118,6 +1120,12 @@ namespace Nitrocid.Extras.ColorConvert
         string IAddon.AddonName => "Extras - Color Converter";
 
         AddonType IAddon.AddonType => AddonType.Optional;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());

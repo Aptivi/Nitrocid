@@ -26,8 +26,11 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.RssShell.RSS;
 using Nitrocid.Extras.RssShell.Settings;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.RssShell
 {
@@ -55,6 +58,12 @@ namespace Nitrocid.Extras.RssShell
 
         internal static RssConfig RssConfig =>
             (RssConfig)Config.baseConfigurations[nameof(RssConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

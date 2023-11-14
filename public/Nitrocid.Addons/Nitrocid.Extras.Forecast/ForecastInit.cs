@@ -25,8 +25,11 @@ using KS.Shell.ShellBase.Shells;
 using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Forecast.Forecast.Commands;
 using Nitrocid.Extras.Forecast.Settings;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.Forecast
 {
@@ -58,6 +61,12 @@ namespace Nitrocid.Extras.Forecast
 
         internal static ForecastConfig ForecastConfig =>
             (ForecastConfig)Config.baseConfigurations[nameof(ForecastConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         { }

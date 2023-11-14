@@ -23,8 +23,11 @@ using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.Notes.Commands;
 using Nitrocid.Extras.Notes.Management;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.Notes
 {
@@ -93,6 +96,12 @@ namespace Nitrocid.Extras.Notes
         string IAddon.AddonName => "Extras - Notes";
 
         AddonType IAddon.AddonType => AddonType.Optional;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon() =>
             CommandManager.RegisterAddonCommands(ShellType.Shell, addonCommands.Values.ToArray());

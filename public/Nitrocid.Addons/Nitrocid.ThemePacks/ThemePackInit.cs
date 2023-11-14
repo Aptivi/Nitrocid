@@ -23,7 +23,10 @@ using KS.Kernel.Extensions;
 using KS.Misc.Reflection;
 using Newtonsoft.Json.Linq;
 using Nitrocid.ThemePacks.Resources;
+using System;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.ThemePacks
 {
@@ -32,6 +35,12 @@ namespace Nitrocid.ThemePacks
         string IAddon.AddonName => "Extra Themes Pack";
 
         AddonType IAddon.AddonType => AddonType.Optional;
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon()
         {

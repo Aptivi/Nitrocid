@@ -22,7 +22,10 @@ using KS.Kernel.Extensions;
 using KS.Misc.Splash;
 using Nitrocid.SplashPacks.Settings;
 using Nitrocid.SplashPacks.Splashes;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Reflection;
 
 namespace Nitrocid.SplashPacks
 {
@@ -48,6 +51,12 @@ namespace Nitrocid.SplashPacks
 
         internal static ExtraSplashesConfig SplashConfig =>
             (ExtraSplashesConfig)Config.baseConfigurations[nameof(ExtraSplashesConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.StartAddon()
         {

@@ -26,8 +26,11 @@ using KS.Shell.ShellBase.Shells;
 using Nitrocid.Extras.ArchiveShell.Archive.Commands;
 using Nitrocid.Extras.ArchiveShell.Archive.Shell;
 using Nitrocid.Extras.ArchiveShell.Settings;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection;
 
 namespace Nitrocid.Extras.ArchiveShell
 {
@@ -52,6 +55,12 @@ namespace Nitrocid.Extras.ArchiveShell
 
         internal static ArchiveConfig ArchiveConfig =>
             (ArchiveConfig)Config.baseConfigurations[nameof(ArchiveConfig)];
+
+        ReadOnlyDictionary<string, Delegate> IAddon.PubliclyAvailableFunctions => null;
+
+        ReadOnlyDictionary<string, PropertyInfo> IAddon.PubliclyAvailableProperties => null;
+
+        ReadOnlyDictionary<string, FieldInfo> IAddon.PubliclyAvailableFields => null;
 
         void IAddon.FinalizeAddon()
         {

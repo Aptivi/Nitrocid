@@ -44,6 +44,12 @@ namespace KS.Kernel.Extensions
         internal static List<AddonInfo> ListAddons() =>
             new(addons);
 
+        internal static AddonInfo GetAddon(string addonName)
+        {
+            AddonInfo addon = addons.Find((ai) => ai.AddonName == addonName);
+            return addon;
+        }
+
         internal static void ProcessAddons(AddonType type)
         {
             var addonFolder = Paths.AddonsPath;
