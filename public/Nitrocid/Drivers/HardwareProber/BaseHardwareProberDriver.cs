@@ -232,7 +232,7 @@ namespace KS.Drivers.HardwareProber
                                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Processor name:"), false, KernelColorType.ListEntry);
                                 TextWriterColor.WriteKernelColor($" {processor.Name}", true, KernelColorType.ListValue);
                                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Processor vendor:"), false, KernelColorType.ListEntry);
-                                TextWriterColor.WriteKernelColor($" {processor.Vendor} [{processor.CpuidVendor}]", true, KernelColorType.ListValue);
+                                TextWriterColor.WriteKernelColor($" {processor.Vendor} [CPUID: {processor.CpuidVendor}]", true, KernelColorType.ListValue);
                                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Clock speed:"), false, KernelColorType.ListEntry);
                                 TextWriterColor.WriteKernelColor($" {processor.Speed} MHz", true, KernelColorType.ListValue);
                                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("Total cores:"), false, KernelColorType.ListEntry);
