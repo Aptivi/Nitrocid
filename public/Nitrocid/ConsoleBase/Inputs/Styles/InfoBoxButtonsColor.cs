@@ -139,7 +139,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int buttonPanelPosX = borderX + 4;
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
-                int maxButtonWidth = maxButtonPanelWidth / 3 - 4;
+                int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
@@ -467,7 +467,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int buttonPanelPosX = borderX + 4;
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
-                int maxButtonWidth = maxButtonPanelWidth / 3 - 4;
+                int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
@@ -652,7 +652,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int buttonPanelPosX = borderX + 4;
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
-                int maxButtonWidth = maxButtonPanelWidth / 3 - 4;
+                int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
@@ -837,7 +837,7 @@ namespace KS.ConsoleBase.Inputs.Styles
                 int buttonPanelPosX = borderX + 4;
                 int buttonPanelPosY = borderY + maxHeight - 3;
                 int maxButtonPanelWidth = maxWidth - 4;
-                int maxButtonWidth = maxButtonPanelWidth / 3 - 4;
+                int maxButtonWidth = maxButtonPanelWidth / 4 - 4;
                 TextWriterColor.WritePlain(boxBuffer.ToString(), false);
 
                 // Loop for input
