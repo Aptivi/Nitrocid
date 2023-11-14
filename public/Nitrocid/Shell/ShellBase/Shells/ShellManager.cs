@@ -627,6 +627,8 @@ namespace KS.Shell.ShellBase.Shells
             {
                 if (DriverHandler.CurrentConsoleDriverLocal is File writer)
                     writer.FilterVT = false;
+                if (DriverHandler.CurrentConsoleDriverLocal is FileSequence writerSeq)
+                    writerSeq.FilterVT = false;
                 DriverHandler.EndLocalDriver<IConsoleDriver>();
             }
 

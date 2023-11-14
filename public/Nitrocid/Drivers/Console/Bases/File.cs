@@ -29,6 +29,7 @@ using KS.ConsoleBase.Writers.ConsoleWriters;
 using Terminaux.Sequences.Tools;
 using TextEncoding = System.Text.Encoding;
 using KS.Files.Operations.Querying;
+using KS.Files.Operations;
 
 namespace KS.Drivers.Console.Bases
 {
@@ -95,40 +96,46 @@ namespace KS.Drivers.Console.Bases
             throw new KernelException(KernelExceptionType.NotImplementedYet);
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to file
         /// </summary>
         /// <inheritdoc/>
-        public override void Write(char value) { }
+        public override void Write(char value) =>
+            WritePlain($"{value}", false, Array.Empty<object>());
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to file
         /// </summary>
         /// <inheritdoc/>
-        public override void Write(string text) { }
+        public override void Write(string text) =>
+            WritePlain(text, false, Array.Empty<object>());
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to file
         /// </summary>
         /// <inheritdoc/>
-        public override void Write(string text, params object[] args) { }
+        public override void Write(string text, params object[] args) =>
+            WritePlain(text, false, args);
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to file
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteLine() { }
+        public override void WriteLine() =>
+            WritePlain("", true, Array.Empty<object>());
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to file
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteLine(string text) { }
+        public override void WriteLine(string text) =>
+            WritePlain(text, true, Array.Empty<object>());
 
         /// <summary>
-        /// Outputs text to the void
+        /// Outputs text to file
         /// </summary>
         /// <inheritdoc/>
-        public override void WriteLine(string text, params object[] args) { }
+        public override void WriteLine(string text, params object[] args) =>
+            WritePlain(text, true, args);
 
         /// <summary>
         /// Outputs text to file
@@ -138,9 +145,9 @@ namespace KS.Drivers.Console.Bases
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
+                // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
-                    return;
+                    Making.MakeFile(PathToWrite);
 
                 // If filtering, filter all VT sequences
                 if (FilterVT)
@@ -187,9 +194,9 @@ namespace KS.Drivers.Console.Bases
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
+                // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
-                    return;
+                    Making.MakeFile(PathToWrite);
 
                 // Open the stream
                 StreamWriter fileWriter = new(PathToWrite, true);
@@ -214,9 +221,9 @@ namespace KS.Drivers.Console.Bases
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
+                // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
-                    return;
+                    Making.MakeFile(PathToWrite);
 
                 // If filtering, filter all VT sequences
                 if (FilterVT)
@@ -273,9 +280,9 @@ namespace KS.Drivers.Console.Bases
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
+                // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
-                    return;
+                    Making.MakeFile(PathToWrite);
 
                 try
                 {
@@ -312,9 +319,9 @@ namespace KS.Drivers.Console.Bases
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
+                // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
-                    return;
+                    Making.MakeFile(PathToWrite);
 
                 try
                 {
@@ -337,9 +344,9 @@ namespace KS.Drivers.Console.Bases
         {
             lock (TextWriterColor.WriteLock)
             {
-                // If the file doesn't exist, don't do anything
+                // If the file doesn't exist, make a new file
                 if (!Checking.FileExists(PathToWrite))
-                    return;
+                    Making.MakeFile(PathToWrite);
 
                 try
                 {
