@@ -18,7 +18,6 @@
 //
 
 using Newtonsoft.Json;
-using System;
 using System.Diagnostics;
 
 namespace KS.Kernel.Configuration.Settings

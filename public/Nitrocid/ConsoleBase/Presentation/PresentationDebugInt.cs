@@ -21,7 +21,6 @@ using KS.ConsoleBase.Colors;
 using KS.ConsoleBase.Presentation.Elements;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Kernel.Time.Renderers;
-using System.Collections.Generic;
 using System.Linq;
 using Terminaux.Colors;
 

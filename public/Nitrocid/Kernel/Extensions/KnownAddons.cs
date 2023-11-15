@@ -101,6 +101,10 @@ namespace KS.Kernel.Extensions
         /// </summary>
         ExtrasInternetRadioInfo,
         /// <summary>
+        /// JSON Shell Extras addon
+        /// </summary>
+        ExtrasJsonShell,
+        /// <summary>
         /// Language Studio Extras addon
         /// </summary>
         ExtrasLanguageStudio,
@@ -128,6 +132,10 @@ namespace KS.Kernel.Extensions
         /// SFTP Shell Extras addon
         /// </summary>
         ExtrasSftpShell,
+        /// <summary>
+        /// SQL Shell Extras addon
+        /// </summary>
+        ExtrasSqlShell,
         /// <summary>
         /// Theme Studio Extras addon
         /// </summary>

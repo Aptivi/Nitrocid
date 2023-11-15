@@ -19,7 +19,6 @@
 
 using KS.Kernel.Exceptions;
 using KS.Languages;
-using System;
 
 namespace KS.Users.Settings
 {

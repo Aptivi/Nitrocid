@@ -24,7 +24,6 @@ using KS.Kernel.Exceptions;
 using KS.Languages;
 using Newtonsoft.Json;
 using System.Collections.Generic;
-using System.Linq;
 
 namespace Nitrocid.Extras.Notes.Management
 {

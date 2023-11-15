@@ -18,7 +18,6 @@
 //
 
 using Newtonsoft.Json;
-using System;
 
 namespace KS.ConsoleBase.Themes
 {

@@ -28,7 +28,6 @@ using KS.Languages;
 using KS.Misc.Text;
 using KS.Users;
 using System;
-using System.Collections.Generic;
 using System.Text;
 using Terminaux.Colors;
 

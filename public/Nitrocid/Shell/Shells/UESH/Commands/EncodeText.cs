@@ -24,7 +24,6 @@ using KS.Drivers.Encoding;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Switches;
-using System;
 
 namespace KS.Shell.Shells.UESH.Commands
 {

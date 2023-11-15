@@ -54,7 +54,6 @@ using KS.Drivers.DebugLogger;
 using KS.Files.Operations.Querying;
 using KS.Drivers.HardwareProber;
 using KS.Misc.Text;
-using KS.Shell.Shells.Json;
 using KS.Kernel.Threading.Performance;
 using KS.Drivers.Sorting;
 using KS.Kernel.Time.Timezones;
@@ -825,14 +824,6 @@ namespace KS.Kernel.Configuration.Instances
             set => PromptPresetManager.SetPreset(value, ShellType.TextShell, false);
         }
         /// <summary>
-        /// JSON Shell Prompt Preset
-        /// </summary>
-        public string JSONShellPromptPreset
-        {
-            get => PromptPresetManager.GetCurrentPresetBaseFromShell(ShellType.JsonShell).PresetName;
-            set => PromptPresetManager.SetPreset(value, ShellType.JsonShell, false);
-        }
-        /// <summary>
         /// Hex Edit Prompt Preset
         /// </summary>
         public string HexEditPromptPreset
@@ -1160,18 +1151,6 @@ namespace KS.Kernel.Configuration.Instances
             set => HexEditShellCommon.autoSaveInterval = value < 0 ? 60 : value;
         }
         /// <summary>
-        /// Turns on or off the hex editor autosave feature
-        /// </summary>
-        public bool JsonEditAutoSaveFlag { get; set; } = true;
-        /// <summary>
-        /// If autosave is enabled, the binary file will be saved for each "n" seconds
-        /// </summary>
-        public int JsonEditAutoSaveInterval
-        {
-            get => JsonShellCommon.autoSaveInterval;
-            set => JsonShellCommon.autoSaveInterval = value < 0 ? 60 : value;
-        }
-        /// <summary>
         /// Wraps the list outputs if it seems too long for the current console geometry
         /// </summary>
         public bool WrapListOutputs { get; set; }
@@ -1255,10 +1234,6 @@ namespace KS.Kernel.Configuration.Instances
         /// RSS headline URL to be used when showing the latest headline. This is usually your favorite feed
         /// </summary>
         public string RssHeadlineUrl { get; set; } = "https://www.techrepublic.com/rssfeeds/articles/";
-        /// <summary>
-        /// Selects the default JSON formatting (beautified or minified) for the JSON shell to save
-        /// </summary>
-        public int JsonShellFormatting { get; set; } = (int)Formatting.Indented;
         /// <summary>
         /// Shows the commands count in the command list, controlled by the three count show switches for different kinds of commands.
         /// </summary>

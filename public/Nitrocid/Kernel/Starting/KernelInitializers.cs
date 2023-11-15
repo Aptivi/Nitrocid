@@ -24,8 +24,6 @@ using KS.ConsoleBase.Inputs.Styles;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.ConsoleBase.Writers.FancyWriters;
 using KS.ConsoleBase.Writers.MiscWriters;
-using KS.Drivers;
-using KS.Drivers.HardwareProber;
 using KS.Files;
 using KS.Files.Extensions;
 using KS.Files.Operations;

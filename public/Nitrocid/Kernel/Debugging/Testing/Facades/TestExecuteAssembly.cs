@@ -20,7 +20,6 @@
 using KS.ConsoleBase.Inputs;
 using KS.Files;
 using KS.Languages;
-using System;
 using System.Reflection;
 
 namespace KS.Kernel.Debugging.Testing.Facades

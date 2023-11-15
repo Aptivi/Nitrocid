@@ -21,7 +21,6 @@
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>

@@ -29,7 +29,6 @@ using KS.Languages;
 using KS.Misc.Splash;
 using KS.Misc.Text;
 using KS.Misc.Text.Probers.Placeholder;
-using System;
 
 namespace KS.ConsoleBase.Writers.MiscWriters
 {

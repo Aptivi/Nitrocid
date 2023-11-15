@@ -23,7 +23,6 @@ using KS.Users;
 using KS.Users.Permissions;
 using NUnit.Framework;
 using Shouldly;
-using System;
 using System.Linq;
 
 namespace Nitrocid.Tests.Users.Permissions

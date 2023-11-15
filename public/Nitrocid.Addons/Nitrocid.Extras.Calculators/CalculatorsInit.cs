@@ -21,12 +21,10 @@ using KS.Kernel.Extensions;
 using KS.Shell.ShellBase.Arguments;
 using KS.Shell.ShellBase.Commands;
 using KS.Shell.ShellBase.Shells;
-using KS.Shell.ShellBase.Switches;
 using Nitrocid.Extras.Calculators.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Reflection;
 
 namespace Nitrocid.Extras.Calculators

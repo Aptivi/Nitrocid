@@ -17,9 +17,12 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.Operations.Querying;
 using KS.Kernel.Debugging;
 using KS.Kernel.Exceptions;
+using KS.Kernel.Extensions;
 using KS.Languages;
 using KS.Shell.ShellBase.Shells;
 using System.IO;
@@ -43,6 +46,10 @@ namespace KS.Files.Extensions
         {
             bool fileExists = Checking.FileExists(path);
 
+            // Check the addons
+            bool hasJsonShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasJsonShell)) is not null;
+            bool hasSqlShell = AddonTools.GetAddon(InterAddonTranslations.GetAddonName(KnownAddons.ExtrasSqlShell)) is not null;
+
             // Check to see if the file exists
             DebugWriter.WriteDebug(DebugLevel.I, "File path is {0} and .Exists is {1}", path, fileExists);
             DebugWriter.WriteDebug(DebugLevel.I, "Force text: {0}", forceText);
@@ -55,24 +62,48 @@ namespace KS.Files.Extensions
             // First, forced types
             if (forceText)
                 ShellManager.StartShell(ShellType.TextShell, path);
-            else if (forceJson)
-                ShellManager.StartShell(ShellType.JsonShell, path);
-            else if (forceSql)
-                ShellManager.StartShell(ShellType.SqlShell, path);
             else if (forceHex)
                 ShellManager.StartShell(ShellType.HexShell, path);
+            else if (forceJson)
+            {
+                if (!hasJsonShell)
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                    ShellManager.StartShell(ShellType.TextShell, path);
+                }
+                else
+                    ShellManager.StartShell(ShellType.JsonShell, path);
+            }
+            else if (forceSql)
+            {
+                if (!hasSqlShell)
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("It looks like that you don't have the SQL shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                    ShellManager.StartShell(ShellType.HexShell, path);
+                }
+                else
+                    ShellManager.StartShell(ShellType.SqlShell, path);
+            }
 
             // Exit if forced types
             if (forceText || forceJson || forceHex || forceSql)
                 return;
 
             // Determine the type
-            if (Parsing.IsSql(path))
+            if (hasSqlShell && Parsing.IsSql(path))
                 ShellManager.StartShell(ShellType.SqlShell, path);
             else if (Parsing.IsBinaryFile(path))
                 ShellManager.StartShell(ShellType.HexShell, path);
             else if (Parsing.IsJson(path))
-                ShellManager.StartShell(ShellType.JsonShell, path);
+            {
+                if (!hasJsonShell)
+                {
+                    TextWriterColor.WriteKernelColor(Translate.DoTranslation("It looks like that you don't have the JSON shell addon installed. In order to get extra features that it offers, install the addons pack."), KernelColorType.Warning);
+                    ShellManager.StartShell(ShellType.TextShell, path);
+                }
+                else
+                    ShellManager.StartShell(ShellType.JsonShell, path);
+            }
             else
                 ShellManager.StartShell(ShellType.TextShell, path);
         }

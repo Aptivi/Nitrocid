@@ -20,7 +20,6 @@
 using KS.Shell.ShellBase.Scripting;
 using NUnit.Framework;
 using Shouldly;
-using System;
 
 namespace Nitrocid.Tests.Shell.ShellBase.Scripting
 {

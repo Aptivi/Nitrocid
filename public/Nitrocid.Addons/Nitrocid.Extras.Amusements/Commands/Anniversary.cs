@@ -22,7 +22,6 @@ using KS.ConsoleBase.Presentation;
 using KS.ConsoleBase.Presentation.Elements;
 using KS.Languages;
 using KS.Shell.ShellBase.Commands;
-using System.Collections.Generic;
 using Terminaux.Colors;
 
 namespace Nitrocid.Extras.Amusements.Commands

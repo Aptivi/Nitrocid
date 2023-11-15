@@ -704,13 +704,6 @@
                 "Description": ""
             },
             {
-                "Name": "JSON Shell Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "JSONShellPromptPreset",
-                "ShellType": "JsonShell",
-                "Description": ""
-            },
-            {
                 "Name": "Hex Edit Prompt Preset",
                 "Type": "SPreset",
                 "Variable": "HexEditPromptPreset",
@@ -722,13 +715,6 @@
                 "Type": "SPreset",
                 "Variable": "AdminShellPromptPreset",
                 "ShellType": "AdminShell",
-                "Description": ""
-            },
-            {
-                "Name": "SQL Shell Prompt Preset",
-                "Type": "SPreset",
-                "Variable": "SqlShellPromptPreset",
-                "ShellType": "SqlShell",
                 "Description": ""
             },
             {
@@ -1126,18 +1112,6 @@
                 "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
             },
             {
-                "Name": "Enable JSON editor autosave",
-                "Type": "SBoolean",
-                "Variable": "JsonEditAutoSaveFlag",
-                "Description": "Turns on or off the JSON editor autosave feature."
-            },
-            {
-                "Name": "JSON editor autosave interval",
-                "Type": "SInt",
-                "Variable": "JsonEditAutoSaveInterval",
-                "Description": "If autosave is enabled, the text file will be saved for each \"n\" seconds."
-            },
-            {
                 "Name": "Wrap list outputs",
                 "Type": "SBoolean",
                 "Variable": "WrapListOutputs",
@@ -1220,17 +1194,6 @@
                 "Type": "SString",
                 "Variable": "RssHeadlineUrl",
                 "Description": "RSS headline URL to be used when showing the latest headline. This is usually your favorite feed."
-            },
-            {
-                "Name": "Default JSON formatting for JSON shell",
-                "Type": "SSelection",
-                "Variable": "JsonShellFormatting",
-                "IsEnumeration": true,
-                "EnumerationInternal": false,
-                "Enumeration": "Newtonsoft.Json.Formatting",
-                "EnumerationAssembly": "Newtonsoft.Json",
-                "EnumerationZeroBased": true,
-                "Description": "Selects the default JSON formatting (beautified or minified) for the JSON shell to save."
             },
             {
                 "Name": "Show the commands count on help",

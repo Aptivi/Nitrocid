@@ -25,7 +25,6 @@ using Nitrocid.Extras.LanguageStudio.Commands;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
 using System.Reflection;
 
 namespace Nitrocid.Extras.LanguageStudio

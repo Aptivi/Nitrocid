@@ -18,7 +18,7 @@
 //
 
 using System.IO;
-using KS.Files.Editors.JsonShell;
+using KS.Misc.Text;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using NUnit.Framework;

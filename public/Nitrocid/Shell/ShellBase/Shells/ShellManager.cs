@@ -37,7 +37,6 @@ using KS.Shell.ShellBase.Commands.ProcessExecution;
 using KS.Shell.ShellBase.Commands.UnifiedCommands;
 using KS.Shell.Shells.UESH;
 using KS.Shell.Shells.Text;
-using KS.Shell.Shells.Json;
 using KS.Shell.Shells.Hex;
 using KS.Shell.Shells.Admin;
 using KS.Kernel.Events;
@@ -49,7 +48,6 @@ using Manipulation = KS.Files.Operations.Manipulation;
 using System.Text.RegularExpressions;
 using System.Linq;
 using KS.Kernel.Configuration;
-using KS.Shell.Shells.Sql;
 using KS.Users;
 using KS.Shell.Shells.Debug;
 using KS.Kernel.Exceptions;
@@ -213,10 +211,8 @@ namespace KS.Shell.ShellBase.Shells
         {
             { "Shell", new UESHShellInfo() },
             { "TextShell", new TextShellInfo() },
-            { "JsonShell", new JsonShellInfo() },
             { "HexShell", new HexShellInfo() },
             { "AdminShell", new AdminShellInfo() },
-            { "SqlShell", new SqlShellInfo() },
             { "DebugShell", new DebugShellInfo() }
         };
 

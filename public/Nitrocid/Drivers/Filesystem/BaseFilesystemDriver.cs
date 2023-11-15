@@ -44,9 +44,9 @@ using KS.Misc.Reflection;
 using KS.ConsoleBase.Writers.ConsoleWriters;
 using KS.Files.PathLookup;
 using KS.Files.Instances;
-using KS.Files.Editors.SqlEdit;
 using KS.Misc.Text.Probers.Regexp;
 using KS.Files.Operations.Querying;
+using KS.Kernel.Extensions;
 
 namespace KS.Drivers.Filesystem
 {
@@ -1000,13 +1000,11 @@ namespace KS.Drivers.Filesystem
         {
             try
             {
-                // Neutralize path
-                FS.ThrowOnInvalidPath(Path);
-                Path = FS.NeutralizePath(Path);
-
-                // Try to open an SQL connection
-                bool result = SqlEditTools.SqlEdit_CheckSqlFile(Path);
-                return result;
+                // Use inter-addon communication
+                var result = InterAddonTools.ExecuteCustomAddonFunction(KnownAddons.ExtrasSqlShell, "IsSql", Path);
+                if (result is bool sql)
+                    return sql;
+                return false;
             }
             catch
             {
