@@ -46,8 +46,8 @@ namespace KS.Shell.Shells.UESH.Commands
             string ivValue = SwitchManager.GetSwitchValue(parameters.SwitchesList, "-iv");
             var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
             driver.Initialize();
-            byte[] key = driver.IsSymmetric ? driver.Key : Array.Empty<byte>();
-            byte[] iv = driver.IsSymmetric ? driver.Iv : Array.Empty<byte>();
+            byte[] key = driver.IsSymmetric ? driver.Key : [];
+            byte[] iv = driver.IsSymmetric ? driver.Iv : [];
             if (string.IsNullOrEmpty(keyValue) && string.IsNullOrEmpty(ivValue))
                 driver.EncodeFile(path);
             else

@@ -202,7 +202,7 @@ namespace KS.Files.Extensions
         {
             // If nothing is registered, indicate that it isn't registered
             if (!IsHandlerRegistered(extension))
-                return Array.Empty<ExtensionHandler>();
+                return [];
 
             // Extensions must start with a dot
             if (!extension.StartsWith("."))

@@ -45,7 +45,7 @@ namespace KS.Shell.ShellBase.Arguments
             // Then, check to see is we have shells
             DebugWriter.WriteDebug(DebugLevel.I, "Shell count: {0}", ShellManager.ShellStack.Count);
             if (ShellManager.ShellStack.Count <= 0)
-                return Array.Empty<string>();
+                return [];
 
             // Get the commands based on the current shell type
             var shellType = ShellManager.ShellStack[^1].ShellType;

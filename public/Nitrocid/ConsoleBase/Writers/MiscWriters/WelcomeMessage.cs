@@ -40,7 +40,7 @@ namespace KS.ConsoleBase.Writers.MiscWriters
     {
 
         internal static string customBanner = "";
-        internal static string[] tips = Array.Empty<string>();
+        internal static string[] tips = [];
 
         /// <summary>
         /// The customized message banner to write. If none is specified, or if it only consists of whitespace, it uses the default message.

@@ -30,7 +30,7 @@ namespace KS.Shell.Shells.Hex.Commands
 
         public override int Execute(CommandParameters parameters, ref string variableValue)
         {
-            HexEditShellCommon.FileBytes = Array.Empty<byte>();
+            HexEditShellCommon.FileBytes = [];
             return 0;
         }
     }

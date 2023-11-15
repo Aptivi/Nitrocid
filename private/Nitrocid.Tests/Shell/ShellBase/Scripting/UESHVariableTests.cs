@@ -99,8 +99,8 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         public void TestInitializeVariablesFrom(string expression, string expectedKeys, string expectedValues)
         {
             UESHVariables.InitializeVariablesFrom(expression);
-            string[] expectedKeysArray = string.IsNullOrEmpty(expectedKeys) ? Array.Empty<string>() : expectedKeys.Split('|');
-            string[] expectedValuesArray = string.IsNullOrEmpty(expectedValues) ? Array.Empty<string>() : expectedValues.Split('|');
+            string[] expectedKeysArray = string.IsNullOrEmpty(expectedKeys) ? [] : expectedKeys.Split('|');
+            string[] expectedValuesArray = string.IsNullOrEmpty(expectedValues) ? [] : expectedValues.Split('|');
             for (int i = 0; i < expectedKeysArray.Length; i++)
             {
                 string key = expectedKeysArray[i];
@@ -120,8 +120,8 @@ namespace Nitrocid.Tests.Shell.ShellBase.Scripting
         public void TestGetVariablesFrom(string expression, string expectedKeys, string expectedValues)
         {
             var (varStoreKeys, varStoreValues) = UESHVariables.GetVariablesFrom(expression);
-            string[] expectedKeysArray = string.IsNullOrEmpty(expectedKeys) ? Array.Empty<string>() : expectedKeys.Split('|');
-            string[] expectedValuesArray = string.IsNullOrEmpty(expectedValues) ? Array.Empty<string>() : expectedValues.Split('|');
+            string[] expectedKeysArray = string.IsNullOrEmpty(expectedKeys) ? [] : expectedKeys.Split('|');
+            string[] expectedValuesArray = string.IsNullOrEmpty(expectedValues) ? [] : expectedValues.Split('|');
             string[] actualKeysArray = varStoreKeys;
             string[] actualValuesArray = varStoreValues;
             actualKeysArray.ShouldBe(expectedKeysArray);

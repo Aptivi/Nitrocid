@@ -46,8 +46,8 @@ namespace KS.Shell.Shells.UESH.Commands
             var driver = DriverHandler.GetDriver<IEncodingDriver>(algorithm);
             driver.Initialize();
             byte[] encoded;
-            byte[] key = driver.IsSymmetric ? driver.Key : Array.Empty<byte>();
-            byte[] iv = driver.IsSymmetric ? driver.Iv : Array.Empty<byte>();
+            byte[] key = driver.IsSymmetric ? driver.Key : [];
+            byte[] iv = driver.IsSymmetric ? driver.Iv : [];
             if (string.IsNullOrEmpty(keyValue) && string.IsNullOrEmpty(ivValue))
                 encoded = driver.GetEncodedString(orig);
             else

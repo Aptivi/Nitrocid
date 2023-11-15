@@ -54,7 +54,7 @@ namespace KS.Shell.Shells.Sql.Commands
             }
 
             // Now, get a group of replies and print them
-            string[] replies = Array.Empty<string>();
+            string[] replies = [];
             if (SqlEditTools.SqlEdit_SqlCommand(parameters.ArgumentsText, ref replies, [.. sqlParameters]))
             {
                 TextWriterColor.WriteKernelColor(Translate.DoTranslation("SQL command succeeded. Here are the replies:"), true, KernelColorType.Success);

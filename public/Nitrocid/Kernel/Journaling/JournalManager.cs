@@ -95,7 +95,7 @@ namespace KS.Kernel.Journaling
         {
             // If the journal path is null, bail
             if (string.IsNullOrEmpty(JournalPath))
-                return Array.Empty<JournalEntry>();
+                return [];
 
             // Now, return the journal entries
             return [.. journalEntries];

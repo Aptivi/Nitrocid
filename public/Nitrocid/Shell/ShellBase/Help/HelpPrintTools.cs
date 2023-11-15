@@ -256,7 +256,7 @@ namespace KS.Shell.ShellBase.Help
 
                 // Iterate through command argument information instances
                 var argumentInfos = FinalCommandList[FinalCommand].CommandArgumentInfo ??
-                    Array.Empty<CommandArgumentInfo>();
+                    [];
                 foreach (var argumentInfo in argumentInfos)
                 {
                     var Arguments = Array.Empty<CommandArgumentPart>();

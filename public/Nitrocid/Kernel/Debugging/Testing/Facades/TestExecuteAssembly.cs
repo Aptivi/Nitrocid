@@ -35,7 +35,7 @@ namespace KS.Kernel.Debugging.Testing.Facades
             if (string.IsNullOrEmpty(path))
                 path = Input.ReadLine(Translate.DoTranslation("Write a path to assembly file:") + " ");
             path = FilesystemTools.NeutralizePath(path);
-            Assembly.LoadFrom(path).EntryPoint.Invoke("", Array.Empty<object>());
+            Assembly.LoadFrom(path).EntryPoint.Invoke("", []);
         }
     }
 }

@@ -64,7 +64,7 @@ namespace KS.Kernel.Configuration.Settings
         /// </summary>
         [JsonIgnore]
         public SettingsKey[] Keys =>
-            keys ?? Array.Empty<SettingsKey>();
+            keys ?? [];
 
         [JsonConstructor]
         internal SettingsEntry()

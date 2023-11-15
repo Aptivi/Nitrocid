@@ -127,7 +127,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// Installs a new instance of the command argument info class
         /// </summary>
         public CommandArgumentInfo()
-            : this(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), false)
+            : this([], [], false)
         { }
 
         /// <summary>
@@ -135,7 +135,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         public CommandArgumentInfo(bool AcceptsSet)
-            : this(Array.Empty<CommandArgumentPart>(), Array.Empty<SwitchInfo>(), AcceptsSet)
+            : this([], [], AcceptsSet)
         { }
 
         /// <summary>
@@ -143,7 +143,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="Arguments">Command arguments</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments)
-            : this(Arguments, Array.Empty<SwitchInfo>(), false)
+            : this(Arguments, [], false)
         { }
 
         /// <summary>
@@ -152,7 +152,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="Arguments">Command arguments</param>
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments, bool AcceptsSet)
-            : this(Arguments, Array.Empty<SwitchInfo>(), AcceptsSet)
+            : this(Arguments, [], AcceptsSet)
         { }
 
         /// <summary>
@@ -160,7 +160,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// </summary>
         /// <param name="Switches">Command switches</param>
         public CommandArgumentInfo(SwitchInfo[] Switches)
-            : this(Array.Empty<CommandArgumentPart>(), Switches, false)
+            : this([], Switches, false)
         { }
 
         /// <summary>
@@ -169,7 +169,7 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="Switches">Command switches</param>
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         public CommandArgumentInfo(SwitchInfo[] Switches, bool AcceptsSet)
-            : this(Array.Empty<CommandArgumentPart>(), Switches, AcceptsSet)
+            : this([], Switches, AcceptsSet)
         { }
 
         /// <summary>
@@ -189,8 +189,8 @@ namespace KS.Shell.ShellBase.Arguments
         /// <param name="AcceptsSet">Whether to accept the -set switch or not</param>
         public CommandArgumentInfo(CommandArgumentPart[] Arguments, SwitchInfo[] Switches, bool AcceptsSet)
         {
-            var finalArgs = Arguments ?? Array.Empty<CommandArgumentPart>();
-            var finalSwitches = Switches ?? Array.Empty<SwitchInfo>();
+            var finalArgs = Arguments ?? [];
+            var finalSwitches = Switches ?? [];
             this.Arguments = finalArgs;
             if (AcceptsSet)
                 this.Switches = this.Switches.Union(finalSwitches).ToArray();

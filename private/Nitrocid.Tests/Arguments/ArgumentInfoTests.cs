@@ -73,7 +73,7 @@ namespace Nitrocid.Tests.Arguments
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecution() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("", Array.Empty<string>(), Array.Empty<string>())));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("", [], [])));
 
         /// <summary>
         /// Tests initializing the argument instance from base
@@ -81,7 +81,7 @@ namespace Nitrocid.Tests.Arguments
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithArguments() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("Hello World", ["Hello", "World"], Array.Empty<string>())));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("Hello World", ["Hello", "World"], [])));
 
         /// <summary>
         /// Tests initializing the argument instance from base
@@ -89,7 +89,7 @@ namespace Nitrocid.Tests.Arguments
         [Test]
         [Description("Initialization")]
         public void TestInitializedArgumentExecutionWithSwitches() =>
-            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s", Array.Empty<string>(), ["-s"])));
+            Should.NotThrow(new Action(() => ArgumentInstance.Execute("-s", [], ["-s"])));
 
         /// <summary>
         /// Tests initializing the argument instance from base

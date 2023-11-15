@@ -37,7 +37,7 @@ namespace KS.Modifications.Dependencies
         internal static ModDependency[] GetDependencies(ModInfo mod)
         {
             if (mod is null)
-                return Array.Empty<ModDependency>();
+                return [];
 
             // Get the mod directory
             string modDirectory = Paths.GetKernelPath(KernelPathType.Mods);
@@ -46,7 +46,7 @@ namespace KS.Modifications.Dependencies
             string metadataPath = $"{modDirectory}{Path.GetFileNameWithoutExtension(mod.ModFilePath)}-moddeps.json";
             DebugWriter.WriteDebug(DebugLevel.I, "Metadata path: {0}", metadataPath);
             if (!Checking.FileExists(metadataPath))
-                return Array.Empty<ModDependency>();
+                return [];
 
             // Parse it and return all dependencies
             ModDependency[] deps = JsonConvert.DeserializeObject<ModDependency[]>(Reading.ReadContentsText(metadataPath));

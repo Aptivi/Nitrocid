@@ -78,7 +78,7 @@ namespace Nitrocid.Extras.NameGen
                             new CommandArgumentPart(false, "term"),
                             new CommandArgumentPart(false, "surnameprefix"),
                             new CommandArgumentPart(false, "surnamesuffix"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new FindSurnameCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             { "genname",

@@ -379,7 +379,7 @@ namespace KS.Kernel.Configuration
         public static SettingsKey[] GetSettingsKeys(string settingsType)
         {
             if (!IsCustomSettingRegistered(settingsType))
-                return Array.Empty<SettingsKey>();
+                return [];
             var config = Config.GetKernelConfigs().Single((bkc) => bkc.GetType().Name == settingsType);
             return GetSettingsKeys(config);
         }

@@ -82,8 +82,8 @@ namespace KS.Files.Editors.HexEdit
                 HexEditShellCommon.FileStream.Close();
                 HexEditShellCommon.FileStream = null;
                 DebugWriter.WriteDebug(DebugLevel.I, "File is no longer open.");
-                HexEditShellCommon.FileBytes = Array.Empty<byte>();
-                HexEditShellCommon.FileBytesOrig = Array.Empty<byte>();
+                HexEditShellCommon.FileBytes = [];
+                HexEditShellCommon.FileBytesOrig = [];
                 return true;
             }
             catch (Exception ex)

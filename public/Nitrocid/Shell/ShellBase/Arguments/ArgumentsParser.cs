@@ -97,7 +97,7 @@ namespace KS.Shell.ShellBase.Arguments
                               ShellCommands.TryGetValue(Command, out CommandInfo shellCmd) ? shellCmd :
                               aliases.Any((info) => info.Alias == Command) ? aliases.Single((info) => info.Alias == Command).TargetCommand :
                               cmdInfo;
-            var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true, true, new());
+            var fallback = new ProvidedArgumentsInfo(Command, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
 
             // Change the command if a command with no slash is entered on a slash-enabled shells
             var shellInfo = ShellManager.GetShellInfo(CommandType);
@@ -138,7 +138,7 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Check to see if the caller has provided a switch that subtracts the number of required arguments
             var ArgumentInfo = KernelArguments.TryGetValue(Argument, out ArgumentInfo argInfo) ? argInfo : null;
-            var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), Array.Empty<string>(), true, true, true, Array.Empty<string>(), Array.Empty<string>(), Array.Empty<string>(), true, true, true, new());
+            var fallback = new ProvidedArgumentsInfo(Argument, arguments, words.Skip(1).ToArray(), argumentsOrig, wordsOrig.Skip(1).ToArray(), [], true, true, true, [], [], [], true, true, true, new());
             if (ArgumentInfo != null)
                 return ProcessArgumentOrShellCommandArguments(ArgumentText, null, ArgumentInfo);
             else
@@ -184,9 +184,9 @@ namespace KS.Shell.ShellBase.Arguments
 
             // Check to see if we're optionalizing some required arguments starting from the last required argument
             int minimumArgumentsOffset = 0;
-            string[] unknownSwitchesList = Array.Empty<string>();
-            string[] conflictingSwitchesList = Array.Empty<string>();
-            string[] noValueSwitchesList = Array.Empty<string>();
+            string[] unknownSwitchesList = [];
+            string[] conflictingSwitchesList = [];
+            string[] noValueSwitchesList = [];
             var argInfos = isCommand ? CommandInfo?.CommandArgumentInfo : ArgumentInfo?.ArgArgumentInfo;
             foreach (var argInfo in argInfos)
             {

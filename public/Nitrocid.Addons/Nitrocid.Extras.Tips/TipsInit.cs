@@ -55,7 +55,7 @@ namespace Nitrocid.Extras.Tips
 
         void IAddon.StopAddon()
         {
-            WelcomeMessage.tips = Array.Empty<string>();
+            WelcomeMessage.tips = [];
             ConfigTools.UnregisterBaseSetting(nameof(TipsConfig));
         }
     }

@@ -60,7 +60,7 @@ namespace KS.Users
         public static UserInfo CurrentUser =>
             CurrentUserInfo;
 
-        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), Array.Empty<string>(), "System Account", "", Array.Empty<string>(), UserFlags.Administrator, []);
+        internal static readonly UserInfo fallbackRootAccount = new("root", Encryption.GetEncryptedString("", "SHA256"), [], "System Account", "", [], UserFlags.Administrator, []);
         internal static UserInfo CurrentUserInfo = fallbackRootAccount;
         internal static List<UserInfo> Users = [CurrentUserInfo];
         private static readonly List<UserInfo> LockedUsers = [];
@@ -97,7 +97,7 @@ namespace KS.Users
                 }
 
                 // Add user locally
-                var initedUser = new UserInfo(uninitUser, unpassword, Array.Empty<string>(), "", "", Array.Empty<string>(), UserFlags.None, []);
+                var initedUser = new UserInfo(uninitUser, unpassword, [], "", "", [], UserFlags.None, []);
                 if (!UserExists(uninitUser))
                 {
                     DebugWriter.WriteDebug(DebugLevel.I, "Added user {0}!", uninitUser);

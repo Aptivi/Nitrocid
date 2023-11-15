@@ -139,7 +139,7 @@ namespace KS.Users.Settings
             int userIndex = UserManagement.GetUserIndex(user);
             var customSettings = UserManagement.Users[userIndex].CustomSettings;
             if (customSettings is null)
-                return Array.Empty<object>();
+                return [];
             return customSettings[key];
         }
     }

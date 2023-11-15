@@ -49,7 +49,7 @@ namespace KS.Users.Groups
                 throw new KernelException(KernelExceptionType.GroupManagement, Translate.DoTranslation("Can't add a group with the same name."));
 
             // Add the new group to the group list
-            GroupInfo group = new(groupName, Array.Empty<string>());
+            GroupInfo group = new(groupName, []);
             AvailableGroups.Add(group);
             SaveGroups();
         }

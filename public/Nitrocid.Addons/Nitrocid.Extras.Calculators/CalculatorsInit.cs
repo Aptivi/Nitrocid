@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.Calculators
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "expression"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new CalcCommand())
             },
 

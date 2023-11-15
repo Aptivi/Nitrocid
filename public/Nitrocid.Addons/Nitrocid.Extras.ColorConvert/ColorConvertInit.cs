@@ -41,7 +41,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToRgbCommand())
             },
 
@@ -51,7 +51,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToRgbKSCommand())
             },
 
@@ -61,7 +61,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToCmykCommand())
             },
 
@@ -71,7 +71,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToCmykKSCommand())
             },
 
@@ -81,7 +81,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToCmyCommand())
             },
 
@@ -91,7 +91,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToCmyKSCommand())
             },
 
@@ -101,7 +101,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToHslCommand())
             },
 
@@ -111,7 +111,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToHslKSCommand())
             },
 
@@ -121,7 +121,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToHsvCommand())
             },
 
@@ -131,7 +131,7 @@ namespace Nitrocid.Extras.ColorConvert
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "#RRGGBB"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHexToHsvKSCommand())
             },
 
@@ -152,7 +152,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorRgbToHexCommand())
             },
 
@@ -173,7 +173,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorRgbToCmykCommand())
             },
 
@@ -194,7 +194,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorRgbToCmykKSCommand())
             },
 
@@ -215,7 +215,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorRgbToCmyCommand())
             },
 
@@ -236,7 +236,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorRgbToCmyKSCommand())
             },
 
@@ -257,7 +257,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorRgbToHslCommand())
             },
 
@@ -278,7 +278,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorRgbToHslKSCommand())
             },
 
@@ -299,7 +299,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorRgbToHsvCommand())
             },
 
@@ -320,7 +320,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorRgbToHsvKSCommand())
             },
 
@@ -341,7 +341,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHslToHexCommand())
             },
 
@@ -362,7 +362,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHslToCmykCommand())
             },
 
@@ -383,7 +383,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHslToCmykKSCommand())
             },
 
@@ -404,7 +404,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHslToCmyCommand())
             },
 
@@ -425,7 +425,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHslToCmyKSCommand())
             },
 
@@ -446,7 +446,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHslToHsvCommand())
             },
 
@@ -467,7 +467,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHslToHsvKSCommand())
             },
 
@@ -488,7 +488,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHslToRgbCommand())
             },
 
@@ -509,7 +509,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHslToRgbKSCommand())
             },
 
@@ -530,7 +530,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHsvToHexCommand())
             },
 
@@ -551,7 +551,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHsvToCmykCommand())
             },
 
@@ -572,7 +572,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHsvToCmykKSCommand())
             },
 
@@ -593,7 +593,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHsvToCmyCommand())
             },
 
@@ -614,7 +614,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHsvToCmyKSCommand())
             },
 
@@ -635,7 +635,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHsvToHslCommand())
             },
 
@@ -656,7 +656,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHsvToHslKSCommand())
             },
 
@@ -677,7 +677,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHsvToRgbCommand())
             },
 
@@ -698,7 +698,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorHsvToRgbKSCommand())
             },
 
@@ -723,7 +723,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmykToHexCommand())
             },
 
@@ -748,7 +748,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmykToRgbCommand())
             },
 
@@ -773,7 +773,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmykToRgbKSCommand())
             },
 
@@ -798,7 +798,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmykToHslCommand())
             },
 
@@ -823,7 +823,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmykToHslKSCommand())
             },
 
@@ -848,7 +848,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmykToHsvCommand())
             },
 
@@ -873,7 +873,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmykToHsvKSCommand())
             },
 
@@ -898,7 +898,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmykToCmyCommand())
             },
 
@@ -923,7 +923,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmykToCmyKSCommand())
             },
 
@@ -944,7 +944,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmyToHexCommand())
             },
 
@@ -965,7 +965,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmyToCmykCommand())
             },
 
@@ -986,7 +986,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmyToCmykKSCommand())
             },
 
@@ -1007,7 +1007,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmyToHslCommand())
             },
 
@@ -1028,7 +1028,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmyToHslKSCommand())
             },
 
@@ -1049,7 +1049,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmyToHsvCommand())
             },
 
@@ -1070,7 +1070,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmyToHsvKSCommand())
             },
 
@@ -1091,7 +1091,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmyToRgbCommand())
             },
 
@@ -1112,7 +1112,7 @@ namespace Nitrocid.Extras.ColorConvert
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new ColorCmyToRgbKSCommand())
             },
         };

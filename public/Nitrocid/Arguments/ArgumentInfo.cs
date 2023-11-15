@@ -62,7 +62,7 @@ namespace KS.Arguments
         {
             this.Argument = Argument;
             this.HelpDefinition = HelpDefinition;
-            this.ArgArgumentInfo = ArgArgumentInfo ?? Array.Empty<CommandArgumentInfo>();
+            this.ArgArgumentInfo = ArgArgumentInfo ?? [];
             this.ArgumentBase = ArgumentBase ?? new UndefinedArgument();
             this.Obsolete = Obsolete;
         }

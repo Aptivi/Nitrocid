@@ -49,7 +49,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => 
-            PromptChoice(Question, AnswersStr, Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, AnswersStr, [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -60,7 +60,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, AnswersStr, AnswersTitles, "", Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, AnswersStr, AnswersTitles, "", [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -72,7 +72,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string AnswersStr, string[] AnswersTitles, string AlternateAnswersStr, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, AnswersStr, AnswersTitles, AlternateAnswersStr, [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -95,7 +95,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string[] Answers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) => 
-            PromptChoice(Question, Answers, Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, Answers, [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -106,7 +106,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, Answers, AnswersTitles, Array.Empty<string>(), Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, Answers, AnswersTitles, [], [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice
@@ -118,7 +118,7 @@ namespace KS.ConsoleBase.Inputs.Styles
         /// <param name="OutputType">Output type of choices</param>
         /// <param name="PressEnter">When enabled, allows the input to consist of multiple characters</param>
         public static string PromptChoice(string Question, string[] Answers, string[] AnswersTitles, string[] AlternateAnswers, ChoiceOutputType OutputType = ChoiceOutputType.OneLine, bool PressEnter = false) =>
-            PromptChoice(Question, Answers, AnswersTitles, AlternateAnswers, Array.Empty<string>(), OutputType, PressEnter);
+            PromptChoice(Question, Answers, AnswersTitles, AlternateAnswers, [], OutputType, PressEnter);
 
         /// <summary>
         /// Prompts user for choice

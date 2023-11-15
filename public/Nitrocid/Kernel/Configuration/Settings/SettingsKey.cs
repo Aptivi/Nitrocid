@@ -166,7 +166,7 @@ namespace KS.Kernel.Configuration.Settings
         /// </summary>
         [JsonIgnore]
         public string[] SelectionFallback =>
-            selectionFallback ?? Array.Empty<string>();
+            selectionFallback ?? [];
 
         /// <summary>
         /// Is the enumeration found within Nitrocid?
@@ -208,7 +208,7 @@ namespace KS.Kernel.Configuration.Settings
         /// </summary>
         [JsonIgnore]
         public string[] UnsupportedPlatforms =>
-            unsupportedPlatforms ?? Array.Empty<string>();
+            unsupportedPlatforms ?? [];
 
         /// <summary>
         /// Is the value a path that will be neutralized by <see cref="FilesystemTools.NeutralizePath(string, bool)"/>?

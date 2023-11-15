@@ -100,14 +100,14 @@ namespace KS.Drivers.Console.Bases
         /// </summary>
         /// <inheritdoc/>
         public override void Write(char value) =>
-            WritePlain($"{value}", false, Array.Empty<object>());
+            WritePlain($"{value}", false, []);
 
         /// <summary>
         /// Outputs text to file
         /// </summary>
         /// <inheritdoc/>
         public override void Write(string text) =>
-            WritePlain(text, false, Array.Empty<object>());
+            WritePlain(text, false, []);
 
         /// <summary>
         /// Outputs text to file
@@ -121,14 +121,14 @@ namespace KS.Drivers.Console.Bases
         /// </summary>
         /// <inheritdoc/>
         public override void WriteLine() =>
-            WritePlain("", true, Array.Empty<object>());
+            WritePlain("", true, []);
 
         /// <summary>
         /// Outputs text to file
         /// </summary>
         /// <inheritdoc/>
         public override void WriteLine(string text) =>
-            WritePlain(text, true, Array.Empty<object>());
+            WritePlain(text, true, []);
 
         /// <summary>
         /// Outputs text to file

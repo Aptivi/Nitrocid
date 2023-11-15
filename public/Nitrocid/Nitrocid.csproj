@@ -86,7 +86,7 @@
     <PackageReference Include="Microsoft.Diagnostics.Runtime" Version="3.1.456101" PrivateAssets="all" />
     <PackageReference Include="Newtonsoft.Json.Schema" Version="3.0.15" PrivateAssets="all" />
     <PackageReference Include="SemanVer" Version="1.1.1" PrivateAssets="all" />
-    <PackageReference Include="SpecProbe" Version="1.0.0" PrivateAssets="all" />
+    <PackageReference Include="SpecProbe" Version="1.1.0" PrivateAssets="all" />
   </ItemGroup>
   <!-- KS Dependencies Information End -->
 

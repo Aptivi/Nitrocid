@@ -62,7 +62,7 @@ namespace KS.Shell.ShellBase.Commands
         {
             this.Command = Command;
             this.HelpDefinition = HelpDefinition;
-            this.CommandArgumentInfo = CommandArgumentInfo ?? Array.Empty<CommandArgumentInfo>();
+            this.CommandArgumentInfo = CommandArgumentInfo ?? [];
             this.CommandBase = CommandBase ?? new UndefinedCommand();
             this.Flags = Flags;
         }

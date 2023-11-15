@@ -53,7 +53,7 @@ namespace KS.ConsoleBase.Presentation.Elements
         public void Render()
         {
             // Get the text and the arguments
-            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
+            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
             string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
@@ -165,7 +165,7 @@ namespace KS.ConsoleBase.Presentation.Elements
         public bool IsPossibleOutOfBounds()
         {
             // Get the text, the arguments, and the choices
-            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
+            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
 
             // Flatten the enumerables to their string value representations
             List<string> choices = [];

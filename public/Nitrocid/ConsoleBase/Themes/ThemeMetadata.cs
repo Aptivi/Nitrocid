@@ -94,7 +94,7 @@ namespace KS.ConsoleBase.Themes
             this.calendar = calendar;
             this.category = category;
             this.localizable = localizable;
-            this.useAccentTypes = useAccentTypes ?? Array.Empty<string>();
+            this.useAccentTypes = useAccentTypes ?? [];
         }
     }
 }

@@ -334,7 +334,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "input"),
                             new CommandArgumentPart(true, "input2"),
                             new CommandArgumentPart(false, "input3 ..."),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new CombineStrCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -503,7 +503,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new DiskInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
@@ -535,7 +535,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "text"),
                         ],
                         [
-                            new SwitchInfo("noparse", /* Localizable */ "Prints the text as it is with no placeholder parsing", false, false, Array.Empty<string>(), 0, false)
+                            new SwitchInfo("noparse", /* Localizable */ "Prints the text as it is with no placeholder parsing", false, false, [], 0, false)
                         ], true)
                     ], new EchoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
@@ -738,7 +738,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new GetDefaultExtHandlerCommand())
             },
 
@@ -758,7 +758,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 AutoCompleter = (_) => ExtensionHandlerTools.GetExtensionHandlers().Select((h) => h.Extension).ToArray()
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new GetExtHandlersCommand())
             },
 
@@ -771,7 +771,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 AutoCompleter = (_) => EncodingDriverTools.GetEncodingDriverNames()
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new GetKeyIvCommand())
             },
 
@@ -819,7 +819,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "question"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new InputCommand())
             },
             
@@ -830,7 +830,7 @@ namespace KS.Shell.Shells.UESH
                         [
                             new CommandArgumentPart(true, "jsonfile"),
                             new CommandArgumentPart(true, "output"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new JsonBeautifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -841,7 +841,7 @@ namespace KS.Shell.Shells.UESH
                         [
                             new CommandArgumentPart(true, "jsonfile"),
                             new CommandArgumentPart(true, "output"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new JsonMinifyCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
             
@@ -876,7 +876,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "script"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new LintScriptCommand())
             },
             
@@ -970,7 +970,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new LsDiskPartsCommand(), CommandFlags.Strict | CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
            
@@ -1001,7 +1001,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "directory"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new MdCommand())
             },
             
@@ -1011,7 +1011,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "file"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new MkFileCommand())
             },
             
@@ -1069,7 +1069,7 @@ namespace KS.Shell.Shells.UESH
                             {
                                 IsNumeric = true
                             }),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new PartInfoCommand(), CommandFlags.RedirectionSupported | CommandFlags.Wrappable)
             },
 
@@ -1079,7 +1079,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "fileName"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new PathFindCommand())
             },
             
@@ -1337,7 +1337,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "input"),
                             new CommandArgumentPart(false, "answertitle1"),
                             new CommandArgumentPart(false, "answertitle2 ..."),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new SelectCommand())
             },
             
@@ -1385,7 +1385,7 @@ namespace KS.Shell.Shells.UESH
                         new CommandArgumentInfo(
                         [
                             new CommandArgumentPart(true, "value"),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new SetCommand())
             },
 
@@ -1432,7 +1432,7 @@ namespace KS.Shell.Shells.UESH
                             new CommandArgumentPart(true, "value"),
                             new CommandArgumentPart(false, "value2"),
                             new CommandArgumentPart(false, "value3 ..."),
-                        ], Array.Empty<SwitchInfo>(), true)
+                        ], [], true)
                     ], new SetRangeCommand())
             },
             

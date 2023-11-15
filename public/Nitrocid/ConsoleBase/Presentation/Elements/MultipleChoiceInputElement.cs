@@ -53,7 +53,7 @@ namespace KS.ConsoleBase.Presentation.Elements
         public void Render()
         {
             // Get the text and the arguments
-            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
+            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
             string text = TextTools.FormatString((string)(Arguments.Length > 0 ? Arguments[0] : ""), finalArgs);
 
             // Check the bounds
@@ -149,7 +149,7 @@ namespace KS.ConsoleBase.Presentation.Elements
 
             // Get the input
             TextWriterWhereColor.WriteWhereKernelColor("\n", PresentationTools.PresentationUpperInnerBorderLeft, Console.CursorTop, false, PresentationTools.PresentationUpperInnerBorderLeft, KernelColorType.NeutralText);
-            string[] selected = Array.Empty<string>();
+            string[] selected = [];
             while (selected.Length == 0 || !selected.All((selectedChoice) => finalChoices.Contains(selectedChoice)))
             {
                 ConsoleWrapper.CursorLeft = PresentationTools.PresentationUpperInnerBorderLeft;
@@ -174,7 +174,7 @@ namespace KS.ConsoleBase.Presentation.Elements
         public bool IsPossibleOutOfBounds()
         {
             // Get the text, the arguments, and the choices
-            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : Array.Empty<object>();
+            object[] finalArgs = Arguments.Length > 1 ? Arguments.Skip(1).ToArray() : [];
 
             // Flatten the enumerables to their string value representations
             List<string> choices = [];

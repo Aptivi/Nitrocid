@@ -140,7 +140,7 @@ namespace KS.Kernel.Configuration.Settings
 
         internal static bool ValidatePlatformCompatibility(SettingsKey settings)
         {
-            string[] keyUnsupportedPlatforms = settings.UnsupportedPlatforms.ToArray() ?? Array.Empty<string>();
+            string[] keyUnsupportedPlatforms = settings.UnsupportedPlatforms.ToArray() ?? [];
             bool platformUnsupported = false;
             foreach (string platform in keyUnsupportedPlatforms)
             {

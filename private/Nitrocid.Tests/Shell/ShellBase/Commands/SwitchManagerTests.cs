@@ -169,7 +169,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         [Description("Management")]
         public void TestGetSwitchValuesEmpty()
         {
-            string[] switches = Array.Empty<string>();
+            string[] switches = [];
             var switchValues = SwitchManager.GetSwitchValues(switches);
             switchValues.Count.ShouldBe(0);
         }

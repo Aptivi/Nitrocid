@@ -53,7 +53,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecution()
         {
             string dummy = "";
-            var parameters = new CommandParameters("", Array.Empty<string>(), "", Array.Empty<string>(), Array.Empty<string>(), "say");
+            var parameters = new CommandParameters("", [], "", [], [], "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 
@@ -65,7 +65,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecutionWithArguments()
         {
             string dummy = "";
-            var parameters = new CommandParameters("Hello World", ["Hello", "World"], "Hello World", ["Hello", "World"], Array.Empty<string>(), "say");
+            var parameters = new CommandParameters("Hello World", ["Hello", "World"], "Hello World", ["Hello", "World"], [], "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 
@@ -77,7 +77,7 @@ namespace Nitrocid.Tests.Shell.ShellBase.Commands
         public void TestInitializedCommandExecutionWithSwitches()
         {
             string dummy = "";
-            var parameters = new CommandParameters("-s", Array.Empty<string>(), "-s", Array.Empty<string>(), ["-s"], "say");
+            var parameters = new CommandParameters("-s", [], "-s", [], ["-s"], "say");
             Should.NotThrow(new Action(() => CommandInstance.Execute(parameters, ref dummy)));
         }
 

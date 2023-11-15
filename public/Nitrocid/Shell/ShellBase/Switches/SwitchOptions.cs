@@ -35,7 +35,7 @@ namespace KS.Shell.ShellBase.Switches
         private bool isRequired;
         private bool argumentsRequired;
         private bool acceptsValues = true;
-        private string[] conflictsWith = Array.Empty<string>();
+        private string[] conflictsWith = [];
         private int optionalizeLastRequiredArguments;
         private bool isNumeric;
 
@@ -94,7 +94,7 @@ namespace KS.Shell.ShellBase.Switches
                 if (!conflictsWithSet)
                 {
                     conflictsWithSet = true;
-                    conflictsWith = value ?? Array.Empty<string>();
+                    conflictsWith = value ?? [];
                 }
             }
         }
