@@ -10,7 +10,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\LanguagePacks</OutputPath>
     <Description>Nitrocid KS Language Packs</Description>
     <AssemblyTitle>Nitrocid KS Language Packs</AssemblyTitle>

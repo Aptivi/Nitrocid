@@ -10,7 +10,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.BassBoom</OutputPath>
     <OutputPath Condition=" '$(TargetFramework)' == 'net8.0-windows' ">..\..\Nitrocid\KSBuild\net8.0\Addons\Extras.BassBoom.Windows</OutputPath>
     <Description>Nitrocid KS Extras - BassBoom</Description>
@@ -49,8 +49,7 @@
   <!-- Extras.BassBoom addon Platform Information End -->
 
   <ItemGroup>
-    <PackageReference Include="SharpLyrics" Version="1.0.0.2" Condition="'$(TargetFramework)' == 'net6.0'" />
-    <PackageReference Include="BassBoom.Basolia" Version="0.0.1" Condition="'$(TargetFramework)' == 'net7.0' OR '$(TargetFramework)' == 'net7.0-windows'" />
+    <PackageReference Include="BassBoom.Basolia" Version="0.0.1" />
   </ItemGroup>
 
   <ItemGroup>

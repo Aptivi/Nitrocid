@@ -22,7 +22,7 @@
     <Version>0.1.0</Version>
     <Configurations>Debug;Release</Configurations>
     <LangVersion>latest</LangVersion>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>

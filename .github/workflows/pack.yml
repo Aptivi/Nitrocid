@@ -13,10 +13,10 @@ jobs:
     - uses: actions/checkout@v3
       with:
         ref: ${{ github.ref }}
-    - name: Setup .NET 6.0
+    - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '6.0.x'
+        dotnet-version: '8.0.x'
     - name: Solution Compilation
       run: dotnet build --configuration Release
     - name: Package Publication

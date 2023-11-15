@@ -24,7 +24,7 @@ jobs:
           sudo apt update
           sudo apt purge dotnet*
           sudo apt autoremove
-          sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-7.0 devscripts debhelper-compat dput
+          sudo apt install curl locales-all cli-common-dev libunwind8-dev libcurl4-openssl-dev dotnet-sdk-8.0 devscripts debhelper-compat dput
         
       - name: Download original source
         run: |

@@ -19,10 +19,10 @@ jobs:
     - uses: actions/checkout@v3
       with:
         ref: ${{ github.ref }}
-    - name: Setup .NET 6.0
+    - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: '6.0.x'
+        dotnet-version: '8.0.x'
     - name: Solution Compilation
       run: dotnet build -maxCpuCount:1 --configuration Debug
     - name: Testing
@@ -31,7 +31,7 @@ jobs:
       if: success() || failure()
       with:
         name: ks-build
-        path: "public/Nitrocid/KSBuild/net6.0/"
+        path: "public/Nitrocid/KSBuild/net8.0/"
     - uses: actions/upload-artifact@v3
       if: success() || failure()
       with:
@@ -41,7 +41,7 @@ jobs:
       if: success() || failure()
       with:
         name: unit-test-log
-        path: "private/Nitrocid.Tests/KSTest/net6.0/UnitTestDebug.log"
+        path: "private/Nitrocid.Tests/KSTest/net8.0/UnitTestDebug.log"
 
   notify:
 

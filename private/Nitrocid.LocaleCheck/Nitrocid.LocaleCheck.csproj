@@ -4,7 +4,7 @@
     <LangVersion>latest</LangVersion>
     <OutputType>Exe</OutputType>
     <Configurations>Debug;Release</Configurations>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <PlatformTarget>AnyCPU</PlatformTarget>
     <SignAssembly>True</SignAssembly>
     <AssemblyOriginatorKeyFile>..\..\aptivi_snk.snk</AssemblyOriginatorKeyFile>

@@ -16,7 +16,7 @@
 #
 
 OUTPUTS = public/Nitrocid/KSBuild public/*/obj public/*/*/obj private/*/bin private/*/obj debian/kernel-simulator
-OUTPUT = public/Nitrocid/KSBuild/net6.0
+OUTPUT = public/Nitrocid/KSBuild/net8.0
 BINARIES = assets/ks-n assets/ks-jl
 MANUALS = assets/*.1
 DESKTOPS = assets/ks.desktop

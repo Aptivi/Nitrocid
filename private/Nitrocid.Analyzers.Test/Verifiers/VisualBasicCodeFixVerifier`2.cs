@@ -54,8 +54,8 @@ namespace Nitrocid.Analyzers.Test
 
             test.ExpectedDiagnostics.AddRange(expected);
             test.ReferenceAssemblies = ReferenceAssemblies.Net.Net60;
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net6.0/Nitrocid.dll"));
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net6.0/Terminaux.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Nitrocid.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Terminaux.dll"));
             await test.RunAsync(CancellationToken.None);
         }
 
@@ -78,8 +78,8 @@ namespace Nitrocid.Analyzers.Test
 
             test.ExpectedDiagnostics.AddRange(expected);
             test.ReferenceAssemblies = ReferenceAssemblies.Net.Net60;
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net6.0/Nitrocid.dll"));
-            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net6.0/Terminaux.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Nitrocid.dll"));
+            test.TestState.AdditionalReferences.Add(MetadataReference.CreateFromFile("../../../../../public/Nitrocid/KSBuild/net8.0/Terminaux.dll"));
             await test.RunAsync(CancellationToken.None);
         }
     }

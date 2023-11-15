@@ -10,7 +10,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.SftpShell</OutputPath>
     <Description>Nitrocid KS Extras - SFTP Shell</Description>
     <AssemblyTitle>Nitrocid KS Extras - SFTP Shell</AssemblyTitle>
