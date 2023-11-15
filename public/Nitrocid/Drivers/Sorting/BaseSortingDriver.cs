@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+
 namespace KS.Drivers.Sorting
 {
     /// <summary>
@@ -157,7 +159,7 @@ namespace KS.Drivers.Sorting
         }
 
         /// <inheritdoc/>
-        public long[] SortNumbersInt128(long[] unsorted)
+        public Int128[] SortNumbersInt128(Int128[] unsorted)
         {
             // Get the number of iterations
             int iteration = unsorted.Length;

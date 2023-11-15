@@ -19,6 +19,7 @@
 
 using KS.Drivers;
 using KS.Drivers.RNG;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 
@@ -83,6 +84,13 @@ namespace KS.Misc.Reflection
         /// <returns>Sorted array of 64-bit integers</returns>
         public static long[] SortNumbers(this long[] unsorted) =>
             DriverHandler.CurrentSortingDriverLocal.SortNumbersInt64(unsorted);
+
+        /// <summary>
+        /// Sorts the 128-bit integers
+        /// </summary>
+        /// <returns>Sorted array of 128-bit integers</returns>
+        public static Int128[] SortNumbers(this Int128[] unsorted) =>
+            DriverHandler.CurrentSortingDriverLocal.SortNumbersInt128(unsorted);
 
         /// <summary>
         /// Sorts the single-precision decimal numbers

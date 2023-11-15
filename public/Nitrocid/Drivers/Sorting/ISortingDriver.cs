@@ -17,6 +17,8 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
+using System;
+
 namespace KS.Drivers.Sorting
 {
     /// <summary>
@@ -49,10 +51,10 @@ namespace KS.Drivers.Sorting
         long[] SortNumbersInt64(long[] unsorted);
 
         /// <summary>
-        /// Sorts the 128-bit integers (works the same as 64-bit integers until the migration to .NET 8.0 occurs)
+        /// Sorts the 128-bit integers
         /// </summary>
         /// <returns>Sorted array of 128-bit integers</returns>
-        long[] SortNumbersInt128(long[] unsorted);
+        Int128[] SortNumbersInt128(Int128[] unsorted);
 
         /// <summary>
         /// Sorts the single-precision decimal numbers
