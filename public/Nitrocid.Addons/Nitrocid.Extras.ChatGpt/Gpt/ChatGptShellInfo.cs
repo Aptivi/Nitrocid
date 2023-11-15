@@ -33,6 +33,14 @@ namespace Nitrocid.Extras.ChatGpt.Gpt
     internal class ChatGptShellInfo : BaseShellInfo, IShellInfo
     {
 
+        private readonly CommandInfo ask =
+            new("ask", /* Localizable */ "Asks ChatGPT a question",
+                [
+                    new CommandArgumentInfo([
+                        new CommandArgumentPart(true, "text")
+                    ])
+                ], new AskCommand());
+
         /// <summary>
         /// ChatGPT commands
         /// </summary>
@@ -67,6 +75,9 @@ namespace Nitrocid.Extras.ChatGpt.Gpt
         /// </summary>
         public override bool SlashCommand =>
             true;
+
+        public override CommandInfo NonSlashCommandInfo =>
+            ask;
 
     }
 }

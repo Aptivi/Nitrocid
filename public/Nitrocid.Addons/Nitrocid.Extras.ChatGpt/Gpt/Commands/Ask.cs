@@ -17,19 +17,24 @@
 // along with this program.  If not, see <https://www.gnu.org/licenses/>.
 //
 
-using Microsoft.SemanticKernel;
+using KS.ConsoleBase.Colors;
+using KS.ConsoleBase.Writers.ConsoleWriters;
+using KS.Shell.ShellBase.Commands;
 using Microsoft.SemanticKernel.AI.ChatCompletion;
 
-namespace Nitrocid.Extras.ChatGpt.Gpt
+namespace Nitrocid.Extras.ChatGpt.Gpt.Commands
 {
-    /// <summary>
-    /// Common Git editor shell module
-    /// </summary>
-    public static class ChatGptShellCommon
+    internal class AskCommand : BaseCommand, ICommand
     {
-        internal static IKernel aiKernel;
-        internal static IChatCompletion chatCompletion;
-        internal static ChatHistory chat;
-        internal static string apiKey = "";
+
+        public override int Execute(CommandParameters parameters, ref string variableValue)
+        {
+            ChatGptShellCommon.chat.AddUserMessage(parameters.CommandText);
+            string answer = ChatGptShellCommon.chatCompletion.GenerateMessageAsync(ChatGptShellCommon.chat).Result;
+            ChatGptShellCommon.chat.AddAssistantMessage(answer);
+            TextWriterColor.WriteKernelColor(answer, KernelColorType.Success);
+            return 0;
+        }
+
     }
 }
