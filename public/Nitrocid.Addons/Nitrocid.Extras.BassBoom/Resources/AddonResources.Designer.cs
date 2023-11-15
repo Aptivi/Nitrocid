@@ -86,17 +86,19 @@ namespace Nitrocid.Extras.BassBoom.Resources {
         /// <summary>
         ///   Looks up a localized string similar to [
         ///    {
-        ///        &quot;Name&quot;: &quot;Timers&quot;,
-        ///        &quot;Desc&quot;: &quot;This section lets you configure how the timers work.&quot;,
+        ///        &quot;Name&quot;: &quot;BassBoom&quot;,
+        ///        &quot;Desc&quot;: &quot;This section lets you configure how the BassBoom addon works.&quot;,
         ///        &quot;Keys&quot;: [
         ///            {
-        ///                &quot;Name&quot;: &quot;Enable Figlet for timer&quot;,
-        ///                &quot;Type&quot;: &quot;SBoolean&quot;,
-        ///                &quot;Variable&quot;: &quot;EnableFigletTimer&quot;,
-        ///                &quot;Description&quot;: &quot;If enabled, will use figlet for timer. Please note that it needs a big console screen in order to render the time properly with Figlet enabled.&quot;
-        ///            },
-        ///            {
-        ///                &quot;Nam [rest of string was truncated]&quot;;.
+        ///                &quot;Name&quot;: &quot;Lyrics Path&quot;,
+        ///                &quot;Type&quot;: &quot;SString&quot;,
+        ///                &quot;Variable&quot;: &quot;LyricsPath&quot;,
+        ///                &quot;Description&quot;: &quot;Sets the path to a folder containing a group of .lrc files. Write an absolute path to any existing directory.&quot;
+        ///            }
+        ///        ]
+        ///    }
+        ///]
+        ///.
         /// </summary>
         internal static string BassBoomSettings {
             get {

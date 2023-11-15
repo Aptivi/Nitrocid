@@ -10,7 +10,7 @@
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
     <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFrameworks>net8.0;net8.0-windows</TargetFrameworks>
     <OutputPath>..\..\Nitrocid\KSBuild\$(TargetFramework)\Addons\Extras.BassBoom</OutputPath>
     <OutputPath Condition=" '$(TargetFramework)' == 'net8.0-windows' ">..\..\Nitrocid\KSBuild\net8.0\Addons\Extras.BassBoom.Windows</OutputPath>
     <Description>Nitrocid KS Extras - BassBoom</Description>
